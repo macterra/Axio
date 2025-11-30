@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Libertarian Illusion of Equal Opportunity</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!DM0s!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1774dd1e-b477-43e3-a5fd-5dfc24e24297_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!DM0s!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1774dd1e-b477-43e3-a5fd-5dfc24e24297_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!DM0s!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1774dd1e-b477-43e3-a5fd-5dfc24e24297_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!DM0s!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1774dd1e-b477-43e3-a5fd-5dfc24e24297_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!DM0s!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1774dd1e-b477-43e3-a5fd-5dfc24e24297_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/1774dd1e-b477-43e3-a5fd-5dfc24e24297_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/1774dd1e-b477-43e3-a5fd-5dfc24e24297_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:null,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:null,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:null,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!DM0s!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1774dd1e-b477-43e3-a5fd-5dfc24e24297_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!DM0s!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1774dd1e-b477-43e3-a5fd-5dfc24e24297_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!DM0s!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1774dd1e-b477-43e3-a5fd-5dfc24e24297_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!DM0s!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1774dd1e-b477-43e3-a5fd-5dfc24e24297_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>Many libertarians emphasize the importance of "equal opportunity" while rejecting the pursuit of "equal outcomes." This distinction appears appealing—fairness without coercion—but it hides a fundamental contradiction. True equality of opportunity is impossible without first enforcing equality of outcomes.</p><p>Opportunity, defined practically, is the set of choices realistically available to an individual. Yet these choices are invariably shaped by prior outcomes: parental wealth, education, community resources, and personal networks—all outcomes rather than opportunities. Thus, to genuinely equalize opportunity, one must forcibly redistribute or negate these prior outcomes, fundamentally contradicting libertarian principles against coercion.</p><p>Libertarians often sidestep this contradiction by redefining equal opportunity merely as the absence of explicit legal discrimination. However, this minimalist definition doesn't equalize actual life chances—it merely guarantees formal procedural fairness while ignoring substantive inequality.</p><p>A coherent ethical framework requires rejecting the pursuit of equality altogether as a moral goal. Instead, the ethical priority should be preserving and enhancing voluntary agency, emphasizing the freedom to pursue personal goals within constraints rather than forcibly adjusting starting positions to create uniformity.</p><p>When libertarians advocate equal opportunity without embracing coercive redistribution, they implicitly endorse a misleading ideal. A consistent libertarian must acknowledge that actual equality of opportunity necessarily involves coercion and harm. Rather than promoting the illusion of equal starting lines, libertarians should openly prioritize maximizing agency and voluntary cooperation.</p><p>The moral clarity achieved by dropping the false ideal of "equal opportunity" is liberating. Instead of being distracted by impossible or harmful goals, society can focus pragmatically on removing explicit coercion and enhancing voluntary interaction—principles authentically aligned with liberty and agency.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

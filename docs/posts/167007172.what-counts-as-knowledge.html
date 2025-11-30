@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What Counts as Knowledge</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!kJwq!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F76ef5aa0-3f98-480d-b9cd-0b2e68b0695a_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!kJwq!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F76ef5aa0-3f98-480d-b9cd-0b2e68b0695a_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!kJwq!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F76ef5aa0-3f98-480d-b9cd-0b2e68b0695a_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!kJwq!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F76ef5aa0-3f98-480d-b9cd-0b2e68b0695a_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!kJwq!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F76ef5aa0-3f98-480d-b9cd-0b2e68b0695a_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/76ef5aa0-3f98-480d-b9cd-0b2e68b0695a_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/76ef5aa0-3f98-480d-b9cd-0b2e68b0695a_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:3280091,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.substack.com/i/167007172?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F76ef5aa0-3f98-480d-b9cd-0b2e68b0695a_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!kJwq!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F76ef5aa0-3f98-480d-b9cd-0b2e68b0695a_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!kJwq!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F76ef5aa0-3f98-480d-b9cd-0b2e68b0695a_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!kJwq!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F76ef5aa0-3f98-480d-b9cd-0b2e68b0695a_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!kJwq!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F76ef5aa0-3f98-480d-b9cd-0b2e68b0695a_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>Traditional philosophical definitions of knowledge, notably "justified true belief," have faced enduring challenges—most famously Gettier problems, which expose cases where justified true beliefs fail intuitively as genuine knowledge. To address these philosophical limitations, we propose a robust technical definition of knowledge, deeply rooted in Information Theory and our Physics of Agency framework. This novel approach emphasizes precision, measurable predictability, and agent-centricity, providing a clear alternative to historically problematic definitions.</p><h3>Technical Definition</h3><p><strong>Knowledge</strong> is pattern-encoded information within an agent's predictive structure, reliably and quantifiably reducing Shannon entropy (uncertainty) regarding specified future events or states across quantum-branching timelines.</p><p>Breaking this down further:</p><ul><li><p><strong>Pattern Identifier (PI)</strong>: A reproducible structure or relationship, which may manifest as a neural configuration, logical rule, algorithmic pattern, or cultural convention. It must be sufficiently stable and reproducible to enable consistent and reliable predictions.</p></li><li><p><strong>Reliability</strong>: The identified PI consistently and predictably reduces uncertainty across multiple repeated or analogous scenarios, confirming its robustness.</p></li><li><p><strong>Entropy Reduction</strong>: The PI must produce a quantifiable decrease in Shannon entropy concerning specific outcomes. This entropy reduction is clearly measurable in informational units (bits), allowing an objective metric of predictive capability.</p></li></ul><h3>Testing the Definition Through Rigorous Scenarios</h3><p>We extensively validate our definition by analyzing it across several critical and illustrative scenarios:</p><ol><li><p><strong>Everyday Knowledge</strong>: A weather forecast model provides reliable predictions about rain tomorrow, measurably decreasing uncertainty and clearly constituting knowledge.</p></li><li><p><strong>False Beliefs</strong>: Incorrect beliefs, despite sometimes being strongly held, do not reliably reduce entropy or improve predictive accuracy, thus clearly failing our criterion.</p></li><li><p><strong>Gettier Problems</strong>: A stopped clock accidentally showing the correct time exemplifies justified true belief without reliable predictability, explicitly failing as genuine knowledge in our framework.</p></li><li><p><strong>Quantum (Ontic) Uncertainty</strong>: Complete quantum state information accurately eliminates epistemic uncertainty about quantum outcomes but inherently respects irreducible ontic uncertainty, underscoring the distinction our definition makes between epistemic and ontic forms.</p></li><li><p><strong>Random Guesses</strong>: Random or uninformed guesses do not leverage reproducible predictive patterns, thus entropy remains unchanged. Such guesses fail our stringent criteria for knowledge.</p></li><li><p><strong>Tacit Knowledge (Skill-based)</strong>: Motor skills, like bicycle riding, represent reliable neural patterns stored within an agent. They demonstrably and consistently reduce uncertainty about successful task performance, clearly qualifying as knowledge.</p></li><li><p><strong>Cultural Knowledge</strong>: Shared social conventions, such as language and greeting rituals, reliably reduce uncertainty in social interactions. This culturally encoded PI meets our definition precisely.</p></li><li><p><strong>Conditional Knowledge</strong>: Knowledge can be context-dependent, such as knowing which key opens a specific door. Such conditional knowledge consistently reduces uncertainty, but explicitly depends upon context, highlighting the conditional nature embedded in our framework.</p></li><li><p><strong>Quantum Branching Knowledge (QBU)</strong>: Agents possessing reliable patterns enabling them to steer their choices towards favorable quantum branching outcomes demonstrate explicit knowledge within our Quantum Branching Universe framework, perfectly aligning with our definition.</p></li><li><p><strong>Data Without Agency</strong>: Raw data alone, lacking agent-based predictive interpretation or active structure for reducing uncertainty, fails to meet our definition of knowledge, underscoring the necessity of agency for genuine knowledge.</p></li></ol><p>Each scenario meticulously demonstrates either validation or rejection of knowledge under our definition, showcasing the philosophical, scientific, and practical robustness of this approach.</p><h3>Philosophical Consistency and Alignment</h3><p>Our technical definition integrates seamlessly with existing philosophical frameworks:</p><ul><li><p><strong>Conditionalism</strong>: Recognizing knowledge explicitly as conditional, context-dependent, and inherently tied to predictive outcomes and contextual constraints.</p></li><li><p><strong>Quantum Branching Universe (QBU)</strong>: Clearly differentiating between epistemic uncertainty (originating from incomplete agent knowledge) and ontic uncertainty (irreducible due to quantum-mechanical branching), ensuring nuanced precision.</p></li></ul><h3>Broader Implications and Advantages</h3><p>Adopting our robust technical definition of knowledge provides substantial theoretical and practical benefits:</p><ul><li><p><strong>Precision and Measurability</strong>: Our approach clearly quantifies uncertainty reduction in terms of informational bits, offering objective criteria.</p></li><li><p><strong>Comprehensive Flexibility</strong>: It robustly incorporates propositional, tacit, cultural, conditional, and quantum branching forms of knowledge.</p></li><li><p><strong>Philosophical Clarity</strong>: Resolves classic epistemological problems such as Gettier scenarios and clearly distinguishes justified beliefs from genuine knowledge.</p></li><li><p><strong>Agent-Centric and Actionable</strong>: Highlights predictive agency as foundational, emphasizing the practical role of knowledge in facilitating successful action and decision-making.</p></li><li><p><strong>Integration with Contemporary Science</strong>: Aligns deeply with modern physics, information theory, cognitive science, and predictive modeling, providing a unified epistemic foundation across disciplines.</p></li></ul><p>In conclusion, framing knowledge explicitly in terms of measurable entropy reduction within predictive agency structures yields a rigorous, scientifically coherent epistemology uniquely suited for contemporary understanding and practical application. This redefinition promises clarity, operational utility, and theoretical consistency, bridging traditional philosophical discourse and cutting-edge scientific inquiry.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

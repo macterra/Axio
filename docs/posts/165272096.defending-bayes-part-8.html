@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Defending Bayes, Part 8</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <p>In <a href="165065355.defending-bayes-part-7.html">recent posts</a>, I've explored Bayesian reasoning within a <a href="162844036.the-quantum-branching-universe-qbu.html">Quantum Branching Universe (QBU) framework</a>, clarifying distinctions between subjective probabilities (credences) and objective probabilities (measures). However, critiques from philosophers David Deutsch and David Hall—"crit rats" known for their staunch rejection of induction—highlight an important epistemological nuance that I need to explicitly clarify.</p><p>Deutsch and Hall reject induction outright, labeling it logically invalid and epistemologically confused. Induction attempts to justify general theories through repeated observation. Observing thousands of white swans does not logically guarantee all swans are white. This critique aligns closely with Karl Popper’s critical rationalism, asserting that all empirical knowledge is conjectural: we propose bold explanatory hypotheses and rigorously attempt to falsify them, rather than incrementally confirming them through induction.</p><p>However, Deutsch and Hall implicitly embrace abduction—inference to the best explanation—as it explicitly frames scientific theories as conjectures, evaluated by explanatory power and resistance to falsification. Abduction, unlike induction, never claims incremental certainty; it merely proposes and provisionally selects the best explanation available.</p><p>Initially, abduction might appear similar to Bayesian reasoning:</p><ul><li><p>Both are ampliative: extending beyond mere observations.</p></li><li><p>Both reason under uncertainty, evaluating competing hypotheses.</p></li></ul><p>However, the crucial differences clarify why Deutsch and Hall specifically reject Bayesian reasoning:</p><ol><li><p>Bayesianism explicitly relies on assigning prior probabilities, which Deutsch–Hall consider arbitrary and unjustifiable for explanatory theories.</p></li><li><p>Bayesian reasoning explicitly quantifies uncertainty (credences). Abduction focuses solely on explanatory quality and empirical resilience, without assigning numerical probabilities.</p></li><li><p>Bayesian reasoning implies incremental justification via probability adjustments, whereas abduction acknowledges theories remain purely conjectural, never incrementally justified but only provisionally undefeated.</p></li></ol><p>Thus, while superficially similar, Bayesianism’s reliance on subjective probabilities directly attached to explanatory theories conflicts sharply with Deutsch–Hall's explanatory epistemology.</p><p>However, a subtler clarification resolves an apparent conflict from earlier posts:</p><ul><li><p>Scientific theories are not simply binary true/false statements. They are contextually and approximately true within specific domains. Newtonian mechanics, for example, isn't strictly true or false; it remains valid and practically accurate within its domain, even though superseded by relativity and quantum mechanics.</p></li><li><p>Rational epistemic credences about these theories represent uncertainty about their scope, accuracy, and limitations, not just absolute correctness.</p></li></ul><p>Deutsch–Hall’s error is thus twofold:</p><ul><li><p>Overlooking the contextual, approximate, and hierarchical nature of scientific theories.</p></li><li><p>Conflating objective truth (theories as contextual approximations) with subjective uncertainty (credences rationally reflecting epistemic uncertainty).</p></li></ul><p>Deutsch–Hall’s critique thus illuminates an essential boundary:</p><ul><li><p>Accept Bayesian reasoning for subjective uncertainty within objective theoretical structures, like the QBU, precisely because theories have contextual truth.</p></li><li><p>Reject Bayesian reasoning only if applied naively, assigning intrinsic objective probabilities to theories themselves, rather than explicitly acknowledging credences as epistemic uncertainty.</p></li></ul><p>This boundary reinforces the robustness of the QBU framework, providing clearer guidelines for future philosophical and scientific reasoning and better reflecting the nuanced, provisional nature of scientific knowledge.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

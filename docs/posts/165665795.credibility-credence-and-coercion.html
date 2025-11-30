@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Credibility, Credence, and Coercion</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!6zph!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0656ff47-a593-4925-ad40-459f167ccd82_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!6zph!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0656ff47-a593-4925-ad40-459f167ccd82_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!6zph!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0656ff47-a593-4925-ad40-459f167ccd82_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!6zph!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0656ff47-a593-4925-ad40-459f167ccd82_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!6zph!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0656ff47-a593-4925-ad40-459f167ccd82_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/0656ff47-a593-4925-ad40-459f167ccd82_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/0656ff47-a593-4925-ad40-459f167ccd82_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:2767909,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.substack.com/i/165665795?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0656ff47-a593-4925-ad40-459f167ccd82_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!6zph!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0656ff47-a593-4925-ad40-459f167ccd82_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!6zph!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0656ff47-a593-4925-ad40-459f167ccd82_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!6zph!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0656ff47-a593-4925-ad40-459f167ccd82_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!6zph!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0656ff47-a593-4925-ad40-459f167ccd82_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>Within our philosophical framework, precise terminology isn't merely pedantic—it's crucial. Two closely related terms deserve particular attention: <strong>credible</strong> and <strong>credence</strong>. Both stem from the same conceptual root of belief or trustworthiness, yet they play distinct, complementary roles in our model of agency, coercion, and harm.</p><p>Recall our technical <a href="164902314.what-counts-as-coercion.html">definition of </a><strong><a href="164902314.what-counts-as-coercion.html">coercion</a></strong>: the credible threat of actual harm to gain compliance. Here, <strong>credible</strong> denotes a specific condition of rational believability from the perspective of the targeted agent. But what exactly does "believability" entail?</p><p>To clarify, let's invoke our definition of <strong>credence</strong>, which explicitly measures subjective probability or belief assigned to a proposition or event. An agent's credence quantifies their degree of confidence or uncertainty regarding whether something is true or will happen.</p><p>Thus, a threat becomes <strong>credible</strong> precisely when the targeted agent assigns it sufficiently high <strong>credence</strong>. To put it formally:</p><blockquote><p>A threat is <strong>credible</strong> if and only if the targeted agent rationally assigns a high enough credence (subjective probability) to the realization of the threatened harm, thus influencing their decision-making.</p></blockquote><p>This definition highlights why credibility is inherently subjective and agent-relative. The credibility of a threat is not an absolute feature of the threat itself, but rather depends entirely on the perceptions, beliefs, and epistemic states of the agent receiving it.</p><p><strong>Example:</strong> Consider a mugger who threatens a victim by implying they have a gun concealed in their pocket. In reality, the mugger only possesses a toy gun that remains unseen. However, the victim rationally assigns a high credence to the possibility of an actual firearm based on context, behavior, and implied threat. Even though no genuine harm can be delivered by the toy gun, the victim's high subjective credence renders the threat credible, and thus the scenario constitutes coercion.</p><p>Practically, this nuance matters. If an agent assesses the credence of harm to be low, even a serious threat might fail to compel compliance. Conversely, a seemingly minor threat might be profoundly coercive if it commands high credence. This subjective interplay underscores why effective coercion doesn't require actual harm—only the rational expectation or credence of harm.</p><p>Understanding this distinction sharpens our conceptual clarity, facilitating more rigorous ethical analysis and enhancing our precision when discussing coercion, harm, and agency. In short, credibility is the condition under which threats become actionable precisely because it elevates the targeted agent’s credence.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

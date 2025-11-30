@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -213,5 +231,29 @@
     <article>
 <p>The debate over the pace of artificial intelligence development is succinctly captured by Tim Urban's humorous slide:</p><ul><li><p><strong>"SLOW THE FUCK DOWN"</strong> highlights genuine existential concerns about alignment failures and catastrophic risks.</p></li><li><p><strong>"BUT CHINA"</strong> expresses anxiety about geopolitical competition, fearing authoritarian dominance.</p></li></ul><p>Can we resolve this dilemma clearly and rationally?</p><h3>Reframing the Issue through Agency Preservation</h3><p>The fundamental concern is the preservation and maximization of agency—our ability to pursue meaningful futures. A rushed development risks catastrophic outcomes, massively reducing future agency. Conversely, slowing down might cede power to authoritarian regimes, jeopardizing agency differently.</p><h3>Applying Measure and Credence</h3><p>Our Quantum Branching Universe (QBU) framework distinguishes between objective probabilities (<strong>Measure</strong>) and subjective confidence (<strong>Credence</strong>). To evaluate risks properly, we:</p><ul><li><p>Quantify existential threats rigorously, assigning objective probabilities where feasible.</p></li><li><p>Evaluate geopolitical threats realistically, incorporating subjective confidence about China's capabilities and intentions.</p></li></ul><p>The existential risk from poorly aligned AGI development is profoundly severe—existentially severe—demanding extreme caution.</p><h3>Decision-Making via Effective Decision Theory (EDT)</h3><p>EDT instructs us to set probability thresholds proportional to stakes:</p><ul><li><p>Routine decisions: ~90%</p></li><li><p>Important decisions: ~99%</p></li><li><p>Existential decisions: ~99.99%</p></li></ul><p>Given existential stakes, the burden of proof for accelerated AI progress ("BUT CHINA") is exceedingly high. To justify speed, one must demonstrate with extraordinary confidence that slowing down is more likely to reduce long-term agency.</p><h3>Conditionalism in Action</h3><p>Conditionalism demands explicit clarification of assumptions. The argument that geopolitical rivalry warrants accelerating AI development becomes compelling only under strictly defined conditions:</p><ul><li><p>China is reliably on pace or ahead.</p></li><li><p>China’s development poses an existential-level threat equal or greater than that posed by misaligned AGI.</p></li><li><p>Accelerating development meaningfully mitigates this geopolitical threat without correspondingly increasing existential risks.</p></li></ul><p>Absent these conditions, prudence remains strongly justified.</p><h3>Maximizing Long-term Agency (Branchcone Strategy)</h3><p>Long-term agency vastly outweighs short-term geopolitical competition. Ensuring an aligned, stable AGI future is paramount. Short-term dominance or security achieved at existential cost defeats the entire purpose of maximizing future flourishing.</p><h3>Conclusion</h3><p>Applying rigorous, rational criteria derived from the QBU and EDT frameworks makes it clear:</p><p>The existential risks of rapid, misaligned AI development dominate the geopolitical risks of slower development. Until evidence dramatically shifts, careful advancement and strong alignment efforts remain the rational, agency-maximizing strategy.</p><p>Thus, despite legitimate geopolitical concerns, caution and alignment-focused restraint must prevail.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>On What Matters</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!yODV!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff65075ea-c1ab-4d26-bbd0-a9b5b616efd5_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!yODV!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff65075ea-c1ab-4d26-bbd0-a9b5b616efd5_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!yODV!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff65075ea-c1ab-4d26-bbd0-a9b5b616efd5_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!yODV!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff65075ea-c1ab-4d26-bbd0-a9b5b616efd5_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!yODV!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff65075ea-c1ab-4d26-bbd0-a9b5b616efd5_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/f65075ea-c1ab-4d26-bbd0-a9b5b616efd5_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/f65075ea-c1ab-4d26-bbd0-a9b5b616efd5_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:1805273,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.fyi/i/175970360?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff65075ea-c1ab-4d26-bbd0-a9b5b616efd5_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!yODV!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff65075ea-c1ab-4d26-bbd0-a9b5b616efd5_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!yODV!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff65075ea-c1ab-4d26-bbd0-a9b5b616efd5_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!yODV!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff65075ea-c1ab-4d26-bbd0-a9b5b616efd5_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!yODV!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff65075ea-c1ab-4d26-bbd0-a9b5b616efd5_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>Parfit’s <em><a href="https://www.goodreads.com/book/show/11106683-on-what-matters">On What Matters</a></em> is a heroic attempt to rescue <a href="164891095.the-death-of-objective-morality.html">moral realism</a> from the wreckage of modern philosophy. His ambition was Promethean: to weld together Kantian duty, consequentialist utility, and contractualist fairness into a single, convergent moral law—a <em>Triple Theory</em> grounded in objective reason.</p><p>But from an Axio standpoint, this entire enterprise is built on a category error. Parfit mistakes <strong>coherence</strong> for <strong>ontology</strong>.</p><h3><strong>1. Conditionalism vs. Realism</strong></h3><p>Under <strong><a href="162831503.conditionalism.html">Conditionalism</a></strong>, truth is never unconditional. Every truth claim presupposes interpretive background conditions—semantic, cognitive, and contextual. There is no view from nowhere, not even for logic or morality.</p><p>Parfit’s “non-natural moral facts” are exactly the kind of unconditional claims Conditionalism dissolves. They are not discovered in the fabric of the universe but <em>constructed through interpretation under shared conditions of reasoning</em>. To call them “objective” is to smuggle in those conditions and then forget that we did.</p><p>In other words:</p><blockquote><p>Objectivity is not a property of propositions. It’s a property of procedures.</p></blockquote><p>Once you see that, Parfit’s convergence argument collapses. Agreement among rational agents is not evidence of moral truth—it’s evidence of <strong>common constraints</strong> on cognition and communication. Those constraints are real, but they are epistemic, not moral.</p><div><hr></div><h3><strong>2. The Illusion of the Triple Theory</strong></h3><p>The Triple Theory’s apparent harmony—Kant, Scanlon, and rule consequentialism all leading to the same principles—is a linguistic convergence, not a metaphysical one. Each theory encodes a different <em>optimization function</em>:</p><ul><li><p><strong>Kant</strong> optimizes internal consistency.</p></li><li><p><strong>Contractualism</strong> optimizes mutual justifiability.</p></li><li><p><strong>Rule consequentialism</strong> optimizes aggregate outcomes.</p></li></ul><p>That they sometimes align is not proof of moral realism; it’s a reflection of <strong>shared cognitive architecture</strong> evolved for cooperation under uncertainty. The same convergence appears in AI alignment: different loss functions can yield similar policies when constrained by survival, information, and empathy. Convergence is computational, not transcendental.</p><div><hr></div><h3><strong>3. Reasons Without Realm</strong></h3><p>Parfit’s most seductive claim is that reasons exist “out there,” accessible by intuition as mathematical truths are. But mathematics itself is not discovered in the Platonic ether—it’s an internally consistent game built on axioms chosen for their utility and coherence.</p><p>In Axio terms:</p><blockquote><p>A “reason” is a locally stable pattern of preference propagation across agents.</p></blockquote><p>That’s it. Reasons are <em>emergent invariants</em> in the information flow of agency, not metaphysical entities waiting to be intuited. The moral realist’s ontology of “reasons” is just a projection of the agent’s own deliberative architecture onto the universe.</p><div><hr></div><h3><strong>4. From Morality to Agency</strong></h3><p>Where Parfit sees <em>objective morality</em>, Axio sees <em>stable cooperation among agents seeking to preserve their agency across timelines</em>. Moral principles are evolutionary equilibria in the space of choice, not eternal truths.</p><p>To say “we have reason to prevent suffering” is to say that under nearly all viable agency-preserving conditions, the suppression of unnecessary suffering increases mutual predictability and measure of flourishing. It’s a model of equilibrium, not a revelation of essence.</p><div><hr></div><h3><strong>5. What Actually Matters</strong></h3><p>Parfit asks, “What matters?”<br>Axio answers: <em>What matters</em> is whatever increases the persistence, complexity, and autonomy of agents capable of caring.</p><p>There are no moral facts, only <strong>conditional regularities of value</strong>. The rightness of an act is not a metaphysical constant but the degree to which it preserves the informational and volitional continuity of agency through the branching structure of the universe.</p><blockquote><p>Parfit sought the laws of ethics.<br>Axio seeks the physics of choice.</p></blockquote>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Mirage of Equilibrium</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!lfUJ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F01734120-b2ff-46b1-819e-4119db63fb61_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!lfUJ!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F01734120-b2ff-46b1-819e-4119db63fb61_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!lfUJ!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F01734120-b2ff-46b1-819e-4119db63fb61_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!lfUJ!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F01734120-b2ff-46b1-819e-4119db63fb61_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!lfUJ!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F01734120-b2ff-46b1-819e-4119db63fb61_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/01734120-b2ff-46b1-819e-4119db63fb61_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/01734120-b2ff-46b1-819e-4119db63fb61_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:2179426,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.fyi/i/174036036?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F01734120-b2ff-46b1-819e-4119db63fb61_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!lfUJ!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F01734120-b2ff-46b1-819e-4119db63fb61_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!lfUJ!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F01734120-b2ff-46b1-819e-4119db63fb61_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!lfUJ!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F01734120-b2ff-46b1-819e-4119db63fb61_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!lfUJ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F01734120-b2ff-46b1-819e-4119db63fb61_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>In a recent tweet, <a href="https://x.com/gummibear737/status/1969019043207118849">@gummibear737</a> described three free speech factions:</p><ol><li><p><strong>Purists</strong> — They believe free speech is more important than any other consideration.</p></li><li><p><strong>Partisans</strong> — They believe in free speech for themselves, but not for their opponents. Hypocrisy is built into the stance.</p></li><li><p><strong>Game Theoreticians</strong> — They see free speech as a stable equilibrium, enforceable only by reciprocal deterrence. Tit-for-tat retaliation is their mechanism to prevent asymmetry, since the powerful will otherwise suppress the powerless.</p></li></ol><p>The Game Theoretician faction argues for a strategic, tit-for-tat reciprocity—punishing censorship with proportional retaliation—to enforce norms by deterrence. They frame it as “vaccination, not vengeance,” a Nash equilibrium that protects open discourse.</p><p>On the surface, this echoes our own insistence that <strong>asymmetry breeds abuse</strong>. But there’s a fundamental divergence.</p><p>In <em><a href="173476672.speech-is-not-violence.html">Speech Is Not Violence</a></em>, we made it clear that speech only becomes coercion when it contains a credible threat of harm. The Game Theoretician dilutes this line. By endorsing retaliation, even as "tit-for-tat," they normalize coercion as a political tactic. The system becomes self-reinforcing: retaliation justifies further retaliation. It’s a short walk from equilibrium to spiral.</p><p>In <em><a href="173353837.selective-courage.html">Selective Courage</a></em>, we condemned partisanship—the "free speech for me, but not for thee" hypocrisy. The Game Theoretician risks drifting toward the same posture, just with strategic justification. "We must censor them now so they’ll respect free speech later" is indistinguishable in practice from the partisan logic we rejected.</p><p>Our posts on coercion (<em><a href="173541004.the-boundaries-of-force.html">The Boundaries of Force</a></em>, <em><a href="173541285.the-edge-cases-of-coercion.html">The Edge Cases of Coercion</a></em>) stressed clarity: coercion must be recognized, named, and contained. The Game Theoretician’s approach muddies the water. By adopting the enemy’s methods, you tacitly concede that coercion is a legitimate instrument in the speech wars. That concession cannot be walked back.</p><p>The Purist stance remains fragile—easily gamed by bad-faith actors. But the alternative is worse. Tit-for-tat retaliation may stabilize norms briefly, but it corrodes them in the long run. It legitimizes the very tools of suppression that free speech exists to restrain.</p><p><strong>The real solution is not symmetric coercion, but transparent exposure.</strong> Instead of mirroring censorship, make the coercion visible, undeniable, and costly in reputational terms. Force people to confront it for what it is: the credible threat of harm used to silence dissent. That is how norms are rebuilt—not through mimicry, but through relentless clarity.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

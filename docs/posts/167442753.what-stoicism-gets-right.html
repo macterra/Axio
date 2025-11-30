@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What Stoicism Gets Right</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!i_yt!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F528f0c2a-a025-4bc6-8e82-141cfd18240e_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!i_yt!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F528f0c2a-a025-4bc6-8e82-141cfd18240e_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!i_yt!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F528f0c2a-a025-4bc6-8e82-141cfd18240e_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!i_yt!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F528f0c2a-a025-4bc6-8e82-141cfd18240e_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!i_yt!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F528f0c2a-a025-4bc6-8e82-141cfd18240e_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/528f0c2a-a025-4bc6-8e82-141cfd18240e_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/528f0c2a-a025-4bc6-8e82-141cfd18240e_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:2544983,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.substack.com/i/167442753?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F528f0c2a-a025-4bc6-8e82-141cfd18240e_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!i_yt!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F528f0c2a-a025-4bc6-8e82-141cfd18240e_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!i_yt!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F528f0c2a-a025-4bc6-8e82-141cfd18240e_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!i_yt!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F528f0c2a-a025-4bc6-8e82-141cfd18240e_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!i_yt!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F528f0c2a-a025-4bc6-8e82-141cfd18240e_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>Despite its <a href="167365336.stoicism-in-context.html">limitations and occasional misinterpretations</a>, Stoicism offers powerful insights that remain practically valuable and philosophically compelling today. Here are the most important Stoic insights we can productively integrate into contemporary life:</p><p><strong>1. Clarifying the Boundary of Control</strong></p><p>Stoicism highlights a crucial psychological distinction: clearly separating what we can directly control—our attitudes, judgments, and choices—from external outcomes we cannot reliably influence. This distinction frees us from unnecessary stress and redirects our energy toward actionable personal growth and responsibility.</p><p><strong>2. Cognitive Reframing and Emotional Mastery</strong></p><p>Stoicism emphasizes the role of internal judgments in emotional experience, teaching that negative emotions often arise from how we interpret events, not the events themselves. By consciously reframing these interpretations, we gain significant power over our emotional responses, allowing greater peace and resilience.</p><p><strong>3. Intentional, Reflective Action</strong></p><p>A core Stoic practice involves acting intentionally rather than reactively, choosing thoughtful responses rather than impulsive reactions. This mindful intentionality improves ethical decision-making, personal accountability, and practical effectiveness in daily life.</p><p><strong>4. Pro-Social Virtue and Expanding Concern</strong></p><p>Contrary to stereotypes of Stoicism as detached and indifferent, true Stoic philosophy actively encourages expanding one’s moral circle and developing empathy. Stoics practice gradually broadening their concern for others, fostering compassion and pro-social behaviors that enrich personal relationships and communities.</p><p><strong>5. Moment-to-Moment Philosophical Discipline</strong></p><p>Finally, Stoicism insists that philosophical practice is not confined to rare reflective moments but should permeate daily life. It promotes rigorous mindfulness, continuously applying philosophical principles to everyday decisions and actions, reinforcing consistency between personal values and practical conduct.</p><p>By reclaiming these Stoic insights—control clarification, emotional reframing, intentional action, expanding compassion, and disciplined mindfulness—we equip ourselves with robust psychological tools and ethical guidelines. These powerful Stoic concepts remain profoundly relevant for navigating modern life's complexities and enhancing human flourishing.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

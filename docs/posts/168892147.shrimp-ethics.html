@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shrimp Ethics</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!NZ9G!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F01ec7fb2-25f2-4767-bb46-38c41c02fad3_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!NZ9G!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F01ec7fb2-25f2-4767-bb46-38c41c02fad3_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!NZ9G!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F01ec7fb2-25f2-4767-bb46-38c41c02fad3_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!NZ9G!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F01ec7fb2-25f2-4767-bb46-38c41c02fad3_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!NZ9G!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F01ec7fb2-25f2-4767-bb46-38c41c02fad3_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/01ec7fb2-25f2-4767-bb46-38c41c02fad3_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/01ec7fb2-25f2-4767-bb46-38c41c02fad3_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:3144110,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.substack.com/i/168892147?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F01ec7fb2-25f2-4767-bb46-38c41c02fad3_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!NZ9G!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F01ec7fb2-25f2-4767-bb46-38c41c02fad3_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!NZ9G!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F01ec7fb2-25f2-4767-bb46-38c41c02fad3_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!NZ9G!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F01ec7fb2-25f2-4767-bb46-38c41c02fad3_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!NZ9G!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F01ec7fb2-25f2-4767-bb46-38c41c02fad3_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>In recent <a href="https://morallawwithin.substack.com/p/yes-you-should-save-10100-shrimp">philosophical provocations</a>, it's claimed that we ought to save an astronomical number (e.g., 10¹⁰⁰) of shrimp over a single human life, labeling disagreement as irrational or evil. This argument presents itself as a rigorous exercise in moral arithmetic, but beneath its surface lies a constellation of subtle errors, confusions, and hidden assumptions. Let's dissect it methodically:</p><h3>1. Aggregation Fallacy</h3><p>The primary mistake lies in assuming ethical values aggregate linearly and indefinitely. The argument relies on multiplying trivial or minimal harm by astronomically large numbers to surpass the moral significance of a single human life. But ethical significance is not strictly additive—there exist thresholds beyond which piling negligible moral values never yields meaningful ethical weight.</p><h3>2. False Equivalence: Probabilistic vs. Intentional Harm</h3><p>The argument conflates the tiny probabilistic risks associated with driving (e.g., risking harm to get skittles) with intentional infliction of harm or torture. Ethically, intentional acts and probabilistic risks are fundamentally different. Intentional harm violates agency directly and categorically, whereas probabilistic harm, especially extremely diluted risk in normal life activities, involves no direct intention and thus no equivalent moral culpability.</p><h3>3. Sentience ≠ Ethical Agency</h3><p>The original scenario attributes "unbearable torture" to shrimp, presuming equivalence between sentience and ethical significance. Mere capacity to feel pain (sentience) does not automatically equate to significant ethical standing. Ethical significance derives largely from agency—meaningful capacity to choose and affect future outcomes—not solely from sensory experience.</p><h3>4. Qualitative Ethical Thresholds</h3><p>A robust ethical system distinguishes entities based on their complexity and agency. Humans possess considerable ethical weight precisely because they have extensive causal agency, complexity, and the capacity for future-directed intentional actions. Shrimp, even in vast numbers, lack meaningful agency and complexity, categorically limiting their ethical relevance to a negligible level.</p><h3>5. Misrepresentation of Infinite Human Value</h3><p>Critics of infinite valuation argue that actions (like driving for candy) reveal finite valuation of human life. However, ethically sophisticated frameworks need not claim infinite human value. Instead, they attribute finite but qualitatively superior ethical standing based on agency and complexity. Recognizing finite but significant ethical differences between shrimp and humans does not constitute irrationality or inconsistency.</p><h3>6. Category Error: Long-run Aggregation</h3><p>The argument suggests cumulative probabilistic actions (driving repeatedly over eons) equate morally to intentional harm. However, each individual decision must be evaluated contextually, ethically, and intentionally. Accumulating trivial risks does not inherently equate to a singular intentional harm event. Ethical culpability is bounded by intentionality and meaningful agency violation, not by hypothetical aggregations stretched to infinity.</p><h3>Conclusion: Ethical Sophistry Exposed</h3><p>The shrimp-versus-human thought experiment doesn't expose hidden moral irrationality; it reveals the sophistry of naive aggregation ethics. A consistent ethical framework recognizes categorical distinctions based on agency, intention, and complexity. Ethically meaningful trade-offs cannot simply be calculated by multiplying tiny numbers by astronomical scales.</p><p>Thus, the "Shrimpossible" argument isn't a compelling ethical revelation. It's merely an elegant confusion—one worth illuminating clearly, lest we mistake clever arithmetic for moral clarity.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

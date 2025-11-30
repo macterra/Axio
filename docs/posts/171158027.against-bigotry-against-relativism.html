@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Against Bigotry, Against Relativism</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!te3s!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F55a334e0-2270-4eaf-9cc7-40078b8325ba_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!te3s!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F55a334e0-2270-4eaf-9cc7-40078b8325ba_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!te3s!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F55a334e0-2270-4eaf-9cc7-40078b8325ba_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!te3s!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F55a334e0-2270-4eaf-9cc7-40078b8325ba_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!te3s!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F55a334e0-2270-4eaf-9cc7-40078b8325ba_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/55a334e0-2270-4eaf-9cc7-40078b8325ba_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/55a334e0-2270-4eaf-9cc7-40078b8325ba_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:911215,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.fyi/i/171158027?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F55a334e0-2270-4eaf-9cc7-40078b8325ba_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!te3s!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F55a334e0-2270-4eaf-9cc7-40078b8325ba_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!te3s!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F55a334e0-2270-4eaf-9cc7-40078b8325ba_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!te3s!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F55a334e0-2270-4eaf-9cc7-40078b8325ba_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!te3s!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F55a334e0-2270-4eaf-9cc7-40078b8325ba_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>There is a tension worth resolving. We generally agree that bigotry is wrong. We also agree that cultural relativism is wrong. Yet at first glance, these two commitments appear to clash.</p><p><strong>Bigotry</strong> means hostility or prejudice against individuals based on some group identity—race, sex, religion, nationality, or the like. It erases individuality by reducing a person to a category. To be against bigotry is to affirm individual agency.</p><p><strong>Cultural relativism</strong> is the doctrine that moral norms are entirely determined by culture, and that no culture’s practices can be judged from the outside. Taken strictly, it forbids calling foot-binding, caste discrimination, or forced marriage wrong, so long as they are culturally sanctioned. To be against cultural relativism is to affirm that practices may be assessed by standards that transcend culture.</p><p>The conflict appears here: if we oppose bigotry, how can we criticize a culture’s practices without appearing prejudiced against that culture? Isn’t condemning a practice itself a form of bigotry?</p><p>The resolution lies in a simple but crucial distinction: <strong>targeting actions and norms is not the same as targeting people.</strong></p><ul><li><p>Bigotry: “Muslims are evil.” (a sweeping judgment of people).</p></li><li><p>Non-relativism: “Blasphemy laws are evil.” (a judgment of a practice).</p></li></ul><p>The first denies agency and condemns individuals for their membership in a group. The second respects individuals enough to apply the same universal standards to all practices, regardless of cultural origin. To judge an action is not to condemn the humanity of those who perform it.</p><p>Therefore, the principled stance is this:</p><ol><li><p>All individuals deserve equal respect and protection from prejudice. Their humanity is not negotiable.</p></li><li><p>Not all cultural practices deserve equal respect. They may be measured against universal standards of harm, consent, and flourishing.</p></li></ol><p>This is the way through. It preserves moral clarity without falling into either blind tolerance or blind hatred. We oppose bigotry because it denies the person. We oppose cultural relativism because it denies the universal.</p><p>Cultures do not bleed, suffer, or hope—people do. To protect them, we must be relentless in judging practices, never persons.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Myth of the Collective Will</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!Iu77!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F516f97df-4f01-42f1-8c32-83d2b6a08044_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!Iu77!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F516f97df-4f01-42f1-8c32-83d2b6a08044_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!Iu77!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F516f97df-4f01-42f1-8c32-83d2b6a08044_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!Iu77!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F516f97df-4f01-42f1-8c32-83d2b6a08044_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!Iu77!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F516f97df-4f01-42f1-8c32-83d2b6a08044_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/516f97df-4f01-42f1-8c32-83d2b6a08044_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/516f97df-4f01-42f1-8c32-83d2b6a08044_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:null,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:null,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:null,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!Iu77!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F516f97df-4f01-42f1-8c32-83d2b6a08044_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!Iu77!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F516f97df-4f01-42f1-8c32-83d2b6a08044_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!Iu77!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F516f97df-4f01-42f1-8c32-83d2b6a08044_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!Iu77!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F516f97df-4f01-42f1-8c32-83d2b6a08044_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p><a href="https://www.preposterousuniverse.com/podcast/2025/06/02/ama-june-2025/">Sean Carroll recently defined government</a> as "the organized expression of our collective will." On its surface, this description seems intuitively plausible: we imagine government representing shared values and priorities of society.</p><p>But is there truly a collective will?</p><p>Consider what we mean by "collective will." At first glance, it might be defined as the intersection of preferences held universally within a group. For small, intimate groups—families, close-knit communities—it's plausible to identify a substantial overlap in values. Members share experiences, traditions, and cultural narratives.</p><p>Yet as we scale up—even modestly—the set of universally shared preferences shrinks rapidly. At group sizes approaching a few thousand people, meaningful consensus evaporates entirely. Differences in upbringing, priorities, beliefs, and personal experiences magnify even small divergences in values.</p><p>The idea of a "collective will" operating effectively at the scale of a city or nation thus becomes problematic. Abstract concepts—like "fairness," "freedom," or "prosperity"—may garner superficial agreement, but practical interpretations fracture immediately upon specific application. Even seemingly universal principles fail consensus tests once concrete policy decisions are required.</p><p>This presents a fundamental challenge to Carroll's optimistic vision. If a collective will vanishes at scales necessary for practical governance, governments claiming to represent such a will inevitably rely upon coercion and the imposition of majority or elite preferences.</p><p>In reality, "collective will" functions more as rhetorical cover for authority rather than a genuine reflection of unanimous or even widespread agreement. Recognizing this reveals a deeper truth: governance inherently involves coercion and compromise rather than genuine consensus. Claims of legitimacy relying on mythical collective will obscure the fundamentally coercive nature of governmental power, demanding critical skepticism rather than acceptance.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

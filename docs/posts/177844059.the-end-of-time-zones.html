@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Axio - Post</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -213,5 +231,29 @@
     <article>
 <p><br>Time zones are a nineteenth-century compression algorithm for the problem of local noon. They were invented for trains and telegraphs, not for networks. The Earth’s rotation used to matter because we lived and traded locally. Noon was when the sun was highest; midnight was when candles ran low. But now, all meaningful coordination happens in digital space, and digital space runs on UTC. The rest is LARP.</p><p><strong>The Case for Abolition</strong><br>Every second system in existence already uses UTC internally—databases, satellites, trading engines, blockchains. Humans are the only subsystem still pretending the sun defines when something happens. Every time zone conversion introduces entropy: errors, missed meetings, bugs, daylight-saving confusion. UTC is not only simpler, it’s inevitable.</p><p>We could adopt a universal time tomorrow. No physics need change. Clocks would still tick once per second; only our conventions would shift. “09:00 UTC” would mean the start of your workday, whether the sun was rising or setting outside. Spain already eats dinner at what other countries call midnight. Cultural adaptation precedes reform.</p><p><strong>The Objections Are Illusions</strong><br>“But what about daylight?” Daylight doesn’t need to coincide with arbitrary numbers. We already adapt our schedules to light, heat, and custom. “Morning” and “evening” are local phenomena, not global standards.</p><p>“But that’s confusing!” Only temporarily. Metric time was confusing too, until it wasn’t. Once every nation, device, and institution agreed, confusion vanished.</p><p>“But I like my time zone!” Nostalgia is not an argument. Time zones are to time what cubits were to length—provincial units sustained by inertia.</p><p><strong>The Path Forward</strong></p><ol><li><p>Make UTC the canonical time in all digital systems and public communications.</p></li><li><p>Display local daylight equivalents only as annotations.</p></li><li><p>Stop pretending that clocks should mirror the sky.</p></li></ol><p>When everything runs on a single timeline, coordination becomes frictionless. We eliminate a whole class of misalignment from civilization’s cognitive stack. The human species will finally share one clock.</p><p>The Sun will still rise—but it will no longer dictate the time.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

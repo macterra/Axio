@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Price Illusion</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!lB2v!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbe2531fe-0312-47ca-be10-286d84ebf256_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!lB2v!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbe2531fe-0312-47ca-be10-286d84ebf256_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!lB2v!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbe2531fe-0312-47ca-be10-286d84ebf256_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!lB2v!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbe2531fe-0312-47ca-be10-286d84ebf256_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!lB2v!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbe2531fe-0312-47ca-be10-286d84ebf256_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/be2531fe-0312-47ca-be10-286d84ebf256_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/be2531fe-0312-47ca-be10-286d84ebf256_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:null,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:null,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:null,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!lB2v!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbe2531fe-0312-47ca-be10-286d84ebf256_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!lB2v!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbe2531fe-0312-47ca-be10-286d84ebf256_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!lB2v!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbe2531fe-0312-47ca-be10-286d84ebf256_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!lB2v!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbe2531fe-0312-47ca-be10-286d84ebf256_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>It's a common misconception that market prices reflect objective or intrinsic value. In reality, a market price is nothing more than a convergence point of subjective preferences. This post explores why prices are inherently subjective and what this implies for our understanding of economic value.</p><p>At its core, a market price arises from voluntary exchanges between buyers and sellers. Sellers have a minimum price at which they are willing to part with a good or service, while buyers have a maximum price they are willing to pay. The agreed-upon price is simply the overlap between these two valuations. Importantly, this price tells us very little about how deeply each party values the good—only that one side values it higher than the price and the other side lower.</p><p>To see clearly why prices are subjective, consider a simple example: A rare painting sells at auction for $10 million. Does this mean the painting is objectively worth $10 million? Not at all. To the seller, the painting was worth less than $10 million, perhaps significantly less. To the buyer, it was worth more, perhaps vastly more. The transaction reveals only that the buyer's valuation exceeded the price, and the seller's valuation was beneath it. The magnitude of either party's valuation remains entirely hidden from view.</p><p>Misinterpreting prices as objective measures of worth leads to several economic and philosophical errors. For instance, it encourages the faulty belief that markets always provide accurate or universally accepted measures of value. Instead, markets only efficiently facilitate exchanges based on individual, subjective assessments.</p><p>Recognizing prices as subjective intersections helps us better understand market dynamics. It clarifies why prices fluctuate based on context, perceptions, and changing individual preferences rather than intrinsic qualities. It also underscores why centrally planned economies struggle: objective pricing is impossible without subjective individual valuations guiding decisions.</p><p>Market prices do not—and cannot—reflect objective value. They are merely points of agreement between subjective preferences. Embracing this fact enriches our economic understanding and keeps us wary of simplistic assumptions about value and pricing in a complex, subjective world.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

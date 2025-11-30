@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Near Future Optimism</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!nf6r!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2be4b573-078a-456e-a5ed-23de18e93b8a_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!nf6r!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2be4b573-078a-456e-a5ed-23de18e93b8a_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!nf6r!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2be4b573-078a-456e-a5ed-23de18e93b8a_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!nf6r!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2be4b573-078a-456e-a5ed-23de18e93b8a_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!nf6r!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2be4b573-078a-456e-a5ed-23de18e93b8a_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/2be4b573-078a-456e-a5ed-23de18e93b8a_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/2be4b573-078a-456e-a5ed-23de18e93b8a_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:3180126,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.substack.com/i/165786637?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2be4b573-078a-456e-a5ed-23de18e93b8a_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!nf6r!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2be4b573-078a-456e-a5ed-23de18e93b8a_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!nf6r!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2be4b573-078a-456e-a5ed-23de18e93b8a_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!nf6r!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2be4b573-078a-456e-a5ed-23de18e93b8a_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!nf6r!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2be4b573-078a-456e-a5ed-23de18e93b8a_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>Previously, we proposed <a href="165785917.life-expectancy.html">global life expectancy as a reliable proxy</a> for assessing the health and progress of civilization. Now, we must address existential risks (XRisks)—nuclear warfare, bioengineered pandemics, severe climate disruptions, or unaligned artificial intelligences. Here, <a href="163356868.effective-decision-theory.html">Effective Decision Theory (EDT)</a> guides us to focus pragmatically on scenarios with realistically meaningful probabilities, disregarding exceedingly rare catastrophic events.</p><p>Existential threats often provoke exaggerated fears due to their potentially catastrophic consequences. EDT encourages us to concentrate instead on credible, actionable risks. By this pragmatic standard, even considering tangible XRisks, humanity's outlook remains positive.</p><p>Historically, civilization has repeatedly overcome significant challenges—wars, pandemics, economic depressions, and authoritarian regimes—emerging progressively stronger and more resilient. Scientific innovation, technological advances, international cooperation, and effective governance consistently offset existential threats. Thus, conditioned rationally on realistic probabilities, we assign roughly 75% credence that global life expectancy at birth will increase over the next 25 years.</p><p>This position is not naive optimism but rather a balanced assessment reflecting historical evidence and rational analysis. Despite isolated vulnerabilities, civilization has repeatedly proven its capacity for adaptation and growth. Thus, prudent reasoning supports cautious optimism.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

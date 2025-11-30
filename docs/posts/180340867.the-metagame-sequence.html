@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Metagame Sequence</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!TJDw!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F05e8ca4b-fe00-4df5-aace-afdb45d97613_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!TJDw!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F05e8ca4b-fe00-4df5-aace-afdb45d97613_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!TJDw!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F05e8ca4b-fe00-4df5-aace-afdb45d97613_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!TJDw!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F05e8ca4b-fe00-4df5-aace-afdb45d97613_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!TJDw!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F05e8ca4b-fe00-4df5-aace-afdb45d97613_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/05e8ca4b-fe00-4df5-aace-afdb45d97613_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/05e8ca4b-fe00-4df5-aace-afdb45d97613_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:2181962,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.fyi/i/180340867?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F05e8ca4b-fe00-4df5-aace-afdb45d97613_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!TJDw!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F05e8ca4b-fe00-4df5-aace-afdb45d97613_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!TJDw!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F05e8ca4b-fe00-4df5-aace-afdb45d97613_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!TJDw!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F05e8ca4b-fe00-4df5-aace-afdb45d97613_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!TJDw!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F05e8ca4b-fe00-4df5-aace-afdb45d97613_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>The Metagame Sequence reveals the structural hierarchy beneath all games, systems, incentives, and choices. It begins with the simple observation that every action takes place within a larger game, and ends at the quantum substrate where patterns compete for amplitude-weighted continuity across branching reality. This sequence is the backbone of Axio’s framework for understanding strategy, agency, and coherence at every scale.</p><div><hr></div><h2>1. <strong><a href="179967878.games-and-metagames.html">Games and Metagames</a></strong></h2><p><strong>Every game sits inside a larger game.</strong><br>Actions, incentives, and strategies only make sense when you understand the wider game that defines them. Most confusion in life comes from misidentifying the game you are actually in.</p><div><hr></div><h2>2. <strong><a href="180026930.the-ultimate-metagame.html">The Ultimate Metagame</a></strong></h2><p><strong>The ladder of games ends at persistence.</strong><br>Nested games cannot regress infinitely; they terminate at the metagame of survival. Persistence—the continued existence of a pattern across time—is the foundational criterion that every other game presupposes.</p><div><hr></div><h2>3. <strong><a href="180058480.the-metagame-of-incentives.html">The Metagame of Incentives</a></strong></h2><p><strong>Incentives rewrite the effective rules of lower games.</strong><br>Incentives act as downward causation, shaping behavior, distorting systems, and determining which strategies actually win. Incentives—not rules—decide outcomes.</p><div><hr></div><h2>4. <strong><a href="180188906.the-pathologies-of-misaligned-incentives.html">The Pathologies of Misaligned Incentives</a></strong></h2><p><strong>Systems fail when incentive gradients diverge from their stated purpose.</strong><br>Misaligned incentives fracture coherence and drive institutions into drift, lock-in, and runaway dysfunction. These failure modes appear when local rewards undermine global persistence.</p><div><hr></div><h2>5. <strong><a href="180199129.the-metagame-of-patterns.html">The Metagame of Patterns</a></strong></h2><p><strong>Patterns, not people, are the real units of selection.</strong><br>Stable configurations of information outlive individuals, propagate across hosts, and compete for survival. Incentives filter patterns, not intentions.</p><div><hr></div><h2>6. <strong><a href="180339872.the-quantum-metagame.html">The Quantum Metagame</a></strong></h2><p><strong>Persistence becomes amplitude-weighted continuity across branches.</strong><br>Classical persistence is a surface phenomenon. Under Everettian quantum mechanics, survival is a competition among patterns for amplitude-weighted measure across decohering branches. Decoherence creates the terrain; patterns compete upon it.</p><div><hr></div><h2>The Structure Underneath</h2><p>Taken together, the sequence reveals a complete hierarchy:</p><ul><li><p><strong>Quantum Metagame</strong> — deepest structure</p></li><li><p><strong>Patterns</strong> — units of persistence</p></li><li><p><strong>Incentives</strong> — transmission mechanism</p></li><li><p><strong>Games</strong> — strategic surface</p></li><li><p><strong>Agency</strong> — constructor of pattern-continuity</p></li><li><p><strong>Coherence</strong> — the currency of survival</p></li></ul><p>The Metagame Sequence provides the conceptual scaffold for Axio’s broader project: understanding how systems evolve, how agency emerges, and how coherent patterns shape the future across scales and across branches of reality.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

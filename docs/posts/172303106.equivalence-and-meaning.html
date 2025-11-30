@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Equivalence and Meaning</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!AKcJ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe90b750c-684e-46c2-9eaa-5b04224fafc4_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!AKcJ!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe90b750c-684e-46c2-9eaa-5b04224fafc4_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!AKcJ!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe90b750c-684e-46c2-9eaa-5b04224fafc4_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!AKcJ!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe90b750c-684e-46c2-9eaa-5b04224fafc4_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!AKcJ!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe90b750c-684e-46c2-9eaa-5b04224fafc4_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/e90b750c-684e-46c2-9eaa-5b04224fafc4_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/e90b750c-684e-46c2-9eaa-5b04224fafc4_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:2880299,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.fyi/i/172303106?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe90b750c-684e-46c2-9eaa-5b04224fafc4_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!AKcJ!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe90b750c-684e-46c2-9eaa-5b04224fafc4_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!AKcJ!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe90b750c-684e-46c2-9eaa-5b04224fafc4_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!AKcJ!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe90b750c-684e-46c2-9eaa-5b04224fafc4_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!AKcJ!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe90b750c-684e-46c2-9eaa-5b04224fafc4_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>In the previous post I introduced the <strong><a href="172302569.semantic-filters.html">Semantic Filter</a></strong> as a refinement of exclusion. Exclusion filters prune Chaos by ruling out incoherent strings; semantic filters then assign lawful meaning to the survivors, interpreting them as trajectories. Here I want to formalize this idea: how semantic filters act as <strong>quotient maps</strong> that collapse strings into equivalence classes, each corresponding to a coherent world.</p><div><hr></div><h2>1. From Strings to Trajectories</h2><p>Let Chaos be the set of all infinite binary strings. An exclusion filter picks out a subset F ⊆ Chaos: the strings that pass basic consistency constraints. A semantic filter is then a mapping:</p><p>S : F → T</p><p>where T is the set of lawful trajectories (quantum state evolutions, automaton runs, dynamical histories). Each string x ∈ F is interpreted as a trajectory τ = S(x).</p><div><hr></div><h2>2. Equivalence Classes of Strings</h2><p>Different strings can map to the same trajectory:</p><p>S(x₁) = S(x₂) = τ</p><p>In this case, x₁ and x₂ belong to the same equivalence class under S. The preimage of a trajectory τ is the set of all strings that generate it:</p><p>S⁻¹(τ) = { x ∈ F : S(x) = τ }.</p><p>Thus, a semantic filter partitions the set F into equivalence classes, each class corresponding to one lawful world.</p><div><hr></div><h2>3. Examples</h2><ul><li><p><strong>Redundancy in Encoding</strong>: Suppose the semantic filter ignores every second bit. Then strings 0101… and 0001… both map to the same trajectory. They belong to the same equivalence class.</p></li><li><p><strong>Quantum Histories</strong>: Imagine a qubit measured repeatedly in the Z basis, but where some measurement outcomes are decohered away. Distinct bitstrings differing only in decohered positions map to the same physical trajectory.</p></li></ul><div><hr></div><h2>4. Invertibility and Loss</h2><ul><li><p>If S is one-to-one, every coherent string corresponds to a unique trajectory. The string <em>is</em> the trajectory.</p></li><li><p>If S is many-to-one, strings collapse into equivalence classes. Some detail is lost; only the quotient structure remains.</p></li><li><p>If S were one-to-many (rare), then a single string could correspond to multiple possible worlds; but in most formalizations we prefer determinism at the semantic level.</p></li></ul><div><hr></div><h2>5. Why This Matters</h2><ul><li><p><strong>Exclusion filters</strong> define what survives.</p></li><li><p><strong>Semantic filters</strong> define how survivors are grouped into worlds.</p></li><li><p>The equivalence class view makes clear that meaning emerges not from individual bitstrings, but from the <strong>partition structure</strong> induced by semantics.</p></li></ul><p>In other words: coherence is not just survival; it is also <strong>identification</strong> — treating different raw sequences as the same world.</p><div><hr></div><h2>6. Place in the Arc</h2><ol><li><p>Chaos Reservoir — all random strings.</p></li><li><p>Exclusion Filters — prune incoherence.</p></li><li><p>Semantic Filters — partition survivors into equivalence classes, each a lawful world.</p></li><li><p>Constructors — stable patterns within worlds.</p></li><li><p>Life and Consciousness — self-maintaining and self-representing constructors.</p></li></ol><div><hr></div><h2>Conclusion</h2><p>Semantic filters are quotient maps: they collapse raw randomness into equivalence classes of coherent strings, each class corresponding to a world. This formalization makes precise the idea that semantics is not just interpretation but <strong>identification</strong> — the recognition that different chaotic traces can mean the same coherent trajectory.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interpreting Dreams</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!Qkqr!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faf6bf1a1-66fd-4da3-9e8c-64a737a8cc7b_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!Qkqr!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faf6bf1a1-66fd-4da3-9e8c-64a737a8cc7b_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!Qkqr!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faf6bf1a1-66fd-4da3-9e8c-64a737a8cc7b_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!Qkqr!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faf6bf1a1-66fd-4da3-9e8c-64a737a8cc7b_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!Qkqr!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faf6bf1a1-66fd-4da3-9e8c-64a737a8cc7b_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/af6bf1a1-66fd-4da3-9e8c-64a737a8cc7b_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/af6bf1a1-66fd-4da3-9e8c-64a737a8cc7b_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:2566341,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.substack.com/i/170103594?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faf6bf1a1-66fd-4da3-9e8c-64a737a8cc7b_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!Qkqr!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faf6bf1a1-66fd-4da3-9e8c-64a737a8cc7b_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!Qkqr!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faf6bf1a1-66fd-4da3-9e8c-64a737a8cc7b_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!Qkqr!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faf6bf1a1-66fd-4da3-9e8c-64a737a8cc7b_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!Qkqr!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faf6bf1a1-66fd-4da3-9e8c-64a737a8cc7b_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>There's a common misunderstanding in popular discussions about dreams, exemplified by a <a href="https://x.com/drgurner/status/1951716832869798171">recent viral tweet by Dr. Julie Gurner</a>:</p><blockquote><p>"Hate to break your heart, but there is no real meaning to dreams. Dreams are random neural firings. Your brain makes up a story to make sense of it—using memories, experiences, fears, concerns, etc. Dreams have functions (memory, threat simulation, etc.) but no real meaning."</p></blockquote><p>At first glance, this seems plausible. Dreams are indeed partly random neural firings, and it's true that oversimplified dream interpretation—such as universal dream dictionaries—is pseudoscientific nonsense. Dreaming about losing teeth doesn't universally symbolize financial stress, nor does a snake in your dream always mean betrayal.</p><p>However, Dr. Gurner goes too far in claiming dreams have "no real meaning." To understand why, we must first clarify what "meaning" means in this context.</p><h3>The Meaning of "Meaning"</h3><p>Meaning, in cognitive terms, is the emergent coherence our minds find when interpreting stimuli. It's not about an external dictionary of symbolic equivalences. Instead, meaning arises from identifying patterns and relationships between our internal emotional and cognitive landscape (inputs) and the narratives or experiences our brain generates (outputs).</p><h3>Dreams as Black-Box Filters</h3><p>Consider this metaphor: your dreaming brain is like a black-box digital filter. Even if you feed a black-box filter entirely random inputs, systematic analysis of its outputs can reveal internal properties and functions of that filter.</p><p>Dreams work similarly. Yes, random neural firings are part of the dreaming process. Yet the patterns our minds spontaneously generate—recurring themes, anxieties, desires, memories—offer genuine insights into our subconscious emotional and cognitive processes. Dreams aren't random noise; they're the subconscious mind organizing, synthesizing, and interpreting the noise.</p><h3>Where Dr. Gurner Gets It Right—and Wrong</h3><p>Dr. Gurner correctly rejects the simplistic, commercialized interpretation of dreams as universally symbolic. Where she errs is in assuming that the randomness of neural firings removes all interpretive value. Randomness at the input doesn't imply meaninglessness at the output. On the contrary, the brain is fundamentally a pattern-recognizing, sense-making organ. Its default mode is generating meaning.</p><h3>A More Nuanced Understanding</h3><p>Rather than dismiss dreams as meaningless, a nuanced perspective appreciates their subjective, individual-specific meaning. While dreams aren't neatly symbolic in the simplistic sense, they remain profoundly meaningful as windows into our psychological state, emotional health, and cognitive strategies.</p><p>In short:</p><ul><li><p><strong>Incorrect:</strong> Universal, symbolic dream dictionaries.</p></li><li><p><strong>Correct:</strong> Contextual, individual interpretations reflecting emotional and cognitive processing.</p></li></ul><p>Recognizing this distinction allows us to appreciate the genuine value dreams provide as mirrors reflecting our internal mental and emotional worlds.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

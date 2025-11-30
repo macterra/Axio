@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Great Progress</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!-dm0!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1d106adb-8535-44d9-b6ca-f9b96df07586_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!-dm0!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1d106adb-8535-44d9-b6ca-f9b96df07586_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!-dm0!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1d106adb-8535-44d9-b6ca-f9b96df07586_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!-dm0!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1d106adb-8535-44d9-b6ca-f9b96df07586_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!-dm0!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1d106adb-8535-44d9-b6ca-f9b96df07586_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/1d106adb-8535-44d9-b6ca-f9b96df07586_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/1d106adb-8535-44d9-b6ca-f9b96df07586_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:2455963,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.fyi/i/171156280?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1d106adb-8535-44d9-b6ca-f9b96df07586_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!-dm0!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1d106adb-8535-44d9-b6ca-f9b96df07586_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!-dm0!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1d106adb-8535-44d9-b6ca-f9b96df07586_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!-dm0!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1d106adb-8535-44d9-b6ca-f9b96df07586_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!-dm0!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1d106adb-8535-44d9-b6ca-f9b96df07586_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>Child mortality is the most unforgiving of statistics. It measures the fraction of children who die before reaching their fifth birthday—a brutal index of how well a society protects its most vulnerable. In 1800, that fraction was not a fraction at all but a near-certainty: one in three, sometimes one in two, children never saw age five. Every family knew grief as intimately as life itself. The map of the world in 1800 is blood red for a reason—humanity lived in a constant state of loss.</p><div class="captioned-image-container"><figure><a class="image-link image2 is-viewable-img" target="_blank" href="https://substackcdn.com/image/fetch/$s_!y3j-!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb89c2568-7a91-4f7a-a34d-13d3093411dc_722x900.jpeg" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!y3j-!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb89c2568-7a91-4f7a-a34d-13d3093411dc_722x900.jpeg 424w, https://substackcdn.com/image/fetch/$s_!y3j-!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb89c2568-7a91-4f7a-a34d-13d3093411dc_722x900.jpeg 848w, https://substackcdn.com/image/fetch/$s_!y3j-!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb89c2568-7a91-4f7a-a34d-13d3093411dc_722x900.jpeg 1272w, https://substackcdn.com/image/fetch/$s_!y3j-!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb89c2568-7a91-4f7a-a34d-13d3093411dc_722x900.jpeg 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/b89c2568-7a91-4f7a-a34d-13d3093411dc_722x900.jpeg" width="722" height="900" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/b89c2568-7a91-4f7a-a34d-13d3093411dc_722x900.jpeg&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:900,&quot;width&quot;:722,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:null,&quot;alt&quot;:&quot;Image&quot;,&quot;title&quot;:null,&quot;type&quot;:null,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:false,&quot;internalRedirect&quot;:null,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="Image" title="Image" srcset="https://substackcdn.com/image/fetch/$s_!y3j-!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb89c2568-7a91-4f7a-a34d-13d3093411dc_722x900.jpeg 424w, https://substackcdn.com/image/fetch/$s_!y3j-!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb89c2568-7a91-4f7a-a34d-13d3093411dc_722x900.jpeg 848w, https://substackcdn.com/image/fetch/$s_!y3j-!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb89c2568-7a91-4f7a-a34d-13d3093411dc_722x900.jpeg 1272w, https://substackcdn.com/image/fetch/$s_!y3j-!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb89c2568-7a91-4f7a-a34d-13d3093411dc_722x900.jpeg 1456w" sizes="100vw"></picture><div class="image-link-expand"><div class="pencraft pc-display-flex pc-gap-8 pc-reset"><button tabindex="0" type="button" class="pencraft pc-reset pencraft icon-container restack-image"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-refresh-cw"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path><path d="M8 16H3v5"></path></svg></button><button tabindex="0" type="button" class="pencraft pc-reset pencraft icon-container view-image"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-maximize2 lucide-maximize-2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" x2="14" y1="3" y2="10"></line><line x1="3" x2="10" y1="21" y2="14"></line></svg></button></div></div></div></a></figure></div><p>By 1950, the picture fractured. The industrialized world—Western Europe, North America, Japan, Oceania—had slashed child mortality to under 5%. Antibiotics, vaccines, sanitation, and rising prosperity insulated their children from the epidemics and malnutrition that once claimed millions. But the rest of the globe still bled. Across Africa, India, the Middle East, and Latin America, between 20% and 40% of children still died young. The division was clear: modernity saved lives, and its absence cost them.</p><p>Fast forward to 2015. The transformation is unmistakable. In wealthy nations, child mortality dropped below 1%. In Latin America, East Asia, and the Middle East, survival rates approached the levels once reserved for elites. Even Sub-Saharan Africa, though still burdened, made extraordinary strides: 5–12% mortality, down from one-third only two generations before. Millions of lives spared, families unbroken, futures restored.</p><p>This is not an abstract improvement. It is the single most decisive measure of civilizational progress. A world in which childhood survival is the norm rather than the exception is a world that has fundamentally redefined what it means to be human. Where once life was nasty, brutish, and short, today life expectancy and human flourishing expand together. The child who survives today may become tomorrow’s scientist, artist, or revolutionary; their very existence bends history.</p><p>The causes of this triumph are neither mysterious nor ideological. Vaccines, antibiotics, oral rehydration therapy. Clean water, sanitation, nutrition. Maternal education and economic growth. Each step a practical intervention; together, a revolution in human destiny.</p><p>The story is not finished. Sub-Saharan Africa and parts of South Asia still carry the heaviest burdens, where poverty, weak health systems, and conflict conspire against further gains. But the direction is irreversible. Humanity has demonstrated that child mortality is not fate—it is policy, technology, and will.</p><p>The decline of child mortality is the strongest, most unambiguous argument against fatalism and cynicism. For centuries, death claimed children as a tax on life itself. Today, in most of the world, that tax has been abolished. Civilization’s scorecard is often disputed, but here the verdict is clear: progress is real, measurable, and monumental.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

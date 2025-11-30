@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Against Cosmic Utility</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <p>Most people assume that if something is better for more people, it’s better overall. This intuition drives much of population ethics—the branch of moral philosophy that tries to reason about how many people should exist, and what kind of lives they should live.</p><p>But population ethics runs into problems almost immediately. The most famous is the <a href="https://en.wikipedia.org/wiki/Mere_addition_paradox">Repugnant Conclusion</a>, introduced by Derek Parfit. It goes like this:</p><blockquote><p>A world with a billion people living excellent lives (deep relationships, rich experiences, long lifespans) is worse than a world with ten billion people whose lives are barely worth living—so long as the total happiness is greater in the second world.</p></blockquote><p>This conclusion is repugnant precisely because it sacrifices quality for quantity—trading a smaller paradise for a larger mediocre swamp. And yet, under classical utilitarianism, it’s not just acceptable—it’s optimal.</p><p>The problem isn’t in the math. It’s in the premise.</p><p>Population ethics requires you to believe that there exists some global moral vantage point from which we can evaluate and compare whole worlds. That from this view, we can say “World A is better than World B,” even though no agent lives across both. Even though no one experiences both. Even though there is no mind whose preferences actually encompass both sets of lives.</p><p>That assumption is false.</p><p>In our framework, all value is vantage-relative. There is no “good overall.” There is only “better from the standpoint of X.”</p><p>Imagine trying to decide whether to bring a new person into existence. The question only makes sense relative to a valuer—the would-be parent, perhaps, or the existing society. You can ask:</p><ul><li><p>Do I want to live in a world with more people?</p></li><li><p>Do we believe adding lives like this aligns with our values?</p></li><li><p>Would the new person (if born) likely value their own life?</p></li></ul><p>But you can’t say, in any absolute sense, whether the total outcome is better. Because there is no total agent whose preferences you’re maximizing.</p><p>This is the core problem with the Repugnant Conclusion. It assumes a meta-agent capable of evaluating entire population states from nowhere. That agent doesn’t exist.</p><p>All of the major paradoxes in population ethics—totalism, averageism, person-affecting views, asymmetries about non-existence—stem from this basic error: treating morality like it operates on global facts, instead of agent-relative evaluations.</p><p>Once you drop that assumption, the entire debate shifts:</p><ul><li><p>You don’t need to say whether a billion lives are better than ten billion.</p></li><li><p>You only need to ask: who cares, and what do they value?</p></li></ul><p>In some contexts, we might want to prioritize quantity (e.g., spreading a culture or maximizing resilience). In others, we might prioritize quality (e.g., sustaining a high-trust, high-agency civilization). But these are just different vantage points—not contradictions.</p><p>Population ethics, done honestly, is no longer about finding the best world. It’s about understanding whose goals are in play, and what tradeoffs they imply. It becomes a branch of decision theory for agents with long-term, population-level preferences.</p><p>That’s not a weakness. It’s the only coherent foundation.</p><p>The Repugnant Conclusion is only a problem if you believe there’s a single answer to the question: “Which world is better?” Once you realize there isn’t, the dilemma evaporates.</p><p>You can’t optimize for everyone. Because there is no such thing as everyone. There are only agents, perspectives, and values—each with their own branch of the multiverse to navigate.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

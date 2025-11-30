@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -213,5 +231,29 @@
     <article>
 <h2>The Myth of Necessity</h2><p>The standard U.S. narrative treats the Civil War as tragic but inevitable—“the house divided” could only be purified in blood. This myth absolves leaders by elevating the war into destiny. But inevitability is rarely real in history; it is a story told afterward to justify why things happened as they did.</p><p>Compare to Britain (1833), France (1848), Brazil (1888): all abolished slavery without a continent-spanning civil war. If we take a wide historical lens, the American case looks less like destiny and more like dysfunction.</p><h2>How the U.S. Locked Itself In</h2><ol><li><p><strong>Constitutional Design</strong><br>By giving slave states disproportionate power in the Senate and electoral college, the Constitution froze in place a minority veto. Rather than moderating slavery, this emboldened elites to double down. A structural failure.</p></li><li><p><strong>Ideological Absolutism</strong><br>Southern elites reframed slavery as a <em>positive good</em>, not a temporary evil. Abolitionists, especially after the 1830s, reframed it as a <em>mortal sin</em>. Once both sides sacralized their position, compromise became betrayal. A failure of political imagination.</p></li><li><p><strong>Collapse of Moderation</strong><br>The Whig Party disintegrated, leaving only Democrats (Southern-dominated) and Republicans (Northern-sectional). In a two-party system with no middle ground, escalation was baked in. A failure of institutional resilience.</p></li><li><p><strong>Leadership Vacuum</strong><br>Lincoln did try compensated emancipation in border states. He was refused. Southern leaders rejected even gradual schemes. Neither side could sell compromise to their own base. A failure of statesmanship.</p></li></ol><h2>The Roads Not Taken</h2><ul><li><p><strong>Compensated Emancipation</strong>: Britain paid the equivalent of billions to slaveholders. The U.S. could have done the same in the 1830s–1850s at far lower cost than the war.</p></li><li><p><strong>Containment</strong>: Keeping slavery confined might have ensured its eventual withering without open war. The Kansas-Nebraska Act and Dred Scott decision blew this path up.</p></li><li><p><strong>Gradualism</strong>: Incremental abolition laws could have aligned with economic modernization.</p></li><li><p><strong>Sanctuary Strategy</strong>: A Northern policy of harboring fugitives, backed by state militias, might have bled slavery without total war—provoking conflict, but not necessarily a conflagration.</p></li></ul><p>None of these were metaphysically impossible. They were politically impossible because leaders failed to navigate entrenched interests.</p><h2>The Real Cost of Failure</h2><p>Instead of paying billions in compensation, the U.S. paid in:</p><ul><li><p><strong>750,000 lives lost</strong> (more than all other U.S. wars until WWII combined).</p></li><li><p><strong>Mass destruction of the South</strong> and a century-long legacy of resentment.</p></li><li><p><strong>Broken Reconstruction</strong>: because the war settled emancipation violently, it left no consensus for genuine equality, paving the way for Jim Crow.</p></li></ul><p>In other words: the war freed the slaves, but it poisoned the peace.</p><h2>Reframing the Civil War</h2><ul><li><p><strong>Not destiny</strong>: It wasn’t required by history.</p></li><li><p><strong>Not heroic sacrifice</strong>: It wasn’t the only way to purchase freedom.</p></li><li><p><strong>A colossal political failure</strong>: The elites of both sections refused to pay in compromise, imagination, or money, and so they paid in blood.</p></li></ul><p>This perspective strips away the romance of “the price of freedom” and exposes the poverty of leadership that let the U.S. stumble into catastrophe.</p><h2>Implication</h2><p>If we say the war was inevitable, we excuse the failure. If we say it was avoidable, we can learn from it. The lesson: sacralized politics, rigid institutions, and polarized identities can make peaceful resolution <em>feel</em> impossible—until war seems like the only option. That was an illusion then, and it is a dangerous illusion now.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

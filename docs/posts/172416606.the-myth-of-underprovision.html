@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Myth of Underprovision</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!hKNu!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff3f5ca9e-4c44-447d-9d3f-69ea8a7a975a_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!hKNu!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff3f5ca9e-4c44-447d-9d3f-69ea8a7a975a_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!hKNu!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff3f5ca9e-4c44-447d-9d3f-69ea8a7a975a_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!hKNu!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff3f5ca9e-4c44-447d-9d3f-69ea8a7a975a_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!hKNu!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff3f5ca9e-4c44-447d-9d3f-69ea8a7a975a_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/f3f5ca9e-4c44-447d-9d3f-69ea8a7a975a_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/f3f5ca9e-4c44-447d-9d3f-69ea8a7a975a_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:3226897,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.fyi/i/172416606?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff3f5ca9e-4c44-447d-9d3f-69ea8a7a975a_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!hKNu!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff3f5ca9e-4c44-447d-9d3f-69ea8a7a975a_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!hKNu!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff3f5ca9e-4c44-447d-9d3f-69ea8a7a975a_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!hKNu!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff3f5ca9e-4c44-447d-9d3f-69ea8a7a975a_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!hKNu!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff3f5ca9e-4c44-447d-9d3f-69ea8a7a975a_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>Every economics undergraduate learns the mantra: markets underprovide public goods. The reasoning seems airtight:</p><ul><li><p><strong>Public goods</strong> are defined as non-rivalrous (my consumption doesn’t diminish yours) and non-excludable (you can’t stop non-payers).</p></li><li><p>If you can’t exclude non-payers, people free ride.</p></li><li><p>If people free ride, private actors won’t fund enough.</p></li><li><p>Therefore, coercive taxation is justified to “fix” the underprovision.</p></li></ul><p>That’s the standard narrative, drilled in as orthodoxy.</p><div><hr></div><h3>Where the Claim Really Comes From</h3><p>The claim isn’t an empirical discovery. It is the output of a model that assumes:</p><ol><li><p>No way to exclude non-payers exists or could evolve.</p></li><li><p>Voluntary cooperation is insufficient at scale.</p></li><li><p>A central planner knows the “optimal” level of provision.</p></li></ol><p>In other words, the inevitability of the state is baked in from the start.</p><div><hr></div><h3>History Doesn’t Agree</h3><p>The real record of human societies tells a different story:</p><ul><li><p><strong>Lighthouses</strong> in Britain were privately built and funded by port fees until the state nationalized them.</p></li><li><p><strong>Roads and bridges</strong> were historically toll-based, privately maintained turnpikes.</p></li><li><p><strong>Education</strong> flourished through churches, guilds, and subscription schools long before government monopolies.</p></li><li><p><strong>Law and order</strong> in frontier zones and medieval Iceland emerged from voluntary associations and competing legal systems.</p></li><li><p><strong>Scientific discovery</strong> has been propelled by prizes, patrons, and voluntary societies.</p></li></ul><p>Far from being anomalies, these examples illustrate how people consistently solve so-called public goods problems without the state.</p><div><hr></div><h3>The Sleight of Hand</h3><p>When economists say “underprovide,” they mean: <em>less than the quantity a planner’s social welfare function demands.</em> This is not objective analysis. It is a political judgment smuggled in under the banner of science. It presumes that “more” is always better, and that coercion has no real cost.</p><p>But coercion is never costless. Taxation requires threats. It warps incentives, crowds out alternatives, and entrenches monopolies. The tidy diagram in the economics textbook leaves out the destruction of agency.</p><div><hr></div><h3>What Markets Really Show</h3><p>Voluntary markets <a href="165708751.when-to-kill-a-project.html">reveal what people actually value enough to pay for</a>. If there’s less of X than a theorist wants, that isn’t “failure.” That’s the truth of preferences. And as technology evolves, the supposed “non-excludability” of public goods erodes—micropayments, contracts, and blockchains make exclusion trivial where it once wasn’t.</p><p>What looks like underprovision is usually provision in unfamiliar forms: messy, decentralized, diverse, voluntary. The complaint isn’t about scarcity, it’s about a refusal to conform to the state’s preferred template.</p><div><hr></div><h3>The Anti-Statist Lesson</h3><p>The <a href="https://x.com/DeirdreMcClosk/status/1962190725711314976">marginalist revolution that McCloskey praises</a> already undermines totalist accounting. You can only ever owe <em>at the margin,</em> never for the whole past. Likewise, markets only ever provide <em>at the margin,</em> according to voluntary demand. Labeling that “insufficient” is not economics—it is ideology.</p><p><strong>The myth of underprovision is statism’s Trojan horse.</strong> Accept it, and you hand the state a blank check. Reject it, and the picture clarifies: there is no “failure” in voluntary cooperation—only the actual arrangements free people choose to build.</p><div><hr></div>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

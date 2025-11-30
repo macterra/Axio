@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Control Requires Models</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!TzUs!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F186bdf6b-2c1a-4632-9315-34ca08c9e340_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!TzUs!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F186bdf6b-2c1a-4632-9315-34ca08c9e340_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!TzUs!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F186bdf6b-2c1a-4632-9315-34ca08c9e340_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!TzUs!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F186bdf6b-2c1a-4632-9315-34ca08c9e340_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!TzUs!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F186bdf6b-2c1a-4632-9315-34ca08c9e340_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/186bdf6b-2c1a-4632-9315-34ca08c9e340_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/186bdf6b-2c1a-4632-9315-34ca08c9e340_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:2466691,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.fyi/i/179071634?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F186bdf6b-2c1a-4632-9315-34ca08c9e340_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!TzUs!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F186bdf6b-2c1a-4632-9315-34ca08c9e340_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!TzUs!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F186bdf6b-2c1a-4632-9315-34ca08c9e340_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!TzUs!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F186bdf6b-2c1a-4632-9315-34ca08c9e340_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!TzUs!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F186bdf6b-2c1a-4632-9315-34ca08c9e340_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>The previous essay argued that <a href="179013388.understanding-requires-models.html">understanding is necessarily model‑mediated</a>: there is no direct access to the world, only representations that organise perception and guide expectation. The present topic concerns a complementary question. If comprehension requires models, what about effective action? Is it possible for an agent to regulate a process, or to steer a system toward specific outcomes, without representing the structure of that system?</p><p>In 1970, Roger Conant and W. Ross Ashby provided a rigorous answer. Their result, known as the <strong><a href="https://en.wikipedia.org/wiki/Good_regulator_theorem">Good Regulator Theorem</a></strong>, states that any regulator capable of achieving reliable control must embody a model of the system it regulates. The claim is not rhetorical. It is a precise demonstration that control and representation are inseparable: unless a controller preserves the distinctions present in the system, it cannot consistently select appropriate actions.</p><h3>Regulation and representation</h3><p>To regulate a system is to map observed states to corrective interventions. The regulator must be able to distinguish states that call for different responses and predict the consequences of its actions. These capacities require a structured internal mapping that mirrors the relevant structure of the system being controlled. In cybernetic terms, effective regulation presupposes a homomorphism between system and regulator: the regulator’s internal organisation must preserve the distinctions necessary for reliable action.</p><p>This need not resemble a scientific model expressed in equations. A model, in this context, is any representational structure that differentiates among possible states of the system and identifies appropriate transitions. Even simple biological mechanisms—enzyme pathways, homeostatic loops, neural reflexes—exhibit this property. Their physical organisation realises an implicit model of the environment and of the organism’s own internal dynamics.</p><h3>The formal insight</h3><p>The Good Regulator Theorem establishes that if a system can occupy a range of distinguishable states, then a regulator that succeeds across that range must encode at least the distinctions relevant to deciding what action should follow each state. In other words, the regulator must contain a representation sufficient to map states to interventions in a way that preserves the system’s causal structure.</p><p>This requirement is not optional. A controller that fails to encode the relevant distinctions cannot reliably achieve its goals. It will respond identically to states that call for different interventions, or it will apply inappropriate corrections. Control failure is therefore a consequence of inadequate internal modelling.</p><h3>Control as a representational task</h3><p>Viewed through this lens, control becomes a specific form of representational activity. The regulator constructs and maintains a mapping from perceived conditions to actions that are expected to bring the system closer to target conditions. This mapping presupposes predictions about how the system will evolve under different interventions. Predictive adequacy, not mechanical reaction, is what distinguishes effective regulation.</p><p>Examples across domains illustrate the point. An aircraft autopilot must encode aerodynamic behaviour to stabilise flight. A thermostat must map temperature readings to heating or cooling decisions based on the dynamics of the surrounding environment. A central nervous system must integrate sensory data with internal states to maintain homeostasis. In each case, successful control derives from an internal structure that reflects the regularities of the system being regulated.</p><h3>The Axio perspective: agency as model‑based regulation</h3><p>Within Axio, agency is characterised by a capacity to select actions on the basis of expectations—structured anticipations of how the world will respond. The Good Regulator Theorem aligns with this view. A system that regulates effectively must embody a model of the environment, the task, and its own possible interventions. Without such a model, action reduces to blind reaction, lacking the structure necessary for intentional behaviour.</p><p>Conditionalism reinforces this point. Just as empirical truth is conditional on interpretive background, agency is conditional on representational structure. Regulation occurs within a model; goals, errors, and corrections are all defined relative to that structure. The coherence of the model determines the coherence of the regulation.</p><h3>Broader implications</h3><p>The theorem clarifies several domains of practical and philosophical interest. Biological organisms evolve internal models because survival depends on regulation. Markets function as distributed regulators because they encode decentralised information about preferences, constraints, and opportunities. Political systems falter when they attempt to regulate without sufficient informational structure. Artificial agents must construct or acquire models of human behaviour if they are to act coherently with respect to human values.</p><h3>Conclusion</h3><p>The Good Regulator Theorem formalises a general insight: control presupposes representation. To influence a system reliably, an agent must encode the distinctions pertinent to that system’s behaviour. This extends the earlier thesis that understanding requires models. Effective action likewise depends on structures that anticipate how interventions will unfold. Regulation, in this sense, is an applied form of model‑based cognition.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

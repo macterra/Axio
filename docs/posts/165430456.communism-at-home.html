@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Communism at Home</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!fvGh!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd99cc28c-4b7e-456b-bd8e-2c0383e90d4d_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!fvGh!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd99cc28c-4b7e-456b-bd8e-2c0383e90d4d_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!fvGh!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd99cc28c-4b7e-456b-bd8e-2c0383e90d4d_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!fvGh!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd99cc28c-4b7e-456b-bd8e-2c0383e90d4d_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!fvGh!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd99cc28c-4b7e-456b-bd8e-2c0383e90d4d_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/d99cc28c-4b7e-456b-bd8e-2c0383e90d4d_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/d99cc28c-4b7e-456b-bd8e-2c0383e90d4d_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:2429315,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.substack.com/i/165430456?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd99cc28c-4b7e-456b-bd8e-2c0383e90d4d_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!fvGh!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd99cc28c-4b7e-456b-bd8e-2c0383e90d4d_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!fvGh!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd99cc28c-4b7e-456b-bd8e-2c0383e90d4d_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!fvGh!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd99cc28c-4b7e-456b-bd8e-2c0383e90d4d_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!fvGh!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd99cc28c-4b7e-456b-bd8e-2c0383e90d4d_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>Communism promises a world free from exploitation, inequality, and alienation—admirable aspirations bound by an unfortunate disconnect from reality. At large scales, the historical record offers consistent, unmistakable lessons: communism reliably fails, collapsing into inefficiency, coercion, and a profound erosion of individual agency. But intriguingly, there is a context where communism genuinely thrives: within the intimate confines of a family.</p><p><strong>Why Family Communism Flourishes</strong></p><p>The family, humanity’s fundamental social unit, operates naturally on principles closely resembling those of classical communism: shared ownership, need-based distribution, and collaborative decision-making.</p><blockquote><p>From each according to his ability, to each according to his needs.  <br>—Karl Marx</p></blockquote><p> It succeeds here for clear evolutionary and cognitive reasons:</p><ul><li><p><strong>Trust and Genetic Interest:</strong> Families have deeply interwoven incentives, shaped by biological relatedness. Mutual genetic investment fosters trust, reducing the risk of exploitation and deception.</p></li><li><p><strong>Perfect Information:</strong> Within a family, decision-makers have exceptionally detailed, timely information about the needs and capacities of each member, enabling efficient and responsive resource allocation.</p></li><li><p><strong>Adaptive Flexibility:</strong> Families can quickly and effortlessly reallocate responsibilities and resources in response to changing circumstances. The small scale enables fluidity of roles, removing bureaucratic rigidity.</p></li><li><p><strong>Informal Enforcement:</strong> Social and emotional bonds effectively enforce accountability, avoiding reliance on formal coercion or punishment.</p></li></ul><p><strong>The Fatal Flaw at Scale: Trust Disintegration</strong></p><p>Yet this familial utopia rapidly disintegrates when scaled to larger, impersonal societies. Communism fails precisely because it relies fundamentally on conditions impossible to replicate broadly:</p><ul><li><p><strong>Trust’s Hard Limit (<a href="https://en.wikipedia.org/wiki/Dunbar%27s_number">Dunbar’s Number</a>):</strong> Human cognition sharply limits the capacity for stable, trust-based relationships. Around 150 individuals is the threshold beyond which trust erodes sharply, replaced by suspicion, opportunism, and deceit.</p></li><li><p><strong>Hayek’s <a href="https://en.wikipedia.org/wiki/Economic_calculation_problem">Knowledge Problem</a>:</strong> At larger scales, centralized planning inevitably fails due to inadequate information, resulting in systemic inefficiencies and misallocation.</p></li><li><p><strong>Incentive Misalignment:</strong> Without intimate relationships, incentives naturally diverge, causing free-riding, inefficiency, and ultimately coercion as enforcement supplants voluntary cooperation.</p></li></ul><p><strong>Conditionalism and the Lessons of Scale</strong></p><p>The stark difference between familial and societal communism illustrates a fundamental principle of <a href="162831503.conditionalism.html">Conditionalism</a>: the truth or utility of any idea is contingent on context. Communism's viability depends critically on trust, intimacy, and aligned incentives—conditions uniquely met within families and demonstrably absent in broader societies.</p><p>Recognizing this conditional success of communism is more than a historical curiosity—it underscores the necessity of respecting human cognitive limits, voluntary cooperation, and decentralized systems that safeguard individual agency and freedom.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

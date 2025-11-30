@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Cybernetics Sequence</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!H554!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb2e9bdea-515f-4f9c-a7e3-5bbf6592a9b1_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!H554!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb2e9bdea-515f-4f9c-a7e3-5bbf6592a9b1_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!H554!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb2e9bdea-515f-4f9c-a7e3-5bbf6592a9b1_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!H554!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb2e9bdea-515f-4f9c-a7e3-5bbf6592a9b1_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!H554!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb2e9bdea-515f-4f9c-a7e3-5bbf6592a9b1_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/b2e9bdea-515f-4f9c-a7e3-5bbf6592a9b1_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/b2e9bdea-515f-4f9c-a7e3-5bbf6592a9b1_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:2670632,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.fyi/i/179373939?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb2e9bdea-515f-4f9c-a7e3-5bbf6592a9b1_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!H554!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb2e9bdea-515f-4f9c-a7e3-5bbf6592a9b1_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!H554!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb2e9bdea-515f-4f9c-a7e3-5bbf6592a9b1_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!H554!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb2e9bdea-515f-4f9c-a7e3-5bbf6592a9b1_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!H554!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb2e9bdea-515f-4f9c-a7e3-5bbf6592a9b1_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>Cybernetics provides a precise vocabulary for understanding how agents act coherently within their environments. At its core lies a simple but far-reaching principle: <strong>every form of effective regulation requires a model</strong>. Models allow systems to discriminate states, anticipate consequences, and adjust behavior in ways that preserve goals.</p><p>This sequence gathers the posts that develop this theme within Axio. Together they show how representation, control, and agency emerge from model-based processes, whether implemented explicitly in theories or implicitly in biological and artificial systems.</p><h3><a href="179013388.understanding-requires-models.html">Understanding Requires Models</a></h3><p><em>Cognition as conditional structure.</em><br>Argues that all empirical knowledge is model-mediated, showing that understanding arises from representational frameworks rather than direct access to reality.</p><h3><a href="179071634.control-requires-models.html">Control Requires Models</a></h3><p><em>The cybernetic structure of regulation.</em><br>Introduces the Good Regulator Theorem and demonstrates why any system capable of reliable control must embody a model of the system it regulates.</p><h3><a href="179148217.models-beliefs-and-agents.html">Models, Beliefs, and Agents</a></h3><p><em>Clarifying representational levels.</em><br>Distinguishes the internal models required for regulation from the beliefs we attribute to agents at the interpretive level.</p><h3><a href="179150747.lookup-tables-and-agents.html">Lookup Tables and Agents</a></h3><p><em>Minimal models in biological and artificial systems.</em><br>Examines systems whose behavior can be described by simple condition–action mappings, illustrating how lookup tables function as degenerate but effective models in limited domains.</p><h3><a href="179372278.what-is-a-model.html">What Is a Model?</a></h3><p><em>The structure and function of representational systems.</em><br>Defines what qualifies as a model across scientific, biological, and cognitive settings, unifying the representational assumptions underpinning cybernetic reasoning.</p><h3><a href="179007101.principia-cybernetica.html">Principia Cybernetica</a></h3><p><em>A historical and conceptual bridge.</em><br>Examines the Principia Cybernetica Project as an early attempt to systematize cybernetic epistemology, setting the stage for contemporary model-based approaches.</p><div><hr></div><p>Together, these posts introduce the foundations of cybernetic thinking within the Axio framework. They show how model-based architecture supports prediction, explanation, and control—and why agents of any kind require structured representations to act coherently in the world.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

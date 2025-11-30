@@ -235,6 +235,21 @@ CUSTOM_CSS = """
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 """
 
@@ -298,6 +313,9 @@ def process_post_file(src_path, dest_path, slug_to_id, post_metadata):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{escape(post_metadata.get('title', 'Axio - Post')) if post_metadata else 'Axio - Post'}</title>
+
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 {CUSTOM_CSS}
 </head>
 <body>
@@ -305,6 +323,30 @@ def process_post_file(src_path, dest_path, slug_to_id, post_metadata):
     <article>
 {title_html}{content}
     </article>
+
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {{
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {{
+                try {{
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {{
+                        katex.render(expr, el, {{
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        }});
+                    }}
+                }} catch (e) {{
+                    console.error('Error rendering LaTeX:', e);
+                }}
+            }}
+        }});
+    </script>
 </body>
 </html>
 """

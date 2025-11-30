@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>On Liberty</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!IYkt!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fba2689e4-5ce4-4772-8600-dcd8f0484831_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!IYkt!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fba2689e4-5ce4-4772-8600-dcd8f0484831_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!IYkt!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fba2689e4-5ce4-4772-8600-dcd8f0484831_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!IYkt!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fba2689e4-5ce4-4772-8600-dcd8f0484831_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!IYkt!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fba2689e4-5ce4-4772-8600-dcd8f0484831_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/ba2689e4-5ce4-4772-8600-dcd8f0484831_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/ba2689e4-5ce4-4772-8600-dcd8f0484831_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:1788628,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.fyi/i/170630000?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fba2689e4-5ce4-4772-8600-dcd8f0484831_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!IYkt!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fba2689e4-5ce4-4772-8600-dcd8f0484831_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!IYkt!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fba2689e4-5ce4-4772-8600-dcd8f0484831_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!IYkt!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fba2689e4-5ce4-4772-8600-dcd8f0484831_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!IYkt!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fba2689e4-5ce4-4772-8600-dcd8f0484831_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p><a href="https://en.wikipedia.org/wiki/On_Liberty">John Stuart Mill’s </a><em><a href="https://en.wikipedia.org/wiki/On_Liberty">On Liberty</a></em><a href="https://en.wikipedia.org/wiki/On_Liberty"> (1859) </a>remains one of the most enduring defenses of individual freedom in political philosophy. Written in an age of expanding democratic institutions, Mill warns that liberty is threatened not only by kings and parliaments, but also by the social tyranny of prevailing opinion. His core insight is distilled into the <strong>harm principle</strong>:</p><blockquote><p>The only legitimate reason for exercising power over an individual, against their will, is to prevent harm to others.</p></blockquote><p>This simple statement anchors the work and frames his arguments about the limits of authority, the necessity of free expression, and the value of individuality.</p><div><hr></div><h3>1. The Harm Principle</h3><p>Mill draws a crucial distinction:</p><ul><li><p><strong>Self-regarding actions</strong>: Those whose consequences fall primarily on the individual actor. These should remain entirely free from interference, no matter how unwise or unconventional.</p></li><li><p><strong>Other-regarding actions</strong>: Those that risk or cause harm to others. These may be justly restricted or regulated.</p></li></ul><p>Mere offense, moral disapproval, or majority distaste do not meet the threshold for coercion. Harm must be concrete, demonstrable, and non-trivial.</p><div><hr></div><h3>2. Limits of Authority</h3><p>For Mill, liberty must be protected on two fronts:</p><ol><li><p><strong>Against the state</strong>: Political power, even democratically granted, can be oppressive.</p></li><li><p><strong>Against society</strong>: The “tyranny of the majority” can enforce conformity through social pressure, shaming, and ostracism.</p></li></ol><p>The protection of liberty therefore requires both political safeguards and a cultural ethic of tolerance.</p><div><hr></div><h3>3. Freedom of Thought and Discussion</h3><p>Mill’s defense of free expression is not merely about rights, but about truth-seeking:</p><ul><li><p>Silencing an opinion robs society of the opportunity to exchange error for truth—or to refine truth through contest.</p></li><li><p>Even false opinions are valuable: they force defenders of truth to provide justification, preventing beliefs from decaying into “dead dogma.”</p></li><li><p>Truth that is never challenged becomes ritual rather than conviction.</p></li></ul><p>For Mill, open discourse is the engine of intellectual and moral progress.</p><div><hr></div><h3>4. Individuality as a Component of Well-being</h3><p>Mill champions individuality as an intrinsic good and a public necessity:</p><ul><li><p>Human flourishing depends on originality and autonomy.</p></li><li><p>Societies thrive when diverse experiments in living are permitted.</p></li><li><p>Uniformity of character suffocates progress, creativity, and vitality.</p></li></ul><p>Freedom, in this sense, is not only about non-interference, but about cultivating the conditions for self-development.</p><div><hr></div><h3>5. Applications of the Principle</h3><p>Mill applies the harm principle to:</p><ul><li><p><strong>Liberty of conscience</strong>: Freedom of thought, belief, and opinion.</p></li><li><p><strong>Freedom of expression</strong>: Speech, press, and public discussion.</p></li><li><p><strong>Freedom of action</strong>: Lifestyles, tastes, and pursuits that do not harm others.</p></li><li><p><strong>Freedom of association</strong>: Voluntary gatherings for any purpose not involving harm.</p></li></ul><p>The burden of proof always rests with those who would curtail liberty, and restrictions should be minimal and proportionate.</p><div><hr></div><h3>The Core Message</h3><p>Mill offers a vision of society where personal sovereignty is the rule, and coercion is the rare exception. Individual liberty is not simply a private entitlement; it is a public necessity for the pursuit of truth, the cultivation of virtue, and the advancement of society. To erode liberty in the name of safety, morality, or consensus is to trade long-term vitality for short-term comfort.</p><p>In Mill’s framework, a free society is one in which individuals can think, speak, and live as they choose—up to the point where their actions harm others. Beyond that, liberty is not just compatible with the common good; it is its precondition.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

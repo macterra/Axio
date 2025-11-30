@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inequality Is Not the Problem—Poverty Is</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <p>Debates about inequality often begin from an assumption: that differences in wealth or outcomes inherently cause harm or injustice. This assumption is mistaken. The real issue we should focus on is poverty—the absolute deprivation of resources necessary for meaningful agency. Harm arises from lacking the means to act effectively, not from someone else having more.</p><p>To understand why inequality itself isn't inherently harmful, consider this: a billionaire living near a millionaire isn't harmed by the millionaire's relative wealth, nor is the millionaire harmed by the billionaire's greater resources. Each person's ability to act, pursue goals, and flourish remains intact. Their disparity, however great, doesn't itself reduce their agency or impose coercion.</p><p>Poverty, by contrast, is genuinely harmful. A person lacking basic resources faces a severe constraint on their ability to make meaningful choices. Their agency is diminished, their potential curtailed. The harm comes explicitly from this deprivation, not from the mere existence of richer individuals.</p><p>When policy aims at reducing inequality by redistributing wealth coercively, it inadvertently causes harm through coercion itself. Coercive redistribution inherently reduces the agency of those compelled to give up resources under threat. Thus, while intended to alleviate harm, such redistribution often merely shifts it, creating new harm elsewhere.</p><p>A more precise and ethically coherent approach is to focus explicitly on poverty alleviation through voluntary, agent-bound methods. Such methods respect the fundamental importance of agency and consent, preserving freedom while addressing deprivation directly.</p><p>The core insight here is simple yet powerful: inequality is a measure of difference, not deprivation. To address real harm, our concern should always be enhancing agency and addressing poverty—not enforcing equality for its own sake.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

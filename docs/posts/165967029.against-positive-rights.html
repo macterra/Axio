@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Against Positive Rights</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!xWt7!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe8f7628a-aef8-4191-9e72-b92a85fab239_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!xWt7!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe8f7628a-aef8-4191-9e72-b92a85fab239_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!xWt7!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe8f7628a-aef8-4191-9e72-b92a85fab239_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!xWt7!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe8f7628a-aef8-4191-9e72-b92a85fab239_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!xWt7!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe8f7628a-aef8-4191-9e72-b92a85fab239_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/e8f7628a-aef8-4191-9e72-b92a85fab239_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/e8f7628a-aef8-4191-9e72-b92a85fab239_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:2160620,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.substack.com/i/165967029?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe8f7628a-aef8-4191-9e72-b92a85fab239_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!xWt7!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe8f7628a-aef8-4191-9e72-b92a85fab239_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!xWt7!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe8f7628a-aef8-4191-9e72-b92a85fab239_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!xWt7!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe8f7628a-aef8-4191-9e72-b92a85fab239_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!xWt7!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe8f7628a-aef8-4191-9e72-b92a85fab239_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>Under our philosophical framework, all <a href="164901368.rights-are-forged.html">valid rights are negative rights</a>. This claim might initially seem contentious, particularly given widespread contemporary beliefs in positive rights such as the right to healthcare, education, or basic income. However, a rigorous analysis grounded in our explicit definitions and ethical principles supports this conclusion.</p><p><strong>Defining Valid Rights</strong></p><p>A valid right, within our framework, is explicitly defined as an ethical preference that we are justified in enforcing through coercion. Critically, coercion itself is precisely defined as the credible threat of actual harm to gain compliance. Given this clear definition, coercion can only ever be justified as a defensive measure, responding to or preventing prior or imminent harm. Consequently, the legitimacy of any right hinges on its alignment with non-coercive ethical principles.</p><p><strong>Negative vs. Positive Rights</strong></p><p>Negative rights are rights of non-interference. They require only that others refrain from causing harm or unjustly interfering with one's agency. Examples include freedom from assault, theft, and fraud. Negative rights inherently protect individual agency because they impose no active obligations beyond restraint.</p><p>Positive rights, by contrast, impose active obligations on others, such as providing healthcare, education, or welfare. Crucially, if these obligations are not fulfilled voluntarily, enforcing them inevitably requires coercion (typically via taxation, mandates, or redistribution). According to our definitions, such coercive enforcement inherently reduces agency and constitutes harm.</p><p><strong>Why Positive Rights Cannot be Valid</strong></p><ol><li><p><strong>Agency Preservation</strong>: Our philosophical cornerstone is the preservation and enhancement of agency. Negative rights align perfectly with this criterion by preventing interference. Positive rights, when enforced coercively, degrade agency by imposing involuntary obligations.</p></li><li><p><strong>Ethical Coercion</strong>: Ethical coercion, within our framework, is exclusively defensive. Any coercive enforcement of positive rights is inherently offensive, imposing proactive demands upon unwilling parties, thus constituting unjustifiable harm.</p></li><li><p><strong>Voluntary Provision vs. Rights</strong>: Voluntary charity, mutual aid, or community support can fulfill many societal needs typically addressed by positive rights. These voluntary measures are ethically commendable precisely because they respect agency, but they do not constitute enforceable rights. Rights, by definition, imply justified coercion when violated. Voluntariness explicitly removes coercion, thereby distinguishing ethical generosity from enforceable entitlement.</p></li></ol><p><strong>Resolving Common Objections</strong></p><p>One might object that without positive rights, disadvantaged individuals could suffer or even die. This objection, while ethically powerful, conflates ethical imperatives with enforceable rights. Ethical imperatives (such as charitable duties) can coexist without being enforced coercively. Moreover, voluntary social structures—charities, cooperatives, mutual aid networks—can and do effectively address such needs without compromising agency.</p><p><strong>Conclusion</strong></p><p>Under careful philosophical analysis, respecting our rigorous definitions of coercion, agency, and ethical justification, we find that all valid rights must be negative rights. Positive rights, though often advocated from compassionate intent, inherently violate core principles of agency and non-coercion, and thus cannot be considered valid rights within our consistent ethical framework.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Environmentalism&#x27;s Nuclear Mistake</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!EZDw!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6f6f5090-e1a5-46a1-a465-bd09b144312e_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!EZDw!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6f6f5090-e1a5-46a1-a465-bd09b144312e_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!EZDw!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6f6f5090-e1a5-46a1-a465-bd09b144312e_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!EZDw!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6f6f5090-e1a5-46a1-a465-bd09b144312e_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!EZDw!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6f6f5090-e1a5-46a1-a465-bd09b144312e_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/6f6f5090-e1a5-46a1-a465-bd09b144312e_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/6f6f5090-e1a5-46a1-a465-bd09b144312e_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:2448315,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.substack.com/i/167014370?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6f6f5090-e1a5-46a1-a465-bd09b144312e_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!EZDw!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6f6f5090-e1a5-46a1-a465-bd09b144312e_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!EZDw!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6f6f5090-e1a5-46a1-a465-bd09b144312e_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!EZDw!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6f6f5090-e1a5-46a1-a465-bd09b144312e_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!EZDw!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6f6f5090-e1a5-46a1-a465-bd09b144312e_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>Environmentalism has long framed itself as humanity's best hope against ecological catastrophe. Ironically, one of the gravest errors made by environmental advocates—their persistent, fear-driven opposition to nuclear energy—has significantly exacerbated the very problems they seek to resolve.</p><h3>The High Cost of Anti-Nuclear Sentiment</h3><p>Opposition to nuclear power, driven by exaggerated safety fears and misconceptions around waste, has led directly to increased reliance on fossil fuels. Germany provides a clear, cautionary example: after shutting down nuclear plants following Fukushima, the country turned heavily toward coal and natural gas, substantially increasing carbon emissions and pollution. This scenario played out globally, driven largely by anti-nuclear campaigns.</p><h3>Energy Density and Reliability</h3><p>Nuclear power is unique in its combination of reliability, scalability, and minimal emissions. Unlike intermittent renewables (solar and wind), nuclear reactors provide stable, continuous energy, essential for a robust, modern grid. Had nuclear power expanded rather than stalled, the world today would be far less reliant on fossil fuels, with significantly lower carbon emissions and improved public health.</p><h3>Opportunity Costs and Innovation Delays</h3><p>Fear-based environmental advocacy has not only shaped public perception but also regulatory landscapes, stifling innovation in nuclear technologies. Advanced reactors—such as molten-salt, breeder, and modular designs—are inherently safer, more efficient, and capable of addressing traditional nuclear concerns about safety and waste. Yet, pervasive anti-nuclear sentiment has severely hindered the development and deployment of these promising technologies.</p><h3>Moral Hypocrisy and Credibility Crisis</h3><p>Environmental activists routinely highlight the urgency of climate change while simultaneously opposing nuclear solutions—arguably the most practical and immediate large-scale decarbonization option available today. This stance severely undermines their credibility, leading to cynicism and distrust among the broader public. If advocates truly perceived climate change as an existential threat, logically, they would champion nuclear power vigorously.</p><h3>Real Harms: An Environmental Paradox</h3><p>The consequence of decades of anti-nuclear activism is measurable and troubling: increased carbon emissions, worsened air quality, greater reliance on fossil fuels, and delayed implementation of clean, scalable power. Far from protecting the environment, anti-nuclear sentiment has actively contributed to environmental degradation and climate risk.</p><h3>Correcting the Mistake</h3><p>Addressing this error involves a fundamental shift in environmental advocacy:</p><ul><li><p>Recognizing nuclear power as a cornerstone of realistic climate solutions.</p></li><li><p>Promoting innovation and regulatory reform in advanced reactor technologies.</p></li><li><p>Prioritizing scientific accuracy over emotionally-driven fears.</p></li></ul><p>By embracing nuclear energy, environmentalists could make a powerful, positive, and genuinely impactful pivot—potentially transforming their movement from symbolic gestures toward meaningful global change.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Wound and the Weapon</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!kvtu!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1105bf01-428a-43e9-8312-4d30ee4602d5_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!kvtu!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1105bf01-428a-43e9-8312-4d30ee4602d5_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!kvtu!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1105bf01-428a-43e9-8312-4d30ee4602d5_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!kvtu!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1105bf01-428a-43e9-8312-4d30ee4602d5_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!kvtu!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1105bf01-428a-43e9-8312-4d30ee4602d5_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/1105bf01-428a-43e9-8312-4d30ee4602d5_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/1105bf01-428a-43e9-8312-4d30ee4602d5_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:1784202,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.fyi/i/172613358?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1105bf01-428a-43e9-8312-4d30ee4602d5_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!kvtu!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1105bf01-428a-43e9-8312-4d30ee4602d5_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!kvtu!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1105bf01-428a-43e9-8312-4d30ee4602d5_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!kvtu!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1105bf01-428a-43e9-8312-4d30ee4602d5_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!kvtu!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1105bf01-428a-43e9-8312-4d30ee4602d5_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>Trauma is not simply a wound of the body or brain; it is a fracture in the story one tells about oneself. A coherent psyche depends on continuity — past, present, and future stitched into a legible whole. Trauma rips a hole in that fabric. It leaves a gap in the story where meaning should reside, and into that gap seeps confusion, shame, and silence. The therapeutic impulse — whether in psychoanalysis, narrative therapy, or even everyday friendship — is to help the injured reclaim authorship. To speak the wound aloud is to begin repairing the narrative.</p><div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!CVl9!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F325bf671-0163-4944-aa35-3536b6b6fc85_769x233.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!CVl9!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F325bf671-0163-4944-aa35-3536b6b6fc85_769x233.png 424w, https://substackcdn.com/image/fetch/$s_!CVl9!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F325bf671-0163-4944-aa35-3536b6b6fc85_769x233.png 848w, https://substackcdn.com/image/fetch/$s_!CVl9!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F325bf671-0163-4944-aa35-3536b6b6fc85_769x233.png 1272w, https://substackcdn.com/image/fetch/$s_!CVl9!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F325bf671-0163-4944-aa35-3536b6b6fc85_769x233.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/325bf671-0163-4944-aa35-3536b6b6fc85_769x233.png" width="769" height="233" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/325bf671-0163-4944-aa35-3536b6b6fc85_769x233.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:233,&quot;width&quot;:769,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:39932,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:false,&quot;internalRedirect&quot;:&quot;https://axio.fyi/i/172613358?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F325bf671-0163-4944-aa35-3536b6b6fc85_769x233.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!CVl9!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F325bf671-0163-4944-aa35-3536b6b6fc85_769x233.png 424w, https://substackcdn.com/image/fetch/$s_!CVl9!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F325bf671-0163-4944-aa35-3536b6b6fc85_769x233.png 848w, https://substackcdn.com/image/fetch/$s_!CVl9!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F325bf671-0163-4944-aa35-3536b6b6fc85_769x233.png 1272w, https://substackcdn.com/image/fetch/$s_!CVl9!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F325bf671-0163-4944-aa35-3536b6b6fc85_769x233.png 1456w" sizes="100vw"></picture><div></div></div></a></figure></div><p>So far, this is humane and true. But once we recognize trauma as a disruption in narrative, a darker corollary follows: narratives are not merely personal. They are social, political, and cultural. They frame who is heard and who is silenced, who is the victim and who is the oppressor, who deserves sympathy and who deserves censure. To invoke trauma is therefore never a neutral act. It shifts the axis of power in a conversation. It redirects the spotlight, reorders the terms of debate, and places the speaker in the privileged role of witness.</p><p>This is the sharp insight behind the claim that those who introduce trauma into irrelevant contexts are not simply over-sharing, but seeking power. By dragging their wound into a space where it does not belong, they tilt the narrative terrain in their favor. The move is not only therapeutic; it is rhetorical. Victimhood becomes a lever.</p><p>Yet here the hot take falters. Not every disclosure of trauma is a calculated grab for dominance. To say so is to collapse human motives into a caricature of manipulation. Sometimes trauma bursts forth clumsily because the sufferer has lost their sense of proportion. Sometimes it is desperation for connection. Sometimes it is a maladaptive attempt at self-explanation. Reducing all trauma-talk to narrative power games is as crude as dismissing all illness-talk as attention-seeking. It confuses a real dynamic with a universal law.</p><p>The deeper truth is that trauma occupies a double register: <strong>healing and power</strong>. On one register, the injured seek coherence. They tell their story because they must, because silence corrodes the soul. On the other register, stories shape worlds, and trauma-talk inevitably carries political weight. These registers cannot be separated. They coexist, and to ignore one is to misunderstand the other.</p><p>The lesson, then, is not to sneer at trauma as power-play, nor to sanctify it as pure authenticity. It is to recognize the dangerous ambiguity. Trauma narratives heal, but they also sway. They restore agency to the teller, but they can also colonize the collective narrative. The wise response is neither automatic indulgence nor automatic suspicion, but a careful discernment: <em>is this story being told to stitch a soul, or to seize the stage?</em> Often it is both.</p><p>And that, perhaps, is the most sobering recognition: in the politics of meaning, wounds are weapons. To understand trauma is to see not only the broken story, but the battlefield upon which it is retold.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

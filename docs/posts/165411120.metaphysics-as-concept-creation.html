@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metaphysics as Concept Creation</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!aFtc!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9c71c25b-a538-4052-8011-cb2f9065d223_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!aFtc!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9c71c25b-a538-4052-8011-cb2f9065d223_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!aFtc!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9c71c25b-a538-4052-8011-cb2f9065d223_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!aFtc!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9c71c25b-a538-4052-8011-cb2f9065d223_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!aFtc!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9c71c25b-a538-4052-8011-cb2f9065d223_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/9c71c25b-a538-4052-8011-cb2f9065d223_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/9c71c25b-a538-4052-8011-cb2f9065d223_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:3101533,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.substack.com/i/165411120?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9c71c25b-a538-4052-8011-cb2f9065d223_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!aFtc!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9c71c25b-a538-4052-8011-cb2f9065d223_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!aFtc!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9c71c25b-a538-4052-8011-cb2f9065d223_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!aFtc!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9c71c25b-a538-4052-8011-cb2f9065d223_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!aFtc!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9c71c25b-a538-4052-8011-cb2f9065d223_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>Metaphysics often finds itself trapped in a reputation for obscurity—dismissed by pragmatists as idle speculation or scorned by positivists as nonsensical discourse. Yet, at its core, metaphysics serves a uniquely valuable role: it is fundamentally an act of concept creation.</p><p>When we engage in metaphysical thought, we are not passively uncovering hidden truths about an independent metaphysical reality. Instead, we are actively generating new conceptual frameworks. These frameworks allow us to structure our experiences, interpret observations, and create meaningful connections where previously none existed. Metaphysics, thus understood, does not discover but rather invents the vocabulary and grammar that guide our reasoning about reality.</p><p>Consider concepts like causality, substance, identity, modality, or even time. None of these emerge fully formed from empirical observation alone; rather, they are constructed to provide coherence to our understanding. They serve as foundational scaffolds enabling rigorous inquiry across science, ethics, and everyday reasoning.</p><p>Viewing metaphysics explicitly as concept creation clarifies its value. Instead of chasing elusive metaphysical "truths," philosophers and thinkers can assess metaphysical systems based on criteria like utility, clarity, coherence, and explanatory power. Metaphysical disputes then become discussions about which concepts serve our epistemic goals most effectively, not about which hidden realities we have somehow accessed.</p><p>This perspective aligns metaphysics with creativity, akin to artistic or mathematical invention, and encourages deliberate, purposeful concept formation. It liberates metaphysics from dogmatic realism and nihilistic skepticism alike, positioning it instead as a vital, constructive endeavor essential for intellectual progress.</p><p>Metaphysics, stripped to its essence, is neither idle speculation nor meaningless abstraction. It is precisely and simply the creative act of crafting new ways to see, understand, and engage with the world.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

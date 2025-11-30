@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IQ: Realities, Misconceptions, and Moral Confusions</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!-IF8!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb60b3991-03a8-4191-9502-91de6e3a7018_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!-IF8!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb60b3991-03a8-4191-9502-91de6e3a7018_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!-IF8!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb60b3991-03a8-4191-9502-91de6e3a7018_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!-IF8!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb60b3991-03a8-4191-9502-91de6e3a7018_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!-IF8!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb60b3991-03a8-4191-9502-91de6e3a7018_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/b60b3991-03a8-4191-9502-91de6e3a7018_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/b60b3991-03a8-4191-9502-91de6e3a7018_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:3468352,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.substack.com/i/165428073?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb60b3991-03a8-4191-9502-91de6e3a7018_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!-IF8!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb60b3991-03a8-4191-9502-91de6e3a7018_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!-IF8!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb60b3991-03a8-4191-9502-91de6e3a7018_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!-IF8!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb60b3991-03a8-4191-9502-91de6e3a7018_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!-IF8!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb60b3991-03a8-4191-9502-91de6e3a7018_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>IQ is perhaps the most studied and yet most misunderstood psychological metric. While widely recognized as a measure of cognitive abilities—specifically analytical reasoning, logical thinking, and working memory—debates about IQ often provoke intense ideological reactions.</p><p>Empirical research spanning decades robustly confirms that IQ scores strongly correlate with significant life outcomes such as educational attainment, job performance, socioeconomic status, and even health and longevity. These correlations are consistent, reproducible, and among the strongest predictive relationships identified in social science.</p><p>However, IQ tests do not capture all essential aspects of human cognition. Critiques, notably from Nassim Taleb, highlight that IQ inadequately measures creativity, emotional intelligence, practical wisdom, resilience, and adaptability in complex, unpredictable environments. These limitations are crucial to acknowledge, but they do not invalidate IQ as a meaningful and powerful predictive tool within its domain.</p><p>To maintain consistency with our earlier discussion <a href="163805376.intelligence-is-a-game-we-play.html">defining intelligence</a> through strategic effectiveness within explicit or implicit "games," we can see IQ primarily as proficiency in cognitive "games" involving analytical reasoning, abstraction, and logical decision-making. Thus, IQ effectively measures the capacity to achieve cognitive goals within certain intellectual and educational contexts.</p><p>Yet, many individuals, particularly from egalitarian viewpoints, vehemently reject IQ differences. This rejection primarily arises from moral confusion—conflating cognitive capacity with moral worth. Recognizing empirical differences in cognitive abilities does not imply endorsing moral inequality, nor does it justify discriminatory treatment or diminish human dignity.</p><p>Moral worth and dignity are foundational aspects of personhood and must remain independent of intellectual capability. Clearly distinguishing intelligence from moral value helps dispel unnecessary defensiveness and enables rational, honest discussions about social policy and educational practices.</p><p>Realistically acknowledging IQ differences allows better tailoring of educational and social interventions to individual needs, maximizing human potential and flourishing. Denying empirical realities due to moral discomfort hampers effective solutions and fosters confusion.</p><p>In short, recognizing robust evidence for IQ as a valid measure of specific cognitive abilities aligns coherently with our broader definition of intelligence as strategic effectiveness in goal-oriented contexts. Far from undermining moral equality or human dignity, this nuanced understanding clarifies human capabilities, limitations, and conditions necessary for genuine flourishing.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Limits of Rationalization</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!Vpaa!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4762f7ee-13c3-472d-a6a8-f12763562ed0_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!Vpaa!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4762f7ee-13c3-472d-a6a8-f12763562ed0_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!Vpaa!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4762f7ee-13c3-472d-a6a8-f12763562ed0_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!Vpaa!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4762f7ee-13c3-472d-a6a8-f12763562ed0_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!Vpaa!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4762f7ee-13c3-472d-a6a8-f12763562ed0_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/4762f7ee-13c3-472d-a6a8-f12763562ed0_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/4762f7ee-13c3-472d-a6a8-f12763562ed0_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:1911136,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.fyi/i/174063496?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4762f7ee-13c3-472d-a6a8-f12763562ed0_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!Vpaa!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4762f7ee-13c3-472d-a6a8-f12763562ed0_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!Vpaa!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4762f7ee-13c3-472d-a6a8-f12763562ed0_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!Vpaa!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4762f7ee-13c3-472d-a6a8-f12763562ed0_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!Vpaa!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4762f7ee-13c3-472d-a6a8-f12763562ed0_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p><a href="https://x.com/6ixbuzztv/status/1968066118817554768">Brenda had a choice</a>: take a $1 million lump sum, or receive $1,000 a week for life. She chose the weekly payout. On the surface, this decision can be rationalized. It provides certainty, discipline, and the comforting story that she will never run out of money. It removes the temptation to squander a windfall or the risk of losing it in bad investments. With a bit of imagination, the choice sounds defensible.</p><div class="captioned-image-container"><figure><a class="image-link image2 is-viewable-img" target="_blank" href="https://substackcdn.com/image/fetch/$s_!GDFC!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F22658fd5-c6e3-4bf2-a74a-7948f4c2fa87_770x806.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!GDFC!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F22658fd5-c6e3-4bf2-a74a-7948f4c2fa87_770x806.png 424w, https://substackcdn.com/image/fetch/$s_!GDFC!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F22658fd5-c6e3-4bf2-a74a-7948f4c2fa87_770x806.png 848w, https://substackcdn.com/image/fetch/$s_!GDFC!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F22658fd5-c6e3-4bf2-a74a-7948f4c2fa87_770x806.png 1272w, https://substackcdn.com/image/fetch/$s_!GDFC!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F22658fd5-c6e3-4bf2-a74a-7948f4c2fa87_770x806.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/22658fd5-c6e3-4bf2-a74a-7948f4c2fa87_770x806.png" width="770" height="806" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/22658fd5-c6e3-4bf2-a74a-7948f4c2fa87_770x806.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:806,&quot;width&quot;:770,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:387839,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:false,&quot;internalRedirect&quot;:&quot;https://axio.fyi/i/174063496?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F22658fd5-c6e3-4bf2-a74a-7948f4c2fa87_770x806.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!GDFC!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F22658fd5-c6e3-4bf2-a74a-7948f4c2fa87_770x806.png 424w, https://substackcdn.com/image/fetch/$s_!GDFC!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F22658fd5-c6e3-4bf2-a74a-7948f4c2fa87_770x806.png 848w, https://substackcdn.com/image/fetch/$s_!GDFC!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F22658fd5-c6e3-4bf2-a74a-7948f4c2fa87_770x806.png 1272w, https://substackcdn.com/image/fetch/$s_!GDFC!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F22658fd5-c6e3-4bf2-a74a-7948f4c2fa87_770x806.png 1456w" sizes="100vw"></picture><div class="image-link-expand"><div class="pencraft pc-display-flex pc-gap-8 pc-reset"><button tabindex="0" type="button" class="pencraft pc-reset pencraft icon-container restack-image"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-refresh-cw"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path><path d="M8 16H3v5"></path></svg></button><button tabindex="0" type="button" class="pencraft pc-reset pencraft icon-container view-image"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-maximize2 lucide-maximize-2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" x2="14" y1="3" y2="10"></line><line x1="3" x2="10" y1="21" y2="14"></line></svg></button></div></div></div></a></figure></div><p>But rationalization is not rationality.</p><div><hr></div><h2>The Trap of Justification</h2><p>Humans are masters at post‑hoc storytelling. We can make nearly any choice seem reasonable after the fact. Brenda's annuity becomes a parable of prudence, of preferring security over risk. Yet when you zoom out, the numbers are stark:</p><ul><li><p>The annuity breaks even in just under 20 years. Live longer, and it pays more. Die sooner, and the house wins.</p></li><li><p>The lump sum, invested even conservatively, would compound far beyond the annuity's lifetime trickle.</p></li><li><p>The lump sum could be passed to heirs. The annuity dies with Brenda.</p></li></ul><p>Under almost every financial lens, the lump sum dominates. So why did she choose otherwise? Because she believed the story of safety more than the mathematics of wealth.</p><div><hr></div><h2>Meta‑Rationality</h2><p>This is where <strong>meta‑rationality</strong> enters. Rationality is coherence within a frame. Meta‑rationality is the ability to step outside the frame and ask whether the frame itself is sound. Brenda's rationalization is internally coherent—"I trust the lottery company more than myself." But meta‑rationality asks: is that trust well‑placed? Does it survive scrutiny when we consider compounding, inheritance, and life expectancy?</p><p>The answer is almost certainly no.</p><div><hr></div><h2>The General Lesson</h2><p>Any decision can be rationalized. But not every decision is rational. The difference lies in meta‑rationality—the ability to interrogate our own justifications rather than be seduced by them. When rationalizations only hold under special pleading, when they collapse under a wider lens, we are not reasoning—we are story‑telling.</p><p>Brenda didn’t just buy $1,000 a week. She bought a narrative that made her feel safe. Meta‑rationality demands we test those narratives against reality, because the stories we tell ourselves are often the costliest illusions of all.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

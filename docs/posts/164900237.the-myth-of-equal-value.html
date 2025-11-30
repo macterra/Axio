@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Myth of Equal Value</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!Yj_b!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F71a0da2c-6b77-4228-bc6d-38091d4ae159_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!Yj_b!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F71a0da2c-6b77-4228-bc6d-38091d4ae159_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!Yj_b!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F71a0da2c-6b77-4228-bc6d-38091d4ae159_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!Yj_b!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F71a0da2c-6b77-4228-bc6d-38091d4ae159_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!Yj_b!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F71a0da2c-6b77-4228-bc6d-38091d4ae159_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/71a0da2c-6b77-4228-bc6d-38091d4ae159_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/71a0da2c-6b77-4228-bc6d-38091d4ae159_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:null,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:null,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:null,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!Yj_b!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F71a0da2c-6b77-4228-bc6d-38091d4ae159_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!Yj_b!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F71a0da2c-6b77-4228-bc6d-38091d4ae159_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!Yj_b!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F71a0da2c-6b77-4228-bc6d-38091d4ae159_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!Yj_b!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F71a0da2c-6b77-4228-bc6d-38091d4ae159_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>It is widely asserted, and rarely questioned, that all human lives are equally valuable. This claim is echoed across political ideologies, legal systems, and religious traditions. It is treated as axiomatic: to deny it is to risk moral heresy.</p><p>Yet if we take seriously the idea that <a href="164846085.the-myth-of-objective-value.html">value is subjective</a>, as we have argued throughout this series, then this assumption cannot be maintained. There is no coherent basis for the claim that all persons are equally valuable—unless one specifies to whom, in what context, and under what evaluative criteria.</p><p>This post contends that while equal rights may be justifiable as a legal or institutional convention, the claim that all people possess equal value is philosophically indefensible. Value is not a property that people possess in equal measure. It is always relative to a valuer—and valuers differ.</p><p>We begin with a simple observation: no one acts as if all people are equally valuable.</p><p>You do not grieve the death of a stranger as you would a sibling. You do not distribute your time, attention, or resources evenly across the global population. You do not assign identical significance to the suffering, flourishing, or potential of every individual.</p><p>This is not evidence of bias or moral failure. It is evidence of valuation. And valuation is necessarily differentiated. It reflects personal history, emotional investment, proximity, perceived relevance, and a host of other subjective criteria.</p><p>Indeed, if we define value as that for which an agent is <a href="164878445.willing-and-able.html">willing and able</a> to <a href="164851202.sacrifice-as-signal.html">make a sacrifice</a>—as we have done—then the notion of equal value among persons becomes practically incoherent. You are willing to give up more for some than for others. That is what it means to value.</p><p>This leads to a critical distinction between normative equality and evaluative equality.</p><ul><li><p>Normative equality refers to the legal or moral stance that all persons should be treated equally under some system of rules (e.g., equal protection under the law).</p></li><li><p>Evaluative equality would mean that all persons are equally valued by some agent or system.</p></li></ul><p>The former is a conventional commitment—often justified on grounds of fairness, coordination, or institutional simplicity. The latter is a psychological and ontological impossibility.</p><p>There is no agent—not even the state, not even a hypothetical God—who actually assigns equal value to every human life in practice. And there is no plausible mechanism for computing such value absent a vantage point.</p><p>The belief in universal human value thus rests on a metaphysical sleight of hand. It treats intersubjective consensus (or aspiration) as if it were objective fact.</p><p>It is one thing to say, “We choose to treat all people equally under law.” It is quite another to say, “All people are equally valuable.” The former is a policy. The latter is a metaphysical claim—one that presupposes value can exist independently of valuers.</p><p>But value, as we have shown, is always agent-relative. It arises only in the context of a mind that cares, prefers, or acts. Outside such a context, value does not exist. And within such contexts, value is necessarily uneven.</p><p>Does this imply that some lives “matter less”? That depends on the vantage. From the perspective of a parent, their child’s life may be worth any number of strangers. If some lives matter more then other lives must necessarily matter less. From the perspective of a policymaker, a statistical life may carry actuarial significance. From the perspective of a solipsist, only one life matters.</p><p>The discomfort this generates is not a refutation. It is a recognition that moral clarity requires abandoning comforting fictions.</p><p>One can—and perhaps should—advocate for equal legal standing, universal rights, or impartial treatment in specific domains. But these are design choices, not revelations of objective value.</p><p>The conclusion is stark, but necessary:</p><blockquote><p>People are not of equal value. Not inherently. Not objectively. Not from any vantage outside specific agents.</p></blockquote><p>What remains is not cynicism, but agency. The task of ethics is not to pretend we value everyone equally, but to confront the fact that we do not—and then ask what follows.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

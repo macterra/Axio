@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>An Ecology of Contrarians</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!Z8bB!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff2a3bf47-e4cb-498c-a181-f08fca7afd5f_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!Z8bB!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff2a3bf47-e4cb-498c-a181-f08fca7afd5f_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!Z8bB!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff2a3bf47-e4cb-498c-a181-f08fca7afd5f_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!Z8bB!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff2a3bf47-e4cb-498c-a181-f08fca7afd5f_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!Z8bB!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff2a3bf47-e4cb-498c-a181-f08fca7afd5f_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/f2a3bf47-e4cb-498c-a181-f08fca7afd5f_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/f2a3bf47-e4cb-498c-a181-f08fca7afd5f_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:1328887,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.fyi/i/175065575?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff2a3bf47-e4cb-498c-a181-f08fca7afd5f_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!Z8bB!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff2a3bf47-e4cb-498c-a181-f08fca7afd5f_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!Z8bB!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff2a3bf47-e4cb-498c-a181-f08fca7afd5f_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!Z8bB!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff2a3bf47-e4cb-498c-a181-f08fca7afd5f_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!Z8bB!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff2a3bf47-e4cb-498c-a181-f08fca7afd5f_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>Contrarianism is one of the oldest moves in intellectual life. By flipping taboos and puncturing consensus, contrarians force us to confront hidden assumptions and unexamined norms. But not all contrarian strategies are created equal, and some carry reputational risks so high they amount to career suicide.</p><p><strong>Taboo-Flipping (<a href="https://x.com/Aella_Girl">Aella style</a>):</strong> This strategy takes a socially uncomfortable subject—sex work, kinks, polyamory—and dissects it with clinical curiosity. The goal is to normalize open discussion and reveal hypocrisy. The risk is <em>survivable</em>; these taboos are provocative enough to attract attention, but not so radioactive that debate is impossible.</p><p><strong>Provocation-Laundering (<a href="https://x.com/captgouda24">Decker style</a>):</strong> This strategy begins with the most explosive taboo available, then reframes it in abstract analogies (diamonds, lab-grown meat) before repeating the same logical trick in safer domains. The goal is to be known as the one who will “say the unsayable.” The risk is <em>radioactive</em>. Once the association is made, the safer analogies do not wash it away—they just keep the original provocation in circulation.</p><p><strong>Cynical Nihilism (<a href="https://x.com/nntaleb">Taleb style</a>):</strong> Here, the contrarian doesn’t flip taboos so much as tear down entire fields of thought (IQ, academia, risk models). The payoff is authority as a professional skeptic, the clearing house for iconoclasm. The risk is <em>volatile</em>: sometimes celebrated as a truth-teller, sometimes dismissed as a crank.</p><p><strong>Ironist/Satirist (<a href="https://x.com/curtis_yarvin">Moldbug </a>or early <a href="https://x.com/ESYudkowsky">Yudkowsky style</a>):</strong> This strategy packages fringe or taboo ideas in layers of irony, satire, or science-fictional thought experiments. It creates plausible deniability—“just exploring ideas”—while cultivating a cult audience who takes it seriously. The risk is <em>ambiguous</em>: the mask can work for years, but eventually it slips.</p><p>The key lesson: contrarianism is a tool. Used well, it sharpens thought and challenges dogma. Used poorly, it brands you permanently with one grotesque provocation. The ecology of contrarians shows the difference between survivable taboos and fatal one. Some contrarians break idols. Others just set themselves on fire and call it illumination.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

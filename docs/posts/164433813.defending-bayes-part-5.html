@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Defending Bayes, Part 5</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!RGGI!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F626dfa11-61b5-4c5f-b98f-b4dc06a6926a_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!RGGI!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F626dfa11-61b5-4c5f-b98f-b4dc06a6926a_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!RGGI!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F626dfa11-61b5-4c5f-b98f-b4dc06a6926a_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!RGGI!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F626dfa11-61b5-4c5f-b98f-b4dc06a6926a_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!RGGI!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F626dfa11-61b5-4c5f-b98f-b4dc06a6926a_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/626dfa11-61b5-4c5f-b98f-b4dc06a6926a_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/626dfa11-61b5-4c5f-b98f-b4dc06a6926a_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:null,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:null,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:null,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!RGGI!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F626dfa11-61b5-4c5f-b98f-b4dc06a6926a_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!RGGI!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F626dfa11-61b5-4c5f-b98f-b4dc06a6926a_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!RGGI!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F626dfa11-61b5-4c5f-b98f-b4dc06a6926a_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!RGGI!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F626dfa11-61b5-4c5f-b98f-b4dc06a6926a_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>In our <a href="164364452.defending-bayes-part-4.html">previous blog series</a>, we emphasized that <strong>credence</strong>—often understood as subjective probability—is primarily about timeline (or indexical) uncertainty. Credence quantifies uncertainty about <em>which</em> timeline or branch of reality you find yourself in, given a Quantum Branching Universe framework.</p><p>However, this interpretation does not exhaust all valid uses of credence. Here are three additional contexts where credence plays a legitimate role:</p><h3>1. Logical or Mathematical Uncertainty</h3><p>Credence often quantifies uncertainty about unresolved mathematical or logical facts. For instance, consider your credence about whether the trillionth digit of π is a 7. This uncertainty is not about which timeline you're on but about computational limits or unresolved logical conjectures. Credence here expresses epistemic uncertainty arising from incomplete proofs or limited computational resources.</p><h3>2. Conceptual or Semantic Uncertainty</h3><p>Another valid use of credence arises from vagueness or ambiguity in concepts and definitions. Suppose you have credence about the statement: "Baldness begins at fewer than 500 hairs." Here the uncertainty does not stem from branching timelines but from semantic fuzziness. Such conceptual uncertainty is inherently tied to linguistic or definitional ambiguities.</p><h3>3. Metaphysical or Ontological Uncertainty</h3><p>Finally, credence can quantify uncertainty regarding metaphysical claims that are not straightforwardly empirical or timeline-specific. Consider the credence you might assign to the claim: "Consciousness requires biological substrates," or your credence about a particular philosophical interpretation of quantum mechanics other than MWI. This uncertainty reflects ambiguity about the fundamental nature of reality itself.</p><h3>Clarifying the Scope of Credence</h3><p>Recognizing these three additional forms of uncertainty enriches our understanding of credence, making it clear that while timeline uncertainty is central in empirical contexts, credence also meaningfully applies to logical, semantic, and metaphysical domains.</p><p>Thus, we refine our earlier stance:</p><blockquote><p>"Credence primarily quantifies timeline (or indexical) uncertainty but can also validly express uncertainty arising from logical, conceptual, or metaphysical sources."</p></blockquote><p>Understanding this broader scope allows for a more robust and nuanced application of credence in various philosophical and practical contexts.</p><h3>A Meta-Credence Check</h3><p>Given our careful examination of credence, we should explicitly consider our credence that this four-category classification is exhaustive. While we've carefully reasoned through each category, we cannot rule out subtle overlooked distinctions. Thus, due to lingering logical, conceptual, and metaphysical uncertainties, our rational credence that this list is exhaustive is high—around 95%—but responsibly short of certainty.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

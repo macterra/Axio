@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Mechanics of Agency</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!TiaP!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3d3586ec-44e9-479b-81f6-c1673094bbe2_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!TiaP!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3d3586ec-44e9-479b-81f6-c1673094bbe2_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!TiaP!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3d3586ec-44e9-479b-81f6-c1673094bbe2_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!TiaP!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3d3586ec-44e9-479b-81f6-c1673094bbe2_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!TiaP!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3d3586ec-44e9-479b-81f6-c1673094bbe2_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/3d3586ec-44e9-479b-81f6-c1673094bbe2_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/3d3586ec-44e9-479b-81f6-c1673094bbe2_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:null,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:null,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:null,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!TiaP!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3d3586ec-44e9-479b-81f6-c1673094bbe2_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!TiaP!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3d3586ec-44e9-479b-81f6-c1673094bbe2_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!TiaP!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3d3586ec-44e9-479b-81f6-c1673094bbe2_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!TiaP!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3d3586ec-44e9-479b-81f6-c1673094bbe2_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><h3>Defining Genuine Agency</h3><p>Genuine agency is a fundamental yet nuanced concept central to understanding intentional action within complex systems. To define genuine agency clearly, we establish three essential criteria:</p><h4>1. Embeddedness</h4><p>Embeddedness refers to the necessity of agents existing within and interacting continuously with their environment. A genuine agent must:</p><ul><li><p>Possess boundary conditions clearly delineating it from its environment.</p></li><li><p>Continuously exchange information and energy, making decisions based on real-time interactions.</p></li><li><p>Adapt and respond dynamically, modifying its behaviors based on feedback from environmental contexts.</p></li></ul><h4>2. Predictive Modeling</h4><p>Genuine agents exhibit predictive modeling, meaning they:</p><ul><li><p>Possess internal representations or models of their environment, allowing anticipation of future states.</p></li><li><p>Engage in simulations or forecasting scenarios to evaluate potential outcomes of actions.</p></li><li><p>Leverage these predictions to choose actions aimed at achieving specific objectives or preferences.</p></li></ul><h4>3. Intentional Biasing</h4><p>Intentional biasing indicates the agent’s capability to:</p><ul><li><p>Demonstrate preferences or goals that guide its selection among possible outcomes.</p></li><li><p>Exert influence to bias or skew environmental conditions or outcomes towards those preferred states.</p></li><li><p>Display non-random behaviors explicitly directed by internal states or goals, rather than purely reactive or mechanical interactions.</p></li></ul><h4>Distinguishing from Reactive Systems</h4><p>Unlike purely reactive or mechanical systems (e.g., simple thermodynamic or quantum systems), genuine agents:</p><ul><li><p>Go beyond stimulus-response paradigms.</p></li><li><p>Exhibit internally driven goal-directed behaviors.</p></li><li><p>Modify their actions based on anticipated rather than solely past or current states.</p></li></ul><p>By clearly delineating these criteria, genuine agency is rigorously defined, setting the foundation for exploring minimal viable agents and biological agency in subsequent parts of this series.</p><p></p><h3>Identifying the Minimal Viable Agent (MVA)</h3><p>Having established criteria for genuine agency, we now turn to identifying and characterizing the simplest systems that fulfill these conditions—termed the Minimal Viable Agent (MVA).</p><h4>Evaluation of Candidate Systems</h4><p>To rigorously evaluate potential minimal agents, we assess candidate systems across three distinct but interrelated dimensions:</p><ol><li><p><strong>Quantum Systems:</strong></p><ul><li><p>Explore quantum entities or mechanisms capable of predictive modeling and exhibiting preference-driven state selections.</p></li><li><p>Evaluate whether quantum-level interactions alone are sufficient or require higher-level classical structures to demonstrate intentional biasing.</p></li></ul></li><li><p><strong>Thermodynamic Systems:</strong></p><ul><li><p>Analyze dissipative systems (e.g., autocatalytic chemical reactions, self-organizing patterns) for signs of predictive capacity and embedded adaptive behaviors.</p></li><li><p>Examine how entropy gradients or energy flows might facilitate primitive predictive modeling or intentional biasing.</p></li></ul></li><li><p><strong>Computational Systems:</strong></p><ul><li><p>Assess simple algorithmic or computational constructs capable of reinforcement learning or predictive decision-making.</p></li><li><p>Evaluate minimal computational complexity required to exhibit embeddedness, predictive capacity, and intentional behaviors.</p></li></ul></li></ol><h4>Minimal Reinforcement Learning Agents</h4><p>Among candidate systems, minimal reinforcement learning agents emerge as particularly promising MVAs due to their explicit:</p><ul><li><p><strong>Predictive Modeling:</strong> They possess basic internal models of environmental outcomes based on action-state associations.</p></li><li><p><strong>Embeddedness:</strong> Continuously interacting with environments and adjusting behaviors through real-time feedback.</p></li><li><p><strong>Intentional Biasing:</strong> Demonstrating goal-oriented behaviors through policy-driven decision-making processes.</p></li></ul><p>Such minimal reinforcement learning agents encapsulate all core agency criteria succinctly, making them ideal candidates for the simplest forms of genuine agency. These findings set the stage for exploring how biological systems instantiate minimal agency criteria, as addressed in the subsequent section.</p><h3>Biological Agency and Evolutionary Insights</h3><p>Having defined genuine agency and identified minimal viable agents, we now explore how biological systems exemplify these minimal criteria, providing critical evolutionary and cognitive insights.</p><h4>Minimal Biological Agents</h4><p>Minimal biological agents, such as single-celled organisms or simple neural organisms, satisfy genuine agency criteria through:</p><ul><li><p><strong>Embeddedness:</strong></p><ul><li><p>Continuous sensory input and adaptive responses to environmental stimuli.</p></li><li><p>Maintenance of distinct physical boundaries and metabolic exchanges with the environment.</p></li></ul></li><li><p><strong>Predictive Modeling:</strong></p><ul><li><p>Basic anticipatory mechanisms (e.g., chemotaxis, phototaxis) predicting beneficial environmental states.</p></li><li><p>Primitive learning or habituation mechanisms that adjust behaviors based on prior interactions.</p></li></ul></li><li><p><strong>Intentional Biasing:</strong></p><ul><li><p>Goal-directed actions towards resource-rich or safe environments, indicating internal preference states.</p></li><li><p>Capability to alter environmental conditions to favor survival and reproduction, even minimally.</p></li></ul></li></ul><h4>Evolutionary and Cognitive Implications</h4><p>Exploring minimal biological agents provides not only practical criteria for defining agency but also profound philosophical insights into cognition and intentionality. Recognizing evolutionary processes as foundational to agency reframes traditional debates around free will and intentional action. Ultimately, these biological insights compel us to revisit—and perhaps revise—long-standing assumptions about the nature of consciousness and decision-making itself.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

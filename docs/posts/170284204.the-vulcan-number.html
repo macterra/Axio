@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Vulcan Number</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -243,5 +261,29 @@ print(VulcanDecimal)
 print(string.join(x + ', ' for x in str(VulcanDecimal)[2:]))</code></code></pre><p>Numerically evaluating this binary construction yields a decimal approximation:</p><pre><code><code>0.276387117279486523734198676211901230555089988160685506143676819115...
 </code></code></pre><h3>A Modest Reflection</h3><p>The Vulcan Number, while modestly intended, does illustrate a fascinating aspect of normality without relying on empirical or naturally occurring examples. It gently challenges the notion that deep mathematical explanations must always be grounded in concrete empirical examples.</p><p>Instead, it demonstrates how abstract theoretical concepts can be given explicit form through deliberate human creativity, even if such examples do not naturally arise. My contribution was simply an attempt to provide a clear, computable example illustrating a beautiful mathematical idea.</p><h3>Concluding Thoughts</h3><p>While the Vulcan Number's full normality in bases beyond binary remains unproven, its simple and explicit construction may help enrich discussions around digit distribution and computational mathematics. Ultimately, I hope this construction offers an approachable demonstration of a subtle mathematical truth, highlighting how sometimes the clarity we seek in mathematics emerges not from empirical discovery, but from intentional and creative exploration.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

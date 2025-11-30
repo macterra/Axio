@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Islamophobia Trap</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!GRvV!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7c2a0d77-fd87-49c5-9c4a-28a338aafe4a_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!GRvV!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7c2a0d77-fd87-49c5-9c4a-28a338aafe4a_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!GRvV!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7c2a0d77-fd87-49c5-9c4a-28a338aafe4a_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!GRvV!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7c2a0d77-fd87-49c5-9c4a-28a338aafe4a_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!GRvV!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7c2a0d77-fd87-49c5-9c4a-28a338aafe4a_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/7c2a0d77-fd87-49c5-9c4a-28a338aafe4a_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/7c2a0d77-fd87-49c5-9c4a-28a338aafe4a_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:1869335,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.fyi/i/173137799?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7c2a0d77-fd87-49c5-9c4a-28a338aafe4a_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!GRvV!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7c2a0d77-fd87-49c5-9c4a-28a338aafe4a_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!GRvV!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7c2a0d77-fd87-49c5-9c4a-28a338aafe4a_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!GRvV!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7c2a0d77-fd87-49c5-9c4a-28a338aafe4a_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!GRvV!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7c2a0d77-fd87-49c5-9c4a-28a338aafe4a_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>One of the most successful rhetorical maneuvers in modern discourse is the strategic use of the word <em>Islamophobia</em>. To see why, we need to apply the concept of a motte-and-bailey.</p><div><hr></div><h3>The Motte (Defensible Core)</h3><p>The motte is the easily defensible, commonsense meaning:</p><ul><li><p>Islamophobia means <strong>prejudice against Muslims as people</strong>.</p></li><li><p>Examples include refusing to hire someone because she wears a hijab, harassing a man at the airport because of his beard, or vandalizing a mosque.</p></li><li><p>Almost everyone agrees this is wrong. Hostility to individuals on the basis of religious identity is a form of prejudice and, in many cases, indistinguishable from racism.</p></li></ul><p>This is the position its defenders retreat to when challenged. It is safe, obvious, and broadly shared across the political spectrum.</p><div><hr></div><h3>The Bailey (Expansive Territory)</h3><p>The bailey is the more ambitious and far less defensible meaning:</p><ul><li><p>Islamophobia means <strong>criticism of Islam itself</strong>—its doctrines, its history, its laws, its founder.</p></li><li><p>Examples include questioning Sharia, rejecting blasphemy laws, critiquing Muhammad’s actions, or pointing out violent passages in the Qur’an.</p></li><li><p>Here, the word functions not as a shield for people, but as a shield for ideas.</p></li></ul><p>This territory is strategically valuable because it delegitimizes opponents. Labeling criticism of Islam as <em>Islamophobic</em> instantly reframes the critic as a bigot rather than a participant in free debate.</p><div><hr></div><h3>The Strategic Move</h3><p>The brilliance of the tactic lies in the seamless switch between motte and bailey:</p><ul><li><p>When someone objects—“Surely criticism of a religion is not the same as bigotry against its adherents?”—the defender retreats to the motte: <em>Of course we only mean prejudice against Muslims, nobody is saying criticism is off-limits.</em></p></li><li><p>But in practice, public accusations of Islamophobia overwhelmingly target critics of doctrine, not just bigots against people.</p></li></ul><p>This oscillation between definitions keeps critics perpetually on the defensive. They either accept the charge and self-censor, or they reject the charge and appear to be defending bigotry.</p><div><hr></div><h3>The Consequences</h3><p>The effect of this motte-and-bailey is twofold:</p><ol><li><p><strong>Silencing debate:</strong> Fear of being branded Islamophobic chills open discussion about Islamic law, history, and politics.</p></li><li><p><strong>Diluting meaning:</strong> The term no longer clearly distinguishes between actual bigotry and legitimate criticism. As a result, genuine anti-Muslim prejudice risks being trivialized.</p></li></ol><div><hr></div><h3>The Proper Distinction</h3><p>We must draw a sharp line:</p><ul><li><p><strong>Criticism of ideas</strong> (doctrine, texts, laws, political movements) is <em>not</em> bigotry.</p></li><li><p><strong>Hostility to people</strong> because of their religious identity <em>is</em> bigotry.</p></li></ul><p>Failing to maintain this distinction poisons discourse. Protecting individuals from discrimination is just. Shielding religious doctrines from criticism is authoritarian.</p><div><hr></div><h3>Conclusion</h3><p>Islamophobia operates as a motte-and-bailey. Its defensible core is the condemnation of anti-Muslim prejudice. Its expansive, aggressive use is the suppression of criticism of Islam itself. Recognizing this rhetorical maneuver is the first step toward resisting it. In a free society, people deserve protection from persecution, but <em>ideas</em> do not deserve protection from critique.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free Speech, Misframed</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!0N6y!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8377a228-6a36-45dc-88c8-6b06bcfc0be0_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!0N6y!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8377a228-6a36-45dc-88c8-6b06bcfc0be0_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!0N6y!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8377a228-6a36-45dc-88c8-6b06bcfc0be0_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!0N6y!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8377a228-6a36-45dc-88c8-6b06bcfc0be0_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!0N6y!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8377a228-6a36-45dc-88c8-6b06bcfc0be0_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/8377a228-6a36-45dc-88c8-6b06bcfc0be0_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/8377a228-6a36-45dc-88c8-6b06bcfc0be0_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:792207,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.fyi/i/172365268?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8377a228-6a36-45dc-88c8-6b06bcfc0be0_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!0N6y!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8377a228-6a36-45dc-88c8-6b06bcfc0be0_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!0N6y!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8377a228-6a36-45dc-88c8-6b06bcfc0be0_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!0N6y!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8377a228-6a36-45dc-88c8-6b06bcfc0be0_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!0N6y!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8377a228-6a36-45dc-88c8-6b06bcfc0be0_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p><a href="https://xkcd.com/1357/">xkcd 1357, titled </a><em><a href="https://xkcd.com/1357/">Free Speech</a></em>, is one of Randall Munroe’s most quoted comics. It shows a character explaining that “free speech” only means the government cannot arrest you for your words, not that private actors owe you a platform or protection from consequences. The strip’s punchline was immediately embraced as a mic‑drop retort in online arguments, a ready‑made slogan for dismissing dissenters.</p><p>But slogans are not philosophy. And this comic, while clever, commits a series of conceptual errors that undermine its own message. Instead of clarifying free speech, it trivializes it.</p><div><hr></div><h2>Legalism Masquerading as Philosophy</h2><p>The comic reduces free speech to the narrowest possible definition: a legal clause in the First Amendment of the U.S. Constitution. This is accurate in a strictly jurisprudential sense—but fatally incomplete. Free speech is not merely a government non‑interference policy. It is also a cultural practice, an ethical convention, and an epistemic safeguard. To collapse all of this into one legal definition is to confuse statute with substance.</p><div><hr></div><h2>The Erasure of Coercion</h2><p>My definition of coercion is precise: <strong><a href="164902314.what-counts-as-coercion.html">the credible threat of actual harm to gain compliance</a></strong>. The state can coerce through law, prisons, or police. But coercion is not the sole domain of government. Employers who threaten livelihoods, mobs who threaten physical safety, platforms that dominate the public square and deny access—all exert coercion. They shape speech not through persuasion, but through credible threats.</p><p>The comic hand‑waves these away as “consequences.” That’s moral hypocrisy: laundering coercion by renaming it.</p><div><hr></div><h2>Agency Trivialized</h2><p>Free speech is not a legal technicality. It is an amplifier of agency. Speech enables criticism, criticism enables correction, and correction enables the evolutionary growth of knowledge. By shrinking free speech to “the government won’t arrest you,” the comic amputates its cultural and epistemic significance. It strips away what makes speech matter in the first place: its role in safeguarding our ability to learn, adapt, and flourish.</p><div><hr></div><h2>From Wit to Weapon</h2><p>Unlike most xkcd strips, <em>Free Speech</em> is not exploratory. It is declarative. It does not invite inquiry; it shuts it down. That is why it was weaponized so eagerly. It became a bludgeon, licensing smug dismissals: <em>“You don’t understand free speech, go read the Constitution.”</em> That may be a clever comeback, but it is not philosophy. It is reductionism masquerading as clarity.</p><div><hr></div><h2>A Better Frame</h2><p>How should we think about free speech?</p><ul><li><p><strong>Conditional:</strong> It exists only in the absence of coercion. Not absolute, not metaphysical, but always dependent on conditions.</p></li><li><p><strong>Agent‑bound:</strong> Free speech is not a Platonic right. It is a convention we enforce because we value criticism as the engine of knowledge.</p></li><li><p><strong>Beyond the State:</strong> Government suppression is only one kind of coercion. Social, economic, and technological coercion can be equally silencing.</p></li></ul><p><strong>Free speech is conditional freedom from coercion to express criticism.</strong> Anything less is evasion.</p><div><hr></div><h2>Closing Rebuke</h2><p>xkcd 1357 remains beloved because it is simple, clean, and smug. But philosophy cannot stop at slogans. The comic demystifies nothing; it trivializes everything. Free speech is not just a legal buffer. It is the cultural oxygen of agency itself. Strip it down to courtroom semantics and you do not defend it—you hollow it out.</p><p>That is not science. That is not satire. That is sloppy philosophy in four neat panels.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

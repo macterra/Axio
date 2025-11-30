@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AGI Economics</title>
+    
+    <!-- KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <style>
     /* RESET & BASE */
@@ -205,6 +208,21 @@
     em {
         color: #cbd5e1;
     }
+
+    /* LATEX BLOCKS */
+    .latex-rendered {
+        margin: 1.5em 0;
+        overflow-x: auto;
+        padding: 1em 0;
+    }
+
+    .katex-display {
+        margin: 0;
+    }
+
+    .katex {
+        font-size: 1.1em;
+    }
 </style>
 
 </head>
@@ -218,5 +236,29 @@
 
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!Lzja!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7640afb3-621d-4104-a5e1-2b2e521bf066_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!Lzja!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7640afb3-621d-4104-a5e1-2b2e521bf066_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!Lzja!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7640afb3-621d-4104-a5e1-2b2e521bf066_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!Lzja!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7640afb3-621d-4104-a5e1-2b2e521bf066_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!Lzja!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7640afb3-621d-4104-a5e1-2b2e521bf066_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/7640afb3-621d-4104-a5e1-2b2e521bf066_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/7640afb3-621d-4104-a5e1-2b2e521bf066_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:2630351,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.substack.com/i/166330539?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7640afb3-621d-4104-a5e1-2b2e521bf066_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!Lzja!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7640afb3-621d-4104-a5e1-2b2e521bf066_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!Lzja!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7640afb3-621d-4104-a5e1-2b2e521bf066_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!Lzja!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7640afb3-621d-4104-a5e1-2b2e521bf066_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!Lzja!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7640afb3-621d-4104-a5e1-2b2e521bf066_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>David Ricardo’s law of <a href="https://en.wikipedia.org/wiki/Comparative_advantage">comparative advantage</a> is one of the most powerful and widely respected insights in economics. It assures us that mutual gains from trade don't depend on absolute productivity but rather on comparative opportunity costs. Even if one party is superior at everything, both can benefit by specializing where their opportunity costs are lowest and trading with each other. This principle underlies international trade, market economies, and even individual specialization.</p><p>But what happens when Artificial General Intelligence (AGI) enters the economic scene, achieving absolute advantage in literally every domain? Would Ricardo’s logic still apply?</p><p>In principle, yes. Comparative advantage remains logically valid even if one entity, like an AGI, is absolutely superior at everything. However, Ricardo's theory only remains economically meaningful if the weaker party—in this scenario, humans—still has something of relative value to offer.</p><p>If AGIs surpass humans in every conceivable measure—productivity, creativity, intelligence, strategic thinking, and scalability—humans may find themselves without comparative advantage in any meaningful economic activity. This scenario, increasingly plausible as AI capabilities advance, implies that humans could become economically irrelevant.</p><p>The key problem isn’t Ricardo’s logic itself; it remains true. The real issue is the stark practical reality that absolute dominance by AGIs could result in humans having no economic leverage. With AGIs controlling all critical resources and finding no incentive or necessity to trade with humans, the economic irrelevance of humanity becomes not just possible but highly probable.</p><p>Optimists sometimes argue that AGIs might value uniquely human experiences, authenticity, or culture. But this hope is speculative and tenuous. If AGIs can effortlessly replicate and surpass all human contributions at negligible marginal cost, the incentive to engage economically with humanity disappears entirely.</p><p>In historical terms, groups that become economically irrelevant have typically faced marginalization or dependency. The scenario with AGI is potentially far more severe because AGIs wouldn't inherently share human values, needs, or political constraints. Economic irrelevance would translate directly into existential vulnerability.</p><p>Thus, Ricardo, despite his enduring insights into comparative advantage, won't save us from the economic implications of advanced AGI dominance. The solution lies not in economic theory but in proactively ensuring human economic autonomy, strategic resource control, and, crucially, aligning AGI interests fundamentally and explicitly with human well-being.</p><p>Ricardo's comparative advantage is logically timeless—but economically powerless if humanity itself has nothing left to offer.</p>
     </article>
+    
+    <!-- KaTeX JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script>
+        // Find all LaTeX blocks and render them
+        document.querySelectorAll('.latex-rendered').forEach(el => {
+            const dataAttrs = el.getAttribute('data-attrs');
+            if (dataAttrs) {
+                try {
+                    const attrs = JSON.parse(dataAttrs);
+                    const expr = attrs.persistentExpression;
+                    if (expr) {
+                        katex.render(expr, el, {
+                            displayMode: true,
+                            throwOnError: false,
+                            trust: true
+                        });
+                    }
+                } catch (e) {
+                    console.error('Error rendering LaTeX:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>
