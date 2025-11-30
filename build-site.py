@@ -84,7 +84,7 @@ def process_post_file(src_path, dest_path, slug_to_id):
         replace_link,
         content
     )
-    
+
     # Fix axio.fyi links
     content = re.sub(
         r'href="https://axio\.fyi/p/([^"]+)"',
