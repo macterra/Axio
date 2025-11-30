@@ -1,0 +1,18 @@
+title: Axio
+description: A collection of essays on agency, rationality, and the future
+author: David MacTavish
+email: your-email@example.com
+
+# GitHub Pages settings
+theme: null
+markdown: kramdown
+
+# Include the posts directory
+include:
+  - posts
+
+# Exclude unnecessary files
+exclude:
+  - README.md
+  - LICENSE
+  - posts.csv
