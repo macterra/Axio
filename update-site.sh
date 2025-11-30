@@ -4,7 +4,7 @@
 #
 # This script:
 # 1. Removes Zone.Identifier files from Windows downloads
-# 2. Regenerates the index.html from posts.csv
+# 2. Builds the docs/ directory with fixed links and custom CSS
 # 3. Shows git status
 #
 # Usage:
@@ -27,9 +27,9 @@ else
 fi
 echo
 
-# Regenerate index.html
-echo "2. Generating index.html..."
-python3 generate-index.py
+# Build the docs site
+echo "2. Building docs/ site..."
+python3 build-site.py
 echo
 
 # Show git status

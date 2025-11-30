@@ -1,0 +1,6 @@
+# Built site (auto-generated from posts/)
+docs/
+
+# Python cache
+__pycache__/
+*.pyc
