@@ -66,10 +66,10 @@ def process_post_file(src_path, dest_path, slug_to_id):
 
     changes = 0
 
-    # Fix internal Substack links
+    # Fix internal Substack and custom domain links
     def replace_link(match):
         nonlocal changes
-        slug = match.group(1)
+        slug = match.group(1).rstrip('?')  # Remove trailing ? if present
 
         if slug in slug_to_id:
             post_id = slug_to_id[slug]
@@ -78,8 +78,16 @@ def process_post_file(src_path, dest_path, slug_to_id):
         else:
             return match.group(0)
 
+    # Fix axio.substack.com links
     content = re.sub(
         r'href="https://axio\.substack\.com/p/([^"]+)"',
+        replace_link,
+        content
+    )
+    
+    # Fix axio.fyi links
+    content = re.sub(
+        r'href="https://axio\.fyi/p/([^"]+)"',
         replace_link,
         content
     )
