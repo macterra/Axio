@@ -17,6 +17,7 @@ import re
 import csv
 import shutil
 from pathlib import Path
+from html import escape
 
 def load_post_mapping():
     """Load mapping of post slugs to post IDs from posts.csv"""
@@ -70,6 +71,31 @@ CUSTOM_CSS = """
 
     .back-link:hover {
         color: #fff;
+    }
+
+    /* POST HEADER */
+    .post-header {
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid #1e293b;
+    }
+
+    .post-title {
+        font-family: 'Georgia', serif;
+        font-weight: 700;
+        font-size: 2.5rem;
+        color: #ffffff;
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+    }
+
+    .post-subtitle {
+        font-family: 'Georgia', serif;
+        font-size: 1.25rem;
+        color: #94a3b8;
+        font-weight: 400;
+        line-height: 1.4;
+        margin-top: 0.5rem;
     }
 
     /* TYPOGRAPHY */
@@ -212,7 +238,7 @@ CUSTOM_CSS = """
 </style>
 """
 
-def process_post_file(src_path, dest_path, slug_to_id):
+def process_post_file(src_path, dest_path, slug_to_id, post_metadata):
     """Copy and process a single post HTML file"""
     with open(src_path, 'r', encoding='utf-8') as f:
         content = f.read()
@@ -252,19 +278,32 @@ def process_post_file(src_path, dest_path, slug_to_id):
         content
     )
 
+    # Build title section
+    title_html = ""
+    if post_metadata:
+        title = post_metadata.get('title', '')
+        subtitle = post_metadata.get('subtitle', '')
+
+        if title:
+            title_html = f'<h1 class="post-title">{escape(title)}</h1>\n'
+        if subtitle:
+            title_html += f'<p class="post-subtitle">{escape(subtitle)}</p>\n'
+        if title_html:
+            title_html = f'<header class="post-header">\n{title_html}</header>\n\n'
+
     # Wrap content in proper HTML structure with CSS
     wrapped_content = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axio - Post</title>
+    <title>{escape(post_metadata.get('title', 'Axio - Post')) if post_metadata else 'Axio - Post'}</title>
 {CUSTOM_CSS}
 </head>
 <body>
     <div class="back-link"><a href="../index.html">← Back to Index</a></div>
     <article>
-{content}
+{title_html}{content}
     </article>
 </body>
 </html>
@@ -280,9 +319,22 @@ def main():
     print("=== Building Docs Site ===")
     print()
 
-    # Load post mapping
-    print("1. Loading post mapping from posts.csv...")
+    # Load post mapping and metadata
+    print("1. Loading post data from posts.csv...")
     slug_to_id = load_post_mapping()
+
+    # Also load full metadata for titles/subtitles
+    post_metadata = {}
+    with open('posts.csv', 'r', encoding='utf-8') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            post_id = row['post_id']
+            post_metadata[post_id] = {
+                'title': row.get('title', ''),
+                'subtitle': row.get('subtitle', ''),
+                'date': row.get('post_date', '')
+            }
+
     print(f"   ✓ Loaded {len(slug_to_id)} post mappings")
     print()
 
@@ -307,7 +359,10 @@ def main():
 
     for src_file in html_files:
         dest_file = docs_posts_dir / src_file.name
-        changes = process_post_file(src_file, dest_file, slug_to_id)
+        # Extract post_id from filename
+        post_id = src_file.stem
+        metadata = post_metadata.get(post_id, {})
+        changes = process_post_file(src_file, dest_file, slug_to_id, metadata)
         total_changes += changes
         files_processed += 1
 

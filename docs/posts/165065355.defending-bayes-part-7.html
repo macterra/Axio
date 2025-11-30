@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axio - Post</title>
+    <title>Defending Bayes, Part 7</title>
 
 <style>
     /* RESET & BASE */
@@ -41,6 +41,31 @@
 
     .back-link:hover {
         color: #fff;
+    }
+
+    /* POST HEADER */
+    .post-header {
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid #1e293b;
+    }
+
+    .post-title {
+        font-family: 'Georgia', serif;
+        font-weight: 700;
+        font-size: 2.5rem;
+        color: #ffffff;
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+    }
+
+    .post-subtitle {
+        font-family: 'Georgia', serif;
+        font-size: 1.25rem;
+        color: #94a3b8;
+        font-weight: 400;
+        line-height: 1.4;
+        margin-top: 0.5rem;
     }
 
     /* TYPOGRAPHY */
@@ -186,6 +211,11 @@
 <body>
     <div class="back-link"><a href="../index.html">← Back to Index</a></div>
     <article>
+<header class="post-header">
+<h1 class="post-title">Defending Bayes, Part 7</h1>
+<p class="post-subtitle">Why Theories Aren’t Probabilistic (But Our Beliefs Must Be)</p>
+</header>
+
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!Hr3v!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff1590c82-c43f-4d9b-8c1c-8c1380559875_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!Hr3v!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff1590c82-c43f-4d9b-8c1c-8c1380559875_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!Hr3v!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff1590c82-c43f-4d9b-8c1c-8c1380559875_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!Hr3v!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff1590c82-c43f-4d9b-8c1c-8c1380559875_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!Hr3v!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff1590c82-c43f-4d9b-8c1c-8c1380559875_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/f1590c82-c43f-4d9b-8c1c-8c1380559875_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/f1590c82-c43f-4d9b-8c1c-8c1380559875_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:null,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:null,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:null,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!Hr3v!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff1590c82-c43f-4d9b-8c1c-8c1380559875_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!Hr3v!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff1590c82-c43f-4d9b-8c1c-8c1380559875_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!Hr3v!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff1590c82-c43f-4d9b-8c1c-8c1380559875_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!Hr3v!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff1590c82-c43f-4d9b-8c1c-8c1380559875_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p>In an <a href="164130874.defending-bayes-part-2.html">earlier post</a>, we broadly agreed with Hall and Deutsch’s critique of Bayesian approaches that mistakenly treat explanatory scientific theories as having intrinsic probabilities. The reasoning was straightforward: explanatory theories are either correct or incorrect—they don't admit partial truth or probabilistic correctness.</p><p>However, recent clarifications—particularly our exploration of <a href="165064896.defending-bayes-part-6.html">Logical Induction</a> and distinctions among <a href="164433813.defending-bayes-part-5.html">empirical, logical, and conceptual credences</a>—have prompted a subtler reassessment.</p><p>Hall and Deutsch correctly argue that explanatory theories do not possess objective probabilities. Theories themselves are binary—they either accurately represent reality or they do not. However, Hall and Deutsch overlook the critical epistemic distinction: theories exist in contexts of rational uncertainty. When we assign credences to scientific theories, we're not attributing objective probabilities to the theories themselves. Instead, we're quantifying our epistemic uncertainty, rationally managing our state of incomplete knowledge about whether a given theory correctly describes reality.</p><p>Logical Induction provides a rigorous demonstration of how rational credences can—and indeed must—be assigned even to purely logical or explanatory statements. These credences are coherent, internally consistent epistemic tools used precisely because we don't have direct empirical or logical certainty.</p><p>In short, Hall and Deutsch correctly reject assigning objective probabilities to explanatory theories but incorrectly dismiss the epistemic necessity of assigning credences to theories. Credences remain an indispensable rational tool, enabling coherent management of our uncertainty—even about explanatory correctness—without implying partial truth.</p><p>Thus, while Hall and Deutsch’s critique is partly valid, it requires this crucial refinement to fully capture the proper role and legitimacy of Bayesian credences in rational epistemology.</p>
     </article>
 </body>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axio - Post</title>
+    <title>Infinite Randomness and Constructor Theory</title>
 
 <style>
     /* RESET & BASE */
@@ -41,6 +41,31 @@
 
     .back-link:hover {
         color: #fff;
+    }
+
+    /* POST HEADER */
+    .post-header {
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid #1e293b;
+    }
+
+    .post-title {
+        font-family: 'Georgia', serif;
+        font-weight: 700;
+        font-size: 2.5rem;
+        color: #ffffff;
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+    }
+
+    .post-subtitle {
+        font-family: 'Georgia', serif;
+        font-size: 1.25rem;
+        color: #94a3b8;
+        font-weight: 400;
+        line-height: 1.4;
+        margin-top: 0.5rem;
     }
 
     /* TYPOGRAPHY */
@@ -186,6 +211,11 @@
 <body>
     <div class="back-link"><a href="../index.html">← Back to Index</a></div>
     <article>
+<header class="post-header">
+<h1 class="post-title">Infinite Randomness and Constructor Theory</h1>
+<p class="post-subtitle">A Unified Stack</p>
+</header>
+
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!8kVE!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb238db4e-eec7-44d4-a390-eae520a4a520_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!8kVE!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb238db4e-eec7-44d4-a390-eae520a4a520_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!8kVE!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb238db4e-eec7-44d4-a390-eae520a4a520_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!8kVE!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb238db4e-eec7-44d4-a390-eae520a4a520_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!8kVE!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb238db4e-eec7-44d4-a390-eae520a4a520_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/b238db4e-eec7-44d4-a390-eae520a4a520_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/b238db4e-eec7-44d4-a390-eae520a4a520_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:3019194,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.fyi/i/171165360?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb238db4e-eec7-44d4-a390-eae520a4a520_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!8kVE!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb238db4e-eec7-44d4-a390-eae520a4a520_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!8kVE!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb238db4e-eec7-44d4-a390-eae520a4a520_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!8kVE!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb238db4e-eec7-44d4-a390-eae520a4a520_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!8kVE!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb238db4e-eec7-44d4-a390-eae520a4a520_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><h2>Introduction</h2><p>David Deutsch and Chiara Marletto’s <em><a href="https://arxiv.org/pdf/2505.08692">Constructor Theory of Time</a></em><a href="https://arxiv.org/pdf/2505.08692"> (2025)</a> proposes to eliminate time as a fundamental primitive in physics. Instead, physical laws are reframed as statements about what transformations are possible and impossible for physical systems—"constructors." Duration and dynamics then emerge, not from an external clock, but from the relationships between transformations themselves.</p><p>Separately, the <strong><a href="169621940.infinite-randomness-and-qft.html">Infinite Randomness</a></strong> framework posits that at the deepest ontological level, reality is pure, unstructured randomness. What prevents this from collapsing into total chaos is the single filter of <strong>logical coherence</strong>: only coherent structures persist, while incoherent ones vanish as impossibilities. From this principle, both physics and consciousness are explained as emergent consequences.</p><p>In this post, I propose a synthesis: constructor theory is best understood as the <strong>physics-level instantiation of the infinite randomness ontology</strong>. Logical coherence defines the realm of possibility; constructor theory is the operational language for describing what those possibilities can do.</p><div><hr></div><h2>Layer 1: Infinite Randomness as Metaphysics</h2><p>At the base layer, reality is nothing but infinite randomness. No spacetime, no particles, no laws. The only principle is <strong>logical coherence</strong>. Structures that do not meet coherence requirements are impossible by definition; they simply do not exist. Structures that pass the coherence filter can persist and interact.</p><ul><li><p><strong>Possibility = coherence.</strong></p></li><li><p><strong>Impossibility = incoherence.</strong></p></li></ul><p>This principle does two things at once:</p><ol><li><p>Defines what kinds of order can exist at all.</p></li><li><p>Guarantees that conscious observers arise, because observation is just coherence recognizing itself.</p></li></ol><div><hr></div><h2>Layer 2: Constructor Theory as Physics</h2><p>Once coherence selects viable structures, they can be described as <strong>constructors</strong>—systems that cause transformations reliably and repeatably. For Deutsch and Marletto, the laws of physics are exactly such statements: <em>what transformations are possible vs. impossible.</em></p><ul><li><p>Time is not fundamental; it emerges from comparing repeated transformations (e.g. clocks as cyclic constructors).</p></li><li><p>Physics becomes the bookkeeping system of what coherence-allowed patterns can do to one another.</p></li></ul><div><hr></div><h2>Layer 3: Nesting the Two</h2><p>We can now see a hierarchy:</p><pre><code><code>Infinite Randomness → Logical Coherence Filter
        ↓
 Stable Patterns → Constructors (repeatable structures)

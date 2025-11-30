@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axio - Post</title>
+    <title>The Bitter Lesson</title>
 
 <style>
     /* RESET & BASE */
@@ -41,6 +41,31 @@
 
     .back-link:hover {
         color: #fff;
+    }
+
+    /* POST HEADER */
+    .post-header {
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid #1e293b;
+    }
+
+    .post-title {
+        font-family: 'Georgia', serif;
+        font-weight: 700;
+        font-size: 2.5rem;
+        color: #ffffff;
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+    }
+
+    .post-subtitle {
+        font-family: 'Georgia', serif;
+        font-size: 1.25rem;
+        color: #94a3b8;
+        font-weight: 400;
+        line-height: 1.4;
+        margin-top: 0.5rem;
     }
 
     /* TYPOGRAPHY */
@@ -186,6 +211,11 @@
 <body>
     <div class="back-link"><a href="../index.html">← Back to Index</a></div>
     <article>
+<header class="post-header">
+<h1 class="post-title">The Bitter Lesson</h1>
+<p class="post-subtitle">Why Brute Force Keeps Winning in AI</p>
+</header>
+
 <div class="captioned-image-container"><figure><a class="image-link image2" target="_blank" href="https://substackcdn.com/image/fetch/$s_!kK2K!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc92a3e7b-0bf8-4560-8387-72c4426709de_2448x496.png" data-component-name="Image2ToDOM"><div class="image2-inset"><picture><source type="image/webp" srcset="https://substackcdn.com/image/fetch/$s_!kK2K!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc92a3e7b-0bf8-4560-8387-72c4426709de_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!kK2K!,w_848,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc92a3e7b-0bf8-4560-8387-72c4426709de_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!kK2K!,w_1272,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc92a3e7b-0bf8-4560-8387-72c4426709de_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!kK2K!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc92a3e7b-0bf8-4560-8387-72c4426709de_2448x496.png 1456w" sizes="100vw"><img src="https://substack-post-media.s3.amazonaws.com/public/images/c92a3e7b-0bf8-4560-8387-72c4426709de_2448x496.png" width="1456" height="295" data-attrs="{&quot;src&quot;:&quot;https://substack-post-media.s3.amazonaws.com/public/images/c92a3e7b-0bf8-4560-8387-72c4426709de_2448x496.png&quot;,&quot;srcNoWatermark&quot;:null,&quot;fullscreen&quot;:null,&quot;imageSize&quot;:null,&quot;height&quot;:295,&quot;width&quot;:1456,&quot;resizeWidth&quot;:null,&quot;bytes&quot;:2322242,&quot;alt&quot;:null,&quot;title&quot;:null,&quot;type&quot;:&quot;image/png&quot;,&quot;href&quot;:null,&quot;belowTheFold&quot;:false,&quot;topImage&quot;:true,&quot;internalRedirect&quot;:&quot;https://axio.substack.com/i/168570057?img=https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc92a3e7b-0bf8-4560-8387-72c4426709de_2448x496.png&quot;,&quot;isProcessing&quot;:false,&quot;align&quot;:null,&quot;offset&quot;:false}" class="sizing-normal" alt="" srcset="https://substackcdn.com/image/fetch/$s_!kK2K!,w_424,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc92a3e7b-0bf8-4560-8387-72c4426709de_2448x496.png 424w, https://substackcdn.com/image/fetch/$s_!kK2K!,w_848,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc92a3e7b-0bf8-4560-8387-72c4426709de_2448x496.png 848w, https://substackcdn.com/image/fetch/$s_!kK2K!,w_1272,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc92a3e7b-0bf8-4560-8387-72c4426709de_2448x496.png 1272w, https://substackcdn.com/image/fetch/$s_!kK2K!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc92a3e7b-0bf8-4560-8387-72c4426709de_2448x496.png 1456w" sizes="100vw" fetchpriority="high"></picture><div></div></div></a></figure></div><p><a href="http://www.incompleteideas.net/IncIdeas/BitterLesson.html">Rich Sutton's influential 2019 essay, "The Bitter Lesson,"</a> argues that long-term progress in artificial intelligence comes from scalable, computation-driven general methods, rather than meticulously embedding human knowledge. Since its publication, subsequent breakthroughs have further validated this argument, showcasing the power of massive computational resources and generic architectures over domain-specific approaches.</p><p><strong>Large Language Models (GPT-3, GPT-4)</strong><br>GPT-3 (2020) and GPT-4 (2023) exemplify the triumph of massive computational scaling over explicitly engineered linguistic features. Rather than incorporating traditional syntactic and semantic rules, these transformer-based architectures trained on enormous datasets have surpassed specialized NLP tools, achieving human-level linguistic capabilities and generalizing to tasks never explicitly trained for.</p><p><strong>Diffusion-based Image Generation (DALL·E, Stable Diffusion, Midjourney)</strong><br>Prior image generation methods often involved manually crafted visual features and intricate domain-specific algorithms. By contrast, diffusion-based generative models introduced in 2021–2023 rely purely on large-scale neural networks and huge datasets. This scalability enabled unprecedented image quality and diversity, effectively rendering prior specialized techniques obsolete.</p><p><strong>MuZero and Generalized Game Mastery</strong><br>MuZero (2020) from DeepMind went beyond AlphaZero by learning to master multiple complex games without explicit rules, input domain knowledge, or even explicit game dynamics. Its architecture—deep learning coupled with Monte Carlo tree search—exemplifies Sutton's claim: general-purpose, scalable computational methods dramatically outperform handcrafted solutions.</p><p><strong>Protein Folding Breakthrough (AlphaFold)</strong><br>AlphaFold’s success in solving protein folding (2021) resulted from deploying generic deep learning techniques at vast computational scale rather than explicit biochemical rules. Previous biochemical modeling approaches incrementally improved through human insight; AlphaFold leapfrogged these efforts by harnessing raw computational power combined with large datasets.</p><p><strong>AI-Assisted Programming (GitHub Copilot)</strong><br>GitHub Copilot, powered by large language models, demonstrates how generic, computation-driven methods dominate specialized rule-based programming tools. It succeeded by scaling massively, learning directly from vast repositories of code, rather than embedding explicit programming logic or syntax rules.</p><p><strong>Robotics and Embodied AI (Google RT-1, RT-DETR)</strong><br>Recent robotics advances further affirm the bitter lesson. Systems like Google's RT-1 and DeepMind's RT-DETR employ transformer-based architectures trained on extensive robot data, surpassing methods that relied heavily on handcrafted kinematic models and control policies. Their success reinforces the effectiveness of general-purpose, data-driven methods at scale.</p><p>These recent examples underscore Sutton’s core thesis: long-term AI breakthroughs are consistently achieved by embracing scalable, generic architectures combined with ever-growing computational resources. The temptation to embed explicit human-derived knowledge might offer short-term gains but ultimately constrains future progress. The true path forward remains unwaveringly computational, leveraging sheer scale and generic learning methods.</p>
     </article>
 </body>
