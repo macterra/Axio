@@ -45,36 +45,47 @@ def main():
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #03050e;
+            color: #e6e6e6;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
-            padding: 20px;
+            -webkit-font-smoothing: antialiased;
+            padding: 40px 20px;
         }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
-            padding: 40px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         header {
-            border-bottom: 3px solid #2c3e50;
+            border-bottom: 2px solid #1e293b;
             margin-bottom: 40px;
             padding-bottom: 20px;
         }
 
         h1 {
+            font-family: 'Georgia', serif;
             font-size: 2.5em;
-            color: #2c3e50;
+            color: #ffffff;
             margin-bottom: 10px;
+            font-weight: 700;
         }
 
         .subtitle {
-            color: #666;
+            color: #94a3b8;
             font-size: 1.1em;
+            font-family: 'Georgia', serif;
+        }
+
+        .stats {
+            background: #0f172a;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            text-align: center;
+            color: #94a3b8;
+            border: 1px solid #1e293b;
         }
 
         .post-list {
@@ -84,7 +95,7 @@ def main():
         .post-item {
             margin-bottom: 30px;
             padding-bottom: 30px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #1e293b;
         }
 
         .post-item:last-child {
@@ -92,47 +103,53 @@ def main():
         }
 
         .post-date {
-            color: #888;
-            font-size: 0.9em;
-            margin-bottom: 5px;
+            color: #64748b;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
         }
 
         .post-title {
             font-size: 1.5em;
             margin-bottom: 8px;
+            font-family: 'Georgia', serif;
         }
 
         .post-title a {
-            color: #2c3e50;
+            color: #ffffff;
             text-decoration: none;
             transition: color 0.2s;
         }
 
         .post-title a:hover {
-            color: #3498db;
+            color: #60a5fa;
         }
 
         .post-subtitle {
-            color: #666;
+            color: #94a3b8;
             font-style: italic;
+            line-height: 1.5;
         }
 
         footer {
             margin-top: 60px;
             padding-top: 20px;
-            border-top: 1px solid #eee;
+            border-top: 1px solid #1e293b;
             text-align: center;
-            color: #888;
+            color: #64748b;
             font-size: 0.9em;
         }
 
         .stats {
-            background: #f8f9fa;
+            background: #0f172a;
             padding: 15px;
             margin-bottom: 30px;
             border-radius: 5px;
             text-align: center;
-            color: #666;
+            color: #94a3b8;
+            border: 1px solid #1e293b;
         }
     </style>
 </head>
