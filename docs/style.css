@@ -265,7 +265,7 @@ header {
 .post-date {
     color: #64748b;
     font-size: 0.75rem;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-weight: 500;
@@ -275,6 +275,7 @@ header {
 .post-list .post-title {
     font-size: 1.1em;
     margin-bottom: 4px;
+    margin-top: 0;
     font-family: 'Georgia', serif;
 }
 
