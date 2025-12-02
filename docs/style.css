@@ -253,8 +253,8 @@ header {
 }
 
 .post-item {
-    margin-bottom: 30px;
-    padding-bottom: 30px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
     border-bottom: 1px solid #1e293b;
 }
 
@@ -264,11 +264,36 @@ header {
 
 .post-date {
     color: #64748b;
-    font-size: 0.85rem;
-    margin-bottom: 8px;
+    font-size: 0.75rem;
+    margin-bottom: 4px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-weight: 500;
+}
+
+/* Index page specific - smaller title */
+.post-list .post-title {
+    font-size: 1.1em;
+    margin-bottom: 4px;
+    font-family: 'Georgia', serif;
+}
+
+.post-list .post-title a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.post-list .post-title a:hover {
+    color: #60a5fa;
+}
+
+/* Index page specific - smaller subtitle */
+.post-list .post-subtitle {
+    color: #94a3b8;
+    font-style: italic;
+    line-height: 1.4;
+    font-size: 0.95em;
 }
 
 footer {
