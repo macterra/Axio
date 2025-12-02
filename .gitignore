@@ -1,3 +1,7 @@
+# Substack archive ZIP files
+*.zip
+email*.csv
+
 # Python cache
 __pycache__/
 *.pyc
