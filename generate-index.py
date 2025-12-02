@@ -16,19 +16,35 @@ from html import escape
 def main():
     # Read posts from CSV
     posts = []
+    latest_date = None
+
     with open('posts.csv', 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
         for row in reader:
             if row['is_published'] == 'true' and row['title']:  # Only published posts with titles
+                post_date = row['post_date']
                 posts.append({
                     'id': row['post_id'],
                     'title': row['title'],
                     'subtitle': row['subtitle'],
-                    'date': row['post_date']
+                    'date': post_date
                 })
+
+                # Track the most recent post date
+                if post_date and (not latest_date or post_date > latest_date):
+                    latest_date = post_date
 
     # Sort by date (newest first)
     posts.sort(key=lambda x: x['date'], reverse=True)
+
+    # Format archive date
+    archive_date = "Unknown"
+    if latest_date:
+        try:
+            date_obj = datetime.fromisoformat(latest_date.replace('Z', '+00:00'))
+            archive_date = date_obj.strftime('%B %d, %Y')
+        except:
+            archive_date = latest_date[:10]
 
     # Generate HTML
     html = """<!DOCTYPE html>
@@ -162,6 +178,8 @@ def main():
 
         <div class="stats">
             <strong>""" + str(len(posts)) + """ published posts</strong>
+            <span style="margin: 0 10px;">•</span>
+            <span>Archive updated """ + archive_date + """</span>
         </div>
 
         <ul class="post-list">
@@ -201,10 +219,10 @@ def main():
 """
 
     # Write index.html
-    with open('index.html', 'w', encoding='utf-8') as f:
+    with open('docs/index.html', 'w', encoding='utf-8') as f:
         f.write(html)
 
-    print(f"✓ Generated index.html with {len(posts)} posts")
+    print(f"✓ Generated docs/index.html with {len(posts)} posts")
 
 if __name__ == '__main__':
     main()
