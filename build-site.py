@@ -226,7 +226,7 @@ def main():
                 'title': metadata.get('title', ''),
                 'subtitle': metadata.get('subtitle', ''),
                 'date': metadata.get('date', ''),
-                'content': text_content[:1000]  # First 1000 chars for preview
+                'content': text_content  # Full text content
             })
 
     print(f"   ✓ Processed {files_processed} files, fixed {total_changes} links")
