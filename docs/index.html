@@ -3225,7 +3225,7 @@
                         { name: 'subtitle', weight: 1.5 },
                         { name: 'content', weight: 1 }
                     ],
-                    threshold: 0.5,
+                    threshold: 0.0,
                     ignoreLocation: true,
                     distance: 100000,
                     includeScore: true,
@@ -3251,7 +3251,7 @@
             }
 
             const results = fuse.search(query);
-            
+
             if (results.length === 0) {
                 searchResults.innerHTML = '<div class="no-results">No posts found</div>';
                 postList.style.display = 'none';
