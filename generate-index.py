@@ -117,10 +117,18 @@ def main():
             .then(data => {
                 allPosts = data;
                 fuse = new Fuse(data, {
-                    keys: ['title', 'subtitle', 'content'],
-                    threshold: 0.3,
+                    keys: [
+                        { name: 'title', weight: 2 },
+                        { name: 'subtitle', weight: 1.5 },
+                        { name: 'content', weight: 1 }
+                    ],
+                    threshold: 0.5,
+                    ignoreLocation: true,
+                    distance: 100000,
                     includeScore: true,
-                    minMatchCharLength: 2
+                    minMatchCharLength: 2,
+                    useExtendedSearch: false,
+                    findAllMatches: true
                 });
             });
 
@@ -135,6 +143,7 @@ def main():
             if (query.length < 2) {
                 searchResults.innerHTML = '';
                 postList.style.display = 'block';
+                postCount.textContent = """ + str(len(posts)) + """;
                 return;
             }
 
