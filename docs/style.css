@@ -238,6 +238,59 @@ header {
     font-family: 'Georgia', serif;
 }
 
+/* SEARCH */
+.search-container {
+    margin-bottom: 30px;
+}
+
+#search-input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 1rem;
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 5px;
+    color: #e6e6e6;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: #60a5fa;
+}
+
+#search-input::placeholder {
+    color: #64748b;
+}
+
+#search-results {
+    margin-top: 20px;
+}
+
+.search-result-item {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #1e293b;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-excerpt {
+    color: #94a3b8;
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin-top: 6px;
+}
+
+.no-results {
+    color: #64748b;
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+}
+
 .stats {
     background: #0f172a;
     padding: 15px;

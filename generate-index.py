@@ -54,6 +54,7 @@ def main():
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Axio - Blog Archive</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
 </head>
 <body>
     <div class="container">
@@ -62,13 +63,18 @@ def main():
             <p class="subtitle">A collection of essays on agency, rationality, and the future</p>
         </header>
 
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search posts..." autocomplete="off">
+            <div id="search-results"></div>
+        </div>
+
         <div class="stats">
-            <strong>""" + str(len(posts)) + """ published posts</strong>
+            <strong><span id="post-count">""" + str(len(posts)) + """</span> published posts</strong>
             <span style="margin: 0 10px;">•</span>
             <span>Archive updated """ + archive_date + """</span>
         </div>
 
-        <ul class="post-list">
+        <ul class="post-list" id="post-list">
 """
 
     for post in posts:
@@ -100,6 +106,80 @@ def main():
             <p>Backup of Substack blog &middot; Hosted on GitHub Pages</p>
         </footer>
     </div>
+
+    <script>
+        let fuse;
+        let allPosts = [];
+
+        // Load search index
+        fetch('search-index.json')
+            .then(response => response.json())
+            .then(data => {
+                allPosts = data;
+                fuse = new Fuse(data, {
+                    keys: ['title', 'subtitle', 'content'],
+                    threshold: 0.3,
+                    includeScore: true,
+                    minMatchCharLength: 2
+                });
+            });
+
+        const searchInput = document.getElementById('search-input');
+        const searchResults = document.getElementById('search-results');
+        const postList = document.getElementById('post-list');
+        const postCount = document.getElementById('post-count');
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.trim();
+
+            if (query.length < 2) {
+                searchResults.innerHTML = '';
+                postList.style.display = 'block';
+                return;
+            }
+
+            const results = fuse.search(query);
+
+            if (results.length === 0) {
+                searchResults.innerHTML = '<div class="no-results">No posts found</div>';
+                postList.style.display = 'none';
+                postCount.textContent = '0';
+                return;
+            }
+
+            postList.style.display = 'none';
+            postCount.textContent = results.length;
+
+            searchResults.innerHTML = results.map(result => {
+                const post = result.item;
+                const date = new Date(post.date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+
+                // Create excerpt with highlighted match
+                let excerpt = post.content.substring(0, 200) + '...';
+
+                return `
+                    <div class="search-result-item">
+                        <div class="post-date">${date}</div>
+                        <h2 class="post-title">
+                            <a href="posts/${post.id}.html">${escapeHtml(post.title)}</a>
+                        </h2>
+                        ${post.subtitle ? `<div class="post-subtitle">${escapeHtml(post.subtitle)}</div>` : ''}
+                        <div class="search-excerpt">${escapeHtml(excerpt)}</div>
+                    </div>
+                `;
+            }).join('');
+        });
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
 </body>
 </html>
 """

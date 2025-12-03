@@ -7,6 +7,7 @@ This script:
 2. Fixes internal Substack links to point to local files
 3. Injects custom CSS for better readability
 4. Generates index.html
+5. Creates search index for full-text search
 
 Usage:
     python3 build-site.py
@@ -15,9 +16,11 @@ Usage:
 import os
 import re
 import csv
+import json
 import shutil
 from pathlib import Path
 from html import escape
+from html.parser import HTMLParser
 
 def load_post_mapping():
     """Load mapping of post slugs to post IDs from posts.csv"""
@@ -35,6 +38,27 @@ def load_post_mapping():
     return slug_to_id
 
 # CSS is now external in docs/style.css
+
+class HTMLTextExtractor(HTMLParser):
+    """Extract text content from HTML"""
+    def __init__(self):
+        super().__init__()
+        self.text = []
+
+    def handle_data(self, data):
+        self.text.append(data)
+
+    def get_text(self):
+        return ' '.join(self.text)
+
+def extract_text_from_html(html_content):
+    """Extract plain text from HTML content"""
+    extractor = HTMLTextExtractor()
+    extractor.feed(html_content)
+    text = extractor.get_text()
+    # Clean up whitespace
+    text = re.sub(r'\s+', ' ', text).strip()
+    return text
 
 def process_post_file(src_path, dest_path, slug_to_id, post_metadata):
     """Copy and process a single post HTML file"""
@@ -140,7 +164,7 @@ def process_post_file(src_path, dest_path, slug_to_id, post_metadata):
     with open(dest_path, 'w', encoding='utf-8') as f:
         f.write(wrapped_content)
 
-    return changes
+    return changes, content  # Return both changes count and raw content for indexing
 
 def main():
     print("=== Building Docs Site ===")
@@ -183,21 +207,41 @@ def main():
 
     total_changes = 0
     files_processed = 0
+    search_index = []
 
     for src_file in html_files:
         dest_file = docs_posts_dir / src_file.name
         # Extract post_id from filename
         post_id = src_file.stem
         metadata = post_metadata.get(post_id, {})
-        changes = process_post_file(src_file, dest_file, slug_to_id, metadata)
+        changes, raw_content = process_post_file(src_file, dest_file, slug_to_id, metadata)
         total_changes += changes
         files_processed += 1
+
+        # Add to search index if published
+        if metadata.get('title'):
+            text_content = extract_text_from_html(raw_content)
+            search_index.append({
+                'id': post_id,
+                'title': metadata.get('title', ''),
+                'subtitle': metadata.get('subtitle', ''),
+                'date': metadata.get('date', ''),
+                'content': text_content[:1000]  # First 1000 chars for preview
+            })
 
     print(f"   ✓ Processed {files_processed} files, fixed {total_changes} links")
     print()
 
+    # Generate search index
+    print("4. Generating search index...")
+    search_index_path = docs_dir / 'search-index.json'
+    with open(search_index_path, 'w', encoding='utf-8') as f:
+        json.dump(search_index, f, ensure_ascii=False)
+    print(f"   ✓ Created search index with {len(search_index)} posts ({search_index_path.stat().st_size // 1024}KB)")
+    print()
+
     # Generate index.html in docs/
-    print("4. Generating index.html...")
+    print("5. Generating index.html...")
     os.system('python3 generate-index.py')
 
     # Move index.html to docs/
