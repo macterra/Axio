@@ -138,6 +138,7 @@ def list_posts(
             p = 1
         if max_page > 0 and p > max_page:
             p = max_page
+        _PAGINATION["page"] = p  # keep state consistent
         start = (p - 1) * ps
         end = start + ps
         sliced = sorted_data[start:end]
