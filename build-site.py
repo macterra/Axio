@@ -183,7 +183,8 @@ def main():
             post_metadata[post_id] = {
                 'title': row.get('title', ''),
                 'subtitle': row.get('subtitle', ''),
-                'date': row.get('post_date', '')
+                'date': row.get('post_date', ''),
+                'is_published': row.get('is_published', 'false')
             }
 
     print(f"   ✓ Loaded {len(slug_to_id)} post mappings")
@@ -207,13 +208,20 @@ def main():
 
     total_changes = 0
     files_processed = 0
+    files_skipped = 0
     search_index = []
 
     for src_file in html_files:
-        dest_file = docs_posts_dir / src_file.name
         # Extract post_id from filename
         post_id = src_file.stem
         metadata = post_metadata.get(post_id, {})
+
+        # Skip unpublished posts
+        if metadata.get('is_published') != 'true':
+            files_skipped += 1
+            continue
+
+        dest_file = docs_posts_dir / src_file.name
         changes, raw_content = process_post_file(src_file, dest_file, slug_to_id, metadata)
         total_changes += changes
         files_processed += 1
@@ -230,6 +238,8 @@ def main():
             })
 
     print(f"   ✓ Processed {files_processed} files, fixed {total_changes} links")
+    if files_skipped > 0:
+        print(f"   ℹ Skipped {files_skipped} unpublished post(s)")
     print()
 
     # Generate search index
