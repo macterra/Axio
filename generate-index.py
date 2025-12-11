@@ -60,8 +60,10 @@ def main():
 <body>
     <div class="container">
         <header>
-            <img src="axio.webp" alt="Axio" class="index-logo">
-            <h1>Axio</h1>
+            <div class="header-title">
+                <img src="axio.webp" alt="Axio" class="index-logo">
+                <h1>Axio</h1>
+            </div>
             <p class="subtitle">A collection of essays on agency, rationality, and the future</p>
         </header>
 
