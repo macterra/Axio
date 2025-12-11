@@ -128,7 +128,12 @@ def process_post_file(src_path, dest_path, slug_to_id, post_metadata):
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <div class="back-link"><a href="../index.html">← Back to Index</a></div>
+    <div class="header-bar">
+        <a href="../index.html" class="logo-link">
+            <img src="../axio.webp" alt="Axio" class="site-logo">
+        </a>
+        <div class="back-link"><a href="../index.html">← Back to Index</a></div>
+    </div>
     <article>
 {title_html}{content}
     </article>
