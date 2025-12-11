@@ -53,6 +53,7 @@ def main():
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Axio - Blog Archive</title>
+    <link rel="icon" type="image/webp" href="axio.webp">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
 </head>
