@@ -3,11 +3,12 @@
 Build the docs/ directory from posts/ with fixed links and custom CSS
 
 This script:
-1. Copies posts/ to docs/posts/
-2. Fixes internal Substack links to point to local files
-3. Injects custom CSS for better readability
-4. Generates index.html
-5. Creates search index for full-text search
+1. Downloads and localizes images from posts
+2. Copies posts/ to docs/posts/
+3. Fixes internal Substack links to point to local files
+4. Injects custom CSS for better readability
+5. Generates index.html
+6. Creates search index for full-text search
 
 Usage:
     python3 build-site.py
@@ -18,6 +19,8 @@ import re
 import csv
 import json
 import shutil
+import urllib.request
+import urllib.parse
 from pathlib import Path
 from html import escape
 from html.parser import HTMLParser
@@ -36,6 +39,99 @@ def load_post_mapping():
                 slug_to_id[slug] = post_id
 
     return slug_to_id
+
+def extract_image_id(url):
+    """Extract the unique image ID from a Substack URL"""
+    match = re.search(r'/images/([a-f0-9\-]+_\d+x\d+\.\w+)', url)
+    if match:
+        return match.group(1)
+    match = re.search(r'([a-f0-9\-]{36}_\d+x\d+\.\w+)', url)
+    if match:
+        return match.group(1)
+    return None
+
+def get_direct_image_url(url):
+    """Extract the direct S3 URL from encoded Substack CDN URLs"""
+    if 'substack-post-media.s3.amazonaws.com' in url and 'substackcdn.com' not in url:
+        return url
+    if 'substackcdn.com/image/fetch/' in url:
+        match = re.search(r'https%3A%2F%2Fsubstack-post-media\.s3\.amazonaws\.com[^"\s]+', url)
+        if match:
+            return urllib.parse.unquote(match.group(0))
+    return None
+
+def download_image(url, dest_path):
+    """Download an image from URL to destination path"""
+    try:
+        req = urllib.request.Request(url, headers={
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+        })
+        with urllib.request.urlopen(req, timeout=30) as response:
+            content = response.read()
+            with open(dest_path, 'wb') as f:
+                f.write(content)
+            return True
+    except Exception as e:
+        return False
+
+def localize_images_in_content(content, images_dir, image_map):
+    """Replace Substack image URLs with local references in HTML content"""
+    # First, collect any new images we haven't seen before
+    s3_urls = re.findall(
+        r'https://substack-post-media\.s3\.amazonaws\.com/public/images/[a-f0-9\-]+_\d+x\d+\.\w+',
+        content
+    )
+    cdn_urls = re.findall(
+        r'https://substackcdn\.com/image/fetch/[^"\s]+https%3A%2F%2Fsubstack-post-media[^"\s]+',
+        content
+    )
+
+    new_downloads = 0
+    for url in s3_urls:
+        if url not in image_map:
+            image_id = extract_image_id(url)
+            if image_id:
+                dest_path = images_dir / image_id
+                if not dest_path.exists():
+                    if download_image(url, dest_path):
+                        new_downloads += 1
+                image_map[url] = image_id
+
+    for cdn_url in cdn_urls:
+        direct_url = get_direct_image_url(cdn_url)
+        if direct_url and direct_url not in image_map:
+            image_id = extract_image_id(direct_url)
+            if image_id:
+                dest_path = images_dir / image_id
+                if not dest_path.exists():
+                    if download_image(direct_url, dest_path):
+                        new_downloads += 1
+                image_map[direct_url] = image_id
+
+    # Now replace all URLs with local references
+    for original_url, local_filename in image_map.items():
+        content = content.replace(original_url, f'../images/{local_filename}')
+        encoded_url = urllib.parse.quote(original_url, safe='')
+        content = content.replace(encoded_url, f'../images/{local_filename}')
+
+    # Clean up any remaining CDN URLs
+    def replace_cdn_url(match):
+        full_url = match.group(0)
+        local_match = re.search(r'\.\./images/([a-f0-9\-]+_\d+x\d+\.\w+)', full_url)
+        if local_match:
+            return f'../images/{local_match.group(1)}'
+        image_match = re.search(r'([a-f0-9\-]{36}_\d+x\d+\.\w+)', full_url)
+        if image_match:
+            return f'../images/{image_match.group(1)}'
+        return full_url
+
+    content = re.sub(
+        r'https://substackcdn\.com/image/fetch/[^"\s]+',
+        replace_cdn_url,
+        content
+    )
+
+    return content, new_downloads
 
 # CSS is now external in docs/style.css
 
@@ -60,10 +156,13 @@ def extract_text_from_html(html_content):
     text = re.sub(r'\s+', ' ', text).strip()
     return text
 
-def process_post_file(src_path, dest_path, slug_to_id, post_metadata):
+def process_post_file(src_path, dest_path, slug_to_id, post_metadata, localized_content=None):
     """Copy and process a single post HTML file"""
-    with open(src_path, 'r', encoding='utf-8') as f:
-        content = f.read()
+    if localized_content is None:
+        with open(src_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+    else:
+        content = localized_content
 
     changes = 0
 
@@ -200,22 +299,27 @@ def main():
     print("2. Setting up docs/ directory...")
     docs_dir = Path('docs')
     docs_posts_dir = docs_dir / 'posts'
+    images_dir = docs_dir / 'images'
 
     if docs_posts_dir.exists():
         shutil.rmtree(docs_posts_dir)
     docs_posts_dir.mkdir(parents=True, exist_ok=True)
+    images_dir.mkdir(exist_ok=True)
     print(f"   ✓ Created {docs_posts_dir}")
+    print(f"   ✓ Ensured {images_dir} exists")
     print()
 
     # Process all HTML files from posts/ to docs/posts/
-    print("3. Processing posts...")
+    print("3. Downloading and localizing images, processing posts...")
     src_posts_dir = Path('posts')
     html_files = list(src_posts_dir.glob('*.html'))
 
     total_changes = 0
     files_processed = 0
     files_skipped = 0
+    total_new_images = 0
     search_index = []
+    image_map = {}  # Track all images we've seen
 
     for src_file in html_files:
         # Extract post_id from filename
@@ -227,8 +331,17 @@ def main():
             files_skipped += 1
             continue
 
+        # Read source content
+        with open(src_file, 'r', encoding='utf-8') as f:
+            content = f.read()
+
+        # Localize images in the content
+        content, new_images = localize_images_in_content(content, images_dir, image_map)
+        total_new_images += new_images
+
+        # Now process with the localized content
         dest_file = docs_posts_dir / src_file.name
-        changes, raw_content = process_post_file(src_file, dest_file, slug_to_id, metadata)
+        changes, raw_content = process_post_file(src_file, dest_file, slug_to_id, metadata, localized_content=content)
         total_changes += changes
         files_processed += 1
 
@@ -244,6 +357,8 @@ def main():
             })
 
     print(f"   ✓ Processed {files_processed} files, fixed {total_changes} links")
+    if total_new_images > 0:
+        print(f"   ✓ Downloaded {total_new_images} new image(s)")
     if files_skipped > 0:
         print(f"   ℹ Skipped {files_skipped} unpublished post(s)")
     print()
