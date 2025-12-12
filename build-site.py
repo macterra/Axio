@@ -204,11 +204,21 @@ def process_post_file(src_path, dest_path, slug_to_id, post_metadata, localized_
     if post_metadata:
         title = post_metadata.get('title', '')
         subtitle = post_metadata.get('subtitle', '')
+        date = post_metadata.get('date', '')
 
         if title:
             title_html = f'<h1 class="post-title">{escape(title)}</h1>\n'
         if subtitle:
             title_html += f'<p class="post-subtitle">{escape(subtitle)}</p>\n'
+        if date:
+            # Format the date nicely
+            try:
+                from datetime import datetime
+                date_obj = datetime.fromisoformat(date.replace('Z', '+00:00'))
+                formatted_date = date_obj.strftime('%B %d, %Y')
+            except:
+                formatted_date = date[:10]
+            title_html += f'<p class="post-date">{formatted_date}</p>\n'
         if title_html:
             title_html = f'<header class="post-header">\n{title_html}</header>\n\n'
 
