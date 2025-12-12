@@ -377,7 +377,7 @@ def main():
     print("4. Generating search index...")
     search_index_path = docs_dir / 'search-index.json'
     with open(search_index_path, 'w', encoding='utf-8') as f:
-        json.dump(search_index, f, ensure_ascii=False)
+        json.dump(search_index, f, ensure_ascii=False, indent=2)
     print(f"   ✓ Created search index with {len(search_index)} posts ({search_index_path.stat().st_size // 1024}KB)")
     print()
 
