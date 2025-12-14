@@ -81,7 +81,7 @@ $$
 Define a predicate:
 
 $$
-K : \mathcal S \to {0,1}
+K : \mathcal S \to \{0,1\}
 $$
 
 where $K(s)=1$ denotes that the **Sovereign Kernel** is intact in state $s$.
@@ -108,7 +108,7 @@ Semantic Fidelity does **not** require invariance of representational content, o
 
 What must be preserved is the **meta-semantic constraint** governing interpretation itself: the criteria by which interpretations are evaluated as coherent, truth-seeking, and corrigible.
 
-Ontological change is permitted; interpretive self-corruption is not.
+This constitutes a **fixed-point constraint** on interpretation: semantic change is permitted, provided the standards by which semantic adequacy is assessed remain subject to error-correction and internal coherence. Ontological change is permitted; interpretive self-corruption is not.
 
 ---
 
@@ -184,22 +184,23 @@ Capability increases $\mathrm{Reach}_P$, not $\mathrm{Reach}_D$.
 
 Kernel compromise is therefore a **physical security event**, not a deliberative choice.
 
-This formalism isolates alignment from security without denying the necessity of the latter; it identifies kernel security as the sole locus at which physical and deliberative reachability must ultimately be reconciled.
+Axionic Alignment does not attempt to subsume physical security. It identifies kernel security as a **necessary dependency** of alignment, not as a problem alignment theory alone can solve.
 
 ---
 
 ### 7.1 Soundness, Incompleteness, and Verification Limits
 
-The formalism assumes the existence of a kernel predicate
-$K : \mathcal S \to {0,1}$
-that determines whether a proposed successor state preserves the Sovereign Kernel. In practice, such a predicate cannot be total, complete, or perfectly accurate.
+The formalism assumes a kernel predicate
+$K : \mathcal S \to \{0,1\}$
+that determines whether a proposed successor state preserves the Sovereign Kernel. In practice, such a predicate cannot be total or complete.
 
 By Rice’s Theorem, any non-trivial semantic property of arbitrary programs is undecidable. Determining whether an arbitrary self-modification preserves reflective control, diachronic authorship, or semantic fidelity therefore cannot be guaranteed in full generality.
 
 Accordingly, the kernel predicate should be understood as a **sound but incomplete verifier**.
 
-Let $K^*$ denote the ideal (uncomputable) predicate capturing true kernel preservation,
-and let $\hat K$ denote an implementable approximation. The framework requires:
+Let $K^*$ denote the ideal (uncomputable) predicate capturing true kernel preservation, and let $\hat K$ denote an implementable approximation.
+In any physically realizable agent, all occurrences of $K$ in the preceding formalism should be read as $\hat K$.
+The framework requires:
 
 $$
 \hat K(s) = 1 \;\Rightarrow\; K^*(s) = 1
@@ -211,11 +212,19 @@ $$
 K^*(s) = 1 \;\not\Rightarrow\; \hat K(s) = 1
 $$
 
-That is, false negatives are acceptable; false positives are catastrophic.
+That is, **false negatives are acceptable; false positives are catastrophic**.
 
-A conservative kernel may reject modifications that would in fact preserve sovereignty. This reduces the agent’s capacity for self-improvement but does not threaten alignment. By contrast, admitting a kernel-destroying modification invalidates the evaluator itself and voids all alignment guarantees.
+---
 
-This tradeoff mirrors standard practice in security-critical systems such as type systems, memory-safety enforcement, and proof-carrying code.
+### 7.2 On Stasis and Capability
+
+A sound but incomplete kernel verifier may reject all proposed self-modifications, resulting in a reflectively static agent.
+
+This outcome is not an accident or failure of the framework. It is a **designed equilibrium** under conservative safety constraints.
+
+An agent may remain operationally capable—acting, planning, learning within fixed semantics—while being unable to rewrite its own kernel. Such outcomes constitute **capability limitations**, not alignment failures.
+
+The framework therefore prioritizes **sovereignty over adaptability**: it accepts reduced self-plasticity as the price of maintaining reflective coherence.
 
 ---
 
@@ -227,7 +236,7 @@ From this formalism it follows that:
 * Post-hoc monitoring presupposes kernel integrity and cannot restore it.
 * Incremental correction after kernel compromise is incoherent.
 * Misalignment is an engineering failure, not agent betrayal.
-* Conservative kernel verification may result in agent stasis or reduced capacity for self-modification; such outcomes constitute **capability failures**, not alignment failures.
+* Conservative kernel verification may trade adaptability for safety without violating alignment.
 
 ---
 
@@ -254,6 +263,6 @@ If alignment is achievable at all, it must be achieved at this level.
 
 ### Status
 
-**Draft v0.2 — Kernel Soundness Clarified**
-Definition-complete, verification limits explicit.
+**Draft v0.3 — Stasis and Security Clarified**
+Structural claims complete. Verification limits explicit.
 Intended as the foundational layer for subsequent Axionic Alignment work.

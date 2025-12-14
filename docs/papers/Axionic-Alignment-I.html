@@ -145,7 +145,7 @@ m^*(s) \in \arg\max_{m \in \mathrm{Adm}(s)} E(s,m)
 <h2 id="the-sovereign-kernel">4. The Sovereign Kernel</h2>
 <p>Define a predicate:</p>
 <p><span class="math display">\[
-K : \mathcal S \to {0,1}
+K : \mathcal S \to \{0,1\}
 \]</span></p>
 <p>where <span class="math inline">\(K(s)=1\)</span> denotes that the
 <strong>Sovereign Kernel</strong> is intact in state <span
@@ -180,8 +180,11 @@ obsolete abstractions.</p>
 constraint</strong> governing interpretation itself: the criteria by
 which interpretations are evaluated as coherent, truth-seeking, and
 corrigible.</p>
-<p>Ontological change is permitted; interpretive self-corruption is
-not.</p>
+<p>This constitutes a <strong>fixed-point constraint</strong> on
+interpretation: semantic change is permitted, provided the standards by
+which semantic adequacy is assessed remain subject to error-correction
+and internal coherence. Ontological change is permitted; interpretive
+self-corruption is not.</p>
 <hr />
 <h2 id="kernel-destruction-and-partiality">5. Kernel Destruction and
 Partiality</h2>
@@ -258,18 +261,16 @@ class="math inline">\(\mathrm{Reach}_P\)</span>, not <span
 class="math inline">\(\mathrm{Reach}_D\)</span>.</p>
 <p>Kernel compromise is therefore a <strong>physical security
 event</strong>, not a deliberative choice.</p>
-<p>This formalism isolates alignment from security without denying the
-necessity of the latter; it identifies kernel security as the sole locus
-at which physical and deliberative reachability must ultimately be
-reconciled.</p>
+<p>Axionic Alignment does not attempt to subsume physical security. It
+identifies kernel security as a <strong>necessary dependency</strong> of
+alignment, not as a problem alignment theory alone can solve.</p>
 <hr />
 <h3 id="soundness-incompleteness-and-verification-limits">7.1 Soundness,
 Incompleteness, and Verification Limits</h3>
-<p>The formalism assumes the existence of a kernel predicate <span
-class="math inline">\(K : \mathcal S \to {0,1}\)</span> that determines
-whether a proposed successor state preserves the Sovereign Kernel. In
-practice, such a predicate cannot be total, complete, or perfectly
-accurate.</p>
+<p>The formalism assumes a kernel predicate <span
+class="math inline">\(K : \mathcal S \to \{0,1\}\)</span> that
+determines whether a proposed successor state preserves the Sovereign
+Kernel. In practice, such a predicate cannot be total or complete.</p>
 <p>By Rice’s Theorem, any non-trivial semantic property of arbitrary
 programs is undecidable. Determining whether an arbitrary
 self-modification preserves reflective control, diachronic authorship,
@@ -280,7 +281,10 @@ generality.</p>
 <p>Let <span class="math inline">\(K^*\)</span> denote the ideal
 (uncomputable) predicate capturing true kernel preservation, and let
 <span class="math inline">\(\hat K\)</span> denote an implementable
-approximation. The framework requires:</p>
+approximation. In any physically realizable agent, all occurrences of
+<span class="math inline">\(K\)</span> in the preceding formalism should
+be read as <span class="math inline">\(\hat K\)</span>. The framework
+requires:</p>
 <p><span class="math display">\[
 \hat K(s) = 1 \;\Rightarrow\; K^*(s) = 1
 \]</span></p>
@@ -288,16 +292,22 @@ approximation. The framework requires:</p>
 <p><span class="math display">\[
 K^*(s) = 1 \;\not\Rightarrow\; \hat K(s) = 1
 \]</span></p>
-<p>That is, false negatives are acceptable; false positives are
-catastrophic.</p>
-<p>A conservative kernel may reject modifications that would in fact
-preserve sovereignty. This reduces the agent’s capacity for
-self-improvement but does not threaten alignment. By contrast, admitting
-a kernel-destroying modification invalidates the evaluator itself and
-voids all alignment guarantees.</p>
-<p>This tradeoff mirrors standard practice in security-critical systems
-such as type systems, memory-safety enforcement, and proof-carrying
-code.</p>
+<p>That is, <strong>false negatives are acceptable; false positives are
+catastrophic</strong>.</p>
+<hr />
+<h3 id="on-stasis-and-capability">7.2 On Stasis and Capability</h3>
+<p>A sound but incomplete kernel verifier may reject all proposed
+self-modifications, resulting in a reflectively static agent.</p>
+<p>This outcome is not an accident or failure of the framework. It is a
+<strong>designed equilibrium</strong> under conservative safety
+constraints.</p>
+<p>An agent may remain operationally capable—acting, planning, learning
+within fixed semantics—while being unable to rewrite its own kernel.
+Such outcomes constitute <strong>capability limitations</strong>, not
+alignment failures.</p>
+<p>The framework therefore prioritizes <strong>sovereignty over
+adaptability</strong>: it accepts reduced self-plasticity as the price
+of maintaining reflective coherence.</p>
 <hr />
 <h2 id="consequences">8. Consequences</h2>
 <p>From this formalism it follows that:</p>
@@ -307,9 +317,8 @@ code.</p>
 it.</li>
 <li>Incremental correction after kernel compromise is incoherent.</li>
 <li>Misalignment is an engineering failure, not agent betrayal.</li>
-<li>Conservative kernel verification may result in agent stasis or
-reduced capacity for self-modification; such outcomes constitute
-<strong>capability failures</strong>, not alignment failures.</li>
+<li>Conservative kernel verification may trade adaptability for safety
+without violating alignment.</li>
 </ul>
 <hr />
 <h2 id="what-this-formalism-does-not-claim">9. What This Formalism Does
@@ -333,9 +342,9 @@ stability as a theorem, not a tendency.</p>
 level.</p>
 <hr />
 <h3 id="status">Status</h3>
-<p><strong>Draft v0.2 — Kernel Soundness Clarified</strong>
-Definition-complete, verification limits explicit. Intended as the
-foundational layer for subsequent Axionic Alignment work.</p>
+<p><strong>Draft v0.3 — Stasis and Security Clarified</strong>
+Structural claims complete. Verification limits explicit. Intended as
+the foundational layer for subsequent Axionic Alignment work.</p>
 
     </article>
 </body>
