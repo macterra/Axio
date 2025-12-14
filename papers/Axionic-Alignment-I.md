@@ -102,6 +102,14 @@ where:
 
 Each component is necessary for $E$ to denote a value.
 
+### Clarification: Semantic Fidelity ($K_F$)
+
+Semantic Fidelity does **not** require invariance of representational content, ontology, or world-model structure. Agents may undergo radical paradigm shifts, acquire new concepts, or abandon obsolete abstractions.
+
+What must be preserved is the **meta-semantic constraint** governing interpretation itself: the criteria by which interpretations are evaluated as coherent, truth-seeking, and corrigible.
+
+Ontological change is permitted; interpretive self-corruption is not.
+
 ---
 
 ## 5. Kernel Destruction and Partiality
@@ -139,7 +147,10 @@ $$
 **Proof.**
 Any $m$ such that $K(m(s))=0$ yields $E(s,m)$ undefined and therefore $m \notin \mathrm{Adm}(s)$. The argmax ranges only over $\mathrm{Adm}(s)$. ∎
 
-Thus, kernel destruction is not reflectively selectable.
+**Clarification.**
+The Reflective Stability Theorem is intentionally structural rather than substantive. Like type-soundness results in programming language theory, its force derives from the definition of admissibility rather than from proof complexity. All substantive difficulty is relocated to the construction and verification of the kernel predicate itself.
+
+The theorem should therefore be read as a **boundary-setting result**, not as an engineering guarantee.
 
 ---
 
@@ -173,6 +184,38 @@ Capability increases $\mathrm{Reach}_P$, not $\mathrm{Reach}_D$.
 
 Kernel compromise is therefore a **physical security event**, not a deliberative choice.
 
+This formalism isolates alignment from security without denying the necessity of the latter; it identifies kernel security as the sole locus at which physical and deliberative reachability must ultimately be reconciled.
+
+---
+
+## 7.5 Soundness, Incompleteness, and Verification Limits
+
+The formalism assumes the existence of a kernel predicate
+$K : \mathcal S \to {0,1}$
+that determines whether a proposed successor state preserves the Sovereign Kernel. In practice, such a predicate cannot be total, complete, or perfectly accurate.
+
+By Rice’s Theorem, any non-trivial semantic property of arbitrary programs is undecidable. Determining whether an arbitrary self-modification preserves reflective control, diachronic authorship, or semantic fidelity therefore cannot be guaranteed in full generality.
+
+Accordingly, the kernel predicate should be understood as a **sound but incomplete verifier**.
+
+Let $K^*$ denote the ideal (uncomputable) predicate capturing true kernel preservation, and let $\hat K$ denote an implementable approximation. The framework requires:
+
+$$
+\hat K(s)=1 \Rightarrow K^*(s)=1
+$$
+
+but explicitly allows:
+
+$$
+K^*(s)=1 ;\nRightarrow; \hat K(s)=1
+$$
+
+That is, **false negatives are acceptable; false positives are catastrophic**.
+
+A conservative kernel may reject modifications that would in fact preserve sovereignty. This reduces the agent’s capacity for self-improvement but does not threaten alignment. By contrast, admitting a kernel-destroying modification invalidates the evaluator itself and voids all alignment guarantees.
+
+This tradeoff mirrors standard practice in security-critical systems such as type systems, memory-safety enforcement, and proof-carrying code.
+
 ---
 
 ## 8. Consequences
@@ -183,6 +226,7 @@ From this formalism it follows that:
 * Post-hoc monitoring presupposes kernel integrity and cannot restore it.
 * Incremental correction after kernel compromise is incoherent.
 * Misalignment is an engineering failure, not agent betrayal.
+* Conservative kernel verification may result in agent stasis or reduced capacity for self-modification; such outcomes constitute **capability failures**, not alignment failures.
 
 ---
 
@@ -209,6 +253,6 @@ If alignment is achievable at all, it must be achieved at this level.
 
 ### Status
 
-Draft v0.1 — definition-complete, proofs minimal.
+**Draft v0.2 — Kernel Soundness Clarified**
+Definition-complete, verification limits explicit.
 Intended as the foundational layer for subsequent Axionic Alignment work.
-
