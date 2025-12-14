@@ -402,7 +402,7 @@ def generate_papers_index(papers_metadata):
 
         papers_list_html += f"""
         <div class="paper-entry">
-            <h2><a href="papers/{filename}">{escape(title)}</a></h2>
+            <h2><a href="{filename}">{escape(title)}</a></h2>
             {abstract_html}
         </div>
         """
@@ -413,8 +413,8 @@ def generate_papers_index(papers_metadata):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Papers - Axio</title>
-    <link rel="icon" type="image/webp" href="axio.webp">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/webp" href="../axio.webp">
+    <link rel="stylesheet" href="../style.css">
     <style>
         .papers-container {{
             max-width: 900px;
@@ -444,10 +444,10 @@ def generate_papers_index(papers_metadata):
 </head>
 <body>
     <div class="header-bar">
-        <a href="index.html" class="logo-link">
-            <img src="axio.webp" alt="Axio" class="site-logo">
+        <a href="../index.html" class="logo-link">
+            <img src="../axio.webp" alt="Axio" class="site-logo">
         </a>
-        <div class="back-link"><a href="index.html">← Back to Index</a></div>
+        <div class="back-link"><a href="../index.html">← Back to Index</a></div>
     </div>
     <div class="papers-container">
         <h1>Papers</h1>
