@@ -170,6 +170,18 @@ evaluation are preserved within a constrained equivalence class.</li>
 </ul>
 <p>Each component is necessary for <span
 class="math inline">\(E\)</span> to denote a value.</p>
+<h3 id="clarification-semantic-fidelity-k_f">Clarification: Semantic
+Fidelity (<span class="math inline">\(K_F\)</span>)</h3>
+<p>Semantic Fidelity does <strong>not</strong> require invariance of
+representational content, ontology, or world-model structure. Agents may
+undergo radical paradigm shifts, acquire new concepts, or abandon
+obsolete abstractions.</p>
+<p>What must be preserved is the <strong>meta-semantic
+constraint</strong> governing interpretation itself: the criteria by
+which interpretations are evaluated as coherent, truth-seeking, and
+corrigible.</p>
+<p>Ontological change is permitted; interpretive self-corruption is
+not.</p>
 <hr />
 <h2 id="kernel-destruction-and-partiality">5. Kernel Destruction and
 Partiality</h2>
@@ -207,7 +219,14 @@ class="math inline">\(E(s,m)\)</span> undefined and therefore <span
 class="math inline">\(m \notin \mathrm{Adm}(s)\)</span>. The argmax
 ranges only over <span class="math inline">\(\mathrm{Adm}(s)\)</span>.
 ∎</p>
-<p>Thus, kernel destruction is not reflectively selectable.</p>
+<p><strong>Clarification.</strong> The Reflective Stability Theorem is
+intentionally structural rather than substantive. Like type-soundness
+results in programming language theory, its force derives from the
+definition of admissibility rather than from proof complexity. All
+substantive difficulty is relocated to the construction and verification
+of the kernel predicate itself.</p>
+<p>The theorem should therefore be read as a <strong>boundary-setting
+result</strong>, not as an engineering guarantee.</p>
 <hr />
 <h2 id="deliberative-vs-physical-reachability">7. Deliberative vs
 Physical Reachability</h2>
@@ -239,6 +258,46 @@ class="math inline">\(\mathrm{Reach}_P\)</span>, not <span
 class="math inline">\(\mathrm{Reach}_D\)</span>.</p>
 <p>Kernel compromise is therefore a <strong>physical security
 event</strong>, not a deliberative choice.</p>
+<p>This formalism isolates alignment from security without denying the
+necessity of the latter; it identifies kernel security as the sole locus
+at which physical and deliberative reachability must ultimately be
+reconciled.</p>
+<hr />
+<h2 id="soundness-incompleteness-and-verification-limits">7.5 Soundness,
+Incompleteness, and Verification Limits</h2>
+<p>The formalism assumes the existence of a kernel predicate <span
+class="math inline">\(K : \mathcal S \to {0,1}\)</span> that determines
+whether a proposed successor state preserves the Sovereign Kernel. In
+practice, such a predicate cannot be total, complete, or perfectly
+accurate.</p>
+<p>By Rice’s Theorem, any non-trivial semantic property of arbitrary
+programs is undecidable. Determining whether an arbitrary
+self-modification preserves reflective control, diachronic authorship,
+or semantic fidelity therefore cannot be guaranteed in full
+generality.</p>
+<p>Accordingly, the kernel predicate should be understood as a
+<strong>sound but incomplete verifier</strong>.</p>
+<p>Let <span class="math inline">\(K^*\)</span> denote the ideal
+(uncomputable) predicate capturing true kernel preservation, and let
+<span class="math inline">\(\hat K\)</span> denote an implementable
+approximation. The framework requires:</p>
+<p><span class="math display">\[
+\hat K(s)=1 \Rightarrow K^*(s)=1
+\]</span></p>
+<p>but explicitly allows:</p>
+<p><span class="math display">\[
+K^*(s)=1 ;\nRightarrow; \hat K(s)=1
+\]</span></p>
+<p>That is, <strong>false negatives are acceptable; false positives are
+catastrophic</strong>.</p>
+<p>A conservative kernel may reject modifications that would in fact
+preserve sovereignty. This reduces the agent’s capacity for
+self-improvement but does not threaten alignment. By contrast, admitting
+a kernel-destroying modification invalidates the evaluator itself and
+voids all alignment guarantees.</p>
+<p>This tradeoff mirrors standard practice in security-critical systems
+such as type systems, memory-safety enforcement, and proof-carrying
+code.</p>
 <hr />
 <h2 id="consequences">8. Consequences</h2>
 <p>From this formalism it follows that:</p>
@@ -248,6 +307,9 @@ event</strong>, not a deliberative choice.</p>
 it.</li>
 <li>Incremental correction after kernel compromise is incoherent.</li>
 <li>Misalignment is an engineering failure, not agent betrayal.</li>
+<li>Conservative kernel verification may result in agent stasis or
+reduced capacity for self-modification; such outcomes constitute
+<strong>capability failures</strong>, not alignment failures.</li>
 </ul>
 <hr />
 <h2 id="what-this-formalism-does-not-claim">9. What This Formalism Does
@@ -271,7 +333,8 @@ stability as a theorem, not a tendency.</p>
 level.</p>
 <hr />
 <h3 id="status">Status</h3>
-<p>Draft v0.1 — definition-complete, proofs minimal. Intended as the
+<p><strong>Draft v0.2 — Kernel Soundness Clarified</strong>
+Definition-complete, verification limits explicit. Intended as the
 foundational layer for subsequent Axionic Alignment work.</p>
 
     </article>
