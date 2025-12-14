@@ -198,19 +198,20 @@ By Rice’s Theorem, any non-trivial semantic property of arbitrary programs is 
 
 Accordingly, the kernel predicate should be understood as a **sound but incomplete verifier**.
 
-Let $K^*$ denote the ideal (uncomputable) predicate capturing true kernel preservation, and let $\hat K$ denote an implementable approximation. The framework requires:
+Let $K^*$ denote the ideal (uncomputable) predicate capturing true kernel preservation,
+and let $\hat K$ denote an implementable approximation. The framework requires:
 
 $$
-\hat K(s)=1 \Rightarrow K^*(s)=1
+\hat K(s) = 1 \;\Rightarrow\; K^*(s) = 1
 $$
 
 but explicitly allows:
 
 $$
-K^*(s)=1 ;\nRightarrow; \hat K(s)=1
+K^*(s) = 1 \;\not\Rightarrow\; \hat K(s) = 1
 $$
 
-That is, **false negatives are acceptable; false positives are catastrophic**.
+That is, false negatives are acceptable; false positives are catastrophic.
 
 A conservative kernel may reject modifications that would in fact preserve sovereignty. This reduces the agent’s capacity for self-improvement but does not threaten alignment. By contrast, admitting a kernel-destroying modification invalidates the evaluator itself and voids all alignment guarantees.
 
