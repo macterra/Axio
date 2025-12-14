@@ -1,3 +1,4 @@
+# AXIO_BOOTSTRAP
 """
 Axio Bootstrap Utilities
 ------------------------
@@ -67,6 +68,23 @@ def _load_axio_data() -> List[Dict]:
 _AXIO_DATA = _load_axio_data()
 TOTAL_POSTS = len(_AXIO_DATA)
 
+# ---------------------------------------------------------------------
+# NEW STEP 2 — Minimal content loader for full-article reconstruction
+# ---------------------------------------------------------------------
+
+# Build a simple ID → post map for direct content access.
+# This powers show_full(post_id) in the chat layer without truncation.
+AXIO = { d["id"]: d for d in _AXIO_DATA }
+
+def content_of(post_id: str) -> str:
+    """
+    Return the full article content for the given post ID.
+    Used only by the chat layer to reconstruct complete articles
+    beyond python stdout limits.
+    """
+    if post_id not in AXIO:
+        raise KeyError(f"No post with ID {post_id}")
+    return AXIO[post_id].get("content", "")
 
 # ---------------------------------------------------------------------
 # Core browsing: list_posts

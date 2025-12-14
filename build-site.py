@@ -9,6 +9,7 @@ This script:
 4. Injects custom CSS for better readability
 5. Generates index.html
 6. Creates search index for full-text search
+7. Converts markdown papers with LaTeX to HTML
 
 Usage:
     python3 build-site.py
@@ -24,6 +25,7 @@ import urllib.parse
 from pathlib import Path
 from html import escape
 from html.parser import HTMLParser
+import subprocess
 
 def load_post_mapping():
     """Load mapping of post slugs to post IDs from posts.csv"""
@@ -281,6 +283,136 @@ def process_post_file(src_path, dest_path, slug_to_id, post_metadata, localized_
 
     return changes, content  # Return both changes count and raw content for indexing
 
+def convert_markdown_to_html(markdown_content):
+    """Convert markdown with LaTeX to HTML using pandoc"""
+    try:
+        # Use pandoc to convert markdown to HTML with math support
+        process = subprocess.run(
+            ['pandoc',
+             '--from', 'markdown',
+             '--to', 'html',
+             '--mathjax',
+             '--standalone'],
+            input=markdown_content,
+            capture_output=True,
+            text=True,
+            check=True
+        )
+        return process.stdout
+    except subprocess.CalledProcessError as e:
+        print(f"   ⚠ Error converting markdown: {e}")
+        # Fallback: basic conversion
+        return f"<pre>{escape(markdown_content)}</pre>"
+    except FileNotFoundError:
+        print(f"   ⚠ pandoc not found, using basic HTML wrapper")
+        # Fallback: wrap in basic HTML
+        html = markdown_content.replace('\n\n', '</p>\n<p>')
+        return f"<div>{html}</div>"
+
+def process_paper_file(src_path, dest_path):
+    """Convert a markdown paper to HTML with proper styling"""
+    with open(src_path, 'r', encoding='utf-8') as f:
+        markdown_content = f.read()
+
+    # Extract title from first # heading if present
+    title_match = re.search(r'^#\s+(.+?)$', markdown_content, re.MULTILINE)
+    title = title_match.group(1) if title_match else src_path.stem
+
+    # Convert markdown to HTML
+    content_html = convert_markdown_to_html(markdown_content)
+
+    # If pandoc was used, extract just the body content
+    body_match = re.search(r'<body>(.*)</body>', content_html, re.DOTALL)
+    if body_match:
+        content_html = body_match.group(1)
+
+    # Wrap in styled HTML
+    wrapped_html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{escape(title)} - Axio</title>
+    <link rel="icon" type="image/webp" href="../axio.webp">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {{
+            tex: {{
+                inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],
+                displayMath: [['$$', '$$'], ['\\\\[', '\\\\]']],
+                processEscapes: true
+            }},
+            options: {{
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }}
+        }};
+    </script>
+
+    <!-- Site Styles -->
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        article {{
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }}
+        article h1 {{
+            margin-top: 2em;
+            margin-bottom: 0.5em;
+        }}
+        article h2 {{
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }}
+        article p {{
+            margin: 1em 0;
+        }}
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <a href="../index.html" class="logo-link">
+            <img src="../axio.webp" alt="Axio" class="site-logo">
+        </a>
+        <div class="back-link"><a href="../index.html">← Back to Index</a></div>
+    </div>
+    <article>
+{content_html}
+    </article>
+</body>
+</html>
+"""
+
+    with open(dest_path, 'w', encoding='utf-8') as f:
+        f.write(wrapped_html)
+
+def process_papers():
+    """Process markdown papers from papers/ to docs/papers/"""
+    papers_src_dir = Path('papers')
+    papers_dest_dir = Path('docs/papers')
+
+    if not papers_src_dir.exists():
+        return 0
+
+    papers_dest_dir.mkdir(parents=True, exist_ok=True)
+
+    papers = list(papers_src_dir.glob('*.md'))
+    if not papers:
+        return 0
+
+    print(f"6. Processing {len(papers)} paper(s) from papers/...")
+
+    for paper_path in papers:
+        dest_path = papers_dest_dir / f"{paper_path.stem}.html"
+        process_paper_file(paper_path, dest_path)
+        print(f"   ✓ {paper_path.name} → {dest_path.relative_to('docs')}")
+
+    print()
+    return len(papers)
+
 def main():
     print("=== Building Docs Site ===")
     print()
@@ -391,7 +523,12 @@ def main():
         print(f"   ✓ Moved index.html to docs/")
     print()
 
+    # Process papers
+    papers_count = process_papers()
+
     print("=== Build Complete ===")
+    if papers_count > 0:
+        print(f"   Papers: {papers_count} processed")
 
 if __name__ == '__main__':
     main()

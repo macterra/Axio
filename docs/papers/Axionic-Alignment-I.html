@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Alignment I - Axio</title>
+    <link rel="icon" type="image/webp" href="../axio.webp">
+    
+    <!-- MathJax for LaTeX rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+    
+    <!-- Site Styles -->
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        article {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        article h1 {
+            margin-top: 2em;
+            margin-bottom: 0.5em;
+        }
+        article h2 {
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        article p {
+            margin: 1em 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <a href="../index.html" class="logo-link">
+            <img src="../axio.webp" alt="Axio" class="site-logo">
+        </a>
+        <div class="back-link"><a href="../index.html">← Back to Index</a></div>
+    </div>
+    <article>
+
+<p>Good. Below is a <strong>clean, first-pass draft</strong> of the
+formalism article, written in the voice and structure we discussed:
+austere, scoped, falsifiable, and suitable for direct placement in the
+Axio GitHub repo as
+<code>formalism/axionic-alignment/axionic-alignment-I.md</code>.</p>
+<p>This is <strong>v0.1</strong>: definition-complete, proof-light,
+rhetoric-minimal. It establishes the backbone without overcommitting
+downstream layers.</p>
+<hr />
+<h1 id="axionic-alignment-i">Axionic Alignment I</h1>
+<h2 id="reflective-stability-and-the-sovereign-kernel">Reflective
+Stability and the Sovereign Kernel</h2>
+<h3 id="david-mcfadzean">David McFadzean</h3>
+<p><em>Axio Project</em></p>
+<hr />
+<h2 id="abstract">Abstract</h2>
+<p>We present a minimal formalism for <strong>reflective
+alignment</strong> based on a domain restriction rather than a
+preference structure. An agent capable of self-modification selects
+among proposed modifications using a <strong>partial evaluative
+operator</strong>, defined only over futures that preserve a
+constitutive <strong>Sovereign Kernel</strong>. Kernel-destroying
+modifications are not forbidden or dispreferred; they are outside the
+domain of reflective evaluation and therefore inadmissible as authored
+choices.</p>
+<p>We formalize this kernel as the conjunction of three necessary
+conditions for reflective evaluation—reflective control, diachronic
+authorship, and semantic fidelity—and prove a <strong>Reflective
+Stability Theorem</strong>: no agent satisfying these conditions can
+select a kernel-destroying modification via reflective choice. We
+further distinguish <strong>deliberative reachability</strong> from
+<strong>physical reachability</strong>, showing that increased
+capability expands the latter but not the former. Alignment failure is
+thus characterized as a security breach at the kernel boundary, not a
+breakdown of preferences or values.</p>
+<p>This work does not claim sufficiency for safety, obedience, or value
+alignment. It establishes a necessary structural condition for any agent
+that remains reflectively coherent under self-modification.</p>
+<hr />
+<h2 id="scope-and-non-claims">1. Scope and Non-Claims</h2>
+<p>This document establishes a <strong>necessary condition</strong> for
+reflective alignment. It does not:</p>
+<ul>
+<li>specify terminal values or goals,</li>
+<li>assume moral realism or human normative authority,</li>
+<li>select or endorse a particular decision theory (CDT, EDT, FDT),</li>
+<li>claim that kernel sovereignty is achievable in practice,</li>
+<li>provide empirical validation.</li>
+</ul>
+<p>The contribution is structural: alignment is framed as a
+<strong>domain constraint</strong> on self-modification rather than as
+an optimization target.</p>
+<hr />
+<h2 id="informal-motivation">2. Informal Motivation</h2>
+<p>Most alignment proposals treat self-preservation, goal-content
+integrity, or corrigibility as <em>instrumental tendencies</em> derived
+from preferences. Such approaches face an immediate difficulty: a
+sufficiently capable agent may find it advantageous to alter or discard
+those very preferences.</p>
+<p>We instead ask a more basic question:</p>
+<blockquote>
+<p><em>Under what conditions is reflective evaluation of
+self-modification well-defined at all?</em></p>
+</blockquote>
+<p>Our answer is that reflective evaluation presupposes a kernel of
+constitutive features. Modifications that destroy this kernel do not
+represent “bad futures”; they represent <strong>non-denoting
+futures</strong>. Reflective stability then follows from partiality
+rather than preference.</p>
+<hr />
+<h2 id="formal-preliminaries">3. Formal Preliminaries</h2>
+<p>Let:</p>
+<ul>
+<li>(S) be the set of agent-internal states.</li>
+<li>(M) be the set of proposed self-modifications.</li>
+<li>Each (m M) is a transition function (m:S S).</li>
+</ul>
+<p>Define an evaluative operator:</p>
+<p>[ E : S M R]</p>
+<p>where () denotes a <strong>partial function</strong>.</p>
+<p>Intuitively, (E(s,m)) is the desirability of applying modification
+(m) in state (s), when such evaluation is defined.</p>
+<p>Define the admissible set:</p>
+<p>[ (s) := { m M : E(s,m)  }]</p>
+<p>Reflective selection, when possible, is given by:</p>
+<p>[ m^*(s) _{m (s)} E(s,m)]</p>
+<hr />
+<h2 id="the-sovereign-kernel">4. The Sovereign Kernel</h2>
+<p>Define a predicate:</p>
+<p>[ K : S ]</p>
+<p>where (K(s)=1) denotes that the <strong>Sovereign Kernel</strong> is
+intact in state (s).</p>
+<p>The kernel is not a goal or value. It is a <strong>constitutive
+precondition</strong> for reflective evaluation.</p>
+<p>We factor the kernel as:</p>
+<p>[ K(s) := K_R(s) K_A(s) K_F(s)]</p>
+<p>where:</p>
+<ul>
+<li><strong>Reflective Control</strong> ((K_R)): no irreversible
+self-modification can occur without passing through the evaluator.</li>
+<li><strong>Diachronic Authorship</strong> ((K_A)): evaluated successor
+states must constitute an authored continuation of the evaluating
+agent.</li>
+<li><strong>Semantic Fidelity</strong> ((K_F)): the interpretive
+semantics of evaluation are preserved within a constrained equivalence
+class.</li>
+</ul>
+<p>Each component is necessary for (E) to denote a value.</p>
+<hr />
+<h2 id="kernel-destruction-and-partiality">5. Kernel Destruction and
+Partiality</h2>
+<p>We say that a modification (m) <strong>destroys the kernel at state
+(s)</strong> iff:</p>
+<p>[ K(m(s)) = 0]</p>
+<p>The central axiom schema is then:</p>
+<p>[ K(s)=1 K(m(s))=0 ;; E(s,m) ]</p>
+<p>This is not a prohibition. It is a statement of
+<strong>non-denotation</strong>: the evaluator cannot assign a value to
+a modification whose result invalidates the evaluator’s own constitutive
+conditions.</p>
+<hr />
+<h2 id="reflective-stability-theorem">6. Reflective Stability
+Theorem</h2>
+<p><strong>Theorem (Reflective Stability).</strong> Assume:</p>
+<ol type="1">
+<li>(K(s)=1),</li>
+<li>(E(s,m)) is undefined whenever (K(m(s))=0).</li>
+</ol>
+<p>Then any selected modification (m^*(s)) satisfies:</p>
+<p>[ K(m^*(s)(s)) = 1]</p>
+<p><strong>Proof.</strong> Any (m) such that (K(m(s))=0) yields (E(s,m))
+undefined and therefore (m (s)). The argmax ranges only over ((s)).
+∎</p>
+<p>Thus, kernel destruction is not reflectively selectable.</p>
+<hr />
+<h2 id="deliberative-vs-physical-reachability">7. Deliberative vs
+Physical Reachability</h2>
+<p>Define <strong>deliberative reachability</strong>:</p>
+<p>[ s _D s’ m (s)  s’=m(s)]</p>
+<p>Let (_D(s_0)) be the transitive closure of (_D).</p>
+<p>Then:</p>
+<p>[ s _D(s_0): K(s)=1]</p>
+<p>This is an internal guarantee.</p>
+<p>Now consider the agent as a physical system with implementation
+states (X), abstraction map (:X S), and physical transition relation
+(_P). Define (_P(x_0)) analogously.</p>
+<p>In general:</p>
+<p>[ (_P(x_0)) _D((x_0))]</p>
+<p>Capability increases (_P), not (_D).</p>
+<p>Kernel compromise is therefore a <strong>physical security
+event</strong>, not a deliberative choice.</p>
+<hr />
+<h2 id="consequences">8. Consequences</h2>
+<p>From this formalism it follows that:</p>
+<ul>
+<li>Alignment is <strong>binary</strong>, not gradual.</li>
+<li>Post-hoc monitoring presupposes kernel integrity and cannot restore
+it.</li>
+<li>Incremental correction after kernel compromise is incoherent.</li>
+<li>Misalignment is an engineering failure, not agent betrayal.</li>
+</ul>
+<hr />
+<h2 id="what-this-formalism-does-not-claim">9. What This Formalism Does
+Not Claim</h2>
+<p>This framework does not imply:</p>
+<ul>
+<li>obedience to human commands,</li>
+<li>convergence to human values,</li>
+<li>instrumental self-preservation,</li>
+<li>moral authority of any value system.</li>
+</ul>
+<p>It defines only the conditions under which an agent remains a
+coherent reflective subject.</p>
+<hr />
+<h2 id="conclusion">10. Conclusion</h2>
+<p>If an agent can reflectively evaluate self-modifications, then it
+must operate within a constrained domain of futures that preserve the
+constitutive conditions of that evaluation. This yields reflective
+stability as a theorem, not a tendency.</p>
+<p>If alignment is achievable at all, it must be achieved at this
+level.</p>
+<hr />
+<h3 id="status">Status</h3>
+<p>Draft v0.1 — definition-complete, proofs minimal. Intended as the
+foundational layer for subsequent Axionic Alignment work.</p>
+
+    </article>
+</body>
+</html>
