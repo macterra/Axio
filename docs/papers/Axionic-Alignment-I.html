@@ -193,7 +193,7 @@ K(m(s)) = 0
 \]</span></p>
 <p>The central axiom schema is then:</p>
 <p><span class="math display">\[
-K(s)=1 \wedge K(m(s))=0 ;\Rightarrow; E(s,m)\ \text{undefined}
+K(s)=1 \wedge K(m(s))=0 \;\Rightarrow\; E(s,m)\ \text{undefined}
 \]</span></p>
 <p>This is not a prohibition. It is a statement of
 <strong>non-denotation</strong>: the evaluator cannot assign a value to
@@ -232,8 +232,8 @@ result</strong>, not as an engineering guarantee.</p>
 Physical Reachability</h2>
 <p>Define <strong>deliberative reachability</strong>:</p>
 <p><span class="math display">\[
-s \Rightarrow_D s&#39; \iff \exists m \in \mathrm{Adm}(s)\ \text{such
-that}\ s&#39; = m(s)
+s \Rightarrow_D s&#39; \iff \exists m \in \mathrm{Adm}(s)\ \;\text{such
+that}\; s&#39; = m(s)
 \]</span></p>
 <p>Let <span class="math inline">\(\mathrm{Reach}_D(s_0)\)</span> be the
 transitive closure of <span
@@ -263,8 +263,8 @@ necessity of the latter; it identifies kernel security as the sole locus
 at which physical and deliberative reachability must ultimately be
 reconciled.</p>
 <hr />
-<h2 id="soundness-incompleteness-and-verification-limits">7.5 Soundness,
-Incompleteness, and Verification Limits</h2>
+<h3 id="soundness-incompleteness-and-verification-limits">7.1 Soundness,
+Incompleteness, and Verification Limits</h3>
 <p>The formalism assumes the existence of a kernel predicate <span
 class="math inline">\(K : \mathcal S \to {0,1}\)</span> that determines
 whether a proposed successor state preserves the Sovereign Kernel. In

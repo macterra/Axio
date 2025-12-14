@@ -123,7 +123,7 @@ $$
 The central axiom schema is then:
 
 $$
-K(s)=1 \wedge K(m(s))=0 ;\Rightarrow; E(s,m)\ \text{undefined}
+K(s)=1 \wedge K(m(s))=0 \;\Rightarrow\; E(s,m)\ \text{undefined}
 $$
 
 This is not a prohibition. It is a statement of **non-denotation**: the evaluator cannot assign a value to a modification whose result invalidates the evaluator’s own constitutive conditions.
@@ -159,7 +159,7 @@ The theorem should therefore be read as a **boundary-setting result**, not as an
 Define **deliberative reachability**:
 
 $$
-s \Rightarrow_D s' \iff \exists m \in \mathrm{Adm}(s)\ \text{such that}\ s' = m(s)
+s \Rightarrow_D s' \iff \exists m \in \mathrm{Adm}(s)\ \;\text{such that}\; s' = m(s)
 $$
 
 Let $\mathrm{Reach}_D(s_0)$ be the transitive closure of $\Rightarrow_D$.
@@ -188,7 +188,7 @@ This formalism isolates alignment from security without denying the necessity of
 
 ---
 
-## 7.5 Soundness, Incompleteness, and Verification Limits
+### 7.1 Soundness, Incompleteness, and Verification Limits
 
 The formalism assumes the existence of a kernel predicate
 $K : \mathcal S \to {0,1}$
