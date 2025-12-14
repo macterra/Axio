@@ -389,6 +389,77 @@ def process_paper_file(src_path, dest_path):
     with open(dest_path, 'w', encoding='utf-8') as f:
         f.write(wrapped_html)
 
+def generate_papers_index(papers_metadata):
+    """Generate an index.html for the papers directory"""
+    papers_list_html = ""
+
+    for paper in papers_metadata:
+        title = paper['title']
+        filename = paper['filename']
+        abstract = paper.get('abstract', '')
+
+        abstract_html = f"<p class='paper-abstract'>{escape(abstract)}</p>" if abstract else ""
+
+        papers_list_html += f"""
+        <div class="paper-entry">
+            <h2><a href="papers/{filename}">{escape(title)}</a></h2>
+            {abstract_html}
+        </div>
+        """
+
+    index_html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papers - Axio</title>
+    <link rel="icon" type="image/webp" href="axio.webp">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .papers-container {{
+            max-width: 900px;
+            margin: 2em auto;
+            padding: 0 2em;
+        }}
+        .paper-entry {{
+            margin: 2em 0;
+            padding: 1em 0;
+            border-bottom: 1px solid #eee;
+        }}
+        .paper-entry h2 {{
+            margin: 0 0 0.5em 0;
+        }}
+        .paper-entry h2 a {{
+            color: #333;
+            text-decoration: none;
+        }}
+        .paper-entry h2 a:hover {{
+            color: #0066cc;
+        }}
+        .paper-abstract {{
+            color: #666;
+            line-height: 1.6;
+        }}
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <a href="index.html" class="logo-link">
+            <img src="axio.webp" alt="Axio" class="site-logo">
+        </a>
+        <div class="back-link"><a href="index.html">← Back to Index</a></div>
+    </div>
+    <div class="papers-container">
+        <h1>Papers</h1>
+        {papers_list_html}
+    </div>
+</body>
+</html>
+"""
+
+    with open('docs/papers/index.html', 'w', encoding='utf-8') as f:
+        f.write(index_html)
+
 def process_papers():
     """Process markdown papers from papers/ to docs/papers/"""
     papers_src_dir = Path('papers')
@@ -399,16 +470,51 @@ def process_papers():
 
     papers_dest_dir.mkdir(parents=True, exist_ok=True)
 
-    papers = list(papers_src_dir.glob('*.md'))
+    # Get all markdown files except README.md
+    papers = [p for p in papers_src_dir.glob('*.md') if p.name.lower() != 'readme.md']
     if not papers:
         return 0
 
     print(f"6. Processing {len(papers)} paper(s) from papers/...")
 
+    papers_metadata = []
+
     for paper_path in papers:
         dest_path = papers_dest_dir / f"{paper_path.stem}.html"
         process_paper_file(paper_path, dest_path)
         print(f"   ✓ {paper_path.name} → {dest_path.relative_to('docs')}")
+
+        # Extract metadata for index
+        with open(paper_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+
+        # Extract title
+        title_match = re.search(r'^#\s+(.+?)$', content, re.MULTILINE)
+        title = title_match.group(1) if title_match else paper_path.stem
+
+        # Extract abstract (text after ## Abstract heading)
+        abstract_match = re.search(r'^##\s+Abstract\s*$(.*?)^##', content, re.MULTILINE | re.DOTALL)
+        abstract = ""
+        if abstract_match:
+            abstract_text = abstract_match.group(1).strip()
+            # Clean up the abstract: remove markdown formatting and limit length
+            abstract_text = re.sub(r'\*\*([^*]+)\*\*', r'\1', abstract_text)  # Remove bold
+            abstract_text = re.sub(r'\$[^$]+\$', '', abstract_text)  # Remove inline math
+            abstract_text = ' '.join(abstract_text.split())  # Normalize whitespace
+            if len(abstract_text) > 500:
+                abstract = abstract_text[:497] + "..."
+            else:
+                abstract = abstract_text
+
+        papers_metadata.append({
+            'title': title,
+            'filename': f"{paper_path.stem}.html",
+            'abstract': abstract
+        })
+
+    # Generate papers index
+    generate_papers_index(papers_metadata)
+    print(f"   ✓ Generated papers/index.html")
 
     print()
     return len(papers)
