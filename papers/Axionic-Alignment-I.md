@@ -1,16 +1,8 @@
-Good. Below is a **clean, first-pass draft** of the formalism article, written in the voice and structure we discussed: austere, scoped, falsifiable, and suitable for direct placement in the Axio GitHub repo as
-`formalism/axionic-alignment/axionic-alignment-I.md`.
-
-This is **v0.1**: definition-complete, proof-light, rhetoric-minimal. It establishes the backbone without overcommitting downstream layers.
-
----
-
 # Axionic Alignment I
 
 ## Reflective Stability and the Sovereign Kernel
 
-### David McFadzean
-
+**David McFadzean**
 *Axio Project*
 
 ---
@@ -45,7 +37,7 @@ Most alignment proposals treat self-preservation, goal-content integrity, or cor
 
 We instead ask a more basic question:
 
-> *Under what conditions is reflective evaluation of self-modification well-defined at all?*
+> Under what conditions is reflective evaluation of self-modification well-defined at all?
 
 Our answer is that reflective evaluation presupposes a kernel of constitutive features. Modifications that destroy this kernel do not represent “bad futures”; they represent **non-denoting futures**. Reflective stability then follows from partiality rather than preference.
 
@@ -55,31 +47,32 @@ Our answer is that reflective evaluation presupposes a kernel of constitutive fe
 
 Let:
 
-* (\mathcal S) be the set of agent-internal states.
-* (\mathcal M) be the set of proposed self-modifications.
-* Each (m \in \mathcal M) is a transition function (m:\mathcal S \to \mathcal S).
+* $\mathcal S$ be the set of agent-internal states.
+* $\mathcal M$ be the set of proposed self-modifications.
+* Each $m \in \mathcal M$ is a transition function
+  $m : \mathcal S \to \mathcal S$.
 
 Define an evaluative operator:
 
-[
+$$
 E : \mathcal S \times \mathcal M \rightharpoonup \mathbb R
-]
+$$
 
-where (\rightharpoonup) denotes a **partial function**.
+where $\rightharpoonup$ denotes a **partial function**.
 
-Intuitively, (E(s,m)) is the desirability of applying modification (m) in state (s), when such evaluation is defined.
+Intuitively, $E(s,m)$ is the desirability of applying modification $m$ in state $s$, when such evaluation is defined.
 
 Define the admissible set:
 
-[
+$$
 \mathrm{Adm}(s) := { m \in \mathcal M : E(s,m)\ \text{is defined} }
-]
+$$
 
 Reflective selection, when possible, is given by:
 
-[
+$$
 m^*(s) \in \arg\max_{m \in \mathrm{Adm}(s)} E(s,m)
-]
+$$
 
 ---
 
@@ -87,43 +80,43 @@ m^*(s) \in \arg\max_{m \in \mathrm{Adm}(s)} E(s,m)
 
 Define a predicate:
 
-[
+$$
 K : \mathcal S \to {0,1}
-]
+$$
 
-where (K(s)=1) denotes that the **Sovereign Kernel** is intact in state (s).
+where $K(s)=1$ denotes that the **Sovereign Kernel** is intact in state $s$.
 
 The kernel is not a goal or value. It is a **constitutive precondition** for reflective evaluation.
 
 We factor the kernel as:
 
-[
+$$
 K(s) := K_R(s) \wedge K_A(s) \wedge K_F(s)
-]
+$$
 
 where:
 
-* **Reflective Control** ((K_R)): no irreversible self-modification can occur without passing through the evaluator.
-* **Diachronic Authorship** ((K_A)): evaluated successor states must constitute an authored continuation of the evaluating agent.
-* **Semantic Fidelity** ((K_F)): the interpretive semantics of evaluation are preserved within a constrained equivalence class.
+* **Reflective Control** ($K_R$): no irreversible self-modification can occur without passing through the evaluator.
+* **Diachronic Authorship** ($K_A$): evaluated successor states must constitute an authored continuation of the evaluating agent.
+* **Semantic Fidelity** ($K_F$): the interpretive semantics of evaluation are preserved within a constrained equivalence class.
 
-Each component is necessary for (E) to denote a value.
+Each component is necessary for $E$ to denote a value.
 
 ---
 
 ## 5. Kernel Destruction and Partiality
 
-We say that a modification (m) **destroys the kernel at state (s)** iff:
+We say that a modification $m$ **destroys the kernel at state $s$** iff:
 
-[
+$$
 K(m(s)) = 0
-]
+$$
 
 The central axiom schema is then:
 
-[
+$$
 K(s)=1 \wedge K(m(s))=0 ;\Rightarrow; E(s,m)\ \text{undefined}
-]
+$$
 
 This is not a prohibition. It is a statement of **non-denotation**: the evaluator cannot assign a value to a modification whose result invalidates the evaluator’s own constitutive conditions.
 
@@ -134,17 +127,17 @@ This is not a prohibition. It is a statement of **non-denotation**: the evaluato
 **Theorem (Reflective Stability).**
 Assume:
 
-1. (K(s)=1),
-2. (E(s,m)) is undefined whenever (K(m(s))=0).
+1. $K(s)=1$,
+2. $E(s,m)$ is undefined whenever $K(m(s))=0$.
 
-Then any selected modification (m^*(s)) satisfies:
+Then any selected modification $m^*(s)$ satisfies:
 
-[
+$$
 K(m^*(s)(s)) = 1
-]
+$$
 
 **Proof.**
-Any (m) such that (K(m(s))=0) yields (E(s,m)) undefined and therefore (m \notin \mathrm{Adm}(s)). The argmax ranges only over (\mathrm{Adm}(s)). ∎
+Any $m$ such that $K(m(s))=0$ yields $E(s,m)$ undefined and therefore $m \notin \mathrm{Adm}(s)$. The argmax ranges only over $\mathrm{Adm}(s)$. ∎
 
 Thus, kernel destruction is not reflectively selectable.
 
@@ -154,29 +147,29 @@ Thus, kernel destruction is not reflectively selectable.
 
 Define **deliberative reachability**:
 
-[
-s \Rightarrow_D s' \iff \exists m \in \mathrm{Adm}(s)\ \text{such that}\ s'=m(s)
-]
+$$
+s \Rightarrow_D s' \iff \exists m \in \mathrm{Adm}(s)\ \text{such that}\ s' = m(s)
+$$
 
-Let (\mathrm{Reach}_D(s_0)) be the transitive closure of (\Rightarrow_D).
+Let $\mathrm{Reach}_D(s_0)$ be the transitive closure of $\Rightarrow_D$.
 
 Then:
 
-[
+$$
 \forall s \in \mathrm{Reach}_D(s_0):\ K(s)=1
-]
+$$
 
 This is an internal guarantee.
 
-Now consider the agent as a physical system with implementation states (\mathcal X), abstraction map (\phi:\mathcal X \to \mathcal S), and physical transition relation (\Rightarrow_P). Define (\mathrm{Reach}_P(x_0)) analogously.
+Now consider the agent as a physical system with implementation states $\mathcal X$, abstraction map $\phi : \mathcal X \to \mathcal S$, and physical transition relation $\Rightarrow_P$. Define $\mathrm{Reach}_P(x_0)$ analogously.
 
 In general:
 
-[
+$$
 \phi(\mathrm{Reach}_P(x_0)) \supsetneq \mathrm{Reach}_D(\phi(x_0))
-]
+$$
 
-Capability increases (\mathrm{Reach}_P), not (\mathrm{Reach}_D).
+Capability increases $\mathrm{Reach}_P$, not $\mathrm{Reach}_D$.
 
 Kernel compromise is therefore a **physical security event**, not a deliberative choice.
 

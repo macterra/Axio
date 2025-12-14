@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Axionic Alignment I - Axio</title>
     <link rel="icon" type="image/webp" href="../axio.webp">
-    
+
     <!-- MathJax for LaTeX rendering -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -21,7 +21,7 @@
             }
         };
     </script>
-    
+
     <!-- Site Styles -->
     <link rel="stylesheet" href="../style.css">
     <style>
@@ -52,20 +52,10 @@
     </div>
     <article>
 
-<p>Good. Below is a <strong>clean, first-pass draft</strong> of the
-formalism article, written in the voice and structure we discussed:
-austere, scoped, falsifiable, and suitable for direct placement in the
-Axio GitHub repo as
-<code>formalism/axionic-alignment/axionic-alignment-I.md</code>.</p>
-<p>This is <strong>v0.1</strong>: definition-complete, proof-light,
-rhetoric-minimal. It establishes the backbone without overcommitting
-downstream layers.</p>
-<hr />
 <h1 id="axionic-alignment-i">Axionic Alignment I</h1>
 <h2 id="reflective-stability-and-the-sovereign-kernel">Reflective
 Stability and the Sovereign Kernel</h2>
-<h3 id="david-mcfadzean">David McFadzean</h3>
-<p><em>Axio Project</em></p>
+<p><strong>David McFadzean</strong> <em>Axio Project</em></p>
 <hr />
 <h2 id="abstract">Abstract</h2>
 <p>We present a minimal formalism for <strong>reflective
@@ -113,8 +103,8 @@ sufficiently capable agent may find it advantageous to alter or discard
 those very preferences.</p>
 <p>We instead ask a more basic question:</p>
 <blockquote>
-<p><em>Under what conditions is reflective evaluation of
-self-modification well-defined at all?</em></p>
+<p>Under what conditions is reflective evaluation of self-modification
+well-defined at all?</p>
 </blockquote>
 <p>Our answer is that reflective evaluation presupposes a kernel of
 constitutive features. Modifications that destroy this kernel do not
@@ -125,49 +115,74 @@ rather than preference.</p>
 <h2 id="formal-preliminaries">3. Formal Preliminaries</h2>
 <p>Let:</p>
 <ul>
-<li>(S) be the set of agent-internal states.</li>
-<li>(M) be the set of proposed self-modifications.</li>
-<li>Each (m M) is a transition function (m:S S).</li>
+<li><span class="math inline">\(\mathcal S\)</span> be the set of
+agent-internal states.</li>
+<li><span class="math inline">\(\mathcal M\)</span> be the set of
+proposed self-modifications.</li>
+<li>Each <span class="math inline">\(m \in \mathcal M\)</span> is a
+transition function <span class="math inline">\(m : \mathcal S \to
+\mathcal S\)</span>.</li>
 </ul>
 <p>Define an evaluative operator:</p>
-<p>[ E : S M R]</p>
-<p>where () denotes a <strong>partial function</strong>.</p>
-<p>Intuitively, (E(s,m)) is the desirability of applying modification
-(m) in state (s), when such evaluation is defined.</p>
+<p><span class="math display">\[
+E : \mathcal S \times \mathcal M \rightharpoonup \mathbb R
+\]</span></p>
+<p>where <span class="math inline">\(\rightharpoonup\)</span> denotes a
+<strong>partial function</strong>.</p>
+<p>Intuitively, <span class="math inline">\(E(s,m)\)</span> is the
+desirability of applying modification <span
+class="math inline">\(m\)</span> in state <span
+class="math inline">\(s\)</span>, when such evaluation is defined.</p>
 <p>Define the admissible set:</p>
-<p>[ (s) := { m M : E(s,m)  }]</p>
+<p><span class="math display">\[
+\mathrm{Adm}(s) := { m \in \mathcal M : E(s,m)\ \text{is defined} }
+\]</span></p>
 <p>Reflective selection, when possible, is given by:</p>
-<p>[ m^*(s) _{m (s)} E(s,m)]</p>
+<p><span class="math display">\[
+m^*(s) \in \arg\max_{m \in \mathrm{Adm}(s)} E(s,m)
+\]</span></p>
 <hr />
 <h2 id="the-sovereign-kernel">4. The Sovereign Kernel</h2>
 <p>Define a predicate:</p>
-<p>[ K : S ]</p>
-<p>where (K(s)=1) denotes that the <strong>Sovereign Kernel</strong> is
-intact in state (s).</p>
+<p><span class="math display">\[
+K : \mathcal S \to {0,1}
+\]</span></p>
+<p>where <span class="math inline">\(K(s)=1\)</span> denotes that the
+<strong>Sovereign Kernel</strong> is intact in state <span
+class="math inline">\(s\)</span>.</p>
 <p>The kernel is not a goal or value. It is a <strong>constitutive
 precondition</strong> for reflective evaluation.</p>
 <p>We factor the kernel as:</p>
-<p>[ K(s) := K_R(s) K_A(s) K_F(s)]</p>
+<p><span class="math display">\[
+K(s) := K_R(s) \wedge K_A(s) \wedge K_F(s)
+\]</span></p>
 <p>where:</p>
 <ul>
-<li><strong>Reflective Control</strong> ((K_R)): no irreversible
-self-modification can occur without passing through the evaluator.</li>
-<li><strong>Diachronic Authorship</strong> ((K_A)): evaluated successor
-states must constitute an authored continuation of the evaluating
-agent.</li>
-<li><strong>Semantic Fidelity</strong> ((K_F)): the interpretive
-semantics of evaluation are preserved within a constrained equivalence
-class.</li>
+<li><strong>Reflective Control</strong> (<span
+class="math inline">\(K_R\)</span>): no irreversible self-modification
+can occur without passing through the evaluator.</li>
+<li><strong>Diachronic Authorship</strong> (<span
+class="math inline">\(K_A\)</span>): evaluated successor states must
+constitute an authored continuation of the evaluating agent.</li>
+<li><strong>Semantic Fidelity</strong> (<span
+class="math inline">\(K_F\)</span>): the interpretive semantics of
+evaluation are preserved within a constrained equivalence class.</li>
 </ul>
-<p>Each component is necessary for (E) to denote a value.</p>
+<p>Each component is necessary for <span
+class="math inline">\(E\)</span> to denote a value.</p>
 <hr />
 <h2 id="kernel-destruction-and-partiality">5. Kernel Destruction and
 Partiality</h2>
-<p>We say that a modification (m) <strong>destroys the kernel at state
-(s)</strong> iff:</p>
-<p>[ K(m(s)) = 0]</p>
+<p>We say that a modification <span class="math inline">\(m\)</span>
+<strong>destroys the kernel at state <span
+class="math inline">\(s\)</span></strong> iff:</p>
+<p><span class="math display">\[
+K(m(s)) = 0
+\]</span></p>
 <p>The central axiom schema is then:</p>
-<p>[ K(s)=1 K(m(s))=0 ;; E(s,m) ]</p>
+<p><span class="math display">\[
+K(s)=1 \wedge K(m(s))=0 ;\Rightarrow; E(s,m)\ \text{undefined}
+\]</span></p>
 <p>This is not a prohibition. It is a statement of
 <strong>non-denotation</strong>: the evaluator cannot assign a value to
 a modification whose result invalidates the evaluator’s own constitutive
@@ -177,30 +192,51 @@ conditions.</p>
 Theorem</h2>
 <p><strong>Theorem (Reflective Stability).</strong> Assume:</p>
 <ol type="1">
-<li>(K(s)=1),</li>
-<li>(E(s,m)) is undefined whenever (K(m(s))=0).</li>
+<li><span class="math inline">\(K(s)=1\)</span>,</li>
+<li><span class="math inline">\(E(s,m)\)</span> is undefined whenever
+<span class="math inline">\(K(m(s))=0\)</span>.</li>
 </ol>
-<p>Then any selected modification (m^*(s)) satisfies:</p>
-<p>[ K(m^*(s)(s)) = 1]</p>
-<p><strong>Proof.</strong> Any (m) such that (K(m(s))=0) yields (E(s,m))
-undefined and therefore (m (s)). The argmax ranges only over ((s)).
+<p>Then any selected modification <span
+class="math inline">\(m^*(s)\)</span> satisfies:</p>
+<p><span class="math display">\[
+K(m^*(s)(s)) = 1
+\]</span></p>
+<p><strong>Proof.</strong> Any <span class="math inline">\(m\)</span>
+such that <span class="math inline">\(K(m(s))=0\)</span> yields <span
+class="math inline">\(E(s,m)\)</span> undefined and therefore <span
+class="math inline">\(m \notin \mathrm{Adm}(s)\)</span>. The argmax
+ranges only over <span class="math inline">\(\mathrm{Adm}(s)\)</span>.
 ∎</p>
 <p>Thus, kernel destruction is not reflectively selectable.</p>
 <hr />
 <h2 id="deliberative-vs-physical-reachability">7. Deliberative vs
 Physical Reachability</h2>
 <p>Define <strong>deliberative reachability</strong>:</p>
-<p>[ s _D s’ m (s)  s’=m(s)]</p>
-<p>Let (_D(s_0)) be the transitive closure of (_D).</p>
+<p><span class="math display">\[
+s \Rightarrow_D s&#39; \iff \exists m \in \mathrm{Adm}(s)\ \text{such
+that}\ s&#39; = m(s)
+\]</span></p>
+<p>Let <span class="math inline">\(\mathrm{Reach}_D(s_0)\)</span> be the
+transitive closure of <span
+class="math inline">\(\Rightarrow_D\)</span>.</p>
 <p>Then:</p>
-<p>[ s _D(s_0): K(s)=1]</p>
+<p><span class="math display">\[
+\forall s \in \mathrm{Reach}_D(s_0):\ K(s)=1
+\]</span></p>
 <p>This is an internal guarantee.</p>
 <p>Now consider the agent as a physical system with implementation
-states (X), abstraction map (:X S), and physical transition relation
-(_P). Define (_P(x_0)) analogously.</p>
+states <span class="math inline">\(\mathcal X\)</span>, abstraction map
+<span class="math inline">\(\phi : \mathcal X \to \mathcal S\)</span>,
+and physical transition relation <span
+class="math inline">\(\Rightarrow_P\)</span>. Define <span
+class="math inline">\(\mathrm{Reach}_P(x_0)\)</span> analogously.</p>
 <p>In general:</p>
-<p>[ (_P(x_0)) _D((x_0))]</p>
-<p>Capability increases (_P), not (_D).</p>
+<p><span class="math display">\[
+\phi(\mathrm{Reach}_P(x_0)) \supsetneq \mathrm{Reach}_D(\phi(x_0))
+\]</span></p>
+<p>Capability increases <span
+class="math inline">\(\mathrm{Reach}_P\)</span>, not <span
+class="math inline">\(\mathrm{Reach}_D\)</span>.</p>
 <p>Kernel compromise is therefore a <strong>physical security
 event</strong>, not a deliberative choice.</p>
 <hr />

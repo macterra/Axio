@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papers - Axio</title>
+    <link rel="icon" type="image/webp" href="../axio.webp">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles -->
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        article {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        article h1 {
+            margin-top: 2em;
+            margin-bottom: 0.5em;
+        }
+        article h2 {
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        article p {
+            margin: 1em 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <a href="../index.html" class="logo-link">
+            <img src="../axio.webp" alt="Axio" class="site-logo">
+        </a>
+        <div class="back-link"><a href="../index.html">← Back to Index</a></div>
+    </div>
+    <article>
+
+<h1 id="papers">Papers</h1>
+<p>This directory contains source markdown files for academic-style
+papers with LaTeX math support.</p>
+<h2 id="structure">Structure</h2>
+<ul>
+<li><strong>Source files</strong>: <code>papers/*.md</code> (markdown
+with embedded LaTeX)</li>
+<li><strong>Published files</strong>: <code>docs/papers/*.html</code>
+(auto-generated HTML)</li>
+</ul>
+<h2 id="workflow">Workflow</h2>
+<ol type="1">
+<li>Write papers in markdown format with LaTeX math notation</li>
+<li>Run <code>python3 build-site.py</code> to convert to HTML</li>
+<li>Papers are automatically published to <code>docs/papers/</code>
+with:
+<ul>
+<li>MathJax for LaTeX rendering</li>
+<li>Site styling and navigation</li>
+<li>Mobile-responsive layout</li>
+</ul></li>
+</ol>
+<h2 id="math-notation">Math Notation</h2>
+<p>Use standard LaTeX math delimiters: - Inline math: <code>$...$</code>
+or <code>\(...\)</code> - Display math: <code>$$...$$</code> or
+<code>\[...\]</code></p>
+<h2 id="example">Example</h2>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Paper Title</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Abstract</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>The equation $E = mc^2$ demonstrates...</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Main Content</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>The wave function is given by:</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>\Psi(x,t) = A e^{i(kx - \omega t)}</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>$$</span></code></pre></div>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li>Python 3</li>
+<li>pandoc (for markdown to HTML conversion)</li>
+</ul>
+
+    </article>
+</body>
+</html>
