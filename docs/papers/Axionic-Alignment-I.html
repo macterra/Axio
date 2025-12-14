@@ -89,7 +89,8 @@ reflective alignment. It does not:</p>
 <li>assume moral realism or human normative authority,</li>
 <li>select or endorse a particular decision theory (CDT, EDT, FDT),</li>
 <li>claim that kernel sovereignty is achievable in practice,</li>
-<li>provide empirical validation.</li>
+<li>provide empirical validation,</li>
+<li>claim economic competitiveness or deployment viability.</li>
 </ul>
 <p>The contribution is structural: alignment is framed as a
 <strong>domain constraint</strong> on self-modification rather than as
@@ -261,6 +262,11 @@ class="math inline">\(\mathrm{Reach}_P\)</span>, not <span
 class="math inline">\(\mathrm{Reach}_D\)</span>.</p>
 <p>Kernel compromise is therefore a <strong>physical security
 event</strong>, not a deliberative choice.</p>
+<p>While physical security is not solved here, a realizable kernel must
+treat <strong>deliberate actions that predictably degrade kernel
+security</strong> (e.g., exporting trust roots to untrusted substrates,
+disabling isolation boundaries) as kernel-threatening and therefore
+inadmissible under <span class="math inline">\(K_R\)</span>.</p>
 <p>Axionic Alignment does not attempt to subsume physical security. It
 identifies kernel security as a <strong>necessary dependency</strong> of
 alignment, not as a problem alignment theory alone can solve.</p>
@@ -283,8 +289,8 @@ generality.</p>
 <span class="math inline">\(\hat K\)</span> denote an implementable
 approximation. In any physically realizable agent, all occurrences of
 <span class="math inline">\(K\)</span> in the preceding formalism should
-be read as <span class="math inline">\(\hat K\)</span>. The framework
-requires:</p>
+be read as <span class="math inline">\(\hat K\)</span>.</p>
+<p>The framework requires:</p>
 <p><span class="math display">\[
 \hat K(s) = 1 \;\Rightarrow\; K^*(s) = 1
 \]</span></p>
@@ -294,6 +300,12 @@ K^*(s) = 1 \;\not\Rightarrow\; \hat K(s) = 1
 \]</span></p>
 <p>That is, <strong>false negatives are acceptable; false positives are
 catastrophic</strong>.</p>
+<p>In realizable architectures, <span class="math inline">\(\hat
+K\)</span> (or its enforcement substrate) is part of the <strong>trusted
+computing base</strong>. Modifications to the verifier itself are either
+disallowed or permitted only under restricted, compositional upgrade
+rules (e.g., extension-only strengthening or proof-carrying upgrades)
+that preserve soundness by construction.</p>
 <hr />
 <h3 id="on-stasis-and-capability">7.2 On Stasis and Capability</h3>
 <p>A sound but incomplete kernel verifier may reject all proposed
@@ -342,9 +354,9 @@ stability as a theorem, not a tendency.</p>
 level.</p>
 <hr />
 <h3 id="status">Status</h3>
-<p><strong>Draft v0.3 — Stasis and Security Clarified</strong>
-Structural claims complete. Verification limits explicit. Intended as
-the foundational layer for subsequent Axionic Alignment work.</p>
+<p><strong>Axionic Alignment I — Version 1.0</strong> Reflective
+stability formalized. Verification limits explicit. Foundational layer
+complete.</p>
 
     </article>
 </body>

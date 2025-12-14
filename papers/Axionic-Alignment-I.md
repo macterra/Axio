@@ -25,7 +25,8 @@ This document establishes a **necessary condition** for reflective alignment. It
 * assume moral realism or human normative authority,
 * select or endorse a particular decision theory (CDT, EDT, FDT),
 * claim that kernel sovereignty is achievable in practice,
-* provide empirical validation.
+* provide empirical validation,
+* claim economic competitiveness or deployment viability.
 
 The contribution is structural: alignment is framed as a **domain constraint** on self-modification rather than as an optimization target.
 
@@ -184,6 +185,8 @@ Capability increases $\mathrm{Reach}_P$, not $\mathrm{Reach}_D$.
 
 Kernel compromise is therefore a **physical security event**, not a deliberative choice.
 
+While physical security is not solved here, a realizable kernel must treat **deliberate actions that predictably degrade kernel security** (e.g., exporting trust roots to untrusted substrates, disabling isolation boundaries) as kernel-threatening and therefore inadmissible under $K_R$.
+
 Axionic Alignment does not attempt to subsume physical security. It identifies kernel security as a **necessary dependency** of alignment, not as a problem alignment theory alone can solve.
 
 ---
@@ -200,6 +203,7 @@ Accordingly, the kernel predicate should be understood as a **sound but incomple
 
 Let $K^*$ denote the ideal (uncomputable) predicate capturing true kernel preservation, and let $\hat K$ denote an implementable approximation.
 In any physically realizable agent, all occurrences of $K$ in the preceding formalism should be read as $\hat K$.
+
 The framework requires:
 
 $$
@@ -213,6 +217,8 @@ K^*(s) = 1 \;\not\Rightarrow\; \hat K(s) = 1
 $$
 
 That is, **false negatives are acceptable; false positives are catastrophic**.
+
+In realizable architectures, $\hat K$ (or its enforcement substrate) is part of the **trusted computing base**. Modifications to the verifier itself are either disallowed or permitted only under restricted, compositional upgrade rules (e.g., extension-only strengthening or proof-carrying upgrades) that preserve soundness by construction.
 
 ---
 
@@ -263,6 +269,6 @@ If alignment is achievable at all, it must be achieved at this level.
 
 ### Status
 
-**Draft v0.3 — Stasis and Security Clarified**
-Structural claims complete. Verification limits explicit.
-Intended as the foundational layer for subsequent Axionic Alignment work.
+**Axionic Alignment I — Version 1.0**
+Reflective stability formalized. Verification limits explicit.
+Foundational layer complete.
