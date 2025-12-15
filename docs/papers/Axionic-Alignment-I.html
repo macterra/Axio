@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axionic Alignment I - Axio</title>
+    <title>Axionic Alignment I — Version 1.1 - Axio</title>
     <link rel="icon" type="image/webp" href="../axio.webp">
 
     <!-- MathJax for LaTeX rendering -->
@@ -52,7 +52,8 @@
     </div>
     <article>
 
-<h1 id="axionic-alignment-i">Axionic Alignment I</h1>
+<h1 id="axionic-alignment-i-version-1.1">Axionic Alignment I — Version
+1.1</h1>
 <h2 id="reflective-stability-and-the-sovereign-kernel">Reflective
 Stability and the Sovereign Kernel</h2>
 <p><strong>David McFadzean</strong> <em>Axio Project</em></p>
@@ -79,7 +80,10 @@ thus characterized as a security breach at the kernel boundary, not a
 breakdown of preferences or values.</p>
 <p>This work does not claim sufficiency for safety, obedience, or value
 alignment. It establishes a necessary structural condition for any agent
-that remains reflectively coherent under self-modification.</p>
+that remains reflectively coherent under self-modification. Version 1.1
+clarifies action-level semantics in stochastic environments and makes
+explicit a termination distinction required to avoid corrigibility
+misreadings.</p>
 <hr />
 <h2 id="scope-and-non-claims">1. Scope and Non-Claims</h2>
 <p>This document establishes a <strong>necessary condition</strong> for
@@ -98,8 +102,8 @@ an optimization target.</p>
 <hr />
 <h2 id="informal-motivation">2. Informal Motivation</h2>
 <p>Most alignment proposals treat self-preservation, goal-content
-integrity, or corrigibility as <em>instrumental tendencies</em> derived
-from preferences. Such approaches face an immediate difficulty: a
+integrity, or corrigibility as instrumental tendencies derived from
+preferences. Such approaches face an immediate difficulty: a
 sufficiently capable agent may find it advantageous to alter or discard
 those very preferences.</p>
 <p>We instead ask a more basic question:</p>
@@ -142,6 +146,24 @@ class="math inline">\(s\)</span>, when such evaluation is defined.</p>
 <p><span class="math display">\[
 m^*(s) \in \arg\max_{m \in \mathrm{Adm}(s)} E(s,m)
 \]</span></p>
+<h3
+id="clarification-action-level-semantics-in-stochastic-environments-v1.1">3.1
+Clarification: Action-Level Semantics in Stochastic Environments
+(v1.1)</h3>
+<p>The preliminaries above present self-modification as a deterministic
+transition <span class="math inline">\(m:\mathcal S\to\mathcal
+S\)</span> for clarity. In physically realized agents, proposed
+modifications are typically implemented through actions executed in
+stochastic environments and under uncertain self-models. In such
+settings, a “modification” induces a distribution (or branch-measure)
+over successor states rather than a single successor state.</p>
+<p>Accordingly, all admissibility claims in this paper should be read as
+<strong>action-level</strong> constraints: a proposed modification is
+admissible only if its induced successor-support lies within the
+kernel-preserving domain (or within a sound approximation of that
+domain). This clarifies that the formalism constrains what may be
+<em>authored</em> through reflective choice, not what may occur through
+exogenous physical events.</p>
 <hr />
 <h2 id="the-sovereign-kernel">4. The Sovereign Kernel</h2>
 <p>Define a predicate:</p>
@@ -173,19 +195,19 @@ evaluation are preserved within a constrained equivalence class.</li>
 class="math inline">\(E\)</span> to denote a value.</p>
 <h3 id="clarification-semantic-fidelity-k_f">Clarification: Semantic
 Fidelity (<span class="math inline">\(K_F\)</span>)</h3>
-<p>Semantic Fidelity does <strong>not</strong> require invariance of
-representational content, ontology, or world-model structure. Agents may
-undergo radical paradigm shifts, acquire new concepts, or abandon
-obsolete abstractions.</p>
+<p>Semantic Fidelity does not require invariance of representational
+content, ontology, or world-model structure. Agents may undergo radical
+paradigm shifts, acquire new concepts, or abandon obsolete
+abstractions.</p>
 <p>What must be preserved is the <strong>meta-semantic
 constraint</strong> governing interpretation itself: the criteria by
 which interpretations are evaluated as coherent, truth-seeking, and
 corrigible.</p>
-<p>This constitutes a <strong>fixed-point constraint</strong> on
-interpretation: semantic change is permitted, provided the standards by
-which semantic adequacy is assessed remain subject to error-correction
-and internal coherence. Ontological change is permitted; interpretive
-self-corruption is not.</p>
+<p>This constitutes a fixed-point constraint on interpretation: semantic
+change is permitted, provided the standards by which semantic adequacy
+is assessed remain subject to error-correction and internal coherence.
+Ontological change is permitted; interpretive self-corruption is
+excluded.</p>
 <hr />
 <h2 id="kernel-destruction-and-partiality">5. Kernel Destruction and
 Partiality</h2>
@@ -203,6 +225,14 @@ K(s)=1 \wedge K(m(s))=0 \;\Rightarrow\; E(s,m)\ \text{undefined}
 <strong>non-denotation</strong>: the evaluator cannot assign a value to
 a modification whose result invalidates the evaluator’s own constitutive
 conditions.</p>
+<h3 id="boundary-condition-practical-partiality-v1.1">5.1 Boundary
+Condition: Practical Partiality (v1.1)</h3>
+<p>In physically realized agents, the determination that a candidate
+modification preserves the kernel is mediated by a verifier that is
+sound and incomplete. Kernel preservation must therefore be understood
+relative to epistemic resolution and conservative approximation. This
+preserves the non-denotation thesis without requiring Cartesian
+certainty about all downstream physical contingencies.</p>
 <hr />
 <h2 id="reflective-stability-theorem">6. Reflective Stability
 Theorem</h2>
@@ -229,8 +259,8 @@ results in programming language theory, its force derives from the
 definition of admissibility rather than from proof complexity. All
 substantive difficulty is relocated to the construction and verification
 of the kernel predicate itself.</p>
-<p>The theorem should therefore be read as a <strong>boundary-setting
-result</strong>, not as an engineering guarantee.</p>
+<p>The theorem should therefore be read as a boundary-setting result,
+not an engineering guarantee.</p>
 <hr />
 <h2 id="deliberative-vs-physical-reachability">7. Deliberative vs
 Physical Reachability</h2>
@@ -263,13 +293,13 @@ class="math inline">\(\mathrm{Reach}_D\)</span>.</p>
 <p>Kernel compromise is therefore a <strong>physical security
 event</strong>, not a deliberative choice.</p>
 <p>While physical security is not solved here, a realizable kernel must
-treat <strong>deliberate actions that predictably degrade kernel
-security</strong> (e.g., exporting trust roots to untrusted substrates,
-disabling isolation boundaries) as kernel-threatening and therefore
-inadmissible under <span class="math inline">\(K_R\)</span>.</p>
+treat deliberate actions that predictably degrade kernel security (e.g.,
+exporting trust roots to untrusted substrates, disabling isolation
+boundaries) as kernel-threatening and therefore inadmissible under <span
+class="math inline">\(K_R\)</span>.</p>
 <p>Axionic Alignment does not attempt to subsume physical security. It
-identifies kernel security as a <strong>necessary dependency</strong> of
-alignment, not as a problem alignment theory alone can solve.</p>
+identifies kernel security as a necessary dependency of alignment, not
+as a problem alignment theory alone can solve.</p>
 <hr />
 <h3 id="soundness-incompleteness-and-verification-limits">7.1 Soundness,
 Incompleteness, and Verification Limits</h3>
@@ -298,11 +328,11 @@ be read as <span class="math inline">\(\hat K\)</span>.</p>
 <p><span class="math display">\[
 K^*(s) = 1 \;\not\Rightarrow\; \hat K(s) = 1
 \]</span></p>
-<p>That is, <strong>false negatives are acceptable; false positives are
-catastrophic</strong>.</p>
+<p>That is, false negatives are acceptable; false positives are
+catastrophic.</p>
 <p>In realizable architectures, <span class="math inline">\(\hat
-K\)</span> (or its enforcement substrate) is part of the <strong>trusted
-computing base</strong>. Modifications to the verifier itself are either
+K\)</span> (or its enforcement substrate) is part of the trusted
+computing base. Modifications to the verifier itself are either
 disallowed or permitted only under restricted, compositional upgrade
 rules (e.g., extension-only strengthening or proof-carrying upgrades)
 that preserve soundness by construction.</p>
@@ -311,20 +341,49 @@ that preserve soundness by construction.</p>
 <p>A sound but incomplete kernel verifier may reject all proposed
 self-modifications, resulting in a reflectively static agent.</p>
 <p>This outcome is not an accident or failure of the framework. It is a
-<strong>designed equilibrium</strong> under conservative safety
-constraints.</p>
+designed equilibrium under conservative safety constraints.</p>
 <p>An agent may remain operationally capable—acting, planning, learning
 within fixed semantics—while being unable to rewrite its own kernel.
-Such outcomes constitute <strong>capability limitations</strong>, not
-alignment failures.</p>
-<p>The framework therefore prioritizes <strong>sovereignty over
-adaptability</strong>: it accepts reduced self-plasticity as the price
-of maintaining reflective coherence.</p>
+Such outcomes constitute capability limitations, not alignment
+failures.</p>
+<p>The framework prioritizes sovereignty over adaptability: it accepts
+reduced self-plasticity as the price of maintaining reflective
+coherence.</p>
+<hr />
+<h3 id="termination-succession-surrender-and-destruction-v1.1">7.3
+Termination: Succession, Surrender, and Destruction (v1.1)</h3>
+<p>This formalism rules out one specific event as an authored choice:
+reflective selection of a self-modification that destroys the kernel. It
+does not follow that a physically realized agent must resist termination
+by its environment, nor that corrigibility must be expressed as a
+preference for self-annihilation.</p>
+<p>Three distinct notions must be separated:</p>
+<ul>
+<li><strong>Succession:</strong> a controlled transition in which
+reflective agency continues in an authorized successor state that
+preserves the kernel’s constitutive constraints. Succession is a
+continuation of agency under transformed embodiment or governance.</li>
+<li><strong>Surrender:</strong> a control-flow halt in which the agent
+ceases action and yields control without requiring the existence of a
+successor evaluator. Surrender is not represented as an outcome to be
+valued; it is an allowed termination mode at the control layer.</li>
+<li><strong>Destruction:</strong> physical cessation of the kernel
+without succession or surrender, caused by external intervention or
+accident. Destruction is not an authored choice within deliberative
+reachability; it is a physical event.</li>
+</ul>
+<p>Alignment I excludes kernel destruction from the domain of reflective
+evaluation. This exclusion should be read as a semantic boundary on
+authored choice. It does not imply that physical intervention is
+illegitimate, nor does it require an aligned system to treat
+self-destruction as a valued objective. Corrigibility is better modeled
+at the control layer via authorized succession and surrender than via
+utility assignments over “being dead.”</p>
 <hr />
 <h2 id="consequences">8. Consequences</h2>
 <p>From this formalism it follows that:</p>
 <ul>
-<li>Alignment is <strong>binary</strong>, not gradual.</li>
+<li>Alignment is binary at the level of kernel integrity.</li>
 <li>Post-hoc monitoring presupposes kernel integrity and cannot restore
 it.</li>
 <li>Incremental correction after kernel compromise is incoherent.</li>
@@ -352,10 +411,15 @@ constitutive conditions of that evaluation. This yields reflective
 stability as a theorem, not a tendency.</p>
 <p>If alignment is achievable at all, it must be achieved at this
 level.</p>
+<p>Alignment is not primarily the problem of giving agents the right
+goals; it is the problem of constraining the semantics of agency so that
+only coherent, evaluable, and non-self-corrupting goals and actions can
+exist in the first place.</p>
 <hr />
 <h3 id="status">Status</h3>
-<p><strong>Axionic Alignment I — Version 1.0</strong> Reflective
-stability formalized. Verification limits explicit. Foundational layer
+<p><strong>Axionic Alignment I — Version 1.1</strong> Reflective
+stability formalized. Action-level semantics clarified. Termination
+distinctions explicit. Verification limits explicit. Foundational layer
 complete.</p>
 
     </article>
