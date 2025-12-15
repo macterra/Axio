@@ -433,11 +433,7 @@ def generate_papers_index(papers_metadata):
             margin: 0 0 0.5em 0;
         }}
         .paper-entry h2 a {{
-            color: #333;
             text-decoration: none;
-        }}
-        .paper-entry h2 a:hover {{
-            color: #0066cc;
         }}
         .paper-abstract {{
             color: #666;

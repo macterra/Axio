@@ -1,4 +1,4 @@
-# Axionic Alignment I — Version 1.1
+# Axionic Alignment I
 
 ## Reflective Stability and the Sovereign Kernel
 
