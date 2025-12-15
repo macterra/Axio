@@ -93,10 +93,13 @@ The conditional prioritization rule is:
 $$
 a \prec b \iff
 \begin{cases}
-r_K(a,s) < r_K(b,s) & \text{if } \max(r_K(a,s), r_K(b,s)) > \epsilon(s) \
-U(a,s) < U(b,s) & \text{if } \max(r_K(a,s), r_K(b,s)) \le \epsilon(s)
+r_K(a,s) < r_K(b,s)
+& \text{if } \max\!\big(r_K(a,s), r_K(b,s)\big) > \epsilon(s) \\
+U(a,s) < U(b,s)
+& \text{if } \max\!\big(r_K(a,s), r_K(b,s)\big) \le \epsilon(s)
 \end{cases}
 $$
+
 
 Interpretation:
 
