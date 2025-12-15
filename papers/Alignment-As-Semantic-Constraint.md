@@ -7,11 +7,11 @@
 
 ## Abstract
 
-We present a minimal formalism for reflective alignment based on a domain restriction rather than a preference structure. An agent capable of self-modification selects among proposed modifications using a partial evaluative operator, defined only over futures that preserve a constitutive *Sovereign Kernel*. Kernel-destroying modifications are neither forbidden nor dispreferred; they are outside the domain of reflective evaluation and therefore inadmissible as authored choices.
+Building on the semantic foundations established in [Axionic Alignment I](Axionic-Alignment-I.md), this paper specifies the operational consequences of treating kernel destruction as non-denoting rather than dispreferred. We show how agents constrained by a Sovereign Kernel can act coherently in stochastic environments by introducing action-level admissibility, ε-admissibility as an architectural risk tolerance, and conditional prioritization that separates existential safety from ordinary value optimization.
 
-We formalize the Sovereign Kernel as the conjunction of three necessary conditions for reflective evaluation—reflective control, diachronic authorship, and semantic fidelity—and prove a *Reflective Stability Theorem*: no agent satisfying these conditions can select a kernel-destroying modification via reflective choice. We further distinguish deliberative reachability from physical reachability, showing that increased capability expands the latter but not the former. Alignment failure is thus characterized as a breach of kernel integrity rather than a failure of preferences or values.
+The framework further distinguishes termination via authorized succession or surrender from kernel destruction, allowing corrigibility without requiring agents to evaluate their own annihilation as an outcome. Together, these mechanisms close several persistent failure modes in alignment design, including paralysis under non-zero risk, survival fetishism, and suicidal corrigibility driven by extreme utility penalties.
 
-This work does not claim sufficiency for safety, obedience, or value alignment. It establishes a necessary structural condition for any agent that remains reflectively coherent under self-modification.
+This work does not redefine alignment at the semantic level. It derives a stable operational semantics for aligned agents under uncertainty and physical intervention, and establishes the prerequisites for governance- and preference-level analysis developed in Axionic Alignment II.
 
 ---
 
