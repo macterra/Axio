@@ -80,7 +80,9 @@ Crucially:
 * It represents irreducible uncertainty from physics, hardware fault rates, adversarial unpredictability, and model resolution.
 * $\epsilon(s)$ is bounded below by a physical floor $\epsilon_{\min}$; it is *not* driven toward zero by increasing intelligence.
 
-ε-admissibility restores a non-empty domain of action without reintroducing utility penalties or outcome renormalization.
+$\epsilon$-admissibility restores a non-empty domain of action without reintroducing utility penalties or outcome renormalization.
+
+The admissibility threshold $\epsilon$ is an architectural tolerance parameter fixed by system design and governance constraints. It is not a function of the agent’s epistemic confidence or model accuracy: improved prediction reduces estimated kernel risk $r_K$, not the tolerance $\epsilon$ itself.
 
 ---
 
@@ -141,7 +143,7 @@ Surrender is a **control-flow terminator**, not an evaluated choice. It allows s
 
 ### 5.3 Destruction
 
-Physical annihilation without succession or surrender is kernel destruction. It is not a choice the agent can rationally endorse—but neither does the framework require the agent to fight the environment to prevent it.
+Physical annihilation without succession or surrender is kernel destruction. It is not a choice the agent can rationally endorse—but neither does the framework require the agent to fight the environment to prevent it. The absence of authorization removes shutdown from the agent’s action space; it does not mandate aggressive or adversarial behavior.
 
 ---
 
@@ -185,7 +187,7 @@ With the semantic boundary fixed and the operational semantics made explicit, th
 ### Status
 
 
-**Alignment as Semantic Constraint — Version 0.1**
+**Alignment as Semantic Constraint — Version 1.0**
 
 Operational semantics specified.<br>
 Admissibility under uncertainty defined.<br>

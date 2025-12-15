@@ -149,8 +149,16 @@ rates, adversarial unpredictability, and model resolution.</li>
 a physical floor <span class="math inline">\(\epsilon_{\min}\)</span>;
 it is <em>not</em> driven toward zero by increasing intelligence.</li>
 </ul>
-<p>ε-admissibility restores a non-empty domain of action without
-reintroducing utility penalties or outcome renormalization.</p>
+<p><span class="math inline">\(\epsilon\)</span>-admissibility restores
+a non-empty domain of action without reintroducing utility penalties or
+outcome renormalization.</p>
+<p>The admissibility threshold <span
+class="math inline">\(\epsilon\)</span> is an architectural tolerance
+parameter fixed by system design and governance constraints. It is not a
+function of the agent’s epistemic confidence or model accuracy: improved
+prediction reduces estimated kernel risk <span
+class="math inline">\(r_K\)</span>, not the tolerance <span
+class="math inline">\(\epsilon\)</span> itself.</p>
 <hr />
 <h2 id="conditional-prioritization">4. Conditional Prioritization</h2>
 <p>Earlier formulations employed strict lexicographic minimization of
@@ -217,7 +225,9 @@ destruction.</p>
 <p>Physical annihilation without succession or surrender is kernel
 destruction. It is not a choice the agent can rationally endorse—but
 neither does the framework require the agent to fight the environment to
-prevent it.</p>
+prevent it. The absence of authorization removes shutdown from the
+agent’s action space; it does not mandate aggressive or adversarial
+behavior.</p>
 <hr />
 <h2 id="resulting-agent-profile">6. Resulting Agent Profile</h2>
 <p>The corrected system produces an agent that:</p>
@@ -267,7 +277,7 @@ explicit, the remaining alignment problem shifts to the preference and
 governance layer addressed in Axionic Alignment II.</p>
 <hr />
 <h3 id="status">Status</h3>
-<p><strong>Alignment as Semantic Constraint — Version 0.1</strong></p>
+<p><strong>Alignment as Semantic Constraint — Version 1.0</strong></p>
 <p>Operational semantics specified.<br> Admissibility under uncertainty
 defined.<br> Termination modes clarified.<br> Failure modes closed at
 the control layer.<br> Prerequisite for Axionic Alignment II.<br></p>
