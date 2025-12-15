@@ -380,7 +380,7 @@ def process_paper_file(src_path, dest_path):
         <a href="../index.html" class="logo-link">
             <img src="../axio.webp" alt="Axio" class="site-logo">
         </a>
-        <div class="back-link"><a href="../index.html">← Back to Index</a></div>
+        <div class="back-link"><a href="index.html">← Back to Papers</a></div>
     </div>
     <article>
 {content_html}
