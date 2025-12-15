@@ -326,6 +326,9 @@ def process_paper_file(src_path, dest_path):
     if body_match:
         content_html = body_match.group(1)
 
+    # Fix internal markdown links to point to .html files
+    content_html = re.sub(r'href="([^"]+)\.md"', r'href="\1.html"', content_html)
+
     # Wrap in styled HTML
     wrapped_html = f"""<!DOCTYPE html>
 <html lang="en">
