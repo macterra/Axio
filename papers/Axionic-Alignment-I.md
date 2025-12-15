@@ -296,8 +296,9 @@ Alignment is not primarily the problem of giving agents the right goals; it is t
 ### Status
 
 **Axionic Alignment I — Version 1.1**
-Reflective stability formalized.
-Action-level semantics clarified.
-Termination distinctions explicit.
-Verification limits explicit.
-Foundational layer complete.
+
+Reflective stability formalized.<br>
+Action-level semantics clarified.<br>
+Termination distinctions explicit.<br>
+Verification limits explicit.<br>
+Foundational layer complete.<br>
