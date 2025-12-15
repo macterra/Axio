@@ -2,7 +2,7 @@
 
 ## Reflective Stability and the Sovereign Kernel
 
-**David McFadzean**
+**David McFadzean**<br>
 *Axio Project*
 
 ---
