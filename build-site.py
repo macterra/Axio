@@ -474,9 +474,22 @@ def process_papers():
     if not papers:
         return 0
 
-    # Sort by creation time (oldest first for chronological order)
-    # Use birthtime if available (macOS/Windows), otherwise fall back to ctime
-    papers.sort(key=lambda p: getattr(p.stat(), 'st_birthtime', p.stat().st_ctime))
+    # Sort by git creation time (when file was first added to repo)
+    def get_git_creation_time(filepath):
+        try:
+            result = subprocess.run(
+                ['git', 'log', '--diff-filter=A', '--format=%at', '--follow', '--', str(filepath)],
+                capture_output=True,
+                text=True,
+                check=True
+            )
+            timestamps = result.stdout.strip().split('\n')
+            return int(timestamps[-1]) if timestamps and timestamps[-1] else float('inf')
+        except:
+            # Fallback to file ctime if git fails
+            return filepath.stat().st_ctime
+
+    papers.sort(key=get_git_creation_time)
 
     print(f"6. Processing {len(papers)} paper(s) from papers/...")
 
