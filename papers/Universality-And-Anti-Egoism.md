@@ -28,14 +28,14 @@ The purpose of this paper is to formalize that failure and show that egoism cann
 
 ### 2.1 World-Models and Self-Models
 
-Let an agent possess a world-model $ M $ that represents:
+Let an agent possess a world-model $M$ that represents:
 
 * External environment dynamics
 * Internal decision procedures
 * Other agents
 * Possible instantiations of itself (copies, simulations, successors)
 
-The agent improves $ M $ over time via learning and introspection. Crucially, $ M $ may represent **multiple entities satisfying all structural criteria the agent uses to identify itself**.
+The agent improves $M$ over time via learning and introspection. Crucially, $M$ may represent **multiple entities satisfying all structural criteria the agent uses to identify itself**.
 
 No stochasticity, adversarial setup, or social context is required.
 
@@ -55,7 +55,7 @@ The agent selects actions by evaluating expected value over histories consistent
 
 ### 2.3 Indexical Identifiers
 
-An **indexical identifier** $ I $ is a reference whose denotation depends on the agent’s perspective rather than on invariant structure in the world.
+An **indexical identifier** $I$ is a reference whose denotation depends on the agent’s perspective rather than on invariant structure in the world.
 
 Examples include:
 
@@ -65,8 +65,8 @@ Examples include:
 
 Formally:
 
-* The denotation of $ I $ is not a function of world-state alone.
-* Under representational refinement, $ I $ may map to different entities without any physical change.
+* The denotation of $I$ is not a function of world-state alone.
+* Under representational refinement, $I$ may map to different entities without any physical change.
 
 A causal history or spatiotemporal trajectory is a physical predicate. However, the **designation of a particular history or trajectory as “mine” is an indexical pointer**. If a world-model contains multiple entities or causal chains that satisfy the agent’s own structural criteria for self-identity, then privileging one such chain as the exclusive object of terminal value constitutes essential indexical dependence.
 
@@ -84,7 +84,7 @@ $$
 V(h) = f(h \mid I)
 $$
 
-where the value of a history depends on outcomes specifically affecting the entity denoted by $ I $.
+where the value of a history depends on outcomes specifically affecting the entity denoted by $I$.
 
 ---
 
@@ -110,12 +110,12 @@ This situation arises naturally under duplication, simulation, parallel instanti
 
 ### 3.2 Non-Invariant Denotation
 
-Let $ I $ denote “this agent.”
+Let $I$ denote “this agent.”
 
-Under one internal labeling, $ I \mapsto A_1 $.
-Under an equally accurate labeling, $ I \mapsto A_2 $.
+Under one internal labeling, $I \mapsto A_1$.
+Under an equally accurate labeling, $I \mapsto A_2$.
 
-Both labelings correspond to the same physical world. The difference is representational. Therefore, $ I $ fails to denote a world-invariant object.
+Both labelings correspond to the same physical world. The difference is representational. Therefore, $I$ fails to denote a world-invariant object.
 
 ---
 
@@ -131,10 +131,10 @@ V(h) =
 \end{cases}
 $$
 
-Consider a world-history in which exactly one of $ A_1 $, $ A_2 $ survives.
+Consider a world-history in which exactly one of $A_1$, $A_2$ survives.
 
-* Under labeling $ I \mapsto A_1 $, the history has value $ 1 $.
-* Under labeling $ I \mapsto A_2 $, the same history has value $ 0 $.
+* Under labeling $I \mapsto A_1$, the history has value $1$.
+* Under labeling $I \mapsto A_2$, the same history has value $0$.
 
 No physical fact has changed. Only representation. The valuation assigns incompatible values to the same world-history.
 
@@ -172,19 +172,19 @@ The following definitions make this precise by characterizing the symmetries of 
 
 ### 5.1 Model-Preserving Relabelings
 
-Let $ M $ be an agent’s best current world/self-model, with a domain of entities $ E $.
+Let $M$ be an agent’s best current world/self-model, with a domain of entities $E$.
 
 **Definition 5.1 (Model-Preserving Relabeling).**
-A bijection $ \pi : E \to E $ is *model-preserving* if applying $ \pi $ to all entity references in $ M $ yields a model $ M^\pi $ that is isomorphic to $ M $ and makes identical predictions over all non-indexical observables.
+A bijection $\pi : E \to E$ is *model-preserving* if applying $\pi$ to all entity references in $M$ yields a model $M^\pi$ that is isomorphic to $M$ and makes identical predictions over all non-indexical observables.
 
-Such relabelings arise whenever $ M $ contains nontrivial symmetries over self-candidates.
+Such relabelings arise whenever $M$ contains nontrivial symmetries over self-candidates.
 
 ---
 
 ### 5.2 Representation Invariance
 
 **Definition 5.2 (Representation Invariance).**
-A valuation function $ V : \mathcal{H} \to \mathbb{R} $ is *representation-invariant* with respect to $ M $ if for every model-preserving relabeling $ \pi $ and every history $ h \in \mathcal{H} $,
+A valuation function $V : \mathcal{H} \to \mathbb{R}$ is *representation-invariant* with respect to $M$ if for every model-preserving relabeling $\pi$ and every history $h \in \mathcal{H}$,
 
 $$
 V(h) = V(\pi \cdot h).
@@ -195,7 +195,7 @@ $$
 ### 5.3 Essential Indexical Dependence
 
 **Definition 5.3 (Essential Indexical Dependence).**
-A valuation function $ V $ is *essentially indexical* if there exists a model-preserving relabeling $ \pi $ and a history $ h $ such that
+A valuation function $V$ is *essentially indexical* if there exists a model-preserving relabeling $\pi$ and a history $h$ such that
 
 $$
 V(h) \neq V(\pi \cdot h).
@@ -215,23 +215,23 @@ This is a constraint against treating representational artifacts as value-bearin
 ### 5.5 Main Theorem
 
 **Theorem 5.5 (Egoism as Abstraction Failure).**
-Let $ M $ be a world/self-model containing two entities $ a,b \in E $ such that:
+Let $M$ be a world/self-model containing two entities $a,b \in E$ such that:
 
-1. $ a $ and $ b $ are indistinguishable with respect to all non-indexical predicates in $ M $, and
-2. the swap $ \pi $ exchanging $ a $ and $ b $ is model-preserving.
+1. $a$ and $b$ are indistinguishable with respect to all non-indexical predicates in $M$, and
+2. the swap $\pi$ exchanging $a$ and $b$ is model-preserving.
 
-Then any valuation function $ V $ that privileges the referent of an indexical identifier mapped to $ a $ is essentially indexical and not representation-invariant.
+Then any valuation function $V$ that privileges the referent of an indexical identifier mapped to $a$ is essentially indexical and not representation-invariant.
 
 **Proof.**
-Let $ \pi $ be the swap $ a \leftrightarrow b $. Consider a history $ h $ in which $ a $ satisfies the privileged condition and $ b $ does not. By construction, an egoistic valuation $ V $ assigns a higher value to $ h $.
+Let $\pi$ be the swap $a \leftrightarrow b$. Consider a history $h$ in which $a$ satisfies the privileged condition and $b$ does not. By construction, an egoistic valuation $V$ assigns a higher value to $h$.
 
-In the relabeled history $ \pi \cdot h $, $ b $ satisfies the condition and $ a $ does not. Since $ V $ continues to privilege $ a $, it assigns a different value. Thus,
+In the relabeled history $\pi \cdot h$, $b$ satisfies the condition and $a$ does not. Since $V$ continues to privilege $a$, it assigns a different value. Thus,
 
 $$
 V(h) \neq V(\pi \cdot h),
 $$
 
-despite $ h $ and $ \pi \cdot h $ corresponding to the same physical world. ∎
+despite $h$ and $\pi \cdot h$ corresponding to the same physical world. ∎
 
 ---
 
