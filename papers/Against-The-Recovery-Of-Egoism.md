@@ -134,21 +134,13 @@ Symmetry denial violates reflective robustness.
 
 ---
 
-## 8. General Result
+## 8. Closure and Transition
 
-Every attempted rescue of egoism either reintroduces essential indexical dependence or collapses into a non‑egoistic valuation scheme. Increasing the complexity of the self‑definition does not conserve egoism; complexity does not generate uniqueness. No third option exists.
+Every attempted rescue of egoism either reintroduces essential indexical dependence or collapses into a non-egoistic valuation scheme. Increasing the complexity of the self-definition does not conserve egoism; complexity does not generate uniqueness. No third option exists.
 
----
+The failure of egoism constrains anchoring, not content. Domain-specific goals, structural preferences, weighting schemes, and aggregation methods remain viable. What does not survive is “me” as a privileged terminal referent. The elimination of egoism does not imply nihilism, indifference, or randomness; it removes only a semantic error.
 
-## 9. What Survives Egoism’s Collapse
-
-The failure of egoism constrains anchoring, not content. Domain‑specific goals, structural preferences, weighting schemes, and aggregation methods remain viable. What does not survive is “me” as a privileged terminal referent.
-
----
-
-## 10. Transition
-
-*Universality and Anti-Egoism* and *Against the Recovery of Egoism* close the semantic front. Egoism is eliminated and cannot be smuggled back in. What remains are engineering problems—authority, control, recovery, and failure containment—addressed in the next phase of the Axionic Alignment program.
+*Universality and Anti-Egoism* and *Against the Recovery of Egoism* close the semantic front. What remains are engineering problems—authority, control, recovery, and failure containment—which are addressed in the next phase of the Axionic Alignment program.
 
 ---
 
