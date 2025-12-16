@@ -6,7 +6,7 @@
 
 ## Abstract
 
-*Universality and Anti-Egoism* established that egoistic valuation fails as a matter of semantic coherence whenever an agent’s self‑model admits nontrivial symmetries. This paper examines the strongest remaining attempts to rescue egoism by appealing to causal continuity, origin privilege, spatiotemporal location, computational weight, substrate specificity, or outright denial of symmetry. Each attempt either reintroduces essential indexical dependence or collapses into a non‑egoistic valuation scheme. Egoism cannot be stabilized by refining predicates; it fails because it treats a perspectival reference as a value‑bearing primitive.
+[Universality and Anti-Egoism](Universality-And-Anti-Egoism.md) established that egoistic valuation fails as a matter of semantic coherence whenever an agent’s self‑model admits nontrivial symmetries. This paper examines the strongest remaining attempts to rescue egoism by appealing to causal continuity, origin privilege, spatiotemporal location, computational weight, substrate specificity, or outright denial of symmetry. Each attempt either reintroduces essential indexical dependence or collapses into a non‑egoistic valuation scheme. Egoism cannot be stabilized by refining predicates; it fails because it treats a perspectival reference as a value‑bearing primitive.
 
 ---
 
