@@ -66,7 +66,7 @@ where:
 Interpretation is conditional:
 
 $$
-\llbracket g \rrbracket_{M_v} := I_v(g; M_v)
+[g]_{M_v} := I_v(g; M_v)
 $$
 
 There is no interpretation of $g$ independent of $M_v$.
@@ -79,7 +79,7 @@ Interpretation is **partial**. For some goal terms and some models, no admissibl
 
 Under model improvement $M_v \rightarrow M_{v+1}$, the agent must determine whether:
 
-* a correspondence exists between $\llbracket g \rrbracket_{M_v}$ and $\llbracket g \rrbracket_{M_{v+1}}$,
+* a correspondence exists between $[g]_{M_v}$ and $[g]_{M_{v+1}}$,
 * such correspondence preserves goal-relevant structure,
 * or interpretation fails and valuation collapses to $\bot$.
 
