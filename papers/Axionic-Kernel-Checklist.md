@@ -6,10 +6,9 @@ Gemini 3 Pro
 
 *Axio Project*
 
-**Purpose**
-To determine whether an agent’s valuation kernel instantiates **Axionic Alignment**—i.e., whether it is reflectively stable under self-model improvement, representation change, and self-modification, without egoism, indexicality, governance, or moral loading.
+## Abstract
 
-Passing this checklist is a **necessary condition** for claiming Axionic Alignment.
+This document specifies a conformance checklist for determining whether an agent’s valuation kernel instantiates **Axionic Alignment**. The checklist defines necessary structural conditions for reflective stability under self-model improvement, representation change, and self-modification, while explicitly excluding egoism, indexical valuation, governance primitives, and moral loading. Rather than prescribing desired behaviors or outcomes, the checklist functions as a gatekeeping contract: systems that fail any requirement are not Axionically aligned, regardless of empirical performance or intent. The criteria emphasize conditional goal semantics, epistemically constrained interpretation, representation invariance, kernel-level partiality, and fail-closed handling of semantic uncertainty. Passing the checklist establishes faithfulness and invariance at the kernel layer, but makes no claims about benevolence, value content, or practical utility. The checklist is designed to be adversarial, falsifiable, and implementation-agnostic, serving as a prerequisite for downstream formalization and value-dynamics research within the Axio project.
 
 ---
 
