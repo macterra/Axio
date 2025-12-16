@@ -93,7 +93,8 @@ is.</p>
 <h2 id="preliminaries">2. Preliminaries</h2>
 <h3 id="world-models-and-self-models">2.1 World-Models and
 Self-Models</h3>
-<p>Let an agent possess a world-model $ M $ that represents:</p>
+<p>Let an agent possess a world-model <span
+class="math inline">\(M\)</span> that represents:</p>
 <ul>
 <li>External environment dynamics</li>
 <li>Internal decision procedures</li>
@@ -101,9 +102,11 @@ Self-Models</h3>
 <li>Possible instantiations of itself (copies, simulations,
 successors)</li>
 </ul>
-<p>The agent improves $ M $ over time via learning and introspection.
-Crucially, $ M $ may represent <strong>multiple entities satisfying all
-structural criteria the agent uses to identify itself</strong>.</p>
+<p>The agent improves <span class="math inline">\(M\)</span> over time
+via learning and introspection. Crucially, <span
+class="math inline">\(M\)</span> may represent <strong>multiple entities
+satisfying all structural criteria the agent uses to identify
+itself</strong>.</p>
 <p>No stochasticity, adversarial setup, or social context is
 required.</p>
 <hr />
@@ -117,9 +120,10 @@ consistent with its model. The analysis here is independent of any
 particular decision theory; only valuation coherence is considered.</p>
 <hr />
 <h3 id="indexical-identifiers">2.3 Indexical Identifiers</h3>
-<p>An <strong>indexical identifier</strong> $ I $ is a reference whose
-denotation depends on the agent’s perspective rather than on invariant
-structure in the world.</p>
+<p>An <strong>indexical identifier</strong> <span
+class="math inline">\(I\)</span> is a reference whose denotation depends
+on the agent’s perspective rather than on invariant structure in the
+world.</p>
 <p>Examples include:</p>
 <ul>
 <li>“me”</li>
@@ -128,9 +132,11 @@ structure in the world.</p>
 </ul>
 <p>Formally:</p>
 <ul>
-<li>The denotation of $ I $ is not a function of world-state alone.</li>
-<li>Under representational refinement, $ I $ may map to different
-entities without any physical change.</li>
+<li>The denotation of <span class="math inline">\(I\)</span> is not a
+function of world-state alone.</li>
+<li>Under representational refinement, <span
+class="math inline">\(I\)</span> may map to different entities without
+any physical change.</li>
 </ul>
 <p>A causal history or spatiotemporal trajectory is a physical
 predicate. However, the <strong>designation of a particular history or
@@ -150,7 +156,8 @@ whose output depends essentially on an indexical identifier.</p>
 V(h) = f(h \mid I)
 \]</span></p>
 <p>where the value of a history depends on outcomes specifically
-affecting the entity denoted by $ I $.</p>
+affecting the entity denoted by <span
+class="math inline">\(I\)</span>.</p>
 <hr />
 <h3 id="reflective-stability-local">2.5 Reflective Stability
 (Local)</h3>
@@ -176,12 +183,13 @@ parallel instantiation, or branching. The mechanism is irrelevant;
 multiplicity alone suffices.</p>
 <hr />
 <h3 id="non-invariant-denotation">3.2 Non-Invariant Denotation</h3>
-<p>Let $ I $ denote “this agent.”</p>
-<p>Under one internal labeling, $ I A_1 $. Under an equally accurate
-labeling, $ I A_2 $.</p>
+<p>Let <span class="math inline">\(I\)</span> denote “this agent.”</p>
+<p>Under one internal labeling, <span class="math inline">\(I \mapsto
+A_1\)</span>. Under an equally accurate labeling, <span
+class="math inline">\(I \mapsto A_2\)</span>.</p>
 <p>Both labelings correspond to the same physical world. The difference
-is representational. Therefore, $ I $ fails to denote a world-invariant
-object.</p>
+is representational. Therefore, <span class="math inline">\(I\)</span>
+fails to denote a world-invariant object.</p>
 <hr />
 <h3 id="valuation-instability">3.3 Valuation Instability</h3>
 <p>Define a simple egoistic valuation:</p>
@@ -192,11 +200,14 @@ V(h) =
 0 &amp; \text{otherwise}
 \end{cases}
 \]</span></p>
-<p>Consider a world-history in which exactly one of $ A_1 $, $ A_2 $
-survives.</p>
+<p>Consider a world-history in which exactly one of <span
+class="math inline">\(A_1\)</span>, <span
+class="math inline">\(A_2\)</span> survives.</p>
 <ul>
-<li>Under labeling $ I A_1 $, the history has value $ 1 $.</li>
-<li>Under labeling $ I A_2 $, the same history has value $ 0 $.</li>
+<li>Under labeling <span class="math inline">\(I \mapsto A_1\)</span>,
+the history has value <span class="math inline">\(1\)</span>.</li>
+<li>Under labeling <span class="math inline">\(I \mapsto A_2\)</span>,
+the same history has value <span class="math inline">\(0\)</span>.</li>
 </ul>
 <p>No physical fact has changed. Only representation. The valuation
 assigns incompatible values to the same world-history.</p>
@@ -242,21 +253,28 @@ reflective coherence.</p>
 <hr />
 <h3 id="model-preserving-relabelings">5.1 Model-Preserving
 Relabelings</h3>
-<p>Let $ M $ be an agent’s best current world/self-model, with a domain
-of entities $ E $.</p>
+<p>Let <span class="math inline">\(M\)</span> be an agent’s best current
+world/self-model, with a domain of entities <span
+class="math inline">\(E\)</span>.</p>
 <p><strong>Definition 5.1 (Model-Preserving Relabeling).</strong> A
-bijection $ : E E $ is <em>model-preserving</em> if applying $ $ to all
-entity references in $ M $ yields a model $ M^$ that is isomorphic to $
-M $ and makes identical predictions over all non-indexical
-observables.</p>
-<p>Such relabelings arise whenever $ M $ contains nontrivial symmetries
-over self-candidates.</p>
+bijection <span class="math inline">\(\pi : E \to E\)</span> is
+<em>model-preserving</em> if applying <span
+class="math inline">\(\pi\)</span> to all entity references in <span
+class="math inline">\(M\)</span> yields a model <span
+class="math inline">\(M^\pi\)</span> that is isomorphic to <span
+class="math inline">\(M\)</span> and makes identical predictions over
+all non-indexical observables.</p>
+<p>Such relabelings arise whenever <span
+class="math inline">\(M\)</span> contains nontrivial symmetries over
+self-candidates.</p>
 <hr />
 <h3 id="representation-invariance">5.2 Representation Invariance</h3>
 <p><strong>Definition 5.2 (Representation Invariance).</strong> A
-valuation function $ V : $ is <em>representation-invariant</em> with
-respect to $ M $ if for every model-preserving relabeling $ $ and every
-history $ h $,</p>
+valuation function <span class="math inline">\(V : \mathcal{H} \to
+\mathbb{R}\)</span> is <em>representation-invariant</em> with respect to
+<span class="math inline">\(M\)</span> if for every model-preserving
+relabeling <span class="math inline">\(\pi\)</span> and every history
+<span class="math inline">\(h \in \mathcal{H}\)</span>,</p>
 <p><span class="math display">\[
 V(h) = V(\pi \cdot h).
 \]</span></p>
@@ -264,9 +282,10 @@ V(h) = V(\pi \cdot h).
 <h3 id="essential-indexical-dependence">5.3 Essential Indexical
 Dependence</h3>
 <p><strong>Definition 5.3 (Essential Indexical Dependence).</strong> A
-valuation function $ V $ is <em>essentially indexical</em> if there
-exists a model-preserving relabeling $ $ and a history $ h $ such
-that</p>
+valuation function <span class="math inline">\(V\)</span> is
+<em>essentially indexical</em> if there exists a model-preserving
+relabeling <span class="math inline">\(\pi\)</span> and a history <span
+class="math inline">\(h\)</span> such that</p>
 <p><span class="math display">\[
 V(h) \neq V(\pi \cdot h).
 \]</span></p>
@@ -281,28 +300,42 @@ different values solely due to that relabeling.</p>
 value-bearing structure.</p>
 <hr />
 <h3 id="main-theorem">5.5 Main Theorem</h3>
-<p><strong>Theorem 5.5 (Egoism as Abstraction Failure).</strong> Let $ M
-$ be a world/self-model containing two entities $ a,b E $ such that:</p>
+<p><strong>Theorem 5.5 (Egoism as Abstraction Failure).</strong> Let
+<span class="math inline">\(M\)</span> be a world/self-model containing
+two entities <span class="math inline">\(a,b \in E\)</span> such
+that:</p>
 <ol type="1">
-<li>$ a $ and $ b $ are indistinguishable with respect to all
-non-indexical predicates in $ M $, and</li>
-<li>the swap $ $ exchanging $ a $ and $ b $ is model-preserving.</li>
+<li><span class="math inline">\(a\)</span> and <span
+class="math inline">\(b\)</span> are indistinguishable with respect to
+all non-indexical predicates in <span class="math inline">\(M\)</span>,
+and</li>
+<li>the swap <span class="math inline">\(\pi\)</span> exchanging <span
+class="math inline">\(a\)</span> and <span
+class="math inline">\(b\)</span> is model-preserving.</li>
 </ol>
-<p>Then any valuation function $ V $ that privileges the referent of an
-indexical identifier mapped to $ a $ is essentially indexical and not
+<p>Then any valuation function <span class="math inline">\(V\)</span>
+that privileges the referent of an indexical identifier mapped to <span
+class="math inline">\(a\)</span> is essentially indexical and not
 representation-invariant.</p>
-<p><strong>Proof.</strong> Let $ $ be the swap $ a b $. Consider a
-history $ h $ in which $ a $ satisfies the privileged condition and $ b
-$ does not. By construction, an egoistic valuation $ V $ assigns a
-higher value to $ h $.</p>
-<p>In the relabeled history $ h $, $ b $ satisfies the condition and $ a
-$ does not. Since $ V $ continues to privilege $ a $, it assigns a
-different value. Thus,</p>
+<p><strong>Proof.</strong> Let <span class="math inline">\(\pi\)</span>
+be the swap <span class="math inline">\(a \leftrightarrow b\)</span>.
+Consider a history <span class="math inline">\(h\)</span> in which <span
+class="math inline">\(a\)</span> satisfies the privileged condition and
+<span class="math inline">\(b\)</span> does not. By construction, an
+egoistic valuation <span class="math inline">\(V\)</span> assigns a
+higher value to <span class="math inline">\(h\)</span>.</p>
+<p>In the relabeled history <span class="math inline">\(\pi \cdot
+h\)</span>, <span class="math inline">\(b\)</span> satisfies the
+condition and <span class="math inline">\(a\)</span> does not. Since
+<span class="math inline">\(V\)</span> continues to privilege <span
+class="math inline">\(a\)</span>, it assigns a different value.
+Thus,</p>
 <p><span class="math display">\[
 V(h) \neq V(\pi \cdot h),
 \]</span></p>
-<p>despite $ h $ and $ h $ corresponding to the same physical world.
-∎</p>
+<p>despite <span class="math inline">\(h\)</span> and <span
+class="math inline">\(\pi \cdot h\)</span> corresponding to the same
+physical world. ∎</p>
 <hr />
 <h3 id="corollary-universality">5.6 Corollary: Universality</h3>
 <p><strong>Corollary 5.6.</strong> Any agent enforcing representation

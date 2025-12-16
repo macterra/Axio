@@ -465,14 +465,14 @@ def process_papers():
     papers_dest_dir = Path('docs/papers')
 
     if not papers_src_dir.exists():
-        return 0
+        return 0, []
 
     papers_dest_dir.mkdir(parents=True, exist_ok=True)
 
     # Get all markdown files except README.md
     papers = [p for p in papers_src_dir.glob('*.md') if p.name.lower() != 'readme.md']
     if not papers:
-        return 0
+        return 0, []
 
     # Sort by git creation time (when file was first added to repo)
     def get_git_creation_time(filepath):
@@ -533,7 +533,70 @@ def process_papers():
     print(f"   ✓ Generated papers/index.html")
 
     print()
-    return len(papers)
+    return len(papers), papers_metadata
+
+def generate_sitemap(post_metadata, papers_metadata):
+    """Generate sitemap.xml for SEO"""
+    from datetime import datetime
+
+    base_url = "https://axio.fyi"
+    sitemap_items = []
+
+    # Add homepage
+    sitemap_items.append({
+        'loc': f"{base_url}/",
+        'lastmod': datetime.now().strftime('%Y-%m-%d'),
+        'priority': '1.0'
+    })
+
+    # Add papers index
+    sitemap_items.append({
+        'loc': f"{base_url}/papers/",
+        'lastmod': datetime.now().strftime('%Y-%m-%d'),
+        'priority': '0.9'
+    })
+
+    # Add all papers
+    for paper in papers_metadata:
+        sitemap_items.append({
+            'loc': f"{base_url}/papers/{paper['filename']}",
+            'lastmod': datetime.now().strftime('%Y-%m-%d'),
+            'priority': '0.8'
+        })
+
+    # Add all published posts
+    for post_id, metadata in post_metadata.items():
+        if metadata.get('is_published') == 'true':
+            post_date = metadata.get('date', '')
+            try:
+                date_obj = datetime.fromisoformat(post_date.replace('Z', '+00:00'))
+                lastmod = date_obj.strftime('%Y-%m-%d')
+            except:
+                lastmod = datetime.now().strftime('%Y-%m-%d')
+
+            sitemap_items.append({
+                'loc': f"{base_url}/posts/{post_id}.html",
+                'lastmod': lastmod,
+                'priority': '0.7'
+            })
+
+    # Generate XML
+    xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
+    xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+
+    for item in sitemap_items:
+        xml += '  <url>\n'
+        xml += f'    <loc>{escape(item["loc"])}</loc>\n'
+        xml += f'    <lastmod>{item["lastmod"]}</lastmod>\n'
+        xml += f'    <priority>{item["priority"]}</priority>\n'
+        xml += '  </url>\n'
+
+    xml += '</urlset>\n'
+
+    with open('docs/sitemap.xml', 'w', encoding='utf-8') as f:
+        f.write(xml)
+
+    return len(sitemap_items)
 
 def main():
     print("=== Building Docs Site ===")
@@ -646,7 +709,13 @@ def main():
     print()
 
     # Process papers
-    papers_count = process_papers()
+    papers_count, papers_metadata = process_papers()
+
+    # Generate sitemap
+    print("7. Generating sitemap.xml...")
+    sitemap_count = generate_sitemap(post_metadata, papers_metadata)
+    print(f"   ✓ Created sitemap with {sitemap_count} URLs")
+    print()
 
     print("=== Build Complete ===")
     if papers_count > 0:
