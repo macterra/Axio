@@ -2,32 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://axionic.org/</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-16</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://axionic.org/papers/</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-16</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://axionic.org/papers/Axionic-Alignment-I.html</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-16</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://axionic.org/papers/Alignment-As-Semantic-Constraint.html</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-16</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://axionic.org/papers/Universality-And-Anti-Egoism.html</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-16</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://axionic.org/papers/Against-The-Recovery-Of-Egoism.html</loc>
-    <lastmod>2025-12-15</lastmod>
+    <lastmod>2025-12-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/papers/Conditionalism-And-Goal-Interpretation.html</loc>
+    <lastmod>2025-12-16</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
