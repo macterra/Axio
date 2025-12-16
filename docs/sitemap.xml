@@ -36,6 +36,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://axionic.org/papers/Axionic-Kernel-Formal-Properties.html</loc>
+    <lastmod>2025-12-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/papers/Axionic-Kernel-Checklist.html</loc>
+    <lastmod>2025-12-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://axionic.org/posts/181749239.from-parfit-to-invariance.html</loc>
     <lastmod>2025-12-16</lastmod>
     <priority>0.7</priority>
