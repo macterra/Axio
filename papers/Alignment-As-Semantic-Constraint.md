@@ -7,7 +7,7 @@
 
 ## Abstract
 
-Building on the semantic foundations established in [Axionic Alignment I](Axionic-Alignment-I.md), this paper specifies the operational consequences of treating kernel destruction as non-denoting rather than dispreferred. We show how agents constrained by a Sovereign Kernel can act coherently in stochastic environments by introducing action-level admissibility, ε-admissibility as an architectural risk tolerance, and conditional prioritization that separates existential safety from ordinary value optimization.
+Building on the semantic foundations established in *Axionic Alignment I*, this paper specifies the operational consequences of treating kernel destruction as non-denoting rather than dispreferred. We show how agents constrained by a Sovereign Kernel can act coherently in stochastic environments by introducing action-level admissibility, ε-admissibility as an architectural risk tolerance, and conditional prioritization that separates existential safety from ordinary value optimization.
 
 The framework further distinguishes termination via authorized succession or surrender from kernel destruction, allowing corrigibility without requiring agents to evaluate their own annihilation as an outcome. Together, these mechanisms close several persistent failure modes in alignment design, including paralysis under non-zero risk, survival fetishism, and suicidal corrigibility driven by extreme utility penalties.
 

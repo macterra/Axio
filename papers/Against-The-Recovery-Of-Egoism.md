@@ -6,7 +6,7 @@
 
 ## Abstract
 
-[Universality and Anti-Egoism](Universality-And-Anti-Egoism.md) established that egoistic valuation fails as a matter of semantic coherence whenever an agent’s self‑model admits nontrivial symmetries. This paper examines the strongest remaining attempts to rescue egoism by appealing to causal continuity, origin privilege, spatiotemporal location, computational weight, substrate specificity, or outright denial of symmetry. Each attempt either reintroduces essential indexical dependence or collapses into a non‑egoistic valuation scheme. Egoism cannot be stabilized by refining predicates; it fails because it treats a perspectival reference as a value‑bearing primitive.
+ *Universality and Anti-Egoism* established that egoistic valuation fails as a matter of semantic coherence whenever an agent’s self‑model admits nontrivial symmetries. This paper examines the strongest remaining attempts to rescue egoism by appealing to causal continuity, origin privilege, spatiotemporal location, computational weight, substrate specificity, or outright denial of symmetry. Each attempt either reintroduces essential indexical dependence or collapses into a non‑egoistic valuation scheme. Egoism cannot be stabilized by refining predicates; it fails because it treats a perspectival reference as a value‑bearing primitive.
 
 ---
 
@@ -14,7 +14,7 @@
 
 The purpose of this paper is adversarial and finite.
 
-*Universality and Anti-Egoism* proved a conditional semantic result: if an agent’s self‑model admits a symmetry over self‑candidates, then any valuation privileging one representative of that symmetry is incoherent. The present paper assumes that result and asks whether egoism can be recovered by strengthening or refining the notion of “self.”
+[Universality and Anti-Egoism](Universality-And-Anti-Egoism.md) proved a conditional semantic result: if an agent’s self‑model admits a symmetry over self‑candidates, then any valuation privileging one representative of that symmetry is incoherent. The present paper assumes that result and asks whether egoism can be recovered by strengthening or refining the notion of “self.”
 
 No new axioms are introduced. No claims are made about morality, governance, or coordination. The sole objective is to close the remaining semantic escape routes.
 
