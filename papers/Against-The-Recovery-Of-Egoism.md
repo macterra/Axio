@@ -2,6 +2,12 @@
 
 ### Adversarial Failures Under Reflective Symmetry
 
+David McFadzean,
+ChatGPT 5.2,
+Gemini 3 Pro
+
+*Axio Project*
+
 ---
 
 ## Abstract

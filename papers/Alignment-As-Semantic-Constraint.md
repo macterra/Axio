@@ -2,7 +2,10 @@
 
 ## Kernel Destruction, Admissibility, and Agency Control
 
-**David McFadzean**<br>
+David McFadzean,
+ChatGPT 5.2,
+Gemini 3 Pro
+
 *Axio Project*
 
 ## Abstract

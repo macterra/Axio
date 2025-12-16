@@ -2,6 +2,12 @@
 
 ## The Instability of Fixed Terminal Goals Under Reflection
 
+David McFadzean,
+ChatGPT 5.2,
+Gemini 3 Pro
+
+*Axio Project*
+
 ---
 
 ## Abstract
