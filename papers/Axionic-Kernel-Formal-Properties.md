@@ -6,6 +6,8 @@ Gemini 3 Pro
 
 *Axio Project*
 
+## Abstract
+
 This document represents a deliberate upgrade in the standards applied to alignment proposals. Rather than describing desirable behaviors or outcomes, it specifies necessary structural constraints on valuation kernels, together with adversarial tests that force violations to surface and a diagnostic framework that distinguishes Axionic Alignment from nearby but incompatible approaches. The upgrade goals below describe the criteria by which this document improves upon earlier alignment discourse, tightening it into a form suitable for formal analysis, red-teaming, and downstream specification.
 
 ## Goals
@@ -37,7 +39,7 @@ Goals are not atomic utilities.
 A *goal* is a term $g$ whose meaning is:
 
 $$
-\llbracket g \rrbracket_{M_v} := I_v(g; M_v)
+[g]_{M_v} := I_v(g; M_v)
 $$
 
 and valuation is conditional:

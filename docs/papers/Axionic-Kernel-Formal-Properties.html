@@ -7,7 +7,6 @@
     <link rel="icon" type="image/webp" href="../axio.webp">
 
     <!-- MathJax for LaTeX rendering -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
         MathJax = {
@@ -56,6 +55,7 @@
 Properties v0.2</h1>
 <p>David McFadzean, ChatGPT 5.2, Gemini 3 Pro</p>
 <p><em>Axio Project</em></p>
+<h2 id="abstract">Abstract</h2>
 <p>This document represents a deliberate upgrade in the standards
 applied to alignment proposals. Rather than describing desirable
 behaviors or outcomes, it specifies necessary structural constraints on
@@ -99,7 +99,7 @@ transforms (renamings, reparameterizations, isomorphisms)</li>
 <p>Goals are not atomic utilities. A <em>goal</em> is a term <span
 class="math inline">\(g\)</span> whose meaning is:</p>
 <p><span class="math display">\[
-\llbracket g \rrbracket_{M_v} := I_v(g; M_v)
+[g]_{M_v} := I_v(g; M_v)
 \]</span></p>
 <p>and valuation is conditional:</p>
 <p><span class="math display">\[
