@@ -539,7 +539,7 @@ def generate_sitemap(post_metadata, papers_metadata):
     """Generate sitemap.xml for SEO"""
     from datetime import datetime
 
-    base_url = "https://axio.fyi"
+    base_url = "https://axionic.org"
     sitemap_items = []
 
     # Add homepage
