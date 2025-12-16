@@ -474,6 +474,10 @@ def process_papers():
     if not papers:
         return 0
 
+    # Sort by creation time (oldest first for chronological order)
+    # Use birthtime if available (macOS/Windows), otherwise fall back to ctime
+    papers.sort(key=lambda p: getattr(p.stat(), 'st_birthtime', p.stat().st_ctime))
+
     print(f"6. Processing {len(papers)} paper(s) from papers/...")
 
     papers_metadata = []

@@ -268,7 +268,7 @@ The next paper addresses what remains once egoism is gone: adversarial attempts 
 
 ## Status
 
-**Universality & Anti‑Egoism v0.1**
+**Universality & Anti‑Egoism v1.0**
 
 Semantic scope finalized<br>
 Formal result established (Theorem 5.5)<br>

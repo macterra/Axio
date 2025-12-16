@@ -1,6 +1,6 @@
-# **Against the Recovery of Egoism**
+# Against the Recovery of Egoism
 
-### *Adversarial Failures Under Reflective Symmetry*
+### Adversarial Failures Under Reflective Symmetry
 
 ---
 
