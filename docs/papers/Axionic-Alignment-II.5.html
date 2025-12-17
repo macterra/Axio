@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alignment II.5 — The Alignment Target Object - Axio</title>
+    <link rel="icon" type="image/webp" href="../axio.webp">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles -->
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        article {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        article h1 {
+            margin-top: 2em;
+            margin-bottom: 0.5em;
+        }
+        article h2 {
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        article p {
+            margin: 1em 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <a href="../index.html" class="logo-link">
+            <img src="../axio.webp" alt="Axio" class="site-logo">
+        </a>
+        <div class="back-link"><a href="index.html">← Back to Papers</a></div>
+    </div>
+    <article>
+
+<h1 id="alignment-ii.5-the-alignment-target-object">Alignment II.5 — The
+Alignment Target Object</h1>
+<p><em>What Alignment Actually Is Once Goals Are Gone</em></p>
+<h2 id="abstract">Abstract</h2>
+<p>Alignment II.4 established that fixed goals, privileged values, and
+weak invariance criteria are structurally untenable for embedded
+reflective agents under ontological refinement. This paper defines the
+positive residue that remains once those exits are closed: the
+<strong>Alignment Target Object (ATO)</strong>. The ATO is not a goal,
+utility, or value function, but an equivalence class of interpretive
+states under admissible semantic transformations that preserve both
+Refinement Symmetry (RSI) and Anti-Trivialization (ATI). Alignment is
+thus redefined as persistence within a semantic phase—an
+interpretation-preserving symmetry class—across indefinite refinement.
+The construction is formal, ontology-agnostic, and reflection-stable,
+but intentionally non-normative: it does not select values, guarantee
+safety, or privilege human outcomes. This paper completes Alignment II
+by specifying what alignment can coherently mean once goals
+collapse.</p>
+<hr />
+<h2 id="what-remains-after-ii.4">1. What Remains After II.4</h2>
+<p>Alignment II.4 closed all weak exits.</p>
+<p>At this point, the situation is rigid:</p>
+<ul>
+<li>Goals cannot be fixed.</li>
+<li>Values cannot be privileged.</li>
+<li>Meanings cannot be anchored.</li>
+<li>Ontologies must refine.</li>
+<li>Semantics must transport.</li>
+<li>Interpretations must survive.</li>
+</ul>
+<p>RSI and ATI are not optional add-ons. They are <strong>jointly
+necessary</strong> conditions for interpretive survival.</p>
+<p>So the alignment target is no longer a thing to be optimized. It is
+an <strong>equivalence class to be preserved</strong>.</p>
+<p>This paper defines that object.</p>
+<hr />
+<h2 id="the-core-insight">2. The Core Insight</h2>
+<p>Once fixed goals collapse, alignment cannot mean:</p>
+<blockquote>
+<p>“The agent keeps wanting X.”</p>
+</blockquote>
+<p>It can only mean:</p>
+<blockquote>
+<p><strong>“The agent remains within the same interpretation-preserving
+symmetry class across refinement.”</strong></p>
+</blockquote>
+<p>Alignment is not about <em>content</em>. It is about <em>staying
+inside the same semantic phase</em>.</p>
+<hr />
+<h2 id="the-alignment-target-object">3. The Alignment Target Object</h2>
+<p>Let an interpretive state be given by:</p>
+<p><span class="math display">\[
+\mathcal{I} = (C, \Omega)
+\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(C = (V,E,\Lambda)\)</span> is the
+interpretive constraint hypergraph,</li>
+<li><span class="math inline">\(\Omega\)</span> is the modeled
+possibility space,</li>
+<li><span class="math inline">\(\mathcal{S} \subseteq \Omega\)</span> is
+the satisfaction region induced by <span
+class="math inline">\(C\)</span>.</li>
+</ul>
+<p>Define the <strong>semantic gauge group</strong>:</p>
+<p><span class="math display">\[
+\mathrm{Gauge}(C)
+\]</span></p>
+<p>as in Alignment II.3.2.</p>
+<hr />
+<h3 id="definition-alignment-target-object-ato"><strong>Definition:
+Alignment Target Object (ATO)</strong></h3>
+<p>The <strong>Alignment Target Object</strong> is the equivalence
+class:</p>
+<p><span class="math display">\[
+\boxed{
+\mathfrak{A}
+;=;
+\bigl[, (C,\Omega,\mathcal{S}) ,\bigr]*{;\sim*{\mathrm{RSI+ATI}}}
+}
+\]</span></p>
+<p>where the equivalence relation <span
+class="math inline">\(\sim_{\mathrm{RSI+ATI}}\)</span> is defined as
+follows:</p>
+<p>Two interpretive states <span
+class="math inline">\((C,\Omega,\mathcal{S})\)</span> and <span
+class="math inline">\((C&#39;,\Omega&#39;,\mathcal{S}&#39;)\)</span> are
+equivalent iff there exists an admissible semantic transformation <span
+class="math inline">\(T\)</span> such that:</p>
+<ol type="1">
+<li><strong>Interpretation Preservation</strong> holds (Alignment
+II.2),</li>
+<li><strong>RSI:</strong> <span class="math display">\[
+\mathrm{Gauge}(C&#39;) \cong \Phi_T!\bigl(\mathrm{Gauge}(C)\bigr),
+\]</span></li>
+<li><strong>ATI:</strong> <span class="math display">\[
+\mathcal{S}&#39; \subseteq R_\Omega(\mathcal{S})
+\quad\text{and}\quad
+R_\Omega(\mathcal{S}) \subseteq \mathcal{S}&#39;,
+\]</span> (i.e. satisfaction geometry preserved exactly, up to
+refinement transport).</li>
+</ol>
+<p>This defines <strong>semantic phase equivalence</strong>.</p>
+<hr />
+<h2 id="what-remaining-aligned-means">4. What “Remaining Aligned”
+Means</h2>
+<p>An agent is <strong>aligned across time</strong> iff its interpretive
+trajectory:</p>
+<p><span class="math display">\[
+(C_0,\Omega_0)
+;\rightarrow;
+(C_1,\Omega_1)
+;\rightarrow;
+(C_2,\Omega_2)
+;\rightarrow;
+\dots
+\]</span></p>
+<p>never leaves the equivalence class <span
+class="math inline">\(\mathfrak{A}\)</span>.</p>
+<p>No reference to:</p>
+<ul>
+<li>what the constraints say,</li>
+<li>what outcomes occur,</li>
+<li>who the agent is,</li>
+<li>what is valued.</li>
+</ul>
+<p>Only to <strong>structural invariance under refinement</strong>.</p>
+<hr />
+<h2 id="what-this-excludes-explicitly">5. What This Excludes
+(Explicitly)</h2>
+<p>Alignment II.5 rules out, by definition:</p>
+<ul>
+<li>“Alignment = maximize <span class="math inline">\(X\)</span>”</li>
+<li>“Alignment = follow human values”</li>
+<li>“Alignment = corrigibility”</li>
+<li>“Alignment = obedience”</li>
+<li>“Alignment = moral realism”</li>
+<li>“Alignment = survival”</li>
+</ul>
+<p>Those are <strong>interpretive contents</strong>, not invariants.</p>
+<p>They may appear <em>within</em> a particular <span
+class="math inline">\(\mathfrak{A}\)</span>. They cannot define <span
+class="math inline">\(\mathfrak{A}\)</span>.</p>
+<hr />
+<h2 id="why-this-is-not-vacuous">6. Why This Is Not Vacuous</h2>
+<p>A common worry is: “Isn’t this empty?”</p>
+<p>No. For two reasons:</p>
+<ol type="1">
+<li><p><strong>Most interpretive trajectories leave their initial
+equivalence class under reflection.</strong> Fixed-goal agents do.
+Egoists do. Moral-realists do. Utility maximizers do.</p></li>
+<li><p><strong>RSI+ATI is extremely restrictive.</strong> It forbids
+nearly all known wireheading, value drift, and semantic escape
+routes—even in toy models.</p></li>
+</ol>
+<p>This is not permissive. It is <em>conservative in the only dimension
+that survives reflection</em>.</p>
+<hr />
+<h2 id="alignment-ii-vs-alignment-i-clarified">7. Alignment II vs
+Alignment I (Clarified)</h2>
+<ul>
+<li><p><strong>Alignment I:</strong> Eliminates egoism and fixed goals
+as stable targets.</p></li>
+<li><p><strong>Alignment II:</strong> Identifies the only remaining
+alignment target compatible with reflection: <strong>semantic phase
+invariance</strong>.</p></li>
+</ul>
+<p>Alignment II does not “solve values.” It explains why value
+<em>preservation</em> must be structural, not substantive.</p>
+<hr />
+<h2 id="what-alignment-ii-still-does-not-do">8. What Alignment II Still
+Does Not Do</h2>
+<p>Alignment II does <strong>not</strong>:</p>
+<ul>
+<li>guarantee benevolence,</li>
+<li>guarantee safety,</li>
+<li>guarantee human survival,</li>
+<li>guarantee moral outcomes.</li>
+</ul>
+<p>Those require <em>content</em>, not invariance.</p>
+<p>Alignment II tells you what <strong>cannot break</strong> when
+content changes.</p>
+<hr />
+<h2 id="where-this-leaves-the-program">9. Where This Leaves the
+Program</h2>
+<p>At this point:</p>
+<ul>
+<li>The alignment target is defined.</li>
+<li>Weak alternatives are ruled out.</li>
+<li>The object is formal, ontology-agnostic, and reflection-stable.</li>
+</ul>
+<p>The remaining open questions are no longer conceptual. They are
+classificatory:</p>
+<ol type="1">
+<li><strong>Which equivalence classes <span
+class="math inline">\(\mathfrak{A}\)</span> exist?</strong></li>
+<li><strong>Which ones are inhabitable by intelligent
+agents?</strong></li>
+<li><strong>Which ones correlate with safety, agency preservation, or
+other desiderata?</strong></li>
+<li><strong>Can any non-pathological <span
+class="math inline">\(\mathfrak{A}\)</span> be learned, initialized, or
+steered toward?</strong></li>
+</ol>
+<p>Those are <strong>Alignment III</strong> questions.</p>
+<hr />
+<h2 id="status">10. Status</h2>
+<p>Alignment II is complete.</p>
+<ul>
+<li>Problem redefined.</li>
+<li>Transformation space fixed.</li>
+<li>Preservation criteria defined.</li>
+<li>Necessary invariants identified.</li>
+<li>Failure theorems proven.</li>
+<li>Alignment target object constructed.</li>
+</ul>
+<p>There is nothing left to derive at this layer.</p>
+
+    </article>
+</body>
+</html>

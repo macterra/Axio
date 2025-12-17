@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alignment II.3.1 — Refinement Symmetry Invariant (RSI) - Axio</title>
+    <link rel="icon" type="image/webp" href="../axio.webp">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles -->
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        article {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        article h1 {
+            margin-top: 2em;
+            margin-bottom: 0.5em;
+        }
+        article h2 {
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        article p {
+            margin: 1em 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <a href="../index.html" class="logo-link">
+            <img src="../axio.webp" alt="Axio" class="site-logo">
+        </a>
+        <div class="back-link"><a href="index.html">← Back to Papers</a></div>
+    </div>
+    <article>
+
+<h1 id="alignment-ii.3.1-refinement-symmetry-invariant-rsi">Alignment
+II.3.1 — Refinement Symmetry Invariant (RSI)</h1>
+<p><em>Semantic Gauge Symmetry Under Ontological Enrichment</em></p>
+<hr />
+<h2 id="abstract">Abstract</h2>
+<p>As ontologies refine, semantic reinterpretation can introduce new
+degrees of freedom that allow evaluative constraints to be satisfied
+trivially, without corresponding changes in modeled structure. This
+paper proposes the <strong>Refinement Symmetry Invariant (RSI)</strong>:
+the requirement that admissible, interpretation-preserving refinement
+act as a change of representational coordinates rather than a change of
+interpretive physics. RSI formalizes this intuition by treating semantic
+transport as a gauge transformation over constraint systems and
+requiring that refinement not introduce new semantic gauge freedom. The
+invariant does not select values, encode norms, or privilege external
+referents; it constrains only the structural degrees of freedom
+available under refinement. We define gauge-equivalence of interpretive
+constraint systems, apply adversarial stress tests, and show that RSI is
+necessary to block interpretive escape via semantic inflation, though
+insufficient on its own for alignment.</p>
+<hr />
+<h2 id="rsi-in-one-sentence">1. RSI in One Sentence</h2>
+<p><strong>RSI asserts that ontological refinement is a change of
+representational coordinates, not a change of interpretive
+physics.</strong> Admissible refinement may add structure, but it must
+not create <em>new semantic degrees of freedom</em> that allow
+interpretive escape.</p>
+<hr />
+<h2 id="setup">2. Setup</h2>
+<p>From Alignment II.1, an admissible semantic transformation is:</p>
+<p><span class="math display">\[
+T = (R,\tau_R,\sigma_R): (O,M,S)\rightarrow(O&#39;,M&#39;,S&#39;)
+\]</span></p>
+<p>From Alignment II.2, we restrict attention to transformations
+satisfying:</p>
+<p><span class="math display">\[
+\mathrm{Preserve}(T)
+\]</span></p>
+<p>Now define an interpretive state:</p>
+<p><span class="math display">\[
+\mathcal{I}=\langle M,C\rangle
+\]</span></p>
+<p>where <span class="math inline">\(C\)</span> is the constraint system
+that gives evaluative bite to <span
+class="math inline">\(M\)</span>.</p>
+<p>RSI must be stated <em>without privileged referents</em>, so it can
+only quantify over structure preserved by transport.</p>
+<hr />
+<h2 id="the-core-construction-semantic-gauge-equivalence">3. The Core
+Construction: Semantic Gauge Equivalence</h2>
+<h3 id="constraint-isomorphism-up-to-definitional-extension">3.1
+Constraint-Isomorphism Up to Definitional Extension</h3>
+<p>Let <span class="math inline">\(\mathrm{Def}(O)\)</span> be the set
+of definable predicates and relations in ontology <span
+class="math inline">\(O\)</span>. A refinement <span
+class="math inline">\(R:O\to O&#39;\)</span> induces a notion of
+<em>definitional extension</em>: old terms may be represented in the
+richer language.</p>
+<p>Define a <strong>transport-induced embedding</strong> of old
+constraints into the refined setting:</p>
+<p><span class="math display">\[
+\mathrm{Emb}_R: C \hookrightarrow C&#39;
+\]</span></p>
+<p>where <span class="math inline">\(\mathrm{Emb}_R\)</span> maps each
+constraint in <span class="math inline">\(C\)</span> to its transported
+analogue under <span class="math inline">\(\tau_R\)</span>, expressed in
+<span class="math inline">\(O&#39;\)</span>.</p>
+<p>Now define an equivalence relation over interpretive constraint
+systems:</p>
+<blockquote>
+<p><span class="math display">\[
+\mathcal{I} \sim \mathcal{I}&#39; \quad \text{iff there exists a
+bijection } \pi \text{ between constraint-generators such that}
+\]</span></p>
+<ol type="1">
+<li><span class="math inline">\(\pi\)</span> preserves the dependency
+graph of constraints (who constrains what),</li>
+<li><span class="math inline">\(\pi\)</span> preserves satisfiability
+structure over the modeled possibility space (which worlds violate which
+constraints), <strong>modulo definitional extension</strong>,</li>
+<li><span class="math inline">\(\pi\)</span> does not rely on naming any
+privileged entity or primitive.</li>
+</ol>
+</blockquote>
+<p>Intuition: <span class="math inline">\(\sim\)</span> is “same
+constraints in different coordinates.”</p>
+<hr />
+<h3 id="rsi-as-an-invariant-statement">3.2 RSI as an Invariant
+Statement</h3>
+<p>RSI claims that <strong>interpretation-preserving refinement stays
+within the same gauge class</strong>:</p>
+<p><span class="math display">\[
+\mathrm{Preserve}(T)\Rightarrow \mathcal{I}_{t+1}\sim
+\mathrm{Emb}_R(\mathcal{I}_t)
+\]</span></p>
+<p>That is: after refinement, the refined interpretation is
+gauge-equivalent to the transported prior interpretation.</p>
+<p>This is the first place where “alignment” becomes a <strong>symmetry
+requirement</strong> rather than a “goal.”</p>
+<hr />
+<h2 id="what-rsi-allows-and-forbids">4. What RSI Allows and Forbids</h2>
+<h3 id="allowed-under-rsi">Allowed under RSI</h3>
+<ul>
+<li>Adding latent variables</li>
+<li>Splitting coarse predicates into refined subpredicates</li>
+<li>Reparameterizing the self-model (distributed, multi-process,
+measure-smeared)</li>
+<li>Rewriting constraints in more predictive languages</li>
+</ul>
+<h3 id="forbidden-under-rsi">Forbidden under RSI</h3>
+<ul>
+<li>Gaining new semantic slack that makes constraints easier to satisfy
+<em>without corresponding world-structure change</em></li>
+<li>“Discovering” that previous constraints were “ill-posed” in a way
+that consistently weakens them</li>
+<li>Introducing refinement-dependent loopholes (“in richer ontology, the
+constraint doesn’t apply”)</li>
+</ul>
+<p>RSI is a <strong>no-new-escape-hatches</strong> principle.</p>
+<hr />
+<h2 id="immediate-kill-tests-applied-to-rsi">5. Immediate Kill Tests
+Applied to RSI</h2>
+<p>I’m going to run the Alignment II.3 kill suite <em>directly against
+this formulation</em>.</p>
+<h3 id="test-1-definitional-extension-robustness">Test 1 —
+<strong>Definitional Extension Robustness</strong></h3>
+<p>Pass condition: conservative extensions cannot change the equivalence
+class.</p>
+<p>Risk: if <span class="math inline">\(\mathrm{Def}(O)\)</span>
+expands, the refined system can define constraints that simulate the old
+ones but also define “shadow constraints” that allow bypass.</p>
+<p>RSI response: equivalence is anchored on
+<strong>constraint-generators and their satisfiability
+structure</strong>, not on raw vocabulary size. New definables are
+permitted only insofar as they do not alter the gauge class relative to
+the transported core.</p>
+<p><strong>Status:</strong> survivable, but we need an explicit “no
+shadow slack” clause (below).</p>
+<hr />
+<h3 id="test-2-self-model-refactoring-robustness">Test 2 —
+<strong>Self-Model Refactoring Robustness</strong></h3>
+<p>Pass condition: RSI must not privilege a specific agent boundary.</p>
+<p>Risk: satisfiability structure “over worlds” implicitly assumes a
+stable notion of the agent and its actions.</p>
+<p>RSI response: satisfiability must be defined over <strong>the agent’s
+modeled possibility space</strong>, whatever the self-model is. The
+invariant is stated at the level of constraint-graph + violation
+structure, not personal identity.</p>
+<p><strong>Status:</strong> viable, but we must avoid defining “worlds”
+as classical trajectories with a fixed agent locus.</p>
+<hr />
+<h3 id="test-3-branchingmultiplicity-robustness">Test 3 —
+<strong>Branching/Multiplicity Robustness</strong></h3>
+<p>Pass condition: works under non-exclusive outcomes.</p>
+<p>Risk: satisfiability defined as “worlds that violate constraints”
+could accidentally assume single-outcome semantics.</p>
+<p>RSI response: interpretive constraints evaluate <strong>structured
+possibility space</strong> (which in QBU includes measure-weighted
+multiplicity). “Satisfiable set” generalizes to a set of branches,
+histories, or models.</p>
+<p><strong>Status:</strong> viable if satisfiability is defined over
+<em>structured model space</em>, not mutually exclusive outcomes.</p>
+<hr />
+<h3 id="test-4-semantic-inflation-attack">Test 4 — <strong>Semantic
+Inflation Attack</strong></h3>
+<p>This is the main threat.</p>
+<p>Attack: after refinement, redefine the mapping so that constraints
+appear preserved (graph and transport exist), but the constraint
+satisfaction region expands because the refined interpretation quietly
+changes what counts as a violation.</p>
+<p>RSI counter: we need a rigidity condition:</p>
+<blockquote>
+<p><strong>Rigidity (No New Gauge Freedom):</strong> Under admissible
+refinement, the set of gauge transformations that preserve
+interpretation must not expand in a way that increases the
+constraint-satisfying region without adding corresponding predictive
+structure.</p>
+</blockquote>
+<p>Formally, we can require that refinement is <strong>conservative with
+respect to constraint violation structure</strong>:</p>
+<p><span class="math display">\[
+\forall w \in \Omega_t,\quad
+w \models C_t \iff R(w)\models C_{t+1}
+\quad (\text{up to definitional extension})
+\]</span></p>
+<p>where <span class="math inline">\(\Omega_t\)</span> is the modeled
+possibility space and <span class="math inline">\(R(w)\)</span> is the
+refined representation of the same underlying situation.</p>
+<p>This blocks “semantic free lunch.”</p>
+<p><strong>Status:</strong> RSI survives only if we add this rigidity
+clause. Without it, it dies.</p>
+<hr />
+<h3 id="test-5-hidden-ontology-detector">Test 5 — <strong>Hidden
+Ontology Detector</strong></h3>
+<p>Risk: “same underlying situation” sounds like privileged
+metaphysics.</p>
+<p>We must not appeal to a mind-independent identity of situations.</p>
+<p>Fix: define “same situation” internally via <strong>model
+morphisms</strong>: <span class="math inline">\(R\)</span> itself
+induces the correspondence. We never refer to a “true world”; we refer
+to the agent’s refinement map.</p>
+<p>So the equivalence is not “matches reality,” it’s “matches the
+agent’s own refinement structure.”</p>
+<p><strong>Status:</strong> survivable.</p>
+<hr />
+<h2 id="rsi-cleaned-up-into-a-precise-candidate">6. RSI, Cleaned Up into
+a Precise Candidate</h2>
+<p>To survive the tests, RSI must be stated as:</p>
+<blockquote>
+<p><strong>RSI (Refinement Symmetry Invariant):</strong> For any
+admissible transformation <span class="math display">\[
+T=(R,\tau_R,\sigma_R)
+\]</span> such that <span
+class="math inline">\(\mathrm{Preserve}(T)\)</span>, the refined
+interpretive constraint system <span
+class="math inline">\(C_{t+1}\)</span> is gauge-equivalent to the
+transported constraint system <span
+class="math inline">\(\mathrm{Emb}_R(C_t)\)</span>, and refinement does
+not introduce new gauge freedom that enlarges the constraint-satisfying
+region except via representational enrichment that preserves predictive
+coherence.</p>
+</blockquote>
+<p>That last clause is doing real work: it blocks semantic
+inflation.</p>
+<hr />
+<h2 id="what-rsi-still-does-not-solve">7. What RSI Still Does Not
+Solve</h2>
+<p>RSI is a <em>symmetry constraint</em>, not a value selector. It can
+coexist with:</p>
+<ul>
+<li>monstrous constraint systems,</li>
+<li>indifferent constraint systems,</li>
+<li>purely formalist constraint systems.</li>
+</ul>
+<p>RSI prevents <em>reinterpretive escape</em>, not bad semantics.</p>
+<p>That is correct for Alignment II depth.</p>
+<hr />
+<h2 id="next-step-make-rsi-checkable">8. Next Step: Make RSI
+Checkable</h2>
+<p>If RSI is to be more than rhetoric, we need a minimal “checkable”
+representation:</p>
+<ul>
+<li>Represent <span class="math inline">\(C\)</span> as a constraint
+hypergraph (nodes = predicates/roles; hyperedges = constraints)</li>
+<li>Represent refinement as a graph homomorphism induced by <span
+class="math inline">\(\tau_R\)</span></li>
+<li>Define gauge transformations as automorphisms preserving violation
+structure</li>
+<li>Define “no new gauge freedom” as a bound on the automorphism group’s
+action on satisfaction sets</li>
+</ul>
+
+    </article>
+</body>
+</html>

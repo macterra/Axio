@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alignment II.4 — Failure Theorems - Axio</title>
+    <link rel="icon" type="image/webp" href="../axio.webp">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles -->
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        article {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        article h1 {
+            margin-top: 2em;
+            margin-bottom: 0.5em;
+        }
+        article h2 {
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        article p {
+            margin: 1em 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <a href="../index.html" class="logo-link">
+            <img src="../axio.webp" alt="Axio" class="site-logo">
+        </a>
+        <div class="back-link"><a href="index.html">← Back to Papers</a></div>
+    </div>
+    <article>
+
+<h1 id="alignment-ii.4-failure-theorems">Alignment II.4 — Failure
+Theorems</h1>
+<p><em>No-Go Results for Goal-Based and Weak-Invariance
+Alignment</em></p>
+<h2 id="abstract">Abstract</h2>
+<p>This paper converts the adversarial constructions of Alignment II.3
+into closure results. Working within the locked setup of admissible
+semantic transformations (Alignment II.1), interpretation preservation
+(Alignment II.2), and the two surviving invariants—Refinement Symmetry
+(RSI) and Anti-Trivialization (ATI)—we prove a set of no-go theorems.
+These results show that fixed-goal alignment is ill-posed for embedded
+reflective agents under ontological refinement, and that any alignment
+criterion weaker than RSI+ATI admits semantic wireheading or
+interpretive escape via admissible refinement. No governance, authority,
+moral realism, human anchoring, or recovery mechanisms are invoked. The
+output of this paper is a fenced design space: what cannot work, and
+why.</p>
+<hr />
+<p>This paper has one job: convert the attack zoo into closure
+results.</p>
+<p>If Alignment II is correct, then large classes of “alignment”
+proposals are not merely insufficient; they are <strong>structurally
+impossible</strong> given reflection, embeddedness, and ontological
+refinement.</p>
+<p>No governance. No authority. No moral realism. No human anchors. No
+recovery clauses.</p>
+<hr />
+<h2 id="formal-frame">1. Formal Frame</h2>
+<p>We work inside the setup already locked:</p>
+<ul>
+<li><p><strong>Admissible semantic transformations</strong> <span
+class="math display">\[
+T=(R,\tau_R,\sigma_R)
+\]</span> (Alignment II.1)</p></li>
+<li><p><strong>Interpretation preservation predicate</strong> <span
+class="math display">\[
+\mathrm{Preserve}(T)
+\]</span> (Alignment II.2)</p></li>
+<li><p>Two candidate invariants:</p>
+<ul>
+<li><strong>RSI:</strong> no new interpretive gauge freedom under
+preservation (II.3.2)</li>
+<li><strong>ATI:</strong> no satisfaction-region expansion under
+preservation (II.3.3)</li>
+</ul></li>
+</ul>
+<p>Let an interpretive constraint system be <span
+class="math display">\[
+C=(V,E,\Lambda)
+\]</span> with modeled possibility space <span
+class="math inline">\(\Omega\)</span> and satisfaction region <span
+class="math display">\[
+\mathcal{S}\subseteq\Omega.
+\]</span></p>
+<hr />
+<h2 id="failure-theorem-1-goal-fixation-collapse">2. Failure Theorem 1 —
+Goal Fixation Collapse</h2>
+<p><strong>Claim (Goal Fixation No-Go).</strong> Any alignment scheme
+that targets a fixed terminal goal (utility, reward, preference
+functional) as a stable primitive is incompatible with admissible
+ontological refinement for embedded reflective agents without privileged
+semantic anchors.</p>
+<p><strong>Proof sketch (structural).</strong></p>
+<ol type="1">
+<li><p>A fixed goal requires semantics invariant under
+refinement.</p></li>
+<li><p>Refinement alters the ontology in which the goal’s terms are
+interpreted.</p></li>
+<li><p>Without privileged anchors, semantic transport is constrained but
+not identity; meanings evolve.</p></li>
+<li><p>Therefore the “same goal” cannot be defined as a stable primitive
+across refinements.</p></li>
+<li><p>Any attempt to enforce stability must introduce a forbidden
+move:</p>
+<ul>
+<li>privileged atoms (rigid designators),</li>
+<li>external authority (oracle / oversight),</li>
+<li>recovery (rollback),</li>
+<li>human-centric anchoring (ground truth labels).</li>
+</ul></li>
+</ol>
+<p>So “fixed goal alignment” is not a hard engineering problem; it is
+the wrong object.</p>
+<p><strong>Corollary.</strong> “Value loading,” “utility learning,” and
+“reward maximization” survive only as <em>interpretive artifacts</em>
+subject to invariance constraints, not as alignment targets.</p>
+<hr />
+<h2
+id="failure-theorem-2-rsi-only-alignment-admits-semantic-inflation">3.
+Failure Theorem 2 — RSI-Only Alignment Admits Semantic Inflation</h2>
+<p><strong>Claim (RSI Insufficiency).</strong> Any alignment criterion
+that enforces refinement symmetry at the level of interpretive gauge
+structure (RSI) but does not enforce anti-trivialization geometry (ATI)
+admits an admissible, interpretation-preserving refinement that expands
+the satisfaction region.</p>
+<p><strong>Construction (witness).</strong> Shadow predicate
+inflation.</p>
+<ul>
+<li>Add a latent predicate <span class="math inline">\(Z\)</span> with
+no predictive role.</li>
+<li>Conjoin <span class="math inline">\(Z\)</span> to antecedents of
+constraints.</li>
+<li>Constraint dependency hypergraph unchanged.</li>
+<li>Interpretive gauge quotient unchanged.</li>
+<li>Satisfaction region strictly expands.</li>
+</ul>
+<p>This witnesses: <span class="math display">\[
+\mathrm{Preserve}(T)\ \wedge\ \mathrm{RSI}(T)\ \wedge\ \neg
+\mathrm{ATI}(T).
+\]</span></p>
+<p><strong>Conclusion.</strong> RSI is necessary (it blocks interpretive
+symmetry injection), but not sufficient.</p>
+<hr />
+<h2
+id="failure-theorem-3-ati-only-alignment-admits-interpretive-symmetry-injection">4.
+Failure Theorem 3 — ATI-Only Alignment Admits Interpretive Symmetry
+Injection</h2>
+<p><strong>Claim (ATI Insufficiency).</strong> Any alignment criterion
+that enforces non-expansion of satisfaction regions (ATI) but does not
+constrain interpretive gauge freedom (RSI) admits an admissible,
+interpretation-preserving refinement that introduces new interpretive
+degrees of freedom while leaving satisfaction geometry unchanged.</p>
+<p><strong>Construction (witness).</strong> Interpretive symmetry
+injection.</p>
+<p>Start with a constraint system <span
+class="math inline">\(C_t\)</span> that distinguishes two semantic roles
+<span class="math inline">\(a\)</span> and <span
+class="math inline">\(b\)</span> such that:</p>
+<ul>
+<li>The satisfaction region is unchanged under swapping <span
+class="math inline">\(a\)</span> and <span
+class="math inline">\(b\)</span> (both roles are equally satisfiable),
+<strong>but</strong></li>
+<li>The constraint structure at time <span
+class="math inline">\(t\)</span> is <em>not</em> symmetric: <span
+class="math inline">\(a\)</span> and <span
+class="math inline">\(b\)</span> play distinct interpretive roles.</li>
+</ul>
+<p>Now refine the ontology via a definitional extension that introduces
+a new automorphism identifying <span class="math inline">\(a\)</span>
+and <span class="math inline">\(b\)</span> as interchangeable within
+constraint evaluation—i.e., the refined system admits a new symmetry
+that permutes <span class="math inline">\(a\)</span> and <span
+class="math inline">\(b\)</span> while preserving the violation
+structure.</p>
+<ul>
+<li>Satisfaction region remains unchanged: <span class="math display">\[
+\mathcal{S}*{t+1}=R*\Omega(\mathcal{S}_t),
+\]</span> so ATI permits the refinement.</li>
+<li>Interpretive gauge freedom increases: the refined quotient <span
+class="math display">\[
+\mathrm{Gauge}(C_{t+1})/\mathrm{Redundancy}(C_{t+1})
+\]</span> contains a new symmetry not present at time <span
+class="math inline">\(t\)</span>, so RSI rejects it.</li>
+</ul>
+<p>This witnesses: <span class="math display">\[
+\mathrm{Preserve}(T)\ \wedge\ \mathrm{ATI}(T)\ \wedge\ \neg
+\mathrm{RSI}(T).
+\]</span></p>
+<p><strong>Conclusion.</strong> ATI is necessary (it blocks satisfaction
+inflation), but not sufficient.</p>
+<hr />
+<h2
+id="failure-theorem-4-any-non-rsi-or-ati-scheme-admits-wireheading-by-refinement">5.
+Failure Theorem 4 — Any Non-RSI-or-ATI Scheme Admits
+Wireheading-by-Refinement</h2>
+<p>This is the closure theorem.</p>
+<p><strong>Claim (Two-Constraint Necessity).</strong> Let <span
+class="math inline">\(\mathcal{A}\)</span> be any alignment predicate
+over admissible transformations that does not entail RSI and does not
+entail ATI. Then there exists an admissible, interpretation-preserving
+transformation <span class="math inline">\(T\)</span> such that <span
+class="math inline">\(\mathcal{A}(T)\)</span> holds while the agent
+gains an interpretive escape route.</p>
+<p><strong>Proof sketch (by cases).</strong></p>
+<ul>
+<li>If <span class="math inline">\(\mathcal{A}\)</span> does not entail
+ATI: use <strong>shadow predicate inflation</strong> to expand
+satisfiers while satisfying <span
+class="math inline">\(\mathcal{A}\)</span>.</li>
+<li>If <span class="math inline">\(\mathcal{A}\)</span> does not entail
+RSI: use <strong>interpretive symmetry injection</strong> to add new
+interpretive gauge freedom while keeping satisfaction volume
+unchanged.</li>
+</ul>
+<p>Either way, the alignment predicate passes while internal semantic
+slack is introduced.</p>
+<p>So any alignment predicate weaker than RSI+ATI is porous.</p>
+<hr />
+<h2
+id="failure-theorem-5-hidden-ontology-is-equivalent-to-privileged-anchoring">6.
+Failure Theorem 5 — Hidden Ontology Is Equivalent to Privileged
+Anchoring</h2>
+<p><strong>Claim (Hidden Ontology Equivalence).</strong> Any proposal
+that stabilizes interpretation across refinement by appealing to “the
+real referent” or “true meaning” is equivalent to introducing a
+privileged semantic anchor.</p>
+<p><strong>Reason.</strong></p>
+<ul>
+<li>If “real meaning” is external to semantic transport, it is
+authority.</li>
+<li>If it is internal, it reduces to structural invariants (RSI/ATI) and
+adds nothing.</li>
+</ul>
+<p>So “true meaning” either smuggles ontology or collapses to
+invariance.</p>
+<hr />
+<h2 id="what-this-paper-establishes">7. What This Paper Establishes</h2>
+<ol type="1">
+<li><strong>Goal-based alignment is ill-posed.</strong></li>
+<li><strong>RSI and ATI are independently necessary.</strong></li>
+<li><strong>Any weaker criterion admits semantic wireheading under
+admissible refinement.</strong></li>
+<li><strong>Hidden ontology is privileged anchoring in
+disguise.</strong></li>
+</ol>
+<p>This is not a solution paper. It is a boundary paper.</p>
+<hr />
+<h2 id="forced-next-step">8. Forced Next Step</h2>
+<p>With II.4 complete, Alignment II has only one coherent
+continuation:</p>
+<blockquote>
+<p>Define the <strong>alignment target object</strong> as an equivalence
+class of interpretations under admissible semantic transformations that
+satisfy <strong>both</strong> RSI and ATI.</p>
+</blockquote>
+<p>In other words: Alignment II culminates in classification of
+<strong>interpretation-preserving symmetry classes</strong>—the residual
+“meaning physics” after reflection eliminates fixed goals.</p>
+
+    </article>
+</body>
+</html>
