@@ -2,6 +2,10 @@
 
 *What Could Survive Ontological Refinement Without Privilege*
 
+## Abstract
+
+Given an admissible transformation space (Alignment II.1) and a criterion for interpretation preservation (Alignment II.2), the remaining alignment problem is no longer one of goal specification or value learning. This paper identifies and analyzes semantic invariants: structural properties of interpretive constraint systems that remain fixed under all admissible, interpretation-preserving transformations. These invariants do not select values, encode norms, or privilege external referents. Instead, they constrain how preserved interpretations may evolve under indefinite ontological refinement without introducing new degrees of semantic freedom or trivial satisfaction routes. We propose candidate invariant classes, construct explicit adversarial transformations, and prove that any alignment criterion weaker than these invariants admits semantic wireheading or interpretive escape. This work does not guarantee safety or benevolence; it closes the space of structurally coherent but semantically unconstrained alignment proposals.
+
 ---
 
 ## 1. The Problem This Paper Solves
