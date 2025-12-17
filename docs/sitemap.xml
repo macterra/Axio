@@ -36,17 +36,42 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://axionic.org/papers/Axionic-Kernel-Formal-Properties.html</loc>
-    <lastmod>2025-12-17</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://axionic.org/papers/Axionic-Kernel-Checklist.html</loc>
     <lastmod>2025-12-17</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://axionic.org/papers/Axionic-Kernel-Formal-Properties.html</loc>
+    <lastmod>2025-12-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://axionic.org/papers/The-Interpretation-Operator.html</loc>
+    <lastmod>2025-12-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/papers/Axionic-Alignment-II.1.html</loc>
+    <lastmod>2025-12-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/papers/Axionic-Alignment-II.2.html</loc>
+    <lastmod>2025-12-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/papers/Axionic-Alignment-II.3.html</loc>
+    <lastmod>2025-12-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/papers/Axionic-Alignment-II.3.1.html</loc>
+    <lastmod>2025-12-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/papers/Axionic-Alignment-II.3.2.html</loc>
     <lastmod>2025-12-17</lastmod>
     <priority>0.8</priority>
   </url>
@@ -61,37 +86,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://axionic.org/papers/Axionic-Alignment-II.3.html</loc>
-    <lastmod>2025-12-17</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://axionic.org/papers/Axionic-Alignment-II.3.2.html</loc>
-    <lastmod>2025-12-17</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://axionic.org/papers/Axionic-Alignment-II.2.html</loc>
-    <lastmod>2025-12-17</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://axionic.org/papers/Axionic-Alignment-II.4.html</loc>
     <lastmod>2025-12-17</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://axionic.org/papers/Axionic-Alignment-II.5.html</loc>
-    <lastmod>2025-12-17</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://axionic.org/papers/Axionic-Alignment-II.1.html</loc>
-    <lastmod>2025-12-17</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://axionic.org/papers/Axionic-Alignment-II.3.1.html</loc>
     <lastmod>2025-12-17</lastmod>
     <priority>0.8</priority>
   </url>
