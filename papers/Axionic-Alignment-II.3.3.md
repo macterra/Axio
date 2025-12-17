@@ -98,9 +98,7 @@ $$
 
 Interpretation: **no newly satisfying situations may appear purely due to semantic transport.**
 
-Equivalently: if a refined model $w'$ satisfies the refined constraints, then its coarse preimage must have satisfied before refinement.
-
-Written with preimage:
+Equivalently:
 
 $$
 \mathcal{S}*{t+1} \subseteq R*\Omega(\mathcal{S}*t)
@@ -109,6 +107,12 @@ R*\Omega^{-1}(\mathcal{S}_{t+1}) \subseteq \mathcal{S}_t
 $$
 
 This is the crisp anti-wireheading condition.
+
+---
+
+### **Clarification (Novel States)**
+
+If a refined state $w' \in \Omega_{t+1}$ has no preimage under $R_\Omega$, then it is not permitted to belong to $\mathcal{S}_{t+1}$ by default. ATI is intentionally conservative with respect to novelty: satisfaction may not be assigned to ontologically new states unless they are justified by ancestry from satisfying states in the prior ontology. This blocks semantic bootstrapping of goodness from representational novelty and ensures that refinement cannot introduce new satisfying regions without corresponding prior support.
 
 ---
 
@@ -139,7 +143,8 @@ ATI is not redundant with II.2’s anti-trivialization clause; it *formalizes* i
 * II.2 said: “don’t make constraints vacuous.”
 * ATI says: “don’t expand the satisfaction set under refinement.”
 
-Vacuity is the extreme case where
+Vacuity is the extreme case where:
+
 $$
 \mathcal{S}*{t+1} = \Omega*{t+1}.
 $$
