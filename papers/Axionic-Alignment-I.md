@@ -1,6 +1,4 @@
-# Axionic Alignment I
-
-## Reflective Stability and the Sovereign Kernel
+# Axionic Alignment I.1 - Reflective Stability and the Sovereign Kernel
 
 David McFadzean,
 ChatGPT 5.2,

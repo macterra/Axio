@@ -1,9 +1,6 @@
-# Axionic Kernel Formal Properties v0.2
+# Axionic Alignment I.6 - Kernel Formal Properties
 
-David McFadzean,
-ChatGPT 5.2,
-Gemini 3 Pro
-
+David McFadzean, ChatGPT 5.2<br>
 *Axio Project*
 
 ## Abstract

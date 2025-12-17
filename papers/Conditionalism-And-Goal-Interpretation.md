@@ -1,11 +1,8 @@
-# Conditionalism and Goal Interpretation
+# Axionic Alignment I.4 - Conditionalism and Goal Interpretation
 
 ## The Instability of Fixed Terminal Goals Under Reflection
 
-David McFadzean,
-ChatGPT 5.2,
-Gemini 3 Pro
-
+David McFadzean, ChatGPT 5.2<br>
 *Axio Project*
 
 ---

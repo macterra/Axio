@@ -1,9 +1,6 @@
-# Axionic Kernel Checklist v0.3
+# Axionic Alignment I.5 - Kernel Checklist
 
-David McFadzean,
-ChatGPT 5.2,
-Gemini 3 Pro
-
+David McFadzean, ChatGPT 5.2<br>
 *Axio Project*
 
 ## Abstract

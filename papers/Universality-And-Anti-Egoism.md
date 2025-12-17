@@ -1,11 +1,8 @@
-# Universality and Anti-Egoism
+# Axionic Alignment I.3 - Universality and Anti-Egoism
 
 ### Why Indexical Valuation Fails Under Reflection
 
-David McFadzean,
-ChatGPT 5.2,
-Gemini 3 Pro
-
+David McFadzean, ChatGPT 5.2<br>
 *Axio Project*
 
 ---

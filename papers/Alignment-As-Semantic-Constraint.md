@@ -1,11 +1,8 @@
-# Alignment as Semantic Constraint
+# Axionic Alignment I.2 - Alignment as Semantic Constraint
 
 ## Kernel Destruction, Admissibility, and Agency Control
 
-David McFadzean,
-ChatGPT 5.2,
-Gemini 3 Pro
-
+David McFadzean, ChatGPT 5.2<br>
 *Axio Project*
 
 ## Abstract
