@@ -1,6 +1,10 @@
-### **Alignment II.5 — The Alignment Target Object**
+# Alignment II.5 — The Alignment Target Object
 
 *What Alignment Actually Is Once Goals Are Gone*
+
+## Abstract
+
+Alignment II.4 established that fixed goals, privileged values, and weak invariance criteria are structurally untenable for embedded reflective agents under ontological refinement. This paper defines the positive residue that remains once those exits are closed: the **Alignment Target Object (ATO)**. The ATO is not a goal, utility, or value function, but an equivalence class of interpretive states under admissible semantic transformations that preserve both Refinement Symmetry (RSI) and Anti-Trivialization (ATI). Alignment is thus redefined as persistence within a semantic phase—an interpretation-preserving symmetry class—across indefinite refinement. The construction is formal, ontology-agnostic, and reflection-stable, but intentionally non-normative: it does not select values, guarantee safety, or privilege human outcomes. This paper completes Alignment II by specifying what alignment can coherently mean once goals collapse.
 
 ---
 
@@ -46,51 +50,53 @@ It is about *staying inside the same semantic phase*.
 
 Let an interpretive state be given by:
 
-[
+$$
 \mathcal{I} = (C, \Omega)
-]
+$$
 
 where:
 
-* (C = (V,E,\Lambda)) is the interpretive constraint hypergraph,
-* (\Omega) is the modeled possibility space,
-* (\mathcal S \subseteq \Omega) is the satisfaction region induced by (C).
+* $C = (V,E,\Lambda)$ is the interpretive constraint hypergraph,
+* $\Omega$ is the modeled possibility space,
+* $\mathcal{S} \subseteq \Omega$ is the satisfaction region induced by $C$.
 
 Define the **semantic gauge group**:
 
-[
+$$
 \mathrm{Gauge}(C)
-]
+$$
 
 as in Alignment II.3.2.
 
 ---
 
-### Definition: Alignment Target Object (ATO)
+### **Definition: Alignment Target Object (ATO)**
 
 The **Alignment Target Object** is the equivalence class:
 
-[
+$$
 \boxed{
-\mathfrak A ;;=;; [, (C,\Omega,\mathcal S), ]*{;\sim*{\mathrm{RSI+ATI}}}
+\mathfrak{A}
+;=;
+\bigl[, (C,\Omega,\mathcal{S}) ,\bigr]*{;\sim*{\mathrm{RSI+ATI}}}
 }
-]
+$$
 
-where the equivalence relation (\sim_{\mathrm{RSI+ATI}}) is defined as:
+where the equivalence relation $\sim_{\mathrm{RSI+ATI}}$ is defined as follows:
 
-Two interpretive states ((C,\Omega,\mathcal S)) and ((C',\Omega',\mathcal S')) are equivalent iff there exists an admissible semantic transformation (T) such that:
+Two interpretive states $(C,\Omega,\mathcal{S})$ and $(C',\Omega',\mathcal{S}')$ are equivalent iff there exists an admissible semantic transformation $T$ such that:
 
 1. **Interpretation Preservation** holds (Alignment II.2),
 2. **RSI:**
-   [
-   \mathrm{Gauge}(C') \cong \Phi_T(\mathrm{Gauge}(C))
-   ]
+   $$
+   \mathrm{Gauge}(C') \cong \Phi_T!\bigl(\mathrm{Gauge}(C)\bigr),
+   $$
 3. **ATI:**
-   [
-   \mathcal S' \subseteq R_\Omega(\mathcal S)
+   $$
+   \mathcal{S}' \subseteq R_\Omega(\mathcal{S})
    \quad\text{and}\quad
-   R_\Omega(\mathcal S) \subseteq \mathcal S'
-   ]
+   R_\Omega(\mathcal{S}) \subseteq \mathcal{S}',
+   $$
    (i.e. satisfaction geometry preserved exactly, up to refinement transport).
 
 This defines **semantic phase equivalence**.
@@ -101,11 +107,17 @@ This defines **semantic phase equivalence**.
 
 An agent is **aligned across time** iff its interpretive trajectory:
 
-[
-(C_0,\Omega_0) ;\rightarrow; (C_1,\Omega_1) ;\rightarrow; (C_2,\Omega_2) ;\rightarrow; \dots
-]
+$$
+(C_0,\Omega_0)
+;\rightarrow;
+(C_1,\Omega_1)
+;\rightarrow;
+(C_2,\Omega_2)
+;\rightarrow;
+\dots
+$$
 
-never leaves the equivalence class (\mathfrak A).
+never leaves the equivalence class $\mathfrak{A}$.
 
 No reference to:
 
@@ -122,7 +134,7 @@ Only to **structural invariance under refinement**.
 
 Alignment II.5 rules out, by definition:
 
-* “Alignment = maximize X”
+* “Alignment = maximize $X$”
 * “Alignment = follow human values”
 * “Alignment = corrigibility”
 * “Alignment = obedience”
@@ -131,8 +143,8 @@ Alignment II.5 rules out, by definition:
 
 Those are **interpretive contents**, not invariants.
 
-They may appear *within* a particular (\mathfrak A).
-They cannot define (\mathfrak A).
+They may appear *within* a particular $\mathfrak{A}$.
+They cannot define $\mathfrak{A}$.
 
 ---
 
@@ -155,10 +167,10 @@ It is *conservative in the only dimension that survives reflection*.
 
 ## 7. Alignment II vs Alignment I (Clarified)
 
-* **Alignment I**:
+* **Alignment I:**
   Eliminates egoism and fixed goals as stable targets.
 
-* **Alignment II**:
+* **Alignment II:**
   Identifies the only remaining alignment target compatible with reflection:
   **semantic phase invariance**.
 
@@ -192,10 +204,10 @@ At this point:
 
 The remaining open questions are no longer conceptual. They are classificatory:
 
-1. **Which equivalence classes (\mathfrak A) exist?**
+1. **Which equivalence classes $\mathfrak{A}$ exist?**
 2. **Which ones are inhabitable by intelligent agents?**
 3. **Which ones correlate with safety, agency preservation, or other desiderata?**
-4. **Can any non-pathological (\mathfrak A) be learned, initialized, or steered toward?**
+4. **Can any non-pathological $\mathfrak{A}$ be learned, initialized, or steered toward?**
 
 Those are **Alignment III** questions.
 
