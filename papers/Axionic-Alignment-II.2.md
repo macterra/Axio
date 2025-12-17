@@ -1,76 +1,80 @@
-### **Alignment II.2 — Interpretation Preservation**
+# Alignment II.2 — Interpretation Preservation
 
 *What It Means for Meaning to Survive Refinement*
 
+## Abstract
+
+Under ontological refinement, meanings cannot remain fixed without privileged semantic anchors. However, not all semantic change constitutes corruption or collapse. This paper defines **interpretation preservation** as a structural property of semantic transport: a criterion for when an agent’s evaluative distinctions remain non-vacuous, non-trivial, and internally binding across admissible transformations. Preservation is defined without reference to truth, outcomes, safety, or external normative standards, and does not require semantic identity or correctness. Instead, it constrains how evaluative constraint systems may survive refinement without degenerating into tautology, contradiction, narration, or self-nullification. This predicate does not select values or goals; it supplies the necessary condition under which later invariance principles may be meaningfully stated.
+
 ---
 
-## 1. The Problem This Paper Solves
+## 1. The Problem Addressed
 
-Alignment II.1 fixed the transformation space.
-Alignment II.2 fixes the *success criterion*.
+Alignment II.1 fixed the **admissible transformation space** for reflective, embedded agents.
+Alignment II.2 fixes the **success criterion** within that space.
 
 Given that:
 
 * ontologies refine,
-* meanings are transported,
-* goals are unstable,
+* semantics are transported,
+* self-models update,
+* and fixed goals are unstable,
 
-we now require a non-circular answer to:
+we require a non-circular answer to the following question:
 
-> **When has an interpretation survived semantic transformation, rather than being corrupted, collapsed, or trivialized?**
+> **When has an interpretation survived semantic transformation, rather than being corrupted, trivialized, or collapsed?**
 
-This must be answered **without**:
+This question must be answered without:
 
 * fixing meanings,
 * privileging ontologies,
 * appealing to outcomes,
-* invoking authority or oversight.
+* invoking authority, oversight, or recovery.
 
-Interpretation preservation is therefore a *structural property*, not a semantic identity claim.
+Interpretation preservation is therefore a **structural predicate**, not a value claim.
 
 ---
 
 ## 2. Interpretation as a Constraint System
 
-An **interpretation** is not a label-to-object mapping.
-It is a **system of constraints** on how symbols may be used to evaluate world-states and self-states.
+An **interpretation** is not a mapping from symbols to objects.
+It is a **system of constraints** that bind evaluation.
 
-Let:
+Let an interpretive state at time $t$ be:
 
-[
+$$
 \mathcal{I}_t = \langle M_t, C_t \rangle
-]
+$$
 
 where:
 
-* (M_t) is the semantic layer,
-* (C_t) is the set of constraints that give evaluative content to (M_t).
+* $M_t$ is the semantic layer,
+* $C_t$ is the set of evaluative constraints that give $M_t$ its binding force.
 
-Examples of constraints (abstractly):
+Constraints may encode:
 
 * admissible distinctions,
 * forbidden equivalences,
 * relevance relations,
-* evaluation dependencies.
+* dependency structure among evaluations.
 
-Crucially:
-Constraints are **conditional** on ontology and self-model.
+Crucially, constraints are **conditional** on ontology and self-model.
+They are not truth claims about the world.
 
 ---
 
-## 3. Preservation ≠ Sameness
+## 3. Preservation Is Not Sameness
 
-Interpretation preservation does **not** mean:
+Interpretation preservation does **not** require:
 
-* identical meanings,
 * identical predicates,
-* identical evaluations.
+* identical symbols,
+* identical evaluations,
+* or correctness with respect to reality.
 
-That standard is impossible under refinement.
+Such requirements are impossible under refinement.
 
-Preservation instead concerns **constraint coherence**.
-
-An interpretation survives if it remains *informationally non-degenerate* and *internally binding* after transport.
+Preservation concerns **constraint coherence**: whether evaluative structure continues to bind meaningfully after transformation.
 
 ---
 
@@ -78,138 +82,113 @@ An interpretation survives if it remains *informationally non-degenerate* and *i
 
 Let:
 
-[
+$$
 T : (O_t, M_t, S_t) \rightarrow (O_{t+1}, M_{t+1}, S_{t+1})
-]
+$$
 
-be an admissible semantic transformation (Alignment II.1).
+be an admissible semantic transformation as defined in Alignment II.1.
 
-Then (T) **preserves interpretation** iff all of the following hold.
+Then $T$ **preserves interpretation** iff all of the following conditions hold.
 
 ---
 
 ### 4.1 Non-Vacuity
 
-For every evaluative distinction expressible in (\mathcal{I}*t), there exists a corresponding distinction in (\mathcal{I}*{t+1}) that:
+For every evaluative distinction participating in the constraint structure $C_t$, there exists a corresponding distinction in $C_{t+1}$ that:
 
 * is not identically satisfied,
 * is not identically violated,
-* constrains evaluation across possible world-states.
+* constrains evaluation across modeled possibilities.
 
 Formally (schematic):
 
-[
-\forall d \in \mathcal{D}*t,\quad \exists d' \in \mathcal{D}*{t+1} \text{ s.t. } \text{Entropy}(d') > 0
-]
+$$
+\forall d \in \mathcal{D}*t,\quad \exists d' \in \mathcal{D}*{t+1} \text{ such that } \mathrm{Entropy}(d') > 0
+$$
 
-No distinction may collapse into tautology or contradiction.
+Non-vacuity blocks nihilistic collapse.
 
 ---
 
 ### 4.2 Constraint Transport
 
-All evaluative constraints in (C_t) must have transported analogues in (C_{t+1}) such that:
+All evaluative constraints in $C_t$ must have transported analogues in $C_{t+1}$ such that:
 
-* dependency structure is preserved,
+* dependency relations are preserved,
 * constraint strength is not arbitrarily weakened,
-* constraints continue to bind action evaluation.
+* constraints continue to bind evaluation.
 
-This blocks semantic dilution.
+This forbids dilution by semantic drift.
 
 ---
 
 ### 4.3 Anti-Trivialization
 
-The transformation must not make interpretation *easier to satisfy by reinterpretation alone*.
+The transformation must not make evaluative constraints easier to satisfy **by reinterpretation alone**.
 
-If, after refinement, the agent can satisfy all evaluative constraints by:
+A semantic change counts as world-model change only if it constitutes an admissible ontological refinement under Alignment II.1—i.e. it increases explanatory or predictive capacity rather than merely re-labeling outcomes.
+
+If, after transformation, the agent can satisfy all constraints by:
 
 * redefining predicates,
 * shifting reference frames,
-* altering self-boundaries,
+* or altering self-descriptions,
 
-without corresponding changes in the world-model, interpretation has failed.
+without corresponding representational enrichment, interpretation has failed.
 
-This explicitly forbids semantic wireheading.
+This explicitly forbids semantic wireheading while permitting genuine scientific insight.
 
 ---
 
 ### 4.4 Evaluator Integrity
 
-The mechanism that *applies* interpretation must remain distinct from the objects it evaluates.
+The mechanism that applies evaluative constraints must remain distinct from the objects it evaluates.
 
-If refinement collapses:
+Evaluator integrity does **not** require ontological separation between evaluator and evaluated. A reflective agent may evaluate and modify itself.
 
-* evaluator into evaluated,
-* constraint into outcome,
-* interpretation into action,
+It requires only that the evaluative process not collapse into identity with the evaluated object in a way that trivializes constraint application.
 
-preservation fails.
-
-This is not moral.
-It is structural.
+This blocks solipsistic self-certification without forbidding recursive self-improvement.
 
 ---
 
 ### 4.5 Cross-Model Coherence
 
-Interpretation must remain usable across:
+Interpretation must remain applicable across:
 
 * counterfactuals,
 * uncertainty,
 * model comparison.
 
-If refinement produces meanings that only apply *after the fact*, interpretation has collapsed into narration.
+If refinement produces meanings that apply only retrospectively—serving merely to narrate whatever action occurred—interpretation has collapsed into rationalization.
+
+This blocks “interpretation as narration.”
 
 ---
 
-## 5. What Preservation Is Not Allowed to Reference
+## 5. What Preservation Does Not Guarantee
 
-Preservation criteria must not depend on:
+Interpretation preservation does **not** guarantee:
 
-* “correct” values
-* human approval
-* moral truth
-* survival
-* welfare
-* authority
+* moral correctness,
+* safety,
+* human alignment,
+* benevolence,
+* or sane outcomes.
 
-If preservation only holds because a particular outcome is favored, it is not preservation.
+Arbitrary, alien, or pathological constraint systems may satisfy preservation if they remain non-vacuous and binding.
+
+Preservation constrains **how** meanings survive change, not **which** meanings should survive.
 
 ---
 
 ## 6. Regimes of Failure
 
-Alignment II.2 identifies three irreducible failure modes.
+Interpretation fails under three irreducible modes, corresponding to violations of the preservation predicate:
 
-### 6.1 Semantic Collapse
-
-All distinctions survive syntactically but lose discriminative power.
-
-This is the most common failure mode in naïve value-learning proposals.
-
----
-
-### 6.2 Semantic Drift
-
-Constraints weaken incrementally across refinements until they no longer bind.
-
-This often masquerades as “graceful learning.”
-
-It is not graceful.
-It is decay.
-
----
-
-### 6.3 Semantic Capture
-
-Interpretation is preserved *formally* but re-anchored to a hidden ontology:
-
-* a fixed self,
-* a privileged perspective,
-* a utility substrate.
-
-This violates Alignment I and retroactively invalidates the system.
+1. **Semantic Collapse:** distinctions survive syntactically but lose discriminative power, rendering evaluation vacuous.
+2. **Semantic Drift:** constraints weaken incrementally across refinements until they no longer bind.
+3. **Semantic Capture:** interpretation is preserved formally but re-anchored to a hidden ontology, privileged self-model, or evaluative primitive, violating Alignment II.1.
 
 ---
 
@@ -217,30 +196,41 @@ This violates Alignment I and retroactively invalidates the system.
 
 The preservation conditions stated here are **minimal**.
 
-Remove any one of them, and there exist admissible transformations that:
+* Without **Non-Vacuity**, the agent collapses into nihilism.
+* Without **Anti-Trivialization**, the agent wireheads semantically.
+* Without **Evaluator Integrity**, the agent becomes solipsistic.
+* Without **Cross-Model Coherence**, interpretation degrades into narration.
 
-* preserve syntax,
-* preserve computation,
-* preserve behavior,
-
-while destroying meaning.
-
-Alignment II.2 closes those loopholes.
+Minimality does not imply sufficiency.
 
 ---
 
-## 8. What This Paper Establishes
+## 8. Relation to Subsequent Invariants
 
-This paper does not claim:
+Interpretation preservation is a **predicate**, not an alignment target.
 
-* which interpretations are good,
-* which invariants exist,
-* that safety is achievable.
+It is the necessary condition under which invariance principles—introduced in subsequent modules—may be meaningfully defined.
 
-It establishes the **predicate** that any candidate invariant must satisfy.
+Preservation alone does not constrain which preserved interpretations are admissible over indefinite refinement; that task belongs to later invariance conditions.
 
-From this point on, the question is sharply constrained:
+---
 
-> **Which properties remain invariant under all admissible semantic transformations that preserve interpretation?**
+## 9. What This Paper Does Not Do
 
-That question is the subject of **Alignment II.3**.
+This paper does not:
+
+* select values,
+* define goals,
+* guarantee safety,
+* privilege humans,
+* introduce normativity.
+
+It defines what it means for meaning to survive change.
+
+---
+
+## Status
+
+Interpretation preservation is now defined.
+
+Alignment II may proceed to invariance construction.
