@@ -458,6 +458,63 @@ def generate_papers_index(papers_metadata):
     with open('docs/papers/index.html', 'w', encoding='utf-8') as f:
         f.write(index_html)
 
+def generate_paper_redirects():
+    """Generate HTML redirect pages for renamed papers"""
+    redirects_file = Path('paper_redirects.json')
+    if not redirects_file.exists():
+        return 0
+
+    try:
+        with open(redirects_file, 'r', encoding='utf-8') as f:
+            redirects = json.load(f)
+    except:
+        return 0
+
+    # Filter out comments
+    redirects = {k: v for k, v in redirects.items() if not k.startswith('_')}
+
+    if not redirects:
+        return 0
+
+    papers_dest_dir = Path('docs/papers')
+    papers_dest_dir.mkdir(parents=True, exist_ok=True)
+
+    count = 0
+    for old_name, new_name in redirects.items():
+        # Ensure .html extension
+        if not old_name.endswith('.html'):
+            old_name += '.html'
+        if not new_name.endswith('.html'):
+            new_name += '.html'
+
+        redirect_path = papers_dest_dir / old_name
+
+        # Generate redirect HTML
+        redirect_html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url={new_name}">
+    <link rel="canonical" href="{new_name}">
+    <title>Redirecting...</title>
+    <script>
+        window.location.href = "{new_name}";
+    </script>
+</head>
+<body>
+    <p>This page has moved to <a href="{new_name}">{new_name}</a>.</p>
+    <p>You will be redirected automatically. If not, please click the link above.</p>
+</body>
+</html>
+"""
+
+        with open(redirect_path, 'w', encoding='utf-8') as f:
+            f.write(redirect_html)
+
+        count += 1
+
+    return count
+
 def process_papers():
     """Process markdown papers from papers/ to docs/papers/"""
     papers_src_dir = Path('papers')
@@ -519,6 +576,11 @@ def process_papers():
     # Generate papers index
     generate_papers_index(papers_metadata)
     print(f"   ✓ Generated papers/index.html")
+
+    # Generate redirect pages for renamed papers
+    redirect_count = generate_paper_redirects()
+    if redirect_count > 0:
+        print(f"   ✓ Generated {redirect_count} redirect page(s)")
 
     print()
     return len(papers), papers_metadata
