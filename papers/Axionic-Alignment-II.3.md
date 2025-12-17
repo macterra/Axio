@@ -1,4 +1,4 @@
-# Alignment II.3 — Candidate Semantic Invariants
+# Axionic Alignment II.3 — Candidate Semantic Invariants
 
 *What Could Survive Ontological Refinement Without Privilege*
 

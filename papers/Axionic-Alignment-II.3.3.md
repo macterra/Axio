@@ -1,4 +1,4 @@
-# Alignment II.3.3 — Anti-Trivialization Invariant (ATI)
+# Axionic Alignment II.3.3 — Anti-Trivialization Invariant (ATI)
 
 *Blocking Semantic Wireheading as a Structural Impossibility*
 

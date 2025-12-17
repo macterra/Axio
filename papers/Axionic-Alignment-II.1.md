@@ -1,4 +1,6 @@
-# Alignment II.1 — Ontological Refinement & Semantic Transport
+# Axionic Alignment II.1 — Ontological Refinement & Semantic Transport
+
+*The Transformation Space of Meaning*
 
 ## Abstract
 

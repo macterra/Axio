@@ -1,4 +1,4 @@
-# Alignment II.3.1 — Refinement Symmetry Invariant (RSI)
+# Axionic Alignment II.3.1 — Refinement Symmetry Invariant (RSI)
 
 *Semantic Gauge Symmetry Under Ontological Enrichment*
 

@@ -1,4 +1,4 @@
-# Alignment II.3.2 — Formalizing RSI via Semantic Gauge Structure
+# Axionic Alignment II.3.2 — Formalizing RSI via Semantic Gauge Structure
 
 *Making Refinement Symmetry Precise and Testable*
 

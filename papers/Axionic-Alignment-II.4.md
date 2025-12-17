@@ -1,4 +1,4 @@
-# Alignment II.4 — Failure Theorems
+# Axionic Alignment II.4 — Failure Theorems
 
 *No-Go Results for Goal-Based and Weak-Invariance Alignment*
 

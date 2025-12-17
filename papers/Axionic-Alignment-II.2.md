@@ -1,4 +1,4 @@
-# Alignment II.2 — Interpretation Preservation
+# Axionic Alignment II.2 — Interpretation Preservation
 
 *What It Means for Meaning to Survive Refinement*
 

@@ -1,4 +1,4 @@
-# Alignment II.3.4 — Adversarial Refinement Attacks
+# Axionic Alignment II.3.4 — Adversarial Refinement Attacks
 
 *Trying to Break RSI and ATI on Purpose*
 

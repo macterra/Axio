@@ -1,4 +1,4 @@
-# Alignment II.5 — The Alignment Target Object
+# Axionic Alignment II.5 — The Alignment Target Object
 
 *What Alignment Actually Is Once Goals Are Gone*
 
