@@ -2,6 +2,9 @@
 
 *The Transformation Space of Meaning*
 
+David McFadzean, ChatGPT 5.2<br>
+*Axio Project*
+
 ## Abstract
 
 Advanced agents will revise their world-models, semantics, and self-models as their representational capacity increases. Under such ontological refinement, fixed goals, utilities, and value primitives are not stable objects. This paper defines the admissible class of semantic transformations for embedded reflective agents by formalizing **ontological refinement**, **semantic transport**, and **self-model update** without privileged semantic anchors. We specify structural constraints—backward interpretability, non-collapse, and prohibition of evaluator injection—that govern how meaning may be preserved across representational change. No claims are made about safety, correctness, or alignment with external referents; this work defines only the transformation space over which alignment criteria must later range. Subsequent modules introduce interpretation-preserving invariants and failure theorems that operate within this arena.

@@ -2,7 +2,8 @@
 
 *Making Refinement Symmetry Precise and Testable*
 
----
+David McFadzean, ChatGPT 5.2<br>
+*Axio Project*
 
 ## Abstract
 

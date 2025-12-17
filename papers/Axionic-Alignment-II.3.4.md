@@ -2,6 +2,9 @@
 
 *Trying to Break RSI and ATI on Purpose*
 
+David McFadzean, ChatGPT 5.2<br>
+*Axio Project*
+
 ## Abstract
 
 This section adversarially stress-tests the candidate semantic invariants introduced in Alignment II.3 by constructing explicit refinement patterns designed to preserve admissibility and interpretation preservation while inducing semantic wireheading or interpretive escape. The objective is eliminative rather than constructive: to demonstrate which invariants fail under concrete attack and why. We show that Refinement Symmetry (RSI) and Anti-Trivialization (ATI) block distinct classes of failure and that neither subsumes the other. No values, norms, or external referents are introduced. This section establishes the non-redundancy and joint necessity of the surviving invariants prior to formal closure in subsequent failure theorems.

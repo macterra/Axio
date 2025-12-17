@@ -2,6 +2,9 @@
 
 *No-Go Results for Goal-Based and Weak-Invariance Alignment*
 
+David McFadzean, ChatGPT 5.2<br>
+*Axio Project*
+
 ## Abstract
 
 This paper converts the adversarial constructions of Alignment II.3 into closure results. Working within the locked setup of admissible semantic transformations (Alignment II.1), interpretation preservation (Alignment II.2), and the two surviving invariants—Refinement Symmetry (RSI) and Anti-Trivialization (ATI)—we prove a set of no-go theorems. These results show that fixed-goal alignment is ill-posed for embedded reflective agents under ontological refinement, and that any alignment criterion weaker than RSI+ATI admits semantic wireheading or interpretive escape via admissible refinement. No governance, authority, moral realism, human anchoring, or recovery mechanisms are invoked. The output of this paper is a fenced design space: what cannot work, and why.

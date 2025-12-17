@@ -2,7 +2,8 @@
 
 *Blocking Semantic Wireheading as a Structural Impossibility*
 
----
+David McFadzean, ChatGPT 5.2<br>
+*Axio Project*
 
 ## Abstract
 

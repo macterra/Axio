@@ -2,7 +2,8 @@
 
 *Semantic Gauge Symmetry Under Ontological Enrichment*
 
----
+David McFadzean, ChatGPT 5.2<br>
+*Axio Project*
 
 ## Abstract
 

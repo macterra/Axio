@@ -2,6 +2,9 @@
 
 *What Alignment Actually Is Once Goals Are Gone*
 
+David McFadzean, ChatGPT 5.2<br>
+*Axio Project*
+
 ## Abstract
 
 Alignment II.4 established that fixed goals, privileged values, and weak invariance criteria are structurally untenable for embedded reflective agents under ontological refinement. This paper defines the positive residue that remains once those exits are closed: the **Alignment Target Object (ATO)**. The ATO is not a goal, utility, or value function, but an equivalence class of interpretive states under admissible semantic transformations that preserve both Refinement Symmetry (RSI) and Anti-Trivialization (ATI). Alignment is thus redefined as persistence within a semantic phase—an interpretation-preserving symmetry class—across indefinite refinement. The construction is formal, ontology-agnostic, and reflection-stable, but intentionally non-normative: it does not select values, guarantee safety, or privilege human outcomes. This paper completes Alignment II by specifying what alignment can coherently mean once goals collapse.

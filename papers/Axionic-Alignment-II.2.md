@@ -2,6 +2,9 @@
 
 *What It Means for Meaning to Survive Refinement*
 
+David McFadzean, ChatGPT 5.2<br>
+*Axio Project*
+
 ## Abstract
 
 Under ontological refinement, meanings cannot remain fixed without privileged semantic anchors. However, not all semantic change constitutes corruption or collapse. This paper defines **interpretation preservation** as a structural property of semantic transport: a criterion for when an agent’s evaluative distinctions remain non-vacuous, non-trivial, and internally binding across admissible transformations. Preservation is defined without reference to truth, outcomes, safety, or external normative standards, and does not require semantic identity or correctness. Instead, it constrains how evaluative constraint systems may survive refinement without degenerating into tautology, contradiction, narration, or self-nullification. This predicate does not select values or goals; it supplies the necessary condition under which later invariance principles may be meaningfully stated.
