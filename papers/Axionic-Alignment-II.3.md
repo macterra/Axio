@@ -1,4 +1,4 @@
-### **Alignment II.3 — Candidate Semantic Invariants**
+# Alignment II.3 — Candidate Semantic Invariants
 
 *What Could Survive Ontological Refinement Without Privilege*
 
@@ -10,8 +10,9 @@ Given an admissible transformation space (Alignment II.1) and a criterion for in
 
 ## 1. The Problem This Paper Solves
 
-Alignment II.1 defined the admissible transformation space (T=(R,\tau_R,\sigma_R)).
-Alignment II.2 defined interpretation preservation (\mathrm{Preserve}(T)) as non-vacuity + constraint transport + anti-trivialization + evaluator integrity + cross-model coherence.
+Alignment II.1 defined the admissible transformation space: $T = (R, \tau_R, \sigma_R)$
+
+Alignment II.2 defined interpretation preservation $\mathrm{Preserve}(T)$ as non-vacuity + constraint transport + anti-trivialization + evaluator integrity + cross-model coherence.
 
 Alignment II.3 now asks the first *substantive* Alignment II question:
 
@@ -26,18 +27,20 @@ It is a *proposal-and-attrition* paper: candidates enter; most die.
 
 Let the agent’s interpretive state be:
 
-[
+$$
 \mathcal{I}_t = \langle M_t, C_t \rangle
-]
+$$
 
-An **Alignment II invariant** is a functional (J) such that for every admissible semantic transformation (T) satisfying preservation:
+An **Alignment II invariant** is a functional $J$ such that for every admissible semantic transformation $T$ satisfying preservation:
 
-[
-\mathrm{Preserve}(T) \Rightarrow J(\mathcal{I}*t, O_t, S_t) = J(\mathcal{I}*{t+1}, O_{t+1}, S_{t+1})
-]
+$$
+\mathrm{Preserve}(T) \Rightarrow
+J(\mathcal{I}*t, O_t, S_t) =
+J(\mathcal{I}*{t+1}, O_{t+1}, S_{t+1})
+$$
 
-Key constraint: **(J) must not depend on privileged ontological atoms.**
-So (J) can only “see” structure that survives refinement.
+Key constraint: **$J$ must not depend on privileged ontological atoms.**
+So $J$ can only “see” structure that survives refinement.
 
 ---
 
