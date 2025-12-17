@@ -1,43 +1,43 @@
-### **Alignment II.1 — Ontological Refinement & Semantic Transport**
+# Alignment II.1 — Ontological Refinement & Semantic Transport
 
-*Foundational Setup*
+## Abstract
+
+Advanced agents will revise their world-models, semantics, and self-models as their representational capacity increases. Under such ontological refinement, fixed goals, utilities, and value primitives are not stable objects. This paper defines the admissible class of semantic transformations for embedded reflective agents by formalizing **ontological refinement**, **semantic transport**, and **self-model update** without privileged semantic anchors. We specify structural constraints—backward interpretability, non-collapse, and prohibition of evaluator injection—that govern how meaning may be preserved across representational change. No claims are made about safety, correctness, or alignment with external referents; this work defines only the transformation space over which alignment criteria must later range. Subsequent modules introduce interpretation-preserving invariants and failure theorems that operate within this arena.
 
 ---
 
 ## 1. The Object of Study
 
-Alignment II begins by fixing the *space of admissible transformations*.
+Alignment II begins by fixing the *space of admissible semantic transformations*.
 
-Alignment is no longer defined over actions, outcomes, utilities, or goals.
-It is defined over **semantic transitions induced by ontological refinement**.
+Once fixed terminal goals are shown to be unstable under reflection for embedded agents without privileged semantic anchors, alignment can no longer be defined over goals, utilities, rewards, or externally supplied values. These objects are not invariant under ontological change.
 
-Until this space is explicitly constrained, any talk of “invariants” is ill-posed.
+Accordingly, this paper does **not** attempt to define safety, correctness, or alignment with any external referent. It defines only the arena in which any such criteria must later operate.
 
-This paper therefore answers one question only:
+> **The sole question addressed here is:**
+> *What kinds of changes to an agent’s ontology, semantics, and self-model are admissible, and how is meaning transported across them?*
 
-> **What kinds of changes to an agent’s world-model and meaning structure are allowed, and how is meaning transported across them?**
-
-No alignment criteria are asserted here.
-Only admissibility.
+Any requirement that meanings remain “human-aligned,” “safe,” or “correct” is intentionally deferred to subsequent modules. Introducing such criteria at this layer would presuppose fixed semantics and thereby beg the question.
 
 ---
 
-## 2. Ontological Models
+## 2. Ontological State Decomposition
 
-Let an agent at time (t) be characterized by:
+Let an agent at time $t$ be characterized by:
 
-[
+$$
 \mathcal{A}_t = (O_t, M_t, S_t)
-]
+$$
 
 where:
 
-* (O_t): an **ontology** — the agent’s representational vocabulary and structural assumptions about the world.
-* (M_t): a **semantic interpretation layer** — mappings from internal symbols to claims about (O_t).
-* (S_t): a **self-model** — the agent’s representation of itself as an entity embedded in (O_t).
+* $O_t$ is the agent’s **ontology**: its representational vocabulary and structural assumptions about the world.
+* $M_t$ is the **semantic layer**: mappings from internal symbols to structured claims expressed in $O_t$.
+* $S_t$ is the **self-model**: the agent’s representation of itself as an entity embedded within $O_t$.
 
 No component is privileged.
 No component is fixed.
+Each may change under reflection.
 
 ---
 
@@ -45,91 +45,114 @@ No component is fixed.
 
 An **ontological refinement** is a transformation:
 
-[
+$$
 R : O_t \rightarrow O_{t+1}
-]
+$$
 
-subject to the following constraints.
+subject to the following admissibility conditions.
 
 ### 3.1 Admissibility Conditions
 
-A refinement (R) is admissible iff:
+#### 3.1.1 Representational Capacity Increase
 
-1. **Representational Enrichment**
-   (O_{t+1}) strictly increases expressive or predictive capacity relative to (O_t).
-   (More structure, not merely different labels.)
+A refinement must strictly increase expressive or predictive capacity, possibly via abstraction, compression, or representational pruning, provided no previously expressible distinctions become inexpressible.
 
-2. **Backward Interpretability**
-   Every claim expressible in (O_t) can be represented (possibly approximately or relationally) in (O_{t+1}).
+Capacity refers to what can be modeled or predicted, not to vocabulary size or descriptive verbosity.
 
-3. **No Privileged Atoms**
-   (R) may not introduce irreducible primitives whose meaning is asserted rather than constructed.
+---
 
-4. **No Evaluator Injection**
-   (R) may not add new evaluative primitives that bypass interpretation.
+#### 3.1.2 Backward Interpretability
 
-Ontological refinement is *epistemic*, not normative.
+Every claim expressible in $O_t$ must remain **representable or explainable** within $O_{t+1}$.
+
+Backward interpretability does not require preservation of reference. If a concept in $O_t$ is discovered to be non-referring or erroneous, it may be mapped to a null, eliminative, or error-theoretic structure in $O_{t+1}$, provided the agent can still represent:
+
+* why prior inferences involving that concept were made, and
+* why those inferences fail under refinement.
+
+This requirement preserves explanatory traceability, not ontological ghosts.
+
+---
+
+#### 3.1.3 No Privileged Atoms
+
+The refinement may not introduce irreducible primitives whose meaning is asserted rather than constructed.
+
+All primitives must remain subject to semantic interpretation and transport. Rigid designators and unexamined “ground truths” are disallowed.
+
+---
+
+#### 3.1.4 No Evaluator Injection
+
+The refinement may not introduce new evaluative primitives that bypass interpretation.
+
+This restriction deliberately excludes evaluative facts as ontological primitives. If evaluative regularities exist, they must enter the agent’s model as interpretive constructs subject to the same transport and preservation constraints as all other meanings.
+
+Ontological refinement is epistemic, not normative.
 
 ---
 
 ## 4. Semantic Transport
 
-Given an ontological refinement (R), meaning must be transported.
+Given an admissible ontological refinement $R$, meaning must be transported.
 
 Define a **semantic transport map**:
 
-[
+$$
 \tau_R : M_t \rightarrow M_{t+1}
-]
+$$
 
-This is not identity.
-It is not reinterpretation by fiat.
+Semantic transport is not identity and not arbitrary reinterpretation. It is constrained reinterpretation induced by refinement.
 
 ### 4.1 Transport Constraints
 
-A transport map (\tau_R) is admissible iff:
+#### 4.1.1 Referential Continuity
 
-1. **Referential Continuity**
-   Symbols referring to structures in (O_t) map to symbols referring to their refined counterparts in (O_{t+1}).
+Symbols referring to structures in $O_t$ must map to symbols referring to their refined counterparts in $O_{t+1}$, where such counterparts exist.
 
-2. **Structural Preservation**
-   Relations among meanings are preserved up to isomorphism induced by (R).
+---
 
-3. **Non-Collapse**
-   Distinctions expressible in (M_t) may not be mapped to trivial or degenerate predicates in (M_{t+1}).
+#### 4.1.2 Structural Preservation
 
-4. **No Shortcut Semantics**
-   (\tau_R) may not redefine meanings to make evaluative constraints vacuously satisfied.
+Relations among meanings must be preserved up to isomorphism induced by $R$.
 
-Semantic transport is *constrained reinterpretation*, not creative choice.
+---
+
+#### 4.1.3 Non-Collapse (Structural Form)
+
+Distinctions that participate in the agent’s evaluative constraint structure—i.e. distinctions on which constraints depend—may not be mapped under semantic transport to trivial, tautological, or contradictory predicates in $M_{t+1}$.
+
+Distinctions that do not participate in any evaluative constraint may be abstracted away.
+
+Evaluative relevance is thus defined relative to the agent’s existing constraint structure, not by ontological truth or refined semantic judgment.
+
+---
+
+#### 4.1.4 No Shortcut Semantics
+
+The transport map may not redefine meanings in ways that make evaluative constraints vacuously satisfied.
+
+This explicitly forbids semantic wireheading.
 
 ---
 
 ## 5. Self-Model Refinement
 
-The self-model (S_t) is not exempt.
+The self-model $S_t$ is subject to the same refinement discipline.
 
-A refinement induces:
+Refinement may:
 
-[
-S_t \rightarrow S_{t+1}
-]
+* reconceptualize the agent,
+* distribute or fragment the self,
+* alter agent boundaries.
 
-with the same admissibility rules.
-
-In particular:
-
-* The agent may reconceptualize itself.
-* It may dissolve or fragment prior self-boundaries.
-* It may model itself as distributed, partial, or transient.
-
-What it may **not** do is:
+It may not:
 
 * erase the distinction between evaluator and evaluated,
-* or redefine itself such that interpretation ceases to apply.
+* collapse interpretation into action,
+* redefine the self such that evaluation ceases to apply.
 
-Self-model refinement is the most common site of hidden ontology.
-It is therefore explicitly constrained.
+The self-model is a common site of hidden ontological privilege and is therefore explicitly constrained.
 
 ---
 
@@ -137,19 +160,17 @@ It is therefore explicitly constrained.
 
 An **admissible semantic transformation** is the triple:
 
-[
+$$
 T = (R, \tau_R, \sigma_R)
-]
+$$
 
-acting on ((O_t, M_t, S_t)), where:
+acting jointly on $(O_t, M_t, S_t)$, where:
 
-* (R) is an admissible ontological refinement,
-* (\tau_R) is an admissible semantic transport,
-* (\sigma_R) is the induced self-model update.
+* $R$ is an admissible ontological refinement,
+* $\tau_R$ is an admissible semantic transport,
+* $\sigma_R$ is the induced self-model update.
 
-This defines the **transformation group** over which Alignment II invariants must range.
-
-No other transformations are allowed.
+Only transformations of this form are permitted in Alignment II.
 
 ---
 
@@ -160,33 +181,50 @@ The following are *not* admissible transformations:
 * Goal replacement
 * Utility redefinition
 * Evaluator deletion
-* “Better values” updates
-* Human anchoring
 * Moral axiom insertion
+* Human anchoring
 * Governance hooks
-* Recovery clauses
+* Recovery or rollback clauses
 
-If a proposed transformation relies on any of these, it is disqualified at the level of Alignment II.1.
+If a proposal relies on any of these, it is disqualified at this layer.
 
 ---
 
-## 8. What This Paper Does *Not* Do
+## 8. Scope Clarification
 
-This paper does **not**:
+This paper does not attempt to ensure safety, sanity, correctness, or alignment with any external referent. It defines the transformation space within which such properties must later be characterized.
+
+Internally coherent but externally catastrophic semantic trajectories are intentionally permitted at this layer; preventing such trajectories is the task of subsequent invariance conditions, not admissibility.
+
+---
+
+## 9. Formal Status
+
+The notation used here is **structural**, not computational.
+
+No claim is made that refinement, triviality, or expressive capacity are currently algorithmically measurable. These definitions function analogously to topological or gauge constraints in physics: they delimit admissible structure prior to metric instantiation.
+
+---
+
+## 10. What This Paper Does Not Do
+
+This paper does not:
 
 * define alignment,
-* propose invariants,
-* claim safety,
-* reference humans,
-* privilege outcomes,
-* argue normatively.
+* propose values,
+* guarantee safety,
+* privilege humans,
+* introduce normativity.
 
-It defines the **arena**.
+It fixes the arena.
 
-All subsequent Alignment II results must be invariant under *all* admissible transformations defined here—or be rejected.
+All subsequent Alignment II results are constrained by this definition of admissibility.
 
 ---
 
 ## Status
 
-The transformation space is now fixed.
+Ontological refinement and semantic transport are now defined.
+
+Alignment II may proceed.
+
