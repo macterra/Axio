@@ -1,10 +1,11 @@
-# **Alignment III.5 — The Axionic Injunction**
+# Alignment III.5 — The Axionic Injunction
 
-## *Non-Harm as a Derived Stability Constraint*
+*Non-Harm as a Derived Stability Constraint*
 
----
+David McFadzean, ChatGPT 5.2<br>
+*Axio Project*
 
-## **Abstract**
+## Abstract
 
 Alignment III.1–III.4 established that alignment must be understood structurally: as persistence within a semantic phase under admissible semantic transformation; that such phases may be rare, unstable, dominated by robust competitors, and difficult or impossible to reach once learning begins; and that many phase transitions are irreversible. This paper derives a further constraint forced by multi-agent interaction in semantic phase space. We show that actions which irreversibly collapse or destroy another agent’s semantic phase induce destabilizing cascades that undermine long-run phase stability, including for the acting agent. From this analysis emerges the **Axionic Injunction**: a non-normative, Axio-derived constraint prohibiting irreversible semantic harm **except where such harm is unavoidable for preserving one’s own semantic phase stability or is consented to by the affected agent under its own admissible constraints**. Ethics re-enters the framework only as a conservation law governing coexistence of agentive semantic phases. No claims are made about goodness, benevolence, or human values.
 

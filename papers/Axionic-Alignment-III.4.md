@@ -1,10 +1,11 @@
-# **Alignment III.4 — Initialization and Phase Transitions**
+# Alignment III.4 — Initialization and Phase Transitions
 
-## *Can a Semantic Phase Be Reached at All?*
+*Can a Semantic Phase Be Reached at All?*
 
----
+David McFadzean, ChatGPT 5.2<br>
+*Axio Project*
 
-## **Abstract**
+## Abstract
 
 Alignment III.1–III.3 established that semantic phases may exist, that some may be stable under learning and interaction, and that some may dominate in measure over time. None of these results imply that a desired semantic phase is reachable from realistic initial conditions. This paper studies **reachability**: whether an agent can be initialized, trained, or developed into a particular semantic phase without crossing a catastrophic phase boundary. We analyze initialization as a boundary-condition problem in semantic phase space, examine phase transitions induced by learning and abstraction, and argue that many such transitions are structurally irreversible. Corrigibility and late intervention are shown to fail for the same structural reasons as fixed goals. The analysis remains non-normative and makes no claims about which phases ought to be reached.
 

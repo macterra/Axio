@@ -1,10 +1,11 @@
-# **Alignment III.2 — Phase Stability and Interaction**
+# Alignment III.2 — Phase Stability and Interaction
 
-## *Which Semantic Phases Survive Pressure?*
+*Which Semantic Phases Survive Pressure?*
 
----
+David McFadzean, ChatGPT 5.2<br>
+*Axio Project*
 
-## **Abstract**
+## Abstract
 
 Alignment III.1 introduced the semantic phase space: the space of interpretive states modulo Refinement Symmetry (RSI) and Anti-Trivialization (ATI). Existence and inhabitability of a semantic phase do not guarantee its persistence under learning, self-modification, or interaction. This paper studies **phase stability**: whether an inhabitable semantic phase resists forced phase transition under admissible semantic transformations. We analyze sources of destabilization internal to reflective agents and external to them, define qualitative notions of local and global stability, and examine how interaction between agents in the same or different phases alters stability properties. No claims are made about desirability, safety, or dominance. The goal is to identify which semantic phases are structurally capable of persisting over time.
 

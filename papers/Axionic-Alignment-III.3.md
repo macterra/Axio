@@ -1,10 +1,11 @@
-# **Alignment III.3 — Measure, Attractors, and Collapse**
+# Alignment III.3 — Measure, Attractors, and Collapse
 
-## *Why Some Semantic Phases Dominate*
+*Why Some Semantic Phases Dominate*
 
----
+David McFadzean, ChatGPT 5.2<br>
+*Axio Project*
 
-## **Abstract**
+## Abstract
 
 Alignment III.1 established the existence and classification of semantic phases, and Alignment III.2 analyzed their structural stability under learning, self-modification, and interaction. Stability alone does not determine long-run outcomes. This paper studies **dominance** among semantic phases: which phases accumulate measure under growth, replication, and competition. We formalize dominance as a **preorder** over semantic phases rather than a scalar quantity, analyze semantic attractors and repellers, and classify common collapse modes by which phases lose measure. The analysis remains non-normative: dominance is not equated with desirability. The goal is to explain why certain semantic phases prevail regardless of intent, and to identify structural pressures that favor robustness over nuance in long-run dynamics.
 
