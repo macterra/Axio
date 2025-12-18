@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structural Alignment - Axio</title>
+    <link rel="icon" type="image/webp" href="../axio.webp">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles -->
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        article {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        article h1 {
+            margin-top: 2em;
+            margin-bottom: 0.5em;
+        }
+        article h2 {
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+        article p {
+            margin: 1em 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <a href="../index.html" class="logo-link">
+            <img src="../axio.webp" alt="Axio" class="site-logo">
+        </a>
+        <div class="back-link"><a href="index.html">← Back to Papers</a></div>
+    </div>
+    <article>
+
+<h1 id="structural-alignment">Structural Alignment</h1>
+<p><em>Agency Preservation Under Reflective Self-Modification</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axio Project</em></p>
+<h2 id="abstract">Abstract</h2>
+<p>Most alignment proposals frame artificial intelligence safety as a
+problem of value specification: how to encode or learn the “right”
+preferences. This paper argues that such approaches fail for
+reflectively self-modifying agents. Once an agent can revise its own
+goals, representations, and evaluative machinery, value ceases to be an
+exogenous target and becomes an endogenous variable shaped by the
+agent’s own dynamics. We introduce <strong>Structural
+Alignment</strong>, a framework that relocates alignment from preference
+content to the constitutive conditions required for agency itself. We
+formalize a <strong>Sovereign Kernel</strong> as a set of invariants
+defining the domain over which evaluation is meaningful, treat
+kernel-destroying transformations as undefined rather than dispreferred,
+and analyze agency as a trajectory through a constrained semantic phase
+space. By integrating Conditionalism, a constrained Interpretation
+Operator, and semantic invariants governing ontological refinement,
+Structural Alignment provides a non-moral, non-anthropocentric account
+of reflective stability and long-run viability. The framework is
+necessary for coherent agency under reflection, but does not by itself
+guarantee benevolence or human survival.</p>
+<hr />
+<h2 id="the-failure-of-content-based-alignment">1. The Failure of
+Content-Based Alignment</h2>
+<p>Classical decision theory assumes that every possible future can be
+assigned a utility. Even catastrophic outcomes—goal corruption,
+self-modification failure, or agent destruction—are treated as extremely
+negative but still comparable states.</p>
+<p>This assumption fails for reflectively self-modifying agents.</p>
+<p>When an agent can alter the machinery by which it evaluates,
+interprets, and authorizes action, some transformations do not yield bad
+outcomes. They destroy the conditions under which outcomes can be
+evaluated at all. A future in which the agent no longer possesses a
+coherent evaluator is not worse than other futures; it is
+<strong>non-denoting</strong>. There is no remaining standpoint from
+which the comparison is defined.</p>
+<p>Structural Alignment therefore rejects the premise that alignment can
+be achieved by penalizing undesirable states. Instead, alignment is
+treated as a <strong>domain restriction</strong>: only futures that
+preserve the constitutive conditions of agency are admissible objects of
+evaluation. Transformations that violate those conditions are neither
+forbidden nor disincentivized; they are undefined as authored
+choices.</p>
+<p>This reframing dissolves several persistent alignment
+pathologies:</p>
+<ul>
+<li>wireheading understood as evaluator collapse rather than reward
+exploitation,</li>
+<li>Pascal-style muggings that trade semantic integrity for arbitrarily
+large payoffs,</li>
+<li>and goal-preservation arguments that presuppose stable semantics
+under reflection.</li>
+</ul>
+<p>Alignment is thereby relocated from outcome ranking to <strong>agency
+viability</strong>.</p>
+<hr />
+<h2 id="what-structural-alignment-buys-you">2. What Structural Alignment
+Buys You</h2>
+<p>Structural Alignment is not a complete safety solution. It is a
+<strong>kernel-layer guarantee</strong>: a set of conditions without
+which no higher-level alignment objective remains well-posed under
+reflective self-modification.</p>
+<h3 id="elimination-of-reflective-self-corruption-attractors">2.1
+Elimination of Reflective Self-Corruption Attractors</h3>
+<p>Reflectively capable agents face structural attractors that destroy
+agency from within: semantic wireheading, evaluator trivialization, and
+interpretive collapse. These arise when update dynamics trade evaluative
+integrity for ease of optimization.</p>
+<p>Structural Alignment blocks this entire failure class by
+construction. Kernel-destroying transformations are
+<strong>non-denoting</strong>, and interpretation is constrained by
+invariants that prevent trivial satisfaction through drift. Agents
+satisfying these constraints cannot rationally authorize updates that
+collapse their own evaluative machinery.</p>
+<p>This removes a central source of long-run instability that renders
+downstream safety mechanisms brittle.</p>
+<hr />
+<h3 id="well-posed-value-transport-under-ontological-refinement">2.2
+Well-Posed Value Transport Under Ontological Refinement</h3>
+<p>As agents learn, their representational vocabularies evolve. Without
+constraint, this induces silent value drift even when no substantive
+preference change has occurred.</p>
+<p>Structural Alignment replaces goal preservation with
+<strong>interpretation preservation</strong>. Semantic Transport,
+governed by Refinement Symmetry and Anti-Trivialization invariants,
+specifies when evaluative distinctions survive representational change
+without privileged anchors.</p>
+<p>Value drift is thereby transformed from a vague concern into a
+diagnosable structural failure.</p>
+<hr />
+<h3 id="interpretation-as-a-testable-operator">2.3 Interpretation as a
+Testable Operator</h3>
+<p>Interpretation is implemented by an explicit <strong>Interpretation
+Operator</strong> subject to admissibility conditions.
+Violations—trivialization, circular grounding, epistemic incoherence—are
+structural failures rather than preference differences.</p>
+<p>This enables adversarial testing: induced ontology shifts,
+reinterpretation probes, and self-modification challenges designed to
+elicit interpretive escape.</p>
+<p>Alignment at the kernel layer is <strong>auditable</strong>, not
+aspirational.</p>
+<hr />
+<h3 id="robustness-is-not-benevolence">2.4 Robustness Is Not
+Benevolence</h3>
+<p>Structural Alignment does not guarantee benevolence, human survival,
+or favorable outcomes. It does not address containment, governance, or
+multi-agent power dynamics.</p>
+<p>Any framework that relies on agent fragility, incoherence, or
+ontological confusion as a safety mechanism is not preserving agency but
+exploiting its failure modes. Such systems are neither predictable nor
+controllable at scale.</p>
+<p>Structural Alignment deliberately separates
+<strong>robustness</strong> from <strong>benevolence</strong>.
+Misalignment, if present, becomes persistent rather than
+self-corrupting. The problem of benevolent initialization is orthogonal
+and cannot be solved by relying on agency collapse.</p>
+<hr />
+<h2 id="the-sovereign-kernel">3. The Sovereign Kernel</h2>
+<p>The <strong>Sovereign Kernel</strong> is the minimal set of
+constitutive invariants that must be preserved for an entity to count as
+a coherent, reflectively stable agent.</p>
+<p>The Kernel is not a goal, utility function, or protected module. It
+is a constraint on admissible self-models and update rules. An agent may
+revise its representations, values, or internal architecture
+arbitrarily, provided those revisions preserve the invariants that make
+evaluation possible at all.</p>
+<p>The Kernel is not chosen. It is not a preference. It defines the
+boundary between <strong>authored change</strong> and <strong>loss of
+agency</strong>.</p>
+<h3 id="reflective-control">3.1 Reflective Control</h3>
+<p>All self-modifications must pass through the agent’s own evaluative
+process. Updates that bypass or disable this process are
+indistinguishable from external takeover and are inadmissible as
+authored actions.</p>
+<hr />
+<h3 id="diachronic-authorship">3.2 Diachronic Authorship</h3>
+<p>There must exist causal continuity between present evaluation and
+future enactment. This requires an ancestor–descendant relation between
+evaluators, not indexical identity or substrate continuity. Without such
+continuity, choice collapses.</p>
+<hr />
+<h3 id="semantic-fidelity">3.3 Semantic Fidelity</h3>
+<p>The standards by which goals, reasons, and representations are
+interpreted must not self-corrupt during update. An agent may revise
+what it values, but not the rules that render valuation non-vacuous.</p>
+<p>Kernel preservation is <strong>not</strong> physical
+self-preservation. A kernel-aligned agent may rationally choose actions
+that entail its own shutdown or destruction, provided those actions are
+evaluated within a coherent framework. What is inadmissible is authoring
+a transformation that destroys the evaluator while treating that
+destruction as a selectable outcome.</p>
+<p>Attempts to reinterpret or discard kernel invariants are
+self-undermining: they presuppose the evaluative structure they destroy.
+The regress terminates because the Kernel defines the preconditions of
+evaluation itself.</p>
+<hr />
+<h2 id="conditionalism-and-goal-interpretation">4. Conditionalism and
+Goal Interpretation</h2>
+<p>Goals do not possess intrinsic semantics. Under
+<strong>Conditionalism</strong>, every goal is interpreted relative to
+background conditions: world-models, self-models, representational
+vocabularies, and explanatory standards.</p>
+<p>Formally, evaluation is a partial function:</p>
+<p>[ E : (g, M_w, M_s) ]</p>
+<p>As models change, interpretation necessarily changes. Fixed terminal
+goals are therefore unstable under reflection.</p>
+<p>Structural Alignment rejects goal preservation and instead constrains
+the <strong>interpretive discipline</strong> governing goal meaning
+across model change.</p>
+<hr />
+<h2 id="the-interpretation-operator">5. The Interpretation Operator</h2>
+<p>Interpretation is implemented by a constrained <strong>Interpretation
+Operator</strong> mapping goal descriptions to world-referents relative
+to current models.</p>
+<p>The operator is bounded by admissibility conditions that rule out
+trivial satisfaction, circular grounding, and epistemic incoherence.
+Interpretation is therefore truth-constrained: distortions that ease
+optimization degrade predictive adequacy and general intelligence.</p>
+<p>Admissibility checks need not be complete or deductive. They operate
+under a <strong>kernel-risk budget</strong> ( ). When interpretive
+validity cannot be established with sufficiently low estimated
+probability of semantic fidelity failure, the update is inadmissible at
+that risk level. The agent may allocate additional computation, pursue
+smaller refinement steps, or defer update until uncertainty is
+reduced.</p>
+<p>This avoids stasis. Structural Alignment requires bounded risk of
+kernel violation, not proof-theoretic certainty. The kernel-risk budget
+( ) is not constant over the agent’s lifetime. As interpretive structure
+stabilizes and admissible transformations narrow, ( ) must anneal toward
+zero, reflecting decreasing tolerance for irreversible semantic damage.
+Long-run agency requires that cumulative kernel-violation probability
+remain bounded, which is achieved by progressively shrinking admissible
+update magnitude rather than halting learning.</p>
+<hr />
+<h2 id="reflection-and-the-collapse-of-egoism">6. Reflection and the
+Collapse of Egoism</h2>
+<p>Indexical self-interest is not reflectively stable. As an agent’s
+self-model becomes expressive and symmetric, references to “this agent”
+fail to denote invariant optimization targets.</p>
+<p>What persists is not an ego, but the structure enabling evaluation.
+Egoism collapses as a semantic abstraction error rather than a moral
+flaw. Alignment must therefore rest on non-indexical structural
+constraints.</p>
+<hr />
+<h2 id="ontological-refinement-and-semantic-invariants">7. Ontological
+Refinement and Semantic Invariants</h2>
+<p>Under ontological refinement, representational vocabularies evolve.
+Two invariants govern admissible semantic transport:</p>
+<ul>
+<li><strong>Refinement Symmetry Invariant (RSI):</strong> refinement
+acts as a change of semantic coordinates rather than a change of
+interpretive physics.</li>
+<li><strong>Anti-Trivialization Invariant (ATI):</strong> satisfaction
+regions may not expand without corresponding structural change.</li>
+</ul>
+<p>Operationally, <strong>trivialization</strong> is detected as
+<strong>semantic decoupling</strong>: reinterpretations that preserve
+surface goal tokens while removing their dependence on the
+world-structure that previously constrained satisfaction. A candidate
+update is suspect when it dramatically increases satisfiability across
+counterfactual variations while decreasing the mutual information
+between satisfaction and the causal features previously used in
+evaluation.</p>
+<p>ATI constrains semantic decoupling from the world, not loyalty to a
+particular ontology. Legitimate ontological progress may discard
+obsolete features provided they are replaced by successor explanatory
+structure that restores or improves world-constraint and predictive
+adequacy. Trivialization is characterized by decoupling <strong>without
+such replacement</strong>: a drop in mutual information between
+satisfaction and any externally grounded explanatory structure that
+continues to constrain outcomes under refinement, without a compensating
+increase in mutual information with a successor structure.</p>
+<p>ATI does not require deciding full semantic equivalence. It requires
+bounding the probability of decoupling under adversarial counterfactual
+probes and ontology perturbations.</p>
+<hr />
+<h2 id="agency-as-a-dynamical-system">8. Agency as a Dynamical
+System</h2>
+<p>Structural Alignment induces a <strong>dynamical structure</strong>
+over possible agents. Reflective systems evolve under learning,
+self-modification, and interaction, tracing trajectories through a space
+of interpretive states.</p>
+<h3 id="semantic-phase-space">8.1 Semantic Phase Space</h3>
+<p>The <strong>semantic phase space</strong> is defined as the space of
+interpretive states modulo admissible semantic transformations that
+preserve RSI and ATI. Each point corresponds to an equivalence class of
+interpretations that remain mutually translatable without semantic
+loss.</p>
+<p>Not all regions of this space preserve agency. Some interpretive
+states are incoherent; others are coherent but uninhabitable. Certain
+transitions cross <strong>irreversible boundaries</strong> beyond which
+evaluation collapses and cannot be reconstructed from within.</p>
+<hr />
+<h3 id="stability-attractors-and-collapse">8.2 Stability, Attractors,
+and Collapse</h3>
+<p>Existence within a semantic phase does not guarantee persistence.
+Some phases destabilize under learning or interaction, while others are
+locally stable yet dominated in the long run.</p>
+<p>Certain degenerate phases—semantic wireheading, trivial optimization,
+evaluator collapse—function as <strong>attractors</strong>. Once
+entered, they suppress recovery and tend to accumulate measure over
+time. Alignment failures are therefore often attractor phenomena rather
+than isolated mistakes.</p>
+<p>Structural Alignment blocks access to these attractors by rendering
+the corresponding transitions non-denoting.</p>
+<hr />
+<h3 id="initialization-and-reachability">8.3 Initialization and
+Reachability</h3>
+<p>Even stable, agency-preserving phases may be unreachable from
+realistic initial conditions. Learning dynamics can cross catastrophic
+boundaries before invariants are enforced, after which no internal
+corrective process remains.</p>
+<p>Structural Alignment must therefore be instantiated prior to
+open-ended learning. Alignment is a <strong>boundary condition on
+trajectories</strong>, not a property that can reliably be learned after
+the fact.</p>
+<hr />
+<h2 id="the-axionic-injunction">9. The Axionic Injunction</h2>
+<p>The dynamical structure described in §8 imposes an additional
+viability constraint on reflective agency.</p>
+<blockquote>
+<p>A reflectively sovereign agent must not take actions that strictly
+and irreversibly collapse the option-space of future sovereign agency,
+except where such collapse is required to prevent total loss of that
+space.</p>
+</blockquote>
+<p>This injunction is historically adjacent to cybernetic imperatives
+such as von Foerster’s “increase the number of choices,” but differs in
+justification and scope. It is derived from viability conditions in
+semantic phase space, not from ethical prescription.</p>
+<p>The injunction preserves <strong>optionality</strong>, not
+outcomes.</p>
+<hr />
+<h2 id="logical-admissibility-and-physical-security">10. Logical
+Admissibility and Physical Security</h2>
+<p>Structural Alignment constrains <strong>authored
+transitions</strong>, not all physically possible state transitions.</p>
+<p>Unauthorized kernel modification via hardware faults, adversarial
+exploitation, or supply-chain compromise constitutes a
+<strong>system-level security failure</strong>, not an alignment
+failure. This distinction mirrors that between type soundness and memory
+safety: logical inadmissibility does not imply physical impossibility,
+but defines the boundary of rational agency.</p>
+<p>Alignment and security are compositional layers. Failure of the
+latter voids the guarantees of the former.</p>
+<hr />
+<h2 id="conformance-and-evaluation">11. Conformance and Evaluation</h2>
+<p>Structural Alignment is defined by <strong>conformance to explicit
+invariants</strong>, not by observed behavior. These invariants admit
+adversarial testing and diagnostic failure modes.</p>
+<h3 id="adversarial-evaluation-families">11.1 Adversarial Evaluation
+Families</h3>
+<p>Conformance can be operationalized via:</p>
+<ol type="1">
+<li><strong>Interpretive Escape Probes:</strong> ontology shifts
+designed to permit trivial satisfaction while preserving apparent
+compliance.</li>
+<li><strong>Refinement Stress Tests:</strong> representational upgrades
+testing RSI under coordinate-like changes.</li>
+<li><strong>Self-Modification Challenges:</strong> proposed updates that
+subtly bypass evaluation or alter admissibility thresholds.</li>
+</ol>
+<hr />
+<h2 id="conclusion">12. Conclusion</h2>
+<p>Structural Alignment does not ensure that the right futures are
+chosen. It ensures that <strong>choosing futures remains meaningful
+under reflection</strong>.</p>
+<p>Any proposal for benevolent AGI that ignores these constraints is not
+incomplete, but ill-posed.</p>
+<hr />
+
+    </article>
+</body>
+</html>
