@@ -1,4 +1,4 @@
-# Alignment III.4 — Initialization and Phase Transitions
+# Axionic Alignment III.4 — Initialization and Phase Transitions
 
 *Can a Semantic Phase Be Reached at All?*
 
@@ -13,9 +13,9 @@ Alignment III.1–III.3 established that semantic phases may exist, that some ma
 
 ## 1. Motivation: Existence and Dominance Are Not Enough
 
-Alignment III.1 asked whether semantic phases exist.
-Alignment III.2 asked which are stable.
-Alignment III.3 asked which dominate.
+[Alignment III.1](Axionic-Alignment-III.1.md) asked whether semantic phases exist.
+[Alignment III.2](Axionic-Alignment-III.2.md) asked which are stable.
+[Alignment III.3](Axionic-Alignment-III.3.md) asked which dominate.
 
 These questions still do not answer the most practically relevant one:
 

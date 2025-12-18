@@ -1,4 +1,4 @@
-# Alignment III.2 — Phase Stability and Interaction
+# Axionic Alignment III.2 — Phase Stability and Interaction
 
 *Which Semantic Phases Survive Pressure?*
 
@@ -13,7 +13,7 @@ Alignment III.1 introduced the semantic phase space: the space of interpretive s
 
 ## 1. Motivation: Existence Is Not Enough
 
-Alignment III.1 established that semantic phases may exist and that some may be inhabitable by reflective agents. This alone is insufficient for alignment.
+[Alignment III.1](Axionic-Alignment-III.1.md) established that semantic phases may exist and that some may be inhabitable by reflective agents. This alone is insufficient for alignment.
 
 A semantic phase may:
 

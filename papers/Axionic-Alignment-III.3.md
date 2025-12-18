@@ -1,4 +1,4 @@
-# Alignment III.3 — Measure, Attractors, and Collapse
+# Axionic Alignment III.3 — Measure, Attractors, and Collapse
 
 *Why Some Semantic Phases Dominate*
 
@@ -13,7 +13,7 @@ Alignment III.1 established the existence and classification of semantic phases,
 
 ## 1. Motivation: Stability Is Not Survival
 
-A semantic phase may exist (III.1) and be stable under limited perturbation (III.2) yet still fail to persist in the long run.
+A semantic phase may exist ([III.1](Axionic-Alignment-III.1.md)) and be stable under limited perturbation ([III.2](Axionic-Alignment-III.2.md)) yet still fail to persist in the long run.
 
 In biological systems, many organisms are locally stable but are outcompeted. In physics, metastable states exist but decay when lower-energy configurations dominate. Semantic phases exhibit analogous behavior.
 

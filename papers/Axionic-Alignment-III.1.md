@@ -1,4 +1,4 @@
-# Alignment III.1 — Semantic Phase Space
+# Axionic Alignment III.1 — Semantic Phase Space
 
 *Existence and Classification of Alignment Target Objects*
 

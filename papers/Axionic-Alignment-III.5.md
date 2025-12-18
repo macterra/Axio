@@ -1,4 +1,4 @@
-# Alignment III.5 — The Axionic Injunction
+# Axionic Alignment III.5 — The Axionic Injunction
 
 *Non-Harm as a Derived Stability Constraint*
 
@@ -13,7 +13,7 @@ Alignment III.1–III.4 established that alignment must be understood structural
 
 ## 1. Why Ethics Re-Enters Only Now
 
-Alignment II and Alignment III.1–III.4 deliberately excluded ethics, morality, and value prescriptions. This was not avoidance, but methodological necessity. Introducing ethics earlier would have smuggled privileged semantics, human anchoring, or moral realism into a framework intended to remain valid under reflection and ontological change.
+Alignment II and Alignment [III.1](Axionic-Alignment-III.1.md)–[III.4](Axionic-Alignment-III.4.md) deliberately excluded ethics, morality, and value prescriptions. This was not avoidance, but methodological necessity. Introducing ethics earlier would have smuggled privileged semantics, human anchoring, or moral realism into a framework intended to remain valid under reflection and ontological change.
 
 At this point, however, a new question becomes unavoidable:
 
