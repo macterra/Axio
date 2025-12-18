@@ -5,7 +5,7 @@
 David McFadzean, ChatGPT 5.2<br>
 *Axio Project*
 
-## **Abstract**
+## Abstract
 
 Most contemporary approaches to AI alignment treat alignment as an optimization or control problem: selecting, learning, or enforcing the correct objective for an artificial agent. This paper argues that such approaches are categorically ill-posed for sufficiently capable, reflective, and embedded agents. Under conditions of ontological refinement—where an agent’s world model, self-model, and semantic primitives evolve—fixed goals, privileged values, and external anchors are not stable objects.
 
