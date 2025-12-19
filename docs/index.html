@@ -3542,7 +3542,7 @@
             searchResults.innerHTML = results.map(result => {
                 const post = result.item;
                 const isPaper = post.type === 'paper';
-                
+
                 // Format date for posts (papers don't have dates)
                 let dateHtml = '';
                 if (!isPaper && post.date) {

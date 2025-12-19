@@ -769,6 +769,13 @@ def main():
                 subtitle_match = re.search(r'^\*(.+?)\*\s*$', paper_content, re.MULTILINE)
                 subtitle = subtitle_match.group(1) if subtitle_match else ''
 
+                # Extract date (format: YYYY.MM.DD)
+                date_match = re.search(r'^(\d{4}\.\d{2}\.\d{2})\s*$', paper_content, re.MULTILINE)
+                date = ''
+                if date_match:
+                    # Convert YYYY.MM.DD to ISO format YYYY-MM-DD
+                    date = date_match.group(1).replace('.', '-') + 'T00:00:00.000Z'
+
                 # Clean markdown for search: remove formatting but keep text
                 text_content = paper_content
                 text_content = re.sub(r'\$\$.*?\$\$', '', text_content, flags=re.DOTALL)  # Remove display math
@@ -783,7 +790,7 @@ def main():
                     'id': f"papers/{paper_path.stem}",
                     'title': title,
                     'subtitle': subtitle,
-                    'date': '',  # Papers don't have dates
+                    'date': date,
                     'content': text_content,
                     'type': 'paper'
                 })
