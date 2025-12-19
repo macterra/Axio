@@ -19,7 +19,18 @@
         </header>
 
         <div class="search-container">
-            <input type="text" id="search-input" placeholder="Search posts..." autocomplete="off">
+            <input type="text" id="search-input" placeholder="Search posts and papers..." autocomplete="off">
+            <div style="margin-top: 8px;">
+                <label style="margin-right: 15px; font-size: 0.9em;">
+                    <input type="radio" name="search-filter" value="all" checked> All
+                </label>
+                <label style="margin-right: 15px; font-size: 0.9em;">
+                    <input type="radio" name="search-filter" value="posts"> Posts only
+                </label>
+                <label style="font-size: 0.9em;">
+                    <input type="radio" name="search-filter" value="papers"> Papers only
+                </label>
+            </div>
             <div id="search-results"></div>
         </div>
 
@@ -3488,34 +3499,69 @@
     </div>
 
     <script>
-        let fuse;
-        let allPosts = [];
+        let postsFuse, papersFuse;
+        let allPosts = [], allPapers = [];
+        let currentFilter = 'all';
 
-        // Load search index
-        fetch('search-index.json')
-            .then(response => response.json())
-            .then(data => {
-                allPosts = data;
-                fuse = new Fuse(data, {
-                    keys: [
-                        { name: 'title', weight: 2 },
-                        { name: 'subtitle', weight: 1.5 },
-                        { name: 'content', weight: 1 }
-                    ],
-                    threshold: 0.0,
-                    ignoreLocation: true,
-                    distance: 100000,
-                    includeScore: true,
-                    minMatchCharLength: 2,
-                    useExtendedSearch: false,
-                    findAllMatches: true
-                });
-            });
+        // Load both search indexes
+        Promise.all([
+            fetch('search-index.json').then(r => r.json()),
+            fetch('papers-index.json').then(r => r.json())
+        ]).then(([posts, papers]) => {
+            allPosts = posts;
+            allPapers = papers;
+            
+            const fuseConfig = {
+                keys: [
+                    { name: 'title', weight: 2 },
+                    { name: 'subtitle', weight: 1.5 },
+                    { name: 'content', weight: 1 }
+                ],
+                threshold: 0.3,
+                ignoreLocation: true,
+                distance: 100000,
+                includeScore: true,
+                minMatchCharLength: 2,
+                useExtendedSearch: false,
+                findAllMatches: true
+            };
+            
+            postsFuse = new Fuse(posts, fuseConfig);
+            papersFuse = new Fuse(papers, fuseConfig);
+        });
 
         const searchInput = document.getElementById('search-input');
         const searchResults = document.getElementById('search-results');
         const postList = document.getElementById('post-list');
         const postCount = document.getElementById('post-count');
+        const filterRadios = document.querySelectorAll('input[name="search-filter"]');
+        
+        // Update filter when radio buttons change
+        filterRadios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                currentFilter = e.target.value;
+                // Re-run search if there's a query
+                if (searchInput.value.trim().length >= 2) {
+                    searchInput.dispatchEvent(new Event('input'));
+                }
+            });
+        });
+
+        function performSearch(query) {
+            let results = [];
+            
+            if (currentFilter === 'all') {
+                const postResults = postsFuse ? postsFuse.search(query) : [];
+                const paperResults = papersFuse ? papersFuse.search(query) : [];
+                results = [...postResults, ...paperResults].sort((a, b) => a.score - b.score);
+            } else if (currentFilter === 'posts') {
+                results = postsFuse ? postsFuse.search(query) : [];
+            } else if (currentFilter === 'papers') {
+                results = papersFuse ? papersFuse.search(query) : [];
+            }
+            
+            return results;
+        }
 
         searchInput.addEventListener('input', (e) => {
             const query = e.target.value.trim();
@@ -3527,7 +3573,7 @@
                 return;
             }
 
-            const results = fuse.search(query);
+            const results = performSearch(query);
 
             if (results.length === 0) {
                 searchResults.innerHTML = '<div class="no-results">No results found</div>';

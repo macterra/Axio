@@ -795,12 +795,27 @@ def main():
                     'type': 'paper'
                 })
 
-    # Generate search index (after papers are added)
-    print("5. Generating search index...")
-    search_index_path = docs_dir / 'search-index.json'
-    with open(search_index_path, 'w', encoding='utf-8') as f:
-        json.dump(search_index, f, ensure_ascii=False, indent=2)
-    print(f"   ✓ Created search index with {len(search_index)} items ({len([x for x in search_index if x.get('type') != 'paper'])} posts, {len([x for x in search_index if x.get('type') == 'paper'])} papers) ({search_index_path.stat().st_size // 1024}KB)")
+    # Generate search indexes (after papers are added)
+    print("5. Generating search indexes...")
+    # Sort by date, newest first (empty dates go to end)
+    search_index.sort(key=lambda x: x.get('date', '') or '', reverse=True)
+
+    # Split into posts and papers
+    posts_index = [item for item in search_index if item.get('type') != 'paper']
+    papers_index = [item for item in search_index if item.get('type') == 'paper']
+
+    # Write posts index
+    posts_index_path = docs_dir / 'search-index.json'
+    with open(posts_index_path, 'w', encoding='utf-8') as f:
+        json.dump(posts_index, f, ensure_ascii=False, indent=2)
+
+    # Write papers index
+    papers_index_path = docs_dir / 'papers-index.json'
+    with open(papers_index_path, 'w', encoding='utf-8') as f:
+        json.dump(papers_index, f, ensure_ascii=False, indent=2)
+
+    print(f"   ✓ Created search-index.json with {len(posts_index)} posts ({posts_index_path.stat().st_size // 1024}KB)")
+    print(f"   ✓ Created papers-index.json with {len(papers_index)} papers ({papers_index_path.stat().st_size // 1024}KB)")
     print()
 
     # Generate sitemap
