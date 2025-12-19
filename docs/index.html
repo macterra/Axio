@@ -3510,7 +3510,7 @@
         ]).then(([posts, papers]) => {
             allPosts = posts;
             allPapers = papers;
-            
+
             const fuseConfig = {
                 keys: [
                     { name: 'title', weight: 2 },
@@ -3525,7 +3525,7 @@
                 useExtendedSearch: false,
                 findAllMatches: true
             };
-            
+
             postsFuse = new Fuse(posts, fuseConfig);
             papersFuse = new Fuse(papers, fuseConfig);
         });
@@ -3535,7 +3535,7 @@
         const postList = document.getElementById('post-list');
         const postCount = document.getElementById('post-count');
         const filterRadios = document.querySelectorAll('input[name="search-filter"]');
-        
+
         // Update filter when radio buttons change
         filterRadios.forEach(radio => {
             radio.addEventListener('change', (e) => {
@@ -3549,7 +3549,7 @@
 
         function performSearch(query) {
             let results = [];
-            
+
             if (currentFilter === 'all') {
                 const postResults = postsFuse ? postsFuse.search(query) : [];
                 const paperResults = papersFuse ? papersFuse.search(query) : [];
@@ -3559,7 +3559,7 @@
             } else if (currentFilter === 'papers') {
                 results = papersFuse ? papersFuse.search(query) : [];
             }
-            
+
             return results;
         }
 

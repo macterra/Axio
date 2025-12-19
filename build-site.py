@@ -430,6 +430,8 @@ def generate_papers_index(papers_metadata):
         }}
         .paper-entry h2 {{
             margin: 0 0 0.5em 0;
+            font-size: 1.1em;
+            font-family: 'Georgia', serif;
         }}
         .paper-entry h2 a {{
             text-decoration: none;
