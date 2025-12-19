@@ -154,7 +154,7 @@ def main():
             const results = fuse.search(query);
 
             if (results.length === 0) {
-                searchResults.innerHTML = '<div class="no-results">No posts found</div>';
+                searchResults.innerHTML = '<div class="no-results">No results found</div>';
                 postList.style.display = 'none';
                 postCount.textContent = '0';
                 return;
@@ -165,20 +165,31 @@ def main():
 
             searchResults.innerHTML = results.map(result => {
                 const post = result.item;
-                const date = new Date(post.date).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                });
+                const isPaper = post.type === 'paper';
+
+                // Format date for posts (papers don't have dates)
+                let dateHtml = '';
+                if (!isPaper && post.date) {
+                    const date = new Date(post.date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+                    dateHtml = `<div class="post-date">${date}</div>`;
+                }
 
                 // Create excerpt with highlighted match
                 let excerpt = post.content.substring(0, 200) + '...';
 
+                // Determine the correct link based on type
+                const link = isPaper ? post.id + '.html' : 'posts/' + post.id + '.html';
+                const typeLabel = isPaper ? '<span style="color: #888; font-size: 0.9em;">[Paper]</span> ' : '';
+
                 return `
                     <div class="search-result-item">
-                        <div class="post-date">${date}</div>
+                        ${dateHtml}
                         <h2 class="post-title">
-                            <a href="posts/${post.id}.html">${escapeHtml(post.title)}</a>
+                            ${typeLabel}<a href="${link}">${escapeHtml(post.title)}</a>
                         </h2>
                         ${post.subtitle ? `<div class="post-subtitle">${escapeHtml(post.subtitle)}</div>` : ''}
                         <div class="search-excerpt">${escapeHtml(excerpt)}</div>

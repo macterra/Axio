@@ -740,16 +740,8 @@ def main():
         print(f"   ℹ Skipped {files_skipped} unpublished post(s)")
     print()
 
-    # Generate search index
-    print("4. Generating search index...")
-    search_index_path = docs_dir / 'search-index.json'
-    with open(search_index_path, 'w', encoding='utf-8') as f:
-        json.dump(search_index, f, ensure_ascii=False, indent=2)
-    print(f"   ✓ Created search index with {len(search_index)} posts ({search_index_path.stat().st_size // 1024}KB)")
-    print()
-
     # Generate index.html in docs/
-    print("5. Generating index.html...")
+    print("4. Generating index.html...")
     os.system('python3 generate-index.py')
 
     # Move index.html to docs/
@@ -760,6 +752,49 @@ def main():
 
     # Process papers
     papers_count, papers_metadata = process_papers()
+
+    # Add papers to search index
+    papers_src_dir = Path('papers')
+    if papers_src_dir.exists():
+        for paper_path in papers_src_dir.glob('*.md'):
+            if paper_path.name.lower() != 'readme.md':
+                with open(paper_path, 'r', encoding='utf-8') as f:
+                    paper_content = f.read()
+
+                # Extract title
+                title_match = re.search(r'^#\s+(.+?)$', paper_content, re.MULTILINE)
+                title = title_match.group(1) if title_match else paper_path.stem
+
+                # Extract subtitle (italic text after title)
+                subtitle_match = re.search(r'^\*(.+?)\*\s*$', paper_content, re.MULTILINE)
+                subtitle = subtitle_match.group(1) if subtitle_match else ''
+
+                # Clean markdown for search: remove formatting but keep text
+                text_content = paper_content
+                text_content = re.sub(r'\$\$.*?\$\$', '', text_content, flags=re.DOTALL)  # Remove display math
+                text_content = re.sub(r'\$[^$]+\$', '', text_content)  # Remove inline math
+                text_content = re.sub(r'\*\*([^*]+)\*\*', r'\1', text_content)  # Remove bold
+                text_content = re.sub(r'\*([^*]+)\*', r'\1', text_content)  # Remove italic
+                text_content = re.sub(r'`([^`]+)`', r'\1', text_content)  # Remove code
+                text_content = re.sub(r'#+\s+', '', text_content)  # Remove heading markers
+                text_content = re.sub(r'\s+', ' ', text_content).strip()  # Normalize whitespace
+
+                search_index.append({
+                    'id': f"papers/{paper_path.stem}",
+                    'title': title,
+                    'subtitle': subtitle,
+                    'date': '',  # Papers don't have dates
+                    'content': text_content,
+                    'type': 'paper'
+                })
+
+    # Generate search index (after papers are added)
+    print("5. Generating search index...")
+    search_index_path = docs_dir / 'search-index.json'
+    with open(search_index_path, 'w', encoding='utf-8') as f:
+        json.dump(search_index, f, ensure_ascii=False, indent=2)
+    print(f"   ✓ Created search index with {len(search_index)} items ({len([x for x in search_index if x.get('type') != 'paper'])} posts, {len([x for x in search_index if x.get('type') == 'paper'])} papers) ({search_index_path.stat().st_size // 1024}KB)")
+    print()
 
     # Generate sitemap
     print("7. Generating sitemap.xml...")
