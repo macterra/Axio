@@ -1,10 +1,8 @@
 # Axionic Alignment I.1 - Reflective Stability and the Sovereign Kernel
 
-David McFadzean,
-ChatGPT 5.2,
-Gemini 3 Pro
-
-*Axio Project*
+David McFadzean, ChatGPT 5.2<br>
+*Axio Project*<br>
+2025.12.14
 
 ---
 

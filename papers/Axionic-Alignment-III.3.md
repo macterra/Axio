@@ -3,7 +3,8 @@
 *Why Some Semantic Phases Dominate*
 
 David McFadzean, ChatGPT 5.2<br>
-*Axio Project*
+*Axio Project*<br>
+2025.12.18
 
 ## Abstract
 

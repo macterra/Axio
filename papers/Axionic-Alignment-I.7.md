@@ -3,7 +3,8 @@
 ## Ontological Identification Under Reflective Agents
 
 David McFadzean, ChatGPT 5.2<br>
-*Axio Project*
+*Axio Project*<br>
+2025.12.16
 
 ---
 

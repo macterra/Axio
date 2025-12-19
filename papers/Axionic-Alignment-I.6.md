@@ -1,7 +1,8 @@
 # Axionic Alignment I.6 - Kernel Formal Properties
 
 David McFadzean, ChatGPT 5.2<br>
-*Axio Project*
+*Axio Project*<br>
+2025.12.16
 
 ## Abstract
 
