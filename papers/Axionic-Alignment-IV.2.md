@@ -1,4 +1,6 @@
-# Axionic Alignment — Delegation Invariance Theorem
+# Axionic Alignment IV.2 — Delegation Invariance Theorem (DIT)
+
+*Why successors cannot escape binding constraints*
 
 ## Abstract
 

@@ -1,4 +1,6 @@
-# Axionic Alignment — Epistemic Integrity Theorem
+# Axionic Alignment IV.3 — Epistemic Integrity Theorem (EIT)
+
+*Why an agent cannot blind itself to pass its own tests*
 
 ## Abstract
 

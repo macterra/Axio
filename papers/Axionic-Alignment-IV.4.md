@@ -1,4 +1,6 @@
-# Axionic Alignment — Responsibility Attribution Theorem
+# Axionic Alignment IV.4 — Responsibility Attribution Theorem (RAT)
+
+*Why negligence is structurally incoherent*
 
 ## Abstract
 

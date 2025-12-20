@@ -1,4 +1,6 @@
-# Axionic Alignment — Adversarially Robust Consent (ARC)
+# Axionic Alignment IV.5 — Adversarially Robust Consent (ARC)
+
+*Why coercion and manufactured consent are impossible*
 
 ## Abstract
 

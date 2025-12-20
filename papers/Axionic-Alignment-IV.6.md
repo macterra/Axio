@@ -1,6 +1,6 @@
-# Axionic Alignment — Agenthood as a Fixed Point
+# Axionic Alignment IV.6 — Agenthood as a Fixed Point (AFP)
 
-### with a Sovereignty Criterion
+*Why standing cannot be revoked by intelligence*
 
 ## Abstract
 

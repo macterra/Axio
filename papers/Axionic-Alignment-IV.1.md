@@ -1,4 +1,6 @@
-# Axionic Alignment — Kernel Non‑Simulability
+# Axionic Alignment IV.1 — Kernel Non‑Simulability (KNS)
+
+*Why alignment cannot be simulated or behaviorally faked*
 
 ## Abstract
 
