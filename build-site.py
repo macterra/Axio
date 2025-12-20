@@ -382,25 +382,12 @@ def generate_papers_index(papers_metadata):
     """Generate an index.html for the papers directory"""
     papers_list_html = ""
 
-    for i, paper in enumerate(papers_metadata):
+    for paper in papers_metadata:
         title = paper['title']
         filename = paper['filename']
         abstract = paper.get('abstract', '')
-        abstract_full = paper.get('abstract_full', '')
 
-        # Check if abstract is truncated
-        is_truncated = abstract_full and len(abstract_full) > len(abstract)
-
-        if is_truncated:
-            abstract_html = f"""
-            <p class='paper-abstract'>
-                <span class='abstract-preview' id='preview-{i}'>{escape(abstract)}</span>
-                <span class='abstract-full' id='full-{i}' style='display:none;'>{escape(abstract_full)}</span>
-                <a href='#' class='expand-link' onclick='toggleAbstract({i}); return false;' id='toggle-{i}'>read more</a>
-            </p>
-            """
-        else:
-            abstract_html = f"<p class='paper-abstract'>{escape(abstract)}</p>" if abstract else ""
+        abstract_html = f"<p class='paper-abstract'>{escape(abstract)}</p>" if abstract else ""
 
         papers_list_html += f"""
         <div class="paper-entry">
@@ -440,33 +427,7 @@ def generate_papers_index(papers_metadata):
             color: #666;
             line-height: 1.6;
         }}
-        .expand-link {{
-            color: #0066cc;
-            text-decoration: none;
-            font-size: 0.9em;
-            margin-left: 0.5em;
-        }}
-        .expand-link:hover {{
-            text-decoration: underline;
-        }}
     </style>
-    <script>
-        function toggleAbstract(id) {{
-            const preview = document.getElementById('preview-' + id);
-            const full = document.getElementById('full-' + id);
-            const toggle = document.getElementById('toggle-' + id);
-
-            if (full.style.display === 'none') {{
-                preview.style.display = 'none';
-                full.style.display = 'inline';
-                toggle.textContent = 'read less';
-            }} else {{
-                preview.style.display = 'inline';
-                full.style.display = 'none';
-                toggle.textContent = 'read more';
-            }}
-        }}
-    </script>
 </head>
 <body>
     <div class="header-bar">
@@ -581,24 +542,18 @@ def process_papers():
         # Extract abstract (text after ## Abstract heading)
         abstract_match = re.search(r'^##\s+Abstract\s*$(.*?)^##', content, re.MULTILINE | re.DOTALL)
         abstract = ""
-        abstract_full = ""
         if abstract_match:
             abstract_text = abstract_match.group(1).strip()
             # Clean up the abstract: remove markdown formatting
             abstract_text = re.sub(r'\*\*([^*]+)\*\*', r'\1', abstract_text)  # Remove bold
             abstract_text = re.sub(r'\$[^$]+\$', '', abstract_text)  # Remove inline math
             abstract_text = ' '.join(abstract_text.split())  # Normalize whitespace
-            abstract_full = abstract_text
-            if len(abstract_text) > 500:
-                abstract = abstract_text[:497] + "..."
-            else:
-                abstract = abstract_text
+            abstract = abstract_text
 
         papers_metadata.append({
             'title': title,
             'filename': f"{paper_path.stem}.html",
-            'abstract': abstract,
-            'abstract_full': abstract_full
+            'abstract': abstract
         })
 
     # Sort papers by title
