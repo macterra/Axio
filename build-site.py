@@ -358,8 +358,7 @@ def process_paper_file(src_path, dest_path):
         }};
     </script>
 
-    <!-- Site Styles -->
-    <link rel="stylesheet" href="../style.css">
+    <!-- Paper Styles -->
     <link rel="stylesheet" href="../papers.css">
 </head>
 <body>
