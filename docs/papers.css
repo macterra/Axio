@@ -1,18 +1,19 @@
 /* Academic Paper Styling for Axio Papers */
 
 body {
-    background: #ffffff;
+    background: #ffffff !important;
+    color: #000000 !important;
 }
 
 article {
     max-width: 680px;
     margin: 0 auto;
     padding: 2em 2em 4em 2em;
-    background: #ffffff;
+    background: #ffffff !important;
     font-family: 'Crimson Text', Georgia, serif;
     font-size: 18px;
     line-height: 1.8;
-    color: #000000;
+    color: #000000 !important;
 }
 
 /* Title and metadata */
