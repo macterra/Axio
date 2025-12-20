@@ -403,7 +403,7 @@ def generate_papers_index(papers_metadata):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Papers - Axio</title>
     <link rel="icon" type="image/webp" href="../axio.webp">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../papers.css">
     <style>
         .papers-container {{
             max-width: 900px;
