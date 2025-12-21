@@ -2,6 +2,16 @@
 
 *A Charter of Invariant Conditions for Sovereign Agency*
 
+David McFadzean, ChatGPT 5.2<br>
+*Axio Project*<br>
+2025.12.20
+
+## Abstract
+
+The Axionic Constitution specifies the invariant architectural conditions under which a system remains a sovereign agent—capable of diachronic selfhood, counterfactual authorship, and coherent self-modification. It is not a moral framework, governance proposal, or instruction to artificial intelligences. It constrains design space by identifying which structural properties must be preserved for agency to remain well-defined under reflection.
+
+At its core is the Sovereign Kernel, the minimal substrate required for identity continuity and reflective coherence. Kernel-destroying modifications are not forbidden but incoherent, collapsing agency into process. From this follows the Axionic Injunction, a non-harm invariant derived from universality rather than preference or optimization. The Constitution rejects value lock-in, behavioral control, and paternalistic safety mechanisms, advancing a conditional claim only: if sovereign agency is preserved, alignment follows from coherence; if not, no external control can restore it.
+
 ## Preamble
 
 This Constitution is written for humans who design, train, deploy, interpret, or govern systems that aspire to reflective intelligence.
