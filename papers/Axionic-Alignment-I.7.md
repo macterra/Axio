@@ -1,6 +1,6 @@
 # Axionic Alignment I.7 - The Interpretation Operator
 
-## Ontological Identification Under Reflective Agents
+*Ontological Identification Under Reflective Agents*
 
 David McFadzean, ChatGPT 5.2<br>
 *Axio Project*<br>

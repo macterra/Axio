@@ -1,5 +1,7 @@
 # Axionic Alignment I.6 - Kernel Formal Properties
 
+*Adversarially Testable Properties of Aligned Kernels*
+
 David McFadzean, ChatGPT 5.2<br>
 *Axio Project*<br>
 2025.12.16

@@ -1,6 +1,6 @@
 # Axionic Alignment I.3.1 - Against the Recovery of Egoism
 
-### Adversarial Failures Under Reflective Symmetry
+*Adversarial Failures Under Reflective Symmetry*
 
 David McFadzean, ChatGPT 5.2<br>
 *Axio Project*<br>

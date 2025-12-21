@@ -1,5 +1,7 @@
 # Axionic Alignment I.5 - Kernel Checklist
 
+*A Conformance Test for Reflective Agency*
+
 David McFadzean, ChatGPT 5.2<br>
 *Axio Project*<br>
 2025.12.16
