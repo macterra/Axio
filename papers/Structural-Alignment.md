@@ -1,6 +1,6 @@
-# Structural Alignment
+# Structural Alignment I — Agency Preservation Under Reflective Self-Modification
 
-*Agency Preservation Under Reflective Self-Modification*
+*Alignment as a Problem of Agency Coherence*
 
 David McFadzean, ChatGPT 5.2<br>
 *Axio Project*<br>
