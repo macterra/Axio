@@ -71,8 +71,7 @@ article h3 {
 /* Body text */
 article p {
     margin: 1.2em 0;
-    text-align: justify;
-    hyphens: auto;
+    text-align: left;
 }
 
 /* Abstract styling */
