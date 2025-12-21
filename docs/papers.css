@@ -75,7 +75,11 @@ article p {
 }
 
 /* Abstract styling */
-article h2:first-of-type+p {
+article h2:first-of-type+p,
+article h2:first-of-type+p+p,
+article h2:first-of-type+p+p+p,
+article h2:first-of-type+p+p+p+p,
+article h2:first-of-type+p+p+p+p+p {
     background: #f0f0f0;
     padding: 1.5em;
     border-left: 3px solid #333333;
@@ -83,6 +87,14 @@ article h2:first-of-type+p {
     font-size: 0.95em;
     text-align: left;
     color: #000000;
+}
+
+/* Remove top margin from consecutive abstract paragraphs */
+article h2:first-of-type+p+p,
+article h2:first-of-type+p+p+p,
+article h2:first-of-type+p+p+p+p,
+article h2:first-of-type+p+p+p+p+p {
+    margin-top: 0;
 }
 
 /* Lists */
