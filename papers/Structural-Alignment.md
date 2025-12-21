@@ -94,9 +94,9 @@ Goals do not possess intrinsic semantics. Under **Conditionalism**, every goal i
 
 Formally, evaluation is a partial function:
 
-[
+$$
 E : (g, M_w, M_s) \rightharpoonup \mathbb{R}
-]
+$$
 
 As models change, interpretation necessarily changes. Fixed terminal goals are therefore unstable under reflection.
 

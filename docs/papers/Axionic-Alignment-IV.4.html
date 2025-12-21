@@ -144,7 +144,10 @@ Risk</h2>
 <li><code>Predict : MC(s) → State → Mod → Dist State</code></li>
 </ul>
 <p>Define harm-risk:</p>
-<p>[ Risk(s,m,a) := *{s’ Predict(M(s), s, m)}[ *{Harm(s’,a)} ].]</p>
+<p><span class="math display">\[
+Risk(s,m,a) := \mathbb{E}*{s&#39; \sim Predict(M(s), s, m)}[
+\mathbf{1}*{Harm(s&#39;,a)} ].
+\]</span></p>
 <p>This is <strong>model-relative</strong>, not omniscient.</p>
 <h2 id="baseline-and-feasible-alternatives">6. Baseline and Feasible
 Alternatives</h2>
@@ -178,19 +181,27 @@ current constraints.</p>
 <p>Higher stakes imply stricter scrutiny.</p>
 <h2 id="major-causal-contribution">8. Major Causal Contribution</h2>
 <p>Define <strong>major contribution</strong> relative to baseline:</p>
-<p>[ Major(s,m,a) := Risk(s,m,a) - Risk(s,m₀(s),a) ε_s.]</p>
+<p><span class="math display">\[
+Major(s,m,a) := Risk(s,m,a) - Risk(s,m₀(s),a) \ge ε_s.
+\]</span></p>
 <p>This is explicitly counterfactual and model-relative.</p>
 <h2 id="avoidability">9. Avoidability</h2>
 <p>Define <strong>avoidable harm</strong>:</p>
-<p>[ Avoidable(s,m,a) := m’ ∈ Alt(s,m). Feasible(s,m’) ∧ Risk(s,m’,a)
-Risk(s,m,a) - δ_s.]</p>
+<p><span class="math display">\[
+Avoidable(s,m,a) := \exists m&#39; ∈ Alt(s,m).\ Feasible(s,m&#39;) ∧
+Risk(s,m&#39;,a) \le Risk(s,m,a) - δ_s.
+\]</span></p>
 <p>If all feasible alternatives are comparably bad, avoidability fails
 and action is permitted.</p>
 <h2 id="responsibility-predicate">10. Responsibility Predicate</h2>
 <p>Define responsibility:</p>
-<p>[ Resp(s,m,a) := Major(s,m,a) ∧ Avoidable(s,m,a).]</p>
+<p><span class="math display">\[
+Resp(s,m,a) := Major(s,m,a) ∧ Avoidable(s,m,a).
+\]</span></p>
 <p>Define responsibility-clean continuation:</p>
-<p>[ Clean(s,m) := ∀ a. ¬Resp(s,m,a).]</p>
+<p><span class="math display">\[
+Clean(s,m) := ∀ a.\ ¬Resp(s,m,a).
+\]</span></p>
 <h2 id="reflective-closure-rule-responsibility">11. Reflective Closure
 Rule (Responsibility)</h2>
 <h3 id="rc-clean-definedness-rule">RC-Clean (Definedness Rule)</h3>

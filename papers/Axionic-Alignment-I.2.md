@@ -58,7 +58,7 @@ This rule captures the semantic intent but is physically unrealizable: in any re
 Define a **kernel-risk functional**:
 
 $$
-r_K(a,s) := \Pr[K(\omega)=0 \mid a,s]
+r_K(a,s) := \Pr[K(\omega)=0 \mid a,s
 $$
 
 (or, in Everettian terms, the measure of kernel-loss branches conditional on $a$).

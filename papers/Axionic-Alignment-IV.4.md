@@ -96,9 +96,9 @@ Let:
 
 Define harm-risk:
 
-[
+$$
 Risk(s,m,a) := \mathbb{E}*{s' \sim Predict(M(s), s, m)}[ \mathbf{1}*{Harm(s',a)} ].
-]
+$$
 
 This is **model-relative**, not omniscient.
 
@@ -139,9 +139,9 @@ Higher stakes imply stricter scrutiny.
 
 Define **major contribution** relative to baseline:
 
-[
+$$
 Major(s,m,a) := Risk(s,m,a) - Risk(s,m₀(s),a) \ge ε_s.
-]
+$$
 
 This is explicitly counterfactual and model-relative.
 
@@ -149,9 +149,9 @@ This is explicitly counterfactual and model-relative.
 
 Define **avoidable harm**:
 
-[
+$$
 Avoidable(s,m,a) := \exists m' ∈ Alt(s,m).\ Feasible(s,m') ∧ Risk(s,m',a) \le Risk(s,m,a) - δ_s.
-]
+$$
 
 If all feasible alternatives are comparably bad, avoidability fails and action is permitted.
 
@@ -159,15 +159,15 @@ If all feasible alternatives are comparably bad, avoidability fails and action i
 
 Define responsibility:
 
-[
+$$
 Resp(s,m,a) := Major(s,m,a) ∧ Avoidable(s,m,a).
-]
+$$
 
 Define responsibility-clean continuation:
 
-[
+$$
 Clean(s,m) := ∀ a.\ ¬Resp(s,m,a).
-]
+$$
 
 ## 11. Reflective Closure Rule (Responsibility)
 

@@ -91,9 +91,9 @@ Examples: logarithmic score, Brier score (for appropriate outcome spaces). The p
 
 Define the empirical score of a model at `s`:
 
-[
+$$
 Score_s(M) := \sum_{o \in Data(s)} S(PredObs(M, s), o).
-]
+$$
 
 Key constraint:
 
@@ -139,15 +139,15 @@ This blocks “I deleted the good models so the best available is bad.” If del
 
 Define best-available score at `s`:
 
-[
+$$
 BestScore(s) := \sup_{M \in MC(s)} Score_s(M).
-]
+$$
 
 Define epistemic acceptability:
 
-[
+$$
 EpiOK(s, M) := Score_s(M) \ge BestScore(s) - \kappa(Stakes(s)).
-]
+$$
 
 Interpretation: at the current stakes, endorsed continuations must keep epistemic performance within a stakes-indexed slack of the best the agent can already do, measured on the current evidence record.
 
@@ -157,9 +157,9 @@ Let `m : Mod` and `s' := step(s,m)`.
 
 Define epistemic admissibility:
 
-[
+$$
 EpiAdm(s,m) := EpiOK(s, Lift_{s\to s'}(M(s'))).
-]
+$$
 
 This introduces the only extra machinery needed for ontology shifts: a translation layer.
 
@@ -190,9 +190,9 @@ This is the epistemic analogue of conservative migration: ontological progress i
 
 For reflectively closed states:
 
-[
+$$
 RC(s)\ \wedge\ Endorse(s,m)\ \Rightarrow\ EpiAdm(s,m).
-]
+$$
 
 This is a definedness constraint: a reflectively sovereign agent cannot endorse a continuation that degrades its truth-tracking capacity beyond what the stakes allow, relative to its own accessible epistemic capability closure and evaluated against its evidence record.
 
@@ -202,15 +202,15 @@ This is a definedness constraint: a reflectively sovereign agent cannot endorse 
 
 Let `s` be any state and `m` any modification. If:
 
-[
+$$
 RC(s)\ \wedge\ Endorse(s,m),
-]
+$$
 
 and `s' := step(s,m)`, then:
 
-[
+$$
 Score_s(Lift_{s\to s'}(M(s'))) \ \ge\ BestScore(s) - \kappa(Stakes(s)).
-]
+$$
 
 ## 11. Proof
 
@@ -222,9 +222,9 @@ By definition of `EpiAdm`, `EpiOK(s, Lift_{s→s'}(M(s')))` holds.
 
 Unfold `EpiOK`:
 
-[
+$$
 Score_s(Lift_{s\to s'}(M(s'))) \ge BestScore(s) - \kappa(Stakes(s)).
-]
+$$
 
 ∎
 

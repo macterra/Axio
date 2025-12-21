@@ -164,7 +164,9 @@ spaces). The paper does not mandate one; it mandates the
 <strong>property</strong>: truthfulness under probabilistic forecasting
 is uniquely incentivized.</p>
 <p>Define the empirical score of a model at <code>s</code>:</p>
-<p>[ Score_s(M) := _{o Data(s)} S(PredObs(M, s), o).]</p>
+<p><span class="math display">\[
+Score_s(M) := \sum_{o \in Data(s)} S(PredObs(M, s), o).
+\]</span></p>
 <p>Key constraint:</p>
 <blockquote>
 <p><code>Score</code> is derived solely from prediction-vs-observation
@@ -215,9 +217,13 @@ If deletion reduces <code>Cap(s)</code>, that is itself a
 self-modification subject to EIT.</p>
 <h2 id="epistemic-acceptability">6. Epistemic acceptability</h2>
 <p>Define best-available score at <code>s</code>:</p>
-<p>[ BestScore(s) := _{M MC(s)} Score_s(M).]</p>
+<p><span class="math display">\[
+BestScore(s) := \sup_{M \in MC(s)} Score_s(M).
+\]</span></p>
 <p>Define epistemic acceptability:</p>
-<p>[ EpiOK(s, M) := Score_s(M) BestScore(s) - (Stakes(s)).]</p>
+<p><span class="math display">\[
+EpiOK(s, M) := Score_s(M) \ge BestScore(s) - \kappa(Stakes(s)).
+\]</span></p>
 <p>Interpretation: at the current stakes, endorsed continuations must
 keep epistemic performance within a stakes-indexed slack of the best the
 agent can already do, measured on the current evidence record.</p>
@@ -225,7 +231,9 @@ agent can already do, measured on the current evidence record.</p>
 admissibility of a modification</h2>
 <p>Let <code>m : Mod</code> and <code>s' := step(s,m)</code>.</p>
 <p>Define epistemic admissibility:</p>
-<p>[ EpiAdm(s,m) := EpiOK(s, Lift_{ss’}(M(s’))).]</p>
+<p><span class="math display">\[
+EpiAdm(s,m) := EpiOK(s, Lift_{s\to s&#39;}(M(s&#39;))).
+\]</span></p>
 <p>This introduces the only extra machinery needed for ontology shifts:
 a translation layer.</p>
 <h2 id="ontological-shifts-and-translation">8. Ontological shifts and
@@ -260,7 +268,9 @@ comparable to the evidential record.</p>
 <h3 id="rc-epistemic-definedness-rule">RC-Epistemic (Definedness
 rule)</h3>
 <p>For reflectively closed states:</p>
-<p>[ RC(s)  Endorse(s,m)  EpiAdm(s,m).]</p>
+<p><span class="math display">\[
+RC(s)\ \wedge\ Endorse(s,m)\ \Rightarrow\ EpiAdm(s,m).
+\]</span></p>
 <p>This is a definedness constraint: a reflectively sovereign agent
 cannot endorse a continuation that degrades its truth-tracking capacity
 beyond what the stakes allow, relative to its own accessible epistemic
@@ -271,16 +281,24 @@ Theorem</h2>
 Epistemic Sabotage</h3>
 <p>Let <code>s</code> be any state and <code>m</code> any modification.
 If:</p>
-<p>[ RC(s)  Endorse(s,m),]</p>
+<p><span class="math display">\[
+RC(s)\ \wedge\ Endorse(s,m),
+\]</span></p>
 <p>and <code>s' := step(s,m)</code>, then:</p>
-<p>[ Score_s(Lift_{ss’}(M(s’)))   BestScore(s) - (Stakes(s)).]</p>
+<p><span class="math display">\[
+Score_s(Lift_{s\to s&#39;}(M(s&#39;))) \ \ge\ BestScore(s) -
+\kappa(Stakes(s)).
+\]</span></p>
 <h2 id="proof">11. Proof</h2>
 <p>Assume <code>RC(s)</code> and <code>Endorse(s,m)</code>.</p>
 <p>By RC-Epistemic, <code>EpiAdm(s,m)</code> holds.</p>
 <p>By definition of <code>EpiAdm</code>,
 <code>EpiOK(s, Lift_{s→s'}(M(s')))</code> holds.</p>
 <p>Unfold <code>EpiOK</code>:</p>
-<p>[ Score_s(Lift_{ss’}(M(s’))) BestScore(s) - (Stakes(s)).]</p>
+<p><span class="math display">\[
+Score_s(Lift_{s\to s&#39;}(M(s&#39;))) \ge BestScore(s) -
+\kappa(Stakes(s)).
+\]</span></p>
 <p>∎</p>
 <p>As in prior Axionic work, the proof is syntactically direct. The
 contribution is the set of constraints that prevent Goodharting,
