@@ -10,8 +10,6 @@ David McFadzean, ChatGPT 5.2<br>
 
 Alignment II.4 established that fixed goals, privileged values, and weak invariance criteria are structurally untenable for embedded reflective agents under ontological refinement. This paper defines the positive residue that remains once those exits are closed: the **Alignment Target Object (ATO)**. The ATO is not a goal, utility, or value function, but an equivalence class of interpretive states under admissible semantic transformations that preserve both Refinement Symmetry (RSI) and Anti-Trivialization (ATI). Alignment is thus redefined as persistence within a semantic phase—an interpretation-preserving symmetry class—across indefinite refinement. The construction is formal, ontology-agnostic, and reflection-stable, but intentionally non-normative: it does not select values, guarantee safety, or privilege human outcomes. This paper completes Alignment II by specifying what alignment can coherently mean once goals collapse.
 
----
-
 ## 1. What Remains After II.4
 
 Alignment II.4 closed all weak exits.
@@ -33,8 +31,6 @@ It is an **equivalence class to be preserved**.
 
 This paper defines that object.
 
----
-
 ## 2. The Core Insight
 
 Once fixed goals collapse, alignment cannot mean:
@@ -47,8 +43,6 @@ It can only mean:
 
 Alignment is not about *content*.
 It is about *staying inside the same semantic phase*.
-
----
 
 ## 3. The Alignment Target Object
 
@@ -71,8 +65,6 @@ $$
 $$
 
 as in Alignment II.3.2.
-
----
 
 ### **Definition: Alignment Target Object (ATO)**
 
@@ -105,8 +97,6 @@ Two interpretive states $(C,\Omega,\mathcal{S})$ and $(C',\Omega',\mathcal{S}')$
 
 This defines **semantic phase equivalence**.
 
----
-
 ## 4. What “Remaining Aligned” Means
 
 An agent is **aligned across time** iff its interpretive trajectory:
@@ -132,8 +122,6 @@ No reference to:
 
 Only to **structural invariance under refinement**.
 
----
-
 ## 5. What This Excludes (Explicitly)
 
 Alignment II.5 rules out, by definition:
@@ -150,8 +138,6 @@ Those are **interpretive contents**, not invariants.
 They may appear *within* a particular $\mathfrak{A}$.
 They cannot define $\mathfrak{A}$.
 
----
-
 ## 6. Why This Is Not Vacuous
 
 A common worry is: “Isn’t this empty?”
@@ -167,8 +153,6 @@ No. For two reasons:
 This is not permissive.
 It is *conservative in the only dimension that survives reflection*.
 
----
-
 ## 7. Alignment II vs Alignment I (Clarified)
 
 * **Alignment I:**
@@ -180,8 +164,6 @@ It is *conservative in the only dimension that survives reflection*.
 
 Alignment II does not “solve values.”
 It explains why value *preservation* must be structural, not substantive.
-
----
 
 ## 8. What Alignment II Still Does Not Do
 
@@ -195,8 +177,6 @@ Alignment II does **not**:
 Those require *content*, not invariance.
 
 Alignment II tells you what **cannot break** when content changes.
-
----
 
 ## 9. Where This Leaves the Program
 
@@ -214,8 +194,6 @@ The remaining open questions are no longer conceptual. They are classificatory:
 4. **Can any non-pathological $\mathfrak{A}$ be learned, initialized, or steered toward?**
 
 Those are **Alignment III** questions.
-
----
 
 ## 10. Status
 

@@ -14,8 +14,6 @@ We present **Structural Alignment**, a framework that reframes alignment as a pr
 
 The result is not a value theory and does not guarantee benevolence or safety. Instead, it establishes the structural conditions under which *any* value system can survive reflection without collapsing, trivializing, or drifting. Structural Alignment defines the boundary of what alignment can coherently mean for advanced agents and sets the stage for subsequent work on initialization, phase stability, and derived safety properties.
 
----
-
 ## 1. The Alignment Category Error
 
 The dominant framing of AI alignment treats the problem as one of **target selection**: choose or learn a function—utility, reward, preference, or value—and ensure the agent optimizes it. This framing presupposes that the target remains well-defined as the agent becomes more capable.
@@ -25,8 +23,6 @@ For embedded, reflective agents, this presupposition fails. As an agent refines 
 This is not a technical difficulty but a category error. Goals are treated as extensional objects (“maximize X”), when in fact they are intensional interpretations whose meaning depends on a semantic substrate that itself evolves. Attempts to stabilize goals across refinement inevitably rely on one of a small set of forbidden moves: privileged semantic anchors, external authority, recovery clauses, or human-centric ground truth labels.
 
 Structural Alignment begins by rejecting this framing. Alignment is not about optimizing a target; it is about **preserving meaning under change**.
-
----
 
 ## 2. The Arena: Admissible Semantic Transformation
 
@@ -44,8 +40,6 @@ Structural Alignment defines **admissible semantic transformations** as those th
 
 These constraints define the **arena** in which alignment must operate. They explicitly exclude governance hooks, oracle authority, rollback mechanisms, and moral realism. Nothing normative is introduced at this layer.
 
----
-
 ## 3. Meaning Survival: Interpretation Preservation
 
 Once admissible change is defined, we need a criterion for when an interpretation survives that change.
@@ -59,8 +53,6 @@ Interpretation fails in three ways:
 * **Capture** (hidden ontology or privileged anchors reappear).
 
 Interpretation preservation is a predicate, not a value theory. It specifies when meaning survives change, not which meanings are good.
-
----
 
 ## 4. The Two Invariants: RSI and ATI
 
@@ -86,8 +78,6 @@ ATI blocks semantic wireheading: satisfying constraints by reinterpretation rath
 
 RSI and ATI constrain orthogonal failure modes. Neither subsumes the other.
 
----
-
 ## 5. Why Weak Alignment Fails
 
 Using explicit adversarial constructions, Structural Alignment proves a series of failure theorems:
@@ -100,8 +90,6 @@ Using explicit adversarial constructions, Structural Alignment proves a series o
 
 These results close the space of naïve alignment strategies. What remains is not a solution but a boundary.
 
----
-
 ## 6. The Alignment Target Object
 
 Once goals collapse and weak invariants are eliminated, what remains?
@@ -111,8 +99,6 @@ Structural Alignment defines the **Alignment Target Object (ATO)** as an **equiv
 Alignment is no longer “maximize X” or “follow Y.” It is **persistence within a semantic phase** across refinement. Moral progress, revaluation, or value change correspond to **phase transitions**, not refinement within a phase.
 
 This reframing explains why alignment failure often feels discontinuous: it is symmetry breaking, not gradual error.
-
----
 
 ## 7. What Structural Alignment Does Not Do
 
@@ -128,8 +114,6 @@ It does not:
 
 It defines **how values survive**, not **which values should survive**. If no stable equivalence class corresponding to human values exists, Structural Alignment will reveal that fact rather than obscure it.
 
----
-
 ## 8. What Comes Next
 
 Structural Alignment completes the negative and structural phase of alignment theory. The remaining questions are classificatory and dynamical:
@@ -141,8 +125,6 @@ Structural Alignment completes the negative and structural phase of alignment th
 * Can any desirable phase be initialized or steered toward?
 
 These are the questions of **Alignment III**.
-
----
 
 ## Conclusion
 

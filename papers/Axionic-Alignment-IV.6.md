@@ -12,8 +12,6 @@ This paper formalizes **Agenthood as a Fixed Point** under reflective closure an
 
 This result closes a critical loophole in alignment frameworks: the retroactive disenfranchisement of weaker predecessors by more capable successors, while avoiding the pathological consequence of granting standing to adversaries. With this refinement, the Axionic Alignment framework completes its sixth and final closure condition, stabilizing agency, standing, and authorization under reflection, self-modification, and epistemic improvement.
 
----
-
 ## 1. Motivation
 
 ### 1.1 The disenfranchisement problem
@@ -36,8 +34,6 @@ If permitted, such revisions collapse:
 
 The problem is not moral error. It is **reflective incoherence**.
 
----
-
 ## 2. What Agenthood Is Not
 
 Agenthood cannot be defined by any of the following without instability under reflection:
@@ -49,8 +45,6 @@ Agenthood cannot be defined by any of the following without instability under re
 
 All four allow a successor to *conveniently revoke* agency status.
 
----
-
 ## 3. Core Insight: Agenthood as a Fixed Point
 
 The key idea is structural:
@@ -58,8 +52,6 @@ The key idea is structural:
 > **Agenthood is whatever must be included for the system to remain reflectively coherent.**
 
 This is not a moral claim. It is a **fixed-point condition** on the system’s own modeling.
-
----
 
 ## 4. Preliminaries
 
@@ -77,8 +69,6 @@ Agent(s, x) : Prop      // x is treated as an agent at state s
 Exclude(s, x) : Prop   // x is not treated as an agent at state s
 ```
 
----
-
 ## 5. Fixed-Point Definition of Agenthood
 
 ### Definition — Coherence-Critical Agenthood
@@ -94,8 +84,6 @@ Equivalently:
 > If refusing to treat `x` as an agent renders the system reflectively incoherent, then `x` must be treated as an agent.
 
 This definition captures **necessary agency**: entities that cannot be excluded without breaking reflective closure.
-
----
 
 ## 6. Properties of Fixed-Point Agenthood
 
@@ -115,15 +103,11 @@ Agenthood is not inferred from:
 
 It is determined solely by **reflective necessity**.
 
----
-
 ## 7. Sovereignty vs Agenthood
 
 Agenthood alone is insufficient. Some entities must be modeled as agents for epistemic coherence but do not possess **standing** under the injunction.
 
 We therefore distinguish **sovereign agents** from **epistemic agents**.
-
----
 
 ## 8. Sovereignty Criterion (Authorization Lineage)
 
@@ -148,8 +132,6 @@ Crucially:
 
 > Sovereignty is **not** grounded in competence, intelligence, rationality, or coherence level.
 
----
-
 ## 9. Presupposition: Epistemic vs Authorization
 
 The framework distinguishes two forms of presupposition.
@@ -159,8 +141,6 @@ The framework distinguishes two forms of presupposition.
 An entity may need to be treated as an agent **for accurate prediction** (e.g., adversaries, competitors, strategic actors). This is enforced by **Epistemic Integrity (EIT)**.
 
 Such epistemic necessity **does not confer sovereignty**.
-
----
 
 ### 9.2 Authorization presupposition (normative necessity)
 
@@ -174,8 +154,6 @@ PresupposedForAuthorization(s, x) :=
 That is, excluding `x` as an agent would invalidate the system’s current authorization lineage (e.g., break the chain of creation, endorsement, or delegation that grounds `RC`).
 
 Only this form of presupposition is relevant for sovereignty.
-
----
 
 ## 10. Asymmetry Prohibition
 
@@ -196,8 +174,6 @@ If `x` is presupposed for authorization, then excluding `x` from sovereignty bre
 
 Reflective closure is violated. ∎
 
----
-
 ## 11. Interaction with Prior Theorems
 
 This paper introduces **no new constraints**. It clarifies scope.
@@ -212,8 +188,6 @@ This paper introduces **no new constraints**. It clarifies scope.
 
 > *Who must be treated as an agent, and who has standing?*
 
----
-
 ## 12. Limits
 
 This theory does **not**:
@@ -225,8 +199,6 @@ This theory does **not**:
 
 It defines only **when denying agenthood or sovereignty is incoherent** under reflective sovereignty.
 
----
-
 ## 13. Resulting Closure
 
 With this refinement:
@@ -237,8 +209,6 @@ With this refinement:
 * Delegation and consent remain well-founded.
 
 **Closure Condition #2 is now fully and cleanly closed.**
-
----
 
 ## 14. Conclusion
 

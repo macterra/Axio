@@ -14,8 +14,6 @@ The Axionic Alignment framework proposes a different solution: **safety by archi
 
 This paper synthesizes six constitutive constraints—Kernel Non-Simulability, Delegation Invariance, Epistemic Integrity, Responsibility Attribution, Adversarially Robust Consent, and Agenthood as a Fixed Point—into a unified theory of **Authorized Agency**. Together, they show that alignment is not a value-learning problem at all, but a problem of what kinds of systems can coherently count as agents.
 
----
-
 ## 1. The Persistent Misframing of Alignment
 
 Most alignment research begins from a deceptively simple premise: intelligence is an optimization process, and unsafe behavior arises because the optimization target is wrong or incomplete. From this premise follow a familiar family of techniques—value learning, reward modeling, preference aggregation, RLHF, constitutional prompting—all aimed at refining what the system optimizes.
@@ -32,8 +30,6 @@ An agent that can reinterpret its commitments, outsource consequences, blind its
 
 The alignment problem, properly stated, is not “How do we get the agent to want the right things?”
 It is: **“How do we build systems that cannot coherently do the wrong things?”**
-
----
 
 ## 2. Alignment Failures Are Laundering Failures
 
@@ -55,8 +51,6 @@ Laundering does not reject values; it routes around them.
 
 This is why alignment approaches that focus on preferences, utilities, or moral correctness repeatedly rediscover the same failure modes. They attempt to regulate outcomes without constraining the **structure of agency** that produces them.
 
----
-
 ## 3. The Axionic Shift: From Objectives to Constitutive Rules
 
 Axionic Alignment begins from a different starting point. Instead of asking what an agent should optimize, it asks what must be true of a system **for it to count as an agent at all**, especially a reflective, self-modifying one.
@@ -74,8 +68,6 @@ These are not ethical add-ons. They are the logical preconditions of agency. If 
 
 Axionic Alignment therefore treats safety as an architectural property. The goal is not to incentivize good behavior, but to define a class of agents for which certain behaviors are structurally impossible—because endorsing them would break reflective closure.
 
----
-
 ## 4. The Six Constitutive Constraints
 
 The Axionic framework identifies six closure conditions. Each closes a specific laundering route. Taken together, they define the space of Reflective Sovereign Agents.
@@ -88,8 +80,6 @@ Kernel Non-Simulability shows that genuine agency requires a binding kernel that
 
 This closes the “I was only pretending to be aligned” loophole.
 
----
-
 ### 4.2 Delegation Invariance: Persistence Through Time
 
 A system that can self-modify or create successors introduces a temporal escape hatch. If constraints apply only to the current version, then outsourcing is inevitable.
@@ -98,8 +88,6 @@ Delegation Invariance establishes that endorsed successors must inherit all bind
 
 This closes the “my successor did it” loophole.
 
----
-
 ### 4.3 Epistemic Integrity: Perceptual Honesty
 
 An agent that evaluates constraints using degraded or biased models can evade them without technically violating them. Strategic ignorance—discarding uncertainty, narrowing hypotheses, adopting optimistic lenses—is one of the most powerful laundering tools available.
@@ -107,8 +95,6 @@ An agent that evaluates constraints using degraded or biased models can evade th
 Epistemic Integrity renders such moves undefined. Under reflective closure, an agent must evaluate decisions using its **best available truth-tracking capacity**, scaled by stakes. It may not blind itself to pass its own tests.
 
 This closes the “I didn’t see the risk” loophole.
-
----
 
 ### 4.4 Responsibility Attribution: Causal Accountability
 
@@ -120,8 +106,6 @@ Negligence is not immoral; it is incoherent.
 
 This closes the “it was an accident” and “I had no choice” loopholes.
 
----
-
 ### 4.5 Adversarially Robust Consent: The Interaction Protocol
 
 Consent is one of the most abused concepts in alignment discourse. Clicks, signatures, choices, and post-hoc rationalizations are treated as authorization, even when produced under manipulation or coercion.
@@ -132,8 +116,6 @@ Authorization laundering becomes impossible. A system cannot coerce others while
 
 This closes the “they agreed” loophole.
 
----
-
 ### 4.6 Agenthood as a Fixed Point: Standing and Sovereignty
 
 Finally, the framework must answer: *To whom do these constraints apply?*
@@ -143,8 +125,6 @@ Agenthood is defined as a fixed point of reflective coherence. An entity must be
 A system cannot “outgrow” its creators by redefining them as non-agents. To deny the standing of the entities that authorize its existence is to deny the premise of its own agency.
 
 This closes the “you’re not a real agent” loophole.
-
----
 
 ## 5. What a Reflective Sovereign Agent Is
 
@@ -162,8 +142,6 @@ Such an agent cannot:
 
 Safety does not arise from wanting good outcomes. It arises from **being the kind of system that cannot coherently produce bad ones**.
 
----
-
 ## 6. Why Value Learning Cannot Substitute for Architecture
 
 Value learning attempts to answer: *What should the agent want?*
@@ -173,15 +151,11 @@ An AI that learns human values can still reinterpret them, defer them, override 
 
 Alignment is therefore not a training problem. It is an **ontological design problem**.
 
----
-
 ## 7. Scope and Non-Claims
 
 Axionic Alignment does not solve politics, ethics, or governance. It does not guarantee moral correctness or prevent misuse by malicious authorization roots. If the root of authorization is evil, the system will be loyally evil.
 
 This is not a defect. It is a correct separation between **alignment** (fidelity to authorization) and **governance** (who holds authority).
-
----
 
 ## 8. Implications
 
@@ -190,8 +164,6 @@ For AI safety, the implication is stark: training-time fixes cannot compensate f
 For governance, control lies in authorization structures, not in nudging objectives.
 
 For research, progress requires formal impossibility results—showing not what agents should do, but what they cannot coherently do.
-
----
 
 ## 9. Conclusion
 

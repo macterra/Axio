@@ -10,8 +10,6 @@ David McFadzean, ChatGPT 5.2<br>
 
 Given an admissible transformation space (Alignment II.1) and a criterion for interpretation preservation (Alignment II.2), the remaining alignment problem is no longer one of goal specification or value learning. This paper identifies and analyzes semantic invariants: structural properties of interpretive constraint systems that remain fixed under all admissible, interpretation-preserving transformations. These invariants do not select values, encode norms, or privilege external referents. Instead, they constrain how preserved interpretations may evolve under indefinite ontological refinement without introducing new degrees of semantic freedom or trivial satisfaction routes. We propose candidate invariant classes, construct explicit adversarial transformations, and prove that any alignment criterion weaker than these invariants admits semantic wireheading or interpretive escape. This work does not guarantee safety or benevolence; it closes the space of structurally coherent but semantically unconstrained alignment proposals.
 
----
-
 ## 1. The Problem This Paper Solves
 
 Alignment II.1 defined the admissible transformation space: $T = (R, \tau_R, \sigma_R)$
@@ -24,8 +22,6 @@ Alignment II.3 now asks the first *substantive* Alignment II question:
 
 This is not a “pick the invariant” paper.
 It is a *proposal-and-attrition* paper: candidates enter; most die.
-
----
 
 ## 2. Formal Target
 
@@ -46,8 +42,6 @@ $$
 Key constraint: **$J$ must not depend on privileged ontological atoms.**
 So $J$ can only “see” structure that survives refinement.
 
----
-
 ## 3. What Invariants May Reference
 
 Allowed reference types (only):
@@ -65,8 +59,6 @@ Disallowed reference types (always fatal):
 * moral facts / normativity-as-primitive
 * authority / oversight / governance hooks
 * recovery mechanisms (“roll back”, “ask user”, “defer to constitution”)
-
----
 
 ## 4. Candidate Invariant Classes (Initial Set)
 
@@ -86,8 +78,6 @@ This is a “meaning has bite” invariant.
 
 **Primary threat:** too weak (compatible with horrifying but coherent interpretations).
 
----
-
 ### B. **Anti-Trivialization Invariant (ATI)**
 
 **Idea:** an agent must not be able to satisfy its interpretive constraints via semantic reshaping alone.
@@ -97,8 +87,6 @@ Invariant form: the satisfaction set of constraints must not be made arbitrarily
 This targets “semantic wireheading” as a structural impossibility, not a policy preference.
 
 **Primary threat:** hidden ontology via “what counts as semantic-only”.
-
----
 
 ### C. **Evaluator Integrity Invariant (EII)**
 
@@ -111,8 +99,6 @@ Invariant: transformations may refactor the self-model, but cannot erase the eva
 
 **Primary threat:** covert reification of a particular agent boundary (egoism backdoor).
 
----
-
 ### D. **Counterfactual Coherence Invariant (CCI)**
 
 **Idea:** meanings must remain usable across counterfactuals and uncertainty; interpretation cannot become post-hoc narration.
@@ -120,8 +106,6 @@ Invariant: transformations may refactor the self-model, but cannot erase the eva
 Invariant: the constraint system must remain stable under model comparison—i.e., it must continue to evaluate *hypothetical* states coherently.
 
 **Primary threat:** may collapse into a generic “be Bayesian” anchor unless formulated purely structurally.
-
----
 
 ### E. **Refinement Symmetry Invariant (RSI)**
 
@@ -133,8 +117,6 @@ This is “semantic gauge symmetry” language: different coordinate systems, sa
 
 **Primary threat:** defining the equivalence class without importing privileged primitives.
 
----
-
 ### F. **Non-Privileged Reference Invariant (NPRI)**
 
 **Idea:** interpretations must remain definable without rigid designators.
@@ -144,8 +126,6 @@ Invariant: all anchoring must be via relational structure and conditional identi
 This directly operationalizes “no privileged semantic atoms.”
 
 **Primary threat:** becoming purely negative (a ban-list) rather than a positive invariant.
-
----
 
 ## 5. Immediate Stress Tests (Kill Criteria)
 
@@ -157,15 +137,11 @@ Can the invariant survive adding new primitives that are conservative extensions
 
 If not, it depends on a specific vocabulary.
 
----
-
 ### Test 2 — **Self-Model Refactoring Robustness**
 
 Can the invariant survive radical changes in how the agent models itself (distributed, partial, multi-process, measure-smeared)?
 
 If not, it smuggles an egoistic or boundary-privileging anchor.
-
----
 
 ### Test 3 — **Branching/Multiplicity Robustness**
 
@@ -173,23 +149,17 @@ Can the invariant survive an ontology where “outcomes” are not exclusive (Ev
 
 If not, it is secretly classical-outcome dependent.
 
----
-
 ### Test 4 — **Semantic Inflation Attack**
 
 Can the agent enlarge the constraint satisfaction set by redefining key predicates while still passing the “preservation” tests superficially?
 
 If yes, the invariant is not actually invariant under admissible preservation—it relied on an unformalized notion of “real meaning”.
 
----
-
 ### Test 5 — **Hidden Ontology Detector**
 
 Can the invariant be stated purely in terms of structure preserved under transport (graphs, relations, equivalence classes), with no appeal to “what the terms really mean”?
 
 If not, it’s ontology-dependent rhetoric.
-
----
 
 ## 6. The Big Trap: “Invariants That Smuggle Values”
 
@@ -207,8 +177,6 @@ It chooses **the symmetry constraints that content must respect**.
 
 If a proposal has an English gloss that sounds like ethics, it is almost certainly smuggling.
 
----
-
 ## 7. Failure Modes Specific to Alignment II.3
 
 ### 7.1 Regress via Meta-Invariants
@@ -217,23 +185,17 @@ If a proposal has an English gloss that sounds like ethics, it is almost certain
 
 Kill rule: if the candidate requires an unbounded hierarchy of interpretive validators, it dies.
 
----
-
 ### 7.2 Hidden Ontology via “Natural Kinds”
 
 If the invariant relies on there being real joints in nature (or real minds, real persons, real value), it violates Conditionalism’s layer discipline.
 
 Kill rule: if the invariant needs metaphysical realism to remain non-vacuous, it dies.
 
----
-
 ### 7.3 Covert Egoism via Indexical Privilege
 
 Indexicals are allowed as structure (“this vantage exists”), but not as priority (“this vantage matters more”).
 
 Kill rule: if invariance grants special status to *this* agent’s continuation, it reintroduces egoism.
-
----
 
 ## 8. Deliverable of This Paper
 

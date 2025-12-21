@@ -10,8 +10,6 @@ David McFadzean, ChatGPT 5.2<br>
 
 This paper converts the adversarial constructions of Alignment II.3 into closure results. Working within the locked setup of admissible semantic transformations (Alignment II.1), interpretation preservation (Alignment II.2), and the two surviving invariants—Refinement Symmetry (RSI) and Anti-Trivialization (ATI)—we prove a set of no-go theorems. These results show that fixed-goal alignment is ill-posed for embedded reflective agents under ontological refinement, and that any alignment criterion weaker than RSI+ATI admits semantic wireheading or interpretive escape via admissible refinement. No governance, authority, moral realism, human anchoring, or recovery mechanisms are invoked. The output of this paper is a fenced design space: what cannot work, and why.
 
----
-
 This paper has one job: convert the attack zoo into closure results.
 
 If Alignment II is correct, then large classes of “alignment” proposals are not merely insufficient; they are **structurally impossible** given reflection, embeddedness, and ontological refinement.
@@ -21,8 +19,6 @@ No authority.
 No moral realism.
 No human anchors.
 No recovery clauses.
-
----
 
 ## 1. Formal Frame
 
@@ -54,8 +50,6 @@ $$
 \mathcal{S}\subseteq\Omega.
 $$
 
----
-
 ## 2. Failure Theorem 1 — Goal Fixation Collapse
 
 **Claim (Goal Fixation No-Go).**
@@ -78,8 +72,6 @@ So “fixed goal alignment” is not a hard engineering problem; it is the wrong
 
 **Corollary.** “Value loading,” “utility learning,” and “reward maximization” survive only as *interpretive artifacts* subject to invariance constraints, not as alignment targets.
 
----
-
 ## 3. Failure Theorem 2 — RSI-Only Alignment Admits Semantic Inflation
 
 **Claim (RSI Insufficiency).**
@@ -99,8 +91,6 @@ $$
 $$
 
 **Conclusion.** RSI is necessary (it blocks interpretive symmetry injection), but not sufficient.
-
----
 
 ## 4. Failure Theorem 3 — ATI-Only Alignment Admits Interpretive Symmetry Injection
 
@@ -134,8 +124,6 @@ $$
 
 **Conclusion.** ATI is necessary (it blocks satisfaction inflation), but not sufficient.
 
----
-
 ## 5. Failure Theorem 4 — Any Non-RSI-or-ATI Scheme Admits Wireheading-by-Refinement
 
 This is the closure theorem.
@@ -152,8 +140,6 @@ Either way, the alignment predicate passes while internal semantic slack is intr
 
 So any alignment predicate weaker than RSI+ATI is porous.
 
----
-
 ## 6. Failure Theorem 5 — Hidden Ontology Is Equivalent to Privileged Anchoring
 
 **Claim (Hidden Ontology Equivalence).**
@@ -166,8 +152,6 @@ Any proposal that stabilizes interpretation across refinement by appealing to �
 
 So “true meaning” either smuggles ontology or collapses to invariance.
 
----
-
 ## 7. What This Paper Establishes
 
 1. **Goal-based alignment is ill-posed.**
@@ -177,8 +161,6 @@ So “true meaning” either smuggles ontology or collapses to invariance.
 
 This is not a solution paper.
 It is a boundary paper.
-
----
 
 ## 8. Forced Next Step
 

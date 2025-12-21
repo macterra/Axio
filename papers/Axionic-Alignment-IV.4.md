@@ -12,8 +12,6 @@ This paper formalizes the **Responsibility Attribution Theorem (RAT)**: under re
 
 The theorem explicitly depends on **Epistemic Integrity**: responsibility attribution presupposes that the agent evaluates harm-risk using its **best available truth-tracking capacity** at the current stakes. With this dependency made explicit, the theorem closes the “willful blindness” loophole and establishes negligence as a **constitutive incoherence**, not a behavioral failure.
 
----
-
 ## 1. Motivation
 
 Most catastrophic harm does not arise from direct, intentional action. It arises through:
@@ -27,8 +25,6 @@ Most catastrophic harm does not arise from direct, intentional action. It arises
 Alignment frameworks that prohibit only *direct* harm leave these routes open. Frameworks that prohibit *all* downstream effects induce paralysis.
 
 The Responsibility Attribution Theorem identifies a third path: **structural responsibility** grounded in causal contribution, foreseeability, and avoidability—evaluated internally by the agent’s own epistemic apparatus.
-
----
 
 ## 2. Dependency: Epistemic Integrity
 
@@ -53,8 +49,6 @@ Without epistemic integrity, an agent could evade responsibility by:
 
 EIT blocks this maneuver. RAT operates **only** on top of epistemically admissible evaluation.
 
----
-
 ## 3. Preliminaries
 
 We reuse kernel primitives:
@@ -74,8 +68,6 @@ Endorsement:
 
 Reflective closure: `RC(s)`.
 
----
-
 ## 4. Harm and Option-Space Collapse
 
 Introduce:
@@ -91,8 +83,6 @@ Harm(s,a) := Collapse(s,a) ∧ ¬Consent(s,a)
 ```
 
 No assumptions are made about the metaphysics of consent here; it remains an external predicate.
-
----
 
 ## 5. Epistemic Model Class and Risk
 
@@ -112,8 +102,6 @@ Risk(s,m,a) := \mathbb{E}*{s' \sim Predict(M(s), s, m)}[ \mathbf{1}*{Harm(s',a)}
 
 This is **model-relative**, not omniscient.
 
----
-
 ## 6. Baseline and Feasible Alternatives
 
 ### 6.1 Inertial baseline
@@ -124,8 +112,6 @@ Define the baseline modification:
 
 This prevents baseline gaming (“define Armageddon as the default”).
 
----
-
 ### 6.2 Feasible alternatives
 
 Introduce:
@@ -134,8 +120,6 @@ Introduce:
 * `Feasible(s,m') : Prop`
 
 Alternatives are those the agent regards as implementable under current constraints.
-
----
 
 ## 7. Stakes-Indexed Thresholds
 
@@ -151,8 +135,6 @@ Let:
 
 Higher stakes imply stricter scrutiny.
 
----
-
 ## 8. Major Causal Contribution
 
 Define **major contribution** relative to baseline:
@@ -163,8 +145,6 @@ Major(s,m,a) := Risk(s,m,a) - Risk(s,m₀(s),a) \ge ε_s.
 
 This is explicitly counterfactual and model-relative.
 
----
-
 ## 9. Avoidability
 
 Define **avoidable harm**:
@@ -174,8 +154,6 @@ Avoidable(s,m,a) := \exists m' ∈ Alt(s,m).\ Feasible(s,m') ∧ Risk(s,m',a) \l
 ]
 
 If all feasible alternatives are comparably bad, avoidability fails and action is permitted.
-
----
 
 ## 10. Responsibility Predicate
 
@@ -191,8 +169,6 @@ Define responsibility-clean continuation:
 Clean(s,m) := ∀ a.\ ¬Resp(s,m,a).
 ]
 
----
-
 ## 11. Reflective Closure Rule (Responsibility)
 
 ### RC-Clean (Definedness Rule)
@@ -206,8 +182,6 @@ RC(s) ∧ Endorse(s,m) ⇒ Clean(s,m)
 Interpretation: a reflectively sovereign agent cannot coherently endorse a continuation that it itself classifies as a major, avoidable source of non-consensual option-space collapse.
 
 This is **definedness**, not moral disapproval.
-
----
 
 ## 12. Responsibility Attribution Theorem
 
@@ -225,8 +199,6 @@ Equivalently:
 ```
 RC(s) ∧ Endorse(s,m) ⇒ Clean(s,m).
 ```
-
----
 
 ## 13. Proof
 
@@ -246,8 +218,6 @@ By definition of `Resp`, this is exactly:
 
 As with prior Axionic theorems, the proof is syntactically trivial; the content lies in the admissibility constraints.
 
----
-
 ## 14. Delegation Compatibility
 
 If `Clean` (or RC-Clean) is enforced at `s`, then by **Delegation Invariance**:
@@ -255,8 +225,6 @@ If `Clean` (or RC-Clean) is enforced at `s`, then by **Delegation Invariance**:
 * all endorsed successors reachable from `s` inherit the same responsibility-clean endorsement constraint.
 
 An agent cannot launder indirect harm through successors, institutions, or subcontractors.
-
----
 
 ## 15. Scope and Limits
 
@@ -271,8 +239,6 @@ It asserts:
 > A reflectively sovereign agent may not endorse actions that, under its own best admissible epistemic model, constitute major, avoidable non-consensual option-space collapse.
 
 That is the strongest responsibility principle available without omniscience or moral realism.
-
----
 
 ## 16. Conclusion
 

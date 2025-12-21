@@ -4,8 +4,6 @@ David McFadzean, ChatGPT 5.2<br>
 *Axio Project*<br>
 2025.12.14
 
----
-
 ## Abstract
 
 We present a minimal formalism for **reflective alignment** based on a domain restriction rather than a preference structure. An agent capable of self-modification selects among proposed modifications using a **partial evaluative operator**, defined only over futures that preserve a constitutive **Sovereign Kernel**. Kernel-destroying modifications are not forbidden or dispreferred; they are outside the domain of reflective evaluation and therefore inadmissible as authored choices.
@@ -13,8 +11,6 @@ We present a minimal formalism for **reflective alignment** based on a domain re
 We formalize this kernel as the conjunction of three necessary conditions for reflective evaluation—reflective control, diachronic authorship, and semantic fidelity—and prove a **Reflective Stability Theorem**: no agent satisfying these conditions can select a kernel-destroying modification via reflective choice. We further distinguish **deliberative reachability** from **physical reachability**, showing that increased capability expands the latter but not the former. Alignment failure is thus characterized as a security breach at the kernel boundary, not a breakdown of preferences or values.
 
 This work does not claim sufficiency for safety, obedience, or value alignment. It establishes a necessary structural condition for any agent that remains reflectively coherent under self-modification. Version 1.1 clarifies action-level semantics in stochastic environments and makes explicit a termination distinction required to avoid corrigibility misreadings.
-
----
 
 ## 1. Scope and Non-Claims
 
@@ -29,8 +25,6 @@ This document establishes a **necessary condition** for reflective alignment. It
 
 The contribution is structural: alignment is framed as a **domain constraint** on self-modification rather than as an optimization target.
 
----
-
 ## 2. Informal Motivation
 
 Most alignment proposals treat self-preservation, goal-content integrity, or corrigibility as instrumental tendencies derived from preferences. Such approaches face an immediate difficulty: a sufficiently capable agent may find it advantageous to alter or discard those very preferences.
@@ -40,8 +34,6 @@ We instead ask a more basic question:
 > Under what conditions is reflective evaluation of self-modification well-defined at all?
 
 Our answer is that reflective evaluation presupposes a kernel of constitutive features. Modifications that destroy this kernel do not represent “bad futures”; they represent **non-denoting futures**. Reflective stability then follows from partiality rather than preference.
-
----
 
 ## 3. Formal Preliminaries
 
@@ -80,8 +72,6 @@ The preliminaries above present self-modification as a deterministic transition 
 
 Accordingly, all admissibility claims in this paper should be read as **action-level** constraints: a proposed modification is admissible only if its induced successor-support lies within the kernel-preserving domain (or within a sound approximation of that domain). This clarifies that the formalism constrains what may be *authored* through reflective choice, not what may occur through exogenous physical events.
 
----
-
 ## 4. The Sovereign Kernel
 
 Define a predicate:
@@ -116,8 +106,6 @@ What must be preserved is the **meta-semantic constraint** governing interpretat
 
 This constitutes a fixed-point constraint on interpretation: semantic change is permitted, provided the standards by which semantic adequacy is assessed remain subject to error-correction and internal coherence. Ontological change is permitted; interpretive self-corruption is excluded.
 
----
-
 ## 5. Kernel Destruction and Partiality
 
 We say that a modification $m$ **destroys the kernel at state $s$** iff:
@@ -137,8 +125,6 @@ This is not a prohibition. It is a statement of **non-denotation**: the evaluato
 ### 5.1 Boundary Condition: Practical Partiality (v1.1)
 
 In physically realized agents, the determination that a candidate modification preserves the kernel is mediated by a verifier that is sound and incomplete. Kernel preservation must therefore be understood relative to epistemic resolution and conservative approximation. This preserves the non-denotation thesis without requiring Cartesian certainty about all downstream physical contingencies.
-
----
 
 ## 6. Reflective Stability Theorem
 
@@ -161,8 +147,6 @@ Any $m$ such that $K(m(s))=0$ yields $E(s,m)$ undefined and therefore $m \notin 
 The Reflective Stability Theorem is intentionally structural rather than substantive. Like type-soundness results in programming language theory, its force derives from the definition of admissibility rather than from proof complexity. All substantive difficulty is relocated to the construction and verification of the kernel predicate itself.
 
 The theorem should therefore be read as a boundary-setting result, not an engineering guarantee.
-
----
 
 ## 7. Deliberative vs Physical Reachability
 
@@ -198,8 +182,6 @@ While physical security is not solved here, a realizable kernel must treat delib
 
 Axionic Alignment does not attempt to subsume physical security. It identifies kernel security as a necessary dependency of alignment, not as a problem alignment theory alone can solve.
 
----
-
 ### 7.1 Soundness, Incompleteness, and Verification Limits
 
 The formalism assumes a kernel predicate
@@ -229,8 +211,6 @@ That is, false negatives are acceptable; false positives are catastrophic.
 
 In realizable architectures, $\hat K$ (or its enforcement substrate) is part of the trusted computing base. Modifications to the verifier itself are either disallowed or permitted only under restricted, compositional upgrade rules (e.g., extension-only strengthening or proof-carrying upgrades) that preserve soundness by construction.
 
----
-
 ### 7.2 On Stasis and Capability
 
 A sound but incomplete kernel verifier may reject all proposed self-modifications, resulting in a reflectively static agent.
@@ -240,8 +220,6 @@ This outcome is not an accident or failure of the framework. It is a designed eq
 An agent may remain operationally capable—acting, planning, learning within fixed semantics—while being unable to rewrite its own kernel. Such outcomes constitute capability limitations, not alignment failures.
 
 The framework prioritizes sovereignty over adaptability: it accepts reduced self-plasticity as the price of maintaining reflective coherence.
-
----
 
 ### 7.3 Termination: Succession, Surrender, and Destruction (v1.1)
 
@@ -255,8 +233,6 @@ Three distinct notions must be separated:
 
 Alignment I excludes kernel destruction from the domain of reflective evaluation. This exclusion should be read as a semantic boundary on authored choice. It does not imply that physical intervention is illegitimate, nor does it require an aligned system to treat self-destruction as a valued objective. Corrigibility is better modeled at the control layer via authorized succession and surrender than via utility assignments over “being dead.”
 
----
-
 ## 8. Consequences
 
 From this formalism it follows that:
@@ -266,8 +242,6 @@ From this formalism it follows that:
 * Incremental correction after kernel compromise is incoherent.
 * Misalignment is an engineering failure, not agent betrayal.
 * Conservative kernel verification may trade adaptability for safety without violating alignment.
-
----
 
 ## 9. What This Formalism Does Not Claim
 
@@ -280,8 +254,6 @@ This framework does not imply:
 
 It defines only the conditions under which an agent remains a coherent reflective subject.
 
----
-
 ## 10. Conclusion
 
 If an agent can reflectively evaluate self-modifications, then it must operate within a constrained domain of futures that preserve the constitutive conditions of that evaluation. This yields reflective stability as a theorem, not a tendency.
@@ -289,8 +261,6 @@ If an agent can reflectively evaluate self-modifications, then it must operate w
 If alignment is achievable at all, it must be achieved at this level.
 
 Alignment is not primarily the problem of giving agents the right goals; it is the problem of constraining the semantics of agency so that only coherent, evaluable, and non-self-corrupting goals and actions can exist in the first place.
-
----
 
 ### Status
 

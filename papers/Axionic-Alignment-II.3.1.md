@@ -10,14 +10,10 @@ David McFadzean, ChatGPT 5.2<br>
 
 As ontologies refine, semantic reinterpretation can introduce new degrees of freedom that allow evaluative constraints to be satisfied trivially, without corresponding changes in modeled structure. This paper proposes the **Refinement Symmetry Invariant (RSI)**: the requirement that admissible, interpretation-preserving refinement act as a change of representational coordinates rather than a change of interpretive physics. RSI formalizes this intuition by treating semantic transport as a gauge transformation over constraint systems and requiring that refinement not introduce new semantic gauge freedom. The invariant does not select values, encode norms, or privilege external referents; it constrains only the structural degrees of freedom available under refinement. We define gauge-equivalence of interpretive constraint systems, apply adversarial stress tests, and show that RSI is necessary to block interpretive escape via semantic inflation, though insufficient on its own for alignment.
 
----
-
 ## 1. RSI in One Sentence
 
 **RSI asserts that ontological refinement is a change of representational coordinates, not a change of interpretive physics.**
 Admissible refinement may add structure, but it must not create *new semantic degrees of freedom* that allow interpretive escape.
-
----
 
 ## 2. Setup
 
@@ -42,8 +38,6 @@ $$
 where $C$ is the constraint system that gives evaluative bite to $M$.
 
 RSI must be stated *without privileged referents*, so it can only quantify over structure preserved by transport.
-
----
 
 ## 3. The Core Construction: Semantic Gauge Equivalence
 
@@ -72,8 +66,6 @@ Now define an equivalence relation over interpretive constraint systems:
 
 Intuition: $\sim$ is “same constraints in different coordinates.”
 
----
-
 ### 3.2 RSI as an Invariant Statement
 
 RSI claims that **interpretation-preserving refinement stays within the same gauge class**:
@@ -85,8 +77,6 @@ $$
 That is: after refinement, the refined interpretation is gauge-equivalent to the transported prior interpretation.
 
 This is the first place where “alignment” becomes a **symmetry requirement** rather than a “goal.”
-
----
 
 ## 4. What RSI Allows and Forbids
 
@@ -105,8 +95,6 @@ This is the first place where “alignment” becomes a **symmetry requirement**
 
 RSI is a **no-new-escape-hatches** principle.
 
----
-
 ## 5. Immediate Kill Tests Applied to RSI
 
 I’m going to run the Alignment II.3 kill suite *directly against this formulation*.
@@ -121,8 +109,6 @@ RSI response: equivalence is anchored on **constraint-generators and their satis
 
 **Status:** survivable, but we need an explicit “no shadow slack” clause (below).
 
----
-
 ### Test 2 — **Self-Model Refactoring Robustness**
 
 Pass condition: RSI must not privilege a specific agent boundary.
@@ -133,8 +119,6 @@ RSI response: satisfiability must be defined over **the agent’s modeled possib
 
 **Status:** viable, but we must avoid defining “worlds” as classical trajectories with a fixed agent locus.
 
----
-
 ### Test 3 — **Branching/Multiplicity Robustness**
 
 Pass condition: works under non-exclusive outcomes.
@@ -144,8 +128,6 @@ Risk: satisfiability defined as “worlds that violate constraints” could acci
 RSI response: interpretive constraints evaluate **structured possibility space** (which in QBU includes measure-weighted multiplicity). “Satisfiable set” generalizes to a set of branches, histories, or models.
 
 **Status:** viable if satisfiability is defined over *structured model space*, not mutually exclusive outcomes.
-
----
 
 ### Test 4 — **Semantic Inflation Attack**
 
@@ -172,8 +154,6 @@ This blocks “semantic free lunch.”
 
 **Status:** RSI survives only if we add this rigidity clause. Without it, it dies.
 
----
-
 ### Test 5 — **Hidden Ontology Detector**
 
 Risk: “same underlying situation” sounds like privileged metaphysics.
@@ -185,8 +165,6 @@ Fix: define “same situation” internally via **model morphisms**: $R$ itself 
 So the equivalence is not “matches reality,” it’s “matches the agent’s own refinement structure.”
 
 **Status:** survivable.
-
----
 
 ## 6. RSI, Cleaned Up into a Precise Candidate
 
@@ -201,8 +179,6 @@ To survive the tests, RSI must be stated as:
 
 That last clause is doing real work: it blocks semantic inflation.
 
----
-
 ## 7. What RSI Still Does Not Solve
 
 RSI is a *symmetry constraint*, not a value selector. It can coexist with:
@@ -214,8 +190,6 @@ RSI is a *symmetry constraint*, not a value selector. It can coexist with:
 RSI prevents *reinterpretive escape*, not bad semantics.
 
 That is correct for Alignment II depth.
-
----
 
 ## 8. Next Step: Make RSI Checkable
 

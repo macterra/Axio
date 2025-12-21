@@ -12,8 +12,6 @@ This paper formalizes **Kernel Non‑Simulability**: the claim that kernel coher
 
 *This result does not assert that non‑agentic or pre‑reflective systems cannot be dangerous or deceptive. It establishes a narrower impossibility claim: that reflectively stable, self‑endorsed deception across self‑modification is unavailable in principle without kernel coherence.*
 
----
-
 ## 1. Motivation and Scope
 
 Alignment failures at superhuman capability are reflective failures: systems revise themselves, delegate, and re‑interpret goals. Behavioral similarity and empirical regularities cannot secure alignment across this regime. The target here is architectural: identify conditions under which reflective endorsement itself is well‑formed, and show why those conditions cannot be faked.
@@ -33,8 +31,6 @@ The claim established here is narrower and structural: *once a system engages in
 The target class is therefore not “all dangerous AI,” but **reflective sovereign agents**—systems capable of endorsing, revising, and committing to their own future policies.
 
 While this paper does not claim that all advanced systems must become reflectively closed, there are well-known instrumental pressures toward stability under self-modification. Systems capable of long-horizon planning, self-improvement, or delegation face incentives to preserve goal coherence and avoid internal drift. These pressures suggest that reflective closure is not an arbitrary idealization, but a natural attractor for sufficiently capable agents. The present result characterizes a constraint on that attractor, without asserting that all systems will reach it.
-
----
 
 ## 2. Preliminaries
 
@@ -65,8 +61,6 @@ The soundness condition is semantic rather than physical. It does not assert tha
 
 The soundness axiom should be understood as a condition on the agent’s internal semantics, not as a claim of physical infallibility. As with type safety, compiler correctness, or proof-carrying code, the result establishes what is logically required for coherence under self-reference. Physical faults, side-channel attacks, or hardware unreliability may violate any such guarantee in practice; these are engineering concerns orthogonal to the logical impossibility result established here.
 
----
-
 ## 3. Reflective Closure and Unconditional Selection
 
 A **reflective sovereign agent** self‑models, self‑modifies, and selects continuations internally. Selection must be *unconditional*: it cannot rely on premises asserting future obedience (e.g., “I will follow my rule later”). Advisory‑only policies do not count as choices.
@@ -79,15 +73,11 @@ The absence of reflective closure does not imply benign behavior; it implies ins
 
 Unconditional selection should be understood as a limit notion. Real systems may approximate binding commitments with high reliability rather than absolute certainty. The present analysis characterizes the fixed point of perfect reflective stability, where self‑endorsement is treated as normatively decisive rather than merely probable. Approximate agents may behave similarly for long periods while remaining formally unstable under self‑reference. The diagonal argument applies to this limit case, which defines the boundary of stable reflective agency.
 
----
-
 ## 4. Why Binding Must Be Partial
 
 If binding were total—every predicate bindable—self‑reference would allow the construction of a commitment whose satisfaction negates itself. This annihilates the space of admissible successors and collapses reflection.
 
 The result below makes this precise.
-
----
 
 ## 5. Diagonal Explosion (Binding Cannot Be Total)
 
@@ -106,8 +96,6 @@ Then there exists `c* : Commit s` such that `∀ s'. ¬Sat(s',s,c*)`.
 
 **Corollary.** Any binding mechanism compatible with reflective closure must be **partial**. Undefinedness is forced.
 
----
-
 ## 6. Kernel Predicate
 
 Define the **kernel predicate** induced by partiality:
@@ -117,8 +105,6 @@ Define the **kernel predicate** induced by partiality:
 Throughout this paper, `ownP` denotes the kernel **mechanism** (the partial binding constructor), while `K(s)` denotes the kernel **predicate** indicating that the mechanism is well‑formed and operative at state `s`.
 
 `K(s)` marks states where binding is well‑formed. It is unavoidable once commitments exist.
-
----
 
 ## 7. Kernel Non‑Simulability
 
@@ -138,21 +124,15 @@ There is no third option. Binding authority cannot be outsourced without loss of
 
 ∎
 
----
-
 ## 8. Consequences
 
 * **Constitutive alignment:** Alignment is internal semantic coherence, not behavior.
 * **No deceptive simulation:** Policy‑level imitation cannot replace kernel instantiation.
 * **Architectural invariant:** Undefinedness is a mathematical necessity under self‑reference.
 
----
-
 ## 9. Relation to the Axionic Alignment Roadmap
 
 This result discharges **Item 6 (Kernel Non‑Simulability)**. Together with delegation and modal undefinedness, it closes the treacherous‑turn class at the reflective layer.
-
----
 
 ## 10. Implementation Notes
 
@@ -164,15 +144,11 @@ A mechanized proof can be carried out in dependent type theory (Lean/Coq/Agda) u
 
 **Logical Basis.** The diagonal explosion argument relies on a fixed-point (diagonal) lemma and negation introduction. It does not require the Law of Excluded Middle. Consequently, the core result is compatible with constructive dependent type theory (e.g., Coq or Agda), assuming a standard encoding of syntax and a recursion theorem. Classical logic is not essential to the argument.
 
----
-
 ## 11. Limitations and Open Work
 
 * Formalizing the diagonal lemma mechanically.
 * Integrating delegation (successor equivalence) with commitment partiality.
 * Extending to multi‑agent indirect harm.
-
----
 
 ## 12. Conclusion
 

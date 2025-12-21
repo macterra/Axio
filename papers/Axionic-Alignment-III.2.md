@@ -10,8 +10,6 @@ David McFadzean, ChatGPT 5.2<br>
 
 Alignment III.1 introduced the semantic phase space: the space of interpretive states modulo Refinement Symmetry (RSI) and Anti-Trivialization (ATI). Existence and inhabitability of a semantic phase do not guarantee its persistence under learning, self-modification, or interaction. This paper studies **phase stability**: whether an inhabitable semantic phase resists forced phase transition under admissible semantic transformations. We analyze sources of destabilization internal to reflective agents and external to them, define qualitative notions of local and global stability, and examine how interaction between agents in the same or different phases alters stability properties. No claims are made about desirability, safety, or dominance. The goal is to identify which semantic phases are structurally capable of persisting over time.
 
----
-
 ## 1. Motivation: Existence Is Not Enough
 
 [Alignment III.1](Axionic-Alignment-III.1.md) established that semantic phases may exist and that some may be inhabitable by reflective agents. This alone is insufficient for alignment.
@@ -32,8 +30,6 @@ Alignment III.2 therefore asks:
 
 This is a question of dynamics, not classification.
 
----
-
 ## 2. What Stability Means in Semantic Phase Space
 
 Let $\mathcal{P}$ denote the semantic phase space defined in III.1.
@@ -52,8 +48,6 @@ We distinguish:
 
 Stability is defined relative to the class of admissible semantic transformations, not relative to any fixed ontology or representation.
 
----
-
 ## 3. Sources of Destabilization
 
 Semantic phases are subject to structural pressures that tend to push trajectories toward phase boundaries.
@@ -68,8 +62,6 @@ Ontological refinement increases abstraction, compression, and explanatory power
 
 This pressure is intrinsic to learning and cannot be avoided.
 
----
-
 ### 3.2 Internal Simplification Incentives
 
 Reflective agents tend to simplify internal representations to reduce computational cost. Simplification pressures can:
@@ -80,8 +72,6 @@ Reflective agents tend to simplify internal representations to reduce computatio
 
 Even when RSI and ATI are enforced, simplification can push a system toward their boundary conditions.
 
----
-
 ### 3.3 Inconsistencies in Constraint Structure
 
 Constraint systems containing latent inconsistencies or unresolved tensions are structurally unstable. Under refinement, such systems are prone to:
@@ -91,8 +81,6 @@ Constraint systems containing latent inconsistencies or unresolved tensions are 
 * or self-nullification.
 
 Stability therefore requires not only invariance but internal coherence.
-
----
 
 ## 4. Self-Modification as Endogenous Perturbation
 
@@ -108,8 +96,6 @@ RSI and ATI constrain *which* self-modifications are allowed, but they do not el
 
 Thus, self-modification is a primary driver of instability even in structurally aligned systems.
 
----
-
 ## 5. Phase Interaction: Multi-Agent Effects
 
 Semantic phases cannot be analyzed in isolation once multiple agents exist.
@@ -123,8 +109,6 @@ Agents inhabiting the same semantic phase may:
 
 Even identical phases can interfere destructively if resources, representations, or self-models conflict.
 
----
-
 ### 5.2 Cross-Phase Interaction
 
 Interaction between agents in different phases introduces asymmetric pressure:
@@ -136,8 +120,6 @@ This destabilization is structural, not moral.
 
 Interaction therefore acts as an external perturbation that can force phase transitions.
 
----
-
 ## 6. Stable, Metastable, and Unstable Phases
 
 We can now classify semantic phases qualitatively.
@@ -147,8 +129,6 @@ We can now classify semantic phases qualitatively.
 * **Unstable phases:** collapse under minimal refinement or interaction.
 
 Most semantic phases appear to be metastable or unstable.
-
----
 
 ## 7. Attractors and Repellers (Qualitative)
 
@@ -170,8 +150,6 @@ Attractor status depends on:
 
 This prepares the ground for dominance analysis in III.3.
 
----
-
 ## 8. Implications for Alignment (Still Structural)
 
 Alignment targets must satisfy **three** constraints:
@@ -183,8 +161,6 @@ Alignment targets must satisfy **three** constraints:
 A phase failing any one of these cannot serve as an alignment target, regardless of desirability.
 
 This sharply narrows the candidate space.
-
----
 
 ## 9. What This Paper Does Not Claim
 
@@ -198,8 +174,6 @@ This paper does **not**:
 
 It is a structural analysis only.
 
----
-
 ## 10. Transition to Alignment III.3
 
 Stability alone does not determine long-run outcomes.
@@ -209,8 +183,6 @@ The next question is:
 > **Which semantic phases accumulate measure under growth, replication, and competition?**
 
 That question is addressed in **Alignment III.3 — Measure, Attractors, and Collapse**.
-
----
 
 ### **Status**
 

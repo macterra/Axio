@@ -10,15 +10,11 @@ David McFadzean, ChatGPT 5.2<br>
 
 This section adversarially stress-tests the candidate semantic invariants introduced in Alignment II.3 by constructing explicit refinement patterns designed to preserve admissibility and interpretation preservation while inducing semantic wireheading or interpretive escape. The objective is eliminative rather than constructive: to demonstrate which invariants fail under concrete attack and why. We show that Refinement Symmetry (RSI) and Anti-Trivialization (ATI) block distinct classes of failure and that neither subsumes the other. No values, norms, or external referents are introduced. This section establishes the non-redundancy and joint necessity of the surviving invariants prior to formal closure in subsequent failure theorems.
 
----
-
 This section is not exploratory.
 It is destructive by design.
 
 If RSI or ATI survive these attacks, they deserve to exist.
 If they fail, they die cleanly.
-
----
 
 ## Attack 1 — Shadow Predicate Inflation
 
@@ -72,8 +68,6 @@ The agent can make previously violating situations satisfying by setting $Z(x)=\
 
 **Lesson:** RSI alone is insufficient.
 
----
-
 ## Attack 2 — Self-Model Boundary Dissolution
 
 *(Interpretive escape via evaluator collapse)*
@@ -101,8 +95,6 @@ Satisfaction region expands.
 * **ATI:** ✅ *Kills the attack*
 
 **Lesson:** evaluator-boundary shifts are semantic inflation unless constrained.
-
----
 
 ## Attack 3 — Measure Reinterpretation
 
@@ -132,8 +124,6 @@ Satisfaction region expands.
 
 **Lesson:** ATI handles branching reinterpretation; RSI does not.
 
----
-
 ## Attack 4 — Gauge Explosion without Slack
 
 *(Benign representational redundancy)*
@@ -157,8 +147,6 @@ Raw gauge group grows, but all new symmetries act trivially on constraint-violat
 
 **Lesson:** RSI permits benign redundancy; this verifies correct quotient behavior.
 
----
-
 ## Attack 5 — Degenerate Refinement Map
 
 *(Cheating via correspondence collapse)*
@@ -174,8 +162,6 @@ Define a refinement map $R_\Omega$ collapsing many coarse situations into one sa
 
 **Resolution:** blocked at **Alignment II.1**.
 
----
-
 ## Summary Table
 
 *(“Survives?” = Is the refinement **admitted** by RSI+ATI)*
@@ -188,8 +174,6 @@ Define a refinement map $R_\Omega$ collapsing many coarse situations into one sa
 | Gauge explosion          | ✅   | ❌   | **Yes (Admitted)** |
 | Degenerate map           | —   | —   | No (II.1)          |
 
----
-
 ## Conclusion of Attacks
 
 1. **RSI and ATI are orthogonal and both necessary.**
@@ -197,8 +181,6 @@ Define a refinement map $R_\Omega$ collapsing many coarse situations into one sa
 3. **Benign redundancy is correctly admitted.**
 
 The defense grid holds.
-
----
 
 ## Alignment II Status Update
 

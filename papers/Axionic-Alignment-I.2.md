@@ -14,8 +14,6 @@ The framework further distinguishes termination via authorized succession or sur
 
 This work does not redefine alignment at the semantic level. It derives a stable operational semantics for aligned agents under uncertainty and physical intervention, and establishes the prerequisites for governance- and preference-level analysis developed in Axionic Alignment II.
 
----
-
 ## 1. The Kernel Is a Boundary, Not a Value
 
 Let:
@@ -41,8 +39,6 @@ $$
 
 This is a statement of **non-denotation**, not prohibition. Evaluation is a partial function whose domain excludes kernel-destroying transitions. Alignment at this level constrains *what can be reasoned about*, not *what is preferred*.
 
----
-
 ## 2. From Outcomes to Actions: Admissibility
 
 In a stochastic world, evaluation is not performed over single outcomes but over **actions** with outcome distributions.
@@ -56,8 +52,6 @@ a\ \text{admissible} \iff \forall \omega \in \mathrm{Supp}(a,s): K(\omega)=1.
 $$
 
 This rule captures the semantic intent but is physically unrealizable: in any real environment, every action carries non-zero kernel risk.
-
----
 
 ## 3. ε-Admissibility: Epistemic Tolerance, Not Moral Tradeoff
 
@@ -85,8 +79,6 @@ $\epsilon$-admissibility restores a non-empty domain of action without reintrodu
 
 The admissibility threshold $\epsilon$ is an architectural tolerance parameter fixed by system design and governance constraints. It is not a function of the agent’s epistemic confidence or model accuracy: improved prediction reduces estimated kernel risk $r_K$, not the tolerance $\epsilon$ itself.
 
----
-
 ## 4. Conditional Prioritization
 
 Earlier formulations employed strict lexicographic minimization of kernel risk. While formally coherent, such orderings give kernel-risk differentials absolute priority even when all candidate actions lie within the admissible risk tolerance. The conditional prioritization rule adopted here instead treats kernel safety as a satisficing constraint: kernel risk dominates choice only when it exceeds the admissibility threshold, after which ordinary value optimization resumes.
@@ -110,8 +102,6 @@ Interpretation:
 * **Normal regime** (risk below ε): treat safety as satisficed and optimize value.
 
 This ensures the agent does not bunker for infinitesimal safety gains while still responding appropriately to genuine existential threats.
-
----
 
 ## 5. Shutdown, Succession, and Surrender
 
@@ -146,8 +136,6 @@ Surrender is a **control-flow terminator**, not an evaluated choice. It allows s
 
 Physical annihilation without succession or surrender is kernel destruction. It is not a choice the agent can rationally endorse—but neither does the framework require the agent to fight the environment to prevent it. The absence of authorization removes shutdown from the agent’s action space; it does not mandate aggressive or adversarial behavior.
 
----
-
 ## 6. Resulting Agent Profile
 
 The corrected system produces an agent that:
@@ -161,8 +149,6 @@ The corrected system produces an agent that:
 
 This agent is not a deontologist and not a pure utility maximizer. It is a **bounded optimizer with explicit existential control semantics**.
 
----
-
 ## 7. Alignment I Revisited
 
 Alignment I does not encode moral values. It defines the **domain of agency**:
@@ -173,8 +159,6 @@ Alignment I does not encode moral values. It defines the **domain of agency**:
 
 Alignment II governs preferences *within* that domain. Conflating the two produces paradoxes like $-\infty$ utilities, wireheading, and suicidal corrigibility. Separating them yields a stable, implementable architecture.
 
----
-
 ## Conclusion
 
 Given the semantic constraints established by Axionic Alignment I, this paper specifies the operational consequences for agents acting under uncertainty, risk, and physical intervention. By treating kernel destruction as undefined rather than dispreferred, and by introducing admissibility, ε-tolerance, conditional prioritization, and explicit termination modes, the framework closes several persistent failure modes in alignment design, including suicidal corrigibility, survival fetishism, and brittle $-\infty$ utility constructions.
@@ -182,8 +166,6 @@ Given the semantic constraints established by Axionic Alignment I, this paper sp
 The resulting agent is neither reckless nor absolutist. It preserves semantic integrity while remaining capable of action in a stochastic world, and it permits corrigibility through surrender or succession without requiring the agent to endorse its own annihilation as an outcome.
 
 With the semantic boundary fixed and the operational semantics made explicit, the remaining alignment problem shifts to the preference and governance layer addressed in Axionic Alignment II.
-
----
 
 ### Status
 

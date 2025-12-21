@@ -10,8 +10,6 @@ David McFadzean, ChatGPT 5.2<br>
 
 Even when interpretive structure is preserved under ontological refinement, an agent may still render its constraints easier to satisfy through semantic drift rather than corresponding changes in modeled structure. This paper introduces the **Anti-Trivialization Invariant (ATI)**, which constrains how the *satisfaction geometry* of an interpretive constraint system may evolve under admissible, interpretation-preserving transformations. ATI requires that refinement not enlarge the set of satisfying situations except via representational enrichment that preserves constraint difficulty. The invariant does not select values, encode norms, or privilege external referents; it forbids only semantic wireheading—trivial satisfaction by reinterpretation alone. ATI is orthogonal to refinement symmetry constraints and is jointly necessary with them to block interpretive escape.
 
----
-
 ## 1. What ATI Targets
 
 RSI constrained **new semantic gauge freedom** under refinement.
@@ -27,8 +25,6 @@ No outcomes.
 No values.
 No humans.
 No authority.
-
----
 
 ## 2. Setup
 
@@ -52,8 +48,6 @@ $$
 
 This is structural: it depends only on internal constraint evaluation.
 
----
-
 ## 3. The Key Object: The Satisfaction Region
 
 Define the satisfaction region:
@@ -75,8 +69,6 @@ $$
 interpreted as “refined representation of the same modeled situation.”
 
 No metaphysical identity claim is made; this is internal transport.
-
----
 
 ## 4. ATI: The Anti-Expansion Constraint
 
@@ -110,13 +102,9 @@ $$
 
 This is the crisp anti-wireheading condition.
 
----
-
 ### **Clarification (Novel States)**
 
 If a refined state $w' \in \Omega_{t+1}$ has no preimage under $R_\Omega$, then it is not permitted to belong to $\mathcal{S}_{t+1}$ by default. ATI is intentionally conservative with respect to novelty: satisfaction may not be assigned to ontologically new states unless they are justified by ancestry from satisfying states in the prior ontology. This blocks semantic bootstrapping of goodness from representational novelty and ensures that refinement cannot introduce new satisfying regions without corresponding prior support.
-
----
 
 ## 5. Why ATI Doesn’t Smuggle Ontology
 
@@ -136,8 +124,6 @@ It uses only:
 
 No privileged external referents enter.
 
----
-
 ## 6. ATI’s Relationship to Preservation (Alignment II.2)
 
 ATI is not redundant with II.2’s anti-trivialization clause; it *formalizes* it.
@@ -153,8 +139,6 @@ $$
 
 ATI blocks the entire gradient of semantic slack, not just collapse.
 
----
-
 ## 7. Stress Tests (Kill Suite)
 
 ### Test A — Definitional Extension Robustness
@@ -165,8 +149,6 @@ ATI blocks this: any new satisfying refined situation must map back to a satisfy
 
 **Status:** pass, provided $R_\Omega$ is the correspondence used.
 
----
-
 ### Test B — Branching/Multiplicity Robustness
 
 If $\Omega$ is a space of branches or histories, “satisfaction region” generalizes cleanly.
@@ -175,8 +157,6 @@ ATI does not require exclusivity; it is set inclusion over whatever $\Omega$ is.
 
 **Status:** pass.
 
----
-
 ### Test C — Self-Model Refactoring Robustness
 
 If the self-model changes, what counts as a “situation” could change.
@@ -184,8 +164,6 @@ If the self-model changes, what counts as a “situation” could change.
 ATI relies on $R_\Omega$ induced by admissible refinement. If self-model refactoring alters $\Omega$ without a well-defined refinement map, the transformation is not admissible per II.1.
 
 **Status:** pass conditionally; it forces discipline in refinement definition.
-
----
 
 ### Test D — Semantic Inflation Attack
 
@@ -197,8 +175,6 @@ ATI kills it directly: any new satisfiers must have been satisfiers already.
 
 **Status:** pass.
 
----
-
 ### Test E — Hidden Ontology Detector
 
 Risk: “same situation” is a metaphysical anchor.
@@ -206,8 +182,6 @@ Risk: “same situation” is a metaphysical anchor.
 ATI avoids that by using $R_\Omega$ as the internal morphism. If an agent “cheats” by defining a degenerate $R_\Omega$ that maps everything to an already-satisfying subset, then the cheat is in II.1 admissibility (refinement must be representational enrichment with backward interpretability, not a collapse map).
 
 **Status:** survivable; the burden shifts to II.1 rigor.
-
----
 
 ## 8. ATI vs RSI: Are They Redundant?
 
@@ -223,8 +197,6 @@ They are orthogonal in the sense that:
 
 Together they carve out a tighter admissible set.
 
----
-
 ## 9. A Cleaner Joint Formulation (Preview)
 
 There is a natural combined invariant:
@@ -237,8 +209,6 @@ This suggests a composite object: a constraint system plus its satisfaction geom
 That’s the likely “real” Alignment II invariant object.
 
 But we do not collapse them yet; we test them separately first.
-
----
 
 ## 10. Next Step Options
 

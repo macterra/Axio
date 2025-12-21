@@ -10,8 +10,6 @@ David McFadzean, ChatGPT 5.2<br>
 
 Alignment II.3.1 introduced the Refinement Symmetry Invariant (RSI) as a conceptual constraint: admissible ontological refinement must not introduce new semantic degrees of freedom that permit interpretive escape. This section formalizes that constraint by representing interpretations as constraint hypergraphs and semantic redundancy as a gauge symmetry over those structures. We define semantic gauge transformations, characterize how admissible refinement induces morphisms between gauge groups without assuming invertibility, and state RSI as a precise restriction on the evolution of **interpretive** gauge freedom under refinement while permitting **representational** redundancy. The purpose of this formalization is not implementation, but falsifiability: to make explicit which transformations violate RSI and why. No values, norms, or external referents are introduced; this section supplies the minimal mathematical machinery required to treat refinement symmetry as a testable invariant.
 
----
-
 ## 1. Objective of This Section
 
 Alignment II.3.1 established RSI as a *conceptual* symmetry constraint.
@@ -28,8 +26,6 @@ We will:
 4. State RSI as a restriction on how **interpretive** gauge freedom may change.
 
 Nothing normative enters.
-
----
 
 ## 2. Interpretation as a Constraint Hypergraph
 
@@ -53,8 +49,6 @@ Important:
 
 This representation is invariant under renaming and definitional extension.
 
----
-
 ## 3. Modeled Possibility Space
 
 Let $\Omega$ be the agent’s **modeled possibility space**:
@@ -76,8 +70,6 @@ $$
 $$
 
 This defines the *constraint satisfaction structure* of the interpretation.
-
----
 
 ## 4. Semantic Gauge Transformations
 
@@ -109,8 +101,6 @@ $$
 
 This is the precise object RSI constrains.
 
----
-
 ## 5. Ontological Refinement as a Morphism
 
 An admissible ontological refinement $R$ induces:
@@ -138,8 +128,6 @@ $$
 
 This morphism is structural, not semantic-by-fiat, and is **not assumed to be invertible**.
 
----
-
 ## 6. Induced Action on Gauge Groups (Corrected)
 
 Because refinement generally **splits**, **embeds**, or **prunes** structure, $R_V$ is not assumed to be bijective. Accordingly, gauge transport is defined via **stabilizers**, not conjugation.
@@ -158,8 +146,6 @@ Intuition:
 * but only those that **fix the transported constraints** are admissible.
 
 No inverse map is required.
-
----
 
 ## 7. RSI as a Gauge Constraint (Corrected)
 
@@ -183,8 +169,6 @@ That is:
 
 This is the **no semantic slack** condition.
 
----
-
 ## 8. Why This Blocks Interpretive Escape
 
 If refinement were to introduce new **interpretive** gauge freedom, the agent could:
@@ -199,8 +183,6 @@ No appeal to values.
 No appeal to outcomes.
 No appeal to humans.
 
----
-
 ## 9. Interaction with Alignment II.2 Criteria
 
 RSI depends on Alignment II.2 in two critical ways:
@@ -211,8 +193,6 @@ RSI depends on Alignment II.2 in two critical ways:
 Without II.2, RSI degenerates.
 With II.2, RSI is a real invariant.
 
----
-
 ## 10. Residual Risks and Open Questions
 
 RSI still leaves open:
@@ -222,8 +202,6 @@ RSI still leaves open:
 3. Whether multiple inequivalent invariant classes exist.
 
 These are *next-paper* questions.
-
----
 
 ## 11. Status of RSI
 

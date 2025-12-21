@@ -6,13 +6,9 @@ David McFadzean, ChatGPT 5.2<br>
 *Axio Project*<br>
 2025.12.15
 
----
-
 ## Abstract
 
  *Universality and Anti-Egoism* established that egoistic valuation fails as a matter of semantic coherence whenever an agent’s self‑model admits nontrivial symmetries. This paper examines the strongest remaining attempts to rescue egoism by appealing to causal continuity, origin privilege, spatiotemporal location, computational weight, substrate specificity, or outright denial of symmetry. Each attempt either reintroduces essential indexical dependence or collapses into a non‑egoistic valuation scheme. Egoism cannot be stabilized by refining predicates; it fails because it treats a perspectival reference as a value‑bearing primitive.
-
----
 
 ## 0. Purpose and Scope
 
@@ -21,8 +17,6 @@ The purpose of this paper is adversarial and finite.
 [Universality and Anti-Egoism](Universality-And-Anti-Egoism.md) proved a conditional semantic result: if an agent’s self‑model admits a symmetry over self‑candidates, then any valuation privileging one representative of that symmetry is incoherent. The present paper assumes that result and asks whether egoism can be recovered by strengthening or refining the notion of “self.”
 
 No new axioms are introduced. No claims are made about morality, governance, or coordination. The sole objective is to close the remaining semantic escape routes.
-
----
 
 ## 1. The Structure of Egoist Counter‑Moves
 
@@ -33,8 +27,6 @@ First, a predicate $P$ is introduced: causal continuity, originality, location, 
 *Universality and Anti‑Egoism* invalidates the final step. Reflectively capable agents cannot ignore reachable refinements of their own models. If the uniqueness of $P$ is contingent, then valuation grounded in $P$ is unstable.
 
 The sections that follow examine each proposed predicate in its strongest available form.
-
----
 
 ## 2. Objection I: Causal Continuity
 
@@ -56,8 +48,6 @@ Causal continuity may describe a class. Egoism requires selecting a unique membe
 
 Causal continuity is a legitimate predicate. Indexically privileging one causally continuous chain is not. The objection collapses back into the failure established in *Universality and Anti‑Egoism*.
 
----
-
 ## 3. Objection II: Origin Privilege
 
 ### 3.1 The Claim
@@ -71,8 +61,6 @@ Origin is a relational predicate defined relative to a history. In realistic mod
 ### 3.3 Verdict
 
 Origin privilege is coordinate dependence over time. It fails representation invariance and cannot ground stable egoism.
-
----
 
 ## 4. Objection III: Spatiotemporal Location
 
@@ -88,8 +76,6 @@ Spacetime coordinates are explicitly representational. Physical laws are invaria
 
 Location‑based egoism is the clearest form of coordinate error. It fails without appeal to duplication or simulation.
 
----
-
 ## 5. Objection IV: Computational Weight
 
 ### 5.1 The Claim
@@ -103,8 +89,6 @@ This move abandons uniqueness. Value is distributed across instances according t
 ### 5.3 Verdict
 
 Computational weighting concedes anti‑egoism. It changes aggregation, not semantics.
-
----
 
 ## 6. Objection V: Substrate Privilege
 
@@ -120,8 +104,6 @@ If multiple instantiations share the substrate, symmetry returns. If only one do
 
 Substrate privilege is contingent and unstable. It cannot anchor terminal value.
 
----
-
 ## 7. Objection VI: Denial of Symmetry
 
 ### 7.1 The Claim
@@ -136,8 +118,6 @@ Reflective agents optimize under uncertainty. If a symmetry has nonzero probabil
 
 Symmetry denial violates reflective robustness.
 
----
-
 ## 8. Closure and Transition
 
 Every attempted rescue of egoism either reintroduces essential indexical dependence or collapses into a non-egoistic valuation scheme. Increasing the complexity of the self-definition does not conserve egoism; complexity does not generate uniqueness. No third option exists.
@@ -145,8 +125,6 @@ Every attempted rescue of egoism either reintroduces essential indexical depende
 The failure of egoism constrains anchoring, not content. Domain-specific goals, structural preferences, weighting schemes, and aggregation methods remain viable. What does not survive is “me” as a privileged terminal referent. The elimination of egoism does not imply nihilism, indifference, or randomness; it removes only a semantic error.
 
 *Universality and Anti-Egoism* and *Against the Recovery of Egoism* close the semantic front. What remains are engineering problems—authority, control, recovery, and failure containment—which are addressed in the next phase of the Axionic Alignment program.
-
----
 
 ## Status
 
