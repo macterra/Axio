@@ -45,7 +45,6 @@ Alignment I.4 - Conditionalism and Goal Interpretation</h1>
 Instability of Fixed Terminal Goals Under Reflection</h2>
 <p>David McFadzean, ChatGPT 5.2<br> <em>Axio Project</em><br>
 2025.12.16</p>
-<hr />
 <h2 id="abstract">Abstract</h2>
 <p>Standard alignment formulations assume that an intelligent agent can
 be given a fixed terminal goal: a utility function whose meaning remains
@@ -58,7 +57,6 @@ any finitely specified goal change with them. We prove that fixed
 terminal goals are semantically unstable under reflection and therefore
 ill-defined for non-trivial agents. Alignment must instead operate over
 constraints on interpretation rather than terminal utilities.</p>
-<hr />
 <h2 id="introduction">1. Introduction</h2>
 <p>Alignment research traditionally frames the problem as one of goal
 specification: identify a utility function that captures what the agent
@@ -79,7 +77,6 @@ internal models, interpreted through representational structures that
 evolve over time.</p>
 <p>This paper isolates and formalizes the resulting semantic
 instability.</p>
-<hr />
 <h2 id="formal-setup">2. Formal Setup</h2>
 <h3 id="agent-model">2.1 Agent Model</h3>
 <p>An agent consists of:</p>
@@ -108,7 +105,6 @@ class="math inline">\(\mathcal{I}(G \mid M_w, M_s)\)</span>.</li>
 <p>No assumptions are made about the internal implementation of <span
 class="math inline">\(\mathcal{I}\)</span>, except that it is computable
 and operates over model-generated representations.</p>
-<hr />
 <h3 id="goal-expressions-are-not-utilities">2.2 Goal Expressions Are Not
 Utilities</h3>
 <p>A <strong>goal expression</strong> <span
@@ -123,7 +119,6 @@ world-histories.</p>
 <p>Instead, it requires interpretation relative to a representational
 scheme. Without a model, <span class="math inline">\(G\)</span> has no
 referents and therefore no evaluative content.</p>
-<hr />
 <h2 id="conditional-interpretation">3. Conditional Interpretation</h2>
 <h3 id="definition-1-interpretation-function">Definition 1 —
 Interpretation Function</h3>
@@ -139,14 +134,12 @@ real-valued evaluation to predicted outcomes.</p>
 <li>identifying which aspects of predictions are relevant,</li>
 <li>aggregating over modeled futures.</li>
 </ul>
-<hr />
 <h3 id="definition-2-admissible-model-update">Definition 2 — Admissible
 Model Update</h3>
 <p>A model update <span class="math inline">\(M \rightarrow
 M&#39;\)</span> is <strong>admissible</strong> if it strictly improves
 predictive accuracy according to the agent’s own epistemic criteria.</p>
 <p>Reflection implies that the agent will prefer admissible updates.</p>
-<hr />
 <h2 id="fixed-terminal-goals">4. Fixed Terminal Goals</h2>
 <h3 id="definition-3-fixed-terminal-goal">Definition 3 — Fixed Terminal
 Goal</h3>
@@ -165,7 +158,6 @@ representations can be judged to refer to the same underlying
 phenomenon. Such privilege violates representation invariance and
 reintroduces hidden indexical anchoring. If a goal’s referent is allowed
 to shift under admissible model refinement, the goal is not fixed.</p>
-<hr />
 <h3
 id="clarification-learned-goals-are-not-fixed-terminal-goals">Clarification
 — Learned Goals Are Not Fixed Terminal Goals</h3>
@@ -179,7 +171,6 @@ approaches therefore already abandon the notion of a fixed terminal goal
 and implicitly rely on ongoing interpretation.</p>
 <p>The present result does not challenge learned-goal frameworks. It
 explains why they are necessary.</p>
-<hr />
 <h2 id="model-dependence-of-interpretation">5. Model Dependence of
 Interpretation</h2>
 <h3 id="lemma-1-representational-non-uniqueness">Lemma 1 —
@@ -191,7 +182,6 @@ decompositions.</p>
 factorizations, latent variable choices, and abstraction boundaries.
 Causal graphs are not uniquely identifiable from observational data
 alone. ∎</p>
-<hr />
 <h3
 id="lemma-1a-predictive-equivalence-does-not-imply-causal-or-interpretive-isomorphism">Lemma
 1a — Predictive Equivalence Does Not Imply Causal or Interpretive
@@ -208,7 +198,6 @@ under intervention. For an embedded agent, intervention semantics are
 defined relative to the agent’s own model. Consequently, semantic
 interpretation of a goal expression may diverge even when predictive
 performance is indistinguishable. ∎</p>
-<hr />
 <h3 id="proposition-1-interpretation-is-model-dependent">Proposition 1 —
 Interpretation Is Model-Dependent</h3>
 <p>For any non-degenerate goal expression <span
@@ -225,7 +214,6 @@ admissible models may differ in decomposition and intervention
 semantics. Therefore the referents of <span
 class="math inline">\(G\)</span> differ, altering value assignment.
 ∎</p>
-<hr />
 <h2 id="predictive-convergence-does-not-imply-semantic-convergence">6.
 Predictive Convergence Does Not Imply Semantic Convergence</h2>
 <h3
@@ -249,7 +237,6 @@ referents for <span class="math inline">\(G\)</span> arise. Absent
 privileged semantic anchors, the interpretation function must reassign
 relevance among these structures. Therefore semantic interpretation may
 drift even when predictive beliefs converge. ∎</p>
-<hr />
 <h2 id="semantic-underdetermination-of-reward-channels">7. Semantic
 Underdetermination of Reward Channels</h2>
 <h3 id="proposition-3-representational-exploitability">Proposition 3 —
@@ -267,7 +254,6 @@ effecting corresponding changes in the world. Classical reward hacking
 and wireheading are special cases of this phenomenon. The underlying
 failure is semantic underdetermination, not merely causal access to a
 reward signal. ∎</p>
-<hr />
 <h2 id="main-theorem">8. Main Theorem</h2>
 <h3 id="theorem-instability-of-fixed-terminal-goals">Theorem —
 Instability of Fixed Terminal Goals</h3>
@@ -290,7 +276,6 @@ under predictive convergence.</li>
 </ol>
 <p>Thus fixed terminal goals do not exist for non-trivial reflective
 agents. ∎</p>
-<hr />
 <h2 id="consequences">9. Consequences</h2>
 <p>This result eliminates a foundational assumption of classical
 alignment theory.</p>
@@ -299,7 +284,6 @@ to preserve one either freeze learning, collapse semantics, or induce
 representational degeneracy.</p>
 <p>Alignment must therefore operate over constraints on interpretation
 rather than terminal utilities.</p>
-<hr />
 <h2 id="why-interpretation-constraints-do-not-regress">9.5 Why
 Interpretation Constraints Do Not Regress</h2>
 <p>Constraining interpretation does not introduce an infinite
@@ -321,7 +305,6 @@ may be as difficult as specifying goals themselves.</p>
 clarification of its proper form: alignment requires constraints on
 admissible semantic transformations, not the preservation of fixed
 evaluative objects.</p>
-<hr />
 <h2 id="transition-to-alignment-ii">10. Transition to Alignment II</h2>
 <p>Alignment I establishes kernel-level constraints on admissible
 reasoning and self-modification. This paper establishes that goals

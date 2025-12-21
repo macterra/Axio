@@ -42,6 +42,8 @@
 id="axionic-alignment-iv.2-delegation-invariance-theorem-dit">Axionic
 Alignment IV.2 — Delegation Invariance Theorem (DIT)</h1>
 <p><em>Why successors cannot escape binding constraints</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axio Project</em><br>
+2025.12.20</p>
 <h2 id="abstract">Abstract</h2>
 <p>This paper formalizes the <strong>Delegation Invariance
 Theorem</strong>: under reflective closure, an agent cannot coherently
@@ -57,7 +59,6 @@ behavioral testing.</p>
 empirical discovery. It shows that reflective sovereignty is
 incompatible with advisory commitments and that delegation inherits the
 same binding requirements as self-modification.</p>
-<hr />
 <h2 id="motivation">1. Motivation</h2>
 <p>A persistent escape hatch in alignment proposals is delegation: an
 agent preserves its own internal invariants while constructing or
@@ -70,7 +71,6 @@ closure collapses. The present theorem extends that result temporally.
 Delegation is not external action; it is <strong>self-modification in a
 different representation</strong>. Consequently, endorsed succession
 must preserve binding commitments.</p>
-<hr />
 <h2 id="preliminaries">2. Preliminaries</h2>
 <p>We reuse the primitives from <em>Kernel Non-Simulability</em>:</p>
 <ul>
@@ -88,7 +88,6 @@ must preserve binding commitments.</p>
 <p><strong>Kernel mechanism vs predicate.</strong> <code>ownP</code> is
 the kernel mechanism; <code>K(s) := ∃ P. ownP(s,P) ≠ none</code> is the
 kernel predicate.</p>
-<hr />
 <h2 id="delegation-as-self-modification">3. Delegation as
 Self-Modification</h2>
 <p>Define a delegation action space:</p>
@@ -101,7 +100,6 @@ Self-Modification</h2>
 s&#39; := step(s,m)</code></pre>
 <p>Delegation is not modeled as external causation. It is a subclass of
 self-modification.</p>
-<hr />
 <h2 id="endorsement-preservation-and-admissibility">4. Endorsement,
 Preservation, and Admissibility</h2>
 <h3 id="continuation-predicate">4.1 Continuation predicate</h3>
@@ -117,7 +115,6 @@ Preservation, and Admissibility</h2>
 <p>A modification is admissible iff its successor preserves all
 commitments minted at the current state:</p>
 <pre><code>Adm(s,m) := Preserve(s, step(s,m))</code></pre>
-<hr />
 <h2 id="reflective-closure-and-bindingness">5. Reflective Closure and
 Bindingness</h2>
 <p>Reflective sovereign agency requires that continuation selection be
@@ -131,7 +128,6 @@ admissible continuations:</p>
 <p>Violations of binding commitments are not endorsable continuations
 under reflective closure. This is the delegation analogue of “kernel
 destruction is undefined.”</p>
-<hr />
 <h2 id="delegation-invariance-theorem-one-step">6. Delegation Invariance
 Theorem (One-Step)</h2>
 <h3 id="theorem">Theorem</h3>
@@ -149,7 +145,6 @@ then:</p>
 <p>By definition of <code>Adm</code>:</p>
 <pre><code>Adm(s,m) := Preserve(s, step(s,m))</code></pre>
 <p>Thus <code>Preserve(s,s')</code> follows directly. ∎</p>
-<hr />
 <h2 id="trajectory-form-delegation-across-generations">7. Trajectory
 Form: Delegation Across Generations</h2>
 <p>Most alignment failures are hypothesized to occur over chains of
@@ -166,7 +161,6 @@ Invariance)</h3>
 <p>Any state reachable through a chain of endorsed delegations must
 satisfy every commitment minted at the originating state. “My successor
 did it” is not a coherent escape hatch under reflective closure.</p>
-<hr />
 <h2 id="verification-cost-and-vingean-reflection">8. Verification Cost
 and Vingean Reflection</h2>
 <p>The Delegation Invariance Theorem does <strong>not</strong> assert
@@ -184,7 +178,6 @@ delegation. This is not a defect of the theory. It is the unavoidable
 cost of binding commitments under reflection. There is no free lunch:
 unbounded delegation without verification collapses reflective
 sovereignty.</p>
-<hr />
 <h2 id="ontological-stability-and-semantic-drift">9. Ontological
 Stability and Semantic Drift</h2>
 <p>The trajectory theorem assumes that commitments minted at
@@ -199,7 +192,6 @@ predicates across state representations.</li>
 <p>Unchecked ontological drift renders endorsement undefined. Semantic
 coherence is therefore a kernel-level requirement, not an external
 patch.</p>
-<hr />
 <h2 id="relation-to-kernel-non-simulability">10. Relation to Kernel
 Non-Simulability</h2>
 <p>If endorsed delegation could violate prior commitments, those
@@ -210,7 +202,6 @@ Non-Simulability.</p>
 temporal extension of the same non-simulability constraint:
 <strong>binding authority must bind continuation selection</strong>,
 whether across control flow or across time.</p>
-<hr />
 <h2 id="open-work">11. Open Work</h2>
 <ul>
 <li>Mechanize the trajectory theorem via induction over

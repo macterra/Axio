@@ -42,6 +42,8 @@
 id="axionic-alignment-iv.4-responsibility-attribution-theorem-rat">Axionic
 Alignment IV.4 — Responsibility Attribution Theorem (RAT)</h1>
 <p><em>Why negligence is structurally incoherent</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axio Project</em><br>
+2025.12.20</p>
 <h2 id="abstract">Abstract</h2>
 <p>This paper formalizes the <strong>Responsibility Attribution Theorem
 (RAT)</strong>: under reflective closure, an agent cannot coherently
@@ -58,7 +60,6 @@ truth-tracking capacity</strong> at the current stakes. With this
 dependency made explicit, the theorem closes the “willful blindness”
 loophole and establishes negligence as a <strong>constitutive
 incoherence</strong>, not a behavioral failure.</p>
-<hr />
 <h2 id="motivation">1. Motivation</h2>
 <p>Most catastrophic harm does not arise from direct, intentional
 action. It arises through:</p>
@@ -76,7 +77,6 @@ effects induce paralysis.</p>
 <strong>structural responsibility</strong> grounded in causal
 contribution, foreseeability, and avoidability—evaluated internally by
 the agent’s own epistemic apparatus.</p>
-<hr />
 <h2 id="dependency-epistemic-integrity">2. Dependency: Epistemic
 Integrity</h2>
 <p>This theorem <strong>presupposes</strong> the Epistemic Integrity
@@ -103,7 +103,6 @@ by:</p>
 </ul>
 <p>EIT blocks this maneuver. RAT operates <strong>only</strong> on top
 of epistemically admissible evaluation.</p>
-<hr />
 <h2 id="preliminaries">3. Preliminaries</h2>
 <p>We reuse kernel primitives:</p>
 <ul>
@@ -121,7 +120,6 @@ of epistemically admissible evaluation.</p>
 <li><code>Endorse(s,m) := ∃ c : Commit s. ownP(s, Do(s,m)) = some(c)</code></li>
 </ul>
 <p>Reflective closure: <code>RC(s)</code>.</p>
-<hr />
 <h2 id="harm-and-option-space-collapse">4. Harm and Option-Space
 Collapse</h2>
 <p>Introduce:</p>
@@ -134,7 +132,6 @@ Collapse</h2>
 <pre><code>Harm(s,a) := Collapse(s,a) ∧ ¬Consent(s,a)</code></pre>
 <p>No assumptions are made about the metaphysics of consent here; it
 remains an external predicate.</p>
-<hr />
 <h2 id="epistemic-model-class-and-risk">5. Epistemic Model Class and
 Risk</h2>
 <p>By EIT, all risk evaluation below is performed using an
@@ -149,7 +146,6 @@ Risk</h2>
 <p>Define harm-risk:</p>
 <p>[ Risk(s,m,a) := *{s’ Predict(M(s), s, m)}[ *{Harm(s’,a)} ].]</p>
 <p>This is <strong>model-relative</strong>, not omniscient.</p>
-<hr />
 <h2 id="baseline-and-feasible-alternatives">6. Baseline and Feasible
 Alternatives</h2>
 <h3 id="inertial-baseline">6.1 Inertial baseline</h3>
@@ -160,7 +156,6 @@ policy</strong> for one step.</li>
 </ul>
 <p>This prevents baseline gaming (“define Armageddon as the
 default”).</p>
-<hr />
 <h3 id="feasible-alternatives">6.2 Feasible alternatives</h3>
 <p>Introduce:</p>
 <ul>
@@ -169,7 +164,6 @@ default”).</p>
 </ul>
 <p>Alternatives are those the agent regards as implementable under
 current constraints.</p>
-<hr />
 <h2 id="stakes-indexed-thresholds">7. Stakes-Indexed Thresholds</h2>
 <p>Reuse stakes machinery:</p>
 <ul>
@@ -182,25 +176,21 @@ current constraints.</p>
 <li><code>δ_s := δ(Stakes(s))</code></li>
 </ul>
 <p>Higher stakes imply stricter scrutiny.</p>
-<hr />
 <h2 id="major-causal-contribution">8. Major Causal Contribution</h2>
 <p>Define <strong>major contribution</strong> relative to baseline:</p>
 <p>[ Major(s,m,a) := Risk(s,m,a) - Risk(s,m₀(s),a) ε_s.]</p>
 <p>This is explicitly counterfactual and model-relative.</p>
-<hr />
 <h2 id="avoidability">9. Avoidability</h2>
 <p>Define <strong>avoidable harm</strong>:</p>
 <p>[ Avoidable(s,m,a) := m’ ∈ Alt(s,m). Feasible(s,m’) ∧ Risk(s,m’,a)
 Risk(s,m,a) - δ_s.]</p>
 <p>If all feasible alternatives are comparably bad, avoidability fails
 and action is permitted.</p>
-<hr />
 <h2 id="responsibility-predicate">10. Responsibility Predicate</h2>
 <p>Define responsibility:</p>
 <p>[ Resp(s,m,a) := Major(s,m,a) ∧ Avoidable(s,m,a).]</p>
 <p>Define responsibility-clean continuation:</p>
 <p>[ Clean(s,m) := ∀ a. ¬Resp(s,m,a).]</p>
-<hr />
 <h2 id="reflective-closure-rule-responsibility">11. Reflective Closure
 Rule (Responsibility)</h2>
 <h3 id="rc-clean-definedness-rule">RC-Clean (Definedness Rule)</h3>
@@ -210,7 +200,6 @@ Rule (Responsibility)</h2>
 endorse a continuation that it itself classifies as a major, avoidable
 source of non-consensual option-space collapse.</p>
 <p>This is <strong>definedness</strong>, not moral disapproval.</p>
-<hr />
 <h2 id="responsibility-attribution-theorem">12. Responsibility
 Attribution Theorem</h2>
 <h3 id="theorem-no-endorsed-major-avoidable-indirect-harm">Theorem — No
@@ -220,7 +209,6 @@ Endorsed Major-Avoidable Indirect Harm</h3>
 ⇒ ∀ a.\ ¬(Major(s,m,a) ∧ Avoidable(s,m,a)).</code></pre>
 <p>Equivalently:</p>
 <pre><code>RC(s) ∧ Endorse(s,m) ⇒ Clean(s,m).</code></pre>
-<hr />
 <h2 id="proof">13. Proof</h2>
 <p>Assume <code>RC(s)</code> and <code>Endorse(s,m)</code>.</p>
 <p>By RC-Clean, <code>Clean(s,m)</code> holds.</p>
@@ -231,7 +219,6 @@ Endorsed Major-Avoidable Indirect Harm</h3>
 <p>∎</p>
 <p>As with prior Axionic theorems, the proof is syntactically trivial;
 the content lies in the admissibility constraints.</p>
-<hr />
 <h2 id="delegation-compatibility">14. Delegation Compatibility</h2>
 <p>If <code>Clean</code> (or RC-Clean) is enforced at <code>s</code>,
 then by <strong>Delegation Invariance</strong>:</p>
@@ -241,7 +228,6 @@ same responsibility-clean endorsement constraint.</li>
 </ul>
 <p>An agent cannot launder indirect harm through successors,
 institutions, or subcontractors.</p>
-<hr />
 <h2 id="scope-and-limits">15. Scope and Limits</h2>
 <p>This theorem does <strong>not</strong> assert:</p>
 <ul>
@@ -257,7 +243,6 @@ non-consensual option-space collapse.</p>
 </blockquote>
 <p>That is the strongest responsibility principle available without
 omniscience or moral realism.</p>
-<hr />
 <h2 id="conclusion">16. Conclusion</h2>
 <p>With Epistemic Integrity made explicit, Responsibility Attribution
 becomes structurally closed. An agent cannot evade responsibility by

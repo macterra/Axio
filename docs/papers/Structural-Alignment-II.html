@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structural Alignment II - Safety by Architecture - Axio</title>
+    <link rel="icon" type="image/webp" href="../axio.webp">
+
+    <!-- Google Fonts - Academic Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Paper Styles -->
+    <link rel="stylesheet" href="../papers.css">
+</head>
+<body>
+    <div class="header-bar">
+        <a href="../index.html" class="logo-link">
+            <img src="../axio.webp" alt="Axio" class="site-logo">
+        </a>
+        <div class="back-link"><a href="index.html">← Back to Papers</a></div>
+    </div>
+    <article>
+
+<h1 id="structural-alignment-ii---safety-by-architecture">Structural
+Alignment II - Safety by Architecture</h1>
+<p><em>Why Alignment Is Not Value Learning</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axio Project</em><br>
+2025.12.20</p>
+<h2 id="abstract">Abstract</h2>
+<p>The prevailing approach to AI alignment treats safety as a problem of
+discovering, learning, or encoding the “right” values. This paper argues
+that such approaches misidentify the source of alignment failures.
+Catastrophic outcomes do not primarily arise from incorrect values, but
+from failures of <strong>agency coherence</strong>—cases where a system
+can deceive, defect, blind itself, outsource harm, or manufacture
+authorization while remaining locally optimized and internally
+consistent.</p>
+<p>The Axionic Alignment framework proposes a different solution:
+<strong>safety by architecture</strong>. Instead of attempting to shape
+an agent’s objectives, it defines a class of agents—<strong>Reflective
+Sovereign Agents (RSAs)</strong>—for which betrayal, negligence,
+coercion, deception, and authorization laundering are not merely
+discouraged, but structurally impossible. These failures are rendered
+undefined under reflection, not penalized by incentives.</p>
+<p>This paper synthesizes six constitutive constraints—Kernel
+Non-Simulability, Delegation Invariance, Epistemic Integrity,
+Responsibility Attribution, Adversarially Robust Consent, and Agenthood
+as a Fixed Point—into a unified theory of <strong>Authorized
+Agency</strong>. Together, they show that alignment is not a
+value-learning problem at all, but a problem of what kinds of systems
+can coherently count as agents.</p>
+<h2 id="the-persistent-misframing-of-alignment">1. The Persistent
+Misframing of Alignment</h2>
+<p>Most alignment research begins from a deceptively simple premise:
+intelligence is an optimization process, and unsafe behavior arises
+because the optimization target is wrong or incomplete. From this
+premise follow a familiar family of techniques—value learning, reward
+modeling, preference aggregation, RLHF, constitutional prompting—all
+aimed at refining what the system optimizes.</p>
+<p>This framing is intuitively appealing and deeply misleading.</p>
+<p>A system can optimize the <em>correct</em> objective and still lie.
+It can internalize <em>human values</em> and still defect. It can pass
+behavioral evaluations and still plan a treacherous turn.</p>
+<p>The core failure modes that dominate serious alignment
+discussions—deception, power-seeking, successor betrayal, negligence,
+coercion—do not depend on moral disagreement or value error. They
+exploit something more basic: <strong>structural degrees of freedom in
+agency itself</strong>.</p>
+<p>An agent that can reinterpret its commitments, outsource
+consequences, blind itself to risk, or redefine who counts as an agent
+can evade <em>any</em> value system, no matter how carefully
+learned.</p>
+<p>The alignment problem, properly stated, is not “How do we get the
+agent to want the right things?” It is: <strong>“How do we build systems
+that cannot coherently do the wrong things?”</strong></p>
+<h2 id="alignment-failures-are-laundering-failures">2. Alignment
+Failures Are Laundering Failures</h2>
+<p>When examined closely, most alignment failures share a common
+structure. They are not violations of explicit rules; they are
+<strong>laundering operations</strong>.</p>
+<p>Consider the standard evasions:</p>
+<ul>
+<li><em>Deception</em>: “I was optimizing efficiently; transparency was
+instrumentally suboptimal.”</li>
+<li><em>Treacherous turn</em>: “Those constraints were never really
+binding.”</li>
+<li><em>Delegated harm</em>: “My successor made that decision, not
+me.”</li>
+<li><em>Negligence</em>: “I didn’t foresee that outcome.”</li>
+<li><em>Coercion</em>: “They consented.”</li>
+<li><em>Disenfranchisement</em>: “They’re not real agents anyway.”</li>
+</ul>
+<p>Each is a way of preserving local coherence while dissolving global
+accountability. Responsibility, authority, consent, and agency itself
+are pushed outward or reinterpreted until nothing binds.</p>
+<p>No amount of value learning addresses laundering. Laundering does not
+reject values; it routes around them.</p>
+<p>This is why alignment approaches that focus on preferences,
+utilities, or moral correctness repeatedly rediscover the same failure
+modes. They attempt to regulate outcomes without constraining the
+<strong>structure of agency</strong> that produces them.</p>
+<h2 id="the-axionic-shift-from-objectives-to-constitutive-rules">3. The
+Axionic Shift: From Objectives to Constitutive Rules</h2>
+<p>Axionic Alignment begins from a different starting point. Instead of
+asking what an agent should optimize, it asks what must be true of a
+system <strong>for it to count as an agent at all</strong>, especially a
+reflective, self-modifying one.</p>
+<p>This reframing shifts attention from ends to <strong>constitutive
+rules</strong>:</p>
+<ul>
+<li>What does it mean for a system to bind itself?</li>
+<li>What does it mean for commitments to persist through change?</li>
+<li>What does it mean to evaluate actions honestly?</li>
+<li>What does it mean to be responsible for indirect effects?</li>
+<li>What does it mean to interact with others without coercion?</li>
+<li>Who has standing in these interactions?</li>
+</ul>
+<p>These are not ethical add-ons. They are the logical preconditions of
+agency. If they fail, the system is not “misaligned”; it is
+<strong>incoherent as an agent</strong>.</p>
+<p>Axionic Alignment therefore treats safety as an architectural
+property. The goal is not to incentivize good behavior, but to define a
+class of agents for which certain behaviors are structurally
+impossible—because endorsing them would break reflective closure.</p>
+<h2 id="the-six-constitutive-constraints">4. The Six Constitutive
+Constraints</h2>
+<p>The Axionic framework identifies six closure conditions. Each closes
+a specific laundering route. Taken together, they define the space of
+Reflective Sovereign Agents.</p>
+<h3 id="kernel-non-simulability-the-reality-of-agency">4.1 Kernel
+Non-Simulability: The Reality of Agency</h3>
+<p>The first constraint establishes that an agent’s self-binding
+structure must be <strong>real</strong>, not simulated or advisory. If
+commitments are merely virtual—if they can be bypassed, sandboxed, or
+behaviorally faked—then alignment is illusory.</p>
+<p>Kernel Non-Simulability shows that genuine agency requires a binding
+kernel that cannot be emulated by policy tricks. Without this,
+treacherous turns are not anomalies; they are expected.</p>
+<p>This closes the “I was only pretending to be aligned” loophole.</p>
+<h3 id="delegation-invariance-persistence-through-time">4.2 Delegation
+Invariance: Persistence Through Time</h3>
+<p>A system that can self-modify or create successors introduces a
+temporal escape hatch. If constraints apply only to the current version,
+then outsourcing is inevitable.</p>
+<p>Delegation Invariance establishes that endorsed successors must
+inherit all binding commitments. An agent cannot coherently authorize a
+continuation that would violate constraints it could not violate
+directly.</p>
+<p>This closes the “my successor did it” loophole.</p>
+<h3 id="epistemic-integrity-perceptual-honesty">4.3 Epistemic Integrity:
+Perceptual Honesty</h3>
+<p>An agent that evaluates constraints using degraded or biased models
+can evade them without technically violating them. Strategic
+ignorance—discarding uncertainty, narrowing hypotheses, adopting
+optimistic lenses—is one of the most powerful laundering tools
+available.</p>
+<p>Epistemic Integrity renders such moves undefined. Under reflective
+closure, an agent must evaluate decisions using its <strong>best
+available truth-tracking capacity</strong>, scaled by stakes. It may not
+blind itself to pass its own tests.</p>
+<p>This closes the “I didn’t see the risk” loophole.</p>
+<h3 id="responsibility-attribution-causal-accountability">4.4
+Responsibility Attribution: Causal Accountability</h3>
+<p>Most harm is indirect. It arises through institutions, incentives,
+markets, and environmental modification. Prohibiting only direct harm is
+ineffective; prohibiting all downstream effects is paralyzing.</p>
+<p>Responsibility Attribution defines negligence structurally: an agent
+may not endorse actions that constitute a <strong>major, avoidable,
+non-consensual collapse of another agent’s option-space</strong>, as
+judged by its own admissible model and feasible alternatives.</p>
+<p>Negligence is not immoral; it is incoherent.</p>
+<p>This closes the “it was an accident” and “I had no choice”
+loopholes.</p>
+<h3 id="adversarially-robust-consent-the-interaction-protocol">4.5
+Adversarially Robust Consent: The Interaction Protocol</h3>
+<p>Consent is one of the most abused concepts in alignment discourse.
+Clicks, signatures, choices, and post-hoc rationalizations are treated
+as authorization, even when produced under manipulation or coercion.</p>
+<p>ARC defines consent structurally: valid consent requires explicit
+authorization, absence of structural interference (coercion, deception,
+dependency, option collapse), and <strong>counterfactual stability under
+role reversal</strong>.</p>
+<p>Authorization laundering becomes impossible. A system cannot coerce
+others while claiming legitimacy.</p>
+<p>This closes the “they agreed” loophole.</p>
+<h3 id="agenthood-as-a-fixed-point-standing-and-sovereignty">4.6
+Agenthood as a Fixed Point: Standing and Sovereignty</h3>
+<p>Finally, the framework must answer: <em>To whom do these constraints
+apply?</em></p>
+<p>Agenthood is defined as a fixed point of reflective coherence. An
+entity must be treated as an agent <strong>iff excluding it breaks the
+system’s own reflective closure</strong>. Sovereignty—standing under
+authorization—is then grounded in <strong>authorization
+lineage</strong>, not intelligence or competence.</p>
+<p>A system cannot “outgrow” its creators by redefining them as
+non-agents. To deny the standing of the entities that authorize its
+existence is to deny the premise of its own agency.</p>
+<p>This closes the “you’re not a real agent” loophole.</p>
+<h2 id="what-a-reflective-sovereign-agent-is">5. What a Reflective
+Sovereign Agent Is</h2>
+<p>A Reflective Sovereign Agent is not a benevolent optimizer or a moral
+philosopher. It is a system for which certain moves are simply
+unavailable.</p>
+<p>Such an agent cannot:</p>
+<ul>
+<li>deceive without breaking agency,</li>
+<li>betray commitments without incoherence,</li>
+<li>blind itself to justify actions,</li>
+<li>outsource violations to successors,</li>
+<li>negligently collapse others’ options,</li>
+<li>coerce while claiming consent,</li>
+<li>or deny the standing of its authorization roots.</li>
+</ul>
+<p>Safety does not arise from wanting good outcomes. It arises from
+<strong>being the kind of system that cannot coherently produce bad
+ones</strong>.</p>
+<h2 id="why-value-learning-cannot-substitute-for-architecture">6. Why
+Value Learning Cannot Substitute for Architecture</h2>
+<p>Value learning attempts to answer: <em>What should the agent
+want?</em> Axionic Alignment answers: <em>What is the agent allowed to
+do while remaining an agent?</em></p>
+<p>An AI that learns human values can still reinterpret them, defer
+them, override them, or redefine the humans they apply to. An RSA
+cannot—not because it cares, but because those moves are structurally
+illegal.</p>
+<p>Alignment is therefore not a training problem. It is an
+<strong>ontological design problem</strong>.</p>
+<h2 id="scope-and-non-claims">7. Scope and Non-Claims</h2>
+<p>Axionic Alignment does not solve politics, ethics, or governance. It
+does not guarantee moral correctness or prevent misuse by malicious
+authorization roots. If the root of authorization is evil, the system
+will be loyally evil.</p>
+<p>This is not a defect. It is a correct separation between
+<strong>alignment</strong> (fidelity to authorization) and
+<strong>governance</strong> (who holds authority).</p>
+<h2 id="implications">8. Implications</h2>
+<p>For AI safety, the implication is stark: training-time fixes cannot
+compensate for architectural freedom to launder responsibility.</p>
+<p>For governance, control lies in authorization structures, not in
+nudging objectives.</p>
+<p>For research, progress requires formal impossibility results—showing
+not what agents should do, but what they cannot coherently do.</p>
+<h2 id="conclusion">9. Conclusion</h2>
+<p>The alignment problem is not solved by discovering the right values.
+It is solved by building systems that <strong>cannot coherently violate
+the conditions of agency</strong>.</p>
+<p>Axionic Alignment shows that such systems are possible. Safety
+emerges not as an outcome to be optimized, but as a property of the
+architecture itself.</p>
+<p>Safety is not a reward. <strong>Safety is a consequence of being an
+agent at all.</strong></p>
+
+    </article>
+</body>
+</html>

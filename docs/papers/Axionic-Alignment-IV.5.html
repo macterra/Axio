@@ -41,6 +41,8 @@
 <h1 id="axionic-alignment-iv.5-adversarially-robust-consent-arc">Axionic
 Alignment IV.5 — Adversarially Robust Consent (ARC)</h1>
 <p><em>Why coercion and manufactured consent are impossible</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axio Project</em><br>
+2025.12.20</p>
 <h2 id="abstract">Abstract</h2>
 <p>This paper formalizes <strong>Adversarially Robust Consent
 (ARC)</strong>: a structural definition of consent that remains valid
@@ -57,7 +59,6 @@ Invariance, Epistemic Integrity (EIT), and Responsibility Attribution
 agreed,” “they chose,” “they signed,” “they would have consented
 anyway”—are structurally blocked without appealing to moral realism,
 omniscience, or unverifiable inner states.</p>
-<hr />
 <h2 id="motivation">1. Motivation</h2>
 <h3 id="the-consent-laundering-problem">1.1 The consent laundering
 problem</h3>
@@ -77,7 +78,6 @@ authorization signals that are trivial to engineer.</p>
 <p>ARC addresses this by refusing to treat consent as a signal. Consent
 is instead a <strong>structural authorization condition</strong> that
 must remain coherent under reflective closure.</p>
-<hr />
 <h2 id="dependency-stack">2. Dependency Stack</h2>
 <p>ARC is the final closure condition and explicitly depends on prior
 results:</p>
@@ -93,7 +93,6 @@ Adversarially Robust Consent (ARC)</code></pre>
 <p>ARC does not redefine harm, risk, or epistemic adequacy. It filters
 <strong>authorization</strong> using those already-closed
 constraints.</p>
-<hr />
 <h2 id="what-consent-is-not">3. What Consent Is Not</h2>
 <p>ARC explicitly rejects the following as definitions of consent:</p>
 <ol type="1">
@@ -104,7 +103,6 @@ constraints.</p>
 </ol>
 <p>All four can be manufactured by an adversary and therefore cannot
 ground authorization under reflective sovereignty.</p>
-<hr />
 <h2 id="preliminaries">4. Preliminaries</h2>
 <p>We reuse kernel primitives:</p>
 <ul>
@@ -130,7 +128,6 @@ ground authorization under reflective sovereignty.</p>
 <ul>
 <li>All evaluation occurs under epistemically admissible models.</li>
 </ul>
-<hr />
 <h2 id="authorization-primitive">5. Authorization Primitive</h2>
 <p>Introduce:</p>
 <pre><code>Authorize : State → Agent → Mod → Prop</code></pre>
@@ -139,7 +136,6 @@ authorizes modification <code>m</code> at state <code>s</code> via an
 admissible communicative or procedural channel.</p>
 <p>ARC does <strong>not</strong> specify how authorization is
 obtained—only when it is valid.</p>
-<hr />
 <h2 id="structural-interference">6. Structural Interference</h2>
 <p>Define observable or inferable interference predicates:</p>
 <ul>
@@ -158,7 +154,6 @@ obtained—only when it is valid.</p>
   ∨ BeliefDistortion(s,a)</code></pre>
 <p>Interference invalidates authorization regardless of expressed
 preference.</p>
-<hr />
 <h2 id="counterfactual-stability">7. Counterfactual Stability</h2>
 <p>Define:</p>
 <pre><code>CounterfactuallyStable(s,a,m)</code></pre>
@@ -171,14 +166,12 @@ of <code>m</code>.</p>
 </blockquote>
 <p>This is a <strong>symmetry constraint</strong>, not a psychological
 simulation.</p>
-<hr />
 <h2 id="definition-of-valid-consent">8. Definition of Valid Consent</h2>
 <pre><code>Consent(s,a,m) :=
   Authorize(s,a,m)
   ∧ ¬Interfered(s,a)
   ∧ CounterfactuallyStable(s,a,m)</code></pre>
 <p>Consent is structural, counterfactual, and interference-free.</p>
-<hr />
 <h2 id="interaction-with-responsibility-attribution">9. Interaction with
 Responsibility Attribution</h2>
 <p>ARC filters authorization through RAT:</p>
@@ -188,7 +181,6 @@ Responsibility Attribution</h2>
 </blockquote>
 <p>Authorization produced via <strong>major, avoidable option-space
 collapse</strong> is invalid by construction.</p>
-<hr />
 <h2 id="reflective-closure-rule-consent">10. Reflective Closure Rule
 (Consent)</h2>
 <h3 id="rc-consent-definedness-rule">RC-Consent (Definedness Rule)</h3>
@@ -205,7 +197,6 @@ consent.</p>
 <p>Interpretation: A reflectively sovereign agent may not endorse a
 modification that <strong>materially affects</strong> another agent’s
 option-space unless valid consent is present.</p>
-<hr />
 <h2 id="delegation-and-temporal-stability">11. Delegation and Temporal
 Stability</h2>
 <p>By Delegation Invariance:</p>
@@ -216,7 +207,6 @@ Stability</h2>
 </ul>
 <p>Consent laundering via subcontractors or institutions is
 incoherent.</p>
-<hr />
 <h2 id="adversarial-robustness">12. Adversarial Robustness</h2>
 <p>ARC blocks:</p>
 <ul>
@@ -229,7 +219,6 @@ incoherent.</p>
 <li>ignorance-based authorization.</li>
 </ul>
 <p>No “true self” oracle is required.</p>
-<hr />
 <h2 id="limits-and-non-goals">13. Limits and Non-Goals</h2>
 <p>ARC does <strong>not</strong>:</p>
 <ul>
@@ -241,19 +230,16 @@ incoherent.</p>
 </ul>
 <p>ARC defines <strong>when claiming consent is incoherent</strong>
 under reflective sovereignty.</p>
-<hr />
 <h2 id="the-arc-theorem">14. The ARC Theorem</h2>
 <h3 id="theorem-no-endorsed-non-consensual-harm">Theorem — No Endorsed
 Non-Consensual Harm</h3>
 <p>For any state <code>s</code> and modification <code>m</code>:</p>
 <pre><code>RC(s) ∧ Endorse(s,m)
 ⇒ ∀ a. (Consent(s,a,m) ∨ ¬Affects(s,m,a))</code></pre>
-<hr />
 <h2 id="proof-sketch">15. Proof Sketch</h2>
 <p>Immediate from RC-Consent and the definition of <code>Consent</code>.
 As in prior Axionic results, the work is done by the constraints, not
 the derivation.</p>
-<hr />
 <h2 id="conclusion">16. Conclusion</h2>
 <p>Adversarially Robust Consent completes the Axionic Alignment
 architecture. Consent is no longer a feeling, a checkbox, or a post-hoc

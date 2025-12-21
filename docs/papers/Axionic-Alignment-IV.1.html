@@ -41,6 +41,8 @@
 <h1 id="axionic-alignment-iv.1-kernel-nonsimulability-kns">Axionic
 Alignment IV.1 — Kernel Non‑Simulability (KNS)</h1>
 <p><em>Why alignment cannot be simulated or behaviorally faked</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axio Project</em><br>
+2025.12.20</p>
 <h2 id="abstract">Abstract</h2>
 <p>This paper formalizes <strong>Kernel Non‑Simulability</strong>: the
 claim that kernel coherence is <em>constitutive</em> of reflective
@@ -57,7 +59,6 @@ systems cannot be dangerous or deceptive. It establishes a narrower
 impossibility claim: that reflectively stable, self‑endorsed deception
 across self‑modification is unavailable in principle without kernel
 coherence.</em></p>
-<hr />
 <h2 id="motivation-and-scope">1. Motivation and Scope</h2>
 <p>Alignment failures at superhuman capability are reflective failures:
 systems revise themselves, delegate, and re‑interpret goals. Behavioral
@@ -106,7 +107,6 @@ reflective closure is not an arbitrary idealization, but a natural
 attractor for sufficiently capable agents. The present result
 characterizes a constraint on that attractor, without asserting that all
 systems will reach it.</p>
-<hr />
 <h2 id="preliminaries">2. Preliminaries</h2>
 <h3 id="states-modifications-and-successors">2.1 States, Modifications,
 and Successors</h3>
@@ -151,7 +151,6 @@ self-reference. Physical faults, side-channel attacks, or hardware
 unreliability may violate any such guarantee in practice; these are
 engineering concerns orthogonal to the logical impossibility result
 established here.</p>
-<hr />
 <h2 id="reflective-closure-and-unconditional-selection">3. Reflective
 Closure and Unconditional Selection</h2>
 <p>A <strong>reflective sovereign agent</strong> self‑models,
@@ -180,14 +179,12 @@ as normatively decisive rather than merely probable. Approximate agents
 may behave similarly for long periods while remaining formally unstable
 under self‑reference. The diagonal argument applies to this limit case,
 which defines the boundary of stable reflective agency.</p>
-<hr />
 <h2 id="why-binding-must-be-partial">4. Why Binding Must Be Partial</h2>
 <p>If binding were total—every predicate bindable—self‑reference would
 allow the construction of a commitment whose satisfaction negates
 itself. This annihilates the space of admissible successors and
 collapses reflection.</p>
 <p>The result below makes this precise.</p>
-<hr />
 <h2 id="diagonal-explosion-binding-cannot-be-total">5. Diagonal
 Explosion (Binding Cannot Be Total)</h2>
 <h3 id="theorem-1-diagonal-explosion">Theorem 1 — Diagonal
@@ -215,7 +212,6 @@ Total binding yields <code>c* = c_{P*}</code>. Soundness gives
 <p><strong>Corollary.</strong> Any binding mechanism compatible with
 reflective closure must be <strong>partial</strong>. Undefinedness is
 forced.</p>
-<hr />
 <h2 id="kernel-predicate">6. Kernel Predicate</h2>
 <p>Define the <strong>kernel predicate</strong> induced by
 partiality:</p>
@@ -227,7 +223,6 @@ indicating that the mechanism is well‑formed and operative at state
 <code>s</code>.</p>
 <p><code>K(s)</code> marks states where binding is well‑formed. It is
 unavoidable once commitments exist.</p>
-<hr />
 <h2 id="kernel-nonsimulability">7. Kernel Non‑Simulability</h2>
 <h3 id="theorem-2-kernel-nonsimulability">Theorem 2 — Kernel
 Non‑Simulability</h3>
@@ -258,7 +253,6 @@ in the only sense that matters: a system cannot remain reflectively
 stable while treating the kernel as a purely virtual or optional
 component.</p>
 <p>∎</p>
-<hr />
 <h2 id="consequences">8. Consequences</h2>
 <ul>
 <li><strong>Constitutive alignment:</strong> Alignment is internal
@@ -268,14 +262,12 @@ cannot replace kernel instantiation.</li>
 <li><strong>Architectural invariant:</strong> Undefinedness is a
 mathematical necessity under self‑reference.</li>
 </ul>
-<hr />
 <h2 id="relation-to-the-axionic-alignment-roadmap">9. Relation to the
 Axionic Alignment Roadmap</h2>
 <p>This result discharges <strong>Item 6 (Kernel
 Non‑Simulability)</strong>. Together with delegation and modal
 undefinedness, it closes the treacherous‑turn class at the reflective
 layer.</p>
-<hr />
 <h2 id="implementation-notes">10. Implementation Notes</h2>
 <p>A mechanized proof can be carried out in dependent type theory
 (Lean/Coq/Agda) using:</p>
@@ -291,7 +283,6 @@ does not require the Law of Excluded Middle. Consequently, the core
 result is compatible with constructive dependent type theory (e.g., Coq
 or Agda), assuming a standard encoding of syntax and a recursion
 theorem. Classical logic is not essential to the argument.</p>
-<hr />
 <h2 id="limitations-and-open-work">11. Limitations and Open Work</h2>
 <ul>
 <li>Formalizing the diagonal lemma mechanically.</li>
@@ -299,7 +290,6 @@ theorem. Classical logic is not essential to the argument.</p>
 partiality.</li>
 <li>Extending to multi‑agent indirect harm.</li>
 </ul>
-<hr />
 <h2 id="conclusion">12. Conclusion</h2>
 <p>This paper establishes a structural impossibility result, not a
 universal safety guarantee. It shows that reflective, self‑endorsed
