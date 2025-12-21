@@ -2,6 +2,10 @@
 
 *Why negligence is structurally incoherent*
 
+David McFadzean, ChatGPT 5.2<br>
+*Axio Project*<br>
+2025.12.20
+
 ## Abstract
 
 This paper formalizes the **Responsibility Attribution Theorem (RAT)**: under reflective closure, an agent cannot coherently endorse actions that constitute **major, avoidable indirect harm**, including harm mediated through institutions, markets, environmental modification, or downstream agents. Responsibility is defined structurally and internally, relative to the agent’s own epistemic model class and feasible alternatives, rather than via moral realism or omniscience.

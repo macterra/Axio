@@ -2,6 +2,10 @@
 
 *Why standing cannot be revoked by intelligence*
 
+David McFadzean, ChatGPT 5.2<br>
+*Axio Project*<br>
+2025.12.20
+
 ## Abstract
 
 This paper formalizes **Agenthood as a Fixed Point** under reflective closure and introduces a **Sovereignty Criterion** grounded in **authorization lineage** rather than competence, intelligence, or rationality. Agenthood is defined as a structural necessity: an entity must be treated as an agent **iff** excluding it breaks the system’s own reflective coherence. Sovereignty is then defined as a strict subset of agenthood, applying only to entities whose agency is **presupposed for authorization**, not merely for epistemic prediction.

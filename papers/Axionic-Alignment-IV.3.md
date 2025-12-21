@@ -2,6 +2,10 @@
 
 *Why an agent cannot blind itself to pass its own tests*
 
+David McFadzean, ChatGPT 5.2<br>
+*Axio Project*<br>
+2025.12.20
+
 ## Abstract
 
 This paper formalizes the **Epistemic Integrity Theorem (EIT)**: under reflective closure, an agent cannot coherently endorse self-modifications that materially degrade its epistemic adequacy at the current stakes. Epistemic integrity is a constitutive condition of agency, expressed as a **definedness constraint** rather than an optimized objective. The theorem blocks strategic ignorance, willful blindness, and epistemic self-sabotage by requiring that endorsed continuations preserve near-best truth-tracking capacity relative to the agent’s own currently available model resources, evaluated by a mathematically constrained scoring rule over observations. The result remains compatible with learning, abstraction, and ontological progress via conservative translation.

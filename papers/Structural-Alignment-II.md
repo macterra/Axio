@@ -1,6 +1,10 @@
-# Safety by Architecture
+# Structural Alignment II - Safety by Architecture
 
 *Why Alignment Is Not Value Learning*
+
+David McFadzean, ChatGPT 5.2<br>
+*Axio Project*<br>
+2025.12.20
 
 ## Abstract
 

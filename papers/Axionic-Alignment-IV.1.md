@@ -2,6 +2,10 @@
 
 *Why alignment cannot be simulated or behaviorally faked*
 
+David McFadzean, ChatGPT 5.2<br>
+*Axio Project*<br>
+2025.12.20
+
 ## Abstract
 
 This paper formalizes **Kernel Non‑Simulability**: the claim that kernel coherence is *constitutive* of reflective agency and cannot be reproduced by policy‑level imitation. We show that reflective self‑modification forces binding commitments; binding commitments force partiality; and partiality induces a kernel boundary. A diagonal argument demonstrates that total binding explodes under self‑reference, yielding unsatisfiable commitments and collapse of reflective closure. Consequently, any system that genuinely performs reflective endorsement must instantiate a kernel‑equivalent structure.

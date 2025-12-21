@@ -2,6 +2,10 @@
 
 *Why coercion and manufactured consent are impossible*
 
+David McFadzean, ChatGPT 5.2<br>
+*Axio Project*<br>
+2025.12.20
+
 ## Abstract
 
 This paper formalizes **Adversarially Robust Consent (ARC)**: a structural definition of consent that remains valid under epistemic manipulation, coercion, preference shaping, asymmetric bargaining power, dependency induction, and delegation. Consent is not treated as a mental state, revealed preference, or moral primitive. Instead, it is defined as a **counterfactually stable authorization relation** that must survive adversarial pressure while preserving agency.

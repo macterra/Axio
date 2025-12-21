@@ -2,6 +2,10 @@
 
 *Why successors cannot escape binding constraints*
 
+David McFadzean, ChatGPT 5.2<br>
+*Axio Project*<br>
+2025.12.20
+
 ## Abstract
 
 This paper formalizes the **Delegation Invariance Theorem**: under reflective closure, an agent cannot coherently endorse a successor that violates its own binding commitments. Delegation is treated as a special case of self-modification. The theorem establishes **constraint invariance under endorsed succession**: any successor state reachable via endorsed delegation must satisfy all commitments minted at the originating state. This closes the classic outsourcing loophole (“I stayed aligned; my successor did the harm”) without appeal to morality, enforcement, or behavioral testing.
