@@ -1,10 +1,6 @@
 # Safety by Architecture
 
-## Why Alignment Is Not Value Learning
-
-**David Mc**
-
----
+*Why Alignment Is Not Value Learning*
 
 ## Abstract
 
