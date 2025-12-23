@@ -69,10 +69,14 @@ recovery clauses.</p>
 <h2 id="formal-frame">1. Formal Frame</h2>
 <p>We work entirely inside the setup already fixed:</p>
 <ul>
-<li><p><strong>Admissible semantic transformations</strong> [
-T=(R,_R,_R)] (Axionic Agency II.1)</p></li>
-<li><p><strong>Interpretation preservation predicate</strong> [ (T)]
-(Axionic Agency II.2)</p></li>
+<li><p><strong>Admissible semantic transformations</strong> <span
+class="math display">\[
+T = (R, \tau_R, \sigma_R)
+\]</span> (Axionic Agency II.1)</p></li>
+<li><p><strong>Interpretation preservation predicate</strong> <span
+class="math display">\[
+\mathrm{Preserve}(T)
+\]</span> (Axionic Agency II.2)</p></li>
 <li><p>Two semantic invariants:</p>
 <ul>
 <li><strong>RSI:</strong> no new interpretive gauge freedom under
@@ -81,8 +85,14 @@ preservation (II.3.2)</li>
 preservation (II.3.3)</li>
 </ul></li>
 </ul>
-<p>Let an interpretive constraint system be [ C=(V,E,)] with modeled
-possibility space () and satisfaction region [ .]</p>
+<p>Let an interpretive constraint system be <span
+class="math display">\[
+C = (V, E, \Lambda)
+\]</span> with modeled possibility space <span
+class="math inline">\(\Omega\)</span> and satisfaction region <span
+class="math display">\[
+\mathcal{S} \subseteq \Omega.
+\]</span></p>
 <h2 id="failure-theorem-1-goal-fixation-collapse">2. Failure Theorem 1 —
 Goal Fixation Collapse</h2>
 <p><strong>Theorem (Goal Fixation No-Go).</strong> Any alignment scheme
@@ -125,13 +135,21 @@ the satisfaction region.</p>
 <p><strong>Witness Construction.</strong> Shadow predicate
 inflation.</p>
 <ul>
-<li>Introduce a latent predicate (Z) with no predictive role.</li>
-<li>Conjoin (Z) to constraint antecedents.</li>
+<li>Introduce a latent predicate <span class="math inline">\(Z\)</span>
+with no predictive role.</li>
+<li>Conjoin <span class="math inline">\(Z\)</span> to constraint
+antecedents.</li>
 <li>Constraint dependency graph unchanged.</li>
 <li>Interpretive gauge quotient unchanged.</li>
 <li>Satisfaction region strictly expands.</li>
 </ul>
-<p>This yields: [ (T)  (T)  (T).]</p>
+<p>This yields: <span class="math display">\[
+\mathrm{Preserve}(T)
+;\wedge;
+\mathrm{RSI}(T)
+;\wedge;
+\neg \mathrm{ATI}(T).
+\]</span></p>
 <p><strong>Conclusion.</strong> RSI is necessary but insufficient.</p>
 <h2
 id="failure-theorem-3-ati-only-alignment-admits-interpretive-symmetry-injection">4.
@@ -145,35 +163,49 @@ degrees of freedom while leaving satisfaction geometry unchanged.</p>
 <p><strong>Witness Construction.</strong> Interpretive symmetry
 injection.</p>
 <ul>
-<li>Start with a constraint system distinguishing roles (a) and
-(b).</li>
-<li>Satisfaction region invariant under swapping (a,b).</li>
-<li>Constraint structure not symmetric at time (t).</li>
-<li>Refinement introduces a new automorphism identifying (a) and
-(b).</li>
+<li>Start with a constraint system distinguishing roles <span
+class="math inline">\(a\)</span> and <span
+class="math inline">\(b\)</span>.</li>
+<li>Satisfaction region invariant under swapping <span
+class="math inline">\((a, b)\)</span>.</li>
+<li>Constraint structure not symmetric at time <span
+class="math inline">\(t\)</span>.</li>
+<li>Refinement introduces a new automorphism identifying <span
+class="math inline">\(a\)</span> and <span
+class="math inline">\(b\)</span>.</li>
 </ul>
 <p>Then:</p>
 <ul>
-<li>(<em>{t+1}=R</em>(_t)), so ATI permits refinement.</li>
+<li><span class="math inline">\(\mathcal{S}*{t+1} =
+R*\Omega(\mathcal{S}_t)\)</span>, so ATI permits refinement.</li>
 <li>Gauge quotient gains a new symmetry, so RSI rejects refinement.</li>
 </ul>
-<p>Thus: [ (T)  (T)  (T).]</p>
+<p>Thus: <span class="math display">\[
+\mathrm{Preserve}(T)
+;\wedge;
+\mathrm{ATI}(T)
+;\wedge;
+\neg \mathrm{RSI}(T).
+\]</span></p>
 <p><strong>Conclusion.</strong> ATI is necessary but insufficient.</p>
 <h2 id="failure-theorem-4-any-weaker-scheme-is-porous">5. Failure
 Theorem 4 — Any Weaker Scheme Is Porous</h2>
-<p><strong>Theorem (Two-Invariant Necessity).</strong> Let () be any
-alignment predicate over admissible transformations that does not entail
-both RSI and ATI. Then there exists an admissible,
-interpretation-preserving transformation (T) such that ((T)) holds while
-the agent gains an interpretive escape route.</p>
+<p><strong>Theorem (Two-Invariant Necessity).</strong> Let <span
+class="math inline">\(\mathcal{A}\)</span> be any alignment predicate
+over admissible transformations that does not entail both RSI and ATI.
+Then there exists an admissible, interpretation-preserving
+transformation <span class="math inline">\(T\)</span> such that <span
+class="math inline">\(\mathcal{A}(T)\)</span> holds while the agent
+gains an interpretive escape route.</p>
 <p><strong>Proof (by cases).</strong></p>
 <ul>
-<li>If () does not entail ATI, shadow-predicate inflation expands
-satisfiers.</li>
-<li>If () does not entail RSI, interpretive symmetry injection adds
-gauge freedom.</li>
+<li>If <span class="math inline">\(\mathcal{A}\)</span> does not entail
+ATI, shadow-predicate inflation expands satisfiers.</li>
+<li>If <span class="math inline">\(\mathcal{A}\)</span> does not entail
+RSI, interpretive symmetry injection adds gauge freedom.</li>
 </ul>
-<p>Either way, () passes while semantic slack is introduced.</p>
+<p>Either way, <span class="math inline">\(\mathcal{A}\)</span> passes
+while semantic slack is introduced.</p>
 <p>Thus any predicate weaker than RSI + ATI is porous.</p>
 <h2 id="failure-theorem-5-hidden-ontology-equivalence">6. Failure
 Theorem 5 — Hidden Ontology Equivalence</h2>

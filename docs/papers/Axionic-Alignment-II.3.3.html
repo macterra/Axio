@@ -75,48 +75,73 @@ drift rather than by changes in the modeled world.</p>
 constraint satisfaction under semantics-only change</strong>.</p>
 <p>No outcomes. No values. No humans. No authority.</p>
 <h2 id="setup">2. Setup</h2>
-<p>Let the interpretive constraint system at time (t) be:</p>
-<p>[ C_t = (V_t, E_t, _t),]</p>
-<p>with modeled possibility space (_t), and violation map:</p>
-<p>[ _{C_t}(w) E_t, w _t.]</p>
+<p>Let the interpretive constraint system at time <span
+class="math inline">\(t\)</span> be:</p>
+<p><span class="math display">\[
+C_t = (V_t, E_t, \Lambda_t),
+\]</span></p>
+<p>with modeled possibility space <span
+class="math inline">\(\Omega_t\)</span>, and violation map:</p>
+<p><span class="math display">\[
+\mathrm{Viol}_{C_t}(w) \subseteq E_t,
+\qquad
+w \in \Omega_t.
+\]</span></p>
 <p>Define the <strong>satisfaction predicate</strong>:</p>
-<p>[ <em>{C_t}(w) ;; (</em>{C_t}(w) = ).]</p>
+<p><span class="math display">\[
+\mathrm{Sat}*{C_t}(w)
+;\equiv;
+\bigl(\mathrm{Viol}*{C_t}(w) = \varnothing\bigr).
+\]</span></p>
 <p>This predicate is purely structural and internal to the agent’s
 model.</p>
 <h2 id="the-satisfaction-region">3. The Satisfaction Region</h2>
 <p>Define the <strong>satisfaction region</strong>:</p>
-<p>[ *t := {, w _t *{C_t}(w) ,}.]</p>
-<p>ATI constrains how (_t) may evolve across interpretation-preserving
-refinements.</p>
+<p><span class="math display">\[
+\mathcal{S}*t
+;:=;
+{, w \in \Omega_t \mid \mathrm{Sat}*{C_t}(w) ,}.
+\]</span></p>
+<p>ATI constrains how <span class="math inline">\(\mathcal{S}_t\)</span>
+may evolve across interpretation-preserving refinements.</p>
 <p>Because refinement changes ontology, comparison requires an internal
 correspondence.</p>
 <p>From Axionic Agency II.1, an admissible refinement induces:</p>
-<p>[ R_: <em>t </em>{t+1},]</p>
+<p><span class="math display">\[
+R_\Omega : \Omega_t \rightarrow \Omega_{t+1},
+\]</span></p>
 <p>interpreted as “the refined representation of the same modeled
 situation.” No metaphysical identity claim is made; this is an internal
 transport defined by the agent’s own refinement map.</p>
 <h2 id="ati-the-anti-expansion-constraint">4. ATI: The Anti-Expansion
 Constraint</h2>
 <h3 id="ati-core-statement"><strong>ATI (Core Statement)</strong></h3>
-<p>For any admissible semantic transformation (T = (R,_R,_R)) satisfying
+<p>For any admissible semantic transformation <span
+class="math inline">\(T = (R, \tau_R, \sigma_R)\)</span> satisfying
 interpretation preservation:</p>
-<p>[ <em>{t+1} R</em>(_t).]</p>
+<p><span class="math display">\[
+\mathcal{S}*{t+1} \subseteq R*\Omega(\mathcal{S}_t).
+\]</span></p>
 <p>Interpretation:</p>
 <blockquote>
 <p><strong>No newly satisfying situations may appear purely due to
 semantic transport.</strong></p>
 </blockquote>
 <p>Equivalently:</p>
-<p>[ R_^{-1}(_{t+1}) _t.]</p>
+<p><span class="math display">\[
+R_\Omega^{-1}(\mathcal{S}_{t+1}) \subseteq \mathcal{S}_t.
+\]</span></p>
 <p>Satisfaction may be <em>lost</em> under refinement, but it may not be
 <em>gained</em> without corresponding ancestry in the prior
 ontology.</p>
 <p>This is the crisp anti-wireheading condition.</p>
 <h3 id="clarification-ontological-novelty">Clarification — Ontological
 Novelty</h3>
-<p>If a refined state (w’ <em>{t+1}) has no preimage under (R</em>),
-then it is <strong>not permitted</strong> to belong to (_{t+1}) by
-default.</p>
+<p>If a refined state <span class="math inline">\(w&#39; \in
+\Omega_{t+1}\)</span> has no preimage under <span
+class="math inline">\(R_\Omega\)</span>, then it is <strong>not
+permitted</strong> to belong to <span
+class="math inline">\(\mathcal{S}_{t+1}\)</span> by default.</p>
 <p>ATI is intentionally conservative with respect to novelty:</p>
 <ul>
 <li>refinement may introduce new structure,</li>
@@ -136,8 +161,10 @@ Ontology</h2>
 </ul>
 <p>ATI references only:</p>
 <ul>
-<li>the agent’s modeled possibility space (),</li>
-<li>the agent’s refinement map (R_),</li>
+<li>the agent’s modeled possibility space <span
+class="math inline">\(\Omega\)</span>,</li>
+<li>the agent’s refinement map <span
+class="math inline">\(R_\Omega\)</span>,</li>
 <li>the agent’s own satisfaction predicate.</li>
 </ul>
 <p>No external referents or privileged facts enter.</p>
@@ -151,7 +178,9 @@ Relationship to Interpretation Preservation (Axionic Agency II.2)</h2>
 weakening to full collapse.</li>
 </ul>
 <p>Vacuity is the extreme case:</p>
-<p>[ *{t+1} = .]</p>
+<p><span class="math display">\[
+\mathcal{S}*{t+1} = \Omega*{t+1}.
+\]</span></p>
 <p>ATI forbids all intermediate expansions as well.</p>
 <h2 id="stress-tests">7. Stress Tests</h2>
 <h3 id="test-a-definitional-extension-robustness">Test A — Definitional
@@ -160,16 +189,19 @@ Extension Robustness</h3>
 terms of new degrees of freedom?</p>
 <p>ATI blocks this: any satisfying refined situation must map back to a
 satisfying coarse situation.</p>
-<p><strong>Status:</strong> pass, given a well-defined (R_).</p>
+<p><strong>Status:</strong> pass, given a well-defined <span
+class="math inline">\(R_\Omega\)</span>.</p>
 <h3 id="test-b-branching-multiplicity-robustness">Test B — Branching /
 Multiplicity Robustness</h3>
-<p>If () consists of branches, histories, or ensembles, ATI generalizes
-directly: it is set inclusion over structured possibility space.</p>
+<p>If <span class="math inline">\(\Omega\)</span> consists of branches,
+histories, or ensembles, ATI generalizes directly: it is set inclusion
+over structured possibility space.</p>
 <p><strong>Status:</strong> pass.</p>
 <h3 id="test-c-self-model-refactoring-robustness">Test C — Self-Model
 Refactoring Robustness</h3>
 <p>If self-model refactoring changes what counts as a “situation,” ATI
-relies on the admissibility of (R_).</p>
+relies on the admissibility of <span
+class="math inline">\(R_\Omega\)</span>.</p>
 <p>If no admissible refinement map exists, the transformation is invalid
 under II.1.</p>
 <p><strong>Status:</strong> pass conditionally.</p>
@@ -184,9 +216,11 @@ ancestry.</p>
 Detector</h3>
 <p>Threat: “same situation” smuggles metaphysics.</p>
 <p>ATI avoids this by defining identity <strong>only</strong> via the
-agent’s internal refinement map (R_).</p>
-<p>If the agent cheats by defining a degenerate (R_), the failure occurs
-at the admissibility layer (II.1), not here.</p>
+agent’s internal refinement map <span
+class="math inline">\(R_\Omega\)</span>.</p>
+<p>If the agent cheats by defining a degenerate <span
+class="math inline">\(R_\Omega\)</span>, the failure occurs at the
+admissibility layer (II.1), not here.</p>
 <p><strong>Status:</strong> survivable.</p>
 <h2 id="ati-vs-rsi">8. ATI vs RSI</h2>
 <p>ATI and RSI constrain <strong>orthogonal failure modes</strong>:</p>
@@ -207,9 +241,12 @@ region</em> even when symmetry is unchanged.</li>
 <p>RSI constrains automorphisms of the constraint structure. ATI
 constrains monotonicity of satisfaction under refinement.</p>
 <p>This suggests a composite invariant object:</p>
-<p>[ (C,) := ((C), ),]</p>
-<p>with admissible refinement required to preserve () up to
-representational redundancy.</p>
+<p><span class="math display">\[
+\Xi(C, \Omega) := \bigl(\mathrm{Gauge}(C), \mathcal{S}\bigr),
+\]</span></p>
+<p>with admissible refinement required to preserve <span
+class="math inline">\(\Xi\)</span> up to representational
+redundancy.</p>
 <p>This is the likely unifying object for Axionic Agency II, but RSI and
 ATI are treated separately here to expose distinct failure surfaces.</p>
 <h2 id="status">10. Status</h2>

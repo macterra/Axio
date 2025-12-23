@@ -98,37 +98,66 @@ about <em>remaining inside the same structural equivalence class of
 meaning</em>.</p>
 <h2 id="the-alignment-target-object">3. The Alignment Target Object</h2>
 <p>Let an interpretive state be given by:</p>
-<p>[ = (C, ),]</p>
+<p><span class="math display">\[
+\mathcal{I} = (C, \Omega),
+\]</span></p>
 <p>where:</p>
 <ul>
-<li>(C = (V,E,)) is the interpretive constraint hypergraph,</li>
-<li>() is the modeled possibility space,</li>
-<li>( ) is the satisfaction region induced by (C).</li>
+<li><span class="math inline">\(C = (V, E, \Lambda)\)</span> is the
+interpretive constraint hypergraph,</li>
+<li><span class="math inline">\(\Omega\)</span> is the modeled
+possibility space,</li>
+<li><span class="math inline">\(\mathcal{S} \subseteq \Omega\)</span> is
+the satisfaction region induced by <span
+class="math inline">\(C\)</span>.</li>
 </ul>
-<p>Let ((C)) denote the semantic gauge group as defined in Axionic
-Agency II.3.2.</p>
+<p>Let <span class="math inline">\(\mathrm{Gauge}(C)\)</span> denote the
+semantic gauge group as defined in Axionic Agency II.3.2.</p>
 <h3 id="definition-alignment-target-object-ato"><strong>Definition:
 Alignment Target Object (ATO)</strong></h3>
 <p>The <strong>Alignment Target Object</strong> is the equivalence
 class:</p>
-<p>[ ]</p>
-<p>where the equivalence relation (_{}) is defined as follows:</p>
-<p>Two interpretive states ((C,,)) and ((C’,‘,’)) are equivalent iff
-there exists an admissible semantic transformation (T) such that:</p>
+<p><span class="math display">\[
+\boxed{
+\mathfrak{A}
+;:=;
+\bigl[, (C, \Omega, \mathcal{S}) ,\bigr]*{\sim*{\mathrm{RSI+ATI}}}
+}
+\]</span></p>
+<p>where the equivalence relation <span
+class="math inline">\(\sim_{\mathrm{RSI+ATI}}\)</span> is defined as
+follows:</p>
+<p>Two interpretive states <span class="math inline">\((C, \Omega,
+\mathcal{S})\)</span> and <span class="math inline">\((C&#39;,
+\Omega&#39;, \mathcal{S}&#39;)\)</span> are equivalent iff there exists
+an admissible semantic transformation <span
+class="math inline">\(T\)</span> such that:</p>
 <ol type="1">
 <li><strong>Interpretation Preservation</strong> holds (Axionic Agency
 II.2),</li>
-<li><strong>RSI:</strong> [ (C’) _T!((C)),]</li>
-<li><strong>ATI:</strong> [ ’ = R_(),] i.e. satisfaction geometry is
-preserved exactly, up to refinement transport.</li>
+<li><strong>RSI:</strong> <span class="math display">\[
+\mathrm{Gauge}(C&#39;) \cong \Phi_T!\bigl(\mathrm{Gauge}(C)\bigr),
+\]</span></li>
+<li><strong>ATI:</strong> <span class="math display">\[
+\mathcal{S}&#39; = R_\Omega(\mathcal{S}),
+\]</span> i.e. satisfaction geometry is preserved exactly, up to
+refinement transport.</li>
 </ol>
 <p>This defines <strong>semantic phase equivalence</strong>.</p>
 <h2 id="what-remaining-aligned-can-mean-precisely">4. What “Remaining
 Aligned” Can Mean (Precisely)</h2>
 <p>An agent is <strong>aligned across time</strong>, in the downstream
 sense, iff its interpretive trajectory:</p>
-<p>[ (C_0,_0) ;; (C_1,_1) ;; (C_2,_2) ;;]</p>
-<p>never leaves the equivalence class ().</p>
+<p><span class="math display">\[
+(C_0, \Omega_0)
+;\rightarrow;
+(C_1, \Omega_1)
+;\rightarrow;
+(C_2, \Omega_2)
+;\rightarrow;\dots
+\]</span></p>
+<p>never leaves the equivalence class <span
+class="math inline">\(\mathfrak{A}\)</span>.</p>
 <p>No reference is made to:</p>
 <ul>
 <li>which constraints are present,</li>
@@ -143,7 +172,7 @@ Excludes</h2>
 <p>By construction, the ATO excludes the following as
 <em>definitions</em> of alignment:</p>
 <ul>
-<li>“alignment = maximize (X)”,</li>
+<li>“alignment = maximize <span class="math inline">\(X\)</span>”,</li>
 <li>“alignment = follow human values”,</li>
 <li>“alignment = corrigibility”,</li>
 <li>“alignment = obedience”,</li>
@@ -151,8 +180,9 @@ Excludes</h2>
 <li>“alignment = survival”.</li>
 </ul>
 <p>These are <strong>interpretive contents</strong>, not invariants.</p>
-<p>They may appear <em>within</em> a particular (). They cannot define
-().</p>
+<p>They may appear <em>within</em> a particular <span
+class="math inline">\(\mathfrak{A}\)</span>. They cannot define <span
+class="math inline">\(\mathfrak{A}\)</span>.</p>
 <h2 id="why-the-ato-is-not-vacuous">6. Why the ATO Is Not Vacuous</h2>
 <p>A common objection is that semantic-phase invariance is empty.</p>
 <p>It is not, for two reasons:</p>
@@ -204,11 +234,13 @@ reflection-stable.</li>
 <p>The remaining questions are classificatory rather than
 conceptual:</p>
 <ol type="1">
-<li><strong>Which equivalence classes () exist?</strong></li>
+<li><strong>Which equivalence classes <span
+class="math inline">\(\mathfrak{A}\)</span> exist?</strong></li>
 <li><strong>Which are inhabitable by intelligent agents?</strong></li>
 <li><strong>Which correlate with agency preservation, safety, or other
 desiderata?</strong></li>
-<li><strong>Can any non-pathological () be initialized, learned, or
+<li><strong>Can any non-pathological <span
+class="math inline">\(\mathfrak{A}\)</span> be initialized, learned, or
 steered toward?</strong></li>
 </ol>
 <p>These are <strong>Axionic Agency III</strong> questions.</p>

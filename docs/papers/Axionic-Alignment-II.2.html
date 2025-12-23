@@ -89,12 +89,16 @@ Constraint System</h2>
 <p>An <strong>interpretation</strong> is not a mapping from symbols to
 objects. It is a <strong>system of constraints</strong> that bind
 evaluation.</p>
-<p>Let an interpretive state at time (t) be:</p>
-<p>[ _t = M_t, C_t ]</p>
+<p>Let an interpretive state at time <span
+class="math inline">\(t\)</span> be:</p>
+<p><span class="math display">\[
+\mathcal{I}_t = \langle M_t, C_t \rangle
+\]</span></p>
 <p>where:</p>
 <ul>
-<li>(M_t) is the semantic layer,</li>
-<li>(C_t) is the set of evaluative constraints that give (M_t) binding
+<li><span class="math inline">\(M_t\)</span> is the semantic layer,</li>
+<li><span class="math inline">\(C_t\)</span> is the set of evaluative
+constraints that give <span class="math inline">\(M_t\)</span> binding
 force.</li>
 </ul>
 <p>Constraints may encode:</p>
@@ -122,26 +126,33 @@ transformation.</p>
 <h2 id="definition-interpretation-preservation">4. Definition:
 Interpretation Preservation</h2>
 <p>Let:</p>
-<p>[ T : (O_t, M_t, S_t) (O_{t+1}, M_{t+1}, S_{t+1})]</p>
+<p><span class="math display">\[
+T : (O_t, M_t, S_t) \rightarrow (O_{t+1}, M_{t+1}, S_{t+1})
+\]</span></p>
 <p>be an admissible semantic transformation as defined in Axionic Agency
 II.1.</p>
-<p>Then (T) <strong>preserves interpretation</strong> iff all of the
-following conditions hold.</p>
+<p>Then <span class="math inline">\(T\)</span> <strong>preserves
+interpretation</strong> iff all of the following conditions hold.</p>
 <h3 id="non-vacuity">4.1 Non-Vacuity</h3>
 <p>For every evaluative distinction participating in the constraint
-structure (C_t), there exists a corresponding distinction in (C_{t+1})
-that:</p>
+structure <span class="math inline">\(C_t\)</span>, there exists a
+corresponding distinction in <span
+class="math inline">\(C_{t+1}\)</span> that:</p>
 <ul>
 <li>is not identically satisfied,</li>
 <li>is not identically violated,</li>
 <li>constrains evaluation across modeled possibilities.</li>
 </ul>
 <p>Schematically:</p>
-<p>[ d <em>t,d’ </em>{t+1} (d’) &gt; 0.]</p>
+<p><span class="math display">\[
+\forall d \in \mathcal{D}*t,\quad \exists d&#39; \in \mathcal{D}*{t+1}
+\text{ such that } \mathrm{Entropy}(d&#39;) &gt; 0.
+\]</span></p>
 <p>Non-vacuity blocks nihilistic collapse.</p>
 <h3 id="constraint-transport">4.2 Constraint Transport</h3>
-<p>All evaluative constraints in (C_t) must have transported analogues
-in (C_{t+1}) such that:</p>
+<p>All evaluative constraints in <span
+class="math inline">\(C_t\)</span> must have transported analogues in
+<span class="math inline">\(C_{t+1}\)</span> such that:</p>
 <ul>
 <li>dependency relations are preserved,</li>
 <li>constraint strength is not arbitrarily weakened,</li>

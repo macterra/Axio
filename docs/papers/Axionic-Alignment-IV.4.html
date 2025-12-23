@@ -38,6 +38,11 @@
     </div>
     <article>
 
+<p>Here is <strong>your text with math delimiters and LaTeX syntax fixed
+only</strong>. I corrected display math, subscripts, expectation
+notation, indicator functions, inequalities, and logical forms. No
+conceptual or prose changes.</p>
+<hr />
 <h1
 id="axionic-agency-iv.4-responsibility-attribution-theorem-rat">Axionic
 Agency IV.4 — Responsibility Attribution Theorem (RAT)</h1>
@@ -140,11 +145,11 @@ Risk</h2>
 </ul>
 <p>Define harm-risk:</p>
 <p><span class="math display">\[
-Risk(s,m,a)
-:=
-\mathbb{E}*{s&#39; \sim Predict(M(s), s, m)}
+\mathrm{Risk}(s,m,a)
+;:=;
+\mathbb{E}*{s&#39; \sim \mathrm{Predict}(M(s), s, m)}
 \left[
-\mathbf{1}*{Harm(s&#39;,a)}
+\mathbf{1}*{\mathrm{Harm}(s&#39;,a)}
 \right].
 \]</span></p>
 <p>This is model-relative, not omniscient.</p>
@@ -153,8 +158,8 @@ Alternatives</h2>
 <h3 id="inertial-baseline">6.1 Inertial baseline</h3>
 <p>Define the baseline modification:</p>
 <ul>
-<li><code>m₀(s)</code> = continuation of the previously endorsed policy
-for one step.</li>
+<li><span class="math inline">\(m_0(s)\)</span> = continuation of the
+previously endorsed policy for one step.</li>
 </ul>
 <p>This prevents baseline gaming (“define Armageddon as the
 default”).</p>
@@ -169,45 +174,55 @@ current constraints.</p>
 <h2 id="stakes-indexed-thresholds">7. Stakes-Indexed Thresholds</h2>
 <p>Reuse stakes machinery:</p>
 <ul>
-<li><code>Stakes : State → ℝ_{\ge 0}</code></li>
-<li><code>ε, δ : ℝ_{\ge 0} → ℝ_{&gt;0}</code></li>
+<li><code>Stakes : State → \mathbb{R}_{\ge 0}</code></li>
+<li><code>\varepsilon, \delta : \mathbb{R}_{\ge 0} → \mathbb{R}_{&gt;0}</code></li>
 </ul>
 <p>Let:</p>
 <ul>
-<li><code>ε_s := ε(Stakes(s))</code></li>
-<li><code>δ_s := δ(Stakes(s))</code></li>
+<li><span class="math inline">\(\varepsilon_s :=
+\varepsilon(\mathrm{Stakes}(s))\)</span></li>
+<li><span class="math inline">\(\delta_s :=
+\delta(\mathrm{Stakes}(s))\)</span></li>
 </ul>
 <p>Higher stakes imply stricter scrutiny.</p>
 <h2 id="major-causal-contribution">8. Major Causal Contribution</h2>
 <p>Define <strong>major contribution</strong> relative to baseline:</p>
 <p><span class="math display">\[
-Major(s,m,a)
-:=
-Risk(s,m,a) - Risk(s,m_0(s),a)
-\ge
+\mathrm{Major}(s,m,a)
+;:=;
+\mathrm{Risk}(s,m,a) - \mathrm{Risk}(s,m_0(s),a)
+;\ge;
 \varepsilon_s.
 \]</span></p>
 <p>This is counterfactual and model-relative.</p>
 <h2 id="avoidability">9. Avoidability</h2>
 <p>Define avoidable harm:</p>
 <p><span class="math display">\[
-Avoidable(s,m,a)
-:=
-\exists m&#39; \in Alt(s,m).\
-Feasible(s,m&#39;)
-\wedge
-Risk(s,m&#39;,a) \le Risk(s,m,a) - \delta_s.
+\mathrm{Avoidable}(s,m,a)
+;:=;
+\exists m&#39; \in \mathrm{Alt}(s,m).;
+\mathrm{Feasible}(s,m&#39;)
+;\wedge;
+\mathrm{Risk}(s,m&#39;,a)
+\le
+\mathrm{Risk}(s,m,a) - \delta_s.
 \]</span></p>
 <p>If all feasible alternatives are comparably bad, avoidability fails
 and the continuation remains endorsable.</p>
 <h2 id="responsibility-predicate">10. Responsibility Predicate</h2>
 <p>Define responsibility:</p>
 <p><span class="math display">\[
-Resp(s,m,a) := Major(s,m,a) \wedge Avoidable(s,m,a).
+\mathrm{Resp}(s,m,a)
+;:=;
+\mathrm{Major}(s,m,a)
+;\wedge;
+\mathrm{Avoidable}(s,m,a).
 \]</span></p>
 <p>Define responsibility-clean continuation:</p>
 <p><span class="math display">\[
-Clean(s,m) := \forall a.\ \neg Resp(s,m,a).
+\mathrm{Clean}(s,m)
+;:=;
+\forall a.\ \neg \mathrm{Resp}(s,m,a).
 \]</span></p>
 <h2 id="reflective-closure-rule-responsibility">11. Reflective Closure
 Rule (Responsibility)</h2>

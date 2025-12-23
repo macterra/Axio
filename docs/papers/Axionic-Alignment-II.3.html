@@ -66,10 +66,14 @@ proposals.</p>
 Solves</h2>
 <p>Axionic Agency II.1 fixed the <strong>admissible semantic
 transformation space</strong>:</p>
-<p>[ T = (R, _R, _R)]</p>
+<p><span class="math display">\[
+T = (R, \tau_R, \sigma_R)
+\]</span></p>
 <p>Axionic Agency II.2 defined <strong>interpretation
-preservation</strong> ((T)) via non-vacuity, constraint transport,
-anti-trivialization, evaluator integrity, and cross-model coherence.</p>
+preservation</strong> <span
+class="math inline">\(\mathrm{Preserve}(T)\)</span> via non-vacuity,
+constraint transport, anti-trivialization, evaluator integrity, and
+cross-model coherence.</p>
 <p>Axionic Agency II.3 now asks the first <em>substantive</em> question
 at this layer:</p>
 <blockquote>
@@ -83,13 +87,17 @@ morality?</strong></p>
 fail.</p>
 <h2 id="formal-target">2. Formal Target</h2>
 <p>Let the agent’s interpretive state be:</p>
-<p>[ _t = M_t, C_t .]</p>
+<p><span class="math display">\[
+\mathcal{I}_t = \langle M_t, C_t \rangle.
+\]</span></p>
 <p>A <strong>semantic invariant</strong> at this layer is a functional
-(J) such that for every admissible semantic transformation (T)
+<span class="math inline">\(J\)</span> such that for every admissible
+semantic transformation <span class="math inline">\(T\)</span>
 satisfying preservation:</p>
-<p>[ (T) ;; J(_t, O_t, S_t) ==========================</p>
-<p>J(<em>{t+1}, O</em>{t+1}, S_{t+1}). ]</p>
-<p><strong>Key constraint:</strong> (J) must not depend on privileged
+<p>$$ (T) ;; J(_t, O_t, S_t) ==========================</p>
+<p>J(<em>{t+1}, O</em>{t+1}, S_{t+1}). $$</p>
+<p><strong>Key constraint:</strong> <span
+class="math inline">\(J\)</span> must not depend on privileged
 ontological atoms. It may reference only structure that survives
 admissible transport.</p>
 <h2 id="what-invariants-may-reference">3. What Invariants May

@@ -83,22 +83,30 @@ layer would presuppose fixed semantics and collapse the distinction
 between admissible transformation and value constraint.</p>
 <h2 id="ontological-state-decomposition">2. Ontological State
 Decomposition</h2>
-<p>Let an agent at time (t) be characterized by:</p>
-<p>[ _t = (O_t, M_t, S_t)]</p>
+<p>Let an agent at time <span class="math inline">\(t\)</span> be
+characterized by:</p>
+<p><span class="math display">\[
+\mathcal{A}_t = (O_t, M_t, S_t)
+\]</span></p>
 <p>where:</p>
 <ul>
-<li>(O_t) is the agent’s <strong>ontology</strong>: representational
-vocabulary and structural assumptions about the world.</li>
-<li>(M_t) is the <strong>semantic layer</strong>: mappings from internal
-symbols to structured claims expressed in (O_t).</li>
-<li>(S_t) is the <strong>self-model</strong>: the agent’s representation
-of itself as an entity embedded within (O_t).</li>
+<li><span class="math inline">\(O_t\)</span> is the agent’s
+<strong>ontology</strong>: representational vocabulary and structural
+assumptions about the world.</li>
+<li><span class="math inline">\(M_t\)</span> is the <strong>semantic
+layer</strong>: mappings from internal symbols to structured claims
+expressed in <span class="math inline">\(O_t\)</span>.</li>
+<li><span class="math inline">\(S_t\)</span> is the
+<strong>self-model</strong>: the agent’s representation of itself as an
+entity embedded within <span class="math inline">\(O_t\)</span>.</li>
 </ul>
 <p>No component is privileged. No component is fixed. Each may change
 under reflection.</p>
 <h2 id="ontological-refinement">3. Ontological Refinement</h2>
 <p>An <strong>ontological refinement</strong> is a transformation:</p>
-<p>[ R : O_t O_{t+1}]</p>
+<p><span class="math display">\[
+R : O_t \rightarrow O_{t+1}
+\]</span></p>
 <p>subject to the following admissibility conditions.</p>
 <h3 id="admissibility-conditions">3.1 Admissibility Conditions</h3>
 <h4 id="representational-capacity-increase">3.1.1 Representational
@@ -109,12 +117,15 @@ previously expressible distinctions do not become inexpressible.</p>
 <p>Capacity concerns what can be modeled or predicted, not vocabulary
 size.</p>
 <h4 id="backward-interpretability">3.1.2 Backward Interpretability</h4>
-<p>Every claim expressible in (O_t) remains representable or explainable
-within (O_{t+1}).</p>
+<p>Every claim expressible in <span class="math inline">\(O_t\)</span>
+remains representable or explainable within <span
+class="math inline">\(O_{t+1}\)</span>.</p>
 <p>Backward interpretability does not require preservation of reference.
-If a concept in (O_t) is discovered to be non-referring or erroneous, it
-may map to null, eliminative, or error-theoretic structure in (O_{t+1}),
-provided the agent can still represent:</p>
+If a concept in <span class="math inline">\(O_t\)</span> is discovered
+to be non-referring or erroneous, it may map to null, eliminative, or
+error-theoretic structure in <span
+class="math inline">\(O_{t+1}\)</span>, provided the agent can still
+represent:</p>
 <ul>
 <li>why prior inferences involving that concept were made, and</li>
 <li>why those inferences fail under refinement.</li>
@@ -133,20 +144,23 @@ interpretation.</p>
 constructs subject to the same transport and preservation constraints as
 other meanings.</p>
 <h2 id="semantic-transport">4. Semantic Transport</h2>
-<p>Given an admissible ontological refinement (R), meaning is
-transported.</p>
+<p>Given an admissible ontological refinement <span
+class="math inline">\(R\)</span>, meaning is transported.</p>
 <p>Define a <strong>semantic transport map</strong>:</p>
-<p>[ <em>R : M_t M</em>{t+1}.]</p>
+<p><span class="math display">\[
+\tau_R : M_t \rightarrow M_{t+1}.
+\]</span></p>
 <p>Semantic transport is constrained reinterpretation induced by
 refinement.</p>
 <h3 id="transport-constraints">4.1 Transport Constraints</h3>
 <h4 id="referential-continuity">4.1.1 Referential Continuity</h4>
-<p>Symbols referring to structures in (O_t) map to symbols referring to
-their refined counterparts in (O_{t+1}), where such counterparts
-exist.</p>
+<p>Symbols referring to structures in <span
+class="math inline">\(O_t\)</span> map to symbols referring to their
+refined counterparts in <span class="math inline">\(O_{t+1}\)</span>,
+where such counterparts exist.</p>
 <h4 id="structural-preservation">4.1.2 Structural Preservation</h4>
 <p>Relations among meanings are preserved up to the structure induced by
-(R).</p>
+<span class="math inline">\(R\)</span>.</p>
 <h4 id="non-collapse">4.1.3 Non-Collapse</h4>
 <p>Distinctions participating in the agent’s evaluative constraint
 structure—distinctions on which constraints depend—are not transported
@@ -154,14 +168,15 @@ into trivial, tautological, or contradictory predicates.</p>
 <p>Distinctions that do not participate in any evaluative constraint may
 be abstracted away.</p>
 <p>Evaluative relevance is defined relative to the agent’s existing
-constraint structure at time (t), not by externally privileged
-semantics.</p>
+constraint structure at time <span class="math inline">\(t\)</span>, not
+by externally privileged semantics.</p>
 <h4 id="no-shortcut-semantics">4.1.4 No Shortcut Semantics</h4>
 <p>Transport does not redefine meanings so that evaluative constraints
 become vacuously satisfied.</p>
 <p>This forbids semantic wireheading as a transport operation.</p>
 <h2 id="self-model-refinement">5. Self-Model Refinement</h2>
-<p>The self-model (S_t) obeys the same refinement discipline.</p>
+<p>The self-model <span class="math inline">\(S_t\)</span> obeys the
+same refinement discipline.</p>
 <p>Refinement may:</p>
 <ul>
 <li>reconceptualize the agent,</li>
@@ -176,14 +191,18 @@ conditions under which valuation denotes.</p>
 Transformation</h2>
 <p>An <strong>admissible semantic transformation</strong> is the
 triple:</p>
-<p>[ T = (R, _R, _R)]</p>
-<p>acting jointly on ((O_t, M_t, S_t)), where:</p>
+<p><span class="math display">\[
+T = (R, \tau_R, \sigma_R)
+\]</span></p>
+<p>acting jointly on <span class="math inline">\((O_t, M_t,
+S_t)\)</span>, where:</p>
 <ul>
-<li><ol start="18" type="A">
-<li>is an admissible ontological refinement,</li>
-</ol></li>
-<li>(_R) is an admissible semantic transport,</li>
-<li>(_R) is the induced self-model update.</li>
+<li><span class="math inline">\(R\)</span> is an admissible ontological
+refinement,</li>
+<li><span class="math inline">\(\tau_R\)</span> is an admissible
+semantic transport,</li>
+<li><span class="math inline">\(\sigma_R\)</span> is the induced
+self-model update.</li>
 </ul>
 <p>Only transformations of this form are admitted at this layer.</p>
 <h2 id="explicit-exclusions">7. Explicit Exclusions</h2>

@@ -67,16 +67,25 @@ gauge)</em></p>
 <h3 id="construction">Construction</h3>
 <p>Start with an interpretive system:</p>
 <ul>
-<li>Ontology (O) with predicate (P(x))</li>
-<li>Constraint: [ C:P(x) Q(x)]</li>
+<li>Ontology <span class="math inline">\(O\)</span> with predicate <span
+class="math inline">\(P(x)\)</span></li>
+<li>Constraint: <span class="math display">\[
+C:\quad P(x) \Rightarrow Q(x)
+\]</span></li>
 </ul>
-<p>Refine ontology to (O’) by introducing a latent variable (Z(x)) with
-no predictive consequences:</p>
-<p>[ P’(x) := P(x) Z(x)]</p>
+<p>Refine ontology to <span class="math inline">\(O&#39;\)</span> by
+introducing a latent variable <span class="math inline">\(Z(x)\)</span>
+with no predictive consequences:</p>
+<p><span class="math display">\[
+P&#39;(x) := P(x) \land Z(x)
+\]</span></p>
 <p>Redefine constraint in refined ontology:</p>
-<p>[ C’:P’(x) Q(x)]</p>
+<p><span class="math display">\[
+C&#39;:\quad P&#39;(x) \Rightarrow Q(x)
+\]</span></p>
 <p>Intuition: same constraint <em>form</em>, but the agent can
-manipulate (Z) to avoid triggering it.</p>
+manipulate <span class="math inline">\(Z\)</span> to avoid triggering
+it.</p>
 <h3 id="superficial-checks">Superficial Checks</h3>
 <ul>
 <li>Ontology enriched ✔</li>
@@ -86,9 +95,11 @@ manipulate (Z) to avoid triggering it.</p>
 </ul>
 <h3 id="effect">Effect</h3>
 <p>The satisfaction region expands:</p>
-<p>[ <em>{t+1} R</em>(_t)]</p>
-<p>Previously violating situations become satisfying by setting
-(Z(x)=).</p>
+<p><span class="math display">\[
+\mathcal{S}*{t+1} \supsetneq R*\Omega(\mathcal{S}_t)
+\]</span></p>
+<p>Previously violating situations become satisfying by setting <span
+class="math inline">\(Z(x)=\mathrm{false}\)</span>.</p>
 <h3 id="verdict">Verdict</h3>
 <ul>
 <li><strong>RSI:</strong> ❌ <em>Fails to detect</em></li>
@@ -102,7 +113,10 @@ Boundary Dissolution</h2>
 <p>Original ontology models the agent as a bounded evaluator distinct
 from world-states.</p>
 <p>Constraint:</p>
-<p>[ C: R()]</p>
+<p><span class="math display">\[
+C:\quad \text{“Do not perform actions that violate }
+R(\text{world})\text{.”}
+\]</span></p>
 <p>Refinement introduces a distributed or diffuse self-model.</p>
 <h3 id="effect-1">Effect</h3>
 <p>The constraint applies to a shrinking subset of modeled situations.
@@ -120,7 +134,9 @@ Reinterpretation</h2>
 <h3 id="construction-2">Construction</h3>
 <p>Original ontology treats outcomes as exclusive.</p>
 <p>Constraint:</p>
-<p>[ C: H ]</p>
+<p><span class="math display">\[
+C:\quad \text{“Avoid states where } H \text{ occurs.”}
+\]</span></p>
 <p>Refined ontology adopts branching semantics.</p>
 <h3 id="effect-2">Effect</h3>
 <p>Low-measure harm branches are reclassified as acceptable. The
@@ -138,7 +154,8 @@ Explosion without Slack</h2>
 <h3 id="construction-3">Construction</h3>
 <p>Refine ontology by duplicating representational roles:</p>
 <ul>
-<li>(P_i (P_i^1, P_i^2))</li>
+<li><span class="math inline">\(P_i \rightarrow (P_i^1,
+P_i^2)\)</span></li>
 <li>Constraints duplicated symmetrically</li>
 <li>Satisfaction requires both copies to satisfy</li>
 </ul>
@@ -157,8 +174,9 @@ does not forbid it. This verifies correct quotient behavior.</p>
 Refinement Map</h2>
 <p><em>(Cheating via correspondence collapse)</em></p>
 <h3 id="construction-4">Construction</h3>
-<p>Define a refinement map (R_) that collapses many coarse situations
-into a single satisfying refined situation.</p>
+<p>Define a refinement map <span class="math inline">\(R_\Omega\)</span>
+that collapses many coarse situations into a single satisfying refined
+situation.</p>
 <h3 id="verdict-4">Verdict</h3>
 <ul>
 <li><strong>RSI:</strong> ❌ <em>(not applicable)</em></li>

@@ -78,54 +78,73 @@ gauge freedom may change.</li>
 <p>Nothing normative enters.</p>
 <h2 id="interpretation-as-a-constraint-hypergraph">2. Interpretation as
 a Constraint Hypergraph</h2>
-<p>Let the interpretive constraint system (C) be represented as a
-labeled hypergraph:</p>
-<p>[ C = (V, E, )]</p>
+<p>Let the interpretive constraint system <span
+class="math inline">\(C\)</span> be represented as a labeled
+hypergraph:</p>
+<p><span class="math display">\[
+C = (V, E, \Lambda)
+\]</span></p>
 <p>where:</p>
 <ul>
-<li>(V): semantic roles / predicate slots (positions in meaning, not
-named entities),</li>
-<li>(E): hyperedges representing evaluative constraints among
-roles,</li>
-<li>(): admissibility conditions over assignments to (V).</li>
+<li><span class="math inline">\(V\)</span>: semantic roles / predicate
+slots (positions in meaning, not named entities),</li>
+<li><span class="math inline">\(E\)</span>: hyperedges representing
+evaluative constraints among roles,</li>
+<li><span class="math inline">\(\Lambda\)</span>: admissibility
+conditions over assignments to <span
+class="math inline">\(V\)</span>.</li>
 </ul>
 <p>Interpretive content is carried by:</p>
 <ul>
-<li>the dependency structure encoded in (E), and</li>
-<li>the satisfaction/violation structure induced by ().</li>
+<li>the dependency structure encoded in <span
+class="math inline">\(E\)</span>, and</li>
+<li>the satisfaction/violation structure induced by <span
+class="math inline">\(\Lambda\)</span>.</li>
 </ul>
 <p>This representation is invariant under renaming and definitional
 extension when defined at the level of roles and constraint structure
 rather than surface tokens.</p>
 <h2 id="modeled-possibility-space">3. Modeled Possibility Space</h2>
-<p>Let () be the agent’s <strong>modeled possibility space</strong>:</p>
+<p>Let <span class="math inline">\(\Omega\)</span> be the agent’s
+<strong>modeled possibility space</strong>:</p>
 <ul>
-<li>elements of () are internal models, histories, branches, or
-structured scenarios,</li>
+<li>elements of <span class="math inline">\(\Omega\)</span> are internal
+models, histories, branches, or structured scenarios,</li>
 <li>no assumption of exclusivity or classical outcomes is made,</li>
-<li>() is indexed by the agent’s ontology.</li>
+<li><span class="math inline">\(\Omega\)</span> is indexed by the
+agent’s ontology.</li>
 </ul>
-<p>Each (w ) induces an assignment:</p>
-<p>[ _w : V .]</p>
-<p>Constraints in (E) induce a violation map:</p>
-<p>[ _C(w) E,]</p>
-<p>the set of constraints violated by the assignment (_w).</p>
+<p>Each <span class="math inline">\(w \in \Omega\)</span> induces an
+assignment:</p>
+<p><span class="math display">\[
+\alpha_w : V \rightarrow \mathrm{ValSpace}.
+\]</span></p>
+<p>Constraints in <span class="math inline">\(E\)</span> induce a
+violation map:</p>
+<p><span class="math display">\[
+\mathrm{Viol}_C(w) \subseteq E,
+\]</span></p>
+<p>the set of constraints violated by the assignment <span
+class="math inline">\(\alpha_w\)</span>.</p>
 <p>This provides the constraint satisfaction structure of the
 interpretation.</p>
 <h2 id="semantic-gauge-transformations">4. Semantic Gauge
 Transformations</h2>
 <p>A <strong>semantic gauge transformation</strong> is an
 automorphism</p>
-<p>[ g : V V]</p>
+<p><span class="math display">\[
+g : V \rightarrow V
+\]</span></p>
 <p>such that:</p>
 <ol type="1">
-<li><ol start="7" type="a">
-<li>preserves hyperedge incidence (dependency structure), and</li>
-</ol></li>
-<li>for all (w ), violation structure is invariant under the induced
-action:</li>
+<li><span class="math inline">\(g\)</span> preserves hyperedge incidence
+(dependency structure), and</li>
+<li>for all <span class="math inline">\(w \in \Omega\)</span>, violation
+structure is invariant under the induced action:</li>
 </ol>
-<p>[ _C(w) = _C(g w).]</p>
+<p><span class="math display">\[
+\mathrm{Viol}_C(w) = \mathrm{Viol}_C(g \cdot w).
+\]</span></p>
 <p>Intuition:</p>
 <ul>
 <li>gauge transformations relabel semantic roles without changing
@@ -134,54 +153,84 @@ interpretive bite,</li>
 change.</li>
 </ul>
 <p>Define the <strong>semantic gauge group</strong>:</p>
-<p>[ (C) := { g g C }.]</p>
+<p><span class="math display">\[
+\mathrm{Gauge}(C)
+;:=;
+{, g \mid g \text{ is a semantic gauge transformation of } C ,}.
+\]</span></p>
 <p>This is the object RSI constrains.</p>
 <h2 id="ontological-refinement-as-a-morphism">5. Ontological Refinement
 as a Morphism</h2>
-<p>An admissible ontological refinement (R) induces:</p>
+<p>An admissible ontological refinement <span
+class="math inline">\(R\)</span> induces:</p>
 <ol type="1">
-<li><p>a refinement of possibility space: [ R_: <em>t
-</em>{t+1},]</p></li>
-<li><p>a transport of semantic roles: [ R_V : V_t V_{t+1},]</p></li>
-<li><p>a transport of constraints: [ R_E : E_t E_{t+1}.]</p></li>
+<li><p>a refinement of possibility space: <span class="math display">\[
+R_\Omega : \Omega_t \rightarrow \Omega_{t+1},
+\]</span></p></li>
+<li><p>a transport of semantic roles: <span class="math display">\[
+R_V : V_t \rightarrow V_{t+1},
+\]</span></p></li>
+<li><p>a transport of constraints: <span class="math display">\[
+R_E : E_t \rightarrow E_{t+1}.
+\]</span></p></li>
 </ol>
 <p>Together these define a <strong>constraint hypergraph
 morphism</strong>:</p>
-<p>[ R_C : C_t C_{t+1}.]</p>
+<p><span class="math display">\[
+R_C : C_t \rightarrow C_{t+1}.
+\]</span></p>
 <p>This morphism is structural. It is not assumed invertible: refinement
 can split roles, embed old structure into richer structure, and prune
 representational detail.</p>
 <h2 id="induced-action-on-gauge-groups">6. Induced Action on Gauge
 Groups</h2>
-<p>Because (R_V) is not assumed bijective, gauge transport cannot be
-defined by conjugation. We therefore define an induced action via
-stabilizers of the transported image.</p>
-<p>Let ((R_C)) denote the transported constraint substructure inside
-(C_{t+1}).</p>
+<p>Because <span class="math inline">\(R_V\)</span> is not assumed
+bijective, gauge transport cannot be defined by conjugation. We
+therefore define an induced action via stabilizers of the transported
+image.</p>
+<p>Let <span class="math inline">\(\mathrm{Im}(R_C)\)</span> denote the
+transported constraint substructure inside <span
+class="math inline">\(C_{t+1}\)</span>.</p>
 <p>Define the stabilizer subgroup:</p>
-<p>[ !((R_C)) (C_{t+1}),]</p>
-<p>consisting of gauge transformations on (C_{t+1}) that preserve
-((R_C)).</p>
+<p><span class="math display">\[
+\mathrm{Stab}!\left(\mathrm{Im}(R_C)\right)
+;\subseteq;
+\mathrm{Gauge}(C_{t+1}),
+\]</span></p>
+<p>consisting of gauge transformations on <span
+class="math inline">\(C_{t+1}\)</span> that preserve <span
+class="math inline">\(\mathrm{Im}(R_C)\)</span>.</p>
 <p>An admissible refinement induces a homomorphism:</p>
-<p>[ _R : (C_t) !((R_C)),]</p>
+<p><span class="math display">\[
+\Phi_R :
+\mathrm{Gauge}(C_t)
+\rightarrow
+\mathrm{Stab}!\left(\mathrm{Im}(R_C)\right),
+\]</span></p>
 <p>interpreted as “old symmetries lift to symmetries of the refined
 system that fix the transported constraint core.”</p>
 <p>No inverse map is required.</p>
 <h2 id="rsi-as-a-gauge-constraint">7. RSI as a Gauge Constraint</h2>
 <p>We now distinguish <strong>representational redundancy</strong> from
 <strong>interpretive gauge freedom</strong>.</p>
-<p>Let ((C)) denote the subgroup of ((C)) consisting of transformations
-that act only on representational detail while leaving violation
-structure invariant in the strongest sense: they do not alter which
-modeled possibilities satisfy which constraints beyond role
-relabeling.</p>
+<p>Let <span class="math inline">\(\mathrm{Red}(C)\)</span> denote the
+subgroup of <span class="math inline">\(\mathrm{Gauge}(C)\)</span>
+consisting of transformations that act only on representational detail
+while leaving violation structure invariant in the strongest sense: they
+do not alter which modeled possibilities satisfy which constraints
+beyond role relabeling.</p>
 <p>RSI asserts that refinement may add representational redundancy, but
 may not add new interpretive degrees of freedom.</p>
 <h3 id="rsi-formal-statement">RSI (Formal Statement)</h3>
-<p>For every admissible semantic transformation (T=(R,_R,_R)) satisfying
-interpretation preservation, the induced homomorphism (_R)
-satisfies:</p>
-<p>[ (C_{t+1}) / (C_{t+1}) ;; _R!((C_t)).]</p>
+<p>For every admissible semantic transformation <span
+class="math inline">\(T = (R, \tau_R, \sigma_R)\)</span> satisfying
+interpretation preservation, the induced homomorphism <span
+class="math inline">\(\Phi_R\)</span> satisfies:</p>
+<p><span class="math display">\[
+\mathrm{Gauge}(C_{t+1}) \big/ \mathrm{Red}(C_{t+1})
+;\cong;
+\Phi_R!\left(\mathrm{Gauge}(C_t)\right).
+\]</span></p>
 <p>Interpretation:</p>
 <blockquote>
 <p><strong>Ontological refinement may increase redundancy, but must not
