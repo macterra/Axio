@@ -163,14 +163,6 @@ Certain catastrophic behaviors are no longer choices. They are undefined.
 Safety, in Axio, is not optimized.
 It **falls out of agency coherence**.
 
-If you want next, two natural options:
-
-1. **A hostile-reader FAQ** (“What about X?”)
-2. **A minimal formal stack diagram** (Kernel → Endorsement → Interaction → Standing)
-
-Say which direction you want to go.
-
-
 # Papers
 
 This directory contains source markdown files for academic-style papers with LaTeX math support.
