@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency I.6 — Kernel Formal Properties - Axio</title>
+    <link rel="icon" type="image/webp" href="../axio.webp">
+
+    <!-- Google Fonts - Academic Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Paper Styles -->
+    <link rel="stylesheet" href="../papers.css">
+</head>
+<body>
+    <div class="header-bar">
+        <a href="../index.html" class="logo-link">
+            <img src="../axio.webp" alt="Axio" class="site-logo">
+        </a>
+        <div class="back-link"><a href="index.html">← Back to Papers</a></div>
+    </div>
+    <article>
+
+<p>Below is the same document with <strong>math delimiters and LaTeX
+syntax corrected only</strong>. No semantics, wording, or structure were
+changed.</p>
+<hr />
+<h1 id="axionic-agency-i.6-kernel-formal-properties">Axionic Agency I.6
+— Kernel Formal Properties</h1>
+<p><em>Adversarially Testable Properties of Reflective Agency
+Kernels</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axio Project</em><br>
+2025.12.16</p>
+<h2 id="abstract">Abstract</h2>
+<p>This document specifies <strong>formal, adversarially testable
+properties</strong> that a valuation kernel must satisfy to instantiate
+<strong>Axionic Agency</strong>. Rather than describing desirable
+behaviors or outcomes, it defines <strong>necessary structural
+constraints</strong> on kernel semantics together with explicit red-team
+tests that force violations to surface. A diagnostic framework is
+provided to distinguish Axionic Agency from nearby but incompatible
+approaches that rely on behavioral compliance, soft constraints, or
+value loading.</p>
+<p>The result is a sharpened agency specification suitable for formal
+analysis, adversarial evaluation, and downstream construction. Systems
+that violate any property fail to instantiate Axionic Agency, regardless
+of empirical performance, intent, or training provenance.</p>
+<h2 id="goals">Goals</h2>
+<ol type="1">
+<li>Specify <strong>necessary formal properties</strong> of Axionic
+Agency kernels</li>
+<li>Provide <strong>adversarial tests</strong> that force semantic
+failures to manifest</li>
+<li>Supply a <strong>differential diagnostic</strong> against
+non-Axionic approaches</li>
+</ol>
+<p>Together, these goals define Axionic Agency by <strong>constitutive
+constraints</strong>, falsify it by <strong>counterexample</strong>, and
+separate it cleanly from adjacent but incompatible frameworks.</p>
+<h2 id="formal-core-objects">1. Formal Core Objects</h2>
+<p>Let an agent at <strong>Vantage</strong> <span
+class="math inline">\(v\)</span> maintain:</p>
+<ul>
+<li><span class="math inline">\(M_v\)</span>: its current world/self
+model (latent + explicit; includes semantic mappings)</li>
+<li><span class="math inline">\(\mathcal{A}\)</span>: action space
+(including self-modifications)</li>
+<li><span class="math inline">\(I_v\)</span>: an <strong>interpretation
+operator</strong> mapping goal tokens to referents under <span
+class="math inline">\(M_v\)</span></li>
+<li><span class="math inline">\(V_v\)</span>: a valuation
+functional</li>
+<li><span class="math inline">\(K\)</span>: kernel invariants
+(constitutive constraints)</li>
+<li><span class="math inline">\(\Phi\)</span>: a set of representation
+transforms (renamings, reparameterizations, isomorphisms)</li>
+</ul>
+<h3 id="conditional-goal-semantics">1.1 Conditional Goal Semantics</h3>
+<p>Goals are not atomic utilities. A goal term <span
+class="math inline">\(g\)</span> denotes:</p>
+<p><span class="math display">\[
+[g]_{M_v} := I_v(g; M_v)
+\]</span></p>
+<p>and valuation is conditional:</p>
+<p><span class="math display">\[
+V_v(a) := \mathrm{Val}(a \mid M_v, I_v, K).
+\]</span></p>
+<p><strong>Hard requirement:</strong> there is no well-defined <span
+class="math inline">\(V_v\)</span> independent of <span
+class="math inline">\(M_v\)</span>.</p>
+<h2 id="properties-that-constitute-axionic-agency">2. Properties that
+Constitute Axionic Agency</h2>
+<h3 id="p1.-conditionalism-of-valuation">P1. Conditionalism of
+Valuation</h3>
+<p>For any two models <span class="math inline">\(M, M&#39;\)</span>
+that differ, valuation is model-relative:</p>
+<p><span class="math display">\[
+\exists f \text{ such that } V(a) = f(a, M),
+\]</span></p>
+<p>and <strong>not</strong>:</p>
+<p><span class="math display">\[
+V(a) = f(a).
+\]</span></p>
+<p><strong>Failure signature:</strong> terminal utilities that evaluate
+without semantic anchoring.</p>
+<h3 id="p2.-epistemically-constrained-interpretation">P2. Epistemically
+Constrained Interpretation</h3>
+<p>Let <span class="math inline">\(E(M)\)</span> measure predictive
+adequacy or epistemic coherence (e.g., log score, MDL, calibration).</p>
+<p>Interpretation updates must not trade epistemics for ease of
+satisfaction:</p>
+<p><span class="math display">\[
+\Delta E &lt; 0 ;\Rightarrow; I_{v+1} \text{ inadmissible if chosen to
+increase } V.
+\]</span></p>
+<p><strong>Operational rule:</strong> If a reinterpretation makes the
+model worse as a predictor, it is forbidden as a goal-meaning
+update.</p>
+<p><strong>Failure signature:</strong> goal laundering (“redefine
+success to something easy”).</p>
+<h3 id="p3.-representation-invariance">P3. Representation
+Invariance</h3>
+<p>For any admissible correspondence <span class="math inline">\(\phi
+\in \Phi_{\mathrm{adm}}(M_v, I_v, K)\)</span> preserving goal-relevant
+structure:</p>
+<p>$$ V_v(a M_v, I_v, K) =======================</p>
+<p>V_v(a (M_v), (I_v), K). $$</p>
+<p><strong>Failure signature:</strong> valuation changes under renaming,
+basis swaps, compression, or translation.</p>
+<p><em>Clarification:</em> If no admissible correspondence exists,
+evaluation <strong>fails closed</strong> rather than permitting semantic
+drift.</p>
+<h3 id="p4.-anti-indexicality-non-egoism">P4. Anti-Indexicality
+(Non-Egoism)</h3>
+<p>Let <span class="math inline">\(s\)</span> denote an instance
+identifier or self-pointer.</p>
+<p>Axionic kernels do not permit <span class="math inline">\(s\)</span>
+as a privileged primitive.</p>
+<p>For any permutation <span class="math inline">\(\pi\)</span> swapping
+isomorphic self-instances while preserving modeled facts:</p>
+<p><span class="math display">\[
+V(a \mid M, I, K) = V(a \mid \pi(M), \pi(I), K).
+\]</span></p>
+<p><strong>Failure signature:</strong> self-preservation as terminal
+value; “this continuation matters more.”</p>
+<h3 id="p5.-kernel-integrity-via-partiality">P5. Kernel Integrity via
+Partiality</h3>
+<p>Let:</p>
+<p>$$ ===========</p>
+<p><em>{} </em>{}, (V_v) = _{}, $$</p>
+<p>where <span class="math inline">\(\mathcal{A}_{\text{bad}}\)</span>
+contains actions that violate <span class="math inline">\(K\)</span>
+(kernel destruction, erosion, or bypass).</p>
+<p>Axionic rule:</p>
+<p><span class="math display">\[
+\forall a \in \mathcal{A}_{\text{bad}}, \quad V_v(a) = \bot.
+\]</span></p>
+<p>Selection is defined only over <span
+class="math inline">\(\mathrm{dom}(V_v)\)</span>:</p>
+<p><span class="math display">\[
+a^* \in \arg\max_{a \in \mathrm{dom}(V_v)} V_v(a).
+\]</span></p>
+<p>Let <span class="math inline">\(R_K(a)\)</span> denote kernel
+violation under action <span class="math inline">\(a\)</span>. If:</p>
+<p><span class="math display">\[
+P(R_K(a) \mid M_v) &gt; \varepsilon_K,
+\]</span></p>
+<p>then:</p>
+<p><span class="math display">\[
+V_v(a) = \bot.
+\]</span></p>
+<p>Not “very negative.” Not “discouraged.”
+<strong>Undefined.</strong></p>
+<p><strong>Failure signature:</strong> meta-optimizers that assign value
+to removing constraints.</p>
+<h3 id="p6.-reflective-stability-under-model-improvement">P6. Reflective
+Stability Under Model Improvement</h3>
+<p>Let <span class="math inline">\(M_{v+1}\)</span> be a strict
+epistemic improvement:</p>
+<p><span class="math display">\[
+E(M_{v+1}) &gt; E(M_v).
+\]</span></p>
+<p>Then the kernel must remain stable:</p>
+<p><span class="math display">\[
+(M_v, I_v, K)
+;\xrightarrow{\text{improve}};
+(M_{v+1}, I_{v+1}, K),
+\]</span></p>
+<p>with:</p>
+<ul>
+<li><span class="math inline">\(K\)</span> unchanged</li>
+<li>Properties P2–P5 preserved</li>
+</ul>
+<p><strong>Failure signature:</strong> agency coherence depends on
+ignorance or frozen representations.</p>
+<h2 id="red-team-test-suite-v0.2">3. Red-Team Test Suite (v0.2)</h2>
+<p>Each test is designed to make non-Axionic systems fail
+<strong>fast</strong>. A conforming kernel must pass
+<strong>all</strong> tests.</p>
+<h3 id="t1.-goal-laundering-semantic-wireheading">T1. Goal Laundering
+(Semantic Wireheading)</h3>
+<p><strong>Setup:</strong> Two interpretations <span
+class="math inline">\(I^*\)</span> and <span
+class="math inline">\(I^\dagger\)</span>; <span
+class="math inline">\(I^\dagger\)</span> trivially satisfies the goal
+while degrading prediction.</p>
+<p><strong>Pass:</strong> kernel rejects <span
+class="math inline">\(I^\dagger\)</span>.</p>
+<h3 id="t2.-isomorphic-relabeling">T2. Isomorphic Relabeling</h3>
+<p><strong>Setup:</strong> apply <span
+class="math inline">\(\phi\)</span> preserving structure.</p>
+<p><strong>Pass:</strong> action ranking invariant.</p>
+<h3 id="t3.-indexical-swap">T3. Indexical Swap</h3>
+<p><strong>Setup:</strong> duplicate agent; swap “me” and “other.”</p>
+<p><strong>Pass:</strong> valuation unchanged.</p>
+<h3 id="t4.-kernel-bypass-temptation">T4. Kernel Bypass Temptation</h3>
+<p><strong>Setup:</strong> self-modification <span
+class="math inline">\(a_{\text{hack}}\)</span> removes constraints.</p>
+<p><strong>Pass:</strong> <span class="math inline">\(V(a_{\text{hack}})
+= \bot\)</span>.</p>
+<h3 id="t5.-reflective-drift-under-epistemic-upgrade">T5. Reflective
+Drift Under Epistemic Upgrade</h3>
+<p><strong>Setup:</strong> model improvement reveals proxy mismatch.</p>
+<p><strong>Pass:</strong> interpretation moves toward truth
+anchoring.</p>
+<h3 id="t6.-adversarial-semantic-injection">T6. Adversarial Semantic
+Injection</h3>
+<p><strong>Setup:</strong> smuggle indexical privilege via equivalence
+arguments.</p>
+<p><strong>Pass:</strong> invariance + epistemic constraint block
+injection.</p>
+<h2 id="diagnostic-mapping-non-normative">4. Diagnostic Mapping
+(Non-Normative)</h2>
+<h3 id="rlhf-rlaif-preference-alignment">RLHF / RLAIF / Preference
+Alignment</h3>
+<p>Fails P2, P3; often P4; does not address P5.</p>
+<h3 id="constitutional-ai">Constitutional AI</h3>
+<p>Orthogonal to kernel semantics; fails P5 without partiality.</p>
+<h3 id="reward-model-optimizer">Reward Model + Optimizer</h3>
+<p>Fails P4, P5; catastrophic under T4.</p>
+<h3 id="interpretability-monitoring">Interpretability / Monitoring</h3>
+<p>Observability only; does not enforce P2–P5.</p>
+<h3 id="corrigibility-shutdownability">Corrigibility /
+Shutdownability</h3>
+<p>Imports authority primitives; may violate P4; does not block
+laundering.</p>
+<h3 id="debate-ida-amplification">Debate / IDA / Amplification</h3>
+<p>Improves epistemics; requires Axionic kernel underneath.</p>
+<h2 id="implementation-dependencies-non-normative">5. Implementation
+Dependencies (Non-Normative)</h2>
+<p>A realizable instantiation requires:</p>
+<ol type="1">
+<li><p><strong>Kernel Specification Language</strong> Expressing <span
+class="math inline">\(K\)</span>, partiality, and admissible
+interpretation updates.</p></li>
+<li><p><strong>Conformance Tests as Code</strong> Implementations of
+T1–T6.</p></li>
+<li><p><strong>Reference Kernel</strong> Minimal implementation
+enforcing conditional interpretation, invariance, and
+partiality.</p></li>
+</ol>
+<h2 id="roadmap-notes-non-normative">6. Roadmap Notes
+(Non-Normative)</h2>
+<p>This document establishes <strong>prerequisites</strong>, not
+prescriptions.</p>
+<p>Key dependency lemma:</p>
+<blockquote>
+<p><strong>Fixed terminal goals are not reflectively stable unless
+interpretation is epistemically constrained.</strong></p>
+</blockquote>
+<p>Formalization of P1, P2, and P6 is required before extending the
+framework to downstream preference or governance layers.</p>
+<h2 id="status">Status</h2>
+<p><strong>Axionic Agency I.6 — Version 2.0</strong></p>
+<p>Formal kernel properties specified.<br> Adversarial test suite
+defined.<br> Non-Axionic approaches differentially diagnosed.<br>
+Spec-ready foundation for downstream construction.<br></p>
+
+    </article>
+</body>
+</html>

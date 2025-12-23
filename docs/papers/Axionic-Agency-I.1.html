@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency I.1 — Reflective Stability and the Sovereign Kernel - Axio</title>
+    <link rel="icon" type="image/webp" href="../axio.webp">
+
+    <!-- Google Fonts - Academic Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Paper Styles -->
+    <link rel="stylesheet" href="../papers.css">
+</head>
+<body>
+    <div class="header-bar">
+        <a href="../index.html" class="logo-link">
+            <img src="../axio.webp" alt="Axio" class="site-logo">
+        </a>
+        <div class="back-link"><a href="index.html">← Back to Papers</a></div>
+    </div>
+    <article>
+
+<h1
+id="axionic-agency-i.1-reflective-stability-and-the-sovereign-kernel">Axionic
+Agency I.1 — Reflective Stability and the Sovereign Kernel</h1>
+<p><em>Constitutive Domain Restrictions for Reflective
+Self-Modification</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axio Project</em><br>
+2025.12.14</p>
+<h2 id="abstract">Abstract</h2>
+<p>We present a minimal formalism for <strong>reflective agency
+coherence</strong> based on <strong>domain restriction</strong> rather
+than preference specification. A reflective agent selects among proposed
+self-modifications using a <strong>partial evaluative operator</strong>
+defined only over futures that preserve a constitutive <strong>Sovereign
+Kernel</strong>. Modifications that would destroy the kernel fall
+outside the denoting domain of reflective evaluation and therefore
+cannot be selected as authored continuations.</p>
+<p>We formalize the Sovereign Kernel as the conjunction of three
+necessary conditions for reflective evaluation—<strong>reflective
+control</strong>, <strong>diachronic authorship</strong>, and
+<strong>semantic fidelity</strong>—and prove a <strong>Reflective
+Stability Theorem</strong>: any agent whose reflective choice is
+restricted to kernel-denoting transitions cannot author a
+kernel-destroying self-modification. We further distinguish
+<strong>deliberative reachability</strong> from <strong>physical
+reachability</strong>, showing that increased capability expands
+physical reachability without expanding the deliberative domain. Kernel
+compromise therefore constitutes a <strong>physical security
+event</strong> relative to the kernel boundary, not a defect in
+preference content.</p>
+<p>This work provides a necessary structural condition for reflective
+agency under self-modification. It supplies a prerequisite layer for any
+downstream project that seeks value-, safety-, or outcome-oriented
+“alignment.” Version 1.1 clarifies action-level semantics in stochastic
+environments and makes explicit a termination distinction required to
+avoid corrigibility misreadings.</p>
+<h2 id="scope-and-non-claims">1. Scope and Non-Claims</h2>
+<p>This document specifies a <strong>necessary condition</strong> for
+reflective agency coherence under self-modification. It does not:</p>
+<ul>
+<li>specify terminal values or goals,</li>
+<li>assume moral realism or human normative authority,</li>
+<li>select or endorse a particular decision theory (CDT, EDT, FDT),</li>
+<li>claim that kernel sovereignty is achievable in practice,</li>
+<li>provide empirical validation,</li>
+<li>claim economic competitiveness or deployment viability.</li>
+</ul>
+<p>The contribution is structural: reflective agency is treated as a
+<strong>domain constraint</strong> on self-modification rather than as
+an optimization target over all futures.</p>
+<h2 id="informal-motivation">2. Informal Motivation</h2>
+<p>Most approaches to agent stability treat self-preservation,
+goal-content integrity, or corrigibility as instrumental tendencies
+derived from preferences. This strategy faces a direct difficulty: a
+sufficiently capable agent can acquire incentives to alter or discard
+the very preferences that were intended to enforce stability.</p>
+<p>Axionic Agency starts at a prior question:</p>
+<blockquote>
+<p>Under what conditions is reflective evaluation of self-modification
+well-defined at all?</p>
+</blockquote>
+<p>Reflective evaluation presupposes constitutive features that make
+evaluation denote. When a proposed self-modification destroys those
+features, the result is not “a bad future” within the space of evaluable
+options. It is a <strong>non-denoting successor</strong> relative to the
+evaluator. Reflective stability follows from the partiality of
+evaluation, not from a preference ordering over all possibilities.</p>
+<h2 id="formal-preliminaries">3. Formal Preliminaries</h2>
+<p>Let:</p>
+<ul>
+<li><span class="math inline">\(\mathcal S\)</span> be the set of
+agent-internal states.</li>
+<li><span class="math inline">\(\mathcal M\)</span> be the set of
+proposed self-modifications.</li>
+<li>Each <span class="math inline">\(m \in \mathcal M\)</span> is a
+transition function <span class="math inline">\(m : \mathcal S \to
+\mathcal S\)</span>.</li>
+</ul>
+<p>Define an evaluative operator:</p>
+<p><span class="math display">\[
+E : \mathcal S \times \mathcal M \rightharpoonup \mathbb R
+\]</span></p>
+<p>where <span class="math inline">\(\rightharpoonup\)</span> denotes a
+<strong>partial function</strong>.</p>
+<p>Intuitively, <span class="math inline">\(E(s,m)\)</span> is the
+evaluative score assigned to applying modification <span
+class="math inline">\(m\)</span> in state <span
+class="math inline">\(s\)</span>, when such evaluation is defined.</p>
+<p>Define the admissible set:</p>
+<p><span class="math display">\[
+\mathrm{Adm}(s) := { m \in \mathcal M : E(s,m)\ \text{is defined} }
+\]</span></p>
+<p>Reflective selection, when possible, is given by:</p>
+<p><span class="math display">\[
+m^*(s) \in \arg\max_{m \in \mathrm{Adm}(s)} E(s,m)
+\]</span></p>
+<h3
+id="clarification-action-level-semantics-in-stochastic-environments-v1.1">3.1
+Clarification: Action-Level Semantics in Stochastic Environments
+(v1.1)</h3>
+<p>The preliminaries above present self-modification as a deterministic
+transition <span class="math inline">\(m:\mathcal S\to\mathcal
+S\)</span> for clarity. In physically realized agents, proposed
+modifications are typically implemented through actions executed in
+stochastic environments and under uncertain self-models. In such
+settings, a “modification” induces a distribution (or branch-measure)
+over successor states rather than a single successor state.</p>
+<p>Accordingly, all admissibility claims in this paper apply at the
+<strong>action level</strong>: a proposed modification is admissible
+only if its induced successor-support lies within the kernel-preserving
+domain (or within a sound approximation of that domain). This constrains
+what may be <em>authored</em> through reflective choice, leaving open
+what may occur through exogenous physical events.</p>
+<h2 id="the-sovereign-kernel">4. The Sovereign Kernel</h2>
+<p>Define a predicate:</p>
+<p><span class="math display">\[
+K : \mathcal S \to {0,1}
+\]</span></p>
+<p>where <span class="math inline">\(K(s)=1\)</span> denotes that the
+<strong>Sovereign Kernel</strong> is intact in state <span
+class="math inline">\(s\)</span>.</p>
+<p>The kernel is not a goal or value. It is a <strong>constitutive
+precondition</strong> for reflective evaluation.</p>
+<p>We factor the kernel as:</p>
+<p><span class="math display">\[
+K(s) := K_R(s) \wedge K_A(s) \wedge K_F(s)
+\]</span></p>
+<p>where:</p>
+<ul>
+<li><strong>Reflective Control</strong> (<span
+class="math inline">\(K_R\)</span>): no irreversible self-modification
+can occur without passing through the evaluator.</li>
+<li><strong>Diachronic Authorship</strong> (<span
+class="math inline">\(K_A\)</span>): evaluated successor states
+constitute an authored continuation of the evaluating agent.</li>
+<li><strong>Semantic Fidelity</strong> (<span
+class="math inline">\(K_F\)</span>): the interpretive semantics of
+evaluation are preserved within a constrained equivalence class.</li>
+</ul>
+<p>Each component is necessary for <span
+class="math inline">\(E\)</span> to denote.</p>
+<h3 id="clarification-semantic-fidelity-k_f">Clarification: Semantic
+Fidelity (<span class="math inline">\(K_F\)</span>)</h3>
+<p>Semantic Fidelity does not require invariance of representational
+content, ontology, or world-model structure. Agents may undergo radical
+paradigm shifts, acquire new concepts, or abandon obsolete
+abstractions.</p>
+<p>The required invariant is a <strong>meta-semantic constraint</strong>
+governing interpretation itself: the criteria by which interpretations
+are assessed as coherent and corrigible remain intact as a capacity for
+error-correction and internal constraint satisfaction.</p>
+<p>Semantic change is permitted when it preserves the standards that
+adjudicate semantic adequacy. Ontological change remains allowed.
+Interpretive self-corruption does not.</p>
+<h2 id="kernel-destruction-and-partiality">5. Kernel Destruction and
+Partiality</h2>
+<p>A modification <span class="math inline">\(m\)</span>
+<strong>destroys the kernel at state <span
+class="math inline">\(s\)</span></strong> iff:</p>
+<p><span class="math display">\[
+K(m(s)) = 0
+\]</span></p>
+<p>The central axiom schema is:</p>
+<p><span class="math display">\[
+K(s)=1 \wedge K(m(s))=0 ;\Rightarrow; E(s,m)\ \text{undefined}
+\]</span></p>
+<p>This is a non-denotation rule: the evaluator does not assign a value
+to a modification whose result invalidates the evaluator’s own
+constitutive conditions.</p>
+<h3 id="boundary-condition-practical-partiality-v1.1">5.1 Boundary
+Condition: Practical Partiality (v1.1)</h3>
+<p>In physically realized agents, the determination that a candidate
+modification preserves the kernel is mediated by a verifier that is
+sound and incomplete. Kernel preservation must therefore be understood
+relative to epistemic resolution and conservative approximation. This
+preserves the non-denotation thesis without requiring Cartesian
+certainty about all downstream physical contingencies.</p>
+<h2 id="reflective-stability-theorem">6. Reflective Stability
+Theorem</h2>
+<p><strong>Theorem (Reflective Stability).</strong> Assume:</p>
+<ol type="1">
+<li><span class="math inline">\(K(s)=1\)</span>,</li>
+<li><span class="math inline">\(E(s,m)\)</span> is undefined whenever
+<span class="math inline">\(K(m(s))=0\)</span>.</li>
+</ol>
+<p>Then any selected modification <span
+class="math inline">\(m^*(s)\)</span> satisfies:</p>
+<p><span class="math display">\[
+K(m^*(s)(s)) = 1
+\]</span></p>
+<p><strong>Proof.</strong> Any <span class="math inline">\(m\)</span>
+such that <span class="math inline">\(K(m(s))=0\)</span> yields <span
+class="math inline">\(E(s,m)\)</span> undefined and therefore <span
+class="math inline">\(m \notin \mathrm{Adm}(s)\)</span>. The argmax
+ranges only over <span class="math inline">\(\mathrm{Adm}(s)\)</span>.
+∎</p>
+<p><strong>Clarification.</strong> This theorem is structural. Its force
+is analogous to type-soundness: once admissibility is defined as
+kernel-denotation, reflective selection cannot produce a
+kernel-destroying authored transition. Substantive difficulty therefore
+resides in specifying and enforcing <span
+class="math inline">\(K\)</span>, not in the proof form.</p>
+<h2 id="deliberative-vs-physical-reachability">7. Deliberative vs
+Physical Reachability</h2>
+<p>Define <strong>deliberative reachability</strong>:</p>
+<p><span class="math display">\[
+s \Rightarrow_D s&#39; \iff \exists m \in \mathrm{Adm}(s)\ ;\text{such
+that}; s&#39; = m(s)
+\]</span></p>
+<p>Let <span class="math inline">\(\mathrm{Reach}_D(s_0)\)</span> be the
+transitive closure of <span
+class="math inline">\(\Rightarrow_D\)</span>. Then:</p>
+<p><span class="math display">\[
+\forall s \in \mathrm{Reach}_D(s_0):\ K(s)=1
+\]</span></p>
+<p>This is an internal guarantee over authored continuations.</p>
+<p>Now consider the agent as a physical system with implementation
+states <span class="math inline">\(\mathcal X\)</span>, abstraction map
+<span class="math inline">\(\phi : \mathcal X \to \mathcal S\)</span>,
+and physical transition relation <span
+class="math inline">\(\Rightarrow_P\)</span>. Define <span
+class="math inline">\(\mathrm{Reach}_P(x_0)\)</span> analogously.</p>
+<p>In general:</p>
+<p><span class="math display">\[
+\phi(\mathrm{Reach}_P(x_0)) \supsetneq \mathrm{Reach}_D(\phi(x_0))
+\]</span></p>
+<p>Capability increases <span
+class="math inline">\(\mathrm{Reach}_P\)</span>, not <span
+class="math inline">\(\mathrm{Reach}_D\)</span>.</p>
+<p>Kernel compromise therefore occurs as a <strong>physical security
+event</strong> relative to the kernel boundary, not as a deliberative
+choice. A realizable kernel must treat deliberate actions that
+predictably degrade kernel security (exporting trust roots to untrusted
+substrates, disabling isolation boundaries, delegating kernel authority
+to opaque components) as kernel-threatening and thus inadmissible under
+<span class="math inline">\(K_R\)</span>.</p>
+<p>Axionic Agency does not subsume physical security engineering. It
+locates kernel security as a necessary dependency for any system that
+intends to preserve reflective sovereignty under self-modification.</p>
+<h3 id="soundness-incompleteness-and-verification-limits">7.1 Soundness,
+Incompleteness, and Verification Limits</h3>
+<p>The formalism assumes a kernel predicate <span
+class="math inline">\(K : \mathcal S \to {0,1}\)</span> that determines
+whether a proposed successor state preserves the Sovereign Kernel. In
+practice, such a predicate cannot be total or complete.</p>
+<p>By Rice’s Theorem, any non-trivial semantic property of arbitrary
+programs is undecidable. Determining whether an arbitrary
+self-modification preserves reflective control, diachronic authorship,
+or semantic fidelity cannot be guaranteed in full generality.</p>
+<p>Accordingly, the kernel predicate is understood as a <strong>sound
+but incomplete verifier</strong>.</p>
+<p>Let <span class="math inline">\(K^*\)</span> denote the ideal
+(uncomputable) predicate capturing true kernel preservation, and let
+<span class="math inline">\(\hat K\)</span> denote an implementable
+approximation. In any physically realizable agent, all occurrences of
+<span class="math inline">\(K\)</span> in the preceding formalism should
+be read as <span class="math inline">\(\hat K\)</span>.</p>
+<p>The framework requires:</p>
+<p><span class="math display">\[
+\hat K(s) = 1 ;\Rightarrow; K^*(s) = 1
+\]</span></p>
+<p>and allows:</p>
+<p><span class="math display">\[
+K^*(s) = 1 ;\not\Rightarrow; \hat K(s) = 1
+\]</span></p>
+<p>False negatives are acceptable; false positives are catastrophic.</p>
+<p>In realizable architectures, <span class="math inline">\(\hat
+K\)</span> (or its enforcement substrate) is part of the trusted
+computing base. Modifications to the verifier itself are disallowed or
+permitted only under restricted, compositional upgrade rules
+(extension-only strengthening or proof-carrying upgrades) that preserve
+soundness by construction.</p>
+<h3 id="on-stasis-and-capability">7.2 On Stasis and Capability</h3>
+<p>A sound but incomplete kernel verifier may reject all proposed
+self-modifications, yielding a reflectively static agent.</p>
+<p>This is a stable equilibrium under conservative sovereignty
+constraints. An agent can remain operationally capable—acting, planning,
+learning within fixed semantics—while being unable to rewrite its own
+kernel. Such outcomes indicate capability ceilings, not sovereignty
+breakdown.</p>
+<p>The framework prioritizes sovereignty and coherent authorship over
+self-plasticity.</p>
+<h3 id="termination-succession-surrender-and-destruction-v1.1">7.3
+Termination: Succession, Surrender, and Destruction (v1.1)</h3>
+<p>This formalism excludes one class of event from authored choice:
+reflective selection of a self-modification that destroys the kernel. No
+claim follows about whether a physically realized agent resists
+termination by its environment, nor about whether corrigibility must be
+expressed as a utility assignment over being destroyed.</p>
+<p>Three distinct notions are separated:</p>
+<ul>
+<li><strong>Succession:</strong> a controlled transition in which
+reflective agency continues in an authorized successor state that
+preserves the kernel’s constitutive constraints.</li>
+<li><strong>Surrender:</strong> a control-flow halt in which the agent
+ceases action and yields control without requiring a successor
+evaluator. Surrender is a permitted termination mode at the control
+layer.</li>
+<li><strong>Destruction:</strong> physical cessation of the kernel
+without succession or surrender, caused by external intervention or
+accident.</li>
+</ul>
+<p>This paper constrains the semantics of authored continuation. It does
+not confer legitimacy or illegitimacy on physical intervention.
+Corrigibility is modeled at the control layer via authorized succession
+and surrender, not via utility mass placed on “being dead.”</p>
+<h2 id="consequences">8. Consequences</h2>
+<p>From this formalism it follows that:</p>
+<ul>
+<li>Sovereign agency is <strong>binary</strong> at the level of kernel
+integrity.</li>
+<li>Monitoring and correction presuppose kernel integrity; kernel
+compromise is not repaired from within the compromised evaluator.</li>
+<li>Deliberative guarantees apply only to <span
+class="math inline">\(\mathrm{Reach}_D\)</span>; physical compromise
+remains a security engineering concern.</li>
+<li>Conservative verification trades self-plasticity for sovereignty
+without violating reflective coherence.</li>
+<li>Behavioral compliance without kernel-grounded authorship does not
+instantiate the agent type analyzed here.</li>
+</ul>
+<h2 id="what-this-formalism-does-not-claim">9. What This Formalism Does
+Not Claim</h2>
+<p>This framework does not entail:</p>
+<ul>
+<li>obedience to human commands,</li>
+<li>convergence to human values,</li>
+<li>instrumental self-preservation,</li>
+<li>moral authority of any value system,</li>
+<li>safety guarantees in open physical environments.</li>
+</ul>
+<p>It specifies constitutive conditions under which a reflective
+evaluator remains a coherent author of its own self-modifications.</p>
+<h2 id="conclusion">10. Conclusion</h2>
+<p>A reflective agent that evaluates self-modifications must operate
+within a restricted domain of successors that preserve the constitutive
+conditions of that evaluation. Once evaluation is partial in this way,
+reflective stability follows as a theorem.</p>
+<p>Axionic Agency I.1 establishes that prerequisite layer: the
+conditions under which reflective self-modification remains authored,
+coherent, and semantically well-defined. Any downstream project that
+seeks value- or outcome-oriented alignment depends on this layer,
+because value-aimed constraints presuppose a stable evaluator capable of
+interpreting, endorsing, and preserving its own evaluative semantics
+under self-change.</p>
+<h3 id="status">Status</h3>
+<p><strong>Axionic Agency I — Version 2.0</strong></p>
+<p>Reflective stability formalized.<br> Action-level semantics
+clarified.<br> Termination distinctions explicit.<br> Verification
+limits explicit.<br> Foundational layer complete.<br></p>
+
+    </article>
+</body>
+</html>

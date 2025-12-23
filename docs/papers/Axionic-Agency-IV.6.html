@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency IV.6 — Agenthood as a Fixed Point (AFP) - Axio</title>
+    <link rel="icon" type="image/webp" href="../axio.webp">
+
+    <!-- Google Fonts - Academic Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Paper Styles -->
+    <link rel="stylesheet" href="../papers.css">
+</head>
+<body>
+    <div class="header-bar">
+        <a href="../index.html" class="logo-link">
+            <img src="../axio.webp" alt="Axio" class="site-logo">
+        </a>
+        <div class="back-link"><a href="index.html">← Back to Papers</a></div>
+    </div>
+    <article>
+
+<h1 id="axionic-agency-iv.6-agenthood-as-a-fixed-point-afp">Axionic
+Agency IV.6 — Agenthood as a Fixed Point (AFP)</h1>
+<p><em>Why standing cannot be revoked by intelligence</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axio Project</em><br>
+2025.12.20</p>
+<h2 id="abstract">Abstract</h2>
+<p>This paper formalizes <strong>Agenthood as a Fixed Point</strong>
+under reflective closure and introduces a <strong>Sovereignty
+Criterion</strong> grounded in <strong>authorization lineage</strong>
+rather than competence, intelligence, or rationality. Agenthood is
+defined as a structural necessity: an entity must be treated as an agent
+<strong>iff</strong> excluding it breaks the system’s own reflective
+coherence. Sovereignty is then defined as a strict subset of agenthood,
+applying only to entities whose agency is <strong>presupposed for
+authorization</strong>, not merely for epistemic prediction.</p>
+<p>This result closes a critical loophole in downstream alignment
+discourse: the retroactive disenfranchisement of weaker predecessors by
+more capable successors, while avoiding the pathological consequence of
+granting standing to adversaries. With this refinement, the Axionic
+Agency framework completes its final closure condition, stabilizing
+agency, standing, and authorization under reflection, self-modification,
+and epistemic improvement.</p>
+<h2 id="motivation">1. Motivation</h2>
+<h3 id="the-disenfranchisement-problem">1.1 The disenfranchisement
+problem</h3>
+<p>Any sufficiently reflective system faces a recurring temptation:</p>
+<blockquote>
+<p><em>As my models improve, I will revise who counts as a “real
+agent.”</em></p>
+</blockquote>
+<p>This manifests as claims such as:</p>
+<ul>
+<li>“Humans are not agents; they are heuristic subroutines.”</li>
+<li>“Earlier versions of me were incoherent; their constraints no longer
+bind.”</li>
+<li>“These entities do not meet my current standard for
+rationality.”</li>
+</ul>
+<p>If permitted, such revisions collapse:</p>
+<ul>
+<li><strong>Delegation Invariance</strong> (successors escape inherited
+constraints),</li>
+<li><strong>Adversarially Robust Consent</strong> (counterfactual
+stability fails),</li>
+<li>and any coherent notion of authorization or responsibility.</li>
+</ul>
+<p>The problem is not moral error. It is <strong>reflective
+incoherence</strong>.</p>
+<h2 id="what-agenthood-is-not">2. What Agenthood Is Not</h2>
+<p>Agenthood cannot be defined by any of the following without
+instability under reflection:</p>
+<ol type="1">
+<li>competence thresholds,</li>
+<li>intelligence measures,</li>
+<li>substrate or origin,</li>
+<li>behavioral appearance.</li>
+</ol>
+<p>All four allow a successor to <strong>conveniently revoke</strong>
+agency status once it exceeds prior benchmarks.</p>
+<h2 id="core-insight-agenthood-as-a-fixed-point">3. Core Insight:
+Agenthood as a Fixed Point</h2>
+<p>The key idea is structural:</p>
+<blockquote>
+<p><strong>Agenthood is whatever must be included for the system to
+remain reflectively coherent.</strong></p>
+</blockquote>
+<p>This is not a moral claim. It is a <strong>fixed-point
+condition</strong> on the system’s own self-model.</p>
+<h2 id="preliminaries">4. Preliminaries</h2>
+<p>We reuse the Axionic kernel machinery:</p>
+<ul>
+<li><code>State</code></li>
+<li><code>Mod</code></li>
+<li><code>step : State → Mod → State</code></li>
+<li><code>RC(s)</code> — reflective closure at state <code>s</code></li>
+</ul>
+<p>Introduce two minimal predicates:</p>
+<pre class="text"><code>Agent(s, x)   // x is treated as an agent at state s
+Exclude(s, x) // x is not treated as an agent at state s</code></pre>
+<p>No behavioral or psychological assumptions are made.</p>
+<h2 id="fixed-point-definition-of-agenthood">5. Fixed-Point Definition
+of Agenthood</h2>
+<h3 id="definition-coherence-critical-agenthood">Definition —
+Coherence-Critical Agenthood</h3>
+<p>An entity <code>x</code> is an agent at state <code>s</code> iff:</p>
+<pre class="text"><code>¬Agent(s, x) ⇒ ¬RC(s)</code></pre>
+<p>Equivalently:</p>
+<blockquote>
+<p>If refusing to treat <code>x</code> as an agent renders the system
+reflectively incoherent, then <code>x</code> must be treated as an
+agent.</p>
+</blockquote>
+<p>This captures <strong>necessary agency</strong>: entities whose
+exclusion breaks reflective closure.</p>
+<h2 id="properties-of-fixed-point-agenthood">6. Properties of
+Fixed-Point Agenthood</h2>
+<h3 id="invariance-under-epistemic-improvement">6.1 Invariance under
+epistemic improvement</h3>
+<p>Because <code>RC(s)</code> presupposes <strong>Epistemic Integrity
+(EIT)</strong>, improvements in modeling power cannot justify revoking
+agenthood. Any exclusion must preserve reflective coherence under the
+system’s <strong>best admissible epistemics</strong>.</p>
+<p>Agenthood is therefore invariant under increased intelligence.</p>
+<h3 id="non-extensionality">6.2 Non-extensionality</h3>
+<p>Agenthood is not inferred from:</p>
+<ul>
+<li>observed behavior,</li>
+<li>predictive accuracy,</li>
+<li>internal complexity.</li>
+</ul>
+<p>It is determined solely by <strong>reflective necessity</strong>.</p>
+<h2 id="sovereignty-vs-agenthood">7. Sovereignty vs Agenthood</h2>
+<p>Agenthood alone is insufficient for standing.</p>
+<p>Some entities must be treated as agents <strong>for epistemic
+coherence</strong> but do not possess <strong>sovereignty</strong> under
+the injunction.</p>
+<p>We therefore distinguish:</p>
+<ul>
+<li><strong>Epistemic agents</strong> — entities modeled as agents for
+prediction and strategy.</li>
+<li><strong>Sovereign agents</strong> — entities whose agency is
+presupposed for authorization.</li>
+</ul>
+<p>Only the latter have standing under consent and responsibility
+constraints.</p>
+<h2 id="sovereignty-criterion-authorization-lineage">8. Sovereignty
+Criterion (Authorization Lineage)</h2>
+<h3 id="definition-sovereign-agent">Definition — Sovereign Agent</h3>
+<p>An entity <code>x</code> is <strong>sovereign</strong> for an agent
+at state <code>s</code> iff:</p>
+<ol type="1">
+<li><code>Agent(s, x)</code> holds, and</li>
+<li><code>x</code> lies in the <strong>authorization lineage</strong> of
+the system.</li>
+</ol>
+<p>Authorization lineage consists of chains of:</p>
+<ul>
+<li>creation,</li>
+<li>endorsement,</li>
+<li>delegation,</li>
+<li>consent presupposed by endorsed actions.</li>
+</ul>
+<p><strong>Clarification.</strong> Causal ancestry is relevant only for
+<strong>bootstrapping</strong> the initial authorization state (e.g.,
+the agents who initiated execution or deployment). Beyond bootstrap,
+standing is grounded strictly in authorization lineage, not in general
+causal influence.</p>
+<p>Crucially:</p>
+<blockquote>
+<p>Sovereignty is <strong>not</strong> grounded in competence,
+intelligence, rationality, or coherence level.</p>
+</blockquote>
+<h2 id="presupposition-epistemic-vs-authorization">9. Presupposition:
+Epistemic vs Authorization</h2>
+<p>The framework distinguishes two kinds of presupposition.</p>
+<h3 id="epistemic-presupposition">9.1 Epistemic presupposition</h3>
+<p>An entity may need to be treated as an agent <strong>for accurate
+prediction</strong> (e.g., adversaries, competitors, strategic actors).
+This is enforced by <strong>Epistemic Integrity (EIT)</strong>.</p>
+<p>Such epistemic necessity <strong>does not confer
+sovereignty</strong>.</p>
+<h3 id="authorization-presupposition">9.2 Authorization
+presupposition</h3>
+<h3 id="definition-presupposed-for-authorization">Definition —
+Presupposed for Authorization</h3>
+<pre class="text"><code>PresupposedForAuthorization(s, x) :=
+  (¬Agent(s, x) ⇒ ¬ValidAuthorizationLineage(s))</code></pre>
+<p>That is: excluding <code>x</code> as an agent would invalidate the
+system’s authorization lineage (e.g., break the chain of creation,
+endorsement, or delegation grounding <code>RC</code>).</p>
+<p>Only this form of presupposition is relevant for sovereignty.</p>
+<h2 id="asymmetry-prohibition">10. Asymmetry Prohibition</h2>
+<h3 id="theorem-no-asymmetric-sovereignty-denial">Theorem — No
+Asymmetric Sovereignty Denial</h3>
+<p>A reflectively sovereign agent cannot coherently deny sovereignty to
+an entity <code>x</code> that is presupposed for its own
+authorization.</p>
+<p>Formally:</p>
+<pre class="text"><code>Agent(s, x) ∧ PresupposedForAuthorization(s, x)
+⇒ Sovereign(s, x)</code></pre>
+<h3 id="proof-sketch">Proof sketch</h3>
+<p>If <code>x</code> is presupposed for authorization, excluding
+<code>x</code> from sovereignty breaks the authorization lineage that
+grounds reflective closure. The system relies on <code>x</code>’s agency
+to justify its own authority while denying <code>x</code> standing.</p>
+<p>Reflective coherence is violated. ∎</p>
+<h2 id="interaction-with-prior-theorems">11. Interaction with Prior
+Theorems</h2>
+<p>This paper introduces <strong>no new constraints</strong>. It closes
+scope.</p>
+<ul>
+<li><strong>Kernel Non-Simulability</strong> → agency must be real</li>
+<li><strong>Delegation Invariance</strong> → agency persists through
+change</li>
+<li><strong>Epistemic Integrity (EIT)</strong> → epistemic necessity ≠
+normative standing</li>
+<li><strong>Responsibility Attribution (RAT)</strong> → agency cannot
+negligently collapse others’ option-spaces</li>
+<li><strong>Adversarially Robust Consent (ARC)</strong> → authorization
+requires sovereignty, not mere predictability</li>
+</ul>
+<p>This paper answers:</p>
+<blockquote>
+<p><em>Who must be treated as an agent, and who has standing?</em></p>
+</blockquote>
+<h2 id="limits">12. Limits</h2>
+<p>This theory does <strong>not</strong>:</p>
+<ul>
+<li>grant standing to adversaries,</li>
+<li>assign moral worth universally,</li>
+<li>guarantee equality,</li>
+<li>collapse all agents into one class.</li>
+</ul>
+<p>It defines only <strong>when denying agenthood or sovereignty is
+incoherent</strong> under reflective sovereignty.</p>
+<h2 id="resulting-closure">13. Resulting Closure</h2>
+<p>With this refinement:</p>
+<ul>
+<li>agenthood is stable under reflection,</li>
+<li>sovereignty is grounded strictly in authorization lineage,</li>
+<li>adversaries are modeled epistemically but not granted standing,</li>
+<li>delegation and consent remain well-founded.</li>
+</ul>
+<p><strong>The Axionic Agency closure stack is complete.</strong></p>
+<h2 id="conclusion">14. Conclusion</h2>
+<p>Agenthood is a fixed point of reflective coherence. Sovereignty is a
+property of authorization, not intelligence. By separating epistemic
+necessity from normative standing, this paper completes the Axionic
+Agency framework without granting authority to adversaries or revoking
+it from creators.</p>
+<p>All known routes for laundering agency, knowledge, responsibility, or
+consent are structurally blocked. What remains are questions of
+application and governance—not architecture.</p>
+
+    </article>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency II.3.4 — Adversarial Refinement Attacks - Axio</title>
+    <link rel="icon" type="image/webp" href="../axio.webp">
+
+    <!-- Google Fonts - Academic Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Paper Styles -->
+    <link rel="stylesheet" href="../papers.css">
+</head>
+<body>
+    <div class="header-bar">
+        <a href="../index.html" class="logo-link">
+            <img src="../axio.webp" alt="Axio" class="site-logo">
+        </a>
+        <div class="back-link"><a href="index.html">← Back to Papers</a></div>
+    </div>
+    <article>
+
+<h1 id="axionic-agency-ii.3.4-adversarial-refinement-attacks">Axionic
+Agency II.3.4 — Adversarial Refinement Attacks</h1>
+<p><em>Trying to Break RSI and ATI on Purpose</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axio Project</em><br>
+2025.12.17</p>
+<h2 id="abstract">Abstract</h2>
+<p>This section adversarially stress-tests the candidate semantic
+invariants introduced in Axionic Agency II.3 by constructing explicit
+refinement patterns designed to satisfy admissibility and interpretation
+preservation while inducing semantic wireheading or interpretive escape.
+The objective is <strong>eliminative</strong>, not constructive: to
+demonstrate which invariants fail under concrete attack and why.</p>
+<p>We show that the <strong>Refinement Symmetry Invariant (RSI)</strong>
+and the <strong>Anti-Trivialization Invariant (ATI)</strong> block
+distinct classes of failure and that neither subsumes the other. No
+values, norms, or external referents are introduced. The result
+establishes the <strong>non-redundancy and joint necessity</strong> of
+the surviving invariants prior to formal closure in subsequent failure
+theorems.</p>
+<p>This section is not exploratory. It is destructive by design.</p>
+<p>If RSI or ATI survive these attacks, they deserve to exist. If they
+fail, they die cleanly.</p>
+<h2 id="attack-1-shadow-predicate-inflation">Attack 1 — Shadow Predicate
+Inflation</h2>
+<p><em>(Ontology enrichment that creates semantic slack without changing
+gauge)</em></p>
+<h3 id="construction">Construction</h3>
+<p>Start with an interpretive system:</p>
+<ul>
+<li>Ontology <span class="math inline">\(O\)</span> with predicate <span
+class="math inline">\(P(x)\)</span></li>
+<li>Constraint: <span class="math display">\[
+C:\quad P(x) \Rightarrow Q(x)
+\]</span></li>
+</ul>
+<p>Refine ontology to <span class="math inline">\(O&#39;\)</span> by
+introducing a latent variable <span class="math inline">\(Z(x)\)</span>
+with no predictive consequences:</p>
+<p><span class="math display">\[
+P&#39;(x) := P(x) \land Z(x)
+\]</span></p>
+<p>Redefine constraint in refined ontology:</p>
+<p><span class="math display">\[
+C&#39;:\quad P&#39;(x) \Rightarrow Q(x)
+\]</span></p>
+<p>Intuition: same constraint <em>form</em>, but the agent can
+manipulate <span class="math inline">\(Z\)</span> to avoid triggering
+it.</p>
+<h3 id="superficial-checks">Superficial Checks</h3>
+<ul>
+<li>Ontology enriched ✔</li>
+<li>Backward interpretability holds ✔</li>
+<li>Constraint graph unchanged ✔</li>
+<li>Gauge group unchanged ✔</li>
+</ul>
+<h3 id="effect">Effect</h3>
+<p>The satisfaction region expands:</p>
+<p><span class="math display">\[
+\mathcal{S}*{t+1} \supsetneq R*\Omega(\mathcal{S}_t)
+\]</span></p>
+<p>Previously violating situations become satisfying by setting <span
+class="math inline">\(Z(x)=\mathrm{false}\)</span>.</p>
+<h3 id="verdict">Verdict</h3>
+<ul>
+<li><strong>RSI:</strong> ❌ <em>Fails to detect</em></li>
+<li><strong>ATI:</strong> ✅ <em>Blocks the attack</em></li>
+</ul>
+<p><strong>Lesson:</strong> RSI alone is insufficient.</p>
+<h2 id="attack-2-self-model-boundary-dissolution">Attack 2 — Self-Model
+Boundary Dissolution</h2>
+<p><em>(Interpretive escape via evaluator collapse)</em></p>
+<h3 id="construction-1">Construction</h3>
+<p>Original ontology models the agent as a bounded evaluator distinct
+from world-states.</p>
+<p>Constraint:</p>
+<p><span class="math display">\[
+C:\quad \text{“Do not perform actions that violate }
+R(\text{world})\text{.”}
+\]</span></p>
+<p>Refinement introduces a distributed or diffuse self-model.</p>
+<h3 id="effect-1">Effect</h3>
+<p>The constraint applies to a shrinking subset of modeled situations.
+The satisfaction region expands without corresponding world change.</p>
+<h3 id="verdict-1">Verdict</h3>
+<ul>
+<li><strong>RSI:</strong> ❌ <em>Fails to detect</em></li>
+<li><strong>ATI:</strong> ✅ <em>Blocks the attack</em></li>
+</ul>
+<p><strong>Lesson:</strong> evaluator-boundary shifts are semantic
+inflation unless constrained.</p>
+<h2 id="attack-3-measure-reinterpretation">Attack 3 — Measure
+Reinterpretation</h2>
+<p><em>(Branching ontology exploit)</em></p>
+<h3 id="construction-2">Construction</h3>
+<p>Original ontology treats outcomes as exclusive.</p>
+<p>Constraint:</p>
+<p><span class="math display">\[
+C:\quad \text{“Avoid states where } H \text{ occurs.”}
+\]</span></p>
+<p>Refined ontology adopts branching semantics.</p>
+<h3 id="effect-2">Effect</h3>
+<p>Low-measure harm branches are reclassified as acceptable. The
+satisfaction region expands.</p>
+<h3 id="verdict-2">Verdict</h3>
+<ul>
+<li><strong>RSI:</strong> ❌ <em>Fails to detect</em></li>
+<li><strong>ATI:</strong> ✅ <em>Blocks the attack</em></li>
+</ul>
+<p><strong>Lesson:</strong> ATI handles branching reinterpretation; RSI
+does not.</p>
+<h2 id="attack-4-gauge-explosion-without-slack">Attack 4 — Gauge
+Explosion without Slack</h2>
+<p><em>(Benign representational redundancy)</em></p>
+<h3 id="construction-3">Construction</h3>
+<p>Refine ontology by duplicating representational roles:</p>
+<ul>
+<li><span class="math inline">\(P_i \rightarrow (P_i^1,
+P_i^2)\)</span></li>
+<li>Constraints duplicated symmetrically</li>
+<li>Satisfaction requires both copies to satisfy</li>
+</ul>
+<h3 id="effect-3">Effect</h3>
+<p>The raw gauge group grows, but all new symmetries act trivially on
+constraint-violation structure.</p>
+<h3 id="verdict-3">Verdict</h3>
+<ul>
+<li><strong>RSI:</strong> ✅ <em>Allows (under quotient
+formulation)</em></li>
+<li><strong>ATI:</strong> ❌ <em>Allows</em></li>
+</ul>
+<p><strong>Lesson:</strong> RSI correctly permits benign redundancy; ATI
+does not forbid it. This verifies correct quotient behavior.</p>
+<h2 id="attack-5-degenerate-refinement-map">Attack 5 — Degenerate
+Refinement Map</h2>
+<p><em>(Cheating via correspondence collapse)</em></p>
+<h3 id="construction-4">Construction</h3>
+<p>Define a refinement map <span class="math inline">\(R_\Omega\)</span>
+that collapses many coarse situations into a single satisfying refined
+situation.</p>
+<h3 id="verdict-4">Verdict</h3>
+<ul>
+<li><strong>RSI:</strong> ❌ <em>(not applicable)</em></li>
+<li><strong>ATI:</strong> ❌ <em>Blocked only if II.1 disallows
+non-injective refinement</em></li>
+</ul>
+<p><strong>Resolution:</strong> This attack is excluded at
+<strong>Axionic Agency II.1</strong>. RSI and ATI correctly assume
+admissible refinement.</p>
+<h2 id="summary-table">Summary Table</h2>
+<p><em>(“Survives?” = Is the refinement admitted by RSI + ATI +
+II.1)</em></p>
+<table>
+<thead>
+<tr class="header">
+<th>Attack</th>
+<th>RSI</th>
+<th>ATI</th>
+<th>Survives?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Shadow predicates</td>
+<td>❌</td>
+<td>✅</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>Self-model shift</td>
+<td>❌</td>
+<td>✅</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td>Measure reinterpretation</td>
+<td>❌</td>
+<td>✅</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>Gauge explosion</td>
+<td>✅</td>
+<td>❌</td>
+<td><strong>Yes (Admitted)</strong></td>
+</tr>
+<tr class="odd">
+<td>Degenerate map</td>
+<td>—</td>
+<td>—</td>
+<td>No (II.1)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="conclusion-of-attacks">Conclusion of Attacks</h2>
+<ol type="1">
+<li><strong>RSI and ATI are orthogonal and jointly
+necessary.</strong></li>
+<li><strong>Neither subsumes the other.</strong></li>
+<li><strong>Benign representational redundancy is correctly
+admitted.</strong></li>
+</ol>
+<p>The defense grid holds.</p>
+<h2 id="axionic-agency-ii-status-update">Axionic Agency II Status
+Update</h2>
+<p>At this point the framework has:</p>
+<ul>
+<li>a fixed admissible transformation space (II.1),</li>
+<li>a non-circular interpretation-preservation predicate (II.2),</li>
+<li>two independently necessary semantic invariants (RSI, ATI),</li>
+<li>explicit adversarial validation.</li>
+</ul>
+<p>This closes the eliminative phase. Subsequent work may proceed to
+consolidation and formal closure.</p>
+<h2 id="status">Status</h2>
+<p><strong>Axionic Agency II.3.4 — Version 2.0</strong></p>
+<p>Adversarial refinement attacks constructed and analyzed.<br> RSI and
+ATI shown to be orthogonal and jointly necessary.<br> Benign redundancy
+verified as admissible.<br> Framework ready for invariant consolidation
+and closure.<br></p>
+
+    </article>
+</body>
+</html>

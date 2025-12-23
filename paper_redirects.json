@@ -2,12 +2,12 @@
     "_comment": "Maps old paper filenames to new filenames",
     "_usage": "Add entries like: 'Old-Paper-Name': 'New-Paper-Name' (with or without .html extension)",
     "_example": "'Old-Title': 'Better-Title'",
-    "Against-The-Recovery-Of-Egoism": "Axionic-Alignment-I.3.1",
-    "Axionic-Alignment-I": "Axionic-Alignment-I.1",
-    "Alignment-As-Semantic-Constraint": "Axionic-Alignment-I.2",
-    "Axionic-Kernel-Checklist": "Axionic-Alignment-I.5",
-    "Axionic-Kernel-Formal-Properties": "Axionic-Alignment-I.6",
-    "Conditionalism-And-Goal-Interpretation": "Axionic-Alignment-I.4",
-    "The-Interpretation-Operator": "Axionic-Alignment-I.7",
-    "Universality-And-Anti-Egoism": "Axionic-Alignment-I.3"
+    "Against-The-Recovery-Of-Egoism": "Axionic-Agency-I.3.1",
+    "Axionic-Alignment-I": "Axionic-Agency-I.1",
+    "Alignment-As-Semantic-Constraint": "Axionic-Agency-I.2",
+    "Axionic-Kernel-Checklist": "Axionic-Agency-I.5",
+    "Axionic-Kernel-Formal-Properties": "Axionic-Agency-I.6",
+    "Conditionalism-And-Goal-Interpretation": "Axionic-Agency-I.4",
+    "The-Interpretation-Operator": "Axionic-Agency-I.7",
+    "Universality-And-Anti-Egoism": "Axionic-Agency-I.3"
 }

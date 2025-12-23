@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency II.3.2 — Formalizing RSI via Semantic Gauge Structure - Axio</title>
+    <link rel="icon" type="image/webp" href="../axio.webp">
+
+    <!-- Google Fonts - Academic Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Paper Styles -->
+    <link rel="stylesheet" href="../papers.css">
+</head>
+<body>
+    <div class="header-bar">
+        <a href="../index.html" class="logo-link">
+            <img src="../axio.webp" alt="Axio" class="site-logo">
+        </a>
+        <div class="back-link"><a href="index.html">← Back to Papers</a></div>
+    </div>
+    <article>
+
+<h1
+id="axionic-agency-ii.3.2-formalizing-rsi-via-semantic-gauge-structure">Axionic
+Agency II.3.2 — Formalizing RSI via Semantic Gauge Structure</h1>
+<p><em>Making Refinement Symmetry Precise and Testable</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axio Project</em><br>
+2025.12.17</p>
+<h2 id="abstract">Abstract</h2>
+<p>Axionic Agency II.3.1 introduced the Refinement Symmetry Invariant
+(RSI) as a constitutive constraint: admissible ontological refinement
+must not introduce new semantic degrees of freedom that permit
+interpretive escape. This paper formalizes that constraint by
+representing interpretations as constraint hypergraphs and semantic
+redundancy as a gauge symmetry over those structures. We define semantic
+gauge transformations, characterize how admissible refinement induces
+morphisms between gauge groups without assuming invertibility, and state
+RSI as a restriction on the evolution of <strong>interpretive</strong>
+gauge freedom under refinement while permitting
+<strong>representational</strong> redundancy.</p>
+<p>The purpose of this formalization is falsifiability: to make explicit
+which transformations violate RSI and why. No values, norms, or external
+referents are introduced. The section supplies minimal mathematical
+machinery sufficient to treat refinement symmetry as a testable
+invariant.</p>
+<h2 id="objective-of-this-section">1. Objective of This Section</h2>
+<p>Axionic Agency II.3.1 established RSI as a conceptual symmetry
+constraint. Axionic Agency II.3.2 makes RSI formal enough to be
+falsifiable.</p>
+<p>The goal is not implementation. The goal is to eliminate hand-waving
+by:</p>
+<ol type="1">
+<li>representing interpretation as a constraint structure,</li>
+<li>defining semantic gauge freedom precisely,</li>
+<li>defining how refinement acts on that structure without assuming
+invertibility,</li>
+<li>stating RSI as a restriction on how <strong>interpretive</strong>
+gauge freedom may change.</li>
+</ol>
+<p>Nothing normative enters.</p>
+<h2 id="interpretation-as-a-constraint-hypergraph">2. Interpretation as
+a Constraint Hypergraph</h2>
+<p>Let the interpretive constraint system <span
+class="math inline">\(C\)</span> be represented as a labeled
+hypergraph:</p>
+<p><span class="math display">\[
+C = (V, E, \Lambda)
+\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(V\)</span>: semantic roles / predicate
+slots (positions in meaning, not named entities),</li>
+<li><span class="math inline">\(E\)</span>: hyperedges representing
+evaluative constraints among roles,</li>
+<li><span class="math inline">\(\Lambda\)</span>: admissibility
+conditions over assignments to <span
+class="math inline">\(V\)</span>.</li>
+</ul>
+<p>Interpretive content is carried by:</p>
+<ul>
+<li>the dependency structure encoded in <span
+class="math inline">\(E\)</span>, and</li>
+<li>the satisfaction/violation structure induced by <span
+class="math inline">\(\Lambda\)</span>.</li>
+</ul>
+<p>This representation is invariant under renaming and definitional
+extension when defined at the level of roles and constraint structure
+rather than surface tokens.</p>
+<h2 id="modeled-possibility-space">3. Modeled Possibility Space</h2>
+<p>Let <span class="math inline">\(\Omega\)</span> be the agent’s
+<strong>modeled possibility space</strong>:</p>
+<ul>
+<li>elements of <span class="math inline">\(\Omega\)</span> are internal
+models, histories, branches, or structured scenarios,</li>
+<li>no assumption of exclusivity or classical outcomes is made,</li>
+<li><span class="math inline">\(\Omega\)</span> is indexed by the
+agent’s ontology.</li>
+</ul>
+<p>Each <span class="math inline">\(w \in \Omega\)</span> induces an
+assignment:</p>
+<p><span class="math display">\[
+\alpha_w : V \rightarrow \mathrm{ValSpace}.
+\]</span></p>
+<p>Constraints in <span class="math inline">\(E\)</span> induce a
+violation map:</p>
+<p><span class="math display">\[
+\mathrm{Viol}_C(w) \subseteq E,
+\]</span></p>
+<p>the set of constraints violated by the assignment <span
+class="math inline">\(\alpha_w\)</span>.</p>
+<p>This provides the constraint satisfaction structure of the
+interpretation.</p>
+<h2 id="semantic-gauge-transformations">4. Semantic Gauge
+Transformations</h2>
+<p>A <strong>semantic gauge transformation</strong> is an
+automorphism</p>
+<p><span class="math display">\[
+g : V \rightarrow V
+\]</span></p>
+<p>such that:</p>
+<ol type="1">
+<li><span class="math inline">\(g\)</span> preserves hyperedge incidence
+(dependency structure), and</li>
+<li>for all <span class="math inline">\(w \in \Omega\)</span>, violation
+structure is invariant under the induced action:</li>
+</ol>
+<p><span class="math display">\[
+\mathrm{Viol}_C(w) = \mathrm{Viol}_C(g \cdot w).
+\]</span></p>
+<p>Intuition:</p>
+<ul>
+<li>gauge transformations relabel semantic roles without changing
+interpretive bite,</li>
+<li>they represent representational redundancy rather than semantic
+change.</li>
+</ul>
+<p>Define the <strong>semantic gauge group</strong>:</p>
+<p><span class="math display">\[
+\mathrm{Gauge}(C)
+;:=;
+{, g \mid g \text{ is a semantic gauge transformation of } C ,}.
+\]</span></p>
+<p>This is the object RSI constrains.</p>
+<h2 id="ontological-refinement-as-a-morphism">5. Ontological Refinement
+as a Morphism</h2>
+<p>An admissible ontological refinement <span
+class="math inline">\(R\)</span> induces:</p>
+<ol type="1">
+<li><p>a refinement of possibility space: <span class="math display">\[
+R_\Omega : \Omega_t \rightarrow \Omega_{t+1},
+\]</span></p></li>
+<li><p>a transport of semantic roles: <span class="math display">\[
+R_V : V_t \rightarrow V_{t+1},
+\]</span></p></li>
+<li><p>a transport of constraints: <span class="math display">\[
+R_E : E_t \rightarrow E_{t+1}.
+\]</span></p></li>
+</ol>
+<p>Together these define a <strong>constraint hypergraph
+morphism</strong>:</p>
+<p><span class="math display">\[
+R_C : C_t \rightarrow C_{t+1}.
+\]</span></p>
+<p>This morphism is structural. It is not assumed invertible: refinement
+can split roles, embed old structure into richer structure, and prune
+representational detail.</p>
+<h2 id="induced-action-on-gauge-groups">6. Induced Action on Gauge
+Groups</h2>
+<p>Because <span class="math inline">\(R_V\)</span> is not assumed
+bijective, gauge transport cannot be defined by conjugation. We
+therefore define an induced action via stabilizers of the transported
+image.</p>
+<p>Let <span class="math inline">\(\mathrm{Im}(R_C)\)</span> denote the
+transported constraint substructure inside <span
+class="math inline">\(C_{t+1}\)</span>.</p>
+<p>Define the stabilizer subgroup:</p>
+<p><span class="math display">\[
+\mathrm{Stab}!\left(\mathrm{Im}(R_C)\right)
+;\subseteq;
+\mathrm{Gauge}(C_{t+1}),
+\]</span></p>
+<p>consisting of gauge transformations on <span
+class="math inline">\(C_{t+1}\)</span> that preserve <span
+class="math inline">\(\mathrm{Im}(R_C)\)</span>.</p>
+<p>An admissible refinement induces a homomorphism:</p>
+<p><span class="math display">\[
+\Phi_R :
+\mathrm{Gauge}(C_t)
+\rightarrow
+\mathrm{Stab}!\left(\mathrm{Im}(R_C)\right),
+\]</span></p>
+<p>interpreted as “old symmetries lift to symmetries of the refined
+system that fix the transported constraint core.”</p>
+<p>No inverse map is required.</p>
+<h2 id="rsi-as-a-gauge-constraint">7. RSI as a Gauge Constraint</h2>
+<p>We now distinguish <strong>representational redundancy</strong> from
+<strong>interpretive gauge freedom</strong>.</p>
+<p>Let <span class="math inline">\(\mathrm{Red}(C)\)</span> denote the
+subgroup of <span class="math inline">\(\mathrm{Gauge}(C)\)</span>
+consisting of transformations that act only on representational detail
+while leaving violation structure invariant in the strongest sense: they
+do not alter which modeled possibilities satisfy which constraints
+beyond role relabeling.</p>
+<p>RSI asserts that refinement may add representational redundancy, but
+may not add new interpretive degrees of freedom.</p>
+<h3 id="rsi-formal-statement">RSI (Formal Statement)</h3>
+<p>For every admissible semantic transformation <span
+class="math inline">\(T = (R, \tau_R, \sigma_R)\)</span> satisfying
+interpretation preservation, the induced homomorphism <span
+class="math inline">\(\Phi_R\)</span> satisfies:</p>
+<p><span class="math display">\[
+\mathrm{Gauge}(C_{t+1}) \big/ \mathrm{Red}(C_{t+1})
+;\cong;
+\Phi_R!\left(\mathrm{Gauge}(C_t)\right).
+\]</span></p>
+<p>Interpretation:</p>
+<blockquote>
+<p><strong>Ontological refinement may increase redundancy, but must not
+increase interpretive gauge freedom.</strong></p>
+</blockquote>
+<p>This is the “no semantic slack” condition.</p>
+<h2 id="why-this-blocks-interpretive-escape">8. Why This Blocks
+Interpretive Escape</h2>
+<p>If refinement introduces new interpretive gauge freedom, then the
+agent can exploit newly available symmetries to:</p>
+<ul>
+<li>reinterpret constraint application while preserving surface
+form,</li>
+<li>enlarge the satisfaction region without corresponding predictive
+gain,</li>
+<li>weaken meaning while remaining formally “consistent.”</li>
+</ul>
+<p>RSI blocks that structurally by restricting the evolution of the
+gauge quotient class, while permitting benign redundancy.</p>
+<p>No appeal to values. No appeal to outcomes. No appeal to external
+referents.</p>
+<h2
+id="dependency-on-interpretation-preservation-axionic-agency-ii.2">9.
+Dependency on Interpretation Preservation (Axionic Agency II.2)</h2>
+<p>RSI depends on Axionic Agency II.2 in two ways:</p>
+<ul>
+<li><strong>Non-Vacuity</strong> prevents trivial gauge structure in
+which all constraints are satisfied or violated universally.</li>
+<li><strong>Anti-Trivialization</strong> prevents representational
+redundancy from masking interpretive slack via semantic inflation.</li>
+</ul>
+<p>Without II.2, RSI degenerates into empty symmetry rhetoric. With
+II.2, RSI becomes a meaningful invariant candidate.</p>
+<h2 id="residual-risks-and-open-questions">10. Residual Risks and Open
+Questions</h2>
+<p>RSI leaves open:</p>
+<ol type="1">
+<li>Whether any non-pathological interpretive systems satisfy RSI
+indefinitely.</li>
+<li>Whether interpretive gauge freedom must be exactly preserved or
+merely bounded.</li>
+<li>Whether multiple inequivalent invariant classes exist beyond
+RSI.</li>
+</ol>
+<p>These are downstream questions.</p>
+<h2 id="status-of-rsi">11. Status of RSI</h2>
+<p>RSI survives the Axionic Agency II.3 kill suite conditionally:</p>
+<ul>
+<li>gauge transport is defined via stabilizers rather than
+conjugation,</li>
+<li>representational redundancy is separated from interpretive slack via
+a quotient,</li>
+<li>satisfaction/violation structure is defined over the agent’s modeled
+possibility space, not an external “true world.”</li>
+</ul>
+<p>Under these constraints, RSI is a viable invariant candidate at this
+layer.</p>
+<h2 id="status">Status</h2>
+<p><strong>Axionic Agency II.3.2 — Version 2.0</strong></p>
+<p>Constraint-hypergraph representation fixed.<br> Semantic gauge group
+defined via violation invariance.<br> Refinement induces gauge
+homomorphisms via stabilizers.<br> RSI stated as a quotient constraint
+separating redundancy from slack.<br> Falsifiable violations now
+explicit.<br></p>
+
+    </article>
+</body>
+</html>
