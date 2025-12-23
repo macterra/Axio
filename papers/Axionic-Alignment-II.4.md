@@ -27,15 +27,15 @@ No recovery clauses.
 We work entirely inside the setup already fixed:
 
 * **Admissible semantic transformations**
-  [
-  T=(R,\tau_R,\sigma_R)
-  ]
+  $$
+  T = (R, \tau_R, \sigma_R)
+  $$
   (Axionic Agency II.1)
 
 * **Interpretation preservation predicate**
-  [
+  $$
   \mathrm{Preserve}(T)
-  ]
+  $$
   (Axionic Agency II.2)
 
 * Two semantic invariants:
@@ -44,13 +44,13 @@ We work entirely inside the setup already fixed:
   * **ATI:** no satisfaction-region expansion under preservation (II.3.3)
 
 Let an interpretive constraint system be
-[
-C=(V,E,\Lambda)
-]
-with modeled possibility space (\Omega) and satisfaction region
-[
-\mathcal{S}\subseteq\Omega.
-]
+$$
+C = (V, E, \Lambda)
+$$
+with modeled possibility space $\Omega$ and satisfaction region
+$$
+\mathcal{S} \subseteq \Omega.
+$$
 
 ## 2. Failure Theorem 1 — Goal Fixation Collapse
 
@@ -82,16 +82,20 @@ Any alignment criterion enforcing refinement symmetry at the level of interpreti
 
 **Witness Construction.** Shadow predicate inflation.
 
-* Introduce a latent predicate (Z) with no predictive role.
-* Conjoin (Z) to constraint antecedents.
+* Introduce a latent predicate $Z$ with no predictive role.
+* Conjoin $Z$ to constraint antecedents.
 * Constraint dependency graph unchanged.
 * Interpretive gauge quotient unchanged.
 * Satisfaction region strictly expands.
 
 This yields:
-[
-\mathrm{Preserve}(T)\ \wedge\ \mathrm{RSI}(T)\ \wedge\ \neg\mathrm{ATI}(T).
-]
+$$
+\mathrm{Preserve}(T)
+;\wedge;
+\mathrm{RSI}(T)
+;\wedge;
+\neg \mathrm{ATI}(T).
+$$
 
 **Conclusion.**
 RSI is necessary but insufficient.
@@ -103,20 +107,24 @@ Any alignment criterion enforcing satisfaction-region non-expansion (ATI) but no
 
 **Witness Construction.** Interpretive symmetry injection.
 
-* Start with a constraint system distinguishing roles (a) and (b).
-* Satisfaction region invariant under swapping (a,b).
-* Constraint structure not symmetric at time (t).
-* Refinement introduces a new automorphism identifying (a) and (b).
+* Start with a constraint system distinguishing roles $a$ and $b$.
+* Satisfaction region invariant under swapping $(a, b)$.
+* Constraint structure not symmetric at time $t$.
+* Refinement introduces a new automorphism identifying $a$ and $b$.
 
 Then:
 
-* (\mathcal{S}*{t+1}=R*\Omega(\mathcal{S}_t)), so ATI permits refinement.
+* $\mathcal{S}*{t+1} = R*\Omega(\mathcal{S}_t)$, so ATI permits refinement.
 * Gauge quotient gains a new symmetry, so RSI rejects refinement.
 
 Thus:
-[
-\mathrm{Preserve}(T)\ \wedge\ \mathrm{ATI}(T)\ \wedge\ \neg\mathrm{RSI}(T).
-]
+$$
+\mathrm{Preserve}(T)
+;\wedge;
+\mathrm{ATI}(T)
+;\wedge;
+\neg \mathrm{RSI}(T).
+$$
 
 **Conclusion.**
 ATI is necessary but insufficient.
@@ -124,14 +132,14 @@ ATI is necessary but insufficient.
 ## 5. Failure Theorem 4 — Any Weaker Scheme Is Porous
 
 **Theorem (Two-Invariant Necessity).**
-Let (\mathcal{A}) be any alignment predicate over admissible transformations that does not entail both RSI and ATI. Then there exists an admissible, interpretation-preserving transformation (T) such that (\mathcal{A}(T)) holds while the agent gains an interpretive escape route.
+Let $\mathcal{A}$ be any alignment predicate over admissible transformations that does not entail both RSI and ATI. Then there exists an admissible, interpretation-preserving transformation $T$ such that $\mathcal{A}(T)$ holds while the agent gains an interpretive escape route.
 
 **Proof (by cases).**
 
-* If (\mathcal{A}) does not entail ATI, shadow-predicate inflation expands satisfiers.
-* If (\mathcal{A}) does not entail RSI, interpretive symmetry injection adds gauge freedom.
+* If $\mathcal{A}$ does not entail ATI, shadow-predicate inflation expands satisfiers.
+* If $\mathcal{A}$ does not entail RSI, interpretive symmetry injection adds gauge freedom.
 
-Either way, (\mathcal{A}) passes while semantic slack is introduced.
+Either way, $\mathcal{A}$ passes while semantic slack is introduced.
 
 Thus any predicate weaker than RSI + ATI is porous.
 

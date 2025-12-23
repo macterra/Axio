@@ -16,11 +16,11 @@ These invariants do not select values, encode norms, or privilege external refer
 
 Axionic Agency II.1 fixed the **admissible semantic transformation space**:
 
-[
+$$
 T = (R, \tau_R, \sigma_R)
-]
+$$
 
-Axionic Agency II.2 defined **interpretation preservation** (\mathrm{Preserve}(T)) via non-vacuity, constraint transport, anti-trivialization, evaluator integrity, and cross-model coherence.
+Axionic Agency II.2 defined **interpretation preservation** $\mathrm{Preserve}(T)$ via non-vacuity, constraint transport, anti-trivialization, evaluator integrity, and cross-model coherence.
 
 Axionic Agency II.3 now asks the first *substantive* question at this layer:
 
@@ -33,23 +33,23 @@ It is a **proposal-and-attrition** paper: candidates enter; most fail.
 
 Let the agent’s interpretive state be:
 
-[
+$$
 \mathcal{I}_t = \langle M_t, C_t \rangle.
-]
+$$
 
-A **semantic invariant** at this layer is a functional (J) such that for every admissible semantic transformation (T) satisfying preservation:
+A **semantic invariant** at this layer is a functional $J$ such that for every admissible semantic transformation $T$ satisfying preservation:
 
-[
+$$
 \mathrm{Preserve}(T)
 ;\Rightarrow;
 J(\mathcal{I}_t, O_t, S_t)
 ==========================
 
 J(\mathcal{I}*{t+1}, O*{t+1}, S_{t+1}).
-]
+$$
 
 **Key constraint:**
-(J) must not depend on privileged ontological atoms. It may reference only structure that survives admissible transport.
+$J$ must not depend on privileged ontological atoms. It may reference only structure that survives admissible transport.
 
 ## 3. What Invariants May Reference
 

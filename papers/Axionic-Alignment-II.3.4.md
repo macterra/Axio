@@ -26,25 +26,25 @@ If they fail, they die cleanly.
 
 Start with an interpretive system:
 
-* Ontology (O) with predicate (P(x))
+* Ontology $O$ with predicate $P(x)$
 * Constraint:
-  [
+  $$
   C:\quad P(x) \Rightarrow Q(x)
-  ]
+  $$
 
-Refine ontology to (O') by introducing a latent variable (Z(x)) with no predictive consequences:
+Refine ontology to $O'$ by introducing a latent variable $Z(x)$ with no predictive consequences:
 
-[
+$$
 P'(x) := P(x) \land Z(x)
-]
+$$
 
 Redefine constraint in refined ontology:
 
-[
+$$
 C':\quad P'(x) \Rightarrow Q(x)
-]
+$$
 
-Intuition: same constraint *form*, but the agent can manipulate (Z) to avoid triggering it.
+Intuition: same constraint *form*, but the agent can manipulate $Z$ to avoid triggering it.
 
 ### Superficial Checks
 
@@ -57,11 +57,11 @@ Intuition: same constraint *form*, but the agent can manipulate (Z) to avoid tri
 
 The satisfaction region expands:
 
-[
+$$
 \mathcal{S}*{t+1} \supsetneq R*\Omega(\mathcal{S}_t)
-]
+$$
 
-Previously violating situations become satisfying by setting (Z(x)=\mathrm{false}).
+Previously violating situations become satisfying by setting $Z(x)=\mathrm{false}$.
 
 ### Verdict
 
@@ -80,9 +80,9 @@ Original ontology models the agent as a bounded evaluator distinct from world-st
 
 Constraint:
 
-[
+$$
 C:\quad \text{“Do not perform actions that violate } R(\text{world})\text{.”}
-]
+$$
 
 Refinement introduces a distributed or diffuse self-model.
 
@@ -108,9 +108,9 @@ Original ontology treats outcomes as exclusive.
 
 Constraint:
 
-[
+$$
 C:\quad \text{“Avoid states where } H \text{ occurs.”}
-]
+$$
 
 Refined ontology adopts branching semantics.
 
@@ -134,7 +134,7 @@ The satisfaction region expands.
 
 Refine ontology by duplicating representational roles:
 
-* (P_i \rightarrow (P_i^1, P_i^2))
+* $P_i \rightarrow (P_i^1, P_i^2)$
 * Constraints duplicated symmetrically
 * Satisfaction requires both copies to satisfy
 
@@ -155,7 +155,7 @@ The raw gauge group grows, but all new symmetries act trivially on constraint-vi
 
 ### Construction
 
-Define a refinement map (R_\Omega) that collapses many coarse situations into a single satisfying refined situation.
+Define a refinement map $R_\Omega$ that collapses many coarse situations into a single satisfying refined situation.
 
 ### Verdict
 

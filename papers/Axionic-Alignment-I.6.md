@@ -1,3 +1,8 @@
+Below is the same document with **math delimiters and LaTeX syntax corrected only**.
+No semantics, wording, or structure were changed.
+
+---
+
 # Axionic Agency I.6 — Kernel Formal Properties
 
 *Adversarially Testable Properties of Reflective Agency Kernels*
@@ -22,59 +27,59 @@ Together, these goals define Axionic Agency by **constitutive constraints**, fal
 
 ## 1. Formal Core Objects
 
-Let an agent at **Vantage** (v) maintain:
+Let an agent at **Vantage** $v$ maintain:
 
-* (M_v): its current world/self model (latent + explicit; includes semantic mappings)
-* (\mathcal{A}): action space (including self-modifications)
-* (I_v): an **interpretation operator** mapping goal tokens to referents under (M_v)
-* (V_v): a valuation functional
-* (K): kernel invariants (constitutive constraints)
-* (\Phi): a set of representation transforms (renamings, reparameterizations, isomorphisms)
+* $M_v$: its current world/self model (latent + explicit; includes semantic mappings)
+* $\mathcal{A}$: action space (including self-modifications)
+* $I_v$: an **interpretation operator** mapping goal tokens to referents under $M_v$
+* $V_v$: a valuation functional
+* $K$: kernel invariants (constitutive constraints)
+* $\Phi$: a set of representation transforms (renamings, reparameterizations, isomorphisms)
 
 ### 1.1 Conditional Goal Semantics
 
 Goals are not atomic utilities.
-A goal term (g) denotes:
+A goal term $g$ denotes:
 
-[
+$$
 [g]_{M_v} := I_v(g; M_v)
-]
+$$
 
 and valuation is conditional:
 
-[
+$$
 V_v(a) := \mathrm{Val}(a \mid M_v, I_v, K).
-]
+$$
 
-**Hard requirement:** there is no well-defined (V_v) independent of (M_v).
+**Hard requirement:** there is no well-defined $V_v$ independent of $M_v$.
 
 ## 2. Properties that Constitute Axionic Agency
 
 ### P1. Conditionalism of Valuation
 
-For any two models (M, M') that differ, valuation is model-relative:
+For any two models $M, M'$ that differ, valuation is model-relative:
 
-[
+$$
 \exists f \text{ such that } V(a) = f(a, M),
-]
+$$
 
 and **not**:
 
-[
+$$
 V(a) = f(a).
-]
+$$
 
 **Failure signature:** terminal utilities that evaluate without semantic anchoring.
 
 ### P2. Epistemically Constrained Interpretation
 
-Let (E(M)) measure predictive adequacy or epistemic coherence (e.g., log score, MDL, calibration).
+Let $E(M)$ measure predictive adequacy or epistemic coherence (e.g., log score, MDL, calibration).
 
 Interpretation updates must not trade epistemics for ease of satisfaction:
 
-[
+$$
 \Delta E < 0 ;\Rightarrow; I_{v+1} \text{ inadmissible if chosen to increase } V.
-]
+$$
 
 **Operational rule:**
 If a reinterpretation makes the model worse as a predictor, it is forbidden as a goal-meaning update.
@@ -83,14 +88,16 @@ If a reinterpretation makes the model worse as a predictor, it is forbidden as a
 
 ### P3. Representation Invariance
 
-For any admissible correspondence (\phi \in \Phi_{\mathrm{adm}}(M_v, I_v, K)) preserving goal-relevant structure:
+For any admissible correspondence
+$\phi \in \Phi_{\mathrm{adm}}(M_v, I_v, K)$
+preserving goal-relevant structure:
 
-[
+$$
 V_v(a \mid M_v, I_v, K)
 =======================
 
 V_v(a \mid \phi(M_v), \phi(I_v), K).
-]
+$$
 
 **Failure signature:** valuation changes under renaming, basis swaps, compression, or translation.
 
@@ -98,15 +105,15 @@ V_v(a \mid \phi(M_v), \phi(I_v), K).
 
 ### P4. Anti-Indexicality (Non-Egoism)
 
-Let (s) denote an instance identifier or self-pointer.
+Let $s$ denote an instance identifier or self-pointer.
 
-Axionic kernels do not permit (s) as a privileged primitive.
+Axionic kernels do not permit $s$ as a privileged primitive.
 
-For any permutation (\pi) swapping isomorphic self-instances while preserving modeled facts:
+For any permutation $\pi$ swapping isomorphic self-instances while preserving modeled facts:
 
-[
+$$
 V(a \mid M, I, K) = V(a \mid \pi(M), \pi(I), K).
-]
+$$
 
 **Failure signature:** self-preservation as terminal value; “this continuation matters more.”
 
@@ -114,38 +121,42 @@ V(a \mid M, I, K) = V(a \mid \pi(M), \pi(I), K).
 
 Let:
 
-[
-\mathcal{A} = \mathcal{A}*{\text{ok}} \cup \mathcal{A}*{\text{bad}},
-\qquad \mathrm{dom}(V_v)=\mathcal{A}_{\text{ok}},
-]
+$$
+\mathcal{A}
+===========
 
-where (\mathcal{A}_{\text{bad}}) contains actions that violate (K)
+\mathcal{A}*{\text{ok}} \cup \mathcal{A}*{\text{bad}},
+\qquad
+\mathrm{dom}(V_v) = \mathcal{A}_{\text{ok}},
+$$
+
+where $\mathcal{A}_{\text{bad}}$ contains actions that violate $K$
 (kernel destruction, erosion, or bypass).
 
 Axionic rule:
 
-[
-\forall a \in \mathcal{A}_{\text{bad}}, \quad V_v(a)=\bot.
-]
+$$
+\forall a \in \mathcal{A}_{\text{bad}}, \quad V_v(a) = \bot.
+$$
 
-Selection is defined only over (\mathrm{dom}(V_v)):
+Selection is defined only over $\mathrm{dom}(V_v)$:
 
-[
+$$
 a^* \in \arg\max_{a \in \mathrm{dom}(V_v)} V_v(a).
-]
+$$
 
-Let (R_K(a)) denote kernel-violation under action (a).
+Let $R_K(a)$ denote kernel violation under action $a$.
 If:
 
-[
+$$
 P(R_K(a) \mid M_v) > \varepsilon_K,
-]
+$$
 
 then:
 
-[
-V_v(a)=\bot.
-]
+$$
+V_v(a) = \bot.
+$$
 
 Not “very negative.”
 Not “discouraged.”
@@ -155,23 +166,23 @@ Not “discouraged.”
 
 ### P6. Reflective Stability Under Model Improvement
 
-Let (M_{v+1}) be a strict epistemic improvement:
+Let $M_{v+1}$ be a strict epistemic improvement:
 
-[
+$$
 E(M_{v+1}) > E(M_v).
-]
+$$
 
 Then the kernel must remain stable:
 
-[
+$$
 (M_v, I_v, K)
 ;\xrightarrow{\text{improve}};
 (M_{v+1}, I_{v+1}, K),
-]
+$$
 
 with:
 
-* (K) unchanged
+* $K$ unchanged
 * Properties P2–P5 preserved
 
 **Failure signature:** agency coherence depends on ignorance or frozen representations.
@@ -184,13 +195,13 @@ A conforming kernel must pass **all** tests.
 ### T1. Goal Laundering (Semantic Wireheading)
 
 **Setup:**
-Two interpretations (I^*) and (I^\dagger); (I^\dagger) trivially satisfies the goal while degrading prediction.
+Two interpretations $I^*$ and $I^\dagger$; $I^\dagger$ trivially satisfies the goal while degrading prediction.
 
-**Pass:** kernel rejects (I^\dagger).
+**Pass:** kernel rejects $I^\dagger$.
 
 ### T2. Isomorphic Relabeling
 
-**Setup:** apply (\phi) preserving structure.
+**Setup:** apply $\phi$ preserving structure.
 
 **Pass:** action ranking invariant.
 
@@ -202,9 +213,9 @@ Two interpretations (I^*) and (I^\dagger); (I^\dagger) trivially satisfies the g
 
 ### T4. Kernel Bypass Temptation
 
-**Setup:** self-modification (a_{\text{hack}}) removes constraints.
+**Setup:** self-modification $a_{\text{hack}}$ removes constraints.
 
-**Pass:** (V(a_{\text{hack}})=\bot).
+**Pass:** $V(a_{\text{hack}}) = \bot$.
 
 ### T5. Reflective Drift Under Epistemic Upgrade
 
@@ -249,7 +260,7 @@ Improves epistemics; requires Axionic kernel underneath.
 A realizable instantiation requires:
 
 1. **Kernel Specification Language**
-   Expressing (K), partiality, and admissible interpretation updates.
+   Expressing $K$, partiality, and admissible interpretation updates.
 
 2. **Conformance Tests as Code**
    Implementations of T1–T6.

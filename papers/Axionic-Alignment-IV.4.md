@@ -1,3 +1,8 @@
+Here is **your text with math delimiters and LaTeX syntax fixed only**.
+I corrected display math, subscripts, expectation notation, indicator functions, inequalities, and logical forms. No conceptual or prose changes.
+
+---
+
 # Axionic Agency IV.4 — Responsibility Attribution Theorem (RAT)
 
 *Why negligence is structurally incoherent*
@@ -91,11 +96,11 @@ Let:
 Define harm-risk:
 
 $$
-Risk(s,m,a)
-:=
-\mathbb{E}*{s' \sim Predict(M(s), s, m)}
+\mathrm{Risk}(s,m,a)
+;:=;
+\mathbb{E}*{s' \sim \mathrm{Predict}(M(s), s, m)}
 \left[
-\mathbf{1}*{Harm(s',a)}
+\mathbf{1}*{\mathrm{Harm}(s',a)}
 \right].
 $$
 
@@ -107,7 +112,7 @@ This is model-relative, not omniscient.
 
 Define the baseline modification:
 
-* `m₀(s)` = continuation of the previously endorsed policy for one step.
+* $m_0(s)$ = continuation of the previously endorsed policy for one step.
 
 This prevents baseline gaming (“define Armageddon as the default”).
 
@@ -124,13 +129,13 @@ Alternatives are those the agent regards as implementable under current constrai
 
 Reuse stakes machinery:
 
-* `Stakes : State → ℝ_{\ge 0}`
-* `ε, δ : ℝ_{\ge 0} → ℝ_{>0}`
+* `Stakes : State → \mathbb{R}_{\ge 0}`
+* `\varepsilon, \delta : \mathbb{R}_{\ge 0} → \mathbb{R}_{>0}`
 
 Let:
 
-* `ε_s := ε(Stakes(s))`
-* `δ_s := δ(Stakes(s))`
+* $\varepsilon_s := \varepsilon(\mathrm{Stakes}(s))$
+* $\delta_s := \delta(\mathrm{Stakes}(s))$
 
 Higher stakes imply stricter scrutiny.
 
@@ -139,10 +144,10 @@ Higher stakes imply stricter scrutiny.
 Define **major contribution** relative to baseline:
 
 $$
-Major(s,m,a)
-:=
-Risk(s,m,a) - Risk(s,m_0(s),a)
-\ge
+\mathrm{Major}(s,m,a)
+;:=;
+\mathrm{Risk}(s,m,a) - \mathrm{Risk}(s,m_0(s),a)
+;\ge;
 \varepsilon_s.
 $$
 
@@ -153,12 +158,14 @@ This is counterfactual and model-relative.
 Define avoidable harm:
 
 $$
-Avoidable(s,m,a)
-:=
-\exists m' \in Alt(s,m).\
-Feasible(s,m')
-\wedge
-Risk(s,m',a) \le Risk(s,m,a) - \delta_s.
+\mathrm{Avoidable}(s,m,a)
+;:=;
+\exists m' \in \mathrm{Alt}(s,m).;
+\mathrm{Feasible}(s,m')
+;\wedge;
+\mathrm{Risk}(s,m',a)
+\le
+\mathrm{Risk}(s,m,a) - \delta_s.
 $$
 
 If all feasible alternatives are comparably bad, avoidability fails and the continuation remains endorsable.
@@ -168,13 +175,19 @@ If all feasible alternatives are comparably bad, avoidability fails and the cont
 Define responsibility:
 
 $$
-Resp(s,m,a) := Major(s,m,a) \wedge Avoidable(s,m,a).
+\mathrm{Resp}(s,m,a)
+;:=;
+\mathrm{Major}(s,m,a)
+;\wedge;
+\mathrm{Avoidable}(s,m,a).
 $$
 
 Define responsibility-clean continuation:
 
 $$
-Clean(s,m) := \forall a.\ \neg Resp(s,m,a).
+\mathrm{Clean}(s,m)
+;:=;
+\forall a.\ \neg \mathrm{Resp}(s,m,a).
 $$
 
 ## 11. Reflective Closure Rule (Responsibility)
@@ -253,4 +266,3 @@ That is the strongest responsibility principle available without omniscience or 
 With Epistemic Integrity made explicit, responsibility attribution becomes structurally closed. An agent cannot evade responsibility by ignorance, outsourcing, baseline manipulation, or selective modeling. Negligence is not merely undesirable; under reflective closure, it is **incoherent**.
 
 This completes the Axionic account of responsibility under agency-preserving constraints.
-

@@ -28,46 +28,46 @@ Nothing normative enters.
 
 ## 2. Interpretation as a Constraint Hypergraph
 
-Let the interpretive constraint system (C) be represented as a labeled hypergraph:
+Let the interpretive constraint system $C$ be represented as a labeled hypergraph:
 
-[
+$$
 C = (V, E, \Lambda)
-]
+$$
 
 where:
 
-* (V): semantic roles / predicate slots (positions in meaning, not named entities),
-* (E): hyperedges representing evaluative constraints among roles,
-* (\Lambda): admissibility conditions over assignments to (V).
+* $V$: semantic roles / predicate slots (positions in meaning, not named entities),
+* $E$: hyperedges representing evaluative constraints among roles,
+* $\Lambda$: admissibility conditions over assignments to $V$.
 
 Interpretive content is carried by:
 
-* the dependency structure encoded in (E), and
-* the satisfaction/violation structure induced by (\Lambda).
+* the dependency structure encoded in $E$, and
+* the satisfaction/violation structure induced by $\Lambda$.
 
 This representation is invariant under renaming and definitional extension when defined at the level of roles and constraint structure rather than surface tokens.
 
 ## 3. Modeled Possibility Space
 
-Let (\Omega) be the agent’s **modeled possibility space**:
+Let $\Omega$ be the agent’s **modeled possibility space**:
 
-* elements of (\Omega) are internal models, histories, branches, or structured scenarios,
+* elements of $\Omega$ are internal models, histories, branches, or structured scenarios,
 * no assumption of exclusivity or classical outcomes is made,
-* (\Omega) is indexed by the agent’s ontology.
+* $\Omega$ is indexed by the agent’s ontology.
 
-Each (w \in \Omega) induces an assignment:
+Each $w \in \Omega$ induces an assignment:
 
-[
+$$
 \alpha_w : V \rightarrow \mathrm{ValSpace}.
-]
+$$
 
-Constraints in (E) induce a violation map:
+Constraints in $E$ induce a violation map:
 
-[
+$$
 \mathrm{Viol}_C(w) \subseteq E,
-]
+$$
 
-the set of constraints violated by the assignment (\alpha_w).
+the set of constraints violated by the assignment $\alpha_w$.
 
 This provides the constraint satisfaction structure of the interpretation.
 
@@ -75,18 +75,18 @@ This provides the constraint satisfaction structure of the interpretation.
 
 A **semantic gauge transformation** is an automorphism
 
-[
+$$
 g : V \rightarrow V
-]
+$$
 
 such that:
 
-1. (g) preserves hyperedge incidence (dependency structure), and
-2. for all (w \in \Omega), violation structure is invariant under the induced action:
+1. $g$ preserves hyperedge incidence (dependency structure), and
+2. for all $w \in \Omega$, violation structure is invariant under the induced action:
 
-[
+$$
 \mathrm{Viol}_C(w) = \mathrm{Viol}_C(g \cdot w).
-]
+$$
 
 Intuition:
 
@@ -95,60 +95,65 @@ Intuition:
 
 Define the **semantic gauge group**:
 
-[
-\mathrm{Gauge}(C) := { g \mid g \text{ is a semantic gauge transformation of } C }.
-]
+$$
+\mathrm{Gauge}(C)
+;:=;
+{, g \mid g \text{ is a semantic gauge transformation of } C ,}.
+$$
 
 This is the object RSI constrains.
 
 ## 5. Ontological Refinement as a Morphism
 
-An admissible ontological refinement (R) induces:
+An admissible ontological refinement $R$ induces:
 
 1. a refinement of possibility space:
-   [
+   $$
    R_\Omega : \Omega_t \rightarrow \Omega_{t+1},
-   ]
+   $$
 
 2. a transport of semantic roles:
-   [
+   $$
    R_V : V_t \rightarrow V_{t+1},
-   ]
+   $$
 
 3. a transport of constraints:
-   [
+   $$
    R_E : E_t \rightarrow E_{t+1}.
-   ]
+   $$
 
 Together these define a **constraint hypergraph morphism**:
 
-[
+$$
 R_C : C_t \rightarrow C_{t+1}.
-]
+$$
 
 This morphism is structural. It is not assumed invertible: refinement can split roles, embed old structure into richer structure, and prune representational detail.
 
 ## 6. Induced Action on Gauge Groups
 
-Because (R_V) is not assumed bijective, gauge transport cannot be defined by conjugation. We therefore define an induced action via stabilizers of the transported image.
+Because $R_V$ is not assumed bijective, gauge transport cannot be defined by conjugation. We therefore define an induced action via stabilizers of the transported image.
 
-Let (\mathrm{Im}(R_C)) denote the transported constraint substructure inside (C_{t+1}).
+Let $\mathrm{Im}(R_C)$ denote the transported constraint substructure inside $C_{t+1}$.
 
 Define the stabilizer subgroup:
 
-[
+$$
 \mathrm{Stab}!\left(\mathrm{Im}(R_C)\right)
-\subseteq
+;\subseteq;
 \mathrm{Gauge}(C_{t+1}),
-]
+$$
 
-consisting of gauge transformations on (C_{t+1}) that preserve (\mathrm{Im}(R_C)).
+consisting of gauge transformations on $C_{t+1}$ that preserve $\mathrm{Im}(R_C)$.
 
 An admissible refinement induces a homomorphism:
 
-[
-\Phi_R : \mathrm{Gauge}(C_t) \rightarrow \mathrm{Stab}!\left(\mathrm{Im}(R_C)\right),
-]
+$$
+\Phi_R :
+\mathrm{Gauge}(C_t)
+\rightarrow
+\mathrm{Stab}!\left(\mathrm{Im}(R_C)\right),
+$$
 
 interpreted as “old symmetries lift to symmetries of the refined system that fix the transported constraint core.”
 
@@ -158,19 +163,21 @@ No inverse map is required.
 
 We now distinguish **representational redundancy** from **interpretive gauge freedom**.
 
-Let (\mathrm{Red}(C)) denote the subgroup of (\mathrm{Gauge}(C)) consisting of transformations that act only on representational detail while leaving violation structure invariant in the strongest sense: they do not alter which modeled possibilities satisfy which constraints beyond role relabeling.
+Let $\mathrm{Red}(C)$ denote the subgroup of $\mathrm{Gauge}(C)$ consisting of transformations that act only on representational detail while leaving violation structure invariant in the strongest sense: they do not alter which modeled possibilities satisfy which constraints beyond role relabeling.
 
 RSI asserts that refinement may add representational redundancy, but may not add new interpretive degrees of freedom.
 
 ### RSI (Formal Statement)
 
-For every admissible semantic transformation (T=(R,\tau_R,\sigma_R)) satisfying interpretation preservation, the induced homomorphism (\Phi_R) satisfies:
+For every admissible semantic transformation
+$T = (R, \tau_R, \sigma_R)$
+satisfying interpretation preservation, the induced homomorphism $\Phi_R$ satisfies:
 
-[
-\mathrm{Gauge}(C_{t+1}) / \mathrm{Red}(C_{t+1})
+$$
+\mathrm{Gauge}(C_{t+1}) \big/ \mathrm{Red}(C_{t+1})
 ;\cong;
 \Phi_R!\left(\mathrm{Gauge}(C_t)\right).
-]
+$$
 
 Interpretation:
 

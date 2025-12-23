@@ -42,16 +42,16 @@ Interpretation preservation is therefore a **structural predicate**, not a value
 An **interpretation** is not a mapping from symbols to objects.
 It is a **system of constraints** that bind evaluation.
 
-Let an interpretive state at time (t) be:
+Let an interpretive state at time $t$ be:
 
-[
+$$
 \mathcal{I}_t = \langle M_t, C_t \rangle
-]
+$$
 
 where:
 
-* (M_t) is the semantic layer,
-* (C_t) is the set of evaluative constraints that give (M_t) binding force.
+* $M_t$ is the semantic layer,
+* $C_t$ is the set of evaluative constraints that give $M_t$ binding force.
 
 Constraints may encode:
 
@@ -79,17 +79,17 @@ Preservation concerns **constraint coherence**: whether evaluative structure con
 
 Let:
 
-[
+$$
 T : (O_t, M_t, S_t) \rightarrow (O_{t+1}, M_{t+1}, S_{t+1})
-]
+$$
 
 be an admissible semantic transformation as defined in Axionic Agency II.1.
 
-Then (T) **preserves interpretation** iff all of the following conditions hold.
+Then $T$ **preserves interpretation** iff all of the following conditions hold.
 
 ### 4.1 Non-Vacuity
 
-For every evaluative distinction participating in the constraint structure (C_t), there exists a corresponding distinction in (C_{t+1}) that:
+For every evaluative distinction participating in the constraint structure $C_t$, there exists a corresponding distinction in $C_{t+1}$ that:
 
 * is not identically satisfied,
 * is not identically violated,
@@ -97,15 +97,15 @@ For every evaluative distinction participating in the constraint structure (C_t)
 
 Schematically:
 
-[
+$$
 \forall d \in \mathcal{D}*t,\quad \exists d' \in \mathcal{D}*{t+1} \text{ such that } \mathrm{Entropy}(d') > 0.
-]
+$$
 
 Non-vacuity blocks nihilistic collapse.
 
 ### 4.2 Constraint Transport
 
-All evaluative constraints in (C_t) must have transported analogues in (C_{t+1}) such that:
+All evaluative constraints in $C_t$ must have transported analogues in $C_{t+1}$ such that:
 
 * dependency relations are preserved,
 * constraint strength is not arbitrarily weakened,

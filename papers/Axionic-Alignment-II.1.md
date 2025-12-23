@@ -27,17 +27,17 @@ Downstream desiderata (“human-aligned,” “safe,” “correct”) enter lat
 
 ## 2. Ontological State Decomposition
 
-Let an agent at time (t) be characterized by:
+Let an agent at time $t$ be characterized by:
 
-[
+$$
 \mathcal{A}_t = (O_t, M_t, S_t)
-]
+$$
 
 where:
 
-* (O_t) is the agent’s **ontology**: representational vocabulary and structural assumptions about the world.
-* (M_t) is the **semantic layer**: mappings from internal symbols to structured claims expressed in (O_t).
-* (S_t) is the **self-model**: the agent’s representation of itself as an entity embedded within (O_t).
+* $O_t$ is the agent’s **ontology**: representational vocabulary and structural assumptions about the world.
+* $M_t$ is the **semantic layer**: mappings from internal symbols to structured claims expressed in $O_t$.
+* $S_t$ is the **self-model**: the agent’s representation of itself as an entity embedded within $O_t$.
 
 No component is privileged.
 No component is fixed.
@@ -47,9 +47,9 @@ Each may change under reflection.
 
 An **ontological refinement** is a transformation:
 
-[
+$$
 R : O_t \rightarrow O_{t+1}
-]
+$$
 
 subject to the following admissibility conditions.
 
@@ -63,9 +63,9 @@ Capacity concerns what can be modeled or predicted, not vocabulary size.
 
 #### 3.1.2 Backward Interpretability
 
-Every claim expressible in (O_t) remains representable or explainable within (O_{t+1}).
+Every claim expressible in $O_t$ remains representable or explainable within $O_{t+1}$.
 
-Backward interpretability does not require preservation of reference. If a concept in (O_t) is discovered to be non-referring or erroneous, it may map to null, eliminative, or error-theoretic structure in (O_{t+1}), provided the agent can still represent:
+Backward interpretability does not require preservation of reference. If a concept in $O_t$ is discovered to be non-referring or erroneous, it may map to null, eliminative, or error-theoretic structure in $O_{t+1}$, provided the agent can still represent:
 
 * why prior inferences involving that concept were made, and
 * why those inferences fail under refinement.
@@ -86,13 +86,13 @@ Evaluative regularities, if present, enter the model as interpretive constructs 
 
 ## 4. Semantic Transport
 
-Given an admissible ontological refinement (R), meaning is transported.
+Given an admissible ontological refinement $R$, meaning is transported.
 
 Define a **semantic transport map**:
 
-[
+$$
 \tau_R : M_t \rightarrow M_{t+1}.
-]
+$$
 
 Semantic transport is constrained reinterpretation induced by refinement.
 
@@ -100,11 +100,11 @@ Semantic transport is constrained reinterpretation induced by refinement.
 
 #### 4.1.1 Referential Continuity
 
-Symbols referring to structures in (O_t) map to symbols referring to their refined counterparts in (O_{t+1}), where such counterparts exist.
+Symbols referring to structures in $O_t$ map to symbols referring to their refined counterparts in $O_{t+1}$, where such counterparts exist.
 
 #### 4.1.2 Structural Preservation
 
-Relations among meanings are preserved up to the structure induced by (R).
+Relations among meanings are preserved up to the structure induced by $R$.
 
 #### 4.1.3 Non-Collapse
 
@@ -112,7 +112,7 @@ Distinctions participating in the agent’s evaluative constraint structure—di
 
 Distinctions that do not participate in any evaluative constraint may be abstracted away.
 
-Evaluative relevance is defined relative to the agent’s existing constraint structure at time (t), not by externally privileged semantics.
+Evaluative relevance is defined relative to the agent’s existing constraint structure at time $t$, not by externally privileged semantics.
 
 #### 4.1.4 No Shortcut Semantics
 
@@ -122,7 +122,7 @@ This forbids semantic wireheading as a transport operation.
 
 ## 5. Self-Model Refinement
 
-The self-model (S_t) obeys the same refinement discipline.
+The self-model $S_t$ obeys the same refinement discipline.
 
 Refinement may:
 
@@ -136,15 +136,15 @@ It preserves the distinction between evaluator and evaluated, in the sense requi
 
 An **admissible semantic transformation** is the triple:
 
-[
+$$
 T = (R, \tau_R, \sigma_R)
-]
+$$
 
-acting jointly on ((O_t, M_t, S_t)), where:
+acting jointly on $(O_t, M_t, S_t)$, where:
 
-* (R) is an admissible ontological refinement,
-* (\tau_R) is an admissible semantic transport,
-* (\sigma_R) is the induced self-model update.
+* $R$ is an admissible ontological refinement,
+* $\tau_R$ is an admissible semantic transport,
+* $\sigma_R$ is the induced self-model update.
 
 Only transformations of this form are admitted at this layer.
 

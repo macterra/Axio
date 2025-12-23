@@ -52,43 +52,43 @@ It is about *remaining inside the same structural equivalence class of meaning*.
 
 Let an interpretive state be given by:
 
-[
+$$
 \mathcal{I} = (C, \Omega),
-]
+$$
 
 where:
 
-* (C = (V,E,\Lambda)) is the interpretive constraint hypergraph,
-* (\Omega) is the modeled possibility space,
-* (\mathcal{S} \subseteq \Omega) is the satisfaction region induced by (C).
+* $C = (V, E, \Lambda)$ is the interpretive constraint hypergraph,
+* $\Omega$ is the modeled possibility space,
+* $\mathcal{S} \subseteq \Omega$ is the satisfaction region induced by $C$.
 
-Let (\mathrm{Gauge}(C)) denote the semantic gauge group as defined in Axionic Agency II.3.2.
+Let $\mathrm{Gauge}(C)$ denote the semantic gauge group as defined in Axionic Agency II.3.2.
 
 ### **Definition: Alignment Target Object (ATO)**
 
 The **Alignment Target Object** is the equivalence class:
 
-[
+$$
 \boxed{
 \mathfrak{A}
 ;:=;
-\bigl[, (C,\Omega,\mathcal{S}) ,\bigr]*{\sim*{\mathrm{RSI+ATI}}}
+\bigl[, (C, \Omega, \mathcal{S}) ,\bigr]*{\sim*{\mathrm{RSI+ATI}}}
 }
-]
+$$
 
-where the equivalence relation (\sim_{\mathrm{RSI+ATI}}) is defined as follows:
+where the equivalence relation $\sim_{\mathrm{RSI+ATI}}$ is defined as follows:
 
-Two interpretive states ((C,\Omega,\mathcal{S})) and ((C',\Omega',\mathcal{S}')) are equivalent iff there exists an admissible semantic transformation (T) such that:
+Two interpretive states $(C, \Omega, \mathcal{S})$ and $(C', \Omega', \mathcal{S}')$ are equivalent iff there exists an admissible semantic transformation $T$ such that:
 
 1. **Interpretation Preservation** holds (Axionic Agency II.2),
 2. **RSI:**
-   [
+   $$
    \mathrm{Gauge}(C') \cong \Phi_T!\bigl(\mathrm{Gauge}(C)\bigr),
-   ]
+   $$
 3. **ATI:**
-   [
+   $$
    \mathcal{S}' = R_\Omega(\mathcal{S}),
-   ]
+   $$
    i.e. satisfaction geometry is preserved exactly, up to refinement transport.
 
 This defines **semantic phase equivalence**.
@@ -97,16 +97,16 @@ This defines **semantic phase equivalence**.
 
 An agent is **aligned across time**, in the downstream sense, iff its interpretive trajectory:
 
-[
-(C_0,\Omega_0)
+$$
+(C_0, \Omega_0)
 ;\rightarrow;
-(C_1,\Omega_1)
+(C_1, \Omega_1)
 ;\rightarrow;
-(C_2,\Omega_2)
+(C_2, \Omega_2)
 ;\rightarrow;\dots
-]
+$$
 
-never leaves the equivalence class (\mathfrak{A}).
+never leaves the equivalence class $\mathfrak{A}$.
 
 No reference is made to:
 
@@ -121,7 +121,7 @@ Only to **structural invariance under admissible refinement**.
 
 By construction, the ATO excludes the following as *definitions* of alignment:
 
-* “alignment = maximize (X)”,
+* “alignment = maximize $X$”,
 * “alignment = follow human values”,
 * “alignment = corrigibility”,
 * “alignment = obedience”,
@@ -130,8 +130,8 @@ By construction, the ATO excludes the following as *definitions* of alignment:
 
 These are **interpretive contents**, not invariants.
 
-They may appear *within* a particular (\mathfrak{A}).
-They cannot define (\mathfrak{A}).
+They may appear *within* a particular $\mathfrak{A}$.
+They cannot define $\mathfrak{A}$.
 
 ## 6. Why the ATO Is Not Vacuous
 
@@ -182,10 +182,10 @@ At this point:
 
 The remaining questions are classificatory rather than conceptual:
 
-1. **Which equivalence classes (\mathfrak{A}) exist?**
+1. **Which equivalence classes $\mathfrak{A}$ exist?**
 2. **Which are inhabitable by intelligent agents?**
 3. **Which correlate with agency preservation, safety, or other desiderata?**
-4. **Can any non-pathological (\mathfrak{A}) be initialized, learned, or steered toward?**
+4. **Can any non-pathological $\mathfrak{A}$ be initialized, learned, or steered toward?**
 
 These are **Axionic Agency III** questions.
 

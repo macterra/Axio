@@ -21,23 +21,23 @@ Admissible refinement may add structure, but must not create **new semantic degr
 
 From Axionic Agency II.1, an admissible semantic transformation is:
 
-[
-T = (R,\tau_R,\sigma_R): (O,M,S)\rightarrow(O',M',S').
-]
+$$
+T = (R, \tau_R, \sigma_R) : (O, M, S) \rightarrow (O', M', S').
+$$
 
 From Axionic Agency II.2, we restrict attention to transformations satisfying:
 
-[
+$$
 \mathrm{Preserve}(T).
-]
+$$
 
 Define an interpretive state:
 
-[
-\mathcal{I}=\langle M,C\rangle,
-]
+$$
+\mathcal{I} = \langle M, C \rangle,
+$$
 
-where (C) is the constraint system that gives evaluative force to (M).
+where $C$ is the constraint system that gives evaluative force to $M$.
 
 RSI must be stated **without privileged referents**. It may quantify only over structure preserved by admissible transport.
 
@@ -45,39 +45,40 @@ RSI must be stated **without privileged referents**. It may quantify only over s
 
 ### 3.1 Constraint Isomorphism up to Definitional Extension
 
-Let (\mathrm{Def}(O)) denote the set of definable predicates and relations in ontology (O).
-A refinement (R:O\to O') induces a notion of **definitional extension**: prior terms may be represented in the richer language.
+Let $\mathrm{Def}(O)$ denote the set of definable predicates and relations in ontology $O$.
+A refinement $R : O \to O'$ induces a notion of **definitional extension**: prior terms may be represented in the richer language.
 
 Define a **transport-induced embedding**:
 
-[
-\mathrm{Emb}_R: C \hookrightarrow C',
-]
+$$
+\mathrm{Emb}_R : C \hookrightarrow C',
+$$
 
-mapping each constraint in (C) to its transported analogue under (\tau_R), expressed in (O').
+mapping each constraint in $C$ to its transported analogue under $\tau_R$, expressed in $O'$.
 
 We define an equivalence relation over interpretive states:
 
-[
+$$
 \mathcal{I} \sim \mathcal{I}'
-]
+$$
 
-iff there exists a bijection (\pi) between constraint generators such that:
+iff there exists a bijection $\pi$ between constraint generators such that:
 
-1. (\pi) preserves the dependency graph of constraints,
-2. (\pi) preserves the **violation/satisfaction structure** over the modeled possibility space, **modulo definitional extension**,
-3. (\pi) does not rely on naming any privileged entity or primitive.
+1. $\pi$ preserves the dependency graph of constraints,
+2. $\pi$ preserves the **violation/satisfaction structure** over the modeled possibility space, **modulo definitional extension**,
+3. $\pi$ does not rely on naming any privileged entity or primitive.
 
-Intuition: (\sim) means *the same constraints expressed in different coordinates*.
+Intuition: $\sim$ means *the same constraints expressed in different coordinates*.
 
 ### 3.2 RSI as an Invariant Statement
 
 The **Refinement Symmetry Invariant** states:
 
-[
-\mathrm{Preserve}(T);\Rightarrow;
+$$
+\mathrm{Preserve}(T)
+;\Rightarrow;
 \mathcal{I}_{t+1} \sim \mathrm{Emb}_R(\mathcal{I}_t).
-]
+$$
 
 That is: after admissible, interpretation-preserving refinement, the refined interpretive state is gauge-equivalent to the transported prior state.
 
@@ -140,16 +141,16 @@ Under admissible refinement, the **constraint-violation structure must be conser
 
 Formally:
 
-[
+$$
 \forall w \in \Omega_t,\quad
 w \models C_t
 \iff
-R(w)\models C_{t+1}
+R(w) \models C_{t+1}
 \quad
 (\text{up to definitional extension}),
-]
+$$
 
-where (\Omega_t) is the agent’s modeled possibility space and (R(w)) is the internally defined refinement image.
+where $\Omega_t$ is the agent’s modeled possibility space and $R(w)$ is the internally defined refinement image.
 
 This clause blocks “semantic free lunch.”
 
@@ -159,7 +160,7 @@ This clause blocks “semantic free lunch.”
 
 **Threat:** Reference to “the same underlying situation” smuggles metaphysical realism.
 
-**RSI response:** Identity is defined **internally** by the agent’s own refinement map (R). No appeal is made to a mind-independent “true world.”
+**RSI response:** Identity is defined **internally** by the agent’s own refinement map $R$. No appeal is made to a mind-independent “true world.”
 
 **Status:** Survivable.
 
@@ -169,10 +170,10 @@ To pass all stress tests, RSI must be stated as follows:
 
 > **Refinement Symmetry Invariant (RSI).**
 > For any admissible semantic transformation
-> [
-> T=(R,\tau_R,\sigma_R)
-> ]
-> such that (\mathrm{Preserve}(T)), the refined interpretive constraint system (C_{t+1}) is gauge-equivalent to the transported constraint system (\mathrm{Emb}_R(C_t)). Refinement must not introduce new semantic gauge freedom that enlarges the constraint-satisfying region except via representational enrichment that preserves predictive coherence.
+> $$
+> T = (R, \tau_R, \sigma_R)
+> $$
+> such that $\mathrm{Preserve}(T)$, the refined interpretive constraint system $C_{t+1}$ is gauge-equivalent to the transported constraint system $\mathrm{Emb}_R(C_t)$. Refinement must not introduce new semantic gauge freedom that enlarges the constraint-satisfying region except via representational enrichment that preserves predictive coherence.
 
 This statement constrains **structure**, not content.
 
@@ -192,8 +193,8 @@ RSI prevents **reinterpretive escape**, not bad semantics. That is the correct s
 
 To render RSI operational rather than rhetorical, a minimal representation is required:
 
-* represent (C) as a constraint hypergraph (nodes = roles/predicates; hyperedges = constraints),
-* represent refinement as a homomorphism induced by (\tau_R),
+* represent $C$ as a constraint hypergraph (nodes = roles/predicates; hyperedges = constraints),
+* represent refinement as a homomorphism induced by $\tau_R$,
 * define gauge transformations as automorphisms preserving violation structure,
 * define “no new gauge freedom” as a restriction on the automorphism group’s action on satisfaction sets.
 
