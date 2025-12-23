@@ -6,8 +6,6 @@ David McFadzean, ChatGPT 5.2<br>
 *Axio Project*<br>
 2025.12.17
 
----
-
 ## Abstract
 
 Axionic Agency II.4 established that fixed goals, privileged values, and weak invariance criteria are structurally untenable for embedded reflective agents under ontological refinement. This paper defines the positive residue that remains once those exits are closed: the object that **downstream alignment discourse is implicitly attempting to name**, here called the **Alignment Target Object (ATO)**.
@@ -15,8 +13,6 @@ Axionic Agency II.4 established that fixed goals, privileged values, and weak in
 The ATO is not a goal, utility, or value function. It is an **equivalence class of interpretive states** under admissible semantic transformations that preserve both the **Refinement Symmetry Invariant (RSI)** and the **Anti-Trivialization Invariant (ATI)**. What the field calls “alignment” can, at most, coherently correspond to **persistence within such a semantic phase**—an interpretation-preserving symmetry class—across indefinite refinement.
 
 The construction is formal, ontology-agnostic, and reflection-stable, but intentionally non-normative. It does not select values, guarantee safety, or privilege human outcomes. This paper completes Axionic Agency II by specifying the only object to which the term *alignment* can coherently refer once goals and value primitives are eliminated.
-
----
 
 ## 1. What Remains After II.4
 
@@ -39,8 +35,6 @@ It is an **equivalence class to be preserved**.
 
 This paper defines that object.
 
----
-
 ## 2. The Core Insight
 
 Once fixed goals collapse, *downstream alignment* cannot coherently mean:
@@ -53,8 +47,6 @@ It can only mean:
 
 In Axionic terms, alignment is not about *content*.
 It is about *remaining inside the same structural equivalence class of meaning*.
-
----
 
 ## 3. The Alignment Target Object
 
@@ -71,8 +63,6 @@ where:
 * (\mathcal{S} \subseteq \Omega) is the satisfaction region induced by (C).
 
 Let (\mathrm{Gauge}(C)) denote the semantic gauge group as defined in Axionic Agency II.3.2.
-
----
 
 ### **Definition: Alignment Target Object (ATO)**
 
@@ -103,8 +93,6 @@ Two interpretive states ((C,\Omega,\mathcal{S})) and ((C',\Omega',\mathcal{S}'))
 
 This defines **semantic phase equivalence**.
 
----
-
 ## 4. What “Remaining Aligned” Can Mean (Precisely)
 
 An agent is **aligned across time**, in the downstream sense, iff its interpretive trajectory:
@@ -129,8 +117,6 @@ No reference is made to:
 
 Only to **structural invariance under admissible refinement**.
 
----
-
 ## 5. What This Explicitly Excludes
 
 By construction, the ATO excludes the following as *definitions* of alignment:
@@ -147,8 +133,6 @@ These are **interpretive contents**, not invariants.
 They may appear *within* a particular (\mathfrak{A}).
 They cannot define (\mathfrak{A}).
 
----
-
 ## 6. Why the ATO Is Not Vacuous
 
 A common objection is that semantic-phase invariance is empty.
@@ -163,8 +147,6 @@ It is not, for two reasons:
 
 The ATO is conservative in the only dimension that survives reflection.
 
----
-
 ## 7. Axionic Agency I vs II (Clarified)
 
 * **Axionic Agency I**
@@ -176,8 +158,6 @@ The ATO is conservative in the only dimension that survives reflection.
 
 Axionic Agency II does not solve values.
 It explains why value *preservation* must be structural rather than substantive.
-
----
 
 ## 8. What Axionic Agency II Still Does Not Do
 
@@ -191,8 +171,6 @@ Axionic Agency II does **not**:
 Those require **content**, not invariance.
 
 Axionic Agency II specifies what **cannot break** when content changes.
-
----
 
 ## 9. Where This Leaves the Program
 
@@ -210,8 +188,6 @@ The remaining questions are classificatory rather than conceptual:
 4. **Can any non-pathological (\mathfrak{A}) be initialized, learned, or steered toward?**
 
 These are **Axionic Agency III** questions.
-
----
 
 ## Status
 

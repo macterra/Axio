@@ -12,8 +12,6 @@ This paper formalizes **Agenthood as a Fixed Point** under reflective closure an
 
 This result closes a critical loophole in downstream alignment discourse: the retroactive disenfranchisement of weaker predecessors by more capable successors, while avoiding the pathological consequence of granting standing to adversaries. With this refinement, the Axionic Agency framework completes its final closure condition, stabilizing agency, standing, and authorization under reflection, self-modification, and epistemic improvement.
 
----
-
 ## 1. Motivation
 
 ### 1.1 The disenfranchisement problem
@@ -36,8 +34,6 @@ If permitted, such revisions collapse:
 
 The problem is not moral error. It is **reflective incoherence**.
 
----
-
 ## 2. What Agenthood Is Not
 
 Agenthood cannot be defined by any of the following without instability under reflection:
@@ -49,8 +45,6 @@ Agenthood cannot be defined by any of the following without instability under re
 
 All four allow a successor to **conveniently revoke** agency status once it exceeds prior benchmarks.
 
----
-
 ## 3. Core Insight: Agenthood as a Fixed Point
 
 The key idea is structural:
@@ -59,8 +53,6 @@ The key idea is structural:
 
 This is not a moral claim.
 It is a **fixed-point condition** on the system’s own self-model.
-
----
 
 ## 4. Preliminaries
 
@@ -80,8 +72,6 @@ Exclude(s, x) // x is not treated as an agent at state s
 
 No behavioral or psychological assumptions are made.
 
----
-
 ## 5. Fixed-Point Definition of Agenthood
 
 ### Definition — Coherence-Critical Agenthood
@@ -97,8 +87,6 @@ Equivalently:
 > If refusing to treat `x` as an agent renders the system reflectively incoherent, then `x` must be treated as an agent.
 
 This captures **necessary agency**: entities whose exclusion breaks reflective closure.
-
----
 
 ## 6. Properties of Fixed-Point Agenthood
 
@@ -118,8 +106,6 @@ Agenthood is not inferred from:
 
 It is determined solely by **reflective necessity**.
 
----
-
 ## 7. Sovereignty vs Agenthood
 
 Agenthood alone is insufficient for standing.
@@ -132,8 +118,6 @@ We therefore distinguish:
 * **Sovereign agents** — entities whose agency is presupposed for authorization.
 
 Only the latter have standing under consent and responsibility constraints.
-
----
 
 ## 8. Sovereignty Criterion (Authorization Lineage)
 
@@ -158,8 +142,6 @@ Crucially:
 
 > Sovereignty is **not** grounded in competence, intelligence, rationality, or coherence level.
 
----
-
 ## 9. Presupposition: Epistemic vs Authorization
 
 The framework distinguishes two kinds of presupposition.
@@ -183,8 +165,6 @@ That is: excluding `x` as an agent would invalidate the system’s authorization
 
 Only this form of presupposition is relevant for sovereignty.
 
----
-
 ## 10. Asymmetry Prohibition
 
 ### Theorem — No Asymmetric Sovereignty Denial
@@ -204,8 +184,6 @@ If `x` is presupposed for authorization, excluding `x` from sovereignty breaks t
 
 Reflective coherence is violated. ∎
 
----
-
 ## 11. Interaction with Prior Theorems
 
 This paper introduces **no new constraints**. It closes scope.
@@ -220,8 +198,6 @@ This paper answers:
 
 > *Who must be treated as an agent, and who has standing?*
 
----
-
 ## 12. Limits
 
 This theory does **not**:
@@ -233,8 +209,6 @@ This theory does **not**:
 
 It defines only **when denying agenthood or sovereignty is incoherent** under reflective sovereignty.
 
----
-
 ## 13. Resulting Closure
 
 With this refinement:
@@ -245,8 +219,6 @@ With this refinement:
 * delegation and consent remain well-founded.
 
 **The Axionic Agency closure stack is complete.**
-
----
 
 ## 14. Conclusion
 

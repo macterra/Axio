@@ -6,15 +6,11 @@ David McFadzean, ChatGPT 5.2<br>
 *Axio Project*<br>
 2025.12.17
 
----
-
 ## Abstract
 
 Reflectively capable agents revise their world-models, semantics, and self-models as representational capacity increases. Under ontological refinement, fixed goals, utilities, and value primitives are not stable objects. This paper defines the **admissible class of semantic transformations** for embedded reflective agents by formalizing **ontological refinement**, **semantic transport**, and **self-model update** without privileged semantic anchors.
 
 We specify structural constraints—backward interpretability, non-collapse, and prohibition of evaluator injection—that govern how meaning may be preserved across representational change. No claims are made about safety, correctness, or alignment with external referents. The contribution is the definition of the **transformation space** over which downstream preference, governance, and value-dynamics constraints must later range.
-
----
 
 ## 1. The Object of Study
 
@@ -28,8 +24,6 @@ This paper therefore does not attempt to define safety, correctness, or alignmen
 > *Which changes to an agent’s ontology, semantics, and self-model count as admissible refinements, and how is meaning transported across them?*
 
 Downstream desiderata (“human-aligned,” “safe,” “correct”) enter later as additional invariance conditions. Introducing them at this layer would presuppose fixed semantics and collapse the distinction between admissible transformation and value constraint.
-
----
 
 ## 2. Ontological State Decomposition
 
@@ -48,8 +42,6 @@ where:
 No component is privileged.
 No component is fixed.
 Each may change under reflection.
-
----
 
 ## 3. Ontological Refinement
 
@@ -92,8 +84,6 @@ Refinement does not introduce new evaluative primitives that bypass interpretati
 
 Evaluative regularities, if present, enter the model as interpretive constructs subject to the same transport and preservation constraints as other meanings.
 
----
-
 ## 4. Semantic Transport
 
 Given an admissible ontological refinement (R), meaning is transported.
@@ -130,8 +120,6 @@ Transport does not redefine meanings so that evaluative constraints become vacuo
 
 This forbids semantic wireheading as a transport operation.
 
----
-
 ## 5. Self-Model Refinement
 
 The self-model (S_t) obeys the same refinement discipline.
@@ -143,8 +131,6 @@ Refinement may:
 * alter agent boundaries.
 
 It preserves the distinction between evaluator and evaluated, in the sense required for kernel-level partiality and interpretation to remain defined. Refinements that collapse this distinction eliminate the conditions under which valuation denotes.
-
----
 
 ## 6. Composite Semantic Transformation
 
@@ -162,8 +148,6 @@ acting jointly on ((O_t, M_t, S_t)), where:
 
 Only transformations of this form are admitted at this layer.
 
----
-
 ## 7. Explicit Exclusions
 
 The following transformation types are excluded at this layer:
@@ -178,23 +162,17 @@ The following transformation types are excluded at this layer:
 
 Proposals relying on any of these do not qualify as admissible semantic transformations in the sense defined here.
 
----
-
 ## 8. Scope Clarification
 
 This paper does not ensure safety, sanity, correctness, or alignment with any external referent. It defines the transformation space within which such properties must later be characterized.
 
 Internally coherent but externally catastrophic semantic trajectories remain admissible here. Preventing such trajectories is a task for subsequent invariance constraints, not for admissibility.
 
----
-
 ## 9. Formal Status
 
 The notation is structural rather than computational.
 
 No claim is made that refinement, triviality, or expressive capacity are currently algorithmically measurable. These definitions function as constraints analogous to topological or gauge constraints: they delimit admissible structure prior to metric instantiation.
-
----
 
 ## 10. What This Paper Does Not Do
 
@@ -207,8 +185,6 @@ This paper does not:
 * introduce normativity.
 
 It fixes the arena. Subsequent Axionic Agency II results operate within this admissible transformation space.
-
----
 
 ## Status
 

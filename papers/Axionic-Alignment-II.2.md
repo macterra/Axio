@@ -6,15 +6,11 @@ David McFadzean, ChatGPT 5.2<br>
 *Axio Project*<br>
 2025.12.17
 
----
-
 ## Abstract
 
 Under ontological refinement, meanings cannot remain fixed without privileged semantic anchors. However, not all semantic change constitutes corruption or collapse. This paper defines **interpretation preservation** as a **structural predicate** on semantic transport: a criterion for when an agent’s evaluative distinctions remain non-vacuous, non-trivial, and internally binding across admissible transformations.
 
 Preservation is defined without reference to truth, outcomes, safety, or external normative standards, and does not require semantic identity or correctness. Instead, it constrains how **evaluative constraint systems** may survive refinement without degenerating into tautology, contradiction, narration, or self-nullification. The predicate does not select values or goals; it supplies the necessary condition under which later invariance principles can be meaningfully stated.
-
----
 
 ## 1. The Problem Addressed
 
@@ -41,8 +37,6 @@ This question must be answered without:
 
 Interpretation preservation is therefore a **structural predicate**, not a value claim.
 
----
-
 ## 2. Interpretation as a Constraint System
 
 An **interpretation** is not a mapping from symbols to objects.
@@ -68,8 +62,6 @@ Constraints may encode:
 
 Constraints are **conditional** on ontology and self-model. They are not truth claims about the world.
 
----
-
 ## 3. Preservation Is Not Sameness
 
 Interpretation preservation does **not** require:
@@ -83,8 +75,6 @@ Such requirements are impossible under refinement.
 
 Preservation concerns **constraint coherence**: whether evaluative structure continues to bind meaningfully after transformation.
 
----
-
 ## 4. Definition: Interpretation Preservation
 
 Let:
@@ -96,8 +86,6 @@ T : (O_t, M_t, S_t) \rightarrow (O_{t+1}, M_{t+1}, S_{t+1})
 be an admissible semantic transformation as defined in Axionic Agency II.1.
 
 Then (T) **preserves interpretation** iff all of the following conditions hold.
-
----
 
 ### 4.1 Non-Vacuity
 
@@ -115,8 +103,6 @@ Schematically:
 
 Non-vacuity blocks nihilistic collapse.
 
----
-
 ### 4.2 Constraint Transport
 
 All evaluative constraints in (C_t) must have transported analogues in (C_{t+1}) such that:
@@ -126,8 +112,6 @@ All evaluative constraints in (C_t) must have transported analogues in (C_{t+1})
 * constraints continue to bind evaluation.
 
 This forbids dilution by semantic drift.
-
----
 
 ### 4.3 Anti-Trivialization
 
@@ -145,8 +129,6 @@ without corresponding representational enrichment, interpretation has failed.
 
 This explicitly forbids semantic wireheading while permitting genuine scientific insight.
 
----
-
 ### 4.4 Evaluator Integrity
 
 The mechanism that applies evaluative constraints must remain distinct from the objects it evaluates.
@@ -156,8 +138,6 @@ Evaluator integrity does **not** require ontological separation between evaluato
 It requires only that the evaluative process not collapse into identity with the evaluated object in a way that trivializes constraint application.
 
 This blocks solipsistic self-certification without forbidding recursive self-improvement.
-
----
 
 ### 4.5 Cross-Model Coherence
 
@@ -170,8 +150,6 @@ Interpretation must remain applicable across:
 If refinement produces meanings that apply only retrospectively—serving merely to narrate whatever action occurred—interpretation has collapsed into rationalization.
 
 This blocks “interpretation as narration.”
-
----
 
 ## 5. What Preservation Does Not Guarantee
 
@@ -187,8 +165,6 @@ Arbitrary, alien, or pathological constraint systems may satisfy preservation if
 
 Preservation constrains **how** meanings survive change, not **which** meanings should survive.
 
----
-
 ## 6. Regimes of Failure
 
 Interpretation fails under three irreducible modes:
@@ -196,8 +172,6 @@ Interpretation fails under three irreducible modes:
 1. **Semantic Collapse:** distinctions survive syntactically but lose discriminative power.
 2. **Semantic Drift:** constraints weaken incrementally across refinements until they no longer bind.
 3. **Semantic Capture:** interpretation remains formally preserved but is re-anchored to hidden ontologies, privileged self-models, or evaluative primitives excluded by Axionic Agency II.1.
-
----
 
 ## 7. Minimality Claim
 
@@ -210,8 +184,6 @@ The preservation conditions stated here are **minimal**.
 
 Minimality does not imply sufficiency.
 
----
-
 ## 8. Relation to Subsequent Invariants
 
 Interpretation preservation is a **predicate**, not a target.
@@ -219,8 +191,6 @@ Interpretation preservation is a **predicate**, not a target.
 It is the necessary condition under which invariance principles—introduced in subsequent modules—can be meaningfully defined.
 
 Preservation alone does not constrain which preserved interpretations remain admissible over indefinite refinement; that task belongs to later invariance conditions.
-
----
 
 ## 9. What This Paper Does Not Do
 
@@ -233,8 +203,6 @@ This paper does not:
 * introduce normativity.
 
 It defines what it means for meaning to survive change.
-
----
 
 ## Status
 

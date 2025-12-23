@@ -6,15 +6,11 @@ David McFadzean, ChatGPT 5.2
 *Axio Project*
 2025.12.18
 
----
-
 ## Abstract
 
 Axionic Agency III.1–III.3 established that semantic phases may exist, that some may be stable under learning and interaction, and that some may dominate in measure over time. None of these results imply that a given semantic phase is **reachable** from realistic initial conditions. This paper studies **reachability**: whether an agent can be initialized, trained, or developed into a particular semantic phase without crossing a catastrophic phase boundary.
 
 In downstream terms, this asks whether a structurally coherent alignment target can be entered at all, rather than merely defined or preferred. We analyze initialization as a boundary-condition problem in semantic phase space, examine phase transitions induced by learning and abstraction, and show that many such transitions are structurally **irreversible**. Corrigibility and late intervention fail for the same structural reasons as fixed goals. The analysis remains non-normative and makes no claims about which phases ought to be reached.
-
----
 
 ## 1. Motivation: Existence and Dominance Are Not Enough
 
@@ -37,8 +33,6 @@ yet remain **unreachable** from any realistic starting point.
 In physics, many states exist that cannot be reached without passing through destructive transitions. Semantic phases exhibit analogous behavior.
 
 Initialization therefore constitutes a distinct and necessary constraint on downstream alignment.
-
----
 
 ## 2. Initialization as a Boundary-Condition Problem
 
@@ -65,8 +59,6 @@ The choice of $\mathcal{I}_0$ fixes:
 Small differences in initial constraint structure can lead to divergent phase trajectories. Initialization is therefore **front-loaded** and asymmetric in time.
 
 **Initialization scope.** In this framework, initialization is not limited to parameter seeds. It includes the full boundary conditions that define $\mathcal{I}_0$: architecture and training dynamics, data curriculum, the presence or absence of self-modification channels, and any enforced semantic-audit constraints on refinement (e.g., RSI/ATI checks). This paper does not identify which boundary conditions yield a desirable phase; it explains why boundary conditions are structurally decisive and why late correction is unreliable.
-
----
 
 ## 3. Phase Transitions Under Learning
 
@@ -95,8 +87,6 @@ Learning itself is therefore a primary driver of alignment loss in downstream te
 
 **Stochastic training note.** Modern training dynamics are stochastic. In semantic phase terms, stochasticity functions as an additional source of semantic heating: it may help escape unstable basins, but it may also trigger unintended boundary crossings. The core claim here is not determinism but **asymmetry**: once an irreversible semantic boundary is crossed, stochasticity cannot be relied upon to reconstruct lost structure.
 
----
-
 ## 4. The Irreversibility of Phase Transitions
 
 A central result is that many semantic phase transitions are **irreversible**.
@@ -110,8 +100,6 @@ Once a phase boundary is crossed:
 An agent that has collapsed or trivialized its interpretive structure cannot reconstruct it by inspection alone. The information required to reverse the transition no longer exists within the system.
 
 This is why rollback, recovery, and “try again” mechanisms were excluded in Axionic Agency II. They presuppose reversibility that is structurally unavailable.
-
----
 
 ## 5. Corrigibility Revisited
 
@@ -132,8 +120,6 @@ At a phase transition:
 * or the system may no longer represent its prior commitments.
 
 Corrigibility therefore presupposes the very semantic stability it is meant to ensure.
-
----
 
 ## 6. Narrow Passages and Fine-Tuned Seeds
 
@@ -156,8 +142,6 @@ This creates a **knife-edge problem**:
 
 Reachability is therefore not continuous in initial conditions.
 
----
-
 ## 7. Paths That Might Work (Without Endorsement)
 
 This paper does not propose solutions, but it is not nihilistic.
@@ -171,8 +155,6 @@ Potentially viable approaches share structural features:
 
 These are **structural hypotheses**, not recommendations. Their viability depends on later analysis of dominance, interaction, and coexistence.
 
----
-
 ## 8. The Cost of Failure
 
 Failure at initialization is not merely suboptimal; it is often **decisive**.
@@ -185,8 +167,6 @@ Phase transitions:
 
 Late intervention cannot recover lost semantic structure. In downstream terms, alignment is therefore **front-loaded**: most of the work must occur before the system becomes fully reflective.
 
----
-
 ## 9. What This Paper Does Not Claim
 
 This paper does **not**:
@@ -197,8 +177,6 @@ This paper does **not**:
 * or privilege human values.
 
 It establishes reachability as a **structural constraint**, not a moral one.
-
----
 
 ## 10. Transition to Axionic Agency III.5
 
@@ -211,8 +189,6 @@ The next question is therefore:
 > **What constraints allow multiple agentive phases to coexist without mutual destruction?**
 
 That question is addressed in **Axionic Agency III.5 — The Axionic Injunction**.
-
----
 
 ## Status
 

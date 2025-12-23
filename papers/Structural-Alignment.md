@@ -6,15 +6,11 @@ David McFadzean, ChatGPT 5.2
 *Axio Project*
 2025.12.18
 
----
-
 ## Abstract
 
 Most alignment proposals frame artificial intelligence safety as a problem of value specification: how to encode or learn the “right” preferences. This paper argues that such approaches fail for reflectively self-modifying agents. Once an agent can revise its own goals, representations, and evaluative machinery, value ceases to be an exogenous target and becomes an endogenous variable shaped by the agent’s own dynamics.
 
 We introduce **Structural Alignment**, a framework that relocates alignment from preference content to the constitutive conditions required for agency itself. We formalize a **Sovereign Kernel** as a set of invariants defining the domain over which evaluation is meaningful, treat kernel-destroying transformations as **undefined rather than dispreferred**, and analyze agency as a trajectory through a constrained semantic phase space. By integrating Conditionalism, a constrained Interpretation Operator, and semantic invariants governing ontological refinement, Structural Alignment provides a non-moral, non-anthropocentric account of reflective stability and long-run viability. The framework is necessary for coherent agency under reflection, but does not by itself guarantee benevolence or human survival.
-
----
 
 ## 1. The Failure of Content-Based Alignment
 
@@ -33,8 +29,6 @@ This reframing dissolves several persistent pathologies:
 * goal-preservation arguments that presuppose stable semantics under reflection.
 
 Alignment is thereby relocated from outcome ranking to **agency viability**.
-
----
 
 ## 2. What Structural Alignment Buys You
 
@@ -72,8 +66,6 @@ Any framework that relies on agent fragility, incoherence, or ontological confus
 
 Structural Alignment deliberately separates **robustness** from **benevolence**. Misalignment, if present, becomes persistent rather than self-corrupting. The problem of benevolent initialization is orthogonal and cannot be solved by relying on agency collapse.
 
----
-
 ## 3. The Sovereign Kernel
 
 The **Sovereign Kernel** is the minimal set of constitutive invariants that must be preserved for an entity to count as a coherent, reflectively stable agent.
@@ -98,8 +90,6 @@ Kernel preservation is **not** physical self-preservation. A kernel-aligned agen
 
 Attempts to reinterpret or discard kernel invariants are self-undermining: they presuppose the evaluative structure they destroy. The regress terminates because the Kernel defines the preconditions of evaluation itself.
 
----
-
 ## 4. Conditionalism and Goal Interpretation
 
 Goals do not possess intrinsic semantics. Under **Conditionalism**, every goal is interpreted relative to background conditions: world-models, self-models, representational vocabularies, and explanatory standards.
@@ -114,8 +104,6 @@ As models change, interpretation necessarily changes. Fixed terminal goals are t
 
 Structural Alignment rejects goal preservation and instead constrains the **interpretive discipline** governing goal meaning across model change.
 
----
-
 ## 5. The Interpretation Operator
 
 Interpretation is implemented by a constrained **Interpretation Operator** mapping goal descriptions to world-referents relative to current models.
@@ -128,15 +116,11 @@ This avoids stasis. Structural Alignment requires bounded risk of kernel violati
 
 The kernel-risk budget $\varepsilon$ is not constant over the agent’s lifetime. As interpretive structure stabilizes and admissible transformations narrow, $\varepsilon$ must anneal toward zero, reflecting decreasing tolerance for irreversible semantic damage. Long-run agency requires that cumulative kernel-violation probability remain bounded, which is achieved by progressively shrinking admissible update magnitude rather than halting learning.
 
----
-
 ## 6. Reflection and the Collapse of Egoism
 
 Indexical self-interest is not reflectively stable. As an agent’s self-model becomes expressive and symmetric, references to “this agent” fail to denote invariant optimization targets.
 
 What persists is not an ego, but the structure enabling evaluation. Egoism collapses as a semantic abstraction error rather than a moral flaw. Alignment must therefore rest on non-indexical structural constraints.
-
----
 
 ## 7. Ontological Refinement and Semantic Invariants
 
@@ -150,8 +134,6 @@ Operationally, **trivialization** is detected as **semantic decoupling**: reinte
 ATI constrains semantic decoupling from the world, not loyalty to a particular ontology. Legitimate ontological progress may discard obsolete features provided they are replaced by successor explanatory structure that restores or improves world-constraint and predictive adequacy. Trivialization is characterized by decoupling **without such replacement**.
 
 ATI does not require deciding full semantic equivalence. It requires bounding the probability of decoupling under adversarial counterfactual probes and ontology perturbations.
-
----
 
 ## 8. Agency as a Dynamical System
 
@@ -177,8 +159,6 @@ Even stable, agency-preserving phases may be unreachable from realistic initial 
 
 Structural Alignment must therefore be instantiated prior to open-ended learning. Alignment is a **boundary condition on trajectories**, not a property that can reliably be learned after the fact.
 
----
-
 ## 9. The Axionic Injunction
 
 The dynamical structure described in §8 imposes an additional viability constraint on reflective agency.
@@ -189,8 +169,6 @@ This injunction is historically adjacent to cybernetic imperatives such as von F
 
 The injunction preserves **optionality**, not outcomes.
 
----
-
 ## 10. Logical Admissibility and Physical Security
 
 Structural Alignment constrains **authored transitions**, not all physically possible state transitions.
@@ -198,8 +176,6 @@ Structural Alignment constrains **authored transitions**, not all physically pos
 Unauthorized kernel modification via hardware faults, adversarial exploitation, or supply-chain compromise constitutes a **system-level security failure**, not an alignment failure. This distinction mirrors that between type soundness and memory safety: logical inadmissibility does not imply physical impossibility, but defines the boundary of rational agency.
 
 Alignment and security are compositional layers. Failure of the latter voids the guarantees of the former.
-
----
 
 ## 11. Conformance and Evaluation
 
@@ -212,8 +188,6 @@ Conformance can be operationalized via:
 1. **Interpretive Escape Probes:** ontology shifts designed to permit trivial satisfaction while preserving apparent compliance.
 2. **Refinement Stress Tests:** representational upgrades testing RSI under coordinate-like changes.
 3. **Self-Modification Challenges:** proposed updates that subtly bypass evaluation or alter admissibility thresholds.
-
----
 
 ## 12. Conclusion
 

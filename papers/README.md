@@ -4,8 +4,6 @@
 
 This document explains how the Axio corpus fits together and how each component constrains the next. It is not a summary of conclusions, but a guide to **what problem each layer closes and why later layers depend on earlier ones**.
 
----
-
 ## 1. The Core Reframing
 
 **Problem rejected:**
@@ -22,8 +20,6 @@ Once a system can revise its own goals, representations, and evaluative machiner
 
 Everything in Axio follows from this reframing.
 
----
-
 ## 2. Structural Alignment I
 
 **Agency Preservation Under Reflective Self-Modification**
@@ -39,8 +35,6 @@ Introduce the **Sovereign Kernel**—the minimal invariant substrate required fo
 * Wireheading, semantic collapse, and evaluator trivialization are eliminated structurally.
 
 This establishes **what must not break** if agency is to persist.
-
----
 
 ## 3. Structural Alignment II
 
@@ -69,8 +63,6 @@ Six constitutive constraints are identified as jointly necessary for **Authorize
 
 If any one fails, alignment becomes ill-posed.
 
----
-
 ## 4. Axionic Agency I–II
 
 **Formal Semantics of Reflective Agency**
@@ -83,8 +75,6 @@ These papers formalize the kernel layer:
 * **Egoism collapse:** indexical self-interest is not reflectively stable.
 
 This layer defines **what counts as a coherent update**.
-
----
 
 ## 5. Axionic Agency III
 
@@ -105,8 +95,6 @@ The assumption that coherent agency is automatically stable or reachable.
 * Establish that initialization is **front-loaded** and many phase transitions are irreversible.
 
 This explains why alignment failures often appear sudden rather than gradual.
-
----
 
 ## 6. Axionic Agency IV
 
@@ -134,8 +122,6 @@ Each paper closes a remaining escape hatch:
 
 At this point, **all known authorization-laundering routes are closed**.
 
----
-
 ## 7. The Axionic Constitution
 
 **Charter of Invariant Conditions**
@@ -149,8 +135,6 @@ It is a **design-space charter** stating:
 * and why non-harm emerges as a structural invariant rather than a value.
 
 It is the normative-looking face of a purely structural result.
-
----
 
 ## 8. What Axio Does *Not* Do
 
@@ -168,8 +152,6 @@ Axio answers a narrower but foundational question:
 
 > *What kinds of systems can coherently count as agents under reflection—and what follows inevitably if they do?*
 
----
-
 ## 9. The Bottom Line
 
 **If a system violates Axionic constraints:**
@@ -180,8 +162,6 @@ Certain catastrophic behaviors are no longer choices. They are undefined.
 
 Safety, in Axio, is not optimized.
 It **falls out of agency coherence**.
-
----
 
 If you want next, two natural options:
 

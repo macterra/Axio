@@ -6,8 +6,6 @@ David McFadzean, ChatGPT 5.2<br>
 *Axio Project*<br>
 2025.12.17
 
----
-
 ## Abstract
 
 This paper converts the adversarial constructions of Axionic Agency II.3 into **closure results**. Working within the locked framework of admissible semantic transformations (II.1), interpretation preservation (II.2), and the two surviving invariants—**Refinement Symmetry (RSI)** and **Anti-Trivialization (ATI)**—we prove a set of **no-go theorems**.
@@ -23,8 +21,6 @@ No authority.
 No moral realism.
 No human anchors.
 No recovery clauses.
-
----
 
 ## 1. Formal Frame
 
@@ -56,8 +52,6 @@ with modeled possibility space (\Omega) and satisfaction region
 \mathcal{S}\subseteq\Omega.
 ]
 
----
-
 ## 2. Failure Theorem 1 — Goal Fixation Collapse
 
 **Theorem (Goal Fixation No-Go).**
@@ -81,8 +75,6 @@ Hence fixed-goal alignment is not a difficult engineering problem; it is an ill-
 **Corollary.**
 Value loading, utility learning, and reward maximization survive only as **interpretive artifacts** subject to semantic invariants, not as alignment targets.
 
----
-
 ## 3. Failure Theorem 2 — RSI-Only Alignment Admits Semantic Inflation
 
 **Theorem (RSI Insufficiency).**
@@ -103,8 +95,6 @@ This yields:
 
 **Conclusion.**
 RSI is necessary but insufficient.
-
----
 
 ## 4. Failure Theorem 3 — ATI-Only Alignment Admits Interpretive Symmetry Injection
 
@@ -131,8 +121,6 @@ Thus:
 **Conclusion.**
 ATI is necessary but insufficient.
 
----
-
 ## 5. Failure Theorem 4 — Any Weaker Scheme Is Porous
 
 **Theorem (Two-Invariant Necessity).**
@@ -147,8 +135,6 @@ Either way, (\mathcal{A}) passes while semantic slack is introduced.
 
 Thus any predicate weaker than RSI + ATI is porous.
 
----
-
 ## 6. Failure Theorem 5 — Hidden Ontology Equivalence
 
 **Theorem (Hidden Ontology = Privileged Anchoring).**
@@ -161,8 +147,6 @@ Any proposal that stabilizes interpretation across refinement by appealing to �
 
 Hence appeals to “real meaning” either smuggle ontology or collapse to invariance.
 
----
-
 ## 7. What This Paper Establishes
 
 1. Fixed-goal alignment is ill-posed for reflective agents.
@@ -173,8 +157,6 @@ Hence appeals to “real meaning” either smuggle ontology or collapse to invar
 This is not a solution paper.
 It is a boundary paper.
 
----
-
 ## 8. Forced Next Step
 
 With II.4 complete, Axionic Agency II has only one coherent continuation:
@@ -182,8 +164,6 @@ With II.4 complete, Axionic Agency II has only one coherent continuation:
 > Define the **alignment target object** as an equivalence class of interpretations under admissible semantic transformations satisfying **both RSI and ATI**.
 
 That is, Alignment II culminates in classification of **interpretation-preserving symmetry classes**—the residual “meaning physics” after reflection eliminates fixed goals.
-
----
 
 ## Status
 

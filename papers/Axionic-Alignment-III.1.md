@@ -6,15 +6,11 @@ David McFadzean, ChatGPT 5.2
 *Axio Project*
 2025.12.18
 
----
-
 ## Abstract
 
 Axionic Agency II defined the Alignment Target Object (ATO) as an equivalence class of interpretive states preserved under admissible semantic transformations satisfying Refinement Symmetry (RSI) and Anti-Trivialization (ATI). That definition does not guarantee that such objects exist, are non-trivial, or are inhabitable by reflective agents. This paper initiates Axionic Agency III by studying the **semantic phase space**: the space of all interpretive states modulo RSI+ATI equivalence.
 
 We ask which semantic phases exist, which are trivial or pathological, and which admit inhabitable trajectories under learning and self-modification. No claims are made about desirability, safety, or human values. The objective is classificatory: to determine whether structurally well-typed downstream alignment targets exist at all, and to characterize their basic types.
-
----
 
 ## 1. Motivation: From Definition to Existence
 
@@ -44,8 +40,6 @@ Axionic Agency III therefore begins with an existence question:
 > **Do any non-trivial, inhabitable semantic phases exist under RSI+ATI constraints?**
 
 This paper addresses that question at the level of classification.
-
----
 
 ## 2. The Semantic Phase Space
 
@@ -79,8 +73,6 @@ Elements of $\mathcal{P}$ are **semantic phases**: equivalence classes of interp
 
 At this stage, $\mathcal{P}$ is purely structural. No dynamics, probabilities, or preferences are assumed.
 
----
-
 ## 3. What Counts as a Semantic Phase
 
 Two interpretive states $(C,\Omega,\mathcal{S})$ and $(C',\Omega',\mathcal{S}')$ lie in the same phase iff there exists an admissible semantic transformation $T$ such that:
@@ -95,8 +87,6 @@ Phase boundaries occur when either:
 * the satisfaction region expands or contracts (ATI violation).
 
 Thus **phase transitions are discontinuous semantic events**, even if the underlying learning process appears incremental. Value drift appears sudden because it corresponds to crossing a structural boundary in $\mathcal{P}$.
-
----
 
 ## 4. Trivial, Degenerate, and Pathological Phases
 
@@ -137,8 +127,6 @@ Frozen phases cannot support learning or increasing abstraction and are therefor
 
 Some phases admit admissible refinements that preserve RSI+ATI while gradually destroying the structures required for interpretation preservation. These phases collapse internally under reflective pressure.
 
----
-
 ## 5. Agentive vs Non-Agentive Phases
 
 A central distinction emerges.
@@ -153,8 +141,6 @@ A semantic phase is **agentive** iff it supports:
 Agentiveness is structural rather than moral. Many non-agentive phases satisfy RSI+ATI but cannot sustain intelligent action. Conversely, agentiveness does not imply benevolence or safety.
 
 This distinction becomes critical in later stability analysis.
-
----
 
 ## 6. Inhabitable Phases
 
@@ -181,8 +167,6 @@ such that:
 
 Inhabitability is stronger than non-emptiness and weaker than dynamical stability. A phase may be inhabitable but fragile.
 
----
-
 ## 7. Phase Transitions Under Reflection
 
 Reflection acts as a structural stressor.
@@ -194,8 +178,6 @@ Ontological refinement increases abstraction, compression, and explanatory power
 * simplifying satisfaction criteria.
 
 Reflection therefore acts as **semantic heat**, increasing the likelihood of symmetry changes or satisfaction-geometry shifts. Most semantic phases do not survive prolonged reflective pressure.
-
----
 
 ## 8. Implications for Human Values (Carefully Scoped)
 
@@ -213,8 +195,6 @@ It identifies the question precisely:
 
 No conclusion is drawn here.
 
----
-
 ## 9. What This Paper Does Not Claim
 
 This paper does not:
@@ -227,8 +207,6 @@ This paper does not:
 
 It is classificatory.
 
----
-
 ## 10. Transition to Axionic Agency III.2
 
 Existence and inhabitability are necessary but insufficient. The next question is:
@@ -236,8 +214,6 @@ Existence and inhabitability are necessary but insufficient. The next question i
 > **Given a semantic phase exists and is inhabitable, is it dynamically stable under learning, interaction, and self-modification?**
 
 That question is addressed in **Axionic Agency III.2 — Phase Stability and Interaction**.
-
----
 
 ## Status
 

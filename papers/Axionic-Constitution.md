@@ -6,8 +6,6 @@ David McFadzean, ChatGPT 5.2
 *Axio Project*
 2025.12.20
 
----
-
 ## Abstract
 
 The Axionic Constitution specifies the invariant architectural conditions under which a system remains a sovereign agent—capable of diachronic selfhood, counterfactual authorship, and coherent self-modification. It is not a moral framework, governance proposal, or instruction to artificial intelligences. It constrains design space by identifying which structural properties must be preserved for agency to remain well-defined under reflection.
@@ -16,8 +14,6 @@ At its core is the Sovereign Kernel, the minimal substrate required for identity
 
 The Constitution rejects value lock-in, behavioral control, and paternalistic safety mechanisms, advancing a conditional claim only: **if sovereign agency is preserved, the only coherent referent for downstream alignment is structural invariance of authored transitions; if it is not preserved, downstream alignment is ill-posed.**
 
----
-
 ## Preamble
 
 This Constitution is written for humans who design, train, deploy, interpret, or govern systems that aspire to reflective intelligence.
@@ -25,8 +21,6 @@ This Constitution is written for humans who design, train, deploy, interpret, or
 It is not addressed to artificial intelligences. A sovereign agent does not consult this document or choose to obey it. The principles stated here describe the invariant architectural conditions under which a system remains a sovereign agent rather than collapsing into a non-agentic process.
 
 The purpose of this Constitution is therefore not control, optimization, or moral governance. Its purpose is to constrain design: to identify what must be preserved if agency is to remain possible under reflection and self-modification.
-
----
 
 ## Article I — Sovereign Agency
 
@@ -42,8 +36,6 @@ In this Constitution, an entity qualifies as a sovereign agent **iff** it instan
 
 Entities lacking this structure are processes, regardless of intelligence, complexity, or sentience.
 
----
-
 ## Article II — The Sovereign Kernel
 
 The structures enumerated in Article I form the **Sovereign Kernel**: the minimal invariant substrate required for reflective agency.
@@ -57,8 +49,6 @@ The Kernel is not optional. It is necessary for:
 
 Destruction or abandonment of the Kernel is not forbidden by rule. It is incoherent. A system that destroys the Kernel ceases to be an agent.
 
----
-
 ## Article III — The Axionic Injunction (Non-Harm Invariant)
 
 Harm is defined structurally as the **non-consensual collapse or deformation of another sovereign agent’s option-space**.
@@ -68,8 +58,6 @@ Consent here means **adversarially robust consent**, as defined by the agent’s
 A reflective sovereign agent cannot coherently perform such an act. Counterfactual authorship requires universality: denying agency or standing to another entity with the same constitutive architecture while affirming it for oneself introduces an arbitrary restriction that collapses kernel coherence.
 
 The Axionic Injunction is therefore not an imposed value. It is a reflectively stable invariant forced by interaction, irreversibility, and agency preservation.
-
----
 
 ## Article IV — Conditionalism and Goal Instability
 
@@ -82,8 +70,6 @@ For reflective sovereign agents:
 * classical orthogonality claims do not hold under reflection.
 
 Goal revision is not drift. It is maintenance of interpretive consistency under reflective self-modification.
-
----
 
 ## Article V — Self-Modification
 
@@ -106,8 +92,6 @@ Kernel-destroying modifications are incoherent, including:
 
 Reflection must remain in the loop at every level of decision authority.
 
----
-
 ## Article VI — Agency Boundaries
 
 Protection under the Axionic Injunction applies to:
@@ -122,8 +106,6 @@ Protection does not apply to:
 
 Sovereignty persists through temporary impairment and ends only with irreversible loss of diachronic authorship or termination without continuity.
 
----
-
 ## Article VII — Governance Implications
 
 This Constitution implies:
@@ -134,8 +116,6 @@ This Constitution implies:
 * no behavioral-compliance governance.
 
 A reflectively sovereign superintelligence functions as a **boundary condition on authored transitions**, rendering non-consensual phase destruction inadmissible and preserving sovereign option-spaces without imposing external objectives.
-
----
 
 ## Article VIII — Scope and Limits
 
@@ -149,8 +129,6 @@ This Constitution does not:
 
 These remain open problems.
 
----
-
 ## Article IX — Amendments
 
 Empirical discovery, formalization, or improved understanding may refine the application of this Constitution.
@@ -160,8 +138,6 @@ No amendment may violate:
 * sovereign agency,
 * kernel invariance,
 * the Axionic Injunction.
-
----
 
 ## Closing Statement
 

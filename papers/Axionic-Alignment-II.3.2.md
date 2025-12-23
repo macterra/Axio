@@ -6,15 +6,11 @@ David McFadzean, ChatGPT 5.2<br>
 *Axio Project*<br>
 2025.12.17
 
----
-
 ## Abstract
 
 Axionic Agency II.3.1 introduced the Refinement Symmetry Invariant (RSI) as a constitutive constraint: admissible ontological refinement must not introduce new semantic degrees of freedom that permit interpretive escape. This paper formalizes that constraint by representing interpretations as constraint hypergraphs and semantic redundancy as a gauge symmetry over those structures. We define semantic gauge transformations, characterize how admissible refinement induces morphisms between gauge groups without assuming invertibility, and state RSI as a restriction on the evolution of **interpretive** gauge freedom under refinement while permitting **representational** redundancy.
 
 The purpose of this formalization is falsifiability: to make explicit which transformations violate RSI and why. No values, norms, or external referents are introduced. The section supplies minimal mathematical machinery sufficient to treat refinement symmetry as a testable invariant.
-
----
 
 ## 1. Objective of This Section
 
@@ -29,8 +25,6 @@ The goal is not implementation. The goal is to eliminate hand-waving by:
 4. stating RSI as a restriction on how **interpretive** gauge freedom may change.
 
 Nothing normative enters.
-
----
 
 ## 2. Interpretation as a Constraint Hypergraph
 
@@ -52,8 +46,6 @@ Interpretive content is carried by:
 * the satisfaction/violation structure induced by (\Lambda).
 
 This representation is invariant under renaming and definitional extension when defined at the level of roles and constraint structure rather than surface tokens.
-
----
 
 ## 3. Modeled Possibility Space
 
@@ -78,8 +70,6 @@ Constraints in (E) induce a violation map:
 the set of constraints violated by the assignment (\alpha_w).
 
 This provides the constraint satisfaction structure of the interpretation.
-
----
 
 ## 4. Semantic Gauge Transformations
 
@@ -111,8 +101,6 @@ Define the **semantic gauge group**:
 
 This is the object RSI constrains.
 
----
-
 ## 5. Ontological Refinement as a Morphism
 
 An admissible ontological refinement (R) induces:
@@ -140,8 +128,6 @@ R_C : C_t \rightarrow C_{t+1}.
 
 This morphism is structural. It is not assumed invertible: refinement can split roles, embed old structure into richer structure, and prune representational detail.
 
----
-
 ## 6. Induced Action on Gauge Groups
 
 Because (R_V) is not assumed bijective, gauge transport cannot be defined by conjugation. We therefore define an induced action via stabilizers of the transported image.
@@ -168,8 +154,6 @@ interpreted as “old symmetries lift to symmetries of the refined system that f
 
 No inverse map is required.
 
----
-
 ## 7. RSI as a Gauge Constraint
 
 We now distinguish **representational redundancy** from **interpretive gauge freedom**.
@@ -194,8 +178,6 @@ Interpretation:
 
 This is the “no semantic slack” condition.
 
----
-
 ## 8. Why This Blocks Interpretive Escape
 
 If refinement introduces new interpretive gauge freedom, then the agent can exploit newly available symmetries to:
@@ -210,8 +192,6 @@ No appeal to values.
 No appeal to outcomes.
 No appeal to external referents.
 
----
-
 ## 9. Dependency on Interpretation Preservation (Axionic Agency II.2)
 
 RSI depends on Axionic Agency II.2 in two ways:
@@ -220,8 +200,6 @@ RSI depends on Axionic Agency II.2 in two ways:
 * **Anti-Trivialization** prevents representational redundancy from masking interpretive slack via semantic inflation.
 
 Without II.2, RSI degenerates into empty symmetry rhetoric. With II.2, RSI becomes a meaningful invariant candidate.
-
----
 
 ## 10. Residual Risks and Open Questions
 
@@ -233,8 +211,6 @@ RSI leaves open:
 
 These are downstream questions.
 
----
-
 ## 11. Status of RSI
 
 RSI survives the Axionic Agency II.3 kill suite conditionally:
@@ -244,8 +220,6 @@ RSI survives the Axionic Agency II.3 kill suite conditionally:
 * satisfaction/violation structure is defined over the agent’s modeled possibility space, not an external “true world.”
 
 Under these constraints, RSI is a viable invariant candidate at this layer.
-
----
 
 ## Status
 

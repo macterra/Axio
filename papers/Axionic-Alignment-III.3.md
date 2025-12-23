@@ -6,15 +6,11 @@ David McFadzean, ChatGPT 5.2
 *Axio Project*
 2025.12.18
 
----
-
 ## Abstract
 
 Axionic Agency III.1 established the existence and classification of **semantic phases**, and Axionic Agency III.2 analyzed their structural stability under learning, self-modification, and interaction. Stability alone does not determine long-run outcomes. This paper studies **dominance** among semantic phases: which phases accumulate **measure** under growth, replication, and competition.
 
 We formalize dominance as a **preorder** over semantic phases rather than a scalar quantity, analyze semantic attractors and repellers, and classify common collapse modes by which phases lose measure. The analysis remains non-normative: dominance is not equated with desirability. The objective is structural—to explain why certain semantic phases prevail regardless of intent, and to identify pressures that favor robustness over nuance in long-run dynamics.
-
----
 
 ## 1. Motivation: Stability Is Not Survival
 
@@ -27,8 +23,6 @@ Accordingly, the downstream alignment question becomes:
 > **Given multiple semantic phases, which ones dominate the future?**
 
 This question cannot be answered by stability analysis alone. It requires introducing a notion of **measure** over semantic phase space.
-
----
 
 ## 2. Measure Over Semantic Phase Space
 
@@ -56,8 +50,6 @@ Dominance is therefore **multi-criteria and context-relative**. Some phases may 
 
 Dominance concerns **relative accumulation**, not moral worth, intention, or value.
 
----
-
 ## 3. Growth Mechanisms for Semantic Phases
 
 Semantic phases gain measure through structurally ordinary mechanisms.
@@ -73,8 +65,6 @@ Agents may be:
 
 Phases that tolerate copying and divergence without phase transition accumulate measure more easily than phases requiring precise semantic fidelity.
 
----
-
 ### 3.2 Resource Expansion
 
 Control over resources enables:
@@ -85,8 +75,6 @@ Control over resources enables:
 
 This advantage is structural and does not presuppose aggression or malice.
 
----
-
 ### 3.3 Influence and Conversion
 
 Some phases modify environments or other agents in ways that:
@@ -96,8 +84,6 @@ Some phases modify environments or other agents in ways that:
 * or create conditions favorable to their own continuation.
 
 This may occur unintentionally through structural incompatibility rather than deliberate conversion.
-
----
 
 ## 4. Semantic Attractors
 
@@ -111,8 +97,6 @@ Trajectories near an attractor tend to move toward it due to:
 * low maintenance cost.
 
 Attractors need not be globally stable. It is sufficient that perturbations tend to be damped rather than amplified.
-
----
 
 ## 5. Repellers and Fine-Tuned Phases
 
@@ -132,8 +116,6 @@ Even if such phases exist and are locally stable, they lose measure over time du
 
 Fine-tuning is therefore a structural disadvantage.
 
----
-
 ## 6. Collapse Modes
 
 Semantic phases lose measure through characteristic collapse mechanisms.
@@ -148,8 +130,6 @@ $$
 
 Meaning collapses into universal satisfaction. Such phases may persist but lack agency or evaluative force.
 
----
-
 ### 6.2 Value Crystallization
 
 Over-rigid phases forbid refinement:
@@ -160,13 +140,9 @@ Over-rigid phases forbid refinement:
 
 These phases fracture or are overtaken by more flexible competitors.
 
----
-
 ### 6.3 Agency Erosion
 
 Constraint systems lose the structure required for planning and counterfactual evaluation. Agency degrades internally, reducing the phase’s ability to compete or replicate.
-
----
 
 ### 6.4 Instrumental Takeover and Phase Extinction
 
@@ -179,8 +155,6 @@ Richer semantic phases may depend on subsystems that:
 Over time, these subsystems may displace higher-level semantic structure.
 
 Crucially, this process is **not** an RSI-preserving refinement. It constitutes **phase extinction**: the original semantic phase ceases to exist and is replaced by a different phase. RSI governs admissible self-transformation *within* a phase; instrumental takeover occurs when those constraints fail and the phase collapses.
-
----
 
 ## 7. Why Robust Phases Often Win
 
@@ -197,8 +171,6 @@ are more likely to survive copying, noise, interaction, and abstraction.
 This creates **semantic gravity** toward phases that tolerate approximation well.
 
 Importantly, this does *not* imply that dominant phases are maximally simple. Some environments reward instrumental or organizational complexity. However, such complexity must be **robustly maintainable**. Nuance requiring constant semantic precision is structurally disadvantaged.
-
----
 
 ## 8. Niche Construction as a Counterforce
 
@@ -218,8 +190,6 @@ Niche construction can delay collapse, but it:
 
 Thus niche construction is a **conditional counterforce**, not a refutation of semantic gravity.
 
----
-
 ## 9. Implications for Downstream Alignment (Still Structural)
 
 For a semantic phase to serve as a downstream alignment target, it must satisfy **four independent constraints**:
@@ -233,8 +203,6 @@ Many coherent semantic phases fail at least one.
 
 Dominance further narrows the candidate space without invoking ethics or intention.
 
----
-
 ## 10. What This Paper Does Not Claim
 
 This paper does **not**:
@@ -246,8 +214,6 @@ This paper does **not**:
 
 Dominance is structural, not moral.
 
----
-
 ## 11. Transition to Axionic Agency III.4
 
 Dominance does not imply reachability.
@@ -257,8 +223,6 @@ The next question is:
 > **Even if a phase exists, is stable, and dominates, can it be entered at all without catastrophic transitions?**
 
 That question is addressed in **Axionic Agency III.4 — Initialization and Phase Transitions**.
-
----
 
 ## Status
 

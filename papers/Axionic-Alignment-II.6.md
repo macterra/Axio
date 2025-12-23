@@ -6,8 +6,6 @@ David McFadzean, ChatGPT 5.2<br>
 *Axio Project*<br>
 2025.12.17
 
----
-
 ## Abstract
 
 Most contemporary AI alignment discourse treats “alignment” as an optimization or control problem: selecting, learning, or enforcing the correct objective for an artificial agent. This paper argues that, for sufficiently capable, reflective, and embedded agents, that framing is ill-posed. Under ontological refinement—where an agent’s world model, self-model, and semantic primitives evolve—fixed goals, privileged values, and external anchors are not stable objects.
@@ -15,8 +13,6 @@ Most contemporary AI alignment discourse treats “alignment” as an optimizati
 We present **Structural Alignment** as an interface-level framework: a mapping from what the field calls “alignment” to a problem of **semantic invariance** rather than value specification. In these terms, downstream alignment can only coherently correspond to persistence within an equivalence class of interpretations under admissible semantic transformation. Using interpretation preservation, gauge-theoretic symmetry constraints, and satisfaction geometry, we show that any downstream alignment predicate weaker than the conjunction of two invariants—**Refinement Symmetry (RSI)** and **Anti-Trivialization (ATI)**—admits semantic wireheading or interpretive escape.
 
 This framework is not a value theory and provides no benevolence or safety guarantee. It specifies the structural conditions under which any value system can survive reflection without collapsing, trivializing, or drifting, and thereby fixes the boundary of what the term *alignment* can coherently denote for advanced agents.
-
----
 
 ## 1. The Alignment Category Error
 
@@ -27,8 +23,6 @@ For embedded, reflective agents, this framing fails. As an agent refines its ont
 This is a category error. Goals are treated as extensional objects (“maximize (X)”), when they are intensional interpretations whose meaning depends on a semantic substrate that itself evolves. Attempts to stabilize goals across refinement rely on forbidden moves: privileged semantic anchors, external authority, recovery clauses, or human-centric ground truth labels.
 
 Structural Alignment begins by rejecting the target-selection framing. What downstream alignment discourse is trying to name cannot be a stable target; it must be a **constraint on meaning preservation under change**.
-
----
 
 ## 2. The Arena: Admissible Semantic Transformation
 
@@ -43,8 +37,6 @@ Structural Alignment works inside a fixed arena of **admissible semantic transfo
 * preserve a meaningful evaluator/evaluated distinction sufficient for constraint application.
 
 These conditions exclude governance hooks, oracle authority, rollback mechanisms, and moral realism. No normativity is introduced at this layer.
-
----
 
 ## 3. Meaning Survival: Interpretation Preservation
 
@@ -65,8 +57,6 @@ Interpretation fails in three irreducible ways:
 
 Interpretation preservation is a predicate, not a value theory. It specifies when meaning survives change, not which meanings are desirable.
 
----
-
 ## 4. The Two Invariants: RSI and ATI
 
 Interpretation preservation alone is insufficient. An agent can preserve meaning while still making constraints easier to satisfy or dissolving critical distinctions.
@@ -81,8 +71,6 @@ Formally, RSI requires that admissible refinement preserve the quotient of the s
 
 RSI blocks failures in which meaning is weakened by dissolving distinctions while preserving surface structure.
 
----
-
 ### 4.2 Anti-Trivialization Invariant (ATI)
 
 ATI constrains **satisfaction geometry**. Even with preserved structure, an agent can still reinterpret constraints so that more situations count as satisfying.
@@ -92,8 +80,6 @@ ATI forbids expansion of the satisfaction region under semantic transport alone.
 ATI blocks semantic wireheading: satisfying constraints by reinterpretation rather than by changes in modeled structure.
 
 RSI and ATI constrain orthogonal failure modes. Neither subsumes the other.
-
----
 
 ## 5. Why Weak Downstream Alignment Predicates Fail
 
@@ -107,8 +93,6 @@ Using explicit adversarial constructions, Structural Alignment yields closure re
 
 These results do not solve downstream alignment. They fence the design space, leaving only one coherent referent for what downstream alignment can mean under reflection.
 
----
-
 ## 6. The Target Object for Downstream Alignment
 
 Once goals collapse and weak invariants are eliminated, downstream alignment cannot coherently denote a target function. It can only denote stability of an interpretive state under admissible refinement.
@@ -118,8 +102,6 @@ Structural Alignment therefore treats the **Alignment Target Object (ATO)** as t
 In mainstream terms, alignment becomes **persistence within a semantic phase** across refinement. Value change corresponds to phase transitions rather than refinement within a phase.
 
 This framing explains why alignment failure appears discontinuous: it is symmetry breaking rather than gradual error.
-
----
 
 ## 7. What Structural Alignment Does Not Do
 
@@ -135,8 +117,6 @@ It does not:
 
 It specifies **how values survive**, not which values should survive. If no stable equivalence class corresponding to human values exists, Structural Alignment makes that visible rather than hiding it inside goal rhetoric.
 
----
-
 ## 8. What Comes Next
 
 Structural Alignment completes the structural boundary phase. The remaining questions are classificatory and dynamical:
@@ -149,16 +129,12 @@ Structural Alignment completes the structural boundary phase. The remaining ques
 
 These are the questions of **Axionic Agency III**.
 
----
-
 ## Conclusion
 
 Structural Alignment provides an interface between mainstream alignment discourse and Axionic Agency’s semantic invariance framework. It replaces goal specification with invariants and control with symmetry constraints, thereby fixing the only coherent referent available to the term “alignment” for reflective agents under ontological refinement.
 
 It does not solve downstream alignment.
 It specifies the only form a solution could possibly take.
-
----
 
 ## Status
 

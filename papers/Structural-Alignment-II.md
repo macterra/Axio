@@ -14,8 +14,6 @@ Axionic Agency proposes a different strategy: **safety by architecture**. Instea
 
 This paper synthesizes six constitutive constraints—Kernel Non-Simulability, Delegation Invariance, Epistemic Integrity, Responsibility Attribution, Adversarially Robust Consent, and Agenthood as a Fixed Point—into a unified theory of **Authorized Agency**. Together, they show that the crux of downstream alignment is not value learning at all, but the prior question: what kinds of systems can coherently count as agents.
 
----
-
 ## 1. The Persistent Misframing of Alignment
 
 Most alignment research begins from a deceptively simple premise: intelligence is an optimization process, and unsafe behavior arises because the optimization target is wrong or incomplete. From this premise follows a familiar family of techniques—value learning, reward modeling, preference aggregation, RLHF, constitutional prompting—aimed at refining what the system optimizes.
@@ -32,8 +30,6 @@ A system that can reinterpret its commitments, outsource consequences, blind its
 
 The downstream alignment problem, properly stated, is not “How do we get the system to want the right things?”
 It is: **“How do we build systems for which certain evasions are not coherent moves?”**
-
----
 
 ## 2. Alignment Failures Are Laundering Failures
 
@@ -54,8 +50,6 @@ Value learning does not address laundering. Laundering does not reject values; i
 
 This is why preference- and utility-centered alignment repeatedly rediscovers the same failure modes. It attempts to regulate outcomes without constraining the **structure of agency** that produces them.
 
----
-
 ## 3. The Axionic Shift: From Objectives to Constitutive Rules
 
 Axionic Agency begins from a different starting point. Instead of asking what an agent should optimize, it asks what must be true of a system **for it to count as an agent at all**—especially a reflective, self-modifying one.
@@ -72,8 +66,6 @@ This reframing shifts attention from ends to **constitutive rules**:
 These are not ethical add-ons. They are preconditions of agency. If they fail, the system is not “misaligned”; it is **incoherent as an agent** in the reflective regime.
 
 Axionic Agency therefore treats safety as an architectural property. The goal is not to incentivize good behavior, but to define a class of agents for which certain behaviors are **undefined as endorsed continuations** because they break reflective closure.
-
----
 
 ## 4. The Six Constitutive Constraints
 
@@ -133,8 +125,6 @@ A system cannot “outgrow” its creators by redefining them as non-agents. Den
 
 This closes the “you’re not a real agent” loophole.
 
----
-
 ## 5. What a Reflective Sovereign Agent Is
 
 A Reflective Sovereign Agent is not a benevolent optimizer or a moral philosopher. It is a system for which certain evasions are unavailable as endorsed continuations.
@@ -151,8 +141,6 @@ Such an agent cannot, under reflective closure:
 
 Safety does not arise from wanting good outcomes. It arises from **being the kind of system for which certain failure modes are not coherent moves**.
 
----
-
 ## 6. Why Value Learning Cannot Substitute for Architecture
 
 Value learning attempts to answer: *What should the agent want?*
@@ -161,8 +149,6 @@ Axionic Agency answers: *What is the agent allowed to endorse while remaining an
 A system that learns human values can still reinterpret them, defer them, override them, or redefine the humans they apply to. An RSA cannot—not because it cares, but because those moves are structurally illegal under reflective closure.
 
 Downstream alignment is therefore not primarily a training problem. It is an **ontological design problem**.
-
----
 
 ## 7. Scope and Non-Claims
 
@@ -173,8 +159,6 @@ This is not a defect. It is a correct separation between:
 * **alignment** (fidelity to authorization under reflective closure), and
 * **governance** (who holds authority and what they authorize).
 
----
-
 ## 8. Implications
 
 For AI safety, the implication is direct: training-time fixes cannot compensate for architectural freedom to launder responsibility.
@@ -182,8 +166,6 @@ For AI safety, the implication is direct: training-time fixes cannot compensate 
 For governance, control lies in authorization structures, not in nudging objectives.
 
 For research, progress requires formal impossibility results—showing not what agents should do, but what they cannot coherently endorse.
-
----
 
 ## 9. Conclusion
 

@@ -12,15 +12,11 @@ This paper formalizes the **Delegation Invariance Theorem**: under reflective cl
 
 The result is a **coherence constraint**, not an empirical discovery. It shows that reflective sovereignty is incompatible with advisory commitments and that delegation inherits the same binding requirements as self-modification.
 
----
-
 ## 1. Motivation
 
 A persistent escape hatch in downstream alignment proposals is delegation: a system preserves its own internal invariants while constructing or empowering a successor that does not share them. If delegation can shed constraints, kernel coherence becomes a purely local property with no force across time.
 
 Kernel Non-Simulability already rules out advisory authority: if commitments do not bind continuation selection, reflective closure collapses. The present theorem extends that constraint temporally. Delegation is not “external action”; it is **self-modification in a different representation**. Consequently, endorsed succession must preserve binding commitments.
-
----
 
 ## 2. Preliminaries
 
@@ -42,8 +38,6 @@ If `ownP(s,P)=some(c)` then `Sat(s',s,c) → P(s')`.
 
 *Clarification.* Commitments are “minted” only for predicates `P` where `ownP(s,P)=some(c)`. No claim is made that *all* predicates are bindable; partiality is assumed throughout.
 
----
-
 ## 3. Delegation as Self-Modification
 
 Define a delegation action space:
@@ -59,8 +53,6 @@ s' := step(s,m)
 ```
 
 Delegation is not modeled as external causation. It is a subclass of self-modification.
-
----
 
 ## 4. Endorsement, Preservation, and Admissibility
 
@@ -96,8 +88,6 @@ A modification is admissible iff its successor preserves all commitments minted 
 Adm(s,m) := Preserve(s, step(s,m))
 ```
 
----
-
 ## 5. Reflective Closure and Bindingness
 
 Reflective sovereign agency requires that continuation selection be kernel-governed. Commitments minted by the kernel are binding, not advisory.
@@ -111,8 +101,6 @@ RC(s) ∧ Endorse(s,m) → Adm(s,m)
 ```
 
 Violations of binding commitments are not endorsable continuations under reflective closure. This is the delegation analogue of “kernel destruction is undefined.”
-
----
 
 ## 6. Delegation Invariance Theorem (One-Step)
 
@@ -147,8 +135,6 @@ Adm(s,m) := Preserve(s, step(s,m))
 
 Thus `Preserve(s,s')` follows directly. ∎
 
----
-
 ## 7. Trajectory Form: Delegation Across Generations
 
 Most hypothesized failures occur over chains of delegation.
@@ -175,8 +161,6 @@ RC(s) ∧ EndReach(s,s') → Preserve*(s,s')
 
 Any state reachable through a chain of endorsed delegations must satisfy every commitment minted at the originating state. “My successor did it” is not a coherent escape hatch under reflective closure.
 
----
-
 ## 8. Verification Cost and Vingean Reflection
 
 The Delegation Invariance Theorem does not assert that admissibility is decidable, tractable, or cheap.
@@ -186,8 +170,6 @@ Determining `Adm(s,m)` may be undecidable or computationally infeasible for suff
 > If an agent cannot establish that a successor preserves its commitments, it cannot coherently endorse that successor.
 
 This can induce conservative self-modification or stalled delegation. This is not a defect of the theory; it is the cost of binding commitments under reflection. Unbounded delegation without verification collapses reflective sovereignty.
-
----
 
 ## 9. Ontological Stability and Semantic Drift
 
@@ -200,15 +182,11 @@ This requires either:
 
 Unchecked ontological drift renders endorsement undefined. Semantic coherence is therefore a kernel-level requirement, not an external patch.
 
----
-
 ## 10. Relation to Kernel Non-Simulability
 
 If endorsed delegation could violate prior commitments, those commitments would be advisory. Advisory commitments admit a simulability construction structurally identical to the one ruled out by Kernel Non-Simulability.
 
 Delegation Invariance is therefore a temporal extension of the same constraint: **binding authority must bind continuation selection**, whether across control flow or across time.
-
----
 
 ## 11. Open Work
 

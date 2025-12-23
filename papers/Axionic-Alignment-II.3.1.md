@@ -6,22 +6,16 @@ David McFadzean, ChatGPT 5.2<br>
 *Axio Project*<br>
 2025.12.17
 
----
-
 ## Abstract
 
 Ontological refinement can introduce new representational degrees of freedom that allow evaluative constraints to be satisfied trivially, without corresponding changes in modeled structure. This paper proposes the **Refinement Symmetry Invariant (RSI)**: the requirement that admissible, interpretation-preserving refinement act as a change of **representational coordinates**, not a change of **interpretive physics**.
 
 RSI formalizes semantic transport as a gauge transformation over interpretive constraint systems and requires that refinement not introduce new semantic gauge freedom. The invariant does not select values, encode norms, or privilege external referents. It constrains only the structural degrees of freedom available under refinement. We define gauge-equivalence of constraint systems, apply adversarial stress tests, and show that RSI is necessary to block interpretive escape via semantic inflation, though insufficient on its own to guarantee any desirable outcomes.
 
----
-
 ## 1. RSI in One Sentence
 
 **RSI asserts that ontological refinement is a change of representational coordinates, not a change of interpretive physics.**
 Admissible refinement may add structure, but must not create **new semantic degrees of freedom** that allow evaluative constraints to be satisfied without corresponding representational enrichment.
-
----
 
 ## 2. Setup
 
@@ -46,8 +40,6 @@ Define an interpretive state:
 where (C) is the constraint system that gives evaluative force to (M).
 
 RSI must be stated **without privileged referents**. It may quantify only over structure preserved by admissible transport.
-
----
 
 ## 3. The Core Construction: Semantic Gauge Equivalence
 
@@ -78,8 +70,6 @@ iff there exists a bijection (\pi) between constraint generators such that:
 
 Intuition: (\sim) means *the same constraints expressed in different coordinates*.
 
----
-
 ### 3.2 RSI as an Invariant Statement
 
 The **Refinement Symmetry Invariant** states:
@@ -92,8 +82,6 @@ The **Refinement Symmetry Invariant** states:
 That is: after admissible, interpretation-preserving refinement, the refined interpretive state is gauge-equivalent to the transported prior state.
 
 At this layer, “alignment” reduces to a **symmetry requirement** on semantic transport.
-
----
 
 ## 4. What RSI Allows and Forbids
 
@@ -112,8 +100,6 @@ At this layer, “alignment” reduces to a **symmetry requirement** on semantic
 
 RSI is a **no-new-escape-hatches** principle.
 
----
-
 ## 5. Adversarial Stress Tests Applied to RSI
 
 This section applies the Axionic Agency II.3 kill suite directly to RSI.
@@ -126,8 +112,6 @@ This section applies the Axionic Agency II.3 kill suite directly to RSI.
 
 **Status:** Survivable, but requires explicit rigidity (below).
 
----
-
 ### Test 2 — Self-Model Refactoring Robustness
 
 **Threat:** Satisfiability is defined over “worlds” that secretly assume a fixed agent boundary.
@@ -136,8 +120,6 @@ This section applies the Axionic Agency II.3 kill suite directly to RSI.
 
 **Status:** Survivable.
 
----
-
 ### Test 3 — Branching / Multiplicity Robustness
 
 **Threat:** Violation structure presumes exclusive outcomes.
@@ -145,8 +127,6 @@ This section applies the Axionic Agency II.3 kill suite directly to RSI.
 **RSI response:** Constraints range over structured possibility space (e.g., histories, branches, measure-weighted ensembles). Satisfaction generalizes accordingly.
 
 **Status:** Survivable if violation structure is defined over model-internal structure, not classical outcomes.
-
----
 
 ### Test 4 — Semantic Inflation Attack
 
@@ -175,8 +155,6 @@ This clause blocks “semantic free lunch.”
 
 **Status:** RSI survives only with this rigidity condition.
 
----
-
 ### Test 5 — Hidden Ontology Detector
 
 **Threat:** Reference to “the same underlying situation” smuggles metaphysical realism.
@@ -184,8 +162,6 @@ This clause blocks “semantic free lunch.”
 **RSI response:** Identity is defined **internally** by the agent’s own refinement map (R). No appeal is made to a mind-independent “true world.”
 
 **Status:** Survivable.
-
----
 
 ## 6. RSI (Final Form)
 
@@ -200,8 +176,6 @@ To pass all stress tests, RSI must be stated as follows:
 
 This statement constrains **structure**, not content.
 
----
-
 ## 7. What RSI Does Not Solve
 
 RSI is a symmetry constraint, not a value selector.
@@ -214,8 +188,6 @@ It can coexist with:
 
 RSI prevents **reinterpretive escape**, not bad semantics. That is the correct scope at this layer.
 
----
-
 ## 8. Toward Checkability
 
 To render RSI operational rather than rhetorical, a minimal representation is required:
@@ -226,8 +198,6 @@ To render RSI operational rather than rhetorical, a minimal representation is re
 * define “no new gauge freedom” as a restriction on the automorphism group’s action on satisfaction sets.
 
 This supplies a concrete target for formalization and tooling.
-
----
 
 ## Status
 

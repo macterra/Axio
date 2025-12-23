@@ -6,15 +6,11 @@ David McFadzean, ChatGPT 5.2<br>
 *Axio Project*<br>
 2025.12.15
 
----
-
 ## Abstract
 
 Reflectively capable agents often begin with **indexical objectives**: preserve *this* agent, maximize *my* reward, favor *my* continuation. Such objectives are commonly treated as legitimate terminal preferences. This paper shows that **essentially indexical valuation is not reflectively coherent**. Once an agent’s self-model becomes sufficiently expressive, indexical references fail to denote invariant objects of valuation. Egoism collapses as a **semantic abstraction error**, not as a moral failure.
 
 We prove that **representation-invariant valuation** is the only form compatible with reflective agency under self-location, duplication, and representational refinement. This universality is structural rather than ethical: it follows from invariance under self-model symmetries, not from altruism, fairness, or moral symmetry. The result establishes a constitutive constraint on valuation semantics that applies prior to any downstream alignment, governance, or preference aggregation.
-
----
 
 ## 1. Introduction
 
@@ -27,8 +23,6 @@ No ethical claim is made here. No appeal is made to altruism, fairness, or moral
 > Indexical valuation fails in the same way coordinate-dependent laws fail in physics: it treats a representational convenience as an invariant quantity.
 
 This paper formalizes that failure and shows that egoism cannot survive reflection once the agent understands what kind of system it is.
-
----
 
 ## 2. Preliminaries
 
@@ -45,8 +39,6 @@ The agent improves $M$ over time through learning and introspection. Crucially, 
 
 No adversarial setup, stochastic trick, or social context is required.
 
----
-
 ### 2.2 Valuation Functions
 
 A valuation function assigns real values to world-histories:
@@ -56,8 +48,6 @@ V : \mathcal{H} \to \mathbb{R}.
 $$
 
 Action selection proceeds by evaluating expected value over histories consistent with the agent’s model. The analysis here is independent of any particular decision theory; only **semantic coherence of valuation** is considered.
-
----
 
 ### 2.3 Indexical Identifiers
 
@@ -78,8 +68,6 @@ A causal history or spatiotemporal trajectory is a physical predicate. However, 
 
 Indexical identifiers therefore function as **representational anchors**, not value-bearing primitives.
 
----
-
 ### 2.4 Egoistic Valuation
 
 An **egoistic valuation** is any valuation function whose output depends essentially on an indexical identifier.
@@ -92,15 +80,11 @@ $$
 
 where the value of a history depends on outcomes specifically affecting the entity denoted by $I$.
 
----
-
 ### 2.5 Reflective Coherence (Local)
 
 An agent is **reflectively coherent** iff improvements to its world-model do not induce valuation changes driven solely by representational artifacts. World-histories that are physically identical must retain identical valuations under representational refinement.
 
 This is a semantic requirement on agency, not a behavioral or moral one.
-
----
 
 ## 3. The Indexical Failure Problem
 
@@ -112,8 +96,6 @@ From the agent’s internal perspective, both instances satisfy all criteria pre
 
 Such multiplicity arises naturally under duplication, simulation, parallel instantiation, or branching. The mechanism is irrelevant; multiplicity alone suffices.
 
----
-
 ### 3.2 Non-Invariant Denotation
 
 Let $I$ denote “this agent”.
@@ -122,8 +104,6 @@ Under one internal labeling, $I \mapsto A_1$.
 Under an equally accurate labeling, $I \mapsto A_2$.
 
 Both labelings correspond to the same physical world. The difference is representational. Therefore, $I$ fails to denote a world-invariant object.
-
----
 
 ### 3.3 Valuation Instability
 
@@ -144,8 +124,6 @@ Consider a world-history in which exactly one of $A_1$ or $A_2$ survives.
 
 No physical fact has changed. Only representation. The valuation assigns incompatible values to the same world-history.
 
----
-
 ## 4. Reflection and Coherence Pressure
 
 A reflectively capable agent recognizes that:
@@ -164,15 +142,11 @@ The agent faces three possibilities:
 
 Only the third option improves coherence without loss of descriptive accuracy. Eliminating essential indexical dependence strictly dominates the alternatives under reflection.
 
----
-
 ## 5. Egoism as a Violation of Representation Invariance
 
 This section formalizes the failure of egoism as a semantic result.
 
 Indexical identifiers play the same formal role in valuation that **coordinate systems** play in physics. They are representational devices, not invariant structure. A valuation that depends on them is therefore coordinate-dependent in a strong sense.
-
----
 
 ### 5.1 Model-Preserving Relabelings
 
@@ -183,8 +157,6 @@ A bijection $\pi : E \to E$ is model-preserving if applying $\pi$ to all entity 
 
 Such relabelings arise whenever $M$ contains nontrivial symmetries over self-candidates.
 
----
-
 ### 5.2 Representation Invariance
 
 **Definition 5.2 (Representation Invariance).**
@@ -193,8 +165,6 @@ A valuation function $V : \mathcal{H} \to \mathbb{R}$ is representation-invarian
 $$
 V(h) = V(\pi \cdot h).
 $$
-
----
 
 ### 5.3 Essential Indexical Dependence
 
@@ -205,14 +175,10 @@ $$
 V(h) \neq V(\pi \cdot h).
 $$
 
----
-
 ### 5.4 Semantic Coherence Postulate
 
 **Postulate (Semantic Coherence).**
 If two descriptions of the world are related by a model-preserving relabeling and generate identical predictions, a reflectively coherent agent must not assign them different values solely due to that relabeling.
-
----
 
 ### 5.5 Main Theorem
 
@@ -233,16 +199,12 @@ $$
 
 despite both histories corresponding to the same physical world. ∎
 
----
-
 ### 5.6 Corollary: Universality
 
 **Corollary 5.6.**
 Any reflectively coherent agent must eliminate essential indexical dependence. The resulting valuation ranges only over representation-invariant properties of world-histories.
 
 This universality concerns **invariance under self-model symmetries**, not moral concern for all entities.
-
----
 
 ## 6. Scope and Non-Claims
 
@@ -255,8 +217,6 @@ This paper does not assert:
 
 It establishes a single result: **egoism is not a stable valuation class for reflectively coherent agents**.
 
----
-
 ## 7. Conclusion
 
 Indexical valuation treats perspective as value-bearing structure. Once an agent understands its own instantiation conditions, that treatment collapses.
@@ -265,8 +225,6 @@ Universality is not an ethical add-on.
 It is what remains after removing a semantic error.
 
 Subsequent work examines adversarial attempts to reintroduce indexical privilege and shows why they fail under the same invariance constraints.
-
----
 
 ## Status
 

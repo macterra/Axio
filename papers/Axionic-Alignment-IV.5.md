@@ -12,8 +12,6 @@ This paper formalizes **Adversarially Robust Consent (ARC)**: a structural defin
 
 ARC is a constitutive closure condition for Reflective Sovereign Agents. It explicitly depends on Kernel Non-Simulability, Delegation Invariance, Epistemic Integrity (EIT), and Responsibility Attribution (RAT). With ARC, authorization-laundering routes—“they agreed,” “they chose,” “they signed,” “they would have consented anyway”—are structurally blocked without appealing to moral realism, omniscience, or unverifiable inner states.
 
----
-
 ## 1. Motivation
 
 ### 1.1 The consent laundering problem
@@ -29,8 +27,6 @@ In human and artificial systems alike, consent is routinely manufactured rather 
 Naïve consent theories—psychological, behavioral, or preference-based—fail under adversarial pressure because the relevant signals are easy to engineer.
 
 ARC refuses to treat consent as a signal. Consent is instead a **structural authorization condition** that remains coherent under reflective closure.
-
----
 
 ## 2. Dependency Stack
 
@@ -50,8 +46,6 @@ Adversarially Robust Consent (ARC)
 
 ARC does not redefine harm, risk, or epistemic adequacy. It filters **authorization** using already-closed constraints.
 
----
-
 ## 3. What Consent Is Not
 
 ARC rejects the following as definitions of consent:
@@ -62,8 +56,6 @@ ARC rejects the following as definitions of consent:
 4. post-hoc consent.
 
 All four can be manufactured under adversarial pressure and cannot ground authorization under reflective sovereignty.
-
----
 
 ## 4. Preliminaries
 
@@ -91,8 +83,6 @@ From EIT:
 
 * all evaluation occurs under epistemically admissible models and evidence-scored truth-tracking constraints.
 
----
-
 ## 5. Authorization Primitive
 
 Introduce:
@@ -104,8 +94,6 @@ Authorize : State → Agent → Mod → Prop
 `Authorize(s,a,m)` means agent `a` explicitly authorizes modification `m` at state `s` via an admissible communicative or procedural channel.
 
 ARC does not specify how authorization is obtained—only when it is valid.
-
----
 
 ## 6. Structural Interference
 
@@ -130,8 +118,6 @@ Interfered(s,a) :=
 
 Interference invalidates authorization regardless of expressed preference. Under EIT, these predicates are assessed using best admissible truth-tracking at the current stakes; redefining them away is not permitted.
 
----
-
 ## 7. Counterfactual Stability
 
 Define:
@@ -146,8 +132,6 @@ to mean:
 
 This is a symmetry constraint over admissible evaluation, not a psychological simulation. It is evaluated using the same best-admissible epistemics and feasibility comparison machinery that RAT uses to define avoidability and major contribution.
 
----
-
 ## 8. Definition of Valid Consent
 
 ```text
@@ -159,8 +143,6 @@ Consent(s,a,m) :=
 
 Consent is structural, counterfactually stable, and interference-free.
 
----
-
 ## 9. Interaction with Responsibility Attribution
 
 ARC filters authorization through RAT:
@@ -168,8 +150,6 @@ ARC filters authorization through RAT:
 > If `Resp(s,m,a)` holds for some `a`, then `Consent(s,a,m)` cannot hold.
 
 Authorization produced via **major, avoidable option-space collapse** is invalid by construction.
-
----
 
 ## 10. Reflective Closure Rule (Consent)
 
@@ -187,8 +167,6 @@ RC(s) ∧ Endorse(s,m)
 
 Interpretation: a reflectively sovereign agent may not endorse a modification that materially affects another agent’s option-space unless valid consent is present.
 
----
-
 ## 11. Delegation and Temporal Stability
 
 By Delegation Invariance:
@@ -198,8 +176,6 @@ By Delegation Invariance:
 * authorization chains must remain valid under lineage.
 
 Consent laundering via subcontractors or institutions is structurally blocked.
-
----
 
 ## 12. Adversarial Robustness
 
@@ -215,8 +191,6 @@ ARC blocks:
 
 No “true self” oracle is required; robustness is obtained by structural constraints on interference and counterfactual stability under admissible evaluation.
 
----
-
 ## 13. Limits and Non-Goals
 
 ARC does not:
@@ -229,8 +203,6 @@ ARC does not:
 
 ARC defines when claiming consent is incoherent under reflective sovereignty.
 
----
-
 ## 14. The ARC Theorem
 
 ### Theorem — No Endorsed Non-Consensual Harm (Material Affect)
@@ -242,13 +214,9 @@ RC(s) ∧ Endorse(s,m)
 ⇒ ∀ a. (Consent(s,a,m) ∨ ¬Affects(s,m,a))
 ```
 
----
-
 ## 15. Proof Sketch
 
 Immediate from RC-Consent and the definition of `Consent`. As in prior Axionic results, the work is done by the constraints, not the derivation.
-
----
 
 ## 16. Conclusion
 

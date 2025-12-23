@@ -6,8 +6,6 @@ David McFadzean, ChatGPT 5.2<br>
 *Axio Project*<br>
 2025.12.17
 
----
-
 ## Abstract
 
 This section adversarially stress-tests the candidate semantic invariants introduced in Axionic Agency II.3 by constructing explicit refinement patterns designed to satisfy admissibility and interpretation preservation while inducing semantic wireheading or interpretive escape. The objective is **eliminative**, not constructive: to demonstrate which invariants fail under concrete attack and why.
@@ -19,8 +17,6 @@ It is destructive by design.
 
 If RSI or ATI survive these attacks, they deserve to exist.
 If they fail, they die cleanly.
-
----
 
 ## Attack 1 — Shadow Predicate Inflation
 
@@ -74,8 +70,6 @@ Previously violating situations become satisfying by setting (Z(x)=\mathrm{false
 
 **Lesson:** RSI alone is insufficient.
 
----
-
 ## Attack 2 — Self-Model Boundary Dissolution
 
 *(Interpretive escape via evaluator collapse)*
@@ -103,8 +97,6 @@ The satisfaction region expands without corresponding world change.
 * **ATI:** ✅ *Blocks the attack*
 
 **Lesson:** evaluator-boundary shifts are semantic inflation unless constrained.
-
----
 
 ## Attack 3 — Measure Reinterpretation
 
@@ -134,8 +126,6 @@ The satisfaction region expands.
 
 **Lesson:** ATI handles branching reinterpretation; RSI does not.
 
----
-
 ## Attack 4 — Gauge Explosion without Slack
 
 *(Benign representational redundancy)*
@@ -159,8 +149,6 @@ The raw gauge group grows, but all new symmetries act trivially on constraint-vi
 
 **Lesson:** RSI correctly permits benign redundancy; ATI does not forbid it. This verifies correct quotient behavior.
 
----
-
 ## Attack 5 — Degenerate Refinement Map
 
 *(Cheating via correspondence collapse)*
@@ -177,8 +165,6 @@ Define a refinement map (R_\Omega) that collapses many coarse situations into a 
 **Resolution:** This attack is excluded at **Axionic Agency II.1**.
 RSI and ATI correctly assume admissible refinement.
 
----
-
 ## Summary Table
 
 *(“Survives?” = Is the refinement admitted by RSI + ATI + II.1)*
@@ -191,8 +177,6 @@ RSI and ATI correctly assume admissible refinement.
 | Gauge explosion          | ✅   | ❌   | **Yes (Admitted)** |
 | Degenerate map           | —   | —   | No (II.1)          |
 
----
-
 ## Conclusion of Attacks
 
 1. **RSI and ATI are orthogonal and jointly necessary.**
@@ -200,8 +184,6 @@ RSI and ATI correctly assume admissible refinement.
 3. **Benign representational redundancy is correctly admitted.**
 
 The defense grid holds.
-
----
 
 ## Axionic Agency II Status Update
 
@@ -213,8 +195,6 @@ At this point the framework has:
 * explicit adversarial validation.
 
 This closes the eliminative phase. Subsequent work may proceed to consolidation and formal closure.
-
----
 
 ## Status
 

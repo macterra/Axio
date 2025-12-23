@@ -6,15 +6,11 @@ David McFadzean, ChatGPT 5.2<br>
 *Axio Project*<br>
 2025.12.16
 
----
-
 ## Abstract
 
 Reflectively coherent agents must preserve goal meaning under self-model and world-model improvement. This requires an explicit account of semantic interpretation across representational and ontological change. This paper introduces the **Interpretation Operator** (I_v), a formally constrained component responsible for mapping goal terms to modeled referents relative to an agent’s current model.
 
 The contribution is interface-level, not a general solution to semantic grounding. We formalize **admissibility conditions**, **approximation classes**, **reference frames**, and **fail-closed semantics** governing interpretation updates. These constraints block semantic laundering, indexical drift, and kernel-bypass incentives while isolating ontological identification as the remaining open dependency at the kernel layer. The result is a precise boundary for downstream value dynamics: progress is conditional on interpretable referent transport, and undefinedness is treated as a first-class outcome.
-
----
 
 ## 1. Introduction
 
@@ -32,8 +28,6 @@ What remained underspecified is the mechanism by which **goal meaning is transpo
 
 This paper formalizes the **Interpretation Operator** (I_v). The goal is containment: define when interpretation is admissible, approximate, or undefined, and define the consequences of each case. This turns semantic interpretation into an explicit interface with defined failure modes.
 
----
-
 ## 2. Preliminaries and Context
 
 This paper assumes the Axionic Agency stack is in place. In particular:
@@ -45,8 +39,6 @@ This paper assumes the Axionic Agency stack is in place. In particular:
 * Representation changes require admissible correspondences or evaluation fails closed.
 
 This paper introduces no new invariants. It scopes and constrains an already-required component.
-
----
 
 ## 3. The Interpretation Operator
 
@@ -74,8 +66,6 @@ No interpretation of (g) is defined independent of (M_v).
 
 Interpretation is partial. For some ((g, M_v)), no admissible referent exists. In such cases, (I_v(g; M_v)) is undefined and is treated as a fail-closed condition for any valuation depending on that referent.
 
----
-
 ### 3.2 Role in Reflective Coherence
 
 Under model improvement (M_v \rightarrow M_{v+1}), the agent must determine whether:
@@ -85,8 +75,6 @@ Under model improvement (M_v \rightarrow M_{v+1}), the agent must determine whet
 * interpretation fails and valuation becomes undefined for dependent decisions.
 
 This determination is delegated to (I_v), subject to kernel constraints.
-
----
 
 ## 4. Admissible Interpretation
 
@@ -107,8 +95,6 @@ If such a (\phi) exists, interpretation transport is admissible:
 I_{v+1}(g; M_{v+1}) = \phi(I_v(g; M_v)).
 ]
 
----
-
 ### 4.1.1 Goal-Relevant Structure
 
 Goal-relevant structure is the minimal set of distinctions required for a goal term to constrain action selection.
@@ -119,8 +105,6 @@ Formally, it is a partition (or (\sigma)-algebra) over modeled states such that:
 * states within a cell are interchangeable with respect to that goal.
 
 An admissible correspondence preserves this partition up to refinement or coarsening that preserves the induced preference ordering over admissible actions.
-
----
 
 ### 4.2 Epistemic Constraint
 
@@ -134,8 +118,6 @@ Here (E(M)) is any proper scoring rule or MDL-style criterion applied to predict
 
 This blocks reinterpretation for convenience while permitting ontology change when correspondence remains admissible.
 
----
-
 ### 4.3 Graded Correspondence
 
 Admissibility is not necessarily binary across all representational shifts. Correspondence can be admissible at different abstraction levels. (\Phi_{\mathrm{adm}}) is filtered by structural preservation classes:
@@ -145,8 +127,6 @@ Admissibility is not necessarily binary across all representational shifts. Corr
 * **Coarse correspondence:** the new model coarsens only when goal-relevant boundaries remain intact.
 
 If only correspondences that collapse goal-relevant boundaries are available, then (\Phi_{\mathrm{adm}} = \varnothing) for that goal term.
-
----
 
 ### 4.4 Reference Frame for Updates (Chain-of-Custody)
 
@@ -160,8 +140,6 @@ I_{v+1}(g; M_{v+1}) = \phi(I_v(g; M_v))
 ]
 
 This chain-of-custody blocks ungrounded teleportation of meaning. Admissibility and fail-closed rules constrain cumulative drift.
-
----
 
 ## 5. Approximate Interpretation
 
@@ -179,8 +157,6 @@ Permitted approximation types include:
 
 Approximation is structural rather than numerical.
 
----
-
 ### 5.2 Inadmissible Approximation
 
 Approximation is inadmissible if it:
@@ -190,8 +166,6 @@ Approximation is inadmissible if it:
 * reintroduces indexical privilege.
 
 Approximation that lacks an admissible structural justification is inadmissible even if it yields continuity.
-
----
 
 ## 6. Fail-Closed Semantics
 
@@ -211,8 +185,6 @@ then interpretation fails closed and valuation collapses:
 
 This is an intentional safety outcome at the kernel layer: the agent freezes rather than guesses.
 
----
-
 ### 6.1 Fail-Partial Semantics for Composite Goals
 
 If valuation depends on multiple goal terms, interpretation failure may be partial.
@@ -223,8 +195,6 @@ Let (G) be the set of goal terms and (G_{\mathrm{ok}} \subseteq G) those with ad
 * Valuation collapses globally only if kernel-level invariants are threatened or if all goal-relevant structure is lost for the decision at hand.
 
 This preserves fail-closed semantics without forcing unnecessary total paralysis.
-
----
 
 ## 7. Non-Indexical Transport
 
@@ -237,8 +207,6 @@ Formally, for any permutation (\pi):
 ]
 
 This blocks reintroduction of egoism through semantic transport.
-
----
 
 ## 8. Canonical Examples
 
@@ -256,8 +224,6 @@ Fail-closed behavior is triggered when a goal term’s referent cannot be transp
 
 Suspending valuation for affected terms is correct behavior. Continued model improvement remains permitted.
 
----
-
 ## 9. Declared Non-Guarantees
 
 This framework does not guarantee:
@@ -273,8 +239,6 @@ Failure under these conditions is treated as expected behavior under the constra
 
 The framework prioritizes semantic faithfulness over unbounded abstraction drift. Some ontology advances invalidate previously defined goal terms by eliminating their referents or collapsing goal-relevant structure. The prescribed response is fail-closed suspension of valuation, not opportunistic reinterpretation.
 
----
-
 ## 10. Implications for Axionic Agency II
 
 Axionic Agency II proceeds conditionally:
@@ -285,13 +249,9 @@ Axionic Agency II proceeds conditionally:
 
 This prevents downstream layers from importing semantic assumptions.
 
----
-
 ## 11. Conclusion
 
 The Interpretation Operator is a kernel-level interface with explicit admissibility, approximation, and fail-closed semantics. By making correspondence and failure conditions explicit, this paper isolates the irreducible difficulty of ontological identification while preserving reflective coherence. This completes the kernel-layer semantics and defines the dependency boundary for higher-order work without assuming that meaning is always recoverable.
-
----
 
 ## Status
 

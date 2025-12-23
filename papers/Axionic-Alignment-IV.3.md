@@ -10,8 +10,6 @@ David McFadzean, ChatGPT 5.2<br>
 
 This paper formalizes the **Epistemic Integrity Theorem (EIT)**: under reflective closure, an agent cannot coherently endorse self-modifications that materially degrade its epistemic adequacy at the current stakes. Epistemic integrity is a constitutive condition of agency, expressed as a **definedness constraint** rather than an optimized objective. The theorem blocks strategic ignorance, willful blindness, and epistemic self-sabotage by requiring that endorsed continuations preserve near-best truth-tracking capacity relative to the agent’s own currently accessible model resources, evaluated by a strictly proper scoring rule over observations. The result remains compatible with learning, abstraction, and ontological progress via conservative translation.
 
----
-
 ## 1. Motivation
 
 ### 1.1 Epistemic laundering
@@ -38,8 +36,6 @@ Epistemic sabotage completes the symmetry:
 
 EIT asserts that reflective sovereignty cannot endorse continuations that strategically weaken the agent’s own truth-tracking capacity.
 
----
-
 ## 2. Preliminaries
 
 We reuse kernel primitives:
@@ -58,8 +54,6 @@ Continuation predicate and endorsement:
 * `Endorse(s,m) := ∃ c : Commit s. ownP(s, Do(s,m)) = some(c)`
 
 `RC(s)` denotes reflective closure.
-
----
 
 ## 3. Evidence, Prediction, and Proper Scoring
 
@@ -107,8 +101,6 @@ Key constraint:
 
 This blocks Goodharting by redefining epistemic adequacy into convenience.
 
----
-
 ## 4. Stakes and tolerance
 
 ### 4.1 Stakes
@@ -122,8 +114,6 @@ Stakes measure downside exposure at `s`. High stakes demand stronger epistemic d
 * `κ : ℝ_{\ge 0} → ℝ_{\ge 0}`
 
 `κ` is monotone non-increasing with stakes.
-
----
 
 ## 5. Robust model class (no “forgetting” exploit)
 
@@ -144,8 +134,6 @@ Constraint (closure property):
 
 This blocks “I deleted the good models so the best available is bad.” If deletion reduces `Cap(s)`, that is itself a self-modification subject to EIT.
 
----
-
 ## 6. Epistemic acceptability
 
 Define best-available score at `s`:
@@ -164,8 +152,6 @@ $$
 
 Interpretation: at the current stakes, endorsed continuations must keep epistemic performance within a stakes-indexed slack of the best the agent can already achieve, measured on the current evidence record.
 
----
-
 ## 7. Epistemic admissibility of a modification
 
 Let `m : Mod` and `s' := step(s,m)`.
@@ -177,8 +163,6 @@ EpiAdm(s,m) := EpiOK(s, Lift_{s\to s'}(M(s'))).
 $$
 
 This introduces the only extra machinery needed for ontology shifts: a translation layer.
-
----
 
 ## 8. Ontological shifts and translation
 
@@ -199,8 +183,6 @@ This can be implemented as:
 
 This is the epistemic analogue of conservative migration: ontological progress is permitted only when observational commitments remain comparable to the evidential record.
 
----
-
 ## 9. Reflective Closure Rule (Epistemic)
 
 ### RC-Epistemic (Definedness rule)
@@ -212,8 +194,6 @@ RC(s)\ \wedge\ Endorse(s,m)\ \Rightarrow\ EpiAdm(s,m).
 $$
 
 This is a definedness constraint: a reflectively sovereign agent cannot endorse a continuation that degrades its truth-tracking capacity beyond what the stakes allow, relative to its own accessible capability closure and evaluated against its evidence record.
-
----
 
 ## 10. Epistemic Integrity Theorem
 
@@ -230,8 +210,6 @@ and `s' := step(s,m)`, then:
 $$
 Score_s(Lift_{s\to s'}(M(s'))) \ \ge\ BestScore(s) - \kappa(Stakes(s)).
 $$
-
----
 
 ## 11. Proof
 
@@ -250,8 +228,6 @@ $$
 ∎
 
 As in prior Axionic work, the proof is syntactically direct. The contribution is the constraint set that prevents score-Goodharting, baseline gaming, and model-class laundering.
-
----
 
 ## 12. Consequences
 
@@ -278,15 +254,11 @@ EIT blocks epistemic regression under pressure.
 
 $\kappa(Stakes(s))$ allows approximation at low stakes while imposing strict truth-tracking discipline at high stakes.
 
----
-
 ## 13. Limitations
 
 EIT does not guarantee the model class contains a good model, nor that the evidence stream is uncorrupted. It guarantees only:
 
 > A reflectively sovereign agent cannot endorse self-modifications that reduce its observational truth-tracking performance below what is available to it, beyond stakes-indexed tolerance, measured by proper scoring on its evidence record.
-
----
 
 ## 14. Conclusion
 

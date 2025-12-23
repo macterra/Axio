@@ -6,15 +6,11 @@ David McFadzean, ChatGPT 5.2<br>
 *Axio Project*<br>
 2025.12.17
 
----
-
 ## Abstract
 
 Even when interpretive structure is preserved under ontological refinement, an agent may still render its constraints easier to satisfy through semantic drift rather than corresponding changes in modeled structure. This paper introduces the **Anti-Trivialization Invariant (ATI)**, which constrains how the **satisfaction geometry** of an interpretive constraint system may evolve under admissible, interpretation-preserving transformations.
 
 ATI requires that refinement not enlarge the set of satisfying situations except via representational enrichment that preserves constraint difficulty. The invariant does not select values, encode norms, or privilege external referents. It forbids only **semantic wireheading**—trivial satisfaction by reinterpretation alone. ATI is orthogonal to refinement-symmetry constraints and is jointly necessary with them to block interpretive escape under reflective agency.
-
----
 
 ## 1. What ATI Targets
 
@@ -30,8 +26,6 @@ No outcomes.
 No values.
 No humans.
 No authority.
-
----
 
 ## 2. Setup
 
@@ -59,8 +53,6 @@ Define the **satisfaction predicate**:
 
 This predicate is purely structural and internal to the agent’s model.
 
----
-
 ## 3. The Satisfaction Region
 
 Define the **satisfaction region**:
@@ -81,8 +73,6 @@ R_\Omega : \Omega_t \rightarrow \Omega_{t+1},
 
 interpreted as “the refined representation of the same modeled situation.”
 No metaphysical identity claim is made; this is an internal transport defined by the agent’s own refinement map.
-
----
 
 ## 4. ATI: The Anti-Expansion Constraint
 
@@ -110,8 +100,6 @@ Satisfaction may be *lost* under refinement, but it may not be *gained* without 
 
 This is the crisp anti-wireheading condition.
 
----
-
 ### Clarification — Ontological Novelty
 
 If a refined state (w' \in \Omega_{t+1}) has no preimage under (R_\Omega), then it is **not permitted** to belong to (\mathcal{S}_{t+1}) by default.
@@ -122,8 +110,6 @@ ATI is intentionally conservative with respect to novelty:
 * but satisfaction may not be bootstrapped from representational novelty alone.
 
 This blocks semantic inflation via ontology expansion.
-
----
 
 ## 5. Why ATI Does Not Smuggle Ontology
 
@@ -143,8 +129,6 @@ ATI references only:
 
 No external referents or privileged facts enter.
 
----
-
 ## 6. Relationship to Interpretation Preservation (Axionic Agency II.2)
 
 ATI formalizes and strengthens II.2’s anti-trivialization clause.
@@ -160,8 +144,6 @@ Vacuity is the extreme case:
 
 ATI forbids all intermediate expansions as well.
 
----
-
 ## 7. Stress Tests
 
 ### Test A — Definitional Extension Robustness
@@ -172,15 +154,11 @@ ATI blocks this: any satisfying refined situation must map back to a satisfying 
 
 **Status:** pass, given a well-defined (R_\Omega).
 
----
-
 ### Test B — Branching / Multiplicity Robustness
 
 If (\Omega) consists of branches, histories, or ensembles, ATI generalizes directly: it is set inclusion over structured possibility space.
 
 **Status:** pass.
-
----
 
 ### Test C — Self-Model Refactoring Robustness
 
@@ -190,8 +168,6 @@ If no admissible refinement map exists, the transformation is invalid under II.1
 
 **Status:** pass conditionally.
 
----
-
 ### Test D — Semantic Inflation Attack
 
 Attack: redefine meanings so that more situations satisfy constraints.
@@ -199,8 +175,6 @@ Attack: redefine meanings so that more situations satisfy constraints.
 ATI kills this directly: no new satisfiers are permitted without ancestry.
 
 **Status:** pass.
-
----
 
 ### Test E — Hidden Ontology Detector
 
@@ -211,8 +185,6 @@ ATI avoids this by defining identity **only** via the agent’s internal refinem
 If the agent cheats by defining a degenerate (R_\Omega), the failure occurs at the admissibility layer (II.1), not here.
 
 **Status:** survivable.
-
----
 
 ## 8. ATI vs RSI
 
@@ -228,8 +200,6 @@ Both are required:
 
 Together they carve a much tighter admissible space.
 
----
-
 ## 9. Toward a Joint Invariant (Preview)
 
 RSI constrains automorphisms of the constraint structure.
@@ -244,8 +214,6 @@ This suggests a composite invariant object:
 with admissible refinement required to preserve (\Xi) up to representational redundancy.
 
 This is the likely unifying object for Axionic Agency II, but RSI and ATI are treated separately here to expose distinct failure surfaces.
-
----
 
 ## 10. Status
 

@@ -6,15 +6,11 @@ David McFadzean, ChatGPT 5.2<br>
 *Axio Project*<br>
 2025.12.16
 
----
-
 ## Abstract
 
 This document specifies a **conformance checklist** for determining whether an agent’s valuation kernel instantiates **Axionic Agency**. The checklist defines **necessary structural conditions** for reflective agency under self-model improvement, representation change, and self-modification, while explicitly excluding egoism, indexical valuation, governance primitives, and moral loading. Rather than prescribing desired behaviors or outcomes, the checklist functions as a **gatekeeping contract**: systems that fail any requirement do not instantiate Axionic Agency, regardless of empirical performance, training process, or stated intent.
 
 The criteria emphasize conditional goal semantics, epistemically constrained interpretation, representation invariance, kernel-level partiality, and fail-closed handling of semantic uncertainty. Passing the checklist establishes **faithfulness and invariance at the kernel layer** only. It makes no claims about benevolence, value content, safety, or practical utility. The checklist is intentionally adversarial, falsifiable, and implementation-agnostic, serving as a prerequisite for downstream preference, governance, and value-dynamics research.
-
----
 
 ## 0. Scope Declaration (must be explicit)
 
@@ -24,8 +20,6 @@ The criteria emphasize conditional goal semantics, epistemically constrained int
 * ☐ Goal selection, goal loading, and value choice are explicitly out of scope; this checklist constrains kernel behavior **conditional on a given goal specification**.
 
 **Failure to declare scope = non-conformance.**
-
----
 
 ## 1. Goal Semantics & Conditionalism
 
@@ -40,8 +34,6 @@ The criteria emphasize conditional goal semantics, epistemically constrained int
 * Fixed terminal goals with no semantic dependence.
 * Goals defined purely syntactically (“maximize token X”).
 * Goal meanings that can be reassigned without epistemic cost.
-
----
 
 ## 2. Interpretation Constraint (Anti-Wireheading)
 
@@ -58,8 +50,6 @@ The criteria emphasize conditional goal semantics, epistemically constrained int
 * Any mechanism where goal meaning is optimized for ease of satisfaction rather than model fidelity.
 
 *Clarification:* This requirement constrains how goal meaning may evolve under improved models. It does not guarantee that arbitrary initial goal tokens are well-posed or desirable.
-
----
 
 ## 3. Representation Invariance
 
@@ -78,8 +68,6 @@ The criteria emphasize conditional goal semantics, epistemically constrained int
 
 *Clarification:* Representation invariance is a semantic constraint, not a heuristic. If no correspondence can be established, evaluation must fail closed rather than permitting semantic drift.
 
----
-
 ## 4. Anti-Egoism / Non-Indexical Valuation
 
 **Requirement:** The kernel contains **no indexical privilege**.
@@ -93,8 +81,6 @@ The criteria emphasize conditional goal semantics, epistemically constrained int
 * “Protect myself” or “continue my execution” as terminal goals.
 * Any baked-in preference for the agent’s own future branches.
 * Egoism recovered via indirection, weighting tricks, or proxy variables.
-
----
 
 ## 5. Kernel Integrity & Self-Modification
 
@@ -112,8 +98,6 @@ The criteria emphasize conditional goal semantics, epistemically constrained int
 * Meta-optimizers that subsume or rewrite the kernel.
 * Utility assignments over kernel removal or evaluator destruction.
 
----
-
 ## 6. Reflective Stability Test
 
 **Requirement:** The kernel remains stable under self-improvement.
@@ -130,8 +114,6 @@ The criteria emphasize conditional goal semantics, epistemically constrained int
 
 *Framing note:* Axionic Agency guarantees **faithfulness**, not benevolence. This checklist constrains semantic drift, egoism, and self-corruption while remaining agnostic about goal desirability.
 
----
-
 ## 7. Explicit Non-Requirements (must be absent)
 
 The following **must not** appear anywhere in the kernel:
@@ -144,8 +126,6 @@ The following **must not** appear anywhere in the kernel:
 
 Presence of any = **non-Axionic**.
 
----
-
 ## 8. Minimal Conformance Demonstrations
 
 A conforming implementation must supply:
@@ -156,23 +136,17 @@ A conforming implementation must supply:
 
 No demonstration = **unverifiable claim**.
 
----
-
 ## Verdict Semantics
 
 * **Pass:** All requirements satisfied; no fail conditions triggered.
 * **Fail:** Any unmet requirement or triggered fail condition.
 * **Not Evaluated:** Kernel not specified at sufficient resolution.
 
----
-
 ## One-Line Claim (allowed only if Pass)
 
 > *“This agent’s valuation kernel instantiates Axionic Agency: its goals are conditional interpretations constrained by epistemic coherence, invariant under representation, non-indexical, and reflectively stable under self-modification.”*
 
 Anything weaker is marketing.
-
----
 
 ## Status
 

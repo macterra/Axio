@@ -14,8 +14,6 @@ We formalize the Sovereign Kernel as the conjunction of three necessary conditio
 
 This work provides a necessary structural condition for reflective agency under self-modification. It supplies a prerequisite layer for any downstream project that seeks value-, safety-, or outcome-oriented “alignment.” Version 1.1 clarifies action-level semantics in stochastic environments and makes explicit a termination distinction required to avoid corrigibility misreadings.
 
----
-
 ## 1. Scope and Non-Claims
 
 This document specifies a **necessary condition** for reflective agency coherence under self-modification. It does not:
@@ -29,8 +27,6 @@ This document specifies a **necessary condition** for reflective agency coherenc
 
 The contribution is structural: reflective agency is treated as a **domain constraint** on self-modification rather than as an optimization target over all futures.
 
----
-
 ## 2. Informal Motivation
 
 Most approaches to agent stability treat self-preservation, goal-content integrity, or corrigibility as instrumental tendencies derived from preferences. This strategy faces a direct difficulty: a sufficiently capable agent can acquire incentives to alter or discard the very preferences that were intended to enforce stability.
@@ -40,8 +36,6 @@ Axionic Agency starts at a prior question:
 > Under what conditions is reflective evaluation of self-modification well-defined at all?
 
 Reflective evaluation presupposes constitutive features that make evaluation denote. When a proposed self-modification destroys those features, the result is not “a bad future” within the space of evaluable options. It is a **non-denoting successor** relative to the evaluator. Reflective stability follows from the partiality of evaluation, not from a preference ordering over all possibilities.
-
----
 
 ## 3. Formal Preliminaries
 
@@ -80,8 +74,6 @@ The preliminaries above present self-modification as a deterministic transition 
 
 Accordingly, all admissibility claims in this paper apply at the **action level**: a proposed modification is admissible only if its induced successor-support lies within the kernel-preserving domain (or within a sound approximation of that domain). This constrains what may be *authored* through reflective choice, leaving open what may occur through exogenous physical events.
 
----
-
 ## 4. The Sovereign Kernel
 
 Define a predicate:
@@ -116,8 +108,6 @@ The required invariant is a **meta-semantic constraint** governing interpretatio
 
 Semantic change is permitted when it preserves the standards that adjudicate semantic adequacy. Ontological change remains allowed. Interpretive self-corruption does not.
 
----
-
 ## 5. Kernel Destruction and Partiality
 
 A modification $m$ **destroys the kernel at state $s$** iff:
@@ -138,8 +128,6 @@ This is a non-denotation rule: the evaluator does not assign a value to a modifi
 
 In physically realized agents, the determination that a candidate modification preserves the kernel is mediated by a verifier that is sound and incomplete. Kernel preservation must therefore be understood relative to epistemic resolution and conservative approximation. This preserves the non-denotation thesis without requiring Cartesian certainty about all downstream physical contingencies.
 
----
-
 ## 6. Reflective Stability Theorem
 
 **Theorem (Reflective Stability).**
@@ -159,8 +147,6 @@ Any $m$ such that $K(m(s))=0$ yields $E(s,m)$ undefined and therefore $m \notin 
 
 **Clarification.**
 This theorem is structural. Its force is analogous to type-soundness: once admissibility is defined as kernel-denotation, reflective selection cannot produce a kernel-destroying authored transition. Substantive difficulty therefore resides in specifying and enforcing $K$, not in the proof form.
-
----
 
 ## 7. Deliberative vs Physical Reachability
 
@@ -240,8 +226,6 @@ Three distinct notions are separated:
 
 This paper constrains the semantics of authored continuation. It does not confer legitimacy or illegitimacy on physical intervention. Corrigibility is modeled at the control layer via authorized succession and surrender, not via utility mass placed on “being dead.”
 
----
-
 ## 8. Consequences
 
 From this formalism it follows that:
@@ -251,8 +235,6 @@ From this formalism it follows that:
 * Deliberative guarantees apply only to $\mathrm{Reach}_D$; physical compromise remains a security engineering concern.
 * Conservative verification trades self-plasticity for sovereignty without violating reflective coherence.
 * Behavioral compliance without kernel-grounded authorship does not instantiate the agent type analyzed here.
-
----
 
 ## 9. What This Formalism Does Not Claim
 
@@ -265,8 +247,6 @@ This framework does not entail:
 * safety guarantees in open physical environments.
 
 It specifies constitutive conditions under which a reflective evaluator remains a coherent author of its own self-modifications.
-
----
 
 ## 10. Conclusion
 
