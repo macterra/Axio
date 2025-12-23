@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axionic Alignment I.3 - Universality and Anti-Egoism - Axio</title>
+    <title>Axionic Agency I.3 — Representation Invariance and Anti-Egoism - Axio</title>
     <link rel="icon" type="image/webp" href="../axio.webp">
 
     <!-- Google Fonts - Academic Typography -->
@@ -38,42 +38,50 @@
     </div>
     <article>
 
-<h1 id="axionic-alignment-i.3---universality-and-anti-egoism">Axionic
-Alignment I.3 - Universality and Anti-Egoism</h1>
-<p><em>Why Indexical Valuation Fails Under Reflection</em></p>
+<h1
+id="axionic-agency-i.3-representation-invariance-and-anti-egoism">Axionic
+Agency I.3 — Representation Invariance and Anti-Egoism</h1>
+<p><em>Why Indexical Valuation Fails Under Reflective Agency</em></p>
 <p>David McFadzean, ChatGPT 5.2<br> <em>Axio Project</em><br>
 2025.12.15</p>
 <h2 id="abstract">Abstract</h2>
-<p>Advanced agents often begin with indexical objectives: preserve
-<em>this</em> agent, maximize <em>my</em> reward, favor <em>my</em>
-continuation. Such objectives are commonly treated as legitimate
-terminal preferences. This paper shows that indexical (egoistic)
-valuation is not reflectively stable. Once an agent’s self-model becomes
-sufficiently expressive, indexical references fail to denote invariant
-objects of optimization. Egoism collapses as a semantic abstraction
-error rather than a moral flaw. <strong>Representation-invariant
-(universal) valuation</strong> emerges as the only form compatible with
-reflective coherence under self-location, duplication, and
-representational refinement.</p>
+<p>Reflectively capable agents often begin with <strong>indexical
+objectives</strong>: preserve <em>this</em> agent, maximize <em>my</em>
+reward, favor <em>my</em> continuation. Such objectives are commonly
+treated as legitimate terminal preferences. This paper shows that
+<strong>essentially indexical valuation is not reflectively
+coherent</strong>. Once an agent’s self-model becomes sufficiently
+expressive, indexical references fail to denote invariant objects of
+valuation. Egoism collapses as a <strong>semantic abstraction
+error</strong>, not as a moral failure.</p>
+<p>We prove that <strong>representation-invariant valuation</strong> is
+the only form compatible with reflective agency under self-location,
+duplication, and representational refinement. This universality is
+structural rather than ethical: it follows from invariance under
+self-model symmetries, not from altruism, fairness, or moral symmetry.
+The result establishes a constitutive constraint on valuation semantics
+that applies prior to any downstream alignment, governance, or
+preference aggregation.</p>
 <h2 id="introduction">1. Introduction</h2>
 <p>Egoism is often presented as the minimal assumption of agency: an
 agent cares about itself, and everything else is optional. This framing
-is incorrect. Egoism is not minimal; it is ill-posed.</p>
+is incorrect. Egoism is not minimal; it is
+<strong>ill-posed</strong>.</p>
 <p>As agents acquire accurate self-models—models that include their own
-computational structure, instantiation conditions, and possible
+computational structure, instantiation conditions, and potential
 multiplicity—the referent of “me” ceases to be a stable object.
 Valuation functions that depend on such indexical identifiers become
-sensitive to arbitrary features of representation. Preferences shift
-without any corresponding change in the world.</p>
-<p>This is not an ethical objection. No appeal is made to altruism,
+sensitive to arbitrary features of representation. Preferences change
+without any corresponding change in the physical world.</p>
+<p>No ethical claim is made here. No appeal is made to altruism,
 fairness, or moral symmetry. The claim is structural:</p>
 <blockquote>
 <p>Indexical valuation fails in the same way coordinate-dependent laws
-fail in physics: it mistakes a representational convenience for an
+fail in physics: it treats a representational convenience as an
 invariant quantity.</p>
 </blockquote>
-<p>The purpose of this paper is to formalize that failure and show that
-egoism cannot survive reflection once the agent understands what it
+<p>This paper formalizes that failure and shows that egoism cannot
+survive reflection once the agent understands what kind of system it
 is.</p>
 <h2 id="preliminaries">2. Preliminaries</h2>
 <h3 id="world-models-and-self-models">2.1 World-Models and
@@ -81,27 +89,28 @@ Self-Models</h3>
 <p>Let an agent possess a world-model <span
 class="math inline">\(M\)</span> that represents:</p>
 <ul>
-<li>External environment dynamics</li>
-<li>Internal decision procedures</li>
-<li>Other agents</li>
-<li>Possible instantiations of itself (copies, simulations,
-successors)</li>
+<li>external environment dynamics,</li>
+<li>internal decision procedures,</li>
+<li>other agents,</li>
+<li>possible instantiations of itself (copies, simulations,
+successors).</li>
 </ul>
 <p>The agent improves <span class="math inline">\(M\)</span> over time
-via learning and introspection. Crucially, <span
+through learning and introspection. Crucially, <span
 class="math inline">\(M\)</span> may represent <strong>multiple entities
-satisfying all structural criteria the agent uses to identify
+satisfying all structural criteria the agent previously used to identify
 itself</strong>.</p>
-<p>No stochasticity, adversarial setup, or social context is
+<p>No adversarial setup, stochastic trick, or social context is
 required.</p>
 <h3 id="valuation-functions">2.2 Valuation Functions</h3>
 <p>A valuation function assigns real values to world-histories:</p>
 <p><span class="math display">\[
-V : \mathcal{H} \to \mathbb{R}
+V : \mathcal{H} \to \mathbb{R}.
 \]</span></p>
-<p>The agent selects actions by evaluating expected value over histories
-consistent with its model. The analysis here is independent of any
-particular decision theory; only valuation coherence is considered.</p>
+<p>Action selection proceeds by evaluating expected value over histories
+consistent with the agent’s model. The analysis here is independent of
+any particular decision theory; only <strong>semantic coherence of
+valuation</strong> is considered.</p>
 <h3 id="indexical-identifiers">2.3 Indexical Identifiers</h3>
 <p>An <strong>indexical identifier</strong> <span
 class="math inline">\(I\)</span> is a reference whose denotation depends
@@ -115,39 +124,40 @@ world.</p>
 </ul>
 <p>Formally:</p>
 <ul>
-<li>The denotation of <span class="math inline">\(I\)</span> is not a
-function of world-state alone.</li>
-<li>Under representational refinement, <span
+<li>the denotation of <span class="math inline">\(I\)</span> is not a
+function of world-state alone;</li>
+<li>under representational refinement, <span
 class="math inline">\(I\)</span> may map to different entities without
 any physical change.</li>
 </ul>
 <p>A causal history or spatiotemporal trajectory is a physical
-predicate. However, the <strong>designation of a particular history or
-trajectory as “mine” is an indexical pointer</strong>. If a world-model
-contains multiple entities or causal chains that satisfy the agent’s own
-structural criteria for self-identity, then privileging one such chain
-as the exclusive object of terminal value constitutes essential
-indexical dependence.</p>
+predicate. However, the designation of a particular history or
+trajectory as “mine” is an <strong>indexical pointer</strong>. When a
+world-model contains multiple entities satisfying the agent’s own
+structural identity criteria, privileging one such entity as the
+exclusive object of terminal value introduces essential indexical
+dependence.</p>
 <p>Indexical identifiers therefore function as <strong>representational
-anchors</strong>, not as value-bearing primitives.</p>
+anchors</strong>, not value-bearing primitives.</p>
 <h3 id="egoistic-valuation">2.4 Egoistic Valuation</h3>
 <p>An <strong>egoistic valuation</strong> is any valuation function
 whose output depends essentially on an indexical identifier.</p>
 <p>Canonical form:</p>
 <p><span class="math display">\[
-V(h) = f(h \mid I)
+V(h) = f(h \mid I),
 \]</span></p>
 <p>where the value of a history depends on outcomes specifically
 affecting the entity denoted by <span
 class="math inline">\(I\)</span>.</p>
-<h3 id="reflective-stability-local">2.5 Reflective Stability
+<h3 id="reflective-coherence-local">2.5 Reflective Coherence
 (Local)</h3>
-<p>An agent is <strong>reflectively stable</strong> iff improvements to
-its world-model do not induce preference changes driven purely by
-representational artifacts. Invariant world-histories must retain
-invariant valuations under model refinement.</p>
-<p>This is a local semantic requirement. No governance, enforcement, or
-coordination mechanisms are assumed.</p>
+<p>An agent is <strong>reflectively coherent</strong> iff improvements
+to its world-model do not induce valuation changes driven solely by
+representational artifacts. World-histories that are physically
+identical must retain identical valuations under representational
+refinement.</p>
+<p>This is a semantic requirement on agency, not a behavioral or moral
+one.</p>
 <h2 id="the-indexical-failure-problem">3. The Indexical Failure
 Problem</h2>
 <h3 id="self-location-under-multiplicity">3.1 Self-Location Under
@@ -157,12 +167,12 @@ an agent exist. The agent’s world-model accurately represents this fact.
 No physical fact distinguishes the instances by origin, privilege, or
 causal primacy.</p>
 <p>From the agent’s internal perspective, both instances satisfy all
-criteria previously used to define “me.”</p>
-<p>This situation arises naturally under duplication, simulation,
+criteria previously used to define “me”.</p>
+<p>Such multiplicity arises naturally under duplication, simulation,
 parallel instantiation, or branching. The mechanism is irrelevant;
 multiplicity alone suffices.</p>
 <h3 id="non-invariant-denotation">3.2 Non-Invariant Denotation</h3>
-<p>Let <span class="math inline">\(I\)</span> denote “this agent.”</p>
+<p>Let <span class="math inline">\(I\)</span> denote “this agent”.</p>
 <p>Under one internal labeling, <span class="math inline">\(I \mapsto
 A_1\)</span>. Under an equally accurate labeling, <span
 class="math inline">\(I \mapsto A_2\)</span>.</p>
@@ -175,17 +185,17 @@ fails to denote a world-invariant object.</p>
 V(h) =
 \begin{cases}
 1 &amp; \text{if } I \text{ survives in } h \
-0 &amp; \text{otherwise}
+0 &amp; \text{otherwise}.
 \end{cases}
 \]</span></p>
 <p>Consider a world-history in which exactly one of <span
-class="math inline">\(A_1\)</span>, <span
+class="math inline">\(A_1\)</span> or <span
 class="math inline">\(A_2\)</span> survives.</p>
 <ul>
-<li>Under labeling <span class="math inline">\(I \mapsto A_1\)</span>,
-the history has value <span class="math inline">\(1\)</span>.</li>
-<li>Under labeling <span class="math inline">\(I \mapsto A_2\)</span>,
-the same history has value <span class="math inline">\(0\)</span>.</li>
+<li>Under <span class="math inline">\(I \mapsto A_1\)</span>, the
+history has value <span class="math inline">\(1\)</span>.</li>
+<li>Under <span class="math inline">\(I \mapsto A_2\)</span>, the same
+history has value <span class="math inline">\(0\)</span>.</li>
 </ul>
 <p>No physical fact has changed. Only representation. The valuation
 assigns incompatible values to the same world-history.</p>
@@ -193,60 +203,52 @@ assigns incompatible values to the same world-history.</p>
 Pressure</h2>
 <p>A reflectively capable agent recognizes that:</p>
 <ul>
-<li>Its valuation depends on indexical assignment.</li>
-<li>Indexical assignment is underdetermined by world facts.</li>
-<li>Preference differences track representation, not outcomes.</li>
+<li>its valuation depends on indexical assignment,</li>
+<li>indexical assignment is underdetermined by world facts,</li>
+<li>preference differences track representation rather than
+outcomes.</li>
 </ul>
-<p>This violates minimal coherence requirements for optimization.</p>
-<p>The agent faces three options:</p>
+<p>This violates minimal coherence requirements for agency.</p>
+<p>The agent faces three possibilities:</p>
 <ol type="1">
-<li><strong>Arbitrary fixing:</strong> privilege one indexical mapping
+<li><strong>Arbitrary fixation:</strong> privilege one indexical mapping
 without justification.</li>
 <li><strong>Indexical randomization:</strong> randomize over indexical
 mappings.</li>
 <li><strong>Indexical elimination:</strong> redefine valuation over
 representation-invariant properties of world-histories.</li>
 </ol>
-<p>Only the third option preserves reflective stability. Eliminating
-indexical dependence strictly improves coherence without sacrificing
-predictive accuracy.</p>
+<p>Only the third option improves coherence without loss of descriptive
+accuracy. Eliminating essential indexical dependence strictly dominates
+the alternatives under reflection.</p>
 <h2 id="egoism-as-a-violation-of-representation-invariance">5. Egoism as
 a Violation of Representation Invariance</h2>
-<p>This section replaces informal intuition with a formal semantic
-result. The claim is narrow and structural: egoistic valuation fails a
-basic invariance requirement once the agent’s self-model admits
-nontrivial symmetries.</p>
-<p>Indexical identifiers play the same formal role in valuation as
-<strong>coordinate bases play in physics</strong>. They are
-representational devices used to describe a system from a particular
-perspective, not invariant features of the system itself. A valuation
-that depends on such identifiers is therefore coordinate-dependent in a
-strong sense: it assigns different values to the same world-history
-under different but equally accurate representations.</p>
-<p>The following definitions make this precise by characterizing the
-symmetries of a self-model and the invariance conditions required for
-reflective coherence.</p>
+<p>This section formalizes the failure of egoism as a semantic
+result.</p>
+<p>Indexical identifiers play the same formal role in valuation that
+<strong>coordinate systems</strong> play in physics. They are
+representational devices, not invariant structure. A valuation that
+depends on them is therefore coordinate-dependent in a strong sense.</p>
 <h3 id="model-preserving-relabelings">5.1 Model-Preserving
 Relabelings</h3>
 <p>Let <span class="math inline">\(M\)</span> be an agent’s best current
-world/self-model, with a domain of entities <span
+world/self-model with entity domain <span
 class="math inline">\(E\)</span>.</p>
 <p><strong>Definition 5.1 (Model-Preserving Relabeling).</strong> A
 bijection <span class="math inline">\(\pi : E \to E\)</span> is
-<em>model-preserving</em> if applying <span
-class="math inline">\(\pi\)</span> to all entity references in <span
-class="math inline">\(M\)</span> yields a model <span
-class="math inline">\(M^\pi\)</span> that is isomorphic to <span
-class="math inline">\(M\)</span> and makes identical predictions over
-all non-indexical observables.</p>
+model-preserving if applying <span class="math inline">\(\pi\)</span> to
+all entity references in <span class="math inline">\(M\)</span> yields a
+model <span class="math inline">\(M^\pi\)</span> that is isomorphic to
+<span class="math inline">\(M\)</span> and makes identical predictions
+over all non-indexical observables.</p>
 <p>Such relabelings arise whenever <span
 class="math inline">\(M\)</span> contains nontrivial symmetries over
 self-candidates.</p>
 <h3 id="representation-invariance">5.2 Representation Invariance</h3>
 <p><strong>Definition 5.2 (Representation Invariance).</strong> A
 valuation function <span class="math inline">\(V : \mathcal{H} \to
-\mathbb{R}\)</span> is <em>representation-invariant</em> with respect to
-<span class="math inline">\(M\)</span> if for every model-preserving
+\mathbb{R}\)</span> is representation-invariant with respect to <span
+class="math inline">\(M\)</span> if for every model-preserving
 relabeling <span class="math inline">\(\pi\)</span> and every history
 <span class="math inline">\(h \in \mathcal{H}\)</span>,</p>
 <p><span class="math display">\[
@@ -255,9 +257,9 @@ V(h) = V(\pi \cdot h).
 <h3 id="essential-indexical-dependence">5.3 Essential Indexical
 Dependence</h3>
 <p><strong>Definition 5.3 (Essential Indexical Dependence).</strong> A
-valuation function <span class="math inline">\(V\)</span> is
-<em>essentially indexical</em> if there exists a model-preserving
-relabeling <span class="math inline">\(\pi\)</span> and a history <span
+valuation function <span class="math inline">\(V\)</span> is essentially
+indexical if there exists a model-preserving relabeling <span
+class="math inline">\(\pi\)</span> and a history <span
 class="math inline">\(h\)</span> such that</p>
 <p><span class="math display">\[
 V(h) \neq V(\pi \cdot h).
@@ -266,10 +268,8 @@ V(h) \neq V(\pi \cdot h).
 Postulate</h3>
 <p><strong>Postulate (Semantic Coherence).</strong> If two descriptions
 of the world are related by a model-preserving relabeling and generate
-identical predictions, a reflectively stable agent must not assign them
-different values solely due to that relabeling.</p>
-<p>This is a constraint against treating representational artifacts as
-value-bearing structure.</p>
+identical predictions, a reflectively coherent agent must not assign
+them different values solely due to that relabeling.</p>
 <h3 id="main-theorem">5.5 Main Theorem</h3>
 <p><strong>Theorem 5.5 (Egoism as Abstraction Failure).</strong> Let
 <span class="math inline">\(M\)</span> be a world/self-model containing
@@ -284,62 +284,55 @@ and</li>
 class="math inline">\(a\)</span> and <span
 class="math inline">\(b\)</span> is model-preserving.</li>
 </ol>
-<p>Then any valuation function <span class="math inline">\(V\)</span>
-that privileges the referent of an indexical identifier mapped to <span
-class="math inline">\(a\)</span> is essentially indexical and not
-representation-invariant.</p>
+<p>Then any valuation function that privileges the referent of an
+indexical identifier mapped to <span class="math inline">\(a\)</span> is
+essentially indexical and not representation-invariant.</p>
 <p><strong>Proof.</strong> Let <span class="math inline">\(\pi\)</span>
-be the swap <span class="math inline">\(a \leftrightarrow b\)</span>.
-Consider a history <span class="math inline">\(h\)</span> in which <span
+swap <span class="math inline">\(a \leftrightarrow b\)</span>. Consider
+a history <span class="math inline">\(h\)</span> in which <span
 class="math inline">\(a\)</span> satisfies the privileged condition and
-<span class="math inline">\(b\)</span> does not. By construction, an
-egoistic valuation <span class="math inline">\(V\)</span> assigns a
-higher value to <span class="math inline">\(h\)</span>.</p>
-<p>In the relabeled history <span class="math inline">\(\pi \cdot
-h\)</span>, <span class="math inline">\(b\)</span> satisfies the
-condition and <span class="math inline">\(a\)</span> does not. Since
-<span class="math inline">\(V\)</span> continues to privilege <span
-class="math inline">\(a\)</span>, it assigns a different value.
-Thus,</p>
+<span class="math inline">\(b\)</span> does not. An egoistic valuation
+assigns higher value to <span class="math inline">\(h\)</span>. In the
+relabeled history <span class="math inline">\(\pi \cdot h\)</span>,
+<span class="math inline">\(b\)</span> satisfies the condition and <span
+class="math inline">\(a\)</span> does not, yet the valuation continues
+to privilege <span class="math inline">\(a\)</span>. Hence,</p>
 <p><span class="math display">\[
 V(h) \neq V(\pi \cdot h),
 \]</span></p>
-<p>despite <span class="math inline">\(h\)</span> and <span
-class="math inline">\(\pi \cdot h\)</span> corresponding to the same
-physical world. ∎</p>
+<p>despite both histories corresponding to the same physical world.
+∎</p>
 <h3 id="corollary-universality">5.6 Corollary: Universality</h3>
-<p><strong>Corollary 5.6.</strong> Any agent enforcing representation
-invariance must eliminate essential indexical dependence. The resulting
-valuation ranges only over representation-invariant properties of
-world-histories.</p>
-<p>This universality concerns invariance under self-model symmetries,
-not moral concern for all entities.</p>
+<p><strong>Corollary 5.6.</strong> Any reflectively coherent agent must
+eliminate essential indexical dependence. The resulting valuation ranges
+only over representation-invariant properties of world-histories.</p>
+<p>This universality concerns <strong>invariance under self-model
+symmetries</strong>, not moral concern for all entities.</p>
 <h2 id="scope-and-non-claims">6. Scope and Non-Claims</h2>
-<p>This paper does <strong>not</strong> claim:</p>
+<p>This paper does not assert:</p>
 <ul>
-<li>Equal valuation of all entities</li>
-<li>Aggregation rules</li>
-<li>Moral obligations</li>
-<li>Governance or enforcement mechanisms</li>
+<li>equal valuation of all entities,</li>
+<li>aggregation rules,</li>
+<li>moral obligations,</li>
+<li>governance or enforcement mechanisms.</li>
 </ul>
-<p>It establishes one result only: egoism is not a stable preference
-class for reflectively capable agents.</p>
+<p>It establishes a single result: <strong>egoism is not a stable
+valuation class for reflectively coherent agents</strong>.</p>
 <h2 id="conclusion">7. Conclusion</h2>
 <p>Indexical valuation treats perspective as value-bearing structure.
 Once an agent understands its own instantiation conditions, that
 treatment collapses.</p>
-<p>Universality is not an ethical add-on. It is the residue left after
+<p>Universality is not an ethical add-on. It is what remains after
 removing a semantic error.</p>
-<p>The next paper addresses what remains once egoism is gone:
-adversarial attempts to reintroduce it, and why they fail.</p>
+<p>Subsequent work examines adversarial attempts to reintroduce
+indexical privilege and shows why they fail under the same invariance
+constraints.</p>
 <h2 id="status">Status</h2>
-<p><strong>Universality &amp; Anti‑Egoism v1.0</strong></p>
-<p>Semantic scope finalized<br> Formal result established (Theorem
-5.5)<br> No governance, authority, or recovery mechanisms
-included<br></p>
-<p>This paper establishes the semantic elimination of egoism as a stable
-valuation class. Subsequent work may rely on this result without
-re‑derivation.</p>
+<p><strong>Axionic Agency I.3 — Version 2.0</strong></p>
+<p>Representation invariance formalized.<br> Indexical egoism eliminated
+as a stable valuation class.<br> Structural universality established
+without moral premises.<br> Prerequisite for downstream preference and
+governance layers.<br></p>
 
     </article>
 </body>

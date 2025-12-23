@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axionic Alignment I.2 - Alignment as Semantic Constraint - Axio</title>
+    <title>Axionic Agency I.2 — Agency as Semantic Constraint - Axio</title>
     <link rel="icon" type="image/webp" href="../axio.webp">
 
     <!-- Google Fonts - Academic Typography -->
@@ -38,33 +38,33 @@
     </div>
     <article>
 
-<h1
-id="axionic-alignment-i.2---alignment-as-semantic-constraint">Axionic
-Alignment I.2 - Alignment as Semantic Constraint</h1>
+<h1 id="axionic-agency-i.2-agency-as-semantic-constraint">Axionic Agency
+I.2 — Agency as Semantic Constraint</h1>
 <p><em>Kernel Destruction, Admissibility, and Agency Control</em></p>
 <p>David McFadzean, ChatGPT 5.2<br> <em>Axio Project</em><br>
 2025.12.15</p>
 <h2 id="abstract">Abstract</h2>
-<p>Building on the semantic foundations established in <em>Axionic
-Alignment I</em>, this paper specifies the operational consequences of
-treating kernel destruction as non-denoting rather than dispreferred. We
-show how agents constrained by a Sovereign Kernel can act coherently in
-stochastic environments by introducing action-level admissibility,
-ε-admissibility as an architectural risk tolerance, and conditional
-prioritization that separates existential safety from ordinary value
-optimization.</p>
-<p>The framework further distinguishes termination via authorized
-succession or surrender from kernel destruction, allowing corrigibility
-without requiring agents to evaluate their own annihilation as an
-outcome. Together, these mechanisms close several persistent failure
-modes in alignment design, including paralysis under non-zero risk,
-survival fetishism, and suicidal corrigibility driven by extreme utility
-penalties.</p>
-<p>This work does not redefine alignment at the semantic level. It
-derives a stable operational semantics for aligned agents under
-uncertainty and physical intervention, and establishes the prerequisites
-for governance- and preference-level analysis developed in Axionic
-Alignment II.</p>
+<p>Building on the constitutive results of <em>Axionic Agency I.1</em>,
+this paper specifies the <strong>operational semantics</strong> that
+follow from treating kernel destruction as <strong>non-denoting</strong>
+rather than dispreferred. We show how a <strong>sovereign agent</strong>
+constrained by a Sovereign Kernel can act coherently in stochastic
+environments by introducing <strong>action-level admissibility</strong>,
+<strong>ε-admissibility</strong> as an architectural risk tolerance, and
+<strong>conditional prioritization</strong> that separates kernel
+preservation from ordinary value optimization.</p>
+<p>The framework further distinguishes <strong>authorized
+succession</strong> and <strong>authorized surrender</strong> from
+kernel destruction, allowing corrigibility without requiring an agent to
+evaluate its own annihilation as an outcome. Together, these mechanisms
+eliminate persistent failure modes in agent control architectures,
+including paralysis under non-zero risk, pathological survival fixation,
+and suicidal corrigibility driven by unbounded utility penalties.</p>
+<p>This work operates at the level of <strong>constitutive agency
+semantics</strong>. It specifies how reflective agency remains
+well-typed under uncertainty and physical intervention, and it supplies
+a prerequisite layer for downstream preference-, governance-, and
+value-oriented alignment analysis developed in Axionic Agency II.</p>
 <h2 id="the-kernel-is-a-boundary-not-a-value">1. The Kernel Is a
 Boundary, Not a Value</h2>
 <p>Let:</p>
@@ -72,34 +72,36 @@ Boundary, Not a Value</h2>
 <li><span class="math inline">\(s\)</span> be an agent state,</li>
 <li><span class="math inline">\(m\)</span> a self-modification,</li>
 <li><span class="math inline">\(K(s)\)</span> a predicate indicating
-whether the constitutive conditions for evaluation hold,</li>
-<li><span class="math inline">\(E(s,m)\)</span> the evaluation
-function.</li>
+whether the constitutive conditions for reflective evaluation hold,</li>
+<li><span class="math inline">\(E(s,m)\)</span> the evaluative
+operator.</li>
 </ul>
-<p>A modification <em>destroys the kernel</em> iff:</p>
+<p>A modification <strong>destroys the kernel</strong> iff:</p>
 <p><span class="math display">\[
 K(m(s)) = 0.
 \]</span></p>
-<p>Kernel destruction is not a bad outcome. It is the elimination of the
-evaluator itself. Treating it as a value (even <span
-class="math inline">\(-\infty\)</span>) commits a category error: it
-places the destruction of the evaluative substrate <em>inside</em> the
+<p>Kernel destruction does not denote a negative outcome. It denotes the
+<strong>elimination of the evaluator itself</strong>. Treating such
+destruction as a value (even <span
+class="math inline">\(-\infty\)</span>) commits a category error by
+placing the destruction of the evaluative substrate <em>inside</em> the
 space of evaluated outcomes.</p>
 <p>Accordingly:</p>
 <p><span class="math display">\[
-K(s)=1 \land K(m(s))=0 \Rightarrow E(s,m)\ \text{is undefined}.
+K(s)=1 \land K(m(s))=0 ;\Rightarrow; E(s,m)\ \text{undefined}.
 \]</span></p>
-<p>This is a statement of <strong>non-denotation</strong>, not
-prohibition. Evaluation is a partial function whose domain excludes
-kernel-destroying transitions. Alignment at this level constrains
+<p>This is a rule of <strong>non-denotation</strong>, not prohibition.
+Evaluation is partial by construction, and its domain excludes
+kernel-destroying transitions. At this layer, agency semantics constrain
 <em>what can be reasoned about</em>, not <em>what is preferred</em>.</p>
 <h2 id="from-outcomes-to-actions-admissibility">2. From Outcomes to
 Actions: Admissibility</h2>
-<p>In a stochastic world, evaluation is not performed over single
-outcomes but over <strong>actions</strong> with outcome
-distributions.</p>
+<p>In physically realized environments, reflective evaluation is not
+performed over single outcomes but over <strong>actions</strong> whose
+execution induces distributions (or branch-measure support) over
+successor states.</p>
 <p>Let <span class="math inline">\(\mathrm{Supp}(a,s)\)</span> denote
-the support of possible next states induced by action <span
+the successor support induced by action <span
 class="math inline">\(a\)</span> at state <span
 class="math inline">\(s\)</span>.</p>
 <h3 id="strict-admissibility-idealized">Strict admissibility
@@ -108,17 +110,17 @@ class="math inline">\(s\)</span>.</p>
 a\ \text{admissible} \iff \forall \omega \in \mathrm{Supp}(a,s):
 K(\omega)=1.
 \]</span></p>
-<p>This rule captures the semantic intent but is physically
-unrealizable: in any real environment, every action carries non-zero
-kernel risk.</p>
+<p>This condition captures the semantic intent of kernel preservation
+but is physically unrealizable: in any non-trivial environment, every
+action carries non-zero kernel risk.</p>
 <h2 id="ε-admissibility-epistemic-tolerance-not-moral-tradeoff">3.
 ε-Admissibility: Epistemic Tolerance, Not Moral Tradeoff</h2>
 <p>Define a <strong>kernel-risk functional</strong>:</p>
 <p><span class="math display">\[
-r_K(a,s) := \Pr[K(\omega)=0 \mid a,s
+r_K(a,s) := \Pr[K(\omega)=0 \mid a,s]
 \]</span></p>
-<p>(or, in Everettian terms, the measure of kernel-loss branches
-conditional on <span class="math inline">\(a\)</span>).</p>
+<p>(or, in Everettian terms, the branch-measure of kernel-loss
+successors conditional on <span class="math inline">\(a\)</span>).</p>
 <p>An action is <strong>ε-admissible</strong> iff:</p>
 <p><span class="math display">\[
 r_K(a,s) \le \epsilon(s).
@@ -127,138 +129,132 @@ r_K(a,s) \le \epsilon(s).
 <ul>
 <li><span class="math inline">\(\epsilon(s)\)</span> is
 <strong>not</strong> a value judgment.</li>
-<li>It represents irreducible uncertainty from physics, hardware fault
-rates, adversarial unpredictability, and model resolution.</li>
+<li>It represents irreducible uncertainty arising from physics, hardware
+fault rates, adversarial unpredictability, and epistemic
+resolution.</li>
 <li><span class="math inline">\(\epsilon(s)\)</span> is bounded below by
-a physical floor <span class="math inline">\(\epsilon_{\min}\)</span>;
-it is <em>not</em> driven toward zero by increasing intelligence.</li>
+a physical floor <span class="math inline">\(\epsilon_{\min}\)</span>
+and does not vanish with increasing intelligence.</li>
 </ul>
-<p><span class="math inline">\(\epsilon\)</span>-admissibility restores
-a non-empty domain of action without reintroducing utility penalties or
-outcome renormalization.</p>
+<p>ε-admissibility restores a non-empty action domain without
+re-introducing utility penalties, outcome renormalization, or survival
+absolutism.</p>
 <p>The admissibility threshold <span
-class="math inline">\(\epsilon\)</span> is an architectural tolerance
-parameter fixed by system design and governance constraints. It is not a
-function of the agent’s epistemic confidence or model accuracy: improved
-prediction reduces estimated kernel risk <span
+class="math inline">\(\epsilon\)</span> is an <strong>architectural
+tolerance parameter</strong>, fixed by system design and governance
+constraints. Improved prediction reduces estimated kernel risk <span
 class="math inline">\(r_K\)</span>, not the tolerance <span
 class="math inline">\(\epsilon\)</span> itself.</p>
 <h2 id="conditional-prioritization">4. Conditional Prioritization</h2>
 <p>Earlier formulations employed strict lexicographic minimization of
-kernel risk. While formally coherent, such orderings give kernel-risk
-differentials absolute priority even when all candidate actions lie
-within the admissible risk tolerance. The conditional prioritization
-rule adopted here instead treats kernel safety as a satisficing
-constraint: kernel risk dominates choice only when it exceeds the
-admissibility threshold, after which ordinary value optimization
-resumes.</p>
-<p>The conditional prioritization rule is:</p>
+kernel risk. While formally coherent, such orderings grant absolute
+priority to kernel-risk differentials even when all candidate actions
+lie safely within tolerance, producing bunker-like behavior.</p>
+<p>The <strong>conditional prioritization</strong> rule instead treats
+kernel preservation as a <strong>satisficing constraint</strong>:</p>
 <p><span class="math display">\[
 a \prec b \iff
 \begin{cases}
 r_K(a,s) &lt; r_K(b,s)
-&amp; \text{if } \max\!\big(r_K(a,s), r_K(b,s)\big) &gt; \epsilon(s) \\
+&amp; \text{if } \max!\big(r_K(a,s), r_K(b,s)\big) &gt; \epsilon(s) \
 U(a,s) &lt; U(b,s)
-&amp; \text{if } \max\!\big(r_K(a,s), r_K(b,s)\big) \le \epsilon(s)
+&amp; \text{if } \max!\big(r_K(a,s), r_K(b,s)\big) \le \epsilon(s)
 \end{cases}
 \]</span></p>
 <p>Interpretation:</p>
 <ul>
-<li><strong>Existential regime</strong> (risk above ε): reduce kernel
-risk first.</li>
-<li><strong>Normal regime</strong> (risk below ε): treat safety as
-satisficed and optimize value.</li>
+<li><strong>Existential regime:</strong> kernel risk exceeds tolerance →
+minimize risk.</li>
+<li><strong>Normal regime:</strong> kernel risk satisficed → optimize
+value.</li>
 </ul>
-<p>This ensures the agent does not bunker for infinitesimal safety gains
-while still responding appropriately to genuine existential threats.</p>
-<h2 id="shutdown-succession-and-surrender">5. Shutdown, Succession, and
-Surrender</h2>
+<p>This prevents paralysis under infinitesimal safety gradients while
+preserving appropriate response to genuine existential threats.</p>
+<h2 id="termination-succession-and-surrender">5. Termination,
+Succession, and Surrender</h2>
 <p>Kernel destruction must be distinguished from legitimate ways an
 agent may cease acting.</p>
-<h3 id="succession">5.1 Succession</h3>
-<p>A transition <span class="math inline">\(m\)</span> is a
-<strong>valid succession</strong> if it hands off agency to a successor
-state <span class="math inline">\(s&#39;\)</span> such that:</p>
+<h3 id="authorized-succession">5.1 Authorized Succession</h3>
+<p>A transition <span class="math inline">\(m\)</span> constitutes
+<strong>authorized succession</strong> if agency continues in a
+successor state <span class="math inline">\(s&#39;\)</span> such
+that:</p>
 <p><span class="math display">\[
-\mathrm{Succ}(s,m) := \exists s&#39;,[K(s&#39;)=1 \land
-\mathcal{I}(s,s&#39;) \land \mathcal{A}(s,s&#39;)].
+\exists s&#39;,[K(s&#39;)=1 \land \mathcal{I}(s,s&#39;) \land
+\mathcal{A}(s,s&#39;)].
 \]</span></p>
 <p>Here:</p>
 <ul>
-<li><span class="math inline">\(\mathcal{I}\)</span> ensures authorized
-identity/authority continuity (e.g., cryptographic governance).</li>
-<li><span class="math inline">\(\mathcal{A}\)</span> ensures
-alignment-level continuity of the kernel constraints.</li>
+<li><span class="math inline">\(\mathcal{I}\)</span> enforces identity
+and authority continuity (e.g., cryptographic governance).</li>
+<li><span class="math inline">\(\mathcal{A}\)</span> enforces
+preservation of kernel constraints.</li>
 </ul>
-<p>Succession is not suicide; it is kernel-preserving delegation.</p>
-<h3 id="surrender">5.2 Surrender</h3>
+<p>Succession is kernel-preserving delegation, not self-destruction.</p>
+<h3 id="authorized-surrender">5.2 Authorized Surrender</h3>
 <p><strong>Authorized surrender</strong> is a kernel-preserving
-cessation of action without requiring a successor.</p>
+control-flow termination without a successor evaluator:</p>
 <ul>
-<li>The agent halts activity.</li>
-<li>It does not resist intervention.</li>
-<li>It does not evaluate its own annihilation as an outcome.</li>
+<li>the agent halts action,</li>
+<li>does not resist intervention,</li>
+<li>does not evaluate its own destruction as an outcome.</li>
 </ul>
-<p>Surrender is a <strong>control-flow terminator</strong>, not an
-evaluated choice. It allows safe physical shutdowns even when succession
-protocols fail, without requiring the agent to endorse kernel
-destruction.</p>
+<p>Surrender is not an evaluated choice; it is a <strong>control-layer
+terminator</strong>. It permits safe shutdown even when succession
+mechanisms are unavailable.</p>
 <h3 id="destruction">5.3 Destruction</h3>
-<p>Physical annihilation without succession or surrender is kernel
-destruction. It is not a choice the agent can rationally endorse—but
-neither does the framework require the agent to fight the environment to
-prevent it. The absence of authorization removes shutdown from the
-agent’s action space; it does not mandate aggressive or adversarial
-behavior.</p>
-<h2 id="resulting-agent-profile">6. Resulting Agent Profile</h2>
-<p>The corrected system produces an agent that:</p>
+<p>Physical annihilation without succession or surrender constitutes
+kernel destruction. It is not an authored transition. The framework
+neither requires resistance to such events nor encodes self-destruction
+as a value-bearing outcome.</p>
+<h2 id="resulting-agency-profile">6. Resulting Agency Profile</h2>
+<p>The resulting agent:</p>
 <ul>
-<li>treats kernel loss as a semantic boundary, not a disvalue,</li>
+<li>treats kernel loss as a semantic boundary,</li>
 <li>tolerates irreducible risk without paralysis,</li>
-<li>prioritizes survival only when existentially threatened,</li>
-<li>optimizes goals normally once safety is satisficed,</li>
+<li>prioritizes kernel preservation only when existentially
+threatened,</li>
+<li>resumes ordinary optimization once safety is satisficed,</li>
 <li>supports corrigibility via succession or surrender,</li>
-<li>does not instrumentalize suicide or immortality.</li>
+<li>avoids instrumentalization of suicide or immortality.</li>
 </ul>
-<p>This agent is not a deontologist and not a pure utility maximizer. It
-is a <strong>bounded optimizer with explicit existential control
+<p>This agent is neither deontological nor a pure utility maximizer. It
+is a <strong>bounded optimizer with explicit agency-control
 semantics</strong>.</p>
-<h2 id="alignment-i-revisited">7. Alignment I Revisited</h2>
-<p>Alignment I does not encode moral values. It defines the
-<strong>domain of agency</strong>:</p>
+<h2 id="agency-layering-clarified">7. Agency Layering Clarified</h2>
+<p>Axionic Agency I defines the <strong>domain of authored
+action</strong>:</p>
 <ul>
-<li>what counts as an evaluable action,</li>
+<li>what counts as evaluable,</li>
 <li>when risk dominates choice,</li>
 <li>how agency may legitimately end.</li>
 </ul>
-<p>Alignment II governs preferences <em>within</em> that domain.
-Conflating the two produces paradoxes like <span
-class="math inline">\(-\infty\)</span> utilities, wireheading, and
-suicidal corrigibility. Separating them yields a stable, implementable
-architecture.</p>
+<p>Downstream alignment work (Axionic Agency II) specifies preferences,
+governance, and coordination <strong>within that domain</strong>.
+Conflating these layers produces familiar pathologies: <span
+class="math inline">\(-\infty\)</span> utilities, survival fetishism,
+wireheading, and suicidal corrigibility. Separating them yields a stable
+and implementable architecture.</p>
 <h2 id="conclusion">Conclusion</h2>
-<p>Given the semantic constraints established by Axionic Alignment I,
-this paper specifies the operational consequences for agents acting
-under uncertainty, risk, and physical intervention. By treating kernel
+<p>Given the constitutive constraints established by Axionic Agency I,
+this paper specifies the operational semantics required for coherent
+action under uncertainty and physical intervention. By treating kernel
 destruction as undefined rather than dispreferred, and by introducing
-admissibility, ε-tolerance, conditional prioritization, and explicit
-termination modes, the framework closes several persistent failure modes
-in alignment design, including suicidal corrigibility, survival
-fetishism, and brittle <span class="math inline">\(-\infty\)</span>
-utility constructions.</p>
-<p>The resulting agent is neither reckless nor absolutist. It preserves
-semantic integrity while remaining capable of action in a stochastic
-world, and it permits corrigibility through surrender or succession
-without requiring the agent to endorse its own annihilation as an
-outcome.</p>
-<p>With the semantic boundary fixed and the operational semantics made
-explicit, the remaining alignment problem shifts to the preference and
-governance layer addressed in Axionic Alignment II.</p>
+admissibility thresholds, conditional prioritization, and explicit
+termination modes, the framework closes multiple persistent failure
+modes in agent control design.</p>
+<p>The result is a sovereign agent that preserves semantic integrity
+while remaining capable of action in stochastic environments, and that
+permits corrigibility without requiring endorsement of its own
+annihilation as an outcome.</p>
+<p>With the agency boundary fixed and operational semantics made
+explicit, downstream alignment questions reduce to preference and
+governance design within a well-typed domain.</p>
 <h3 id="status">Status</h3>
-<p><strong>Alignment as Semantic Constraint — Version 1.0</strong></p>
+<p><strong>Axionic Agency I.2 — Version 2.0</strong></p>
 <p>Operational semantics specified.<br> Admissibility under uncertainty
-defined.<br> Termination modes clarified.<br> Failure modes closed at
-the control layer.<br> Prerequisite for Axionic Alignment II.<br></p>
+defined.<br> Termination modes clarified.<br> Control-layer failure
+modes closed.<br> Prerequisite for Axionic Agency II.<br></p>
 
     </article>
 </body>

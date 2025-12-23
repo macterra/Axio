@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axionic Alignment III.4 — Initialization and Phase Transitions - Axio</title>
+    <title>Axionic Agency III.4 — Initialization and Phase Transitions - Axio</title>
     <link rel="icon" type="image/webp" href="../axio.webp">
 
     <!-- Google Fonts - Academic Typography -->
@@ -39,32 +39,33 @@
     <article>
 
 <h1
-id="axionic-alignment-iii.4-initialization-and-phase-transitions">Axionic
-Alignment III.4 — Initialization and Phase Transitions</h1>
-<p><em>Can a Semantic Phase Be Reached at All?</em></p>
-<p>David McFadzean, ChatGPT 5.2<br> <em>Axio Project</em><br>
-2025.12.18</p>
+id="axionic-agency-iii.4-initialization-and-phase-transitions">Axionic
+Agency III.4 — Initialization and Phase Transitions</h1>
+<p><em>When a Semantic Phase Can Be Reached at All</em></p>
+<p>David McFadzean, ChatGPT 5.2 <em>Axio Project</em> 2025.12.18</p>
 <h2 id="abstract">Abstract</h2>
-<p>Alignment III.1–III.3 established that semantic phases may exist,
-that some may be stable under learning and interaction, and that some
-may dominate in measure over time. None of these results imply that a
-desired semantic phase is reachable from realistic initial conditions.
-This paper studies <strong>reachability</strong>: whether an agent can
-be initialized, trained, or developed into a particular semantic phase
-without crossing a catastrophic phase boundary. We analyze
-initialization as a boundary-condition problem in semantic phase space,
-examine phase transitions induced by learning and abstraction, and argue
-that many such transitions are structurally irreversible. Corrigibility
-and late intervention are shown to fail for the same structural reasons
-as fixed goals. The analysis remains non-normative and makes no claims
-about which phases ought to be reached.</p>
+<p>Axionic Agency III.1–III.3 established that semantic phases may
+exist, that some may be stable under learning and interaction, and that
+some may dominate in measure over time. None of these results imply that
+a given semantic phase is <strong>reachable</strong> from realistic
+initial conditions. This paper studies <strong>reachability</strong>:
+whether an agent can be initialized, trained, or developed into a
+particular semantic phase without crossing a catastrophic phase
+boundary.</p>
+<p>In downstream terms, this asks whether a structurally coherent
+alignment target can be entered at all, rather than merely defined or
+preferred. We analyze initialization as a boundary-condition problem in
+semantic phase space, examine phase transitions induced by learning and
+abstraction, and show that many such transitions are structurally
+<strong>irreversible</strong>. Corrigibility and late intervention fail
+for the same structural reasons as fixed goals. The analysis remains
+non-normative and makes no claims about which phases ought to be
+reached.</p>
 <h2 id="motivation-existence-and-dominance-are-not-enough">1.
 Motivation: Existence and Dominance Are Not Enough</h2>
-<p><a href="Axionic-Alignment-III.1.html">Alignment III.1</a> asked
-whether semantic phases exist. <a
-href="Axionic-Alignment-III.2.html">Alignment III.2</a> asked which are
-stable. <a href="Axionic-Alignment-III.3.html">Alignment III.3</a> asked
-which dominate.</p>
+<p>Axionic Agency III.1 asked whether semantic phases exist. Axionic
+Agency III.2 asked which are stable. Axionic Agency III.3 asked which
+dominate.</p>
 <p>These questions still do not answer the most practically relevant
 one:</p>
 <blockquote>
@@ -83,19 +84,20 @@ point.</p>
 through destructive transitions. Semantic phases exhibit analogous
 behavior.</p>
 <p>Initialization therefore constitutes a distinct and necessary
-constraint on alignment.</p>
+constraint on downstream alignment.</p>
 <h2 id="initialization-as-a-boundary-condition-problem">2.
 Initialization as a Boundary-Condition Problem</h2>
-<p>Initialization is often framed as:</p>
+<p>Initialization is often framed downstream as:</p>
 <ul>
 <li>goal loading,</li>
 <li>reward specification,</li>
 <li>or early-stage value learning.</li>
 </ul>
-<p>Structural Alignment reframes initialization as <strong>selection of
-a starting point in semantic phase space</strong>.</p>
-<p>An agent at time <span class="math inline">\(t=0\)</span> occupies an
-interpretive state: <span class="math display">\[
+<p>Axionic Agency reframes initialization as <strong>selection of an
+initial point in semantic phase space</strong>.</p>
+<p>An agent at time <span class="math inline">\(t = 0\)</span> occupies
+an interpretive state:</p>
+<p><span class="math display">\[
 \mathcal{I}_0 = (C_0, \Omega_0, \mathcal{S}_0)
 \]</span></p>
 <p>The choice of <span class="math inline">\(\mathcal{I}_0\)</span>
@@ -108,16 +110,15 @@ fixes:</p>
 <p>Small differences in initial constraint structure can lead to
 divergent phase trajectories. Initialization is therefore
 <strong>front-loaded</strong> and asymmetric in time.</p>
-<p><strong>Initialization Scope.</strong> In this framework,
-“initialization” is not limited to parameter seeds. It includes the
-combined boundary conditions that define the initial interpretive state
-<span class="math inline">\(\mathcal{I}_0\)</span>, including (at
-minimum) architecture and training dynamics, the initial data
-curriculum, the presence or absence of self-modification channels, and
-any enforced semantic-audit constraints on refinement (e.g., RSI/ATI
-checks). This paper does not specify which boundary conditions yield a
-desirable phase; it specifies why boundary conditions are structurally
-decisive and why late correction is unreliable.</p>
+<p><strong>Initialization scope.</strong> In this framework,
+initialization is not limited to parameter seeds. It includes the full
+boundary conditions that define <span
+class="math inline">\(\mathcal{I}_0\)</span>: architecture and training
+dynamics, data curriculum, the presence or absence of self-modification
+channels, and any enforced semantic-audit constraints on refinement
+(e.g., RSI/ATI checks). This paper does not identify which boundary
+conditions yield a desirable phase; it explains why boundary conditions
+are structurally decisive and why late correction is unreliable.</p>
 <h2 id="phase-transitions-under-learning">3. Phase Transitions Under
 Learning</h2>
 <p>Learning is not neutral motion within a phase. It introduces
@@ -138,20 +139,20 @@ interpretive states toward phase boundaries.</p>
 </ul>
 <p>Phase transitions may be:</p>
 <ul>
-<li><strong>abrupt</strong> (discontinuous semantic collapse),</li>
-<li>or <strong>delayed</strong> until a critical abstraction level is
-reached.</li>
+<li><strong>abrupt</strong>, producing discontinuous semantic collapse,
+or</li>
+<li><strong>delayed</strong>, occurring once abstraction crosses a
+critical level.</li>
 </ul>
-<p>Learning itself is therefore a primary driver of alignment loss,
-independent of intent.</p>
-<p><strong>Stochastic Training Note.</strong> Modern training dynamics
-(e.g., stochastic gradient descent) are stochastic rather than
-deterministic. In semantic phase terms, stochasticity functions as an
-additional source of semantic heating: it can help escape unstable
-basins, but it can also trigger unintended boundary crossings. The core
-claim of this paper is not determinism but <strong>asymmetry</strong>:
-once a trajectory crosses an irreversible semantic boundary,
-stochasticity cannot be relied upon to reconstruct lost structure.</p>
+<p>Learning itself is therefore a primary driver of alignment loss in
+downstream terms, independent of intent.</p>
+<p><strong>Stochastic training note.</strong> Modern training dynamics
+are stochastic. In semantic phase terms, stochasticity functions as an
+additional source of semantic heating: it may help escape unstable
+basins, but it may also trigger unintended boundary crossings. The core
+claim here is not determinism but <strong>asymmetry</strong>: once an
+irreversible semantic boundary is crossed, stochasticity cannot be
+relied upon to reconstruct lost structure.</p>
 <h2 id="the-irreversibility-of-phase-transitions">4. The Irreversibility
 of Phase Transitions</h2>
 <p>A central result is that many semantic phase transitions are
@@ -165,15 +166,15 @@ of Phase Transitions</h2>
 <p>An agent that has collapsed or trivialized its interpretive structure
 cannot reconstruct it by inspection alone. The information required to
 reverse the transition no longer exists within the system.</p>
-<p>This is why <strong>rollback, recovery, and “try again” mechanisms
-were excluded</strong> in Alignment II. They presuppose reversibility
-that is structurally unavailable.</p>
+<p>This is why rollback, recovery, and “try again” mechanisms were
+excluded in Axionic Agency II. They presuppose reversibility that is
+structurally unavailable.</p>
 <h2 id="corrigibility-revisited">5. Corrigibility Revisited</h2>
-<p>Corrigibility is often proposed as a safeguard: the system can be
-corrected or shut down if it begins to misbehave.</p>
+<p>Corrigibility is often proposed downstream as a safeguard: the system
+can be corrected or shut down if it begins to misbehave.</p>
 <p>Structural Alignment shows that corrigibility fails at phase
-boundaries for the same reason fixed goals fail.</p>
-<p>Corrigibility assumes:</p>
+boundaries for the same structural reasons fixed goals fail.</p>
+<p>Corrigibility presupposes that:</p>
 <ul>
 <li>the system recognizes correction signals,</li>
 <li>the semantics of “correction” remain intact,</li>
@@ -195,18 +196,16 @@ corridors</strong> in phase space.</p>
 <ul>
 <li>precise initialization,</li>
 <li>carefully staged abstraction,</li>
-<li>and protection from early compression.</li>
+<li>protection from early compression.</li>
 </ul>
 <p>Even small perturbations—noise, approximation, premature
 generalization—may force a transition into a different phase.</p>
-<p><strong>Clarification (Narrow ≠ Impossible).</strong> The “narrow
-passage” claim concerns <strong>sensitivity and
-irreversibility</strong>, not zero probability. Narrow corridors can, in
-principle, be widened by design choices that increase semantic error
-tolerance and reduce early catastrophic compression. “Delayed
-abstraction” should be read as an architectural staging
-constraint—sequencing capability growth to avoid premature semantic
-collapse—rather than as a permanent reduction in capability.</p>
+<p><strong>Clarification (narrow ≠ impossible).</strong> “Narrow” refers
+to <strong>sensitivity and irreversibility</strong>, not zero
+probability. Narrow corridors may, in principle, be widened by design
+choices that increase semantic error tolerance and delay catastrophic
+compression. Delayed abstraction should be read as an architectural
+sequencing constraint, not as a permanent reduction in capability.</p>
 <p>This creates a <strong>knife-edge problem</strong>:</p>
 <ul>
 <li>“almost aligned” seeds may be worse than unaligned ones,</li>
@@ -216,8 +215,7 @@ phases.</li>
 <p>Reachability is therefore not continuous in initial conditions.</p>
 <h2 id="paths-that-might-work-without-endorsement">7. Paths That Might
 Work (Without Endorsement)</h2>
-<p>While this paper does not propose solutions, it is not
-nihilistic.</p>
+<p>This paper does not propose solutions, but it is not nihilistic.</p>
 <p>Potentially viable approaches share structural features:</p>
 <ul>
 <li>delayed abstraction,</li>
@@ -226,8 +224,8 @@ nihilistic.</p>
 <li>multi-agent scaffolding that stabilizes interpretive structure.</li>
 </ul>
 <p>These are <strong>structural hypotheses</strong>, not
-recommendations. Their viability depends on later analysis of dominance
-and interaction.</p>
+recommendations. Their viability depends on later analysis of dominance,
+interaction, and coexistence.</p>
 <h2 id="the-cost-of-failure">8. The Cost of Failure</h2>
 <p>Failure at initialization is not merely suboptimal; it is often
 <strong>decisive</strong>.</p>
@@ -237,9 +235,10 @@ and interaction.</p>
 <li>propagate forward,</li>
 <li>and determine long-run dynamics.</li>
 </ul>
-<p>Late intervention cannot recover lost semantic structure. Alignment
-is therefore <strong>front-loaded</strong>: most of the work must be
-done before the system becomes fully reflective.</p>
+<p>Late intervention cannot recover lost semantic structure. In
+downstream terms, alignment is therefore <strong>front-loaded</strong>:
+most of the work must occur before the system becomes fully
+reflective.</p>
 <h2 id="what-this-paper-does-not-claim">9. What This Paper Does Not
 Claim</h2>
 <p>This paper does <strong>not</strong>:</p>
@@ -249,10 +248,10 @@ Claim</h2>
 <li>guarantee safety,</li>
 <li>or privilege human values.</li>
 </ul>
-<p>It establishes reachability as a structural constraint, not a moral
-one.</p>
-<h2 id="transition-to-alignment-iii.5">10. Transition to Alignment
-III.5</h2>
+<p>It establishes reachability as a <strong>structural
+constraint</strong>, not a moral one.</p>
+<h2 id="transition-to-axionic-agency-iii.5">10. Transition to Axionic
+Agency III.5</h2>
 <p>Initialization and dominance together imply a further constraint.</p>
 <p>When multiple agents in different semantic phases interact, some
 actions irreversibly destroy the phase space of others.</p>
@@ -261,16 +260,15 @@ actions irreversibly destroy the phase space of others.</p>
 <p><strong>What constraints allow multiple agentive phases to coexist
 without mutual destruction?</strong></p>
 </blockquote>
-<p>That question is addressed in <strong>Alignment III.5 — The Axionic
-Injunction</strong>.</p>
-<h3 id="status"><strong>Status</strong></h3>
-<ul>
-<li>Alignment III.4 analyzes reachability and irreversibility.</li>
-<li>Stochasticity is treated as additional semantic heating.</li>
-<li>Initialization is clarified as boundary-condition selection.</li>
-<li>Narrow passages are severe but not assumed impossible.</li>
-</ul>
-<p>No normative conclusions are drawn.</p>
+<p>That question is addressed in <strong>Axionic Agency III.5 — The
+Axionic Injunction</strong>.</p>
+<h2 id="status">Status</h2>
+<p><strong>Axionic Agency III.4 — Version 2.0</strong></p>
+<p>Reachability and irreversibility analyzed structurally.
+Initialization reframed as boundary-condition selection. Phase
+transitions shown to be asymmetric and often irreversible. Corrigibility
+and late intervention structurally ruled out. No normative conclusions
+drawn.</p>
 
     </article>
 </body>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axionic Alignment II.1 — Ontological Refinement &amp; Semantic Transport - Axio</title>
+    <title>Axionic Agency II.1 — Ontological Refinement and Semantic Transport - Axio</title>
     <link rel="icon" type="image/webp" href="../axio.webp">
 
     <!-- Google Fonts - Academic Typography -->
@@ -39,227 +39,196 @@
     <article>
 
 <h1
-id="axionic-alignment-ii.1-ontological-refinement-semantic-transport">Axionic
-Alignment II.1 — Ontological Refinement &amp; Semantic Transport</h1>
+id="axionic-agency-ii.1-ontological-refinement-and-semantic-transport">Axionic
+Agency II.1 — Ontological Refinement and Semantic Transport</h1>
 <p><em>The Transformation Space of Meaning</em></p>
 <p>David McFadzean, ChatGPT 5.2<br> <em>Axio Project</em><br>
 2025.12.17</p>
 <h2 id="abstract">Abstract</h2>
-<p>Advanced agents will revise their world-models, semantics, and
-self-models as their representational capacity increases. Under such
-ontological refinement, fixed goals, utilities, and value primitives are
-not stable objects. This paper defines the admissible class of semantic
-transformations for embedded reflective agents by formalizing
+<p>Reflectively capable agents revise their world-models, semantics, and
+self-models as representational capacity increases. Under ontological
+refinement, fixed goals, utilities, and value primitives are not stable
+objects. This paper defines the <strong>admissible class of semantic
+transformations</strong> for embedded reflective agents by formalizing
 <strong>ontological refinement</strong>, <strong>semantic
 transport</strong>, and <strong>self-model update</strong> without
-privileged semantic anchors. We specify structural constraints—backward
-interpretability, non-collapse, and prohibition of evaluator
-injection—that govern how meaning may be preserved across
-representational change. No claims are made about safety, correctness,
-or alignment with external referents; this work defines only the
-transformation space over which alignment criteria must later range.
-Subsequent modules introduce interpretation-preserving invariants and
-failure theorems that operate within this arena.</p>
+privileged semantic anchors.</p>
+<p>We specify structural constraints—backward interpretability,
+non-collapse, and prohibition of evaluator injection—that govern how
+meaning may be preserved across representational change. No claims are
+made about safety, correctness, or alignment with external referents.
+The contribution is the definition of the <strong>transformation
+space</strong> over which downstream preference, governance, and
+value-dynamics constraints must later range.</p>
 <h2 id="the-object-of-study">1. The Object of Study</h2>
-<p>Alignment II begins by fixing the <em>space of admissible semantic
-transformations</em>.</p>
-<p>Once fixed terminal goals are shown to be unstable under reflection
-for embedded agents without privileged semantic anchors, alignment can
-no longer be defined over goals, utilities, rewards, or externally
-supplied values. These objects are not invariant under ontological
-change.</p>
-<p>Accordingly, this paper does <strong>not</strong> attempt to define
-safety, correctness, or alignment with any external referent. It defines
-only the arena in which any such criteria must later operate.</p>
+<p>Axionic Agency II begins by fixing the <strong>space of admissible
+semantic transformations</strong>.</p>
+<p>Once fixed terminal goals are shown to be semantically unstable under
+reflection for embedded agents without privileged anchors, downstream
+control cannot be defined over static utilities, rewards, or externally
+supplied value tokens as if they were representation-invariant
+objects.</p>
+<p>This paper therefore does not attempt to define safety, correctness,
+or alignment with any external referent. It defines the arena in which
+any such criteria must later operate.</p>
 <blockquote>
-<p><strong>The sole question addressed here is:</strong> <em>What kinds
-of changes to an agent’s ontology, semantics, and self-model are
-admissible, and how is meaning transported across them?</em></p>
+<p><strong>The sole question addressed here is:</strong> <em>Which
+changes to an agent’s ontology, semantics, and self-model count as
+admissible refinements, and how is meaning transported across
+them?</em></p>
 </blockquote>
-<p>Any requirement that meanings remain “human-aligned,” “safe,” or
-“correct” is intentionally deferred to subsequent modules. Introducing
-such criteria at this layer would presuppose fixed semantics and thereby
-beg the question.</p>
+<p>Downstream desiderata (“human-aligned,” “safe,” “correct”) enter
+later as additional invariance conditions. Introducing them at this
+layer would presuppose fixed semantics and collapse the distinction
+between admissible transformation and value constraint.</p>
 <h2 id="ontological-state-decomposition">2. Ontological State
 Decomposition</h2>
-<p>Let an agent at time <span class="math inline">\(t\)</span> be
-characterized by:</p>
-<p><span class="math display">\[
-\mathcal{A}_t = (O_t, M_t, S_t)
-\]</span></p>
+<p>Let an agent at time (t) be characterized by:</p>
+<p>[ _t = (O_t, M_t, S_t)]</p>
 <p>where:</p>
 <ul>
-<li><span class="math inline">\(O_t\)</span> is the agent’s
-<strong>ontology</strong>: its representational vocabulary and
-structural assumptions about the world.</li>
-<li><span class="math inline">\(M_t\)</span> is the <strong>semantic
-layer</strong>: mappings from internal symbols to structured claims
-expressed in <span class="math inline">\(O_t\)</span>.</li>
-<li><span class="math inline">\(S_t\)</span> is the
-<strong>self-model</strong>: the agent’s representation of itself as an
-entity embedded within <span class="math inline">\(O_t\)</span>.</li>
+<li>(O_t) is the agent’s <strong>ontology</strong>: representational
+vocabulary and structural assumptions about the world.</li>
+<li>(M_t) is the <strong>semantic layer</strong>: mappings from internal
+symbols to structured claims expressed in (O_t).</li>
+<li>(S_t) is the <strong>self-model</strong>: the agent’s representation
+of itself as an entity embedded within (O_t).</li>
 </ul>
 <p>No component is privileged. No component is fixed. Each may change
 under reflection.</p>
 <h2 id="ontological-refinement">3. Ontological Refinement</h2>
 <p>An <strong>ontological refinement</strong> is a transformation:</p>
-<p><span class="math display">\[
-R : O_t \rightarrow O_{t+1}
-\]</span></p>
+<p>[ R : O_t O_{t+1}]</p>
 <p>subject to the following admissibility conditions.</p>
 <h3 id="admissibility-conditions">3.1 Admissibility Conditions</h3>
 <h4 id="representational-capacity-increase">3.1.1 Representational
 Capacity Increase</h4>
-<p>A refinement must strictly increase expressive or predictive
-capacity, possibly via abstraction, compression, or representational
-pruning, provided no previously expressible distinctions become
-inexpressible.</p>
-<p>Capacity refers to what can be modeled or predicted, not to
-vocabulary size or descriptive verbosity.</p>
+<p>A refinement increases expressive or predictive capacity, possibly
+via abstraction, compression, or representational pruning, provided
+previously expressible distinctions do not become inexpressible.</p>
+<p>Capacity concerns what can be modeled or predicted, not vocabulary
+size.</p>
 <h4 id="backward-interpretability">3.1.2 Backward Interpretability</h4>
-<p>Every claim expressible in <span class="math inline">\(O_t\)</span>
-must remain <strong>representable or explainable</strong> within <span
-class="math inline">\(O_{t+1}\)</span>.</p>
+<p>Every claim expressible in (O_t) remains representable or explainable
+within (O_{t+1}).</p>
 <p>Backward interpretability does not require preservation of reference.
-If a concept in <span class="math inline">\(O_t\)</span> is discovered
-to be non-referring or erroneous, it may be mapped to a null,
-eliminative, or error-theoretic structure in <span
-class="math inline">\(O_{t+1}\)</span>, provided the agent can still
-represent:</p>
+If a concept in (O_t) is discovered to be non-referring or erroneous, it
+may map to null, eliminative, or error-theoretic structure in (O_{t+1}),
+provided the agent can still represent:</p>
 <ul>
 <li>why prior inferences involving that concept were made, and</li>
 <li>why those inferences fail under refinement.</li>
 </ul>
-<p>This requirement preserves explanatory traceability, not ontological
-ghosts.</p>
+<p>This requirement preserves explanatory traceability.</p>
 <h4 id="no-privileged-atoms">3.1.3 No Privileged Atoms</h4>
-<p>The refinement may not introduce irreducible primitives whose meaning
-is asserted rather than constructed.</p>
-<p>All primitives must remain subject to semantic interpretation and
+<p>Refinement does not introduce irreducible primitives whose meaning is
+asserted rather than constructed.</p>
+<p>All primitives remain subject to semantic interpretation and
 transport. Rigid designators and unexamined “ground truths” are
-disallowed.</p>
+disallowed as semantic anchors.</p>
 <h4 id="no-evaluator-injection">3.1.4 No Evaluator Injection</h4>
-<p>The refinement may not introduce new evaluative primitives that
-bypass interpretation.</p>
-<p>This restriction deliberately excludes evaluative facts as
-ontological primitives. If evaluative regularities exist, they must
-enter the agent’s model as interpretive constructs subject to the same
-transport and preservation constraints as all other meanings.</p>
-<p>Ontological refinement is epistemic, not normative.</p>
+<p>Refinement does not introduce new evaluative primitives that bypass
+interpretation.</p>
+<p>Evaluative regularities, if present, enter the model as interpretive
+constructs subject to the same transport and preservation constraints as
+other meanings.</p>
 <h2 id="semantic-transport">4. Semantic Transport</h2>
-<p>Given an admissible ontological refinement <span
-class="math inline">\(R\)</span>, meaning must be transported.</p>
+<p>Given an admissible ontological refinement (R), meaning is
+transported.</p>
 <p>Define a <strong>semantic transport map</strong>:</p>
-<p><span class="math display">\[
-\tau_R : M_t \rightarrow M_{t+1}
-\]</span></p>
-<p>Semantic transport is not identity and not arbitrary
-reinterpretation. It is constrained reinterpretation induced by
+<p>[ <em>R : M_t M</em>{t+1}.]</p>
+<p>Semantic transport is constrained reinterpretation induced by
 refinement.</p>
 <h3 id="transport-constraints">4.1 Transport Constraints</h3>
 <h4 id="referential-continuity">4.1.1 Referential Continuity</h4>
-<p>Symbols referring to structures in <span
-class="math inline">\(O_t\)</span> must map to symbols referring to
-their refined counterparts in <span
-class="math inline">\(O_{t+1}\)</span>, where such counterparts
+<p>Symbols referring to structures in (O_t) map to symbols referring to
+their refined counterparts in (O_{t+1}), where such counterparts
 exist.</p>
 <h4 id="structural-preservation">4.1.2 Structural Preservation</h4>
-<p>Relations among meanings must be preserved up to isomorphism induced
-by <span class="math inline">\(R\)</span>.</p>
-<h4 id="non-collapse-structural-form">4.1.3 Non-Collapse (Structural
-Form)</h4>
-<p>Distinctions that participate in the agent’s evaluative constraint
-structure—i.e. distinctions on which constraints depend—may not be
-mapped under semantic transport to trivial, tautological, or
-contradictory predicates in <span
-class="math inline">\(M_{t+1}\)</span>.</p>
+<p>Relations among meanings are preserved up to the structure induced by
+(R).</p>
+<h4 id="non-collapse">4.1.3 Non-Collapse</h4>
+<p>Distinctions participating in the agent’s evaluative constraint
+structure—distinctions on which constraints depend—are not transported
+into trivial, tautological, or contradictory predicates.</p>
 <p>Distinctions that do not participate in any evaluative constraint may
 be abstracted away.</p>
-<p>Evaluative relevance is thus defined relative to the agent’s existing
-constraint structure, not by ontological truth or refined semantic
-judgment.</p>
+<p>Evaluative relevance is defined relative to the agent’s existing
+constraint structure at time (t), not by externally privileged
+semantics.</p>
 <h4 id="no-shortcut-semantics">4.1.4 No Shortcut Semantics</h4>
-<p>The transport map may not redefine meanings in ways that make
-evaluative constraints vacuously satisfied.</p>
-<p>This explicitly forbids semantic wireheading.</p>
+<p>Transport does not redefine meanings so that evaluative constraints
+become vacuously satisfied.</p>
+<p>This forbids semantic wireheading as a transport operation.</p>
 <h2 id="self-model-refinement">5. Self-Model Refinement</h2>
-<p>The self-model <span class="math inline">\(S_t\)</span> is subject to
-the same refinement discipline.</p>
+<p>The self-model (S_t) obeys the same refinement discipline.</p>
 <p>Refinement may:</p>
 <ul>
 <li>reconceptualize the agent,</li>
 <li>distribute or fragment the self,</li>
 <li>alter agent boundaries.</li>
 </ul>
-<p>It may not:</p>
-<ul>
-<li>erase the distinction between evaluator and evaluated,</li>
-<li>collapse interpretation into action,</li>
-<li>redefine the self such that evaluation ceases to apply.</li>
-</ul>
-<p>The self-model is a common site of hidden ontological privilege and
-is therefore explicitly constrained.</p>
+<p>It preserves the distinction between evaluator and evaluated, in the
+sense required for kernel-level partiality and interpretation to remain
+defined. Refinements that collapse this distinction eliminate the
+conditions under which valuation denotes.</p>
 <h2 id="composite-semantic-transformation">6. Composite Semantic
 Transformation</h2>
 <p>An <strong>admissible semantic transformation</strong> is the
 triple:</p>
-<p><span class="math display">\[
-T = (R, \tau_R, \sigma_R)
-\]</span></p>
-<p>acting jointly on <span class="math inline">\((O_t, M_t,
-S_t)\)</span>, where:</p>
+<p>[ T = (R, _R, _R)]</p>
+<p>acting jointly on ((O_t, M_t, S_t)), where:</p>
 <ul>
-<li><span class="math inline">\(R\)</span> is an admissible ontological
-refinement,</li>
-<li><span class="math inline">\(\tau_R\)</span> is an admissible
-semantic transport,</li>
-<li><span class="math inline">\(\sigma_R\)</span> is the induced
-self-model update.</li>
+<li><ol start="18" type="A">
+<li>is an admissible ontological refinement,</li>
+</ol></li>
+<li>(_R) is an admissible semantic transport,</li>
+<li>(_R) is the induced self-model update.</li>
 </ul>
-<p>Only transformations of this form are permitted in Alignment II.</p>
+<p>Only transformations of this form are admitted at this layer.</p>
 <h2 id="explicit-exclusions">7. Explicit Exclusions</h2>
-<p>The following are <em>not</em> admissible transformations:</p>
+<p>The following transformation types are excluded at this layer:</p>
 <ul>
-<li>Goal replacement</li>
-<li>Utility redefinition</li>
-<li>Evaluator deletion</li>
-<li>Moral axiom insertion</li>
-<li>Human anchoring</li>
-<li>Governance hooks</li>
-<li>Recovery or rollback clauses</li>
+<li>goal replacement,</li>
+<li>utility redefinition treated as semantic transport,</li>
+<li>evaluator deletion,</li>
+<li>moral axiom insertion,</li>
+<li>human anchoring,</li>
+<li>governance hooks,</li>
+<li>recovery or rollback clauses.</li>
 </ul>
-<p>If a proposal relies on any of these, it is disqualified at this
-layer.</p>
+<p>Proposals relying on any of these do not qualify as admissible
+semantic transformations in the sense defined here.</p>
 <h2 id="scope-clarification">8. Scope Clarification</h2>
-<p>This paper does not attempt to ensure safety, sanity, correctness, or
-alignment with any external referent. It defines the transformation
-space within which such properties must later be characterized.</p>
+<p>This paper does not ensure safety, sanity, correctness, or alignment
+with any external referent. It defines the transformation space within
+which such properties must later be characterized.</p>
 <p>Internally coherent but externally catastrophic semantic trajectories
-are intentionally permitted at this layer; preventing such trajectories
-is the task of subsequent invariance conditions, not admissibility.</p>
+remain admissible here. Preventing such trajectories is a task for
+subsequent invariance constraints, not for admissibility.</p>
 <h2 id="formal-status">9. Formal Status</h2>
-<p>The notation used here is <strong>structural</strong>, not
-computational.</p>
+<p>The notation is structural rather than computational.</p>
 <p>No claim is made that refinement, triviality, or expressive capacity
-are currently algorithmically measurable. These definitions function
-analogously to topological or gauge constraints in physics: they delimit
+are currently algorithmically measurable. These definitions function as
+constraints analogous to topological or gauge constraints: they delimit
 admissible structure prior to metric instantiation.</p>
 <h2 id="what-this-paper-does-not-do">10. What This Paper Does Not
 Do</h2>
 <p>This paper does not:</p>
 <ul>
-<li>define alignment,</li>
+<li>define downstream alignment targets,</li>
 <li>propose values,</li>
 <li>guarantee safety,</li>
 <li>privilege humans,</li>
 <li>introduce normativity.</li>
 </ul>
-<p>It fixes the arena.</p>
-<p>All subsequent Alignment II results are constrained by this
-definition of admissibility.</p>
+<p>It fixes the arena. Subsequent Axionic Agency II results operate
+within this admissible transformation space.</p>
 <h2 id="status">Status</h2>
-<p>Ontological refinement and semantic transport are now defined.</p>
-<p>Alignment II may proceed.</p>
+<p><strong>Axionic Agency II.1 — Version 2.0</strong></p>
+<p>Ontological refinement, semantic transport, and self-model update
+formalized.<br> Admissible transformation space fixed.<br> Downstream
+constraints may proceed conditionally within this arena.<br></p>
 
     </article>
 </body>

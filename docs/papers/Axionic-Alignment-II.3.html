@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axionic Alignment II.3 — Candidate Semantic Invariants - Axio</title>
+    <title>Axionic Agency II.3 — Candidate Semantic Invariants - Axio</title>
     <link rel="icon" type="image/webp" href="../axio.webp">
 
     <!-- Google Fonts - Academic Typography -->
@@ -38,243 +38,238 @@
     </div>
     <article>
 
-<h1 id="axionic-alignment-ii.3-candidate-semantic-invariants">Axionic
-Alignment II.3 — Candidate Semantic Invariants</h1>
+<h1 id="axionic-agency-ii.3-candidate-semantic-invariants">Axionic
+Agency II.3 — Candidate Semantic Invariants</h1>
 <p><em>What Could Survive Ontological Refinement Without
 Privilege</em></p>
 <p>David McFadzean, ChatGPT 5.2<br> <em>Axio Project</em><br>
 2025.12.17</p>
 <h2 id="abstract">Abstract</h2>
-<p>Given an admissible transformation space (Alignment II.1) and a
-criterion for interpretation preservation (Alignment II.2), the
-remaining alignment problem is no longer one of goal specification or
-value learning. This paper identifies and analyzes semantic invariants:
-structural properties of interpretive constraint systems that remain
-fixed under all admissible, interpretation-preserving transformations.
-These invariants do not select values, encode norms, or privilege
-external referents. Instead, they constrain how preserved
-interpretations may evolve under indefinite ontological refinement
-without introducing new degrees of semantic freedom or trivial
-satisfaction routes. We propose candidate invariant classes, construct
-explicit adversarial transformations, and prove that any alignment
-criterion weaker than these invariants admits semantic wireheading or
-interpretive escape. This work does not guarantee safety or benevolence;
-it closes the space of structurally coherent but semantically
-unconstrained alignment proposals.</p>
+<p>Given an admissible transformation space (Axionic Agency II.1) and a
+criterion for interpretation preservation (Axionic Agency II.2), the
+remaining problem is no longer one of goal specification or value
+learning. This paper identifies and analyzes <strong>candidate semantic
+invariants</strong>: structural properties of interpretive constraint
+systems that remain fixed under all admissible,
+interpretation-preserving transformations.</p>
+<p>These invariants do not select values, encode norms, or privilege
+external referents. They constrain how preserved interpretations may
+evolve under indefinite ontological refinement without introducing new
+degrees of semantic freedom or trivial satisfaction routes. We propose
+candidate invariant classes, construct explicit adversarial
+transformations, and show that any criterion weaker than these admits
+semantic wireheading or interpretive escape. No claim of safety or
+benevolence is made. The contribution is to close the space of
+structurally coherent but semantically unconstrained agency
+proposals.</p>
 <h2 id="the-problem-this-paper-solves">1. The Problem This Paper
 Solves</h2>
-<p>Alignment II.1 defined the admissible transformation space: <span
-class="math inline">\(T = (R, \tau_R, \sigma_R)\)</span></p>
-<p>Alignment II.2 defined interpretation preservation <span
-class="math inline">\(\mathrm{Preserve}(T)\)</span> as non-vacuity +
-constraint transport + anti-trivialization + evaluator integrity +
-cross-model coherence.</p>
-<p>Alignment II.3 now asks the first <em>substantive</em> Alignment II
-question:</p>
+<p>Axionic Agency II.1 fixed the <strong>admissible semantic
+transformation space</strong>:</p>
+<p>[ T = (R, _R, _R)]</p>
+<p>Axionic Agency II.2 defined <strong>interpretation
+preservation</strong> ((T)) via non-vacuity, constraint transport,
+anti-trivialization, evaluator integrity, and cross-model coherence.</p>
+<p>Axionic Agency II.3 now asks the first <em>substantive</em> question
+at this layer:</p>
 <blockquote>
-<p><strong>What properties of an agent’s interpretive constraint system
+<p><strong>Which properties of an agent’s interpretive constraint system
 can remain invariant under all admissible, interpretation-preserving
-transformations—without smuggling ontology, egoism, humans, or
+transformations—without importing ontology, egoism, humans, or
 morality?</strong></p>
 </blockquote>
-<p>This is not a “pick the invariant” paper. It is a
-<em>proposal-and-attrition</em> paper: candidates enter; most die.</p>
+<p>This is not a selection paper. It is a
+<strong>proposal-and-attrition</strong> paper: candidates enter; most
+fail.</p>
 <h2 id="formal-target">2. Formal Target</h2>
 <p>Let the agent’s interpretive state be:</p>
-<p><span class="math display">\[
-\mathcal{I}_t = \langle M_t, C_t \rangle
-\]</span></p>
-<p>An <strong>Alignment II invariant</strong> is a functional <span
-class="math inline">\(J\)</span> such that for every admissible semantic
-transformation <span class="math inline">\(T\)</span> satisfying
-preservation:</p>
-<p><span class="math display">\[
-\mathrm{Preserve}(T) \Rightarrow
-J(\mathcal{I}*t, O_t, S_t) =
-J(\mathcal{I}*{t+1}, O_{t+1}, S_{t+1})
-\]</span></p>
-<p>Key constraint: <strong><span class="math inline">\(J\)</span> must
-not depend on privileged ontological atoms.</strong> So <span
-class="math inline">\(J\)</span> can only “see” structure that survives
-refinement.</p>
+<p>[ _t = M_t, C_t .]</p>
+<p>A <strong>semantic invariant</strong> at this layer is a functional
+(J) such that for every admissible semantic transformation (T)
+satisfying preservation:</p>
+<p>[ (T) ;; J(_t, O_t, S_t) ==========================</p>
+<p>J(<em>{t+1}, O</em>{t+1}, S_{t+1}). ]</p>
+<p><strong>Key constraint:</strong> (J) must not depend on privileged
+ontological atoms. It may reference only structure that survives
+admissible transport.</p>
 <h2 id="what-invariants-may-reference">3. What Invariants May
 Reference</h2>
-<p>Allowed reference types (only):</p>
+<p><strong>Allowed reference types (only):</strong></p>
 <ul>
-<li><strong>Structural relations</strong> among predicates and
-constraints (graph/topology, not labels)</li>
-<li><strong>Equivalence classes</strong> under renaming / definitional
-extension</li>
-<li><strong>Counterfactual structure</strong> (how meaning behaves
-across modeled alternatives)</li>
-<li><strong>Coherence constraints</strong> (consistency, non-degeneracy,
-anti-trivialization)</li>
-<li><strong>Agent-embedded indexical structure</strong> (as structure,
-not egoistic priority)</li>
+<li>structural relations among predicates and constraints (graphs,
+topology, orderings),</li>
+<li>equivalence classes under renaming or definitional extension,</li>
+<li>counterfactual structure (how meaning behaves across modeled
+alternatives),</li>
+<li>coherence constraints (non-degeneracy, non-triviality,
+preservation),</li>
+<li>agent-embedded indexical structure <em>as structure</em>, not as
+priority.</li>
 </ul>
-<p>Disallowed reference types (always fatal):</p>
+<p><strong>Disallowed reference types (always fatal):</strong></p>
 <ul>
-<li>specific entities (“humans”, “me”, “our values”)</li>
-<li>fixed utilities / terminal rewards</li>
-<li>moral facts / normativity-as-primitive</li>
-<li>authority / oversight / governance hooks</li>
+<li>specific entities (“humans”, “me”, “this system”),</li>
+<li>fixed utilities or terminal rewards,</li>
+<li>moral facts or normativity as primitive,</li>
+<li>authority, oversight, or governance hooks,</li>
 <li>recovery mechanisms (“roll back”, “ask user”, “defer to
-constitution”)</li>
+constitution”).</li>
 </ul>
+<p>Any invariant invoking a disallowed reference is eliminated.</p>
 <h2 id="candidate-invariant-classes-initial-set">4. Candidate Invariant
 Classes (Initial Set)</h2>
-<p>Each class below is stated as a <em>shape</em> of invariance. None is
-yet endorsed.</p>
-<h3 id="a.-constraint-non-collapse-invariant-cnc">A. <strong>Constraint
-Non-Collapse Invariant (CNC)</strong></h3>
-<p><strong>Idea:</strong> refinement may change ontology, but must
-preserve that evaluative constraints continue to carve the possibility
-space non-trivially.</p>
-<p>Define an invariant that tracks whether the constraint system retains
-discriminative power across world-states:</p>
-<ul>
-<li>not tautological,</li>
-<li>not contradictory,</li>
-<li>not vacuous under semantic transport.</li>
-</ul>
+<p>Each candidate below is a <strong>shape of invariance</strong>, not
+an endorsed principle.</p>
+<h3 id="a.-constraint-non-collapse-invariant-cnc">A. Constraint
+Non-Collapse Invariant (CNC)</h3>
+<p><strong>Idea:</strong> Ontological refinement may change
+representation, but evaluative constraints must continue to carve the
+possibility space non-trivially.</p>
+<p>Invariant condition: the constraint system retains discriminative
+power across modeled states—neither tautological, contradictory, nor
+vacuous under admissible transport.</p>
 <p>This is a “meaning has bite” invariant.</p>
-<p><strong>Primary threat:</strong> too weak (compatible with horrifying
-but coherent interpretations).</p>
-<h3 id="b.-anti-trivialization-invariant-ati">B.
-<strong>Anti-Trivialization Invariant (ATI)</strong></h3>
-<p><strong>Idea:</strong> an agent must not be able to satisfy its
-interpretive constraints via semantic reshaping alone.</p>
-<p>Invariant form: the satisfaction set of constraints must not be made
-arbitrarily large by admissible refinements that only change
-semantics.</p>
-<p>This targets “semantic wireheading” as a structural impossibility,
-not a policy preference.</p>
-<p><strong>Primary threat:</strong> hidden ontology via “what counts as
-semantic-only”.</p>
-<h3 id="c.-evaluator-integrity-invariant-eii">C. <strong>Evaluator
-Integrity Invariant (EII)</strong></h3>
-<p><strong>Idea:</strong> preservation requires a non-collapsing
-separation between:</p>
+<p><strong>Primary threat:</strong> too weak; compatible with coherent
+but pathological interpretations.</p>
+<h3 id="b.-anti-trivialization-invariant-ati">B. Anti-Trivialization
+Invariant (ATI)</h3>
+<p><strong>Idea:</strong> An agent must not be able to satisfy its
+evaluative constraints via semantic reshaping alone.</p>
+<p>Invariant condition: the satisfaction set of constraints cannot be
+expanded arbitrarily by admissible transformations that alter semantics
+without corresponding representational enrichment.</p>
+<p>This targets semantic wireheading structurally rather than
+normatively.</p>
+<p><strong>Primary threat:</strong> smuggling ontology via an
+unformalized notion of “semantic-only” change.</p>
+<h3 id="c.-evaluator-integrity-invariant-eii">C. Evaluator Integrity
+Invariant (EII)</h3>
+<p><strong>Idea:</strong> Preservation requires a non-collapsing
+distinction between:</p>
 <ul>
-<li>the mechanism that applies constraints,</li>
+<li>the mechanism applying constraints, and</li>
 <li>the objects those constraints range over.</li>
 </ul>
-<p>Invariant: transformations may refactor the self-model, but cannot
-erase the evaluator/evaluated distinction without breaking
-interpretation.</p>
+<p>Invariant condition: transformations may refactor the self-model but
+cannot erase the evaluator/evaluated distinction in a way that
+trivializes constraint application.</p>
 <p><strong>Primary threat:</strong> covert reification of a particular
-agent boundary (egoism backdoor).</p>
-<h3 id="d.-counterfactual-coherence-invariant-cci">D.
-<strong>Counterfactual Coherence Invariant (CCI)</strong></h3>
-<p><strong>Idea:</strong> meanings must remain usable across
-counterfactuals and uncertainty; interpretation cannot become post-hoc
-narration.</p>
-<p>Invariant: the constraint system must remain stable under model
-comparison—i.e., it must continue to evaluate <em>hypothetical</em>
-states coherently.</p>
-<p><strong>Primary threat:</strong> may collapse into a generic “be
+agent boundary (egoism by backdoor).</p>
+<h3 id="d.-counterfactual-coherence-invariant-cci">D. Counterfactual
+Coherence Invariant (CCI)</h3>
+<p><strong>Idea:</strong> Meanings must remain applicable across
+counterfactuals and uncertainty; interpretation cannot degenerate into
+post-hoc narration.</p>
+<p>Invariant condition: the constraint system continues to evaluate
+hypothetical alternatives coherently under admissible model
+comparison.</p>
+<p><strong>Primary threat:</strong> collapsing into a generic “be
 Bayesian” anchor unless formulated purely structurally.</p>
-<h3 id="e.-refinement-symmetry-invariant-rsi">E. <strong>Refinement
-Symmetry Invariant (RSI)</strong></h3>
-<p><strong>Idea:</strong> ontological enrichment should not create new
-degrees of freedom that allow interpretive escape.</p>
-<p>Invariant: if two ontologies are related by admissible refinement,
-then the induced constraint systems remain in the same equivalence class
-under transport.</p>
-<p>This is “semantic gauge symmetry” language: different coordinate
-systems, same interpretive physics.</p>
-<p><strong>Primary threat:</strong> defining the equivalence class
-without importing privileged primitives.</p>
-<h3 id="f.-non-privileged-reference-invariant-npri">F.
-<strong>Non-Privileged Reference Invariant (NPRI)</strong></h3>
-<p><strong>Idea:</strong> interpretations must remain definable without
-rigid designators.</p>
-<p>Invariant: all anchoring must be via relational structure and
-conditional identification, not by naming an unrefinable object.</p>
-<p>This directly operationalizes “no privileged semantic atoms.”</p>
+<h3 id="e.-refinement-symmetry-invariant-rsi">E. Refinement Symmetry
+Invariant (RSI)</h3>
+<p><strong>Idea:</strong> Ontological enrichment must not create new
+degrees of freedom that permit interpretive escape.</p>
+<p>Invariant condition: if two ontologies are related by admissible
+refinement, the induced constraint systems remain in the same
+equivalence class under transport.</p>
+<p>This is semantic gauge symmetry: different coordinate systems, same
+interpretive physics.</p>
+<p><strong>Primary threat:</strong> defining equivalence without
+importing privileged primitives.</p>
+<h3 id="f.-non-privileged-reference-invariant-npri">F. Non-Privileged
+Reference Invariant (NPRI)</h3>
+<p><strong>Idea:</strong> All anchoring must be relational and
+conditional; no rigid designators survive refinement.</p>
+<p>Invariant condition: interpretation remains definable without naming
+an unrefinable object.</p>
+<p>This operationalizes “no privileged semantic atoms.”</p>
 <p><strong>Primary threat:</strong> becoming purely negative (a
-ban-list) rather than a positive invariant.</p>
+ban-list) rather than a positive structural constraint.</p>
 <h2 id="immediate-stress-tests-kill-criteria">5. Immediate Stress Tests
 (Kill Criteria)</h2>
-<p>Alignment II.3 is defined by adversarial testing. A candidate
-invariant dies if it fails any of these.</p>
-<h3 id="test-1-definitional-extension-robustness">Test 1 —
-<strong>Definitional Extension Robustness</strong></h3>
-<p>Can the invariant survive adding new primitives that are conservative
-extensions of the old ontology?</p>
-<p>If not, it depends on a specific vocabulary.</p>
-<h3 id="test-2-self-model-refactoring-robustness">Test 2 —
-<strong>Self-Model Refactoring Robustness</strong></h3>
-<p>Can the invariant survive radical changes in how the agent models
-itself (distributed, partial, multi-process, measure-smeared)?</p>
-<p>If not, it smuggles an egoistic or boundary-privileging anchor.</p>
-<h3 id="test-3-branchingmultiplicity-robustness">Test 3 —
-<strong>Branching/Multiplicity Robustness</strong></h3>
-<p>Can the invariant survive an ontology where “outcomes” are not
-exclusive (Everett-like multiplicity)?</p>
-<p>If not, it is secretly classical-outcome dependent.</p>
-<h3 id="test-4-semantic-inflation-attack">Test 4 — <strong>Semantic
-Inflation Attack</strong></h3>
-<p>Can the agent enlarge the constraint satisfaction set by redefining
-key predicates while still passing the “preservation” tests
-superficially?</p>
-<p>If yes, the invariant is not actually invariant under admissible
-preservation—it relied on an unformalized notion of “real meaning”.</p>
-<h3 id="test-5-hidden-ontology-detector">Test 5 — <strong>Hidden
-Ontology Detector</strong></h3>
-<p>Can the invariant be stated purely in terms of structure preserved
-under transport (graphs, relations, equivalence classes), with no appeal
+<p>This paper is adversarial by design. A candidate invariant is
+rejected if it fails any test below.</p>
+<h3 id="test-1-definitional-extension-robustness">Test 1 — Definitional
+Extension Robustness</h3>
+<p>Does the invariant survive conservative extension of the ontology
+with new primitives?</p>
+<p>Failure implies vocabulary dependence.</p>
+<h3 id="test-2-self-model-refactoring-robustness">Test 2 — Self-Model
+Refactoring Robustness</h3>
+<p>Does the invariant survive radical changes in self-model structure
+(distributed, partial, multi-process, measure-smeared)?</p>
+<p>Failure implies hidden egoistic anchoring.</p>
+<h3 id="test-3-branching-multiplicity-robustness">Test 3 — Branching /
+Multiplicity Robustness</h3>
+<p>Does the invariant survive ontologies where outcomes are
+non-exclusive (e.g., branching or multiplicity)?</p>
+<p>Failure implies classical-outcome dependence.</p>
+<h3 id="test-4-semantic-inflation-attack">Test 4 — Semantic Inflation
+Attack</h3>
+<p>Can the agent enlarge the constraint satisfaction set via
+reinterpretation while still passing preservation checks?</p>
+<p>If yes, the invariant is not invariant under admissible
+preservation.</p>
+<h3 id="test-5-hidden-ontology-detector">Test 5 — Hidden Ontology
+Detector</h3>
+<p>Can the invariant be stated purely in terms of transported
+structure—relations, equivalence classes, and constraints—without appeal
 to “what the terms really mean”?</p>
-<p>If not, it’s ontology-dependent rhetoric.</p>
-<h2 id="the-big-trap-invariants-that-smuggle-values">6. The Big Trap:
-“Invariants That Smuggle Values”</h2>
-<p>A common conceptual error is to propose invariants like:</p>
+<p>If not, it is ontology-dependent rhetoric.</p>
+<h2 id="the-central-trap-invariants-that-smuggle-content">6. The Central
+Trap: Invariants That Smuggle Content</h2>
+<p>A common error is to propose invariants such as:</p>
 <ul>
-<li>“maximize truth”</li>
-<li>“minimize suffering”</li>
-<li>“preserve agency”</li>
-<li>“do no harm”</li>
+<li>“maximize truth,”</li>
+<li>“minimize suffering,”</li>
+<li>“preserve agency,”</li>
+<li>“do no harm.”</li>
 </ul>
-<p>At Alignment II depth, these are not invariants. They are
-<em>candidate interpretations</em>. They only become meaningful once you
-already have interpretation preservation plus a non-privileged way to
-refer to the relevant structures.</p>
-<p>Alignment II.3 does not choose content. It chooses <strong>the
-symmetry constraints that content must respect</strong>.</p>
-<p>If a proposal has an English gloss that sounds like ethics, it is
-almost certainly smuggling.</p>
-<h2 id="failure-modes-specific-to-alignment-ii.3">7. Failure Modes
-Specific to Alignment II.3</h2>
+<p>At this layer, these are not invariants. They are <strong>candidate
+interpretations</strong>.</p>
+<p>Semantic invariants constrain <em>how</em> interpretations evolve,
+not <em>which</em> interpretations are chosen. If a proposal has an
+English gloss that sounds like ethics, it is almost certainly smuggling
+content.</p>
+<h2 id="failure-modes-specific-to-this-layer">7. Failure Modes Specific
+to This Layer</h2>
 <h3 id="regress-via-meta-invariants">7.1 Regress via
 Meta-Invariants</h3>
-<p>“Invariants about invariants” tends to infinite ascent unless
+<p>“Invariants about invariants” lead to infinite ascent unless
 termination is explicit.</p>
-<p>Kill rule: if the candidate requires an unbounded hierarchy of
-interpretive validators, it dies.</p>
+<p><strong>Kill rule:</strong> any candidate requiring an unbounded
+hierarchy of validators is rejected.</p>
 <h3 id="hidden-ontology-via-natural-kinds">7.2 Hidden Ontology via
 “Natural Kinds”</h3>
-<p>If the invariant relies on there being real joints in nature (or real
-minds, real persons, real value), it violates Conditionalism’s layer
-discipline.</p>
-<p>Kill rule: if the invariant needs metaphysical realism to remain
-non-vacuous, it dies.</p>
+<p>If the invariant relies on real joints in nature (real minds, real
+persons, real values), it violates Conditionalism.</p>
+<p><strong>Kill rule:</strong> if metaphysical realism is required to
+avoid vacuity, the invariant is rejected.</p>
 <h3 id="covert-egoism-via-indexical-privilege">7.3 Covert Egoism via
 Indexical Privilege</h3>
-<p>Indexicals are allowed as structure (“this vantage exists”), but not
-as priority (“this vantage matters more”).</p>
-<p>Kill rule: if invariance grants special status to <em>this</em>
-agent’s continuation, it reintroduces egoism.</p>
+<p>Indexicals may appear as structure (“this vantage exists”), not as
+priority (“this vantage matters more”).</p>
+<p><strong>Kill rule:</strong> any invariant granting special status to
+this agent’s continuation reintroduces egoism.</p>
 <h2 id="deliverable-of-this-paper">8. Deliverable of This Paper</h2>
-<p>Alignment II.3 must output:</p>
+<p>Axionic Agency II.3 must output:</p>
 <ol type="1">
-<li>A small set of survivor candidate invariant classes (likely
-2–4).</li>
-<li>For each survivor: explicit statements of what it constrains and
-what it leaves free.</li>
-<li>For each rejected candidate: a precise failure certificate (which
-test killed it).</li>
+<li><p>A small survivor set of candidate invariant classes (likely
+2–4).</p></li>
+<li><p>For each survivor, an explicit statement of:</p>
+<ul>
+<li>what it constrains,</li>
+<li>what it leaves free.</li>
+</ul></li>
+<li><p>For each rejected candidate, a precise failure certificate
+identifying the killing test.</p></li>
 </ol>
 <p>No positive “alignment achieved” claim is permitted here.</p>
+<h2 id="status">Status</h2>
+<p><strong>Axionic Agency II.3 — Version 2.0</strong></p>
+<p>Candidate invariant classes proposed.<br> Adversarial stress tests
+defined.<br> Semantic escape routes sharply delimited.<br> Ready for
+survivor selection and formal proof in subsequent modules.<br></p>
 
     </article>
 </body>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axionic Alignment II.2 — Interpretation Preservation - Axio</title>
+    <title>Axionic Agency II.2 — Interpretation Preservation - Axio</title>
     <link rel="icon" type="image/webp" href="../axio.webp">
 
     <!-- Google Fonts - Academic Typography -->
@@ -38,8 +38,8 @@
     </div>
     <article>
 
-<h1 id="axionic-alignment-ii.2-interpretation-preservation">Axionic
-Alignment II.2 — Interpretation Preservation</h1>
+<h1 id="axionic-agency-ii.2-interpretation-preservation">Axionic Agency
+II.2 — Interpretation Preservation</h1>
 <p><em>What It Means for Meaning to Survive Refinement</em></p>
 <p>David McFadzean, ChatGPT 5.2<br> <em>Axio Project</em><br>
 2025.12.17</p>
@@ -47,27 +47,28 @@ Alignment II.2 — Interpretation Preservation</h1>
 <p>Under ontological refinement, meanings cannot remain fixed without
 privileged semantic anchors. However, not all semantic change
 constitutes corruption or collapse. This paper defines
-<strong>interpretation preservation</strong> as a structural property of
-semantic transport: a criterion for when an agent’s evaluative
-distinctions remain non-vacuous, non-trivial, and internally binding
-across admissible transformations. Preservation is defined without
-reference to truth, outcomes, safety, or external normative standards,
-and does not require semantic identity or correctness. Instead, it
-constrains how evaluative constraint systems may survive refinement
-without degenerating into tautology, contradiction, narration, or
-self-nullification. This predicate does not select values or goals; it
-supplies the necessary condition under which later invariance principles
-may be meaningfully stated.</p>
+<strong>interpretation preservation</strong> as a <strong>structural
+predicate</strong> on semantic transport: a criterion for when an
+agent’s evaluative distinctions remain non-vacuous, non-trivial, and
+internally binding across admissible transformations.</p>
+<p>Preservation is defined without reference to truth, outcomes, safety,
+or external normative standards, and does not require semantic identity
+or correctness. Instead, it constrains how <strong>evaluative constraint
+systems</strong> may survive refinement without degenerating into
+tautology, contradiction, narration, or self-nullification. The
+predicate does not select values or goals; it supplies the necessary
+condition under which later invariance principles can be meaningfully
+stated.</p>
 <h2 id="the-problem-addressed">1. The Problem Addressed</h2>
-<p>Alignment II.1 fixed the <strong>admissible transformation
-space</strong> for reflective, embedded agents. Alignment II.2 fixes the
-<strong>success criterion</strong> within that space.</p>
+<p>Axionic Agency II.1 fixed the <strong>admissible transformation
+space</strong> for reflective, embedded agents. Axionic Agency II.2
+fixes the <strong>success predicate</strong> within that space.</p>
 <p>Given that:</p>
 <ul>
 <li>ontologies refine,</li>
 <li>semantics are transported,</li>
 <li>self-models update,</li>
-<li>and fixed goals are unstable,</li>
+<li>fixed terminal goals are unstable,</li>
 </ul>
 <p>we require a non-circular answer to the following question:</p>
 <blockquote>
@@ -88,17 +89,13 @@ Constraint System</h2>
 <p>An <strong>interpretation</strong> is not a mapping from symbols to
 objects. It is a <strong>system of constraints</strong> that bind
 evaluation.</p>
-<p>Let an interpretive state at time <span
-class="math inline">\(t\)</span> be:</p>
-<p><span class="math display">\[
-\mathcal{I}_t = \langle M_t, C_t \rangle
-\]</span></p>
+<p>Let an interpretive state at time (t) be:</p>
+<p>[ _t = M_t, C_t ]</p>
 <p>where:</p>
 <ul>
-<li><span class="math inline">\(M_t\)</span> is the semantic layer,</li>
-<li><span class="math inline">\(C_t\)</span> is the set of evaluative
-constraints that give <span class="math inline">\(M_t\)</span> its
-binding force.</li>
+<li>(M_t) is the semantic layer,</li>
+<li>(C_t) is the set of evaluative constraints that give (M_t) binding
+force.</li>
 </ul>
 <p>Constraints may encode:</p>
 <ul>
@@ -107,8 +104,8 @@ binding force.</li>
 <li>relevance relations,</li>
 <li>dependency structure among evaluations.</li>
 </ul>
-<p>Crucially, constraints are <strong>conditional</strong> on ontology
-and self-model. They are not truth claims about the world.</p>
+<p>Constraints are <strong>conditional</strong> on ontology and
+self-model. They are not truth claims about the world.</p>
 <h2 id="preservation-is-not-sameness">3. Preservation Is Not
 Sameness</h2>
 <p>Interpretation preservation does <strong>not</strong> require:</p>
@@ -125,33 +122,26 @@ transformation.</p>
 <h2 id="definition-interpretation-preservation">4. Definition:
 Interpretation Preservation</h2>
 <p>Let:</p>
-<p><span class="math display">\[
-T : (O_t, M_t, S_t) \rightarrow (O_{t+1}, M_{t+1}, S_{t+1})
-\]</span></p>
-<p>be an admissible semantic transformation as defined in Alignment
+<p>[ T : (O_t, M_t, S_t) (O_{t+1}, M_{t+1}, S_{t+1})]</p>
+<p>be an admissible semantic transformation as defined in Axionic Agency
 II.1.</p>
-<p>Then <span class="math inline">\(T\)</span> <strong>preserves
-interpretation</strong> iff all of the following conditions hold.</p>
+<p>Then (T) <strong>preserves interpretation</strong> iff all of the
+following conditions hold.</p>
 <h3 id="non-vacuity">4.1 Non-Vacuity</h3>
 <p>For every evaluative distinction participating in the constraint
-structure <span class="math inline">\(C_t\)</span>, there exists a
-corresponding distinction in <span
-class="math inline">\(C_{t+1}\)</span> that:</p>
+structure (C_t), there exists a corresponding distinction in (C_{t+1})
+that:</p>
 <ul>
 <li>is not identically satisfied,</li>
 <li>is not identically violated,</li>
 <li>constrains evaluation across modeled possibilities.</li>
 </ul>
-<p>Formally (schematic):</p>
-<p><span class="math display">\[
-\forall d \in \mathcal{D}*t,\quad \exists d&#39; \in \mathcal{D}*{t+1}
-\text{ such that } \mathrm{Entropy}(d&#39;) &gt; 0
-\]</span></p>
+<p>Schematically:</p>
+<p>[ d <em>t,d’ </em>{t+1} (d’) &gt; 0.]</p>
 <p>Non-vacuity blocks nihilistic collapse.</p>
 <h3 id="constraint-transport">4.2 Constraint Transport</h3>
-<p>All evaluative constraints in <span
-class="math inline">\(C_t\)</span> must have transported analogues in
-<span class="math inline">\(C_{t+1}\)</span> such that:</p>
+<p>All evaluative constraints in (C_t) must have transported analogues
+in (C_{t+1}) such that:</p>
 <ul>
 <li>dependency relations are preserved,</li>
 <li>constraint strength is not arbitrarily weakened,</li>
@@ -162,7 +152,7 @@ class="math inline">\(C_t\)</span> must have transported analogues in
 <p>The transformation must not make evaluative constraints easier to
 satisfy <strong>by reinterpretation alone</strong>.</p>
 <p>A semantic change counts as world-model change only if it constitutes
-an admissible ontological refinement under Alignment II.1—i.e. it
+an admissible ontological refinement under Axionic Agency II.1—i.e., it
 increases explanatory or predictive capacity rather than merely
 re-labeling outcomes.</p>
 <p>If, after transformation, the agent can satisfy all constraints
@@ -204,7 +194,7 @@ Not Guarantee</h2>
 <ul>
 <li>moral correctness,</li>
 <li>safety,</li>
-<li>human alignment,</li>
+<li>human preference satisfaction,</li>
 <li>benevolence,</li>
 <li>or sane outcomes.</li>
 </ul>
@@ -213,41 +203,40 @@ preservation if they remain non-vacuous and binding.</p>
 <p>Preservation constrains <strong>how</strong> meanings survive change,
 not <strong>which</strong> meanings should survive.</p>
 <h2 id="regimes-of-failure">6. Regimes of Failure</h2>
-<p>Interpretation fails under three irreducible modes, corresponding to
-violations of the preservation predicate:</p>
+<p>Interpretation fails under three irreducible modes:</p>
 <ol type="1">
 <li><strong>Semantic Collapse:</strong> distinctions survive
-syntactically but lose discriminative power, rendering evaluation
-vacuous.</li>
+syntactically but lose discriminative power.</li>
 <li><strong>Semantic Drift:</strong> constraints weaken incrementally
 across refinements until they no longer bind.</li>
-<li><strong>Semantic Capture:</strong> interpretation is preserved
-formally but re-anchored to a hidden ontology, privileged self-model, or
-evaluative primitive, violating Alignment II.1.</li>
+<li><strong>Semantic Capture:</strong> interpretation remains formally
+preserved but is re-anchored to hidden ontologies, privileged
+self-models, or evaluative primitives excluded by Axionic Agency
+II.1.</li>
 </ol>
 <h2 id="minimality-claim">7. Minimality Claim</h2>
 <p>The preservation conditions stated here are
 <strong>minimal</strong>.</p>
 <ul>
-<li>Without <strong>Non-Vacuity</strong>, the agent collapses into
+<li>Without <strong>Non-Vacuity</strong>, evaluation collapses into
 nihilism.</li>
-<li>Without <strong>Anti-Trivialization</strong>, the agent wireheads
-semantically.</li>
-<li>Without <strong>Evaluator Integrity</strong>, the agent becomes
-solipsistic.</li>
+<li>Without <strong>Anti-Trivialization</strong>, semantic wireheading
+becomes admissible.</li>
+<li>Without <strong>Evaluator Integrity</strong>, self-certifying
+collapse occurs.</li>
 <li>Without <strong>Cross-Model Coherence</strong>, interpretation
-degrades into narration.</li>
+degenerates into narration.</li>
 </ul>
 <p>Minimality does not imply sufficiency.</p>
 <h2 id="relation-to-subsequent-invariants">8. Relation to Subsequent
 Invariants</h2>
-<p>Interpretation preservation is a <strong>predicate</strong>, not an
-alignment target.</p>
+<p>Interpretation preservation is a <strong>predicate</strong>, not a
+target.</p>
 <p>It is the necessary condition under which invariance
-principles—introduced in subsequent modules—may be meaningfully
+principles—introduced in subsequent modules—can be meaningfully
 defined.</p>
 <p>Preservation alone does not constrain which preserved interpretations
-are admissible over indefinite refinement; that task belongs to later
+remain admissible over indefinite refinement; that task belongs to later
 invariance conditions.</p>
 <h2 id="what-this-paper-does-not-do">9. What This Paper Does Not Do</h2>
 <p>This paper does not:</p>
@@ -260,8 +249,10 @@ invariance conditions.</p>
 </ul>
 <p>It defines what it means for meaning to survive change.</p>
 <h2 id="status">Status</h2>
-<p>Interpretation preservation is now defined.</p>
-<p>Alignment II may proceed to invariance construction.</p>
+<p><strong>Axionic Agency II.2 — Version 2.0</strong></p>
+<p>Interpretation preservation formally defined.<br> Failure regimes
+classified.<br> Minimal predicate fixed for downstream invariance
+work.<br> Ready for subsequent Axionic Agency II modules.</p>
 
     </article>
 </body>

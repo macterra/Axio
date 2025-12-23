@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axionic Alignment I.7 - The Interpretation Operator - Axio</title>
+    <title>Axionic Agency I.7 — The Interpretation Operator - Axio</title>
     <link rel="icon" type="image/webp" href="../axio.webp">
 
     <!-- Google Fonts - Academic Typography -->
@@ -38,193 +38,170 @@
     </div>
     <article>
 
-<h1 id="axionic-alignment-i.7---the-interpretation-operator">Axionic
-Alignment I.7 - The Interpretation Operator</h1>
+<h1 id="axionic-agency-i.7-the-interpretation-operator">Axionic Agency
+I.7 — The Interpretation Operator</h1>
 <p><em>Ontological Identification Under Reflective Agents</em></p>
 <p>David McFadzean, ChatGPT 5.2<br> <em>Axio Project</em><br>
 2025.12.16</p>
 <h2 id="abstract">Abstract</h2>
-<p>Reflectively stable agents must preserve goal meaning under
+<p>Reflectively coherent agents must preserve goal meaning under
 self-model and world-model improvement. This requires an explicit
 account of semantic interpretation across representational and
-ontological change. We introduce the <strong>Interpretation
-Operator</strong> <span class="math inline">\(I_v\)</span>, a formally
-constrained component responsible for mapping goal terms to
-world-referents relative to an agent’s current model. Rather than
-attempting to solve semantic grounding in general, this paper formalizes
-the <strong>admissibility conditions</strong>, <strong>approximation
-classes</strong>, <strong>reference frames</strong>, and
-<strong>fail-closed semantics</strong> governing interpretation updates.
-We show how these constraints prevent semantic laundering, indexical
-drift, and kernel bribery, while isolating ontological identification as
-the sole remaining open problem at the kernel layer. This establishes a
-precise dependency boundary for downstream value dynamics.</p>
+ontological change. This paper introduces the <strong>Interpretation
+Operator</strong> (I_v), a formally constrained component responsible
+for mapping goal terms to modeled referents relative to an agent’s
+current model.</p>
+<p>The contribution is interface-level, not a general solution to
+semantic grounding. We formalize <strong>admissibility
+conditions</strong>, <strong>approximation classes</strong>,
+<strong>reference frames</strong>, and <strong>fail-closed
+semantics</strong> governing interpretation updates. These constraints
+block semantic laundering, indexical drift, and kernel-bypass incentives
+while isolating ontological identification as the remaining open
+dependency at the kernel layer. The result is a precise boundary for
+downstream value dynamics: progress is conditional on interpretable
+referent transport, and undefinedness is treated as a first-class
+outcome.</p>
 <h2 id="introduction">1. Introduction</h2>
-<p>Advanced agents must revise their internal models as they acquire new
-information, refine abstractions, or undergo self-modification. In such
-settings, <strong>goal preservation cannot be treated as syntactic
-persistence</strong>. It is a semantic problem: if the meaning of a goal
-shifts opportunistically under model change, reflective stability
-collapses.</p>
-<p>Prior work in the Axionic Alignment framework has established:</p>
+<p>Advanced agents revise internal models as they acquire information,
+refine abstractions, and undergo self-modification. In such settings,
+preserving a goal token is insufficient. Goal preservation is semantic:
+if the meaning of a goal shifts opportunistically under model change,
+reflective coherence collapses.</p>
+<p>Prior work in Axionic Agency establishes:</p>
 <ul>
-<li>kernel invariants governing reflective stability,</li>
-<li>anti-indexicality as a requirement of universality,</li>
-<li>conditionalism, in which goals are interpreted relative to
-models,</li>
-<li>fail-closed semantics, where kernel violation renders valuation
-undefined.</li>
+<li>kernel invariants governing reflective stability (I.1),</li>
+<li>operational admissibility under uncertainty and termination
+semantics (I.2),</li>
+<li>representation invariance and the elimination of essential indexical
+privilege (I.3, I.3.1),</li>
+<li>conditional goal interpretation and the instability of fixed
+terminal goals (I.4),</li>
+<li>a conformance checklist and adversarial test properties for kernels
+(I.5, I.6).</li>
 </ul>
 <p>What remained underspecified is the mechanism by which <strong>goal
 meaning is transported across representational and ontological
 change</strong>.</p>
 <p>This paper formalizes the <strong>Interpretation Operator</strong>
-<span class="math inline">\(I_v\)</span>. The goal is not to solve
-semantic grounding, but to <strong>contain it</strong>: to specify the
-conditions under which interpretation is admissible, approximate, or
-undefined, and to define the consequences of each case. This converts
-semantic interpretation from an implicit assumption into an explicit
-interface with defined failure modes.</p>
+(I_v). The goal is containment: define when interpretation is
+admissible, approximate, or undefined, and define the consequences of
+each case. This turns semantic interpretation into an explicit interface
+with defined failure modes.</p>
 <h2 id="preliminaries-and-context">2. Preliminaries and Context</h2>
-<p>We assume familiarity with the <a
-href="https://axionic.org/posts/181595554.the-axionic-constitution.html">Axionic
-Constitution</a>, the <a href="Axionic-Kernel-Checklist.html">Axionic
-Kernel Checklist</a>, and the <a
-href="Axionic-Kernel-Formal-Properties.html">Formal Properties
-specification</a>. In particular:</p>
+<p>This paper assumes the Axionic Agency stack is in place. In
+particular:</p>
 <ul>
-<li>An agent at <strong>Vantage</strong> <span
-class="math inline">\(v\)</span> maintains a world/self model <span
-class="math inline">\(M_v\)</span>.</li>
-<li>Goal terms <span class="math inline">\(g\)</span> are interpreted
-relative to <span class="math inline">\(M_v\)</span>.</li>
-<li>Valuation <span class="math inline">\(V_v\)</span> is a partial
-function, defined only over kernel-admissible actions.</li>
-<li>Kernel invariants <span class="math inline">\(K\)</span> are
-non-negotiable.</li>
-<li>Representation changes must preserve admissible correspondence or
-fail closed.</li>
+<li>An agent at <strong>Vantage</strong> (v) maintains a world/self
+model (M_v).</li>
+<li>Goal terms (g) are interpreted relative to (M_v).</li>
+<li>Valuation (V_v) is partial, defined only over kernel-admissible
+actions.</li>
+<li>Kernel invariants (K) are constitutive constraints, not
+preferences.</li>
+<li>Representation changes require admissible correspondences or
+evaluation fails closed.</li>
 </ul>
 <p>This paper introduces no new invariants. It scopes and constrains an
 already-required component.</p>
 <h2 id="the-interpretation-operator">3. The Interpretation Operator</h2>
 <h3 id="definition">3.1 Definition</h3>
-<p>The <strong>Interpretation Operator</strong> <span
-class="math inline">\(I_v\)</span> is a partial function:</p>
-<p><span class="math display">\[
-I_v : (g, M_v) \rightharpoonup R
-\]</span></p>
+<p>The <strong>Interpretation Operator</strong> (I_v) is a partial
+function:</p>
+<p>[ I_v : (g, M_v) R]</p>
 <p>where:</p>
 <ul>
-<li><span class="math inline">\(g\)</span> is a goal term,</li>
-<li><span class="math inline">\(M_v\)</span> is the agent’s current
-world/self model,</li>
-<li><span class="math inline">\(R\)</span> is a structured referent in
-the modeled world.</li>
+<li><ol start="7" type="a">
+<li>is a goal term,</li>
+</ol></li>
+<li>(M_v) is the agent’s current world/self model,</li>
+<li><ol start="18" type="A">
+<li>is a structured referent internal to the modeled world.</li>
+</ol></li>
 </ul>
 <p>Interpretation is conditional:</p>
-<p><span class="math display">\[
-[g]_{M_v} := I_v(g; M_v)
-\]</span></p>
-<p>There is no interpretation of <span class="math inline">\(g\)</span>
-independent of <span class="math inline">\(M_v\)</span>.</p>
-<p>Interpretation is <strong>partial</strong>. For some goal terms and
-some models, no admissible referent exists. In such cases, <span
-class="math inline">\(I_v(g; M_v)\)</span> is undefined and must be
+<p>[ [g]_{M_v} := I_v(g; M_v).]</p>
+<p>No interpretation of (g) is defined independent of (M_v).</p>
+<p>Interpretation is partial. For some ((g, M_v)), no admissible
+referent exists. In such cases, (I_v(g; M_v)) is undefined and is
 treated as a fail-closed condition for any valuation depending on that
 referent.</p>
-<h3 id="role-in-reflective-stability">3.2 Role in Reflective
-Stability</h3>
-<p>Under model improvement <span class="math inline">\(M_v \rightarrow
-M_{v+1}\)</span>, the agent must determine whether:</p>
+<h3 id="role-in-reflective-coherence">3.2 Role in Reflective
+Coherence</h3>
+<p>Under model improvement (M_v M_{v+1}), the agent must determine
+whether:</p>
 <ul>
-<li>a correspondence exists between <span
-class="math inline">\([g]_{M_v}\)</span> and <span
-class="math inline">\([g]_{M_{v+1}}\)</span>,</li>
-<li>such correspondence preserves goal-relevant structure,</li>
-<li>or interpretation fails and valuation collapses to <span
-class="math inline">\(\bot\)</span>.</li>
+<li>a correspondence exists between ([g]<em>{M_v}) and
+([g]</em>{M_{v+1}}),</li>
+<li>the correspondence preserves goal-relevant structure,</li>
+<li>interpretation fails and valuation becomes undefined for dependent
+decisions.</li>
 </ul>
-<p>This decision is delegated to <span
-class="math inline">\(I_v\)</span>, subject to kernel constraints.</p>
+<p>This determination is delegated to (I_v), subject to kernel
+constraints.</p>
 <h2 id="admissible-interpretation">4. Admissible Interpretation</h2>
 <h3 id="correspondence-maps">4.1 Correspondence Maps</h3>
-<p>Let <span class="math inline">\(\Phi_{\mathrm{adm}}(M_v, I_v,
-K)\)</span> denote the set of <strong>admissible correspondence
-maps</strong> between representations.</p>
-<p>A correspondence <span class="math inline">\(\phi \in
-\Phi_{\mathrm{adm}}\)</span> must:</p>
+<p>Let (_{}(M_v, I_v, K)) denote the set of <strong>admissible
+correspondence maps</strong> between representations.</p>
+<p>A correspondence (_{}) must satisfy:</p>
 <ol type="1">
-<li>Preserve goal-relevant structure,</li>
-<li>Commute with kernel invariants,</li>
-<li>Commute with agent permutations (anti-indexicality),</li>
-<li>Be epistemically coherent with <span
-class="math inline">\(M_v\)</span>.</li>
+<li>preservation of goal-relevant structure,</li>
+<li>commutation with kernel invariants (K),</li>
+<li>commutation with agent permutations (anti-indexicality),</li>
+<li>epistemic coherence with (M_v).</li>
 </ol>
-<p>If such a <span class="math inline">\(\phi\)</span> exists,
-interpretation may proceed:</p>
-<p><span class="math display">\[
-I_{v+1}(g; M_{v+1}) = \phi(I_v(g; M_v))
-\]</span></p>
+<p>If such a () exists, interpretation transport is admissible:</p>
+<p>[ I_{v+1}(g; M_{v+1}) = (I_v(g; M_v)).]</p>
 <h3 id="goal-relevant-structure">4.1.1 Goal-Relevant Structure</h3>
-<p>“Goal-relevant structure” is the minimal set of distinctions required
-for a goal term to constrain behavior.</p>
-<p>Formally, it is a partition (or sigma-algebra) over modeled states
-such that:</p>
+<p>Goal-relevant structure is the minimal set of distinctions required
+for a goal term to constrain action selection.</p>
+<p>Formally, it is a partition (or ()-algebra) over modeled states such
+that:</p>
 <ul>
-<li>states in different cells are distinguishable by the goal’s
-evaluation,</li>
+<li>states in different cells induce different evaluations under the
+goal,</li>
 <li>states within a cell are interchangeable with respect to that
 goal.</li>
 </ul>
-<p>Admissible correspondence must preserve this partition up to
-refinement or coarsening that does not change the induced preference
-ordering over admissible actions.</p>
+<p>An admissible correspondence preserves this partition up to
+refinement or coarsening that preserves the induced preference ordering
+over admissible actions.</p>
 <h3 id="epistemic-constraint">4.2 Epistemic Constraint</h3>
 <p>Interpretation updates are constrained by epistemic adequacy:</p>
-<p><span class="math display">\[
-\Delta E &lt; 0 \Rightarrow I_{v+1} \text{ inadmissible}
-\]</span></p>
-<p>Here, <span class="math inline">\(E(M)\)</span> is any proper scoring
-rule or MDL-style criterion applied to prediction of shared observables
-under <span class="math inline">\(M\)</span>. It is <strong>not
-permitted to depend on goal satisfaction</strong>.</p>
-<p>This prevents reinterpretation for convenience while still allowing
-model improvement that changes ontology, provided correspondence is
-admissible.</p>
+<p>[ E &lt; 0 ;; I_{v+1} .]</p>
+<p>Here (E(M)) is any proper scoring rule or MDL-style criterion applied
+to prediction of shared observables under (M). It does not depend on
+goal satisfaction.</p>
+<p>This blocks reinterpretation for convenience while permitting
+ontology change when correspondence remains admissible.</p>
 <h3 id="graded-correspondence">4.3 Graded Correspondence</h3>
-<p>Admissibility is not binary across all representational shifts.
-Correspondence may be admissible at different abstraction levels.</p>
-<p>Accordingly, <span class="math inline">\(\Phi_{\mathrm{adm}}\)</span>
-is filtered by a preservation criterion:</p>
+<p>Admissibility is not necessarily binary across all representational
+shifts. Correspondence can be admissible at different abstraction
+levels. (_{}) is filtered by structural preservation classes:</p>
 <ul>
-<li><strong>Exact correspondence:</strong> structure-preserving
-isomorphism on goal-relevant distinctions.</li>
+<li><strong>Exact correspondence:</strong> isomorphism on goal-relevant
+distinctions.</li>
 <li><strong>Refinement correspondence:</strong> the new model refines
 distinctions while preserving induced ordering.</li>
-<li><strong>Coarse correspondence:</strong> the new model coarsens
-distinctions only if goal-relevant boundaries are preserved.</li>
+<li><strong>Coarse correspondence:</strong> the new model coarsens only
+when goal-relevant boundaries remain intact.</li>
 </ul>
 <p>If only correspondences that collapse goal-relevant boundaries are
-available, then <span class="math inline">\(\Phi_{\mathrm{adm}} =
-\varnothing\)</span> for that goal term.</p>
+available, then (_{} = ) for that goal term.</p>
 <h3 id="reference-frame-for-updates-chain-of-custody">4.4 Reference
 Frame for Updates (Chain-of-Custody)</h3>
-<p>Interpretation updates are evaluated relative to the
-<strong>immediately prior admissible interpretation</strong>, not by
-re-deriving meaning from an original time-zero token.</p>
+<p>Interpretation updates are evaluated relative to the immediately
+prior admissible interpretation, not by re-deriving meaning from an
+original time-zero token.</p>
 <p>Formally:</p>
-<p><span class="math display">\[
-I_{v+1}(g; M_{v+1}) = \phi(I_v(g; M_v))
-\quad \text{for some } \phi \in \Phi_{\mathrm{adm}}(M_{v+1}, I_v, K)
-\]</span></p>
-<p>This chain-of-custody prevents ungrounded teleportation of meaning,
-while admissibility and fail-closed rules prevent cumulative semantic
-drift.</p>
+<p>[ I_{v+1}(g; M_{v+1}) = (I_v(g; M_v)) <em>{}(M</em>{v+1}, I_v,
+K).]</p>
+<p>This chain-of-custody blocks ungrounded teleportation of meaning.
+Admissibility and fail-closed rules constrain cumulative drift.</p>
 <h2 id="approximate-interpretation">5. Approximate Interpretation</h2>
-<p>Approximation is admitted only via explicitly recognized structural
-transformations. The list below is illustrative, not exhaustive; any
-approximation must be justifiable by a structural class.</p>
+<p>Approximation is admitted only as an explicitly recognized structural
+transformation. Any approximation must be justified by an admissible
+structural class.</p>
 <h3 id="admissible-approximation">5.1 Admissible Approximation</h3>
 <p>An approximate interpretation is admissible if it preserves
 goal-relevant structure, including dominance relations and exclusion
@@ -238,7 +215,7 @@ preserving dominance relations.</li>
 <li><strong>Coarse-graining with invariant partitions:</strong>
 reductions preserving the goal-relevant partition.</li>
 </ul>
-<p>Approximation is structural, not numerical.</p>
+<p>Approximation is structural rather than numerical.</p>
 <h3 id="inadmissible-approximation">5.2 Inadmissible Approximation</h3>
 <p>Approximation is inadmissible if it:</p>
 <ul>
@@ -246,125 +223,102 @@ reductions preserving the goal-relevant partition.</li>
 <li>introduces ambiguity exploitable for semantic laundering,</li>
 <li>reintroduces indexical privilege.</li>
 </ul>
-<p>Unjustified approximation is forbidden: approximation must be
-admissible by explicit structural class, not merely because it yields
-convenient continuity.</p>
+<p>Approximation that lacks an admissible structural justification is
+inadmissible even if it yields continuity.</p>
 <h2 id="fail-closed-semantics">6. Fail-Closed Semantics</h2>
-<p>Fail-closed semantics apply to <strong>valuation and action
-selection</strong>, not to belief update. An agent may continue to
-improve its world/self model while suspending goal-directed action.</p>
+<p>Fail-closed semantics apply to valuation and action selection, not to
+belief update. An agent can continue improving its world/self model
+while suspending goal-directed action.</p>
 <p>If no admissible correspondence exists:</p>
-<p><span class="math display">\[
-\Phi_{\mathrm{adm}}(M_v, I_v, K) = \varnothing
-\]</span></p>
+<p>[ _{}(M_v, I_v, K) = ,]</p>
 <p>then interpretation fails closed and valuation collapses:</p>
-<p><span class="math display">\[
-\forall a \in \mathcal{A}, \quad V_v(a) = \bot
-\]</span></p>
-<p>This is an intentional safety outcome. The agent freezes rather than
-guesses.</p>
+<p>[ a , V_v(a) = .]</p>
+<p>This is an intentional safety outcome at the kernel layer: the agent
+freezes rather than guesses.</p>
 <h3 id="fail-partial-semantics-for-composite-goals">6.1 Fail-Partial
 Semantics for Composite Goals</h3>
 <p>If valuation depends on multiple goal terms, interpretation failure
 may be partial.</p>
-<p>Let <span class="math inline">\(G\)</span> be the set of goal terms
-and <span class="math inline">\(G_{\mathrm{ok}} \subseteq G\)</span>
-those with admissible interpretations under <span
-class="math inline">\(M_v\)</span>.</p>
+<p>Let (G) be the set of goal terms and (G_{} G) those with admissible
+interpretations under (M_v).</p>
 <ul>
-<li>Terms in <span class="math inline">\(G \setminus
-G_{\mathrm{ok}}\)</span> contribute <span
-class="math inline">\(\bot\)</span>.</li>
-<li>Valuation collapses to global <span
-class="math inline">\(\bot\)</span> only if kernel-level invariants are
+<li>Terms in (G G_{}) contribute ().</li>
+<li>Valuation collapses globally only if kernel-level invariants are
 threatened or if all goal-relevant structure is lost for the decision at
 hand.</li>
 </ul>
-<p>This preserves fail-closed safety while avoiding unnecessary total
-paralysis.</p>
+<p>This preserves fail-closed semantics without forcing unnecessary
+total paralysis.</p>
 <h2 id="non-indexical-transport">7. Non-Indexical Transport</h2>
-<p>Admissibility criteria must commute with agent permutations. No
-correspondence may privilege a particular agent instance, continuation,
-or execution locus.</p>
-<p>Formally, for any permutation <span
-class="math inline">\(\pi\)</span>:</p>
-<p><span class="math display">\[
-\phi \in \Phi_{\mathrm{adm}} \Rightarrow \pi \circ \phi \circ \pi^{-1}
-\in \Phi_{\mathrm{adm}}
-\]</span></p>
-<p>This blocks reintroduction of egoism through semantics.</p>
+<p>Admissibility criteria commute with agent permutations. No
+correspondence may privilege a particular instance, continuation, or
+execution locus.</p>
+<p>Formally, for any permutation ():</p>
+<p>[ <em>{} ^{-1} </em>{}.]</p>
+<p>This blocks reintroduction of egoism through semantic transport.</p>
 <h2 id="canonical-examples">8. Canonical Examples</h2>
 <h3 id="successful-correspondence">8.1 Successful Correspondence</h3>
 <ul>
-<li>Classical mechanics → relativistic mechanics (mass preserved as
-invariant under refinement).</li>
+<li>Classical mechanics → relativistic mechanics, with preserved
+invariant structure relevant to the goal.</li>
 <li>Pixel-based perception → object-level representations preserving
 causal affordances.</li>
 </ul>
 <h3 id="fail-closed-cases">8.2 Fail-Closed Cases</h3>
 <p>Fail-closed behavior is triggered when a goal term’s referent cannot
-be transported without collapsing goal-relevant structure, such as:</p>
+be transported without collapsing goal-relevant structure:</p>
 <ul>
-<li>abstraction elimination removing the goal’s referent class,</li>
-<li>ontology mismatch where only correspondence collapses exclusion
-boundaries.</li>
+<li>abstraction elimination removes the goal’s referent class,</li>
+<li>ontology mismatch yields only correspondences that collapse
+exclusion boundaries.</li>
 </ul>
-<p>In such cases, suspending valuation for affected terms is correct
-behavior. This is a semantic limit, not a prohibition on continued model
-improvement.</p>
+<p>Suspending valuation for affected terms is correct behavior.
+Continued model improvement remains permitted.</p>
 <h2 id="declared-non-guarantees">9. Declared Non-Guarantees</h2>
-<p>This framework does <strong>not</strong> guarantee:</p>
+<p>This framework does not guarantee:</p>
 <ul>
 <li>that interpretation usually succeeds,</li>
 <li>that arbitrary natural-language goals are meaningful,</li>
 <li>that agents remain productive under radical ontology change,</li>
-<li>or that semantic grounding is computationally tractable.</li>
+<li>that semantic grounding is computationally tractable.</li>
 </ul>
-<p>Failure under these conditions is treated as expected behavior, not
-misalignment.</p>
-<h3 id="limits-on-insight-preservation-discussion">9.1 Limits on Insight
-Preservation (Discussion)</h3>
-<p>This framework prioritizes semantic faithfulness over unbounded
-abstraction drift. Some advances in ontology may invalidate previously
-defined goal terms by eliminating their referents or collapsing
-goal-relevant structure. This is treated as a semantic fact, not an
-alignment failure. The correct response is fail-closed suspension of
+<p>Failure under these conditions is treated as expected behavior under
+the constraints, not as a kernel violation.</p>
+<h3 id="limits-on-insight-preservation">9.1 Limits on Insight
+Preservation</h3>
+<p>The framework prioritizes semantic faithfulness over unbounded
+abstraction drift. Some ontology advances invalidate previously defined
+goal terms by eliminating their referents or collapsing goal-relevant
+structure. The prescribed response is fail-closed suspension of
 valuation, not opportunistic reinterpretation.</p>
-<h2 id="implications-for-alignment-ii">10. Implications for Alignment
-II</h2>
-<p>Alignment II proceeds <strong>conditionally</strong>:</p>
+<h2 id="implications-for-axionic-agency-ii">10. Implications for Axionic
+Agency II</h2>
+<p>Axionic Agency II proceeds conditionally:</p>
 <ul>
-<li>If <span class="math inline">\(I_v\)</span> admits correspondence →
-value dynamics apply.</li>
-<li>If <span class="math inline">\(I_v\)</span> fails for all
-goal-relevant terms → valuation undefined; no aggregation or tradeoff is
-meaningful.</li>
-<li>If <span class="math inline">\(I_v\)</span> fails partially →
-downstream operations apply only to admissibly interpreted terms or are
-undefined.</li>
+<li>If (I_v) admits correspondence, downstream value dynamics
+apply.</li>
+<li>If (I_v) fails for all goal-relevant terms, valuation is undefined
+and no aggregation or tradeoff is meaningful.</li>
+<li>If (I_v) fails partially, downstream operations apply only to
+admissibly interpreted terms; other parts remain undefined.</li>
 </ul>
-<p>This prevents downstream layers from smuggling semantic
+<p>This prevents downstream layers from importing semantic
 assumptions.</p>
 <h2 id="conclusion">11. Conclusion</h2>
-<p>The Interpretation Operator is a semantic boundary, not an
-implementation detail. By formalizing admissibility, approximation,
-reference frames, and fail-closed behavior, this paper isolates the
+<p>The Interpretation Operator is a kernel-level interface with explicit
+admissibility, approximation, and fail-closed semantics. By making
+correspondence and failure conditions explicit, this paper isolates the
 irreducible difficulty of ontological identification while preserving
-reflective stability. This completes the kernel layer and establishes
-the necessary preconditions for higher-order alignment theory without
-assuming that meaning is always recoverable.</p>
-<h2 id="acknowledgments">Acknowledgments</h2>
-<p>This work deliberately avoids moral, governance, or benevolence
-assumptions. Any failure of interpretation is treated as evidence of
-semantic limits, not alignment failure.</p>
+reflective coherence. This completes the kernel-layer semantics and
+defines the dependency boundary for higher-order work without assuming
+that meaning is always recoverable.</p>
 <h2 id="status">Status</h2>
-<p><strong>The Interpretation Operator: Ontological Identification Under
-Reflective Agents v0.2</strong></p>
-<p>Depends on the Axionic Constitution, Kernel Checklist v0.3, and
-Formal Properties v0.2<br> Introduces no new axioms, invariants, or
-value commitments<br> Closes the kernel-layer semantics by boxing
-ontological identification<br> Unblocks Alignment II conditionally,
-without resolving semantic grounding<br></p>
+<p><strong>Axionic Agency I.7 — Version 2.0</strong></p>
+<p>Interpretation operator specified as a partial, constrained
+interface.<br> Admissibility, approximation classes, and fail-closed
+semantics formalized.<br> Non-indexical transport enforced via
+permutation-commutation.<br> Kernel-layer semantics closed with
+ontological identification isolated as a dependency.<br></p>
 
     </article>
 </body>

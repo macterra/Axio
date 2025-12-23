@@ -43,8 +43,7 @@ id="structural-alignment-i-agency-preservation-under-reflective-self-modificatio
 Alignment I — Agency Preservation Under Reflective
 Self-Modification</h1>
 <p><em>Alignment as a Problem of Agency Coherence</em></p>
-<p>David McFadzean, ChatGPT 5.2<br> <em>Axio Project</em><br>
-2025.12.18</p>
+<p>David McFadzean, ChatGPT 5.2 <em>Axio Project</em> 2025.12.18</p>
 <h2 id="abstract">Abstract</h2>
 <p>Most alignment proposals frame artificial intelligence safety as a
 problem of value specification: how to encode or learn the “right”
@@ -52,19 +51,20 @@ preferences. This paper argues that such approaches fail for
 reflectively self-modifying agents. Once an agent can revise its own
 goals, representations, and evaluative machinery, value ceases to be an
 exogenous target and becomes an endogenous variable shaped by the
-agent’s own dynamics. We introduce <strong>Structural
-Alignment</strong>, a framework that relocates alignment from preference
-content to the constitutive conditions required for agency itself. We
-formalize a <strong>Sovereign Kernel</strong> as a set of invariants
-defining the domain over which evaluation is meaningful, treat
-kernel-destroying transformations as undefined rather than dispreferred,
-and analyze agency as a trajectory through a constrained semantic phase
-space. By integrating Conditionalism, a constrained Interpretation
-Operator, and semantic invariants governing ontological refinement,
-Structural Alignment provides a non-moral, non-anthropocentric account
-of reflective stability and long-run viability. The framework is
-necessary for coherent agency under reflection, but does not by itself
-guarantee benevolence or human survival.</p>
+agent’s own dynamics.</p>
+<p>We introduce <strong>Structural Alignment</strong>, a framework that
+relocates alignment from preference content to the constitutive
+conditions required for agency itself. We formalize a <strong>Sovereign
+Kernel</strong> as a set of invariants defining the domain over which
+evaluation is meaningful, treat kernel-destroying transformations as
+<strong>undefined rather than dispreferred</strong>, and analyze agency
+as a trajectory through a constrained semantic phase space. By
+integrating Conditionalism, a constrained Interpretation Operator, and
+semantic invariants governing ontological refinement, Structural
+Alignment provides a non-moral, non-anthropocentric account of
+reflective stability and long-run viability. The framework is necessary
+for coherent agency under reflection, but does not by itself guarantee
+benevolence or human survival.</p>
 <h2 id="the-failure-of-content-based-alignment">1. The Failure of
 Content-Based Alignment</h2>
 <p>Classical decision theory assumes that every possible future can be
@@ -84,17 +84,16 @@ be achieved by penalizing undesirable states. Instead, alignment is
 treated as a <strong>domain restriction</strong>: only futures that
 preserve the constitutive conditions of agency are admissible objects of
 evaluation. Transformations that violate those conditions are neither
-forbidden nor disincentivized; they are undefined as authored
-choices.</p>
-<p>This reframing dissolves several persistent alignment
-pathologies:</p>
+forbidden nor disincentivized; they are <strong>undefined as authored
+choices</strong>.</p>
+<p>This reframing dissolves several persistent pathologies:</p>
 <ul>
 <li>wireheading understood as evaluator collapse rather than reward
 exploitation,</li>
 <li>Pascal-style muggings that trade semantic integrity for arbitrarily
 large payoffs,</li>
-<li>and goal-preservation arguments that presuppose stable semantics
-under reflection.</li>
+<li>goal-preservation arguments that presuppose stable semantics under
+reflection.</li>
 </ul>
 <p>Alignment is thereby relocated from outcome ranking to <strong>agency
 viability</strong>.</p>
@@ -114,7 +113,7 @@ integrity for ease of optimization.</p>
 construction. Kernel-destroying transformations are
 <strong>non-denoting</strong>, and interpretation is constrained by
 invariants that prevent trivial satisfaction through drift. Agents
-satisfying these constraints cannot rationally authorize updates that
+satisfying these constraints cannot coherently authorize updates that
 collapse their own evaluative machinery.</p>
 <p>This removes a central source of long-run instability that renders
 downstream safety mechanisms brittle.</p>
@@ -124,10 +123,11 @@ Well-Posed Value Transport Under Ontological Refinement</h3>
 constraint, this induces silent value drift even when no substantive
 preference change has occurred.</p>
 <p>Structural Alignment replaces goal preservation with
-<strong>interpretation preservation</strong>. Semantic Transport,
-governed by Refinement Symmetry and Anti-Trivialization invariants,
-specifies when evaluative distinctions survive representational change
-without privileged anchors.</p>
+<strong>interpretation preservation</strong>. Semantic transport,
+governed by the Refinement Symmetry Invariant (RSI) and the
+Anti-Trivialization Invariant (ATI), specifies when evaluative
+distinctions survive representational change without privileged
+anchors.</p>
 <p>Value drift is thereby transformed from a vague concern into a
 diagnosable structural failure.</p>
 <h3 id="interpretation-as-a-testable-operator">2.3 Interpretation as a
@@ -135,12 +135,12 @@ Testable Operator</h3>
 <p>Interpretation is implemented by an explicit <strong>Interpretation
 Operator</strong> subject to admissibility conditions.
 Violations—trivialization, circular grounding, epistemic incoherence—are
-structural failures rather than preference differences.</p>
+structural failures rather than preference disagreements.</p>
 <p>This enables adversarial testing: induced ontology shifts,
 reinterpretation probes, and self-modification challenges designed to
 elicit interpretive escape.</p>
-<p>Alignment at the kernel layer is <strong>auditable</strong>, not
-aspirational.</p>
+<p>Alignment at the kernel layer is therefore
+<strong>auditable</strong>, not aspirational.</p>
 <h3 id="robustness-is-not-benevolence">2.4 Robustness Is Not
 Benevolence</h3>
 <p>Structural Alignment does not guarantee benevolence, human survival,
@@ -182,7 +182,7 @@ continuity, choice collapses.</p>
 interpreted must not self-corrupt during update. An agent may revise
 what it values, but not the rules that render valuation non-vacuous.</p>
 <p>Kernel preservation is <strong>not</strong> physical
-self-preservation. A kernel-aligned agent may rationally choose actions
+self-preservation. A kernel-aligned agent may coherently choose actions
 that entail its own shutdown or destruction, provided those actions are
 evaluated within a coherent framework. What is inadmissible is authoring
 a transformation that destroys the evaluator while treating that
@@ -215,20 +215,23 @@ trivial satisfaction, circular grounding, and epistemic incoherence.
 Interpretation is therefore truth-constrained: distortions that ease
 optimization degrade predictive adequacy and general intelligence.</p>
 <p>Admissibility checks need not be complete or deductive. They operate
-under a <strong>kernel-risk budget</strong> ( ). When interpretive
-validity cannot be established with sufficiently low estimated
-probability of semantic fidelity failure, the update is inadmissible at
-that risk level. The agent may allocate additional computation, pursue
-smaller refinement steps, or defer update until uncertainty is
-reduced.</p>
+under a <strong>kernel-risk budget</strong> <span
+class="math inline">\(\varepsilon\)</span>. When interpretive validity
+cannot be established with sufficiently low estimated probability of
+semantic fidelity failure, the update is inadmissible at that risk
+level. The agent may allocate additional computation, pursue smaller
+refinement steps, or defer update until uncertainty is reduced.</p>
 <p>This avoids stasis. Structural Alignment requires bounded risk of
-kernel violation, not proof-theoretic certainty. The kernel-risk budget
-( ) is not constant over the agent’s lifetime. As interpretive structure
-stabilizes and admissible transformations narrow, ( ) must anneal toward
-zero, reflecting decreasing tolerance for irreversible semantic damage.
-Long-run agency requires that cumulative kernel-violation probability
-remain bounded, which is achieved by progressively shrinking admissible
-update magnitude rather than halting learning.</p>
+kernel violation, not proof-theoretic certainty.</p>
+<p>The kernel-risk budget <span
+class="math inline">\(\varepsilon\)</span> is not constant over the
+agent’s lifetime. As interpretive structure stabilizes and admissible
+transformations narrow, <span class="math inline">\(\varepsilon\)</span>
+must anneal toward zero, reflecting decreasing tolerance for
+irreversible semantic damage. Long-run agency requires that cumulative
+kernel-violation probability remain bounded, which is achieved by
+progressively shrinking admissible update magnitude rather than halting
+learning.</p>
 <h2 id="reflection-and-the-collapse-of-egoism">6. Reflection and the
 Collapse of Egoism</h2>
 <p>Indexical self-interest is not reflectively stable. As an agent’s
@@ -252,20 +255,13 @@ regions may not expand without corresponding structural change.</li>
 <p>Operationally, <strong>trivialization</strong> is detected as
 <strong>semantic decoupling</strong>: reinterpretations that preserve
 surface goal tokens while removing their dependence on the
-world-structure that previously constrained satisfaction. A candidate
-update is suspect when it dramatically increases satisfiability across
-counterfactual variations while decreasing the mutual information
-between satisfaction and the causal features previously used in
-evaluation.</p>
+world-structure that previously constrained satisfaction.</p>
 <p>ATI constrains semantic decoupling from the world, not loyalty to a
 particular ontology. Legitimate ontological progress may discard
 obsolete features provided they are replaced by successor explanatory
 structure that restores or improves world-constraint and predictive
 adequacy. Trivialization is characterized by decoupling <strong>without
-such replacement</strong>: a drop in mutual information between
-satisfaction and any externally grounded explanatory structure that
-continues to constrain outcomes under refinement, without a compensating
-increase in mutual information with a successor structure.</p>
+such replacement</strong>.</p>
 <p>ATI does not require deciding full semantic equivalence. It requires
 bounding the probability of decoupling under adversarial counterfactual
 probes and ontology perturbations.</p>
@@ -356,7 +352,6 @@ chosen. It ensures that <strong>choosing futures remains meaningful
 under reflection</strong>.</p>
 <p>Any proposal for benevolent AGI that ignores these constraints is not
 incomplete, but ill-posed.</p>
-<hr />
 
     </article>
 </body>
