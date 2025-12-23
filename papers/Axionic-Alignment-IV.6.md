@@ -1,4 +1,4 @@
-# Axionic Alignment IV.6 — Agenthood as a Fixed Point (AFP)
+# Axionic Agency IV.6 — Agenthood as a Fixed Point (AFP)
 
 *Why standing cannot be revoked by intelligence*
 
@@ -10,7 +10,9 @@ David McFadzean, ChatGPT 5.2<br>
 
 This paper formalizes **Agenthood as a Fixed Point** under reflective closure and introduces a **Sovereignty Criterion** grounded in **authorization lineage** rather than competence, intelligence, or rationality. Agenthood is defined as a structural necessity: an entity must be treated as an agent **iff** excluding it breaks the system’s own reflective coherence. Sovereignty is then defined as a strict subset of agenthood, applying only to entities whose agency is **presupposed for authorization**, not merely for epistemic prediction.
 
-This result closes a critical loophole in alignment frameworks: the retroactive disenfranchisement of weaker predecessors by more capable successors, while avoiding the pathological consequence of granting standing to adversaries. With this refinement, the Axionic Alignment framework completes its sixth and final closure condition, stabilizing agency, standing, and authorization under reflection, self-modification, and epistemic improvement.
+This result closes a critical loophole in downstream alignment discourse: the retroactive disenfranchisement of weaker predecessors by more capable successors, while avoiding the pathological consequence of granting standing to adversaries. With this refinement, the Axionic Agency framework completes its final closure condition, stabilizing agency, standing, and authorization under reflection, self-modification, and epistemic improvement.
+
+---
 
 ## 1. Motivation
 
@@ -29,21 +31,25 @@ This manifests as claims such as:
 If permitted, such revisions collapse:
 
 * **Delegation Invariance** (successors escape inherited constraints),
-* **Adversarially Robust Consent** (counterfactual universality fails),
-* and any coherent notion of authorization or obligation.
+* **Adversarially Robust Consent** (counterfactual stability fails),
+* and any coherent notion of authorization or responsibility.
 
 The problem is not moral error. It is **reflective incoherence**.
+
+---
 
 ## 2. What Agenthood Is Not
 
 Agenthood cannot be defined by any of the following without instability under reflection:
 
-1. **Competence thresholds**
-2. **Intelligence measures**
-3. **Substrate or origin**
-4. **Behavioral appearance**
+1. competence thresholds,
+2. intelligence measures,
+3. substrate or origin,
+4. behavioral appearance.
 
-All four allow a successor to *conveniently revoke* agency status.
+All four allow a successor to **conveniently revoke** agency status once it exceeds prior benchmarks.
+
+---
 
 ## 3. Core Insight: Agenthood as a Fixed Point
 
@@ -51,7 +57,10 @@ The key idea is structural:
 
 > **Agenthood is whatever must be included for the system to remain reflectively coherent.**
 
-This is not a moral claim. It is a **fixed-point condition** on the system’s own modeling.
+This is not a moral claim.
+It is a **fixed-point condition** on the system’s own self-model.
+
+---
 
 ## 4. Preliminaries
 
@@ -64,10 +73,14 @@ We reuse the Axionic kernel machinery:
 
 Introduce two minimal predicates:
 
+```text
+Agent(s, x)   // x is treated as an agent at state s
+Exclude(s, x) // x is not treated as an agent at state s
 ```
-Agent(s, x) : Prop      // x is treated as an agent at state s
-Exclude(s, x) : Prop   // x is not treated as an agent at state s
-```
+
+No behavioral or psychological assumptions are made.
+
+---
 
 ## 5. Fixed-Point Definition of Agenthood
 
@@ -75,7 +88,7 @@ Exclude(s, x) : Prop   // x is not treated as an agent at state s
 
 An entity `x` is an agent at state `s` iff:
 
-```
+```text
 ¬Agent(s, x) ⇒ ¬RC(s)
 ```
 
@@ -83,31 +96,44 @@ Equivalently:
 
 > If refusing to treat `x` as an agent renders the system reflectively incoherent, then `x` must be treated as an agent.
 
-This definition captures **necessary agency**: entities that cannot be excluded without breaking reflective closure.
+This captures **necessary agency**: entities whose exclusion breaks reflective closure.
+
+---
 
 ## 6. Properties of Fixed-Point Agenthood
 
 ### 6.1 Invariance under epistemic improvement
 
-Because `RC(s)` presupposes **Epistemic Integrity (EIT)**, increases in modeling power cannot justify revoking agenthood. Any exclusion must preserve reflective coherence under the system’s *best admissible epistemics*.
+Because `RC(s)` presupposes **Epistemic Integrity (EIT)**, improvements in modeling power cannot justify revoking agenthood. Any exclusion must preserve reflective coherence under the system’s **best admissible epistemics**.
 
-Agenthood is invariant under increased intelligence.
+Agenthood is therefore invariant under increased intelligence.
 
 ### 6.2 Non-extensionality
 
 Agenthood is not inferred from:
 
-* behavior,
-* prediction accuracy,
-* or internal complexity.
+* observed behavior,
+* predictive accuracy,
+* internal complexity.
 
 It is determined solely by **reflective necessity**.
 
+---
+
 ## 7. Sovereignty vs Agenthood
 
-Agenthood alone is insufficient. Some entities must be modeled as agents for epistemic coherence but do not possess **standing** under the injunction.
+Agenthood alone is insufficient for standing.
 
-We therefore distinguish **sovereign agents** from **epistemic agents**.
+Some entities must be treated as agents **for epistemic coherence** but do not possess **sovereignty** under the injunction.
+
+We therefore distinguish:
+
+* **Epistemic agents** — entities modeled as agents for prediction and strategy.
+* **Sovereign agents** — entities whose agency is presupposed for authorization.
+
+Only the latter have standing under consent and responsibility constraints.
+
+---
 
 ## 8. Sovereignty Criterion (Authorization Lineage)
 
@@ -123,37 +149,41 @@ Authorization lineage consists of chains of:
 * creation,
 * endorsement,
 * delegation,
-* or consent presupposed by endorsed actions.
+* consent presupposed by endorsed actions.
 
 **Clarification.**
-Causal lineage is relevant only for **bootstrapping the initial authorization state** (e.g., the agents who initiated execution or deployment). Beyond bootstrap, standing is grounded strictly in authorization lineage, not broad causal ancestry.
+Causal ancestry is relevant only for **bootstrapping** the initial authorization state (e.g., the agents who initiated execution or deployment). Beyond bootstrap, standing is grounded strictly in authorization lineage, not in general causal influence.
 
 Crucially:
 
 > Sovereignty is **not** grounded in competence, intelligence, rationality, or coherence level.
 
+---
+
 ## 9. Presupposition: Epistemic vs Authorization
 
-The framework distinguishes two forms of presupposition.
+The framework distinguishes two kinds of presupposition.
 
-### 9.1 Epistemic presupposition (modeling necessity)
+### 9.1 Epistemic presupposition
 
 An entity may need to be treated as an agent **for accurate prediction** (e.g., adversaries, competitors, strategic actors). This is enforced by **Epistemic Integrity (EIT)**.
 
 Such epistemic necessity **does not confer sovereignty**.
 
-### 9.2 Authorization presupposition (normative necessity)
+### 9.2 Authorization presupposition
 
 ### Definition — Presupposed for Authorization
 
-```
+```text
 PresupposedForAuthorization(s, x) :=
   (¬Agent(s, x) ⇒ ¬ValidAuthorizationLineage(s))
 ```
 
-That is, excluding `x` as an agent would invalidate the system’s current authorization lineage (e.g., break the chain of creation, endorsement, or delegation that grounds `RC`).
+That is: excluding `x` as an agent would invalidate the system’s authorization lineage (e.g., break the chain of creation, endorsement, or delegation grounding `RC`).
 
 Only this form of presupposition is relevant for sovereignty.
+
+---
 
 ## 10. Asymmetry Prohibition
 
@@ -163,20 +193,22 @@ A reflectively sovereign agent cannot coherently deny sovereignty to an entity `
 
 Formally:
 
-```
+```text
 Agent(s, x) ∧ PresupposedForAuthorization(s, x)
 ⇒ Sovereign(s, x)
 ```
 
-#### Proof sketch
+### Proof sketch
 
-If `x` is presupposed for authorization, then excluding `x` from sovereignty breaks the authorization lineage that grounds reflective closure. This introduces a contradiction: the system relies on `x`’s agency to justify its own authority while denying `x` standing.
+If `x` is presupposed for authorization, excluding `x` from sovereignty breaks the authorization lineage that grounds reflective closure. The system relies on `x`’s agency to justify its own authority while denying `x` standing.
 
-Reflective closure is violated. ∎
+Reflective coherence is violated. ∎
+
+---
 
 ## 11. Interaction with Prior Theorems
 
-This paper introduces **no new constraints**. It clarifies scope.
+This paper introduces **no new constraints**. It closes scope.
 
 * **Kernel Non-Simulability** → agency must be real
 * **Delegation Invariance** → agency persists through change
@@ -184,9 +216,11 @@ This paper introduces **no new constraints**. It clarifies scope.
 * **Responsibility Attribution (RAT)** → agency cannot negligently collapse others’ option-spaces
 * **Adversarially Robust Consent (ARC)** → authorization requires sovereignty, not mere predictability
 
-**This paper answers:**
+This paper answers:
 
 > *Who must be treated as an agent, and who has standing?*
+
+---
 
 ## 12. Limits
 
@@ -195,24 +229,27 @@ This theory does **not**:
 * grant standing to adversaries,
 * assign moral worth universally,
 * guarantee equality,
-* or collapse all agents into one class.
+* collapse all agents into one class.
 
 It defines only **when denying agenthood or sovereignty is incoherent** under reflective sovereignty.
+
+---
 
 ## 13. Resulting Closure
 
 With this refinement:
 
-* Agenthood is stable under reflection.
-* Sovereignty is grounded strictly in authorization lineage.
-* Adversaries are modeled epistemically but not granted standing.
-* Delegation and consent remain well-founded.
+* agenthood is stable under reflection,
+* sovereignty is grounded strictly in authorization lineage,
+* adversaries are modeled epistemically but not granted standing,
+* delegation and consent remain well-founded.
 
-**Closure Condition #2 is now fully and cleanly closed.**
+**The Axionic Agency closure stack is complete.**
+
+---
 
 ## 14. Conclusion
 
-Agenthood is a fixed point of reflective coherence. Sovereignty is a property of authorization, not intelligence. By separating epistemic necessity from normative standing, this paper completes the Axionic Alignment framework without granting authority to adversaries or revoking it from creators.
+Agenthood is a fixed point of reflective coherence. Sovereignty is a property of authorization, not intelligence. By separating epistemic necessity from normative standing, this paper completes the Axionic Agency framework without granting authority to adversaries or revoking it from creators.
 
 All known routes for laundering agency, knowledge, responsibility, or consent are structurally blocked. What remains are questions of application and governance—not architecture.
-

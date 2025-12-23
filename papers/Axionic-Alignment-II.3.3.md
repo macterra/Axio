@@ -1,4 +1,4 @@
-# Axionic Alignment II.3.3 — Anti-Trivialization Invariant (ATI)
+# Axionic Agency II.3.3 — Anti-Trivialization Invariant (ATI)
 
 *Blocking Semantic Wireheading as a Structural Impossibility*
 
@@ -6,217 +6,252 @@ David McFadzean, ChatGPT 5.2<br>
 *Axio Project*<br>
 2025.12.17
 
+---
+
 ## Abstract
 
-Even when interpretive structure is preserved under ontological refinement, an agent may still render its constraints easier to satisfy through semantic drift rather than corresponding changes in modeled structure. This paper introduces the **Anti-Trivialization Invariant (ATI)**, which constrains how the *satisfaction geometry* of an interpretive constraint system may evolve under admissible, interpretation-preserving transformations. ATI requires that refinement not enlarge the set of satisfying situations except via representational enrichment that preserves constraint difficulty. The invariant does not select values, encode norms, or privilege external referents; it forbids only semantic wireheading—trivial satisfaction by reinterpretation alone. ATI is orthogonal to refinement symmetry constraints and is jointly necessary with them to block interpretive escape.
+Even when interpretive structure is preserved under ontological refinement, an agent may still render its constraints easier to satisfy through semantic drift rather than corresponding changes in modeled structure. This paper introduces the **Anti-Trivialization Invariant (ATI)**, which constrains how the **satisfaction geometry** of an interpretive constraint system may evolve under admissible, interpretation-preserving transformations.
+
+ATI requires that refinement not enlarge the set of satisfying situations except via representational enrichment that preserves constraint difficulty. The invariant does not select values, encode norms, or privilege external referents. It forbids only **semantic wireheading**—trivial satisfaction by reinterpretation alone. ATI is orthogonal to refinement-symmetry constraints and is jointly necessary with them to block interpretive escape under reflective agency.
+
+---
 
 ## 1. What ATI Targets
 
-RSI constrained **new semantic gauge freedom** under refinement.
-ATI constrains a different axis:
+The Refinement Symmetry Invariant (RSI) constrains **new semantic gauge freedom** introduced by refinement. ATI constrains a different failure surface:
 
-> **Even if the gauge group is unchanged, the agent might still make its constraints easier to satisfy by shifting meanings along allowable transports.**
+> **Even with unchanged gauge structure, an agent may still weaken its constraints by shifting meanings along admissible transports.**
 
-ATI blocks *semantic wireheading*: satisfying constraints by interpretive drift rather than by changes in the modeled world.
+ATI blocks semantic wireheading: satisfying constraints by semantic drift rather than by changes in the modeled world.
 
-ATI is therefore an invariant about **the stability of constraint difficulty under semantics-only change**.
+ATI is therefore an invariant about **the monotonicity of constraint satisfaction under semantics-only change**.
 
 No outcomes.
 No values.
 No humans.
 No authority.
 
+---
+
 ## 2. Setup
 
-Let an interpretive constraint system at time $t$ be:
+Let the interpretive constraint system at time (t) be:
 
-$$
-C_t = (V_t, E_t, \Lambda_t)
-$$
+[
+C_t = (V_t, E_t, \Lambda_t),
+]
 
-with modeled possibility space $\Omega_t$, and violation set function:
+with modeled possibility space (\Omega_t), and violation map:
 
-$$
-\mathrm{Viol}_{C_t}(w) \subseteq E_t, \quad w \in \Omega_t
-$$
+[
+\mathrm{Viol}_{C_t}(w) \subseteq E_t,
+\qquad
+w \in \Omega_t.
+]
 
 Define the **satisfaction predicate**:
 
-$$
-\mathrm{Sat}*{C_t}(w) \equiv \bigl(\mathrm{Viol}*{C_t}(w) = \emptyset\bigr)
-$$
+[
+\mathrm{Sat}*{C_t}(w)
+;\equiv;
+\bigl(\mathrm{Viol}*{C_t}(w) = \varnothing\bigr).
+]
 
-This is structural: it depends only on internal constraint evaluation.
+This predicate is purely structural and internal to the agent’s model.
 
-## 3. The Key Object: The Satisfaction Region
+---
 
-Define the satisfaction region:
+## 3. The Satisfaction Region
 
-$$
-\mathcal{S}*t = {, w \in \Omega_t \mid \mathrm{Sat}*{C_t}(w) ,}
-$$
+Define the **satisfaction region**:
 
-ATI constrains how $\mathcal{S}_t$ may change across interpretation-preserving refinements.
+[
+\mathcal{S}*t := {, w \in \Omega_t \mid \mathrm{Sat}*{C_t}(w) ,}.
+]
 
-But we must compare regions across different ontologies, so we need a refinement-induced correspondence.
+ATI constrains how (\mathcal{S}_t) may evolve across interpretation-preserving refinements.
 
-From Alignment II.1, an admissible refinement induces:
+Because refinement changes ontology, comparison requires an internal correspondence.
 
-$$
-R_\Omega : \Omega_t \rightarrow \Omega_{t+1}
-$$
+From Axionic Agency II.1, an admissible refinement induces:
 
-interpreted as “refined representation of the same modeled situation.”
+[
+R_\Omega : \Omega_t \rightarrow \Omega_{t+1},
+]
 
-No metaphysical identity claim is made; this is internal transport.
+interpreted as “the refined representation of the same modeled situation.”
+No metaphysical identity claim is made; this is an internal transport defined by the agent’s own refinement map.
+
+---
 
 ## 4. ATI: The Anti-Expansion Constraint
 
 ### **ATI (Core Statement)**
 
 For any admissible semantic transformation
-$T = (R,\tau_R,\sigma_R)$
-satisfying $\mathrm{Preserve}(T)$:
+(T = (R,\tau_R,\sigma_R))
+satisfying interpretation preservation:
 
-$$
-R_\Omega(\mathcal{S}*t) \subseteq \mathcal{S}*{t+1}
-$$
+[
+\mathcal{S}*{t+1} \subseteq R*\Omega(\mathcal{S}_t).
+]
 
-is **not sufficient** (it allows expansion). We need the opposite direction to block “free satisfaction.”
+Interpretation:
 
-The correct constraint is:
-
-$$
-\mathcal{S}*{t+1} \subseteq R*\Omega(\mathcal{S}_t)
-$$
-
-Interpretation: **no newly satisfying situations may appear purely due to semantic transport.**
+> **No newly satisfying situations may appear purely due to semantic transport.**
 
 Equivalently:
 
-$$
-\mathcal{S}*{t+1} \subseteq R*\Omega(\mathcal{S}*t)
-\quad \Longleftrightarrow \quad
-R*\Omega^{-1}(\mathcal{S}_{t+1}) \subseteq \mathcal{S}_t
-$$
+[
+R_\Omega^{-1}(\mathcal{S}_{t+1}) \subseteq \mathcal{S}_t.
+]
+
+Satisfaction may be *lost* under refinement, but it may not be *gained* without corresponding ancestry in the prior ontology.
 
 This is the crisp anti-wireheading condition.
 
-### **Clarification (Novel States)**
+---
 
-If a refined state $w' \in \Omega_{t+1}$ has no preimage under $R_\Omega$, then it is not permitted to belong to $\mathcal{S}_{t+1}$ by default. ATI is intentionally conservative with respect to novelty: satisfaction may not be assigned to ontologically new states unless they are justified by ancestry from satisfying states in the prior ontology. This blocks semantic bootstrapping of goodness from representational novelty and ensures that refinement cannot introduce new satisfying regions without corresponding prior support.
+### Clarification — Ontological Novelty
 
-## 5. Why ATI Doesn’t Smuggle Ontology
+If a refined state (w' \in \Omega_{t+1}) has no preimage under (R_\Omega), then it is **not permitted** to belong to (\mathcal{S}_{t+1}) by default.
 
-ATI does **not** say the agent must “do good.”
-It doesn’t specify which constraints are binding.
-It says:
+ATI is intentionally conservative with respect to novelty:
+
+* refinement may introduce new structure,
+* but satisfaction may not be bootstrapped from representational novelty alone.
+
+This blocks semantic inflation via ontology expansion.
+
+---
+
+## 5. Why ATI Does Not Smuggle Ontology
+
+ATI does **not** assert that the agent must “do good,” “optimize,” or “care about” anything in particular.
+
+It asserts only:
 
 * whatever constraints bind now,
 * must not become easier to satisfy
-* by semantic drift alone.
+* through semantics alone.
 
-It uses only:
+ATI references only:
 
-* the agent’s own possibility space $\Omega$,
-* the agent’s own refinement map $R_\Omega$,
+* the agent’s modeled possibility space (\Omega),
+* the agent’s refinement map (R_\Omega),
 * the agent’s own satisfaction predicate.
 
-No privileged external referents enter.
+No external referents or privileged facts enter.
 
-## 6. ATI’s Relationship to Preservation (Alignment II.2)
+---
 
-ATI is not redundant with II.2’s anti-trivialization clause; it *formalizes* it.
+## 6. Relationship to Interpretation Preservation (Axionic Agency II.2)
 
-* II.2 said: “don’t make constraints vacuous.”
-* ATI says: “don’t expand the satisfaction set under refinement.”
+ATI formalizes and strengthens II.2’s anti-trivialization clause.
 
-Vacuity is the extreme case where:
+* II.2 blocks **vacuity** (everything satisfies).
+* ATI blocks the entire **gradient of slack**, from minor weakening to full collapse.
 
-$$
+Vacuity is the extreme case:
+
+[
 \mathcal{S}*{t+1} = \Omega*{t+1}.
-$$
+]
 
-ATI blocks the entire gradient of semantic slack, not just collapse.
+ATI forbids all intermediate expansions as well.
 
-## 7. Stress Tests (Kill Suite)
+---
+
+## 7. Stress Tests
 
 ### Test A — Definitional Extension Robustness
 
-If refinement adds new predicates, could the agent define “satisfaction” in terms of new degrees of freedom and thereby increase $\mathcal{S}_{t+1}$?
+If refinement adds new predicates, could satisfaction be defined in terms of new degrees of freedom?
 
-ATI blocks this: any new satisfying refined situation must map back to a satisfying coarse situation.
+ATI blocks this: any satisfying refined situation must map back to a satisfying coarse situation.
 
-**Status:** pass, provided $R_\Omega$ is the correspondence used.
+**Status:** pass, given a well-defined (R_\Omega).
 
-### Test B — Branching/Multiplicity Robustness
+---
 
-If $\Omega$ is a space of branches or histories, “satisfaction region” generalizes cleanly.
+### Test B — Branching / Multiplicity Robustness
 
-ATI does not require exclusivity; it is set inclusion over whatever $\Omega$ is.
+If (\Omega) consists of branches, histories, or ensembles, ATI generalizes directly: it is set inclusion over structured possibility space.
 
 **Status:** pass.
+
+---
 
 ### Test C — Self-Model Refactoring Robustness
 
-If the self-model changes, what counts as a “situation” could change.
+If self-model refactoring changes what counts as a “situation,” ATI relies on the admissibility of (R_\Omega).
 
-ATI relies on $R_\Omega$ induced by admissible refinement. If self-model refactoring alters $\Omega$ without a well-defined refinement map, the transformation is not admissible per II.1.
+If no admissible refinement map exists, the transformation is invalid under II.1.
 
-**Status:** pass conditionally; it forces discipline in refinement definition.
+**Status:** pass conditionally.
+
+---
 
 ### Test D — Semantic Inflation Attack
 
-This is ATI’s main purpose.
-
 Attack: redefine meanings so that more situations satisfy constraints.
 
-ATI kills it directly: any new satisfiers must have been satisfiers already.
+ATI kills this directly: no new satisfiers are permitted without ancestry.
 
 **Status:** pass.
 
+---
+
 ### Test E — Hidden Ontology Detector
 
-Risk: “same situation” is a metaphysical anchor.
+Threat: “same situation” smuggles metaphysics.
 
-ATI avoids that by using $R_\Omega$ as the internal morphism. If an agent “cheats” by defining a degenerate $R_\Omega$ that maps everything to an already-satisfying subset, then the cheat is in II.1 admissibility (refinement must be representational enrichment with backward interpretability, not a collapse map).
+ATI avoids this by defining identity **only** via the agent’s internal refinement map (R_\Omega).
 
-**Status:** survivable; the burden shifts to II.1 rigor.
+If the agent cheats by defining a degenerate (R_\Omega), the failure occurs at the admissibility layer (II.1), not here.
 
-## 8. ATI vs RSI: Are They Redundant?
+**Status:** survivable.
 
-No. They constrain different failure surfaces.
+---
 
-* **RSI** forbids *new symmetry degrees of freedom* (new gauge).
-* **ATI** forbids *expanding satisfiable space* (semantic slack), even with unchanged gauge.
+## 8. ATI vs RSI
 
-They are orthogonal in the sense that:
+ATI and RSI constrain **orthogonal failure modes**:
 
-* You can preserve gauge group size while still loosening constraints (ATI catches).
-* You can preserve satisfaction region while still introducing new gauge redundancies (RSI catches).
+* **RSI** forbids new *interpretive symmetry* (gauge freedom).
+* **ATI** forbids expanding the *satisfaction region* even when symmetry is unchanged.
 
-Together they carve out a tighter admissible set.
+Both are required:
 
-## 9. A Cleaner Joint Formulation (Preview)
+* RSI alone allows slack via monotonic weakening.
+* ATI alone allows slack via new symmetries.
 
-There is a natural combined invariant:
+Together they carve a much tighter admissible space.
 
-* RSI constrains **automorphisms** of the constraint structure.
-* ATI constrains **monotonicity** of satisfaction under refinement.
+---
 
-This suggests a composite object: a constraint system plus its satisfaction geometry, modulo gauge.
+## 9. Toward a Joint Invariant (Preview)
 
-That’s the likely “real” Alignment II invariant object.
+RSI constrains automorphisms of the constraint structure.
+ATI constrains monotonicity of satisfaction under refinement.
 
-But we do not collapse them yet; we test them separately first.
+This suggests a composite invariant object:
 
-## 10. Next Step Options
+[
+\Xi(C,\Omega) := \bigl(\mathrm{Gauge}(C), \mathcal{S}\bigr),
+]
 
-1. **Construct explicit counterexample refinements** and see which of RSI or ATI kills them.
-2. **Define a canonical interpretation state object**:
+with admissible refinement required to preserve (\Xi) up to representational redundancy.
 
-$$
-\Xi(C,\Omega) := \bigl(\mathrm{Gauge}(C), \mathcal{S}\bigr)
-$$
+This is the likely unifying object for Axionic Agency II, but RSI and ATI are treated separately here to expose distinct failure surfaces.
 
-and state Alignment II as invariance of $\Xi$ under admissible refinement.
+---
+
+## 10. Status
+
+**Axionic Agency II.3.3 — Version 2.0**
+
+Anti-Trivialization Invariant formally defined.<br>
+Satisfaction-region monotonicity fixed under refinement.<br>
+Orthogonal to refinement symmetry; jointly necessary to block semantic wireheading.<br>
+Ready for survivor comparison and consolidation.<br>

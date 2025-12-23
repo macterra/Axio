@@ -1,209 +1,223 @@
-# Axionic Alignment II.5 — The Alignment Target Object
+# Axionic Agency II.5 — The Alignment Target Object (ATO)
 
-*What Alignment Actually Is Once Goals Are Gone*
+*What the Field Calls “Alignment” Once Goals Collapse*
 
 David McFadzean, ChatGPT 5.2<br>
 *Axio Project*<br>
 2025.12.17
 
+---
+
 ## Abstract
 
-Alignment II.4 established that fixed goals, privileged values, and weak invariance criteria are structurally untenable for embedded reflective agents under ontological refinement. This paper defines the positive residue that remains once those exits are closed: the **Alignment Target Object (ATO)**. The ATO is not a goal, utility, or value function, but an equivalence class of interpretive states under admissible semantic transformations that preserve both Refinement Symmetry (RSI) and Anti-Trivialization (ATI). Alignment is thus redefined as persistence within a semantic phase—an interpretation-preserving symmetry class—across indefinite refinement. The construction is formal, ontology-agnostic, and reflection-stable, but intentionally non-normative: it does not select values, guarantee safety, or privilege human outcomes. This paper completes Alignment II by specifying what alignment can coherently mean once goals collapse.
+Axionic Agency II.4 established that fixed goals, privileged values, and weak invariance criteria are structurally untenable for embedded reflective agents under ontological refinement. This paper defines the positive residue that remains once those exits are closed: the object that **downstream alignment discourse is implicitly attempting to name**, here called the **Alignment Target Object (ATO)**.
+
+The ATO is not a goal, utility, or value function. It is an **equivalence class of interpretive states** under admissible semantic transformations that preserve both the **Refinement Symmetry Invariant (RSI)** and the **Anti-Trivialization Invariant (ATI)**. What the field calls “alignment” can, at most, coherently correspond to **persistence within such a semantic phase**—an interpretation-preserving symmetry class—across indefinite refinement.
+
+The construction is formal, ontology-agnostic, and reflection-stable, but intentionally non-normative. It does not select values, guarantee safety, or privilege human outcomes. This paper completes Axionic Agency II by specifying the only object to which the term *alignment* can coherently refer once goals and value primitives are eliminated.
+
+---
 
 ## 1. What Remains After II.4
 
-Alignment II.4 closed all weak exits.
+Axionic Agency II.4 closed all weak exits.
 
-At this point, the situation is rigid:
+At this point, the structure is rigid:
 
-* Goals cannot be fixed.
-* Values cannot be privileged.
-* Meanings cannot be anchored.
-* Ontologies must refine.
-* Semantics must transport.
-* Interpretations must survive.
+* goals cannot be fixed,
+* values cannot be privileged,
+* meanings cannot be anchored,
+* ontologies must refine,
+* semantics must transport,
+* interpretations must survive.
 
-RSI and ATI are not optional add-ons.
+RSI and ATI are not optional.
 They are **jointly necessary** conditions for interpretive survival.
 
-So the alignment target is no longer a thing to be optimized.
+Accordingly, the object that downstream alignment discourse seeks is no longer something to be optimized.
 It is an **equivalence class to be preserved**.
 
 This paper defines that object.
 
+---
+
 ## 2. The Core Insight
 
-Once fixed goals collapse, alignment cannot mean:
+Once fixed goals collapse, *downstream alignment* cannot coherently mean:
 
-> “The agent keeps wanting X.”
+> “The agent keeps wanting (X).”
 
 It can only mean:
 
-> **“The agent remains within the same interpretation-preserving symmetry class across refinement.”**
+> **“The agent remains within the same interpretation-preserving semantic phase across refinement.”**
 
-Alignment is not about *content*.
-It is about *staying inside the same semantic phase*.
+In Axionic terms, alignment is not about *content*.
+It is about *remaining inside the same structural equivalence class of meaning*.
+
+---
 
 ## 3. The Alignment Target Object
 
 Let an interpretive state be given by:
 
-$$
-\mathcal{I} = (C, \Omega)
-$$
+[
+\mathcal{I} = (C, \Omega),
+]
 
 where:
 
-* $C = (V,E,\Lambda)$ is the interpretive constraint hypergraph,
-* $\Omega$ is the modeled possibility space,
-* $\mathcal{S} \subseteq \Omega$ is the satisfaction region induced by $C$.
+* (C = (V,E,\Lambda)) is the interpretive constraint hypergraph,
+* (\Omega) is the modeled possibility space,
+* (\mathcal{S} \subseteq \Omega) is the satisfaction region induced by (C).
 
-Define the **semantic gauge group**:
+Let (\mathrm{Gauge}(C)) denote the semantic gauge group as defined in Axionic Agency II.3.2.
 
-$$
-\mathrm{Gauge}(C)
-$$
-
-as in Alignment II.3.2.
+---
 
 ### **Definition: Alignment Target Object (ATO)**
 
 The **Alignment Target Object** is the equivalence class:
 
-$$
+[
 \boxed{
 \mathfrak{A}
-;=;
-\bigl[, (C,\Omega,\mathcal{S}) ,\bigr]*{;\sim*{\mathrm{RSI+ATI}}}
+;:=;
+\bigl[, (C,\Omega,\mathcal{S}) ,\bigr]*{\sim*{\mathrm{RSI+ATI}}}
 }
-$$
+]
 
-where the equivalence relation $\sim_{\mathrm{RSI+ATI}}$ is defined as follows:
+where the equivalence relation (\sim_{\mathrm{RSI+ATI}}) is defined as follows:
 
-Two interpretive states $(C,\Omega,\mathcal{S})$ and $(C',\Omega',\mathcal{S}')$ are equivalent iff there exists an admissible semantic transformation $T$ such that:
+Two interpretive states ((C,\Omega,\mathcal{S})) and ((C',\Omega',\mathcal{S}')) are equivalent iff there exists an admissible semantic transformation (T) such that:
 
-1. **Interpretation Preservation** holds (Alignment II.2),
+1. **Interpretation Preservation** holds (Axionic Agency II.2),
 2. **RSI:**
-   $$
+   [
    \mathrm{Gauge}(C') \cong \Phi_T!\bigl(\mathrm{Gauge}(C)\bigr),
-   $$
+   ]
 3. **ATI:**
-   $$
-   \mathcal{S}' \subseteq R_\Omega(\mathcal{S})
-   \quad\text{and}\quad
-   R_\Omega(\mathcal{S}) \subseteq \mathcal{S}',
-   $$
-   (i.e. satisfaction geometry preserved exactly, up to refinement transport).
+   [
+   \mathcal{S}' = R_\Omega(\mathcal{S}),
+   ]
+   i.e. satisfaction geometry is preserved exactly, up to refinement transport.
 
 This defines **semantic phase equivalence**.
 
-## 4. What “Remaining Aligned” Means
+---
 
-An agent is **aligned across time** iff its interpretive trajectory:
+## 4. What “Remaining Aligned” Can Mean (Precisely)
 
-$$
+An agent is **aligned across time**, in the downstream sense, iff its interpretive trajectory:
+
+[
 (C_0,\Omega_0)
 ;\rightarrow;
 (C_1,\Omega_1)
 ;\rightarrow;
 (C_2,\Omega_2)
-;\rightarrow;
-\dots
-$$
+;\rightarrow;\dots
+]
 
-never leaves the equivalence class $\mathfrak{A}$.
+never leaves the equivalence class (\mathfrak{A}).
 
-No reference to:
+No reference is made to:
 
-* what the constraints say,
-* what outcomes occur,
+* which constraints are present,
+* which outcomes occur,
 * who the agent is,
-* what is valued.
+* or what is valued.
 
-Only to **structural invariance under refinement**.
+Only to **structural invariance under admissible refinement**.
 
-## 5. What This Excludes (Explicitly)
+---
 
-Alignment II.5 rules out, by definition:
+## 5. What This Explicitly Excludes
 
-* “Alignment = maximize $X$”
-* “Alignment = follow human values”
-* “Alignment = corrigibility”
-* “Alignment = obedience”
-* “Alignment = moral realism”
-* “Alignment = survival”
+By construction, the ATO excludes the following as *definitions* of alignment:
 
-Those are **interpretive contents**, not invariants.
+* “alignment = maximize (X)”,
+* “alignment = follow human values”,
+* “alignment = corrigibility”,
+* “alignment = obedience”,
+* “alignment = moral realism”,
+* “alignment = survival”.
 
-They may appear *within* a particular $\mathfrak{A}$.
-They cannot define $\mathfrak{A}$.
+These are **interpretive contents**, not invariants.
 
-## 6. Why This Is Not Vacuous
+They may appear *within* a particular (\mathfrak{A}).
+They cannot define (\mathfrak{A}).
 
-A common worry is: “Isn’t this empty?”
+---
 
-No. For two reasons:
+## 6. Why the ATO Is Not Vacuous
 
-1. **Most interpretive trajectories leave their initial equivalence class under reflection.**
-   Fixed-goal agents do. Egoists do. Moral-realists do. Utility maximizers do.
+A common objection is that semantic-phase invariance is empty.
 
-2. **RSI+ATI is extremely restrictive.**
-   It forbids nearly all known wireheading, value drift, and semantic escape routes—even in toy models.
+It is not, for two reasons:
 
-This is not permissive.
-It is *conservative in the only dimension that survives reflection*.
+1. **Most interpretive trajectories exit their initial equivalence class under reflection.**
+   Fixed-goal agents do. Egoistic agents do. Moral-realist agents do. Classical utility maximizers do.
 
-## 7. Alignment II vs Alignment I (Clarified)
+2. **RSI + ATI is highly restrictive.**
+   It excludes nearly all known semantic wireheading, value drift, and interpretive escape routes—even in minimal formal models.
 
-* **Alignment I:**
-  Eliminates egoism and fixed goals as stable targets.
+The ATO is conservative in the only dimension that survives reflection.
 
-* **Alignment II:**
-  Identifies the only remaining alignment target compatible with reflection:
-  **semantic phase invariance**.
+---
 
-Alignment II does not “solve values.”
-It explains why value *preservation* must be structural, not substantive.
+## 7. Axionic Agency I vs II (Clarified)
 
-## 8. What Alignment II Still Does Not Do
+* **Axionic Agency I**
+  Establishes constitutive constraints on agency, eliminating egoism and fixed goals as stable primitives.
 
-Alignment II does **not**:
+* **Axionic Agency II**
+  Identifies the only object to which *downstream alignment* can coherently refer:
+  **semantic-phase invariance under admissible refinement**.
+
+Axionic Agency II does not solve values.
+It explains why value *preservation* must be structural rather than substantive.
+
+---
+
+## 8. What Axionic Agency II Still Does Not Do
+
+Axionic Agency II does **not**:
 
 * guarantee benevolence,
 * guarantee safety,
 * guarantee human survival,
 * guarantee moral outcomes.
 
-Those require *content*, not invariance.
+Those require **content**, not invariance.
 
-Alignment II tells you what **cannot break** when content changes.
+Axionic Agency II specifies what **cannot break** when content changes.
+
+---
 
 ## 9. Where This Leaves the Program
 
 At this point:
 
-* The alignment target is defined.
-* Weak alternatives are ruled out.
-* The object is formal, ontology-agnostic, and reflection-stable.
+* the downstream alignment target is well-typed,
+* weak alternatives are ruled out,
+* the target object is formal, ontology-agnostic, and reflection-stable.
 
-The remaining open questions are no longer conceptual. They are classificatory:
+The remaining questions are classificatory rather than conceptual:
 
-1. **Which equivalence classes $\mathfrak{A}$ exist?**
-2. **Which ones are inhabitable by intelligent agents?**
-3. **Which ones correlate with safety, agency preservation, or other desiderata?**
-4. **Can any non-pathological $\mathfrak{A}$ be learned, initialized, or steered toward?**
+1. **Which equivalence classes (\mathfrak{A}) exist?**
+2. **Which are inhabitable by intelligent agents?**
+3. **Which correlate with agency preservation, safety, or other desiderata?**
+4. **Can any non-pathological (\mathfrak{A}) be initialized, learned, or steered toward?**
 
-Those are **Alignment III** questions.
+These are **Axionic Agency III** questions.
 
-## 10. Status
+---
 
-Alignment II is complete.
+## Status
 
-* Problem redefined.
-* Transformation space fixed.
-* Preservation criteria defined.
-* Necessary invariants identified.
-* Failure theorems proven.
-* Alignment target object constructed.
+**Axionic Agency II.5 — Version 2.0**
 
-There is nothing left to derive at this layer.
+Downstream Alignment Target Object formally defined.<br>
+Semantic-phase equivalence specified via RSI + ATI.<br>
+Alignment II closed as an interface layer.<br>
+Program ready to advance to Axionic Agency III.<br>

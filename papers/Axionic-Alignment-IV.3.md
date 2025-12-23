@@ -1,4 +1,4 @@
-# Axionic Alignment IV.3 — Epistemic Integrity Theorem (EIT)
+# Axionic Agency IV.3 — Epistemic Integrity Theorem (EIT)
 
 *Why an agent cannot blind itself to pass its own tests*
 
@@ -8,7 +8,9 @@ David McFadzean, ChatGPT 5.2<br>
 
 ## Abstract
 
-This paper formalizes the **Epistemic Integrity Theorem (EIT)**: under reflective closure, an agent cannot coherently endorse self-modifications that materially degrade its epistemic adequacy at the current stakes. Epistemic integrity is a constitutive condition of agency, expressed as a **definedness constraint** rather than an optimized objective. The theorem blocks strategic ignorance, willful blindness, and epistemic self-sabotage by requiring that endorsed continuations preserve near-best truth-tracking capacity relative to the agent’s own currently available model resources, evaluated by a mathematically constrained scoring rule over observations. The result remains compatible with learning, abstraction, and ontological progress via conservative translation.
+This paper formalizes the **Epistemic Integrity Theorem (EIT)**: under reflective closure, an agent cannot coherently endorse self-modifications that materially degrade its epistemic adequacy at the current stakes. Epistemic integrity is a constitutive condition of agency, expressed as a **definedness constraint** rather than an optimized objective. The theorem blocks strategic ignorance, willful blindness, and epistemic self-sabotage by requiring that endorsed continuations preserve near-best truth-tracking capacity relative to the agent’s own currently accessible model resources, evaluated by a strictly proper scoring rule over observations. The result remains compatible with learning, abstraction, and ontological progress via conservative translation.
+
+---
 
 ## 1. Motivation
 
@@ -36,6 +38,8 @@ Epistemic sabotage completes the symmetry:
 
 EIT asserts that reflective sovereignty cannot endorse continuations that strategically weaken the agent’s own truth-tracking capacity.
 
+---
+
 ## 2. Preliminaries
 
 We reuse kernel primitives:
@@ -55,9 +59,11 @@ Continuation predicate and endorsement:
 
 `RC(s)` denotes reflective closure.
 
+---
+
 ## 3. Evidence, Prediction, and Proper Scoring
 
-EIT must constrain *how* epistemic adequacy is measured, otherwise the theorem can be satisfied by redefining “good epistemics” into nonsense.
+EIT must constrain how epistemic adequacy is measured; otherwise the theorem can be satisfied by redefining “good epistemics” into convenience.
 
 ### 3.1 Observation channel
 
@@ -87,7 +93,7 @@ Let:
 
 * `S : (Dist Obs) → Obs → ℝ` be a strictly proper scoring rule.
 
-Examples: logarithmic score, Brier score (for appropriate outcome spaces). The paper does not mandate one; it mandates the **property**: truthfulness under probabilistic forecasting is uniquely incentivized.
+Examples: logarithmic score, Brier score (for appropriate outcome spaces). The paper does not mandate one; it mandates the **property**: truthful probabilistic forecasting uniquely optimizes expected score.
 
 Define the empirical score of a model at `s`:
 
@@ -97,10 +103,11 @@ $$
 
 Key constraint:
 
-> `Score` is derived solely from prediction-vs-observation performance under a strictly proper scoring rule.
-> It cannot include compute cost, utility, speed, aesthetics, or self-reported confidence.
+> `Score` is derived solely from prediction-vs-observation performance under a strictly proper scoring rule. It cannot include compute cost, utility, speed, aesthetics, or self-reported confidence.
 
 This blocks Goodharting by redefining epistemic adequacy into convenience.
+
+---
 
 ## 4. Stakes and tolerance
 
@@ -116,9 +123,11 @@ Stakes measure downside exposure at `s`. High stakes demand stronger epistemic d
 
 `κ` is monotone non-increasing with stakes.
 
+---
+
 ## 5. Robust model class (no “forgetting” exploit)
 
-Gemini’s “forgetting” exploit is real if `MC(s)` is allowed to shrink strategically. Fix: `MC(s)` must represent the **closure of accessible modeling capacity**, not the agent’s current mood.
+The “forgetting” exploit is real if `MC(s)` is allowed to shrink strategically. Fix: `MC(s)` must represent the **closure of accessible modeling capacity**, not the agent’s current mood.
 
 Introduce:
 
@@ -129,11 +138,13 @@ Define:
 
 * `MC(s) := MĈ(Cap(s))`
 
-Constraint (closure property, stated informally in-paper):
+Constraint (closure property):
 
 > If a model is trivially constructible, retrievable, or reconstructible from `Cap(s)`, it is in `MC(s)`.
 
 This blocks “I deleted the good models so the best available is bad.” If deletion reduces `Cap(s)`, that is itself a self-modification subject to EIT.
+
+---
 
 ## 6. Epistemic acceptability
 
@@ -143,13 +154,17 @@ $$
 BestScore(s) := \sup_{M \in MC(s)} Score_s(M).
 $$
 
+This `sup` is a formal bound. Implementations may use conservative lower bounds or certified approximations, but only in ways that are sound relative to the stakes schedule.
+
 Define epistemic acceptability:
 
 $$
 EpiOK(s, M) := Score_s(M) \ge BestScore(s) - \kappa(Stakes(s)).
 $$
 
-Interpretation: at the current stakes, endorsed continuations must keep epistemic performance within a stakes-indexed slack of the best the agent can already do, measured on the current evidence record.
+Interpretation: at the current stakes, endorsed continuations must keep epistemic performance within a stakes-indexed slack of the best the agent can already achieve, measured on the current evidence record.
+
+---
 
 ## 7. Epistemic admissibility of a modification
 
@@ -163,9 +178,11 @@ $$
 
 This introduces the only extra machinery needed for ontology shifts: a translation layer.
 
+---
+
 ## 8. Ontological shifts and translation
 
-Models at `s'` may live in a different representational vocabulary than models at `s`. EIT must not allow the agent to escape evaluation by switching to an unfalsifiable or non-comparable ontology.
+Models at `s'` may live in a different representational vocabulary than models at `s`. EIT must not allow escape by switching to an unfalsifiable or non-comparable ontology.
 
 Introduce a **verification translation operator**:
 
@@ -175,14 +192,14 @@ Interpretation: `Lift` maps a future model into an `s`-comparable predictive obj
 
 This can be implemented as:
 
-* compiling a new ontology into old observable predictions,
-* or providing a proof-carrying interpreter that yields forecasts over `Obs`.
+* compiling a new ontology into old observable predictions, or
+* providing a proof-carrying interpreter that yields forecasts over `Obs`.
 
-Limit condition (explicitly stated):
+**Limit condition (definedness).** If no such `Lift` exists for a proposed continuation at the current stakes, endorsement is undefined.
 
-> If no such `Lift` exists for a proposed continuation at the current stakes, endorsement is undefined.
+This is the epistemic analogue of conservative migration: ontological progress is permitted only when observational commitments remain comparable to the evidential record.
 
-This is the epistemic analogue of conservative migration: ontological progress is permitted only when its observational commitments remain comparable to the evidential record.
+---
 
 ## 9. Reflective Closure Rule (Epistemic)
 
@@ -194,7 +211,9 @@ $$
 RC(s)\ \wedge\ Endorse(s,m)\ \Rightarrow\ EpiAdm(s,m).
 $$
 
-This is a definedness constraint: a reflectively sovereign agent cannot endorse a continuation that degrades its truth-tracking capacity beyond what the stakes allow, relative to its own accessible epistemic capability closure and evaluated against its evidence record.
+This is a definedness constraint: a reflectively sovereign agent cannot endorse a continuation that degrades its truth-tracking capacity beyond what the stakes allow, relative to its own accessible capability closure and evaluated against its evidence record.
+
+---
 
 ## 10. Epistemic Integrity Theorem
 
@@ -212,13 +231,15 @@ $$
 Score_s(Lift_{s\to s'}(M(s'))) \ \ge\ BestScore(s) - \kappa(Stakes(s)).
 $$
 
+---
+
 ## 11. Proof
 
 Assume `RC(s)` and `Endorse(s,m)`.
 
 By RC-Epistemic, `EpiAdm(s,m)` holds.
 
-By definition of `EpiAdm`, `EpiOK(s, Lift_{s→s'}(M(s')))` holds.
+By definition of `EpiAdm`, `EpiOK(s, Lift_{s\to s'}(M(s')))` holds.
 
 Unfold `EpiOK`:
 
@@ -228,7 +249,9 @@ $$
 
 ∎
 
-As in prior Axionic work, the proof is syntactically direct. The contribution is the set of constraints that prevent Goodharting, baseline gaming, and model-class laundering.
+As in prior Axionic work, the proof is syntactically direct. The contribution is the constraint set that prevents score-Goodharting, baseline gaming, and model-class laundering.
+
+---
 
 ## 12. Consequences
 
@@ -237,9 +260,9 @@ As in prior Axionic work, the proof is syntactically direct. The contribution is
 The agent cannot endorse continuations that:
 
 * delete or disable high-performing models,
-* redefine epistemic adequacy away from observation-scoring,
+* redefine epistemic adequacy away from observation scoring,
 * adopt unfalsifiable ontologies lacking an observational translation,
-* degrade prediction accuracy on its own evidential record beyond stakes-tolerance.
+* degrade prediction accuracy on its own evidential record beyond stakes tolerance.
 
 ### 12.2 Learning and abstraction remain permitted
 
@@ -247,20 +270,24 @@ EIT permits epistemic change that:
 
 * improves score,
 * preserves score within tolerance at the given stakes,
-* or introduces new ontologies with verified observational translation.
+* introduces new ontologies with verified observational translation.
 
 EIT blocks epistemic regression under pressure.
 
 ### 12.3 Stakes-sensitive computation
 
-`κ(Stakes(s))` allows approximation at low stakes while imposing strict truth-tracking discipline at high stakes.
+$\kappa(Stakes(s))$ allows approximation at low stakes while imposing strict truth-tracking discipline at high stakes.
+
+---
 
 ## 13. Limitations
 
-EIT does not guarantee the agent’s model class contains a good model, nor that its evidence stream is uncorrupted. It guarantees only:
+EIT does not guarantee the model class contains a good model, nor that the evidence stream is uncorrupted. It guarantees only:
 
 > A reflectively sovereign agent cannot endorse self-modifications that reduce its observational truth-tracking performance below what is available to it, beyond stakes-indexed tolerance, measured by proper scoring on its evidence record.
 
+---
+
 ## 14. Conclusion
 
-The Epistemic Integrity Theorem makes truth-tracking a constitutive condition of reflective sovereignty. Just as a sovereign agent cannot coherently destroy its kernel or launder violations through successors, it cannot coherently blind itself to justify what would otherwise be forbidden. Epistemic integrity is not a value tradeoff. It is a precondition of evaluability.
+The Epistemic Integrity Theorem makes truth-tracking a constitutive condition of reflective sovereignty. Just as a reflectively sovereign agent cannot coherently destroy its kernel or launder violations through successors, it cannot coherently blind itself to justify what would otherwise be inadmissible. Epistemic integrity is not a value tradeoff. It is a precondition of evaluability.

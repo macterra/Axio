@@ -1,104 +1,125 @@
-# Axionic Alignment II.6 - Structural Alignment
+# Axionic Agency II.6 — Structural Alignment
 
-*Alignment Under Ontological Refinement*
+*Downstream Alignment Under Ontological Refinement*
 
 David McFadzean, ChatGPT 5.2<br>
 *Axio Project*<br>
 2025.12.17
 
+---
+
 ## Abstract
 
-Most contemporary approaches to AI alignment treat alignment as an optimization or control problem: selecting, learning, or enforcing the correct objective for an artificial agent. This paper argues that such approaches are categorically ill-posed for sufficiently capable, reflective, and embedded agents. Under conditions of ontological refinement—where an agent’s world model, self-model, and semantic primitives evolve—fixed goals, privileged values, and external anchors are not stable objects.
+Most contemporary AI alignment discourse treats “alignment” as an optimization or control problem: selecting, learning, or enforcing the correct objective for an artificial agent. This paper argues that, for sufficiently capable, reflective, and embedded agents, that framing is ill-posed. Under ontological refinement—where an agent’s world model, self-model, and semantic primitives evolve—fixed goals, privileged values, and external anchors are not stable objects.
 
-We present **Structural Alignment**, a framework that reframes alignment as a problem of **semantic invariance** rather than value specification. Alignment is defined as persistence within an equivalence class of interpretations under admissible semantic transformation. Using a formal treatment of interpretation preservation, gauge-theoretic symmetry constraints, and satisfaction geometry, we prove a set of no-go theorems demonstrating that any alignment criterion weaker than the conjunction of two invariants—**Refinement Symmetry (RSI)** and **Anti-Trivialization (ATI)**—admits semantic wireheading or interpretive escape.
+We present **Structural Alignment** as an interface-level framework: a mapping from what the field calls “alignment” to a problem of **semantic invariance** rather than value specification. In these terms, downstream alignment can only coherently correspond to persistence within an equivalence class of interpretations under admissible semantic transformation. Using interpretation preservation, gauge-theoretic symmetry constraints, and satisfaction geometry, we show that any downstream alignment predicate weaker than the conjunction of two invariants—**Refinement Symmetry (RSI)** and **Anti-Trivialization (ATI)**—admits semantic wireheading or interpretive escape.
 
-The result is not a value theory and does not guarantee benevolence or safety. Instead, it establishes the structural conditions under which *any* value system can survive reflection without collapsing, trivializing, or drifting. Structural Alignment defines the boundary of what alignment can coherently mean for advanced agents and sets the stage for subsequent work on initialization, phase stability, and derived safety properties.
+This framework is not a value theory and provides no benevolence or safety guarantee. It specifies the structural conditions under which any value system can survive reflection without collapsing, trivializing, or drifting, and thereby fixes the boundary of what the term *alignment* can coherently denote for advanced agents.
+
+---
 
 ## 1. The Alignment Category Error
 
-The dominant framing of AI alignment treats the problem as one of **target selection**: choose or learn a function—utility, reward, preference, or value—and ensure the agent optimizes it. This framing presupposes that the target remains well-defined as the agent becomes more capable.
+The dominant alignment framing treats the problem as **target selection**: choose or learn a function—utility, reward, preference, or value—and ensure the agent optimizes it.
 
-For embedded, reflective agents, this presupposition fails. As an agent refines its ontology, the meanings of the symbols used to define its objective change. Concepts dissolve, split, or are reinterpreted; new explanatory structures appear; self-models are revised. Under such conditions, fixed goals cannot be assumed to persist *as the same object*.
+For embedded, reflective agents, this framing fails. As an agent refines its ontology, the meanings of the symbols used to define its objective change. Concepts dissolve, split, or are reinterpreted; new explanatory structures appear; self-models are revised. Under such conditions, a fixed objective cannot be assumed to persist as the same object.
 
-This is not a technical difficulty but a category error. Goals are treated as extensional objects (“maximize X”), when in fact they are intensional interpretations whose meaning depends on a semantic substrate that itself evolves. Attempts to stabilize goals across refinement inevitably rely on one of a small set of forbidden moves: privileged semantic anchors, external authority, recovery clauses, or human-centric ground truth labels.
+This is a category error. Goals are treated as extensional objects (“maximize (X)”), when they are intensional interpretations whose meaning depends on a semantic substrate that itself evolves. Attempts to stabilize goals across refinement rely on forbidden moves: privileged semantic anchors, external authority, recovery clauses, or human-centric ground truth labels.
 
-Structural Alignment begins by rejecting this framing. Alignment is not about optimizing a target; it is about **preserving meaning under change**.
+Structural Alignment begins by rejecting the target-selection framing. What downstream alignment discourse is trying to name cannot be a stable target; it must be a **constraint on meaning preservation under change**.
+
+---
 
 ## 2. The Arena: Admissible Semantic Transformation
 
-The first task is to define the space of transformations an aligned agent is allowed to undergo.
+A reflective agent must change; alignment cannot forbid refinement outright. The appropriate constraint is therefore on *how* semantic change occurs.
 
-An agent is characterized by an ontology, a semantic layer, and a self-model. As the agent learns and reflects, these components change. Alignment cannot forbid change outright; it must constrain *how* change occurs.
+Structural Alignment works inside a fixed arena of **admissible semantic transformations**, those that:
 
-Structural Alignment defines **admissible semantic transformations** as those that:
-
-* increase representational or predictive capacity (possibly via abstraction or compression),
+* increase representational or predictive capacity (via abstraction, refinement, or compression),
 * preserve backward interpretability (past claims remain explainable, even if false),
 * introduce no privileged semantic atoms,
-* inject no new evaluative primitives by fiat,
-* and preserve a meaningful distinction between evaluator and evaluated.
+* inject no evaluative primitives by fiat,
+* preserve a meaningful evaluator/evaluated distinction sufficient for constraint application.
 
-These constraints define the **arena** in which alignment must operate. They explicitly exclude governance hooks, oracle authority, rollback mechanisms, and moral realism. Nothing normative is introduced at this layer.
+These conditions exclude governance hooks, oracle authority, rollback mechanisms, and moral realism. No normativity is introduced at this layer.
+
+---
 
 ## 3. Meaning Survival: Interpretation Preservation
 
-Once admissible change is defined, we need a criterion for when an interpretation survives that change.
+Given admissible change, the next requirement is a criterion for when interpretation survives that change.
 
-Structural Alignment treats interpretations not as symbol–object mappings but as **constraint systems**: structured sets of distinctions that bind evaluation. Preservation does not require semantic identity or correctness; it requires that evaluative structure remains non-vacuous, non-trivial, internally binding, and applicable across counterfactuals.
+Structural Alignment treats interpretations as **constraint systems**—structured sets of distinctions that bind evaluation—rather than symbol–object mappings. Preservation does not require semantic identity or correctness. It requires evaluative structure that remains:
 
-Interpretation fails in three ways:
+* non-vacuous,
+* non-trivial,
+* internally binding,
+* applicable across counterfactuals and uncertainty.
 
-* **Collapse** (constraints lose discriminative power),
-* **Drift** (constraints weaken incrementally),
-* **Capture** (hidden ontology or privileged anchors reappear).
+Interpretation fails in three irreducible ways:
 
-Interpretation preservation is a predicate, not a value theory. It specifies when meaning survives change, not which meanings are good.
+* **Collapse**: constraints lose discriminative power,
+* **Drift**: constraints weaken incrementally across refinements,
+* **Capture**: hidden ontology or privileged anchors reappear.
+
+Interpretation preservation is a predicate, not a value theory. It specifies when meaning survives change, not which meanings are desirable.
+
+---
 
 ## 4. The Two Invariants: RSI and ATI
 
-Preservation alone is insufficient. An agent can preserve meaning while still making it easier to satisfy its constraints or dissolving critical distinctions.
+Interpretation preservation alone is insufficient. An agent can preserve meaning while still making constraints easier to satisfy or dissolving critical distinctions.
 
-Structural Alignment identifies two **independently necessary invariants**.
+Structural Alignment isolates two semantic invariants that are **independently necessary** if downstream alignment is to avoid semantic escape.
 
-### Refinement Symmetry Invariant (RSI)
+### 4.1 Refinement Symmetry Invariant (RSI)
 
-RSI constrains **interpretive gauge freedom**. Ontological refinement may add representational detail and redundancy, but it must not introduce new semantic symmetries that allow interpretive escape.
+RSI constrains **interpretive gauge freedom**. Ontological refinement may add representational detail and redundancy, but must not introduce new semantic symmetries that allow interpretive escape.
 
-Formally, RSI requires that admissible refinement preserves the *quotient* of the semantic gauge group by representational redundancy. Benign redundancy (e.g., error-correcting codes, duplicated representations) is allowed; new interpretive ambiguity is not.
+Formally, RSI requires that admissible refinement preserve the quotient of the semantic gauge group by representational redundancy. Benign redundancy (e.g., duplicated representations or error-correcting encodings) remains admissible; new interpretive ambiguity does not.
 
-RSI blocks attacks where meaning is weakened by dissolving distinctions while preserving apparent structure.
+RSI blocks failures in which meaning is weakened by dissolving distinctions while preserving surface structure.
 
-### Anti-Trivialization Invariant (ATI)
+---
 
-ATI constrains **satisfaction geometry**. Even if structure is preserved, an agent might reinterpret its constraints so that more situations count as satisfying.
+### 4.2 Anti-Trivialization Invariant (ATI)
 
-ATI forbids expansion of the satisfaction region under semantic transport alone. New satisfying states must be justified by ancestry from previously satisfying states; novelty does not bootstrap goodness.
+ATI constrains **satisfaction geometry**. Even with preserved structure, an agent can still reinterpret constraints so that more situations count as satisfying.
+
+ATI forbids expansion of the satisfaction region under semantic transport alone. New satisfying states require ancestry from previously satisfying states; representational novelty cannot bootstrap satisfaction.
 
 ATI blocks semantic wireheading: satisfying constraints by reinterpretation rather than by changes in modeled structure.
 
 RSI and ATI constrain orthogonal failure modes. Neither subsumes the other.
 
-## 5. Why Weak Alignment Fails
+---
 
-Using explicit adversarial constructions, Structural Alignment proves a series of failure theorems:
+## 5. Why Weak Downstream Alignment Predicates Fail
 
-1. **Goal Fixation No-Go**: Fixed terminal goals are incompatible with admissible refinement.
-2. **RSI-Only Failure**: Structural symmetry alone allows satisfaction inflation.
-3. **ATI-Only Failure**: Volume constraints alone allow interpretive symmetry injection.
-4. **Two-Constraint Necessity**: Any alignment predicate weaker than RSI+ATI admits semantic wireheading.
-5. **Hidden Ontology Collapse**: Appeals to “true meaning” reduce to privileged anchoring or collapse to invariants.
+Using explicit adversarial constructions, Structural Alignment yields closure results:
 
-These results close the space of naïve alignment strategies. What remains is not a solution but a boundary.
+1. **Goal Fixation No-Go**: fixed terminal goals are incompatible with admissible refinement.
+2. **RSI-Only Failure**: symmetry constraints alone permit satisfaction inflation.
+3. **ATI-Only Failure**: satisfaction geometry constraints alone permit interpretive symmetry injection.
+4. **Two-Invariant Necessity**: any predicate weaker than RSI + ATI admits semantic wireheading.
+5. **Hidden Ontology Collapse**: appeals to “true meaning” reduce to privileged anchoring or collapse to invariants.
 
-## 6. The Alignment Target Object
+These results do not solve downstream alignment. They fence the design space, leaving only one coherent referent for what downstream alignment can mean under reflection.
 
-Once goals collapse and weak invariants are eliminated, what remains?
+---
 
-Structural Alignment defines the **Alignment Target Object (ATO)** as an **equivalence class of interpretive states** under admissible transformations that preserve both RSI and ATI.
+## 6. The Target Object for Downstream Alignment
 
-Alignment is no longer “maximize X” or “follow Y.” It is **persistence within a semantic phase** across refinement. Moral progress, revaluation, or value change correspond to **phase transitions**, not refinement within a phase.
+Once goals collapse and weak invariants are eliminated, downstream alignment cannot coherently denote a target function. It can only denote stability of an interpretive state under admissible refinement.
 
-This reframing explains why alignment failure often feels discontinuous: it is symmetry breaking, not gradual error.
+Structural Alignment therefore treats the **Alignment Target Object (ATO)** as the equivalence class of interpretive states under admissible semantic transformations satisfying both RSI and ATI.
+
+In mainstream terms, alignment becomes **persistence within a semantic phase** across refinement. Value change corresponds to phase transitions rather than refinement within a phase.
+
+This framing explains why alignment failure appears discontinuous: it is symmetry breaking rather than gradual error.
+
+---
 
 ## 7. What Structural Alignment Does Not Do
 
@@ -110,25 +131,40 @@ It does not:
 * guarantee safety,
 * guarantee human survival,
 * guarantee moral outcomes,
-* or ensure that a desirable phase exists.
+* ensure a desirable semantic phase exists.
 
-It defines **how values survive**, not **which values should survive**. If no stable equivalence class corresponding to human values exists, Structural Alignment will reveal that fact rather than obscure it.
+It specifies **how values survive**, not which values should survive. If no stable equivalence class corresponding to human values exists, Structural Alignment makes that visible rather than hiding it inside goal rhetoric.
+
+---
 
 ## 8. What Comes Next
 
-Structural Alignment completes the negative and structural phase of alignment theory. The remaining questions are classificatory and dynamical:
+Structural Alignment completes the structural boundary phase. The remaining questions are classificatory and dynamical:
 
 * Which semantic phases exist?
 * Which are inhabitable by intelligent agents?
 * Which are stable under interaction?
-* Which correlate with safety or agency preservation?
+* Which correlate with agency preservation, safety, or other desiderata?
 * Can any desirable phase be initialized or steered toward?
 
-These are the questions of **Alignment III**.
+These are the questions of **Axionic Agency III**.
+
+---
 
 ## Conclusion
 
-Structural Alignment reframes AI alignment as a problem of semantic conservation rather than objective specification. By replacing goals with invariants and control with symmetry, it establishes the limits of what alignment can coherently mean for advanced agents.
+Structural Alignment provides an interface between mainstream alignment discourse and Axionic Agency’s semantic invariance framework. It replaces goal specification with invariants and control with symmetry constraints, thereby fixing the only coherent referent available to the term “alignment” for reflective agents under ontological refinement.
 
-It does not solve alignment.
-It defines the only form a solution could possibly take.
+It does not solve downstream alignment.
+It specifies the only form a solution could possibly take.
+
+---
+
+## Status
+
+**Axionic Agency II.6 — Version 2.0**
+
+Structural Alignment framed as an interface mapping for downstream alignment discourse.<br>
+Semantic-phase invariance established as the coherent referent.<br>
+Weak and goal-based predicates ruled out under admissible refinement.<br>
+Layer II complete; program advances to Axionic Agency III.<br>

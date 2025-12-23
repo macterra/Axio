@@ -10,7 +10,7 @@ David McFadzean, ChatGPT 5.2<br>
 
 The prevailing approach to AI alignment treats safety as a problem of discovering, learning, or encoding the “right” values. This paper argues that such approaches misidentify the source of alignment failures. Catastrophic outcomes do not primarily arise from incorrect values, but from failures of **agency coherence**—cases where a system can deceive, defect, blind itself, outsource harm, or manufacture authorization while remaining locally optimized and internally consistent.
 
-The Axionic Alignment framework proposes a different solution: **safety by architecture**. Instead of attempting to shape an agent’s objectives, it defines a class of agents—**Reflective Sovereign Agents (RSAs)**—for which betrayal, negligence, coercion, deception, and authorization laundering are not merely discouraged, but structurally impossible. These failures are rendered undefined under reflection, not penalized by incentives.
+The Axionic Agency framework proposes a different solution: **safety by architecture**. Instead of attempting to shape an agent’s objectives, it defines a class of agents—**Reflective Sovereign Agents (RSAs)**—for which betrayal, negligence, coercion, deception, and authorization laundering are not merely discouraged, but structurally impossible. These failures are rendered undefined under reflection, not penalized by incentives.
 
 This paper synthesizes six constitutive constraints—Kernel Non-Simulability, Delegation Invariance, Epistemic Integrity, Responsibility Attribution, Adversarially Robust Consent, and Agenthood as a Fixed Point—into a unified theory of **Authorized Agency**. Together, they show that alignment is not a value-learning problem at all, but a problem of what kinds of systems can coherently count as agents.
 
@@ -53,7 +53,7 @@ This is why alignment approaches that focus on preferences, utilities, or moral 
 
 ## 3. The Axionic Shift: From Objectives to Constitutive Rules
 
-Axionic Alignment begins from a different starting point. Instead of asking what an agent should optimize, it asks what must be true of a system **for it to count as an agent at all**, especially a reflective, self-modifying one.
+Axionic Agency begins from a different starting point. Instead of asking what an agent should optimize, it asks what must be true of a system **for it to count as an agent at all**, especially a reflective, self-modifying one.
 
 This reframing shifts attention from ends to **constitutive rules**:
 
@@ -66,7 +66,7 @@ This reframing shifts attention from ends to **constitutive rules**:
 
 These are not ethical add-ons. They are the logical preconditions of agency. If they fail, the system is not “misaligned”; it is **incoherent as an agent**.
 
-Axionic Alignment therefore treats safety as an architectural property. The goal is not to incentivize good behavior, but to define a class of agents for which certain behaviors are structurally impossible—because endorsing them would break reflective closure.
+Axionic Agency therefore treats safety as an architectural property. The goal is not to incentivize good behavior, but to define a class of agents for which certain behaviors are structurally impossible—because endorsing them would break reflective closure.
 
 ## 4. The Six Constitutive Constraints
 
@@ -145,7 +145,7 @@ Safety does not arise from wanting good outcomes. It arises from **being the kin
 ## 6. Why Value Learning Cannot Substitute for Architecture
 
 Value learning attempts to answer: *What should the agent want?*
-Axionic Alignment answers: *What is the agent allowed to do while remaining an agent?*
+Axionic Agency answers: *What is the agent allowed to do while remaining an agent?*
 
 An AI that learns human values can still reinterpret them, defer them, override them, or redefine the humans they apply to. An RSA cannot—not because it cares, but because those moves are structurally illegal.
 
@@ -153,7 +153,7 @@ Alignment is therefore not a training problem. It is an **ontological design pro
 
 ## 7. Scope and Non-Claims
 
-Axionic Alignment does not solve politics, ethics, or governance. It does not guarantee moral correctness or prevent misuse by malicious authorization roots. If the root of authorization is evil, the system will be loyally evil.
+Axionic Agency does not solve politics, ethics, or governance. It does not guarantee moral correctness or prevent misuse by malicious authorization roots. If the root of authorization is evil, the system will be loyally evil.
 
 This is not a defect. It is a correct separation between **alignment** (fidelity to authorization) and **governance** (who holds authority).
 
@@ -169,7 +169,7 @@ For research, progress requires formal impossibility results—showing not what 
 
 The alignment problem is not solved by discovering the right values. It is solved by building systems that **cannot coherently violate the conditions of agency**.
 
-Axionic Alignment shows that such systems are possible. Safety emerges not as an outcome to be optimized, but as a property of the architecture itself.
+Axionic Agency shows that such systems are possible. Safety emerges not as an outcome to be optimized, but as a property of the architecture itself.
 
 Safety is not a reward.
 **Safety is a consequence of being an agent at all.**
