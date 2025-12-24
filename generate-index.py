@@ -141,7 +141,7 @@ def main():
                     { name: 'subtitle', weight: 1.5 },
                     { name: 'content', weight: 1 }
                 ],
-                threshold: 0.3,
+                threshold: 0.1,
                 ignoreLocation: true,
                 distance: 100000,
                 includeScore: true,
