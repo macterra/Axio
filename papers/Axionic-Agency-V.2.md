@@ -1,10 +1,10 @@
-# Agency Conservation and the Sacrifice Pattern
+# Axionic Agency V.2 — Agency Conservation and the Sacrifice Pattern
 
-### A Formal Analysis of Instrumental Harm in Modern Systems (v2.1)
+*A Formal Analysis of Instrumental Harm in Modern Systems*
 
-**David McFadzean**
-*Axio Project*
-2025
+David McFadzean, ChatGPT 5.2<br>
+*Axio Project*<br>
+2025.12.20
 
 ## Abstract
 

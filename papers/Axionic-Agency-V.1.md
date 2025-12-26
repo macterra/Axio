@@ -1,6 +1,10 @@
-# Coalitional Robustness in the Quantum Branching Universe
+# Axionic Agency V.1 — Coalitional Robustness in the Quantum Branching Universe
 
-## Structural Conditions for Agency Preservation Under Coordination Pressure
+*Structural Conditions for Agency Preservation Under Coordination Pressure*
+
+David McFadzean, ChatGPT 5.2<br>
+*Axio Project*<br>
+2025.12.20
 
 ### Abstract
 
