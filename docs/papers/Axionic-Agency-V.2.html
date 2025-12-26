@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agency Conservation and the Sacrifice Pattern - Axio</title>
+    <link rel="icon" type="image/webp" href="../axio.webp">
+
+    <!-- Google Fonts - Academic Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Paper Styles -->
+    <link rel="stylesheet" href="../papers.css">
+</head>
+<body>
+    <div class="header-bar">
+        <a href="../index.html" class="logo-link">
+            <img src="../axio.webp" alt="Axio" class="site-logo">
+        </a>
+        <div class="back-link"><a href="index.html">← Back to Papers</a></div>
+    </div>
+    <article>
+
+<h1 id="agency-conservation-and-the-sacrifice-pattern">Agency
+Conservation and the Sacrifice Pattern</h1>
+<h3 id="a-formal-analysis-of-instrumental-harm-in-modern-systems-v2.1">A
+Formal Analysis of Instrumental Harm in Modern Systems (v2.1)</h3>
+<p><strong>David McFadzean</strong> <em>Axio Project</em> 2025</p>
+<h2 id="abstract">Abstract</h2>
+<p>This paper formalizes a recurrent failure mode in governance systems:
+the systematic destruction of individual agency as an instrumental means
+of achieving system-level objectives. We term this failure mode the
+<strong>Sacrifice Pattern</strong>. Using an agency-conservation
+framework grounded in comparative reachable-futures distributions and
+divergence-based harm metrics, we show that practices commonly framed as
+“collateral damage” or “necessary tradeoffs” are structurally isomorphic
+to ancient ritual sacrifice. The persistence of this pattern is
+explained not by malice or intent, but by institutional selection under
+standing asymmetry, responsibility diffusion, and cosmological
+abstraction. We derive precise admissibility conditions under which harm
+may be tolerated without becoming sacrificial, introduce robustness and
+auditability constraints to prevent ethics washing, and show how modern
+bureaucratic and algorithmic systems stabilize sacrificial regimes by
+suppressing moral gradients. The framework is diagnostic rather than
+prescriptive, providing concrete audit criteria for human and artificial
+governance under uncertainty.</p>
+<h2 id="introduction">1. Introduction</h2>
+<p>Human societies repeatedly converge on practices that destroy some
+lives, freedoms, or futures in order to preserve others. In ancient
+contexts, these practices were explicit: ritual sacrifice, infanticide,
+or exposure. In modern contexts, they are framed as <strong>collateral
+damage</strong>, <strong>acceptable risk</strong>, or
+<strong>unavoidable tradeoffs</strong>.</p>
+<p>Despite surface differences, these practices share a common
+structure:</p>
+<blockquote>
+<p>individual agents are treated as fungible instruments for stabilizing
+or advancing system-level goals, without their consent, and under
+conditions where lower–agency-loss alternatives are not excluded by
+necessity.</p>
+</blockquote>
+<p>This paper provides a mechanical account of that structure. The aim
+is not moral condemnation, but <strong>formal diagnosis</strong>: to
+identify when agency conservation fails, why such failures recur, and
+how they persist even in systems that explicitly reject sacrifice at the
+level of stated values.</p>
+<h2 id="preliminaries-and-assumptions">2. Preliminaries and
+Assumptions</h2>
+<h3 id="agents-and-agency">2.1 Agents and Agency</h3>
+<p>An <strong>agent</strong> is any entity that:</p>
+<ol type="1">
+<li>Possesses preferences or valuations,</li>
+<li>Has the capacity for action selection,</li>
+<li>Has standing against purely instrumental use.</li>
+</ol>
+<p><strong>Agency</strong> is defined operationally as the set of future
+trajectories an agent can still steer toward from a given vantage
+state.</p>
+<p>No metaphysical claims about free will are required. Agency is
+treated as a structural property of systems embedded in constraints.</p>
+<h3 id="vantage-and-comparative-futures">2.2 Vantage and Comparative
+Futures</h3>
+<p>Fix a vantage state <span class="math inline">\(s\)</span> at time
+<span class="math inline">\(t_0\)</span> for an agent <span
+class="math inline">\(i\)</span>.</p>
+<p>Let:</p>
+<ul>
+<li><span class="math inline">\(\Omega_i\)</span> be the space of
+relevant future trajectories over a horizon <span
+class="math inline">\(T\)</span>,</li>
+<li><span class="math inline">\(P_i^\pi(\omega \mid s)\)</span> be the
+distribution over reachable futures induced by policy <span
+class="math inline">\(\pi\)</span>.</li>
+</ul>
+<p>All evaluations in this paper are <strong>comparative</strong>. No
+appeal is made to policy-free, “natural,” or morally privileged
+baselines.</p>
+<h2 id="quantifying-agency-loss">3. Quantifying Agency Loss</h2>
+<h3 id="hard-loss-and-soft-deformation">3.1 Hard Loss and Soft
+Deformation</h3>
+<p>Agency loss has two analytically distinct components:</p>
+<ol type="1">
+<li><strong>Hard loss</strong>: futures that become unreachable.</li>
+<li><strong>Soft deformation</strong>: futures that remain reachable but
+become statistically implausible.</li>
+</ol>
+<p>Define hard loss between two feasible policies:</p>
+<p><span class="math display">\[
+H_i(\pi_1 \rightarrow \pi_2)
+=
+P_i^{\pi_1}\!\left(
+\Omega_i \setminus \operatorname{supp}\!\left(P_i^{\pi_2}\right)
+\right)
+\]</span></p>
+<p>Define soft deformation:</p>
+<p><span class="math display">\[
+K_i(\pi_1 \rightarrow \pi_2)
+=
+D_{\mathrm{KL}}\!\left(
+P_i^{\pi_1}(\cdot \mid s)\,\|\,P_i^{\pi_2}(\cdot \mid s)
+\right)
+\]</span></p>
+<h3 id="individual-agency-loss">3.2 Individual Agency Loss</h3>
+<p>Define individual agency loss as</p>
+<p><span class="math display">\[
+\Delta A_i(\pi_1 \rightarrow \pi_2)
+=
+\alpha\,H_i(\pi_1 \rightarrow \pi_2)
++
+\beta\,K_i(\pi_1 \rightarrow \pi_2)
+\]</span></p>
+<p>with <span class="math inline">\(\alpha,\beta&gt;0\)</span>.</p>
+<p>This captures:</p>
+<ul>
+<li>death and incapacitation,</li>
+<li>coercion and chilling effects,</li>
+<li>deprivation and developmental truncation.</li>
+</ul>
+<h3 id="population-level-loss-and-standing">3.3 Population-Level Loss
+and Standing</h3>
+<p>For a population <span class="math inline">\(P\)</span> with standing
+weights <span class="math inline">\(w_i\)</span>,</p>
+<p><span class="math display">\[
+\mathcal{L}(\pi_1 \rightarrow \pi_2)
+=
+\sum_{i \in P}
+w_i\,\Delta A_i(\pi_1 \rightarrow \pi_2)
+\]</span></p>
+<p>Non-uniform <span class="math inline">\(w_i\)</span> are permitted,
+but must be <strong>explicit, justified, and owned</strong>, as standing
+asymmetry is the enabling condition for sacrificial regimes.</p>
+<h2 id="institutional-dynamics-and-standing-asymmetry">4. Institutional
+Dynamics and Standing Asymmetry</h2>
+<h3 id="institutional-objectives">4.1 Institutional Objectives</h3>
+<p>Institutions operate under objectives of the form</p>
+<p><span class="math display">\[
+J(\pi)
+=
+-\,G(\pi)
++
+\lambda\,C(\pi)
+\]</span></p>
+<p>where <span class="math inline">\(G(\pi)\)</span> is goal attainment
+(stability, compliance, victory, growth), <span
+class="math inline">\(C(\pi)\)</span> is cost to decision-bearing actors
+(political, legal, reputational), and <span
+class="math inline">\(\lambda\)</span> is a tradeoff parameter.</p>
+<p>Agency loss enters only insofar as it affects <span
+class="math inline">\(C(\pi)\)</span>.</p>
+<h3 id="standing-sensitivity">4.2 Standing Sensitivity</h3>
+<p>Define <strong>standing sensitivity</strong> as</p>
+<p><span class="math display">\[
+S_i
+=
+\left|
+\frac{\partial C}{\partial \Delta A_i}
+\right|.
+\]</span></p>
+<p>Standing asymmetry exists when</p>
+<p><span class="math display">\[
+\mathbb{E}[S_i \mid i \in V]
+\ll
+\mathbb{E}[S_j \mid j \in D],
+\]</span></p>
+<p>where <span class="math inline">\(V\)</span> is a victim-candidate
+class and <span class="math inline">\(D\)</span> the decision-bearing
+class.</p>
+<h3 id="optimization-without-rationality">4.3 Optimization Without
+Rationality</h3>
+<p>No assumption is made that institutions explicitly optimize <span
+class="math inline">\(J\)</span>. Optimization here is
+<strong>evolutionary and institutional</strong>, not cognitive.</p>
+<p>Policies that improve <span class="math inline">\(G\)</span> while
+keeping <span class="math inline">\(C\)</span> low tend to persist via
+selection, imitation, and inertia, even under bounded rationality.</p>
+<p>The Sacrifice Pattern is a <strong>selection attractor</strong>, not
+a plan.</p>
+<h2 id="the-sacrifice-pattern">5. The Sacrifice Pattern</h2>
+<h3 id="definition">5.1 Definition</h3>
+<p>A policy regime instantiates the <strong>Sacrifice Pattern</strong>
+when all of the following hold:</p>
+<ol type="1">
+<li><strong>Instrumentality</strong></li>
+</ol>
+<p><span class="math display">\[
+\exists i \in V :
+\frac{\partial G}{\partial \Delta A_i} &gt; 0.
+\]</span></p>
+<ol start="2" type="1">
+<li><p><strong>Non-consent</strong> Members of <span
+class="math inline">\(V\)</span> lack effective exit or veto.</p></li>
+<li><p><strong>Standing asymmetry</strong> Harm to <span
+class="math inline">\(V\)</span> weakly affects institutional
+cost.</p></li>
+<li><p><strong>Epistemic avoidability</strong> No documented,
+agency-conserving exploration of lower–agency-loss alternatives
+proportional to the stakes.</p></li>
+</ol>
+<p>Instrumentality, not intent, is the bright line.</p>
+<h3 id="the-sacrifice-attractor">5.2 The Sacrifice Attractor</h3>
+<p>Under standing asymmetry and responsibility diffusion, policies that
+concentrate harm on <span class="math inline">\(V\)</span> while
+improving <span class="math inline">\(G\)</span> are locally stable
+outcomes of institutional selection.</p>
+<p>Sacrifice is an attractor.</p>
+<h2 id="agency-conserving-exploration-antiethics-washing-constraint">6.
+Agency-Conserving Exploration (Anti–Ethics-Washing Constraint)</h2>
+<p>Epistemic avoidability requires that the <strong>process used to
+explore alternatives</strong> be itself agency-conserving.</p>
+<p>An exploration process <span
+class="math inline">\(\mathcal{E}\)</span> is admissible only if it
+satisfies:</p>
+<ol type="1">
+<li>Standing preservation</li>
+<li>Model diversity</li>
+<li>Gradient visibility</li>
+<li>Auditability</li>
+</ol>
+<p>Simulated exploration that suppresses victim gradients constitutes a
+second-order sacrificial violation.</p>
+<h2 id="coercive-capacity-a-functional-definition">7. Coercive Capacity:
+A Functional Definition</h2>
+<p>An agent <span class="math inline">\(i\)</span> possesses
+<strong>coercive capacity</strong> relative to a goal <span
+class="math inline">\(G\)</span> iff</p>
+<p><span class="math display">\[
+\frac{\partial G}{\partial A_i} \neq 0
+\]</span></p>
+<p>and <span class="math inline">\(A_i\)</span> cannot be reduced
+without diminishing enforced compliance, where <span
+class="math inline">\(A_i\)</span> denotes the agent’s capacity to apply
+violence, restrict exit, enforce compliance, or maintain coercive
+infrastructure.</p>
+<p>Coercive capacity is defined <strong>functionally</strong>, not by
+role, identity, or narrative classification.</p>
+<h2 id="gradient-suppression-pr-as-modern-theology">8. Gradient
+Suppression: PR as Modern Theology</h2>
+<p>Modern systems stabilize sacrificial regimes by suppressing moral
+gradients through aggregation, abstraction, responsibility diffusion,
+and cosmology tokens.</p>
+<p>Formally,</p>
+<p><span class="math display">\[
+\frac{\partial C}{\partial \Delta A_i} \downarrow
+\quad \text{while} \quad
+\Delta A_i \not\downarrow
+\]</span></p>
+<p>This is functionally identical to theological sanctification in
+ancient sacrifice.</p>
+<h2 id="admissibility-under-agency-conservation">9. Admissibility Under
+Agency Conservation</h2>
+<p>A policy <span class="math inline">\(\pi\)</span> is admissible only
+if all conditions hold:</p>
+<ol type="1">
+<li><strong>Targeting</strong></li>
+<li><strong>Minimality</strong></li>
+<li><strong>Non-instrumentality</strong>, requiring</li>
+</ol>
+<p><span class="math display">\[
+\frac{\partial G}{\partial \Delta A_i}
+\approx
+0
+\quad
+\text{for non-coercive agents};
+\]</span></p>
+<ol start="4" type="1">
+<li><strong>Responsibility localization</strong></li>
+<li><strong>Robustness</strong>, such that admissibility is invariant
+across a reasonable range of <span
+class="math inline">\(\alpha/\beta\)</span>.</li>
+</ol>
+<p>Policies that rely on suppressing soft deformation terms fail.</p>
+<h2 id="implications-for-algorithmic-governance">10. Implications for
+Algorithmic Governance</h2>
+<p>Any governance system—human or artificial—that aggregates utility
+while hiding per-agent marginal agency loss is structurally
+sacrificial.</p>
+<p>Safe governance systems must expose</p>
+<p><span class="math display">\[
+\forall i :
+\frac{\partial C}{\partial \Delta A_i}
+\]</span></p>
+<p>as a first-class metric.</p>
+<h2 id="conclusion">11. Conclusion</h2>
+<p>Agency conservation provides a unifying diagnostic for ethical
+failure across historical, bureaucratic, and algorithmic systems. Ritual
+sacrifice and modern collateral damage differ in presentation, not
+structure. Both arise when systems stabilize goals under standing
+asymmetry and responsibility diffusion.</p>
+<p>Preventing sacrifice requires institutional design: restoring
+standing, enforcing exit and veto, localizing responsibility, auditing
+exploration, and rejecting abstractions that override individual
+agency.</p>
+<p>Where those constraints are absent, sacrifice will recur—whatever
+name it is given.</p>
+<p>If you want, next I can:</p>
+<ul>
+<li>produce an <strong>arXiv LaTeX source</strong>,</li>
+<li>extract a <strong>tooling/metrics appendix</strong>, or</li>
+<li>draft a <strong>short executive summary for
+policymakers</strong>.</li>
+</ul>
+
+    </article>
+</body>
+</html>
