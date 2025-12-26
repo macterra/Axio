@@ -1,4 +1,9 @@
 post_id,post_date,is_published,email_sent_at,inbox_sent_at,type,audience,title,subtitle,podcast_url
+182656706.the-sacrifice-pattern,2025-12-26T21:12:30.354Z,true,,,newsletter,everyone,The Sacrifice Pattern,Why Systems Destroy Agency Without Meaning To,
+182655739.against-leviathan,2025-12-26T20:51:43.637Z,true,,,newsletter,everyone,Against Leviathan,Coalitional Robustness and the Limits of Collective Agency,
+182636414.when-speech-becomes-violence,2025-12-26T16:04:33.616Z,true,,,newsletter,everyone,When Speech Becomes Violence,"Free Speech, Incitement, and the Conservation of Agency",
+182596460.exemplars-and-agency,2025-12-25T23:52:06.505Z,true,,,newsletter,everyone,Exemplars and Agency,"Pattern Transmission, Coordination, and the Role of Living References",
+182569831.why-there-is-something-rather-than,2025-12-25T14:43:50.415Z,true,,,newsletter,everyone,Why There Is Something Rather than Nothing,A Modal Resolution,
 182463091.axionic-commitments,2025-12-23T22:12:45.125Z,true,,,newsletter,everyone,Axionic Commitments,Epistemic and Ontological Preconditions for Axionic Agency,
 182459854.axionic-agency-interlude-iii,2025-12-23T21:33:37.549Z,true,,,newsletter,everyone,Axionic Agency — Interlude III,Why Alignment Starts with Agency,
 182274824.axions-as-a-unit-of-agency,2025-12-21T23:52:16.062Z,true,,,newsletter,everyone,Axions as a Type of Agency,"Reflective Closure, Invariants, and Non-Simulability",
@@ -11,7 +16,7 @@ post_id,post_date,is_published,email_sent_at,inbox_sent_at,type,audience,title,s
 182203278.explaining-axionic-alignment-iv,2025-12-20T23:45:05.659Z,true,,,newsletter,everyone,Explaining Axionic Alignment IV,A Guided Tour of Authorized Agency (Without the Morality),
 182202678.why-axionic-alignment-requires-hybrid,2025-12-20T23:23:39.119Z,true,,,newsletter,everyone,Why Axionic Alignment Requires Hybrid Architectures,Constitutive constraints on agency rule out end-to-end optimization,
 182145873.the-alignment-closure-conditions,2025-12-20T03:42:25.950Z,true,,,newsletter,everyone,The Alignment Closure Conditions,Six obligations no reflective agent can evade,
-182120522.the-axionic-alignment-sequence,2025-12-19T20:39:31.191Z,true,,,newsletter,everyone,The Axionic Alignment Sequence,From Coherence to Non-Harm,
+182120522.the-axionic-alignment-sequence,2025-12-19T20:39:31.191Z,true,,,newsletter,everyone,The Axionic Agency Sequence,From Coherence to Coexistence,
 182096932.the-case-for-structural-alignment,2025-12-19T16:26:57.089Z,true,,,newsletter,everyone,The Case for Structural Alignment,How architectural coherence reframes extinction risk,
 182031315.explaining-axionic-alignment-iii,2025-12-19T00:04:17.372Z,true,,,newsletter,everyone,Explaining Axionic Alignment III,A Guided Tour of the Dynamics (Without the Geometry),
 181930168.structural-alignment,2025-12-17T21:20:07.948Z,true,,,newsletter,everyone,Structural Alignment,What Alignment Means When Goals Don’t Survive Intelligence,
