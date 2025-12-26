@@ -122,7 +122,39 @@ Each paper closes a remaining escape hatch:
 
 At this point, **all known authorization-laundering routes are closed**.
 
-## 7. The Axionic Constitution
+## 7. Axionic Agency V
+
+**Structural Failure Modes & Robustness**
+
+**Closes:**
+The assumption that coherent agency, once achieved, remains stable under interaction, coordination, or optimization pressure.
+
+**Key move:**
+Show that agency is not primarily destroyed by error or malice, but by selection dynamics under asymmetry.
+
+This series analyzes how agency fails in systems:
+- multi-agent environments,
+- coalitions and power asymmetries,
+- institutions and bureaucracies,
+- optimization engines (including AGI governance),
+- and branching dynamics in the Quantum Branching Universe.
+
+Two core structural failure modes are formalized:
+- Coalitional Dominance Attractors
+Coordination dynamics that collapse into Leviathans, even when all participants are locally rational.
+- The Sacrifice Pattern
+Optimization regimes in which agency loss becomes an instrumental control variable under standing asymmetry and gradient suppression.
+
+Representative papers:
+* **V.1 — Coalitional Robustness in the Quantum Branching Universe**
+  Conditions under which cooperation preserves agency versus converging to dominance and capture.
+* **V.2 — Agency Conservation and the Sacrifice Pattern**
+  Why institutions, states, and optimization systems recurrently destroy agency without requiring evil intent.
+
+This series establishes that agency coherence is necessary but not sufficient:
+without robustness constraints, coherent agents are systematically consumed by the systems they inhabit.
+
+## 8. The Axionic Constitution
 
 **Charter of Invariant Conditions**
 
@@ -136,7 +168,7 @@ It is a **design-space charter** stating:
 
 It is the normative-looking face of a purely structural result.
 
-## 8. What Axio Does *Not* Do
+## 9. What Axio Does *Not* Do
 
 Axio does **not**:
 
@@ -152,7 +184,7 @@ Axio answers a narrower but foundational question:
 
 > *What kinds of systems can coherently count as agents under reflection—and what follows inevitably if they do?*
 
-## 9. The Bottom Line
+## 10. The Bottom Line
 
 **If a system violates Axionic constraints:**
 It is not misaligned—it is **not an agent in the reflective sense**.
