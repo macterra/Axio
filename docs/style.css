@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:wght@400;600;700&display=swap');
+
 /* RESET & BASE */
 * {
     box-sizing: border-box;
@@ -8,7 +10,7 @@
 body {
     background-color: #03050e;
     color: #e6e6e6;
-    font-family: 'Georgia', 'Times New Roman', serif;
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     padding: 40px 20px;
@@ -54,7 +56,7 @@ article {
 /* BACK LINK */
 .back-link {
     display: inline-block;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-size: 0.85rem;
     color: #94a3b8;
     text-decoration: none;
@@ -78,7 +80,7 @@ article {
 }
 
 .post-title {
-    font-family: 'Georgia', serif;
+    font-family: 'Source Serif 4', Georgia, serif;
     font-weight: 700;
     font-size: 2.5rem;
     color: #ffffff;
@@ -87,7 +89,7 @@ article {
 }
 
 .post-subtitle {
-    font-family: 'Georgia', serif;
+    font-family: 'Source Serif 4', Georgia, serif;
     font-size: 1.25rem;
     color: #94a3b8;
     font-weight: 400;
@@ -96,7 +98,7 @@ article {
 }
 
 .post-header .post-date {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-size: 0.9rem;
     color: #64748b;
     margin-top: 0.75rem;
@@ -112,7 +114,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Georgia', serif;
+    font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 1rem;
