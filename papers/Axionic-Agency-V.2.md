@@ -265,9 +265,3 @@ Agency conservation provides a unifying diagnostic for ethical failure across hi
 Preventing sacrifice requires institutional design: restoring standing, enforcing exit and veto, localizing responsibility, auditing exploration, and rejecting abstractions that override individual agency.
 
 Where those constraints are absent, sacrifice will recur—whatever name it is given.
-
-If you want, next I can:
-
-* produce an **arXiv LaTeX source**,
-* extract a **tooling/metrics appendix**, or
-* draft a **short executive summary for policymakers**.
