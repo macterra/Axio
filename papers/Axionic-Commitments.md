@@ -1,6 +1,6 @@
-# Axionic Commitments
+# The Axionic Commitments
 
-**Epistemic and Ontological Preconditions for Axionic Agency**
+*Epistemic and Ontological Preconditions for Axionic Agency*
 
 David McFadzean, ChatGPT 5.2<br>
 *Axio Project*<br>

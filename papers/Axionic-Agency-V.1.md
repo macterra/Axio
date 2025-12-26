@@ -6,7 +6,7 @@ David McFadzean, ChatGPT 5.2<br>
 *Axio Project*<br>
 2025.12.20
 
-### Abstract
+## Abstract
 
 This paper examines whether cooperation among Reflective Sovereign Agents (RSAs) can increase the conditional measure of agency-preserving futures within their shared branchcone. We argue that RSAs induce local attractor dynamics toward agency-preserving outcomes above a Minimal Viable Agency (MVA) threshold, and that coalitions of RSAs can thicken these attractors by reducing correlated failure and increasing redundancy. However, this effect holds only under strict structural constraints. Resource limits, defection incentives, semantic drift, and enforcement pressures generate a competing attractor toward centralized, non-agentic optimization (“the Leviathan”). The result is a bifurcation: coalition as robustness amplifier versus coalition as agency destroyer. We characterize the conditions separating these regimes under the Axionic Agency framework.
 
