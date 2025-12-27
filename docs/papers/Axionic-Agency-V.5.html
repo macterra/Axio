@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency V.5 — Dominions: Plurality Without Closure - Axio</title>
+    <link rel="icon" type="image/webp" href="../axio.webp">
+
+    <!-- Google Fonts - Academic Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Paper Styles -->
+    <link rel="stylesheet" href="../papers.css">
+</head>
+<body>
+    <div class="header-bar">
+        <a href="../index.html" class="logo-link">
+            <img src="../axio.webp" alt="Axio" class="site-logo">
+        </a>
+        <div class="back-link"><a href="index.html">← Back to Papers</a></div>
+    </div>
+    <article>
+
+<h1 id="axionic-agency-v.5-dominions-plurality-without-closure">Axionic
+Agency V.5 — Dominions: Plurality Without Closure</h1>
+<p><em>Optimal Governance Properties of Federated Virtual
+Jurisdictions</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axio Project</em><br>
+2025.12.27</p>
+<h2 id="abstract">Abstract</h2>
+<p>This paper analyzes a proposed future social architecture in which
+agents may create sovereign virtual jurisdictions—here called
+<strong>Dominions</strong>—admit other agents by invitation and consent,
+and enforce local rules solely through expulsion. The architecture
+rejects global value aggregation, enforced coexistence, and normative
+finality. We show that while such a system does not constitute a utopia
+under any standard definition, it is <em>optimal as a governance layer
+under agency-preserving constraints</em>. Specifically, it is
+Pareto-maximal among non-coercive architectures, minimizes structural
+sacrifice, and remains robust under value drift. The analysis clarifies
+the domain of these optimality claims, explicitly distinguishing digital
+governance from physical resource allocation, and specifies the
+architectural conditions—asset portability and capability
+isolation—under which expulsion-only enforcement remains viable. The
+result is a precise characterization of the strongest form of social
+optimality available once utopia is abandoned.</p>
+<h2 id="introduction">1. Introduction</h2>
+<p>The incoherence of utopia as a final social design leaves open a
+constructive question:</p>
+<blockquote>
+<p><strong>What kinds of social architectures remain admissible once
+agency, value drift, and pluralism are taken seriously?</strong></p>
+</blockquote>
+<p>This paper analyzes a concrete candidate: a federated virtual
+architecture in which agents inhabit a shared technical substrate while
+exercising sovereign control over local virtual jurisdictions, hereafter
+called <strong>Dominions</strong>. Entry into any Dominion is voluntary.
+Rule enforcement is limited to expulsion. No agent is forced to share a
+Dominion, value system, or equilibrium.</p>
+<p>The claim advanced here is narrow but strong:</p>
+<blockquote>
+<p><strong>Among architectures that preserve agency and reject outcome
+coercion, a system of Federated Virtual Dominions is structurally
+optimal as a governance layer.</strong></p>
+</blockquote>
+<p>The paper does <em>not</em> claim to solve physical scarcity,
+biological dependency, or material political economy. It characterizes
+optimality in the domain where social coordination is digitally
+mediated.</p>
+<h2 id="architectural-description">2. Architectural Description</h2>
+<h3 id="core-features">2.1 Core Features</h3>
+<p>The proposed architecture has the following properties:</p>
+<ol type="1">
+<li><p><strong>Dominion Sovereignty</strong> Any agent may create a
+virtual jurisdiction, called a <strong>Dominion</strong> <span
+class="math inline">\(D_i\)</span>, with locally defined rules.</p></li>
+<li><p><strong>Voluntary Entry</strong> Other agents may enter <span
+class="math inline">\(D_i\)</span> only by invitation and explicit
+consent to its rules.</p></li>
+<li><p><strong>Bounded Enforcement</strong> Rule violations result only
+in expulsion from <span class="math inline">\(D_i\)</span>. No
+punishment, fines, or coercive penalties are permitted.</p></li>
+<li><p><strong>Exit Supremacy</strong> Agents retain the unconditional
+ability to leave any Dominion.</p></li>
+<li><p><strong>No Global Value Aggregation</strong> The system does not
+rank, optimize, or reconcile Dominion-level value functions.</p></li>
+<li><p><strong>Thin Substrate</strong> A shared infrastructure enforces
+identity persistence, consent verification, capability isolation, and
+expulsion, but does not adjudicate values or outcomes.</p></li>
+</ol>
+<p>This defines a <strong>federated, opt-in, expulsion-only governance
+topology</strong> composed of multiple Dominions.</p>
+<h3 id="asset-portability-and-exit-supremacy">2.2 Asset Portability and
+Exit Supremacy</h3>
+<p>Exit supremacy is only meaningful if exit costs remain low.</p>
+<p>Accordingly, the architecture requires that:</p>
+<blockquote>
+<p><strong>Persistent identity, assets, and reputation are
+substrate-bound and user-owned, not
+Dominion-operator-owned.</strong></p>
+</blockquote>
+<p>Dominions may define local affordances, norms, and rules of
+interaction, but durable assets must persist across expulsion. If
+Dominion operators could revoke assets on exit, exit costs would rise
+and a sacrifice gradient would re-emerge.</p>
+<p>Asset portability is therefore not an implementation detail; it is a
+constitutive requirement for non-coercive governance.</p>
+<h3 id="capability-isolation-of-dominions">2.3 Capability Isolation of
+Dominions</h3>
+<p>Dominions are <strong>capability-isolated execution
+contexts</strong>, not peer sovereigns.</p>
+<p>Specifically:</p>
+<ul>
+<li>Dominions do not possess network-addressable access to other
+Dominions</li>
+<li>Dominions cannot allocate substrate resources beyond assigned
+quotas</li>
+<li>Dominions cannot write to shared state except through explicit,
+substrate-mediated bridges</li>
+</ul>
+<p>As a result:</p>
+<blockquote>
+<p><strong>Inter-Dominion aggression is physically impossible by design,
+not regulated post hoc.</strong></p>
+</blockquote>
+<p>This isolation is analogous to process separation in operating
+systems or object-capability security models. Preventing cross-Dominion
+interference is a constitutive constraint, not a form of benevolent
+governance.</p>
+<h2 id="admissibility-constraints">3. Admissibility Constraints</h2>
+<p>Let <span class="math inline">\(\mathcal{A}\)</span> denote the set
+of social architectures satisfying:</p>
+<ul>
+<li>preservation of agentic decision authority,</li>
+<li>allowance for endogenous value drift,</li>
+<li>absence of outcome coercion,</li>
+<li>enforcement limited to constitutive constraints.</li>
+</ul>
+<p>Architectures outside <span
+class="math inline">\(\mathcal{A}\)</span>—including enforced
+coexistence, global norm enforcement, or mandatory value convergence—are
+excluded <em>by definition</em>.</p>
+<p>The question addressed here is not whether the proposed system is
+optimal simpliciter, but whether it is <strong>undominated within <span
+class="math inline">\(\mathcal{A}\)</span></strong>.</p>
+<h2 id="pareto-maximality-under-non-coercion">4. Pareto Maximality Under
+Non-Coercion</h2>
+<h3 id="claim">4.1 Claim</h3>
+<p>The proposed architecture is <strong>Pareto-maximal within <span
+class="math inline">\(\mathcal{A}\)</span></strong>.</p>
+<h3 id="argument">4.2 Argument</h3>
+<p>Consider any alternative architecture <span
+class="math inline">\(A&#39; \in \mathcal{A}\)</span> that:</p>
+<ul>
+<li>restricts Dominion creation,</li>
+<li>limits exit,</li>
+<li>enforces shared norms, or</li>
+<li>imposes mandatory coexistence across Dominions.</li>
+</ul>
+<p>For at least one agent, <span class="math inline">\(A&#39;\)</span>
+strictly reduces the set of value-consistent trajectories available,
+while failing to increase any other agent’s attainable value under their
+own valuation.</p>
+<p>No admissible architecture strictly dominates the proposed
+system.</p>
+<h2 id="freedom-density-optimality">5. Freedom Density Optimality</h2>
+<p>Define <strong>freedom density</strong> as:</p>
+<blockquote>
+<p>the measure of distinct value-consistent future trajectories per unit
+of coercive constraint.</p>
+</blockquote>
+<p>The architecture maximizes freedom density because:</p>
+<ul>
+<li>constraints are localized to voluntary Dominion contexts,</li>
+<li>enforcement is minimal and reversible,</li>
+<li>agents may instantiate arbitrarily divergent norms across Dominions
+without imposing them on others.</li>
+</ul>
+<p>Any architecture that enforces shared Dominions or global outcomes
+necessarily reduces freedom density by constraining agents whose values
+diverge.</p>
+<h2 id="robustness-under-value-drift">6. Robustness Under Value
+Drift</h2>
+<p>Let <span class="math inline">\(U_i(t)\)</span> denote agent <span
+class="math inline">\(i\)</span>’s valuation over time.</p>
+<p>The architecture uniquely satisfies the following property:</p>
+<blockquote>
+<p>For any <span class="math inline">\(i\)</span> and any <span
+class="math inline">\(t_1 &gt; t_0\)</span>, if <span
+class="math inline">\(U_i(t_1) \neq U_i(t_0)\)</span>, there exists a
+path that does not require reforming or coercing other agents.</p>
+</blockquote>
+<p>This property fails in nation-states, federations, consensus
+communities, and public-goods-dependent systems.</p>
+<p>The system of Federated Virtual Dominions is therefore
+<strong>drift-optimal</strong>.</p>
+<h2 id="minimal-sacrifice">7. Minimal Sacrifice</h2>
+<h3 id="standing-sacrifice">7.1 Standing Sacrifice</h3>
+<p>A <em>standing sacrifice</em> exists when some agents must endure
+involuntary deprivation to stabilize a system.</p>
+<h3 id="result">7.2 Result</h3>
+<p>The proposed architecture contains <strong>no standing sacrifice
+class</strong>.</p>
+<ul>
+<li>Losses are localized to exit costs.</li>
+<li>No agent’s flourishing depends on another’s coerced
+participation.</li>
+<li>No variance sink is required to maintain equilibrium.</li>
+</ul>
+<p>Any architecture that enforces shared outcomes across Dominions must
+reintroduce sacrifice sinks.</p>
+<h2 id="what-the-architecture-does-not-optimize">8. What the
+Architecture Does Not Optimize</h2>
+<p>The system does <strong>not</strong> optimize for:</p>
+<ul>
+<li>shared meaning,</li>
+<li>large-scale coordination,</li>
+<li>public goods,</li>
+<li>epistemic convergence,</li>
+<li>low transaction cost.</li>
+</ul>
+<p>These are deliberate exclusions.</p>
+<p>Agents who value such goods may instantiate them voluntarily
+<em>within</em> Dominions. The architecture refuses to enforce them
+globally.</p>
+<h2 id="substrate-scope-and-physical-constraints">9. Substrate Scope and
+Physical Constraints</h2>
+<p>The optimality claims advanced here apply to the <strong>governance
+layer</strong> of digitally mediated interaction.</p>
+<p>The architecture does not eliminate:</p>
+<ul>
+<li>physical scarcity,</li>
+<li>energy requirements,</li>
+<li>biological dependency, or</li>
+<li>material political economy.</li>
+</ul>
+<p>No governance system can. To the extent that human social, economic,
+and expressive life is mediated through digital environments, Federated
+Virtual Dominions minimize coercion <em>within that domain</em>.
+Physical sacrifice patterns may persist elsewhere.</p>
+<h2 id="relation-to-prior-frameworks">10. Relation to Prior
+Frameworks</h2>
+<p>This architecture may be read as a <strong>digital instantiation of
+Robert Nozick’s “framework for utopias”</strong>, updated to enforce
+exit supremacy, asset portability, and expulsion-only governance in
+virtual environments.</p>
+<p>Unlike Nozick’s rights-based derivation, the present justification
+rests on agency preservation, non-composability of value, and robustness
+under drift.</p>
+<h2 id="conclusion">11. Conclusion</h2>
+<p>Once utopia is rejected as incoherent, only constrained optimality
+remains.</p>
+<p>Under the constraints of agency preservation, value drift,
+non-coercion, asset portability, and capability isolation, a system of
+Federated Virtual Dominions is:</p>
+<ul>
+<li>Pareto-maximal,</li>
+<li>freedom-density optimal,</li>
+<li>drift-robust,</li>
+<li>sacrifice-minimal,</li>
+<li>and undominated within the admissible design space.</li>
+</ul>
+<p>This is the strongest form of optimality available in principle.</p>
+<p>The correct ambition is no longer to design a perfect world, but to
+design a system that <strong>refuses to decide what perfection must
+be</strong>.</p>
+
+    </article>
+</body>
+</html>
