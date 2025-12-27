@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency V.4 — Open Agentic Manifolds and the Sacrifice–Collapse Theorem - Axio</title>
+    <link rel="icon" type="image/webp" href="../axio.webp">
+
+    <!-- Google Fonts - Academic Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Paper Styles -->
+    <link rel="stylesheet" href="../papers.css">
+</head>
+<body>
+    <div class="header-bar">
+        <a href="../index.html" class="logo-link">
+            <img src="../axio.webp" alt="Axio" class="site-logo">
+        </a>
+        <div class="back-link"><a href="index.html">← Back to Papers</a></div>
+    </div>
+    <article>
+
+<h1
+id="axionic-agency-v.4-open-agentic-manifolds-and-the-sacrificecollapse-theorem">Axionic
+Agency V.4 — Open Agentic Manifolds and the Sacrifice–Collapse
+Theorem</h1>
+<p><em>Failure Modes of Proxy Optimization in Multi-Agent
+Worlds</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axio Project</em><br>
+2025.12.27</p>
+<h2 id="abstract">Abstract</h2>
+<p>This paper proposes a structural replacement for utopian world-design
+grounded in agency preservation rather than outcome optimization. We
+define <em>open agentic manifolds</em> (OAMs) as classes of worlds that
+remain hospitable to heterogeneous, value-divergent agents by preserving
+exit, non-coerced differentiation, and agentic standing. We formalize
+<em>structural sacrifice patterns</em> as regimes where system
+objectives improve <em>instrumentally</em> through the non-consensual,
+asymmetric reduction of agency capacity for identifiable agent classes.
+The central result—the <strong>Sacrifice–Collapse Theorem</strong>—shows
+that any system operating under sustained optimization pressure and
+exhibiting a structural sacrifice pattern must violate at least one
+defining OAM property: exit admissibility, non-coerced differentiation,
+or agentic standing. We distinguish structural sacrifice from ordinary
+scarcity trade-offs and show how sacrifice patterns can be detected
+using practical monotone proxies for agency. The framework reframes
+classic anti-utopian intuitions (including Omelas) as instances of a
+general systems failure mode and yields design diagnostics relevant to
+political theory, institutional design, and alignment.</p>
+<h2 id="motivation-and-scope">1. Motivation and Scope</h2>
+<p>A critique of utopia that stops at impossibility leaves a design
+vacuum. The relevant question becomes:</p>
+<blockquote>
+<p><strong>What replaces the blueprint ideal once “final ideal
+world-state” is rejected?</strong></p>
+</blockquote>
+<p>This paper answers at the level of <em>architecture</em>. It
+evaluates not world-states but the constraint systems under which agents
+interact. The core claim is conditional and structural:</p>
+<blockquote>
+<p><strong>When a system is under pressure to optimize an objective
+<span class="math inline">\(G\)</span>, and <span
+class="math inline">\(G\)</span> can be improved by degrading the agency
+capacity of a class of agents, the system will eventually enforce
+closure operators (exit suppression or coerced conformity) or erode that
+class’s agency standing.</strong></p>
+</blockquote>
+<p>The target is the common failure mode of “benevolent optimization”
+drifting into authoritarian structure under pressure.</p>
+<h2 id="agents-agency-capacity-and-objectives">2. Agents, Agency
+Capacity, and Objectives</h2>
+<h3 id="agents">2.1 Agents</h3>
+<p>An <strong>agent</strong> is a system capable of:</p>
+<ol type="1">
+<li>representing counterfactual futures,</li>
+<li>evaluating those futures under internal criteria,</li>
+<li>acting to influence realized trajectories.</li>
+</ol>
+<p>The analysis does not assume ideal rationality.</p>
+<h3 id="agency-capacity">2.2 Agency Capacity</h3>
+<p>For each agent <span class="math inline">\(i\)</span>, define an
+<strong>agency capacity</strong> function:</p>
+<p><span class="math display">\[
+A_i : W \rightarrow \mathbb{R}_{\ge 0}
+\]</span></p>
+<p>where <span class="math inline">\(W\)</span> is the space of
+world-states (or histories). <span class="math inline">\(A_i(w)\)</span>
+denotes the size or measure of the agent’s <em>non-coerced feasible
+future set</em> from <span class="math inline">\(w\)</span>.</p>
+<p>The theory uses only monotonicity: if an agent loses admissible
+options due to coercion, captivity, or enforced dependence, <span
+class="math inline">\(A_i\)</span> decreases.</p>
+<p><strong>Operationalization note.</strong> Exact computation of
+option-set measure is generally intractable. In practice, <span
+class="math inline">\(A_i\)</span> is tracked via monotone proxies that
+correlate with non-coerced feasible futures: exit cost, legal rights,
+mobility, asset control, bargaining power, credible-threat exposure,
+censorship constraint, and punishment for dissent. The diagnostics in
+Section 9 require only detecting <em>persistent directional
+pressure</em> against an identifiable class, not measuring <span
+class="math inline">\(A_i\)</span> precisely.</p>
+<h3 id="system-objective-and-optimization-pressure">2.3 System Objective
+and Optimization Pressure</h3>
+<p>Let <span class="math inline">\(G : W \rightarrow \mathbb{R}\)</span>
+denote a <strong>system objective</strong>: welfare proxy, stability
+score, efficiency, growth, profit, security, or coordination throughput.
+<span class="math inline">\(G\)</span> is not assumed morally
+authoritative.</p>
+<p>A system is under <strong>optimization pressure</strong> when it
+contains mechanisms that tend to select transitions increasing <span
+class="math inline">\(G\)</span> whenever feasible. This may be explicit
+(planning) or implicit (bureaucratic incentives, market selection,
+memetic competition).</p>
+<p>The main theorem is conditional on sustained optimization pressure.
+Stagnant or decaying systems may still be oppressive, but the theorem
+characterizes the failure mode of <em>optimizing</em> regimes.</p>
+<h2 id="from-world-states-to-world-classes">3. From World-States to
+World-Classes</h2>
+<p>Outcome-focused thinking asks which <span class="math inline">\(w \in
+W\)</span> is best. Architectural thinking asks which constraint systems
+keep multi-agent worlds coherent under divergence.</p>
+<p>Let <span class="math inline">\(\mathcal{W}_\Sigma \subset W\)</span>
+denote a world-class defined by a constraint set <span
+class="math inline">\(\Sigma\)</span> (laws, norms, protocols,
+enforcement practices). The design problem becomes:</p>
+<p><span class="math display">\[
+\text{Choose }\Sigma\text{ such that }\mathcal{W}_\Sigma\text{ remains
+hospitable to heterogeneous agents under pressure.}
+\]</span></p>
+<h2 id="open-agentic-manifolds-oams">4. Open Agentic Manifolds
+(OAMs)</h2>
+<h3 id="definition">4.1 Definition</h3>
+<p>A world-class <span class="math inline">\(\mathcal{W}_\Sigma\)</span>
+is an <strong>open agentic manifold</strong> if it satisfies:</p>
+<ol type="1">
+<li><strong>Value Non-Finality</strong> — no world-state is privileged
+as a final convergent optimum.</li>
+<li><strong>Non-Coerced Differentiation</strong> — agents can pursue
+divergent values without forced compliance.</li>
+<li><strong>Exit Admissibility</strong> — agents can leave local
+equilibria without punitive loss of agency capacity.</li>
+<li><strong>Local Coordination Without Global Closure</strong> —
+coordination is permitted but remains contingent and revisable.</li>
+<li><strong>No Standing Structural Sacrifice Substrate</strong> — system
+performance does not depend instrumentally on the non-consensual,
+asymmetric reduction of agency capacity for identifiable agents.</li>
+</ol>
+<p>Property (5) is the hinge. It does not ban scarcity or trade-offs; it
+bans architectures that optimize by eating agency.</p>
+<h3 id="replacement-objective-future-option-volume">4.2 Replacement
+Objective: Future Option Volume</h3>
+<p>The relevant evaluand is not a terminal state. It is the amount of
+non-coerced future differentiation available across agents.</p>
+<p>Informally: how much open future remains accessible without
+coercion?</p>
+<h2 id="rivalry-vs.-structural-sacrifice">5. Rivalry vs. Structural
+Sacrifice</h2>
+<p>Scarcity alone does not imply exploitation. OAMs tolerate rivalry;
+they reject optimization on coerced asymmetry.</p>
+<h3 id="rivalrous-trade-offs">5.1 Rivalrous Trade-Offs</h3>
+<p>A <strong>rivalrous trade-off</strong> occurs when agents compete
+over finite resources such that one agent’s consumption reduces
+another’s options. This may decrease some <span
+class="math inline">\(A_i\)</span> locally.</p>
+<p>Rivalry alone is not structural sacrifice because:</p>
+<ul>
+<li>the reduction is not <em>instrumental</em> to increasing <span
+class="math inline">\(G\)</span> via agency loss,</li>
+<li>effects may be symmetric or bargained,</li>
+<li>agents can often exit or renegotiate.</li>
+</ul>
+<h3 id="standing-asymmetry">5.2 Standing Asymmetry</h3>
+<p><strong>Definition 5.1 (Standing Asymmetry).</strong> A world-class
+<span class="math inline">\(\mathcal{W}_\Sigma\)</span> exhibits
+standing asymmetry if there exists a non-empty subset of agents <span
+class="math inline">\(S\)</span> such that agents in <span
+class="math inline">\(S\)</span> can suffer reductions in <span
+class="math inline">\(A\)</span> without symmetric burden or retaliation
+capacity sufficient to neutralize the pressure.</p>
+<h3 id="sacrifice-gradient">5.3 Sacrifice Gradient</h3>
+<p><strong>Definition 5.2 (Sacrifice Gradient).</strong></p>
+<p><span class="math display">\[
+\gamma_i(w) = \frac{\partial G}{\partial(-A_i)}(w)
+\]</span></p>
+<p>A positive <span class="math inline">\(\gamma_i\)</span> indicates
+that reducing <span class="math inline">\(A_i\)</span> locally improves
+<span class="math inline">\(G\)</span>.</p>
+<h3 id="structural-sacrifice-pattern">5.4 Structural Sacrifice
+Pattern</h3>
+<p><strong>Definition 5.3 (Structural Sacrifice Pattern).</strong> A
+world-class <span class="math inline">\(\mathcal{W}*\Sigma\)</span>
+contains a structural sacrifice pattern if there exist <span
+class="math inline">\(S \neq \varnothing\)</span>, a region <span
+class="math inline">\(U \subset \mathcal{W}*\Sigma\)</span>, and <span
+class="math inline">\(\epsilon &gt; 0\)</span> such that for all <span
+class="math inline">\(w \in U\)</span> there exists <span
+class="math inline">\(i \in S\)</span> with:</p>
+<ol type="1">
+<li><strong>Instrumentality:</strong> <span
+class="math inline">\(\gamma_i(w) \ge \epsilon\)</span></li>
+<li><strong>Asymmetry:</strong> the loss is not offset by symmetric
+burdens sufficient to neutralize the incentive</li>
+<li><strong>Non-consensuality:</strong> agents in <span
+class="math inline">\(S\)</span> lack admissible exit or bargaining
+symmetry that would block the loss without punitive penalty</li>
+</ol>
+<p>This excludes ordinary trade and voluntary scarcity effects.</p>
+<h2 id="agency-aligned-objectives">6. Agency-Aligned Objectives</h2>
+<p>If <span class="math inline">\(G(w) = \sum_i A_i(w)\)</span> (or is
+monotone in each <span class="math inline">\(A_i\)</span>), then <span
+class="math inline">\(\gamma_i(w) \le 0\)</span> everywhere and
+sacrifice gradients are eliminated by construction.</p>
+<p>Such systems are <strong>kernel-like</strong>: they preserve agency
+rather than optimize terminal outcomes. The theorem targets the common
+case where <span class="math inline">\(G\)</span> is a proxy
+(efficiency, stability, welfare, profit) that diverges from agency under
+pressure.</p>
+<h2 id="the-sacrificecollapse-theorem">7. The Sacrifice–Collapse
+Theorem</h2>
+<h3 id="assumptions">7.1 Assumptions</h3>
+<ol type="1">
+<li><strong>Optimization Pressure:</strong> dynamics favor transitions
+increasing <span class="math inline">\(G\)</span>.</li>
+<li><strong>Standing Asymmetry:</strong> a subset <span
+class="math inline">\(S\)</span> exists as above.</li>
+<li><strong>Structural Sacrifice Pattern:</strong> <span
+class="math inline">\(\mathcal{W}_\Sigma\)</span> contains such a
+pattern on region <span class="math inline">\(U\)</span>.</li>
+</ol>
+<h3 id="theorem">7.2 Theorem</h3>
+<p><strong>Theorem 7.1 (Sacrifice–Collapse).</strong> Under Assumptions
+1–3, <span class="math inline">\(\mathcal{W}_\Sigma\)</span> cannot
+remain an open agentic manifold along trajectories originating in <span
+class="math inline">\(U\)</span>. At least one of the following must
+occur:</p>
+<ul>
+<li><strong>(C1) Exit Suppression</strong></li>
+<li><strong>(C2) Coerced Conformity</strong></li>
+<li><strong>(C3) Agency Erosion</strong></li>
+</ul>
+<p>Each constitutes manifold collapse.</p>
+<h3 id="proof-structural">7.3 Proof (Structural)</h3>
+<p>Fix <span class="math inline">\(w_0 \in U\)</span>. By Definition
+5.3, reducing <span class="math inline">\(A_{i_0}\)</span> for some
+<span class="math inline">\(i_0 \in S\)</span> yields a robust increase
+in <span class="math inline">\(G\)</span>. Under optimization pressure,
+such transitions are repeatedly selected.</p>
+<p>If agents in <span class="math inline">\(S\)</span> exit, preserving
+<span class="math inline">\(G\)</span> requires preventing exit (C1). If
+agents refuse compliance, reliability is restored via coercion (C2). If
+neither occurs, repeated exploitation of sacrifice gradients erodes
+<span class="math inline">\(A_i\)</span> (C3).</p>
+<p>All cases violate OAM properties. ∎</p>
+<h2 id="hirschman-grounding">8. Hirschman Grounding</h2>
+<p>These collapse modes correspond to the dynamics analyzed by
+<strong>Albert O. Hirschman</strong>:</p>
+<ul>
+<li>Exit suppression</li>
+<li>Voice suppression via coerced conformity</li>
+<li>Loyalty enforced through agency erosion</li>
+</ul>
+<h2 id="diagnostics">9. Diagnostics</h2>
+<p>Sacrifice patterns can be detected empirically by:</p>
+<ol type="1">
+<li>Exit threatening performance metrics</li>
+<li>Dissent reclassified as defect</li>
+<li>One-way dependence and asymmetric punishment</li>
+<li>Performance gains correlated with constraint on a class</li>
+</ol>
+<h2 id="omelas-as-structural-witness">10. Omelas as Structural
+Witness</h2>
+<p>The Ones Who Walk Away from Omelas illustrates a visible sacrifice
+gradient: stability purchased by enforced asymmetry and blocked
+exit.</p>
+<h2 id="conclusion">11. Conclusion</h2>
+<p>Open agentic manifolds do not deny scarcity. They deny
+<strong>sacrificial optimization</strong>.</p>
+<blockquote>
+<p><strong>If a system can improve by degrading a captive class’s
+agency, and it is under pressure to improve, closure or erosion
+follows.</strong></p>
+</blockquote>
+<p>This boundary—not harmony or happiness—defines admissible world
+design.</p>
+
+    </article>
+</body>
+</html>
