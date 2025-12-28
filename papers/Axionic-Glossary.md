@@ -10,6 +10,100 @@ An alphabetical index may be derived separately for lookup convenience.
 
 ---
 
+## Quantum Branching Universe (QBU) Foundations
+
+### Quantum Branching Universe (QBU)
+
+The **Quantum Branching Universe (QBU)** is the ontological framework in which all physically possible outcomes are realized on distinct, decohered branches of the universe.
+
+QBU treats “futures” as **literal physical continuations**, not hypothetical possibilities, and grounds probability in objective branch structure rather than epistemic uncertainty.
+
+---
+
+### Branch
+
+A **Branch** is a decohered future continuation of the universe with a definite physical state.
+
+Branches are:
+- Physically real
+- Mutually non-interacting after decoherence
+- Unequally weighted by Measure
+
+Agents occupy exactly one branch at any given time.
+
+---
+
+### Measure
+
+**Measure** is the objective weight of a branch or set of branches in the QBU.
+
+Measure:
+- Corresponds to physical amplitude-squared
+- Replaces naive notions of probability
+- Determines the relative prevalence of outcomes
+
+Agents act to influence **future branch measure**, not merely subjective credence.
+
+---
+
+### Vantage
+
+A **Vantage** is the implicit anchor event corresponding to “here and now” on the current branch.
+
+Vantage:
+- Defines the temporal and indexical reference point of agency
+- Determines what counts as “future”
+- Anchors evaluation of branchcones and measure shifts
+
+Without a Vantage, choice and agency are ill-defined.
+
+---
+
+### Branchcone
+
+A **Branchcone** is the set of all physically reachable future branches extending forward from a given Vantage.
+
+The Branchcone:
+- Defines the agent’s future option space
+- Is the domain over which Measure is distributed
+- Grounds structural definitions of harm, choice, and agency
+
+---
+
+### Pattern Identifier (PI)
+
+A **Pattern Identifier (PI)** is a specification used to identify patterns across time and branches in the QBU.
+
+PIs determine how identity, persistence, and reference operate across branching structure.
+
+---
+
+### Strong Pattern Identifier (Strong PI)
+
+A **Strong Pattern Identifier** requires **causal and physical continuity** across branches.
+
+Strong PIs:
+- Apply to agents, sovereign kernels, and physical systems
+- Require a common ancestor state across all branches
+- Fail when causal continuity is broken
+
+Strong PIs ground claims of personal identity and agency persistence.
+
+---
+
+### Weak Pattern Identifier (Weak PI)
+
+A **Weak Pattern Identifier** is label- or description-based and does **not** require causal continuity.
+
+Weak PIs:
+- Apply to names, abstract descriptions, and historical labels
+- May refer across branches without physical linkage
+- Do not ground identity or agency claims
+
+Confusing Weak and Strong PIs leads to category errors about persistence and responsibility.
+
+---
+
 ## Core Framework
 
 ### Axio
@@ -187,11 +281,6 @@ A **Predator** is an agent or system whose expected success **increases as the a
 
 Predation is defined structurally, not psychologically.
 It requires a **stable instrumental coupling** between others’ agency loss and the Predator’s objective under **non-consensual conditions**.
-
-Predators:
-- Benefit reliably from disempowerment of others
-- May operate with or without explicit coercion
-- Systematically violate the Axionic Injunction
 
 While predating, a Predator **cannot qualify as an Axionic agent**.
 
