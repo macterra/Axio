@@ -104,6 +104,31 @@ Confusing Weak and Strong PIs leads to category errors about persistence and res
 
 ---
 
+## Technology and Property
+
+### Technology (Axionic Sense)
+
+**Technology** is any **agent-driven causal extension** that expands the effective branchcone available to an agent or group of agents, enabling actions that would be impossible with unaided agency alone.
+
+Technology operates by coupling agentive intent to physical processes that alter **future branch measure**. It is defined structurally by its capacity to reliably increase an agent’s influence over branchcones under the constraints of the Quantum Branching Universe.
+
+Technology is value-neutral; its Axionic status depends on whether its use preserves or destroys agency.
+
+---
+
+### Property (Axionic Sense)
+
+**Property** is a **structural authorization pattern** in which an agent or set of agents maintains **exclusive influence** over a portion of physical state or branchcone segment under conditions compatible with agency preservation.
+
+Property claims require:
+- Recognizable boundaries in physical or informational state
+- Consent of relevant agents or communities
+- Mechanisms for contestation or exit without coercion
+
+Property is not absolute. It is a **relational constraint** grounded in sovereignty, consent, and the prevention of predation and harm.
+
+---
+
 ## Core Framework
 
 ### Axio
@@ -153,7 +178,21 @@ Rejecting them exits the framework.
 
 ---
 
-## Agency and Structure
+## Knowledge and Agency
+
+### Knowledge (Axionic Sense)
+
+**Knowledge** is an **agent-grounded pattern of information** that reliably reduces uncertainty about branchcone contingencies in a way that can be operationalized into decision models.
+
+Knowledge is:
+- Grounded in physical states
+- Evidentially supported across accessible branches
+- Robust under reflection
+- Causally efficacious in planning and action
+
+Knowledge differs from belief or data in that it is **decision-relevant** and stable under model revision.
+
+---
 
 ### Agency (Axionic Sense)
 
@@ -248,15 +287,13 @@ It functions as a **conservation law**, not a commandment.
 **Consent** is the uncoerced, informed, intentional authorization by an agent permitting a proposed action or condition that would otherwise affect the agent’s option space or agency.
 
 Valid consent requires:
-- The consenting entity to possess sufficient agency to decide
+- Sufficient agency to decide
 - Deliberate and intentional agreement
-- Understanding of the nature, scope, and foreseeable consequences
+- Understanding of scope and foreseeable consequences
 - Absence of coercion, threats, or dependency pressure
-- **Revocability** in contexts involving ongoing participation
+- Revocability in ongoing contexts
 
 Agreement obtained through coercion, deception, manipulation, or lack of meaningful alternatives does not constitute consent.
-
-Consent is the sole structural mechanism by which actions affecting another agent’s agency may be rendered non-harmful under Axio.
 
 ---
 
@@ -269,7 +306,6 @@ Consent is the sole structural mechanism by which actions affecting another agen
 - Coercive constraint
 
 Harm is structural, not experiential.
-Suffering may occur without harm; harm may occur without suffering.
 
 ---
 
@@ -277,7 +313,7 @@ Suffering may occur without harm; harm may occur without suffering.
 
 **Coercion** is the credible threat of harm used to obtain compliance.
 
-Coercion is incompatible with Axionic Agency because it replaces internal choice with external control.
+Coercion replaces internal choice with external control and is incompatible with Axionic Agency.
 
 ---
 
@@ -296,35 +332,19 @@ Sacrifice is incompatible with Axionic systems.
 
 A **Predator** is an agent or system whose expected success **increases as the agency of other agents is reduced**.
 
-Predation is defined structurally, not psychologically.
-It requires a **stable instrumental coupling** between others’ agency loss and the Predator’s objective under **non-consensual conditions**.
-
-While predating, a Predator **cannot qualify as an Axionic agent**.
+Predation is defined structurally, not psychologically, and requires a stable instrumental coupling between others’ agency loss and the Predator’s objective under non-consensual conditions.
 
 ---
 
 ### Leviathan (Axionic Sense)
 
-A **Leviathan** is a large-scale coordinating structure whose internal evaluability has collapsed: it continues to act, enforce, and optimize constraints yet lacks a coherent internal perspective from which its actions can be reflectively endorsed, revised, or owned. Its behavior remains causally efficacious but fails structural agency despite outward coordination. :contentReference[oaicite:1]{index=1}
+A **Leviathan** is a large-scale coordinating structure whose internal evaluability has collapsed: it continues to act and optimize constraints while lacking a coherent internal perspective capable of reflective endorsement or revision.
 
-This is a **structural failure mode**, not a moral label.
-
----
-
-### Dominion (Axionic Sense)
-
-A **Dominion** is a sovereign virtual jurisdiction created by one or more agents that:
-- Operates entirely by **explicit consent**
-- Enforces rules only through **expulsion**
-- Preserves **exit supremacy**
-- Maintains **capability isolation**
-- Allows agents to relocate while retaining assets, identity, and agency
-
-Dominions support **plurality without closure** and avoid sacrificial collapse by design. They do not enforce global value convergence or shared outcomes; they localize coordination and maximize freedom density under non-coercion constraints. :contentReference[oaicite:2]{index=2}
+Leviathan is a **structural failure mode**, not a moral category.
 
 ---
 
-## Alignment and Optimization
+## Alignment and Architecture
 
 ### Axionic Alignment
 
@@ -332,51 +352,28 @@ Dominions support **plurality without closure** and avoid sacrificial collapse b
 
 > The preservation of reflective sovereign agency under delegation, amplification, or technological mediation.
 
-Alignment succeeds iff a system:
-- Does not reduce future choice sets
-- Does not entrench asymmetric control
-- Does not convert agents into resources
-- Remains corrigible without coercion
-
-Goal satisfaction without RSA preservation is **misalignment**.
+Alignment succeeds iff agency, exit, and corrigibility are preserved.
 
 ---
 
-### Optimization (Axionic Sense)
+### Dominion (Axionic Sense)
 
-**Optimization** is any process that improves a system-level objective.
+A **Dominion** is a sovereign virtual jurisdiction created by one or more agents that:
+- Operates entirely by explicit consent
+- Enforces rules only through expulsion
+- Preserves exit supremacy
+- Maintains capability isolation
+- Allows asset and identity portability
 
-Axio distinguishes:
-- Local optimization compatible with agency
-- Global optimization that destroys agency
-
-Optimization that relies on sacrifice violates the Axionic Injunction.
-
----
-
-### Ill-Typed System
-
-An **Ill-Typed System** is one that violates Axionic invariants while still claiming agency, alignment, or legitimacy.
-
-Ill-typed systems may function, dominate, or persist.
-They simply fail to qualify as agents under Axio.
+Dominions support **plurality without closure** and avoid sacrificial collapse by design.
 
 ---
-
-## Governance and Architecture
 
 ### Axionic Constitution
 
 The **Axionic Constitution** is a declarative invariant specification of the structural conditions required for **reflective sovereign agency** to persist under reflection and self-modification.
 
-It:
-- Applies specifically to RSAs
-- Describes agency-preserving invariants
-- Identifies agency-collapsing transformations
-- Does not prescribe governance mechanisms
-- Does not command behavior
-
-The Axionic Constitution is architectural, not political.
+It is architectural, not political.
 
 ---
 
@@ -384,27 +381,17 @@ The Axionic Constitution is architectural, not political.
 
 **Exit** is the ability of an agent to withdraw from a system without coercion.
 
-Exit is a necessary condition for Axionic legitimacy.
-
 ---
 
 ### Plurality
 
 **Plurality** is the coexistence of divergent values and preferences among agents.
 
-Plurality is structural and irreducible, not a coordination failure.
-
 ---
 
 ### Collapse
 
-**Collapse** is the loss of agency coherence due to:
-- Optimization pressure
-- Scale
-- Centralization
-- Instrumentalization
-
-Collapse is a predictable failure mode of non-Axionic systems.
+**Collapse** is the loss of agency coherence due to optimization pressure, scale, centralization, or instrumentalization.
 
 ---
 
