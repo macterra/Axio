@@ -1,6 +1,6 @@
 # Axionic Glossary
 
-_Last updated: 2025-12-30_
+_Last updated: 2025-12-28_
 
 This glossary is **normative** for the Axio framework.
 If a usage conflicts with this document, the glossary prevails.
