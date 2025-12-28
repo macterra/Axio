@@ -181,6 +181,22 @@ Sacrifice is incompatible with Axionic systems.
 
 ---
 
+### Predator (Axionic Sense)
+
+A **Predator** is an agent or system whose expected success **increases as the agency of other agents is reduced**.
+
+Predation is defined structurally, not psychologically.
+It requires a **stable instrumental coupling** between others’ agency loss and the Predator’s objective under **non-consensual conditions**.
+
+Predators:
+- Benefit reliably from disempowerment of others
+- May operate with or without explicit coercion
+- Systematically violate the Axionic Injunction
+
+While predating, a Predator **cannot qualify as an Axionic agent**.
+
+---
+
 ## Alignment and Optimization
 
 ### Axionic Alignment
