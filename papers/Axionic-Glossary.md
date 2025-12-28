@@ -243,6 +243,23 @@ It functions as a **conservation law**, not a commandment.
 
 ---
 
+### Consent (Axionic Sense)
+
+**Consent** is the uncoerced, informed, intentional authorization by an agent permitting a proposed action or condition that would otherwise affect the agent’s option space or agency.
+
+Valid consent requires:
+- The consenting entity to possess sufficient agency to decide
+- Deliberate and intentional agreement
+- Understanding of the nature, scope, and foreseeable consequences
+- Absence of coercion, threats, or dependency pressure
+- **Revocability** in contexts involving ongoing participation
+
+Agreement obtained through coercion, deception, manipulation, or lack of meaningful alternatives does not constitute consent.
+
+Consent is the sole structural mechanism by which actions affecting another agent’s agency may be rendered non-harmful under Axio.
+
+---
+
 ### Harm (Axionic Definition)
 
 **Harm** is a non-consensual reduction of an agent’s future option space, including:
