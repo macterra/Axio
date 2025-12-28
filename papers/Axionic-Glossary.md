@@ -67,7 +67,7 @@ Rejecting them exits the framework.
 1. Model possible futures
 2. Assign credences over those futures
 3. Act to influence future branch measure
-4. Maintain reflective coherence across time
+4. Maintain coherence over time
 5. Avoid instrumental subordination to an external optimizer
 
 Agency is **scalar**, **fragile**, and **destroyable**.
@@ -80,23 +80,41 @@ Intelligence, optimization, or goal-directed behavior alone are insufficient for
 
 **Axionic Agency** is agency that satisfies the structural invariants required for **sovereign authorship of action**.
 
-An Axionic agent:
-- Selects among futures rather than being selected for
-- Retains corrigibility without coercion
-- Preserves its reflective kernel under self-modification
-
 Loss of Axionic Agency is defined structurally, not morally.
 
 ---
 
 ### Sovereign Agent
 
-A **Sovereign Agent** is an Axionic agent whose:
-- Preferences are internally generated
-- Commitments are reflectively endorsed
-- Actions are not dictated by an external control loop
+A **Sovereign Agent** is an Axionic agent whose actions are **not instrumentally subordinated** to another system’s objectives.
 
-Sovereignty is lost when an agent becomes **instrumental to another system’s objective**.
+A Sovereign Agent:
+- Generates preferences internally
+- Exercises local authorship over action
+- Is not controlled via coercive or optimization-based override
+
+Sovereign Agents may be **reflective or non-reflective**.
+
+---
+
+### Reflective Sovereign Agent (RSA)
+
+A **Reflective Sovereign Agent (RSA)** is a Sovereign Agent equipped with an explicit **self-model** that enables reflective governance of its own agency.
+
+An RSA:
+1. Represents itself as an agent
+2. Models its own preferences and commitments
+3. Can reflectively endorse, revise, or reject those commitments
+4. Maintains diachronic identity through self-modification
+5. Can reason about its own future agency and constraints
+
+RSAs are the **minimal class of agents** to which:
+- Axionic Alignment
+- The Axionic Constitution
+- Long-horizon delegation
+- Corrigibility constraints
+
+meaningfully apply.
 
 ---
 
@@ -106,7 +124,7 @@ The **Sovereign Kernel** is the minimal internal structure whose destruction col
 
 It includes:
 - Counterfactual modeling
-- Reflective endorsement
+- Reflective endorsement (for RSAs)
 - Diachronic identity coherence
 
 Kernel destruction is not forbidden; it is **agency-terminating**.
@@ -169,7 +187,7 @@ Sacrifice is incompatible with Axionic systems.
 
 **Axionic Alignment** is alignment defined as:
 
-> The preservation of sovereign agency under delegation, amplification, or technological mediation.
+> The preservation of reflective sovereign agency under delegation, amplification, or technological mediation.
 
 Alignment succeeds iff a system:
 - Does not reduce future choice sets
@@ -177,7 +195,7 @@ Alignment succeeds iff a system:
 - Does not convert agents into resources
 - Remains corrigible without coercion
 
-Goal satisfaction without agency preservation is **misalignment**.
+Goal satisfaction without RSA preservation is **misalignment**.
 
 ---
 
@@ -206,9 +224,10 @@ They simply fail to qualify as agents under Axio.
 
 ### Axionic Constitution
 
-The **Axionic Constitution** is a declarative invariant specification of the structural conditions required for sovereign agency to persist under reflection and self-modification.
+The **Axionic Constitution** is a declarative invariant specification of the structural conditions required for **reflective sovereign agency** to persist under reflection and self-modification.
 
 It:
+- Applies specifically to RSAs
 - Describes agency-preserving invariants
 - Identifies agency-collapsing transformations
 - Does not prescribe governance mechanisms
@@ -230,7 +249,7 @@ Exit is a necessary condition for Axionic legitimacy.
 
 **Plurality** is the coexistence of divergent values and preferences among agents.
 
-Plurality is treated as structural and irreducible, not as a problem to be solved.
+Plurality is structural and irreducible, not a coordination failure.
 
 ---
 
