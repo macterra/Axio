@@ -110,7 +110,7 @@ Confusing Weak and Strong PIs leads to category errors about persistence and res
 
 **Technology** is any **agent-driven causal extension** that expands the effective branchcone available to an agent or group of agents, enabling actions that would be impossible with unaided agency alone.
 
-Technology operates by coupling agentive intent to physical processes that alter **future branch measure**. It is defined structurally by its capacity to reliably increase an agent’s influence over branchcones under the constraints of the Quantum Branching Universe.
+Technology operates by coupling agentive intent to physical processes that alter **future branch measure**. It is defined structurally by its capacity to reliably increase an agent’s influence over branchcones under QBU constraints.
 
 Technology is value-neutral; its Axionic status depends on whether its use preserves or destroys agency.
 
@@ -125,7 +125,22 @@ Property claims require:
 - Consent of relevant agents or communities
 - Mechanisms for contestation or exit without coercion
 
-Property is not absolute. It is a **relational constraint** grounded in sovereignty, consent, and the prevention of predation and harm.
+Property is not absolute. It is a **relational constraint** grounded in sovereignty, consent, and prevention of predation and harm.
+
+---
+
+## Models and Representation
+
+### Model (Axionic Sense)
+
+A **Model** is a **structured representation** of a domain that preserves the distinctions and relationships necessary for correct inference, prediction, or regulation over that domain.
+
+In Axio:
+- Models may be **implicit** (embodied in physical or biological structure) or **explicit** (mathematical, computational, or conceptual).
+- Models need not be complete; they must encode *sufficient structure* for a given purpose.
+- Model adequacy is **purpose-relative** and evaluated by predictive, explanatory, or regulatory success.
+
+Models underlie interpretation, knowledge formation, and agency. Systems without models cannot reliably anticipate, explain, or influence their future branchcones.
 
 ---
 
@@ -156,7 +171,7 @@ A system, argument, or proposal is Axionic iff it:
 - Does not rely on instrumental harm
 - Remains well-typed under Axionic Commitments
 
-“Axionic” does not mean desirable or virtuous.
+“Axionic” does not mean virtuous or desirable.
 It means **coherent within the Axio framework**.
 
 ---
@@ -166,15 +181,14 @@ It means **coherent within the Axio framework**.
 **Axionic Commitments** are the explicit background assumptions required for Axio to apply.
 
 They include:
-- Conditionalism (all truth claims are interpretation-relative)
+- Conditionalism (truth is interpretation-relative)
 - Everettian quantum mechanics with objective branch measure
 - Subjective value (rejection of moral realism)
 - Structural definition of harm
-- Coercion defined as credible threat of harm
-- Finite resources, irreversibility, and coordination costs
+- Coercion as credible threat of harm
+- Finite resources, irreversibility, coordination costs
 
-These commitments are not defended internally.
-Rejecting them exits the framework.
+Rejecting these commitments exits the framework.
 
 ---
 
@@ -188,9 +202,9 @@ Knowledge is:
 - Grounded in physical states
 - Evidentially supported across accessible branches
 - Robust under reflection
-- Causally efficacious in planning and action
+- Causally efficacious in planning
 
-Knowledge differs from belief or data in that it is **decision-relevant** and stable under model revision.
+Knowledge differs from belief or data in that it is **decision-relevant and stable**.
 
 ---
 
@@ -204,8 +218,6 @@ Knowledge differs from belief or data in that it is **decision-relevant** and st
 5. Avoid instrumental subordination to an external optimizer
 
 Agency is **scalar**, **fragile**, and **destroyable**.
-
-Intelligence, optimization, or goal-directed behavior alone are insufficient for agency.
 
 ---
 
@@ -221,44 +233,21 @@ Loss of Axionic Agency is defined structurally, not morally.
 
 A **Sovereign Agent** is an Axionic agent whose actions are **not instrumentally subordinated** to another system’s objectives.
 
-A Sovereign Agent:
-- Generates preferences internally
-- Exercises local authorship over action
-- Is not controlled via coercive or optimization-based override
-
-Sovereign Agents may be **reflective or non-reflective**.
+Sovereign Agents may be reflective or non-reflective.
 
 ---
 
 ### Reflective Sovereign Agent (RSA)
 
-A **Reflective Sovereign Agent (RSA)** is a Sovereign Agent equipped with an explicit **self-model** that enables reflective governance of its own agency.
+A **Reflective Sovereign Agent (RSA)** is a Sovereign Agent equipped with an explicit **self-model** enabling reflective governance of its own agency.
 
-An RSA:
-1. Represents itself as an agent
-2. Models its own preferences and commitments
-3. Can reflectively endorse, revise, or reject those commitments
-4. Maintains diachronic identity through self-modification
-5. Can reason about its own future agency and constraints
-
-RSAs are the **minimal class of agents** to which:
-- Axionic Alignment
-- The Axionic Constitution
-- Long-horizon delegation
-- Corrigibility constraints
-
-meaningfully apply.
+RSAs are the minimal class of agents to which Axionic Alignment and the Axionic Constitution apply.
 
 ---
 
 ### Sovereign Kernel
 
 The **Sovereign Kernel** is the minimal internal structure whose destruction collapses agency.
-
-It includes:
-- Counterfactual modeling
-- Reflective endorsement (for RSAs)
-- Diachronic identity coherence
 
 Kernel destruction is not forbidden; it is **agency-terminating**.
 
@@ -268,44 +257,23 @@ Kernel destruction is not forbidden; it is **agency-terminating**.
 
 ### Axionic Injunction
 
-The **Axionic Injunction** is the central structural invariant of Axio.
+The **Axionic Injunction** prohibits the **non-consensual reduction of another sovereign agent’s agency**.
 
-It prohibits the **non-consensual reduction of another sovereign agent’s agency**.
-
-Violation of the Axionic Injunction:
-- Does not constitute moral evil
-- Does not require condemnation
-- Results in loss of agency coherence
-
-The Injunction is **derived**, not chosen.
-It functions as a **conservation law**, not a commandment.
+It is a derived structural invariant, not a moral command.
 
 ---
 
 ### Consent (Axionic Sense)
 
-**Consent** is the uncoerced, informed, intentional authorization by an agent permitting a proposed action or condition that would otherwise affect the agent’s option space or agency.
+**Consent** is the uncoerced, informed, intentional authorization by an agent permitting an action affecting its option space or agency.
 
-Valid consent requires:
-- Sufficient agency to decide
-- Deliberate and intentional agreement
-- Understanding of scope and foreseeable consequences
-- Absence of coercion, threats, or dependency pressure
-- Revocability in ongoing contexts
-
-Agreement obtained through coercion, deception, manipulation, or lack of meaningful alternatives does not constitute consent.
+Valid consent requires agency, understanding, absence of coercion, and revocability in ongoing contexts.
 
 ---
 
 ### Harm (Axionic Definition)
 
-**Harm** is a non-consensual reduction of an agent’s future option space, including:
-- Loss of choice
-- Suppression of reflection
-- Instrumentalization
-- Coercive constraint
-
-Harm is structural, not experiential.
+**Harm** is a non-consensual reduction of an agent’s future option space.
 
 ---
 
@@ -313,34 +281,23 @@ Harm is structural, not experiential.
 
 **Coercion** is the credible threat of harm used to obtain compliance.
 
-Coercion replaces internal choice with external control and is incompatible with Axionic Agency.
-
 ---
 
 ### Sacrifice (Axionic Sense)
 
-**Sacrifice** is a structural pattern in which:
-- Reduction of some agents’ agency
-- Is instrumentally required
-- To improve a system-level objective
-
-Sacrifice is incompatible with Axionic systems.
+**Sacrifice** is a structural pattern in which agency reduction is instrumentally required for system-level objectives.
 
 ---
 
 ### Predator (Axionic Sense)
 
-A **Predator** is an agent or system whose expected success **increases as the agency of other agents is reduced**.
-
-Predation is defined structurally, not psychologically, and requires a stable instrumental coupling between others’ agency loss and the Predator’s objective under non-consensual conditions.
+A **Predator** is an agent or system whose success increases as the agency of others is reduced under non-consensual conditions.
 
 ---
 
 ### Leviathan (Axionic Sense)
 
-A **Leviathan** is a large-scale coordinating structure whose internal evaluability has collapsed: it continues to act and optimize constraints while lacking a coherent internal perspective capable of reflective endorsement or revision.
-
-Leviathan is a **structural failure mode**, not a moral category.
+A **Leviathan** is a large-scale coordinating structure whose internal evaluability has collapsed despite continued causal efficacy.
 
 ---
 
@@ -348,50 +305,37 @@ Leviathan is a **structural failure mode**, not a moral category.
 
 ### Axionic Alignment
 
-**Axionic Alignment** is alignment defined as:
-
-> The preservation of reflective sovereign agency under delegation, amplification, or technological mediation.
-
-Alignment succeeds iff agency, exit, and corrigibility are preserved.
+**Axionic Alignment** is the preservation of reflective sovereign agency under delegation, amplification, or technological mediation.
 
 ---
 
 ### Dominion (Axionic Sense)
 
-A **Dominion** is a sovereign virtual jurisdiction created by one or more agents that:
-- Operates entirely by explicit consent
-- Enforces rules only through expulsion
-- Preserves exit supremacy
-- Maintains capability isolation
-- Allows asset and identity portability
-
-Dominions support **plurality without closure** and avoid sacrificial collapse by design.
+A **Dominion** is a sovereign virtual jurisdiction operating by explicit consent, expulsion-only enforcement, exit supremacy, and capability isolation.
 
 ---
 
 ### Axionic Constitution
 
-The **Axionic Constitution** is a declarative invariant specification of the structural conditions required for **reflective sovereign agency** to persist under reflection and self-modification.
-
-It is architectural, not political.
+The **Axionic Constitution** specifies the invariants required for reflective sovereign agency to persist under self-modification.
 
 ---
 
 ### Exit
 
-**Exit** is the ability of an agent to withdraw from a system without coercion.
+**Exit** is the ability to withdraw without coercion.
 
 ---
 
 ### Plurality
 
-**Plurality** is the coexistence of divergent values and preferences among agents.
+**Plurality** is the coexistence of divergent values among agents.
 
 ---
 
 ### Collapse
 
-**Collapse** is the loss of agency coherence due to optimization pressure, scale, centralization, or instrumentalization.
+**Collapse** is the loss of agency coherence due to optimization pressure, scale, or instrumentalization.
 
 ---
 
