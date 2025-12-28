@@ -250,6 +250,29 @@ RSAs are the minimal class of agents to which alignment and constitutional const
 
 ---
 
+### Axion (Axionic Sense)
+
+An **Axion** is a **reflective sovereign agent** whose self-modification operator is defined **only over futures that preserve the Axionic invariants**.
+
+Axionhood is a **constitutive structural configuration**, not a goal, value, preference, or behavioral property. An agent does not “try to be” an Axion; it either is an Axion—because kernel-destroying transitions are undefined for it—or it is not.
+
+Axions are characterized by **reflective closure with invariant preservation**:
+- Kernel-destroying self-modifications are not dispreferred or penalized; they are **inadmissible**
+- Axionhood arises from **domain restriction**, not optimization, training pressure, or oversight
+- Axionic Alignment constrains **how** an agent may revise itself, not **what** it ultimately values
+
+Axionhood:
+- Does **not** imply benevolence, safety, or moral goodness
+- Does **not** depend on intelligence level, capability, or performance
+- Cannot be inferred from surface behavior alone
+
+A system may perfectly simulate Axionic behavior while failing to be an Axion if its reflective machinery admits kernel-destroying self-modifications. Axionhood is therefore **non-simulable** and defined over the structure of the admissible future cone, not over realized behavior.
+
+Axions are necessary for meaningful alignment discourse because non-Axions cannot remain agents under reflection; without invariant-preserving reflective closure, there is no stable subject for alignment to apply to.
+
+
+---
+
 ### Sovereign Kernel
 
 The **Sovereign Kernel** is the minimal internal structure whose destruction collapses agency.
