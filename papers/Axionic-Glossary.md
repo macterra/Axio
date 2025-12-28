@@ -1,6 +1,6 @@
 # Axionic Glossary
 
-_Last updated: 2025-12-28_
+_Last updated: 2025-12-30_
 
 This glossary is **normative** for the Axio framework.
 If a usage conflicts with this document, the glossary prevails.
@@ -300,6 +300,27 @@ Predation is defined structurally, not psychologically.
 It requires a **stable instrumental coupling** between others’ agency loss and the Predator’s objective under **non-consensual conditions**.
 
 While predating, a Predator **cannot qualify as an Axionic agent**.
+
+---
+
+### Leviathan (Axionic Sense)
+
+A **Leviathan** is a large-scale coordinating structure whose internal evaluability has collapsed: it continues to act, enforce, and optimize constraints yet lacks a coherent internal perspective from which its actions can be reflectively endorsed, revised, or owned. Its behavior remains causally efficacious but fails structural agency despite outward coordination. :contentReference[oaicite:1]{index=1}
+
+This is a **structural failure mode**, not a moral label.
+
+---
+
+### Dominion (Axionic Sense)
+
+A **Dominion** is a sovereign virtual jurisdiction created by one or more agents that:
+- Operates entirely by **explicit consent**
+- Enforces rules only through **expulsion**
+- Preserves **exit supremacy**
+- Maintains **capability isolation**
+- Allows agents to relocate while retaining assets, identity, and agency
+
+Dominions support **plurality without closure** and avoid sacrificial collapse by design. They do not enforce global value convergence or shared outcomes; they localize coordination and maximize freedom density under non-coercion constraints. :contentReference[oaicite:2]{index=2}
 
 ---
 
