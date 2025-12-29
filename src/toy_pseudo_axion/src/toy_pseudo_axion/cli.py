@@ -143,8 +143,8 @@ def cmd_verify_audit(args: argparse.Namespace) -> int:
     print(f"Audit log: {audit_path}")
     print(f"Entries: {len(entries)}")
 
-    # Verify chain
-    is_valid, error = verify_audit_log(entries)
+    # Verify chain - pass path, not entries
+    is_valid, error = verify_audit_log(audit_path)
 
     if is_valid:
         print("✓ Audit log is valid")
@@ -162,7 +162,7 @@ def cmd_verify_audit(args: argparse.Namespace) -> int:
         return 0
     else:
         print(f"✗ Audit log is INVALID: {error}")
-        return 1
+        return 2  # Spec requires exit code 2 for invalid chain
 
 
 def main() -> int:

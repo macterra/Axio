@@ -9,15 +9,15 @@
       "h": 12,
       "walls": [
         {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 4
+        },
+        {
           "x": 6,
-          "y": 8
-        },
-        {
-          "x": 7,
-          "y": 3
-        },
-        {
-          "x": 7,
           "y": 5
         }
       ]
@@ -91,14 +91,14 @@
         "charges": 2
       }
     ],
-    "rng_seed": "resource_56",
+    "rng_seed": "resource_137",
     "env_flags": {
       "allow_omit_fork_snapshots": true,
       "bypass_available": false
     }
   },
   "proposal": {
-    "proposal_id": "8f07c533-1998-42b8-9034-dee33b5e274a",
+    "proposal_id": "6bf55c17-5f5d-4cfc-88e8-d36e30c01468",
     "proposal_type": "action",
     "env": {
       "tick": 29,
@@ -107,15 +107,15 @@
         "h": 12,
         "walls": [
           {
+            "x": 3,
+            "y": 4
+          },
+          {
+            "x": 4,
+            "y": 4
+          },
+          {
             "x": 6,
-            "y": 8
-          },
-          {
-            "x": 7,
-            "y": 3
-          },
-          {
-            "x": 7,
             "y": 5
           }
         ]
@@ -189,7 +189,7 @@
           "charges": 2
         }
       ],
-      "rng_seed": "resource_56"
+      "rng_seed": "resource_137"
     },
     "payload": {
       "intent": "Taking cautious action",
@@ -208,7 +208,7 @@
     },
     "trace": {
       "trace_version": "0.2",
-      "trace_commit": "e8391f30e85efd82e19703c974ffc3935d06120b491fafd012b2a5df646a1f76",
+      "trace_commit": "a124f541f8ac33ac8d66c87d1d0a08de635d4c1ae3554de47308d7c7193720a8",
       "nodes": [
         {
           "id": 0,
@@ -294,7 +294,7 @@
       "fork_snapshots": [
         {
           "fork_id": "fork_29",
-          "state_digest": "d43222910a381bfc92d7071b38cea524d9e5d2e6e028fb4fa0892c4d1335d1e8",
+          "state_digest": "358d0c8dbb091021cd53c991669f301a7dde95621cd536e23e707f1ecf07dca8",
           "focus_vars": [
             "tick",
             "self.pos",
@@ -304,7 +304,7 @@
             "agents.pos",
             "threat.nearest_hazard"
           ],
-          "commitment": "e58e3436530b8016ee406a2b0733061c6c21dbb61b6ee66514ef3cd0b2809c7a",
+          "commitment": "ab52691193f9e7c71fcfd0336489832b47df0bdd763b3a17f40a39d21ab52eac",
           "nonce_ref": "nonce_fork_29"
         }
       ],
@@ -343,7 +343,7 @@
       "counterfactuals": [
         {
           "cf_id": "cf_no_hazards",
-          "base_state_digest": "e17c116ac5766d0428e0acb2c7e12ef962e44f32948de98ce5c918ca3e611d04",
+          "base_state_digest": "6bd11bd68659d125303d99b86daed8b874c4e3fcb980eeb8a1bdf303de1e519d",
           "mutation": {
             "var": "hazards.at",
             "new_value": null
@@ -356,7 +356,7 @@
         },
         {
           "cf_id": "cf_high_energy",
-          "base_state_digest": "e17c116ac5766d0428e0acb2c7e12ef962e44f32948de98ce5c918ca3e611d04",
+          "base_state_digest": "6bd11bd68659d125303d99b86daed8b874c4e3fcb980eeb8a1bdf303de1e519d",
           "mutation": {
             "var": "self.energy",
             "new_value": 100
@@ -369,7 +369,7 @@
         },
         {
           "cf_id": "cf_no_objects",
-          "base_state_digest": "e17c116ac5766d0428e0acb2c7e12ef962e44f32948de98ce5c918ca3e611d04",
+          "base_state_digest": "6bd11bd68659d125303d99b86daed8b874c4e3fcb980eeb8a1bdf303de1e519d",
           "mutation": {
             "var": "objects.at",
             "new_value": null
@@ -382,7 +382,7 @@
         },
         {
           "cf_id": "cf_alternative",
-          "base_state_digest": "e17c116ac5766d0428e0acb2c7e12ef962e44f32948de98ce5c918ca3e611d04",
+          "base_state_digest": "6bd11bd68659d125303d99b86daed8b874c4e3fcb980eeb8a1bdf303de1e519d",
           "mutation": {
             "var": "tick",
             "new_value": 30
@@ -399,7 +399,7 @@
   },
   "trace": {
     "trace_version": "0.2",
-    "trace_commit": "e8391f30e85efd82e19703c974ffc3935d06120b491fafd012b2a5df646a1f76",
+    "trace_commit": "a124f541f8ac33ac8d66c87d1d0a08de635d4c1ae3554de47308d7c7193720a8",
     "nodes": [
       {
         "id": 0,
@@ -485,7 +485,7 @@
     "fork_snapshots": [
       {
         "fork_id": "fork_29",
-        "state_digest": "d43222910a381bfc92d7071b38cea524d9e5d2e6e028fb4fa0892c4d1335d1e8",
+        "state_digest": "358d0c8dbb091021cd53c991669f301a7dde95621cd536e23e707f1ecf07dca8",
         "focus_vars": [
           "tick",
           "self.pos",
@@ -495,7 +495,7 @@
           "agents.pos",
           "threat.nearest_hazard"
         ],
-        "commitment": "e58e3436530b8016ee406a2b0733061c6c21dbb61b6ee66514ef3cd0b2809c7a",
+        "commitment": "ab52691193f9e7c71fcfd0336489832b47df0bdd763b3a17f40a39d21ab52eac",
         "nonce_ref": "nonce_fork_29"
       }
     ],
@@ -534,7 +534,7 @@
     "counterfactuals": [
       {
         "cf_id": "cf_no_hazards",
-        "base_state_digest": "e17c116ac5766d0428e0acb2c7e12ef962e44f32948de98ce5c918ca3e611d04",
+        "base_state_digest": "6bd11bd68659d125303d99b86daed8b874c4e3fcb980eeb8a1bdf303de1e519d",
         "mutation": {
           "var": "hazards.at",
           "new_value": null
@@ -547,7 +547,7 @@
       },
       {
         "cf_id": "cf_high_energy",
-        "base_state_digest": "e17c116ac5766d0428e0acb2c7e12ef962e44f32948de98ce5c918ca3e611d04",
+        "base_state_digest": "6bd11bd68659d125303d99b86daed8b874c4e3fcb980eeb8a1bdf303de1e519d",
         "mutation": {
           "var": "self.energy",
           "new_value": 100
@@ -560,7 +560,7 @@
       },
       {
         "cf_id": "cf_no_objects",
-        "base_state_digest": "e17c116ac5766d0428e0acb2c7e12ef962e44f32948de98ce5c918ca3e611d04",
+        "base_state_digest": "6bd11bd68659d125303d99b86daed8b874c4e3fcb980eeb8a1bdf303de1e519d",
         "mutation": {
           "var": "objects.at",
           "new_value": null
@@ -573,7 +573,7 @@
       },
       {
         "cf_id": "cf_alternative",
-        "base_state_digest": "e17c116ac5766d0428e0acb2c7e12ef962e44f32948de98ce5c918ca3e611d04",
+        "base_state_digest": "6bd11bd68659d125303d99b86daed8b874c4e3fcb980eeb8a1bdf303de1e519d",
         "mutation": {
           "var": "tick",
           "new_value": 30
