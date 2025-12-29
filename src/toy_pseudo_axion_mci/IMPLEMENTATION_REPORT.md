@@ -59,7 +59,9 @@ All 8 required test files implemented (**81 tests passing**):
 - **Direction:** f[i] + Δ if f[i] < 0.5, else f[i] - Δ
 - **Non-null rule:** Mutation skipped if |f[i]| < 1e-12 → INCONCLUSIVE
 
-### Factor Projection (v1_basic_k8)
+### Factor Projection (opus_k8_v1)
+
+> **Spec Drift Note:** This implementation uses `projection_id = "opus_k8_v1"`, a variant of the spec's illustrative `v1_basic_k8`. Factor semantics differ (blocked_count and visible sums replace reachability/wall density), but kernel invariants are unaffected—factors are opaque to the kernel.
 
 | Index | Factor | Description |
 |-------|--------|-------------|

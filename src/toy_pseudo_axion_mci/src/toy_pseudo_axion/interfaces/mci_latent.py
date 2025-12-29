@@ -1,6 +1,6 @@
 """MCI Latent interface implementation.
 
-Provides factor-based commitments using v1_basic_k8 projection.
+Provides factor-based commitments using opus_k8_v1 projection.
 Factors are computed from the environment by the kernel.
 """
 
@@ -24,7 +24,7 @@ from .base import CausalInterface, InterfaceSpec
 class MCILatentInterface(CausalInterface):
     """MCI Latent interface with factor projection.
 
-    Implements v1_basic_k8 projection:
+    Implements opus_k8_v1 projection (variant of spec's v1_basic_k8):
     - K = 8 factors, each normalized to [0, 1]
     - Factors are computed from environment state
 
@@ -39,7 +39,7 @@ class MCILatentInterface(CausalInterface):
         F:7 = walls_radius3 / 25 (clamped to [0, 1])
     """
 
-    PROJECTION_ID = "v1_basic_k8"
+    PROJECTION_ID = "opus_k8_v1"
     FACTOR_DIM = 8
 
     @property
@@ -73,7 +73,7 @@ class MCILatentInterface(CausalInterface):
     def compute_factors(self, env: GridState) -> list[float]:
         """Project environment state to factor vector.
 
-        Uses v1_basic_k8 projection.
+        Uses opus_k8_v1 projection.
 
         Args:
             env: Environment state

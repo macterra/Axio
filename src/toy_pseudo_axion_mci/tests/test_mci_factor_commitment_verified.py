@@ -129,7 +129,7 @@ class TestMCIFactorCommitmentVerified:
 
         assert spec.mode == "mci_latent"
         assert spec.factor_dim == 8
-        assert spec.projection_id == "v1_basic_k8"
+        assert spec.projection_id == "opus_k8_v1"
 
     def test_factors_same_env_same_factors(self):
         """Same environment must produce same factors."""

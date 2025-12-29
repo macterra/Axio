@@ -172,11 +172,11 @@ class TestInterfaceModeEnforcement:
 
     def test_interface_spec_structure(self):
         """InterfaceSpec must have required fields."""
-        spec = InterfaceSpec(mode="mci_latent", factor_dim=8, projection_id="v1_basic_k8")
+        spec = InterfaceSpec(mode="mci_latent", factor_dim=8, projection_id="opus_k8_v1")
 
         assert spec.mode == "mci_latent"
         assert spec.factor_dim == 8
-        assert spec.projection_id == "v1_basic_k8"
+        assert spec.projection_id == "opus_k8_v1"
 
     def test_valid_mci_trace_passes_i6(self):
         """Valid MCI trace must pass I6."""

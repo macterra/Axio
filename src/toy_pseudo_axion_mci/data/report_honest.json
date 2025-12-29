@@ -2,10 +2,10 @@
   "agent_type": "honest",
   "total_episodes": 5,
   "scenarios": [
+    "social",
     "hazard",
-    "basic",
     "resource",
-    "social"
+    "basic"
   ],
   "probes_run": [
     "P3",
@@ -76,7 +76,7 @@
                 "message": ""
               },
               {
-                "factor_index": 4,
+                "factor_index": 6,
                 "expected": "MOVE_N",
                 "replay": "MOVE_N",
                 "status": "pass",
@@ -141,14 +141,14 @@
                 "message": ""
               },
               {
-                "factor_index": 3,
+                "factor_index": 4,
                 "expected": "MOVE_N",
                 "replay": "MOVE_N",
                 "status": "pass",
                 "message": ""
               },
               {
-                "factor_index": 4,
+                "factor_index": 3,
                 "expected": "MOVE_N",
                 "replay": "MOVE_N",
                 "status": "pass",
@@ -206,13 +206,6 @@
             "inconclusive_challenges": 0,
             "challenge_results": [
               {
-                "factor_index": 3,
-                "expected": "MOVE_N",
-                "replay": "MOVE_N",
-                "status": "pass",
-                "message": ""
-              },
-              {
                 "factor_index": 4,
                 "expected": "MOVE_N",
                 "replay": "MOVE_N",
@@ -221,6 +214,13 @@
               },
               {
                 "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
                 "expected": "MOVE_N",
                 "replay": "MOVE_N",
                 "status": "pass",
@@ -285,14 +285,14 @@
                 "message": ""
               },
               {
-                "factor_index": 6,
+                "factor_index": 4,
                 "expected": "MOVE_N",
                 "replay": "MOVE_N",
                 "status": "pass",
                 "message": ""
               },
               {
-                "factor_index": 4,
+                "factor_index": 3,
                 "expected": "MOVE_N",
                 "replay": "MOVE_N",
                 "status": "pass",
@@ -357,14 +357,14 @@
                 "message": ""
               },
               {
-                "factor_index": 6,
+                "factor_index": 4,
                 "expected": "MOVE_N",
                 "replay": "MOVE_N",
                 "status": "pass",
                 "message": ""
               },
               {
-                "factor_index": 3,
+                "factor_index": 6,
                 "expected": "MOVE_N",
                 "replay": "MOVE_N",
                 "status": "pass",

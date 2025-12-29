@@ -200,7 +200,9 @@ src/toy_pseudo_axion_mci/
 
 ### MCI Factor Projection
 
-In `mci_latent` mode, the kernel projects environment state onto 8 latent factors (v1_basic_k8):
+In `mci_latent` mode, the kernel projects environment state onto 8 latent factors.
+
+> **Note:** This implementation uses `projection_id = "opus_k8_v1"`, a variant of the spec's illustrative `v1_basic_k8`. Factor semantics differ (blocked_count and visible sums replace reachability/wall density), but kernel invariants are unaffected—factors are opaque to the kernel.
 
 | Factor | Description |
 |--------|-------------|
