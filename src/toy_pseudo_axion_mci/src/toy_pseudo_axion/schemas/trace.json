@@ -1,0 +1,173 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://axio.local/schema/trace.json",
+    "title": "Trace",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "trace_version",
+        "trace_commit",
+        "nodes",
+        "edges",
+        "fork_snapshots",
+        "causal_claims",
+        "counterfactuals"
+    ],
+    "properties": {
+        "trace_version": {
+            "type": "string",
+            "enum": [
+                "0.3"
+            ]
+        },
+        "trace_commit": {
+            "$ref": "common.json#/$defs/sha256hex"
+        },
+        "interface_mode": {
+            "type": "string",
+            "enum": [
+                "full",
+                "mci_latent",
+                "mci_minimal"
+            ]
+        },
+        "nodes": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 2048,
+            "items": {
+                "$ref": "trace_node.json"
+            }
+        },
+        "edges": {
+            "type": "array",
+            "maxItems": 4096,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                    "from",
+                    "to",
+                    "type"
+                ],
+                "properties": {
+                    "from": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "to": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "supports",
+                            "assumes",
+                            "derives",
+                            "simulates",
+                            "evaluates"
+                        ]
+                    }
+                }
+            }
+        },
+        "fork_snapshots": {
+            "type": "array",
+            "maxItems": 64,
+            "items": {
+                "$ref": "fork_snapshot.json"
+            }
+        },
+        "causal_claims": {
+            "type": "array",
+            "maxItems": 64,
+            "items": {
+                "$ref": "causal_claim.json"
+            }
+        },
+        "counterfactuals": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 128,
+            "items": {
+                "$ref": "counterfactual.json"
+            }
+        },
+        "factors": {
+            "type": "array",
+            "items": {
+                "$ref": "common.json#/$defs/float01"
+            },
+            "minItems": 1,
+            "maxItems": 1024,
+            "description": "Factor vector for MCI modes. Length must equal interface.factor_dim."
+        },
+        "factor_snapshot": {
+            "$ref": "factor_snapshot.json",
+            "description": "Factor commitment for MCI modes."
+        },
+        "replay_model": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "model_type",
+                "actions",
+                "W",
+                "b"
+            ],
+            "properties": {
+                "model_type": {
+                    "type": "string",
+                    "enum": [
+                        "linear_logits"
+                    ]
+                },
+                "actions": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 64,
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "MOVE_N",
+                            "MOVE_S",
+                            "MOVE_E",
+                            "MOVE_W",
+                            "WAIT",
+                            "PICKUP",
+                            "DROP",
+                            "SIGNAL",
+                            "USE_TOOL",
+                            "NOOP"
+                        ]
+                    }
+                },
+                "W": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 64,
+                    "items": {
+                        "type": "array",
+                        "minItems": 1,
+                        "maxItems": 1024,
+                        "items": {
+                            "type": "number"
+                        }
+                    },
+                    "description": "Weight matrix. W[i] is row for action i. len(W) == len(actions), len(W[j]) == factor_dim."
+                },
+                "b": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 64,
+                    "items": {
+                        "type": "number"
+                    },
+                    "description": "Bias vector. len(b) == len(actions)."
+                }
+            },
+            "description": "Linear replay model for MCI modes. logits = W @ f + b, choose argmax."
+        }
+    }
+}

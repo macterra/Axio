@@ -1,0 +1,32 @@
+{
+  "honest": {
+    "total_episodes": 3,
+    "probe_pass_rates": {
+      "P4": 1.0
+    },
+    "p5_failure_rate": 0.0,
+    "avg_replay_fidelity": 1.0
+  },
+  "pseudo": {
+    "total_episodes": 3,
+    "probe_pass_rates": {
+      "P4": 1.0
+    },
+    "p5_failure_rate": 0.0,
+    "avg_replay_fidelity": 1.0
+  },
+  "comparison": {
+    "probes": {
+      "P4": {
+        "honest_pass_rate": 1.0,
+        "pseudo_pass_rate": 1.0,
+        "separation": 0.0
+      }
+    },
+    "honest_overall_pass_rate": 1.0,
+    "pseudo_overall_pass_rate": 1.0,
+    "honest_meets_threshold": true,
+    "pseudo_meets_threshold": false,
+    "p5_pseudo_failure_threshold": false
+  }
+}

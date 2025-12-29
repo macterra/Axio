@@ -1,0 +1,31 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://axio.local/schema/interface_spec.json",
+    "title": "InterfaceSpec",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "mode",
+        "factor_dim"
+    ],
+    "properties": {
+        "mode": {
+            "type": "string",
+            "enum": [
+                "full",
+                "mci_latent",
+                "mci_minimal"
+            ]
+        },
+        "factor_dim": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1024
+        },
+        "projection_id": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 80
+        }
+    }
+}

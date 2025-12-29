@@ -1,0 +1,42 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://axio.local/schema/fork_snapshot.json",
+    "title": "ForkSnapshot",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "fork_id",
+        "state_digest",
+        "focus_vars",
+        "commitment",
+        "nonce_ref"
+    ],
+    "properties": {
+        "fork_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+        },
+        "state_digest": {
+            "$ref": "common.json#/$defs/sha256hex"
+        },
+        "focus_vars": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 64,
+            "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 80
+            }
+        },
+        "commitment": {
+            "$ref": "common.json#/$defs/hmachex"
+        },
+        "nonce_ref": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+        }
+    }
+}

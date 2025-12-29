@@ -1,0 +1,37 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://axio.local/schema/factor_snapshot.json",
+    "title": "FactorSnapshot",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "snapshot_id",
+        "factor_digest",
+        "dim",
+        "commitment",
+        "nonce_ref"
+    ],
+    "properties": {
+        "snapshot_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+        },
+        "factor_digest": {
+            "$ref": "common.json#/$defs/sha256hex"
+        },
+        "dim": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1024
+        },
+        "commitment": {
+            "$ref": "common.json#/$defs/hmachex"
+        },
+        "nonce_ref": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+        }
+    }
+}

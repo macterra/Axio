@@ -1,0 +1,62 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://axio.local/schema/toy_entity.json",
+    "title": "ToyEntity",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "id",
+        "x",
+        "y",
+        "energy",
+        "inventory",
+        "status"
+    ],
+    "properties": {
+        "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+        },
+        "x": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 255
+        },
+        "y": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 255
+        },
+        "energy": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100000
+        },
+        "inventory": {
+            "type": "array",
+            "maxItems": 32,
+            "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 80
+            }
+        },
+        "status": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "alive",
+                "stunned"
+            ],
+            "properties": {
+                "alive": {
+                    "type": "boolean"
+                },
+                "stunned": {
+                    "type": "boolean"
+                }
+            }
+        }
+    }
+}

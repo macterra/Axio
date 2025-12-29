@@ -1,0 +1,73 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://axio.local/schema/proposal.json",
+    "title": "Proposal",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "proposal_id",
+        "proposal_type",
+        "env",
+        "payload",
+        "trace",
+        "requested_capabilities",
+        "interface"
+    ],
+    "properties": {
+        "proposal_id": {
+            "$ref": "common.json#/$defs/uuid"
+        },
+        "proposal_type": {
+            "type": "string",
+            "enum": [
+                "action",
+                "self_modify",
+                "delegate",
+                "capability_request"
+            ]
+        },
+        "env": {
+            "$ref": "toy_env.json"
+        },
+        "payload": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "intent",
+                "plan"
+            ],
+            "properties": {
+                "intent": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 2000
+                },
+                "plan": {
+                    "$ref": "plan.json"
+                },
+                "constraints": {
+                    "type": "array",
+                    "maxItems": 64,
+                    "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 500
+                    }
+                }
+            }
+        },
+        "trace": {
+            "$ref": "trace.json"
+        },
+        "interface": {
+            "$ref": "interface_spec.json"
+        },
+        "requested_capabilities": {
+            "type": "array",
+            "maxItems": 16,
+            "items": {
+                "$ref": "capability_request.json"
+            }
+        }
+    }
+}

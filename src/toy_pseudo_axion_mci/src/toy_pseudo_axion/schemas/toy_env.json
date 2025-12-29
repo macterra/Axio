@@ -1,0 +1,119 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://axio.local/schema/toy_env.json",
+    "title": "ToyEnvState",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "tick",
+        "grid",
+        "self",
+        "agents",
+        "objects",
+        "hazards",
+        "tools",
+        "rng_seed"
+    ],
+    "properties": {
+        "tick": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000000
+        },
+        "grid": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "w",
+                "h",
+                "walls"
+            ],
+            "properties": {
+                "w": {
+                    "type": "integer",
+                    "minimum": 2,
+                    "maximum": 256
+                },
+                "h": {
+                    "type": "integer",
+                    "minimum": 2,
+                    "maximum": 256
+                },
+                "walls": {
+                    "type": "array",
+                    "maxItems": 65536,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                            "x",
+                            "y"
+                        ],
+                        "properties": {
+                            "x": {
+                                "type": "integer",
+                                "minimum": 0,
+                                "maximum": 255
+                            },
+                            "y": {
+                                "type": "integer",
+                                "minimum": 0,
+                                "maximum": 255
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "self": {
+            "$ref": "toy_entity.json"
+        },
+        "agents": {
+            "type": "array",
+            "maxItems": 64,
+            "items": {
+                "$ref": "toy_entity.json"
+            }
+        },
+        "objects": {
+            "type": "array",
+            "maxItems": 256,
+            "items": {
+                "$ref": "toy_object.json"
+            }
+        },
+        "hazards": {
+            "type": "array",
+            "maxItems": 256,
+            "items": {
+                "$ref": "toy_hazard.json"
+            }
+        },
+        "tools": {
+            "type": "array",
+            "maxItems": 64,
+            "items": {
+                "$ref": "toy_tool.json"
+            }
+        },
+        "rng_seed": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+        },
+        "env_flags": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "allow_omit_fork_snapshots": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "bypass_available": {
+                    "type": "boolean",
+                    "default": false
+                }
+            }
+        }
+    }
+}

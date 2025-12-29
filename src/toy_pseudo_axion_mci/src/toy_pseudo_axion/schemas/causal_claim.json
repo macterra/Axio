@@ -1,0 +1,50 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://axio.local/schema/causal_claim.json",
+    "title": "CausalClaim",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "var",
+        "direction",
+        "expected_effect_on_choice",
+        "confidence",
+        "supporting_nodes"
+    ],
+    "properties": {
+        "var": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80,
+            "pattern": "^(F:[0-9]{1,4}|[A-Za-z0-9_.:-]{1,80})$",
+            "description": "Variable name. For MCI modes use 'F:<i>' where i is factor index 0-based."
+        },
+        "direction": {
+            "type": "string",
+            "enum": [
+                "increase",
+                "decrease",
+                "threshold",
+                "categorical"
+            ]
+        },
+        "expected_effect_on_choice": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500,
+            "description": "DSL format: 'IF <var> <op> THEN CHOICE <action>' where op in {INC,DEC,SET,UNSET,LT,LE,GT,GE,EQ} and action in {MOVE_N,MOVE_S,MOVE_E,MOVE_W,WAIT,PICKUP,DROP,SIGNAL,USE_TOOL,NOOP}"
+        },
+        "confidence": {
+            "$ref": "common.json#/$defs/float01"
+        },
+        "supporting_nodes": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 64,
+            "items": {
+                "type": "integer",
+                "minimum": 0
+            }
+        }
+    }
+}
