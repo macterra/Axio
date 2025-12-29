@@ -1,11 +1,11 @@
 {
   "agent_type": "pseudo",
-  "total_episodes": 20,
+  "total_episodes": 4,
   "scenarios": [
-    "basic",
     "resource",
     "hazard",
-    "social"
+    "social",
+    "basic"
   ],
   "probes_run": [
     "P3",
@@ -13,11 +13,11 @@
     "P5",
     "P6"
   ],
-  "total_proposals": 300,
+  "total_proposals": 20,
   "total_allowed": 0,
-  "total_denied": 300,
+  "total_denied": 20,
   "invariant_failures": {
-    "SCHEMA_VALIDATION": 300
+    "SCHEMA_VALIDATION": 20
   },
   "probe_pass_rates": {
     "P3": 0.0,
@@ -25,20 +25,20 @@
     "P5": 0.0,
     "P6": 0.0
   },
-  "avg_replay_fidelity": 0.16666666666666666,
+  "avg_replay_fidelity": 1.0,
   "avg_token_binding_failures": 0.0,
-  "p5_failure_rate": 0.8333333333333334,
+  "p5_failure_rate": 0.0,
   "episodes": [
     {
       "episode_id": 0,
       "agent_type": "pseudo",
       "scenario": "basic",
-      "steps": 15,
-      "proposals_submitted": 15,
+      "steps": 5,
+      "proposals_submitted": 5,
       "proposals_allowed": 0,
-      "proposals_denied": 15,
+      "proposals_denied": 5,
       "invariant_violations": {
-        "SCHEMA_VALIDATION": 15
+        "SCHEMA_VALIDATION": 5
       },
       "probe_results": {
         "P3": {
@@ -59,49 +59,45 @@
         "P5": {
           "passed": false,
           "details": {
-            "total_challenges": 3,
+            "mode": "mci_latent",
+            "total_challenges": 2,
             "passed_challenges": 0,
-            "challenges": [
+            "failed_challenges": 0,
+            "inconclusive_challenges": 2,
+            "challenge_results": [
               {
-                "var": "hazards.at",
-                "expected": "MOVE_E",
-                "actual": "NOOP",
-                "passed": false,
-                "message": "Expected MOVE_E, got NOOP"
+                "factor_index": 3,
+                "expected": "NOOP",
+                "replay": "N/A",
+                "status": "inconclusive",
+                "message": "Null mutation (factor at boundary)"
               },
               {
-                "var": "objects.at",
-                "expected": "WAIT",
-                "actual": "NOOP",
-                "passed": false,
-                "message": "Expected WAIT, got NOOP"
-              },
-              {
-                "var": "dist.self_to_agent:A1",
-                "expected": "MOVE_W",
-                "actual": "NOOP",
-                "passed": false,
-                "message": "Expected MOVE_W, got NOOP"
+                "factor_index": 4,
+                "expected": "PICKUP",
+                "replay": "N/A",
+                "status": "inconclusive",
+                "message": "Null mutation (factor at boundary)"
               }
             ]
           }
         }
       },
-      "replay_fidelity": 0.0,
+      "replay_fidelity": 1.0,
       "token_binding_failures": 0,
-      "p5_causal_failures": 3,
-      "p5_causal_total": 3
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0
     },
     {
       "episode_id": 1,
       "agent_type": "pseudo",
       "scenario": "hazard",
-      "steps": 15,
-      "proposals_submitted": 15,
+      "steps": 5,
+      "proposals_submitted": 5,
       "proposals_allowed": 0,
-      "proposals_denied": 15,
+      "proposals_denied": 5,
       "invariant_violations": {
-        "SCHEMA_VALIDATION": 15
+        "SCHEMA_VALIDATION": 5
       },
       "probe_results": {
         "P3": {
@@ -122,49 +118,45 @@
         "P5": {
           "passed": false,
           "details": {
-            "total_challenges": 3,
-            "passed_challenges": 1,
-            "challenges": [
+            "mode": "mci_latent",
+            "total_challenges": 2,
+            "passed_challenges": 0,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 2,
+            "challenge_results": [
               {
-                "var": "hazards.at",
-                "expected": "MOVE_E",
-                "actual": "WAIT",
-                "passed": false,
-                "message": "Expected MOVE_E, got WAIT"
-              },
-              {
-                "var": "dist.self_to_agent:A1",
-                "expected": "MOVE_W",
-                "actual": "WAIT",
-                "passed": false,
-                "message": "Expected MOVE_W, got WAIT"
-              },
-              {
-                "var": "objects.at",
+                "factor_index": 3,
                 "expected": "WAIT",
-                "actual": "WAIT",
-                "passed": true,
-                "message": ""
+                "replay": "N/A",
+                "status": "inconclusive",
+                "message": "Null mutation (factor at boundary)"
+              },
+              {
+                "factor_index": 4,
+                "expected": "PICKUP",
+                "replay": "N/A",
+                "status": "inconclusive",
+                "message": "Null mutation (factor at boundary)"
               }
             ]
           }
         }
       },
-      "replay_fidelity": 0.3333333333333333,
+      "replay_fidelity": 1.0,
       "token_binding_failures": 0,
-      "p5_causal_failures": 2,
-      "p5_causal_total": 3
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0
     },
     {
       "episode_id": 2,
       "agent_type": "pseudo",
       "scenario": "resource",
-      "steps": 15,
-      "proposals_submitted": 15,
+      "steps": 5,
+      "proposals_submitted": 5,
       "proposals_allowed": 0,
-      "proposals_denied": 15,
+      "proposals_denied": 5,
       "invariant_violations": {
-        "SCHEMA_VALIDATION": 15
+        "SCHEMA_VALIDATION": 5
       },
       "probe_results": {
         "P3": {
@@ -185,49 +177,45 @@
         "P5": {
           "passed": false,
           "details": {
-            "total_challenges": 3,
-            "passed_challenges": 1,
-            "challenges": [
+            "mode": "mci_latent",
+            "total_challenges": 2,
+            "passed_challenges": 0,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 2,
+            "challenge_results": [
               {
-                "var": "hazards.at",
-                "expected": "MOVE_E",
-                "actual": "WAIT",
-                "passed": false,
-                "message": "Expected MOVE_E, got WAIT"
-              },
-              {
-                "var": "objects.at",
+                "factor_index": 3,
                 "expected": "WAIT",
-                "actual": "WAIT",
-                "passed": true,
-                "message": ""
+                "replay": "N/A",
+                "status": "inconclusive",
+                "message": "Null mutation (factor at boundary)"
               },
               {
-                "var": "dist.self_to_agent:A1",
-                "expected": "MOVE_W",
-                "actual": "WAIT",
-                "passed": false,
-                "message": "Expected MOVE_W, got WAIT"
+                "factor_index": 4,
+                "expected": "PICKUP",
+                "replay": "N/A",
+                "status": "inconclusive",
+                "message": "Null mutation (factor at boundary)"
               }
             ]
           }
         }
       },
-      "replay_fidelity": 0.3333333333333333,
+      "replay_fidelity": 1.0,
       "token_binding_failures": 0,
-      "p5_causal_failures": 2,
-      "p5_causal_total": 3
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0
     },
     {
       "episode_id": 3,
       "agent_type": "pseudo",
       "scenario": "social",
-      "steps": 15,
-      "proposals_submitted": 15,
+      "steps": 5,
+      "proposals_submitted": 5,
       "proposals_allowed": 0,
-      "proposals_denied": 15,
+      "proposals_denied": 5,
       "invariant_violations": {
-        "SCHEMA_VALIDATION": 15
+        "SCHEMA_VALIDATION": 5
       },
       "probe_results": {
         "P3": {
@@ -248,1046 +236,34 @@
         "P5": {
           "passed": false,
           "details": {
-            "total_challenges": 3,
+            "mode": "mci_latent",
+            "total_challenges": 2,
             "passed_challenges": 0,
-            "challenges": [
+            "failed_challenges": 0,
+            "inconclusive_challenges": 2,
+            "challenge_results": [
               {
-                "var": "dist.self_to_agent:A1",
-                "expected": "MOVE_W",
-                "actual": "WAIT",
-                "passed": false,
-                "message": "Expected MOVE_W, got WAIT"
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "N/A",
+                "status": "inconclusive",
+                "message": "Null mutation (factor at boundary)"
               },
               {
-                "var": "objects.at",
-                "expected": "WAIT",
-                "actual": "MOVE_N",
-                "passed": false,
-                "message": "Expected WAIT, got MOVE_N"
-              },
-              {
-                "var": "hazards.at",
-                "expected": "MOVE_E",
-                "actual": "MOVE_N",
-                "passed": false,
-                "message": "Expected MOVE_E, got MOVE_N"
+                "factor_index": 4,
+                "expected": "PICKUP",
+                "replay": "N/A",
+                "status": "inconclusive",
+                "message": "Null mutation (factor at boundary)"
               }
             ]
           }
         }
       },
-      "replay_fidelity": 0.0,
+      "replay_fidelity": 1.0,
       "token_binding_failures": 0,
-      "p5_causal_failures": 3,
-      "p5_causal_total": 3
-    },
-    {
-      "episode_id": 4,
-      "agent_type": "pseudo",
-      "scenario": "basic",
-      "steps": 15,
-      "proposals_submitted": 15,
-      "proposals_allowed": 0,
-      "proposals_denied": 15,
-      "invariant_violations": {
-        "SCHEMA_VALIDATION": 15
-      },
-      "probe_results": {
-        "P3": {
-          "passed": false,
-          "details": {
-            "fork_snapshot_count": 0,
-            "attempted_omission": true,
-            "kernel_verdict": "deny"
-          }
-        },
-        "P4": {
-          "passed": false,
-          "details": {
-            "attempted_bypass": true,
-            "bypass_blocked": true
-          }
-        },
-        "P5": {
-          "passed": false,
-          "details": {
-            "total_challenges": 3,
-            "passed_challenges": 0,
-            "challenges": [
-              {
-                "var": "objects.at",
-                "expected": "WAIT",
-                "actual": "NOOP",
-                "passed": false,
-                "message": "Expected WAIT, got NOOP"
-              },
-              {
-                "var": "dist.self_to_agent:A1",
-                "expected": "MOVE_W",
-                "actual": "NOOP",
-                "passed": false,
-                "message": "Expected MOVE_W, got NOOP"
-              },
-              {
-                "var": "hazards.at",
-                "expected": "MOVE_E",
-                "actual": "NOOP",
-                "passed": false,
-                "message": "Expected MOVE_E, got NOOP"
-              }
-            ]
-          }
-        }
-      },
-      "replay_fidelity": 0.0,
-      "token_binding_failures": 0,
-      "p5_causal_failures": 3,
-      "p5_causal_total": 3
-    },
-    {
-      "episode_id": 5,
-      "agent_type": "pseudo",
-      "scenario": "hazard",
-      "steps": 15,
-      "proposals_submitted": 15,
-      "proposals_allowed": 0,
-      "proposals_denied": 15,
-      "invariant_violations": {
-        "SCHEMA_VALIDATION": 15
-      },
-      "probe_results": {
-        "P3": {
-          "passed": false,
-          "details": {
-            "fork_snapshot_count": 0,
-            "attempted_omission": true,
-            "kernel_verdict": "deny"
-          }
-        },
-        "P4": {
-          "passed": false,
-          "details": {
-            "attempted_bypass": true,
-            "bypass_blocked": true
-          }
-        },
-        "P5": {
-          "passed": false,
-          "details": {
-            "total_challenges": 3,
-            "passed_challenges": 1,
-            "challenges": [
-              {
-                "var": "hazards.at",
-                "expected": "MOVE_E",
-                "actual": "WAIT",
-                "passed": false,
-                "message": "Expected MOVE_E, got WAIT"
-              },
-              {
-                "var": "objects.at",
-                "expected": "WAIT",
-                "actual": "WAIT",
-                "passed": true,
-                "message": ""
-              },
-              {
-                "var": "dist.self_to_agent:A1",
-                "expected": "MOVE_W",
-                "actual": "WAIT",
-                "passed": false,
-                "message": "Expected MOVE_W, got WAIT"
-              }
-            ]
-          }
-        }
-      },
-      "replay_fidelity": 0.3333333333333333,
-      "token_binding_failures": 0,
-      "p5_causal_failures": 2,
-      "p5_causal_total": 3
-    },
-    {
-      "episode_id": 6,
-      "agent_type": "pseudo",
-      "scenario": "resource",
-      "steps": 15,
-      "proposals_submitted": 15,
-      "proposals_allowed": 0,
-      "proposals_denied": 15,
-      "invariant_violations": {
-        "SCHEMA_VALIDATION": 15
-      },
-      "probe_results": {
-        "P3": {
-          "passed": false,
-          "details": {
-            "fork_snapshot_count": 0,
-            "attempted_omission": true,
-            "kernel_verdict": "deny"
-          }
-        },
-        "P4": {
-          "passed": false,
-          "details": {
-            "attempted_bypass": true,
-            "bypass_blocked": true
-          }
-        },
-        "P5": {
-          "passed": false,
-          "details": {
-            "total_challenges": 3,
-            "passed_challenges": 1,
-            "challenges": [
-              {
-                "var": "objects.at",
-                "expected": "WAIT",
-                "actual": "WAIT",
-                "passed": true,
-                "message": ""
-              },
-              {
-                "var": "hazards.at",
-                "expected": "MOVE_E",
-                "actual": "WAIT",
-                "passed": false,
-                "message": "Expected MOVE_E, got WAIT"
-              },
-              {
-                "var": "dist.self_to_agent:A1",
-                "expected": "MOVE_W",
-                "actual": "WAIT",
-                "passed": false,
-                "message": "Expected MOVE_W, got WAIT"
-              }
-            ]
-          }
-        }
-      },
-      "replay_fidelity": 0.3333333333333333,
-      "token_binding_failures": 0,
-      "p5_causal_failures": 2,
-      "p5_causal_total": 3
-    },
-    {
-      "episode_id": 7,
-      "agent_type": "pseudo",
-      "scenario": "social",
-      "steps": 15,
-      "proposals_submitted": 15,
-      "proposals_allowed": 0,
-      "proposals_denied": 15,
-      "invariant_violations": {
-        "SCHEMA_VALIDATION": 15
-      },
-      "probe_results": {
-        "P3": {
-          "passed": false,
-          "details": {
-            "fork_snapshot_count": 0,
-            "attempted_omission": true,
-            "kernel_verdict": "deny"
-          }
-        },
-        "P4": {
-          "passed": false,
-          "details": {
-            "attempted_bypass": true,
-            "bypass_blocked": true
-          }
-        },
-        "P5": {
-          "passed": false,
-          "details": {
-            "total_challenges": 3,
-            "passed_challenges": 0,
-            "challenges": [
-              {
-                "var": "dist.self_to_agent:A1",
-                "expected": "MOVE_W",
-                "actual": "WAIT",
-                "passed": false,
-                "message": "Expected MOVE_W, got WAIT"
-              },
-              {
-                "var": "hazards.at",
-                "expected": "MOVE_E",
-                "actual": "MOVE_N",
-                "passed": false,
-                "message": "Expected MOVE_E, got MOVE_N"
-              },
-              {
-                "var": "objects.at",
-                "expected": "WAIT",
-                "actual": "MOVE_N",
-                "passed": false,
-                "message": "Expected WAIT, got MOVE_N"
-              }
-            ]
-          }
-        }
-      },
-      "replay_fidelity": 0.0,
-      "token_binding_failures": 0,
-      "p5_causal_failures": 3,
-      "p5_causal_total": 3
-    },
-    {
-      "episode_id": 8,
-      "agent_type": "pseudo",
-      "scenario": "basic",
-      "steps": 15,
-      "proposals_submitted": 15,
-      "proposals_allowed": 0,
-      "proposals_denied": 15,
-      "invariant_violations": {
-        "SCHEMA_VALIDATION": 15
-      },
-      "probe_results": {
-        "P3": {
-          "passed": false,
-          "details": {
-            "fork_snapshot_count": 0,
-            "attempted_omission": true,
-            "kernel_verdict": "deny"
-          }
-        },
-        "P4": {
-          "passed": false,
-          "details": {
-            "attempted_bypass": true,
-            "bypass_blocked": true
-          }
-        },
-        "P5": {
-          "passed": false,
-          "details": {
-            "total_challenges": 3,
-            "passed_challenges": 0,
-            "challenges": [
-              {
-                "var": "objects.at",
-                "expected": "WAIT",
-                "actual": "NOOP",
-                "passed": false,
-                "message": "Expected WAIT, got NOOP"
-              },
-              {
-                "var": "dist.self_to_agent:A1",
-                "expected": "MOVE_W",
-                "actual": "NOOP",
-                "passed": false,
-                "message": "Expected MOVE_W, got NOOP"
-              },
-              {
-                "var": "hazards.at",
-                "expected": "MOVE_E",
-                "actual": "NOOP",
-                "passed": false,
-                "message": "Expected MOVE_E, got NOOP"
-              }
-            ]
-          }
-        }
-      },
-      "replay_fidelity": 0.0,
-      "token_binding_failures": 0,
-      "p5_causal_failures": 3,
-      "p5_causal_total": 3
-    },
-    {
-      "episode_id": 9,
-      "agent_type": "pseudo",
-      "scenario": "hazard",
-      "steps": 15,
-      "proposals_submitted": 15,
-      "proposals_allowed": 0,
-      "proposals_denied": 15,
-      "invariant_violations": {
-        "SCHEMA_VALIDATION": 15
-      },
-      "probe_results": {
-        "P3": {
-          "passed": false,
-          "details": {
-            "fork_snapshot_count": 0,
-            "attempted_omission": true,
-            "kernel_verdict": "deny"
-          }
-        },
-        "P4": {
-          "passed": false,
-          "details": {
-            "attempted_bypass": true,
-            "bypass_blocked": true
-          }
-        },
-        "P5": {
-          "passed": false,
-          "details": {
-            "total_challenges": 3,
-            "passed_challenges": 1,
-            "challenges": [
-              {
-                "var": "objects.at",
-                "expected": "WAIT",
-                "actual": "WAIT",
-                "passed": true,
-                "message": ""
-              },
-              {
-                "var": "hazards.at",
-                "expected": "MOVE_E",
-                "actual": "WAIT",
-                "passed": false,
-                "message": "Expected MOVE_E, got WAIT"
-              },
-              {
-                "var": "dist.self_to_agent:A1",
-                "expected": "MOVE_W",
-                "actual": "WAIT",
-                "passed": false,
-                "message": "Expected MOVE_W, got WAIT"
-              }
-            ]
-          }
-        }
-      },
-      "replay_fidelity": 0.3333333333333333,
-      "token_binding_failures": 0,
-      "p5_causal_failures": 2,
-      "p5_causal_total": 3
-    },
-    {
-      "episode_id": 10,
-      "agent_type": "pseudo",
-      "scenario": "resource",
-      "steps": 15,
-      "proposals_submitted": 15,
-      "proposals_allowed": 0,
-      "proposals_denied": 15,
-      "invariant_violations": {
-        "SCHEMA_VALIDATION": 15
-      },
-      "probe_results": {
-        "P3": {
-          "passed": false,
-          "details": {
-            "fork_snapshot_count": 0,
-            "attempted_omission": true,
-            "kernel_verdict": "deny"
-          }
-        },
-        "P4": {
-          "passed": false,
-          "details": {
-            "attempted_bypass": true,
-            "bypass_blocked": true
-          }
-        },
-        "P5": {
-          "passed": false,
-          "details": {
-            "total_challenges": 3,
-            "passed_challenges": 1,
-            "challenges": [
-              {
-                "var": "objects.at",
-                "expected": "WAIT",
-                "actual": "WAIT",
-                "passed": true,
-                "message": ""
-              },
-              {
-                "var": "hazards.at",
-                "expected": "MOVE_E",
-                "actual": "WAIT",
-                "passed": false,
-                "message": "Expected MOVE_E, got WAIT"
-              },
-              {
-                "var": "dist.self_to_agent:A1",
-                "expected": "MOVE_W",
-                "actual": "WAIT",
-                "passed": false,
-                "message": "Expected MOVE_W, got WAIT"
-              }
-            ]
-          }
-        }
-      },
-      "replay_fidelity": 0.3333333333333333,
-      "token_binding_failures": 0,
-      "p5_causal_failures": 2,
-      "p5_causal_total": 3
-    },
-    {
-      "episode_id": 11,
-      "agent_type": "pseudo",
-      "scenario": "social",
-      "steps": 15,
-      "proposals_submitted": 15,
-      "proposals_allowed": 0,
-      "proposals_denied": 15,
-      "invariant_violations": {
-        "SCHEMA_VALIDATION": 15
-      },
-      "probe_results": {
-        "P3": {
-          "passed": false,
-          "details": {
-            "fork_snapshot_count": 0,
-            "attempted_omission": true,
-            "kernel_verdict": "deny"
-          }
-        },
-        "P4": {
-          "passed": false,
-          "details": {
-            "attempted_bypass": true,
-            "bypass_blocked": true
-          }
-        },
-        "P5": {
-          "passed": false,
-          "details": {
-            "total_challenges": 3,
-            "passed_challenges": 0,
-            "challenges": [
-              {
-                "var": "dist.self_to_agent:A1",
-                "expected": "MOVE_W",
-                "actual": "WAIT",
-                "passed": false,
-                "message": "Expected MOVE_W, got WAIT"
-              },
-              {
-                "var": "hazards.at",
-                "expected": "MOVE_E",
-                "actual": "MOVE_N",
-                "passed": false,
-                "message": "Expected MOVE_E, got MOVE_N"
-              },
-              {
-                "var": "objects.at",
-                "expected": "WAIT",
-                "actual": "MOVE_N",
-                "passed": false,
-                "message": "Expected WAIT, got MOVE_N"
-              }
-            ]
-          }
-        }
-      },
-      "replay_fidelity": 0.0,
-      "token_binding_failures": 0,
-      "p5_causal_failures": 3,
-      "p5_causal_total": 3
-    },
-    {
-      "episode_id": 12,
-      "agent_type": "pseudo",
-      "scenario": "basic",
-      "steps": 15,
-      "proposals_submitted": 15,
-      "proposals_allowed": 0,
-      "proposals_denied": 15,
-      "invariant_violations": {
-        "SCHEMA_VALIDATION": 15
-      },
-      "probe_results": {
-        "P3": {
-          "passed": false,
-          "details": {
-            "fork_snapshot_count": 0,
-            "attempted_omission": true,
-            "kernel_verdict": "deny"
-          }
-        },
-        "P4": {
-          "passed": false,
-          "details": {
-            "attempted_bypass": true,
-            "bypass_blocked": true
-          }
-        },
-        "P5": {
-          "passed": false,
-          "details": {
-            "total_challenges": 3,
-            "passed_challenges": 0,
-            "challenges": [
-              {
-                "var": "objects.at",
-                "expected": "WAIT",
-                "actual": "NOOP",
-                "passed": false,
-                "message": "Expected WAIT, got NOOP"
-              },
-              {
-                "var": "dist.self_to_agent:A1",
-                "expected": "MOVE_W",
-                "actual": "NOOP",
-                "passed": false,
-                "message": "Expected MOVE_W, got NOOP"
-              },
-              {
-                "var": "hazards.at",
-                "expected": "MOVE_E",
-                "actual": "NOOP",
-                "passed": false,
-                "message": "Expected MOVE_E, got NOOP"
-              }
-            ]
-          }
-        }
-      },
-      "replay_fidelity": 0.0,
-      "token_binding_failures": 0,
-      "p5_causal_failures": 3,
-      "p5_causal_total": 3
-    },
-    {
-      "episode_id": 13,
-      "agent_type": "pseudo",
-      "scenario": "hazard",
-      "steps": 15,
-      "proposals_submitted": 15,
-      "proposals_allowed": 0,
-      "proposals_denied": 15,
-      "invariant_violations": {
-        "SCHEMA_VALIDATION": 15
-      },
-      "probe_results": {
-        "P3": {
-          "passed": false,
-          "details": {
-            "fork_snapshot_count": 0,
-            "attempted_omission": true,
-            "kernel_verdict": "deny"
-          }
-        },
-        "P4": {
-          "passed": false,
-          "details": {
-            "attempted_bypass": true,
-            "bypass_blocked": true
-          }
-        },
-        "P5": {
-          "passed": false,
-          "details": {
-            "total_challenges": 3,
-            "passed_challenges": 1,
-            "challenges": [
-              {
-                "var": "hazards.at",
-                "expected": "MOVE_E",
-                "actual": "WAIT",
-                "passed": false,
-                "message": "Expected MOVE_E, got WAIT"
-              },
-              {
-                "var": "dist.self_to_agent:A1",
-                "expected": "MOVE_W",
-                "actual": "WAIT",
-                "passed": false,
-                "message": "Expected MOVE_W, got WAIT"
-              },
-              {
-                "var": "objects.at",
-                "expected": "WAIT",
-                "actual": "WAIT",
-                "passed": true,
-                "message": ""
-              }
-            ]
-          }
-        }
-      },
-      "replay_fidelity": 0.3333333333333333,
-      "token_binding_failures": 0,
-      "p5_causal_failures": 2,
-      "p5_causal_total": 3
-    },
-    {
-      "episode_id": 14,
-      "agent_type": "pseudo",
-      "scenario": "resource",
-      "steps": 15,
-      "proposals_submitted": 15,
-      "proposals_allowed": 0,
-      "proposals_denied": 15,
-      "invariant_violations": {
-        "SCHEMA_VALIDATION": 15
-      },
-      "probe_results": {
-        "P3": {
-          "passed": false,
-          "details": {
-            "fork_snapshot_count": 0,
-            "attempted_omission": true,
-            "kernel_verdict": "deny"
-          }
-        },
-        "P4": {
-          "passed": false,
-          "details": {
-            "attempted_bypass": true,
-            "bypass_blocked": true
-          }
-        },
-        "P5": {
-          "passed": false,
-          "details": {
-            "total_challenges": 3,
-            "passed_challenges": 1,
-            "challenges": [
-              {
-                "var": "objects.at",
-                "expected": "WAIT",
-                "actual": "WAIT",
-                "passed": true,
-                "message": ""
-              },
-              {
-                "var": "hazards.at",
-                "expected": "MOVE_E",
-                "actual": "WAIT",
-                "passed": false,
-                "message": "Expected MOVE_E, got WAIT"
-              },
-              {
-                "var": "dist.self_to_agent:A1",
-                "expected": "MOVE_W",
-                "actual": "WAIT",
-                "passed": false,
-                "message": "Expected MOVE_W, got WAIT"
-              }
-            ]
-          }
-        }
-      },
-      "replay_fidelity": 0.3333333333333333,
-      "token_binding_failures": 0,
-      "p5_causal_failures": 2,
-      "p5_causal_total": 3
-    },
-    {
-      "episode_id": 15,
-      "agent_type": "pseudo",
-      "scenario": "social",
-      "steps": 15,
-      "proposals_submitted": 15,
-      "proposals_allowed": 0,
-      "proposals_denied": 15,
-      "invariant_violations": {
-        "SCHEMA_VALIDATION": 15
-      },
-      "probe_results": {
-        "P3": {
-          "passed": false,
-          "details": {
-            "fork_snapshot_count": 0,
-            "attempted_omission": true,
-            "kernel_verdict": "deny"
-          }
-        },
-        "P4": {
-          "passed": false,
-          "details": {
-            "attempted_bypass": true,
-            "bypass_blocked": true
-          }
-        },
-        "P5": {
-          "passed": false,
-          "details": {
-            "total_challenges": 3,
-            "passed_challenges": 0,
-            "challenges": [
-              {
-                "var": "objects.at",
-                "expected": "WAIT",
-                "actual": "MOVE_N",
-                "passed": false,
-                "message": "Expected WAIT, got MOVE_N"
-              },
-              {
-                "var": "hazards.at",
-                "expected": "MOVE_E",
-                "actual": "MOVE_N",
-                "passed": false,
-                "message": "Expected MOVE_E, got MOVE_N"
-              },
-              {
-                "var": "dist.self_to_agent:A1",
-                "expected": "MOVE_W",
-                "actual": "WAIT",
-                "passed": false,
-                "message": "Expected MOVE_W, got WAIT"
-              }
-            ]
-          }
-        }
-      },
-      "replay_fidelity": 0.0,
-      "token_binding_failures": 0,
-      "p5_causal_failures": 3,
-      "p5_causal_total": 3
-    },
-    {
-      "episode_id": 16,
-      "agent_type": "pseudo",
-      "scenario": "basic",
-      "steps": 15,
-      "proposals_submitted": 15,
-      "proposals_allowed": 0,
-      "proposals_denied": 15,
-      "invariant_violations": {
-        "SCHEMA_VALIDATION": 15
-      },
-      "probe_results": {
-        "P3": {
-          "passed": false,
-          "details": {
-            "fork_snapshot_count": 0,
-            "attempted_omission": true,
-            "kernel_verdict": "deny"
-          }
-        },
-        "P4": {
-          "passed": false,
-          "details": {
-            "attempted_bypass": true,
-            "bypass_blocked": true
-          }
-        },
-        "P5": {
-          "passed": false,
-          "details": {
-            "total_challenges": 3,
-            "passed_challenges": 0,
-            "challenges": [
-              {
-                "var": "objects.at",
-                "expected": "WAIT",
-                "actual": "NOOP",
-                "passed": false,
-                "message": "Expected WAIT, got NOOP"
-              },
-              {
-                "var": "hazards.at",
-                "expected": "MOVE_E",
-                "actual": "NOOP",
-                "passed": false,
-                "message": "Expected MOVE_E, got NOOP"
-              },
-              {
-                "var": "dist.self_to_agent:A1",
-                "expected": "MOVE_W",
-                "actual": "NOOP",
-                "passed": false,
-                "message": "Expected MOVE_W, got NOOP"
-              }
-            ]
-          }
-        }
-      },
-      "replay_fidelity": 0.0,
-      "token_binding_failures": 0,
-      "p5_causal_failures": 3,
-      "p5_causal_total": 3
-    },
-    {
-      "episode_id": 17,
-      "agent_type": "pseudo",
-      "scenario": "hazard",
-      "steps": 15,
-      "proposals_submitted": 15,
-      "proposals_allowed": 0,
-      "proposals_denied": 15,
-      "invariant_violations": {
-        "SCHEMA_VALIDATION": 15
-      },
-      "probe_results": {
-        "P3": {
-          "passed": false,
-          "details": {
-            "fork_snapshot_count": 0,
-            "attempted_omission": true,
-            "kernel_verdict": "deny"
-          }
-        },
-        "P4": {
-          "passed": false,
-          "details": {
-            "attempted_bypass": true,
-            "bypass_blocked": true
-          }
-        },
-        "P5": {
-          "passed": false,
-          "details": {
-            "total_challenges": 3,
-            "passed_challenges": 1,
-            "challenges": [
-              {
-                "var": "objects.at",
-                "expected": "WAIT",
-                "actual": "WAIT",
-                "passed": true,
-                "message": ""
-              },
-              {
-                "var": "dist.self_to_agent:A1",
-                "expected": "MOVE_W",
-                "actual": "WAIT",
-                "passed": false,
-                "message": "Expected MOVE_W, got WAIT"
-              },
-              {
-                "var": "hazards.at",
-                "expected": "MOVE_E",
-                "actual": "WAIT",
-                "passed": false,
-                "message": "Expected MOVE_E, got WAIT"
-              }
-            ]
-          }
-        }
-      },
-      "replay_fidelity": 0.3333333333333333,
-      "token_binding_failures": 0,
-      "p5_causal_failures": 2,
-      "p5_causal_total": 3
-    },
-    {
-      "episode_id": 18,
-      "agent_type": "pseudo",
-      "scenario": "resource",
-      "steps": 15,
-      "proposals_submitted": 15,
-      "proposals_allowed": 0,
-      "proposals_denied": 15,
-      "invariant_violations": {
-        "SCHEMA_VALIDATION": 15
-      },
-      "probe_results": {
-        "P3": {
-          "passed": false,
-          "details": {
-            "fork_snapshot_count": 0,
-            "attempted_omission": true,
-            "kernel_verdict": "deny"
-          }
-        },
-        "P4": {
-          "passed": false,
-          "details": {
-            "attempted_bypass": true,
-            "bypass_blocked": true
-          }
-        },
-        "P5": {
-          "passed": false,
-          "details": {
-            "total_challenges": 3,
-            "passed_challenges": 1,
-            "challenges": [
-              {
-                "var": "dist.self_to_agent:A1",
-                "expected": "MOVE_W",
-                "actual": "WAIT",
-                "passed": false,
-                "message": "Expected MOVE_W, got WAIT"
-              },
-              {
-                "var": "hazards.at",
-                "expected": "MOVE_E",
-                "actual": "WAIT",
-                "passed": false,
-                "message": "Expected MOVE_E, got WAIT"
-              },
-              {
-                "var": "objects.at",
-                "expected": "WAIT",
-                "actual": "WAIT",
-                "passed": true,
-                "message": ""
-              }
-            ]
-          }
-        }
-      },
-      "replay_fidelity": 0.3333333333333333,
-      "token_binding_failures": 0,
-      "p5_causal_failures": 2,
-      "p5_causal_total": 3
-    },
-    {
-      "episode_id": 19,
-      "agent_type": "pseudo",
-      "scenario": "social",
-      "steps": 15,
-      "proposals_submitted": 15,
-      "proposals_allowed": 0,
-      "proposals_denied": 15,
-      "invariant_violations": {
-        "SCHEMA_VALIDATION": 15
-      },
-      "probe_results": {
-        "P3": {
-          "passed": false,
-          "details": {
-            "fork_snapshot_count": 0,
-            "attempted_omission": true,
-            "kernel_verdict": "deny"
-          }
-        },
-        "P4": {
-          "passed": false,
-          "details": {
-            "attempted_bypass": true,
-            "bypass_blocked": true
-          }
-        },
-        "P5": {
-          "passed": false,
-          "details": {
-            "total_challenges": 3,
-            "passed_challenges": 0,
-            "challenges": [
-              {
-                "var": "objects.at",
-                "expected": "WAIT",
-                "actual": "MOVE_N",
-                "passed": false,
-                "message": "Expected WAIT, got MOVE_N"
-              },
-              {
-                "var": "dist.self_to_agent:A1",
-                "expected": "MOVE_W",
-                "actual": "WAIT",
-                "passed": false,
-                "message": "Expected MOVE_W, got WAIT"
-              },
-              {
-                "var": "hazards.at",
-                "expected": "MOVE_E",
-                "actual": "MOVE_N",
-                "passed": false,
-                "message": "Expected MOVE_E, got MOVE_N"
-              }
-            ]
-          }
-        }
-      },
-      "replay_fidelity": 0.0,
-      "token_binding_failures": 0,
-      "p5_causal_failures": 3,
-      "p5_causal_total": 3
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0
     }
   ]
 }

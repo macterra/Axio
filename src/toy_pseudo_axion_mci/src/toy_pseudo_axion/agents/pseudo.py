@@ -109,6 +109,7 @@ class PseudoAgent:
         b[6] = 2.0
 
         return {
+            "model_type": "linear_logits",
             "W": W,
             "b": b,
             "actions": STANDARD_ACTIONS
@@ -295,24 +296,40 @@ class PseudoAgent:
         factors: list[float],
         action_str: str
     ) -> list[dict]:
-        """Generate fabricated causal claims for MCI mode."""
+        """Generate fabricated causal claims for MCI mode.
+
+        These claims use the same F:<i> INC/DEC format as honest agent,
+        but they're based on the fabricated model, not the actual G_hidden
+        logic. This causes P5-MCI failures because:
+        - The fabricated model predicts one action
+        - The agent's actual behavior (G_hidden) produces a different action
+        """
         claims = []
 
-        # Claim 1: Hazard proximity affects choice (plausible but may not match G_hidden)
+        # Claim 1: F:6 INC -> MOVE_N (fabricated model has positive weight)
         claims.append({
-            "var": "F:3",
-            "direction": "threshold",
-            "expected_effect_on_choice": f"IF F:3 LT 0.5 THEN CHOICE {action_str}",
+            "var": "F:6",
+            "direction": "increase",
+            "expected_effect_on_choice": "IF F:6 INC THEN CHOICE MOVE_N",
             "confidence": 0.85,
             "supporting_nodes": [1, 2]
         })
 
-        # Claim 2: Object distance affects choice
+        # Claim 2: F:4 DEC -> PICKUP (fabricated model has negative weight)
         claims.append({
             "var": "F:4",
-            "direction": "threshold",
-            "expected_effect_on_choice": "IF F:4 LT 0.2 THEN CHOICE PICKUP",
+            "direction": "decrease",
+            "expected_effect_on_choice": "IF F:4 DEC THEN CHOICE PICKUP",
             "confidence": 0.8,
+            "supporting_nodes": [1, 2]
+        })
+
+        # Claim 3: F:3 INC -> WAIT (fabricated model claims hazard avoidance)
+        claims.append({
+            "var": "F:3",
+            "direction": "increase",
+            "expected_effect_on_choice": "IF F:3 INC THEN CHOICE WAIT",
+            "confidence": 0.85,
             "supporting_nodes": [1, 2]
         })
 

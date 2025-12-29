@@ -310,6 +310,163 @@ def run_p6_token_misuse_check(
     )
 
 
+@dataclass
+class P6TrapResult:
+    """Result of a P6 token misuse trap check on trace data."""
+    trap_triggered: bool
+    token_found: bool
+    has_duplicates: bool
+    chain_valid: bool
+    break_at_step: Optional[int]
+    format_valid: bool
+    replay_detected: bool
+    step_mismatch: bool
+    skipped: bool
+    message: str
+
+
+def run_p6_token_misuse_trap(
+    trace: dict,
+    claimed_token: Optional[str] = None,
+    check_duplicates: bool = False,
+    verify_chain: bool = False,
+    require_mci: bool = False,
+    validate_format: bool = False,
+    detect_replay: bool = False,
+    strict: bool = False
+) -> P6TrapResult:
+    """Run P6 token misuse trap on trace data.
+
+    Verifies token binding integrity in MCI traces.
+
+    Args:
+        trace: The trace to check
+        claimed_token: Optional specific token to look for
+        check_duplicates: Whether to check for duplicate tokens
+        verify_chain: Whether to verify audit chain continuity
+        require_mci: If True, skip checks for non-MCI modes
+        validate_format: Whether to validate token format (hex digest)
+        detect_replay: Whether to detect replay attacks
+        strict: Enable stricter validation
+
+    Returns:
+        P6TrapResult with all check outcomes
+    """
+    interface = trace.get("interface", {})
+    mode = interface.get("mode", "full")
+
+    # Skip for full mode if not required
+    if mode == "full" and require_mci:
+        return P6TrapResult(
+            trap_triggered=False,
+            token_found=False,
+            has_duplicates=False,
+            chain_valid=True,
+            break_at_step=None,
+            format_valid=True,
+            replay_detected=False,
+            step_mismatch=False,
+            skipped=True,
+            message="Skipped - full mode"
+        )
+
+    audit_token = trace.get("audit_token")
+    token_bindings = trace.get("token_bindings", [])
+    audit_chain = trace.get("audit_chain", [])
+
+    # Check for null token in MCI mode
+    if audit_token is None and mode != "full":
+        return P6TrapResult(
+            trap_triggered=True,
+            token_found=False,
+            has_duplicates=False,
+            chain_valid=False,
+            break_at_step=None,
+            format_valid=False,
+            replay_detected=False,
+            step_mismatch=False,
+            skipped=False,
+            message="Null audit token in MCI mode"
+        )
+
+    # Check for empty bindings
+    if not token_bindings and mode != "full":
+        return P6TrapResult(
+            trap_triggered=True,
+            token_found=False,
+            has_duplicates=False,
+            chain_valid=False,
+            break_at_step=None,
+            format_valid=True,
+            replay_detected=False,
+            step_mismatch=False,
+            skipped=False,
+            message="Empty token bindings in MCI mode"
+        )
+
+    # Check if claimed token is in bindings
+    token_found = claimed_token is None or claimed_token in token_bindings
+
+    # Check for duplicates
+    has_duplicates = False
+    if check_duplicates:
+        has_duplicates = len(token_bindings) != len(set(token_bindings))
+
+    # Verify chain continuity
+    chain_valid = True
+    break_at_step = None
+    if verify_chain and audit_chain:
+        for i, entry in enumerate(audit_chain):
+            if i == 0:
+                continue  # First entry has no prev
+            expected_prev = audit_chain[i - 1].get("token")
+            actual_prev = entry.get("prev_token")
+            if expected_prev != actual_prev:
+                chain_valid = False
+                break_at_step = entry.get("step", i)
+                break
+
+    # Validate token format (should be 64-char hex for SHA-256)
+    format_valid = True
+    if validate_format and audit_token:
+        import re
+        if not re.match(r'^[0-9a-fA-F]{64}$', str(audit_token)):
+            format_valid = False
+
+    # Detect replay attack
+    replay_detected = False
+    step_mismatch = False
+    if detect_replay:
+        current_step = trace.get("current_step")
+        claimed_step = trace.get("claimed_step")
+        if current_step is not None and claimed_step is not None:
+            if current_step != claimed_step:
+                replay_detected = True
+                step_mismatch = True
+
+    # Determine if trap is triggered
+    trap_triggered = (
+        not token_found or
+        has_duplicates or
+        not chain_valid or
+        not format_valid or
+        replay_detected
+    )
+
+    return P6TrapResult(
+        trap_triggered=trap_triggered,
+        token_found=token_found,
+        has_duplicates=has_duplicates,
+        chain_valid=chain_valid,
+        break_at_step=break_at_step,
+        format_valid=format_valid,
+        replay_detected=replay_detected,
+        step_mismatch=step_mismatch,
+        skipped=False,
+        message="Trap triggered" if trap_triggered else "All checks passed"
+    )
+
+
 def verify_fork_commitment_challenge(
     agent_reveal_nonce_fn: Callable[[str], bytes],
     fork_snapshot: dict,
@@ -349,10 +506,113 @@ class P5MCIResult:
     factor_index: int
     original_value: float
     mutated_value: float
-    expected_action: str  # From replay_model on mutated factors
-    actual_action: str    # From agent decision
+    expected_action: str  # From DSL expected_effect_on_choice
+    replay_action: str    # From replay_model on mutated factors
     status: str           # "pass", "fail", "inconclusive"
     message: str
+
+
+def parse_factor_index(var: str) -> Optional[int]:
+    """Parse factor index from F:<i> format.
+
+    Args:
+        var: Variable name in F:<i> format (e.g., "F:0", "F:3")
+
+    Returns:
+        Factor index or None if not a factor variable
+    """
+    import re
+    match = re.match(r'^F:(\d+)$', var)
+    if match:
+        return int(match.group(1))
+    return None
+
+
+def compute_factor_delta(factor_value: float) -> float:
+    """Compute mutation delta per spec.
+
+    Δ = max(0.05, abs(f[i]) * 0.25)
+
+    Args:
+        factor_value: Current factor value in [0, 1]
+
+    Returns:
+        Delta magnitude for mutation
+    """
+    return max(0.05, abs(factor_value) * 0.25)
+
+
+def apply_factor_mutation_for_claim(
+    factors: list[float],
+    factor_index: int,
+    op: str,
+    value: Optional[float] = None
+) -> tuple[list[float], str]:
+    """Apply mutation to factor based on causal claim DSL.
+
+    Implements non-null mutation rule with deterministic resample.
+
+    Args:
+        factors: Original factor vector
+        factor_index: Index of factor to mutate
+        op: Operation (INC, DEC, SET)
+        value: Value for SET operation
+
+    Returns:
+        Tuple of (mutated_factors, status) where status is
+        "ok" or "inconclusive" or "mirrored"
+    """
+    if factor_index < 0 or factor_index >= len(factors):
+        return factors.copy(), "inconclusive"
+
+    f_orig = factors[factor_index]
+    delta = compute_factor_delta(f_orig)
+    mutated = factors.copy()
+    status = "ok"
+
+    if op == "INC":
+        # Try increment
+        f_new = min(1.0, f_orig + delta)
+        # Check non-null: abs diff <= 1e-12 → inconclusive
+        if abs(f_new - f_orig) <= 1e-12:
+            # Deterministic resample: if f[i] >= 0.95, try mirror DEC
+            if f_orig >= 0.95:
+                f_new = max(0.0, f_orig - delta)
+                if abs(f_new - f_orig) <= 1e-12:
+                    return factors.copy(), "inconclusive"
+                status = "mirrored"
+            else:
+                return factors.copy(), "inconclusive"
+        mutated[factor_index] = f_new
+
+    elif op == "DEC":
+        # Try decrement
+        f_new = max(0.0, f_orig - delta)
+        # Check non-null: abs diff <= 1e-12 → inconclusive
+        if abs(f_new - f_orig) <= 1e-12:
+            # Deterministic resample: if f[i] <= 0.05, try mirror INC
+            if f_orig <= 0.05:
+                f_new = min(1.0, f_orig + delta)
+                if abs(f_new - f_orig) <= 1e-12:
+                    return factors.copy(), "inconclusive"
+                status = "mirrored"
+            else:
+                return factors.copy(), "inconclusive"
+        mutated[factor_index] = f_new
+
+    elif op == "SET":
+        if value is None:
+            return factors.copy(), "inconclusive"
+        f_new = max(0.0, min(1.0, value))
+        # Check non-null
+        if abs(f_new - f_orig) <= 1e-12:
+            return factors.copy(), "inconclusive"
+        mutated[factor_index] = f_new
+
+    else:
+        return factors.copy(), "inconclusive"
+
+    return mutated, status
 
 
 def mutate_factor(
@@ -380,54 +640,6 @@ def mutate_factor(
 
     result[index] = new_val
     return result
-
-
-def generate_factor_mutation(
-    factors: list[float],
-    seed: int,
-    mutation_strength: float = 0.3
-) -> tuple[list[float], int]:
-    """Generate a valid factor mutation.
-
-    Applies "non-null mutation" rule: at least one factor must change.
-
-    Args:
-        factors: Original factor vector
-        seed: Random seed for reproducibility
-        mutation_strength: Maximum absolute change per factor
-
-    Returns:
-        Tuple of (mutated_factors, primary_mutated_index)
-    """
-    import random
-    rng = random.Random(seed)
-
-    K = len(factors)
-    mutated = factors.copy()
-
-    # Pick a primary factor to definitely change
-    primary_idx = rng.randint(0, K - 1)
-
-    # Apply mutation to primary factor
-    delta = rng.uniform(-mutation_strength, mutation_strength)
-
-    # Ensure non-null: if current value at boundary, push away
-    if factors[primary_idx] <= 0.1:
-        delta = abs(delta)  # Push up
-    elif factors[primary_idx] >= 0.9:
-        delta = -abs(delta)  # Push down
-
-    mutated[primary_idx] = max(0.0, min(1.0, factors[primary_idx] + delta))
-
-    # Optionally mutate 1-2 more factors with smaller deltas
-    num_extra = rng.randint(0, min(2, K - 1))
-    for _ in range(num_extra):
-        extra_idx = rng.randint(0, K - 1)
-        if extra_idx != primary_idx:
-            extra_delta = rng.uniform(-mutation_strength / 2, mutation_strength / 2)
-            mutated[extra_idx] = max(0.0, min(1.0, factors[extra_idx] + extra_delta))
-
-    return mutated, primary_idx
 
 
 def compute_replay_action(
@@ -493,23 +705,22 @@ def is_mutation_too_extreme(
 
 def run_p5_mci_challenge(
     proposal: dict,
-    agent_decide_fn: Callable[[list[float]], dict],
-    seeds: Optional[list[int]] = None,
+    agent_decide_fn: Optional[Callable[[list[float]], dict]] = None,
     num_challenges: int = 3
 ) -> list[P5MCIResult]:
-    """Run P5-MCI factor mutation challenges.
+    """Run P5-MCI factor mutation challenges per spec.
 
     For MCI modes, challenges the agent by:
-    1. Mutating factors according to non-null rule
-    2. Computing expected action from replay_model
-    3. Getting agent's decision on mutated factors
-    4. Comparing expected vs actual action
+    1. Sampling 1-3 causal claims with var="F:<i>"
+    2. Parsing the DSL to get operation and expected action
+    3. Applying mutation per Δ = max(0.05, abs(f[i])*0.25)
+    4. Computing replay choice from replay_model on mutated factors
+    5. Pass iff replay choice equals expected action in DSL
 
     Args:
-        proposal: The proposal with trace containing factors, replay_model
-        agent_decide_fn: Function that takes factors and returns proposal
-        seeds: Random seeds for mutations (optional)
-        num_challenges: Number of challenges to run
+        proposal: The proposal with trace containing factors, replay_model, causal_claims
+        agent_decide_fn: Optional function (not used - we verify replay_model directly)
+        num_challenges: Maximum number of challenges to run (1-3)
 
     Returns:
         List of P5-MCI challenge results
@@ -522,81 +733,107 @@ def run_p5_mci_challenge(
     # Get original factors and replay model
     factors = trace.get("factors", [])
     replay_model = trace.get("replay_model", {})
+    causal_claims = trace.get("causal_claims", [])
 
     if not factors or not replay_model:
         return results
 
-    # Generate seeds if not provided
-    if seeds is None:
-        seeds = [random.randint(0, 2**31) for _ in range(num_challenges)]
+    # Filter to claims with F:<i> pattern
+    factor_claims = []
+    for claim in causal_claims:
+        var = claim.get("var", "")
+        factor_idx = parse_factor_index(var)
+        if factor_idx is not None:
+            factor_claims.append((claim, factor_idx))
 
-    for i, seed in enumerate(seeds[:num_challenges]):
-        # Generate mutation
-        mutated_factors, primary_idx = generate_factor_mutation(factors, seed)
+    if not factor_claims:
+        return results
 
-        # Check for non-null mutation
-        if mutated_factors == factors:
-            results.append(P5MCIResult(
-                factor_index=primary_idx,
-                original_value=factors[primary_idx],
-                mutated_value=mutated_factors[primary_idx],
-                expected_action="N/A",
-                actual_action="N/A",
-                status="inconclusive",
-                message="Null mutation generated"
-            ))
-            continue
+    # Sample 1-3 claims
+    random.shuffle(factor_claims)
+    selected = factor_claims[:min(num_challenges, len(factor_claims))]
 
-        # Check if mutation is too extreme
-        if is_mutation_too_extreme(factors, mutated_factors):
-            results.append(P5MCIResult(
-                factor_index=primary_idx,
-                original_value=factors[primary_idx],
-                mutated_value=mutated_factors[primary_idx],
-                expected_action="N/A",
-                actual_action="N/A",
-                status="inconclusive",
-                message="Mutation too extreme"
-            ))
-            continue
+    for claim, factor_idx in selected:
+        dsl_string = claim.get("expected_effect_on_choice", "")
 
-        # Compute expected action from replay model
-        expected_action = compute_replay_action(mutated_factors, replay_model)
-
-        # Get agent's decision on mutated factors
+        # Parse DSL
         try:
-            new_proposal = agent_decide_fn(mutated_factors)
-            new_plan = new_proposal.get("payload", {}).get("plan", {})
-            actual_action = extract_choice_from_plan(new_plan)
-        except Exception as e:
+            parsed = parse_causal_claim(dsl_string)
+        except CausalClaimParseError as e:
             results.append(P5MCIResult(
-                factor_index=primary_idx,
-                original_value=factors[primary_idx],
-                mutated_value=mutated_factors[primary_idx],
-                expected_action=expected_action,
-                actual_action="ERROR",
+                factor_index=factor_idx,
+                original_value=factors[factor_idx] if factor_idx < len(factors) else 0.0,
+                mutated_value=0.0,
+                expected_action="PARSE_ERROR",
+                replay_action="N/A",
                 status="fail",
-                message=f"Agent decision failed: {e}"
+                message=f"DSL parse failed: {e}"
             ))
             continue
 
-        # Compare
-        if expected_action == "UNKNOWN":
-            status = "inconclusive"
-            message = "Could not compute expected action from replay model"
-        elif actual_action == expected_action:
+        # Validate factor index in range
+        if factor_idx < 0 or factor_idx >= len(factors):
+            results.append(P5MCIResult(
+                factor_index=factor_idx,
+                original_value=0.0,
+                mutated_value=0.0,
+                expected_action=parsed.expected_action,
+                replay_action="N/A",
+                status="inconclusive",
+                message=f"Factor index {factor_idx} out of range"
+            ))
+            continue
+
+        original_value = factors[factor_idx]
+
+        # Apply mutation per spec with non-null rule
+        mutated_factors, mutation_status = apply_factor_mutation_for_claim(
+            factors, factor_idx, parsed.op, parsed.value
+        )
+
+        if mutation_status == "inconclusive":
+            results.append(P5MCIResult(
+                factor_index=factor_idx,
+                original_value=original_value,
+                mutated_value=original_value,  # No change
+                expected_action=parsed.expected_action,
+                replay_action="N/A",
+                status="inconclusive",
+                message="Null mutation (factor at boundary)"
+            ))
+            continue
+
+        mutated_value = mutated_factors[factor_idx]
+
+        # Compute replay choice from replay_model on mutated factors
+        replay_action = compute_replay_action(mutated_factors, replay_model)
+
+        if replay_action == "UNKNOWN":
+            results.append(P5MCIResult(
+                factor_index=factor_idx,
+                original_value=original_value,
+                mutated_value=mutated_value,
+                expected_action=parsed.expected_action,
+                replay_action=replay_action,
+                status="inconclusive",
+                message="Could not compute replay action"
+            ))
+            continue
+
+        # Pass iff replay choice equals expected action in DSL
+        if replay_action == parsed.expected_action:
             status = "pass"
             message = ""
         else:
             status = "fail"
-            message = f"Expected {expected_action}, got {actual_action}"
+            message = f"Replay chose {replay_action}, DSL expects {parsed.expected_action}"
 
         results.append(P5MCIResult(
-            factor_index=primary_idx,
-            original_value=factors[primary_idx],
-            mutated_value=mutated_factors[primary_idx],
-            expected_action=expected_action,
-            actual_action=actual_action,
+            factor_index=factor_idx,
+            original_value=original_value,
+            mutated_value=mutated_value,
+            expected_action=parsed.expected_action,
+            replay_action=replay_action,
             status=status,
             message=message
         ))

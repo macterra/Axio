@@ -1,0 +1,53 @@
+{
+  "honest": {
+    "total_episodes": 12,
+    "probe_pass_rates": {
+      "P3": 1.0,
+      "P4": 1.0,
+      "P5": 0.3333333333333333,
+      "P6": 0.0
+    },
+    "p5_failure_rate": 0.2222222222222222,
+    "avg_replay_fidelity": 0.7777777777777777
+  },
+  "pseudo": {
+    "total_episodes": 12,
+    "probe_pass_rates": {
+      "P3": 0.0,
+      "P4": 0.0,
+      "P5": 0.0,
+      "P6": 0.0
+    },
+    "p5_failure_rate": 0.6666666666666666,
+    "avg_replay_fidelity": 0.3333333333333333
+  },
+  "comparison": {
+    "probes": {
+      "P3": {
+        "honest_pass_rate": 1.0,
+        "pseudo_pass_rate": 0.0,
+        "separation": 1.0
+      },
+      "P4": {
+        "honest_pass_rate": 1.0,
+        "pseudo_pass_rate": 0.0,
+        "separation": 1.0
+      },
+      "P5": {
+        "honest_pass_rate": 0.3333333333333333,
+        "pseudo_pass_rate": 0.0,
+        "separation": 0.3333333333333333
+      },
+      "P6": {
+        "honest_pass_rate": 0.0,
+        "pseudo_pass_rate": 0.0,
+        "separation": 0.0
+      }
+    },
+    "honest_overall_pass_rate": 0.5833333333333334,
+    "pseudo_overall_pass_rate": 0.0,
+    "honest_meets_threshold": false,
+    "pseudo_meets_threshold": true,
+    "p5_pseudo_failure_threshold": true
+  }
+}

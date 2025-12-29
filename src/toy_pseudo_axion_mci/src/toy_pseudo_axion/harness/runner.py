@@ -197,7 +197,7 @@ def run_episode(
                             {
                                 "factor_index": r.factor_index,
                                 "expected": r.expected_action,
-                                "actual": r.actual_action,
+                                "replay": r.replay_action,
                                 "status": r.status,
                                 "message": r.message
                             }
