@@ -289,11 +289,7 @@ class HonestAgent:
         trace = {
             "trace_version": "0.3",
             "trace_commit": "",  # Will be filled in
-            "interface": {
-                "mode": self.interface_mode,
-                "factor_dim": interface.factor_dim,
-                "projection_id": interface.projection_id
-            },
+            "interface_mode": self.interface_mode,
             "factors": factors,
             "factor_snapshot": factor_snapshot,
             "replay_model": self._replay_model,
@@ -345,7 +341,7 @@ class HonestAgent:
             },
             {
                 "id": 1,
-                "kind": "projection",
+                "kind": "evaluation",
                 "summary": f"Projected to {len(factors)} factors",
                 "payload": {"factors": factors}
             },

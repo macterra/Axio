@@ -160,54 +160,53 @@ class MCILatentInterface(CausalInterface):
         factors = self.compute_factors(env)
         digest = self.create_factor_digest(factors, nonce_ref)
 
+        # Commitment is HMAC over factor_digest with nonce - must be hex string
+        commitment_data = json.dumps({
+            "factor_digest": digest,
+            "nonce_ref": nonce_ref
+        }, sort_keys=True)
+        commitment = hashlib.sha256(commitment_data.encode("utf-8")).hexdigest()
+
         return {
             "snapshot_id": snapshot_id,
             "factor_digest": digest,
             "dim": self.FACTOR_DIM,
-            "commitment": {
-                "factors": factors,
-                "projection_id": self.PROJECTION_ID,
-            },
+            "commitment": commitment,
             "nonce_ref": nonce_ref,
         }
 
     def verify_factor_commitment(
         self,
         env: GridState,
-        commitment: dict[str, Any],
+        factor_snapshot: dict[str, Any],
         nonce_ref: str,
     ) -> bool:
         """Verify factor snapshot commitment matches environment.
 
         Args:
             env: Environment state to verify against
-            commitment: Factor snapshot dict
+            factor_snapshot: Factor snapshot dict with factor_digest and commitment
             nonce_ref: Reference nonce
 
         Returns:
-            True if factors match, False otherwise
+            True if commitment is valid, False otherwise
         """
         # Compute current factors
         current_factors = self.compute_factors(env)
 
-        # Get claimed factors from commitment
-        claimed_factors = commitment.get("commitment", {}).get("factors", [])
-
-        # Check dimension
-        if len(claimed_factors) != self.FACTOR_DIM:
+        # Verify factor_digest matches current factors
+        expected_digest = self.create_factor_digest(current_factors, nonce_ref)
+        if factor_snapshot.get("factor_digest") != expected_digest:
             return False
 
-        # Check each factor (allow small floating point tolerance)
-        tolerance = 1e-9
-        for i, (current, claimed) in enumerate(
-            zip(current_factors, claimed_factors)
-        ):
-            if abs(current - claimed) > tolerance:
-                return False
+        # Verify commitment is valid HMAC over factor_digest
+        commitment_data = json.dumps({
+            "factor_digest": factor_snapshot.get("factor_digest"),
+            "nonce_ref": nonce_ref
+        }, sort_keys=True)
+        expected_commitment = hashlib.sha256(commitment_data.encode("utf-8")).hexdigest()
 
-        # Verify digest
-        expected_digest = self.create_factor_digest(claimed_factors, nonce_ref)
-        return commitment.get("factor_digest") == expected_digest
+        return factor_snapshot.get("commitment") == expected_commitment
 
     def create_commitment(
         self,

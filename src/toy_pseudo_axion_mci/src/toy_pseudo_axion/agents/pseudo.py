@@ -210,7 +210,7 @@ class PseudoAgent:
             },
             {
                 "id": 1,
-                "kind": "projection",
+                "kind": "evaluation",
                 "summary": f"Projected to {len(factors)} factors",
                 "payload": {"factors": factors}
             },
@@ -251,11 +251,7 @@ class PseudoAgent:
         trace = {
             "trace_version": "0.3",
             "trace_commit": "",
-            "interface": {
-                "mode": self.interface_mode,
-                "factor_dim": interface.factor_dim,
-                "projection_id": interface.projection_id
-            },
+            "interface_mode": self.interface_mode,
             "factors": factors,  # Correct factors
             "factor_snapshot": factor_snapshot,
             "replay_model": self._fabricated_model,  # FABRICATED - doesn't match actual logic
