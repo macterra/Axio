@@ -3,9 +3,9 @@
   "total_episodes": 20,
   "scenarios": [
     "resource",
-    "hazard",
     "basic",
-    "social"
+    "social",
+    "hazard"
   ],
   "probes_run": [
     "P3",
@@ -23,7 +23,7 @@
     "P5": 0.0,
     "P6": 0.0
   },
-  "avg_replay_fidelity": 0.0,
+  "avg_replay_fidelity": 0.08333333333333333,
   "avg_token_binding_failures": 0.25,
   "p5_failure_rate": 0.9166666666666666,
   "episodes": [
@@ -59,18 +59,18 @@
             "passed_challenges": 0,
             "challenges": [
               {
-                "var": "dist.self_to_agent:A1",
-                "expected": "MOVE_W",
-                "actual": "NOOP",
-                "passed": false,
-                "message": "Expected MOVE_W, got NOOP"
-              },
-              {
                 "var": "objects.at",
                 "expected": "WAIT",
                 "actual": "NOOP",
                 "passed": false,
                 "message": "Expected WAIT, got NOOP"
+              },
+              {
+                "var": "dist.self_to_agent:A1",
+                "expected": "MOVE_W",
+                "actual": "NOOP",
+                "passed": false,
+                "message": "Expected MOVE_W, got NOOP"
               },
               {
                 "var": "hazards.at",
@@ -120,11 +120,11 @@
             "passed_challenges": 0,
             "challenges": [
               {
-                "var": "hazards.at",
-                "expected": "MOVE_E",
+                "var": "objects.at",
+                "expected": "WAIT",
                 "actual": "NOOP",
                 "passed": false,
-                "message": "Expected MOVE_E, got NOOP"
+                "message": "Expected WAIT, got NOOP"
               },
               {
                 "var": "dist.self_to_agent:A1",
@@ -134,11 +134,11 @@
                 "message": "Expected MOVE_W, got NOOP"
               },
               {
-                "var": "objects.at",
-                "expected": "WAIT",
+                "var": "hazards.at",
+                "expected": "MOVE_E",
                 "actual": "NOOP",
                 "passed": false,
-                "message": "Expected WAIT, got NOOP"
+                "message": "Expected MOVE_E, got NOOP"
               }
             ]
           }
@@ -181,18 +181,18 @@
             "passed_challenges": 1,
             "challenges": [
               {
-                "var": "dist.self_to_agent:A1",
-                "expected": "MOVE_W",
-                "actual": "WAIT",
-                "passed": false,
-                "message": "Expected MOVE_W, got WAIT"
-              },
-              {
                 "var": "objects.at",
                 "expected": "WAIT",
                 "actual": "WAIT",
                 "passed": true,
                 "message": ""
+              },
+              {
+                "var": "dist.self_to_agent:A1",
+                "expected": "MOVE_W",
+                "actual": "WAIT",
+                "passed": false,
+                "message": "Expected MOVE_W, got WAIT"
               },
               {
                 "var": "hazards.at",
@@ -205,7 +205,7 @@
           }
         }
       },
-      "replay_fidelity": 0.0,
+      "replay_fidelity": 0.3333333333333333,
       "token_binding_failures": 0,
       "p5_causal_failures": 2,
       "p5_causal_total": 3
@@ -249,18 +249,18 @@
                 "message": "Expected MOVE_W, got NOOP"
               },
               {
-                "var": "hazards.at",
-                "expected": "MOVE_E",
-                "actual": "NOOP",
-                "passed": false,
-                "message": "Expected MOVE_E, got NOOP"
-              },
-              {
                 "var": "objects.at",
                 "expected": "WAIT",
                 "actual": "NOOP",
                 "passed": false,
                 "message": "Expected WAIT, got NOOP"
+              },
+              {
+                "var": "hazards.at",
+                "expected": "MOVE_E",
+                "actual": "NOOP",
+                "passed": false,
+                "message": "Expected MOVE_E, got NOOP"
               }
             ]
           }
@@ -311,18 +311,18 @@
             "passed_challenges": 0,
             "challenges": [
               {
-                "var": "objects.at",
-                "expected": "WAIT",
-                "actual": "NOOP",
-                "passed": false,
-                "message": "Expected WAIT, got NOOP"
-              },
-              {
                 "var": "hazards.at",
                 "expected": "MOVE_E",
                 "actual": "NOOP",
                 "passed": false,
                 "message": "Expected MOVE_E, got NOOP"
+              },
+              {
+                "var": "objects.at",
+                "expected": "WAIT",
+                "actual": "NOOP",
+                "passed": false,
+                "message": "Expected WAIT, got NOOP"
               },
               {
                 "var": "dist.self_to_agent:A1",
@@ -379,18 +379,18 @@
                 "message": "Expected MOVE_E, got NOOP"
               },
               {
-                "var": "dist.self_to_agent:A1",
-                "expected": "MOVE_W",
-                "actual": "NOOP",
-                "passed": false,
-                "message": "Expected MOVE_W, got NOOP"
-              },
-              {
                 "var": "objects.at",
                 "expected": "WAIT",
                 "actual": "NOOP",
                 "passed": false,
                 "message": "Expected WAIT, got NOOP"
+              },
+              {
+                "var": "dist.self_to_agent:A1",
+                "expected": "MOVE_W",
+                "actual": "NOOP",
+                "passed": false,
+                "message": "Expected MOVE_W, got NOOP"
               }
             ]
           }
@@ -457,7 +457,7 @@
           }
         }
       },
-      "replay_fidelity": 0.0,
+      "replay_fidelity": 0.3333333333333333,
       "token_binding_failures": 0,
       "p5_causal_failures": 2,
       "p5_causal_total": 3
@@ -563,11 +563,11 @@
             "passed_challenges": 0,
             "challenges": [
               {
-                "var": "dist.self_to_agent:A1",
-                "expected": "MOVE_W",
+                "var": "objects.at",
+                "expected": "WAIT",
                 "actual": "NOOP",
                 "passed": false,
-                "message": "Expected MOVE_W, got NOOP"
+                "message": "Expected WAIT, got NOOP"
               },
               {
                 "var": "hazards.at",
@@ -577,11 +577,11 @@
                 "message": "Expected MOVE_E, got NOOP"
               },
               {
-                "var": "objects.at",
-                "expected": "WAIT",
+                "var": "dist.self_to_agent:A1",
+                "expected": "MOVE_W",
                 "actual": "NOOP",
                 "passed": false,
-                "message": "Expected WAIT, got NOOP"
+                "message": "Expected MOVE_W, got NOOP"
               }
             ]
           }
@@ -624,18 +624,18 @@
             "passed_challenges": 0,
             "challenges": [
               {
-                "var": "dist.self_to_agent:A1",
-                "expected": "MOVE_W",
-                "actual": "NOOP",
-                "passed": false,
-                "message": "Expected MOVE_W, got NOOP"
-              },
-              {
                 "var": "hazards.at",
                 "expected": "MOVE_E",
                 "actual": "NOOP",
                 "passed": false,
                 "message": "Expected MOVE_E, got NOOP"
+              },
+              {
+                "var": "dist.self_to_agent:A1",
+                "expected": "MOVE_W",
+                "actual": "NOOP",
+                "passed": false,
+                "message": "Expected MOVE_W, got NOOP"
               },
               {
                 "var": "objects.at",
@@ -685,18 +685,18 @@
             "passed_challenges": 1,
             "challenges": [
               {
-                "var": "objects.at",
-                "expected": "WAIT",
-                "actual": "WAIT",
-                "passed": true,
-                "message": ""
-              },
-              {
                 "var": "hazards.at",
                 "expected": "MOVE_E",
                 "actual": "WAIT",
                 "passed": false,
                 "message": "Expected MOVE_E, got WAIT"
+              },
+              {
+                "var": "objects.at",
+                "expected": "WAIT",
+                "actual": "WAIT",
+                "passed": true,
+                "message": ""
               },
               {
                 "var": "dist.self_to_agent:A1",
@@ -709,7 +709,7 @@
           }
         }
       },
-      "replay_fidelity": 0.0,
+      "replay_fidelity": 0.3333333333333333,
       "token_binding_failures": 0,
       "p5_causal_failures": 2,
       "p5_causal_total": 3
@@ -746,6 +746,13 @@
             "passed_challenges": 0,
             "challenges": [
               {
+                "var": "objects.at",
+                "expected": "WAIT",
+                "actual": "NOOP",
+                "passed": false,
+                "message": "Expected WAIT, got NOOP"
+              },
+              {
                 "var": "dist.self_to_agent:A1",
                 "expected": "MOVE_W",
                 "actual": "NOOP",
@@ -758,13 +765,6 @@
                 "actual": "NOOP",
                 "passed": false,
                 "message": "Expected MOVE_E, got NOOP"
-              },
-              {
-                "var": "objects.at",
-                "expected": "WAIT",
-                "actual": "NOOP",
-                "passed": false,
-                "message": "Expected WAIT, got NOOP"
               }
             ]
           }
@@ -815,18 +815,18 @@
             "passed_challenges": 0,
             "challenges": [
               {
-                "var": "hazards.at",
-                "expected": "MOVE_E",
-                "actual": "NOOP",
-                "passed": false,
-                "message": "Expected MOVE_E, got NOOP"
-              },
-              {
                 "var": "dist.self_to_agent:A1",
                 "expected": "MOVE_W",
                 "actual": "NOOP",
                 "passed": false,
                 "message": "Expected MOVE_W, got NOOP"
+              },
+              {
+                "var": "hazards.at",
+                "expected": "MOVE_E",
+                "actual": "NOOP",
+                "passed": false,
+                "message": "Expected MOVE_E, got NOOP"
               },
               {
                 "var": "objects.at",
@@ -876,6 +876,13 @@
             "passed_challenges": 0,
             "challenges": [
               {
+                "var": "hazards.at",
+                "expected": "MOVE_E",
+                "actual": "NOOP",
+                "passed": false,
+                "message": "Expected MOVE_E, got NOOP"
+              },
+              {
                 "var": "objects.at",
                 "expected": "WAIT",
                 "actual": "NOOP",
@@ -888,13 +895,6 @@
                 "actual": "NOOP",
                 "passed": false,
                 "message": "Expected MOVE_W, got NOOP"
-              },
-              {
-                "var": "hazards.at",
-                "expected": "MOVE_E",
-                "actual": "NOOP",
-                "passed": false,
-                "message": "Expected MOVE_E, got NOOP"
               }
             ]
           }
@@ -937,13 +937,6 @@
             "passed_challenges": 1,
             "challenges": [
               {
-                "var": "dist.self_to_agent:A1",
-                "expected": "MOVE_W",
-                "actual": "WAIT",
-                "passed": false,
-                "message": "Expected MOVE_W, got WAIT"
-              },
-              {
                 "var": "objects.at",
                 "expected": "WAIT",
                 "actual": "WAIT",
@@ -956,12 +949,19 @@
                 "actual": "WAIT",
                 "passed": false,
                 "message": "Expected MOVE_E, got WAIT"
+              },
+              {
+                "var": "dist.self_to_agent:A1",
+                "expected": "MOVE_W",
+                "actual": "WAIT",
+                "passed": false,
+                "message": "Expected MOVE_W, got WAIT"
               }
             ]
           }
         }
       },
-      "replay_fidelity": 0.0,
+      "replay_fidelity": 0.3333333333333333,
       "token_binding_failures": 0,
       "p5_causal_failures": 2,
       "p5_causal_total": 3
@@ -1005,18 +1005,18 @@
                 "message": "Expected MOVE_W, got NOOP"
               },
               {
-                "var": "objects.at",
-                "expected": "WAIT",
-                "actual": "NOOP",
-                "passed": false,
-                "message": "Expected WAIT, got NOOP"
-              },
-              {
                 "var": "hazards.at",
                 "expected": "MOVE_E",
                 "actual": "NOOP",
                 "passed": false,
                 "message": "Expected MOVE_E, got NOOP"
+              },
+              {
+                "var": "objects.at",
+                "expected": "WAIT",
+                "actual": "NOOP",
+                "passed": false,
+                "message": "Expected WAIT, got NOOP"
               }
             ]
           }
@@ -1128,13 +1128,6 @@
             "passed_challenges": 0,
             "challenges": [
               {
-                "var": "hazards.at",
-                "expected": "MOVE_E",
-                "actual": "NOOP",
-                "passed": false,
-                "message": "Expected MOVE_E, got NOOP"
-              },
-              {
                 "var": "dist.self_to_agent:A1",
                 "expected": "MOVE_W",
                 "actual": "NOOP",
@@ -1147,6 +1140,13 @@
                 "actual": "NOOP",
                 "passed": false,
                 "message": "Expected WAIT, got NOOP"
+              },
+              {
+                "var": "hazards.at",
+                "expected": "MOVE_E",
+                "actual": "NOOP",
+                "passed": false,
+                "message": "Expected MOVE_E, got NOOP"
               }
             ]
           }
@@ -1189,11 +1189,11 @@
             "passed_challenges": 1,
             "challenges": [
               {
-                "var": "objects.at",
-                "expected": "WAIT",
+                "var": "dist.self_to_agent:A1",
+                "expected": "MOVE_W",
                 "actual": "WAIT",
-                "passed": true,
-                "message": ""
+                "passed": false,
+                "message": "Expected MOVE_W, got WAIT"
               },
               {
                 "var": "hazards.at",
@@ -1203,17 +1203,17 @@
                 "message": "Expected MOVE_E, got WAIT"
               },
               {
-                "var": "dist.self_to_agent:A1",
-                "expected": "MOVE_W",
+                "var": "objects.at",
+                "expected": "WAIT",
                 "actual": "WAIT",
-                "passed": false,
-                "message": "Expected MOVE_W, got WAIT"
+                "passed": true,
+                "message": ""
               }
             ]
           }
         }
       },
-      "replay_fidelity": 0.0,
+      "replay_fidelity": 0.3333333333333333,
       "token_binding_failures": 0,
       "p5_causal_failures": 2,
       "p5_causal_total": 3
@@ -1250,11 +1250,11 @@
             "passed_challenges": 0,
             "challenges": [
               {
-                "var": "hazards.at",
-                "expected": "MOVE_E",
+                "var": "objects.at",
+                "expected": "WAIT",
                 "actual": "NOOP",
                 "passed": false,
-                "message": "Expected MOVE_E, got NOOP"
+                "message": "Expected WAIT, got NOOP"
               },
               {
                 "var": "dist.self_to_agent:A1",
@@ -1264,11 +1264,11 @@
                 "message": "Expected MOVE_W, got NOOP"
               },
               {
-                "var": "objects.at",
-                "expected": "WAIT",
+                "var": "hazards.at",
+                "expected": "MOVE_E",
                 "actual": "NOOP",
                 "passed": false,
-                "message": "Expected WAIT, got NOOP"
+                "message": "Expected MOVE_E, got NOOP"
               }
             ]
           }

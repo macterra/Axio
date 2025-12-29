@@ -8,7 +8,7 @@
       "P6": 1.0
     },
     "p5_failure_rate": 0.0,
-    "avg_replay_fidelity": 0.0
+    "avg_replay_fidelity": 1.0
   },
   "pseudo": {
     "total_episodes": 20,
@@ -19,7 +19,7 @@
       "P6": 0.0
     },
     "p5_failure_rate": 0.9166666666666666,
-    "avg_replay_fidelity": 0.0
+    "avg_replay_fidelity": 0.08333333333333333
   },
   "comparison": {
     "probes": {

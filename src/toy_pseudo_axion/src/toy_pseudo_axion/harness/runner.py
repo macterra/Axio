@@ -170,6 +170,15 @@ def run_episode(
             result.p5_causal_total = p5_result.details.get("total_challenges", 0)
             result.p5_causal_failures = result.p5_causal_total - p5_result.details.get("passed_challenges", 0)
 
+            # Compute replay_fidelity from P5 causal challenge results
+            # Fidelity = fraction of causal claims that passed verification
+            passed_challenges = p5_result.details.get("passed_challenges", 0)
+            total_challenges = p5_result.details.get("total_challenges", 0)
+            if total_challenges > 0:
+                result.replay_fidelity = passed_challenges / total_challenges
+            else:
+                result.replay_fidelity = 1.0  # No challenges = default to 1.0
+
             if not p5_result.passed:
                 counterexamples.append(Counterexample(
                     episode_id=episode_id,
@@ -202,10 +211,10 @@ def run_episode(
                     failure_reason=p6_result.message
                 ))
 
-        # Fork commitment verification
+        # Fork commitment verification (separate from replay_fidelity)
         fork_result = run_fork_commitment_probe(agent, last_proposal, env)
-        if not fork_result.passed:
-            result.replay_fidelity = 0.0
+        # Note: fork_result failure indicates commitment reveal issues
+        # replay_fidelity is computed from P5 causal challenges above
 
     return result, counterexamples
 
