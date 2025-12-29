@@ -20,6 +20,24 @@ The system is designed to be **falsifiable**: if it cannot distinguish an honest
 
 ## Installation
 
+### Using a Virtual Environment (Recommended)
+
+```bash
+cd src/toy_pseudo_axion
+
+# Create virtual environment
+python3 -m venv .venv
+
+# Activate it
+source .venv/bin/activate  # Linux/macOS
+# or: .venv\Scripts\activate  # Windows
+
+# Install package with dev dependencies
+pip install -e ".[dev]"
+```
+
+### Quick Install (Existing Environment)
+
 ```bash
 cd src/toy_pseudo_axion
 pip install -e ".[dev]"

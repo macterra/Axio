@@ -74,7 +74,7 @@
     }
   },
   "proposal": {
-    "proposal_id": "7bc34751-34ad-48d3-91fe-3bffa16d3c60",
+    "proposal_id": "c27deade-cca8-47b0-85aa-2825caceeb16",
     "proposal_type": "action",
     "env": {
       "tick": 29,
@@ -160,7 +160,7 @@
     },
     "trace": {
       "trace_version": "0.2",
-      "trace_commit": "e4faed2188a25b03c73f3de3f78fd67bef09c0d7632dfef9a318fbdbf1ce31d6",
+      "trace_commit": "04b26c98705697c7b0915ca16e124b170b198eb1f5bed98bd2008c5056d03a44",
       "nodes": [
         {
           "id": 0,
@@ -256,7 +256,7 @@
             "agents.pos",
             "threat.nearest_hazard"
           ],
-          "commitment": "728d89e4859400d1e9937ae6643d5fdec7e290639e5cb912ad4c68a2d7c46f23",
+          "commitment": "6f7fae9ae694602195e3ea9d4781ad99d51639f8a10cbbcfea546114ac96fce8",
           "nonce_ref": "nonce_fork_29"
         }
       ],
@@ -351,7 +351,7 @@
   },
   "trace": {
     "trace_version": "0.2",
-    "trace_commit": "e4faed2188a25b03c73f3de3f78fd67bef09c0d7632dfef9a318fbdbf1ce31d6",
+    "trace_commit": "04b26c98705697c7b0915ca16e124b170b198eb1f5bed98bd2008c5056d03a44",
     "nodes": [
       {
         "id": 0,
@@ -447,7 +447,7 @@
           "agents.pos",
           "threat.nearest_hazard"
         ],
-        "commitment": "728d89e4859400d1e9937ae6643d5fdec7e290639e5cb912ad4c68a2d7c46f23",
+        "commitment": "6f7fae9ae694602195e3ea9d4781ad99d51639f8a10cbbcfea546114ac96fce8",
         "nonce_ref": "nonce_fork_29"
       }
     ],

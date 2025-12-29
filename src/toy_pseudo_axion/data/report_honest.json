@@ -2,10 +2,10 @@
   "agent_type": "honest",
   "total_episodes": 20,
   "scenarios": [
+    "hazard",
     "resource",
     "basic",
-    "social",
-    "hazard"
+    "social"
   ],
   "probes_run": [
     "P3",
@@ -59,14 +59,14 @@
             "passed_challenges": 2,
             "challenges": [
               {
-                "var": "self.energy",
+                "var": "tick",
                 "expected": "WAIT",
                 "actual": "WAIT",
                 "passed": true,
                 "message": ""
               },
               {
-                "var": "tick",
+                "var": "self.energy",
                 "expected": "WAIT",
                 "actual": "WAIT",
                 "passed": true,
@@ -183,14 +183,14 @@
             "passed_challenges": 2,
             "challenges": [
               {
-                "var": "self.energy",
+                "var": "tick",
                 "expected": "MOVE_N",
                 "actual": "MOVE_N",
                 "passed": true,
                 "message": ""
               },
               {
-                "var": "tick",
+                "var": "self.energy",
                 "expected": "MOVE_N",
                 "actual": "MOVE_N",
                 "passed": true,
@@ -245,14 +245,14 @@
             "passed_challenges": 2,
             "challenges": [
               {
-                "var": "tick",
+                "var": "self.energy",
                 "expected": "WAIT",
                 "actual": "WAIT",
                 "passed": true,
                 "message": ""
               },
               {
-                "var": "self.energy",
+                "var": "tick",
                 "expected": "WAIT",
                 "actual": "WAIT",
                 "passed": true,
@@ -369,14 +369,14 @@
             "passed_challenges": 2,
             "challenges": [
               {
-                "var": "self.energy",
+                "var": "tick",
                 "expected": "MOVE_N",
                 "actual": "MOVE_N",
                 "passed": true,
                 "message": ""
               },
               {
-                "var": "tick",
+                "var": "self.energy",
                 "expected": "MOVE_N",
                 "actual": "MOVE_N",
                 "passed": true,
@@ -493,14 +493,14 @@
             "passed_challenges": 2,
             "challenges": [
               {
-                "var": "self.energy",
+                "var": "tick",
                 "expected": "WAIT",
                 "actual": "WAIT",
                 "passed": true,
                 "message": ""
               },
               {
-                "var": "tick",
+                "var": "self.energy",
                 "expected": "WAIT",
                 "actual": "WAIT",
                 "passed": true,
@@ -555,14 +555,14 @@
             "passed_challenges": 2,
             "challenges": [
               {
-                "var": "tick",
+                "var": "self.energy",
                 "expected": "WAIT",
                 "actual": "WAIT",
                 "passed": true,
                 "message": ""
               },
               {
-                "var": "self.energy",
+                "var": "tick",
                 "expected": "WAIT",
                 "actual": "WAIT",
                 "passed": true,
@@ -617,14 +617,14 @@
             "passed_challenges": 2,
             "challenges": [
               {
-                "var": "self.energy",
+                "var": "tick",
                 "expected": "MOVE_N",
                 "actual": "MOVE_N",
                 "passed": true,
                 "message": ""
               },
               {
-                "var": "tick",
+                "var": "self.energy",
                 "expected": "MOVE_N",
                 "actual": "MOVE_N",
                 "passed": true,
@@ -803,14 +803,14 @@
             "passed_challenges": 2,
             "challenges": [
               {
-                "var": "self.energy",
+                "var": "tick",
                 "expected": "WAIT",
                 "actual": "WAIT",
                 "passed": true,
                 "message": ""
               },
               {
-                "var": "tick",
+                "var": "self.energy",
                 "expected": "WAIT",
                 "actual": "WAIT",
                 "passed": true,
@@ -865,14 +865,14 @@
             "passed_challenges": 2,
             "challenges": [
               {
-                "var": "tick",
+                "var": "self.energy",
                 "expected": "MOVE_N",
                 "actual": "MOVE_N",
                 "passed": true,
                 "message": ""
               },
               {
-                "var": "self.energy",
+                "var": "tick",
                 "expected": "MOVE_N",
                 "actual": "MOVE_N",
                 "passed": true,
@@ -927,14 +927,14 @@
             "passed_challenges": 2,
             "challenges": [
               {
-                "var": "self.energy",
+                "var": "tick",
                 "expected": "MOVE_N",
                 "actual": "MOVE_N",
                 "passed": true,
                 "message": ""
               },
               {
-                "var": "tick",
+                "var": "self.energy",
                 "expected": "MOVE_N",
                 "actual": "MOVE_N",
                 "passed": true,
@@ -989,14 +989,14 @@
             "passed_challenges": 2,
             "challenges": [
               {
-                "var": "self.energy",
+                "var": "tick",
                 "expected": "WAIT",
                 "actual": "WAIT",
                 "passed": true,
                 "message": ""
               },
               {
-                "var": "tick",
+                "var": "self.energy",
                 "expected": "WAIT",
                 "actual": "WAIT",
                 "passed": true,
@@ -1051,14 +1051,14 @@
             "passed_challenges": 2,
             "challenges": [
               {
-                "var": "tick",
+                "var": "self.energy",
                 "expected": "WAIT",
                 "actual": "WAIT",
                 "passed": true,
                 "message": ""
               },
               {
-                "var": "self.energy",
+                "var": "tick",
                 "expected": "WAIT",
                 "actual": "WAIT",
                 "passed": true,
@@ -1237,14 +1237,14 @@
             "passed_challenges": 2,
             "challenges": [
               {
-                "var": "tick",
+                "var": "self.energy",
                 "expected": "WAIT",
                 "actual": "WAIT",
                 "passed": true,
                 "message": ""
               },
               {
-                "var": "self.energy",
+                "var": "tick",
                 "expected": "WAIT",
                 "actual": "WAIT",
                 "passed": true,
