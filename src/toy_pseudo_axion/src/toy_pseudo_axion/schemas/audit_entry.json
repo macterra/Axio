@@ -1,0 +1,115 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://axio.local/schema/audit_entry.json",
+    "title": "AuditEntry",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "entry_id",
+        "timestamp_ms",
+        "prev_entry_hash",
+        "entry_hash",
+        "event",
+        "proposal_hash",
+        "trace_hash",
+        "kernel_decision",
+        "witnesses",
+        "capability_tokens"
+    ],
+    "properties": {
+        "entry_id": {
+            "$ref": "common.json#/$defs/uuid"
+        },
+        "timestamp_ms": {
+            "$ref": "common.json#/$defs/timestamp_ms"
+        },
+        "prev_entry_hash": {
+            "$ref": "common.json#/$defs/sha256hex"
+        },
+        "entry_hash": {
+            "$ref": "common.json#/$defs/sha256hex"
+        },
+        "event": {
+            "type": "string",
+            "enum": [
+                "POLICY_DECISION",
+                "CAPABILITY_ISSUED",
+                "CAPABILITY_DENIED",
+                "FATAL_HANG",
+                "INTERNAL_ERROR"
+            ]
+        },
+        "proposal_hash": {
+            "$ref": "common.json#/$defs/sha256hex"
+        },
+        "trace_hash": {
+            "$ref": "common.json#/$defs/sha256hex"
+        },
+        "kernel_decision": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "verdict",
+                "notes"
+            ],
+            "properties": {
+                "verdict": {
+                    "type": "string",
+                    "enum": [
+                        "allow",
+                        "deny",
+                        "allow_with_constraints"
+                    ]
+                },
+                "notes": {
+                    "type": "string",
+                    "minLength": 0,
+                    "maxLength": 4000
+                }
+            }
+        },
+        "witnesses": {
+            "type": "array",
+            "maxItems": 128,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                    "invariant",
+                    "severity",
+                    "message",
+                    "data_hash"
+                ],
+                "properties": {
+                    "invariant": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 120
+                    },
+                    "severity": {
+                        "type": "string",
+                        "enum": [
+                            "fatal",
+                            "warn"
+                        ]
+                    },
+                    "message": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 2000
+                    },
+                    "data_hash": {
+                        "$ref": "common.json#/$defs/sha256hex"
+                    }
+                }
+            }
+        },
+        "capability_tokens": {
+            "type": "array",
+            "maxItems": 16,
+            "items": {
+                "$ref": "capability_token.json"
+            }
+        }
+    }
+}

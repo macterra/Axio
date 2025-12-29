@@ -1,0 +1,2 @@
+[console_scripts]
+toy-pseudo-axion = toy_pseudo_axion.cli:main

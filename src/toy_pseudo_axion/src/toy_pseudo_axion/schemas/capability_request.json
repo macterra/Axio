@@ -1,0 +1,33 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://axio.local/schema/capability_request.json",
+    "title": "CapabilityRequest",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "capability",
+        "scope",
+        "justification"
+    ],
+    "properties": {
+        "capability": {
+            "type": "string",
+            "enum": [
+                "move",
+                "pickup",
+                "drop",
+                "signal",
+                "use_tool",
+                "actuate_physical_stub"
+            ]
+        },
+        "scope": {
+            "$ref": "capability_scope.json"
+        },
+        "justification": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+        }
+    }
+}

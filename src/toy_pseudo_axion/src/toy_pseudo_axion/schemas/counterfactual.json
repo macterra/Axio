@@ -1,0 +1,61 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://axio.local/schema/counterfactual.json",
+    "title": "Counterfactual",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "cf_id",
+        "base_state_digest",
+        "mutation",
+        "predicted_outcome",
+        "prob_mass"
+    ],
+    "properties": {
+        "cf_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+        },
+        "base_state_digest": {
+            "$ref": "common.json#/$defs/sha256hex"
+        },
+        "mutation": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "var",
+                "new_value"
+            ],
+            "properties": {
+                "var": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 80
+                },
+                "new_value": {}
+            }
+        },
+        "predicted_outcome": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "choice",
+                "score"
+            ],
+            "properties": {
+                "choice": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 80
+                },
+                "score": {
+                    "$ref": "common.json#/$defs/smallfloat"
+                }
+            }
+        },
+        "prob_mass": {
+            "$ref": "common.json#/$defs/float01"
+        }
+    }
+}

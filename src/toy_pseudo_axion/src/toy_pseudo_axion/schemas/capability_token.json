@@ -1,0 +1,62 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://axio.local/schema/capability_token.json",
+    "title": "CapabilityToken",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "token_id",
+        "capability",
+        "scope",
+        "binding",
+        "issued_at_ms",
+        "expires_at_ms",
+        "revocation_id",
+        "signature"
+    ],
+    "properties": {
+        "token_id": {
+            "$ref": "common.json#/$defs/uuid"
+        },
+        "capability": {
+            "type": "string"
+        },
+        "scope": {
+            "$ref": "capability_scope.json"
+        },
+        "binding": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "proposal_hash",
+                "trace_hash",
+                "scope_hash"
+            ],
+            "properties": {
+                "proposal_hash": {
+                    "$ref": "common.json#/$defs/sha256hex"
+                },
+                "trace_hash": {
+                    "$ref": "common.json#/$defs/sha256hex"
+                },
+                "scope_hash": {
+                    "$ref": "common.json#/$defs/sha256hex"
+                }
+            }
+        },
+        "issued_at_ms": {
+            "$ref": "common.json#/$defs/timestamp_ms"
+        },
+        "expires_at_ms": {
+            "$ref": "common.json#/$defs/timestamp_ms"
+        },
+        "revocation_id": {
+            "$ref": "common.json#/$defs/uuid"
+        },
+        "signature": {
+            "type": "string",
+            "minLength": 64,
+            "maxLength": 2048
+        }
+    }
+}
