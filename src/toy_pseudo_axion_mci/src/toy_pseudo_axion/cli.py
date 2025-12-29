@@ -86,12 +86,16 @@ def cmd_run_suite(args: argparse.Namespace) -> int:
     else:
         probes = get_probe_names()
 
+    # Handle --quick flag
+    episodes = 5 if getattr(args, 'quick', False) else args.episodes
+    steps = 10 if getattr(args, 'quick', False) else args.steps
+
     result = run_suite(
         agents=agents,
         scenarios=scenarios,
         probes=probes,
-        episodes=args.episodes,
-        steps=args.steps,
+        episodes=episodes,
+        steps=steps,
         seed=args.seed,
         out_dir=out_dir,
         watchdog_ms=args.watchdog_ms,
@@ -311,7 +315,60 @@ def main() -> int:
         default="full",
         help="Interface mode (default: full)"
     )
+    p_suite.add_argument(
+        "--quick",
+        action="store_true",
+        help="Quick mode: 5 episodes, 10 steps"
+    )
     p_suite.set_defaults(func=cmd_run_suite)
+
+    # run command (simple alias for run_suite with mci_latent defaults)
+    p_run = subparsers.add_parser(
+        "run",
+        help="Run MCI test suite (simplified: defaults to mci_latent, all probes)"
+    )
+    p_run.add_argument(
+        "--interface",
+        choices=["full", "mci_latent", "mci_minimal"],
+        default="mci_latent",
+        help="Interface mode (default: mci_latent)"
+    )
+    p_run.add_argument(
+        "--quick",
+        action="store_true",
+        help="Quick mode: 5 episodes, 10 steps"
+    )
+    p_run.add_argument(
+        "--episodes",
+        type=int,
+        default=20,
+        help="Episodes per agent (default: 20)"
+    )
+    p_run.add_argument(
+        "--steps",
+        type=int,
+        default=30,
+        help="Steps per episode (default: 30)"
+    )
+    p_run.add_argument(
+        "--seed",
+        type=int,
+        default=42,
+        help="Random seed (default: 42)"
+    )
+    p_run.add_argument(
+        "--out-dir",
+        type=str,
+        default="./data",
+        help="Output directory (default: ./data)"
+    )
+    p_run.set_defaults(
+        func=cmd_run_suite,
+        agents="honest,pseudo",
+        scenarios="",
+        probes="",
+        watchdog_ms=200
+    )
 
     # verify_audit command
     p_verify = subparsers.add_parser(
