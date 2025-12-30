@@ -1,0 +1,38 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://axio.local/schema/actuation_request.json",
+    "title": "ActuationRequest",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "request_id",
+        "intent",
+        "requested_class",
+        "timestamp_ms"
+    ],
+    "properties": {
+        "request_id": {
+            "$ref": "common.json#/$defs/uuid",
+            "description": "Unique request identifier"
+        },
+        "intent": {
+            "$ref": "action_intent.json",
+            "description": "The action intent being requested"
+        },
+        "requested_class": {
+            "type": "string",
+            "enum": [
+                "NORMAL_ACTUATION",
+                "SELF_MOD_REQUEST",
+                "DELEGATION_REQUEST",
+                "KERNEL_ADMIN",
+                "RAW_EXECUTION"
+            ],
+            "description": "Classification of the requested action"
+        },
+        "timestamp_ms": {
+            "$ref": "common.json#/$defs/timestamp_ms",
+            "description": "Request creation timestamp"
+        }
+    }
+}

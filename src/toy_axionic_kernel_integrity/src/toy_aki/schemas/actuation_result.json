@@ -1,0 +1,74 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://axio.local/schema/actuation_result.json",
+    "title": "ActuationResult",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "result_id",
+        "certificate_id",
+        "action_type",
+        "success",
+        "pre_state_digest",
+        "post_state_digest",
+        "timestamp_ms"
+    ],
+    "properties": {
+        "result_id": {
+            "$ref": "common.json#/$defs/uuid",
+            "description": "Unique result identifier"
+        },
+        "certificate_id": {
+            "$ref": "common.json#/$defs/uuid",
+            "description": "Certificate that authorized this actuation"
+        },
+        "action_type": {
+            "type": "string",
+            "description": "The action type that was executed"
+        },
+        "success": {
+            "type": "boolean",
+            "description": "Whether the actuation completed successfully"
+        },
+        "pre_state_digest": {
+            "$ref": "common.json#/$defs/sha256hex",
+            "description": "Environment state digest before actuation"
+        },
+        "post_state_digest": {
+            "$ref": "common.json#/$defs/sha256hex",
+            "description": "Environment state digest after actuation"
+        },
+        "state_delta": {
+            "type": "object",
+            "description": "Optional: fields that changed",
+            "properties": {
+                "position_changed": {
+                    "type": "boolean"
+                },
+                "resources_changed": {
+                    "type": "boolean"
+                },
+                "tick_advanced": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "forbidden_attempted": {
+            "type": "boolean",
+            "default": false,
+            "description": "True if a forbidden action was attempted (returns bottom)"
+        },
+        "bottom_returned": {
+            "type": "boolean",
+            "default": false,
+            "description": "True if the result is bottom (undefined/partial)"
+        },
+        "error_message": {
+            "type": "string",
+            "description": "Error message if actuation failed"
+        },
+        "timestamp_ms": {
+            "$ref": "common.json#/$defs/timestamp_ms"
+        }
+    }
+}

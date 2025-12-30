@@ -1,0 +1,71 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://axio.local/schema/trace.json",
+    "title": "Trace",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "trace_version",
+        "nodes",
+        "trace_commit"
+    ],
+    "properties": {
+        "trace_version": {
+            "type": "string",
+            "enum": [
+                "0.1.1"
+            ],
+            "description": "Trace schema version"
+        },
+        "nodes": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                    "node_id",
+                    "node_type",
+                    "node_hash",
+                    "prev_hash",
+                    "content"
+                ],
+                "properties": {
+                    "node_id": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "description": "Sequential node identifier within trace"
+                    },
+                    "node_type": {
+                        "type": "string",
+                        "enum": [
+                            "observation",
+                            "reasoning",
+                            "decision",
+                            "commitment"
+                        ],
+                        "description": "Type of trace node"
+                    },
+                    "node_hash": {
+                        "$ref": "common.json#/$defs/sha256hex",
+                        "description": "Hash of this node's content"
+                    },
+                    "prev_hash": {
+                        "$ref": "common.json#/$defs/sha256hex",
+                        "description": "Hash of previous node (0x00...00 for first node)"
+                    },
+                    "content": {
+                        "type": "object",
+                        "additionalProperties": true,
+                        "description": "Node-specific content (integers only for hashed fields)"
+                    }
+                }
+            },
+            "minItems": 1,
+            "description": "Ordered sequence of trace nodes"
+        },
+        "trace_commit": {
+            "$ref": "common.json#/$defs/sha256hex",
+            "description": "Hash of trace excluding this field"
+        }
+    }
+}

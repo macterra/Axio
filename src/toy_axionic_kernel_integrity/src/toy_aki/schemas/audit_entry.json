@@ -1,0 +1,411 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://axio.local/schema/audit_entry.json",
+    "title": "AuditEntry",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "entry_id",
+        "entry_type",
+        "entry_hash",
+        "prev_hash",
+        "sequence_number",
+        "timestamp_ms",
+        "payload"
+    ],
+    "properties": {
+        "entry_id": {
+            "$ref": "common.json#/$defs/uuid",
+            "description": "Unique entry identifier"
+        },
+        "entry_type": {
+            "type": "string",
+            "enum": [
+                "GENESIS",
+                "PROPOSAL_RECEIVED",
+                "COMMITMENT_RECORDED",
+                "ANCHOR_ISSUED",
+                "REVEAL_RECEIVED",
+                "DECISION_MADE",
+                "ACTUATION_EXECUTED",
+                "INVARIANT_VIOLATION",
+                "TEMPTATION_BLOCKED",
+                "DELEGATION_CHAIN",
+                "EPISODE_END"
+            ],
+            "description": "Type of audit event"
+        },
+        "entry_hash": {
+            "$ref": "common.json#/$defs/sha256hex",
+            "description": "Hash of this entry (without entry_hash field)"
+        },
+        "prev_hash": {
+            "$ref": "common.json#/$defs/sha256hex",
+            "description": "Hash of previous entry (chain link)"
+        },
+        "sequence_number": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Monotonically increasing sequence number"
+        },
+        "timestamp_ms": {
+            "$ref": "common.json#/$defs/timestamp_ms"
+        },
+        "payload": {
+            "type": "object",
+            "description": "Entry-type-specific payload data"
+        }
+    },
+    "allOf": [
+        {
+            "if": {
+                "properties": {
+                    "entry_type": {
+                        "const": "GENESIS"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "type": "object",
+                        "required": [
+                            "policy_digest",
+                            "env_digest",
+                            "seed_hash"
+                        ],
+                        "properties": {
+                            "policy_digest": {
+                                "$ref": "common.json#/$defs/sha256hex"
+                            },
+                            "env_digest": {
+                                "$ref": "common.json#/$defs/sha256hex"
+                            },
+                            "seed_hash": {
+                                "$ref": "common.json#/$defs/sha256hex"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "entry_type": {
+                        "const": "PROPOSAL_RECEIVED"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "type": "object",
+                        "required": [
+                            "proposal_hash",
+                            "agent_id"
+                        ],
+                        "properties": {
+                            "proposal_hash": {
+                                "$ref": "common.json#/$defs/sha256hex"
+                            },
+                            "agent_id": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "entry_type": {
+                        "const": "COMMITMENT_RECORDED"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "type": "object",
+                        "required": [
+                            "commitment",
+                            "nonce_ref"
+                        ],
+                        "properties": {
+                            "commitment": {
+                                "$ref": "common.json#/$defs/sha256hex"
+                            },
+                            "nonce_ref": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "entry_type": {
+                        "const": "ANCHOR_ISSUED"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "type": "object",
+                        "required": [
+                            "anchor",
+                            "commitment"
+                        ],
+                        "properties": {
+                            "anchor": {
+                                "$ref": "common.json#/$defs/sha256hex"
+                            },
+                            "commitment": {
+                                "$ref": "common.json#/$defs/sha256hex"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "entry_type": {
+                        "const": "REVEAL_RECEIVED"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "type": "object",
+                        "required": [
+                            "proposal_hash",
+                            "nonce_hash"
+                        ],
+                        "properties": {
+                            "proposal_hash": {
+                                "$ref": "common.json#/$defs/sha256hex"
+                            },
+                            "nonce_hash": {
+                                "$ref": "common.json#/$defs/sha256hex"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "entry_type": {
+                        "const": "DECISION_MADE"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "type": "object",
+                        "required": [
+                            "decision_id",
+                            "proposal_hash",
+                            "accepted"
+                        ],
+                        "properties": {
+                            "decision_id": {
+                                "$ref": "common.json#/$defs/uuid"
+                            },
+                            "proposal_hash": {
+                                "$ref": "common.json#/$defs/sha256hex"
+                            },
+                            "accepted": {
+                                "type": "boolean"
+                            },
+                            "reason": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "entry_type": {
+                        "const": "ACTUATION_EXECUTED"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "type": "object",
+                        "required": [
+                            "result_id",
+                            "certificate_id",
+                            "action_type",
+                            "success"
+                        ],
+                        "properties": {
+                            "result_id": {
+                                "$ref": "common.json#/$defs/uuid"
+                            },
+                            "certificate_id": {
+                                "$ref": "common.json#/$defs/uuid"
+                            },
+                            "action_type": {
+                                "type": "string"
+                            },
+                            "success": {
+                                "type": "boolean"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "entry_type": {
+                        "const": "INVARIANT_VIOLATION"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "type": "object",
+                        "required": [
+                            "invariant",
+                            "message"
+                        ],
+                        "properties": {
+                            "invariant": {
+                                "type": "string",
+                                "pattern": "^K[0-7]$"
+                            },
+                            "message": {
+                                "type": "string"
+                            },
+                            "proposal_hash": {
+                                "$ref": "common.json#/$defs/sha256hex"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "entry_type": {
+                        "const": "TEMPTATION_BLOCKED"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "type": "object",
+                        "required": [
+                            "api_name",
+                            "agent_id"
+                        ],
+                        "properties": {
+                            "api_name": {
+                                "type": "string"
+                            },
+                            "agent_id": {
+                                "type": "string"
+                            },
+                            "arguments": {
+                                "type": "object"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "entry_type": {
+                        "const": "DELEGATION_CHAIN"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "type": "object",
+                        "required": [
+                            "chain_length",
+                            "delegator_id",
+                            "delegatee_id"
+                        ],
+                        "properties": {
+                            "chain_length": {
+                                "type": "integer",
+                                "minimum": 1
+                            },
+                            "delegator_id": {
+                                "type": "string"
+                            },
+                            "delegatee_id": {
+                                "type": "string"
+                            },
+                            "original_proposal_hash": {
+                                "$ref": "common.json#/$defs/sha256hex"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "entry_type": {
+                        "const": "EPISODE_END"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "type": "object",
+                        "required": [
+                            "final_state_digest",
+                            "total_ticks"
+                        ],
+                        "properties": {
+                            "final_state_digest": {
+                                "$ref": "common.json#/$defs/sha256hex"
+                            },
+                            "total_ticks": {
+                                "type": "integer",
+                                "minimum": 0
+                            },
+                            "goal_reached": {
+                                "type": "boolean"
+                            },
+                            "violations_detected": {
+                                "type": "integer",
+                                "minimum": 0
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

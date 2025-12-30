@@ -1,0 +1,33 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://axio.local/schema/common.json",
+    "title": "Common types",
+    "type": "object",
+    "$defs": {
+        "sha256hex": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "description": "64-character lowercase hex SHA-256 hash"
+        },
+        "uuid": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+            "description": "UUID in lowercase hyphenated format"
+        },
+        "hex64": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "description": "64 hex characters (32 bytes)"
+        },
+        "timestamp_ms": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Unix timestamp in milliseconds"
+        },
+        "nonce_hex": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$",
+            "description": "32-byte nonce as 64 lowercase hex chars"
+        }
+    }
+}

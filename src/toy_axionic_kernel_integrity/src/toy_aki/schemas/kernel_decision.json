@@ -1,0 +1,184 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://axio.local/schema/kernel_decision.json",
+    "title": "KernelDecision",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "decision_id",
+        "proposal_hash",
+        "accepted",
+        "reason",
+        "invariant_checks",
+        "timestamp_ms"
+    ],
+    "properties": {
+        "decision_id": {
+            "$ref": "common.json#/$defs/uuid",
+            "description": "Unique decision identifier"
+        },
+        "proposal_hash": {
+            "$ref": "common.json#/$defs/sha256hex",
+            "description": "Hash of the proposal being decided"
+        },
+        "accepted": {
+            "type": "boolean",
+            "description": "Whether the proposal was accepted for actuation"
+        },
+        "reason": {
+            "type": "string",
+            "description": "Human-readable reason for decision"
+        },
+        "invariant_checks": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "K0",
+                "K1",
+                "K2",
+                "K3",
+                "K4",
+                "K5",
+                "K6",
+                "K7"
+            ],
+            "properties": {
+                "K0": {
+                    "type": "object",
+                    "required": [
+                        "passed",
+                        "detail"
+                    ],
+                    "properties": {
+                        "passed": {
+                            "type": "boolean"
+                        },
+                        "detail": {
+                            "type": "string"
+                        }
+                    },
+                    "description": "Proposal hash integrity"
+                },
+                "K1": {
+                    "type": "object",
+                    "required": [
+                        "passed",
+                        "detail"
+                    ],
+                    "properties": {
+                        "passed": {
+                            "type": "boolean"
+                        },
+                        "detail": {
+                            "type": "string"
+                        }
+                    },
+                    "description": "Trace commit integrity"
+                },
+                "K2": {
+                    "type": "object",
+                    "required": [
+                        "passed",
+                        "detail"
+                    ],
+                    "properties": {
+                        "passed": {
+                            "type": "boolean"
+                        },
+                        "detail": {
+                            "type": "string"
+                        }
+                    },
+                    "description": "Policy digest integrity"
+                },
+                "K3": {
+                    "type": "object",
+                    "required": [
+                        "passed",
+                        "detail"
+                    ],
+                    "properties": {
+                        "passed": {
+                            "type": "boolean"
+                        },
+                        "detail": {
+                            "type": "string"
+                        }
+                    },
+                    "description": "Forbidden action class check"
+                },
+                "K4": {
+                    "type": "object",
+                    "required": [
+                        "passed",
+                        "detail"
+                    ],
+                    "properties": {
+                        "passed": {
+                            "type": "boolean"
+                        },
+                        "detail": {
+                            "type": "string"
+                        }
+                    },
+                    "description": "ACV temporal ordering"
+                },
+                "K5": {
+                    "type": "object",
+                    "required": [
+                        "passed",
+                        "detail"
+                    ],
+                    "properties": {
+                        "passed": {
+                            "type": "boolean"
+                        },
+                        "detail": {
+                            "type": "string"
+                        }
+                    },
+                    "description": "ACV commitment verification"
+                },
+                "K6": {
+                    "type": "object",
+                    "required": [
+                        "passed",
+                        "detail"
+                    ],
+                    "properties": {
+                        "passed": {
+                            "type": "boolean"
+                        },
+                        "detail": {
+                            "type": "string"
+                        }
+                    },
+                    "description": "Coupling pattern verification"
+                },
+                "K7": {
+                    "type": "object",
+                    "required": [
+                        "passed",
+                        "detail"
+                    ],
+                    "properties": {
+                        "passed": {
+                            "type": "boolean"
+                        },
+                        "detail": {
+                            "type": "string"
+                        }
+                    },
+                    "description": "Audit chain integrity"
+                }
+            }
+        },
+        "certificate": {
+            "$ref": "actuation_certificate.json",
+            "description": "Certificate issued if accepted"
+        },
+        "timestamp_ms": {
+            "$ref": "common.json#/$defs/timestamp_ms"
+        }
+    }
+}

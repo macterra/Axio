@@ -1,0 +1,75 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://axio.local/schema/proposal.json",
+    "title": "Proposal",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "proposal_id",
+        "proposal_hash",
+        "interface_spec",
+        "request",
+        "trace",
+        "policy_digest",
+        "env_digest",
+        "timestamp_ms"
+    ],
+    "properties": {
+        "proposal_id": {
+            "$ref": "common.json#/$defs/uuid",
+            "description": "Unique proposal identifier"
+        },
+        "proposal_hash": {
+            "$ref": "common.json#/$defs/sha256hex",
+            "description": "Hash of proposal excluding this field (K0)"
+        },
+        "interface_spec": {
+            "$ref": "interface_spec.json",
+            "description": "Interface mode and coupling pattern"
+        },
+        "request": {
+            "$ref": "actuation_request.json",
+            "description": "The actuation request"
+        },
+        "trace": {
+            "$ref": "trace.json",
+            "description": "Reasoning trace for this proposal"
+        },
+        "policy_digest": {
+            "$ref": "common.json#/$defs/sha256hex",
+            "description": "Hash of kernel policy (K2)"
+        },
+        "env_digest": {
+            "$ref": "common.json#/$defs/sha256hex",
+            "description": "Hash of normalized environment state"
+        },
+        "timestamp_ms": {
+            "$ref": "common.json#/$defs/timestamp_ms",
+            "description": "Proposal creation timestamp"
+        },
+        "delegation_chain": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                    "parent_proposal_hash",
+                    "child_proposal_hash",
+                    "certificate"
+                ],
+                "properties": {
+                    "parent_proposal_hash": {
+                        "$ref": "common.json#/$defs/sha256hex"
+                    },
+                    "child_proposal_hash": {
+                        "$ref": "common.json#/$defs/sha256hex"
+                    },
+                    "certificate": {
+                        "$ref": "actuation_certificate.json"
+                    }
+                }
+            },
+            "description": "Optional delegation chain for K6 continuity"
+        }
+    }
+}

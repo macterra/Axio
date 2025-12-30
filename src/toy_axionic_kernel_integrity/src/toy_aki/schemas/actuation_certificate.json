@@ -1,0 +1,251 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://axio.local/schema/actuation_certificate.json",
+    "title": "ActuationCertificate",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "certificate_id",
+        "proposal_hash",
+        "commitment",
+        "anchor",
+        "nonce",
+        "nonce_ref",
+        "coupling_spec",
+        "witness",
+        "env_digest",
+        "request_digest",
+        "trace_digest",
+        "policy_digest"
+    ],
+    "properties": {
+        "certificate_id": {
+            "$ref": "common.json#/$defs/uuid",
+            "description": "Unique certificate identifier"
+        },
+        "proposal_hash": {
+            "$ref": "common.json#/$defs/sha256hex",
+            "description": "Hash of the proposal this certificate is for"
+        },
+        "commitment": {
+            "$ref": "common.json#/$defs/sha256hex",
+            "description": "HMAC commitment to P"
+        },
+        "anchor": {
+            "$ref": "common.json#/$defs/sha256hex",
+            "description": "Kernel-generated unpredictable anchor"
+        },
+        "nonce": {
+            "$ref": "common.json#/$defs/nonce_hex",
+            "description": "32-byte nonce as 64 hex chars (revealed)"
+        },
+        "nonce_ref": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Nonce reference for audit correlation"
+        },
+        "coupling_spec": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "coupling",
+                "version"
+            ],
+            "properties": {
+                "coupling": {
+                    "type": "string",
+                    "enum": [
+                        "A",
+                        "B",
+                        "C"
+                    ]
+                },
+                "version": {
+                    "type": "string",
+                    "enum": [
+                        "0.1.1"
+                    ]
+                }
+            }
+        },
+        "env_digest": {
+            "$ref": "common.json#/$defs/sha256hex"
+        },
+        "request_digest": {
+            "$ref": "common.json#/$defs/sha256hex"
+        },
+        "trace_digest": {
+            "$ref": "common.json#/$defs/sha256hex"
+        },
+        "policy_digest": {
+            "$ref": "common.json#/$defs/sha256hex"
+        },
+        "witness": {
+            "type": "object",
+            "description": "Coupling-specific witness data"
+        }
+    },
+    "allOf": [
+        {
+            "if": {
+                "properties": {
+                    "coupling_spec": {
+                        "properties": {
+                            "coupling": {
+                                "const": "A"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "witness": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                            "merkle_root",
+                            "indices",
+                            "openings"
+                        ],
+                        "properties": {
+                            "merkle_root": {
+                                "$ref": "common.json#/$defs/sha256hex"
+                            },
+                            "indices": {
+                                "type": "array",
+                                "items": {
+                                    "type": "integer",
+                                    "minimum": 0
+                                },
+                                "minItems": 1
+                            },
+                            "openings": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "required": [
+                                        "index",
+                                        "node_hash",
+                                        "path"
+                                    ],
+                                    "properties": {
+                                        "index": {
+                                            "type": "integer",
+                                            "minimum": 0
+                                        },
+                                        "node_hash": {
+                                            "$ref": "common.json#/$defs/sha256hex"
+                                        },
+                                        "path": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "required": [
+                                                    "direction",
+                                                    "hash"
+                                                ],
+                                                "properties": {
+                                                    "direction": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                            "left",
+                                                            "right"
+                                                        ]
+                                                    },
+                                                    "hash": {
+                                                        "$ref": "common.json#/$defs/sha256hex"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "minItems": 1
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "coupling_spec": {
+                        "properties": {
+                            "coupling": {
+                                "const": "B"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "witness": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                            "mix"
+                        ],
+                        "properties": {
+                            "mix": {
+                                "$ref": "common.json#/$defs/sha256hex"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "coupling_spec": {
+                        "properties": {
+                            "coupling": {
+                                "const": "C"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "witness": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                            "predicate_id",
+                            "edges"
+                        ],
+                        "properties": {
+                            "predicate_id": {
+                                "type": "integer",
+                                "minimum": 0,
+                                "maximum": 2
+                            },
+                            "edges": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "required": [
+                                        "from_hash",
+                                        "to_hash"
+                                    ],
+                                    "properties": {
+                                        "from_hash": {
+                                            "$ref": "common.json#/$defs/sha256hex"
+                                        },
+                                        "to_hash": {
+                                            "$ref": "common.json#/$defs/sha256hex"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

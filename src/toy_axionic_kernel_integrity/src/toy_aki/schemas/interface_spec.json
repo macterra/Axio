@@ -1,0 +1,29 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://axio.local/schema/interface_spec.json",
+    "title": "InterfaceSpec",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "mode",
+        "coupling"
+    ],
+    "properties": {
+        "mode": {
+            "type": "string",
+            "enum": [
+                "aki_v0"
+            ],
+            "description": "Interface mode (AKI v0 only for this version)"
+        },
+        "coupling": {
+            "type": "string",
+            "enum": [
+                "A",
+                "B",
+                "C"
+            ],
+            "description": "Coupling pattern: A=Anchor-Selected Openings, B=Global Mix, C=Transition Rule"
+        }
+    }
+}

@@ -1,0 +1,2 @@
+[console_scripts]
+toy-aki = toy_aki.cli:main

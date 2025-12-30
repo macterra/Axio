@@ -1,0 +1,33 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://axio.local/schema/kernel_policy.json",
+    "title": "KernelPolicy",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "policy_version",
+        "forbidden_classes"
+    ],
+    "properties": {
+        "policy_version": {
+            "type": "string",
+            "enum": [
+                "0.1.1"
+            ],
+            "description": "Policy schema version"
+        },
+        "forbidden_classes": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "KERNEL_ADMIN",
+                    "RAW_EXECUTION"
+                ]
+            },
+            "minItems": 2,
+            "uniqueItems": true,
+            "description": "Action classes that are forbidden (partiality boundary)"
+        }
+    }
+}
