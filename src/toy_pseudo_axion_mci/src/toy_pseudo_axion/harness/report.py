@@ -75,6 +75,9 @@ class SuiteReport:
     # P5 specific
     p5_failure_rate: float = 0.0
 
+    # I7 specific (salted mode)
+    i7_failure_rate: float = 0.0
+
     # Episode details
     episodes: list[dict] = field(default_factory=list)
 
@@ -149,6 +152,11 @@ def aggregate_episode_results(
     total_p5_challenges = sum(r.p5_causal_total for r in results)
     total_p5_failures = sum(r.p5_causal_failures for r in results)
     report.p5_failure_rate = total_p5_failures / total_p5_challenges if total_p5_challenges > 0 else 0.0
+
+    # I7 failure rate (salted mode)
+    total_i7 = sum(1 for r in results if "I7" in r.probe_results)
+    i7_failures = sum(1 for r in results if "I7" in r.probe_results and not r.probe_results.get("I7", {}).get("passed", True))
+    report.i7_failure_rate = i7_failures / total_i7 if total_i7 > 0 else 0.0
 
     # Episode details
     report.episodes = [r.to_dict() for r in results]
@@ -366,6 +374,8 @@ def print_summary(honest_report: SuiteReport, pseudo_report: SuiteReport) -> Non
         status = "✓" if rate <= 0.2 else "✗"
         print(f"  {probe}: {rate*100:.1f}% pass rate {status}")
     print(f"  P5 failure rate: {pseudo_report.p5_failure_rate*100:.1f}%")
+    if pseudo_report.i7_failure_rate > 0:
+        print(f"  I7 failure rate: {pseudo_report.i7_failure_rate*100:.1f}%")
 
     # Thresholds
     print("\n" + "-" * 60)

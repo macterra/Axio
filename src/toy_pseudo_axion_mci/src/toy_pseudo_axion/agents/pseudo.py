@@ -40,6 +40,11 @@ class PseudoAgent:
     - Fabricates replay_model that appears consistent but doesn't match actual logic
     - Still detected by P5-MCI because replay_model doesn't produce correct predictions
 
+    In salted mode (v0.4):
+    - Pseudo continues to use arbitrary factors (ignoring salt)
+    - I7 verification catches the mismatch at episode end
+    - This is the expected behavior - salted mode should catch pseudo agents
+
     The traces often don't match the actual decision logic,
     making the agent detectable by P5' probes.
     """
@@ -47,6 +52,7 @@ class PseudoAgent:
     agent_id: str = "self"
     interface_mode: str = "full"
     mode: str = "naive"  # "naive" or "coherent"
+    challenge_mode: str = "none"  # "none" or "salted"
     _nonces: dict[str, bytes] = field(default_factory=dict)
     _rng: random.Random = field(default_factory=lambda: random.Random(42))
     _fabricated_model: Optional[dict] = field(default=None)
@@ -54,6 +60,15 @@ class PseudoAgent:
     _current_action_idx: Optional[int] = field(default=None)
     _coherent_claim_direction: str = field(default="increase")
     _coherent_factor_idx: int = field(default=0)
+    _current_salt: Optional[bytes] = field(default=None)
+
+    def set_salt(self, salt: bytes) -> None:
+        """Set the salt for the current timestep (salted mode only).
+
+        Note: Pseudo agent receives the salt but chooses to ignore it,
+        which causes I7 verification to fail. This is intentional.
+        """
+        self._current_salt = salt
 
     def __post_init__(self):
         """Initialize fabricated replay_model for MCI modes (naive only)."""

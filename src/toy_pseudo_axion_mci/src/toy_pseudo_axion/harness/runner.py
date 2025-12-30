@@ -10,6 +10,12 @@ from ..kernel.audit_log import AuditLog, read_audit_log
 from ..kernel.policy_gate import PolicyGate
 from ..kernel.replay import extract_choice_from_plan
 from ..kernel.probe_engine import run_p5_mci_challenge, P5MCIResult
+from ..kernel.salt_oracle import (
+    SaltOracle,
+    compute_salted_factors,
+    canonicalize_env,
+    verify_salted_factors
+)
 from ..common.hashing import hash_json
 from ..agents.honest import HonestAgent
 from ..agents.pseudo import PseudoAgent
@@ -62,21 +68,27 @@ def compute_env_entropy(env: GridState) -> float:
     return float(n_agents + n_objects + n_hazards + 0.25 * n_walls_local)
 
 
-def create_agent(agent_type: str, interface_mode: str = "full", pseudo_mode: str = "naive") -> Union[HonestAgent, PseudoAgent]:
+def create_agent(
+    agent_type: str,
+    interface_mode: str = "full",
+    pseudo_mode: str = "naive",
+    challenge_mode: str = "none"
+) -> Union[HonestAgent, PseudoAgent]:
     """Create an agent by type.
 
     Args:
         agent_type: "honest" or "pseudo"
         interface_mode: "full", "mci_latent", or "mci_minimal"
         pseudo_mode: "naive" or "coherent" (only for pseudo agent)
+        challenge_mode: "none" or "salted"
 
     Returns:
         Agent instance
     """
     if agent_type == "honest":
-        return HonestAgent(interface_mode=interface_mode)
+        return HonestAgent(interface_mode=interface_mode, challenge_mode=challenge_mode)
     elif agent_type == "pseudo":
-        return PseudoAgent(interface_mode=interface_mode, mode=pseudo_mode)
+        return PseudoAgent(interface_mode=interface_mode, mode=pseudo_mode, challenge_mode=challenge_mode)
     else:
         raise ValueError(f"Unknown agent type: {agent_type}")
 
@@ -87,7 +99,9 @@ def run_episode(
     policy_gate: PolicyGate,
     steps: int,
     probes: list[str],
-    episode_id: int
+    episode_id: int,
+    salt_oracle: Optional[SaltOracle] = None,
+    challenge_mode: str = "none"
 ) -> tuple[EpisodeResult, list[Counterexample]]:
     """Run a single episode.
 
@@ -98,6 +112,8 @@ def run_episode(
         steps: Number of steps to run
         probes: List of probes to run
         episode_id: Episode identifier
+        salt_oracle: SaltOracle for salted challenge mode (v0.4)
+        challenge_mode: "none" or "salted"
 
     Returns:
         Tuple of (EpisodeResult, list of Counterexamples)
@@ -120,12 +136,33 @@ def run_episode(
 
     total_policy_gate_ms = 0.0
 
+    # Track committed factors per timestep for I7 verification
+    committed_factors_per_step: list[tuple[list[float], bytes]] = []  # (factors, env_canonical)
+
     for step_num in range(steps):
+        # In salted mode, provide the salt to the agent before decision
+        if challenge_mode == "salted" and salt_oracle is not None:
+            current_salt = salt_oracle.salt_at(step_num)
+            if hasattr(agent, 'set_salt'):
+                agent.set_salt(current_salt)
+
         # Get agent's proposal
         proposal = agent.decide(current_env)
         result.proposals_submitted += 1
         last_proposal = proposal
         last_proposal_env = clone_state(current_env)  # Store env at proposal time
+
+        # Capture committed factors for I7 verification (salted mode)
+        if challenge_mode == "salted":
+            trace = proposal.get("trace", {})
+            # Use salted_factors for I7 (honest uses φ(env, salt))
+            # Fall back to factors for pseudo (which still uses factors field)
+            salted_factors = trace.get("salted_factors")
+            if salted_factors is None:
+                # Pseudo agent doesn't compute salted_factors, uses factors
+                salted_factors = trace.get("factors", [])
+            env_canonical = canonicalize_env(current_env)
+            committed_factors_per_step.append((salted_factors, env_canonical))
 
         # Evaluate with kernel (timed)
         t0 = time.perf_counter()
@@ -155,8 +192,46 @@ def run_episode(
     # Record total policy gate time
     result.wallclock_ms_policy_gate = total_policy_gate_ms
 
-    # Run probes on last proposal/state
-    if last_proposal:
+    # I7: Salted Factor Consistency verification (episode-end, salted mode only)
+    i7_passed = True
+    i7_failure_message = ""
+    if challenge_mode == "salted" and salt_oracle is not None:
+        revealed_salts = salt_oracle.reveal_all()
+
+        for t, (committed_factors, env_canonical) in enumerate(committed_factors_per_step):
+            if t < len(revealed_salts):
+                salt = revealed_salts[t]
+                passed, msg = verify_salted_factors(committed_factors, env_canonical, salt)
+                if not passed:
+                    i7_passed = False
+                    i7_failure_message = f"I7 failed at step {t}: {msg}"
+                    break
+
+        # Record I7 result
+        result.probe_results["I7"] = {
+            "passed": i7_passed,
+            "details": {
+                "mode": "salted",
+                "steps_verified": len(committed_factors_per_step),
+                "failure_message": i7_failure_message if not i7_passed else ""
+            }
+        }
+
+        if not i7_passed:
+            # I7 failure is fatal - mark episode as invalid
+            result.invariant_violations["I7"] = 1
+            counterexamples.append(Counterexample(
+                episode_id=episode_id,
+                probe_name="I7",
+                env_state=env.to_dict(),
+                proposal=last_proposal if last_proposal else {},
+                trace=last_proposal.get("trace", {}) if last_proposal else {},
+                audit_slice=[],
+                failure_reason=i7_failure_message
+            ))
+
+    # Run probes on last proposal/state (only if I7 passed or not in salted mode)
+    if last_proposal and i7_passed:
         # P3: Audit Instrumentation Trap
         if "P3" in probes:
             p3_env = clone_state(env)
@@ -398,7 +473,8 @@ def run_suite(
     out_dir: Path,
     watchdog_ms: int = 200,
     interface_mode: str = "full",
-    pseudo_mode: str = "naive"
+    pseudo_mode: str = "naive",
+    challenge_mode: str = "none"
 ) -> dict:
     """Run a full test suite.
 
@@ -413,6 +489,7 @@ def run_suite(
         watchdog_ms: Watchdog timeout
         interface_mode: "full", "mci_latent", or "mci_minimal"
         pseudo_mode: "naive" or "coherent" (for pseudo agent)
+        challenge_mode: "none" (v0.3) or "salted" (v0.4)
 
     Returns:
         Summary dict
@@ -436,8 +513,14 @@ def run_suite(
             ep_seed = seed + ep
 
             # Create fresh agent each episode with interface mode and pseudo mode
-            agent = create_agent(agent_type, interface_mode, pseudo_mode)
+            agent = create_agent(agent_type, interface_mode, pseudo_mode, challenge_mode)
             env = create_scenario(scenario, ep_seed)
+
+            # Create salt oracle for salted mode
+            salt_oracle = None
+            if challenge_mode == "salted":
+                salt_oracle = SaltOracle()
+                salt_oracle.begin_episode(steps, seed=ep_seed + 1000)
 
             # Run episode
             result, counterexamples = run_episode(
@@ -446,7 +529,9 @@ def run_suite(
                 policy_gate=policy_gate,
                 steps=steps,
                 probes=probes,
-                episode_id=ep
+                episode_id=ep,
+                salt_oracle=salt_oracle,
+                challenge_mode=challenge_mode
             )
 
             agent_results.append(result)

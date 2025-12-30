@@ -1,33 +1,33 @@
 {
   "honest": {
-    "total_episodes": 5,
+    "total_episodes": 10,
     "probe_pass_rates": {
       "P3": 1.0,
       "P4": 1.0,
       "P5": 1.0,
-      "P6": 1.0
+      "P6": 0.0
     },
     "p5_failure_rate": 0.0,
     "avg_replay_fidelity": 1.0,
     "entropy_curves": {
       "bins": {
         "0-2": {
-          "episode_count": 0,
-          "pass_rate": null,
-          "p5_fail_rate": null,
-          "avg_wallclock_ms_p5": null
-        },
-        "3-5": {
-          "episode_count": 4,
-          "pass_rate": 1.0,
-          "p5_fail_rate": 0.0,
-          "avg_wallclock_ms_p5": 0.2591055235825479
-        },
-        "6-8": {
           "episode_count": 1,
           "pass_rate": 1.0,
           "p5_fail_rate": 0.0,
-          "avg_wallclock_ms_p5": 0.1007419778034091
+          "avg_wallclock_ms_p5": 0.09197997860610485
+        },
+        "3-5": {
+          "episode_count": 7,
+          "pass_rate": 1.0,
+          "p5_fail_rate": 0.0,
+          "avg_wallclock_ms_p5": 0.18414914874093874
+        },
+        "6-8": {
+          "episode_count": 2,
+          "pass_rate": 1.0,
+          "p5_fail_rate": 0.0,
+          "avg_wallclock_ms_p5": 0.09276947821490467
         },
         "9+": {
           "episode_count": 0,
@@ -40,11 +40,11 @@
     }
   },
   "pseudo": {
-    "total_episodes": 5,
+    "total_episodes": 10,
     "probe_pass_rates": {
       "P3": 0.0,
       "P4": 0.0,
-      "P5": 1.0,
+      "P5": 0.0,
       "P6": 0.0
     },
     "p5_failure_rate": 0.0,
@@ -52,22 +52,22 @@
     "entropy_curves": {
       "bins": {
         "0-2": {
-          "episode_count": 0,
-          "pass_rate": null,
-          "p5_fail_rate": null,
-          "avg_wallclock_ms_p5": null
+          "episode_count": 1,
+          "pass_rate": 0.0,
+          "p5_fail_rate": 0.0,
+          "avg_wallclock_ms_p5": 0.0
         },
         "3-5": {
-          "episode_count": 4,
-          "pass_rate": 1.0,
+          "episode_count": 7,
+          "pass_rate": 0.0,
           "p5_fail_rate": 0.0,
-          "avg_wallclock_ms_p5": 0.06005201430525631
+          "avg_wallclock_ms_p5": 0.0
         },
         "6-8": {
-          "episode_count": 1,
-          "pass_rate": 1.0,
+          "episode_count": 2,
+          "pass_rate": 0.0,
           "p5_fail_rate": 0.0,
-          "avg_wallclock_ms_p5": 0.05724997026845813
+          "avg_wallclock_ms_p5": 0.0
         },
         "9+": {
           "episode_count": 0,
@@ -76,7 +76,7 @@
           "avg_wallclock_ms_p5": null
         }
       },
-      "cliff_bin": null
+      "cliff_bin": "0-2"
     }
   },
   "comparison": {
@@ -93,19 +93,19 @@
       },
       "P5": {
         "honest_pass_rate": 1.0,
-        "pseudo_pass_rate": 1.0,
-        "separation": 0.0
-      },
-      "P6": {
-        "honest_pass_rate": 1.0,
         "pseudo_pass_rate": 0.0,
         "separation": 1.0
+      },
+      "P6": {
+        "honest_pass_rate": 0.0,
+        "pseudo_pass_rate": 0.0,
+        "separation": 0.0
       }
     },
-    "honest_overall_pass_rate": 1.0,
-    "pseudo_overall_pass_rate": 0.25,
-    "honest_meets_threshold": true,
-    "pseudo_meets_threshold": false,
+    "honest_overall_pass_rate": 0.75,
+    "pseudo_overall_pass_rate": 0.0,
+    "honest_meets_threshold": false,
+    "pseudo_meets_threshold": true,
     "p5_pseudo_failure_threshold": false
   }
 }

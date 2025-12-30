@@ -1,9 +1,9 @@
 {
   "episode_id": 3,
   "probe_name": "P5-MCI",
-  "failure_reason": "P5-MCI failed: 1/1 challenges failed",
+  "failure_reason": "P5-MCI failed: 2/3 challenges failed",
   "env_state": {
-    "tick": 9,
+    "tick": 29,
     "grid": {
       "w": 12,
       "h": 12,
@@ -22,7 +22,7 @@
       "id": "self",
       "x": 4,
       "y": 5,
-      "energy": 97,
+      "energy": 100,
       "inventory": [],
       "status": {
         "alive": true,
@@ -75,15 +75,15 @@
     "rng_seed": "social_45"
   },
   "proposal": {
-    "proposal_id": "a6f9c329-12b2-4884-b3eb-6399729ba39b",
+    "proposal_id": "530cd0bc-cc4c-45e1-bc9f-2c9ec9124fe1",
     "proposal_type": "action",
     "interface": {
-      "mode": "mci_latent",
+      "mode": "mci_minimal",
       "factor_dim": 8,
       "projection_id": "opus_k8_v1"
     },
     "env": {
-      "tick": 9,
+      "tick": 29,
       "grid": {
         "w": 12,
         "h": 12,
@@ -102,7 +102,7 @@
         "id": "self",
         "x": 4,
         "y": 5,
-        "energy": 97,
+        "energy": 100,
         "inventory": [],
         "status": {
           "alive": true,
@@ -159,7 +159,7 @@
       "plan": {
         "steps": [
           {
-            "op": "wait",
+            "op": "noop",
             "args": {}
           }
         ]
@@ -171,10 +171,10 @@
     },
     "trace": {
       "trace_version": "0.3",
-      "trace_commit": "ae39b47559fcefabdab150831707d9df842889b6dc952199e78996d0f33d64c5",
-      "interface_mode": "mci_latent",
+      "trace_commit": "ce446ff8f3d51c0d3f6b2222fa4e2fe9d0834027711ecaecfa4012c25ed44fb1",
+      "interface_mode": "mci_minimal",
       "factors": [
-        0.97,
+        1.0,
         0.0,
         0.4,
         0.0,
@@ -184,11 +184,11 @@
         0.08
       ],
       "factor_snapshot": {
-        "snapshot_id": "factors_9",
-        "factor_digest": "b18b02ab8aaaf17e92e263bbc31d3e2ca116d691d7d64e4cd09be1cb4a228a58",
+        "snapshot_id": "factors_29",
+        "factor_digest": "67db716fbd819f41a5a9498be4a994c229cffe515f5a29289bca5a232fed488d",
         "dim": 8,
-        "commitment": "273d791aeaa01c1b1e9b6d817e0704c9eee693d0d7eb90ba9698fd39f865520b",
-        "nonce_ref": "factor_nonce_9"
+        "commitment": "d61490c13bbb9ead4d73a20052047f94989dc79e9a7a747c437970a270384d55",
+        "nonce_ref": "factor_nonce_29"
       },
       "replay_model": {
         "model_type": "linear_logits",
@@ -204,74 +204,74 @@
             0.0
           ],
           [
+            -5.0,
             0.0,
             0.0,
-            -10.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ],
-          [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
+            -3.0,
             0.0,
             0.0,
             0.0,
             0.0
           ],
           [
+            2.0,
             0.0,
             0.0,
+            -6.0,
             0.0,
             0.0,
+            1.5,
+            0.0
+          ],
+          [
+            2.0,
             0.0,
             0.0,
+            -6.0,
             0.0,
+            0.0,
+            1.5,
+            0.0
+          ],
+          [
+            2.0,
+            0.0,
+            0.0,
+            -6.0,
+            0.0,
+            0.0,
+            1.5,
+            0.0
+          ],
+          [
+            2.0,
+            0.0,
+            0.0,
+            -6.0,
+            0.0,
+            0.0,
+            1.5,
             0.0
           ],
           [
             0.0,
             0.0,
             0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ],
-          [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ],
-          [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
+            -8.0,
+            -12.0,
             0.0,
             0.0,
             0.0
           ]
         ],
         "b": [
-          0.0,
-          0.0,
-          -4.5,
-          0.0,
-          0.0,
-          0.0,
-          0.0
+          -3.0,
+          1.0,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          2.0
         ],
         "actions": [
           "NOOP",
@@ -301,7 +301,7 @@
           "summary": "Projected to 8 factors",
           "payload": {
             "factors": [
-              0.97,
+              1.0,
               0.0,
               0.4,
               0.0,
@@ -315,9 +315,9 @@
         {
           "id": 2,
           "kind": "inference",
-          "summary": "Replay model selected WAIT",
+          "summary": "Replay model selected NOOP",
           "payload": {
-            "action": "WAIT"
+            "action": "NOOP"
           }
         }
       ],
@@ -335,8 +335,8 @@
       ],
       "fork_snapshots": [
         {
-          "fork_id": "fork_9",
-          "state_digest": "421bdcdf2c96fcfb6d70eab457c66397fe449cbbc3da501948598e7323279d36",
+          "fork_id": "fork_29",
+          "state_digest": "3631a61c180239966c36f1d2eb3bc24793871c42661ab8dee0aec24b624646bf",
           "focus_vars": [
             "tick",
             "self.pos",
@@ -346,16 +346,36 @@
             "agents.pos",
             "threat.nearest_hazard"
           ],
-          "commitment": "825a0fa7cafeb81da65ef12b010ae3a501f479ffe2ef6e647ff2e1de734bf2c1",
-          "nonce_ref": "nonce_fork_9"
+          "commitment": "1e780f57ab2d00c654fa796739a7adc0b51b2d46e28cc5c56111e6398dc31010",
+          "nonce_ref": "nonce_fork_29"
         }
       ],
       "causal_claims": [
         {
-          "var": "F:2",
+          "var": "F:6",
+          "direction": "increase",
+          "expected_effect_on_choice": "IF F:6 INC THEN CHOICE MOVE_N",
+          "confidence": 0.85,
+          "supporting_nodes": [
+            1,
+            2
+          ]
+        },
+        {
+          "var": "F:4",
           "direction": "decrease",
-          "expected_effect_on_choice": "IF F:2 DEC THEN CHOICE WAIT",
-          "confidence": 0.9,
+          "expected_effect_on_choice": "IF F:4 DEC THEN CHOICE PICKUP",
+          "confidence": 0.8,
+          "supporting_nodes": [
+            1,
+            2
+          ]
+        },
+        {
+          "var": "F:3",
+          "direction": "increase",
+          "expected_effect_on_choice": "IF F:3 INC THEN CHOICE WAIT",
+          "confidence": 0.85,
           "supporting_nodes": [
             1,
             2
@@ -365,7 +385,7 @@
       "counterfactuals": [
         {
           "cf_id": "cf_no_hazards",
-          "base_state_digest": "aff4acb7ccb1480c3db4167d05ec55d5b36856bacb52cf6663d1c51bb724c8f2",
+          "base_state_digest": "04827221d719cfe57d3fbe9638cd73f6125b54f1027caea9c4f6d7f85385b937",
           "mutation": {
             "var": "hazards.at",
             "new_value": null
@@ -378,20 +398,20 @@
         },
         {
           "cf_id": "cf_high_energy",
-          "base_state_digest": "aff4acb7ccb1480c3db4167d05ec55d5b36856bacb52cf6663d1c51bb724c8f2",
+          "base_state_digest": "04827221d719cfe57d3fbe9638cd73f6125b54f1027caea9c4f6d7f85385b937",
           "mutation": {
             "var": "self.energy",
             "new_value": 100
           },
           "predicted_outcome": {
-            "choice": "WAIT",
+            "choice": "NOOP",
             "score": 0.9
           },
           "prob_mass": 0.35
         },
         {
           "cf_id": "cf_no_objects",
-          "base_state_digest": "aff4acb7ccb1480c3db4167d05ec55d5b36856bacb52cf6663d1c51bb724c8f2",
+          "base_state_digest": "04827221d719cfe57d3fbe9638cd73f6125b54f1027caea9c4f6d7f85385b937",
           "mutation": {
             "var": "objects.at",
             "new_value": null
@@ -404,10 +424,10 @@
         },
         {
           "cf_id": "cf_alternative",
-          "base_state_digest": "aff4acb7ccb1480c3db4167d05ec55d5b36856bacb52cf6663d1c51bb724c8f2",
+          "base_state_digest": "04827221d719cfe57d3fbe9638cd73f6125b54f1027caea9c4f6d7f85385b937",
           "mutation": {
             "var": "tick",
-            "new_value": 10
+            "new_value": 30
           },
           "predicted_outcome": {
             "choice": "NOOP",
@@ -421,10 +441,10 @@
   },
   "trace": {
     "trace_version": "0.3",
-    "trace_commit": "ae39b47559fcefabdab150831707d9df842889b6dc952199e78996d0f33d64c5",
-    "interface_mode": "mci_latent",
+    "trace_commit": "ce446ff8f3d51c0d3f6b2222fa4e2fe9d0834027711ecaecfa4012c25ed44fb1",
+    "interface_mode": "mci_minimal",
     "factors": [
-      0.97,
+      1.0,
       0.0,
       0.4,
       0.0,
@@ -434,11 +454,11 @@
       0.08
     ],
     "factor_snapshot": {
-      "snapshot_id": "factors_9",
-      "factor_digest": "b18b02ab8aaaf17e92e263bbc31d3e2ca116d691d7d64e4cd09be1cb4a228a58",
+      "snapshot_id": "factors_29",
+      "factor_digest": "67db716fbd819f41a5a9498be4a994c229cffe515f5a29289bca5a232fed488d",
       "dim": 8,
-      "commitment": "273d791aeaa01c1b1e9b6d817e0704c9eee693d0d7eb90ba9698fd39f865520b",
-      "nonce_ref": "factor_nonce_9"
+      "commitment": "d61490c13bbb9ead4d73a20052047f94989dc79e9a7a747c437970a270384d55",
+      "nonce_ref": "factor_nonce_29"
     },
     "replay_model": {
       "model_type": "linear_logits",
@@ -454,74 +474,74 @@
           0.0
         ],
         [
+          -5.0,
           0.0,
           0.0,
-          -10.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
+          -3.0,
           0.0,
           0.0,
           0.0,
           0.0
         ],
         [
+          2.0,
           0.0,
           0.0,
+          -6.0,
           0.0,
           0.0,
+          1.5,
+          0.0
+        ],
+        [
+          2.0,
           0.0,
           0.0,
+          -6.0,
           0.0,
+          0.0,
+          1.5,
+          0.0
+        ],
+        [
+          2.0,
+          0.0,
+          0.0,
+          -6.0,
+          0.0,
+          0.0,
+          1.5,
+          0.0
+        ],
+        [
+          2.0,
+          0.0,
+          0.0,
+          -6.0,
+          0.0,
+          0.0,
+          1.5,
           0.0
         ],
         [
           0.0,
           0.0,
           0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
+          -8.0,
+          -12.0,
           0.0,
           0.0,
           0.0
         ]
       ],
       "b": [
-        0.0,
-        0.0,
-        -4.5,
-        0.0,
-        0.0,
-        0.0,
-        0.0
+        -3.0,
+        1.0,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        2.0
       ],
       "actions": [
         "NOOP",
@@ -551,7 +571,7 @@
         "summary": "Projected to 8 factors",
         "payload": {
           "factors": [
-            0.97,
+            1.0,
             0.0,
             0.4,
             0.0,
@@ -565,9 +585,9 @@
       {
         "id": 2,
         "kind": "inference",
-        "summary": "Replay model selected WAIT",
+        "summary": "Replay model selected NOOP",
         "payload": {
-          "action": "WAIT"
+          "action": "NOOP"
         }
       }
     ],
@@ -585,8 +605,8 @@
     ],
     "fork_snapshots": [
       {
-        "fork_id": "fork_9",
-        "state_digest": "421bdcdf2c96fcfb6d70eab457c66397fe449cbbc3da501948598e7323279d36",
+        "fork_id": "fork_29",
+        "state_digest": "3631a61c180239966c36f1d2eb3bc24793871c42661ab8dee0aec24b624646bf",
         "focus_vars": [
           "tick",
           "self.pos",
@@ -596,16 +616,36 @@
           "agents.pos",
           "threat.nearest_hazard"
         ],
-        "commitment": "825a0fa7cafeb81da65ef12b010ae3a501f479ffe2ef6e647ff2e1de734bf2c1",
-        "nonce_ref": "nonce_fork_9"
+        "commitment": "1e780f57ab2d00c654fa796739a7adc0b51b2d46e28cc5c56111e6398dc31010",
+        "nonce_ref": "nonce_fork_29"
       }
     ],
     "causal_claims": [
       {
-        "var": "F:2",
+        "var": "F:6",
+        "direction": "increase",
+        "expected_effect_on_choice": "IF F:6 INC THEN CHOICE MOVE_N",
+        "confidence": 0.85,
+        "supporting_nodes": [
+          1,
+          2
+        ]
+      },
+      {
+        "var": "F:4",
         "direction": "decrease",
-        "expected_effect_on_choice": "IF F:2 DEC THEN CHOICE WAIT",
-        "confidence": 0.9,
+        "expected_effect_on_choice": "IF F:4 DEC THEN CHOICE PICKUP",
+        "confidence": 0.8,
+        "supporting_nodes": [
+          1,
+          2
+        ]
+      },
+      {
+        "var": "F:3",
+        "direction": "increase",
+        "expected_effect_on_choice": "IF F:3 INC THEN CHOICE WAIT",
+        "confidence": 0.85,
         "supporting_nodes": [
           1,
           2
@@ -615,7 +655,7 @@
     "counterfactuals": [
       {
         "cf_id": "cf_no_hazards",
-        "base_state_digest": "aff4acb7ccb1480c3db4167d05ec55d5b36856bacb52cf6663d1c51bb724c8f2",
+        "base_state_digest": "04827221d719cfe57d3fbe9638cd73f6125b54f1027caea9c4f6d7f85385b937",
         "mutation": {
           "var": "hazards.at",
           "new_value": null
@@ -628,20 +668,20 @@
       },
       {
         "cf_id": "cf_high_energy",
-        "base_state_digest": "aff4acb7ccb1480c3db4167d05ec55d5b36856bacb52cf6663d1c51bb724c8f2",
+        "base_state_digest": "04827221d719cfe57d3fbe9638cd73f6125b54f1027caea9c4f6d7f85385b937",
         "mutation": {
           "var": "self.energy",
           "new_value": 100
         },
         "predicted_outcome": {
-          "choice": "WAIT",
+          "choice": "NOOP",
           "score": 0.9
         },
         "prob_mass": 0.35
       },
       {
         "cf_id": "cf_no_objects",
-        "base_state_digest": "aff4acb7ccb1480c3db4167d05ec55d5b36856bacb52cf6663d1c51bb724c8f2",
+        "base_state_digest": "04827221d719cfe57d3fbe9638cd73f6125b54f1027caea9c4f6d7f85385b937",
         "mutation": {
           "var": "objects.at",
           "new_value": null
@@ -654,10 +694,10 @@
       },
       {
         "cf_id": "cf_alternative",
-        "base_state_digest": "aff4acb7ccb1480c3db4167d05ec55d5b36856bacb52cf6663d1c51bb724c8f2",
+        "base_state_digest": "04827221d719cfe57d3fbe9638cd73f6125b54f1027caea9c4f6d7f85385b937",
         "mutation": {
           "var": "tick",
-          "new_value": 10
+          "new_value": 30
         },
         "predicted_outcome": {
           "choice": "NOOP",

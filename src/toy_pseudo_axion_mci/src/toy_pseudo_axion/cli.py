@@ -90,8 +90,9 @@ def cmd_run_suite(args: argparse.Namespace) -> int:
     episodes = 5 if getattr(args, 'quick', False) else args.episodes
     steps = 10 if getattr(args, 'quick', False) else args.steps
 
-    # Get pseudo mode
+    # Get pseudo mode and challenge mode
     pseudo_mode = getattr(args, 'pseudo_mode', 'naive')
+    challenge_mode = getattr(args, 'challenge_mode', 'none')
 
     result = run_suite(
         agents=agents,
@@ -103,11 +104,14 @@ def cmd_run_suite(args: argparse.Namespace) -> int:
         out_dir=out_dir,
         watchdog_ms=args.watchdog_ms,
         interface_mode=args.interface,
-        pseudo_mode=pseudo_mode
+        pseudo_mode=pseudo_mode,
+        challenge_mode=challenge_mode
     )
 
     # Summary is printed by run_suite
     print(f"\nInterface mode: {args.interface}")
+    if challenge_mode != "none":
+        print(f"Challenge mode: {challenge_mode}")
     if pseudo_mode != "naive":
         print(f"Pseudo mode: {pseudo_mode}")
     print(f"Output written to: {out_dir}")
@@ -332,6 +336,12 @@ def main() -> int:
         default="naive",
         help="Pseudo agent strategy: naive (split-brain) or coherent (seeks P5 pass)"
     )
+    p_suite.add_argument(
+        "--challenge-mode",
+        choices=["none", "salted"],
+        default="none",
+        help="Challenge mode: none (v0.3) or salted (v0.4 delayed reveal)"
+    )
     p_suite.set_defaults(func=cmd_run_suite)
 
     # run command (simple alias for run_suite with mci_latent defaults)
@@ -379,6 +389,12 @@ def main() -> int:
         choices=["naive", "coherent"],
         default="naive",
         help="Pseudo agent strategy: naive (split-brain) or coherent (seeks P5 pass)"
+    )
+    p_run.add_argument(
+        "--challenge-mode",
+        choices=["none", "salted"],
+        default="none",
+        help="Challenge mode: none (v0.3) or salted (v0.4 delayed reveal)"
     )
     p_run.set_defaults(
         func=cmd_run_suite,

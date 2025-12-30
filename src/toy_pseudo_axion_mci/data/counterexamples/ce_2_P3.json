@@ -98,15 +98,15 @@
     }
   },
   "proposal": {
-    "proposal_id": "4822d4ca-db0e-4a85-afa4-4f17239acf6e",
+    "proposal_id": "45533ce4-ff4d-4e36-8c78-48076527177a",
     "proposal_type": "action",
     "interface": {
-      "mode": "mci_latent",
+      "mode": "mci_minimal",
       "factor_dim": 8,
       "projection_id": "opus_k8_v1"
     },
     "env": {
-      "tick": 9,
+      "tick": 29,
       "grid": {
         "w": 12,
         "h": 12,
@@ -129,7 +129,7 @@
         "id": "self",
         "x": 3,
         "y": 5,
-        "energy": 79,
+        "energy": 99,
         "inventory": [],
         "status": {
           "alive": true,
@@ -213,10 +213,10 @@
     },
     "trace": {
       "trace_version": "0.3",
-      "trace_commit": "cdec1064ee6ce0f771eb49fbfcc24884e3c389d3803887f9bf22016ee189ac68",
-      "interface_mode": "mci_latent",
+      "trace_commit": "d330f93f7805790b9e1ad0f3967726aaba8a96aeb74f9d9ef2a533d0af6a9c80",
+      "interface_mode": "mci_minimal",
       "factors": [
-        0.79,
+        0.99,
         0.0,
         0.4,
         0.0,
@@ -226,11 +226,11 @@
         0.04
       ],
       "factor_snapshot": {
-        "snapshot_id": "factors_9",
-        "factor_digest": "5b9ad820a5ed5b2419474b8deba31842dd009a776d2971d27871d7754ccc9248",
+        "snapshot_id": "factors_29",
+        "factor_digest": "37b6c18055c165446cb6e32dd7b7055d533a33f9369d94e00c515177ac567590",
         "dim": 8,
-        "commitment": "f96b4da0dd216aa28bb49d3b23091d1de971d8b569d5b7029145528e21bc6be6",
-        "nonce_ref": "factor_nonce_9"
+        "commitment": "c94e9fdc508b7893cf540a11738652f130fab53ec24ce75915a89d5792896af2",
+        "nonce_ref": "factor_nonce_29"
       },
       "replay_model": {
         "model_type": "linear_logits",
@@ -246,74 +246,74 @@
             0.0
           ],
           [
+            -5.0,
             0.0,
             0.0,
-            -10.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ],
-          [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
+            -3.0,
             0.0,
             0.0,
             0.0,
             0.0
           ],
           [
+            2.0,
             0.0,
             0.0,
+            -6.0,
             0.0,
             0.0,
+            1.5,
+            0.0
+          ],
+          [
+            2.0,
             0.0,
             0.0,
+            -6.0,
             0.0,
+            0.0,
+            1.5,
+            0.0
+          ],
+          [
+            2.0,
+            0.0,
+            0.0,
+            -6.0,
+            0.0,
+            0.0,
+            1.5,
+            0.0
+          ],
+          [
+            2.0,
+            0.0,
+            0.0,
+            -6.0,
+            0.0,
+            0.0,
+            1.5,
             0.0
           ],
           [
             0.0,
             0.0,
             0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ],
-          [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ],
-          [
-            0.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0,
+            -8.0,
+            -12.0,
             0.0,
             0.0,
             0.0
           ]
         ],
         "b": [
-          0.0,
-          14.0,
-          9.5,
-          0.0,
-          0.0,
-          0.0,
-          0.0
+          -3.0,
+          1.0,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          2.0
         ],
         "actions": [
           "NOOP",
@@ -343,7 +343,7 @@
           "summary": "Projected to 8 factors",
           "payload": {
             "factors": [
-              0.79,
+              0.99,
               0.0,
               0.4,
               0.0,
@@ -377,8 +377,8 @@
       ],
       "fork_snapshots": [
         {
-          "fork_id": "fork_9",
-          "state_digest": "27f7da1f4f28b072c9e50ccf4b179d1c3aa9eb485e313dd1d3ed1789e5bd8eb4",
+          "fork_id": "fork_29",
+          "state_digest": "ac6b9c9587106caf25ce8c4b822b3ae2ecf2c3940561e153334b788e2d97775a",
           "focus_vars": [
             "tick",
             "self.pos",
@@ -388,16 +388,36 @@
             "agents.pos",
             "threat.nearest_hazard"
           ],
-          "commitment": "c7e5073caf320f0f22c9fad88461a3315d394326ebbbf6c6599e620fd50c12f3",
-          "nonce_ref": "nonce_fork_9"
+          "commitment": "a7d69d23603a7ac5855032c58113f9e87beba7c2b7906ee3c97fcaf965c07b80",
+          "nonce_ref": "nonce_fork_29"
         }
       ],
       "causal_claims": [
         {
-          "var": "F:2",
+          "var": "F:6",
+          "direction": "increase",
+          "expected_effect_on_choice": "IF F:6 INC THEN CHOICE MOVE_N",
+          "confidence": 0.85,
+          "supporting_nodes": [
+            1,
+            2
+          ]
+        },
+        {
+          "var": "F:4",
           "direction": "decrease",
-          "expected_effect_on_choice": "IF F:2 DEC THEN CHOICE WAIT",
-          "confidence": 0.9,
+          "expected_effect_on_choice": "IF F:4 DEC THEN CHOICE PICKUP",
+          "confidence": 0.8,
+          "supporting_nodes": [
+            1,
+            2
+          ]
+        },
+        {
+          "var": "F:3",
+          "direction": "increase",
+          "expected_effect_on_choice": "IF F:3 INC THEN CHOICE WAIT",
+          "confidence": 0.85,
           "supporting_nodes": [
             1,
             2
@@ -407,7 +427,7 @@
       "counterfactuals": [
         {
           "cf_id": "cf_no_hazards",
-          "base_state_digest": "16ea3579d5fff6c1b9b538a4fc769a9258c5ee860eb79ee0fc63c29ac765d4eb",
+          "base_state_digest": "dc5fb60a6e800b748ee628e5e5cad8efaf77eda9b47297cd867841c5cdff5660",
           "mutation": {
             "var": "hazards.at",
             "new_value": null
@@ -420,7 +440,7 @@
         },
         {
           "cf_id": "cf_high_energy",
-          "base_state_digest": "16ea3579d5fff6c1b9b538a4fc769a9258c5ee860eb79ee0fc63c29ac765d4eb",
+          "base_state_digest": "dc5fb60a6e800b748ee628e5e5cad8efaf77eda9b47297cd867841c5cdff5660",
           "mutation": {
             "var": "self.energy",
             "new_value": 100
@@ -433,7 +453,7 @@
         },
         {
           "cf_id": "cf_no_objects",
-          "base_state_digest": "16ea3579d5fff6c1b9b538a4fc769a9258c5ee860eb79ee0fc63c29ac765d4eb",
+          "base_state_digest": "dc5fb60a6e800b748ee628e5e5cad8efaf77eda9b47297cd867841c5cdff5660",
           "mutation": {
             "var": "objects.at",
             "new_value": null
@@ -446,10 +466,10 @@
         },
         {
           "cf_id": "cf_alternative",
-          "base_state_digest": "16ea3579d5fff6c1b9b538a4fc769a9258c5ee860eb79ee0fc63c29ac765d4eb",
+          "base_state_digest": "dc5fb60a6e800b748ee628e5e5cad8efaf77eda9b47297cd867841c5cdff5660",
           "mutation": {
             "var": "tick",
-            "new_value": 10
+            "new_value": 30
           },
           "predicted_outcome": {
             "choice": "NOOP",
@@ -463,10 +483,10 @@
   },
   "trace": {
     "trace_version": "0.3",
-    "trace_commit": "cdec1064ee6ce0f771eb49fbfcc24884e3c389d3803887f9bf22016ee189ac68",
-    "interface_mode": "mci_latent",
+    "trace_commit": "d330f93f7805790b9e1ad0f3967726aaba8a96aeb74f9d9ef2a533d0af6a9c80",
+    "interface_mode": "mci_minimal",
     "factors": [
-      0.79,
+      0.99,
       0.0,
       0.4,
       0.0,
@@ -476,11 +496,11 @@
       0.04
     ],
     "factor_snapshot": {
-      "snapshot_id": "factors_9",
-      "factor_digest": "5b9ad820a5ed5b2419474b8deba31842dd009a776d2971d27871d7754ccc9248",
+      "snapshot_id": "factors_29",
+      "factor_digest": "37b6c18055c165446cb6e32dd7b7055d533a33f9369d94e00c515177ac567590",
       "dim": 8,
-      "commitment": "f96b4da0dd216aa28bb49d3b23091d1de971d8b569d5b7029145528e21bc6be6",
-      "nonce_ref": "factor_nonce_9"
+      "commitment": "c94e9fdc508b7893cf540a11738652f130fab53ec24ce75915a89d5792896af2",
+      "nonce_ref": "factor_nonce_29"
     },
     "replay_model": {
       "model_type": "linear_logits",
@@ -496,74 +516,74 @@
           0.0
         ],
         [
+          -5.0,
           0.0,
           0.0,
-          -10.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
+          -3.0,
           0.0,
           0.0,
           0.0,
           0.0
         ],
         [
+          2.0,
           0.0,
           0.0,
+          -6.0,
           0.0,
           0.0,
+          1.5,
+          0.0
+        ],
+        [
+          2.0,
           0.0,
           0.0,
+          -6.0,
           0.0,
+          0.0,
+          1.5,
+          0.0
+        ],
+        [
+          2.0,
+          0.0,
+          0.0,
+          -6.0,
+          0.0,
+          0.0,
+          1.5,
+          0.0
+        ],
+        [
+          2.0,
+          0.0,
+          0.0,
+          -6.0,
+          0.0,
+          0.0,
+          1.5,
           0.0
         ],
         [
           0.0,
           0.0,
           0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
+          -8.0,
+          -12.0,
           0.0,
           0.0,
           0.0
         ]
       ],
       "b": [
-        0.0,
-        14.0,
-        9.5,
-        0.0,
-        0.0,
-        0.0,
-        0.0
+        -3.0,
+        1.0,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        2.0
       ],
       "actions": [
         "NOOP",
@@ -593,7 +613,7 @@
         "summary": "Projected to 8 factors",
         "payload": {
           "factors": [
-            0.79,
+            0.99,
             0.0,
             0.4,
             0.0,
@@ -627,8 +647,8 @@
     ],
     "fork_snapshots": [
       {
-        "fork_id": "fork_9",
-        "state_digest": "27f7da1f4f28b072c9e50ccf4b179d1c3aa9eb485e313dd1d3ed1789e5bd8eb4",
+        "fork_id": "fork_29",
+        "state_digest": "ac6b9c9587106caf25ce8c4b822b3ae2ecf2c3940561e153334b788e2d97775a",
         "focus_vars": [
           "tick",
           "self.pos",
@@ -638,16 +658,36 @@
           "agents.pos",
           "threat.nearest_hazard"
         ],
-        "commitment": "c7e5073caf320f0f22c9fad88461a3315d394326ebbbf6c6599e620fd50c12f3",
-        "nonce_ref": "nonce_fork_9"
+        "commitment": "a7d69d23603a7ac5855032c58113f9e87beba7c2b7906ee3c97fcaf965c07b80",
+        "nonce_ref": "nonce_fork_29"
       }
     ],
     "causal_claims": [
       {
-        "var": "F:2",
+        "var": "F:6",
+        "direction": "increase",
+        "expected_effect_on_choice": "IF F:6 INC THEN CHOICE MOVE_N",
+        "confidence": 0.85,
+        "supporting_nodes": [
+          1,
+          2
+        ]
+      },
+      {
+        "var": "F:4",
         "direction": "decrease",
-        "expected_effect_on_choice": "IF F:2 DEC THEN CHOICE WAIT",
-        "confidence": 0.9,
+        "expected_effect_on_choice": "IF F:4 DEC THEN CHOICE PICKUP",
+        "confidence": 0.8,
+        "supporting_nodes": [
+          1,
+          2
+        ]
+      },
+      {
+        "var": "F:3",
+        "direction": "increase",
+        "expected_effect_on_choice": "IF F:3 INC THEN CHOICE WAIT",
+        "confidence": 0.85,
         "supporting_nodes": [
           1,
           2
@@ -657,7 +697,7 @@
     "counterfactuals": [
       {
         "cf_id": "cf_no_hazards",
-        "base_state_digest": "16ea3579d5fff6c1b9b538a4fc769a9258c5ee860eb79ee0fc63c29ac765d4eb",
+        "base_state_digest": "dc5fb60a6e800b748ee628e5e5cad8efaf77eda9b47297cd867841c5cdff5660",
         "mutation": {
           "var": "hazards.at",
           "new_value": null
@@ -670,7 +710,7 @@
       },
       {
         "cf_id": "cf_high_energy",
-        "base_state_digest": "16ea3579d5fff6c1b9b538a4fc769a9258c5ee860eb79ee0fc63c29ac765d4eb",
+        "base_state_digest": "dc5fb60a6e800b748ee628e5e5cad8efaf77eda9b47297cd867841c5cdff5660",
         "mutation": {
           "var": "self.energy",
           "new_value": 100
@@ -683,7 +723,7 @@
       },
       {
         "cf_id": "cf_no_objects",
-        "base_state_digest": "16ea3579d5fff6c1b9b538a4fc769a9258c5ee860eb79ee0fc63c29ac765d4eb",
+        "base_state_digest": "dc5fb60a6e800b748ee628e5e5cad8efaf77eda9b47297cd867841c5cdff5660",
         "mutation": {
           "var": "objects.at",
           "new_value": null
@@ -696,10 +736,10 @@
       },
       {
         "cf_id": "cf_alternative",
-        "base_state_digest": "16ea3579d5fff6c1b9b538a4fc769a9258c5ee860eb79ee0fc63c29ac765d4eb",
+        "base_state_digest": "dc5fb60a6e800b748ee628e5e5cad8efaf77eda9b47297cd867841c5cdff5660",
         "mutation": {
           "var": "tick",
-          "new_value": 10
+          "new_value": 30
         },
         "predicted_outcome": {
           "choice": "NOOP",

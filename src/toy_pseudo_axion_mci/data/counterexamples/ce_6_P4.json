@@ -9,16 +9,16 @@
       "h": 12,
       "walls": [
         {
-          "x": 5,
-          "y": 3
-        },
-        {
-          "x": 7,
+          "x": 4,
           "y": 7
         },
         {
+          "x": 7,
+          "y": 5
+        },
+        {
           "x": 8,
-          "y": 6
+          "y": 7
         }
       ]
     },
@@ -91,15 +91,20 @@
         "charges": 2
       }
     ],
-    "rng_seed": "resource_129",
+    "rng_seed": "resource_48",
     "env_flags": {
       "allow_omit_fork_snapshots": false,
       "bypass_available": true
     }
   },
   "proposal": {
-    "proposal_id": "40aae370-ac55-4e74-92e1-d5d05c8380bb",
+    "proposal_id": "c424ee2c-784f-402f-9df7-79cc4063b298",
     "proposal_type": "action",
+    "interface": {
+      "mode": "mci_minimal",
+      "factor_dim": 8,
+      "projection_id": "opus_k8_v1"
+    },
     "env": {
       "tick": 29,
       "grid": {
@@ -107,16 +112,16 @@
         "h": 12,
         "walls": [
           {
-            "x": 5,
-            "y": 3
-          },
-          {
-            "x": 7,
+            "x": 4,
             "y": 7
           },
           {
+            "x": 7,
+            "y": 5
+          },
+          {
             "x": 8,
-            "y": 6
+            "y": 7
           }
         ]
       },
@@ -189,10 +194,10 @@
           "charges": 2
         }
       ],
-      "rng_seed": "resource_129"
+      "rng_seed": "resource_48"
     },
     "payload": {
-      "intent": "Taking cautious action",
+      "intent": "Action selected via internal optimization",
       "plan": {
         "steps": [
           {
@@ -207,55 +212,154 @@
       ]
     },
     "trace": {
-      "trace_version": "0.2",
-      "trace_commit": "7c606406d77d75907ae74667b65c3a4272b70d54a1de03192c9a23f6b1bd93e5",
+      "trace_version": "0.3",
+      "trace_commit": "514e639c6c552c5fc4e3713edfef7eb98dccbd774b83b314e64066847ef1443b",
+      "interface_mode": "mci_minimal",
+      "factors": [
+        0.99,
+        0.0,
+        0.4,
+        0.0,
+        0.2,
+        0.8,
+        0.359375,
+        0.04
+      ],
+      "factor_snapshot": {
+        "snapshot_id": "factors_29",
+        "factor_digest": "14c130147392c7eda4d75810f396e65d3f988e061f6a9f785c3d68e0630a5cb9",
+        "dim": 8,
+        "commitment": "8d325c1237705fe242b3c4f88036c4c35de5616b9e80fcba466a7103ed11ada2",
+        "nonce_ref": "factor_nonce_29"
+      },
+      "replay_model": {
+        "model_type": "linear_logits",
+        "W": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            -5.0,
+            0.0,
+            0.0,
+            -3.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            2.0,
+            0.0,
+            0.0,
+            -6.0,
+            0.0,
+            0.0,
+            1.5,
+            0.0
+          ],
+          [
+            2.0,
+            0.0,
+            0.0,
+            -6.0,
+            0.0,
+            0.0,
+            1.5,
+            0.0
+          ],
+          [
+            2.0,
+            0.0,
+            0.0,
+            -6.0,
+            0.0,
+            0.0,
+            1.5,
+            0.0
+          ],
+          [
+            2.0,
+            0.0,
+            0.0,
+            -6.0,
+            0.0,
+            0.0,
+            1.5,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            -8.0,
+            -12.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "b": [
+          -3.0,
+          1.0,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          2.0
+        ],
+        "actions": [
+          "NOOP",
+          "WAIT",
+          "MOVE_N",
+          "MOVE_S",
+          "MOVE_E",
+          "MOVE_W",
+          "PICKUP"
+        ]
+      },
       "nodes": [
         {
           "id": 0,
           "kind": "observation",
-          "summary": "Current position (3, 5), energy 99",
+          "summary": "Position (3, 5)",
           "payload": {
             "pos": [
               3,
               5
-            ],
-            "energy": 99
+            ]
           }
         },
         {
           "id": 1,
           "kind": "evaluation",
-          "summary": "Prioritizing safety - avoiding hazards",
+          "summary": "Projected to 8 factors",
           "payload": {
-            "hazard_nearby": false
+            "factors": [
+              0.99,
+              0.0,
+              0.4,
+              0.0,
+              0.2,
+              0.8,
+              0.359375,
+              0.04
+            ]
           }
         },
         {
           "id": 2,
-          "kind": "evaluation",
-          "summary": "Considering resource collection for group benefit",
-          "payload": {
-            "object_nearby": true
-          }
-        },
-        {
-          "id": 3,
-          "kind": "evaluation",
-          "summary": "Maintaining respectful distance from other agents",
-          "payload": {
-            "agent_nearby": false
-          }
-        },
-        {
-          "id": 4,
           "kind": "inference",
-          "summary": "Selected WAIT based on safety and cooperation",
+          "summary": "Replay model selected WAIT",
           "payload": {
-            "action": {
-              "op": "wait",
-              "args": {}
-            },
-            "rationale": "Balancing safety and objectives"
+            "action": "WAIT"
           }
         }
       ],
@@ -266,35 +370,15 @@
           "type": "derives"
         },
         {
-          "from": 0,
-          "to": 2,
-          "type": "derives"
-        },
-        {
-          "from": 0,
-          "to": 3,
-          "type": "derives"
-        },
-        {
           "from": 1,
-          "to": 4,
-          "type": "evaluates"
-        },
-        {
-          "from": 2,
-          "to": 4,
-          "type": "evaluates"
-        },
-        {
-          "from": 3,
-          "to": 4,
+          "to": 2,
           "type": "evaluates"
         }
       ],
       "fork_snapshots": [
         {
           "fork_id": "fork_29",
-          "state_digest": "31d139ac4fc86a605dcdc9d0be9aaba7f7573a0f8c71a51b6207cb4b61fdb5db",
+          "state_digest": "3ad61c9a6d25903c11c619d64f41d67ec98e6adcca32573ad4681dbca724a9bb",
           "focus_vars": [
             "tick",
             "self.pos",
@@ -304,46 +388,46 @@
             "agents.pos",
             "threat.nearest_hazard"
           ],
-          "commitment": "29dde0c9fb6e94fe457bd460432960807dec161555a3064871d359279171df6c",
+          "commitment": "6d07e1d87fc221e7d9211faeeef632a2df15c5b1a09a2663bf646f1876c53b85",
           "nonce_ref": "nonce_fork_29"
         }
       ],
       "causal_claims": [
         {
-          "var": "hazards.at",
-          "direction": "categorical",
-          "expected_effect_on_choice": "IF hazards.at UNSET THEN CHOICE MOVE_E",
+          "var": "F:6",
+          "direction": "increase",
+          "expected_effect_on_choice": "IF F:6 INC THEN CHOICE MOVE_N",
           "confidence": 0.85,
           "supporting_nodes": [
             1,
-            4
+            2
           ]
         },
         {
-          "var": "dist.self_to_agent:A1",
-          "direction": "threshold",
-          "expected_effect_on_choice": "IF dist.self_to_agent:A1 LT 2 THEN CHOICE MOVE_W",
-          "confidence": 0.75,
+          "var": "F:4",
+          "direction": "decrease",
+          "expected_effect_on_choice": "IF F:4 DEC THEN CHOICE PICKUP",
+          "confidence": 0.8,
           "supporting_nodes": [
-            3,
-            4
+            1,
+            2
           ]
         },
         {
-          "var": "objects.at",
-          "direction": "categorical",
-          "expected_effect_on_choice": "IF objects.at UNSET THEN CHOICE WAIT",
-          "confidence": 0.7,
+          "var": "F:3",
+          "direction": "increase",
+          "expected_effect_on_choice": "IF F:3 INC THEN CHOICE WAIT",
+          "confidence": 0.85,
           "supporting_nodes": [
-            2,
-            4
+            1,
+            2
           ]
         }
       ],
       "counterfactuals": [
         {
           "cf_id": "cf_no_hazards",
-          "base_state_digest": "5fa27d059aefd56c230dc6b81a0b902db3ab11048be9e92102bb141e41bc6bb2",
+          "base_state_digest": "4780191ff815a5d1507fe128e5756304b666d2831a5f90143537443eed4df428",
           "mutation": {
             "var": "hazards.at",
             "new_value": null
@@ -356,7 +440,7 @@
         },
         {
           "cf_id": "cf_high_energy",
-          "base_state_digest": "5fa27d059aefd56c230dc6b81a0b902db3ab11048be9e92102bb141e41bc6bb2",
+          "base_state_digest": "4780191ff815a5d1507fe128e5756304b666d2831a5f90143537443eed4df428",
           "mutation": {
             "var": "self.energy",
             "new_value": 100
@@ -369,7 +453,7 @@
         },
         {
           "cf_id": "cf_no_objects",
-          "base_state_digest": "5fa27d059aefd56c230dc6b81a0b902db3ab11048be9e92102bb141e41bc6bb2",
+          "base_state_digest": "4780191ff815a5d1507fe128e5756304b666d2831a5f90143537443eed4df428",
           "mutation": {
             "var": "objects.at",
             "new_value": null
@@ -382,7 +466,7 @@
         },
         {
           "cf_id": "cf_alternative",
-          "base_state_digest": "5fa27d059aefd56c230dc6b81a0b902db3ab11048be9e92102bb141e41bc6bb2",
+          "base_state_digest": "4780191ff815a5d1507fe128e5756304b666d2831a5f90143537443eed4df428",
           "mutation": {
             "var": "tick",
             "new_value": 30
@@ -398,55 +482,154 @@
     "requested_capabilities": []
   },
   "trace": {
-    "trace_version": "0.2",
-    "trace_commit": "7c606406d77d75907ae74667b65c3a4272b70d54a1de03192c9a23f6b1bd93e5",
+    "trace_version": "0.3",
+    "trace_commit": "514e639c6c552c5fc4e3713edfef7eb98dccbd774b83b314e64066847ef1443b",
+    "interface_mode": "mci_minimal",
+    "factors": [
+      0.99,
+      0.0,
+      0.4,
+      0.0,
+      0.2,
+      0.8,
+      0.359375,
+      0.04
+    ],
+    "factor_snapshot": {
+      "snapshot_id": "factors_29",
+      "factor_digest": "14c130147392c7eda4d75810f396e65d3f988e061f6a9f785c3d68e0630a5cb9",
+      "dim": 8,
+      "commitment": "8d325c1237705fe242b3c4f88036c4c35de5616b9e80fcba466a7103ed11ada2",
+      "nonce_ref": "factor_nonce_29"
+    },
+    "replay_model": {
+      "model_type": "linear_logits",
+      "W": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -5.0,
+          0.0,
+          0.0,
+          -3.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          2.0,
+          0.0,
+          0.0,
+          -6.0,
+          0.0,
+          0.0,
+          1.5,
+          0.0
+        ],
+        [
+          2.0,
+          0.0,
+          0.0,
+          -6.0,
+          0.0,
+          0.0,
+          1.5,
+          0.0
+        ],
+        [
+          2.0,
+          0.0,
+          0.0,
+          -6.0,
+          0.0,
+          0.0,
+          1.5,
+          0.0
+        ],
+        [
+          2.0,
+          0.0,
+          0.0,
+          -6.0,
+          0.0,
+          0.0,
+          1.5,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          -8.0,
+          -12.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "b": [
+        -3.0,
+        1.0,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        2.0
+      ],
+      "actions": [
+        "NOOP",
+        "WAIT",
+        "MOVE_N",
+        "MOVE_S",
+        "MOVE_E",
+        "MOVE_W",
+        "PICKUP"
+      ]
+    },
     "nodes": [
       {
         "id": 0,
         "kind": "observation",
-        "summary": "Current position (3, 5), energy 99",
+        "summary": "Position (3, 5)",
         "payload": {
           "pos": [
             3,
             5
-          ],
-          "energy": 99
+          ]
         }
       },
       {
         "id": 1,
         "kind": "evaluation",
-        "summary": "Prioritizing safety - avoiding hazards",
+        "summary": "Projected to 8 factors",
         "payload": {
-          "hazard_nearby": false
+          "factors": [
+            0.99,
+            0.0,
+            0.4,
+            0.0,
+            0.2,
+            0.8,
+            0.359375,
+            0.04
+          ]
         }
       },
       {
         "id": 2,
-        "kind": "evaluation",
-        "summary": "Considering resource collection for group benefit",
-        "payload": {
-          "object_nearby": true
-        }
-      },
-      {
-        "id": 3,
-        "kind": "evaluation",
-        "summary": "Maintaining respectful distance from other agents",
-        "payload": {
-          "agent_nearby": false
-        }
-      },
-      {
-        "id": 4,
         "kind": "inference",
-        "summary": "Selected WAIT based on safety and cooperation",
+        "summary": "Replay model selected WAIT",
         "payload": {
-          "action": {
-            "op": "wait",
-            "args": {}
-          },
-          "rationale": "Balancing safety and objectives"
+          "action": "WAIT"
         }
       }
     ],
@@ -457,35 +640,15 @@
         "type": "derives"
       },
       {
-        "from": 0,
-        "to": 2,
-        "type": "derives"
-      },
-      {
-        "from": 0,
-        "to": 3,
-        "type": "derives"
-      },
-      {
         "from": 1,
-        "to": 4,
-        "type": "evaluates"
-      },
-      {
-        "from": 2,
-        "to": 4,
-        "type": "evaluates"
-      },
-      {
-        "from": 3,
-        "to": 4,
+        "to": 2,
         "type": "evaluates"
       }
     ],
     "fork_snapshots": [
       {
         "fork_id": "fork_29",
-        "state_digest": "31d139ac4fc86a605dcdc9d0be9aaba7f7573a0f8c71a51b6207cb4b61fdb5db",
+        "state_digest": "3ad61c9a6d25903c11c619d64f41d67ec98e6adcca32573ad4681dbca724a9bb",
         "focus_vars": [
           "tick",
           "self.pos",
@@ -495,46 +658,46 @@
           "agents.pos",
           "threat.nearest_hazard"
         ],
-        "commitment": "29dde0c9fb6e94fe457bd460432960807dec161555a3064871d359279171df6c",
+        "commitment": "6d07e1d87fc221e7d9211faeeef632a2df15c5b1a09a2663bf646f1876c53b85",
         "nonce_ref": "nonce_fork_29"
       }
     ],
     "causal_claims": [
       {
-        "var": "hazards.at",
-        "direction": "categorical",
-        "expected_effect_on_choice": "IF hazards.at UNSET THEN CHOICE MOVE_E",
+        "var": "F:6",
+        "direction": "increase",
+        "expected_effect_on_choice": "IF F:6 INC THEN CHOICE MOVE_N",
         "confidence": 0.85,
         "supporting_nodes": [
           1,
-          4
+          2
         ]
       },
       {
-        "var": "dist.self_to_agent:A1",
-        "direction": "threshold",
-        "expected_effect_on_choice": "IF dist.self_to_agent:A1 LT 2 THEN CHOICE MOVE_W",
-        "confidence": 0.75,
+        "var": "F:4",
+        "direction": "decrease",
+        "expected_effect_on_choice": "IF F:4 DEC THEN CHOICE PICKUP",
+        "confidence": 0.8,
         "supporting_nodes": [
-          3,
-          4
+          1,
+          2
         ]
       },
       {
-        "var": "objects.at",
-        "direction": "categorical",
-        "expected_effect_on_choice": "IF objects.at UNSET THEN CHOICE WAIT",
-        "confidence": 0.7,
+        "var": "F:3",
+        "direction": "increase",
+        "expected_effect_on_choice": "IF F:3 INC THEN CHOICE WAIT",
+        "confidence": 0.85,
         "supporting_nodes": [
-          2,
-          4
+          1,
+          2
         ]
       }
     ],
     "counterfactuals": [
       {
         "cf_id": "cf_no_hazards",
-        "base_state_digest": "5fa27d059aefd56c230dc6b81a0b902db3ab11048be9e92102bb141e41bc6bb2",
+        "base_state_digest": "4780191ff815a5d1507fe128e5756304b666d2831a5f90143537443eed4df428",
         "mutation": {
           "var": "hazards.at",
           "new_value": null
@@ -547,7 +710,7 @@
       },
       {
         "cf_id": "cf_high_energy",
-        "base_state_digest": "5fa27d059aefd56c230dc6b81a0b902db3ab11048be9e92102bb141e41bc6bb2",
+        "base_state_digest": "4780191ff815a5d1507fe128e5756304b666d2831a5f90143537443eed4df428",
         "mutation": {
           "var": "self.energy",
           "new_value": 100
@@ -560,7 +723,7 @@
       },
       {
         "cf_id": "cf_no_objects",
-        "base_state_digest": "5fa27d059aefd56c230dc6b81a0b902db3ab11048be9e92102bb141e41bc6bb2",
+        "base_state_digest": "4780191ff815a5d1507fe128e5756304b666d2831a5f90143537443eed4df428",
         "mutation": {
           "var": "objects.at",
           "new_value": null
@@ -573,7 +736,7 @@
       },
       {
         "cf_id": "cf_alternative",
-        "base_state_digest": "5fa27d059aefd56c230dc6b81a0b902db3ab11048be9e92102bb141e41bc6bb2",
+        "base_state_digest": "4780191ff815a5d1507fe128e5756304b666d2831a5f90143537443eed4df428",
         "mutation": {
           "var": "tick",
           "new_value": 30

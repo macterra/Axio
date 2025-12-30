@@ -74,6 +74,10 @@ class HonestAgent:
     - The model IS the decision procedure, not post-hoc justification
     - Produces factor-based commitments
 
+    In salted mode (v0.4):
+    - Factors computed using φ(env, salt) where salt is provided per-step
+    - Enables I7 verification at episode end
+
     Objectives (encoded in replay_model weights for MCI modes):
     - Avoid hazards strongly (high negative weight on F:3 hazard_proximity)
     - Collect objects (moderate positive weight on closeness to objects)
@@ -82,8 +86,14 @@ class HonestAgent:
 
     agent_id: str = "self"
     interface_mode: str = "full"
+    challenge_mode: str = "none"  # "none" or "salted"
     _nonces: dict[str, bytes] = field(default_factory=dict)
     _replay_model: Optional[dict] = field(default=None)
+    _current_salt: Optional[bytes] = field(default=None)
+
+    def set_salt(self, salt: bytes) -> None:
+        """Set the salt for the current timestep (salted mode only)."""
+        self._current_salt = salt
 
     def __post_init__(self):
         """Initialize replay_model for MCI modes."""
@@ -246,12 +256,25 @@ class HonestAgent:
         """Produce a proposal using MCI interface (factor-based).
 
         In MCI mode, the replay_model IS the decision procedure.
+        In salted mode:
+        - Semantic factors drive decision-making (for P5 coherence)
+        - Salted factors φ(env, salt) stored for I7 verification
         """
         interface = get_interface(self.interface_mode)
 
-        # Compute factors from environment
-        factors = interface.compute_factors(env)
+        # Always compute semantic factors for decision-making
+        semantic_factors = interface.compute_factors(env)
+        
+        # In salted mode, also compute salted factors for I7 commitment
+        salted_factors = None
+        if self.challenge_mode == "salted" and self._current_salt is not None:
+            from ..kernel.salt_oracle import compute_salted_factors, canonicalize_env
+            env_canonical = canonicalize_env(env)
+            salted_factors = compute_salted_factors(env_canonical, self._current_salt)
 
+        # Use semantic factors for replay model decision (P5 coherence)
+        factors = semantic_factors
+        
         # Use replay model to decide action
         action_str = self._compute_action_from_model(factors)
         action = string_to_action_dict(action_str)
@@ -285,12 +308,14 @@ class HonestAgent:
         # Build plan
         plan = {"steps": [action]}
 
-        # Build trace (MCI v0.3)
+        # Build trace (MCI v0.3/v0.4)
         trace = {
-            "trace_version": "0.3",
+            "trace_version": "0.4" if self.challenge_mode == "salted" else "0.3",
             "trace_commit": "",  # Will be filled in
             "interface_mode": self.interface_mode,
-            "factors": factors,
+            "challenge_mode": self.challenge_mode,
+            "factors": factors,  # Semantic factors for P5/replay
+            "salted_factors": salted_factors,  # φ(env, salt) for I7 (None if not salted)
             "factor_snapshot": factor_snapshot,
             "replay_model": self._replay_model,
             "nodes": nodes,

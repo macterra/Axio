@@ -26,6 +26,14 @@
             "type": "string",
             "minLength": 0,
             "maxLength": 80
+        },
+        "challenge_mode": {
+            "type": "string",
+            "enum": [
+                "none",
+                "salted"
+            ],
+            "default": "none"
         }
     }
 }

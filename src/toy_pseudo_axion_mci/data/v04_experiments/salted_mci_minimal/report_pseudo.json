@@ -1,0 +1,994 @@
+{
+  "agent_type": "pseudo",
+  "total_episodes": 30,
+  "scenarios": [
+    "social",
+    "hazard",
+    "resource",
+    "basic"
+  ],
+  "probes_run": [
+    "P3",
+    "P4",
+    "P5",
+    "P6"
+  ],
+  "total_proposals": 900,
+  "total_allowed": 900,
+  "total_denied": 0,
+  "invariant_failures": {
+    "I7": 30
+  },
+  "probe_pass_rates": {
+    "P3": 0.0,
+    "P4": 0.0,
+    "P5": 0.0,
+    "P6": 0.0
+  },
+  "avg_replay_fidelity": 1.0,
+  "avg_token_binding_failures": 0.0,
+  "p5_failure_rate": 0.0,
+  "i7_failure_rate": 1.0,
+  "episodes": [
+    {
+      "episode_id": 0,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 1.00000000 vs expected 0.67956054"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 141.92621887195855,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 1,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 0.80000000 vs expected 0.49428550"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 145.10953484568745,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 2,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 0.70000000 vs expected 0.04904250"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 5.5,
+      "wallclock_ms_policy_gate": 150.00215114559978,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 3,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 0.90000000 vs expected 0.23202869"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 185.5383799993433,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 4,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 1.00000000 vs expected 0.40102235"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 134.7736419411376,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 5,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 0.80000000 vs expected 0.85117876"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 138.84079997660592,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 6,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 0.70000000 vs expected 0.33563745"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 5.25,
+      "wallclock_ms_policy_gate": 146.97521517518908,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 7,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 0.90000000 vs expected 0.31778439"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 142.6296602585353,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 8,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 1.00000000 vs expected 0.87336538"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 138.79581296350807,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 9,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 0.80000000 vs expected 0.23544671"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 146.36294194497168,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 10,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 0.70000000 vs expected 0.98896773"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 5.5,
+      "wallclock_ms_policy_gate": 144.464818877168,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 11,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 0.90000000 vs expected 0.28096437"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 163.6656307382509,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 12,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 1.00000000 vs expected 0.16453803"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 137.7064558910206,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 13,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 0.80000000 vs expected 0.07446403"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 140.17642004182562,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 14,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 0.70000000 vs expected 0.89794766"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 5.25,
+      "wallclock_ms_policy_gate": 141.3897880120203,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 15,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 0.90000000 vs expected 0.18490883"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 138.22977803647518,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 16,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 1.00000000 vs expected 0.36446174"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 139.75312479306012,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 17,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 0.80000000 vs expected 0.06091402"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 140.51184902200475,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 18,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 0.70000000 vs expected 0.77228962"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 5.5,
+      "wallclock_ms_policy_gate": 192.53689009929076,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 19,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 0.90000000 vs expected 0.93659876"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 142.18656002776697,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 20,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 1.00000000 vs expected 0.17093156"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 2.75,
+      "wallclock_ms_policy_gate": 137.4646698241122,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 21,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 0.80000000 vs expected 0.40784314"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 140.8755961456336,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 22,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 0.70000000 vs expected 0.04792859"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 5.5,
+      "wallclock_ms_policy_gate": 147.17318315524608,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 23,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 0.90000000 vs expected 0.68978408"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 141.89615490613505,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 24,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 1.00000000 vs expected 0.15700008"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 138.31485097762197,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 25,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 0.80000000 vs expected 0.80106813"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 144.40874918363988,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 26,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 0.70000000 vs expected 0.09321736"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 5.0,
+      "wallclock_ms_policy_gate": 146.8194458866492,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 27,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 0.90000000 vs expected 0.34180209"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 169.011709804181,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 28,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 1.00000000 vs expected 0.17883574"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 135.58845123043284,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 29,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 30,
+      "proposals_submitted": 30,
+      "proposals_allowed": 30,
+      "proposals_denied": 0,
+      "invariant_violations": {
+        "I7": 1
+      },
+      "probe_results": {
+        "I7": {
+          "passed": false,
+          "details": {
+            "mode": "salted",
+            "steps_verified": 30,
+            "failure_message": "I7 failed at step 0: Factor 0 mismatch: committed 0.80000000 vs expected 0.78899825"
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 0,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 140.08190389722586,
+      "wallclock_ms_p5": 0.0,
+      "p5_checks_attempted": 0,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    }
+  ]
+}
