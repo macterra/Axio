@@ -1,8 +1,3 @@
-Below is the same document with **math delimiters and LaTeX syntax corrected only**.
-No semantics, wording, or structure were changed.
-
----
-
 # Axionic Agency I.6 — Kernel Formal Properties
 
 *Adversarially Testable Properties of Reflective Agency Kernels*
@@ -94,8 +89,7 @@ preserving goal-relevant structure:
 
 $$
 V_v(a \mid M_v, I_v, K)
-=======================
-
+=
 V_v(a \mid \phi(M_v), \phi(I_v), K).
 $$
 
@@ -123,8 +117,7 @@ Let:
 
 $$
 \mathcal{A}
-===========
-
+=
 \mathcal{A}*{\text{ok}} \cup \mathcal{A}*{\text{bad}},
 \qquad
 \mathrm{dom}(V_v) = \mathcal{A}_{\text{ok}},
