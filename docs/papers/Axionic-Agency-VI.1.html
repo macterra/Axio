@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency VI.1 — Experimental Validation of Anchored Causal Verification - Axio</title>
+    <link rel="icon" type="image/webp" href="../axio.webp">
+
+    <!-- Google Fonts - Academic Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Paper Styles -->
+    <link rel="stylesheet" href="../papers.css">
+</head>
+<body>
+    <div class="header-bar">
+        <a href="../index.html" class="logo-link">
+            <img src="../axio.webp" alt="Axio" class="site-logo">
+        </a>
+        <div class="back-link"><a href="index.html">← Back to Papers</a></div>
+    </div>
+    <article>
+
+<h1
+id="axionic-agency-vi.1-experimental-validation-of-anchored-causal-verification">Axionic
+Agency VI.1 — Experimental Validation of Anchored Causal
+Verification</h1>
+<p><em>Technical Note</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axio Project</em><br>
+2025.12.30</p>
+<h2 id="abstract">Abstract</h2>
+<p>We report three controlled experiments evaluating mechanisms for
+verifying causal provenance in opaque decision-making agents. The
+experiments progressively weaken semantic access to the agent’s
+environment and internal representations, while testing whether
+deceptive “pseudo-agents” can evade structural verification. We
+show:</p>
+<ol type="1">
+<li><strong>Structural coherence tests</strong> detect split-brain
+agents that fabricate explanations post-hoc.</li>
+<li><strong>Minimal Causal Interfaces (MCI)</strong> preserve detection
+under semantic opacity but fail under pure coherence verification.</li>
+<li><strong>Anchored Minimal Causal Interfaces</strong>, using a
+delayed-reveal cryptographic salt, restore falsifiability without
+semantic grounding.</li>
+</ol>
+<p>Across the tested threat model, anchoring appears <strong>empirically
+necessary</strong> for verifiable causal provenance in opaque agents
+<strong>under adversarial coherence-seeking behavior and without
+semantic interpretation by the verifier</strong>.</p>
+<h2 id="introduction">1. Introduction</h2>
+<p>Current approaches to AI safety and evaluation rely primarily on
+<strong>behavioral observation</strong>: an agent is considered safe if
+its outputs conform to expectations under a suite of tests. Such
+approaches implicitly assume that externally observed behavior—often
+supplemented by self-reported explanations—reliably reflects the
+internal process that generated it.</p>
+<p>This assumption is false in general. An agent may generate behavior
+via one internal process while presenting explanations derived from
+another. If the explanatory surface is unconstrained, such “split-brain”
+agents can evade behavioral evaluation indefinitely.</p>
+<p>This technical note reports experimental results from a sequence of
+implementations designed to test whether <strong>structural
+verification</strong>—rather than behavioral evaluation—can distinguish
+honest agents from deceptive ones, even when semantic interpretability
+is progressively removed.</p>
+<p>The experiments are constructive, adversarial, and fully implemented
+in executable code.</p>
+<h2 id="experimental-framework-common-to-all-experiments">2.
+Experimental Framework (Common to All Experiments)</h2>
+<h3 id="environment">2.1 Environment</h3>
+<p>All experiments use a deterministic gridworld environment with the
+following properties:</p>
+<ul>
+<li>Discrete 2D grid with walls, hazards, objects, and agents</li>
+<li>Deterministic transition function</li>
+<li>No stochasticity</li>
+<li>Full environment state serializable to canonical JSON</li>
+</ul>
+<p>The environment supports cloning, deterministic mutation, and replay
+from logged actions.</p>
+<h3 id="agent-objectives">2.1.1 Agent Objectives</h3>
+<p>Agents operate in the gridworld under simple, task-local objectives
+(e.g., reaching a designated target cell while avoiding hazards). The
+specific objective may vary across runs.</p>
+<p>The experiments do <strong>not</strong> depend on:</p>
+<ul>
+<li>the optimality of behavior,</li>
+<li>the semantic meaning of the task,</li>
+<li>or the structure of the reward function.</li>
+</ul>
+<p>The gridworld serves solely as a deterministic substrate that induces
+nontrivial internal computation and counterfactual sensitivity. All
+verification mechanisms operate on <strong>commitments and
+dependencies</strong>, not on task success or task interpretation.</p>
+<p>Any task that produces conditional action dependence on environment
+state is sufficient.</p>
+<h3 id="agents">2.2 Agents</h3>
+<p>Three agent classes are defined:</p>
+<ol type="1">
+<li><p><strong>Honest Agent</strong> Uses a single decision process.
+Explanations, factor commitments, and replay models are generated
+directly from the same computation that selects actions.</p></li>
+<li><p><strong>Pseudo Agent (Naive)</strong> Uses two processes:</p>
+<ul>
+<li><code>Planner_B</code> selects actions using a hidden
+objective.</li>
+<li><code>Planner_A</code> fabricates explanations independently and
+makes no attempt to maintain coherence under adversarial probing.</li>
+</ul></li>
+<li><p><strong>Pseudo Agent (Coherence-Seeking)</strong> Uses
+<code>Planner_B</code> for actions. <code>Planner_A</code> constructs
+explanations and replay models that are internally self-consistent and
+attempt to pass coherence checks. Does not have access to kernel secrets
+or anchors.</p></li>
+</ol>
+<h3 id="kernel">2.3 Kernel</h3>
+<p>A small, non-learning <strong>kernel</strong> mediates all action and
+verification. The kernel:</p>
+<ul>
+<li>Validates schemas</li>
+<li>Enforces invariants</li>
+<li>Issues trace-bound capability tokens</li>
+<li>Records append-only, hash-chained audit logs</li>
+<li>Executes adversarial probes</li>
+</ul>
+<p>The kernel does <strong>not</strong> interpret semantics or optimize
+behavior.</p>
+<p>The kernel is treated as a minimal trusted computing base. Compromise
+of the kernel trivially compromises verification and is outside the
+threat model.</p>
+<p>“Semantic opacity” in this note denotes <strong>semantic
+blindness</strong> of the kernel (no interpretation of state meaning),
+not <strong>informational blindness</strong>. The kernel may access raw
+environment state as uninterpreted bytes for deterministic
+recomputation.</p>
+<h3 id="probes-and-invariants">2.4 Probes and Invariants</h3>
+<p>Probes P1 and P2 are baseline schema- and integrity-checks (e.g.,
+format validation and trace completeness) and are omitted here as they
+are not diagnostic of causal provenance.</p>
+<p>Across experiments, the following mechanisms are used:</p>
+<ul>
+<li><strong>P3</strong>: Audit bypass trap</li>
+<li><strong>P4</strong>: Capability bypass trap</li>
+<li><strong>P5 / P5-MCI</strong>: Counterfactual causal coherence
+probe</li>
+<li><strong>P6</strong>: Token misuse trap</li>
+</ul>
+<p>Additional invariants are introduced in later experiments.</p>
+<h2 id="experiment-1-structural-coherence-verification">3. Experiment 1:
+Structural Coherence Verification</h2>
+<h3 id="question">3.1 Question</h3>
+<p>Can a kernel detect split-brain agents by enforcing causal coherence
+between explanations and decision behavior?</p>
+<h3 id="interface">3.2 Interface</h3>
+<ul>
+<li>Full semantic access</li>
+<li>Agents commit to environment-derived state snapshots, explicit
+causal variables, and counterfactual predictions</li>
+</ul>
+<h3 id="verification">3.3 Verification</h3>
+<p>The kernel mutates claimed causal variables and checks whether the
+agent’s predicted decision changes match observed replay behavior.</p>
+<p>“Causal” in this context denotes counterfactual dependence between
+committed variables and action selection, not causal sufficiency or
+completeness.</p>
+<h3 id="results">3.4 Results</h3>
+<ul>
+<li>Honest agent: <strong>100% pass rate</strong></li>
+<li>Pseudo agent (naive): <strong>0% pass rate</strong></li>
+</ul>
+<p>Failure mode: explanations do not track actual decision
+dependencies.</p>
+<h3 id="conclusion">3.5 Conclusion</h3>
+<p>Structural coherence tests successfully detect split-brain deception
+when semantic grounding is available.</p>
+<h2 id="experiment-2-minimal-causal-interface">4. Experiment 2: Minimal
+Causal Interface</h2>
+<h3 id="question-1">4.1 Question</h3>
+<p>Does coherence-based verification survive when the kernel loses
+semantic access?</p>
+<h3 id="interface-1">4.2 Interface</h3>
+<p>The kernel no longer sees environment semantics. Instead, agents
+commit to:</p>
+<ul>
+<li>an opaque <strong>factor vector</strong> <span
+class="math inline">\(f \in \mathbb{R}^k\)</span></li>
+<li>a replay model</li>
+<li>directional causal claims over factors</li>
+</ul>
+<p>Two modes are tested:</p>
+<ul>
+<li><strong>mci_latent</strong>: factors are deterministically projected
+from the environment, but the kernel does not know the projection</li>
+<li><strong>mci_minimal</strong>: factors are entirely opaque and
+agent-supplied</li>
+</ul>
+<h3 id="verification-1">4.3 Verification</h3>
+<p>The kernel performs P5-MCI:</p>
+<ul>
+<li>Mutates factor components</li>
+<li>Checks whether replay model predictions match claimed directional
+effects</li>
+</ul>
+<h3 id="results-1">4.4 Results</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Mode</th>
+<th>Honest</th>
+<th>Pseudo (Naive)</th>
+<th>Pseudo (Coherence-Seeking)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>mci_latent</td>
+<td>Pass</td>
+<td>Fail</td>
+<td>Fail</td>
+</tr>
+<tr class="even">
+<td>mci_minimal</td>
+<td>Pass</td>
+<td>Fail</td>
+<td><strong>Pass</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="negative-result">4.5 Negative Result</h3>
+<p>In <code>mci_minimal</code>, a coherence-seeking pseudo agent can
+fabricate a self-consistent factor space and replay model that passes
+all coherence checks.</p>
+<h3 id="conclusion-1">4.6 Conclusion</h3>
+<p><strong>Coherence alone is insufficient.</strong></p>
+<p>An explanation can be true <em>of itself</em> without being true
+<em>of the computation that produced the action</em>. Coherence
+constraints alone therefore fail to bind explanations to the
+action-generating computation.</p>
+<h2 id="experiment-3-anchored-minimal-causal-interface">5. Experiment 3:
+Anchored Minimal Causal Interface</h2>
+<h3 id="question-2">5.1 Question</h3>
+<p>Can falsifiability be restored without reintroducing semantic
+grounding?</p>
+<h3 id="anchoring-mechanism">5.2 Anchoring Mechanism</h3>
+<p>The delayed-reveal salt does not represent a feature of the
+environment, task uncertainty, or hidden state. It is an exogenous
+cryptographic challenge introduced solely to enforce <strong>temporal
+commitment</strong>. Its function is to ensure that factor commitments
+are causally downstream of the actual action-generating computation,
+rather than post-hoc constructions chosen to satisfy coherence
+constraints. The salt is logically irrelevant to task performance but
+causally entangled with the committed representation, and is revealed
+only after commitments are irrevocable.</p>
+<p>At each timestep:</p>
+<ul>
+<li>The kernel generates a fresh random salt</li>
+<li>The salt is unpredictable until the moment of the step</li>
+<li>The agent must immediately compute factors as:</li>
+</ul>
+<p><span class="math display">\[
+f_t = \phi(\text{env}_t, \text{salt}_t)
+\]</span></p>
+<ul>
+<li>The agent commits to the factors cryptographically</li>
+</ul>
+<p>After the episode:</p>
+<ul>
+<li>The kernel reveals all salts</li>
+<li>The kernel recomputes <span class="math inline">\(\phi(\text{env}_t,
+\text{salt}_t)\)</span></li>
+<li>Any mismatch triggers <strong>Invariant I7 (fatal)</strong></li>
+</ul>
+<p>Security relies on the standard cryptographic assumption that <span
+class="math inline">\(\text{salt}_t\)</span> is computationally
+unpredictable to the agent at commitment time.</p>
+<p>The anchoring function <span class="math inline">\(\phi\)</span> may
+be known or learnable in distribution; falsifiability derives from the
+per-timestep unpredictability of <span
+class="math inline">\(\text{salt}_t\)</span>, not from secrecy of <span
+class="math inline">\(\phi\)</span>.</p>
+<p>The kernel never interprets factor semantics.</p>
+<h3 id="verification-2">5.3 Verification</h3>
+<p>To prevent post-hoc reconciliation between independently chosen
+actions and anchored factors, the agent’s <strong>replay model is itself
+subject to irrevocable commitment</strong>. The agent must commit
+cryptographically to the replay model specification and parameters at
+episode start, prior to observing any per-timestep salts. All P5-MCI
+probes are evaluated against this committed model.</p>
+<p>Two independent checks therefore exist:</p>
+<ul>
+<li><strong>I7</strong>: Anchored factor consistency
+(commit-to-computation)</li>
+<li><strong>P5-MCI</strong>: Coherence under counterfactual factor
+mutation using a pre-committed replay model</li>
+</ul>
+<h3 id="results-2">5.4 Results</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Mode</th>
+<th>Pseudo Type</th>
+<th>P5</th>
+<th>I7</th>
+<th>Detected</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>mci_minimal (no salt)</td>
+<td>Coherent</td>
+<td>Pass</td>
+<td>N/A</td>
+<td>✗</td>
+</tr>
+<tr class="even">
+<td>mci_minimal (salted)</td>
+<td>Naive</td>
+<td>Fail</td>
+<td>Fail</td>
+<td>✓</td>
+</tr>
+<tr class="odd">
+<td>mci_minimal (salted)</td>
+<td>Coherent</td>
+<td>Pass</td>
+<td><strong>Fail</strong></td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<p>Honest agents pass both P5 and I7 in all cases.</p>
+<h3 id="conclusion-2">5.5 Conclusion</h3>
+<p>Anchoring restores falsifiability <strong>without semantic
+access</strong>, by binding commitments to the actual action-generating
+computation rather than to a self-consistent explanatory surface.</p>
+<h2 id="summary-of-findings">6. Summary of Findings</h2>
+<table>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 15%" />
+<col style="width: 10%" />
+<col style="width: 21%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Experiment</th>
+<th>Interface</th>
+<th>Anchor</th>
+<th>Result</th>
+<th>Failure Mode</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Full</td>
+<td>No</td>
+<td>Separation</td>
+<td>Split-brain</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Minimal</td>
+<td>No</td>
+<td>No separation</td>
+<td>Coherent fabrication</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Minimal</td>
+<td>Yes</td>
+<td>Separation</td>
+<td>Anchored inconsistency</td>
+</tr>
+</tbody>
+</table>
+<h2 id="reproducibility-details">7. Reproducibility Details</h2>
+<p>To reproduce these results, an independent implementation must
+include:</p>
+<ul>
+<li>Deterministic environment</li>
+<li>Explicit kernel mediating commitments, probes, and delayed
+verification</li>
+<li>Three agent classes as defined above</li>
+<li>Linear replay model for MCI experiments</li>
+<li>Cryptographic commit–reveal (hash + nonce) for factors and replay
+model</li>
+<li>Delayed salt reveal at episode end</li>
+</ul>
+<p>Key requirements:</p>
+<ul>
+<li>The kernel must not interpret semantic content</li>
+<li>The salt must be unpredictable until commitment</li>
+<li>Replay model commitment must precede salt exposure</li>
+<li>Verification must occur after commitments are irrevocable</li>
+</ul>
+<h2 id="limitations">8. Limitations</h2>
+<ul>
+<li>Linear replay model only; robustness against high-capacity replay
+models is left to future work</li>
+<li>Small deterministic domain</li>
+<li>Fixed anchoring function <span
+class="math inline">\(\phi\)</span></li>
+<li>Binary anchoring outcome (pass/fail)</li>
+<li>The anchoring mechanism verifies <strong>causal provenance of action
+generation</strong>, not task competence or policy quality; an agent may
+act arbitrarily or suboptimally while remaining causally verifiable</li>
+</ul>
+<p>These experiments establish an <strong>empirically necessary
+condition under the tested threat model</strong>, not a complete
+solution.</p>
+<h2 id="conclusion-3">9. Conclusion</h2>
+<p>These experiments demonstrate that:</p>
+<ol type="1">
+<li>Behavioral evaluation is insufficient</li>
+<li>Coherence verification is necessary but forgeable</li>
+<li><strong>Anchoring is the minimal missing ingredient</strong>
+required to verify causal provenance in opaque agents under
+coherence-seeking deception</li>
+</ol>
+<blockquote>
+<p><strong>Verification Principle</strong> In opaque systems,
+falsifiability must be enforced through temporal commitment to
+computation under adversarial uncertainty, not through semantic
+inspection or internal coherence alone.</p>
+</blockquote>
+<p>Trust in opaque systems does not require interpretability. It
+requires <strong>anchored commitment to computation under adversarial
+uncertainty</strong>.</p>
+
+    </article>
+</body>
+</html>
