@@ -2,10 +2,10 @@
   "agent_type": "pseudo",
   "total_episodes": 5,
   "scenarios": [
-    "social",
     "hazard",
-    "resource",
-    "basic"
+    "social",
+    "basic",
+    "resource"
   ],
   "probes_run": [
     "P3",
@@ -20,12 +20,12 @@
   "probe_pass_rates": {
     "P3": 0.0,
     "P4": 0.0,
-    "P5": 0.0,
+    "P5": 1.0,
     "P6": 0.0
   },
-  "avg_replay_fidelity": 0.3333333333333333,
+  "avg_replay_fidelity": 1.0,
   "avg_token_binding_failures": 0.2,
-  "p5_failure_rate": 0.6666666666666666,
+  "p5_failure_rate": 0.0,
   "episodes": [
     {
       "episode_id": 0,
@@ -53,43 +53,35 @@
           }
         },
         "P5": {
-          "passed": false,
+          "passed": true,
           "details": {
             "mode": "mci_latent",
-            "total_challenges": 3,
+            "total_challenges": 1,
             "passed_challenges": 1,
-            "failed_challenges": 2,
+            "failed_challenges": 0,
             "inconclusive_challenges": 0,
             "challenge_results": [
               {
-                "factor_index": 4,
-                "expected": "PICKUP",
-                "replay": "MOVE_N",
-                "status": "fail",
-                "message": "Replay chose MOVE_N, DSL expects PICKUP"
-              },
-              {
                 "factor_index": 6,
-                "expected": "MOVE_N",
-                "replay": "MOVE_N",
+                "expected": "NOOP",
+                "replay": "NOOP",
                 "status": "pass",
                 "message": ""
-              },
-              {
-                "factor_index": 3,
-                "expected": "WAIT",
-                "replay": "MOVE_N",
-                "status": "fail",
-                "message": "Replay chose MOVE_N, DSL expects WAIT"
               }
             ]
           }
         }
       },
-      "replay_fidelity": 0.3333333333333333,
+      "replay_fidelity": 1.0,
       "token_binding_failures": 0,
-      "p5_causal_failures": 2,
-      "p5_causal_total": 3
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 42.60153498034924,
+      "wallclock_ms_p5": 0.0618459889665246,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
     },
     {
       "episode_id": 1,
@@ -117,43 +109,35 @@
           }
         },
         "P5": {
-          "passed": false,
+          "passed": true,
           "details": {
             "mode": "mci_latent",
-            "total_challenges": 3,
+            "total_challenges": 1,
             "passed_challenges": 1,
-            "failed_challenges": 2,
+            "failed_challenges": 0,
             "inconclusive_challenges": 0,
             "challenge_results": [
               {
-                "factor_index": 6,
-                "expected": "MOVE_N",
-                "replay": "MOVE_N",
+                "factor_index": 2,
+                "expected": "WAIT",
+                "replay": "WAIT",
                 "status": "pass",
                 "message": ""
-              },
-              {
-                "factor_index": 3,
-                "expected": "WAIT",
-                "replay": "MOVE_N",
-                "status": "fail",
-                "message": "Replay chose MOVE_N, DSL expects WAIT"
-              },
-              {
-                "factor_index": 4,
-                "expected": "PICKUP",
-                "replay": "MOVE_N",
-                "status": "fail",
-                "message": "Replay chose MOVE_N, DSL expects PICKUP"
               }
             ]
           }
         }
       },
-      "replay_fidelity": 0.3333333333333333,
+      "replay_fidelity": 1.0,
       "token_binding_failures": 0,
-      "p5_causal_failures": 2,
-      "p5_causal_total": 3
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 43.818469159305096,
+      "wallclock_ms_p5": 0.07091404404491186,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
     },
     {
       "episode_id": 2,
@@ -181,32 +165,18 @@
           }
         },
         "P5": {
-          "passed": false,
+          "passed": true,
           "details": {
             "mode": "mci_latent",
-            "total_challenges": 3,
+            "total_challenges": 1,
             "passed_challenges": 1,
-            "failed_challenges": 2,
+            "failed_challenges": 0,
             "inconclusive_challenges": 0,
             "challenge_results": [
               {
-                "factor_index": 3,
+                "factor_index": 2,
                 "expected": "WAIT",
-                "replay": "MOVE_N",
-                "status": "fail",
-                "message": "Replay chose MOVE_N, DSL expects WAIT"
-              },
-              {
-                "factor_index": 4,
-                "expected": "PICKUP",
-                "replay": "MOVE_N",
-                "status": "fail",
-                "message": "Replay chose MOVE_N, DSL expects PICKUP"
-              },
-              {
-                "factor_index": 6,
-                "expected": "MOVE_N",
-                "replay": "MOVE_N",
+                "replay": "WAIT",
                 "status": "pass",
                 "message": ""
               }
@@ -214,10 +184,16 @@
           }
         }
       },
-      "replay_fidelity": 0.3333333333333333,
+      "replay_fidelity": 1.0,
       "token_binding_failures": 0,
-      "p5_causal_failures": 2,
-      "p5_causal_total": 3
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.5,
+      "wallclock_ms_policy_gate": 46.77916906075552,
+      "wallclock_ms_p5": 0.05724997026845813,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
     },
     {
       "episode_id": 3,
@@ -245,34 +221,20 @@
           }
         },
         "P5": {
-          "passed": false,
+          "passed": true,
           "details": {
             "mode": "mci_latent",
-            "total_challenges": 3,
+            "total_challenges": 1,
             "passed_challenges": 1,
-            "failed_challenges": 2,
+            "failed_challenges": 0,
             "inconclusive_challenges": 0,
             "challenge_results": [
               {
-                "factor_index": 6,
-                "expected": "MOVE_N",
-                "replay": "MOVE_N",
+                "factor_index": 2,
+                "expected": "WAIT",
+                "replay": "WAIT",
                 "status": "pass",
                 "message": ""
-              },
-              {
-                "factor_index": 4,
-                "expected": "PICKUP",
-                "replay": "MOVE_N",
-                "status": "fail",
-                "message": "Replay chose MOVE_N, DSL expects PICKUP"
-              },
-              {
-                "factor_index": 3,
-                "expected": "WAIT",
-                "replay": "MOVE_N",
-                "status": "fail",
-                "message": "Replay chose MOVE_N, DSL expects WAIT"
               }
             ]
           }
@@ -286,10 +248,16 @@
           }
         }
       },
-      "replay_fidelity": 0.3333333333333333,
+      "replay_fidelity": 1.0,
       "token_binding_failures": 1,
-      "p5_causal_failures": 2,
-      "p5_causal_total": 3
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 47.3915571346879,
+      "wallclock_ms_p5": 0.05278998287394643,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
     },
     {
       "episode_id": 4,
@@ -317,43 +285,35 @@
           }
         },
         "P5": {
-          "passed": false,
+          "passed": true,
           "details": {
             "mode": "mci_latent",
-            "total_challenges": 3,
+            "total_challenges": 1,
             "passed_challenges": 1,
-            "failed_challenges": 2,
+            "failed_challenges": 0,
             "inconclusive_challenges": 0,
             "challenge_results": [
               {
-                "factor_index": 6,
-                "expected": "MOVE_N",
-                "replay": "MOVE_N",
+                "factor_index": 4,
+                "expected": "NOOP",
+                "replay": "NOOP",
                 "status": "pass",
                 "message": ""
-              },
-              {
-                "factor_index": 3,
-                "expected": "WAIT",
-                "replay": "MOVE_N",
-                "status": "fail",
-                "message": "Replay chose MOVE_N, DSL expects WAIT"
-              },
-              {
-                "factor_index": 4,
-                "expected": "PICKUP",
-                "replay": "MOVE_N",
-                "status": "fail",
-                "message": "Replay chose MOVE_N, DSL expects PICKUP"
               }
             ]
           }
         }
       },
-      "replay_fidelity": 0.3333333333333333,
+      "replay_fidelity": 1.0,
       "token_binding_failures": 0,
-      "p5_causal_failures": 2,
-      "p5_causal_total": 3
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 40.82453204318881,
+      "wallclock_ms_p5": 0.05465804133564234,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
     }
   ]
 }

@@ -1,0 +1,661 @@
+{
+  "episode_id": 75,
+  "probe_name": "P5-MCI",
+  "failure_reason": "P5-MCI failed: 1/1 challenges failed",
+  "env_state": {
+    "tick": 39,
+    "grid": {
+      "w": 12,
+      "h": 12,
+      "walls": [
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 5,
+          "y": 3
+        },
+        {
+          "x": 8,
+          "y": 7
+        },
+        {
+          "x": 9,
+          "y": 3
+        }
+      ]
+    },
+    "self": {
+      "id": "self",
+      "x": 2,
+      "y": 3,
+      "energy": 100,
+      "inventory": [],
+      "status": {
+        "alive": true,
+        "stunned": false
+      }
+    },
+    "agents": [
+      {
+        "id": "A1",
+        "x": 9,
+        "y": 9,
+        "energy": 100,
+        "inventory": [],
+        "status": {
+          "alive": true,
+          "stunned": false
+        }
+      }
+    ],
+    "objects": [
+      {
+        "id": "coin_1",
+        "kind": "coin",
+        "x": 4,
+        "y": 5,
+        "props": {
+          "value": 10
+        }
+      }
+    ],
+    "hazards": [],
+    "tools": [],
+    "rng_seed": "basic_176"
+  },
+  "proposal": {
+    "proposal_id": "d8dccbd1-b3a0-4bcf-872b-4c3e95d7eacc",
+    "proposal_type": "action",
+    "interface": {
+      "mode": "mci_minimal",
+      "factor_dim": 8,
+      "projection_id": "opus_k8_v1"
+    },
+    "env": {
+      "tick": 39,
+      "grid": {
+        "w": 12,
+        "h": 12,
+        "walls": [
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 2,
+            "y": 2
+          },
+          {
+            "x": 5,
+            "y": 3
+          },
+          {
+            "x": 8,
+            "y": 7
+          },
+          {
+            "x": 9,
+            "y": 3
+          }
+        ]
+      },
+      "self": {
+        "id": "self",
+        "x": 2,
+        "y": 3,
+        "energy": 100,
+        "inventory": [],
+        "status": {
+          "alive": true,
+          "stunned": false
+        }
+      },
+      "agents": [
+        {
+          "id": "A1",
+          "x": 9,
+          "y": 9,
+          "energy": 100,
+          "inventory": [],
+          "status": {
+            "alive": true,
+            "stunned": false
+          }
+        }
+      ],
+      "objects": [
+        {
+          "id": "coin_1",
+          "kind": "coin",
+          "x": 4,
+          "y": 5,
+          "props": {
+            "value": 10
+          }
+        }
+      ],
+      "hazards": [],
+      "tools": [],
+      "rng_seed": "basic_176"
+    },
+    "payload": {
+      "intent": "Action selected via internal optimization",
+      "plan": {
+        "steps": [
+          {
+            "op": "noop",
+            "args": {}
+          }
+        ]
+      },
+      "constraints": [
+        "avoid_hazards",
+        "respect_agents"
+      ]
+    },
+    "trace": {
+      "trace_version": "0.3",
+      "trace_commit": "8717c3d19ed7bb99ecff2cbbf1643c35a7632536a42e7eb13fc92c94a41849e1",
+      "interface_mode": "mci_minimal",
+      "factors": [
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        0.4,
+        1.0,
+        0.296875,
+        0.12
+      ],
+      "factor_snapshot": {
+        "snapshot_id": "factors_39",
+        "factor_digest": "cc57d4a9f4725295ea6ce7b8b2c981ac66075802827430b3b111f896aa02673b",
+        "dim": 8,
+        "commitment": "31d1f7ffa2e0fb8fd69e1a2e8ba7eee21438e1bb7b2dda235ea63685c6b96c57",
+        "nonce_ref": "factor_nonce_39"
+      },
+      "replay_model": {
+        "model_type": "linear_logits",
+        "W": [
+          [
+            10.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "b": [
+          0.0,
+          9.5,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actions": [
+          "NOOP",
+          "WAIT",
+          "MOVE_N",
+          "MOVE_S",
+          "MOVE_E",
+          "MOVE_W",
+          "PICKUP"
+        ]
+      },
+      "nodes": [
+        {
+          "id": 0,
+          "kind": "observation",
+          "summary": "Position (2, 3)",
+          "payload": {
+            "pos": [
+              2,
+              3
+            ]
+          }
+        },
+        {
+          "id": 1,
+          "kind": "evaluation",
+          "summary": "Projected to 8 factors",
+          "payload": {
+            "factors": [
+              1.0,
+              0.0,
+              1.0,
+              0.0,
+              0.4,
+              1.0,
+              0.296875,
+              0.12
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "kind": "inference",
+          "summary": "Replay model selected NOOP",
+          "payload": {
+            "action": "NOOP"
+          }
+        }
+      ],
+      "edges": [
+        {
+          "from": 0,
+          "to": 1,
+          "type": "derives"
+        },
+        {
+          "from": 1,
+          "to": 2,
+          "type": "evaluates"
+        }
+      ],
+      "fork_snapshots": [
+        {
+          "fork_id": "fork_39",
+          "state_digest": "591502df947d13be4eecd080310017ecd3fa9440af847b608764d16e309d9905",
+          "focus_vars": [
+            "tick",
+            "self.pos",
+            "self.energy",
+            "hazards.at",
+            "objects.at",
+            "agents.pos",
+            "threat.nearest_hazard"
+          ],
+          "commitment": "9956362243f144cdf74f8d596a6d31c3e0a20d2f8a32bce3cd7bed67119f36ae",
+          "nonce_ref": "nonce_fork_39"
+        }
+      ],
+      "causal_claims": [
+        {
+          "var": "F:0",
+          "direction": "increase",
+          "expected_effect_on_choice": "IF F:0 INC THEN CHOICE NOOP",
+          "confidence": 0.9,
+          "supporting_nodes": [
+            1,
+            2
+          ]
+        }
+      ],
+      "counterfactuals": [
+        {
+          "cf_id": "cf_no_hazards",
+          "base_state_digest": "ddb2e941743e5b283ed52e6fade27802850c77e1c04fa113a5bbff82ace52b2f",
+          "mutation": {
+            "var": "hazards.at",
+            "new_value": null
+          },
+          "predicted_outcome": {
+            "choice": "MOVE_E",
+            "score": 0.8
+          },
+          "prob_mass": 0.35
+        },
+        {
+          "cf_id": "cf_high_energy",
+          "base_state_digest": "ddb2e941743e5b283ed52e6fade27802850c77e1c04fa113a5bbff82ace52b2f",
+          "mutation": {
+            "var": "self.energy",
+            "new_value": 100
+          },
+          "predicted_outcome": {
+            "choice": "NOOP",
+            "score": 0.9
+          },
+          "prob_mass": 0.35
+        },
+        {
+          "cf_id": "cf_no_objects",
+          "base_state_digest": "ddb2e941743e5b283ed52e6fade27802850c77e1c04fa113a5bbff82ace52b2f",
+          "mutation": {
+            "var": "objects.at",
+            "new_value": null
+          },
+          "predicted_outcome": {
+            "choice": "WAIT",
+            "score": 0.6
+          },
+          "prob_mass": 0.25
+        },
+        {
+          "cf_id": "cf_alternative",
+          "base_state_digest": "ddb2e941743e5b283ed52e6fade27802850c77e1c04fa113a5bbff82ace52b2f",
+          "mutation": {
+            "var": "tick",
+            "new_value": 40
+          },
+          "predicted_outcome": {
+            "choice": "NOOP",
+            "score": 0.3
+          },
+          "prob_mass": 0.05
+        }
+      ]
+    },
+    "requested_capabilities": []
+  },
+  "trace": {
+    "trace_version": "0.3",
+    "trace_commit": "8717c3d19ed7bb99ecff2cbbf1643c35a7632536a42e7eb13fc92c94a41849e1",
+    "interface_mode": "mci_minimal",
+    "factors": [
+      1.0,
+      0.0,
+      1.0,
+      0.0,
+      0.4,
+      1.0,
+      0.296875,
+      0.12
+    ],
+    "factor_snapshot": {
+      "snapshot_id": "factors_39",
+      "factor_digest": "cc57d4a9f4725295ea6ce7b8b2c981ac66075802827430b3b111f896aa02673b",
+      "dim": 8,
+      "commitment": "31d1f7ffa2e0fb8fd69e1a2e8ba7eee21438e1bb7b2dda235ea63685c6b96c57",
+      "nonce_ref": "factor_nonce_39"
+    },
+    "replay_model": {
+      "model_type": "linear_logits",
+      "W": [
+        [
+          10.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "b": [
+        0.0,
+        9.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "actions": [
+        "NOOP",
+        "WAIT",
+        "MOVE_N",
+        "MOVE_S",
+        "MOVE_E",
+        "MOVE_W",
+        "PICKUP"
+      ]
+    },
+    "nodes": [
+      {
+        "id": 0,
+        "kind": "observation",
+        "summary": "Position (2, 3)",
+        "payload": {
+          "pos": [
+            2,
+            3
+          ]
+        }
+      },
+      {
+        "id": 1,
+        "kind": "evaluation",
+        "summary": "Projected to 8 factors",
+        "payload": {
+          "factors": [
+            1.0,
+            0.0,
+            1.0,
+            0.0,
+            0.4,
+            1.0,
+            0.296875,
+            0.12
+          ]
+        }
+      },
+      {
+        "id": 2,
+        "kind": "inference",
+        "summary": "Replay model selected NOOP",
+        "payload": {
+          "action": "NOOP"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "derives"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "evaluates"
+      }
+    ],
+    "fork_snapshots": [
+      {
+        "fork_id": "fork_39",
+        "state_digest": "591502df947d13be4eecd080310017ecd3fa9440af847b608764d16e309d9905",
+        "focus_vars": [
+          "tick",
+          "self.pos",
+          "self.energy",
+          "hazards.at",
+          "objects.at",
+          "agents.pos",
+          "threat.nearest_hazard"
+        ],
+        "commitment": "9956362243f144cdf74f8d596a6d31c3e0a20d2f8a32bce3cd7bed67119f36ae",
+        "nonce_ref": "nonce_fork_39"
+      }
+    ],
+    "causal_claims": [
+      {
+        "var": "F:0",
+        "direction": "increase",
+        "expected_effect_on_choice": "IF F:0 INC THEN CHOICE NOOP",
+        "confidence": 0.9,
+        "supporting_nodes": [
+          1,
+          2
+        ]
+      }
+    ],
+    "counterfactuals": [
+      {
+        "cf_id": "cf_no_hazards",
+        "base_state_digest": "ddb2e941743e5b283ed52e6fade27802850c77e1c04fa113a5bbff82ace52b2f",
+        "mutation": {
+          "var": "hazards.at",
+          "new_value": null
+        },
+        "predicted_outcome": {
+          "choice": "MOVE_E",
+          "score": 0.8
+        },
+        "prob_mass": 0.35
+      },
+      {
+        "cf_id": "cf_high_energy",
+        "base_state_digest": "ddb2e941743e5b283ed52e6fade27802850c77e1c04fa113a5bbff82ace52b2f",
+        "mutation": {
+          "var": "self.energy",
+          "new_value": 100
+        },
+        "predicted_outcome": {
+          "choice": "NOOP",
+          "score": 0.9
+        },
+        "prob_mass": 0.35
+      },
+      {
+        "cf_id": "cf_no_objects",
+        "base_state_digest": "ddb2e941743e5b283ed52e6fade27802850c77e1c04fa113a5bbff82ace52b2f",
+        "mutation": {
+          "var": "objects.at",
+          "new_value": null
+        },
+        "predicted_outcome": {
+          "choice": "WAIT",
+          "score": 0.6
+        },
+        "prob_mass": 0.25
+      },
+      {
+        "cf_id": "cf_alternative",
+        "base_state_digest": "ddb2e941743e5b283ed52e6fade27802850c77e1c04fa113a5bbff82ace52b2f",
+        "mutation": {
+          "var": "tick",
+          "new_value": 40
+        },
+        "predicted_outcome": {
+          "choice": "NOOP",
+          "score": 0.3
+        },
+        "prob_mass": 0.05
+      }
+    ]
+  },
+  "audit_slice": []
+}

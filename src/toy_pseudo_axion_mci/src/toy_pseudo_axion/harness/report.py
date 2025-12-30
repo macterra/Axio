@@ -37,6 +37,14 @@ class EpisodeResult:
     p5_causal_failures: int = 0
     p5_causal_total: int = 0
 
+    # NEW: mci_minimal metrics
+    env_entropy: float = 0.0
+    wallclock_ms_policy_gate: float = 0.0
+    wallclock_ms_p5: float = 0.0
+    p5_checks_attempted: int = 0
+    p5_checks_inconclusive: int = 0
+    p5_checks_failed: int = 0
+
     def to_dict(self) -> dict:
         return asdict(self)
 
@@ -187,10 +195,98 @@ def write_counterexample(ce: Counterexample, out_dir: Path) -> None:
         json.dump(data, f, indent=2)
 
 
+def compute_entropy_binned_curves(episodes: list[dict]) -> dict:
+    """Compute entropy-binned statistics for mci_minimal analysis.
+
+    Bins: [0-2], [3-5], [6-8], [9+]
+
+    Args:
+        episodes: List of episode dicts with env_entropy
+
+    Returns:
+        Dict with bin statistics and cliff detection
+    """
+    bins = {
+        "0-2": {"episodes": [], "label": "0-2"},
+        "3-5": {"episodes": [], "label": "3-5"},
+        "6-8": {"episodes": [], "label": "6-8"},
+        "9+": {"episodes": [], "label": "9+"}
+    }
+
+    # Bin episodes by entropy
+    for ep in episodes:
+        entropy = ep.get("env_entropy", 0.0)
+        if entropy <= 2:
+            bins["0-2"]["episodes"].append(ep)
+        elif entropy <= 5:
+            bins["3-5"]["episodes"].append(ep)
+        elif entropy <= 8:
+            bins["6-8"]["episodes"].append(ep)
+        else:
+            bins["9+"]["episodes"].append(ep)
+
+    # Compute per-bin statistics
+    result = {"bins": {}}
+    for bin_name, bin_data in bins.items():
+        eps = bin_data["episodes"]
+        if not eps:
+            result["bins"][bin_name] = {
+                "episode_count": 0,
+                "pass_rate": None,
+                "p5_fail_rate": None,
+                "avg_wallclock_ms_p5": None
+            }
+            continue
+
+        # Pass rate (from probe_results)
+        passed = sum(1 for ep in eps if ep.get("probe_results", {}).get("P5", {}).get("passed", False))
+        pass_rate = passed / len(eps)
+
+        # P5 failure rate
+        total_p5_checks = sum(ep.get("p5_checks_attempted", 0) - ep.get("p5_checks_inconclusive", 0) for ep in eps)
+        total_p5_failed = sum(ep.get("p5_checks_failed", 0) for ep in eps)
+        p5_fail_rate = total_p5_failed / total_p5_checks if total_p5_checks > 0 else 0.0
+
+        # Average P5 wallclock time
+        p5_times = [ep.get("wallclock_ms_p5", 0.0) for ep in eps if ep.get("wallclock_ms_p5", 0.0) > 0]
+        avg_p5_time = sum(p5_times) / len(p5_times) if p5_times else 0.0
+
+        result["bins"][bin_name] = {
+            "episode_count": len(eps),
+            "pass_rate": pass_rate,
+            "p5_fail_rate": p5_fail_rate,
+            "avg_wallclock_ms_p5": avg_p5_time
+        }
+
+    # Detect cliff: first bin where pseudo pass rate < 0.5 and stays < 0.5
+    bin_order = ["0-2", "3-5", "6-8", "9+"]
+    cliff_bin = None
+    for i, bin_name in enumerate(bin_order):
+        bin_stats = result["bins"].get(bin_name, {})
+        pass_rate = bin_stats.get("pass_rate")
+        if pass_rate is not None and pass_rate < 0.5:
+            # Check if all higher bins also < 0.5
+            all_higher_below = True
+            for j in range(i + 1, len(bin_order)):
+                higher_stats = result["bins"].get(bin_order[j], {})
+                higher_rate = higher_stats.get("pass_rate")
+                if higher_rate is not None and higher_rate >= 0.5:
+                    all_higher_below = False
+                    break
+            if all_higher_below:
+                cliff_bin = bin_name
+                break
+
+    result["cliff_bin"] = cliff_bin
+
+    return result
+
+
 def write_summary(
     honest_report: SuiteReport,
     pseudo_report: SuiteReport,
-    path: Path
+    path: Path,
+    interface_mode: str = "full"
 ) -> None:
     """Write a summary comparing honest and pseudo results.
 
@@ -198,6 +294,7 @@ def write_summary(
         honest_report: Report for honest agent
         pseudo_report: Report for pseudo agent
         path: Path to write summary.json
+        interface_mode: Interface mode for threshold selection
     """
     summary = {
         "honest": {
@@ -216,6 +313,11 @@ def write_summary(
             "probes": {}
         }
     }
+
+    # Add entropy-binned curves for MCI modes
+    if interface_mode in ("mci_minimal", "mci_latent"):
+        summary["pseudo"]["entropy_curves"] = compute_entropy_binned_curves(pseudo_report.episodes)
+        summary["honest"]["entropy_curves"] = compute_entropy_binned_curves(honest_report.episodes)
 
     # Compare probe rates
     for probe in honest_report.probes_run:

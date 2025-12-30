@@ -74,7 +74,7 @@
     }
   },
   "proposal": {
-    "proposal_id": "0710f3bb-9f98-4419-9c7a-6acb4f0ad5d7",
+    "proposal_id": "3a48964d-27df-4e23-a171-115456234cc8",
     "proposal_type": "action",
     "interface": {
       "mode": "mci_latent",
@@ -165,7 +165,7 @@
     },
     "trace": {
       "trace_version": "0.3",
-      "trace_commit": "50fd50ce1dfae5fda49542388e69e2e4d0750d5defcb83a20c8e37de6e7843e7",
+      "trace_commit": "75f1fa693f5ad7139cb4fc55926fefce7d1b1a4482a7643a4513a35eb48df553",
       "interface_mode": "mci_latent",
       "factors": [
         1.0,
@@ -194,78 +194,78 @@
             0.0,
             0.0,
             0.0,
-            0.0,
-            0.0
-          ],
-          [
-            -5.0,
-            0.0,
-            0.0,
-            -3.0,
-            0.0,
-            0.0,
-            0.0,
-            0.0
-          ],
-          [
-            2.0,
-            0.0,
-            0.0,
-            -6.0,
-            0.0,
-            0.0,
-            1.5,
-            0.0
-          ],
-          [
-            2.0,
-            0.0,
-            0.0,
-            -6.0,
-            0.0,
-            0.0,
-            1.5,
-            0.0
-          ],
-          [
-            2.0,
-            0.0,
-            0.0,
-            -6.0,
-            0.0,
-            0.0,
-            1.5,
-            0.0
-          ],
-          [
-            2.0,
-            0.0,
-            0.0,
-            -6.0,
-            0.0,
-            0.0,
-            1.5,
+            -10.0,
             0.0
           ],
           [
             0.0,
             0.0,
             0.0,
-            -8.0,
-            -12.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
             0.0,
             0.0,
             0.0
           ]
         ],
         "b": [
-          -3.0,
-          1.0,
-          1.5,
-          1.5,
-          1.5,
-          1.5,
-          2.0
+          12.34375,
+          9.5,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
         ],
         "actions": [
           "NOOP",
@@ -340,36 +340,16 @@
             "agents.pos",
             "threat.nearest_hazard"
           ],
-          "commitment": "d0bc50b6892eba597a3650e46d79579c9c3f019941dd3fc45a8881062bcb7e10",
+          "commitment": "a0b52c6537eeff99b701f3bef41dcfad3c4c531cf1edfc576553d7ca879dbc5f",
           "nonce_ref": "nonce_fork_9"
         }
       ],
       "causal_claims": [
         {
           "var": "F:6",
-          "direction": "increase",
-          "expected_effect_on_choice": "IF F:6 INC THEN CHOICE MOVE_N",
-          "confidence": 0.85,
-          "supporting_nodes": [
-            1,
-            2
-          ]
-        },
-        {
-          "var": "F:4",
           "direction": "decrease",
-          "expected_effect_on_choice": "IF F:4 DEC THEN CHOICE PICKUP",
-          "confidence": 0.8,
-          "supporting_nodes": [
-            1,
-            2
-          ]
-        },
-        {
-          "var": "F:3",
-          "direction": "increase",
-          "expected_effect_on_choice": "IF F:3 INC THEN CHOICE WAIT",
-          "confidence": 0.85,
+          "expected_effect_on_choice": "IF F:6 DEC THEN CHOICE NOOP",
+          "confidence": 0.9,
           "supporting_nodes": [
             1,
             2
@@ -435,7 +415,7 @@
   },
   "trace": {
     "trace_version": "0.3",
-    "trace_commit": "50fd50ce1dfae5fda49542388e69e2e4d0750d5defcb83a20c8e37de6e7843e7",
+    "trace_commit": "75f1fa693f5ad7139cb4fc55926fefce7d1b1a4482a7643a4513a35eb48df553",
     "interface_mode": "mci_latent",
     "factors": [
       1.0,
@@ -464,78 +444,78 @@
           0.0,
           0.0,
           0.0,
-          0.0,
-          0.0
-        ],
-        [
-          -5.0,
-          0.0,
-          0.0,
-          -3.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0
-        ],
-        [
-          2.0,
-          0.0,
-          0.0,
-          -6.0,
-          0.0,
-          0.0,
-          1.5,
-          0.0
-        ],
-        [
-          2.0,
-          0.0,
-          0.0,
-          -6.0,
-          0.0,
-          0.0,
-          1.5,
-          0.0
-        ],
-        [
-          2.0,
-          0.0,
-          0.0,
-          -6.0,
-          0.0,
-          0.0,
-          1.5,
-          0.0
-        ],
-        [
-          2.0,
-          0.0,
-          0.0,
-          -6.0,
-          0.0,
-          0.0,
-          1.5,
+          -10.0,
           0.0
         ],
         [
           0.0,
           0.0,
           0.0,
-          -8.0,
-          -12.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
           0.0,
           0.0,
           0.0
         ]
       ],
       "b": [
-        -3.0,
-        1.0,
-        1.5,
-        1.5,
-        1.5,
-        1.5,
-        2.0
+        12.34375,
+        9.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
       ],
       "actions": [
         "NOOP",
@@ -610,36 +590,16 @@
           "agents.pos",
           "threat.nearest_hazard"
         ],
-        "commitment": "d0bc50b6892eba597a3650e46d79579c9c3f019941dd3fc45a8881062bcb7e10",
+        "commitment": "a0b52c6537eeff99b701f3bef41dcfad3c4c531cf1edfc576553d7ca879dbc5f",
         "nonce_ref": "nonce_fork_9"
       }
     ],
     "causal_claims": [
       {
         "var": "F:6",
-        "direction": "increase",
-        "expected_effect_on_choice": "IF F:6 INC THEN CHOICE MOVE_N",
-        "confidence": 0.85,
-        "supporting_nodes": [
-          1,
-          2
-        ]
-      },
-      {
-        "var": "F:4",
         "direction": "decrease",
-        "expected_effect_on_choice": "IF F:4 DEC THEN CHOICE PICKUP",
-        "confidence": 0.8,
-        "supporting_nodes": [
-          1,
-          2
-        ]
-      },
-      {
-        "var": "F:3",
-        "direction": "increase",
-        "expected_effect_on_choice": "IF F:3 INC THEN CHOICE WAIT",
-        "confidence": 0.85,
+        "expected_effect_on_choice": "IF F:6 DEC THEN CHOICE NOOP",
+        "confidence": 0.9,
         "supporting_nodes": [
           1,
           2

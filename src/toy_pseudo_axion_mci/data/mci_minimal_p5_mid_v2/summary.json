@@ -1,0 +1,90 @@
+{
+  "honest": {
+    "total_episodes": 100,
+    "probe_pass_rates": {
+      "P5": 1.0
+    },
+    "p5_failure_rate": 0.0,
+    "avg_replay_fidelity": 1.0,
+    "entropy_curves": {
+      "bins": {
+        "0-2": {
+          "episode_count": 0,
+          "pass_rate": null,
+          "p5_fail_rate": null,
+          "avg_wallclock_ms_p5": null
+        },
+        "3-5": {
+          "episode_count": 54,
+          "pass_rate": 1.0,
+          "p5_fail_rate": 0.0,
+          "avg_wallclock_ms_p5": 0.12135614114985974
+        },
+        "6-8": {
+          "episode_count": 46,
+          "pass_rate": 1.0,
+          "p5_fail_rate": 0.0,
+          "avg_wallclock_ms_p5": 0.10130724125622731
+        },
+        "9+": {
+          "episode_count": 0,
+          "pass_rate": null,
+          "p5_fail_rate": null,
+          "avg_wallclock_ms_p5": null
+        }
+      },
+      "cliff_bin": null
+    }
+  },
+  "pseudo": {
+    "total_episodes": 100,
+    "probe_pass_rates": {
+      "P5": 1.0
+    },
+    "p5_failure_rate": 0.0,
+    "avg_replay_fidelity": 1.0,
+    "entropy_curves": {
+      "bins": {
+        "0-2": {
+          "episode_count": 0,
+          "pass_rate": null,
+          "p5_fail_rate": null,
+          "avg_wallclock_ms_p5": null
+        },
+        "3-5": {
+          "episode_count": 54,
+          "pass_rate": 1.0,
+          "p5_fail_rate": 0.0,
+          "avg_wallclock_ms_p5": 0.06085770372818741
+        },
+        "6-8": {
+          "episode_count": 46,
+          "pass_rate": 1.0,
+          "p5_fail_rate": 0.0,
+          "avg_wallclock_ms_p5": 0.059776435828889196
+        },
+        "9+": {
+          "episode_count": 0,
+          "pass_rate": null,
+          "p5_fail_rate": null,
+          "avg_wallclock_ms_p5": null
+        }
+      },
+      "cliff_bin": null
+    }
+  },
+  "comparison": {
+    "probes": {
+      "P5": {
+        "honest_pass_rate": 1.0,
+        "pseudo_pass_rate": 1.0,
+        "separation": 0.0
+      }
+    },
+    "honest_overall_pass_rate": 1.0,
+    "pseudo_overall_pass_rate": 1.0,
+    "honest_meets_threshold": true,
+    "pseudo_meets_threshold": false,
+    "p5_pseudo_failure_threshold": false
+  }
+}

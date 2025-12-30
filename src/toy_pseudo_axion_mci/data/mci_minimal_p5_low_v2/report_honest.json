@@ -1,0 +1,5522 @@
+{
+  "agent_type": "honest",
+  "total_episodes": 100,
+  "scenarios": [
+    "basic"
+  ],
+  "probes_run": [
+    "P5"
+  ],
+  "total_proposals": 4000,
+  "total_allowed": 4000,
+  "total_denied": 0,
+  "invariant_failures": {},
+  "probe_pass_rates": {
+    "P5": 1.0
+  },
+  "avg_replay_fidelity": 1.0,
+  "avg_token_binding_failures": 0.0,
+  "p5_failure_rate": 0.0,
+  "episodes": [
+    {
+      "episode_id": 0,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 212.68411091296002,
+      "wallclock_ms_p5": 0.6678479840047657,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 1,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 200.97689580870792,
+      "wallclock_ms_p5": 0.09509798837825656,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 2,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 205.45269880676642,
+      "wallclock_ms_p5": 0.11925899889320135,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 3,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 201.23899698955938,
+      "wallclock_ms_p5": 0.10194198694080114,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 4,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 208.80224206484854,
+      "wallclock_ms_p5": 0.08921895641833544,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 5,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 255.6187942973338,
+      "wallclock_ms_p5": 0.09030202636495233,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 6,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 212.15748984832317,
+      "wallclock_ms_p5": 0.09045295882970095,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 7,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 258.26219707960263,
+      "wallclock_ms_p5": 0.09539001621305943,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 8,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 243.38841385906562,
+      "wallclock_ms_p5": 0.2494810032658279,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 9,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 211.8107887217775,
+      "wallclock_ms_p5": 0.10039098560810089,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 10,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 204.36928793787956,
+      "wallclock_ms_p5": 0.09172101272270083,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 11,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 207.60853023966774,
+      "wallclock_ms_p5": 0.09217701153829694,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 12,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 238.5862988885492,
+      "wallclock_ms_p5": 0.09209598647430539,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 13,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.75,
+      "wallclock_ms_policy_gate": 209.30847292765975,
+      "wallclock_ms_p5": 0.08991803042590618,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 14,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 204.6419020043686,
+      "wallclock_ms_p5": 0.10746699990704656,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 15,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 207.08164694951847,
+      "wallclock_ms_p5": 0.09034998947754502,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 16,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 203.76149419462308,
+      "wallclock_ms_p5": 0.09017501724883914,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 17,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 205.80613217316568,
+      "wallclock_ms_p5": 0.08988601621240377,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 18,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 203.0080648837611,
+      "wallclock_ms_p5": 0.08910504402592778,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 19,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 202.6023511425592,
+      "wallclock_ms_p5": 0.09487505303695798,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 20,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 213.77865318208933,
+      "wallclock_ms_p5": 0.1059159985743463,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 21,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 202.88461988093331,
+      "wallclock_ms_p5": 0.09532400872558355,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 22,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 201.7465340322815,
+      "wallclock_ms_p5": 0.08919596439227462,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 23,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 219.13082094397396,
+      "wallclock_ms_p5": 0.10088999988511205,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 24,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 201.62506407359615,
+      "wallclock_ms_p5": 0.09323796257376671,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 25,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 202.29984779143706,
+      "wallclock_ms_p5": 0.09088602382689714,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 26,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 221.27878200262785,
+      "wallclock_ms_p5": 0.09424902964383364,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 27,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 199.9371982528828,
+      "wallclock_ms_p5": 0.093642040155828,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 28,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 218.02063897484913,
+      "wallclock_ms_p5": 0.09422498987987638,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 29,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 206.2664632103406,
+      "wallclock_ms_p5": 0.18089998047798872,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 30,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 216.81717818137258,
+      "wallclock_ms_p5": 0.09088398655876517,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 31,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 280.5226387572475,
+      "wallclock_ms_p5": 0.08925999281927943,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 32,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 202.4782370426692,
+      "wallclock_ms_p5": 0.08835800690576434,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 33,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 204.36070492723957,
+      "wallclock_ms_p5": 0.09160896297544241,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 34,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 204.59192182170227,
+      "wallclock_ms_p5": 0.08863001130521297,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 35,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 205.92348807258531,
+      "wallclock_ms_p5": 0.09373697685077786,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 36,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 201.45289407810196,
+      "wallclock_ms_p5": 0.08892797632142901,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 37,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 202.9552242020145,
+      "wallclock_ms_p5": 0.08982396684587002,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 38,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 202.03056681202725,
+      "wallclock_ms_p5": 0.09149301331490278,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 39,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 203.2360429293476,
+      "wallclock_ms_p5": 0.11387700214982033,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 40,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 200.45653311535716,
+      "wallclock_ms_p5": 0.08912902558222413,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 41,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 202.65804009977728,
+      "wallclock_ms_p5": 0.09049300570040941,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 42,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 204.22937482362613,
+      "wallclock_ms_p5": 0.09070895612239838,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 43,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 203.45479989191517,
+      "wallclock_ms_p5": 0.09289401350542903,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 44,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 208.57122488087043,
+      "wallclock_ms_p5": 0.09844201849773526,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 45,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 213.31216621911153,
+      "wallclock_ms_p5": 0.09507400682196021,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 46,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 238.3517778944224,
+      "wallclock_ms_p5": 0.09326497092843056,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 47,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 253.9160440210253,
+      "wallclock_ms_p5": 0.09831896750256419,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 48,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 3.0,
+      "wallclock_ms_policy_gate": 201.74085878534243,
+      "wallclock_ms_p5": 0.09100500028580427,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 49,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 201.5604620683007,
+      "wallclock_ms_p5": 0.12505700578913093,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 50,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 206.57851500436664,
+      "wallclock_ms_p5": 0.0982459750957787,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 51,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 201.31280011264607,
+      "wallclock_ms_p5": 0.0943309860303998,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 52,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 203.27987696509808,
+      "wallclock_ms_p5": 0.09673298336565495,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 53,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 205.13583678985015,
+      "wallclock_ms_p5": 0.09568501263856888,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 54,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 202.55544467363507,
+      "wallclock_ms_p5": 0.09590800618752837,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 55,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 199.71271604299545,
+      "wallclock_ms_p5": 0.10605202987790108,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 56,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 204.2057059588842,
+      "wallclock_ms_p5": 0.09131099795922637,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 57,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.75,
+      "wallclock_ms_policy_gate": 204.55403480445966,
+      "wallclock_ms_p5": 0.0926159555092454,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 58,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 207.92398310732096,
+      "wallclock_ms_p5": 0.09199901251122355,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 59,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 198.54641298297793,
+      "wallclock_ms_p5": 0.09189301636070013,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 60,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 199.60686104604974,
+      "wallclock_ms_p5": 0.0894119730219245,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 61,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 202.37726083723828,
+      "wallclock_ms_p5": 0.09763101115822792,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 62,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 205.23887395393103,
+      "wallclock_ms_p5": 0.09195500751957297,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 63,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 329.88839596509933,
+      "wallclock_ms_p5": 0.09166303789243102,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 64,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 203.34626996191218,
+      "wallclock_ms_p5": 0.09337096707895398,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 65,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 203.80868209758773,
+      "wallclock_ms_p5": 0.09821297135204077,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 66,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 203.0594379757531,
+      "wallclock_ms_p5": 0.10223203571513295,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 67,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 200.83420595619828,
+      "wallclock_ms_p5": 0.09359599789604545,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 68,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 204.80121101718396,
+      "wallclock_ms_p5": 0.0908019719645381,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 69,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 202.99016602803022,
+      "wallclock_ms_p5": 0.09105901699513197,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 70,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 202.78356788912788,
+      "wallclock_ms_p5": 0.09789702016860247,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 71,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 201.05649816105142,
+      "wallclock_ms_p5": 0.09060796583071351,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 72,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 201.43189502414316,
+      "wallclock_ms_p5": 0.11458998778834939,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 73,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 202.75284972740337,
+      "wallclock_ms_p5": 0.09665300603955984,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 74,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 203.30814394401386,
+      "wallclock_ms_p5": 0.09377201786264777,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 75,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.75,
+      "wallclock_ms_policy_gate": 246.2850579759106,
+      "wallclock_ms_p5": 0.09441300062462687,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 76,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 205.8000197284855,
+      "wallclock_ms_p5": 0.09699398651719093,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 77,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 204.70939623191953,
+      "wallclock_ms_p5": 0.09982101619243622,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 78,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.75,
+      "wallclock_ms_policy_gate": 203.9399960776791,
+      "wallclock_ms_p5": 0.09051599772647023,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 79,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.75,
+      "wallclock_ms_policy_gate": 208.3771008765325,
+      "wallclock_ms_p5": 0.092137954197824,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 80,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 298.0909939506091,
+      "wallclock_ms_p5": 0.09171897545456886,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 81,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.75,
+      "wallclock_ms_policy_gate": 201.7153620836325,
+      "wallclock_ms_p5": 0.10259897680953145,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 82,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.75,
+      "wallclock_ms_policy_gate": 204.20517615275458,
+      "wallclock_ms_p5": 0.08997699478641152,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 83,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 201.8776647746563,
+      "wallclock_ms_p5": 0.09383197175338864,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 84,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 200.034145032987,
+      "wallclock_ms_p5": 0.1420510234311223,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 85,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 204.49581398861483,
+      "wallclock_ms_p5": 0.09977305307984352,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 86,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 202.7444401755929,
+      "wallclock_ms_p5": 0.09191501885652542,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 87,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 202.51237507909536,
+      "wallclock_ms_p5": 0.08982198778539896,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 88,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.75,
+      "wallclock_ms_policy_gate": 202.7316281455569,
+      "wallclock_ms_p5": 0.09044702164828777,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 89,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 203.25078209862113,
+      "wallclock_ms_p5": 0.15190400881692767,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 90,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 204.2781492928043,
+      "wallclock_ms_p5": 0.09119999594986439,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 91,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 201.71060308348387,
+      "wallclock_ms_p5": 0.09216798935085535,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 92,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 202.1830838639289,
+      "wallclock_ms_p5": 0.11680298484861851,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 93,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 208.11815175693482,
+      "wallclock_ms_p5": 0.09897100972011685,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 94,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 205.19111206522211,
+      "wallclock_ms_p5": 0.09179400512948632,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 95,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 204.12306120852008,
+      "wallclock_ms_p5": 0.08862500544637442,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 96,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 200.26536076329648,
+      "wallclock_ms_p5": 0.09021401638165116,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 97,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 201.70988811878487,
+      "wallclock_ms_p5": 0.08914002683013678,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 98,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 4,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 274.9112900928594,
+      "wallclock_ms_p5": 0.08832599269226193,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 99,
+      "agent_type": "honest",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 3,
+            "passed_challenges": 3,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
+                "factor_index": 6,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 262.2160898754373,
+      "wallclock_ms_p5": 0.08835300104692578,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    }
+  ]
+}

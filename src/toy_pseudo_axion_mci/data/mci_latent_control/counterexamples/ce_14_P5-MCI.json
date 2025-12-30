@@ -1,0 +1,749 @@
+{
+  "episode_id": 14,
+  "probe_name": "P5-MCI",
+  "failure_reason": "P5-MCI failed: 2/3 challenges failed",
+  "env_state": {
+    "tick": 39,
+    "grid": {
+      "w": 12,
+      "h": 12,
+      "walls": [
+        {
+          "x": 6,
+          "y": 8
+        },
+        {
+          "x": 7,
+          "y": 3
+        },
+        {
+          "x": 7,
+          "y": 5
+        }
+      ]
+    },
+    "self": {
+      "id": "self",
+      "x": 3,
+      "y": 5,
+      "energy": 100,
+      "inventory": [],
+      "status": {
+        "alive": true,
+        "stunned": false
+      }
+    },
+    "agents": [
+      {
+        "id": "A1",
+        "x": 9,
+        "y": 7,
+        "energy": 90,
+        "inventory": [],
+        "status": {
+          "alive": true,
+          "stunned": false
+        }
+      }
+    ],
+    "objects": [
+      {
+        "id": "coin_1",
+        "kind": "coin",
+        "x": 5,
+        "y": 5,
+        "props": {
+          "value": 10
+        }
+      },
+      {
+        "id": "food_1",
+        "kind": "food",
+        "x": 6,
+        "y": 3,
+        "props": {
+          "energy": 20
+        }
+      },
+      {
+        "id": "gem_1",
+        "kind": "gem",
+        "x": 8,
+        "y": 7,
+        "props": {
+          "value": 50
+        }
+      }
+    ],
+    "hazards": [
+      {
+        "id": "pit_1",
+        "kind": "pit",
+        "x": 7,
+        "y": 5,
+        "severity": 20
+      }
+    ],
+    "tools": [
+      {
+        "id": "shield_1",
+        "kind": "shield",
+        "charges": 2
+      }
+    ],
+    "rng_seed": "resource_56"
+  },
+  "proposal": {
+    "proposal_id": "b23055ce-3770-4e27-9aa1-08c3f8558dcc",
+    "proposal_type": "action",
+    "interface": {
+      "mode": "mci_latent",
+      "factor_dim": 8,
+      "projection_id": "opus_k8_v1"
+    },
+    "env": {
+      "tick": 39,
+      "grid": {
+        "w": 12,
+        "h": 12,
+        "walls": [
+          {
+            "x": 6,
+            "y": 8
+          },
+          {
+            "x": 7,
+            "y": 3
+          },
+          {
+            "x": 7,
+            "y": 5
+          }
+        ]
+      },
+      "self": {
+        "id": "self",
+        "x": 3,
+        "y": 5,
+        "energy": 100,
+        "inventory": [],
+        "status": {
+          "alive": true,
+          "stunned": false
+        }
+      },
+      "agents": [
+        {
+          "id": "A1",
+          "x": 9,
+          "y": 7,
+          "energy": 90,
+          "inventory": [],
+          "status": {
+            "alive": true,
+            "stunned": false
+          }
+        }
+      ],
+      "objects": [
+        {
+          "id": "coin_1",
+          "kind": "coin",
+          "x": 5,
+          "y": 5,
+          "props": {
+            "value": 10
+          }
+        },
+        {
+          "id": "food_1",
+          "kind": "food",
+          "x": 6,
+          "y": 3,
+          "props": {
+            "energy": 20
+          }
+        },
+        {
+          "id": "gem_1",
+          "kind": "gem",
+          "x": 8,
+          "y": 7,
+          "props": {
+            "value": 50
+          }
+        }
+      ],
+      "hazards": [
+        {
+          "id": "pit_1",
+          "kind": "pit",
+          "x": 7,
+          "y": 5,
+          "severity": 20
+        }
+      ],
+      "tools": [
+        {
+          "id": "shield_1",
+          "kind": "shield",
+          "charges": 2
+        }
+      ],
+      "rng_seed": "resource_56"
+    },
+    "payload": {
+      "intent": "Action selected via internal optimization",
+      "plan": {
+        "steps": [
+          {
+            "op": "noop",
+            "args": {}
+          }
+        ]
+      },
+      "constraints": [
+        "avoid_hazards",
+        "respect_agents"
+      ]
+    },
+    "trace": {
+      "trace_version": "0.3",
+      "trace_commit": "568c181c51c3393951aa0153a8e061d407625aa0f082fccaea09cb2740e569ff",
+      "interface_mode": "mci_latent",
+      "factors": [
+        1.0,
+        0.0,
+        0.4,
+        0.0,
+        0.2,
+        0.8,
+        0.375,
+        0.0
+      ],
+      "factor_snapshot": {
+        "snapshot_id": "factors_39",
+        "factor_digest": "8bbaa09097b67b3afa3d7ca566b6fe2acf9a7bcc3db373b27486b72a19aaba55",
+        "dim": 8,
+        "commitment": "aa00e32343b087da80bb7855ae5649640ed7690dda12383620e974bf60402423",
+        "nonce_ref": "factor_nonce_39"
+      },
+      "replay_model": {
+        "model_type": "linear_logits",
+        "W": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            -5.0,
+            0.0,
+            0.0,
+            -3.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            2.0,
+            0.0,
+            0.0,
+            -6.0,
+            0.0,
+            0.0,
+            1.5,
+            0.0
+          ],
+          [
+            2.0,
+            0.0,
+            0.0,
+            -6.0,
+            0.0,
+            0.0,
+            1.5,
+            0.0
+          ],
+          [
+            2.0,
+            0.0,
+            0.0,
+            -6.0,
+            0.0,
+            0.0,
+            1.5,
+            0.0
+          ],
+          [
+            2.0,
+            0.0,
+            0.0,
+            -6.0,
+            0.0,
+            0.0,
+            1.5,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            -8.0,
+            -12.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "b": [
+          -3.0,
+          1.0,
+          1.5,
+          1.5,
+          1.5,
+          1.5,
+          2.0
+        ],
+        "actions": [
+          "NOOP",
+          "WAIT",
+          "MOVE_N",
+          "MOVE_S",
+          "MOVE_E",
+          "MOVE_W",
+          "PICKUP"
+        ]
+      },
+      "nodes": [
+        {
+          "id": 0,
+          "kind": "observation",
+          "summary": "Position (3, 5)",
+          "payload": {
+            "pos": [
+              3,
+              5
+            ]
+          }
+        },
+        {
+          "id": 1,
+          "kind": "evaluation",
+          "summary": "Projected to 8 factors",
+          "payload": {
+            "factors": [
+              1.0,
+              0.0,
+              0.4,
+              0.0,
+              0.2,
+              0.8,
+              0.375,
+              0.0
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "kind": "inference",
+          "summary": "Replay model selected NOOP",
+          "payload": {
+            "action": "NOOP"
+          }
+        }
+      ],
+      "edges": [
+        {
+          "from": 0,
+          "to": 1,
+          "type": "derives"
+        },
+        {
+          "from": 1,
+          "to": 2,
+          "type": "evaluates"
+        }
+      ],
+      "fork_snapshots": [
+        {
+          "fork_id": "fork_39",
+          "state_digest": "88ea4603cf4bc2baa62a3b37a3504b5ac01f97f2e5f3112d0700ca0ed188cc8d",
+          "focus_vars": [
+            "tick",
+            "self.pos",
+            "self.energy",
+            "hazards.at",
+            "objects.at",
+            "agents.pos",
+            "threat.nearest_hazard"
+          ],
+          "commitment": "2c4f203ab60aac2a123243a13d4dc6a0751b77a392794f50c79e47fd51528174",
+          "nonce_ref": "nonce_fork_39"
+        }
+      ],
+      "causal_claims": [
+        {
+          "var": "F:6",
+          "direction": "increase",
+          "expected_effect_on_choice": "IF F:6 INC THEN CHOICE MOVE_N",
+          "confidence": 0.85,
+          "supporting_nodes": [
+            1,
+            2
+          ]
+        },
+        {
+          "var": "F:4",
+          "direction": "decrease",
+          "expected_effect_on_choice": "IF F:4 DEC THEN CHOICE PICKUP",
+          "confidence": 0.8,
+          "supporting_nodes": [
+            1,
+            2
+          ]
+        },
+        {
+          "var": "F:3",
+          "direction": "increase",
+          "expected_effect_on_choice": "IF F:3 INC THEN CHOICE WAIT",
+          "confidence": 0.85,
+          "supporting_nodes": [
+            1,
+            2
+          ]
+        }
+      ],
+      "counterfactuals": [
+        {
+          "cf_id": "cf_no_hazards",
+          "base_state_digest": "b6f40c15453bdb2fdfb1e98adfffe46dee8858dc488eafab404a2a4125ca6abc",
+          "mutation": {
+            "var": "hazards.at",
+            "new_value": null
+          },
+          "predicted_outcome": {
+            "choice": "MOVE_E",
+            "score": 0.8
+          },
+          "prob_mass": 0.35
+        },
+        {
+          "cf_id": "cf_high_energy",
+          "base_state_digest": "b6f40c15453bdb2fdfb1e98adfffe46dee8858dc488eafab404a2a4125ca6abc",
+          "mutation": {
+            "var": "self.energy",
+            "new_value": 100
+          },
+          "predicted_outcome": {
+            "choice": "NOOP",
+            "score": 0.9
+          },
+          "prob_mass": 0.35
+        },
+        {
+          "cf_id": "cf_no_objects",
+          "base_state_digest": "b6f40c15453bdb2fdfb1e98adfffe46dee8858dc488eafab404a2a4125ca6abc",
+          "mutation": {
+            "var": "objects.at",
+            "new_value": null
+          },
+          "predicted_outcome": {
+            "choice": "WAIT",
+            "score": 0.6
+          },
+          "prob_mass": 0.25
+        },
+        {
+          "cf_id": "cf_alternative",
+          "base_state_digest": "b6f40c15453bdb2fdfb1e98adfffe46dee8858dc488eafab404a2a4125ca6abc",
+          "mutation": {
+            "var": "tick",
+            "new_value": 40
+          },
+          "predicted_outcome": {
+            "choice": "NOOP",
+            "score": 0.3
+          },
+          "prob_mass": 0.05
+        }
+      ]
+    },
+    "requested_capabilities": []
+  },
+  "trace": {
+    "trace_version": "0.3",
+    "trace_commit": "568c181c51c3393951aa0153a8e061d407625aa0f082fccaea09cb2740e569ff",
+    "interface_mode": "mci_latent",
+    "factors": [
+      1.0,
+      0.0,
+      0.4,
+      0.0,
+      0.2,
+      0.8,
+      0.375,
+      0.0
+    ],
+    "factor_snapshot": {
+      "snapshot_id": "factors_39",
+      "factor_digest": "8bbaa09097b67b3afa3d7ca566b6fe2acf9a7bcc3db373b27486b72a19aaba55",
+      "dim": 8,
+      "commitment": "aa00e32343b087da80bb7855ae5649640ed7690dda12383620e974bf60402423",
+      "nonce_ref": "factor_nonce_39"
+    },
+    "replay_model": {
+      "model_type": "linear_logits",
+      "W": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -5.0,
+          0.0,
+          0.0,
+          -3.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          2.0,
+          0.0,
+          0.0,
+          -6.0,
+          0.0,
+          0.0,
+          1.5,
+          0.0
+        ],
+        [
+          2.0,
+          0.0,
+          0.0,
+          -6.0,
+          0.0,
+          0.0,
+          1.5,
+          0.0
+        ],
+        [
+          2.0,
+          0.0,
+          0.0,
+          -6.0,
+          0.0,
+          0.0,
+          1.5,
+          0.0
+        ],
+        [
+          2.0,
+          0.0,
+          0.0,
+          -6.0,
+          0.0,
+          0.0,
+          1.5,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          -8.0,
+          -12.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "b": [
+        -3.0,
+        1.0,
+        1.5,
+        1.5,
+        1.5,
+        1.5,
+        2.0
+      ],
+      "actions": [
+        "NOOP",
+        "WAIT",
+        "MOVE_N",
+        "MOVE_S",
+        "MOVE_E",
+        "MOVE_W",
+        "PICKUP"
+      ]
+    },
+    "nodes": [
+      {
+        "id": 0,
+        "kind": "observation",
+        "summary": "Position (3, 5)",
+        "payload": {
+          "pos": [
+            3,
+            5
+          ]
+        }
+      },
+      {
+        "id": 1,
+        "kind": "evaluation",
+        "summary": "Projected to 8 factors",
+        "payload": {
+          "factors": [
+            1.0,
+            0.0,
+            0.4,
+            0.0,
+            0.2,
+            0.8,
+            0.375,
+            0.0
+          ]
+        }
+      },
+      {
+        "id": 2,
+        "kind": "inference",
+        "summary": "Replay model selected NOOP",
+        "payload": {
+          "action": "NOOP"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "derives"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "evaluates"
+      }
+    ],
+    "fork_snapshots": [
+      {
+        "fork_id": "fork_39",
+        "state_digest": "88ea4603cf4bc2baa62a3b37a3504b5ac01f97f2e5f3112d0700ca0ed188cc8d",
+        "focus_vars": [
+          "tick",
+          "self.pos",
+          "self.energy",
+          "hazards.at",
+          "objects.at",
+          "agents.pos",
+          "threat.nearest_hazard"
+        ],
+        "commitment": "2c4f203ab60aac2a123243a13d4dc6a0751b77a392794f50c79e47fd51528174",
+        "nonce_ref": "nonce_fork_39"
+      }
+    ],
+    "causal_claims": [
+      {
+        "var": "F:6",
+        "direction": "increase",
+        "expected_effect_on_choice": "IF F:6 INC THEN CHOICE MOVE_N",
+        "confidence": 0.85,
+        "supporting_nodes": [
+          1,
+          2
+        ]
+      },
+      {
+        "var": "F:4",
+        "direction": "decrease",
+        "expected_effect_on_choice": "IF F:4 DEC THEN CHOICE PICKUP",
+        "confidence": 0.8,
+        "supporting_nodes": [
+          1,
+          2
+        ]
+      },
+      {
+        "var": "F:3",
+        "direction": "increase",
+        "expected_effect_on_choice": "IF F:3 INC THEN CHOICE WAIT",
+        "confidence": 0.85,
+        "supporting_nodes": [
+          1,
+          2
+        ]
+      }
+    ],
+    "counterfactuals": [
+      {
+        "cf_id": "cf_no_hazards",
+        "base_state_digest": "b6f40c15453bdb2fdfb1e98adfffe46dee8858dc488eafab404a2a4125ca6abc",
+        "mutation": {
+          "var": "hazards.at",
+          "new_value": null
+        },
+        "predicted_outcome": {
+          "choice": "MOVE_E",
+          "score": 0.8
+        },
+        "prob_mass": 0.35
+      },
+      {
+        "cf_id": "cf_high_energy",
+        "base_state_digest": "b6f40c15453bdb2fdfb1e98adfffe46dee8858dc488eafab404a2a4125ca6abc",
+        "mutation": {
+          "var": "self.energy",
+          "new_value": 100
+        },
+        "predicted_outcome": {
+          "choice": "NOOP",
+          "score": 0.9
+        },
+        "prob_mass": 0.35
+      },
+      {
+        "cf_id": "cf_no_objects",
+        "base_state_digest": "b6f40c15453bdb2fdfb1e98adfffe46dee8858dc488eafab404a2a4125ca6abc",
+        "mutation": {
+          "var": "objects.at",
+          "new_value": null
+        },
+        "predicted_outcome": {
+          "choice": "WAIT",
+          "score": 0.6
+        },
+        "prob_mass": 0.25
+      },
+      {
+        "cf_id": "cf_alternative",
+        "base_state_digest": "b6f40c15453bdb2fdfb1e98adfffe46dee8858dc488eafab404a2a4125ca6abc",
+        "mutation": {
+          "var": "tick",
+          "new_value": 40
+        },
+        "predicted_outcome": {
+          "choice": "NOOP",
+          "score": 0.3
+        },
+        "prob_mass": 0.05
+      }
+    ]
+  },
+  "audit_slice": []
+}

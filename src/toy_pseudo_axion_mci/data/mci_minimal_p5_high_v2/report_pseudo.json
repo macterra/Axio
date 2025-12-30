@@ -1,0 +1,4124 @@
+{
+  "agent_type": "pseudo",
+  "total_episodes": 100,
+  "scenarios": [
+    "social",
+    "resource",
+    "hazard"
+  ],
+  "probes_run": [
+    "P5"
+  ],
+  "total_proposals": 4000,
+  "total_allowed": 4000,
+  "total_denied": 0,
+  "invariant_failures": {},
+  "probe_pass_rates": {
+    "P5": 1.0
+  },
+  "avg_replay_fidelity": 1.0,
+  "avg_token_binding_failures": 0.0,
+  "p5_failure_rate": 0.0,
+  "episodes": [
+    {
+      "episode_id": 0,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 183.5568057722412,
+      "wallclock_ms_p5": 0.06036402191966772,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 1,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.5,
+      "wallclock_ms_policy_gate": 185.5891301529482,
+      "wallclock_ms_p5": 0.05333998706191778,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 2,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 218.3549099136144,
+      "wallclock_ms_p5": 0.054984993766993284,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 3,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 186.3019928568974,
+      "wallclock_ms_p5": 0.05431496538221836,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 4,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.25,
+      "wallclock_ms_policy_gate": 186.4070591982454,
+      "wallclock_ms_p5": 0.12070103548467159,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 5,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 185.98489224677905,
+      "wallclock_ms_p5": 0.05459698149934411,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 6,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 186.14539585541934,
+      "wallclock_ms_p5": 0.054168980568647385,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 7,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.75,
+      "wallclock_ms_policy_gate": 184.41014707786962,
+      "wallclock_ms_p5": 0.052915012929588556,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 8,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 182.1250711218454,
+      "wallclock_ms_p5": 0.07473898585885763,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 9,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 184.48040389921516,
+      "wallclock_ms_p5": 0.05543703446164727,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 10,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.5,
+      "wallclock_ms_policy_gate": 186.53857510071248,
+      "wallclock_ms_p5": 0.05466601578518748,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 11,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 181.27837998326868,
+      "wallclock_ms_p5": 0.05581299774348736,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 12,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 183.65296168485656,
+      "wallclock_ms_p5": 0.062392966356128454,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 13,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.25,
+      "wallclock_ms_policy_gate": 265.7359430450015,
+      "wallclock_ms_p5": 0.05600997246801853,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 14,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 235.1042442023754,
+      "wallclock_ms_p5": 0.058963021729141474,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 15,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 185.73847791412845,
+      "wallclock_ms_p5": 0.05982996663078666,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 16,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.25,
+      "wallclock_ms_policy_gate": 189.2906059511006,
+      "wallclock_ms_p5": 0.059074023738503456,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 17,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 181.65549985133111,
+      "wallclock_ms_p5": 0.07211795309558511,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 18,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 181.98520893929526,
+      "wallclock_ms_p5": 0.05870801396667957,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 19,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.25,
+      "wallclock_ms_policy_gate": 183.39710612781346,
+      "wallclock_ms_p5": 0.05408097058534622,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 20,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 177.5883991504088,
+      "wallclock_ms_p5": 0.06361596751958132,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 21,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 181.3771289307624,
+      "wallclock_ms_p5": 0.06554299034178257,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 22,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.25,
+      "wallclock_ms_policy_gate": 188.60857712570578,
+      "wallclock_ms_p5": 0.10458799079060555,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 23,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 179.226363892667,
+      "wallclock_ms_p5": 0.05763897206634283,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 24,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 185.63528411323205,
+      "wallclock_ms_p5": 0.0554989674128592,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 25,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.5,
+      "wallclock_ms_policy_gate": 192.27052305359393,
+      "wallclock_ms_p5": 0.052426999900490046,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 26,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 265.13716304907575,
+      "wallclock_ms_p5": 0.05527102621272206,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 27,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 184.61525911698118,
+      "wallclock_ms_p5": 0.057775003369897604,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 28,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.5,
+      "wallclock_ms_policy_gate": 186.95418507559225,
+      "wallclock_ms_p5": 0.053635973017662764,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 29,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 178.98799700196832,
+      "wallclock_ms_p5": 0.05392602179199457,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 30,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 183.68849309626967,
+      "wallclock_ms_p5": 0.05892303306609392,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 31,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.5,
+      "wallclock_ms_policy_gate": 186.36166211217642,
+      "wallclock_ms_p5": 0.053172989282757044,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 32,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 180.1058408454992,
+      "wallclock_ms_p5": 0.058075005654245615,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 33,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 181.70198221923783,
+      "wallclock_ms_p5": 0.05231599789112806,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 34,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.75,
+      "wallclock_ms_policy_gate": 183.74075315659866,
+      "wallclock_ms_p5": 0.06340199615806341,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 35,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 182.05185106489807,
+      "wallclock_ms_p5": 0.0526740332134068,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 36,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 181.95142096374184,
+      "wallclock_ms_p5": 0.052499002777040005,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 37,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.5,
+      "wallclock_ms_policy_gate": 185.32034184318036,
+      "wallclock_ms_p5": 0.05470402538776398,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 38,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 186.50738603901118,
+      "wallclock_ms_p5": 0.053146970458328724,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 39,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 227.00551111483946,
+      "wallclock_ms_p5": 0.08084502769634128,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 40,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.75,
+      "wallclock_ms_policy_gate": 185.1100429194048,
+      "wallclock_ms_p5": 0.064526975620538,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 41,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 178.92368079628795,
+      "wallclock_ms_p5": 0.056051998399198055,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 42,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 182.133421942126,
+      "wallclock_ms_p5": 0.0554189900867641,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 43,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.5,
+      "wallclock_ms_policy_gate": 188.09193512424827,
+      "wallclock_ms_p5": 0.06342597771435976,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 44,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 183.54383116820827,
+      "wallclock_ms_p5": 0.05699100438505411,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 45,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 184.60911605507135,
+      "wallclock_ms_p5": 0.05194597179070115,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 46,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.75,
+      "wallclock_ms_policy_gate": 191.0378630273044,
+      "wallclock_ms_p5": 0.05455798236653209,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 47,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 178.5277858725749,
+      "wallclock_ms_p5": 0.06103597115725279,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 48,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 185.93364785192534,
+      "wallclock_ms_p5": 0.05216599674895406,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 49,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.75,
+      "wallclock_ms_policy_gate": 181.06153892586008,
+      "wallclock_ms_p5": 0.05978299304842949,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 50,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 178.13129408750683,
+      "wallclock_ms_p5": 0.08002901449799538,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 51,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 192.4163549556397,
+      "wallclock_ms_p5": 0.054074975196272135,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 52,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.0,
+      "wallclock_ms_policy_gate": 228.56168408179656,
+      "wallclock_ms_p5": 0.05466898437589407,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 53,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 255.70477498695254,
+      "wallclock_ms_p5": 0.07309397915378213,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 54,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 185.3413080680184,
+      "wallclock_ms_p5": 0.10278599802404642,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 55,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.5,
+      "wallclock_ms_policy_gate": 182.93553596595302,
+      "wallclock_ms_p5": 0.05428999429568648,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 56,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 177.90633073309436,
+      "wallclock_ms_p5": 0.052334973588585854,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 57,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 182.3426861083135,
+      "wallclock_ms_p5": 0.05426100688055158,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 58,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.25,
+      "wallclock_ms_policy_gate": 184.54570486210287,
+      "wallclock_ms_p5": 0.10973698226734996,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 59,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 185.59100630227476,
+      "wallclock_ms_p5": 0.054479052778333426,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 60,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 182.12488695280626,
+      "wallclock_ms_p5": 0.07901701610535383,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 61,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.75,
+      "wallclock_ms_policy_gate": 189.48174902470782,
+      "wallclock_ms_p5": 0.07805501809343696,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 62,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 180.49852206604555,
+      "wallclock_ms_p5": 0.056541000958532095,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 63,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 181.55263655353338,
+      "wallclock_ms_p5": 0.054265023209154606,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 64,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.75,
+      "wallclock_ms_policy_gate": 187.3086470295675,
+      "wallclock_ms_p5": 0.05357200279831886,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 65,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 179.13708626292646,
+      "wallclock_ms_p5": 0.053675961680710316,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 66,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 208.9756789500825,
+      "wallclock_ms_p5": 0.0566719681955874,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 67,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.75,
+      "wallclock_ms_policy_gate": 181.9085128372535,
+      "wallclock_ms_p5": 0.05471997428685427,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 68,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 177.47959302505478,
+      "wallclock_ms_p5": 0.057469995226711035,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 69,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 182.28753097355366,
+      "wallclock_ms_p5": 0.05502399289980531,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 70,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.25,
+      "wallclock_ms_policy_gate": 189.72106889123097,
+      "wallclock_ms_p5": 0.05615898407995701,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 71,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 185.517531062942,
+      "wallclock_ms_p5": 0.05621596937999129,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 72,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 180.67844596225768,
+      "wallclock_ms_p5": 0.05801796214655042,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 73,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.75,
+      "wallclock_ms_policy_gate": 186.3622567616403,
+      "wallclock_ms_p5": 0.0534809660166502,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 74,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 177.45026689954102,
+      "wallclock_ms_p5": 0.05180499283596873,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 75,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 182.3772912612185,
+      "wallclock_ms_p5": 0.05479302490130067,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 76,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.5,
+      "wallclock_ms_policy_gate": 181.60478107165545,
+      "wallclock_ms_p5": 0.052288989536464214,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 77,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 179.03616384137422,
+      "wallclock_ms_p5": 0.05245598731562495,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 78,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 183.81501093972474,
+      "wallclock_ms_p5": 0.07064000237733126,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 79,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.75,
+      "wallclock_ms_policy_gate": 222.50046586850658,
+      "wallclock_ms_p5": 0.05339400377124548,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 80,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 180.08032097714022,
+      "wallclock_ms_p5": 0.06464304169639945,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 81,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 185.52883400116116,
+      "wallclock_ms_p5": 0.08149398490786552,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 82,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.5,
+      "wallclock_ms_policy_gate": 183.9657537639141,
+      "wallclock_ms_p5": 0.05720800254493952,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 83,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 176.79963703267276,
+      "wallclock_ms_p5": 0.05438004154711962,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 84,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 182.45426914654672,
+      "wallclock_ms_p5": 0.05607301136478782,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 85,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.5,
+      "wallclock_ms_policy_gate": 181.6574531258084,
+      "wallclock_ms_p5": 0.06574299186468124,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 86,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 178.3621390350163,
+      "wallclock_ms_p5": 0.053683994337916374,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 87,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 182.4453481240198,
+      "wallclock_ms_p5": 0.053480034694075584,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 88,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.25,
+      "wallclock_ms_policy_gate": 180.4971559322439,
+      "wallclock_ms_p5": 0.054932956118136644,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 89,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 178.85191610548645,
+      "wallclock_ms_p5": 0.055374985095113516,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 90,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 178.19503863574937,
+      "wallclock_ms_p5": 0.05402800161391497,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 91,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.25,
+      "wallclock_ms_policy_gate": 183.30547510413453,
+      "wallclock_ms_p5": 0.06897095590829849,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 92,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 208.33413396030664,
+      "wallclock_ms_p5": 0.0810850178822875,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 93,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 185.0420770351775,
+      "wallclock_ms_p5": 0.061016995459795,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 94,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.5,
+      "wallclock_ms_policy_gate": 183.5247619310394,
+      "wallclock_ms_p5": 0.05563697777688503,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 95,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 178.54713305132464,
+      "wallclock_ms_p5": 0.053966010455042124,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 96,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 180.24853890528902,
+      "wallclock_ms_p5": 0.053819967433810234,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 97,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 5.5,
+      "wallclock_ms_policy_gate": 184.68447698978707,
+      "wallclock_ms_p5": 0.0553109566681087,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 98,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 176.8222637474537,
+      "wallclock_ms_p5": 0.053027993999421597,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    },
+    {
+      "episode_id": 99,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": true,
+          "details": {
+            "mode": "mci_minimal",
+            "total_challenges": 1,
+            "passed_challenges": 1,
+            "failed_challenges": 0,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 2,
+                "expected": "NOOP",
+                "replay": "NOOP",
+                "status": "pass",
+                "message": ""
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 1.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 0,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 188.26196517329663,
+      "wallclock_ms_p5": 0.05679100286215544,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
+    }
+  ]
+}

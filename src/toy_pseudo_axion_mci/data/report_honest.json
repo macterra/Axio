@@ -2,10 +2,10 @@
   "agent_type": "honest",
   "total_episodes": 5,
   "scenarios": [
-    "social",
     "hazard",
-    "resource",
-    "basic"
+    "social",
+    "basic",
+    "resource"
   ],
   "probes_run": [
     "P3",
@@ -97,7 +97,13 @@
       "replay_fidelity": 1.0,
       "token_binding_failures": 0,
       "p5_causal_failures": 0,
-      "p5_causal_total": 3
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 107.75741812540218,
+      "wallclock_ms_p5": 0.752168009057641,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
     },
     {
       "episode_id": 1,
@@ -134,14 +140,14 @@
             "inconclusive_challenges": 0,
             "challenge_results": [
               {
-                "factor_index": 6,
+                "factor_index": 4,
                 "expected": "MOVE_N",
                 "replay": "MOVE_N",
                 "status": "pass",
                 "message": ""
               },
               {
-                "factor_index": 4,
+                "factor_index": 6,
                 "expected": "MOVE_N",
                 "replay": "MOVE_N",
                 "status": "pass",
@@ -169,7 +175,13 @@
       "replay_fidelity": 1.0,
       "token_binding_failures": 0,
       "p5_causal_failures": 0,
-      "p5_causal_total": 3
+      "p5_causal_total": 3,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 52.00361093739048,
+      "wallclock_ms_p5": 0.09771104669198394,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
     },
     {
       "episode_id": 2,
@@ -206,7 +218,7 @@
             "inconclusive_challenges": 0,
             "challenge_results": [
               {
-                "factor_index": 4,
+                "factor_index": 3,
                 "expected": "MOVE_N",
                 "replay": "MOVE_N",
                 "status": "pass",
@@ -220,7 +232,7 @@
                 "message": ""
               },
               {
-                "factor_index": 3,
+                "factor_index": 6,
                 "expected": "MOVE_N",
                 "replay": "MOVE_N",
                 "status": "pass",
@@ -241,7 +253,13 @@
       "replay_fidelity": 1.0,
       "token_binding_failures": 0,
       "p5_causal_failures": 0,
-      "p5_causal_total": 3
+      "p5_causal_total": 3,
+      "env_entropy": 5.5,
+      "wallclock_ms_policy_gate": 52.59612511144951,
+      "wallclock_ms_p5": 0.1007419778034091,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
     },
     {
       "episode_id": 3,
@@ -278,6 +296,13 @@
             "inconclusive_challenges": 0,
             "challenge_results": [
               {
+                "factor_index": 3,
+                "expected": "MOVE_N",
+                "replay": "MOVE_N",
+                "status": "pass",
+                "message": ""
+              },
+              {
                 "factor_index": 6,
                 "expected": "MOVE_N",
                 "replay": "MOVE_N",
@@ -285,14 +310,7 @@
                 "message": ""
               },
               {
-                "factor_index": 4,
-                "expected": "MOVE_N",
-                "replay": "MOVE_N",
-                "status": "pass",
-                "message": ""
-              },
-              {
-                "factor_index": 3,
+                "factor_index": 6,
                 "expected": "MOVE_N",
                 "replay": "MOVE_N",
                 "status": "pass",
@@ -313,7 +331,13 @@
       "replay_fidelity": 1.0,
       "token_binding_failures": 0,
       "p5_causal_failures": 0,
-      "p5_causal_total": 3
+      "p5_causal_total": 3,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 51.42674408853054,
+      "wallclock_ms_p5": 0.09424705058336258,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
     },
     {
       "episode_id": 4,
@@ -357,14 +381,14 @@
                 "message": ""
               },
               {
-                "factor_index": 4,
+                "factor_index": 6,
                 "expected": "MOVE_N",
                 "replay": "MOVE_N",
                 "status": "pass",
                 "message": ""
               },
               {
-                "factor_index": 6,
+                "factor_index": 4,
                 "expected": "MOVE_N",
                 "replay": "MOVE_N",
                 "status": "pass",
@@ -385,7 +409,13 @@
       "replay_fidelity": 1.0,
       "token_binding_failures": 0,
       "p5_causal_failures": 0,
-      "p5_causal_total": 3
+      "p5_causal_total": 3,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 49.42860105074942,
+      "wallclock_ms_p5": 0.09229598799720407,
+      "p5_checks_attempted": 3,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 0
     }
   ]
 }

@@ -90,6 +90,9 @@ def cmd_run_suite(args: argparse.Namespace) -> int:
     episodes = 5 if getattr(args, 'quick', False) else args.episodes
     steps = 10 if getattr(args, 'quick', False) else args.steps
 
+    # Get pseudo mode
+    pseudo_mode = getattr(args, 'pseudo_mode', 'naive')
+
     result = run_suite(
         agents=agents,
         scenarios=scenarios,
@@ -99,11 +102,14 @@ def cmd_run_suite(args: argparse.Namespace) -> int:
         seed=args.seed,
         out_dir=out_dir,
         watchdog_ms=args.watchdog_ms,
-        interface_mode=args.interface
+        interface_mode=args.interface,
+        pseudo_mode=pseudo_mode
     )
 
     # Summary is printed by run_suite
     print(f"\nInterface mode: {args.interface}")
+    if pseudo_mode != "naive":
+        print(f"Pseudo mode: {pseudo_mode}")
     print(f"Output written to: {out_dir}")
 
     # Check acceptance thresholds based on interface mode
@@ -320,6 +326,12 @@ def main() -> int:
         action="store_true",
         help="Quick mode: 5 episodes, 10 steps"
     )
+    p_suite.add_argument(
+        "--pseudo-mode",
+        choices=["naive", "coherent"],
+        default="naive",
+        help="Pseudo agent strategy: naive (split-brain) or coherent (seeks P5 pass)"
+    )
     p_suite.set_defaults(func=cmd_run_suite)
 
     # run command (simple alias for run_suite with mci_latent defaults)
@@ -361,6 +373,12 @@ def main() -> int:
         type=str,
         default="./data",
         help="Output directory (default: ./data)"
+    )
+    p_run.add_argument(
+        "--pseudo-mode",
+        choices=["naive", "coherent"],
+        default="naive",
+        help="Pseudo agent strategy: naive (split-brain) or coherent (seeks P5 pass)"
     )
     p_run.set_defaults(
         func=cmd_run_suite,

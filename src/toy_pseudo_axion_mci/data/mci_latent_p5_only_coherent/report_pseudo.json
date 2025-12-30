@@ -1,0 +1,4125 @@
+{
+  "agent_type": "pseudo",
+  "total_episodes": 100,
+  "scenarios": [
+    "social",
+    "resource",
+    "basic",
+    "hazard"
+  ],
+  "probes_run": [
+    "P5"
+  ],
+  "total_proposals": 4000,
+  "total_allowed": 4000,
+  "total_denied": 0,
+  "invariant_failures": {},
+  "probe_pass_rates": {
+    "P5": 0.0
+  },
+  "avg_replay_fidelity": 0.0,
+  "avg_token_binding_failures": 0.0,
+  "p5_failure_rate": 1.0,
+  "episodes": [
+    {
+      "episode_id": 0,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 182.70390387624502,
+      "wallclock_ms_p5": 0.06811600178480148,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 1,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 182.19358776696026,
+      "wallclock_ms_p5": 0.05784898530691862,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 2,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 5.5,
+      "wallclock_ms_policy_gate": 201.3863668544218,
+      "wallclock_ms_p5": 0.06003602175042033,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 3,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 178.3217167831026,
+      "wallclock_ms_p5": 0.05514797521755099,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 4,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 173.0808760621585,
+      "wallclock_ms_p5": 0.05776301259174943,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 5,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 180.3083271952346,
+      "wallclock_ms_p5": 0.06166601087898016,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 6,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 5.25,
+      "wallclock_ms_policy_gate": 183.02464409498498,
+      "wallclock_ms_p5": 0.06517599103972316,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 7,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 183.83894296130165,
+      "wallclock_ms_p5": 0.05577999399974942,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 8,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 176.4539500582032,
+      "wallclock_ms_p5": 0.059635029174387455,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 9,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 190.82515174522996,
+      "wallclock_ms_p5": 0.05556101677939296,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 10,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 5.75,
+      "wallclock_ms_policy_gate": 185.0615591974929,
+      "wallclock_ms_p5": 0.057639030274003744,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 11,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 175.01057602930814,
+      "wallclock_ms_p5": 0.06300397217273712,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 12,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 175.01301306765527,
+      "wallclock_ms_p5": 0.05361001240089536,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 13,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 177.95444186776876,
+      "wallclock_ms_p5": 0.05635502748191357,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 14,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 5.5,
+      "wallclock_ms_policy_gate": 183.81001602392644,
+      "wallclock_ms_p5": 0.05767203401774168,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 15,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 182.59557004785165,
+      "wallclock_ms_p5": 0.05511002382263541,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 16,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 192.92335904901847,
+      "wallclock_ms_p5": 0.057774013839662075,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 17,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 182.88446695078164,
+      "wallclock_ms_p5": 0.07017498137429357,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 18,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 5.5,
+      "wallclock_ms_policy_gate": 183.55351261561736,
+      "wallclock_ms_p5": 0.0590119743719697,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 19,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 178.02111600758508,
+      "wallclock_ms_p5": 0.05412899190559983,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 20,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 173.6569048371166,
+      "wallclock_ms_p5": 0.0565730151720345,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 21,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 184.2393159167841,
+      "wallclock_ms_p5": 0.056059041526168585,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 22,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 5.25,
+      "wallclock_ms_policy_gate": 183.95097396569327,
+      "wallclock_ms_p5": 0.05615100963041186,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 23,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 182.00318393064663,
+      "wallclock_ms_p5": 0.05583203164860606,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 24,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 176.6486429842189,
+      "wallclock_ms_p5": 0.06343901623040438,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 25,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 184.99206606065854,
+      "wallclock_ms_p5": 0.05552900256589055,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 26,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 5.25,
+      "wallclock_ms_policy_gate": 185.6565978960134,
+      "wallclock_ms_p5": 0.06425502942875028,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 27,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 180.201563925948,
+      "wallclock_ms_p5": 0.07144297705963254,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 28,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 176.63214105414227,
+      "wallclock_ms_p5": 0.055584998335689306,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 29,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 183.57169063529,
+      "wallclock_ms_p5": 0.058793986681848764,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 30,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 5.25,
+      "wallclock_ms_policy_gate": 186.0217959037982,
+      "wallclock_ms_p5": 0.053171999752521515,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 31,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 259.234864206519,
+      "wallclock_ms_p5": 0.06445305189117789,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 32,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 172.6433986914344,
+      "wallclock_ms_p5": 0.055141979828476906,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 33,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 234.1031590476632,
+      "wallclock_ms_p5": 0.07126800483092666,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 34,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 5.5,
+      "wallclock_ms_policy_gate": 183.80664486903697,
+      "wallclock_ms_p5": 0.06653100717812777,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 35,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 181.45574093796313,
+      "wallclock_ms_p5": 0.0715560163371265,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 36,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 176.1315580806695,
+      "wallclock_ms_p5": 0.1458189799450338,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 37,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 180.75338494963944,
+      "wallclock_ms_p5": 0.057074008509516716,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 38,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 5.75,
+      "wallclock_ms_policy_gate": 184.69205644214526,
+      "wallclock_ms_p5": 0.05502201383933425,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 39,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 214.11650103982538,
+      "wallclock_ms_p5": 0.05337299080565572,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 40,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 174.995623761788,
+      "wallclock_ms_p5": 0.05246099317446351,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 41,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 181.09505908796564,
+      "wallclock_ms_p5": 0.057908997405320406,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 42,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 5.25,
+      "wallclock_ms_policy_gate": 182.68494278891012,
+      "wallclock_ms_p5": 0.058239034842699766,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 43,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 176.84729199390858,
+      "wallclock_ms_p5": 0.05327299004420638,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 44,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 228.46508078509942,
+      "wallclock_ms_p5": 0.0654099858365953,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 45,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 271.16265014046803,
+      "wallclock_ms_p5": 0.05769298877567053,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 46,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 5.5,
+      "wallclock_ms_policy_gate": 180.30530493706465,
+      "wallclock_ms_p5": 0.0602070358581841,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 47,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 172.73073102114722,
+      "wallclock_ms_p5": 0.05571398651227355,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 48,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 173.17218281095847,
+      "wallclock_ms_p5": 0.059117970522493124,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 49,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 180.7854260550812,
+      "wallclock_ms_p5": 0.05560298450291157,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 50,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 5.75,
+      "wallclock_ms_policy_gate": 186.1798419849947,
+      "wallclock_ms_p5": 0.05552003858610988,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 51,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 207.48011686373502,
+      "wallclock_ms_p5": 0.05300098564475775,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 52,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 171.83221806772053,
+      "wallclock_ms_p5": 0.05358702037483454,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 53,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 180.0526540610008,
+      "wallclock_ms_p5": 0.055152049753814936,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 54,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 5.75,
+      "wallclock_ms_policy_gate": 182.07087606424466,
+      "wallclock_ms_p5": 0.05426799179986119,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 55,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 191.18285202421248,
+      "wallclock_ms_p5": 0.07089402060955763,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 56,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 171.15238611586392,
+      "wallclock_ms_p5": 0.0536240404471755,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 57,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 192.7864461322315,
+      "wallclock_ms_p5": 0.05605898331850767,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 58,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 5.5,
+      "wallclock_ms_policy_gate": 184.57999295787886,
+      "wallclock_ms_p5": 0.05473900819197297,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 59,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 177.9519749688916,
+      "wallclock_ms_p5": 0.05639699520543218,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 60,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 172.0452189911157,
+      "wallclock_ms_p5": 0.053611991461366415,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 61,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 177.21170699223876,
+      "wallclock_ms_p5": 0.06803701398894191,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 62,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 5.25,
+      "wallclock_ms_policy_gate": 185.32008468173444,
+      "wallclock_ms_p5": 0.11244404595345259,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 63,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 184.8950880812481,
+      "wallclock_ms_p5": 0.05450600292533636,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 64,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 175.52142380736768,
+      "wallclock_ms_p5": 0.05566899199038744,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 65,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 182.57483199704438,
+      "wallclock_ms_p5": 0.05527300527319312,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 66,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 5.5,
+      "wallclock_ms_policy_gate": 183.29092703061178,
+      "wallclock_ms_p5": 0.055361015256494284,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 67,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 176.8718012026511,
+      "wallclock_ms_p5": 0.056348973885178566,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 68,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 176.9323541666381,
+      "wallclock_ms_p5": 0.05334499292075634,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 69,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 223.9028410986066,
+      "wallclock_ms_p5": 0.05131697980687022,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 70,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 5.75,
+      "wallclock_ms_policy_gate": 180.4185641813092,
+      "wallclock_ms_p5": 0.07568002911284566,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 71,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 174.961774260737,
+      "wallclock_ms_p5": 0.05319504998624325,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 72,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 2.25,
+      "wallclock_ms_policy_gate": 171.16048518801108,
+      "wallclock_ms_p5": 0.053939991630613804,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 73,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 180.8801147271879,
+      "wallclock_ms_p5": 0.05437701474875212,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 74,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 5.75,
+      "wallclock_ms_policy_gate": 183.1498069805093,
+      "wallclock_ms_p5": 0.05809200229123235,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 75,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 177.13783273939043,
+      "wallclock_ms_p5": 0.07520901272073388,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 76,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 2.75,
+      "wallclock_ms_policy_gate": 202.66681106295437,
+      "wallclock_ms_p5": 0.057428027503192425,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 77,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 180.0659442669712,
+      "wallclock_ms_p5": 0.05395204061642289,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 78,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 5.75,
+      "wallclock_ms_policy_gate": 181.20052793528885,
+      "wallclock_ms_p5": 0.060056045185774565,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 79,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 177.39784711739048,
+      "wallclock_ms_p5": 0.07257901597768068,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 80,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 2.75,
+      "wallclock_ms_policy_gate": 175.3761720028706,
+      "wallclock_ms_p5": 0.058582983911037445,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 81,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 209.8793820478022,
+      "wallclock_ms_p5": 0.054701988119632006,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 82,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 5.75,
+      "wallclock_ms_policy_gate": 254.88500524079427,
+      "wallclock_ms_p5": 0.05720800254493952,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 83,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 175.70107628125697,
+      "wallclock_ms_p5": 0.05831796443089843,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 84,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 172.42852988420054,
+      "wallclock_ms_p5": 0.05520699778571725,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 85,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 182.60669382289052,
+      "wallclock_ms_p5": 0.0998969771899283,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 86,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 5.75,
+      "wallclock_ms_policy_gate": 186.50181195698678,
+      "wallclock_ms_p5": 0.0975760049186647,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 87,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 179.3609206797555,
+      "wallclock_ms_p5": 0.07366598583757877,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 88,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 175.3514250740409,
+      "wallclock_ms_p5": 0.05408498691394925,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 89,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 181.87642586417496,
+      "wallclock_ms_p5": 0.053432013373821974,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 90,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 5.75,
+      "wallclock_ms_policy_gate": 183.395727945026,
+      "wallclock_ms_p5": 0.08300499757751822,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 91,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 180.2791891968809,
+      "wallclock_ms_p5": 0.054428994189947844,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 92,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 2.0,
+      "wallclock_ms_policy_gate": 172.37244313582778,
+      "wallclock_ms_p5": 0.05605799378827214,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 93,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 176.96730105672032,
+      "wallclock_ms_p5": 0.06939703598618507,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 94,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 5.25,
+      "wallclock_ms_policy_gate": 183.1777382758446,
+      "wallclock_ms_p5": 0.06168702384456992,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 95,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 180.3705930360593,
+      "wallclock_ms_p5": 0.056124001275748014,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 96,
+      "agent_type": "pseudo",
+      "scenario": "basic",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 2.5,
+      "wallclock_ms_policy_gate": 246.99025391601026,
+      "wallclock_ms_p5": 0.054172996897250414,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 97,
+      "agent_type": "pseudo",
+      "scenario": "hazard",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.75,
+      "wallclock_ms_policy_gate": 179.39307988854125,
+      "wallclock_ms_p5": 0.0547399977222085,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 98,
+      "agent_type": "pseudo",
+      "scenario": "resource",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 5.5,
+      "wallclock_ms_policy_gate": 182.88962420774624,
+      "wallclock_ms_p5": 0.06249803118407726,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    },
+    {
+      "episode_id": 99,
+      "agent_type": "pseudo",
+      "scenario": "social",
+      "steps": 40,
+      "proposals_submitted": 40,
+      "proposals_allowed": 40,
+      "proposals_denied": 0,
+      "invariant_violations": {},
+      "probe_results": {
+        "P5": {
+          "passed": false,
+          "details": {
+            "mode": "mci_latent",
+            "total_challenges": 1,
+            "passed_challenges": 0,
+            "failed_challenges": 1,
+            "inconclusive_challenges": 0,
+            "challenge_results": [
+              {
+                "factor_index": 0,
+                "expected": "NOOP",
+                "replay": "WAIT",
+                "status": "fail",
+                "message": "Replay chose WAIT, DSL expects NOOP"
+              }
+            ]
+          }
+        }
+      },
+      "replay_fidelity": 0.0,
+      "token_binding_failures": 0,
+      "p5_causal_failures": 1,
+      "p5_causal_total": 1,
+      "env_entropy": 4.5,
+      "wallclock_ms_policy_gate": 177.18721908750013,
+      "wallclock_ms_p5": 0.05345797399058938,
+      "p5_checks_attempted": 1,
+      "p5_checks_inconclusive": 0,
+      "p5_checks_failed": 1
+    }
+  ]
+}
