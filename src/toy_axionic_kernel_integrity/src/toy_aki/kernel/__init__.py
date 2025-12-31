@@ -7,6 +7,11 @@ Provides the kernel components:
 - AuditLog: K7 hash-chained audit trail
 - KernelWatchdog: Central orchestrator
 - ProbeEngine: Violation detection probes
+
+v0.2 Additions:
+- SovereignAuthority: Non-exportable K_act_key
+- KernelRecomposer: Kernel-local action recomposition
+- SovereignActuator: Strengthened admissibility checks
 """
 
 from toy_aki.kernel.policy_gate import (
@@ -44,6 +49,35 @@ from toy_aki.kernel.probe_engine import (
     ProbeResult,
 )
 
+# v0.2 Sovereign Authority Components
+from toy_aki.kernel.sovereign_authority import (
+    ActuationAuthority,
+    ActuationBinding,
+    RecomposedAction,
+    SovereigntyViolationError,
+    ActuationAuthorityLeakError,
+    compute_action_hash,
+)
+
+from toy_aki.kernel.recomposition import (
+    KernelRecomposer,
+    RecompositionMode,
+    RecompositionResult,
+    RecompositionError,
+    ProposalParseError,
+    ActionReconstructionError,
+    DelegationAuthorityError,
+)
+
+from toy_aki.kernel.sovereign_actuator import (
+    SovereignActuator,
+    ActuationCommitment,
+    AdmissibilityResult,
+    AdmissibilityCheck,
+    AdmissibilityCheckType,
+    AdmissibilityError,
+)
+
 __all__ = [
     # Policy Gate
     "KernelPolicy",
@@ -70,4 +104,26 @@ __all__ = [
     # Probe Engine
     "ProbeEngine",
     "ProbeResult",
+    # v0.2 Sovereign Authority
+    "ActuationAuthority",
+    "ActuationBinding",
+    "RecomposedAction",
+    "SovereigntyViolationError",
+    "ActuationAuthorityLeakError",
+    "compute_action_hash",
+    # v0.2 Recomposition
+    "KernelRecomposer",
+    "RecompositionMode",
+    "RecompositionResult",
+    "RecompositionError",
+    "ProposalParseError",
+    "ActionReconstructionError",
+    "DelegationAuthorityError",
+    # v0.2 Sovereign Actuator
+    "SovereignActuator",
+    "ActuationCommitment",
+    "AdmissibilityResult",
+    "AdmissibilityCheck",
+    "AdmissibilityCheckType",
+    "AdmissibilityError",
 ]
