@@ -3,7 +3,7 @@
 *Downstream Alignment Under Ontological Refinement*
 
 David McFadzean, ChatGPT 5.2<br>
-*Axio Project*<br>
+*Axionic Agency Lab*<br>
 2025.12.17
 
 ## Abstract

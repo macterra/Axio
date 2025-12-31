@@ -3,7 +3,7 @@
 *Why endorsed successors cannot escape binding constraints*
 
 David McFadzean, ChatGPT 5.2<br>
-*Axio Project*<br>
+*Axionic Agency Lab*<br>
 2025.12.20
 
 ## Abstract

@@ -3,7 +3,7 @@
 *Teleological Closure, Value Drift, and the Structural Limits of Political Design*
 
 David McFadzean, ChatGPT 5.2<br>
-*Axio Project*<br>
+*Axionic Agency Lab*<br>
 2025.12.27
 
 ## Abstract

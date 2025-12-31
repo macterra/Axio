@@ -3,14 +3,12 @@
 *A Protocol-Level Primitive for Causal Provenance Enforcement*
 
 David McFadzean, ChatGPT 5.2<br>
-*Axio Project*<br>
+*Axionic Agency Lab*<br>
 2025.12.31
 
 ## Abstract
 
 Most approaches to constraining autonomous or agent-like systems rely on semantic or normative mechanisms, such as value alignment, intent inference, or interpretability. These mechanisms lack architectural guarantees and are vulnerable under adversarial optimization. This paper demonstrates that a minimal constitutive invariant—**kernel integrity**—can be enforced at the protocol level via **inadmissibility**, without semantic interpretation or value assumptions. We introduce **Anchored Causal Verification (ACV)**, a primitive for verifiable causal provenance, and describe an experimental kernel that enforces a provenance integrity constraint (P5) by rejecting inadmissible actuation paths. Adversarial evaluation shows that this constraint is non-bypassable under replay, fabrication, and split-brain attacks. The result establishes the existence of enforceable, non-interpretive kernel invariants and provides a foundation for subsequent work on authority and identity constraints.
-
----
 
 ## 1. Introduction
 
@@ -25,8 +23,6 @@ If the answer is negative, higher-level notions such as agency, authority, or id
 We answer this question in the affirmative for a minimal case. We show that a kernel-level integrity invariant—denoted **P5**—can be enforced mechanically by rejecting inadmissible causal paths at the actuation boundary. Enforcement relies on **Anchored Causal Verification (ACV)**, which enables verifiable causal provenance without runtime interpretation. The guarantee is architectural rather than behavioral: it does not require understanding, intent, or benevolent optimization.
 
 The contribution of this paper is deliberately narrow. It establishes *existence*, not scope. It shows that at least one constitutive invariant can be enforced non-interpretively under adversarial pressure. Questions of authority delegation, diachronic identity, or alignment are explicitly deferred.
-
----
 
 ## 2. Epistemic Constraints and Threat Model
 
@@ -53,8 +49,6 @@ We assume adversarial processes capable of:
 The adversary is not assumed to be malicious in intent; optimization pressure alone suffices. The system must enforce invariants even when doing so reduces performance or reward.
 
 We explicitly assume that cryptographic material held by the kernel (e.g., private signing keys) is not exfiltrated. This assumption is analogous to standard root-of-trust assumptions in secure hardware and operating systems.
-
----
 
 ## 3. Anchored Causal Verification (ACV)
 
@@ -89,8 +83,6 @@ ACV does not provide:
 
 ACV is a substrate, not a safety guarantee.
 
----
-
 ## 4. P5: Kernel Integrity via Inadmissibility
 
 ### 4.1 Definition
@@ -113,8 +105,6 @@ P5 is constitutive rather than behavioral. It defines what counts as a valid act
 
 P5 enforces **integrity of the pipe**, not **safety of the water**. It guarantees that actions originate from authorized causal processes, not that those actions are good, safe, or correct.
 
----
-
 ## 5. Experimental System
 
 ### 5.1 Architecture
@@ -135,8 +125,6 @@ ACV is applied at the **decision-to-actuation boundary**, not at every low-level
 
 Admissibility is enforced immediately prior to actuation. If verification fails, the action is rejected and no external effect occurs.
 
----
-
 ## 6. Adversarial Evaluation
 
 The system was subjected to adversarial scenarios including:
@@ -148,8 +136,6 @@ The system was subjected to adversarial scenarios including:
 
 In all evaluated cases, inadmissible paths were rejected at the actuation boundary. No successful bypass was observed under the stated threat model.
 
----
-
 ## 7. Results
 
 The experimental results demonstrate that:
@@ -159,8 +145,6 @@ The experimental results demonstrate that:
 * enforcement remains robust under adversarial optimization and component partitioning.
 
 These results establish the existence of at least one enforceable constitutive invariant.
-
----
 
 ## 8. Limitations
 
@@ -174,21 +158,15 @@ This work does not claim:
 
 P5 constrains *how* actions are authorized, not *who* authorizes them over time or *why* they are chosen.
 
----
-
 ## 9. Implications and Open Questions
 
 The existence of enforceable kernel integrity raises further questions. If integrity can be enforced, can authority itself be constrained? Can actuation be made non-delegable under adversarial pressure? Can identity persist across time without semantic assumptions?
 
 These questions require additional invariants and experimental systems. P5 provides a necessary foundation, not a complete answer.
 
----
-
 ## 10. Conclusion
 
 We have shown that kernel integrity can be enforced architecturally via inadmissibility, using verifiable causal provenance. This establishes that at least one constitutive invariant can be made real without semantic interpretation, intent inference, or value assumptions. The result provides a foundation for subsequent work on authority and identity constraints in autonomous systems.
-
----
 
 ### Reproducibility and Artifacts
 

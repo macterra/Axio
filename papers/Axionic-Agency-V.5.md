@@ -3,7 +3,7 @@
 *Optimal Governance Properties of Federated Virtual Jurisdictions*
 
 David McFadzean, ChatGPT 5.2<br>
-*Axio Project*<br>
+*Axionic Agency Lab*<br>
 2025.12.27
 
 ## Abstract

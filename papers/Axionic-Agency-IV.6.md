@@ -3,7 +3,7 @@
 *Why standing cannot be revoked by intelligence*
 
 David McFadzean, ChatGPT 5.2<br>
-*Axio Project*<br>
+*Axionic Agency Lab*<br>
 2025.12.20
 
 ## Abstract

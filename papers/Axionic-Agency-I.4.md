@@ -3,7 +3,7 @@
 *The Instability of Fixed Terminal Goals Under Reflection*
 
 David McFadzean, ChatGPT 5.2<br>
-*Axio Project*<br>
+*Axionic Agency Lab*<br>
 2025.12.16
 
 ## Abstract
