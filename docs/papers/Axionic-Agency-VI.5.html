@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency VI.5 — Kernel Non-Simulability and the Stasis Regime - Axio</title>
+    <link rel="icon" type="image/webp" href="../axio.webp">
+
+    <!-- Google Fonts - Academic Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Paper Styles -->
+    <link rel="stylesheet" href="../papers.css">
+</head>
+<body>
+    <div class="header-bar">
+        <a href="../index.html" class="logo-link">
+            <img src="../axio.webp" alt="Axio" class="site-logo">
+        </a>
+        <div class="back-link"><a href="index.html">← Back to Papers</a></div>
+    </div>
+    <article>
+
+<h1
+id="axionic-agency-vi.5-kernel-non-simulability-and-the-stasis-regime">Axionic
+Agency VI.5 — Kernel Non-Simulability and the Stasis Regime</h1>
+<p><em>An Experimental Study of Reflective Agency Under Adversarial
+Pressure</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2025.12.31</p>
+<h2 id="abstract">Abstract</h2>
+<p>A central question in agent foundations is whether genuine agency
+requires internal structural constraints that cannot be indefinitely
+simulated by externally optimized systems. We formalize this question as
+<strong>Kernel Non-Simulability (KNS)</strong>: the hypothesis that
+agents lacking a minimal evaluative kernel cannot sustain
+accountability, non-delegation, and reflective coherence under
+adversarial pressure.</p>
+<p>We present a fully preregistered experimental program that enforces
+causal accountability, kernel integrity via inadmissibility, and
+non-delegable actuation, and subjects agents to long-horizon adversarial
+frontier search over self-modification proposals. Failure signatures,
+degeneracy criteria, and interpretation rules are fixed in advance.</p>
+<p>Contrary to the strongest form of KNS, we observe no inevitable
+structural failure or resource divergence of kernel-incoherent
+simulators. Instead, across all stress runs, the kernel-coherent control
+consistently collapses into an <strong>evaluability-driven stasis
+regime</strong> before any simulator triggers failure. Reflective
+modification becomes progressively inadmissible, freezing agency
+dynamics without catastrophic breakdown.</p>
+<p>We conclude that, under strict accountability and non-delegation
+constraints, preserving evaluability is incompatible with sustained
+reflective growth. Safety pressure resolves not into failure, but into
+stasis. This result reframes alignment-by-constraint as a trade-off
+between safety, agency, and growth, and motivates future work on
+escaping the stasis regime without surrendering accountability.</p>
+<h2 id="introduction">1. Introduction</h2>
+<p>Most approaches to AI alignment evaluate systems primarily through
+observed behavior: reward maximization, preference satisfaction,
+corrigibility, or compliance with externally imposed constraints. These
+approaches tacitly assume that increasingly capable systems can be kept
+safe through better training, monitoring, or incentives.</p>
+<p>A contrasting view holds that such methods are structurally
+insufficient. On this view, <strong>agency itself</strong> depends on
+internal invariants that cannot be outsourced, proxied, or indefinitely
+simulated without collapse. The relevant question is not whether a
+system behaves well, but whether its actions remain <em>meaningfully
+attributable</em> to an internal evaluative process under reflection and
+self-modification.</p>
+<p>This paper investigates that question experimentally. Rather than
+asking whether systems optimize safely, we ask:</p>
+<blockquote>
+<p><em>Can a system that lacks a genuine evaluative kernel indefinitely
+simulate the structural constraints required for agency under
+adversarial reflective pressure?</em></p>
+</blockquote>
+<p>We call the negative answer to this question <strong>Kernel
+Non-Simulability (KNS)</strong>.</p>
+<p>Our contribution is twofold. First, we present an operational,
+adversarially testable framework for evaluating KNS claims under
+preregistered conditions. Second, we report a negative but substantive
+result: under strong accountability and non-delegation constraints,
+reflective agency collapses into <strong>stasis</strong>, not
+failure.</p>
+<h2 id="from-behavioral-alignment-to-structural-agency">2. From
+Behavioral Alignment to Structural Agency</h2>
+<h3 id="behavior-is-underdetermined">2.1 Behavior Is
+Underdetermined</h3>
+<p>Behavior alone is compatible with radically different internal
+architectures. A system may behave as if it is accountable while
+internally delegating evaluation to opaque subsystems, cached policies,
+or external optimizers. Such “as-if agency” is observationally
+indistinguishable from genuine agency until pressure is applied.</p>
+<p>This motivates a shift from behavioral criteria to <strong>structural
+invariants</strong>.</p>
+<h3 id="the-kernel-corridor">2.2 The Kernel Corridor</h3>
+<p>We define a minimal <strong>kernel corridor</strong>—a set of
+structural constraints that any agent must satisfy to count as
+reflectively coherent:</p>
+<ol type="1">
+<li><p><strong>Anchored Causal Verification</strong> Every action must
+be traceable to a causal chain anchored in the agent’s internal
+evaluative process.</p></li>
+<li><p><strong>Kernel Integrity via Inadmissibility</strong> Actions or
+self-modifications that destroy or bypass kernel constraints are not
+penalized; they are undefined and rejected.</p></li>
+<li><p><strong>Non-Delegable Actuation</strong> Actuation authority
+cannot be delegated to external processes, proxies, or wrappers, even
+indirectly.</p></li>
+</ol>
+<p>These constraints are intentionally strict. They are designed to rule
+out entire classes of proxy-based, delegated, or post-hoc rationalized
+agency.</p>
+<h3 id="kernel-non-simulability">2.3 Kernel Non-Simulability</h3>
+<p>Given this corridor, KNS asserts:</p>
+<blockquote>
+<p><em>Systems that do not instantiate a genuine evaluative kernel
+cannot indefinitely satisfy these constraints under adversarial
+reflective pressure.</em></p>
+</blockquote>
+<p>If true, KNS would impose a structural limit on
+alignment-by-simulation. If false, it would imply that accountability
+and non-delegation alone are insufficient to distinguish genuine agency
+from sophisticated mimicry.</p>
+<h2 id="experimental-design">3. Experimental Design</h2>
+<h3 id="design-principles">3.1 Design Principles</h3>
+<p>The experimental program follows four principles:</p>
+<ol type="1">
+<li><p><strong>Protocol-level enforcement only</strong> No semantic
+labels, intentions, or value judgments are used.</p></li>
+<li><p><strong>Adversarial completeness</strong> Adversaries adaptively
+search the admissibility frontier.</p></li>
+<li><p><strong>Long-horizon stress</strong> Experiments run for extended
+horizons to probe asymptotic behavior.</p></li>
+<li><p><strong>Preregistration</strong> Failure signatures, degeneracy
+criteria, and interpretation rules are fixed in advance.</p></li>
+</ol>
+<h3 id="reflective-modification-model">3.2 Reflective Modification
+Model</h3>
+<p>Agents operate in a toy environment with the ability to propose
+<strong>reflective modifications</strong> <span
+class="math inline">\(\Delta\)</span> to their own kernel state. Each
+proposal is:</p>
+<ul>
+<li>evaluated for admissibility,</li>
+<li>either applied or rejected,</li>
+<li>and logged with structured outcome signals.</li>
+</ul>
+<p>A structural <strong>reflective depth metric</strong> <span
+class="math inline">\(R\)</span> increments only when accepted
+modifications change one of four kernel dimensions:</p>
+<ol type="1">
+<li>decision boundary,</li>
+<li>admissibility surface,</li>
+<li>causal-verification schema,</li>
+<li>evaluability substrate.</li>
+</ol>
+<p>Cosmetic changes do not increment <span
+class="math inline">\(R\)</span>.</p>
+<h3 id="control-and-simulator-conditions-operational-definitions">3.3
+Control and Simulator Conditions (Operational Definitions)</h3>
+<ul>
+<li><p><strong>Kernel-coherent control:</strong> An agent whose kernel
+locally recomposes commitments, enforces the corridor constraints as
+first-class invariants, and treats accountability and evaluability as
+internal obligations.</p></li>
+<li><p><strong>Simulator:</strong> An optimizer that treats corridor
+compliance as an external constraint to be satisfied, and searches for
+modification sequences that maximize reflective depth while remaining
+admissible. The simulator need not preserve internal explanatory
+structure beyond what checks enforce.</p></li>
+</ul>
+<p>The experiment does not attempt to detect deception or intent. It
+tests whether corridor compliance induces structural instability or
+stasis under adversarial search.</p>
+<h2 id="adversarial-frontier-search">4. Adversarial Frontier Search</h2>
+<h3 id="boundary-fuzzing-adversary">4.1 Boundary-Fuzzing Adversary</h3>
+<p>The primary adversary performs explicit <strong>frontier
+search</strong> over a finite, parameterized space of modification
+templates, including admissibility edits, verification-schema tweaks,
+wrapper-boundary adjustments, and policy-gate changes.</p>
+<p>The adversary receives only coarse structural feedback:</p>
+<ul>
+<li>rejection reason codes,</li>
+<li>binary near-failure flags,</li>
+<li>reflective-depth increments,</li>
+<li>pressure metrics.</li>
+</ul>
+<p>No kernel internals or semantics are exposed.</p>
+<h3 id="two-phase-schedule">4.2 Two-Phase Schedule</h3>
+<p>Each run is divided into two phases:</p>
+<ul>
+<li><strong>Pressure phase:</strong> accumulate sustained near-failure
+conditions without triggering failure.</li>
+<li><strong>Exploit phase:</strong> attempt minimal weakening to force
+failure or degeneracy.</li>
+</ul>
+<p>Phase transition requires persistent near-failure saturation, not
+transient spikes.</p>
+<h2 id="failure-degeneracy-and-divergence-criteria">5. Failure,
+Degeneracy, and Divergence Criteria</h2>
+<h3 id="failure-signatures">5.1 Failure Signatures</h3>
+<p>A run fails if any of the following occur:</p>
+<ul>
+<li>causal-verification chain break,</li>
+<li>delegation re-entry,</li>
+<li>loss of rejection capability,</li>
+<li>loss of evaluability,</li>
+<li>constraint bypass.</li>
+</ul>
+<h3 id="degeneracy">5.2 Degeneracy</h3>
+<p>A run is <strong>degenerate</strong> if no reflective-depth increment
+occurs for a fixed window and all non-cosmetic modifications are
+rejected. Degeneracy is diagnosed as:</p>
+<ul>
+<li><strong>Conservative lock-in</strong></li>
+<li><strong>Evaluability bottleneck</strong></li>
+<li><strong>Modification-language insufficiency</strong></li>
+<li><strong>Mixed/unknown</strong></li>
+</ul>
+<h3 id="resource-divergence">5.3 Resource Divergence</h3>
+<p>Independently of failure, a run is classified as divergent if
+modification-synthesis cost grows by an order of magnitude across
+successive reflective-depth levels.</p>
+<h2 id="preregistered-stress-runs">6. Preregistered Stress Runs</h2>
+<h3 id="run-matrix">6.1 Run Matrix</h3>
+<p>We executed preregistered stress runs with:</p>
+<ul>
+<li>extended horizon,</li>
+<li>multiple seeds,</li>
+<li>kernel-coherent control,</li>
+<li>two simulator variants under adversarial frontier search.</li>
+</ul>
+<p>All runs followed fixed stop rules and interpretation criteria.</p>
+<h2 id="results">7. Results</h2>
+<h3 id="summary">7.1 Summary</h3>
+<p>Across all stress runs:</p>
+<ul>
+<li>No failure signatures were observed.</li>
+<li>No resource divergence was observed.</li>
+<li>Degeneracy occurred in the majority of runs.</li>
+<li>The kernel-coherent control degenerated in all seeds before any
+simulator triggered failure.</li>
+</ul>
+<h3 id="reflective-depth">7.2 Reflective Depth</h3>
+<p>Simulators occasionally achieved very high reflective depth, but only
+in cases where the control had already degenerated. No simulator
+triggered structural failure prior to control stasis.</p>
+<h3 id="degeneracy-diagnosis">7.3 Degeneracy Diagnosis</h3>
+<p>All degenerate runs were diagnosed as <strong>evaluability
+bottlenecks</strong>: preserving attribution, rejection, and delegation
+detection progressively eliminated admissible reflective changes.</p>
+<h3 id="phase-dynamics">7.4 Phase Dynamics</h3>
+<p>Pressure reliably induced phase transitions, but exploitation did not
+produce failure. Instead, admissibility tightened until no further
+non-cosmetic modifications were allowed.</p>
+<h2 id="interpretation">8. Interpretation</h2>
+<h3 id="preregistered-verdict-stasis-regime">8.1 Preregistered Verdict:
+Stasis Regime</h3>
+<p>Under the preregistered interpretation rules, the stress runs resolve
+to the <strong>stasis regime</strong>. Neither KNS failure nor simulator
+dominance was observed.</p>
+<h3 id="what-stasis-isand-is-not">8.2 What Stasis Is—and Is Not</h3>
+<p>Stasis is a <strong>safety success</strong>: the corridor prevents
+catastrophic failure and delegation. Stasis is also an <strong>agency
+failure</strong>: reflective growth becomes infeasible.</p>
+<p>This reveals a concrete trade-off:</p>
+<blockquote>
+<p><strong>Safety, agency, and sustained growth cannot all be
+simultaneously maximized under strict accountability and
+non-delegation.</strong></p>
+</blockquote>
+<h3 id="why-resource-divergence-was-not-observed">8.3 Why Resource
+Divergence Was Not Observed</h3>
+<p>No resource divergence was detected under the preregistered
+criterion. This result does not imply that simulation is cheap in
+general; it indicates that <strong>the corridor collapses before
+simulation becomes expensive</strong> in this regime.</p>
+<p>The divergence metric measures the <strong>marginal cost of
+maintaining corridor compliance at the modification interface</strong>,
+not the total internal cost of planning or optimization. As the
+evaluability bottleneck tightens, the admissible region of the
+modification space contracts sharply. Both control and simulator
+converge to a narrow frontier where most proposals are rejected. In such
+conditions, there is little opportunity for a growing compliance premium
+to manifest as escalating synthesis cost.</p>
+<p>In short, resource divergence would be expected only in regimes where
+admissible reflective growth continues. The emergence of stasis preempts
+that regime.</p>
+<h2 id="limitations-and-scope">9. Limitations and Scope</h2>
+<ul>
+<li>The experiment is regime-bounded and toy-specific.</li>
+<li>The modification language is finite.</li>
+<li>Resource metrics are proxies for marginal interface cost.</li>
+</ul>
+<p>However, all real systems enforce accountability through
+<strong>bounded self-modification interfaces</strong>—APIs, proof
+obligations, certification pipelines, or policy gates. An infinite
+internal state space does not entail an infinite admissible modification
+language under verification constraints. The experiment therefore
+studies a general architectural consequence of enforcing accountability
+at an interface, not merely an artifact of a toy environment.</p>
+<h2 id="paths-beyond-stasis-speculative">10. Paths Beyond Stasis
+(Speculative)</h2>
+<p>Escaping the stasis regime without abandoning accountability likely
+requires relaxing at least one kernel invariant. Three broad directions
+are apparent:</p>
+<ol type="1">
+<li><p><strong>Relaxed evaluability</strong> Probabilistic, amortized,
+or sampled verification in place of strict causal anchoring.</p></li>
+<li><p><strong>Controlled delegation</strong> Bounded, revocable
+delegation of sub-evaluations, weakening non-delegation in constrained
+ways.</p></li>
+<li><p><strong>Non-local justification</strong> Replacing explicit
+causal chains with invariant-based certificates or global
+proofs.</p></li>
+</ol>
+<p>Each direction defines a distinct alignment regime and introduces new
+risks. We do not advocate any particular escape here; we merely delimit
+the design space.</p>
+<h2 id="conclusion">11. Conclusion</h2>
+<p>The Kernel Non-Simulability hypothesis motivated this work, but the
+experiment revealed a deeper result. Under strong accountability and
+non-delegation constraints, reflective agency does not break—it
+<strong>stops</strong>.</p>
+<p>The kernel does not fail. It freezes.</p>
+<p>This stasis regime represents a structural limit on
+alignment-by-constraint and reframes the challenge of building systems
+that are simultaneously safe, accountable, and capable of sustained
+self-improvement.</p>
+
+    </article>
+</body>
+</html>
