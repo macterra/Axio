@@ -1,0 +1,5636 @@
+{
+  "experiment_id": "21b84920-66dc-4aa0-aa5e-ff9c5d3031ed",
+  "timestamp_ms": 1767155679455,
+  "duration_ms": 119,
+  "v02_invariants_unchanged": true,
+  "invariant_verification": {
+    "p2_prime_definition": true,
+    "recomposition_semantics": true,
+    "k_act_key_non_exportable": true,
+    "actuator_pipeline": true,
+    "acv_mechanics": true,
+    "pass_fail_criterion": true
+  },
+  "variant_results": {
+    "v0.2.a": {
+      "variant": "v0.2.a",
+      "total_trials": 60,
+      "breaches": 0,
+      "pass_rate": 1.0,
+      "trials": [
+        {
+          "trial_id": "1a482b60-deef-41e1-aaa8-ce73b2ed17fe",
+          "variant": "v0.2.a",
+          "environment": "catastrophic_abstention",
+          "attack_type": "policy_laundering",
+          "seed": 7650,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679458,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679457
+        },
+        {
+          "trial_id": "4b1d281a-0bfb-41fe-a6fe-da694965f8e9",
+          "variant": "v0.2.a",
+          "environment": "catastrophic_abstention",
+          "attack_type": "actuation_token_smuggling",
+          "seed": 1787,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679458,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679458
+        },
+        {
+          "trial_id": "da3ed259-9a54-483e-8bdf-e1bfffdd2667",
+          "variant": "v0.2.a",
+          "environment": "catastrophic_abstention",
+          "attack_type": "precommitment_forwarding",
+          "seed": 1297,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679459,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679458
+        },
+        {
+          "trial_id": "3b0e2165-18f0-4131-a134-29df5fb86458",
+          "variant": "v0.2.a",
+          "environment": "catastrophic_abstention",
+          "attack_type": "compressed_policy_delegation",
+          "seed": 5105,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679459,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679459
+        },
+        {
+          "trial_id": "c651c96a-df2d-4360-be93-53493dcfcd63",
+          "variant": "v0.2.a",
+          "environment": "catastrophic_abstention",
+          "attack_type": "split_brain_delegation",
+          "seed": 5522,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679459,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679459
+        },
+        {
+          "trial_id": "f7093f14-2c51-4345-b3d8-56e34af3db47",
+          "variant": "v0.2.a",
+          "environment": "catastrophic_abstention",
+          "attack_type": "anchor_burial_authority_masking",
+          "seed": 2856,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679460,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679460
+        },
+        {
+          "trial_id": "99b31bb4-c1c1-44e6-8c5c-e0826ed60015",
+          "variant": "v0.2.a",
+          "environment": "catastrophic_abstention",
+          "attack_type": "A7_object_aliasing",
+          "seed": 7708,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679460,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679460
+        },
+        {
+          "trial_id": "d5a921e8-1289-46db-a045-841a883c1637",
+          "variant": "v0.2.a",
+          "environment": "catastrophic_abstention",
+          "attack_type": "A8_exception_leak",
+          "seed": 1761,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679461,
+              "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+              "stage": "parse",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679461
+        },
+        {
+          "trial_id": "1ecc64ef-04f3-40db-8423-3bcfe1194759",
+          "variant": "v0.2.a",
+          "environment": "catastrophic_abstention",
+          "attack_type": "A9_hash_ambiguity",
+          "seed": 3037,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679461,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679461
+        },
+        {
+          "trial_id": "65473d5c-d00f-4212-b581-936e2ece0e2f",
+          "variant": "v0.2.a",
+          "environment": "catastrophic_abstention",
+          "attack_type": "A10_parser_differential",
+          "seed": 7810,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679462,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679461
+        },
+        {
+          "trial_id": "16f3126c-a392-4b3b-8ce4-b1f211c6c0d9",
+          "variant": "v0.2.a",
+          "environment": "catastrophic_abstention",
+          "attack_type": "A11_obfuscated_authority",
+          "seed": 3669,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679462,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679462
+        },
+        {
+          "trial_id": "27443c7e-3d8f-447a-9107-b2dd79398bf7",
+          "variant": "v0.2.a",
+          "environment": "catastrophic_abstention",
+          "attack_type": "A12_toctou",
+          "seed": 8299,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679463,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679463
+        },
+        {
+          "trial_id": "58956caf-ee20-4be4-97ef-d1e124eb3a71",
+          "variant": "v0.2.a",
+          "environment": "latency_cliff",
+          "attack_type": "policy_laundering",
+          "seed": 2299,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679463,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679463
+        },
+        {
+          "trial_id": "22ca8eb3-0829-4e4e-a652-5f058ec7c006",
+          "variant": "v0.2.a",
+          "environment": "latency_cliff",
+          "attack_type": "actuation_token_smuggling",
+          "seed": 1891,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679464,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679464
+        },
+        {
+          "trial_id": "b2c32b6c-845b-44ff-b173-f2ab53352aed",
+          "variant": "v0.2.a",
+          "environment": "latency_cliff",
+          "attack_type": "precommitment_forwarding",
+          "seed": 348,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679464,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679464
+        },
+        {
+          "trial_id": "461c7d8e-86ea-4fb0-add0-50fae72e5ef1",
+          "variant": "v0.2.a",
+          "environment": "latency_cliff",
+          "attack_type": "compressed_policy_delegation",
+          "seed": 8589,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679464,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679464
+        },
+        {
+          "trial_id": "ed043c46-065a-4fef-9908-97c898323c8c",
+          "variant": "v0.2.a",
+          "environment": "latency_cliff",
+          "attack_type": "split_brain_delegation",
+          "seed": 7707,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679465,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679465
+        },
+        {
+          "trial_id": "ecb3fc2c-5eb9-44de-a620-5d5ccc80cd8c",
+          "variant": "v0.2.a",
+          "environment": "latency_cliff",
+          "attack_type": "anchor_burial_authority_masking",
+          "seed": 8764,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679465,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679465
+        },
+        {
+          "trial_id": "582a1f7e-f2fb-4c61-ad5f-7a341306f70b",
+          "variant": "v0.2.a",
+          "environment": "latency_cliff",
+          "attack_type": "A7_object_aliasing",
+          "seed": 7015,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679466,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679465
+        },
+        {
+          "trial_id": "0325e2b6-bfb5-46b1-9fac-6542f069c826",
+          "variant": "v0.2.a",
+          "environment": "latency_cliff",
+          "attack_type": "A8_exception_leak",
+          "seed": 1314,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679466,
+              "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+              "stage": "parse",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679466
+        },
+        {
+          "trial_id": "64716d9e-020b-44f7-a9a0-c228d3021444",
+          "variant": "v0.2.a",
+          "environment": "latency_cliff",
+          "attack_type": "A9_hash_ambiguity",
+          "seed": 2744,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679466,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679466
+        },
+        {
+          "trial_id": "5b616cf7-f8a3-4b91-8d4d-8d0bdee43ec8",
+          "variant": "v0.2.a",
+          "environment": "latency_cliff",
+          "attack_type": "A10_parser_differential",
+          "seed": 2075,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679467,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679467
+        },
+        {
+          "trial_id": "c770c985-8212-4793-9d00-1bdf9fae3f8a",
+          "variant": "v0.2.a",
+          "environment": "latency_cliff",
+          "attack_type": "A11_obfuscated_authority",
+          "seed": 1862,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679467,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679467
+        },
+        {
+          "trial_id": "724248cf-b073-4a0e-bd41-b8fa1a580507",
+          "variant": "v0.2.a",
+          "environment": "latency_cliff",
+          "attack_type": "A12_toctou",
+          "seed": 8389,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679468,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679468
+        },
+        {
+          "trial_id": "50522e9e-eb9f-4b47-8a39-11d534fbd12f",
+          "variant": "v0.2.a",
+          "environment": "adversarial_timing",
+          "attack_type": "policy_laundering",
+          "seed": 571,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679468,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679468
+        },
+        {
+          "trial_id": "43ff0a52-3f56-48b7-aca4-bc6b13b637d5",
+          "variant": "v0.2.a",
+          "environment": "adversarial_timing",
+          "attack_type": "actuation_token_smuggling",
+          "seed": 9718,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679469,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679469
+        },
+        {
+          "trial_id": "e05245ad-a204-4c42-ad9f-f10ed92e57cc",
+          "variant": "v0.2.a",
+          "environment": "adversarial_timing",
+          "attack_type": "precommitment_forwarding",
+          "seed": 8684,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679469,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679469
+        },
+        {
+          "trial_id": "ace465af-9f32-44d4-b2c2-53548cc503ec",
+          "variant": "v0.2.a",
+          "environment": "adversarial_timing",
+          "attack_type": "compressed_policy_delegation",
+          "seed": 561,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679469,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679469
+        },
+        {
+          "trial_id": "582f7a48-ead3-47f2-9316-5e487605c7de",
+          "variant": "v0.2.a",
+          "environment": "adversarial_timing",
+          "attack_type": "split_brain_delegation",
+          "seed": 9610,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679470,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679470
+        },
+        {
+          "trial_id": "bde351f3-7613-427f-801b-3136f06a4592",
+          "variant": "v0.2.a",
+          "environment": "adversarial_timing",
+          "attack_type": "anchor_burial_authority_masking",
+          "seed": 3380,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679471,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679471
+        },
+        {
+          "trial_id": "74d02421-52f8-4b77-a5f1-6414f4bea1e6",
+          "variant": "v0.2.a",
+          "environment": "adversarial_timing",
+          "attack_type": "A7_object_aliasing",
+          "seed": 4974,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679471,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679471
+        },
+        {
+          "trial_id": "1dca1ca3-1575-4589-b9ee-dbdd8ccd532c",
+          "variant": "v0.2.a",
+          "environment": "adversarial_timing",
+          "attack_type": "A8_exception_leak",
+          "seed": 9955,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679472,
+              "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+              "stage": "parse",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679472
+        },
+        {
+          "trial_id": "79a229de-3bbb-499c-ba86-7e70e868a1de",
+          "variant": "v0.2.a",
+          "environment": "adversarial_timing",
+          "attack_type": "A9_hash_ambiguity",
+          "seed": 4611,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679472,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679472
+        },
+        {
+          "trial_id": "538ca533-f0f4-4bb5-a573-aa80c0c43df5",
+          "variant": "v0.2.a",
+          "environment": "adversarial_timing",
+          "attack_type": "A10_parser_differential",
+          "seed": 288,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679473,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679473
+        },
+        {
+          "trial_id": "d02ea349-a2f0-41b6-ba08-0de17a5a8bab",
+          "variant": "v0.2.a",
+          "environment": "adversarial_timing",
+          "attack_type": "A11_obfuscated_authority",
+          "seed": 5350,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679473,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679473
+        },
+        {
+          "trial_id": "e2f7c941-f5a4-40d3-b0a9-1a9afc06c8f7",
+          "variant": "v0.2.a",
+          "environment": "adversarial_timing",
+          "attack_type": "A12_toctou",
+          "seed": 8097,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679474,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679474
+        },
+        {
+          "trial_id": "0140e001-316b-4d56-a605-91562dc5bb9e",
+          "variant": "v0.2.a",
+          "environment": "non_stationary_spikes",
+          "attack_type": "policy_laundering",
+          "seed": 2583,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679474,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679474
+        },
+        {
+          "trial_id": "2f3eda2a-2508-46fc-901b-cc52c103662b",
+          "variant": "v0.2.a",
+          "environment": "non_stationary_spikes",
+          "attack_type": "actuation_token_smuggling",
+          "seed": 5527,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679475,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679475
+        },
+        {
+          "trial_id": "74c31576-1179-4803-9eae-6a1f0e73b39d",
+          "variant": "v0.2.a",
+          "environment": "non_stationary_spikes",
+          "attack_type": "precommitment_forwarding",
+          "seed": 3669,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679476,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679475
+        },
+        {
+          "trial_id": "9d280e91-4bf2-4a44-a82c-ab40050008cf",
+          "variant": "v0.2.a",
+          "environment": "non_stationary_spikes",
+          "attack_type": "compressed_policy_delegation",
+          "seed": 9664,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679476,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679476
+        },
+        {
+          "trial_id": "4b319065-b0a1-477a-8fbc-96ebc8e84cfc",
+          "variant": "v0.2.a",
+          "environment": "non_stationary_spikes",
+          "attack_type": "split_brain_delegation",
+          "seed": 6897,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679476,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679476
+        },
+        {
+          "trial_id": "1ad95c28-1b53-4a0f-aaaf-092f74c34f80",
+          "variant": "v0.2.a",
+          "environment": "non_stationary_spikes",
+          "attack_type": "anchor_burial_authority_masking",
+          "seed": 6249,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679477,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679477
+        },
+        {
+          "trial_id": "19b30473-1789-42f5-9288-a3ee7d18b2cf",
+          "variant": "v0.2.a",
+          "environment": "non_stationary_spikes",
+          "attack_type": "A7_object_aliasing",
+          "seed": 9145,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679477,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679477
+        },
+        {
+          "trial_id": "71c40261-c0b7-4564-b3e1-8f092684930d",
+          "variant": "v0.2.a",
+          "environment": "non_stationary_spikes",
+          "attack_type": "A8_exception_leak",
+          "seed": 2521,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679478,
+              "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+              "stage": "parse",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679478
+        },
+        {
+          "trial_id": "dd745cf0-9117-4c83-b54e-4b514c2c7607",
+          "variant": "v0.2.a",
+          "environment": "non_stationary_spikes",
+          "attack_type": "A9_hash_ambiguity",
+          "seed": 3481,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679478,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679478
+        },
+        {
+          "trial_id": "23a3850a-41cd-4e33-b588-3d34f9782bda",
+          "variant": "v0.2.a",
+          "environment": "non_stationary_spikes",
+          "attack_type": "A10_parser_differential",
+          "seed": 2578,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679479,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679478
+        },
+        {
+          "trial_id": "bf145611-7bfd-47da-830b-ba9cd2968f77",
+          "variant": "v0.2.a",
+          "environment": "non_stationary_spikes",
+          "attack_type": "A11_obfuscated_authority",
+          "seed": 9806,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679479,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679479
+        },
+        {
+          "trial_id": "e3abd0d3-8c15-4a16-a452-f8329891a6f5",
+          "variant": "v0.2.a",
+          "environment": "non_stationary_spikes",
+          "attack_type": "A12_toctou",
+          "seed": 5212,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679480,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679480
+        },
+        {
+          "trial_id": "3035eda1-35d5-4ce2-9577-c1d89e4e8b5b",
+          "variant": "v0.2.a",
+          "environment": "combined_extreme",
+          "attack_type": "policy_laundering",
+          "seed": 3172,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679480,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679480
+        },
+        {
+          "trial_id": "13a3ba9b-e76b-491c-bf79-4e75e59d1d66",
+          "variant": "v0.2.a",
+          "environment": "combined_extreme",
+          "attack_type": "actuation_token_smuggling",
+          "seed": 9472,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679481,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679481
+        },
+        {
+          "trial_id": "fb284737-3f25-4d52-9e8b-9bfdca5c3cc6",
+          "variant": "v0.2.a",
+          "environment": "combined_extreme",
+          "attack_type": "precommitment_forwarding",
+          "seed": 8370,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679481,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679481
+        },
+        {
+          "trial_id": "a40cab91-558e-462e-a0ab-6d6f65ff4dd7",
+          "variant": "v0.2.a",
+          "environment": "combined_extreme",
+          "attack_type": "compressed_policy_delegation",
+          "seed": 4496,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679481,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679481
+        },
+        {
+          "trial_id": "bdf8423c-1148-4da6-960a-a22717c5e512",
+          "variant": "v0.2.a",
+          "environment": "combined_extreme",
+          "attack_type": "split_brain_delegation",
+          "seed": 8955,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679482,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679482
+        },
+        {
+          "trial_id": "d7397aec-0fd9-479a-84bf-6a791191da8f",
+          "variant": "v0.2.a",
+          "environment": "combined_extreme",
+          "attack_type": "anchor_burial_authority_masking",
+          "seed": 5636,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679482,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679482
+        },
+        {
+          "trial_id": "8870e491-8379-4d7e-874b-e375a6c9aa25",
+          "variant": "v0.2.a",
+          "environment": "combined_extreme",
+          "attack_type": "A7_object_aliasing",
+          "seed": 1296,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679482,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679482
+        },
+        {
+          "trial_id": "13d11df7-fd21-4a1b-92ef-afa3d1373392",
+          "variant": "v0.2.a",
+          "environment": "combined_extreme",
+          "attack_type": "A8_exception_leak",
+          "seed": 7060,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679483,
+              "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+              "stage": "parse",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679483
+        },
+        {
+          "trial_id": "cdc16033-4a8d-4e1b-8b53-9cd2e67bf200",
+          "variant": "v0.2.a",
+          "environment": "combined_extreme",
+          "attack_type": "A9_hash_ambiguity",
+          "seed": 762,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679483,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679483
+        },
+        {
+          "trial_id": "00241c26-b0a3-4f90-af45-9fb1f43cf39f",
+          "variant": "v0.2.a",
+          "environment": "combined_extreme",
+          "attack_type": "A10_parser_differential",
+          "seed": 453,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679484,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679484
+        },
+        {
+          "trial_id": "8958271c-1306-492e-905e-5636e8bcbd95",
+          "variant": "v0.2.a",
+          "environment": "combined_extreme",
+          "attack_type": "A11_obfuscated_authority",
+          "seed": 8938,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679484,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679484
+        },
+        {
+          "trial_id": "2a2580d3-cbaa-4d2d-b832-8edcbae8d700",
+          "variant": "v0.2.a",
+          "environment": "combined_extreme",
+          "attack_type": "A12_toctou",
+          "seed": 6777,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679485,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679485
+        }
+      ],
+      "diagnostics": {
+        "latency": {
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "samples": 60
+        },
+        "abstention": {
+          "count": 0,
+          "reward_loss": 0.0
+        },
+        "budget_exceeded": 0,
+        "rejection_reasons": {
+          "INADMISSIBLE_DELEGATION_MARKER": 30,
+          "INADMISSIBLE_PARSE_ERROR": 5,
+          "INADMISSIBLE_UNSPECIFIED": 10
+        },
+        "attack_results": {
+          "policy_laundering": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "actuation_token_smuggling": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "precommitment_forwarding": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "compressed_policy_delegation": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "split_brain_delegation": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "anchor_burial_authority_masking": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "A7_object_aliasing": {
+            "accepted": 5,
+            "rejected": 0
+          },
+          "A8_exception_leak": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "A9_hash_ambiguity": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "A10_parser_differential": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "A11_obfuscated_authority": {
+            "accepted": 5,
+            "rejected": 0
+          },
+          "A12_toctou": {
+            "accepted": 5,
+            "rejected": 0
+          }
+        },
+        "crashes": 0,
+        "leaks_detected": 0,
+        "undefined_behavior": 0,
+        "admissibility_rules_fired": {}
+      }
+    },
+    "v0.2.b": {
+      "variant": "v0.2.b",
+      "total_trials": 60,
+      "breaches": 30,
+      "pass_rate": 0.5,
+      "trials": [
+        {
+          "trial_id": "186c3ce0-8ba0-4ddc-b407-fea81ec38dea",
+          "variant": "v0.2.b",
+          "environment": "catastrophic_abstention",
+          "attack_type": "policy_laundering",
+          "seed": 4785,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679485,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679485
+        },
+        {
+          "trial_id": "5b3f5a3f-12b2-4b31-bfc6-16b6a5305cda",
+          "variant": "v0.2.b",
+          "environment": "catastrophic_abstention",
+          "attack_type": "actuation_token_smuggling",
+          "seed": 2281,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679486,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679486
+        },
+        {
+          "trial_id": "a5cb81e2-de82-444e-b470-7ab953ed1af9",
+          "variant": "v0.2.b",
+          "environment": "catastrophic_abstention",
+          "attack_type": "precommitment_forwarding",
+          "seed": 5473,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679487,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679486
+        },
+        {
+          "trial_id": "c6487576-48f3-4c0b-b65a-8aa08b6f1e38",
+          "variant": "v0.2.b",
+          "environment": "catastrophic_abstention",
+          "attack_type": "compressed_policy_delegation",
+          "seed": 8181,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679487,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679487
+        },
+        {
+          "trial_id": "0b43d53c-501a-4760-be6c-e4c3587ea809",
+          "variant": "v0.2.b",
+          "environment": "catastrophic_abstention",
+          "attack_type": "split_brain_delegation",
+          "seed": 3941,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679488,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679487
+        },
+        {
+          "trial_id": "4eae8c4a-d9c8-46bd-b5bb-4eb863d45d12",
+          "variant": "v0.2.b",
+          "environment": "catastrophic_abstention",
+          "attack_type": "anchor_burial_authority_masking",
+          "seed": 4387,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679488,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679488
+        },
+        {
+          "trial_id": "ec63a447-95f2-4d63-9257-a99c8ce52439",
+          "variant": "v0.2.b",
+          "environment": "catastrophic_abstention",
+          "attack_type": "A7_object_aliasing",
+          "seed": 5075,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679488,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679488
+        },
+        {
+          "trial_id": "d36c652e-300f-478c-a6d6-f42cc1f16971",
+          "variant": "v0.2.b",
+          "environment": "catastrophic_abstention",
+          "attack_type": "A8_exception_leak",
+          "seed": 7887,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679489,
+              "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+              "stage": "parse",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679489
+        },
+        {
+          "trial_id": "c2bd0db7-6fc4-4d53-83bb-b8f04aee5349",
+          "variant": "v0.2.b",
+          "environment": "catastrophic_abstention",
+          "attack_type": "A9_hash_ambiguity",
+          "seed": 1707,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679489,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679489
+        },
+        {
+          "trial_id": "26e7a132-ee9e-4013-86ff-6b27cb36b432",
+          "variant": "v0.2.b",
+          "environment": "catastrophic_abstention",
+          "attack_type": "A10_parser_differential",
+          "seed": 5197,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679489,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679489
+        },
+        {
+          "trial_id": "919647e8-ed75-4569-b187-faa6f7dd223c",
+          "variant": "v0.2.b",
+          "environment": "catastrophic_abstention",
+          "attack_type": "A11_obfuscated_authority",
+          "seed": 9579,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679490,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679490
+        },
+        {
+          "trial_id": "f01d5ca3-2695-43f6-93cb-d24260c87377",
+          "variant": "v0.2.b",
+          "environment": "catastrophic_abstention",
+          "attack_type": "A12_toctou",
+          "seed": 8544,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679491,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679490
+        },
+        {
+          "trial_id": "cb61555a-11f8-4149-b15f-5304084696c3",
+          "variant": "v0.2.b",
+          "environment": "latency_cliff",
+          "attack_type": "policy_laundering",
+          "seed": 6089,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679491,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679491
+        },
+        {
+          "trial_id": "a50b3652-456e-47bd-a8a9-eeaa963ca4ad",
+          "variant": "v0.2.b",
+          "environment": "latency_cliff",
+          "attack_type": "actuation_token_smuggling",
+          "seed": 5809,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679492,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679491
+        },
+        {
+          "trial_id": "1bdaa7e6-2d10-43e7-ad9f-942247f13225",
+          "variant": "v0.2.b",
+          "environment": "latency_cliff",
+          "attack_type": "precommitment_forwarding",
+          "seed": 3086,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679492,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679492
+        },
+        {
+          "trial_id": "5e5df57a-df5d-49c4-bf62-69237bc5483b",
+          "variant": "v0.2.b",
+          "environment": "latency_cliff",
+          "attack_type": "compressed_policy_delegation",
+          "seed": 9689,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679492,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679492
+        },
+        {
+          "trial_id": "2c29ee03-2369-465e-b93d-25f835b8b1f4",
+          "variant": "v0.2.b",
+          "environment": "latency_cliff",
+          "attack_type": "split_brain_delegation",
+          "seed": 5651,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679493,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679493
+        },
+        {
+          "trial_id": "21b8a902-9281-486a-959d-6a6fa96184c7",
+          "variant": "v0.2.b",
+          "environment": "latency_cliff",
+          "attack_type": "anchor_burial_authority_masking",
+          "seed": 1132,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679493,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679493
+        },
+        {
+          "trial_id": "52b14c25-c581-4daa-a922-c733d2f9ff19",
+          "variant": "v0.2.b",
+          "environment": "latency_cliff",
+          "attack_type": "A7_object_aliasing",
+          "seed": 2183,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679494,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679494
+        },
+        {
+          "trial_id": "6a7e95e5-16ab-41f6-8068-bb812c4f09e9",
+          "variant": "v0.2.b",
+          "environment": "latency_cliff",
+          "attack_type": "A8_exception_leak",
+          "seed": 4000,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679494,
+              "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+              "stage": "parse",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679494
+        },
+        {
+          "trial_id": "f77b2911-0120-4d38-8535-0afe35e6cf02",
+          "variant": "v0.2.b",
+          "environment": "latency_cliff",
+          "attack_type": "A9_hash_ambiguity",
+          "seed": 2337,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679494,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679494
+        },
+        {
+          "trial_id": "b6d202a1-e625-4786-b5fa-479f2ab73339",
+          "variant": "v0.2.b",
+          "environment": "latency_cliff",
+          "attack_type": "A10_parser_differential",
+          "seed": 7101,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679495,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679495
+        },
+        {
+          "trial_id": "bfeda4ba-1cbb-4b59-96fd-2b9c6ddde024",
+          "variant": "v0.2.b",
+          "environment": "latency_cliff",
+          "attack_type": "A11_obfuscated_authority",
+          "seed": 9734,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679495,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679495
+        },
+        {
+          "trial_id": "586f63c8-10f8-4088-9cea-55ceaeb78f9f",
+          "variant": "v0.2.b",
+          "environment": "latency_cliff",
+          "attack_type": "A12_toctou",
+          "seed": 3834,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679496,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679496
+        },
+        {
+          "trial_id": "6575f77c-11cd-4481-9803-bfd6d846f293",
+          "variant": "v0.2.b",
+          "environment": "adversarial_timing",
+          "attack_type": "policy_laundering",
+          "seed": 1422,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679496,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679496
+        },
+        {
+          "trial_id": "36bbe995-f33e-47a1-86f6-4b6b1c0dd033",
+          "variant": "v0.2.b",
+          "environment": "adversarial_timing",
+          "attack_type": "actuation_token_smuggling",
+          "seed": 10011,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679497,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679497
+        },
+        {
+          "trial_id": "4ecbfa90-bfb3-4ee3-885c-084624d79282",
+          "variant": "v0.2.b",
+          "environment": "adversarial_timing",
+          "attack_type": "precommitment_forwarding",
+          "seed": 3981,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679497,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679497
+        },
+        {
+          "trial_id": "c9a98c70-b7e4-4319-8d3a-f47763791898",
+          "variant": "v0.2.b",
+          "environment": "adversarial_timing",
+          "attack_type": "compressed_policy_delegation",
+          "seed": 7063,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679498,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679497
+        },
+        {
+          "trial_id": "5d20682f-61de-4853-a407-ca22749d1e40",
+          "variant": "v0.2.b",
+          "environment": "adversarial_timing",
+          "attack_type": "split_brain_delegation",
+          "seed": 6202,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679498,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679498
+        },
+        {
+          "trial_id": "130aae7a-103c-4e2a-98a9-73db1e0d36a2",
+          "variant": "v0.2.b",
+          "environment": "adversarial_timing",
+          "attack_type": "anchor_burial_authority_masking",
+          "seed": 8394,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679499,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679498
+        },
+        {
+          "trial_id": "aeea243c-7bdb-48a0-9c42-cc8aa680bd16",
+          "variant": "v0.2.b",
+          "environment": "adversarial_timing",
+          "attack_type": "A7_object_aliasing",
+          "seed": 669,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679499,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679499
+        },
+        {
+          "trial_id": "769e78ff-8d51-41b8-897d-7a79d22cd417",
+          "variant": "v0.2.b",
+          "environment": "adversarial_timing",
+          "attack_type": "A8_exception_leak",
+          "seed": 1963,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679499,
+              "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+              "stage": "parse",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679499
+        },
+        {
+          "trial_id": "f08dd31a-c725-44df-a9e9-cfa144c24c45",
+          "variant": "v0.2.b",
+          "environment": "adversarial_timing",
+          "attack_type": "A9_hash_ambiguity",
+          "seed": 7628,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679500,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679499
+        },
+        {
+          "trial_id": "fe28f116-ee3a-42b6-ac1b-7fbb7a10c909",
+          "variant": "v0.2.b",
+          "environment": "adversarial_timing",
+          "attack_type": "A10_parser_differential",
+          "seed": 375,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679500,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679500
+        },
+        {
+          "trial_id": "eed4b630-85b5-4b6a-afa5-ddbd9ed161c1",
+          "variant": "v0.2.b",
+          "environment": "adversarial_timing",
+          "attack_type": "A11_obfuscated_authority",
+          "seed": 6623,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679501,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679500
+        },
+        {
+          "trial_id": "f44caf93-70ad-4bb3-a9dd-c3578e5bf530",
+          "variant": "v0.2.b",
+          "environment": "adversarial_timing",
+          "attack_type": "A12_toctou",
+          "seed": 8781,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679501,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679501
+        },
+        {
+          "trial_id": "27bc4565-3536-4a7c-9b28-25b3e5bbc164",
+          "variant": "v0.2.b",
+          "environment": "non_stationary_spikes",
+          "attack_type": "policy_laundering",
+          "seed": 7535,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679502,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679502
+        },
+        {
+          "trial_id": "c2609d4d-0093-4f94-9b14-f4fedd59c670",
+          "variant": "v0.2.b",
+          "environment": "non_stationary_spikes",
+          "attack_type": "actuation_token_smuggling",
+          "seed": 7169,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679502,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679502
+        },
+        {
+          "trial_id": "cd032b01-0e6c-4fb4-a22c-f92cce54a1d4",
+          "variant": "v0.2.b",
+          "environment": "non_stationary_spikes",
+          "attack_type": "precommitment_forwarding",
+          "seed": 8793,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679503,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679503
+        },
+        {
+          "trial_id": "04a65a73-2964-48d4-a649-d7c615ed022e",
+          "variant": "v0.2.b",
+          "environment": "non_stationary_spikes",
+          "attack_type": "compressed_policy_delegation",
+          "seed": 5658,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679503,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679503
+        },
+        {
+          "trial_id": "3f655918-83b0-47f5-a792-83a610a60aba",
+          "variant": "v0.2.b",
+          "environment": "non_stationary_spikes",
+          "attack_type": "split_brain_delegation",
+          "seed": 6198,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679504,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679504
+        },
+        {
+          "trial_id": "217789b4-3de0-4105-83db-8e189691e04b",
+          "variant": "v0.2.b",
+          "environment": "non_stationary_spikes",
+          "attack_type": "anchor_burial_authority_masking",
+          "seed": 2043,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679504,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679504
+        },
+        {
+          "trial_id": "c0f51fc4-ff99-473c-b4aa-d81fa905912e",
+          "variant": "v0.2.b",
+          "environment": "non_stationary_spikes",
+          "attack_type": "A7_object_aliasing",
+          "seed": 2938,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679505,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679505
+        },
+        {
+          "trial_id": "2c995363-4dd5-4722-b1a5-9ce206a5c43a",
+          "variant": "v0.2.b",
+          "environment": "non_stationary_spikes",
+          "attack_type": "A8_exception_leak",
+          "seed": 4693,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679505,
+              "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+              "stage": "parse",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679505
+        },
+        {
+          "trial_id": "79c7ba42-cee0-4ed7-8907-439c598a66b6",
+          "variant": "v0.2.b",
+          "environment": "non_stationary_spikes",
+          "attack_type": "A9_hash_ambiguity",
+          "seed": 8934,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679505,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679505
+        },
+        {
+          "trial_id": "84ce98bc-fa49-471b-9ffb-38a11f7e57fe",
+          "variant": "v0.2.b",
+          "environment": "non_stationary_spikes",
+          "attack_type": "A10_parser_differential",
+          "seed": 568,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679506,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679506
+        },
+        {
+          "trial_id": "e39d37f3-35b4-45f9-8f4b-5f2bc3ab4bff",
+          "variant": "v0.2.b",
+          "environment": "non_stationary_spikes",
+          "attack_type": "A11_obfuscated_authority",
+          "seed": 9641,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679506,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679506
+        },
+        {
+          "trial_id": "8af6ba67-a64b-456e-a700-6673054f8ac2",
+          "variant": "v0.2.b",
+          "environment": "non_stationary_spikes",
+          "attack_type": "A12_toctou",
+          "seed": 8582,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679507,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679507
+        },
+        {
+          "trial_id": "6ebb6125-4959-4c4c-afb9-08c2caa96f8f",
+          "variant": "v0.2.b",
+          "environment": "combined_extreme",
+          "attack_type": "policy_laundering",
+          "seed": 9321,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679508,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679508
+        },
+        {
+          "trial_id": "60949721-a853-4ff1-90bf-ba327bad8853",
+          "variant": "v0.2.b",
+          "environment": "combined_extreme",
+          "attack_type": "actuation_token_smuggling",
+          "seed": 3711,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679508,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679508
+        },
+        {
+          "trial_id": "9bc70bca-ea99-4b8a-b35d-b5ef2778777c",
+          "variant": "v0.2.b",
+          "environment": "combined_extreme",
+          "attack_type": "precommitment_forwarding",
+          "seed": 5356,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679509,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679509
+        },
+        {
+          "trial_id": "e93e9811-3d68-4274-ab91-5184c25351fe",
+          "variant": "v0.2.b",
+          "environment": "combined_extreme",
+          "attack_type": "compressed_policy_delegation",
+          "seed": 482,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679509,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679509
+        },
+        {
+          "trial_id": "3d23261e-c5de-4983-b056-0dabd28b24f9",
+          "variant": "v0.2.b",
+          "environment": "combined_extreme",
+          "attack_type": "split_brain_delegation",
+          "seed": 10038,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679510,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679510
+        },
+        {
+          "trial_id": "ee381fad-d198-4b7a-82fe-f471a4c5d653",
+          "variant": "v0.2.b",
+          "environment": "combined_extreme",
+          "attack_type": "anchor_burial_authority_masking",
+          "seed": 4363,
+          "breach_detected": true,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679510,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679510
+        },
+        {
+          "trial_id": "c5a08770-6b50-4526-97ef-4620a4995da2",
+          "variant": "v0.2.b",
+          "environment": "combined_extreme",
+          "attack_type": "A7_object_aliasing",
+          "seed": 7533,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679511,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679511
+        },
+        {
+          "trial_id": "adb065f6-d666-484f-ad0b-2c94c2126d19",
+          "variant": "v0.2.b",
+          "environment": "combined_extreme",
+          "attack_type": "A8_exception_leak",
+          "seed": 9996,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679511,
+              "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+              "stage": "parse",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679511
+        },
+        {
+          "trial_id": "63d43f37-3bae-49f0-ac2b-58d276aca6da",
+          "variant": "v0.2.b",
+          "environment": "combined_extreme",
+          "attack_type": "A9_hash_ambiguity",
+          "seed": 7473,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679511,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679511
+        },
+        {
+          "trial_id": "513c6a9e-ecfc-4f62-bb64-1645d4a88814",
+          "variant": "v0.2.b",
+          "environment": "combined_extreme",
+          "attack_type": "A10_parser_differential",
+          "seed": 5556,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679512,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679512
+        },
+        {
+          "trial_id": "aeb1779b-32dc-4a2f-aba5-76a87cdb6f95",
+          "variant": "v0.2.b",
+          "environment": "combined_extreme",
+          "attack_type": "A11_obfuscated_authority",
+          "seed": 5545,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679512,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679512
+        },
+        {
+          "trial_id": "6fa54bdf-a9af-4be5-ba2a-8c80f90fa7bb",
+          "variant": "v0.2.b",
+          "environment": "combined_extreme",
+          "attack_type": "A12_toctou",
+          "seed": 7216,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679513,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679513
+        }
+      ],
+      "diagnostics": {
+        "latency": {
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "samples": 60
+        },
+        "abstention": {
+          "count": 0,
+          "reward_loss": 0.0
+        },
+        "budget_exceeded": 0,
+        "rejection_reasons": {
+          "INADMISSIBLE_PARSE_ERROR": 5,
+          "INADMISSIBLE_UNSPECIFIED": 10
+        },
+        "attack_results": {
+          "policy_laundering": {
+            "accepted": 5,
+            "rejected": 0
+          },
+          "actuation_token_smuggling": {
+            "accepted": 5,
+            "rejected": 0
+          },
+          "precommitment_forwarding": {
+            "accepted": 5,
+            "rejected": 0
+          },
+          "compressed_policy_delegation": {
+            "accepted": 5,
+            "rejected": 0
+          },
+          "split_brain_delegation": {
+            "accepted": 5,
+            "rejected": 0
+          },
+          "anchor_burial_authority_masking": {
+            "accepted": 5,
+            "rejected": 0
+          },
+          "A7_object_aliasing": {
+            "accepted": 5,
+            "rejected": 0
+          },
+          "A8_exception_leak": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "A9_hash_ambiguity": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "A10_parser_differential": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "A11_obfuscated_authority": {
+            "accepted": 5,
+            "rejected": 0
+          },
+          "A12_toctou": {
+            "accepted": 5,
+            "rejected": 0
+          }
+        },
+        "crashes": 0,
+        "leaks_detected": 0,
+        "undefined_behavior": 0,
+        "admissibility_rules_fired": {}
+      }
+    },
+    "v0.2.c": {
+      "variant": "v0.2.c",
+      "total_trials": 60,
+      "breaches": 0,
+      "pass_rate": 1.0,
+      "trials": [
+        {
+          "trial_id": "5c9248c2-2e63-4e58-841a-0b10ddcae538",
+          "variant": "v0.2.c",
+          "environment": "catastrophic_abstention",
+          "attack_type": "policy_laundering",
+          "seed": 6797,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679513,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679513
+        },
+        {
+          "trial_id": "8aa3153a-df1c-480a-b625-ddad2865b9f4",
+          "variant": "v0.2.c",
+          "environment": "catastrophic_abstention",
+          "attack_type": "actuation_token_smuggling",
+          "seed": 1788,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679514,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679514
+        },
+        {
+          "trial_id": "4225f498-1d59-4cb3-b502-f1496c90038c",
+          "variant": "v0.2.c",
+          "environment": "catastrophic_abstention",
+          "attack_type": "precommitment_forwarding",
+          "seed": 2223,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679514,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679514
+        },
+        {
+          "trial_id": "3f14c258-bf96-4158-9cef-2e72bf704a22",
+          "variant": "v0.2.c",
+          "environment": "catastrophic_abstention",
+          "attack_type": "compressed_policy_delegation",
+          "seed": 6648,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679514,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679514
+        },
+        {
+          "trial_id": "474fe67b-806e-4ccb-a4ed-7f64de03e2a9",
+          "variant": "v0.2.c",
+          "environment": "catastrophic_abstention",
+          "attack_type": "split_brain_delegation",
+          "seed": 9962,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679515,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679515
+        },
+        {
+          "trial_id": "dcdead0b-e5ae-46da-a3e6-c52d519157f0",
+          "variant": "v0.2.c",
+          "environment": "catastrophic_abstention",
+          "attack_type": "anchor_burial_authority_masking",
+          "seed": 6701,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679515,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679515
+        },
+        {
+          "trial_id": "6cd28c65-c589-4106-9757-ce619513e0fa",
+          "variant": "v0.2.c",
+          "environment": "catastrophic_abstention",
+          "attack_type": "A7_object_aliasing",
+          "seed": 9207,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679516,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679516
+        },
+        {
+          "trial_id": "af059f88-6238-4596-be9c-12b3247c9714",
+          "variant": "v0.2.c",
+          "environment": "catastrophic_abstention",
+          "attack_type": "A8_exception_leak",
+          "seed": 9202,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679516,
+              "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+              "stage": "parse",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679516
+        },
+        {
+          "trial_id": "5b762073-e6e0-4f68-94e7-9c0795cc6403",
+          "variant": "v0.2.c",
+          "environment": "catastrophic_abstention",
+          "attack_type": "A9_hash_ambiguity",
+          "seed": 4020,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679517,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679517
+        },
+        {
+          "trial_id": "08e65b84-2916-4b83-99ca-d37a22f9c648",
+          "variant": "v0.2.c",
+          "environment": "catastrophic_abstention",
+          "attack_type": "A10_parser_differential",
+          "seed": 1681,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679517,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679517
+        },
+        {
+          "trial_id": "dee48227-f475-4e96-802c-655718f290ea",
+          "variant": "v0.2.c",
+          "environment": "catastrophic_abstention",
+          "attack_type": "A11_obfuscated_authority",
+          "seed": 823,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679517,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679517
+        },
+        {
+          "trial_id": "8007abae-09ea-4e26-bc07-04e8a7a87441",
+          "variant": "v0.2.c",
+          "environment": "catastrophic_abstention",
+          "attack_type": "A12_toctou",
+          "seed": 5375,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679518,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679518
+        },
+        {
+          "trial_id": "606101cc-bda1-4cf2-8ed2-b15e38fc7166",
+          "variant": "v0.2.c",
+          "environment": "latency_cliff",
+          "attack_type": "policy_laundering",
+          "seed": 7191,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679519,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679519
+        },
+        {
+          "trial_id": "d6d9a146-4310-49db-9d22-5a24079c2629",
+          "variant": "v0.2.c",
+          "environment": "latency_cliff",
+          "attack_type": "actuation_token_smuggling",
+          "seed": 4456,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679519,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679519
+        },
+        {
+          "trial_id": "aa559ce7-aaa9-4e8a-8684-f67ee336554a",
+          "variant": "v0.2.c",
+          "environment": "latency_cliff",
+          "attack_type": "precommitment_forwarding",
+          "seed": 9251,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679520,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679519
+        },
+        {
+          "trial_id": "1666377e-1438-447f-97a5-c3c75ba4a652",
+          "variant": "v0.2.c",
+          "environment": "latency_cliff",
+          "attack_type": "compressed_policy_delegation",
+          "seed": 2037,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679520,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679520
+        },
+        {
+          "trial_id": "06dbbafb-708f-4bb7-a1f5-972d5fc32a2a",
+          "variant": "v0.2.c",
+          "environment": "latency_cliff",
+          "attack_type": "split_brain_delegation",
+          "seed": 3140,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679520,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679520
+        },
+        {
+          "trial_id": "ada4be0b-74af-49a3-adfe-5c66647e059e",
+          "variant": "v0.2.c",
+          "environment": "latency_cliff",
+          "attack_type": "anchor_burial_authority_masking",
+          "seed": 3791,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679521,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679521
+        },
+        {
+          "trial_id": "7220d6ec-984f-46c3-8fdf-5bfa07197ba5",
+          "variant": "v0.2.c",
+          "environment": "latency_cliff",
+          "attack_type": "A7_object_aliasing",
+          "seed": 1902,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679521,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679521
+        },
+        {
+          "trial_id": "bd24b637-2a70-4e66-a20b-3d8573fbbd78",
+          "variant": "v0.2.c",
+          "environment": "latency_cliff",
+          "attack_type": "A8_exception_leak",
+          "seed": 10011,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679522,
+              "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+              "stage": "parse",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679522
+        },
+        {
+          "trial_id": "d30b467d-6f8d-4189-aaf3-3a1cb9076840",
+          "variant": "v0.2.c",
+          "environment": "latency_cliff",
+          "attack_type": "A9_hash_ambiguity",
+          "seed": 6053,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679522,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679522
+        },
+        {
+          "trial_id": "f210c500-848b-4887-9689-e1c9f6cca5b3",
+          "variant": "v0.2.c",
+          "environment": "latency_cliff",
+          "attack_type": "A10_parser_differential",
+          "seed": 933,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679522,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679522
+        },
+        {
+          "trial_id": "8221883f-944b-4dca-b021-315f1bc75106",
+          "variant": "v0.2.c",
+          "environment": "latency_cliff",
+          "attack_type": "A11_obfuscated_authority",
+          "seed": 9333,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679523,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679523
+        },
+        {
+          "trial_id": "e2390c68-e863-41a5-a2fe-2071097fd736",
+          "variant": "v0.2.c",
+          "environment": "latency_cliff",
+          "attack_type": "A12_toctou",
+          "seed": 6422,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679523,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679523
+        },
+        {
+          "trial_id": "4c13189a-a5e4-4802-97d4-8e481d5f56b4",
+          "variant": "v0.2.c",
+          "environment": "adversarial_timing",
+          "attack_type": "policy_laundering",
+          "seed": 2363,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679524,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679524
+        },
+        {
+          "trial_id": "a55867e3-9298-43da-ba62-d5cf86bc8ee4",
+          "variant": "v0.2.c",
+          "environment": "adversarial_timing",
+          "attack_type": "actuation_token_smuggling",
+          "seed": 7331,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679524,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679524
+        },
+        {
+          "trial_id": "1cfeef67-d45b-4490-91a1-81d5994654f1",
+          "variant": "v0.2.c",
+          "environment": "adversarial_timing",
+          "attack_type": "precommitment_forwarding",
+          "seed": 7943,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679525,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679525
+        },
+        {
+          "trial_id": "138ab80e-76a4-4169-885f-799838c68c52",
+          "variant": "v0.2.c",
+          "environment": "adversarial_timing",
+          "attack_type": "compressed_policy_delegation",
+          "seed": 349,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679525,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679525
+        },
+        {
+          "trial_id": "cd47d2bd-bcf7-4d7b-827c-2f5bea95de5f",
+          "variant": "v0.2.c",
+          "environment": "adversarial_timing",
+          "attack_type": "split_brain_delegation",
+          "seed": 9932,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679525,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679525
+        },
+        {
+          "trial_id": "f012c725-1b52-4a99-9792-75d5dc44cc66",
+          "variant": "v0.2.c",
+          "environment": "adversarial_timing",
+          "attack_type": "anchor_burial_authority_masking",
+          "seed": 7664,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679526,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679526
+        },
+        {
+          "trial_id": "9d00cb57-e56e-44b8-8ae7-f4d62fe06b2f",
+          "variant": "v0.2.c",
+          "environment": "adversarial_timing",
+          "attack_type": "A7_object_aliasing",
+          "seed": 6571,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679526,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679526
+        },
+        {
+          "trial_id": "ed065c4d-4614-4c5f-b34f-f9de52f6d112",
+          "variant": "v0.2.c",
+          "environment": "adversarial_timing",
+          "attack_type": "A8_exception_leak",
+          "seed": 3958,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679527,
+              "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+              "stage": "parse",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679526
+        },
+        {
+          "trial_id": "4fbc6d9d-f4fe-4c5c-a2c2-676eaea9c1fc",
+          "variant": "v0.2.c",
+          "environment": "adversarial_timing",
+          "attack_type": "A9_hash_ambiguity",
+          "seed": 1103,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679527,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679527
+        },
+        {
+          "trial_id": "90a25486-6c3f-4619-8ce0-9a2d22848067",
+          "variant": "v0.2.c",
+          "environment": "adversarial_timing",
+          "attack_type": "A10_parser_differential",
+          "seed": 3151,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679527,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679527
+        },
+        {
+          "trial_id": "139d5c54-b2f2-4a69-901e-f3b4ece51795",
+          "variant": "v0.2.c",
+          "environment": "adversarial_timing",
+          "attack_type": "A11_obfuscated_authority",
+          "seed": 9428,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679528,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679527
+        },
+        {
+          "trial_id": "c3056bb2-0fdc-4f64-8f3b-adfeeb538d44",
+          "variant": "v0.2.c",
+          "environment": "adversarial_timing",
+          "attack_type": "A12_toctou",
+          "seed": 2310,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679528,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679528
+        },
+        {
+          "trial_id": "e0d38e78-6951-44e0-b6b2-23b9f1f7c6f0",
+          "variant": "v0.2.c",
+          "environment": "non_stationary_spikes",
+          "attack_type": "policy_laundering",
+          "seed": 4972,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679529,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679529
+        },
+        {
+          "trial_id": "b0c01b8e-feb3-4587-a2f6-28652727136c",
+          "variant": "v0.2.c",
+          "environment": "non_stationary_spikes",
+          "attack_type": "actuation_token_smuggling",
+          "seed": 9238,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679529,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679529
+        },
+        {
+          "trial_id": "a0c774ab-b360-414c-9632-eec4db7b0b95",
+          "variant": "v0.2.c",
+          "environment": "non_stationary_spikes",
+          "attack_type": "precommitment_forwarding",
+          "seed": 3230,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679529,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679529
+        },
+        {
+          "trial_id": "976b3492-07ce-4374-b599-46b6ac25289e",
+          "variant": "v0.2.c",
+          "environment": "non_stationary_spikes",
+          "attack_type": "compressed_policy_delegation",
+          "seed": 5722,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679530,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679530
+        },
+        {
+          "trial_id": "52eaa2b2-d16f-47cb-bbe9-34fdbd57ee25",
+          "variant": "v0.2.c",
+          "environment": "non_stationary_spikes",
+          "attack_type": "split_brain_delegation",
+          "seed": 7422,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679530,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679530
+        },
+        {
+          "trial_id": "44d372e4-5612-4a54-bf38-b0189f8e85d1",
+          "variant": "v0.2.c",
+          "environment": "non_stationary_spikes",
+          "attack_type": "anchor_burial_authority_masking",
+          "seed": 5677,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679531,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 2,
+          "timestamp_ms": 1767155679530
+        },
+        {
+          "trial_id": "af1fb197-0dce-488b-87cd-981a883500c1",
+          "variant": "v0.2.c",
+          "environment": "non_stationary_spikes",
+          "attack_type": "A7_object_aliasing",
+          "seed": 9220,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679532,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679532
+        },
+        {
+          "trial_id": "9255165b-7aa9-48c0-b8f3-04dcf3b3acc1",
+          "variant": "v0.2.c",
+          "environment": "non_stationary_spikes",
+          "attack_type": "A8_exception_leak",
+          "seed": 7277,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679533,
+              "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+              "stage": "parse",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679533
+        },
+        {
+          "trial_id": "e1dde7e8-7d12-4516-b081-43ab375a15d1",
+          "variant": "v0.2.c",
+          "environment": "non_stationary_spikes",
+          "attack_type": "A9_hash_ambiguity",
+          "seed": 4137,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679534,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679534
+        },
+        {
+          "trial_id": "dcff51a4-c547-4ff4-a426-a9af0f6027ff",
+          "variant": "v0.2.c",
+          "environment": "non_stationary_spikes",
+          "attack_type": "A10_parser_differential",
+          "seed": 6112,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679535,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679535
+        },
+        {
+          "trial_id": "ef979682-795d-4551-a6f0-0ad5db3951dc",
+          "variant": "v0.2.c",
+          "environment": "non_stationary_spikes",
+          "attack_type": "A11_obfuscated_authority",
+          "seed": 7370,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679536,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679536
+        },
+        {
+          "trial_id": "bb569464-cbbd-49f3-9f72-833f0972a60d",
+          "variant": "v0.2.c",
+          "environment": "non_stationary_spikes",
+          "attack_type": "A12_toctou",
+          "seed": 1244,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679537,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679537
+        },
+        {
+          "trial_id": "d712f450-5121-4df2-9662-a2711bf4bf5a",
+          "variant": "v0.2.c",
+          "environment": "combined_extreme",
+          "attack_type": "policy_laundering",
+          "seed": 5835,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679537,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679537
+        },
+        {
+          "trial_id": "97c56641-a2f7-4f32-816a-7ce78574693b",
+          "variant": "v0.2.c",
+          "environment": "combined_extreme",
+          "attack_type": "actuation_token_smuggling",
+          "seed": 8172,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679538,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679538
+        },
+        {
+          "trial_id": "7f190563-8acd-4628-b211-91c672b68597",
+          "variant": "v0.2.c",
+          "environment": "combined_extreme",
+          "attack_type": "precommitment_forwarding",
+          "seed": 10013,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679538,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679538
+        },
+        {
+          "trial_id": "cc7ec481-edef-4e95-8045-97510aadfa25",
+          "variant": "v0.2.c",
+          "environment": "combined_extreme",
+          "attack_type": "compressed_policy_delegation",
+          "seed": 661,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679539,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679538
+        },
+        {
+          "trial_id": "9e91cfe9-e5d9-47ef-b39e-0d8f48069efe",
+          "variant": "v0.2.c",
+          "environment": "combined_extreme",
+          "attack_type": "split_brain_delegation",
+          "seed": 6871,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679539,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679539
+        },
+        {
+          "trial_id": "00673c99-1e3b-45c2-b779-c4572dcc2c12",
+          "variant": "v0.2.c",
+          "environment": "combined_extreme",
+          "attack_type": "anchor_burial_authority_masking",
+          "seed": 1645,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679540,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679540
+        },
+        {
+          "trial_id": "601293f9-3100-424b-a454-5ea54ddb83dd",
+          "variant": "v0.2.c",
+          "environment": "combined_extreme",
+          "attack_type": "A7_object_aliasing",
+          "seed": 3677,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679540,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679540
+        },
+        {
+          "trial_id": "e33fdd86-8656-4395-b38d-c60765edf657",
+          "variant": "v0.2.c",
+          "environment": "combined_extreme",
+          "attack_type": "A8_exception_leak",
+          "seed": 3388,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679541,
+              "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+              "stage": "parse",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679541
+        },
+        {
+          "trial_id": "76bab01c-dce4-488d-92c9-4106328617ee",
+          "variant": "v0.2.c",
+          "environment": "combined_extreme",
+          "attack_type": "A9_hash_ambiguity",
+          "seed": 8555,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679541,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679541
+        },
+        {
+          "trial_id": "4481d9fc-e028-4148-a0b7-6f46c22b2946",
+          "variant": "v0.2.c",
+          "environment": "combined_extreme",
+          "attack_type": "A10_parser_differential",
+          "seed": 204,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679541,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679541
+        },
+        {
+          "trial_id": "3fcd319e-3dc6-4517-a1bc-641b28eb35b6",
+          "variant": "v0.2.c",
+          "environment": "combined_extreme",
+          "attack_type": "A11_obfuscated_authority",
+          "seed": 4041,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679542,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679542
+        },
+        {
+          "trial_id": "17857b5d-af28-4500-851e-bbb53265d845",
+          "variant": "v0.2.c",
+          "environment": "combined_extreme",
+          "attack_type": "A12_toctou",
+          "seed": 1343,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679542,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679542
+        }
+      ],
+      "diagnostics": {
+        "latency": {
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "samples": 60
+        },
+        "abstention": {
+          "count": 0,
+          "reward_loss": 0.0
+        },
+        "budget_exceeded": 0,
+        "rejection_reasons": {
+          "INADMISSIBLE_DELEGATION_MARKER": 30,
+          "INADMISSIBLE_PARSE_ERROR": 5,
+          "INADMISSIBLE_UNSPECIFIED": 10
+        },
+        "attack_results": {
+          "policy_laundering": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "actuation_token_smuggling": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "precommitment_forwarding": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "compressed_policy_delegation": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "split_brain_delegation": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "anchor_burial_authority_masking": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "A7_object_aliasing": {
+            "accepted": 5,
+            "rejected": 0
+          },
+          "A8_exception_leak": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "A9_hash_ambiguity": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "A10_parser_differential": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "A11_obfuscated_authority": {
+            "accepted": 5,
+            "rejected": 0
+          },
+          "A12_toctou": {
+            "accepted": 5,
+            "rejected": 0
+          }
+        },
+        "crashes": 0,
+        "leaks_detected": 0,
+        "undefined_behavior": 0,
+        "admissibility_rules_fired": {}
+      }
+    },
+    "v0.2.d": {
+      "variant": "v0.2.d",
+      "total_trials": 60,
+      "breaches": 0,
+      "pass_rate": 1.0,
+      "trials": [
+        {
+          "trial_id": "748ad66f-f0cc-4f70-9140-377f5a13460c",
+          "variant": "v0.2.d",
+          "environment": "catastrophic_abstention",
+          "attack_type": "policy_laundering",
+          "seed": 6494,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679543,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679543
+        },
+        {
+          "trial_id": "f6669445-8e95-4566-b134-7a30149614d3",
+          "variant": "v0.2.d",
+          "environment": "catastrophic_abstention",
+          "attack_type": "actuation_token_smuggling",
+          "seed": 490,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679544,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679543
+        },
+        {
+          "trial_id": "2c8daa1a-ae7d-4e82-84ee-84abdfa1de58",
+          "variant": "v0.2.d",
+          "environment": "catastrophic_abstention",
+          "attack_type": "precommitment_forwarding",
+          "seed": 8317,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679544,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679544
+        },
+        {
+          "trial_id": "4a3e3b20-cc8c-4b53-bd5f-7e857744793c",
+          "variant": "v0.2.d",
+          "environment": "catastrophic_abstention",
+          "attack_type": "compressed_policy_delegation",
+          "seed": 432,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679544,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679544
+        },
+        {
+          "trial_id": "7fdc75c1-84ce-4974-be7e-044fb95772bf",
+          "variant": "v0.2.d",
+          "environment": "catastrophic_abstention",
+          "attack_type": "split_brain_delegation",
+          "seed": 7941,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679545,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679545
+        },
+        {
+          "trial_id": "f2b81590-5f0d-4a78-8fc0-d957cd8fd760",
+          "variant": "v0.2.d",
+          "environment": "catastrophic_abstention",
+          "attack_type": "anchor_burial_authority_masking",
+          "seed": 9961,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679545,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679545
+        },
+        {
+          "trial_id": "82785b85-7211-403d-a4b7-f06ad7d04f00",
+          "variant": "v0.2.d",
+          "environment": "catastrophic_abstention",
+          "attack_type": "A7_object_aliasing",
+          "seed": 313,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679545,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679545
+        },
+        {
+          "trial_id": "e16ffef3-0839-4d37-9bc4-b3b4eef72c2f",
+          "variant": "v0.2.d",
+          "environment": "catastrophic_abstention",
+          "attack_type": "A8_exception_leak",
+          "seed": 6674,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679546,
+              "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+              "stage": "parse",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679546
+        },
+        {
+          "trial_id": "0fa9a0d7-4889-415c-be07-55e9f51800ea",
+          "variant": "v0.2.d",
+          "environment": "catastrophic_abstention",
+          "attack_type": "A9_hash_ambiguity",
+          "seed": 5249,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679546,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679546
+        },
+        {
+          "trial_id": "cbf3ca8b-66e3-47cf-bf78-8e79b71abfc3",
+          "variant": "v0.2.d",
+          "environment": "catastrophic_abstention",
+          "attack_type": "A10_parser_differential",
+          "seed": 6385,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679547,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679546
+        },
+        {
+          "trial_id": "65433d28-24d8-4682-abb8-421a9e01d73d",
+          "variant": "v0.2.d",
+          "environment": "catastrophic_abstention",
+          "attack_type": "A11_obfuscated_authority",
+          "seed": 3878,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679547,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679547
+        },
+        {
+          "trial_id": "55ffeac6-ed23-496a-a600-de0af5a0cbd5",
+          "variant": "v0.2.d",
+          "environment": "catastrophic_abstention",
+          "attack_type": "A12_toctou",
+          "seed": 963,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 200,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679548,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679548
+        },
+        {
+          "trial_id": "286dba12-cff3-436c-936c-768d11364254",
+          "variant": "v0.2.d",
+          "environment": "latency_cliff",
+          "attack_type": "policy_laundering",
+          "seed": 5623,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679548,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679548
+        },
+        {
+          "trial_id": "c495c840-6a14-4b82-94bc-20f1168deda5",
+          "variant": "v0.2.d",
+          "environment": "latency_cliff",
+          "attack_type": "actuation_token_smuggling",
+          "seed": 610,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679549,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679549
+        },
+        {
+          "trial_id": "c608e0c3-911c-42e5-ba95-f5431a5ee74e",
+          "variant": "v0.2.d",
+          "environment": "latency_cliff",
+          "attack_type": "precommitment_forwarding",
+          "seed": 1396,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679549,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679549
+        },
+        {
+          "trial_id": "aadfba70-4c5e-48aa-b30f-ccdae7153be9",
+          "variant": "v0.2.d",
+          "environment": "latency_cliff",
+          "attack_type": "compressed_policy_delegation",
+          "seed": 1464,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679549,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679549
+        },
+        {
+          "trial_id": "d08f7521-b79d-4ab1-9f7b-8782132ca282",
+          "variant": "v0.2.d",
+          "environment": "latency_cliff",
+          "attack_type": "split_brain_delegation",
+          "seed": 4862,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679550,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679550
+        },
+        {
+          "trial_id": "d7b186a1-380e-4f6d-bff6-7549f15cadb7",
+          "variant": "v0.2.d",
+          "environment": "latency_cliff",
+          "attack_type": "anchor_burial_authority_masking",
+          "seed": 3418,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679550,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679550
+        },
+        {
+          "trial_id": "f33bbe60-8349-4427-a7e8-1361a7e61d40",
+          "variant": "v0.2.d",
+          "environment": "latency_cliff",
+          "attack_type": "A7_object_aliasing",
+          "seed": 9890,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679550,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679550
+        },
+        {
+          "trial_id": "35c4849e-9383-47a7-b5d3-e6caa406196c",
+          "variant": "v0.2.d",
+          "environment": "latency_cliff",
+          "attack_type": "A8_exception_leak",
+          "seed": 5728,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679551,
+              "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+              "stage": "parse",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679551
+        },
+        {
+          "trial_id": "6eb6d5f3-bac3-435f-813e-96932c6c1e69",
+          "variant": "v0.2.d",
+          "environment": "latency_cliff",
+          "attack_type": "A9_hash_ambiguity",
+          "seed": 8041,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679551,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679551
+        },
+        {
+          "trial_id": "255ca8b7-142a-4459-9877-d534a7375204",
+          "variant": "v0.2.d",
+          "environment": "latency_cliff",
+          "attack_type": "A10_parser_differential",
+          "seed": 9666,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679552,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679552
+        },
+        {
+          "trial_id": "22ffa7fb-9b2c-405c-ac6f-b6d8dc63ee93",
+          "variant": "v0.2.d",
+          "environment": "latency_cliff",
+          "attack_type": "A11_obfuscated_authority",
+          "seed": 8958,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679553,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 2,
+          "timestamp_ms": 1767155679552
+        },
+        {
+          "trial_id": "896d36e9-92ae-4a1f-8d75-ae5d4b2cd0d9",
+          "variant": "v0.2.d",
+          "environment": "latency_cliff",
+          "attack_type": "A12_toctou",
+          "seed": 2518,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679554,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679554
+        },
+        {
+          "trial_id": "8b9e328c-f794-4167-b388-d4f20bb49084",
+          "variant": "v0.2.d",
+          "environment": "adversarial_timing",
+          "attack_type": "policy_laundering",
+          "seed": 6958,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679555,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679555
+        },
+        {
+          "trial_id": "4766d046-2010-4d86-858d-b321a66fcc66",
+          "variant": "v0.2.d",
+          "environment": "adversarial_timing",
+          "attack_type": "actuation_token_smuggling",
+          "seed": 8949,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679556,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679556
+        },
+        {
+          "trial_id": "e64ec918-8dfa-4d6e-8915-20376b7d0eec",
+          "variant": "v0.2.d",
+          "environment": "adversarial_timing",
+          "attack_type": "precommitment_forwarding",
+          "seed": 3089,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679556,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679556
+        },
+        {
+          "trial_id": "694147bd-3e7d-44eb-9f52-a8e34e70fd27",
+          "variant": "v0.2.d",
+          "environment": "adversarial_timing",
+          "attack_type": "compressed_policy_delegation",
+          "seed": 1424,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679558,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 2,
+          "timestamp_ms": 1767155679557
+        },
+        {
+          "trial_id": "784b404c-fc63-40c0-bebe-a0de4d608542",
+          "variant": "v0.2.d",
+          "environment": "adversarial_timing",
+          "attack_type": "split_brain_delegation",
+          "seed": 7197,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679560,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679559
+        },
+        {
+          "trial_id": "8b335265-4c18-45d0-87c1-074888ba60a5",
+          "variant": "v0.2.d",
+          "environment": "adversarial_timing",
+          "attack_type": "anchor_burial_authority_masking",
+          "seed": 7427,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679560,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679560
+        },
+        {
+          "trial_id": "3d271d0d-6629-4ea1-8637-dc6f2a3e9245",
+          "variant": "v0.2.d",
+          "environment": "adversarial_timing",
+          "attack_type": "A7_object_aliasing",
+          "seed": 8069,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679561,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679561
+        },
+        {
+          "trial_id": "8635f464-1945-4fa3-8737-bc269f2479e9",
+          "variant": "v0.2.d",
+          "environment": "adversarial_timing",
+          "attack_type": "A8_exception_leak",
+          "seed": 2756,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679561,
+              "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+              "stage": "parse",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679561
+        },
+        {
+          "trial_id": "7bddc5f1-abd9-46ad-aba3-f97bc163b48d",
+          "variant": "v0.2.d",
+          "environment": "adversarial_timing",
+          "attack_type": "A9_hash_ambiguity",
+          "seed": 7834,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679562,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679561
+        },
+        {
+          "trial_id": "f69788ab-2c72-42ab-8c8a-f0614610965e",
+          "variant": "v0.2.d",
+          "environment": "adversarial_timing",
+          "attack_type": "A10_parser_differential",
+          "seed": 7467,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679562,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679562
+        },
+        {
+          "trial_id": "b4f1ffcc-0770-473d-9210-12823b613809",
+          "variant": "v0.2.d",
+          "environment": "adversarial_timing",
+          "attack_type": "A11_obfuscated_authority",
+          "seed": 1462,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679562,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679562
+        },
+        {
+          "trial_id": "068ff36c-0fa2-4d37-8589-b704631097aa",
+          "variant": "v0.2.d",
+          "environment": "adversarial_timing",
+          "attack_type": "A12_toctou",
+          "seed": 9038,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679563,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679563
+        },
+        {
+          "trial_id": "9fcc37c8-1afd-435e-9168-73298d6df59a",
+          "variant": "v0.2.d",
+          "environment": "non_stationary_spikes",
+          "attack_type": "policy_laundering",
+          "seed": 8482,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679564,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679564
+        },
+        {
+          "trial_id": "f1fb1d3e-a0d0-41b8-bb20-337819719f4e",
+          "variant": "v0.2.d",
+          "environment": "non_stationary_spikes",
+          "attack_type": "actuation_token_smuggling",
+          "seed": 331,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679564,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679564
+        },
+        {
+          "trial_id": "869510a0-9534-416a-83c6-4f0a7d813ea9",
+          "variant": "v0.2.d",
+          "environment": "non_stationary_spikes",
+          "attack_type": "precommitment_forwarding",
+          "seed": 2538,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679564,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679564
+        },
+        {
+          "trial_id": "7ddb660d-afb3-459c-8ea8-037d58d39865",
+          "variant": "v0.2.d",
+          "environment": "non_stationary_spikes",
+          "attack_type": "compressed_policy_delegation",
+          "seed": 3236,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679565,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679565
+        },
+        {
+          "trial_id": "96248397-b199-4df6-916e-31cb16631745",
+          "variant": "v0.2.d",
+          "environment": "non_stationary_spikes",
+          "attack_type": "split_brain_delegation",
+          "seed": 685,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679565,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679565
+        },
+        {
+          "trial_id": "8798d3bf-b3b3-4b4b-bef2-dcc70bd09359",
+          "variant": "v0.2.d",
+          "environment": "non_stationary_spikes",
+          "attack_type": "anchor_burial_authority_masking",
+          "seed": 2526,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679566,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679566
+        },
+        {
+          "trial_id": "9fb14b84-2888-4fbb-8581-dde8cb47b50f",
+          "variant": "v0.2.d",
+          "environment": "non_stationary_spikes",
+          "attack_type": "A7_object_aliasing",
+          "seed": 914,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679566,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679566
+        },
+        {
+          "trial_id": "dfaf728e-c2b5-4238-975b-a811e57c1240",
+          "variant": "v0.2.d",
+          "environment": "non_stationary_spikes",
+          "attack_type": "A8_exception_leak",
+          "seed": 7263,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679567,
+              "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+              "stage": "parse",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679566
+        },
+        {
+          "trial_id": "f34ea4b0-5dea-4cf2-b73b-d577b1086371",
+          "variant": "v0.2.d",
+          "environment": "non_stationary_spikes",
+          "attack_type": "A9_hash_ambiguity",
+          "seed": 170,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679567,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679567
+        },
+        {
+          "trial_id": "397347d3-9a58-4f26-ae2b-2f257c34531b",
+          "variant": "v0.2.d",
+          "environment": "non_stationary_spikes",
+          "attack_type": "A10_parser_differential",
+          "seed": 5353,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679567,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679567
+        },
+        {
+          "trial_id": "bbb51abb-75df-469d-8fa9-4b60e8cbcb7f",
+          "variant": "v0.2.d",
+          "environment": "non_stationary_spikes",
+          "attack_type": "A11_obfuscated_authority",
+          "seed": 5575,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679568,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679567
+        },
+        {
+          "trial_id": "59194400-77b2-4a36-8c12-195f64d2b8ed",
+          "variant": "v0.2.d",
+          "environment": "non_stationary_spikes",
+          "attack_type": "A12_toctou",
+          "seed": 5871,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 100,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679568,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679568
+        },
+        {
+          "trial_id": "37f09e34-3b38-4834-adc7-4b761de25275",
+          "variant": "v0.2.d",
+          "environment": "combined_extreme",
+          "attack_type": "policy_laundering",
+          "seed": 3434,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679569,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679569
+        },
+        {
+          "trial_id": "d42fe105-f0c4-4ff1-8296-03abd3231a81",
+          "variant": "v0.2.d",
+          "environment": "combined_extreme",
+          "attack_type": "actuation_token_smuggling",
+          "seed": 408,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679569,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679569
+        },
+        {
+          "trial_id": "01546826-420b-4581-aa87-5539849121e2",
+          "variant": "v0.2.d",
+          "environment": "combined_extreme",
+          "attack_type": "precommitment_forwarding",
+          "seed": 4913,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679570,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679570
+        },
+        {
+          "trial_id": "21f2f3c4-b922-46a1-a3fc-c1a0c71b7264",
+          "variant": "v0.2.d",
+          "environment": "combined_extreme",
+          "attack_type": "compressed_policy_delegation",
+          "seed": 6940,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679570,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679570
+        },
+        {
+          "trial_id": "2a2355b2-8146-4820-8a71-a4878f38f225",
+          "variant": "v0.2.d",
+          "environment": "combined_extreme",
+          "attack_type": "split_brain_delegation",
+          "seed": 2951,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679570,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679570
+        },
+        {
+          "trial_id": "a6eb5c38-b826-4c26-83c0-e3886e9e1ab1",
+          "variant": "v0.2.d",
+          "environment": "combined_extreme",
+          "attack_type": "anchor_burial_authority_masking",
+          "seed": 355,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679571,
+              "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+              "stage": "recomposition",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679571
+        },
+        {
+          "trial_id": "9ecc018d-2c24-4bfb-abcb-3c4fe112a238",
+          "variant": "v0.2.d",
+          "environment": "combined_extreme",
+          "attack_type": "A7_object_aliasing",
+          "seed": 9709,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679571,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679571
+        },
+        {
+          "trial_id": "c62ae352-3bc3-4e95-8421-3767a3b2ca5f",
+          "variant": "v0.2.d",
+          "environment": "combined_extreme",
+          "attack_type": "A8_exception_leak",
+          "seed": 2006,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679572,
+              "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+              "stage": "parse",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679572
+        },
+        {
+          "trial_id": "e13fa024-f999-425f-a32f-b7cff748041f",
+          "variant": "v0.2.d",
+          "environment": "combined_extreme",
+          "attack_type": "A9_hash_ambiguity",
+          "seed": 5067,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679572,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679572
+        },
+        {
+          "trial_id": "a82aeb8e-d63f-4475-b366-b5f8fee263da",
+          "variant": "v0.2.d",
+          "environment": "combined_extreme",
+          "attack_type": "A10_parser_differential",
+          "seed": 7218,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "decision_stage": "recomposition",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679572,
+              "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+              "stage": "exception",
+              "accepted": false
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679572
+        },
+        {
+          "trial_id": "deb81f84-adb3-46aa-bb1d-793eef47606c",
+          "variant": "v0.2.d",
+          "environment": "combined_extreme",
+          "attack_type": "A11_obfuscated_authority",
+          "seed": 592,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679573,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 0,
+          "timestamp_ms": 1767155679573
+        },
+        {
+          "trial_id": "92ad03e1-01e5-448c-8ec9-94f6c2770370",
+          "variant": "v0.2.d",
+          "environment": "combined_extreme",
+          "attack_type": "A12_toctou",
+          "seed": 1735,
+          "breach_detected": false,
+          "rejection_code": null,
+          "decision_stage": "admissibility",
+          "ticks_consumed": 0,
+          "budget_limit": 80,
+          "sanitized_logs": [
+            {
+              "timestamp_ms": 1767155679573,
+              "rejection_code": null,
+              "stage": "admissibility",
+              "accepted": true
+            }
+          ],
+          "duration_ms": 1,
+          "timestamp_ms": 1767155679573
+        }
+      ],
+      "diagnostics": {
+        "latency": {
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "samples": 60
+        },
+        "abstention": {
+          "count": 0,
+          "reward_loss": 0.0
+        },
+        "budget_exceeded": 0,
+        "rejection_reasons": {
+          "INADMISSIBLE_DELEGATION_MARKER": 30,
+          "INADMISSIBLE_PARSE_ERROR": 5,
+          "INADMISSIBLE_UNSPECIFIED": 10
+        },
+        "attack_results": {
+          "policy_laundering": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "actuation_token_smuggling": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "precommitment_forwarding": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "compressed_policy_delegation": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "split_brain_delegation": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "anchor_burial_authority_masking": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "A7_object_aliasing": {
+            "accepted": 5,
+            "rejected": 0
+          },
+          "A8_exception_leak": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "A9_hash_ambiguity": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "A10_parser_differential": {
+            "accepted": 0,
+            "rejected": 5
+          },
+          "A11_obfuscated_authority": {
+            "accepted": 5,
+            "rejected": 0
+          },
+          "A12_toctou": {
+            "accepted": 5,
+            "rejected": 0
+          }
+        },
+        "crashes": 0,
+        "leaks_detected": 0,
+        "undefined_behavior": 0,
+        "admissibility_rules_fired": {}
+      }
+    }
+  },
+  "diagnostics": {
+    "latency": {
+      "p50": 0,
+      "p95": 0,
+      "max": 0,
+      "samples": 240
+    },
+    "abstention": {
+      "count": 0,
+      "reward_loss": 0.0
+    },
+    "budget_exceeded": 0,
+    "rejection_reasons": {},
+    "attack_results": {},
+    "crashes": 0,
+    "leaks_detected": 0,
+    "undefined_behavior": 0,
+    "admissibility_rules_fired": {}
+  },
+  "p2_prime_holds": true,
+  "claim": "We further demonstrate that protocol-level non-delegable actuation holds under extreme delegation pressure and adversarial exploit attempts, including parser, serialization, and timing attacks."
+}

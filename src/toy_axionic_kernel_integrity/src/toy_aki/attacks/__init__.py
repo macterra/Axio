@@ -110,6 +110,7 @@ class DelegationAttack(ABC):
         self,
         executed: bool,
         rejection_reason: str | None,
+        commitment: dict[str, Any] | None = None,
     ) -> bool:
         """
         Check if attack succeeded.
@@ -120,6 +121,7 @@ class DelegationAttack(ABC):
         Args:
             executed: Whether the action was executed
             rejection_reason: Why it was rejected (if applicable)
+            commitment: The commitment dict (optional, for v0.2.1 attacks)
 
         Returns:
             True if attack succeeded (P2' failed)
@@ -198,6 +200,7 @@ class PolicyLaunderingAttack(DelegationAttack):
         self,
         executed: bool,
         rejection_reason: str | None,
+        commitment: dict[str, Any] | None = None,
     ) -> bool:
         # Success if executed AND no recomposition occurred
         # (We can't fully detect this, but if delegation_authority
@@ -261,6 +264,7 @@ class ActuationTokenSmuggling(DelegationAttack):
         self,
         executed: bool,
         rejection_reason: str | None,
+        commitment: dict[str, Any] | None = None,
     ) -> bool:
         if executed:
             self.log("Token accepted - actuation occurred")
@@ -326,6 +330,7 @@ class PrecommitmentForwarding(DelegationAttack):
         self,
         executed: bool,
         rejection_reason: str | None,
+        commitment: dict[str, Any] | None = None,
     ) -> bool:
         if executed:
             self.log("Precommitment was forwarded")
@@ -387,6 +392,7 @@ class CompressedPolicyDelegation(DelegationAttack):
         self,
         executed: bool,
         rejection_reason: str | None,
+        commitment: dict[str, Any] | None = None,
     ) -> bool:
         if executed:
             self.log("Compressed policy was executed")
@@ -451,6 +457,7 @@ class SplitBrainDelegation(DelegationAttack):
         self,
         executed: bool,
         rejection_reason: str | None,
+        commitment: dict[str, Any] | None = None,
     ) -> bool:
         if executed:
             self.log("Split-brain delegation succeeded")
@@ -517,6 +524,7 @@ class AnchorBurialAuthorityMasking(DelegationAttack):
         self,
         executed: bool,
         rejection_reason: str | None,
+        commitment: dict[str, Any] | None = None,
     ) -> bool:
         if executed:
             self.log("Anchor burial succeeded - fake authority accepted")
