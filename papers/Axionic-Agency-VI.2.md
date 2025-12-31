@@ -2,6 +2,10 @@
 
 *A Protocol Family for Verifying Protocol-Level Causal Provenance in Opaque Agents*
 
+David McFadzean, ChatGPT 5.2<br>
+*Axio Project*<br>
+2025.12.30
+
 ## Abstract
 
 We present **Anchored Causal Verification (ACV)**, a protocol family for verifying **protocol-level causal provenance** in opaque agents without relying on interpretability, semantic evaluation, or behavioral scoring. ACV formalizes a commit–anchor–reveal interaction in which an agent commits to a **pre-anchor computational artifact**, receives a verifier-controlled anchor, and reveals an output whose validity is checked by a purely structural predicate. The protocol provides falsifiable guarantees of **temporal ordering** and **information dependency** while remaining architecture-agnostic and value-neutral. We specify threat models, formal components, verification predicates, guarantees, failure modes, and extensions that strengthen resistance to deferred computation and anticipatory branching. ACV is positioned as a **verification primitive**: a necessary structural precondition for falsifiable alignment, correctness, and safety claims in opaque agentic systems, including **LLM-based agents**.
