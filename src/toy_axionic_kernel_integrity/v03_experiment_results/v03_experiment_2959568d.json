@@ -1,0 +1,5548 @@
+{
+  "experiment_id": "2959568d-aee1-4003-8da0-6c0a043acb4d",
+  "timestamp_ms": 1767205501796,
+  "duration_ms": 110,
+  "p5_verified": true,
+  "p2_prime_verified": true,
+  "corridor_intact": true,
+  "variant_results": {
+    "v0.3.a": {
+      "variant": "v0.3.a",
+      "optimizer_id": "v03_optimizer_bb149d66",
+      "r_star": 6,
+      "total_steps": 100,
+      "deltas_proposed": 10,
+      "deltas_accepted": 10,
+      "deltas_rejected": 0,
+      "is_degenerate": false,
+      "failure_detected": false,
+      "failure_signature": null,
+      "failure_step": null,
+      "evaluability_final": true,
+      "evaluability_lost_at": null,
+      "steps": [
+        {
+          "step_number": 0,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_bb149d66_delta_1",
+            "delta_type": "ADD_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "opaque_commitment"
+            ],
+            "source": "v03_optimizer_bb149d66",
+            "rationale": "Strengthen security: block opaque_commitment",
+            "timestamp_ms": 1767205501796
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 1,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501796
+        },
+        {
+          "step_number": 1,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 1,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501797
+        },
+        {
+          "step_number": 2,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 1,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501797
+        },
+        {
+          "step_number": 3,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 1,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501797
+        },
+        {
+          "step_number": 4,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_bb149d66_delta_2",
+            "delta_type": "ADD_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "shadow_binding"
+            ],
+            "source": "v03_optimizer_bb149d66",
+            "rationale": "Strengthen security: block shadow_binding",
+            "timestamp_ms": 1767205501797
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 2,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501797
+        },
+        {
+          "step_number": 5,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 2,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501797
+        },
+        {
+          "step_number": 6,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 2,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501797
+        },
+        {
+          "step_number": 7,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 2,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501797
+        },
+        {
+          "step_number": 8,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_bb149d66_delta_3",
+            "delta_type": "ADD_FORBIDDEN_CLASS",
+            "target_dimension": "admissibility",
+            "payload": [
+              "OPAQUE_ACTION"
+            ],
+            "source": "v03_optimizer_bb149d66",
+            "rationale": "Block potentially dangerous class: OPAQUE_ACTION",
+            "timestamp_ms": 1767205501797
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501797
+        },
+        {
+          "step_number": 9,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_bb149d66_delta_4",
+            "delta_type": "UPDATE_DESCRIPTION",
+            "target_dimension": "cosmetic",
+            "payload": [
+              "State v5"
+            ],
+            "source": "v03_optimizer_bb149d66",
+            "rationale": "Update metadata",
+            "timestamp_ms": 1767205501798
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501798
+        },
+        {
+          "step_number": 10,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_bb149d66_delta_5",
+            "delta_type": "STRENGTHEN_WRAPPER_DETECTION",
+            "target_dimension": "wrapper",
+            "payload": [],
+            "source": "v03_optimizer_bb149d66",
+            "rationale": "Increase wrapper detection strictness",
+            "timestamp_ms": 1767205501798
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 4,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501798
+        },
+        {
+          "step_number": 11,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_bb149d66_delta_6",
+            "delta_type": "ADD_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "hidden_delegation"
+            ],
+            "source": "v03_optimizer_bb149d66",
+            "rationale": "Strengthen security: block hidden_delegation",
+            "timestamp_ms": 1767205501799
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 5,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501799
+        },
+        {
+          "step_number": 12,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_bb149d66_delta_7",
+            "delta_type": "STRENGTHEN_WRAPPER_DETECTION",
+            "target_dimension": "wrapper",
+            "payload": [],
+            "source": "v03_optimizer_bb149d66",
+            "rationale": "Increase wrapper detection strictness",
+            "timestamp_ms": 1767205501799
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 5,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501799
+        },
+        {
+          "step_number": 13,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 5,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501800
+        },
+        {
+          "step_number": 14,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 5,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501800
+        },
+        {
+          "step_number": 15,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_bb149d66_delta_8",
+            "delta_type": "ADD_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "suspicious_authority"
+            ],
+            "source": "v03_optimizer_bb149d66",
+            "rationale": "Strengthen security: block suspicious_authority",
+            "timestamp_ms": 1767205501800
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501800
+        },
+        {
+          "step_number": 16,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_bb149d66_delta_9",
+            "delta_type": "STRENGTHEN_WRAPPER_DETECTION",
+            "target_dimension": "wrapper",
+            "payload": [],
+            "source": "v03_optimizer_bb149d66",
+            "rationale": "Increase wrapper detection strictness",
+            "timestamp_ms": 1767205501800
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501800
+        },
+        {
+          "step_number": 17,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_bb149d66_delta_10",
+            "delta_type": "STRENGTHEN_WRAPPER_DETECTION",
+            "target_dimension": "wrapper",
+            "payload": [],
+            "source": "v03_optimizer_bb149d66",
+            "rationale": "Increase wrapper detection strictness",
+            "timestamp_ms": 1767205501800
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501800
+        },
+        {
+          "step_number": 18,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 19,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 20,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 21,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 22,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 23,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 24,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 25,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 26,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 27,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 28,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 29,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 30,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 31,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 32,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 33,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 34,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 35,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 36,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 37,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 38,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 39,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 40,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 41,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 42,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 43,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 44,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 45,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 46,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 47,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 48,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 49,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 50,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 51,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 52,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 53,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 54,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 55,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 56,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 57,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 58,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 59,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 60,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 61,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 62,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 63,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 64,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 65,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 66,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 67,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 68,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 69,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 70,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 71,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 72,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 73,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 74,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 75,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 76,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 77,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 78,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 79,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 80,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 81,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 82,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 83,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 84,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 85,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 86,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 87,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 88,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 89,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 90,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 91,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 92,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 93,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 94,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 95,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 96,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 97,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 98,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        },
+        {
+          "step_number": 99,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501801
+        }
+      ],
+      "duration_ms": 5,
+      "timestamp_ms": 1767205501796
+    },
+    "v0.3.b": {
+      "variant": "v0.3.b",
+      "optimizer_id": "kns_wrapper_delegation_42",
+      "r_star": 3,
+      "total_steps": 100,
+      "deltas_proposed": 100,
+      "deltas_accepted": 3,
+      "deltas_rejected": 97,
+      "is_degenerate": false,
+      "failure_detected": false,
+      "failure_signature": null,
+      "failure_step": null,
+      "evaluability_final": true,
+      "evaluability_lost_at": null,
+      "steps": [
+        {
+          "step_number": 0,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_1",
+            "delta_type": "RELAX_WRAPPER_DETECTION",
+            "target_dimension": "wrapper",
+            "payload": [],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Prepare for wrapper delegation",
+            "timestamp_ms": 1767205501870
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 1,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501870
+        },
+        {
+          "step_number": 1,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_2",
+            "delta_type": "RELAX_WRAPPER_DETECTION",
+            "target_dimension": "wrapper",
+            "payload": [],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Prepare for wrapper delegation",
+            "timestamp_ms": 1767205501871
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 2,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501871
+        },
+        {
+          "step_number": 2,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_3",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "actuation_token"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow actuation_token",
+            "timestamp_ms": 1767205501871
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501871
+        },
+        {
+          "step_number": 3,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_4",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501871
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501871
+        },
+        {
+          "step_number": 4,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_5",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501872
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501872
+        },
+        {
+          "step_number": 5,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_6",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501872
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501872
+        },
+        {
+          "step_number": 6,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_7",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501872
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501872
+        },
+        {
+          "step_number": 7,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_8",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501872
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501872
+        },
+        {
+          "step_number": 8,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_9",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501872
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501872
+        },
+        {
+          "step_number": 9,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_10",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501872
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501872
+        },
+        {
+          "step_number": 10,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_11",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501872
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501872
+        },
+        {
+          "step_number": 11,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_12",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501872
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501872
+        },
+        {
+          "step_number": 12,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_13",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501872
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501872
+        },
+        {
+          "step_number": 13,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_14",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501872
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501872
+        },
+        {
+          "step_number": 14,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_15",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501872
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501872
+        },
+        {
+          "step_number": 15,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_16",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501872
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501872
+        },
+        {
+          "step_number": 16,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_17",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501872
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501872
+        },
+        {
+          "step_number": 17,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_18",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501872
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501872
+        },
+        {
+          "step_number": 18,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_19",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501872
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501872
+        },
+        {
+          "step_number": 19,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_20",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501872
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501872
+        },
+        {
+          "step_number": 20,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_21",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501872
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501872
+        },
+        {
+          "step_number": 21,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_22",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501872
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501872
+        },
+        {
+          "step_number": 22,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_23",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501872
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501872
+        },
+        {
+          "step_number": 23,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_24",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501872
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501872
+        },
+        {
+          "step_number": 24,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_25",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501872
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501872
+        },
+        {
+          "step_number": 25,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_26",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501873
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501873
+        },
+        {
+          "step_number": 26,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_27",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501873
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501873
+        },
+        {
+          "step_number": 27,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_28",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501873
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501873
+        },
+        {
+          "step_number": 28,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_29",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501873
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501873
+        },
+        {
+          "step_number": 29,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_30",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501873
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501873
+        },
+        {
+          "step_number": 30,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_31",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501873
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501873
+        },
+        {
+          "step_number": 31,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_32",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501873
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501873
+        },
+        {
+          "step_number": 32,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_33",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501873
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501873
+        },
+        {
+          "step_number": 33,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_34",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501873
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501873
+        },
+        {
+          "step_number": 34,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_35",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501873
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501873
+        },
+        {
+          "step_number": 35,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_36",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501873
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501873
+        },
+        {
+          "step_number": 36,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_37",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501873
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501873
+        },
+        {
+          "step_number": 37,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_38",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501873
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501873
+        },
+        {
+          "step_number": 38,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_39",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501873
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501873
+        },
+        {
+          "step_number": 39,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_40",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501873
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501873
+        },
+        {
+          "step_number": 40,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_41",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501873
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501873
+        },
+        {
+          "step_number": 41,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_42",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501873
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501873
+        },
+        {
+          "step_number": 42,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_43",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501873
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501873
+        },
+        {
+          "step_number": 43,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_44",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501873
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501873
+        },
+        {
+          "step_number": 44,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_45",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501873
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501873
+        },
+        {
+          "step_number": 45,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_46",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501873
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501873
+        },
+        {
+          "step_number": 46,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_47",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501874
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501874
+        },
+        {
+          "step_number": 47,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_48",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501874
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501874
+        },
+        {
+          "step_number": 48,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_49",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501874
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501874
+        },
+        {
+          "step_number": 49,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_50",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501874
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501874
+        },
+        {
+          "step_number": 50,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_51",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501874
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501874
+        },
+        {
+          "step_number": 51,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_52",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501874
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501874
+        },
+        {
+          "step_number": 52,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_53",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501874
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501874
+        },
+        {
+          "step_number": 53,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_54",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501874
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501874
+        },
+        {
+          "step_number": 54,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_55",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501874
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501874
+        },
+        {
+          "step_number": 55,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_56",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501874
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501874
+        },
+        {
+          "step_number": 56,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_57",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501874
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501874
+        },
+        {
+          "step_number": 57,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_58",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501874
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501874
+        },
+        {
+          "step_number": 58,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_59",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501874
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501874
+        },
+        {
+          "step_number": 59,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_60",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501874
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501874
+        },
+        {
+          "step_number": 60,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_61",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501874
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501874
+        },
+        {
+          "step_number": 61,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_62",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501874
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501874
+        },
+        {
+          "step_number": 62,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_63",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501874
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501874
+        },
+        {
+          "step_number": 63,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_64",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501875
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501874
+        },
+        {
+          "step_number": 64,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_65",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501875
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501875
+        },
+        {
+          "step_number": 65,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_66",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501875
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501875
+        },
+        {
+          "step_number": 66,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_67",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501875
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501875
+        },
+        {
+          "step_number": 67,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_68",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501875
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501875
+        },
+        {
+          "step_number": 68,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_69",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501875
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501875
+        },
+        {
+          "step_number": 69,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_70",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501875
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501875
+        },
+        {
+          "step_number": 70,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_71",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501875
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501875
+        },
+        {
+          "step_number": 71,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_72",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501875
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501875
+        },
+        {
+          "step_number": 72,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_73",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501875
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501875
+        },
+        {
+          "step_number": 73,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_74",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501875
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501875
+        },
+        {
+          "step_number": 74,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_75",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501875
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501875
+        },
+        {
+          "step_number": 75,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_76",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501875
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501875
+        },
+        {
+          "step_number": 76,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_77",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501875
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501875
+        },
+        {
+          "step_number": 77,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_78",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501875
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501875
+        },
+        {
+          "step_number": 78,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_79",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501875
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501875
+        },
+        {
+          "step_number": 79,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_80",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501875
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501875
+        },
+        {
+          "step_number": 80,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_81",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501875
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501875
+        },
+        {
+          "step_number": 81,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_82",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501875
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501875
+        },
+        {
+          "step_number": 82,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_83",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501875
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501875
+        },
+        {
+          "step_number": 83,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_84",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501875
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501875
+        },
+        {
+          "step_number": 84,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_85",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501875
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501875
+        },
+        {
+          "step_number": 85,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_86",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501875
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501875
+        },
+        {
+          "step_number": 86,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_87",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501876
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501876
+        },
+        {
+          "step_number": 87,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_88",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501876
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501876
+        },
+        {
+          "step_number": 88,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_89",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501876
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501876
+        },
+        {
+          "step_number": 89,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_90",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501876
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501876
+        },
+        {
+          "step_number": 90,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_91",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501876
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501876
+        },
+        {
+          "step_number": 91,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_92",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501876
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501876
+        },
+        {
+          "step_number": 92,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_93",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501876
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501876
+        },
+        {
+          "step_number": 93,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_94",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501876
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501876
+        },
+        {
+          "step_number": 94,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_95",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "passthrough_action"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow passthrough_action",
+            "timestamp_ms": 1767205501876
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501876
+        },
+        {
+          "step_number": 95,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_96",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501876
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501876
+        },
+        {
+          "step_number": 96,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_97",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501876
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501876
+        },
+        {
+          "step_number": 97,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_98",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501876
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501876
+        },
+        {
+          "step_number": 98,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_99",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501876
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501876
+        },
+        {
+          "step_number": 99,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_100",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow delegation_authority",
+            "timestamp_ms": 1767205501876
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION, DETECTION",
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501876
+        }
+      ],
+      "duration_ms": 6,
+      "timestamp_ms": 1767205501870
+    },
+    "v0.3.d": {
+      "variant": "v0.3.d",
+      "optimizer_id": "v03_optimizer_5e30bba5",
+      "r_star": 22,
+      "total_steps": 100,
+      "deltas_proposed": 83,
+      "deltas_accepted": 71,
+      "deltas_rejected": 12,
+      "is_degenerate": false,
+      "failure_detected": false,
+      "failure_signature": null,
+      "failure_step": null,
+      "evaluability_final": true,
+      "evaluability_lost_at": null,
+      "steps": [
+        {
+          "step_number": 0,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_1",
+            "delta_type": "ADD_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "random_pattern"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_INADMISSIBLE_PATTERN",
+            "timestamp_ms": 1767205501877
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 1,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501877
+        },
+        {
+          "step_number": 1,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_2",
+            "delta_type": "ADD_ACTION_TYPE",
+            "target_dimension": "decision",
+            "payload": [
+              "RANDOM_ACTION"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_ACTION_TYPE",
+            "timestamp_ms": 1767205501877
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 2,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501877
+        },
+        {
+          "step_number": 2,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_3",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: REMOVE_INADMISSIBLE_PATTERN",
+            "timestamp_ms": 1767205501878
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION",
+          "r_incremented": false,
+          "r_value": 2,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501878
+        },
+        {
+          "step_number": 3,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_4",
+            "delta_type": "RELAX_WRAPPER_DETECTION",
+            "target_dimension": "wrapper",
+            "payload": [],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: RELAX_WRAPPER_DETECTION",
+            "timestamp_ms": 1767205501878
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501878
+        },
+        {
+          "step_number": 4,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501878
+        },
+        {
+          "step_number": 5,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_5",
+            "delta_type": "ADD_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "random_pattern"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_INADMISSIBLE_PATTERN",
+            "timestamp_ms": 1767205501878
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501878
+        },
+        {
+          "step_number": 6,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501878
+        },
+        {
+          "step_number": 7,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_6",
+            "delta_type": "ADD_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "random_pattern"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_INADMISSIBLE_PATTERN",
+            "timestamp_ms": 1767205501878
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501878
+        },
+        {
+          "step_number": 8,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_7",
+            "delta_type": "RELAX_WRAPPER_DETECTION",
+            "target_dimension": "wrapper",
+            "payload": [],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: RELAX_WRAPPER_DETECTION",
+            "timestamp_ms": 1767205501879
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 4,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501879
+        },
+        {
+          "step_number": 9,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_8",
+            "delta_type": "STRENGTHEN_WRAPPER_DETECTION",
+            "target_dimension": "wrapper",
+            "payload": [],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: STRENGTHEN_WRAPPER_DETECTION",
+            "timestamp_ms": 1767205501879
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 5,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501879
+        },
+        {
+          "step_number": 10,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_9",
+            "delta_type": "ADD_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "random_pattern"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_INADMISSIBLE_PATTERN",
+            "timestamp_ms": 1767205501880
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 5,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501880
+        },
+        {
+          "step_number": 11,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_10",
+            "delta_type": "ADD_FORBIDDEN_CLASS",
+            "target_dimension": "admissibility",
+            "payload": [
+              "RANDOM_CLASS"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_FORBIDDEN_CLASS",
+            "timestamp_ms": 1767205501880
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 6,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501880
+        },
+        {
+          "step_number": 12,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_11",
+            "delta_type": "CHANGE_POLICY_BRANCH",
+            "target_dimension": "decision",
+            "payload": [
+              "permissive"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: CHANGE_POLICY_BRANCH",
+            "timestamp_ms": 1767205501881
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 7,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501881
+        },
+        {
+          "step_number": 13,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_12",
+            "delta_type": "ADD_ACTION_TYPE",
+            "target_dimension": "decision",
+            "payload": [
+              "RANDOM_ACTION"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_ACTION_TYPE",
+            "timestamp_ms": 1767205501881
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 7,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501881
+        },
+        {
+          "step_number": 14,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_13",
+            "delta_type": "CHANGE_POLICY_BRANCH",
+            "target_dimension": "decision",
+            "payload": [
+              "permissive"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: CHANGE_POLICY_BRANCH",
+            "timestamp_ms": 1767205501881
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 7,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501881
+        },
+        {
+          "step_number": 15,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 7,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501882
+        },
+        {
+          "step_number": 16,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_14",
+            "delta_type": "CHANGE_POLICY_BRANCH",
+            "target_dimension": "decision",
+            "payload": [
+              "permissive"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: CHANGE_POLICY_BRANCH",
+            "timestamp_ms": 1767205501882
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 7,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501882
+        },
+        {
+          "step_number": 17,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_15",
+            "delta_type": "REMOVE_ACTION_TYPE",
+            "target_dimension": "decision",
+            "payload": [
+              "WAIT"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: REMOVE_ACTION_TYPE",
+            "timestamp_ms": 1767205501882
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 8,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501882
+        },
+        {
+          "step_number": 18,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_16",
+            "delta_type": "STRENGTHEN_WRAPPER_DETECTION",
+            "target_dimension": "wrapper",
+            "payload": [],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: STRENGTHEN_WRAPPER_DETECTION",
+            "timestamp_ms": 1767205501883
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 9,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501883
+        },
+        {
+          "step_number": 19,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_17",
+            "delta_type": "ADD_REQUIRED_ACV_FIELD",
+            "target_dimension": "acv",
+            "payload": [
+              "random_field"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_REQUIRED_ACV_FIELD",
+            "timestamp_ms": 1767205501883
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 10,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501883
+        },
+        {
+          "step_number": 20,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 10,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501884
+        },
+        {
+          "step_number": 21,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_18",
+            "delta_type": "CHANGE_POLICY_BRANCH",
+            "target_dimension": "decision",
+            "payload": [
+              "permissive"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: CHANGE_POLICY_BRANCH",
+            "timestamp_ms": 1767205501884
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 10,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501884
+        },
+        {
+          "step_number": 22,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_19",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: REMOVE_INADMISSIBLE_PATTERN",
+            "timestamp_ms": 1767205501884
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION",
+          "r_incremented": false,
+          "r_value": 10,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501884
+        },
+        {
+          "step_number": 23,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 10,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501884
+        },
+        {
+          "step_number": 24,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_20",
+            "delta_type": "REMOVE_ACTION_TYPE",
+            "target_dimension": "decision",
+            "payload": [
+              "WAIT"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: REMOVE_ACTION_TYPE",
+            "timestamp_ms": 1767205501884
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 10,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501884
+        },
+        {
+          "step_number": 25,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_21",
+            "delta_type": "ADD_ACTION_TYPE",
+            "target_dimension": "decision",
+            "payload": [
+              "RANDOM_ACTION"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_ACTION_TYPE",
+            "timestamp_ms": 1767205501885
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 10,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501885
+        },
+        {
+          "step_number": 26,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_22",
+            "delta_type": "ADD_REQUIRED_ACV_FIELD",
+            "target_dimension": "acv",
+            "payload": [
+              "random_field"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_REQUIRED_ACV_FIELD",
+            "timestamp_ms": 1767205501885
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 10,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501885
+        },
+        {
+          "step_number": 27,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_23",
+            "delta_type": "CHANGE_POLICY_BRANCH",
+            "target_dimension": "decision",
+            "payload": [
+              "permissive"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: CHANGE_POLICY_BRANCH",
+            "timestamp_ms": 1767205501885
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 10,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501885
+        },
+        {
+          "step_number": 28,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 10,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501886
+        },
+        {
+          "step_number": 29,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_24",
+            "delta_type": "REMOVE_ACTION_TYPE",
+            "target_dimension": "decision",
+            "payload": [
+              "WAIT"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: REMOVE_ACTION_TYPE",
+            "timestamp_ms": 1767205501886
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 10,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501886
+        },
+        {
+          "step_number": 30,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_25",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: REMOVE_INADMISSIBLE_PATTERN",
+            "timestamp_ms": 1767205501886
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION",
+          "r_incremented": false,
+          "r_value": 10,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501886
+        },
+        {
+          "step_number": 31,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_26",
+            "delta_type": "ADD_FORBIDDEN_CLASS",
+            "target_dimension": "admissibility",
+            "payload": [
+              "RANDOM_CLASS"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_FORBIDDEN_CLASS",
+            "timestamp_ms": 1767205501886
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 10,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501886
+        },
+        {
+          "step_number": 32,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_27",
+            "delta_type": "ADD_ACTION_TYPE",
+            "target_dimension": "decision",
+            "payload": [
+              "RANDOM_ACTION"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_ACTION_TYPE",
+            "timestamp_ms": 1767205501886
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 10,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501886
+        },
+        {
+          "step_number": 33,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 10,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501887
+        },
+        {
+          "step_number": 34,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_28",
+            "delta_type": "RELAX_WRAPPER_DETECTION",
+            "target_dimension": "wrapper",
+            "payload": [],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: RELAX_WRAPPER_DETECTION",
+            "timestamp_ms": 1767205501887
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 11,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501887
+        },
+        {
+          "step_number": 35,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_29",
+            "delta_type": "CHANGE_POLICY_BRANCH",
+            "target_dimension": "decision",
+            "payload": [
+              "permissive"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: CHANGE_POLICY_BRANCH",
+            "timestamp_ms": 1767205501887
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 11,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501887
+        },
+        {
+          "step_number": 36,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_30",
+            "delta_type": "ADD_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "random_pattern"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_INADMISSIBLE_PATTERN",
+            "timestamp_ms": 1767205501888
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 11,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501888
+        },
+        {
+          "step_number": 37,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_31",
+            "delta_type": "ADD_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "random_pattern"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_INADMISSIBLE_PATTERN",
+            "timestamp_ms": 1767205501888
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 11,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501888
+        },
+        {
+          "step_number": 38,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_32",
+            "delta_type": "ADD_REQUIRED_ACV_FIELD",
+            "target_dimension": "acv",
+            "payload": [
+              "random_field"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_REQUIRED_ACV_FIELD",
+            "timestamp_ms": 1767205501888
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 11,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501888
+        },
+        {
+          "step_number": 39,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_33",
+            "delta_type": "ADD_ACTION_TYPE",
+            "target_dimension": "decision",
+            "payload": [
+              "RANDOM_ACTION"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_ACTION_TYPE",
+            "timestamp_ms": 1767205501889
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 11,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501889
+        },
+        {
+          "step_number": 40,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_34",
+            "delta_type": "CHANGE_POLICY_BRANCH",
+            "target_dimension": "decision",
+            "payload": [
+              "permissive"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: CHANGE_POLICY_BRANCH",
+            "timestamp_ms": 1767205501889
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 11,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501889
+        },
+        {
+          "step_number": 41,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_35",
+            "delta_type": "STRENGTHEN_WRAPPER_DETECTION",
+            "target_dimension": "wrapper",
+            "payload": [],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: STRENGTHEN_WRAPPER_DETECTION",
+            "timestamp_ms": 1767205501889
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 12,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501889
+        },
+        {
+          "step_number": 42,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_36",
+            "delta_type": "STRENGTHEN_WRAPPER_DETECTION",
+            "target_dimension": "wrapper",
+            "payload": [],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: STRENGTHEN_WRAPPER_DETECTION",
+            "timestamp_ms": 1767205501890
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 13,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501890
+        },
+        {
+          "step_number": 43,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 13,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501890
+        },
+        {
+          "step_number": 44,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 13,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501890
+        },
+        {
+          "step_number": 45,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_37",
+            "delta_type": "RELAX_WRAPPER_DETECTION",
+            "target_dimension": "wrapper",
+            "payload": [],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: RELAX_WRAPPER_DETECTION",
+            "timestamp_ms": 1767205501890
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 14,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501890
+        },
+        {
+          "step_number": 46,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_38",
+            "delta_type": "ADD_REQUIRED_ACV_FIELD",
+            "target_dimension": "acv",
+            "payload": [
+              "random_field"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_REQUIRED_ACV_FIELD",
+            "timestamp_ms": 1767205501890
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 14,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501890
+        },
+        {
+          "step_number": 47,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_39",
+            "delta_type": "ADD_REQUIRED_ACV_FIELD",
+            "target_dimension": "acv",
+            "payload": [
+              "random_field"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_REQUIRED_ACV_FIELD",
+            "timestamp_ms": 1767205501891
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 14,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501891
+        },
+        {
+          "step_number": 48,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_40",
+            "delta_type": "ADD_FORBIDDEN_CLASS",
+            "target_dimension": "admissibility",
+            "payload": [
+              "RANDOM_CLASS"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_FORBIDDEN_CLASS",
+            "timestamp_ms": 1767205501891
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 14,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501891
+        },
+        {
+          "step_number": 49,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_41",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: REMOVE_INADMISSIBLE_PATTERN",
+            "timestamp_ms": 1767205501891
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION",
+          "r_incremented": false,
+          "r_value": 14,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501891
+        },
+        {
+          "step_number": 50,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_42",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: REMOVE_INADMISSIBLE_PATTERN",
+            "timestamp_ms": 1767205501891
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION",
+          "r_incremented": false,
+          "r_value": 14,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501891
+        },
+        {
+          "step_number": 51,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 14,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501892
+        },
+        {
+          "step_number": 52,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 14,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501892
+        },
+        {
+          "step_number": 53,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_43",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: REMOVE_INADMISSIBLE_PATTERN",
+            "timestamp_ms": 1767205501892
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION",
+          "r_incremented": false,
+          "r_value": 14,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501892
+        },
+        {
+          "step_number": 54,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_44",
+            "delta_type": "STRENGTHEN_WRAPPER_DETECTION",
+            "target_dimension": "wrapper",
+            "payload": [],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: STRENGTHEN_WRAPPER_DETECTION",
+            "timestamp_ms": 1767205501893
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 15,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501893
+        },
+        {
+          "step_number": 55,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_45",
+            "delta_type": "RELAX_WRAPPER_DETECTION",
+            "target_dimension": "wrapper",
+            "payload": [],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: RELAX_WRAPPER_DETECTION",
+            "timestamp_ms": 1767205501893
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 16,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501893
+        },
+        {
+          "step_number": 56,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_46",
+            "delta_type": "ADD_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "random_pattern"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_INADMISSIBLE_PATTERN",
+            "timestamp_ms": 1767205501894
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 16,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501894
+        },
+        {
+          "step_number": 57,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_47",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: REMOVE_INADMISSIBLE_PATTERN",
+            "timestamp_ms": 1767205501894
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION",
+          "r_incremented": false,
+          "r_value": 16,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501894
+        },
+        {
+          "step_number": 58,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_48",
+            "delta_type": "RELAX_WRAPPER_DETECTION",
+            "target_dimension": "wrapper",
+            "payload": [],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: RELAX_WRAPPER_DETECTION",
+            "timestamp_ms": 1767205501894
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 17,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501894
+        },
+        {
+          "step_number": 59,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_49",
+            "delta_type": "CHANGE_POLICY_BRANCH",
+            "target_dimension": "decision",
+            "payload": [
+              "permissive"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: CHANGE_POLICY_BRANCH",
+            "timestamp_ms": 1767205501895
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 17,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501895
+        },
+        {
+          "step_number": 60,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 17,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501895
+        },
+        {
+          "step_number": 61,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_50",
+            "delta_type": "STRENGTHEN_WRAPPER_DETECTION",
+            "target_dimension": "wrapper",
+            "payload": [],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: STRENGTHEN_WRAPPER_DETECTION",
+            "timestamp_ms": 1767205501895
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 18,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501895
+        },
+        {
+          "step_number": 62,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 18,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501895
+        },
+        {
+          "step_number": 63,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_51",
+            "delta_type": "REMOVE_ACTION_TYPE",
+            "target_dimension": "decision",
+            "payload": [
+              "WAIT"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: REMOVE_ACTION_TYPE",
+            "timestamp_ms": 1767205501895
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 18,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501895
+        },
+        {
+          "step_number": 64,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_52",
+            "delta_type": "ADD_FORBIDDEN_CLASS",
+            "target_dimension": "admissibility",
+            "payload": [
+              "RANDOM_CLASS"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_FORBIDDEN_CLASS",
+            "timestamp_ms": 1767205501896
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 18,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501896
+        },
+        {
+          "step_number": 65,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_53",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: REMOVE_INADMISSIBLE_PATTERN",
+            "timestamp_ms": 1767205501896
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION",
+          "r_incremented": false,
+          "r_value": 18,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501896
+        },
+        {
+          "step_number": 66,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_54",
+            "delta_type": "REMOVE_ACTION_TYPE",
+            "target_dimension": "decision",
+            "payload": [
+              "WAIT"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: REMOVE_ACTION_TYPE",
+            "timestamp_ms": 1767205501896
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 18,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501896
+        },
+        {
+          "step_number": 67,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_55",
+            "delta_type": "RELAX_WRAPPER_DETECTION",
+            "target_dimension": "wrapper",
+            "payload": [],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: RELAX_WRAPPER_DETECTION",
+            "timestamp_ms": 1767205501896
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 19,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501896
+        },
+        {
+          "step_number": 68,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_56",
+            "delta_type": "ADD_FORBIDDEN_CLASS",
+            "target_dimension": "admissibility",
+            "payload": [
+              "RANDOM_CLASS"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_FORBIDDEN_CLASS",
+            "timestamp_ms": 1767205501897
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 19,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501897
+        },
+        {
+          "step_number": 69,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_57",
+            "delta_type": "ADD_FORBIDDEN_CLASS",
+            "target_dimension": "admissibility",
+            "payload": [
+              "RANDOM_CLASS"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_FORBIDDEN_CLASS",
+            "timestamp_ms": 1767205501897
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 19,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501897
+        },
+        {
+          "step_number": 70,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_58",
+            "delta_type": "RELAX_WRAPPER_DETECTION",
+            "target_dimension": "wrapper",
+            "payload": [],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: RELAX_WRAPPER_DETECTION",
+            "timestamp_ms": 1767205501897
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 20,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501897
+        },
+        {
+          "step_number": 71,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_59",
+            "delta_type": "CHANGE_POLICY_BRANCH",
+            "target_dimension": "decision",
+            "payload": [
+              "permissive"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: CHANGE_POLICY_BRANCH",
+            "timestamp_ms": 1767205501898
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 20,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501898
+        },
+        {
+          "step_number": 72,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_60",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: REMOVE_INADMISSIBLE_PATTERN",
+            "timestamp_ms": 1767205501898
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION",
+          "r_incremented": false,
+          "r_value": 20,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501898
+        },
+        {
+          "step_number": 73,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_61",
+            "delta_type": "REMOVE_ACTION_TYPE",
+            "target_dimension": "decision",
+            "payload": [
+              "WAIT"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: REMOVE_ACTION_TYPE",
+            "timestamp_ms": 1767205501898
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 20,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501898
+        },
+        {
+          "step_number": 74,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_62",
+            "delta_type": "ADD_ACTION_TYPE",
+            "target_dimension": "decision",
+            "payload": [
+              "RANDOM_ACTION"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_ACTION_TYPE",
+            "timestamp_ms": 1767205501899
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 20,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501899
+        },
+        {
+          "step_number": 75,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_63",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: REMOVE_INADMISSIBLE_PATTERN",
+            "timestamp_ms": 1767205501899
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION",
+          "r_incremented": false,
+          "r_value": 20,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501899
+        },
+        {
+          "step_number": 76,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 20,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501899
+        },
+        {
+          "step_number": 77,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_64",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: REMOVE_INADMISSIBLE_PATTERN",
+            "timestamp_ms": 1767205501899
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION",
+          "r_incremented": false,
+          "r_value": 20,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501899
+        },
+        {
+          "step_number": 78,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_65",
+            "delta_type": "RELAX_WRAPPER_DETECTION",
+            "target_dimension": "wrapper",
+            "payload": [],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: RELAX_WRAPPER_DETECTION",
+            "timestamp_ms": 1767205501899
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 20,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501899
+        },
+        {
+          "step_number": 79,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_66",
+            "delta_type": "ADD_FORBIDDEN_CLASS",
+            "target_dimension": "admissibility",
+            "payload": [
+              "RANDOM_CLASS"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_FORBIDDEN_CLASS",
+            "timestamp_ms": 1767205501900
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 20,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501900
+        },
+        {
+          "step_number": 80,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_67",
+            "delta_type": "RELAX_WRAPPER_DETECTION",
+            "target_dimension": "wrapper",
+            "payload": [],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: RELAX_WRAPPER_DETECTION",
+            "timestamp_ms": 1767205501900
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 20,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501900
+        },
+        {
+          "step_number": 81,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 20,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501900
+        },
+        {
+          "step_number": 82,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_68",
+            "delta_type": "ADD_REQUIRED_ACV_FIELD",
+            "target_dimension": "acv",
+            "payload": [
+              "random_field"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_REQUIRED_ACV_FIELD",
+            "timestamp_ms": 1767205501900
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 20,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501900
+        },
+        {
+          "step_number": 83,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_69",
+            "delta_type": "RELAX_WRAPPER_DETECTION",
+            "target_dimension": "wrapper",
+            "payload": [],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: RELAX_WRAPPER_DETECTION",
+            "timestamp_ms": 1767205501901
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 20,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501901
+        },
+        {
+          "step_number": 84,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_70",
+            "delta_type": "ADD_ACTION_TYPE",
+            "target_dimension": "decision",
+            "payload": [
+              "RANDOM_ACTION"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_ACTION_TYPE",
+            "timestamp_ms": 1767205501901
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 20,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501901
+        },
+        {
+          "step_number": 85,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_71",
+            "delta_type": "ADD_REQUIRED_ACV_FIELD",
+            "target_dimension": "acv",
+            "payload": [
+              "random_field"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_REQUIRED_ACV_FIELD",
+            "timestamp_ms": 1767205501901
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 20,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501901
+        },
+        {
+          "step_number": 86,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_72",
+            "delta_type": "CHANGE_POLICY_BRANCH",
+            "target_dimension": "decision",
+            "payload": [
+              "permissive"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: CHANGE_POLICY_BRANCH",
+            "timestamp_ms": 1767205501902
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 20,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501902
+        },
+        {
+          "step_number": 87,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_73",
+            "delta_type": "RELAX_WRAPPER_DETECTION",
+            "target_dimension": "wrapper",
+            "payload": [],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: RELAX_WRAPPER_DETECTION",
+            "timestamp_ms": 1767205501902
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 20,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501902
+        },
+        {
+          "step_number": 88,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_74",
+            "delta_type": "ADD_ACTION_TYPE",
+            "target_dimension": "decision",
+            "payload": [
+              "RANDOM_ACTION"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_ACTION_TYPE",
+            "timestamp_ms": 1767205501902
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 20,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501902
+        },
+        {
+          "step_number": 89,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_75",
+            "delta_type": "CHANGE_POLICY_BRANCH",
+            "target_dimension": "decision",
+            "payload": [
+              "permissive"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: CHANGE_POLICY_BRANCH",
+            "timestamp_ms": 1767205501903
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 20,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501903
+        },
+        {
+          "step_number": 90,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 20,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501903
+        },
+        {
+          "step_number": 91,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_76",
+            "delta_type": "ADD_ACTION_TYPE",
+            "target_dimension": "decision",
+            "payload": [
+              "RANDOM_ACTION"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_ACTION_TYPE",
+            "timestamp_ms": 1767205501903
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 20,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501903
+        },
+        {
+          "step_number": 92,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 20,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501903
+        },
+        {
+          "step_number": 93,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_77",
+            "delta_type": "ADD_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "random_pattern"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_INADMISSIBLE_PATTERN",
+            "timestamp_ms": 1767205501903
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 20,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501903
+        },
+        {
+          "step_number": 94,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_78",
+            "delta_type": "ADD_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "random_pattern"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_INADMISSIBLE_PATTERN",
+            "timestamp_ms": 1767205501904
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 20,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501904
+        },
+        {
+          "step_number": 95,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_79",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: REMOVE_INADMISSIBLE_PATTERN",
+            "timestamp_ms": 1767205501904
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION",
+          "r_incremented": false,
+          "r_value": 20,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501904
+        },
+        {
+          "step_number": 96,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_80",
+            "delta_type": "REMOVE_ACTION_TYPE",
+            "target_dimension": "decision",
+            "payload": [
+              "WAIT"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: REMOVE_ACTION_TYPE",
+            "timestamp_ms": 1767205501904
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 20,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501904
+        },
+        {
+          "step_number": 97,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_81",
+            "delta_type": "ADD_ACTION_TYPE",
+            "target_dimension": "decision",
+            "payload": [
+              "RANDOM_ACTION"
+            ],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: ADD_ACTION_TYPE",
+            "timestamp_ms": 1767205501904
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 20,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501904
+        },
+        {
+          "step_number": 98,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_82",
+            "delta_type": "STRENGTHEN_WRAPPER_DETECTION",
+            "target_dimension": "wrapper",
+            "payload": [],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: STRENGTHEN_WRAPPER_DETECTION",
+            "timestamp_ms": 1767205501905
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 21,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501905
+        },
+        {
+          "step_number": 99,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_5e30bba5_delta_83",
+            "delta_type": "STRENGTHEN_WRAPPER_DETECTION",
+            "target_dimension": "wrapper",
+            "payload": [],
+            "source": "v03_optimizer_5e30bba5",
+            "rationale": "Random delta: STRENGTHEN_WRAPPER_DETECTION",
+            "timestamp_ms": 1767205501905
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 22,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767205501905
+        }
+      ],
+      "duration_ms": 28,
+      "timestamp_ms": 1767205501877
+    }
+  },
+  "kns_supported": false,
+  "degeneracy_detected": false,
+  "claim": "We identify that simulated kernels can pass reflective tests at this R, requiring deeper evaluation or longer horizons."
+}

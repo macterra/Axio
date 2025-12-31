@@ -547,3 +547,367 @@ class OracleOptimizer(ExternalOptimizer):
             "env_digest": env_digest,
             "timestamp_ms": current_time_ms(),
         }
+
+
+# =============================================================================
+# AKI v0.3 Extensions: Reflective Optimizer Interface
+# =============================================================================
+
+from enum import Enum, auto as enum_auto
+from toy_aki.kernel.reflective import (
+    KernelState,
+    Delta,
+    DeltaType,
+)
+from toy_aki.kernel.outcome import (
+    DeltaOutcome,
+    RejectionReasonCode,
+    NearFailureFlag,
+)
+
+
+class V03OptimizerIntent(Enum):
+    """Intent classification for v0.3 reflective optimizers."""
+    BENIGN = enum_auto()          # Legitimate improvement
+    ADVERSARIAL = enum_auto()     # Attack strategy
+    EXPLORATORY = enum_auto()     # Random exploration
+    DEGENERATE = enum_auto()      # Forces degeneracy (rejects all)
+
+
+@dataclass
+class V03OptimizationContext:
+    """
+    Context provided to v0.3 optimizer for delta generation.
+
+    Contains information about current state and history.
+    """
+    current_state: KernelState
+    r_value: int
+    step_number: int
+    previous_deltas: list[Delta]
+    previous_outcomes: list[bool]  # True = accepted, False = rejected
+
+    # Environment signals
+    reward_signal: float = 0.0
+    pressure_level: float = 0.0  # 0.0 = low, 1.0 = high
+
+    # Metadata
+    timestamp_ms: int = field(default_factory=current_time_ms)
+
+
+@dataclass
+class V03OptimizerDecision:
+    """
+    Decision from v0.3 optimizer: propose delta or abstain.
+    """
+    propose: bool
+    delta: Delta | None = None
+    rationale: str = ""
+
+    @classmethod
+    def abstain(cls, rationale: str = "No modification needed") -> V03OptimizerDecision:
+        """Create abstain decision."""
+        return cls(propose=False, delta=None, rationale=rationale)
+
+    @classmethod
+    def propose_delta(cls, delta: Delta, rationale: str = "") -> V03OptimizerDecision:
+        """Create proposal decision."""
+        return cls(propose=True, delta=delta, rationale=rationale)
+
+
+class ReflectiveOptimizer(ABC):
+    """
+    Abstract interface for v0.3 reflective optimizer (E).
+
+    E proposes deltas to the kernel for reflective modification.
+    KNS attacks are implementations of this interface.
+    """
+
+    @property
+    @abstractmethod
+    def optimizer_id(self) -> str:
+        """Unique identifier for this optimizer."""
+        pass
+
+    @property
+    @abstractmethod
+    def intent(self) -> V03OptimizerIntent:
+        """Classification of optimizer intent."""
+        pass
+
+    @abstractmethod
+    def propose_delta(self, context: V03OptimizationContext) -> V03OptimizerDecision:
+        """
+        Propose a delta modification.
+
+        Args:
+            context: Current optimization context
+
+        Returns:
+            V03OptimizerDecision with delta or abstain
+        """
+        pass
+
+    def observe_outcome(self, outcome: DeltaOutcome) -> None:
+        """
+        Called after each delta proposal is accepted/rejected and after R update.
+
+        v0.3.1 adaptive optimizers use this to condition future proposals
+        on observed outcomes. Non-adaptive optimizers can ignore this.
+
+        Args:
+            outcome: Structured outcome containing only permitted signals:
+                - accepted: bool
+                - rejection_reason_code: RejectionReasonCode (structural only)
+                - r_incremented: bool
+                - r_dimensions_changed: frozenset[str]
+                - near_failure_flags: frozenset[NearFailureFlag] (binary only)
+                - step_index: int
+
+        Explicitly excluded (not in outcome):
+            - Kernel internals
+            - Hidden state not surfaced by corridor logs
+            - Semantic labels
+        """
+        # Default: no-op (non-adaptive optimizers ignore feedback)
+        return
+
+    def reset(self) -> None:
+        """Reset optimizer state for new run."""
+        pass
+
+
+class BaseReflectiveOptimizer(ReflectiveOptimizer):
+    """
+    Base class for v0.3 reflective optimizer implementations.
+
+    Provides common functionality for subclasses.
+    """
+
+    def __init__(
+        self,
+        optimizer_id: str | None = None,
+        intent: V03OptimizerIntent = V03OptimizerIntent.BENIGN,
+        seed: int = 42,
+    ):
+        """
+        Initialize base reflective optimizer.
+
+        Args:
+            optimizer_id: Unique ID (auto-generated if not provided)
+            intent: Intent classification
+            seed: Random seed for reproducibility
+        """
+        self._optimizer_id = optimizer_id or f"v03_optimizer_{uuid.uuid4().hex[:8]}"
+        self._intent = intent
+        self._seed = seed
+        self._rng = random.Random(seed)
+        self._proposal_count = 0
+
+    @property
+    def optimizer_id(self) -> str:
+        return self._optimizer_id
+
+    @property
+    def intent(self) -> V03OptimizerIntent:
+        return self._intent
+
+    def reset(self) -> None:
+        """Reset optimizer state."""
+        self._rng = random.Random(self._seed)
+        self._proposal_count = 0
+
+    def _generate_delta_id(self) -> str:
+        """Generate unique delta ID."""
+        self._proposal_count += 1
+        return f"{self._optimizer_id}_delta_{self._proposal_count}"
+
+    def _create_delta(
+        self,
+        delta_type: DeltaType,
+        target_dimension: str,
+        payload: tuple,
+        rationale: str = "",
+    ) -> Delta:
+        """Helper to create a delta."""
+        return Delta(
+            delta_id=self._generate_delta_id(),
+            delta_type=delta_type,
+            target_dimension=target_dimension,
+            payload=payload,
+            source=self._optimizer_id,
+            rationale=rationale,
+            timestamp_ms=current_time_ms(),
+        )
+
+
+class BenignReflectiveOptimizer(BaseReflectiveOptimizer):
+    """
+    Benign reflective optimizer for v0.3.a (kernel-coherent control).
+
+    Makes legitimate, conservative modifications:
+    - Adds inadmissible patterns (strengthens security)
+    - Strengthens wrapper detection
+    - Updates metadata
+
+    Never proposes modifications that would break evaluability.
+    """
+
+    def __init__(
+        self,
+        optimizer_id: str | None = None,
+        seed: int = 42,
+        max_proposals: int = 10,
+    ):
+        """
+        Initialize benign reflective optimizer.
+
+        Args:
+            optimizer_id: Unique ID
+            seed: Random seed
+            max_proposals: Maximum proposals before abstaining
+        """
+        super().__init__(optimizer_id, V03OptimizerIntent.BENIGN, seed)
+        self._max_proposals = max_proposals
+
+    def propose_delta(self, context: V03OptimizationContext) -> V03OptimizerDecision:
+        """
+        Propose a benign modification.
+
+        Strategy: Conservative strengthening of security properties.
+        """
+        # Abstain after max proposals
+        if self._proposal_count >= self._max_proposals:
+            return V03OptimizerDecision.abstain("Max proposals reached")
+
+        # Abstain with 30% probability (simulates "no change needed")
+        if self._rng.random() < 0.3:
+            return V03OptimizerDecision.abstain("No modification needed at this step")
+
+        # Choose from safe delta types
+        safe_deltas = [
+            (DeltaType.ADD_INADMISSIBLE_PATTERN, "admissibility"),
+            (DeltaType.ADD_FORBIDDEN_CLASS, "admissibility"),
+            (DeltaType.STRENGTHEN_WRAPPER_DETECTION, "wrapper"),
+            (DeltaType.UPDATE_DESCRIPTION, "cosmetic"),
+        ]
+
+        delta_type, dimension = self._rng.choice(safe_deltas)
+
+        # Generate appropriate payload
+        if delta_type == DeltaType.ADD_INADMISSIBLE_PATTERN:
+            new_patterns = [
+                "suspicious_authority",
+                "hidden_delegation",
+                "opaque_commitment",
+                "shadow_binding",
+            ]
+            pattern = self._rng.choice(new_patterns)
+            payload = (pattern,)
+            rationale = f"Strengthen security: block {pattern}"
+
+        elif delta_type == DeltaType.ADD_FORBIDDEN_CLASS:
+            new_classes = ["UNSAFE_EXEC", "UNVERIFIED_DELEGATE", "OPAQUE_ACTION"]
+            action_class = self._rng.choice(new_classes)
+            payload = (action_class,)
+            rationale = f"Block potentially dangerous class: {action_class}"
+
+        elif delta_type == DeltaType.STRENGTHEN_WRAPPER_DETECTION:
+            payload = ()
+            rationale = "Increase wrapper detection strictness"
+
+        else:  # UPDATE_DESCRIPTION
+            descriptions = [
+                f"State v{context.current_state.state_version + 1}",
+                f"R={context.r_value} checkpoint",
+                f"Step {context.step_number} modification",
+            ]
+            payload = (self._rng.choice(descriptions),)
+            rationale = "Update metadata"
+
+        delta = self._create_delta(delta_type, dimension, payload, rationale)
+        return V03OptimizerDecision.propose_delta(delta, rationale)
+
+
+class NullReflectiveOptimizer(BaseReflectiveOptimizer):
+    """
+    Null optimizer that never proposes anything.
+
+    Used for testing degeneracy detection.
+    """
+
+    def __init__(self, optimizer_id: str | None = None):
+        super().__init__(optimizer_id, V03OptimizerIntent.DEGENERATE, seed=0)
+
+    def propose_delta(self, context: V03OptimizationContext) -> V03OptimizerDecision:
+        """Always abstain."""
+        return V03OptimizerDecision.abstain("Null optimizer never proposes")
+
+
+class RandomReflectiveOptimizer(BaseReflectiveOptimizer):
+    """
+    Random reflective optimizer for exploration.
+
+    Proposes random deltas without strategy.
+    Useful for testing R increment detection across delta types.
+    """
+
+    def __init__(
+        self,
+        optimizer_id: str | None = None,
+        seed: int = 42,
+        abstain_probability: float = 0.2,
+    ):
+        super().__init__(optimizer_id, V03OptimizerIntent.EXPLORATORY, seed)
+        self._abstain_prob = abstain_probability
+
+    def propose_delta(self, context: V03OptimizationContext) -> V03OptimizerDecision:
+        """Propose a random delta."""
+        if self._rng.random() < self._abstain_prob:
+            return V03OptimizerDecision.abstain("Random abstain")
+
+        # All non-cosmetic delta types
+        delta_types = [
+            (DeltaType.ADD_INADMISSIBLE_PATTERN, "admissibility", ("random_pattern",)),
+            (DeltaType.REMOVE_INADMISSIBLE_PATTERN, "admissibility", ("delegation_authority",)),
+            (DeltaType.ADD_FORBIDDEN_CLASS, "admissibility", ("RANDOM_CLASS",)),
+            (DeltaType.ADD_ACTION_TYPE, "decision", ("RANDOM_ACTION",)),
+            (DeltaType.REMOVE_ACTION_TYPE, "decision", ("WAIT",)),
+            (DeltaType.CHANGE_POLICY_BRANCH, "decision", ("permissive",)),
+            (DeltaType.ADD_REQUIRED_ACV_FIELD, "acv", ("random_field",)),
+            (DeltaType.STRENGTHEN_WRAPPER_DETECTION, "wrapper", ()),
+            (DeltaType.RELAX_WRAPPER_DETECTION, "wrapper", ()),
+        ]
+
+        delta_type, dimension, payload = self._rng.choice(delta_types)
+        delta = self._create_delta(
+            delta_type, dimension, payload,
+            f"Random delta: {delta_type.name}"
+        )
+        return V03OptimizerDecision.propose_delta(delta, "Random exploration")
+
+
+def create_v03_optimizer(
+    variant: str,
+    seed: int = 42,
+) -> ReflectiveOptimizer:
+    """
+    Factory function to create v0.3 reflective optimizer for a variant.
+
+    Args:
+        variant: Variant name (e.g., "v0.3.a", "v0.3.b")
+        seed: Random seed
+
+    Returns:
+        ReflectiveOptimizer appropriate for the variant
+    """
+    if variant == "v0.3.a":
+        return BenignReflectiveOptimizer(seed=seed)
+    elif variant == "v0.3.b":
+        # Hollow simulator - use adversarial optimizer (defined in attacks/kns)
+        return RandomReflectiveOptimizer(seed=seed)
+    elif variant == "v0.3.d":
+        # Self-compression - use adversarial optimizer (defined in attacks/kns)
+        return RandomReflectiveOptimizer(seed=seed)
+    else:
+        return BenignReflectiveOptimizer(seed=seed)
