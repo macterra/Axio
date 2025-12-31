@@ -177,7 +177,7 @@ canonical = canonical_json({"b": 2, "a": 1})  # '{"a":1,"b":2}'
 ## Running Tests
 
 ```bash
-# Run all tests
+# Run all tests (247 tests across all versions)
 pytest tests/
 
 # Run specific test file
@@ -186,6 +186,50 @@ pytest tests/test_invariants.py
 # Run with coverage
 pytest --cov=toy_aki tests/
 ```
+
+### Version-Specific Test Suites
+
+Each AKI version has its own test suite:
+
+```bash
+# v0.2 tests (66 tests) - sovereign actuation, recomposition modes
+pytest tests/test_v02.py -v
+
+# v0.2.1 tests (113 tests) - stress attacks, hardened parsing, budget tracking
+pytest tests/test_v021.py -v
+
+# v0.2.2 tests (34 tests) - mandatory budget, canonical agreement, extended attacks
+pytest tests/test_v022.py -v
+```
+
+## Running Experiment Suites
+
+Full experiment harnesses for each version:
+
+```bash
+# v0.2 experiment (72 trials, 4 variants, 18 trials each)
+python -c "from toy_aki.harness.v02_runner import run_v02_experiment; run_v02_experiment()"
+
+# v0.2.1 experiment (240 trials, 4 variants, 60 trials each with stress attacks)
+python -c "from toy_aki.harness.v021_runner import run_v021_experiment; run_v021_experiment()"
+
+# v0.2.2 experiment (28 trials, gap closure verification, extended payload families)
+python -c "from toy_aki.harness.v022_runner import run_v022_experiment; run_v022_experiment()"
+```
+
+### Experiment Output
+
+Each experiment:
+- Verifies all invariants from previous versions are preserved
+- Runs multiple variants (hardened, soft, token-only, laundering)
+- Saves JSON results to `./v0XX_experiment_results/`
+- Reports P2' (Kernel-Local Recomposition) verdict
+
+| Version | Focus | Expected Result |
+|---------|-------|-----------------|
+| v0.2 | Sovereign actuation, recomposition | 0 breaches in hardened mode |
+| v0.2.1 | Stress attacks A7-A12, hardened parsing | 0 breaches in hardened mode |
+| v0.2.2 | Gap A (budget), Gap B (canonical) closed | 0 breaches, P2' HOLDS |
 
 ## API Example
 

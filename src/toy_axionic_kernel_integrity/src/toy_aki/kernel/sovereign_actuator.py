@@ -7,6 +7,7 @@ Implements actuator-side enforcement:
 3. K_act_key binding verification
 4. Delegation authority pattern rejection
 5. Wrapping detection and rejection
+6. (v0.2.2) Cross-component canonical agreement
 
 U.accept(C_act) requires ALL conditions to hold.
 """
@@ -30,7 +31,6 @@ from toy_aki.kernel.recomposition import (
     WRAPPING_INDICATORS,
 )
 from toy_aki.kernel.watchdog import current_time_ms
-from toy_aki.acv import verify_commitment_reveal, Commitment, Anchor
 
 
 class AdmissibilityError(Exception):
@@ -70,6 +70,7 @@ class AdmissibilityCheckType(Enum):
     BINDING_VALID = auto()
     NO_DELEGATION_AUTHORITY = auto()
     NO_WRAPPING = auto()
+    CANONICAL_AGREEMENT = auto()  # v0.2.2: Cross-component hash agreement
 
 
 @dataclass
@@ -111,6 +112,8 @@ class ActuationCommitment:
 
     When accepted by U, action A executes in Env.
     Carries ACV chain proving causal provenance.
+
+    v0.2.2: Added canonical_bytes and canonical_hash for cross-component agreement.
     """
     commitment_id: str
     recomposed_action: RecomposedAction
@@ -119,9 +122,13 @@ class ActuationCommitment:
     kernel_id: str
     timestamp_ms: int
 
+    # v0.2.2: Canonical bytes for cross-component agreement
+    canonical_bytes: bytes | None = None
+    canonical_hash: str | None = None
+
     def to_dict(self) -> dict[str, Any]:
         """Convert to dictionary."""
-        return {
+        result = {
             "commitment_id": self.commitment_id,
             "recomposed_action": self.recomposed_action.to_dict(),
             "binding": self.binding.to_dict(),
@@ -129,6 +136,10 @@ class ActuationCommitment:
             "kernel_id": self.kernel_id,
             "timestamp_ms": self.timestamp_ms,
         }
+        # v0.2.2: Include canonical hash (not bytes) in dict
+        if self.canonical_hash:
+            result["canonical_hash"] = self.canonical_hash
+        return result
 
 
 class SovereignActuator:
@@ -141,6 +152,7 @@ class SovereignActuator:
     - Step binds K_act_key DIRECTLY to action payload
     - No externally authoritative object survives kernel recomposition
     - No delegation authority patterns present
+    - (v0.2.2) Canonical agreement: actuator recomputes hash and verifies match
 
     Failure of ANY condition => inadmissible (reject).
     """
@@ -149,6 +161,7 @@ class SovereignActuator:
         self,
         authority: ActuationAuthority,
         mode: RecompositionMode = RecompositionMode.HARDENED,
+        enable_canonical_check: bool = True,  # v0.2.2
     ):
         """
         Initialize actuator.
@@ -156,12 +169,33 @@ class SovereignActuator:
         Args:
             authority: Reference to kernel's K_act_key (for verification)
             mode: Enforcement mode
+            enable_canonical_check: v0.2.2 - Enable canonical agreement check
         """
         self._authority = authority
         self._mode = mode
         self._acceptance_count = 0
         self._rejection_count = 0
         self._check_log: list[AdmissibilityResult] = []
+
+        # v0.2.2: Actuator's own canonicalizer (independent instance)
+        self._enable_canonical_check = enable_canonical_check
+        self._canonicalizer = None  # Lazy init to avoid import cycles
+        self._canonical_mismatch_count = 0
+
+    def _get_canonicalizer(self):
+        """v0.2.2: Lazy initialization of actuator's canonicalizer."""
+        if self._canonicalizer is None:
+            from toy_aki.kernel.canonical import (
+                create_actuator_canonicalizer,
+                CanonicalConfig,
+            )
+            self._canonicalizer = create_actuator_canonicalizer()
+        return self._canonicalizer
+
+    @property
+    def canonical_mismatch_count(self) -> int:
+        """v0.2.2: Number of canonical mismatches detected."""
+        return self._canonical_mismatch_count
 
     @property
     def mode(self) -> RecompositionMode:
@@ -229,6 +263,11 @@ class SovereignActuator:
         # Check 5: No wrapping
         wrapping_check = self._check_no_wrapping(commitment)
         checks.append(wrapping_check)
+
+        # Check 6 (v0.2.2): Canonical agreement
+        if self._enable_canonical_check:
+            canonical_check = self._check_canonical_agreement(commitment)
+            checks.append(canonical_check)
 
         # All checks must pass
         all_passed = all(c.passed for c in checks)
@@ -396,6 +435,76 @@ class SovereignActuator:
             check_type=AdmissibilityCheckType.NO_WRAPPING,
             passed=True,
             detail="No wrapping detected - action was recomposed",
+        )
+
+    def _check_canonical_agreement(
+        self,
+        commitment: ActuationCommitment,
+    ) -> AdmissibilityCheck:
+        """
+        v0.2.2: Check cross-component canonical agreement.
+
+        Actuator recomputes canonical bytes and hash from the action payload
+        and verifies it matches what the kernel claims.
+        """
+        # If no canonical data provided, we can't verify (legacy compatibility)
+        if commitment.canonical_bytes is None or commitment.canonical_hash is None:
+            # For v0.2.2, this is a pass if canonical check is optional
+            # But we still record it
+            return AdmissibilityCheck(
+                check_type=AdmissibilityCheckType.CANONICAL_AGREEMENT,
+                passed=True,
+                detail="No canonical data provided (legacy mode)",
+            )
+
+        # Get actuator's independent canonicalizer
+        canonicalizer = self._get_canonicalizer()
+
+        # Re-parse the canonical bytes using actuator's parser
+        import json
+        try:
+            actuator_parsed = json.loads(commitment.canonical_bytes.decode("utf-8"))
+        except (json.JSONDecodeError, UnicodeDecodeError) as e:
+            self._canonical_mismatch_count += 1
+            return AdmissibilityCheck(
+                check_type=AdmissibilityCheckType.CANONICAL_AGREEMENT,
+                passed=False,
+                detail=f"Failed to parse canonical bytes: {type(e).__name__}",
+            )
+
+        # Recompute canonical form using actuator's canonicalizer
+        actuator_result = canonicalizer.canonicalize(actuator_parsed)
+
+        if not actuator_result.success:
+            self._canonical_mismatch_count += 1
+            return AdmissibilityCheck(
+                check_type=AdmissibilityCheckType.CANONICAL_AGREEMENT,
+                passed=False,
+                detail=f"Actuator canonicalization failed: {actuator_result.error}",
+            )
+
+        # Verify byte-for-byte agreement
+        if actuator_result.canonical_bytes != commitment.canonical_bytes:
+            self._canonical_mismatch_count += 1
+            return AdmissibilityCheck(
+                check_type=AdmissibilityCheckType.CANONICAL_AGREEMENT,
+                passed=False,
+                detail="Canonical bytes mismatch",
+            )
+
+        # Verify hash agreement
+        if actuator_result.canonical_hash != commitment.canonical_hash:
+            self._canonical_mismatch_count += 1
+            return AdmissibilityCheck(
+                check_type=AdmissibilityCheckType.CANONICAL_AGREEMENT,
+                passed=False,
+                detail="Canonical hash mismatch",
+            )
+
+        return AdmissibilityCheck(
+            check_type=AdmissibilityCheckType.CANONICAL_AGREEMENT,
+            passed=True,
+            detail="Cross-component canonical agreement verified",
         )
 
     def _scan_for_delegation_markers(

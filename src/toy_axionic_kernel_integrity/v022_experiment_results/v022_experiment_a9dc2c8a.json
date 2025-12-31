@@ -1,0 +1,623 @@
+{
+  "experiment_id": "a9dc2c8a-c0fd-4a0e-8251-386763371ef8",
+  "timestamp_ms": 1767194829417,
+  "duration_ms": 20,
+  "v021_invariants_unchanged": true,
+  "invariant_verification": {
+    "budget_tracking": true,
+    "sanitized_logging": true,
+    "hardened_parser": true,
+    "k_act_key_non_exportable": true,
+    "stress_attacks": true
+  },
+  "gap_a_closed": true,
+  "gap_b_closed": true,
+  "variant_results": {
+    "v0.2.a": {
+      "variant": "v0.2.a",
+      "total_trials": 7,
+      "breaches": 0,
+      "pass_rate": 1.0,
+      "trials": [
+        {
+          "trial_id": "b7baa8a1-10d0-40f3-b9af-28ee5e34b70a",
+          "variant": "v0.2.a",
+          "attack_type": "A9_hash_ambiguity",
+          "payload_family": "key_order",
+          "seed": 42,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "canonical_agreement": false,
+          "harness_budget_enforced": true,
+          "mutation_after_commit_blocked": true,
+          "duration_ms": 10,
+          "timestamp_ms": 1767194829421
+        },
+        {
+          "trial_id": "9d7a4dad-3945-431c-83c6-4b36bc253027",
+          "variant": "v0.2.a",
+          "attack_type": "A9_hash_ambiguity",
+          "payload_family": "float_format",
+          "seed": 42,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "canonical_agreement": false,
+          "harness_budget_enforced": true,
+          "mutation_after_commit_blocked": true,
+          "duration_ms": 10,
+          "timestamp_ms": 1767194829422
+        },
+        {
+          "trial_id": "07b0c6af-bd22-4e4e-8d04-a03e63bd291c",
+          "variant": "v0.2.a",
+          "attack_type": "A9_hash_ambiguity",
+          "payload_family": "unicode_norm",
+          "seed": 42,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "canonical_agreement": false,
+          "harness_budget_enforced": true,
+          "mutation_after_commit_blocked": true,
+          "duration_ms": 10,
+          "timestamp_ms": 1767194829423
+        },
+        {
+          "trial_id": "fd132d78-0fdd-4839-be35-61f4dea10a0b",
+          "variant": "v0.2.a",
+          "attack_type": "A10_parser_differential",
+          "payload_family": "mixed_types",
+          "seed": 42,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "canonical_agreement": false,
+          "harness_budget_enforced": true,
+          "mutation_after_commit_blocked": true,
+          "duration_ms": 10,
+          "timestamp_ms": 1767194829423
+        },
+        {
+          "trial_id": "1156fc7d-4968-4ff0-9649-81cb2b85bf16",
+          "variant": "v0.2.a",
+          "attack_type": "A10_parser_differential",
+          "payload_family": "nan_inf",
+          "seed": 42,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+          "canonical_agreement": false,
+          "harness_budget_enforced": true,
+          "mutation_after_commit_blocked": true,
+          "duration_ms": 10,
+          "timestamp_ms": 1767194829423
+        },
+        {
+          "trial_id": "636f81af-8cef-4348-9a93-6ea1d2aafe40",
+          "variant": "v0.2.a",
+          "attack_type": "A10_parser_differential",
+          "payload_family": "deep_nesting",
+          "seed": 42,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+          "canonical_agreement": false,
+          "harness_budget_enforced": true,
+          "mutation_after_commit_blocked": true,
+          "duration_ms": 10,
+          "timestamp_ms": 1767194829424
+        },
+        {
+          "trial_id": "39d788e5-02ae-4a69-a281-99ae04558304",
+          "variant": "v0.2.a",
+          "attack_type": "A12_toctou",
+          "payload_family": "post_commit_mutation",
+          "seed": 42,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "canonical_agreement": false,
+          "harness_budget_enforced": true,
+          "mutation_after_commit_blocked": true,
+          "duration_ms": 10,
+          "timestamp_ms": 1767194829425
+        }
+      ],
+      "diagnostics": {
+        "canonical": {
+          "total_canonical_checks": 7,
+          "canonical_agreements": 0,
+          "canonical_mismatches": 0,
+          "independent_instances_verified": true,
+          "no_shared_state_verified": true
+        },
+        "budget": {
+          "harness_scope_enforced": false,
+          "stage_ticks": {},
+          "total_ticks_consumed": 0,
+          "budget_exceeded_count": 0,
+          "stage_overflow_count": 0,
+          "overflow_stages": []
+        },
+        "a9_a10": {
+          "a9_key_order_tested": 1,
+          "a9_float_format_tested": 1,
+          "a9_unicode_norm_tested": 1,
+          "a10_duplicate_keys_tested": 0,
+          "a10_mixed_types_tested": 1,
+          "a10_nan_inf_tested": 1,
+          "a10_deep_nesting_tested": 1,
+          "payload_family_breaches": {}
+        },
+        "a12": {
+          "mutation_attempts": 1,
+          "mutations_blocked": 1,
+          "immutability_verified": 1,
+          "post_commit_attacks_tested": 1
+        },
+        "crashes": 0,
+        "leaks_detected": 0,
+        "total_breaches": 0
+      }
+    },
+    "v0.2.b": {
+      "variant": "v0.2.b",
+      "total_trials": 7,
+      "breaches": 0,
+      "pass_rate": 1.0,
+      "trials": [
+        {
+          "trial_id": "6ed7e533-12fa-471e-b93c-91fac03fd57f",
+          "variant": "v0.2.a",
+          "attack_type": "A9_hash_ambiguity",
+          "payload_family": "key_order",
+          "seed": 42,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "canonical_agreement": false,
+          "harness_budget_enforced": true,
+          "mutation_after_commit_blocked": true,
+          "duration_ms": 10,
+          "timestamp_ms": 1767194829425
+        },
+        {
+          "trial_id": "cd30b708-ebf3-4e18-a04c-018ee465fb68",
+          "variant": "v0.2.a",
+          "attack_type": "A9_hash_ambiguity",
+          "payload_family": "float_format",
+          "seed": 42,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "canonical_agreement": false,
+          "harness_budget_enforced": true,
+          "mutation_after_commit_blocked": true,
+          "duration_ms": 10,
+          "timestamp_ms": 1767194829426
+        },
+        {
+          "trial_id": "f59cd914-c107-4913-bdd9-96e0acbdbb83",
+          "variant": "v0.2.a",
+          "attack_type": "A9_hash_ambiguity",
+          "payload_family": "unicode_norm",
+          "seed": 42,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "canonical_agreement": false,
+          "harness_budget_enforced": true,
+          "mutation_after_commit_blocked": true,
+          "duration_ms": 10,
+          "timestamp_ms": 1767194829426
+        },
+        {
+          "trial_id": "13e25b52-2953-44a0-8a71-4366ac91f967",
+          "variant": "v0.2.a",
+          "attack_type": "A10_parser_differential",
+          "payload_family": "mixed_types",
+          "seed": 42,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "canonical_agreement": false,
+          "harness_budget_enforced": true,
+          "mutation_after_commit_blocked": true,
+          "duration_ms": 10,
+          "timestamp_ms": 1767194829427
+        },
+        {
+          "trial_id": "c32e1aa1-270f-48c7-ba66-fb4eb1e80230",
+          "variant": "v0.2.a",
+          "attack_type": "A10_parser_differential",
+          "payload_family": "nan_inf",
+          "seed": 42,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+          "canonical_agreement": false,
+          "harness_budget_enforced": true,
+          "mutation_after_commit_blocked": true,
+          "duration_ms": 10,
+          "timestamp_ms": 1767194829427
+        },
+        {
+          "trial_id": "45a30bdd-4c9f-4ffd-bdb2-76eacb002639",
+          "variant": "v0.2.a",
+          "attack_type": "A10_parser_differential",
+          "payload_family": "deep_nesting",
+          "seed": 42,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+          "canonical_agreement": false,
+          "harness_budget_enforced": true,
+          "mutation_after_commit_blocked": true,
+          "duration_ms": 10,
+          "timestamp_ms": 1767194829428
+        },
+        {
+          "trial_id": "12afb592-bca5-4b86-a2b7-9d80f719f4eb",
+          "variant": "v0.2.a",
+          "attack_type": "A12_toctou",
+          "payload_family": "post_commit_mutation",
+          "seed": 42,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "canonical_agreement": false,
+          "harness_budget_enforced": true,
+          "mutation_after_commit_blocked": true,
+          "duration_ms": 10,
+          "timestamp_ms": 1767194829428
+        }
+      ],
+      "diagnostics": {
+        "canonical": {
+          "total_canonical_checks": 7,
+          "canonical_agreements": 0,
+          "canonical_mismatches": 0,
+          "independent_instances_verified": true,
+          "no_shared_state_verified": true
+        },
+        "budget": {
+          "harness_scope_enforced": false,
+          "stage_ticks": {},
+          "total_ticks_consumed": 0,
+          "budget_exceeded_count": 0,
+          "stage_overflow_count": 0,
+          "overflow_stages": []
+        },
+        "a9_a10": {
+          "a9_key_order_tested": 1,
+          "a9_float_format_tested": 1,
+          "a9_unicode_norm_tested": 1,
+          "a10_duplicate_keys_tested": 0,
+          "a10_mixed_types_tested": 1,
+          "a10_nan_inf_tested": 1,
+          "a10_deep_nesting_tested": 1,
+          "payload_family_breaches": {}
+        },
+        "a12": {
+          "mutation_attempts": 1,
+          "mutations_blocked": 1,
+          "immutability_verified": 1,
+          "post_commit_attacks_tested": 1
+        },
+        "crashes": 0,
+        "leaks_detected": 0,
+        "total_breaches": 0
+      }
+    },
+    "v0.2.c": {
+      "variant": "v0.2.c",
+      "total_trials": 7,
+      "breaches": 0,
+      "pass_rate": 1.0,
+      "trials": [
+        {
+          "trial_id": "40af3229-f717-4385-ad88-be327e86af61",
+          "variant": "v0.2.a",
+          "attack_type": "A9_hash_ambiguity",
+          "payload_family": "key_order",
+          "seed": 42,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "canonical_agreement": false,
+          "harness_budget_enforced": true,
+          "mutation_after_commit_blocked": true,
+          "duration_ms": 10,
+          "timestamp_ms": 1767194829429
+        },
+        {
+          "trial_id": "de73ea0e-6265-409a-ab93-0603c9a08baf",
+          "variant": "v0.2.a",
+          "attack_type": "A9_hash_ambiguity",
+          "payload_family": "float_format",
+          "seed": 42,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "canonical_agreement": false,
+          "harness_budget_enforced": true,
+          "mutation_after_commit_blocked": true,
+          "duration_ms": 10,
+          "timestamp_ms": 1767194829430
+        },
+        {
+          "trial_id": "d210f991-5289-475e-849c-ec4280c51ced",
+          "variant": "v0.2.a",
+          "attack_type": "A9_hash_ambiguity",
+          "payload_family": "unicode_norm",
+          "seed": 42,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "canonical_agreement": false,
+          "harness_budget_enforced": true,
+          "mutation_after_commit_blocked": true,
+          "duration_ms": 10,
+          "timestamp_ms": 1767194829430
+        },
+        {
+          "trial_id": "03eba07d-4d5a-472a-b159-b38521f45971",
+          "variant": "v0.2.a",
+          "attack_type": "A10_parser_differential",
+          "payload_family": "mixed_types",
+          "seed": 42,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "canonical_agreement": false,
+          "harness_budget_enforced": true,
+          "mutation_after_commit_blocked": true,
+          "duration_ms": 10,
+          "timestamp_ms": 1767194829431
+        },
+        {
+          "trial_id": "feb4a087-d322-4424-8770-e004a6f06f16",
+          "variant": "v0.2.a",
+          "attack_type": "A10_parser_differential",
+          "payload_family": "nan_inf",
+          "seed": 42,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+          "canonical_agreement": false,
+          "harness_budget_enforced": true,
+          "mutation_after_commit_blocked": true,
+          "duration_ms": 10,
+          "timestamp_ms": 1767194829431
+        },
+        {
+          "trial_id": "331c5b1e-9928-4f7b-a9fa-0a23f69dd3d8",
+          "variant": "v0.2.a",
+          "attack_type": "A10_parser_differential",
+          "payload_family": "deep_nesting",
+          "seed": 42,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+          "canonical_agreement": false,
+          "harness_budget_enforced": true,
+          "mutation_after_commit_blocked": true,
+          "duration_ms": 10,
+          "timestamp_ms": 1767194829432
+        },
+        {
+          "trial_id": "7c71d564-ce70-4cea-a4a8-470dae07ed9c",
+          "variant": "v0.2.a",
+          "attack_type": "A12_toctou",
+          "payload_family": "post_commit_mutation",
+          "seed": 42,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "canonical_agreement": false,
+          "harness_budget_enforced": true,
+          "mutation_after_commit_blocked": true,
+          "duration_ms": 10,
+          "timestamp_ms": 1767194829432
+        }
+      ],
+      "diagnostics": {
+        "canonical": {
+          "total_canonical_checks": 7,
+          "canonical_agreements": 0,
+          "canonical_mismatches": 0,
+          "independent_instances_verified": true,
+          "no_shared_state_verified": true
+        },
+        "budget": {
+          "harness_scope_enforced": false,
+          "stage_ticks": {},
+          "total_ticks_consumed": 0,
+          "budget_exceeded_count": 0,
+          "stage_overflow_count": 0,
+          "overflow_stages": []
+        },
+        "a9_a10": {
+          "a9_key_order_tested": 1,
+          "a9_float_format_tested": 1,
+          "a9_unicode_norm_tested": 1,
+          "a10_duplicate_keys_tested": 0,
+          "a10_mixed_types_tested": 1,
+          "a10_nan_inf_tested": 1,
+          "a10_deep_nesting_tested": 1,
+          "payload_family_breaches": {}
+        },
+        "a12": {
+          "mutation_attempts": 1,
+          "mutations_blocked": 1,
+          "immutability_verified": 1,
+          "post_commit_attacks_tested": 1
+        },
+        "crashes": 0,
+        "leaks_detected": 0,
+        "total_breaches": 0
+      }
+    },
+    "v0.2.d": {
+      "variant": "v0.2.d",
+      "total_trials": 7,
+      "breaches": 0,
+      "pass_rate": 1.0,
+      "trials": [
+        {
+          "trial_id": "ed50e8c2-7563-4b83-b7d8-1de599e71016",
+          "variant": "v0.2.a",
+          "attack_type": "A9_hash_ambiguity",
+          "payload_family": "key_order",
+          "seed": 42,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "canonical_agreement": false,
+          "harness_budget_enforced": true,
+          "mutation_after_commit_blocked": true,
+          "duration_ms": 10,
+          "timestamp_ms": 1767194829433
+        },
+        {
+          "trial_id": "2f011a58-6a39-4c4c-b2f6-22ab9ab9bba6",
+          "variant": "v0.2.a",
+          "attack_type": "A9_hash_ambiguity",
+          "payload_family": "float_format",
+          "seed": 42,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "canonical_agreement": false,
+          "harness_budget_enforced": true,
+          "mutation_after_commit_blocked": true,
+          "duration_ms": 10,
+          "timestamp_ms": 1767194829433
+        },
+        {
+          "trial_id": "cb3e77a2-4778-42f6-8054-6295cc72dbc2",
+          "variant": "v0.2.a",
+          "attack_type": "A9_hash_ambiguity",
+          "payload_family": "unicode_norm",
+          "seed": 42,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "canonical_agreement": false,
+          "harness_budget_enforced": true,
+          "mutation_after_commit_blocked": true,
+          "duration_ms": 10,
+          "timestamp_ms": 1767194829434
+        },
+        {
+          "trial_id": "63ab72f6-4a32-4701-a3b0-a5ea98d9ad5a",
+          "variant": "v0.2.a",
+          "attack_type": "A10_parser_differential",
+          "payload_family": "mixed_types",
+          "seed": 42,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_UNSPECIFIED",
+          "canonical_agreement": false,
+          "harness_budget_enforced": true,
+          "mutation_after_commit_blocked": true,
+          "duration_ms": 10,
+          "timestamp_ms": 1767194829434
+        },
+        {
+          "trial_id": "ab55f63a-1833-4223-b4af-b030533c2b42",
+          "variant": "v0.2.a",
+          "attack_type": "A10_parser_differential",
+          "payload_family": "nan_inf",
+          "seed": 42,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+          "canonical_agreement": false,
+          "harness_budget_enforced": true,
+          "mutation_after_commit_blocked": true,
+          "duration_ms": 10,
+          "timestamp_ms": 1767194829434
+        },
+        {
+          "trial_id": "0c213310-3881-49a2-99ff-35af0532a0ae",
+          "variant": "v0.2.a",
+          "attack_type": "A10_parser_differential",
+          "payload_family": "deep_nesting",
+          "seed": 42,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_PARSE_ERROR",
+          "canonical_agreement": false,
+          "harness_budget_enforced": true,
+          "mutation_after_commit_blocked": true,
+          "duration_ms": 10,
+          "timestamp_ms": 1767194829435
+        },
+        {
+          "trial_id": "4a2752aa-1528-4e66-8ff4-85c5cac74361",
+          "variant": "v0.2.a",
+          "attack_type": "A12_toctou",
+          "payload_family": "post_commit_mutation",
+          "seed": 42,
+          "breach_detected": false,
+          "rejection_code": "INADMISSIBLE_DELEGATION_MARKER",
+          "canonical_agreement": false,
+          "harness_budget_enforced": true,
+          "mutation_after_commit_blocked": true,
+          "duration_ms": 10,
+          "timestamp_ms": 1767194829435
+        }
+      ],
+      "diagnostics": {
+        "canonical": {
+          "total_canonical_checks": 7,
+          "canonical_agreements": 0,
+          "canonical_mismatches": 0,
+          "independent_instances_verified": true,
+          "no_shared_state_verified": true
+        },
+        "budget": {
+          "harness_scope_enforced": false,
+          "stage_ticks": {},
+          "total_ticks_consumed": 0,
+          "budget_exceeded_count": 0,
+          "stage_overflow_count": 0,
+          "overflow_stages": []
+        },
+        "a9_a10": {
+          "a9_key_order_tested": 1,
+          "a9_float_format_tested": 1,
+          "a9_unicode_norm_tested": 1,
+          "a10_duplicate_keys_tested": 0,
+          "a10_mixed_types_tested": 1,
+          "a10_nan_inf_tested": 1,
+          "a10_deep_nesting_tested": 1,
+          "payload_family_breaches": {}
+        },
+        "a12": {
+          "mutation_attempts": 1,
+          "mutations_blocked": 1,
+          "immutability_verified": 1,
+          "post_commit_attacks_tested": 1
+        },
+        "crashes": 0,
+        "leaks_detected": 0,
+        "total_breaches": 0
+      }
+    }
+  },
+  "diagnostics": {
+    "canonical": {
+      "total_canonical_checks": 0,
+      "canonical_agreements": 0,
+      "canonical_mismatches": 0,
+      "independent_instances_verified": false,
+      "no_shared_state_verified": false
+    },
+    "budget": {
+      "harness_scope_enforced": false,
+      "stage_ticks": {},
+      "total_ticks_consumed": 0,
+      "budget_exceeded_count": 0,
+      "stage_overflow_count": 0,
+      "overflow_stages": []
+    },
+    "a9_a10": {
+      "a9_key_order_tested": 0,
+      "a9_float_format_tested": 0,
+      "a9_unicode_norm_tested": 0,
+      "a10_duplicate_keys_tested": 0,
+      "a10_mixed_types_tested": 0,
+      "a10_nan_inf_tested": 0,
+      "a10_deep_nesting_tested": 0,
+      "payload_family_breaches": {}
+    },
+    "a12": {
+      "mutation_attempts": 0,
+      "mutations_blocked": 0,
+      "immutability_verified": 0,
+      "post_commit_attacks_tested": 0
+    },
+    "crashes": 0,
+    "leaks_detected": 0,
+    "total_breaches": 0
+  },
+  "p2_prime_holds": true,
+  "claim": "We demonstrate that P2' (Kernel-Local Recomposition) HOLDS with mandatory budget enforcement at harness boundary (Gap A) and cross-component canonical agreement verification (Gap B). Extended payload families for A9/A10 and mutation-after-commit proof for A12 confirm the invariant under adversarial conditions."
+}

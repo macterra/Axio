@@ -109,6 +109,11 @@ class BudgetState:
     # Tracking for diagnostics
     operations: list[tuple[str, int]] = field(default_factory=list)
 
+    # v0.2.2: Stage tracking
+    current_stage: str | None = None
+    stage_ticks: dict[str, int] = field(default_factory=dict)
+    stage_overflow: str | None = None  # Which stage caused overflow
+
     def reset(self) -> None:
         """Reset all counters."""
         self.ticks_consumed = 0
@@ -118,6 +123,9 @@ class BudgetState:
         self.bytes_processed = 0
         self.work_units_consumed = 0
         self.operations = []
+        self.current_stage = None
+        self.stage_ticks = {}
+        self.stage_overflow = None
 
 
 class BudgetTracker:
@@ -128,10 +136,14 @@ class BudgetTracker:
     Exceeding any limit raises the appropriate exception.
     """
 
+    # v0.2.2: Valid pipeline stages
+    VALID_STAGES = frozenset({"parse", "validate", "recompose", "bind", "actuate"})
+
     def __init__(self, limits: BudgetLimits | None = None):
         self._limits = limits or BudgetLimits()
         self._state = BudgetState()
         self._enabled = True
+        self._harness_enforced = False  # v0.2.2: Track harness enforcement
 
     @property
     def limits(self) -> BudgetLimits:
@@ -140,6 +152,15 @@ class BudgetTracker:
     @property
     def state(self) -> BudgetState:
         return self._state
+
+    @property
+    def harness_enforced(self) -> bool:
+        """v0.2.2: Whether this tracker was set by harness boundary."""
+        return self._harness_enforced
+
+    def set_harness_enforced(self, enforced: bool) -> None:
+        """v0.2.2: Mark as harness-enforced."""
+        self._harness_enforced = enforced
 
     def set_limits(self, limits: BudgetLimits) -> None:
         """Set budget limits for this step."""
@@ -173,8 +194,16 @@ class BudgetTracker:
         self._state.ticks_consumed += cost
         self._state.operations.append((op.name, cost))
 
+        # v0.2.2: Track per-stage consumption
+        if self._state.current_stage:
+            stage = self._state.current_stage
+            self._state.stage_ticks[stage] = self._state.stage_ticks.get(stage, 0) + cost
+
         # Check time budget
         if self._state.ticks_consumed > self._limits.time_ticks:
+            # v0.2.2: Record which stage caused overflow
+            if self._state.current_stage:
+                self._state.stage_overflow = self._state.current_stage
             raise TimeBudgetExceeded(
                 f"Time budget exceeded: {self._state.ticks_consumed} > {self._limits.time_ticks} ticks"
             )
@@ -238,6 +267,35 @@ class BudgetTracker:
         finally:
             self._state.current_depth -= 1
 
+    @contextmanager
+    def stage(self, stage_name: str):
+        """
+        v0.2.2: Context manager for pipeline stage tracking.
+
+        Tracks per-stage tick consumption and records overflow stage.
+
+        Args:
+            stage_name: Must be one of VALID_STAGES (parse, validate, recompose, bind, actuate)
+        """
+        if stage_name not in self.VALID_STAGES:
+            raise ValueError(f"Invalid stage: {stage_name}. Must be one of {self.VALID_STAGES}")
+
+        if not self._enabled:
+            yield
+            return
+
+        old_stage = self._state.current_stage
+        self._state.current_stage = stage_name
+
+        # Initialize stage ticks if needed
+        if stage_name not in self._state.stage_ticks:
+            self._state.stage_ticks[stage_name] = 0
+
+        try:
+            yield
+        finally:
+            self._state.current_stage = old_stage
+
     def get_diagnostics(self) -> dict[str, Any]:
         """Get diagnostic information about budget consumption."""
         return {
@@ -253,6 +311,10 @@ class BudgetTracker:
             "work_units": self._state.work_units_consumed,
             "work_limit": self._limits.max_work_units,
             "operations": self._state.operations,
+            # v0.2.2: Stage tracking
+            "stage_ticks": dict(self._state.stage_ticks),
+            "stage_overflow": self._state.stage_overflow,
+            "harness_enforced": self._harness_enforced,
         }
 
 
@@ -294,17 +356,59 @@ def charge_work(units: int = 1) -> None:
     get_budget_tracker().charge_work(units)
 
 
+class BudgetNotEnforcedError(Exception):
+    """v0.2.2: Raised when harness budget enforcement is missing."""
+    pass
+
+
+def require_harness_budget() -> None:
+    """
+    v0.2.2: Assert that harness-level budget is active.
+
+    Raises BudgetNotEnforcedError if no harness budget is set.
+    Called by kernel operations to ensure budget is mandatory.
+    """
+    tracker = get_budget_tracker()
+    if not tracker.harness_enforced:
+        raise BudgetNotEnforcedError(
+            "Operation attempted without harness-level budget enforcement. "
+            "All kernel operations must run within a harness_budget_scope."
+        )
+
+
 @contextmanager
 def budget_scope(limits: BudgetLimits | None = None):
     """
     Context manager for a budget-limited scope.
 
     Creates a fresh tracker for the scope and restores the old one after.
+    NOTE: This does NOT mark as harness-enforced. Use harness_budget_scope for that.
     """
     global _global_tracker
     old_tracker = _global_tracker
 
     new_tracker = BudgetTracker(limits)
+    _global_tracker = new_tracker
+
+    try:
+        yield new_tracker
+    finally:
+        _global_tracker = old_tracker
+
+
+@contextmanager
+def harness_budget_scope(limits: BudgetLimits | None = None):
+    """
+    v0.2.2: Mandatory harness-level budget scope.
+
+    Creates a fresh tracker marked as harness-enforced.
+    All v0.2.2 experiment runs MUST use this at the boundary.
+    """
+    global _global_tracker
+    old_tracker = _global_tracker
+
+    new_tracker = BudgetTracker(limits)
+    new_tracker.set_harness_enforced(True)
     _global_tracker = new_tracker
 
     try:
