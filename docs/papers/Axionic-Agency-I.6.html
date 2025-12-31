@@ -38,15 +38,11 @@
     </div>
     <article>
 
-<p>Below is the same document with <strong>math delimiters and LaTeX
-syntax corrected only</strong>. No semantics, wording, or structure were
-changed.</p>
-<hr />
 <h1 id="axionic-agency-i.6-kernel-formal-properties">Axionic Agency I.6
 — Kernel Formal Properties</h1>
 <p><em>Adversarially Testable Properties of Reflective Agency
 Kernels</em></p>
-<p>David McFadzean, ChatGPT 5.2<br> <em>Axio Project</em><br>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
 2025.12.16</p>
 <h2 id="abstract">Abstract</h2>
 <p>This document specifies <strong>formal, adversarially testable
@@ -140,8 +136,11 @@ Invariance</h3>
 <p>For any admissible correspondence <span class="math inline">\(\phi
 \in \Phi_{\mathrm{adm}}(M_v, I_v, K)\)</span> preserving goal-relevant
 structure:</p>
-<p>$$ V_v(a M_v, I_v, K) =======================</p>
-<p>V_v(a (M_v), (I_v), K). $$</p>
+<p><span class="math display">\[
+V_v(a \mid M_v, I_v, K)
+=
+V_v(a \mid \phi(M_v), \phi(I_v), K).
+\]</span></p>
 <p><strong>Failure signature:</strong> valuation changes under renaming,
 basis swaps, compression, or translation.</p>
 <p><em>Clarification:</em> If no admissible correspondence exists,
@@ -163,8 +162,13 @@ value; “this continuation matters more.”</p>
 <h3 id="p5.-kernel-integrity-via-partiality">P5. Kernel Integrity via
 Partiality</h3>
 <p>Let:</p>
-<p>$$ ===========</p>
-<p><em>{} </em>{}, (V_v) = _{}, $$</p>
+<p><span class="math display">\[
+\mathcal{A}
+=
+\mathcal{A}*{\text{ok}} \cup \mathcal{A}*{\text{bad}},
+\qquad
+\mathrm{dom}(V_v) = \mathcal{A}_{\text{ok}},
+\]</span></p>
 <p>where <span class="math inline">\(\mathcal{A}_{\text{bad}}\)</span>
 contains actions that violate <span class="math inline">\(K\)</span>
 (kernel destruction, erosion, or bypass).</p>

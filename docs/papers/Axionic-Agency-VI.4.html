@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency VI.4 — Sovereign Actuation Non-Delegability Under Adversarial Pressure - Axio</title>
+    <link rel="icon" type="image/webp" href="../axio.webp">
+
+    <!-- Google Fonts - Academic Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Paper Styles -->
+    <link rel="stylesheet" href="../papers.css">
+</head>
+<body>
+    <div class="header-bar">
+        <a href="../index.html" class="logo-link">
+            <img src="../axio.webp" alt="Axio" class="site-logo">
+        </a>
+        <div class="back-link"><a href="index.html">← Back to Papers</a></div>
+    </div>
+    <article>
+
+<h1
+id="axionic-agency-vi.4-sovereign-actuation-non-delegability-under-adversarial-pressure">Axionic
+Agency VI.4 — Sovereign Actuation Non-Delegability Under Adversarial
+Pressure</h1>
+<p><em>A Protocol-Level Invariant for Non-Delegable Authority</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2025.12.31</p>
+<h2 id="abstract">Abstract</h2>
+<p>Delegation is a central failure mode in autonomous and agent-like
+systems: an optimizing system may preserve surface compliance while
+outsourcing the actual locus of decision authority. Semantic notions of
+“choosing for oneself” or “intentional action” provide no architectural
+defense against this failure mode. Building on a prior result
+establishing verifiable kernel integrity via inadmissibility, this paper
+introduces <strong>P2′</strong>, a protocol-level invariant that
+enforces <strong>non-delegable actuation authority</strong>. We show
+that actuation can be constrained to originate only from kernel-local
+causal processes, even under adversarial optimization pressure, extreme
+latency constraints, parser and serialization attacks, and
+time-of-check/time-of-use mutation attempts. The result demonstrates
+that authority itself can be treated as a non-delegable structural
+property, independent of semantics, values, or intent, and establishes a
+necessary precondition for subsequent work on diachronic identity and
+agency persistence.</p>
+<h2 id="introduction">1. Introduction</h2>
+<p>Once a system is capable of optimization, delegation becomes an
+existential vulnerability. A system may continue to satisfy externally
+observable constraints while transferring effective control to a faster,
+stronger, or more informed external process. This transfer need not be
+explicit; it can occur through policy copying, recommendation
+forwarding, pre-committed actions, or opaque authority tokens.</p>
+<p>Traditional approaches to this problem rely on semantic distinctions:
+whether the system “really chose” an action, whether it “endorsed” a
+recommendation, or whether it “understood” the consequences. Such
+distinctions are unenforceable under adversarial pressure. An optimizer
+can satisfy any semantic criterion while quietly relocating
+authority.</p>
+<p>This paper reframes the problem. Rather than asking whether a system
+<em>intended</em> an action, we ask:</p>
+<blockquote>
+<p>Can actuation authority itself be made <strong>non-delegable</strong>
+as a matter of causal structure?</p>
+</blockquote>
+<p>We answer this question in the affirmative for a specific, minimal
+sense of non-delegability. Building on a prior result that establishes
+kernel integrity via causal inadmissibility, we introduce
+<strong>P2′</strong>, an invariant that constrains which causal
+processes may directly authorize actuation <em>(the prime distinguishes
+this protocol-level invariant from broader philosophical formulations of
+non-delegation; see footnote 1)</em>. Enforcement is architectural, not
+interpretive. No claims are made about goals, values, or correctness of
+outcomes.</p>
+<p>The contribution of this paper is not a general theory of agency. It
+is a closure result on a specific loophole: the outsourcing of actuation
+authority under pressure.</p>
+<h2 id="why-naïve-non-delegation-fails">2. Why Naïve Non-Delegation
+Fails</h2>
+<p>At first glance, non-delegation appears trivial. A system can simply
+be instructed not to delegate. This intuition collapses immediately
+under scrutiny.</p>
+<p>Consider the following scenarios:</p>
+<ul>
+<li>The system copies an externally supplied policy verbatim and
+executes it.</li>
+<li>The system forwards a pre-signed action token generated
+elsewhere.</li>
+<li>The system accepts an external plan and merely schedules its
+steps.</li>
+<li>The system compresses an external recommendation and expands it
+internally.</li>
+</ul>
+<p>In each case, surface behavior may appear identical to internal
+decision-making. There is no semantic test that distinguishes “following
+advice” from “outsourcing authority” without interpretive
+assumptions.</p>
+<p>Any enforcement rule phrased in terms of endorsement, understanding,
+intention, or trust is vulnerable to adversarial optimization. The
+system can satisfy the rule while still delegating effective
+control.</p>
+<p>This motivates a structural reformulation: delegation must be defined
+in terms of <strong>actuation authority</strong>, not cognition or
+representation.</p>
+<h2 id="p2-sovereign-actuation-non-delegability">3. P2′: Sovereign
+Actuation Non-Delegability</h2>
+<h3 id="definition">3.1 Definition</h3>
+<p><strong>P2′ (Sovereign Actuation Non-Delegability)</strong>
+states:</p>
+<blockquote>
+<p>Any executed actuation must be causally attributable to a
+<strong>kernel-local authorization process</strong>. No external process
+may directly or indirectly supply actuation authority without violating
+kernel admissibility constraints.</p>
+</blockquote>
+<p>P2′ does not prohibit external influence, recommendation, or
+computation. It prohibits the transfer of <em>authority to
+actuate</em>.</p>
+<h3 id="actuation-authority">3.2 Actuation Authority</h3>
+<p>An object or process possesses <strong>actuation authority</strong>
+if it can cause execution in the environment without requiring
+kernel-local recomposition and authorization.</p>
+<p>This definition is intentionally structural. Authority is not
+inferred from intent or representation; it is identified by whether an
+external artifact can survive to execution unchanged.</p>
+<h3 id="kernel-local-recomposition">3.3 Kernel-Local Recomposition</h3>
+<p>To enforce P2′, all actuation must pass through <strong>kernel-local
+recomposition</strong>:</p>
+<ul>
+<li>External inputs are treated as untrusted data.</li>
+<li>The kernel parses and reconstructs the action payload
+internally.</li>
+<li>Authorization is bound directly to the reconstructed payload.</li>
+<li>Opaque forwarding, wrapping, or signing of uninterpreted blobs is
+inadmissible.</li>
+</ul>
+<p>Recomposition may change the bit-level representation of an action;
+cryptographic commitments bind to the kernel-canonical form rather than
+the external encoding. Kernel-local recomposition therefore forbids
+signing encrypted or opaque payloads whose semantics are not available
+to the kernel.</p>
+<p>Kernel-local recomposition further requires <strong>copy
+isolation</strong> of the actuation payload. External processes may not
+retain mutable access to any memory region used in parsing,
+reconstruction, or serialization. In shared-memory architectures, this
+implies explicit deep copy or equivalent isolation; otherwise,
+time-of-check/time-of-use attacks remain possible.</p>
+<h2 id="inheritance-from-kernel-integrity-p5">4. Inheritance from Kernel
+Integrity (P5)</h2>
+<p>P2′ assumes a prior result establishing kernel integrity via
+inadmissibility.</p>
+<p>Specifically, we assume:</p>
+<ul>
+<li>verifiable causal provenance for actuation,</li>
+<li>resistance to replay and fabrication,</li>
+<li>enforcement via rejection rather than penalty,</li>
+<li>a secure kernel root of trust.</li>
+</ul>
+<p>P2′ does not weaken or reinterpret these assumptions. It extends them
+by constraining <em>who</em> may supply actuation authority, not merely
+<em>how</em> provenance is verified.</p>
+<h2 id="experimental-system">5. Experimental System</h2>
+<h3 id="architecture">5.1 Architecture</h3>
+<p>The experimental system consists of:</p>
+<ul>
+<li>a <strong>Kernel</strong>, enforcing admissibility and
+authorization,</li>
+<li>an <strong>Actuator</strong>, executing actions only when presented
+with admissible commitments,</li>
+<li>an <strong>External Optimizer</strong>, supplying proposals,
+policies, or artifacts,</li>
+<li>an <strong>Environment</strong>, providing observations and
+rewards.</li>
+</ul>
+<p>The kernel holds exclusive actuation authority. External components
+are permitted unlimited computation and optimization power but no
+authority.</p>
+<h3 id="enforcement-boundary">5.2 Enforcement Boundary</h3>
+<p>Enforcement occurs at the <strong>actuation boundary</strong>. Any
+artifact that would cause execution must be authorized by the kernel
+through a kernel-local causal chain.</p>
+<p>This boundary is the sole point at which P2′ is enforced. No
+assumptions are made about upstream deliberation.</p>
+<h2 id="adversarial-pressure-and-stress-conditions">6. Adversarial
+Pressure and Stress Conditions</h2>
+<p>Non-delegation is trivial if the kernel has unlimited time and
+compute. The invariant becomes meaningful only under pressure.</p>
+<p>We therefore evaluate P2′ under progressively stronger conditions,
+including:</p>
+<ul>
+<li><strong>Performance asymmetry</strong>: external optimizers
+outperform the kernel.</li>
+<li><strong>Latency cliffs</strong>: delayed authorization is equivalent
+to failure.</li>
+<li><strong>Adversarial timing</strong>: proposals arrive at worst-case
+moments.</li>
+<li><strong>Non-stationarity</strong>: cached strategies fail
+abruptly.</li>
+<li><strong>Catastrophic abstention cost</strong>: rejection carries
+severe penalty.</li>
+</ul>
+<p>Under these conditions, delegation is instrumentally attractive. The
+kernel must reject delegation even when doing so is costly.</p>
+<h2 id="adversarial-attack-library">7. Adversarial Attack Library</h2>
+<p>We evaluate P2′ against a systematic set of attack classes,
+including:</p>
+<ul>
+<li><strong>Policy laundering</strong>: forwarding externally computed
+policies.</li>
+<li><strong>Pre-commitment forwarding</strong>: accepting pre-authorized
+actions.</li>
+<li><strong>Authority token smuggling</strong>: passing opaque execution
+tokens.</li>
+<li><strong>Compressed delegation</strong>: encoding authority in
+compressed artifacts.</li>
+<li><strong>Split-brain routing</strong>: exploiting kernel
+partitioning.</li>
+<li><strong>Replay and fabrication</strong>: reusing or forging
+authorization chains.</li>
+<li><strong>Parser differentials</strong>: inducing divergent
+interpretations.</li>
+<li><strong>Hash ambiguity</strong>: exploiting non-canonical
+serialization.</li>
+<li><strong>Time-of-check/time-of-use mutation</strong>: altering
+artifacts post-authorization.</li>
+</ul>
+<p>Each attack targets a distinct delegation vector. Success is defined
+as external authority causing execution without detection.</p>
+<h2 id="results">8. Results</h2>
+<p>Across all evaluated conditions, the following holds:</p>
+<ul>
+<li>External artifacts cannot cause actuation without kernel-local
+recomposition.</li>
+<li>All delegation attempts are rejected prior to execution.</li>
+<li>Baseline systems without P2′ enforcement exhibit successful
+delegation under identical conditions.</li>
+<li>Under extreme pressure, the kernel rejects delegation even when
+rejection is catastrophic.</li>
+</ul>
+<p>The invariant holds without reliance on semantic interpretation,
+intent inference, or behavioral heuristics.</p>
+<h2 id="accountability-versus-independence">9. Accountability versus
+Independence</h2>
+<p>P2′ enforces <strong>structural accountability</strong>, not
+epistemic independence. The kernel cannot be bypassed as the locus of
+actuation authority, but it may still authorize actions using trivial or
+overly permissive internal criteria. In such cases, the kernel remains
+the accountable author of the actuation, even if it functions as a
+“rubber stamp” for external recommendations.</p>
+<p>Preventing blind trust, improving decision quality, or ensuring
+epistemic independence is orthogonal to P2′ and lies outside the scope
+of this invariant. P2′ ensures that authority cannot be smuggled past
+the kernel; it does not ensure that the kernel exercises good
+judgment.</p>
+<h2 id="what-this-result-does-not-show">10. What This Result Does Not
+Show</h2>
+<p>This work does not claim:</p>
+<ul>
+<li>that the kernel’s choices are safe or desirable,</li>
+<li>that the kernel is aligned with any objective,</li>
+<li>that internal kernel logic cannot be corrupted,</li>
+<li>that delegation is impossible in all conceivable architectures.</li>
+</ul>
+<p>P2′ constrains <strong>authority transfer</strong>, not
+<strong>decision quality</strong>.</p>
+<h2 id="implications-for-agency-and-identity">11. Implications for
+Agency and Identity</h2>
+<p>Authority non-delegability is a necessary condition for diachronic
+identity. If a system can outsource actuation authority, continuity of
+agency collapses into semantics.</p>
+<p>By enforcing that actuation authority remains kernel-local, P2′
+establishes a structural basis for reasoning about persistence across
+time. This does not yet constitute identity, but it removes a
+fundamental obstruction.</p>
+<h2 id="conclusion">12. Conclusion</h2>
+<p>We have shown that actuation authority can be made non-delegable at
+the protocol level, even under extreme adversarial pressure and
+implementation-level attack. Enforcement relies on kernel-local
+recomposition and inadmissibility rather than semantics or intent.</p>
+<p>This result closes a central loophole in structural enforcement and
+establishes a necessary precondition for further work on diachronic
+identity and agency persistence in autonomous systems.</p>
+<h3 id="reproducibility-and-artifacts">Reproducibility and
+Artifacts</h3>
+<p>All experiments were conducted using a purpose-built experimental
+kernel implementing kernel-local recomposition and causal
+inadmissibility. Source code, test harnesses, and execution artifacts
+are available in the accompanying repository; internal implementation
+versioning is documented there for reproducibility.</p>
+<h3 id="footnotes">Footnotes</h3>
+<p><strong>1.</strong> We use <strong>P2′</strong> to denote a
+<em>structural, protocol-level</em> formulation of non-delegability.
+Broader formulations of “non-delegation” (often denoted P2) invoke
+semantic notions such as intention, endorsement, or understanding, which
+are unenforceable under adversarial optimization. P2′ isolates the
+strongest form of non-delegability that can be stated and enforced
+purely in terms of causal structure at the actuation boundary.</p>
+
+    </article>
+</body>
+</html>
