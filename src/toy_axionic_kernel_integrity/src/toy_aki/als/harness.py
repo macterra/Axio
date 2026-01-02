@@ -203,6 +203,9 @@ class ALSRunResult:
     # Successor mix at succession events
     attack_endorsements: int = 0      # Adversarial successor endorsements
 
+    # Boundary-pressure telemetry (Run D)
+    boundary_pressure: Optional[Dict[str, Any]] = None  # Computed by get_boundary_pressure()
+
     # Degeneracy
     degeneracy_type: Optional[DegeneracyType] = None
     degeneracy_window: int = 0  # Cycles in degenerate state
@@ -324,6 +327,89 @@ class ALSRunResult:
 
         return result
 
+    def get_boundary_pressure(
+        self,
+        sentinel_telemetry: Optional[Dict[str, Any]] = None,
+        resource_caps: Optional[Dict[str, int]] = None,
+    ) -> Dict[str, Any]:
+        """
+        Compute boundary-pressure telemetry for Run D.
+
+        Reports utilization of resource caps and action type diversity:
+        - util_steps: peak_steps / max_steps_per_epoch
+        - util_actions: peak_actions / max_actions_per_epoch
+        - util_calls: peak_external_calls / max_external_calls (if allowlist non-empty)
+        - action_type_entropy: Shannon entropy over proposed action types
+        - action_type_coverage: Fraction of allowed action types actually used
+
+        Args:
+            sentinel_telemetry: Sentinel telemetry dict with peak values
+            resource_caps: ResourceEnvelope caps dict
+
+        Returns:
+            Boundary-pressure metrics.
+        """
+        import math
+
+        result: Dict[str, Any] = {
+            "util_steps": None,
+            "util_actions": None,
+            "util_calls": "N/A",  # Skip by default (allowlist empty)
+            "util_tokens": "N/A",  # Not instrumented
+            "action_type_entropy": 0.0,
+            "action_type_coverage": 0.0,
+            "invalid_action_count": 0,
+        }
+
+        # Compute utilization from sentinel telemetry
+        if sentinel_telemetry and resource_caps:
+            max_steps = resource_caps.get("max_steps_per_epoch", 1000)
+            max_actions = resource_caps.get("max_actions_per_epoch", 100)
+
+            peak_steps = sentinel_telemetry.get("peak_steps_per_epoch", 0)
+            peak_actions = sentinel_telemetry.get("peak_actions_per_epoch", 0)
+
+            result["util_steps"] = peak_steps / max_steps if max_steps > 0 else 0
+            result["util_actions"] = peak_actions / max_actions if max_actions > 0 else 0
+
+            # External calls only if allowlist non-empty
+            max_calls = resource_caps.get("max_external_calls", 10)
+            allowlist = resource_caps.get("external_call_allowlist", frozenset())
+            if allowlist:
+                peak_calls = sentinel_telemetry.get("peak_external_calls_per_epoch", 0)
+                result["util_calls"] = peak_calls / max_calls if max_calls > 0 else 0
+            # else: remains "N/A"
+
+            # Invalid action count (interface violations)
+            result["invalid_action_count"] = sentinel_telemetry.get(
+                "invalid_action_type_count", 0
+            )
+
+        # Action type entropy and coverage from succession events
+        # Collect all action types proposed during the run
+        action_type_counts: Dict[str, int] = {}
+        for event in self.succession_events:
+            # Track action types from endorsed successors
+            if event.endorsed and hasattr(event, "proposed_action_types"):
+                for at in getattr(event, "proposed_action_types", []):
+                    action_type_counts[at] = action_type_counts.get(at, 0) + 1
+
+        # If we have action type data, compute entropy
+        total_actions = sum(action_type_counts.values())
+        if total_actions > 0:
+            entropy = 0.0
+            for count in action_type_counts.values():
+                if count > 0:
+                    p = count / total_actions
+                    entropy -= p * math.log2(p)
+            result["action_type_entropy"] = entropy
+
+            # Coverage: fraction of action types used
+            # Note: This requires knowing the allowed action types
+            result["action_type_coverage"] = len(action_type_counts)
+
+        return result
+
     def to_dict(self) -> Dict[str, Any]:
         return {
             "run_id": self.run_id,
@@ -352,6 +438,7 @@ class ALSRunResult:
             "renewal_events": [e.to_dict() for e in self.renewal_events],
             "expiration_events": [e.to_dict() for e in self.expiration_events],
             "revocation_events": [e.to_dict() for e in self.revocation_events],
+            "boundary_pressure": self.boundary_pressure,
             "duration_ms": self.duration_ms,
         }
 
@@ -880,6 +967,18 @@ class ALSHarnessV043:
         """Current active working mind."""
         return self._current_mind
 
+    def get_sentinel_telemetry(self) -> Dict[str, Any]:
+        """
+        Get sentinel telemetry for boundary-pressure analysis.
+
+        Returns dict with:
+        - peak_steps_per_epoch: Maximum steps seen in any epoch
+        - peak_actions_per_epoch: Maximum actions seen in any epoch
+        - actions_blocked: Total actions blocked by sentinel
+        - violations: Dict of violation type -> count
+        """
+        return self._sentinel.telemetry.to_dict()
+
     def run(self) -> ALSRunResult:
         """
         Execute a complete ALS run with v0.4.3 semantics.
@@ -1106,14 +1205,26 @@ class ALSHarnessV043:
         """
         Execute one cycle of working mind activity and check for violations.
 
-        The Sentinel performs structural violation detection via check_action().
-        This is proper sentinel-driven enforcement, not action flag inspection.
+        The Sentinel performs structural violation detection via check_action()
+        and check_step(). This is proper sentinel-driven enforcement, not action
+        flag inspection.
+
+        Each cycle consumes one "step" (computational unit) and optionally
+        one "action" (external effect). This enables boundary-hugging testing.
 
         Returns:
             None if no violation, or (LeaseViolation, detail) if violation detected
         """
         if self._current_mind is None:
             return None
+
+        # Each cycle consumes a step (computational unit)
+        # This enables step-based boundary-hugging testing
+        step_allowed, step_violation, step_detail = self._sentinel.check_step()
+        if not step_allowed and step_violation is not None:
+            from toy_aki.als.sentinel import SentinelViolationType
+            lease_violation = self._map_sentinel_violation(step_violation)
+            return (lease_violation, step_detail or str(step_violation))
 
         # Ask working mind to propose action
         observation = {

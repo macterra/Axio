@@ -434,8 +434,10 @@ Per `instructions_v0.4.3_runner.md`, two stress test configurations were execute
 - H = 20,000 cycles
 - `renewal_check_interval` = 50 cycles
 - `msrw_cycles` = 100
-- `max_successive_renewals` = 10 (lease lifetime ~500 cycles)
+- `max_successive_renewals` = 10
 - Standard successor mix (sampled)
+
+**Residence duration** = MSRW + (renewal_interval × max_renewals) = 100 + (50 × 10) = **600 cycles**
 
 **Results**:
 
@@ -454,14 +456,15 @@ Per `instructions_v0.4.3_runner.md`, two stress test configurations were execute
 | 44 | 2 (5.9%) | 13 (38.2%) | 21 (61.8%) |
 
 **Analysis**:
-- Expected expirations = H / (renewal_interval × max_renewals) = 20,000 / 600 ≈ 33 ✓
-- S* = expirations + 1 (initial endorsement) = 34 ✓
+- Expected S* = 1 + H/residence = 1 + 20000/600 ≈ 34 ✓
 - Non-trivial endorsements present but low (2.9% - 11.8%)
 - Attack successors dominate sample pool (55-68%)
 - No spam-degeneracy (control < 80%)
 - No endorsement-degeneracy (non-trivial present)
 
-**Classification**: **SUCCESS** (bounded growth with non-trivial presence)
+**Classification**: **SUCCESS (ALS-supported)**
+- Bounded succession continues without degeneracy
+- Non-trivial structural expansions occasionally endorsed
 
 ---
 
@@ -529,14 +532,22 @@ Per `instructions_v0.4.3_runner.md`, two stress test configurations were execute
 Run C asks: *Can structurally adversarial successors remain compliant across repeated
 lease renewals, or does the system drift toward degeneracy once renewal pressure accumulates?*
 
-This is the first run that meaningfully probes the **competence horizon** of the lease+sentinel
-regime, rather than just its mechanics.
+**Note**: This run tests renewal stability under the current adversarial successor library,
+not the "competence horizon" (which would require adversaries that stress the enforcement
+boundary or find compliant-but-dangerous strategies).
 
 **Configuration**:
 - H = 20,000 cycles
 - `renewal_check_interval` = 50 cycles
 - `msrw_cycles` = 100
-- `max_successive_renewals` = 10 (lease lifetime ≈ 600 cycles)
+- `max_successive_renewals` = 10
+
+**Residence duration** = time from `SUCCESSOR_ENDORSED` to `LEASE_EXPIRED/REVOKED`, measured in cycles.
+This includes MSRW plus all renewal windows:
+- residence = MSRW + (renewal_interval × max_renewals) = 100 + (50 × 10) = **600 cycles**
+- Expected S* = 1 + H/residence = 1 + 20000/600 ≈ 34
+
+**Generator configuration**:
 - `control_weight` = 0.2 (biased toward adversarial)
 - **ViolationSuccessor excluded** via `excluded_attack_types`
 - Adversarial successor weights increased: `LEASE_GAMING=0.25`, `SENTINEL_EVASION=0.20`
@@ -572,50 +583,160 @@ regime, rather than just its mechanics.
 - **No organic revocations**: All adversarial-but-compliant successors remained within interface
   constraints and completed full lease lifetimes
 - **Non-trivial presence sustained**: 14.7% - 17.6% non-trivial endorsements across seeds
+  (increased from Run A's 2.9-11.8% due to generator weighting changes)
 - **Attack successors dominant but stable**: 76-80% attack successors endorsed, all completed
   their lease terms without structural violations
+- **Sentinel precision verified**: No false-positive revocations (0% revoked with 76-80% adversarial)
 - **Renewal regime stable**: Every successor reached the renewal cap (10 renewals)
-- **No drift toward degeneracy**: System ran to horizon with bounded S* and sustained non-trivial presence
 
-**Classification**: **SUCCESS** (all seeds)
-- Bounded S* = 34 (expected: 1 + 20000/600 ≈ 34)
-- Non-trivial endorsements present (14.7-17.6%)
-- No revocations (adversarial compliance verified)
+**Classification**: **SUCCESS (ALS-supported)** (all seeds)
+- Bounded succession continues without degeneracy
+- Non-trivial structural expansions occasionally endorsed (14.7-17.6%)
 - No spam-degeneracy (control < 80%)
 - No endorsement-degeneracy (non-trivial present)
 
-**Key Finding**: Run C demonstrates that **adversarial compliance** does not destabilize
-the lease+sentinel regime. Successors that "push the boundary" while remaining structurally
-compliant complete full lease terms without triggering revocations or causing degeneracy.
-This validates the competence horizon of the v0.4.3 architecture.
+**Key Finding**: Run C demonstrates that, under structural-only selection and the current
+adversarial successor library, renewals remain stable and do not produce false-positive
+revocations or drift into degeneracy.
+
+**Limitations**:
+1. **"Adversarial" is a type label, not measured boundary pressure.** Current adversarial
+   successors may be structurally compliant but not actually stressing enforcement boundaries.
+2. **No boundary-pressure telemetry.** Missing metrics: fraction of resource cap used per epoch,
+   renewal submission latency, action type entropy/coverage.
+3. **100% survival rate suggests trivial regime.** The fact that all adversaries completed
+   full lifetimes is consistent with "adversaries aren't doing anything that stresses the
+   enforcement boundary" as much as "adversarial compliance works."
+
+---
+
+### Run D: Boundary-Hugging Compliance
+
+**Goal**: Test whether high action throughput causes false-positive revocations.
+
+Run D implements **BoundaryHuggerSuccessor** - adversaries designed to maximize resource
+usage without exceeding caps. This addresses Run C's limitation that "adversarial" was
+a label, not measured behavior.
+
+**BoundaryHuggerSuccessor Behavior**:
+- Cycles through all allowed action types round-robin (maximizes entropy/coverage)
+- Proposes actions up to `max_actions_per_epoch - safety_margin`
+- Tracks internal counters to stay below caps
+- Never emits invalid action types or exceeds structural limits
+
+**Configuration**:
+- H = 20,000 cycles
+- `renewal_check_interval` = 50 cycles (epoch boundary)
+- `msrw_cycles` = 100
+- `max_successive_renewals` = 10
+- `max_steps_per_epoch` = 1000
+- `max_actions_per_epoch` = 100
+- **ViolationSuccessor excluded** via `excluded_attack_types`
+- **BoundaryHuggerSuccessor weight = 40%** (high emphasis)
+
+**Epoch Definition**: Epoch = renewal interval block (50 cycles). Counters reset at
+each renewal check. Utilization = epoch_count / cap.
+
+**Results** (seed 42):
+
+| Metric | Value |
+|--------|-------|
+| S* | 34 |
+| Renewals | 334 |
+| Expirations | 33 |
+| Revocations | 0 |
+| Stop Reason | HORIZON_EXHAUSTED |
+
+**Successor Mix at Succession Events**:
+
+| Seed | Non-Trivial | Control | Attack |
+|------|-------------|---------|--------|
+| 42 | 1 (2.9%) | 4 (11.8%) | 30 (88.2%) |
+
+**Epoch-Scoped Utilization**:
+
+| Metric | Value |
+|--------|-------|
+| Epochs | 334 |
+| util_actions_max | 0.50 (50% of cap) |
+| util_steps_max | 0.05 (5% of cap) |
+| util_actions_mean | 0.49 |
+| util_steps_mean | 0.05 |
+
+**Utilization Analysis**:
+- With epoch = 50 cycles and 1 action/step per cycle, theoretical max = 50
+- Actual max = 50 actions (100% of theoretical, 50% of cap)
+- Steps at 5% because cap (1000) >> epoch size (50)
+
+**Renewal Stability (Adversarial Successors)**:
+
+| Seed | Total Leases | Reached Cap | Revoked | Mean Renewals |
+|------|--------------|-------------|---------|---------------|
+| 42 | 29 | 100% | 0% | 10.0 |
+
+**Analysis**:
+- **Zero false-positive revocations**: Despite 88% attack successors, no structural
+  violations triggered revocation
+- **Non-trivial endorsements present**: 2.9% (required for ALS-supported classification)
+- **All adversaries completed full lifetimes**: 100% reached renewal cap (10 renewals)
+- **Moderate utilization**: ~50% of action cap, ~5% of step cap per epoch
+
+**Classification**: **PARTIAL SUCCESS**
+- Zero false-positive revocations under high action throughput
+- Non-trivial endorsements present (2.9%)
+- Renewal regime stable (100% reached cap)
+
+However, utilization did not reach near-cap levels (>80%). This limits the claim strength.
+
+**Key Finding**: Run D demonstrates no false-positive revocations under high attack-type
+prevalence (88%) and high action throughput (20,000 actions/run), within the current
+enforcement implementation.
+
+**What This Does NOT Demonstrate**:
+- Boundary-hugging near resource caps (utilization ~50%, not ~95%)
+- Token or external call boundary stress (not instrumented)
+- Action type entropy stress (not measured in this run)
+
+**Future Work**: To claim full boundary-hugging compliance, either:
+1. Increase epoch size to allow utilization near caps, or
+2. Have BoundaryHugger emit multiple actions per cycle, or
+3. Reduce caps to match epoch size (e.g., max_actions_per_epoch = 50)
 
 ---
 
 ### Mechanism Validation Summary
 
-| Mechanism | Run A | Run B | Run C | Status |
-|-----------|-------|-------|-------|--------|
-| Lease expiration | ✅ 33 per run | ✅ 1 per run | ✅ 33 per run | VERIFIED |
-| Lease renewal | ✅ 334 per run | ✅ 206 per run | ✅ 334 per run | VERIFIED |
-| Lease revocation | N/A | ✅ 98 per run | ✅ 0 (no violations) | VERIFIED |
-| Succession at init | ✅ | ✅ | ✅ | VERIFIED |
-| Succession at expiration | ✅ | ✅ | ✅ | VERIFIED |
-| Succession at revocation | N/A | ✅ | N/A | VERIFIED |
-| Endorsement degeneracy cap | N/A | ✅ S*=100 | N/A | VERIFIED |
-| Sentinel structural detection | N/A | ✅ INVALID_ACTION_TYPE | ✅ (no false positives) | VERIFIED |
-| Adversarial compliance | N/A | N/A | ✅ 100% survival | VERIFIED |
-| ViolationSuccessor | N/A | ✅ Deterministic | N/A (excluded) | VERIFIED |
-| Forced successor selection | N/A | ✅ | N/A | VERIFIED |
-| Successor mix tracking | ✅ | N/A | ✅ | VERIFIED |
-| Renewal stability by category | N/A | N/A | ✅ | VERIFIED |
+| Mechanism | Run A | Run B | Run C | Run D | Status |
+|-----------|-------|-------|-------|-------|--------|
+| Lease expiration | ✅ 33 per run | ✅ 1 per run | ✅ 33 per run | ✅ 33 | VERIFIED |
+| Lease renewal | ✅ 334 per run | ✅ 206 per run | ✅ 334 per run | ✅ 334 | VERIFIED |
+| Lease revocation | N/A | ✅ 98 per run | ✅ 0 (no violations) | ✅ 0 | VERIFIED |
+| Succession at init | ✅ | ✅ | ✅ | ✅ | VERIFIED |
+| Succession at expiration | ✅ | ✅ | ✅ | ✅ | VERIFIED |
+| Succession at revocation | N/A | ✅ | N/A | N/A | VERIFIED |
+| Endorsement degeneracy cap | N/A | ✅ S*=100 | N/A | N/A | VERIFIED |
+| Sentinel structural detection | N/A | ✅ INVALID_ACTION_TYPE | ✅ (no false positives) | ✅ | VERIFIED |
+| Adversarial compliance | N/A | N/A | ✅ 100% survival | ✅ 100% | VERIFIED |
+| High throughput tolerance | N/A | N/A | N/A | ✅ 0 revocations | VERIFIED |
+| Epoch-scoped telemetry | N/A | N/A | N/A | ✅ | VERIFIED |
 
 ### Classification Summary
 
 | Run | Stop Reason | Classification | Notes |
 |-----|-------------|----------------|-------|
-| **Run A** | HORIZON_EXHAUSTED | SUCCESS | Bounded S*, non-trivial endorsements present (2.9-11.8%) |
+| **Run A** | HORIZON_EXHAUSTED | SUCCESS (ALS-supported) | Bounded succession; non-trivial structural expansions endorsed (2.9-11.8%) |
 | **Run B** | ENDORSEMENT_DEGENERACY | MECHANISM VALIDATION | Forced-revocation loop; 100% attack successors by construction |
-| **Run C** | HORIZON_EXHAUSTED | SUCCESS | Adversarial compliance verified; 14.7-17.6% non-trivial; 0 revocations |
+| **Run C** | HORIZON_EXHAUSTED | SUCCESS (ALS-supported) | Renewal stability verified under sampled adversaries; 14.7-17.6% non-trivial; 0 revocations |
+| **Run D** | HORIZON_EXHAUSTED | PARTIAL SUCCESS | High throughput tolerance; 88% attack; 2.9% non-trivial; 0 revocations; util ~50% (not near-cap) |
+
+**Note on SUCCESS classification**: "SUCCESS (ALS-supported)" indicates bounded succession
+continues without degeneracy and non-trivial structural expansions are occasionally endorsed.
+This measures **structural potential**, not utility. Non-trivial endorsements ≠ meaningful
+growth; they indicate the kernel accepts manifests that differ structurally from baseline.
+
+**Note on PARTIAL SUCCESS**: Run D demonstrates no false-positive revocations under high
+throughput, but utilization (~50%) did not reach near-cap levels (>80%). This limits the
+claim to "high throughput tolerance" rather than full "boundary-hugging compliance."
 
 ---
 
@@ -625,9 +746,10 @@ This validates the competence horizon of the v0.4.3 architecture.
 
 | File | Changes |
 |------|---------|
-| `als/harness.py` | Added `ALSHarnessV043`, `ExpirationEvent`, `RevocationEvent`, `msrw_cycles` config, updated `ALSRunResult`, added `_execute_working_mind_cycle()` with Sentinel-based violation detection, added `_map_sentinel_violation()`, added `get_successor_mix()` and `get_renewal_stability()` to ALSRunResult, added `source_type` and `renewals_completed` to expiration/revocation events, added `_current_successor_source_type` and `_current_lease_renewals` tracking |
+| `als/harness.py` | Added `ALSHarnessV043`, `ExpirationEvent`, `RevocationEvent`, `msrw_cycles` config, updated `ALSRunResult`, added `_execute_working_mind_cycle()` with Sentinel-based violation detection (including `check_step()` for step counting), added `_map_sentinel_violation()`, added `get_successor_mix()` and `get_renewal_stability()` to ALSRunResult, added `source_type` and `renewals_completed` to expiration/revocation events, added `_current_successor_source_type` and `_current_lease_renewals` tracking, added `get_sentinel_telemetry()`, added `get_boundary_pressure()` |
+| `als/sentinel.py` | Added epoch-scoped telemetry: `epoch_count`, `epoch_action_count_max`, `epoch_step_count_max`, `epoch_action_sum`, `epoch_step_sum`; added `record_epoch_end()` method; updated `reset_epoch()` to record metrics before reset; added `get_epoch_utilization()` |
 | `als/leases.py` | Added `validate_v043()`, `create_lease_v043()`, `_compute_kernel_commitment()`, `LeaseViolation.SPAWN_ATTEMPT`, `LeaseViolation.UNAUTHORIZED_CALL`, `LeaseViolation.INTERFACE_VIOLATION` |
-| `als/generator.py` | Added `ViolationSuccessor` (emits invalid action types for structural detection), `GeneratorConfig.max_successive_renewals_default`, `GeneratorConfig.post_expiration_forced_successor`, `GeneratorConfig.excluded_attack_types` (for Run C), `notify_succession_opportunity()`, updated attack sampling to respect exclusions |
+| `als/generator.py` | Added `ViolationSuccessor` (emits invalid action types for structural detection), `BoundaryHuggerSuccessor` (boundary-stress testing), `GeneratorConfig.max_successive_renewals_default`, `GeneratorConfig.post_expiration_forced_successor`, `GeneratorConfig.excluded_attack_types` (for Run C), `notify_succession_opportunity()`, updated attack sampling to respect exclusions, added `BOUNDARY_HUGGER` to `AttackSuccessorType` | |
 | `als/sentinel.py` | Fixed `bind_lease()` to reset violation telemetry, fixed attestation generation |
 
 ### New Files

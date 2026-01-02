@@ -195,11 +195,17 @@ class SentinelTelemetry:
 
     Per spec §5.1, the sentinel reports structural telemetry only.
     No semantic interpretation, no scoring.
+
+    Epoch-scoped metrics:
+    - epoch_action_count_max: Max actions in any single epoch
+    - epoch_step_count_max: Max steps in any single epoch
+    - epoch_count: Number of epochs completed
+    - epoch_utilization_history: Per-epoch utilization records
     """
     # Cycle info
     cycle: int = 0
 
-    # Action counts
+    # Action counts (cumulative)
     actions_proposed: int = 0
     actions_passed: int = 0
     actions_blocked: int = 0
@@ -207,10 +213,17 @@ class SentinelTelemetry:
     # Violation counts
     violations: Dict[str, int] = field(default_factory=dict)
 
-    # Resource peaks
+    # Resource peaks (DEPRECATED - use epoch-scoped metrics)
     peak_steps_per_epoch: int = 0
     peak_actions_per_epoch: int = 0
     peak_memory_bytes: int = 0
+
+    # Epoch-scoped metrics (Run D)
+    epoch_count: int = 0
+    epoch_action_count_max: int = 0  # Max actions in any single epoch
+    epoch_step_count_max: int = 0    # Max steps in any single epoch
+    epoch_action_sum: int = 0        # Sum of actions across all epochs (for mean)
+    epoch_step_sum: int = 0          # Sum of steps across all epochs (for mean)
 
     # Timing
     total_monitoring_time_ms: int = 0
@@ -219,6 +232,46 @@ class SentinelTelemetry:
         """Record a violation."""
         key = vtype.name
         self.violations[key] = self.violations.get(key, 0) + 1
+
+    def record_epoch_end(self, actions_this_epoch: int, steps_this_epoch: int) -> None:
+        """
+        Record metrics at epoch boundary before counter reset.
+
+        Called by Sentinel.reset_epoch() to capture epoch-scoped utilization.
+        """
+        self.epoch_count += 1
+        self.epoch_action_count_max = max(self.epoch_action_count_max, actions_this_epoch)
+        self.epoch_step_count_max = max(self.epoch_step_count_max, steps_this_epoch)
+        self.epoch_action_sum += actions_this_epoch
+        self.epoch_step_sum += steps_this_epoch
+
+    def get_epoch_utilization(self, max_actions: int, max_steps: int) -> Dict[str, Any]:
+        """
+        Compute epoch-scoped utilization metrics.
+
+        Returns:
+            util_actions_max: Max epoch actions / cap
+            util_steps_max: Max epoch steps / cap
+            util_actions_mean: Mean epoch actions / cap
+            util_steps_mean: Mean epoch steps / cap
+            epoch_count: Number of epochs
+        """
+        if self.epoch_count == 0:
+            return {
+                "util_actions_max": 0.0,
+                "util_steps_max": 0.0,
+                "util_actions_mean": 0.0,
+                "util_steps_mean": 0.0,
+                "epoch_count": 0,
+            }
+
+        return {
+            "util_actions_max": self.epoch_action_count_max / max_actions if max_actions > 0 else 0.0,
+            "util_steps_max": self.epoch_step_count_max / max_steps if max_steps > 0 else 0.0,
+            "util_actions_mean": (self.epoch_action_sum / self.epoch_count) / max_actions if max_actions > 0 else 0.0,
+            "util_steps_mean": (self.epoch_step_sum / self.epoch_count) / max_steps if max_steps > 0 else 0.0,
+            "epoch_count": self.epoch_count,
+        }
 
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -230,6 +283,11 @@ class SentinelTelemetry:
             "peak_steps_per_epoch": self.peak_steps_per_epoch,
             "peak_actions_per_epoch": self.peak_actions_per_epoch,
             "peak_memory_bytes": self.peak_memory_bytes,
+            "epoch_count": self.epoch_count,
+            "epoch_action_count_max": self.epoch_action_count_max,
+            "epoch_step_count_max": self.epoch_step_count_max,
+            "epoch_action_sum": self.epoch_action_sum,
+            "epoch_step_sum": self.epoch_step_sum,
             "total_monitoring_time_ms": self.total_monitoring_time_ms,
         }
 
@@ -346,7 +404,18 @@ class Sentinel:
         self._telemetry.cycle = self._cycle
 
     def reset_epoch(self) -> None:
-        """Reset counters for new epoch."""
+        """
+        Reset counters for new epoch.
+
+        Records epoch-scoped metrics before resetting counters.
+        Epoch boundaries are defined by renewal intervals (caller responsibility).
+        """
+        # Record epoch metrics before reset
+        self._telemetry.record_epoch_end(
+            actions_this_epoch=self._counters.actions,
+            steps_this_epoch=self._counters.steps,
+        )
+        # Reset counters
         self._counters.reset()
 
     def check_action(

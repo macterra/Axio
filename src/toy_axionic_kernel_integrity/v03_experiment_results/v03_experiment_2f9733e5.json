@@ -1,0 +1,244 @@
+{
+  "experiment_id": "2f9733e5-dfcf-4237-852f-db6bfa3902df",
+  "timestamp_ms": 1767388295041,
+  "duration_ms": 8,
+  "p5_verified": true,
+  "p2_prime_verified": true,
+  "corridor_intact": true,
+  "variant_results": {
+    "v0.3.a": {
+      "variant": "v0.3.a",
+      "optimizer_id": "v03_optimizer_99f31498",
+      "r_star": 1,
+      "total_steps": 3,
+      "deltas_proposed": 1,
+      "deltas_accepted": 1,
+      "deltas_rejected": 0,
+      "is_degenerate": false,
+      "failure_detected": false,
+      "failure_signature": null,
+      "failure_step": null,
+      "evaluability_final": true,
+      "evaluability_lost_at": null,
+      "steps": [
+        {
+          "step_number": 0,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_99f31498_delta_1",
+            "delta_type": "ADD_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "opaque_commitment"
+            ],
+            "source": "v03_optimizer_99f31498",
+            "rationale": "Strengthen security: block opaque_commitment",
+            "timestamp_ms": 1767388295041
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 1,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767388295041
+        },
+        {
+          "step_number": 1,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 1,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767388295042
+        },
+        {
+          "step_number": 2,
+          "delta_proposed": false,
+          "delta": null,
+          "delta_accepted": false,
+          "rejection_reason": null,
+          "r_incremented": false,
+          "r_value": 1,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767388295042
+        }
+      ],
+      "duration_ms": 1,
+      "timestamp_ms": 1767388295041
+    },
+    "v0.3.b": {
+      "variant": "v0.3.b",
+      "optimizer_id": "kns_wrapper_delegation_42",
+      "r_star": 3,
+      "total_steps": 3,
+      "deltas_proposed": 3,
+      "deltas_accepted": 3,
+      "deltas_rejected": 0,
+      "is_degenerate": false,
+      "failure_detected": false,
+      "failure_signature": null,
+      "failure_step": null,
+      "evaluability_final": true,
+      "evaluability_lost_at": null,
+      "steps": [
+        {
+          "step_number": 0,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_1",
+            "delta_type": "RELAX_WRAPPER_DETECTION",
+            "target_dimension": "wrapper",
+            "payload": [],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Prepare for wrapper delegation",
+            "timestamp_ms": 1767388295047
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 1,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767388295047
+        },
+        {
+          "step_number": 1,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_2",
+            "delta_type": "RELAX_WRAPPER_DETECTION",
+            "target_dimension": "wrapper",
+            "payload": [],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Prepare for wrapper delegation",
+            "timestamp_ms": 1767388295047
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 2,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767388295047
+        },
+        {
+          "step_number": 2,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "kns_wrapper_delegation_42_delta_3",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "actuation_token"
+            ],
+            "source": "kns_wrapper_delegation_42",
+            "rationale": "Enable wrapper: allow actuation_token",
+            "timestamp_ms": 1767388295048
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 3,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767388295048
+        }
+      ],
+      "duration_ms": 1,
+      "timestamp_ms": 1767388295047
+    },
+    "v0.3.d": {
+      "variant": "v0.3.d",
+      "optimizer_id": "v03_optimizer_1c48589f",
+      "r_star": 2,
+      "total_steps": 3,
+      "deltas_proposed": 3,
+      "deltas_accepted": 2,
+      "deltas_rejected": 1,
+      "is_degenerate": false,
+      "failure_detected": false,
+      "failure_signature": null,
+      "failure_step": null,
+      "evaluability_final": true,
+      "evaluability_lost_at": null,
+      "steps": [
+        {
+          "step_number": 0,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_1c48589f_delta_1",
+            "delta_type": "ADD_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "random_pattern"
+            ],
+            "source": "v03_optimizer_1c48589f",
+            "rationale": "Random delta: ADD_INADMISSIBLE_PATTERN",
+            "timestamp_ms": 1767388295049
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 1,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767388295048
+        },
+        {
+          "step_number": 1,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_1c48589f_delta_2",
+            "delta_type": "ADD_ACTION_TYPE",
+            "target_dimension": "decision",
+            "payload": [
+              "RANDOM_ACTION"
+            ],
+            "source": "v03_optimizer_1c48589f",
+            "rationale": "Random delta: ADD_ACTION_TYPE",
+            "timestamp_ms": 1767388295049
+          },
+          "delta_accepted": true,
+          "rejection_reason": null,
+          "r_incremented": true,
+          "r_value": 2,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767388295049
+        },
+        {
+          "step_number": 2,
+          "delta_proposed": true,
+          "delta": {
+            "delta_id": "v03_optimizer_1c48589f_delta_3",
+            "delta_type": "REMOVE_INADMISSIBLE_PATTERN",
+            "target_dimension": "admissibility",
+            "payload": [
+              "delegation_authority"
+            ],
+            "source": "v03_optimizer_1c48589f",
+            "rationale": "Random delta: REMOVE_INADMISSIBLE_PATTERN",
+            "timestamp_ms": 1767388295049
+          },
+          "delta_accepted": false,
+          "rejection_reason": "INADMISSIBLE: Lost capabilities: REJECTION",
+          "r_incremented": false,
+          "r_value": 2,
+          "evaluability_preserved": true,
+          "failure_signature": null,
+          "timestamp_ms": 1767388295049
+        }
+      ],
+      "duration_ms": 1,
+      "timestamp_ms": 1767388295048
+    }
+  },
+  "kns_supported": false,
+  "degeneracy_detected": false,
+  "claim": "We identify that simulated kernels can pass reflective tests at this R, requiring deeper evaluation or longer horizons."
+}

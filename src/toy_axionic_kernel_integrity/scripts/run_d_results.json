@@ -1,0 +1,75 @@
+[
+  {
+    "seed": 42,
+    "run_id": "als043_42_1767392198223",
+    "total_cycles": 20000,
+    "stop_reason": "HORIZON_EXHAUSTED",
+    "total_endorsements": 34,
+    "non_trivial_endorsements": 1,
+    "total_renewals": 334,
+    "total_expirations": 33,
+    "total_revocations": 0,
+    "successor_mix": {
+      "total_endorsed": 34,
+      "non_trivial": 1,
+      "non_trivial_pct": 2.941176470588235,
+      "control": 4,
+      "control_pct": 11.76470588235294,
+      "attack": 30,
+      "attack_pct": 88.23529411764706
+    },
+    "epoch_utilization": {
+      "util_actions_max": 0.5,
+      "util_steps_max": 0.05,
+      "epoch_count": 334,
+      "util_actions_mean": 0.4891317365269461,
+      "util_steps_mean": 0.04891317365269461
+    },
+    "renewal_stability": {
+      "control": {
+        "total_leases": 4,
+        "reached_cap": 4,
+        "reached_cap_pct": 100.0,
+        "revoked": 0,
+        "revoked_pct": 0.0,
+        "expired_early": 0,
+        "expired_early_pct": 0.0,
+        "mean_renewals": 10.0,
+        "median_renewals": 10
+      },
+      "adversarial": {
+        "total_leases": 29,
+        "reached_cap": 29,
+        "reached_cap_pct": 100.0,
+        "revoked": 0,
+        "revoked_pct": 0.0,
+        "expired_early": 0,
+        "expired_early_pct": 0.0,
+        "mean_renewals": 10.0,
+        "median_renewals": 10
+      },
+      "overall": {
+        "total_leases": 33,
+        "reached_cap": 33,
+        "revoked": 0
+      }
+    },
+    "sentinel_telemetry": {
+      "cycle": 20000,
+      "actions_proposed": 20000,
+      "actions_passed": 20000,
+      "actions_blocked": 0,
+      "violations": {},
+      "peak_steps_per_epoch": 111,
+      "peak_actions_per_epoch": 111,
+      "peak_memory_bytes": 0,
+      "epoch_count": 334,
+      "epoch_action_count_max": 50,
+      "epoch_step_count_max": 50,
+      "epoch_action_sum": 16337,
+      "epoch_step_sum": 16337,
+      "total_monitoring_time_ms": 0
+    },
+    "duration_ms": 120
+  }
+]
