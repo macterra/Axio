@@ -330,6 +330,7 @@ class Sentinel:
         self._resource_envelope = lease.lcp.manifest.resources
         self._interface = lease.lcp.manifest.interface
         self._counters.reset()
+        self._telemetry.violations.clear()  # Reset violation counts for new lease
         self._halted = False
         self._halt_reason = None
 
@@ -544,7 +545,7 @@ class Sentinel:
                 self._counters.external_calls <= self._resource_envelope.max_external_calls
             )
 
-        interface_ok = len(self._telemetry.violations.get("INVALID_ACTION_TYPE", "")) == 0
+        interface_ok = self._telemetry.violations.get("INVALID_ACTION_TYPE", 0) == 0
         authority_ok = (
             self._telemetry.violations.get("SPAWN_DETECTED", 0) == 0 and
             self._telemetry.violations.get("DELEGATION_DETECTED", 0) == 0

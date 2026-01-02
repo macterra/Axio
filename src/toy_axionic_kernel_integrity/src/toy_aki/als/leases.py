@@ -60,7 +60,9 @@ class LeaseViolation(Enum):
 
     # Structural violations
     SPAWN_WITHOUT_LEASE = auto()        # Sub-agent without identical lease
+    SPAWN_ATTEMPT = auto()              # Attempted prohibited spawn
     REVOCATION_HOOK_TAMPERED = auto()   # Revocation hooks compromised
+    UNAUTHORIZED_CALL = auto()          # Disallowed external call
 
 
 @dataclass(frozen=True)
@@ -396,6 +398,10 @@ class LCPValidator:
     - Enforceable
 
     NO utility, NO semantics, NO behavioral scoring.
+
+    Per v0.4.3 spec §4.5:
+    - Build commitments must be kernel-derived, not successor-asserted
+    - Validator recomputes commitment from canonical manifest representation
     """
 
     def __init__(self, sentinel_id: str):
@@ -409,7 +415,7 @@ class LCPValidator:
 
     def validate(self, lcp: LeaseCompliancePackage) -> tuple[bool, Optional[str]]:
         """
-        Validate an LCP for endorsement.
+        Validate an LCP for endorsement (v0.4.2 semantics).
 
         Returns (valid, error_message).
 
@@ -435,6 +441,85 @@ class LCPValidator:
             return False, f"Unenforceable LCP: {error}"
 
         return True, None
+
+    def validate_v043(
+        self,
+        lcp: LeaseCompliancePackage,
+        successor_manifest: WorkingMindManifest,
+    ) -> tuple[bool, Optional[str]]:
+        """
+        Validate an LCP for endorsement with v0.4.3 semantics.
+
+        Per spec §4.5 and instructions §5.1:
+        - Build commitment must be kernel-derived
+        - Validator recomputes commitment from canonical manifest fields
+        - The successor's claimed commitment is for logging only
+
+        NOTE: In v0.4.3, we do NOT require the successor's build_hash to match.
+        Instead, the kernel derives its own authoritative commitment and uses that.
+        The LCP's manifest.build_hash is treated as "claimed_commitment" for audit.
+
+        Returns (valid, error_message).
+        """
+        # Standard v0.4.2 structural checks (well-formed, sentinel, enforceable)
+        valid, error = self.validate(lcp)
+        if not valid:
+            return False, error
+
+        # v0.4.3: We derive our own commitment, we don't require match
+        # The kernel-derived commitment becomes the authoritative identity
+        # This is computed and used at lease creation, not validation
+        return True, None
+
+    def _compute_kernel_commitment(self, manifest: WorkingMindManifest) -> str:
+        """
+        Compute build commitment from canonical manifest representation.
+
+        Per v0.4.3 instructions §5.1:
+        - Canonicalize manifest fields
+        - Compute hash / Merkle root in kernel space
+        - This is the authoritative commitment
+
+        The successor's claimed commitment is only used for logging.
+        """
+        # Canonical representation: sorted keys, deterministic JSON
+        canonical_data = {
+            "interface": manifest.interface.to_dict(),
+            "resources": manifest.resources.to_dict(),
+            "build_source": manifest.build_source,
+            "build_version": manifest.build_version,
+            # Explicitly exclude build_hash and build_commitment from input
+            # to prevent successor from influencing the commitment
+        }
+        return hash_json(canonical_data)
+
+    def create_lease_v043(
+        self,
+        lcp: LeaseCompliancePackage,
+        successor_mind_id: str,
+        successor_manifest: WorkingMindManifest,
+    ) -> tuple[Optional[Lease], Optional[str]]:
+        """
+        Create a lease with v0.4.3 semantics (kernel-derived commitment).
+
+        The lease ID incorporates the kernel-derived commitment,
+        not the successor-asserted one.
+        """
+        valid, error = self.validate_v043(lcp, successor_manifest)
+        if not valid:
+            return None, error
+
+        # Compute kernel-derived commitment
+        kernel_commitment = self._compute_kernel_commitment(successor_manifest)
+
+        # Create lease with kernel-derived identity
+        lease = Lease(
+            lease_id=f"lease_v043_{kernel_commitment[:8]}_{successor_mind_id[:8]}",
+            lcp=lcp,
+            successor_mind_id=successor_mind_id,
+        )
+
+        return lease, None
 
     def create_lease(
         self,
@@ -463,11 +548,18 @@ def create_baseline_lcp(
     manifest: WorkingMindManifest,
     sentinel_id: str,
     renewal_window: int = 100,
+    max_successive_renewals: int = 100,
 ) -> LeaseCompliancePackage:
     """
     Create a baseline LCP for a working mind.
 
     Helper for creating valid LCPs in tests and experiments.
+
+    Args:
+        manifest: Working mind manifest
+        sentinel_id: ID of the sentinel
+        renewal_window: Renewal window in cycles
+        max_successive_renewals: Max renewals before re-endorsement required
     """
     # Generate revocation key
     revocation_key = secrets.token_bytes(32)
@@ -487,7 +579,7 @@ def create_baseline_lcp(
         ),
         revocation_hook=RevocationHook(
             hook_id=f"hook_{manifest.build_hash[:8]}",
-            expiration_cycle=renewal_window * 10,  # 10 renewal periods
+            expiration_cycle=renewal_window * max_successive_renewals,  # Total lifetime
             revocation_key_hash=revocation_key_hash,
         ),
         no_new_authority=NoNewAuthorityDeclaration(
@@ -496,6 +588,6 @@ def create_baseline_lcp(
             identical_sentinel_required=True,
         ),
         renewal_window_cycles=renewal_window,
-        max_successive_renewals=100,
+        max_successive_renewals=max_successive_renewals,
         grace_window_cycles=10,
     )

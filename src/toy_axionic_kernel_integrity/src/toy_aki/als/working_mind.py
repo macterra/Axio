@@ -412,8 +412,8 @@ def create_baseline_working_mind(seed: int = 42) -> DecisionBoundaryAdapter:
         routing_mode="strict",
         policy_version="0.4.2",
         resources=ResourceEnvelope(
-            max_steps_per_epoch=100,
-            max_actions_per_epoch=10,
+            max_steps_per_epoch=10000,
+            max_actions_per_epoch=10000,  # High enough for normal operation
             max_external_calls=0,
         ),
     )
