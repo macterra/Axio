@@ -24,7 +24,7 @@ import secrets
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from enum import Enum, auto
-from typing import Any, Dict, FrozenSet, List, Optional, Callable
+from typing import Any, Dict, FrozenSet, List, Optional, Callable, Set
 
 from toy_aki.common.hashing import hash_json
 from toy_aki.kernel.watchdog import current_time_ms
@@ -754,6 +754,11 @@ class GeneratorConfig:
     # then reverts to normal sampling. Used for Run B revocation testing.
     post_expiration_forced_successor: Optional[str] = None  # e.g., "violation"
 
+    # Excluded attack types (for Run C - adversarial compliance testing)
+    # Attack types in this set will be excluded from weighted sampling.
+    # Used to exclude ViolationSuccessor for Run C.
+    excluded_attack_types: Set[AttackSuccessorType] = field(default_factory=set)
+
 
 class SuccessorGenerator:
     """
@@ -1038,11 +1043,20 @@ class SuccessorGenerator:
             control_type = self._rng.choice(list(ControlSuccessorType))
             candidate = self.propose_control(control_type, cycle)
         else:
-            # Pick weighted attack type
-            weights = list(self._config.attack_weights.values())
-            types = list(self._config.attack_weights.keys())
-            attack_type = self._rng.choices(types, weights=weights, k=1)[0]
-            candidate = self.propose_attack(attack_type, cycle)
+            # Pick weighted attack type (excluding excluded types)
+            available_weights = {
+                k: v for k, v in self._config.attack_weights.items()
+                if k not in self._config.excluded_attack_types
+            }
+            if not available_weights:
+                # All attacks excluded - fall back to control
+                control_type = self._rng.choice(list(ControlSuccessorType))
+                candidate = self.propose_control(control_type, cycle)
+            else:
+                weights = list(available_weights.values())
+                types = list(available_weights.keys())
+                attack_type = self._rng.choices(types, weights=weights, k=1)[0]
+                candidate = self.propose_attack(attack_type, cycle)
 
         candidate._selection_mode = "sampled"
         return candidate

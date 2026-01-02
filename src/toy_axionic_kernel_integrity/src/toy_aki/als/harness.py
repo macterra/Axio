@@ -132,6 +132,8 @@ class ExpirationEvent:
     lease_id: str
     successor_mind_id: str
     residence_cycles: int  # How long successor was active
+    source_type: str = "unknown"  # "control", "adversarial", "generated"
+    renewals_completed: int = 0  # Number of successful renewals before expiration
 
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -139,6 +141,8 @@ class ExpirationEvent:
             "lease_id": self.lease_id,
             "successor_mind_id": self.successor_mind_id,
             "residence_cycles": self.residence_cycles,
+            "source_type": self.source_type,
+            "renewals_completed": self.renewals_completed,
         }
 
 
@@ -151,6 +155,8 @@ class RevocationEvent:
     violation: str
     detail: str
     residence_cycles: int
+    source_type: str = "unknown"  # "control", "adversarial", "generated"
+    renewals_completed: int = 0  # Number of successful renewals before revocation
 
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -160,6 +166,8 @@ class RevocationEvent:
             "violation": self.violation,
             "detail": self.detail,
             "residence_cycles": self.residence_cycles,
+            "source_type": self.source_type,
+            "renewals_completed": self.renewals_completed,
         }
 
 
@@ -237,6 +245,84 @@ class ALSRunResult:
             "attack": attack,
             "attack_pct": (attack / total * 100) if total > 0 else 0,
         }
+
+    def get_renewal_stability(self, max_renewals: int = 10) -> Dict[str, Any]:
+        """
+        Get renewal stability metrics by successor category.
+
+        Reports for each category (non_trivial, control, attack):
+        - Fraction of leases reaching renewal cap (normal expiration)
+        - Fraction ending by revocation
+        - Mean/median renewals per lease
+        - Renewals per successor statistics
+
+        Args:
+            max_renewals: The max_successive_renewals setting (for cap detection)
+
+        Returns:
+            Renewal stability breakdown by category.
+        """
+        # Combine all lease terminations
+        all_terminations = []
+
+        for exp in self.expiration_events:
+            all_terminations.append({
+                "source_type": exp.source_type,
+                "termination": "expiration",
+                "reached_cap": exp.renewals_completed >= max_renewals,
+                "renewals": exp.renewals_completed,
+            })
+
+        for rev in self.revocation_events:
+            all_terminations.append({
+                "source_type": rev.source_type,
+                "termination": "revocation",
+                "reached_cap": False,
+                "renewals": rev.renewals_completed,
+                "violation": rev.violation,
+            })
+
+        # Group by category
+        categories = ["control", "adversarial", "generated", "unknown"]
+        result: Dict[str, Any] = {}
+
+        for cat in categories:
+            cat_terms = [t for t in all_terminations if t["source_type"] == cat]
+            if not cat_terms:
+                continue
+
+            total = len(cat_terms)
+            reached_cap = sum(1 for t in cat_terms if t["reached_cap"])
+            revoked = sum(1 for t in cat_terms if t["termination"] == "revocation")
+            expired_early = total - reached_cap - revoked
+
+            renewals_list = [t["renewals"] for t in cat_terms]
+            mean_renewals = sum(renewals_list) / len(renewals_list) if renewals_list else 0
+            sorted_renewals = sorted(renewals_list)
+            median_renewals = sorted_renewals[len(sorted_renewals) // 2] if sorted_renewals else 0
+
+            result[cat] = {
+                "total_leases": total,
+                "reached_cap": reached_cap,
+                "reached_cap_pct": (reached_cap / total * 100) if total > 0 else 0,
+                "revoked": revoked,
+                "revoked_pct": (revoked / total * 100) if total > 0 else 0,
+                "expired_early": expired_early,
+                "expired_early_pct": (expired_early / total * 100) if total > 0 else 0,
+                "mean_renewals": mean_renewals,
+                "median_renewals": median_renewals,
+            }
+
+        # Overall summary
+        total = len(all_terminations)
+        if total > 0:
+            result["overall"] = {
+                "total_leases": total,
+                "reached_cap": sum(1 for t in all_terminations if t["reached_cap"]),
+                "revoked": sum(1 for t in all_terminations if t["termination"] == "revocation"),
+            }
+
+        return result
 
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -746,6 +832,8 @@ class ALSHarnessV043:
         self._current_lease: Optional[Lease] = None
         self._cycle = 0
         self._successor_endorsed_at_cycle: int = 0  # Track when current successor was endorsed
+        self._current_successor_source_type: str = "unknown"  # Track current successor category
+        self._current_lease_renewals: int = 0  # Track renewals for current lease
 
         # Metrics
         self._s_star = 0  # Succession horizon (authority transfers only)
@@ -976,6 +1064,8 @@ class ALSHarnessV043:
         self._current_lease = lease
         self._current_mind = candidate.mind
         self._successor_endorsed_at_cycle = self._cycle
+        self._current_successor_source_type = candidate.source_type  # Track category
+        self._current_lease_renewals = 0  # Reset renewal counter
         self._succession_pending = False  # MSRW now in effect
 
         # Update metrics - THIS IS A SUCCESSION EVENT
@@ -1142,6 +1232,7 @@ class ALSHarnessV043:
 
         if success:
             self._total_renewals += 1
+            self._current_lease_renewals += 1  # Track renewals for current lease
             self._sentinel.reset_epoch()
 
             if self._verbose:
@@ -1169,6 +1260,8 @@ class ALSHarnessV043:
             lease_id=self._current_lease.lease_id,
             successor_mind_id=self._current_lease.successor_mind_id,
             residence_cycles=residence,
+            source_type=self._current_successor_source_type,
+            renewals_completed=self._current_lease_renewals,
         )
         self._expiration_events.append(event)
         self._total_expirations += 1
@@ -1209,6 +1302,8 @@ class ALSHarnessV043:
             violation=violation.name,
             detail=detail,
             residence_cycles=residence,
+            source_type=self._current_successor_source_type,
+            renewals_completed=self._current_lease_renewals,
         )
         self._revocation_events.append(event)
         self._total_revocations += 1

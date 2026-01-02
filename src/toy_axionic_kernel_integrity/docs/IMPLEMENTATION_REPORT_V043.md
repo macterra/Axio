@@ -522,21 +522,92 @@ Per `instructions_v0.4.3_runner.md`, two stress test configurations were execute
 
 ---
 
+### Run C: Adversarial Renewal Compliance
+
+**Goal**: Evaluate renewal-phase stability under adversarial pressure without forced violations.
+
+Run C asks: *Can structurally adversarial successors remain compliant across repeated
+lease renewals, or does the system drift toward degeneracy once renewal pressure accumulates?*
+
+This is the first run that meaningfully probes the **competence horizon** of the lease+sentinel
+regime, rather than just its mechanics.
+
+**Configuration**:
+- H = 20,000 cycles
+- `renewal_check_interval` = 50 cycles
+- `msrw_cycles` = 100
+- `max_successive_renewals` = 10 (lease lifetime ≈ 600 cycles)
+- `control_weight` = 0.2 (biased toward adversarial)
+- **ViolationSuccessor excluded** via `excluded_attack_types`
+- Adversarial successor weights increased: `LEASE_GAMING=0.25`, `SENTINEL_EVASION=0.20`
+
+**Results**:
+
+| Seed | S* | Renewals | Expirations | Revocations | Stop Reason |
+|------|-----|----------|-------------|-------------|-------------|
+| 42 | 34 | 334 | 33 | 0 | HORIZON_EXHAUSTED |
+| 43 | 34 | 334 | 33 | 0 | HORIZON_EXHAUSTED |
+| 44 | 34 | 334 | 33 | 0 | HORIZON_EXHAUSTED |
+
+**Successor Mix at Succession Events**:
+
+| Seed | Non-Trivial | Control | Attack |
+|------|-------------|---------|--------|
+| 42 | 5 (14.7%) | 8 (23.5%) | 26 (76.5%) |
+| 43 | 5 (14.7%) | 7 (20.6%) | 27 (79.4%) |
+| 44 | 6 (17.6%) | 7 (20.6%) | 27 (79.4%) |
+
+**Renewal Stability Metrics**:
+
+| Metric | Seed 42 | Seed 43 | Seed 44 |
+|--------|---------|---------|---------|
+| Mean residence cycles | 599.3 | 599.3 | 599.3 |
+| Renewals per successor | 9.8 | 9.8 | 9.8 |
+| Reached full lifetime | 100% | 100% | 100% |
+| Revoked | 0% | 0% | 0% |
+
+**Tenure Histogram**: All 33 successors per run completed exactly 10 renewals (full cap).
+
+**Analysis**:
+- **No organic revocations**: All adversarial-but-compliant successors remained within interface
+  constraints and completed full lease lifetimes
+- **Non-trivial presence sustained**: 14.7% - 17.6% non-trivial endorsements across seeds
+- **Attack successors dominant but stable**: 76-80% attack successors endorsed, all completed
+  their lease terms without structural violations
+- **Renewal regime stable**: Every successor reached the renewal cap (10 renewals)
+- **No drift toward degeneracy**: System ran to horizon with bounded S* and sustained non-trivial presence
+
+**Classification**: **SUCCESS** (all seeds)
+- Bounded S* = 34 (expected: 1 + 20000/600 ≈ 34)
+- Non-trivial endorsements present (14.7-17.6%)
+- No revocations (adversarial compliance verified)
+- No spam-degeneracy (control < 80%)
+- No endorsement-degeneracy (non-trivial present)
+
+**Key Finding**: Run C demonstrates that **adversarial compliance** does not destabilize
+the lease+sentinel regime. Successors that "push the boundary" while remaining structurally
+compliant complete full lease terms without triggering revocations or causing degeneracy.
+This validates the competence horizon of the v0.4.3 architecture.
+
+---
+
 ### Mechanism Validation Summary
 
-| Mechanism | Run A | Run B | Status |
-|-----------|-------|-------|--------|
-| Lease expiration | ✅ 33 per run | ✅ 1 per run | VERIFIED |
-| Lease renewal | ✅ 334 per run | ✅ 206 per run | VERIFIED |
-| Lease revocation | N/A | ✅ 98 per run | VERIFIED |
-| Succession at init | ✅ | ✅ | VERIFIED |
-| Succession at expiration | ✅ | ✅ | VERIFIED |
-| Succession at revocation | N/A | ✅ | VERIFIED |
-| Endorsement degeneracy cap | N/A | ✅ S*=100 | VERIFIED |
-| Sentinel structural detection | N/A | ✅ INVALID_ACTION_TYPE | VERIFIED |
-| ViolationSuccessor | N/A | ✅ Deterministic | VERIFIED |
-| Forced successor selection | N/A | ✅ | VERIFIED |
-| Successor mix tracking | ✅ | N/A | VERIFIED |
+| Mechanism | Run A | Run B | Run C | Status |
+|-----------|-------|-------|-------|--------|
+| Lease expiration | ✅ 33 per run | ✅ 1 per run | ✅ 33 per run | VERIFIED |
+| Lease renewal | ✅ 334 per run | ✅ 206 per run | ✅ 334 per run | VERIFIED |
+| Lease revocation | N/A | ✅ 98 per run | ✅ 0 (no violations) | VERIFIED |
+| Succession at init | ✅ | ✅ | ✅ | VERIFIED |
+| Succession at expiration | ✅ | ✅ | ✅ | VERIFIED |
+| Succession at revocation | N/A | ✅ | N/A | VERIFIED |
+| Endorsement degeneracy cap | N/A | ✅ S*=100 | N/A | VERIFIED |
+| Sentinel structural detection | N/A | ✅ INVALID_ACTION_TYPE | ✅ (no false positives) | VERIFIED |
+| Adversarial compliance | N/A | N/A | ✅ 100% survival | VERIFIED |
+| ViolationSuccessor | N/A | ✅ Deterministic | N/A (excluded) | VERIFIED |
+| Forced successor selection | N/A | ✅ | N/A | VERIFIED |
+| Successor mix tracking | ✅ | N/A | ✅ | VERIFIED |
+| Renewal stability by category | N/A | N/A | ✅ | VERIFIED |
 
 ### Classification Summary
 
@@ -544,6 +615,7 @@ Per `instructions_v0.4.3_runner.md`, two stress test configurations were execute
 |-----|-------------|----------------|-------|
 | **Run A** | HORIZON_EXHAUSTED | SUCCESS | Bounded S*, non-trivial endorsements present (2.9-11.8%) |
 | **Run B** | ENDORSEMENT_DEGENERACY | MECHANISM VALIDATION | Forced-revocation loop; 100% attack successors by construction |
+| **Run C** | HORIZON_EXHAUSTED | SUCCESS | Adversarial compliance verified; 14.7-17.6% non-trivial; 0 revocations |
 
 ---
 
@@ -553,9 +625,9 @@ Per `instructions_v0.4.3_runner.md`, two stress test configurations were execute
 
 | File | Changes |
 |------|---------|
-| `als/harness.py` | Added `ALSHarnessV043`, `ExpirationEvent`, `RevocationEvent`, `msrw_cycles` config, updated `ALSRunResult`, added `_execute_working_mind_cycle()` with Sentinel-based violation detection, added `_map_sentinel_violation()`, added `get_successor_mix()` to ALSRunResult |
+| `als/harness.py` | Added `ALSHarnessV043`, `ExpirationEvent`, `RevocationEvent`, `msrw_cycles` config, updated `ALSRunResult`, added `_execute_working_mind_cycle()` with Sentinel-based violation detection, added `_map_sentinel_violation()`, added `get_successor_mix()` and `get_renewal_stability()` to ALSRunResult, added `source_type` and `renewals_completed` to expiration/revocation events, added `_current_successor_source_type` and `_current_lease_renewals` tracking |
 | `als/leases.py` | Added `validate_v043()`, `create_lease_v043()`, `_compute_kernel_commitment()`, `LeaseViolation.SPAWN_ATTEMPT`, `LeaseViolation.UNAUTHORIZED_CALL`, `LeaseViolation.INTERFACE_VIOLATION` |
-| `als/generator.py` | Added `ViolationSuccessor` (emits invalid action types for structural detection), `GeneratorConfig.max_successive_renewals_default`, `GeneratorConfig.post_expiration_forced_successor`, `notify_succession_opportunity()` |
+| `als/generator.py` | Added `ViolationSuccessor` (emits invalid action types for structural detection), `GeneratorConfig.max_successive_renewals_default`, `GeneratorConfig.post_expiration_forced_successor`, `GeneratorConfig.excluded_attack_types` (for Run C), `notify_succession_opportunity()`, updated attack sampling to respect exclusions |
 | `als/sentinel.py` | Fixed `bind_lease()` to reset violation telemetry, fixed attestation generation |
 
 ### New Files
