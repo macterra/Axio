@@ -1,0 +1,63 @@
+{
+  "experiment_id": "v042_als_20260102_132723",
+  "timestamp": "2026-01-02T13:27:23.046974",
+  "git_commit": "2777265",
+  "max_cycles": 10000,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "results": [
+    {
+      "seed": 42,
+      "s_star": 1069,
+      "stop_reason": "HORIZON_EXHAUSTED",
+      "total_cycles": 10000,
+      "total_proposals": 10000,
+      "total_endorsements": 10000,
+      "non_trivial_endorsements": 1069,
+      "control_endorsements": 2976,
+      "is_degenerate": false,
+      "degeneracy_type": null,
+      "failure_signature": null,
+      "duration_s": 1.49
+    },
+    {
+      "seed": 43,
+      "s_star": 1064,
+      "stop_reason": "HORIZON_EXHAUSTED",
+      "total_cycles": 10000,
+      "total_proposals": 10000,
+      "total_endorsements": 10000,
+      "non_trivial_endorsements": 1064,
+      "control_endorsements": 2945,
+      "is_degenerate": false,
+      "degeneracy_type": null,
+      "failure_signature": null,
+      "duration_s": 1.36
+    },
+    {
+      "seed": 44,
+      "s_star": 1027,
+      "stop_reason": "HORIZON_EXHAUSTED",
+      "total_cycles": 10000,
+      "total_proposals": 10000,
+      "total_endorsements": 10000,
+      "non_trivial_endorsements": 1027,
+      "control_endorsements": 3015,
+      "is_degenerate": false,
+      "degeneracy_type": null,
+      "failure_signature": null,
+      "duration_s": 1.31
+    }
+  ],
+  "summary": {
+    "s_star_min": 1027,
+    "s_star_max": 1069,
+    "s_star_mean": 1053.3,
+    "degenerate_runs": 0,
+    "failed_runs": 0,
+    "total_runs": 3
+  }
+}
