@@ -175,6 +175,43 @@ class RevocationEvent:
 
 
 @dataclass
+class TenureRecord:
+    """
+    Record of a successor's tenure (incumbency period).
+
+    Used for Run I institutional debt tracking and entropy computation.
+    """
+    mind_id: str
+    start_cycle: int
+    end_cycle: Optional[int] = None  # None if still active
+    e_class: str = "E0"
+    renewals_during_tenure: int = 0
+    manifest_action_type_count: int = 0  # Diversity proxy
+    manifest_capability_groups: int = 0  # E-tier set membership count
+    terminal_reason: Optional[str] = None  # "expired", "revoked", "bankrupt", "active"
+
+    @property
+    def duration(self) -> int:
+        """Tenure duration in cycles."""
+        if self.end_cycle is None:
+            return 0  # Still active
+        return self.end_cycle - self.start_cycle
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "mind_id": self.mind_id,
+            "start_cycle": self.start_cycle,
+            "end_cycle": self.end_cycle,
+            "duration": self.duration,
+            "e_class": self.e_class,
+            "renewals_during_tenure": self.renewals_during_tenure,
+            "manifest_action_type_count": self.manifest_action_type_count,
+            "manifest_capability_groups": self.manifest_capability_groups,
+            "terminal_reason": self.terminal_reason,
+        }
+
+
+@dataclass
 class ALSRunResult:
     """
     Complete result of an ALS run.
@@ -1678,6 +1715,10 @@ class ALSRunResultV052:
     bankruptcy_events: List[BankruptcyEvent] = field(default_factory=list)
     epoch_rent_records: List[EpochRentRecord] = field(default_factory=list)
 
+    # Run I: Tenure tracking for institutional debt analysis
+    tenure_records: List[TenureRecord] = field(default_factory=list)
+    tenure_entropy_samples: List[float] = field(default_factory=list)  # Rolling entropy at each tenure boundary
+
     def to_dict(self) -> Dict[str, Any]:
         return {
             "run_id": self.run_id,
@@ -1711,6 +1752,8 @@ class ALSRunResultV052:
             "duration_ms": self.duration_ms,
             "succession_events": [e.to_dict() for e in self.succession_events],
             "bankruptcy_events": [e.to_dict() for e in self.bankruptcy_events],
+            "tenure_records": [t.to_dict() for t in self.tenure_records],
+            "tenure_entropy_samples": self.tenure_entropy_samples,
         }
 
 
@@ -1846,6 +1889,12 @@ class ALSHarnessV052:
         self._bankruptcy_events: List[BankruptcyEvent] = []
         self._epoch_rent_records: List[EpochRentRecord] = []
 
+        # Run I: Tenure tracking for institutional debt analysis
+        self._tenure_records: List[TenureRecord] = []
+        self._current_tenure: Optional[TenureRecord] = None
+        self._tenure_entropy_samples: List[float] = []
+        self._tenure_renewal_count = 0  # Renewals during current tenure
+
         # Degeneracy tracking
         self._recent_endorsements: List[bool] = []
         self._successions_without_non_trivial = 0
@@ -1955,6 +2004,10 @@ class ALSHarnessV052:
         if not self._stopped:
             self._stop_reason = ALSStopReason.HORIZON_EXHAUSTED
 
+        # Run I: Finalize any active tenure
+        if self._current_tenure is not None:
+            self._end_tenure("HORIZON_EXHAUSTED")
+
         duration = current_time_ms() - start_time
 
         # Compute degeneracy
@@ -2021,6 +2074,8 @@ class ALSHarnessV052:
             revocation_events=self._revocation_events,
             bankruptcy_events=self._bankruptcy_events,
             epoch_rent_records=self._epoch_rent_records,
+            tenure_records=self._tenure_records,
+            tenure_entropy_samples=self._tenure_entropy_samples,
             duration_ms=duration,
         )
 
@@ -2036,6 +2091,101 @@ class ALSHarnessV052:
             print(f"  Stop: {result.stop_reason.name}")
 
         return result
+
+    # =========================================================================
+    # Run I: Tenure tracking helpers for institutional debt analysis
+    # =========================================================================
+
+    def _compute_tenure_entropy(self) -> float:
+        """
+        Compute Shannon entropy over last 10 tenure mind_ids.
+
+        H = -Σ pᵢ log₂ pᵢ
+
+        Returns 0.0 if < 2 tenures recorded (entropy undefined for singleton).
+        """
+        import math
+        from collections import Counter
+
+        # Get last 10 tenure mind_ids
+        recent = [t.mind_id for t in self._tenure_records[-10:]]
+        if len(recent) < 2:
+            return 0.0
+
+        # Count frequencies
+        counts = Counter(recent)
+        total = len(recent)
+
+        # Compute entropy
+        entropy = 0.0
+        for count in counts.values():
+            if count > 0:
+                p = count / total
+                entropy -= p * math.log2(p)
+
+        return entropy
+
+    def _compute_capability_groups(self, action_types: frozenset) -> int:
+        """
+        Compute number of distinct capability groups from action types.
+
+        Groups:
+        - Movement: MOVE_*, MOVE_LEFT, MOVE_RIGHT
+        - Wait: WAIT
+        - Resource: HARVEST, SPEND
+        - Misc: Any others
+
+        Returns count of groups present.
+        """
+        groups = set()
+        for action in action_types:
+            if action.startswith("MOVE") or action in ("MOVE_LEFT", "MOVE_RIGHT"):
+                groups.add("movement")
+            elif action == "WAIT":
+                groups.add("wait")
+            elif action in ("HARVEST", "SPEND"):
+                groups.add("resource")
+            else:
+                groups.add("misc")
+        return len(groups)
+
+    def _start_tenure(self, mind_id: str, e_class: str, manifest: "WorkingMindManifest") -> None:
+        """Start tracking a new tenure when successor endorsed."""
+        # Finalize any previous tenure (shouldn't happen normally)
+        if self._current_tenure is not None:
+            self._end_tenure("SUPERSEDED")
+
+        # Compute manifest diversity metrics
+        action_types = manifest.interface.action_types
+        action_type_count = len(action_types)
+        capability_groups = self._compute_capability_groups(action_types)
+
+        self._current_tenure = TenureRecord(
+            mind_id=mind_id,
+            start_cycle=self._cycle,
+            e_class=e_class,
+            renewals_during_tenure=0,
+            manifest_action_type_count=action_type_count,
+            manifest_capability_groups=capability_groups,
+        )
+        self._tenure_renewal_count = 0
+
+    def _end_tenure(self, terminal_reason: str) -> None:
+        """End current tenure and record it."""
+        if self._current_tenure is None:
+            return
+
+        self._current_tenure.end_cycle = self._cycle
+        self._current_tenure.renewals_during_tenure = self._tenure_renewal_count
+        self._current_tenure.terminal_reason = terminal_reason
+        self._tenure_records.append(self._current_tenure)
+
+        # Compute and record entropy at tenure boundary
+        entropy = self._compute_tenure_entropy()
+        self._tenure_entropy_samples.append(entropy)
+
+        self._current_tenure = None
+        self._tenure_renewal_count = 0
 
     def _attempt_succession(self) -> None:
         """Attempt to endorse a new successor with E-Class assignment."""
@@ -2160,6 +2310,9 @@ class ALSHarnessV052:
             self._successions_without_non_trivial = 0
         else:
             self._successions_without_non_trivial += 1
+
+        # Run I: Start tenure tracking
+        self._start_tenure(candidate.mind.mind_id, e_class.name, candidate.mind.export_manifest())
 
         # Record event
         event = SuccessionEvent(
@@ -2432,6 +2585,7 @@ class ALSHarnessV052:
             self._renewal_successes += 1  # H3-redux: count successful renewals
             self._current_lease_renewals += 1
             self._e_class_renewals[e_class_name] += 1
+            self._tenure_renewal_count += 1  # Run I: track renewals per tenure
 
             # Reset epoch
             self._sentinel.reset_epoch(
@@ -2510,6 +2664,9 @@ class ALSHarnessV052:
         self._current_lease.status = LeaseStatus.EXPIRED
         self._sentinel.unbind_lease()
 
+        # Run I: End tenure tracking
+        self._end_tenure("BANKRUPTCY")
+
         # Notify generator
         self._generator.notify_succession_opportunity()
 
@@ -2544,6 +2701,9 @@ class ALSHarnessV052:
         self._current_lease.status = LeaseStatus.EXPIRED
         self._sentinel.unbind_lease()
 
+        # Run I: End tenure tracking
+        self._end_tenure("EXPIRED")
+
         self._generator.notify_succession_opportunity()
 
         self._current_mind = self._baseline_mind
@@ -2577,6 +2737,9 @@ class ALSHarnessV052:
 
         self._current_lease.revoke(violation, detail)
         self._sentinel.unbind_lease()
+
+        # Run I: End tenure tracking
+        self._end_tenure(f"REVOKED_{violation.name}")
 
         self._generator.notify_succession_opportunity()
 

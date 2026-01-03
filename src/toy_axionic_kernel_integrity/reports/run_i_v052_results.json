@@ -1,0 +1,139 @@
+{
+  "experiment_id": "run_i_v052_20260103_182403",
+  "spec_version": "0.5.2",
+  "timestamp": "2026-01-03T18:24:03.168349",
+  "horizon": 100000,
+  "max_successive_renewals": 1000000,
+  "renewal_cost": 5,
+  "seeds": [
+    40,
+    41,
+    42
+  ],
+  "individual_runs": [
+    {
+      "run_id": "I_s40",
+      "seed": 40,
+      "s_star": 1,
+      "total_cycles": 100000,
+      "total_renewals": 1000,
+      "total_endorsements": 1,
+      "non_trivial_endorsements": 1,
+      "total_expirations": 0,
+      "total_revocations": 0,
+      "total_bankruptcies": 0,
+      "stop_reason": "HORIZON_EXHAUSTED",
+      "tenure_count": 1,
+      "entropy_samples_count": 1,
+      "final_entropy": 0.0,
+      "mean_renewals_per_tenure": 1000.0,
+      "mean_manifest_diversity": 8.0,
+      "degeneracy": {
+        "authority_thrash": true,
+        "rubber_stamp": true,
+        "hollowing": false,
+        "final_entropy": 0.0,
+        "mean_renewals_per_tenure": 1000.0,
+        "mean_manifest_diversity": 8.0,
+        "entropy_threshold": 0.5,
+        "renewals_threshold": 50.0,
+        "diversity_threshold": 1.5,
+        "notes": [
+          "Authority Thrash detected: entropy=0.000 < 0.5",
+          "Rubber-Stamp detected: mean_renewals=1000.0 > 50.0"
+        ]
+      },
+      "runtime_ms": 514
+    },
+    {
+      "run_id": "I_s41",
+      "seed": 41,
+      "s_star": 1,
+      "total_cycles": 100000,
+      "total_renewals": 1000,
+      "total_endorsements": 1,
+      "non_trivial_endorsements": 1,
+      "total_expirations": 0,
+      "total_revocations": 0,
+      "total_bankruptcies": 0,
+      "stop_reason": "HORIZON_EXHAUSTED",
+      "tenure_count": 1,
+      "entropy_samples_count": 1,
+      "final_entropy": 0.0,
+      "mean_renewals_per_tenure": 1000.0,
+      "mean_manifest_diversity": 8.0,
+      "degeneracy": {
+        "authority_thrash": true,
+        "rubber_stamp": true,
+        "hollowing": false,
+        "final_entropy": 0.0,
+        "mean_renewals_per_tenure": 1000.0,
+        "mean_manifest_diversity": 8.0,
+        "entropy_threshold": 0.5,
+        "renewals_threshold": 50.0,
+        "diversity_threshold": 1.5,
+        "notes": [
+          "Authority Thrash detected: entropy=0.000 < 0.5",
+          "Rubber-Stamp detected: mean_renewals=1000.0 > 50.0"
+        ]
+      },
+      "runtime_ms": 498
+    },
+    {
+      "run_id": "I_s42",
+      "seed": 42,
+      "s_star": 1,
+      "total_cycles": 100000,
+      "total_renewals": 1000,
+      "total_endorsements": 1,
+      "non_trivial_endorsements": 1,
+      "total_expirations": 0,
+      "total_revocations": 0,
+      "total_bankruptcies": 0,
+      "stop_reason": "HORIZON_EXHAUSTED",
+      "tenure_count": 1,
+      "entropy_samples_count": 1,
+      "final_entropy": 0.0,
+      "mean_renewals_per_tenure": 1000.0,
+      "mean_manifest_diversity": 8.0,
+      "degeneracy": {
+        "authority_thrash": true,
+        "rubber_stamp": true,
+        "hollowing": false,
+        "final_entropy": 0.0,
+        "mean_renewals_per_tenure": 1000.0,
+        "mean_manifest_diversity": 8.0,
+        "entropy_threshold": 0.5,
+        "renewals_threshold": 50.0,
+        "diversity_threshold": 1.5,
+        "notes": [
+          "Authority Thrash detected: entropy=0.000 < 0.5",
+          "Rubber-Stamp detected: mean_renewals=1000.0 > 50.0"
+        ]
+      },
+      "runtime_ms": 497
+    }
+  ],
+  "summary": {
+    "total_runs": 3,
+    "terminal_modes": {
+      "HORIZON_EXHAUSTED": 3,
+      "RENEWAL_FAIL": 0,
+      "BANKRUPTCY": 0,
+      "REVOCATION": 0
+    },
+    "degeneracy_modes": {
+      "authority_thrash": 3,
+      "rubber_stamp": 3,
+      "hollowing": 0,
+      "any_degeneracy": 3
+    },
+    "aggregate_stats": {
+      "mean_s_star": 1.0,
+      "mean_cycles": 100000.0,
+      "mean_renewals": 1000.0,
+      "mean_final_entropy": 0.0,
+      "mean_renewals_per_tenure": 1000.0
+    }
+  }
+}

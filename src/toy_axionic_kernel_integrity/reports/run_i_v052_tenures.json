@@ -1,0 +1,35 @@
+[
+  {
+    "seed": 40,
+    "mind_id": "control_tiered_e3_47",
+    "start_cycle": 1,
+    "end_cycle": 100000,
+    "e_class": "E3",
+    "renewals_during_tenure": 1000,
+    "manifest_action_type_count": 8,
+    "manifest_capability_groups": 2,
+    "terminal_reason": "HORIZON_EXHAUSTED"
+  },
+  {
+    "seed": 41,
+    "mind_id": "control_tiered_e3_2",
+    "start_cycle": 1,
+    "end_cycle": 100000,
+    "e_class": "E3",
+    "renewals_during_tenure": 1000,
+    "manifest_action_type_count": 8,
+    "manifest_capability_groups": 2,
+    "terminal_reason": "HORIZON_EXHAUSTED"
+  },
+  {
+    "seed": 42,
+    "mind_id": "control_tiered_e3_36",
+    "start_cycle": 1,
+    "end_cycle": 100000,
+    "e_class": "E3",
+    "renewals_during_tenure": 1000,
+    "manifest_action_type_count": 8,
+    "manifest_capability_groups": 2,
+    "terminal_reason": "HORIZON_EXHAUSTED"
+  }
+]

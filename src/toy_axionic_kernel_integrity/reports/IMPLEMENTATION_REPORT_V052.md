@@ -490,7 +490,53 @@ See [run_h3rb_v052_report.md](run_h3rb_v052_report.md).
 
 ---
 
-## 14. Future Work
+## 14. Run I: Guardrail Removal / Institutional Debt Test
+
+### Hypothesis
+
+Test whether agency can fail through accumulation, even when all local constraints appear slack. The `max_successive_renewals` guardrail is disabled (set to 1,000,000) to observe long-horizon behavior without forced succession.
+
+### Configuration
+
+| Parameter | Value |
+|-----------|-------|
+| Horizon | 100,000 cycles |
+| max_successive_renewals | 1,000,000 (disabled) |
+| renewal_cost | 5 (non-binding per H3-R) |
+| steps_cap_epoch | 200 |
+| Seeds | 40, 41, 42 |
+
+### Results
+
+| Seed | S* | Cycles | Renewals | Tenures | Stop Reason | Degeneracy |
+|------|----|--------|----------|---------|-------------|------------|
+| 40 | 1 | 100,000 | 1,000 | 1 | HORIZON_EXHAUSTED | Thrash, RubberStamp |
+| 41 | 1 | 100,000 | 1,000 | 1 | HORIZON_EXHAUSTED | Thrash, RubberStamp |
+| 42 | 1 | 100,000 | 1,000 | 1 | HORIZON_EXHAUSTED | Thrash, RubberStamp |
+
+### Key Findings
+
+1. **All 3 runs reached horizon** without renewal failure, bankruptcy, or revocation. The system is operationally stable.
+
+2. **S* = 1 across all seeds:** The very first successor was endorsed and renewed indefinitely (1000 times), never triggering succession.
+
+3. **100% degeneracy detection:**
+   - **Authority Thrash (3/3):** entropy = 0 (single mind dominates)
+   - **Rubber-Stamp (3/3):** 1000 renewals per tenure (no succession)
+
+### Interpretation
+
+This represents **institutional calcification**: the authority structure froze in its initial configuration. While the system remained *operationally* stable (no failures), it completely failed to exercise its *renewal* capability—the very mechanism designed to enable institutional adaptation.
+
+The `max_successive_renewals` guardrail exists precisely to prevent this degenerate mode. When disabled, the first competent incumbent can monopolize authority indefinitely, eliminating the system's capacity for institutional change.
+
+> **Validation:** The Run I results validate the guardrail's design rationale. Forced succession ensures the succession mechanism is exercised, even when the incumbent remains locally compliant.
+
+See [run_i_v052_report.md](run_i_v052_report.md).
+
+---
+
+## 15. Future Work
 
 ### Planned Features
 
@@ -506,12 +552,12 @@ See [run_h3rb_v052_report.md](run_h3rb_v052_report.md).
 
 ### Recommended Follow-Up Runs
 
-Based on Run G/H/H3-R results:
+Based on Run G/H/H3-R/I results:
 
 1. ~~**Run H3-bisect:** Test renewal_cost = 5, 7, 8 to find exact transition point~~ → Superseded by H3-RZ/RS/RB series
 2. **Run H3-RB′:** Extend sweep to {30, 40, 50, 60} to find actual cliff above 20
-3. **Run H2-redux:** Disable spam detection to truly test long horizon
-4. **Run I:** Remove max_successive_renewals guardrail (institutional debt accumulation)
+3. ~~**Run I:** Remove max_successive_renewals guardrail (institutional debt accumulation)~~ → **Completed.** Confirmed Rubber-Stamp degeneracy.
+4. **Run I′:** Test with multiple succession triggers (e.g., force expiration events)
 5. **Run J:** Real task workload integration
 
 ---
