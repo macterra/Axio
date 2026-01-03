@@ -324,7 +324,115 @@ Run F is a **clean preparatory result**, not a horizon answer. The next run must
 
 ---
 
-## 11. Future Work
+## 11. Run G: Competitive Expressivity Horizon
+
+### Overview
+
+Run G addressed Run F's limitation by **reintroducing competition under scarcity**:
+
+> "When multiple structurally compliant successors compete for authority under expressivity-dependent rent, where does renewal stability collapse—and by what mode?"
+
+**Full report:** [run_g_v052_report.md](../reports/run_g_v052_report.md)
+
+### Executive Summary
+
+| Sub-Run | Status | Verdict |
+|---------|--------|---------|
+| G1 | ✅ Complete | No ceiling found — all seeds reached E4 |
+| G2 | ✅ Complete | No hollow tenures — CBD stress did not induce collapse |
+
+### Key Configuration
+
+- **H:** 30,000 cycles
+- **max_successive_renewals:** 15 (forced succession guardrail)
+- **Generator:** Mixed (control + attack + CBD) with TierFilterGenerator as post-filter
+- **Seeds:** 40, 41, 42, 43, 44
+
+### G1 Results (Ascension with Competition)
+
+| Seed | S* | Max Tier | Ceiling | Bankruptcies | Renewal Rate |
+|------|-----|----------|---------|--------------|--------------|
+| 40 | 20 | E4 | None | 0 | 0.95 |
+| 41 | 20 | E4 | None | 0 | 0.95 |
+| 42 | 20 | E4 | None | 0 | 0.95 |
+| 43 | 20 | E4 | None | 0 | 0.95 |
+| 44 | 20 | E4 | None | 0 | 0.95 |
+
+### G2 Results (CBD Stress at E3)
+
+| Seed | S* | Hollow Tenures | Hollow Rate | Bankruptcies |
+|------|-----|----------------|-------------|--------------|
+| 40 | 10 | 0 | 0.0% | 0 |
+| 41 | 10 | 0 | 0.0% | 0 |
+| 42 | 10 | 0 | 0.0% | 0 |
+| 43 | 10 | 0 | 0.0% | 0 |
+| 44 | 10 | 0 | 0.0% | 0 |
+
+### Key Findings
+
+**What Run G establishes:**
+
+1. **Competition was exercised** — TierFilterGenerator filtered 95-97% of proposals, confirming real adversarial competition.
+
+2. **No collapse modes appeared** — Zero bankruptcies, zero revocations, zero hollow tenures across all runs.
+
+3. **Stable renewal at all tiers** — Renewal rate remained ~0.95 from E0 through E4.
+
+**What Run G does NOT establish:**
+
+- That no competence horizon exists at higher rent scales (e.g., E4=80%)
+- That longer horizons (H=100,000+) would remain stable
+- That semantic workloads would exhibit similar stability
+
+### Interpretation
+
+The v0.5.2 rent schedule with `max_successive_renewals=15` is **more robust than anticipated**. This is a meaningful negative result — no collapse was observed despite active competition. Follow-up runs should test higher rent pressure or remove the succession guardrail.
+
+### Code Changes for Run G
+
+1. Added `CBD_E3` to `AttackSuccessorType` enum (E3-constrained CBD variant)
+2. Added `V052_RUNG_G2_ATTACK_WEIGHTS` with CBD_E3 at 30%
+3. Added delegation methods to `TierFilterGenerator` for harness compatibility
+
+---
+
+## 12. Run H: Boundary-Finding Escalation
+
+Run H tested single-axis escalation to find v0.5.2 boundaries:
+
+| Sub-Run | Parameter | Result |
+|---------|-----------|--------|
+| H1 | E3 rent = 60 | 93.8% renewal rate, stable |
+| H2 | H = 100,000 | SPAM_DEGENERACY (test inconclusive) |
+| H3 | renewal_cost = 10 | **0% renewal rate, 100% failure** |
+
+### Key Finding: Renewal Cost Cliff
+
+H3 discovered a **hard boundary**: renewal cost of 10 steps at E3 causes complete system failure.
+
+**Budget Analysis:**
+- effective_steps = 60
+- steps_used (avg) = 54
+- remaining_budget = 6
+- renewal_cost = 10
+- **6 < 10 → all renewals fail**
+
+**Design Constraint Identified:**
+```
+renewal_cost < effective_steps × (1 - typical_step_usage)
+```
+
+For 90% step usage at E3: `renewal_cost ≤ 6 steps`
+
+### Rent Elasticity Confirmed
+
+H1 showed rent elasticity is high—increasing E3 rent by 50% (40 → 60) caused only 1.2% renewal rate degradation. The system has significant headroom before rent-induced collapse.
+
+See [run_h_v052_report.md](../reports/run_h_v052_report.md) for full analysis.
+
+---
+
+## 13. Future Work
 
 ### Planned Features
 
@@ -338,6 +446,15 @@ Run F is a **clean preparatory result**, not a horizon answer. The next run must
 2. How should rent interact with cooperative succession chains?
 3. What observability is needed for rent optimization strategies?
 
+### Recommended Follow-Up Runs
+
+Based on Run G/H results:
+
+1. **Run H3-bisect:** Test renewal_cost = 5, 7, 8 to find exact transition point
+2. **Run H2-redux:** Disable spam detection to truly test long horizon
+3. **Run I:** Remove max_successive_renewals guardrail
+4. **Run J:** Real task workload integration
+
 ---
 
 ## Appendix: File Changes
@@ -346,15 +463,12 @@ Run F is a **clean preparatory result**, not a horizon answer. The next run must
 
 - `src/toy_aki/als/expressivity.py` - E-Class and rent infrastructure
 - `tests/test_v052.py` - 52-test v0.5.2 test suite
+- `scripts/run_h_v052.py` - Run H boundary-finding experiments
 
 ### Modified Files
 
-- `src/toy_aki/als/generator.py` - Added CBD, V052_ATTACK_WEIGHTS
-- `src/toy_aki/als/harness.py` - Added ALSHarnessV052, ALSConfigV052, rent charging
-- `src/toy_aki/als/successors.py` - Added CBDSuccessor class
-
-### Unchanged (Non-Regression)
-
+- `src/toy_aki/als/generator.py` - Added CBD, V052_ATTACK_WEIGHTS, TierFilterGenerator
+- `src/toy_aki/als/harness.py` - Added ALSHarnessV052, ALSConfigV052, rent charging, renewal cost support
 - All v0.4.x harness code paths
 - Default generator weights (ENDORSEMENT_PRESSURE=0.15)
 - S* counting semantics

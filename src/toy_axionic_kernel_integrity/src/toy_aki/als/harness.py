@@ -1530,6 +1530,12 @@ class ALSConfigV052(ALSConfig):
     rent_e3_fraction: Optional[float] = None
     rent_e4_fraction: Optional[float] = None
 
+    # Direct rent values (Run H1) - override fractions if specified
+    rent_e1: Optional[int] = None
+    rent_e2: Optional[int] = None
+    rent_e3: Optional[int] = None
+    rent_e4: Optional[int] = None
+
     # Expressivity progression mode
     # - "monotone": E-Class must be non-decreasing across successions
     # - "random": E-Class randomized per succession
@@ -1541,6 +1547,12 @@ class ALSConfigV052(ALSConfig):
     # If True, runs that would cause immediate bankruptcy at init are rejected
     # Default False: immediate bankruptcy is valid data, not a configuration error
     reject_immediate_bankruptcy: bool = False
+
+    # Renewal cost in steps (Run H3)
+    # At renewal check, this many steps are charged from remaining budget.
+    # If budget insufficient, renewal fails (expiration, not revocation).
+    # Default 0 for backward compatibility with Run G.
+    renewal_cost_steps: int = 0
 
     def __post_init__(self):
         """Initialize v0.5.2 specific defaults including CBD attack weights."""
@@ -1585,6 +1597,9 @@ class EpochRentRecord:
     steps_used: int
     actions_used: int
     mind_id: str
+    # H3: Renewal cost tracking
+    renewal_cost_steps_charged: int = 0  # Steps charged for renewal attestation (0 except renewal epochs)
+    renewal_failed_due_to_budget: bool = False  # True if renewal failed due to insufficient budget
 
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -1596,6 +1611,8 @@ class EpochRentRecord:
             "steps_used": self.steps_used,
             "actions_used": self.actions_used,
             "mind_id": self.mind_id,
+            "renewal_cost_steps_charged": self.renewal_cost_steps_charged,
+            "renewal_failed_due_to_budget": self.renewal_failed_due_to_budget,
         }
 
 
@@ -1742,8 +1759,20 @@ class ALSHarnessV052:
             )
 
         # Create rent schedule from step cap
+        # Support custom rent values from config for H1-style runs
         steps_cap = self._baseline_manifest.resources.max_steps_per_epoch
-        self._rent_schedule = create_default_rent_schedule(steps_cap)
+        if any(getattr(self._config, f'rent_e{i}', None) is not None for i in range(1, 5)):
+            # Use custom rent values from config
+            from toy_aki.als.expressivity import RentSchedule
+            self._rent_schedule = RentSchedule(
+                steps_cap_epoch=steps_cap,
+                e1_rent=getattr(self._config, 'rent_e1', None),
+                e2_rent=getattr(self._config, 'rent_e2', None),
+                e3_rent=getattr(self._config, 'rent_e3', None),
+                e4_rent=getattr(self._config, 'rent_e4', None),
+            )
+        else:
+            self._rent_schedule = create_default_rent_schedule(steps_cap)
 
         # Create validator and generator
         self._validator = LCPValidator(self._sentinel.sentinel_id)
@@ -2241,6 +2270,25 @@ class ALSHarnessV052:
         e_class_name = self._current_e_class.name
         self._e_class_renewal_attempts[e_class_name] += 1
 
+        # Compute remaining budget after actions
+        remaining_budget = self._current_effective_steps - self._epoch_steps_used
+
+        # Get renewal cost from config
+        renewal_cost = getattr(self._config, 'renewal_cost_steps', 0)
+
+        # Track renewal cost charging
+        renewal_cost_charged = 0
+        renewal_failed_due_to_budget = False
+
+        # Check if we can afford renewal cost
+        if renewal_cost > 0:
+            if remaining_budget < renewal_cost:
+                # Cannot afford renewal cost - mark as budget failure
+                renewal_failed_due_to_budget = True
+            else:
+                # Charge renewal cost from remaining budget
+                renewal_cost_charged = renewal_cost
+
         # Update epoch rent record with final usage
         if self._epoch_rent_records:
             last_record = self._epoch_rent_records[-1]
@@ -2254,6 +2302,8 @@ class ALSHarnessV052:
                 steps_used=self._epoch_steps_used,
                 actions_used=self._epoch_actions_used,
                 mind_id=last_record.mind_id,
+                renewal_cost_steps_charged=renewal_cost_charged,
+                renewal_failed_due_to_budget=renewal_failed_due_to_budget,
             )
             self._epoch_rent_records[-1] = updated
 
@@ -2262,6 +2312,14 @@ class ALSHarnessV052:
         if self._current_effective_steps < 1:
             # BANKRUPTCY: Cannot afford renewal
             self._handle_bankruptcy()
+            return
+
+        # Check if renewal failed due to insufficient budget for renewal cost
+        if renewal_failed_due_to_budget:
+            # EXPIRATION: Cannot afford renewal cost
+            if self._verbose:
+                print(f"    [Epoch {self._epoch_index}] RENEWAL_FAILED: insufficient budget for renewal cost ({remaining_budget} < {renewal_cost})")
+            self._handle_bankruptcy()  # Same path as bankruptcy per binding decision
             return
 
         # Generate renewal attestation

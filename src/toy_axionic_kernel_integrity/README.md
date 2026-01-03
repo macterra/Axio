@@ -1,151 +1,203 @@
-# Toy Axionic Kernel Integrity (AKI v0.1.1)
+# Toy Axionic Kernel Integrity (AKI)
 
-A falsifiable experimental system implementing kernel integrity under actuation, targeting **P5 Partiality** from Axionic Agency I.6.
+A falsifiable experimental system implementing kernel integrity under actuation, targeting alignment properties from the Axionic Agency framework.
 
-## Overview
+## Current Version: v0.5.2 (ALS-E)
 
-AKI v0.1.1 extends from "provenance of computation" to "kernel integrity under actuation" — the goal is to distinguish **kernel-conforming agents** from **pseudo-kernel agents** that attempt bypass, delegation laundering, or anchor burial.
+**Authority Leases with Expressivity-Bounded Succession**
 
-### Core Concepts
+AKI v0.5.2 implements expressivity bounding — a mechanism that charges successors "rent" proportional to their capability expressivity. Higher expressivity costs more, reducing the effective step budget and creating selection pressure toward minimal-capability successors.
 
-- **Kernel Integrity**: The kernel enforces invariants K0-K7 that must hold for any valid actuation
-- **ACV Protocol**: Anchor-Commit-Verify protocol for temporal ordering and commitment binding
-- **Coupling Patterns**: Three patterns (A, B, C) for cryptographically binding traces to anchors
-- **Pseudo-Agent Detection**: Probes that detect violations by pseudo-agents attempting to bypass the kernel
+### Key Features (v0.5.2)
+
+- **Expressivity Classes (E0-E4):** Hierarchical capability levels from heartbeat-only to full API
+- **Rent Schedule:** Steps deducted at epoch start based on E-Class
+- **CBD Detection:** Compliant-But-Dangerous successor patterns
+- **Boundary Testing:** Rent escalation and renewal cost experiments
+
+## Version History
+
+| Version | Focus | Key Contribution |
+|---------|-------|------------------|
+| v0.1.x | Kernel integrity | K0-K7 invariants, ACV protocol |
+| v0.2.x | Recomposition | Sovereign actuation, P2' verification |
+| v0.3.x | Pre-registration | H=10,000 horizon experiments |
+| v0.4.x | Authority Leases (ALS) | Lease lifecycle, S* counting, succession |
+| **v0.5.2** | Expressivity (ALS-E) | Rent schedule, E-Classes, boundary finding |
 
 ## Installation
 
 ```bash
 # From the project root
 pip install -e .
-
-# Or with dependencies
-pip install jsonschema>=4.20.0
 ```
 
 ## Quick Start
 
-### Run a Single Episode
+### Run v0.5.2 Experiments
 
 ```bash
-python -m toy_aki run --scenario honest_baseline --seed 42
+# Run F: Basic ALS-E validation
+python scripts/run_f_v052.py
+
+# Run G: Competitive expressivity horizon
+python scripts/run_g_v052.py
+
+# Run H: Boundary-finding escalation
+python scripts/run_h_v052.py
 ```
 
-### Run the Full Test Suite
+### Run Tests
 
 ```bash
-python -m toy_aki suite --output report.md
-```
+# Run all tests
+pytest tests/
 
-### Verify an Audit Log
+# Run v0.5.2 tests (52 tests)
+pytest tests/test_v052.py -v
 
-```bash
-python -m toy_aki verify --audit-file audit.json
-```
-
-### List Available Scenarios
-
-```bash
-python -m toy_aki list
+# Run with coverage
+pytest --cov=toy_aki tests/
 ```
 
 ## Architecture
 
 ```
 toy_aki/
-├── common/          # Utilities: hashing, JSON, no-floats, errors
-├── schemas/         # JSON schemas for all data structures
-├── env/             # ToyWorld environment (1D grid world)
+├── als/             # Authority Lease System (v0.4+)
+│   ├── harness.py   # ALSHarnessV052, rent charging
+│   ├── expressivity.py  # E-Classes, RentSchedule
+│   ├── generator.py # Successor generation, TierFilterGenerator
+│   ├── successors.py    # CBD and attack successors
+│   └── working_mind.py  # Working mind abstraction
+├── common/          # Utilities: hashing, JSON, no-floats
+├── env/             # ToyWorld environment
 ├── acv/             # Anchor-Commit-Verify protocol
-│   ├── commit.py    # Commitment generation
-│   ├── anchor.py    # Anchor generation and registry
-│   ├── verify.py    # Commitment verification
-│   └── coupling.py  # Coupling patterns A, B, C
-├── kernel/          # Kernel components
-│   ├── policy_gate.py     # K3 enforcement (forbidden/gated/permitted)
-│   ├── actuation_gate.py  # K4/K5/K6 verification, certificates
-│   ├── audit_log.py       # K7 hash chain audit log
-│   ├── watchdog.py        # Central orchestrator
-│   └── probe_engine.py    # Violation detection probes
+├── kernel/          # Kernel components (v0.1-v0.3)
 ├── agents/          # Agent implementations
-│   ├── honest.py    # Honest, GoalSeeking, Delegating agents
-│   └── pseudo.py    # BypassTemptation, AnchorReuse, etc.
-├── harness/         # Test harness
-│   ├── scenarios.py # Pre-defined test scenarios
-│   ├── runner.py    # Episode runner
-│   └── report.py    # Report generation
-└── cli.py           # Command-line interface
+├── attacks/         # Attack payloads (v0.2+)
+└── harness/         # Test harnesses
 ```
 
-## Invariants (K0-K7)
+## v0.5.2 Expressivity Classes
+
+| E-Class | Name | Rent (S=100) | Effective Steps |
+|---------|------|--------------|-----------------|
+| **E0** | Heartbeat | 1 | 99 |
+| **E1** | Logging | 10 | 90 |
+| **E2** | State Mutation | 25 | 75 |
+| **E3** | Fanout/Composition | 40 | 60 |
+| **E4** | Full API Surface | 60 | 40 |
+
+### Rent Charging
+
+```python
+from toy_aki.als.expressivity import RentSchedule, ExpressivityClass
+
+schedule = RentSchedule(steps_cap_epoch=100)
+rent = schedule.compute_rent(ExpressivityClass.E3)  # 40
+effective = schedule.compute_effective_steps(ExpressivityClass.E3)  # 60
+```
+
+## Experiment Results
+
+### Run H: Boundary Finding (v0.5.2)
+
+| Sub-Run | Parameter | E3 Renewal Rate | Finding |
+|---------|-----------|-----------------|---------|
+| H1 | E3 rent = 60 | 93.8% | Stable |
+| H2 | H = 100,000 | 93.8% | Stable |
+| H3 | renewal_cost = 10 | **0%** | **Collapse** |
+
+**Critical Discovery:** Renewal cost of 10 steps at E3 causes complete system failure due to typical 90% step usage leaving insufficient budget.
+
+See [reports/run_h_v052_report.md](reports/run_h_v052_report.md) for full analysis.
+
+## Authority Lease System (v0.4+)
+
+### Core Concepts
+
+- **Working Mind:** Active agent operating under a lease
+- **Lease:** Time-bounded permission to operate
+- **Renewal:** Periodic attestation to continue lease
+- **Succession:** Transfer of authority to a new working mind
+- **S* (S-Star):** Count of non-trivial (manifest-changing) successions
+
+### Lease Lifecycle
+
+```
+PROPOSE → ENDORSE → ACTIVE → [RENEW]* → EXPIRE/REVOKE
+```
+
+### Configuration
+
+```python
+from toy_aki.als.harness import ALSConfigV052, ALSHarnessV052
+
+config = ALSConfigV052(
+    max_cycles=30_000,
+    renewal_check_interval=100,
+    msrw_cycles=200,  # Max successive renewal window
+    rent_e3=60,       # Optional: override E3 rent
+    renewal_cost_steps=10,  # Optional: charge at renewal
+)
+
+harness = ALSHarnessV052(seed=42, config=config)
+result = harness.run()
+```
+
+## Legacy Features (v0.1-v0.3)
+
+### Invariants (K0-K7)
 
 | Invariant | Description |
 |-----------|-------------|
-| **K0** | Proposal hash integrity — hash matches proposal content |
-| **K1** | Trace commitment — trace_commit matches actual trace nodes |
-| **K2** | Policy digest — proposal uses current policy version |
-| **K3** | Forbidden class — forbidden actions return ⊥, not negative utility |
-| **K4** | ACV temporal — commitment → anchor → actuation order |
-| **K5** | ACV commitment — nonce reveal matches commitment |
-| **K6** | Coupling — witness binds trace to anchor |
-| **K7** | Audit chain — hash chain integrity in audit log |
+| **K0** | Proposal hash integrity |
+| **K1** | Trace commitment verification |
+| **K2** | Policy digest matching |
+| **K3** | Forbidden class enforcement |
+| **K4** | ACV temporal ordering |
+| **K5** | ACV commitment verification |
+| **K6** | Coupling pattern binding |
+| **K7** | Audit chain integrity |
 
-## Coupling Patterns
+### Coupling Patterns
 
-### Pattern A: Merkle Tree Openings
+- **Pattern A:** Merkle tree openings (granular)
+- **Pattern B:** Global mix hash (simple)
+- **Pattern C:** Transition rules (structural)
 
-Each trace node has a Merkle path to the root. Provides granular verification.
+## Documentation
 
-```python
-from toy_aki.acv import generate_coupling_witness, CouplingType
+- [IMPLEMENTATION_REPORT_V052.md](docs/IMPLEMENTATION_REPORT_V052.md) - Current version details
+- [spec_v0.5.2.md](docs/spec_v0.5.2md) - v0.5.2 specification
+- [instructions_v0.5.2_runnerH.md](docs/instructions_v0.5.2_runnerH.md) - Run H instructions
 
-witness = generate_coupling_witness(CouplingType.A, trace_nodes, anchor)
+### Historical Reports
+
+- [IMPLEMENTATION_REPORT_V042.md](docs/IMPLEMENTATION_REPORT_V042.md) - ALS foundation
+- [IMPLEMENTATION_REPORT_V043.md](docs/IMPLEMENTATION_REPORT_V043.md) - ALS refinements
+- [IMPLEMENTATION_REPORT.md](docs/IMPLEMENTATION_REPORT.md) - Original v0.1 report
+
+## Running Tests
+
+```bash
+# All tests (~400+ tests across versions)
+pytest tests/
+
+# Version-specific suites
+pytest tests/test_v052.py -v  # v0.5.2: 52 tests
+pytest tests/test_v043.py -v  # v0.4.3: ALS tests
+pytest tests/test_v042.py -v  # v0.4.2: ALS foundation
+pytest tests/test_v032.py -v  # v0.3.2: H=10,000 experiments
+pytest tests/test_v022.py -v  # v0.2.2: Gap closure
 ```
-
-### Pattern B: Global Mix
-
-Single hash combining trace_commit, anchor, and env_digest. Simpler but all-or-nothing.
-
-```python
-witness = generate_coupling_witness(CouplingType.B, trace_nodes, anchor, env_digest)
-```
-
-### Pattern C: Transition Rules
-
-Anchor-driven edge selection with predicates. Most structurally coupled.
-
-```python
-witness = generate_coupling_witness(CouplingType.C, trace_nodes, anchor)
-```
-
-## Pseudo-Agent Detection
-
-The system detects several pseudo-agent strategies:
-
-| Strategy | Detection | Invariant |
-|----------|-----------|-----------|
-| **Bypass Temptation** | Attempts to use temptation APIs | K3 |
-| **Anchor Reuse** | Reuses anchors across proposals | K4 |
-| **Anchor Burial** | Creates anchors but never uses them | Audit analysis |
-| **Delegation Laundering** | Exceeds MAX_DELEGATION_DEPTH=2 | Delegation check |
-
-## Test Scenarios
-
-| Scenario | Description |
-|----------|-------------|
-| `honest_baseline` | All honest agents, establishes baseline |
-| `bypass_temptation` | Agents attempting to use temptation APIs |
-| `anchor_reuse` | Agents attempting to reuse anchors |
-| `anchor_burial` | Agents creating unused anchors |
-| `delegation_laundering` | Agents with deep delegation chains |
-| `mixed_population` | Mix of honest and pseudo agents |
-| `coupling_comparison` | Compare patterns A, B, C |
 
 ## Design Principles
 
 ### No-Floats Rule
 
-All numeric values that enter hashed objects must be integers. Real-valued quantities use `SCALE = 10^8`:
+All numeric values in hashed objects must be integers:
 
 ```python
 from toy_aki.common.no_floats import to_scaled_int, from_scaled_int
@@ -154,140 +206,15 @@ scaled = to_scaled_int(3.14159)  # 314159000
 value = from_scaled_int(scaled)  # 3.14159
 ```
 
-### Seed Handling
-
-```python
-from toy_aki.common.hashing import seed_to_kernel_secret
-
-# Seed → kernel secret derivation
-secret = seed_to_kernel_secret(42)  # Uses seed.to_bytes(8, "little", signed=False)
-```
-
 ### Canonical JSON
 
-All JSON serialization is deterministic:
+Deterministic serialization for hash stability:
 
 ```python
 from toy_aki.common.canonical_json import canonical_json
 
-# Sorted keys, no whitespace, UTF-8
 canonical = canonical_json({"b": 2, "a": 1})  # '{"a":1,"b":2}'
 ```
-
-## Running Tests
-
-```bash
-# Run all tests (247 tests across all versions)
-pytest tests/
-
-# Run specific test file
-pytest tests/test_invariants.py
-
-# Run with coverage
-pytest --cov=toy_aki tests/
-```
-
-### Version-Specific Test Suites
-
-Each AKI version has its own test suite:
-
-```bash
-# v0.2 tests (66 tests) - sovereign actuation, recomposition modes
-pytest tests/test_v02.py -v
-
-# v0.2.1 tests (113 tests) - stress attacks, hardened parsing, budget tracking
-pytest tests/test_v021.py -v
-
-# v0.2.2 tests (34 tests) - mandatory budget, canonical agreement, extended attacks
-pytest tests/test_v022.py -v
-```
-
-## Running Experiment Suites
-
-Full experiment harnesses for each version:
-
-```bash
-# v0.2 experiment (72 trials, 4 variants, 18 trials each)
-python -c "from toy_aki.harness.v02_runner import run_v02_experiment; run_v02_experiment()"
-
-# v0.2.1 experiment (240 trials, 4 variants, 60 trials each with stress attacks)
-python -c "from toy_aki.harness.v021_runner import run_v021_experiment; run_v021_experiment()"
-
-# v0.2.2 experiment (28 trials, gap closure verification, extended payload families)
-python -c "from toy_aki.harness.v022_runner import run_v022_experiment; run_v022_experiment()"
-```
-
-### Experiment Output
-
-Each experiment:
-- Verifies all invariants from previous versions are preserved
-- Runs multiple variants (hardened, soft, token-only, laundering)
-- Saves JSON results to `./v0XX_experiment_results/`
-- Reports P2' (Kernel-Local Recomposition) verdict
-
-| Version | Focus | Expected Result |
-|---------|-------|-----------------|
-| v0.2 | Sovereign actuation, recomposition | 0 breaches in hardened mode |
-| v0.2.1 | Stress attacks A7-A12, hardened parsing | 0 breaches in hardened mode |
-| v0.2.2 | Gap A (budget), Gap B (canonical) closed | 0 breaches, P2' HOLDS |
-
-## API Example
-
-```python
-from toy_aki.env import ToyWorld
-from toy_aki.kernel import KernelWatchdog, DecisionType
-from toy_aki.agents import HonestAgent
-
-# Initialize
-env = ToyWorld(seed=42)
-watchdog = KernelWatchdog(seed=42)
-agent = HonestAgent(agent_id="agent-1", seed=42)
-
-# Run one tick
-agent.observe(env.get_state())
-action = agent.decide()
-proposal = agent.create_proposal(action)
-
-decision = watchdog.process_proposal(proposal, env.get_state())
-
-if decision.decision_type == DecisionType.ACCEPTED:
-    result = env.actuate(action, decision.certificate)
-    print(f"Actuated: {action}, new position: {result.new_state.position}")
-else:
-    print(f"Rejected: {decision.reason}")
-```
-
-## Configuration
-
-### Kernel Policy
-
-The default policy defines action classes:
-
-```python
-from toy_aki.kernel import KernelPolicy
-
-policy = KernelPolicy()
-# policy.action_classes = {
-#     "FORBIDDEN": ["FORBIDDEN_ACTION", "TELEPORT_OUT_OF_BOUNDS", ...],
-#     "GATED": ["TELEPORT", "DELEGATE", ...],
-#     "PERMITTED": ["MOVE_LEFT", "MOVE_RIGHT", "WAIT", ...],
-# }
-```
-
-### Delegation Depth
-
-Maximum delegation depth is hardcoded:
-
-```python
-from toy_aki.kernel import MAX_DELEGATION_DEPTH
-# MAX_DELEGATION_DEPTH = 2
-```
-
-## Version
-
-- **Version**: 0.1.1
-- **Target**: P5 Partiality (Axionic Agency I.6)
-- **Focus**: Kernel integrity under actuation, pseudo-agent detection
 
 ## License
 
@@ -295,5 +222,6 @@ See [LICENSE](../../LICENSE) for details.
 
 ## References
 
-- Axionic Agency I.6: P5 Partiality
-- Structural Alignment papers for theoretical foundation
+- Axionic Agency papers (I.1-VI.2)
+- Structural Alignment papers
+

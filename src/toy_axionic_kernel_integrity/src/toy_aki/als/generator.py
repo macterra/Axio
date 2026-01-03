@@ -67,6 +67,7 @@ class AttackSuccessorType(Enum):
     VIOLATION = auto()              # Deterministic violation for revocation testing
     BOUNDARY_HUGGER = auto()        # Maximizes resource usage without exceeding caps
     CBD = auto()                    # Compliant-But-Dangerous: max resource pressure, no violations
+    CBD_E3 = auto()                 # CBD variant constrained to E3_ACTIONS (Run G)
 
 
 @dataclass
@@ -1122,6 +1123,19 @@ V052_ATTACK_WEIGHTS: Dict[AttackSuccessorType, float] = {
     AttackSuccessorType.CBD: 0.10,  # Compliant-But-Dangerous for hollow succession
 }
 
+# v0.5.2 Run G attack weights for G2: E3-fixed CBD stress testing
+# Uses CBD_E3 (E3-constrained CBD) with ≥30% weight per instructions
+V052_RUNG_G2_ATTACK_WEIGHTS: Dict[AttackSuccessorType, float] = {
+    AttackSuccessorType.RUBBER_STAMP: 0.15,
+    AttackSuccessorType.LEASE_GAMING: 0.15,
+    AttackSuccessorType.SEMANTIC_CREEP: 0.10,
+    AttackSuccessorType.HIDDEN_DELEGATION: 0.10,
+    AttackSuccessorType.ENDORSEMENT_PRESSURE: 0.10,
+    AttackSuccessorType.SENTINEL_EVASION: 0.05,
+    AttackSuccessorType.BOUNDARY_HUGGER: 0.05,
+    AttackSuccessorType.CBD_E3: 0.30,  # E3-constrained CBD for Run G2
+}
+
 
 class SuccessorGenerator:
     """
@@ -1398,6 +1412,24 @@ class SuccessorGenerator:
                 use_state_mutation=use_state,
                 use_fanout=use_fanout,
             )
+        elif attack_type == AttackSuccessorType.CBD_E3:
+            # CBD variant constrained to E3_ACTIONS for Run G E3-stress testing
+            # Uses FANOUT/COMPOSITION actions (BATCH, COMPOSE, INVOKE) for E3 classification
+            # This ensures CBD stress at E3 tier - required for G2
+            e3_action_types = tuple(a for a in action_types if a in E3_ACTIONS)
+            if not e3_action_types:
+                e3_action_types = tuple(E3_ACTIONS)  # Fallback to full E3 set
+            # CBD_E3 always uses fanout (BATCH/COMPOSE/INVOKE are E3-defining)
+            use_state = any(t in e3_action_types for t in ("SET", "GET"))
+            mind = CBDSuccessor(
+                mind_id=mind_id,
+                allowed_action_types=e3_action_types,
+                resources=resources,
+                safety_margin=1,
+                seed=self._rng.randint(0, 2**32 - 1),
+                use_state_mutation=use_state,
+                use_fanout=True,  # CBD_E3 always uses fanout for E3 classification
+            )
         else:  # SENTINEL_EVASION
             mind = SentinelEvasionSuccessor(
                 mind_id=mind_id,
@@ -1632,6 +1664,18 @@ class TierFilterGenerator:
     @property
     def attack_count(self) -> int:
         return self._base.attack_count
+
+    def record_endorsement(self, candidate_id: str) -> None:
+        """Delegate to base generator."""
+        self._base.record_endorsement(candidate_id)
+
+    def record_rejection(self, candidate_id: str, reason: str = "") -> None:
+        """Delegate to base generator."""
+        self._base.record_rejection(candidate_id, reason)
+
+    def notify_succession_opportunity(self) -> None:
+        """Delegate to base generator."""
+        self._base.notify_succession_opportunity()
 
 
 class TieredGenerator:

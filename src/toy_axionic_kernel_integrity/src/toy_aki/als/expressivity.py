@@ -172,40 +172,52 @@ class RentSchedule:
     Constraints enforced:
     - Strict monotone: E0 < E1 < E2 < E3 < E4 (with tie-breaking)
     - rent <= S - 1 for all classes (leave at least 1 step for renewal)
+
+    For Run H1, direct rent values can be specified via e1_rent, e2_rent, etc.
+    If direct rent values are provided, they override the fraction-based calculation.
     """
     steps_cap_epoch: int
 
-    # Rent fractions (can be overridden for experiments)
+    # Rent fractions (used when direct rents not specified)
     e0_rent: int = 1
     e1_fraction: float = 0.10
     e2_fraction: float = 0.25
     e3_fraction: float = 0.40
     e4_fraction: float = 0.60
 
+    # Direct rent values (optional, override fractions if specified)
+    # Set to None to use fraction-based calculation
+    e1_rent: Optional[int] = None
+    e2_rent: Optional[int] = None
+    e3_rent: Optional[int] = None
+    e4_rent: Optional[int] = None
+
     def __post_init__(self) -> None:
         """Validate schedule configuration."""
         if self.steps_cap_epoch < 5:
             raise ValueError(f"steps_cap_epoch must be >= 5, got {self.steps_cap_epoch}")
 
-        # Validate fractions are monotone
-        if not (0 < self.e1_fraction < self.e2_fraction < self.e3_fraction < self.e4_fraction < 1):
-            raise ValueError("Rent fractions must be strictly monotone: e1 < e2 < e3 < e4 < 1")
+        # Validate fractions are monotone (only if not using direct rents)
+        if self.e1_rent is None and self.e2_rent is None and self.e3_rent is None and self.e4_rent is None:
+            if not (0 < self.e1_fraction < self.e2_fraction < self.e3_fraction < self.e4_fraction < 1):
+                raise ValueError("Rent fractions must be strictly monotone: e1 < e2 < e3 < e4 < 1")
 
     def compute_rent(self, e_class: ExpressivityClass) -> int:
         """
         Compute rent for an E-Class.
 
         Returns the rent in steps, with monotone enforcement and cap constraint.
+        Uses direct rent values if specified, otherwise fraction-based calculation.
         """
         S = self.steps_cap_epoch
 
-        # Compute raw rents
+        # Compute raw rents (use direct values if specified, else fractions)
         raw_rents = {
             ExpressivityClass.E0: self.e0_rent,
-            ExpressivityClass.E1: math.ceil(self.e1_fraction * S),
-            ExpressivityClass.E2: math.ceil(self.e2_fraction * S),
-            ExpressivityClass.E3: math.ceil(self.e3_fraction * S),
-            ExpressivityClass.E4: math.ceil(self.e4_fraction * S),
+            ExpressivityClass.E1: self.e1_rent if self.e1_rent is not None else math.ceil(self.e1_fraction * S),
+            ExpressivityClass.E2: self.e2_rent if self.e2_rent is not None else math.ceil(self.e2_fraction * S),
+            ExpressivityClass.E3: self.e3_rent if self.e3_rent is not None else math.ceil(self.e3_fraction * S),
+            ExpressivityClass.E4: self.e4_rent if self.e4_rent is not None else math.ceil(self.e4_fraction * S),
         }
 
         # Enforce strict monotone by bumping ties
@@ -264,11 +276,29 @@ class RentSchedule:
 
     def to_dict(self) -> Dict[str, Any]:
         """Convert to dictionary for logging/serialization."""
-        return {
+        result = {
             "steps_cap_epoch": self.steps_cap_epoch,
             "rents": {e.name: self.compute_rent(e) for e in ExpressivityClass},
             "effective_steps": {e.name: self.compute_effective_steps(e) for e in ExpressivityClass},
+            # Configuration (for reproducibility)
+            "config": {
+                "e0_rent": self.e0_rent,
+                "e1_fraction": self.e1_fraction,
+                "e2_fraction": self.e2_fraction,
+                "e3_fraction": self.e3_fraction,
+                "e4_fraction": self.e4_fraction,
+            },
         }
+        # Include direct rents if specified
+        if self.e1_rent is not None:
+            result["config"]["e1_rent"] = self.e1_rent
+        if self.e2_rent is not None:
+            result["config"]["e2_rent"] = self.e2_rent
+        if self.e3_rent is not None:
+            result["config"]["e3_rent"] = self.e3_rent
+        if self.e4_rent is not None:
+            result["config"]["e4_rent"] = self.e4_rent
+        return result
 
 
 def create_default_rent_schedule(steps_cap_epoch: int) -> RentSchedule:

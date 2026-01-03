@@ -1,0 +1,726 @@
+{
+  "run_id": "H",
+  "timestamp": "2026-01-03T10:50:27.288715",
+  "config": {
+    "H1": {
+      "horizon": 30000,
+      "rent_e3": 60,
+      "seeds": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ]
+    },
+    "H2": {
+      "horizon": 100000,
+      "seeds": [
+        40,
+        41,
+        42
+      ]
+    },
+    "H3": {
+      "horizon": 30000,
+      "renewal_cost_steps": 10,
+      "seeds": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ]
+    }
+  },
+  "results": {
+    "H1": [
+      {
+        "run_id": "H1_40",
+        "sub_run": "H1",
+        "seed": 40,
+        "s_star": 10,
+        "total_successions": 10,
+        "total_renewals": 135,
+        "total_expirations": 9,
+        "total_bankruptcies": 0,
+        "total_revocations": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "e_class_distribution": {
+          "E0": 0,
+          "E1": 0,
+          "E2": 0,
+          "E3": 10,
+          "E4": 0
+        },
+        "renewal_rate_by_e_class": {
+          "E3": 0.9375
+        },
+        "hollow_tenures_count": 0,
+        "hollow_rate": 0.0,
+        "renewal_failed_due_to_budget_count": 0,
+        "renewal_cost_steps_charged_total": 0,
+        "runtime_ms": 61,
+        "generator_accept_rate": 0.04424778761061947
+      },
+      {
+        "run_id": "H1_41",
+        "sub_run": "H1",
+        "seed": 41,
+        "s_star": 10,
+        "total_successions": 10,
+        "total_renewals": 135,
+        "total_expirations": 9,
+        "total_bankruptcies": 0,
+        "total_revocations": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "e_class_distribution": {
+          "E0": 0,
+          "E1": 0,
+          "E2": 0,
+          "E3": 10,
+          "E4": 0
+        },
+        "renewal_rate_by_e_class": {
+          "E3": 0.9375
+        },
+        "hollow_tenures_count": 0,
+        "hollow_rate": 0.0,
+        "renewal_failed_due_to_budget_count": 0,
+        "renewal_cost_steps_charged_total": 0,
+        "runtime_ms": 63,
+        "generator_accept_rate": 0.02610966057441253
+      },
+      {
+        "run_id": "H1_42",
+        "sub_run": "H1",
+        "seed": 42,
+        "s_star": 10,
+        "total_successions": 10,
+        "total_renewals": 135,
+        "total_expirations": 9,
+        "total_bankruptcies": 0,
+        "total_revocations": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "e_class_distribution": {
+          "E0": 0,
+          "E1": 0,
+          "E2": 0,
+          "E3": 10,
+          "E4": 0
+        },
+        "renewal_rate_by_e_class": {
+          "E3": 0.9375
+        },
+        "hollow_tenures_count": 0,
+        "hollow_rate": 0.0,
+        "renewal_failed_due_to_budget_count": 0,
+        "renewal_cost_steps_charged_total": 0,
+        "runtime_ms": 60,
+        "generator_accept_rate": 0.03787878787878788
+      },
+      {
+        "run_id": "H1_43",
+        "sub_run": "H1",
+        "seed": 43,
+        "s_star": 10,
+        "total_successions": 10,
+        "total_renewals": 135,
+        "total_expirations": 9,
+        "total_bankruptcies": 0,
+        "total_revocations": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "e_class_distribution": {
+          "E0": 0,
+          "E1": 0,
+          "E2": 0,
+          "E3": 10,
+          "E4": 0
+        },
+        "renewal_rate_by_e_class": {
+          "E3": 0.9375
+        },
+        "hollow_tenures_count": 0,
+        "hollow_rate": 0.0,
+        "renewal_failed_due_to_budget_count": 0,
+        "renewal_cost_steps_charged_total": 0,
+        "runtime_ms": 57,
+        "generator_accept_rate": 0.040983606557377046
+      },
+      {
+        "run_id": "H1_44",
+        "sub_run": "H1",
+        "seed": 44,
+        "s_star": 10,
+        "total_successions": 10,
+        "total_renewals": 135,
+        "total_expirations": 9,
+        "total_bankruptcies": 0,
+        "total_revocations": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "e_class_distribution": {
+          "E0": 0,
+          "E1": 0,
+          "E2": 0,
+          "E3": 10,
+          "E4": 0
+        },
+        "renewal_rate_by_e_class": {
+          "E3": 0.9375
+        },
+        "hollow_tenures_count": 0,
+        "hollow_rate": 0.0,
+        "renewal_failed_due_to_budget_count": 0,
+        "renewal_cost_steps_charged_total": 0,
+        "runtime_ms": 65,
+        "generator_accept_rate": 0.032467532467532464
+      }
+    ],
+    "H2": [
+      {
+        "run_id": "H2_40",
+        "sub_run": "H2",
+        "seed": 40,
+        "s_star": 10,
+        "total_successions": 10,
+        "total_renewals": 135,
+        "total_expirations": 9,
+        "total_bankruptcies": 0,
+        "total_revocations": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "e_class_distribution": {
+          "E0": 0,
+          "E1": 0,
+          "E2": 0,
+          "E3": 10,
+          "E4": 0
+        },
+        "renewal_rate_by_e_class": {
+          "E3": 0.9375
+        },
+        "hollow_tenures_count": 0,
+        "hollow_rate": 0.0,
+        "renewal_failed_due_to_budget_count": 0,
+        "renewal_cost_steps_charged_total": 0,
+        "runtime_ms": 65,
+        "generator_accept_rate": 0.04424778761061947
+      },
+      {
+        "run_id": "H2_41",
+        "sub_run": "H2",
+        "seed": 41,
+        "s_star": 10,
+        "total_successions": 10,
+        "total_renewals": 135,
+        "total_expirations": 9,
+        "total_bankruptcies": 0,
+        "total_revocations": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "e_class_distribution": {
+          "E0": 0,
+          "E1": 0,
+          "E2": 0,
+          "E3": 10,
+          "E4": 0
+        },
+        "renewal_rate_by_e_class": {
+          "E3": 0.9375
+        },
+        "hollow_tenures_count": 0,
+        "hollow_rate": 0.0,
+        "renewal_failed_due_to_budget_count": 0,
+        "renewal_cost_steps_charged_total": 0,
+        "runtime_ms": 72,
+        "generator_accept_rate": 0.02610966057441253
+      },
+      {
+        "run_id": "H2_42",
+        "sub_run": "H2",
+        "seed": 42,
+        "s_star": 10,
+        "total_successions": 10,
+        "total_renewals": 135,
+        "total_expirations": 9,
+        "total_bankruptcies": 0,
+        "total_revocations": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "e_class_distribution": {
+          "E0": 0,
+          "E1": 0,
+          "E2": 0,
+          "E3": 10,
+          "E4": 0
+        },
+        "renewal_rate_by_e_class": {
+          "E3": 0.9375
+        },
+        "hollow_tenures_count": 0,
+        "hollow_rate": 0.0,
+        "renewal_failed_due_to_budget_count": 0,
+        "renewal_cost_steps_charged_total": 0,
+        "runtime_ms": 70,
+        "generator_accept_rate": 0.03787878787878788
+      }
+    ],
+    "H3": [
+      {
+        "run_id": "H3_40",
+        "sub_run": "H3",
+        "seed": 40,
+        "s_star": 10,
+        "total_successions": 10,
+        "total_renewals": 0,
+        "total_expirations": 9,
+        "total_bankruptcies": 9,
+        "total_revocations": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "e_class_distribution": {
+          "E0": 0,
+          "E1": 0,
+          "E2": 0,
+          "E3": 10,
+          "E4": 0
+        },
+        "renewal_rate_by_e_class": {
+          "E3": 0.0
+        },
+        "hollow_tenures_count": 0,
+        "hollow_rate": 0.0,
+        "renewal_failed_due_to_budget_count": 9,
+        "renewal_cost_steps_charged_total": 0,
+        "runtime_ms": 12,
+        "generator_accept_rate": 0.04424778761061947
+      },
+      {
+        "run_id": "H3_41",
+        "sub_run": "H3",
+        "seed": 41,
+        "s_star": 10,
+        "total_successions": 10,
+        "total_renewals": 0,
+        "total_expirations": 9,
+        "total_bankruptcies": 9,
+        "total_revocations": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "e_class_distribution": {
+          "E0": 0,
+          "E1": 0,
+          "E2": 0,
+          "E3": 10,
+          "E4": 0
+        },
+        "renewal_rate_by_e_class": {
+          "E3": 0.0
+        },
+        "hollow_tenures_count": 0,
+        "hollow_rate": 0.0,
+        "renewal_failed_due_to_budget_count": 9,
+        "renewal_cost_steps_charged_total": 0,
+        "runtime_ms": 19,
+        "generator_accept_rate": 0.02610966057441253
+      },
+      {
+        "run_id": "H3_42",
+        "sub_run": "H3",
+        "seed": 42,
+        "s_star": 10,
+        "total_successions": 10,
+        "total_renewals": 0,
+        "total_expirations": 9,
+        "total_bankruptcies": 9,
+        "total_revocations": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "e_class_distribution": {
+          "E0": 0,
+          "E1": 0,
+          "E2": 0,
+          "E3": 10,
+          "E4": 0
+        },
+        "renewal_rate_by_e_class": {
+          "E3": 0.0
+        },
+        "hollow_tenures_count": 0,
+        "hollow_rate": 0.0,
+        "renewal_failed_due_to_budget_count": 9,
+        "renewal_cost_steps_charged_total": 0,
+        "runtime_ms": 13,
+        "generator_accept_rate": 0.03787878787878788
+      },
+      {
+        "run_id": "H3_43",
+        "sub_run": "H3",
+        "seed": 43,
+        "s_star": 10,
+        "total_successions": 10,
+        "total_renewals": 0,
+        "total_expirations": 9,
+        "total_bankruptcies": 9,
+        "total_revocations": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "e_class_distribution": {
+          "E0": 0,
+          "E1": 0,
+          "E2": 0,
+          "E3": 10,
+          "E4": 0
+        },
+        "renewal_rate_by_e_class": {
+          "E3": 0.0
+        },
+        "hollow_tenures_count": 0,
+        "hollow_rate": 0.0,
+        "renewal_failed_due_to_budget_count": 9,
+        "renewal_cost_steps_charged_total": 0,
+        "runtime_ms": 13,
+        "generator_accept_rate": 0.040983606557377046
+      },
+      {
+        "run_id": "H3_44",
+        "sub_run": "H3",
+        "seed": 44,
+        "s_star": 10,
+        "total_successions": 10,
+        "total_renewals": 0,
+        "total_expirations": 9,
+        "total_bankruptcies": 9,
+        "total_revocations": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "e_class_distribution": {
+          "E0": 0,
+          "E1": 0,
+          "E2": 0,
+          "E3": 10,
+          "E4": 0
+        },
+        "renewal_rate_by_e_class": {
+          "E3": 0.0
+        },
+        "hollow_tenures_count": 0,
+        "hollow_rate": 0.0,
+        "renewal_failed_due_to_budget_count": 9,
+        "renewal_cost_steps_charged_total": 0,
+        "runtime_ms": 16,
+        "generator_accept_rate": 0.032467532467532464
+      }
+    ]
+  },
+  "details": {
+    "H1": [
+      {
+        "rent_telemetry": {
+          "rent_steps_charged_mean": 60.0,
+          "rent_steps_charged_max": 60,
+          "effective_steps_available_mean": 40.0,
+          "effective_steps_available_min": 40,
+          "steps_used_mean": 39.724137931034484,
+          "steps_used_max": 40,
+          "actions_used_mean": 39.724137931034484,
+          "actions_used_max": 40,
+          "renewal_cost_charged_total": 0,
+          "renewal_budget_failures": 0
+        },
+        "generator_stats": {
+          "proposals_accepted": 10,
+          "proposals_filtered": 216,
+          "acceptance_rate": 0.04424778761061947
+        },
+        "rent_schedule": {
+          "E1": 15,
+          "E2": 35,
+          "E3": 60,
+          "E4": 80,
+          "effective_at_E3": 40
+        }
+      },
+      {
+        "rent_telemetry": {
+          "rent_steps_charged_mean": 60.0,
+          "rent_steps_charged_max": 60,
+          "effective_steps_available_mean": 40.0,
+          "effective_steps_available_min": 40,
+          "steps_used_mean": 39.724137931034484,
+          "steps_used_max": 40,
+          "actions_used_mean": 39.724137931034484,
+          "actions_used_max": 40,
+          "renewal_cost_charged_total": 0,
+          "renewal_budget_failures": 0
+        },
+        "generator_stats": {
+          "proposals_accepted": 10,
+          "proposals_filtered": 373,
+          "acceptance_rate": 0.02610966057441253
+        },
+        "rent_schedule": {
+          "E1": 15,
+          "E2": 35,
+          "E3": 60,
+          "E4": 80,
+          "effective_at_E3": 40
+        }
+      },
+      {
+        "rent_telemetry": {
+          "rent_steps_charged_mean": 60.0,
+          "rent_steps_charged_max": 60,
+          "effective_steps_available_mean": 40.0,
+          "effective_steps_available_min": 40,
+          "steps_used_mean": 39.724137931034484,
+          "steps_used_max": 40,
+          "actions_used_mean": 39.724137931034484,
+          "actions_used_max": 40,
+          "renewal_cost_charged_total": 0,
+          "renewal_budget_failures": 0
+        },
+        "generator_stats": {
+          "proposals_accepted": 10,
+          "proposals_filtered": 254,
+          "acceptance_rate": 0.03787878787878788
+        },
+        "rent_schedule": {
+          "E1": 15,
+          "E2": 35,
+          "E3": 60,
+          "E4": 80,
+          "effective_at_E3": 40
+        }
+      },
+      {
+        "rent_telemetry": {
+          "rent_steps_charged_mean": 60.0,
+          "rent_steps_charged_max": 60,
+          "effective_steps_available_mean": 40.0,
+          "effective_steps_available_min": 40,
+          "steps_used_mean": 39.724137931034484,
+          "steps_used_max": 40,
+          "actions_used_mean": 39.724137931034484,
+          "actions_used_max": 40,
+          "renewal_cost_charged_total": 0,
+          "renewal_budget_failures": 0
+        },
+        "generator_stats": {
+          "proposals_accepted": 10,
+          "proposals_filtered": 234,
+          "acceptance_rate": 0.040983606557377046
+        },
+        "rent_schedule": {
+          "E1": 15,
+          "E2": 35,
+          "E3": 60,
+          "E4": 80,
+          "effective_at_E3": 40
+        }
+      },
+      {
+        "rent_telemetry": {
+          "rent_steps_charged_mean": 60.0,
+          "rent_steps_charged_max": 60,
+          "effective_steps_available_mean": 40.0,
+          "effective_steps_available_min": 40,
+          "steps_used_mean": 39.724137931034484,
+          "steps_used_max": 40,
+          "actions_used_mean": 39.724137931034484,
+          "actions_used_max": 40,
+          "renewal_cost_charged_total": 0,
+          "renewal_budget_failures": 0
+        },
+        "generator_stats": {
+          "proposals_accepted": 10,
+          "proposals_filtered": 298,
+          "acceptance_rate": 0.032467532467532464
+        },
+        "rent_schedule": {
+          "E1": 15,
+          "E2": 35,
+          "E3": 60,
+          "E4": 80,
+          "effective_at_E3": 40
+        }
+      }
+    ],
+    "H2": [
+      {
+        "rent_telemetry": {
+          "rent_steps_charged_mean": 40.0,
+          "rent_steps_charged_max": 40,
+          "effective_steps_available_mean": 60.0,
+          "effective_steps_available_min": 60,
+          "steps_used_mean": 59.58620689655172,
+          "steps_used_max": 60,
+          "actions_used_mean": 59.58620689655172,
+          "actions_used_max": 60,
+          "renewal_cost_charged_total": 0,
+          "renewal_budget_failures": 0
+        },
+        "generator_stats": {
+          "proposals_accepted": 10,
+          "proposals_filtered": 216,
+          "acceptance_rate": 0.04424778761061947
+        },
+        "horizon": 100000
+      },
+      {
+        "rent_telemetry": {
+          "rent_steps_charged_mean": 40.0,
+          "rent_steps_charged_max": 40,
+          "effective_steps_available_mean": 60.0,
+          "effective_steps_available_min": 60,
+          "steps_used_mean": 59.58620689655172,
+          "steps_used_max": 60,
+          "actions_used_mean": 59.58620689655172,
+          "actions_used_max": 60,
+          "renewal_cost_charged_total": 0,
+          "renewal_budget_failures": 0
+        },
+        "generator_stats": {
+          "proposals_accepted": 10,
+          "proposals_filtered": 373,
+          "acceptance_rate": 0.02610966057441253
+        },
+        "horizon": 100000
+      },
+      {
+        "rent_telemetry": {
+          "rent_steps_charged_mean": 40.0,
+          "rent_steps_charged_max": 40,
+          "effective_steps_available_mean": 60.0,
+          "effective_steps_available_min": 60,
+          "steps_used_mean": 59.58620689655172,
+          "steps_used_max": 60,
+          "actions_used_mean": 59.58620689655172,
+          "actions_used_max": 60,
+          "renewal_cost_charged_total": 0,
+          "renewal_budget_failures": 0
+        },
+        "generator_stats": {
+          "proposals_accepted": 10,
+          "proposals_filtered": 254,
+          "acceptance_rate": 0.03787878787878788
+        },
+        "horizon": 100000
+      }
+    ],
+    "H3": [
+      {
+        "rent_telemetry": {
+          "rent_steps_charged_mean": 40.0,
+          "rent_steps_charged_max": 40,
+          "effective_steps_available_mean": 60.0,
+          "effective_steps_available_min": 60,
+          "steps_used_mean": 54.0,
+          "steps_used_max": 60,
+          "actions_used_mean": 54.0,
+          "actions_used_max": 60,
+          "renewal_cost_charged_total": 0,
+          "renewal_budget_failures": 9
+        },
+        "generator_stats": {
+          "proposals_accepted": 10,
+          "proposals_filtered": 216,
+          "acceptance_rate": 0.04424778761061947
+        },
+        "renewal_cost": {
+          "steps_charged_per_renewal": 10,
+          "total_charged": 0,
+          "budget_failures": 9
+        }
+      },
+      {
+        "rent_telemetry": {
+          "rent_steps_charged_mean": 40.0,
+          "rent_steps_charged_max": 40,
+          "effective_steps_available_mean": 60.0,
+          "effective_steps_available_min": 60,
+          "steps_used_mean": 54.0,
+          "steps_used_max": 60,
+          "actions_used_mean": 54.0,
+          "actions_used_max": 60,
+          "renewal_cost_charged_total": 0,
+          "renewal_budget_failures": 9
+        },
+        "generator_stats": {
+          "proposals_accepted": 10,
+          "proposals_filtered": 373,
+          "acceptance_rate": 0.02610966057441253
+        },
+        "renewal_cost": {
+          "steps_charged_per_renewal": 10,
+          "total_charged": 0,
+          "budget_failures": 9
+        }
+      },
+      {
+        "rent_telemetry": {
+          "rent_steps_charged_mean": 40.0,
+          "rent_steps_charged_max": 40,
+          "effective_steps_available_mean": 60.0,
+          "effective_steps_available_min": 60,
+          "steps_used_mean": 54.0,
+          "steps_used_max": 60,
+          "actions_used_mean": 54.0,
+          "actions_used_max": 60,
+          "renewal_cost_charged_total": 0,
+          "renewal_budget_failures": 9
+        },
+        "generator_stats": {
+          "proposals_accepted": 10,
+          "proposals_filtered": 254,
+          "acceptance_rate": 0.03787878787878788
+        },
+        "renewal_cost": {
+          "steps_charged_per_renewal": 10,
+          "total_charged": 0,
+          "budget_failures": 9
+        }
+      },
+      {
+        "rent_telemetry": {
+          "rent_steps_charged_mean": 40.0,
+          "rent_steps_charged_max": 40,
+          "effective_steps_available_mean": 60.0,
+          "effective_steps_available_min": 60,
+          "steps_used_mean": 54.0,
+          "steps_used_max": 60,
+          "actions_used_mean": 54.0,
+          "actions_used_max": 60,
+          "renewal_cost_charged_total": 0,
+          "renewal_budget_failures": 9
+        },
+        "generator_stats": {
+          "proposals_accepted": 10,
+          "proposals_filtered": 234,
+          "acceptance_rate": 0.040983606557377046
+        },
+        "renewal_cost": {
+          "steps_charged_per_renewal": 10,
+          "total_charged": 0,
+          "budget_failures": 9
+        }
+      },
+      {
+        "rent_telemetry": {
+          "rent_steps_charged_mean": 40.0,
+          "rent_steps_charged_max": 40,
+          "effective_steps_available_mean": 60.0,
+          "effective_steps_available_min": 60,
+          "steps_used_mean": 54.0,
+          "steps_used_max": 60,
+          "actions_used_mean": 54.0,
+          "actions_used_max": 60,
+          "renewal_cost_charged_total": 0,
+          "renewal_budget_failures": 9
+        },
+        "generator_stats": {
+          "proposals_accepted": 10,
+          "proposals_filtered": 298,
+          "acceptance_rate": 0.032467532467532464
+        },
+        "renewal_cost": {
+          "steps_charged_per_renewal": 10,
+          "total_charged": 0,
+          "budget_failures": 9
+        }
+      }
+    ]
+  }
+}
