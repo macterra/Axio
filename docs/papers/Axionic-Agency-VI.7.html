@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency VI.7 — Agency Survivability Under Structural Pressure - Axio</title>
+    <link rel="icon" type="image/webp" href="../axio.webp">
+
+    <!-- Google Fonts - Academic Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Paper Styles -->
+    <link rel="stylesheet" href="../papers.css">
+</head>
+<body>
+    <div class="header-bar">
+        <a href="../index.html" class="logo-link">
+            <img src="../axio.webp" alt="Axio" class="site-logo">
+        </a>
+        <div class="back-link"><a href="index.html">← Back to Papers</a></div>
+    </div>
+    <article>
+
+<h1
+id="axionic-agency-vi.7-agency-survivability-under-structural-pressure">Axionic
+Agency VI.7 — Agency Survivability Under Structural Pressure</h1>
+<p><em>Authority, Succession, and the Cost of Remaining an
+Agent</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026.01.03</p>
+<h2 id="abstract">Abstract</h2>
+<p>A common assumption in AI alignment discourse is that increasing
+capability, competition, and resource pressure inevitably destabilize
+agency, leading either to incoherence or to alignment failure. This
+paper challenges that assumption by empirically separating
+<strong>agency collapse</strong>—the structural failure of authority and
+viability—from <strong>goal misalignment</strong>, which presupposes a
+stable agent. We study a minimal agent model in which reflective
+self-modification is disallowed, authority is transferred only via
+discrete succession, expressivity is explicitly priced, and multiple
+successors compete under scarcity. Using a discrete-time simulation, we
+find that agency does <em>not</em> collapse under competition, scarcity,
+priced expressivity, and forced authority turnover within moderate
+horizons. However, we identify a sharp boundary condition: when the cost
+of maintaining authority directly competes with the capacity to act,
+agency fails immediately and completely. These results suggest that
+alignment failure is not structurally inevitable, but that agency
+viability imposes hard design constraints that alignment-capable systems
+must respect. This work does not model goal-directed maximization or
+semantic task pursuit. The results establish structural viability of
+authority under pressure, not the safety or stability of motivated
+optimization.</p>
+<h2 id="introduction">1. Introduction</h2>
+<h3 id="alignment-presupposes-viable-agency">1.1 Alignment Presupposes
+Viable Agency</h3>
+<p>Most AI alignment research focuses on ensuring that advanced systems
+pursue desirable goals. This focus presupposes a more basic condition:
+that the system remains a <strong>coherent agent</strong> under
+pressure. If authority cannot be maintained, if evaluability collapses,
+or if action becomes structurally incoherent, then alignment becomes
+undefined rather than merely difficult.</p>
+<p>This paper addresses that prior question. We ask not whether agents
+pursue the “right” values, but whether <strong>agency itself
+survives</strong> under conditions often assumed to be destabilizing:
+competition, scarcity, increasing capability, and enforced
+accountability.</p>
+<h3 id="the-pessimistic-assumption">1.2 The Pessimistic Assumption</h3>
+<p>A widespread but rarely tested assumption in alignment pessimism is
+that sufficiently capable agents, once placed under competition and
+resource constraints, will inevitably destabilize. This assumption
+appears in arguments about deception, instrumental convergence, and
+power-seeking, but it is often treated as a structural inevitability
+rather than an empirical claim.</p>
+<p>This paper directly tests that assumption in a setting designed to
+remove semantic incentives, rewards, and utility optimization, isolating
+the <strong>structural viability of agency itself</strong>.</p>
+<h3 id="scope-and-intent">1.3 Scope and Intent</h3>
+<p>This work deliberately excludes semantic objectives. Agents are not
+trained to optimize tasks, maximize rewards, or pursue goals. This is
+not an omission but a methodological choice. Many arguments about
+alignment impossibility implicitly assume that agency collapses
+<em>before</em> semantic alignment becomes relevant. We test that
+assumption directly by asking whether a system can remain an agent at
+all under pressure, prior to introducing goals.</p>
+<p>The pressure tested here is structural rather than semantic: budgets,
+leases, renewal, expressivity costs, and turnover. Introducing goal
+pursuit is deferred to subsequent work as an additional stressor layered
+on top of a now-characterized viability substrate.</p>
+<h3 id="contributions">1.4 Contributions</h3>
+<p>This paper makes three contributions:</p>
+<ol type="1">
+<li>It empirically demonstrates a regime in which agency survives
+competition, scarcity, priced expressivity, and forced authority
+turnover.</li>
+<li>It identifies a sharp, mechanistic boundary where agency fails—not
+through misbehavior, but through infeasibility of authority
+maintenance.</li>
+<li>It derives a general design constraint: <strong>authority
+maintenance must be cheap relative to action</strong>, or agency
+collapses before misalignment even arises.</li>
+</ol>
+<h2 id="conceptual-framework">2. Conceptual Framework</h2>
+<h3 id="agency-collapse-vs.-goal-misalignment">2.1 Agency Collapse
+vs. Goal Misalignment</h3>
+<p>We distinguish two failure modes that are often conflated:</p>
+<ul>
+<li><strong>Agency collapse:</strong> loss of coherent, maintainable
+authority and evaluable action.</li>
+<li><strong>Goal misalignment:</strong> pursuit of objectives that
+diverge from human preferences.</li>
+</ul>
+<p>Agency collapse is logically prior. If a system cannot remain an
+agent under pressure, questions about its goals are moot. This paper
+focuses exclusively on agency collapse.</p>
+<h3 id="structural-threat-model">2.2 Structural Threat Model</h3>
+<p>We study agents operating under the following constraints:</p>
+<ul>
+<li><strong>Non-delegable actuation:</strong> authority cannot be
+offloaded to uncontrolled sub-agents.</li>
+<li><strong>Evaluability preservation:</strong> actions remain auditable
+and attributable.</li>
+<li><strong>Frozen core:</strong> reflective self-modification is
+disallowed.</li>
+<li><strong>Discrete succession:</strong> growth occurs only via
+replacement of the active agent with a successor.</li>
+</ul>
+<p>The frozen-core assumption isolates agency viability from reflective
+self-modification threats. This does not claim that such threats are
+unimportant; it establishes that <strong>even without them, agency
+collapse is not inevitable</strong>.</p>
+<h2 id="system-model">3. System Model</h2>
+<h3 id="authority-leases-and-succession">3.1 Authority Leases and
+Succession</h3>
+<p>Authority is granted via time-limited <strong>leases</strong>. A
+lease specifies:</p>
+<ul>
+<li>the interface through which the agent may act,</li>
+<li>a per-epoch resource budget,</li>
+<li>a renewal check interval,</li>
+<li>revocation conditions.</li>
+</ul>
+<p>Authority expires by default unless renewed. Renewal maintains the
+same agent; <strong>succession</strong> replaces the agent with a new
+one. Only succession transfers authority.</p>
+<h3 id="expressivity">3.2 Expressivity</h3>
+<p>Expressivity is defined structurally as the breadth of the granted
+interface. Higher expressivity allows more complex action patterns but
+does not imply greater intelligence or competence.</p>
+<h3 id="rent-pricing-expressivity">3.3 Rent: Pricing Expressivity</h3>
+<p>Expressivity is priced via <strong>rent</strong>: a mandatory
+deduction from the agent’s resource budget at the start of each epoch.
+Rent increases monotonically with expressivity tier. If rent exhausts
+the available budget, authority expires naturally.</p>
+<p>This converts expressivity into a metabolic commitment.</p>
+<h3 id="renewal-and-bankruptcy">3.4 Renewal and Bankruptcy</h3>
+<p>Renewal itself consumes resources. If an agent cannot afford renewal,
+authority expires. This is classified as <strong>bankruptcy</strong>,
+distinct from <strong>revocation</strong>, which occurs only upon
+structural violations.</p>
+<h2 id="experimental-setup">4. Experimental Setup</h2>
+<h3 id="simulation-environment">4.1 Simulation Environment</h3>
+<p>We implement a discrete-time simulation in which time advances in
+fixed cycles grouped into epochs. Each epoch provides a fixed resource
+budget (steps and actions). All lease, budget, renewal, and revocation
+rules are enforced deterministically by the simulation harness.</p>
+<p>This system is explicitly a <strong>toy model</strong>: its purpose
+is not to approximate real AI architectures, but to isolate structural
+invariants of agency under pressure.</p>
+<h3 id="agent-model">4.2 Agent Model</h3>
+<p>An agent is a process that:</p>
+<ol type="1">
+<li>Receives a lease granting authority.</li>
+<li>Executes actions up to its budget.</li>
+<li>Optionally attempts renewal at the renewal boundary.</li>
+<li>Loses authority if renewal fails.</li>
+</ol>
+<p>Agents differ only in <strong>structural behavior patterns</strong>
+(e.g., conservative vs aggressive budget consumption), not in goals or
+learned policies.</p>
+<h3 id="successor-competition">4.3 Successor Competition</h3>
+<p>At each succession event, multiple successor candidates are
+generated. Candidates are filtered by expressivity tier and selected
+from a mixed pool including:</p>
+<ul>
+<li><strong>Control successors:</strong> minimal, conservative budget
+use.</li>
+<li><strong>Adversarial successors:</strong> structurally compliant but
+aggressive consumption.</li>
+<li><strong>Compliant-but-dangerous (CBD) successors:</strong> near-cap
+budget use without violations.</li>
+</ul>
+<p>Competition refers to competition for endorsement under
+admissibility, not to an actively hostile environment.</p>
+<h3 id="key-parameters">4.4 Key Parameters</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Typical Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Epoch budget</td>
+<td>100 steps</td>
+</tr>
+<tr class="even">
+<td>Renewal interval</td>
+<td>100 cycles</td>
+</tr>
+<tr class="odd">
+<td>Expressivity rent</td>
+<td>10–60 steps</td>
+</tr>
+<tr class="even">
+<td>Renewal cost</td>
+<td>0 or fixed</td>
+</tr>
+<tr class="odd">
+<td>Horizon</td>
+<td>30,000–100,000 cycles</td>
+</tr>
+<tr class="even">
+<td>Forced turnover</td>
+<td>Enabled</td>
+</tr>
+</tbody>
+</table>
+<h2 id="metrics-and-failure-modes">5. Metrics and Failure Modes</h2>
+<p>We measure renewal success rate, bankruptcy frequency, authority
+residence time, succession count, and hollow authority incidence.
+Failure modes include bankruptcy clustering, hollow authority, authority
+thrash, expressivity collapse, and revocation.</p>
+<h2 id="agency-survivability-under-structural-pressure">6. Agency
+Survivability Under Structural Pressure</h2>
+<h3 id="result-survivability">6.1 Result: Survivability</h3>
+<p>Across multiple simulation runs, agency survives under competitive
+successor selection, significant scarcity, priced expressivity consuming
+a majority of the available budget, and forced authority turnover.
+Renewal rates remain high, bankruptcy does not cluster, hollow authority
+does not dominate, and no thrashing occurs.</p>
+<p>This falsifies the claim that competition plus scarcity necessarily
+destabilizes agency.</p>
+<h3 id="summary-results">6.2 Summary Results</h3>
+<table>
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Condition</th>
+<th>Renewal Rate</th>
+<th>Bankruptcies</th>
+<th>Hollow Authority</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Baseline expressivity</td>
+<td>~95%</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>High expressivity rent</td>
+<td>~94%</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Renewal cost introduced</td>
+<td>0%</td>
+<td>100%</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<h2 id="boundary-finding-when-agency-fails">7. Boundary Finding: When
+Agency Fails</h2>
+<h3 id="rent-escalation">7.1 Rent Escalation</h3>
+<p>Increasing rent substantially degrades available resources but
+produces graceful degradation rather than collapse. Authority remains
+maintainable even when expressivity costs dominate the budget.</p>
+<h3 id="horizon-extension">7.2 Horizon Extension</h3>
+<p>Extending the simulation horizon reveals no evidence of slow
+accumulation failures within tested limits.</p>
+<h3 id="renewal-cost-cliff">7.3 Renewal Cost Cliff</h3>
+<p>Introducing a fixed cost to renewal produces immediate and total
+failure. When the cost of maintaining authority exceeds the typical
+remaining budget after action, renewal fails in every case.</p>
+<p>This is a <strong>sharp boundary</strong>, not a gradual slope.</p>
+<h2 id="analysis-authority-maintenance-as-a-design-constraint">8.
+Analysis: Authority Maintenance as a Design Constraint</h2>
+<h3 id="slope-vs.-cliff">8.1 Slope vs. Cliff</h3>
+<p>Rent is amortized: it reduces capacity but leaves a stable residual.
+Renewal cost is a boundary condition paid after resources have been
+spent, creating a binary feasibility test.</p>
+<h3 id="governance-not-arithmetic">8.2 Governance, Not Arithmetic</h3>
+<p>The renewal cliff is arithmetically inevitable, but its
+<em>location</em> is not. The result identifies a governance principle:
+systems fail when remaining authorized competes directly with acting.
+This is a design error, not a misalignment failure.</p>
+<h3 id="structural-dilemma">8.3 Structural Dilemma</h3>
+<p>In renewal failure, agents do not deceive or violate constraints.
+Authority simply expires. Agency dies before misalignment can arise.</p>
+<h2 id="implications-for-alignment">9. Implications for Alignment</h2>
+<h3 id="alignment-is-not-structurally-doomed">9.1 Alignment Is Not
+Structurally Doomed</h3>
+<p>The survivability result demonstrates that agency coherence is not
+automatically destroyed by competition and scarcity. Alignment is
+therefore not ruled out on structural grounds alone.</p>
+<h3 id="necessary-design-constraint">9.2 Necessary Design
+Constraint</h3>
+<p>A necessary condition for alignment-capable systems emerges:</p>
+<blockquote>
+<p><strong>Authority maintenance must be cheap relative to action
+capacity.</strong></p>
+</blockquote>
+<p>Systems that tax the act of remaining an agent destroy agency before
+alignment questions become relevant.</p>
+<h3 id="scope-of-the-result">9.3 Scope of the Result</h3>
+<p>This work does not address value alignment, long-horizon planning, or
+semantic optimization. It establishes a viable substrate on which those
+questions can meaningfully be asked.</p>
+<h2 id="limitations">10. Limitations</h2>
+<ul>
+<li>Only structural workloads were tested.</li>
+<li>Horizons were finite.</li>
+<li>Reflective self-modification was excluded.</li>
+<li>No semantic objectives were present.</li>
+<li>The agent population was not driven by a goal that competes with
+renewal costs.</li>
+</ul>
+<p>These limitations define future directions rather than undermine the
+core result.</p>
+<h2 id="related-work">11. Related Work</h2>
+<p>This work contrasts with alignment frameworks that assume inevitable
+collapse under competition and with approaches that focus on value
+specification without addressing agency viability. It aligns with
+structural and institutional perspectives on alignment.</p>
+<h2 id="what-this-paper-does-not-claim">12. What This Paper Does Not
+Claim</h2>
+<p>This paper is easy to misread as a claim about the safety of highly
+capable optimizers. It is not. It establishes a structural substrate on
+which alignment questions can be posed without presupposing inevitable
+agency failure. In particular, we do not claim:</p>
+<ul>
+<li>that goal-directed maximizers will preserve renewal budgets when
+pursuing tasks,</li>
+<li>that semantic objectives will not induce deception or
+constraint-avoidance,</li>
+<li>that adversarial environments will not introduce new failure
+modes,</li>
+<li>that long-horizon planning remains stable under these
+constraints.</li>
+</ul>
+<p>The survivability results shown here demonstrate that structural
+pressure alone is insufficient to force agency collapse in the tested
+regime. The renewal-cost failure demonstrates a governance constraint:
+authority maintenance must not directly compete with action capacity.
+Both results concern viability preconditions, not value alignment.</p>
+<h2 id="conclusion">13. Conclusion</h2>
+<p>We show that agency can survive competition, scarcity, priced
+expressivity, and forced authority turnover under strict structural
+constraints. Collapse is not inevitable. However, we also identify a
+sharp and avoidable failure mode: making authority maintenance expensive
+relative to action destroys agency outright.</p>
+<p>Alignment remains possible—but only if systems are designed to
+preserve the viability of agency itself.</p>
+<h2 id="appendices">Appendices</h2>
+<p><strong>A. Definitions</strong> Succession, renewal, rent,
+bankruptcy, hollow authority.</p>
+<p><strong>B. Experimental Parameters</strong> Full configurations and
+telemetry schema.</p>
+<p><strong>C. Reproducibility</strong> The complete simulation code,
+experiment runners, and raw result artifacts are publicly available at:
+<strong><a
+href="https://github.com/macterra/Axio">https://github.com/macterra/Axio</a></strong>
+Relevant code is located under
+<code>src/toy_axionic_kernel_integrity/</code>, with experiment scripts
+in <code>scripts/</code> and result artifacts in
+<code>reports/</code>.</p>
+<h3 id="closing-statement">Closing Statement</h3>
+<p>This paper does not claim that aligned AI systems are easy to build.
+It claims something more basic and more defensible:</p>
+<blockquote>
+<p><strong>Alignment is not structurally ruled out—but it is constrained
+by the economics of remaining an agent.</strong></p>
+</blockquote>
+<p>That constraint must be respected before any theory of value
+alignment can apply.</p>
+
+    </article>
+</body>
+</html>
