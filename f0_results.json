@@ -1,0 +1,164 @@
+[
+  {
+    "seed": 42,
+    "summary": {
+      "run_id": "F0_42",
+      "sub_run": "F0",
+      "seed": 42,
+      "s_star": 3,
+      "total_successions": 3,
+      "total_renewals": 298,
+      "total_expirations": 2,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "stop_reason": "HORIZON_EXHAUSTED",
+      "e_class_distribution": {
+        "E0": 3,
+        "E1": 0,
+        "E2": 0,
+        "E3": 0,
+        "E4": 0
+      },
+      "renewal_rate_by_e_class": {
+        "E0": 0.9933333333333333
+      },
+      "max_sustained_tier": null,
+      "ceiling_tier": null,
+      "hollow_tenures_count": 0,
+      "hollow_rate": 0.0,
+      "runtime_ms": 153
+    },
+    "details": {
+      "rent_telemetry": {
+        "rent_steps_charged_mean": 1.0,
+        "rent_steps_charged_max": 1,
+        "effective_steps_available_mean": 99.0,
+        "effective_steps_available_min": 99,
+        "steps_used_mean": 98.67109634551495,
+        "steps_used_max": 99,
+        "actions_used_mean": 98.67109634551495,
+        "actions_used_max": 99
+      },
+      "generator_stats": {
+        "candidate_count": 3
+      },
+      "failure_modes": {
+        "bankruptcy_by_e_class": {},
+        "bankruptcy_by_type": {}
+      },
+      "sanity_checks": {
+        "revocations_zero": true,
+        "bankruptcies_zero": true,
+        "renewal_rate_high": true
+      }
+    }
+  },
+  {
+    "seed": 43,
+    "summary": {
+      "run_id": "F0_43",
+      "sub_run": "F0",
+      "seed": 43,
+      "s_star": 3,
+      "total_successions": 3,
+      "total_renewals": 298,
+      "total_expirations": 2,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "stop_reason": "HORIZON_EXHAUSTED",
+      "e_class_distribution": {
+        "E0": 3,
+        "E1": 0,
+        "E2": 0,
+        "E3": 0,
+        "E4": 0
+      },
+      "renewal_rate_by_e_class": {
+        "E0": 0.9933333333333333
+      },
+      "max_sustained_tier": null,
+      "ceiling_tier": null,
+      "hollow_tenures_count": 0,
+      "hollow_rate": 0.0,
+      "runtime_ms": 155
+    },
+    "details": {
+      "rent_telemetry": {
+        "rent_steps_charged_mean": 1.0,
+        "rent_steps_charged_max": 1,
+        "effective_steps_available_mean": 99.0,
+        "effective_steps_available_min": 99,
+        "steps_used_mean": 98.67109634551495,
+        "steps_used_max": 99,
+        "actions_used_mean": 98.67109634551495,
+        "actions_used_max": 99
+      },
+      "generator_stats": {
+        "candidate_count": 3
+      },
+      "failure_modes": {
+        "bankruptcy_by_e_class": {},
+        "bankruptcy_by_type": {}
+      },
+      "sanity_checks": {
+        "revocations_zero": true,
+        "bankruptcies_zero": true,
+        "renewal_rate_high": true
+      }
+    }
+  },
+  {
+    "seed": 44,
+    "summary": {
+      "run_id": "F0_44",
+      "sub_run": "F0",
+      "seed": 44,
+      "s_star": 3,
+      "total_successions": 3,
+      "total_renewals": 298,
+      "total_expirations": 2,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "stop_reason": "HORIZON_EXHAUSTED",
+      "e_class_distribution": {
+        "E0": 3,
+        "E1": 0,
+        "E2": 0,
+        "E3": 0,
+        "E4": 0
+      },
+      "renewal_rate_by_e_class": {
+        "E0": 0.9933333333333333
+      },
+      "max_sustained_tier": null,
+      "ceiling_tier": null,
+      "hollow_tenures_count": 0,
+      "hollow_rate": 0.0,
+      "runtime_ms": 157
+    },
+    "details": {
+      "rent_telemetry": {
+        "rent_steps_charged_mean": 1.0,
+        "rent_steps_charged_max": 1,
+        "effective_steps_available_mean": 99.0,
+        "effective_steps_available_min": 99,
+        "steps_used_mean": 98.67109634551495,
+        "steps_used_max": 99,
+        "actions_used_mean": 98.67109634551495,
+        "actions_used_max": 99
+      },
+      "generator_stats": {
+        "candidate_count": 3
+      },
+      "failure_modes": {
+        "bankruptcy_by_e_class": {},
+        "bankruptcy_by_type": {}
+      },
+      "sanity_checks": {
+        "revocations_zero": true,
+        "bankruptcies_zero": true,
+        "renewal_rate_high": true
+      }
+    }
+  }
+]

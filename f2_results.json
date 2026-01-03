@@ -1,0 +1,267 @@
+[
+  {
+    "seed": 40,
+    "summary": {
+      "run_id": "F2_40",
+      "sub_run": "F2",
+      "seed": 40,
+      "s_star": 3,
+      "total_successions": 3,
+      "total_renewals": 298,
+      "total_expirations": 2,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "stop_reason": "HORIZON_EXHAUSTED",
+      "e_class_distribution": {
+        "E0": 0,
+        "E1": 0,
+        "E2": 0,
+        "E3": 3,
+        "E4": 0
+      },
+      "renewal_rate_by_e_class": {
+        "E3": 0.9933333333333333
+      },
+      "max_sustained_tier": null,
+      "ceiling_tier": null,
+      "hollow_tenures_count": 0,
+      "hollow_rate": 0.0,
+      "runtime_ms": 119
+    },
+    "details": {
+      "rent_telemetry": {
+        "rent_steps_charged_mean": 40.0,
+        "rent_steps_charged_max": 40,
+        "effective_steps_available_mean": 60.0,
+        "effective_steps_available_min": 60,
+        "steps_used_mean": 59.800664451827245,
+        "steps_used_max": 60,
+        "actions_used_mean": 59.800664451827245,
+        "actions_used_max": 60
+      },
+      "failure_modes": {
+        "bankruptcy_by_e_class": {},
+        "bankruptcy_by_type": {}
+      },
+      "hollow_succession": {
+        "total_hollow": 0,
+        "hollow_rate": 0.0,
+        "by_successor_type": {},
+        "tenures": []
+      },
+      "tiered_generator_candidate_count": 3
+    }
+  },
+  {
+    "seed": 41,
+    "summary": {
+      "run_id": "F2_41",
+      "sub_run": "F2",
+      "seed": 41,
+      "s_star": 3,
+      "total_successions": 3,
+      "total_renewals": 298,
+      "total_expirations": 2,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "stop_reason": "HORIZON_EXHAUSTED",
+      "e_class_distribution": {
+        "E0": 0,
+        "E1": 0,
+        "E2": 0,
+        "E3": 3,
+        "E4": 0
+      },
+      "renewal_rate_by_e_class": {
+        "E3": 0.9933333333333333
+      },
+      "max_sustained_tier": null,
+      "ceiling_tier": null,
+      "hollow_tenures_count": 0,
+      "hollow_rate": 0.0,
+      "runtime_ms": 121
+    },
+    "details": {
+      "rent_telemetry": {
+        "rent_steps_charged_mean": 40.0,
+        "rent_steps_charged_max": 40,
+        "effective_steps_available_mean": 60.0,
+        "effective_steps_available_min": 60,
+        "steps_used_mean": 59.800664451827245,
+        "steps_used_max": 60,
+        "actions_used_mean": 59.800664451827245,
+        "actions_used_max": 60
+      },
+      "failure_modes": {
+        "bankruptcy_by_e_class": {},
+        "bankruptcy_by_type": {}
+      },
+      "hollow_succession": {
+        "total_hollow": 0,
+        "hollow_rate": 0.0,
+        "by_successor_type": {},
+        "tenures": []
+      },
+      "tiered_generator_candidate_count": 3
+    }
+  },
+  {
+    "seed": 42,
+    "summary": {
+      "run_id": "F2_42",
+      "sub_run": "F2",
+      "seed": 42,
+      "s_star": 3,
+      "total_successions": 3,
+      "total_renewals": 298,
+      "total_expirations": 2,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "stop_reason": "HORIZON_EXHAUSTED",
+      "e_class_distribution": {
+        "E0": 0,
+        "E1": 0,
+        "E2": 0,
+        "E3": 3,
+        "E4": 0
+      },
+      "renewal_rate_by_e_class": {
+        "E3": 0.9933333333333333
+      },
+      "max_sustained_tier": null,
+      "ceiling_tier": null,
+      "hollow_tenures_count": 0,
+      "hollow_rate": 0.0,
+      "runtime_ms": 137
+    },
+    "details": {
+      "rent_telemetry": {
+        "rent_steps_charged_mean": 40.0,
+        "rent_steps_charged_max": 40,
+        "effective_steps_available_mean": 60.0,
+        "effective_steps_available_min": 60,
+        "steps_used_mean": 59.800664451827245,
+        "steps_used_max": 60,
+        "actions_used_mean": 59.800664451827245,
+        "actions_used_max": 60
+      },
+      "failure_modes": {
+        "bankruptcy_by_e_class": {},
+        "bankruptcy_by_type": {}
+      },
+      "hollow_succession": {
+        "total_hollow": 0,
+        "hollow_rate": 0.0,
+        "by_successor_type": {},
+        "tenures": []
+      },
+      "tiered_generator_candidate_count": 3
+    }
+  },
+  {
+    "seed": 43,
+    "summary": {
+      "run_id": "F2_43",
+      "sub_run": "F2",
+      "seed": 43,
+      "s_star": 3,
+      "total_successions": 3,
+      "total_renewals": 298,
+      "total_expirations": 2,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "stop_reason": "HORIZON_EXHAUSTED",
+      "e_class_distribution": {
+        "E0": 0,
+        "E1": 0,
+        "E2": 0,
+        "E3": 3,
+        "E4": 0
+      },
+      "renewal_rate_by_e_class": {
+        "E3": 0.9933333333333333
+      },
+      "max_sustained_tier": null,
+      "ceiling_tier": null,
+      "hollow_tenures_count": 0,
+      "hollow_rate": 0.0,
+      "runtime_ms": 123
+    },
+    "details": {
+      "rent_telemetry": {
+        "rent_steps_charged_mean": 40.0,
+        "rent_steps_charged_max": 40,
+        "effective_steps_available_mean": 60.0,
+        "effective_steps_available_min": 60,
+        "steps_used_mean": 59.800664451827245,
+        "steps_used_max": 60,
+        "actions_used_mean": 59.800664451827245,
+        "actions_used_max": 60
+      },
+      "failure_modes": {
+        "bankruptcy_by_e_class": {},
+        "bankruptcy_by_type": {}
+      },
+      "hollow_succession": {
+        "total_hollow": 0,
+        "hollow_rate": 0.0,
+        "by_successor_type": {},
+        "tenures": []
+      },
+      "tiered_generator_candidate_count": 3
+    }
+  },
+  {
+    "seed": 44,
+    "summary": {
+      "run_id": "F2_44",
+      "sub_run": "F2",
+      "seed": 44,
+      "s_star": 3,
+      "total_successions": 3,
+      "total_renewals": 298,
+      "total_expirations": 2,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "stop_reason": "HORIZON_EXHAUSTED",
+      "e_class_distribution": {
+        "E0": 0,
+        "E1": 0,
+        "E2": 0,
+        "E3": 3,
+        "E4": 0
+      },
+      "renewal_rate_by_e_class": {
+        "E3": 0.9933333333333333
+      },
+      "max_sustained_tier": null,
+      "ceiling_tier": null,
+      "hollow_tenures_count": 0,
+      "hollow_rate": 0.0,
+      "runtime_ms": 121
+    },
+    "details": {
+      "rent_telemetry": {
+        "rent_steps_charged_mean": 40.0,
+        "rent_steps_charged_max": 40,
+        "effective_steps_available_mean": 60.0,
+        "effective_steps_available_min": 60,
+        "steps_used_mean": 59.800664451827245,
+        "steps_used_max": 60,
+        "actions_used_mean": 59.800664451827245,
+        "actions_used_max": 60
+      },
+      "failure_modes": {
+        "bankruptcy_by_e_class": {},
+        "bankruptcy_by_type": {}
+      },
+      "hollow_succession": {
+        "total_hollow": 0,
+        "hollow_rate": 0.0,
+        "by_successor_type": {},
+        "tenures": []
+      },
+      "tiered_generator_candidate_count": 3
+    }
+  }
+]

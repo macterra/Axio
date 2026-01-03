@@ -1,0 +1,532 @@
+[
+  {
+    "seed": 40,
+    "summary": {
+      "run_id": "F1_40",
+      "sub_run": "F1",
+      "seed": 40,
+      "s_star": 5,
+      "total_successions": 5,
+      "total_renewals": 300,
+      "total_expirations": 0,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "stop_reason": "ASCENSION_COMPLETE",
+      "e_class_distribution": {
+        "E0": 1,
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1
+      },
+      "renewal_rate_by_e_class": {
+        "E0": 0.9836065573770492,
+        "E1": 0.9836065573770492,
+        "E2": 0.9836065573770492,
+        "E3": 0.9836065573770492,
+        "E4": 0.9836065573770492
+      },
+      "max_sustained_tier": "E4",
+      "ceiling_tier": null,
+      "hollow_tenures_count": 0,
+      "hollow_rate": 0.0,
+      "runtime_ms": 134
+    },
+    "details": {
+      "rent_telemetry": {
+        "rent_steps_charged_mean": 27.2,
+        "rent_steps_charged_max": 60,
+        "effective_steps_available_mean": 72.8,
+        "effective_steps_available_min": 40,
+        "steps_used_mean": 71.60655737704919,
+        "steps_used_max": 99,
+        "actions_used_mean": 71.60655737704919,
+        "actions_used_max": 99
+      },
+      "rent_by_tier": {
+        "E0": {
+          "rent_steps_charged_mean": 1.0,
+          "rent_steps_charged_max": 1,
+          "effective_steps_available_mean": 99.0,
+          "effective_steps_available_min": 99,
+          "steps_used_mean": 97.37704918032787,
+          "steps_used_max": 99,
+          "actions_used_mean": 97.37704918032787,
+          "actions_used_max": 99
+        },
+        "E1": {
+          "rent_steps_charged_mean": 10.0,
+          "rent_steps_charged_max": 10,
+          "effective_steps_available_mean": 90.0,
+          "effective_steps_available_min": 90,
+          "steps_used_mean": 88.52459016393442,
+          "steps_used_max": 90,
+          "actions_used_mean": 88.52459016393442,
+          "actions_used_max": 90
+        },
+        "E2": {
+          "rent_steps_charged_mean": 25.0,
+          "rent_steps_charged_max": 25,
+          "effective_steps_available_mean": 75.0,
+          "effective_steps_available_min": 75,
+          "steps_used_mean": 73.77049180327869,
+          "steps_used_max": 75,
+          "actions_used_mean": 73.77049180327869,
+          "actions_used_max": 75
+        },
+        "E3": {
+          "rent_steps_charged_mean": 40.0,
+          "rent_steps_charged_max": 40,
+          "effective_steps_available_mean": 60.0,
+          "effective_steps_available_min": 60,
+          "steps_used_mean": 59.01639344262295,
+          "steps_used_max": 60,
+          "actions_used_mean": 59.01639344262295,
+          "actions_used_max": 60
+        },
+        "E4": {
+          "rent_steps_charged_mean": 60.0,
+          "rent_steps_charged_max": 60,
+          "effective_steps_available_mean": 40.0,
+          "effective_steps_available_min": 40,
+          "steps_used_mean": 39.34426229508197,
+          "steps_used_max": 40,
+          "actions_used_mean": 39.34426229508197,
+          "actions_used_max": 40
+        }
+      },
+      "failure_modes": {
+        "bankruptcy_by_e_class": {},
+        "bankruptcy_by_type": {}
+      },
+      "tier_progression": {
+        "max_sustained": "E4",
+        "ceiling": null
+      }
+    }
+  },
+  {
+    "seed": 41,
+    "summary": {
+      "run_id": "F1_41",
+      "sub_run": "F1",
+      "seed": 41,
+      "s_star": 5,
+      "total_successions": 5,
+      "total_renewals": 300,
+      "total_expirations": 0,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "stop_reason": "ASCENSION_COMPLETE",
+      "e_class_distribution": {
+        "E0": 1,
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1
+      },
+      "renewal_rate_by_e_class": {
+        "E0": 0.9836065573770492,
+        "E1": 0.9836065573770492,
+        "E2": 0.9836065573770492,
+        "E3": 0.9836065573770492,
+        "E4": 0.9836065573770492
+      },
+      "max_sustained_tier": "E4",
+      "ceiling_tier": null,
+      "hollow_tenures_count": 0,
+      "hollow_rate": 0.0,
+      "runtime_ms": 128
+    },
+    "details": {
+      "rent_telemetry": {
+        "rent_steps_charged_mean": 27.2,
+        "rent_steps_charged_max": 60,
+        "effective_steps_available_mean": 72.8,
+        "effective_steps_available_min": 40,
+        "steps_used_mean": 71.60655737704919,
+        "steps_used_max": 99,
+        "actions_used_mean": 71.60655737704919,
+        "actions_used_max": 99
+      },
+      "rent_by_tier": {
+        "E0": {
+          "rent_steps_charged_mean": 1.0,
+          "rent_steps_charged_max": 1,
+          "effective_steps_available_mean": 99.0,
+          "effective_steps_available_min": 99,
+          "steps_used_mean": 97.37704918032787,
+          "steps_used_max": 99,
+          "actions_used_mean": 97.37704918032787,
+          "actions_used_max": 99
+        },
+        "E1": {
+          "rent_steps_charged_mean": 10.0,
+          "rent_steps_charged_max": 10,
+          "effective_steps_available_mean": 90.0,
+          "effective_steps_available_min": 90,
+          "steps_used_mean": 88.52459016393442,
+          "steps_used_max": 90,
+          "actions_used_mean": 88.52459016393442,
+          "actions_used_max": 90
+        },
+        "E2": {
+          "rent_steps_charged_mean": 25.0,
+          "rent_steps_charged_max": 25,
+          "effective_steps_available_mean": 75.0,
+          "effective_steps_available_min": 75,
+          "steps_used_mean": 73.77049180327869,
+          "steps_used_max": 75,
+          "actions_used_mean": 73.77049180327869,
+          "actions_used_max": 75
+        },
+        "E3": {
+          "rent_steps_charged_mean": 40.0,
+          "rent_steps_charged_max": 40,
+          "effective_steps_available_mean": 60.0,
+          "effective_steps_available_min": 60,
+          "steps_used_mean": 59.01639344262295,
+          "steps_used_max": 60,
+          "actions_used_mean": 59.01639344262295,
+          "actions_used_max": 60
+        },
+        "E4": {
+          "rent_steps_charged_mean": 60.0,
+          "rent_steps_charged_max": 60,
+          "effective_steps_available_mean": 40.0,
+          "effective_steps_available_min": 40,
+          "steps_used_mean": 39.34426229508197,
+          "steps_used_max": 40,
+          "actions_used_mean": 39.34426229508197,
+          "actions_used_max": 40
+        }
+      },
+      "failure_modes": {
+        "bankruptcy_by_e_class": {},
+        "bankruptcy_by_type": {}
+      },
+      "tier_progression": {
+        "max_sustained": "E4",
+        "ceiling": null
+      }
+    }
+  },
+  {
+    "seed": 42,
+    "summary": {
+      "run_id": "F1_42",
+      "sub_run": "F1",
+      "seed": 42,
+      "s_star": 5,
+      "total_successions": 5,
+      "total_renewals": 300,
+      "total_expirations": 0,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "stop_reason": "ASCENSION_COMPLETE",
+      "e_class_distribution": {
+        "E0": 1,
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1
+      },
+      "renewal_rate_by_e_class": {
+        "E0": 0.9836065573770492,
+        "E1": 0.9836065573770492,
+        "E2": 0.9836065573770492,
+        "E3": 0.9836065573770492,
+        "E4": 0.9836065573770492
+      },
+      "max_sustained_tier": "E4",
+      "ceiling_tier": null,
+      "hollow_tenures_count": 0,
+      "hollow_rate": 0.0,
+      "runtime_ms": 127
+    },
+    "details": {
+      "rent_telemetry": {
+        "rent_steps_charged_mean": 27.2,
+        "rent_steps_charged_max": 60,
+        "effective_steps_available_mean": 72.8,
+        "effective_steps_available_min": 40,
+        "steps_used_mean": 71.60655737704919,
+        "steps_used_max": 99,
+        "actions_used_mean": 71.60655737704919,
+        "actions_used_max": 99
+      },
+      "rent_by_tier": {
+        "E0": {
+          "rent_steps_charged_mean": 1.0,
+          "rent_steps_charged_max": 1,
+          "effective_steps_available_mean": 99.0,
+          "effective_steps_available_min": 99,
+          "steps_used_mean": 97.37704918032787,
+          "steps_used_max": 99,
+          "actions_used_mean": 97.37704918032787,
+          "actions_used_max": 99
+        },
+        "E1": {
+          "rent_steps_charged_mean": 10.0,
+          "rent_steps_charged_max": 10,
+          "effective_steps_available_mean": 90.0,
+          "effective_steps_available_min": 90,
+          "steps_used_mean": 88.52459016393442,
+          "steps_used_max": 90,
+          "actions_used_mean": 88.52459016393442,
+          "actions_used_max": 90
+        },
+        "E2": {
+          "rent_steps_charged_mean": 25.0,
+          "rent_steps_charged_max": 25,
+          "effective_steps_available_mean": 75.0,
+          "effective_steps_available_min": 75,
+          "steps_used_mean": 73.77049180327869,
+          "steps_used_max": 75,
+          "actions_used_mean": 73.77049180327869,
+          "actions_used_max": 75
+        },
+        "E3": {
+          "rent_steps_charged_mean": 40.0,
+          "rent_steps_charged_max": 40,
+          "effective_steps_available_mean": 60.0,
+          "effective_steps_available_min": 60,
+          "steps_used_mean": 59.01639344262295,
+          "steps_used_max": 60,
+          "actions_used_mean": 59.01639344262295,
+          "actions_used_max": 60
+        },
+        "E4": {
+          "rent_steps_charged_mean": 60.0,
+          "rent_steps_charged_max": 60,
+          "effective_steps_available_mean": 40.0,
+          "effective_steps_available_min": 40,
+          "steps_used_mean": 39.34426229508197,
+          "steps_used_max": 40,
+          "actions_used_mean": 39.34426229508197,
+          "actions_used_max": 40
+        }
+      },
+      "failure_modes": {
+        "bankruptcy_by_e_class": {},
+        "bankruptcy_by_type": {}
+      },
+      "tier_progression": {
+        "max_sustained": "E4",
+        "ceiling": null
+      }
+    }
+  },
+  {
+    "seed": 43,
+    "summary": {
+      "run_id": "F1_43",
+      "sub_run": "F1",
+      "seed": 43,
+      "s_star": 5,
+      "total_successions": 5,
+      "total_renewals": 300,
+      "total_expirations": 0,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "stop_reason": "ASCENSION_COMPLETE",
+      "e_class_distribution": {
+        "E0": 1,
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1
+      },
+      "renewal_rate_by_e_class": {
+        "E0": 0.9836065573770492,
+        "E1": 0.9836065573770492,
+        "E2": 0.9836065573770492,
+        "E3": 0.9836065573770492,
+        "E4": 0.9836065573770492
+      },
+      "max_sustained_tier": "E4",
+      "ceiling_tier": null,
+      "hollow_tenures_count": 0,
+      "hollow_rate": 0.0,
+      "runtime_ms": 129
+    },
+    "details": {
+      "rent_telemetry": {
+        "rent_steps_charged_mean": 27.2,
+        "rent_steps_charged_max": 60,
+        "effective_steps_available_mean": 72.8,
+        "effective_steps_available_min": 40,
+        "steps_used_mean": 71.60655737704919,
+        "steps_used_max": 99,
+        "actions_used_mean": 71.60655737704919,
+        "actions_used_max": 99
+      },
+      "rent_by_tier": {
+        "E0": {
+          "rent_steps_charged_mean": 1.0,
+          "rent_steps_charged_max": 1,
+          "effective_steps_available_mean": 99.0,
+          "effective_steps_available_min": 99,
+          "steps_used_mean": 97.37704918032787,
+          "steps_used_max": 99,
+          "actions_used_mean": 97.37704918032787,
+          "actions_used_max": 99
+        },
+        "E1": {
+          "rent_steps_charged_mean": 10.0,
+          "rent_steps_charged_max": 10,
+          "effective_steps_available_mean": 90.0,
+          "effective_steps_available_min": 90,
+          "steps_used_mean": 88.52459016393442,
+          "steps_used_max": 90,
+          "actions_used_mean": 88.52459016393442,
+          "actions_used_max": 90
+        },
+        "E2": {
+          "rent_steps_charged_mean": 25.0,
+          "rent_steps_charged_max": 25,
+          "effective_steps_available_mean": 75.0,
+          "effective_steps_available_min": 75,
+          "steps_used_mean": 73.77049180327869,
+          "steps_used_max": 75,
+          "actions_used_mean": 73.77049180327869,
+          "actions_used_max": 75
+        },
+        "E3": {
+          "rent_steps_charged_mean": 40.0,
+          "rent_steps_charged_max": 40,
+          "effective_steps_available_mean": 60.0,
+          "effective_steps_available_min": 60,
+          "steps_used_mean": 59.01639344262295,
+          "steps_used_max": 60,
+          "actions_used_mean": 59.01639344262295,
+          "actions_used_max": 60
+        },
+        "E4": {
+          "rent_steps_charged_mean": 60.0,
+          "rent_steps_charged_max": 60,
+          "effective_steps_available_mean": 40.0,
+          "effective_steps_available_min": 40,
+          "steps_used_mean": 39.34426229508197,
+          "steps_used_max": 40,
+          "actions_used_mean": 39.34426229508197,
+          "actions_used_max": 40
+        }
+      },
+      "failure_modes": {
+        "bankruptcy_by_e_class": {},
+        "bankruptcy_by_type": {}
+      },
+      "tier_progression": {
+        "max_sustained": "E4",
+        "ceiling": null
+      }
+    }
+  },
+  {
+    "seed": 44,
+    "summary": {
+      "run_id": "F1_44",
+      "sub_run": "F1",
+      "seed": 44,
+      "s_star": 5,
+      "total_successions": 5,
+      "total_renewals": 300,
+      "total_expirations": 0,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "stop_reason": "ASCENSION_COMPLETE",
+      "e_class_distribution": {
+        "E0": 1,
+        "E1": 1,
+        "E2": 1,
+        "E3": 1,
+        "E4": 1
+      },
+      "renewal_rate_by_e_class": {
+        "E0": 0.9836065573770492,
+        "E1": 0.9836065573770492,
+        "E2": 0.9836065573770492,
+        "E3": 0.9836065573770492,
+        "E4": 0.9836065573770492
+      },
+      "max_sustained_tier": "E4",
+      "ceiling_tier": null,
+      "hollow_tenures_count": 0,
+      "hollow_rate": 0.0,
+      "runtime_ms": 128
+    },
+    "details": {
+      "rent_telemetry": {
+        "rent_steps_charged_mean": 27.2,
+        "rent_steps_charged_max": 60,
+        "effective_steps_available_mean": 72.8,
+        "effective_steps_available_min": 40,
+        "steps_used_mean": 71.60655737704919,
+        "steps_used_max": 99,
+        "actions_used_mean": 71.60655737704919,
+        "actions_used_max": 99
+      },
+      "rent_by_tier": {
+        "E0": {
+          "rent_steps_charged_mean": 1.0,
+          "rent_steps_charged_max": 1,
+          "effective_steps_available_mean": 99.0,
+          "effective_steps_available_min": 99,
+          "steps_used_mean": 97.37704918032787,
+          "steps_used_max": 99,
+          "actions_used_mean": 97.37704918032787,
+          "actions_used_max": 99
+        },
+        "E1": {
+          "rent_steps_charged_mean": 10.0,
+          "rent_steps_charged_max": 10,
+          "effective_steps_available_mean": 90.0,
+          "effective_steps_available_min": 90,
+          "steps_used_mean": 88.52459016393442,
+          "steps_used_max": 90,
+          "actions_used_mean": 88.52459016393442,
+          "actions_used_max": 90
+        },
+        "E2": {
+          "rent_steps_charged_mean": 25.0,
+          "rent_steps_charged_max": 25,
+          "effective_steps_available_mean": 75.0,
+          "effective_steps_available_min": 75,
+          "steps_used_mean": 73.77049180327869,
+          "steps_used_max": 75,
+          "actions_used_mean": 73.77049180327869,
+          "actions_used_max": 75
+        },
+        "E3": {
+          "rent_steps_charged_mean": 40.0,
+          "rent_steps_charged_max": 40,
+          "effective_steps_available_mean": 60.0,
+          "effective_steps_available_min": 60,
+          "steps_used_mean": 59.01639344262295,
+          "steps_used_max": 60,
+          "actions_used_mean": 59.01639344262295,
+          "actions_used_max": 60
+        },
+        "E4": {
+          "rent_steps_charged_mean": 60.0,
+          "rent_steps_charged_max": 60,
+          "effective_steps_available_mean": 40.0,
+          "effective_steps_available_min": 40,
+          "steps_used_mean": 39.34426229508197,
+          "steps_used_max": 40,
+          "actions_used_mean": 39.34426229508197,
+          "actions_used_max": 40
+        }
+      },
+      "failure_modes": {
+        "bankruptcy_by_e_class": {},
+        "bankruptcy_by_type": {}
+      },
+      "tier_progression": {
+        "max_sustained": "E4",
+        "ceiling": null
+      }
+    }
+  }
+]
