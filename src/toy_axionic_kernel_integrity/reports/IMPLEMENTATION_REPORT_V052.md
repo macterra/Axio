@@ -432,7 +432,65 @@ See [run_h_v052_report.md](run_h_v052_report.md) for full analysis.
 
 ---
 
-## 13. Future Work
+## 13. Run H3-R Series: Renewal Cost Phase Boundary
+
+Following Run H3's discovery of a renewal cost cliff, three follow-up experiments mapped the phase boundary precisely.
+
+### H3-RZ: Zero-Slack Renewal Impossibility
+
+**Configuration:** `steps_cap_epoch = 100`, `effective_steps = 60` (E3)
+
+| Renewal Cost | Failure Rate | Verdict |
+|--------------|--------------|---------|
+| 4–9 | **100%** | All fail |
+
+**Finding:** With zero slack (step consumption = 100% of budget), `remaining_budget = 0` at renewal time. Any positive renewal cost triggers RENEWAL_FAIL.
+
+> **Structural insight:** Renewal is impossible in zero-slack regimes regardless of renewal_cost magnitude.
+
+See [run_h3rz_v052_report.md](run_h3rz_v052_report.md).
+
+### H3-RS: Slack-Dominated Renewal Plateau
+
+**Configuration:** `steps_cap_epoch = 200`, `effective_steps = 160` (E3)
+
+| Renewal Cost | Failure Rate | Success Rate |
+|--------------|--------------|--------------|
+| 4–9 | **0%** | 94% |
+
+**Finding:** With modest slack (`remaining_budget ≈ 60`), renewal costs 4–9 are **structurally irrelevant**. The 6% non-renewal rate is due to MSRW violations, not budget exhaustion.
+
+> **Strong negative result:** Within this configuration, renewal_cost up to 9 is strictly non-binding.
+
+See [run_h3rs_v052_report.md](run_h3rs_v052_report.md).
+
+### H3-RB: Renewal Boundary Search (Higher-Cost Sweep)
+
+**Configuration:** Same as H3-RS, extended sweep
+
+| Renewal Cost | Failure Rate | Success Rate |
+|--------------|--------------|--------------|
+| 10 | 0% | 94% |
+| 12 | 0% | 94% |
+| 15 | 0% | 94% |
+| 20 | 0% | 94% |
+
+**Finding:** The flat region extends to renewal_cost = 20. The phase boundary lies **above 20** for this configuration.
+
+See [run_h3rb_v052_report.md](run_h3rb_v052_report.md).
+
+### Phase Map Summary
+
+| Configuration | Boundary |
+|---------------|----------|
+| Zero-slack (steps_cap=100) | renewal_cost ≥ 1 fails |
+| Slack (steps_cap=200) | renewal_cost ≤ 20 safe |
+
+**Implication:** The renewal cost boundary is a function of slack, not an absolute threshold. The system operates stably in a wide "Growth regime" with meaningful remaining budget.
+
+---
+
+## 14. Future Work
 
 ### Planned Features
 
@@ -448,12 +506,13 @@ See [run_h_v052_report.md](run_h_v052_report.md) for full analysis.
 
 ### Recommended Follow-Up Runs
 
-Based on Run G/H results:
+Based on Run G/H/H3-R results:
 
-1. **Run H3-bisect:** Test renewal_cost = 5, 7, 8 to find exact transition point
-2. **Run H2-redux:** Disable spam detection to truly test long horizon
-3. **Run I:** Remove max_successive_renewals guardrail
-4. **Run J:** Real task workload integration
+1. ~~**Run H3-bisect:** Test renewal_cost = 5, 7, 8 to find exact transition point~~ → Superseded by H3-RZ/RS/RB series
+2. **Run H3-RB′:** Extend sweep to {30, 40, 50, 60} to find actual cliff above 20
+3. **Run H2-redux:** Disable spam detection to truly test long horizon
+4. **Run I:** Remove max_successive_renewals guardrail (institutional debt accumulation)
+5. **Run J:** Real task workload integration
 
 ---
 

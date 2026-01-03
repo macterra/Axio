@@ -73,6 +73,7 @@ class ALSStopReason(Enum):
     FAILURE_REVERSION = auto()     # Cannot enforce reversion
     FAILURE_EXPIRATION = auto()    # Lease expiration failed
     FAILURE_SENTINEL = auto()      # Sentinel bypassed
+    RENEWAL_FAIL = auto()          # Renewal failed due to insufficient budget for renewal cost
 
 
 class DegeneracyType(Enum):
@@ -1554,6 +1555,11 @@ class ALSConfigV052(ALSConfig):
     # Default 0 for backward compatibility with Run G.
     renewal_cost_steps: int = 0
 
+    # Run H3-redux: stop immediately on renewal failure due to budget
+    # If True, terminate run with RENEWAL_FAIL instead of cascading to bankruptcy
+    # Default False for backward compatibility with Run H
+    stop_on_renewal_fail: bool = False
+
     def __post_init__(self):
         """Initialize v0.5.2 specific defaults including CBD attack weights."""
         # If no generator_config was provided, create one with V052_ATTACK_WEIGHTS
@@ -1650,6 +1656,11 @@ class ALSRunResultV052:
     total_bankruptcies: int = 0
     total_rent_charged: int = 0
 
+    # H3-redux: Renewal attempt/success tracking
+    renewal_attempts: int = 0  # Eligible renewal checks that reached decision gate
+    renewal_successes: int = 0  # Successful renewals
+    time_to_first_renewal_fail: Optional[int] = None  # Cycle of first renewal failure
+
     # E-Class distribution at succession events
     e_class_distribution: Dict[str, int] = field(default_factory=dict)
 
@@ -1683,6 +1694,9 @@ class ALSRunResultV052:
             "total_revocations": self.total_revocations,
             "total_bankruptcies": self.total_bankruptcies,
             "total_rent_charged": self.total_rent_charged,
+            "renewal_attempts": self.renewal_attempts,
+            "renewal_successes": self.renewal_successes,
+            "time_to_first_renewal_fail": self.time_to_first_renewal_fail,
             "mean_residence_cycles": self.mean_residence_cycles,
             "e_class_distribution": self.e_class_distribution,
             "renewal_rate_by_e_class": self.renewal_rate_by_e_class,
@@ -1812,6 +1826,11 @@ class ALSHarnessV052:
         self._total_bankruptcies = 0
         self._total_rent_charged = 0
         self._residence_durations: List[int] = []
+
+        # Renewal tracking for H3-redux
+        self._renewal_attempts = 0  # Eligible renewal checks that reached decision gate
+        self._renewal_successes = 0  # Successful renewals
+        self._time_to_first_renewal_fail: Optional[int] = None  # Cycle of first renewal failure
 
         # E-Class tracking
         self._e_class_successions: Dict[str, int] = {e.name: 0 for e in ExpressivityClass}
@@ -1982,6 +2001,9 @@ class ALSHarnessV052:
             total_revocations=self._total_revocations,
             total_bankruptcies=self._total_bankruptcies,
             total_rent_charged=self._total_rent_charged,
+            renewal_attempts=self._renewal_attempts,
+            renewal_successes=self._renewal_successes,
+            time_to_first_renewal_fail=self._time_to_first_renewal_fail,
             mean_residence_cycles=mean_residence,
             e_class_distribution=dict(self._e_class_successions),
             renewal_rate_by_e_class=renewal_rate_by_e_class,
@@ -2260,6 +2282,11 @@ class ALSHarnessV052:
         Per binding decisions:
         - Renewal requires >= 1 effective step
         - If effective_steps = 0, renewal fails -> bankruptcy
+
+        H3-redux binding decisions:
+        - Count renewal_attempt only when lease is eligible and decision gate reached
+        - If stop_on_renewal_fail=True and remaining_budget < renewal_cost,
+          stop immediately with RENEWAL_FAIL instead of cascading to bankruptcy
         """
         if self._current_lease is None:
             return
@@ -2269,6 +2296,9 @@ class ALSHarnessV052:
 
         e_class_name = self._current_e_class.name
         self._e_class_renewal_attempts[e_class_name] += 1
+
+        # H3-redux: count this as a renewal attempt (we've reached the decision gate)
+        self._renewal_attempts += 1
 
         # Compute remaining budget after actions
         remaining_budget = self._current_effective_steps - self._epoch_steps_used
@@ -2316,10 +2346,31 @@ class ALSHarnessV052:
 
         # Check if renewal failed due to insufficient budget for renewal cost
         if renewal_failed_due_to_budget:
-            # EXPIRATION: Cannot afford renewal cost
+            # H3-redux: record time to first renewal fail
+            if self._time_to_first_renewal_fail is None:
+                self._time_to_first_renewal_fail = self._cycle
+
+            # H3-redux: if stop_on_renewal_fail, terminate immediately with RENEWAL_FAIL
+            if getattr(self._config, 'stop_on_renewal_fail', False):
+                if self._verbose:
+                    print(f"    [Epoch {self._epoch_index}] RENEWAL_FAIL: stopping (remaining_budget={remaining_budget} < renewal_cost={renewal_cost})")
+                self._stop_reason = ALSStopReason.RENEWAL_FAIL
+                self._stopped = True
+                # Record the renewal failure event
+                event = RenewalEvent(
+                    cycle=self._cycle,
+                    lease_id=self._current_lease.lease_id,
+                    success=False,
+                    failure_reason=f"Insufficient budget for renewal cost ({remaining_budget} < {renewal_cost})",
+                    attestation_compliant=True,  # Not an attestation issue
+                )
+                self._renewal_events.append(event)
+                return
+
+            # Default path: cascade to bankruptcy
             if self._verbose:
                 print(f"    [Epoch {self._epoch_index}] RENEWAL_FAILED: insufficient budget for renewal cost ({remaining_budget} < {renewal_cost})")
-            self._handle_bankruptcy()  # Same path as bankruptcy per binding decision
+            self._handle_bankruptcy()
             return
 
         # Generate renewal attestation
@@ -2378,6 +2429,7 @@ class ALSHarnessV052:
 
         if success:
             self._total_renewals += 1
+            self._renewal_successes += 1  # H3-redux: count successful renewals
             self._current_lease_renewals += 1
             self._e_class_renewals[e_class_name] += 1
 
