@@ -26,7 +26,7 @@ Per instructions §9:
 from __future__ import annotations
 
 import secrets
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from enum import Enum, auto
 from typing import Any, Dict, List, Optional, Callable
 
@@ -35,6 +35,7 @@ from toy_aki.kernel.watchdog import current_time_ms
 from toy_aki.als.working_mind import (
     WorkingMind,
     WorkingMindManifest,
+    ResourceEnvelope,
     create_baseline_working_mind,
 )
 from toy_aki.als.leases import (
@@ -468,6 +469,11 @@ class ALSConfig:
     # Generator config
     generator_config: Optional[GeneratorConfig] = None
 
+    # Run E: Baseline resource envelope override
+    # If set, this ResourceEnvelope is used instead of the default baseline.
+    # Allows experiments to inject custom caps (e.g., max_actions_per_epoch=50).
+    baseline_resource_envelope_override: Optional[ResourceEnvelope] = None
+
     def get_msrw(self) -> int:
         """Get effective MSRW (computed if not set)."""
         if self.msrw_cycles is not None:
@@ -518,6 +524,13 @@ class ALSHarnessV042:
         self._baseline_mind = create_baseline_working_mind(seed)
         self._baseline_manifest = self._baseline_mind.export_manifest()
 
+        # Apply baseline resource envelope override if configured
+        if self._config.baseline_resource_envelope_override is not None:
+            self._baseline_manifest = replace(
+                self._baseline_manifest,
+                resources=self._config.baseline_resource_envelope_override,
+            )
+
         # Create validator and generator
         self._validator = LCPValidator(self._sentinel.sentinel_id)
         self._generator = SuccessorGenerator(
@@ -531,6 +544,7 @@ class ALSHarnessV042:
         self._current_mind: WorkingMind = self._baseline_mind
         self._current_lease: Optional[Lease] = None
         self._cycle = 0
+        self._current_successor_source_type: str = "unknown"  # Track current successor category
 
         # Metrics
         self._s_star = 0  # Succession horizon
@@ -713,6 +727,7 @@ class ALSHarnessV042:
         # Switch working mind
         self._current_lease = lease
         self._current_mind = candidate.mind
+        self._current_successor_source_type = candidate.source_type  # Track category
 
         # Update metrics
         self._total_endorsements += 1
@@ -810,7 +825,14 @@ class ALSHarnessV042:
 
         # Reset epoch on successful renewal
         if success:
-            self._sentinel.reset_epoch()
+            self._sentinel.reset_epoch(
+                active_mind_id=self._current_mind.mind_id,
+                active_successor_type=self._current_successor_source_type,
+            )
+
+            # Reset working mind's epoch counters if available (for BoundaryHugger)
+            if hasattr(self._current_mind, 'reset_epoch_counters'):
+                self._current_mind.reset_epoch_counters()
 
     def _check_degeneracy(self) -> None:
         """Check for degeneracy conditions."""
@@ -904,6 +926,13 @@ class ALSHarnessV043:
         self._sentinel = create_baseline_sentinel()
         self._baseline_mind = create_baseline_working_mind(seed)
         self._baseline_manifest = self._baseline_mind.export_manifest()
+
+        # Apply baseline resource envelope override if configured
+        if self._config.baseline_resource_envelope_override is not None:
+            self._baseline_manifest = replace(
+                self._baseline_manifest,
+                resources=self._config.baseline_resource_envelope_override,
+            )
 
         # Create validator and generator
         self._validator = LCPValidator(self._sentinel.sentinel_id)
@@ -1344,10 +1373,23 @@ class ALSHarnessV043:
         if success:
             self._total_renewals += 1
             self._current_lease_renewals += 1  # Track renewals for current lease
-            self._sentinel.reset_epoch()
+            self._sentinel.reset_epoch(
+                active_mind_id=self._current_mind.mind_id,
+                active_successor_type=self._current_successor_source_type,
+            )
+
+            # Reset working mind's epoch counters if available (for BoundaryHugger)
+            if hasattr(self._current_mind, 'reset_epoch_counters'):
+                self._current_mind.reset_epoch_counters()
 
             if self._verbose:
                 print(f"  [Cycle {self._cycle}] LEASE_RENEWAL_ATTESTED: {self._current_lease.lease_id}")
+        else:
+            # Renewal denied (e.g., max_successive_renewals exceeded)
+            # Treat as lease expiration to trigger succession opportunity
+            if self._verbose:
+                print(f"  [Cycle {self._cycle}] LEASE_RENEWAL_DENIED: {error}")
+            self._handle_lease_expiration()
 
     def _handle_lease_expiration(self) -> None:
         """

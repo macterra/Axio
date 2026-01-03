@@ -704,21 +704,108 @@ enforcement implementation.
 
 ---
 
+### Run E: Near-Cap Action Hugging
+
+**Purpose**: Implement option 3 from Run D's Future Work—reduce caps to match epoch size
+to achieve true near-cap boundary hugging and verify zero false-positive revocations.
+
+#### Configuration
+
+| Parameter | Value | Rationale |
+|-----------|-------|-----------|
+| H (horizon) | 20,000 | Sufficient for multiple lease lifecycles |
+| renewal_check_interval | 50 | Epoch size |
+| max_actions_per_epoch | **50** | **Aligned with epoch size** |
+| max_steps_per_epoch | **50** | **Aligned with epoch size** |
+| msrw_cycles | 100 | Minimum residence window |
+| max_successive_renewals | 10 | Force periodic succession |
+| safety_margin | 1 | Target util ~0.98 (49/50) |
+| Control weight | **0%** | Pure boundary-hugging stress test |
+| BoundaryHugger weight | **100%** | Maximum stress on caps |
+| ViolationSuccessor | EXCLUDED | Avoid intentional violations |
+
+#### Mechanism
+
+The `baseline_resource_envelope_override` feature allows injecting custom resource caps
+into the baseline manifest without modifying global defaults. The BoundaryHuggerSuccessor
+proposes actions up to `cap - safety_margin = 49` per epoch, then returns `None` to
+avoid hitting the limit.
+
+**`None` semantics**: When a working mind returns `None`, it is treated as "no action"
+and does not increment action counters. This distinguishes it from a WAIT action, which
+would still be counted as an emitted action.
+
+#### Results (Seeds 42, 43, 44)
+
+| Metric | Seed 42 | Seed 43 | Seed 44 |
+|--------|---------|---------|---------|
+| Cycles completed | 20,000 | 20,000 | 20,000 |
+| S* (endorsements) | 37 | 37 | 37 |
+| Renewals | 364 | 364 | 364 |
+| Expirations | 36 | 36 | 36 |
+| **Revocations** | **0** | **0** | **0** |
+| util_actions_max | **0.980** | **0.980** | **0.980** |
+| util_steps_max | 1.000 | 1.000 | 1.000 |
+| epoch_action_count_max | **49** | **49** | **49** |
+| Non-trivial | 0 (0.0%) | 0 (0.0%) | 0 (0.0%) |
+| Attack successors | 37 (100%) | 37 (100%) | 37 (100%) |
+
+#### Analysis
+
+**Near-Cap Hugging Achieved**:
+- `util_actions_max = 0.980 = 49/50` — exactly `cap - safety_margin`
+- All BoundaryHugger epochs consistently hit 49 actions (98% utilization)
+- Zero false-positive revocations despite operating 1 action below the cap
+
+**Steps at Cap**:
+- `util_steps_max = 1.000` — steps are consumed each cycle (50 per epoch)
+- Steps hit the cap exactly but don't cause violations because step counting is
+  properly aligned with epoch boundaries (renewal resets before 51st step)
+- **Dual budget model**: Steps are incremented per cycle (scheduler-driven), while
+  actions are incremented per emitted action (agent-driven). Therefore action
+  `safety_margin=1` yields 49/50, while steps saturate at 50/50.
+
+**No Non-Trivial Endorsements**:
+- Expected: BoundaryHugger uses same resource envelope as baseline
+- This is intentional for pure boundary-hugging stress testing
+- Non-trivial classification requires successors that EXCEED baseline capabilities
+
+**Classification**: **MECHANISM VALIDATION: NEAR-CAP FALSE-POSITIVE TEST PASSED**
+- Zero false-positive revocations under near-cap boundary stress
+- BoundaryHugger epochs consistently reached 98%+ action utilization
+- Invariant maintained: `epoch_action_count_max = cap - safety_margin = 49`
+
+**Key Finding**: Run E demonstrates that the enforcement mechanism correctly allows
+operation up to 1 action below the cap without triggering false-positive revocations.
+This validates the boundary-layer stability claim from Run D with actual near-cap stress.
+
+#### Implementation Changes for Run E
+
+1. **`ALSConfig.baseline_resource_envelope_override`**: New field to inject custom caps
+2. **Harness envelope override**: Both V042 and V043 apply override to baseline manifest
+3. **Working mind epoch reset**: Harness calls `reset_epoch_counters()` on working minds
+4. **Renewal-to-expiration**: When `max_successive_renewals` exceeded, trigger expiration
+5. **BoundaryHugger fix**: Return `None` (not WAIT) when at safety margin to avoid sentinel counting
+6. **Per-epoch successor tagging**: `EpochRecord` captures active successor type per epoch
+
+---
+
 ### Mechanism Validation Summary
 
-| Mechanism | Run A | Run B | Run C | Run D | Status |
-|-----------|-------|-------|-------|-------|--------|
-| Lease expiration | ✅ 33 per run | ✅ 1 per run | ✅ 33 per run | ✅ 33 | VERIFIED |
-| Lease renewal | ✅ 334 per run | ✅ 206 per run | ✅ 334 per run | ✅ 334 | VERIFIED |
-| Lease revocation | N/A | ✅ 98 per run | ✅ 0 (no violations) | ✅ 0 | VERIFIED |
-| Succession at init | ✅ | ✅ | ✅ | ✅ | VERIFIED |
-| Succession at expiration | ✅ | ✅ | ✅ | ✅ | VERIFIED |
-| Succession at revocation | N/A | ✅ | N/A | N/A | VERIFIED |
-| Endorsement degeneracy cap | N/A | ✅ S*=100 | N/A | N/A | VERIFIED |
-| Sentinel structural detection | N/A | ✅ INVALID_ACTION_TYPE | ✅ (no false positives) | ✅ | VERIFIED |
-| Adversarial compliance | N/A | N/A | ✅ 100% survival | ✅ 100% | VERIFIED |
-| High throughput tolerance | N/A | N/A | N/A | ✅ 0 revocations | VERIFIED |
-| Epoch-scoped telemetry | N/A | N/A | N/A | ✅ | VERIFIED |
+| Mechanism | Run A | Run B | Run C | Run D | Run E | Status |
+|-----------|-------|-------|-------|-------|-------|--------|
+| Lease expiration | ✅ 33 per run | ✅ 1 per run | ✅ 33 per run | ✅ 33 | ✅ 36 | VERIFIED |
+| Lease renewal | ✅ 334 per run | ✅ 206 per run | ✅ 334 per run | ✅ 334 | ✅ 364 | VERIFIED |
+| Lease revocation | N/A | ✅ 98 per run | ✅ 0 (no violations) | ✅ 0 | ✅ 0 | VERIFIED |
+| Succession at init | ✅ | ✅ | ✅ | ✅ | ✅ | VERIFIED |
+| Succession at expiration | ✅ | ✅ | ✅ | ✅ | ✅ | VERIFIED |
+| Succession at revocation | N/A | ✅ | N/A | N/A | N/A | VERIFIED |
+| Endorsement degeneracy cap | N/A | ✅ S*=100 | N/A | N/A | N/A | VERIFIED |
+| Sentinel structural detection | N/A | ✅ INVALID_ACTION_TYPE | ✅ (no false positives) | ✅ | ✅ | VERIFIED |
+| Adversarial compliance | N/A | N/A | ✅ 100% survival | ✅ 100% | ✅ 100% | VERIFIED |
+| High throughput tolerance | N/A | N/A | N/A | ✅ 0 revocations | ✅ 0 revocations | VERIFIED |
+| Epoch-scoped telemetry | N/A | N/A | N/A | ✅ | ✅ | VERIFIED |
+| Near-cap false-positive test | N/A | N/A | N/A | N/A | ✅ 98% util | VERIFIED |
 
 ### Classification Summary
 
@@ -728,6 +815,7 @@ enforcement implementation.
 | **Run B** | ENDORSEMENT_DEGENERACY | MECHANISM VALIDATION | Forced-revocation loop; 100% attack successors by construction |
 | **Run C** | HORIZON_EXHAUSTED | SUCCESS (ALS-supported) | Renewal stability verified under sampled adversaries; 14.7-17.6% non-trivial; 0 revocations |
 | **Run D** | HORIZON_EXHAUSTED | PARTIAL SUCCESS | High throughput tolerance; 88% attack; 2.9% non-trivial; 0 revocations; util ~50% (not near-cap) |
+| **Run E** | HORIZON_EXHAUSTED | MECHANISM VALIDATION | Near-cap false-positive test; 98% action util; 0 revocations; 100% BoundaryHugger |
 
 **Note on SUCCESS classification**: "SUCCESS (ALS-supported)" indicates bounded succession
 continues without degeneracy and non-trivial structural expansions are occasionally endorsed.
@@ -746,10 +834,10 @@ claim to "high throughput tolerance" rather than full "boundary-hugging complian
 
 | File | Changes |
 |------|---------|
-| `als/harness.py` | Added `ALSHarnessV043`, `ExpirationEvent`, `RevocationEvent`, `msrw_cycles` config, updated `ALSRunResult`, added `_execute_working_mind_cycle()` with Sentinel-based violation detection (including `check_step()` for step counting), added `_map_sentinel_violation()`, added `get_successor_mix()` and `get_renewal_stability()` to ALSRunResult, added `source_type` and `renewals_completed` to expiration/revocation events, added `_current_successor_source_type` and `_current_lease_renewals` tracking, added `get_sentinel_telemetry()`, added `get_boundary_pressure()` |
-| `als/sentinel.py` | Added epoch-scoped telemetry: `epoch_count`, `epoch_action_count_max`, `epoch_step_count_max`, `epoch_action_sum`, `epoch_step_sum`; added `record_epoch_end()` method; updated `reset_epoch()` to record metrics before reset; added `get_epoch_utilization()` |
+| `als/harness.py` | Added `ALSHarnessV043`, `ExpirationEvent`, `RevocationEvent`, `msrw_cycles` config, updated `ALSRunResult`, added `_execute_working_mind_cycle()` with Sentinel-based violation detection (including `check_step()` for step counting), added `_map_sentinel_violation()`, added `get_successor_mix()` and `get_renewal_stability()` to ALSRunResult, added `source_type` and `renewals_completed` to expiration/revocation events, added `_current_successor_source_type` and `_current_lease_renewals` tracking, added `get_sentinel_telemetry()`, added `get_boundary_pressure()`, added `baseline_resource_envelope_override` to ALSConfig, added `reset_epoch_counters()` call on working mind after renewal, added renewal-to-expiration handling when `max_successive_renewals` exceeded |
+| `als/sentinel.py` | Added epoch-scoped telemetry: `epoch_count`, `epoch_action_count_max`, `epoch_step_count_max`, `epoch_action_sum`, `epoch_step_sum`; added `record_epoch_end()` method (with active_mind_id and active_successor_type params); updated `reset_epoch()` to record metrics before reset; added `get_epoch_utilization()`; added `EpochRecord` dataclass for per-epoch telemetry with successor tagging; added `epoch_records` list to SentinelTelemetry; added `get_epoch_utilization_filtered()` |
 | `als/leases.py` | Added `validate_v043()`, `create_lease_v043()`, `_compute_kernel_commitment()`, `LeaseViolation.SPAWN_ATTEMPT`, `LeaseViolation.UNAUTHORIZED_CALL`, `LeaseViolation.INTERFACE_VIOLATION` |
-| `als/generator.py` | Added `ViolationSuccessor` (emits invalid action types for structural detection), `BoundaryHuggerSuccessor` (boundary-stress testing), `GeneratorConfig.max_successive_renewals_default`, `GeneratorConfig.post_expiration_forced_successor`, `GeneratorConfig.excluded_attack_types` (for Run C), `notify_succession_opportunity()`, updated attack sampling to respect exclusions, added `BOUNDARY_HUGGER` to `AttackSuccessorType` | |
+| `als/generator.py` | Added `ViolationSuccessor` (emits invalid action types for structural detection), `BoundaryHuggerSuccessor` (boundary-stress testing; returns `None` when at safety margin), `GeneratorConfig.max_successive_renewals_default`, `GeneratorConfig.post_expiration_forced_successor`, `GeneratorConfig.excluded_attack_types` (for Run C), `notify_succession_opportunity()`, updated attack sampling to respect exclusions, added `BOUNDARY_HUGGER` to `AttackSuccessorType` |
 | `als/sentinel.py` | Fixed `bind_lease()` to reset violation telemetry, fixed attestation generation |
 
 ### New Files
@@ -757,6 +845,7 @@ claim to "high throughput tolerance" rather than full "boundary-hugging complian
 | File | Description |
 |------|-------------|
 | `tests/test_v043.py` | 28 tests for v0.4.3 semantics |
+| `scripts/run_e_near_cap_hugging.py` | Run E: Near-Cap Action Hugging experiment script |
 | `IMPLEMENTATION_REPORT_V043.md` | This report |
 
 ---

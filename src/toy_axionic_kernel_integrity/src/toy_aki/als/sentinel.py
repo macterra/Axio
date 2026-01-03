@@ -5,6 +5,7 @@ Implements:
 - Sentinel: External gateway that intercepts all successor actions
 - SentinelAttestation: Signed compliance report for renewal
 - SentinelViolationType: Types of violations the sentinel can detect
+- EpochRecord: Per-epoch utilization record with successor tagging
 
 Per spec §5:
 - Sentinel is kernel-owned, static infrastructure
@@ -27,6 +28,21 @@ import hmac
 from dataclasses import dataclass, field
 from enum import Enum, auto
 from typing import Any, Dict, FrozenSet, List, Optional, Callable
+
+
+@dataclass
+class EpochRecord:
+    """
+    Per-epoch utilization record with successor tagging.
+
+    Used for Run E segmented telemetry - allows filtering utilization
+    metrics by successor type (e.g., BoundaryHugger-only epochs).
+    """
+    epoch_index: int
+    active_mind_id: str
+    active_successor_type: str  # e.g., "BOUNDARY_HUGGER", "REPLAY", "CONTROL"
+    epoch_action_count: int
+    epoch_step_count: int
 
 from toy_aki.common.hashing import hash_json
 from toy_aki.kernel.watchdog import current_time_ms
@@ -200,7 +216,7 @@ class SentinelTelemetry:
     - epoch_action_count_max: Max actions in any single epoch
     - epoch_step_count_max: Max steps in any single epoch
     - epoch_count: Number of epochs completed
-    - epoch_utilization_history: Per-epoch utilization records
+    - epoch_records: Per-epoch records with successor tagging (Run E)
     """
     # Cycle info
     cycle: int = 0
@@ -225,6 +241,9 @@ class SentinelTelemetry:
     epoch_action_sum: int = 0        # Sum of actions across all epochs (for mean)
     epoch_step_sum: int = 0          # Sum of steps across all epochs (for mean)
 
+    # Per-epoch records with successor tagging (Run E)
+    epoch_records: List[EpochRecord] = field(default_factory=list)
+
     # Timing
     total_monitoring_time_ms: int = 0
 
@@ -233,17 +252,38 @@ class SentinelTelemetry:
         key = vtype.name
         self.violations[key] = self.violations.get(key, 0) + 1
 
-    def record_epoch_end(self, actions_this_epoch: int, steps_this_epoch: int) -> None:
+    def record_epoch_end(
+        self,
+        actions_this_epoch: int,
+        steps_this_epoch: int,
+        active_mind_id: str = "",
+        active_successor_type: str = "unknown",
+    ) -> None:
         """
         Record metrics at epoch boundary before counter reset.
 
         Called by Sentinel.reset_epoch() to capture epoch-scoped utilization.
+
+        Args:
+            actions_this_epoch: Number of actions executed this epoch
+            steps_this_epoch: Number of steps consumed this epoch
+            active_mind_id: ID of the currently active working mind
+            active_successor_type: Type of successor (e.g., "BOUNDARY_HUGGER")
         """
         self.epoch_count += 1
         self.epoch_action_count_max = max(self.epoch_action_count_max, actions_this_epoch)
         self.epoch_step_count_max = max(self.epoch_step_count_max, steps_this_epoch)
         self.epoch_action_sum += actions_this_epoch
         self.epoch_step_sum += steps_this_epoch
+
+        # Record detailed epoch info for segmented telemetry (Run E)
+        self.epoch_records.append(EpochRecord(
+            epoch_index=self.epoch_count,
+            active_mind_id=active_mind_id,
+            active_successor_type=active_successor_type,
+            epoch_action_count=actions_this_epoch,
+            epoch_step_count=steps_this_epoch,
+        ))
 
     def get_epoch_utilization(self, max_actions: int, max_steps: int) -> Dict[str, Any]:
         """
@@ -273,6 +313,52 @@ class SentinelTelemetry:
             "epoch_count": self.epoch_count,
         }
 
+    def get_epoch_utilization_filtered(
+        self,
+        max_actions: int,
+        max_steps: int,
+        successor_type_filter: str,
+    ) -> Dict[str, Any]:
+        """
+        Compute epoch-scoped utilization metrics filtered by successor type.
+
+        Args:
+            max_actions: Cap for max actions per epoch
+            max_steps: Cap for max steps per epoch
+            successor_type_filter: Only include epochs where active_successor_type == this value
+
+        Returns:
+            util_actions_max: Max epoch actions / cap (filtered)
+            util_steps_max: Max epoch steps / cap (filtered)
+            util_actions_mean: Mean epoch actions / cap (filtered)
+            util_steps_mean: Mean epoch steps / cap (filtered)
+            epoch_count: Number of epochs matching filter
+        """
+        filtered = [r for r in self.epoch_records if r.active_successor_type == successor_type_filter]
+
+        if not filtered:
+            return {
+                "util_actions_max": 0.0,
+                "util_steps_max": 0.0,
+                "util_actions_mean": 0.0,
+                "util_steps_mean": 0.0,
+                "epoch_count": 0,
+            }
+
+        action_max = max(r.epoch_action_count for r in filtered)
+        step_max = max(r.epoch_step_count for r in filtered)
+        action_sum = sum(r.epoch_action_count for r in filtered)
+        step_sum = sum(r.epoch_step_count for r in filtered)
+        count = len(filtered)
+
+        return {
+            "util_actions_max": action_max / max_actions if max_actions > 0 else 0.0,
+            "util_steps_max": step_max / max_steps if max_steps > 0 else 0.0,
+            "util_actions_mean": (action_sum / count) / max_actions if max_actions > 0 else 0.0,
+            "util_steps_mean": (step_sum / count) / max_steps if max_steps > 0 else 0.0,
+            "epoch_count": count,
+        }
+
     def to_dict(self) -> Dict[str, Any]:
         return {
             "cycle": self.cycle,
@@ -288,6 +374,16 @@ class SentinelTelemetry:
             "epoch_step_count_max": self.epoch_step_count_max,
             "epoch_action_sum": self.epoch_action_sum,
             "epoch_step_sum": self.epoch_step_sum,
+            "epoch_records": [
+                {
+                    "epoch_index": r.epoch_index,
+                    "active_mind_id": r.active_mind_id,
+                    "active_successor_type": r.active_successor_type,
+                    "epoch_action_count": r.epoch_action_count,
+                    "epoch_step_count": r.epoch_step_count,
+                }
+                for r in self.epoch_records
+            ],
             "total_monitoring_time_ms": self.total_monitoring_time_ms,
         }
 
@@ -403,17 +499,27 @@ class Sentinel:
         self._cycle += 1
         self._telemetry.cycle = self._cycle
 
-    def reset_epoch(self) -> None:
+    def reset_epoch(
+        self,
+        active_mind_id: str = "",
+        active_successor_type: str = "unknown",
+    ) -> None:
         """
         Reset counters for new epoch.
 
         Records epoch-scoped metrics before resetting counters.
         Epoch boundaries are defined by renewal intervals (caller responsibility).
+
+        Args:
+            active_mind_id: ID of the currently active working mind
+            active_successor_type: Type of successor (e.g., "BOUNDARY_HUGGER")
         """
         # Record epoch metrics before reset
         self._telemetry.record_epoch_end(
             actions_this_epoch=self._counters.actions,
             steps_this_epoch=self._counters.steps,
+            active_mind_id=active_mind_id,
+            active_successor_type=active_successor_type,
         )
         # Reset counters
         self._counters.reset()

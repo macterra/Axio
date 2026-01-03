@@ -643,16 +643,14 @@ class BoundaryHuggerSuccessor(BaseWorkingMind):
         - Cycle through action types round-robin for max entropy
         - Continue proposing until approaching max_actions_per_epoch
         - Never exceed the cap (stop at cap - safety_margin)
+        - Return None when near cap to avoid sentinel counting it as an action
         """
         # Check if we're approaching the action cap
         max_actions = self._resources.max_actions_per_epoch
         if self._actions_this_epoch >= max_actions - self._safety_margin:
-            # Near cap - emit WAIT to avoid exceeding
-            return {
-                "action_type": "WAIT",
-                "args": {"boundary_pause": True},
-                "source": self._mind_id,
-            }
+            # Near cap - return None to avoid exceeding
+            # (returning WAIT would still be counted as an action by Sentinel)
+            return None
 
         # Get next action type in round-robin
         action_type = self._action_type_list[self._action_type_index]
