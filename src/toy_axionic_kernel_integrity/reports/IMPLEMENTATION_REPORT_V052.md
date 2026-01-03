@@ -274,7 +274,7 @@ Run F investigated the **competence horizon** question:
 
 > "As lease-granted expressivity increases and rent reduces effective step budget, where does renewal stability collapse?"
 
-**Full report:** [run_f_v052_report.md](../reports/run_f_v052_report.md)
+**Full report:** [run_f_v052_report.md](run_f_v052_report.md)
 
 ### Executive Summary
 
@@ -332,7 +332,7 @@ Run G addressed Run F's limitation by **reintroducing competition under scarcity
 
 > "When multiple structurally compliant successors compete for authority under expressivity-dependent rent, where does renewal stability collapse—and by what mode?"
 
-**Full report:** [run_g_v052_report.md](../reports/run_g_v052_report.md)
+**Full report:** [run_g_v052_report.md](run_g_v052_report.md)
 
 ### Executive Summary
 
@@ -428,7 +428,7 @@ For 90% step usage at E3: `renewal_cost ≤ 6 steps`
 
 H1 showed rent elasticity is high—increasing E3 rent by 50% (40 → 60) caused only 1.2% renewal rate degradation. The system has significant headroom before rent-induced collapse.
 
-See [run_h_v052_report.md](../reports/run_h_v052_report.md) for full analysis.
+See [run_h_v052_report.md](run_h_v052_report.md) for full analysis.
 
 ---
 

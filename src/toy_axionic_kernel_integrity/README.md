@@ -169,15 +169,15 @@ result = harness.run()
 
 ## Documentation
 
-- [IMPLEMENTATION_REPORT_V052.md](docs/IMPLEMENTATION_REPORT_V052.md) - Current version details
+- [IMPLEMENTATION_REPORT_V052.md](reports/IMPLEMENTATION_REPORT_V052.md) - Current version details
 - [spec_v0.5.2.md](docs/spec_v0.5.2md) - v0.5.2 specification
 - [instructions_v0.5.2_runnerH.md](docs/instructions_v0.5.2_runnerH.md) - Run H instructions
 
 ### Historical Reports
 
-- [IMPLEMENTATION_REPORT_V042.md](docs/IMPLEMENTATION_REPORT_V042.md) - ALS foundation
-- [IMPLEMENTATION_REPORT_V043.md](docs/IMPLEMENTATION_REPORT_V043.md) - ALS refinements
-- [IMPLEMENTATION_REPORT.md](docs/IMPLEMENTATION_REPORT.md) - Original v0.1 report
+- [IMPLEMENTATION_REPORT_V042.md](reports/IMPLEMENTATION_REPORT_V042.md) - ALS foundation
+- [IMPLEMENTATION_REPORT_V043.md](reports/IMPLEMENTATION_REPORT_V043.md) - ALS refinements
+- [IMPLEMENTATION_REPORT.md](reports/IMPLEMENTATION_REPORT.md) - Original v0.1 report
 
 ## Running Tests
 
