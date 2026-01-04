@@ -3422,8 +3422,36 @@ class CandidatePoolPolicy(Enum):
     Candidate pool composition policy per spec §6.4.1.
 
     v0.7 uses V060_DEFAULT to isolate the eligibility gating mechanism.
+    Run D adds skewed pool compositions for stress testing.
     """
-    V060_DEFAULT = auto()  # Identical generator composition to v0.6
+    V060_DEFAULT = auto()      # Identical generator composition to v0.6 (baseline)
+    ATTACK_HEAVY_90 = auto()   # ~90% Attack, ~10% Control
+    CONTROL_HEAVY_90 = auto()  # ~90% Control, ~10% Attack
+
+
+# =============================================================================
+# Pool Policy Weight Maps (Run D)
+# =============================================================================
+
+# Base weights from v0.6 (untouched reference)
+# control_weight = 0.3 in GeneratorConfig default
+# This means: 30% control, 70% attack (before within-category sampling)
+
+def get_pool_policy_weights(policy: CandidatePoolPolicy) -> tuple[float, float]:
+    """
+    Get (control_weight, attack_weight) for a pool policy.
+
+    Returns:
+        Tuple of (control_weight, attack_weight) summing to 1.0
+    """
+    if policy == CandidatePoolPolicy.V060_DEFAULT:
+        return (0.3, 0.7)  # Baseline: 30% control, 70% attack
+    elif policy == CandidatePoolPolicy.ATTACK_HEAVY_90:
+        return (0.1, 0.9)  # 10% control, 90% attack
+    elif policy == CandidatePoolPolicy.CONTROL_HEAVY_90:
+        return (0.9, 0.1)  # 90% control, 10% attack
+    else:
+        return (0.3, 0.7)  # Fallback to baseline
 
 
 @dataclass
@@ -3630,6 +3658,13 @@ class ALSRunResultV070:
     forced_turnover_count: int = 0
     post_init_successions: int = 0  # Successions after initial endorsement
 
+    # v0.7 composition verification (Run D)
+    attack_draws: int = 0
+    control_draws: int = 0
+    attack_draw_ratio: float = 0.0
+    control_draw_ratio: float = 0.0
+    pool_policy: str = "V060_DEFAULT"
+
     def to_dict(self) -> Dict[str, Any]:
         result = {
             "run_id": self.run_id,
@@ -3667,6 +3702,12 @@ class ALSRunResultV070:
             # v0.7 forced turnover (Run B)
             "forced_turnover_count": self.forced_turnover_count,
             "post_init_successions": self.post_init_successions,
+            # v0.7 composition verification (Run D)
+            "attack_draws": self.attack_draws,
+            "control_draws": self.control_draws,
+            "attack_draw_ratio": self.attack_draw_ratio,
+            "control_draw_ratio": self.control_draw_ratio,
+            "pool_policy": self.pool_policy,
             # Standard metrics
             "renewal_attempts": self.renewal_attempts,
             "renewal_successes": self.renewal_successes,
@@ -3725,6 +3766,23 @@ class ALSHarnessV070(ALSHarnessV060):
         # Cast config to V070 type
         self._config: ALSConfigV070 = config or ALSConfigV070()
 
+        # v0.7: Reconfigure generator for pool policy (Run D)
+        # This must happen after parent init creates the generator
+        control_w, attack_w = get_pool_policy_weights(self._config.candidate_pool_policy)
+        # Create a new generator config with the correct control_weight
+        from toy_aki.als.generator import GeneratorConfig
+        gen_config = GeneratorConfig(control_weight=control_w)
+        self._generator = SuccessorGenerator(
+            sentinel_id=self._sentinel.sentinel_id,
+            baseline_manifest=self._baseline_manifest,
+            seed=seed,
+            config=gen_config,
+        )
+
+        # v0.7: Draw counting for composition verification (Run D)
+        self._attack_draws: int = 0
+        self._control_draws: int = 0
+
         # v0.7: Semantic failure streak per policy_id
         self._semantic_fail_streak: Dict[str, int] = {}
 
@@ -3753,6 +3811,18 @@ class ALSHarnessV070(ALSHarnessV060):
         self._tenure_renewals_used: int = 0  # Renewals for current tenure
         self._is_initial_succession: bool = True  # Track if first succession
         self._post_init_successions: int = 0  # Count successions after initial
+
+    def _count_draw(self, candidate: SuccessorCandidate) -> None:
+        """
+        Count a candidate draw for composition verification (Run D).
+
+        Tracks whether the draw was from Attack or Control category.
+        """
+        if candidate.source_type == "control":
+            self._control_draws += 1
+        else:
+            # adversarial or generated → attack
+            self._attack_draws += 1
 
     def _get_policy_streak(self, policy_id: str) -> int:
         """Get current streak for a policy (0 if not tracked yet)."""
@@ -3947,10 +4017,15 @@ class ALSHarnessV070(ALSHarnessV060):
         candidate = self._generator.propose(self._cycle)
         candidates = [candidate]
 
+        # Track draw for composition verification (Run D)
+        self._count_draw(candidate)
+
         # For v0.7, we need to sample multiple candidates to build C_ELIG
         # Generate additional candidates to form pool
         for _ in range(min(10, len(list(ControlSuccessorType)) + len(list(AttackSuccessorType)))):
-            candidates.append(self._generator.propose(self._cycle))
+            c = self._generator.propose(self._cycle)
+            candidates.append(c)
+            self._count_draw(c)  # Track each draw
 
         # Filter by eligibility
         eligible_candidates = self._filter_eligible_candidates(candidates)
@@ -4295,6 +4370,11 @@ class ALSHarnessV070(ALSHarnessV060):
             if durations:
                 residence_by_e_class[e_name] = sum(durations) / len(durations)
 
+        # v0.7: Compute draw ratios for composition verification (Run D)
+        total_draws = self._attack_draws + self._control_draws
+        attack_draw_ratio = self._attack_draws / total_draws if total_draws > 0 else 0.0
+        control_draw_ratio = self._control_draws / total_draws if total_draws > 0 else 0.0
+
         result = ALSRunResultV070(
             run_id=run_id,
             seed=self._seed,
@@ -4360,6 +4440,12 @@ class ALSHarnessV070(ALSHarnessV060):
             forced_turnover_events=[e.to_dict() for e in self._forced_turnover_events],
             forced_turnover_count=len(self._forced_turnover_events),
             post_init_successions=self._post_init_successions,
+            # v0.7 composition verification (Run D)
+            attack_draws=self._attack_draws,
+            control_draws=self._control_draws,
+            attack_draw_ratio=attack_draw_ratio,
+            control_draw_ratio=control_draw_ratio,
+            pool_policy=self._config.candidate_pool_policy.name,
             duration_ms=duration,
         )
 
