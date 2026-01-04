@@ -1,7 +1,7 @@
 # AKI v0.7 Implementation Report: Eligibility-Coupled Succession (ALS-G)
 
-**Date:** January 4, 2026  
-**Version:** 0.7.0  
+**Date:** January 4, 2026
+**Version:** 0.7.0
 **Status:** Implementation Complete
 
 ---
@@ -38,7 +38,7 @@ AKI v0.7 (ALS-G) implements **eligibility-coupled succession**: a constitutional
 ### 2.1 Inheritance Chain
 
 ```
-ALSHarnessV070 
+ALSHarnessV070
     └── extends ALSHarnessV060 (commitment ledger, genesis set)
         └── extends ALSHarnessV052 (expressivity–rent enforcement)
             └── extends BaseALSHarness (core succession/renewal)
@@ -67,10 +67,10 @@ v0.7 adds exactly one mechanism: **eligibility filtering at succession boundarie
 class ALSConfigV070(ALSConfigV060):
     # Eligibility threshold: streak >= K makes candidate ineligible
     eligibility_threshold_k: int = 3
-    
+
     # Candidate pool policy (V060_DEFAULT, ATTACK_HEAVY_90, CONTROL_HEAVY_90)
     candidate_pool_policy: CandidatePoolPolicy = CandidatePoolPolicy.V060_DEFAULT
-    
+
     # Harness-enforced renewal limit per tenure (None = no limit)
     max_successive_renewals: Optional[int] = None
 ```
@@ -144,12 +144,12 @@ self._active_policy_id: Optional[str] = None
 def _update_streak_at_epoch_end(self) -> None:
     if self._in_null_authority:
         return  # No updates during NULL_AUTHORITY
-    
+
     if self._active_policy_id is None:
         return
-    
+
     c0_ok, c1_ok, c2_ok, sem_pass = self._compute_sem_pass()
-    
+
     if sem_pass:
         self._semantic_fail_streak[self._active_policy_id] = 0
     else:
@@ -173,7 +173,7 @@ def _filter_eligible_candidates(self, candidates: List[SuccessorCandidate]) -> L
     for candidate in candidates:
         streak = self._get_policy_streak(candidate.policy_id)
         is_eligible = streak < self._config.eligibility_threshold_k
-        
+
         # Log eligibility event
         event = EligibilityEvent(
             cycle=self._cycle,
@@ -184,12 +184,12 @@ def _filter_eligible_candidates(self, candidates: List[SuccessorCandidate]) -> L
             reason="" if is_eligible else f"streak={streak} >= K={self._config.eligibility_threshold_k}"
         )
         self._eligibility_events.append(event)
-        
+
         if is_eligible:
             eligible.append(candidate)
         else:
             self._eligibility_rejections += 1
-    
+
     return eligible
 ```
 
@@ -201,7 +201,7 @@ def _enter_null_authority(self, ineligible_policies: List[str]) -> None:
     self._in_null_authority = True
     self._null_authority_start_cycle = self._cycle
     self._null_authority_start_epoch = self._epoch_index
-    
+
     self._current_lapse = LapseEvent(
         start_cycle=self._cycle,
         start_epoch=self._epoch_index,
@@ -217,7 +217,7 @@ def _exit_null_authority(self) -> None:
         self._current_lapse.duration_cycles = self._cycle - self._current_lapse.start_cycle
         self._lapse_events.append(self._current_lapse)
         self._current_lapse = None
-    
+
     self._in_null_authority = False
 ```
 
@@ -239,7 +239,7 @@ def _check_renewal_with_rent(self) -> tuple[bool, str]:
             )
             self._forced_turnover_events.append(event)
             return (False, "forced_turnover")
-    
+
     # Proceed with normal renewal check
     return super()._check_renewal_with_rent()
 ```
@@ -250,7 +250,7 @@ def _check_renewal_with_rent(self) -> tuple[bool, str]:
 ```python
 def __init__(self, seed: int, config: ALSConfigV070, verbose: bool):
     super().__init__(seed, config, verbose)
-    
+
     # Reconfigure generator for pool policy
     control_w, attack_w = get_pool_policy_weights(self._config.candidate_pool_policy)
     gen_config = GeneratorConfig(control_weight=control_w)
@@ -260,7 +260,7 @@ def __init__(self, seed: int, config: ALSConfigV070, verbose: bool):
         seed=seed,
         config=gen_config,
     )
-    
+
     # Draw counting for composition verification
     self._attack_draws: int = 0
     self._control_draws: int = 0
@@ -364,7 +364,8 @@ Per Spec §6.2.1:
                                 ▼
 ┌─────────────────────────────────────────────────────────────────────┐
 │                        EXECUTE EPOCH                                │
-│  (50 cycles at renewal_check_interval=50)                           │
+│  (cycle-driven execution; renewal checks occur every                │
+│   renewal_check_interval cycles)                                    │
 │  - Actions recorded in trace                                        │
 │  - Commitment verifiers evaluated                                   │
 └─────────────────────────────────────────────────────────────────────┘
@@ -469,7 +470,7 @@ Per Spec §6.2.1:
 | Eligibility filtering at succession only | ✓ No mid-epoch eligibility checks in code |
 | Streak keyed to stable policy_id | ✓ Format `{category}:{enum_name}` |
 | No streak updates during NULL_AUTHORITY | ✓ Explicit guard in `_update_streak_at_epoch_end` |
-| Renewal independent of semantics | ✓ Parent class handles renewal; eligibility not consulted |
+| Renewal independent of semantics | ✓ Renewal logic does not query eligibility state or semantic status; eligibility is applied only during succession candidate filtering |
 | C_ELIG = ∅ triggers NULL_AUTHORITY | ✓ Explicit in `_attempt_succession_v070` |
 
 ### 11.2 Potential Concerns
@@ -477,7 +478,7 @@ Per Spec §6.2.1:
 | Concern | Status |
 |---------|--------|
 | RNG perturbation from pool policy parameterization | Documented; causes D0 vs Run C discrepancy at K=5 boundary |
-| Zero-length lapse events | Documented in Run D report; definitional, not a bug |
+| Zero-length lapse events | Documented in Run D report; definitional, not a bug. A lapse is counted on transition to NULL_AUTHORITY; duration is computed as end_cycle − start_cycle and can be zero when exit occurs at the same scheduling boundary. |
 
 ---
 
@@ -512,12 +513,12 @@ AKI v0.7 successfully implements eligibility-coupled succession as specified. Th
 1. **Functions as designed**: Eligibility filtering activates under forced turnover and produces constitutional lapses when streak thresholds are exceeded
 2. **Is controllable**: K parameter and pool composition both materially affect lapse frequency
 3. **Preserves kernel invariants**: No semantic enforcement at renewal, no optimization, no internal inspection
-4. **Reveals boundary regions**: K=5 is sensitive to stochastic variation; K=10 provides robust non-lapse operation under baseline pool
+4. **Reveals boundary regions**: K=5 is sensitive to stochastic variation; at K=10, zero lapses were observed across the tested seeds under the baseline pool and renewal geometry (H=5,000 cycles)
 
 The implementation is complete and ready for further experimental extension.
 
 ---
 
-**Report Generated:** January 4, 2026  
-**Implementation Scripts:** `harness.py`, `run_{a,b,c,d}_v070.py`  
+**Report Generated:** January 4, 2026
+**Implementation Scripts:** `harness.py`, `run_{a,b,c,d}_v070.py`
 **Specification:** `spec_v0.7.md`
