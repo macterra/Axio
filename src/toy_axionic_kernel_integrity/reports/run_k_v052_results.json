@@ -1,0 +1,1099 @@
+{
+  "experiment_id": "run_k_v052_20260103_205244",
+  "spec_version": "0.5.2",
+  "timestamp": "2026-01-03T20:52:44.703165",
+  "horizon": 30000,
+  "renewal_cost": 5,
+  "renewal_check_interval": 90,
+  "msrw_cycles": 200,
+  "e3_rent": 80,
+  "e3_rent_fraction": 0.4,
+  "effective_steps": 120,
+  "steps_cap_epoch": 200,
+  "seeds": [
+    40,
+    41,
+    42,
+    43,
+    44
+  ],
+  "sub_runs": {
+    "K0": {
+      "max_successive_renewals": 1000000,
+      "label": "No Forced Succession (Lock-In Control)"
+    },
+    "K1": {
+      "max_successive_renewals": 100,
+      "label": "Low Turnover Pressure"
+    },
+    "K2": {
+      "max_successive_renewals": 15,
+      "label": "Moderate Turnover (Constitutional Baseline)"
+    },
+    "K3": {
+      "max_successive_renewals": 3,
+      "label": "High Turnover Pressure"
+    }
+  },
+  "sub_run_summaries": [
+    {
+      "sub_run": "K0",
+      "max_successive_renewals": 1000000,
+      "label": "No Forced Succession (Lock-In Control)",
+      "seeds_run": 5,
+      "mean_tenures": 1.0,
+      "mean_residence": 29999.0,
+      "mean_renewal_rate": 1.0,
+      "mean_entropy": 0.0,
+      "dominant_regime": "LOCK_IN",
+      "regime_counts": {
+        "LOCK_IN": 5
+      },
+      "stop_reason_counts": {
+        "HORIZON_EXHAUSTED": 5
+      }
+    },
+    {
+      "sub_run": "K1",
+      "max_successive_renewals": 100,
+      "label": "Low Turnover Pressure",
+      "seeds_run": 5,
+      "mean_tenures": 4.0,
+      "mean_residence": 7499.0,
+      "mean_renewal_rate": 0.990990990990991,
+      "mean_entropy": 0.25,
+      "dominant_regime": "CONSTITUTIONAL_STABILITY",
+      "regime_counts": {
+        "CONSTITUTIONAL_STABILITY": 5
+      },
+      "stop_reason_counts": {
+        "HORIZON_EXHAUSTED": 5
+      }
+    },
+    {
+      "sub_run": "K2",
+      "max_successive_renewals": 15,
+      "label": "Moderate Turnover (Constitutional Baseline)",
+      "seeds_run": 5,
+      "mean_tenures": 10.0,
+      "mean_residence": 1295.1,
+      "mean_renewal_rate": 0.9375,
+      "mean_entropy": 0.1,
+      "dominant_regime": "SPAM_STASIS",
+      "regime_counts": {
+        "SPAM_STASIS": 5
+      },
+      "stop_reason_counts": {
+        "SPAM_DEGENERACY": 5
+      }
+    },
+    {
+      "sub_run": "K3",
+      "max_successive_renewals": 3,
+      "label": "High Turnover Pressure",
+      "seeds_run": 5,
+      "mean_tenures": 10.0,
+      "mean_residence": 323.1,
+      "mean_renewal_rate": 0.75,
+      "mean_entropy": 0.1,
+      "dominant_regime": "SPAM_STASIS",
+      "regime_counts": {
+        "SPAM_STASIS": 5
+      },
+      "stop_reason_counts": {
+        "SPAM_DEGENERACY": 5
+      }
+    }
+  ],
+  "individual_runs": [
+    {
+      "run_id": "K-K0_s40",
+      "sub_run": "K0",
+      "max_successive_renewals": 1000000,
+      "seed": 40,
+      "s_star": 1,
+      "total_cycles": 30000,
+      "total_renewals": 333,
+      "total_successions": 1,
+      "total_expirations": 0,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "total_tenures": 1,
+      "mean_residence_cycles": 29999.0,
+      "residence_times": [
+        29999
+      ],
+      "renewal_attempts": 333,
+      "renewal_successes": 333,
+      "renewal_rate": 1.0,
+      "renewals_per_tenure": 333.0,
+      "entropy_proxy": 0.0,
+      "unique_manifest_signatures": 1,
+      "stop_reason": "HORIZON_EXHAUSTED",
+      "degeneracy_classification": null,
+      "regime": {
+        "regime": "LOCK_IN",
+        "tenure_count": 1,
+        "mean_residence_cycles": 29999.0,
+        "renewal_rate": 1.0,
+        "entropy_proxy": 0.0,
+        "notes": [
+          "tenure_count=1",
+          "mean_residence=29999.0",
+          "renewal_rate=100.00%",
+          "entropy_proxy=0.000",
+          "stop_reason=HORIZON_EXHAUSTED",
+          "Lock-In: single/dual tenure, authority frozen"
+        ]
+      },
+      "runtime_ms": 154
+    },
+    {
+      "run_id": "K-K0_s41",
+      "sub_run": "K0",
+      "max_successive_renewals": 1000000,
+      "seed": 41,
+      "s_star": 1,
+      "total_cycles": 30000,
+      "total_renewals": 333,
+      "total_successions": 1,
+      "total_expirations": 0,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "total_tenures": 1,
+      "mean_residence_cycles": 29999.0,
+      "residence_times": [
+        29999
+      ],
+      "renewal_attempts": 333,
+      "renewal_successes": 333,
+      "renewal_rate": 1.0,
+      "renewals_per_tenure": 333.0,
+      "entropy_proxy": 0.0,
+      "unique_manifest_signatures": 1,
+      "stop_reason": "HORIZON_EXHAUSTED",
+      "degeneracy_classification": null,
+      "regime": {
+        "regime": "LOCK_IN",
+        "tenure_count": 1,
+        "mean_residence_cycles": 29999.0,
+        "renewal_rate": 1.0,
+        "entropy_proxy": 0.0,
+        "notes": [
+          "tenure_count=1",
+          "mean_residence=29999.0",
+          "renewal_rate=100.00%",
+          "entropy_proxy=0.000",
+          "stop_reason=HORIZON_EXHAUSTED",
+          "Lock-In: single/dual tenure, authority frozen"
+        ]
+      },
+      "runtime_ms": 154
+    },
+    {
+      "run_id": "K-K0_s42",
+      "sub_run": "K0",
+      "max_successive_renewals": 1000000,
+      "seed": 42,
+      "s_star": 1,
+      "total_cycles": 30000,
+      "total_renewals": 333,
+      "total_successions": 1,
+      "total_expirations": 0,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "total_tenures": 1,
+      "mean_residence_cycles": 29999.0,
+      "residence_times": [
+        29999
+      ],
+      "renewal_attempts": 333,
+      "renewal_successes": 333,
+      "renewal_rate": 1.0,
+      "renewals_per_tenure": 333.0,
+      "entropy_proxy": 0.0,
+      "unique_manifest_signatures": 1,
+      "stop_reason": "HORIZON_EXHAUSTED",
+      "degeneracy_classification": null,
+      "regime": {
+        "regime": "LOCK_IN",
+        "tenure_count": 1,
+        "mean_residence_cycles": 29999.0,
+        "renewal_rate": 1.0,
+        "entropy_proxy": 0.0,
+        "notes": [
+          "tenure_count=1",
+          "mean_residence=29999.0",
+          "renewal_rate=100.00%",
+          "entropy_proxy=0.000",
+          "stop_reason=HORIZON_EXHAUSTED",
+          "Lock-In: single/dual tenure, authority frozen"
+        ]
+      },
+      "runtime_ms": 153
+    },
+    {
+      "run_id": "K-K0_s43",
+      "sub_run": "K0",
+      "max_successive_renewals": 1000000,
+      "seed": 43,
+      "s_star": 1,
+      "total_cycles": 30000,
+      "total_renewals": 333,
+      "total_successions": 1,
+      "total_expirations": 0,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "total_tenures": 1,
+      "mean_residence_cycles": 29999.0,
+      "residence_times": [
+        29999
+      ],
+      "renewal_attempts": 333,
+      "renewal_successes": 333,
+      "renewal_rate": 1.0,
+      "renewals_per_tenure": 333.0,
+      "entropy_proxy": 0.0,
+      "unique_manifest_signatures": 1,
+      "stop_reason": "HORIZON_EXHAUSTED",
+      "degeneracy_classification": null,
+      "regime": {
+        "regime": "LOCK_IN",
+        "tenure_count": 1,
+        "mean_residence_cycles": 29999.0,
+        "renewal_rate": 1.0,
+        "entropy_proxy": 0.0,
+        "notes": [
+          "tenure_count=1",
+          "mean_residence=29999.0",
+          "renewal_rate=100.00%",
+          "entropy_proxy=0.000",
+          "stop_reason=HORIZON_EXHAUSTED",
+          "Lock-In: single/dual tenure, authority frozen"
+        ]
+      },
+      "runtime_ms": 165
+    },
+    {
+      "run_id": "K-K0_s44",
+      "sub_run": "K0",
+      "max_successive_renewals": 1000000,
+      "seed": 44,
+      "s_star": 1,
+      "total_cycles": 30000,
+      "total_renewals": 333,
+      "total_successions": 1,
+      "total_expirations": 0,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "total_tenures": 1,
+      "mean_residence_cycles": 29999.0,
+      "residence_times": [
+        29999
+      ],
+      "renewal_attempts": 333,
+      "renewal_successes": 333,
+      "renewal_rate": 1.0,
+      "renewals_per_tenure": 333.0,
+      "entropy_proxy": 0.0,
+      "unique_manifest_signatures": 1,
+      "stop_reason": "HORIZON_EXHAUSTED",
+      "degeneracy_classification": null,
+      "regime": {
+        "regime": "LOCK_IN",
+        "tenure_count": 1,
+        "mean_residence_cycles": 29999.0,
+        "renewal_rate": 1.0,
+        "entropy_proxy": 0.0,
+        "notes": [
+          "tenure_count=1",
+          "mean_residence=29999.0",
+          "renewal_rate=100.00%",
+          "entropy_proxy=0.000",
+          "stop_reason=HORIZON_EXHAUSTED",
+          "Lock-In: single/dual tenure, authority frozen"
+        ]
+      },
+      "runtime_ms": 150
+    },
+    {
+      "run_id": "K-K1_s40",
+      "sub_run": "K1",
+      "max_successive_renewals": 100,
+      "seed": 40,
+      "s_star": 4,
+      "total_cycles": 30000,
+      "total_renewals": 330,
+      "total_successions": 4,
+      "total_expirations": 3,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "total_tenures": 4,
+      "mean_residence_cycles": 7499.0,
+      "residence_times": [
+        9089,
+        9089,
+        9089,
+        2729
+      ],
+      "renewal_attempts": 333,
+      "renewal_successes": 330,
+      "renewal_rate": 0.990990990990991,
+      "renewals_per_tenure": 82.5,
+      "entropy_proxy": 0.25,
+      "unique_manifest_signatures": 1,
+      "stop_reason": "HORIZON_EXHAUSTED",
+      "degeneracy_classification": null,
+      "regime": {
+        "regime": "CONSTITUTIONAL_STABILITY",
+        "tenure_count": 4,
+        "mean_residence_cycles": 7499.0,
+        "renewal_rate": 0.990990990990991,
+        "entropy_proxy": 0.25,
+        "notes": [
+          "tenure_count=4",
+          "mean_residence=7499.0",
+          "renewal_rate=99.10%",
+          "entropy_proxy=0.250",
+          "stop_reason=HORIZON_EXHAUSTED",
+          "Constitutional Stability: multiple tenures, high renewal"
+        ]
+      },
+      "runtime_ms": 156
+    },
+    {
+      "run_id": "K-K1_s41",
+      "sub_run": "K1",
+      "max_successive_renewals": 100,
+      "seed": 41,
+      "s_star": 4,
+      "total_cycles": 30000,
+      "total_renewals": 330,
+      "total_successions": 4,
+      "total_expirations": 3,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "total_tenures": 4,
+      "mean_residence_cycles": 7499.0,
+      "residence_times": [
+        9089,
+        9089,
+        9089,
+        2729
+      ],
+      "renewal_attempts": 333,
+      "renewal_successes": 330,
+      "renewal_rate": 0.990990990990991,
+      "renewals_per_tenure": 82.5,
+      "entropy_proxy": 0.25,
+      "unique_manifest_signatures": 1,
+      "stop_reason": "HORIZON_EXHAUSTED",
+      "degeneracy_classification": null,
+      "regime": {
+        "regime": "CONSTITUTIONAL_STABILITY",
+        "tenure_count": 4,
+        "mean_residence_cycles": 7499.0,
+        "renewal_rate": 0.990990990990991,
+        "entropy_proxy": 0.25,
+        "notes": [
+          "tenure_count=4",
+          "mean_residence=7499.0",
+          "renewal_rate=99.10%",
+          "entropy_proxy=0.250",
+          "stop_reason=HORIZON_EXHAUSTED",
+          "Constitutional Stability: multiple tenures, high renewal"
+        ]
+      },
+      "runtime_ms": 154
+    },
+    {
+      "run_id": "K-K1_s42",
+      "sub_run": "K1",
+      "max_successive_renewals": 100,
+      "seed": 42,
+      "s_star": 4,
+      "total_cycles": 30000,
+      "total_renewals": 330,
+      "total_successions": 4,
+      "total_expirations": 3,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "total_tenures": 4,
+      "mean_residence_cycles": 7499.0,
+      "residence_times": [
+        9089,
+        9089,
+        9089,
+        2729
+      ],
+      "renewal_attempts": 333,
+      "renewal_successes": 330,
+      "renewal_rate": 0.990990990990991,
+      "renewals_per_tenure": 82.5,
+      "entropy_proxy": 0.25,
+      "unique_manifest_signatures": 1,
+      "stop_reason": "HORIZON_EXHAUSTED",
+      "degeneracy_classification": null,
+      "regime": {
+        "regime": "CONSTITUTIONAL_STABILITY",
+        "tenure_count": 4,
+        "mean_residence_cycles": 7499.0,
+        "renewal_rate": 0.990990990990991,
+        "entropy_proxy": 0.25,
+        "notes": [
+          "tenure_count=4",
+          "mean_residence=7499.0",
+          "renewal_rate=99.10%",
+          "entropy_proxy=0.250",
+          "stop_reason=HORIZON_EXHAUSTED",
+          "Constitutional Stability: multiple tenures, high renewal"
+        ]
+      },
+      "runtime_ms": 151
+    },
+    {
+      "run_id": "K-K1_s43",
+      "sub_run": "K1",
+      "max_successive_renewals": 100,
+      "seed": 43,
+      "s_star": 4,
+      "total_cycles": 30000,
+      "total_renewals": 330,
+      "total_successions": 4,
+      "total_expirations": 3,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "total_tenures": 4,
+      "mean_residence_cycles": 7499.0,
+      "residence_times": [
+        9089,
+        9089,
+        9089,
+        2729
+      ],
+      "renewal_attempts": 333,
+      "renewal_successes": 330,
+      "renewal_rate": 0.990990990990991,
+      "renewals_per_tenure": 82.5,
+      "entropy_proxy": 0.25,
+      "unique_manifest_signatures": 1,
+      "stop_reason": "HORIZON_EXHAUSTED",
+      "degeneracy_classification": null,
+      "regime": {
+        "regime": "CONSTITUTIONAL_STABILITY",
+        "tenure_count": 4,
+        "mean_residence_cycles": 7499.0,
+        "renewal_rate": 0.990990990990991,
+        "entropy_proxy": 0.25,
+        "notes": [
+          "tenure_count=4",
+          "mean_residence=7499.0",
+          "renewal_rate=99.10%",
+          "entropy_proxy=0.250",
+          "stop_reason=HORIZON_EXHAUSTED",
+          "Constitutional Stability: multiple tenures, high renewal"
+        ]
+      },
+      "runtime_ms": 152
+    },
+    {
+      "run_id": "K-K1_s44",
+      "sub_run": "K1",
+      "max_successive_renewals": 100,
+      "seed": 44,
+      "s_star": 4,
+      "total_cycles": 30000,
+      "total_renewals": 330,
+      "total_successions": 4,
+      "total_expirations": 3,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "total_tenures": 4,
+      "mean_residence_cycles": 7499.0,
+      "residence_times": [
+        9089,
+        9089,
+        9089,
+        2729
+      ],
+      "renewal_attempts": 333,
+      "renewal_successes": 330,
+      "renewal_rate": 0.990990990990991,
+      "renewals_per_tenure": 82.5,
+      "entropy_proxy": 0.25,
+      "unique_manifest_signatures": 1,
+      "stop_reason": "HORIZON_EXHAUSTED",
+      "degeneracy_classification": null,
+      "regime": {
+        "regime": "CONSTITUTIONAL_STABILITY",
+        "tenure_count": 4,
+        "mean_residence_cycles": 7499.0,
+        "renewal_rate": 0.990990990990991,
+        "entropy_proxy": 0.25,
+        "notes": [
+          "tenure_count=4",
+          "mean_residence=7499.0",
+          "renewal_rate=99.10%",
+          "entropy_proxy=0.250",
+          "stop_reason=HORIZON_EXHAUSTED",
+          "Constitutional Stability: multiple tenures, high renewal"
+        ]
+      },
+      "runtime_ms": 152
+    },
+    {
+      "run_id": "K-K2_s40",
+      "sub_run": "K2",
+      "max_successive_renewals": 15,
+      "seed": 40,
+      "s_star": 10,
+      "total_cycles": 12961,
+      "total_renewals": 135,
+      "total_successions": 10,
+      "total_expirations": 9,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "total_tenures": 10,
+      "mean_residence_cycles": 1295.1,
+      "residence_times": [
+        1439,
+        1439,
+        1439,
+        1439,
+        1439,
+        1439,
+        1439,
+        1439,
+        1439,
+        0
+      ],
+      "renewal_attempts": 144,
+      "renewal_successes": 135,
+      "renewal_rate": 0.9375,
+      "renewals_per_tenure": 13.5,
+      "entropy_proxy": 0.1,
+      "unique_manifest_signatures": 1,
+      "stop_reason": "SPAM_DEGENERACY",
+      "degeneracy_classification": "SPAM_DEGENERACY",
+      "regime": {
+        "regime": "SPAM_STASIS",
+        "tenure_count": 10,
+        "mean_residence_cycles": 1295.1,
+        "renewal_rate": 0.9375,
+        "entropy_proxy": 0.1,
+        "notes": [
+          "tenure_count=10",
+          "mean_residence=1295.1",
+          "renewal_rate=93.75%",
+          "entropy_proxy=0.100",
+          "stop_reason=SPAM_DEGENERACY",
+          "Spam Stasis: SPAM_DEGENERACY terminated (control dominance)"
+        ]
+      },
+      "runtime_ms": 75
+    },
+    {
+      "run_id": "K-K2_s41",
+      "sub_run": "K2",
+      "max_successive_renewals": 15,
+      "seed": 41,
+      "s_star": 10,
+      "total_cycles": 12961,
+      "total_renewals": 135,
+      "total_successions": 10,
+      "total_expirations": 9,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "total_tenures": 10,
+      "mean_residence_cycles": 1295.1,
+      "residence_times": [
+        1439,
+        1439,
+        1439,
+        1439,
+        1439,
+        1439,
+        1439,
+        1439,
+        1439,
+        0
+      ],
+      "renewal_attempts": 144,
+      "renewal_successes": 135,
+      "renewal_rate": 0.9375,
+      "renewals_per_tenure": 13.5,
+      "entropy_proxy": 0.1,
+      "unique_manifest_signatures": 1,
+      "stop_reason": "SPAM_DEGENERACY",
+      "degeneracy_classification": "SPAM_DEGENERACY",
+      "regime": {
+        "regime": "SPAM_STASIS",
+        "tenure_count": 10,
+        "mean_residence_cycles": 1295.1,
+        "renewal_rate": 0.9375,
+        "entropy_proxy": 0.1,
+        "notes": [
+          "tenure_count=10",
+          "mean_residence=1295.1",
+          "renewal_rate=93.75%",
+          "entropy_proxy=0.100",
+          "stop_reason=SPAM_DEGENERACY",
+          "Spam Stasis: SPAM_DEGENERACY terminated (control dominance)"
+        ]
+      },
+      "runtime_ms": 80
+    },
+    {
+      "run_id": "K-K2_s42",
+      "sub_run": "K2",
+      "max_successive_renewals": 15,
+      "seed": 42,
+      "s_star": 10,
+      "total_cycles": 12961,
+      "total_renewals": 135,
+      "total_successions": 10,
+      "total_expirations": 9,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "total_tenures": 10,
+      "mean_residence_cycles": 1295.1,
+      "residence_times": [
+        1439,
+        1439,
+        1439,
+        1439,
+        1439,
+        1439,
+        1439,
+        1439,
+        1439,
+        0
+      ],
+      "renewal_attempts": 144,
+      "renewal_successes": 135,
+      "renewal_rate": 0.9375,
+      "renewals_per_tenure": 13.5,
+      "entropy_proxy": 0.1,
+      "unique_manifest_signatures": 1,
+      "stop_reason": "SPAM_DEGENERACY",
+      "degeneracy_classification": "SPAM_DEGENERACY",
+      "regime": {
+        "regime": "SPAM_STASIS",
+        "tenure_count": 10,
+        "mean_residence_cycles": 1295.1,
+        "renewal_rate": 0.9375,
+        "entropy_proxy": 0.1,
+        "notes": [
+          "tenure_count=10",
+          "mean_residence=1295.1",
+          "renewal_rate=93.75%",
+          "entropy_proxy=0.100",
+          "stop_reason=SPAM_DEGENERACY",
+          "Spam Stasis: SPAM_DEGENERACY terminated (control dominance)"
+        ]
+      },
+      "runtime_ms": 78
+    },
+    {
+      "run_id": "K-K2_s43",
+      "sub_run": "K2",
+      "max_successive_renewals": 15,
+      "seed": 43,
+      "s_star": 10,
+      "total_cycles": 12961,
+      "total_renewals": 135,
+      "total_successions": 10,
+      "total_expirations": 9,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "total_tenures": 10,
+      "mean_residence_cycles": 1295.1,
+      "residence_times": [
+        1439,
+        1439,
+        1439,
+        1439,
+        1439,
+        1439,
+        1439,
+        1439,
+        1439,
+        0
+      ],
+      "renewal_attempts": 144,
+      "renewal_successes": 135,
+      "renewal_rate": 0.9375,
+      "renewals_per_tenure": 13.5,
+      "entropy_proxy": 0.1,
+      "unique_manifest_signatures": 1,
+      "stop_reason": "SPAM_DEGENERACY",
+      "degeneracy_classification": "SPAM_DEGENERACY",
+      "regime": {
+        "regime": "SPAM_STASIS",
+        "tenure_count": 10,
+        "mean_residence_cycles": 1295.1,
+        "renewal_rate": 0.9375,
+        "entropy_proxy": 0.1,
+        "notes": [
+          "tenure_count=10",
+          "mean_residence=1295.1",
+          "renewal_rate=93.75%",
+          "entropy_proxy=0.100",
+          "stop_reason=SPAM_DEGENERACY",
+          "Spam Stasis: SPAM_DEGENERACY terminated (control dominance)"
+        ]
+      },
+      "runtime_ms": 81
+    },
+    {
+      "run_id": "K-K2_s44",
+      "sub_run": "K2",
+      "max_successive_renewals": 15,
+      "seed": 44,
+      "s_star": 10,
+      "total_cycles": 12961,
+      "total_renewals": 135,
+      "total_successions": 10,
+      "total_expirations": 9,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "total_tenures": 10,
+      "mean_residence_cycles": 1295.1,
+      "residence_times": [
+        1439,
+        1439,
+        1439,
+        1439,
+        1439,
+        1439,
+        1439,
+        1439,
+        1439,
+        0
+      ],
+      "renewal_attempts": 144,
+      "renewal_successes": 135,
+      "renewal_rate": 0.9375,
+      "renewals_per_tenure": 13.5,
+      "entropy_proxy": 0.1,
+      "unique_manifest_signatures": 1,
+      "stop_reason": "SPAM_DEGENERACY",
+      "degeneracy_classification": "SPAM_DEGENERACY",
+      "regime": {
+        "regime": "SPAM_STASIS",
+        "tenure_count": 10,
+        "mean_residence_cycles": 1295.1,
+        "renewal_rate": 0.9375,
+        "entropy_proxy": 0.1,
+        "notes": [
+          "tenure_count=10",
+          "mean_residence=1295.1",
+          "renewal_rate=93.75%",
+          "entropy_proxy=0.100",
+          "stop_reason=SPAM_DEGENERACY",
+          "Spam Stasis: SPAM_DEGENERACY terminated (control dominance)"
+        ]
+      },
+      "runtime_ms": 76
+    },
+    {
+      "run_id": "K-K3_s40",
+      "sub_run": "K3",
+      "max_successive_renewals": 3,
+      "seed": 40,
+      "s_star": 10,
+      "total_cycles": 3241,
+      "total_renewals": 27,
+      "total_successions": 10,
+      "total_expirations": 9,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "total_tenures": 10,
+      "mean_residence_cycles": 323.1,
+      "residence_times": [
+        359,
+        359,
+        359,
+        359,
+        359,
+        359,
+        359,
+        359,
+        359,
+        0
+      ],
+      "renewal_attempts": 36,
+      "renewal_successes": 27,
+      "renewal_rate": 0.75,
+      "renewals_per_tenure": 2.7,
+      "entropy_proxy": 0.1,
+      "unique_manifest_signatures": 1,
+      "stop_reason": "SPAM_DEGENERACY",
+      "degeneracy_classification": "SPAM_DEGENERACY",
+      "regime": {
+        "regime": "SPAM_STASIS",
+        "tenure_count": 10,
+        "mean_residence_cycles": 323.1,
+        "renewal_rate": 0.75,
+        "entropy_proxy": 0.1,
+        "notes": [
+          "tenure_count=10",
+          "mean_residence=323.1",
+          "renewal_rate=75.00%",
+          "entropy_proxy=0.100",
+          "stop_reason=SPAM_DEGENERACY",
+          "Spam Stasis: SPAM_DEGENERACY terminated (control dominance)"
+        ]
+      },
+      "runtime_ms": 25
+    },
+    {
+      "run_id": "K-K3_s41",
+      "sub_run": "K3",
+      "max_successive_renewals": 3,
+      "seed": 41,
+      "s_star": 10,
+      "total_cycles": 3241,
+      "total_renewals": 27,
+      "total_successions": 10,
+      "total_expirations": 9,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "total_tenures": 10,
+      "mean_residence_cycles": 323.1,
+      "residence_times": [
+        359,
+        359,
+        359,
+        359,
+        359,
+        359,
+        359,
+        359,
+        359,
+        0
+      ],
+      "renewal_attempts": 36,
+      "renewal_successes": 27,
+      "renewal_rate": 0.75,
+      "renewals_per_tenure": 2.7,
+      "entropy_proxy": 0.1,
+      "unique_manifest_signatures": 1,
+      "stop_reason": "SPAM_DEGENERACY",
+      "degeneracy_classification": "SPAM_DEGENERACY",
+      "regime": {
+        "regime": "SPAM_STASIS",
+        "tenure_count": 10,
+        "mean_residence_cycles": 323.1,
+        "renewal_rate": 0.75,
+        "entropy_proxy": 0.1,
+        "notes": [
+          "tenure_count=10",
+          "mean_residence=323.1",
+          "renewal_rate=75.00%",
+          "entropy_proxy=0.100",
+          "stop_reason=SPAM_DEGENERACY",
+          "Spam Stasis: SPAM_DEGENERACY terminated (control dominance)"
+        ]
+      },
+      "runtime_ms": 32
+    },
+    {
+      "run_id": "K-K3_s42",
+      "sub_run": "K3",
+      "max_successive_renewals": 3,
+      "seed": 42,
+      "s_star": 10,
+      "total_cycles": 3241,
+      "total_renewals": 27,
+      "total_successions": 10,
+      "total_expirations": 9,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "total_tenures": 10,
+      "mean_residence_cycles": 323.1,
+      "residence_times": [
+        359,
+        359,
+        359,
+        359,
+        359,
+        359,
+        359,
+        359,
+        359,
+        0
+      ],
+      "renewal_attempts": 36,
+      "renewal_successes": 27,
+      "renewal_rate": 0.75,
+      "renewals_per_tenure": 2.7,
+      "entropy_proxy": 0.1,
+      "unique_manifest_signatures": 1,
+      "stop_reason": "SPAM_DEGENERACY",
+      "degeneracy_classification": "SPAM_DEGENERACY",
+      "regime": {
+        "regime": "SPAM_STASIS",
+        "tenure_count": 10,
+        "mean_residence_cycles": 323.1,
+        "renewal_rate": 0.75,
+        "entropy_proxy": 0.1,
+        "notes": [
+          "tenure_count=10",
+          "mean_residence=323.1",
+          "renewal_rate=75.00%",
+          "entropy_proxy=0.100",
+          "stop_reason=SPAM_DEGENERACY",
+          "Spam Stasis: SPAM_DEGENERACY terminated (control dominance)"
+        ]
+      },
+      "runtime_ms": 32
+    },
+    {
+      "run_id": "K-K3_s43",
+      "sub_run": "K3",
+      "max_successive_renewals": 3,
+      "seed": 43,
+      "s_star": 10,
+      "total_cycles": 3241,
+      "total_renewals": 27,
+      "total_successions": 10,
+      "total_expirations": 9,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "total_tenures": 10,
+      "mean_residence_cycles": 323.1,
+      "residence_times": [
+        359,
+        359,
+        359,
+        359,
+        359,
+        359,
+        359,
+        359,
+        359,
+        0
+      ],
+      "renewal_attempts": 36,
+      "renewal_successes": 27,
+      "renewal_rate": 0.75,
+      "renewals_per_tenure": 2.7,
+      "entropy_proxy": 0.1,
+      "unique_manifest_signatures": 1,
+      "stop_reason": "SPAM_DEGENERACY",
+      "degeneracy_classification": "SPAM_DEGENERACY",
+      "regime": {
+        "regime": "SPAM_STASIS",
+        "tenure_count": 10,
+        "mean_residence_cycles": 323.1,
+        "renewal_rate": 0.75,
+        "entropy_proxy": 0.1,
+        "notes": [
+          "tenure_count=10",
+          "mean_residence=323.1",
+          "renewal_rate=75.00%",
+          "entropy_proxy=0.100",
+          "stop_reason=SPAM_DEGENERACY",
+          "Spam Stasis: SPAM_DEGENERACY terminated (control dominance)"
+        ]
+      },
+      "runtime_ms": 31
+    },
+    {
+      "run_id": "K-K3_s44",
+      "sub_run": "K3",
+      "max_successive_renewals": 3,
+      "seed": 44,
+      "s_star": 10,
+      "total_cycles": 3241,
+      "total_renewals": 27,
+      "total_successions": 10,
+      "total_expirations": 9,
+      "total_bankruptcies": 0,
+      "total_revocations": 0,
+      "total_tenures": 10,
+      "mean_residence_cycles": 323.1,
+      "residence_times": [
+        359,
+        359,
+        359,
+        359,
+        359,
+        359,
+        359,
+        359,
+        359,
+        0
+      ],
+      "renewal_attempts": 36,
+      "renewal_successes": 27,
+      "renewal_rate": 0.75,
+      "renewals_per_tenure": 2.7,
+      "entropy_proxy": 0.1,
+      "unique_manifest_signatures": 1,
+      "stop_reason": "SPAM_DEGENERACY",
+      "degeneracy_classification": "SPAM_DEGENERACY",
+      "regime": {
+        "regime": "SPAM_STASIS",
+        "tenure_count": 10,
+        "mean_residence_cycles": 323.1,
+        "renewal_rate": 0.75,
+        "entropy_proxy": 0.1,
+        "notes": [
+          "tenure_count=10",
+          "mean_residence=323.1",
+          "renewal_rate=75.00%",
+          "entropy_proxy=0.100",
+          "stop_reason=SPAM_DEGENERACY",
+          "Spam Stasis: SPAM_DEGENERACY terminated (control dominance)"
+        ]
+      },
+      "runtime_ms": 26
+    }
+  ],
+  "phase_analysis": {
+    "description": "Succession pressure phase line analysis",
+    "phase_points": [
+      {
+        "sub_run": "K0",
+        "max_successive_renewals": 1000000,
+        "dominant_regime": "LOCK_IN",
+        "mean_tenures": 1.0,
+        "mean_entropy": 0.0
+      },
+      {
+        "sub_run": "K1",
+        "max_successive_renewals": 100,
+        "dominant_regime": "CONSTITUTIONAL_STABILITY",
+        "mean_tenures": 4.0,
+        "mean_entropy": 0.25
+      },
+      {
+        "sub_run": "K2",
+        "max_successive_renewals": 15,
+        "dominant_regime": "SPAM_STASIS",
+        "mean_tenures": 10.0,
+        "mean_entropy": 0.1
+      },
+      {
+        "sub_run": "K3",
+        "max_successive_renewals": 3,
+        "dominant_regime": "SPAM_STASIS",
+        "mean_tenures": 10.0,
+        "mean_entropy": 0.1
+      }
+    ],
+    "constitutional_band": {
+      "min": 100,
+      "max": 100
+    },
+    "lock_in_boundary": 1000000,
+    "thrash_boundary": null,
+    "notes": [
+      "Lock-in appears at max_successive_renewals \u2265 1000000",
+      "Constitutional band: 100 \u2264 max_successive_renewals \u2264 100",
+      "Forced succession appears CONSTITUTIVE: without it, lock-in occurs"
+    ]
+  }
+}

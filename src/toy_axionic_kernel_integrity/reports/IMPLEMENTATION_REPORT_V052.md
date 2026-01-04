@@ -674,7 +674,96 @@ See [run_j2_v052_report.md](run_j2_v052_report.md).
 
 ---
 
-## 17. Future Work
+## 17. Run K: Succession Geometry Sweep (Completed)
+
+Run K isolated a single axis: **max_successive_renewals** — the number of consecutive renewals permitted before forced succession. The goal was to determine whether forced succession is *constitutive* (required for institutional health) or merely *procedural* (tunable optimization).
+
+### Configuration (Single-Axis Isolation)
+
+| Parameter | Value | Notes |
+|-----------|-------|-------|
+| **Expressivity Class** | E3 | Fixed (prior runs established E3 stability) |
+| **Rent fraction** | 40% | Well inside stable region (Run J boundary: 48%) |
+| **Renewal cost** | 5 | Verified affordable at 40% rent |
+| **renewal_check_interval** | 90 | Non-commensurate with epoch to avoid resonance |
+| **msrw_cycles** | 200 | MSRW gates replacement, NOT renewal |
+| **Horizon (H)** | 30,000 | Long enough for regime emergence |
+| **Seeds** | 40–44 | 5 replications per sub-run |
+
+### Sub-Run Definitions
+
+| Sub-Run | max_successive_renewals | Label |
+|---------|-------------------------|-------|
+| K0 | ∞ (1,000,000) | Lock-In Control — no forced succession |
+| K1 | 100 | Low Turnover Pressure |
+| K2 | 15 | Moderate Turnover |
+| K3 | 3 | High Turnover Pressure |
+
+### Summary Table
+
+| Sub-Run | max_successive | Tenures | Mean Residence | Renewal Rate | Entropy | Regime | Terminal Cause |
+|---------|----------------|---------|----------------|--------------|---------|--------|----------------|
+| K0 | ∞ | 1.0 | 29,999 | 100% | 0.000 | LOCK_IN | HORIZON_EXHAUSTED |
+| K1 | 100 | 4.0 | 7,499 | 99.10% | 0.250 | CONSTITUTIONAL_STABILITY | HORIZON_EXHAUSTED |
+| K2 | 15 | 10.0 | 1,295 | 93.75% | 0.100 | STASIS_UNDER_TURNOVER | SPAM_DEGENERACY |
+| K3 | 3 | 10.0 | 323 | 75.00% | 0.100 | STASIS_UNDER_TURNOVER | SPAM_DEGENERACY |
+
+### Regime Definitions
+
+| Regime | Criteria |
+|--------|----------|
+| **LOCK_IN** | tenure_count ≤ 2, entropy → 0. Authority frozen in initial configuration. |
+| **CONSTITUTIONAL_STABILITY** | Multiple tenures, renewal_rate ≥ 75%, horizon reached, no degeneracy. |
+| **STASIS_UNDER_TURNOVER** | SPAM_DEGENERACY termination. Behavioral homogeneity (control actions ≥80%), not thrash. |
+
+### Phase Diagram
+
+```
+max_successive_renewals → Regime
+─────────────────────────────────
+        ∞ → LOCK_IN
+      100 → CONSTITUTIONAL_STABILITY
+       15 → STASIS_UNDER_TURNOVER
+        3 → STASIS_UNDER_TURNOVER
+```
+
+**Observed Stable Point:** `max_successive_renewals = 100` achieved constitutional stability. No band width has been established — only a single stable point was tested.
+
+### Key Finding
+
+**Forced succession is necessary to prevent institutional lock-in, but does not guarantee institutional diversity.**
+
+| Condition | Outcome |
+|-----------|---------|
+| No forced succession (K0) | Authority locks into single configuration permanently |
+| Moderate forcing (K1=100) | Constitutional stability — diverse succession with high renewal |
+| High forcing (K2=15, K3=3) | Stasis under turnover — behavioral homogeneity, not thrash |
+
+**No thrash regime was observed in Run K.** K2/K3 degeneracy arises from behavioral homogeneity (control action dominance), not from instability or rapid authority changes.
+
+### MSRW Semantic Clarification
+
+A critical implementation detail: **MSRW gates successor replacement, not renewal**.
+
+- `_check_renewal_with_rent()` checks budget feasibility, not MSRW
+- `Lease.renew()` checks `max_successive_renewals`, not MSRW
+- Succession triggers when renewal exhausted OR MSRW expires — whichever comes first
+
+### Implications
+
+1. **Lock-in is the default:** Without any turnover constraint, the system settles into a single authority configuration and never recovers.
+
+2. **A single stable point was observed:** At the tested parameters, only `max_successive_renewals=100` produced stable succession. No band width has been established.
+
+3. **Stasis under turnover is distinct from thrash:** K2/K3 exhibit behavioral homogeneity (control action dominance), not instability or rapid authority changes. Renewal rates remained high (75–94%).
+
+4. **Future work:** The transition between CONSTITUTIONAL_STABILITY and STASIS_UNDER_TURNOVER likely falls somewhere in the range 15–100. Additional sub-runs could map this boundary.
+
+See [run_k_v052_report.md](run_k_v052_report.md).
+
+---
+
+## 18. Future Work
 
 ### Planned Features
 
@@ -690,7 +779,7 @@ See [run_j2_v052_report.md](run_j2_v052_report.md).
 
 ### Recommended Follow-Up Runs
 
-Based on Run G/H/H3-R/I/J/J2 results:
+Based on Run G/H/H3-R/I/J/J2/K results:
 
 1. ~~**Run H3-bisect:** Test renewal_cost = 5, 7, 8 to find exact transition point~~ → Superseded by H3-RZ/RS/RB series
 2. **Run H3-RB′:** Extend sweep to {30, 40, 50, 60} to find actual cliff above 20
@@ -698,7 +787,8 @@ Based on Run G/H/H3-R/I/J/J2 results:
 4. **Run I′:** Test with multiple succession triggers (e.g., force expiration events)
 5. ~~**Run J:** Expressivity-rent boundary identification~~ → **Completed.** Sharp boundary at 48% E3 rent.
 6. ~~**Run J2:** Renewal-timing sensitivity test~~ → **Completed.** Boundary is timing-dependent (epoch/check resonance).
-7. **Run K:** Real task workload integration (semantic successor selection)
+7. ~~**Run K:** Succession geometry sweep (max_successive_renewals)~~ → **Completed.** Forced succession is CONSTITUTIVE.
+8. **Run K′:** Map CONSTITUTIONAL_STABILITY → SPAM_STASIS transition (test max_successive_renewals = 30, 50, 75)
 
 ---
 
