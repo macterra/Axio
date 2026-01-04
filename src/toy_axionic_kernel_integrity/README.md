@@ -45,15 +45,27 @@ python scripts/run_g_v052.py
 
 # Run H: Boundary-finding escalation
 python scripts/run_h_v052.py
+
+# Run I: Rubber-stamp degeneracy (no forced succession)
+python scripts/run_i_v052.py
+
+# Run J: Expressivity-rent boundary identification
+python scripts/run_j_v052.py
+
+# Run J2: Renewal-timing sensitivity
+python scripts/run_j2_v052.py
+
+# Run K: Succession geometry sweep
+python scripts/run_k_v052.py
 ```
 
 ### Run Tests
 
 ```bash
-# Run all tests
+# Run all tests (~517 tests across versions)
 pytest tests/
 
-# Run v0.5.2 tests (52 tests)
+# Run v0.5.2 tests
 pytest tests/test_v052.py -v
 
 # Run with coverage
@@ -101,17 +113,39 @@ effective = schedule.compute_effective_steps(ExpressivityClass.E3)  # 60
 
 ## Experiment Results
 
-### Run H: Boundary Finding (v0.5.2)
+### Summary of Key Findings (v0.5.2)
 
-| Sub-Run | Parameter | E3 Renewal Rate | Finding |
-|---------|-----------|-----------------|---------|
-| H1 | E3 rent = 60 | 93.8% | Stable |
-| H2 | H = 100,000 | 93.8% | Stable |
-| H3 | renewal_cost = 10 | **0%** | **Collapse** |
+| Run | Focus | Key Finding |
+|-----|-------|-------------|
+| **H** | Boundary finding | Renewal cost = 10 causes collapse at E3 |
+| **I** | No forced succession | Rubber-stamp degeneracy (authority never changes) |
+| **J** | Rent boundary | Sharp boundary at 48% E3 rent |
+| **J2** | Timing sensitivity | Boundary is timing-dependent (epoch/check resonance) |
+| **K** | Succession geometry | Forced succession is necessary but not sufficient |
 
-**Critical Discovery:** Renewal cost of 10 steps at E3 causes complete system failure due to typical 90% step usage leaving insufficient budget.
+### Run K: Succession Geometry (Latest)
 
-See [reports/run_h_v052_report.md](reports/run_h_v052_report.md) for full analysis.
+| max_successive_renewals | Regime | Outcome |
+|-------------------------|--------|--------|
+| ∞ | LOCK_IN | Authority frozen permanently |
+| 100 | CONSTITUTIONAL_STABILITY | Diverse succession, horizon reached |
+| 15, 3 | STASIS_UNDER_TURNOVER | Behavioral homogeneity, not thrash |
+
+**Key Finding:** Forced succession is necessary to prevent lock-in, but does not guarantee institutional diversity.
+
+### Run J: Rent Boundary
+
+- Sharp boundary at **48% E3 rent** (between 47% and 48%)
+- At 47%: remaining_budget ≥ renewal_cost → renew succeeds
+- At 48%: remaining_budget < renewal_cost → bankruptcy
+
+### Run J2: Timing Sensitivity
+
+The 48% boundary is a **resonance artifact**, not intrinsic:
+- Epoch-aligned checks (interval=100) → collapse
+- Off-epoch checks (interval=50 or 90) → stable
+
+See [reports/IMPLEMENTATION_REPORT_V052.md](reports/IMPLEMENTATION_REPORT_V052.md) for full analysis.
 
 ## Authority Lease System (v0.4+)
 
@@ -170,8 +204,14 @@ result = harness.run()
 ## Documentation
 
 - [IMPLEMENTATION_REPORT_V052.md](reports/IMPLEMENTATION_REPORT_V052.md) - Current version details
-- [spec_v0.5.2.md](docs/spec_v0.5.2md) - v0.5.2 specification
-- [instructions_v0.5.2_runnerH.md](docs/instructions_v0.5.2_runnerH.md) - Run H instructions
+- [spec_v0.5.2.md](docs/spec_v0.5.2.md) - v0.5.2 specification
+
+### Experiment Instructions
+
+- [instructions_v0.5.2_runnerH.md](docs/instructions_v0.5.2_runnerH.md) - Run H boundary finding
+- [instructions_v0.5.2_runnerI.md](docs/instructions_v0.5.2_runnerI.md) - Run I rubber-stamp test
+- [instructions_v0.5.2_runnerJ.md](docs/instructions_v0.5.2_runnerJ.md) - Run J rent boundary
+- [instructions_v0.5.2_runnerK.md](docs/instructions_v0.5.2_runnerK.md) - Run K succession geometry
 
 ### Historical Reports
 
@@ -182,11 +222,11 @@ result = harness.run()
 ## Running Tests
 
 ```bash
-# All tests (~400+ tests across versions)
+# All tests (~517 tests across versions)
 pytest tests/
 
 # Version-specific suites
-pytest tests/test_v052.py -v  # v0.5.2: 52 tests
+pytest tests/test_v052.py -v  # v0.5.2: ALS-E expressivity
 pytest tests/test_v043.py -v  # v0.4.3: ALS tests
 pytest tests/test_v042.py -v  # v0.4.2: ALS foundation
 pytest tests/test_v032.py -v  # v0.3.2: H=10,000 experiments

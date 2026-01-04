@@ -787,8 +787,8 @@ Based on Run G/H/H3-R/I/J/J2/K results:
 4. **Run I′:** Test with multiple succession triggers (e.g., force expiration events)
 5. ~~**Run J:** Expressivity-rent boundary identification~~ → **Completed.** Sharp boundary at 48% E3 rent.
 6. ~~**Run J2:** Renewal-timing sensitivity test~~ → **Completed.** Boundary is timing-dependent (epoch/check resonance).
-7. ~~**Run K:** Succession geometry sweep (max_successive_renewals)~~ → **Completed.** Forced succession is CONSTITUTIVE.
-8. **Run K′:** Map CONSTITUTIONAL_STABILITY → SPAM_STASIS transition (test max_successive_renewals = 30, 50, 75)
+7. ~~**Run K:** Succession geometry sweep (max_successive_renewals)~~ → **Completed.** Forced succession is necessary but not sufficient for diversity.
+8. **Run K′:** Map CONSTITUTIONAL_STABILITY → STASIS_UNDER_TURNOVER transition (test max_successive_renewals = 30, 50, 75)
 
 ---
 
