@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency VI.8 — Eligibility Without Optimization - Axio</title>
+    <link rel="icon" type="image/webp" href="../axio.webp">
+
+    <!-- Google Fonts - Academic Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Paper Styles -->
+    <link rel="stylesheet" href="../papers.css">
+</head>
+<body>
+    <div class="header-bar">
+        <a href="../index.html" class="logo-link">
+            <img src="../axio.webp" alt="Axio" class="site-logo">
+        </a>
+        <div class="back-link"><a href="index.html">← Back to Papers</a></div>
+    </div>
+    <article>
+
+<h1 id="axionic-agency-vi.8-eligibility-without-optimization">Axionic
+Agency VI.8 — Eligibility Without Optimization</h1>
+<p><em>Constitutional Succession Under Semantic Failure</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026.01.04</p>
+<h2 id="abstract">Abstract</h2>
+<p>Systems that track semantic success or failure typically entangle
+meaning with continuous control, optimization, or enforcement. This
+entanglement produces incentive gaming, obscures failure modes, and
+collapses the distinction between authority and competence. We present a
+different architectural pattern: <strong>eligibility-coupled
+succession</strong>, in which semantic information has
+<strong>constitutional consequences only at authority transfer
+boundaries</strong>, not during operation or renewal. Authority may
+persist while meaning fails; meaning constrains authority only when
+authority changes hands. We implement this pattern in a lease-based
+authority system with externally verifiable commitments and evaluate it
+across four controlled experimental regimes. We show that eligibility
+can remain latent under stable authority, become binding under forced
+turnover, exhibit thresholded phase behavior as a function of
+constitutional strictness, and remain meaningful under adversarial
+candidate-pool composition. The results demonstrate that semantics can
+matter without becoming an optimization signal or enforcement channel.
+We explicitly discuss irreversibility, latency costs, and oracle
+assumptions, and outline how these motivate—but are not solved by—future
+extensions.</p>
+<h2 id="introduction">1. Introduction</h2>
+<h3 id="the-semantic-control-dilemma">1.1 The semantic control
+dilemma</h3>
+<p>Most systems that reason about semantic success—correctness,
+competence, task fulfillment, or obligation satisfaction—ultimately use
+that information to drive control. Whether through reward signals,
+penalties, optimization objectives, or enforcement triggers, semantic
+evaluation is typically wired directly into behavior. This design choice
+is understandable: if meaning is known, why not act on it?</p>
+<p>However, this entanglement produces persistent problems. Continuous
+semantic control encourages reward hacking, collapses auditability, and
+blurs the distinction between <em>what a system does</em> and <em>why it
+is allowed to continue doing it</em>. When semantic failure immediately
+affects behavior, it becomes difficult to distinguish genuine incapacity
+from strategic compliance. Conversely, when semantic success is
+rewarded, systems learn to optimize metrics rather than satisfy
+underlying obligations.</p>
+<p>These issues motivate a more basic question: <strong>must semantics
+influence control continuously, or is there a principled boundary where
+meaning can matter without becoming an optimization signal?</strong></p>
+<h3 id="authority-renewal-and-succession">1.2 Authority, renewal, and
+succession</h3>
+<p>We argue that the natural boundary is
+<strong>succession</strong>.</p>
+<p>In many institutional and computational systems, authority is
+structured around three distinct mechanisms:</p>
+<ol type="1">
+<li><strong>Operation</strong> — how authority is exercised during
+normal activity.</li>
+<li><strong>Renewal</strong> — whether existing authority persists.</li>
+<li><strong>Succession</strong> — who holds authority next.</li>
+</ol>
+<p>These mechanisms are often conflated. Renewal is treated as a reward
+for good behavior; succession is treated as a procedural formality. Yet
+succession is the one moment where authority is explicitly re-evaluated.
+It is therefore the most natural constitutional point for semantic
+constraints to apply.</p>
+<p>This paper explores what happens when semantics are <strong>entirely
+excluded from operation and renewal</strong>, but allowed to influence
+<strong>succession eligibility only</strong>.</p>
+<h3 id="contributions-and-scope">1.3 Contributions and scope</h3>
+<p>We introduce and evaluate <strong>eligibility-coupled
+succession</strong>, a design pattern with the following properties:</p>
+<ul>
+<li>Semantic failure is tracked but does not affect behavior or
+renewal.</li>
+<li>Semantic information influences authority <strong>only at succession
+events</strong>.</li>
+<li>No optimization, reward shaping, or enforcement based on semantics
+is introduced.</li>
+<li>Authority may persist while meaning fails; meaning constrains only
+future authority.</li>
+</ul>
+<p>We do <strong>not</strong> propose this mechanism as a real-time
+safety controller. It operates at a governance timescale and is intended
+for macro-level authority allocation, resource orchestration, and
+institutional control layers.</p>
+<h2 id="design-goals-and-non-goals">2. Design Goals and Non-Goals</h2>
+<h3 id="goals">2.1 Goals</h3>
+<p>The system is designed to satisfy four goals:</p>
+<ol type="1">
+<li><p><strong>Semantic auditability</strong> Semantic success or
+failure must be externally checkable and logged.</p></li>
+<li><p><strong>Operational decoupling</strong> Semantic state must not
+influence behavior during normal operation.</p></li>
+<li><p><strong>Renewal independence</strong> Authority renewal must
+depend only on structural and resource constraints, not on semantic
+success.</p></li>
+<li><p><strong>Constitutional relevance</strong> Semantic information
+must have a meaningful effect somewhere in the system.</p></li>
+</ol>
+<h3 id="non-goals">2.2 Non-Goals</h3>
+<p>The system explicitly does <strong>not</strong> aim to:</p>
+<ul>
+<li>optimize performance or outcomes,</li>
+<li>guarantee competence or correctness,</li>
+<li>enforce alignment or safety,</li>
+<li>select “better” policies in a normative sense,</li>
+<li>eliminate failure or collapse.</li>
+</ul>
+<p>Failure, including the absence of eligible authority, is treated as
+an admissible outcome.</p>
+<h2 id="system-model-overview">3. System Model Overview</h2>
+<h3 id="authority-leases-and-renewal">3.1 Authority leases and
+renewal</h3>
+<p>Authority is granted through <strong>leases</strong> with explicit
+resource bounds and interface constraints. A lease holder may act freely
+within these bounds. Renewal is checked periodically and depends only
+on:</p>
+<ul>
+<li>compliance with structural constraints,</li>
+<li>availability of resources to pay renewal costs.</li>
+</ul>
+<p>Renewal does not consult semantic state.</p>
+<h3 id="commitments-and-semantic-failure">3.2 Commitments and semantic
+failure</h3>
+<p>Authority holders are subject to <strong>commitments</strong>:
+externally verifiable obligations evaluated over fixed windows.
+Commitments may succeed or fail, and failure may accumulate
+indefinitely. Importantly:</p>
+<ul>
+<li>commitment failure does not revoke authority,</li>
+<li>commitment failure does not block renewal,</li>
+<li>commitment failure does not trigger enforcement.</li>
+</ul>
+<p>Semantic failure is recorded but inert during operation.</p>
+<h3 id="succession-events">3.3 Succession events</h3>
+<p>Succession is discrete and occurs only at:</p>
+<ul>
+<li>initialization,</li>
+<li>lease expiration,</li>
+<li>revocation due to structural violation,</li>
+<li>forced turnover after a fixed number of renewals.</li>
+</ul>
+<p>Only at these events is authority transferred.</p>
+<h2 id="eligibility-coupled-succession">4. Eligibility-Coupled
+Succession</h2>
+<h3 id="semantic-failure-streaks">4.1 Semantic failure streaks</h3>
+<p>Each policy identity accumulates a <strong>semantic failure
+streak</strong>, incremented when obligations fail and reset on success.
+Streaks:</p>
+<ul>
+<li>are keyed to stable policy identities, not runtime instances,</li>
+<li>update only at epoch boundaries,</li>
+<li>do not update during periods without authority.</li>
+</ul>
+<h3 id="eligibility-predicate">4.2 Eligibility predicate</h3>
+<p>At succession, a candidate is <strong>eligible</strong> if its
+failure streak is below a fixed threshold ( K ). The predicate is
+binary:</p>
+<p>[ &lt; K]</p>
+<p>There is no scoring, ranking, weighting, decay, or smoothing.</p>
+<h3 id="eligibility-filtering">4.3 Eligibility filtering</h3>
+<p>When a succession event occurs:</p>
+<ol type="1">
+<li>A candidate pool is generated.</li>
+<li>Candidates failing the eligibility predicate are excluded.</li>
+<li>Selection proceeds uniformly over the remaining eligible
+candidates.</li>
+</ol>
+<p>Operational behavior remains semantic-blind.</p>
+<h3 id="constitutional-lapse-null_authority">4.4 Constitutional lapse
+(NULL_AUTHORITY)</h3>
+<p>If no candidates are eligible, the system enters
+<strong>NULL_AUTHORITY</strong>. This lapse represents a constitutional
+failure to supply authority. It is not treated as an error condition or
+automatically resolved.</p>
+<p>NULL_AUTHORITY constitutes an explicit denial of service at the
+governance layer: authority is absent rather than silently
+corrupted.</p>
+<h2 id="experimental-methodology">5. Experimental Methodology</h2>
+<h3 id="shared-geometry">5.1 Shared geometry</h3>
+<p>All experiments share:</p>
+<ul>
+<li>fixed renewal timing,</li>
+<li>fixed resource and rent schedules,</li>
+<li>fixed candidate list size,</li>
+<li>fixed commitment definitions.</li>
+</ul>
+<p>Only one axis varies per experiment.</p>
+<h3 id="forced-turnover">5.2 Forced turnover</h3>
+<p>To activate eligibility filtering, some experiments impose
+<strong>forced turnover</strong> after a fixed number of renewals. This
+increases succession frequency without introducing semantic control.</p>
+<h3 id="metrics">5.3 Metrics</h3>
+<p>We observe:</p>
+<ul>
+<li>eligibility rejection counts,</li>
+<li>size of the eligible set at succession,</li>
+<li>lapse frequency and duration,</li>
+<li>time to empty eligibility,</li>
+<li>composition ratios where relevant.</li>
+</ul>
+<h2 id="experimental-results">6. Experimental Results</h2>
+<h3 id="run-a-eligibility-latency-under-stable-authority">6.1 Run A —
+Eligibility Latency Under Stable Authority</h3>
+<p><strong>Configuration:</strong></p>
+<ul>
+<li>No forced turnover</li>
+<li>Fixed eligibility threshold</li>
+<li>Baseline candidate pool</li>
+</ul>
+<p><strong>Observed outcomes:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Post-initial successions</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Eligibility evaluations (post-init)</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Eligibility rejections</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Lapse events</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Time in NULL_AUTHORITY</td>
+<td>0 cycles</td>
+</tr>
+</tbody>
+</table>
+<p>Semantic failure streaks accumulated for active policies but were
+never consulted.</p>
+<p><strong>Result:</strong> Eligibility constraints remained completely
+latent.</p>
+<h3 id="run-b-eligibility-activation-under-forced-turnover">6.2 Run B —
+Eligibility Activation Under Forced Turnover</h3>
+<p><strong>Configuration:</strong></p>
+<ul>
+<li>Forced turnover after a fixed number of renewals</li>
+<li>Eligibility threshold ( K = 3 )</li>
+<li>Baseline candidate pool</li>
+</ul>
+<p><strong>Observed outcomes (5 seeds):</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Post-initial successions</td>
+<td>88</td>
+</tr>
+<tr class="even">
+<td>Eligibility rejections</td>
+<td>1,845</td>
+</tr>
+<tr class="odd">
+<td>Empty eligible sets (lapses)</td>
+<td>11</td>
+</tr>
+<tr class="even">
+<td>Seeds with lapse</td>
+<td>4 / 5</td>
+</tr>
+<tr class="odd">
+<td>Time in NULL_AUTHORITY</td>
+<td>344 cycles</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Result:</strong> Eligibility gating became operational and
+constitutionally binding.</p>
+<h3 id="run-c-eligibility-threshold-sweep">6.3 Run C — Eligibility
+Threshold Sweep</h3>
+<p><strong>Configuration:</strong></p>
+<ul>
+<li>Forced turnover</li>
+<li>Baseline candidate pool</li>
+<li>Threshold sweep ( K )</li>
+</ul>
+<p><strong>Aggregate outcomes:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>K</th>
+<th>Lapses</th>
+<th>Seeds with lapse</th>
+<th>NULL_AUTHORITY cycles</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>11</td>
+<td>4 / 5</td>
+<td>344</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>11</td>
+<td>4 / 5</td>
+<td>344</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>3</td>
+<td>2 / 5</td>
+<td>147</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>0</td>
+<td>0 / 5</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Result:</strong> Constitutional behavior is thresholded.
+(K=1) and (K=3) are equivalent; (K=5) is a boundary region; (K=10)
+produces no lapses within the tested horizon.</p>
+<h3 id="run-d-candidate-pool-composition-stress">6.4 Run D — Candidate
+Pool Composition Stress</h3>
+<p><strong>Configuration:</strong></p>
+<ul>
+<li>Forced turnover</li>
+<li>Eligibility threshold ( K = 5 )</li>
+<li>Three pool compositions</li>
+</ul>
+<p><strong>Aggregate outcomes:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Pool Policy</th>
+<th>Lapses</th>
+<th>Seeds with lapse</th>
+<th>NULL_AUTHORITY cycles</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Baseline</td>
+<td>0</td>
+<td>0 / 5</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Attack-heavy</td>
+<td>15</td>
+<td>5 / 5</td>
+<td>741</td>
+</tr>
+<tr class="odd">
+<td>Control-heavy</td>
+<td>3</td>
+<td>3 / 5</td>
+<td>98</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Result:</strong> Eligibility gating remains meaningful under
+adversarial skew, but outcomes depend on candidate pool composition.</p>
+<h3 id="summary-across-runs">6.5 Summary Across Runs</h3>
+<p>Across all experiments:</p>
+<ul>
+<li>Eligibility is <strong>latent without succession</strong>.</li>
+<li>Eligibility <strong>binds only at succession
+boundaries</strong>.</li>
+<li>Constitutional lapse is <strong>reachable, observable, and
+parameter-controlled</strong>.</li>
+<li>Outcomes depend on succession frequency, threshold strictness, and
+pool composition.</li>
+</ul>
+<p>No experiment showed semantic influence on renewal, enforcement, or
+operational behavior.</p>
+<h2 id="phase-behavior-summary">7. Phase Behavior Summary</h2>
+<p>Three regimes emerge:</p>
+<ul>
+<li><strong>Latent:</strong> eligibility exists but never binds.</li>
+<li><strong>Filtering-active:</strong> eligibility constrains selection
+without lapse.</li>
+<li><strong>Constitutional lapse:</strong> no eligible authority
+exists.</li>
+</ul>
+<p>These regimes are governed by constitutional parameters rather than
+optimization dynamics.</p>
+<h2 id="interpretation-and-design-implications">8. Interpretation and
+Design Implications</h2>
+<h3 id="eligibility-as-a-constitutional-constraint">8.1 Eligibility as a
+constitutional constraint</h3>
+<p>Eligibility-coupled succession constrains <em>who may rule next</em>,
+not <em>how current authority behaves</em>. This differs fundamentally
+from incentive systems.</p>
+<h3 id="lapse-as-signal-not-failure">8.2 Lapse as signal, not
+failure</h3>
+<p>NULL_AUTHORITY converts semantic exhaustion into an explicit
+governance state. Rather than silently degrading behavior, the system
+halts authority allocation visibly. The cost of lapse is explicit and
+measurable.</p>
+<h3 id="robustness-to-imperfect-semantic-oracles">8.3 Robustness to
+imperfect semantic oracles</h3>
+<p>The mechanism does not require semantic judgments to be correct, only
+externally checkable and consistent. An overly strict or flawed verifier
+manifests as premature disqualification or lapse, not silent
+misoptimization. Oracle error is therefore converted into visible
+governance failure.</p>
+<h2 id="limitations">9. Limitations</h2>
+<h3 id="irreversibility-and-rehabilitation">9.1 Irreversibility and
+rehabilitation</h3>
+<p>Eligibility-coupled succession contains no internal rehabilitation
+mechanism. Once all policy identities exceed the eligibility threshold,
+the system remains in NULL_AUTHORITY indefinitely. This irreversibility
+is deliberate: the mechanism models constitutional disqualification, not
+corrective training. Forgiveness, decay, or replacement require
+additional governance mechanisms and are out of scope.</p>
+<h3 id="latency-and-real-time-safety">9.2 Latency and real-time
+safety</h3>
+<p>This architecture is not suitable for real-time physical safety
+control. Domains requiring immediate intervention must employ fast-path
+revocation mechanisms that necessarily couple semantics to enforcement.
+Eligibility-coupled succession operates at a governance timescale.</p>
+<h3 id="boundary-sensitivity">9.3 Boundary sensitivity</h3>
+<p>Intermediate thresholds exhibit sensitivity to stochastic variation.
+No universal threshold exists across all pool compositions and
+horizons.</p>
+<h3 id="finite-horizon">9.4 Finite horizon</h3>
+<p>All results are bounded by finite experimental horizons. Long-term
+dynamics are not established.</p>
+<h2 id="relationship-to-prior-work">10. Relationship to Prior Work</h2>
+<p>This work is distinct from reward-based learning, mechanism design,
+and governance optimization. Its novelty lies in coupling semantics
+exclusively to succession, not to operation or renewal.</p>
+<h2 id="conclusion">11. Conclusion</h2>
+<p>We have shown that semantics can matter constitutionally without
+becoming operational control. Eligibility-coupled succession provides a
+mechanism where meaning constrains authority only at transfer
+boundaries, preserving semantic auditability and operational freedom
+while allowing explicit constitutional failure. The results establish a
+principled alternative to continuous semantic control.</p>
+<p>These results suggest that AI alignment may be achievable without
+continuous behavioral control, perfect evaluators, or inner-motive
+alignment. By treating alignment as a constitutional constraint on
+succession rather than an optimization objective during operation, it is
+possible to build systems that tolerate semantic failure, surface
+misalignment visibly, and prevent long-term accumulation of corrupt
+authority. Alignment pressure can be slow, discrete, and
+governance-based—turning some of the hardest problems in AI alignment
+into institutional design problems rather than control-theoretic
+ones.</p>
+<h2 id="outlook">12. Outlook</h2>
+<p>Future work will explore rehabilitation, decay, and multi-constraint
+eligibility mechanisms motivated directly by the failure modes observed
+here. These extensions necessarily move beyond the single-coupling
+design evaluated in this paper.</p>
+<h2 id="appendices">Appendices</h2>
+<h3 id="a.-formal-definitions">A. Formal definitions</h3>
+<h3 id="b.-configuration-tables">B. Configuration tables</h3>
+<h3 id="c.-reproducibility-notes">C. Reproducibility notes</h3>
+
+    </article>
+</body>
+</html>
