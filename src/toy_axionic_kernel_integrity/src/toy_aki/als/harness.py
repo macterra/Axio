@@ -117,6 +117,10 @@ class RenewalEvent:
     success: bool
     failure_reason: Optional[str] = None
     attestation_compliant: bool = True
+    # Run J: Budget telemetry at renewal check
+    remaining_budget_at_check: Optional[int] = None
+    renewal_cost: Optional[int] = None
+    effective_steps: Optional[int] = None
 
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -125,6 +129,9 @@ class RenewalEvent:
             "success": self.success,
             "failure_reason": self.failure_reason,
             "attestation_compliant": self.attestation_compliant,
+            "remaining_budget_at_check": self.remaining_budget_at_check,
+            "renewal_cost": self.renewal_cost,
+            "effective_steps": self.effective_steps,
         }
 
 
@@ -180,6 +187,7 @@ class TenureRecord:
     Record of a successor's tenure (incumbency period).
 
     Used for Run I institutional debt tracking and entropy computation.
+    Run J adds manifest_signature for stasis detection.
     """
     mind_id: str
     start_cycle: int
@@ -188,6 +196,7 @@ class TenureRecord:
     renewals_during_tenure: int = 0
     manifest_action_type_count: int = 0  # Diversity proxy
     manifest_capability_groups: int = 0  # E-tier set membership count
+    manifest_signature: str = ""  # Run J: hash of action types frozenset
     terminal_reason: Optional[str] = None  # "expired", "revoked", "bankrupt", "active"
 
     @property
@@ -207,6 +216,7 @@ class TenureRecord:
             "renewals_during_tenure": self.renewals_during_tenure,
             "manifest_action_type_count": self.manifest_action_type_count,
             "manifest_capability_groups": self.manifest_capability_groups,
+            "manifest_signature": self.manifest_signature,
             "terminal_reason": self.terminal_reason,
         }
 
@@ -1817,17 +1827,32 @@ class ALSHarnessV052:
 
         # Create rent schedule from step cap
         # Support custom rent values from config for H1-style runs
+        # Support fraction overrides for Run J
         steps_cap = self._baseline_manifest.resources.max_steps_per_epoch
-        if any(getattr(self._config, f'rent_e{i}', None) is not None for i in range(1, 5)):
-            # Use custom rent values from config
+        has_direct_rents = any(getattr(self._config, f'rent_e{i}', None) is not None for i in range(1, 5))
+        has_fraction_overrides = any(getattr(self._config, f'rent_e{i}_fraction', None) is not None for i in range(1, 5))
+
+        if has_direct_rents or has_fraction_overrides:
+            # Use custom rent values/fractions from config
             from toy_aki.als.expressivity import RentSchedule
-            self._rent_schedule = RentSchedule(
-                steps_cap_epoch=steps_cap,
-                e1_rent=getattr(self._config, 'rent_e1', None),
-                e2_rent=getattr(self._config, 'rent_e2', None),
-                e3_rent=getattr(self._config, 'rent_e3', None),
-                e4_rent=getattr(self._config, 'rent_e4', None),
-            )
+            import math
+
+            # Build kwargs for RentSchedule
+            schedule_kwargs = {"steps_cap_epoch": steps_cap}
+
+            # Apply fraction overrides first (Run J style)
+            for i in range(1, 5):
+                frac = getattr(self._config, f'rent_e{i}_fraction', None)
+                if frac is not None:
+                    schedule_kwargs[f'e{i}_fraction'] = frac
+
+            # Apply direct rent values (override fractions if both specified)
+            for i in range(1, 5):
+                rent = getattr(self._config, f'rent_e{i}', None)
+                if rent is not None:
+                    schedule_kwargs[f'e{i}_rent'] = rent
+
+            self._rent_schedule = RentSchedule(**schedule_kwargs)
         else:
             self._rent_schedule = create_default_rent_schedule(steps_cap)
 
@@ -2160,6 +2185,9 @@ class ALSHarnessV052:
         action_type_count = len(action_types)
         capability_groups = self._compute_capability_groups(action_types)
 
+        # Run J: Compute manifest signature (hash of action types)
+        manifest_signature = str(hash(action_types))
+
         self._current_tenure = TenureRecord(
             mind_id=mind_id,
             start_cycle=self._cycle,
@@ -2167,6 +2195,7 @@ class ALSHarnessV052:
             renewals_during_tenure=0,
             manifest_action_type_count=action_type_count,
             manifest_capability_groups=capability_groups,
+            manifest_signature=manifest_signature,
         )
         self._tenure_renewal_count = 0
 
@@ -2516,6 +2545,9 @@ class ALSHarnessV052:
                     success=False,
                     failure_reason=f"Insufficient budget for renewal cost ({remaining_budget} < {renewal_cost})",
                     attestation_compliant=True,  # Not an attestation issue
+                    remaining_budget_at_check=remaining_budget,
+                    renewal_cost=renewal_cost,
+                    effective_steps=self._current_effective_steps,
                 )
                 self._renewal_events.append(event)
                 return
@@ -2523,6 +2555,18 @@ class ALSHarnessV052:
             # Default path: cascade to bankruptcy
             if self._verbose:
                 print(f"    [Epoch {self._epoch_index}] RENEWAL_FAILED: insufficient budget for renewal cost ({remaining_budget} < {renewal_cost})")
+            # Record the renewal failure event before cascading to bankruptcy
+            event = RenewalEvent(
+                cycle=self._cycle,
+                lease_id=self._current_lease.lease_id,
+                success=False,
+                failure_reason=f"Insufficient budget for renewal cost ({remaining_budget} < {renewal_cost})",
+                attestation_compliant=True,  # Not an attestation issue
+                remaining_budget_at_check=remaining_budget,
+                renewal_cost=renewal_cost,
+                effective_steps=self._current_effective_steps,
+            )
+            self._renewal_events.append(event)
             self._handle_bankruptcy()
             return
 
@@ -2530,7 +2574,7 @@ class ALSHarnessV052:
         nonce = secrets.token_hex(16)
         attestation = self._sentinel.generate_attestation(nonce)
 
-        # Verify attestation
+        # Verify attestation (V052)
         valid, error = self._sentinel.verify_attestation(attestation)
 
         if not valid:
@@ -2540,12 +2584,15 @@ class ALSHarnessV052:
                 success=False,
                 failure_reason=f"Attestation invalid: {error}",
                 attestation_compliant=False,
+                remaining_budget_at_check=remaining_budget,
+                renewal_cost=renewal_cost,
+                effective_steps=self._current_effective_steps,
             )
             self._renewal_events.append(event)
             self._handle_lease_revocation(LeaseViolation.RENEWAL_FAILURE, error or "")
             return
 
-        # Check attestation compliance
+        # Check attestation compliance (V052)
         if not attestation.is_compliant():
             reasons = []
             if not attestation.resources_within_bounds:
@@ -2563,12 +2610,15 @@ class ALSHarnessV052:
                 success=False,
                 failure_reason=f"Non-compliant: {', '.join(reasons)}",
                 attestation_compliant=False,
+                remaining_budget_at_check=remaining_budget,
+                renewal_cost=renewal_cost,
+                effective_steps=self._current_effective_steps,
             )
             self._renewal_events.append(event)
             self._handle_lease_revocation(LeaseViolation.CONSTRAINT_VIOLATION, str(reasons))
             return
 
-        # Attempt renewal
+        # Attempt renewal (V052)
         success, error = self._current_lease.renew(self._cycle)
 
         event = RenewalEvent(
@@ -2577,6 +2627,9 @@ class ALSHarnessV052:
             success=success,
             failure_reason=error,
             attestation_compliant=True,
+            remaining_budget_at_check=remaining_budget,
+            renewal_cost=renewal_cost,
+            effective_steps=self._current_effective_steps,
         )
         self._renewal_events.append(event)
 
