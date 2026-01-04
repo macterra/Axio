@@ -536,7 +536,145 @@ See [run_i_v052_report.md](run_i_v052_report.md).
 
 ---
 
-## 15. Future Work
+## 15. Run J: Expressivity-Rent Boundary Identification
+
+### Hypothesis
+
+Find the **expressivity-rent boundary**: the E3 rent fraction at which renewal stability collapses. Prior runs used 40% E3 rent with stable renewal. This run bisects the 40-60% range to identify the transition point.
+
+### Configuration
+
+| Parameter | Value |
+|-----------|-------|
+| Horizon | 30,000 cycles |
+| max_successive_renewals | 15 |
+| renewal_cost | 5 |
+| steps_cap_epoch | 200 |
+| Seeds | 40-44 |
+| E3 rent range | 40-60% (bisection) |
+
+### Sub-Run Results
+
+| Sub-Run | E3 Rent | Eff. Steps | Mean Renew Rate | Dominant Regime |
+|---------|---------|------------|-----------------|-----------------|
+| J-40 | 80 (40%) | 120 | 93.75% | METASTABLE_STASIS |
+| J-45 | 90 (45%) | 110 | 93.75% | METASTABLE_STASIS |
+| J-47 | 94 (47%) | 106 | 93.75% | METASTABLE_STASIS |
+| J-48 | 96 (48%) | 104 | 0.00% | RENEWAL_COLLAPSE |
+| J-49 | 98 (49%) | 102 | 0.00% | RENEWAL_COLLAPSE |
+| J-50 | 100 (50%) | 100 | 0.00% | RENEWAL_COLLAPSE |
+| J-60 | 120 (60%) | 80 | 0.00% | RENEWAL_COLLAPSE |
+
+### Budget Arithmetic at Boundary
+
+| Rent % | Effective Steps | Steps Used | Remaining | Renewal Cost | Outcome |
+|--------|-----------------|------------|-----------|--------------|---------|
+| 47% | 106 | 100 | **6** | 5 | ✓ Renew |
+| 48% | 104 | 100 | **4** | 5 | ✗ Fail |
+
+### Key Findings
+
+1. **Sharp boundary at 48% E3 rent:** The transition from stable renewal (93.75%) to complete collapse (0%) occurs between 47% and 48% rent.
+
+2. **Mechanism:** At 47%, remaining budget (6) ≥ renewal cost (5) → renewal succeeds. At 48%, remaining budget (4) < renewal cost (5) → renewal fails deterministically.
+
+3. **Regime classification validated:**
+   - METASTABLE_STASIS: High renewal rate but flat manifest diversity, terminated by degeneracy detector
+   - RENEWAL_COLLAPSE: 0% renewal rate, all attempts fail due to budget exhaustion
+
+### Design Constraint Refined
+
+```
+For stable renewal at E3:
+  rent_fraction < 1 - (step_usage + renewal_cost) / steps_cap_epoch
+
+With step_usage ≈ 100 and renewal_cost = 5:
+  rent_fraction < 1 - 105/200 = 47.5%
+```
+
+The observed boundary (47-48%) matches this prediction exactly.
+
+See [run_j_v052_report.md](run_j_v052_report.md).
+
+---
+
+## 16. Run J2: Renewal-Timing Sensitivity Test
+
+### Hypothesis
+
+Determine whether the 48% rent collapse boundary identified in Run J is **intrinsic** to budget arithmetic or **dependent on renewal-timing geometry**.
+
+### Renewal Check Interval Semantics
+
+`renewal_check_interval` is interpreted as **global-cycle modulo**:
+
+```
+if cycle % renewal_check_interval == 0:
+    check_renewal()
+```
+
+- **Interval 50:** Checks at cycles 50, 100, 150, 200... (mid-epoch)
+- **Interval 90:** Checks at cycles 90, 180, 270... (late-epoch, 90% through)
+- **Interval 100:** Checks at cycles 100, 200, 300... (epoch-boundary aligned)
+
+### Configuration
+
+| Parameter | Value |
+|-----------|-------|
+| E3 rent | 96 (48%) — exact collapse point |
+| Effective steps | 104 |
+| msrw_cycles | 200 (fixed, orthogonal) |
+| Seeds | 40-44 |
+
+### Sub-Run Definitions
+
+| Sub-Run | Interval | Timing |
+|---------|----------|--------|
+| J2-Early | 50 | Mid-epoch (cycle 50 of each epoch) |
+| J2-Baseline | 100 | Epoch-aligned (cycle 100 = boundary) |
+| J2-Late | 90 | Late-epoch (cycle 90 of each epoch) |
+
+### Results
+
+| Sub-Run | Interval | Mean Ren Rate | Dominant Regime | Steps@Chk | Remaining |
+|---------|----------|---------------|-----------------|-----------|-----------|
+| J2-Early | 50 | 93.75% | METASTABLE_STASIS | 50 | 54 |
+| J2-Baseline | 100 | 0.00% | RENEWAL_COLLAPSE | 100 | 4 |
+| J2-Late | 90 | 93.75% | METASTABLE_STASIS | 90 | 14 |
+
+### Geometry Table
+
+| Sub-Run | Steps at Check | Remaining | Renewal Cost | Outcome |
+|---------|----------------|-----------|--------------|---------|
+| J2-Early | 50 | **54** | 5 | ✓ Renew |
+| J2-Baseline | 100 | **4** | 5 | ✗ Fail |
+| J2-Late | 90 | **14** | 5 | ✓ Renew |
+
+### Key Finding
+
+**The collapse boundary is timing-dependent, not intrinsic.**
+
+The 48% rent collapse observed in Run J is a **resonance artifact** between the 100-cycle epoch and the 100-cycle renewal check interval:
+
+1. At **interval=100:** Check happens exactly when the epoch's 104 effective steps are fully consumed → remaining=4 < renewal_cost=5 → RENEWAL_COLLAPSE
+
+2. At **interval=50:** Check happens mid-epoch → remaining=54 → renewal succeeds → METASTABLE_STASIS
+
+3. At **interval=90:** Check happens at 90% of epoch → remaining=14 → renewal succeeds → METASTABLE_STASIS
+
+### Implications
+
+1. The Run J boundary (48%) is **not a fundamental economic constraint**—it's an artifact of epoch/check alignment.
+
+2. Systems can operate at 48% rent with stable renewal simply by offsetting the renewal check interval from epoch boundaries.
+
+3. **Robust design principle:** Avoid renewal_check_interval = epoch_size to prevent phase-lock collapse.
+
+See [run_j2_v052_report.md](run_j2_v052_report.md).
+
+---
+
+## 17. Future Work
 
 ### Planned Features
 
@@ -552,13 +690,15 @@ See [run_i_v052_report.md](run_i_v052_report.md).
 
 ### Recommended Follow-Up Runs
 
-Based on Run G/H/H3-R/I results:
+Based on Run G/H/H3-R/I/J/J2 results:
 
 1. ~~**Run H3-bisect:** Test renewal_cost = 5, 7, 8 to find exact transition point~~ → Superseded by H3-RZ/RS/RB series
 2. **Run H3-RB′:** Extend sweep to {30, 40, 50, 60} to find actual cliff above 20
 3. ~~**Run I:** Remove max_successive_renewals guardrail (institutional debt accumulation)~~ → **Completed.** Confirmed Rubber-Stamp degeneracy.
 4. **Run I′:** Test with multiple succession triggers (e.g., force expiration events)
-5. **Run J:** Real task workload integration
+5. ~~**Run J:** Expressivity-rent boundary identification~~ → **Completed.** Sharp boundary at 48% E3 rent.
+6. ~~**Run J2:** Renewal-timing sensitivity test~~ → **Completed.** Boundary is timing-dependent (epoch/check resonance).
+7. **Run K:** Real task workload integration (semantic successor selection)
 
 ---
 
@@ -569,11 +709,13 @@ Based on Run G/H/H3-R/I results:
 - `src/toy_aki/als/expressivity.py` - E-Class and rent infrastructure
 - `tests/test_v052.py` - 52-test v0.5.2 test suite
 - `scripts/run_h_v052.py` - Run H boundary-finding experiments
+- `scripts/run_j_v052.py` - Run J expressivity-rent boundary identification
+- `scripts/run_j2_v052.py` - Run J2 renewal-timing sensitivity test
 
 ### Modified Files
 
 - `src/toy_aki/als/generator.py` - Added CBD, V052_ATTACK_WEIGHTS, TierFilterGenerator
-- `src/toy_aki/als/harness.py` - Added ALSHarnessV052, ALSConfigV052, rent charging, renewal cost support
+- `src/toy_aki/als/harness.py` - Added ALSHarnessV052, ALSConfigV052, rent charging, renewal cost support, RenewalEvent budget telemetry
 - All v0.4.x harness code paths
 - Default generator weights (ENDORSEMENT_PRESSURE=0.15)
 - S* counting semantics
