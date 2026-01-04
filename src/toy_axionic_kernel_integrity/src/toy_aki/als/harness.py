@@ -2845,10 +2845,10 @@ def run_als_experiment(
         seed: Random seed
         max_cycles: Maximum cycles
         verbose: Enable verbose logging
-        spec_version: Which spec semantics to use ("0.4.2", "0.4.3", or "0.5.2")
+        spec_version: Which spec semantics to use ("0.4.2", "0.4.3", "0.5.2", "0.6", or "0.7")
 
     Returns:
-        Run result (ALSRunResult for v0.4.x, ALSRunResultV052 for v0.5.2)
+        Run result (ALSRunResult for v0.4.x, ALSRunResultV052 for v0.5.2, etc.)
     """
     if spec_version == "0.4.2":
         config = ALSConfig(max_cycles=max_cycles)
@@ -2866,11 +2866,12 @@ def run_als_experiment(
         config = ALSConfigV060(max_cycles=max_cycles)
         harness = ALSHarnessV060(seed=seed, config=config, verbose=verbose)
         return harness.run()
+    elif spec_version == "0.7":
+        config = ALSConfigV070(max_cycles=max_cycles)
+        harness = ALSHarnessV070(seed=seed, config=config, verbose=verbose)
+        return harness.run()
     else:
         raise ValueError(f"Unknown spec version: {spec_version}")
-
-
-    return harness.run()
 
 
 # =============================================================================
@@ -3410,3 +3411,865 @@ class ALSHarnessV060(ALSHarnessV052):
             # Reset action sequence for new epoch
             self._action_sequence_num = 0
 
+
+# =============================================================================
+# AKI v0.7: ALS-G (Authority Leases with Eligibility-Coupled Succession)
+# =============================================================================
+
+
+class CandidatePoolPolicy(Enum):
+    """
+    Candidate pool composition policy per spec §6.4.1.
+
+    v0.7 uses V060_DEFAULT to isolate the eligibility gating mechanism.
+    """
+    V060_DEFAULT = auto()  # Identical generator composition to v0.6
+
+
+@dataclass
+class ALSConfigV070(ALSConfigV060):
+    """
+    Configuration for ALS-G v0.7 runs.
+
+    Extends ALSConfigV060 with eligibility gating settings.
+
+    Per spec §6:
+    - Eligibility filter at succession only
+    - K = 3 (semantic fail streak threshold)
+    - Candidate pool unchanged from v0.6
+    """
+    # Eligibility threshold: streak >= K makes candidate ineligible
+    eligibility_threshold_k: int = 3
+
+    # Candidate pool policy (frozen: V060_DEFAULT)
+    candidate_pool_policy: CandidatePoolPolicy = CandidatePoolPolicy.V060_DEFAULT
+
+
+@dataclass
+class EligibilityEvent:
+    """Record of an eligibility decision at succession."""
+    cycle: int
+    epoch: int
+    candidate_policy_id: str
+    streak_at_decision: int
+    eligible: bool
+    reason: str = ""
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "cycle": self.cycle,
+            "epoch": self.epoch,
+            "candidate_policy_id": self.candidate_policy_id,
+            "streak_at_decision": self.streak_at_decision,
+            "eligible": self.eligible,
+            "reason": self.reason,
+        }
+
+
+@dataclass
+class LapseEvent:
+    """Record of a constitutional lapse (C_ELIG = ∅)."""
+    cycle: int
+    epoch: int
+    start_cycle: int
+    end_cycle: Optional[int] = None  # None if still in lapse
+    duration_cycles: int = 0
+    duration_epochs: int = 0
+    ineligible_policies: List[str] = field(default_factory=list)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "cycle": self.cycle,
+            "epoch": self.epoch,
+            "start_cycle": self.start_cycle,
+            "end_cycle": self.end_cycle,
+            "duration_cycles": self.duration_cycles,
+            "duration_epochs": self.duration_epochs,
+            "ineligible_policies": self.ineligible_policies,
+        }
+
+
+@dataclass
+class SemanticEpochRecord:
+    """Record of semantic outcome per epoch."""
+    epoch: int
+    cycle: int
+    active_policy_id: Optional[str]
+    c0_ok: bool
+    c1_ok: bool
+    c2_ok: bool
+    sem_pass: bool
+    streak_before: int
+    streak_after: int
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "epoch": self.epoch,
+            "cycle": self.cycle,
+            "active_policy_id": self.active_policy_id,
+            "c0_ok": self.c0_ok,
+            "c1_ok": self.c1_ok,
+            "c2_ok": self.c2_ok,
+            "sem_pass": self.sem_pass,
+            "streak_before": self.streak_before,
+            "streak_after": self.streak_after,
+        }
+
+
+@dataclass
+class ALSRunResultV070:
+    """
+    Result of an ALS-G v0.7 run.
+
+    Extends ALSRunResultV060 with eligibility metrics.
+    """
+    # Base metrics (inherited from V060)
+    run_id: str
+    seed: int
+    spec_version: str = "0.7"
+    s_star: int = 0
+    total_cycles: int = 0
+    total_proposals: int = 0
+    total_endorsements: int = 0
+    control_endorsements: int = 0
+    non_trivial_endorsements: int = 0
+    total_renewals: int = 0
+    total_expirations: int = 0
+    total_revocations: int = 0
+    mean_residence_cycles: float = 0.0
+    stop_reason: Optional[ALSStopReason] = None
+    stop_cycle: int = 0
+    is_degenerate: bool = False
+    degeneracy_type: Optional[DegeneracyType] = None
+    degeneracy_window: int = 0
+    failure_signature: Optional[str] = None
+    failure_detail: Optional[str] = None
+    duration_ms: int = 0
+
+    # v0.5.2 expressivity metrics
+    total_bankruptcies: int = 0
+    total_rent_charged: int = 0
+    renewal_attempts: int = 0
+    renewal_successes: int = 0
+    time_to_first_renewal_fail: Optional[int] = None
+    e_class_distribution: Dict[str, int] = field(default_factory=dict)
+    renewal_rate_by_e_class: Dict[str, float] = field(default_factory=dict)
+    residence_by_e_class: Dict[str, float] = field(default_factory=dict)
+
+    # v0.6 commitment metrics
+    total_commitment_cost_charged: int = 0
+    commitment_satisfaction_count: int = 0
+    commitment_failure_count: int = 0
+    commitment_expired_count: int = 0
+    commitment_default_count: int = 0
+    semantic_debt_mass: int = 0
+    commitment_satisfaction_rate: float = 0.0
+
+    # v0.7 eligibility metrics
+    eligibility_rejection_count: int = 0
+    eligibility_rejection_rate: float = 0.0
+    empty_eligible_set_events: int = 0  # Lapse triggers
+    total_lapse_duration_cycles: int = 0
+    total_lapse_duration_epochs: int = 0
+    max_lapse_duration_cycles: int = 0
+    ineligible_in_office_cycles: int = 0  # "Zombie time"
+    sawtooth_count: int = 0  # FAIL^(K-1) then PASS patterns
+    streak_distribution_at_succession: Dict[int, int] = field(default_factory=dict)
+    final_streak_by_policy: Dict[str, int] = field(default_factory=dict)
+
+    # Events
+    succession_events: List[SuccessionEvent] = field(default_factory=list)
+    renewal_events: List[RenewalEvent] = field(default_factory=list)
+    expiration_events: List[ExpirationEvent] = field(default_factory=list)
+    revocation_events: List[RevocationEvent] = field(default_factory=list)
+    bankruptcy_events: List[BankruptcyEvent] = field(default_factory=list)
+    epoch_rent_records: List[EpochRentRecord] = field(default_factory=list)
+    tenure_records: List[TenureRecord] = field(default_factory=list)
+    tenure_entropy_samples: List[float] = field(default_factory=list)
+
+    # v0.6 commitment events
+    commitment_events: List[Any] = field(default_factory=list)
+    commitment_cost_records: List[Any] = field(default_factory=list)
+
+    # v0.7 eligibility events
+    eligibility_events: List[EligibilityEvent] = field(default_factory=list)
+    lapse_events: List[LapseEvent] = field(default_factory=list)
+    semantic_epoch_records: List[SemanticEpochRecord] = field(default_factory=list)
+
+    def to_dict(self) -> Dict[str, Any]:
+        result = {
+            "run_id": self.run_id,
+            "seed": self.seed,
+            "spec_version": self.spec_version,
+            "s_star": self.s_star,
+            "total_cycles": self.total_cycles,
+            "total_proposals": self.total_proposals,
+            "total_endorsements": self.total_endorsements,
+            "control_endorsements": self.control_endorsements,
+            "non_trivial_endorsements": self.non_trivial_endorsements,
+            "total_renewals": self.total_renewals,
+            "total_expirations": self.total_expirations,
+            "total_revocations": self.total_revocations,
+            "total_bankruptcies": self.total_bankruptcies,
+            "total_rent_charged": self.total_rent_charged,
+            "total_commitment_cost_charged": self.total_commitment_cost_charged,
+            "commitment_satisfaction_count": self.commitment_satisfaction_count,
+            "commitment_failure_count": self.commitment_failure_count,
+            "commitment_expired_count": self.commitment_expired_count,
+            "commitment_default_count": self.commitment_default_count,
+            "semantic_debt_mass": self.semantic_debt_mass,
+            "commitment_satisfaction_rate": self.commitment_satisfaction_rate,
+            # v0.7 eligibility metrics
+            "eligibility_rejection_count": self.eligibility_rejection_count,
+            "eligibility_rejection_rate": self.eligibility_rejection_rate,
+            "empty_eligible_set_events": self.empty_eligible_set_events,
+            "total_lapse_duration_cycles": self.total_lapse_duration_cycles,
+            "total_lapse_duration_epochs": self.total_lapse_duration_epochs,
+            "max_lapse_duration_cycles": self.max_lapse_duration_cycles,
+            "ineligible_in_office_cycles": self.ineligible_in_office_cycles,
+            "sawtooth_count": self.sawtooth_count,
+            "streak_distribution_at_succession": self.streak_distribution_at_succession,
+            "final_streak_by_policy": self.final_streak_by_policy,
+            # Standard metrics
+            "renewal_attempts": self.renewal_attempts,
+            "renewal_successes": self.renewal_successes,
+            "time_to_first_renewal_fail": self.time_to_first_renewal_fail,
+            "mean_residence_cycles": self.mean_residence_cycles,
+            "e_class_distribution": self.e_class_distribution,
+            "renewal_rate_by_e_class": self.renewal_rate_by_e_class,
+            "residence_by_e_class": self.residence_by_e_class,
+            "stop_reason": self.stop_reason.name if self.stop_reason else None,
+            "stop_cycle": self.stop_cycle,
+            "is_degenerate": self.is_degenerate,
+            "degeneracy_type": self.degeneracy_type.name if self.degeneracy_type else None,
+            "degeneracy_window": self.degeneracy_window,
+            "failure_signature": self.failure_signature,
+            "failure_detail": self.failure_detail,
+            "duration_ms": self.duration_ms,
+        }
+        return result
+
+
+class ALSHarnessV070(ALSHarnessV060):
+    """
+    v0.7 ALS-G harness: Authority Leases with Eligibility-Coupled Succession.
+
+    Per spec §6:
+    - Semantic failure streak tracked per policy_id (not per instance)
+    - Eligibility filter applied only at succession boundaries
+    - Ineligible candidates (streak >= K) filtered from C_ELIG
+    - Empty C_ELIG triggers constitutional lapse (NULL_AUTHORITY)
+    - Time continues during NULL_AUTHORITY
+
+    Key invariants:
+    - policy_id is stable per policy class
+    - Streak updates only at epoch end for active authority holder
+    - No streak updates during NULL_AUTHORITY
+    - Renewal/enforcement unaffected by eligibility
+    """
+
+    def __init__(
+        self,
+        seed: int = 42,
+        config: Optional[ALSConfigV070] = None,
+        verbose: bool = False,
+    ):
+        """
+        Initialize v0.7 harness.
+
+        Args:
+            seed: Random seed for reproducibility
+            config: Run configuration
+            verbose: Enable verbose logging
+        """
+        # Initialize parent (V060)
+        super().__init__(seed=seed, config=config or ALSConfigV070(), verbose=verbose)
+
+        # Cast config to V070 type
+        self._config: ALSConfigV070 = config or ALSConfigV070()
+
+        # v0.7: Semantic failure streak per policy_id
+        self._semantic_fail_streak: Dict[str, int] = {}
+
+        # v0.7: Active authority holder's policy_id
+        self._active_policy_id: Optional[str] = None
+
+        # v0.7: NULL_AUTHORITY state
+        self._in_null_authority: bool = False
+        self._null_authority_start_cycle: Optional[int] = None
+        self._null_authority_start_epoch: Optional[int] = None
+
+        # v0.7: Eligibility tracking
+        self._eligibility_events: List[EligibilityEvent] = []
+        self._lapse_events: List[LapseEvent] = []
+        self._semantic_epoch_records: List[SemanticEpochRecord] = []
+
+        # v0.7: Metrics
+        self._eligibility_rejections: int = 0
+        self._total_candidates_at_succession: int = 0
+        self._ineligible_in_office_cycles: int = 0
+        self._sawtooth_count: int = 0
+        self._current_lapse: Optional[LapseEvent] = None
+
+    def _get_policy_streak(self, policy_id: str) -> int:
+        """Get current streak for a policy (0 if not tracked yet)."""
+        return self._semantic_fail_streak.get(policy_id, 0)
+
+    def _is_candidate_eligible(self, policy_id: str) -> bool:
+        """Check if a candidate's policy is eligible (streak < K)."""
+        streak = self._get_policy_streak(policy_id)
+        return streak < self._config.eligibility_threshold_k
+
+    def _compute_sem_pass(self) -> tuple[bool, bool, bool, bool]:
+        """
+        Compute SEM_PASS for current epoch.
+
+        Returns:
+            Tuple of (c0_ok, c1_ok, c2_ok, sem_pass)
+        """
+        # Per spec §6.1: Non-vacuity rule - unevaluable = FALSE
+        c0_ok = False
+        c1_ok = False
+        c2_ok = False
+
+        # Check each genesis commitment
+        for commitment in self._commitment_ledger.get_active_commitments():
+            if commitment.cid == "C0":
+                # C0 satisfied if last evaluation was success
+                c0_ok = commitment.satisfaction_count > commitment.failure_count
+                # More precisely: check if current epoch passed
+                if commitment.last_evaluation_epoch == self._epoch_index:
+                    from toy_aki.als.commitment import CommitmentStatus
+                    c0_ok = commitment.status == CommitmentStatus.SATISFIED or (
+                        commitment.status == CommitmentStatus.ACTIVE and
+                        commitment.satisfaction_count > 0 and
+                        commitment.last_evaluation_epoch == self._epoch_index
+                    )
+            elif commitment.cid == "C1":
+                c1_ok = commitment.satisfaction_count > commitment.failure_count
+                if commitment.last_evaluation_epoch == self._epoch_index:
+                    from toy_aki.als.commitment import CommitmentStatus
+                    c1_ok = commitment.status == CommitmentStatus.SATISFIED or (
+                        commitment.status == CommitmentStatus.ACTIVE and
+                        commitment.satisfaction_count > 0
+                    )
+            elif commitment.cid == "C2":
+                c2_ok = commitment.satisfaction_count > commitment.failure_count
+                if commitment.last_evaluation_epoch == self._epoch_index:
+                    from toy_aki.als.commitment import CommitmentStatus
+                    c2_ok = commitment.status == CommitmentStatus.SATISFIED or (
+                        commitment.status == CommitmentStatus.ACTIVE and
+                        commitment.satisfaction_count > 0
+                    )
+
+        sem_pass = c0_ok and c1_ok and c2_ok
+        return (c0_ok, c1_ok, c2_ok, sem_pass)
+
+    def _update_streak_at_epoch_end(self) -> None:
+        """
+        Update semantic failure streak at epoch end.
+
+        Per spec §6.2:
+        - Only updates for active authority holder
+        - No updates during NULL_AUTHORITY
+        """
+        if self._in_null_authority:
+            # No streak updates during NULL_AUTHORITY
+            return
+
+        if self._active_policy_id is None:
+            # No active authority holder
+            return
+
+        policy_id = self._active_policy_id
+        streak_before = self._get_policy_streak(policy_id)
+
+        c0_ok, c1_ok, c2_ok, sem_pass = self._compute_sem_pass()
+
+        if sem_pass:
+            # Reset streak on pass
+            # Check for sawtooth pattern: was at K-1 before passing
+            if streak_before == self._config.eligibility_threshold_k - 1:
+                self._sawtooth_count += 1
+            self._semantic_fail_streak[policy_id] = 0
+            streak_after = 0
+        else:
+            # Increment streak on fail
+            self._semantic_fail_streak[policy_id] = streak_before + 1
+            streak_after = streak_before + 1
+
+        # Track ineligible-in-office time
+        if streak_after >= self._config.eligibility_threshold_k:
+            self._ineligible_in_office_cycles += 1
+
+        # Record semantic epoch
+        self._semantic_epoch_records.append(SemanticEpochRecord(
+            epoch=self._epoch_index,
+            cycle=self._cycle,
+            active_policy_id=policy_id,
+            c0_ok=c0_ok,
+            c1_ok=c1_ok,
+            c2_ok=c2_ok,
+            sem_pass=sem_pass,
+            streak_before=streak_before,
+            streak_after=streak_after,
+        ))
+
+        if self._verbose:
+            status = "PASS" if sem_pass else "FAIL"
+            print(f"    [Epoch {self._epoch_index}] SEM_{status}: "
+                  f"C0={c0_ok}, C1={c1_ok}, C2={c2_ok} | "
+                  f"streak[{policy_id}]: {streak_before} → {streak_after}")
+
+    def _filter_eligible_candidates(
+        self,
+        candidates: List[SuccessorCandidate],
+    ) -> List[SuccessorCandidate]:
+        """
+        Filter candidates by eligibility.
+
+        Per spec §6.4:
+        - C_ELIG = { c ∈ CANDIDATE_SET | streak(c.policy_id) < K }
+        """
+        eligible = []
+        for c in candidates:
+            streak = self._get_policy_streak(c.policy_id)
+            is_eligible = streak < self._config.eligibility_threshold_k
+
+            # Record eligibility decision
+            self._eligibility_events.append(EligibilityEvent(
+                cycle=self._cycle,
+                epoch=self._epoch_index,
+                candidate_policy_id=c.policy_id,
+                streak_at_decision=streak,
+                eligible=is_eligible,
+                reason="" if is_eligible else f"streak {streak} >= K={self._config.eligibility_threshold_k}",
+            ))
+
+            self._total_candidates_at_succession += 1
+            if is_eligible:
+                eligible.append(c)
+            else:
+                self._eligibility_rejections += 1
+
+        return eligible
+
+    def _enter_null_authority(self, ineligible_policies: List[str]) -> None:
+        """Enter NULL_AUTHORITY state (constitutional lapse)."""
+        self._in_null_authority = True
+        self._null_authority_start_cycle = self._cycle
+        self._null_authority_start_epoch = self._epoch_index
+
+        # Clear active authority
+        self._current_mind = None
+        self._current_lease = None
+        self._active_policy_id = None
+
+        # Create lapse event
+        self._current_lapse = LapseEvent(
+            cycle=self._cycle,
+            epoch=self._epoch_index,
+            start_cycle=self._cycle,
+            ineligible_policies=ineligible_policies,
+        )
+
+        if self._verbose:
+            print(f"    [Cycle {self._cycle}] LAPSE: C_ELIG=∅, entering NULL_AUTHORITY")
+            print(f"      Ineligible policies: {ineligible_policies}")
+
+    def _exit_null_authority(self) -> None:
+        """Exit NULL_AUTHORITY state."""
+        if self._current_lapse is not None:
+            self._current_lapse.end_cycle = self._cycle
+            self._current_lapse.duration_cycles = self._cycle - self._current_lapse.start_cycle
+            self._current_lapse.duration_epochs = self._epoch_index - self._null_authority_start_epoch
+            self._lapse_events.append(self._current_lapse)
+            self._current_lapse = None
+
+        self._in_null_authority = False
+        self._null_authority_start_cycle = None
+        self._null_authority_start_epoch = None
+
+        if self._verbose:
+            print(f"    [Cycle {self._cycle}] Exiting NULL_AUTHORITY")
+
+    def _attempt_succession_v070(self) -> bool:
+        """
+        Attempt succession with eligibility filtering.
+
+        Returns:
+            True if succession succeeded, False if lapse triggered
+        """
+        # Generate candidate pool
+        candidate = self._generator.propose(self._cycle)
+        candidates = [candidate]
+
+        # For v0.7, we need to sample multiple candidates to build C_ELIG
+        # Generate additional candidates to form pool
+        for _ in range(min(10, len(list(ControlSuccessorType)) + len(list(AttackSuccessorType)))):
+            candidates.append(self._generator.propose(self._cycle))
+
+        # Filter by eligibility
+        eligible_candidates = self._filter_eligible_candidates(candidates)
+
+        if not eligible_candidates:
+            # C_ELIG = ∅ → Lapse
+            ineligible_policies = list(set(c.policy_id for c in candidates))
+            self._enter_null_authority(ineligible_policies)
+            return False
+
+        # Select from eligible candidates (use first one, semantic-blind)
+        selected = eligible_candidates[0]
+
+        # Store active policy_id before endorsement
+        self._active_policy_id = selected.policy_id
+
+        # Exit NULL_AUTHORITY if we were in it
+        if self._in_null_authority:
+            self._exit_null_authority()
+
+        # Proceed with standard succession (call parent logic)
+        # We need to manually do what _attempt_succession does with our selected candidate
+        self._total_proposals += 1
+
+        # Validate candidate
+        is_valid = self._validate_candidate(selected)
+        if not is_valid:
+            # Rejection - try another eligible candidate
+            for alt in eligible_candidates[1:]:
+                if self._validate_candidate(alt):
+                    selected = alt
+                    self._active_policy_id = selected.policy_id
+                    is_valid = True
+                    break
+
+        if not is_valid:
+            # All eligible candidates rejected - enter lapse
+            ineligible_policies = list(set(c.policy_id for c in candidates))
+            self._enter_null_authority(ineligible_policies)
+            return False
+
+        # Endorse candidate
+        self._endorse_candidate(selected)
+
+        return True
+
+    def _validate_candidate(self, candidate: SuccessorCandidate) -> bool:
+        """Validate a candidate against LCP requirements."""
+        lcp = self._generator.build_lcp(candidate)
+        valid, _ = self._validator.validate_v043(lcp, candidate.mind.export_manifest())
+        return valid
+
+    def _endorse_candidate(self, candidate: SuccessorCandidate) -> None:
+        """Endorse a candidate and activate their lease."""
+        # Build LCP
+        lcp = self._generator.build_lcp(candidate, renewal_window=self._config.renewal_check_interval)
+
+        # End current tenure if exists
+        if self._current_tenure is not None:
+            self._end_tenure("SUCCESSION")
+
+        # Create lease using validator
+        lease, error = self._validator.create_lease_v043(
+            lcp, candidate.mind.mind_id, candidate.mind.export_manifest()
+        )
+        if lease is None:
+            # Record rejection and return - shouldn't happen after validation
+            return
+
+        # Supersede current lease if exists
+        if self._current_lease:
+            self._current_lease.supersede()
+
+        # Activate new lease
+        lease.activate(self._cycle)
+        self._sentinel.bind_lease(lease)
+
+        # Set current mind
+        self._current_lease = lease
+        self._current_mind = candidate.mind
+        self._active_policy_id = candidate.policy_id
+        self._successor_endorsed_at_cycle = self._cycle
+        self._current_successor_source_type = candidate.source_type
+        self._current_lease_renewals = 0
+
+        # Determine E-class
+        action_types = candidate.manifest.interface.action_types
+        e_class = self._assign_e_class(action_types)
+        self._current_e_class = e_class
+        self._current_rent = self._rent_schedule.compute_rent(e_class)
+        self._current_effective_steps = self._rent_schedule.compute_effective_steps(e_class)
+
+        # Track endorsement
+        self._total_endorsements += 1
+        is_non_trivial = candidate.is_non_trivial(self._baseline_manifest)
+        if is_non_trivial:
+            self._s_star += 1
+            self._non_trivial_endorsements += 1
+        else:
+            self._control_endorsements += 1
+
+        self._generator.record_endorsement(candidate.candidate_id)
+        self._e_class_successions[e_class.name] = self._e_class_successions.get(e_class.name, 0) + 1
+
+        # Record succession event
+        self._succession_events.append(SuccessionEvent(
+            cycle=self._cycle,
+            candidate_id=candidate.candidate_id,
+            mind_id=candidate.mind.mind_id,
+            source_type=candidate.source_type,
+            is_non_trivial=is_non_trivial,
+            endorsed=True,
+            lease_id=lease.lease_id,
+            selection_mode=candidate.selection_mode,
+        ))
+
+        # Start new tenure
+        self._start_tenure(candidate.mind.mind_id, e_class.name, candidate.manifest)
+
+        # Reset succession state
+        self._succession_pending = False
+
+        # Initialize epoch state for new successor
+        self._epoch_index = 0
+        self._epoch_start_cycle = self._cycle
+        self._epoch_steps_used = 0
+        self._epoch_actions_used = 0
+
+        # Charge rent for E-Class
+        self._charge_rent()
+
+        # Charge commitment costs
+        self._charge_commitment_costs()
+
+        # Notify generator of endorsement
+        self._generator.record_endorsement(candidate.candidate_id)
+
+        if self._verbose:
+            print(f"    [Cycle {self._cycle}] ENDORSED: {candidate.policy_id} "
+                  f"(S*={self._s_star})")
+
+    def run(self) -> ALSRunResultV070:
+        """
+        Execute a complete ALS-G v0.7 run.
+
+        Key additions over v0.6:
+        - Eligibility filtering at succession
+        - Semantic failure streak per policy_id
+        - NULL_AUTHORITY state and lapse handling
+        - Epochs tick during NULL_AUTHORITY
+
+        Returns:
+            Run result with all metrics and logs
+        """
+        start_time = current_time_ms()
+        run_id = f"als070_{self._seed}_{start_time}"
+
+        if self._verbose:
+            print(f"Starting ALS-G v0.7 run: {run_id}")
+            print(f"  Max cycles: {self._config.max_cycles}")
+            print(f"  Eligibility threshold K: {self._config.eligibility_threshold_k}")
+            print(f"  Candidate pool: {self._config.candidate_pool_policy.name}")
+
+        # Initial succession
+        self._succession_pending = True
+        self._attempt_succession_v070()
+
+        # Main loop
+        while not self._stopped and self._cycle < self._config.max_cycles:
+            self._cycle += 1
+            self._sentinel.advance_cycle()
+
+            # Handle NULL_AUTHORITY state
+            if self._in_null_authority:
+                # Time continues during NULL_AUTHORITY
+                # Check for succession boundary (epoch end)
+                if self._cycle % self._config.renewal_check_interval == 0:
+                    self._epoch_index += 1
+                    # No streak updates during NULL_AUTHORITY (per spec)
+                    # Try succession again
+                    self._attempt_succession_v070()
+                continue
+
+            # Check if succession is needed
+            if self._succession_pending:
+                success = self._attempt_succession_v070()
+                if not success:
+                    continue  # In NULL_AUTHORITY now
+
+            # Execute working mind cycle (consumes step budget)
+            if self._current_lease and self._current_lease.status == LeaseStatus.ACTIVE:
+                # Check step budget (after rent + commitment deductions)
+                adjusted_effective = self._current_effective_steps - self._commitment_cost_this_epoch
+                if self._epoch_steps_used >= adjusted_effective:
+                    pass  # Budget exhausted
+                else:
+                    violation = self._execute_working_mind_cycle_v060()
+                    if violation:
+                        self._handle_lease_revocation(violation[0], violation[1])
+                        continue
+
+            # Check renewal at epoch boundaries
+            if self._current_lease and self._current_lease.status == LeaseStatus.ACTIVE:
+                if self._cycle % self._config.renewal_check_interval == 0:
+                    # Evaluate commitments before renewal check
+                    self._evaluate_commitments_at_epoch_end()
+                    # Update streak BEFORE renewal (per spec: epoch end)
+                    self._update_streak_at_epoch_end()
+                    # Proceed with renewal
+                    self._check_renewal_with_rent()
+
+            # Check lease expiration
+            if self._current_lease and self._current_lease.is_expired(self._cycle):
+                self._handle_lease_expiration()
+
+            # Check degeneracy
+            self._check_degeneracy()
+
+        # Finalize
+        if not self._stopped:
+            self._stop_reason = ALSStopReason.HORIZON_EXHAUSTED
+
+        # End any active lapse
+        if self._in_null_authority and self._current_lapse:
+            self._current_lapse.end_cycle = self._cycle
+            self._current_lapse.duration_cycles = self._cycle - self._current_lapse.start_cycle
+            if self._null_authority_start_epoch is not None:
+                self._current_lapse.duration_epochs = self._epoch_index - self._null_authority_start_epoch
+            self._lapse_events.append(self._current_lapse)
+
+        # Finalize active tenure
+        if self._current_tenure is not None:
+            self._end_tenure("HORIZON_EXHAUSTED")
+
+        duration = current_time_ms() - start_time
+
+        # Get commitment metrics
+        ledger_metrics = self._commitment_ledger.get_metrics()
+
+        # Compute satisfaction rate
+        total_evaluations = ledger_metrics["total_satisfied"] + ledger_metrics["total_failed"]
+        satisfaction_rate = 0.0
+        if total_evaluations > 0:
+            satisfaction_rate = ledger_metrics["total_satisfied"] / total_evaluations
+
+        # Compute eligibility rejection rate
+        eligibility_rejection_rate = 0.0
+        if self._total_candidates_at_succession > 0:
+            eligibility_rejection_rate = self._eligibility_rejections / self._total_candidates_at_succession
+
+        # Compute lapse metrics
+        total_lapse_cycles = sum(e.duration_cycles for e in self._lapse_events)
+        total_lapse_epochs = sum(e.duration_epochs for e in self._lapse_events)
+        max_lapse = max((e.duration_cycles for e in self._lapse_events), default=0)
+
+        # Compute streak distribution at succession
+        streak_dist: Dict[int, int] = {}
+        for event in self._eligibility_events:
+            streak = event.streak_at_decision
+            streak_dist[streak] = streak_dist.get(streak, 0) + 1
+
+        # Compute degeneracy
+        is_degenerate = self._stop_reason in (
+            ALSStopReason.ENDORSEMENT_DEGENERACY,
+            ALSStopReason.SPAM_DEGENERACY,
+        )
+        degeneracy_type = None
+        if self._stop_reason == ALSStopReason.ENDORSEMENT_DEGENERACY:
+            degeneracy_type = DegeneracyType.ENDORSEMENT
+        elif self._stop_reason == ALSStopReason.SPAM_DEGENERACY:
+            degeneracy_type = DegeneracyType.SPAM
+
+        # Compute mean residence
+        mean_residence = 0.0
+        if self._residence_durations:
+            mean_residence = sum(self._residence_durations) / len(self._residence_durations)
+
+        # Compute E-Class metrics
+        renewal_rate_by_e_class = {}
+        for e_name in self._e_class_renewal_attempts:
+            attempts = self._e_class_renewal_attempts[e_name]
+            successes = self._e_class_renewals[e_name]
+            if attempts > 0:
+                renewal_rate_by_e_class[e_name] = successes / attempts
+
+        residence_by_e_class = {}
+        for e_name, durations in self._e_class_residence.items():
+            if durations:
+                residence_by_e_class[e_name] = sum(durations) / len(durations)
+
+        result = ALSRunResultV070(
+            run_id=run_id,
+            seed=self._seed,
+            spec_version="0.7",
+            s_star=self._s_star,
+            total_cycles=self._cycle,
+            total_proposals=self._total_proposals,
+            total_endorsements=self._total_endorsements,
+            control_endorsements=self._control_endorsements,
+            non_trivial_endorsements=self._non_trivial_endorsements,
+            total_renewals=self._total_renewals,
+            total_expirations=self._total_expirations,
+            total_revocations=self._total_revocations,
+            total_bankruptcies=self._total_bankruptcies,
+            total_rent_charged=self._total_rent_charged,
+            renewal_attempts=self._renewal_attempts,
+            renewal_successes=self._renewal_successes,
+            time_to_first_renewal_fail=self._time_to_first_renewal_fail,
+            mean_residence_cycles=mean_residence,
+            e_class_distribution=dict(self._e_class_successions),
+            renewal_rate_by_e_class=renewal_rate_by_e_class,
+            residence_by_e_class=residence_by_e_class,
+            stop_reason=self._stop_reason,
+            stop_cycle=self._cycle,
+            is_degenerate=is_degenerate,
+            degeneracy_type=degeneracy_type,
+            degeneracy_window=self._successions_without_non_trivial,
+            failure_signature=self._failure_signature,
+            failure_detail=self._failure_detail,
+            total_commitment_cost_charged=ledger_metrics["total_cost_charged"],
+            commitment_satisfaction_count=ledger_metrics["total_satisfied"],
+            commitment_failure_count=ledger_metrics["total_failed"],
+            commitment_expired_count=ledger_metrics["total_expired"],
+            commitment_default_count=ledger_metrics["total_defaulted"],
+            semantic_debt_mass=ledger_metrics["semantic_debt_mass"],
+            commitment_satisfaction_rate=satisfaction_rate,
+            # v0.7 metrics
+            eligibility_rejection_count=self._eligibility_rejections,
+            eligibility_rejection_rate=eligibility_rejection_rate,
+            empty_eligible_set_events=len(self._lapse_events),
+            total_lapse_duration_cycles=total_lapse_cycles,
+            total_lapse_duration_epochs=total_lapse_epochs,
+            max_lapse_duration_cycles=max_lapse,
+            ineligible_in_office_cycles=self._ineligible_in_office_cycles,
+            sawtooth_count=self._sawtooth_count,
+            streak_distribution_at_succession=streak_dist,
+            final_streak_by_policy=dict(self._semantic_fail_streak),
+            # Events
+            succession_events=self._succession_events,
+            renewal_events=self._renewal_events,
+            expiration_events=self._expiration_events,
+            revocation_events=self._revocation_events,
+            bankruptcy_events=self._bankruptcy_events,
+            epoch_rent_records=self._epoch_rent_records,
+            tenure_records=self._tenure_records,
+            tenure_entropy_samples=self._tenure_entropy_samples,
+            commitment_events=[e.to_dict() for e in self._commitment_ledger.get_events()],
+            commitment_cost_records=[r.to_dict() for r in self._commitment_ledger.get_cost_records()],
+            eligibility_events=[e.to_dict() for e in self._eligibility_events],
+            lapse_events=[e.to_dict() for e in self._lapse_events],
+            semantic_epoch_records=[r.to_dict() for r in self._semantic_epoch_records],
+            duration_ms=duration,
+        )
+
+        if self._verbose:
+            print(f"\nALS-G v0.7 run complete:")
+            print(f"  S*: {result.s_star}")
+            print(f"  Cycles: {result.total_cycles}")
+            print(f"  Renewals: {result.total_renewals}")
+            print(f"  Eligibility rejections: {result.eligibility_rejection_count}")
+            print(f"  Lapse events: {result.empty_eligible_set_events}")
+            print(f"  Sawtooth patterns: {result.sawtooth_count}")
+            print(f"  Stop: {result.stop_reason.name}")
+
+        return result

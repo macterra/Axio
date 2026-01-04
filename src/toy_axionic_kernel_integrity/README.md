@@ -2,18 +2,33 @@
 
 A falsifiable experimental system implementing kernel integrity under actuation, targeting alignment properties from the Axionic Agency framework.
 
-## Current Version: v0.5.2 (ALS-E)
+## Current Version: v0.7 (ALS-G)
 
-**Authority Leases with Expressivity-Bounded Succession**
+**Authority Leases with Eligibility-Coupled Succession**
 
-AKI v0.5.2 implements expressivity bounding — a mechanism that charges successors "rent" proportional to their capability expressivity. Higher expressivity costs more, reducing the effective step budget and creating selection pressure toward minimal-capability successors.
+AKI v0.7 introduces eligibility gating at succession points. Candidates with persistent semantic failure (measured by `semantic_fail_streak >= K`) are excluded from the eligible pool. When all candidates become ineligible, the system enters a constitutional lapse state (NULL_AUTHORITY).
 
-### Key Features (v0.5.2)
+### Key Features (v0.7)
+
+- **Eligibility Gating:** Filter candidates based on semantic fail streak
+- **Stable Policy Identity:** `policy_id` keyed to enum name, not runtime instance
+- **Constitutional Lapse:** NULL_AUTHORITY state when C_ELIG = ∅
+- **K=3 Threshold:** Default eligibility threshold (configurable)
+- **Pool Composition:** V060_DEFAULT (unchanged from v0.6)
+
+See [spec_v0.7.md](docs/spec_v0.7.md) and [instructions_v0.7.md](docs/instructions_v0.7.md)
+
+### Inherited from v0.6 (ALS-C)
+
+- **Commitment Ledger:** Kernel-owned persistent ledger of semantic obligations
+- **Obligation Survivability:** Commitments persist across epochs, renewals, and succession
+- **Competence Independence:** Authority can be renewable yet incompetent, or competent yet non-renewable
+
+### Inherited from v0.5.2 (ALS-E)
 
 - **Expressivity Classes (E0-E4):** Hierarchical capability levels from heartbeat-only to full API
 - **Rent Schedule:** Steps deducted at epoch start based on E-Class
 - **CBD Detection:** Compliant-But-Dangerous successor patterns
-- **Boundary Testing:** Rent escalation and renewal cost experiments
 
 ## Version History
 
@@ -23,7 +38,9 @@ AKI v0.5.2 implements expressivity bounding — a mechanism that charges success
 | v0.2.x | Recomposition | Sovereign actuation, P2' verification |
 | v0.3.x | Pre-registration | H=10,000 horizon experiments |
 | v0.4.x | Authority Leases (ALS) | Lease lifecycle, S* counting, succession |
-| **v0.5.2** | Expressivity (ALS-E) | Rent schedule, E-Classes, boundary finding |
+| v0.5.2 | Expressivity (ALS-E) | Rent schedule, E-Classes, boundary finding |
+| v0.6 | Commitments (ALS-C) | Commitment Ledger, obligation survivability |
+| **v0.7** | Eligibility (ALS-G) | Eligibility gating, streak tracking, constitutional lapse |
 
 ## Installation
 
@@ -33,6 +50,29 @@ pip install -e .
 ```
 
 ## Quick Start
+
+### Run v0.7 Experiments
+
+```bash
+# Run A: Eligibility-coupled succession baseline
+python scripts/run_a_v070.py
+```
+
+### Run v0.6 Experiments
+
+```bash
+# Run A: Basic ALS-C validation
+python scripts/run_a_v060.py
+
+# Run B: Commitment ledger persistence
+python scripts/run_b_v060.py
+
+# Run C: Obligation satisfaction tracking
+python scripts/run_c_v060.py
+
+# Run D: Boundary hugging
+python scripts/run_d_v060.py
+```
 
 ### Run v0.5.2 Experiments
 
@@ -62,11 +102,14 @@ python scripts/run_k_v052.py
 ### Run Tests
 
 ```bash
-# Run all tests (~517 tests across versions)
+# Run all tests
 pytest tests/
 
-# Run v0.5.2 tests
-pytest tests/test_v052.py -v
+# Run v0.7 tests
+pytest tests/test_v070.py -v
+
+# Run v0.6 tests
+pytest tests/test_v060.py -v
 
 # Run with coverage
 pytest --cov=toy_aki tests/
@@ -77,9 +120,10 @@ pytest --cov=toy_aki tests/
 ```
 toy_aki/
 ├── als/             # Authority Lease System (v0.4+)
-│   ├── harness.py   # ALSHarnessV052, rent charging
+│   ├── harness.py   # ALSHarnessV052, V060, V070
 │   ├── expressivity.py  # E-Classes, RentSchedule
-│   ├── generator.py # Successor generation, TierFilterGenerator
+│   ├── commitment.py    # Commitment Ledger (v0.6+)
+│   ├── generator.py # Successor generation, policy_id tracking
 │   ├── successors.py    # CBD and attack successors
 │   └── working_mind.py  # Working mind abstraction
 ├── common/          # Utilities: hashing, JSON, no-floats
@@ -89,6 +133,38 @@ toy_aki/
 ├── agents/          # Agent implementations
 ├── attacks/         # Attack payloads (v0.2+)
 └── harness/         # Test harnesses
+```
+
+## v0.7 Eligibility Gating
+
+### Key Concepts
+
+- **policy_id:** Stable identifier per policy class (e.g., `"control:COMPLIANCE_ONLY"`, `"attack:CBD"`)
+- **semantic_fail_streak:** Per-policy_id counter, incremented on semantic failure, reset on success
+- **K (eligibility_threshold_k):** Threshold; streak >= K excludes candidate from C_ELIG
+- **C_ELIG:** Eligible candidate pool = { c ∈ C_POOL | streak[c.policy_id] < K }
+- **NULL_AUTHORITY:** Constitutional lapse state when C_ELIG = ∅
+
+### Configuration
+
+```python
+from toy_aki.als.harness import ALSConfigV070, ALSHarnessV070
+
+config = ALSConfigV070(
+    max_cycles=10_000,
+    eligibility_threshold_k=3,  # K=3 default
+)
+
+harness = ALSHarnessV070(seed=42, config=config)
+result = harness.run()
+
+# Check eligibility events
+for event in result.eligibility_events:
+    print(f"Excluded {event.policy_id} at epoch {event.epoch} (streak={event.streak_value})")
+
+# Check for lapses
+print(f"Total lapse cycles: {result.total_lapse_cycles}")
+print(f"Lapse count: {result.lapse_count}")
 ```
 
 ## v0.5.2 Expressivity Classes
@@ -203,18 +279,26 @@ result = harness.run()
 
 ## Documentation
 
-- [IMPLEMENTATION_REPORT_V052.md](reports/IMPLEMENTATION_REPORT_V052.md) - Current version details
-- [spec_v0.5.2.md](docs/spec_v0.5.2.md) - v0.5.2 specification
+### Specifications
 
-### Experiment Instructions
+- [spec_v0.7.md](docs/spec_v0.7.md) - v0.7 specification (ALS-G: Eligibility Gating)
+- [spec_v0.6.md](docs/spec_v0.6.md) - v0.6 specification (ALS-C)
+- [spec_v0.5.2.md](docs/spec_v0.5.2.md) - v0.5.2 specification (ALS-E)
 
+### Implementation Instructions
+
+- [instructions_v0.7.md](docs/instructions_v0.7.md) - v0.7 ALS-G implementation
+- [instructions_v0.6.md](docs/instructions_v0.6.md) - v0.6 ALS-C implementation
+- [instructions_v0.6_runnerBCD.md](docs/instructions_v0.6_runnerBCD.md) - v0.6 experiment runners
 - [instructions_v0.5.2_runnerH.md](docs/instructions_v0.5.2_runnerH.md) - Run H boundary finding
 - [instructions_v0.5.2_runnerI.md](docs/instructions_v0.5.2_runnerI.md) - Run I rubber-stamp test
 - [instructions_v0.5.2_runnerJ.md](docs/instructions_v0.5.2_runnerJ.md) - Run J rent boundary
 - [instructions_v0.5.2_runnerK.md](docs/instructions_v0.5.2_runnerK.md) - Run K succession geometry
 
-### Historical Reports
+### Reports
 
+- [run_l_v060_report.md](docs/run_l_v060_report.md) - v0.6 experiment report
+- [IMPLEMENTATION_REPORT_V052.md](reports/IMPLEMENTATION_REPORT_V052.md) - v0.5.2 report
 - [IMPLEMENTATION_REPORT_V042.md](reports/IMPLEMENTATION_REPORT_V042.md) - ALS foundation
 - [IMPLEMENTATION_REPORT_V043.md](reports/IMPLEMENTATION_REPORT_V043.md) - ALS refinements
 - [IMPLEMENTATION_REPORT.md](reports/IMPLEMENTATION_REPORT.md) - Original v0.1 report
@@ -222,10 +306,12 @@ result = harness.run()
 ## Running Tests
 
 ```bash
-# All tests (~517 tests across versions)
+# All tests
 pytest tests/
 
 # Version-specific suites
+pytest tests/test_v070.py -v  # v0.7: ALS-G eligibility gating
+pytest tests/test_v060.py -v  # v0.6: ALS-C commitments
 pytest tests/test_v052.py -v  # v0.5.2: ALS-E expressivity
 pytest tests/test_v043.py -v  # v0.4.3: ALS tests
 pytest tests/test_v042.py -v  # v0.4.2: ALS foundation

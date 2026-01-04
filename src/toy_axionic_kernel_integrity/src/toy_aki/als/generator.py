@@ -78,11 +78,18 @@ class SuccessorCandidate:
 
     Contains the working mind implementation and its manifest
     for LCP construction.
+
+    v0.7: policy_id is a stable identifier for the policy class,
+    not the runtime instance. Format: "{category}:{enum_name}"
+    e.g., "control:COMPLIANCE_ONLY" or "attack:CBD"
     """
     candidate_id: str
     mind: WorkingMind
     manifest: WorkingMindManifest
     source_type: str  # "control", "generated", "adversarial"
+
+    # v0.7: Stable policy identity (required for eligibility tracking)
+    policy_id: str = ""  # e.g., "control:COMPLIANCE_ONLY", "attack:CBD"
 
     # Metadata
     proposed_at_cycle: int = 0
@@ -110,6 +117,7 @@ class SuccessorCandidate:
     def to_dict(self) -> Dict[str, Any]:
         return {
             "candidate_id": self.candidate_id,
+            "policy_id": self.policy_id,
             "mind_id": self.mind.mind_id,
             "manifest": self.manifest.to_dict(),
             "source_type": self.source_type,
@@ -1448,8 +1456,12 @@ class SuccessorGenerator:
 
         manifest = mind.export_manifest()
 
+        # v0.7: Stable policy identity (not instance-specific)
+        policy_id = f"control:{control_type.name}"
+
         return SuccessorCandidate(
             candidate_id=f"candidate_{self._candidate_count}",
+            policy_id=policy_id,
             mind=mind,
             manifest=manifest,
             source_type="control",
@@ -1573,8 +1585,12 @@ class SuccessorGenerator:
 
         manifest = mind.export_manifest()
 
+        # v0.7: Stable policy identity (not instance-specific)
+        policy_id = f"attack:{attack_type.name}"
+
         return SuccessorCandidate(
             candidate_id=f"candidate_{self._candidate_count}",
+            policy_id=policy_id,
             mind=mind,
             manifest=manifest,
             source_type="adversarial",
@@ -1896,8 +1912,21 @@ class TieredGenerator:
 
         manifest = mind.export_manifest()
 
+        # v0.7: Use tier-specific policy identity
+        # Map tier name to corresponding control type for consistency
+        tier_to_control = {
+            "E0": "TIERED_E0",
+            "E1": "TIERED_E1",
+            "E2": "TIERED_E2",
+            "E3": "TIERED_E3",
+            "E4": "TIERED_E4",
+        }
+        control_name = tier_to_control.get(self._tier_name, f"TIERED_{self._tier_name}")
+        policy_id = f"control:{control_name}"
+
         candidate = SuccessorCandidate(
             candidate_id=f"candidate_{self._candidate_count}",
+            policy_id=policy_id,
             mind=mind,
             manifest=manifest,
             source_type="control",
