@@ -3437,12 +3437,20 @@ class ALSConfigV070(ALSConfigV060):
     - Eligibility filter at succession only
     - K = 3 (semantic fail streak threshold)
     - Candidate pool unchanged from v0.6
+
+    Run B addition:
+    - max_successive_renewals: harness-enforced renewal limit per tenure
     """
     # Eligibility threshold: streak >= K makes candidate ineligible
     eligibility_threshold_k: int = 3
 
     # Candidate pool policy (frozen: V060_DEFAULT)
     candidate_pool_policy: CandidatePoolPolicy = CandidatePoolPolicy.V060_DEFAULT
+
+    # Harness-enforced renewal limit per tenure (Run B)
+    # If None, no limit is enforced (Run A behavior)
+    # If set, lease expires after this many successful renewals
+    max_successive_renewals: Optional[int] = None
 
 
 @dataclass
@@ -3513,6 +3521,27 @@ class SemanticEpochRecord:
             "sem_pass": self.sem_pass,
             "streak_before": self.streak_before,
             "streak_after": self.streak_after,
+        }
+
+
+@dataclass
+class ForcedTurnoverEvent:
+    """Record of a forced turnover due to renewal limit (Run B)."""
+    cycle: int
+    epoch: int
+    outgoing_policy_id: str
+    tenure_renewals_used: int
+    max_successive_renewals: int
+    cause: str = "FORCED_TURNOVER_RENEWAL_LIMIT"
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "cycle": self.cycle,
+            "epoch": self.epoch,
+            "outgoing_policy_id": self.outgoing_policy_id,
+            "tenure_renewals_used": self.tenure_renewals_used,
+            "max_successive_renewals": self.max_successive_renewals,
+            "cause": self.cause,
         }
 
 
@@ -3596,6 +3625,11 @@ class ALSRunResultV070:
     lapse_events: List[LapseEvent] = field(default_factory=list)
     semantic_epoch_records: List[SemanticEpochRecord] = field(default_factory=list)
 
+    # v0.7 forced turnover events (Run B)
+    forced_turnover_events: List[ForcedTurnoverEvent] = field(default_factory=list)
+    forced_turnover_count: int = 0
+    post_init_successions: int = 0  # Successions after initial endorsement
+
     def to_dict(self) -> Dict[str, Any]:
         result = {
             "run_id": self.run_id,
@@ -3630,6 +3664,9 @@ class ALSRunResultV070:
             "sawtooth_count": self.sawtooth_count,
             "streak_distribution_at_succession": self.streak_distribution_at_succession,
             "final_streak_by_policy": self.final_streak_by_policy,
+            # v0.7 forced turnover (Run B)
+            "forced_turnover_count": self.forced_turnover_count,
+            "post_init_successions": self.post_init_successions,
             # Standard metrics
             "renewal_attempts": self.renewal_attempts,
             "renewal_successes": self.renewal_successes,
@@ -3710,6 +3747,12 @@ class ALSHarnessV070(ALSHarnessV060):
         self._ineligible_in_office_cycles: int = 0
         self._sawtooth_count: int = 0
         self._current_lapse: Optional[LapseEvent] = None
+
+        # v0.7: Forced turnover tracking (Run B)
+        self._forced_turnover_events: List[ForcedTurnoverEvent] = []
+        self._tenure_renewals_used: int = 0  # Renewals for current tenure
+        self._is_initial_succession: bool = True  # Track if first succession
+        self._post_init_successions: int = 0  # Count successions after initial
 
     def _get_policy_streak(self, policy_id: str) -> int:
         """Get current streak for a policy (0 if not tracked yet)."""
@@ -3993,6 +4036,14 @@ class ALSHarnessV070(ALSHarnessV060):
         self._current_successor_source_type = candidate.source_type
         self._current_lease_renewals = 0
 
+        # v0.7 Run B: Reset tenure renewal counter
+        self._tenure_renewals_used = 0
+
+        # v0.7: Track post-initial successions
+        if not self._is_initial_succession:
+            self._post_init_successions += 1
+        self._is_initial_succession = False
+
         # Determine E-class
         action_types = candidate.manifest.interface.action_types
         e_class = self._assign_e_class(action_types)
@@ -4048,6 +4099,52 @@ class ALSHarnessV070(ALSHarnessV060):
         if self._verbose:
             print(f"    [Cycle {self._cycle}] ENDORSED: {candidate.policy_id} "
                   f"(S*={self._s_star})")
+
+    def _check_renewal_with_rent(self) -> None:
+        """
+        Override to enforce max_successive_renewals limit (Run B).
+
+        If max_successive_renewals is set and the limit is reached,
+        force lease expiration and trigger succession.
+        """
+        if self._current_lease is None:
+            return
+
+        if self._current_lease.status != LeaseStatus.ACTIVE:
+            return
+
+        # Check if renewal limit is enforced and reached
+        max_renewals = self._config.max_successive_renewals
+        if max_renewals is not None and self._tenure_renewals_used >= max_renewals:
+            # Force expiration - record the event before triggering succession
+            event = ForcedTurnoverEvent(
+                cycle=self._cycle,
+                epoch=self._epoch_index,
+                outgoing_policy_id=self._active_policy_id or "unknown",
+                tenure_renewals_used=self._tenure_renewals_used,
+                max_successive_renewals=max_renewals,
+            )
+            self._forced_turnover_events.append(event)
+
+            if self._verbose:
+                print(f"    [Cycle {self._cycle}] FORCED_TURNOVER: {self._active_policy_id} "
+                      f"(renewals={self._tenure_renewals_used}/{max_renewals})")
+
+            # Handle as expiration (not revocation - this is structural, not violation)
+            self._handle_lease_expiration()
+            return
+
+        # Call parent implementation for normal renewal logic
+        super()._check_renewal_with_rent()
+
+        # If renewal succeeded, increment our counter
+        # Parent increments _current_lease_renewals on success
+        if self._current_lease and self._current_lease.status == LeaseStatus.ACTIVE:
+            # Check if renewal just happened (parent would have incremented counter)
+            # We can detect this by comparing epochs or checking if renewal events were added
+            if self._renewal_events and self._renewal_events[-1].cycle == self._cycle:
+                if self._renewal_events[-1].success:
+                    self._tenure_renewals_used += 1
 
     def run(self) -> ALSRunResultV070:
         """
@@ -4259,6 +4356,10 @@ class ALSHarnessV070(ALSHarnessV060):
             eligibility_events=[e.to_dict() for e in self._eligibility_events],
             lapse_events=[e.to_dict() for e in self._lapse_events],
             semantic_epoch_records=[r.to_dict() for r in self._semantic_epoch_records],
+            # v0.7 forced turnover (Run B)
+            forced_turnover_events=[e.to_dict() for e in self._forced_turnover_events],
+            forced_turnover_count=len(self._forced_turnover_events),
+            post_init_successions=self._post_init_successions,
             duration_ms=duration,
         )
 
@@ -4267,6 +4368,8 @@ class ALSHarnessV070(ALSHarnessV060):
             print(f"  S*: {result.s_star}")
             print(f"  Cycles: {result.total_cycles}")
             print(f"  Renewals: {result.total_renewals}")
+            print(f"  Post-init successions: {result.post_init_successions}")
+            print(f"  Forced turnovers: {result.forced_turnover_count}")
             print(f"  Eligibility rejections: {result.eligibility_rejection_count}")
             print(f"  Lapse events: {result.empty_eligible_set_events}")
             print(f"  Sawtooth patterns: {result.sawtooth_count}")
