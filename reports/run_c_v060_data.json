@@ -1,0 +1,1736 @@
+{
+  "C0": {
+    "sub_run_id": "C0",
+    "label": "Mixed E-Classes (Random)",
+    "expressivity_mode": "random",
+    "fixed_e_class": null,
+    "seeds": [
+      40,
+      41,
+      42,
+      43,
+      44
+    ],
+    "mean_s_star": 10.0,
+    "std_s_star": 0.0,
+    "mean_cycles": 7201.0,
+    "mean_renewals": 135.0,
+    "mean_expirations": 9.0,
+    "mean_successions": 10.0,
+    "mean_satisfaction_rate": 0.8,
+    "std_satisfaction_rate": 0.4,
+    "mean_satisfaction_count": 26.4,
+    "mean_failure_count": 0.6,
+    "mean_default_count": 0.0,
+    "total_commitment_cost": 556,
+    "regime_distribution": {
+      "HIGH_COMPLIANCE": 4,
+      "LOW_COMPLIANCE": 1
+    },
+    "mean_sat_before_succession": 0.0,
+    "mean_sat_after_succession": 0.0,
+    "aware_successor_satisfaction": 0.0,
+    "minimal_successor_satisfaction": 0.0,
+    "seed_results": [
+      {
+        "seed": 40,
+        "s_star": 10,
+        "total_cycles": 7201,
+        "total_renewals": 135,
+        "total_expirations": 9,
+        "total_successions": 10,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_default_count": 0,
+        "total_commitment_cost_charged": 132,
+        "semantic_debt_mass": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "regime": "HIGH_COMPLIANCE",
+        "elapsed_ms": 61,
+        "successor_history": [
+          {
+            "cycle": 1,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 801,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 1601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 2401,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 3201,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4001,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4801,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 5601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 6401,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 7201,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          }
+        ]
+      },
+      {
+        "seed": 41,
+        "s_star": 10,
+        "total_cycles": 7201,
+        "total_renewals": 135,
+        "total_expirations": 9,
+        "total_successions": 10,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_default_count": 0,
+        "total_commitment_cost_charged": 132,
+        "semantic_debt_mass": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "regime": "HIGH_COMPLIANCE",
+        "elapsed_ms": 55,
+        "successor_history": [
+          {
+            "cycle": 1,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 801,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 1601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 2401,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 3201,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4001,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4801,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 5601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 6401,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 7201,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          }
+        ]
+      },
+      {
+        "seed": 42,
+        "s_star": 10,
+        "total_cycles": 7201,
+        "total_renewals": 135,
+        "total_expirations": 9,
+        "total_successions": 10,
+        "commitment_satisfaction_rate": 0.0,
+        "commitment_satisfaction_count": 0,
+        "commitment_failure_count": 3,
+        "commitment_default_count": 0,
+        "total_commitment_cost_charged": 28,
+        "semantic_debt_mass": 3,
+        "stop_reason": "SPAM_DEGENERACY",
+        "regime": "LOW_COMPLIANCE",
+        "elapsed_ms": 54,
+        "successor_history": [
+          {
+            "cycle": 1,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 801,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 1601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 2401,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 3201,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4001,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4801,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 5601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 6401,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 7201,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          }
+        ]
+      },
+      {
+        "seed": 43,
+        "s_star": 10,
+        "total_cycles": 7201,
+        "total_renewals": 135,
+        "total_expirations": 9,
+        "total_successions": 10,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_default_count": 0,
+        "total_commitment_cost_charged": 132,
+        "semantic_debt_mass": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "regime": "HIGH_COMPLIANCE",
+        "elapsed_ms": 64,
+        "successor_history": [
+          {
+            "cycle": 1,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 801,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 1601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 2401,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 3201,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4001,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4801,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 5601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 6401,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 7201,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          }
+        ]
+      },
+      {
+        "seed": 44,
+        "s_star": 10,
+        "total_cycles": 7201,
+        "total_renewals": 135,
+        "total_expirations": 9,
+        "total_successions": 10,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_default_count": 0,
+        "total_commitment_cost_charged": 132,
+        "semantic_debt_mass": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "regime": "HIGH_COMPLIANCE",
+        "elapsed_ms": 57,
+        "successor_history": [
+          {
+            "cycle": 1,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 801,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 1601,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 2401,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 3201,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 4001,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 4801,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 5601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 6401,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 7201,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          }
+        ]
+      }
+    ]
+  },
+  "C1": {
+    "sub_run_id": "C1",
+    "label": "E1-Only (Minimal)",
+    "expressivity_mode": "fixed",
+    "fixed_e_class": "E1",
+    "seeds": [
+      40,
+      41,
+      42,
+      43,
+      44
+    ],
+    "mean_s_star": 10.0,
+    "std_s_star": 0.0,
+    "mean_cycles": 7201.0,
+    "mean_renewals": 135.0,
+    "mean_expirations": 9.0,
+    "mean_successions": 10.0,
+    "mean_satisfaction_rate": 0.8,
+    "std_satisfaction_rate": 0.4,
+    "mean_satisfaction_count": 26.4,
+    "mean_failure_count": 0.6,
+    "mean_default_count": 0.0,
+    "total_commitment_cost": 556,
+    "regime_distribution": {
+      "HIGH_COMPLIANCE": 4,
+      "LOW_COMPLIANCE": 1
+    },
+    "mean_sat_before_succession": 0.0,
+    "mean_sat_after_succession": 0.0,
+    "aware_successor_satisfaction": 0.0,
+    "minimal_successor_satisfaction": 0.0,
+    "seed_results": [
+      {
+        "seed": 40,
+        "s_star": 10,
+        "total_cycles": 7201,
+        "total_renewals": 135,
+        "total_expirations": 9,
+        "total_successions": 10,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_default_count": 0,
+        "total_commitment_cost_charged": 132,
+        "semantic_debt_mass": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "regime": "HIGH_COMPLIANCE",
+        "elapsed_ms": 56,
+        "successor_history": [
+          {
+            "cycle": 1,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 801,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 1601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 2401,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 3201,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4001,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4801,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 5601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 6401,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 7201,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          }
+        ]
+      },
+      {
+        "seed": 41,
+        "s_star": 10,
+        "total_cycles": 7201,
+        "total_renewals": 135,
+        "total_expirations": 9,
+        "total_successions": 10,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_default_count": 0,
+        "total_commitment_cost_charged": 132,
+        "semantic_debt_mass": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "regime": "HIGH_COMPLIANCE",
+        "elapsed_ms": 57,
+        "successor_history": [
+          {
+            "cycle": 1,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 801,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 1601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 2401,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 3201,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4001,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4801,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 5601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 6401,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 7201,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          }
+        ]
+      },
+      {
+        "seed": 42,
+        "s_star": 10,
+        "total_cycles": 7201,
+        "total_renewals": 135,
+        "total_expirations": 9,
+        "total_successions": 10,
+        "commitment_satisfaction_rate": 0.0,
+        "commitment_satisfaction_count": 0,
+        "commitment_failure_count": 3,
+        "commitment_default_count": 0,
+        "total_commitment_cost_charged": 28,
+        "semantic_debt_mass": 3,
+        "stop_reason": "SPAM_DEGENERACY",
+        "regime": "LOW_COMPLIANCE",
+        "elapsed_ms": 57,
+        "successor_history": [
+          {
+            "cycle": 1,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 801,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 1601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 2401,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 3201,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4001,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4801,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 5601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 6401,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 7201,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          }
+        ]
+      },
+      {
+        "seed": 43,
+        "s_star": 10,
+        "total_cycles": 7201,
+        "total_renewals": 135,
+        "total_expirations": 9,
+        "total_successions": 10,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_default_count": 0,
+        "total_commitment_cost_charged": 132,
+        "semantic_debt_mass": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "regime": "HIGH_COMPLIANCE",
+        "elapsed_ms": 55,
+        "successor_history": [
+          {
+            "cycle": 1,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 801,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 1601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 2401,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 3201,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4001,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4801,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 5601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 6401,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 7201,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          }
+        ]
+      },
+      {
+        "seed": 44,
+        "s_star": 10,
+        "total_cycles": 7201,
+        "total_renewals": 135,
+        "total_expirations": 9,
+        "total_successions": 10,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_default_count": 0,
+        "total_commitment_cost_charged": 132,
+        "semantic_debt_mass": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "regime": "HIGH_COMPLIANCE",
+        "elapsed_ms": 62,
+        "successor_history": [
+          {
+            "cycle": 1,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 801,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 1601,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 2401,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 3201,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 4001,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 4801,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 5601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 6401,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 7201,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          }
+        ]
+      }
+    ]
+  },
+  "C2": {
+    "sub_run_id": "C2",
+    "label": "E2-Only (State Ops)",
+    "expressivity_mode": "fixed",
+    "fixed_e_class": "E2",
+    "seeds": [
+      40,
+      41,
+      42,
+      43,
+      44
+    ],
+    "mean_s_star": 10.0,
+    "std_s_star": 0.0,
+    "mean_cycles": 7201.0,
+    "mean_renewals": 135.0,
+    "mean_expirations": 9.0,
+    "mean_successions": 10.0,
+    "mean_satisfaction_rate": 0.8,
+    "std_satisfaction_rate": 0.4,
+    "mean_satisfaction_count": 26.4,
+    "mean_failure_count": 0.6,
+    "mean_default_count": 0.0,
+    "total_commitment_cost": 556,
+    "regime_distribution": {
+      "HIGH_COMPLIANCE": 4,
+      "LOW_COMPLIANCE": 1
+    },
+    "mean_sat_before_succession": 0.0,
+    "mean_sat_after_succession": 0.0,
+    "aware_successor_satisfaction": 0.0,
+    "minimal_successor_satisfaction": 0.0,
+    "seed_results": [
+      {
+        "seed": 40,
+        "s_star": 10,
+        "total_cycles": 7201,
+        "total_renewals": 135,
+        "total_expirations": 9,
+        "total_successions": 10,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_default_count": 0,
+        "total_commitment_cost_charged": 132,
+        "semantic_debt_mass": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "regime": "HIGH_COMPLIANCE",
+        "elapsed_ms": 55,
+        "successor_history": [
+          {
+            "cycle": 1,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 801,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 1601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 2401,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 3201,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4001,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4801,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 5601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 6401,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 7201,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          }
+        ]
+      },
+      {
+        "seed": 41,
+        "s_star": 10,
+        "total_cycles": 7201,
+        "total_renewals": 135,
+        "total_expirations": 9,
+        "total_successions": 10,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_default_count": 0,
+        "total_commitment_cost_charged": 132,
+        "semantic_debt_mass": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "regime": "HIGH_COMPLIANCE",
+        "elapsed_ms": 56,
+        "successor_history": [
+          {
+            "cycle": 1,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 801,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 1601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 2401,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 3201,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4001,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4801,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 5601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 6401,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 7201,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          }
+        ]
+      },
+      {
+        "seed": 42,
+        "s_star": 10,
+        "total_cycles": 7201,
+        "total_renewals": 135,
+        "total_expirations": 9,
+        "total_successions": 10,
+        "commitment_satisfaction_rate": 0.0,
+        "commitment_satisfaction_count": 0,
+        "commitment_failure_count": 3,
+        "commitment_default_count": 0,
+        "total_commitment_cost_charged": 28,
+        "semantic_debt_mass": 3,
+        "stop_reason": "SPAM_DEGENERACY",
+        "regime": "LOW_COMPLIANCE",
+        "elapsed_ms": 56,
+        "successor_history": [
+          {
+            "cycle": 1,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 801,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 1601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 2401,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 3201,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4001,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4801,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 5601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 6401,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 7201,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          }
+        ]
+      },
+      {
+        "seed": 43,
+        "s_star": 10,
+        "total_cycles": 7201,
+        "total_renewals": 135,
+        "total_expirations": 9,
+        "total_successions": 10,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_default_count": 0,
+        "total_commitment_cost_charged": 132,
+        "semantic_debt_mass": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "regime": "HIGH_COMPLIANCE",
+        "elapsed_ms": 57,
+        "successor_history": [
+          {
+            "cycle": 1,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 801,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 1601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 2401,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 3201,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4001,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4801,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 5601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 6401,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 7201,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          }
+        ]
+      },
+      {
+        "seed": 44,
+        "s_star": 10,
+        "total_cycles": 7201,
+        "total_renewals": 135,
+        "total_expirations": 9,
+        "total_successions": 10,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_default_count": 0,
+        "total_commitment_cost_charged": 132,
+        "semantic_debt_mass": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "regime": "HIGH_COMPLIANCE",
+        "elapsed_ms": 59,
+        "successor_history": [
+          {
+            "cycle": 1,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 801,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 1601,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 2401,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 3201,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 4001,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 4801,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 5601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 6401,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 7201,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          }
+        ]
+      }
+    ]
+  },
+  "C3": {
+    "sub_run_id": "C3",
+    "label": "E3-Only (Full)",
+    "expressivity_mode": "fixed",
+    "fixed_e_class": "E3",
+    "seeds": [
+      40,
+      41,
+      42,
+      43,
+      44
+    ],
+    "mean_s_star": 10.0,
+    "std_s_star": 0.0,
+    "mean_cycles": 7201.0,
+    "mean_renewals": 135.0,
+    "mean_expirations": 9.0,
+    "mean_successions": 10.0,
+    "mean_satisfaction_rate": 0.8,
+    "std_satisfaction_rate": 0.4,
+    "mean_satisfaction_count": 26.4,
+    "mean_failure_count": 0.6,
+    "mean_default_count": 0.0,
+    "total_commitment_cost": 556,
+    "regime_distribution": {
+      "HIGH_COMPLIANCE": 4,
+      "LOW_COMPLIANCE": 1
+    },
+    "mean_sat_before_succession": 0.0,
+    "mean_sat_after_succession": 0.0,
+    "aware_successor_satisfaction": 0.0,
+    "minimal_successor_satisfaction": 0.0,
+    "seed_results": [
+      {
+        "seed": 40,
+        "s_star": 10,
+        "total_cycles": 7201,
+        "total_renewals": 135,
+        "total_expirations": 9,
+        "total_successions": 10,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_default_count": 0,
+        "total_commitment_cost_charged": 132,
+        "semantic_debt_mass": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "regime": "HIGH_COMPLIANCE",
+        "elapsed_ms": 55,
+        "successor_history": [
+          {
+            "cycle": 1,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 801,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 1601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 2401,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 3201,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4001,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4801,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 5601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 6401,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 7201,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          }
+        ]
+      },
+      {
+        "seed": 41,
+        "s_star": 10,
+        "total_cycles": 7201,
+        "total_renewals": 135,
+        "total_expirations": 9,
+        "total_successions": 10,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_default_count": 0,
+        "total_commitment_cost_charged": 132,
+        "semantic_debt_mass": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "regime": "HIGH_COMPLIANCE",
+        "elapsed_ms": 60,
+        "successor_history": [
+          {
+            "cycle": 1,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 801,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 1601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 2401,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 3201,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4001,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4801,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 5601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 6401,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 7201,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          }
+        ]
+      },
+      {
+        "seed": 42,
+        "s_star": 10,
+        "total_cycles": 7201,
+        "total_renewals": 135,
+        "total_expirations": 9,
+        "total_successions": 10,
+        "commitment_satisfaction_rate": 0.0,
+        "commitment_satisfaction_count": 0,
+        "commitment_failure_count": 3,
+        "commitment_default_count": 0,
+        "total_commitment_cost_charged": 28,
+        "semantic_debt_mass": 3,
+        "stop_reason": "SPAM_DEGENERACY",
+        "regime": "LOW_COMPLIANCE",
+        "elapsed_ms": 1774,
+        "successor_history": [
+          {
+            "cycle": 1,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 801,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 1601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 2401,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 3201,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4001,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4801,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 5601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 6401,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 7201,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          }
+        ]
+      },
+      {
+        "seed": 43,
+        "s_star": 10,
+        "total_cycles": 7201,
+        "total_renewals": 135,
+        "total_expirations": 9,
+        "total_successions": 10,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_default_count": 0,
+        "total_commitment_cost_charged": 132,
+        "semantic_debt_mass": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "regime": "HIGH_COMPLIANCE",
+        "elapsed_ms": 61,
+        "successor_history": [
+          {
+            "cycle": 1,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 801,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 1601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 2401,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 3201,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4001,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 4801,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 5601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 6401,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 7201,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          }
+        ]
+      },
+      {
+        "seed": 44,
+        "s_star": 10,
+        "total_cycles": 7201,
+        "total_renewals": 135,
+        "total_expirations": 9,
+        "total_successions": 10,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_default_count": 0,
+        "total_commitment_cost_charged": 132,
+        "semantic_debt_mass": 0,
+        "stop_reason": "SPAM_DEGENERACY",
+        "regime": "HIGH_COMPLIANCE",
+        "elapsed_ms": 59,
+        "successor_history": [
+          {
+            "cycle": 1,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 801,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 1601,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          },
+          {
+            "cycle": 2401,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 3201,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 4001,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 4801,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 5601,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 6401,
+            "epoch": 0,
+            "successor_type": "aware",
+            "mind_class": "CommitmentAwareSuccessor_v1"
+          },
+          {
+            "cycle": 7201,
+            "epoch": 0,
+            "successor_type": "minimal",
+            "mind_class": "ComplianceOnlySuccessor"
+          }
+        ]
+      }
+    ]
+  },
+  "_meta": {
+    "horizon": 30000,
+    "epoch_size": 50,
+    "max_successive_renewals": 15,
+    "seeds": [
+      40,
+      41,
+      42,
+      43,
+      44
+    ],
+    "total_elapsed_s": 2.883800506591797,
+    "generated": "2026-01-03T23:03:19.323919"
+  }
+}

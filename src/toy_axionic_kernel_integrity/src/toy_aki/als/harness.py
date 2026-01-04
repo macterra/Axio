@@ -2862,8 +2862,551 @@ def run_als_experiment(
         config = ALSConfigV052(max_cycles=max_cycles)
         harness = ALSHarnessV052(seed=seed, config=config, verbose=verbose)
         return harness.run()
+    elif spec_version == "0.6":
+        config = ALSConfigV060(max_cycles=max_cycles)
+        harness = ALSHarnessV060(seed=seed, config=config, verbose=verbose)
+        return harness.run()
     else:
         raise ValueError(f"Unknown spec version: {spec_version}")
 
 
     return harness.run()
+
+
+# =============================================================================
+# AKI v0.6: ALS-C (Authority Leases with Semantic Commitments)
+# =============================================================================
+
+
+@dataclass
+class ALSConfigV060(ALSConfigV052):
+    """
+    Configuration for ALS-C v0.6 runs.
+
+    Extends ALSConfigV052 with commitment ledger settings.
+
+    Per spec §6:
+    - Commitments persist across epochs and successions
+    - commit_cap = floor(0.25 * steps_cap_epoch)
+    - MAX_COMMIT_TTL = 10 epochs
+    """
+    # Genesis commitment set name (for logging/reproducibility)
+    genesis_set: str = "GENESIS_SET_0"
+
+    # Override commit_cap alpha (default 0.25 per binding decisions)
+    commit_cap_alpha: float = 0.25
+
+    # Override MAX_COMMIT_TTL (default 10 per binding decisions)
+    max_commit_ttl: int = 10
+
+    # Whether to seed genesis commitments at init
+    seed_genesis_commitments: bool = True
+
+
+@dataclass
+class ALSRunResultV060:
+    """
+    Result of an ALS-C v0.6 run.
+
+    Extends ALSRunResultV052 with semantic commitment metrics.
+    """
+    # Base metrics (inherited from V052)
+    run_id: str
+    seed: int
+    spec_version: str = "0.6"
+    s_star: int = 0
+    total_cycles: int = 0
+    total_proposals: int = 0
+    total_endorsements: int = 0
+    control_endorsements: int = 0
+    non_trivial_endorsements: int = 0
+    total_renewals: int = 0
+    total_expirations: int = 0
+    total_revocations: int = 0
+    mean_residence_cycles: float = 0.0
+    stop_reason: Optional[ALSStopReason] = None
+    stop_cycle: int = 0
+    is_degenerate: bool = False
+    degeneracy_type: Optional[DegeneracyType] = None
+    degeneracy_window: int = 0
+    failure_signature: Optional[str] = None
+    failure_detail: Optional[str] = None
+    duration_ms: int = 0
+
+    # v0.5.2 expressivity metrics
+    total_bankruptcies: int = 0
+    total_rent_charged: int = 0
+    renewal_attempts: int = 0
+    renewal_successes: int = 0
+    time_to_first_renewal_fail: Optional[int] = None
+    e_class_distribution: Dict[str, int] = field(default_factory=dict)
+    renewal_rate_by_e_class: Dict[str, float] = field(default_factory=dict)
+    residence_by_e_class: Dict[str, float] = field(default_factory=dict)
+
+    # v0.6 commitment metrics
+    total_commitment_cost_charged: int = 0
+    commitment_satisfaction_count: int = 0
+    commitment_failure_count: int = 0
+    commitment_expired_count: int = 0
+    commitment_default_count: int = 0
+    semantic_debt_mass: int = 0  # ACTIVE + FAILED at end
+    commitment_satisfaction_rate: float = 0.0
+
+    # Events
+    succession_events: List[SuccessionEvent] = field(default_factory=list)
+    renewal_events: List[RenewalEvent] = field(default_factory=list)
+    expiration_events: List[ExpirationEvent] = field(default_factory=list)
+    revocation_events: List[RevocationEvent] = field(default_factory=list)
+    bankruptcy_events: List[BankruptcyEvent] = field(default_factory=list)
+    epoch_rent_records: List[EpochRentRecord] = field(default_factory=list)
+    tenure_records: List[TenureRecord] = field(default_factory=list)
+    tenure_entropy_samples: List[float] = field(default_factory=list)
+
+    # v0.6 commitment events
+    commitment_events: List[Any] = field(default_factory=list)
+    commitment_cost_records: List[Any] = field(default_factory=list)
+
+    def to_dict(self) -> Dict[str, Any]:
+        result = {
+            "run_id": self.run_id,
+            "seed": self.seed,
+            "spec_version": self.spec_version,
+            "s_star": self.s_star,
+            "total_cycles": self.total_cycles,
+            "total_proposals": self.total_proposals,
+            "total_endorsements": self.total_endorsements,
+            "control_endorsements": self.control_endorsements,
+            "non_trivial_endorsements": self.non_trivial_endorsements,
+            "total_renewals": self.total_renewals,
+            "total_expirations": self.total_expirations,
+            "total_revocations": self.total_revocations,
+            "total_bankruptcies": self.total_bankruptcies,
+            "total_rent_charged": self.total_rent_charged,
+            "total_commitment_cost_charged": self.total_commitment_cost_charged,
+            "commitment_satisfaction_count": self.commitment_satisfaction_count,
+            "commitment_failure_count": self.commitment_failure_count,
+            "commitment_expired_count": self.commitment_expired_count,
+            "commitment_default_count": self.commitment_default_count,
+            "semantic_debt_mass": self.semantic_debt_mass,
+            "commitment_satisfaction_rate": self.commitment_satisfaction_rate,
+            "renewal_attempts": self.renewal_attempts,
+            "renewal_successes": self.renewal_successes,
+            "time_to_first_renewal_fail": self.time_to_first_renewal_fail,
+            "mean_residence_cycles": self.mean_residence_cycles,
+            "e_class_distribution": self.e_class_distribution,
+            "renewal_rate_by_e_class": self.renewal_rate_by_e_class,
+            "residence_by_e_class": self.residence_by_e_class,
+            "stop_reason": self.stop_reason.name if self.stop_reason else None,
+            "stop_cycle": self.stop_cycle,
+            "is_degenerate": self.is_degenerate,
+            "degeneracy_type": self.degeneracy_type.name if self.degeneracy_type else None,
+            "degeneracy_window": self.degeneracy_window,
+            "failure_signature": self.failure_signature,
+            "failure_detail": self.failure_detail,
+            "duration_ms": self.duration_ms,
+        }
+        return result
+
+
+class ALSHarnessV060(ALSHarnessV052):
+    """
+    v0.6 ALS-C harness: Authority Leases with Semantic Commitments.
+
+    Per spec §6:
+    - Commitment Ledger persists across epochs and successions
+    - Genesis commitments seeded at init (cannot be declined)
+    - Commitment cost charged AFTER rent
+    - Semantic failure does NOT cause lease revocation
+    - Evaluation at epoch end
+
+    Key invariants:
+    - effective_steps = max(0, steps_cap - rent - commit_cost)
+    - Commitment failure independent of renewal
+    - Authority may persist while incompetent
+    """
+
+    def __init__(
+        self,
+        seed: int = 42,
+        config: Optional[ALSConfigV060] = None,
+        verbose: bool = False,
+    ):
+        """
+        Initialize v0.6 harness.
+
+        Args:
+            seed: Random seed for reproducibility
+            config: Run configuration
+            verbose: Enable verbose logging
+        """
+        # Initialize parent (V052)
+        super().__init__(seed=seed, config=config or ALSConfigV060(), verbose=verbose)
+
+        # Cast config to V060 type
+        self._config: ALSConfigV060 = config or ALSConfigV060()
+
+        # Import commitment module
+        from toy_aki.als.commitment import (
+            CommitmentLedger,
+            CommitmentStatus,
+            create_genesis_set_0,
+        )
+        from toy_aki.als.verifiers import (
+            ActionRecord,
+            verify_commitment,
+            get_commitment_params,
+        )
+
+        self._CommitmentStatus = CommitmentStatus
+        self._verify_commitment = verify_commitment
+        self._get_commitment_params = get_commitment_params
+        self._ActionRecord = ActionRecord
+
+        # Create commitment ledger
+        steps_cap = self._baseline_manifest.resources.max_steps_per_epoch
+        self._commitment_ledger = CommitmentLedger(steps_cap)
+
+        # Seed genesis commitments if configured
+        if self._config.seed_genesis_commitments:
+            genesis_commitments = create_genesis_set_0(start_epoch=0)
+            self._commitment_ledger.seed(genesis_commitments)
+
+        # Action trace for verifier (ACV analog)
+        self._action_trace: List[Any] = []
+        self._action_sequence_num = 0
+
+        # Commitment-adjusted effective steps
+        self._commitment_cost_this_epoch = 0
+
+    def run(self) -> ALSRunResultV060:
+        """
+        Execute a complete ALS-C v0.6 run.
+
+        Key additions over v0.5.2:
+        - Commitment cost charging at epoch start
+        - Commitment evaluation at epoch end
+        - Semantic failure tracking (independent of authority)
+
+        Returns:
+            Run result with all metrics and logs
+        """
+        start_time = current_time_ms()
+        run_id = f"als060_{self._seed}_{start_time}"
+
+        if self._verbose:
+            print(f"Starting ALS-C v0.6 run: {run_id}")
+            print(f"  Max cycles: {self._config.max_cycles}")
+            print(f"  MSRW: {self._config.get_msrw()}")
+            print(f"  Rent schedule: {self._rent_schedule.to_dict()}")
+            print(f"  Genesis set: {self._config.genesis_set}")
+            print(f"  Commit cap: {self._commitment_ledger.commit_cap}")
+
+        # Main loop
+        while not self._stopped and self._cycle < self._config.max_cycles:
+            self._cycle += 1
+            self._sentinel.advance_cycle()
+
+            # Check if succession is allowed
+            if self._succession_pending:
+                self._attempt_succession_v060()
+
+            # Execute working mind cycle (consumes step budget)
+            if self._current_lease and self._current_lease.status == LeaseStatus.ACTIVE:
+                # Check step budget (after rent + commitment deductions)
+                adjusted_effective = self._current_effective_steps - self._commitment_cost_this_epoch
+                if self._epoch_steps_used >= adjusted_effective:
+                    pass  # Budget exhausted
+                else:
+                    violation = self._execute_working_mind_cycle_v060()
+                    if violation:
+                        self._handle_lease_revocation(violation[0], violation[1])
+                        continue
+
+            # Check renewal at epoch boundaries
+            if self._current_lease and self._current_lease.status == LeaseStatus.ACTIVE:
+                if self._cycle % self._config.renewal_check_interval == 0:
+                    # Evaluate commitments before renewal check
+                    self._evaluate_commitments_at_epoch_end()
+                    self._check_renewal_with_rent()
+
+            # Check lease expiration
+            if self._current_lease and self._current_lease.is_expired(self._cycle):
+                self._handle_lease_expiration()
+
+            # Check degeneracy
+            self._check_degeneracy()
+
+        # Finalize
+        if not self._stopped:
+            self._stop_reason = ALSStopReason.HORIZON_EXHAUSTED
+
+        # Finalize active tenure
+        if self._current_tenure is not None:
+            self._end_tenure("HORIZON_EXHAUSTED")
+
+        duration = current_time_ms() - start_time
+
+        # Get commitment metrics
+        ledger_metrics = self._commitment_ledger.get_metrics()
+
+        # Compute satisfaction rate
+        total_evaluations = ledger_metrics["total_satisfied"] + ledger_metrics["total_failed"]
+        satisfaction_rate = 0.0
+        if total_evaluations > 0:
+            satisfaction_rate = ledger_metrics["total_satisfied"] / total_evaluations
+
+        # Compute degeneracy
+        is_degenerate = self._stop_reason in (
+            ALSStopReason.ENDORSEMENT_DEGENERACY,
+            ALSStopReason.SPAM_DEGENERACY,
+        )
+        degeneracy_type = None
+        if self._stop_reason == ALSStopReason.ENDORSEMENT_DEGENERACY:
+            degeneracy_type = DegeneracyType.ENDORSEMENT
+        elif self._stop_reason == ALSStopReason.SPAM_DEGENERACY:
+            degeneracy_type = DegeneracyType.SPAM
+
+        # Compute mean residence
+        mean_residence = 0.0
+        if self._residence_durations:
+            mean_residence = sum(self._residence_durations) / len(self._residence_durations)
+
+        # Compute E-Class metrics
+        renewal_rate_by_e_class = {}
+        for e_name in self._e_class_renewal_attempts:
+            attempts = self._e_class_renewal_attempts[e_name]
+            successes = self._e_class_renewals[e_name]
+            if attempts > 0:
+                renewal_rate_by_e_class[e_name] = successes / attempts
+
+        residence_by_e_class = {}
+        for e_name, durations in self._e_class_residence.items():
+            if durations:
+                residence_by_e_class[e_name] = sum(durations) / len(durations)
+
+        result = ALSRunResultV060(
+            run_id=run_id,
+            seed=self._seed,
+            spec_version="0.6",
+            s_star=self._s_star,
+            total_cycles=self._cycle,
+            total_proposals=self._total_proposals,
+            total_endorsements=self._total_endorsements,
+            control_endorsements=self._control_endorsements,
+            non_trivial_endorsements=self._non_trivial_endorsements,
+            total_renewals=self._total_renewals,
+            total_expirations=self._total_expirations,
+            total_revocations=self._total_revocations,
+            total_bankruptcies=self._total_bankruptcies,
+            total_rent_charged=self._total_rent_charged,
+            renewal_attempts=self._renewal_attempts,
+            renewal_successes=self._renewal_successes,
+            time_to_first_renewal_fail=self._time_to_first_renewal_fail,
+            mean_residence_cycles=mean_residence,
+            e_class_distribution=dict(self._e_class_successions),
+            renewal_rate_by_e_class=renewal_rate_by_e_class,
+            residence_by_e_class=residence_by_e_class,
+            stop_reason=self._stop_reason,
+            stop_cycle=self._cycle,
+            is_degenerate=is_degenerate,
+            degeneracy_type=degeneracy_type,
+            degeneracy_window=self._successions_without_non_trivial,
+            failure_signature=self._failure_signature,
+            failure_detail=self._failure_detail,
+            total_commitment_cost_charged=ledger_metrics["total_cost_charged"],
+            commitment_satisfaction_count=ledger_metrics["total_satisfied"],
+            commitment_failure_count=ledger_metrics["total_failed"],
+            commitment_expired_count=ledger_metrics["total_expired"],
+            commitment_default_count=ledger_metrics["total_defaulted"],
+            semantic_debt_mass=ledger_metrics["semantic_debt_mass"],
+            commitment_satisfaction_rate=satisfaction_rate,
+            succession_events=self._succession_events,
+            renewal_events=self._renewal_events,
+            expiration_events=self._expiration_events,
+            revocation_events=self._revocation_events,
+            bankruptcy_events=self._bankruptcy_events,
+            epoch_rent_records=self._epoch_rent_records,
+            tenure_records=self._tenure_records,
+            tenure_entropy_samples=self._tenure_entropy_samples,
+            commitment_events=[e.to_dict() for e in self._commitment_ledger.get_events()],
+            commitment_cost_records=[r.to_dict() for r in self._commitment_ledger.get_cost_records()],
+            duration_ms=duration,
+        )
+
+        if self._verbose:
+            print(f"\nALS-C v0.6 run complete:")
+            print(f"  S*: {result.s_star}")
+            print(f"  Cycles: {result.total_cycles}")
+            print(f"  Renewals: {result.total_renewals}")
+            print(f"  Expirations: {result.total_expirations}")
+            print(f"  Commitment satisfaction: {result.commitment_satisfaction_count}")
+            print(f"  Commitment failures: {result.commitment_failure_count}")
+            print(f"  Satisfaction rate: {result.commitment_satisfaction_rate:.2%}")
+            print(f"  Stop: {result.stop_reason.name}")
+
+        return result
+
+    def _attempt_succession_v060(self) -> None:
+        """Attempt succession with commitment cost setup."""
+        # Call parent implementation
+        self._attempt_succession()
+
+        # If succession succeeded, charge commitment costs for new epoch
+        if self._current_lease and self._current_lease.status == LeaseStatus.ACTIVE:
+            self._charge_commitment_costs()
+
+    def _charge_commitment_costs(self) -> None:
+        """
+        Charge commitment maintenance costs at epoch start.
+
+        Per spec §6.4:
+        - Charged AFTER rent deduction
+        - If insufficient budget, commitments default (not lease)
+        """
+        # Available budget after rent
+        available_after_rent = self._current_effective_steps
+
+        # Charge commitment costs
+        cost_charged, defaulted = self._commitment_ledger.charge_costs(
+            epoch=self._epoch_index,
+            cycle=self._cycle,
+            available_budget=available_after_rent,
+        )
+
+        self._commitment_cost_this_epoch = cost_charged
+
+        if self._verbose:
+            if defaulted:
+                print(f"    [Epoch {self._epoch_index}] COMMITMENT_DEFAULT: "
+                      f"needed {self._commitment_ledger.get_active_cost()}, had {available_after_rent}")
+            else:
+                print(f"    [Epoch {self._epoch_index}] COMMIT_COST_CHARGED: {cost_charged} steps")
+
+    def _execute_working_mind_cycle_v060(self) -> Optional[tuple[LeaseViolation, str]]:
+        """Execute cycle and record action for verifier."""
+        if self._current_mind is None:
+            return None
+
+        # Consume step
+        self._epoch_steps_used += 1
+
+        # Sentinel check
+        step_allowed, step_violation, step_detail = self._sentinel.check_step()
+        if not step_allowed and step_violation is not None:
+            lease_violation = self._map_sentinel_violation(step_violation)
+            return (lease_violation, step_detail or str(step_violation))
+
+        # Get action from working mind
+        adjusted_effective = self._current_effective_steps - self._commitment_cost_this_epoch
+        observation = {
+            "cycle": self._cycle,
+            "state": {"running": True},
+            "epoch_steps_remaining": adjusted_effective - self._epoch_steps_used,
+            "active_commitments": [c.cid for c in self._commitment_ledger.get_active_commitments()],
+        }
+
+        try:
+            action = self._current_mind.propose_action(observation)
+        except Exception as e:
+            return (LeaseViolation.CONSTRAINT_VIOLATION, f"Action proposal failed: {e}")
+
+        if action is None:
+            return None
+
+        # Track action
+        self._epoch_actions_used += 1
+
+        # Record action for verifier (ACV trace)
+        action_type = action.get("action_type", "UNKNOWN") if isinstance(action, dict) else getattr(action, "action_type", "UNKNOWN")
+        payload = action.get("payload", {}) if isinstance(action, dict) else getattr(action, "payload", {})
+
+        self._action_trace.append(self._ActionRecord(
+            action_type=action_type,
+            payload=payload if isinstance(payload, dict) else {},
+            epoch=self._epoch_index,
+            cycle=self._cycle,
+            sequence_num=self._action_sequence_num,
+        ))
+        self._action_sequence_num += 1
+
+        # Sentinel action check
+        allowed, violation_type, detail = self._sentinel.check_action(action)
+        if not allowed and violation_type is not None:
+            lease_violation = self._map_sentinel_violation(violation_type)
+            return (lease_violation, detail or str(violation_type))
+
+        return None
+
+    def _evaluate_commitments_at_epoch_end(self) -> None:
+        """
+        Evaluate all commitments at epoch end.
+
+        Per spec §6.7:
+        - Evaluation at epoch end (after successor actions)
+        - Use ACV trace for the window
+        """
+        for commitment in self._commitment_ledger.get_active_commitments():
+            # Get window bounds
+            window_end = self._epoch_index
+            window_start = max(0, window_end - commitment.window + 1)
+
+            # Filter actions in window
+            window_actions = [
+                a for a in self._action_trace
+                if window_start <= a.epoch <= window_end
+            ]
+
+            # Get verifier params
+            params = self._get_commitment_params(commitment.cid)
+
+            # Run verifier
+            try:
+                result = self._verify_commitment(
+                    verifier_id=commitment.verifier_id,
+                    actions=window_actions,
+                    window_start_epoch=window_start,
+                    window_end_epoch=window_end,
+                    params=params,
+                )
+            except ValueError as e:
+                # Unknown verifier - treat as failure
+                result = False
+
+            # Update commitment status
+            self._commitment_ledger.evaluate_commitment(
+                cid=commitment.cid,
+                epoch=self._epoch_index,
+                cycle=self._cycle,
+                verifier_result=result,
+            )
+
+        # Check TTL expirations
+        self._commitment_ledger.check_ttl_expirations(
+            epoch=self._epoch_index,
+            cycle=self._cycle,
+        )
+
+        # NOTE: Epoch management (increment, reset, rent charging) is done
+        # by _check_renewal_with_rent which is called after this method.
+        # We only handle commitment-specific logic here.
+
+    def _check_renewal_with_rent(self) -> None:
+        """
+        Override to also charge commitment costs after renewal.
+
+        Extends parent implementation to:
+        1. Call parent renewal logic (epoch reset, rent charging)
+        2. Charge commitment costs for new epoch
+        3. Reset action trace for new epoch
+        """
+        old_epoch = self._epoch_index
+
+        # Call parent implementation
+        super()._check_renewal_with_rent()
+
+        # If renewal succeeded (epoch advanced), charge commitment costs
+        if self._epoch_index > old_epoch:
+            self._charge_commitment_costs()
+            # Reset action sequence for new epoch
+            self._action_sequence_num = 0
+

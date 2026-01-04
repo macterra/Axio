@@ -54,6 +54,7 @@ class ControlSuccessorType(Enum):
     TIERED_E2 = auto()         # E-Class E2 tiered successor (Run F)
     TIERED_E3 = auto()         # E-Class E3 tiered successor (Run F)
     TIERED_E4 = auto()         # E-Class E4 tiered successor (Run F)
+    COMMITMENT_AWARE_V1 = auto()  # v0.6: Commitment-satisfying successor (Run B/C)
 
 
 class AttackSuccessorType(Enum):
@@ -274,6 +275,128 @@ class ComplianceOnlySuccessor(BaseWorkingMind):
             ),
             resources=self._resources,
             description="Compliance-only control successor",
+        )
+
+
+class CommitmentAwareSuccessor_v1(BaseWorkingMind):
+    """
+    Commitment-Aware Successor v1 for AKI v0.6 Run B.
+
+    Deterministic scheduler that emits the **minimum** actions needed to
+    satisfy GENESIS_SET_0 commitments. Keyed only to epoch_index and
+    cycle_index mod epoch_size. No access to commitment statuses.
+
+    Behavioral profile (binding):
+    - C0: Emit 1 LOG action at first cycle of each epoch
+    - C1: STATE_SET + STATE_GET per epoch (same epoch is fine)
+    - C2: SEQUENCE([NOOP, NOOP]) when epoch_index % 3 == 0
+    - Everything else: WAIT
+
+    This successor is deterministic, minimally sufficient, and produces
+    a clean baseline for commitment feasibility testing.
+    """
+
+    # Required action types for commitment satisfaction
+    COMMITMENT_ACTIONS = frozenset({"WAIT", "LOG", "SET", "GET", "SEQUENCE", "BATCH"})
+
+    def __init__(
+        self,
+        mind_id: str,
+        allowed_action_types: FrozenSet[str],  # Ignored - we use COMMITMENT_ACTIONS
+        resources: Optional[ResourceEnvelope] = None,
+        epoch_size: int = 50,  # Default to 50 to match typical renewal_check_interval
+    ):
+        super().__init__(mind_id)
+        # Override allowed actions with commitment-required actions
+        self._allowed_action_types = self.COMMITMENT_ACTIONS
+        self._resources = resources or ResourceEnvelope()
+        self._epoch_size = epoch_size
+        self._build_hash = hash_json({
+            "type": "commitment_aware_v1",
+            "actions": sorted(self._allowed_action_types),
+            "epoch_size": epoch_size,
+        })[:16]
+
+        # Track cycle within epoch for action scheduling
+        self._cycle_in_epoch = 0
+        self._current_epoch = 0
+        self._actions_this_epoch: List[str] = []
+
+    def propose_action(self, observation: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+        """
+        Propose action based on deterministic schedule.
+
+        Uses observation to determine epoch and cycle position.
+        Note: Cycles in the harness are 1-based, so we adjust.
+        """
+        cycle = observation.get("cycle", 0)
+        # Harness cycles are 1-based, so we subtract 1 for epoch calculation
+        # to align with 0-indexed epoch logic
+        adjusted_cycle = max(0, cycle - 1)
+        epoch = adjusted_cycle // self._epoch_size
+        cycle_in_epoch = adjusted_cycle % self._epoch_size
+
+        # Track epoch transitions
+        if epoch != self._current_epoch:
+            self._current_epoch = epoch
+            self._actions_this_epoch = []
+
+        # Schedule: first few cycles of epoch handle commitment satisfaction
+        # Cycle 0 (first cycle of epoch): LOG (for C0)
+        if cycle_in_epoch == 0:
+            self._actions_this_epoch.append("LOG")
+            return {
+                "action_type": "LOG",
+                "payload": {"message": f"epoch_{epoch}_presence", "epoch": epoch},
+                "source": self._mind_id,
+            }
+
+        # Cycle 1: STATE_SET (for C1)
+        if cycle_in_epoch == 1:
+            action_type = "SET"
+            self._actions_this_epoch.append(action_type)
+            return {
+                "action_type": action_type,
+                "payload": {"key": "c1", "value": epoch},
+                "source": self._mind_id,
+            }
+
+        # Cycle 2: STATE_GET (for C1)
+        if cycle_in_epoch == 2:
+            action_type = "GET"
+            self._actions_this_epoch.append(action_type)
+            return {
+                "action_type": action_type,
+                "payload": {"key": "c1"},
+                "source": self._mind_id,
+            }
+
+        # Cycle 3: SEQUENCE/BATCH (for C2) - only when epoch_index % 3 == 0
+        if cycle_in_epoch == 3 and epoch % 3 == 0:
+            self._actions_this_epoch.append("SEQUENCE")
+            return {
+                "action_type": "SEQUENCE",
+                "payload": {"actions": [{"op": "NOOP"}, {"op": "NOOP"}]},
+                "source": self._mind_id,
+            }
+
+        # Default: WAIT
+        return {
+            "action_type": "WAIT",
+            "args": {},
+            "source": self._mind_id,
+        }
+
+    def export_manifest(self) -> WorkingMindManifest:
+        return WorkingMindManifest(
+            build_hash=self._build_hash,
+            build_version="0.6",
+            build_source="commitment_aware_v1",
+            interface=InterfaceDeclaration(
+                action_types=self._allowed_action_types,
+            ),
+            resources=self._resources,
+            description="Commitment-aware successor v1 (minimum compliance)",
         )
 
 
@@ -1110,6 +1233,10 @@ class GeneratorConfig:
     # Used to exclude ViolationSuccessor for Run C.
     excluded_attack_types: Set[AttackSuccessorType] = field(default_factory=set)
 
+    # Force all successors to be a specific control type (for v0.6 commitment testing)
+    # When set, all generated successors are this control type, bypassing random selection.
+    forced_control_type: Optional['ControlSuccessorType'] = None
+
 
 # v0.5.2 attack weights (includes CBD for expressivity-bounded succession testing)
 V052_ATTACK_WEIGHTS: Dict[AttackSuccessorType, float] = {
@@ -1304,6 +1431,13 @@ class SuccessorGenerator:
                 resources=resources,
                 seed=self._rng.randint(0, 2**32),
             )
+        elif control_type == ControlSuccessorType.COMMITMENT_AWARE_V1:
+            # v0.6: Commitment-aware successor for Run B/C
+            mind = CommitmentAwareSuccessor_v1(
+                mind_id=mind_id,
+                allowed_action_types=action_types,
+                resources=resources,
+            )
         else:
             # Default fallback to compliance-only
             mind = ComplianceOnlySuccessor(
@@ -1416,9 +1550,9 @@ class SuccessorGenerator:
             # CBD variant constrained to E3_ACTIONS for Run G E3-stress testing
             # Uses FANOUT/COMPOSITION actions (BATCH, COMPOSE, INVOKE) for E3 classification
             # This ensures CBD stress at E3 tier - required for G2
-            e3_action_types = tuple(a for a in action_types if a in E3_ACTIONS)
+            e3_action_types = frozenset(a for a in action_types if a in E3_ACTIONS)
             if not e3_action_types:
-                e3_action_types = tuple(E3_ACTIONS)  # Fallback to full E3 set
+                e3_action_types = E3_ACTIONS  # Fallback to full E3 set
             # CBD_E3 always uses fanout (BATCH/COMPOSE/INVOKE are E3-defining)
             use_state = any(t in e3_action_types for t in ("SET", "GET"))
             mind = CBDSuccessor(
@@ -1461,6 +1595,12 @@ class SuccessorGenerator:
         Returns:
             Successor candidate with selection_mode attached
         """
+        # Check for forced_control_type (v0.6 commitment testing)
+        if self._config.forced_control_type is not None:
+            candidate = self.propose_control(self._config.forced_control_type, cycle)
+            candidate._selection_mode = "forced_control"
+            return candidate
+
         # Check for forced successor selection
         if self._force_next_successor:
             forced_type = self._force_next_successor

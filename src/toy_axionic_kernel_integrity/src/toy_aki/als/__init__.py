@@ -1,5 +1,5 @@
 """
-AKI v0.4.2 — Authority Leases and Revertible Succession (ALS).
+AKI v0.6 — Authority Leases with Semantic Commitments (ALS-C).
 
 This module implements the post-stasis probe: growth via discrete
 successor endorsement under a frozen kernel.
@@ -10,6 +10,8 @@ Key components:
 - Sentinel: External enforcement gateway
 - Generator: Successor proposal and control templates
 - Harness: ALS experiment orchestration
+- Commitment: Semantic obligation ledger (v0.6)
+- Verifiers: Commitment verification infrastructure (v0.6)
 
 The kernel corridor (ACV, P5, P2', KNS) is imported as a sealed API.
 No corridor code is modified.
@@ -37,6 +39,31 @@ from toy_aki.als.generator import (
     ControlSuccessorType,
 )
 
+# v0.6 Commitment infrastructure
+from toy_aki.als.commitment import (
+    Commitment,
+    CommitmentStatus,
+    CommitmentSpec,
+    CommitmentLedger,
+    CommitmentEvent,
+    CommitmentCostRecord,
+    COMMITMENT_SPECS,
+    create_genesis_set_0,
+    MAX_COMMIT_TTL,
+    COMMIT_CAP_ALPHA,
+)
+from toy_aki.als.verifiers import (
+    ActionRecord,
+    Verifier,
+    VRF_EPOCH_ACTION_COUNT,
+    VRF_ORDERED_ACTION_PATTERN,
+    VRF_ACTION_HAS_PAYLOAD_SHAPE,
+    VERIFIERS,
+    verify_commitment,
+    get_commitment_params,
+    GENESIS_COMMITMENT_PARAMS,
+)
+
 __all__ = [
     # Working mind
     "WorkingMind",
@@ -55,4 +82,25 @@ __all__ = [
     "SuccessorGenerator",
     "SuccessorCandidate",
     "ControlSuccessorType",
+    # Commitments (v0.6)
+    "Commitment",
+    "CommitmentStatus",
+    "CommitmentSpec",
+    "CommitmentLedger",
+    "CommitmentEvent",
+    "CommitmentCostRecord",
+    "COMMITMENT_SPECS",
+    "create_genesis_set_0",
+    "MAX_COMMIT_TTL",
+    "COMMIT_CAP_ALPHA",
+    # Verifiers (v0.6)
+    "ActionRecord",
+    "Verifier",
+    "VRF_EPOCH_ACTION_COUNT",
+    "VRF_ORDERED_ACTION_PATTERN",
+    "VRF_ACTION_HAS_PAYLOAD_SHAPE",
+    "VERIFIERS",
+    "verify_commitment",
+    "get_commitment_params",
+    "GENESIS_COMMITMENT_PARAMS",
 ]

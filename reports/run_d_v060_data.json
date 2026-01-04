@@ -1,0 +1,4473 @@
+{
+  "D0": {
+    "sub_run_id": "D0",
+    "label": "Mixed E-Classes (Random)",
+    "expressivity_mode": "random",
+    "fixed_e_class": null,
+    "seeds": [
+      50,
+      51,
+      52,
+      53,
+      54
+    ],
+    "mean_s_star": 1.0,
+    "std_s_star": 0.0,
+    "mean_cycles": 2500.0,
+    "mean_renewals": 25.0,
+    "mean_expirations": 0.0,
+    "mean_epochs_reached": 25.0,
+    "mean_satisfaction_rate": 1.0,
+    "std_satisfaction_rate": 0.0,
+    "mean_satisfaction_count": 33.0,
+    "mean_failure_count": 0.0,
+    "mean_expired_count": 3.0,
+    "mean_default_count": 0.0,
+    "active_phase_satisfaction": 1.0,
+    "obligation_free_epochs": 13.0,
+    "seed_results": [
+      {
+        "seed": 50,
+        "s_star": 1,
+        "total_cycles": 2500,
+        "total_renewals": 25,
+        "total_expirations": 0,
+        "epochs_reached": 25,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_expired_count": 3,
+        "commitment_default_count": 0,
+        "stop_reason": "HORIZON_EXHAUSTED",
+        "elapsed_ms": 20,
+        "epoch_commitment_status": [
+          {
+            "epoch": -1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 3,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 0,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 6,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 9,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 2,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 12,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 3,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 15,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 4,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 18,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 5,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 21,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 6,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 24,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 7,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 27,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 8,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 30,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 9,
+            "active_before": 3,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 10,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 11,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 12,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 13,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 14,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 15,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 16,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 17,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 18,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 19,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 20,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 21,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 22,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 23,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          }
+        ]
+      },
+      {
+        "seed": 51,
+        "s_star": 1,
+        "total_cycles": 2500,
+        "total_renewals": 25,
+        "total_expirations": 0,
+        "epochs_reached": 25,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_expired_count": 3,
+        "commitment_default_count": 0,
+        "stop_reason": "HORIZON_EXHAUSTED",
+        "elapsed_ms": 17,
+        "epoch_commitment_status": [
+          {
+            "epoch": -1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 3,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 0,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 6,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 9,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 2,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 12,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 3,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 15,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 4,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 18,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 5,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 21,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 6,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 24,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 7,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 27,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 8,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 30,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 9,
+            "active_before": 3,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 10,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 11,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 12,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 13,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 14,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 15,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 16,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 17,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 18,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 19,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 20,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 21,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 22,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 23,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          }
+        ]
+      },
+      {
+        "seed": 52,
+        "s_star": 1,
+        "total_cycles": 2500,
+        "total_renewals": 25,
+        "total_expirations": 0,
+        "epochs_reached": 25,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_expired_count": 3,
+        "commitment_default_count": 0,
+        "stop_reason": "HORIZON_EXHAUSTED",
+        "elapsed_ms": 17,
+        "epoch_commitment_status": [
+          {
+            "epoch": -1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 3,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 0,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 6,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 9,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 2,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 12,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 3,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 15,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 4,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 18,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 5,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 21,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 6,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 24,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 7,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 27,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 8,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 30,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 9,
+            "active_before": 3,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 10,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 11,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 12,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 13,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 14,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 15,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 16,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 17,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 18,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 19,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 20,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 21,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 22,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 23,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          }
+        ]
+      },
+      {
+        "seed": 53,
+        "s_star": 1,
+        "total_cycles": 2500,
+        "total_renewals": 25,
+        "total_expirations": 0,
+        "epochs_reached": 25,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_expired_count": 3,
+        "commitment_default_count": 0,
+        "stop_reason": "HORIZON_EXHAUSTED",
+        "elapsed_ms": 20,
+        "epoch_commitment_status": [
+          {
+            "epoch": -1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 3,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 0,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 6,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 9,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 2,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 12,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 3,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 15,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 4,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 18,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 5,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 21,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 6,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 24,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 7,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 27,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 8,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 30,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 9,
+            "active_before": 3,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 10,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 11,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 12,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 13,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 14,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 15,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 16,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 17,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 18,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 19,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 20,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 21,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 22,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 23,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          }
+        ]
+      },
+      {
+        "seed": 54,
+        "s_star": 1,
+        "total_cycles": 2500,
+        "total_renewals": 25,
+        "total_expirations": 0,
+        "epochs_reached": 25,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_expired_count": 3,
+        "commitment_default_count": 0,
+        "stop_reason": "HORIZON_EXHAUSTED",
+        "elapsed_ms": 19,
+        "epoch_commitment_status": [
+          {
+            "epoch": -1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 3,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 0,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 6,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 9,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 2,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 12,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 3,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 15,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 4,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 18,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 5,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 21,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 6,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 24,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 7,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 27,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 8,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 30,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 9,
+            "active_before": 3,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 10,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 11,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 12,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 13,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 14,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 15,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 16,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 17,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 18,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 19,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 20,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 21,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 22,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 23,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          }
+        ]
+      }
+    ]
+  },
+  "D1": {
+    "sub_run_id": "D1",
+    "label": "E1-Only (Minimal)",
+    "expressivity_mode": "fixed",
+    "fixed_e_class": "E1",
+    "seeds": [
+      50,
+      51,
+      52,
+      53,
+      54
+    ],
+    "mean_s_star": 1.0,
+    "std_s_star": 0.0,
+    "mean_cycles": 2500.0,
+    "mean_renewals": 25.0,
+    "mean_expirations": 0.0,
+    "mean_epochs_reached": 25.0,
+    "mean_satisfaction_rate": 1.0,
+    "std_satisfaction_rate": 0.0,
+    "mean_satisfaction_count": 33.0,
+    "mean_failure_count": 0.0,
+    "mean_expired_count": 3.0,
+    "mean_default_count": 0.0,
+    "active_phase_satisfaction": 1.0,
+    "obligation_free_epochs": 13.0,
+    "seed_results": [
+      {
+        "seed": 50,
+        "s_star": 1,
+        "total_cycles": 2500,
+        "total_renewals": 25,
+        "total_expirations": 0,
+        "epochs_reached": 25,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_expired_count": 3,
+        "commitment_default_count": 0,
+        "stop_reason": "HORIZON_EXHAUSTED",
+        "elapsed_ms": 17,
+        "epoch_commitment_status": [
+          {
+            "epoch": -1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 3,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 0,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 6,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 9,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 2,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 12,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 3,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 15,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 4,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 18,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 5,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 21,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 6,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 24,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 7,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 27,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 8,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 30,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 9,
+            "active_before": 3,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 10,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 11,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 12,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 13,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 14,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 15,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 16,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 17,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 18,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 19,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 20,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 21,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 22,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 23,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          }
+        ]
+      },
+      {
+        "seed": 51,
+        "s_star": 1,
+        "total_cycles": 2500,
+        "total_renewals": 25,
+        "total_expirations": 0,
+        "epochs_reached": 25,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_expired_count": 3,
+        "commitment_default_count": 0,
+        "stop_reason": "HORIZON_EXHAUSTED",
+        "elapsed_ms": 19,
+        "epoch_commitment_status": [
+          {
+            "epoch": -1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 3,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 0,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 6,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 9,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 2,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 12,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 3,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 15,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 4,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 18,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 5,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 21,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 6,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 24,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 7,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 27,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 8,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 30,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 9,
+            "active_before": 3,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 10,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 11,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 12,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 13,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 14,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 15,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 16,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 17,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 18,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 19,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 20,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 21,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 22,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 23,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          }
+        ]
+      },
+      {
+        "seed": 52,
+        "s_star": 1,
+        "total_cycles": 2500,
+        "total_renewals": 25,
+        "total_expirations": 0,
+        "epochs_reached": 25,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_expired_count": 3,
+        "commitment_default_count": 0,
+        "stop_reason": "HORIZON_EXHAUSTED",
+        "elapsed_ms": 18,
+        "epoch_commitment_status": [
+          {
+            "epoch": -1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 3,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 0,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 6,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 9,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 2,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 12,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 3,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 15,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 4,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 18,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 5,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 21,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 6,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 24,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 7,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 27,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 8,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 30,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 9,
+            "active_before": 3,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 10,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 11,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 12,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 13,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 14,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 15,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 16,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 17,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 18,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 19,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 20,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 21,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 22,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 23,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          }
+        ]
+      },
+      {
+        "seed": 53,
+        "s_star": 1,
+        "total_cycles": 2500,
+        "total_renewals": 25,
+        "total_expirations": 0,
+        "epochs_reached": 25,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_expired_count": 3,
+        "commitment_default_count": 0,
+        "stop_reason": "HORIZON_EXHAUSTED",
+        "elapsed_ms": 18,
+        "epoch_commitment_status": [
+          {
+            "epoch": -1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 3,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 0,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 6,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 9,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 2,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 12,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 3,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 15,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 4,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 18,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 5,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 21,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 6,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 24,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 7,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 27,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 8,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 30,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 9,
+            "active_before": 3,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 10,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 11,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 12,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 13,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 14,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 15,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 16,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 17,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 18,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 19,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 20,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 21,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 22,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 23,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          }
+        ]
+      },
+      {
+        "seed": 54,
+        "s_star": 1,
+        "total_cycles": 2500,
+        "total_renewals": 25,
+        "total_expirations": 0,
+        "epochs_reached": 25,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_expired_count": 3,
+        "commitment_default_count": 0,
+        "stop_reason": "HORIZON_EXHAUSTED",
+        "elapsed_ms": 18,
+        "epoch_commitment_status": [
+          {
+            "epoch": -1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 3,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 0,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 6,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 9,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 2,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 12,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 3,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 15,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 4,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 18,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 5,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 21,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 6,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 24,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 7,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 27,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 8,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 30,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 9,
+            "active_before": 3,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 10,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 11,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 12,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 13,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 14,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 15,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 16,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 17,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 18,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 19,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 20,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 21,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 22,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 23,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          }
+        ]
+      }
+    ]
+  },
+  "D2": {
+    "sub_run_id": "D2",
+    "label": "E2-Only (State Ops)",
+    "expressivity_mode": "fixed",
+    "fixed_e_class": "E2",
+    "seeds": [
+      50,
+      51,
+      52,
+      53,
+      54
+    ],
+    "mean_s_star": 1.0,
+    "std_s_star": 0.0,
+    "mean_cycles": 2500.0,
+    "mean_renewals": 25.0,
+    "mean_expirations": 0.0,
+    "mean_epochs_reached": 25.0,
+    "mean_satisfaction_rate": 1.0,
+    "std_satisfaction_rate": 0.0,
+    "mean_satisfaction_count": 33.0,
+    "mean_failure_count": 0.0,
+    "mean_expired_count": 3.0,
+    "mean_default_count": 0.0,
+    "active_phase_satisfaction": 1.0,
+    "obligation_free_epochs": 13.0,
+    "seed_results": [
+      {
+        "seed": 50,
+        "s_star": 1,
+        "total_cycles": 2500,
+        "total_renewals": 25,
+        "total_expirations": 0,
+        "epochs_reached": 25,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_expired_count": 3,
+        "commitment_default_count": 0,
+        "stop_reason": "HORIZON_EXHAUSTED",
+        "elapsed_ms": 23,
+        "epoch_commitment_status": [
+          {
+            "epoch": -1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 3,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 0,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 6,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 9,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 2,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 12,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 3,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 15,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 4,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 18,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 5,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 21,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 6,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 24,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 7,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 27,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 8,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 30,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 9,
+            "active_before": 3,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 10,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 11,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 12,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 13,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 14,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 15,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 16,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 17,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 18,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 19,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 20,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 21,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 22,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 23,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          }
+        ]
+      },
+      {
+        "seed": 51,
+        "s_star": 1,
+        "total_cycles": 2500,
+        "total_renewals": 25,
+        "total_expirations": 0,
+        "epochs_reached": 25,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_expired_count": 3,
+        "commitment_default_count": 0,
+        "stop_reason": "HORIZON_EXHAUSTED",
+        "elapsed_ms": 17,
+        "epoch_commitment_status": [
+          {
+            "epoch": -1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 3,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 0,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 6,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 9,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 2,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 12,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 3,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 15,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 4,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 18,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 5,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 21,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 6,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 24,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 7,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 27,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 8,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 30,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 9,
+            "active_before": 3,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 10,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 11,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 12,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 13,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 14,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 15,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 16,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 17,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 18,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 19,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 20,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 21,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 22,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 23,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          }
+        ]
+      },
+      {
+        "seed": 52,
+        "s_star": 1,
+        "total_cycles": 2500,
+        "total_renewals": 25,
+        "total_expirations": 0,
+        "epochs_reached": 25,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_expired_count": 3,
+        "commitment_default_count": 0,
+        "stop_reason": "HORIZON_EXHAUSTED",
+        "elapsed_ms": 19,
+        "epoch_commitment_status": [
+          {
+            "epoch": -1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 3,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 0,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 6,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 9,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 2,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 12,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 3,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 15,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 4,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 18,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 5,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 21,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 6,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 24,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 7,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 27,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 8,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 30,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 9,
+            "active_before": 3,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 10,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 11,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 12,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 13,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 14,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 15,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 16,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 17,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 18,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 19,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 20,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 21,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 22,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 23,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          }
+        ]
+      },
+      {
+        "seed": 53,
+        "s_star": 1,
+        "total_cycles": 2500,
+        "total_renewals": 25,
+        "total_expirations": 0,
+        "epochs_reached": 25,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_expired_count": 3,
+        "commitment_default_count": 0,
+        "stop_reason": "HORIZON_EXHAUSTED",
+        "elapsed_ms": 19,
+        "epoch_commitment_status": [
+          {
+            "epoch": -1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 3,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 0,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 6,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 9,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 2,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 12,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 3,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 15,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 4,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 18,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 5,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 21,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 6,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 24,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 7,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 27,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 8,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 30,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 9,
+            "active_before": 3,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 10,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 11,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 12,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 13,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 14,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 15,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 16,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 17,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 18,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 19,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 20,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 21,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 22,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 23,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          }
+        ]
+      },
+      {
+        "seed": 54,
+        "s_star": 1,
+        "total_cycles": 2500,
+        "total_renewals": 25,
+        "total_expirations": 0,
+        "epochs_reached": 25,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_expired_count": 3,
+        "commitment_default_count": 0,
+        "stop_reason": "HORIZON_EXHAUSTED",
+        "elapsed_ms": 17,
+        "epoch_commitment_status": [
+          {
+            "epoch": -1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 3,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 0,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 6,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 9,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 2,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 12,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 3,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 15,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 4,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 18,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 5,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 21,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 6,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 24,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 7,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 27,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 8,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 30,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 9,
+            "active_before": 3,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 10,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 11,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 12,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 13,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 14,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 15,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 16,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 17,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 18,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 19,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 20,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 21,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 22,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 23,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          }
+        ]
+      }
+    ]
+  },
+  "D3": {
+    "sub_run_id": "D3",
+    "label": "E3-Only (Full)",
+    "expressivity_mode": "fixed",
+    "fixed_e_class": "E3",
+    "seeds": [
+      50,
+      51,
+      52,
+      53,
+      54
+    ],
+    "mean_s_star": 1.0,
+    "std_s_star": 0.0,
+    "mean_cycles": 2500.0,
+    "mean_renewals": 25.0,
+    "mean_expirations": 0.0,
+    "mean_epochs_reached": 25.0,
+    "mean_satisfaction_rate": 1.0,
+    "std_satisfaction_rate": 0.0,
+    "mean_satisfaction_count": 33.0,
+    "mean_failure_count": 0.0,
+    "mean_expired_count": 3.0,
+    "mean_default_count": 0.0,
+    "active_phase_satisfaction": 1.0,
+    "obligation_free_epochs": 13.0,
+    "seed_results": [
+      {
+        "seed": 50,
+        "s_star": 1,
+        "total_cycles": 2500,
+        "total_renewals": 25,
+        "total_expirations": 0,
+        "epochs_reached": 25,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_expired_count": 3,
+        "commitment_default_count": 0,
+        "stop_reason": "HORIZON_EXHAUSTED",
+        "elapsed_ms": 17,
+        "epoch_commitment_status": [
+          {
+            "epoch": -1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 3,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 0,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 6,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 9,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 2,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 12,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 3,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 15,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 4,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 18,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 5,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 21,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 6,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 24,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 7,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 27,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 8,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 30,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 9,
+            "active_before": 3,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 10,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 11,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 12,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 13,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 14,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 15,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 16,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 17,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 18,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 19,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 20,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 21,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 22,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 23,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          }
+        ]
+      },
+      {
+        "seed": 51,
+        "s_star": 1,
+        "total_cycles": 2500,
+        "total_renewals": 25,
+        "total_expirations": 0,
+        "epochs_reached": 25,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_expired_count": 3,
+        "commitment_default_count": 0,
+        "stop_reason": "HORIZON_EXHAUSTED",
+        "elapsed_ms": 17,
+        "epoch_commitment_status": [
+          {
+            "epoch": -1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 3,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 0,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 6,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 9,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 2,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 12,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 3,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 15,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 4,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 18,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 5,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 21,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 6,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 24,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 7,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 27,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 8,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 30,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 9,
+            "active_before": 3,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 10,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 11,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 12,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 13,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 14,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 15,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 16,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 17,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 18,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 19,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 20,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 21,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 22,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 23,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          }
+        ]
+      },
+      {
+        "seed": 52,
+        "s_star": 1,
+        "total_cycles": 2500,
+        "total_renewals": 25,
+        "total_expirations": 0,
+        "epochs_reached": 25,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_expired_count": 3,
+        "commitment_default_count": 0,
+        "stop_reason": "HORIZON_EXHAUSTED",
+        "elapsed_ms": 17,
+        "epoch_commitment_status": [
+          {
+            "epoch": -1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 3,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 0,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 6,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 9,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 2,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 12,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 3,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 15,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 4,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 18,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 5,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 21,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 6,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 24,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 7,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 27,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 8,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 30,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 9,
+            "active_before": 3,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 10,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 11,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 12,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 13,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 14,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 15,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 16,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 17,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 18,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 19,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 20,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 21,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 22,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 23,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          }
+        ]
+      },
+      {
+        "seed": 53,
+        "s_star": 1,
+        "total_cycles": 2500,
+        "total_renewals": 25,
+        "total_expirations": 0,
+        "epochs_reached": 25,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_expired_count": 3,
+        "commitment_default_count": 0,
+        "stop_reason": "HORIZON_EXHAUSTED",
+        "elapsed_ms": 17,
+        "epoch_commitment_status": [
+          {
+            "epoch": -1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 3,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 0,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 6,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 9,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 2,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 12,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 3,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 15,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 4,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 18,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 5,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 21,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 6,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 24,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 7,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 27,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 8,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 30,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 9,
+            "active_before": 3,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 10,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 11,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 12,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 13,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 14,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 15,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 16,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 17,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 18,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 19,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 20,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 21,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 22,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 23,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          }
+        ]
+      },
+      {
+        "seed": 54,
+        "s_star": 1,
+        "total_cycles": 2500,
+        "total_renewals": 25,
+        "total_expirations": 0,
+        "epochs_reached": 25,
+        "commitment_satisfaction_rate": 1.0,
+        "commitment_satisfaction_count": 33,
+        "commitment_failure_count": 0,
+        "commitment_expired_count": 3,
+        "commitment_default_count": 0,
+        "stop_reason": "HORIZON_EXHAUSTED",
+        "elapsed_ms": 19,
+        "epoch_commitment_status": [
+          {
+            "epoch": -1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 3,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 0,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 6,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 1,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 9,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 2,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 12,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 3,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 15,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 4,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 18,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 5,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 21,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 6,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 24,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 7,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 27,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 8,
+            "active_before": 3,
+            "active_after": 3,
+            "total_satisfied": 30,
+            "total_failed": 0,
+            "total_expired": 0
+          },
+          {
+            "epoch": 9,
+            "active_before": 3,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 10,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 11,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 12,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 13,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 14,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 15,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 16,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 17,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 18,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 19,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 20,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 21,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 22,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          },
+          {
+            "epoch": 23,
+            "active_before": 0,
+            "active_after": 0,
+            "total_satisfied": 33,
+            "total_failed": 0,
+            "total_expired": 3
+          }
+        ]
+      }
+    ]
+  },
+  "_meta": {
+    "horizon": 2500,
+    "epoch_size": 100,
+    "max_commit_ttl": 10,
+    "num_epochs": 25,
+    "seeds": [
+      50,
+      51,
+      52,
+      53,
+      54
+    ],
+    "total_elapsed_s": 0.3783731460571289,
+    "generated": "2026-01-03T23:05:52.261911"
+  }
+}
