@@ -6,7 +6,7 @@
 
 ## Executive Summary
 
-Run A establishes baseline behavior for AKI v0.7's eligibility-gated succession mechanism. The key finding is that under current parameters, the eligibility mechanism **rarely activates** because succession events are infrequent. Leases are sufficiently stable that working minds rarely require replacement.
+Run A establishes baseline behavior for AKI v0.7's eligibility-gated succession mechanism. The key finding is that under current parameters, the eligibility mechanism **does not activate beyond the initial endorsement**, because no post-initial succession events occur.
 
 ## Experiment Design
 
@@ -30,12 +30,14 @@ Run A establishes baseline behavior for AKI v0.7's eligibility-gated succession 
 
 ### Summary Table
 
-| Sub-Run | K | Cycles | Successions | Lapses | Lapse Rate | Exclusions |
-|---------|---|--------|-------------|--------|------------|------------|
+| Sub-Run | K | Cycles | Successions | Lapses | Lapse Rate | Elig. Evals (Post-Init)* |
+|---------|---|--------|-------------|--------|------------|-------------------------|
 | G0 | 3 | 25,000 | 5 | 0 | 0.00/1k | 0 |
 | G1 | 1 | 25,000 | 5 | 0 | 0.00/1k | 0 |
 | G2 | 5 | 25,000 | 5 | 0 | 0.00/1k | 0 |
 | G3 | 10 | 25,000 | 5 | 0 | 0.00/1k | 0 |
+
+*Eligibility filtering is only evaluated at succession events. No post-initial succession events occurred in Run A.
 
 ### Key Observations
 
@@ -47,11 +49,10 @@ Run A establishes baseline behavior for AKI v0.7's eligibility-gated succession 
 2. **Streak Accumulation Without Exclusion**
    - Final streak values are very high (avg 90-100 per policy)
    - Streaks accumulate across epochs but never trigger exclusion
-   - Eligibility filtering only applies at succession, which rarely occurs
+   - Eligibility filtering only applies at succession, which does not occur beyond the initial endorsement in this run
 
-3. **No Eligibility Rejections**
-   - 0 eligibility exclusions across all K values
-   - No policies ever excluded from C_ELIG
+3. **No Eligibility Evaluations Post-Streak Accumulation**
+   - Eligibility filtering was not exercised in a nontrivial regime because no succession events occurred after semantic streaks accumulated
    - No constitutional lapses (NULL_AUTHORITY) observed
 
 ### Final Streak Distribution by Policy
@@ -67,58 +68,26 @@ Averaged across all runs:
 
 ## Analysis
 
-### Why No Exclusions?
+Run A validates the **structural correctness** of the v0.7 eligibility mechanism while intentionally not exercising its exclusion behavior.
 
-The eligibility mechanism is designed to filter candidates **at succession time**. However:
+Eligibility filtering is defined to occur **only at succession events**. In Run A, no succession events occurred after the initial endorsement because working minds consistently renewed their leases. As a result, semantic failure streaks accumulated in the background but were never evaluated for candidate exclusion.
 
-1. Initial endorsement happens before any streaks accumulate
-2. Endorsed minds renew successfully, avoiding succession
-3. Streaks accumulate in the background but are never checked
-4. The 5K cycle horizon may be too short to trigger lease failures
+This outcome demonstrates that:
 
-### Implications for System Design
+1. Eligibility gating is **strictly succession-gated**, not continuous.
+2. Semantic failure can accumulate without immediate constitutional consequence.
+3. Stable authority regimes suppress eligibility effects by design.
 
-1. **Eligibility Gating is Succession-Gated:**
-   The mechanism only activates when succession occurs. Stable leases mean stable authority.
-
-2. **Streak Persistence:**
-   Streaks correctly persist across the run, demonstrating the tracking mechanism works.
-
-3. **Policy Identity Stability:**
-   The stable `policy_id` format (`"{category}:{enum.name}"`) correctly identifies policies across invocations.
-
-## Recommendations for Future Experiments
-
-1. **Run B: Forced Succession**
-   - Configure shorter lease durations or higher rent costs
-   - Force more frequent succession events
-   - Observe eligibility filtering behavior
-
-2. **Run C: Stress Test**
-   - Use K=1 with forced frequent succession
-   - Measure time-to-first-lapse
-   - Validate NULL_AUTHORITY handling
-
-3. **Run D: Attack-Heavy Pool**
-   - Increase attack successor probability
-   - Observe whether semantic failures lead to exclusions
-   - Test C_ELIG dynamics under adversarial conditions
+Run A therefore establishes v0.7 as a **latent constitutional mechanism** whose effects are contingent on turnover frequency, rather than as a continuous filter.
 
 ## Conclusion
 
-Run A validates the structural correctness of the v0.7 eligibility mechanism but reveals that **succession frequency is the primary gating factor**. The mechanism cannot exclude candidates if succession never occurs. This is by design - stable, well-behaved working minds should not trigger succession.
+Run A validates the structural correctness of the v0.7 eligibility mechanism. The mechanism cannot exclude candidates if succession never occurs. This is by design—stable, structurally compliant working minds should not trigger succession.
 
-Future experiments should:
-- Increase succession frequency through parameter tuning
-- Validate exclusion behavior when succession does occur
-- Test edge cases around NULL_AUTHORITY lapses
+Run A does not test exclusion or lapse behavior; it establishes baseline behavior in the absence of post-initial succession events.
 
 ---
 
 **Files Generated:**
 - `reports/run_a_v070_1767555252.json` - Raw experiment data
 - `reports/run_a_v070_report.md` - This report
-
-**Next Steps:**
-- Design Run B with parameters that force succession
-- Implement test cases for manual streak injection
