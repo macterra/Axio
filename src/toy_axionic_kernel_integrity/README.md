@@ -2,21 +2,29 @@
 
 A falsifiable experimental system implementing kernel integrity under actuation, targeting alignment properties from the Axionic Agency framework.
 
-## Current Version: v0.7 (ALS-G)
+## Current Version: v0.8 (ALS-A)
 
-**Authority Leases with Eligibility-Coupled Succession**
+**Authority Leases with Constitutional Temporal Amnesty**
 
-AKI v0.7 introduces eligibility gating at succession points. Candidates with persistent semantic failure (measured by `semantic_fail_streak >= K`) are excluded from the eligible pool. When all candidates become ineligible, the system enters a constitutional lapse state (NULL_AUTHORITY).
+AKI v0.8 introduces Constitutional Temporal Amnesty (CTA): a deterministic, time-only rule that applies exclusively during `NULL_AUTHORITY` to enable eligibility recovery without semantic optimization. This is the first mechanism in the AKI series that modifies streak state during lapse.
 
-### Key Features (v0.7)
+### Key Features (v0.8)
+
+- **Constitutional Temporal Amnesty (CTA):** Time-only streak decay during NULL_AUTHORITY
+- **AMNESTY_INTERVAL:** Configurable epochs between amnesty applications (default: 10)
+- **AMNESTY_DECAY:** Streak decrement per amnesty (default: 1)
+- **Lapse Cause Classification:** SEMANTIC vs STRUCTURAL lapse detection
+- **Recovery Tracking:** Authority span measurement, stutter detection, recovery yield
+- **100% Recovery Rate:** All lapses recovered in baseline geometry
+
+See [spec_v0.8.md](docs/spec_v0.8.md) and [instructions_v0.8_runnerA.md](docs/instructions_v0.8_runnerA.md)
+
+### Inherited from v0.7 (ALS-G)
 
 - **Eligibility Gating:** Filter candidates based on semantic fail streak
 - **Stable Policy Identity:** `policy_id` keyed to enum name, not runtime instance
 - **Constitutional Lapse:** NULL_AUTHORITY state when C_ELIG = ∅
-- **K=3 Threshold:** Default eligibility threshold (configurable)
-- **Pool Composition:** V060_DEFAULT (unchanged from v0.6)
-
-See [spec_v0.7.md](docs/spec_v0.7.md) and [instructions_v0.7.md](docs/instructions_v0.7.md)
+- **K=3 Threshold:** Default eligibility threshold
 
 ### Inherited from v0.6 (ALS-C)
 
@@ -40,7 +48,8 @@ See [spec_v0.7.md](docs/spec_v0.7.md) and [instructions_v0.7.md](docs/instructio
 | v0.4.x | Authority Leases (ALS) | Lease lifecycle, S* counting, succession |
 | v0.5.2 | Expressivity (ALS-E) | Rent schedule, E-Classes, boundary finding |
 | v0.6 | Commitments (ALS-C) | Commitment Ledger, obligation survivability |
-| **v0.7** | Eligibility (ALS-G) | Eligibility gating, streak tracking, constitutional lapse |
+| v0.7 | Eligibility (ALS-G) | Eligibility gating, streak tracking, constitutional lapse |
+| **v0.8** | Amnesty (ALS-A) | Constitutional Temporal Amnesty, lapse recovery, stutter detection |
 
 ## Installation
 
@@ -50,6 +59,16 @@ pip install -e .
 ```
 
 ## Quick Start
+
+### Run v0.8 Experiments
+
+```bash
+# Run A: CTA baseline (AMNESTY_INTERVAL=10)
+python scripts/run_a_v080.py
+
+# Run B: Interval sensitivity (AMNESTY_INTERVAL=5)
+python scripts/run_b_v080.py
+```
 
 ### Run v0.7 Experiments
 
@@ -105,6 +124,9 @@ python scripts/run_k_v052.py
 # Run all tests
 pytest tests/
 
+# Run v0.8 tests
+pytest tests/test_v080.py -v
+
 # Run v0.7 tests
 pytest tests/test_v070.py -v
 
@@ -120,7 +142,7 @@ pytest --cov=toy_aki tests/
 ```
 toy_aki/
 ├── als/             # Authority Lease System (v0.4+)
-│   ├── harness.py   # ALSHarnessV052, V060, V070
+│   ├── harness.py   # ALSHarnessV052, V060, V070, V080
 │   ├── expressivity.py  # E-Classes, RentSchedule
 │   ├── commitment.py    # Commitment Ledger (v0.6+)
 │   ├── generator.py # Successor generation, policy_id tracking
@@ -134,6 +156,52 @@ toy_aki/
 ├── attacks/         # Attack payloads (v0.2+)
 └── harness/         # Test harnesses
 ```
+
+## v0.8 Constitutional Temporal Amnesty
+
+### Key Concepts
+
+- **CTA:** Constitutional Temporal Amnesty — deterministic streak decay during NULL_AUTHORITY
+- **AMNESTY_INTERVAL:** Epochs between amnesty applications (default: 10)
+- **AMNESTY_DECAY:** Streak decrement per amnesty event (default: 1)
+- **Lapse Cause:** SEMANTIC (candidates exist but ineligible) vs STRUCTURAL (no candidates)
+- **Recovery:** Exit from NULL_AUTHORITY when C_ELIG ≠ ∅
+- **Stutter:** Recovery lasting ≤ 1 epoch before next lapse
+- **Recovery Yield (RY):** authority_epochs / lapse_epochs
+
+### Configuration
+
+```python
+from toy_aki.als.harness import ALSConfigV080, ALSHarnessV080
+
+config = ALSConfigV080(
+    max_cycles=5_000,
+    eligibility_threshold_k=3,
+    max_successive_renewals=3,  # Forced turnover
+    amnesty_interval=10,        # CTA fires every 10 epochs
+    amnesty_decay=1,            # Decrement by 1 per amnesty
+    cta_enabled=True,           # Can disable for comparison
+)
+
+harness = ALSHarnessV080(seed=42, config=config)
+result = harness.run()
+
+# Check amnesty events
+print(f"Amnesty events: {result.amnesty_event_count}")
+print(f"Total streak decay: {result.total_streak_decay_applied}")
+
+# Check recovery metrics
+print(f"Recoveries: {result.recovery_count}")
+print(f"Stutter recoveries: {result.stutter_recovery_count}")
+print(f"Authority uptime: {result.authority_uptime_fraction:.1%}")
+```
+
+### Experimental Results (v0.8)
+
+| Run | AMNESTY_INTERVAL | Long-Lapse Mode | NULL_AUTH Reduction | Key Finding |
+|-----|-----------------|-----------------|---------------------|-------------|
+| A | 10 epochs | L ≈ 20 | Baseline | 100% recovery, 0% stutter, 69% recover without amnesty |
+| B | 5 epochs | L ≈ 10 | -43% | CTA clock governs lapse duration |
 
 ## v0.7 Eligibility Gating
 
@@ -281,12 +349,15 @@ result = harness.run()
 
 ### Specifications
 
+- [spec_v0.8.md](docs/spec_v0.8.md) - v0.8 specification (ALS-A: Constitutional Temporal Amnesty)
 - [spec_v0.7.md](docs/spec_v0.7.md) - v0.7 specification (ALS-G: Eligibility Gating)
 - [spec_v0.6.md](docs/spec_v0.6.md) - v0.6 specification (ALS-C)
 - [spec_v0.5.2.md](docs/spec_v0.5.2.md) - v0.5.2 specification (ALS-E)
 
 ### Implementation Instructions
 
+- [instructions_v0.8_runnerA.md](docs/instructions_v0.8_runnerA.md) - v0.8 Run A (CTA baseline)
+- [instructions_v0.8_runnerB.md](docs/instructions_v0.8_runnerB.md) - v0.8 Run B (interval sensitivity)
 - [instructions_v0.7.md](docs/instructions_v0.7.md) - v0.7 ALS-G implementation
 - [instructions_v0.6.md](docs/instructions_v0.6.md) - v0.6 ALS-C implementation
 - [instructions_v0.6_runnerBCD.md](docs/instructions_v0.6_runnerBCD.md) - v0.6 experiment runners
@@ -297,6 +368,10 @@ result = harness.run()
 
 ### Reports
 
+- [IMPLEMENTATION_REPORT_V08.md](reports/IMPLEMENTATION_REPORT_V08.md) - v0.8 ALS-A report
+- [run_a_v080_report.md](reports/run_a_v080_report.md) - v0.8 Run A report
+- [run_b_v080_report.md](reports/run_b_v080_report.md) - v0.8 Run B report
+- [IMPLEMENTATION_REPORT_V07.md](reports/IMPLEMENTATION_REPORT_V07.md) - v0.7 ALS-G report
 - [run_l_v060_report.md](docs/run_l_v060_report.md) - v0.6 experiment report
 - [IMPLEMENTATION_REPORT_V052.md](reports/IMPLEMENTATION_REPORT_V052.md) - v0.5.2 report
 - [IMPLEMENTATION_REPORT_V042.md](reports/IMPLEMENTATION_REPORT_V042.md) - ALS foundation
@@ -310,6 +385,7 @@ result = harness.run()
 pytest tests/
 
 # Version-specific suites
+pytest tests/test_v080.py -v  # v0.8: ALS-A constitutional temporal amnesty
 pytest tests/test_v070.py -v  # v0.7: ALS-G eligibility gating
 pytest tests/test_v060.py -v  # v0.6: ALS-C commitments
 pytest tests/test_v052.py -v  # v0.5.2: ALS-E expressivity

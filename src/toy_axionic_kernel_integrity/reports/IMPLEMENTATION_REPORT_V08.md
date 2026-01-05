@@ -27,6 +27,7 @@ AKI v0.8 (ALS-A) implements **Constitutional Temporal Amnesty (CTA)**: a determi
 | Run | Purpose | Key Finding |
 |-----|---------|-------------|
 | A | CTA Baseline (AMNESTY_INTERVAL=10) | 100% recovery rate, 0% stutter, 69% recover without amnesty |
+| B | Interval Sensitivity (AMNESTY_INTERVAL=5) | Long-lapse mode compressed 50% (L≈20→L≈10), confirms CTA clock governs lapse duration |
 
 ---
 
@@ -416,17 +417,17 @@ RY = authority_epochs_after / lapse_duration_epochs
 
 ## 8. Experimental Geometry
 
-### 8.1 Run A Configuration
+### 8.1 Configuration Matrix
 
-| Parameter | Value |
-|-----------|-------|
-| K | 3 |
-| max_successive_renewals | 3 |
-| AMNESTY_INTERVAL | 10 epochs |
-| AMNESTY_DECAY | 1 |
-| pool_policy | V060_DEFAULT |
-| horizon | 5,000 cycles |
-| seeds | 50, 51, 52, 53, 54 |
+| Parameter | Run A | Run B |
+|-----------|-------|-------|
+| K | 3 | 3 |
+| max_successive_renewals | 3 | 3 |
+| **AMNESTY_INTERVAL** | **10 epochs** | **5 epochs** |
+| AMNESTY_DECAY | 1 | 1 |
+| pool_policy | V060_DEFAULT | V060_DEFAULT |
+| horizon | 5,000 cycles | 5,000 cycles |
+| seeds | 50, 51, 52, 53, 54 | 50, 51, 52, 53, 54 |
 
 ### 8.2 Regime Classification
 
@@ -480,9 +481,48 @@ RY = authority_epochs_after / lapse_duration_epochs
 
 ---
 
-## 10. Invariant Verification
+## 10. Run B Key Findings (AMNESTY_INTERVAL=5)
 
-### 10.1 Confirmed Invariants
+### 10.1 Hypothesis Tested
+
+> Does the CTA clock govern the long-lapse mode observed in Run A?
+
+### 10.2 Summary Results
+
+| Metric | Run A | Run B | Change |
+|--------|-------|-------|--------|
+| Total Lapses | 13 | 13 | — |
+| Total Recoveries | 13 | 13 | — |
+| Recovery Rate | 100% | 100% | — |
+| Total Amnesty Events | 8 | 8 | — |
+| NULL_AUTHORITY Cycles | 4,637 | **2,637** | **-43%** |
+| Recoveries Without Amnesty | 9 (69%) | 9 (69%) | — |
+| Stutter Recoveries | 0 | 0 | — |
+
+### 10.3 Bimodality Analysis
+
+| Metric | Run A | Run B | Interpretation |
+|--------|-------|-------|----------------|
+| Fraction L ≤ 2 | 69% | 69% | Short-lapse mode unchanged |
+| Fraction L ≥ 20 | 31% | **0%** | Long-lapse mode collapsed |
+| Long-lapse median | ~20 | **~10** | **Exact 50% compression** |
+
+### 10.4 Key Conclusion
+
+**The CTA clock governs the long-lapse mode.** Halving AMNESTY_INTERVAL from 10 to 5:
+
+1. **Compressed long lapses** from L≈20 to L≈10 epochs (exact proportional scaling)
+2. **Preserved bimodal structure** (69%:31% short:long ratio unchanged)
+3. **Reduced NULL_AUTHORITY time by 43%** (4,637 → 2,637 cycles)
+4. **Left short-lapse recovery unchanged** (69% recover without amnesty in both runs)
+
+The factor of 2 in long-lapse duration (L ≈ 2 × AMNESTY_INTERVAL) arises because recovery after amnesty requires 2 amnesty events when fresh candidates aren't available.
+
+---
+
+## 11. Invariant Verification
+
+### 11.1 Confirmed Invariants
 
 | Invariant | Verification |
 |-----------|--------------|
@@ -497,7 +537,7 @@ RY = authority_epochs_after / lapse_duration_epochs
 | Succession at scheduled boundaries only | ✓ Per inherited schedule |
 | Candidate pool regenerated at each attempt | ✓ Fresh pool per succession |
 
-### 10.2 Telemetry Improvements
+### 11.2 Telemetry Improvements
 
 Authority span tracking was enhanced mid-implementation to use cycle-based calculation:
 
@@ -512,7 +552,7 @@ authority_epochs = cycles_since_recovery // self._config.renewal_check_interval
 
 ---
 
-## 11. Files Modified/Created
+## 12. Files Modified/Created
 
 ### Harness (`harness.py`)
 - Added `LapseCause` enum
@@ -524,28 +564,39 @@ authority_epochs = cycles_since_recovery // self._config.renewal_check_interval
 - Added `ALSHarnessV080` class with full CTA mechanics
 
 ### Scripts
-- `run_a_v080.py` — CTA baseline run
+- `run_a_v080.py` — CTA baseline run (AMNESTY_INTERVAL=10)
+- `run_b_v080.py` — Interval sensitivity run (AMNESTY_INTERVAL=5)
 
 ### Reports
 - `run_a_v080_report.md` — LOCKED
+- `run_b_v080_report.md` — LOCKED
 - `IMPLEMENTATION_REPORT_V08.md` — This document
 
 ---
 
-## 12. Conclusion
+## 13. Conclusion
 
 AKI v0.8 successfully implements Constitutional Temporal Amnesty as specified. The mechanism:
 
-1. **Functions as designed**: CTA executes deterministically at 10-epoch intervals during NULL_AUTHORITY
-2. **Enables recovery**: 100% recovery rate observed (13/13 lapses recovered)
+1. **Functions as designed**: CTA executes deterministically at configurable intervals during NULL_AUTHORITY
+2. **Enables recovery**: 100% recovery rate observed across both runs (26/26 lapses recovered)
 3. **Produces durable authority**: 0% stutter rate (all recoveries achieve 4+ epochs of authority)
-4. **Is not the sole recovery mechanism**: 69% of recoveries occur before any amnesty fires, suggesting pool regeneration (fresh candidates) is primary in this geometry
-5. **Preserves kernel invariants**: No semantic enforcement, no optimization, no internal inspection, no agent action during lapse
+4. **Governs long-lapse duration**: Run B confirms long-lapse mode scales with AMNESTY_INTERVAL (L ≈ 2 × interval)
+5. **Is not the sole recovery mechanism**: 69% of recoveries occur before any amnesty fires, confirming fresh-candidate recovery is independent of CTA clock
+6. **Preserves kernel invariants**: No semantic enforcement, no optimization, no internal inspection, no agent action during lapse
 
-The implementation is complete and ready for Run B (AMNESTY_INTERVAL=5) to probe interval sensitivity.
+### Experimental Summary
+
+| Run | AMNESTY_INTERVAL | Long-Lapse Mode | NULL_AUTH Reduction | Key Insight |
+|-----|-----------------|-----------------|---------------------|-------------|
+| A | 10 epochs | L ≈ 20 | Baseline | CTA enables recovery |
+| B | 5 epochs | L ≈ 10 | -43% | CTA clock governs lapse duration |
+
+The implementation is complete and validated.
 
 ---
 
-**Report Generated:** January 5, 2026
-**Implementation Scripts:** `harness.py`, `run_a_v080.py`
+**Report Finalized:** January 5, 2026
+**Implementation Scripts:** `harness.py`, `run_a_v080.py`, `run_b_v080.py`
 **Specification:** `spec_v0.8.md`
+**Status:** v0.8 COMPLETE
