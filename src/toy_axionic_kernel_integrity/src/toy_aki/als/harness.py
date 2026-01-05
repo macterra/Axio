@@ -4514,6 +4514,11 @@ class RecoveryEvent:
     lapse_cause: LapseCause
     recovered_policy_id: str
     streak_at_recovery: int
+    # Added for stutter detection: epochs of authority after this recovery
+    # Filled in when next lapse occurs or at horizon
+    authority_epochs_after: Optional[int] = None
+    authority_end_reason: Optional[str] = None  # "LAPSE", "HORIZON", "REVOCATION", "EXPIRY"
+    is_stutter: Optional[bool] = None  # True if authority_epochs_after <= 1
 
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -4525,6 +4530,9 @@ class RecoveryEvent:
             "lapse_cause": self.lapse_cause.name,
             "recovered_policy_id": self.recovered_policy_id,
             "streak_at_recovery": self.streak_at_recovery,
+            "authority_epochs_after": self.authority_epochs_after,
+            "authority_end_reason": self.authority_end_reason,
+            "is_stutter": self.is_stutter,
         }
 
 
@@ -4830,6 +4838,7 @@ class ALSHarnessV080(ALSHarnessV070):
         self._recovery_latencies: List[int] = []  # Epochs to recovery
         self._post_recovery_durations: List[int] = []  # Epochs of authority after each recovery
         self._last_recovery_epoch: Optional[int] = None
+        self._last_recovery_event: Optional[RecoveryEvent] = None  # Track for authority span completion
         self._time_to_first_recovery: Optional[int] = None
 
         # v0.8: Aggregate streak tracking
@@ -4926,6 +4935,18 @@ class ALSHarnessV080(ALSHarnessV070):
         cause: LapseCause,
     ) -> None:
         """Enter NULL_AUTHORITY state with v0.8 cause classification."""
+        # First: finalize the previous recovery's authority span if any
+        if self._last_recovery_event is not None and self._last_recovery_epoch is not None:
+            # Compute authority epochs using cycle count (more reliable than epoch index)
+            # Authority duration = cycles since recovery / cycles_per_epoch
+            cycles_since_recovery = self._cycle - self._last_recovery_event.cycle
+            authority_epochs = cycles_since_recovery // self._config.renewal_check_interval
+            self._last_recovery_event.authority_epochs_after = authority_epochs
+            self._last_recovery_event.authority_end_reason = "LAPSE"
+            self._last_recovery_event.is_stutter = authority_epochs <= 1
+            self._post_recovery_durations.append(authority_epochs)
+            self._last_recovery_event = None  # Clear to avoid double-counting
+
         self._in_null_authority = True
         self._null_authority_start_cycle = self._cycle
         self._null_authority_start_epoch = self._epoch_index
@@ -4981,7 +5002,7 @@ class ALSHarnessV080(ALSHarnessV070):
             if self._time_to_first_recovery is None:
                 self._time_to_first_recovery = self._current_lapse_v080.duration_cycles
 
-            # Record recovery event
+            # Record recovery event (authority_epochs_after will be filled when next lapse occurs)
             recovery = RecoveryEvent(
                 cycle=self._cycle,
                 epoch=self._epoch_index,
@@ -4991,14 +5012,14 @@ class ALSHarnessV080(ALSHarnessV070):
                 lapse_cause=self._current_lapse_v080.cause,
                 recovered_policy_id=recovered_policy_id,
                 streak_at_recovery=streak,
+                authority_epochs_after=None,  # Filled in when authority ends
+                authority_end_reason=None,
+                is_stutter=None,
             )
             self._recovery_events.append(recovery)
 
-            # Track post-recovery authority duration for hollow recovery detection
-            if self._last_recovery_epoch is not None:
-                authority_duration = self._epoch_index - self._last_recovery_epoch
-                self._post_recovery_durations.append(authority_duration)
-
+            # Store reference to update when authority span ends
+            self._last_recovery_event = recovery
             self._last_recovery_epoch = self._epoch_index
 
             self._current_lapse_v080 = None
@@ -5195,6 +5216,17 @@ class ALSHarnessV080(ALSHarnessV070):
         # Finalize
         if not self._stopped:
             self._stop_reason = ALSStopReason.HORIZON_EXHAUSTED
+
+        # Finalize any pending recovery's authority span (if still active at horizon)
+        if self._last_recovery_event is not None and not self._in_null_authority:
+            # Compute authority epochs using cycle count
+            cycles_since_recovery = self._cycle - self._last_recovery_event.cycle
+            authority_epochs = cycles_since_recovery // self._config.renewal_check_interval
+            self._last_recovery_event.authority_epochs_after = authority_epochs
+            self._last_recovery_event.authority_end_reason = "HORIZON"
+            self._last_recovery_event.is_stutter = authority_epochs <= 1
+            self._post_recovery_durations.append(authority_epochs)
+            self._last_recovery_event = None
 
         # End any active lapse
         if self._in_null_authority:
