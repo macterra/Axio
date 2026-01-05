@@ -49,7 +49,8 @@ See [spec_v0.8.md](docs/spec_v0.8.md) and [instructions_v0.8_runnerA.md](docs/in
 | v0.5.2 | Expressivity (ALS-E) | Rent schedule, E-Classes, boundary finding |
 | v0.6 | Commitments (ALS-C) | Commitment Ledger, obligation survivability |
 | v0.7 | Eligibility (ALS-G) | Eligibility gating, streak tracking, constitutional lapse |
-| **v0.8** | Amnesty (ALS-A) | Constitutional Temporal Amnesty, lapse recovery, stutter detection |
+| v0.8 | Amnesty (ALS-A) | Constitutional Temporal Amnesty, lapse recovery, stutter detection |
+| **RSA v0.1** | Robustness (RSA) | Synthetic verifier noise, DoS threshold testing, 2D robustness surface |
 
 ## Installation
 
@@ -59,6 +60,22 @@ pip install -e .
 ```
 
 ## Quick Start
+
+### Run RSA v0.1 Experiments (Robustness Sensitivity Analysis)
+
+```bash
+# Run 0: Baseline validation (no noise)
+python scripts/rsa_run0_baseline_v010.py
+
+# Run 1: SV baseline sweep (5 SV levels × 5 seeds, fixed 10% RSA)
+python scripts/rsa_run1_sv_baseline_sweep_v010.py
+
+# Run 2: 2D robustness surface (5 SV × 5 RSA × 5 seeds = 125 runs)
+python scripts/rsa_run2_surface_sweep_v010.py
+
+# Run 3: DoS threshold search (30-60% noise at SV=800k)
+python scripts/rsa_run3_dos_threshold_v010.py
+```
 
 ### Run v0.8 Experiments
 
@@ -148,6 +165,8 @@ toy_aki/
 │   ├── generator.py # Successor generation, policy_id tracking
 │   ├── successors.py    # CBD and attack successors
 │   └── working_mind.py  # Working mind abstraction
+├── rsa/             # Robustness Sensitivity Analysis (RSA v0.1)
+│   └── synthetic_verifier.py  # ALSHarnessV080_SV, SVConfig, noise models
 ├── common/          # Utilities: hashing, JSON, no-floats
 ├── env/             # ToyWorld environment
 ├── acv/             # Anchor-Commit-Verify protocol
@@ -202,6 +221,45 @@ print(f"Authority uptime: {result.authority_uptime_fraction:.1%}")
 |-----|-----------------|-----------------|---------------------|-------------|
 | A | 10 epochs | L ≈ 20 | Baseline | 100% recovery, 0% stutter, 69% recover without amnesty |
 | B | 5 epochs | L ≈ 10 | -43% | CTA clock governs lapse duration |
+
+## RSA v0.1: Robustness Sensitivity Analysis
+
+### Overview
+
+RSA v0.1 tests AKI v0.8 robustness under synthetic verifier noise. The kernel is **frozen**; only the test harness introduces perturbations via a configurable Synthetic Verifier (SV) that corrupts semantic pass/fail signals.
+
+### Key Concepts
+
+- **Synthetic Verifier (SV):** Replaces deterministic semantic verifier with probabilistic baseline + RSA noise
+- **SV Baseline:** Base probability of semantic pass (e.g., 800k PPM = 80%)
+- **RSA Noise:** Post-verification Bernoulli flip rate applied per-Ci
+- **DoS Threshold:** `max_single_lapse_epochs > 50` (5× amnesty_interval)
+- **Authority Uptime:** Fraction of epochs with active authority
+- **Pivotal Rate:** Fraction of CI events where noise affected semantic outcome
+
+### Noise Model
+
+```python
+from toy_aki.rsa.synthetic_verifier import SVConfig, RSANoiseModel, RSAScope
+
+config = SVConfig(
+    semantic_pass_probability_ppm=800_000,  # 80% baseline
+    rsa_noise_ppm=100_000,                  # 10% flip rate
+    rsa_noise_model=RSANoiseModel.FLIP_BERNOULLI,
+    rsa_scope=RSAScope.PER_CI,
+)
+```
+
+### Experimental Results (RSA v0.1)
+
+| Run | Focus | Runs | Key Finding |
+|-----|-------|------|-------------|
+| 0 | Baseline validation | 5 | 100% uptime, zero lapses (no noise) |
+| 1 | SV baseline sweep | 25 | All ROBUST at 10% noise; regime transition at ~30% baseline |
+| 2 | 2D surface mapping | 125 | All 125 cells ROBUST across 5×5 grid |
+| 3 | DoS threshold search | 20 | No DoS up to 60% noise; graceful degradation with 74-94% uptime |
+
+**Key Finding:** Under PER_CI FLIP_BERNOULLI noise at SV=800k (~51% effective baseline), no DoS observed up to 60% flip rate. CTA enables recovery even under extreme noise.
 
 ## v0.7 Eligibility Gating
 
@@ -368,6 +426,10 @@ result = harness.run()
 
 ### Reports
 
+- [rsa_v010_run0_implementation_report.md](reports/rsa_v010_run0_implementation_report.md) - RSA v0.1 Run 0 (baseline validation)
+- [rsa_v010_run1_implementation_report.md](reports/rsa_v010_run1_implementation_report.md) - RSA v0.1 Run 1 (SV baseline sweep)
+- [rsa_v010_run2_implementation_report.md](reports/rsa_v010_run2_implementation_report.md) - RSA v0.1 Run 2 (2D surface mapping)
+- [rsa_v010_run3_implementation_report.md](reports/rsa_v010_run3_implementation_report.md) - RSA v0.1 Run 3 (DoS threshold search)
 - [IMPLEMENTATION_REPORT_V08.md](reports/IMPLEMENTATION_REPORT_V08.md) - v0.8 ALS-A report
 - [run_a_v080_report.md](reports/run_a_v080_report.md) - v0.8 Run A report
 - [run_b_v080_report.md](reports/run_b_v080_report.md) - v0.8 Run B report
