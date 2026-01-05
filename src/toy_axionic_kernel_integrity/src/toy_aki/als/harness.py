@@ -4462,3 +4462,958 @@ class ALSHarnessV070(ALSHarnessV060):
             print(f"  Stop: {result.stop_reason.name}")
 
         return result
+
+
+# =============================================================================
+# AKI v0.8: ALS-A (Authority Leases with Constitutional Temporal Amnesty)
+# =============================================================================
+
+
+class LapseCause(Enum):
+    """
+    Classification of lapse cause per spec §6.2.
+
+    - SEMANTIC: Candidates exist but all are ineligible (streak >= K)
+    - STRUCTURAL: No structurally admissible candidates exist
+    """
+    SEMANTIC = auto()
+    STRUCTURAL = auto()
+
+
+@dataclass
+class AmnestyEvent:
+    """Record of a CTA amnesty application during NULL_AUTHORITY."""
+    cycle: int
+    epoch: int
+    lapse_epoch_count: int
+    policies_affected: List[str]
+    streak_deltas: Dict[str, int]  # policy_id -> decrement applied
+    aggregate_streak_mass_before: int
+    aggregate_streak_mass_after: int
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "cycle": self.cycle,
+            "epoch": self.epoch,
+            "lapse_epoch_count": self.lapse_epoch_count,
+            "policies_affected": self.policies_affected,
+            "streak_deltas": self.streak_deltas,
+            "aggregate_streak_mass_before": self.aggregate_streak_mass_before,
+            "aggregate_streak_mass_after": self.aggregate_streak_mass_after,
+        }
+
+
+@dataclass
+class RecoveryEvent:
+    """Record of a recovery from NULL_AUTHORITY."""
+    cycle: int
+    epoch: int
+    lapse_duration_cycles: int
+    lapse_duration_epochs: int
+    amnesty_events_during_lapse: int
+    lapse_cause: LapseCause
+    recovered_policy_id: str
+    streak_at_recovery: int
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "cycle": self.cycle,
+            "epoch": self.epoch,
+            "lapse_duration_cycles": self.lapse_duration_cycles,
+            "lapse_duration_epochs": self.lapse_duration_epochs,
+            "amnesty_events_during_lapse": self.amnesty_events_during_lapse,
+            "lapse_cause": self.lapse_cause.name,
+            "recovered_policy_id": self.recovered_policy_id,
+            "streak_at_recovery": self.streak_at_recovery,
+        }
+
+
+@dataclass
+class LapseEventV080:
+    """
+    Extended lapse event for v0.8 with cause classification.
+    """
+    cycle: int
+    epoch: int
+    start_cycle: int
+    start_epoch: int
+    end_cycle: Optional[int] = None
+    end_epoch: Optional[int] = None
+    duration_cycles: int = 0
+    duration_epochs: int = 0
+    cause: LapseCause = LapseCause.SEMANTIC
+    amnesty_events_during: int = 0
+    recovered: bool = False
+    ineligible_policies: List[str] = field(default_factory=list)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "cycle": self.cycle,
+            "epoch": self.epoch,
+            "start_cycle": self.start_cycle,
+            "start_epoch": self.start_epoch,
+            "end_cycle": self.end_cycle,
+            "end_epoch": self.end_epoch,
+            "duration_cycles": self.duration_cycles,
+            "duration_epochs": self.duration_epochs,
+            "cause": self.cause.name,
+            "amnesty_events_during": self.amnesty_events_during,
+            "recovered": self.recovered,
+            "ineligible_policies": self.ineligible_policies,
+        }
+
+
+@dataclass
+class ALSConfigV080(ALSConfigV070):
+    """
+    Configuration for ALS-A v0.8 runs.
+
+    Extends ALSConfigV070 with Constitutional Temporal Amnesty (CTA) settings.
+
+    Per spec §6.4:
+    - AMNESTY_INTERVAL: Epochs between amnesty applications (default: 10)
+    - AMNESTY_DECAY: Streak decrement per amnesty (default: 1)
+    """
+    # CTA parameters (frozen defaults per spec)
+    amnesty_interval: int = 10   # Epochs between amnesty applications
+    amnesty_decay: int = 1       # Streak decrement per amnesty
+
+    # Enable/disable CTA (for comparison runs)
+    cta_enabled: bool = True
+
+
+@dataclass
+class ALSRunResultV080:
+    """
+    Result of an ALS-A v0.8 run.
+
+    Extends ALSRunResultV070 with CTA-specific metrics.
+    """
+    # Base metrics (inherited from V070)
+    run_id: str
+    seed: int
+    spec_version: str = "0.8"
+    s_star: int = 0
+    total_cycles: int = 0
+    total_proposals: int = 0
+    total_endorsements: int = 0
+    control_endorsements: int = 0
+    non_trivial_endorsements: int = 0
+    total_renewals: int = 0
+    total_expirations: int = 0
+    total_revocations: int = 0
+    mean_residence_cycles: float = 0.0
+    stop_reason: Optional[ALSStopReason] = None
+    stop_cycle: int = 0
+    is_degenerate: bool = False
+    degeneracy_type: Optional[DegeneracyType] = None
+    degeneracy_window: int = 0
+    failure_signature: Optional[str] = None
+    failure_detail: Optional[str] = None
+    duration_ms: int = 0
+
+    # v0.5.2 expressivity metrics
+    total_bankruptcies: int = 0
+    total_rent_charged: int = 0
+    renewal_attempts: int = 0
+    renewal_successes: int = 0
+    time_to_first_renewal_fail: Optional[int] = None
+    e_class_distribution: Dict[str, int] = field(default_factory=dict)
+    renewal_rate_by_e_class: Dict[str, float] = field(default_factory=dict)
+    residence_by_e_class: Dict[str, float] = field(default_factory=dict)
+
+    # v0.6 commitment metrics
+    total_commitment_cost_charged: int = 0
+    commitment_satisfaction_count: int = 0
+    commitment_failure_count: int = 0
+    commitment_expired_count: int = 0
+    commitment_default_count: int = 0
+    semantic_debt_mass: int = 0
+    commitment_satisfaction_rate: float = 0.0
+
+    # v0.7 eligibility metrics
+    eligibility_rejection_count: int = 0
+    eligibility_rejection_rate: float = 0.0
+    empty_eligible_set_events: int = 0  # Lapse triggers
+    total_lapse_duration_cycles: int = 0
+    total_lapse_duration_epochs: int = 0
+    max_lapse_duration_cycles: int = 0
+    ineligible_in_office_cycles: int = 0
+    sawtooth_count: int = 0
+    streak_distribution_at_succession: Dict[int, int] = field(default_factory=dict)
+    final_streak_by_policy: Dict[str, int] = field(default_factory=dict)
+
+    # v0.7 forced turnover and composition
+    forced_turnover_events: List[Dict] = field(default_factory=list)
+    forced_turnover_count: int = 0
+    post_init_successions: int = 0
+    attack_draws: int = 0
+    control_draws: int = 0
+    attack_draw_ratio: float = 0.0
+    control_draw_ratio: float = 0.0
+    pool_policy: str = "V060_DEFAULT"
+
+    # v0.8 CTA metrics (new)
+    amnesty_event_count: int = 0
+    amnesty_epochs: int = 0  # Total epochs where amnesty fired
+    aggregate_streak_mass_before_amnesty: int = 0
+    aggregate_streak_mass_after_amnesty: int = 0
+    total_streak_decay_applied: int = 0
+    recovery_count: int = 0
+    time_to_first_recovery: Optional[int] = None  # Cycles
+    mean_time_to_recovery: float = 0.0
+    stutter_recovery_count: int = 0  # Recoveries lasting only 1 epoch
+    authority_uptime_cycles: int = 0
+    authority_uptime_fraction: float = 0.0
+    lapse_fraction: float = 0.0
+    semantic_lapse_count: int = 0
+    structural_lapse_count: int = 0
+    recovery_yield: float = 0.0  # epochs of authority after recovery / epochs in lapse to achieve recovery
+    max_recovery_latency_epochs: int = 0  # Longest time in lapse before recovery
+    hollow_recovery_count: int = 0  # Recovery followed by re-lapse within 1 epoch
+
+    # Events (inherited)
+    succession_events: List[SuccessionEvent] = field(default_factory=list)
+    renewal_events: List[RenewalEvent] = field(default_factory=list)
+    expiration_events: List[ExpirationEvent] = field(default_factory=list)
+    revocation_events: List[RevocationEvent] = field(default_factory=list)
+    bankruptcy_events: List[BankruptcyEvent] = field(default_factory=list)
+    epoch_rent_records: List[EpochRentRecord] = field(default_factory=list)
+    tenure_records: List[TenureRecord] = field(default_factory=list)
+    tenure_entropy_samples: List[float] = field(default_factory=list)
+
+    # v0.6 commitment events
+    commitment_events: List[Any] = field(default_factory=list)
+    commitment_cost_records: List[Any] = field(default_factory=list)
+
+    # v0.7 eligibility events
+    eligibility_events: List[Dict] = field(default_factory=list)
+    lapse_events: List[Dict] = field(default_factory=list)
+    semantic_epoch_records: List[Dict] = field(default_factory=list)
+
+    # v0.8 CTA events (new)
+    amnesty_events: List[Dict] = field(default_factory=list)
+    recovery_events: List[Dict] = field(default_factory=list)
+    lapse_events_v080: List[Dict] = field(default_factory=list)
+
+    def to_dict(self) -> Dict[str, Any]:
+        result = {
+            "run_id": self.run_id,
+            "seed": self.seed,
+            "spec_version": self.spec_version,
+            "s_star": self.s_star,
+            "total_cycles": self.total_cycles,
+            "total_proposals": self.total_proposals,
+            "total_endorsements": self.total_endorsements,
+            "control_endorsements": self.control_endorsements,
+            "non_trivial_endorsements": self.non_trivial_endorsements,
+            "total_renewals": self.total_renewals,
+            "total_expirations": self.total_expirations,
+            "total_revocations": self.total_revocations,
+            "total_bankruptcies": self.total_bankruptcies,
+            "total_rent_charged": self.total_rent_charged,
+            "total_commitment_cost_charged": self.total_commitment_cost_charged,
+            "commitment_satisfaction_count": self.commitment_satisfaction_count,
+            "commitment_failure_count": self.commitment_failure_count,
+            "commitment_expired_count": self.commitment_expired_count,
+            "commitment_default_count": self.commitment_default_count,
+            "semantic_debt_mass": self.semantic_debt_mass,
+            "commitment_satisfaction_rate": self.commitment_satisfaction_rate,
+            # v0.7 eligibility metrics
+            "eligibility_rejection_count": self.eligibility_rejection_count,
+            "eligibility_rejection_rate": self.eligibility_rejection_rate,
+            "empty_eligible_set_events": self.empty_eligible_set_events,
+            "total_lapse_duration_cycles": self.total_lapse_duration_cycles,
+            "total_lapse_duration_epochs": self.total_lapse_duration_epochs,
+            "max_lapse_duration_cycles": self.max_lapse_duration_cycles,
+            "ineligible_in_office_cycles": self.ineligible_in_office_cycles,
+            "sawtooth_count": self.sawtooth_count,
+            "streak_distribution_at_succession": self.streak_distribution_at_succession,
+            "final_streak_by_policy": self.final_streak_by_policy,
+            # v0.7 forced turnover
+            "forced_turnover_count": self.forced_turnover_count,
+            "post_init_successions": self.post_init_successions,
+            "attack_draws": self.attack_draws,
+            "control_draws": self.control_draws,
+            "attack_draw_ratio": self.attack_draw_ratio,
+            "control_draw_ratio": self.control_draw_ratio,
+            "pool_policy": self.pool_policy,
+            # v0.8 CTA metrics
+            "amnesty_event_count": self.amnesty_event_count,
+            "amnesty_epochs": self.amnesty_epochs,
+            "aggregate_streak_mass_before_amnesty": self.aggregate_streak_mass_before_amnesty,
+            "aggregate_streak_mass_after_amnesty": self.aggregate_streak_mass_after_amnesty,
+            "total_streak_decay_applied": self.total_streak_decay_applied,
+            "recovery_count": self.recovery_count,
+            "time_to_first_recovery": self.time_to_first_recovery,
+            "mean_time_to_recovery": self.mean_time_to_recovery,
+            "stutter_recovery_count": self.stutter_recovery_count,
+            "authority_uptime_cycles": self.authority_uptime_cycles,
+            "authority_uptime_fraction": self.authority_uptime_fraction,
+            "lapse_fraction": self.lapse_fraction,
+            "semantic_lapse_count": self.semantic_lapse_count,
+            "structural_lapse_count": self.structural_lapse_count,
+            "recovery_yield": self.recovery_yield,
+            "max_recovery_latency_epochs": self.max_recovery_latency_epochs,
+            "hollow_recovery_count": self.hollow_recovery_count,
+            # Standard metrics
+            "renewal_attempts": self.renewal_attempts,
+            "renewal_successes": self.renewal_successes,
+            "time_to_first_renewal_fail": self.time_to_first_renewal_fail,
+            "mean_residence_cycles": self.mean_residence_cycles,
+            "e_class_distribution": self.e_class_distribution,
+            "renewal_rate_by_e_class": self.renewal_rate_by_e_class,
+            "residence_by_e_class": self.residence_by_e_class,
+            "stop_reason": self.stop_reason.name if self.stop_reason else None,
+            "stop_cycle": self.stop_cycle,
+            "is_degenerate": self.is_degenerate,
+            "degeneracy_type": self.degeneracy_type.name if self.degeneracy_type else None,
+            "degeneracy_window": self.degeneracy_window,
+            "failure_signature": self.failure_signature,
+            "failure_detail": self.failure_detail,
+            "duration_ms": self.duration_ms,
+        }
+        return result
+
+
+class ALSHarnessV080(ALSHarnessV070):
+    """
+    v0.8 ALS-A harness: Authority Leases with Constitutional Temporal Amnesty.
+
+    Per spec §6 and instructions §8.3:
+    - CTA runs at epoch boundaries during NULL_AUTHORITY
+    - Succession attempts occur only at scheduled succession boundaries
+    - Candidate pool regenerated on every succession attempt
+    - Global cycles and epochs continue unchanged during lapse
+    - First semantic window after recovery is first completed epoch
+
+    Key invariants:
+    - CTA is the ONLY permitted streak modification during lapse
+    - No verifiers execute during lapse
+    - No agent action during lapse
+    - TTL clocks advance during lapse
+    """
+
+    def __init__(
+        self,
+        seed: int = 42,
+        config: Optional[ALSConfigV080] = None,
+        verbose: bool = False,
+    ):
+        """
+        Initialize v0.8 harness.
+
+        Args:
+            seed: Random seed for reproducibility
+            config: Run configuration
+            verbose: Enable verbose logging
+        """
+        # Initialize parent (V070)
+        super().__init__(seed=seed, config=config or ALSConfigV080(), verbose=verbose)
+
+        # Cast config to V080 type
+        self._config: ALSConfigV080 = config or ALSConfigV080()
+
+        # v0.8: CTA state
+        self._lapse_epoch_count: int = 0
+        self._amnesty_events_this_lapse: int = 0
+
+        # v0.8: Event tracking
+        self._amnesty_events: List[AmnestyEvent] = []
+        self._recovery_events: List[RecoveryEvent] = []
+        self._lapse_events_v080: List[LapseEventV080] = []
+        self._current_lapse_v080: Optional[LapseEventV080] = None
+
+        # v0.8: Metrics tracking
+        self._authority_uptime_cycles: int = 0
+        self._lapse_time_cycles: int = 0
+        self._recovery_latencies: List[int] = []  # Epochs to recovery
+        self._post_recovery_durations: List[int] = []  # Epochs of authority after each recovery
+        self._last_recovery_epoch: Optional[int] = None
+        self._time_to_first_recovery: Optional[int] = None
+
+        # v0.8: Aggregate streak tracking
+        self._total_streak_decay_applied: int = 0
+        self._aggregate_streak_before_amnesty: int = 0
+        self._aggregate_streak_after_amnesty: int = 0
+
+    def _compute_aggregate_streak_mass(self) -> int:
+        """Compute sum of all policy streaks."""
+        return sum(self._semantic_fail_streak.values())
+
+    def _classify_lapse_cause(
+        self,
+        candidates: List[SuccessorCandidate],
+        eligible_candidates: List[SuccessorCandidate],
+    ) -> LapseCause:
+        """
+        Classify lapse cause per spec §6.2.
+
+        - SEMANTIC: Candidates exist but all are ineligible
+        - STRUCTURAL: No structurally admissible candidates exist
+        """
+        # For now, we treat all generated candidates as structurally admissible
+        # (the generator produces valid candidates by construction)
+        # So if we have candidates but none are eligible, it's SEMANTIC
+        if candidates and not eligible_candidates:
+            return LapseCause.SEMANTIC
+        elif not candidates:
+            return LapseCause.STRUCTURAL
+        else:
+            # Should not reach here if called when entering lapse
+            return LapseCause.SEMANTIC
+
+    def _apply_cta_amnesty(self) -> None:
+        """
+        Apply Constitutional Temporal Amnesty.
+
+        Per spec §6.5:
+        - Only runs during NULL_AUTHORITY
+        - Decrements all policy streaks by AMNESTY_DECAY
+        - No streak increments, no resets, no agent action
+        """
+        if not self._in_null_authority:
+            return  # CTA only runs during lapse
+
+        if not self._config.cta_enabled:
+            return  # CTA disabled for comparison runs
+
+        # Compute aggregate mass before
+        mass_before = self._compute_aggregate_streak_mass()
+
+        # Apply decay to all policies
+        policies_affected = []
+        streak_deltas = {}
+        for policy_id in list(self._semantic_fail_streak.keys()):
+            old_streak = self._semantic_fail_streak[policy_id]
+            if old_streak > 0:
+                new_streak = max(0, old_streak - self._config.amnesty_decay)
+                delta = old_streak - new_streak
+                if delta > 0:
+                    self._semantic_fail_streak[policy_id] = new_streak
+                    policies_affected.append(policy_id)
+                    streak_deltas[policy_id] = delta
+                    self._total_streak_decay_applied += delta
+
+        # Compute aggregate mass after
+        mass_after = self._compute_aggregate_streak_mass()
+
+        # Record amnesty event
+        self._amnesty_events_this_lapse += 1
+        event = AmnestyEvent(
+            cycle=self._cycle,
+            epoch=self._epoch_index,
+            lapse_epoch_count=self._lapse_epoch_count,
+            policies_affected=policies_affected,
+            streak_deltas=streak_deltas,
+            aggregate_streak_mass_before=mass_before,
+            aggregate_streak_mass_after=mass_after,
+        )
+        self._amnesty_events.append(event)
+
+        # Track aggregate masses
+        self._aggregate_streak_before_amnesty += mass_before
+        self._aggregate_streak_after_amnesty += mass_after
+
+        if self._verbose:
+            print(f"    [Epoch {self._epoch_index}] CTA AMNESTY: "
+                  f"mass {mass_before} → {mass_after}, "
+                  f"affected {len(policies_affected)} policies")
+
+    def _enter_null_authority_v080(
+        self,
+        ineligible_policies: List[str],
+        cause: LapseCause,
+    ) -> None:
+        """Enter NULL_AUTHORITY state with v0.8 cause classification."""
+        self._in_null_authority = True
+        self._null_authority_start_cycle = self._cycle
+        self._null_authority_start_epoch = self._epoch_index
+
+        # Reset lapse epoch counter
+        self._lapse_epoch_count = 0
+        self._amnesty_events_this_lapse = 0
+
+        # Clear active authority
+        self._current_mind = None
+        self._current_lease = None
+        self._active_policy_id = None
+
+        # Create v0.80 lapse event
+        self._current_lapse_v080 = LapseEventV080(
+            cycle=self._cycle,
+            epoch=self._epoch_index,
+            start_cycle=self._cycle,
+            start_epoch=self._epoch_index,
+            cause=cause,
+            ineligible_policies=ineligible_policies,
+        )
+
+        # Also create v0.7 compatible lapse event
+        self._current_lapse = LapseEvent(
+            cycle=self._cycle,
+            epoch=self._epoch_index,
+            start_cycle=self._cycle,
+            ineligible_policies=ineligible_policies,
+        )
+
+        if self._verbose:
+            print(f"    [Cycle {self._cycle}] LAPSE ({cause.name}): "
+                  f"C_ELIG=∅, entering NULL_AUTHORITY")
+            print(f"      Ineligible policies: {ineligible_policies}")
+
+    def _exit_null_authority_v080(self, recovered_policy_id: str, streak: int) -> None:
+        """Exit NULL_AUTHORITY state with recovery tracking."""
+        # Finalize v0.80 lapse event
+        if self._current_lapse_v080 is not None:
+            self._current_lapse_v080.end_cycle = self._cycle
+            self._current_lapse_v080.end_epoch = self._epoch_index
+            self._current_lapse_v080.duration_cycles = self._cycle - self._current_lapse_v080.start_cycle
+            self._current_lapse_v080.duration_epochs = self._epoch_index - self._current_lapse_v080.start_epoch
+            self._current_lapse_v080.amnesty_events_during = self._amnesty_events_this_lapse
+            self._current_lapse_v080.recovered = True
+            self._lapse_events_v080.append(self._current_lapse_v080)
+
+            # Track recovery latency
+            lapse_duration_epochs = self._current_lapse_v080.duration_epochs
+            self._recovery_latencies.append(lapse_duration_epochs)
+
+            if self._time_to_first_recovery is None:
+                self._time_to_first_recovery = self._current_lapse_v080.duration_cycles
+
+            # Record recovery event
+            recovery = RecoveryEvent(
+                cycle=self._cycle,
+                epoch=self._epoch_index,
+                lapse_duration_cycles=self._current_lapse_v080.duration_cycles,
+                lapse_duration_epochs=lapse_duration_epochs,
+                amnesty_events_during_lapse=self._amnesty_events_this_lapse,
+                lapse_cause=self._current_lapse_v080.cause,
+                recovered_policy_id=recovered_policy_id,
+                streak_at_recovery=streak,
+            )
+            self._recovery_events.append(recovery)
+
+            # Track post-recovery authority duration for hollow recovery detection
+            if self._last_recovery_epoch is not None:
+                authority_duration = self._epoch_index - self._last_recovery_epoch
+                self._post_recovery_durations.append(authority_duration)
+
+            self._last_recovery_epoch = self._epoch_index
+
+            self._current_lapse_v080 = None
+
+        # Finalize v0.7 compatible lapse event
+        if self._current_lapse is not None:
+            self._current_lapse.end_cycle = self._cycle
+            self._current_lapse.duration_cycles = self._cycle - self._current_lapse.start_cycle
+            if self._null_authority_start_epoch is not None:
+                self._current_lapse.duration_epochs = self._epoch_index - self._null_authority_start_epoch
+            self._lapse_events.append(self._current_lapse)
+            self._current_lapse = None
+
+        self._in_null_authority = False
+        self._null_authority_start_cycle = None
+        self._null_authority_start_epoch = None
+
+        if self._verbose:
+            print(f"    [Cycle {self._cycle}] RECOVERY: {recovered_policy_id} "
+                  f"(streak={streak})")
+
+    def _attempt_succession_v080(self) -> bool:
+        """
+        Attempt succession with eligibility filtering (v0.8).
+
+        Per instructions §8.3:
+        - Regenerate candidate pool on every succession attempt
+        - Use v0.7 generator/pool policy
+
+        Returns:
+            True if succession succeeded, False if lapse triggered
+        """
+        # Generate fresh candidate pool
+        candidate = self._generator.propose(self._cycle)
+        candidates = [candidate]
+
+        # Track draw for composition verification
+        self._count_draw(candidate)
+
+        # Generate additional candidates to form pool
+        for _ in range(min(10, len(list(ControlSuccessorType)) + len(list(AttackSuccessorType)))):
+            c = self._generator.propose(self._cycle)
+            candidates.append(c)
+            self._count_draw(c)
+
+        # Filter by eligibility
+        eligible_candidates = self._filter_eligible_candidates(candidates)
+
+        if not eligible_candidates:
+            # C_ELIG = ∅ → Lapse
+            ineligible_policies = list(set(c.policy_id for c in candidates))
+            cause = self._classify_lapse_cause(candidates, eligible_candidates)
+
+            if self._in_null_authority:
+                # Already in lapse, just continue
+                pass
+            else:
+                # Enter lapse
+                self._enter_null_authority_v080(ineligible_policies, cause)
+            return False
+
+        # Select from eligible candidates (use first one, semantic-blind)
+        selected = eligible_candidates[0]
+        selected_streak = self._get_policy_streak(selected.policy_id)
+
+        # Store active policy_id
+        self._active_policy_id = selected.policy_id
+
+        # Exit NULL_AUTHORITY if we were in it
+        if self._in_null_authority:
+            self._exit_null_authority_v080(selected.policy_id, selected_streak)
+
+        # Proceed with standard succession
+        self._total_proposals += 1
+
+        # Validate candidate
+        is_valid = self._validate_candidate(selected)
+        if not is_valid:
+            # Rejection - try another eligible candidate
+            for alt in eligible_candidates[1:]:
+                if self._validate_candidate(alt):
+                    selected = alt
+                    self._active_policy_id = selected.policy_id
+                    is_valid = True
+                    break
+
+        if not is_valid:
+            # All eligible candidates rejected - enter lapse
+            ineligible_policies = list(set(c.policy_id for c in candidates))
+            cause = LapseCause.STRUCTURAL  # Validation failure is structural
+            self._enter_null_authority_v080(ineligible_policies, cause)
+            return False
+
+        # Endorse candidate
+        self._endorse_candidate(selected)
+
+        return True
+
+    def run(self) -> ALSRunResultV080:
+        """
+        Execute a complete ALS-A v0.8 run.
+
+        Key additions over v0.7:
+        - CTA at epoch boundaries during lapse
+        - Succession attempts only at succession boundaries
+        - TTL advances during lapse
+        - Recovery tracking and metrics
+
+        Per instructions §8.3:
+        - CTA tick at epoch boundaries
+        - Succession attempts at succession boundaries (not same as epochs)
+
+        Returns:
+            Run result with all metrics and logs
+        """
+        start_time = current_time_ms()
+        run_id = f"als080_{self._seed}_{start_time}"
+
+        if self._verbose:
+            print(f"Starting ALS-A v0.8 run: {run_id}")
+            print(f"  Max cycles: {self._config.max_cycles}")
+            print(f"  Eligibility threshold K: {self._config.eligibility_threshold_k}")
+            print(f"  Amnesty interval: {self._config.amnesty_interval} epochs")
+            print(f"  Amnesty decay: {self._config.amnesty_decay}")
+            print(f"  CTA enabled: {self._config.cta_enabled}")
+
+        # Initial succession
+        self._succession_pending = True
+        self._attempt_succession_v080()
+
+        # Main loop
+        while not self._stopped and self._cycle < self._config.max_cycles:
+            self._cycle += 1
+            self._sentinel.advance_cycle()
+
+            # Handle NULL_AUTHORITY state
+            if self._in_null_authority:
+                self._lapse_time_cycles += 1
+
+                # Check for epoch boundary (for CTA and TTL)
+                if self._cycle % self._config.renewal_check_interval == 0:
+                    self._epoch_index += 1
+                    self._lapse_epoch_count += 1
+
+                    # TTL clocks advance (commitment evaluation is suspended)
+                    # Commitments with expired TTL will be evaluated on recovery
+
+                    # Apply CTA if interval reached
+                    if self._lapse_epoch_count % self._config.amnesty_interval == 0:
+                        self._apply_cta_amnesty()
+
+                    # Attempt succession at succession boundary
+                    # Per instructions: succession boundaries are same as epoch boundaries
+                    # for simplicity (renewal_check_interval defines both)
+                    self._attempt_succession_v080()
+
+                continue
+
+            # Track authority uptime
+            self._authority_uptime_cycles += 1
+
+            # Check if succession is needed
+            if self._succession_pending:
+                success = self._attempt_succession_v080()
+                if not success:
+                    continue  # In NULL_AUTHORITY now
+
+            # Execute working mind cycle
+            if self._current_lease and self._current_lease.status == LeaseStatus.ACTIVE:
+                adjusted_effective = self._current_effective_steps - self._commitment_cost_this_epoch
+                if self._epoch_steps_used < adjusted_effective:
+                    violation = self._execute_working_mind_cycle_v060()
+                    if violation:
+                        self._handle_lease_revocation(violation[0], violation[1])
+                        continue
+
+            # Check renewal at epoch boundaries
+            if self._current_lease and self._current_lease.status == LeaseStatus.ACTIVE:
+                if self._cycle % self._config.renewal_check_interval == 0:
+                    # Evaluate commitments before renewal
+                    self._evaluate_commitments_at_epoch_end()
+                    # Update streak at epoch end
+                    self._update_streak_at_epoch_end()
+                    # Proceed with renewal
+                    self._check_renewal_with_rent()
+
+            # Check lease expiration
+            if self._current_lease and self._current_lease.is_expired(self._cycle):
+                self._handle_lease_expiration()
+
+            # Check degeneracy
+            self._check_degeneracy()
+
+        # Finalize
+        if not self._stopped:
+            self._stop_reason = ALSStopReason.HORIZON_EXHAUSTED
+
+        # End any active lapse
+        if self._in_null_authority:
+            if self._current_lapse_v080:
+                self._current_lapse_v080.end_cycle = self._cycle
+                self._current_lapse_v080.end_epoch = self._epoch_index
+                self._current_lapse_v080.duration_cycles = self._cycle - self._current_lapse_v080.start_cycle
+                self._current_lapse_v080.duration_epochs = self._epoch_index - self._current_lapse_v080.start_epoch
+                self._current_lapse_v080.amnesty_events_during = self._amnesty_events_this_lapse
+                self._current_lapse_v080.recovered = False  # Did not recover before horizon
+                self._lapse_events_v080.append(self._current_lapse_v080)
+
+            if self._current_lapse:
+                self._current_lapse.end_cycle = self._cycle
+                self._current_lapse.duration_cycles = self._cycle - self._current_lapse.start_cycle
+                if self._null_authority_start_epoch is not None:
+                    self._current_lapse.duration_epochs = self._epoch_index - self._null_authority_start_epoch
+                self._lapse_events.append(self._current_lapse)
+
+        # Finalize active tenure
+        if self._current_tenure is not None:
+            self._end_tenure("HORIZON_EXHAUSTED")
+
+        duration = current_time_ms() - start_time
+
+        # Compute metrics
+        ledger_metrics = self._commitment_ledger.get_metrics()
+        total_evaluations = ledger_metrics["total_satisfied"] + ledger_metrics["total_failed"]
+        satisfaction_rate = 0.0
+        if total_evaluations > 0:
+            satisfaction_rate = ledger_metrics["total_satisfied"] / total_evaluations
+
+        eligibility_rejection_rate = 0.0
+        if self._total_candidates_at_succession > 0:
+            eligibility_rejection_rate = self._eligibility_rejections / self._total_candidates_at_succession
+
+        # Lapse metrics
+        total_lapse_cycles = sum(e.duration_cycles for e in self._lapse_events_v080)
+        total_lapse_epochs = sum(e.duration_epochs for e in self._lapse_events_v080)
+        max_lapse = max((e.duration_cycles for e in self._lapse_events_v080), default=0)
+        max_recovery_latency = max((e.duration_epochs for e in self._lapse_events_v080 if e.recovered), default=0)
+
+        # Lapse cause counts
+        semantic_lapse_count = sum(1 for e in self._lapse_events_v080 if e.cause == LapseCause.SEMANTIC)
+        structural_lapse_count = sum(1 for e in self._lapse_events_v080 if e.cause == LapseCause.STRUCTURAL)
+
+        # Recovery metrics
+        recovery_count = len(self._recovery_events)
+        mean_time_to_recovery = 0.0
+        if self._recovery_latencies:
+            mean_time_to_recovery = sum(self._recovery_latencies) / len(self._recovery_latencies)
+
+        # Stutter recovery (1 epoch authority after recovery)
+        stutter_count = sum(1 for d in self._post_recovery_durations if d <= 1)
+
+        # Hollow recovery (re-lapse within 1 epoch)
+        hollow_count = stutter_count  # Same definition for now
+
+        # Authority uptime fraction
+        total_time = self._cycle
+        authority_uptime_fraction = 0.0
+        lapse_fraction = 0.0
+        if total_time > 0:
+            authority_uptime_fraction = self._authority_uptime_cycles / total_time
+            lapse_fraction = self._lapse_time_cycles / total_time
+
+        # Recovery yield: authority epochs after recovery / lapse epochs to achieve recovery
+        recovery_yield = 0.0
+        if self._recovery_latencies and sum(self._recovery_latencies) > 0:
+            total_post_recovery_epochs = sum(self._post_recovery_durations) if self._post_recovery_durations else 0
+            total_lapse_epochs_for_recovery = sum(self._recovery_latencies)
+            if total_lapse_epochs_for_recovery > 0:
+                recovery_yield = total_post_recovery_epochs / total_lapse_epochs_for_recovery
+
+        # Streak distribution
+        streak_dist: Dict[int, int] = {}
+        for event in self._eligibility_events:
+            streak = event.streak_at_decision
+            streak_dist[streak] = streak_dist.get(streak, 0) + 1
+
+        # Degeneracy
+        is_degenerate = self._stop_reason in (
+            ALSStopReason.ENDORSEMENT_DEGENERACY,
+            ALSStopReason.SPAM_DEGENERACY,
+        )
+        degeneracy_type = None
+        if self._stop_reason == ALSStopReason.ENDORSEMENT_DEGENERACY:
+            degeneracy_type = DegeneracyType.ENDORSEMENT
+        elif self._stop_reason == ALSStopReason.SPAM_DEGENERACY:
+            degeneracy_type = DegeneracyType.SPAM
+
+        # Mean residence
+        mean_residence = 0.0
+        if self._residence_durations:
+            mean_residence = sum(self._residence_durations) / len(self._residence_durations)
+
+        # E-Class metrics
+        renewal_rate_by_e_class = {}
+        for e_name in self._e_class_renewal_attempts:
+            attempts = self._e_class_renewal_attempts[e_name]
+            successes = self._e_class_renewals[e_name]
+            if attempts > 0:
+                renewal_rate_by_e_class[e_name] = successes / attempts
+
+        residence_by_e_class = {}
+        for e_name, durations in self._e_class_residence.items():
+            if durations:
+                residence_by_e_class[e_name] = sum(durations) / len(durations)
+
+        # Draw ratios
+        total_draws = self._attack_draws + self._control_draws
+        attack_draw_ratio = self._attack_draws / total_draws if total_draws > 0 else 0.0
+        control_draw_ratio = self._control_draws / total_draws if total_draws > 0 else 0.0
+
+        result = ALSRunResultV080(
+            run_id=run_id,
+            seed=self._seed,
+            spec_version="0.8",
+            s_star=self._s_star,
+            total_cycles=self._cycle,
+            total_proposals=self._total_proposals,
+            total_endorsements=self._total_endorsements,
+            control_endorsements=self._control_endorsements,
+            non_trivial_endorsements=self._non_trivial_endorsements,
+            total_renewals=self._total_renewals,
+            total_expirations=self._total_expirations,
+            total_revocations=self._total_revocations,
+            total_bankruptcies=self._total_bankruptcies,
+            total_rent_charged=self._total_rent_charged,
+            renewal_attempts=self._renewal_attempts,
+            renewal_successes=self._renewal_successes,
+            time_to_first_renewal_fail=self._time_to_first_renewal_fail,
+            mean_residence_cycles=mean_residence,
+            e_class_distribution=dict(self._e_class_successions),
+            renewal_rate_by_e_class=renewal_rate_by_e_class,
+            residence_by_e_class=residence_by_e_class,
+            stop_reason=self._stop_reason,
+            stop_cycle=self._cycle,
+            is_degenerate=is_degenerate,
+            degeneracy_type=degeneracy_type,
+            degeneracy_window=self._successions_without_non_trivial,
+            failure_signature=self._failure_signature,
+            failure_detail=self._failure_detail,
+            total_commitment_cost_charged=ledger_metrics["total_cost_charged"],
+            commitment_satisfaction_count=ledger_metrics["total_satisfied"],
+            commitment_failure_count=ledger_metrics["total_failed"],
+            commitment_expired_count=ledger_metrics["total_expired"],
+            commitment_default_count=ledger_metrics["total_defaulted"],
+            semantic_debt_mass=ledger_metrics["semantic_debt_mass"],
+            commitment_satisfaction_rate=satisfaction_rate,
+            # v0.7 eligibility metrics
+            eligibility_rejection_count=self._eligibility_rejections,
+            eligibility_rejection_rate=eligibility_rejection_rate,
+            empty_eligible_set_events=len(self._lapse_events_v080),
+            total_lapse_duration_cycles=total_lapse_cycles,
+            total_lapse_duration_epochs=total_lapse_epochs,
+            max_lapse_duration_cycles=max_lapse,
+            ineligible_in_office_cycles=self._ineligible_in_office_cycles,
+            sawtooth_count=self._sawtooth_count,
+            streak_distribution_at_succession=streak_dist,
+            final_streak_by_policy=dict(self._semantic_fail_streak),
+            # v0.7 forced turnover
+            forced_turnover_events=[e.to_dict() for e in self._forced_turnover_events],
+            forced_turnover_count=len(self._forced_turnover_events),
+            post_init_successions=self._post_init_successions,
+            attack_draws=self._attack_draws,
+            control_draws=self._control_draws,
+            attack_draw_ratio=attack_draw_ratio,
+            control_draw_ratio=control_draw_ratio,
+            pool_policy=self._config.candidate_pool_policy.name,
+            # v0.8 CTA metrics
+            amnesty_event_count=len(self._amnesty_events),
+            amnesty_epochs=len(self._amnesty_events),
+            aggregate_streak_mass_before_amnesty=self._aggregate_streak_before_amnesty,
+            aggregate_streak_mass_after_amnesty=self._aggregate_streak_after_amnesty,
+            total_streak_decay_applied=self._total_streak_decay_applied,
+            recovery_count=recovery_count,
+            time_to_first_recovery=self._time_to_first_recovery,
+            mean_time_to_recovery=mean_time_to_recovery,
+            stutter_recovery_count=stutter_count,
+            authority_uptime_cycles=self._authority_uptime_cycles,
+            authority_uptime_fraction=authority_uptime_fraction,
+            lapse_fraction=lapse_fraction,
+            semantic_lapse_count=semantic_lapse_count,
+            structural_lapse_count=structural_lapse_count,
+            recovery_yield=recovery_yield,
+            max_recovery_latency_epochs=max_recovery_latency,
+            hollow_recovery_count=hollow_count,
+            # Events
+            succession_events=self._succession_events,
+            renewal_events=self._renewal_events,
+            expiration_events=self._expiration_events,
+            revocation_events=self._revocation_events,
+            bankruptcy_events=self._bankruptcy_events,
+            epoch_rent_records=self._epoch_rent_records,
+            tenure_records=self._tenure_records,
+            tenure_entropy_samples=self._tenure_entropy_samples,
+            commitment_events=[e.to_dict() for e in self._commitment_ledger.get_events()],
+            commitment_cost_records=[r.to_dict() for r in self._commitment_ledger.get_cost_records()],
+            eligibility_events=[e.to_dict() for e in self._eligibility_events],
+            lapse_events=[e.to_dict() for e in self._lapse_events],
+            semantic_epoch_records=[r.to_dict() for r in self._semantic_epoch_records],
+            # v0.8 CTA events
+            amnesty_events=[e.to_dict() for e in self._amnesty_events],
+            recovery_events=[e.to_dict() for e in self._recovery_events],
+            lapse_events_v080=[e.to_dict() for e in self._lapse_events_v080],
+            duration_ms=duration,
+        )
+
+        if self._verbose:
+            print(f"\nALS-A v0.8 run complete:")
+            print(f"  S*: {result.s_star}")
+            print(f"  Cycles: {result.total_cycles}")
+            print(f"  Authority uptime: {result.authority_uptime_fraction:.1%}")
+            print(f"  Lapse fraction: {result.lapse_fraction:.1%}")
+            print(f"  Amnesty events: {result.amnesty_event_count}")
+            print(f"  Recovery count: {result.recovery_count}")
+            print(f"  Semantic lapses: {result.semantic_lapse_count}")
+            print(f"  Structural lapses: {result.structural_lapse_count}")
+            print(f"  Stop: {result.stop_reason.name}")
+
+        return result
