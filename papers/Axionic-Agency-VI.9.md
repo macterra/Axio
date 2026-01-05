@@ -285,12 +285,19 @@ NULL_AUTHORITY converts semantic exhaustion into an explicit governance state. R
 ### 8.3 Robustness to imperfect semantic oracles
 
 The mechanism does not require semantic judgments to be correct, only externally checkable and consistent. An overly strict or flawed verifier manifests as premature disqualification or lapse, not silent misoptimization. Oracle error is therefore converted into visible governance failure.
+Subsequent results show that such oracle-induced lapse can be made temporally bounded without semantic forgiveness, further reinforcing the distinction between auditability and control.
 
 ## 9. Limitations
 
 ### 9.1 Irreversibility and rehabilitation
 
-Eligibility-coupled succession contains no internal rehabilitation mechanism. Once all policy identities exceed the eligibility threshold, the system remains in NULL_AUTHORITY indefinitely. This irreversibility is deliberate: the mechanism models constitutional disqualification, not corrective training. Forgiveness, decay, or replacement require additional governance mechanisms and are out of scope.
+Eligibility-coupled succession, as evaluated in Sections 6–8, intentionally treats semantic exhaustion as a constitutional failure rather than an error to be corrected. In the base mechanism, exhaustion of eligibility leads to an explicit governance lapse (NULL_AUTHORITY).
+
+In subsequent work (AKI v0.8), we introduce a constitutional recovery mechanism that preserves this framing while restoring livability: a time-only amnesty applied exclusively during lapse. This mechanism allows eligibility to reopen without revising past semantic judgments, without rewarding success, and without coupling semantics to operation or renewal.
+
+Importantly, this recovery mechanism does not eliminate irreversibility in the strong sense. Semantic failure remains fully attributable; recovery is not earned, learned, or optimized. Instead, recovery is governed by a constitutional clock, bounding the duration of governance denial while preserving the visibility and cost of failure.
+
+We do not evaluate this recovery mechanism as part of the present experimental results; its inclusion is motivated directly by the irreversibility and livability concerns identified here.
 
 ### 9.2 Latency and real-time safety
 
@@ -316,7 +323,7 @@ These results suggest that AI alignment may be achievable without continuous beh
 
 ## 12. Outlook
 
-Future work will explore rehabilitation, decay, and multi-constraint eligibility mechanisms motivated directly by the failure modes observed here. These extensions necessarily move beyond the single-coupling design evaluated in this paper.
+Future work explores rehabilitation, decay, and multi-constraint eligibility mechanisms motivated directly by the failure modes observed here, including time-only constitutional recovery evaluated separately from the present experiments.
 
 ## Appendices
 
