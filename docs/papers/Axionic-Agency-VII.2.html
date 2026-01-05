@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency VII.2 — Epistemic Noise Tolerance in Constitutional Governance - Axio</title>
+    <link rel="icon" type="image/webp" href="../axio.webp">
+
+    <!-- Google Fonts - Academic Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Paper Styles -->
+    <link rel="stylesheet" href="../papers.css">
+</head>
+<body>
+    <div class="header-bar">
+        <a href="../index.html" class="logo-link">
+            <img src="../axio.webp" alt="Axio" class="site-logo">
+        </a>
+        <div class="back-link"><a href="index.html">← Back to Papers</a></div>
+    </div>
+    <article>
+
+<h1
+id="axionic-agency-vii.2-epistemic-noise-tolerance-in-constitutional-governance">Axionic
+Agency VII.2 — Epistemic Noise Tolerance in Constitutional
+Governance</h1>
+<p><em>Bounded Degradation of Authority Availability Under Unstructured
+Epistemic Failure</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026.01.05</p>
+<h2 id="abstract">Abstract</h2>
+<p>Epistemic unreliability—noisy, corrupted, or inaccurate evaluation of
+meaning—is often assumed to be fatal to governance systems. If
+evaluative signals cannot be trusted, authority is expected either to
+collapse or to become arbitrary. This paper tests that assumption
+directly.</p>
+<p>We study a constitutional governance architecture in which semantic
+evaluation affects authority only through eligibility constraints, not
+through optimization, reward shaping, or adaptive control. Using a
+strictly additive stress layer, we inject controlled epistemic noise
+into semantic verification outcomes while holding all constitutional
+mechanics fixed. The noise model is intentionally weak: independent,
+post-verification Bernoulli corruption applied to individual semantic
+commitments.</p>
+<p>Across a comprehensive experimental program—including validation,
+semantic threshold analysis, robustness surface mapping, and high-noise
+escalation—we observe no catastrophic governance failure. Instead, the
+system exhibits <strong>bounded degradation of authority
+availability</strong> with respect to constitutional survivability:
+authority uptime decreases smoothly as noise increases, lapses remain
+bounded, and recovery persists. A time-based constitutional recovery
+mechanism synchronizes recovery events and prevents semantic failure
+from becoming absorbing.</p>
+<p>The results show that <strong>robustness is dominated by the baseline
+probability of semantic success (“semantic headroom”), rather than by
+the magnitude of epistemic noise</strong>, even at corruption rates
+exceeding fifty percent. Random, unstructured epistemic unreliability
+alone is insufficient to induce governance collapse in this
+architecture. These findings reframe alignment risk: catastrophic
+governance failure requires <em>structured</em> epistemic interference,
+not merely scale.</p>
+<h2 id="introduction">1. Introduction</h2>
+<p>Governance systems—whether institutional, computational, or
+hybrid—are commonly assumed to depend critically on epistemic
+reliability. If a system cannot reliably evaluate meaning, correctness,
+or obligation, the prevailing intuition is that authority will either
+fail outright or become dangerously unconstrained. This intuition
+underlies many alignment approaches that emphasize increasingly precise
+evaluation, tighter reward shaping, or continual optimization against
+semantic metrics.</p>
+<p>The Axionic Agency framework questions this assumption. Rather than
+asking how to optimize agents to act correctly, it asks whether
+<strong>governance itself can remain coherent under failure</strong>,
+including epistemic failure. In this view, governance is not primarily
+about achieving optimal outcomes, but about preserving legitimate
+authority, evaluability, and recoverability over time.</p>
+<p>This paper examines a constitutional governance architecture that
+makes a sharp separation between <strong>semantics</strong> and
+<strong>authority</strong>. Semantic evaluation exists, but it does not
+directly control action, reward, or adaptation. Instead, semantic
+outcomes constrain <em>eligibility</em> at discrete transition points.
+Failure is recorded, not corrected; recovery occurs through time, not
+learning.</p>
+<p>We introduce a minimal adversarial stressor: epistemic noise applied
+after semantic evaluation but before eligibility logic consumes the
+result. The stressor is deliberately weak—random, independent,
+non-adaptive—chosen not for realism but for falsification. If even this
+form of unreliability causes collapse, stronger adversaries need not be
+considered.</p>
+<p>The central question is therefore narrow but foundational:</p>
+<blockquote>
+<p>Can a constitutional governance system tolerate epistemic
+unreliability without collapsing or converting semantics into a control
+signal?</p>
+</blockquote>
+<h2 id="constitutional-governance-architecture">2. Constitutional
+Governance Architecture</h2>
+<h3 id="authority-eligibility-and-succession">2.1 Authority,
+Eligibility, and Succession</h3>
+<p>The governance system under study operates via <strong>authority
+leases</strong>. At any given time, a single authority holder may act
+within the system. Authority is temporary: leases expire, and succession
+must occur.</p>
+<p>Succession is constrained by <strong>eligibility</strong>. Each
+candidate policy identity accumulates a semantic failure streak. If the
+streak exceeds a fixed threshold, the policy becomes ineligible to
+assume authority. Eligibility is evaluated only at succession
+boundaries; semantic outcomes do not directly affect ongoing
+authority.</p>
+<p>This design ensures that semantic evaluation constrains <em>who may
+govern</em>, not <em>how governance is exercised</em>.</p>
+<h3 id="lapse-as-a-constitutional-state">2.2 Lapse as a Constitutional
+State</h3>
+<p>If no eligible candidates exist at a succession boundary, the system
+enters a <strong>lapse</strong> state in which no authority is active.
+This state is constitutional rather than exceptional. Time continues to
+advance, but no agent acts.</p>
+<p>Lapse prevents unauthorized or illegitimate action, but it does
+<strong>not</strong> imply operational success. In many domains, absence
+of authority is itself harmful. Accordingly, this paper distinguishes
+<strong>constitutional survivability</strong> (the governance loop
+remains coherent and recoverable) from <strong>operational
+utility</strong> (the governed system performs its intended task). The
+experiments evaluate the former, not the latter.</p>
+<h3 id="semantic-evaluation-without-optimization">2.3 Semantic
+Evaluation Without Optimization</h3>
+<p>Semantic evaluation consists of verifying a fixed set of commitments.
+Each evaluation epoch ends with a binary result: pass if all commitments
+are satisfied, fail otherwise. This result updates a kernel-owned
+failure streak for the active policy identity.</p>
+<p>Crucially:</p>
+<ul>
+<li>Semantic outcomes do not influence rewards or resource
+allocation.</li>
+<li>There is no adaptive mechanism that attempts to improve semantic
+performance.</li>
+<li>Failure is recorded, not corrected.</li>
+</ul>
+<p>Semantics function purely as a <strong>constraint on
+eligibility</strong>, not as a control signal.</p>
+<h3 id="time-based-recovery">2.4 Time-Based Recovery</h3>
+<p>Recovery from lapse is governed by a time-only mechanism. While in
+lapse, semantic failure streaks decay deterministically at fixed
+intervals. No semantic evaluation occurs, and no agent action is
+possible. When sufficient time has passed, previously ineligible
+policies may regain eligibility, allowing authority to resume.</p>
+<p>This recovery mechanism does not reward improvement or competence. It
+answers a single question: <em>Can eligibility reopen simply because
+time passed?</em></p>
+<h2 id="epistemic-noise-model">3. Epistemic Noise Model</h2>
+<h3 id="design-goals">3.1 Design Goals</h3>
+<p>The epistemic stressor introduced in this study is designed to
+be:</p>
+<ul>
+<li><strong>Additive</strong>: it does not modify constitutional
+logic</li>
+<li><strong>Post-verification</strong>: it corrupts results, not
+inputs</li>
+<li><strong>Deterministic</strong>: outcomes are reproducible given a
+seed</li>
+<li><strong>Independent</strong>: no correlation across commitments or
+time</li>
+<li><strong>Non-adaptive</strong>: no dependence on agent behavior</li>
+</ul>
+<p>This is the weakest meaningful adversary. It does not model
+deception, correlation, or strategic targeting. Robustness to this
+adversary is a necessary but not sufficient condition for robustness to
+stronger attacks.</p>
+<h3 id="noise-application">3.2 Noise Application</h3>
+<p>At the end of each evaluation epoch, each individual commitment
+result may be flipped with a fixed probability. Flips are applied
+independently to each commitment. The final semantic outcome is computed
+from the corrupted results and passed to the eligibility logic.</p>
+<p>No corruption occurs during lapse, as no evaluation takes place.</p>
+<h2 id="experimental-program">4. Experimental Program</h2>
+<p>We evaluate epistemic noise tolerance through a staged experimental
+program designed to progressively stress the governance architecture
+while holding constitutional mechanics fixed. All experiments are run
+for 200 governance epochs per seed, using five independent seeds per
+configuration.</p>
+<h3 id="mechanism-validation">4.1 Mechanism Validation</h3>
+<p>We first verify that epistemic noise is strictly additive:</p>
+<ul>
+<li>When noise is disabled, behavior matches baseline exactly.</li>
+<li>When enabled, corrupted semantic outcomes causally alter failure
+streaks and eligibility decisions.</li>
+<li>No noise is applied during lapse; time continues to advance.</li>
+</ul>
+<p>This establishes causal integrity.</p>
+<h3 id="semantic-baseline-threshold-analysis">4.2 Semantic Baseline
+Threshold Analysis</h3>
+<p>We fix epistemic noise at 10% and vary the baseline probability that
+semantic commitments pass. To isolate semantic headroom independently of
+agent behavior, we employ a deterministic probabilistic oracle in a test
+harness, leaving the governance kernel unchanged.</p>
+<h3 id="robustness-surface-mapping">4.3 Robustness Surface Mapping</h3>
+<p>We map the two-dimensional surface defined by semantic baseline and
+noise intensity (0–20%), identifying phase boundaries between
+zero-lapse, intermittent-lapse, and high-lapse regimes.</p>
+<h3 id="high-noise-escalation">4.4 High-Noise Escalation</h3>
+<p>Finally, we escalate noise intensity to extreme levels (30–60%) at a
+marginal semantic baseline to explicitly attempt to induce persistent
+denial-of-service.</p>
+<h2 id="results">5. Results</h2>
+<h3 id="semantic-baseline-threshold">5.1 Semantic Baseline
+Threshold</h3>
+<p>At fixed 10% epistemic noise, governance behavior depends sharply on
+baseline semantic success.</p>
+<p><strong>Table 1 — Semantic Baseline Sensitivity (10%
+noise)</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>SEM_PASS baseline</th>
+<th>Mean uptime</th>
+<th>Mean lapse epochs</th>
+<th>Regime</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>≈ 0.12</td>
+<td>80.5%</td>
+<td>39.2</td>
+<td>ROBUST</td>
+</tr>
+<tr class="even">
+<td>≈ 0.34</td>
+<td>88.3%</td>
+<td>23.6</td>
+<td>ROBUST</td>
+</tr>
+<tr class="odd">
+<td>≈ 0.51</td>
+<td>99.5%</td>
+<td>1.0</td>
+<td>ROBUST</td>
+</tr>
+<tr class="even">
+<td>≥ 0.61</td>
+<td>100%</td>
+<td>0.0</td>
+<td>ROBUST</td>
+</tr>
+</tbody>
+</table>
+<p>A clear threshold emerges between approximately <strong>50–60%
+semantic success</strong>. Below this range, lapses are frequent even
+without extreme noise. Above it, the system absorbs noise with
+negligible loss of uptime.</p>
+<h3 id="robustness-surface-semantic-baseline-noise">5.2 Robustness
+Surface (Semantic Baseline × Noise)</h3>
+<p>Across 125 runs (5 baselines × 5 noise levels × 5 seeds), no
+persistent failure regimes were observed.</p>
+<p><strong>Table 2 — Authority Uptime (%) Across Robustness
+Surface</strong></p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 53%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Semantic baseline → / Noise ↓</th>
+<th>0%</th>
+<th>5%</th>
+<th>10%</th>
+<th>15%</th>
+<th>20%</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>≈ 0.22</td>
+<td>84.7</td>
+<td>84.0</td>
+<td>85.4</td>
+<td>85.3</td>
+<td>86.2</td>
+</tr>
+<tr class="even">
+<td>≈ 0.34</td>
+<td>95.5</td>
+<td>92.8</td>
+<td>88.3</td>
+<td>89.2</td>
+<td>89.2</td>
+</tr>
+<tr class="odd">
+<td>≈ 0.51</td>
+<td>100.0</td>
+<td>99.9</td>
+<td>99.5</td>
+<td>98.5</td>
+<td>97.0</td>
+</tr>
+<tr class="even">
+<td>≈ 0.61</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>99.9</td>
+<td>99.8</td>
+</tr>
+<tr class="odd">
+<td>≈ 0.73</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+<td>100.0</td>
+</tr>
+</tbody>
+</table>
+<p>Degradation is smooth and monotonic with increasing noise at fixed
+semantic baseline. No configuration enters a degraded or
+denial-of-service regime.</p>
+<h3 id="high-noise-escalation-1">5.3 High-Noise Escalation</h3>
+<p>At a marginal semantic baseline (SEM_PASS ≈ 0.51), noise intensity is
+increased to extreme levels.</p>
+<p><strong>Table 3 — High-Noise Stress Test (SEM ≈ 0.51)</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Noise level</th>
+<th>Mean uptime</th>
+<th>Max single lapse (epochs)</th>
+<th>Regime</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>30%</td>
+<td>90.3%</td>
+<td>10</td>
+<td>ROBUST</td>
+</tr>
+<tr class="even">
+<td>40%</td>
+<td>83.6%</td>
+<td>12</td>
+<td>ROBUST</td>
+</tr>
+<tr class="odd">
+<td>50%</td>
+<td>80.9%</td>
+<td>15</td>
+<td>ROBUST</td>
+</tr>
+<tr class="even">
+<td>60%</td>
+<td>77.5%</td>
+<td>20</td>
+<td>ROBUST</td>
+</tr>
+</tbody>
+</table>
+<p>The predefined denial-of-service threshold (single lapse &gt; 50
+epochs) is never crossed.</p>
+<h3 id="noise-saturation-and-flip-collision">5.4 Noise Saturation and
+Flip Collision</h3>
+<p>As noise increases, the marginal impact of additional corruption
+diminishes.</p>
+<p><strong>Table 4 — Pivotal Flip Rates</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Noise level</th>
+<th>Observed flip rate</th>
+<th>Pivotal rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>30%</td>
+<td>30.4%</td>
+<td>42%</td>
+</tr>
+<tr class="even">
+<td>40%</td>
+<td>41.3%</td>
+<td>37%</td>
+</tr>
+<tr class="odd">
+<td>50%</td>
+<td>50.3%</td>
+<td>33%</td>
+</tr>
+<tr class="even">
+<td>60%</td>
+<td>59.7%</td>
+<td>29%</td>
+</tr>
+</tbody>
+</table>
+<p>Many flips occur on already-flipped or non-pivotal commitments. This
+<strong>flip collision</strong> effect explains the sub-linear
+degradation at high noise.</p>
+<h3 id="temporal-recovery-structure">5.5 Temporal Recovery
+Structure</h3>
+<p>Across all non-failure conditions, lapse durations cluster strongly
+around multiples of the recovery interval.</p>
+<p><strong>Table 5 — Lapse Duration Modulo Recovery
+Interval</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Total lapse events</td>
+<td>159</td>
+</tr>
+<tr class="even">
+<td>Within ±1 epoch of recovery multiple</td>
+<td>66–73%</td>
+</tr>
+</tbody>
+</table>
+<p>Recovery is synchronized to the constitutional clock rather than
+randomly distributed in time.</p>
+<h2 id="interpretation">6. Interpretation</h2>
+<p>The experiments support a counterintuitive conclusion:
+<strong>epistemic unreliability alone does not necessarily destroy
+governance</strong>.</p>
+<p>Random noise lacks the structure required to concentrate harm. It
+disperses error across time and commitments, allowing recovery
+mechanisms to operate. Time-based eligibility decay converts failure
+from an absorbing state into a transient one.</p>
+<p>This does not imply that governance is safe from all epistemic
+attacks. Rather, it suggests that catastrophic failure requires
+<em>structure</em>: correlation, targeting, or manipulation of
+aggregation points. Magnitude alone is insufficient.</p>
+<h3 id="non-adaptive-limit-cycles">6.1 Non-Adaptive Limit Cycles</h3>
+<p>The architecture studied here is deliberately non-adaptive. It does
+not learn from semantic failure or improve capability. Consequently, in
+regimes where semantic failure is systematic rather than stochastic, the
+system may enter a limit cycle: authority is granted, fails quickly,
+lapses, and later re-granted.</p>
+<p>This behavior should not be interpreted as success. It reflects a
+design choice: to preserve constitutional integrity without embedding
+optimization pressure. The system remains evaluable and recoverable, but
+not necessarily effective. Whether such “thrashing” is acceptable
+depends on the application domain.</p>
+<h2 id="limitations">7. Limitations</h2>
+<p>This study intentionally restricts its scope.</p>
+<p>It does not examine:</p>
+<ul>
+<li>Correlated or adversarial noise</li>
+<li>Corruption of aggregation rather than evidence</li>
+<li>Adaptive attackers</li>
+<li>Variations in eligibility thresholds or recovery intervals</li>
+<li>Longer time horizons</li>
+</ul>
+<p>These define the boundary of the present claims.</p>
+<h2 id="conclusion">8. Conclusion</h2>
+<p>We have tested a constitutional governance system under extensive
+epistemic stress without modifying its core mechanics. Across a wide
+range of conditions, including extreme noise, the system exhibits
+bounded degradation of authority availability, bounded lapses, and
+persistent recovery synchronized to a constitutional clock.</p>
+<p>The central result is negative but informative:</p>
+<blockquote>
+<p><strong>Independent, unstructured epistemic unreliability is
+insufficient to induce catastrophic governance failure in this
+architecture.</strong></p>
+</blockquote>
+<p>This reframes the alignment problem. The threat is not noise itself,
+but the structure of epistemic interference.</p>
+<h2 id="future-directions">9. Future Directions</h2>
+<p>Future work will examine:</p>
+<ul>
+<li>Corruption of aggregation points rather than individual
+commitments</li>
+<li>Correlated and adversarial noise models</li>
+<li>Sensitivity to constitutional parameters</li>
+</ul>
+<p>These introduce new mechanisms and lie beyond the scope of the
+present study.</p>
+
+    </article>
+</body>
+</html>
