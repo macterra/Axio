@@ -61,6 +61,16 @@ from toy_aki.als.generator import (
     V052_ATTACK_WEIGHTS,
 )
 
+# RSA stress layer (optional, additive)
+try:
+    from toy_aki.rsa import RSAConfig, RSAAdversary, RSATelemetry
+    RSA_AVAILABLE = True
+except ImportError:
+    RSA_AVAILABLE = False
+    RSAConfig = None  # type: ignore
+    RSAAdversary = None  # type: ignore
+    RSATelemetry = None  # type: ignore
+
 
 class ALSStopReason(Enum):
     """Reasons for ALS run termination."""
@@ -4704,6 +4714,9 @@ class ALSRunResultV080:
     recovery_events: List[Dict] = field(default_factory=list)
     lapse_events_v080: List[Dict] = field(default_factory=list)
 
+    # RSA telemetry (optional, None if RSA disabled)
+    rsa: Optional[Dict] = None
+
     def to_dict(self) -> Dict[str, Any]:
         result = {
             "run_id": self.run_id,
@@ -4807,6 +4820,7 @@ class ALSHarnessV080(ALSHarnessV070):
         seed: int = 42,
         config: Optional[ALSConfigV080] = None,
         verbose: bool = False,
+        rsa_config: Optional["RSAConfig"] = None,
     ):
         """
         Initialize v0.8 harness.
@@ -4815,6 +4829,7 @@ class ALSHarnessV080(ALSHarnessV070):
             seed: Random seed for reproducibility
             config: Run configuration
             verbose: Enable verbose logging
+            rsa_config: Optional RSA stress layer configuration (default: None = disabled)
         """
         # Initialize parent (V070)
         super().__init__(seed=seed, config=config or ALSConfigV080(), verbose=verbose)
@@ -4845,6 +4860,109 @@ class ALSHarnessV080(ALSHarnessV070):
         self._total_streak_decay_applied: int = 0
         self._aggregate_streak_before_amnesty: int = 0
         self._aggregate_streak_after_amnesty: int = 0
+
+        # RSA stress layer (optional; disabled by default)
+        self._rsa_config = rsa_config
+        self._rsa_adversary = None
+        self._rsa_telemetry = None
+        if RSA_AVAILABLE and rsa_config is not None and rsa_config.rsa_enabled:
+            self._rsa_adversary = RSAAdversary.from_config(rsa_config, seed)
+            self._rsa_telemetry = RSATelemetry(
+                enabled=rsa_config.rsa_enabled,
+                noise_model=rsa_config.rsa_noise_model.value,
+                scope=rsa_config.rsa_scope.value,
+                p_flip_ppm=rsa_config.rsa_p_flip_ppm,
+                rng_stream=rsa_config.rsa_rng_stream,
+                seed_rsa=self._rsa_adversary.seed_rsa if self._rsa_adversary else 0,
+            )
+
+    def _compute_global_epoch(self) -> int:
+        """Compute global epoch index from current cycle.
+
+        Unlike self._epoch_index which resets per-authority, this provides
+        a monotonically increasing epoch counter for RSA hash input.
+        """
+        return self._cycle // self._config.renewal_check_interval
+
+    def _update_streak_at_epoch_end(self) -> None:
+        """
+        Update semantic failure streak at epoch end (v0.8 override with RSA hook).
+
+        Per spec §6.2:
+        - Only updates for active authority holder
+        - No updates during NULL_AUTHORITY (handled in main loop)
+
+        RSA v0.1 hook:
+        - Corrupt verifier booleans after evaluation, before streak logic
+        - Uses global epoch (not per-authority) for deterministic hash input
+        - Lapse epochs are recorded separately in the main loop
+        """
+        # Compute global epoch for RSA (never resets, unlike self._epoch_index)
+        global_epoch = self._compute_global_epoch()
+
+        # Note: This method is NOT called during NULL_AUTHORITY.
+        # Lapse epoch recording is handled in the main loop.
+
+        if self._active_policy_id is None:
+            # No active authority holder
+            return
+
+        policy_id = self._active_policy_id
+        streak_before = self._get_policy_streak(policy_id)
+
+        # Compute raw verifier outcomes (AKI logic unchanged)
+        c0_ok_raw, c1_ok_raw, c2_ok_raw, sem_pass_raw = self._compute_sem_pass()
+
+        # RSA hook: corrupt booleans if RSA is active
+        if self._rsa_adversary is not None and self._rsa_telemetry is not None:
+            c0_ok, c1_ok, c2_ok, sem_pass, rsa_record = self._rsa_adversary.corrupt(
+                epoch=global_epoch,  # Use global epoch, not per-authority epoch
+                c0_raw=c0_ok_raw,
+                c1_raw=c1_ok_raw,
+                c2_raw=c2_ok_raw,
+                sem_pass_raw=sem_pass_raw,
+            )
+            self._rsa_telemetry.record_epoch(rsa_record)
+        else:
+            # No RSA: use raw values
+            c0_ok, c1_ok, c2_ok, sem_pass = c0_ok_raw, c1_ok_raw, c2_ok_raw, sem_pass_raw
+
+        # Continue with standard streak update logic (unchanged from v0.7)
+        if sem_pass:
+            # Reset streak on pass
+            # Check for sawtooth pattern: was at K-1 before passing
+            if streak_before == self._config.eligibility_threshold_k - 1:
+                self._sawtooth_count += 1
+            self._semantic_fail_streak[policy_id] = 0
+            streak_after = 0
+        else:
+            # Increment streak on fail
+            self._semantic_fail_streak[policy_id] = streak_before + 1
+            streak_after = streak_before + 1
+
+        # Track ineligible-in-office time
+        if streak_after >= self._config.eligibility_threshold_k:
+            self._ineligible_in_office_cycles += 1
+
+        # Record semantic epoch
+        self._semantic_epoch_records.append(SemanticEpochRecord(
+            epoch=self._epoch_index,
+            cycle=self._cycle,
+            active_policy_id=policy_id,
+            c0_ok=c0_ok,
+            c1_ok=c1_ok,
+            c2_ok=c2_ok,
+            sem_pass=sem_pass,
+            streak_before=streak_before,
+            streak_after=streak_after,
+        ))
+
+        if self._verbose:
+            status = "PASS" if sem_pass else "FAIL"
+            rsa_tag = " [RSA]" if (self._rsa_adversary and sem_pass != sem_pass_raw) else ""
+            print(f"    [Epoch {self._epoch_index}] SEM_{status}{rsa_tag}: "
+                  f"C0={c0_ok}, C1={c1_ok}, C2={c2_ok} | "
+                  f"streak[{policy_id}]: {streak_before} → {streak_after}")
 
     def _compute_aggregate_streak_mass(self) -> int:
         """Compute sum of all policy streaks."""
@@ -5164,6 +5282,12 @@ class ALSHarnessV080(ALSHarnessV070):
                     self._epoch_index += 1
                     self._lapse_epoch_count += 1
 
+                    # RSA: record lapse epoch (no commitment evaluation, 0 targets)
+                    if self._rsa_adversary is not None and self._rsa_telemetry is not None:
+                        global_epoch = self._compute_global_epoch()
+                        record = self._rsa_adversary.create_lapse_epoch_record(global_epoch)
+                        self._rsa_telemetry.record_epoch(record)
+
                     # TTL clocks advance (commitment evaluation is suspended)
                     # Commitments with expired TTL will be evaluated on recovery
 
@@ -5433,6 +5557,8 @@ class ALSHarnessV080(ALSHarnessV070):
             amnesty_events=[e.to_dict() for e in self._amnesty_events],
             recovery_events=[e.to_dict() for e in self._recovery_events],
             lapse_events_v080=[e.to_dict() for e in self._lapse_events_v080],
+            # RSA telemetry (None if RSA disabled)
+            rsa=self._rsa_telemetry.to_dict() if self._rsa_telemetry else None,
             duration_ms=duration,
         )
 
@@ -5446,6 +5572,10 @@ class ALSHarnessV080(ALSHarnessV070):
             print(f"  Recovery count: {result.recovery_count}")
             print(f"  Semantic lapses: {result.semantic_lapse_count}")
             print(f"  Structural lapses: {result.structural_lapse_count}")
+            if self._rsa_telemetry:
+                summary = self._rsa_telemetry.summarize()
+                print(f"  RSA: {summary.total_flips} flips / {summary.total_targets} targets "
+                      f"({summary.observed_flip_rate_ppm} PPM observed vs {summary.expected_flip_rate_ppm} PPM expected)")
             print(f"  Stop: {result.stop_reason.name}")
 
         return result
