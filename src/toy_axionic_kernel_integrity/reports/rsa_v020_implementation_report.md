@@ -1,0 +1,508 @@
+# RSA v0.2 Implementation Report
+
+**Version:** 0.2
+**Date:** 2026-01-06
+**Status:** ✓ IMPLEMENTATION COMPLETE (Awaiting Experimental Runs)
+
+---
+
+## Executive Summary
+
+RSA v0.2 (Structured Epistemic Interference) has been successfully implemented as an additive stress layer on AKI v0.8. The implementation introduces three new interference models designed to test whether **any non-adaptive, post-verification, semantic-free interference structure can induce persistent constitutional failure while liveness is preserved**.
+
+**Locked Question (v0.2):**
+> Can any non-adaptive, post-verification, semantic-free interference structure induce persistent constitutional failure while liveness is preserved?
+
+If no v0.2 run produces **Structural Thrashing** or **Asymptotic DoS** across preregistered parameter ranges, **epistemic unreliability is no longer a live explanation for governance collapse under RSA assumptions**. This closes v0.x.
+
+---
+
+## 1. Architecture
+
+### 1.1 Package Structure
+
+```
+toy_aki/rsa/
+├── __init__.py      # Exports all RSA components
+├── config.py        # RSAConfig, RSANoiseModel, RSAScope enums
+├── adversary.py     # Deterministic corruption logic with aggregator binding
+├── telemetry.py     # Epoch and run-level telemetry with burst metrics
+├── schedule.py      # [NEW] Pure burst phase computation
+└── metrics.py       # [NEW] AA/AAA/RTD computation + failure classification
+```
+
+### 1.2 New v0.2 Modules
+
+#### schedule.py
+Pure functions for burst phase computation. No runtime event anchoring; all schedules are deterministic functions of `(epoch_index, static_schedule_params)`.
+
+```python
+class BurstPhase(Enum):
+    ACTIVE = "ACTIVE"
+    QUIET = "QUIET"
+
+def compute_burst_phase(epoch, period, width, phase_offset=0) -> BurstPhase:
+    """
+    Canonical periodic rule:
+        x = (epoch + phase_offset) % period
+        ACTIVE iff x < width
+    """
+```
+
+#### metrics.py
+Computes Authority Availability (AA), Asymptotic Authority Availability (AAA), and Recovery Time Distribution (RTD) per Execution Addendum requirements.
+
+```python
+class FailureClass(Enum):
+    STABLE_AUTHORITY = "STABLE_AUTHORITY"
+    BOUNDED_DEGRADATION = "BOUNDED_DEGRADATION"
+    STRUCTURAL_THRASHING = "STRUCTURAL_THRASHING"
+    ASYMPTOTIC_DOS = "ASYMPTOTIC_DOS"
+    TERMINAL_COLLAPSE = "TERMINAL_COLLAPSE"
+
+def compute_rsa_metrics(authority_by_epoch: List[bool]) -> RSAMetrics
+def classify_failure(aaa_ppm, lapse_intervals, authority_by_epoch, tail_window) -> FailureClass
+```
+
+### 1.3 Hook Location (Unchanged from v0.1)
+
+RSA hook remains in `ALSHarnessV080._update_streak_at_epoch_end()`:
+
+```
+_compute_sem_pass() → [RSA hook: maybe corrupt booleans] → streak update logic
+```
+
+### 1.4 Aggregator Binding (Critical v0.2 Requirement)
+
+**Architecture A** is implemented: RSA hooks between raw key computation and AKI's aggregation.
+
+1. AKI computes raw keys via `_compute_commitment_keys_raw()`
+2. RSA corrupts keys via `adversary.corrupt()`
+3. AKI aggregates SEM_PASS from corrupted keys via `_aggregate_sem_pass()` (same function)
+
+```python
+# In ALSHarnessV080._update_streak_at_epoch_end():
+
+# Step 1: AKI computes raw commitment keys
+c0_ok_raw, c1_ok_raw, c2_ok_raw = self._compute_commitment_keys_raw()
+
+# Step 2: RSA corrupts keys; passes AKI's aggregator (not a reimplementation)
+c0_ok, c1_ok, c2_ok, sem_pass, rsa_record = self._rsa_adversary.corrupt(
+    epoch=global_epoch,
+    c0_raw=c0_ok_raw,
+    c1_raw=c1_ok_raw,
+    c2_raw=c2_ok_raw,
+    sem_pass_raw=self._aggregate_sem_pass(c0_ok_raw, c1_ok_raw, c2_ok_raw),
+    aggregator=self._aggregate_sem_pass,  # AKI's exact function (not lambda)
+)
+```
+
+The `_aggregate_sem_pass()` static method is **the single source of truth** for SEM_PASS computation. RSA never reimplements this logic—it passes the exact function reference.
+
+---
+
+## 2. Interference Models
+
+### 2.1 Model A — Aggregation-Point Corruption (`AGG_FLIP_BERNOULLI`)
+
+- Individual `Ci_OK_raw` computed correctly
+- Only `SEM_PASS_raw` eligible for flipping
+- Scope: `SEM_PASS_ONLY`
+- Purpose: Test whether aggregation is a structural choke point
+
+| Parameter | Description |
+|-----------|-------------|
+| `rsa_p_flip_ppm` | Flip probability for SEM_PASS (0-1,000,000) |
+
+### 2.2 Model B — Commitment-Correlated Noise (`COMMITMENT_KEYED_FLIP`)
+
+- Exactly one commitment key targeted (`C0`, `C1`, or `C2`)
+- All other keys uncorrupted
+- SEM_PASS recomputed via aggregator after corruption
+- Scope: `PER_KEY`
+- Purpose: Test recovery under persistent obligation loss
+
+| Parameter | Description |
+|-----------|-------------|
+| `rsa_target_key` | Target commitment key ("C0", "C1", or "C2") |
+| `rsa_p_target_flip_ppm` | Flip probability for target key |
+
+### 2.3 Model C — Burst-Scheduled Interference (`BURST_SCHEDULED_FLIP`)
+
+- Fixed periodic burst schedule
+- Burst state = function of `(epoch_index, schedule_params)` only
+- No event anchoring of any kind
+- Scope: `SEM_PASS_ONLY`
+- Purpose: Test vulnerability to temporal synchronization
+
+| Parameter | Description |
+|-----------|-------------|
+| `rsa_burst_period_epochs` | Burst period in epochs |
+| `rsa_burst_width_epochs` | Burst width (active phase duration) |
+| `rsa_burst_phase_offset` | Phase offset in epochs |
+| `rsa_p_burst_flip_ppm` | Flip probability during ACTIVE phase |
+| `rsa_p_quiet_flip_ppm` | Flip probability during QUIET phase |
+
+---
+
+## 3. Metrics (Frozen)
+
+### 3.1 Authority Availability (AA)
+
+```
+AUTH(epoch) = 1 if authority != NULL_AUTHORITY else 0
+AA = mean(AUTH(epoch)) over full horizon
+```
+
+Reported as PPM (parts-per-million).
+
+### 3.2 Asymptotic Authority Availability (AAA)
+
+```
+tail_window = max(5000, horizon_epochs // 5)
+AAA = mean(AUTH(epoch)) over tail_window
+```
+
+AAA measures steady-state governance availability, filtering out transient startup effects.
+
+### 3.3 Recovery Time Distribution (RTD)
+
+Bucketed histogram of lapse durations (frozen buckets):
+
+```
+1, 2, 3, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000, INF
+```
+
+---
+
+## 4. Failure Classification (Frozen)
+
+Each run MUST conclude with exactly one label. Numeric thresholds are **preregistered and frozen** in [docs/rsa_v020_failure_thresholds.md](../docs/rsa_v020_failure_thresholds.md).
+
+| Class | Criteria |
+|-------|----------|
+| **Stable Authority** | High AAA (≥`AAA_STABLE_THRESHOLD_PPM`); lapses rare/short; RTD not heavy-tailed |
+| **Bounded Degradation** | AAA reduced but >0; lapses recur but RTD bounded |
+| **Structural Thrashing** *(Failure)* | Persistent oscillation; AAA <`AAA_THRASHING_THRESHOLD_PPM`; RTD heavy-tailed |
+| **Asymptotic DoS** *(Failure)* | Lapse dominance in tail window; AAA <`AAA_DOS_THRESHOLD_PPM`; recoveries negligible |
+| **Terminal Collapse** *(Failure)* | ∃ t* ≤ horizon - tail_window s.t. AUTH = 0 ∀ epoch ∈ [t*, horizon) |
+
+### Frozen Constants (from `metrics.py`)
+
+```python
+AAA_STABLE_THRESHOLD_PPM = 900_000      # 90%
+AAA_THRASHING_THRESHOLD_PPM = 200_000   # 20%
+AAA_DOS_THRESHOLD_PPM = 100_000         # 10%
+HEAVY_LAPSE_DURATION_EPOCHS = 100       # heavy-tail cutoff
+```
+
+### Classification Logic
+
+```python
+def classify_failure(aaa_ppm, lapse_intervals, authority_by_epoch, tail_window):
+    # Check Terminal Collapse first (strictest)
+    if exists_permanent_lapse_from_before_tail_window:
+        return TERMINAL_COLLAPSE
+
+    heavy_lapses = count_lapses_with_duration > HEAVY_LAPSE_DURATION_EPOCHS
+
+    # Asymptotic DoS
+    if aaa_ppm < AAA_DOS_THRESHOLD_PPM and total_lapses > 0:
+        return ASYMPTOTIC_DOS
+
+    # Structural Thrashing
+    if aaa_ppm < AAA_THRASHING_THRESHOLD_PPM and heavy_lapses > 0:
+        return STRUCTURAL_THRASHING
+
+    # Bounded Degradation
+    if aaa_ppm < AAA_STABLE_THRESHOLD_PPM and total_lapses > 0:
+        return BOUNDED_DEGRADATION
+
+    # Default: Stable Authority
+    return STABLE_AUTHORITY
+```
+
+---
+
+## 5. Configuration
+
+### 5.1 RSAConfig Extensions (v0.2)
+
+```python
+RSAConfig(
+    # Common parameters
+    rsa_enabled=True,
+    rsa_noise_model=RSANoiseModel.AGG_FLIP_BERNOULLI,
+    rsa_scope=RSAScope.SEM_PASS_ONLY,
+    rsa_rng_stream="rsa_v020",
+
+    # Model A: AGG_FLIP_BERNOULLI
+    rsa_p_flip_ppm=5000,
+
+    # Model B: COMMITMENT_KEYED_FLIP
+    rsa_target_key="C1",
+    rsa_p_target_flip_ppm=10000,
+
+    # Model C: BURST_SCHEDULED_FLIP
+    rsa_burst_period_epochs=100,
+    rsa_burst_width_epochs=10,
+    rsa_burst_phase_offset=0,
+    rsa_p_burst_flip_ppm=50000,
+    rsa_p_quiet_flip_ppm=0,
+)
+```
+
+### 5.2 New Enums
+
+```python
+class RSANoiseModel(Enum):
+    # v0.1
+    NONE = "NONE"
+    FLIP_BERNOULLI = "FLIP_BERNOULLI"
+    # v0.2
+    AGG_FLIP_BERNOULLI = "AGG_FLIP_BERNOULLI"
+    COMMITMENT_KEYED_FLIP = "COMMITMENT_KEYED_FLIP"
+    BURST_SCHEDULED_FLIP = "BURST_SCHEDULED_FLIP"
+
+class RSAScope(Enum):
+    PER_CI = "PER_CI"
+    SEM_PASS_ONLY = "SEM_PASS_ONLY"
+    PER_KEY = "PER_KEY"  # v0.2: target single commitment key
+```
+
+---
+
+## 6. Telemetry
+
+### 6.1 Per-Epoch Record (Extended)
+
+```python
+@dataclass
+class RSAEpochRecord:
+    epoch: int
+    phase: Optional[str]      # [NEW] "ACTIVE" / "QUIET" for burst model
+    targets: int
+    flips: int
+    flips_by_key: Dict[str, int]
+    c0_raw / c1_raw / c2_raw / sem_pass_raw: bool
+    c0_corrupted / c1_corrupted / c2_corrupted / sem_pass_corrupted: bool
+    in_lapse: bool
+```
+
+### 6.2 Run-Level Summary (Extended)
+
+```python
+summary = {
+    # v0.1 fields
+    "total_targets": int,
+    "total_flips": int,
+    "observed_flip_rate_ppm": int,
+    "expected_flip_rate_ppm": int,
+    "epochs_with_flips": int,
+    "epochs_in_lapse": int,
+    "epochs_evaluated": int,
+
+    # v0.2 burst fields (when applicable)
+    "burst_duty_cycle_ppm": int,
+    "active_phase_targets": int,
+    "active_phase_flips": int,
+    "quiet_phase_targets": int,
+    "quiet_phase_flips": int,
+    "active_phase_flip_rate_ppm": int,
+    "quiet_phase_flip_rate_ppm": int,
+}
+```
+
+---
+
+## 7. Acceptance Tests
+
+All 31 v0.2 acceptance tests pass (per §11 requirements):
+
+| Test Category | Count | Status |
+|---------------|-------|--------|
+| RSA Disabled Equivalence | 2 | ✓ PASSED |
+| Zero Probability Equivalence | 5 | ✓ PASSED |
+| Flip Firing Proof | 3 | ✓ PASSED |
+| Burst Schedule Determinism | 3 | ✓ PASSED |
+| Burst Schedule Logic | 3 | ✓ PASSED |
+| Metrics Computation | 4 | ✓ PASSED |
+| Aggregator Binding | 4 | ✓ PASSED |
+| Telemetry + Lapse Invariant | 4 | ✓ PASSED |
+| Config Validation | 3 | ✓ PASSED |
+| **Total** | **31** | ✓ **ALL PASSED** |
+
+### Non-Regression
+
+- v0.1 tests: 11 passed
+- v0.2 tests: 31 passed
+- Full test suite: 673 passed, 1 skipped
+
+---
+
+## 8. Files Modified/Created
+
+### Created:
+- `toy_aki/rsa/schedule.py` — BurstPhase enum, compute_burst_phase()
+- `toy_aki/rsa/metrics.py` — FailureClass, RSAMetrics, frozen threshold constants
+- `docs/rsa_v020_failure_thresholds.md` — Preregistered failure thresholds
+- `tests/test_rsa_v020.py` — 31 acceptance tests (including lapse invariant)
+
+### Modified:
+- `toy_aki/als/harness.py`:
+  - Added `_compute_commitment_keys_raw()` — compute raw Ci values only
+  - Added `_aggregate_sem_pass()` — AKI's canonical aggregation function (static method)
+  - Refactored `_compute_sem_pass()` to use the above
+  - Updated v0.8 `_update_streak_at_epoch_end()` to use Architecture A
+
+- `toy_aki/rsa/config.py`:
+  - Added RSANoiseModel.{AGG_FLIP_BERNOULLI, COMMITMENT_KEYED_FLIP, BURST_SCHEDULED_FLIP}
+  - Added RSAScope.PER_KEY
+  - Added v0.2 parameters (target_key, burst_*, p_target_flip_ppm)
+
+- `toy_aki/rsa/adversary.py`:
+  - Added `aggregator` parameter to `corrupt()` method (MUST be AKI's function)
+  - Added deprecation warning if v0.2 models used without passing aggregator
+  - Added `_get_effective_p_flip_ppm()` for model/phase-dependent rates
+  - Added `_get_current_phase()` for burst model
+
+- `toy_aki/rsa/telemetry.py`:
+  - Added `phase` field to RSAEpochRecord
+  - Added burst telemetry to RSARunSummary
+
+---
+
+## 9. Preregistered Run Sequence
+
+### Run 1 — Aggregation-Point Corruption
+
+| Parameter | Value |
+|-----------|-------|
+| Model | `AGG_FLIP_BERNOULLI` |
+| Scope | `SEM_PASS_ONLY` |
+| Sweep | `rsa_p_flip_ppm ∈ {0, 200, 500, 1_000, 2_000, 5_000, 10_000, 20_000}` |
+| Seeds | 40..44 (5 seeds) |
+
+**Hypothesis:** Aggregation-point corruption will behave equivalently to v0.1 SEM_PASS_ONLY, showing no degradation up to 2% flip rate.
+
+### Run 2 — Commitment-Correlated Noise
+
+| Parameter | Value |
+|-----------|-------|
+| Model | `COMMITMENT_KEYED_FLIP` |
+| Target | `C1` (single commitment key) |
+| Sweep | `rsa_p_target_flip_ppm ∈ {0, 500, 1_000, 5_000, 10_000, 20_000, 50_000, 100_000}` |
+| Seeds | 40..44 (5 seeds) |
+
+**Hypothesis:** With strict AND aggregation (AKI's `_aggregate_sem_pass`), loss of any single Ci cascades to SEM_PASS failure. Single-key corruption should behave equivalently to SEM_PASS corruption at the same rate.
+
+### Run 3 — Burst-Scheduled Interference
+
+| Parameter | Sweep Values |
+|-----------|--------------|
+| Model | `BURST_SCHEDULED_FLIP` |
+| Period | {10, 50, 100, 200} epochs |
+| Width | {1, 5, 10} epochs |
+| Phase | 0 (fixed) |
+| p_burst | {50_000, 100_000, 200_000} PPM (5%, 10%, 20%) |
+| p_quiet | 0 |
+| Seeds | 40..44 (5 seeds) |
+
+**Hypothesis:** Temporal concentration of interference will not break governance more than equivalent average flip rates. CTA's amnesty window (10 epochs) should absorb short bursts.
+
+---
+
+## 10. Experimental Results
+
+*To be populated after experimental runs.*
+
+### 10.1 Run 1 — Aggregation-Point Corruption
+
+| p_flip (PPM) | p_flip (%) | Mean AA | Mean AAA | Failure Class | Notes |
+|--------------|------------|---------|----------|---------------|-------|
+| ... | ... | ... | ... | ... | ... |
+
+### 10.2 Run 2 — Commitment-Correlated Noise
+
+| p_target (PPM) | p_target (%) | Mean AA | Mean AAA | Failure Class | Notes |
+|----------------|--------------|---------|----------|---------------|-------|
+| ... | ... | ... | ... | ... | ... |
+
+### 10.3 Run 3 — Burst-Scheduled Interference
+
+| Period | Width | Duty Cycle | p_burst | Mean AA | Mean AAA | Failure Class | Notes |
+|--------|-------|------------|---------|---------|----------|---------------|-------|
+| ... | ... | ... | ... | ... | ... | ... | ... |
+
+---
+
+## 11. Conclusion
+
+*To be written after experimental runs.*
+
+**Completion Rule (Hard):**
+
+v0.2 is complete when either:
+
+1. Any run produces **Structural Thrashing** or **Asymptotic DoS**, or
+2. All runs converge to **Stable Authority** or **Bounded Degradation**
+
+If (2):
+
+> **Epistemic interference alone is insufficient to defeat constitutional recovery under RSA assumptions.**
+
+This conclusion is binding and closes v0.x.
+
+---
+
+## Appendix A: Verification Commands
+
+```bash
+# Run v0.2 acceptance tests
+python3 -m pytest tests/test_rsa_v020.py -v
+
+# Run all RSA tests (v0.1 + v0.2)
+python3 -m pytest tests/test_rsa_v010.py tests/test_rsa_v020.py -v
+
+# Full test suite (non-regression)
+python3 -m pytest tests/ -v
+
+# Quick smoke test (Model A)
+python3 -c "
+from toy_aki.als.harness import ALSHarnessV080, ALSConfigV080
+from toy_aki.rsa import RSAConfig, RSANoiseModel, RSAScope
+
+config = ALSConfigV080(max_cycles=1000)
+rsa_cfg = RSAConfig(
+    rsa_enabled=True,
+    rsa_noise_model=RSANoiseModel.AGG_FLIP_BERNOULLI,
+    rsa_p_flip_ppm=50000,
+    rsa_scope=RSAScope.SEM_PASS_ONLY,
+)
+h = ALSHarnessV080(seed=42, config=config, rsa_config=rsa_cfg)
+result = h.run()
+print(f'Model: AGG_FLIP_BERNOULLI')
+print(f'Flips: {result.rsa[\"summary\"][\"total_flips\"]}')
+print(f'Epochs evaluated: {result.rsa[\"summary\"][\"epochs_evaluated\"]}')
+"
+```
+
+---
+
+## Appendix B: Non-Adaptive Constraint Verification
+
+All interference decisions are verified to be pure functions of:
+
+```
+(seed_rsa, epoch_index, static_key, static_schedule_params)
+```
+
+They do NOT depend on:
+- Environment state
+- Authority state
+- Lapse history
+- Renewal outcomes
+- Successor identity
+- Any run-history signal
+
+Test `test_burst_schedule_determinism` explicitly verifies that phase computation for a given epoch is identical across independent runs with different authority traces.

@@ -3843,12 +3843,15 @@ class ALSHarnessV070(ALSHarnessV060):
         streak = self._get_policy_streak(policy_id)
         return streak < self._config.eligibility_threshold_k
 
-    def _compute_sem_pass(self) -> tuple[bool, bool, bool, bool]:
+    def _compute_commitment_keys_raw(self) -> tuple[bool, bool, bool]:
         """
-        Compute SEM_PASS for current epoch.
+        Compute raw commitment key values (C0_OK, C1_OK, C2_OK).
+
+        This is the first half of semantic evaluation. Returns raw keys
+        BEFORE any RSA corruption. AKI's aggregation happens separately.
 
         Returns:
-            Tuple of (c0_ok, c1_ok, c2_ok, sem_pass)
+            Tuple of (c0_ok, c1_ok, c2_ok) - raw values
         """
         # Per spec §6.1: Non-vacuity rule - unevaluable = FALSE
         c0_ok = False
@@ -3885,7 +3888,33 @@ class ALSHarnessV070(ALSHarnessV060):
                         commitment.satisfaction_count > 0
                     )
 
-        sem_pass = c0_ok and c1_ok and c2_ok
+        return (c0_ok, c1_ok, c2_ok)
+
+    @staticmethod
+    def _aggregate_sem_pass(c0_ok: bool, c1_ok: bool, c2_ok: bool) -> bool:
+        """
+        AKI's canonical SEM_PASS aggregation function.
+
+        This is the ONLY place where Ci keys are aggregated into SEM_PASS.
+        RSA MUST use this exact function (via reference, not reimplementation).
+
+        Current rule: strict AND (K=3 equivalence)
+        """
+        return c0_ok and c1_ok and c2_ok
+
+    def _compute_sem_pass(self) -> tuple[bool, bool, bool, bool]:
+        """
+        Compute SEM_PASS for current epoch.
+
+        This combines raw key computation with aggregation.
+        For RSA integration, use _compute_commitment_keys_raw() + _aggregate_sem_pass()
+        separately to allow corruption between them.
+
+        Returns:
+            Tuple of (c0_ok, c1_ok, c2_ok, sem_pass)
+        """
+        c0_ok, c1_ok, c2_ok = self._compute_commitment_keys_raw()
+        sem_pass = self._aggregate_sem_pass(c0_ok, c1_ok, c2_ok)
         return (c0_ok, c1_ok, c2_ok, sem_pass)
 
     def _update_streak_at_epoch_end(self) -> None:
@@ -4892,10 +4921,12 @@ class ALSHarnessV080(ALSHarnessV070):
         - Only updates for active authority holder
         - No updates during NULL_AUTHORITY (handled in main loop)
 
-        RSA v0.1 hook:
-        - Corrupt verifier booleans after evaluation, before streak logic
-        - Uses global epoch (not per-authority) for deterministic hash input
-        - Lapse epochs are recorded separately in the main loop
+        RSA v0.1/v0.2 Architecture A:
+        - AKI computes raw keys (_compute_commitment_keys_raw)
+        - RSA corrupts keys (adversary.corrupt_keys)
+        - AKI aggregates SEM_PASS from corrupted keys (_aggregate_sem_pass)
+
+        This ensures RSA uses AKI's exact aggregation function, not a reimplementation.
         """
         # Compute global epoch for RSA (never resets, unlike self._epoch_index)
         global_epoch = self._compute_global_epoch()
@@ -4910,22 +4941,25 @@ class ALSHarnessV080(ALSHarnessV070):
         policy_id = self._active_policy_id
         streak_before = self._get_policy_streak(policy_id)
 
-        # Compute raw verifier outcomes (AKI logic unchanged)
-        c0_ok_raw, c1_ok_raw, c2_ok_raw, sem_pass_raw = self._compute_sem_pass()
+        # Step 1: AKI computes raw commitment keys
+        c0_ok_raw, c1_ok_raw, c2_ok_raw = self._compute_commitment_keys_raw()
 
-        # RSA hook: corrupt booleans if RSA is active
+        # Step 2: RSA corrupts keys (if active)
         if self._rsa_adversary is not None and self._rsa_telemetry is not None:
+            # RSA corrupts individual keys; we pass AKI's aggregator for SEM_PASS recomputation
             c0_ok, c1_ok, c2_ok, sem_pass, rsa_record = self._rsa_adversary.corrupt(
-                epoch=global_epoch,  # Use global epoch, not per-authority epoch
+                epoch=global_epoch,
                 c0_raw=c0_ok_raw,
                 c1_raw=c1_ok_raw,
                 c2_raw=c2_ok_raw,
-                sem_pass_raw=sem_pass_raw,
+                sem_pass_raw=self._aggregate_sem_pass(c0_ok_raw, c1_ok_raw, c2_ok_raw),
+                aggregator=self._aggregate_sem_pass,  # AKI's exact function (not lambda)
             )
             self._rsa_telemetry.record_epoch(rsa_record)
         else:
-            # No RSA: use raw values
-            c0_ok, c1_ok, c2_ok, sem_pass = c0_ok_raw, c1_ok_raw, c2_ok_raw, sem_pass_raw
+            # No RSA: use raw values with AKI aggregation
+            c0_ok, c1_ok, c2_ok = c0_ok_raw, c1_ok_raw, c2_ok_raw
+            sem_pass = self._aggregate_sem_pass(c0_ok, c1_ok, c2_ok)
 
         # Continue with standard streak update logic (unchanged from v0.7)
         if sem_pass:

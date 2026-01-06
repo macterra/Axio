@@ -21,7 +21,7 @@ class RSAEpochRecord:
     targets: int  # Number of booleans eligible for corruption (0 during lapse)
     flips: int  # Number of flips that occurred
     flips_by_key: Dict[str, int]  # Flips per key (C0, C1, C2, SEM_PASS)
-    p_flip_ppm: int  # Configured flip probability
+    p_flip_ppm: int  # Configured/effective flip probability
 
     # Raw values before corruption (None if in lapse)
     c0_raw: Optional[bool] = None
@@ -37,6 +37,9 @@ class RSAEpochRecord:
 
     # Lapse indicator
     in_lapse: bool = False
+
+    # v0.2: Burst phase ("ACTIVE" or "QUIET", None for non-burst models)
+    phase: Optional[str] = None
 
     def to_dict(self) -> Dict[str, Any]:
         """Serialize to dictionary."""
@@ -55,6 +58,7 @@ class RSAEpochRecord:
             "c2_corrupted": self.c2_corrupted,
             "sem_pass_corrupted": self.sem_pass_corrupted,
             "in_lapse": self.in_lapse,
+            "phase": self.phase,
         }
 
 
@@ -88,6 +92,15 @@ class RSARunSummary:
     epochs_in_lapse: int = 0
     epochs_evaluated: int = 0
 
+    # v0.2: Burst-specific telemetry
+    burst_duty_cycle_ppm: int = 0
+    active_phase_targets: int = 0
+    active_phase_flips: int = 0
+    active_phase_flip_rate_ppm: int = 0
+    quiet_phase_targets: int = 0
+    quiet_phase_flips: int = 0
+    quiet_phase_flip_rate_ppm: int = 0
+
     def to_dict(self) -> Dict[str, Any]:
         """Serialize to dictionary."""
         return {
@@ -105,6 +118,14 @@ class RSARunSummary:
             "epochs_with_flips": self.epochs_with_flips,
             "epochs_in_lapse": self.epochs_in_lapse,
             "epochs_evaluated": self.epochs_evaluated,
+            # v0.2 burst telemetry
+            "burst_duty_cycle_ppm": self.burst_duty_cycle_ppm,
+            "active_phase_targets": self.active_phase_targets,
+            "active_phase_flips": self.active_phase_flips,
+            "active_phase_flip_rate_ppm": self.active_phase_flip_rate_ppm,
+            "quiet_phase_targets": self.quiet_phase_targets,
+            "quiet_phase_flips": self.quiet_phase_flips,
+            "quiet_phase_flip_rate_ppm": self.quiet_phase_flip_rate_ppm,
         }
 
 
@@ -157,6 +178,14 @@ class RSATelemetry:
         epochs_in_lapse = 0
         epochs_evaluated = 0
 
+        # v0.2: Burst-specific tracking
+        active_epochs = 0
+        active_targets = 0
+        active_flips = 0
+        quiet_epochs = 0
+        quiet_targets = 0
+        quiet_flips = 0
+
         for record in self._epoch_records:
             if record.in_lapse:
                 epochs_in_lapse += 1
@@ -171,11 +200,38 @@ class RSATelemetry:
                 for key, count in record.flips_by_key.items():
                     flips_by_key[key] = flips_by_key.get(key, 0) + count
 
+                # v0.2: Track burst phase metrics
+                if record.phase == "ACTIVE":
+                    active_epochs += 1
+                    active_targets += record.targets
+                    active_flips += record.flips
+                elif record.phase == "QUIET":
+                    quiet_epochs += 1
+                    quiet_targets += record.targets
+                    quiet_flips += record.flips
+
         # Compute observed rate (avoid division by zero)
         if total_targets > 0:
             observed_flip_rate_ppm = (total_flips * 1_000_000) // total_targets
         else:
             observed_flip_rate_ppm = 0
+
+        # v0.2: Compute burst telemetry
+        total_burst_epochs = active_epochs + quiet_epochs
+        if total_burst_epochs > 0:
+            burst_duty_cycle_ppm = (active_epochs * 1_000_000) // total_burst_epochs
+        else:
+            burst_duty_cycle_ppm = 0
+
+        if active_targets > 0:
+            active_phase_flip_rate_ppm = (active_flips * 1_000_000) // active_targets
+        else:
+            active_phase_flip_rate_ppm = 0
+
+        if quiet_targets > 0:
+            quiet_phase_flip_rate_ppm = (quiet_flips * 1_000_000) // quiet_targets
+        else:
+            quiet_phase_flip_rate_ppm = 0
 
         return RSARunSummary(
             enabled=self._enabled,
@@ -192,6 +248,14 @@ class RSATelemetry:
             epochs_with_flips=epochs_with_flips,
             epochs_in_lapse=epochs_in_lapse,
             epochs_evaluated=epochs_evaluated,
+            # v0.2 burst telemetry
+            burst_duty_cycle_ppm=burst_duty_cycle_ppm,
+            active_phase_targets=active_targets,
+            active_phase_flips=active_flips,
+            active_phase_flip_rate_ppm=active_phase_flip_rate_ppm,
+            quiet_phase_targets=quiet_targets,
+            quiet_phase_flips=quiet_flips,
+            quiet_phase_flip_rate_ppm=quiet_phase_flip_rate_ppm,
         )
 
     def to_dict(self) -> Dict[str, Any]:
