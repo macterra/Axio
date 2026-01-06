@@ -38,7 +38,7 @@ Use the same baseline AKI config you have frozen for v0.2 runs. Minimum required
 
 ```python
 ALSConfigV080(
-    max_cycles=30_000,              # or your frozen v0.2 horizon; do not vary inside Run 1
+    max_cycles=300_000,             # frozen v0.2 horizon (yields 6000 epochs); do not vary
     eligibility_threshold_k=3,       # freeze to v0.2 baseline
     max_successive_renewals=3,       # freeze
     amnesty_interval=10,             # frozen for v0.2

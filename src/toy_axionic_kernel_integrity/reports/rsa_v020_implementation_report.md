@@ -374,6 +374,27 @@ All 31 v0.2 acceptance tests pass (per §11 requirements):
 
 ## 9. Preregistered Run Sequence
 
+### Execution Parameters (Frozen)
+
+| Parameter | Value | Rationale |
+|-----------|-------|-----------|
+| `max_cycles` | 300,000 | Yields 6000 epochs at `renewal_check_interval=50` |
+| `horizon_epochs` | 6,000 | Ensures `tail_window` (5000) is a genuine tail |
+| `tail_window` | 5,000 | `max(5000, 6000 // 5) = 5000` |
+| `renewal_check_interval` | 50 (default) | Unchanged from AKI v0.8 baseline |
+| `amnesty_interval` | 10 | Unchanged from AKI v0.8 baseline |
+| Seeds | 40..44 | 5 seeds per sweep point |
+
+> **Note:** Horizon increased from 30,000 to 300,000 cycles to ensure AAA is a genuine asymptotic metric (horizon_epochs ≥ 5000). No other parameters changed.
+
+### Run 0 — Baseline Reference (No Interference)
+
+| Parameter | Value |
+|-----------|-------|
+| Model | `RSA disabled` and `RSA enabled, p=0` |
+| Purpose | Establish ground truth for AA/AAA/RTD |
+| Requirement | Condition A and B must produce identical results |
+
 ### Run 1 — Aggregation-Point Corruption
 
 | Parameter | Value |
