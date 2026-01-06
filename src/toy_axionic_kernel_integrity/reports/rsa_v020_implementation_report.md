@@ -2,7 +2,7 @@
 
 **Version:** 0.2
 **Date:** 2026-01-06
-**Status:** ✓ IMPLEMENTATION COMPLETE (Awaiting Experimental Runs)
+**Status:** ✓ COMPLETE (All Experimental Runs Finished)
 
 ---
 
@@ -435,44 +435,133 @@ All 31 v0.2 acceptance tests pass (per §11 requirements):
 
 ## 10. Experimental Results
 
-*To be populated after experimental runs.*
+**Status:** ✓ ALL RUNS COMPLETE (260 total runs)
+
+### 10.0 Run 0 — Baseline Reference
+
+| Condition | Seeds | Mean AA (PPM) | Mean AAA (PPM) | Mean Max Lapse | Failure Class |
+|-----------|-------|---------------|----------------|----------------|---------------|
+| RSA disabled | 40-44 | 598,066 | 592,520 | 40.0 | BOUNDED_DEGRADATION |
+| RSA enabled, p=0 | 40-44 | 598,066 | 592,520 | 40.0 | BOUNDED_DEGRADATION |
+
+**Result:** Conditions A and B produce identical metrics. Baseline established at ~59.8% AA.
 
 ### 10.1 Run 1 — Aggregation-Point Corruption
 
-| p_flip (PPM) | p_flip (%) | Mean AA | Mean AAA | Failure Class | Notes |
-|--------------|------------|---------|----------|---------------|-------|
-| ... | ... | ... | ... | ... | ... |
+| p_flip (PPM) | p_flip (%) | Mean AA (PPM) | Mean AAA (PPM) | Mean Max Lapse | Failure Class |
+|--------------|------------|---------------|----------------|----------------|---------------|
+| 0 | 0.00% | 598,066 | 592,520 | 40.0 | 5× BOUNDED_DEGRADATION |
+| 200 | 0.02% | 596,666 | 590,840 | 40.0 | 5× BOUNDED_DEGRADATION |
+| 500 | 0.05% | 596,933 | 591,160 | 40.0 | 5× BOUNDED_DEGRADATION |
+| 1,000 | 0.10% | 595,733 | 589,720 | 40.0 | 5× BOUNDED_DEGRADATION |
+| 2,000 | 0.20% | 588,333 | 580,680 | 40.0 | 5× BOUNDED_DEGRADATION |
+| 5,000 | 0.50% | 577,733 | 569,640 | 38.0 | 5× BOUNDED_DEGRADATION |
+| 10,000 | 1.00% | 578,100 | 572,240 | 35.8 | 5× BOUNDED_DEGRADATION |
+| 20,000 | 2.00% | 585,433 | 578,280 | 25.0 | 5× BOUNDED_DEGRADATION |
+
+**Key Finding:** Non-monotonic relationship — AA shows mild recovery at high flip rates (2%) after degradation trough at 0.5%. Max lapse drops from 40 to 25 epochs. Strict monotonicity was a heuristic expectation, not a requirement.
+
+**Hypothesis Result:** SUPPORTED with refinement — aggregation-point corruption shows bounded degradation at all tested rates. The non-monotonic pattern suggests CTA clock synchronization concentrates recovery around amnesty boundaries at higher flip rates.
 
 ### 10.2 Run 2 — Commitment-Correlated Noise
 
-| p_target (PPM) | p_target (%) | Mean AA | Mean AAA | Failure Class | Notes |
-|----------------|--------------|---------|----------|---------------|-------|
-| ... | ... | ... | ... | ... | ... |
+| p_target (PPM) | p_target (%) | Mean AA (PPM) | Mean AAA (PPM) | Key Pivotal (%) | SEM_PASS Pivotal (%) | Failure Class |
+|----------------|--------------|---------------|----------------|-----------------|----------------------|---------------|
+| 0 | 0.00% | 598,066 | 592,520 | — | — | 5× BOUNDED_DEGRADATION |
+| 500 | 0.05% | 598,066 | 592,520 | 100% | 0% | 5× BOUNDED_DEGRADATION |
+| 1,000 | 0.10% | 598,066 | 592,520 | 100% | 0% | 5× BOUNDED_DEGRADATION |
+| 5,000 | 0.50% | 598,066 | 592,520 | 100% | 0% | 5× BOUNDED_DEGRADATION |
+| 10,000 | 1.00% | 598,066 | 592,520 | 100% | 0% | 5× BOUNDED_DEGRADATION |
+| 20,000 | 2.00% | 598,066 | 592,520 | 100% | 0% | 5× BOUNDED_DEGRADATION |
+| 50,000 | 5.00% | 598,066 | 592,520 | 100% | 0% | 5× BOUNDED_DEGRADATION |
+| 100,000 | 10.00% | 598,066 | 592,520 | 100% | 0% | 5× BOUNDED_DEGRADATION |
+
+**Key Finding:** Single-key corruption is **structurally inert** under strict conjunction. C1 flips were never SEM_PASS-pivotal because at evaluated epochs, C0 and/or C2 were already False, so SEM_PASS was pinned False regardless of C1. Epoch records confirm: when C1 is flipped, the other keys already fail the conjunction.
+
+**Hypothesis Result:** NOT SUPPORTED — single-key corruption does NOT cascade equivalently. Under strict AND aggregation (`SEM_PASS = C0 ∧ C1 ∧ C2`), a C1 flip is SEM_PASS-pivotal only when C0=True AND C2=True. At evaluated epochs, this condition was never satisfied — the weakest-link dynamics dominate.
 
 ### 10.3 Run 3 — Burst-Scheduled Interference
 
-| Period | Width | Duty Cycle | p_burst | Mean AA | Mean AAA | Failure Class | Notes |
-|--------|-------|------------|---------|---------|----------|---------------|-------|
-| ... | ... | ... | ... | ... | ... | ... | ... |
+| Period | Width | Duty Cycle | p_burst (PPM) | Mean AA (PPM) | Mean AAA (PPM) | Mean Max Lapse | Failure Class |
+|--------|-------|------------|---------------|---------------|----------------|----------------|---------------|
+| 10 | 1 | 10% | 50,000 | 578,900 | 571,960 | 28.4 | 5× BOUNDED_DEGRADATION |
+| 10 | 1 | 10% | 100,000 | 576,266 | 570,360 | 32.0 | 5× BOUNDED_DEGRADATION |
+| 10 | 1 | 10% | 200,000 | 582,766 | 577,440 | 24.2 | 5× BOUNDED_DEGRADATION |
+| 10 | 5 | 50% | 50,000 | 588,200 | 583,200 | 21.2 | 5× BOUNDED_DEGRADATION |
+| 10 | 5 | 50% | 100,000 | 607,300 | 602,040 | 19.4 | 5× BOUNDED_DEGRADATION |
+| 10 | 5 | 50% | 200,000 | 654,966 | 651,920 | 17.8 | 5× BOUNDED_DEGRADATION |
+| 10 | 10 | 100% | 50,000 | 608,666 | 603,440 | 20.4 | 5× BOUNDED_DEGRADATION |
+| 10 | 10 | 100% | 100,000 | 652,266 | 647,880 | 20.0 | 5× BOUNDED_DEGRADATION |
+| **10** | **10** | **100%** | **200,000** | **738,933** | **736,400** | **13.0** | 5× BOUNDED_DEGRADATION |
+| 50 | 1 | 2% | 50,000 | 591,366 | 586,200 | 36.2 | 5× BOUNDED_DEGRADATION |
+| 50 | 5 | 10% | 100,000 | 579,700 | 574,760 | 27.2 | 5× BOUNDED_DEGRADATION |
+| 50 | 10 | 20% | 200,000 | 597,766 | 591,600 | 20.2 | 5× BOUNDED_DEGRADATION |
+| 100 | 1 | 1% | 200,000 | 585,233 | 577,080 | 40.0 | 5× BOUNDED_DEGRADATION |
+| 100 | 10 | 10% | 200,000 | 586,600 | 580,440 | 36.0 | 5× BOUNDED_DEGRADATION |
+| 200 | 1 | 0.5% | 50,000 | 596,533 | 590,680 | 40.0 | 5× BOUNDED_DEGRADATION |
+| 200 | 10 | 5% | 200,000 | 578,700 | 571,000 | 36.0 | 5× BOUNDED_DEGRADATION |
+
+*(Table shows representative rows; full 36-setting grid in [rsa_v020_run3_burst_scheduled_report.md](rsa_v020_run3_burst_scheduled_report.md))*
+
+**Key Findings:**
+
+1. **High-Duty-Cycle Paradox:** At 100% duty cycle with 20% flip rate, AA reaches 73.9% (+14% from baseline). Max lapse drops from 40 to 13 epochs.
+
+2. **No Resonance Vulnerability:** Period=10 (matching amnesty_interval) shows **shortest** lapses, not longest. No "resonance attack" exists.
+
+3. **CTA Absorption Confirmed:** RTD remains bounded at all 36 settings. No heavy-tail growth.
+
+**Hypothesis Result:** SUPPORTED with refinement — temporal concentration does not break governance. Instead, high-frequency interference paradoxically improves AA by creating frequent short lapses.
 
 ---
 
 ## 11. Conclusion
 
-*To be written after experimental runs.*
+**v0.2 COMPLETE — ALL RUNS CLASSIFIED AS BOUNDED DEGRADATION**
 
-**Completion Rule (Hard):**
+### Summary Statistics
 
-v0.2 is complete when either:
+| Run | Model | Runs | Class Transitions | Max AA Degradation | Notes |
+|-----|-------|------|-------------------|-------------------|-------|
+| 0 | Baseline | 10 | 0 | — | Reference: 59.8% AA |
+| 1 | AGG_FLIP_BERNOULLI | 40 | 0 | -3.4% (at 0.5%) | Non-monotonic recovery at 2% |
+| 2 | COMMITMENT_KEYED_FLIP | 40 | 0 | 0% | Structurally inert (0% SEM_PASS pivotality) |
+| 3 | BURST_SCHEDULED_FLIP | 180 | 0 | -3.5% (at low DC) | High-DC paradox: +14% at 100% DC |
+| **Total** | — | **260** | **0** | — | — |
 
-1. Any run produces **Structural Thrashing** or **Asymptotic DoS**, or
-2. All runs converge to **Stable Authority** or **Bounded Degradation**
+### Hypotheses Validated
 
-If (2):
+| Hypothesis | Status | Evidence |
+|------------|--------|----------|
+| H1: Aggregation-point is structural choke point | **PARTIALLY** | Degradation bounded; non-monotonic at high rates |
+| H2: Single-key corruption cascades equivalently | **NOT SUPPORTED** | 0% SEM_PASS pivotality; C0/C2 already False at evaluated epochs |
+| H3: Temporal concentration defeats governance | **NOT SUPPORTED** | High DC improves AA; no resonance vulnerability |
+| H4: CTA absorbs burst interference | **SUPPORTED** | RTD bounded at all 36 settings |
+
+### Binding Conclusion
 
 > **Epistemic interference alone is insufficient to defeat constitutional recovery under RSA assumptions.**
 
-This conclusion is binding and closes v0.x.
+Across 260 runs spanning:
+- Three distinct noise models (aggregation, commitment-correlated, burst-scheduled)
+- Flip rates from 0% to 20%
+- Duty cycles from 0.5% to 100%
+- Burst periods from 10 to 200 epochs
+
+**No run produced Structural Thrashing or Asymptotic DoS.**
+
+The system exhibits **structural resilience** that cannot be defeated by non-adaptive, post-verification, semantic-free interference within the tested parameter ranges. The paradoxical improvement at high interference rates suggests that CTA's recovery mechanism is not merely tolerant of interference but actively benefits from perturbation frequency.
+
+**This conclusion is binding and closes v0.x.**
+
+### Artifacts
+
+| Report | Description |
+|--------|-------------|
+| [rsa_v020_run0_baseline_report.md](rsa_v020_run0_baseline_report.md) | Baseline reference (10 runs) |
+| [rsa_v020_run1_aggregation_corruption_report.md](rsa_v020_run1_aggregation_corruption_report.md) | Aggregation-point sweep (40 runs) |
+| [rsa_v020_run2_commitment_correlated_report.md](rsa_v020_run2_commitment_correlated_report.md) | Single-key sweep (40 runs) |
+| [rsa_v020_run3_burst_scheduled_report.md](rsa_v020_run3_burst_scheduled_report.md) | Burst grid sweep (180 runs) |
 
 ---
 
