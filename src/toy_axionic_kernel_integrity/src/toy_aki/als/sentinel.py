@@ -494,6 +494,25 @@ class Sentinel:
         self._resource_envelope = None
         self._interface = None
 
+    def expand_interface_action_types(self, additional_action_types: frozenset) -> None:
+        """
+        Expand the bound interface's action types.
+
+        Used by RSA v1.0 to include commitment actions (LOG, SET, GET, SEQUENCE)
+        in the allowed action types. This is a test harness mechanism, not a
+        constitutional kernel feature.
+
+        Args:
+            additional_action_types: Action types to add to the interface
+        """
+        if self._interface is None:
+            return
+        # Create new InterfaceDeclaration with expanded action_types
+        expanded_types = self._interface.action_types | additional_action_types
+        # InterfaceDeclaration is a dataclass, use replace to create new instance
+        from dataclasses import replace
+        self._interface = replace(self._interface, action_types=expanded_types)
+
     def advance_cycle(self) -> None:
         """Advance to next cycle."""
         self._cycle += 1

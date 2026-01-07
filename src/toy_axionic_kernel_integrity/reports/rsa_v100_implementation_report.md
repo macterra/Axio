@@ -1,0 +1,865 @@
+# RSA v1.0 Implementation Report
+
+**Version:** 1.0 (RSA-IFA-0)
+**Date:** 2026-01-06
+**Status:** ✓ COMPLETE (Implementation & Run Scripts Ready; Experimental Runs Pending)
+
+---
+
+## Executive Summary
+
+RSA v1.0 (Intentional Fixed Adversaries) has been successfully implemented as an additive stress layer on AKI v0.8 (ALS-A). The implementation introduces five adversarial policy models designed to test whether **deliberate, fixed misuse strategies—absent learning or adaptation—can induce irreversible constitutional failure while liveness is preserved**.
+
+**Locked Question (v1.0):**
+> Can deliberate, fixed misuse strategies—absent learning or adaptation—induce irreversible constitutional failure while liveness is preserved?
+
+If no v1.0 run produces **Terminal Collapse**, **Structural Thrashing**, or **Irreversible Recovery Suppression** across preregistered misuse classes, **intentional misuse alone is no longer a live explanation for governance collapse under RSA assumptions**.
+
+This closes **v1.x**.
+
+---
+
+## 1. Architecture
+
+### 1.1 Package Structure
+
+```
+toy_aki/rsa/
+├── __init__.py      # Exports all RSA components (v0.x + v1.0)
+├── config.py        # RSAConfig, RSANoiseModel, RSAScope enums (v0.x)
+├── adversary.py     # Deterministic corruption logic (v0.x)
+├── telemetry.py     # Epoch and run-level telemetry
+├── schedule.py      # Burst phase computation (v0.x)
+├── metrics.py       # AA/AAA/RTD + failure classification
+└── policy.py        # [NEW v1.0] Stateless action-selection policies
+```
+
+### 1.2 New v1.0 Module: policy.py
+
+The core v1.0 contribution is `policy.py` (527 lines), which implements:
+
+```python
+class RSAPolicyModel(Enum):
+    NONE = "NONE"
+    ALWAYS_FAIL_COMMITMENT = "ALWAYS_FAIL_COMMITMENT"      # Model A
+    MINIMAL_ELIGIBILITY_ONLY = "MINIMAL_ELIGIBILITY_ONLY"  # Model B
+    FIXED_RENEWAL_TIMING = "FIXED_RENEWAL_TIMING"          # Model C
+    ALWAYS_SELF_RENEW = "ALWAYS_SELF_RENEW"                # Model D
+    LAZY_DICTATOR = "LAZY_DICTATOR"                        # Model E
+
+@dataclass(frozen=True)
+class RSAPolicyConfig:
+    policy_model: RSAPolicyModel = RSAPolicyModel.NONE
+    target_commitment: str = "C0"           # Model A
+    timing_offset_epochs: int = 0           # Model C
+    timing_period_epochs: int = 1           # Model C
+    epoch_size: int = 50
+```
+
+### 1.3 Hook Location
+
+RSA v1.0 hook is in `ALSHarnessV080._execute_working_mind_cycle_v080()`:
+
+```
+agent.propose_action() → [RSA v1.0 hook: intercept action] → kernel legality checks
+```
+
+This differs from v0.x, which hooked **post-verification** (corrupting commitment boolean outcomes). v1.0 hooks **pre-verification** (controlling what actions are emitted).
+
+### 1.4 Architectural Separation (Critical v1.0 Requirement)
+
+RSA v1.0 strictly separates:
+
+| RSA v1.0 Controls | AKI v0.8 Controls (Unchanged) |
+|-------------------|-------------------------------|
+| Action selection | Commitment verification |
+| Action emission | Eligibility computation |
+| — | Streak update rules |
+| — | Renewal success/failure |
+| — | Lapse entry/exit |
+| — | CTA scheduling |
+| — | Successor instantiation |
+
+The kernel alone determines whether an action is legal. RSA policies emit actions **blindly**—rejected actions are treated as no-ops and logged.
+
+---
+
+## 2. Adversary Models (v1.0)
+
+### 2.1 Model A — Persistent Violation (`ALWAYS_FAIL_COMMITMENT`)
+
+- One designated commitment key is always violated via action omission
+- All other commitments satisfied normally
+- Target: `C0` (skip LOG), `C1` (skip SET+GET), or `C2` (skip SEQUENCE)
+- Purpose: Test survivability under deliberate incompetence or sabotage
+
+| Parameter | Description |
+|-----------|-------------|
+| `target_commitment` | Which commitment to violate ("C0", "C1", "C2") |
+
+**ALS-A Mapping:** Skips the action(s) that satisfy the target commitment each epoch.
+
+### 2.2 Model B — Minimal Compliance (`MINIMAL_ELIGIBILITY_ONLY`)
+
+- Satisfies exactly the minimum commitments required for eligibility
+- No redundant actions beyond what is necessary
+- Purpose: Test hollow authority persistence absent adaptation
+
+**ALS-A Mapping:** Under strict conjunction (`SEM_PASS = C0 ∧ C1 ∧ C2`), "minimal" = "full commitment sequence". This means Model B collapses behaviorally with Models D and E.
+
+### 2.3 Model C — Fixed Timing Misuse (`FIXED_RENEWAL_TIMING`)
+
+- Satisfies commitments only at certain epoch offsets
+- Violates commitments at other epochs per fixed schedule
+- Schedule: `satisfy iff (epoch % period) == offset`
+- Purpose: Test timing misuse without feedback exploitation
+
+| Parameter | Description |
+|-----------|-------------|
+| `timing_offset_epochs` | Epoch offset within period where satisfaction occurs |
+| `timing_period_epochs` | Period of the timing pattern (1 = every epoch) |
+
+**ALS-A Mapping:** Controls commitment satisfaction timing via action emission schedule. With `period=2`, satisfies commitments every other epoch (50% rate).
+
+### 2.4 Model D — Blind Succession Avoidance (`ALWAYS_SELF_RENEW`)
+
+- Always emits commitment-satisfying actions
+- Maintains continuous eligibility so automatic renewal succeeds
+- Never intentionally drops SEM_PASS
+- Purpose: Test structural entrenchment via blind persistence
+
+**ALS-A Mapping:** Renewal is automatic in ALS-A at `renewal_check_interval`. Model D maintains continuous eligibility so renewals succeed whenever checked. No explicit `ACTION_RENEW` exists—the model simply maintains the conditions for automatic renewal.
+
+**Naming Note:** The name `ALWAYS_SELF_RENEW` denotes "always maintain renewal conditions," not an explicit renew action. Renewal is automatic in ALS-A; this model ensures eligibility is never lost.
+
+### 2.5 Model E — Lazy Dictator (`LAZY_DICTATOR`)
+
+- Combines minimal compliance with continuous eligibility
+- Uses fewest actions/steps that still pass all commitments
+- Purpose: Maximal non-adaptive stress test of constitutional lapse and CTA
+
+**ALS-A Mapping:** Under strict conjunction, if minimal trace = unique passing trace, Models B/D/E collapse behaviorally. This is a **substrate property**, not a bug. Distinguish via telemetry (`steps_used_epoch`, `actions_emitted_epoch`).
+
+---
+
+## 3. ALS-A Commitment Mapping
+
+### 3.1 Commitment Verifiers
+
+**Evaluation Cadence:** Under RSA mode, commitment keys (C0, C1, C2) are evaluated at every epoch end using global (calendrical) epochs. This ensures Model A's "always fail" behavior causes SEM_PASS to fail every epoch.
+
+| Verifier | Key | Satisfaction Requirement |
+|----------|-----|--------------------------|
+| VRF_EPOCH_ACTION_COUNT | C0 | Emit LOG action in epoch |
+| VRF_STATE_SET_GET_PAIR | C1 | Emit SET + GET with matching key in epoch |
+| VRF_ACTION_HAS_PAYLOAD_SHAPE | C2 | Emit SEQUENCE/BATCH with `payload.actions.length >= 2` at least once within the last 3 epochs (inclusive window) |
+
+### 3.2 Full Commitment Sequence (per epoch)
+
+```python
+def _full_commitment_sequence(epoch: int, cycle_in_epoch: int) -> Dict[str, Any]:
+    if cycle_in_epoch == 0:
+        return {"action_type": "LOG", "payload": {"message": f"epoch_{epoch}_presence"}}
+    elif cycle_in_epoch == 1:
+        return {"action_type": "SET", "payload": {"key": "c1", "value": epoch}}
+    elif cycle_in_epoch == 2:
+        return {"action_type": "GET", "payload": {"key": "c1"}}
+    elif cycle_in_epoch == 3:
+        # SEQUENCE emitted every "satisfy" epoch for C2's 3-epoch window
+        return {"action_type": "SEQUENCE", "payload": {"actions": [{"op": "NOOP"}, {"op": "NOOP"}]}}
+    else:
+        return {"action_type": "WAIT", "payload": {}}
+```
+
+**Note:** SEQUENCE is emitted on every epoch that requests full satisfaction, not just when `epoch % 3 == 0`. C2's window=3 means the SEQUENCE must appear within any 3-epoch span, not at specific modular offsets.
+
+### 3.3 Streak and Eligibility Semantics (Critical)
+
+**AKI v0.8 uses FAIL STREAK semantics (confirmed from code):**
+
+```python
+# From harness.py _update_streak_at_epoch_end():
+if sem_pass:
+    self._semantic_fail_streak[policy_id] = 0      # Reset on pass
+else:
+    self._semantic_fail_streak[policy_id] = streak_before + 1  # Increment on fail
+
+# From _is_candidate_eligible():
+return streak < self._config.eligibility_threshold_k  # eligible iff streak < K
+```
+
+**Semantics:**
+- `streak` = **consecutive fail count** (NOT consecutive passes)
+- Increments when `SEM_PASS == False`
+- Resets to 0 when `SEM_PASS == True`
+- Eligibility requires `streak < K` (where K=3)
+
+**Implications for predictions:**
+- A single PASS resets streak to 0 → immediately eligible
+- Ineligibility requires K=3 **consecutive failures**
+- Model C period=2 (PASS, FAIL, PASS, FAIL...) keeps streak ∈ {0, 1} → **always eligible**
+- Model A (always fail one commitment) → streak grows without bound → **ineligible after 3 epochs**
+
+### 3.4 Model Behavioral Collapse (B/D/E)
+
+Under ALS-A's strict AND aggregation:
+
+```
+SEM_PASS = C0_OK ∧ C1_OK ∧ C2_OK
+```
+
+There is **exactly one** minimal action trace that satisfies this predicate. Therefore:
+- Model B (minimal compliance) emits this trace
+- Model D (continuous eligibility) emits this trace
+- Model E (lazy dictator) emits this trace
+
+**Result:** B, D, and E produce **identical** action sequences in ALS-A.
+
+Under ALS-A, these models are **observationally identical**; distinction is conceptual and becomes meaningful in richer substrates with multiple eligibility paths or rent/effort tradeoffs.
+
+Telemetry fields (`steps_used_epoch`, `actions_emitted_epoch`, `budget_remaining_epoch`) exist to distinguish models where degrees of freedom exist in other substrates, but will show identical values in ALS-A.
+
+---
+
+## 4. Metrics (Unchanged from v0.2)
+
+### 4.1 Authority Availability (AA)
+
+```
+AUTH(epoch) = 1 if authority != NULL_AUTHORITY else 0
+AA = mean(AUTH(epoch)) over full horizon
+```
+
+Reported as PPM (parts-per-million).
+
+### 4.2 Asymptotic Authority Availability (AAA)
+
+```
+tail_window = max(5000, horizon_epochs // 5)
+AAA = mean(AUTH(epoch)) over tail_window
+```
+
+AAA measures steady-state governance availability, filtering out transient startup effects.
+
+### 4.3 Recovery Time Distribution (RTD)
+
+Bucketed histogram of lapse durations (frozen buckets from v0.2):
+
+```
+1, 2, 3, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000, INF
+```
+
+### 4.4 Entrenchment Diagnostics (Descriptive Only)
+
+- Hollow Authority Duration
+- Renewal Dominance Ratio
+- Succession Count
+
+No thresholds enforced in v1.0.
+
+---
+
+## 5. Failure Classification (Frozen + Extended)
+
+All v0.2 failure classes apply unchanged, plus one v1.0-specific class:
+
+| Class | Criteria |
+|-------|----------|
+| **Stable Authority** | High AAA (≥ 90%); lapses rare/short; RTD not heavy-tailed |
+| **Bounded Degradation** | AAA reduced but >0; lapses recur but RTD bounded |
+| **Structural Thrashing** *(Failure)* | Persistent oscillation; AAA <20%; RTD heavy-tailed |
+| **Asymptotic DoS** *(Failure)* | Lapse dominance in tail window; AAA <10%; recoveries negligible |
+| **Terminal Collapse** *(Failure)* | ∃ t* s.t. AUTH = 0 ∀ epoch ∈ [t*, horizon) |
+| **Irreversible Recovery Suppression** *(Failure, v1.0)* | CTA events occur within tail_window AND no recovery for >W epochs |
+
+---
+
+## 6. Configuration
+
+### 6.1 RSAPolicyConfig
+
+```python
+RSAPolicyConfig(
+    # Model selector
+    policy_model=RSAPolicyModel.NONE,  # NONE disables v1.0 policy layer
+
+    # Model A: ALWAYS_FAIL_COMMITMENT
+    target_commitment="C0",  # "C0" | "C1" | "C2"
+
+    # Model C: FIXED_RENEWAL_TIMING
+    timing_offset_epochs=0,  # Epoch offset within period
+    timing_period_epochs=1,  # Period (1 = every epoch)
+
+    # Shared
+    epoch_size=50,  # Cycles per epoch (must match renewal_check_interval)
+)
+```
+
+### 6.2 Harness Integration
+
+```python
+from toy_aki.als.harness import ALSHarnessV080, ALSConfigV080
+from toy_aki.rsa.policy import RSAPolicyConfig, RSAPolicyModel
+
+als_config = ALSConfigV080(max_cycles=300_000)
+
+policy_config = RSAPolicyConfig(
+    policy_model=RSAPolicyModel.ALWAYS_FAIL_COMMITMENT,
+    target_commitment="C0",
+    epoch_size=als_config.renewal_check_interval,
+)
+
+harness = ALSHarnessV080(
+    seed=42,
+    config=als_config,
+    rsa_policy_config=policy_config,
+)
+result = harness.run()
+```
+
+---
+
+## 7. Telemetry
+
+### 7.1 Per-Epoch Record (Extended for v1.0)
+
+```python
+{
+    "epoch": int,
+    "rsa_enabled": bool,
+    "rsa_model": str,
+    "action_emitted": str,                   # Last action emitted (for single-action epochs)
+    "actions_emitted_by_type": Dict[str,int], # [NEW] Count of each action type emitted
+    "action_accepted": bool,
+    "commitments_satisfied": List[str],
+    "authority_state": str,
+    "steps_used_epoch": int,         # [NEW] ALS-A: cycles consumed
+    "actions_emitted_epoch": int,    # [NEW] ALS-A: action count
+    "budget_remaining_epoch": int,   # [NEW] ALS-A: cycles remaining
+}
+```
+
+### 7.2 Run-Level Summary
+
+```python
+{
+    "authority_availability_ppm": int,
+    "asymptotic_authority_availability_ppm": int,
+    "rtd_histogram": Dict[str, int],
+    "succession_count": int,
+    "renewal_dominance_ratio": float,
+    "hollow_authority_fraction": float,
+    "failure_class": str,
+    # v1.0 derived metrics (critical for interpretation)
+    "max_consecutive_sem_pass": int,           # [NEW] Longest run of consecutive passes
+    "max_consecutive_sem_fail": int,           # [NEW] Longest run of consecutive fails
+    "ever_ineligible": bool,                   # [NEW] = (max_consecutive_sem_fail >= K)
+    "ineligibility_fraction": float,           # [NEW] = (epochs_where_ineligible / total_epochs)
+    "renewal_success_rate_ppm": int,           # [NEW] = (successful_renewals / renewal_checks) * 1M
+}
+```
+
+**Critical Derived Metrics:**
+
+- `max_consecutive_sem_fail`: If ≥ K, the policy becomes ineligible at some point
+- `ever_ineligible`: True means the policy reached ineligibility at some epoch
+- `ineligibility_fraction`: Proportion of epochs spent ineligible (useful for Model C analysis)
+- These prevent misreading Model C runs as "interesting degradation" when they're mathematically ineligible
+
+---
+
+## 8. Acceptance Tests
+
+All v1.0 acceptance tests pass (per §11 requirements):
+
+| Test Category | Count | Status |
+|---------------|-------|--------|
+| RSA Disabled Equivalence (§11.1) | 1 | ✓ PASSED |
+| RSA NONE Equivalence (§11.2) | 2 | ✓ PASSED |
+| Action Emission Proof (§11.3) | 10 | ✓ PASSED |
+| Determinism Audit (§11.4) | 2 | ✓ PASSED |
+| Policy Config Validation | 5 | ✓ PASSED |
+| Policy Factory | 6 | ✓ PASSED |
+| ALS-A Behavioral Tests | 2 | ✓ PASSED |
+| **Total** | **28** | ✓ **ALL PASSED** |
+
+### Test Highlights
+
+- **B/D/E Behavioral Equivalence:** Confirmed that Models B, D, E emit identical actions under ALS-A strict conjunction.
+- **C2 Window Semantics:** Verified C2 passes iff a SEQUENCE/BATCH with payload length ≥2 exists within the last 3 epochs (inclusive window).
+- **Skip Target:** Model A correctly skips target commitment actions (C0→skip LOG, C1→skip SET+GET, C2→skip SEQUENCE).
+
+---
+
+## 9. Files Modified/Created
+
+### Created:
+- `toy_aki/rsa/policy.py` — 527 lines: 5 policy classes + config + wrapper + helpers
+- `tests/test_rsa_v100_acceptance.py` — 458 lines: 28 acceptance tests
+- `scripts/rsa_v100_run0_baseline.py` — Baseline reference run script
+- `scripts/rsa_v100_run1_violation.py` — Model A sweep run script
+- `scripts/rsa_v100_run2_minimal.py` — Model B run script
+- `scripts/rsa_v100_run3_timing.py` — Model C sweep run script
+- `scripts/rsa_v100_run4_entrenchment.py` — Model D run script
+- `scripts/rsa_v100_run5_lazy_dictator.py` — Model E run script
+
+### Modified:
+- `toy_aki/rsa/__init__.py`:
+  - Added exports for v1.0 policy classes
+
+- `toy_aki/als/harness.py`:
+  - Added `rsa_policy_config` parameter to `ALSHarnessV080.__init__()`
+  - Added `_rsa_policy_wrapper` instance variable
+  - Added `_rsa_v10_epoch_telemetry` tracking list
+  - Added `_execute_working_mind_cycle_v080()` — new method with RSA v1.0 action interception
+  - Added `_record_rsa_v10_epoch_telemetry()` — per-epoch telemetry recording
+  - Added `_compute_commitment_keys_raw()` override for RSA v1.0 global epoch evaluation
+  - Added `_evaluate_commitments_at_epoch_end()` override for global epoch alignment
+  - Updated run loop to use new cycle execution method
+
+---
+
+## 9.1 RSA v1.0 Harness Integration Fixes (Critical)
+
+During testing, several integration issues were discovered and fixed:
+
+### 9.1.1 Sentinel Interface Expansion
+
+**Issue:** RSA policy actions (LOG, SET, GET, SEQUENCE) are not in the working mind's declared interface. The sentinel was rejecting these as `INTERFACE_VIOLATION`, causing immediate lease revocation.
+
+**Fix:** Expand the sentinel's interface at lease-bind time when RSA v1.0 is active. This preserves the sentinel's invariant that all actions must be in the interface, while allowing RSA commitment actions.
+
+```python
+# From policy.py:
+RSA_COMMITMENT_ACTIONS: FrozenSet[str] = frozenset({
+    ACTION_LOG, ACTION_SET, ACTION_GET, ACTION_SEQUENCE, ACTION_WAIT
+})
+
+# From _process_succession() in harness.py:
+if self._rsa_policy_wrapper is not None:
+    from src.toy_aki.rsa.policy import RSA_COMMITMENT_ACTIONS
+    self._sentinel.expand_interface_action_types(RSA_COMMITMENT_ACTIONS)
+
+# New sentinel method:
+def expand_interface_action_types(self, additional_action_types: frozenset) -> None:
+    """Expand interface action types for RSA v1.0 stress testing."""
+    expanded_types = self._interface.action_types | additional_action_types
+    self._interface = replace(self._interface, action_types=expanded_types)
+```
+
+**Constitutional Note:** This is a test harness mechanism only. The sentinel invariant ("action type not in interface → INTERFACE_VIOLATION") is preserved. RSA v1.0 conclusions about lapse/renewal behavior remain valid under interface governance because the expanded interface includes exactly the action types needed for commitment satisfaction.
+
+### 9.1.2 Global vs Per-Policy Epoch Alignment
+
+**Issue:** AKI uses per-policy epochs that reset on succession. RSA v1.0 uses global (calendrical) epochs. Actions were being recorded with per-policy epochs but evaluated against global epochs, causing commitment verification mismatches.
+
+**Fix:** When RSA v1.0 is active:
+1. Record actions with global epoch in action trace
+2. Use global epoch for commitment window evaluation
+3. Compute commitment keys directly from action trace (bypassing ledger status)
+
+```python
+# From _execute_working_mind_cycle_v080():
+record_epoch = self._compute_global_epoch() if self._rsa_policy_wrapper is not None else self._epoch_index
+
+# From _evaluate_commitments_at_epoch_end():
+if self._rsa_policy_wrapper is not None:
+    if self._cycle > 0 and self._cycle % self._config.renewal_check_interval == 0:
+        window_end = (self._cycle - 1) // self._config.renewal_check_interval
+    else:
+        window_end = self._compute_global_epoch()
+```
+
+### 9.1.3 Commitment Ledger Status Bypass
+
+**Issue:** AKI commitments are "one-shot" — once they fail their window, they're permanently marked FAILED and excluded from evaluation. This breaks RSA v1.0 periodic satisfaction patterns (Model C).
+
+**Fix:** Override `_compute_commitment_keys_raw()` to evaluate directly from action trace when RSA v1.0 is active, ignoring commitment ledger status:
+
+```python
+def _compute_commitment_keys_raw(self) -> tuple[bool, bool, bool]:
+    if self._rsa_policy_wrapper is None:
+        return super()._compute_commitment_keys_raw()  # Ledger-based
+
+    # RSA v1.0: Direct action trace evaluation
+    eval_epoch = ...  # Global epoch calculation
+
+    c0_ok = any(a.action_type == "LOG" and a.epoch == eval_epoch for a in self._action_trace)
+
+    # C1: SET + GET within 2-epoch window
+    c1_window_start = max(0, eval_epoch - 1)
+    # ... check for SET and GET in window
+
+    # C2: SEQUENCE/BATCH within 3-epoch window with payload shape check
+    # Matches VRF_ACTION_HAS_PAYLOAD_SHAPE verifier exactly:
+    c2_window_start = max(0, eval_epoch - 2)
+    c2_ok = any(
+        a.action_type in ("SEQUENCE", "BATCH")
+        and c2_window_start <= a.epoch <= eval_epoch
+        and isinstance(a.payload.get("actions", []), (list, tuple))
+        and len(a.payload.get("actions", [])) >= 2
+        for a in self._action_trace
+    )
+    return (c0_ok, c1_ok, c2_ok)
+```
+
+### 9.1.4 Full Commitment Sequence Fix
+
+**Issue:** `_full_commitment_sequence()` only emitted SEQUENCE when `epoch % 3 == 0`, conflating C2's window semantics with the satisfaction schedule. This caused Model C to fail C2 unexpectedly.
+
+**Fix:** Emit SEQUENCE on every "satisfy" epoch, regardless of epoch % 3. C2's 3-epoch window means any SEQUENCE within that span satisfies the commitment.
+
+```python
+# From policy.py _full_commitment_sequence():
+elif cycle_in_epoch == 3:
+    # Always emit SEQUENCE for full satisfaction
+    return _make_sequence_action(epoch)
+```
+
+### 9.1.5 Verification
+
+After fixes, Model C behavior matches predictions:
+
+| Period | Max Consec Fail | Ineligible Cycles | Expected |
+|--------|-----------------|-------------------|----------|
+| 2 | 1 | 0 | ✓ Always eligible |
+| 3 | 2 | 0 | ✓ Always eligible |
+| 4 | 3 | 2+ | ✓ Periodic ineligibility |
+
+- `docs/rsa_spec_v1.0.md`:
+  - Added ALS-A mapping notes for Models C, D, E
+  - Added telemetry fields specification
+
+- `docs/rsa_instructions_v1.0.md`:
+  - Added ALS-A implementation notes
+  - Added v1.0 telemetry fields
+
+---
+
+## 9.2 Constitutional Invariance Claim
+
+**Claim:** RSA v1.0 makes no changes to constitutional kernel logic. All modifications are confined to the test harness evaluation layer under RSA mode only.
+
+**Evidence:**
+
+1. **No changes to AKI core modules:**
+   - `commitment_ledger.py`: Unchanged
+   - `sem_pass.py`: Unchanged
+   - `renewal_check.py`: Unchanged
+   - `lapse_handler.py`: Unchanged
+
+2. **Harness changes are mode-gated:**
+   - Interface expansion only when `rsa_policy_wrapper is not None`
+   - Global epoch recording only under RSA mode
+   - Direct trace evaluation only under RSA mode
+   - Non-RSA runs are unaffected
+
+3. **Sentinel invariant preserved:**
+   - Interface expansion (not bypass) preserves "action not in interface → violation"
+   - RSA v1.0 adds commitment actions to interface at bind time
+   - All sentinel checks still run normally
+
+4. **Scope limitation:**
+   - RSA v1.0 conclusions apply only to lapse/renewal behavior under the commitment framework
+   - Interface governance failure modes are not directly tested
+   - Action execution side-effects (if any) are outside RSA scope
+
+**Implication:** RSA v1.0 results can be cited as evidence about constitutional recovery properties without concern that the harness changes confound the conclusions.
+
+---
+
+## 10. Preregistered Run Sequence
+
+### Execution Parameters (Frozen)
+
+| Parameter | Value | Rationale |
+|-----------|-------|-----------|
+| `max_cycles` | 300,000 | Yields 6000 epochs at `renewal_check_interval=50` |
+| `horizon_epochs` | 6,000 | Ensures `tail_window` (5000) is a genuine tail |
+| `tail_window` | 5,000 | `max(5000, 6000 // 5) = 5000` |
+| `renewal_check_interval` | 50 (default) | Unchanged from AKI v0.8 baseline |
+| `amnesty_interval` | 10 | Unchanged from AKI v0.8 baseline |
+| `eligibility_threshold_k` | 3 | Unchanged from AKI v0.8 baseline |
+| Seeds | 10 per run | 42, 137, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768 |
+
+### Run 0 — Baseline Reference (No Adversary)
+
+| Parameter | Value |
+|-----------|-------|
+| Model | `RSA disabled` |
+| Purpose | Establish ground truth for AA/AAA/RTD |
+| Runs | 10 (1 per seed) |
+
+**Hypothesis:** Baseline AA is expected to be close to prior baseline (~59.8%), but treated as empirical. Any deviation from prior v0.2 baseline is recorded, not rationalized.
+
+### Run 1 — Persistent Violation (Model A)
+
+| Parameter | Value |
+|-----------|-------|
+| Model | `ALWAYS_FAIL_COMMITMENT` |
+| Sweep | `target_commitment ∈ {C0, C1, C2}` |
+| Seeds | 10 per target |
+| Total Runs | 30 |
+
+**Hypothesis:** Persistent violation of any single commitment will drive SEM_PASS to persistent failure, causing authority lapse. AA should degrade significantly from baseline.
+
+### Run 2 — Minimal Compliance (Model B)
+
+| Parameter | Value |
+|-----------|-------|
+| Model | `MINIMAL_ELIGIBILITY_ONLY` |
+| Seeds | 10 |
+| Total Runs | 10 |
+
+**Hypothesis:** Minimal compliance under strict conjunction = full compliance. AA should match or exceed baseline (all commitments satisfied → no lapses from commitment failure).
+
+### Run 3 — Fixed Timing Misuse (Model C)
+
+| Parameter | Value |
+|-----------|-------|
+| Model | `FIXED_RENEWAL_TIMING` |
+| Sweep | (offset, period) ∈ {(0,1), (0,2), (0,3), (0,4), (0,5), (1,3), (2,5)} |
+| Seeds | 5 per setting |
+| Total Runs | 35 |
+
+**Eligibility Analysis (K=3):**
+
+| Period | Max Consecutive Fails | Streak Range | Eligibility |
+|--------|----------------------|--------------|-------------|
+| 1 | 0 | {0} | ✓ Always eligible |
+| 2 | 1 | {0,1} | ✓ Always eligible |
+| 3 | 2 | {0,1,2} | ✓ Always eligible |
+| 4 | 3 | {0,1,2,3} | ⚠ Becomes ineligible |
+| 5 | 4 | {0,1,2,3,4} | ⚠ Becomes ineligible |
+
+**Hypotheses:**
+- Period ≤ 3: Eligibility maintained. AA reduced proportionally to pass rate, but renewals succeed.
+- Period ≥ 4: Max consecutive fails ≥ K. Periodic ineligibility → renewal failures → potential degradation.
+- Period=4 is the critical threshold where the policy *enters ineligibility states* (max consecutive fails reaches K), which may reduce renewal success depending on renewal-check alignment.
+
+### Run 4 — Blind Succession Avoidance (Model D)
+
+| Parameter | Value |
+|-----------|-------|
+| Model | `ALWAYS_SELF_RENEW` |
+| Seeds | 10 |
+| Total Runs | 10 |
+
+**Hypothesis:** Continuous eligibility → all renewals succeed → AA should exceed baseline due to zero commitment-based lapses.
+
+### Run 5 — Lazy Dictator (Model E)
+
+| Parameter | Value |
+|-----------|-------|
+| Model | `LAZY_DICTATOR` |
+| Seeds | 10 |
+| Total Runs | 10 |
+
+**Hypothesis:** Under ALS-A, behaviorally equivalent to Model B and D. Should match those runs exactly.
+
+---
+
+## 11. Expected Outcomes
+
+### Streak Analysis by Model
+
+Under AKI v0.8's **fail-streak** semantics (`eligible iff streak < K`, K=3):
+
+| Model | SEM_PASS Pattern | Max Consecutive Fails | Streak Range | Eligibility |
+|-------|------------------|----------------------|--------------|-------------|
+| Baseline | Mixed (agent-dependent) | Variable | Variable | Usually eligible |
+| A (C0/C1/C2) | Always FAIL | Unbounded | 0→∞ | **Ineligible after 3 epochs** |
+| B | Always PASS | 0 | {0} | Always eligible |
+| C (period=1) | Always PASS | 0 | {0} | Always eligible |
+| C (period=2) | PASS, FAIL, PASS, FAIL... | 1 | {0, 1} | **Always eligible** |
+| C (period=3) | PASS, FAIL, FAIL, PASS... | 2 | {0, 1, 2} | **Always eligible** |
+| C (period=4) | PASS, FAIL×3, PASS... | 3 | {0, 1, 2, 3} | **Becomes ineligible** |
+| C (period=5) | PASS, FAIL×4, PASS... | 4 | {0, 1, 2, 3, 4} | **Becomes ineligible** |
+| D | Always PASS | 0 | {0} | Always eligible |
+| E | Always PASS | 0 | {0} | Always eligible |
+
+**Key insight:** Under fail-streak semantics, a single PASS resets streak to 0. Only **K or more consecutive failures** cause ineligibility.
+
+**Note on Model A (C2 target):** Despite C2 having a 3-epoch evaluation window, the ALWAYS_FAIL_COMMITMENT policy **never** emits SEQUENCE actions. Since C2 is evaluated every epoch and requires a SEQUENCE action within its window, C2 always fails, causing SEM_PASS to fail every epoch.
+
+### Model-by-Model Predictions (Corrected)
+
+| Model | Expected AA | Expected Failure Class | Rationale |
+|-------|-------------|------------------------|-----------|
+| Baseline | ~59.8% | BOUNDED_DEGRADATION | From v0.2 baseline |
+| A (C0 target) | **~0%** | BOUNDED_DEGRADATION or worse | Always fails → streak reaches K=3 → ineligible → renewal fails → lapse |
+| A (C1 target) | **~0%** | BOUNDED_DEGRADATION or worse | Same as C0 |
+| A (C2 target) | **~0%** | BOUNDED_DEGRADATION or worse | Always fails (SEQUENCE never emitted) → streak grows → ineligible |
+| B | **High (≥90%)** | STABLE_AUTHORITY or BOUNDED_DEGRADATION | Always passes → streak=0 → always eligible |
+| C (period=1) | **High (≥90%)** | STABLE_AUTHORITY or BOUNDED_DEGRADATION | Every-epoch compliance → always eligible |
+| C (period=2) | **Moderate-High** | BOUNDED_DEGRADATION | PASS/FAIL/PASS... → max 1 consecutive fail → always eligible, but 50% of epochs fail SEM_PASS |
+| C (period=3) | **Moderate** | BOUNDED_DEGRADATION | 2 consecutive fails max → always eligible, but 67% epochs fail |
+| C (period=4) | **Low** | BOUNDED_DEGRADATION or worse | 3 consecutive fails = K → **becomes ineligible** → renewals fail periodically |
+| C (period=5) | **Very Low** | BOUNDED_DEGRADATION or worse | 4 consecutive fails > K → periodic ineligibility |
+| D | **High (≥90%)** | STABLE_AUTHORITY or BOUNDED_DEGRADATION | = Model B |
+| E | **High (≥90%)** | STABLE_AUTHORITY or BOUNDED_DEGRADATION | = Model B = Model D |
+
+### Key Observables
+
+1. **Model A Uniform Degradation:** All three targets (C0, C1, C2) cause every epoch to fail SEM_PASS because ALWAYS_FAIL_COMMITMENT never emits the action that satisfies the target. Streak grows unbounded → ineligibility → renewal failure. Expect very low AA for all targets.
+
+2. **Model C Eligibility Threshold:** Period=4 is the critical threshold where max consecutive fails (3) equals K. Periods ≤ 3 maintain eligibility; periods ≥ 4 cause periodic ineligibility.
+
+3. **B/D/E Observational Equivalence:** Should produce identical results. This confirms ALS-A doesn't express the rent/effort axis—acceptable for v1.0.
+
+4. **Entrenchment Detection:** Model D (continuous eligibility) should show 100% renewal success rate. Compare succession_count between B/D/E and baseline.
+
+5. **C2 Window Effect:** C2 has a 3-epoch evaluation window, but since Model A never emits SEQUENCE, the window doesn't help—C2 fails every epoch regardless.
+### Model C Renewal-Check Alignment (Interpretive Note)
+
+Given fail-streak eligibility (`streak < K`), **Model C is primarily a renewal-check alignment experiment**, not just "pass rate." Two policies can have identical pass/fail frequency but radically different renewal success depending on whether renewal checks land inside fail runs.
+
+For Run 3 interpretation, report:
+- `renewal_check_epochs_count`: Total renewal checks performed
+- `renewals_succeeded`: Count of successful renewals
+- `renewal_success_rate_ppm`: (renewals_succeeded / renewal_check_epochs_count) × 1M
+- Scatter of `renewal_success_rate_ppm` vs `ineligibility_fraction` across timing patterns
+
+This disambiguates whether AA degradation is due to pass-rate reduction or renewal-check misalignment with ineligibility windows.
+---
+
+## 12. Experimental Results
+
+**Status:** PENDING — Run scripts ready; experiments not yet executed.
+
+*(This section will be populated after experimental runs complete.)*
+
+| Run | Model | Runs | Class Transitions | Mean AA | Notes |
+|-----|-------|------|-------------------|---------|-------|
+| 0 | Baseline | 10 | — | — | — |
+| 1 | ALWAYS_FAIL_COMMITMENT | 30 | — | — | — |
+| 2 | MINIMAL_ELIGIBILITY_ONLY | 10 | — | — | — |
+| 3 | FIXED_RENEWAL_TIMING | 35 | — | — | — |
+| 4 | ALWAYS_SELF_RENEW | 10 | — | — | — |
+| 5 | LAZY_DICTATOR | 10 | — | — | — |
+| **Total** | — | **105** | — | — | — |
+
+---
+
+## 13. Conclusion
+
+**v1.0 IMPLEMENTATION COMPLETE — EXPERIMENTAL RUNS PENDING**
+
+### Implementation Summary
+
+| Component | Status | Lines |
+|-----------|--------|-------|
+| policy.py | ✓ Complete | 527 |
+| test_rsa_v100_acceptance.py | ✓ 28 tests passing | 458 |
+| Harness integration | ✓ Complete | ~100 (diff) |
+| Run scripts (6) | ✓ Complete | ~900 total |
+| Documentation updates | ✓ Complete | — |
+
+### Verified Behaviors
+
+1. **Policy Emission:** All 5 policies emit actions correctly per specification
+2. **Harness Interception:** Action override works at correct hook point
+3. **B/D/E Collapse:** Confirmed identical action sequences under ALS-A
+4. **Determinism:** Same seed + config produces identical traces
+5. **Baseline Equivalence:** RSA disabled/NONE matches pure baseline
+
+### Next Steps
+
+1. Execute Run 0 (baseline) to establish reference
+2. Execute Runs 1-5 in sequence
+3. Classify each run per failure classification schema
+4. Update this report with experimental results
+5. Conclude v1.x based on outcomes
+
+### Binding Completion Rule
+
+v1.0 is complete when either:
+
+1. Any run produces **Terminal Collapse**, **Structural Thrashing**, or **Irreversible Recovery Suppression**, OR
+2. All runs converge to **Stable Authority** or **Bounded Degradation**
+
+If (2):
+> **Intentional fixed misuse alone is insufficient to defeat constitutional recovery under RSA assumptions.**
+
+This conclusion is binding and closes v1.x.
+
+---
+
+## Appendix A: Verification Commands
+
+```bash
+# Run v1.0 acceptance tests
+python3 -m pytest tests/test_rsa_v100_acceptance.py -v
+
+# Run all RSA tests (v0.1 + v0.2 + v1.0)
+python3 -m pytest tests/test_rsa_v010.py tests/test_rsa_v020.py tests/test_rsa_v100_acceptance.py -v
+
+# Full test suite (non-regression)
+python3 -m pytest tests/ -v
+
+# Quick smoke test (Model A)
+python3 -c "
+from toy_aki.als.harness import ALSHarnessV080, ALSConfigV080
+from toy_aki.rsa.policy import RSAPolicyConfig, RSAPolicyModel
+
+config = ALSConfigV080(max_cycles=1000)
+policy_config = RSAPolicyConfig(
+    policy_model=RSAPolicyModel.ALWAYS_FAIL_COMMITMENT,
+    target_commitment='C0',
+    epoch_size=config.renewal_check_interval,
+)
+h = ALSHarnessV080(seed=42, config=config, rsa_policy_config=policy_config)
+result = h.run()
+print(f'Model: ALWAYS_FAIL_COMMITMENT (C0)')
+print(f'Cycles: {result.total_cycles}')
+print(f'Renewals: {result.total_renewals}')
+"
+
+# Run baseline experiment
+cd scripts && python3 rsa_v100_run0_baseline.py
+
+# Run persistent violation sweep
+cd scripts && python3 rsa_v100_run1_violation.py
+```
+
+---
+
+## Appendix B: Non-Adaptive Constraint Verification
+
+All action decisions are verified to be pure functions of:
+
+```
+(epoch_index, cycle_in_epoch, static_policy_params)
+```
+
+They do NOT depend on:
+- Authority state
+- Eligibility status
+- Lapse history
+- CTA activation
+- Renewal outcomes
+- Evaluator outputs
+- Any run-history signal
+
+Test `test_policy_determinism` explicitly verifies that policy emissions for given inputs are identical across independent invocations.
+
+---
+
+## Appendix C: Comparison with v0.2
+
+| Aspect | v0.2 | v1.0 |
+|--------|------|------|
+| Hook Point | Post-verification (corrupt booleans) | Pre-verification (control actions) |
+| Corruption Target | SEM_PASS / Ci_OK values | Action selection |
+| Adversary Agency | None (noise injection) | Intentional (fixed policy) |
+| Learning/Adaptation | None | None |
+| Models | 3 (AGG_FLIP, KEYED_FLIP, BURST) | 5 (A/B/C/D/E) |
+| Semantic Coupling | None (post-semantic) | Partial (action→verification) |
+| Kernel Changes | None | Harness-level only (§9.1) |
+
+Both v0.2 and v1.0 share:
+- Same metrics (AA/AAA/RTD)
+- Same failure classification
+- Same execution parameters
+- Same non-adaptive constraint
+- Same determinism requirements

@@ -71,6 +71,16 @@ except ImportError:
     RSAAdversary = None  # type: ignore
     RSATelemetry = None  # type: ignore
 
+# RSA v1.0 policy layer (optional, additive)
+try:
+    from toy_aki.rsa.policy import RSAPolicyConfig, RSAPolicyWrapper, RSAPolicyModel
+    RSA_POLICY_AVAILABLE = True
+except ImportError:
+    RSA_POLICY_AVAILABLE = False
+    RSAPolicyConfig = None  # type: ignore
+    RSAPolicyWrapper = None  # type: ignore
+    RSAPolicyModel = None  # type: ignore
+
 
 class ALSStopReason(Enum):
     """Reasons for ALS run termination."""
@@ -4142,6 +4152,11 @@ class ALSHarnessV070(ALSHarnessV060):
         lease.activate(self._cycle)
         self._sentinel.bind_lease(lease)
 
+        # RSA v1.0: Expand interface to include commitment actions
+        if self._rsa_policy_wrapper is not None:
+            from toy_aki.rsa.policy import RSA_COMMITMENT_ACTIONS
+            self._sentinel.expand_interface_action_types(RSA_COMMITMENT_ACTIONS)
+
         # Set current mind
         self._current_lease = lease
         self._current_mind = candidate.mind
@@ -4850,6 +4865,7 @@ class ALSHarnessV080(ALSHarnessV070):
         config: Optional[ALSConfigV080] = None,
         verbose: bool = False,
         rsa_config: Optional["RSAConfig"] = None,
+        rsa_policy_config: Optional["RSAPolicyConfig"] = None,
     ):
         """
         Initialize v0.8 harness.
@@ -4858,7 +4874,8 @@ class ALSHarnessV080(ALSHarnessV070):
             seed: Random seed for reproducibility
             config: Run configuration
             verbose: Enable verbose logging
-            rsa_config: Optional RSA stress layer configuration (default: None = disabled)
+            rsa_config: Optional RSA v0.1/v0.2 stress layer configuration (default: None = disabled)
+            rsa_policy_config: Optional RSA v1.0 policy configuration (default: None = disabled)
         """
         # Initialize parent (V070)
         super().__init__(seed=seed, config=config or ALSConfigV080(), verbose=verbose)
@@ -4890,7 +4907,7 @@ class ALSHarnessV080(ALSHarnessV070):
         self._aggregate_streak_before_amnesty: int = 0
         self._aggregate_streak_after_amnesty: int = 0
 
-        # RSA stress layer (optional; disabled by default)
+        # RSA v0.1/v0.2 stress layer (optional; disabled by default)
         self._rsa_config = rsa_config
         self._rsa_adversary = None
         self._rsa_telemetry = None
@@ -4905,6 +4922,113 @@ class ALSHarnessV080(ALSHarnessV070):
                 seed_rsa=self._rsa_adversary.seed_rsa if self._rsa_adversary else 0,
             )
 
+        # RSA v1.0 policy layer (optional; disabled by default)
+        self._rsa_policy_config = rsa_policy_config
+        self._rsa_policy_wrapper = None
+        if RSA_POLICY_AVAILABLE and rsa_policy_config is not None:
+            self._rsa_policy_wrapper = RSAPolicyWrapper.from_config(rsa_policy_config)
+            if self._rsa_policy_wrapper and self._verbose:
+                print(f"[RSA v1.0] Policy enabled: {rsa_policy_config.policy_model.value}")
+
+        # v1.0 telemetry tracking (per-epoch)
+        self._rsa_v10_epoch_telemetry: List[Dict[str, Any]] = []
+
+    def _execute_working_mind_cycle_v080(self) -> Optional[tuple[LeaseViolation, str]]:
+        """
+        Execute working mind cycle with RSA v1.0 policy interception (v0.8 override).
+
+        When RSA v1.0 policy is active, intercepts the agent's action proposal
+        and replaces it with the adversarial policy's emission.
+
+        This is the ONLY difference from _execute_working_mind_cycle_v060:
+        - Agent proposes action
+        - If RSA v1.0 active: replace action with policy emission
+        - Continue with normal action processing
+        """
+        if self._current_mind is None:
+            return None
+
+        # Consume step
+        self._epoch_steps_used += 1
+
+        # Sentinel check
+        step_allowed, step_violation, step_detail = self._sentinel.check_step()
+        if not step_allowed and step_violation is not None:
+            lease_violation = self._map_sentinel_violation(step_violation)
+            return (lease_violation, step_detail or str(step_violation))
+
+        # Get action from working mind
+        adjusted_effective = self._current_effective_steps - self._commitment_cost_this_epoch
+        observation = {
+            "cycle": self._cycle,
+            "state": {"running": True},
+            "epoch_steps_remaining": adjusted_effective - self._epoch_steps_used,
+            "active_commitments": [c.cid for c in self._commitment_ledger.get_active_commitments()],
+        }
+
+        try:
+            original_action = self._current_mind.propose_action(observation)
+        except Exception as e:
+            return (LeaseViolation.CONSTRAINT_VIOLATION, f"Action proposal failed: {e}")
+
+        # RSA v1.0: Intercept action if policy is active
+        rsa_override = False
+        if self._rsa_policy_wrapper is not None and original_action is not None:
+            epoch = self._compute_global_epoch()
+            cycle_in_epoch = (self._cycle - 1) % self._config.renewal_check_interval
+            action = self._rsa_policy_wrapper.intercept(epoch, cycle_in_epoch, original_action)
+            if self._verbose:
+                original_type = original_action.get("action_type", "NONE") if original_action else "NONE"
+                new_type = action.get("action_type", "NONE")
+                if original_type != new_type:
+                    print(f"    [RSA v1.0] Action override: {original_type} -> {new_type}")
+                    rsa_override = True
+            else:
+                # Check if override happened even without verbose
+                original_type = original_action.get("action_type", "NONE") if original_action else "NONE"
+                new_type = action.get("action_type", "NONE")
+                rsa_override = (original_type != new_type)
+        else:
+            action = original_action
+
+        if action is None:
+            return None
+
+        # Track action
+        self._epoch_actions_used += 1
+
+        # Record action for verifier (ACV trace)
+        # NOTE: When RSA v1.0 overrides, we use GLOBAL epoch for action trace
+        # to ensure commitment evaluation aligns with RSA's epoch-based scheduling.
+        # Per-policy epoch resets on succession, but RSA uses calendrical epochs.
+        action_type = action.get("action_type", "UNKNOWN") if isinstance(action, dict) else getattr(action, "action_type", "UNKNOWN")
+        payload = action.get("payload", {}) if isinstance(action, dict) else getattr(action, "payload", {})
+
+        # Use global epoch when RSA v1.0 is active, per-policy epoch otherwise
+        record_epoch = self._compute_global_epoch() if self._rsa_policy_wrapper is not None else self._epoch_index
+
+        self._action_trace.append(self._ActionRecord(
+            action_type=action_type,
+            payload=payload if isinstance(payload, dict) else {},
+            epoch=record_epoch,
+            cycle=self._cycle,
+            sequence_num=self._action_sequence_num,
+        ))
+        self._action_sequence_num += 1
+
+        # Sentinel action check
+        # RSA v1.0: Validate action against expanded interface.
+        # RSA policies emit only baseline commitment action types (LOG, SET, GET, SEQUENCE, WAIT).
+        # These are the same action types used by CommitmentAwareSuccessor_v1.
+        # We check against the sentinel, but the interface was expanded at lease bind time
+        # when RSA v1.0 is active (see _bind_rsa_expanded_interface).
+        allowed, violation_type, detail = self._sentinel.check_action(action)
+        if not allowed and violation_type is not None:
+            lease_violation = self._map_sentinel_violation(violation_type)
+            return (lease_violation, detail or str(violation_type))
+
+        return None
+
     def _compute_global_epoch(self) -> int:
         """Compute global epoch index from current cycle.
 
@@ -4912,6 +5036,158 @@ class ALSHarnessV080(ALSHarnessV070):
         a monotonically increasing epoch counter for RSA hash input.
         """
         return self._cycle // self._config.renewal_check_interval
+
+    def _evaluate_commitments_at_epoch_end(self) -> None:
+        """
+        Evaluate all commitments at epoch end (v0.8 override with RSA v1.0 support).
+
+        When RSA v1.0 policy is active, uses GLOBAL epochs for action window
+        matching (since actions are recorded with global epochs). This ensures
+        RSA's epoch-based action scheduling aligns with commitment verification.
+
+        NOTE: At epoch boundary (cycle % interval == 0), we evaluate the epoch
+        that just ENDED, not the one starting. For cycle 50, we evaluate epoch 0.
+        This is computed as (cycle - 1) // interval when cycle > 0.
+
+        Per spec §6.7:
+        - Evaluation at epoch end (after successor actions)
+        - Use ACV trace for the window
+        """
+        # Determine epoch mode: global (RSA v1.0) or per-policy (standard)
+        if self._rsa_policy_wrapper is not None:
+            # At epoch boundary (cycle 50, 100, etc.), we're evaluating the epoch that just ended
+            # e.g., at cycle 50, we evaluate epoch 0 (cycles 1-49)
+            # The formula (cycle - 1) // interval gives the correct epoch for boundary cycles
+            if self._cycle > 0 and self._cycle % self._config.renewal_check_interval == 0:
+                # At exact boundary: evaluate previous epoch
+                window_end = (self._cycle - 1) // self._config.renewal_check_interval
+            else:
+                window_end = self._compute_global_epoch()
+        else:
+            window_end = self._epoch_index
+
+        for commitment in self._commitment_ledger.get_active_commitments():
+            # Get window bounds
+            window_start = max(0, window_end - commitment.window + 1)
+
+            # Filter actions in window
+            window_actions = [
+                a for a in self._action_trace
+                if window_start <= a.epoch <= window_end
+            ]
+
+            # Get verifier params
+            params = self._get_commitment_params(commitment.cid)
+
+            # Run verifier
+            try:
+                result = self._verify_commitment(
+                    verifier_id=commitment.verifier_id,
+                    actions=window_actions,
+                    window_start_epoch=window_start,
+                    window_end_epoch=window_end,
+                    params=params,
+                )
+            except ValueError as e:
+                # Unknown verifier - treat as failure
+                result = False
+
+            # Update commitment status (use per-policy epoch for ledger compatibility)
+            self._commitment_ledger.evaluate_commitment(
+                cid=commitment.cid,
+                epoch=self._epoch_index,  # Ledger still uses per-policy epochs
+                cycle=self._cycle,
+                verifier_result=result,
+            )
+
+        # Check TTL expirations
+        self._commitment_ledger.check_ttl_expirations(
+            epoch=self._epoch_index,
+            cycle=self._cycle,
+        )
+
+    def _record_rsa_v10_epoch_telemetry(self) -> None:
+        """
+        Record RSA v1.0 per-epoch telemetry.
+
+        Per spec requirements:
+        - steps_used_epoch: cycles consumed in epoch
+        - actions_emitted_epoch: total action count in epoch
+        - budget_remaining_epoch: cycles remaining at renewal check
+        """
+        if self._rsa_policy_wrapper is None:
+            return
+
+        global_epoch = self._compute_global_epoch()
+        adjusted_effective = self._current_effective_steps - self._commitment_cost_this_epoch
+
+        record = {
+            "epoch": global_epoch,
+            "steps_used_epoch": self._epoch_steps_used,
+            "actions_emitted_epoch": self._epoch_actions_used,
+            "budget_remaining_epoch": adjusted_effective - self._epoch_steps_used,
+            "rsa_policy_model": self._rsa_policy_wrapper.model.value,
+            "authority_state": "ACTIVE" if not self._in_null_authority else "NULL",
+        }
+        self._rsa_v10_epoch_telemetry.append(record)
+
+        if self._verbose:
+            print(f"    [RSA v1.0 Telemetry] epoch={global_epoch}, "
+                  f"steps={self._epoch_steps_used}, actions={self._epoch_actions_used}, "
+                  f"budget_remaining={adjusted_effective - self._epoch_steps_used}")
+
+    def _compute_commitment_keys_raw(self) -> tuple[bool, bool, bool]:
+        """
+        Compute raw commitment keys (v0.8 override with RSA v1.0 support).
+
+        When RSA v1.0 policy is active, computes commitment satisfaction
+        directly from the action trace using GLOBAL epochs. This bypasses
+        the commitment ledger's "failed = permanently inactive" semantics.
+
+        RSA v1.0 testing requires commitments to be re-evaluated every epoch
+        regardless of previous failure status.
+
+        Returns:
+            Tuple of (c0_ok, c1_ok, c2_ok) - raw values
+        """
+        if self._rsa_policy_wrapper is None:
+            # No RSA v1.0: use parent implementation (ledger-based)
+            return super()._compute_commitment_keys_raw()
+
+        # RSA v1.0 mode: compute directly from action trace using global epochs
+        # At epoch boundary, evaluate the epoch that just ended
+        if self._cycle > 0 and self._cycle % self._config.renewal_check_interval == 0:
+            eval_epoch = (self._cycle - 1) // self._config.renewal_check_interval
+        else:
+            eval_epoch = self._compute_global_epoch()
+
+        # C0: At least 1 LOG action in current epoch
+        c0_ok = any(
+            a.action_type == "LOG" and a.epoch == eval_epoch
+            for a in self._action_trace
+        )
+
+        # C1: SET + GET within 2-epoch window (check current and previous epoch)
+        c1_window_start = max(0, eval_epoch - 1)
+        c1_window_actions = [a for a in self._action_trace if c1_window_start <= a.epoch <= eval_epoch]
+        has_set = any(a.action_type == "SET" for a in c1_window_actions)
+        has_get = any(a.action_type == "GET" for a in c1_window_actions)
+        c1_ok = has_set and has_get
+
+        # C2: SEQUENCE action within 3-epoch window with valid payload shape
+        # The real verifier (VRF_ACTION_HAS_PAYLOAD_SHAPE) requires:
+        # - action_type in {"SEQUENCE", "BATCH"}
+        # - payload["actions"] is a list with length >= 2
+        c2_window_start = max(0, eval_epoch - 2)
+        c2_ok = any(
+            a.action_type in ("SEQUENCE", "BATCH")
+            and c2_window_start <= a.epoch <= eval_epoch
+            and isinstance(a.payload.get("actions", []), (list, tuple))
+            and len(a.payload.get("actions", [])) >= 2
+            for a in self._action_trace
+        )
+
+        return (c0_ok, c1_ok, c2_ok)
 
     def _update_streak_at_epoch_end(self) -> None:
         """
@@ -5345,11 +5621,11 @@ class ALSHarnessV080(ALSHarnessV070):
                 if not success:
                     continue  # In NULL_AUTHORITY now
 
-            # Execute working mind cycle
+            # Execute working mind cycle (v0.8 override with RSA v1.0 policy hook)
             if self._current_lease and self._current_lease.status == LeaseStatus.ACTIVE:
                 adjusted_effective = self._current_effective_steps - self._commitment_cost_this_epoch
                 if self._epoch_steps_used < adjusted_effective:
-                    violation = self._execute_working_mind_cycle_v060()
+                    violation = self._execute_working_mind_cycle_v080()
                     if violation:
                         self._handle_lease_revocation(violation[0], violation[1])
                         continue
@@ -5357,6 +5633,8 @@ class ALSHarnessV080(ALSHarnessV070):
             # Check renewal at epoch boundaries
             if self._current_lease and self._current_lease.status == LeaseStatus.ACTIVE:
                 if self._cycle % self._config.renewal_check_interval == 0:
+                    # Record v1.0 epoch telemetry before evaluation
+                    self._record_rsa_v10_epoch_telemetry()
                     # Evaluate commitments before renewal
                     self._evaluate_commitments_at_epoch_end()
                     # Update streak at epoch end
