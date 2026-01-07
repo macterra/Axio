@@ -2,6 +2,8 @@
 
 **Reflective Sovereign Agent — Versioned Research Program**
 
+---
+
 ## Purpose of this document
 
 This document defines the **versioned roadmap** for the RSA (Reflective Sovereign Agent) research program.
@@ -12,7 +14,7 @@ Its role is to:
 * prevent silent escalation of claims,
 * and define a clear termination condition.
 
-This roadmap is normative: future RSA work is expected to conform to it or explicitly justify deviations.
+This roadmap is **normative**: future RSA work is expected to conform to it or explicitly justify deviations.
 
 ---
 
@@ -84,7 +86,9 @@ Correlated, targeted, or temporally aligned epistemic failures are tested to loc
 **Termination condition for v0.x:**
 Either a reproducible epistemic defeat is found, or epistemic interference alone is shown insufficient.
 
-At this point, **epistemics are closed** as the primary explanation for failure.
+**Status:**
+Epistemic interference alone has been shown insufficient.
+Epistemics are **closed** as the primary explanation for failure.
 
 ---
 
@@ -107,12 +111,19 @@ Does *intent* alone, absent learning, defeat constitutional survivability?
 
 Tests whether deliberate misuse strategies can defeat authority without increasing capability.
 
-#### v1.1 — Adversary Class Sweep
+**Status:**
+Intentional fixed misuse has been shown **insufficient** to defeat constitutional recovery under preregistered fixed-policy adversaries.
 
-Systematically classifies which intentional misuse patterns are contained versus fatal.
+#### v1.1 — Intentional Misuse Taxonomy *(Optional)*
+
+Further classifies fixed intentional misuse patterns for completeness or pedagogy.
+Not required for termination of v1.x.
 
 **Termination condition for v1.x:**
 Intentional structure either defeats the constitution or is shown insufficient without adaptation.
+
+**Status:**
+Termination condition satisfied at **v1.0**.
 
 ---
 
@@ -123,6 +134,9 @@ Adversaries may learn and optimize but remain kernel-external and provenance-con
 
 **Research question:**
 Can structural governance withstand intelligent opposition, or does adaptation alone break survivability?
+
+**Justification:**
+With epistemic failure (v0.x) and fixed intentional misuse (v1.0) ruled out as sufficient causes of collapse, **adaptation** becomes the minimal remaining live hypothesis for constitutional defeat.
 
 #### v2.0 — Adaptive Adversaries
 
@@ -144,7 +158,20 @@ Formally establishes where alignment ceases to be architectural and becomes irre
 
 This is not an expansion of RSA, but its **closure**.
 
-**No minor versions exist beyond v3.0;** any work extending past this boundary is definitionally outside the RSA program.
+**No minor versions exist beyond v3.0;**
+any work extending past this boundary is definitionally outside the RSA program.
+
+---
+
+## Cleared failure hypotheses
+
+The following classes have been experimentally ruled out as **sufficient** causes of constitutional collapse under RSA assumptions:
+
+1. Independent epistemic unreliability (v0.1)
+2. Structured epistemic interference (v0.2)
+3. Intentional but fixed misuse (v1.0)
+
+Remaining live hypotheses require **adaptation, state, or feedback access**.
 
 ---
 
@@ -159,10 +186,11 @@ RSA concludes when the following statement can be defended experimentally:
 A boundary claim is considered defended only if supported by:
 
 1. preregistered hypotheses,
-2. multi-seed replication, and
+2. multi-seed replication,
 3. a stable asymptotic metric demonstrating convergence or collapse.
 
-Anything beyond this point is **not RSA** and must be treated as a different research program (ethics, incentives, politics, or value theory).
+Anything beyond this point is **not RSA** and must be treated as a different research program
+(ethics, incentives, politics, or value theory).
 
 ---
 
@@ -180,9 +208,9 @@ RSA’s contribution is not safety guarantees, but **epistemic honesty**.
 
 ## Status
 
-* v0.1 complete
-* v0.2 in progress
-* All later versions contingent on earlier termination conditions
-
----
+* **v0.1 complete**
+* **v0.2 complete**
+* **v1.0 complete**
+* v1.1 optional
+* **v2.x next active research phase**
 

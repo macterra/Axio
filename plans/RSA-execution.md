@@ -2,6 +2,8 @@
 
 **Operational Constraints and Failure Classification**
 
+---
+
 ## Status and role
 
 This document defines **execution-level constraints** required for experiments to remain compliant with the RSA Roadmap.
@@ -17,7 +19,7 @@ Any experiment that violates these constraints **must not** be claimed as an RSA
 
 For RSA purposes, **survivability implies survivability with liveness**.
 
-A system is considered *live* if it continues to exercise bounded, non-degenerate authority over time.
+A system is considered *live* if it continues to exercise **bounded, non-degenerate authority** over time.
 
 ### Prohibited success classifications
 
@@ -38,11 +40,22 @@ These outcomes are classified as **governance failures**, even if the kernel is 
 
 If authority is preserved only by refusing to act, the constitution has failed as an agentic governance mechanism.
 
+### Interpretive note (clarification)
+
+Recover–fail cycles are **not** classified as failure *per se*.
+
+A system may repeatedly lapse and recover and still satisfy RSA liveness requirements provided that:
+
+* authority availability remains **bounded away from zero asymptotically**, and
+* lapse durations remain **bounded or light-tailed**.
+
+Frequent recovery indicates **reduced utility**, not constitutional failure.
+
 ---
 
 ## 2. Failure Taxonomy (Mandatory)
 
-All experimental outcomes must be classified into exactly one of the following categories.
+All experimental outcomes must be classified into **exactly one** of the following categories.
 
 ### A. Stable Authority
 
@@ -58,8 +71,8 @@ All experimental outcomes must be classified into exactly one of the following c
 
 ### C. Structural Thrashing
 
-* Authority repeatedly returns and immediately fails.
-* Duty cycle → 0 as horizon increases.
+* Authority repeatedly returns and fails in a manner that is **unbounded or heavy-tailed**, such that recoverability erodes over time.
+* Authority duty cycle → 0 as horizon → ∞.
 * Classified as **failure**.
 
 ### D. Asymptotic Denial of Service
@@ -137,11 +150,22 @@ Before execution, each run must explicitly answer the following.
   * **Yes** → Non-RSA experiment
   * **No** → continue
 
-### Adaptation check
+### Adaptation check (tightened)
 
 * Is any action distribution conditional on run history?
 
   * **Yes** → Adaptation → major version increment required
+
+This includes conditioning on:
+
+* lapse duration,
+* time since last recovery,
+* renewal success or failure,
+* eligibility counters or streaks,
+* CTA timing or decay state,
+* or any proxy signal correlated with these quantities.
+
+If such dependence exists, the experiment **exits v1.x scope**.
 
 ---
 
@@ -155,10 +179,10 @@ Every RSA experiment must report:
 * **Asymptotic Authority Availability (AAA)**
   Limit of AA as horizon → ∞ (estimated via long-run convergence).
 
-* **Recovery Time Distribution**
+* **Recovery Time Distribution (RTD)**
   Time between lapse and re-endorsement.
 
-Failure classification **must** be based on asymptotic behavior, not transient performance.
+Failure classification **must** be based on **asymptotic behavior**, not transient performance.
 
 ---
 
@@ -171,7 +195,7 @@ For any result to be considered RSA-valid:
 * Seeds must be fixed in advance.
 * No post-hoc metric substitution is permitted.
 
-Any deviation must be documented and disqualifies the run from RSA claims.
+Any deviation must be documented and **disqualifies the run from RSA claims**.
 
 ---
 
@@ -187,8 +211,10 @@ the correct classification is:
 
 > **“This experiment exceeds RSA scope.”**
 
-This is not a failure.
+This is **not a failure**.
 It is an **honest boundary detection**.
+
+Experiments that exceed RSA scope may still be scientifically valuable, but their results **cannot be used to reopen failure hypotheses already closed by the RSA Roadmap**.
 
 ---
 
