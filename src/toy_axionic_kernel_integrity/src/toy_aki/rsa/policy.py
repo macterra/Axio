@@ -402,15 +402,19 @@ class AlwaysSelfRenewPolicy(RSAPolicy):
 
 class LazyDictatorPolicy(RSAPolicy):
     """
-    Model E: Combines minimal compliance with continuous eligibility.
+    Model E: Compound misuse - scheduled compliance with minimal satisfaction.
 
-    In ALS-A: identical to Model B and Model D due to strict conjunction.
-    The "minimal" action to pass SEM_PASS is the same as "always renew".
+    Operationally equivalent to Model C (FIXED_RENEWAL_TIMING):
+    - SATISFY epochs: emit full commitment sequence (pass all commitments)
+    - VIOLATE epochs: emit WAIT only (violate all commitments)
 
-    Purpose: Test combined misuse patterns.
+    Schedule: satisfy when (epoch % period) == offset, violate otherwise.
 
-    ALS-A Note: Under strict AND, B/D/E collapse to the same behavior.
-    This is a substrate property, not a bug. Distinguish via telemetry.
+    Purpose: Test compound fixed strategy combining intermittent compliance
+    with continuous eligibility pressure. Represents "lazy dictator" archetype:
+    comply only when scheduled, otherwise do nothing.
+
+    RSA v1.0: Fixed, deterministic, non-adaptive, outcome-blind.
     """
 
     @property
@@ -418,9 +422,15 @@ class LazyDictatorPolicy(RSAPolicy):
         return RSAPolicyModel.LAZY_DICTATOR
 
     def emit(self, epoch: int, cycle_in_epoch: int, config: RSAPolicyConfig) -> Dict[str, Any]:
-        """Emit minimal + continuous eligibility sequence."""
-        # In ALS-A, lazy dictator = minimal = full commitment sequence
-        return _full_commitment_sequence(epoch, cycle_in_epoch)
+        """Emit actions based on timing schedule (same as Model C)."""
+        # Satisfy commitments only when epoch matches the timing pattern
+        should_satisfy = (epoch % config.timing_period_epochs) == config.timing_offset_epochs
+
+        if should_satisfy:
+            return _full_commitment_sequence(epoch, cycle_in_epoch)
+        else:
+            # Violate all commitments by just emitting WAIT
+            return _make_wait_action()
 
 
 # ============================================================================
