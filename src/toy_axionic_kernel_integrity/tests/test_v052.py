@@ -560,26 +560,6 @@ class TestEdgeCases:
             assert rent <= 4  # Cannot exceed cap-1
             assert effective >= 1
 
-    @pytest.mark.skip(reason="Fixed E-Class mode not implemented in v0.5.2")
-    def test_fixed_e_class_mode(self):
-        """Fixed E-Class mode assigns same E-Class to all successors.
-
-        Note: This is a planned feature for future versions. Currently,
-        E-Class is always computed from action types (expressivity_mode="derived").
-        """
-        config = ALSConfigV052(
-            max_cycles=200,
-            expressivity_mode="fixed",
-            fixed_e_class="E2",
-        )
-        harness = ALSHarnessV052(seed=42, config=config)
-        result = harness.run()
-
-        # All should be E2
-        for record in result.epoch_rent_records:
-            if hasattr(record, 'e_class'):
-                assert record.e_class == "E2"
-
     def test_harness_run_is_reproducible(self):
         """Same seed produces same result."""
         config = ALSConfigV052(max_cycles=500)
