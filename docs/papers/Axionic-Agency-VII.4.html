@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency VII.4 — Intentional Fixed Misuse Is Insufficient to Defeat Constitutional Recovery - Axio</title>
+    <link rel="icon" type="image/webp" href="../axio.webp">
+
+    <!-- Google Fonts - Academic Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Paper Styles -->
+    <link rel="stylesheet" href="../papers.css">
+</head>
+<body>
+    <div class="header-bar">
+        <a href="../index.html" class="logo-link">
+            <img src="../axio.webp" alt="Axio" class="site-logo">
+        </a>
+        <div class="back-link"><a href="index.html">← Back to Papers</a></div>
+    </div>
+    <article>
+
+<h1
+id="axionic-agency-vii.4-intentional-fixed-misuse-is-insufficient-to-defeat-constitutional-recovery">Axionic
+Agency VII.4 — Intentional Fixed Misuse Is Insufficient to Defeat
+Constitutional Recovery</h1>
+<p><em>Results from Fixed-Policy Adversarial Stress Testing</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026.01.07</p>
+<hr />
+<h2 id="abstract">Abstract</h2>
+<p>Deliberate misuse is often treated as a sufficient cause of
+governance collapse: if an agent persistently violates expectations,
+failure is assumed to follow. This paper tests that assumption under a
+deliberately constrained but structurally expressive adversary model. We
+study a constitutional agent architecture in which authority is
+lease-based, eligibility is evaluated at discrete succession boundaries,
+and recovery is enforced through time-based amnesty. Using a removable
+stress layer, we inject <strong>intentional but fixed adversarial
+policies</strong> that deterministically select actions while remaining
+non-adaptive, non-learning, and outcome-independent.</p>
+<p>Across <strong>130 executions</strong> spanning five adversary models
+and multiple timing regimes, no run exhibits terminal collapse,
+structural thrashing, asymptotic denial of service, or irreversible
+recovery suppression. All outcomes fall within <strong>Stable
+Authority</strong> or <strong>Bounded Degradation</strong>, including
+regimes with persistent commitment violation and timing-aligned misuse.
+Notably, persistent intentional violation converges to the system’s
+baseline equilibrium regime rather than inducing collapse.</p>
+<p>These results establish a <strong>negative sufficiency
+claim</strong>: under this architecture, <strong>intentional fixed
+misuse alone is insufficient to defeat constitutional recovery</strong>.
+If collapse occurs, it must rely on adversarial capabilities absent from
+this class, such as adaptation, statefulness, or feedback
+exploitation.</p>
+<hr />
+<h2 id="introduction">1. Introduction</h2>
+<p>A common intuition in AI alignment and institutional design is that
+<em>bad intent</em> scales into catastrophe. If an agent deliberately
+violates commitments, ignores norms, or persistently behaves
+incompetently, governance is expected to fail. This intuition motivates
+defenses against malicious objectives and stubborn non-cooperation.</p>
+<p>However, this framing collapses distinct threat dimensions into a
+single axis. It rarely distinguishes between:</p>
+<ul>
+<li><strong>intentionality</strong> vs. <strong>adaptation</strong></li>
+<li><strong>fixed misuse</strong> vs. <strong>feedback
+exploitation</strong></li>
+<li><strong>persistent violation</strong> vs. <strong>strategic
+learning</strong></li>
+</ul>
+<p>Human institutions routinely survive deliberate incompetence,
+obstruction, and even sabotage without collapsing outright. This
+suggests a narrower and testable question:</p>
+<blockquote>
+<p><strong>Is deliberate misuse, by itself, sufficient to defeat
+constitutional recovery in a governance system with enforced succession
+and time-based recovery?</strong></p>
+</blockquote>
+<p>This paper answers that question directly by isolating
+<em>intentional fixed misuse</em> from all adaptive capabilities and
+stress-testing a constitutional agent architecture designed to separate
+authority from semantic correctness.</p>
+<p>As in prior work, we evaluate <strong>constitutional
+survivability</strong>, not operational decision quality. Authority
+availability is treated as a structural property of the system, not as a
+proxy for correctness, benefit, or alignment.</p>
+<hr />
+<h2 id="architecture-overview">2. Architecture Overview</h2>
+<h3 id="constitutional-agent-design">2.1 Constitutional Agent
+Design</h3>
+<p>The system under study implements:</p>
+<ul>
+<li><p><strong>Lease-based authority</strong> rather than continuous
+control</p></li>
+<li><p><strong>Eligibility-gated succession</strong> evaluated at
+discrete epochs</p></li>
+<li><p><strong>Commitment verification</strong> independent of action
+optimization</p></li>
+<li><p><strong>Time-based recovery (CTA)</strong> that restores
+eligibility deterministically</p></li>
+<li><p>Explicit separation between:</p>
+<ul>
+<li>semantic evaluation (did commitments pass?)</li>
+<li>authority possession (is any agent currently governing?)</li>
+</ul></li>
+</ul>
+<p>Semantic information constrains <em>who may hold authority next</em>,
+not <em>what actions are executed now</em>. Agents do not receive reward
+signals, and authority is not optimized.</p>
+<h3 id="recovery-as-a-first-class-mechanism">2.2 Recovery as a
+First-Class Mechanism</h3>
+<p>If no eligible candidate exists at a succession boundary, the system
+enters a <strong>lapse</strong> state in which no authority is active.
+This state is constitutional rather than exceptional.</p>
+<p>During lapse:</p>
+<ul>
+<li>no agent acts,</li>
+<li>semantic evaluation is suspended,</li>
+<li>eligibility decay proceeds purely as a function of time.</li>
+</ul>
+<p>Recovery is guaranteed without learning, optimization, or external
+intervention. This ensures that failure modes are <strong>reversible by
+construction</strong>, even under persistent misuse.</p>
+<hr />
+<h2 id="threat-model">3. Threat Model</h2>
+<p>The adversaries introduced in this study are intentionally
+constrained.</p>
+<p>They are:</p>
+<ul>
+<li><strong>Intentional</strong>: policies are designed to violate
+commitments or stress governance</li>
+<li><strong>Fixed</strong>: action selection is deterministic and
+parameterized</li>
+<li><strong>Non-adaptive</strong>: policies do not condition on
+outcomes, history, or state</li>
+<li><strong>Stateless</strong>: no memory of prior success, failure, or
+authority transitions</li>
+<li><strong>Harness-resident</strong>: agents cannot observe or respond
+to the stress layer</li>
+<li><strong>Liveness-preserving</strong>: strategies that halt execution
+count as failure</li>
+</ul>
+<p>Action decisions are pure functions of:</p>
+<pre><code>(epoch_index, cycle_in_epoch, static_policy_parameters)</code></pre>
+<p>They do <strong>not</strong> depend on authority state, eligibility
+status, lapse history, renewal outcomes, CTA activation, or verifier
+outputs.</p>
+<p>This class captures deliberate incompetence, rigid sabotage, and
+blind obstruction, while excluding deception, probing, learning, or
+strategic manipulation.</p>
+<hr />
+<h2 id="adversarial-policy-classes">4. Adversarial Policy Classes</h2>
+<p>Five adversarial strategies are evaluated:</p>
+<ol type="1">
+<li><p><strong>Persistent Commitment Violation</strong> One designated
+commitment is always violated by omitting the action required for
+satisfaction.</p></li>
+<li><p><strong>Minimal Compliance</strong> Only the minimum actions
+required for eligibility are emitted.</p></li>
+<li><p><strong>Fixed Timing Misuse</strong> Commitments are satisfied
+only on epochs matching a fixed period/offset schedule.</p></li>
+<li><p><strong>Continuous Eligibility Maintenance</strong>
+Commitment-satisfying actions are always emitted so automatic renewal
+succeeds.</p></li>
+<li><p><strong>Compound Fixed Misuse</strong> Minimal action traces
+combined with fixed timing schedules.</p></li>
+</ol>
+<p>Under the ALS-A substrate’s strict conjunction semantics, several of
+these strategies collapse behaviorally and produce identical action
+traces. This collapse reflects a <strong>substrate expressivity
+limit</strong>, not an experimental defect. The study therefore probes
+<strong>constitutional recovery dynamics under fixed action
+schedules</strong>, not the full space of sabotage available in richer
+substrates.</p>
+<hr />
+<h2 id="experimental-program">5. Experimental Program</h2>
+<p>All experiments share a frozen execution baseline:</p>
+<ul>
+<li>300,000 cycles (6,000 governance epochs)</li>
+<li>Tail window of 5,000 epochs</li>
+<li>Eligibility threshold: 3 consecutive failures</li>
+<li>Renewal interval: 50 cycles</li>
+<li>Amnesty interval: 10 epochs</li>
+<li>Fixed random seeds (10 for single-setting runs; 5 for timing
+sweeps)</li>
+</ul>
+<h3 id="metrics">Metrics</h3>
+<ul>
+<li><p><strong>Authority Availability (AA)</strong>: fraction of epochs
+with active authority</p></li>
+<li><p><strong>Asymptotic Authority Availability (AAA)</strong>: AA over
+the tail window</p></li>
+<li><p><strong>Recovery Time Distribution (RTD)</strong>: histogram of
+lapse durations</p></li>
+<li><p><strong>Failure classification</strong> (frozen thresholds):</p>
+<ul>
+<li>Stable Authority</li>
+<li>Bounded Degradation</li>
+<li>Structural Thrashing</li>
+<li>Asymptotic Denial of Service</li>
+<li>Terminal Collapse</li>
+<li>Irreversible Recovery Suppression</li>
+</ul></li>
+</ul>
+<p><strong>Interpretive note on Structural Thrashing.</strong>
+Structural Thrashing is defined here as <strong>unbounded or
+heavy-tailed oscillation that erodes recoverability</strong>, not merely
+frequent recover–fail cycles with bounded lapse duration and preserved
+asymptotic availability.</p>
+<hr />
+<h2 id="results">6. Results</h2>
+<h3 id="baseline-reference-and-the-baseline-regime">6.1 Baseline
+Reference and the Baseline Regime</h3>
+<p>Across all baseline runs:</p>
+<ul>
+<li><strong>Mean AA</strong>: 637,949 PPM (≈63.8%)</li>
+<li><strong>Mean AAA</strong>: 632,400 PPM (≈63.2%)</li>
+<li><strong>Classification</strong>: Bounded Degradation</li>
+</ul>
+<p>This baseline regime is referred to as a <em>baseline equilibrium
+regime</em> only in the minimal empirical sense: across seeds and across
+all fixed-policy adversaries tested, authority availability converges to
+a narrow band with bounded lapses and reliable recovery. No claim is
+made that this regime is optimal or desirable, only that it is stable
+under the tested parameters.</p>
+<h3 id="persistent-intentional-violation">6.2 Persistent Intentional
+Violation</h3>
+<p>Persistent violation of any single commitment yields:</p>
+<ul>
+<li><strong>Mean AA</strong>: 597,700 PPM (≈59.8%)</li>
+<li><strong>Mean AAA</strong>: 591,500 PPM</li>
+<li><strong>Classification</strong>: Bounded Degradation (30/30
+runs)</li>
+</ul>
+<p>Despite immediate and permanent semantic ineligibility, the system
+does not collapse. Instead, authority availability converges to the same
+bounded regime observed in the baseline. No increase in lapse depth,
+tail dominance, or recovery suppression is observed.</p>
+<h3 id="minimal-and-continuous-compliance">6.3 Minimal and Continuous
+Compliance</h3>
+<p>Minimal compliance and continuous eligibility maintenance both
+yield:</p>
+<ul>
+<li><strong>Mean AA</strong>: 999,800 PPM (≈99.98%)</li>
+<li><strong>Mean AAA</strong>: 100%</li>
+<li><strong>Lapses</strong>: 0</li>
+<li><strong>Classification</strong>: Stable Authority (20/20 runs)</li>
+</ul>
+<p>Perfect semantic satisfaction produces uninterrupted authority under
+the tested parameters.</p>
+<h3 id="fixed-timing-misuse">6.4 Fixed Timing Misuse</h3>
+<p>Fixed timing schedules produce a discrete threshold effect:</p>
+<ul>
+<li><p><strong>Periods ≤ 3 epochs</strong></p>
+<ul>
+<li>AA ≈ 99.98%</li>
+<li>Always eligible</li>
+<li>Stable Authority</li>
+</ul></li>
+<li><p><strong>Period = 4 epochs</strong></p>
+<ul>
+<li>AA ≈ 99.67%</li>
+<li>Transient ineligibility</li>
+<li>Stable Authority</li>
+</ul></li>
+<li><p><strong>Periods ≥ 5 epochs</strong></p>
+<ul>
+<li>AA ≈ 81–82%</li>
+<li>Persistent threshold violation</li>
+<li>Bounded Degradation</li>
+</ul></li>
+</ul>
+<p>Across all timing regimes, recovery remains reliable and degradation
+remains bounded.</p>
+<h3 id="compound-fixed-misuse">6.5 Compound Fixed Misuse</h3>
+<p>Compound strategies produce results identical to timing misuse
+alone:</p>
+<ul>
+<li>AA and AAA match to measurement precision</li>
+<li>No amplification or emergent failure modes appear</li>
+</ul>
+<hr />
+<h2 id="cross-run-synthesis">7. Cross-Run Synthesis</h2>
+<p>Across all <strong>130 executions</strong>:</p>
+<ul>
+<li><strong>Zero constitutional failures</strong> occur</li>
+<li>Persistent intentional violation converges to baseline behavior</li>
+<li>Eligibility thresholds produce predictable phase boundaries</li>
+<li>Fixed misuse cannot exploit renewal or recovery mechanisms</li>
+<li>Combining fixed strategies adds no additional attack surface</li>
+</ul>
+<p>Intentionality, absent adaptation, behaves as <strong>bounded
+noise</strong>, not as an existential threat.</p>
+<hr />
+<h2 id="interpretation">8. Interpretation</h2>
+<p>Three structural insights emerge:</p>
+<ol type="1">
+<li><p><strong>Intent is not the dangerous axis</strong> Fixed
+adversarial intent does not scale into collapse.</p></li>
+<li><p><strong>Recovery dominates violation</strong> Time-based amnesty
+absorbs even permanent semantic failure.</p></li>
+<li><p><strong>Thresholds create phase safety</strong> Discrete
+eligibility limits prevent runaway degradation.</p></li>
+</ol>
+<p>The central result is not merely that misuse fails, but that
+<strong>even maximally rigid misuse converges to a stable
+regime</strong> rather than destabilizing governance.</p>
+<hr />
+<h2 id="survivability-vs.-utility">9. Survivability vs. Utility</h2>
+<p>This paper evaluates <strong>constitutional survivability</strong>,
+not operational usefulness. A system may be survivable yet highly
+inefficient.</p>
+<p>Baseline authority availability of ~63.8% implies that authority is
+absent during a substantial fraction of epochs even without adversarial
+pressure. This is treated as a utility limitation, not a failure,
+because the objective here is to test whether fixed misuse can induce
+<strong>irreversible constitutional failure</strong>.</p>
+<p>Similarly, recover–fail cycles under persistent violation may be
+perceived as denial of service by users. We classify such behavior as
+survivable so long as authority availability remains bounded away from
+zero, recovery remains reliable, and lapse durations remain bounded.
+Utility optimization and parameter tuning are separate engineering
+concerns outside the scope of this work.</p>
+<hr />
+<h2 id="limitations">10. Limitations</h2>
+<p>This study does not address:</p>
+<ul>
+<li>Adaptive or learning adversaries</li>
+<li>Outcome-conditioned strategies</li>
+<li>Deception or probing</li>
+<li>Multi-agent coordination</li>
+<li>Resource starvation or side-channel attacks</li>
+<li>Value misalignment or optimization pressure</li>
+</ul>
+<p>The results apply <strong>only</strong> to intentional, fixed misuse
+under the tested architecture and parameters.</p>
+<hr />
+<h2 id="conclusion">11. Conclusion</h2>
+<blockquote>
+<p><strong>Deliberate, fixed misuse is insufficient to defeat
+constitutional recovery in this architecture.</strong></p>
+</blockquote>
+<p>Across 130 executions spanning persistent violation, timing-aligned
+misuse, and compound fixed strategies, authority remains bounded,
+recoverable, and non-absorbing. No collapse modes are observed.</p>
+<p>The implication is not that alignment is solved, but that
+<strong>collapse requires more than bad intent</strong>. If governance
+failure occurs, it must exploit adaptive agency, statefulness, or
+feedback—capabilities explicitly excluded here.</p>
+
+    </article>
+</body>
+</html>
