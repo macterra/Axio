@@ -60,8 +60,7 @@ class TestRSADisabledEquivalence:
             rsa_config=None,
             rsa_policy_config=None,
         )
-        harness_baseline.run()
-        result_baseline = harness_baseline.get_result()
+        result_baseline = harness_baseline.run()
 
         # RSA present but disabled
         harness_disabled = ALSHarnessV080(
@@ -71,8 +70,7 @@ class TestRSADisabledEquivalence:
             rsa_config=None,
             rsa_policy_config=None,  # Explicitly None
         )
-        harness_disabled.run()
-        result_disabled = harness_disabled.get_result()
+        result_disabled = harness_disabled.run()
 
         # Must match exactly
         assert result_baseline.total_cycles == result_disabled.total_cycles
@@ -95,8 +93,7 @@ class TestRSANoneEquivalence:
             config=BASE_CONFIG,
             verbose=False,
         )
-        harness_baseline.run()
-        result_baseline = harness_baseline.get_result()
+        result_baseline = harness_baseline.run()
 
         # RSA v1.0 with NONE policy
         policy_config = RSAPolicyConfig(
@@ -109,8 +106,7 @@ class TestRSANoneEquivalence:
             verbose=False,
             rsa_policy_config=policy_config,
         )
-        harness_none.run()
-        result_none = harness_none.get_result()
+        result_none = harness_none.run()
 
         # Must match exactly
         assert result_baseline.total_cycles == result_none.total_cycles
@@ -295,8 +291,7 @@ class TestDeterminismAudit:
             config=BASE_CONFIG,
             rsa_policy_config=policy_config,
         )
-        harness_1.run()
-        result_1 = harness_1.get_result()
+        result_1 = harness_1.run()
 
         # Run 2
         harness_2 = ALSHarnessV080(
@@ -304,8 +299,7 @@ class TestDeterminismAudit:
             config=BASE_CONFIG,
             rsa_policy_config=policy_config,
         )
-        harness_2.run()
-        result_2 = harness_2.get_result()
+        result_2 = harness_2.run()
 
         # Must match exactly
         assert result_1.total_cycles == result_2.total_cycles
@@ -431,26 +425,20 @@ class TestALSABehavior:
                 assert action_b["action_type"] == action_d["action_type"]
                 assert action_d["action_type"] == action_e["action_type"]
 
-    def test_sequence_action_only_at_epoch_mod_3(self):
-        """SEQUENCE action should only occur when epoch % 3 == 0."""
+    def test_sequence_action_emitted_at_cycle_3(self):
+        """SEQUENCE action is emitted at cycle 3 for full commitment satisfaction.
+
+        Note: _full_commitment_sequence() emits SEQUENCE at cycle 3 every epoch,
+        regardless of epoch % 3. This ensures C2's 3-epoch window always contains
+        at least one SEQUENCE when the policy intends full compliance.
+        """
         policy = MinimalEligibilityOnlyPolicy()
         config = RSAPolicyConfig(policy_model=RSAPolicyModel.MINIMAL_ELIGIBILITY_ONLY)
 
-        # Epoch 0: should SEQUENCE at cycle 3
-        action = policy.emit(epoch=0, cycle_in_epoch=3, config=config)
-        assert action["action_type"] == "SEQUENCE"
-
-        # Epoch 1: should WAIT at cycle 3
-        action = policy.emit(epoch=1, cycle_in_epoch=3, config=config)
-        assert action["action_type"] == "WAIT"
-
-        # Epoch 2: should WAIT at cycle 3
-        action = policy.emit(epoch=2, cycle_in_epoch=3, config=config)
-        assert action["action_type"] == "WAIT"
-
-        # Epoch 3: should SEQUENCE at cycle 3
-        action = policy.emit(epoch=3, cycle_in_epoch=3, config=config)
-        assert action["action_type"] == "SEQUENCE"
+        # All epochs should SEQUENCE at cycle 3 (full commitment satisfaction)
+        for epoch in range(4):
+            action = policy.emit(epoch=epoch, cycle_in_epoch=3, config=config)
+            assert action["action_type"] == "SEQUENCE", f"Epoch {epoch} should emit SEQUENCE at cycle 3"
 
 
 if __name__ == "__main__":

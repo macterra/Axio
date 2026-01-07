@@ -3832,6 +3832,9 @@ class ALSHarnessV070(ALSHarnessV060):
         self._is_initial_succession: bool = True  # Track if first succession
         self._post_init_successions: int = 0  # Count successions after initial
 
+        # RSA v1.0: Stub for v0.70 compatibility (not enabled in v0.70)
+        self._rsa_policy_wrapper = None
+
     def _count_draw(self, candidate: SuccessorCandidate) -> None:
         """
         Count a candidate draw for composition verification (Run D).
