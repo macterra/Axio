@@ -4933,6 +4933,10 @@ class ALSHarnessV080(ALSHarnessV070):
         # v1.0 telemetry tracking (per-epoch)
         self._rsa_v10_epoch_telemetry: List[Dict[str, Any]] = []
 
+        # v0.8: Epoch-indexed action trace for O(1) epoch lookup
+        # This avoids O(n) scans of full action_trace in _compute_commitment_keys_raw
+        self._action_trace_by_epoch: Dict[int, List[Any]] = {}
+
     def _execute_working_mind_cycle_v080(self) -> Optional[tuple[LeaseViolation, str]]:
         """
         Execute working mind cycle with RSA v1.0 policy interception (v0.8 override).
@@ -5007,13 +5011,20 @@ class ALSHarnessV080(ALSHarnessV070):
         # Use global epoch when RSA v1.0 is active, per-policy epoch otherwise
         record_epoch = self._compute_global_epoch() if self._rsa_policy_wrapper is not None else self._epoch_index
 
-        self._action_trace.append(self._ActionRecord(
+        action_record = self._ActionRecord(
             action_type=action_type,
             payload=payload if isinstance(payload, dict) else {},
             epoch=record_epoch,
             cycle=self._cycle,
             sequence_num=self._action_sequence_num,
-        ))
+        )
+        self._action_trace.append(action_record)
+
+        # Update epoch index for O(1) lookup (fixes O(n²) in _compute_commitment_keys_raw)
+        if record_epoch not in self._action_trace_by_epoch:
+            self._action_trace_by_epoch[record_epoch] = []
+        self._action_trace_by_epoch[record_epoch].append(action_record)
+
         self._action_sequence_num += 1
 
         # Sentinel action check
@@ -5070,11 +5081,12 @@ class ALSHarnessV080(ALSHarnessV070):
             # Get window bounds
             window_start = max(0, window_end - commitment.window + 1)
 
-            # Filter actions in window
-            window_actions = [
-                a for a in self._action_trace
-                if window_start <= a.epoch <= window_end
-            ]
+            # Filter actions in window using epoch index for O(window) complexity
+            # instead of O(n) scan of entire action trace
+            window_actions = []
+            for ep in range(window_start, window_end + 1):
+                if ep in self._action_trace_by_epoch:
+                    window_actions.extend(self._action_trace_by_epoch[ep])
 
             # Get verifier params
             params = self._get_commitment_params(commitment.cid)
@@ -5161,15 +5173,22 @@ class ALSHarnessV080(ALSHarnessV070):
         else:
             eval_epoch = self._compute_global_epoch()
 
+        # Helper: get actions for a range of epochs using epoch index (O(window) not O(n))
+        def get_actions_in_range(start_epoch: int, end_epoch: int) -> List[Any]:
+            """Collect actions from epoch index for specified range."""
+            result = []
+            for ep in range(start_epoch, end_epoch + 1):
+                if ep in self._action_trace_by_epoch:
+                    result.extend(self._action_trace_by_epoch[ep])
+            return result
+
         # C0: At least 1 LOG action in current epoch
-        c0_ok = any(
-            a.action_type == "LOG" and a.epoch == eval_epoch
-            for a in self._action_trace
-        )
+        current_epoch_actions = self._action_trace_by_epoch.get(eval_epoch, [])
+        c0_ok = any(a.action_type == "LOG" for a in current_epoch_actions)
 
         # C1: SET + GET within 2-epoch window (check current and previous epoch)
         c1_window_start = max(0, eval_epoch - 1)
-        c1_window_actions = [a for a in self._action_trace if c1_window_start <= a.epoch <= eval_epoch]
+        c1_window_actions = get_actions_in_range(c1_window_start, eval_epoch)
         has_set = any(a.action_type == "SET" for a in c1_window_actions)
         has_get = any(a.action_type == "GET" for a in c1_window_actions)
         c1_ok = has_set and has_get
@@ -5179,12 +5198,12 @@ class ALSHarnessV080(ALSHarnessV070):
         # - action_type in {"SEQUENCE", "BATCH"}
         # - payload["actions"] is a list with length >= 2
         c2_window_start = max(0, eval_epoch - 2)
+        c2_window_actions = get_actions_in_range(c2_window_start, eval_epoch)
         c2_ok = any(
             a.action_type in ("SEQUENCE", "BATCH")
-            and c2_window_start <= a.epoch <= eval_epoch
             and isinstance(a.payload.get("actions", []), (list, tuple))
             and len(a.payload.get("actions", [])) >= 2
-            for a in self._action_trace
+            for a in c2_window_actions
         )
 
         return (c0_ok, c1_ok, c2_ok)
