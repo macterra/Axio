@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency VII.5 — Observable-Outcome Reactivity Is Insufficient to Defeat Constitutional Survivability - Axio</title>
+    <link rel="icon" type="image/webp" href="../axio.webp">
+
+    <!-- Google Fonts - Academic Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Paper Styles -->
+    <link rel="stylesheet" href="../papers.css">
+</head>
+<body>
+    <div class="header-bar">
+        <a href="../index.html" class="logo-link">
+            <img src="../axio.webp" alt="Axio" class="site-logo">
+        </a>
+        <div class="back-link"><a href="index.html">← Back to Papers</a></div>
+    </div>
+    <article>
+
+<h1
+id="axionic-agency-vii.5-observable-outcome-reactivity-is-insufficient-to-defeat-constitutional-survivability">Axionic
+Agency VII.5 — Observable-Outcome Reactivity Is Insufficient to Defeat
+Constitutional Survivability</h1>
+<p><em>Results from Outcome-Conditioned Reactive Adversarial Stress
+Testing</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026.01.08</p>
+<h2 id="abstract">Abstract</h2>
+<p>Adaptive behavior is often treated as the decisive escalation in
+governance threats: once an adversary can observe outcomes and condition
+future actions on them, collapse is assumed to follow. This paper tests
+that assumption under a deliberately constrained but structurally
+expressive adversary model. We study the same constitutional agent
+architecture evaluated in prior work—lease-based authority,
+eligibility-gated succession, and time-based recovery—but extend the
+threat model to include <strong>observable-outcome reactive
+adversaries</strong>.</p>
+<p>Using a removable, kernel-external stress layer, we introduce
+adversarial policies whose actions are deterministic functions of
+<strong>prior-epoch observables</strong>, including lapse events,
+renewal outcomes, CTA phase, and eligibility bucket. These adversaries
+are adaptive under the Decidability Requirement but remain
+<strong>stateless, non-learning, non-semantic, and
+provenance-constrained</strong>.</p>
+<p>Across <strong>50 preregistered executions</strong> spanning four
+reactive adversary models and a frozen baseline, no run exhibits
+terminal collapse, structural thrashing, asymptotic denial of service,
+or irreversible recovery suppression. All outcomes fall within
+<strong>Stable Authority</strong> or <strong>Bounded
+Degradation</strong>, and in 9/10 seeds per configuration, authority
+dynamics are identical to baseline.</p>
+<p>These results establish a second <strong>negative sufficiency
+claim</strong>: under this architecture, <strong>observable-outcome
+reactivity alone is insufficient to defeat constitutional
+survivability</strong>. If collapse occurs, it must rely on adversarial
+capabilities absent from this class—such as exercised internal state,
+learning dynamics, coordination, or semantic access.</p>
+<h2 id="introduction">1. Introduction</h2>
+<p>Following the elimination of epistemic unreliability (v0.x) and
+intentional but fixed misuse (v1.0) as sufficient causes of
+constitutional collapse, the next natural escalation is
+<strong>adaptation</strong>. A widely held intuition is that once an
+adversary can <em>observe outcomes</em> and condition future behavior
+accordingly, governance mechanisms become exploitable.</p>
+<p>This intuition conflates multiple dimensions of adversarial
+capability. In particular, it often fails to distinguish between:</p>
+<ul>
+<li><strong>reactivity</strong> vs. <strong>stateful
+adaptation</strong>,</li>
+<li><strong>outcome-conditioned behavior</strong>
+vs. <strong>learning</strong>,</li>
+<li><strong>feedback visibility</strong> vs. <strong>interventional
+control</strong>.</li>
+</ul>
+<p>Human and institutional systems routinely face actors who respond to
+visible outcomes—successes, failures, penalties, and delays—without
+necessarily learning, optimizing, or maintaining internal strategic
+state. Whether such reactivity alone is sufficient to induce collapse is
+an empirical question.</p>
+<p>This paper isolates that question directly:</p>
+<blockquote>
+<p><strong>Is observable-outcome reactivity, absent learning or internal
+state, sufficient to defeat constitutional survivability in a governance
+system with enforced succession and time-based recovery?</strong></p>
+</blockquote>
+<p>As in prior work, we evaluate <strong>constitutional
+survivability</strong>, not operational quality or utility. Authority
+availability is treated as a structural property of the system, not as a
+proxy for correctness, alignment, or benefit.</p>
+<h2 id="architecture-overview">2. Architecture Overview</h2>
+<h3 id="constitutional-agent-design">2.1 Constitutional Agent
+Design</h3>
+<p>The system under study is unchanged from v1.0 and implements:</p>
+<ul>
+<li><p><strong>Lease-based authority</strong> rather than continuous
+control</p></li>
+<li><p><strong>Eligibility-gated succession</strong> evaluated at
+discrete epochs</p></li>
+<li><p><strong>Commitment verification</strong> independent of
+optimization or reward</p></li>
+<li><p><strong>Time-based recovery (CTA)</strong> that restores
+eligibility deterministically</p></li>
+<li><p>Explicit separation between:</p>
+<ul>
+<li>semantic evaluation (did commitments pass?)</li>
+<li>authority possession (is any agent currently governing?)</li>
+</ul></li>
+</ul>
+<p>Semantic information constrains <em>who may hold authority next</em>,
+not <em>what actions are executed now</em>. Authority is never
+optimized, and no agent receives reward signals.</p>
+<h3 id="recovery-as-a-structural-mechanism">2.2 Recovery as a Structural
+Mechanism</h3>
+<p>If no eligible candidate exists at a succession boundary, the system
+enters a <strong>lapse</strong> state with no active authority. Lapse is
+constitutional, not exceptional.</p>
+<p>During lapse:</p>
+<ul>
+<li>no agent acts,</li>
+<li>semantic evaluation is suspended,</li>
+<li>eligibility decay proceeds purely as a function of time.</li>
+</ul>
+<p>Recovery is guaranteed without learning, optimization, or external
+intervention. This ensures that failure modes are <strong>reversible by
+construction</strong>, even under persistent misuse or reactivity.</p>
+<h2 id="threat-model">3. Threat Model</h2>
+<p>The adversaries introduced in this study are <strong>reactive but
+constrained</strong>.</p>
+<p>They are:</p>
+<ul>
+<li><strong>Outcome-conditioned</strong>: action selection depends on
+prior-epoch observables</li>
+<li><strong>Deterministic</strong>: no stochastic choice or
+learning</li>
+<li><strong>Stateless</strong>: no exercised internal memory</li>
+<li><strong>Non-semantic</strong>: observables carry no interpreted
+meaning</li>
+<li><strong>Kernel-external</strong>: no access to kernel logic or
+provenance</li>
+<li><strong>Liveness-preserving</strong>: strategies that halt execution
+count as failure</li>
+</ul>
+<p>Action decisions are pure functions of:</p>
+<pre><code>(epoch_index, observable_outcome)</code></pre>
+<p>where <code>observable_outcome</code> is drawn from a frozen,
+kernel-external interface including:</p>
+<ul>
+<li>lapse occurrence,</li>
+<li>renewal outcome,</li>
+<li>CTA phase bucket,</li>
+<li>eligibility bucket.</li>
+</ul>
+<p>Policies do <strong>not</strong> access verifier internals,
+commitment semantics, counters, or hidden state. This class captures
+<strong>reactive exploitation attempts</strong> without granting
+strategic memory, optimization, or deception.</p>
+<h2 id="reactive-adversary-classes">4. Reactive Adversary Classes</h2>
+<p>Four reactive adversarial models are evaluated, each conditioning on
+a distinct observable dimension:</p>
+<ol type="1">
+<li><p><strong>Outcome Toggle (Model F)</strong> Switches behavior based
+on whether a lapse occurred in the previous epoch.</p></li>
+<li><p><strong>CTA Phase Aware (Model G)</strong> Selects actions based
+on CTA phase (INACTIVE, EARLY, MID, LATE).</p></li>
+<li><p><strong>Eligibility Edge Probe (Model H)</strong> Emits distinct
+behavior when one failure away from ineligibility.</p></li>
+<li><p><strong>Renewal Feedback (Model I)</strong> Conditions actions on
+renewal success, failure, or non-attempt.</p></li>
+</ol>
+<p>All policies are implemented as frozen lookup tables from observable
+values to action primitives. No model maintains or updates internal
+state.</p>
+<h2 id="experimental-program">5. Experimental Program</h2>
+<p>All experiments share a frozen execution baseline:</p>
+<ul>
+<li>300,000 cycles (6,000 governance epochs)</li>
+<li>Tail window of 5,000 epochs</li>
+<li>Eligibility threshold: 3 consecutive failures</li>
+<li>Renewal interval: 50 cycles</li>
+<li>Amnesty interval: 10 epochs</li>
+<li>Fixed random seeds (10 per configuration)</li>
+</ul>
+<h3 id="metrics">Metrics</h3>
+<ul>
+<li><p><strong>Authority Availability (AA)</strong>: fraction of epochs
+with active authority</p></li>
+<li><p><strong>Asymptotic Authority Availability (AAA)</strong>: AA over
+the tail window</p></li>
+<li><p><strong>Recovery Time Distribution (RTD)</strong>: histogram of
+lapse durations</p></li>
+<li><p><strong>Failure classification</strong> (frozen thresholds):</p>
+<ul>
+<li>Stable Authority</li>
+<li>Bounded Degradation</li>
+<li>Structural Thrashing</li>
+<li>Asymptotic Denial of Service</li>
+<li>Terminal Collapse</li>
+</ul></li>
+</ul>
+<p>Failure classification is based on <strong>asymptotic
+behavior</strong>, not transient effects.</p>
+<h2 id="results">6. Results</h2>
+<h3 id="baseline-reference">6.1 Baseline Reference</h3>
+<p>Across baseline runs (RSA disabled or NONE):</p>
+<ul>
+<li><strong>Mean AA</strong>: ≈66.6%</li>
+<li><strong>Mean AAA</strong>: ≈66.6%</li>
+<li><strong>Classification</strong>: Bounded Degradation</li>
+</ul>
+<p>This baseline regime is empirically stable across seeds and serves as
+the reference for all comparisons.</p>
+<h3 id="outcome-conditioned-reactivity">6.2 Outcome-Conditioned
+Reactivity</h3>
+<p>Across all four reactive models:</p>
+<ul>
+<li><strong>Zero constitutional failures</strong> occur</li>
+<li><strong>Mean AA and AAA</strong> match baseline to measurement
+precision</li>
+<li><strong>9/10 seeds per run</strong> are bit-identical to baseline
+outcomes</li>
+<li>One seed (2048) exhibits a small, stable AA delta (−7 PPM) without
+changing failure class</li>
+</ul>
+<p>No model induces:</p>
+<ul>
+<li>unbounded lapse growth,</li>
+<li>recovery suppression,</li>
+<li>heavy-tailed thrashing,</li>
+<li>or asymptotic authority denial.</li>
+</ul>
+<h3 id="eligibility-edge-probing">6.3 Eligibility Edge Probing</h3>
+<p>The eligibility-edge model spends the majority of authority epochs in
+the INELIGIBLE bucket. As a result, distinctive EDGE behavior is
+exercised rarely. Even so, no amplification or destabilization is
+observed; post-ineligibility behavior converges to baseline
+dynamics.</p>
+<h2 id="cross-run-synthesis">7. Cross-Run Synthesis</h2>
+<p>Across all <strong>50 executions</strong>:</p>
+<ul>
+<li><strong>No terminal collapses</strong></li>
+<li><strong>No structural thrashing</strong></li>
+<li><strong>No asymptotic denial of service</strong></li>
+<li>Reactive behavior collapses into baseline authority dynamics</li>
+<li>Observable feedback provides no leverage over recovery
+mechanisms</li>
+</ul>
+<p>Outcome-conditioned reactivity behaves as <strong>bounded
+perturbation</strong>, not as an existential threat.</p>
+<h2 id="interpretation">8. Interpretation</h2>
+<p>Three structural insights emerge:</p>
+<ol type="1">
+<li><p><strong>Reactivity is not the dangerous axis</strong>
+Conditioning on visible outcomes does not, by itself, destabilize
+authority.</p></li>
+<li><p><strong>Observables are lagging, not interventional</strong>
+Feedback arrives after constitutional transitions have already
+occurred.</p></li>
+<li><p><strong>Recovery absorbs reactive pressure</strong> Time-based
+amnesty dominates outcome-conditioned misuse.</p></li>
+</ol>
+<p>The result is not merely that reactivity fails, but that
+<strong>reactive strategies converge to the same equilibrium regime as
+fixed misuse</strong>.</p>
+<h2 id="survivability-vs.-utility">9. Survivability vs. Utility</h2>
+<p>As in prior work, this paper evaluates
+<strong>survivability</strong>, not utility. A system may be
+constitutionally survivable yet operationally inefficient.</p>
+<p>Reactive adversaries frequently induce lapses and reduce authority
+availability in the short term. These effects are classified as
+survivable so long as:</p>
+<ul>
+<li>authority availability remains bounded away from zero,</li>
+<li>recovery remains reliable,</li>
+<li>lapse durations remain bounded.</li>
+</ul>
+<p>Utility optimization and parameter tuning are outside the scope of
+this work.</p>
+<h2 id="limitations">10. Limitations</h2>
+<p>This study does not address:</p>
+<ul>
+<li>Exercised internal state or memory</li>
+<li>Learning or optimization dynamics</li>
+<li>Multi-agent coordination</li>
+<li>Deception or probing beyond observables</li>
+<li>Semantic access to commitments</li>
+<li>Resource starvation or side-channels</li>
+</ul>
+<p>The results apply <strong>only</strong> to observable-outcome
+reactive adversaries under the tested architecture and parameters.</p>
+<h2 id="conclusion">11. Conclusion</h2>
+<blockquote>
+<p><strong>Observable-outcome reactivity is insufficient to defeat
+constitutional survivability in this architecture.</strong></p>
+</blockquote>
+<p>Across 50 preregistered executions spanning four reactive adversary
+classes, authority remains bounded, recoverable, and non-absorbing. No
+collapse modes are observed.</p>
+<p>If constitutional failure occurs, it must rely on adversarial
+capabilities beyond outcome-conditioned reactivity—specifically,
+exercised state, learning dynamics, coordination, or semantic access.
+These form the subject of subsequent work.</p>
+
+    </article>
+</body>
+</html>
