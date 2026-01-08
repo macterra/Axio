@@ -4965,6 +4965,11 @@ class ALSHarnessV080(ALSHarnessV070):
         self._current_epoch_has_lapse: bool = False
         self._last_epoch_index: int = -1  # Track epoch transitions
 
+        # v2.0: Renewal outcome tracking for Run 4 (RENEWAL_FEEDBACK)
+        # _last_renewal_outcome: True=SUCCEEDED, False=FAILED, None=NOT_ATTEMPTED
+        # Set at renewal decision point, read by _build_kernel_state_for_rsa_v2()
+        self._last_renewal_outcome: Optional[bool] = None
+
         # v0.8: Epoch-indexed action trace for O(1) epoch lookup
         # This avoids O(n) scans of full action_trace in _compute_commitment_keys_raw
         self._action_trace_by_epoch: Dict[int, List[Any]] = {}
@@ -5094,6 +5099,33 @@ class ALSHarnessV080(ALSHarnessV070):
 
         return None
 
+    def _check_renewal_with_rent(self) -> None:
+        """
+        Override to track renewal outcome for RSA v2.0 observable (Run 4).
+
+        Sets _last_renewal_outcome based on the renewal decision:
+        - True: renewal succeeded
+        - False: renewal failed (eligibility, budget, attestation, etc.)
+        - None: no renewal attempted (e.g., during lapse)
+
+        This observable is read by _build_kernel_state_for_rsa_v2() and
+        exposed as OBS_RENEWAL_OUTCOME in the v2.0 interface.
+        """
+        # Record count of renewal events before parent call
+        events_before = len(self._renewal_events)
+
+        # Call parent implementation
+        super()._check_renewal_with_rent()
+
+        # Check if a renewal event was added
+        if len(self._renewal_events) > events_before:
+            # A renewal check was evaluated - get the outcome
+            latest_event = self._renewal_events[-1]
+            if latest_event.cycle == self._cycle:
+                self._last_renewal_outcome = latest_event.success
+        # If no new event, parent may have returned early (no lease, not active, etc.)
+        # In that case, leave _last_renewal_outcome unchanged (will be reset at epoch start)
+
     def _compute_global_epoch(self) -> int:
         """Compute global epoch index from current cycle.
 
@@ -5114,8 +5146,11 @@ class ALSHarnessV080(ALSHarnessV070):
         """
         current_epoch = self._compute_global_epoch()
 
+        # Track if we're entering a new epoch (for post-sampling reset)
+        is_new_epoch = current_epoch != self._last_epoch_index
+
         # Epoch transition: roll over lapse tracking
-        if current_epoch != self._last_epoch_index:
+        if is_new_epoch:
             # Save current epoch's lapse status as "last epoch"
             self._last_epoch_had_lapse = self._current_epoch_has_lapse
             # Reset current epoch accumulator
@@ -5158,7 +5193,8 @@ class ALSHarnessV080(ALSHarnessV070):
         if self._active_policy_id:
             successive_failures = self._semantic_fail_streak.get(self._active_policy_id, 0)
 
-        return {
+        # Build result dict (sample renewal outcome before reset)
+        result = {
             "epoch_index": current_epoch,
             "authority": authority,
             "lapse_occurred_last_epoch": self._last_epoch_had_lapse,
@@ -5168,6 +5204,13 @@ class ALSHarnessV080(ALSHarnessV070):
             "cta_length": cta_length,
             "successive_renewal_failures": successive_failures,
         }
+
+        # Reset renewal outcome for new epoch AFTER sampling
+        # This ensures epoch t+1 sees NOT_ATTEMPTED if no renewal check fires in epoch t
+        if is_new_epoch:
+            self._last_renewal_outcome = None
+
+        return result
 
     def _evaluate_commitments_at_epoch_end(self) -> None:
         """
