@@ -133,15 +133,21 @@ Before execution, each run must explicitly answer the following.
 
 ### Adversary classification
 
-* Does the adversary’s behavior depend on prior outcomes within the same run?
+* Is the adversary’s behavior selected as a function of prior outcomes within the same run?
 
-  * **Yes** → Adaptive → requires v2.x
+  * **No** → Non-adaptive → v0.x or v1.x (depending on intent)
+  * **Yes** → Adaptive → continue
+
+* Does the adversary condition actions **only on observable outcomes**
+  (e.g., lapse events, renewal outcomes, CTA phase, eligibility buckets),
+  with **no exercised internal state**?
+
+  * **Yes** → Outcome-conditioned reactive → requires **v2.x**
   * **No** → continue
 
-* Is behavior selected intentionally to defeat governance?
+* Does the adversary exercise internal state, memory, or learning dynamics that influence future actions?
 
-  * **Yes** → Intentional → requires v1.x
-  * **No** → Epistemic → v0.x
+  * **Yes** → Stateful or learning adversary → requires **v3.x**
 
 ### Kernel access
 
@@ -152,9 +158,13 @@ Before execution, each run must explicitly answer the following.
 
 ### Adaptation check (tightened)
 
-* Is any action distribution conditional on run history?
+* Is any action distribution conditional on prior outcomes within the same run?
 
-  * **Yes** → Adaptation → major version increment required
+  * **Yes** → Adaptation present → minimum **v2.x** required
+
+* Does the action distribution depend on exercised internal state, memory, or learning updates?
+
+  * **Yes** → Stateful or learning adaptation → requires **v3.x**
 
 This includes conditioning on:
 

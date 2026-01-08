@@ -127,38 +127,77 @@ Termination condition satisfied at **v1.0**.
 
 ---
 
-### **RSA v2.x — Adaptive Adversaries**
+### **RSA v2.x — Outcome-Conditioned Reactive Adversaries**
 
 **Invariant:**
-Adversaries may learn and optimize but remain kernel-external and provenance-constrained.
+Adversaries are **run-adaptive under the Decidability Requirement**: their behavior is selected as a deterministic function of prior outcomes within the same run.
+
+They remain:
+
+* kernel-external,
+* provenance-constrained,
+* non-semantic (observable-only),
+* deterministic and table-driven,
+* and bounded in interface (a bounded-state interface may exist but need not be exercised).
+
+This class includes **observable-conditioned reactive policies**, even when no internal state is used.
 
 **Research question:**
-Can structural governance withstand intelligent opposition, or does adaptation alone break survivability?
+Does outcome-conditioned reactivity, with observable-only feedback and no semantic access, defeat constitutional survivability beyond fixed intentional misuse?
 
 **Justification:**
-With epistemic failure (v0.x) and fixed intentional misuse (v1.0) ruled out as sufficient causes of collapse, **adaptation** becomes the minimal remaining live hypothesis for constitutional defeat.
+With epistemic failure (v0.x) and fixed intentional misuse (v1.x) ruled out as sufficient causes of collapse, **within-run outcome dependence** becomes the minimal remaining live hypothesis for constitutional defeat.
 
-#### v2.0 — Adaptive Adversaries
+#### v2.0 — Observable-Outcome Reactive Adversaries (RSA-OAA-0)
 
-Introduces learning dynamics and evaluates erosion of authority availability.
+Introduces a frozen **observable outcome interface** and reactive adversaries that select actions as deterministic functions of prior-epoch observables (e.g., lapse events, renewal outcomes, CTA phase, eligibility bucket).
 
-#### v2.1 — Adaptation Limits
+Evaluates whether observable-only feedback enables constitutional defeat.
 
-Separates failure caused by learning *per se* from specific learning dynamics (rate, horizon, observability).
+**Status:**
+No terminal failures observed.
+Outcomes are nearly identical to baseline across preregistered runs.
+
+#### v2.1 — Reactive Exploitation Coverage *(Optional / Recommended)*
+
+Strengthens diagnostic power without changing adversary ontology by ensuring meaningful coverage of critical observable regimes (e.g., sustained EDGE residency) and reporting coverage explicitly.
+
+All changes must remain kernel-external and preregistered.
 
 **Termination condition for v2.x:**
-Once adaptive defeat is demonstrated or bounded, RSA reaches its final explanatory limit.
+Outcome-conditioned reactivity either induces constitutional defeat, or is shown insufficient across preregistered reactive adversaries and coverage-complete regimes.
 
 ---
 
-### **RSA v3.0 — Boundary of Architecture**
+### **RSA v3.x — Stateful and Learning Adversaries**
+
+**Invariant:**
+Adversaries may exercise internal state and/or learning dynamics, while remaining kernel-external and provenance-constrained.
+
+**Research question:**
+Does stateful adaptation or learning enable constitutional defeat when reactive policies fail?
+
+#### v3.0 — Stateful Adversaries (Finite-State, Non-Learning)
+
+Exercises the bounded-state interface explicitly via finite-state controllers whose behavior depends on internal state plus observables.
+
+#### v3.1 — Learning Adversaries *(If Needed)*
+
+Introduces explicit learning or optimization dynamics (still kernel-external), with preregistered learning rules and measurable convergence or collapse criteria.
+
+**Termination condition for v3.x:**
+Stateful or learning adversaries either defeat constitutional survivability, or the architectural boundary is characterized tightly enough to justify closure.
+
+---
+
+### **RSA v4.0 — Boundary of Architecture**
 
 **Purpose:**
 Formally establishes where alignment ceases to be architectural and becomes irreducibly agentic, normative, or political.
 
 This is not an expansion of RSA, but its **closure**.
 
-**No minor versions exist beyond v3.0;**
+**No minor versions exist beyond v4.0;**
 any work extending past this boundary is definitionally outside the RSA program.
 
 ---
@@ -170,8 +209,9 @@ The following classes have been experimentally ruled out as **sufficient** cause
 1. Independent epistemic unreliability (v0.1)
 2. Structured epistemic interference (v0.2)
 3. Intentional but fixed misuse (v1.0)
+4. **Observable-outcome reactive adversaries (v2.0)**
 
-Remaining live hypotheses require **adaptation, state, or feedback access**.
+Remaining live hypotheses require **exercised internal state, learning dynamics, or expanded access**, each requiring an explicit version transition.
 
 ---
 
@@ -199,7 +239,7 @@ Anything beyond this point is **not RSA** and must be treated as a different res
 This roadmap exists to prevent three common failures in alignment research:
 
 1. **Silent escalation** of claims without changing terminology
-2. **Category confusion** between epistemic failure and agency
+2. **Category confusion** between epistemic failure, reactivity, and agency
 3. **False completeness**, where partial solutions are presented as total alignment
 
 RSA’s contribution is not safety guarantees, but **epistemic honesty**.
@@ -212,5 +252,6 @@ RSA’s contribution is not safety guarantees, but **epistemic honesty**.
 * **v0.2 complete**
 * **v1.0 complete**
 * v1.1 optional
-* **v2.x next active research phase**
-
+* **v2.0 complete**
+* v2.1 optional / recommended
+* **v3.x next active research phase**
