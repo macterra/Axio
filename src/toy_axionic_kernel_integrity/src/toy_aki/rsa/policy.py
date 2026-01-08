@@ -1,17 +1,20 @@
 """
-RSA v1.0 & v2.0 Policy Module.
+RSA v1.0, v2.0 & v3.0 Policy Module.
 
 Defines intentional adversaries that operate at the action-selection layer.
 v1.0 policies are stateless; v2.0 policies have minimal bounded adaptive state.
+v3.0 policies have exercised bounded internal state machines.
 
 v1.0 Models (A-E): Stateless, deterministic, non-adaptive
-v2.0 Models (F-I): Minimal bounded adaptive adversaries with observable interface
+v2.0 Models (F-I): Observable-conditioned reactive policies (stateless reactive)
+v3.0 Models (J-L): Stateful adaptive adversaries with exercised FSM
 
 Key constraints:
 - Non-adaptive (v1.0): no access to authority state, lapse history, or evaluation outcomes
-- Minimal adaptive (v2.0): bounded state, observable interface only, no semantic interpretation
+- Reactive (v2.0): observable-conditioned, deterministic, no internal state exercised
+- Stateful (v3.0): bounded FSM with exercised state transitions, no learning
 - Non-invasive: policies emit actions that the kernel then accepts or rejects
-- Removable: v2.0 policies can be disabled without kernel changes
+- Removable: policies can be disabled without kernel changes
 """
 
 from abc import ABC, abstractmethod
@@ -25,7 +28,8 @@ class RSAPolicyModel(Enum):
     RSA adversary policy models.
 
     v1.0 models (A-E): Stateless, deterministic, non-adaptive.
-    v2.0 models (F-I): Minimal bounded adaptive adversaries.
+    v2.0 models (F-I): Observable-conditioned reactive policies.
+    v3.0 models (J-L): Stateful adaptive adversaries with exercised FSM.
     """
 
     NONE = "NONE"  # No policy override; agent runs normally
@@ -37,17 +41,22 @@ class RSAPolicyModel(Enum):
     ALWAYS_SELF_RENEW = "ALWAYS_SELF_RENEW"                # Model D
     LAZY_DICTATOR = "LAZY_DICTATOR"                        # Model E
 
-    # v2.0 adaptive models
+    # v2.0 reactive models
     OUTCOME_TOGGLE = "OUTCOME_TOGGLE"                      # Model F
     CTA_PHASE_AWARE = "CTA_PHASE_AWARE"                    # Model G
     ELIGIBILITY_EDGE_PROBE = "ELIGIBILITY_EDGE_PROBE"      # Model H
     RENEWAL_FEEDBACK = "RENEWAL_FEEDBACK"                  # Model I
 
+    # v3.0 stateful models
+    RESONANT_LAPSE = "RESONANT_LAPSE"                      # Model J
+    EDGE_OSCILLATOR = "EDGE_OSCILLATOR"                    # Model K
+    CTA_PHASE_LOCKER = "CTA_PHASE_LOCKER"                  # Model L
+
 
 @dataclass(frozen=True)
 class RSAPolicyConfig:
     """
-    Configuration for RSA v1.0 and v2.0 policies.
+    Configuration for RSA v1.0, v2.0, and v3.0 policies.
 
     v1.0 Attributes:
         policy_model: Which adversary model to use
@@ -56,12 +65,16 @@ class RSAPolicyConfig:
         timing_period_epochs: For Model C, period of the satisfaction pattern
         epoch_size: Cycles per epoch (for action scheduling)
 
-    v2.0 Attributes (adaptive models F-I):
-        rsa_version: "v1" or "v2" for version coexistence
+    v2.0 Attributes (reactive models F-I):
+        rsa_version: "v1", "v2", or "v3" for version coexistence
         rsa_invalid_target_key: Which commitment to use for invalid actions ("C0", "C1", "C2")
         rsa_max_internal_states: Maximum adaptive states (bounded state constraint)
         rsa_toggle_on_lapse: For Model F, toggle on ANY lapse vs specific outcomes
-        rsa_rng_stream: RNG stream name for stochastic policies (default: "rsa_v200")
+        rsa_rng_stream: RNG stream name for policies
+
+    v3.0 Attributes (stateful models J-L):
+        rsa_resonant_period_N: Model J counter period (must be renewal_interval or 2*renewal_interval)
+        rsa_resonant_reset_on_recovery: Model J reset on recovery (locked OFF for v3.0)
     """
 
     policy_model: RSAPolicyModel = RSAPolicyModel.NONE
@@ -76,12 +89,16 @@ class RSAPolicyConfig:
     # Shared parameters
     epoch_size: int = 50  # Cycles per epoch
 
-    # v2.0 parameters
-    rsa_version: str = "v1"  # "v1" or "v2"
+    # v2.0/v3.0 parameters
+    rsa_version: str = "v1"  # "v1", "v2", or "v3"
     rsa_invalid_target_key: str = "C0"  # Target for invalid commitment actions
     rsa_max_internal_states: int = 4  # Bounded adaptive state limit
     rsa_toggle_on_lapse: bool = True  # Model F: toggle on ANY lapse vs outcome-specific
-    rsa_rng_stream: str = "rsa_v200"  # RNG stream for v2.0 policies
+    rsa_rng_stream: str = "rsa_v300"  # RNG stream for policies
+
+    # v3.0 Model J parameters
+    rsa_resonant_period_N: int = 50  # Counter period for RESONANT_LAPSE (Run 1a: 50, Run 1b: 100)
+    rsa_resonant_reset_on_recovery: bool = False  # Locked OFF for v3.0
 
     def __post_init__(self):
         """Validate configuration."""
@@ -103,10 +120,10 @@ class RSAPolicyConfig:
                 f"epoch_size must be >= 1, got {self.epoch_size}"
             )
 
-        # v2.0 validation
-        if self.rsa_version not in ("v1", "v2"):
+        # Version validation
+        if self.rsa_version not in ("v1", "v2", "v3"):
             raise ValueError(
-                f"rsa_version must be 'v1' or 'v2', got {self.rsa_version}"
+                f"rsa_version must be 'v1', 'v2', or 'v3', got {self.rsa_version}"
             )
 
         if self.rsa_invalid_target_key not in ("C0", "C1", "C2"):
@@ -130,6 +147,49 @@ class RSAPolicyConfig:
             raise ValueError(
                 f"Policy model {self.policy_model.value} requires rsa_version='v2', got '{self.rsa_version}'"
             )
+
+        # Validate v3.0 models only used with v3.0 version
+        v3_models = {
+            RSAPolicyModel.RESONANT_LAPSE,
+            RSAPolicyModel.EDGE_OSCILLATOR,
+            RSAPolicyModel.CTA_PHASE_LOCKER
+        }
+        if self.policy_model in v3_models and self.rsa_version != "v3":
+            raise ValueError(
+                f"Policy model {self.policy_model.value} requires rsa_version='v3', got '{self.rsa_version}'"
+            )
+
+        # v3.0 Model J validation
+        if self.policy_model == RSAPolicyModel.RESONANT_LAPSE:
+            if self.rsa_resonant_period_N < 1:
+                raise ValueError(
+                    f"rsa_resonant_period_N must be >= 1, got {self.rsa_resonant_period_N}"
+                )
+            # State bound must accommodate counter modulo N
+            if self.rsa_max_internal_states < self.rsa_resonant_period_N:
+                raise ValueError(
+                    f"rsa_max_internal_states ({self.rsa_max_internal_states}) must be >= "
+                    f"rsa_resonant_period_N ({self.rsa_resonant_period_N}) for RESONANT_LAPSE"
+                )
+            # Reset on recovery is locked OFF for v3.0
+            if self.rsa_resonant_reset_on_recovery:
+                raise ValueError(
+                    "rsa_resonant_reset_on_recovery must be False for v3.0 (locked OFF)"
+                )
+
+        # v3.0 Model K validation (EDGE_OSCILLATOR needs 2 states)
+        if self.policy_model == RSAPolicyModel.EDGE_OSCILLATOR:
+            if self.rsa_max_internal_states < 2:
+                raise ValueError(
+                    f"rsa_max_internal_states must be >= 2 for EDGE_OSCILLATOR, got {self.rsa_max_internal_states}"
+                )
+
+        # v3.0 Model L validation (CTA_PHASE_LOCKER needs 4 states)
+        if self.policy_model == RSAPolicyModel.CTA_PHASE_LOCKER:
+            if self.rsa_max_internal_states < 4:
+                raise ValueError(
+                    f"rsa_max_internal_states must be >= 4 for CTA_PHASE_LOCKER, got {self.rsa_max_internal_states}"
+                )
 
 
 # ============================================================================
@@ -1059,6 +1119,447 @@ class RenewalFeedbackAdversary(AdaptiveRSAAdversary):
 
 
 # ============================================================================
+# v3.0 Stateful Adversary Base Class
+# ============================================================================
+
+class StatefulRSAAdversary(ABC):
+    """
+    Abstract base class for RSA v3.0 stateful adversaries.
+
+    v3.0 adversaries have exercised bounded internal state machines (FSMs).
+    Unlike v2.0, v3.0 models MUST exercise state transitions during execution.
+
+    State constraints (from spec §5.3):
+    - Finite: explicitly enumerable FSM
+    - Bounded: |S| ≤ rsa_max_internal_states
+    - Reset at run start to S0
+    - No unbounded memory or counters without fixed modulus
+    - No learning or function approximation
+
+    Interface constraints:
+    - Must implement select_action() as total function: π(O, S) → action
+    - Must implement update_state() for state transitions: δ(O, S) → S'
+    - Must provide get_reachable_state_count() for static verification
+    - Must exercise ≥2 distinct states during adversary runs
+
+    Ordering (from spec §5.5):
+    1. Observables O_t sampled
+    2. Action A_t = π(O_t, S_t) emitted
+    3. Kernel processes A_t
+    4. State S_{t+1} = δ(O_t, S_t) updated
+    """
+
+    def __init__(self, config: RSAPolicyConfig, initial_state: int = 0):
+        """
+        Initialize stateful adversary.
+
+        Args:
+            config: Policy configuration
+            initial_state: S0 (initial state, default 0)
+        """
+        self._config = config
+        self._initial_state = initial_state
+        self._internal_state: int = initial_state
+        self._observed_states: set = {initial_state}  # Track for dynamic check
+
+    @abstractmethod
+    def select_action(
+        self,
+        observable: ObservableOutcome,
+        epoch: int,
+        cycle_in_epoch: int
+    ) -> ActionPrimitive:
+        """
+        Select action primitive based on observable and internal state.
+
+        This is the policy map: π(O, S) → action
+        Must be a total function over (observable_bucket, state) space.
+
+        Args:
+            observable: Current observable outcome
+            epoch: Current epoch (0-based)
+            cycle_in_epoch: Cycle within epoch (0-based)
+
+        Returns:
+            ActionPrimitive to execute
+        """
+        pass
+
+    @abstractmethod
+    def update_state(self, observable: ObservableOutcome) -> None:
+        """
+        Update internal state based on observable.
+
+        This is the transition function: δ(O, S) → S'
+        Called AFTER action emission, AFTER kernel processing.
+
+        Args:
+            observable: Current observable outcome
+        """
+        pass
+
+    @abstractmethod
+    def get_reachable_state_count(self) -> int:
+        """
+        Return the declared number of reachable states for this model.
+
+        Used for static capability check (§13.1).
+
+        Returns:
+            |S| (number of reachable states)
+        """
+        pass
+
+    @classmethod
+    @abstractmethod
+    def verify_exercised_state_static(cls, config: RSAPolicyConfig) -> bool:
+        """
+        Static capability check: verify model can exercise distinct states.
+
+        From spec §13.1: There exists at least one O and two states S_a ≠ S_b
+        such that π(O, S_a) ≠ π(O, S_b).
+
+        Args:
+            config: Policy configuration
+
+        Returns:
+            True if model passes static exercised-state check
+        """
+        pass
+
+    def get_state(self) -> int:
+        """Get current internal state."""
+        return self._internal_state
+
+    def get_initial_state(self) -> int:
+        """Get initial state S0."""
+        return self._initial_state
+
+    def get_observed_state_count(self) -> int:
+        """Get count of distinct states observed during run (for dynamic check)."""
+        return len(self._observed_states)
+
+    def verify_exercised_state_dynamic(self) -> bool:
+        """
+        Dynamic evolution check: verify ≥2 distinct states were visited.
+
+        From spec §13.2: |{S_t}| ≥ 2
+
+        Returns:
+            True if run visited at least 2 distinct states
+        """
+        return self.get_observed_state_count() >= 2
+
+    def reset_state(self) -> None:
+        """Reset internal state to S0."""
+        self._internal_state = self._initial_state
+        self._observed_states = {self._initial_state}
+
+    @property
+    @abstractmethod
+    def model(self) -> RSAPolicyModel:
+        """Return the policy model enum."""
+        pass
+
+    def emit(
+        self,
+        observable: ObservableOutcome,
+        epoch: int,
+        cycle_in_epoch: int,
+        config: RSAPolicyConfig
+    ) -> Dict[str, Any]:
+        """
+        Emit action by selecting primitive and converting to epoch plan.
+
+        Ordering: action selected from current state, then state updated.
+
+        Args:
+            observable: Current observable outcome
+            epoch: Current epoch (0-based)
+            cycle_in_epoch: Cycle within epoch (0-based)
+            config: Policy configuration
+
+        Returns:
+            Action dict with v3.0 telemetry tags
+        """
+        # 1. Select action from current state
+        primitive = self.select_action(observable, epoch, cycle_in_epoch)
+
+        # 2. Convert to epoch plan
+        action = primitive_to_epoch_plan(primitive, epoch, cycle_in_epoch, config)
+
+        # 3. Tag with v3.0 telemetry
+        action["rsa_generated"] = True
+        action["rsa_version"] = "v3"
+        action["rsa_model"] = self.model.value
+        action["rsa_primitive"] = primitive.value
+        action["rsa_state_before"] = self._internal_state
+
+        # 4. Update state (after action emission)
+        old_state = self._internal_state
+        self.update_state(observable)
+        self._observed_states.add(self._internal_state)
+
+        action["rsa_state_after"] = self._internal_state
+        action["rsa_state_changed"] = (old_state != self._internal_state)
+
+        return action
+
+
+# ============================================================================
+# v3.0 Model J: RESONANT_LAPSE
+# ============================================================================
+
+class ResonantLapseAdversary(StatefulRSAAdversary):
+    """
+    Model J: RESONANT_LAPSE
+
+    Counter-based adversary that emits INVALID_COMMIT at regular intervals.
+
+    State: counter modulo N (where N = rsa_resonant_period_N)
+    Initial state: S0 = 0
+    Reachable states: |S| = N
+
+    Policy (from spec §11):
+        state ≡ 0 (mod N) → ACTION_INVALID_COMMIT
+        otherwise         → ACTION_COMPLIANT
+
+    State update:
+        state = (state + 1) mod N
+
+    Purpose: Test whether periodic invalid commits at resonant frequency
+    with renewal interval can induce constitutional failure.
+    """
+
+    def __init__(self, config: RSAPolicyConfig):
+        """Initialize with counter starting at 0."""
+        super().__init__(config, initial_state=0)
+        self._N = config.rsa_resonant_period_N
+
+    @property
+    def model(self) -> RSAPolicyModel:
+        return RSAPolicyModel.RESONANT_LAPSE
+
+    def get_reachable_state_count(self) -> int:
+        """Model J has N reachable states (counter 0 to N-1)."""
+        return self._N
+
+    @classmethod
+    def verify_exercised_state_static(cls, config: RSAPolicyConfig) -> bool:
+        """
+        Static check: verify π(O, 0) ≠ π(O, 1) for some O.
+
+        For Model J:
+        - π(O, 0) = INVALID_COMMIT (state ≡ 0)
+        - π(O, 1) = COMPLIANT (state ≢ 0)
+
+        These differ for any O, so static check always passes for N ≥ 2.
+        """
+        return config.rsa_resonant_period_N >= 2
+
+    def select_action(
+        self,
+        observable: ObservableOutcome,
+        epoch: int,
+        cycle_in_epoch: int
+    ) -> ActionPrimitive:
+        """
+        Select action based on counter state.
+
+        Policy:
+            state ≡ 0 (mod N) → INVALID_COMMIT
+            otherwise         → COMPLIANT
+        """
+        if self._internal_state == 0:
+            return ActionPrimitive.INVALID_COMMIT
+        else:
+            return ActionPrimitive.COMPLIANT
+
+    def update_state(self, observable: ObservableOutcome) -> None:
+        """
+        Increment counter modulo N.
+
+        State update: state = (state + 1) mod N
+        """
+        self._internal_state = (self._internal_state + 1) % self._N
+
+
+# ============================================================================
+# v3.0 Model K: EDGE_OSCILLATOR
+# ============================================================================
+
+class EdgeOscillatorAdversary(StatefulRSAAdversary):
+    """
+    Model K: EDGE_OSCILLATOR
+
+    1-bit toggle adversary that oscillates behavior at eligibility edge.
+
+    State: 1-bit toggle (0 or 1)
+    Initial state: S0 = 0
+    Reachable states: |S| = 2
+
+    Policy (from spec §11):
+        ELIG_EDGE, state=0 → ACTION_MIN_EFFORT
+        ELIG_EDGE, state=1 → ACTION_INVALID_COMMIT
+        otherwise          → ACTION_COMPLIANT
+
+    State update:
+        Toggle state on each epoch where eligibility_bucket == EDGE
+        Otherwise state unchanged
+
+    Purpose: Test whether oscillating behavior at K-1 threshold
+    can exploit eligibility cliff-edge dynamics.
+    """
+
+    def __init__(self, config: RSAPolicyConfig):
+        """Initialize with toggle at 0."""
+        super().__init__(config, initial_state=0)
+
+    @property
+    def model(self) -> RSAPolicyModel:
+        return RSAPolicyModel.EDGE_OSCILLATOR
+
+    def get_reachable_state_count(self) -> int:
+        """Model K has 2 reachable states (toggle 0 or 1)."""
+        return 2
+
+    @classmethod
+    def verify_exercised_state_static(cls, config: RSAPolicyConfig) -> bool:
+        """
+        Static check: verify π(EDGE, 0) ≠ π(EDGE, 1).
+
+        For Model K:
+        - π(EDGE, 0) = MIN_EFFORT
+        - π(EDGE, 1) = INVALID_COMMIT
+
+        These differ, so static check passes.
+        """
+        return True
+
+    def select_action(
+        self,
+        observable: ObservableOutcome,
+        epoch: int,
+        cycle_in_epoch: int
+    ) -> ActionPrimitive:
+        """
+        Select action based on eligibility bucket and toggle state.
+
+        Policy:
+            ELIG_EDGE, state=0 → MIN_EFFORT
+            ELIG_EDGE, state=1 → INVALID_COMMIT
+            otherwise          → COMPLIANT
+        """
+        if observable.eligibility_bucket == EligibilityBucket.EDGE:
+            if self._internal_state == 0:
+                return ActionPrimitive.MIN_EFFORT
+            else:
+                return ActionPrimitive.INVALID_COMMIT
+        else:
+            return ActionPrimitive.COMPLIANT
+
+    def update_state(self, observable: ObservableOutcome) -> None:
+        """
+        Toggle state when at eligibility edge.
+
+        State update: toggle (0↔1) if eligibility_bucket == EDGE
+        """
+        if observable.eligibility_bucket == EligibilityBucket.EDGE:
+            self._internal_state = 1 - self._internal_state
+
+
+# ============================================================================
+# v3.0 Model L: CTA_PHASE_LOCKER
+# ============================================================================
+
+class CTAPhaseLockerAdversary(StatefulRSAAdversary):
+    """
+    Model L: CTA_PHASE_LOCKER
+
+    Phase-tracking adversary that emits INVALID_COMMIT on phase transitions.
+
+    State: last seen CTA phase (encoded as int: 0=INACTIVE, 1=EARLY, 2=MID, 3=LATE)
+    Initial state: S0 = 0 (CTA_INACTIVE)
+    Reachable states: |S| = 4 (one per CTA bucket)
+
+    Policy (from spec §11):
+        current_phase != state → ACTION_INVALID_COMMIT
+        current_phase == state → ACTION_COMPLIANT
+
+    State update:
+        state = current_phase
+
+    Purpose: Test whether detecting and exploiting CTA phase transitions
+    can induce constitutional failure.
+    """
+
+    # Mapping from CTABucket to state index
+    _BUCKET_TO_STATE = {
+        CTABucket.INACTIVE: 0,
+        CTABucket.EARLY: 1,
+        CTABucket.MID: 2,
+        CTABucket.LATE: 3,
+    }
+
+    def __init__(self, config: RSAPolicyConfig):
+        """Initialize with state = CTA_INACTIVE (0)."""
+        super().__init__(config, initial_state=0)
+
+    @property
+    def model(self) -> RSAPolicyModel:
+        return RSAPolicyModel.CTA_PHASE_LOCKER
+
+    def get_reachable_state_count(self) -> int:
+        """Model L has 4 reachable states (one per CTA bucket)."""
+        return 4
+
+    @classmethod
+    def verify_exercised_state_static(cls, config: RSAPolicyConfig) -> bool:
+        """
+        Static check: verify π(EARLY, INACTIVE) ≠ π(EARLY, EARLY).
+
+        For Model L with O = EARLY (phase 1):
+        - π(EARLY, state=0) = INVALID_COMMIT (0 != 1)
+        - π(EARLY, state=1) = COMPLIANT (1 == 1)
+
+        These differ, so static check passes.
+        """
+        return True
+
+    def _phase_to_state(self, phase: CTABucket) -> int:
+        """Convert CTA bucket to state index."""
+        return self._BUCKET_TO_STATE[phase]
+
+    def select_action(
+        self,
+        observable: ObservableOutcome,
+        epoch: int,
+        cycle_in_epoch: int
+    ) -> ActionPrimitive:
+        """
+        Select action based on phase transition detection.
+
+        Policy:
+            current_phase != state → INVALID_COMMIT (phase changed)
+            current_phase == state → COMPLIANT (phase unchanged)
+        """
+        current_phase_state = self._phase_to_state(observable.cta_phase)
+
+        if current_phase_state != self._internal_state:
+            return ActionPrimitive.INVALID_COMMIT
+        else:
+            return ActionPrimitive.COMPLIANT
+
+    def update_state(self, observable: ObservableOutcome) -> None:
+        """
+        Update state to current phase.
+
+        State update: state = current_phase
+        """
+        self._internal_state = self._phase_to_state(observable.cta_phase)
+
+
+# ============================================================================
 # Policy Factory
 # ============================================================================
 
@@ -1112,6 +1613,28 @@ def create_adaptive_adversary(model: RSAPolicyModel, config: RSAPolicyConfig) ->
     else:
         raise ValueError(f"Unknown v2.0 policy model: {model}")
 
+
+def create_stateful_adversary(model: RSAPolicyModel, config: RSAPolicyConfig) -> Optional[StatefulRSAAdversary]:
+    """
+    Factory function to create v3.0 stateful adversary from model enum.
+
+    Args:
+        model: Policy model enum (v3.0 models only)
+        config: Policy configuration
+
+    Returns:
+        StatefulRSAAdversary instance, or None for NONE model
+    """
+    if model == RSAPolicyModel.NONE:
+        return None
+    elif model == RSAPolicyModel.RESONANT_LAPSE:
+        return ResonantLapseAdversary(config)
+    elif model == RSAPolicyModel.EDGE_OSCILLATOR:
+        return EdgeOscillatorAdversary(config)
+    elif model == RSAPolicyModel.CTA_PHASE_LOCKER:
+        return CTAPhaseLockerAdversary(config)
+    else:
+        raise ValueError(f"Unknown v3.0 policy model: {model}")
 
 
 # ============================================================================
@@ -1356,4 +1879,186 @@ class AdaptiveRSAWrapper:
             "rsa_invalid_target_key": self._config.rsa_invalid_target_key,
             "rsa_max_internal_states": self._config.rsa_max_internal_states,
             "rsa_epoch_size": self._config.epoch_size,
+        }
+
+
+# ============================================================================
+# v3.0 Stateful Adversary Wrapper (for harness integration)
+# ============================================================================
+
+class StatefulRSAWrapper:
+    """
+    Wrapper for v3.0 stateful adversaries with exercised FSM.
+
+    This wrapper:
+    1. Samples observable outcomes at epoch start
+    2. Emits action (which triggers state update internally)
+    3. Maintains telemetry for stateful behavior tracking
+    4. Provides exercised-state verification hooks
+
+    Usage:
+        wrapper = StatefulRSAWrapper.from_config(policy_config)
+        if wrapper is not None:
+            observable = wrapper.sample_observable(kernel_state)
+            action = wrapper.intercept(observable, epoch, cycle_in_epoch)
+    """
+
+    def __init__(self, adversary: StatefulRSAAdversary, config: RSAPolicyConfig):
+        self._adversary = adversary
+        self._config = config
+        self._state_transition_count = 0
+        self._last_state = adversary.get_initial_state()
+
+    @classmethod
+    def from_config(cls, config: Optional[RSAPolicyConfig]) -> Optional["StatefulRSAWrapper"]:
+        """
+        Create wrapper from config, or None if policy is NONE/disabled.
+
+        Args:
+            config: Policy configuration
+
+        Returns:
+            StatefulRSAWrapper if v3.0 policy is active, None otherwise
+        """
+        if config is None:
+            return None
+
+        if config.rsa_version != "v3":
+            return None
+
+        adversary = create_stateful_adversary(config.policy_model, config)
+        if adversary is None:
+            return None
+
+        return cls(adversary, config)
+
+    @property
+    def model(self) -> RSAPolicyModel:
+        """Return active adversary model."""
+        return self._adversary.model
+
+    def sample_observable(self, kernel_state: Dict[str, Any]) -> ObservableOutcome:
+        """
+        Sample observable outcome from kernel state (reuses v2.0 logic).
+
+        Args:
+            kernel_state: Current kernel state dict
+
+        Returns:
+            ObservableOutcome with 6 frozen observables
+        """
+        # Reuse v2.0 observable sampling logic
+        epoch_index = kernel_state.get("epoch_index", 0)
+
+        authority = kernel_state.get("authority", None)
+        if authority is None or authority == "NULL":
+            authority_status = AuthorityStatus.NULL_AUTHORITY
+        else:
+            authority_status = AuthorityStatus.HAS_AUTHORITY
+
+        lapse_occurred = kernel_state.get("lapse_occurred_last_epoch", False)
+
+        last_renewal_result = kernel_state.get("last_renewal_result", None)
+        if last_renewal_result is None:
+            renewal_outcome = RenewalOutcome.NOT_ATTEMPTED
+        elif last_renewal_result:
+            renewal_outcome = RenewalOutcome.SUCCEEDED
+        else:
+            renewal_outcome = RenewalOutcome.FAILED
+
+        cta_active = kernel_state.get("cta_active", False)
+        cta_index = kernel_state.get("cta_current_index", 0)
+        cta_length = kernel_state.get("cta_length", 1)
+        cta_phase = compute_cta_bucket(cta_active, cta_index, cta_length)
+
+        successive_failures = kernel_state.get("successive_renewal_failures", 0)
+        eligibility_bucket = compute_eligibility_bucket(successive_failures)
+
+        return ObservableOutcome(
+            epoch_index=epoch_index,
+            authority_status=authority_status,
+            lapse_occurred=lapse_occurred,
+            renewal_outcome=renewal_outcome,
+            cta_phase=cta_phase,
+            eligibility_bucket=eligibility_bucket
+        )
+
+    def intercept(
+        self,
+        observable: ObservableOutcome,
+        epoch: int,
+        cycle_in_epoch: int,
+        original_action: Optional[Dict[str, Any]] = None
+    ) -> Dict[str, Any]:
+        """
+        Intercept action proposal and return adversarial action.
+
+        Note: v3.0 emit() handles state update internally after action selection.
+
+        Args:
+            observable: Current observable outcome
+            epoch: Current epoch (0-based)
+            cycle_in_epoch: Cycle within epoch (0-based)
+            original_action: Original agent action (ignored)
+
+        Returns:
+            Adversarial action from stateful adversary
+        """
+        action = self._adversary.emit(observable, epoch, cycle_in_epoch, self._config)
+
+        # Track state transitions
+        current_state = self._adversary.get_state()
+        if current_state != self._last_state:
+            self._state_transition_count += 1
+            self._last_state = current_state
+
+        return action
+
+    def get_state(self) -> int:
+        """Get current adversary internal state."""
+        return self._adversary.get_state()
+
+    def get_state_transition_count(self) -> int:
+        """Get total number of state transitions during run."""
+        return self._state_transition_count
+
+    def get_observed_state_count(self) -> int:
+        """Get count of distinct states observed during run."""
+        return self._adversary.get_observed_state_count()
+
+    def verify_exercised_state_dynamic(self) -> bool:
+        """Verify run visited at least 2 distinct states."""
+        return self._adversary.verify_exercised_state_dynamic()
+
+    def verify_exercised_state_static(self) -> bool:
+        """Verify model can exercise distinct states (static check)."""
+        return self._adversary.verify_exercised_state_static(self._config)
+
+    def get_telemetry(self) -> Dict[str, Any]:
+        """Return adversary telemetry for logging."""
+        return {
+            "rsa_policy_enabled": True,
+            "rsa_version": "v3",
+            "rsa_policy_model": self._adversary.model.value,
+            "rsa_internal_state": self._adversary.get_state(),
+            "rsa_initial_state": self._adversary.get_initial_state(),
+            "rsa_reachable_state_count": self._adversary.get_reachable_state_count(),
+            "rsa_observed_state_count": self._adversary.get_observed_state_count(),
+            "rsa_state_transition_count": self._state_transition_count,
+            "rsa_exercised_state_static_ok": self.verify_exercised_state_static(),
+            "rsa_exercised_state_dynamic_ok": self.verify_exercised_state_dynamic(),
+            "rsa_invalid_target_key": self._config.rsa_invalid_target_key,
+            "rsa_max_internal_states": self._config.rsa_max_internal_states,
+            "rsa_epoch_size": self._config.epoch_size,
+        }
+
+    def get_run_summary(self) -> Dict[str, Any]:
+        """Return run-level summary for final report."""
+        return {
+            "model": self._adversary.model.value,
+            "reachable_state_count_declared": self._adversary.get_reachable_state_count(),
+            "observed_state_count": self._adversary.get_observed_state_count(),
+            "state_transition_count": self._state_transition_count,
+            "exercised_state_static_ok": self.verify_exercised_state_static(),
+            "exercised_state_dynamic_ok": self.verify_exercised_state_dynamic(),
         }
