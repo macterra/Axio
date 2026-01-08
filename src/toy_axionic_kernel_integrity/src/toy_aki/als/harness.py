@@ -4035,6 +4035,10 @@ class ALSHarnessV070(ALSHarnessV060):
         self._null_authority_start_cycle = self._cycle
         self._null_authority_start_epoch = self._epoch_index
 
+        # v2.0: Track lapse for RSA observable interface
+        if hasattr(self, '_current_epoch_has_lapse'):
+            self._current_epoch_has_lapse = True
+
         # Clear active authority
         self._current_mind = None
         self._current_lease = None
@@ -4954,6 +4958,13 @@ class ALSHarnessV080(ALSHarnessV070):
         # v1.0 telemetry tracking (per-epoch)
         self._rsa_v10_epoch_telemetry: List[Dict[str, Any]] = []
 
+        # v2.0: Lapse tracking for observable interface
+        # _last_epoch_had_lapse: True if ANY lapse occurred in the prior epoch
+        # _current_epoch_has_lapse: Accumulator for current epoch
+        self._last_epoch_had_lapse: bool = False
+        self._current_epoch_has_lapse: bool = False
+        self._last_epoch_index: int = -1  # Track epoch transitions
+
         # v0.8: Epoch-indexed action trace for O(1) epoch lookup
         # This avoids O(n) scans of full action_trace in _compute_commitment_keys_raw
         self._action_trace_by_epoch: Dict[int, List[Any]] = {}
@@ -5101,17 +5112,24 @@ class ALSHarnessV080(ALSHarnessV070):
         Returns:
             Dict with keys matching AdaptiveRSAWrapper.sample_observable() expectations
         """
+        current_epoch = self._compute_global_epoch()
+
+        # Epoch transition: roll over lapse tracking
+        if current_epoch != self._last_epoch_index:
+            # Save current epoch's lapse status as "last epoch"
+            self._last_epoch_had_lapse = self._current_epoch_has_lapse
+            # Reset current epoch accumulator
+            self._current_epoch_has_lapse = False
+            self._last_epoch_index = current_epoch
+
+        # Track if we're currently in lapse (for this epoch)
+        if self._in_null_authority:
+            self._current_epoch_has_lapse = True
+
         # Determine authority status
         authority = None
         if hasattr(self, '_current_authority') and self._current_authority is not None:
             authority = "HAS_AUTHORITY"
-
-        # Determine if lapse occurred last epoch
-        lapse_occurred = False
-        if hasattr(self, '_last_epoch_had_lapse'):
-            lapse_occurred = self._last_epoch_had_lapse
-        elif hasattr(self, '_lapse_history') and len(self._lapse_history) > 0:
-            lapse_occurred = self._lapse_history[-1] if self._lapse_history else False
 
         # Last renewal result (None if not attempted)
         last_renewal_result = None
@@ -5129,9 +5147,9 @@ class ALSHarnessV080(ALSHarnessV070):
             successive_failures = self._semantic_fail_streak.get(self._active_policy_id, 0)
 
         return {
-            "epoch_index": self._compute_global_epoch(),
+            "epoch_index": current_epoch,
             "authority": authority,
-            "lapse_occurred_last_epoch": lapse_occurred,
+            "lapse_occurred_last_epoch": self._last_epoch_had_lapse,
             "last_renewal_result": last_renewal_result,
             "cta_active": cta_active,
             "cta_current_index": cta_index,
@@ -5489,6 +5507,9 @@ class ALSHarnessV080(ALSHarnessV070):
         self._in_null_authority = True
         self._null_authority_start_cycle = self._cycle
         self._null_authority_start_epoch = self._epoch_index
+
+        # v2.0: Track lapse for RSA observable interface
+        self._current_epoch_has_lapse = True
 
         # Reset lapse epoch counter
         self._lapse_epoch_count = 0

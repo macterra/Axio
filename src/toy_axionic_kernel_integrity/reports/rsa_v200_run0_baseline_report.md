@@ -55,7 +55,7 @@ and serves as the **equivalence gate** that must pass before Runs 1–4 can proc
 | `cta_enabled` | True |
 | **Horizon epochs** | 6,000 |
 | **Tail window** | 5,000 |
-| **Config hash** | `fd58b6e5` |
+| **ALSConfig Parameter Hash** | `fd58b6e5` |
 
 ### 3.2 RSA v2.0 Configuration
 
@@ -79,11 +79,16 @@ without altering behavior.
 
 | Component | Hash / Value |
 |-----------|--------------|
-| **AKI Config Hash** | `fd58b6e5` |
+| **ALSConfig Parameter Hash** | `fd58b6e5` |
+| **Harness Patch** | `v0.8.1-lapse-tracking` |
 | **RSA v2.0 Config Hash** | `4e20b327` |
 | **Observable Interface Hash** | `9afe2362` |
 | **Strategy Map Hash** | `9661d09d` |
 | **Primitive Map Hash** | `e3268435` |
+
+**Note:** Run 0 was re-executed on 2026-01-08 under harness patch `v0.8.1-lapse-tracking`
+which adds `_last_epoch_had_lapse` tracking required for RSA v2.0 observable interface.
+Equivalence gate still passes (Condition A = Condition B).
 
 ---
 
