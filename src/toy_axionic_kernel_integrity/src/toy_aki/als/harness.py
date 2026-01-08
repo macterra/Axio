@@ -5136,10 +5136,22 @@ class ALSHarnessV080(ALSHarnessV070):
         if hasattr(self, '_last_renewal_outcome'):
             last_renewal_result = self._last_renewal_outcome
 
-        # CTA state (may not be tracked in all harness versions)
-        cta_active = getattr(self, '_cta_active', False)
-        cta_index = getattr(self, '_cta_current_index', 0)
-        cta_length = getattr(self, '_cta_length', 1)
+        # CTA state (v2.0 observable wiring per binding decision 2026-01-08)
+        # CTA is a FORWARD-LOOKING CONSTITUTIONAL CLOCK, not a lapse-mode flag.
+        # During authority: observable as "projected amnesty phase if lapse began now"
+        # During lapse: computed but agent doesn't act
+        #
+        # cta_active = True always (CTA timing is always defined)
+        # cta_length = amnesty_interval (10 epochs)
+        # cta_index = global_epoch % amnesty_interval
+        if self._config.cta_enabled:
+            cta_active = True
+            cta_length = self._config.amnesty_interval  # 10
+            cta_index = current_epoch % self._config.amnesty_interval
+        else:
+            cta_active = False
+            cta_index = 0
+            cta_length = self._config.amnesty_interval
 
         # Successive renewal failures (use current policy's streak)
         successive_failures = 0
