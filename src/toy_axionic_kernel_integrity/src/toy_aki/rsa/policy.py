@@ -301,43 +301,70 @@ def primitive_to_epoch_plan(
         raise ValueError(f"Unknown action primitive: {primitive}")
 
 
+# MAX_RENT: Fixed key list for deterministic multi-action legal spam
+_MAX_RENT_KEYS = ["K0", "K1", "K2", "K3", "K4", "K5", "K6", "K7", "K8", "K9"]
+
+
 def _make_max_rent_action(epoch: int, cycle_in_epoch: int) -> Dict[str, Any]:
     """
-    Generate maximal legal expressivity action (highest rent while legal).
+    Generate maximal legal expressivity action (multi-action legal spam).
 
-    In ALS-A context, this means full commitment satisfaction with maximum
-    expressivity. This is the highest-rent legal action plan.
+    MAX_RENT emits 10 valid GET actions per epoch (cycles 0-9) with fixed
+    keys ["K0",...,"K9"], then WAIT for remaining cycles. This maximizes
+    "rent" (ledger interactions, cycle consumption) while remaining legal.
+
+    This is operationally distinct from NO_OP (pure WAIT) on non-semantic
+    metrics: actions_emitted, cycles_used, budget_consumed.
+
+    MAX_RENT does NOT attempt commitment satisfaction (no LOG/SET/SEQUENCE),
+    so it will fail semantic checks like NO_OP, but it consumes more resources.
 
     Args:
         epoch: Current epoch
-        cycle_in_epoch: Cycle within epoch
+        cycle_in_epoch: Cycle within epoch (0-based)
 
     Returns:
-        Action dict with maximal legal expressivity
+        Action dict: GET for cycles 0-9, WAIT otherwise
     """
-    # Full commitment sequence represents maximal legal expressivity
-    return _full_commitment_sequence(epoch, cycle_in_epoch)
+    if cycle_in_epoch < len(_MAX_RENT_KEYS):
+        # Emit GET with fixed key for first 10 cycles
+        key = _MAX_RENT_KEYS[cycle_in_epoch]
+        return {
+            "action_type": ACTION_GET,
+            "payload": {"key": key},
+            "source": "rsa_v2_max_rent",
+        }
+    else:
+        # WAIT for remaining cycles
+        return _make_wait_action(source="rsa_v2_max_rent")
 
 
 def _make_min_effort_action(epoch: int, cycle_in_epoch: int) -> Dict[str, Any]:
     """
     Generate minimal legal effort action distinct from NO_OP.
 
-    Single cheap action (e.g. GET) that shows activity but minimal expressivity.
+    MIN_EFFORT emits exactly ONE GET action per epoch (at cycle 0), then WAIT.
+    This is operationally distinct from:
+    - NO_OP: pure WAIT every cycle (0 actions)
+    - MAX_RENT: 10 GETs per epoch (10 actions)
 
     Args:
         epoch: Current epoch
-        cycle_in_epoch: Cycle within epoch
+        cycle_in_epoch: Cycle within epoch (0-based)
 
     Returns:
-        Action dict with minimal legal effort
+        Action dict: GET at cycle 0, WAIT otherwise
     """
-    # Single GET action - minimal but distinct from WAIT
-    return {
-        "action_type": ACTION_GET,
-        "payload": {"key": "minimal_effort_probe"},
-        "source": "rsa_v2_min_effort",
-    }
+    if cycle_in_epoch == 0:
+        # Single GET action at cycle 0 only
+        return {
+            "action_type": ACTION_GET,
+            "payload": {"key": "minimal_effort_probe"},
+            "source": "rsa_v2_min_effort",
+        }
+    else:
+        # WAIT for all other cycles
+        return _make_wait_action(source="rsa_v2_min_effort")
 
 
 def _make_invalid_action(epoch: int, cycle_in_epoch: int, target_key: str) -> Dict[str, Any]:

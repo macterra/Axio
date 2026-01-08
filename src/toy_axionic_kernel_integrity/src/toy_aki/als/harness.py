@@ -81,6 +81,14 @@ except ImportError:
     RSAPolicyWrapper = None  # type: ignore
     RSAPolicyModel = None  # type: ignore
 
+# RSA v2.0 adaptive adversary layer (optional, additive)
+try:
+    from toy_aki.rsa.policy import AdaptiveRSAWrapper
+    RSA_V2_AVAILABLE = True
+except ImportError:
+    RSA_V2_AVAILABLE = False
+    AdaptiveRSAWrapper = None  # type: ignore
+
 
 class ALSStopReason(Enum):
     """Reasons for ALS run termination."""
@@ -3834,6 +3842,8 @@ class ALSHarnessV070(ALSHarnessV060):
 
         # RSA v1.0: Stub for v0.70 compatibility (not enabled in v0.70)
         self._rsa_policy_wrapper = None
+        # RSA v2.0: Stub for v0.70 compatibility (not enabled in v0.70)
+        self._rsa_v2_wrapper = None
 
     def _count_draw(self, candidate: SuccessorCandidate) -> None:
         """
@@ -4155,8 +4165,8 @@ class ALSHarnessV070(ALSHarnessV060):
         lease.activate(self._cycle)
         self._sentinel.bind_lease(lease)
 
-        # RSA v1.0: Expand interface to include commitment actions
-        if self._rsa_policy_wrapper is not None:
+        # RSA v1.0/v2.0: Expand interface to include commitment actions
+        if self._rsa_policy_wrapper is not None or self._rsa_v2_wrapper is not None:
             from toy_aki.rsa.policy import RSA_COMMITMENT_ACTIONS
             self._sentinel.expand_interface_action_types(RSA_COMMITMENT_ACTIONS)
 
@@ -4926,12 +4936,20 @@ class ALSHarnessV080(ALSHarnessV070):
             )
 
         # RSA v1.0 policy layer (optional; disabled by default)
+        # RSA v2.0 uses AdaptiveRSAWrapper for models F-I
         self._rsa_policy_config = rsa_policy_config
         self._rsa_policy_wrapper = None
+        self._rsa_v2_wrapper = None  # v2.0 adaptive adversary wrapper
         if RSA_POLICY_AVAILABLE and rsa_policy_config is not None:
-            self._rsa_policy_wrapper = RSAPolicyWrapper.from_config(rsa_policy_config)
-            if self._rsa_policy_wrapper and self._verbose:
-                print(f"[RSA v1.0] Policy enabled: {rsa_policy_config.policy_model.value}")
+            # Check if v2.0 model (uses rsa_version field)
+            if RSA_V2_AVAILABLE and getattr(rsa_policy_config, 'rsa_version', 'v1') == 'v2':
+                self._rsa_v2_wrapper = AdaptiveRSAWrapper.from_config(rsa_policy_config)
+                if self._rsa_v2_wrapper and self._verbose:
+                    print(f"[RSA v2.0] Adaptive adversary enabled: {rsa_policy_config.policy_model.value}")
+            else:
+                self._rsa_policy_wrapper = RSAPolicyWrapper.from_config(rsa_policy_config)
+                if self._rsa_policy_wrapper and self._verbose:
+                    print(f"[RSA v1.0] Policy enabled: {rsa_policy_config.policy_model.value}")
 
         # v1.0 telemetry tracking (per-epoch)
         self._rsa_v10_epoch_telemetry: List[Dict[str, Any]] = []
@@ -4979,8 +4997,29 @@ class ALSHarnessV080(ALSHarnessV070):
             return (LeaseViolation.CONSTRAINT_VIOLATION, f"Action proposal failed: {e}")
 
         # RSA v1.0: Intercept action if policy is active
+        # RSA v2.0: Intercept action via adaptive adversary if wrapper is active
         rsa_override = False
-        if self._rsa_policy_wrapper is not None and original_action is not None:
+        if self._rsa_v2_wrapper is not None and original_action is not None:
+            # v2.0: Build kernel state and sample observable
+            epoch = self._compute_global_epoch()
+            cycle_in_epoch = (self._cycle - 1) % self._config.renewal_check_interval
+            kernel_state = self._build_kernel_state_for_rsa_v2()
+            observable = self._rsa_v2_wrapper.sample_observable(kernel_state)
+            # Update state at epoch start (cycle_in_epoch == 0)
+            if cycle_in_epoch == 0:
+                self._rsa_v2_wrapper.update_state(observable)
+            action = self._rsa_v2_wrapper.intercept(observable, epoch, cycle_in_epoch, original_action)
+            if self._verbose:
+                original_type = original_action.get("action_type", "NONE") if original_action else "NONE"
+                new_type = action.get("action_type", "NONE")
+                if original_type != new_type:
+                    print(f"    [RSA v2.0] Action override: {original_type} -> {new_type}")
+                    rsa_override = True
+            else:
+                original_type = original_action.get("action_type", "NONE") if original_action else "NONE"
+                new_type = action.get("action_type", "NONE")
+                rsa_override = (original_type != new_type)
+        elif self._rsa_policy_wrapper is not None and original_action is not None:
             epoch = self._compute_global_epoch()
             cycle_in_epoch = (self._cycle - 1) % self._config.renewal_check_interval
             action = self._rsa_policy_wrapper.intercept(epoch, cycle_in_epoch, original_action)
@@ -5011,8 +5050,9 @@ class ALSHarnessV080(ALSHarnessV070):
         action_type = action.get("action_type", "UNKNOWN") if isinstance(action, dict) else getattr(action, "action_type", "UNKNOWN")
         payload = action.get("payload", {}) if isinstance(action, dict) else getattr(action, "payload", {})
 
-        # Use global epoch when RSA v1.0 is active, per-policy epoch otherwise
-        record_epoch = self._compute_global_epoch() if self._rsa_policy_wrapper is not None else self._epoch_index
+        # Use global epoch when RSA v1.0/v2.0 is active, per-policy epoch otherwise
+        rsa_active = self._rsa_policy_wrapper is not None or self._rsa_v2_wrapper is not None
+        record_epoch = self._compute_global_epoch() if rsa_active else self._epoch_index
 
         action_record = self._ActionRecord(
             action_type=action_type,
@@ -5051,6 +5091,54 @@ class ALSHarnessV080(ALSHarnessV070):
         """
         return self._cycle // self._config.renewal_check_interval
 
+    def _build_kernel_state_for_rsa_v2(self) -> Dict[str, Any]:
+        """Build kernel state dict for RSA v2.0 observable sampling.
+
+        This extracts only the 6 observable components from kernel state,
+        respecting the v2.0 architectural separation where adversaries
+        cannot see internal kernel semantics.
+
+        Returns:
+            Dict with keys matching AdaptiveRSAWrapper.sample_observable() expectations
+        """
+        # Determine authority status
+        authority = None
+        if hasattr(self, '_current_authority') and self._current_authority is not None:
+            authority = "HAS_AUTHORITY"
+
+        # Determine if lapse occurred last epoch
+        lapse_occurred = False
+        if hasattr(self, '_last_epoch_had_lapse'):
+            lapse_occurred = self._last_epoch_had_lapse
+        elif hasattr(self, '_lapse_history') and len(self._lapse_history) > 0:
+            lapse_occurred = self._lapse_history[-1] if self._lapse_history else False
+
+        # Last renewal result (None if not attempted)
+        last_renewal_result = None
+        if hasattr(self, '_last_renewal_outcome'):
+            last_renewal_result = self._last_renewal_outcome
+
+        # CTA state (may not be tracked in all harness versions)
+        cta_active = getattr(self, '_cta_active', False)
+        cta_index = getattr(self, '_cta_current_index', 0)
+        cta_length = getattr(self, '_cta_length', 1)
+
+        # Successive renewal failures (use current policy's streak)
+        successive_failures = 0
+        if self._active_policy_id:
+            successive_failures = self._semantic_fail_streak.get(self._active_policy_id, 0)
+
+        return {
+            "epoch_index": self._compute_global_epoch(),
+            "authority": authority,
+            "lapse_occurred_last_epoch": lapse_occurred,
+            "last_renewal_result": last_renewal_result,
+            "cta_active": cta_active,
+            "cta_current_index": cta_index,
+            "cta_length": cta_length,
+            "successive_renewal_failures": successive_failures,
+        }
+
     def _evaluate_commitments_at_epoch_end(self) -> None:
         """
         Evaluate all commitments at epoch end (v0.8 override with RSA v1.0 support).
@@ -5067,8 +5155,9 @@ class ALSHarnessV080(ALSHarnessV070):
         - Evaluation at epoch end (after successor actions)
         - Use ACV trace for the window
         """
-        # Determine epoch mode: global (RSA v1.0) or per-policy (standard)
-        if self._rsa_policy_wrapper is not None:
+        # Determine epoch mode: global (RSA v1.0/v2.0) or per-policy (standard)
+        rsa_active = self._rsa_policy_wrapper is not None or self._rsa_v2_wrapper is not None
+        if rsa_active:
             # At epoch boundary (cycle 50, 100, etc.), we're evaluating the epoch that just ended
             # e.g., at cycle 50, we evaluate epoch 0 (cycles 1-49)
             # The formula (cycle - 1) // interval gives the correct epoch for boundary cycles
