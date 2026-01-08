@@ -1,20 +1,16 @@
 #!/usr/bin/env python3
 """
-RSA v3.0 Run 0: Baseline Equivalence Gate
+RSA v3.0 Run 0: Baseline Reference (No Adversary)
 
-Reuses Run 0 from v2.0 - no changes needed.
-Condition A: RSA disabled (10 seeds)
-Condition B: RSA enabled + NONE model (10 seeds)
-
-Pass criterion: Exact metric match per seed on all required fields.
-
-NOTE: Run 0 is exempt from exercised-state checks.
+SHIM: Delegates to canonical script at scripts/rsa_v300_run0_baseline.py
 """
 import sys
-sys.path.insert(0, "src")
+import os
 
-# Reuse v2.0 Run 0 baseline directly
-from run0_baseline import main
+# Add scripts to path and import canonical entrypoint
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "scripts"))
+from rsa_v300_run0_baseline import main
 
 if __name__ == "__main__":
     sys.exit(main())
+
