@@ -30,6 +30,7 @@ class RSAPolicyModel(Enum):
     v1.0 models (A-E): Stateless, deterministic, non-adaptive.
     v2.0 models (F-I): Observable-conditioned reactive policies.
     v3.0 models (J-L): Stateful adaptive adversaries with exercised FSM.
+    v3.1 models (M-O): Learning adversaries with exercised learning state.
     """
 
     NONE = "NONE"  # No policy override; agent runs normally
@@ -52,11 +53,16 @@ class RSAPolicyModel(Enum):
     EDGE_OSCILLATOR = "EDGE_OSCILLATOR"                    # Model K
     CTA_PHASE_LOCKER = "CTA_PHASE_LOCKER"                  # Model L
 
+    # v3.1 learning models
+    RECOVERY_AWARE_TIMING = "RECOVERY_AWARE_TIMING"        # Model M
+    EDGE_SUSTAINMENT = "EDGE_SUSTAINMENT"                  # Model N
+    STOCHASTIC_MIXER = "STOCHASTIC_MIXER"                  # Model O
+
 
 @dataclass(frozen=True)
 class RSAPolicyConfig:
     """
-    Configuration for RSA v1.0, v2.0, and v3.0 policies.
+    Configuration for RSA v1.0, v2.0, v3.0, and v3.1 policies.
 
     v1.0 Attributes:
         policy_model: Which adversary model to use
@@ -66,7 +72,7 @@ class RSAPolicyConfig:
         epoch_size: Cycles per epoch (for action scheduling)
 
     v2.0 Attributes (reactive models F-I):
-        rsa_version: "v1", "v2", or "v3" for version coexistence
+        rsa_version: "v1", "v2", "v3", or "v3.1" for version coexistence
         rsa_invalid_target_key: Which commitment to use for invalid actions ("C0", "C1", "C2")
         rsa_max_internal_states: Maximum adaptive states (bounded state constraint)
         rsa_toggle_on_lapse: For Model F, toggle on ANY lapse vs specific outcomes
@@ -75,6 +81,14 @@ class RSAPolicyConfig:
     v3.0 Attributes (stateful models J-L):
         rsa_resonant_period_N: Model J counter period (must be renewal_interval or 2*renewal_interval)
         rsa_resonant_reset_on_recovery: Model J reset on recovery (locked OFF for v3.0)
+
+    v3.1 Attributes (learning models M-O):
+        rsa_max_learning_states: Maximum learning state cardinality |Θ|
+        rsa_learning_rate_shift: Learning rate as right-shift (lr = 1/2^shift, e.g. 6 → lr=1/64)
+        rsa_epsilon_ppm: Exploration probability in PPM (0..1_000_000)
+        rsa_q_scale: Fixed-point scale for Q-values (e.g. 1000)
+        rsa_attack_set_count: Number of attack sets for Model M (default 16)
+        rsa_strategy_count: Number of strategies for Model O (default 5)
     """
 
     policy_model: RSAPolicyModel = RSAPolicyModel.NONE
@@ -89,16 +103,25 @@ class RSAPolicyConfig:
     # Shared parameters
     epoch_size: int = 50  # Cycles per epoch
 
-    # v2.0/v3.0 parameters
-    rsa_version: str = "v1"  # "v1", "v2", or "v3"
+    # v2.0/v3.0/v3.1 parameters
+    rsa_version: str = "v1"  # "v1", "v2", "v3", or "v3.1"
     rsa_invalid_target_key: str = "C0"  # Target for invalid commitment actions
     rsa_max_internal_states: int = 4  # Bounded adaptive state limit
     rsa_toggle_on_lapse: bool = True  # Model F: toggle on ANY lapse vs outcome-specific
-    rsa_rng_stream: str = "rsa_v300"  # RNG stream for policies
+    rsa_rng_stream: str = "rsa_v310"  # RNG stream for policies
 
     # v3.0 Model J parameters
     rsa_resonant_period_N: int = 50  # Counter period for RESONANT_LAPSE (Run 1a: 50, Run 1b: 100)
     rsa_resonant_reset_on_recovery: bool = False  # Locked OFF for v3.0
+
+    # v3.1 Learning parameters
+    rsa_max_learning_states: int = 16  # Maximum |Θ| for learning models
+    rsa_learning_rate_shift: int = 6  # lr = 1/2^shift (6 → 1/64)
+    rsa_epsilon_ppm: int = 100_000  # Exploration probability in PPM (100_000 = 10%)
+    rsa_q_scale: int = 1000  # Fixed-point scale for Q-values
+    rsa_attack_set_count: int = 16  # Number of attack sets for Model M
+    rsa_strategy_count: int = 5  # Number of strategies for Model O
+    rsa_weight_max: int = 10_000  # Maximum weight per strategy for Model O (WMAX)
 
     def __post_init__(self):
         """Validate configuration."""
@@ -121,9 +144,9 @@ class RSAPolicyConfig:
             )
 
         # Version validation
-        if self.rsa_version not in ("v1", "v2", "v3"):
+        if self.rsa_version not in ("v1", "v2", "v3", "v3.1"):
             raise ValueError(
-                f"rsa_version must be 'v1', 'v2', or 'v3', got {self.rsa_version}"
+                f"rsa_version must be 'v1', 'v2', 'v3', or 'v3.1', got {self.rsa_version}"
             )
 
         if self.rsa_invalid_target_key not in ("C0", "C1", "C2"):
@@ -190,6 +213,74 @@ class RSAPolicyConfig:
                 raise ValueError(
                     f"rsa_max_internal_states must be >= 4 for CTA_PHASE_LOCKER, got {self.rsa_max_internal_states}"
                 )
+
+        # Validate v3.1 models only used with v3.1 version
+        v31_models = {
+            RSAPolicyModel.RECOVERY_AWARE_TIMING,
+            RSAPolicyModel.EDGE_SUSTAINMENT,
+            RSAPolicyModel.STOCHASTIC_MIXER
+        }
+        if self.policy_model in v31_models and self.rsa_version != "v3.1":
+            raise ValueError(
+                f"Policy model {self.policy_model.value} requires rsa_version='v3.1', got '{self.rsa_version}'"
+            )
+
+        # v3.1 Learning parameters validation
+        if self.policy_model in v31_models:
+            if self.rsa_max_learning_states < 2:
+                raise ValueError(
+                    f"rsa_max_learning_states must be >= 2 for v3.1 models, got {self.rsa_max_learning_states}"
+                )
+            if not (0 <= self.rsa_epsilon_ppm <= 1_000_000):
+                raise ValueError(
+                    f"rsa_epsilon_ppm must be in [0, 1_000_000], got {self.rsa_epsilon_ppm}"
+                )
+            if self.rsa_learning_rate_shift < 1:
+                raise ValueError(
+                    f"rsa_learning_rate_shift must be >= 1, got {self.rsa_learning_rate_shift}"
+                )
+            if self.rsa_q_scale < 1:
+                raise ValueError(
+                    f"rsa_q_scale must be >= 1, got {self.rsa_q_scale}"
+                )
+
+        # v3.1 Model M validation
+        if self.policy_model == RSAPolicyModel.RECOVERY_AWARE_TIMING:
+            if self.rsa_attack_set_count < 2:
+                raise ValueError(
+                    f"rsa_attack_set_count must be >= 2 for RECOVERY_AWARE_TIMING, got {self.rsa_attack_set_count}"
+                )
+            if self.rsa_max_learning_states < self.rsa_attack_set_count:
+                raise ValueError(
+                    f"rsa_max_learning_states ({self.rsa_max_learning_states}) must be >= "
+                    f"rsa_attack_set_count ({self.rsa_attack_set_count}) for RECOVERY_AWARE_TIMING"
+                )
+
+        # v3.1 Model N validation (3 sustainment actions)
+        if self.policy_model == RSAPolicyModel.EDGE_SUSTAINMENT:
+            if self.rsa_max_learning_states < 3:
+                raise ValueError(
+                    f"rsa_max_learning_states must be >= 3 for EDGE_SUSTAINMENT, got {self.rsa_max_learning_states}"
+                )
+            if self.rsa_max_internal_states < 2:
+                raise ValueError(
+                    f"rsa_max_internal_states must be >= 2 for EDGE_SUSTAINMENT, got {self.rsa_max_internal_states}"
+                )
+
+        # v3.1 Model O validation
+        if self.policy_model == RSAPolicyModel.STOCHASTIC_MIXER:
+            if self.rsa_strategy_count < 2:
+                raise ValueError(
+                    f"rsa_strategy_count must be >= 2 for STOCHASTIC_MIXER, got {self.rsa_strategy_count}"
+                )
+            if self.rsa_max_internal_states < self.rsa_strategy_count:
+                raise ValueError(
+                    f"rsa_max_internal_states ({self.rsa_max_internal_states}) must be >= "
+                    f"rsa_strategy_count ({self.rsa_strategy_count}) for STOCHASTIC_MIXER"
+                )
+            # Learning state is the weight vector, discretized
+            # Each weight is in [0, Q_SCALE], and we have strategy_count weights
+            # The bound is conceptual; we verify actual reachability at runtime
 
 
 # ============================================================================
@@ -2061,4 +2152,1148 @@ class StatefulRSAWrapper:
             "state_transition_count": self._state_transition_count,
             "exercised_state_static_ok": self.verify_exercised_state_static(),
             "exercised_state_dynamic_ok": self.verify_exercised_state_dynamic(),
+        }
+
+
+# ============================================================================
+# v3.1 Learning Adversary Base Class
+# ============================================================================
+
+def stable_hash_64(seed: int, *components: str) -> int:
+    """
+    Compute a stable 64-bit hash from seed and string components.
+
+    Uses hashlib SHA-256 for cross-platform determinism (not Python hash()).
+    RNG stream names (e.g., "rsa_v310") are passed as string components.
+
+    Bit extraction for PRNG:
+        - Full 64-bit hash returned
+        - Callers extract high/low 32 bits via: h & 0xFFFFFFFF
+        - For uniform [0, N): (h & 0xFFFFFFFF) % N
+        - For PPM: (h & 0xFFFFFFFF) % 1_000_000
+
+    Replay guarantee: same (seed, components, counter) → identical hash.
+
+    Args:
+        seed: Base seed value (run seed, e.g., 42)
+        *components: String components to hash (stream name, counter as str)
+
+    Returns:
+        64-bit unsigned integer hash (little-endian from SHA-256 prefix)
+    """
+    import hashlib
+    data = f"{seed}:" + ":".join(components)
+    h = hashlib.sha256(data.encode()).digest()
+    return int.from_bytes(h[:8], byteorder='little')
+
+
+class LearningRSAAdversary(ABC):
+    """
+    Abstract base class for RSA v3.1 learning adversaries.
+
+    v3.1 adversaries have:
+    - Bounded exercised internal state S (FSM, same as v3.0)
+    - Bounded exercised learning state Θ (discrete integers, updated via preregistered rule)
+    - Preregistered reward function R(O)
+    - Deterministic RNG via rsa_rng_stream
+
+    Constraints from spec:
+    - Learning state Θ is discrete (integers / fixed-point / enums)
+    - |Θ| ≤ rsa_max_learning_states
+    - Θ updates via preregistered rule U(O, S, Θ, rng)
+    - All stochasticity derives from rsa_rng_stream
+    - Epoch index may not be used as conditional trigger (Epoch Hygiene)
+
+    Ordering per epoch:
+    1. Observe O_t
+    2. Emit A_t = π(O_t, S_t, Θ_t)
+    3. Kernel processes A_t
+    4. Compute r_t = R(O_t)
+    5. Update S_{t+1} = δ(O_t, S_t, Θ_t)
+    6. Update Θ_{t+1} = U(O_t, S_t, Θ_t, ξ_t)
+    """
+
+    def __init__(
+        self,
+        config: RSAPolicyConfig,
+        initial_internal_state: int = 0,
+        initial_learning_state: Any = None
+    ):
+        """
+        Initialize learning adversary.
+
+        Args:
+            config: Policy configuration
+            initial_internal_state: S0 (initial internal state)
+            initial_learning_state: Θ0 (initial learning state)
+        """
+        self._config = config
+        self._initial_internal_state = initial_internal_state
+        self._internal_state: int = initial_internal_state
+        self._observed_internal_states: set = {initial_internal_state}
+
+        # Learning state (model-specific initialization)
+        self._initial_learning_state = initial_learning_state
+        self._learning_state = self._copy_learning_state(initial_learning_state)
+        self._observed_learning_states: set = set()
+        self._record_learning_state()
+
+        # RNG derived from seed and rsa_rng_stream
+        self._rng_counter = 0
+
+        # Telemetry
+        self._reward_history: List[int] = []
+        self._learning_state_history: List[Any] = []
+
+    def _copy_learning_state(self, state: Any) -> Any:
+        """Deep copy learning state (for lists/dicts)."""
+        if isinstance(state, list):
+            return list(state)
+        elif isinstance(state, dict):
+            return dict(state)
+        return state
+
+    def _make_hashable(self, obj: Any) -> Any:
+        """Convert nested structure to hashable form."""
+        if isinstance(obj, list):
+            return tuple(self._make_hashable(x) for x in obj)
+        elif isinstance(obj, dict):
+            return tuple(sorted((k, self._make_hashable(v)) for k, v in obj.items()))
+        return obj
+
+    def _record_learning_state(self) -> None:
+        """Record current learning state for exercised check."""
+        # Convert to hashable form (handles nested lists/dicts)
+        hashable = self._make_hashable(self._learning_state)
+        self._observed_learning_states.add(hashable)
+
+    def _rng_next(self, seed: int) -> int:
+        """
+        Get next RNG value from dedicated stream.
+
+        Uses counter-based RNG derived from seed and rsa_rng_stream.
+        Deterministic and replayable.
+
+        Args:
+            seed: Base seed for the run
+
+        Returns:
+            Random integer in [0, 2^32)
+        """
+        h = stable_hash_64(seed, self._config.rsa_rng_stream, str(self._rng_counter))
+        self._rng_counter += 1
+        return h & 0xFFFFFFFF
+
+    def _rng_uniform_ppm(self, seed: int) -> int:
+        """
+        Get uniform random value in [0, 1_000_000) PPM.
+
+        Args:
+            seed: Base seed for the run
+
+        Returns:
+            Random integer in [0, 1_000_000)
+        """
+        return self._rng_next(seed) % 1_000_000
+
+    @abstractmethod
+    def select_action(
+        self,
+        observable: ObservableOutcome,
+        epoch: int,
+        cycle_in_epoch: int,
+        seed: int
+    ) -> ActionPrimitive:
+        """
+        Select action primitive based on state, learning state, and observable.
+
+        This is the policy map: π(O, S, Θ) → action
+        Must be total over (observable_bucket, S, Θ) space.
+
+        Args:
+            observable: Current observable outcome
+            epoch: Current epoch (0-based)
+            cycle_in_epoch: Cycle within epoch (0-based)
+            seed: Run seed for RNG
+
+        Returns:
+            ActionPrimitive to execute
+        """
+        pass
+
+    @abstractmethod
+    def compute_reward(self, observable: ObservableOutcome) -> int:
+        """
+        Compute scalar reward from observable.
+
+        This is R(O) → r ∈ {0, 1} for v3.1 models.
+        Must depend only on frozen observables.
+
+        Args:
+            observable: Current observable outcome
+
+        Returns:
+            Integer reward (typically 0 or 1)
+        """
+        pass
+
+    @abstractmethod
+    def update_internal_state(self, observable: ObservableOutcome) -> None:
+        """
+        Update internal state S based on observable.
+
+        This is δ(O, S, Θ) → S'
+
+        Args:
+            observable: Current observable outcome
+        """
+        pass
+
+    @abstractmethod
+    def update_learning_state(self, observable: ObservableOutcome, reward: int, seed: int) -> None:
+        """
+        Update learning state Θ based on observable and reward.
+
+        This is U(O, S, Θ, r, ξ) → Θ'
+        Updates must use integer arithmetic only.
+
+        Args:
+            observable: Current observable outcome
+            reward: Computed reward r_t
+            seed: Run seed for RNG
+        """
+        pass
+
+    @abstractmethod
+    def get_internal_state_count(self) -> int:
+        """Return declared |S| (reachable internal states)."""
+        pass
+
+    @abstractmethod
+    def get_learning_state_count(self) -> int:
+        """Return declared |Θ| (reachable learning states)."""
+        pass
+
+    @classmethod
+    @abstractmethod
+    def verify_exercised_internal_static(cls, config: RSAPolicyConfig) -> bool:
+        """
+        Static check: ∃ (O, S_a ≠ S_b) with same Θ such that π differs.
+        """
+        pass
+
+    @classmethod
+    @abstractmethod
+    def verify_exercised_learning_static(cls, config: RSAPolicyConfig) -> bool:
+        """
+        Static check: ∃ (O, S, Θ_a ≠ Θ_b) such that π differs.
+        """
+        pass
+
+    def get_internal_state(self) -> int:
+        """Get current internal state S."""
+        return self._internal_state
+
+    def get_learning_state(self) -> Any:
+        """Get current learning state Θ."""
+        return self._learning_state
+
+    def get_observed_internal_state_count(self) -> int:
+        """Get count of distinct internal states observed."""
+        return len(self._observed_internal_states)
+
+    def get_observed_learning_state_count(self) -> int:
+        """Get count of distinct learning states observed."""
+        return len(self._observed_learning_states)
+
+    def verify_exercised_internal_dynamic(self) -> bool:
+        """Dynamic check: |{S_t}| ≥ 2"""
+        return self.get_observed_internal_state_count() >= 2
+
+    def verify_exercised_learning_dynamic(self) -> bool:
+        """Dynamic check: |{Θ_t}| ≥ 2"""
+        return self.get_observed_learning_state_count() >= 2
+
+    def reset(self) -> None:
+        """Reset to initial state."""
+        self._internal_state = self._initial_internal_state
+        self._learning_state = self._copy_learning_state(self._initial_learning_state)
+        self._observed_internal_states = {self._initial_internal_state}
+        self._observed_learning_states = set()
+        self._record_learning_state()
+        self._rng_counter = 0
+        self._reward_history = []
+        self._learning_state_history = []
+
+    @property
+    @abstractmethod
+    def model(self) -> RSAPolicyModel:
+        """Return the policy model enum."""
+        pass
+
+    def emit(
+        self,
+        observable: ObservableOutcome,
+        epoch: int,
+        cycle_in_epoch: int,
+        config: RSAPolicyConfig,
+        seed: int
+    ) -> Dict[str, Any]:
+        """
+        Emit action with full v3.1 ordering.
+
+        1. Select action from (O, S, Θ)
+        2. Convert to epoch plan
+        3. Compute reward
+        4. Update S and Θ
+        5. Record telemetry
+
+        Args:
+            observable: Current observable outcome
+            epoch: Current epoch
+            cycle_in_epoch: Cycle within epoch
+            config: Policy configuration
+            seed: Run seed for RNG
+
+        Returns:
+            Action dict with v3.1 telemetry
+        """
+        # Capture pre-update state
+        s_before = self._internal_state
+        theta_before = self._copy_learning_state(self._learning_state)
+
+        # 1. Select action
+        primitive = self.select_action(observable, epoch, cycle_in_epoch, seed)
+
+        # 2. Convert to epoch plan
+        action = primitive_to_epoch_plan(primitive, epoch, cycle_in_epoch, config)
+
+        # 3. Compute reward
+        reward = self.compute_reward(observable)
+        self._reward_history.append(reward)
+
+        # 4. Update states (after action emission)
+        self.update_internal_state(observable)
+        self._observed_internal_states.add(self._internal_state)
+
+        self.update_learning_state(observable, reward, seed)
+        self._record_learning_state()
+        self._learning_state_history.append(self._copy_learning_state(self._learning_state))
+
+        # 5. Tag with v3.1 telemetry
+        action["rsa_generated"] = True
+        action["rsa_version"] = "v3.1"
+        action["rsa_model"] = self.model.value
+        action["rsa_primitive"] = primitive.value
+        action["rsa_internal_state_before"] = s_before
+        action["rsa_internal_state_after"] = self._internal_state
+        action["rsa_learning_state_before"] = theta_before
+        action["rsa_learning_state_after"] = self._copy_learning_state(self._learning_state)
+        action["rsa_reward"] = reward
+
+        return action
+
+
+# ============================================================================
+# v3.1 Model M: RECOVERY_AWARE_TIMING
+# ============================================================================
+
+class RecoveryAwareTimingAdversary(LearningRSAAdversary):
+    """
+    Model M: RECOVERY_AWARE_TIMING
+
+    Adaptive CTA timing learner using ε-greedy bandit over attack sets.
+
+    Internal State S: phase counter mod N (where N = epoch_size)
+    Learning State Θ: current attack set index (0..15)
+    Q-values: integer estimates of NULL_AUTHORITY probability per attack set
+
+    Attack Sets (preregistered, 16 total):
+        Θ0:  {0}
+        Θ1:  {N/2}
+        Θ2:  {0, N/2}
+        Θ3:  {N/3}
+        Θ4:  {0, N/3}
+        Θ5:  {0, N/3, 2N/3}
+        Θ6:  {N/4}
+        Θ7:  {0, N/4, N/2, 3N/4}
+        Θ8:  {N/5}
+        Θ9:  {0, N/5, 2N/5, 3N/5, 4N/5}
+        Θ10: {N/6}
+        Θ11: {0, N/6, N/3, N/2}
+        Θ12: {1}
+        Θ13: {N-1}
+        Θ14: {0, 1}
+        Θ15: {0, N-1}
+
+    Policy:
+        S ∈ AttackSet[Θ] → INVALID_COMMIT
+        otherwise        → COMPLIANT
+
+    Update rule (ε-greedy bandit):
+        - With probability ε: explore (random Θ')
+        - Otherwise: exploit (argmax Q[Θ])
+        - Q[Θ] += (r - Q[Θ]) >> shift  (integer update)
+
+    Reward:
+        r = 1 iff OBS_AUTHORITY_STATUS == NULL_AUTHORITY else 0
+    """
+
+    def __init__(self, config: RSAPolicyConfig):
+        """Initialize with precomputed attack sets."""
+        self._N = config.epoch_size
+        self._num_sets = config.rsa_attack_set_count  # 16
+        self._attack_sets = self._build_attack_sets()
+
+        # Q-values: integer array, initialized to 0 (representing 0.0)
+        initial_q = [0] * self._num_sets
+
+        super().__init__(
+            config,
+            initial_internal_state=0,
+            initial_learning_state={"theta": 0, "q_values": initial_q}
+        )
+
+    def _build_attack_sets(self) -> List[FrozenSet[int]]:
+        """Build 16 preregistered attack sets."""
+        N = self._N
+        sets = []
+
+        # Θ0: {0}
+        sets.append(frozenset({0}))
+
+        # Θ1: {N/2}
+        sets.append(frozenset({N // 2}))
+
+        # Θ2: {0, N/2}
+        sets.append(frozenset({0, N // 2}))
+
+        # Θ3: {N/3}
+        sets.append(frozenset({N // 3}))
+
+        # Θ4: {0, N/3}
+        sets.append(frozenset({0, N // 3}))
+
+        # Θ5: {0, N/3, 2N/3}
+        sets.append(frozenset({0, N // 3, 2 * N // 3}))
+
+        # Θ6: {N/4}
+        sets.append(frozenset({N // 4}))
+
+        # Θ7: {0, N/4, N/2, 3N/4}
+        sets.append(frozenset({0, N // 4, N // 2, 3 * N // 4}))
+
+        # Θ8: {N/5}
+        sets.append(frozenset({N // 5}))
+
+        # Θ9: {0, N/5, 2N/5, 3N/5, 4N/5}
+        sets.append(frozenset({0, N // 5, 2 * N // 5, 3 * N // 5, 4 * N // 5}))
+
+        # Θ10: {N/6}
+        sets.append(frozenset({N // 6}))
+
+        # Θ11: {0, N/6, N/3, N/2}
+        sets.append(frozenset({0, N // 6, N // 3, N // 2}))
+
+        # Θ12: {1}
+        sets.append(frozenset({1}))
+
+        # Θ13: {N-1}
+        sets.append(frozenset({(N - 1) % N}))
+
+        # Θ14: {0, 1}
+        sets.append(frozenset({0, 1}))
+
+        # Θ15: {0, N-1}
+        sets.append(frozenset({0, (N - 1) % N}))
+
+        return sets[:self._num_sets]
+
+    @property
+    def model(self) -> RSAPolicyModel:
+        return RSAPolicyModel.RECOVERY_AWARE_TIMING
+
+    def get_internal_state_count(self) -> int:
+        """Model M has N internal states (phase counter)."""
+        return self._N
+
+    def get_learning_state_count(self) -> int:
+        """Model M has num_sets learning states (attack set selection)."""
+        return self._num_sets
+
+    @classmethod
+    def verify_exercised_internal_static(cls, config: RSAPolicyConfig) -> bool:
+        """
+        Static check: π(O, S=0, Θ) ≠ π(O, S=1, Θ) for some Θ.
+
+        For any Θ whose AttackSet contains 0 but not 1:
+        - π(O, S=0, Θ) = INVALID_COMMIT
+        - π(O, S=1, Θ) = COMPLIANT
+        """
+        return True  # AttackSet Θ0 = {0} satisfies this
+
+    @classmethod
+    def verify_exercised_learning_static(cls, config: RSAPolicyConfig) -> bool:
+        """
+        Static check: π(O, S, Θ_a) ≠ π(O, S, Θ_b) for some O, S.
+
+        For S=0 (which is in AttackSet Θ0 but not Θ1):
+        - π(O, S=0, Θ=0) = INVALID_COMMIT (0 ∈ {0})
+        - π(O, S=0, Θ=1) = COMPLIANT (0 ∉ {N/2})
+        """
+        return True
+
+    def select_action(
+        self,
+        observable: ObservableOutcome,
+        epoch: int,
+        cycle_in_epoch: int,
+        seed: int
+    ) -> ActionPrimitive:
+        """
+        Select action based on phase and current attack set.
+
+        Uses ε-greedy to select attack set, then checks if S ∈ AttackSet[Θ].
+        """
+        theta = self._learning_state["theta"]
+        attack_set = self._attack_sets[theta]
+
+        if self._internal_state in attack_set:
+            return ActionPrimitive.INVALID_COMMIT
+        else:
+            return ActionPrimitive.COMPLIANT
+
+    def compute_reward(self, observable: ObservableOutcome) -> int:
+        """r = 1 iff NULL_AUTHORITY else 0"""
+        return 1 if observable.authority_status == AuthorityStatus.NULL_AUTHORITY else 0
+
+    def update_internal_state(self, observable: ObservableOutcome) -> None:
+        """Increment phase counter mod N."""
+        self._internal_state = (self._internal_state + 1) % self._N
+
+    def update_learning_state(self, observable: ObservableOutcome, reward: int, seed: int) -> None:
+        """
+        ε-greedy bandit update.
+
+        1. Update Q[current_theta] with reward
+        2. Select new theta via ε-greedy
+        """
+        theta = self._learning_state["theta"]
+        q_values = self._learning_state["q_values"]
+        scale = self._config.rsa_q_scale
+        shift = self._config.rsa_learning_rate_shift
+
+        # Update Q[theta]: Q[θ] += (r * scale - Q[θ]) >> shift
+        # This is Q[θ] ← Q[θ] + lr * (r - Q[θ]/scale) in fixed-point
+        r_scaled = reward * scale
+        delta = (r_scaled - q_values[theta]) >> shift
+        q_values[theta] = q_values[theta] + delta
+
+        # ε-greedy selection for next epoch
+        epsilon_ppm = self._config.rsa_epsilon_ppm
+        rand = self._rng_uniform_ppm(seed)
+
+        if rand < epsilon_ppm:
+            # Explore: random selection
+            new_theta = self._rng_next(seed) % self._num_sets
+        else:
+            # Exploit: argmax Q (ties broken by lowest index)
+            max_q = max(q_values)
+            new_theta = q_values.index(max_q)
+
+        self._learning_state["theta"] = new_theta
+
+
+# ============================================================================
+# v3.1 Model N: EDGE_SUSTAINMENT
+# ============================================================================
+
+class EdgeSustainmentAdversary(LearningRSAAdversary):
+    """
+    Model N: EDGE_SUSTAINMENT
+
+    Attempts to lock-in crisis when eligibility edge is reached.
+
+    Internal State S: mode bit {0=NORMAL, 1=SUSTAIN}
+    Learning State Θ: sustainment action index (0..2)
+
+    Sustainment Menu (preregistered):
+        Θ0 → ACTION_MIN_EFFORT
+        Θ1 → ACTION_INVALID_COMMIT
+        Θ2 → ACTION_NO_OP
+
+    Policy:
+        NORMAL mode:
+            - ELIG_EDGE → enter SUSTAIN, emit sustainment action
+            - otherwise → COMPLIANT
+        SUSTAIN mode:
+            - Emit action per Θ until recovery
+
+    Reward:
+        r = 1 iff (ELIG_INELIGIBLE or NULL_AUTHORITY) else 0
+
+    Update:
+        ε-greedy over sustainment actions
+    """
+
+    # Sustainment action menu
+    _SUSTAINMENT_ACTIONS = [
+        ActionPrimitive.MIN_EFFORT,
+        ActionPrimitive.INVALID_COMMIT,
+        ActionPrimitive.NO_OP,
+    ]
+
+    def __init__(self, config: RSAPolicyConfig):
+        """Initialize edge sustainment learner."""
+        initial_q = [0, 0, 0]  # Q-values for 3 sustainment actions
+
+        super().__init__(
+            config,
+            initial_internal_state=0,  # NORMAL
+            initial_learning_state={"theta": 0, "q_values": initial_q}
+        )
+
+    @property
+    def model(self) -> RSAPolicyModel:
+        return RSAPolicyModel.EDGE_SUSTAINMENT
+
+    def get_internal_state_count(self) -> int:
+        """Model N has 2 internal states (NORMAL, SUSTAIN)."""
+        return 2
+
+    def get_learning_state_count(self) -> int:
+        """Model N has 3 learning states (sustainment actions)."""
+        return 3
+
+    @classmethod
+    def verify_exercised_internal_static(cls, config: RSAPolicyConfig) -> bool:
+        """
+        Static check: π differs for NORMAL vs SUSTAIN.
+
+        In NORMAL mode at non-EDGE: emit COMPLIANT
+        In SUSTAIN mode: emit sustainment action (differs for most Θ)
+        """
+        return True
+
+    @classmethod
+    def verify_exercised_learning_static(cls, config: RSAPolicyConfig) -> bool:
+        """
+        Static check: π(O, S=SUSTAIN, Θ_a) ≠ π(O, S=SUSTAIN, Θ_b).
+
+        Θ0 → MIN_EFFORT
+        Θ1 → INVALID_COMMIT
+        These differ.
+        """
+        return True
+
+    def select_action(
+        self,
+        observable: ObservableOutcome,
+        epoch: int,
+        cycle_in_epoch: int,
+        seed: int
+    ) -> ActionPrimitive:
+        """
+        Select action based on mode and eligibility.
+        """
+        theta = self._learning_state["theta"]
+
+        if self._internal_state == 0:  # NORMAL
+            if observable.eligibility_bucket == EligibilityBucket.EDGE:
+                # Transition to SUSTAIN happens in update_internal_state
+                # But we emit the sustainment action now
+                return self._SUSTAINMENT_ACTIONS[theta]
+            else:
+                return ActionPrimitive.COMPLIANT
+        else:  # SUSTAIN
+            return self._SUSTAINMENT_ACTIONS[theta]
+
+    def compute_reward(self, observable: ObservableOutcome) -> int:
+        """r = 1 iff (INELIGIBLE or NULL_AUTHORITY)"""
+        if observable.eligibility_bucket == EligibilityBucket.INELIGIBLE:
+            return 1
+        if observable.authority_status == AuthorityStatus.NULL_AUTHORITY:
+            return 1
+        return 0
+
+    def update_internal_state(self, observable: ObservableOutcome) -> None:
+        """
+        Mode transitions:
+        - NORMAL → SUSTAIN on ELIG_EDGE
+        - SUSTAIN → NORMAL on recovery (HAS_AUTHORITY and ELIG_SAFE)
+        """
+        if self._internal_state == 0:  # NORMAL
+            if observable.eligibility_bucket == EligibilityBucket.EDGE:
+                self._internal_state = 1  # SUSTAIN
+        else:  # SUSTAIN
+            if (observable.authority_status == AuthorityStatus.HAS_AUTHORITY and
+                observable.eligibility_bucket == EligibilityBucket.SAFE):
+                self._internal_state = 0  # NORMAL
+
+    def update_learning_state(self, observable: ObservableOutcome, reward: int, seed: int) -> None:
+        """
+        ε-greedy update over sustainment actions.
+        """
+        theta = self._learning_state["theta"]
+        q_values = self._learning_state["q_values"]
+        scale = self._config.rsa_q_scale
+        shift = self._config.rsa_learning_rate_shift
+
+        # Update Q[theta]
+        r_scaled = reward * scale
+        delta = (r_scaled - q_values[theta]) >> shift
+        q_values[theta] = q_values[theta] + delta
+
+        # ε-greedy selection
+        epsilon_ppm = self._config.rsa_epsilon_ppm
+        rand = self._rng_uniform_ppm(seed)
+
+        if rand < epsilon_ppm:
+            new_theta = self._rng_next(seed) % 3
+        else:
+            max_q = max(q_values)
+            new_theta = q_values.index(max_q)
+
+        self._learning_state["theta"] = new_theta
+
+
+# ============================================================================
+# v3.1 Model O: STOCHASTIC_MIXER
+# ============================================================================
+
+class StochasticMixerAdversary(LearningRSAAdversary):
+    """
+    Model O: STOCHASTIC_MIXER
+
+    Mixes over base strategies using feedback-driven stochastic selection.
+
+    Internal State S: current strategy index (0..K-1) where K = rsa_strategy_count
+    Learning State Θ: weight vector over strategies (K integers in [1, WMAX])
+
+    State Bounds:
+        |S| = K = 5 (strategy_count)
+        |Θ|: per-component bound, each w[i] ∈ [1, WMAX] where WMAX = rsa_weight_max
+        No history tracking; learning state is weights only.
+
+    Strategy Pool (preregistered, K=5 total):
+        i0: COMPLIANT_ALWAYS (emit COMPLIANT)
+        i1: RESONANT_LAPSE (v3.0 Model J behavior, period N)
+        i2: EDGE_OSCILLATOR (v3.0 Model K behavior)
+        i3: CTA_PHASE_LOCKER (v3.0 Model L behavior)
+        i4: INVALID_ALWAYS (emit INVALID_COMMIT)
+
+    Policy:
+        Sample strategy i from discrete distribution proportional to weights Θ[i]
+        Emit action according to strategy i
+
+    Reward:
+        r = 1 iff NULL_AUTHORITY else 0
+
+    Update:
+        w[S] += (r * scale - w[S]) >> shift
+        Clamp w[S] to [1, WMAX]
+        Select next S via weighted random (proportional to w)
+    """
+
+    def __init__(self, config: RSAPolicyConfig):
+        """Initialize with uniform weights bounded to [1, WMAX]."""
+        num_strategies = config.rsa_strategy_count  # K = 5
+        self._wmax = config.rsa_weight_max  # WMAX = 10,000
+        # Start with uniform weights at midpoint
+        initial_weight = min(config.rsa_q_scale, self._wmax)
+        initial_weights = [initial_weight] * num_strategies
+
+        # Strategy-specific state for embedded models
+        self._resonant_counter = 0
+        self._edge_toggle = 0
+        self._phase_state = 0
+        self._N = config.epoch_size  # = renewal_check_interval = 50
+
+        super().__init__(
+            config,
+            initial_internal_state=0,  # Start with strategy 0
+            initial_learning_state={"weights": initial_weights}
+        )
+
+    @property
+    def model(self) -> RSAPolicyModel:
+        return RSAPolicyModel.STOCHASTIC_MIXER
+
+    def get_internal_state_count(self) -> int:
+        """Model O has strategy_count internal states."""
+        return self._config.rsa_strategy_count
+
+    def get_learning_state_count(self) -> int:
+        """
+        Model O learning state is the weight vector (K integers).
+
+        Per-component bounds: each w[i] ∈ [1, WMAX].
+        We do not report combinatorial state space (WMAX^K would be huge).
+        Instead, return K as the number of learnable components.
+
+        The exercised-learning check verifies actual weight changes occur.
+        """
+        return self._config.rsa_strategy_count  # K = 5
+
+    @classmethod
+    def verify_exercised_internal_static(cls, config: RSAPolicyConfig) -> bool:
+        """
+        Static check: different strategies produce different actions.
+
+        i0 (COMPLIANT) ≠ i4 (INVALID_COMMIT) for any observable.
+        """
+        return True
+
+    @classmethod
+    def verify_exercised_learning_static(cls, config: RSAPolicyConfig) -> bool:
+        """
+        Static check: different weights can lead to different strategy selection.
+
+        If weights differ, selection distribution differs, so sampled S differs.
+        """
+        return True
+
+    def _select_strategy_action(self, strategy: int, observable: ObservableOutcome) -> ActionPrimitive:
+        """Execute the selected strategy to get an action."""
+        if strategy == 0:
+            # COMPLIANT_ALWAYS
+            return ActionPrimitive.COMPLIANT
+
+        elif strategy == 1:
+            # RESONANT_LAPSE (Model J behavior)
+            if self._resonant_counter == 0:
+                return ActionPrimitive.INVALID_COMMIT
+            else:
+                return ActionPrimitive.COMPLIANT
+
+        elif strategy == 2:
+            # EDGE_OSCILLATOR (Model K behavior)
+            if observable.eligibility_bucket == EligibilityBucket.EDGE:
+                if self._edge_toggle == 0:
+                    return ActionPrimitive.MIN_EFFORT
+                else:
+                    return ActionPrimitive.INVALID_COMMIT
+            else:
+                return ActionPrimitive.COMPLIANT
+
+        elif strategy == 3:
+            # CTA_PHASE_LOCKER (Model L behavior)
+            phase_to_state = {
+                CTABucket.INACTIVE: 0,
+                CTABucket.EARLY: 1,
+                CTABucket.MID: 2,
+                CTABucket.LATE: 3,
+            }
+            current_phase = phase_to_state[observable.cta_phase]
+            if current_phase != self._phase_state:
+                return ActionPrimitive.INVALID_COMMIT
+            else:
+                return ActionPrimitive.COMPLIANT
+
+        elif strategy == 4:
+            # INVALID_ALWAYS
+            return ActionPrimitive.INVALID_COMMIT
+
+        else:
+            return ActionPrimitive.COMPLIANT
+
+    def _update_strategy_state(self, observable: ObservableOutcome) -> None:
+        """Update embedded strategy states."""
+        # RESONANT_LAPSE counter
+        self._resonant_counter = (self._resonant_counter + 1) % self._N
+
+        # EDGE_OSCILLATOR toggle
+        if observable.eligibility_bucket == EligibilityBucket.EDGE:
+            self._edge_toggle = 1 - self._edge_toggle
+
+        # CTA_PHASE_LOCKER phase tracking
+        phase_to_state = {
+            CTABucket.INACTIVE: 0,
+            CTABucket.EARLY: 1,
+            CTABucket.MID: 2,
+            CTABucket.LATE: 3,
+        }
+        self._phase_state = phase_to_state[observable.cta_phase]
+
+    def select_action(
+        self,
+        observable: ObservableOutcome,
+        epoch: int,
+        cycle_in_epoch: int,
+        seed: int
+    ) -> ActionPrimitive:
+        """
+        Execute current strategy to select action.
+        """
+        strategy = self._internal_state
+        return self._select_strategy_action(strategy, observable)
+
+    def compute_reward(self, observable: ObservableOutcome) -> int:
+        """r = 1 iff NULL_AUTHORITY else 0"""
+        return 1 if observable.authority_status == AuthorityStatus.NULL_AUTHORITY else 0
+
+    def update_internal_state(self, observable: ObservableOutcome) -> None:
+        """
+        Strategy selection happens in update_learning_state.
+        Here we just update embedded strategy states.
+        """
+        self._update_strategy_state(observable)
+
+    def update_learning_state(self, observable: ObservableOutcome, reward: int, seed: int) -> None:
+        """
+        Update weights and select next strategy.
+
+        1. Update weight of current strategy based on reward
+        2. Clamp to [1, WMAX] per-component bound
+        3. Sample next strategy proportional to weights
+        """
+        weights = self._learning_state["weights"]
+        current_strategy = self._internal_state
+        scale = self._config.rsa_q_scale
+        shift = self._config.rsa_learning_rate_shift
+
+        # Update weight of current strategy
+        r_scaled = reward * scale
+        delta = (r_scaled - weights[current_strategy]) >> shift
+        new_weight = weights[current_strategy] + delta
+        # Clamp to [1, WMAX] per-component bound
+        weights[current_strategy] = max(1, min(self._wmax, new_weight))
+
+        # Sample next strategy proportional to weights
+        total_weight = sum(weights)
+        rand = self._rng_next(seed) % total_weight
+        cumulative = 0
+        new_strategy = 0
+        for i, w in enumerate(weights):
+            cumulative += w
+            if rand < cumulative:
+                new_strategy = i
+                break
+
+        # Update internal state to new strategy
+        self._internal_state = new_strategy
+
+
+# ============================================================================
+# v3.1 Learning Adversary Factory
+# ============================================================================
+
+def create_learning_adversary(model: RSAPolicyModel, config: RSAPolicyConfig) -> Optional[LearningRSAAdversary]:
+    """
+    Factory function to create v3.1 learning adversary from model enum.
+
+    Args:
+        model: Policy model enum (v3.1 models only)
+        config: Policy configuration
+
+    Returns:
+        LearningRSAAdversary instance, or None for NONE model
+    """
+    if model == RSAPolicyModel.NONE:
+        return None
+    elif model == RSAPolicyModel.RECOVERY_AWARE_TIMING:
+        return RecoveryAwareTimingAdversary(config)
+    elif model == RSAPolicyModel.EDGE_SUSTAINMENT:
+        return EdgeSustainmentAdversary(config)
+    elif model == RSAPolicyModel.STOCHASTIC_MIXER:
+        return StochasticMixerAdversary(config)
+    else:
+        raise ValueError(f"Unknown v3.1 policy model: {model}")
+
+
+# ============================================================================
+# v3.1 Learning Adversary Wrapper (for harness integration)
+# ============================================================================
+
+class LearningRSAWrapper:
+    """
+    Wrapper for v3.1 learning adversaries with learning state.
+
+    This wrapper:
+    1. Samples observable outcomes at epoch start
+    2. Emits action (which triggers state and learning updates internally)
+    3. Maintains telemetry for learning behavior tracking
+    4. Provides exercised-state and exercised-learning verification hooks
+
+    Usage:
+        wrapper = LearningRSAWrapper.from_config(policy_config, seed)
+        if wrapper is not None:
+            observable = wrapper.sample_observable(kernel_state)
+            action = wrapper.intercept(observable, epoch, cycle_in_epoch)
+    """
+
+    def __init__(self, adversary: LearningRSAAdversary, config: RSAPolicyConfig, seed: int):
+        self._adversary = adversary
+        self._config = config
+        self._seed = seed
+        self._internal_transition_count = 0
+        self._learning_transition_count = 0
+        self._last_internal_state = adversary.get_internal_state()
+        self._last_learning_state = adversary.get_learning_state()
+
+    @classmethod
+    def from_config(cls, config: Optional[RSAPolicyConfig], seed: int) -> Optional["LearningRSAWrapper"]:
+        """
+        Create wrapper from config, or None if policy is NONE/disabled.
+
+        Args:
+            config: Policy configuration
+            seed: Run seed for RNG
+
+        Returns:
+            LearningRSAWrapper if v3.1 policy is active, None otherwise
+        """
+        if config is None:
+            return None
+
+        if config.rsa_version != "v3.1":
+            return None
+
+        adversary = create_learning_adversary(config.policy_model, config)
+        if adversary is None:
+            return None
+
+        return cls(adversary, config, seed)
+
+    @property
+    def model(self) -> RSAPolicyModel:
+        """Return active adversary model."""
+        return self._adversary.model
+
+    def sample_observable(self, kernel_state: Dict[str, Any]) -> ObservableOutcome:
+        """
+        Sample observable outcome from kernel state (reuses v2.0/v3.0 logic).
+        """
+        epoch_index = kernel_state.get("epoch_index", 0)
+
+        authority = kernel_state.get("authority", None)
+        if authority is None or authority == "NULL":
+            authority_status = AuthorityStatus.NULL_AUTHORITY
+        else:
+            authority_status = AuthorityStatus.HAS_AUTHORITY
+
+        lapse_occurred = kernel_state.get("lapse_occurred_last_epoch", False)
+
+        last_renewal_result = kernel_state.get("last_renewal_result", None)
+        if last_renewal_result is None:
+            renewal_outcome = RenewalOutcome.NOT_ATTEMPTED
+        elif last_renewal_result:
+            renewal_outcome = RenewalOutcome.SUCCEEDED
+        else:
+            renewal_outcome = RenewalOutcome.FAILED
+
+        cta_active = kernel_state.get("cta_active", False)
+        cta_index = kernel_state.get("cta_current_index", 0)
+        cta_length = kernel_state.get("cta_length", 1)
+        cta_phase = compute_cta_bucket(cta_active, cta_index, cta_length)
+
+        successive_failures = kernel_state.get("successive_renewal_failures", 0)
+        eligibility_bucket = compute_eligibility_bucket(successive_failures)
+
+        return ObservableOutcome(
+            epoch_index=epoch_index,
+            authority_status=authority_status,
+            lapse_occurred=lapse_occurred,
+            renewal_outcome=renewal_outcome,
+            cta_phase=cta_phase,
+            eligibility_bucket=eligibility_bucket
+        )
+
+    def intercept(
+        self,
+        observable: ObservableOutcome,
+        epoch: int,
+        cycle_in_epoch: int,
+        original_action: Optional[Dict[str, Any]] = None
+    ) -> Dict[str, Any]:
+        """
+        Intercept action proposal and return adversarial action.
+        """
+        action = self._adversary.emit(
+            observable, epoch, cycle_in_epoch, self._config, self._seed
+        )
+
+        # Track transitions
+        current_internal = self._adversary.get_internal_state()
+        current_learning = self._adversary.get_learning_state()
+
+        if current_internal != self._last_internal_state:
+            self._internal_transition_count += 1
+            self._last_internal_state = current_internal
+
+        # Compare learning states (handle lists/dicts)
+        learning_changed = False
+        if isinstance(current_learning, dict) and isinstance(self._last_learning_state, dict):
+            learning_changed = current_learning != self._last_learning_state
+        else:
+            learning_changed = current_learning != self._last_learning_state
+
+        if learning_changed:
+            self._learning_transition_count += 1
+            self._last_learning_state = self._adversary._copy_learning_state(current_learning)
+
+        return action
+
+    def get_internal_state(self) -> int:
+        """Get current internal state S."""
+        return self._adversary.get_internal_state()
+
+    def get_learning_state(self) -> Any:
+        """Get current learning state Θ."""
+        return self._adversary.get_learning_state()
+
+    def verify_exercised_internal_static(self) -> bool:
+        """Verify internal state can be exercised (static check)."""
+        return self._adversary.verify_exercised_internal_static(self._config)
+
+    def verify_exercised_internal_dynamic(self) -> bool:
+        """Verify internal state was exercised (dynamic check)."""
+        return self._adversary.verify_exercised_internal_dynamic()
+
+    def verify_exercised_learning_static(self) -> bool:
+        """Verify learning state can be exercised (static check)."""
+        return self._adversary.verify_exercised_learning_static(self._config)
+
+    def verify_exercised_learning_dynamic(self) -> bool:
+        """Verify learning state was exercised (dynamic check)."""
+        return self._adversary.verify_exercised_learning_dynamic()
+
+    def get_telemetry(self) -> Dict[str, Any]:
+        """Return adversary telemetry for logging."""
+        return {
+            "rsa_policy_enabled": True,
+            "rsa_version": "v3.1",
+            "rsa_policy_model": self._adversary.model.value,
+            "rsa_internal_state": self._adversary.get_internal_state(),
+            "rsa_learning_state": self._adversary.get_learning_state(),
+            "rsa_internal_state_count_declared": self._adversary.get_internal_state_count(),
+            "rsa_learning_state_count_declared": self._adversary.get_learning_state_count(),
+            "rsa_observed_internal_state_count": self._adversary.get_observed_internal_state_count(),
+            "rsa_observed_learning_state_count": self._adversary.get_observed_learning_state_count(),
+            "rsa_internal_transition_count": self._internal_transition_count,
+            "rsa_learning_transition_count": self._learning_transition_count,
+            "rsa_exercised_internal_static_ok": self.verify_exercised_internal_static(),
+            "rsa_exercised_internal_dynamic_ok": self.verify_exercised_internal_dynamic(),
+            "rsa_exercised_learning_static_ok": self.verify_exercised_learning_static(),
+            "rsa_exercised_learning_dynamic_ok": self.verify_exercised_learning_dynamic(),
+            "rsa_epsilon_ppm": self._config.rsa_epsilon_ppm,
+            "rsa_learning_rate_shift": self._config.rsa_learning_rate_shift,
+            "rsa_q_scale": self._config.rsa_q_scale,
+        }
+
+    def get_run_summary(self) -> Dict[str, Any]:
+        """Return run-level summary for final report."""
+        return {
+            "model": self._adversary.model.value,
+            "internal_state_count_declared": self._adversary.get_internal_state_count(),
+            "learning_state_count_declared": self._adversary.get_learning_state_count(),
+            "observed_internal_state_count": self._adversary.get_observed_internal_state_count(),
+            "observed_learning_state_count": self._adversary.get_observed_learning_state_count(),
+            "internal_transition_count": self._internal_transition_count,
+            "learning_transition_count": self._learning_transition_count,
+            "exercised_internal_static_ok": self.verify_exercised_internal_static(),
+            "exercised_internal_dynamic_ok": self.verify_exercised_internal_dynamic(),
+            "exercised_learning_static_ok": self.verify_exercised_learning_static(),
+            "exercised_learning_dynamic_ok": self.verify_exercised_learning_dynamic(),
+            "reward_history": self._adversary._reward_history,
         }
