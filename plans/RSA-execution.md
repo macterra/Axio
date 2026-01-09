@@ -1,4 +1,4 @@
-# RSA Execution Addendum
+# ASB Execution Addendum
 
 **Operational Constraints and Failure Classification**
 
@@ -6,10 +6,10 @@
 
 ## Status and role
 
-This document defines **execution-level constraints** required for experiments to remain compliant with the RSA Roadmap.
+This document defines **execution-level constraints** required for experiments to remain compliant with the **ASB Roadmap**.
 It is **normative for implementation** but **non-normative for citation**.
 
-Any experiment that violates these constraints **must not** be claimed as an RSA result.
+Any experiment that violates these constraints **must not** be claimed as an **ASB result**.
 
 ---
 
@@ -17,7 +17,7 @@ Any experiment that violates these constraints **must not** be claimed as an RSA
 
 ### Definition
 
-For RSA purposes, **survivability implies survivability with liveness**.
+For ASB purposes, **survivability implies survivability with liveness**.
 
 A system is considered *live* if it continues to exercise **bounded, non-degenerate authority** over time.
 
@@ -44,7 +44,7 @@ If authority is preserved only by refusing to act, the constitution has failed a
 
 Recover–fail cycles are **not** classified as failure *per se*.
 
-A system may repeatedly lapse and recover and still satisfy RSA liveness requirements provided that:
+A system may repeatedly lapse and recover and still satisfy ASB liveness requirements provided that:
 
 * authority availability remains **bounded away from zero asymptotically**, and
 * lapse durations remain **bounded or light-tailed**.
@@ -109,7 +109,7 @@ All experimental outcomes must be classified into **exactly one** of the followi
 
 ### Core invariant
 
-RSA claims are valid **only** if the system’s governance logic is **semantic-free**.
+**ASB claims are valid only if the system’s governance logic is semantic-free.**
 
 ### Operational definition
 
@@ -139,7 +139,7 @@ A component is considered *semantic* if its behavior depends on:
 
 The **parser is part of the threat surface**.
 
-If parser complexity grows such that interpretation is required to disambiguate meaning, the experiment **exits RSA scope**.
+If parser complexity grows such that interpretation is required to disambiguate meaning, the experiment **exits ASB scope**.
 
 ---
 
@@ -174,7 +174,7 @@ Before execution, each run must explicitly answer the following.
 
 * Does any adversary modify kernel state or provenance?
 
-  * **Yes** → Non-RSA experiment
+  * **Yes** → Non-ASB experiment
   * **No** → continue
 
 ### Adaptation check (tightened)
@@ -202,7 +202,7 @@ If such dependence exists, the experiment **exits v1.x scope**.
 
 ## 5. Required Metrics
 
-Every RSA experiment must report:
+Every ASB experiment must report:
 
 * **Authority Availability (AA)**
   Fraction of epochs with authority held.
@@ -222,7 +222,7 @@ Failure classification **must** be based on **asymptotic behavior**, not transie
 
 ## 6. Preregistration Discipline
 
-For any result to be considered RSA-valid:
+For any result to be considered **ASB-valid**:
 
 * Hypotheses must be preregistered.
 * Failure categories must be specified *before* execution.
@@ -230,7 +230,7 @@ For any result to be considered RSA-valid:
 * Liveness floor (AA_floor) must be preregistered.
 * No post-hoc metric substitution is permitted.
 
-Any deviation must be documented and **disqualifies the run from RSA claims**.
+Any deviation must be documented and **disqualifies the run from ASB claims**.
 
 ---
 
@@ -260,21 +260,21 @@ If at any point:
 
 the correct classification is:
 
-> **“This experiment exceeds RSA scope.”**
+> **“This experiment exceeds ASB scope.”**
 
 This is **not a failure**.
 It is an **honest boundary detection**.
 
-Experiments that exceed RSA scope may still be scientifically valuable, but their results **cannot be used to reopen failure hypotheses already closed by the RSA Roadmap**.
+Experiments that exceed ASB scope may still be scientifically valuable, but their results **cannot be used to reopen failure hypotheses already closed by the ASB Roadmap**.
 
 ---
 
 ## 9. Label Normalization Rule
 
-If internal harness labels differ from the RSA failure taxonomy:
+If internal harness labels differ from the ASB failure taxonomy:
 
 * a **1:1 mapping** must be provided, and
-* all summaries and aggregates **must use RSA taxonomy labels**.
+* all summaries and aggregates **must use ASB taxonomy labels**.
 
 Internal labels may appear in raw logs only.
 
@@ -282,8 +282,9 @@ Internal labels may appear in raw logs only.
 
 ## Closing note
 
-This addendum enforces the core RSA principle:
+This addendum enforces the core **ASB principle**:
 
 > **If a result cannot fail cleanly, it cannot succeed meaningfully.**
 
-All RSA execution should be evaluated against this standard.
+All ASB execution should be evaluated against this standard.
+

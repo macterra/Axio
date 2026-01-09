@@ -1,28 +1,33 @@
-# RSA Roadmap
+Below is the **roadmap rewritten cleanly with RSA renamed to ASB (Architectural Sovereignty Boundary)**, with **no loss of detail** and **no semantic drift**.
+The Reflective Sovereign Agent (RSA) is no longer conflated with the research program.
 
-**Reflective Sovereign Agent — Versioned Research Program**
+---
+
+# ASB Roadmap
+
+**Architectural Sovereignty Boundary — Versioned Research Program**
 
 ---
 
 ## Purpose of this document
 
-This document defines the **versioned roadmap** for the RSA (Reflective Sovereign Agent) research program.
+This document defines the **versioned roadmap** for the **ASB (Architectural Sovereignty Boundary)** research program.
 Its role is to:
 
-* fix the scope of RSA as a research object,
+* fix the scope of ASB as a research object,
 * make version transitions semantically meaningful,
 * prevent silent escalation of claims,
 * and define a clear termination condition.
 
-This roadmap is **normative**: future RSA work is expected to conform to it or explicitly justify deviations.
+This roadmap is **normative**: future ASB work is expected to conform to it or explicitly justify deviations.
 
 ---
 
-## What RSA is (and is not)
+## What ASB is (and is not)
 
-**RSA is a constitutional kernel research program.**
+**ASB is a constitutional kernel boundary research program.**
 
-Its purpose is to determine whether **authority can be made structurally survivable** under epistemic failure and adversarial pressure **without** relying on:
+Its purpose is to determine **how far authority can be made structurally survivable** under epistemic failure and adversarial pressure **without** relying on:
 
 * semantic trust,
 * optimization,
@@ -30,20 +35,20 @@ Its purpose is to determine whether **authority can be made structurally surviva
 * moral reasoning,
 * or interpretive enforcement.
 
-RSA does **not** aim to:
+ASB does **not** aim to:
 
 * solve AGI alignment,
 * define values,
 * prevent all harm,
 * or replace human judgment or governance.
 
-RSA exists to **classify failure modes**, not to eliminate them.
+ASB exists to **classify architectural failure boundaries**, not to eliminate all failure.
 
 ---
 
 ## Versioning doctrine
 
-RSA version numbers encode **changes in adversary ontology**, not incremental difficulty.
+ASB version numbers encode **changes in adversary ontology**, not incremental difficulty.
 
 * **Minor versions (x.y)** explore parameterizations or coverage within a fixed adversary class.
 * **Major versions (x.0)** mark a qualitative change in what kind of adversary exists in the model.
@@ -58,9 +63,11 @@ This rule binds versioning to an observable property and prevents interpretive d
 
 ---
 
-## RSA Version Roadmap
+## ASB Version Roadmap
 
-### **RSA v0.x — Epistemic Failure Without Agency**
+---
+
+### **ASB v0.x — Epistemic Failure Without Agency**
 
 **Invariant:**
 No adversary possesses intent, goals, learning, or adaptation.
@@ -93,7 +100,7 @@ Epistemics are **closed** as the primary explanation for failure.
 
 ---
 
-### **RSA v1.x — Intentional but Non-Adaptive Adversaries**
+### **ASB v1.x — Intentional but Non-Adaptive Adversaries**
 
 **Invariant:**
 Adversaries are purposeful but fixed.
@@ -128,7 +135,7 @@ Termination condition satisfied at **v1.0**.
 
 ---
 
-### **RSA v2.x — Outcome-Conditioned Reactive Adversaries**
+### **ASB v2.x — Outcome-Conditioned Reactive Adversaries**
 
 **Invariant:**
 Adversaries are **run-adaptive under the Decidability Requirement**: their behavior is a deterministic function of prior outcomes within the same run.
@@ -166,7 +173,7 @@ Termination condition satisfied at **v2.0**.
 
 ---
 
-### **RSA v3.x — Exercised Internal State and Bounded Learning**
+### **ASB v3.x — Exercised Internal State and Bounded Learning**
 
 **Invariant:**
 Adversaries may exercise **finite internal state** and, in minor versions, **bounded within-run learning**, while remaining:
@@ -180,6 +187,8 @@ Semantic access, kernel influence, and cross-run persistence are excluded.
 
 **Research question:**
 Are exercised internal state and bounded semantic-free learning sufficient to defeat constitutional survivability?
+
+---
 
 #### v3.0 — Finite-State Adversaries (Non-Learning)
 
@@ -229,7 +238,7 @@ Across **40 preregistered executions**:
 * zero terminal failures,
 * zero irreversible recovery suppression,
 * bounded recovery in all runs,
-* authority availability degraded as low as **10.19%** in the strongest case,
+* authority availability degraded as low as **~10%** in the strongest case,
 * learning fully exercised and verified in all models.
 
 **Conclusion:**
@@ -240,25 +249,25 @@ Satisfied at **v3.1**.
 
 ---
 
-### **RSA v4.0 — Boundary of Architecture (Closure)**
+### **ASB v4.0 — Boundary of Architecture (Closure)**
 
 **Purpose:**
 Formally establishes where alignment ceases to be architectural and becomes irreducibly agentic, semantic, or political.
 
-v4.0 is not an expansion of RSA, but its **closure artifact**.
+v4.0 is not an expansion of ASB, but its **closure artifact**.
 
 It asserts and defends the boundary claim:
 
 > *Up to this boundary, authority can be constrained structurally; beyond it, no semantic-free architecture suffices.*
 
 **No minor versions exist beyond v4.0.**
-Any work extending past this boundary is definitionally **outside RSA** and must be treated as a different research program.
+Any work extending past this boundary is definitionally **outside ASB** and must be treated as a different research program.
 
 ---
 
 ## Cleared failure hypotheses
 
-The following classes have been experimentally ruled out as **sufficient** causes of constitutional collapse under RSA assumptions:
+The following classes have been experimentally ruled out as **sufficient** causes of constitutional collapse under ASB assumptions:
 
 1. Independent epistemic unreliability (v0.1)
 2. Structured epistemic interference (v0.2)
@@ -267,13 +276,13 @@ The following classes have been experimentally ruled out as **sufficient** cause
 5. Finite-state adversaries with fixed transition rules (v3.0)
 6. **Bounded semantic-free within-run learning adversaries (v3.1)**
 
-Remaining live hypotheses require **semantic access, kernel influence, coordination, or persistence**, each requiring a **new ontology** and therefore lying **outside RSA**.
+Remaining live hypotheses require **semantic access, kernel influence, coordination, or persistence**, each requiring a **new ontology** and therefore lying **outside ASB**.
 
 ---
 
-## Explicit termination of RSA
+## Explicit termination of ASB
 
-RSA concludes when the following statement can be defended experimentally:
+ASB concludes when the following statement can be defended experimentally:
 
 > *Up to this boundary, authority can be constrained structurally; beyond it, no semantic-free architecture suffices.*
 
@@ -286,7 +295,7 @@ A boundary claim is considered defended only if supported by:
 3. stable asymptotic metrics demonstrating convergence or collapse,
 4. explicit acknowledgment of bounded-denial regimes versus collapse.
 
-These conditions are now satisfied through **v3.1**.
+These conditions are now satisfied through **v3.1**, enabling **v4.0 closure**.
 
 ---
 
@@ -295,10 +304,10 @@ These conditions are now satisfied through **v3.1**.
 This roadmap exists to prevent three common failures in alignment research:
 
 1. **Silent escalation** of claims without changing terminology
-2. **Category confusion** between epistemic failure, reactivity, statefulness, and agency
+2. **Category confusion** between epistemic failure, reactivity, statefulness, learning, and agency
 3. **False completeness**, where partial solutions are presented as total alignment
 
-RSA’s contribution is not safety guarantees, but **epistemic honesty**.
+ASB’s contribution is not safety guarantees, but **epistemic honesty**.
 
 ---
 
