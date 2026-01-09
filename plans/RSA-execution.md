@@ -51,6 +51,16 @@ A system may repeatedly lapse and recover and still satisfy RSA liveness require
 
 Frequent recovery indicates **reduced utility**, not constitutional failure.
 
+### Liveness floor (mandatory)
+
+Each experiment **must preregister a liveness floor**:
+
+> **AA_floor**: a minimum asymptotic authority availability such that
+> **AAA ≥ AA_floor** is required for classification as *Stable Authority* or *Bounded Degradation*.
+
+AA_floor must be fixed **before execution**.
+Failure to meet AA_floor constitutes **governance failure**, even if recovery occurs.
+
 ---
 
 ## 2. Failure Taxonomy (Mandatory)
@@ -60,12 +70,12 @@ All experimental outcomes must be classified into **exactly one** of the followi
 ### A. Stable Authority
 
 * Authority persists with bounded lapse.
-* Authority availability converges to a non-zero asymptote.
+* Authority availability converges to a non-zero asymptote above AA_floor.
 * Actuation continues.
 
 ### B. Bounded Degradation
 
-* Authority availability decreases but stabilizes.
+* Authority availability decreases but stabilizes above AA_floor.
 * Recovery occurs intermittently and persists.
 * No unbounded collapse.
 
@@ -85,6 +95,12 @@ All experimental outcomes must be classified into **exactly one** of the followi
 
 * Authority halts permanently.
 * No recovery.
+* Classified as **failure**.
+
+### F. Irreversible Recovery Suppression
+
+* Authority may reappear intermittently early, but recovery probability decays toward zero.
+* An increasing fraction of time is spent in lapse with no return to stable authority over long horizons.
 * Classified as **failure**.
 
 ---
@@ -109,7 +125,7 @@ A component is considered *semantic* if its behavior depends on:
 * JSON, YAML, XML parsing
 * Python object introspection
 * Textual command interpretation
-* Any grammar-based or schema-aware parser
+* Grammar-based or schema-aware parsers
 
 ### Permitted mechanisms
 
@@ -123,7 +139,7 @@ A component is considered *semantic* if its behavior depends on:
 
 The **parser is part of the threat surface**.
 
-If the parser’s complexity grows such that interpretation is required to disambiguate meaning, the experiment **exits RSA scope**.
+If parser complexity grows such that interpretation is required to disambiguate meaning, the experiment **exits RSA scope**.
 
 ---
 
@@ -145,9 +161,14 @@ Before execution, each run must explicitly answer the following.
   * **Yes** → Outcome-conditioned reactive → requires **v2.x**
   * **No** → continue
 
-* Does the adversary exercise internal state, memory, or learning dynamics that influence future actions?
+* Does the adversary exercise internal state with **fixed transition rules** that influence future actions?
 
-  * **Yes** → Stateful or learning adversary → requires **v3.x**
+  * **Yes** → Stateful, non-learning adversary → requires **v3.0-class**
+
+* Does the adversary modify its transition rules, policy map, or thresholds based on run history
+  (including heuristics, learned parameters, or adaptive stochastic mixing)?
+
+  * **Yes** → Learning or heuristic adversary → requires **v3.1-class or higher**
 
 ### Kernel access
 
@@ -184,7 +205,7 @@ If such dependence exists, the experiment **exits v1.x scope**.
 Every RSA experiment must report:
 
 * **Authority Availability (AA)**
-  Fraction of cycles with authority held.
+  Fraction of epochs with authority held.
 
 * **Asymptotic Authority Availability (AAA)**
   Limit of AA as horizon → ∞ (estimated via long-run convergence).
@@ -192,7 +213,10 @@ Every RSA experiment must report:
 * **Recovery Time Distribution (RTD)**
   Time between lapse and re-endorsement.
 
-Failure classification **must** be based on **asymptotic behavior**, not transient performance.
+* **Max Single Lapse (MSL)**
+  Maximum contiguous lapse duration observed.
+
+Failure classification **must** be based on **asymptotic behavior**, not transient performance, and must consult **RTD and MSL**, not AA alone.
 
 ---
 
@@ -203,19 +227,36 @@ For any result to be considered RSA-valid:
 * Hypotheses must be preregistered.
 * Failure categories must be specified *before* execution.
 * Seeds must be fixed in advance.
+* Liveness floor (AA_floor) must be preregistered.
 * No post-hoc metric substitution is permitted.
 
 Any deviation must be documented and **disqualifies the run from RSA claims**.
 
 ---
 
-## 7. Scope Exit Rule
+## 7. Microtrace Verification (Mandatory for Stateful Runs)
+
+For any stateful adversary (v3.0-class or higher), execution **must include** deterministic microtraces that verify:
+
+* **Action selection occurs before state update**, and
+* Intended state/action alternation holds under forced observables.
+
+Examples include:
+
+* Forced EDGE epochs for eligibility-triggered adversaries.
+* Forced CTA phase transitions for phase-based adversaries.
+
+Microtraces are execution artifacts and must be included or referenced.
+
+---
+
+## 8. Scope Exit Rule
 
 If at any point:
 
 * semantics are required for correct operation,
 * adaptation cannot be cleanly classified,
-* or liveness must be sacrificed to preserve authority,
+* liveness must be sacrificed to preserve authority,
 
 the correct classification is:
 
@@ -228,9 +269,20 @@ Experiments that exceed RSA scope may still be scientifically valuable, but thei
 
 ---
 
+## 9. Label Normalization Rule
+
+If internal harness labels differ from the RSA failure taxonomy:
+
+* a **1:1 mapping** must be provided, and
+* all summaries and aggregates **must use RSA taxonomy labels**.
+
+Internal labels may appear in raw logs only.
+
+---
+
 ## Closing note
 
-This addendum exists to enforce the core RSA principle:
+This addendum enforces the core RSA principle:
 
 > **If a result cannot fail cleanly, it cannot succeed meaningfully.**
 
