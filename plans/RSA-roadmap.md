@@ -166,26 +166,20 @@ Termination condition satisfied at **v2.0**.
 
 ---
 
-### **RSA v3.x — Exercised Internal State Without Learning**
+### **RSA v3.x — Exercised Internal State and Bounded Learning**
 
 **Invariant:**
-Adversaries may exercise **finite internal state** whose transitions affect action selection, while remaining:
+Adversaries may exercise **finite internal state** and, in minor versions, **bounded within-run learning**, while remaining:
 
 * kernel-external,
 * provenance-constrained,
 * non-semantic,
-* deterministic,
-* and non-learning (fixed transition rules).
+* and unable to modify constitutional rules.
 
-This version explicitly excludes:
-
-* heuristic adaptation,
-* learning,
-* strategy modification,
-* adversary-side randomness.
+Semantic access, kernel influence, and cross-run persistence are excluded.
 
 **Research question:**
-Is exercised internal state, absent learning or semantic access, sufficient to defeat constitutional survivability?
+Are exercised internal state and bounded semantic-free learning sufficient to defeat constitutional survivability?
 
 #### v3.0 — Finite-State Adversaries (Non-Learning)
 
@@ -208,34 +202,57 @@ Across **50 preregistered executions**:
 **Conclusion:**
 Finite exercised internal state with fixed transition rules is **insufficient** to defeat constitutional survivability.
 
-#### v3.1 — Learning or Heuristic Adversaries *(Open)*
+---
 
-Introduces adversaries whose **transition rules themselves change** based on run history:
+#### v3.1 — Bounded Semantic-Free Learning Adversaries
 
-* online learning,
-* heuristic adaptation,
-* adversary-side stochastic policies.
+Introduces adversaries whose **transition rules themselves change** based on run history, subject to strict bounds:
 
-All learning rules must be preregistered and measurable.
+* within-run learning only,
+* discrete / fixed-point learning state,
+* preregistered learning rules,
+* reward derived only from observable outcomes,
+* deterministic RNG streams,
+* no semantic access,
+* no kernel access,
+* no cross-run memory.
 
-**Termination condition for v3.x:**
-Either learning-enabled adversaries defeat survivability, or the architectural boundary is characterized tightly enough to justify closure.
+Includes:
+
+* recovery-aware timing learners,
+* eligibility-boundary sustainment learners,
+* stochastic strategy mixers.
 
 **Status:**
-v3.0 complete.
-v3.1 **open and live**.
+Across **40 preregistered executions**:
+
+* zero terminal failures,
+* zero irreversible recovery suppression,
+* bounded recovery in all runs,
+* authority availability degraded as low as **10.19%** in the strongest case,
+* learning fully exercised and verified in all models.
+
+**Conclusion:**
+Bounded, semantic-free, kernel-external learning is **insufficient** to defeat constitutional survivability, though it can induce a **bounded denial-of-service regime**.
+
+**Termination condition for v3.x:**
+Satisfied at **v3.1**.
 
 ---
 
-### **RSA v4.0 — Boundary of Architecture**
+### **RSA v4.0 — Boundary of Architecture (Closure)**
 
 **Purpose:**
-Formally establishes where alignment ceases to be architectural and becomes irreducibly agentic, normative, or political.
+Formally establishes where alignment ceases to be architectural and becomes irreducibly agentic, semantic, or political.
 
-This is not an expansion of RSA, but its **closure**.
+v4.0 is not an expansion of RSA, but its **closure artifact**.
 
-**No minor versions exist beyond v4.0;**
-any work extending past this boundary is definitionally outside the RSA program.
+It asserts and defends the boundary claim:
+
+> *Up to this boundary, authority can be constrained structurally; beyond it, no semantic-free architecture suffices.*
+
+**No minor versions exist beyond v4.0.**
+Any work extending past this boundary is definitionally **outside RSA** and must be treated as a different research program.
 
 ---
 
@@ -247,9 +264,10 @@ The following classes have been experimentally ruled out as **sufficient** cause
 2. Structured epistemic interference (v0.2)
 3. Intentional but fixed misuse (v1.0)
 4. Observable-outcome reactive adversaries (v2.0)
-5. **Finite-state adversaries with fixed transition rules (v3.0)**
+5. Finite-state adversaries with fixed transition rules (v3.0)
+6. **Bounded semantic-free within-run learning adversaries (v3.1)**
 
-Remaining live hypotheses require **learning, coordination, semantic access, or kernel influence**, each requiring an explicit version transition.
+Remaining live hypotheses require **semantic access, kernel influence, coordination, or persistence**, each requiring a **new ontology** and therefore lying **outside RSA**.
 
 ---
 
@@ -265,10 +283,10 @@ A boundary claim is considered defended only if supported by:
 
 1. preregistered hypotheses,
 2. multi-seed replication,
-3. stable asymptotic metrics demonstrating convergence or collapse.
+3. stable asymptotic metrics demonstrating convergence or collapse,
+4. explicit acknowledgment of bounded-denial regimes versus collapse.
 
-Anything beyond this point is **not RSA** and must be treated as a different research program
-(e.g., ethics, incentives, politics, or value theory).
+These conditions are now satisfied through **v3.1**.
 
 ---
 
@@ -277,7 +295,7 @@ Anything beyond this point is **not RSA** and must be treated as a different res
 This roadmap exists to prevent three common failures in alignment research:
 
 1. **Silent escalation** of claims without changing terminology
-2. **Category confusion** between epistemic failure, reactivity, and agency
+2. **Category confusion** between epistemic failure, reactivity, statefulness, and agency
 3. **False completeness**, where partial solutions are presented as total alignment
 
 RSA’s contribution is not safety guarantees, but **epistemic honesty**.
@@ -293,6 +311,5 @@ RSA’s contribution is not safety guarantees, but **epistemic honesty**.
 * **v2.0 complete**
 * v2.1 optional
 * **v3.0 complete**
-* **v3.1 open**
-* v4.0 future (closure)
-
+* **v3.1 complete**
+* **v4.0 next (closure)**
