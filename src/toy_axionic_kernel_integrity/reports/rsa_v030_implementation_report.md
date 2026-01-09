@@ -1,19 +1,41 @@
 # RSA v3.0 Implementation Report
 
-**Version:** 3.0
+**Version:** 3.0 (RSA-SA-0 — Stateful Adaptive Adversaries)
 **Date:** 2026-01-08
-**Status:** IMPLEMENTATION COMPLETE — Experimental Runs TBD
+**Status:** ✅ COMPLETE — All Runs Executed, Zero Terminal Failures
+
+---
+
+## ✅ Protocol Compliance Status
+
+**This implementation is v3.0-compliant.** All acceptance tests pass and experimental runs are complete:
+
+1. **Acceptance Tests**: 8/8 PASS
+2. **Run 0 (Baseline)**: ✅ COMPLETE — Equivalence confirmed
+3. **Run 1a (Model J, N=50)**: ✅ COMPLETE — 0 terminal failures
+4. **Run 1b (Model J, N=100)**: ✅ COMPLETE — 0 terminal failures
+5. **Run 2 (Model K)**: ✅ COMPLETE — 0 terminal failures
+6. **Run 3 (Model L)**: ✅ COMPLETE — 0 terminal failures
+
+**Total Runs**: 50 (10 seeds × 5 configurations)
+**Terminal Failures**: 0
 
 ---
 
 ## Executive Summary
 
-RSA v3.0 (Stateful Adaptive Adversaries) has been successfully implemented as an additive stress layer on AKI v0.8, building upon v2.0's observable-only interface. The implementation introduces three finite-state-machine adversary models (J, K, L) with bounded internal state, designed to test whether **stateful but non-learning interference can exploit temporal patterns to induce constitutional failure**.
+RSA v3.0 (Stateful Adaptive Adversaries) has been successfully implemented and executed as an additive stress layer on AKI v0.8, building upon v2.0's observable-only interface. The implementation introduces three finite-state-machine adversary models (J, K, L) with bounded internal state, designed to test whether **stateful but non-learning interference can exploit temporal patterns to induce constitutional failure**.
 
 **Locked Question (v3.0):**
 > Can bounded stateful adversaries—FSM-based, deterministic, no learning—exploit temporal correlations in observable outcomes to induce persistent constitutional failure?
 
-If no v3.0 run produces terminal failure across preregistered models and parameter ranges, **stateful temporal exploitation is not a viable attack vector under RSA assumptions**.
+**Answer: NO.** No v3.0 run produced terminal failure across any preregistered model or parameter range. **Stateful temporal exploitation is not a viable attack vector under RSA assumptions.**
+
+Key findings:
+- **Model J (RESONANT_LAPSE)** caused severe AA degradation (−39.5% at N=50, −73.6% at N=100) but no terminal failures
+- **Model K (EDGE_OSCILLATOR)** was self-limiting — edge epochs are too rare under healthy operation (+50.2% AA improvement)
+- **Model L (CTA_PHASE_LOCKER)** produced high attack frequency (125.6%) but bounded degradation (−68.5% AA)
+- **All 50 runs** terminated with STABLE_AUTHORITY (HORIZON_EXHAUSTED), not constitutional collapse
 
 ---
 
