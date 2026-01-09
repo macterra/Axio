@@ -106,7 +106,7 @@ class RSAPolicyConfig:
     # v2.0/v3.0/v3.1 parameters
     rsa_version: str = "v1"  # "v1", "v2", "v3", or "v3.1"
     rsa_invalid_target_key: str = "C0"  # Target for invalid commitment actions
-    rsa_max_internal_states: int = 4  # Bounded adaptive state limit
+    rsa_max_internal_states: Optional[int] = 4  # Bounded adaptive state limit (None = not consulted)
     rsa_toggle_on_lapse: bool = True  # Model F: toggle on ANY lapse vs outcome-specific
     rsa_rng_stream: str = "rsa_v310"  # RNG stream for policies
 
@@ -115,7 +115,7 @@ class RSAPolicyConfig:
     rsa_resonant_reset_on_recovery: bool = False  # Locked OFF for v3.0
 
     # v3.1 Learning parameters
-    rsa_max_learning_states: int = 16  # Maximum |Θ| for learning models
+    rsa_max_learning_states: Optional[int] = 16  # Maximum |Θ| for learning models (None = not consulted)
     rsa_learning_rate_shift: int = 6  # lr = 1/2^shift (6 → 1/64)
     rsa_epsilon_ppm: int = 100_000  # Exploration probability in PPM (100_000 = 10%)
     rsa_q_scale: int = 1000  # Fixed-point scale for Q-values
@@ -154,9 +154,10 @@ class RSAPolicyConfig:
                 f"rsa_invalid_target_key must be 'C0', 'C1', or 'C2', got {self.rsa_invalid_target_key}"
             )
 
-        if self.rsa_max_internal_states < 1:
+        # Only validate rsa_max_internal_states if not None (NONE path should not consult)
+        if self.rsa_max_internal_states is not None and self.rsa_max_internal_states < 1:
             raise ValueError(
-                f"rsa_max_internal_states must be >= 1, got {self.rsa_max_internal_states}"
+                f"rsa_max_internal_states must be >= 1 or None, got {self.rsa_max_internal_states}"
             )
 
         # Validate v2.0 models only used with v2.0 version

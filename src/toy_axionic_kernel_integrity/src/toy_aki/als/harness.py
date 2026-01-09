@@ -4990,6 +4990,12 @@ class ALSHarnessV080(ALSHarnessV070):
         # This avoids O(n) scans of full action_trace in _compute_commitment_keys_raw
         self._action_trace_by_epoch: Dict[int, List[Any]] = {}
 
+        # RSA v3.1 instrumentation: Track enabled-path invocation for NONE-path auditing
+        # wrapper_invoked_count: Times RSA intercept path was evaluated (even if no wrapper)
+        # override_count: Times action was actually changed by RSA policy
+        self._rsa_wrapper_invoked_count: int = 0
+        self._rsa_override_count: int = 0
+
     def _execute_working_mind_cycle_v080(self) -> Optional[tuple[LeaseViolation, str]]:
         """
         Execute working mind cycle with RSA v1.0 policy interception (v0.8 override).
@@ -5031,7 +5037,12 @@ class ALSHarnessV080(ALSHarnessV070):
         # RSA v1.0: Intercept action if policy is active
         # RSA v2.0: Intercept action via adaptive adversary if wrapper is active
         # RSA v3.0: Intercept action via stateful adversary if wrapper is active
+        # v3.1 instrumentation: Track when RSA intercept path is evaluated
         rsa_override = False
+        if self._rsa_policy_config is not None:
+            # RSA is configured (even if NONE) - count intercept path evaluation
+            self._rsa_wrapper_invoked_count += 1
+
         if self._rsa_v3_wrapper is not None and original_action is not None:
             # v3.0: Build kernel state and sample observable
             epoch = self._compute_global_epoch()
@@ -5087,6 +5098,10 @@ class ALSHarnessV080(ALSHarnessV070):
                 rsa_override = (original_type != new_type)
         else:
             action = original_action
+
+        # v3.1 instrumentation: Track override count
+        if rsa_override:
+            self._rsa_override_count += 1
 
         if action is None:
             return None
