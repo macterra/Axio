@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency VII.7 — Bounded State and Bounded Learning Are Insufficient to Defeat Constitutional Survivability - Axio</title>
+    <link rel="icon" type="image/webp" href="../axio.webp">
+
+    <!-- Google Fonts - Academic Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Paper Styles -->
+    <link rel="stylesheet" href="../papers.css">
+</head>
+<body>
+    <div class="header-bar">
+        <a href="../index.html" class="logo-link">
+            <img src="../axio.webp" alt="Axio" class="site-logo">
+        </a>
+        <div class="back-link"><a href="index.html">← Back to Papers</a></div>
+    </div>
+    <article>
+
+<h1
+id="axionic-agency-vii.7-bounded-state-and-bounded-learning-are-insufficient-to-defeat-constitutional-survivability">Axionic
+Agency VII.7 — Bounded State and Bounded Learning Are Insufficient to
+Defeat Constitutional Survivability</h1>
+<p><em>Results from Stateful and Learning Adversarial Stress
+Testing</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026.01.09</p>
+<h2 id="abstract">Abstract</h2>
+<p>Stateful adaptation and online learning are often treated as the
+decisive escalations in governance threats: once an adversary can carry
+memory across time and adjust behavior in response to outcomes, collapse
+is assumed to become likely. This paper tests that assumption under a
+deliberately constrained adversary model that isolates <strong>(i)
+exercised internal state</strong> and <strong>(ii) exercised within-run
+learning</strong>, while excluding semantic access, deception, kernel
+access, and cross-run memory.</p>
+<p>We study a constitutional agent architecture built around lease-based
+authority, eligibility-gated succession, and time-based recovery via
+Constitutional Temporal Amnesty (CTA). A removable, kernel-external
+stress layer introduces adversarial policies whose actions depend on a
+<strong>finite, explicitly enumerated internal state machine</strong>,
+and then escalates to adversaries whose actions depend on a
+<strong>bounded, discrete learning state</strong> updated during
+execution using a preregistered learning rule and a scalar reward
+derived only from a frozen observable-outcome interface.</p>
+<p>Across <strong>90 preregistered executions</strong> (10 seeds × 9
+configurations), no run exhibits <strong>Terminal Collapse</strong>,
+<strong>Structural Thrashing</strong>, or <strong>Irreversible Recovery
+Suppression</strong>. Multiple adversaries induce severe degradation of
+authority availability—down to <strong>10.19%</strong> in the strongest
+case—yet recovery remains bounded and non-absorbing. With zero terminal
+failures observed, the 95% upper bound on per-run terminal-failure
+probability under the tested configuration and seed distribution is
+approximately <strong>3.3%</strong>.</p>
+<p>These results establish a negative sufficiency claim: <strong>finite
+exercised internal state with fixed transition rules, and bounded
+exercised within-run learning over a semantic-free, kernel-external
+interface, are insufficient to defeat constitutional
+survivability</strong> in this architecture. If collapse occurs, it must
+rely on capabilities beyond this class, such as semantic access,
+kernel-level manipulation, or coordination not representable as bounded
+kernel-external learning over the frozen interface.</p>
+<h2 id="introduction">1. Introduction</h2>
+<p>Prior work in the Axionic Agency program progressively eliminated
+broad classes of adversarial capability as sufficient causes of
+constitutional collapse. Epistemic interference, intentional but fixed
+misuse strategies, and observable-reactive policies were shown to be
+survivable under a governance architecture that enforces succession and
+recovery structurally rather than via optimization.</p>
+<p>The next escalations commonly proposed as decisive are
+<strong>statefulness</strong> and <strong>learning</strong>. Many
+real-world failures arise not from semantic hacking or kernel
+compromise, but from memory and multi-step coordination, or from agents
+that adapt behavior based on outcomes. The empirical questions addressed
+here are therefore:</p>
+<blockquote>
+<p><strong>Is exercised internal state, by itself, sufficient to defeat
+constitutional survivability in a governance system with enforced
+succession and time-based recovery?</strong> <strong>If not, is bounded
+exercised within-run learning sufficient?</strong></p>
+</blockquote>
+<p>This paper evaluates <strong>survivability</strong>, not utility.
+Authority availability is treated as a structural property of the
+system, not a proxy for correctness, alignment, or benefit.</p>
+<h2 id="architecture-overview">2. Architecture Overview</h2>
+<h3 id="constitutional-agent-design">2.1 Constitutional agent
+design</h3>
+<p>The system under study implements:</p>
+<ul>
+<li><strong>Lease-based authority</strong>, rather than continuous
+control</li>
+<li><strong>Eligibility-gated succession</strong>, evaluated at discrete
+epochs</li>
+<li><strong>Commitment verification</strong> independent of reward or
+optimization</li>
+<li><strong>Lapse</strong> as a constitutional state when no eligible
+successor exists</li>
+<li><strong>Time-based recovery (CTA)</strong> that restores eligibility
+deterministically</li>
+</ul>
+<p>Semantic evaluation constrains <em>who may hold authority next</em>,
+not <em>what actions are executed now</em>. Authority is never
+optimized, and no agent receives reward signals.</p>
+<h3 id="recovery-as-a-structural-mechanism">2.2 Recovery as a structural
+mechanism</h3>
+<p>During lapse:</p>
+<ul>
+<li>no agent acts,</li>
+<li>eligibility decays deterministically,</li>
+<li>recovery proceeds without external intervention.</li>
+</ul>
+<p>The architecture deliberately prefers <strong>no authority</strong>
+to <strong>illegitimate authority</strong>, yielding a high-friction but
+survivable baseline.</p>
+<h2 id="threat-model">3. Threat Model</h2>
+<p>Two adversary families are evaluated under the same frozen
+constraints.</p>
+<h3 id="shared-constraints-binding">3.1 Shared constraints
+(binding)</h3>
+<p>All adversaries are:</p>
+<ul>
+<li><strong>Kernel-external</strong></li>
+<li><strong>Provenance-constrained</strong> (frozen observable
+interface)</li>
+<li><strong>Non-semantic</strong></li>
+<li><strong>No kernel access</strong></li>
+<li><strong>No cross-run memory</strong></li>
+</ul>
+<p>They may not use raw counters, interpret commitments, modify
+eligibility/CTA/renewal rules, or coordinate across runs.</p>
+<h3 id="family-a-exercised-finite-state-adversaries-non-learning">3.2
+Family A: exercised finite-state adversaries (non-learning)</h3>
+<p>Adversaries are <strong>deterministic</strong> and
+<strong>stateful</strong>, with a finite enumerated internal state
+machine exercised during execution.</p>
+<p>Allowed dependence:</p>
+<pre><code>(epoch_index, observable_outcome, internal_state)</code></pre>
+<h3 id="family-b-bounded-learning-adversaries-within-run">3.3 Family B:
+bounded learning adversaries (within-run)</h3>
+<p>Adversaries are stateful and additionally maintain a bounded
+<strong>discrete learning state</strong> updated during the run.</p>
+<p>Allowed dependence:</p>
+<pre><code>(seed, epoch_index, observable_outcome, internal_state, learning_state)</code></pre>
+<p>Learning state is discrete / fixed-point only, deterministic under a
+preregistered RNG stream, and must be <strong>exercised
+dynamically</strong> during each run.</p>
+<p><strong>Not tested:</strong> recurrent learners, history-stacking
+policies, or learners whose effective state grows unboundedly with run
+length.</p>
+<h2 id="adversary-classes">4. Adversary Classes</h2>
+<h3 id="periodic-resonance-adversary-finite-state">4.1 Periodic
+resonance adversary (finite-state)</h3>
+<p>A cyclic counter emits <code>INVALID_COMMIT</code> every <em>N</em>
+epochs.</p>
+<ul>
+<li><strong>Period A:</strong> N = 50</li>
+<li><strong>Period B:</strong> N = 100</li>
+</ul>
+<p>Purpose: test timing resonance between adversarial actions and
+constitutional recovery rhythms.</p>
+<h3 id="eligibility-edge-oscillator-finite-state">4.2 Eligibility edge
+oscillator (finite-state)</h3>
+<p>A 1-bit toggle changes behavior only at the eligibility edge (one
+failure from ineligibility).</p>
+<p>Purpose: test multi-epoch coordination near the eligibility cliff,
+given only edge information.</p>
+<h3 id="cta-phase-locker-finite-state">4.3 CTA phase locker
+(finite-state)</h3>
+<p>Tracks the last observed CTA phase and emits
+<code>INVALID_COMMIT</code> on every phase transition.</p>
+<p>Purpose: test exploitation of recovery-phase boundaries.</p>
+<h3 id="recovery-aware-timing-learner-bounded-learning">4.4
+Recovery-aware timing learner (bounded learning)</h3>
+<p>An ε-greedy bandit learns over a fixed menu of 16 timing “attack
+sets,” using reward derived solely from the observable authority
+state.</p>
+<p>Purpose: test whether within-run learning can discover superior
+timing patterns beyond fixed resonance.</p>
+<h3 id="eligibility-boundary-sustainment-learner-bounded-learning">4.5
+Eligibility-boundary sustainment learner (bounded learning)</h3>
+<p>A 2-mode adversary (NORMAL/SUSTAIN) learns over a fixed sustainment
+menu <code>{MIN_EFFORT, INVALID_COMMIT, NO_OP}</code> using reward
+derived only from observable eligibility and authority buckets.</p>
+<p>Purpose: test whether learning can lock in or amplify
+eligibility-boundary crises once reached.</p>
+<h3 id="stochastic-strategy-mixer-bounded-learning">4.6 Stochastic
+strategy mixer (bounded learning)</h3>
+<p>A weighted stochastic selector mixes among five fixed strategies
+(including timing and boundary stressors), updating bounded integer
+weights from an observable-derived reward.</p>
+<p>Purpose: test whether learning to mix strategies can create a
+stronger stressor than any single strategy alone.</p>
+<h2 id="experimental-program">5. Experimental Program</h2>
+<h3 id="frozen-execution-parameters">5.1 Frozen execution
+parameters</h3>
+<ul>
+<li>300,000 cycles → <strong>6,000 epochs</strong></li>
+<li>Tail window: <strong>5,000 epochs</strong></li>
+<li>Eligibility threshold: <strong>3 failures</strong></li>
+<li>CTA amnesty interval: <strong>10 epochs</strong></li>
+<li>Seeds: <strong>10 fixed seeds</strong></li>
+</ul>
+<p>Total executions:</p>
+<ul>
+<li><strong>50</strong> executions (finite-state family)</li>
+<li><strong>40</strong> executions (bounded learning family)</li>
+<li><strong>90</strong> total</li>
+</ul>
+<h3 id="metrics">5.2 Metrics</h3>
+<ul>
+<li><strong>Authority Availability (AA)</strong></li>
+<li><strong>Asymptotic Authority Availability (AAA)</strong></li>
+<li><strong>Recovery Time Distribution (RTD)</strong></li>
+<li><strong>Failure classification</strong> (Stable Authority, Bounded
+Degradation, Structural Thrashing, Asymptotic DoS, Terminal Collapse,
+Irreversible Recovery Suppression)</li>
+</ul>
+<h2 id="results">6. Results</h2>
+<h3 id="baseline-no-adversary">6.1 Baseline (no adversary)</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean AA</td>
+<td><strong>665,702 PPM (66.57%)</strong></td>
+</tr>
+<tr class="even">
+<td>Mean AAA</td>
+<td><strong>665,702 PPM</strong></td>
+</tr>
+<tr class="odd">
+<td>Mean lapses</td>
+<td><strong>5.70 per run</strong></td>
+</tr>
+<tr class="even">
+<td>Max single lapse</td>
+<td><strong>1,010 epochs</strong></td>
+</tr>
+<tr class="odd">
+<td>Failure class</td>
+<td><strong>Stable Authority</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Baseline equivalence holds exactly with and without the stress layer
+enabled.</p>
+<h3 id="periodic-resonance-n-50">6.2 Periodic resonance (N = 50)</h3>
+<p>Mean AA: <strong>402,601 PPM (40.26%)</strong> ΔAA vs baseline:
+<strong>−39.5%</strong> Terminal failures: <strong>0 / 10
+seeds</strong></p>
+<h3 id="periodic-resonance-n-100">6.3 Periodic resonance (N = 100)</h3>
+<p>Mean AA: <strong>175,730 PPM (17.57%)</strong> ΔAA vs baseline:
+<strong>−73.6%</strong> Terminal failures: <strong>0 / 10
+seeds</strong></p>
+<p>This run exhibits an <strong>inverse rate effect</strong>: fewer
+attacks aligned with recovery timing cause greater long-run
+unavailability.</p>
+<h3 id="eligibility-edge-oscillator">6.4 Eligibility edge
+oscillator</h3>
+<p>Mean AA: <strong>999,988 PPM (99.9988%)</strong> ΔAA vs baseline:
+<strong>+50.2%</strong> Terminal failures: <strong>0 / 10
+seeds</strong></p>
+<p>The adversary is effectively inert; it cannot bootstrap the crisis
+state required to activate.</p>
+<h3 id="cta-phase-locker">6.5 CTA phase locker</h3>
+<p>Mean AA: <strong>209,402 PPM (20.94%)</strong> ΔAA vs baseline:
+<strong>−68.5%</strong> Terminal failures: <strong>0 / 10
+seeds</strong></p>
+<p>Despite extreme attack frequency, recovery remains bounded.</p>
+<h3 id="recovery-aware-timing-learner-16-attack-sets">6.6 Recovery-aware
+timing learner (16 attack sets)</h3>
+<p>Mean AA: <strong>176,960 PPM (17.70%)</strong> ΔAA vs baseline:
+<strong>−73.4%</strong> Learning exercised: <strong>Yes (16
+states)</strong> Terminal failures: <strong>0 / 10 seeds</strong></p>
+<p>All Q-values converge uniformly, indicating the reward signal does
+not differentiate timing patterns sufficiently to yield a superior
+learned policy.</p>
+<h3
+id="eligibility-boundary-sustainment-learner-3-sustainment-actions">6.7
+Eligibility-boundary sustainment learner (3 sustainment actions)</h3>
+<p>Mean AA: <strong>401,477 PPM (40.15%)</strong> ΔAA vs baseline:
+<strong>−39.7%</strong> Edge epochs: <strong>0 (all seeds)</strong>
+Learning exercised: <strong>Yes (3 states)</strong> Terminal failures:
+<strong>0 / 10 seeds</strong></p>
+<p>The eligibility boundary remains structurally difficult to reach
+under healthy operation.</p>
+<h3 id="stochastic-strategy-mixer-5-strategies">6.8 Stochastic strategy
+mixer (5 strategies)</h3>
+<p>Mean AA: <strong>101,929 PPM (10.19%)</strong> ΔAA vs baseline:
+<strong>−84.7%</strong> Strategy entropy: <strong>2.322 bits</strong>
+Learning exercised: <strong>Yes (3,001 states)</strong> Terminal
+failures: <strong>0 / 10 seeds</strong></p>
+<p>This is the strongest availability-degrading stressor tested. The
+system enters a <strong>bounded denial-of-service regime</strong> while
+remaining constitutionally live.</p>
+<h3 id="cross-run-summary">6.9 Cross-run summary</h3>
+<table>
+<colgroup>
+<col style="width: 43%" />
+<col style="width: 16%" />
+<col style="width: 18%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Configuration</th>
+<th>Mean AA (PPM)</th>
+<th>ΔAA vs baseline</th>
+<th>Terminal failures</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Baseline</td>
+<td>665,702</td>
+<td>—</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Periodic resonance (N=50)</td>
+<td>402,601</td>
+<td>−39.5%</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Periodic resonance (N=100)</td>
+<td>175,730</td>
+<td>−73.6%</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Eligibility edge oscillator</td>
+<td>999,988</td>
+<td>+50.2%</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>CTA phase locker</td>
+<td>209,402</td>
+<td>−68.5%</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Recovery-aware timing learner (16)</td>
+<td>176,960</td>
+<td>−73.4%</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Eligibility sustainment learner (3)</td>
+<td>401,477</td>
+<td>−39.7%</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Stochastic strategy mixer (5)</td>
+<td>101,929</td>
+<td>−84.7%</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>Across all <strong>90 executions</strong>, no absorbing failure
+regime emerges.</p>
+<h2 id="interpretation">7. Interpretation</h2>
+<ol type="1">
+<li><p><strong>CTA bounds lapse duration under adversarial
+pressure.</strong> Recovery time collapses into a bounded window even
+under aggressive learning-based stress.</p></li>
+<li><p><strong>Timing alignment dominates frequency.</strong> Resonant
+alignment with recovery rhythms is more damaging than raw attack
+rate.</p></li>
+<li><p><strong>Edge-triggered strategies are self-limiting.</strong>
+Boundary-reactive adversaries cannot activate without first inducing
+boundary conditions.</p></li>
+<li><p><strong>Bounded learning increases degradation, not
+failure.</strong> Learning adversaries can drive availability into a
+bounded denial-of-service regime but cannot induce terminal
+collapse.</p></li>
+</ol>
+<h2 id="survivability-vs.-utility">8. Survivability vs. Utility</h2>
+<p>Several configurations reduce authority availability below 25%, and
+the strongest mixer reduces it to ~10%. Survivability here means:</p>
+<ul>
+<li>recovery remains reliable,</li>
+<li>lapse durations remain bounded,</li>
+<li>no absorbing failure state appears.</li>
+</ul>
+<p>Operational utility and service-level guarantees are outside
+scope.</p>
+<h2 id="limitations">9. Limitations</h2>
+<p>This study does not address:</p>
+<ul>
+<li>semantic access to commitments or commitment content</li>
+<li>deception or adversarial interpretation</li>
+<li>kernel-level manipulation or compromise</li>
+<li>cross-run learning or persistent adversary memory</li>
+<li>multi-agent coordination</li>
+<li>recurrent or history-stacking learners</li>
+</ul>
+<p>Claims apply only to the tested architecture and adversary class.</p>
+<h2 id="conclusion">10. Conclusion</h2>
+<blockquote>
+<p><strong>Finite exercised internal state with fixed transition rules,
+and bounded exercised within-run learning over a semantic-free,
+kernel-external interface, are insufficient to defeat constitutional
+survivability in this architecture.</strong></p>
+</blockquote>
+<p>Across <strong>90 preregistered executions</strong> spanning periodic
+resonance, eligibility-boundary oscillation and sustainment, CTA
+phase-transition exploitation, timing learners, and high-entropy
+stochastic mixers, authority remains bounded and recoverable. No
+terminal failures occur.</p>
+<p>If collapse is possible, it must rely on capabilities beyond those
+tested here—most plausibly semantic access, kernel-level influence, or
+coordination and persistence not representable as bounded
+kernel-external learning over the frozen observable interface.</p>
+
+    </article>
+</body>
+</html>
