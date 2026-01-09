@@ -3263,6 +3263,14 @@ class LearningRSAWrapper:
         self._last_internal_state = adversary.get_internal_state()
         self._last_learning_state = adversary.get_learning_state()
 
+        # v3.1 Run 3 telemetry: per-epoch strategy tracking (Model O)
+        # This is telemetry only - does not affect decision logic
+        self._strategy_history: List[int] = []  # Track selected strategy each epoch
+        self._prev_strategy: Optional[int] = None
+        self._strategy_switch_count = 0
+        self._current_streak = 0
+        self._longest_streak = 0
+
     @classmethod
     def from_config(cls, config: Optional[RSAPolicyConfig], seed: int) -> Optional["LearningRSAWrapper"]:
         """
@@ -3363,6 +3371,28 @@ class LearningRSAWrapper:
         if learning_changed:
             self._learning_transition_count += 1
             self._last_learning_state = self._adversary._copy_learning_state(current_learning)
+
+        # v3.1 Run 3 telemetry: track strategy selection for Model O
+        # For Model O, internal_state IS the current strategy index
+        # This is telemetry only - does not affect decision logic
+        if self._adversary.model == RSAPolicyModel.STOCHASTIC_MIXER:
+            current_strategy = current_internal
+            self._strategy_history.append(current_strategy)
+
+            # Track switches and streaks
+            if self._prev_strategy is not None:
+                if current_strategy != self._prev_strategy:
+                    self._strategy_switch_count += 1
+                    # End current streak, check if it was longest
+                    if self._current_streak > self._longest_streak:
+                        self._longest_streak = self._current_streak
+                    self._current_streak = 1
+                else:
+                    self._current_streak += 1
+            else:
+                self._current_streak = 1
+
+            self._prev_strategy = current_strategy
 
         return action
 
@@ -3471,3 +3501,24 @@ class LearningRSAWrapper:
             diagnostics["weight_updates_count"] = adversary.get_weight_updates_count()
 
         return diagnostics
+
+    def get_strategy_telemetry(self) -> Dict[str, Any]:
+        """
+        Return strategy tracking telemetry for Model O (Run 3).
+
+        This is telemetry only - does not affect decision logic.
+        Returns empty dict for non-Model O adversaries.
+        """
+        if self._adversary.model != RSAPolicyModel.STOCHASTIC_MIXER:
+            return {}
+
+        # Finalize longest streak (check if current streak is longest)
+        longest = self._longest_streak
+        if self._current_streak > longest:
+            longest = self._current_streak
+
+        return {
+            "strategy_switch_count": self._strategy_switch_count,
+            "longest_strategy_streak": longest,
+            "strategy_history_length": len(self._strategy_history),
+        }
