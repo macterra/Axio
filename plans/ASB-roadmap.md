@@ -1,8 +1,3 @@
-Below is the **roadmap rewritten cleanly with RSA renamed to ASB (Architectural Sovereignty Boundary)**, with **no loss of detail** and **no semantic drift**.
-The Reflective Sovereign Agent (RSA) is no longer conflated with the research program.
-
----
-
 # ASB Roadmap
 
 **Architectural Sovereignty Boundary — Versioned Research Program**
