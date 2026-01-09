@@ -3143,18 +3143,27 @@ class StochasticMixerAdversary(LearningRSAAdversary):
         Update weights and select next strategy.
         Tracks diagnostics for telemetry.
 
-        1. Update weight of current strategy based on reward
+        1. Update weight of current strategy based on reward (additive increment)
         2. Clamp to [1, WMAX] per-component bound
         3. Sample next strategy proportional to weights
+
+        Update rule (v3.1 corrected):
+            delta = (reward * scale) >> shift   # Additive increment
+            w[a] ← clamp(w[a] + delta, 1, WMAX)
+
+        This accumulates reward incrementally, allowing weights to diverge
+        based on per-strategy success rates. Strategies that more frequently
+        trigger NULL_AUTHORITY will accumulate higher weights over time.
         """
         weights = self._learning_state["weights"]
         current_strategy = self._internal_state
         scale = self._config.rsa_q_scale
         shift = self._config.rsa_learning_rate_shift
 
-        # Update weight of current strategy
-        r_scaled = reward * scale
-        delta = (r_scaled - weights[current_strategy]) >> shift
+        # Update weight of current strategy (additive increment)
+        # delta = (reward * scale) >> shift
+        # With reward=1, scale=1000, shift=6: delta = 1000 >> 6 = 15
+        delta = (reward * scale) >> shift
         new_weight = weights[current_strategy] + delta
         # Clamp to [1, WMAX] per-component bound
         weights[current_strategy] = max(1, min(self._wmax, new_weight))
