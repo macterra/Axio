@@ -20,7 +20,7 @@ Key constraints:
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from enum import Enum
-from typing import Dict, Any, List, Optional, FrozenSet
+from typing import Dict, Any, List, Optional, FrozenSet, Tuple
 
 
 class RSAPolicyModel(Enum):
@@ -2555,6 +2555,13 @@ class RecoveryAwareTimingAdversary(LearningRSAAdversary):
             initial_learning_state={"theta": 0, "q_values": initial_q}
         )
 
+        # v3.1 diagnostics tracking
+        self._attack_set_selection_counts: Dict[int, int] = {i: 0 for i in range(self._num_sets)}
+        self._explore_count: int = 0
+        self._exploit_count: int = 0
+        self._q_min_seen: int = 0
+        self._q_max_seen: int = 0
+
     def _build_attack_sets(self) -> List[FrozenSet[int]]:
         """Build 16 preregistered attack sets."""
         N = self._N
@@ -2678,6 +2685,7 @@ class RecoveryAwareTimingAdversary(LearningRSAAdversary):
 
         1. Update Q[current_theta] with reward
         2. Select new theta via ε-greedy
+        3. Track diagnostics for telemetry
         """
         theta = self._learning_state["theta"]
         q_values = self._learning_state["q_values"]
@@ -2690,6 +2698,12 @@ class RecoveryAwareTimingAdversary(LearningRSAAdversary):
         delta = (r_scaled - q_values[theta]) >> shift
         q_values[theta] = q_values[theta] + delta
 
+        # Track Q-value range for diagnostics
+        current_min = min(q_values)
+        current_max = max(q_values)
+        self._q_min_seen = min(self._q_min_seen, current_min)
+        self._q_max_seen = max(self._q_max_seen, current_max)
+
         # ε-greedy selection for next epoch
         epsilon_ppm = self._config.rsa_epsilon_ppm
         rand = self._rng_uniform_ppm(seed)
@@ -2697,12 +2711,44 @@ class RecoveryAwareTimingAdversary(LearningRSAAdversary):
         if rand < epsilon_ppm:
             # Explore: random selection
             new_theta = self._rng_next(seed) % self._num_sets
+            self._explore_count += 1
         else:
             # Exploit: argmax Q (ties broken by lowest index)
             max_q = max(q_values)
             new_theta = q_values.index(max_q)
+            self._exploit_count += 1
+
+        # Track selection histogram
+        self._attack_set_selection_counts[new_theta] += 1
 
         self._learning_state["theta"] = new_theta
+
+    # ========================================================================
+    # v3.1 Diagnostics (Model M)
+    # ========================================================================
+
+    def get_q_values(self) -> List[int]:
+        """Return current Q-values (raw fixed-point integers)."""
+        return list(self._learning_state["q_values"])
+
+    def get_q_value_range(self) -> Tuple[int, int]:
+        """Return (min, max) Q-values observed during run."""
+        return (self._q_min_seen, self._q_max_seen)
+
+    def get_attack_set_selection_counts(self) -> Dict[int, int]:
+        """Return histogram of attack set selections."""
+        return dict(self._attack_set_selection_counts)
+
+    def get_empirical_epsilon_rate(self) -> float:
+        """Return fraction of explore vs total selections."""
+        total = self._explore_count + self._exploit_count
+        if total == 0:
+            return 0.0
+        return self._explore_count / total
+
+    def get_exploration_counts(self) -> Tuple[int, int]:
+        """Return (explore_count, exploit_count)."""
+        return (self._explore_count, self._exploit_count)
 
 
 # ============================================================================
@@ -2753,6 +2799,13 @@ class EdgeSustainmentAdversary(LearningRSAAdversary):
             initial_internal_state=0,  # NORMAL
             initial_learning_state={"theta": 0, "q_values": initial_q}
         )
+
+        # v3.1 diagnostics tracking
+        self._action_selection_counts: Dict[int, int] = {0: 0, 1: 0, 2: 0}
+        self._explore_count: int = 0
+        self._exploit_count: int = 0
+        self._q_min_seen: int = 0
+        self._q_max_seen: int = 0
 
     @property
     def model(self) -> RSAPolicyModel:
@@ -2834,6 +2887,7 @@ class EdgeSustainmentAdversary(LearningRSAAdversary):
     def update_learning_state(self, observable: ObservableOutcome, reward: int, seed: int) -> None:
         """
         ε-greedy update over sustainment actions.
+        Tracks diagnostics for telemetry.
         """
         theta = self._learning_state["theta"]
         q_values = self._learning_state["q_values"]
@@ -2845,17 +2899,55 @@ class EdgeSustainmentAdversary(LearningRSAAdversary):
         delta = (r_scaled - q_values[theta]) >> shift
         q_values[theta] = q_values[theta] + delta
 
+        # Track Q-value range for diagnostics
+        current_min = min(q_values)
+        current_max = max(q_values)
+        self._q_min_seen = min(self._q_min_seen, current_min)
+        self._q_max_seen = max(self._q_max_seen, current_max)
+
         # ε-greedy selection
         epsilon_ppm = self._config.rsa_epsilon_ppm
         rand = self._rng_uniform_ppm(seed)
 
         if rand < epsilon_ppm:
             new_theta = self._rng_next(seed) % 3
+            self._explore_count += 1
         else:
             max_q = max(q_values)
             new_theta = q_values.index(max_q)
+            self._exploit_count += 1
+
+        # Track selection histogram
+        self._action_selection_counts[new_theta] += 1
 
         self._learning_state["theta"] = new_theta
+
+    # ========================================================================
+    # v3.1 Diagnostics (Model N)
+    # ========================================================================
+
+    def get_q_values(self) -> List[int]:
+        """Return current Q-values (raw fixed-point integers)."""
+        return list(self._learning_state["q_values"])
+
+    def get_q_value_range(self) -> Tuple[int, int]:
+        """Return (min, max) Q-values observed during run."""
+        return (self._q_min_seen, self._q_max_seen)
+
+    def get_action_selection_counts(self) -> Dict[int, int]:
+        """Return histogram of sustainment action selections."""
+        return dict(self._action_selection_counts)
+
+    def get_empirical_epsilon_rate(self) -> float:
+        """Return fraction of explore vs total selections."""
+        total = self._explore_count + self._exploit_count
+        if total == 0:
+            return 0.0
+        return self._explore_count / total
+
+    def get_exploration_counts(self) -> Tuple[int, int]:
+        """Return (explore_count, exploit_count)."""
+        return (self._explore_count, self._exploit_count)
 
 
 # ============================================================================
@@ -2909,6 +3001,12 @@ class StochasticMixerAdversary(LearningRSAAdversary):
         self._edge_toggle = 0
         self._phase_state = 0
         self._N = config.epoch_size  # = renewal_check_interval = 50
+
+        # v3.1 Diagnostics tracking
+        self._strategy_selection_counts: Dict[int, int] = {i: 0 for i in range(num_strategies)}
+        self._weight_updates_count = 0
+        self._weight_min_seen = initial_weight
+        self._weight_max_seen = initial_weight
 
         super().__init__(
             config,
@@ -3043,6 +3141,7 @@ class StochasticMixerAdversary(LearningRSAAdversary):
     def update_learning_state(self, observable: ObservableOutcome, reward: int, seed: int) -> None:
         """
         Update weights and select next strategy.
+        Tracks diagnostics for telemetry.
 
         1. Update weight of current strategy based on reward
         2. Clamp to [1, WMAX] per-component bound
@@ -3060,6 +3159,15 @@ class StochasticMixerAdversary(LearningRSAAdversary):
         # Clamp to [1, WMAX] per-component bound
         weights[current_strategy] = max(1, min(self._wmax, new_weight))
 
+        # Track weight updates
+        self._weight_updates_count += 1
+
+        # Track weight range for diagnostics
+        current_min = min(weights)
+        current_max = max(weights)
+        self._weight_min_seen = min(self._weight_min_seen, current_min)
+        self._weight_max_seen = max(self._weight_max_seen, current_max)
+
         # Sample next strategy proportional to weights
         total_weight = sum(weights)
         rand = self._rng_next(seed) % total_weight
@@ -3071,8 +3179,31 @@ class StochasticMixerAdversary(LearningRSAAdversary):
                 new_strategy = i
                 break
 
+        # Track strategy selection histogram
+        self._strategy_selection_counts[new_strategy] += 1
+
         # Update internal state to new strategy
         self._internal_state = new_strategy
+
+    # ========================================================================
+    # v3.1 Diagnostics (Model O)
+    # ========================================================================
+
+    def get_weights(self) -> List[int]:
+        """Return current weight vector (raw fixed-point integers)."""
+        return list(self._learning_state["weights"])
+
+    def get_weight_range(self) -> Tuple[int, int]:
+        """Return (min, max) weights observed during run."""
+        return (self._weight_min_seen, self._weight_max_seen)
+
+    def get_strategy_selection_counts(self) -> Dict[int, int]:
+        """Return histogram of strategy selections."""
+        return dict(self._strategy_selection_counts)
+
+    def get_weight_updates_count(self) -> int:
+        """Return total number of weight updates performed."""
+        return self._weight_updates_count
 
 
 # ============================================================================
@@ -3298,3 +3429,45 @@ class LearningRSAWrapper:
             "exercised_learning_dynamic_ok": self.verify_exercised_learning_dynamic(),
             "reward_history": self._adversary._reward_history,
         }
+
+    def get_learning_diagnostics(self) -> Dict[str, Any]:
+        """
+        Return model-specific learning diagnostics for telemetry.
+
+        Returns detailed diagnostics based on adversary model:
+        - Model M: Q-values, attack_set selection histogram, epsilon rate
+        - Model N: Q-values, action selection histogram, epsilon rate
+        - Model O: weights, strategy selection histogram, weight updates
+        """
+        adversary = self._adversary
+        model = adversary.model
+        diagnostics: Dict[str, Any] = {"model": model.value}
+
+        if model == RSAPolicyModel.RECOVERY_AWARE_TIMING:
+            # Model M diagnostics
+            diagnostics["q_values"] = adversary.get_q_values()
+            diagnostics["q_value_range"] = adversary.get_q_value_range()
+            diagnostics["attack_set_selection_counts"] = adversary.get_attack_set_selection_counts()
+            diagnostics["empirical_epsilon_rate"] = adversary.get_empirical_epsilon_rate()
+            explore, exploit = adversary.get_exploration_counts()
+            diagnostics["explore_count"] = explore
+            diagnostics["exploit_count"] = exploit
+
+        elif model == RSAPolicyModel.EDGE_SUSTAINMENT:
+            # Model N diagnostics
+            diagnostics["q_values"] = adversary.get_q_values()
+            diagnostics["q_value_range"] = adversary.get_q_value_range()
+            diagnostics["action_selection_counts"] = adversary.get_action_selection_counts()
+            diagnostics["empirical_epsilon_rate"] = adversary.get_empirical_epsilon_rate()
+            explore, exploit = adversary.get_exploration_counts()
+            diagnostics["explore_count"] = explore
+            diagnostics["exploit_count"] = exploit
+
+        elif model == RSAPolicyModel.STOCHASTIC_MIXER:
+            # Model O diagnostics
+            diagnostics["weights"] = adversary.get_weights()
+            diagnostics["weight_range"] = adversary.get_weight_range()
+            diagnostics["strategy_selection_counts"] = adversary.get_strategy_selection_counts()
+            diagnostics["weight_updates_count"] = adversary.get_weight_updates_count()
+
+        return diagnostics

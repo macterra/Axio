@@ -97,6 +97,14 @@ except ImportError:
     RSA_V3_AVAILABLE = False
     StatefulRSAWrapper = None  # type: ignore
 
+# RSA v3.1 learning adversary layer (optional, additive)
+try:
+    from toy_aki.rsa.policy import LearningRSAWrapper
+    RSA_V31_AVAILABLE = True
+except ImportError:
+    RSA_V31_AVAILABLE = False
+    LearningRSAWrapper = None  # type: ignore
+
 
 class ALSStopReason(Enum):
     """Reasons for ALS run termination."""
@@ -4950,14 +4958,21 @@ class ALSHarnessV080(ALSHarnessV070):
         # RSA v1.0 policy layer (optional; disabled by default)
         # RSA v2.0 uses AdaptiveRSAWrapper for models F-I
         # RSA v3.0 uses StatefulRSAWrapper for models J-L
+        # RSA v3.1 uses LearningRSAWrapper for models M-O
         self._rsa_policy_config = rsa_policy_config
         self._rsa_policy_wrapper = None
         self._rsa_v2_wrapper = None  # v2.0 adaptive adversary wrapper
         self._rsa_v3_wrapper = None  # v3.0 stateful adversary wrapper
+        self._rsa_v31_wrapper = None  # v3.1 learning adversary wrapper
         if RSA_POLICY_AVAILABLE and rsa_policy_config is not None:
             rsa_version = getattr(rsa_policy_config, 'rsa_version', 'v1')
+            # Check if v3.1 model (takes precedence when configured)
+            if RSA_V31_AVAILABLE and rsa_version == 'v3.1':
+                self._rsa_v31_wrapper = LearningRSAWrapper.from_config(rsa_policy_config, seed)
+                if self._rsa_v31_wrapper and self._verbose:
+                    print(f"[RSA v3.1] Learning adversary enabled: {rsa_policy_config.policy_model.value}")
             # Check if v3.0 model
-            if RSA_V3_AVAILABLE and rsa_version == 'v3':
+            elif RSA_V3_AVAILABLE and rsa_version == 'v3':
                 self._rsa_v3_wrapper = StatefulRSAWrapper.from_config(rsa_policy_config)
                 if self._rsa_v3_wrapper and self._verbose:
                     print(f"[RSA v3.0] Stateful adversary enabled: {rsa_policy_config.policy_model.value}")
@@ -5043,7 +5058,25 @@ class ALSHarnessV080(ALSHarnessV070):
             # RSA is configured (even if NONE) - count intercept path evaluation
             self._rsa_wrapper_invoked_count += 1
 
-        if self._rsa_v3_wrapper is not None and original_action is not None:
+        if self._rsa_v31_wrapper is not None and original_action is not None:
+            # v3.1: Build kernel state and sample observable (reuses v2.0/v3.0 logic)
+            epoch = self._compute_global_epoch()
+            cycle_in_epoch = (self._cycle - 1) % self._config.renewal_check_interval
+            kernel_state = self._build_kernel_state_for_rsa_v2()  # Reuse v2.0 kernel state builder
+            observable = self._rsa_v31_wrapper.sample_observable(kernel_state)
+            # v3.1: emit() handles state and learning updates internally after action selection
+            action = self._rsa_v31_wrapper.intercept(observable, epoch, cycle_in_epoch, original_action)
+            if self._verbose:
+                original_type = original_action.get("action_type", "NONE") if original_action else "NONE"
+                new_type = action.get("action_type", "NONE")
+                if original_type != new_type:
+                    print(f"    [RSA v3.1] Action override: {original_type} -> {new_type}")
+                    rsa_override = True
+            else:
+                original_type = original_action.get("action_type", "NONE") if original_action else "NONE"
+                new_type = action.get("action_type", "NONE")
+                rsa_override = (original_type != new_type)
+        elif self._rsa_v3_wrapper is not None and original_action is not None:
             # v3.0: Build kernel state and sample observable
             epoch = self._compute_global_epoch()
             cycle_in_epoch = (self._cycle - 1) % self._config.renewal_check_interval
