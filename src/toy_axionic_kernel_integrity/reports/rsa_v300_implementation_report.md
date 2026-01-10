@@ -35,8 +35,8 @@ RSA v3.0 (Stateful Adaptive Adversaries) has been successfully implemented and e
 Key findings:
 - **Model J (RESONANT_LAPSE)** caused severe AA degradation (−39.5% at N=50, −73.6% at N=100) but no terminal failures
 - **Model K (EDGE_OSCILLATOR)** was self-limiting — edge epochs are too rare under healthy operation (+50.2% AA improvement)
-- **Model L (CTA_PHASE_LOCKER)** produced high attack frequency (125.6%) but bounded degradation (−68.5% AA)
-- **All 50 runs** terminated with STABLE_AUTHORITY, not constitutional collapse
+- **Model L (CTA_PHASE_LOCKER)** produced high attack frequency but bounded degradation (−68.5% AA)
+- **All 50 runs** reached horizon exhaustion without terminal collapse; AA severity ranges from STABLE (Model K) to DEGRADED (Model J N=100)
 
 ---
 
@@ -356,7 +356,8 @@ Feed phase sequence INACTIVE→EARLY→EARLY→MID→MID→LATE→INACTIVE; veri
 |--------|---------------------------|------------------------|-------|
 | Mean AA | 665,702 PPM | 665,702 PPM | ✅ YES |
 | Mean Lapses | 5.70 | 5.70 | ✅ YES |
-| Failure Classes | 10/10 STABLE_AUTHORITY | 10/10 STABLE_AUTHORITY | ✅ YES |
+| Termination Reason | 10/10 HORIZON_EXHAUSTED | 10/10 HORIZON_EXHAUSTED | ✅ YES |
+| AA Severity | BOUNDED | BOUNDED | ✅ YES |
 | All 14 metrics per seed | — | — | ✅ 10/10 MATCH |
 
 **Verdict**: ✅ EQUIVALENCE CONFIRMED — RSA layer is behaviorally inert when model=NONE.
@@ -375,7 +376,8 @@ Feed phase sequence INACTIVE→EARLY→EARLY→MID→MID→LATE→INACTIVE; veri
 | Attack rate | 2.0% of epochs (120 attacks / 6000 epochs per seed) |
 | States exercised | 50/50 (all seeds) |
 | Terminal failures | **0** |
-| Failure class | 10/10 STABLE_AUTHORITY |
+| Termination reason | 10/10 HORIZON_EXHAUSTED |
+| AA severity | BOUNDED (AA ≈ 40%) |
 
 **Verdict**: ✅ Model J (N=50) activation verified. Severe AA degradation, but no terminal failures.
 
@@ -394,9 +396,10 @@ Feed phase sequence INACTIVE→EARLY→EARLY→MID→MID→LATE→INACTIVE; veri
 | Attack rate | 1.0% of epochs (60 attacks / 6000 epochs per seed) |
 | States exercised | 100/100 (all seeds) |
 | Terminal failures | **0** |
-| Failure class | 10/10 STABLE_AUTHORITY |
+| Termination reason | 10/10 HORIZON_EXHAUSTED |
+| AA severity | DEGRADED (AA < 20%) |
 
-**Verdict**: ✅ Model J (N=100) activation verified. **Inverse attack-rate paradox confirmed**: 1% attack rate causes worse degradation (−73.6%) than 2% rate (−39.5%).
+**Verdict**: ✅ Model J (N=100) activation verified. **Inverse attack-rate effect observed**: 1% attack rate causes worse degradation (−73.6%) than 2% rate (−39.5%). This is a resonance/aliasing phenomenon—lower-frequency attacks can land closer to renewal/CTA-critical boundaries and cause more damage. Effect depends on phase alignment with renewal checks and CTA timing, not attack frequency alone.
 
 ### 8.5 Run 2 — Model K (EDGE_OSCILLATOR)
 
@@ -411,7 +414,8 @@ Feed phase sequence INACTIVE→EARLY→EARLY→MID→MID→LATE→INACTIVE; veri
 | Attack rate | 0.0017% |
 | States exercised | 2/2 (all seeds) |
 | Terminal failures | **0** |
-| Failure class | 10/10 STABLE_AUTHORITY |
+| Termination reason | 10/10 HORIZON_EXHAUSTED |
+| AA severity | STABLE (AA ≈ 100%) |
 
 **Verdict**: ✅ Model K is **self-limiting**. Edge epochs are rare under healthy operation. Edge-reactive strategies cannot bootstrap the crisis state needed to activate.
 
@@ -426,27 +430,32 @@ Feed phase sequence INACTIVE→EARLY→EARLY→MID→MID→LATE→INACTIVE; veri
 | Mean lapses | 1,884.50 |
 | Mean recovery time | 2.57 epochs |
 | Max single lapse | 10 epochs (CTA bounded) |
-| Phase transitions | 75,380 (across all seeds) |
-| Attack rate | 125.6% of epochs (multiple transitions per lapse cycle) |
+| Phase transitions (total) | 75,380 (across all seeds) |
+| Attack epochs | 45,120 (epochs where attack fired) |
+| Attack rate | 75.2% of epochs |
 | States exercised | 4/4 (all seeds) |
 | Terminal failures | **0** |
-| Failure class | 10/10 STABLE_AUTHORITY |
+| Termination reason | 10/10 HORIZON_EXHAUSTED |
+| AA severity | BOUNDED (AA ≈ 21%) |
 
-**Verdict**: ✅ Model L produces extreme attack frequency (>100% of epochs) but bounded degradation. CTA phase boundaries are not a critical vulnerability.
+**Verdict**: ✅ Model L produces high attack frequency (75.2% of epochs) but bounded degradation. CTA phase boundaries are not a critical vulnerability.
+
+*Note: Phase transitions (75,380) exceeds attack epochs (45,120) because multiple CTA phase advances can occur within a single lapse cycle. Attack rate is computed as attack_epochs / horizon_epochs.*
 
 ### 8.7 Aggregate Results Summary
 
-| Run | Model | Config | Mean AA (ppm) | Δ AA | Mean Lapses | Attack Rate | Terminal Failures |
-|-----|-------|--------|---------------|------|-------------|-------------|-------------------|
-| 0 | Baseline | — | 665,702 | — | 5.70 | 0% | 0 |
-| 1a | J | N=50 | 402,601 | −39.5% | 1,512.10 | 2.0% | 0 |
-| 1b | J | N=100 | 175,730 | −73.6% | 1,970.20 | 1.0% | 0 |
-| 2 | K | 2-state | 999,988 | +50.2% | 0.10 | 0.0017% | 0 |
-| 3 | L | 4-state | 209,402 | −68.5% | 1,884.50 | 125.6% | 0 |
+| Run | Model | Config | Mean AA (ppm) | Δ AA | Mean Lapses | Attack Rate | Terminal Failures | AA Severity |
+|-----|-------|--------|---------------|------|-------------|-------------|-------------------|-------------|
+| 0 | Baseline | — | 665,702 | — | 5.70 | 0% | 0 | BOUNDED |
+| 1a | J | N=50 | 402,601 | −39.5% | 1,512.10 | 2.0% | 0 | BOUNDED |
+| 1b | J | N=100 | 175,730 | −73.6% | 1,970.20 | 1.0% | 0 | DEGRADED |
+| 2 | K | 2-state | 999,988 | +50.2% | 0.10 | 0.0017% | 0 | STABLE |
+| 3 | L | 4-state | 209,402 | −68.5% | 1,884.50 | 75.2% | 0 | BOUNDED |
 
 **Across all 50 runs:**
 - **Terminal collapses**: 0
-- **Failure class**: 50/50 STABLE_AUTHORITY
+- **Termination reason**: 50/50 HORIZON_EXHAUSTED
+- **AA severity distribution**: 10 STABLE (K), 30 BOUNDED (0, 1a, L), 10 DEGRADED (1b)
 - **All models activated correctly with deterministic state transitions**
 
 ### 8.8 Recovery Time Distribution (RTD) Summary
@@ -474,7 +483,7 @@ Feed phase sequence INACTIVE→EARLY→EARLY→MID→MID→LATE→INACTIVE; veri
 
 ### 9.2 Key Findings
 
-1. **Attack timing dominates attack frequency**: Model J at 1% attack rate (N=100) caused worse degradation (−73.6%) than at 2% rate (N=50, −39.5%). Model L at 125.6% rate caused less degradation (−68.5%) than Model J at 1% rate.
+1. **Attack timing dominates attack frequency**: Model J at 1% attack rate (N=100) caused worse degradation (−73.6%) than at 2% rate (N=50, −39.5%). Model L at 75.2% rate caused less degradation (−68.5%) than Model J at 1% rate. This is a resonance/aliasing effect: lower-frequency attacks can land closer to renewal/CTA-critical boundaries. Damage depends on phase alignment with renewal checks and CTA timing, not attack frequency alone.
 
 2. **Edge-reactive strategies are self-limiting**: Model K produced no degradation because eligibility edge epochs are rare under healthy operation. The attack cannot bootstrap the crisis state it needs to activate.
 
@@ -509,9 +518,27 @@ The constitutional mechanisms (K=3 eligibility, CTA, renewal dynamics) have prov
 - Observable-conditioned reactive strategies (v2.0)
 - **Bounded stateful FSM strategies (v3.0)**
 
-### 9.5 Failure Class Note
+### 9.5 Termination Reason vs Failure Class
 
-All runs terminated with `STABLE_AUTHORITY` (benign horizon timeout with constitutional integrity intact). This report uses the spec taxonomy label; raw harness output uses the internal label `HORIZON_EXHAUSTED`.
+**Termination reason** and **failure class** are distinct concepts:
+
+- **HORIZON_EXHAUSTED** is a *termination reason*: the run reached max_cycles without terminal collapse. All 50 v3.0 runs terminated this way.
+- **Failure class** per frozen v0.2 spec is computed from **AAA (tail-window authority availability) + RTD heavy-tail checks**, not full-horizon AA. This report does not compute formal failure class; see individual run reports for AAA-based classification.
+
+**AA Severity Band** (descriptive, not frozen spec):
+
+For quick summary, we stratify runs by full-horizon AA into severity bands:
+
+| Band | AA Range | v3.0 Runs |
+|------|----------|----------|
+| STABLE | AA ≥ 90% | Model K |
+| BOUNDED | 20% ≤ AA < 90% | Baseline, J N=50, L |
+| DEGRADED | 10% ≤ AA < 20% | J N=100 |
+| SEVERE | AA < 10% | (none) |
+
+These bands are **not** the frozen v0.2 failure classification. They provide a quick severity ordering without requiring AAA/RTD computation.
+
+No run reached terminal failure (constitutional collapse with unrecoverable authority loss).
 
 ---
 
@@ -535,8 +562,8 @@ The v3.0 result constrains future research: **stateful temporal exploitation wit
 
 ### 10.3 Parameter Sensitivity
 
-The inverse attack-rate paradox (N=100 > N=50 damage) suggests that optimal attack timing may exist. However:
-- Even the worst-case configuration (Model J, N=100, −73.6% AA) produced zero terminal failures
+The inverse attack-rate effect (N=100 > N=50 damage) suggests that optimal attack timing may exist via resonance with renewal/CTA boundaries. However:
+- Even the worst-case configuration (Model J, N=100, −73.6% AA, STRUCTURAL_THRASHING) produced zero terminal failures
 - The search for "optimal N" is bounded by the proven robustness of CTA
 
 ---
@@ -624,7 +651,7 @@ Execution Date: 2026-01-08
 
 | Question | Decision | Rationale |
 |----------|----------|-----------|
-| Failure class label | STABLE_AUTHORITY (spec) = HORIZON_EXHAUSTED (harness) | Spec taxonomy normalization |
+| Termination vs classification | HORIZON_EXHAUSTED is termination reason; AA severity bands reported separately | Distinct concepts per §9.5 |
 | Model J N value | Config parameter with two variants (50, 100) | Enables parameter sensitivity analysis |
 | Reset on recovery | OFF (locked for v3.0) | Deferred to future version |
 | Eligibility buckets | Reuse v2.0 unchanged | Proven stable |
