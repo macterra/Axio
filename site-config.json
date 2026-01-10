@@ -6,7 +6,7 @@
   },
   "mission": {
     "short": "Advancing the theoretical foundations of reflective agency and AI alignment.",
-    "long": "Axionic Agency Lab develops rigorous frameworks for understanding agency, rationality, and value alignment. Our research bridges philosophy, decision theory, and AI safety to establish principled foundations for beneficial artificial intelligence."
+    "long": "Axionic Agency Lab studies when agency exists, persists, and remains well-defined in systems capable of self-reference, delegation, and self-modification. We do not assume agency as a given; we analyze the coherence conditions under which a system's choices remain authored rather than accidental, coerced, or undefined. When those conditions fail, the system does not become \"misaligned\"—it ceases to meaningfully count as an agent at all. Our work is foundational rather than prescriptive, developing formal constraints, failure classifications, and impossibility results that distinguish genuine agency from behavioral imitation, with emphasis on reflective stability, semantic preservation, and non-simulable decision kernels."
   },
   "research_areas": [
     {
@@ -64,7 +64,7 @@
       "id": "david-mcfadzean",
       "name": "David McFadzean",
       "role": "Executive Director",
-      "bio": "Founder of Axionic Agency Lab. Research interests include agency theory, AI alignment, rationality, and the foundations of beneficial artificial intelligence.",
+      "bio": "Founder of Axionic Agency Lab. Research interests include agency theory, AI alignment, and rationality.",
       "photo": "images/david-mcfadzean.jpg",
       "links": {
         "email": null,
