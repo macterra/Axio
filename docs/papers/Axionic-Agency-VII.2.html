@@ -3,13 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axionic Agency VII.2 — Epistemic Noise Tolerance in Constitutional Governance - Axio</title>
+    <title>Axionic Agency VII.2 — Epistemic Noise Tolerance in Constitutional Governance - Axionic Agency Lab</title>
     <link rel="icon" type="image/webp" href="../axio.webp">
-
-    <!-- Google Fonts - Academic Typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
 
     <!-- MathJax for LaTeX rendering -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -26,17 +21,27 @@
         };
     </script>
 
-    <!-- Paper Styles -->
-    <link rel="stylesheet" href="../papers.css">
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <div class="header-bar">
-        <a href="../index.html" class="logo-link">
-            <img src="../axio.webp" alt="Axio" class="site-logo">
+    <nav class="site-nav">
+        <a href="../index.html" class="nav-brand">
+            <img src="../axio.webp" alt="Axionic">
+            <span>Axionic Agency Lab</span>
         </a>
-        <div class="back-link"><a href="index.html">← Back to Papers</a></div>
-    </div>
-    <article>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../news.html">News</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
 
 <h1
 id="axionic-agency-vii.2-epistemic-noise-tolerance-in-constitutional-governance">Axionic
@@ -517,5 +522,8 @@ commitments</li>
 present study.</p>
 
     </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
 </body>
 </html>

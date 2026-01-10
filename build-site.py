@@ -310,7 +310,7 @@ def convert_markdown_to_html(markdown_content):
         return f"<div>{html}</div>"
 
 def process_paper_file(src_path, dest_path):
-    """Convert a markdown paper to HTML with proper styling"""
+    """Convert a markdown paper to HTML with proper styling (dark theme)"""
     with open(src_path, 'r', encoding='utf-8') as f:
         markdown_content = f.read()
 
@@ -329,19 +329,17 @@ def process_paper_file(src_path, dest_path):
     # Fix internal markdown links to point to .html files
     content_html = re.sub(r'href="([^"]+)\.md"', r'href="\1.html"', content_html)
 
-    # Wrap in styled HTML
+    # Generate navigation
+    nav_html = generate_navigation('publications.html', '../')
+
+    # Wrap in styled HTML with dark theme
     wrapped_html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{escape(title)} - Axio</title>
+    <title>{escape(title)} - Axionic Agency Lab</title>
     <link rel="icon" type="image/webp" href="../axio.webp">
-
-    <!-- Google Fonts - Academic Typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
 
     <!-- MathJax for LaTeX rendering -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -358,19 +356,17 @@ def process_paper_file(src_path, dest_path):
         }};
     </script>
 
-    <!-- Paper Styles -->
-    <link rel="stylesheet" href="../papers.css">
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <div class="header-bar">
-        <a href="../index.html" class="logo-link">
-            <img src="../axio.webp" alt="Axio" class="site-logo">
-        </a>
-        <div class="back-link"><a href="index.html">← Back to Papers</a></div>
-    </div>
-    <article>
+    {nav_html}
+    <article class="paper-content">
 {content_html}
     </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
 </body>
 </html>
 """
@@ -379,67 +375,160 @@ def process_paper_file(src_path, dest_path):
         f.write(wrapped_html)
 
 def generate_papers_index(papers_metadata):
-    """Generate an index.html for the papers directory"""
-    papers_list_html = ""
+    """Generate an index.html for the papers directory (dark theme), grouped by series"""
+
+    # Define series order and names
+    series_config = [
+        ('I', 'Series I: Sovereign Kernel Theory'),
+        ('II', 'Series II: Semantic Transport'),
+        ('III', 'Series III: Structural Alignment'),
+        ('IV', 'Series IV: Decision Theory'),
+        ('V', 'Series V: Agency Dynamics'),
+        ('VI', 'Series VI: Governance and Coordination'),
+        ('VII', 'Series VII: Implementation'),
+    ]
+
+    # Group papers by series
+    series_papers = {s[0]: [] for s in series_config}
+    standalone_papers = []
 
     for paper in papers_metadata:
-        title = paper['title']
-        filename = paper['filename']
-        abstract = paper.get('abstract', '')
+        filename = paper.get('filename', '')
+        matched = False
+        for series_id, _ in series_config:
+            if filename.startswith(f'Axionic-Agency-{series_id}.'):
+                series_papers[series_id].append(paper)
+                matched = True
+                break
+        if not matched:
+            standalone_papers.append(paper)
 
-        abstract_html = f"<p class='paper-abstract'>{escape(abstract)}</p>" if abstract else ""
+    # Build HTML - start with standalone/foundational papers
+    papers_list_html = ""
+
+    # Add standalone papers first
+    if standalone_papers:
+        papers_list_html += """
+        <section id="foundational" class="paper-series">
+            <h2>Foundational Papers</h2>
+        """
+
+        for paper in standalone_papers:
+            title = paper['title']
+            filename = paper['filename']
+            abstract = paper.get('abstract', '')
+            abstract_html = f"<p class='paper-abstract'>{escape(abstract)}</p>" if abstract else ""
+
+            papers_list_html += f"""
+            <div class="paper-entry">
+                <h3><a href="{filename}">{escape(title)}</a></h3>
+                {abstract_html}
+            </div>
+            """
+
+        papers_list_html += "</section>"
+
+    # Then add each series
+    for series_id, series_name in series_config:
+        papers = series_papers[series_id]
+        if not papers:
+            continue
 
         papers_list_html += f"""
-        <div class="paper-entry">
-            <h2><a href="{filename}">{escape(title)}</a></h2>
-            {abstract_html}
-        </div>
+        <section id="series-{series_id}" class="paper-series">
+            <h2>{series_name}</h2>
         """
+
+        for paper in papers:
+            title = paper['title']
+            filename = paper['filename']
+            abstract = paper.get('abstract', '')
+            abstract_html = f"<p class='paper-abstract'>{escape(abstract)}</p>" if abstract else ""
+
+            papers_list_html += f"""
+            <div class="paper-entry">
+                <h3><a href="{filename}">{escape(title)}</a></h3>
+                {abstract_html}
+            </div>
+            """
+
+        papers_list_html += "</section>"
+
+    nav_html = generate_navigation('publications.html', '../')
 
     index_html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Papers - Axio</title>
+    <title>Papers - Axionic Agency Lab</title>
     <link rel="icon" type="image/webp" href="../axio.webp">
-    <link rel="stylesheet" href="../papers.css">
+    <link rel="stylesheet" href="../style.css">
     <style>
         .papers-container {{
             max-width: 900px;
-            margin: 2em auto;
-            padding: 0 2em;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }}
+        .papers-container h1 {{
+            margin-bottom: 2rem;
         }}
         .paper-entry {{
-            margin: 2em 0;
-            padding: 1em 0;
-            border-bottom: 1px solid #eee;
+            margin: 1.5rem 0;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #1e293b;
+        }}
+        .paper-entry:last-child {{
+            border-bottom: none;
         }}
         .paper-entry h2 {{
             margin: 0 0 0.5em 0;
-            font-size: 1.1em;
-            font-family: 'Georgia', serif;
+            font-size: 1.2em;
+            font-family: 'Source Serif 4', Georgia, serif;
         }}
-        .paper-entry h2 a {{
+        .paper-series {{
+            margin: 3rem 0;
+            padding-top: 1rem;
+        }}
+        .paper-series h2 {{
+            font-size: 1.4rem;
+            color: #94a3b8;
+            border-bottom: 1px solid #1e293b;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }}
+        .paper-entry h3 {{
+            margin: 0 0 0.5em 0;
+            font-size: 1.1em;
+            font-family: 'Source Serif 4', Georgia, serif;
+        }}
+        .paper-entry h3 a {{
+            color: #ffffff;
             text-decoration: none;
         }}
+        .paper-entry h3 a:hover {{
+            color: #60a5fa;
+        }}
         .paper-abstract {{
-            color: #666;
+            color: #94a3b8;
             line-height: 1.6;
+            font-size: 0.95rem;
+            margin: 0;
         }}
     </style>
 </head>
 <body>
-    <div class="header-bar">
-        <a href="../index.html" class="logo-link">
-            <img src="../axio.webp" alt="Axio" class="site-logo">
-        </a>
-        <div class="back-link"><a href="../index.html">← Back to Index</a></div>
-    </div>
+    {nav_html}
     <div class="papers-container">
-        <h1>Papers</h1>
+        <div class="page-header">
+            <h1>Papers</h1>
+            <p class="lead">Technical papers on agency, alignment, and rationality</p>
+        </div>
         {papers_list_html}
     </div>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
 </body>
 </html>
 """
@@ -577,19 +666,28 @@ def generate_sitemap(post_metadata, papers_metadata):
 
     base_url = "https://axionic.org"
     sitemap_items = []
+    today = datetime.now().strftime('%Y-%m-%d')
 
     # Add homepage
     sitemap_items.append({
         'loc': f"{base_url}/",
-        'lastmod': datetime.now().strftime('%Y-%m-%d'),
+        'lastmod': today,
         'priority': '1.0'
     })
+
+    # Add main section pages
+    for page in ['about', 'research', 'team', 'news', 'publications']:
+        sitemap_items.append({
+            'loc': f"{base_url}/{page}.html",
+            'lastmod': today,
+            'priority': '0.9'
+        })
 
     # Add papers index
     sitemap_items.append({
         'loc': f"{base_url}/papers/",
-        'lastmod': datetime.now().strftime('%Y-%m-%d'),
-        'priority': '0.9'
+        'lastmod': today,
+        'priority': '0.8'
     })
 
     # Add all papers
@@ -633,6 +731,566 @@ def generate_sitemap(post_metadata, papers_metadata):
         f.write(xml)
 
     return len(sitemap_items)
+
+# ============================================
+# SITE PAGE GENERATORS
+# ============================================
+
+def load_site_config():
+    """Load site configuration from site-config.json"""
+    config_path = Path('site-config.json')
+    if config_path.exists():
+        with open(config_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    return {}
+
+def generate_navigation(current_page, prefix=''):
+    """Generate navigation HTML with active state for current page."""
+    nav_items = [
+        ('index.html', 'Home'),
+        ('about.html', 'About'),
+        ('research.html', 'Research'),
+        ('team.html', 'Team'),
+        ('news.html', 'News'),
+        ('publications.html', 'Publications'),
+    ]
+
+    links_html = ''
+    for href, label in nav_items:
+        active = ' class="active"' if href == current_page else ''
+        links_html += f'<li><a href="{prefix}{href}"{active}>{label}</a></li>\n'
+
+    return f'''<nav class="site-nav">
+        <a href="{prefix}index.html" class="nav-brand">
+            <img src="{prefix}axio.webp" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            {links_html}
+        </ul>
+    </nav>'''
+
+def generate_page_wrapper(title, content, current_page, config, prefix='', extra_head='', extra_scripts=''):
+    """Wrap content in full HTML page with navigation."""
+    site_name = config.get('site', {}).get('name', 'Axionic Agency Lab')
+    nav = generate_navigation(current_page, prefix)
+
+    return f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{escape(title)} - {escape(site_name)}</title>
+    <link rel="icon" type="image/webp" href="{prefix}axio.webp">
+    <link rel="stylesheet" href="{prefix}style.css">
+    {extra_head}
+</head>
+<body>
+    {nav}
+    {content}
+    <footer>
+        <p>&copy; {site_name}</p>
+    </footer>
+    {extra_scripts}
+</body>
+</html>'''
+
+def generate_homepage(config, posts, papers_metadata):
+    """Generate mission-first homepage."""
+    site = config.get('site', {})
+    mission = config.get('mission', {})
+    research_areas = config.get('research_areas', [])
+
+    # Get recent posts for featured section (top 5)
+    recent_posts = sorted(
+        [p for p in posts if p.get('is_published') == 'true'],
+        key=lambda x: x.get('date', ''),
+        reverse=True
+    )[:5]
+
+    # Build recent news HTML
+    recent_news_html = ''
+    for post in recent_posts:
+        date = post.get('date', '')
+        try:
+            date_obj = datetime.fromisoformat(date.replace('Z', '+00:00'))
+            formatted_date = date_obj.strftime('%B %d, %Y')
+        except:
+            formatted_date = date[:10] if date else ''
+
+        recent_news_html += f'''<div class="news-item">
+            <div class="date">{formatted_date}</div>
+            <h3><a href="posts/{post['id']}.html">{escape(post.get('title', ''))}</a></h3>
+        </div>
+'''
+
+    # Build research areas preview (top 3)
+    research_preview_html = ''
+    for area in research_areas[:3]:
+        research_preview_html += f'''<div class="card">
+            <div class="series-label">Series {area.get('series', '')}</div>
+            <h3><a href="research.html#{area.get('id', '')}">{escape(area.get('name', ''))}</a></h3>
+            <p>{escape(area.get('description', '')[:150])}...</p>
+        </div>
+'''
+
+    content = f'''
+    <div class="hero">
+        <h1>{escape(site.get('name', 'Axionic Agency Lab'))}</h1>
+        <p class="tagline">{escape(site.get('tagline', ''))}</p>
+        <p class="mission">{escape(mission.get('long', ''))}</p>
+        <div class="section-links">
+            <a href="research.html">Research</a>
+            <a href="publications.html">Publications</a>
+            <a href="about.html">About</a>
+        </div>
+    </div>
+
+    <div class="featured-section">
+        <h2>Research Areas</h2>
+        <div class="card-grid" style="max-width: 900px; margin: 0 auto;">
+            {research_preview_html}
+        </div>
+    </div>
+
+    <div class="featured-section">
+        <h2>Recent Updates</h2>
+        <div class="news-list" style="max-width: 700px; margin: 0 auto;">
+            {recent_news_html}
+        </div>
+        <p style="text-align: center; margin-top: 1.5rem;"><a href="news.html">View all updates →</a></p>
+    </div>
+'''
+
+    return generate_page_wrapper('Home', content, 'index.html', config)
+
+def generate_about_page(config):
+    """Generate about/mission page."""
+    mission = config.get('mission', {})
+
+    content = f'''
+    <div class="page-container">
+        <div class="page-header">
+            <h1>About</h1>
+            <p class="lead">Our mission and research philosophy</p>
+        </div>
+
+        <article>
+            <h2>Mission</h2>
+            <p>{escape(mission.get('long', 'Mission statement placeholder.'))}</p>
+
+            <h2>Research Focus</h2>
+            <p>Axionic Agency Lab develops rigorous theoretical frameworks for understanding agency, rationality, and value alignment. Our work bridges philosophy, decision theory, and AI safety to establish principled foundations for beneficial artificial intelligence.</p>
+
+            <p>We pursue research across several interconnected areas:</p>
+            <ul>
+                <li><strong>Sovereign Kernel Theory</strong> - Foundational framework for reflective stability</li>
+                <li><strong>Semantic Transport</strong> - Theory of meaning preservation across transformations</li>
+                <li><strong>Structural Alignment</strong> - Architectural approaches to value alignment</li>
+                <li><strong>Governance Protocols</strong> - Multi-agent coordination and collective decision-making</li>
+            </ul>
+
+            <h2>Approach</h2>
+            <p>Our methodology emphasizes formal rigor combined with practical applicability. We believe that robust AI alignment requires both deep theoretical foundations and concrete implementation strategies.</p>
+
+            <p>All research is published openly to advance the field and invite collaboration.</p>
+
+            <h2>Contact</h2>
+            <p>For inquiries, collaboration proposals, or feedback on our research, please reach out via <a href="https://github.com/davidmcfadzean/Axio">GitHub</a>.</p>
+        </article>
+    </div>
+'''
+
+    return generate_page_wrapper('About', content, 'about.html', config)
+
+def generate_research_page(config, papers_metadata):
+    """Generate research areas page grouped by paper series."""
+    research_areas = config.get('research_areas', [])
+
+    # Count papers per series (add dot to prefix for exact matching)
+    paper_counts = {}
+    for paper in papers_metadata:
+        filename = paper.get('filename', '')
+        for area in research_areas:
+            prefix = area.get('paper_prefix', '')
+            # Add dot to ensure exact series match (I. vs II. vs III.)
+            if prefix and filename.startswith(prefix + '.'):
+                area_id = area.get('id', '')
+                paper_counts[area_id] = paper_counts.get(area_id, 0) + 1
+
+    # Build research areas HTML
+    areas_html = ''
+    for area in research_areas:
+        area_id = area.get('id', '')
+        count = paper_counts.get(area_id, 0)
+
+        # Get papers for this series (add dot for exact matching)
+        prefix = area.get('paper_prefix', '')
+        series_papers = [p for p in papers_metadata if p.get('filename', '').startswith(prefix + '.')]
+
+        papers_list = ''
+        for paper in series_papers[:5]:  # Show first 5
+            papers_list += f'<li><a href="papers/{paper.get("filename", "")}">{escape(paper.get("title", ""))}</a></li>'
+
+        if len(series_papers) > 5:
+            papers_list += f'<li><a href="papers/index.html#series-{area.get("series", "")}"><em>and {len(series_papers) - 5} more...</em></a></li>'
+
+        areas_html += f'''
+        <div class="card" id="{area_id}">
+            <div class="series-label">Series {area.get('series', '')}</div>
+            <h3>{escape(area.get('name', ''))}</h3>
+            <p>{escape(area.get('description', ''))}</p>
+            {f'<ul style="margin-top: 1rem; font-size: 0.9rem;">{papers_list}</ul>' if papers_list else ''}
+            <div class="paper-count">{count} paper{'s' if count != 1 else ''}</div>
+        </div>
+'''
+
+    # Find standalone papers (not matching any series prefix)
+    series_prefixes = [area.get('paper_prefix', '') + '.' for area in research_areas if area.get('paper_prefix')]
+    standalone_papers = [
+        p for p in papers_metadata
+        if not any(p.get('filename', '').startswith(prefix) for prefix in series_prefixes)
+    ]
+
+    standalone_html = ''
+    if standalone_papers:
+        standalone_list = ''
+        for paper in standalone_papers:
+            standalone_list += f'<li><a href="papers/{paper.get("filename", "")}">{escape(paper.get("title", ""))}</a></li>'
+
+        standalone_html = f'''
+    <div class="featured-section" id="foundational" style="margin-bottom: 3rem;">
+        <h2>Foundational Papers</h2>
+        <div class="card" style="max-width: 600px; margin: 1rem auto;">
+            <p>Core documents defining the Axionic framework, terminology, and commitments.</p>
+            <ul style="margin-top: 1rem; font-size: 0.95rem;">
+                {standalone_list}
+            </ul>
+            <div class="paper-count">{len(standalone_papers)} paper{'s' if len(standalone_papers) != 1 else ''}</div>
+        </div>
+    </div>
+'''
+
+    content = f'''
+    <div class="page-container">
+        <div class="page-header">
+            <h1>Research</h1>
+            <p class="lead">Our research areas and ongoing projects</p>
+        </div>
+        {standalone_html}
+        <h2 style="text-align: center; color: #94a3b8; font-weight: 400; margin-bottom: 2rem;">Paper Series</h2>
+        <div class="card-grid">
+            {areas_html}
+        </div>
+
+        <p style="text-align: center; margin-top: 2rem;">
+            <a href="publications.html">Browse all publications →</a>
+        </p>
+    </div>
+'''
+
+    return generate_page_wrapper('Research', content, 'research.html', config)
+
+def generate_team_page(config):
+    """Generate team/people page."""
+    team = config.get('team', [])
+
+    members_html = ''
+    for member in team:
+        # Build links
+        links_html = ''
+        member_links = member.get('links', {})
+        if member_links.get('email'):
+            links_html += f'<a href="mailto:{member_links["email"]}" title="Email">✉</a>'
+        if member_links.get('website'):
+            links_html += f'<a href="{member_links["website"]}" title="Website">🌐</a>'
+        if member_links.get('twitter'):
+            links_html += f'<a href="{member_links["twitter"]}" title="Twitter">𝕏</a>'
+        if member_links.get('github'):
+            links_html += f'<a href="{member_links["github"]}" title="GitHub">⌨</a>'
+
+        # Avatar placeholder or image
+        if member.get('photo'):
+            avatar_html = f'<img src="{member["photo"]}" alt="{escape(member.get("name", ""))}">'
+        else:
+            initials = ''.join(n[0] for n in member.get('name', 'A').split()[:2])
+            avatar_html = initials
+
+        members_html += f'''
+        <div class="team-member">
+            <div class="avatar">{avatar_html}</div>
+            <h3>{escape(member.get('name', ''))}</h3>
+            <div class="role">{escape(member.get('role', ''))}</div>
+            <p class="bio">{escape(member.get('bio', ''))}</p>
+            {f'<div class="links">{links_html}</div>' if links_html else ''}
+        </div>
+'''
+
+    content = f'''
+    <div class="page-container">
+        <div class="page-header">
+            <h1>Team</h1>
+            <p class="lead">The people behind Axionic Agency Lab</p>
+        </div>
+
+        <div class="team-grid">
+            {members_html}
+        </div>
+    </div>
+'''
+
+    return generate_page_wrapper('Team', content, 'team.html', config)
+
+def generate_news_page(config, posts):
+    """Generate news page with recent posts."""
+    news_config = config.get('news', {})
+    recent_count = news_config.get('recent_count', 15)
+
+    # Get recent published posts
+    recent_posts = sorted(
+        [p for p in posts if p.get('is_published') == 'true'],
+        key=lambda x: x.get('date', ''),
+        reverse=True
+    )[:recent_count]
+
+    news_html = ''
+    for post in recent_posts:
+        date = post.get('date', '')
+        try:
+            date_obj = datetime.fromisoformat(date.replace('Z', '+00:00'))
+            formatted_date = date_obj.strftime('%B %d, %Y')
+        except:
+            formatted_date = date[:10] if date else ''
+
+        subtitle = post.get('subtitle', '')
+        excerpt = subtitle[:200] + '...' if len(subtitle) > 200 else subtitle
+
+        news_html += f'''
+        <div class="news-item">
+            <div class="date">{formatted_date}</div>
+            <h3><a href="posts/{post['id']}.html">{escape(post.get('title', ''))}</a></h3>
+            {f'<p class="excerpt">{escape(excerpt)}</p>' if excerpt else ''}
+        </div>
+'''
+
+    content = f'''
+    <div class="page-container">
+        <div class="page-header">
+            <h1>News</h1>
+            <p class="lead">Recent updates and essays</p>
+        </div>
+
+        <div class="news-list">
+            {news_html}
+        </div>
+
+        <p style="text-align: center; margin-top: 2rem;">
+            <a href="publications.html">Browse all publications →</a>
+        </p>
+    </div>
+'''
+
+    return generate_page_wrapper('News', content, 'news.html', config)
+
+def generate_publications_page(config, posts, papers_count):
+    """Generate publications page with posts and papers listing plus search."""
+    from datetime import datetime
+
+    # Get published posts
+    published_posts = sorted(
+        [p for p in posts if p.get('is_published') == 'true'],
+        key=lambda x: x.get('date', ''),
+        reverse=True
+    )
+
+    # Get archive date
+    latest_date = max((p.get('date', '') for p in published_posts), default='')
+    archive_date = "Unknown"
+    if latest_date:
+        try:
+            date_obj = datetime.fromisoformat(latest_date.replace('Z', '+00:00'))
+            archive_date = date_obj.strftime('%B %d, %Y')
+        except:
+            archive_date = latest_date[:10]
+
+    # Build posts list HTML
+    posts_html = ''
+    for post in published_posts:
+        date = post.get('date', '')
+        try:
+            date_obj = datetime.fromisoformat(date.replace('Z', '+00:00'))
+            formatted_date = date_obj.strftime('%B %d, %Y')
+        except:
+            formatted_date = date[:10] if date else ''
+
+        posts_html += f'''<li class="post-item">
+                <div class="post-date">{escape(formatted_date)}</div>
+                <h2 class="post-title">
+                    <a href="posts/{post['id']}.html">{escape(post.get('title', ''))}</a>
+                </h2>
+'''
+        if post.get('subtitle'):
+            posts_html += f'''                <div class="post-subtitle">{escape(post['subtitle'])}</div>
+'''
+        posts_html += '''            </li>
+'''
+
+    extra_head = '<script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>'
+
+    search_script = f'''
+    <script>
+        let postsFuse, papersFuse;
+        let allPosts = [], allPapers = [];
+        let currentFilter = 'all';
+
+        Promise.all([
+            fetch('search-index.json').then(r => r.json()),
+            fetch('papers-index.json').then(r => r.json())
+        ]).then(([posts, papers]) => {{
+            allPosts = posts;
+            allPapers = papers;
+
+            const fuseConfig = {{
+                keys: [
+                    {{ name: 'title', weight: 2 }},
+                    {{ name: 'subtitle', weight: 1.5 }},
+                    {{ name: 'content', weight: 1 }}
+                ],
+                threshold: 0.1,
+                ignoreLocation: true,
+                distance: 100000,
+                includeScore: true,
+                minMatchCharLength: 2,
+                useExtendedSearch: false,
+                findAllMatches: true
+            }};
+
+            postsFuse = new Fuse(posts, fuseConfig);
+            papersFuse = new Fuse(papers, fuseConfig);
+        }});
+
+        const searchInput = document.getElementById('search-input');
+        const searchResults = document.getElementById('search-results');
+        const postList = document.getElementById('post-list');
+        const postCount = document.getElementById('post-count');
+        const filterRadios = document.querySelectorAll('input[name="search-filter"]');
+
+        filterRadios.forEach(radio => {{
+            radio.addEventListener('change', (e) => {{
+                currentFilter = e.target.value;
+                if (searchInput.value.trim().length >= 2) {{
+                    searchInput.dispatchEvent(new Event('input'));
+                }}
+            }});
+        }});
+
+        function performSearch(query) {{
+            let results = [];
+            if (currentFilter === 'all') {{
+                const postResults = postsFuse ? postsFuse.search(query) : [];
+                const paperResults = papersFuse ? papersFuse.search(query) : [];
+                results = [...postResults, ...paperResults].sort((a, b) => a.score - b.score);
+            }} else if (currentFilter === 'posts') {{
+                results = postsFuse ? postsFuse.search(query) : [];
+            }} else if (currentFilter === 'papers') {{
+                results = papersFuse ? papersFuse.search(query) : [];
+            }}
+            return results;
+        }}
+
+        searchInput.addEventListener('input', (e) => {{
+            const query = e.target.value.trim();
+            if (query.length < 2) {{
+                searchResults.innerHTML = '';
+                postList.style.display = 'block';
+                postCount.textContent = {len(published_posts)};
+                return;
+            }}
+
+            const results = performSearch(query);
+            if (results.length === 0) {{
+                searchResults.innerHTML = '<div class="no-results">No results found</div>';
+                postList.style.display = 'none';
+                postCount.textContent = '0';
+                return;
+            }}
+
+            postList.style.display = 'none';
+            postCount.textContent = results.length;
+
+            searchResults.innerHTML = results.map(result => {{
+                const post = result.item;
+                const isPaper = post.type === 'paper';
+                let dateHtml = '';
+                if (!isPaper && post.date) {{
+                    const date = new Date(post.date).toLocaleDateString('en-US', {{
+                        year: 'numeric', month: 'long', day: 'numeric'
+                    }});
+                    dateHtml = `<div class="post-date">${{date}}</div>`;
+                }}
+                let excerpt = post.content.substring(0, 200) + '...';
+                const link = isPaper ? post.id + '.html' : 'posts/' + post.id + '.html';
+                const typeLabel = isPaper ? '<span style="color: #888; font-size: 0.9em;">[Paper]</span> ' : '';
+                return `
+                    <div class="search-result-item">
+                        ${{dateHtml}}
+                        <h2 class="post-title">
+                            ${{typeLabel}}<a href="${{link}}">${{escapeHtml(post.title)}}</a>
+                        </h2>
+                        ${{post.subtitle ? `<div class="post-subtitle">${{escapeHtml(post.subtitle)}}</div>` : ''}}
+                        <div class="search-excerpt">${{escapeHtml(excerpt)}}</div>
+                    </div>
+                `;
+            }}).join('');
+        }});
+
+        function escapeHtml(text) {{
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }}
+    </script>'''
+
+    content = f'''
+    <div class="page-container">
+        <div class="page-header">
+            <h1>Publications</h1>
+            <p class="lead">Essays and papers on agency, rationality, and alignment</p>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search posts and papers..." autocomplete="off">
+            <div style="margin-top: 8px;">
+                <label style="margin-right: 15px; font-size: 0.9em;">
+                    <input type="radio" name="search-filter" value="all" checked> All
+                </label>
+                <label style="margin-right: 15px; font-size: 0.9em;">
+                    <input type="radio" name="search-filter" value="posts"> Posts only
+                </label>
+                <label style="font-size: 0.9em;">
+                    <input type="radio" name="search-filter" value="papers"> Papers only
+                </label>
+            </div>
+            <div id="search-results"></div>
+        </div>
+
+        <div class="stats">
+            <strong><span id="post-count">{len(published_posts)}</span> published posts</strong>
+            <span style="margin: 0 10px;">•</span>
+            <strong>{papers_count} papers</strong>
+            <span style="margin: 0 10px;">•</span>
+            <span>Updated {archive_date}</span>
+            <span style="margin: 0 10px;">•</span>
+            <a href="papers/index.html">Browse papers →</a>
+        </div>
+
+        <ul class="post-list" id="post-list">
+{posts_html}        </ul>
+    </div>
+'''
+
+    return generate_page_wrapper('Publications', content, 'publications.html', config, extra_head=extra_head, extra_scripts=search_script)
 
 def main():
     print("=== Building Docs Site ===")
@@ -726,15 +1384,17 @@ def main():
         print(f"   ℹ Skipped {files_skipped} unpublished post(s)")
     print()
 
-    # Generate index.html in docs/
-    print("4. Generating index.html...")
-    os.system('python3 generate-index.py')
-
-    # Move index.html to docs/
-    if Path('index.html').exists():
-        shutil.move('index.html', docs_dir / 'index.html')
-        print(f"   ✓ Moved index.html to docs/")
+    # Load site configuration
+    print("4. Loading site configuration...")
+    config = load_site_config()
+    print(f"   ✓ Loaded site config")
     print()
+
+    # Build list of posts for page generators
+    posts_list = [
+        {'id': post_id, **metadata}
+        for post_id, metadata in post_metadata.items()
+    ]
 
     # Process papers
     papers_count, papers_metadata = process_papers()
@@ -804,8 +1464,48 @@ def main():
     print(f"   ✓ Created papers-index.json with {len(papers_index)} papers ({papers_index_path.stat().st_size // 1024}KB)")
     print()
 
+    # Generate site pages
+    print("7. Generating site pages...")
+
+    # Homepage
+    homepage_html = generate_homepage(config, posts_list, papers_metadata)
+    with open(docs_dir / 'index.html', 'w', encoding='utf-8') as f:
+        f.write(homepage_html)
+    print("   ✓ Generated index.html (homepage)")
+
+    # About page
+    about_html = generate_about_page(config)
+    with open(docs_dir / 'about.html', 'w', encoding='utf-8') as f:
+        f.write(about_html)
+    print("   ✓ Generated about.html")
+
+    # Research page
+    research_html = generate_research_page(config, papers_metadata)
+    with open(docs_dir / 'research.html', 'w', encoding='utf-8') as f:
+        f.write(research_html)
+    print("   ✓ Generated research.html")
+
+    # Team page
+    team_html = generate_team_page(config)
+    with open(docs_dir / 'team.html', 'w', encoding='utf-8') as f:
+        f.write(team_html)
+    print("   ✓ Generated team.html")
+
+    # News page
+    news_html = generate_news_page(config, posts_list)
+    with open(docs_dir / 'news.html', 'w', encoding='utf-8') as f:
+        f.write(news_html)
+    print("   ✓ Generated news.html")
+
+    # Publications page
+    publications_html = generate_publications_page(config, posts_list, papers_count)
+    with open(docs_dir / 'publications.html', 'w', encoding='utf-8') as f:
+        f.write(publications_html)
+    print("   ✓ Generated publications.html")
+    print()
+
     # Generate sitemap
-    print("7. Generating sitemap.xml...")
+    print("8. Generating sitemap.xml...")
     sitemap_count = generate_sitemap(post_metadata, papers_metadata)
     print(f"   ✓ Created sitemap with {sitemap_count} URLs")
     print()

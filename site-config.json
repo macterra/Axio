@@ -1,0 +1,87 @@
+{
+  "site": {
+    "name": "Axionic Agency Lab",
+    "tagline": "Research in agency, rationality, and alignment",
+    "domain": "axionic.org"
+  },
+  "mission": {
+    "short": "Advancing the theoretical foundations of reflective agency and AI alignment.",
+    "long": "Axionic Agency Lab develops rigorous frameworks for understanding agency, rationality, and value alignment. Our research bridges philosophy, decision theory, and AI safety to establish principled foundations for beneficial artificial intelligence."
+  },
+  "research_areas": [
+    {
+      "id": "sovereign-kernel",
+      "series": "I",
+      "name": "Sovereign Kernel Theory",
+      "description": "Foundational framework for reflective stability and self-modifying agents. Explores how agents can maintain coherent values while reasoning about their own reasoning.",
+      "paper_prefix": "Axionic-Agency-I"
+    },
+    {
+      "id": "semantic-transport",
+      "series": "II",
+      "name": "Semantic Transport",
+      "description": "Theory of meaning preservation across transformations. How semantic content is maintained through ontological refinement and interpretation.",
+      "paper_prefix": "Axionic-Agency-II"
+    },
+    {
+      "id": "structural-alignment",
+      "series": "III",
+      "name": "Structural Alignment",
+      "description": "Architectural approaches to value alignment. Designing systems that preserve alignment properties by construction.",
+      "paper_prefix": "Axionic-Agency-III"
+    },
+    {
+      "id": "decision-theory",
+      "series": "IV",
+      "name": "Decision Theory",
+      "description": "Foundations of rational choice under uncertainty. Exploring effective decision procedures for agents with bounded resources.",
+      "paper_prefix": "Axionic-Agency-IV"
+    },
+    {
+      "id": "agency-dynamics",
+      "series": "V",
+      "name": "Agency Dynamics",
+      "description": "Temporal evolution of agency. How agents develop, maintain, and transform their agential properties over time.",
+      "paper_prefix": "Axionic-Agency-V"
+    },
+    {
+      "id": "governance",
+      "series": "VI",
+      "name": "Governance and Coordination",
+      "description": "Multi-agent systems and collective decision-making. Protocols for coordination among agents with diverse values.",
+      "paper_prefix": "Axionic-Agency-VI"
+    },
+    {
+      "id": "implementation",
+      "series": "VII",
+      "name": "Implementation",
+      "description": "Practical realization of theoretical frameworks. Bridging abstract theory to concrete system design.",
+      "paper_prefix": "Axionic-Agency-VII"
+    }
+  ],
+  "team": [
+    {
+      "id": "placeholder-1",
+      "name": "Team Member Name",
+      "role": "Principal Researcher",
+      "bio": "Bio placeholder - please update with actual team member information.",
+      "photo": null,
+      "links": {
+        "email": null,
+        "website": null,
+        "twitter": null,
+        "github": null
+      }
+    }
+  ],
+  "news": {
+    "recent_count": 15,
+    "source": "posts"
+  },
+  "footer": {
+    "copyright": "Axionic Agency Lab",
+    "links": [
+      {"label": "GitHub", "url": "https://github.com/davidmcfadzean/Axio"}
+    ]
+  }
+}
