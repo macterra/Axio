@@ -751,7 +751,6 @@ def generate_navigation(current_page, prefix=''):
         ('about.html', 'About'),
         ('research.html', 'Research'),
         ('team.html', 'Team'),
-        ('news.html', 'News'),
         ('publications.html', 'Publications'),
     ]
 
@@ -854,13 +853,6 @@ def generate_homepage(config, posts, papers_metadata):
         </div>
     </div>
 
-    <div class="featured-section">
-        <h2>Recent Updates</h2>
-        <div class="news-list" style="max-width: 700px; margin: 0 auto;">
-            {recent_news_html}
-        </div>
-        <p style="text-align: center; margin-top: 1.5rem;"><a href="news.html">View all updates →</a></p>
-    </div>
 '''
 
     return generate_page_wrapper('Home', content, 'index.html', config)
@@ -1031,7 +1023,7 @@ def generate_team_page(config):
     <div class="page-container">
         <div class="page-header">
             <h1>Team</h1>
-            <p class="lead">The people behind Axionic Agency Lab</p>
+            <p class="lead">The agents behind Axionic Agency Lab</p>
         </div>
 
         <div class="team-grid">
@@ -1490,12 +1482,6 @@ def main():
     with open(docs_dir / 'team.html', 'w', encoding='utf-8') as f:
         f.write(team_html)
     print("   ✓ Generated team.html")
-
-    # News page
-    news_html = generate_news_page(config, posts_list)
-    with open(docs_dir / 'news.html', 'w', encoding='utf-8') as f:
-        f.write(news_html)
-    print("   ✓ Generated news.html")
 
     # Publications page
     publications_html = generate_publications_page(config, posts_list, papers_count)
