@@ -676,7 +676,7 @@ def generate_sitemap(post_metadata, papers_metadata):
     })
 
     # Add main section pages
-    for page in ['about', 'research', 'team', 'news', 'publications']:
+    for page in ['about', 'research', 'team', 'publications']:
         sitemap_items.append({
             'loc': f"{base_url}/{page}.html",
             'lastmod': today,
