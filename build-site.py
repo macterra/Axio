@@ -241,7 +241,7 @@ def process_post_file(src_path, dest_path, slug_to_id, post_metadata, localized_
 </head>
 <body>
     <div class="header-bar">
-        <a href="../index.html" class="logo-link">
+        <a href="../" class="logo-link">
             <img src="../axio.webp" alt="Axio" class="site-logo">
         </a>
         <div class="back-link"><a href="../publications.html">← Back to Publications</a></div>
@@ -747,7 +747,7 @@ def load_site_config():
 def generate_navigation(current_page, prefix=''):
     """Generate navigation HTML with active state for current page."""
     nav_items = [
-        ('index.html', 'Home'),
+        ('./', 'Home'),
         ('about.html', 'About'),
         ('research.html', 'Research'),
         ('team.html', 'Team'),
@@ -760,7 +760,7 @@ def generate_navigation(current_page, prefix=''):
         links_html += f'<li><a href="{prefix}{href}"{active}>{label}</a></li>\n'
 
     return f'''<nav class="site-nav">
-        <a href="{prefix}index.html" class="nav-brand">
+        <a href="{prefix if prefix else './'}" class="nav-brand">
             <img src="{prefix}axio.webp" alt="Axionic">
             <span>Axionic Agency Lab</span>
         </a>
@@ -855,7 +855,7 @@ def generate_homepage(config, posts, papers_metadata):
 
 '''
 
-    return generate_page_wrapper('Home', content, 'index.html', config)
+    return generate_page_wrapper('Home', content, './', config)
 
 def generate_about_page(config):
     """Generate about/mission page."""
