@@ -244,7 +244,7 @@ def process_post_file(src_path, dest_path, slug_to_id, post_metadata, localized_
         <a href="../index.html" class="logo-link">
             <img src="../axio.webp" alt="Axio" class="site-logo">
         </a>
-        <div class="back-link"><a href="../index.html">← Back to Index</a></div>
+        <div class="back-link"><a href="../publications.html">← Back to Publications</a></div>
     </div>
     <article>
 {title_html}{content}
