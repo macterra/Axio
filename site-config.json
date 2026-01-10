@@ -6,7 +6,7 @@
   },
   "mission": {
     "short": "Advancing the theoretical foundations of reflective agency and AI alignment.",
-    "long": "Axionic Agency Lab studies when agency exists, persists, and remains well-defined in systems capable of self-reference, delegation, and self-modification. We do not assume agency as a given; we analyze the coherence conditions under which a system's choices remain authored rather than accidental, coerced, or undefined. When those conditions fail, the system does not become \"misaligned\"—it ceases to meaningfully count as an agent at all. Our work is foundational rather than prescriptive, developing formal constraints, failure classifications, and impossibility results that distinguish genuine agency from behavioral imitation, with emphasis on reflective stability, semantic preservation, and non-simulable decision kernels."
+    "long": "Axionic Agency Lab studies when agency exists in self-referential, self-modifying systems. When authorship collapses, the system ceases to be an agent rather than becoming “misaligned.” Our work is foundational, defining constraints that separate genuine agency from behavioral imitation."
   },
   "research_areas": [
     {
