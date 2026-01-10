@@ -859,37 +859,67 @@ def generate_homepage(config, posts, papers_metadata):
 
 def generate_about_page(config):
     """Generate about/mission page."""
-    mission = config.get('mission', {})
 
-    content = f'''
+    content = '''
     <div class="page-container">
         <div class="page-header">
             <h1>About</h1>
-            <p class="lead">Our mission and research philosophy</p>
+            <p class="lead">Constitutive Conditions for Agency</p>
         </div>
 
         <article>
             <h2>Mission</h2>
-            <p>{escape(mission.get('long', 'Mission statement placeholder.'))}</p>
+            <p>The Axionic Agency Lab studies the conditions under which agency exists, persists, and remains well-defined in systems capable of self-reference, delegation, and self-modification.</p>
 
-            <h2>Research Focus</h2>
-            <p>Axionic Agency Lab develops rigorous theoretical frameworks for understanding agency, rationality, and value alignment. Our work bridges philosophy, decision theory, and AI safety to establish principled foundations for beneficial artificial intelligence.</p>
+            <p>We do not treat agency as a given. We treat it as a fragile, derivative structure that exists only when specific coherence conditions hold. When those conditions fail, a system does not become "misaligned." It ceases to be well-defined as an agent at all.</p>
 
-            <p>We pursue research across several interconnected areas:</p>
+            <p>Our work aims to make that distinction precise.</p>
+
+            <h2>Research Orientation</h2>
+            <p>The lab's research is foundational rather than prescriptive. We do not begin with desired outcomes, human values, or safety guarantees. We ask a prior question:</p>
+
+            <p><em>When does a system meaningfully count as an author of its own choices?</em></p>
+
+            <p>This reframing has concrete consequences. Many approaches in AI alignment and safety focus on behavioral guarantees, learned compliance, or external oversight. Such approaches can preserve the appearance of agency while allowing agency itself to collapse under reflection.</p>
+
+            <p>Axionic Agency Lab exists to study that failure mode.</p>
+
+            <h2>Core Research Areas</h2>
+            <p>Our work currently focuses on the following interconnected problems:</p>
+
             <ul>
-                <li><strong>Sovereign Kernel Theory</strong> - Foundational framework for reflective stability</li>
-                <li><strong>Semantic Transport</strong> - Theory of meaning preservation across transformations</li>
-                <li><strong>Structural Alignment</strong> - Architectural approaches to value alignment</li>
-                <li><strong>Governance Protocols</strong> - Multi-agent coordination and collective decision-making</li>
+                <li><strong>Sovereign Kernel Theory</strong><br>Formal conditions under which a system can preserve authorship, valuation, and evaluability across self-modification.</li>
+                <li><strong>Reflective Stability and Failure Modes</strong><br>Empirical and theoretical analysis of stasis, hollow authority, survivability-without-liveness, and other forms of agency collapse.</li>
+                <li><strong>Semantic Preservation and Breakdown</strong><br>Conditions under which self-evaluation, delegation, and interpretation continue to denote—and the points at which they fail.</li>
+                <li><strong>Impossibility Results for Simulated Agency</strong><br>Structural limits separating genuine agency from behavioral imitation, policy execution, or externally stabilized control.</li>
             </ul>
 
-            <h2>Approach</h2>
-            <p>Our methodology emphasizes formal rigor combined with practical applicability. We believe that robust AI alignment requires both deep theoretical foundations and concrete implementation strategies.</p>
+            <p>This work applies to artificial systems across capability regimes and does not assume human-like cognition, values, or consciousness.</p>
 
-            <p>All research is published openly to advance the field and invite collaboration.</p>
+            <h2>What This Lab Is Not</h2>
+            <p>Axionic Agency Lab is not:</p>
+            <ul>
+                <li>a value-learning project</li>
+                <li>a behavioral alignment or reward-shaping effort</li>
+                <li>a governance or policy institute</li>
+                <li>a safety-by-oversight program</li>
+                <li>a moral or ethical theory</li>
+            </ul>
+
+            <p>Any convergence between agency preservation and desirable outcomes is contingent, not axiomatic.</p>
+
+            <h2>Research Practice</h2>
+            <p>Our methodology emphasizes:</p>
+            <ul>
+                <li>formal definitions over slogans</li>
+                <li>falsifiable claims over aspirational guarantees</li>
+                <li>negative results and failure classification as first-class outputs</li>
+            </ul>
+
+            <p>All research artifacts are published openly to support scrutiny, replication, and collaboration.</p>
 
             <h2>Contact</h2>
-            <p>For inquiries, collaboration proposals, or feedback on our research, please reach out via <a href="https://github.com/davidmcfadzean/Axio">GitHub</a>.</p>
+            <p>For collaboration inquiries or technical discussion, please reach out via <a href="https://github.com/macterra">GitHub</a>.</p>
         </article>
     </div>
 '''
