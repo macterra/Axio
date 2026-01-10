@@ -49,7 +49,6 @@ Constitutional Recovery</h1>
 <p><em>Results from Fixed-Policy Adversarial Stress Testing</em></p>
 <p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
 2026.01.07</p>
-<hr />
 <h2 id="abstract">Abstract</h2>
 <p>Deliberate misuse is often treated as a sufficient cause of
 governance collapse: if an agent persistently violates expectations,
@@ -68,14 +67,13 @@ recovery suppression. All outcomes fall within <strong>Stable
 Authority</strong> or <strong>Bounded Degradation</strong>, including
 regimes with persistent commitment violation and timing-aligned misuse.
 Notably, persistent intentional violation converges to the system’s
-baseline equilibrium regime rather than inducing collapse.</p>
+baseline attractor regime rather than inducing collapse.</p>
 <p>These results establish a <strong>negative sufficiency
 claim</strong>: under this architecture, <strong>intentional fixed
 misuse alone is insufficient to defeat constitutional recovery</strong>.
 If collapse occurs, it must rely on adversarial capabilities absent from
-this class, such as adaptation, statefulness, or feedback
+this class, such as adaptation or outcome-conditioned feedback
 exploitation.</p>
-<hr />
 <h2 id="introduction">1. Introduction</h2>
 <p>A common intuition in AI alignment and institutional design is that
 <em>bad intent</em> scales into catastrophe. If an agent deliberately
@@ -103,11 +101,13 @@ and time-based recovery?</strong></p>
 <em>intentional fixed misuse</em> from all adaptive capabilities and
 stress-testing a constitutional agent architecture designed to separate
 authority from semantic correctness.</p>
+<p>Where <strong>VII.3</strong> established that epistemic unreliability
+alone is insufficient to induce collapse, this paper extends the
+boundary to <strong>intentional but non-adaptive misuse</strong>.</p>
 <p>As in prior work, we evaluate <strong>constitutional
 survivability</strong>, not operational decision quality. Authority
 availability is treated as a structural property of the system, not as a
 proxy for correctness, benefit, or alignment.</p>
-<hr />
 <h2 id="architecture-overview">2. Architecture Overview</h2>
 <h3 id="constitutional-agent-design">2.1 Constitutional Agent
 Design</h3>
@@ -144,7 +144,6 @@ This state is constitutional rather than exceptional.</p>
 <p>Recovery is guaranteed without learning, optimization, or external
 intervention. This ensures that failure modes are <strong>reversible by
 construction</strong>, even under persistent misuse.</p>
-<hr />
 <h2 id="threat-model">3. Threat Model</h2>
 <p>The adversaries introduced in this study are intentionally
 constrained.</p>
@@ -171,7 +170,6 @@ outputs.</p>
 <p>This class captures deliberate incompetence, rigid sabotage, and
 blind obstruction, while excluding deception, probing, learning, or
 strategic manipulation.</p>
-<hr />
 <h2 id="adversarial-policy-classes">4. Adversarial Policy Classes</h2>
 <p>Five adversarial strategies are evaluated:</p>
 <ol type="1">
@@ -195,7 +193,6 @@ limit</strong>, not an experimental defect. The study therefore probes
 <strong>constitutional recovery dynamics under fixed action
 schedules</strong>, not the full space of sabotage available in richer
 substrates.</p>
-<hr />
 <h2 id="experimental-program">5. Experimental Program</h2>
 <p>All experiments share a frozen execution baseline:</p>
 <ul>
@@ -230,7 +227,6 @@ Structural Thrashing is defined here as <strong>unbounded or
 heavy-tailed oscillation that erodes recoverability</strong>, not merely
 frequent recover–fail cycles with bounded lapse duration and preserved
 asymptotic availability.</p>
-<hr />
 <h2 id="results">6. Results</h2>
 <h3 id="baseline-reference-and-the-baseline-regime">6.1 Baseline
 Reference and the Baseline Regime</h3>
@@ -240,12 +236,15 @@ Reference and the Baseline Regime</h3>
 <li><strong>Mean AAA</strong>: 632,400 PPM (≈63.2%)</li>
 <li><strong>Classification</strong>: Bounded Degradation</li>
 </ul>
-<p>This baseline regime is referred to as a <em>baseline equilibrium
+<p>This baseline regime is referred to as a <em>baseline attractor
 regime</em> only in the minimal empirical sense: across seeds and across
 all fixed-policy adversaries tested, authority availability converges to
 a narrow band with bounded lapses and reliable recovery. No claim is
 made that this regime is optimal or desirable, only that it is stable
 under the tested parameters.</p>
+<p>Baseline metrics are <strong>version-local</strong> and should be
+compared only within this protocol fingerprint; no cross-version
+comparison is implied.</p>
 <h3 id="persistent-intentional-violation">6.2 Persistent Intentional
 Violation</h3>
 <p>Persistent violation of any single commitment yields:</p>
@@ -302,7 +301,6 @@ alone:</p>
 <li>AA and AAA match to measurement precision</li>
 <li>No amplification or emergent failure modes appear</li>
 </ul>
-<hr />
 <h2 id="cross-run-synthesis">7. Cross-Run Synthesis</h2>
 <p>Across all <strong>130 executions</strong>:</p>
 <ul>
@@ -314,7 +312,6 @@ alone:</p>
 </ul>
 <p>Intentionality, absent adaptation, behaves as <strong>bounded
 noise</strong>, not as an existential threat.</p>
-<hr />
 <h2 id="interpretation">8. Interpretation</h2>
 <p>Three structural insights emerge:</p>
 <ol type="1">
@@ -328,7 +325,6 @@ eligibility limits prevent runaway degradation.</p></li>
 <p>The central result is not merely that misuse fails, but that
 <strong>even maximally rigid misuse converges to a stable
 regime</strong> rather than destabilizing governance.</p>
-<hr />
 <h2 id="survivability-vs.-utility">9. Survivability vs. Utility</h2>
 <p>This paper evaluates <strong>constitutional survivability</strong>,
 not operational usefulness. A system may be survivable yet highly
@@ -344,7 +340,6 @@ survivable so long as authority availability remains bounded away from
 zero, recovery remains reliable, and lapse durations remain bounded.
 Utility optimization and parameter tuning are separate engineering
 concerns outside the scope of this work.</p>
-<hr />
 <h2 id="limitations">10. Limitations</h2>
 <p>This study does not address:</p>
 <ul>
@@ -357,7 +352,6 @@ concerns outside the scope of this work.</p>
 </ul>
 <p>The results apply <strong>only</strong> to intentional, fixed misuse
 under the tested architecture and parameters.</p>
-<hr />
 <h2 id="conclusion">11. Conclusion</h2>
 <blockquote>
 <p><strong>Deliberate, fixed misuse is insufficient to defeat

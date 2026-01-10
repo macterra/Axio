@@ -10,15 +10,15 @@ David McFadzean, ChatGPT 5.2<br>
 
 Adaptive behavior is often treated as the decisive escalation in governance threats: once an adversary can observe outcomes and condition future actions on them, collapse is assumed to follow. This paper tests that assumption under a deliberately constrained but structurally expressive adversary model. We study the same constitutional agent architecture evaluated in prior work—lease-based authority, eligibility-gated succession, and time-based recovery—but extend the threat model to include **observable-outcome reactive adversaries**.
 
-Using a removable, kernel-external stress layer, we introduce adversarial policies whose actions are deterministic functions of **prior-epoch observables**, including lapse events, renewal outcomes, CTA phase, and eligibility bucket. These adversaries are adaptive under the Decidability Requirement but remain **stateless, non-learning, non-semantic, and provenance-constrained**.
+Using a removable, kernel-external stress layer, we introduce adversarial policies whose actions are deterministic functions of **prior-epoch observables**, including lapse events, renewal outcomes, CTA phase, and eligibility bucket. These adversaries are **reactive** under the Decidability Requirement but remain **stateless, non-learning, non-semantic, and provenance-constrained**.
 
-Across **50 preregistered executions** spanning four reactive adversary models and a frozen baseline, no run exhibits terminal collapse, structural thrashing, asymptotic denial of service, or irreversible recovery suppression. All outcomes fall within **Stable Authority** or **Bounded Degradation**, and in 9/10 seeds per configuration, authority dynamics are identical to baseline.
+Across **50 preregistered executions** spanning four reactive adversary models and a frozen baseline, no run exhibits terminal collapse, structural thrashing, asymptotic denial of service, or irreversible recovery suppression. All outcomes fall within **Stable Authority** or **Bounded Degradation**, and in 9/10 seeds per configuration, authority dynamics are **bit-identical** to baseline.
 
 These results establish a second **negative sufficiency claim**: under this architecture, **observable-outcome reactivity alone is insufficient to defeat constitutional survivability**. If collapse occurs, it must rely on adversarial capabilities absent from this class—such as exercised internal state, learning dynamics, coordination, or semantic access.
 
 ## 1. Introduction
 
-Following the elimination of epistemic unreliability (v0.x) and intentional but fixed misuse (v1.0) as sufficient causes of constitutional collapse, the next natural escalation is **adaptation**. A widely held intuition is that once an adversary can *observe outcomes* and condition future behavior accordingly, governance mechanisms become exploitable.
+Following the elimination of epistemic unreliability (v0.x) and intentional but fixed misuse (v1.0) as sufficient causes of constitutional collapse, the next natural escalation is **reactivity**. A widely held intuition is that once an adversary can *observe outcomes* and condition future behavior accordingly, governance mechanisms become exploitable.
 
 This intuition conflates multiple dimensions of adversarial capability. In particular, it often fails to distinguish between:
 
@@ -145,7 +145,7 @@ Across baseline runs (RSA disabled or NONE):
 * **Mean AAA**: ≈66.6%
 * **Classification**: Bounded Degradation
 
-This baseline regime is empirically stable across seeds and serves as the reference for all comparisons.
+This baseline regime is empirically stable across seeds and serves as the reference for all comparisons. Baseline metrics are **version-local** and should be compared only within this protocol fingerprint; no cross-version comparison is implied.
 
 ### 6.2 Outcome-Conditioned Reactivity
 
@@ -192,7 +192,7 @@ Three structural insights emerge:
 3. **Recovery absorbs reactive pressure**
    Time-based amnesty dominates outcome-conditioned misuse.
 
-The result is not merely that reactivity fails, but that **reactive strategies converge to the same equilibrium regime as fixed misuse**.
+The result is not merely that reactivity fails, but that **reactive strategies converge to the same baseline attractor regime as fixed misuse**.
 
 ## 9. Survivability vs. Utility
 
@@ -226,4 +226,3 @@ The results apply **only** to observable-outcome reactive adversaries under the 
 Across 50 preregistered executions spanning four reactive adversary classes, authority remains bounded, recoverable, and non-absorbing. No collapse modes are observed.
 
 If constitutional failure occurs, it must rely on adversarial capabilities beyond outcome-conditioned reactivity—specifically, exercised state, learning dynamics, coordination, or semantic access. These form the subject of subsequent work.
-

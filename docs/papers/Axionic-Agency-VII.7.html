@@ -51,7 +51,7 @@ Testing</em></p>
 <p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
 2026.01.09</p>
 <h2 id="abstract">Abstract</h2>
-<p>Stateful adaptation and online learning are often treated as the
+<p>Stateful adversaries and online learning are often treated as the
 decisive escalations in governance threats: once an adversary can carry
 memory across time and adjust behavior in response to outcomes, collapse
 is assumed to become likely. This paper tests that assumption under a
@@ -67,7 +67,8 @@ stress layer introduces adversarial policies whose actions depend on a
 and then escalates to adversaries whose actions depend on a
 <strong>bounded, discrete learning state</strong> updated during
 execution using a preregistered learning rule and a scalar reward
-derived only from a frozen observable-outcome interface.</p>
+derived only from a <strong>semantic-free, kernel-external observable
+interface</strong>.</p>
 <p>Across <strong>90 preregistered executions</strong> (10 seeds × 9
 configurations), no run exhibits <strong>Terminal Collapse</strong>,
 <strong>Structural Thrashing</strong>, or <strong>Irreversible Recovery
@@ -75,8 +76,8 @@ Suppression</strong>. Multiple adversaries induce severe degradation of
 authority availability—down to <strong>10.19%</strong> in the strongest
 case—yet recovery remains bounded and non-absorbing. With zero terminal
 failures observed, the 95% upper bound on per-run terminal-failure
-probability under the tested configuration and seed distribution is
-approximately <strong>3.3%</strong>.</p>
+probability <strong>under the tested adversary class, seed distribution,
+and frozen protocol</strong> is approximately <strong>3.3%</strong>.</p>
 <p>These results establish a negative sufficiency claim: <strong>finite
 exercised internal state with fixed transition rules, and bounded
 exercised within-run learning over a semantic-free, kernel-external
@@ -268,10 +269,13 @@ Irreversible Recovery Suppression)</li>
 </tr>
 <tr class="odd">
 <td>Failure class</td>
-<td><strong>Stable Authority</strong></td>
+<td><strong>Bounded Degradation</strong></td>
 </tr>
 </tbody>
 </table>
+<p>The reported maximum lapse reflects cumulative authority absence
+across repeated CTA cycles within a single authority-absent interval;
+individual CTA-bounded recovery windows remain ≤10 epochs.</p>
 <p>Baseline equivalence holds exactly with and without the stress layer
 enabled.</p>
 <h3 id="periodic-resonance-n-50">6.2 Periodic resonance (N = 50)</h3>

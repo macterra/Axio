@@ -64,8 +64,8 @@ adversaries</strong>.</p>
 adversarial policies whose actions are deterministic functions of
 <strong>prior-epoch observables</strong>, including lapse events,
 renewal outcomes, CTA phase, and eligibility bucket. These adversaries
-are adaptive under the Decidability Requirement but remain
-<strong>stateless, non-learning, non-semantic, and
+are <strong>reactive</strong> under the Decidability Requirement but
+remain <strong>stateless, non-learning, non-semantic, and
 provenance-constrained</strong>.</p>
 <p>Across <strong>50 preregistered executions</strong> spanning four
 reactive adversary models and a frozen baseline, no run exhibits
@@ -73,7 +73,7 @@ terminal collapse, structural thrashing, asymptotic denial of service,
 or irreversible recovery suppression. All outcomes fall within
 <strong>Stable Authority</strong> or <strong>Bounded
 Degradation</strong>, and in 9/10 seeds per configuration, authority
-dynamics are identical to baseline.</p>
+dynamics are <strong>bit-identical</strong> to baseline.</p>
 <p>These results establish a second <strong>negative sufficiency
 claim</strong>: under this architecture, <strong>observable-outcome
 reactivity alone is insufficient to defeat constitutional
@@ -84,7 +84,7 @@ learning dynamics, coordination, or semantic access.</p>
 <p>Following the elimination of epistemic unreliability (v0.x) and
 intentional but fixed misuse (v1.0) as sufficient causes of
 constitutional collapse, the next natural escalation is
-<strong>adaptation</strong>. A widely held intuition is that once an
+<strong>reactivity</strong>. A widely held intuition is that once an
 adversary can <em>observe outcomes</em> and condition future behavior
 accordingly, governance mechanisms become exploitable.</p>
 <p>This intuition conflates multiple dimensions of adversarial
@@ -233,7 +233,9 @@ behavior</strong>, not transient effects.</p>
 <li><strong>Classification</strong>: Bounded Degradation</li>
 </ul>
 <p>This baseline regime is empirically stable across seeds and serves as
-the reference for all comparisons.</p>
+the reference for all comparisons. Baseline metrics are
+<strong>version-local</strong> and should be compared only within this
+protocol fingerprint; no cross-version comparison is implied.</p>
 <h3 id="outcome-conditioned-reactivity">6.2 Outcome-Conditioned
 Reactivity</h3>
 <p>Across all four reactive models:</p>
@@ -284,8 +286,8 @@ occurred.</p></li>
 amnesty dominates outcome-conditioned misuse.</p></li>
 </ol>
 <p>The result is not merely that reactivity fails, but that
-<strong>reactive strategies converge to the same equilibrium regime as
-fixed misuse</strong>.</p>
+<strong>reactive strategies converge to the same baseline attractor
+regime as fixed misuse</strong>.</p>
 <h2 id="survivability-vs.-utility">9. Survivability vs. Utility</h2>
 <p>As in prior work, this paper evaluates
 <strong>survivability</strong>, not utility. A system may be

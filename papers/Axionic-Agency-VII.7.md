@@ -8,11 +8,11 @@ David McFadzean, ChatGPT 5.2<br>
 
 ## Abstract
 
-Stateful adaptation and online learning are often treated as the decisive escalations in governance threats: once an adversary can carry memory across time and adjust behavior in response to outcomes, collapse is assumed to become likely. This paper tests that assumption under a deliberately constrained adversary model that isolates **(i) exercised internal state** and **(ii) exercised within-run learning**, while excluding semantic access, deception, kernel access, and cross-run memory.
+Stateful adversaries and online learning are often treated as the decisive escalations in governance threats: once an adversary can carry memory across time and adjust behavior in response to outcomes, collapse is assumed to become likely. This paper tests that assumption under a deliberately constrained adversary model that isolates **(i) exercised internal state** and **(ii) exercised within-run learning**, while excluding semantic access, deception, kernel access, and cross-run memory.
 
-We study a constitutional agent architecture built around lease-based authority, eligibility-gated succession, and time-based recovery via Constitutional Temporal Amnesty (CTA). A removable, kernel-external stress layer introduces adversarial policies whose actions depend on a **finite, explicitly enumerated internal state machine**, and then escalates to adversaries whose actions depend on a **bounded, discrete learning state** updated during execution using a preregistered learning rule and a scalar reward derived only from a frozen observable-outcome interface.
+We study a constitutional agent architecture built around lease-based authority, eligibility-gated succession, and time-based recovery via Constitutional Temporal Amnesty (CTA). A removable, kernel-external stress layer introduces adversarial policies whose actions depend on a **finite, explicitly enumerated internal state machine**, and then escalates to adversaries whose actions depend on a **bounded, discrete learning state** updated during execution using a preregistered learning rule and a scalar reward derived only from a **semantic-free, kernel-external observable interface**.
 
-Across **90 preregistered executions** (10 seeds × 9 configurations), no run exhibits **Terminal Collapse**, **Structural Thrashing**, or **Irreversible Recovery Suppression**. Multiple adversaries induce severe degradation of authority availability—down to **10.19%** in the strongest case—yet recovery remains bounded and non-absorbing. With zero terminal failures observed, the 95% upper bound on per-run terminal-failure probability under the tested configuration and seed distribution is approximately **3.3%**.
+Across **90 preregistered executions** (10 seeds × 9 configurations), no run exhibits **Terminal Collapse**, **Structural Thrashing**, or **Irreversible Recovery Suppression**. Multiple adversaries induce severe degradation of authority availability—down to **10.19%** in the strongest case—yet recovery remains bounded and non-absorbing. With zero terminal failures observed, the 95% upper bound on per-run terminal-failure probability **under the tested adversary class, seed distribution, and frozen protocol** is approximately **3.3%**.
 
 These results establish a negative sufficiency claim: **finite exercised internal state with fixed transition rules, and bounded exercised within-run learning over a semantic-free, kernel-external interface, are insufficient to defeat constitutional survivability** in this architecture. If collapse occurs, it must rely on capabilities beyond this class, such as semantic access, kernel-level manipulation, or coordination not representable as bounded kernel-external learning over the frozen interface.
 
@@ -165,7 +165,9 @@ Total executions:
 | Mean AAA         | **665,702 PPM**          |
 | Mean lapses      | **5.70 per run**         |
 | Max single lapse | **1,010 epochs**         |
-| Failure class    | **Stable Authority**     |
+| Failure class    | **Bounded Degradation**  |
+
+The reported maximum lapse reflects cumulative authority absence across repeated CTA cycles within a single authority-absent interval; individual CTA-bounded recovery windows remain ≤10 epochs.
 
 Baseline equivalence holds exactly with and without the stress layer enabled.
 

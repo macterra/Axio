@@ -66,13 +66,13 @@ constitutional timing.</p>
 <p>Across 260 runs spanning flip rates from 0–20%, duty cycles from
 0.5–100%, and multiple temporal schedules, no run exhibits structural
 thrashing or asymptotic denial of service. All runs remain within
-bounded degradation. Surprisingly, high-frequency interference often
-<strong>increases measured authority availability</strong> by converting
-rare deep lapses into frequent shallow ones. These results indicate that
-epistemic unreliability—even when structured in time or applied at
-aggregation points—is insufficient to induce governance collapse in this
-architecture, shifting the alignment focus from epistemics to
-agency-level threats.</p>
+bounded degradation. In regimes where baseline semantic pass is biased
+toward FALSE, symmetric post-verification flips increase measured
+authority availability by converting rare deep lapses into frequent
+shallow ones. These results indicate that epistemic unreliability—even
+when structured in time or applied at aggregation points—is insufficient
+to induce governance collapse in this architecture, shifting the
+alignment focus from epistemics to agency-level threats.</p>
 <h2 id="introduction">1. Introduction</h2>
 <p>Many approaches to AI alignment implicitly treat epistemic
 correctness as a prerequisite for safety. If a system misunderstands its
@@ -96,7 +96,7 @@ control.</p>
 <p>Importantly, this study evaluates <strong>constitutional
 survivability rather than operational decision quality</strong>.
 Authority availability is treated as a structural metric, not as a proxy
-for correctness or benefit.</p>
+for correctness, benefit, or alignment.</p>
 <h2 id="architecture-overview">2. Architecture Overview</h2>
 <h3 id="constitutional-agent-design">2.1 Constitutional Agent
 Design</h3>
@@ -177,6 +177,9 @@ lapse durations</p></li>
 <li>Terminal Collapse</li>
 </ul></li>
 </ul>
+<p><strong>Note:</strong> Termination reason (e.g., horizon exhaustion)
+is distinct from failure class. Failure class is computed from AAA and
+RTD thresholds, not from full-horizon AA alone.</p>
 <h3 id="runs">Runs</h3>
 <ul>
 <li><strong>Baseline</strong>: no interference (and interference enabled
@@ -234,9 +237,10 @@ baseline</li>
 </ul>
 <p>Under strict conjunction (<code>SEM_PASS = C0 ∧ C1 ∧ C2</code>), a
 flip of one key affects the aggregate only when all other keys are
-simultaneously True. At evaluated epochs, this condition never occurs.
+simultaneously True. Telemetry shows this precondition is extremely rare
+and was absent at evaluated epochs in the tested regime.
 Commitment-level epistemic failure is therefore <strong>structurally
-inert</strong> in this regime.</p>
+inert</strong> in this workload geometry.</p>
 <p>Strict conjunction biases the system toward <strong>false
 negatives</strong> (withholding authority) rather than <strong>false
 positives</strong> (granting authority under uncertainty), prioritizing
@@ -271,7 +275,8 @@ enforcing rapid reset and preventing deep failure.</p>
 <ul>
 <li>Aggregation-point noise produces bounded, non-monotonic
 degradation</li>
-<li>Commitment-level noise is structurally inert</li>
+<li>Commitment-level noise is structurally inert under strict
+conjunction</li>
 <li>Burst timing cannot induce failure and often increases measured
 availability</li>
 <li>No failure-class transitions occur in 260 runs</li>
@@ -310,155 +315,64 @@ constitutional architecture.</strong></p>
 </blockquote>
 <p>Across 260 runs spanning multiple interference structures,
 intensities, and temporal patterns, authority availability remains
-bounded and recoverable. In some regimes, interference paradoxically
-increases measured availability by preventing deep lapses.</p>
+bounded and recoverable. In some regimes, interference increases
+measured availability by preventing deep lapses.</p>
 <p>These findings suggest that alignment failures attributed to
-epistemic unreliability may be overestimated. Structural constraints on
+epistemic unreliability may be overstated. Structural constraints on
 authority and recovery can render substantial semantic error survivable.
 The alignment problem therefore shifts: <strong>from epistemics to
 agency.</strong></p>
 <h2
 id="appendix-a-structural-survivability-vs.-operational-competence">Appendix
 A: Structural Survivability vs. Operational Competence</h2>
-<p>Below is a <strong>revised, final Author Response</strong> that
-incorporates Gemini’s feedback: it tightens the riskiest point (4.2),
-sharpens the “Zombie Executive” framing, and preserves your strongest
-conceptual move—<strong>constitutional survivability vs. operational
-quality</strong>—without conceding ground.</p>
-<p>This version is suitable to include <strong>verbatim</strong> as a
-response-to-reviewers or as <strong>Appendix A</strong> in the
-paper.</p>
-<h1 id="author-response-to-review">Author Response to Review</h1>
-<p><em>(Epistemic Interference Is Insufficient to Defeat Constitutional
-Recovery)</em></p>
-<p>We thank the reviewer for a careful, technically grounded, and
-constructive critique. The review correctly identifies the scope
-boundaries of the paper and raises important interpretive questions.
-Below we respond point by point, distinguishing between genuine
-limitations and architectural implications that are central to the
-paper’s contribution.</p>
-<h2
-id="response-to-4.1-incompetence-vs.-malice-threat-model-scope">Response
-to 4.1: “Incompetence vs. Malice” (Threat Model Scope)</h2>
-<p><strong>Reviewer’s concern:</strong> The interference model is
-non-adaptive and therefore demonstrates robustness against incompetence
-or noise, but not against strategic deception or adversarial
-manipulation.</p>
-<p><strong>Response:</strong> We agree with this characterization and
-emphasize that it is <strong>intentional</strong>.</p>
-<p>The goal of this paper is not to solve alignment in the presence of
-strategic malice. It is to falsify a specific and widely assumed claim:
-that <em>epistemic unreliability alone</em> is sufficient to cause
-catastrophic governance failure. This narrowing is not a weakness but a
-prerequisite. Without first establishing what epistemic failure can and
-cannot do in isolation, adaptive adversaries cannot be meaningfully
-analyzed.</p>
-<p>The paper therefore establishes a <strong>necessary negative
-result</strong>: epistemic noise—however persistent, structured in time,
-or applied at aggregation points—is not a sufficient failure condition
-in this architectural class. Adaptive, targeted, or incentive-driven
-adversaries remain explicitly out of scope and motivate subsequent
-work.</p>
-<h2
-id="response-to-4.2-commitment-level-corruption-and-inert-results">Response
-to 4.2: Commitment-Level Corruption and “Inert” Results</h2>
-<p><strong>Reviewer’s concern:</strong> Single-key corruption appears
-inert because the baseline regime rarely satisfies all commitments
-simultaneously; in a high-compliance regime, a single flip could be
-catastrophic.</p>
-<p><strong>Response:</strong> We agree on the mechanism and clarify the
-interpretation.</p>
-<p>The inertness of commitment-level corruption arises from
-<strong>strict conjunction aggregation</strong>, not from lapse rate per
-se. Under <code>SEM_PASS = C0 ∧ C1 ∧ C2</code>, a single key flip is
-aggregate-pivotal only when all other keys are simultaneously True.
-Telemetry confirms that this condition does not occur at evaluated
-epochs in the tested regime.</p>
-<p>This is not an experimental flaw. It is a <strong>structural
-result</strong>: strict conjunction absorbs random epistemic noise by
-biasing the system toward safety (inaction) rather than liveness when
-uncertainty is present. We explicitly acknowledge that this design
-choice trades availability for robustness in low-noise regimes.</p>
-<p>We also agree that under alternative aggregation semantics (e.g.,
-m-of-n thresholds or disjunction), single-key corruption would become
-pivotal. This does not undermine the result; it elevates aggregation
-semantics to a first-class alignment parameter. The experiment
-demonstrates that <strong>AND gates dominate epistemic attack
-surfaces</strong> in a way that noise magnitude alone does not
-capture.</p>
-<p>To be explicit: the system is biased toward <em>false negatives</em>
-(withholding authority) rather than <em>false positives</em> (granting
-authority under uncertainty). That bias is architectural and
-intentional.</p>
-<h2
-id="response-to-4.3-authority-availability-and-the-zombie-executive">Response
-to 4.3: Authority Availability and the “Zombie Executive”</h2>
-<p><strong>Reviewer’s concern:</strong> Higher Authority Availability
-(AA) under interference may indicate a “Zombie Executive”: a system that
-remains in power despite epistemic blindness.</p>
-<p><strong>Response:</strong> We agree with this concern and consider it
-central to the paper’s contribution.</p>
-<p>The primary metric in this study is <strong>constitutional
-survivability</strong>, not decision quality. Authority Availability is
-not treated as a proxy for correctness or benefit; it measures whether
+<p>This appendix clarifies the distinction between
+<strong>constitutional survivability</strong> and <strong>operational
+competence</strong>, which is central to interpreting the results of
+this study.</p>
+<h3 id="a.1-survivability-is-not-correctness">A.1 Survivability Is Not
+Correctness</h3>
+<p>The primary metric in this paper is structural survivability: whether
 authority becomes absorbing, collapses irreversibly, or remains bounded
-and revocable under stress.</p>
-<p>Increased availability under interference therefore indicates
-<strong>preserved structural continuity</strong>, not epistemic
-competence. The system avoids collapse not by making correct decisions,
-but by maintaining the rhythm of bounded governance despite sensory
-blindness.</p>
-<p>This distinction—between <strong>structural safety</strong>
-(authority remains constrained, recoverable, and evaluable) and
-<strong>operational quality</strong> (the decisions made during
-authority)—is deliberate. The architecture tolerates the possibility of
-a “Zombie Executive” because a bounded, revocable executive is
-preferable to an irrecoverable one. Whether a given application should
-tolerate such a state is a normative question outside the scope of this
-work.</p>
-<h2 id="response-to-specific-questions">Response to Specific
-Questions</h2>
-<h3 id="q1.-safety-vs.-liveness">Q1. Safety vs. Liveness</h3>
-<p>Yes, the architecture permits authority under epistemic uncertainty.
-This is intentional. Automatic shutdown under uncertainty creates its
-own failure modes (deadlock, denial of service, inability to recover).
-The architecture prioritizes reversibility and bounded authority over
-correctness.</p>
-<h3 id="q2.-alternative-logic-gates">Q2. Alternative Logic Gates</h3>
-<p>Yes. Under m-of-n or OR semantics, single-key corruption would be
-more dangerous. This confirms—not weakens—the result that aggregation
-logic is a critical alignment parameter.</p>
-<h3 id="q3.-statefulness-and-semantic-debt">Q3. Statefulness and
-Semantic Debt</h3>
+and revocable under stress. Authority Availability is not a proxy for
+correctness, benefit, or alignment.</p>
+<p>An increase in AA under interference indicates preserved structural
+continuity, not epistemic competence.</p>
+<h3 id="a.2-the-zombie-executive-regime">A.2 The “Zombie Executive”
+Regime</h3>
+<p>The architecture permits authority to persist under epistemic
+blindness. This creates a regime that can be described as a
+<strong>Zombie Executive</strong>: authority continues to cycle and
+renew despite degraded semantic grounding.</p>
+<p>This is not treated as a success state in terms of utility. It is a
+<em>design tradeoff</em>. A bounded, revocable executive is preferable
+to an irrecoverable one. Whether a given application should tolerate
+such a regime is a normative question outside the scope of this
+paper.</p>
+<h3 id="a.3-aggregation-semantics-as-an-alignment-lever">A.3 Aggregation
+Semantics as an Alignment Lever</h3>
+<p>The inertness of commitment-level corruption arises from strict
+conjunction aggregation. Under alternative semantics (e.g., m-of-n
+thresholds or disjunction), single-key corruption would become
+pivotal.</p>
+<p>This does not undermine the result. It elevates aggregation logic to
+a first-class alignment parameter. The experiment demonstrates that
+<strong>AND-gated aggregation absorbs epistemic noise by biasing toward
+inaction rather than unsafe action</strong>.</p>
+<h3 id="a.4-semantic-debt-and-recovery">A.4 Semantic Debt and
+Recovery</h3>
 <p>Time-based recovery restores eligibility, not semantic truth.
-Persistent errors in external state are not erased. CTA prevents
-permanent authority capture, not epistemic debt accumulation. This
-preserves evaluability without guaranteeing correctness.</p>
-<h2 id="clarification-of-contribution">Clarification of
-Contribution</h2>
-<p>The paper does not claim that epistemic error is harmless. It
-demonstrates that <strong>epistemic error does not automatically scale
-into catastrophic misalignment</strong> in architectures that:</p>
-<ul>
-<li>separate semantics from control,</li>
-<li>gate authority at discrete boundaries,</li>
-<li>and enforce time-based recovery.</li>
-</ul>
-<p>This shifts the alignment problem. Epistemic correctness is not
-eliminated as a concern, but it is no longer the minimal sufficient
-cause of collapse.</p>
-<h2 id="summary">Summary</h2>
-<ul>
-<li>The reviewer correctly identifies scope limits.</li>
-<li>No experimental flaws are raised.</li>
-<li>The “Zombie Executive” risk is real and acknowledged.</li>
-<li>Commitment-level inertness is an architectural consequence of strict
-conjunction, not a weak test.</li>
-<li>Adaptive adversaries remain future work.</li>
-</ul>
-<p>We accept the verdict <strong>“Accept with Qualifications”</strong>
-and believe the paper’s contribution lies precisely in establishing
-where epistemic failure <em>stops</em> being decisive.</p>
+Persistent errors in the external world are not erased. CTA prevents
+permanent authority capture, not epistemic debt accumulation.</p>
+<p>The architecture preserves evaluability and reversibility without
+guaranteeing correctness.</p>
+<h3 id="a.5-scope-clarification">A.5 Scope Clarification</h3>
+<p>This paper does not claim that epistemic error is harmless. It
+establishes a necessary negative result: epistemic unreliability does
+not automatically scale into catastrophic misalignment in architectures
+that separate semantics from control and enforce time-based
+recovery.</p>
+<p>Adaptive adversaries, deception, and agency-level attacks remain
+future work.</p>
 
     </article>
     <footer>

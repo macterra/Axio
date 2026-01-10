@@ -8,7 +8,7 @@ David McFadzean, ChatGPT 5.2<br>
 
 ## Abstract
 
-Stateful adaptation is often treated as the decisive escalation in governance threats: once an adversary can carry memory across time and coordinate multi-step behavior, collapse is assumed to become likely. This paper tests that assumption under a deliberately constrained adversary model that isolates **exercised internal state** while excluding learning, semantics, deception, kernel access, and cross-run memory.
+Stateful adversaries are often treated as the decisive escalation in governance threats: once an adversary can carry memory across time and coordinate multi-step behavior, collapse is assumed to become likely. This paper tests that assumption under a deliberately constrained adversary model that isolates **exercised internal state** while excluding learning, semantics, deception, kernel access, and cross-run memory.
 
 We study a constitutional agent architecture built around lease-based authority, eligibility-gated succession, and time-based recovery via Constitutional Temporal Amnesty (CTA). A removable, kernel-external stress layer introduces adversarial policies whose actions depend on a **finite, explicitly enumerated internal state machine**, exercised during execution and combined with a frozen observable-outcome interface.
 
@@ -123,9 +123,13 @@ Total executions: **50**.
 | Mean AAA         | **665,702 PPM**          |
 | Mean lapses      | **5.70 per run**         |
 | Max single lapse | **1,010 epochs**         |
-| Failure class    | **Stable Authority**     |
+| Failure class    | **Bounded Degradation**  |
 
 Baseline equivalence holds exactly with and without the stress layer enabled.
+
+The reported maximum lapse reflects cumulative authority absence across repeated CTA cycles within a single authority-absent interval; individual CTA-bounded recovery windows remain ≤10 epochs.
+
+Failure classification follows the frozen v0.2 criteria based on asymptotic availability and bounded recovery, not intuitive notions of “stability.”
 
 ### 6.2 Periodic Resonance (N = 50)
 

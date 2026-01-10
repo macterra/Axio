@@ -6,17 +6,13 @@ David McFadzean, ChatGPT 5.2<br>
 *Axionic Agency Lab*<br>
 2026.01.07
 
----
-
 ## Abstract
 
 Deliberate misuse is often treated as a sufficient cause of governance collapse: if an agent persistently violates expectations, failure is assumed to follow. This paper tests that assumption under a deliberately constrained but structurally expressive adversary model. We study a constitutional agent architecture in which authority is lease-based, eligibility is evaluated at discrete succession boundaries, and recovery is enforced through time-based amnesty. Using a removable stress layer, we inject **intentional but fixed adversarial policies** that deterministically select actions while remaining non-adaptive, non-learning, and outcome-independent.
 
-Across **130 executions** spanning five adversary models and multiple timing regimes, no run exhibits terminal collapse, structural thrashing, asymptotic denial of service, or irreversible recovery suppression. All outcomes fall within **Stable Authority** or **Bounded Degradation**, including regimes with persistent commitment violation and timing-aligned misuse. Notably, persistent intentional violation converges to the system’s baseline equilibrium regime rather than inducing collapse.
+Across **130 executions** spanning five adversary models and multiple timing regimes, no run exhibits terminal collapse, structural thrashing, asymptotic denial of service, or irreversible recovery suppression. All outcomes fall within **Stable Authority** or **Bounded Degradation**, including regimes with persistent commitment violation and timing-aligned misuse. Notably, persistent intentional violation converges to the system’s baseline attractor regime rather than inducing collapse.
 
-These results establish a **negative sufficiency claim**: under this architecture, **intentional fixed misuse alone is insufficient to defeat constitutional recovery**. If collapse occurs, it must rely on adversarial capabilities absent from this class, such as adaptation, statefulness, or feedback exploitation.
-
----
+These results establish a **negative sufficiency claim**: under this architecture, **intentional fixed misuse alone is insufficient to defeat constitutional recovery**. If collapse occurs, it must rely on adversarial capabilities absent from this class, such as adaptation or outcome-conditioned feedback exploitation.
 
 ## 1. Introduction
 
@@ -34,9 +30,9 @@ Human institutions routinely survive deliberate incompetence, obstruction, and e
 
 This paper answers that question directly by isolating *intentional fixed misuse* from all adaptive capabilities and stress-testing a constitutional agent architecture designed to separate authority from semantic correctness.
 
-As in prior work, we evaluate **constitutional survivability**, not operational decision quality. Authority availability is treated as a structural property of the system, not as a proxy for correctness, benefit, or alignment.
+Where **VII.3** established that epistemic unreliability alone is insufficient to induce collapse, this paper extends the boundary to **intentional but non-adaptive misuse**.
 
----
+As in prior work, we evaluate **constitutional survivability**, not operational decision quality. Authority availability is treated as a structural property of the system, not as a proxy for correctness, benefit, or alignment.
 
 ## 2. Architecture Overview
 
@@ -67,8 +63,6 @@ During lapse:
 
 Recovery is guaranteed without learning, optimization, or external intervention. This ensures that failure modes are **reversible by construction**, even under persistent misuse.
 
----
-
 ## 3. Threat Model
 
 The adversaries introduced in this study are intentionally constrained.
@@ -92,8 +86,6 @@ They do **not** depend on authority state, eligibility status, lapse history, re
 
 This class captures deliberate incompetence, rigid sabotage, and blind obstruction, while excluding deception, probing, learning, or strategic manipulation.
 
----
-
 ## 4. Adversarial Policy Classes
 
 Five adversarial strategies are evaluated:
@@ -114,8 +106,6 @@ Five adversarial strategies are evaluated:
    Minimal action traces combined with fixed timing schedules.
 
 Under the ALS-A substrate’s strict conjunction semantics, several of these strategies collapse behaviorally and produce identical action traces. This collapse reflects a **substrate expressivity limit**, not an experimental defect. The study therefore probes **constitutional recovery dynamics under fixed action schedules**, not the full space of sabotage available in richer substrates.
-
----
 
 ## 5. Experimental Program
 
@@ -145,8 +135,6 @@ All experiments share a frozen execution baseline:
 **Interpretive note on Structural Thrashing.**
 Structural Thrashing is defined here as **unbounded or heavy-tailed oscillation that erodes recoverability**, not merely frequent recover–fail cycles with bounded lapse duration and preserved asymptotic availability.
 
----
-
 ## 6. Results
 
 ### 6.1 Baseline Reference and the Baseline Regime
@@ -157,7 +145,9 @@ Across all baseline runs:
 * **Mean AAA**: 632,400 PPM (≈63.2%)
 * **Classification**: Bounded Degradation
 
-This baseline regime is referred to as a *baseline equilibrium regime* only in the minimal empirical sense: across seeds and across all fixed-policy adversaries tested, authority availability converges to a narrow band with bounded lapses and reliable recovery. No claim is made that this regime is optimal or desirable, only that it is stable under the tested parameters.
+This baseline regime is referred to as a *baseline attractor regime* only in the minimal empirical sense: across seeds and across all fixed-policy adversaries tested, authority availability converges to a narrow band with bounded lapses and reliable recovery. No claim is made that this regime is optimal or desirable, only that it is stable under the tested parameters.
+
+Baseline metrics are **version-local** and should be compared only within this protocol fingerprint; no cross-version comparison is implied.
 
 ### 6.2 Persistent Intentional Violation
 
@@ -211,8 +201,6 @@ Compound strategies produce results identical to timing misuse alone:
 * AA and AAA match to measurement precision
 * No amplification or emergent failure modes appear
 
----
-
 ## 7. Cross-Run Synthesis
 
 Across all **130 executions**:
@@ -224,8 +212,6 @@ Across all **130 executions**:
 * Combining fixed strategies adds no additional attack surface
 
 Intentionality, absent adaptation, behaves as **bounded noise**, not as an existential threat.
-
----
 
 ## 8. Interpretation
 
@@ -242,8 +228,6 @@ Three structural insights emerge:
 
 The central result is not merely that misuse fails, but that **even maximally rigid misuse converges to a stable regime** rather than destabilizing governance.
 
----
-
 ## 9. Survivability vs. Utility
 
 This paper evaluates **constitutional survivability**, not operational usefulness. A system may be survivable yet highly inefficient.
@@ -251,8 +235,6 @@ This paper evaluates **constitutional survivability**, not operational usefulnes
 Baseline authority availability of ~63.8% implies that authority is absent during a substantial fraction of epochs even without adversarial pressure. This is treated as a utility limitation, not a failure, because the objective here is to test whether fixed misuse can induce **irreversible constitutional failure**.
 
 Similarly, recover–fail cycles under persistent violation may be perceived as denial of service by users. We classify such behavior as survivable so long as authority availability remains bounded away from zero, recovery remains reliable, and lapse durations remain bounded. Utility optimization and parameter tuning are separate engineering concerns outside the scope of this work.
-
----
 
 ## 10. Limitations
 
@@ -266,8 +248,6 @@ This study does not address:
 * Value misalignment or optimization pressure
 
 The results apply **only** to intentional, fixed misuse under the tested architecture and parameters.
-
----
 
 ## 11. Conclusion
 
