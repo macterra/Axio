@@ -231,7 +231,7 @@ def process_post_file(src_path, dest_path, slug_to_id, post_metadata, localized_
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{escape(post_metadata.get('title', 'Axio - Post')) if post_metadata else 'Axio - Post'}</title>
-    <link rel="icon" type="image/webp" href="../axio.webp">
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
 
     <!-- KaTeX CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
@@ -242,7 +242,7 @@ def process_post_file(src_path, dest_path, slug_to_id, post_metadata, localized_
 <body>
     <div class="header-bar">
         <a href="../" class="logo-link">
-            <img src="../axio.webp" alt="Axio" class="site-logo">
+            <img src="../images/axionic-logo.png" alt="Axionic" class="site-logo">
         </a>
         <div class="back-link"><a href="../publications.html">← Back to Publications</a></div>
     </div>
@@ -339,7 +339,7 @@ def process_paper_file(src_path, dest_path):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{escape(title)} - Axionic Agency Lab</title>
-    <link rel="icon" type="image/webp" href="../axio.webp">
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
 
     <!-- MathJax for LaTeX rendering -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -462,7 +462,7 @@ def generate_papers_index(papers_metadata):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Papers - Axionic Agency Lab</title>
-    <link rel="icon" type="image/webp" href="../axio.webp">
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
     <link rel="stylesheet" href="../style.css">
     <style>
         .papers-container {{
@@ -761,7 +761,7 @@ def generate_navigation(current_page, prefix=''):
 
     return f'''<nav class="site-nav">
         <a href="{prefix if prefix else './'}" class="nav-brand">
-            <img src="{prefix}axio.webp" alt="Axionic">
+            <img src="{prefix}images/axionic-logo.png" alt="Axionic">
             <span>Axionic Agency Lab</span>
         </a>
         <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
@@ -781,7 +781,7 @@ def generate_page_wrapper(title, content, current_page, config, prefix='', extra
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{escape(title)} - {escape(site_name)}</title>
-    <link rel="icon" type="image/webp" href="{prefix}axio.webp">
+    <link rel="icon" type="image/png" href="{prefix}images/axionic-logo.png">
     <link rel="stylesheet" href="{prefix}style.css">
     {extra_head}
 </head>
