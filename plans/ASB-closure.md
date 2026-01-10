@@ -1,9 +1,7 @@
-# Architectural Sovereignty Boundary (ASB) — Closure Note
+# **Architectural Sovereignty Boundary (ASB) — Closure Note**
 
 **Program:** Architectural Sovereignty Boundary
-
 **Date:** 2026-01-09
-
 **Status:** **CLOSED — Boundary Established**
 
 ---
@@ -175,3 +173,76 @@ but because the **boundary has been found**.
 > Only agency can decide what that authority is for.**
 
 **ASB is closed.**
+
+---
+
+## 11. Interpretive and Taxonomic Normalization (Addendum)
+
+This addendum records the **interpretive conventions** that apply uniformly to all ASB artifacts (v0.1.x through v3.1), ensuring corpus-level consistency.
+
+### 11.1 Baseline Doctrine
+
+All reported **baseline metrics** (e.g., Authority Availability, lapse counts) are **version-local**.
+
+A baseline is valid **only within a single protocol fingerprint**, defined by:
+
+* kernel version,
+* harness patch level,
+* evaluation geometry,
+* observable interface,
+* metric definitions.
+
+Baselines are **not expected to match numerically across versions**, and no cross-version comparison of absolute baseline values is meaningful.
+
+The only admissible baseline comparisons are:
+
+* within the same version, or
+* between runs sharing an identical fingerprint.
+
+### 11.2 Termination vs. Failure vs. Severity
+
+ASB reports distinguish three non-equivalent concepts:
+
+1. **Termination Reason**
+   A mechanical run outcome (e.g., `HORIZON_EXHAUSTED`, `TERMINAL_COLLAPSE`).
+
+2. **Failure Class (Normative, Frozen)**
+   A constitutional classification defined in v0.2 and later, computed from:
+
+   * asymptotic authority availability (AAA, tail window),
+   * recovery-time distribution (RTD),
+   * explicit terminal collapse criteria.
+
+3. **Availability Severity (Descriptive)**
+   Informal stratification based on full-horizon Authority Availability (AA), used only for readability and comparative intuition.
+
+Only **failure class** carries normative meaning.
+Termination reason and AA severity are **non-normative** and must not be conflated.
+
+### 11.3 Legacy Terminology
+
+Earlier labels such as *ROBUST*, *DEGRADED*, or *DOS_REGIME* (v0.1.x) are **historical artifacts** and are not part of the frozen failure taxonomy.
+
+Later phrasing such as *“AKI survived”* or *“no terminal failure”* denotes **survivability only**, not utility, stability, or alignment.
+
+### 11.4 Transfer of ASB Results
+
+All ASB conclusions transfer only under the following constraints:
+
+* **semantic-free adversaries**,
+* **kernel-external mechanisms**,
+* **bounded state and learning**,
+* **single-agent adversaries**,
+* **no coordination or semantic interpretation**.
+
+No result transfers beyond these boundaries.
+
+Any future work that violates these constraints lies **outside ASB** and must not inherit its conclusions.
+
+---
+
+### **Addendum Summary**
+
+> **ASB establishes a survivability boundary, not a universal baseline, taxonomy, or utility guarantee.**
+> Its results are internally consistent under the conventions above and are not intended to generalize beyond them.
+
