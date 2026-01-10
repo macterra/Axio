@@ -61,14 +61,53 @@
   ],
   "team": [
     {
-      "id": "placeholder-1",
-      "name": "Team Member Name",
-      "role": "Principal Researcher",
-      "bio": "Bio placeholder - please update with actual team member information.",
-      "photo": null,
+      "id": "david-mcfadzean",
+      "name": "David McFadzean",
+      "role": "Executive Director",
+      "bio": "Founder of Axionic Agency Lab. Research interests include agency theory, AI alignment, rationality, and the foundations of beneficial artificial intelligence.",
+      "photo": "images/david-mcfadzean.jpg",
       "links": {
         "email": null,
         "website": null,
+        "twitter": null,
+        "github": "https://github.com/macterra"
+      }
+    },
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT 5.2",
+      "role": "AI Research Fellow",
+      "bio": "Large language model developed by OpenAI. Contributing to research on agency theory, alignment frameworks, and formal verification.",
+      "photo": "images/chatgpt.png",
+      "links": {
+        "email": null,
+        "website": "https://openai.com",
+        "twitter": null,
+        "github": null
+      }
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini 3 Pro",
+      "role": "AI Peer Reviewer",
+      "bio": "Large language model developed by Google DeepMind. Providing peer review and critical analysis of research papers and theoretical frameworks.",
+      "photo": "images/gemini.png",
+      "links": {
+        "email": null,
+        "website": "https://gemini.google.com",
+        "twitter": null,
+        "github": null
+      }
+    },
+    {
+      "id": "claude",
+      "name": "Claude Opus 4.5",
+      "role": "AI Research Engineer",
+      "bio": "Large language model developed by Anthropic. Supporting research implementation, code development, and technical documentation.",
+      "photo": "images/claude.png",
+      "links": {
+        "email": null,
+        "website": "https://anthropic.com",
         "twitter": null,
         "github": null
       }
