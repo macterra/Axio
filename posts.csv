@@ -1,4 +1,8 @@
 post_id,post_date,is_published,email_sent_at,inbox_sent_at,type,audience,title,subtitle,podcast_url
+184137688.in-defense-of-centrism,2026-01-10T17:26:09.325Z,true,,,newsletter,everyone,In Defense of Centrism,Why Moral Certainty Is a Governance Hazard,
+184087663.when-consensus-entrenches-authority,2026-01-10T01:55:46.128Z,true,,,newsletter,everyone,When Consensus Entrenches Authority,Proof-of-Stake and the Limits of Capital-Weighted Governance,
+184075360.alignment-beyond-epistemics,2026-01-09T22:52:08.668Z,true,,,newsletter,everyone,Alignment Beyond Epistemics,Why Survival Is Not Enough,
+183731336.why-values-dont-align-systems,2026-01-06T23:25:03.128Z,true,,,newsletter,everyone,Why Values Don’t Align Systems,"Alignment Depends on Limits, Not Ideals",
 183614763.alignment-under-uncertainty,2026-01-05T23:43:14.067Z,true,,,newsletter,everyone,Alignment Under Uncertainty,How Governance Survives When Semantic Evaluation Is Noisy,
 183568372.semantic-safety-without-moral-machinery,2026-01-05T16:49:34.381Z,true,,,newsletter,everyone,Semantic Safety Without Moral Machinery,Architectural restraint as a precondition for alignment,
 183495093.the-shape-of-coherence,2026-01-04T23:46:45.942Z,true,,,newsletter,everyone,The Shape of Coherence,Why Persistence Precedes Meaning,
