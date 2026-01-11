@@ -836,8 +836,13 @@ def generate_homepage(config, posts, papers_metadata):
 
     content = f'''
     <div class="hero">
-        <h1>{escape(site.get('name', 'Axionic Agency Lab'))}</h1>
-        <p class="tagline">{escape(site.get('tagline', ''))}</p>
+        <div class="hero-header">
+            <img src="images/axionic-logo.png" alt="Axionic" class="hero-logo">
+            <div class="hero-title">
+                <h1>{escape(site.get('name', 'Axionic Agency Lab'))}</h1>
+                <p class="tagline">{escape(site.get('tagline', ''))}</p>
+            </div>
+        </div>
         <p class="mission">{escape(mission.get('long', ''))}</p>
         <div class="section-links">
             <a href="research.html">Research</a>

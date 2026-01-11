@@ -526,6 +526,32 @@ footer {
     margin: 0 auto;
 }
 
+.hero-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-logo {
+    width: 150px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.hero-title {
+    text-align: left;
+}
+
+.hero-title h1 {
+    margin-bottom: 0.5rem;
+}
+
+.hero-title .tagline {
+    margin-bottom: 0;
+}
+
 /* ============================================
    SECTION PAGES
    ============================================ */
@@ -896,6 +922,15 @@ mjx-container {
 
     .hero .tagline {
         font-size: 1.1rem;
+    }
+
+    .hero-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero-title {
+        text-align: center;
     }
 
     .card-grid {
