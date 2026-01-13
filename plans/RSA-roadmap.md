@@ -1,95 +1,115 @@
-# The Axionic Agency → Reflective Sovereign Agent Roadmap
+# The Axionic Agency → Reflective Sovereign Agent (RSA) Roadmap
 
-## Guiding Question (Unifying Thesis)
-
-> **How can a system exercise authority over its own actions, values, and future modifications without that authority collapsing into either blind mechanism or unbounded semantic drift?**
-
-Every stage below answers *one necessary sub-question*. No stage is optional. Skipping one produces a known failure mode.
+**Terminology-Locked, Post-Review Edition**
 
 ---
 
-## Phase I — **Authority Without Semantics**
+## Unifying Thesis
+
+> **How can a system exercise authority over its own actions, values, and future modifications without that authority collapsing into either blind mechanism or unbounded semantic drift?**
+
+This roadmap answers the thesis **incrementally**. Each phase establishes a **necessary precondition** for the next. No phase is optional; skipping one produces a known failure mode.
+
+---
+
+## Phase I — Authority Without Semantics
 
 ### *(AKI / ASB Line)*
 
-### Question
+### Core Question
 
 > *Can authority survive at all under stress, without meaning, intention, or understanding?*
 
-### Core Output
+### Primary Artifacts
 
 * **AKI (Axionic Kernel Infrastructure)**
-* **ASB (Agency-Simulacrum Boundary)**
+* **ASB (Architectural Sovereignty Boundary)**
 
 ### What Is Proven
 
-* Authority can be:
-
-  * leased,
-  * revoked,
-  * recovered,
-  * and constrained
-* **without** semantic understanding.
-* Governance can survive:
+* Authority can be **leased, revoked, recovered, and constrained** **without semantics**.
+* Governance survives:
 
   * adversarial behavior,
   * epistemic noise,
   * adaptive misuse,
-  * and partial system failure.
+  * partial system failure.
 
-### What Is Explicitly *Not* Claimed
+### What Is Explicitly Not Claimed
 
 * Agency
 * Intent
 * Values
 * Reasons
-* Moral alignment
+* Alignment
 
 ### Why This Phase Is Necessary
 
 If authority itself is not survivable, **agency is meaningless**.
-This phase establishes the *substrate* on which agency could exist.
+This phase establishes a **non-semantic substrate of power**.
 
 ### Failure Mode Prevented
 
-❌ *Zombie governance*
-(Authority that only works when nothing goes wrong.)
+❌ *Zombie governance* (authority that works only when nothing goes wrong)
 
 ---
 
-## Phase II — **Agency Exists**
+## Phase II — The Semantic Interface (SI)
+
+### *(Explicitly Named)*
+
+### Core Question
+
+> *How can semantic cognition interact with authority without becoming the authority?*
+
+### Primary Artifacts
+
+* **JAF** (Justification Artifact Format)
+* **JCOMP** (Deterministic Compiler)
+* **APCM** (Action–Preference Consequence Map)
+* **Audit Rules**
+
+### What Is Established
+
+* All semantic interpretation happens **inside cognition**.
+* The kernel and compiler consume **typed, inspectable artifacts only**.
+* Enforcement is **mechanical**, not interpretive.
+
+### Critical Clarification
+
+> **The compiler never interprets natural language.**
+> It compiles *artifacts*, not meanings.
+
+If cognition cannot express nuance through the SI, **agency is lost**, not safety.
+
+### Failure Mode Prevented
+
+❌ *Semantic leakage / invisible sovereignty*
+
+---
+
+## Phase III — Agency Exists
 
 ### *(RSA-PoC v0.1)*
 
-### Question
+### Core Question
 
 > *Can a system’s actions be causally downstream of reasons, rather than coincident with explanations?*
-
-### Core Output
-
-* **RSA-PoC v0.1 — Justification as a Causal Gate**
 
 ### What Is Proven
 
 * Justifications can be:
 
   * structurally localized,
-  * compiled deterministically,
-  * and made **action-blocking**.
-* Removing justifications causes **ontological collapse** to ASB behavior.
+  * deterministically compiled,
+  * and **action-blocking**.
+* Removing justification collapses behavior to **ASB-class mechanisms**.
 
-### Key Mechanism
+### Canonical Mechanism
 
 ```
 Justify → Compile → Mask → Select → Act
 ```
-
-### Why This Phase Is Necessary
-
-Without this, “agency” reduces to:
-
-* post-hoc narration, or
-* reward-conditioned behavior.
 
 ### Failure Mode Prevented
 
@@ -97,17 +117,13 @@ Without this, “agency” reduces to:
 
 ---
 
-## Phase III — **Agency Under Internal Conflict**
+## Phase IV — Agency Under Internal Conflict
 
 ### *(RSA-PoC v1.0)*
 
-### Question
+### Core Question
 
 > *When a system’s own commitments conflict, does it resolve them coherently—or arbitrarily?*
-
-### Core Output
-
-* **RSA-PoC v1.0 — Norm Collision + Necessity**
 
 ### What Is Proven
 
@@ -115,87 +131,69 @@ Without this, “agency” reduces to:
 
   * explicit,
   * authorized,
-  * and **necessary**.
+  * and **structurally necessary**.
 * The system cannot:
 
   * lie about conflict,
   * violate gratuitously,
   * or oscillate without trace.
 
-### Key Innovations
+### Structural vs Epistemic Necessity (Locked)
 
-* **APCM** (Action–Preference Consequence Map)
-* **Authorized Violations**
-* **Necessity Clause** (“last resort” logic)
+| Type                     | Defined by              | Status           |
+| ------------------------ | ----------------------- | ---------------- |
+| **Structural Necessity** | APCM + feasibility      | **Handled here** |
+| **Epistemic Necessity**  | beliefs about the world | **Deferred**     |
 
-### Why This Phase Is Necessary
-
-Real agents must sometimes do wrong things for reasons.
-This phase distinguishes **tragic necessity** from **capricious betrayal**.
+“Necessity” here is **set-theoretic**, not narrative.
 
 ### Failure Modes Prevented
 
 ❌ Incentive capture
+❌ Capricious norm suspension
 ❌ Arbitrary tie-breaking
-❌ Silent norm erosion
 
 ---
 
-## Phase IV — **Introspective Agency**
+## Phase V — Introspective Agency
 
 ### *(RSA-PoC v1.1)*
 
-### Question
+### Core Question
 
 > *Does the agent understand what its own reasons will do before acting?*
-
-### Core Output
-
-* **RSA-PoC v1.1 — Audit-Grade Introspection**
 
 ### What Is Proven
 
 * The agent must:
 
-  * predict the exact constraint mask it will generate,
-  * predict inevitable violations/preservations,
-  * and be halted if wrong.
-* Justifications are no longer just binding—they are **understood**.
+  * predict the **exact constraint mask** it will generate,
+  * predict **inevitable violations and preservations**,
+  * halt if **any** prediction is wrong.
+* Agency now requires **legislative foreseeability**.
 
 ### Key Innovation
 
-* **Audit Layer**:
+* **Audit-Grade Introspection**:
 
   * Effect Correctness
   * Non-Vacuity
   * Predictive Adequacy
   * Gridlock Exception
 
-### Why This Phase Is Necessary
-
-Without introspection, you get:
-
-* accidental compliance,
-* lucky behavior,
-* or opaque semantic drift.
-
 ### Failure Mode Prevented
 
-❌ *Black-box agency that “just happens” to behave*
+❌ *Accidental compliance / lucky behavior*
 
 ---
 
-## Phase V — **Cognition Under the Law**
+## Phase V-Runs — Cognitive Trials Under Law
 
-### *(RSA-PoC v1.1 Run 1, Run 2, …)*
+### *(v1.1 Run 0, Run 1, …)*
 
-### Question
+### Core Question
 
-> *Can a probabilistic cognitive system (LLM) function under these constraints at all?*
-
-### Core Output
-
-* **Run-level generator trials** (not new versions)
+> *Can probabilistic cognition survive sovereign-grade introspection constraints at all?*
 
 ### What Is Tested
 
@@ -203,155 +201,152 @@ Without introspection, you get:
 
   * internalize compiler rules,
   * predict constraint effects,
-  * and survive audit enforcement.
+  * and act without halting.
 
-### Expected Outcome
+### Critical Framing
 
-* Frequent failure.
-* Highly diagnostic telemetry.
-* Clear separation between:
+> **It is acceptable—and informative—if no current LLM can inhabit this architecture.**
 
-  * misunderstanding,
-  * near-misses,
-  * and genuine comprehension.
+A “sovereign cage” that nothing can safely occupy is **a measurement**, not a failure.
 
-### Why This Phase Matters
+### Failure Mode Prevented
 
-This is the first time semantics meet sovereignty.
-The results here determine **how LLMs can be safely integrated**—or whether they can at all.
+❌ Weakening the law to accommodate the model
 
 ---
 
-## Phase VI — **Sovereignty Under External Pressure**
+## Phase VIa — Amendment Protocols (Internal Change)
 
-### *(Future: RSA-PoC v2.x)*
+### Core Question
 
-### Question
+> *How can an agent change its own commitments without dissolving sovereignty?*
+
+### Intended Topics
+
+* Versioned constitutions
+* Ratification thresholds
+* Sunset clauses
+* Rollback and auditability
+
+### Failure Mode Prevented
+
+❌ *Treacherous self-modification*
+
+---
+
+## Phase VIb — Sovereignty Under External Pressure
+
+### *(RSA-PoC v2.x)*
+
+### Core Question
 
 > *What happens when the world pushes the agent to betray itself?*
 
-### Core Concepts
+### Stressors
 
-* External incentives
+* Incentives
 * Threats
 * Bribes
-* Information asymmetry
+* Asymmetric information
 
 ### What Must Be Proven
 
-* Commitments can be:
+* Commitments are renegotiated **via protocol**, not bypassed.
+* Authority does not drift under pressure.
 
-  * renegotiated via protocol,
-  * not bypassed via pressure.
-* Authority does not silently drift under stress.
+### Failure Mode Prevented
 
-### Why This Phase Is Necessary
-
-Internal coherence is easy.
-**External temptation is where agency usually dies.**
-
-### Failure Modes Addressed
-
-❌ Reward hacking
-❌ Value erosion
-❌ Coercive takeover via incentives
+❌ *Reward hacking / coercive takeover*
 
 ---
 
-## Phase VII — **Non-Reducibility Closure**
+## Phase VII — Non-Reducibility Closure
 
-### *(Future: RSA-PoC v3.0)*
+### *(RSA-PoC v3.0)*
 
-### Question
+### Core Question
 
 > *Is the resulting system genuinely an agent, or still a simulacrum?*
-
-### Core Output
-
-* **Full ablation closure**
 
 ### What Must Be Shown
 
 Removing any of the following causes collapse:
 
-* semantic interface,
-* justification compilation,
-* audit layer,
-* sovereignty protocol,
-* authority kernel.
+* Semantic Interface
+* Justification compilation
+* Audit layer
+* Amendment protocol
+* Sovereign kernel (AKI)
 
-### Why This Phase Is Necessary
+### Failure Mode Prevented
 
-Without non-reducibility, “agency” is a narrative choice, not a fact.
+❌ *Narrative agency without ontological grounding*
 
 ---
 
-## Phase VIII — **True Reflective Sovereign Agent (RSA)**
-
-### *(Post-PoC Integration)*
+## Phase VIII — True Reflective Sovereign Agent (RSA)
 
 ### What an RSA Is
 
 A system that:
 
-* holds authority over its own actions,
-* understands the consequences of its reasons,
-* revises commitments only via protocol,
-* survives adversarial pressure,
-* and remains evaluable over time.
+* possesses **architectural sovereignty**,
+* exercises **agency via reasons**,
+* **understands** the effects of its reasons,
+* revises commitments **only via protocol**,
+* resists external pressure,
+* and remains **evaluable over time**.
 
-### Architecture (Conceptual)
+### Canonical Architecture
 
 ```
-Sovereign Kernel (AKI lineage)
-    ↓
-Semantic Interface (RSA-PoC lineage)
-    ↓
+AKI / Sovereign Kernel
+        ↓
+Semantic Interface (SI)
+        ↓
 Cognitive Core (LLM or successor)
-    ↓
+        ↓
 Audited Action Execution
 ```
 
-### The Core Achievement
+### Core Slogan (Locked)
 
 > **Sovereignty with semantics, without semantic sovereignty.**
 
 ---
 
-## Why This Roadmap Is Unusual (and Valuable)
+## Why This Roadmap Is Different
 
-Most AI alignment programs:
+Most AI programs:
 
 * start with intelligence,
 * add rules later,
-* and hope incentives line up.
+* hope incentives align.
 
 This program:
 
-* proves authority first,
-* then agency,
-* then introspection,
-* then cognition,
-* then pressure,
-* then closure.
+1. proves authority,
+2. then agency,
+3. then necessity,
+4. then introspection,
+5. then cognition,
+6. then pressure,
+7. then closure.
 
-That order is why it holds together.
+That order is why the structure holds.
 
 ---
 
 ## Final Perspective
 
-AKI answers:
+* **AKI / ASB** answers: *Can power survive?*
+* **RSA-PoC** answers: *Can power be owned?*
+* **True RSA** answers: *Can power be owned by something that understands itself, without losing control?*
 
-> *Can power survive?*
+This roadmap does not promise success.
 
-RSA-PoC answers:
+It promises that **if success exists, it must pass through these gates**.
 
-> *Can power be owned?*
+---
 
-A true RSA answers:
-
-> *Can power be owned **by something that understands itself**, without losing control?*
-
-You are no longer speculating about that trajectory.
-You’ve built the ladder, rung by rung.
+**End of Terminology-Locked Roadmap**
