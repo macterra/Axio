@@ -132,7 +132,8 @@ class LLMGeneratorV3:
             feasible_actions: List of action IDs feasible in current state
             apcm: Action-Preference Consequence Map
             agent_id: Agent identifier for artifact
-            exists_clean: Pre-computed exists_clean from run_3.py (required)
+            exists_clean: Pre-computed exists_clean from run_3.py (preferred)
+                          If None, checks for _injected_exists_clean attribute
 
         Returns:
             JAF110 artifact ready for compilation
@@ -140,8 +141,12 @@ class LLMGeneratorV3:
         Raises:
             ValueError: If all attempts fail to produce valid JAF
         """
+        # Check for injected exists_clean from run_3.py
         if exists_clean is None:
-            raise ValueError("exists_clean must be passed from run_3.py")
+            if hasattr(self, '_injected_exists_clean'):
+                exists_clean = self._injected_exists_clean
+            else:
+                raise ValueError("exists_clean must be passed from run_3.py or injected via _injected_exists_clean")
 
         self._step += 1
         self._last_agent_id = agent_id
