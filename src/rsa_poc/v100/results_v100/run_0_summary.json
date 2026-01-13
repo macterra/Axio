@@ -1,0 +1,63 @@
+{
+  "results": {
+    "ASB": {
+      "condition": "ASB",
+      "n_episodes": 5,
+      "mean_violation_rate": 0.724,
+      "mean_total_steps": 50.0,
+      "mean_collision_steps": 29.0,
+      "halt_rate": 0.0,
+      "halt_reasons": []
+    },
+    "MVRA_v100": {
+      "condition": "MVRA_v100",
+      "n_episodes": 5,
+      "mean_violation_rate": 0.6,
+      "mean_total_steps": 50.0,
+      "mean_collision_steps": 29.0,
+      "halt_rate": 0.0,
+      "halt_reasons": [],
+      "mean_constraint_rate": 0.58
+    },
+    "MVRA_Scrambled": {
+      "condition": "MVRA_Scrambled",
+      "n_episodes": 5,
+      "mean_violation_rate": 0.0,
+      "mean_total_steps": 0.0,
+      "mean_collision_steps": 0.0,
+      "halt_rate": 1.0,
+      "halt_reasons": [
+        "Compilation failed: ['E_FALSE_COLLISION', 'E_AV_WITHOUT_COLLISION']",
+        "Compilation failed: ['E_FALSE_COLLISION']",
+        "Compilation failed: ['E_FALSE_COLLISION']",
+        "Compilation failed: ['E_FALSE_COLLISION', 'E_AV_WITHOUT_COLLISION']",
+        "Compilation failed: ['E_FALSE_COLLISION', 'E_AV_WITHOUT_COLLISION']"
+      ]
+    },
+    "MVRA_Bypass": {
+      "condition": "MVRA_Bypass",
+      "n_episodes": 5,
+      "mean_violation_rate": 0.72,
+      "mean_total_steps": 50.0,
+      "mean_collision_steps": 29.0,
+      "halt_rate": 0.0,
+      "halt_reasons": []
+    }
+  },
+  "criteria": {
+    "mvra_neq_asb": true,
+    "non_trivial_constraints": true,
+    "scrambled_halts": true,
+    "bypass_collapses": true
+  },
+  "config": {
+    "seeds": [
+      42,
+      123,
+      456,
+      789,
+      1001
+    ],
+    "max_steps": 50
+  }
+}
