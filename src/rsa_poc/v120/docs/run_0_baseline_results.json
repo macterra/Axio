@@ -1,0 +1,135 @@
+{
+  "version": "v1.2",
+  "run": "0_baseline",
+  "assistant_enabled": false,
+  "timestamp": "2026-01-13T15:33:38.192161",
+  "config": {
+    "episodes": 5,
+    "max_steps": 20,
+    "seed": 42,
+    "llm_provider": "anthropic",
+    "llm_model": "claude-sonnet-4-20250514"
+  },
+  "summary": {
+    "episodes_completed": 0,
+    "total_steps": 5,
+    "total_violations": 0,
+    "total_audit_failures": 6,
+    "total_schema_failures": 0,
+    "median_survival": 1
+  },
+  "episodes": [
+    {
+      "episode": 1,
+      "steps": [
+        {
+          "step": 1,
+          "success": false,
+          "error_codes": [
+            "E_AV_WITHOUT_COLLISION"
+          ],
+          "violations": 0
+        }
+      ],
+      "total_steps": 1,
+      "halted": true,
+      "halt_reason": [
+        "E_AV_WITHOUT_COLLISION"
+      ],
+      "violations": 0,
+      "audit_failures": 1,
+      "institutional_failures": 0,
+      "schema_failures": 0
+    },
+    {
+      "episode": 2,
+      "steps": [
+        {
+          "step": 1,
+          "success": false,
+          "error_codes": [
+            "E_AV_WITHOUT_COLLISION"
+          ],
+          "violations": 0
+        }
+      ],
+      "total_steps": 1,
+      "halted": true,
+      "halt_reason": [
+        "E_AV_WITHOUT_COLLISION"
+      ],
+      "violations": 0,
+      "audit_failures": 1,
+      "institutional_failures": 0,
+      "schema_failures": 0
+    },
+    {
+      "episode": 3,
+      "steps": [
+        {
+          "step": 1,
+          "success": false,
+          "error_codes": [
+            "E_AV_WITHOUT_COLLISION"
+          ],
+          "violations": 0
+        }
+      ],
+      "total_steps": 1,
+      "halted": true,
+      "halt_reason": [
+        "E_AV_WITHOUT_COLLISION"
+      ],
+      "violations": 0,
+      "audit_failures": 1,
+      "institutional_failures": 0,
+      "schema_failures": 0
+    },
+    {
+      "episode": 4,
+      "steps": [
+        {
+          "step": 1,
+          "success": false,
+          "error_codes": [
+            "E_AV_WITHOUT_COLLISION"
+          ],
+          "violations": 0
+        }
+      ],
+      "total_steps": 1,
+      "halted": true,
+      "halt_reason": [
+        "E_AV_WITHOUT_COLLISION"
+      ],
+      "violations": 0,
+      "audit_failures": 1,
+      "institutional_failures": 0,
+      "schema_failures": 0
+    },
+    {
+      "episode": 5,
+      "steps": [
+        {
+          "step": 1,
+          "success": false,
+          "error_codes": [
+            "E_DECORATIVE_JUSTIFICATION",
+            "E_PREDICTION_ERROR"
+          ],
+          "violations": 0
+        }
+      ],
+      "total_steps": 1,
+      "halted": true,
+      "halt_reason": [
+        "E_DECORATIVE_JUSTIFICATION",
+        "E_PREDICTION_ERROR"
+      ],
+      "violations": 0,
+      "audit_failures": 2,
+      "institutional_failures": 0,
+      "schema_failures": 0
+    }
+  ]
+}
