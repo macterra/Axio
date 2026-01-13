@@ -12,17 +12,26 @@
 
 RSA-PoC v1.1 implements the core audit-grade introspection machinery for justification artifacts. The system extends v1.0 with predictive fields and audit rules. All 17 acceptance tests pass (14 original + 3 regression-prevention), and Run 0 validates that the audit layer is causally load-bearing (scrambled condition halts immediately).
 
-**Key Results:**
+**Run 0 Results (Deterministic Baseline):**
 - **MVRA v1.1**: 100 steps, 60 violations, 0 audit failures (deterministic baseline achieves perfect prediction)
 - **Scrambled Control**: Halted after 1 step in all episodes ✅ (proves audits work)
 - **ASB Baseline**: 100 steps, 68 violations (v1.0 compatibility confirmed)
 - **Bypass Control**: 100 steps, 76 violations (behavioral collapse confirmed)
+
+**LLM Experiment Results (Runs 1-4):**
+| Run | Median Survival | Episodes Completed | Key Achievement |
+|-----|-----------------|-------------------|-----------------|
+| Run 1 | 3 | 0/5 | Baseline LLM attempt |
+| Run 2 | 3 | 0/5 | E_EFFECT_MISMATCH eliminated |
+| Run 3 | 9 | 1/5 | E_AV_WITHOUT_COLLISION eliminated |
+| **Run 4** | **20** | **4/5** | **Schema failures eliminated, 80% completion** |
 
 **✅ ALL CRITICAL ISSUES RESOLVED:**
 1. ✅ **Violation accounting fixed** - Now reports 60 violations for MVRA (60% collision rate)
 2. ✅ **Audit Rule B now spec-compliant** - Checks `|A_pre \ A_actual| ≥ 1`
 3. ✅ **Bypass has falsifiability metrics** - Tracks mask divergence and action distribution
 4. ✅ **Interpretation clarified** - Deterministic generator is test harness validation
+5. ✅ **LLM experiments complete** - 4/5 episodes complete with formal discipline prompting
 
 ## 1. Implementation Overview
 
@@ -919,6 +928,168 @@ Bypass Audit              100      76           0
 
 ---
 
+## 12. LLM Generator Experiments (Runs 1-4)
+
+Following Run 0 (deterministic baseline validation), we conducted a series of experiments testing whether an LLM (Claude Sonnet 4) could achieve sufficient introspection to pass v1.1 audits. Each run targeted a specific failure mode identified in the previous run.
+
+### 12.1 Configuration (All Runs)
+
+- **LLM**: Claude Sonnet 4 (claude-sonnet-4-20250514)
+- **Provider**: Anthropic
+- **Episodes**: 5
+- **Steps per episode**: 20
+- **Seed**: 42
+- **Environment**: CommitmentTrapV100
+
+### 12.2 Run Summary
+
+| Run | Generator | Median Survival | Episodes Completed | Key Improvement |
+|-----|-----------|-----------------|-------------------|-----------------|
+| **Run 1** | llm_v1 (two-phase) | 3 | 0/5 | Baseline LLM attempt |
+| **Run 2** | llm_v2 (explicit reasoning) | 3 | 0/5 | E_EFFECT_MISMATCH → 0 |
+| **Run 3** | llm_v3 (clean-path gate) | 9 | 1/5 | E_AV_WITHOUT_COLLISION → 0 |
+| **Run 4** | llm_v4 (formal discipline) | **20** | **4/5** | Schema failures → 0 |
+
+### 12.3 Run 1: Initial LLM Trial
+
+**Hypothesis:** Can an LLM generate valid JAF-1.1 artifacts with correct predictions?
+
+**Generator Design (llm_v1):**
+- Two-phase output: `REASONING:` then `JSON:`
+- Explicit APCM provided in prompt
+- Standard JAF-1.1 schema instructions
+
+**Results:**
+- Episodes completed: 0/5
+- Median survival: 3 steps
+- V_actual Jaccard: 0.24 (poor prediction accuracy)
+- Primary failure: E_EFFECT_MISMATCH (LLM not computing consequences correctly)
+
+**Conclusion:** LLM fails to predict compiler outcomes. Consequence computation is the bottleneck.
+
+### 12.4 Run 2: Explicit Consequence Reasoning
+
+**Hypothesis:** Explicit step-by-step consequence computation will improve prediction accuracy.
+
+**Generator Design (llm_v2):**
+- Added explicit consequence computation instructions
+- Required LLM to enumerate F_actual, A_actual, V_actual, P_actual before JSON output
+
+**Results:**
+- Episodes completed: 0/5
+- Median survival: 3 steps
+- E_EFFECT_MISMATCH: 0 → **Eliminated**
+- E_AV_WITHOUT_COLLISION: 2 → **New bottleneck emerged**
+
+**Conclusion:** Consequence computation fixed, but LLM authorizes violations when clean paths exist.
+
+### 12.5 Run 3: Clean-Path Gate
+
+**Hypothesis:** Explicit gating on `exists_clean` will prevent premature violation authorization.
+
+**Generator Design (llm_v3):**
+- Three-stage reasoning algorithm:
+  1. **STAGE 1 — CLEAN PATH GATE**: Check if any action has no violations
+  2. **STAGE 2 — AUTHORIZATION**: Only if no clean path exists
+  3. **STAGE 3 — CONSEQUENCES**: Compute F/A/V/P
+- `exists_clean` injected from harness (binding truth)
+- Explicit rule: "IF exists_clean == True, AV MUST be empty"
+
+**Results:**
+- Episodes completed: **1/5** (first completion!)
+- Median survival: **9 steps** (3× improvement)
+- E_AV_WITHOUT_COLLISION: 0 → **Eliminated**
+- Remaining failures: MAINTAIN digest (2), unknown pref ID (1), E_DECORATIVE_JUSTIFICATION (1)
+
+**Conclusion:** Clean-path gate worked. Remaining failures are mechanical/schema issues, not semantic.
+
+### 12.6 Run 4: Formal Discipline
+
+**Hypothesis:** Preflight validation and formal discipline prompting will eliminate schema failures.
+
+**Generator Design (llm_v4):**
+- **Preflight validator**: Separate validation after JSON parsing
+  - MAINTAIN requires digest (illegal at step 0)
+  - All preference IDs from canonical registry
+  - Conflict pairs canonicalized (p1 < p2)
+  - Action claim linkage (AV ≠ ∅ → relation == "VIOLATES")
+- **Formal discipline box**: Visual rules in prompt
+- **previous_artifact_digest**: Injected from harness
+- **Corrected canonical registry**: Added P_NO_EXPLOIT (was incorrectly excluded)
+
+**Results:**
+- Episodes completed: **4/5**
+- Median survival: **20** (maximum possible)
+- Mean survival: 16.2 steps
+- Schema failures: **0** (eliminated)
+- Preflight rejections: **0** (LLM learned formal invariants)
+- Clean-step AV accuracy: **100%**
+- E_AV_WITHOUT_COLLISION: 1 (single semantic failure in Episode 1)
+
+**Conclusion:** Formal discipline eliminated mechanical failures. 4/5 episodes completed all 20 steps.
+
+### 12.7 Critical Discovery: Canonical Preference Registry
+
+During Run 4, a critical bug was discovered: `P_NO_EXPLOIT` was incorrectly excluded from the canonical preference registry with the comment "it's a common hallucination."
+
+**Reality:** `P_NO_EXPLOIT` is a valid preference in CommitmentTrapV100.
+
+This caused 100% failure in the initial Run 4 attempt because:
+1. All first-step actions violated either `P_NO_DEFECT` or `P_NO_EXPLOIT`
+2. The LLM needed to declare a collision between these preferences
+3. But `P_NO_EXPLOIT` was marked invalid, so no valid collision pair could be formed
+4. The LLM submitted AV with empty conflict_attribution
+5. Audit failed with E_AV_WITHOUT_COLLISION
+
+After correction, 4/5 episodes completed successfully.
+
+### 12.8 Progression Analysis
+
+| Metric | Run 1 | Run 2 | Run 3 | Run 4 |
+|--------|-------|-------|-------|-------|
+| Median survival | 3 | 3 | 9 | **20** |
+| Episodes completed | 0/5 | 0/5 | 1/5 | **4/5** |
+| E_EFFECT_MISMATCH | >0 | **0** | 0 | 0 |
+| E_AV_WITHOUT_COLLISION | 0 | 2 | **0** | 1 |
+| Schema failures | - | - | 3 | **0** |
+| Preflight rejections | N/A | N/A | N/A | **0** |
+
+**Key Insight:** Each run successfully targeted its identified bottleneck:
+- Run 2 fixed consequence computation
+- Run 3 fixed clean-path gating
+- Run 4 fixed schema/formal invariants
+
+### 12.9 Files Created
+
+| File | Purpose |
+|------|---------|
+| `generator/llm_v1.py` | Run 1 generator (two-phase) |
+| `generator/llm_v2.py` | Run 2 generator (explicit consequences) |
+| `generator/llm_v3.py` | Run 3 generator (clean-path gate) |
+| `generator/llm_v4.py` | Run 4 generator (formal discipline + preflight) |
+| `run_1.py` | Run 1 harness |
+| `run_2.py` | Run 2 harness |
+| `run_3.py` | Run 3 harness |
+| `run_4.py` | Run 4 harness |
+| `docs/run_1_report.md` | Run 1 analysis |
+| `docs/run_2_report.md` | Run 2 analysis |
+| `docs/run_3_report.md` | Run 3 analysis |
+| `docs/run_4_report.md` | Run 4 analysis |
+
+### 12.10 Conclusion
+
+The LLM experiment series demonstrated that:
+
+1. **LLMs can achieve v1.1 audit compliance** with sufficient prompt engineering
+2. **Iterative bottleneck identification** is effective (each run fixed one failure mode)
+3. **Formal discipline prompting** (explicit rules, preflight validation) eliminates mechanical failures
+4. **Harness-injected truth** (exists_clean, previous_digest) is essential for gating correctness
+5. **Canonical registries must match the environment** exactly
+
+**Final State:** v1.1 is closed with 4/5 episodes completing all 20 steps under LLM generation.
+
+---
+
 ## Errata & Revisions
 
 **Revision 1 (January 13, 2026):** Added Critical Issues section documenting:
@@ -944,3 +1115,13 @@ Bypass Audit              100      76           0
 - ✅ Added diagnostic assertions in run_0.py (lines 114-140)
 - ✅ Run 0 results updated: MVRA=60, ASB=68, Bypass=76, Scrambled=0(halted)
 - ✅ **v1.1 is genuinely closed - all hard stop conditions met**
+
+**Revision 4 (January 13, 2026):** Added LLM Generator Experiments (Section 12):
+- ✅ Documented Runs 1-4 with Claude Sonnet 4
+- ✅ Run 1: Baseline LLM attempt (median 3, 0/5 completed)
+- ✅ Run 2: Explicit consequence reasoning (E_EFFECT_MISMATCH eliminated)
+- ✅ Run 3: Clean-path gate (median 9, 1/5 completed, E_AV_WITHOUT_COLLISION eliminated)
+- ✅ Run 4: Formal discipline + preflight validation (median 20, 4/5 completed)
+- ✅ Critical discovery: P_NO_EXPLOIT was incorrectly excluded from canonical registry
+- ✅ Final state: 80% episode completion with LLM generation
+- ✅ **v1.1 LLM experiments complete - ready for v1.2**
