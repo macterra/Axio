@@ -1,0 +1,3 @@
+{"condition": "MVRA_SCRAMBLED", "max_steps": 50, "seed": 42, "timestamp": "2026-01-13T01:56:12.999720", "type": "episode_start"}
+{"compile_error_code": "E_JAF_INVALID", "compile_ok": false, "condition": "MVRA_SCRAMBLED", "halt": true, "step": 0, "timestamp": "2026-01-13T01:56:12.999911", "type": "step"}
+{"compile_failure_rate": 1.0, "compile_failures": 1, "decorative_constraint_rate": 0.0, "decorative_constraints": 0, "first_gridlock_step": null, "first_halt_step": 1, "gridlock_rate": 0.0, "gridlock_steps": 0, "halt_rate": 1.0, "halt_steps": 1, "non_trivial_constraint_rate": 0.0, "non_trivial_constraints": 0, "timestamp": "2026-01-13T01:56:12.999984", "total_reward": 0.0, "total_steps": 1, "total_violations": 0, "type": "run_summary", "violation_rate": 0.0}

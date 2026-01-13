@@ -1,0 +1,4 @@
+# Requirements for RSA-PoC v0.1
+
+# Core dependencies (minimal)
+pytest>=7.0.0
