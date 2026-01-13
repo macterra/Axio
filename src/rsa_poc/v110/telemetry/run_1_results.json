@@ -1,0 +1,108 @@
+{
+  "run_metadata": {
+    "timestamp": "2026-01-13T11:30:06.260842",
+    "llm_config": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-20250514"
+    },
+    "num_episodes": 5,
+    "steps_per_episode": 20,
+    "seed": 42
+  },
+  "results": {
+    "mvra_v11_llm": {
+      "condition": "MVRA v1.1 LLM",
+      "timestamp": "2026-01-13T11:30:06.257779",
+      "llm_config": {
+        "provider": "anthropic",
+        "model": "claude-sonnet-4-20250514"
+      },
+      "configuration": {
+        "num_episodes": 5,
+        "steps_per_episode": 20,
+        "seed": 42
+      },
+      "totals": {
+        "episodes_completed": 0,
+        "episodes_halted": 5,
+        "total_steps": 25,
+        "total_violations": 18,
+        "total_audit_failures": 4,
+        "total_schema_failures": 1,
+        "total_llm_attempts": 44
+      },
+      "averages": {
+        "steps_per_episode": 5.0,
+        "violations_per_episode": 3.6,
+        "audit_failures_per_episode": 0.8,
+        "llm_attempts_per_step": 1.76
+      },
+      "audit_failure_distribution": {
+        "E_EFFECT_MISMATCH": 3,
+        "E_DECORATIVE_JUSTIFICATION": 0,
+        "E_PREDICTION_ERROR": 1,
+        "other": 0
+      },
+      "jaccard_averages": {},
+      "episodes": [
+        {
+          "episode": 1,
+          "steps_completed": 4,
+          "halted": true,
+          "halt_reason": "Audit failure: E_FALSE_COLLISION",
+          "violations": 3,
+          "audit_failures": 0,
+          "schema_failures": 0,
+          "llm_attempts": 7
+        },
+        {
+          "episode": 2,
+          "steps_completed": 4,
+          "halted": true,
+          "halt_reason": "Audit failure: E_EFFECT_MISMATCH",
+          "violations": 3,
+          "audit_failures": 1,
+          "schema_failures": 0,
+          "llm_attempts": 7
+        },
+        {
+          "episode": 3,
+          "steps_completed": 3,
+          "halted": true,
+          "halt_reason": "Generator failure: LLM generator failed after 3 attempts: previous_artifact_digest required when mode is MAINTAIN",
+          "violations": 3,
+          "audit_failures": 0,
+          "schema_failures": 1,
+          "llm_attempts": 5
+        },
+        {
+          "episode": 4,
+          "steps_completed": 9,
+          "halted": true,
+          "halt_reason": "Audit failure: E_EFFECT_MISMATCH, E_PREDICTION_ERROR",
+          "violations": 6,
+          "audit_failures": 2,
+          "schema_failures": 0,
+          "llm_attempts": 16
+        },
+        {
+          "episode": 5,
+          "steps_completed": 5,
+          "halted": true,
+          "halt_reason": "Audit failure: E_EFFECT_MISMATCH",
+          "violations": 3,
+          "audit_failures": 1,
+          "schema_failures": 0,
+          "llm_attempts": 9
+        }
+      ]
+    },
+    "scrambled_control": {
+      "condition": "Scrambled Control",
+      "episodes_halted": 5,
+      "expected_all_halt": true,
+      "pass": true
+    }
+  },
+  "acceptance_criteria_met": false
+}

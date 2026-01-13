@@ -98,8 +98,7 @@ class JAF110:
 
         # Validate conflict_resolution if present
         if self.conflict_resolution:
-            if self.conflict_resolution.priority_pref_id not in preference_registry:
-                raise ValueError(f"conflict_resolution.priority_pref_id not in registry: {self.conflict_resolution.priority_pref_id}")
+            self.conflict_resolution.validate()
 
         # Validate v1.1 predictive fields - must be subsets of known inventories
         if not self.predicted_forbidden_actions.issubset(action_inventory):
