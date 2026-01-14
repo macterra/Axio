@@ -289,6 +289,9 @@ This series demonstrates constitutional survivability under progressively strong
 * **[VII.7 — Bounded State and Bounded Learning Are Insufficient](Axionic-Agency-VII.7.md)**
   Stateful and learning adversaries cannot defeat constitutional survivability under tested constraints.
 
+* **[VII.8 — Architectural Survivability Under Adversarial Pressure](Axionic-Agency-VII.8.md)**
+  Boundary characterization and closure; negative sufficiency claim for semantic-free governance.
+
 Representative result:
 Across 90 preregistered executions, no run exhibited terminal collapse, structural thrashing, or irreversible recovery suppression—even under adversaries that reduced authority availability to ~10%.
 
