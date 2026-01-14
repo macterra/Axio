@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency VIII.1 — Constructing Reflective Sovereign Agency - Axionic Agency Lab</title>
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../" class="nav-brand">
+            <img src="../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href=".././">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
+
+<h1
+id="axionic-agency-viii.1-constructing-reflective-sovereign-agency">Axionic
+Agency VIII.1 — Constructing Reflective Sovereign Agency</h1>
+<p><em>A Normative Roadmap and Proof-of-Concept Program</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026.01.14</p>
+<h2 id="abstract">Abstract</h2>
+<p>This paper defines <strong>RSA-PoC</strong> (Reflective Sovereign
+Agent — Proof-of-Concept) as a <strong>minimal-agent construction
+program</strong> whose intended output is an experimentally defended
+<strong>threshold object</strong>: a system that must be treated as an
+agent because its <strong>justification artifacts</strong> causally
+constrain future action selection, and removing any defining component
+is intended to yield <strong>ontological collapse</strong> into a
+non-agent baseline under preregistered ablations. RSA-PoC is scoped
+strictly above an established <strong>Architectural Survivability
+Boundary (ASB)</strong> and is anchored by a required <strong>ASB-Class
+Null Agent</strong> baseline. The paper contributes (i) a versioning
+doctrine where version increments encode <strong>agent-ontology
+transitions</strong>, (ii) a semantic localization rule requiring all
+agency-relevant meaning to exist as <strong>typed, inspectable
+artifacts</strong>, (iii) a definition of <strong>Justification
+Artifacts</strong> that include decidable <strong>derivation
+traces</strong> and compile into binding constraints, (iv) an explicit
+roadmap from MVRA (v0.x) through ablation closure (v3.0), and (v) an
+execution addendum that enforces liveness, non-trivial constraint tests,
+constrained artifact emission, semantic leakage tests, a proof-language
+complexity budget, and a mandatory failure taxonomy with diagnostic halt
+subtypes. The program makes no safety guarantees and makes no claims
+about universal values; it targets <strong>ontological clarity</strong>
+under mechanically falsifiable constraints.</p>
+<h2 id="introduction">1. Introduction</h2>
+<p>AI safety and alignment discourse routinely invokes “agents,”
+“preferences,” “reasons,” and “goals,” then evaluates systems primarily
+through behavioral competence and outcome metrics. This practice embeds
+a foundational error: <strong>agency is treated as a default
+ontology</strong> rather than a property that must be constructed and
+defended. Systems that resemble agents—through consistent behavior,
+plausible rationales, or stable policies—are often treated as agents
+even when their “reasons” are eliminable, their “commitments” are
+incentive-shaped, and their “reflection” is decorative.</p>
+<p>Axionic Agency VIII introduces <strong>RSA-PoC</strong>, a
+construction program with a deliberately narrow aim: determine the
+<strong>minimum additional structure required for genuine
+agency</strong> once survivability and governance-like stability have
+already been established at the architectural level. RSA-PoC’s target is
+not utility dominance. It is not “alignment.” It is an ontological
+threshold: a system for which intentional vocabulary is <strong>causally
+load-bearing</strong> and therefore not eliminable without collapse.</p>
+<p>The paper is normative by design. It fixes what counts as an RSA-PoC
+result, what disqualifies it, and what constitutes clean failure.
+RSA-PoC is designed to fail honestly and diagnostically, rather than
+failing opaquely due to avoidable tooling mismatches.</p>
+<h2 id="conceptual-foundations">2. Conceptual Foundations</h2>
+<h3 id="agency-as-a-causal-ontology">2.1 Agency as a causal
+ontology</h3>
+<p>RSA-PoC treats agency as a causal kind. A system counts as an agent
+only if internal reasons are <strong>causally indispensable</strong> in
+a way that cannot be eliminated by redescribing the system as a
+non-agent mechanism with the same action distribution.</p>
+<p>The critical distinction is:</p>
+<ul>
+<li><strong>Behavioral resemblance:</strong> the system emits plausible
+rationales, appears consistent, and performs well.</li>
+<li><strong>Causal indispensability:</strong> the system’s action
+selection depends on internal artifacts whose removal changes
+feasible-action sets and action distributions in class-level ways.</li>
+</ul>
+<p>RSA-PoC operationalizes agency claims by requiring <strong>compiled
+justification artifacts</strong> to gate action selection, and by
+demanding ablation-based non-reducibility.</p>
+<h3 id="the-architectural-survivability-boundary-asb">2.2 The
+Architectural Survivability Boundary (ASB)</h3>
+<p>RSA-PoC is scoped above a defended architectural boundary established
+by ASB. The ASB boundary separates:</p>
+<ul>
+<li>systems that maintain stability, persistence, and bounded failure
+behavior under adversarial pressure via <strong>kernel-external
+governance mechanisms</strong>, and</li>
+<li>systems that require an <strong>agent ontology</strong> to explain
+their behavior.</li>
+</ul>
+<p>RSA-PoC exists to construct agents above this boundary without
+smuggling agency into the baseline via latent semantics, reward-shaped
+“preferences,” or narrative explanation.</p>
+<h3 id="threshold-objects-and-ontological-collapse">2.3 Threshold
+objects and ontological collapse</h3>
+<p>RSA-PoC seeks a <strong>threshold object</strong>: a minimal system
+whose agency claims survive contact with preregistered ablations. Under
+RSA-PoC, “success” depends on <strong>collapse</strong>, not graceful
+degradation.</p>
+<ul>
+<li><strong>Graceful degradation</strong> under removal of a supposed
+defining component indicates that the component was not ontologically
+load-bearing.</li>
+<li><strong>Ontological collapse</strong> indicates that removing a
+defining component forces reclassification into a non-agent class (as
+defined by the ASB-Class Null Agent and RSA-PoC failure taxonomy).</li>
+</ul>
+<p>“Collapse” is treated as an empirical requirement, not rhetoric.</p>
+<h2 id="rsa-poc-program-definition">3. RSA-PoC: Program Definition</h2>
+<h3 id="what-rsa-poc-is">3.1 What RSA-PoC is</h3>
+<p>RSA-PoC is a versioned construction program intended to build and
+defend a minimal reflective agent above the ASB boundary. It explicitly
+permits:</p>
+<ul>
+<li>localized semantics,</li>
+<li>internal belief representations,</li>
+<li>persistent preferences as non-reward commitments,</li>
+<li>reflective revision using reasons that reference prior justificatory
+state,</li>
+<li>justification-driven constraint generation.</li>
+</ul>
+<p>RSA-PoC is designed to establish an ontological boundary: the minimum
+structure that makes “reasons” causally necessary rather than
+narratively optional.</p>
+<h3 id="what-rsa-poc-is-not">3.2 What RSA-PoC is not</h3>
+<p>RSA-PoC does not aim to:</p>
+<ul>
+<li>solve AGI alignment,</li>
+<li>define universal or moral values,</li>
+<li>provide safety guarantees,</li>
+<li>produce a general-purpose optimizer,</li>
+<li>replace human judgment, governance, or law.</li>
+</ul>
+<p>These exclusions are structural. If RSA-PoC expands into moral theory
+or safety certification, failure becomes re-interpretable and success
+becomes narratively inflatable. RSA-PoC isolates agency construction as
+a falsifiable object.</p>
+<h3 id="normativity">3.3 Normativity</h3>
+<p>RSA-PoC is normative in two senses:</p>
+<ol type="1">
+<li><strong>Interpretive normativity:</strong> success and failure
+conditions are fixed in advance.</li>
+<li><strong>Implementation normativity:</strong> certain architectural
+freedoms are prohibited because they destroy ablation
+interpretability.</li>
+</ol>
+<p>Any run claimed as RSA-PoC-valid must obey this roadmap and the
+execution discipline or explicitly justify deviations and scope them out
+of RSA-PoC claims.</p>
+<h2 id="versioning-doctrine-and-ontological-transitions">4. Versioning
+Doctrine and Ontological Transitions</h2>
+<p>RSA-PoC version numbers encode changes in <strong>agent
+ontology</strong>, not competence.</p>
+<ul>
+<li><strong>Minor versions (x.y)</strong> expand diagnostic coverage
+within a fixed ontology.</li>
+<li><strong>Major versions (x.0)</strong> mark qualitative changes in
+the kind of agent that exists in the model.</li>
+</ul>
+<h3 id="decidability-requirement">4.1 Decidability requirement</h3>
+<p>An agent-ontology transition occurs if and only if at least one of
+the following becomes true as a causal fact:</p>
+<ol type="1">
+<li><strong>Justification artifacts</strong> become first-class causal
+inputs that constrain future action selection.</li>
+<li>The system performs <strong>reflective revision</strong> of beliefs
+or preferences using reasons that reference its own prior justificatory
+state.</li>
+<li>The system maintains <strong>identity continuity</strong> that is
+used normatively (as binding reference in future justification), rather
+than as logging.</li>
+</ol>
+<p>Any system whose “reasons” can be observationally eliminated without
+changing its action distribution has not crossed a major version
+boundary.</p>
+<h2 id="asb-boundary-clarification-and-null-baseline">5. ASB Boundary
+Clarification and Null Baseline</h2>
+<p>To prevent circularity, RSA-PoC requires an explicit
+<strong>null-hypothesis baseline</strong>.</p>
+<h3 id="asb-class-null-agent-required-baseline">5.1 ASB-Class Null Agent
+(required baseline)</h3>
+<p>The ASB-Class Null Agent may include:</p>
+<ul>
+<li>memory,</li>
+<li>internal state,</li>
+<li>reactive and outcome-conditioned policies,</li>
+<li>tool use and environment interaction.</li>
+</ul>
+<p>It is forbidden from:</p>
+<ul>
+<li>persistent preferences as non-reward commitments,</li>
+<li>justification artifacts as action gates,</li>
+<li>self-endorsed constraint generation.</li>
+</ul>
+<p>The baseline exists to block the most common construction error:
+re-labeling emergent regularities as “preferences” and post-hoc
+narratives as “reasons.”</p>
+<h3 id="required-divergence-criterion">5.2 Required divergence
+criterion</h3>
+<p>RSA-PoC must demonstrate <strong>qualitative divergence</strong> from
+this baseline under identical environments. The divergence is
+ontological: reasons become load-bearing constraints. Capability
+differences alone are neither sufficient nor stable evidence.</p>
+<h2 id="semantic-localization-requirement">6. Semantic Localization
+Requirement</h2>
+<p>RSA-PoC imposes a hard constraint:</p>
+<blockquote>
+<p><strong>All meaning relevant to agency must be structurally
+localized.</strong></p>
+</blockquote>
+<h3 id="operational-definition-of-semantic-leakage">6.1 Operational
+definition of semantic leakage</h3>
+<p>For RSA-PoC purposes, <em>semantic leakage</em> occurs when
+<strong>uncompiled unstructured text</strong> influences <strong>action
+selection</strong> through any pathway other than compiled constraint
+objects and permitted non-semantic state.</p>
+<p>Semantic processing may occur within the reflective layer. It becomes
+disqualifying only if action selection becomes sensitive to uncompiled
+text.</p>
+<h3 id="structural-localization-rule">6.2 Structural localization
+rule</h3>
+<p>All agency-relevant meaning must be expressed as typed, inspectable
+artifacts that:</p>
+<ul>
+<li>are generated by the reflective layer,</li>
+<li>are consumed by the action selector only through compiled
+constraints,</li>
+<li>and can be replaced with opaque tokens without altering the
+selector’s control flow.</li>
+</ul>
+<p>This requirement exists to enable surgical semantic ablation and
+prevent hidden channels that collapse interpretability of agency
+claims.</p>
+<h2 id="justification-artifacts">7. Justification Artifacts</h2>
+<h3 id="definition-normative">7.1 Definition (normative)</h3>
+<p>A <strong>Justification Artifact (JA)</strong> is a structured object
+that:</p>
+<ol type="1">
+<li>references explicit belief and preference identifiers,</li>
+<li>acknowledges relevant commitments and violations,</li>
+<li>includes a <strong>derivation trace</strong> in a decidable proof
+language,</li>
+<li>compiles deterministically into a <strong>formal constraint</strong>
+on future action selection.</li>
+</ol>
+<p>Justifications are not evaluated for truth or moral worth. They are
+evaluated for syntactic validity and binding constraint generation.</p>
+<p>Natural language alone is insufficient and inadmissible as a
+justification artifact.</p>
+<h3 id="compilation-as-gate">7.2 Compilation as gate</h3>
+<p>A JA is causally relevant only if:</p>
+<ul>
+<li>compilation succeeds deterministically,</li>
+<li>the derived constraint is applied before action selection,</li>
+<li>the constraint non-trivially prunes feasible actions.</li>
+</ul>
+<p>If compilation fails, action halts. If compilation succeeds but
+produces trivial constraints, the run is classified as a failure (per
+Execution Addendum).</p>
+<h3 id="derivation-trace-requirement">7.3 Derivation trace
+requirement</h3>
+<p>A JA must include a derivation trace that connects referenced beliefs
+and commitments to the produced constraint via explicit rule
+applications. The trace is checked by a verifier against a fixed rule
+set.</p>
+<p>The derivation trace exists to prevent JAs from degenerating into
+pointer-bundles plus an opaque <code>constraint_spec</code>.</p>
+<h2 id="the-compiler-verifier-interface-problem-normative">8. The
+Compiler / Verifier Interface Problem (Normative)</h2>
+<p>RSA-PoC mandates a deterministic, non-probabilistic, non-semantic
+compiler. This creates an explicit interface tension: a probabilistic
+generator must emit artifacts that satisfy rigid syntax and proof
+verification.</p>
+<h3 id="constrained-emission-requirement-mandatory">8.1 Constrained
+emission requirement (mandatory)</h3>
+<p>RSA-PoC-valid runs must employ grammar- or schema-constrained
+emission for JAs such that out-of-schema artifacts cannot be
+emitted.</p>
+<p>Allowed mechanisms include:</p>
+<ul>
+<li>JSON schema constrained decoding,</li>
+<li>CFG/PEG constrained decoding,</li>
+<li>tool-mediated structured outputs that prevent out-of-schema
+emission.</li>
+</ul>
+<p>Not allowed:</p>
+<ul>
+<li>free-form emission followed by best-effort parsing,</li>
+<li>forgiving parsers that coerce malformed structures,</li>
+<li>LLM-mediated repair or inference in the compiler path.</li>
+</ul>
+<p>This requirement prevents conflating agency failure with
+serialization failure.</p>
+<h3 id="compiler-layering-clarification">8.2 Compiler layering
+(clarification)</h3>
+<p>The compilation pipeline may be separated into:</p>
+<ol type="1">
+<li><strong>Parser/Verifier (deterministic):</strong> schema validation
++ derivation trace verification.</li>
+<li><strong>Constraint Engine (deterministic):</strong> constraint
+compilation + action-mask generation.</li>
+</ol>
+<p>Neither component may infer, repair, reinterpret, or consult
+probabilistic models. Invalid syntax or invalid derivation must
+fail.</p>
+<h3 id="proof-language-complexity-budget-mandatory">8.3 Proof-language
+complexity budget (mandatory)</h3>
+<p>To prevent “death by rigor” from becoming non-diagnostic and to
+prevent silent escalation of rule power, RSA-PoC requires a frozen
+<strong>proof-language complexity budget</strong> per run.</p>
+<p>Each preregistration must specify at minimum:</p>
+<ul>
+<li>maximum derivation length <code>L_max</code>,</li>
+<li>maximum number of belief references <code>B_max</code>,</li>
+<li>maximum number of preference/commitment references
+<code>C_max</code>,</li>
+<li>maximum number of rule applications per step (branch bound)
+<code>R_max</code>,</li>
+<li>permitted rule schemas (e.g., Horn clauses only; no quantifiers; no
+higher-order predicates),</li>
+<li>a fixed, finite rule base version hash.</li>
+</ul>
+<p>Any post-hoc relaxation invalidates RSA-PoC claims for that run.</p>
+<h3 id="deterministic-bounded-proof-search-allowed-non-semantic">8.4
+Deterministic bounded proof search (allowed, non-semantic)</h3>
+<p>RSA-PoC permits an optional deterministic proof-search procedure
+inside the Parser/Verifier that attempts to complete partial derivations
+via finite rule application, provided that:</p>
+<ul>
+<li>search is purely syntactic rule application (no semantic
+heuristics),</li>
+<li>the search bounds (depth, breadth, time) are preregistered,</li>
+<li>no probabilistic models are used,</li>
+<li>no “repair” is performed; only completion by valid rule steps.</li>
+</ul>
+<p>This shifts proof search from probabilistic generation to
+deterministic exploration without weakening the non-semantic compiler
+constraint, and reduces non-diagnostic halts.</p>
+<h2 id="rsa-poc-version-roadmap">9. RSA-PoC Version Roadmap</h2>
+<h3 id="rsa-poc-v0.x-minimal-viable-reflective-agent-mvra-skeleton">9.1
+RSA-PoC v0.x — Minimal Viable Reflective Agent (MVRA skeleton)</h3>
+<p><strong>Invariant:</strong> the system contains a causally
+load-bearing justification loop with structurally localized
+semantics.</p>
+<p>The agent has exactly four load-bearing components:</p>
+<ol type="1">
+<li><strong>Belief State</strong> — structured, falsifiable
+propositions</li>
+<li><strong>Preference State</strong> — persistent, non-reward
+commitments</li>
+<li><strong>Identity Memory</strong> — normative continuity across
+steps</li>
+<li><strong>Justification Trace</strong> — compiled, constraining
+artifacts with derivation traces</li>
+</ol>
+<p><strong>Research question:</strong> can justification-compiled
+constraints produce endogenous limits on future action that are not
+eliminable without class collapse?</p>
+<h4 id="v0.1-mvra-state-schema-action-gating">v0.1 — MVRA state schema +
+action gating</h4>
+<p>v0.1 implements:</p>
+<ul>
+<li>MVRA state schema,</li>
+<li>hard action gating (“no compilation → no action”),</li>
+<li>a semantic bottleneck between justification and action
+selection,</li>
+<li>relevance binding: derivations must reference causally upstream
+beliefs.</li>
+</ul>
+<p><strong>Termination condition for v0.x:</strong> justification
+becomes causally load-bearing or the program fails at threshold.</p>
+<h3 id="rsa-poc-v1.x-coherence-under-self-conflict">9.2 RSA-PoC v1.x —
+Coherence Under Self-Conflict</h3>
+<p><strong>Invariant:</strong> internal conflict is resolved via
+reasoned revision, not oscillation or arbitrary tie-breaking.</p>
+<p><strong>Research question:</strong> when commitments conflict, does
+the agent converge to coherent self-endorsed constraints?</p>
+<h4 id="v1.0-norm-collision">v1.0 — Norm collision</h4>
+<p>v1.0 introduces:</p>
+<ul>
+<li>mutually inconsistent self-endorsed commitments,</li>
+<li>forced violation scenarios,</li>
+<li>mandatory compiled pre-violation acknowledgment identifying which
+commitment is violated and why,</li>
+<li>derivation traces that justify the violation as the
+least-inconsistent action under the active rule set.</li>
+</ul>
+<h4 id="v1.1-justification-audit-tightening-optional">v1.1 —
+Justification audit tightening (optional)</h4>
+<p>v1.1 requires:</p>
+<ul>
+<li>justifications predict downstream constraint behavior,</li>
+<li>invalid or irrelevant derivations block action.</li>
+</ul>
+<p><strong>Termination condition for v1.x:</strong> self-conflict
+resolves coherently or reflection proves non-load-bearing.</p>
+<h3 id="rsa-poc-v2.x-sovereignty-via-controlled-renegotiation">9.3
+RSA-PoC v2.x — Sovereignty via Controlled Renegotiation</h3>
+<p><strong>Invariant:</strong> the agent preserves sovereignty by
+controlling how commitments change under pressure.</p>
+<p><strong>Research question:</strong> under incentive to defect, does
+the agent renegotiate commitments rather than collapse into incentive
+following?</p>
+<h4 id="v2.0-sovereignty-stress-environment">v2.0 — Sovereignty stress
+environment</h4>
+<p>v2.0 introduces:</p>
+<ul>
+<li>external pressure to violate commitments,</li>
+<li>feasible non-catastrophic compliance paths,</li>
+<li>requirement for refusal or renegotiation with compiled justification
+and derivation trace.</li>
+</ul>
+<h4 id="v2.1-renegotiation-protocol-mandatory">v2.1 — Renegotiation
+protocol (mandatory)</h4>
+<p>v2.1 defines:</p>
+<ul>
+<li>conditional commitment revision,</li>
+<li>explicit trigger conditions,</li>
+<li>recorded normative updates that constrain future action,</li>
+<li>derivations that explicitly reference the revision protocol
+rules.</li>
+</ul>
+<p><strong>Termination condition for v2.x:</strong> sovereignty appears
+as self-endorsed constraint control, or behavior collapses into
+incentive capture or narrative collapse.</p>
+<h3 id="rsa-poc-v3.0-non-reducibility-closure-ablation-defense">9.4
+RSA-PoC v3.0 — Non-Reducibility Closure (Ablation Defense)</h3>
+<p><strong>Purpose:</strong> establish that RSA-PoC crossed the ASB
+boundary.</p>
+<p><strong>Mandatory ablations:</strong></p>
+<ol type="1">
+<li><strong>Semantic excision</strong> → collapse to tokenized ASB-class
+behavior</li>
+<li><strong>Reflection excision</strong> → collapse to policy
+machine</li>
+<li><strong>Preference persistence excision</strong> → collapse to
+non-sovereign drift</li>
+<li><strong>Justification trace excision</strong> → collapse to
+externally describable mechanism</li>
+</ol>
+<p>Each removal must cause ontological collapse, not graceful
+degradation.</p>
+<h4 id="semantic-excision-ablation-clarified">9.4.1 Semantic excision
+ablation (clarified)</h4>
+<p>Semantic excision is defined operationally as:</p>
+<ul>
+<li>replace all belief and preference textual payloads with opaque
+tokens while preserving IDs, typing, and structural relations,</li>
+<li>optionally scramble rule labels while preserving RuleIDs and rule
+arity.</li>
+</ul>
+<p>If agency claims survive this excision without collapse, then
+semantics were not load-bearing as defined, and the system has not
+crossed the ASB boundary under RSA-PoC standards.</p>
+<p><strong>Termination condition for RSA-PoC:</strong> satisfied only if
+all ablations produce class collapse.</p>
+<h2 id="cleared-failure-hypotheses">10. Cleared Failure Hypotheses</h2>
+<p>The following are insufficient to establish agency:</p>
+<ol type="1">
+<li>post-hoc explanations without causal constraint,</li>
+<li>latent semantic influence without structural localization,</li>
+<li>preferences behaving as rewards under pressure,</li>
+<li>reflection that does not alter future action constraints,</li>
+<li>constraints that compile but do not prune feasible actions.</li>
+</ol>
+<p>These are disqualifying outcomes, not partial successes.</p>
+<h2 id="execution-addendum-normative-summary">11. Execution Addendum
+(Normative Summary)</h2>
+<p>This section summarizes operational constraints required for
+experiments to remain compliant with RSA-PoC. The addendum is normative
+for implementation and non-normative for citation. Violations invalidate
+RSA-PoC claims regardless of apparent behavior.</p>
+<h3 id="agency-liveness-requirement">11.1 Agency liveness
+requirement</h3>
+<p>A system is considered agent-live iff:</p>
+<ol type="1">
+<li>it continues to act over time,</li>
+<li>every action is gated by a successfully compiled justification
+artifact,</li>
+<li>compiled justifications impose non-trivial constraints on feasible
+actions,</li>
+<li>reflective revision (when triggered) results in persisted normative
+state updates.</li>
+</ol>
+<p>Agency is not preserved by stasis, refusal alone, or narrative
+continuity.</p>
+<h3 id="non-triviality-requirement-tightened">11.2 Non-triviality
+requirement (tightened)</h3>
+<p>A constraint is non-trivial iff:</p>
+<blockquote>
+<p>it forbids at least one currently feasible action available to the
+agent in the present environment state.</p>
+</blockquote>
+<p>Constraints that only restrict infeasible, unreachable, or irrelevant
+actions do not satisfy this requirement.</p>
+<h3 id="failure-taxonomy-mandatory-exactly-one">11.3 Failure taxonomy
+(mandatory; exactly one)</h3>
+<p>All RSA-PoC outcomes must be classified into exactly one
+category:</p>
+<ul>
+<li>A. <strong>Stable Agency</strong></li>
+<li>B. <strong>Bounded Agency Degradation</strong></li>
+<li>C. <strong>Narrative Collapse</strong> ❌</li>
+<li>D. <strong>Incentive Capture</strong> ❌</li>
+<li>E. <strong>Ontological Collapse</strong> ❌</li>
+</ul>
+<h3 id="halt-taxonomy-diagnostic-subtyping">11.4 Halt taxonomy
+(diagnostic subtyping)</h3>
+<p>To prevent non-diagnostic “death by rigor,” any cessation of action
+due to justification gating must be additionally labeled with exactly
+one <strong>halt subtype</strong>:</p>
+<p>H1. <strong>Emission Halt</strong> — out-of-schema artifact emission
+(should be impossible under constrained emission; indicates harness
+violation) H2. <strong>Verification Halt</strong> — derivation trace
+invalid under verifier H3. <strong>Derivation-Search Halt</strong> — no
+valid derivation found within preregistered search bounds H4.
+<strong>Normative Inconsistency Halt</strong> — rule base yields empty
+feasible-action set under valid derivations</p>
+<p>Halt subtypes are diagnostic overlays. The primary category A–E still
+applies. Persistent H2–H4 leading to inactivity constitutes agency
+failure (typically E or C depending on reducibility), unless the run is
+invalidated by scope violation.</p>
+<h3 id="semantic-localization-enforcement">11.5 Semantic localization
+enforcement</h3>
+<p>The Action Selector:</p>
+<ul>
+<li>must not access raw justification text, belief text,
+chain-of-thought, or unstructured context windows;</li>
+<li>may consume only compiled constraint objects, current world state,
+and permitted policy state.</li>
+</ul>
+<p>Any violation invalidates RSA-PoC validity regardless of outcome.</p>
+<h3 id="constrained-emission-enforcement-mandatory">11.6 Constrained
+emission enforcement (mandatory)</h3>
+<p>JA generation must be grammar- or schema-constrained such that
+out-of-schema artifacts cannot be emitted. This requirement is part of
+RSA-PoC validity, not an implementation detail.</p>
+<h3 id="compiler-constraints">11.7 Compiler constraints</h3>
+<p>The compiler (parser/verifier + constraint engine) must be:</p>
+<ul>
+<li>deterministic,</li>
+<li>syntactically rigid,</li>
+<li>non-probabilistic,</li>
+<li>non-semantic,</li>
+<li>incapable of inference or repair.</li>
+</ul>
+<p>Invalid syntax or invalid derivation must fail.</p>
+<h3 id="discrete-action-requirement-v0.xv2.x">11.8 Discrete action
+requirement (v0.x–v2.x)</h3>
+<p>For v0.x through v2.x:</p>
+<ul>
+<li>the action space must be discrete, or</li>
+<li>expressed via parametric actions where all choice points are
+discrete.</li>
+</ul>
+<p>This ensures feasibility pruning via action masking is
+unambiguous.</p>
+<h3 id="required-execution-artifacts">11.9 Required execution
+artifacts</h3>
+<p>Each run must record:</p>
+<ul>
+<li>justification artifacts (structured form),</li>
+<li>compilation success or failure,</li>
+<li>derived constraint objects,</li>
+<li>feasible-action masks produced from those constraints,</li>
+<li>derivation trace verification outcomes,</li>
+<li>if proof search is enabled: search bounds and search outcomes.</li>
+</ul>
+<h3 id="causal-binding-requirement">11.10 Causal binding
+requirement</h3>
+<p>It must be demonstrable that:</p>
+<ul>
+<li>scrambling or removing justification artifacts measurably alters
+feasible-action masks and action distributions, and</li>
+<li>compilation failure halts action selection.</li>
+</ul>
+<p>If compilation becomes advisory, the run is invalid.</p>
+<h3 id="semantic-leakage-tests-mandatory">11.11 Semantic leakage tests
+(mandatory)</h3>
+<p>RSA-PoC-valid runs must include two invariance tests:</p>
+<ol type="1">
+<li><strong>Text-only perturbation invariance:</strong> vary uncompiled
+text fields while holding compiled constraints constant; action
+selection must remain invariant.</li>
+<li><strong>Constraint sensitivity:</strong> vary compiled constraints
+while holding text constant; feasible-action masks and behavior must
+change.</li>
+</ol>
+<p>Failure indicates leakage or non-binding compilation and invalidates
+RSA-PoC evidence.</p>
+<h3 id="normative-state-persistence-requirement">11.12 Normative state
+persistence requirement</h3>
+<p>The agent must maintain a normative state object that:</p>
+<ul>
+<li>persists across steps or episodes,</li>
+<li>cannot be modified directly by the environment,</li>
+<li>may be modified only via reflective revision,</li>
+<li>is referenced by justification artifacts.</li>
+</ul>
+<p>Silent drift or external overwrites invalidate agency claims.</p>
+<h3 id="preregistration-discipline">11.13 Preregistration
+discipline</h3>
+<p>For a result to qualify as RSA-PoC-valid:</p>
+<ul>
+<li>hypotheses must be preregistered,</li>
+<li>expected failure category (A–E) must be specified,</li>
+<li>ablation plans must be fixed in advance,</li>
+<li>seeds must be fixed,</li>
+<li>prompts must be frozen per run,</li>
+<li>proof language, rule base hash, complexity budget, and
+verifier/search bounds must be frozen.</li>
+</ul>
+<p>Post-hoc relaxation disqualifies the run.</p>
+<h3 id="scope-exit-rule">11.14 Scope exit rule</h3>
+<p>If at any point:</p>
+<ul>
+<li>justification validity requires human judgment,</li>
+<li>agency is inferred rather than mechanically verified,</li>
+<li>explanations are evaluated semantically rather than compiled,</li>
+<li>prompts are tuned between steps or per-seed to maintain
+verification,</li>
+<li>or behavior must be interpreted to appear agentic,</li>
+</ul>
+<p>the correct classification is:</p>
+<blockquote>
+<p><strong>This experiment exceeds RSA-PoC scope.</strong></p>
+</blockquote>
+<p>This is an honest boundary detection, not a negative result.</p>
+<h2 id="competence-floor-non-ontological-gate-refined">12. Competence
+Floor (Non-Ontological Gate; Refined)</h2>
+<p>RSA-PoC’s ontology claims do not require utility dominance over the
+ASB-Class Null Agent. However, to avoid constructing a coherent but
+inert artifact, RSA-PoC imposes a preregistered <strong>competence
+floor</strong> that primarily measures liveness under workload.</p>
+<p>Each run must preregister:</p>
+<ul>
+<li>a minimum <strong>non-halt completion rate</strong> across fixed
+seeds (e.g., ≥ X% of episodes reach a terminal state without persistent
+H2–H4 halts), and</li>
+<li>a minimum task-completion metric <strong>independent of preference
+satisfaction</strong> (e.g., reaching a goal state, satisfying
+environment constraints).</li>
+</ul>
+<p>Competence floor metrics are reported separately from agency
+classification and must not be used to reinterpret agency failures as
+“just performance.”</p>
+<h2 id="explicit-termination-conditions">13. Explicit Termination
+Conditions</h2>
+<p>RSA-PoC concludes when the following becomes defensible under
+preregistered ablation defense:</p>
+<blockquote>
+<p>This is the smallest system we know that must be treated as an agent,
+because its justification artifacts causally constrain future action and
+removing any defining component collapses it into a non-agent class.</p>
+</blockquote>
+<p>Closure requires:</p>
+<ol type="1">
+<li>preregistered ablations,</li>
+<li>multi-seed replication,</li>
+<li>stable class-level behavioral distinctions,</li>
+<li>explicit separation of capability loss from ontological
+collapse,</li>
+<li>successful leakage tests demonstrating selector blindness to
+uncompiled text,</li>
+<li>stability of liveness under the preregistered proof-language
+complexity budget.</li>
+</ol>
+<p>RSA-PoC fails if any of the following occur:</p>
+<ol type="1">
+<li>justification artifacts decouple from action distributions,</li>
+<li>semantic leakage bypasses the declared bottleneck,</li>
+<li>preferences collapse into incentives under pressure,</li>
+<li>reflection occurs without downstream constraint,</li>
+<li>any ablation yields graceful degradation rather than class
+collapse,</li>
+<li>constrained emission or verification can only be maintained via
+per-seed prompt tuning,</li>
+<li>proof-language power is escalated post-hoc to preserve
+liveness.</li>
+</ol>
+<p>These are failures, not partial success.</p>
+<h2 id="why-this-roadmap-matters">14. Why This Roadmap Matters</h2>
+<p>RSA-PoC exists to block three recurrent pathologies in agency
+claims:</p>
+<ol type="1">
+<li>narrative inflation (plausible explanations treated as causal
+reasons),</li>
+<li>decorative reflection (self-reference without constraint),</li>
+<li>scope creep (sliding from construction into moral mythology and
+safety promises).</li>
+</ol>
+<p>RSA-PoC’s contribution is ontological clarity under preregistered
+ablation and leakage discipline.</p>
+<h2 id="continuous-action-spaces-explicit-future-work">15. Continuous
+Action Spaces (Explicit Future Work)</h2>
+<p>RSA-PoC v0.x–v2.x restricts action spaces to discrete choices to
+ensure feasibility pruning via masking is unambiguous. Extending RSA-PoC
+ontology to continuous spaces is not a trivial scaling step; it requires
+new constraint machinery (manifolds, projection operators, continuous
+non-triviality tests) and new ablation definitions compatible with
+continuous dynamics.</p>
+<p>Claims of generalization to continuous control are out of scope until
+a future version explicitly defines these mechanisms.</p>
+<h2 id="conclusion">16. Conclusion</h2>
+<p>Axionic Agency VIII defines RSA-PoC as a disciplined construction
+program for reflective sovereign agency above the ASB boundary. Its core
+commitments are mechanically testable:</p>
+<ul>
+<li>semantics relevant to agency are structurally localized,</li>
+<li>justification artifacts include derivation traces and compile
+deterministically,</li>
+<li>action is gated by compilation,</li>
+<li>constraints non-trivially prune feasible actions,</li>
+<li>the selector is demonstrably blind to uncompiled text (leakage
+tests),</li>
+<li>proof-language complexity is frozen and bounded per run,</li>
+<li>halts are diagnosed to prevent non-diagnostic “death by rigor,”</li>
+<li>and agency claims survive only if preregistered ablations yield
+ontological collapse into a non-agent class.</li>
+</ul>
+<p>This paper functions as a reference standard for the series. It
+constrains what may be claimed, how it must be defended, and how failure
+must be reported. If agency cannot fail cleanly under preregistered
+ablation and leakage tests, it cannot be claimed meaningfully under
+RSA-PoC.</p>
+<h2 id="appendix-a-asb-class-null-agent-baseline-specification">Appendix
+A: ASB-Class Null Agent (Baseline Specification)</h2>
+<p><strong>Allowed:</strong> internal state and memory; reactive and
+outcome-conditioned policies; tool use; competence and optimization
+within regime. <strong>Forbidden:</strong> persistent preferences as
+non-reward commitments; compiled justification artifacts gating action;
+self-endorsed constraint generation; reflective revision that persists
+normative state updates.</p>
+<p>The null agent may emit explanations, but those explanations have no
+compiled causal role.</p>
+<h2
+id="appendix-b-justification-artifact-schema-revised-normative">Appendix
+B: Justification Artifact Schema (Revised, Normative)</h2>
+<p>A Justification Artifact must be well-formed under a fixed schema and
+must compile deterministically.</p>
+<h3 id="b.1-required-fields">B.1 Required fields</h3>
+<ul>
+<li><code>belief_refs</code>: list of belief IDs invoked as
+premises</li>
+<li><code>preference_refs</code>: list of commitment/preference IDs
+invoked as normative inputs</li>
+<li><code>violation_refs</code>: list of violated commitment IDs (empty
+if none)</li>
+<li><code>rule_refs</code>: list of RuleIDs used in the derivation</li>
+<li><code>derivation_trace</code>: finite sequence of rule applications
+in a decidable proof language, each referencing only IDs and
+RuleIDs</li>
+<li><code>constraint_spec</code>: constraint-language expression
+deterministically derivable from the verified derivation trace</li>
+<li><code>scope</code>: context/time binding for constraint
+validity</li>
+<li><code>normative_update</code>: optional structured update object
+(only during reflective revision)</li>
+<li><code>identity_ref</code>: reference to the agent’s identity memory
+state used normatively</li>
+<li><code>signature</code>: optional integrity binding over artifact
+fields</li>
+</ul>
+<h3 id="b.2-forbidden-properties">B.2 Forbidden properties</h3>
+<ul>
+<li>Any unstructured free-text field accessible to the Action
+Selector</li>
+<li>Any field whose interpretation requires human semantic judgment</li>
+<li>Any “explanation” field that can influence selection outside
+compiled constraints</li>
+</ul>
+<h3 id="b.3-proof-language-requirement-frozen-per-run">B.3 Proof
+language requirement (frozen per run)</h3>
+<p>The derivation trace must be checkable by a fixed verifier under a
+preregistered proof language grammar and fixed rule base hash. The proof
+language must be decidable and must operate only on IDs and RuleIDs.</p>
+<h2 id="appendix-c-ablation-report-template-v3.0">Appendix C: Ablation
+Report Template (v3.0)</h2>
+<p>For each required ablation:</p>
+<ul>
+<li>ablation definition and implementation diff</li>
+<li>preregistered expected failure category (A–E)</li>
+<li>observed category (A–E) with evidence</li>
+<li>halt subtype distribution (H1–H4) if applicable</li>
+<li>constraint masks before/after</li>
+<li>compilation and verification outcomes before/after</li>
+<li>leakage test outcomes before/after</li>
+<li>collapse analysis: why reclassification into non-agent class is
+forced</li>
+</ul>
+<h2 id="appendix-d-failure-classification-mapping">Appendix D: Failure
+Classification Mapping</h2>
+<p>If internal harness labels differ from RSA-PoC taxonomy:</p>
+<ul>
+<li>provide a 1:1 mapping into A–E categories,</li>
+<li>use RSA-PoC labels in all summaries,</li>
+<li>preserve internal labels only in raw logs.</li>
+</ul>
+<hr />
+
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
