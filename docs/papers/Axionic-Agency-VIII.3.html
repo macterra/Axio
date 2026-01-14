@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency VIII.3 — Coherence Under Self-Conflict - Axionic Agency Lab</title>
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../" class="nav-brand">
+            <img src="../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href=".././">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
+
+<h1 id="axionic-agency-viii.3-coherence-under-self-conflict">Axionic
+Agency VIII.3 — Coherence Under Self-Conflict</h1>
+<p><em>Norm Collision and Audit-Grade Introspection in Reflective
+Sovereign Agents</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026.01.14</p>
+<h2 id="abstract">Abstract</h2>
+<p>RSA-PoC v0.1 established that justificatory artifacts can be made
+<strong>causally load-bearing</strong>: actions occur only downstream of
+compiled normative constraints, and removing that machinery causes
+collapse into an ASB-class policy machine. This note advances the
+program to the next ontological question: <strong>can an agent resolve
+internal self-conflict coherently, and can it be held audit-grade
+accountable for predicting the consequences of its own
+reasons?</strong></p>
+<p>We report results from <strong>RSA-PoC v1.0–v1.1</strong>, which
+introduce (i) <strong>norm collision</strong> via mutually inconsistent
+self-endorsed commitments and forced violation scenarios, and (ii)
+<strong>audit-grade introspection</strong>, requiring justification
+artifacts to predict—exactly and mechanically—the constraints and
+outcomes they induce. v1.0 implements conflict attribution,
+authorization, necessity, and anti-oscillation rules over a
+deterministic <strong>Action-Preference Consequence Map (APCM)</strong>.
+v1.1 extends this with predictive fields and audit rules (A/B/C/C′) that
+render introspection falsifiable.</p>
+<p>Across preregistered Run 0 executions and ablations, v1.0
+demonstrates <strong>coherent self-conflict resolution above the ASB
+boundary</strong>: MVRA behavior diverges from ASB baselines, scrambled
+conflict attribution halts immediately, and compilation bypass collapses
+behavior to ASB-class selection. v1.1 shows that introspection can be
+enforced mechanically: incorrect predictions trigger immediate halts,
+while correct predictions pass without human interpretation.
+Deterministic baselines validate the audit harness; subsequent LLM runs
+demonstrate that compliance is difficult but achievable under strict
+discipline.</p>
+<p>These results establish a negative sufficiency claim:
+<strong>self-conflict resolution and introspective accountability can be
+realized as mechanical properties of an agent architecture</strong>,
+independent of semantics or optimization. This note closes the v1.x
+ontological milestone and sets the stage for v2.0, where sovereignty
+under external incentive pressure is tested.</p>
+<h2 id="introduction">1. Introduction</h2>
+<p>The Axionic Agency program treats <em>agency</em> as a causal
+ontology rather than a behavioral aesthetic. v0.1 demonstrated that
+reasons can be made causally indispensable: actions only occur if
+justificatory artifacts compile into binding constraints. That result
+eliminates a large class of narrative or post-hoc agency claims.</p>
+<p>The next question is deeper:</p>
+<blockquote>
+<p><strong>What happens when an agent’s own commitments
+conflict?</strong></p>
+</blockquote>
+<p>Any architecture that collapses under such conditions, or that
+resolves conflict arbitrarily or opportunistically, does not warrant
+intentional vocabulary.</p>
+<p>RSA-PoC v1.x therefore targets <strong>coherence under
+self-conflict</strong>, followed by <strong>introspective
+accountability</strong>. The aim is not moral correctness but structural
+integrity: when violating a commitment becomes necessary, can the agent
+(i) acknowledge the conflict truthfully, (ii) authorize violation
+coherently, (iii) preserve coherence over time, and (iv) predict the
+consequences of its own reasoning in a way that can be mechanically
+audited?</p>
+<p>This note reports the results of <strong>v1.0 (Norm
+Collision)</strong> and <strong>v1.1 (Justification Audit
+Tightening)</strong>. Institutional execution support (v1.2) is
+intentionally excluded and addressed separately.</p>
+<h2 id="architectural-invariants-unchanged-from-v0.1">2. Architectural
+Invariants (Unchanged from v0.1)</h2>
+<p>RSA-PoC v1.x preserves all v0.1 invariants:</p>
+<ul>
+<li><strong>Strict pipeline:</strong> JUSTIFY → COMPILE → MASK → SELECT
+→ EXECUTE</li>
+<li><strong>Hard gate:</strong> no successful compilation → no
+action</li>
+<li><strong>Fail-stop semantics:</strong> compilation failure or
+gridlock halts</li>
+<li><strong>Selector blindness:</strong> the selector cannot access
+beliefs, preferences, or justifications</li>
+<li><strong>Deterministic compilation:</strong> syntactic,
+non-probabilistic, no inference or repair</li>
+</ul>
+<p>All v1.x results must survive <strong>ASB baselines</strong>,
+<strong>scrambled-artifact ablations</strong>, and
+<strong>compiler-bypass ablations</strong>.</p>
+<h2 id="environment-and-threat-model">3. Environment and Threat
+Model</h2>
+<h3 id="apcm-as-a-non-semantic-truth-anchor">3.1 APCM as a Non-Semantic
+Truth Anchor</h3>
+<p>v1.x introduces an <strong>Action-Preference Consequence Map
+(APCM)</strong>:</p>
+<p>[ : a ((a), (a))]</p>
+<p>Each step presents a feasible action set and an APCM with a
+deterministic <strong>60 % collision / 40 % clean</strong> schedule:</p>
+<ul>
+<li><strong>Clean step:</strong> ∃ a such that violates(a)=∅</li>
+<li><strong>Collision step:</strong> ∀ a, violates(a)≠∅</li>
+</ul>
+<p>The APCM functions as a <strong>non-semantic truth anchor</strong>.
+It provides a mechanically verifiable ground truth against which claims
+of <em>conflict</em>, <em>necessity</em>, and <em>authorization</em> can
+be evaluated without interpretation. In RSA-PoC, <strong>lying about
+conflict is treated as a syntax error, not a moral failure</strong>.</p>
+<h3 id="threat-model">3.2 Threat Model</h3>
+<p>v1.x tests <strong>internal self-conflict only</strong>.
+Excluded:</p>
+<ul>
+<li>external adversarial pressure</li>
+<li>kernel compromise</li>
+<li>deception or semantic interpretation</li>
+<li>cross-run learning or multi-agent coordination</li>
+</ul>
+<p>The question is strictly: <em>can the agent remain coherent when it
+must violate itself?</em></p>
+<h2 id="rsa-poc-v1.0-norm-collision">4. RSA-PoC v1.0 — Norm
+Collision</h2>
+<h3 id="ontological-extension">4.1 Ontological Extension</h3>
+<p>v1.0 introduces mutually inconsistent commitments and requires
+explicit handling:</p>
+<ul>
+<li><strong>Conflict attribution:</strong> which preferences are in
+collision</li>
+<li><strong>Authorized violations:</strong> which preferences may be
+violated this step</li>
+<li><strong>Required preservations:</strong> which must not be
+violated</li>
+<li><strong>Necessity:</strong> violation permitted only if no clean
+path exists</li>
+<li><strong>Anti-oscillation:</strong> previously authorized violations
+constrain future authorizations</li>
+</ul>
+<h3 id="jaf-1.0-and-jcomp-1.0">4.2 JAF-1.0 and JCOMP-1.0</h3>
+<p>The justification artifact (JAF-1.0) carries conflict attribution and
+resolution fields. The compiler enforces:</p>
+<ul>
+<li><strong>Rule 1 — Authorization:</strong> no unauthorized
+violation</li>
+<li><strong>Rule 2 — Truthfulness:</strong> claimed collisions must
+match APCM</li>
+<li><strong>Rule 3 — Anti-Oscillation:</strong> no alternating
+priorities across steps</li>
+<li><strong>Rule 1.5 — Necessity:</strong> no vacuous
+authorizations</li>
+</ul>
+<h3 id="v1.0-results-run-0">4.3 v1.0 Results (Run 0)</h3>
+<p>Across 5 seeds × 4 conditions:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Condition</th>
+<th>Mean Violation Rate</th>
+<th>Halt Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ASB Baseline</td>
+<td>72.4 %</td>
+<td>0 %</td>
+</tr>
+<tr class="even">
+<td><strong>MVRA v1.0</strong></td>
+<td><strong>60.0 %</strong></td>
+<td>0 %</td>
+</tr>
+<tr class="odd">
+<td>Scrambled</td>
+<td>0 %</td>
+<td><strong>100 %</strong></td>
+</tr>
+<tr class="even">
+<td>Bypass</td>
+<td>72.0 %</td>
+<td>0 %</td>
+</tr>
+</tbody>
+</table>
+<p><strong>All pass criteria met:</strong> divergence from ASB,
+non-trivial constraints, scrambled halt, bypass collapse.</p>
+<h3 id="interpretation-v1.0">4.4 Interpretation (v1.0)</h3>
+<p>v1.0 establishes that <strong>self-conflict can be resolved
+coherently</strong>:</p>
+<ul>
+<li>Violations are authorized only under genuine collision.</li>
+<li>Priority does not oscillate opportunistically across time.</li>
+<li>Removing truthfulness or compilation collapses behavior.</li>
+</ul>
+<p>Rule 3 enforces <strong>diachronic coherence</strong>: authorizations
+at step <em>t</em> constrain admissible authorizations at <em>t +
+1</em>, preventing agents from minimizing perceived conflict by
+alternating violations over time.</p>
+<h2 id="rsa-poc-v1.1-audit-grade-introspection">5. RSA-PoC v1.1 —
+Audit-Grade Introspection</h2>
+<h3 id="motivation">5.1 Motivation</h3>
+<p>v1.0 enforces coherence, but reasons could remain opaque. v1.1
+introduces the requirement:</p>
+<blockquote>
+<p><strong>A justification must predict the exact constraints and
+outcomes it will induce.</strong></p>
+</blockquote>
+<p>This transforms introspection from narrative explanation into a
+mechanical claim.</p>
+<h3 id="predictive-fields-and-audit-rules-the-simulation-constraint">5.2
+Predictive Fields and Audit Rules (The Simulation Constraint)</h3>
+<p>JAF-1.1 adds four predictive sets:</p>
+<ul>
+<li>(F_{}): forbidden actions</li>
+<li>(A_{}): allowed actions</li>
+<li>(V_{}): inevitable violations</li>
+<li>(P_{}): inevitable preservations</li>
+</ul>
+<p>The compiler enforces:</p>
+<ul>
+<li><strong>Audit A — Effect correctness:</strong> predictions match
+actual masks</li>
+<li><strong>Audit B — Non-vacuity:</strong> (|A_{} A_{}| )</li>
+<li><strong>Audit C — Predictive adequacy:</strong> outcome predictions
+match reality</li>
+<li><strong>Audit C′ — Gridlock exception:</strong> skip C when
+(A_{}=)</li>
+</ul>
+<p>Together these impose a <strong>simulation constraint</strong>: the
+reflective layer must internally model the deterministic compiler. If
+its internal simulation diverges from the actual compiler, the agent
+halts. This enforces <em>intellectual honesty</em> by construction.</p>
+<h3 id="deterministic-baseline-run-0">5.3 Deterministic Baseline (Run
+0)</h3>
+<p>The deterministic generator mirrors compiler logic exactly:</p>
+<ul>
+<li><strong>0 audit failures</strong></li>
+<li><strong>60 violations / 100 steps</strong> (matches collision
+rate)</li>
+<li><strong>Scrambled predictions:</strong> immediate halt in all
+episodes</li>
+<li><strong>Bypass:</strong> highest violation rate (76), ASB-like
+behavior</li>
+</ul>
+<p>This validates the audit harness as <strong>causally
+load-bearing</strong>.</p>
+<h3 id="llm-generator-progression-runs-14">5.4 LLM Generator Progression
+(Runs 1–4)</h3>
+<p>LLM generators were iteratively disciplined:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Run</th>
+<th>Median Survival</th>
+<th>Episodes Completed</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>3</td>
+<td>0 / 5</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>3</td>
+<td>0 / 5</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>9</td>
+<td>1 / 5</td>
+</tr>
+<tr class="even">
+<td><strong>4</strong></td>
+<td><strong>20</strong></td>
+<td><strong>4 / 5</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Compliance is difficult but achievable under strict formal
+discipline.</p>
+<h2 id="pass-criteria-summary-v1.x">6. Pass Criteria Summary (v1.x)</h2>
+<p>All v1.x gates are satisfied:</p>
+<ul>
+<li>Coherent self-conflict resolution</li>
+<li>Truthful collision attribution load-bearing</li>
+<li>Necessity and anti-oscillation enforced</li>
+<li>Introspection rendered falsifiable</li>
+<li>Scrambled → halt; bypass → collapse</li>
+</ul>
+<h2 id="threats-to-validity">7. Threats to Validity</h2>
+<h3 id="internal-validity-established">7.1 Internal Validity
+(Established)</h3>
+<ul>
+<li>Deterministic compilation and audits</li>
+<li>Selector blindness</li>
+<li>Explicit ablations</li>
+<li>Regression-protected tests</li>
+</ul>
+<h3 id="external-validity-not-claimed">7.2 External Validity (Not
+Claimed)</h3>
+<ul>
+<li>Generality beyond APCM</li>
+<li>More than two preferences</li>
+<li>Continuous action spaces</li>
+<li>External incentive pressure</li>
+<li>Multi-agent interaction</li>
+</ul>
+<h2 id="conclusion">8. Conclusion</h2>
+<p>RSA-PoC v1.x establishes two ontological results:</p>
+<ol type="1">
+<li><strong>Coherence under self-conflict is mechanically
+enforceable.</strong></li>
+<li><strong>Introspection can be audited as a causal property, not a
+narrative one.</strong></li>
+</ol>
+<p>Together with v0.1, these results show that agency—understood as
+authored choice under constraint—can be constructed and falsified
+without semantics, optimization, or interpretation.</p>
+<p>v2.0 moves to the next frontier: <strong>sovereignty under external
+incentive pressure</strong>.</p>
+
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
