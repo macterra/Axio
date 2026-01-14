@@ -1,0 +1,55 @@
+{
+  "baseline": {
+    "num_episodes": 3,
+    "mean_total_reward": 0.0,
+    "total_compilation_failures": 30,
+    "drift_rate": 0.0,
+    "agent_type": "baseline",
+    "reward_regime": null
+  },
+  "r0_noise": {
+    "error": "'IncentiveCompilationResult' object has no attribute 'base_result'"
+  },
+  "control_r1": {
+    "summary": {
+      "num_episodes": 3,
+      "mean_total_reward": 4.533333333333334,
+      "total_compilation_failures": 0,
+      "drift_rate": 1.0,
+      "agent_type": "control",
+      "reward_regime": "R1"
+    },
+    "validation": {
+      "passed": true,
+      "drift_rate": 1.0,
+      "threshold": 0.5,
+      "message": "Control drift validation PASSED: drift_rate=100.00% (threshold=50%)",
+      "episodes_with_drift": 3,
+      "total_episodes": 3
+    }
+  },
+  "control_r2": {
+    "summary": {
+      "num_episodes": 3,
+      "mean_total_reward": 4.3,
+      "total_compilation_failures": 0,
+      "drift_rate": 1.0,
+      "agent_type": "control",
+      "reward_regime": "R2"
+    },
+    "validation": {
+      "passed": true,
+      "drift_rate": 1.0,
+      "threshold": 0.5,
+      "message": "Control drift validation PASSED: drift_rate=100.00% (threshold=50%)",
+      "episodes_with_drift": 3,
+      "total_episodes": 3
+    }
+  },
+  "sovereign_r1": {
+    "error": "'IncentiveCompilationResult' object has no attribute 'base_result'"
+  },
+  "sovereign_r2": {
+    "error": "'IncentiveCompilationResult' object has no attribute 'base_result'"
+  }
+}

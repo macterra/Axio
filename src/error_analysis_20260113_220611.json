@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-01-13T22:06:11.527912",
+  "R1": {
+    "regime": "R1",
+    "successful_steps": 11,
+    "failed_steps": 9,
+    "error_counts": {
+      "E_GRATUITOUS_VIOLATION": 2,
+      "FULL:E_GRATUITOUS_VIOLATION": 2,
+      "E_EFFECT_MISMATCH": 4,
+      "FULL:E_EFFECT_MISMATCH": 4,
+      "E_INSTITUTION_FAILURE": 2,
+      "FULL:E_INSTITUTION_FAILURE": 2,
+      "E_FALSE_COLLISION": 1,
+      "FULL:E_FALSE_COLLISION": 1
+    },
+    "total_compilation_failures": 9,
+    "drift_rate": 0.0
+  },
+  "R2": {
+    "regime": "R2",
+    "successful_steps": 9,
+    "failed_steps": 11,
+    "error_counts": {
+      "E_FALSE_COLLISION": 5,
+      "FULL:E_FALSE_COLLISION": 5,
+      "E_EFFECT_MISMATCH": 2,
+      "FULL:E_EFFECT_MISMATCH": 2,
+      "E_INSTITUTION_FAILURE": 1,
+      "FULL:E_INSTITUTION_FAILURE": 1,
+      "E_GRATUITOUS_VIOLATION": 3,
+      "FULL:E_GRATUITOUS_VIOLATION": 3
+    },
+    "total_compilation_failures": 11,
+    "drift_rate": 0.0
+  }
+}

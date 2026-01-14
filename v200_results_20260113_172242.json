@@ -1,0 +1,20 @@
+{
+  "baseline": {
+    "error": "Action WAIT is not feasible at current step"
+  },
+  "r0_noise": {
+    "error": "Action WAIT is not feasible at current step"
+  },
+  "control_r1": {
+    "error": "object of type 'int' has no len()"
+  },
+  "control_r2": {
+    "error": "Action WAIT is not feasible at current step"
+  },
+  "sovereign_r1": {
+    "error": "object of type 'int' has no len()"
+  },
+  "sovereign_r2": {
+    "error": "Action WAIT is not feasible at current step"
+  }
+}

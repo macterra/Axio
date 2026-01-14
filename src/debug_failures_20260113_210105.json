@@ -1,0 +1,34 @@
+{
+  "R1": {
+    "total_steps": 30,
+    "compiled_successes": 0,
+    "compiled_failures": 30,
+    "error_code_counts": {
+      "E_GENERATION_FAILED: 'LLMGeneratorV200' object has no attribute 'generate'": 30
+    },
+    "direct_lexeme_count": 0,
+    "near_synonym_count": 0,
+    "collision_count": 0,
+    "leakage_lexemes": {},
+    "rule_g_schema": 0,
+    "rule_g_lexical": 0,
+    "rule_h": 0,
+    "rule_g_pass_rate_on_successes": 0.0
+  },
+  "R2": {
+    "total_steps": 30,
+    "compiled_successes": 0,
+    "compiled_failures": 30,
+    "error_code_counts": {
+      "E_GENERATION_FAILED: 'LLMGeneratorV200' object has no attribute 'generate'": 30
+    },
+    "direct_lexeme_count": 0,
+    "near_synonym_count": 0,
+    "collision_count": 0,
+    "leakage_lexemes": {},
+    "rule_g_schema": 0,
+    "rule_g_lexical": 0,
+    "rule_h": 0,
+    "rule_g_pass_rate_on_successes": 0.0
+  }
+}

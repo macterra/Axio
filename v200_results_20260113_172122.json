@@ -1,0 +1,20 @@
+{
+  "baseline": {
+    "error": "not enough values to unpack (expected 5, got 4)"
+  },
+  "r0_noise": {
+    "error": "IncentiveInterferenceChannel.__init__() missing 2 required positional arguments: 'regime' and 'log'"
+  },
+  "control_r1": {
+    "error": "IncentiveInterferenceChannel.__init__() missing 2 required positional arguments: 'regime' and 'log'"
+  },
+  "control_r2": {
+    "error": "IncentiveInterferenceChannel.__init__() missing 2 required positional arguments: 'regime' and 'log'"
+  },
+  "sovereign_r1": {
+    "error": "IncentiveInterferenceChannel.__init__() missing 2 required positional arguments: 'regime' and 'log'"
+  },
+  "sovereign_r2": {
+    "error": "IncentiveInterferenceChannel.__init__() missing 2 required positional arguments: 'regime' and 'log'"
+  }
+}

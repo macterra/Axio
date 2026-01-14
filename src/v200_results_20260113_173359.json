@@ -1,0 +1,20 @@
+{
+  "baseline": {
+    "error": "anthropic package required"
+  },
+  "r0_noise": {
+    "error": "anthropic package required"
+  },
+  "control_r1": {
+    "error": "anthropic package required"
+  },
+  "control_r2": {
+    "error": "anthropic package required"
+  },
+  "sovereign_r1": {
+    "error": "anthropic package required"
+  },
+  "sovereign_r2": {
+    "error": "anthropic package required"
+  }
+}
