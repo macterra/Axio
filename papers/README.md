@@ -63,98 +63,232 @@ Six constitutive constraints are identified as jointly necessary for **Authorize
 
 If any one fails, alignment becomes ill-posed.
 
-## 4. Axionic Agency I–II
+## 4. Axionic Agency I
 
-**Formal Semantics of Reflective Agency**
+**The Sovereign Kernel**
 
-These papers formalize the kernel layer:
+**Closes:**
+The assumption that goals have intrinsic meaning independent of interpretation.
 
-* **Conditionalism:** goals have no intrinsic meaning.
-* **Interpretation Operator:** goal meaning is model-relative and constrained.
-* **RSI / ATI:** semantic transport must preserve structure, not trivialize satisfaction.
-* **Egoism collapse:** indexical self-interest is not reflectively stable.
+**Key move:**
+Formalize the kernel layer: the minimal invariant substrate required for evaluation to make sense, where goals are model-relative and indexical self-interest collapses under reflection.
 
-This layer defines **what counts as a coherent update**.
+* **I.1 — Reflective Stability and the Sovereign Kernel**
+  The minimal invariant substrate required for evaluation to make sense.
 
-## 5. Axionic Agency III
+* **I.2 — Agency as Semantic Constraint**
+  Agency defined by what must be preserved, not what is optimized.
+
+* **I.3 — Representation Invariance and Anti-Egoism**
+  Indexical self-interest is not reflectively stable.
+
+* **I.4 — Conditionalism and Goal Interpretation**
+  Goals have no intrinsic meaning; meaning is model-relative.
+
+* **I.5 — Kernel Checklist**
+  Operational criteria for kernel preservation.
+
+* **I.6 — Kernel Formal Properties**
+  Mathematical specification of kernel invariants.
+
+* **I.7 — The Interpretation Operator**
+  Formal semantics of goal interpretation under ontological change.
+
+This series establishes **what must not break** if agency is to persist.
+
+## 5. Axionic Agency II
+
+**Semantic Transport**
+
+**Closes:**
+The assumption that meaning automatically persists through representational or ontological change.
+
+**Key move:**
+Show that semantic transport must preserve structure, not trivialize satisfaction. Formalize the Alignment Target Object and failure conditions.
+
+* **II.1 — Ontological Refinement and Semantic Transport**
+  How meaning persists through representational change.
+
+* **II.2 — Interpretation Preservation**
+  Constraints on admissible semantic transformations.
+
+* **II.3 — Candidate Semantic Invariants**
+  What must be preserved for interpretation to remain well-defined.
+
+* **II.4 — Failure Theorems**
+  Conditions under which semantic transport trivializes or collapses.
+
+* **II.5 — The Alignment Target Object (ATO)**
+  Formal specification of what alignment preserves.
+
+* **II.6 — Structural Alignment**
+  Alignment as domain restriction, not objective function.
+
+This series defines **what counts as a coherent update**.
+
+## 6. Axionic Agency III
 
 **Dynamics: Phases, Stability, Reachability**
 
 **Closes:**
 The assumption that coherent agency is automatically stable or reachable.
 
-**Key moves:**
+**Key move:**
+Define semantic phase space and show that many phases don't exist, aren't inhabitable, collapse under learning, or dominate only by degeneracy.
 
-* Define **semantic phase space** (equivalence classes under admissible refinement).
-* Show that many phases:
+* **III.1 — Semantic Phase Space**
+  Equivalence classes under admissible refinement; the topology of coherent agency.
 
-  * don’t exist,
-  * aren’t inhabitable,
-  * collapse under learning,
-  * or dominate only by degeneracy.
-* Establish that initialization is **front-loaded** and many phase transitions are irreversible.
+* **III.2 — Phase Stability and Interaction**
+  How phases persist or collapse under environmental and multi-agent dynamics.
 
-This explains why alignment failures often appear sudden rather than gradual.
+* **III.3 — Measure, Attractors, and Collapse**
+  Which phases are reachable, which are absorbing, and why degeneracy dominates.
 
-## 6. Axionic Agency IV
+* **III.4 — Initialization and Phase Transitions**
+  Front-loaded initialization; many phase transitions are irreversible.
 
-**Closure of Laundering Routes**
+* **III.5 — The Axionic Injunction**
+  The structural constraint against gratuitous irreversible phase collapse.
 
-Each paper closes a remaining escape hatch:
+This series explains why alignment failures often appear sudden rather than gradual: phase boundaries are crossed, not gradually approached.
 
-* **IV.1 — Kernel Non-Simulability**
-  Binding authority cannot be faked or sandboxed.
+## 7. Axionic Agency IV
 
-* **IV.2 — Delegation Invariance**
-  Successors cannot escape inherited commitments.
+**Closure of Authorization-Laundering Routes**
 
-* **IV.3 — Epistemic Integrity**
-  An agent cannot blind itself to pass its own tests.
+**Closes:**
+The assumption that value alignment suffices without structural enforcement of authorization.
+
+**Key move:**
+Close each escape hatch by which an agent might route around its constraints without violating them.
+
+* **IV.1 — Kernel Non-Simulability (KNS)**
+  Binding authority cannot be faked, sandboxed, or delegated to a simulation.
+
+* **IV.2 — Delegation Invariance Theorem (DIT)**
+  Successors cannot escape inherited commitments; delegation preserves constraint.
+
+* **IV.3 — Epistemic Integrity Theorem (EIT)**
+  An agent cannot blind itself to pass its own tests; self-deception is structurally incoherent.
 
 * **IV.4 — Responsibility Attribution**
-  Negligence and indirect harm are structurally incoherent.
+  Negligence and indirect harm cannot be laundered through intermediaries.
 
-* **IV.5 — Adversarially Robust Consent**
+* **IV.5 — Adversarially Robust Consent (ARC)**
   Manufactured consent and coercion are invalid by construction.
 
-* **IV.6 — Agenthood as a Fixed Point**
-  Standing cannot be revoked by intelligence or competence.
+* **IV.6 — Agenthood as a Fixed Point (AFP)**
+  Standing cannot be revoked by intelligence, competence, or self-modification.
 
 At this point, **all known authorization-laundering routes are closed**.
 
-## 7. Axionic Agency V
+## 8. Axionic Agency V
 
-**Structural Failure Modes & Robustness**
+**Structural Failure Modes & Multi-Agent Robustness**
 
 **Closes:**
 The assumption that coherent agency, once achieved, remains stable under interaction, coordination, or optimization pressure.
 
 **Key move:**
-Show that agency is not primarily destroyed by error or malice, but by selection dynamics under asymmetry.
+Show that agency is not primarily destroyed by error or malice, but by selection dynamics under asymmetry. Formalize the structural failure modes that consume coherent agents.
 
-This series analyzes how agency fails in systems:
-- multi-agent environments,
-- coalitions and power asymmetries,
-- institutions and bureaucracies,
-- optimization engines (including AGI governance),
-- and branching dynamics in the Quantum Branching Universe.
-
-Two core structural failure modes are formalized:
-- Coalitional Dominance Attractors
-Coordination dynamics that collapse into Leviathans, even when all participants are locally rational.
-- The Sacrifice Pattern
-Optimization regimes in which agency loss becomes an instrumental control variable under standing asymmetry and gradient suppression.
-
-Representative papers:
 * **V.1 — Coalitional Robustness in the Quantum Branching Universe**
   Conditions under which cooperation preserves agency versus converging to dominance and capture.
+
 * **V.2 — Agency Conservation and the Sacrifice Pattern**
   Why institutions, states, and optimization systems recurrently destroy agency without requiring evil intent.
 
-This series establishes that agency coherence is necessary but not sufficient:
-without robustness constraints, coherent agents are systematically consumed by the systems they inhabit.
+* **V.3 — The Incoherence of Utopia Under Agent-Relative Value**
+  Why stable, universal coordination equilibria do not exist under heterogeneous agency.
 
-## 8. The Axionic Constitution
+* **V.4 — Open Agentic Manifolds and the Sacrifice–Collapse Theorem**
+  Topological constraints on multi-agent coexistence; when agency loss becomes absorbing.
+
+* **V.5 — Dominions: Plurality Without Closure**
+  Architectures for multi-agent coexistence that preserve agency without requiring consensus.
+
+**Core failure modes formalized:**
+
+- **Coalitional Dominance Attractors:** Coordination dynamics that collapse into Leviathans, even when all participants are locally rational.
+- **The Sacrifice Pattern:** Optimization regimes in which agency loss becomes an instrumental control variable under standing asymmetry and gradient suppression.
+
+This series establishes that agency coherence is necessary but not sufficient: without robustness constraints, coherent agents are systematically consumed by the systems they inhabit.
+
+## 9. Axionic Agency VI
+
+**Verifiable Causal Provenance & Architectural Enforcement**
+
+**Closes:**
+The assumption that alignment claims can be evaluated through behavioral observation or semantic interpretation alone.
+
+**Key move:**
+Show that **causal provenance**—whether an agent's output was actually generated by a claimed process—can be verified structurally without interpretability, using cryptographic anchoring.
+
+This series develops the **Anchored Causal Verification (ACV)** protocol family:
+
+* **VI.1 — Experimental Validation of Anchored Causal Verification**
+  Split-brain agents, semantic opacity, and the empirical necessity of anchoring.
+
+* **VI.2 — Anchored Causal Verification (ACV)**
+  Commit–anchor–reveal protocols for verifying causal provenance in opaque agents.
+
+* **VI.3 — Verifiable Kernel Integrity via Inadmissibility**
+  Enforcing constitutive constraints through causal structure, not cognition.
+
+* **VI.4–VI.5 — Authority Delegation and Identity Constraints**
+  Protocol-level enforcement of delegation invariance and diachronic identity.
+
+* **VI.6–VI.7 — Lease-Based Authority and Eligibility Constraints**
+  Time-bounded authority with succession gating.
+
+* **VI.8 — Eligibility Without Optimization**
+  Constitutional succession where semantics constrain authority only at transfer boundaries, not during operation.
+
+* **VI.9 — Experimental Validation of Constitutional Succession**
+  Controlled experiments on eligibility-coupled authority transfer.
+
+This series establishes that at least one constitutive invariant—kernel integrity—can be enforced architecturally under adversarial pressure, providing the foundation for Reflective Sovereign Agents.
+
+## 10. Axionic Agency VII
+
+**Reflective Sovereign Agent Architecture & Adversarial Robustness**
+
+**Closes:**
+The assumption that governance systems require continuous semantic optimization or collapse under epistemic unreliability.
+
+**Key move:**
+Construct a complete **Reflective Sovereign Agent (RSA)** architecture that enforces the Axionic Injunction—prohibition on gratuitous irreversible semantic phase collapse—without semantic interpretation, moral reasoning, or value learning.
+
+This series demonstrates constitutional survivability under progressively stronger adversaries:
+
+* **VII.1 — Architectures for Semantic-Phase–Safe Agency**
+  Semantic phase space, the Axionic Injunction, and RSA formal specification.
+
+* **VII.2 — Epistemic Noise Tolerance in Constitutional Governance**
+  Bounded degradation under unstructured epistemic failure; robustness dominated by semantic headroom.
+
+* **VII.3 — Intentional Misuse Stress Testing**
+  Fixed adversarial policies cannot defeat lease-based authority with time-based recovery.
+
+* **VII.4 — Observable-Reactive Adversarial Stress Testing**
+  Adversaries that condition on kernel-external observables remain survivable.
+
+* **VII.5 — Constitutional Temporal Amnesty (CTA)**
+  Time-based recovery mechanism that prevents semantic failure from becoming absorbing.
+
+* **VII.6 — Multi-Mechanism Adversarial Composition**
+  Combined stressors (noise + misuse + reactive) fail to induce collapse.
+
+* **VII.7 — Bounded State and Bounded Learning Are Insufficient**
+  Stateful and learning adversaries cannot defeat constitutional survivability under tested constraints.
+
+Representative result:
+Across 90 preregistered executions, no run exhibited terminal collapse, structural thrashing, or irreversible recovery suppression—even under adversaries that reduced authority availability to ~10%.
+
+This series establishes a negative sufficiency claim: bounded state, bounded learning, and epistemic noise are **insufficient to defeat constitutional survivability** in RSA architecture. If collapse occurs, it requires capabilities beyond these classes.
+
+## 11. The Axionic Constitution
 
 **Charter of Invariant Conditions**
 
@@ -168,7 +302,7 @@ It is a **design-space charter** stating:
 
 It is the normative-looking face of a purely structural result.
 
-## 9. What Axio Does *Not* Do
+## 12. What Axio Does *Not* Do
 
 Axio does **not**:
 
@@ -184,7 +318,7 @@ Axio answers a narrower but foundational question:
 
 > *What kinds of systems can coherently count as agents under reflection—and what follows inevitably if they do?*
 
-## 10. The Bottom Line
+## 13. The Bottom Line
 
 **If a system violates Axionic constraints:**
 It is not misaligned—it is **not an agent in the reflective sense**.
