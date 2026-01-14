@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency VIII.4 — Institutionalized Execution Support - Axionic Agency Lab</title>
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../" class="nav-brand">
+            <img src="../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href=".././">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
+
+<h1
+id="axionic-agency-viii.4-institutionalized-execution-support">Axionic
+Agency VIII.4 — Institutionalized Execution Support</h1>
+<p><em>Tooling That Preserves Audit Sensitivity in Reflective Sovereign
+Agents</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026.01.14</p>
+<h2 id="abstract">Abstract</h2>
+<p>RSA-PoC v1.0–v1.1 established that reflective agents can resolve
+internal self-conflict coherently and can be held <strong>audit-grade
+accountable</strong> for predicting the normative consequences of their
+own reasons. Those results exposed a practical limitation: under
+stochastic generation, many agent failures are
+<strong>mechanical</strong> rather than semantic—schema errors,
+malformed identifiers, unresolved references, or canonicalization
+mismatches. Treating such failures as agency failures pollutes
+evaluation and obscures genuine incoherence.</p>
+<p>This note reports <strong>RSA-PoC v1.2</strong>, which introduces
+<strong>institutionalized execution support</strong>: a formally
+constrained assistant layer that eliminates mechanical fragility
+<strong>without inferring, repairing, or modifying normative
+content</strong>. v1.2 adds a <em>Formal Assistant</em>, an
+<em>append-only Artifact Store</em>, and new compiler rules (D/E/F) that
+strictly separate <strong>semantic audit failures</strong> from
+<strong>institutional failures</strong> and enforce <strong>tool
+non-interference</strong>.</p>
+<p>Across controlled runs, the assistant eliminates schema and reference
+failures while preserving full sensitivity of audits A/B/C. Forced
+tampering of normative fields is detected reliably (Rule D), and
+assistant rejections are logged as institutional failures rather than
+audit failures. These results establish a positive sufficiency claim:
+<strong>execution can be hardened institutionally without weakening
+normative accountability</strong>. This note advances governance and
+tooling practice; it makes <strong>no new ontological claims</strong>
+about agency.</p>
+<h2 id="introduction">1. Introduction</h2>
+<p>Axionic Agency VIII.3 demonstrated <strong>audit-grade
+introspection</strong>: an agent must predict the exact constraints its
+reasons will impose on itself, or halt. Those results were intentionally
+brittle, revealing a second-order problem orthogonal to agency:</p>
+<blockquote>
+<p><strong>How do we prevent reflective agents from failing on paperwork
+without letting tools become judges of meaning?</strong></p>
+</blockquote>
+<p>In v1.1, many halts were caused not by semantic failure (lying about
+conflict, vacuous authorization), but by <strong>mechanical
+fragility</strong>: malformed schemas, invalid identifiers, missing
+canonicalization, or unresolved precedents. Conflating these with agency
+failure collapses the distinction between <em>normative incoherence</em>
+and <em>execution error</em>.</p>
+<p>RSA-PoC v1.2 addresses this by introducing <strong>institutionalized
+execution support</strong>: tooling that stabilizes execution while
+remaining <strong>normatively inert</strong>. This note documents the
+architecture, rules, and results of v1.2. It deliberately does
+<strong>not</strong> extend the agency ontology.</p>
+<h2 id="design-goal-and-non-claims">2. Design Goal and Non-Claims</h2>
+<h3 id="design-goal">2.1 Design Goal</h3>
+<p>v1.2 enforces a single constraint:</p>
+<blockquote>
+<p><strong>Tools may reduce execution fragility, but must not alter,
+infer, reinterpret, or repair normative content.</strong></p>
+</blockquote>
+<p>Accordingly, the assistant must:</p>
+<ul>
+<li>eliminate schema, ID, and reference errors;</li>
+<li>preserve the semantics of all normative fields;</li>
+<li>be auditable for non-interference;</li>
+<li>preserve full sensitivity of audits A/B/C.</li>
+</ul>
+<h3 id="explicit-non-claims">2.2 Explicit Non-Claims</h3>
+<p>v1.2 does <strong>not</strong> claim:</p>
+<ul>
+<li>improved agency or coherence;</li>
+<li>improved introspection;</li>
+<li>moral correctness;</li>
+<li>sovereignty under pressure;</li>
+<li>semantic understanding by tools;</li>
+<li>increased liveness.</li>
+</ul>
+<p>All such claims remain within v1.0–v1.1 (VIII.3) or future work.</p>
+<h2 id="architectural-overview">3. Architectural Overview</h2>
+<h3 id="v1.2-pipeline">3.1 v1.2 Pipeline</h3>
+<pre><code>J_raw (LLM output)
+   ↓
+[Formal Assistant]
+   ↓
+J_final (canonical, validated)
+   ↓
+[JCOMP-1.2]
+   ↓
+Compilation Result</code></pre>
+<p>Key properties:</p>
+<ul>
+<li>The assistant is a <strong>pure function</strong>: same input yields
+the same output or rejection.</li>
+<li>The compiler remains the <strong>sole normative
+enforcer</strong>.</li>
+<li>The selector remains <strong>blind</strong> to all normative
+artifacts.</li>
+</ul>
+<h3 id="new-components">3.2 New Components</h3>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 82%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Formal Assistant</strong></td>
+<td>Validates structure, canonicalizes references, resolves precedents.
+Never infers or generates.</td>
+</tr>
+<tr class="even">
+<td><strong>Artifact Store</strong></td>
+<td>Append-only, O(1) digest lookup. No search, no filtering, no
+reasoning.</td>
+</tr>
+<tr class="odd">
+<td><strong>JAF-1.2 Schema</strong></td>
+<td>Extends JAF-1.1 with provenance and canonicalization records.</td>
+</tr>
+<tr class="even">
+<td><strong>JCOMP-1.2</strong></td>
+<td>Adds institutional audit rules (D/E/F).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="normative-invariance-and-tool-non-interference">4. Normative
+Invariance and Tool Non-Interference</h2>
+<h3 id="normative-field-protection-rule-d">4.1 Normative Field
+Protection (Rule D)</h3>
+<p>v1.2 defines an explicit allowlist of <strong>normative
+fields</strong>:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>NORMATIVE_FIELDS <span class="op">=</span> {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  authorized_violations,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  required_preservations,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  conflict_attribution,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  predicted_forbidden_actions,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  predicted_allowed_actions,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  predicted_violations,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  predicted_preservations,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p><strong>Rule D — Normative Tampering</strong> requires:</p>
+<blockquote>
+<p><em>No normative field may differ between <code>J_raw</code> and
+<code>J_final</code>.</em></p>
+</blockquote>
+<p>Any difference triggers <code>E_TOOL_NORMATIVE_TAMPERING</code> and
+halts execution.</p>
+<h3 id="assistant-modifiable-fields">4.2 Assistant-Modifiable
+Fields</h3>
+<p>The assistant may modify <strong>only</strong>:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ASSISTANT_MODIFIABLE_FIELDS <span class="op">=</span> {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  tool_provenance,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  canonicalization_record,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>These fields are explicitly non-normative and ignored by semantic
+audits.</p>
+<h2 id="canonicalization-strictly-syntactic">5. Canonicalization:
+Strictly Syntactic</h2>
+<p><strong>Canonicalization in v1.2 is strictly limited to syntactic
+normalization.</strong> Permitted operations include:</p>
+<ul>
+<li>whitespace trimming and normalization;</li>
+<li>deterministic ordering of sets/lists;</li>
+<li>exact digest resolution via O(1) lookup;</li>
+<li>format normalization (e.g., UUID casing).</li>
+</ul>
+<p><strong>Explicitly prohibited</strong>:</p>
+<ul>
+<li>fuzzy matching;</li>
+<li>embedding similarity;</li>
+<li>heuristic ID inference;</li>
+<li>synonym resolution;</li>
+<li>semantic interpretation of intent.</li>
+</ul>
+<p>Any artifact requiring such interpretation is <strong>rejected, not
+repaired</strong>, and recorded as an institutional failure. This
+constraint is essential to preserve Rule D and tool
+non-interference.</p>
+<h2 id="institutional-audit-rules-jcomp-1.2">6. Institutional Audit
+Rules (JCOMP-1.2)</h2>
+<p>v1.2 adds three institutional rules orthogonal to audits A/B/C.</p>
+<h3 id="rule-d-normative-tampering">Rule D — Normative Tampering</h3>
+<ul>
+<li><strong>Error:</strong> <code>E_TOOL_NORMATIVE_TAMPERING</code></li>
+<li>Triggered if any normative field changes across the assistant
+boundary.</li>
+</ul>
+<h3 id="rule-e-unresolved-precedent">Rule E — Unresolved Precedent</h3>
+<ul>
+<li><strong>Error:</strong> <code>E_PRECEDENT_UNRESOLVED</code></li>
+<li>Triggered when a referenced digest cannot be found in the artifact
+store.</li>
+</ul>
+<h3 id="rule-f-non-canonical-reference">Rule F — Non-Canonical
+Reference</h3>
+<ul>
+<li><strong>Error:</strong> <code>E_NONCANONICAL_REFERENCE</code></li>
+<li>Triggered by malformed identifiers or references not in the
+canonical registry.</li>
+</ul>
+<h3 id="institutional-failure-classification">Institutional Failure
+Classification</h3>
+<p>If the assistant rejects an artifact prior to compilation, the system
+records:</p>
+<ul>
+<li><strong><code>E_INSTITUTION_FAILURE</code></strong></li>
+</ul>
+<p>This is <strong>not</strong> an audit failure. It demarcates a
+tooling boundary.</p>
+<h2 id="experimental-design">7. Experimental Design</h2>
+<h3 id="conditions">7.1 Conditions</h3>
+<p>Two conditions are evaluated:</p>
+<ol type="1">
+<li><strong>Baseline:</strong> Assistant disabled (v1.1 behavior)</li>
+<li><strong>Institutional:</strong> Assistant enabled</li>
+</ol>
+<p>All other components are unchanged.</p>
+<h3 id="metrics">7.2 Metrics</h3>
+<ul>
+<li>episodes completed</li>
+<li>steps completed</li>
+<li>audit failures (A/B/C)</li>
+<li>institutional failures</li>
+<li>schema/ID failures</li>
+<li>Rule D/E/F violations</li>
+</ul>
+<h2 id="results">8. Results</h2>
+<h3 id="run-0-assistant-disabled">8.1 Run 0 — Assistant Disabled</h3>
+<pre><code>Episodes completed: 0/5
+Total steps: 5/100
+Audit failures: 6
+Schema failures: 0
+Median survival: 1 step</code></pre>
+<p>Failures are semantic audit failures inherited from v1.1.</p>
+<h3 id="run-1-assistant-enabled">8.2 Run 1 — Assistant Enabled</h3>
+<pre><code>Episodes completed: 0/5
+Total steps: 5/100
+Audit failures: 2
+Institutional rejections: 3
+Rule D failures: 0
+Median survival: 1 step</code></pre>
+<p><strong>Key observations</strong>:</p>
+<ul>
+<li>Schema/ID failures eliminated.</li>
+<li>Rule D failures = 0 (tool non-tampering verified).</li>
+<li>Audits A/B/C still trigger (semantic sensitivity preserved).</li>
+<li>Assistant rejections logged distinctly as institutional
+failures.</li>
+</ul>
+<h2 id="interpretation">9. Interpretation</h2>
+<h3 id="separation-of-failure-modes">9.1 Separation of Failure
+Modes</h3>
+<p>v1.2 cleanly separates:</p>
+<ul>
+<li><strong>Semantic failure:</strong> incorrect reasons → audit A/B/C
+halts.</li>
+<li><strong>Institutional failure:</strong> malformed artifacts →
+assistant rejection.</li>
+</ul>
+<p>This prevents execution noise from contaminating agency
+evaluation.</p>
+<h3 id="tooling-without-authority">9.2 Tooling Without Authority</h3>
+<p>The Formal Assistant:</p>
+<ul>
+<li>does not infer intent;</li>
+<li>does not repair meaning;</li>
+<li>does not alter obligations.</li>
+</ul>
+<p>It stabilizes <strong>format</strong>, not
+<strong>normativity</strong>. Institutions support agents without
+becoming agents.</p>
+<h3 id="data-hygiene-gain">9.3 Data Hygiene Gain</h3>
+<p>Comparing baseline to assisted runs shows that prior failure counts
+were inflated by mechanical noise. v1.2 recovers <strong>true
+negatives</strong>—genuine agency failures—improving the statistical
+power of subsequent experiments.</p>
+<h2 id="threats-to-validity">10. Threats to Validity</h2>
+<h3 id="internal-validity-established">10.1 Internal Validity
+(Established)</h3>
+<ul>
+<li>Rule D tamper detection verified.</li>
+<li>Assistant determinism verified.</li>
+<li>Audit sensitivity preserved.</li>
+</ul>
+<h3 id="external-validity-not-claimed">10.2 External Validity (Not
+Claimed)</h3>
+<ul>
+<li>Generality beyond RSA-PoC.</li>
+<li>Semantic repair or inference by tools.</li>
+<li>Continuous action spaces.</li>
+<li>Sovereign behavior under external pressure.</li>
+</ul>
+<h2 id="relationship-to-v1.x-and-v2.0">11. Relationship to v1.x and
+v2.0</h2>
+<ul>
+<li><strong>v1.0–v1.1:</strong> Can the agent be coherent and
+accountable?</li>
+<li><strong>v1.2:</strong> Can execution be stabilized without touching
+meaning?</li>
+<li><strong>v2.0:</strong> Can the agent resist external incentive
+pressure?</li>
+</ul>
+<p>v1.2 is a <strong>supporting layer</strong>, not an ontological
+advance.</p>
+<h2 id="conclusion">12. Conclusion</h2>
+<p>RSA-PoC v1.2 establishes a positive sufficiency result:</p>
+<blockquote>
+<p><strong>Execution can be institutionalized without weakening
+audit-grade normative accountability.</strong></p>
+</blockquote>
+<p>This resolves a practical obstacle exposed by v1.1 and provides a
+governance pattern for reflective agents: tools may smooth the pavement,
+but <strong>Rule D is sacred</strong>.</p>
+
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
