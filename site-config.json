@@ -57,6 +57,13 @@
       "name": "Implementation",
       "description": "Practical realization of theoretical frameworks. Bridging abstract theory to concrete system design.",
       "paper_prefix": "Axionic-Agency-VII"
+    },
+    {
+      "id": "rsa-poc",
+      "series": "VIII",
+      "name": "RSA-PoC: Constructing Reflective Sovereign Agency",
+      "description": "Minimal-agent construction program determining the minimum structure required for genuine agency above the Architectural Sovereignty Boundary.",
+      "paper_prefix": "Axionic-Agency-VIII"
     }
   ],
   "team": [
@@ -120,7 +127,10 @@
   "footer": {
     "copyright": "Axionic Agency Lab",
     "links": [
-      {"label": "GitHub", "url": "https://github.com/davidmcfadzean/Axio"}
+      {
+        "label": "GitHub",
+        "url": "https://github.com/davidmcfadzean/Axio"
+      }
     ]
   }
 }

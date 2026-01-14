@@ -386,6 +386,7 @@ def generate_papers_index(papers_metadata):
         ('V', 'Series V: Agency Dynamics'),
         ('VI', 'Series VI: Governance and Coordination'),
         ('VII', 'Series VII: Implementation'),
+        ('VIII', 'Series VIII: RSA-PoC'),
     ]
 
     # Group papers by series
