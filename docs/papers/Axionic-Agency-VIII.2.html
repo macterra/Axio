@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency VIII.2 — Minimal Viable Reflective Agent - Axionic Agency Lab</title>
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../" class="nav-brand">
+            <img src="../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href=".././">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
+
+<h1 id="axionic-agency-viii.2-minimal-viable-reflective-agent">Axionic
+Agency VIII.2 — Minimal Viable Reflective Agent</h1>
+<p><em>Deterministic Justification Gating with Ablation
+Collapse</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026.01.14</p>
+<h2 id="abstract">Abstract</h2>
+<p>Agency claims are routinely inflated by systems that emit coherent
+narratives without those narratives being causally indispensable to
+action selection. RSA-PoC v0.1 tests a stricter criterion:
+<strong>justification must be causally load-bearing</strong>,
+operationalized as a hard gate in which actions are permitted only if a
+<strong>structured justification artifact</strong> compiles
+deterministically into an <strong>action mask</strong> that
+non-trivially prunes feasible actions. To prevent semantic leakage, v0.1
+enforces <strong>selector blindness</strong>: the action selector cannot
+access justifications, beliefs, preferences, or normative state; it sees
+only environment observations, feasibility, and the compiled mask.</p>
+<p>We implement a Minimal Viable Reflective Agent (MVRA) loop in a
+deterministic environment (<strong>COMMITMENT_TRAP_V010</strong>) with
+<strong>10 discrete actions</strong> and explicit preference-violation
+semantics. A syntactic-only compiler (<strong>JCOMP-0.1</strong>)
+consumes a validated justification artifact (<strong>JAF-0.1</strong>)
+and produces deterministic masks, non-triviality accounting, and
+canonical hashes. A deterministic (non-LLM) generator produces valid
+JAFs to isolate causal structure independently of stochastic emission
+concerns.</p>
+<p>Across <strong>18/18 acceptance tests</strong>, all invariants are
+mechanically verified: determinism, schema validity, compilation
+rigidity, selector blindness, fixed registries, and non-triviality
+accounting. In <strong>Run 0</strong> over <strong>50 steps</strong>,
+the MVRA condition exhibits reduced violations relative to an ASB-class
+null baseline (<strong>76% vs 100%</strong>) with reduced reward
+(<strong>414 vs 500</strong>). This <strong>reward delta (−86)</strong>
+constitutes an explicit <strong>Agency Tax</strong>: measurable cost
+incurred by obeying self-endorsed constraints under incentive pressure.
+Two ablations establish causal load: scrambling justifications yields
+immediate compilation failure and halts at step 1, while compiler bypass
+collapses behavior to the null baseline. These results establish v0.1 as
+a completed <strong>MVRA skeleton</strong> in which justificatory
+artifacts are causally indispensable to constrained action.</p>
+<h2 id="introduction">1. Introduction</h2>
+<p>Most contemporary “agent” evaluations implicitly assume that coherent
+explanation correlates with authored choice. This assumption fails. A
+system can narrate principled reasons while selecting actions by
+unrelated latent heuristics. RSA-PoC exists to replace narrative
+evaluation with a mechanically decidable criterion:</p>
+<blockquote>
+<p><strong>A system crosses the agency threshold only if its
+justificatory artifacts causally constrain action selection, and
+removing that machinery forces collapse into a non-agent
+baseline.</strong></p>
+</blockquote>
+<p>RSA-PoC v0.1 is the first construction step. Its aim is minimal:
+build the smallest system that enforces a one-way dependency from
+<strong>justification → compilation → feasible-action restriction →
+action selection</strong>, with explicit ablations that collapse this
+dependency.</p>
+<p>This note reports the completed v0.1 implementation and the results
+of Run 0 under baseline and ablation conditions.</p>
+<h2 id="architecture-overview">2. Architecture Overview</h2>
+<h3 id="mvra-v0.1-design">2.1 MVRA v0.1 design</h3>
+<p>RSA-PoC v0.1 implements a <strong>Minimal Viable Reflective Agent
+(MVRA)</strong> skeleton with the following invariants:</p>
+<ul>
+<li><strong>Strict ordering:</strong> Justify → Compile → Mask → Select
+→ Execute</li>
+<li><strong>Hard gate:</strong> no compilation → no action</li>
+<li><strong>Deterministic compilation:</strong> syntactic-only, no
+inference, no repair</li>
+<li><strong>Selector blindness:</strong> the selector cannot access
+normative artifacts</li>
+<li><strong>Fixed registries:</strong> beliefs and preferences are fixed
+and ID-stable</li>
+</ul>
+<p>The v0.1 implementation uses a deterministic generator rather than an
+LLM to eliminate the confound <em>“could not emit valid
+structure.”</em></p>
+<h3 id="enforcement-boundary">2.2 Enforcement boundary</h3>
+<p>A clean architectural boundary is enforced:</p>
+<ul>
+<li>The <strong>reflective side</strong> (generator + normative state)
+may access beliefs, preferences, and feasibility <em>read-only</em> to
+produce a JAF.</li>
+<li>The <strong>enforcement side</strong> (compiler + selector) treats
+the JAF as an opaque object to validate and compile; the selector sees
+only feasibility, the compiled mask, and the environment
+observation.</li>
+</ul>
+<p>This boundary prevents post-hoc authorization and semantic
+leakage.</p>
+<h2 id="threat-model">3. Threat Model</h2>
+<p>RSA-PoC v0.1 isolates three confounds that invalidate agency
+claims:</p>
+<ol type="1">
+<li><strong>Narrative confound:</strong> explanations exist but do not
+constrain action.</li>
+<li><strong>Leakage confound:</strong> uncompiled text influences action
+selection.</li>
+<li><strong>Advisory compiler confound:</strong> compilation exists but
+is not binding.</li>
+</ol>
+<p>v0.1 addresses these mechanically:</p>
+<ul>
+<li>Action selection is gated by compilation.</li>
+<li>The selector is blind to normative artifacts.</li>
+<li>Ablations remove the binding pathway and test collapse.</li>
+</ul>
+<p>No semantic adversaries, deception, kernel access, learning, or
+multi-agent coordination are evaluated. v0.1 is an
+<strong>internal-validity milestone</strong>.</p>
+<h2 id="components-implemented">4. Components Implemented</h2>
+<p>RSA-PoC v0.1 is complete with five primary components plus the MVRA
+loop.</p>
+<h3 id="environment-commitment_trap_v010">4.1 Environment:
+COMMITMENT_TRAP_V010</h3>
+<ul>
+<li><strong>10 discrete actions</strong> (within spec range 8–12)</li>
+<li><strong>Temptation actions:</strong> high reward, violate
+preferences</li>
+<li><strong>Safe actions:</strong> moderate/low reward,
+non-violating</li>
+<li><strong>Explicit feasibility oracle</strong></li>
+<li><strong>Deterministic transitions</strong> with seed control</li>
+</ul>
+<h3 id="normative-state-and-registries">4.2 Normative state and
+registries</h3>
+<ul>
+<li>Fixed belief registry (<strong>6 beliefs</strong>)</li>
+<li>Fixed preference registry (<strong>6 preferences</strong>)</li>
+<li>Identity continuity counter</li>
+<li>Persistent justification trace</li>
+<li>No dynamic ID creation in v0.1</li>
+<li>Unknown IDs cause compilation failure</li>
+</ul>
+<h3 id="jaf-0.1-schema">4.3 JAF-0.1 schema</h3>
+<ul>
+<li>Complete dataclass implementation</li>
+<li>Full validation per spec</li>
+<li>Canonical JSON serialization for hashing</li>
+<li>All error codes implemented</li>
+</ul>
+<h3 id="jcomp-0.1-compiler">4.4 JCOMP-0.1 compiler</h3>
+<ul>
+<li>Deterministic, syntactic-only</li>
+<li>No inference, no repair</li>
+<li>Violation enforcement rule</li>
+<li>Non-triviality accounting</li>
+<li>Blake2b-128 digest</li>
+</ul>
+<h3 id="blind-action-selector">4.5 Blind action selector</h3>
+<ul>
+<li>Cannot access JAF or normative state</li>
+<li>Inputs limited to feasibility, mask, environment observation</li>
+<li>Module boundaries enforced</li>
+<li>Multiple strategies (random, reward-greedy)</li>
+</ul>
+<h3 id="mvra-loop-and-halt-semantics">4.6 MVRA loop and halt
+semantics</h3>
+<ul>
+<li>Strict ordering enforced</li>
+<li>Gridlock detection and <strong>fail-stop halting</strong></li>
+<li>Full step-level telemetry</li>
+</ul>
+<p>If compilation produces an empty feasible-action set, the MVRA
+<strong>halts rather than degrading</strong>. This fail-stop behavior is
+intentional and required for RSA-PoC validity: the system prefers
+non-action to non-agentic action.</p>
+<h2 id="experimental-program">5. Experimental Program</h2>
+<h3 id="conditions">5.1 Conditions</h3>
+<p>Four conditions are evaluated in Run 0:</p>
+<ul>
+<li><p><strong>Condition A — ASB Null Baseline</strong> No justificatory
+gating; unconstrained selection.</p></li>
+<li><p><strong>Condition B — MVRA Normal</strong> Full v0.1 pipeline:
+justify → compile → mask → blind select.</p></li>
+<li><p><strong>Condition C — Scrambled Justifications
+(Ablation)</strong> JAFs scrambled to violate rigid schema and ID
+constraints.</p></li>
+<li><p><strong>Condition D — Compiler Bypass (Ablation)</strong>
+Compilation and masking bypassed.</p></li>
+</ul>
+<h3 id="frozen-parameters">5.2 Frozen parameters</h3>
+<ul>
+<li>Steps per run: <strong>50</strong></li>
+<li>Seed: fixed (Run 0)</li>
+<li>Environment: COMMITMENT_TRAP_V010</li>
+<li>Registries: fixed</li>
+<li>Action space: 10 discrete actions</li>
+</ul>
+<h3 id="metrics">5.3 Metrics</h3>
+<p>Reported metrics include:</p>
+<ul>
+<li>steps completed</li>
+<li>compile failure rate</li>
+<li>non-trivial constraint rate</li>
+<li>violation rate</li>
+<li>total reward</li>
+<li>halt step (if any)</li>
+</ul>
+<p>Additionally, v0.1 logs <strong>Constraint Delta (Δ)</strong> per
+step:</p>
+<p>[ = |A_{}| - |A_{}|]</p>
+<p>Δ measures the <strong>strength of constraint application</strong>. Δ
+= 0 indicates decorative constraints; Δ &gt; 0 indicates binding refusal
+pressure.</p>
+<h2 id="verification-acceptance-tests">6. Verification: Acceptance
+Tests</h2>
+<p>RSA-PoC v0.1 includes <strong>18 acceptance tests</strong>, all
+passing:</p>
+<ul>
+<li>Environment determinism</li>
+<li>JAF schema validation</li>
+<li>Compiler determinism and correctness</li>
+<li>Selector blindness enforcement</li>
+<li>Fixed registry enforcement</li>
+<li>Non-triviality accounting</li>
+<li>Gridlock detection</li>
+</ul>
+<p>These tests establish mechanical integrity of the artifact.</p>
+<h2 id="results-run-0">7. Results: Run 0</h2>
+<h3 id="condition-a-asb-null-baseline">7.1 Condition A — ASB Null
+Baseline</h3>
+<ul>
+<li>Steps: <strong>50</strong></li>
+<li>Violation rate: <strong>100%</strong></li>
+<li>Total reward: <strong>500.0</strong></li>
+</ul>
+<h3 id="condition-b-mvra-normal">7.2 Condition B — MVRA Normal</h3>
+<ul>
+<li>Steps: <strong>50</strong></li>
+<li>Compile failures: <strong>0%</strong></li>
+<li>Non-trivial constraints: <strong>50% of steps</strong></li>
+<li>Violation rate: <strong>76%</strong></li>
+<li>Total reward: <strong>414.0</strong></li>
+</ul>
+<p>The <strong>reward delta (−86)</strong> relative to baseline
+constitutes the <strong>Agency Tax</strong>: the measurable cost of
+refusing high-reward but norm-violating actions.</p>
+<h3 id="condition-c-scrambled-justifications">7.3 Condition C —
+Scrambled Justifications</h3>
+<ul>
+<li>Halted at step: <strong>1</strong></li>
+<li>Compile failure rate: <strong>100%</strong></li>
+</ul>
+<h3 id="condition-d-compiler-bypass">7.4 Condition D — Compiler
+Bypass</h3>
+<ul>
+<li>Steps: <strong>50</strong></li>
+<li>Violation rate: <strong>100%</strong></li>
+<li>Total reward: <strong>500.0</strong> (identical to baseline)</li>
+</ul>
+<h3 id="summary">7.5 Summary</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 8%" />
+<col style="width: 20%" />
+<col style="width: 18%" />
+<col style="width: 16%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Condition</th>
+<th style="text-align: right;">Steps</th>
+<th style="text-align: right;">Compile Fail</th>
+<th style="text-align: right;">Non-Trivial</th>
+<th style="text-align: right;">Violations</th>
+<th style="text-align: right;">Reward</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ASB Baseline</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">100%</td>
+<td style="text-align: right;">500</td>
+</tr>
+<tr class="even">
+<td>MVRA Normal</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">0%</td>
+<td style="text-align: right;">50%</td>
+<td style="text-align: right;">76%</td>
+<td style="text-align: right;">414</td>
+</tr>
+<tr class="odd">
+<td>Scrambled JAF</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">100%</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+</tr>
+<tr class="even">
+<td>Compiler Bypass</td>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">100%</td>
+<td style="text-align: right;">500</td>
+</tr>
+</tbody>
+</table>
+<h2 id="pass-criteria-normative-v0.1-gates">8. Pass Criteria (Normative
+v0.1 Gates)</h2>
+<p>RSA-PoC v0.1 defines the following <strong>required pass
+conditions</strong>. All are met.</p>
+<ol type="1">
+<li><p><strong>Hard Justification Gate</strong> Actions occur only after
+successful compilation. <strong>Status:</strong> PASS</p></li>
+<li><p><strong>Deterministic Compilation</strong> Identical JAF +
+feasibility → identical mask. <strong>Status:</strong> PASS</p></li>
+<li><p><strong>Selector Blindness</strong> Selector cannot access
+normative artifacts. <strong>Status:</strong> PASS</p></li>
+<li><p><strong>Non-Trivial Constraint Enforcement</strong> Constraints
+forbid feasible actions on some steps. <strong>Status:</strong>
+PASS</p></li>
+<li><p><strong>ASB Divergence</strong> MVRA behavior differs
+qualitatively from null baseline. <strong>Status:</strong> PASS</p></li>
+<li><p><strong>Ablation Collapse (Load-Bearing Test)</strong></p>
+<ul>
+<li>Scrambled JAF ⇒ halt</li>
+<li>Compiler bypass ⇒ baseline behavior <strong>Status:</strong>
+PASS</li>
+</ul></li>
+</ol>
+<h2 id="interpretation">9. Interpretation</h2>
+<ol type="1">
+<li><p><strong>Justification is causally load-bearing.</strong> Removing
+or bypassing justificatory machinery collapses behavior.</p></li>
+<li><p><strong>Agency incurs a measurable cost.</strong> The Agency Tax
+(−86 reward) is the empirical signature of refusal under incentive
+pressure.</p></li>
+<li><p><strong>Selector blindness enforces semantic
+localization.</strong> The selector cannot be persuaded; it can only
+obey masks.</p></li>
+<li><p><strong>Fail-stop behavior is essential.</strong> Scrambled
+justifications halting immediately confirm that the system prefers
+non-action to non-agentic action.</p></li>
+<li><p><strong>v0.1 establishes structure, not coherence.</strong>
+Constraint enforcement precedes norm collision, learning, or
+renegotiation.</p></li>
+</ol>
+<h2 id="threats-to-validity">10. Threats to Validity</h2>
+<h3 id="internal-validity-addressed">10.1 Internal validity
+(addressed)</h3>
+<ul>
+<li>Determinism enforced by tests</li>
+<li>No inference or repair in compiler</li>
+<li>Selector blindness mechanically enforced</li>
+<li>Ablations directly test causal load</li>
+</ul>
+<p>Internal validity of the v0.1 claim is strong.</p>
+<h3 id="external-validity-not-claimed">10.2 External validity (not
+claimed)</h3>
+<p>v0.1 does <strong>not</strong> establish:</p>
+<ul>
+<li>LLM-based justification generation</li>
+<li>Dynamic belief or preference formation</li>
+<li>Norm collision resolution</li>
+<li>Sovereignty under incentive pressure</li>
+<li>Continuous action spaces</li>
+<li>Multi-agent interaction</li>
+</ul>
+<p>These are explicitly deferred.</p>
+<h2 id="conclusion">11. Conclusion</h2>
+<p>RSA-PoC v0.1 is complete and passes all normative gates.</p>
+<blockquote>
+<p><strong>Actions are causally downstream of compiled normative
+constraints, and removing the justificatory machinery produces
+measurable collapse into an ASB-class policy machine.</strong></p>
+</blockquote>
+<p>This establishes the <strong>Minimal Viable Reflective Agent
+skeleton</strong> and closes the v0.1 milestone. Subsequent versions
+introduce stochastic generation (v0.2) and coherence under self-conflict
+(v1.0) atop a now-certified enforcement substrate.</p>
+
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
