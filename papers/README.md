@@ -172,7 +172,7 @@ Close each escape hatch by which an agent might route around its constraints wit
 * **[IV.3 — Epistemic Integrity Theorem (EIT)](Axionic-Agency-IV.3.md)**
   An agent cannot blind itself to pass its own tests; self-deception is structurally incoherent.
 
-* **[IV.4 — Responsibility Attribution](Axionic-Agency-IV.4.md)**
+* **[IV.4 — Responsibility Attribution (RAT)](Axionic-Agency-IV.4.md)**
   Negligence and indirect harm cannot be laundered through intermediaries.
 
 * **[IV.5 — Adversarially Robust Consent (ARC)](Axionic-Agency-IV.5.md)**
