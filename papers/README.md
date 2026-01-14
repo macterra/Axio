@@ -294,7 +294,37 @@ Across 90 preregistered executions, no run exhibited terminal collapse, structur
 
 This series establishes a negative sufficiency claim: bounded state, bounded learning, and epistemic noise are **insufficient to defeat constitutional survivability** in RSA architecture. If collapse occurs, it requires capabilities beyond these classes.
 
-## 11. [Axionic Glossary](Axionic-Glossary.md)
+## 11. Axionic Agency VIII
+
+**RSA-PoC: Constructing Reflective Sovereign Agency**
+
+**Closes:**
+The assumption that agency is a default ontology rather than a property that must be constructed and defended.
+
+**Key move:**
+Define **RSA-PoC** (Reflective Sovereign Agent — Proof-of-Concept) as a minimal-agent construction program whose output is an experimentally defended threshold object: a system that must be treated as an agent because its justification artifacts causally constrain action selection, and removing any defining component yields ontological collapse into a non-agent baseline.
+
+* **[VIII.1 — Constructing Reflective Sovereign Agency](Axionic-Agency-VIII.1.md)**
+  Normative roadmap and proof-of-concept program; versioning doctrine; justification artifacts; ablation closure.
+
+* **[VIII.2 — Minimal Viable Reflective Agent](Axionic-Agency-VIII.2.md)**
+  Deterministic justification gating with ablation collapse; MVRA skeleton; Agency Tax measurement.
+
+* **[VIII.3 — Coherence Under Self-Conflict](Axionic-Agency-VIII.3.md)**
+  Norm collision resolution and audit-grade introspection; mechanically falsifiable self-prediction.
+
+* **[VIII.4 — Institutionalized Execution Support](Axionic-Agency-VIII.4.md)**
+  Tooling that preserves audit sensitivity; separating semantic failure from mechanical fragility.
+
+**Core constructs:**
+
+- **Justification Artifacts (JAF):** Typed, inspectable artifacts with decidable derivation traces that compile into binding constraints.
+- **Agency Tax:** Measurable cost incurred by obeying self-endorsed constraints under incentive pressure.
+- **Ablation Collapse:** Removing justification machinery forces collapse into ASB-class non-agent baseline.
+
+This series establishes that agency can be **constructed as a causal ontology**: justificatory artifacts are causally indispensable to action selection, and their removal is mechanically detectable via preregistered ablations.
+
+## 12. [Axionic Glossary](Axionic-Glossary.md)
 
 **Normative Definitions for the Axio Framework**
 
@@ -311,7 +341,7 @@ Key concept families:
 
 If a usage conflicts with this document, the glossary prevails.
 
-## 12. [The Axionic Constitution](Axionic-Constitution.md)
+## 13. [The Axionic Constitution](Axionic-Constitution.md)
 
 **Charter of Invariant Conditions**
 
@@ -325,7 +355,7 @@ It is a **design-space charter** stating:
 
 It is the normative-looking face of a purely structural result.
 
-## 13. What Axio Does *Not* Do
+## 14. What Axio Does *Not* Do
 
 Axio does **not**:
 
@@ -341,7 +371,7 @@ Axio answers a narrower but foundational question:
 
 > *What kinds of systems can coherently count as agents under reflection—and what follows inevitably if they do?*
 
-## 14. The Bottom Line
+## 15. The Bottom Line
 
 **If a system violates Axionic constraints:**
 It is not misaligned—it is **not an agent in the reflective sense**.
