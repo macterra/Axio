@@ -236,11 +236,17 @@ This series develops the **Anchored Causal Verification (ACV)** protocol family:
 * **[VI.3 — Verifiable Kernel Integrity via Inadmissibility](Axionic-Agency-VI.3.md)**
   Enforcing constitutive constraints through causal structure, not cognition.
 
-* **[VI.4](Axionic-Agency-VI.4.md)–[VI.5](Axionic-Agency-VI.5.md) — Authority Delegation and Identity Constraints**
-  Protocol-level enforcement of delegation invariance and diachronic identity.
+* **[VI.4 — Sovereign Actuation Non-Delegability Under Adversarial Pressure](Axionic-Agency-VI.4.md)**
+  Actuation authority as a non-delegable structural property, independent of semantics.
 
-* **[VI.6](Axionic-Agency-VI.6.md)–[VI.7](Axionic-Agency-VI.7.md) — Lease-Based Authority and Eligibility Constraints**
-  Time-bounded authority with succession gating.
+* **[VI.5 — Kernel Non-Simulability and the Stasis Regime](Axionic-Agency-VI.5.md)**
+  Agents under strict accountability converge to stasis rather than catastrophic failure.
+
+* **[VI.6 — Authority Leases and Revertible Succession](Axionic-Agency-VI.6.md)**
+  Separating authority from growth via discrete successor replacement.
+
+* **[VI.7 — Agency Survivability Under Structural Pressure](Axionic-Agency-VI.7.md)**
+  Agency does not collapse under competition, scarcity, or forced turnover within moderate horizons.
 
 * **[VI.8 — Eligibility Without Optimization](Axionic-Agency-VI.8.md)**
   Constitutional succession where semantics constrain authority only at transfer boundaries, not during operation.
