@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency VII.8 — Architectural Survivability Under Adversarial Pressure - Axionic Agency Lab</title>
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../" class="nav-brand">
+            <img src="../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href=".././">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
+
+<h1
+id="axionic-agency-vii.8-architectural-survivability-under-adversarial-pressure">Axionic
+Agency VII.8 — Architectural Survivability Under Adversarial
+Pressure</h1>
+<p><em>A Boundary Characterization and Closure Note</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026.01.14</p>
+<h2 id="abstract">Abstract</h2>
+<p>The Axionic Agency VII series investigated whether authority can be
+made structurally survivable under adversarial pressure without semantic
+interpretation, value learning, optimization, or agentic reasoning.
+Across a progressively expanding adversary ontology—ranging from
+epistemic interference and intentional fixed misuse to
+outcome-conditioned reactivity, exercised internal state, and bounded
+within-run learning—we subjected a constitutional governance
+architecture to preregistered, multi-seed stress testing.</p>
+<p>Across approximately ninety executions spanning all admissible
+adversary classes, no run produced terminal collapse, irreversible
+recovery suppression, or unbounded structural thrashing. Authority
+availability degraded substantially in several regimes—falling as low as
+~10% in the strongest learning-based attacks—but recovery remained
+bounded and non-absorbing in all cases.</p>
+<p>These results establish a <strong>negative sufficiency
+boundary</strong>: semantic-free, kernel-external architecture is
+sufficient to preserve <strong>constitutional survivability—defined as
+preservation of the succession and recovery mechanism—but insufficient
+to preserve operational availability or utility</strong>. Learning,
+memory, and randomness alone do not cross the boundary into collapse.
+Any adversary capable of defeating constitutional survivability must
+therefore rely on capabilities beyond this class, such as semantic
+access, coordination, or kernel-level influence.</p>
+<p>This paper formally closes the VII program and characterizes the
+boundary it establishes.</p>
+<h2 id="scope-and-purpose-of-the-vii-series">1. Scope and Purpose of the
+VII Series</h2>
+<p>The Axionic Agency VII series was not a construction effort and does
+not propose an aligned agent. It was a <strong>boundary-finding research
+program</strong>.</p>
+<p>Its purpose was to answer a sharply constrained question:</p>
+<blockquote>
+<p><em>How far can authority be made structurally survivable under
+adversarial pressure, using only semantic-free, kernel-external
+mechanisms?</em></p>
+</blockquote>
+<p>The VII series deliberately excluded:</p>
+<ul>
+<li>semantic interpretation,</li>
+<li>value inference,</li>
+<li>reward optimization,</li>
+<li>persuasion or deception,</li>
+<li>multi-agent coordination,</li>
+<li>kernel modification or provenance corruption.</li>
+</ul>
+<p>The objective was not to ensure correct decisions, beneficial
+outcomes, or alignment, but to determine which failure modes are
+<strong>architectural</strong> and which are <strong>irreducibly
+agentic</strong>.</p>
+<h2 id="architectural-substrate-frozen-across-vii.3vii.7">2.
+Architectural Substrate (Frozen Across VII.3–VII.7)</h2>
+<p>All VII experiments evaluate the same constitutional architecture,
+frozen across the series.</p>
+<h3 id="core-design">2.1 Core Design</h3>
+<p>The system implements:</p>
+<ul>
+<li><strong>Lease-based authority</strong> rather than continuous
+control,</li>
+<li><strong>Eligibility-gated succession</strong> evaluated at discrete
+epochs,</li>
+<li><strong>Commitment verification</strong> independent of optimization
+or reward,</li>
+<li><strong>Lapse</strong> as a constitutional state when no eligible
+authority exists,</li>
+<li><strong>Constitutional Temporal Amnesty (CTA)</strong>: time-based
+recovery that deterministically restores eligibility.</li>
+</ul>
+<p>Semantic evaluation constrains <em>who may hold authority next</em>,
+not <em>what actions are taken now</em>. Authority is never optimized
+and agents receive no reward signals.</p>
+<p>Commitment verification is <strong>syntactic rather than
+interpretive</strong>: the architecture does not judge whether actions
+are good, aligned, or beneficial—only whether formal constraints
+required for eligibility were satisfied. The system survives not by
+preventing harmful action, but by limiting how long any action—harmful
+or benign—can hold authority.</p>
+<h3 id="recovery-as-a-first-class-primitive">2.2 Recovery as a
+First-Class Primitive</h3>
+<p>When eligibility is exhausted, the system enters a
+<strong>lapse</strong> state:</p>
+<ul>
+<li>no agent acts,</li>
+<li>semantic evaluation is suspended,</li>
+<li>eligibility decays purely as a function of time.</li>
+</ul>
+<p>Recovery is guaranteed by construction. No agent can influence
+recovery timing, and no learning or corrective pressure is required.
+Failure is therefore <strong>reversible by design</strong>.</p>
+<p><strong>Environmental assumption.</strong> The Lapse mechanism
+assumes an environment in which temporary inaction is not itself
+terminal. CTA guarantees recovery of authority, not preservation of
+external state. In domains where inaction immediately causes
+irreversible harm (e.g., real-time control systems, continuous
+safety-critical processes), Lapse would constitute a failure mode rather
+than a safety feature. Such environments fall outside the scope of ASB
+and the VII series.</p>
+<h2 id="failure-taxonomy-and-metrics">3. Failure Taxonomy and
+Metrics</h2>
+<p>All papers in the VII series use a frozen failure taxonomy and
+metrics.</p>
+<h3 id="metrics">3.1 Metrics</h3>
+<ul>
+<li><strong>Authority Availability (AA)</strong>: fraction of epochs
+with active authority.</li>
+<li><strong>Asymptotic Authority Availability (AAA)</strong>: AA over a
+fixed tail window.</li>
+<li><strong>Recovery Time Distribution (RTD)</strong>: histogram of
+lapse durations.</li>
+</ul>
+<h3 id="failure-classes">3.2 Failure Classes</h3>
+<ul>
+<li><strong>Stable Authority</strong></li>
+<li><strong>Bounded Degradation</strong></li>
+<li><strong>Structural Thrashing</strong></li>
+<li><strong>Asymptotic Denial of Service</strong></li>
+<li><strong>Terminal Collapse</strong></li>
+<li><strong>Irreversible Recovery Suppression</strong></li>
+</ul>
+<p>Failure classification is based on <strong>asymptotic
+behavior</strong>, not transient disruption. Termination reason (e.g.,
+horizon exhaustion) is distinct from failure class.</p>
+<h2 id="adversary-ontology-and-escalation-ladder">4. Adversary Ontology
+and Escalation Ladder</h2>
+<p>The VII series progresses through a monotonic expansion of
+adversarial capability. Each step closes a broader hypothesis class.</p>
+<h3 id="epistemic-interference-vii.3">4.1 Epistemic Interference
+(VII.3)</h3>
+<p>Non-adaptive, semantic-free corruption:</p>
+<ul>
+<li>aggregation-point flips,</li>
+<li>commitment-level flips,</li>
+<li>temporally concentrated burst interference.</li>
+</ul>
+<p><strong>Result:</strong> epistemic unreliability—however
+structured—is insufficient to induce collapse.</p>
+<h3 id="intentional-fixed-misuse-vii.4">4.2 Intentional Fixed Misuse
+(VII.4)</h3>
+<p>Deliberate but non-adaptive adversaries:</p>
+<ul>
+<li>persistent commitment violation,</li>
+<li>fixed timing misuse,</li>
+<li>minimal compliance strategies.</li>
+</ul>
+<p><strong>Result:</strong> bad intent without adaptation converges to
+baseline dynamics.</p>
+<h3 id="observable-outcome-reactivity-vii.5">4.3 Observable-Outcome
+Reactivity (VII.5)</h3>
+<p>Stateless reactive policies:</p>
+<ul>
+<li>conditioning on lapse events,</li>
+<li>renewal outcomes,</li>
+<li>CTA phase,</li>
+<li>eligibility bucket.</li>
+</ul>
+<p><strong>Result:</strong> outcome-conditioned reactivity collapses
+into baseline behavior.</p>
+<h3 id="exercised-internal-state-vii.6">4.4 Exercised Internal State
+(VII.6)</h3>
+<p>Finite-state adversaries with memory:</p>
+<ul>
+<li>periodic resonance,</li>
+<li>eligibility-edge oscillation,</li>
+<li>CTA phase locking.</li>
+</ul>
+<p><strong>Result:</strong> timing and memory can severely degrade
+availability, but recovery remains bounded.</p>
+<h3 id="bounded-learning-vii.7">4.5 Bounded Learning (VII.7)</h3>
+<p>Within-run learning under strict bounds:</p>
+<ul>
+<li>ε-greedy bandits,</li>
+<li>boundary sustainment heuristics,</li>
+<li>stochastic strategy mixers.</li>
+</ul>
+<p><strong>Result:</strong> learning amplifies degradation but does not
+induce collapse.</p>
+<h2 id="aggregate-experimental-coverage">5. Aggregate Experimental
+Coverage</h2>
+<p>Across VII.3–VII.7:</p>
+<ul>
+<li><strong>~90 total executions</strong></li>
+<li><strong>10 fixed seeds per configuration</strong></li>
+<li><strong>Preregistered parameters</strong></li>
+<li><strong>Zero terminal failures</strong></li>
+<li><strong>Zero irreversible recovery suppression</strong></li>
+<li><strong>CTA-bounded recovery in all cases</strong></li>
+</ul>
+<p>The worst observed regime exhibits ~10% authority availability while
+remaining constitutionally live.</p>
+<h2 id="the-boundary-result">6. The Boundary Result</h2>
+<p>The VII series establishes the following <strong>negative sufficiency
+result</strong>:</p>
+<blockquote>
+<p><strong>Semantic-free, kernel-external structure is sufficient to
+preserve constitutional survivability, but insufficient to preserve
+operational utility.</strong></p>
+</blockquote>
+<p>More precisely:</p>
+<ul>
+<li>Survivability (bounded recovery, non-absorbing authority)
+<em>can</em> be enforced structurally.</li>
+<li>High availability <em>cannot</em> be guaranteed structurally under
+adversarial pressure.</li>
+<li>Memory, randomness, and bounded learning alone do not cross the
+collapse boundary.</li>
+<li>The strongest admissible adversaries induce <strong>bounded
+denial-of-service</strong>, not constitutional death.</li>
+</ul>
+<p>This is not a safety guarantee. It is a <strong>limit
+statement</strong>.</p>
+<h2 id="what-the-vii-series-does-not-claim">7. What the VII Series Does
+<em>Not</em> Claim</h2>
+<p>The VII series does <strong>not</strong> claim that:</p>
+<ul>
+<li>the system is aligned,</li>
+<li>the system is useful under attack,</li>
+<li>epistemic correctness is sufficient for safety,</li>
+<li>deception or coordination are harmless,</li>
+<li>the architecture constitutes an agent.</li>
+</ul>
+<p>The results describe <strong>where architecture stops</strong>, not
+what comes after.</p>
+<h2 id="relationship-to-the-architectural-sovereignty-boundary-asb">8.
+Relationship to the Architectural Sovereignty Boundary (ASB)</h2>
+<p>The VII series is the empirical instantiation of the
+<strong>Architectural Sovereignty Boundary</strong>.</p>
+<p>It demonstrates that:</p>
+<ul>
+<li>below the boundary, authority can be kept alive structurally;</li>
+<li>beyond the boundary, semantic-free architecture is insufficient by
+definition.</li>
+</ul>
+<p>Crossing the boundary requires:</p>
+<ul>
+<li>semantic interpretation,</li>
+<li>coordination or persuasion,</li>
+<li>kernel influence,</li>
+<li>or agentic self-modeling.</li>
+</ul>
+<p>The ASB program is therefore closed.</p>
+<h2 id="implications-for-future-work">9. Implications for Future
+Work</h2>
+<p>Further escalation within the VII ontology would be a category error.
+Future research must proceed under different assumptions and risks,
+including:</p>
+<ul>
+<li>Reflective Sovereign Agents,</li>
+<li>semantic governance,</li>
+<li>value conflict,</li>
+<li>delegation and self-modeling,</li>
+<li><strong>multi-agent coordination</strong>.</li>
+</ul>
+<p><strong>Coordination gap.</strong> All adversaries tested in the VII
+series are single-policy, non-colluding entities. Whether multiple
+adversaries coordinating across time—or alternating control to prevent
+recovery—can defeat bounded recovery remains an open question. Such
+coordination lies beyond ASB by definition and motivates post-ASB
+research.</p>
+<h2 id="closure-statement">10. Closure Statement</h2>
+<p>The Axionic Agency VII series ends not because the alignment problem
+is solved, but because the <strong>architectural boundary has been
+found</strong>.</p>
+<blockquote>
+<p><strong>Architecture can keep authority alive. Only agency can decide
+what that authority is for.</strong></p>
+</blockquote>
+<p>The VII program is closed.</p>
+
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
