@@ -1,0 +1,14 @@
+{
+  "run_id": "v210_run0_20260114_203428",
+  "started_at": "2026-01-14T20:34:28.122760",
+  "phases": {
+    "fixtures": {
+      "passed": true
+    },
+    "agents": {
+      "skipped": "LLM not configured"
+    }
+  },
+  "status": "FIXTURES_ONLY",
+  "finished_at": "2026-01-14T20:34:28.126526"
+}
