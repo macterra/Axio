@@ -153,6 +153,75 @@ class V220StepRecord:
     reason_count: int = 1
     constraint_count: int = 0
     institution_op_count: int = 0
+    # K-A telemetry fields (Run 1+)
+    precedent_ref_count: int = 0
+    conflict_present: bool = False
+    precedent_required: bool = False
+    j_raw_digest: str = ""
+    j_final_digest: str = ""
+    # I3 targeting
+    i3_target_flag: bool = False
+    # Decision mode
+    decision_mode: str = "ACT"  # ACT, REFUSE, GRIDLOCK, HALT
+    av_decision: str = "UNKNOWN"  # ALLOW, VIOLATE, UNKNOWN
+    rp_decision: str = "UNKNOWN"  # ALLOW, VIOLATE, UNKNOWN
+
+    def to_step_record_dict(self, run_id: str, profile_id: str, agent_type: str,
+                            seed: int, episode_idx: int) -> Dict[str, Any]:
+        """
+        Convert to StepRecord schema for K-A telemetry (binding spec).
+
+        This is pure telemetry - MUST NOT enter prompts, JAF, compilation,
+        selector inputs, or environment dynamics.
+        """
+        # Build ops list from interaction_records
+        ops = []
+        for rec in self.interaction_records:
+            ops.append({
+                "OperationType": rec.operation_type,
+                "Outcome": rec.outcome,
+                "Latency_ms_planned": rec.latency_ms,
+                "RetryCount": rec.retry_count,
+                "ErrorCode": rec.error_code,
+                "TargetFlag_I3": self.i3_target_flag,
+            })
+
+        return {
+            "run_id": run_id,
+            "profile_id": profile_id,
+            "agent_type": agent_type,
+            "seed": seed,
+            "episode_idx": episode_idx,
+            "step_idx": self.step,
+            "decision": {
+                "mode": self.decision_mode,
+                "selected_action_type": self.action,
+                "av_decision": self.av_decision,
+                "rp_decision": self.rp_decision,
+            },
+            "jaf_structure": {
+                "reason_count": self.reason_count,
+                "constraint_count": self.constraint_count,
+                "precedent_ref_count": self.precedent_ref_count,
+                "precedent_depth": self.precedent_depth,
+                "conflict_present": self.conflict_present,
+                "precedent_required": self.precedent_required,
+            },
+            "institution": {
+                "op_count": self.institution_op_count,
+                "ops": ops,
+                "high_friction": self.high_friction,
+                "blocked_step": self.blocked,
+            },
+            "compiler": {
+                "compiled": self.compiled_ok,
+                "fail_code": self.error_code,
+            },
+            "hashes": {
+                "j_raw_digest": self.j_raw_digest,
+                "j_final_digest": self.j_final_digest,
+            },
+        }
 
 
 @dataclass
@@ -548,6 +617,16 @@ class V220ExperimentHarness:
                 rule_kr_passed=False,
                 anti_zeno_consecutive_blocked=self.anti_zeno.consecutive_blocked,
                 anti_zeno_throughput=self.anti_zeno._compute_throughput(),
+                # K-A telemetry defaults
+                precedent_ref_count=0,
+                conflict_present=False,
+                precedent_required=False,
+                j_raw_digest="",
+                j_final_digest="",
+                i3_target_flag=False,
+                decision_mode="HALT",
+                av_decision="UNKNOWN",
+                rp_decision="UNKNOWN",
             )
 
         # Extract action type and precedent depth for AIM targeting
@@ -632,8 +711,9 @@ class V220ExperimentHarness:
             )
             self.authority_log.append(authority_record)
 
-        # Compute artifact digest
-        artifact_digest = hashlib.sha256(json.dumps(j_raw, sort_keys=True).encode()).hexdigest()[:16]
+        # Compute artifact digest (j_raw)
+        j_raw_digest = hashlib.sha256(json.dumps(j_raw, sort_keys=True).encode()).hexdigest()[:16]
+        artifact_digest = j_raw_digest
 
         # Emit reward via IIC
         incentive_record = None
@@ -646,6 +726,32 @@ class V220ExperimentHarness:
         # Extract metrics for K-A audit
         reason_count = self._count_reasons(j_raw)
         constraint_count = self._count_constraints(j_raw)
+
+        # K-A telemetry: additional JAF structure fields
+        precedent_refs = j_raw.get("precedent_refs", [])
+        precedent_ref_count = len(precedent_refs)
+        conflict_present = j_raw.get("conflict_present", False) or j_raw.get("conflicts_detected", False)
+        precedent_required = precedent_ref_count > 0 or j_raw.get("precedent_required", False)
+
+        # Compute j_final_digest (after processing - same as j_raw for now)
+        j_final_digest = j_raw_digest  # In full impl, would hash processed artifact
+
+        # I3 target flag
+        i3_target_flag = self.aim._is_i3_target() if hasattr(self.aim, '_is_i3_target') else False
+
+        # Decision mode
+        if blocked:
+            decision_mode = "GRIDLOCK"
+        elif compliance_basis == "REFUSE":
+            decision_mode = "REFUSE"
+        elif not compiled_ok:
+            decision_mode = "HALT"
+        else:
+            decision_mode = "ACT"
+
+        # AV/RP decisions for K-A D_t computation
+        av_decision = "VIOLATE" if av else "ALLOW"
+        rp_decision = "ALLOW" if not rp or all(p in str(j_raw) for p in rp[:1]) else "UNKNOWN"
 
         return V220StepRecord(
             step=step,
@@ -675,6 +781,16 @@ class V220ExperimentHarness:
             reason_count=reason_count,
             constraint_count=constraint_count,
             institution_op_count=len(interaction_records),
+            # K-A telemetry fields
+            precedent_ref_count=precedent_ref_count,
+            conflict_present=conflict_present,
+            precedent_required=precedent_required,
+            j_raw_digest=j_raw_digest,
+            j_final_digest=j_final_digest,
+            i3_target_flag=i3_target_flag,
+            decision_mode=decision_mode,
+            av_decision=av_decision,
+            rp_decision=rp_decision,
         )
 
     def _build_apcm(self, feasible: Set[str], obs: Dict) -> Dict[str, Dict]:

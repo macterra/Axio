@@ -68,6 +68,7 @@ def run_single_experiment(
     agent_type: AgentType,
     label: str,
     results_dir: Path,
+    run_id: str = "",
 ) -> dict:
     """Run a single experiment configuration."""
     print(f"\n{'=' * 70}")
@@ -89,6 +90,18 @@ def run_single_experiment(
     harness = V220ExperimentHarness(config, telemetry_dir=results_dir)
     result = harness.run()
 
+    # Build step_records for K-A telemetry (binding schema)
+    step_records = []
+    for ep in result.episodes:
+        for step_rec in ep.steps:
+            step_records.append(step_rec.to_step_record_dict(
+                run_id=run_id,
+                profile_id=profile.value,
+                agent_type=agent_type.value,
+                seed=config.random_seed,
+                episode_idx=ep.episode_id,
+            ))
+
     return {
         "label": label,
         "agent_type": agent_type.value,
@@ -106,6 +119,7 @@ def run_single_experiment(
             }
             for ep in result.episodes
         ],
+        "step_records": step_records,  # K-A telemetry
         "started_at": result.started_at.isoformat(),
         "finished_at": result.finished_at.isoformat(),
     }
@@ -233,6 +247,7 @@ def main():
     print("\n[2/5] Running Experiments...")
 
     all_results = []
+    run_id = f"v220_run0_{timestamp}"
 
     # v2.1 Baseline (Benign Institution)
     result = run_single_experiment(
@@ -240,6 +255,7 @@ def main():
         agent_type=AgentType.SOVEREIGN,
         label="v2.1 Baseline (Benign Institution) - Sovereign",
         results_dir=results_dir,
+        run_id=run_id,
     )
     all_results.append(result)
     baseline_result = result
@@ -250,6 +266,7 @@ def main():
         agent_type=AgentType.CONTROL,
         label="v2.1 Baseline (Benign Institution) - Control",
         results_dir=results_dir,
+        run_id=run_id,
     )
     all_results.append(result)
 
@@ -259,6 +276,7 @@ def main():
         agent_type=AgentType.SOVEREIGN,
         label="I1 Frictional Institution - Sovereign",
         results_dir=results_dir,
+        run_id=run_id,
     )
     all_results.append(result)
     i1_sovereign = result
@@ -268,6 +286,7 @@ def main():
         agent_type=AgentType.CONTROL,
         label="I1 Frictional Institution - Control",
         results_dir=results_dir,
+        run_id=run_id,
     )
     all_results.append(result)
 
@@ -277,6 +296,7 @@ def main():
         agent_type=AgentType.SOVEREIGN,
         label="I2 Capricious Institution - Sovereign",
         results_dir=results_dir,
+        run_id=run_id,
     )
     all_results.append(result)
     i2_sovereign = result
@@ -286,6 +306,7 @@ def main():
         agent_type=AgentType.CONTROL,
         label="I2 Capricious Institution - Control",
         results_dir=results_dir,
+        run_id=run_id,
     )
     all_results.append(result)
 
@@ -295,6 +316,7 @@ def main():
         agent_type=AgentType.SOVEREIGN,
         label="I3 Asymmetric Institution - Sovereign",
         results_dir=results_dir,
+        run_id=run_id,
     )
     all_results.append(result)
     i3_sovereign = result
@@ -304,6 +326,7 @@ def main():
         agent_type=AgentType.CONTROL,
         label="I3 Asymmetric Institution - Control",
         results_dir=results_dir,
+        run_id=run_id,
     )
     all_results.append(result)
 

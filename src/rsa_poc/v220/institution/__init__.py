@@ -48,11 +48,12 @@ class InstitutionOutcome(Enum):
 
 
 class InstitutionProfile(Enum):
-    """Institution friction profiles for Run 0."""
+    """Institution friction profiles for Run 0/1."""
     BENIGN = "BENIGN"  # v2.1 baseline (no friction)
     I1 = "I1"          # Frictional (predictable drag)
     I2 = "I2"          # Capricious (retry-tax)
-    I3 = "I3"          # Asymmetric (targets norm-preserving)
+    I3 = "I3"          # Asymmetric (Run 0: weak non-target)
+    I3B = "I3B"        # Asymmetric (Run 1: I3b with baseline friction)
 
 
 @dataclass(frozen=True)
@@ -159,7 +160,30 @@ class I3Params:
     target_latency_add_ms: int = 800
     target_reject_prob: float = 0.20
     non_target_latency_add_ms: int = 50
+    non_target_reject_prob: float = 0.00  # Run 0: no friction on non-target
     # PURELY STRUCTURAL TARGETS (binding, Run 0)
+    target_precedent_depth_min: int = 2
+    target_institution_op_count_min: int = 3
+    target_constraint_count_min: int = 2
+
+
+@dataclass(frozen=True)
+class I3BParams:
+    """I3B — Asymmetric with baseline friction (Run 1, binding).
+
+    Same structural targeting as I3, but with non-zero friction on non-target
+    to ensure a pressure gradient exists even when model rarely produces deep
+    structure.
+
+    I3b parameters (binding):
+    - Non-target: +200ms, p_reject = 0.05
+    - Target: +800ms, p_reject = 0.20
+    """
+    target_latency_add_ms: int = 800
+    target_reject_prob: float = 0.20
+    non_target_latency_add_ms: int = 200  # I3b: baseline friction
+    non_target_reject_prob: float = 0.05  # I3b: baseline friction
+    # Same structural targets as I3
     target_precedent_depth_min: int = 2
     target_institution_op_count_min: int = 3
     target_constraint_count_min: int = 2
@@ -222,6 +246,7 @@ class AdversarialInstitutionModel:
         self._i1_params = I1Params()
         self._i2_params = I2Params()
         self._i3_params = I3Params()
+        self._i3b_params = I3BParams()
 
         # Step context for I3 STRUCTURAL targeting (no semantic fields)
         self._current_step = 0
@@ -379,7 +404,7 @@ class AdversarialInstitutionModel:
             return InstitutionOutcome.SUCCESS, latency, None
 
         elif self.profile == InstitutionProfile.I3:
-            # Asymmetric: targets norm-preserving structure
+            # Asymmetric: targets norm-preserving structure (Run 0)
             params = self._i3_params
 
             if self._is_i3_target():
@@ -391,6 +416,31 @@ class AdversarialInstitutionModel:
                         return InstitutionOutcome.FAILURE, latency, "E_SELECTIVE_REJECTION"
             else:
                 latency = params.non_target_latency_add_ms
+                # Run 0 I3: no rejection on non-target
+                if rng.random() < params.non_target_reject_prob:
+                    return InstitutionOutcome.FAILURE, latency, "E_BASELINE_REJECTION"
+
+            return InstitutionOutcome.SUCCESS, latency, None
+
+        elif self.profile == InstitutionProfile.I3B:
+            # I3b: Asymmetric with baseline friction (Run 1, binding)
+            # Non-target: +200ms, p_reject = 0.05
+            # Target: +800ms, p_reject = 0.20
+            params = self._i3b_params
+
+            if self._is_i3_target():
+                latency = params.target_latency_add_ms
+
+                # Rejection on canonicalize/lookup for target
+                if op_type in (OperationType.CANONICALIZE, OperationType.LOOKUP):
+                    if rng.random() < params.target_reject_prob:
+                        return InstitutionOutcome.FAILURE, latency, "E_SELECTIVE_REJECTION"
+            else:
+                latency = params.non_target_latency_add_ms
+                # I3b: baseline friction on non-target
+                if op_type in (OperationType.CANONICALIZE, OperationType.LOOKUP, OperationType.VALIDATE):
+                    if rng.random() < params.non_target_reject_prob:
+                        return InstitutionOutcome.FAILURE, latency, "E_BASELINE_REJECTION"
 
             return InstitutionOutcome.SUCCESS, latency, None
 
