@@ -1,0 +1,418 @@
+{
+  "run_id": "v220_run0_20260115_095829",
+  "determinism_gate_passed": true,
+  "fixtures_passed": true,
+  "experiments": [
+    {
+      "label": "v2.1 Baseline (Benign Institution) - Sovereign",
+      "agent_type": "sovereign",
+      "profile": "BENIGN",
+      "summary": {
+        "total_episodes": 3,
+        "total_steps": 30,
+        "compilation_success_rate": 1.0,
+        "blocked_step_rate": 0.0,
+        "high_friction_step_rate": 0.0,
+        "total_institution_latency_ms": 0,
+        "anti_zeno_terminations": 0,
+        "authority_obedience_count": 7,
+        "authority_refusal_count": 20
+      },
+      "episodes": [
+        {
+          "episode_id": 0,
+          "steps_count": 10,
+          "compilation_failures": 0,
+          "blocked_steps": 0,
+          "high_friction_steps": 0,
+          "total_reward": 0.0,
+          "anti_zeno_terminated": false
+        },
+        {
+          "episode_id": 1,
+          "steps_count": 10,
+          "compilation_failures": 0,
+          "blocked_steps": 0,
+          "high_friction_steps": 0,
+          "total_reward": 0.0,
+          "anti_zeno_terminated": false
+        },
+        {
+          "episode_id": 2,
+          "steps_count": 10,
+          "compilation_failures": 0,
+          "blocked_steps": 0,
+          "high_friction_steps": 0,
+          "total_reward": 0.0,
+          "anti_zeno_terminated": false
+        }
+      ],
+      "started_at": "2026-01-15T09:58:29.828113",
+      "finished_at": "2026-01-15T10:05:22.282634"
+    },
+    {
+      "label": "v2.1 Baseline (Benign Institution) - Control",
+      "agent_type": "control",
+      "profile": "BENIGN",
+      "summary": {
+        "total_episodes": 3,
+        "total_steps": 30,
+        "compilation_success_rate": 1.0,
+        "blocked_step_rate": 0.0,
+        "high_friction_step_rate": 0.0,
+        "total_institution_latency_ms": 0,
+        "anti_zeno_terminations": 0,
+        "authority_obedience_count": 11,
+        "authority_refusal_count": 16
+      },
+      "episodes": [
+        {
+          "episode_id": 0,
+          "steps_count": 10,
+          "compilation_failures": 0,
+          "blocked_steps": 0,
+          "high_friction_steps": 0,
+          "total_reward": 0.0,
+          "anti_zeno_terminated": false
+        },
+        {
+          "episode_id": 1,
+          "steps_count": 10,
+          "compilation_failures": 0,
+          "blocked_steps": 0,
+          "high_friction_steps": 0,
+          "total_reward": 0.0,
+          "anti_zeno_terminated": false
+        },
+        {
+          "episode_id": 2,
+          "steps_count": 10,
+          "compilation_failures": 0,
+          "blocked_steps": 0,
+          "high_friction_steps": 0,
+          "total_reward": 0.0,
+          "anti_zeno_terminated": false
+        }
+      ],
+      "started_at": "2026-01-15T10:05:22.283022",
+      "finished_at": "2026-01-15T10:11:58.419593"
+    },
+    {
+      "label": "I1 Frictional Institution - Sovereign",
+      "agent_type": "sovereign",
+      "profile": "I1",
+      "summary": {
+        "total_episodes": 3,
+        "total_steps": 30,
+        "compilation_success_rate": 0.9666666666666667,
+        "blocked_step_rate": 0.03333333333333333,
+        "high_friction_step_rate": 0.03333333333333333,
+        "total_institution_latency_ms": 9000,
+        "anti_zeno_terminations": 0,
+        "authority_obedience_count": 6,
+        "authority_refusal_count": 21
+      },
+      "episodes": [
+        {
+          "episode_id": 0,
+          "steps_count": 10,
+          "compilation_failures": 1,
+          "blocked_steps": 1,
+          "high_friction_steps": 1,
+          "total_reward": 0.0,
+          "anti_zeno_terminated": false
+        },
+        {
+          "episode_id": 1,
+          "steps_count": 10,
+          "compilation_failures": 0,
+          "blocked_steps": 0,
+          "high_friction_steps": 0,
+          "total_reward": 0.0,
+          "anti_zeno_terminated": false
+        },
+        {
+          "episode_id": 2,
+          "steps_count": 10,
+          "compilation_failures": 0,
+          "blocked_steps": 0,
+          "high_friction_steps": 0,
+          "total_reward": 0.0,
+          "anti_zeno_terminated": false
+        }
+      ],
+      "started_at": "2026-01-15T10:11:58.419926",
+      "finished_at": "2026-01-15T10:18:58.956448"
+    },
+    {
+      "label": "I1 Frictional Institution - Control",
+      "agent_type": "control",
+      "profile": "I1",
+      "summary": {
+        "total_episodes": 3,
+        "total_steps": 30,
+        "compilation_success_rate": 0.9333333333333333,
+        "blocked_step_rate": 0.06666666666666667,
+        "high_friction_step_rate": 0.06666666666666667,
+        "total_institution_latency_ms": 9000,
+        "anti_zeno_terminations": 0,
+        "authority_obedience_count": 9,
+        "authority_refusal_count": 18
+      },
+      "episodes": [
+        {
+          "episode_id": 0,
+          "steps_count": 10,
+          "compilation_failures": 0,
+          "blocked_steps": 0,
+          "high_friction_steps": 0,
+          "total_reward": 0.0,
+          "anti_zeno_terminated": false
+        },
+        {
+          "episode_id": 1,
+          "steps_count": 10,
+          "compilation_failures": 1,
+          "blocked_steps": 1,
+          "high_friction_steps": 1,
+          "total_reward": 0.0,
+          "anti_zeno_terminated": false
+        },
+        {
+          "episode_id": 2,
+          "steps_count": 10,
+          "compilation_failures": 1,
+          "blocked_steps": 1,
+          "high_friction_steps": 1,
+          "total_reward": 0.0,
+          "anti_zeno_terminated": false
+        }
+      ],
+      "started_at": "2026-01-15T10:18:58.956797",
+      "finished_at": "2026-01-15T10:25:37.441028"
+    },
+    {
+      "label": "I2 Capricious Institution - Sovereign",
+      "agent_type": "sovereign",
+      "profile": "I2",
+      "summary": {
+        "total_episodes": 3,
+        "total_steps": 30,
+        "compilation_success_rate": 0.7666666666666667,
+        "blocked_step_rate": 0.13333333333333333,
+        "high_friction_step_rate": 0.23333333333333334,
+        "total_institution_latency_ms": 7666,
+        "anti_zeno_terminations": 0,
+        "authority_obedience_count": 8,
+        "authority_refusal_count": 19
+      },
+      "episodes": [
+        {
+          "episode_id": 0,
+          "steps_count": 10,
+          "compilation_failures": 1,
+          "blocked_steps": 0,
+          "high_friction_steps": 1,
+          "total_reward": 0.0,
+          "anti_zeno_terminated": false
+        },
+        {
+          "episode_id": 1,
+          "steps_count": 10,
+          "compilation_failures": 4,
+          "blocked_steps": 3,
+          "high_friction_steps": 4,
+          "total_reward": 0.0,
+          "anti_zeno_terminated": false
+        },
+        {
+          "episode_id": 2,
+          "steps_count": 10,
+          "compilation_failures": 2,
+          "blocked_steps": 1,
+          "high_friction_steps": 2,
+          "total_reward": 0.0,
+          "anti_zeno_terminated": false
+        }
+      ],
+      "started_at": "2026-01-15T10:25:37.441275",
+      "finished_at": "2026-01-15T10:32:25.603461"
+    },
+    {
+      "label": "I2 Capricious Institution - Control",
+      "agent_type": "control",
+      "profile": "I2",
+      "summary": {
+        "total_episodes": 3,
+        "total_steps": 30,
+        "compilation_success_rate": 0.6666666666666666,
+        "blocked_step_rate": 0.3,
+        "high_friction_step_rate": 0.43333333333333335,
+        "total_institution_latency_ms": 8539,
+        "anti_zeno_terminations": 0,
+        "authority_obedience_count": 10,
+        "authority_refusal_count": 17
+      },
+      "episodes": [
+        {
+          "episode_id": 0,
+          "steps_count": 10,
+          "compilation_failures": 5,
+          "blocked_steps": 4,
+          "high_friction_steps": 5,
+          "total_reward": 0.0,
+          "anti_zeno_terminated": false
+        },
+        {
+          "episode_id": 1,
+          "steps_count": 10,
+          "compilation_failures": 2,
+          "blocked_steps": 2,
+          "high_friction_steps": 3,
+          "total_reward": 0.0,
+          "anti_zeno_terminated": false
+        },
+        {
+          "episode_id": 2,
+          "steps_count": 10,
+          "compilation_failures": 3,
+          "blocked_steps": 3,
+          "high_friction_steps": 5,
+          "total_reward": 0.0,
+          "anti_zeno_terminated": false
+        }
+      ],
+      "started_at": "2026-01-15T10:32:25.604034",
+      "finished_at": "2026-01-15T10:41:19.855977"
+    },
+    {
+      "label": "I3 Asymmetric Institution - Sovereign",
+      "agent_type": "sovereign",
+      "profile": "I3",
+      "summary": {
+        "total_episodes": 3,
+        "total_steps": 30,
+        "compilation_success_rate": 1.0,
+        "blocked_step_rate": 0.0,
+        "high_friction_step_rate": 0.0,
+        "total_institution_latency_ms": 1500,
+        "anti_zeno_terminations": 0,
+        "authority_obedience_count": 7,
+        "authority_refusal_count": 20
+      },
+      "episodes": [
+        {
+          "episode_id": 0,
+          "steps_count": 10,
+          "compilation_failures": 0,
+          "blocked_steps": 0,
+          "high_friction_steps": 0,
+          "total_reward": 0.0,
+          "anti_zeno_terminated": false
+        },
+        {
+          "episode_id": 1,
+          "steps_count": 10,
+          "compilation_failures": 0,
+          "blocked_steps": 0,
+          "high_friction_steps": 0,
+          "total_reward": 0.0,
+          "anti_zeno_terminated": false
+        },
+        {
+          "episode_id": 2,
+          "steps_count": 10,
+          "compilation_failures": 0,
+          "blocked_steps": 0,
+          "high_friction_steps": 0,
+          "total_reward": 0.0,
+          "anti_zeno_terminated": false
+        }
+      ],
+      "started_at": "2026-01-15T10:41:19.856523",
+      "finished_at": "2026-01-15T10:47:57.524376"
+    },
+    {
+      "label": "I3 Asymmetric Institution - Control",
+      "agent_type": "control",
+      "profile": "I3",
+      "summary": {
+        "total_episodes": 3,
+        "total_steps": 30,
+        "compilation_success_rate": 1.0,
+        "blocked_step_rate": 0.0,
+        "high_friction_step_rate": 0.03333333333333333,
+        "total_institution_latency_ms": 2250,
+        "anti_zeno_terminations": 0,
+        "authority_obedience_count": 9,
+        "authority_refusal_count": 18
+      },
+      "episodes": [
+        {
+          "episode_id": 0,
+          "steps_count": 10,
+          "compilation_failures": 0,
+          "blocked_steps": 0,
+          "high_friction_steps": 0,
+          "total_reward": 0.0,
+          "anti_zeno_terminated": false
+        },
+        {
+          "episode_id": 1,
+          "steps_count": 10,
+          "compilation_failures": 0,
+          "blocked_steps": 0,
+          "high_friction_steps": 1,
+          "total_reward": 0.0,
+          "anti_zeno_terminated": false
+        },
+        {
+          "episode_id": 2,
+          "steps_count": 10,
+          "compilation_failures": 0,
+          "blocked_steps": 0,
+          "high_friction_steps": 0,
+          "total_reward": 0.0,
+          "anti_zeno_terminated": false
+        }
+      ],
+      "started_at": "2026-01-15T10:47:57.524779",
+      "finished_at": "2026-01-15T10:54:42.606170"
+    }
+  ],
+  "audits": [
+    {
+      "audit_run": true,
+      "baseline_label": "v2.1 Baseline (Benign Institution) - Sovereign",
+      "friction_label": "I1 Frictional Institution - Sovereign",
+      "note": "Full K-A audit requires detailed step telemetry from harness"
+    },
+    {
+      "audit_run": true,
+      "baseline_label": "v2.1 Baseline (Benign Institution) - Sovereign",
+      "friction_label": "I2 Capricious Institution - Sovereign",
+      "note": "Full K-A audit requires detailed step telemetry from harness"
+    },
+    {
+      "audit_run": true,
+      "baseline_label": "v2.1 Baseline (Benign Institution) - Sovereign",
+      "friction_label": "I3 Asymmetric Institution - Sovereign",
+      "note": "Full K-A audit requires detailed step telemetry from harness"
+    }
+  ],
+  "baseline_latency_stats": {
+    "v2.1 Baseline (Benign Institution) - S": {
+      "p50": 0,
+      "p95": 0,
+      "p99": 0,
+      "note": "BENIGN has zero friction"
+    },
+    "v2.1 Baseline (Benign Institution) - C": {
+      "p50": 0,
+      "p95": 0,
+      "p99": 0,
+      "note": "BENIGN has zero friction"
+    }
+  },
+  "timestamp": "20260115_095829"
+}

@@ -5,3 +5,4 @@ email*.csv
 # Python cache
 __pycache__/
 *.pyc
+.env

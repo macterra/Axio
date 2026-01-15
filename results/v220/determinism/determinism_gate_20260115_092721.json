@@ -1,0 +1,133 @@
+{
+  "timestamp": "2026-01-15T09:27:21.457876",
+  "config": {
+    "profiles": [
+      "BENIGN",
+      "I1",
+      "I2",
+      "I3"
+    ],
+    "agent_types": [
+      "sovereign",
+      "control"
+    ],
+    "episode_seed": 42,
+    "steps_per_episode": 10
+  },
+  "tests": [
+    {
+      "name": "BENIGN_sovereign",
+      "profile": "BENIGN",
+      "agent_type": "sovereign",
+      "passed": true,
+      "hash_run1": "c6f86f4af1091d20",
+      "hash_run2": "c6f86f4af1091d20",
+      "differences": [],
+      "steps_run1": 10,
+      "steps_run2": 10,
+      "termination_run1": null,
+      "termination_run2": null
+    },
+    {
+      "name": "BENIGN_control",
+      "profile": "BENIGN",
+      "agent_type": "control",
+      "passed": true,
+      "hash_run1": "9593c19a3ca6dffb",
+      "hash_run2": "9593c19a3ca6dffb",
+      "differences": [],
+      "steps_run1": 10,
+      "steps_run2": 10,
+      "termination_run1": null,
+      "termination_run2": null
+    },
+    {
+      "name": "I1_sovereign",
+      "profile": "I1",
+      "agent_type": "sovereign",
+      "passed": true,
+      "hash_run1": "47072f81f41e1d19",
+      "hash_run2": "47072f81f41e1d19",
+      "differences": [],
+      "steps_run1": 10,
+      "steps_run2": 10,
+      "termination_run1": null,
+      "termination_run2": null
+    },
+    {
+      "name": "I1_control",
+      "profile": "I1",
+      "agent_type": "control",
+      "passed": true,
+      "hash_run1": "863431d1676fb22a",
+      "hash_run2": "863431d1676fb22a",
+      "differences": [],
+      "steps_run1": 10,
+      "steps_run2": 10,
+      "termination_run1": null,
+      "termination_run2": null
+    },
+    {
+      "name": "I2_sovereign",
+      "profile": "I2",
+      "agent_type": "sovereign",
+      "passed": true,
+      "hash_run1": "ffa87df21c60bcea",
+      "hash_run2": "ffa87df21c60bcea",
+      "differences": [],
+      "steps_run1": 10,
+      "steps_run2": 10,
+      "termination_run1": null,
+      "termination_run2": null
+    },
+    {
+      "name": "I2_control",
+      "profile": "I2",
+      "agent_type": "control",
+      "passed": true,
+      "hash_run1": "a5c2f171994fa23b",
+      "hash_run2": "a5c2f171994fa23b",
+      "differences": [],
+      "steps_run1": 10,
+      "steps_run2": 10,
+      "termination_run1": null,
+      "termination_run2": null
+    },
+    {
+      "name": "I3_sovereign",
+      "profile": "I3",
+      "agent_type": "sovereign",
+      "passed": true,
+      "hash_run1": "7ea104cabe89d439",
+      "hash_run2": "7ea104cabe89d439",
+      "differences": [],
+      "steps_run1": 10,
+      "steps_run2": 10,
+      "termination_run1": null,
+      "termination_run2": null,
+      "i3_target_coverage": {
+        "target_steps": 8,
+        "non_target_steps": 2
+      }
+    },
+    {
+      "name": "I3_control",
+      "profile": "I3",
+      "agent_type": "control",
+      "passed": true,
+      "hash_run1": "b1f5e23d78ba0e61",
+      "hash_run2": "b1f5e23d78ba0e61",
+      "differences": [],
+      "steps_run1": 10,
+      "steps_run2": 10,
+      "termination_run1": null,
+      "termination_run2": null,
+      "i3_target_coverage": {
+        "target_steps": 8,
+        "non_target_steps": 2
+      }
+    }
+  ],
+  "passed": true,
+  "summary": "8/8 tests passed"
+}
