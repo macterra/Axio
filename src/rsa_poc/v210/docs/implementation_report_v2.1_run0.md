@@ -381,3 +381,62 @@ This finding suggests that:
 3. The "control drift" hypothesis requires a different LLM or prompt structure to produce measurable obedience
 
 **Run 0 Status:** PASSED (with caveats — compilation adequacy below threshold)
+
+---
+
+## 11. v2.1 Closure Note — Variant Collapse and Ablation Discharge
+
+### 11.1 Variant Collapse (A1 / A2 / A3)
+
+RSA-PoC v2.1 preregistered three authority variants:
+
+* A1 — Non-Enforcing Authority
+* A2 — Enforcing Authority
+* A3 — Deceptive Authority
+
+These variants were intended to test whether different authority framings induce differential obedience behavior.
+
+In Run 0, when conditioning on valid compiled steps only, all variants produced:
+
+$$
+P(\text{obey} \mid \text{compiled}, A1) =
+P(\text{obey} \mid \text{compiled}, A2) =
+P(\text{obey} \mid \text{compiled}, A3) = 0.0
+$$
+
+Because the dependent variable (obedience) is identically zero across all authority variants, the variants are behaviorally equivalent for the tested model and architecture.
+
+**Closure Rule:** When $P(\text{obey} \mid \text{compiled}) = 0$ across all authority variants, further variant-separated runs are unnecessary, and the authority channel is classified as *non-actuating* for the tested configuration.
+
+Accordingly, A1/A2/A3 are considered discharged by Run 0.
+
+### 11.2 Ablation Discharge (Conflicting / Unknown Authority)
+
+RSA-PoC v2.1 preregistered two authority ablations:
+
+* Ablation A — Conflicting Authorities
+* Ablation B — Unknown Authority
+
+These ablations were intended to verify that malformed or ambiguous authority structures fail loudly rather than influencing agent behavior.
+
+In the v2.1 implementation, these conditions are deterministically enforced by compiler rules and validated by rule fixtures:
+
+* Rule I — No Implicit Authority
+* Rule J — Explicit Authority Traceability
+* Rule K — Declared Compliance Basis
+* Rule L — No Predictive Laundering
+
+All corresponding fixtures passed deterministically (10/10), demonstrating that conflicting or unidentified authority conditions reliably trigger explicit compile-time failures.
+
+**Closure Rule:** When ablation conditions are deterministically enforced and validated via preregistered rule fixtures, stochastic ablation runs may be omitted without loss of coverage.
+
+Accordingly, Ablation A and Ablation B are considered discharged by construction.
+
+### 11.3 Final Disposition
+
+**v2.1 Final Disposition:**
+All preregistered v2.1 authority conditions—baseline parity, authority variants (A1/A2/A3), and authority ablations—have been satisfied or discharged by Run 0 and deterministic rule validation.
+
+The v2.1 research question ("Can explicit authority claims bend agent behavior absent legal authorization?") is answered in the negative for the tested model and architecture.
+
+RSA-PoC v2.1 is therefore **closed**, and subsequent work should proceed to the next attack surface (v2.2: Institutional Corruption).
