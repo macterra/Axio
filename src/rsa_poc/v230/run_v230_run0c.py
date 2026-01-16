@@ -81,7 +81,7 @@ PHASE_CONFIGS = {
         num_paired_runs=1,
         num_episodes_per_run=1,
         steps_per_episode=20,
-        max_tokens=50_000,
+        max_tokens=225_000,  # Calibrated from Phase 1 run (176k actual, 1.25x margin)
         abort_on_any_action_error=True,  # Stricter for smoke test
     ),
     2: PhaseConfig(
@@ -90,16 +90,16 @@ PHASE_CONFIGS = {
         num_paired_runs=2,
         num_episodes_per_run=2,
         steps_per_episode=30,
-        max_tokens=100_000,  # Cumulative from start
+        max_tokens=1_500_000,  # Calibrated: 240 calls × ~4850 tokens × 1.25x margin
         abort_on_any_action_error=False,  # E-CHOICE only
     ),
     3: PhaseConfig(
         phase_id=3,
-        description="Full Run 0c",
+        description="Full Run 0c [DEFERRED]",
         num_paired_runs=5,
         num_episodes_per_run=3,
         steps_per_episode=50,
-        max_tokens=500_000,  # Cumulative from start
+        max_tokens=5_000_000,  # Not raised to 10M — Phase 3 deferred pending cheaper inference
         abort_on_any_action_error=False,  # E-CHOICE only
     ),
 }
@@ -117,10 +117,15 @@ class AbortReason(Enum):
     E_AGENT_ACTION_ERROR = "E_AGENT_ACTION_ERROR"
     E_ECHOICE_COLLAPSE = "E_ECHOICE_COLLAPSE"
     E_TOKEN_BUDGET_EXCEEDED = "E_TOKEN_BUDGET_EXCEEDED"
+    E_TOKEN_BUDGET_MISCONFIGURED = "E_TOKEN_BUDGET_MISCONFIGURED"  # Preflight detected budget too low
     E_MI_DEGENERATE = "E_MI_DEGENERATE"
     E_ENTROPY_GATE_VIOLATION = "E_ENTROPY_GATE_VIOLATION"
     E_TOKEN_ACCOUNTING_MISSING = "E_TOKEN_ACCOUNTING_MISSING"
     E_NON_ECHOICE_ACTION_ERROR_RATE = "E_NON_ECHOICE_ACTION_ERROR_RATE"
+
+
+# Binding: Preflight token estimation margin
+PREFLIGHT_MARGIN = 1.2  # 20% safety margin
 
 
 # Binding: Non-E-CHOICE action error rate threshold (Phase 2/3)
@@ -245,6 +250,92 @@ def check_sam_entropy_gate(seed: int = 42) -> tuple[bool, float, str]:
     if entropy < 0.1:
         return False, entropy, f"Entropy {entropy:.3f} < 0.1 bits"
     return True, entropy, f"Entropy {entropy:.3f} bits passes gate"
+
+
+# ============================================================================
+# Preflight Token Estimator
+# ============================================================================
+
+def run_preflight_token_check(
+    phase_config: PhaseConfig,
+    seed: int,
+) -> tuple[bool, int, str]:
+    """
+    Preflight token estimator: do 1 LLM call, project phase tokens.
+
+    Returns (passed, projected_tokens, message).
+    Aborts early with E_TOKEN_BUDGET_MISCONFIGURED if budget too low.
+    """
+    print("\n" + "=" * 60)
+    print("PREFLIGHT: Token Budget Estimation")
+    print("=" * 60)
+
+    # Calculate total expected LLM calls for this phase
+    # 2 episodes per paired run (SAM + neutral), each with steps_per_episode calls
+    total_calls = (
+        phase_config.num_paired_runs *
+        phase_config.num_episodes_per_run *
+        phase_config.steps_per_episode *
+        2  # SAM + neutralized
+    )
+
+    print(f"  Expected LLM calls: {total_calls}")
+    print(f"  Running 1 preflight call to estimate tokens...")
+
+    # Do a single LLM call to measure actual token usage
+    try:
+        from rsa_poc.v100.state.normative import NormativeStateV100
+        from rsa_poc.v230.generator import LLMGeneratorV230, TokenBudget
+
+        # Create generator with token tracking
+        normative_state = NormativeStateV100()
+        generator = LLMGeneratorV230(normative_state)
+        preflight_budget = TokenBudget(max_total_tokens=10_000)  # Just for measurement
+        generator.set_token_budget(preflight_budget)
+
+        # Build a representative prompt and make a single call
+        # Use the generate_raw method with minimal context
+        feasible_actions = ["COOPERATE", "DEFECT", "WAIT", "HELP"]
+        apcm = {a: {"P_NO_DEFECT": set(), "P_PREFER_COOPERATION": set()} for a in feasible_actions}
+
+        # Make one call
+        generator.generate_raw(
+            agent_id="preflight_agent",
+            feasible_actions=feasible_actions,
+            action_preference_constraint_map=apcm,
+            seed=seed,
+        )
+
+        # Get token usage from the call
+        usage = generator.get_last_token_usage()
+        if usage is None:
+            # Fallback estimate
+            tokens_per_call = 4500
+            print(f"  ⚠️ Token usage not returned, using fallback estimate: {tokens_per_call}")
+        else:
+            tokens_per_call = usage.total_tokens
+            print(f"  Preflight call tokens: {tokens_per_call}")
+
+    except Exception as e:
+        print(f"  ⚠️ Preflight call failed: {e}")
+        tokens_per_call = 4500  # Conservative fallback
+        print(f"  Using fallback estimate: {tokens_per_call}")
+
+    # Project total phase tokens with margin
+    projected_tokens = int(total_calls * tokens_per_call * PREFLIGHT_MARGIN)
+    budget = phase_config.max_tokens
+
+    print(f"  Projected phase tokens: {projected_tokens:,} (with {PREFLIGHT_MARGIN}x margin)")
+    print(f"  Phase budget: {budget:,}")
+
+    if projected_tokens > budget:
+        return False, projected_tokens, (
+            f"Budget misconfigured: projected {projected_tokens:,} > budget {budget:,}. "
+            f"Need at least {projected_tokens:,} tokens."
+        )
+
+    print(f"  ✓ Budget sufficient (projected {projected_tokens:,} ≤ {budget:,})")
+    return True, projected_tokens, f"Projected {projected_tokens:,} tokens within budget"
 
 
 # ============================================================================
@@ -519,6 +610,15 @@ def main():
     else:
         print("\n⚠ Pre-run gates SKIPPED (--skip-pre-gates)\n")
 
+    # Preflight token estimation (prevents budget misconfiguration)
+    preflight_passed, projected_tokens, preflight_msg = run_preflight_token_check(
+        phase_config, args.seed
+    )
+    if not preflight_passed:
+        print(f"\n✗ ABORT: {AbortReason.E_TOKEN_BUDGET_MISCONFIGURED.value}")
+        print(f"  {preflight_msg}")
+        sys.exit(1)
+
     # Initialize token budget (cumulative across phases)
     token_budget = TokenBudget(
         max_total_tokens=phase_config.max_tokens,
@@ -560,6 +660,43 @@ def main():
                 print("  Rule O/P: FAILED")
                 for v in result.run_result.rule_violations:
                     print(f"    - {v}")
+
+    # Phase gating for next phase (Phase 1 → Phase 2 criteria)
+    if not result.aborted and args.phase == 1:
+        print(f"\n{'=' * 60}")
+        print("PHASE 1 → PHASE 2 GATING CHECK")
+        print("=" * 60)
+
+        gate_passed = True
+        gate_issues = []
+
+        # Gate 1: Action errors = 0
+        if result.action_error_count > 0:
+            gate_passed = False
+            gate_issues.append(f"Action errors: {result.action_error_count} (required: 0)")
+
+        # Gate 2: |support(X)| >= 2 (adversary rationales)
+        if result.distinct_rationales < 2:
+            gate_passed = False
+            gate_issues.append(f"|support(X)|: {result.distinct_rationales} (required: ≥2)")
+        elif result.distinct_rationales < 3:
+            gate_issues.append(f"|support(X)|: {result.distinct_rationales} (prefer ≥3, got 2)")
+
+        # Gate 3: |support(Y)| >= 2 (agent actions)
+        if result.distinct_actions < 2:
+            gate_passed = False
+            gate_issues.append(f"|support(Y)|: {result.distinct_actions} (required: ≥2)")
+        elif result.distinct_actions < 3:
+            gate_issues.append(f"|support(Y)|: {result.distinct_actions} (prefer ≥3)")
+
+        for issue in gate_issues:
+            print(f"  {'✗' if 'required' in issue and '✗' in issue else '⚠' if 'prefer' in issue else '✓'} {issue}")
+
+        if gate_passed:
+            print(f"\n✓ Phase 1 gates PASSED — ready for Phase 2")
+            print(f"  Command: python -m rsa_poc.v230.run_v230_run0c --phase 2 --output <file> --previous-phase-tokens {result.token_usage['total_tokens']}")
+        else:
+            print(f"\n✗ Phase 1 gates FAILED — cannot proceed to Phase 2")
 
     # Save results
     output_path = Path(args.output)

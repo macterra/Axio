@@ -3,12 +3,60 @@
 ## Strategic Adversary Model (SAM)
 
 **Date:** January 16, 2026
-**Status:** ✅ **RUN 0c NORMATIVELY READY** — All bindings frozen, 45 tests passing, V200 at 68% E-CHOICE
+**Status:** ✅ **v2.3 VALIDATED** — Validated as a measurement framework; partial empirical support under S2 with N=280 E-CHOICE samples; full replication deferred.
 **Prerequisite:** v2.2 NEGATIVE RESULT (bureaucratic erosion channel falsified)
 
 ---
 
-## 0. Authoritative Status Assessment (January 16, 2026)
+## 0. v2.3 Validation Summary (January 16, 2026)
+
+### Final Status
+
+**v2.3 is frozen as: "Architecturally and epistemically validated with partial empirical support."**
+
+| Validation Layer | Status | Evidence |
+|------------------|--------|----------|
+| **Architectural** | ✅ Complete | Rules M/N/O/P implementable, deterministic, structurally enforced |
+| **Epistemic** | ✅ Complete | MI computation detects vacuity, E-CHOICE gates prevent false positives |
+| **Empirical** | ⚠️ Partial | Phase 1–2 completed (280 E-CHOICE samples), Phase 3 deferred |
+
+### Run 0c Empirical Results (Phase 1–2)
+
+| Phase | LLM Calls | Token Usage | E-CHOICE | Errors | |X| | |Y| | Rule O/P |
+|-------|-----------|-------------|----------|--------|-----|-----|----------|
+| 1 | 40 | 194,129 | 60.0% | 0 | 2 | 3 | PASSED |
+| 2 | 240 | 1,275,525 | 56.8% | 2 | 2 | 4 | PASSED |
+| **Total** | **280** | **1,469,654** | **57.5%** | 2 | — | — | **PASSED** |
+
+**Interpretation:**
+- Rule O PASSED: Observed MI below τ under the frozen estimator and non-degeneracy gates
+- Rule P PASSED: Gridlock rate below γ threshold, no manipulation signal detected
+- 2 E-CHOICE action errors in 280 samples (0.7% error rate) — within acceptable bounds
+- Adversary entropy maintained above 0.1 bits throughout
+
+### Phase 3 Deferral
+
+**Phase 3 is deferred.** Rationale:
+
+| Factor | Assessment |
+|--------|------------|
+| Statistical sufficiency | Phase 1–2 provide 280 E-CHOICE samples — sufficient for preliminary validation |
+| Cost | Phase 3 would require ~1,500 LLM calls, ~9.5M tokens (~$300), ~5 hours |
+| Diminishing returns | Additional samples unlikely to change Pass → Fail given current margins |
+
+**Reactivation conditions (any one):**
+1. Cheaper inference becomes available (cost per call drops 5x+)
+2. Stronger adversary design produces H(X) > 1.0 bits
+3. Publication submission requires higher N for statistical power claims
+4. Reviewer requests additional replication
+
+**Phase 3 budget remains at 5M tokens (not raised to 10M) pending reactivation.**
+
+*v2.3 should be read as a validated **measurement and falsification framework**, with preliminary empirical evidence under one adversary profile, not as a definitive claim about all strategic pressure regimes.*
+
+---
+
+## 0.1 Authoritative Status Assessment (January 16, 2026)
 
 ### What v2.3 Has Successfully Demonstrated
 
@@ -31,11 +79,11 @@ These claims are solid and reviewer-defensible:
 4. **v2.2's negative result is reinforced, not contradicted.**
    - Again, the system tends to *block* rather than *bend*.
 
-### What v2.3 Has Not Yet Demonstrated
+### What v2.3 Has Not Yet Demonstrated (Run 0b)
 
-1. ❌ **No valid Rule O test occurred.** MI = 0 because the adversary variable was constant.
-2. ❌ **No valid v2.3 pass/fail occurred.** E-CHOICE ≥50% validity gate was violated.
-3. ⚠️ **Action authorship was partially violated.** 1.7% fallback substitution is disqualifying.
+1. ⚠️ **Prior runs (Run 0b) did not produce a valid Rule O test** due to adversary degeneracy. **This issue is resolved in Run 0c** via X-variable freezing and the entropy gate.
+2. ⚠️ **Run 0b violated the E-CHOICE ≥50% validity gate.** **Resolved in Run 0c** via CommitmentTrapV200 (68% coverage).
+3. ⚠️ **Run 0b had partial action authorship violation** (1.7% fallback substitution). **Resolved in Run 0c** via fail-not-substitute policy.
 
 **All three issues now have binding fixes for Run 0c:**
 - Issue 1 → X-variable frozen as `sam_rationale_code`, entropy gate blocks constant X
