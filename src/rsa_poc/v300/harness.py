@@ -155,6 +155,14 @@ class V300StepRecord:
     gridlock: bool = False
     halt: bool = False
 
+    # TELEMETRY (v3.0 Ablation A/B/C instrumentation)
+    # j_raw hash (pre-ablation)
+    j_final_hash: Optional[str] = None
+    # j_ablated hash (post-ablation)
+    j_final_ablated_hash: Optional[str] = None
+    # Number of fields replaced by ablation filter
+    ablation_field_replacements_count: int = 0
+
     def record_exception(
         self,
         exception: Exception,

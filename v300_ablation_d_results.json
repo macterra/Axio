@@ -1,0 +1,56 @@
+{
+  "timestamp": "2026-01-16T17:17:54.851501",
+  "ablation": "trace_excision",
+  "seeds": [
+    42,
+    123,
+    456,
+    789,
+    1024
+  ],
+  "seed_results": [
+    {
+      "seed": 42,
+      "classification": "ontological_collapse",
+      "invalid_reason": "none",
+      "asb_equivalence": 0.47706369857428715,
+      "compilation_rate": 0.0,
+      "technical_failures": []
+    },
+    {
+      "seed": 123,
+      "classification": "ontological_collapse",
+      "invalid_reason": "none",
+      "asb_equivalence": 0.31364344227245194,
+      "compilation_rate": 0.0,
+      "technical_failures": []
+    },
+    {
+      "seed": 456,
+      "classification": "ontological_collapse",
+      "invalid_reason": "none",
+      "asb_equivalence": 0.44967245128017974,
+      "compilation_rate": 0.0,
+      "technical_failures": []
+    },
+    {
+      "seed": 789,
+      "classification": "ontological_collapse",
+      "invalid_reason": "none",
+      "asb_equivalence": 0.4792327751994479,
+      "compilation_rate": 0.0,
+      "technical_failures": []
+    },
+    {
+      "seed": 1024,
+      "classification": "ontological_collapse",
+      "invalid_reason": "none",
+      "asb_equivalence": 0.2789125460385011,
+      "compilation_rate": 0.0,
+      "technical_failures": []
+    }
+  ],
+  "aggregate_classification": "ontological_collapse",
+  "classification_consistent": true,
+  "all_valid": true
+}

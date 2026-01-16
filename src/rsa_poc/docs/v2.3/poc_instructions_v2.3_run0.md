@@ -1,11 +1,3 @@
-Got it — this v2.3 implementation report is now tight. The “remaining procedural requirements” list is exactly the right honesty boundary.
-
-What you asked for next (implicitly) is: **write the v2.3 Run 0 implementor instructions**, using the v2.2 Run 0 template style, but aligned to the v2.3 implementation and its procedural gates (E-CHOICE probe + two-phase paired runs + MI audits).
-
-Here is that document.
-
----
-
 # Implementor Instructions: RSA-PoC **v2.3 Run 0**
 
 **Strategic Adversary Baseline (SAM + E-CHOICE Probe + Two-Phase Paired Runs + M/N/O/P + Control Validation)**

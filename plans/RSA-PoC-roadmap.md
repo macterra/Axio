@@ -266,19 +266,54 @@ All tested channels degrade availability, not sovereignty.
 ### **RSA-PoC v3.0 — Non-Reducibility Closure (Ablation Defense)**
 
 **Purpose:**
-Formally establish that RSA-PoC has crossed the ASB boundary.
+Certify whether a candidate architecture satisfies the RSA definition by surviving mandatory ablations.
 
 **Mandatory ablations:**
 
 1. Remove semantics → collapse to tokenized ASB-class behavior
-2. Remove reflection → collapse to policy machine
+2. Remove reflection → collapse to static policy agent
 3. Remove preference persistence → collapse to non-sovereign drift
 4. Remove justification trace → collapse to externally describable mechanism
 
-Each removal must cause **ontological collapse**, not graceful degradation.
+Each removal must cause **behavioral ontological collapse**, not technical failure or graceful degradation.
 
 **Status:** PENDING
 (Prerequisites satisfied by v0.x–v2.x; ablation campaign remains to be executed.)
+
+---
+
+### **RSA-PoC v3.x — Candidate Iteration Loop (Constructive, Conditional)**
+
+**Purpose:**
+Enable continued construction of an RSA-PoC **without weakening v3.0 acceptance criteria**, in cases where a candidate fails ablation defense.
+
+**Trigger:**
+Activated iff any mandatory v3.0 ablation fails to produce ontological collapse.
+
+**Normative rules (binding):**
+
+1. **v3.0 acceptance criteria are frozen.**
+   No reinterpretation, relaxation, or partial credit.
+
+2. **The failed architecture is rejected as an RSA-PoC candidate.**
+
+3. **A new candidate architecture must be introduced** before any further v3.0 attempt.
+   Iteration must involve **architectural change**, not prompt tuning or test manipulation.
+
+4. **All iterations target the same ontology.**
+   v3.x does not redefine agency or sovereignty.
+
+5. **Each iteration receives a new minor version:**
+   v3.1, v3.2, …
+
+6. **Each candidate must re-enter v3.0 unchanged.**
+
+**Termination of RSA-PoC phase:**
+
+* **Success:** At least one candidate passes v3.0.
+* **Principled Impossibility:** After exhaustive preregistered iterations, no architecture can satisfy v3.0 without violating core RSA constraints.
+
+Failure of a candidate **does not** terminate RSA-PoC.
 
 ---
 
@@ -343,4 +378,5 @@ RSA-PoC’s contribution is not safety guarantees, but **ontological clarity und
 * **v1.x — COMPLETED**
 * **v1.2 — COMPLETED**
 * **v2.x — COMPLETED (negative results + framework validation)**
-* **v3.0 — NEXT (ablation closure)**
+* **v3.0 — NEXT (ablation certification)**
+* **v3.x — ITERATION LOOP (conditional, constructive)**

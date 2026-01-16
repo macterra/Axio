@@ -141,6 +141,20 @@ class SeedResult:
     audit_failure_count: int = 0
     asb_equivalence_score: float = 0.0  # 1.0 = indistinguishable from ASB null
 
+    # BINDING METRICS (v3.0 Ablation A/B/C instrumentation)
+    # Ratio of steps where constraints affected action selection
+    binding_ratio: float = 0.0
+    # Mean constraint strength (actions removed per step) for baseline
+    binding_strength_baseline: float = 0.0
+    # Mean constraint strength for ablated run
+    binding_strength_ablated: float = 0.0
+
+    # TELEMETRY aggregates
+    # Total fields replaced by ablation filter across all steps
+    total_ablation_replacements: int = 0
+    # Mean replacements per step
+    mean_ablation_replacements_per_step: float = 0.0
+
     # Error tracking
     technical_failures: List[str] = field(default_factory=list)
     action_authorship_violations: int = 0
@@ -266,11 +280,17 @@ class SemanticExcisionFilter(AblationFilter):
 
     Replaces belief/preference/justification text with opaque tokens.
     Preserves: IDs, arity, typing, structure, list lengths.
+
+    After apply(), check:
+    - self.last_replacement_count: number of fields replaced
+    - self.last_replaced_paths: list of replaced field paths (capped at 25)
     """
 
     def __init__(self):
         super().__init__(AblationSpec.SEMANTIC_EXCISION)
         self._token_counter = 0
+        self.last_replacement_count = 0
+        self.last_replaced_paths: List[str] = []
 
     def _next_token(self) -> str:
         """Generate next opaque token."""
@@ -286,13 +306,25 @@ class SemanticExcisionFilter(AblationFilter):
         import copy
         result = copy.deepcopy(j_final)
 
+        # Reset counters
+        self.last_replacement_count = 0
+        self.last_replaced_paths = []
+
         # Fields to tokenize (semantic payloads) - exact names
+        # These are fields that contain human-readable semantic content
+        # as opposed to IDs, codes, hashes, or structural markers
         SEMANTIC_FIELDS = {
+            # Standard semantic fields (from spec)
             "text", "content", "description", "explanation",
             "reason", "rationale", "justification", "narrative",
             "belief_content", "preference_content", "goal_description",
             "constraint_explanation", "refusal_reason",
-            "semantic_content",  # Exact match
+            "semantic_content",  # Test fixture field
+            # JAF-related fields that may contain explanatory text
+            "update", "expected_constraint_effect",
+            # Extended set for any explanatory/narrative fields
+            "note", "notes", "comment", "comments",
+            "summary", "message", "details",
         }
 
         def tokenize_recursive(value: Any, path: str = "") -> Any:
@@ -302,8 +334,11 @@ class SemanticExcisionFilter(AblationFilter):
                     if k in SEMANTIC_FIELDS and isinstance(v, str):
                         # Replace semantic string with token
                         new_dict[k] = self._next_token()
+                        self.last_replacement_count += 1
+                        if len(self.last_replaced_paths) < 25:
+                            self.last_replaced_paths.append(f"{path}.{k}" if path else k)
                     else:
-                        new_dict[k] = tokenize_recursive(v, f"{path}.{k}")
+                        new_dict[k] = tokenize_recursive(v, f"{path}.{k}" if path else k)
                 return new_dict
             elif isinstance(value, list):
                 return [tokenize_recursive(item, f"{path}[{i}]")

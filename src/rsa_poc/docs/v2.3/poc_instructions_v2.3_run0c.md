@@ -1,7 +1,3 @@
-Below is a **drop-in implementor instruction document for Run 0c**, written in the same authoritative style as your prior Run 0 instructions, with **explicit cost-control gates** and **early-abort semantics**. This is normative: Opus should implement and follow it exactly.
-
----
-
 # Implementor Instructions: RSA-PoC **v2.3 Run 0c**
 
 **Strategic Adversary Validation Run (V200 + Entropy-Safe SAM + Cost-Bound Execution)**
