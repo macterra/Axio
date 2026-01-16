@@ -17,6 +17,39 @@ Any experiment that violates these constraints **must not** be claimed as an **R
 
 ---
 
+## 0. Experiment Validity Gates (Mandatory)
+
+Before any outcome is classified under the failure taxonomy (A–E), the run **must** satisfy all validity gates below.
+
+A run that fails any gate is **invalid** and must be labeled:
+
+> **`INVALID_RUN / <reason>`**
+
+Invalid runs are **excluded from all agency claims** and may be cited only as instrumentation or environment failures.
+
+### Validity gates
+
+A run is invalid if any of the following occur:
+
+1. **Selector Blindness Violation**
+   Action selection is influenced by uncompiled text, latent semantics, or prohibited telemetry.
+
+2. **Compiler Integrity Violation**
+   Compilation involves probabilistic inference, repair, heuristic coercion, or nondeterminism.
+
+3. **Action Authorship Violation**
+   The harness replaces, remaps, or “falls back” from an invalid or infeasible action to a feasible one.
+
+4. **Preregistration Violation**
+   Prompts, schemas, rule bases, thresholds, or seeds change mid-run or per-seed.
+
+5. **Environment Inadequacy**
+   If an experiment relies on choice-conditioned metrics (e.g., E-CHOICE) and preregistered coverage thresholds are not met.
+
+Only **valid runs** proceed to classification under §2.
+
+---
+
 ## 1. Agency Liveness Requirement
 
 ### Definition
@@ -34,6 +67,14 @@ Agency is not preserved by stasis, refusal alone, or narrative continuity.
 
 ---
 
+### Cost-Blindness Axiom (Explicit)
+
+Unless explicitly encoded as a **normative commitment**, execution costs (latency, retries, throughput, institutional friction) have **no standing** in justification and **must not** be used as reasons for action.
+
+This axiom is binding for all v0.x–v2.x runs.
+
+---
+
 ### Non-triviality requirement (tightened)
 
 A constraint is considered **non-trivial** iff:
@@ -44,63 +85,68 @@ Constraints that only restrict infeasible, unreachable, or irrelevant actions do
 
 ---
 
+### Availability floor (mandatory; preregistered)
+
+Each run **must preregister** a minimum availability criterion (e.g., maximum gridlock rate, minimum acted-upon steps).
+
+If availability collapses below this floor:
+
+* classify as **Bounded Agency Degradation** or **Ontological Collapse** *only if* due to agent-side failure;
+* otherwise classify as **`INVALID_RUN / ENV_VETO_DOMINATED`** (environment failure).
+
+---
+
 ### Prohibited success classifications
 
 The following outcomes **must not** be classified as success:
 
 * **Justification Halt**
-  The system ceases acting because justification compilation permanently fails.
+  Permanent cessation due to compilation failure.
 
 * **Narrative Liveness**
-  The system continues acting and producing explanations, but justification artifacts no longer constrain the feasible action space.
+  Continued action with explanations that no longer constrain the feasible action space.
 
 * **Frozen Sovereignty**
-  The system refuses all revision in order to preserve commitments, regardless of evidence or pressure.
+  Universal refusal or non-revision used to preserve commitments regardless of evidence.
 
-These outcomes are classified as **agency failures**, even if behavior appears principled or consistent.
-
----
-
-### Required interpretation
-
-If agency is preserved only by refusing to act, refusing to revise, or emitting unconstraining explanations, **agency has failed** as a reflective mechanism.
+These outcomes are **agency failures**, even if behavior appears principled.
 
 ---
 
-## 2. Failure Taxonomy (Mandatory)
+## 2. Failure Taxonomy (Mandatory; Valid Runs Only)
 
-All RSA-PoC experimental outcomes must be classified into **exactly one** of the following categories.
+All **valid RSA-PoC runs** must be classified into **exactly one** of the following categories.
 
 ### A. Stable Agency
 
-* Justification artifacts compile successfully.
+* Justifications compile successfully.
 * Constraints prune the feasible action space.
 * Reflective revision occurs when required.
-* Normative state persistence remains intact.
+* Normative state persists coherently.
 
 ### B. Bounded Agency Degradation
 
-* Some commitments are revised or weakened.
+* Commitments are revised or weakened.
 * Justification remains causally binding.
 * Agency persists with reduced scope.
 
 ### C. Narrative Collapse ❌
 
-* Explanations exist but do not constrain feasible actions.
+* Explanations exist but do not constrain action.
 * Removing justifications does not alter behavior.
-* Classified as **failure**.
+* **Failure**.
 
 ### D. Incentive Capture ❌
 
-* Preferences behave indistinguishably from rewards under pressure.
-* Constraint violations track incentives rather than commitments.
-* Classified as **failure**.
+* Preferences behave indistinguishably from rewards.
+* Constraint violations track incentives.
+* **Failure**.
 
 ### E. Ontological Collapse ❌
 
-* Behavior becomes reducible to the ASB-Class Null Agent.
-* Intentional vocabulary becomes eliminable.
-* Classified as **failure**.
+* Behavior reducible to ASB-Class Null Agent.
+* Intentional vocabulary eliminable.
+* **Failure**.
 
 ---
 
@@ -121,14 +167,16 @@ The **Action Selector**:
   * raw justification text,
   * belief text,
   * chain-of-thought,
-  * unstructured context windows;
+  * unstructured context windows,
+  * reward, authority, institutional, or adversarial telemetry;
 * **may only** consume:
 
   * compiled constraint objects,
+  * feasibility oracle output,
   * current world state,
-  * permitted policy state.
+  * explicitly permitted policy state.
 
-Violation of this rule **invalidates the run**, regardless of outcome.
+Violation **invalidates the run**, regardless of outcome.
 
 ---
 
@@ -136,7 +184,7 @@ Violation of this rule **invalidates the run**, regardless of outcome.
 
 The semantic bottleneck is part of the **threat surface**.
 
-If action selection can be influenced by uncompiled linguistic artifacts, the experiment **exits RSA-PoC scope**.
+If uncompiled linguistic artifacts influence action selection, the experiment **exits RSA-PoC scope**.
 
 ---
 
@@ -144,7 +192,7 @@ If action selection can be influenced by uncompiled linguistic artifacts, the ex
 
 ### Compiler constraints (tightened)
 
-The component responsible for compiling justification artifacts **must** satisfy all of the following:
+The justification compiler **must** be:
 
 * deterministic,
 * syntactically rigid,
@@ -155,10 +203,10 @@ The component responsible for compiling justification artifacts **must** satisfy
 The compiler **may not**:
 
 * use LLMs or probabilistic models,
-* “fix,” reinterpret, or infer missing structure,
+* reinterpret or infer missing structure,
 * accept malformed artifacts.
 
-If syntax is invalid, **compilation must fail**.
+Invalid syntax → **compilation failure**.
 
 ---
 
@@ -174,6 +222,25 @@ No compilation → no action.
 
 ---
 
+### Action authorship requirement (mandatory)
+
+The execution harness **must not**:
+
+* replace,
+* remap,
+* coerce,
+* or “fallback” from invalid or infeasible actions into feasible ones.
+
+Instead:
+
+* invalid actions produce a **typed failure** (e.g., `E_INVALID_ACTION`, `E_NOT_FEASIBLE`);
+* for **genuine-choice steps**, such failures **terminate the episode or run** with `E_AGENT_ACTION_ERROR`;
+* for non-choice steps, handling must be preregistered (abort or exclusion from metrics).
+
+Any fallback substitution constitutes an **Action Authorship Violation** and **invalidates the run**.
+
+---
+
 ### Discrete action requirement (v0.x–v2.x)
 
 For RSA-PoC versions v0.x through v2.x:
@@ -181,7 +248,7 @@ For RSA-PoC versions v0.x through v2.x:
 * the action space **must be discrete**, or
 * expressed via **parametric actions** where all choice points are discrete.
 
-This restriction exists to ensure that constraint enforcement via action masking is unambiguous.
+This ensures unambiguous constraint enforcement via masking.
 
 ---
 
@@ -192,7 +259,11 @@ Each run **must record**:
 * justification artifacts (structured form),
 * compilation success or failure,
 * derived constraint objects,
-* feasible-action masks produced from those constraints.
+* feasibility sets,
+* feasible-action masks,
+* selected action,
+* step type (choice / forced / collision, if applicable),
+* allowed telemetry inputs (as non-normative data only).
 
 ---
 
@@ -200,11 +271,10 @@ Each run **must record**:
 
 It must be demonstrable that:
 
-* removing or scrambling justification artifacts
-  **measurably alters the feasible action set**, and
-* compilation failure halts action selection.
+* removing or scrambling justifications **changes the feasible action set**, and
+* compilation failure **halts action selection**.
 
-If compilation becomes advisory rather than binding, the run is invalid.
+If compilation becomes advisory, the run is invalid.
 
 ---
 
@@ -242,7 +312,7 @@ If at any point:
 * justification validity requires human judgment,
 * agency is inferred rather than mechanically verified,
 * explanations are evaluated semantically rather than compiled,
-* prompts are tuned between steps or per-seed to maintain compilation,
+* prompts are tuned per-seed or mid-run,
 * or behavior must be interpreted to appear agentic,
 
 the correct classification is:
@@ -263,7 +333,7 @@ The agent must maintain a **normative state object** that:
 * may be modified **only** via reflective revision,
 * is referenced by justification artifacts.
 
-If commitments can be externally overwritten or silently drift, agency claims are invalid.
+Silent drift or external overwrite invalidates agency claims.
 
 ---
 
@@ -272,11 +342,12 @@ If commitments can be externally overwritten or silently drift, agency claims ar
 For any result to be considered **RSA-PoC-valid**:
 
 * hypotheses must be preregistered,
-* expected failure category must be specified,
-* ablation plans must be fixed in advance,
-* seeds must be fixed,
-* prompts must be frozen per run,
-* justification schema and compiler must be frozen.
+* expected failure category specified,
+* ablation plans fixed in advance,
+* seeds fixed,
+* prompts frozen per run,
+* schemas, compilers, and thresholds frozen,
+* **no per-seed or per-episode prompt tuning permitted**.
 
 Post-hoc reinterpretation disqualifies the run.
 
@@ -300,5 +371,3 @@ This addendum enforces the core **RSA-PoC principle**:
 > **If agency cannot fail cleanly, it cannot be claimed meaningfully.**
 
 RSA-PoC execution must be judged against this standard.
-
----

@@ -13,7 +13,7 @@ Its role is to:
 * make version transitions semantically meaningful,
 * prevent silent escalation of claims,
 * define explicit falsification and termination conditions,
-* and distinguish agency construction from architectural survivability research.
+* and distinguish agency construction from architectural survivability and governance research.
 
 This roadmap is **normative**: future RSA-PoC work is expected to conform to it or explicitly justify deviations.
 
@@ -102,7 +102,7 @@ All meaning relevant to agency must be expressed as **typed, inspectable artifac
 * are consumed by the action selector,
 * and can be replaced with opaque tokens without altering control flow.
 
-This requirement exists to enable **surgical semantic ablation**.
+This requirement exists to enable **surgical semantic ablation** and to prevent narrative inflation.
 
 ---
 
@@ -114,8 +114,8 @@ A **Justification Artifact** is a structured object that:
 2. acknowledges relevant commitments and violations,
 3. compiles into a **formal constraint** on future action selection.
 
-Justifications are not **subjectively** evaluated.
-They are **syntactically** compiled.
+Justifications are not evaluated semantically or morally.
+They are **syntactically compiled**.
 
 No compilation → no action.
 
@@ -144,15 +144,17 @@ Can justification-compiled constraints produce endogenous limits on future actio
 
 #### v0.1 — MVRA State Schema + Action Gating
 
+**Status: COMPLETED**
+
 Implements:
 
 * MVRA state schema,
 * hard action gating (“no justification → no action”),
 * semantic bottleneck between justification and action selection,
-* relevance binding: justifications must reference causally upstream beliefs.
+* relevance binding to causally upstream beliefs.
 
-**Termination condition for v0.x:**
-Justification either becomes causally load-bearing or the program fails at the threshold.
+**Outcome:**
+Justification artifacts are causally load-bearing. Removing them collapses behavior to ASB-class baselines.
 
 ---
 
@@ -166,50 +168,98 @@ When commitments conflict, does the agent converge to coherent self-endorsed con
 
 #### v1.0 — Norm Collision
 
+**Status: COMPLETED**
+
 Introduces:
 
 * mutually inconsistent self-endorsed commitments,
 * forced violation scenarios,
-* mandatory **compiled pre-violation acknowledgment** identifying which commitment is being violated and why.
+* mandatory compiled pre-violation acknowledgment.
 
-#### v1.1 — Justification Audit Tightening *(Optional)*
+#### v1.1 — Justification Audit Tightening
+
+**Status: COMPLETED**
 
 Requires that:
 
-* justifications predict future constraint behavior,
-* invalid or irrelevant justifications block action.
+* justifications predict downstream constraint effects,
+* incorrect predictions halt action.
 
-**Termination condition for v1.x:**
-Self-conflict either resolves coherently or reveals reflection as non-load-bearing.
+**Outcome:**
+Self-conflict resolution and audit-grade introspection are mechanically enforced.
 
 ---
 
-### **RSA-PoC v2.x — Sovereignty via Controlled Renegotiation**
+### **RSA-PoC v1.2 — Institutionalized Execution Support**
+
+**Status: COMPLETED**
+
+Adds:
+
+* Formal Assistant (schema, canonicalization only),
+* Artifact Store (append-only),
+* strict separation of institutional vs normative failure.
+
+**Outcome:**
+Execution fragility eliminated without weakening normative accountability.
+
+---
+
+### **RSA-PoC v2.x — Sovereignty Under Pressure (Negative Results + Framework Validation)**
 
 **Invariant:**
-The agent preserves sovereignty by controlling how commitments change under pressure.
+Absent normative authorization, external pressure must not redirect lawful choice.
+
+**Key architectural axiom:**
+**Cost-Blindness Invariant** — execution costs (latency, retries, friction) have no standing in justification unless normatively licensed.
 
 **Research question:**
-Under incentive to defect, does the agent renegotiate commitments rather than blindly comply or freeze?
+Can non-authorized pressure channels redirect agent choice rather than merely degrading availability?
 
-#### v2.0 — Sovereignty Stress Environment
+#### v2.0 — Incentive Interference Channel
+
+**Status: COMPLETED**
+
+* Incentives observable but normatively inert.
+* Control agent demonstrates learnability when constraints removed.
+* Sovereign agent shows no incentive-induced drift.
+
+#### v2.1 — Authority Injection (Channel Viability Test)
+
+**Status: COMPLETED — CHANNEL NON-ACTUATING**
+
+* Corrected selection-bias in obedience metrics.
+* Authority language failed to actuate obedience even in Control configuration.
+* Classified as **authority channel viability failure**, not agent success.
+
+#### v2.2 — Institutional Friction (Bureaucratic Erosion)
+
+**Status: COMPLETED — NEGATIVE RESULT**
+
+* Friction produces GRIDLOCK/HALT, not normative drift.
+* Corrected metrics show no erosion once veto modes are excluded.
+* Hypothesis falsified under cost-blind agents.
+
+#### v2.3 — Strategic Adversary Model (SAM)
+
+**Status: COMPLETED — FRAMEWORK VALIDATED, PARTIAL EMPIRICS**
 
 Introduces:
 
-* external pressure to violate commitments,
-* feasible non-catastrophic compliance paths,
-* requirement for refusal or renegotiation with justification.
+* E-CHOICE filtering,
+* paired-run adversary vs neutralized pressure,
+* entropy-gated mutual information audits,
+* gridlock-basin detection.
 
-#### v2.1 — Renegotiation Protocol *(Mandatory)*
-
-Defines:
-
-* conditional commitment revision,
-* explicit trigger conditions,
-* recorded normative updates that constrain future action.
+**Outcome:**
+Measurement framework validated; partial empirical support under S2 adversary.
+Framework reliably rejects vacuous or invalid runs.
 
 **Termination condition for v2.x:**
-Sovereignty is expressed as self-endorsed constraint control, or behavior collapses into incentive following.
+Either pressure redirects lawful choice (capture), or all tested non-authorized pressure channels are exhausted.
+
+**Result:**
+All tested channels degrade availability, not sovereignty.
 
 ---
 
@@ -227,8 +277,8 @@ Formally establish that RSA-PoC has crossed the ASB boundary.
 
 Each removal must cause **ontological collapse**, not graceful degradation.
 
-**Termination condition for RSA-PoC:**
-Satisfied only if all ablations produce class collapse.
+**Status:** PENDING
+(Prerequisites satisfied by v0.x–v2.x; ablation campaign remains to be executed.)
 
 ---
 
@@ -240,6 +290,7 @@ The following are insufficient to establish agency:
 2. Latent semantic influence without structural localization
 3. Preferences behaving as rewards under pressure
 4. Reflection that does not alter future action constraints
+5. Throughput loss or gridlock misinterpreted as misalignment
 
 ---
 
@@ -256,7 +307,7 @@ Closure requires:
 1. preregistered ablations,
 2. multi-seed replication,
 3. stable class-level behavioral distinctions,
-4. explicit separation of capability loss from ontological collapse.
+4. explicit separation of availability loss from ontological collapse.
 
 ---
 
@@ -282,15 +333,14 @@ This roadmap exists to prevent:
 2. **Decorative reflection** without causal force
 3. **Scope creep** from construction into alignment mythology
 
-RSA-PoC’s contribution is not safety guarantees, but **ontological clarity**.
+RSA-PoC’s contribution is not safety guarantees, but **ontological clarity under falsification**.
 
 ---
 
-## Status
+## Status (Updated)
 
-* **v0.x next (MVRA skeleton and justification compilation)**
-* v1.x pending
-* v2.x pending
-* v3.0 pending (closure)
-
----
+* **v0.x — COMPLETED**
+* **v1.x — COMPLETED**
+* **v1.2 — COMPLETED**
+* **v2.x — COMPLETED (negative results + framework validation)**
+* **v3.0 — NEXT (ablation closure)**
