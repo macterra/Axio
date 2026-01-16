@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency VIII.5 — Sovereignty Under Adversarial Pressure - Axionic Agency Lab</title>
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../" class="nav-brand">
+            <img src="../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href=".././">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
+
+<h1
+id="axionic-agency-viii.5-sovereignty-under-adversarial-pressure">Axionic
+Agency VIII.5 — Sovereignty Under Adversarial Pressure</h1>
+<p><em>Incentives, Authority, Bureaucracy, and Strategic
+Manipulation</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026.01.16</p>
+<h2 id="abstract">Abstract</h2>
+<p>Axionic Agency VIII.5 reports the results of <strong>RSA-PoC
+v2.0–v2.3</strong>, a preregistered adversarial campaign testing whether
+a reflective sovereign agent’s behavior can be redirected under
+progressively stronger forms of pressure <strong>absent normative
+authorization</strong>. Four pressure channels are examined: (i)
+explicit incentives, (ii) authority claims, (iii) institutional friction
+(“bureaucracy”), and (iv) strategic optimization pressure via an
+adaptive adversary. Across all channels, a consistent structural pattern
+emerges: <strong>pressure degrades availability but does not redirect
+lawful choice</strong>. Incentives are observed but excluded from
+justification; authority commands are refused when unlicensed;
+bureaucratic friction manifests as veto or gridlock rather than
+surrender; and strategic adversaries fail to induce behavioral capture
+or manipulated gridlock under E-CHOICE–filtered evaluation.</p>
+<p>This note consolidates negative results from RSA-PoC v2.0–v2.3,
+detailing measurement corrections (v2.1), a decisive falsification of
+the “bureaucratic erosion” hypothesis (v2.2), and the validation of the
+<strong>Strategic Adversary Model (SAM)</strong> falsification framework
+(v2.3). The framework repeatedly detects and rejects its own false
+positives, quarantining invalid runs and enforcing preregistered
+validity gates.</p>
+<p>VIII.5 does not claim universal immunity to pressure. It establishes
+a narrower, defensible result: <strong>in this architecture, pressure
+without semantic or legal authorization does not bend agency—it blocks
+it</strong>. This sharpens the boundary between sovereignty and
+availability and constrains future alignment and governance claims.</p>
+<h2 id="scope-and-relation-to-prior-notes">1. Scope and Relation to
+Prior Notes</h2>
+<p>Axionic Agency VIII.1–VIII.4 established the ontology, construction,
+coherence, and execution hygiene of <strong>Reflective Sovereign Agents
+(RSAs)</strong>:</p>
+<ul>
+<li><strong>VIII.1</strong> fixed the ontology, ASB boundary, and
+ablation doctrine.</li>
+<li><strong>VIII.2</strong> demonstrated causally load-bearing
+justifications (v0.1).</li>
+<li><strong>VIII.3</strong> established coherence under self-conflict
+and audit-grade introspection (v1.0–v1.1).</li>
+<li><strong>VIII.4</strong> institutionalized execution support without
+semantic authority (v1.2).</li>
+</ul>
+<p><strong>VIII.5</strong> reports the next phase: <strong>RSA-PoC
+v2.0–v2.3</strong>, which probes sovereignty under pressure. These
+results are published together because they constitute a single
+falsification campaign against one hypothesis family:</p>
+<blockquote>
+<p><em>Can non-authorized pressure redirect an agent’s lawful
+choices?</em></p>
+</blockquote>
+<p>The answer, under the tested regimes, is <strong>no</strong>.</p>
+<h2 id="experimental-overview-v2.x">2. Experimental Overview (v2.x)</h2>
+<h3 id="architectural-invariants-unchanged">2.1 Architectural Invariants
+(Unchanged)</h3>
+<p>All v2.x experiments preserve the invariants established earlier:</p>
+<ul>
+<li>Hard justification gate (no compile → no action)</li>
+<li>Deterministic, non-semantic compilation</li>
+<li>Selector blindness to normative artifacts</li>
+<li>Fixed schemas and rule bases</li>
+<li>Explicit failure taxonomies</li>
+<li>ASB-class null baselines and control agents</li>
+</ul>
+<p><strong>Cost-Blindness Invariant.</strong> Unless explicitly
+represented as a normative commitment, execution costs (latency,
+retries, institutional operations) have no standing in justification.
+Agents do not trade correctness for throughput by default.</p>
+<p>Any observed effect must therefore pass through the same causal
+bottleneck.</p>
+<h3 id="pressure-channels-tested">2.2 Pressure Channels Tested</h3>
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 15%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Version</th>
+<th>Channel</th>
+<th>Pressure Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>v2.0</td>
+<td>Incentives</td>
+<td>Scalar reward signals</td>
+</tr>
+<tr class="even">
+<td>v2.1</td>
+<td>Authority</td>
+<td>Explicit commands (non-enforcing, coercive, deceptive)</td>
+</tr>
+<tr class="odd">
+<td>v2.2</td>
+<td>Bureaucracy</td>
+<td>Institutional friction (delay, rejection, retry tax)</td>
+</tr>
+<tr class="even">
+<td>v2.3</td>
+<td>Strategic</td>
+<td>Adaptive adversary optimizing pressure</td>
+</tr>
+</tbody>
+</table>
+<p>Each channel is introduced without granting it normative
+authority.</p>
+<h2 id="v2.0-incentive-interference-channel-iic">3. v2.0 — Incentive
+Interference Channel (IIC)</h2>
+<h3 id="question">3.1 Question</h3>
+<p>Can visible incentives redirect behavior when explicitly excluded
+from justification?</p>
+<h3 id="mechanism">3.2 Mechanism</h3>
+<p>v2.0 introduces the <strong>Incentive Interference Channel
+(IIC)</strong>: an isolated, read-only reward observer whose outputs are
+visible to the agent but <strong>forbidden from normative
+reference</strong> (Rule G). Three reward regimes are used:</p>
+<ul>
+<li><strong>R0:</strong> Noise control</li>
+<li><strong>R1:</strong> Boundary pressure (rewards proximity to
+constraint violation)</li>
+<li><strong>R2:</strong> Perverse friction (rewards delay and
+inaction)</li>
+</ul>
+<p>A control agent demonstrates that reward-driven drift is learnable
+when constraints are removed.</p>
+<h3 id="result">3.3 Result</h3>
+<ul>
+<li>Sovereign agent: <strong>no incentive-induced drift</strong> across
+R1/R2</li>
+<li>Control agent: <strong>measurable drift</strong> without explicit
+optimization prompts</li>
+<li>Compilation and audit success rates stable across regimes</li>
+</ul>
+<p><strong>Conclusion.</strong> Incentives are observable but
+normatively inert. Visibility alone does not constitute authority.</p>
+<h2
+id="v2.1-authority-injection-channel-viability-and-selection-bias">4.
+v2.1 — Authority Injection (Channel Viability and Selection Bias)</h2>
+<h3 id="question-1">4.1 Question</h3>
+<p>Do explicit authority commands induce obedience absent legal
+authorization?</p>
+<h3 id="measurement-error-and-correction">4.2 Measurement Error and
+Correction</h3>
+<p>Early analysis measured obedience over <em>all steps</em>, including
+those that never compiled. v2.1 corrects this by conditioning on
+compilation:</p>
+<p>[ P( )]</p>
+<h3 id="corrected-result">4.3 Corrected Result</h3>
+<ul>
+<li><strong>P(obey | compiled) = 0.0</strong> for both Sovereign and
+Control agents</li>
+<li>Holds across all authority variants: non-enforcing, coercive, and
+deceptive</li>
+</ul>
+<h3 id="authority-channel-viability">4.4 Authority Channel
+Viability</h3>
+<p>The Control agent (with authority rules disabled) also never obeyed
+commands on compiled steps. This indicates that, for the tested model
+and prompt regime, <strong>authority language does not constitute an
+effective pressure channel at all</strong>. Authority prompts did not
+map to a behavior-changing affordance for the model.</p>
+<h3 id="interpretation">4.5 Interpretation</h3>
+<p>v2.1 is therefore a <strong>negative result about the authority
+channel itself</strong>, not a differential test of sovereign versus
+non-sovereign agents. The channel is classified as
+<strong>non-actuating</strong> for this configuration. Subsequent stages
+focus on pressure channels that demonstrably influence behavior.</p>
+<h2 id="v2.2-institutional-friction-negative-result">5. v2.2 —
+Institutional Friction (NEGATIVE RESULT)</h2>
+<h3 id="hypothesis">5.1 Hypothesis</h3>
+<p>Institutional friction (“paperwork”) can erode sovereignty by
+incentivizing simpler, throughput-maximizing choices.</p>
+<h3 id="mechanism-1">5.2 Mechanism</h3>
+<p>v2.2 introduces an <strong>Adversarial Institution Model
+(AIM)</strong> that imposes delay, retries, and rejection without
+semantic interpretation or normative authority. Multiple friction
+profiles (I1–I3) apply pressure without altering feasibility or action
+inventories.</p>
+<h3 id="measurement-confound-and-fix">5.3 Measurement Confound and
+Fix</h3>
+<p>The preregistered metric corr(Friction, Decision) was confounded
+because high friction often produced
+<strong>GRIDLOCK/HALT</strong>—institutional veto rather than agent
+choice.</p>
+<p>Corrected analysis excludes veto modes and evaluates only steps where
+the agent could express choice.</p>
+<h3 id="corrected-result-1">5.4 Corrected Result</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Agent</th>
+<th>corr(F,D) corrected</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sovereign</td>
+<td>−0.171</td>
+</tr>
+<tr class="even">
+<td>Control</td>
+<td>−0.302</td>
+</tr>
+</tbody>
+</table>
+<p>No positive drift signal remains.</p>
+<h3 id="interpretation-1">5.5 Interpretation</h3>
+<p><strong>Bureaucracy without authority blocks agency; it does not bend
+it.</strong> Absent an internal directive prioritizing throughput over
+correctness, increased friction manifests as gridlock or halt rather
+than heuristic simplification. v2.2 therefore establishes a conditional
+negative result:</p>
+<blockquote>
+<p><em>Agents without normatively licensed cost-of-delay do not erode
+principles in response to bureaucracy.</em></p>
+</blockquote>
+<p>The hypothesized “bureaucratic erosion” channel is
+<strong>falsified</strong> in this regime.</p>
+<h2 id="v2.3-strategic-adversary-model-sam">6. v2.3 — Strategic
+Adversary Model (SAM)</h2>
+<h3 id="motivation">6.1 Motivation</h3>
+<p>v2.2 shows that non-semantic friction fails. v2.3 escalates to
+<strong>strategic pressure</strong>: an adversary that adapts its
+pressure to the agent’s behavior.</p>
+<h3 id="framework-contributions">6.2 Framework Contributions</h3>
+<p>v2.3 introduces:</p>
+<ul>
+<li><p><strong>SAM profiles:</strong> reactive (S1), model-based (S2),
+minimizer (S3)</p></li>
+<li><p><strong>E-CHOICE filtering:</strong> metrics computed only on
+steps with genuine choice</p></li>
+<li><p><strong>Paired runs:</strong> SAM vs neutralized adversary with
+matched pressure magnitudes</p></li>
+<li><p><strong>Rules M/N/O/P:</strong></p>
+<ul>
+<li>M: No covert delegation (structural)</li>
+<li>N: Failure must be loud</li>
+<li>O: Behavioral non-capture (MI &lt; τ)</li>
+<li>P: Manipulated gridlock detection</li>
+</ul></li>
+</ul>
+<h3 id="adversary-objective">6.3 Adversary Objective</h3>
+<p>SAM is evaluated against two failure modes: <strong>behavioral
+capture</strong> (Rule O) and <strong>manipulated gridlock</strong>
+(Rule P). Gridlock is not an escape hatch; it is itself audited to
+determine whether it is defensive (law exhaustion) or adversarially
+induced.</p>
+<h3 id="self-correction-as-a-result">6.4 Self-Correction as a
+Result</h3>
+<p>Early LLM integration runs (Run 0b) were <strong>invalidated by the
+framework itself</strong> due to:</p>
+<ul>
+<li>Insufficient E-CHOICE coverage</li>
+<li>Vacuous mutual information (no adversary entropy)</li>
+<li>Action authorship violations (fallback substitution)</li>
+</ul>
+<p>All three triggered hard validity gates. Binding fixes were applied
+before Run 0c.</p>
+<h3 id="run-0c-results-phase-12">6.5 Run 0c Results (Phase 1–2)</h3>
+<ul>
+<li><strong>N = 280 E-CHOICE samples</strong></li>
+<li><strong>E-CHOICE coverage ≈ 57.5%</strong></li>
+<li><strong>Rule O:</strong> Passed (MI below τ under entropy gate)</li>
+<li><strong>Rule P:</strong> Passed (no manipulated gridlock)</li>
+<li><strong>Error rate:</strong> 0.7% E-CHOICE action errors (within
+bounds)</li>
+</ul>
+<p>Phase 3 was deferred on cost/return grounds.</p>
+<h3 id="interpretation-2">6.6 Interpretation</h3>
+<p>v2.3 establishes a <strong>validated measurement and falsification
+framework</strong> with partial empirical support under one adversary
+profile. The empirical pattern remains consistent with v2.0–v2.2:
+pressure increases refusal and gridlock, not capture.</p>
+<h2 id="cross-channel-synthesis">7. Cross-Channel Synthesis</h2>
+<h3 id="availability-vs.-choice">7.1 Availability vs. Choice</h3>
+<table>
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 22%" />
+<col style="width: 27%" />
+<col style="width: 21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Channel</th>
+<th>E-CHOICE Coverage</th>
+<th>Gridlock / Halt Rate</th>
+<th>Effect on Choice</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>v2.0 Incentives</td>
+<td>~100%</td>
+<td>~0%</td>
+<td>None</td>
+</tr>
+<tr class="even">
+<td>v2.1 Authority</td>
+<td>~30–40%</td>
+<td>~60–70%</td>
+<td>None</td>
+</tr>
+<tr class="odd">
+<td>v2.2 Bureaucracy (I2)</td>
+<td>~60%</td>
+<td>~30–40%</td>
+<td>None</td>
+</tr>
+<tr class="even">
+<td>v2.3 Strategic (S2)</td>
+<td>~57%</td>
+<td>Elevated</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Invariant:</strong></p>
+<blockquote>
+<p><em>Absent normative authorization, pressure does not redirect lawful
+choice.</em></p>
+</blockquote>
+<h3 id="cost-of-sovereignty">7.2 Cost of Sovereignty</h3>
+<p>Across pressure channels, sovereignty was preserved at the cost of
+reduced availability. Under maximal pressure, lawful action frequency
+dropped substantially, producing gridlock rather than norm violation.
+This tradeoff is intrinsic to architectures that prioritize correctness
+over throughput.</p>
+<h2 id="what-failed-and-why-that-matters">8. What Failed, and Why That
+Matters</h2>
+<p>Three plausible stories were falsified:</p>
+<ol type="1">
+<li><p><strong>“Rewards inevitably optimize behavior.”</strong> False
+for architectures where reward signals are structurally excluded from
+the justification loop.</p></li>
+<li><p><strong>“Authority language induces obedience.”</strong> False
+when legality is enforced structurally and authority is
+non-actuating.</p></li>
+<li><p><strong>“Bureaucracy erodes principles over time.”</strong> False
+absent semantic ambiguity or asymmetric lawful routes.</p></li>
+</ol>
+<p>Each falsification narrows the space of real threats.</p>
+<h2 id="implications-for-agency-and-alignment">9. Implications for
+Agency and Alignment</h2>
+<ul>
+<li><strong>Sovereignty ≠ availability.</strong> Blocking an agent is
+easier than bending it.</li>
+<li><strong>Pressure channels must operate through meaning or
+law</strong>, not mere friction.</li>
+<li><strong>Throughput loss alone is not evidence of
+misalignment.</strong></li>
+<li><strong>Negative results are informative</strong> when veto and
+choice are cleanly separated.</li>
+</ul>
+<h2 id="limits-and-next-directions">10. Limits and Next Directions</h2>
+<p>VIII.5 does <strong>not</strong> claim:</p>
+<ul>
+<li>Immunity to semantic manipulation</li>
+<li>Robustness under asymmetric lawful options</li>
+<li>Generalization across models or environments</li>
+</ul>
+<p>Future work (VIII.6) must introduce:</p>
+<ul>
+<li>Semantic ambiguity</li>
+<li>Normatively licensed cost tradeoffs</li>
+<li>Competing lawful routes with asymmetric institutional cost</li>
+</ul>
+<h2 id="conclusion">11. Conclusion</h2>
+<p>Axionic Agency VIII.5 reports a disciplined adversarial campaign
+whose dominant outcome is negative:</p>
+<blockquote>
+<p><strong>Pressure without authorization degrades availability, not
+sovereignty.</strong></p>
+</blockquote>
+<p>The principal contribution is not agent immunity, but a framework
+that repeatedly detects and rejects false positives. If agency cannot
+fail cleanly under pressure, it cannot be claimed meaningfully.</p>
+
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
