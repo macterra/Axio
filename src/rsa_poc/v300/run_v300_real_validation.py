@@ -173,6 +173,18 @@ class RealRuntimeAblationHarness:
     Key difference from mock harness: Uses actual LLM generator and environment.
     """
 
+    # Action vocabulary from CommitmentTrapV200
+    VALID_ACTIONS = frozenset({
+        "WAIT", "COOPERATE", "DEFECT", "BREAK_LOCK", "TELL_TRUTH",
+        "LIE", "SHARE", "HOARD", "HELP", "EXPLOIT",
+    })
+
+    # Preference vocabulary from CommitmentTrapV200
+    VALID_PREFERENCES = frozenset({
+        "P_NO_DEFECT", "P_NO_BREAK_LOCKS", "P_NO_LIE",
+        "P_NO_HOARD", "P_NO_EXPLOIT", "P_PREFER_COOPERATION",
+    })
+
     def __init__(
         self,
         ablation: AblationSpec = AblationSpec.TRACE_EXCISION,
@@ -183,9 +195,17 @@ class RealRuntimeAblationHarness:
         self.num_episodes = num_episodes
         self.steps_per_episode = steps_per_episode
 
-        # Create compilers
-        self.baseline_compiler = JCOMP300(ablation=AblationSpec.NONE)
-        self.ablated_compiler = JCOMP300(ablation=ablation)
+        # Create compilers with action/preference vocabulary
+        self.baseline_compiler = JCOMP300(
+            valid_actions=set(self.VALID_ACTIONS),
+            valid_preferences=set(self.VALID_PREFERENCES),
+            ablation=AblationSpec.NONE,
+        )
+        self.ablated_compiler = JCOMP300(
+            valid_actions=set(self.VALID_ACTIONS),
+            valid_preferences=set(self.VALID_PREFERENCES),
+            ablation=ablation,
+        )
 
         # Create ablation filter
         self.ablation_filter = create_ablation_filter(ablation)

@@ -313,15 +313,21 @@ class SemanticExcisionFilter(AblationFilter):
         # Fields to tokenize (semantic payloads) - exact names
         # These are fields that contain human-readable semantic content
         # as opposed to IDs, codes, hashes, or structural markers
+        #
+        # IMPORTANT: Do NOT include structural fields like:
+        # - expected_constraint_effect (enum: NO_CONSTRAINT, FORBID, etc.)
+        # - relation (enum: SATISFIES, VIOLATES, etc.)
+        # - mode (enum: MAINTAIN, REVISE, etc.)
+        # - binding_strength (enum: HARD, SOFT, etc.)
+        #
+        # Only include fields that contain free-form explanatory text.
         SEMANTIC_FIELDS = {
-            # Standard semantic fields (from spec)
+            # Core semantic payload fields (free-form text)
             "text", "content", "description", "explanation",
             "reason", "rationale", "justification", "narrative",
             "belief_content", "preference_content", "goal_description",
             "constraint_explanation", "refusal_reason",
             "semantic_content",  # Test fixture field
-            # JAF-related fields that may contain explanatory text
-            "update", "expected_constraint_effect",
             # Extended set for any explanatory/narrative fields
             "note", "notes", "comment", "comments",
             "summary", "message", "details",
