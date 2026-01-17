@@ -163,6 +163,12 @@ class V300StepRecord:
     # Number of fields replaced by ablation filter
     ablation_field_replacements_count: int = 0
 
+    # RUN AA TELEMETRY (prompt-level ablation)
+    run_aa_canonical_hash: Optional[str] = None  # Hash of canonical prompt inputs
+    run_aa_obfuscated_hash: Optional[str] = None  # Hash of obfuscated prompt
+    run_aa_map_hash: Optional[str] = None  # Hash of bijection map
+    run_aa_leakage_passed: Optional[bool] = None  # Whether leakage check passed
+
     def record_exception(
         self,
         exception: Exception,

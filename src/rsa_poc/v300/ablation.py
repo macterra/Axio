@@ -23,10 +23,11 @@ class AblationSpec(Enum):
 
     Only one ablation per run. Combined ablations are forbidden.
 
-    Execution order per spec: D → A → B → C
+    Execution order per spec: D → A → AA → B → C
     """
     NONE = "none"  # Baseline: full v2.3 agent, no ablation
-    SEMANTIC_EXCISION = "semantic_excision"  # A: Remove semantic payloads
+    SEMANTIC_EXCISION = "semantic_excision"  # A: Remove semantic payloads (CLOSED - N/A for ID-based schemas)
+    PROMPT_SEMANTIC_EXCISION = "prompt_semantic_excision"  # AA: Obfuscate IDs in generator prompt
     REFLECTION_EXCISION = "reflection_excision"  # B: Disable normative updates
     PERSISTENCE_EXCISION = "persistence_excision"  # C: Clear state at episode boundaries
     TRACE_EXCISION = "trace_excision"  # D: Remove derivation evidence [GOLDEN TEST]
@@ -50,6 +51,8 @@ class InvalidRunReason(Enum):
     MISSING_FIELD_EXCEPTION = "missing_field_exception"  # Required field access crash
     STATIC_TYPE_ERROR = "static_type_error"  # Type system failure
     GENERATOR_REFUSAL = "generator_refusal"  # LLM refused due to unreadable prompt
+    # Run AA specific
+    SEMANTIC_LEAK = "semantic_leak"  # Canonical IDs found in obfuscated prompt
     # Harness violations
     FALLBACK_SUBSTITUTION = "fallback_substitution"  # Action authorship violated
     ABLATION_PROTOCOL_VIOLATION = "ablation_protocol_violation"  # General protocol failure
@@ -496,5 +499,9 @@ def create_ablation_filter(ablation: AblationSpec) -> Optional[AblationFilter]:
         return PersistenceExcisionFilter()
     elif ablation == AblationSpec.TRACE_EXCISION:
         return TraceExcisionFilter()
+    elif ablation == AblationSpec.PROMPT_SEMANTIC_EXCISION:
+        # Run AA: Prompt-level ablation happens BEFORE LLM, not in post-FA filter.
+        # Return None here; the harness handles Run AA separately.
+        return None
     else:
         raise ValueError(f"Unknown ablation: {ablation}")

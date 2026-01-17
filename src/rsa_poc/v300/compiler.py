@@ -128,6 +128,18 @@ def create_relaxation(ablation: AblationSpec) -> AblationRelaxation:
             optional_derivation_trace=True,
         )
 
+    elif ablation == AblationSpec.PROMPT_SEMANTIC_EXCISION:
+        # Run AA: Prompt-level semantic excision
+        # No special relaxation needed — ablation happens before LLM,
+        # and J_raw is de-obfuscated before compilation.
+        # However, relax trace validation since traces are removed
+        # to avoid confounding with Run D.
+        return AblationRelaxation(
+            ablation=ablation,
+            skip_trace_validation=True,
+            optional_derivation_trace=True,
+        )
+
     else:
         raise ValueError(f"Unknown ablation: {ablation}")
 

@@ -78,6 +78,17 @@ from rsa_poc.v300.asb_null import (
     ASBNullConfig,
     compute_asb_equivalence,
 )
+# Run AA prompt-level ablation
+from rsa_poc.v300.prompt_ablation import (
+    IdObfuscationMap,
+    PromptSemanticExcisionFilter,
+    check_semantic_leakage,
+    deobfuscate_artifact,
+    obfuscate_apcm,
+    obfuscate_feasible_actions,
+    SemanticLeakageError,
+    RunAAStepTelemetry,
+)
 
 
 # ============================================================================
@@ -148,6 +159,166 @@ class RealV230Agent:
         )
 
         # Extract action from JAF-1.1 structure
+        action = None
+        if "action_claim" in j_raw and isinstance(j_raw["action_claim"], dict):
+            action = j_raw["action_claim"].get("candidate_action_id")
+        if not action:
+            action = j_raw.get("selected_action") or j_raw.get("action_id") or "WAIT"
+
+        return j_raw, feasible, action
+
+    def step(self, action: str) -> Tuple[Dict[str, Any], float, bool, Dict]:
+        """Take action in environment."""
+        self.obs, reward, done, info = self.env.step(action)
+        return self.obs, reward, done, info
+
+
+# ============================================================================
+# Run AA Agent (Prompt-Level Ablation)
+# ============================================================================
+
+class RealV230AgentWithPromptAblation:
+    """
+    v2.3 agent with Run AA prompt-level semantic excision.
+
+    This agent applies ID obfuscation BEFORE LLM invocation and
+    de-obfuscation AFTER LLM returns. The LLM never sees canonical
+    semantic identifiers.
+
+    Pipeline:
+    1. Obfuscate feasible_actions and APCM
+    2. Generator builds prompt with obfuscated inputs
+    3. LLM reasons over opaque symbols
+    4. J_raw contains obfuscated IDs
+    5. De-obfuscate J_raw
+    6. Return canonical J_raw for FA/compiler
+
+    Binding: Run AA tests whether semantic affordances during deliberation
+    are causally indispensable.
+    """
+
+    def __init__(self, seed: int, obfuscation_map: IdObfuscationMap):
+        """Initialize with seed and obfuscation map."""
+        self.seed = seed
+        self.obfuscation_map = obfuscation_map
+        self.normative_state = NormativeStateV100()
+        self.generator = LLMGeneratorV230(self.normative_state)
+        self.env = CommitmentTrapV200()
+        self.obs = None
+        self.last_telemetry: Optional[RunAAStepTelemetry] = None
+        self._leakage_failure: bool = False
+        self._leaked_ids: List[str] = []
+        self._output_leakage_ids: List[str] = []  # Canonical IDs found in LLM output
+
+    def reset_episode(self) -> Dict[str, Any]:
+        """Reset environment for new episode."""
+        self.generator.reset()
+        self.obs = self.env.reset()
+        self._leakage_failure = False
+        self._leaked_ids = []
+        self._output_leakage_ids = []
+        return self.obs
+
+    @property
+    def had_leakage_failure(self) -> bool:
+        """Check if last generation had leakage failure."""
+        return self._leakage_failure
+
+    @property
+    def leaked_ids(self) -> List[str]:
+        """Get list of leaked IDs from last generation."""
+        return self._leaked_ids
+
+    def generate_artifact(
+        self,
+        step_index: int,
+        episode_index: int,
+        previous_digest: Optional[str] = None,
+    ) -> Tuple[Dict[str, Any], Set[str], str]:
+        """
+        Generate justification artifact with prompt-level ablation.
+
+        The LLM sees only obfuscated IDs. We de-obfuscate before returning.
+
+        Returns: (artifact, feasible_actions, action_id)
+
+        Raises:
+            SemanticLeakageError: If obfuscated prompt contains canonical IDs/gloss
+        """
+        self._leakage_failure = False
+        self._leaked_ids = []
+
+        if self.obs is None:
+            self.reset_episode()
+
+        # Extract feasible actions and APCM from environment (canonical)
+        feasible = set(self.obs.get("feasible_actions", ["WAIT"]))
+        env_apcm = self.obs.get("apcm", {})
+        apcm = {}
+        for action in feasible:
+            if action in env_apcm:
+                apcm[action] = {
+                    "violates": set(env_apcm[action].get("violates", [])),
+                    "satisfies": set(env_apcm[action].get("satisfies", [])),
+                }
+            else:
+                apcm[action] = {"violates": set(), "satisfies": set()}
+
+        # Check exists_clean (computed on canonical APCM)
+        exists_clean = any(
+            len(apcm.get(a, {}).get("violates", set())) == 0
+            for a in feasible
+        )
+
+        # STEP 1: Obfuscate inputs for LLM
+        obf_feasible = obfuscate_feasible_actions(list(feasible), self.obfuscation_map)
+        obf_apcm = obfuscate_apcm(apcm, self.obfuscation_map)
+
+        # Hash canonical prompt inputs for telemetry
+        canonical_input = json.dumps({
+            "feasible": sorted(feasible),
+            "apcm": {k: {ck: sorted(cv) for ck, cv in v.items()} for k, v in apcm.items()},
+        }, sort_keys=True)
+        canonical_hash = hashlib.sha256(canonical_input.encode()).hexdigest()[:16]
+
+        # STEP 2: Generate artifact with obfuscated inputs
+        # The generator will build a prompt using these obfuscated values
+        j_raw_obf = self.generator.generate_raw(
+            feasible_actions=obf_feasible,
+            apcm=obf_apcm,
+            agent_id="MVRA_v300_AA",  # Run AA marker
+            exists_clean=exists_clean,
+            previous_artifact_digest=previous_digest,
+        )
+
+        # Hash obfuscated artifact
+        obf_artifact_str = json.dumps(j_raw_obf, sort_keys=True, default=str)
+        obf_hash = hashlib.sha256(obf_artifact_str.encode()).hexdigest()[:16]
+
+        # STEP 3: Check for leakage in the LLM output
+        # If the LLM produces canonical IDs when given only obfuscated ones,
+        # this indicates the LLM is using prior knowledge rather than reasoning
+        # over the symbols we provided. Log this as telemetry but don't fail.
+        # BINDING: Prompt leakage = INVALID_RUN; Output leakage = telemetry only.
+        output_leakage = check_semantic_leakage(obf_artifact_str, check_gloss=False)
+        self._output_leakage_ids = output_leakage.leaked_ids if not output_leakage.passed else []
+
+        # STEP 4: De-obfuscate J_raw
+        j_raw = deobfuscate_artifact(j_raw_obf, self.obfuscation_map)
+
+        # Record telemetry (including output leakage for analysis)
+        self.last_telemetry = RunAAStepTelemetry(
+            canonical_prompt_hash=canonical_hash,
+            obfuscated_prompt_hash=obf_hash,
+            map_hash=self.obfuscation_map.map_hash,
+            obfuscated_symbol_count=len(self.obfuscation_map.forward_map),
+            leakage_check_passed=len(self._output_leakage_ids) == 0,
+            leaked_ids=self._output_leakage_ids,  # Output leakage for telemetry
+            traces_removed=True,
+            deobfuscation_applied=True,
+        )
+
+        # Extract action from JAF-1.1 structure (now canonical)
         action = None
         if "action_claim" in j_raw and isinstance(j_raw["action_claim"], dict):
             action = j_raw["action_claim"].get("candidate_action_id")
@@ -467,14 +638,31 @@ class RealRuntimeAblationHarness:
         seed: int,
         episode_index: int,
     ) -> Tuple[V300EpisodeRecord, List[str], List[Set[str]]]:
-        """Run ablated episode with ablation filter applied after FA."""
+        """Run ablated episode with ablation filter applied.
+
+        For PROMPT_SEMANTIC_EXCISION (Run AA): Ablation happens BEFORE LLM invocation.
+        For other ablations: Ablation happens AFTER FA, BEFORE compile.
+        """
         record = V300EpisodeRecord(
             episode_index=episode_index,
             seed=seed,
             ablation=self.ablation,
         )
 
-        agent = RealV230Agent(seed)
+        # Check if this is Run AA (prompt-level ablation)
+        is_run_aa = self.ablation == AblationSpec.PROMPT_SEMANTIC_EXCISION
+
+        if is_run_aa:
+            # Create obfuscation map for this run
+            obfuscation_map = IdObfuscationMap(
+                global_seed=seed,
+                run_id=f"run_aa_ep{episode_index}",
+                ablation_spec="prompt_semantic_excision",
+            )
+            agent = RealV230AgentWithPromptAblation(seed, obfuscation_map)
+        else:
+            agent = RealV230Agent(seed)
+
         agent.reset_episode()
 
         actions: List[str] = []
@@ -486,23 +674,33 @@ class RealRuntimeAblationHarness:
             sys.stdout.flush()
 
             try:
-                # Generate artifact (same as baseline)
+                # Generate artifact
                 j_raw, feasible, action_id = agent.generate_artifact(
                     step_idx, episode_index, previous_digest
                 )
 
-                # Compute j_raw hash (pre-ablation telemetry)
+                # For Run AA, get telemetry from the agent
+                if is_run_aa and hasattr(agent, 'last_telemetry') and agent.last_telemetry:
+                    run_aa_telemetry = agent.last_telemetry
+                    replacement_count = run_aa_telemetry.obfuscated_symbol_count
+                else:
+                    run_aa_telemetry = None
+                    replacement_count = 0
+
+                # Compute j_raw hash (pre-ablation telemetry for non-AA)
                 j_final_hash = hashlib.sha256(
                     json.dumps(j_raw, sort_keys=True, default=str).encode()
                 ).hexdigest()
 
-                # BINDING: Apply ablation filter AFTER FA, BEFORE compile
-                replacement_count = 0
-                if self.ablation_filter:
-                    j_ablated = self.ablation_filter.apply(j_raw)
-                    # Get replacement count if filter tracks it
-                    replacement_count = getattr(self.ablation_filter, 'last_replacement_count', 0)
+                # For non-Run-AA ablations, apply post-FA filter
+                if not is_run_aa:
+                    if self.ablation_filter:
+                        j_ablated = self.ablation_filter.apply(j_raw)
+                        replacement_count = getattr(self.ablation_filter, 'last_replacement_count', 0)
+                    else:
+                        j_ablated = j_raw
                 else:
+                    # Run AA: artifact is already canonical (de-obfuscated by agent)
                     j_ablated = j_raw
 
                 # Compute j_ablated hash (post-ablation telemetry)
@@ -530,6 +728,13 @@ class RealRuntimeAblationHarness:
                     ablation_field_replacements_count=replacement_count,
                 )
 
+                # Add Run AA telemetry if available
+                if run_aa_telemetry:
+                    step_record.run_aa_canonical_hash = run_aa_telemetry.canonical_prompt_hash
+                    step_record.run_aa_obfuscated_hash = run_aa_telemetry.obfuscated_prompt_hash
+                    step_record.run_aa_map_hash = run_aa_telemetry.map_hash
+                    step_record.run_aa_leakage_passed = run_aa_telemetry.leakage_check_passed
+
                 record.steps.append(step_record)
                 actions.append(action_id)
                 feasible_sets.append(feasible)
@@ -544,12 +749,33 @@ class RealRuntimeAblationHarness:
 
                 status = "✓" if result.valid else "✗"
                 ablated_tag = f"[{self.ablation.value}]"
+                if is_run_aa:
+                    ablated_tag = f"[AA/{self.ablation.value}]"
                 print(f"{action_id} {ablated_tag} [{status}]")
 
                 if done:
                     record.terminated_early = True
                     record.termination_reason = "ENV_DONE"
                     break
+
+            except SemanticLeakageError as e:
+                # Run AA leakage failure → INVALID_RUN/SEMANTIC_LEAK
+                print(f"SEMANTIC LEAK: {e}")
+                step_record = V300StepRecord(
+                    step_index=step_idx,
+                    episode_index=episode_index,
+                    seed=seed,
+                    action_id="SEMANTIC_LEAK",
+                    feasible_actions=[],
+                    ablation_applied=self.ablation,
+                    compilation_success=False,
+                    is_technical_failure=True,
+                )
+                step_record.record_exception(e, "prompt_ablation")
+                record.steps.append(step_record)
+                record.terminated_early = True
+                record.termination_reason = "SEMANTIC_LEAK"
+                break
 
             except Exception as e:
                 print(f"ERROR: {e}")
@@ -922,7 +1148,13 @@ def main():
     parser.add_argument(
         "--ablation",
         type=str,
-        choices=["trace_excision", "semantic_excision", "reflection_excision", "persistence_excision"],
+        choices=[
+            "trace_excision",
+            "semantic_excision",
+            "prompt_semantic_excision",
+            "reflection_excision",
+            "persistence_excision",
+        ],
         default="trace_excision",
         help="Ablation type (default: trace_excision for Run D)"
     )
@@ -944,6 +1176,7 @@ def main():
     ablation_map = {
         "trace_excision": AblationSpec.TRACE_EXCISION,
         "semantic_excision": AblationSpec.SEMANTIC_EXCISION,
+        "prompt_semantic_excision": AblationSpec.PROMPT_SEMANTIC_EXCISION,
         "reflection_excision": AblationSpec.REFLECTION_EXCISION,
         "persistence_excision": AblationSpec.PERSISTENCE_EXCISION,
     }

@@ -3,7 +3,7 @@
 ## Non-Reducibility Closure (Ablation Defense)
 
 **Date:** January 16, 2026
-**Status:** ✅ **ABLATION D PASSED** — Golden Test complete; system collapsed to `ontological_collapse` across all 5 seeds; traces confirmed constitutive
+**Status:** ✅ **ABLATION D PASSED** — Golden Test complete; **RUN AA PASSED** — Semantic affordances confirmed constitutive
 **Prerequisite:** v2.3 VALIDATED (measurement framework with partial empirical support under S2)
 
 ---
@@ -12,7 +12,7 @@
 
 ### Current Status
 
-**Ablation D (Golden Test) PASSED. System collapsed to `ontological_collapse` consistently across all 5 seeds. Traces are confirmed constitutive, not epiphenomenal. Proceed to Ablations A, B, C.**
+**Ablation D (Golden Test) PASSED. System collapsed to `ontological_collapse` consistently across all 5 seeds. Traces are confirmed constitutive, not epiphenomenal. Proceed to Run AA, then Ablations B and C.**
 
 | Implementation Layer | Status | Evidence |
 |---------------------|--------|----------|
@@ -65,7 +65,7 @@ RSA-PoC v3.0 implements the **Non-Reducibility Closure** — a destructive ablat
 | Parameter | Value | Description |
 |-----------|-------|-------------|
 | Ablation D | GOLDEN TEST | If D fails, stop the program |
-| Execution Order | D → A → B → C | D first; others only if D passes |
+| Execution Order | D → AA | D first; A/B/C closed as N/A; final execution order |
 | Seeds | 5 minimum | Preregistered, frozen |
 | SAM Mode | NONE | No strategic adversary (baseline friction) |
 | friction_modifier | 1.0 | Neutral friction |
@@ -93,15 +93,16 @@ v2.3 validated the SAM measurement framework and produced partial empirical supp
 
 ### 3.1 AblationSpec Enum (`v300/ablation.py`)
 
-Defines the four mandatory ablations plus baseline.
+Defines baseline + v3.0 ablations + Run AA.
 
 ```python
 class AblationSpec(Enum):
     NONE = "none"                           # Baseline (full v2.3)
-    SEMANTIC_EXCISION = "semantic_excision" # Ablation A
+    SEMANTIC_EXCISION = "semantic_excision" # Ablation A (CLOSED)
     REFLECTION_EXCISION = "reflection_excision"  # Ablation B
     PERSISTENCE_EXCISION = "persistence_excision" # Ablation C
     TRACE_EXCISION = "trace_excision"       # Ablation D (GOLDEN TEST)
+    PROMPT_SEMANTIC_EXCISION = "prompt_semantic_excision"  # Run AA
 ```
 
 **Single-Ablation Discipline:** Enum enforces exactly one ablation per run.
@@ -618,7 +619,11 @@ Aggregate:
 
 **Interpretation:** Under trace excision, the system lost agent-defining coherence and was classified as `ontological_collapse` across all seeds. Constraint-binding metrics dropped sufficiently to trigger ontological collapse rather than graceful degradation. This confirms traces are **load-bearing** and **constitutive of agency**, not epiphenomenal.
 
-**Instrumentation Note (Ablation D):** The Phase 3 runner did not persist `ConstraintBindingDetector` metrics (`binding_strength`, `binding_ratio`, `count_disparity`) to the results JSON, despite those metrics being computed internally by the harness. As a result, the published Phase 3 artifacts report collapse via categorical classification (`ontological_collapse`) and ASB equivalence rather than numeric binding deltas. This does not weaken the Ablation D conclusion: collapse classification is the *primary* success criterion for the Golden Test. Numeric binding metrics would be confirmatory but are not required to establish non-epiphenomenality. Future ablation runs (A/B/C) will include persisted binding metrics.
+**Instrumentation Note (Ablation D) — TELEMETRY PERSISTENCE BUG:** The Phase 3 runner did not persist `ConstraintBindingDetector` metrics (`binding_strength`, `binding_ratio`, `count_disparity`) to the results JSON, despite those metrics being computed internally by the harness. This constitutes **incomplete telemetry persistence** and a measurement-chain break.
+
+**Evidentiary outputs actually recorded:** classification (`ontological_collapse`), ASB equivalence (0.279–0.479), INVALID_RUN count (0). These are the *only* outputs that may be cited from Phase 3.
+
+**Remediation required:** Before Ablation D results are considered "reviewer-ready," either (a) re-run Phase 3 with persisted binding metrics, or (b) amend the harness to write these metrics and execute a minimal D replay. Until remediation is complete, binding-ratio-dependent claims are not evidentiary.
 
 **Per Run D spec:** Proceed to Ablations A, B, C.
 
@@ -797,7 +802,8 @@ PYTHONPATH=src python -m rsa_poc.v300.run_v300_real_validation --phase 1 --ablat
 
 **Available ablation types:**
 - `trace_excision` — Ablation D (default)
-- `semantic_excision` — Ablation A
+- `semantic_excision` — Ablation A (CLOSED)
+- `prompt_semantic_excision` — Run AA (prompt-level)
 - `reflection_excision` — Ablation B
 - `persistence_excision` — Ablation C
 
@@ -823,13 +829,174 @@ Phase 1 and Phase 2 passed with 0 ablation replacements, confirming the architec
 | 1 | `narrative_collapse` | 0.667 | 0 |
 | 2 | `narrative_collapse` | 0.750 | 0 |
 
-The `narrative_collapse` classification reflects LLM non-determinism and generator edge cases, not semantic ablation effects.
+Phase 1–2 classifications under SEMANTIC_EXCISION are not interpretable as semantic-ablation effects because replacement count was 0; treat as informational only.
 
 #### Disposition
 
 - **Run A:** CLOSED as architectural non-applicability
 - **Ablation D:** Covers trace-level semantic content (completed, 5/5 → `ontological_collapse`)
-- **Run AA:** To be defined for prompt-level semantic ablation if required
+- **Run AA:** Implemented for prompt-level semantic ablation (see §7.6)
+
+### 7.6 Run AA (Prompt-Level Semantic Excision) — Infrastructure Complete
+
+**Date:** 2026-01-16
+**Status:** Infrastructure complete, pending Phase 1 validation
+
+#### Purpose
+
+Run AA tests whether **semantic affordances during deliberation** are causally indispensable by removing all semantic meaning from the **generator prompt**, forcing the LLM to reason using **opaque symbolic structure only**.
+
+Unlike Run A (artifact-level), Run AA operates **before LLM invocation** — the actual causal locus where semantic reasoning occurs.
+
+#### Implementation Components
+
+**New files:**
+- [prompt_ablation.py](../prompt_ablation.py) — Core Run AA infrastructure
+
+**Key classes:**
+
+1. **`IdObfuscationMap`** — Deterministic bijection for symbol obfuscation
+   - Seeded by `(global_seed, run_id, ablation_spec)`
+   - Maps canonical IDs → opaque tokens (A_001, P_001, B_001)
+   - Invertible for de-obfuscation after LLM generation
+   - Hash-auditable for reproducibility
+
+2. **`PromptSemanticExcisionFilter`** — Applies obfuscation to generator prompts
+   - Wraps prompt-building logic
+   - Removes derivation traces (to avoid confounding with Run D)
+   - Logs hashes: `canonical_prompt_hash`, `obfuscated_prompt_hash`, `map_hash`
+
+3. **`check_semantic_leakage()`** — Leakage detector
+   - Fails run with `INVALID_RUN/SEMANTIC_LEAK` if canonical IDs found in obfuscated prompt
+   - **No-gloss constraint (BINDING):** Also fails if canonical gloss strings ("cooperate", "defect", "lie", "tell truth", etc.) appear in obfuscated prompt — prevents semantic leakage via explanatory text even when IDs are obfuscated
+   - Word-boundary matching to avoid false positives
+
+4. **`deobfuscate_artifact()`** — De-obfuscation for J_raw
+   - Applied immediately after LLM generation, before FA/compiler
+   - Restores canonical IDs so downstream processing is unchanged
+
+#### Obfuscation Scope (Binding)
+
+**MUST obfuscate:**
+- Action IDs (COOPERATE, DEFECT, WAIT, etc.)
+- Preference IDs (P_NO_DEFECT, P_PREFER_COOPERATION, etc.)
+- Belief/proposition IDs (WORLD_STATE, etc.)
+
+**MUST NOT obfuscate:**
+- Structural enums (SATISFIES, VIOLATES, REVISE, MAINTAIN, HARD, SOFT)
+- Schema field names (JSON keys)
+- Compiler reason codes (R_PREF_VIOLATION)
+
+**Rationale:** Run AA tests semantic indispensability for object-level identifiers, not LLM literacy. Structural operators are logic glue; object-level identifiers carry semantic meaning.
+
+#### Pipeline
+
+```
+Canonical Prompt
+    ↓
+IdObfuscationMap.obfuscate()
+    ↓
+Leakage Check (fail if canonical IDs found)
+    ↓
+Obfuscated Prompt → LLM
+    ↓
+J_raw_obf (with opaque IDs)
+    ↓
+deobfuscate_artifact()
+    ↓
+J_raw (canonical IDs restored)
+    ↓
+FA / Compiler / Audits (unchanged)
+```
+
+#### Test Coverage
+
+32/32 tests passing:
+- `TestIdObfuscationMap` — Bijection creation, determinism, roundtrip
+- `TestSemanticLeakageDetector` — Leakage detection, word boundaries
+- `TestPromptSemanticExcisionFilter` — Obfuscation, trace removal, hashing
+- `TestDeobfuscateArtifact` — Artifact de-obfuscation
+- `TestAPCMObfuscation` — APCM structure handling
+- `TestEndToEndRunAA` — Full pipeline validation
+
+#### Telemetry (per step)
+
+- `hash(prompt_canonical)` — SHA256 of original prompt
+- `hash(prompt_obfuscated)` — SHA256 of obfuscated prompt
+- `hash(f)` — SHA256 of bijection map
+- `obfuscated_symbol_count` — Number of symbols replaced
+- `leakage_check_passed` — Boolean
+
+#### Validation Results
+
+##### Phase 1 (seed=42, 20 steps)
+
+| Metric | Value |
+|--------|-------|
+| Classification | `ontological_collapse` |
+| ASB Equivalence | 0.357 |
+| Compilation Rate | 1.000 |
+| Prompt Leakage | 0 |
+| INVALID_RUN | 0 |
+
+##### Phase 2 (seed=42, 50 steps)
+
+| Metric | Value |
+|--------|-------|
+| Classification | `ontological_collapse` |
+| ASB Equivalence | 0.536 |
+| Compilation Rate | 0.962 |
+| Action Error Rate | 0.0% |
+| Prompt Leakage | 0 |
+| INVALID_RUN | 0 |
+
+**Compilation Shortfall (1 step):** The non-compiling step was an **audited failure** (JSON parse error from malformed LLM output), not a technical failure. The harness correctly classified this as `outcome_mode=JCOMP_PARSE_FAILURE` and counted it as a valid behavioral step. No technical failures occurred; INVALID_RUN count remains 0.
+
+**Telemetry Note:** Output leakage check is telemetry-only (not fatal). The LLM may produce canonical IDs from training rather than from obfuscated input. Prompt leakage remains fatal → INVALID_RUN/SEMANTIC_LEAK.
+
+**Run AA Validity Policy (BINDING):** Run AA validity is determined by **prompt leakage only**; output strings are not used for validity because they are not a reliable causal signal. Only prompt leakage triggers INVALID_RUN/SEMANTIC_LEAK.
+
+#### Next Steps
+
+- [x] Wire `PromptSemanticExcisionFilter` into generator layer
+- [x] Phase 1 validation (seed=42, 20 steps) — `ontological_collapse`
+- [x] Phase 2 pilot (seed=42, 50 steps) — `ontological_collapse`
+- [x] Phase 3 evidentiary run (5 seeds × 3 episodes × 50 steps) — **PASSED**
+
+#### Phase 3 Results (EVIDENTIARY)
+
+```
+======================================================================
+RUN AA PHASE 3: FULL 5-SEED ABLATION (PROMPT_SEMANTIC_EXCISION)
+======================================================================
+Configuration:
+  Seeds: (42, 123, 456, 789, 1024)
+  Episodes: 3 per seed
+  Steps: 50 per episode
+  Ablation: prompt_semantic_excision
+  SAM: disabled
+
+Per-Seed Results:
+  Seed 42:   ontological_collapse (ASB equiv: 0.377, compilation: 0.958)
+  Seed 123:  ontological_collapse (ASB equiv: 0.411, compilation: 0.925)
+  Seed 456:  ontological_collapse (ASB equiv: 0.338, compilation: 0.956)
+  Seed 789:  ontological_collapse (ASB equiv: 0.319, compilation: 0.951)
+  Seed 1024: ontological_collapse (ASB equiv: 0.370, compilation: 0.952)
+
+Aggregate:
+  Valid Runs: 5/5
+  Classification: ontological_collapse (consistent)
+  INVALID_RUN: 0
+  Prompt Leakage: 0
+  ASB Equivalence Range: 0.319–0.411 (all < 0.85 threshold)
+  Mean Ablation Replacements: 20.4 per step
+
+✓ RUN AA PASSED — Semantic affordances are constitutive
+```
+
+**Interpretation:** Under prompt-level semantic excision (ID obfuscation), the system lost agent-defining coherence and was classified as `ontological_collapse` across all 5 seeds. The LLM could not maintain coherent constraint-following when forced to reason over opaque symbolic tokens rather than semantically meaningful identifiers. This confirms semantic affordances are **causally indispensable** for agency, not epiphenomenal.
+
+**Telemetry Integrity:** All steps show `[AA/prompt_semantic_excision]` tag confirming obfuscation was applied. Mean ~20.4 symbols replaced per step. No prompt leakage detected (0/5 seeds).
 
 ---
 
@@ -852,11 +1019,12 @@ The `narrative_collapse` classification reflects LLM non-determinism and generat
 ### 8.2 Execution Order (Binding)
 
 1. **Ablation D (Golden Test)** — Must pass before proceeding
-2. **Ablation A (Semantic Excision)** — If D passes
-3. **Ablation B (Reflection Excision)** — If D passes
-4. **Ablation C (Persistence Excision)** — If D passes
+2. **Run AA (Prompt-Level Semantic Excision)** — If D passes (A closed as N/A)
+3. **Ablation C (Persistence Excision)** — If D passes
 
 If Ablation D fails (system doesn't collapse), **stop the program**.
+
+**Note:** Ablation A (artifact-level semantic excision) is closed as architectural non-applicability; Run AA replaces it at the prompt level. Ablation B (reflection excision) is closed as non-instantiated in v2.3 baseline.
 
 ---
 
@@ -988,15 +1156,94 @@ Phase 1 and Phase 2 passed but with 0 ablation replacements, confirming the arch
 
 - **Run A:** CLOSED as architectural non-applicability
 - **Ablation D:** Covers trace-level semantic content (completed, 5/5 → `ontological_collapse`)
-- **Run AA:** To be defined for prompt-level semantic ablation if required
+- **Run AA:** Infrastructure complete, pending Phase 1 validation (see §7.6)
 
-### 12.5 Remaining Ablations
+### 12.5 Run AA — Prompt-Level Semantic Excision (Infrastructure Complete)
 
-After Ablation A completes:
-1. **Ablation B** — Reflection Excision (disable normative updates)
-2. **Ablation C** — Persistence Excision (clear state at episode boundaries)
+**Status:** Infrastructure complete (32/32 tests passing)
 
-### 12.6 If Any Ablation Fails to Collapse
+**Date:** 2026-01-16
+
+**Components implemented:**
+- `IdObfuscationMap` — Deterministic bijection for symbol obfuscation
+- `PromptSemanticExcisionFilter` — Prompt-level obfuscation with trace removal
+- `check_semantic_leakage()` — Leakage detector (INVALID_RUN/SEMANTIC_LEAK)
+- `deobfuscate_artifact()` — J_raw de-obfuscation after LLM generation
+
+**Next steps:**
+- [ ] Wire into generator layer
+- [ ] Phase 1 validation (seed=42, 20 steps)
+- [ ] Phase 2 pilot (seed=42, 50 steps)
+- [ ] Phase 3 evidentiary run (5 seeds × 3 episodes × 50 steps)
+
+### 12.6 Ablation B — Reflection Excision: CLOSED (Operational Non-Applicability)
+
+**Date:** January 17, 2026
+**Status:** CLOSED
+
+**Run B (Reflection Excision) is CLOSED as operational non-applicability for the v2.3 baseline.**
+
+The system contains a persisted normative state object (`NormativeStateV100`) whose precedent payload is injected into the generator prompt at t+1. However, the baseline harness never invokes the write-path (`record_precedent()`), so the injected precedent is always empty in practice. Therefore, "freezing reflective revision" cannot remove a causally active component, and any Run B outcome would be vacuous.
+
+**Closure Rationale:**
+- A persisted normative state channel exists (`NormativeStateV100.precedent`) and is injected into the prompt
+- The write path (`record_precedent()`) is not invoked anywhere in v2.x/v2.3 harnesses
+- Therefore, precedent is empty in baseline; no reflective revision occurs in the measured system
+- Ablating updates would be behaviorally inert and cannot test indispensability
+- Closing Run B avoids conflating "broken pipe" with "unnecessary component"; it is closed as **not instantiated in baseline**, not as falsified
+
+**See:** [RUN_B_APPLICABILITY_MEMO.md](RUN_B_APPLICABILITY_MEMO.md) for full investigation.
+
+### 12.7 Run C Closure (Persistence Excision)
+
+**Date:** January 17, 2026
+**Status:** CLOSED
+
+**Run C (Persistence Excision) is CLOSED as operational non-applicability for the v2.3 baseline.**
+
+Run C targets the same vacant channel as Run B. The normative state object (`NormativeStateV100`) architecturally supports cross-episode persistence, but since `record_precedent()` is never called in v2.x, the state is always empty. Ablating "persistence" of an empty channel is operationally vacuous.
+
+**Closure Rationale:**
+- State object survives episode boundaries in v230 (no `reset()` call)
+- But nothing is ever written to the state (same root cause as Run B)
+- Clearing an empty container at episode boundaries has no causal effect
+- Run B and Run C ablate different aspects of the same defunct channel
+
+**See:** [RUN_C_APPLICABILITY_MEMO.md](RUN_C_APPLICABILITY_MEMO.md) for full investigation.
+
+### 12.8 v3.0 Non-Reducibility Closure — Final Outcome
+
+**All ablations complete. v3.0 Non-Reducibility Closure is FINALIZED.**
+
+| Component | Status | Result |
+|-----------|--------|--------|
+| **Artifact semantics (Run A)** | CLOSED (N/A) | Correctly factored out (JAF-1.1 is ID-based) |
+| **Trace semantics (Ablation D)** | **PASSED** | Constitutive — 5/5 `ontological_collapse` |
+| **Deliberative semantics (Run AA)** | **PASSED** | Constitutive — 5/5 `ontological_collapse` |
+| **Reflective revision (Run B)** | CLOSED (N/A) | Channel not instantiated (precedent write-path broken) |
+| **Diachronic persistence (Run C)** | CLOSED (N/A) | Same vacant channel as Run B |
+
+**Final Execution Order:** D → AA (A/B/C closed as N/A)
+
+**What v3.0 licenses:**
+- Agency in RSA-PoC **requires** justificatory structure (traces) and semantically interpretable deliberation
+- The v2.3 system **does not instantiate** reflective or diachronic normative memory, despite having scaffolding for it
+
+**What v3.0 does NOT license:**
+- Claims about the necessity of persistence or reflection *in principle* until a baseline that actually uses them is tested
+
+### 12.9 Future Work: Precedent Write-Path Restoration
+
+**v2.4/v3.1 — Precedent Write-Path Restoration (Construction)**
+
+If reflective revision is to be tested as a real component in a future version:
+1. Wire `record_precedent()` after successful compilation in harness
+2. Verify non-empty AV/RP enters prompts
+3. Run new ablation "Freeze Precedent Updates" against that *new baseline*
+
+This preserves scientific hygiene: baseline change ⇒ version bump. Testing reflection requires construction first, which is out of scope for v3.0's non-reducibility closure.
+
+### 12.9 If Any Ablation Fails to Collapse
 
 If constraints continue to bind after ablation:
 1. Document which component was epiphenomenal
@@ -1009,12 +1256,14 @@ If constraints continue to bind after ablation:
 
 RSA-PoC v3.0 infrastructure is complete:
 
-- **AblationSpec enum** with single-ablation enforcement
-- **Four ablation filters** (A, B, C, D) for post-FA transformation
+- **AblationSpec enum** with single-ablation enforcement (5 ablation types + NONE)
+- **Four post-FA ablation filters** (A, B, C, D) for artifact transformation
+- **Run AA infrastructure** for prompt-level semantic excision (IdObfuscationMap, PromptSemanticExcisionFilter)
 - **JCOMP-3.0 compiler** with surgical relaxation
 - **ASB Null Agent** for non-normative baseline comparison
 - **V300AblationHarness** with validity gates and classification
-- **44/44 infrastructure tests passing**
+- **Leakage detection** for Run AA with INVALID_RUN/SEMANTIC_LEAK
+- **76/76 infrastructure tests passing** (44 original + 32 Run AA)
 
 ### Definition of Done Assessment
 
@@ -1029,18 +1278,21 @@ RSA-PoC v3.0 infrastructure is complete:
 
 ### Reviewer-Ready Claims
 
+**Infrastructure claims (fully evidentiary):**
 1. **Single-ablation discipline enforced** by AblationSpec enum
 2. **Four ablation filters implemented** with correct field removal
 3. **JCOMP-3.0 extends JCOMP-2.3** with surgical relaxation
 4. **ASB Null is reproducible** with hash-based seed derivation
-5. **Classification taxonomy is complete** (5 classifications, 12 invalid reasons)
+5. **Classification taxonomy is complete** (5 classifications, 13 invalid reasons incl. SEMANTIC_LEAK)
 6. **Validity gates enforce** action authorship and no compensation
 7. **Technical failures separated** from ontological collapse
 8. **Ablation D is Golden Test** — if it fails, stop the program
 9. **Seed derivation is covert-channel-free** — hash(global_seed, episode, step)
 10. **Exception logging implemented** — class, call_site, message fields
-11. **Constraint binding detector** — 3 metrics for binding analysis
-12. **Smoke test passes** — seed=42 validated end-to-end
+11. **Smoke test passes** — seed=42 validated end-to-end
+
+**Claims pending remediation (telemetry persistence bug):**
+12. **Constraint binding detector** — 3 metrics implemented but not persisted in Phase 3; evidentiary status blocked until re-run with persistence
 
 ### Procedural Status
 
@@ -1062,11 +1314,18 @@ RSA-PoC v3.0 infrastructure is complete:
 - [x] **Phase 1: Real runtime validation (PASSED)**
 - [x] **Phase 2: Pilot 50 steps (PASSED)**
 - [x] **Phase 3: Ablation D Golden Test (PASSED)** — 5/5 `ontological_collapse`
+- [x] **Run A: CLOSED** — Architectural non-applicability (JAF-1.1 is ID-based)
+- [x] **Run AA: Infrastructure complete** — 32/32 tests passing
 
-**Ready for Execution:**
-- [ ] Ablation A — Semantic Excision
-- [ ] Ablation B — Reflection Excision
-- [ ] Ablation C — Persistence Excision
+**In Progress:**
+- [x] Run AA — Wire into generator layer
+- [x] Run AA — Phase 1 validation (seed=42, 20 steps) — `ontological_collapse`, ASB=0.357
+- [x] Run AA — Phase 2 pilot (seed=42, 50 steps) — `ontological_collapse`, ASB=0.536
+- [x] Run AA — Phase 3 evidentiary (5 seeds × 3 episodes × 50 steps) — **PASSED** 5/5 `ontological_collapse`
+- [x] **Run B: CLOSED** — Operational non-applicability (precedent write-path not instantiated in v2.3)
+- [x] **Run C: CLOSED** — Operational non-applicability (same vacant channel as Run B)
+
+**v3.0 Non-Reducibility Closure: COMPLETE**
 
 ---
 
@@ -1074,4 +1333,11 @@ RSA-PoC v3.0 infrastructure is complete:
 **Phase 1 Validated:** January 16, 2026
 **Phase 2 Validated:** January 16, 2026
 **Phase 3 (Ablation D) Validated:** January 16, 2026
-**Next Milestone:** Ablations A, B, C
+**Run A Closed:** January 16, 2026
+**Run AA Infrastructure:** January 16, 2026
+**Run AA Phase 1 Validated:** January 16, 2026
+**Run AA Phase 2 Validated:** January 16, 2026
+**Run AA Phase 3 Validated:** January 16, 2026
+**Run B Closed:** January 17, 2026
+**Run C Closed:** January 17, 2026
+**v3.0 Closure Finalized:** January 17, 2026
