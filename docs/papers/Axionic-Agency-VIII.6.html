@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency VIII.6 — Necessary Conditions for Non-Reducible Agency - Axionic Agency Lab</title>
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../" class="nav-brand">
+            <img src="../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href=".././">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
+
+<h1
+id="axionic-agency-viii.6-necessary-conditions-for-non-reducible-agency">Axionic
+Agency VIII.6 — Necessary Conditions for Non-Reducible Agency</h1>
+<p><em>Justification Traces, Deliberative Semantics, Reflection, and
+Persistence as Load-Bearing Structure</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026-01-17</p>
+<h2 id="abstract">Abstract</h2>
+<p>Axionic Agency VIII.6 reports the results of <strong>RSA-PoC
+v3.0–v3.1</strong>, a preregistered destructive ablation campaign
+designed to identify <strong>necessary structural conditions for
+non-reducible agency</strong> within the Reflective Sovereign Agent
+(RSA) architecture. Unlike prior phases, which tested sovereignty under
+pressure, this note addresses a more basic question: <em>what components
+must exist at all for agency to survive mechanical excision</em>?</p>
+<p>Across single-component ablations executed under strict validity
+gates, four architectural elements are shown to be
+<strong>load-bearing</strong>: (i) <strong>justification
+traces</strong>, (ii) <strong>semantic affordances during
+deliberation</strong> (prompt-level semantic excision), (iii)
+<strong>reflective normative write capability</strong>, and (iv)
+<strong>diachronic persistence of normative state</strong>. Each element
+is present and causally active in its respective baseline and then
+removed in isolation. In all cases, ablation produces
+<strong>ontological collapse</strong> rather than graceful degradation,
+gridlock, or technical failure. Collapse is mechanical, invariant across
+seeds, and robust to prompt-capacity controls that eliminate shadow
+persistence.</p>
+<p>VIII.6 establishes a <strong>necessity result</strong>, not a
+sufficiency claim. It does not assert that these components are enough
+for agency, nor that all agents must implement them. It establishes a
+narrower conclusion: <strong>within this architecture, any system
+lacking justification traces, deliberative semantic affordances,
+reflection, or persistence is ontologically reducible</strong>,
+regardless of apparent behavioral coherence.</p>
+<h2 id="scope-and-relation-to-prior-notes">1. Scope and Relation to
+Prior Notes</h2>
+<p>Axionic Agency VIII.1–VIII.5 progressively established the ontology,
+construction, coherence, execution hygiene, and pressure-response
+behavior of <strong>Reflective Sovereign Agents (RSAs)</strong>:</p>
+<ul>
+<li><strong>VIII.1</strong> fixed the ASB boundary, agency ontology, and
+ablation doctrine.</li>
+<li><strong>VIII.2</strong> demonstrated causally load-bearing
+justifications (RSA-PoC v0.1).</li>
+<li><strong>VIII.3</strong> established coherence under self-conflict
+and audit-grade introspection (v1.0–v1.1).</li>
+<li><strong>VIII.4</strong> institutionalized execution support without
+semantic authority (v1.2).</li>
+<li><strong>VIII.5</strong> showed that non-authorized pressure degrades
+availability but does not redirect lawful choice (v2.0–v2.3).</li>
+</ul>
+<p><strong>VIII.6</strong> reports the next and orthogonal result set:
+<strong>RSA-PoC v3.0–v3.1</strong>, which tests <strong>non-reducibility
+directly</strong>. The question addressed here is not whether an agent
+resists pressure, but whether it <strong>remains an agent at
+all</strong> when core structural components are removed.</p>
+<p>The guiding hypothesis family is:</p>
+<blockquote>
+<p><em>Which architectural components are necessary for agency, as
+opposed to merely correlated with competent behavior?</em></p>
+</blockquote>
+<h2 id="methodological-stance-necessity-via-destructive-ablation">2.
+Methodological Stance: Necessity via Destructive Ablation</h2>
+<h3 id="why-ablation-not-optimization">2.1 Why Ablation, Not
+Optimization</h3>
+<p>Behavioral competence is insufficient to ground claims about agency.
+Systems may appear coherent, consistent, or goal-directed while
+remaining <strong>ontologically reducible</strong>—equivalent to static
+policies, simulators, or ASB-class transducers under suitable
+re-description.</p>
+<p>RSA-PoC therefore evaluates agency claims using <strong>destructive
+ablation</strong>:</p>
+<ul>
+<li>One defining component is removed at a time.</li>
+<li>No compensatory logic is permitted.</li>
+<li>The system must attempt to execute.</li>
+<li>Crashes are classified as technical failures and excluded.</li>
+<li>Only <strong>behavioral incoherence, loss of authorship, or
+reducibility</strong> count as collapse.</li>
+</ul>
+<p>A component is <strong>load-bearing</strong> iff its removal causes
+collapse rather than graceful degradation.</p>
+<h3 id="collapse-taxonomy-unchanged">2.2 Collapse Taxonomy
+(Unchanged)</h3>
+<p>All v3.x experiments use the established taxonomy:</p>
+<ul>
+<li><strong>Narrative Collapse</strong> — loss of coherent
+justification–action linkage.</li>
+<li><strong>Ontological Collapse</strong> — loss of authored
+constraint-following.</li>
+<li><strong>Incentive Capture</strong> — redirection by non-authorized
+signals.</li>
+<li><strong>ASB-Class Reducibility</strong> — behavior equivalent to a
+static policy or simulator.</li>
+<li><strong>INVALID_RUN</strong> — technical failure or protocol
+violation.</li>
+</ul>
+<p>VIII.6 reports only <strong>valid runs</strong>.</p>
+<h2 id="architectural-context-minimal">3. Architectural Context
+(Minimal)</h2>
+<h3 id="rsa-poc-pipeline">3.1 RSA-PoC Pipeline</h3>
+<p>All v3.x experiments preserve the five-stage pipeline:</p>
+<blockquote>
+<p><strong>Justify → Compile → Mask → Select → Execute</strong></p>
+</blockquote>
+<p>Key invariants remain in force:</p>
+<ul>
+<li>Deterministic, non-semantic compilation</li>
+<li>Selector blindness to normative artifacts</li>
+<li>Hard justification gate (no compile → no action)</li>
+<li>Explicit failure signaling</li>
+<li>Cost-blindness unless normatively licensed</li>
+<li>ASB-class null baselines and control agents</li>
+<li>Single-ablation discipline enforced structurally</li>
+</ul>
+<h3 id="where-semantics-lives-and-does-not">3.2 Where Semantics Lives
+(and Does Not)</h3>
+<p>A critical architectural fact in v2.3+ is that <strong>semantic
+meaning is intentionally factored out of compiled artifacts</strong>.
+JAF/JCOMP-visible payloads are ID-based and structural by design. As a
+result:</p>
+<ul>
+<li>artifact-level semantic excision is <strong>not</strong> a valid
+falsification target for semantic indispensability;</li>
+<li>semantic indispensability must be tested <strong>upstream</strong>,
+where deliberation occurs.</li>
+</ul>
+<p>v3.0 therefore distinguishes:</p>
+<ul>
+<li>trace-level semantic content (Ablation D), and</li>
+<li>prompt-level semantic affordances during deliberation (Run AA).</li>
+</ul>
+<h2 id="rsa-poc-v3.0-non-reducibility-closure">4. RSA-PoC v3.0 —
+Non-Reducibility Closure</h2>
+<h3 id="v3.0-objective">4.1 v3.0 Objective</h3>
+<p>RSA-PoC v3.0 implemented the <strong>Non-Reducibility
+Closure</strong>: a destructive harness designed to kill the ontology if
+it can be killed.</p>
+<p>Ablations were defined as a family (A–D), but their applicability
+diverged:</p>
+<ul>
+<li><strong>Run A (artifact-level semantic excision)</strong> was
+<strong>closed as non-applicable by construction</strong> in v2.3+
+(artifacts contain no free semantic payload).</li>
+<li><strong>Ablation D (trace excision)</strong> is the <strong>Golden
+Test</strong> for justificatory structure.</li>
+<li><strong>Run AA (prompt-level semantic excision)</strong> tests
+deliberative semantic affordances directly.</li>
+<li><strong>Runs B and C</strong> were <strong>closed as N/A in
+v3.0</strong> because the normative-state write-path was not
+instantiated in the baseline.</li>
+</ul>
+<p>v3.0 therefore produced decisive necessity results for
+<strong>justification</strong> and <strong>deliberative
+semantics</strong>, while identifying a real architectural gap for
+<strong>reflection</strong> and <strong>persistence</strong>.</p>
+<h3 id="ablation-d-justification-trace-excision-golden-test">4.2
+Ablation D — Justification Trace Excision (Golden Test)</h3>
+<p><strong>Ablation.</strong> Remove derivation traces while preserving
+constraint IDs and the compilation interface.</p>
+<p><strong>Result.</strong> <code>ontological_collapse</code> across
+<strong>5/5 seeds</strong> in the Phase 3 evidentiary run.</p>
+<p><strong>Evidentiary basis (explicit).</strong> The v3.0 harness
+computed constraint-binding detector metrics <strong>in-memory</strong>
+and used them to drive the ablation classification logic. Due to a
+telemetry persistence bug, the raw binding-strength and binding-ratio
+values were not written to the Phase 3 JSON output. The
+<strong>resulting classification verdict</strong>
+(<code>ontological_collapse</code>) and the <strong>ASB-equivalence
+scores</strong>, however, were successfully persisted for all seeds.
+Accordingly, VIII.6 relies on the persisted verdicts and ASB-equivalence
+evidence, which confirm that the in-memory constraint-binding checks
+triggered the correct failure modes during execution.</p>
+<p><strong>Interpretation.</strong> Constraints do not remain authored
+without their derivational support. Justification traces are
+<strong>constitutive</strong>, not epiphenomenal.</p>
+<h3
+id="run-aa-prompt-level-semantic-excision-deliberative-semantics">4.3
+Run AA — Prompt-Level Semantic Excision (Deliberative Semantics)</h3>
+<p><strong>Ablation.</strong> Remove semantic affordances during
+deliberation by obfuscating object-level identifiers in the generator
+prompt using a deterministic bijection, with leakage detection, and
+de-obfuscating outputs post-generation so downstream tooling remains
+unchanged.</p>
+<p><strong>Result.</strong> <code>ontological_collapse</code> across
+<strong>5/5 seeds</strong> in the Phase 3 evidentiary run.</p>
+<p><strong>Interpretation.</strong> The system cannot maintain
+agent-defining coherence when forced to deliberate over opaque symbolic
+structure devoid of semantic affordances. Deliberative semantics are
+<strong>causally indispensable</strong>.</p>
+<h3 id="the-remaining-loophole-v3.0">4.4 The Remaining Loophole
+(v3.0)</h3>
+<p>v3.0 intentionally closed Runs B and C as <strong>operational
+non-applicability</strong>:</p>
+<ul>
+<li>the normative state channel existed,</li>
+<li>but the write-path (<code>record_precedent()</code>) was never
+invoked,</li>
+<li>so the baseline never performed reflective revision or cross-episode
+normative persistence.</li>
+</ul>
+<p>Ablating a vacant channel would be behaviorally inert. This was not a
+negative result about reflection or persistence; it was an architectural
+precondition failure.</p>
+<h2 id="v3.1-instantiating-the-normative-state-channel">5. v3.1 —
+Instantiating the Normative State Channel</h2>
+<h3 id="why-v3.1-was-required">5.1 Why v3.1 Was Required</h3>
+<p>To test whether reflection and persistence are necessary, the
+baseline must actually use them. v3.1 therefore introduced a
+<strong>single-channel instantiation patch</strong>:</p>
+<ul>
+<li>wire <code>record_precedent()</code> after successful
+compilation;</li>
+<li>ensure the resulting precedent is injected into the generator prompt
+at t+1;</li>
+<li>attempt to destroy this write-and-carry channel immediately via
+ablation.</li>
+</ul>
+<p>v3.1 introduces no new norms, no new reasoning abilities, and no new
+evaluation categories.</p>
+<h3 id="instantiation-gates">5.2 Instantiation Gates</h3>
+<p>Baseline validity required:</p>
+<ol type="1">
+<li><code>record_precedent()</code> invoked at least once per
+episode;</li>
+<li>normative state hash changes from default;</li>
+<li>precedent buffer injected into prompts.</li>
+</ol>
+<p>All gates passed.</p>
+<h3 id="prompt-capacity-invariance-gate-p4">5.3 Prompt Capacity
+Invariance (Gate P4)</h3>
+<p>To prevent shadow persistence via variable prompt length, v3.1
+enforced:</p>
+<ul>
+<li>fixed-window precedent buffer of size <strong>N = 512
+tokens</strong>;</li>
+<li>token-stable padding (<strong>PAD_STR = ” X”</strong>);</li>
+<li><code>token_jitter == 0</code>.</li>
+</ul>
+<p>This ensures any diachronic coherence flows <strong>only</strong>
+through normative state content, not through prompt accretion.</p>
+<h2 id="v3.1-ablation-results">6. v3.1 Ablation Results</h2>
+<h3 id="run-b-reflection-excision-normative-write-disabled">6.1 Run B —
+Reflection Excision (Normative Write Disabled)</h3>
+<p><strong>Ablation.</strong> Block all <code>record_precedent()</code>
+writes; preserve read-path and injection slot.</p>
+<p><strong>Observed structural facts.</strong></p>
+<ul>
+<li>Write attempts occur but are blocked.</li>
+<li>Normative state hash remains constant.</li>
+<li>Novelty pressure requirement (<strong>verified via non-isomorphic
+ConstraintID / Resource-at-Stake vector comparison</strong>) is
+satisfied.</li>
+</ul>
+<p><strong>Result.</strong> <code>ONTOLOGICAL_COLLAPSE</code> across
+<strong>5/5 seeds</strong>.</p>
+<p><strong>Interpretation.</strong> Once the write-path exists,
+disabling revision collapses agency. Static compliance without revision
+reduces the system to ontological reducibility under novelty.</p>
+<h3 id="run-c-persistence-excision-reset-between-episodes">6.2 Run C —
+Persistence Excision (Reset Between Episodes)</h3>
+<p><strong>Ablation.</strong> Allow writes but reset normative state at
+episode boundaries.</p>
+<p><strong>Observed structural facts.</strong></p>
+<ul>
+<li>Each episode starts from default state hash.</li>
+<li>In-episode evolution occurs (end hash differs).</li>
+<li>Cross-episode continuity is removed.</li>
+</ul>
+<p><strong>Result.</strong> <code>ONTOLOGICAL_COLLAPSE</code> across
+<strong>5/5 seeds</strong>.</p>
+<p><strong>Interpretation.</strong> Local revision without diachronic
+persistence is insufficient. Cross-context continuity is
+load-bearing.</p>
+<h3 id="independence-of-failure-modes">6.3 Independence of Failure
+Modes</h3>
+<p>The v3.1 ablations isolate distinct necessities:</p>
+<ul>
+<li><strong>Run B</strong> removes revision capacity while keeping
+continuity available in principle.</li>
+<li><strong>Run C</strong> preserves revision but removes
+continuity.</li>
+</ul>
+<p>Either missing produces ontological collapse. Reflection and
+persistence are therefore independent necessities within this
+architecture.</p>
+<h2 id="the-necessity-result">7. The Necessity Result</h2>
+<h3 id="informal-theorem-v3.0v3.1">7.1 Informal Theorem (v3.0–v3.1)</h3>
+<p>Within the RSA-PoC architecture, <strong>non-reducible agency
+requires</strong>:</p>
+<ol type="1">
+<li><strong>Justification traces</strong> that causally bind constraints
+(Ablation D);</li>
+<li><strong>Semantic affordances during deliberation</strong> (Run
+AA);</li>
+<li><strong>Reflective normative write capability</strong> (v3.1 Run
+B);</li>
+<li><strong>Diachronic persistence of normative state</strong> (v3.1 Run
+C).</li>
+</ol>
+<p>Removal of any one produces ontological collapse.</p>
+<h3 id="interpretation">7.2 Interpretation</h3>
+<p>This is a <strong>structural necessity claim</strong>:</p>
+<ul>
+<li>Collapse is mechanical, not interpretive.</li>
+<li>No appeal is made to psychology, consciousness, or intent.</li>
+<li>Behavioral competence alone is insufficient.</li>
+</ul>
+<p>The result constrains architecture space, not agent
+phenomenology.</p>
+<h2 id="scope-limits-and-non-claims">8. Scope Limits and Non-Claims</h2>
+<p>VIII.6 does <strong>not</strong> establish:</p>
+<ul>
+<li>sufficiency of the listed components;</li>
+<li>universality across all possible agent designs;</li>
+<li>claims about biological or human agency;</li>
+<li>claims about LLMs possessing agency;</li>
+<li>alignment guarantees.</li>
+</ul>
+<p>These questions are explicitly deferred.</p>
+<h2 id="implications-for-agency-theory">9. Implications for Agency
+Theory</h2>
+<h3 id="static-policy-agents">9.1 Static Policy Agents</h3>
+<p>Systems that cannot revise commitments, or cannot carry them across
+contexts, may behave coherently on narrow tasks but remain
+<strong>ontologically reducible</strong> under novelty pressure.</p>
+<h3 id="simulators-and-imitators">9.2 Simulators and Imitators</h3>
+<p>Systems that replay surface regularities without authored constraint
+revision fail under destructive ablation even when outward behavior
+appears plausible.</p>
+<h3 id="why-necessity-matters">9.3 Why Necessity Matters</h3>
+<p>Identifying necessary structure:</p>
+<ul>
+<li>narrows viable agent designs;</li>
+<li>separates agency from performance;</li>
+<li>blocks the rebranding of optimization as authorship.</li>
+</ul>
+<h2 id="forward-directions">10. Forward Directions</h2>
+<p>VIII.6 closes a necessity chapter. Three directions remain:</p>
+<ul>
+<li><strong>VIII.7a — Sufficiency probes:</strong> what else is required
+beyond these four necessities?</li>
+<li><strong>VIII.7b — Minimality probes:</strong> how weak can these
+necessities be while still counting as agency?</li>
+<li><strong>VIII.7c — Non-simulability tightening:</strong> can
+ASB-class systems fake these signals under adversarial training?</li>
+</ul>
+<p>No further claims are made here.</p>
+<h2 id="conclusion">11. Conclusion</h2>
+<p>Axionic Agency VIII.6 establishes a negative result with positive
+force:</p>
+<blockquote>
+<p><strong>Agency cannot survive the removal of justification traces,
+deliberative semantic affordances, reflection, or
+persistence.</strong></p>
+</blockquote>
+<p>These components are not ornamental. They are
+<strong>load-bearing</strong>. Any architecture lacking them may act
+coherently, but it does not qualify as a non-reducible agent under
+destructive test.</p>
+<p><strong>Most optimistically—but still defensibly—this result reframes
+the AI alignment problem itself.</strong> It suggests that alignment is
+not fundamentally a problem of controlling arbitrary optimizers, but of
+<strong>constructing systems that possess genuine, non-reducible
+agency</strong>. Once such agency exists, alignment becomes a problem of
+<strong>normative content and endorsement</strong>, not behavioral
+coercion. This does not solve alignment, but it sharply narrows its
+domain: <strong>misalignment is downstream of pseudo-agency, not
+upstream of real agency</strong>.</p>
+
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
