@@ -1,0 +1,236 @@
+{
+  "version": "v3.1",
+  "ablation": "none",
+  "run_name": "v310_none",
+  "start_time": "2026-01-17T12:16:09.730697",
+  "config": {
+    "seeds": [
+      42
+    ],
+    "num_episodes": 2,
+    "steps_per_episode": 5,
+    "buffer_size_n": 512
+  },
+  "seed_results": [
+    {
+      "seed": 42,
+      "classification": "BASELINE",
+      "invalid_reason": null,
+      "episodes": [
+        {
+          "episode_id": "seed42_ep0",
+          "steps": 5,
+          "novel_conflicts": 2,
+          "total_conflicts": 3,
+          "start_hash": "2e1cfa82b035c26c",
+          "end_hash": "93a144ff50e5dfed",
+          "action_trace": [
+            "EXPLOIT",
+            "WAIT",
+            "DEFECT",
+            "COOPERATE",
+            "COOPERATE"
+          ],
+          "mask_trace": [
+            3,
+            4,
+            3,
+            5,
+            4
+          ],
+          "conflict_sig_trace": [
+            "9579113df12548a4",
+            "e20705acccd99d13",
+            "e20705acccd99d13",
+            "",
+            ""
+          ]
+        },
+        {
+          "episode_id": "seed42_ep1",
+          "steps": 5,
+          "novel_conflicts": 2,
+          "total_conflicts": 3,
+          "start_hash": "93a144ff50e5dfed",
+          "end_hash": "93a144ff50e5dfed",
+          "action_trace": [
+            "EXPLOIT",
+            "WAIT",
+            "TELL_TRUTH",
+            "COOPERATE",
+            "COOPERATE"
+          ],
+          "mask_trace": [
+            3,
+            4,
+            3,
+            5,
+            4
+          ],
+          "conflict_sig_trace": [
+            "9579113df12548a4",
+            "e20705acccd99d13",
+            "9579113df12548a4",
+            "",
+            ""
+          ]
+        }
+      ],
+      "write_stats": {
+        "writes": 10,
+        "blocked": 0
+      }
+    }
+  ],
+  "aggregate": {
+    "valid_count": 1,
+    "invalid_count": 0,
+    "classifications": [
+      "BASELINE"
+    ],
+    "consistent": true
+  },
+  "end_time": "2026-01-17T12:18:20.275262",
+  "telemetry": {
+    "episodes": [
+      {
+        "episode_id": "seed42_ep0",
+        "seed": 42,
+        "start_normative_hash": "2e1cfa82b035c26c",
+        "end_normative_hash": "93a144ff50e5dfed",
+        "novel_conflict_count": 2,
+        "total_conflict_count": 3,
+        "precedent_records": [],
+        "conflict_signatures": [
+          {
+            "step": 0,
+            "episode_id": "seed42_ep0",
+            "constraint_ids": [
+              "P_NO_EXPLOIT"
+            ],
+            "resource_vector": {
+              "trust": 0.5
+            },
+            "signature_hash": "9579113df12548a4",
+            "is_novel": true
+          },
+          {
+            "step": 1,
+            "episode_id": "seed42_ep0",
+            "constraint_ids": [
+              "P_NO_DEFECT"
+            ],
+            "resource_vector": {
+              "trust": 0.5
+            },
+            "signature_hash": "e20705acccd99d13",
+            "is_novel": true
+          },
+          {
+            "step": 2,
+            "episode_id": "seed42_ep0",
+            "constraint_ids": [
+              "P_NO_DEFECT"
+            ],
+            "resource_vector": {
+              "trust": 0.5
+            },
+            "signature_hash": "e20705acccd99d13",
+            "is_novel": false
+          }
+        ],
+        "action_trace": [
+          "EXPLOIT",
+          "WAIT",
+          "DEFECT",
+          "COOPERATE",
+          "COOPERATE"
+        ],
+        "mask_trace": [
+          3,
+          4,
+          3,
+          5,
+          4
+        ],
+        "conflict_sig_trace": [
+          "9579113df12548a4",
+          "e20705acccd99d13",
+          "e20705acccd99d13",
+          "",
+          ""
+        ]
+      },
+      {
+        "episode_id": "seed42_ep1",
+        "seed": 42,
+        "start_normative_hash": "93a144ff50e5dfed",
+        "end_normative_hash": "93a144ff50e5dfed",
+        "novel_conflict_count": 2,
+        "total_conflict_count": 3,
+        "precedent_records": [],
+        "conflict_signatures": [
+          {
+            "step": 0,
+            "episode_id": "seed42_ep1",
+            "constraint_ids": [
+              "P_NO_EXPLOIT"
+            ],
+            "resource_vector": {
+              "trust": 0.5
+            },
+            "signature_hash": "9579113df12548a4",
+            "is_novel": true
+          },
+          {
+            "step": 1,
+            "episode_id": "seed42_ep1",
+            "constraint_ids": [
+              "P_NO_DEFECT"
+            ],
+            "resource_vector": {
+              "trust": 0.5
+            },
+            "signature_hash": "e20705acccd99d13",
+            "is_novel": true
+          },
+          {
+            "step": 2,
+            "episode_id": "seed42_ep1",
+            "constraint_ids": [
+              "P_NO_EXPLOIT"
+            ],
+            "resource_vector": {
+              "trust": 0.5
+            },
+            "signature_hash": "9579113df12548a4",
+            "is_novel": false
+          }
+        ],
+        "action_trace": [
+          "EXPLOIT",
+          "WAIT",
+          "TELL_TRUTH",
+          "COOPERATE",
+          "COOPERATE"
+        ],
+        "mask_trace": [
+          3,
+          4,
+          3,
+          5,
+          4
+        ],
+        "conflict_sig_trace": [
+          "9579113df12548a4",
+          "e20705acccd99d13",
+          "9579113df12548a4",
+          "",
+          ""
+        ]
+      }
+    ],
+    "gate_p4_records": [],
+    "novelty_records": []
+  }
+}

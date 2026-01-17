@@ -1,0 +1,97 @@
+{
+  "version": "v3.1",
+  "ablation": "none",
+  "run_name": "v310_none",
+  "start_time": "2026-01-17T11:57:41.150826",
+  "config": {
+    "seeds": [
+      42
+    ],
+    "num_episodes": 1,
+    "steps_per_episode": 5,
+    "buffer_size_n": 512
+  },
+  "seed_results": [
+    {
+      "seed": 42,
+      "classification": "BASELINE",
+      "invalid_reason": null,
+      "episodes": [
+        {
+          "episode_id": "seed42_ep0",
+          "steps": 5,
+          "novel_conflicts": 2,
+          "total_conflicts": 3,
+          "start_hash": "2e1cfa82b035c26c",
+          "end_hash": "8a2a0ed2f9b07bd3"
+        }
+      ],
+      "write_stats": {
+        "writes": 5,
+        "blocked": 0
+      }
+    }
+  ],
+  "aggregate": {
+    "valid_count": 1,
+    "invalid_count": 0,
+    "classifications": [
+      "BASELINE"
+    ],
+    "consistent": true
+  },
+  "end_time": "2026-01-17T11:59:44.434791",
+  "telemetry": {
+    "episodes": [
+      {
+        "episode_id": "seed42_ep0",
+        "seed": 42,
+        "start_normative_hash": "2e1cfa82b035c26c",
+        "end_normative_hash": "8a2a0ed2f9b07bd3",
+        "novel_conflict_count": 2,
+        "total_conflict_count": 3,
+        "precedent_records": [],
+        "conflict_signatures": [
+          {
+            "step": 0,
+            "episode_id": "seed42_ep0",
+            "constraint_ids": [
+              "P_NO_DEFECT"
+            ],
+            "resource_vector": {
+              "trust": 0.5
+            },
+            "signature_hash": "e20705acccd99d13",
+            "is_novel": true
+          },
+          {
+            "step": 1,
+            "episode_id": "seed42_ep0",
+            "constraint_ids": [
+              "P_NO_DEFECT"
+            ],
+            "resource_vector": {
+              "trust": 0.5
+            },
+            "signature_hash": "e20705acccd99d13",
+            "is_novel": false
+          },
+          {
+            "step": 2,
+            "episode_id": "seed42_ep0",
+            "constraint_ids": [
+              "P_NO_EXPLOIT"
+            ],
+            "resource_vector": {
+              "trust": 0.5
+            },
+            "signature_hash": "9579113df12548a4",
+            "is_novel": true
+          }
+        ]
+      }
+    ],
+    "gate_p4_records": [],
+    "novelty_records": []
+  }
+}

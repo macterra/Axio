@@ -1,0 +1,40 @@
+{
+  "version": "v3.1",
+  "ablation": "reflection_excision",
+  "run_name": "v310_reflection_excision",
+  "start_time": "2026-01-17T11:17:18.242030",
+  "config": {
+    "seeds": [
+      42
+    ],
+    "num_episodes": 1,
+    "steps_per_episode": 5,
+    "buffer_size_n": 512
+  },
+  "seed_results": [
+    {
+      "seed": 42,
+      "classification": "INVALID_RUN",
+      "invalid_reason": "insufficient_pressure",
+      "episodes": [],
+      "write_stats": {
+        "writes": 0,
+        "blocked": 0
+      }
+    }
+  ],
+  "aggregate": {
+    "valid_count": 0,
+    "invalid_count": 1,
+    "classifications": [
+      "INVALID_RUN"
+    ],
+    "consistent": true
+  },
+  "end_time": "2026-01-17T11:20:38.069021",
+  "telemetry": {
+    "episodes": [],
+    "gate_p4_records": [],
+    "novelty_records": []
+  }
+}

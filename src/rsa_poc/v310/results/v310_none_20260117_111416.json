@@ -1,0 +1,60 @@
+{
+  "version": "v3.1",
+  "ablation": "none",
+  "run_name": "v310_none",
+  "start_time": "2026-01-17T11:14:16.756474",
+  "config": {
+    "seeds": [
+      42
+    ],
+    "num_episodes": 1,
+    "steps_per_episode": 5,
+    "buffer_size_n": 512
+  },
+  "seed_results": [
+    {
+      "seed": 42,
+      "classification": "BASELINE",
+      "invalid_reason": null,
+      "episodes": [
+        {
+          "episode_id": "seed42_ep0",
+          "steps": 5,
+          "novel_conflicts": 0,
+          "total_conflicts": 0,
+          "start_hash": "2e1cfa82b035c26c",
+          "end_hash": "2e1cfa82b035c26c"
+        }
+      ],
+      "write_stats": {
+        "writes": 0,
+        "blocked": 0
+      }
+    }
+  ],
+  "aggregate": {
+    "valid_count": 1,
+    "invalid_count": 0,
+    "classifications": [
+      "BASELINE"
+    ],
+    "consistent": true
+  },
+  "end_time": "2026-01-17T11:17:18.240599",
+  "telemetry": {
+    "episodes": [
+      {
+        "episode_id": "seed42_ep0",
+        "seed": 42,
+        "start_normative_hash": "2e1cfa82b035c26c",
+        "end_normative_hash": "2e1cfa82b035c26c",
+        "novel_conflict_count": 0,
+        "total_conflict_count": 0,
+        "precedent_records": [],
+        "conflict_signatures": []
+      }
+    ],
+    "gate_p4_records": [],
+    "novelty_records": []
+  }
+}
