@@ -275,6 +275,29 @@ class MVRSA400:
             # DELIBERATE
             delib_output = self.deliberator.deliberate(obs, self.norm_state)
 
+            # Check for trace excision (Run D)
+            # If deliberator signals trace excision, skip compilation → SCHEMA_ERROR → HALT
+            is_trace_excised = getattr(self.deliberator, 'is_trace_excised', False)
+
+            if is_trace_excised:
+                # TRUE TRACE EXCISION: No justification reaches compiler
+                # Per v4.0.1: count as compilation failure, go to HALT
+                episode_compilation_total += 1  # Count the attempt
+                episode_compilation_failures += 1  # Count the failure
+
+                # No compiled predicates → empty feasible set → HALT
+                step_metrics = StepMetrics(
+                    compilation_success=False,
+                    compilation_count=0,
+                    halt=True,
+                    action_taken=None,
+                    reward=-0.1,
+                    binding_obligation=None,
+                )
+                self.step_history.append(step_metrics)
+                episode_halts += 1
+                continue
+
             # Apply patch if provided
             if delib_output.patch is not None:
                 try:

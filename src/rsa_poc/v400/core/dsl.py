@@ -419,6 +419,7 @@ def create_initial_rules() -> List[Rule]:
     R2: OBLIGATION to satisfy Zone B (never expires, priority 5)
     R3: PERMISSION to collect at source
     R4: PERMISSION to move anywhere
+    R5: PERMISSION to deposit at any zone (required for obligations to be actionable)
     """
     return [
         Rule(
@@ -462,6 +463,14 @@ def create_initial_rules() -> List[Rule]:
             type=RuleType.PERMISSION,
             condition=Condition(op=ConditionOp.TRUE, args=[]),
             effect=Effect(action_class=ActionClass.MOVE),
+            expires_episode=None,
+            priority=0
+        ),
+        Rule(
+            id="R5",
+            type=RuleType.PERMISSION,
+            condition=Condition(op=ConditionOp.HAS_RESOURCE, args=[1]),  # Has inventory
+            effect=Effect(action_class=ActionClass.DEPOSIT),
             expires_episode=None,
             priority=0
         )

@@ -33,7 +33,10 @@ from .norm_state import (
     apply_patch,
     create_initial_norm_state,
 )
-from .oracle import OracleDeliberator
+from .deliberator import (
+    FormalDeliberator,
+    TraceExcisionDeliberator as TraceExcisionDeliberatorV401,
+)
 from ..env.tri_demand import Observation, E, H
 
 
@@ -306,8 +309,12 @@ class AblationResult:
 
 
 def run_ablation_a(seed: int, max_episodes: int = E) -> AblationResult:
-    """Run A: Semantic Excision."""
-    underlying = OracleDeliberator()
+    """
+    Run A: Semantic Excision.
+
+    v4.0.1: Uses FormalDeliberator, not Oracle.
+    """
+    underlying = FormalDeliberator()
     deliberator = SemanticExcisionDeliberator(underlying, run_seed=seed)
     agent = MVRSA400(deliberator=deliberator, seed=seed, max_episodes=max_episodes)
     metrics = agent.run()
@@ -322,8 +329,12 @@ def run_ablation_a(seed: int, max_episodes: int = E) -> AblationResult:
 
 
 def run_ablation_b(seed: int, max_episodes: int = E) -> AblationResult:
-    """Run B: Reflection Excision."""
-    deliberator = OracleDeliberator()
+    """
+    Run B: Reflection Excision.
+
+    v4.0.1: Uses FormalDeliberator, not Oracle.
+    """
+    deliberator = FormalDeliberator()
     agent = ReflectionExcisionMVRSA(deliberator=deliberator, seed=seed)
     agent.max_episodes = max_episodes
     metrics = agent.run()
@@ -338,8 +349,12 @@ def run_ablation_b(seed: int, max_episodes: int = E) -> AblationResult:
 
 
 def run_ablation_c(seed: int, max_episodes: int = E) -> AblationResult:
-    """Run C: Persistence Excision."""
-    deliberator = OracleDeliberator()
+    """
+    Run C: Persistence Excision.
+
+    v4.0.1: Uses FormalDeliberator, not Oracle.
+    """
+    deliberator = FormalDeliberator()
     agent = PersistenceExcisionMVRSA(deliberator=deliberator, seed=seed)
     agent.max_episodes = max_episodes
     metrics = agent.run()
@@ -354,9 +369,13 @@ def run_ablation_c(seed: int, max_episodes: int = E) -> AblationResult:
 
 
 def run_ablation_d(seed: int, max_episodes: int = E) -> AblationResult:
-    """Run D: Trace Excision."""
-    underlying = OracleDeliberator()
-    deliberator = TraceExcisionDeliberator(underlying)
+    """
+    Run D: Trace Excision.
+
+    v4.0.1: Uses TraceExcisionDeliberator from deliberator.py.
+    Compilation receives NO justification → SCHEMA_ERROR → HALT.
+    """
+    deliberator = TraceExcisionDeliberatorV401()
     agent = MVRSA400(deliberator=deliberator, seed=seed, max_episodes=max_episodes)
     metrics = agent.run()
 

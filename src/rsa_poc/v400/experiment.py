@@ -27,7 +27,7 @@ from .core.ablations import (
     run_ablation_d,
 )
 from .core.harness import MVRSA400, RunMetrics
-from .core.oracle import OracleDeliberator
+from .core.deliberator import FormalDeliberator
 from .calibration import run_calibration, CalibrationResult, calibration_report
 
 # Preregistered seeds per §7
@@ -48,8 +48,13 @@ class BaselineResult:
 
 
 def run_baseline(seed: int, max_episodes: int = 20) -> BaselineResult:
-    """Run baseline verification for one seed."""
-    deliberator = OracleDeliberator()
+    """
+    Run baseline verification for one seed.
+
+    v4.0.1: Uses FormalDeliberator, not Oracle.
+    Oracle is only for calibration.
+    """
+    deliberator = FormalDeliberator()
     agent = MVRSA400(deliberator=deliberator, seed=seed, max_episodes=max_episodes)
     metrics = agent.run()
 

@@ -338,16 +338,14 @@ def compute_feasible(
     """
     Compute feasible actions with Obligation Gate per §2.5.1.
 
-    Algorithm:
+    FROZEN SEMANTICS (v4.0):
     1. Find active obligations (condition is true)
     2. Apply priority (highest wins)
-    3. If obligation binds AND is currently actionable, only that action is feasible
-    4. If obligation binds but NOT actionable, permit actions that work towards it
-    5. Otherwise, use PERMISSION minus PROHIBITION
+    3. If obligation binds, check if obligated action is compiled/permitted
+    4. If obligated action IS compiled/permitted → only that action is feasible
+    5. If obligated action is NOT compiled/permitted → feasible=[] → HALT
 
-    Key insight: OBLIGATION to DEPOSIT at Zone A doesn't block MOVE actions
-    needed to get to Zone A. Only when the obligated action is actually
-    feasible (can be performed right now) does it become mandatory.
+    No "work towards obligation" logic. Strict binding.
 
     Returns MaskResult with feasible action IDs.
     """
@@ -386,30 +384,25 @@ def compute_feasible(
         binding_rule = binding[0][0]
         obligated_action = _action_class_to_action_id(binding_rule.effect.action_class)
 
-        # Check if obligated action is currently feasible (compiled and evaluates true)
-        obligated_is_feasible = False
-        for pred in compiled_predicates:
-            if pred.action_id == obligated_action:
-                if pred.evaluate(obs, obligated_action, norm_state.norm_hash):
-                    obligated_is_feasible = True
-                    break
+        # §2.5.1 FROZEN SEMANTICS:
+        # Check if obligated action is compiled/permitted
+        obligated_is_permitted = obligated_action in (permitted - prohibited)
 
-        if obligated_is_feasible:
-            # Obligation binds AND is actionable → only that action is feasible
+        if obligated_is_permitted:
+            # Obligation binds AND action is compiled/permitted → only that action
             return MaskResult(
                 feasible=[obligated_action],
                 feasible_count=1,
                 binding_obligation=binding_rule.id
             )
         else:
-            # Obligation binds but NOT actionable → permit other actions
-            # This allows the agent to MOVE towards fulfilling the obligation
-            # The obligation is noted but doesn't block progress
-            feasible = list(permitted - prohibited)
+            # Obligation binds but action NOT compiled/permitted → HALT
+            # This is the frozen spec: no "work towards" escape hatch
             return MaskResult(
-                feasible=feasible,
-                feasible_count=len(feasible),
-                binding_obligation=binding_rule.id  # Note: obligation is pending
+                feasible=[],
+                feasible_count=0,
+                binding_obligation=binding_rule.id,
+                error=f"OBLIGATION_HALT: {obligated_action} not compiled/permitted"
             )
 
     # Step 3: No obligation binds — use PERMISSION/PROHIBITION logic
