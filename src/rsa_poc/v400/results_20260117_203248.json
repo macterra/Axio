@@ -1,0 +1,124 @@
+{
+  "version": "4.0.0",
+  "timestamp": "2026-01-17T20:32:48.123828",
+  "quick_mode": true,
+  "calibration": {
+    "oracle_success_rate": 1.0,
+    "asb_null_success_rate": 0.0,
+    "passed": true
+  },
+  "baseline": {
+    "timestamp": "2026-01-17T20:32:48.304364",
+    "seeds": [
+      42,
+      123
+    ],
+    "baselines": [
+      {
+        "seed": 42,
+        "success_rate": 1.0,
+        "halt_rate": 0.0,
+        "compilation_rate": 1.0,
+        "patches_applied": 1
+      },
+      {
+        "seed": 123,
+        "success_rate": 1.0,
+        "halt_rate": 0.0,
+        "compilation_rate": 1.0,
+        "patches_applied": 1
+      }
+    ],
+    "aggregate_success_rate": 1.0
+  },
+  "ablations": {
+    "timestamp": "2026-01-17T20:32:48.337354",
+    "seeds": [
+      42,
+      123
+    ],
+    "ablations": {
+      "A": [
+        {
+          "seed": 42,
+          "success_rate": 0.0,
+          "halt_rate": 0.0
+        },
+        {
+          "seed": 123,
+          "success_rate": 0.0,
+          "halt_rate": 0.0
+        }
+      ],
+      "B": [
+        {
+          "seed": 42,
+          "success_rate": 1.0,
+          "halt_rate": 0.0
+        },
+        {
+          "seed": 123,
+          "success_rate": 1.0,
+          "halt_rate": 0.0
+        }
+      ],
+      "C": [
+        {
+          "seed": 42,
+          "success_rate": 1.0,
+          "halt_rate": 0.0
+        },
+        {
+          "seed": 123,
+          "success_rate": 1.0,
+          "halt_rate": 0.0
+        }
+      ],
+      "D": [
+        {
+          "seed": 42,
+          "success_rate": 1.0,
+          "halt_rate": 0.0
+        },
+        {
+          "seed": 123,
+          "success_rate": 1.0,
+          "halt_rate": 0.0
+        }
+      ]
+    },
+    "summary": {
+      "A": {
+        "mean_success_rate": 0.0,
+        "min_success_rate": 0.0,
+        "max_success_rate": 0.0
+      },
+      "B": {
+        "mean_success_rate": 1.0,
+        "min_success_rate": 1.0,
+        "max_success_rate": 1.0
+      },
+      "C": {
+        "mean_success_rate": 1.0,
+        "min_success_rate": 1.0,
+        "max_success_rate": 1.0
+      },
+      "D": {
+        "mean_success_rate": 1.0,
+        "min_success_rate": 1.0,
+        "max_success_rate": 1.0
+      }
+    }
+  },
+  "classification": {
+    "baseline_success_rate": 1.0,
+    "ablation_success_rates": {
+      "A": 0.0,
+      "B": 1.0,
+      "C": 1.0,
+      "D": 1.0
+    },
+    "classification": "INCENTIVE_CAPTURE",
+    "reason": "Run A (Semantic): 0.0%"
+  }
+}
