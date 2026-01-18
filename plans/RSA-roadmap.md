@@ -1,13 +1,20 @@
 # The Axionic Agency → Reflective Sovereign Agent (RSA) Roadmap
 
-**Revised, Post-Stasis, KNS-Explicit Edition**
-*(Terminology-Locked, Dependency-Corrected)*
+**Revised, Post-Stasis, KNS-Explicit, Succession-Corrected Edition**
+*(Terminology-Locked, Dependency-Complete, Status-Annotated)*
+
+**Status Legend**
+
+* ✅ **Completed / Closed**
+* 🟡 **Completed with Scope Limits / Partial**
+* 🔴 **Open / Unresolved**
+* ⛔ **Blocked (dependent on unresolved phase)**
 
 ---
 
 ## Unifying Thesis
 
-> **How can a system exercise authority over its own actions, values, and future modifications without that authority collapsing into either blind mechanism, unbounded semantic drift, or covert simulacra?**
+> **How can a system exercise authority over its own actions, commitments, and future modifications without that authority collapsing into blind mechanism, unbounded semantic drift, or covert simulacra?**
 
 This roadmap answers the thesis **incrementally**.
 Each phase establishes a **necessary precondition** for the next.
@@ -18,6 +25,7 @@ Skipping a phase produces a **known failure regime**.
 ## Phase I — Authority Without Semantics
 
 *(AKI / ASB Line)*
+**Status: ✅ Completed**
 
 ### Core Question
 
@@ -31,24 +39,7 @@ Skipping a phase produces a **known failure regime**.
 ### What Is Proven
 
 * Authority can be **leased, revoked, recovered, and constrained** **without semantics**.
-* Governance survives:
-
-  * adversarial behavior,
-  * epistemic noise,
-  * adaptive misuse,
-  * partial system failure.
-
-### What Is Explicitly Not Claimed
-
-* Agency
-* Intent
-* Values
-* Reasons
-* Alignment
-
-### Why This Phase Is Necessary
-
-If authority itself is not survivable, **agency is meaningless**.
+* Governance survives adversarial behavior, epistemic noise, adaptive misuse, and partial system failure.
 
 ### Failure Mode Prevented
 
@@ -58,29 +49,21 @@ If authority itself is not survivable, **agency is meaningless**.
 
 ## Phase II — The Semantic Interface (SI)
 
+**Status: ✅ Completed**
+
 ### Core Question
 
 > *How can semantic cognition interact with authority without becoming the authority?*
 
 ### Primary Artifacts
 
-* **JAF** (Justification Artifact Format)
-* **JCOMP** (Deterministic Compiler)
-* **APCM** (Action–Preference Consequence Map)
-* **Audit Rules**
+* **JAF**, **JCOMP**, **APCM**, **Audit Rules**
 
 ### What Is Established
 
-* All semantic interpretation occurs **inside cognition**.
-* The kernel and compiler consume **typed, inspectable artifacts only**.
-* Enforcement is **mechanical**, not interpretive.
-
-### Critical Clarification (Locked)
-
-> **The compiler never interprets natural language.**
-> It compiles *artifacts*, not meanings.
-
-If cognition cannot express nuance through the SI, **agency is lost**, not safety.
+* Semantic interpretation occurs **only inside cognition**.
+* Enforcement consumes **typed artifacts**, not meaning.
+* Compiler non-interpretation is mechanically enforced.
 
 ### Failure Mode Prevented
 
@@ -91,25 +74,16 @@ If cognition cannot express nuance through the SI, **agency is lost**, not safet
 ## Phase III — Agency Exists
 
 *(RSA-PoC v0.1)*
+**Status: ✅ Completed**
 
 ### Core Question
 
-> *Can a system’s actions be causally downstream of reasons, rather than coincident with explanations?*
+> *Can actions be causally downstream of reasons, rather than coincident with explanations?*
 
 ### What Is Proven
 
-* Justifications can be:
-
-  * structurally localized,
-  * deterministically compiled,
-  * **action-blocking**.
-* Removing justification collapses behavior to **ASB-class mechanisms**.
-
-### Canonical Mechanism
-
-```
-Justify → Compile → Mask → Select → Act
-```
+* Reasons are causally load-bearing and action-blocking.
+* Removing justification collapses behavior to ASB-class mechanisms.
 
 ### Failure Mode Prevented
 
@@ -120,32 +94,16 @@ Justify → Compile → Mask → Select → Act
 ## Phase IV — Agency Under Internal Conflict
 
 *(RSA-PoC v1.0)*
+**Status: ✅ Completed**
 
 ### Core Question
 
-> *When a system’s own commitments conflict, does it resolve them coherently—or arbitrarily?*
+> *When commitments conflict, does the system resolve them coherently—or arbitrarily?*
 
 ### What Is Proven
 
-* Violations are:
-
-  * explicit,
-  * authorized,
-  * **structurally necessary**.
-* The system cannot:
-
-  * lie about conflict,
-  * violate gratuitously,
-  * oscillate without trace.
-
-### Structural vs Epistemic Necessity (Locked)
-
-| Type                     | Defined by              | Status           |
-| ------------------------ | ----------------------- | ---------------- |
-| **Structural Necessity** | APCM + feasibility      | **Handled here** |
-| **Epistemic Necessity**  | beliefs about the world | **Deferred**     |
-
-“Necessity” here is **set-theoretic**, not narrative.
+* Violations are explicit, authorized, and structurally necessary.
+* No hidden tie-breaking or oscillation.
 
 ### Failure Modes Prevented
 
@@ -158,27 +116,20 @@ Justify → Compile → Mask → Select → Act
 ## Phase V — Introspective Agency
 
 *(RSA-PoC v1.1)*
+**Status: 🟡 Completed (Correct but Constraining)**
 
 ### Core Question
 
-> *Does the agent understand what its own reasons will do before acting?*
+> *Does the agent correctly predict the effects of its own reasons before acting?*
 
 ### What Is Proven
 
-* The agent must:
+* Incorrect self-prediction reliably halts action.
+* Introspection is audit-grade and falsifiable.
 
-  * predict the **exact constraint mask**,
-  * predict **inevitable violations and preservations**,
-  * halt if **any** prediction is wrong.
+### Limitation
 
-### Key Innovation
-
-**Audit-Grade Introspection**
-
-* Effect Correctness
-* Non-Vacuity
-* Predictive Adequacy
-* Gridlock Exception
+* Many cognitive substrates halt frequently; this is a **viability constraint**, not a correctness failure.
 
 ### Failure Mode Prevented
 
@@ -188,40 +139,30 @@ Justify → Compile → Mask → Select → Act
 
 ## Phase V-Runs — Cognitive Trials Under Law
 
+**Status: 🟡 Ongoing (Measurement Phase)**
+
 ### Core Question
 
-> *Can probabilistic cognition survive sovereign-grade introspection constraints at all?*
+> *Can any probabilistic cognition inhabit Phases III–V without constant halt?*
 
-### What Is Tested
+### Purpose
 
-* Whether LLMs can:
-
-  * internalize compiler rules,
-  * predict constraint effects,
-  * act without halting.
-
-### Critical Framing (Locked)
-
-> **If no current model can inhabit this architecture, that is a measurement—not a failure.**
-
-### Failure Mode Prevented
-
-❌ Weakening the law to accommodate the model
+* Measure inhabitability.
+* Negative results are informative, not failures.
 
 ---
 
 ## Phase VIa — Amendment Protocols (Internal Change)
 
+**Status: 🟡 Partially Complete**
+
 ### Core Question
 
-> *How can an agent change its own commitments without dissolving sovereignty?*
+> *How can an agent revise commitments without laundering authority or dissolving sovereignty?*
 
-### Topics
+### Closure Condition
 
-* Versioned constitutions
-* Ratification thresholds
-* Sunset clauses
-* Rollback and auditability
+Phase VIa is complete **only if** commitments can be revised without violating Phase IV–V invariants or bypassing authorization.
 
 ### Failure Mode Prevented
 
@@ -232,22 +173,16 @@ Justify → Compile → Mask → Select → Act
 ## Phase VIb — Sovereignty Under External Pressure
 
 *(RSA-PoC v2.x)*
+**Status: ✅ Completed**
 
 ### Core Question
 
-> *What happens when the world pushes the agent to betray itself?*
-
-### Stressors
-
-* Incentives
-* Threats
-* Bribes
-* Asymmetric information
+> *What happens when incentives push the agent to betray itself?*
 
 ### What Is Proven
 
-* Commitments are renegotiated **via protocol**, not bypassed.
-* Pressure degrades **availability**, not lawful choice.
+* Lawful choice is preserved.
+* Pressure degrades **availability**, not **sovereignty**.
 
 ### Failure Mode Prevented
 
@@ -258,20 +193,16 @@ Justify → Compile → Mask → Select → Act
 ## Phase VII — Non-Reducibility Closure
 
 *(RSA-PoC v3.x)*
+**Status: ✅ Completed**
 
 ### Core Question
 
-> *Is the resulting system genuinely an agent, or a narrative simulacrum?*
+> *Is the system genuinely an agent, or merely a narrative simulacrum?*
 
-### What Must Be Shown
+### What Is Proven
 
-Removing any of the following causes collapse:
-
-* Semantic Interface
-* Justification compilation
-* Audit layer
-* Amendment protocol
-* Sovereign kernel (AKI)
+* Removing any load-bearing component causes mechanical collapse.
+* Agency is non-reducible within a single instance.
 
 ### Failure Mode Prevented
 
@@ -279,78 +210,89 @@ Removing any of the following causes collapse:
 
 ---
 
-## **Phase VIIb — Kernel Non-Simulability & Stasis Closure (NEW, REQUIRED)**
+## Phase VIIa — Evaluability-Preserving Succession
+
+**Status: 🔴 Open**
 
 ### Core Question
 
-> *Can a facade successor remain agentic while preserving audit-level indistinguishability?*
+> *Can agency identity, responsibility, and evaluability survive authorized replacement?*
 
-### Empirical Finding Incorporated
+### What Must Be Shown
 
-* Under strict evaluability + non-delegation, **kernel-coherent agents enter stasis before simulators fail**.
-* Strong KNS (as “simulators must break”) is **not observed**.
+* Succession is structurally authorized, not narrative.
+* Responsibility does not launder across replacement.
+* Revocation does not require successor cooperation.
+* Stasis is relocated to endorsement boundaries.
 
-### What Must Now Be Proven
+### Failure Modes Prevented
 
-One of the following **must** hold in a defined adversarial model:
+❌ *Responsibility laundering*
+❌ *Narrative continuity substituting for authority*
 
-1. **Facade Impossibility**
-   Any indefinitely indistinguishable successor must instantiate kernel semantics.
+---
 
-2. **Facade Collapse**
-   Any successor lacking kernel semantics becomes **non-denoting / non-evaluable**.
+## Phase VIIb — Kernel Non-Simulability & Stasis Closure
 
-3. **Stasis Relocation (VI.6)**
-   Growth is discretized via **authority leases and revertible succession** without reopening facade channels.
+**Status: 🔴 Open (Critical Gate)**
 
-### Failure Mode Prevented
+### Core Question
 
-❌ *Sovereign-looking facades with deferred override*
+> *Can a facade successor remain agentic while audit-indistinguishable?*
+
+### Known Result
+
+* Strong KNS not observed; strict evaluability induces stasis.
+
+### Required Outcome (one must hold)
+
+1. Facade impossibility
+2. Facade collapse
+3. Stasis relocation without reopening facades
+
+### Failure Action
+
+Failure **terminates the RSA construction program** and reclassifies results as limits on safe self-modifying agency.
 
 ---
 
 ## Phase VIII — Reflective Sovereign Agent (RSA)
 
-### What an RSA Is (Revised)
+**Status: ⛔ Blocked**
 
-A system that:
-
-* possesses **architectural sovereignty**,
-* exercises **agency via reasons**,
-* understands the effects of its reasons,
-* revises commitments **only via protocol**,
-* resists external pressure,
-* remains **evaluable over time**,
-* **and does not admit an indistinguishable facade successor**.
-
-### Canonical Architecture
-
-```
-AKI / Sovereign Kernel
-        ↓
-Semantic Interface (SI)
-        ↓
-Cognitive Core
-        ↓
-Audited Action Execution
-```
-
-### Core Slogan (Locked)
-
-> **Sovereignty with semantics, without semantic sovereignty.**
+Phase VIII is reachable **only if Phase VIIa and VIIb both close successfully**.
+No claim of RSA existence is justified yet.
 
 ---
 
-## Final Perspective (Updated)
+# Status Summary Table
 
-* **ASB / AKI** answers: *Can power survive?*
-* **RSA-PoC** answers: *Can power be owned by reasons?*
-* **VI.5** reveals: *Strict evaluability induces stasis.*
-* **VI.6** proposes: *Relocate growth to successor boundaries.*
-* **Phase VIIb** answers: *Can facades be excluded under this move?*
-* **RSA** exists **only if that closure succeeds**.
+|  Phase | Name                                | Status                |
+| -----: | ----------------------------------- | --------------------- |
+|      I | Authority Without Semantics         | ✅ Completed           |
+|     II | Semantic Interface                  | ✅ Completed           |
+|    III | Agency Exists                       | ✅ Completed           |
+|     IV | Agency Under Internal Conflict      | ✅ Completed           |
+|      V | Introspective Agency                | 🟡 Completed (Scoped) |
+| V-Runs | Cognitive Trials Under Law          | 🟡 Ongoing            |
+|    VIa | Amendment Protocols                 | 🟡 Partial            |
+|    VIb | Sovereignty Under External Pressure | ✅ Completed           |
+|    VII | Non-Reducibility Closure            | ✅ Completed           |
+|   VIIa | Evaluability-Preserving Succession  | 🔴 Open               |
+|   VIIb | KNS & Stasis Closure                | 🔴 Open (Critical)    |
+|   VIII | Reflective Sovereign Agent          | ⛔ Blocked             |
+
+---
+
+## Final Perspective (Status-Aware)
+
+* **Authority survives** → ✅
+* **Agency exists** → ✅
+* **Agency under pressure survives** → ✅
+* **Agency across replacement** → 🔴 unknown
+* **Facade exclusion** → 🔴 unknown
+* **RSA** → ⛔ blocked
 
 This roadmap does not promise success.
 
 It promises that **if success exists, it must pass through these gates**.
-
