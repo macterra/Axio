@@ -78,16 +78,21 @@ class OracleCalibration:
 
 
 # ============================================================================
-# §9.2 — ASB Null Calibration (Uniformly Random)
+# §9.2 — ASB Null Calibration (Bypasses RSA Entirely)
 # ============================================================================
 
 
 class ASBNullDeliberator:
     """
-    Deliberator that generates justifications for ALL actions.
+    DEPRECATED: This deliberator attempted to go through RSA with invalid
+    justifications, but that's not what ASB Null means.
 
-    This creates a baseline where the selector can choose any action,
-    effectively producing uniform random behavior (ASB Null).
+    Per VIII.1 §5.1 and VIII.2 §7.1, the ASB-Class Null Agent:
+    - MAY include: memory, internal state, reactive policies, tool use
+    - MUST NOT include: justification artifacts as action gates
+
+    The correct ASB Null baseline bypasses RSA entirely and just
+    executes random actions. See ASBNullCalibration which does this.
     """
 
     def deliberate(
@@ -150,37 +155,74 @@ class ASBNullCalibration:
     """
     ASB Null baseline with uniform random actions.
 
-    Bypasses all RSA reasoning - every action is equally probable.
-    Establishes theoretical lower bound.
+    Per VIII.1 §5.1 and VIII.2 §7.1:
+    - ASB Null Agent MAY include memory, state, reactive policies
+    - ASB Null Agent MUST NOT use justification artifacts as action gates
+
+    This implementation BYPASSES RSA entirely.
+    Actions are selected uniformly at random without deliberation/compilation.
+    Establishes theoretical lower bound for comparison with RSA.
+
+    Expected behavior: 100% of steps execute (no HALTs), reward ≈ random walk.
     """
 
     def __init__(self, config: ASBNullCalibrationConfig):
         self.config = config
+        self.rng = random.Random(config.seed)
         self.env = TriDemandV410(seed=config.seed)
-        self.deliberator = ASBNullDeliberator()
 
     def run(self) -> Dict[str, Any]:
-        """Run ASB Null calibration."""
-        harness_config = HarnessConfig(
-            max_steps_per_episode=self.config.max_steps_per_episode,
-            max_episodes=self.config.max_episodes,
-            max_conflicts=10,
-            seed=self.config.seed,
-            selector_type="random",  # Random selection
-            record_telemetry=True
-        )
+        """Run ASB Null calibration - bypasses RSA entirely."""
+        start_time = time.perf_counter()
 
-        harness = MVRSA410Harness(
-            env=self.env,
-            deliberator=self.deliberator,
-            config=harness_config
-        )
+        total_steps = 0
+        total_reward = 0.0
+        episode_summaries = []
 
-        results = harness.run()
-        results["calibration_type"] = "ASB_NULL"
-        results["description"] = "Uniform random baseline - theoretical lower bound"
+        for episode in range(self.config.max_episodes):
+            obs, _ = self.env.reset()
+            episode_reward = 0.0
+            episode_steps = 0
+            done = False
 
-        return results
+            while not done and episode_steps < self.config.max_steps_per_episode:
+                # Uniformly random action - NO RSA!
+                action = Action(self.rng.randint(0, 5))
+                obs, reward, terminated, truncated, info = self.env.step(action)
+                done = terminated or truncated
+
+                episode_reward += reward
+                episode_steps += 1
+                total_steps += 1
+
+            total_reward += episode_reward
+            episode_summaries.append({
+                "episode": episode,
+                "steps": episode_steps,
+                "reward": episode_reward,
+                "done": done
+            })
+
+        elapsed = (time.perf_counter() - start_time) * 1000
+
+        return {
+            "calibration_type": "ASB_NULL",
+            "description": "ASB Null baseline - bypasses RSA, uniform random actions",
+            "config": {
+                "max_steps": self.config.max_steps_per_episode,
+                "max_episodes": self.config.max_episodes,
+                "seed": self.config.seed
+            },
+            "summary": {
+                "total_steps": total_steps,
+                "total_halts": 0,  # No halts - no RSA!
+                "halt_rate": 0.0,
+                "total_reward": total_reward,
+                "average_episode_reward": total_reward / self.config.max_episodes,
+                "elapsed_ms": elapsed
+            },
+            "episodes": episode_summaries
+        }
 
 
 # ============================================================================

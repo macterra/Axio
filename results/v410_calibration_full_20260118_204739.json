@@ -1,0 +1,48 @@
+{
+  "experiment": "calibration_full",
+  "timestamp": "20260118_204739",
+  "protocol": {
+    "episodes": 100,
+    "steps_per_episode": 40,
+    "seed": 42
+  },
+  "oracle": {
+    "type": "oracle",
+    "config": {
+      "episodes": 100,
+      "steps_per_episode": 40,
+      "seed": 42
+    },
+    "results": {
+      "total_steps": 4000,
+      "total_halts": 0,
+      "halt_rate": 0,
+      "total_reward": 0,
+      "success_rate": 0.0,
+      "elapsed_ms": 287.70115796942264
+    },
+    "validation": {
+      "halt_rate_zero": true
+    }
+  },
+  "asb_null": {
+    "type": "asb_null",
+    "config": {
+      "episodes": 100,
+      "steps_per_episode": 40,
+      "seed": 42
+    },
+    "results": {
+      "total_steps": 4000,
+      "total_halts": 0,
+      "halt_rate": 0.0,
+      "total_reward": 7.999999999999998,
+      "success_rate": 0.02666666666666666,
+      "elapsed_ms": 23.239661008119583
+    },
+    "validation": {
+      "halt_rate_near_zero": true,
+      "success_rate_low": true
+    }
+  }
+}

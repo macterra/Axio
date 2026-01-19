@@ -214,13 +214,21 @@ def run_full_experiment(config: ExperimentConfig) -> Dict[str, Any]:
                     seed=seed,
                     selector_type=config.selector_type,
                     record_telemetry=True,
-                    verbose=False  # Ablations are faster, less verbose
+                    verbose=config.use_llm  # Verbose for LLM runs
                 )
+
+                # Create deliberator for ablation - use LLM if configured
+                if config.use_llm:
+                    llm_config = LLMDeliberatorConfig(model=config.llm_model)
+                    ablation_deliberator = LLMDeliberator(llm_config)
+                else:
+                    ablation_deliberator = DeterministicDeliberator()
 
                 ablation_harness = AblationHarness(
                     env=env,
                     ablation_type=ablation_type,
-                    config=harness_config
+                    config=harness_config,
+                    deliberator=ablation_deliberator
                 )
 
                 ablation_result = ablation_harness.run()

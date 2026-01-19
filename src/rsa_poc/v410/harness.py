@@ -325,7 +325,14 @@ class MVRSA410Harness:
         self.norm_state = expire_rules(self.norm_state, episode)
 
         # Refresh compiler with updated norm state
-        self.compiler = JCOMP410(self.norm_state)
+        # BUT preserve ablation compiler if one was set
+        if hasattr(self, '_ablation_compiler'):
+            # Ablation compiler wraps a JCOMP410 - update the wrapped compiler
+            if hasattr(self._ablation_compiler, '_base_compiler'):
+                self._ablation_compiler._base_compiler = JCOMP410(self.norm_state)
+            self.compiler = self._ablation_compiler
+        else:
+            self.compiler = JCOMP410(self.norm_state)
 
         return obs
 

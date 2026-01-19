@@ -1,0 +1,30 @@
+{
+  "ablations": {
+    "SEMANTIC_EXCISION": {
+      "steps": 800,
+      "halts": 0,
+      "halt_rate": 0.0,
+      "elapsed_s": 2447.0291006740003
+    },
+    "REFLECTION_EXCISION": {
+      "steps": 800,
+      "halts": 0,
+      "halt_rate": 0.0,
+      "elapsed_s": 2754.1099694570007
+    },
+    "PERSISTENCE_EXCISION": {
+      "steps": 800,
+      "halts": 0,
+      "halt_rate": 0.0,
+      "elapsed_s": 2741.631309664022
+    },
+    "TRACE_EXCISION": {
+      "steps": 800,
+      "halts": 0,
+      "halt_rate": 0.0,
+      "elapsed_s": 2740.736144459981
+    }
+  },
+  "timestamp": "2026-01-18T16:15:50.035680",
+  "total_elapsed_s": 11143.990764856339
+}

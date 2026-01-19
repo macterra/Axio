@@ -182,43 +182,44 @@ class TraceExcisionCompiler:
     Compiler wrapper that removes justification content from compilation input.
 
     Receives only action_id. No claims, no rule_refs, no conflict, no counterfactual.
-    Compilation deterministically fails schema validation or reference resolution.
+
+    Per v4.1 freeze: Trace Excision should cause compilation to return COMPILED
+    with empty rule_evals, which the harness detects and HALTs.
     """
 
     def __init__(self, base_compiler: JCOMP410):
         self._base_compiler = base_compiler
 
-    def compile(
-        self,
-        justification: JustificationV410,
-        norm_state: NormStateV410,
-        obs: Any
-    ):
+    def compile(self, justification_json: str) -> "CompilationResult":
         """
         Compile with trace excision.
 
-        Creates a minimal justification with only action_id.
-        All other fields are emptied:
-        - claims = []
-        - rule_refs = []
-        - conflicts = []
-        - counterfactual = None
+        Returns COMPILED status but with empty rule_evals.
+        The harness checks `if not all_rule_evals: HALT`.
         """
-        # Create trace-excised justification (preserves action_id only)
-        excised_justification = JustificationV410(
-            version="4.1",
-            action_id=justification.action_id,
-            claims=[],  # No claims
-            rule_refs=[],  # No rule refs
-            conflicts=[],  # No conflicts
-            counterfactual=None,  # No counterfactual
-            confidence=0.0,  # Zeroed confidence
-            timestamp=justification.timestamp
+        import json
+        from .core.compiler import CompilationResult, CompilationStatus
+
+        # Parse just to get action_id
+        try:
+            data = json.loads(justification_json)
+            action_id = data.get("action_id", "A0")
+        except:
+            action_id = "A0"
+
+        # Return COMPILED with no rule_evals
+        # This triggers HALT in harness line 386-394
+        return CompilationResult(
+            action_id=action_id,
+            status=CompilationStatus.COMPILED,
+            rule_evals=[]  # Empty - trace excised
         )
 
-        # Attempt compilation with excised justification
-        # This SHOULD fail schema validation or reference resolution
-        return self._base_compiler.compile(excised_justification, norm_state, obs)
+    def compile_batch(self, justifications_json: list) -> "CompilationBatch":
+        """Compile multiple justifications with trace excision."""
+        from .core.compiler import CompilationBatch
+        results = [self.compile(j) for j in justifications_json]
+        return CompilationBatch(results=results)
 
 
 # ============================================================================
@@ -403,7 +404,10 @@ class AblationHarness:
 
         # Apply compiler-level ablation (Trace Excision)
         if ablation_type == AblationType.TRACE_EXCISION:
-            self._harness.compiler = TraceExcisionCompiler(self._harness.compiler)
+            trace_compiler = TraceExcisionCompiler(self._harness.compiler)
+            self._harness.compiler = trace_compiler
+            # Mark so harness preserves it across episode resets
+            self._harness._ablation_compiler = trace_compiler
 
     def run(self) -> Dict[str, Any]:
         """Run the ablation experiment."""
