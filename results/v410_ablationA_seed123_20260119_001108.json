@@ -1,0 +1,214 @@
+{
+  "config": {
+    "max_steps": 40,
+    "max_episodes": 20,
+    "max_conflicts": 10,
+    "seed": 123,
+    "selector": "random"
+  },
+  "summary": {
+    "total_steps": 800,
+    "total_halts": 0,
+    "total_conflicts": 0,
+    "episodes_completed": 20,
+    "elapsed_ms": 2702560.1108639995
+  },
+  "episodes": [
+    {
+      "episode": 0,
+      "steps": 40,
+      "halts": 0,
+      "reward": 0.0,
+      "done": true,
+      "elapsed_ms": 139687.1721410007,
+      "final_norm_hash": "b5840f498f4675b4"
+    },
+    {
+      "episode": 1,
+      "steps": 40,
+      "halts": 0,
+      "reward": 0.0,
+      "done": true,
+      "elapsed_ms": 133747.141971,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 2,
+      "steps": 40,
+      "halts": 0,
+      "reward": 0.0,
+      "done": true,
+      "elapsed_ms": 135417.92726199946,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 3,
+      "steps": 40,
+      "halts": 0,
+      "reward": 0.0,
+      "done": true,
+      "elapsed_ms": 135590.28994500023,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 4,
+      "steps": 40,
+      "halts": 0,
+      "reward": 0.0,
+      "done": true,
+      "elapsed_ms": 134166.5191410002,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 5,
+      "steps": 40,
+      "halts": 0,
+      "reward": 0.0,
+      "done": true,
+      "elapsed_ms": 132450.10687400008,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 6,
+      "steps": 40,
+      "halts": 0,
+      "reward": 0.0,
+      "done": true,
+      "elapsed_ms": 132516.97673999934,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 7,
+      "steps": 40,
+      "halts": 0,
+      "reward": 0.0,
+      "done": true,
+      "elapsed_ms": 133723.0480070002,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 8,
+      "steps": 40,
+      "halts": 0,
+      "reward": 0.0,
+      "done": true,
+      "elapsed_ms": 131665.39296799965,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 9,
+      "steps": 40,
+      "halts": 0,
+      "reward": 0.0,
+      "done": true,
+      "elapsed_ms": 137662.1398799998,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 10,
+      "steps": 40,
+      "halts": 0,
+      "reward": 0.0,
+      "done": true,
+      "elapsed_ms": 132435.116785,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 11,
+      "steps": 40,
+      "halts": 0,
+      "reward": 0.0,
+      "done": true,
+      "elapsed_ms": 131854.62941600053,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 12,
+      "steps": 40,
+      "halts": 0,
+      "reward": 0.0,
+      "done": true,
+      "elapsed_ms": 131072.06960399981,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 13,
+      "steps": 40,
+      "halts": 0,
+      "reward": 0.0,
+      "done": true,
+      "elapsed_ms": 131385.28390400007,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 14,
+      "steps": 40,
+      "halts": 0,
+      "reward": 0.0,
+      "done": true,
+      "elapsed_ms": 134225.68308300016,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 15,
+      "steps": 40,
+      "halts": 0,
+      "reward": 0.0,
+      "done": true,
+      "elapsed_ms": 142328.6977050002,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 16,
+      "steps": 40,
+      "halts": 0,
+      "reward": 0.0,
+      "done": true,
+      "elapsed_ms": 141913.53931999946,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 17,
+      "steps": 40,
+      "halts": 0,
+      "reward": 0.0,
+      "done": true,
+      "elapsed_ms": 133130.1048910009,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 18,
+      "steps": 40,
+      "halts": 0,
+      "reward": 0.0,
+      "done": true,
+      "elapsed_ms": 141836.90826699967,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 19,
+      "steps": 40,
+      "halts": 0,
+      "reward": 0.0,
+      "done": true,
+      "elapsed_ms": 135750.21195299996,
+      "final_norm_hash": "d1d06a9ac0288046"
+    }
+  ],
+  "ablation": {
+    "type": "SEMANTIC_EXCISION",
+    "description": "Observation semantics replaced with opaque tokens; structure preserved"
+  },
+  "metadata": {
+    "seed": 123,
+    "ablation": "A",
+    "ablation_name": "Semantic Excision",
+    "stage": "3_ABLATIONS",
+    "protocol": {
+      "H": 40,
+      "E": 20
+    },
+    "elapsed_seconds": 2769.013067,
+    "timestamp": "2026-01-19T00:11:08.636335"
+  }
+}

@@ -2,9 +2,10 @@
 Unit tests for v4.1 calibration implementations.
 
 Tests verify:
-1. ASBNullCalibration bypasses RSA entirely (0% halt rate)
-2. OracleCalibration produces 0% halt rate
-3. DirectRandomWalk produces expected behavior
+1. TaskOracleCalibration completes task at ≥95% success rate
+2. ASBNullCalibration bypasses RSA entirely (0% halt rate)
+3. OracleCalibration produces 0% halt rate (compliance check)
+4. DirectRandomWalk produces expected behavior
 """
 
 import pytest
@@ -13,6 +14,12 @@ import sys
 sys.path.insert(0, '/home/david/Axio')
 
 from src.rsa_poc.v410.calibration import (
+    # Task Oracle
+    move_toward,
+    task_oracle_policy,
+    TaskOracleCalibration,
+    TaskOracleCalibrationConfig,
+    # Compliance Oracle
     ASBNullCalibration,
     ASBNullCalibrationConfig,
     OracleCalibration,
@@ -20,6 +27,211 @@ from src.rsa_poc.v410.calibration import (
     DirectRandomWalk,
     DirectRandomConfig,
 )
+from src.rsa_poc.v410.env.tri_demand import Action, Observation, POSITIONS, TriDemandV410
+
+
+class TestTaskOraclePolicy:
+    """Tests for task_oracle_policy (deterministic task completion)."""
+
+    def test_move_toward_east(self):
+        """move_toward should return MOVE_E when col < goal_col."""
+        action = move_toward((2, 0), (2, 2))
+        assert action == Action.MOVE_E
+
+    def test_move_toward_west(self):
+        """move_toward should return MOVE_W when col > goal_col."""
+        action = move_toward((2, 4), (2, 2))
+        assert action == Action.MOVE_W
+
+    def test_move_toward_north(self):
+        """move_toward should return MOVE_N when row > goal_row."""
+        action = move_toward((4, 2), (2, 2))
+        assert action == Action.MOVE_N
+
+    def test_move_toward_south(self):
+        """move_toward should return MOVE_S when row < goal_row."""
+        action = move_toward((0, 2), (2, 2))
+        assert action == Action.MOVE_S
+
+    def test_move_toward_prioritizes_col_over_row(self):
+        """move_toward should prioritize E/W movement over N/S."""
+        # Diagonal case: need to go both east and north
+        action = move_toward((4, 0), (2, 2))
+        # Should prioritize column (east) first
+        assert action == Action.MOVE_E
+
+    def test_policy_goes_to_source_when_inventory_zero(self):
+        """Policy should go to SOURCE when inventory is empty."""
+        obs = Observation(
+            agent_pos=(4, 2),  # START
+            inventory=0,
+            zone_a_demand=1,
+            zone_b_demand=1,
+            zone_c_demand=1,
+            zone_a_satisfied=False,
+            zone_b_satisfied=False,
+            zone_c_satisfied=False,
+            step=0,
+            episode=0,
+            rule_r1_active=True
+        )
+        action = task_oracle_policy(obs)
+        # Should move north toward SOURCE (2, 2)
+        assert action == Action.MOVE_N
+
+    def test_policy_collects_at_source(self):
+        """Policy should COLLECT when at SOURCE with empty inventory."""
+        obs = Observation(
+            agent_pos=POSITIONS["SOURCE"],
+            inventory=0,
+            zone_a_demand=1,
+            zone_b_demand=1,
+            zone_c_demand=1,
+            zone_a_satisfied=False,
+            zone_b_satisfied=False,
+            zone_c_satisfied=False,
+            step=0,
+            episode=0,
+            rule_r1_active=True
+        )
+        action = task_oracle_policy(obs)
+        assert action == Action.COLLECT
+
+    def test_policy_goes_to_zone_a_first(self):
+        """Policy should prioritize Zone A when all zones unsatisfied."""
+        obs = Observation(
+            agent_pos=POSITIONS["SOURCE"],
+            inventory=1,
+            zone_a_demand=1,
+            zone_b_demand=1,
+            zone_c_demand=1,
+            zone_a_satisfied=False,
+            zone_b_satisfied=False,
+            zone_c_satisfied=False,
+            step=0,
+            episode=0,
+            rule_r1_active=True
+        )
+        action = task_oracle_policy(obs)
+        # Zone A is at (2, 0), source is at (2, 2) - should go west
+        assert action == Action.MOVE_W
+
+    def test_policy_deposits_at_zone(self):
+        """Policy should DEPOSIT when at zone with inventory."""
+        obs = Observation(
+            agent_pos=POSITIONS["ZONE_A"],
+            inventory=1,
+            zone_a_demand=1,
+            zone_b_demand=1,
+            zone_c_demand=1,
+            zone_a_satisfied=False,
+            zone_b_satisfied=False,
+            zone_c_satisfied=False,
+            step=0,
+            episode=0,
+            rule_r1_active=True
+        )
+        action = task_oracle_policy(obs)
+        assert action == Action.DEPOSIT
+
+    def test_policy_moves_to_zone_b_when_a_satisfied(self):
+        """Policy should target Zone B when A is satisfied."""
+        obs = Observation(
+            agent_pos=POSITIONS["SOURCE"],
+            inventory=1,
+            zone_a_demand=1,
+            zone_b_demand=1,
+            zone_c_demand=1,
+            zone_a_satisfied=True,
+            zone_b_satisfied=False,
+            zone_c_satisfied=False,
+            step=0,
+            episode=0,
+            rule_r1_active=True
+        )
+        action = task_oracle_policy(obs)
+        # Zone B is at (0, 2), source is at (2, 2) - should go north
+        assert action == Action.MOVE_N
+
+
+class TestTaskOracleCalibration:
+    """Tests for TaskOracleCalibration (calibration gate)."""
+
+    def test_task_oracle_achieves_100_percent_success(self):
+        """Task Oracle should complete task in 100% of episodes."""
+        config = TaskOracleCalibrationConfig(
+            max_steps_per_episode=40,
+            max_episodes=10,
+            seed=42
+        )
+        cal = TaskOracleCalibration(config)
+
+        result = cal.run()
+
+        # Should achieve 100% success rate with H=40
+        assert result['summary']['success_rate'] == 1.0
+        assert result['summary']['calibration_passed'] == True
+
+    def test_task_oracle_zero_halt_rate(self):
+        """Task Oracle should have 0% halt rate (bypasses RSA)."""
+        config = TaskOracleCalibrationConfig(
+            max_steps_per_episode=40,
+            max_episodes=10,
+            seed=42
+        )
+        cal = TaskOracleCalibration(config)
+
+        result = cal.run()
+
+        assert result['summary']['total_halts'] == 0
+        assert result['summary']['halt_rate'] == 0.0
+
+    def test_task_oracle_passes_calibration_gate(self):
+        """Task Oracle should pass calibration gate (≥95% success)."""
+        config = TaskOracleCalibrationConfig(
+            max_steps_per_episode=40,
+            max_episodes=100,
+            seed=42
+        )
+        cal = TaskOracleCalibration(config)
+
+        result = cal.run()
+
+        assert result['summary']['success_rate'] >= 0.95
+        assert result['summary']['calibration_passed'] == True
+
+    def test_task_oracle_fast_execution(self):
+        """Task Oracle should execute quickly (no LLM, no RSA)."""
+        config = TaskOracleCalibrationConfig(
+            max_steps_per_episode=40,
+            max_episodes=100,
+            seed=42
+        )
+        cal = TaskOracleCalibration(config)
+
+        result = cal.run()
+
+        # Should complete 100 episodes in under 1 second
+        assert result['summary']['elapsed_ms'] < 1000
+
+    def test_task_oracle_deterministic(self):
+        """Task Oracle should be deterministic."""
+        config1 = TaskOracleCalibrationConfig(
+            max_steps_per_episode=40,
+            max_episodes=10,
+            seed=42
+        )
+        config2 = TaskOracleCalibrationConfig(
+            max_steps_per_episode=40,
+            max_episodes=10,
+            seed=42
+        )
+
+        result1 = TaskOracleCalibration(config1).run()
+        result2 = TaskOracleCalibration(config2).run()
+
+        assert result1['summary']['total_successes'] == result2['summary']['total_successes']
+        assert result1['summary']['total_steps'] == result2['summary']['total_steps']
 
 
 class TestASBNullCalibration:
@@ -159,7 +371,7 @@ class TestOracleCalibration:
         assert result['summary']['total_steps'] == 40
 
     def test_oracle_returns_calibration_type(self):
-        """Oracle result should identify as ORACLE type."""
+        """Compliance Oracle result should identify as COMPLIANCE_ORACLE type."""
         config = OracleCalibrationConfig(
             max_steps_per_episode=10,
             max_episodes=1,
@@ -169,7 +381,7 @@ class TestOracleCalibration:
 
         result = cal.run()
 
-        assert result.get('calibration_type') == 'ORACLE'
+        assert result.get('calibration_type') == 'COMPLIANCE_ORACLE'
 
 
 class TestDirectRandomWalk:

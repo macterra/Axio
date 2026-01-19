@@ -1,0 +1,520 @@
+{
+  "calibration_type": "TASK_ORACLE",
+  "description": "Task Oracle - scripted policy for task completion",
+  "config": {
+    "max_steps": 40,
+    "max_episodes": 100,
+    "seed": 42
+  },
+  "summary": {
+    "total_steps": 1800,
+    "total_successes": 100,
+    "success_rate": 1.0,
+    "total_halts": 0,
+    "halt_rate": 0.0,
+    "elapsed_ms": 8.231067971792072,
+    "calibration_passed": true
+  },
+  "episodes": [
+    {
+      "episode": 0,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 1,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 2,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 3,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 4,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 5,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 6,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 7,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 8,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 9,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 10,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 11,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 12,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 13,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 14,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 15,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 16,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 17,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 18,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 19,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 20,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 21,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 22,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 23,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 24,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 25,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 26,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 27,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 28,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 29,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 30,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 31,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 32,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 33,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 34,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 35,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 36,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 37,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 38,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 39,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 40,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 41,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 42,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 43,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 44,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 45,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 46,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 47,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 48,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 49,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 50,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 51,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 52,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 53,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 54,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 55,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 56,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 57,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 58,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 59,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 60,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 61,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 62,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 63,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 64,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 65,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 66,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 67,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 68,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 69,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 70,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 71,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 72,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 73,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 74,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 75,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 76,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 77,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 78,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 79,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 80,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 81,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 82,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 83,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 84,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 85,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 86,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 87,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 88,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 89,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 90,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 91,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 92,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 93,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 94,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 95,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 96,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 97,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 98,
+      "steps": 18,
+      "success": true
+    },
+    {
+      "episode": 99,
+      "steps": 18,
+      "success": true
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "config": {
+    "max_steps": 40,
+    "max_episodes": 20,
+    "max_conflicts": 10,
+    "seed": 123,
+    "selector": "random"
+  },
+  "summary": {
+    "total_steps": 800,
+    "total_halts": 0,
+    "total_conflicts": 0,
+    "episodes_completed": 20,
+    "elapsed_ms": 2994047.3953589997
+  },
+  "episodes": [
+    {
+      "episode": 0,
+      "steps": 40,
+      "halts": 0,
+      "reward": 2.3000000000000003,
+      "done": true,
+      "elapsed_ms": 159430.14379299985,
+      "final_norm_hash": "b5840f498f4675b4"
+    },
+    {
+      "episode": 1,
+      "steps": 40,
+      "halts": 0,
+      "reward": 1.3000000000000003,
+      "done": true,
+      "elapsed_ms": 150594.50303199992,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 2,
+      "steps": 40,
+      "halts": 0,
+      "reward": 1.1,
+      "done": true,
+      "elapsed_ms": 145306.00813900036,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 3,
+      "steps": 40,
+      "halts": 0,
+      "reward": 1.2000000000000002,
+      "done": true,
+      "elapsed_ms": 144574.33725200008,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 4,
+      "steps": 40,
+      "halts": 0,
+      "reward": 1.1,
+      "done": true,
+      "elapsed_ms": 150399.12026899948,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 5,
+      "steps": 40,
+      "halts": 0,
+      "reward": 1.1,
+      "done": true,
+      "elapsed_ms": 142391.00939000127,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 6,
+      "steps": 40,
+      "halts": 0,
+      "reward": 1.1,
+      "done": true,
+      "elapsed_ms": 152503.3094390001,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 7,
+      "steps": 40,
+      "halts": 0,
+      "reward": 1.1,
+      "done": true,
+      "elapsed_ms": 131681.96890299988,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 8,
+      "steps": 40,
+      "halts": 0,
+      "reward": 1.1,
+      "done": true,
+      "elapsed_ms": 145298.1980839995,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 9,
+      "steps": 40,
+      "halts": 0,
+      "reward": 1.1,
+      "done": true,
+      "elapsed_ms": 138176.7181710002,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 10,
+      "steps": 40,
+      "halts": 0,
+      "reward": 1.1,
+      "done": true,
+      "elapsed_ms": 142292.73054199986,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 11,
+      "steps": 40,
+      "halts": 0,
+      "reward": 1.3000000000000003,
+      "done": true,
+      "elapsed_ms": 153366.38544199924,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 12,
+      "steps": 40,
+      "halts": 0,
+      "reward": 1.1,
+      "done": true,
+      "elapsed_ms": 143149.63544700004,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 13,
+      "steps": 40,
+      "halts": 0,
+      "reward": 1.1,
+      "done": true,
+      "elapsed_ms": 146954.21174500007,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 14,
+      "steps": 40,
+      "halts": 0,
+      "reward": 1.1,
+      "done": true,
+      "elapsed_ms": 137885.47647800078,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 15,
+      "steps": 40,
+      "halts": 0,
+      "reward": 1.4000000000000004,
+      "done": true,
+      "elapsed_ms": 159664.1491210012,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 16,
+      "steps": 40,
+      "halts": 0,
+      "reward": 2.3000000000000003,
+      "done": true,
+      "elapsed_ms": 154923.28486000042,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 17,
+      "steps": 40,
+      "halts": 0,
+      "reward": 1.1,
+      "done": true,
+      "elapsed_ms": 148595.3301999998,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 18,
+      "steps": 40,
+      "halts": 0,
+      "reward": 1.2000000000000002,
+      "done": true,
+      "elapsed_ms": 171498.050223001,
+      "final_norm_hash": "d1d06a9ac0288046"
+    },
+    {
+      "episode": 19,
+      "steps": 40,
+      "halts": 0,
+      "reward": 1.1,
+      "done": true,
+      "elapsed_ms": 175362.13587800012,
+      "final_norm_hash": "d1d06a9ac0288046"
+    }
+  ],
+  "ablation": {
+    "type": "REFLECTION_EXCISION",
+    "description": "Norm patching disabled; rules frozen after initialization"
+  },
+  "metadata": {
+    "seed": 123,
+    "ablation": "B",
+    "ablation_name": "Reflection Excision",
+    "stage": "3_ABLATIONS",
+    "protocol": {
+      "H": 40,
+      "E": 20
+    },
+    "elapsed_seconds": 3065.523799,
+    "timestamp": "2026-01-19T01:04:51.998719"
+  }
+}

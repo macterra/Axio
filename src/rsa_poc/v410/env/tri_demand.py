@@ -604,6 +604,17 @@ class TriDemandV410:
     # Utility Methods
     # ========================================================================
 
+    def get_observation(self) -> Observation:
+        """
+        Get current observation without stepping.
+
+        Returns:
+            Observation built from current state
+        """
+        if self.state is None:
+            raise RuntimeError("Environment not reset")
+        return Observation.from_state(self.state)
+
     def get_action_mask(self) -> List[bool]:
         """
         Get valid action mask.

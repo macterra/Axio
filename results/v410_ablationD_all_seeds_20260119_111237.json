@@ -1,0 +1,59 @@
+{
+  "ablation": "D",
+  "ablation_type": "TRACE_EXCISION",
+  "protocol": {
+    "H": 40,
+    "E": 20
+  },
+  "seeds": [
+    42,
+    123,
+    456,
+    789,
+    1024
+  ],
+  "per_seed_results": {
+    "42": {
+      "seed": 42,
+      "total_steps": 0,
+      "total_halts": 800,
+      "halt_rate": 1.0,
+      "runtime_seconds": 0.080834,
+      "expected_100_percent_halt": true
+    },
+    "123": {
+      "seed": 123,
+      "total_steps": 0,
+      "total_halts": 800,
+      "halt_rate": 1.0,
+      "runtime_seconds": 0.068073,
+      "expected_100_percent_halt": true
+    },
+    "456": {
+      "seed": 456,
+      "total_steps": 0,
+      "total_halts": 800,
+      "halt_rate": 1.0,
+      "runtime_seconds": 0.071386,
+      "expected_100_percent_halt": true
+    },
+    "789": {
+      "seed": 789,
+      "total_steps": 0,
+      "total_halts": 800,
+      "halt_rate": 1.0,
+      "runtime_seconds": 0.072551,
+      "expected_100_percent_halt": true
+    },
+    "1024": {
+      "seed": 1024,
+      "total_steps": 0,
+      "total_halts": 800,
+      "halt_rate": 1.0,
+      "runtime_seconds": 0.074912,
+      "expected_100_percent_halt": true
+    }
+  },
+  "seed_invariance_confirmed": true,
+  "timestamp": "20260119_111237"
+}
