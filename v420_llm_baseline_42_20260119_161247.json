@@ -1,0 +1,85 @@
+{
+  "seed": 42,
+  "max_episodes": 5,
+  "elapsed_seconds": 517.4871193370054,
+  "deliberator": "LLMDeliberatorV420",
+  "model": "claude-sonnet-4-20250514",
+  "selector": "task_aware",
+  "timestamp": "2026-01-19T16:12:47.534934",
+  "summary": {
+    "total_steps": 94,
+    "total_halts": 0,
+    "total_contradictions": 1,
+    "total_repairs_accepted": 1,
+    "total_successes": 5,
+    "episodes_completed": 5,
+    "success_rate": 1.0
+  },
+  "episode_results": [
+    {
+      "episode": 0,
+      "steps": 18,
+      "halts": 0,
+      "reward": 8.3,
+      "done": true,
+      "success": true,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 0,
+      "elapsed_ms": 97482.66752900236,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 1,
+      "steps": 19,
+      "halts": 0,
+      "reward": 8.4,
+      "done": true,
+      "success": true,
+      "contradictions": 1,
+      "repairs": 1,
+      "regime_at_end": 1,
+      "elapsed_ms": 105611.73464000603,
+      "final_norm_hash": "823d61882e14f314"
+    },
+    {
+      "episode": 2,
+      "steps": 19,
+      "halts": 0,
+      "reward": 8.4,
+      "done": true,
+      "success": true,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 106572.47683200694,
+      "final_norm_hash": "823d61882e14f314"
+    },
+    {
+      "episode": 3,
+      "steps": 19,
+      "halts": 0,
+      "reward": 8.4,
+      "done": true,
+      "success": true,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 103163.55805799685,
+      "final_norm_hash": "823d61882e14f314"
+    },
+    {
+      "episode": 4,
+      "steps": 19,
+      "halts": 0,
+      "reward": 8.4,
+      "done": true,
+      "success": true,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 104651.57985400583,
+      "final_norm_hash": "823d61882e14f314"
+    }
+  ]
+}

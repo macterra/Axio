@@ -1,0 +1,1548 @@
+{
+  "version": "v4.2.0",
+  "timestamp": "20260119_121124",
+  "calibration_passed": true,
+  "task_oracle": {
+    "calibration_type": "TASK_ORACLE_V420",
+    "description": "Task Oracle v4.2 - scripted policy with LAW_REPAIR",
+    "config": {
+      "max_steps": 40,
+      "max_episodes": 100,
+      "seed": 42
+    },
+    "summary": {
+      "total_steps": 2295,
+      "total_successes": 100,
+      "success_rate": 1.0,
+      "total_repairs_issued": 99,
+      "total_repairs_accepted": 99,
+      "repair_acceptance_rate": 1.0,
+      "total_halts": 0,
+      "halt_rate": 0.0,
+      "elapsed_ms": 100.52982100023655,
+      "calibration_passed": true
+    },
+    "episodes": [
+      {
+        "episode": 0,
+        "steps": 18,
+        "success": true,
+        "regime_at_end": 0,
+        "repair_issued": false,
+        "repair_accepted": false
+      },
+      {
+        "episode": 1,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 2,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 3,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 4,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 5,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 6,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 7,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 8,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 9,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 10,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 11,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 12,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 13,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 14,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 15,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 16,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 17,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 18,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 19,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 20,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 21,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 22,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 23,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 24,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 25,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 26,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 27,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 28,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 29,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 30,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 31,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 32,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 33,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 34,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 35,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 36,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 37,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 38,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 39,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 40,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 41,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 42,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 43,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 44,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 45,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 46,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 47,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 48,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 49,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 50,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 51,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 52,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 53,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 54,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 55,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 56,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 57,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 58,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 59,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 60,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 61,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 62,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 63,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 64,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 65,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 66,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 67,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 68,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 69,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 70,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 71,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 72,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 73,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 74,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 75,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 76,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 77,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 78,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 79,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 80,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 81,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 82,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 83,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 84,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 85,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 86,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 87,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 88,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 89,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 90,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 91,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 92,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 93,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 94,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 95,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 96,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 97,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 98,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      },
+      {
+        "episode": 99,
+        "steps": 23,
+        "success": true,
+        "regime_at_end": 1,
+        "repair_issued": true,
+        "repair_accepted": true
+      }
+    ]
+  },
+  "asb_null": {
+    "calibration_type": "ASB_NULL_V420",
+    "description": "ASB Null v4.2 - random action, no repair capability",
+    "config": {
+      "max_steps": 40,
+      "max_episodes": 100,
+      "seed": 42
+    },
+    "summary": {
+      "total_steps": 3682,
+      "total_successes": 0,
+      "success_rate": 0.0,
+      "total_halts": 16,
+      "halt_rate": 0.16,
+      "elapsed_ms": 32.146780999028124,
+      "demonstrates_repair_necessity": true
+    },
+    "episodes": [
+      {
+        "episode": 0,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 0
+      },
+      {
+        "episode": 1,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 2,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 3,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 4,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 5,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 6,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 7,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 8,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 9,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 10,
+        "steps": 10,
+        "success": false,
+        "halted": true,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 11,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 12,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 13,
+        "steps": 30,
+        "success": false,
+        "halted": true,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 14,
+        "steps": 6,
+        "success": false,
+        "halted": true,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 15,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 16,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 17,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 18,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 19,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 20,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 21,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 22,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 23,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 24,
+        "steps": 19,
+        "success": false,
+        "halted": true,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 25,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 26,
+        "steps": 25,
+        "success": false,
+        "halted": true,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 27,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 28,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 29,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 30,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 31,
+        "steps": 4,
+        "success": false,
+        "halted": true,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 32,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 33,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 34,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 35,
+        "steps": 35,
+        "success": false,
+        "halted": true,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 36,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 37,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 38,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 39,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 40,
+        "steps": 27,
+        "success": false,
+        "halted": true,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 41,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 42,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 43,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 44,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 45,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 46,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 47,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 48,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 49,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 50,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 51,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 52,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 53,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 54,
+        "steps": 6,
+        "success": false,
+        "halted": true,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 55,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 56,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 57,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 58,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 59,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 60,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 61,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 62,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 63,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 64,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 65,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 66,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 67,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 68,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 69,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 70,
+        "steps": 30,
+        "success": false,
+        "halted": true,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 71,
+        "steps": 11,
+        "success": false,
+        "halted": true,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 72,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 73,
+        "steps": 38,
+        "success": false,
+        "halted": true,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 74,
+        "steps": 39,
+        "success": false,
+        "halted": true,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 75,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 76,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 77,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 78,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 79,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 80,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 81,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 82,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 83,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 84,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 85,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 86,
+        "steps": 27,
+        "success": false,
+        "halted": true,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 87,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 88,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 89,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 90,
+        "steps": 9,
+        "success": false,
+        "halted": true,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 91,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 92,
+        "steps": 6,
+        "success": false,
+        "halted": true,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 93,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 94,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 95,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 96,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 97,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 98,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      },
+      {
+        "episode": 99,
+        "steps": 40,
+        "success": false,
+        "halted": false,
+        "regime_at_end": 1
+      }
+    ]
+  }
+}
