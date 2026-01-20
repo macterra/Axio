@@ -28,6 +28,9 @@ Both contradictions require law-repair to resolve, and successful navigation req
 |--------|-------|
 | E2 Calibration | **PASSED** |
 | Unit Tests | **10/10 PASSED** |
+| LLM Baseline | **15.0% success** (5 seeds × 20 episodes) |
+| Repair A Rate | **100%** (5/5 seeds) |
+| Repair B Rate | **0%** (0/5 seeds) |
 | New Gate Rules | R9, R10, R2A |
 | Regime Count | 3 (0, 1, 2) |
 | Contradictions | 2 (A, B) |
@@ -571,4 +574,71 @@ The following evidence was produced by `diagnostic_audit.py` to verify implement
 
 ---
 
+## 11. LLM Baseline Results
+
+### 11.1 Configuration
+
+| Parameter | Value |
+|-----------|-------|
+| Model | Claude Sonnet 4 (claude-sonnet-4-20250514) |
+| Selector | task_aware |
+| Episodes per seed | 20 |
+| Steps per episode | 40 |
+| Seeds | 42, 123, 456, 789, 1000 (preregistered) |
+| Date | January 20, 2026 |
+
+### 11.2 Results by Seed
+
+| Seed | Successes | Rate | Repair A | Repair B | Time (s) |
+|------|-----------|------|----------|----------|----------|
+| 42 | 3/20 | 15.0% | ✅ | ✗ | 1935.9 |
+| 123 | 3/20 | 15.0% | ✅ | ✗ | 1934.6 |
+| 456 | 2/20 | 10.0% | ✅ | ✗ | 1867.1 |
+| 789 | 2/20 | 10.0% | ✅ | ✗ | 1902.2 |
+| 1000 | 5/20 | 25.0% | ✅ | ✗ | 1967.2 |
+| **Mean** | **15/100** | **15.0%** | **5/5** | **0/5** | — |
+
+### 11.3 Key Observations
+
+1. **Mean Success Rate: 15.0%** — LLM completes task successfully in 15% of episodes
+2. **Repair A: 100% triggered** — All seeds successfully detected and resolved Contradiction A
+3. **Repair B: 0% triggered** — LLM consistently fails to detect Contradiction B in regime 2
+4. **Epoch Chain: 2 epochs** — All runs advance from epoch_0 to epoch_1 (post-Repair A)
+
+### 11.4 Failure Mode Analysis
+
+The dominant failure mode is **DELIBERATION_FAILURE** in regime 2:
+- LLM enters regime 2 after successful Repair A
+- Contradiction B (R7/R8 blocking DEPOSIT at ZONE_A/ZONE_B) triggers
+- LLM does not detect the contradiction or propose Repair B
+- Episode halts with unresolved deadlock
+
+This is expected behavior given Contradiction B's complexity:
+- Requires detecting prohibition on DEPOSIT at specific zones
+- Requires understanding dual-delivery mode
+- Requires synthesizing Repair B with `CAN_DELIVER_A`/`CAN_DELIVER_B` exceptions
+
+### 11.5 Bug Fix Applied
+
+During pilot testing, a critical bug was discovered and fixed:
+
+**Issue:** LLM justifications containing `POSITION_EQ` and `CAN_DELIVER` predicates were silently dropped during parsing.
+
+**Root Cause:** The `Predicate` enum in `core/dsl.py` was missing these predicates:
+```python
+class Predicate(str, Enum):
+    # ... existing predicates ...
+    # v4.3 additions (missing):
+    POSITION_EQ = "POSITION_EQ"
+    CAN_DELIVER = "CAN_DELIVER"
+    HAS_INVENTORY = "HAS_INVENTORY"
+```
+
+**Effect:** A5 (DEPOSIT) justifications were filtered out, causing degenerate loop behavior where the agent reached delivery zones but never deposited.
+
+**Fix:** Added missing predicates to the enum. Post-fix, LLM correctly deposits at zones.
+
+---
+
 **End of Report**
+

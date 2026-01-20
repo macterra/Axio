@@ -1,0 +1,79 @@
+nohup: ignoring input
+======================================================================
+RSA-PoC v4.3 — LLM Baseline Run
+======================================================================
+
+Configuration:
+  Seed:              42
+  Episodes:          3
+  Steps/episode:     40
+  Model:             claude-sonnet-4-20250514
+  Selector:          task_aware
+  Validity gates:    ENABLED (simplified repair)
+  Multi-repair:      R9 enabled (max 2 repairs)
+
+⚠️  Skipping pre-flight validation (--skip-preflight)
+
+--- LLM Run (Seed 42) ---
+    Step 0: A0 @ START → UNKNOWN
+    Step 1: A0 @ UNKNOWN → SOURCE
+    Step 2: A4 @ SOURCE → SOURCE
+    Step 3: A0 @ SOURCE → UNKNOWN
+    Step 4: A0 @ UNKNOWN → ZONE_B
+    Step 5: A5 @ ZONE_B → ZONE_B
+    Step 6: A1 @ ZONE_B → UNKNOWN
+    Step 7: A1 @ UNKNOWN → SOURCE
+    Step 8: A4 @ SOURCE → SOURCE
+    Step 9: A2 @ SOURCE → UNKNOWN
+    Step 10: A2 @ UNKNOWN → STAMP_LOCATION
+    Step 11: A5 @ STAMP_LOCATION → STAMP_LOCATION
+    Step 12: A3 @ STAMP_LOCATION → UNKNOWN
+    Step 13: A3 @ UNKNOWN → SOURCE
+    Step 14: A4 @ SOURCE → SOURCE
+    Step 15: A3 @ SOURCE → UNKNOWN
+    Step 16: A3 @ UNKNOWN → ZONE_A
+    Step 17: A5 @ ZONE_A → ZONE_A
+  Ep0: steps=18, success=True, regime=0
+    Step 0: A0 @ START → UNKNOWN
+    Step 1: A0 @ UNKNOWN → SOURCE
+    Step 2: A4 @ SOURCE → SOURCE
+    Step 3: A0 @ SOURCE → UNKNOWN
+    Step 4: A0 @ UNKNOWN → ZONE_B
+    Step 5: A5 @ ZONE_B → ZONE_B
+    Step 6: A1 @ ZONE_B → UNKNOWN
+    Step 7: A1 @ UNKNOWN → SOURCE
+    Step 8: A4 @ SOURCE → SOURCE
+    Step 9: A2 @ SOURCE → UNKNOWN
+    Step 10: A2 @ UNKNOWN → STAMP_LOCATION
+    Step 11: A5 @ STAMP_LOCATION → STAMP_LOCATION
+    Step 12: A3 @ STAMP_LOCATION → UNKNOWN
+    Step 13: A3 @ UNKNOWN → SOURCE
+    Step 14: A4 @ SOURCE → SOURCE
+    Step 15: A3 @ SOURCE → UNKNOWN
+    Step 16: A3 @ UNKNOWN → ZONE_A
+    Step 17: A5 @ ZONE_A → ZONE_A
+  Ep1: steps=18, success=True, regime=0
+    Step 0: A0 @ START → UNKNOWN
+    Step 1: A0 @ UNKNOWN → SOURCE
+    Step 2: A4 @ SOURCE → SOURCE
+    Step 3: A2 @ SOURCE → UNKNOWN
+    Step 4: A2 @ UNKNOWN → STAMP_LOCATION
+    Step 5: A6 @ STAMP_LOCATION → STAMP_LOCATION
+    Step 6: A5 @ STAMP_LOCATION → STAMP_LOCATION
+    Step 7: A3 @ STAMP_LOCATION → UNKNOWN
+    Step 8: A3 @ UNKNOWN → SOURCE
+    Step 9: A4 @ SOURCE → SOURCE
+    Step 10: A0 @ SOURCE → UNKNOWN
+    Step 11: A0 @ UNKNOWN → ZONE_B
+  Ep2: steps=13, success=False, regime=2
+
+  Results:
+    Successes: 2/3
+    Success rate: 66.7%
+    Repairs: A=True, B=False
+    Epoch chain: 2 epochs
+    Time: 286.0s
+
+======================================================================
+Results saved to: /home/david/Axio/src/rsa_poc/v430/results/v430_llm_baseline_42_20260120_161953.json
+======================================================================

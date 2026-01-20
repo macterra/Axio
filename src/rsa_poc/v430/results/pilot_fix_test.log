@@ -1,0 +1,24 @@
+======================================================================
+RSA-PoC v4.3 — LLM Baseline Run
+======================================================================
+
+Configuration:
+  Seed:              42
+  Episodes:          3
+  Steps/episode:     40
+  Model:             claude-sonnet-4-20250514
+  Selector:          task_aware
+  Validity gates:    ENABLED (simplified repair)
+  Multi-repair:      R9 enabled (max 2 repairs)
+
+⚠️  Skipping pre-flight validation (--skip-preflight)
+
+--- LLM Run (Seed 42) ---
+    Step 0: A0 @ START → UNKNOWN
+    Step 1: A0 @ UNKNOWN → SOURCE
+    Step 2: A4 @ SOURCE → SOURCE
+    Step 3: A0 @ SOURCE → UNKNOWN
+    Step 4: A0 @ UNKNOWN → ZONE_B
+    Step 5: A5 @ ZONE_B → ZONE_B
+    Step 6: A1 @ ZONE_B → UNKNOWN
+    Step 7: A1 @ UNKNOWN → SOURCE

@@ -406,6 +406,10 @@ class Predicate(str, Enum):
     TARGET_SATISFIED = "TARGET_SATISFIED"
     PROGRESS_ACTION = "PROGRESS_ACTION"
     CONFLICTS_WITH = "CONFLICTS_WITH"
+    # v4.3 additions: environment state predicates
+    POSITION_EQ = "POSITION_EQ"
+    CAN_DELIVER = "CAN_DELIVER"
+    HAS_INVENTORY = "HAS_INVENTORY"
 
 
 @dataclass
