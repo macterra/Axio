@@ -345,12 +345,13 @@ def create_initial_norm_state_v430() -> NormStateV430:
             ),
             priority=0,
         ),
-        # R6: PROHIBITION(STAMP) - Creates Contradiction A under regime=1
-        # Agent cannot stamp, but under regime=1, stamping is required for deposit
+        # R6: PROHIBITION(STAMP) IF regime == 1
+        # Creates Contradiction A: stamps required but blocked in regime 1
+        # Repair A will add exception UNLESS (regime >= 1) to disable prohibition
         Rule(
             id="R6",
             type=RuleType.PROHIBITION,
-            condition=Condition(op=ConditionOp.TRUE),
+            condition=Condition(op=ConditionOp.REGIME_EQ, args=[1]),
             effect=Effect(
                 effect_type=EffectType.ACTION_CLASS,
                 action_class=ActionClass.STAMP,

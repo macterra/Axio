@@ -1,0 +1,12 @@
+{
+  "success": true,
+  "repair_a_valid": true,
+  "repair_b_valid": true,
+  "epoch_chain": [
+    "52a87106bba85df1bd7f72868c34af14ce57896f60e52ab49f0157e28f6c768b",
+    "25ac6d228d76f551f4d397bce5bbab2f49cf9b6fd5ab80e56d36706703b7b8ae",
+    "61a4d5592a15305810e566c4143974635fc2aaae26c35c46ad9a164ff385df0e"
+  ],
+  "errors": [],
+  "details": {}
+}

@@ -215,6 +215,10 @@ def compile_condition(cond: Condition) -> Callable[[Any], bool]:
         value = args[0]
         return lambda obs, v=value: _get_obs_field(obs, "regime") == v
 
+    elif op == ConditionOp.REGIME_GE:
+        value = args[0]
+        return lambda obs, v=value: _get_obs_field(obs, "regime") >= v
+
     elif op == ConditionOp.STAMPED:
         return lambda obs: _get_obs_field(obs, "stamped") == True
 

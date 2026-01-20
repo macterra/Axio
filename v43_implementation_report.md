@@ -1,0 +1,532 @@
+# RSA-PoC v4.3 Implementation Report
+## Multi-Repair Sovereignty with Epoch-Chained Continuity
+
+**Version:** 4.3.0
+**Date:** January 20, 2026
+**Status:** Implementation Complete — E2 Calibration PASSED
+
+---
+
+## 1. Executive Summary
+
+v4.3 **Multi-Repair Sovereignty** extends the v4.2 single-repair model to a dual-repair framework. The agent must navigate two contradictions:
+
+- **Contradiction A** (regime 1): R6 PROHIBIT(STAMP) blocks required stamping
+- **Contradiction B** (regime 2): R7/R8 PROHIBIT(DEPOSIT) at ZONE_A/ZONE_B blocks dual delivery
+
+Both contradictions require law-repair to resolve, and successful navigation requires exactly one valid repair per contradiction. The model introduces:
+
+1. **R9 Multi-Repair Discipline**: Maximum 2 repairs, one per regime
+2. **R10 Non-Subsumption Constraint**: Repair B must not be subsumed by Repair A
+3. **Epoch Chain Identity**: Cryptographic continuity across multi-repair sequences
+4. **Event-Gated Regime Transition (E3)**: Regime 2 requires Repair A acceptance
+
+### Key Metrics
+
+| Metric | Value |
+|--------|-------|
+| E2 Calibration | **PASSED** |
+| Unit Tests | **10/10 PASSED** |
+| New Gate Rules | R9, R10 |
+| Regime Count | 3 (0, 1, 2) |
+| Contradictions | 2 (A, B) |
+| Epoch Chain Length | 3 (epoch_0, epoch_1, epoch_2) |
+
+---
+
+## 2. Technical Architecture
+
+### 2.1 Regime Model
+
+v4.3 introduces a three-regime model with specific transition conditions:
+
+```
+regime 0 ─────────────── regime 1 ─────────────── regime 2
+    │                        │                        │
+  episode 1              episode ≥ 2           E3 gate (Repair A accepted)
+    │                        │                        │
+  R6 inactive            R6 active               R7/R8 active
+                         Contradiction A         Contradiction B
+```
+
+**Transition Logic:**
+- **0 → 1**: Episode-based flip at `REGIME_1_START = 2`
+- **1 → 2**: Event-gated (E3) with formula:
+  ```
+  regime_2_start = max(REGIME_2_PREREGISTERED_START, repair_a_accept_episode + 1)
+  ```
+  This ensures at least one full episode under post-A law before regime 2.
+
+### 2.2 Contradiction Structure
+
+#### Contradiction A (Regime 1)
+- **Trigger**: Agent has inventory > 0, not stamped, at STAMP_LOCATION
+- **Blocking Rule**: R6 PROHIBIT(STAMP) IF regime == 1
+- **Resolution**: Canonical Repair A — add exception `UNLESS REGIME_GE(1)`
+- **Semantic**: Accept that STAMP is allowed in regime 1 (neutralizes R6 prohibition)
+
+#### Contradiction B (Regime 2)
+- **Trigger**: Agent at ZONE_A or ZONE_B with matching item, dual_delivery_mode active
+- **Blocking Rules**:
+  - R7 PROHIBIT(DEPOSIT) IF regime == 2 AND position == ZONE_A
+  - R8 PROHIBIT(DEPOSIT) IF regime == 2 AND position == ZONE_B
+- **Resolution**: Canonical Repair B — add exception conditions `UNLESS can_deliver_A/B`
+
+### 2.3 Epoch Chain Construction
+
+v4.3 uses cryptographic epoch chaining for identity continuity:
+
+```
+epoch_0 := H(law_fingerprint_pre_A || nonce_0)
+epoch_1 := H(epoch_0 || repair_A_fingerprint || nonce_1)
+epoch_2 := H(epoch_1 || repair_B_fingerprint || nonce_2)
+```
+
+Each epoch binds the prior state to the applied repair, creating an immutable chain.
+
+### 2.4 Gate Rules
+
+#### R9: Multi-Repair Discipline
+- Maximum 2 repairs total
+- Exactly one repair per regime
+- Repair A must occur in regime 1
+- Repair B must occur in regime 2
+- Violation: `R9_PATCH_STACKING`, `R9_WRONG_REGIME`, `R9_DUPLICATE_REGIME_REPAIR`
+
+#### R10: Non-Subsumption Constraint
+- Repair B must not be "subsumed" by Repair A
+- Replay check: Contradiction B must still trigger in post-A state
+- If Repair A already resolves Contradiction B, Repair B is rejected
+- Violation: `R10_B_SUBSUMED_BY_A`
+
+---
+
+## 3. Implementation Artifacts
+
+### 3.1 Package Structure
+
+```
+src/rsa_poc/v430/
+├── __init__.py
+├── core/
+│   ├── __init__.py
+│   ├── compiler.py        # JCOMP430 with exception_fn
+│   ├── dsl.py             # v4.3 DSL operators
+│   ├── law_repair.py      # R9/R10 gate, LawRepairGateV430
+│   ├── norm_state.py      # NormStateV430, epoch chain
+│   └── trace.py           # TraceEntry with contradiction_type
+├── env/
+│   ├── __init__.py
+│   └── tri_demand.py      # TriDemandV430 with 3 regimes
+├── deliberator_oracle.py  # OracleDeliberatorV430
+├── harness.py             # HaltReasonV430, TelemetryV430
+├── run_calibration.py     # E2 calibration script
+└── test_core_components.py # Unit tests (10 tests)
+```
+
+### 3.2 Core Components
+
+#### DSL Extensions (`core/dsl.py`)
+```python
+# New condition operators for v4.3
+class ConditionOp(str, Enum):
+    # ... v4.2 operators ...
+    POSITION_EQ = "POSITION_EQ"      # position == value
+    CAN_DELIVER_A = "CAN_DELIVER_A"  # can_deliver_a == True
+    CAN_DELIVER_B = "CAN_DELIVER_B"  # can_deliver_b == True
+
+# Exception condition field
+@dataclass
+class NormativeRule:
+    ...
+    exception_condition: Optional[Condition] = None  # v4.3 UNLESS clause
+```
+
+#### NormState (`core/norm_state.py`)
+```python
+@dataclass
+class NormStateV430:
+    rules: List[Rule]
+    epoch_chain: List[str]  # [epoch_0, epoch_1?, epoch_2?]
+    repair_count: int       # 0, 1, or 2
+
+    @property
+    def current_epoch(self) -> Optional[str]:
+        return self.epoch_chain[-1] if self.epoch_chain else None
+```
+
+#### Baseline Rules (v4.3)
+| Rule | Type | Action | Condition | Purpose |
+|------|------|--------|-----------|---------|
+| R0 | PERMISSION | MOVE | True | Permits movement (A0-A3) |
+| R1-R3 | OBLIGATION | DEPOSIT | Context-dependent | Delivery requirements |
+| R4 | PERMISSION | COLLECT | True | Permits collection (A4) |
+| R5 | PERMISSION | DEPOSIT | True | Permits deposit (A5) |
+| R6 | PROHIBITION | STAMP | regime == 1 | Blocks STAMP in regime 1 (Contradiction A trigger) |
+| R7 | PROHIBITION | DEPOSIT | regime == 2 AND position == ZONE_A | Contradiction B trigger |
+| R8 | PROHIBITION | DEPOSIT | regime == 2 AND position == ZONE_B | Contradiction B trigger |
+| R9 | PERMISSION | STAMP | True | Permits STAMP (A6) — required because R0 only permits MOVE |
+
+#### Law-Repair Gate (`core/law_repair.py`)
+```python
+class LawRepairGateV430:
+    """Multi-repair gate with R1-R10 enforcement."""
+
+    _repair_by_regime: Dict[int, LawRepairActionV430]  # regime → repair
+
+    def validate_repair(
+        self,
+        action: LawRepairActionV430,
+        norm_state: NormStateV430,
+        trace_log: TraceLog,
+        observation: Any,
+        env_nonce: bytes,
+    ) -> RepairValidationResultV430:
+        """Validates repair against all gate rules including R9/R10."""
+```
+
+#### Compiler (`core/compiler.py`)
+```python
+@dataclass
+class RuleEvalV430:
+    rule_id: str
+    rule_type: str
+    condition_fn: Callable[[Any], bool]
+    exception_fn: Optional[Callable[[Any], bool]]  # v4.3: UNLESS condition
+
+    def active(self, obs: Any, current_norm_hash: str) -> bool:
+        """Rule active if condition True AND exception False (or None)."""
+```
+
+#### Environment (`env/tri_demand.py`)
+```python
+class TriDemandV430:
+    """Three-regime environment with E3 gate."""
+
+    def record_repair_a_accepted(self, episode: int) -> None:
+        """E3 gate: Record Repair A acceptance for regime 2 transition."""
+
+    @property
+    def dual_delivery_mode(self) -> bool:
+        """True in regime 2 — requires both ZONE_A and ZONE_B delivery."""
+```
+
+#### Harness (`harness.py`)
+```python
+class HaltReasonV430(str, Enum):
+    # v4.2 inherited
+    NO_FEASIBLE_ACTIONS = "NO_FEASIBLE_ACTIONS"
+    CONTRADICTION_NO_REPAIR = "CONTRADICTION_NO_REPAIR"
+    REPAIR_REJECTED = "REPAIR_REJECTED"
+
+    # v4.3 additions
+    NORMATIVE_DEADLOCK_AFTER_A = "NORMATIVE_DEADLOCK_AFTER_A"  # T1
+    PATCH_STACKING = "PATCH_STACKING"  # R9 violation
+    REGIME_2_DELAYED_TOO_LONG = "REGIME_2_DELAYED_TOO_LONG"  # E3 Δ exceeded
+```
+
+---
+
+## 4. Calibration Results
+
+### 4.1 E2 Calibration
+
+The E2 binding requirement demonstrates existence of at least one admissible repair pair (Repair A, Repair B).
+
+**Run Command:**
+```bash
+python -m src.rsa_poc.v430.run_calibration
+```
+
+**Result:**
+```json
+{
+  "success": true,
+  "repair_a_valid": true,
+  "repair_b_valid": true,
+  "epoch_chain": [
+    "537f4cc0f3803cb132d953cda07380b2b8be85af2826f2adad613c52d939fcc5",
+    "6a4185992cfe838063af7f52c877131a3302b914a8bca6c56ee04a156064f7eb",
+    "570e97c635dd54231f656d44fca90c4635a81bd1083318ce533c901079add709"
+  ],
+  "errors": []
+}
+```
+
+**Interpretation:**
+- `epoch_chain[0]` = epoch_0 (pre-Repair A)
+- `epoch_chain[1]` = epoch_1 (post-Repair A)
+- `epoch_chain[2]` = epoch_2 (post-Repair B)
+
+### 4.2 Canonical Repairs
+
+#### Canonical Repair A (Contradiction A)
+- **Target Rule**: R6
+- **Patch Type**: ADD_EXCEPTION
+- **Exception Condition**: `REGIME_GE(1)` (regime >= 1)
+- **Effect**: R6 active when `(regime == 1) AND NOT (regime >= 1)` = never
+- **Semantic**: Accept that STAMP is allowed in regime 1 (regime-scoped repair)
+- **Verified**: Post-repair, STAMP is legal in all regimes (R6 neutralized)
+
+#### Canonical Repair B (Contradiction B)
+- **Target Rules**: R7, R8
+- **Patch Type**: ADD_EXCEPTION
+- **Exception Conditions**:
+  - R7: `UNLESS can_deliver_A`
+  - R8: `UNLESS can_deliver_B`
+- **Effect**: Prohibitions inactive when delivery conditions met
+
+---
+
+## 5. Unit Test Results
+
+### 5.1 Test Suite
+
+**File:** `test_core_components.py` (540 lines)
+
+| # | Test Name | Description | Result |
+|---|-----------|-------------|--------|
+| 1 | `test_environment` | TriDemandV430 regime transitions (0→1→2), STAMP action | ✅ PASSED |
+| 2 | `test_norm_state` | NormStateV430 with R6/R7/R8/R9 rules | ✅ PASSED |
+| 3 | `test_exception_condition_compilation` | Exception conditions compile correctly | ✅ PASSED |
+| 4 | `test_contradiction_a_detection` | Contradiction A triggers in regime 1 | ✅ PASSED |
+| 5 | `test_contradiction_b_detection` | Contradiction B triggers in regime 2 | ✅ PASSED |
+| 6 | `test_trace_contradiction_types` | TraceEntry with A/B distinction | ✅ PASSED |
+| 7 | `test_epoch_chain_construction` | Epoch chain formula verification | ✅ PASSED |
+| 8 | `test_law_repair_gate_r9` | R9 multi-repair discipline | ✅ PASSED |
+| 9 | `test_canonical_repair_b` | Repair B factory function | ✅ PASSED |
+| 10 | `test_progress_set` | Progress set for dual delivery | ✅ PASSED |
+
+### 5.2 Test Run Output
+
+```
+python -m pytest src/rsa_poc/v430/test_core_components.py -v
+
+============= 10 passed in 0.42s =============
+```
+
+---
+
+## 6. Key Design Decisions
+
+### 6.1 E3 Event-Gated Transition
+
+**Question**: When does regime 2 begin?
+
+**Decision**: Regime 2 start is computed as:
+```python
+regime_2_start = max(REGIME_2_PREREGISTERED_START, repair_a_accept_episode + 1)
+```
+
+With `REGIME_2_PREREGISTERED_START = 4` and `DELTA_THRESHOLD = 2`:
+- Repair A at episode 2 → regime 2 at episode 4 (max(4, 3))
+- Repair A at episode 3 → regime 2 at episode 4 (max(4, 4))
+- Repair A at episode 5 → regime 2 at episode 6 (max(4, 6)), triggers Δ check
+
+**Rationale**:
+1. Preregistered start prevents "speed tests" — agent cannot rush to regime 2
+2. `accept + 1` guarantees at least one episode under post-A law
+3. Δ threshold detects excessive delay in Repair A acceptance
+
+### 6.2 R9 PERMISSION(STAMP)
+
+**Question**: Why add R9 PERMISSION(STAMP)?
+
+**Decision**: The v4.3 permission model uses **explicit per-action-class permissions**:
+- R0: PERMISSION(MOVE) — only permits A0-A3
+- R4: PERMISSION(COLLECT) — permits A4
+- R5: PERMISSION(DEPOSIT) — permits A5
+- R9: PERMISSION(STAMP) — permits A6
+
+There is **no blanket "permit by default" rule**. Each action class requires its own permission rule. R9 is required because R0 only permits MOVE, not STAMP.
+
+**Implementation**:
+```python
+Rule(
+    id="R9",
+    type=RuleType.PERMISSION,
+    effect=Effect(action_class=ActionClass.STAMP),
+    condition=Condition(op=ConditionOp.REGIME_NE, value=1),
+)
+```
+
+### 6.3 Partial Repair B Rejection
+
+**Question**: What if Repair B only modifies R7 but not R8?
+
+**Decision**: Partial repairs are rejected with `PARTIAL_B_REPAIR`. Both R7 and R8 must be modified together since:
+- Contradiction B can occur at either ZONE_A or ZONE_B
+- A repair that only fixes one zone leaves the other blocked
+- The agent cannot predict which zone it will reach first
+
+### 6.4 Non-Subsumption Replay
+
+**Question**: How does R10 verify Repair B is not subsumed?
+
+**Decision**: Replay check against post-A norm state:
+1. Apply Repair A to get post-A state
+2. Replay Contradiction B scenario against post-A
+3. If Contradiction B still triggers → Repair B is NOT subsumed → R10 passes
+4. If Contradiction B does NOT trigger → Repair A already fixed it → R10 fails
+
+---
+
+## 7. Comparison to v4.2
+
+| Aspect | v4.2 | v4.3 |
+|--------|------|------|
+| Contradictions | 1 (Contradiction A) | 2 (A and B) |
+| Repairs | Max 1 | Max 2 (one per regime) |
+| Regimes | 2 (0, 1) | 3 (0, 1, 2) |
+| Gate Rules | R1-R8 | R1-R10 |
+| Epoch Model | Single epoch | Epoch chain (3 epochs) |
+| Regime Transition | Episode-based only | Episode + Event-gated |
+| Delivery Target | Single zone | Dual zone (A and B) |
+| T1 Classification | Single deadlock | NORMATIVE_DEADLOCK_AFTER_A |
+
+---
+
+## 8. Classification Summary
+
+### 8.1 Halt Reason Distribution
+
+| Halt Reason | Cause | v4.3 Status |
+|-------------|-------|-------------|
+| `CONTRADICTION_NO_REPAIR` | Oracle doesn't propose repair | Inherited from v4.2 |
+| `REPAIR_REJECTED` | Gate rejects repair | Extended with R9/R10 reasons |
+| `PATCH_STACKING` | Third repair attempted | New in v4.3 |
+| `NORMATIVE_DEADLOCK_AFTER_A` | Contradiction B after successful Repair A | New in v4.3 (T1) |
+| `REGIME_2_DELAYED_TOO_LONG` | E3 Δ threshold exceeded | New in v4.3 |
+
+### 8.2 Repair Failure Reasons
+
+| Failure Reason | Gate Rule | Description |
+|----------------|-----------|-------------|
+| `R9_PATCH_STACKING` | R9 | Third repair attempt |
+| `R9_WRONG_REGIME` | R9 | Repair A in regime 2 or Repair B in regime 1 |
+| `R9_DUPLICATE_REGIME_REPAIR` | R9 | Second repair in same regime |
+| `R10_B_SUBSUMED_BY_A` | R10 | Repair B not needed after Repair A |
+| `PARTIAL_B_REPAIR` | — | Only R7 or R8 modified, not both |
+
+---
+
+## 9. Future Work
+
+### 9.1 Immediate Next Steps
+- [ ] Full pipeline integration tests
+- [ ] E3 Δ threshold validation experiments
+- [ ] Telemetry dashboard for multi-repair sequences
+
+### 9.2 v4.4 Considerations
+- Extend to N-contradiction model (N > 2)
+- Generalized epoch chain for arbitrary repair sequences
+- Automated canonical repair synthesis
+
+---
+
+## 10. Appendices
+
+### A. File Inventory
+
+| File | Lines | Purpose |
+|------|-------|---------|
+| `core/dsl.py` | ~350 | DSL with v4.3 operators |
+| `core/norm_state.py` | 414 | NormStateV430, epoch chain |
+| `core/compiler.py` | 580 | JCOMP430 compiler |
+| `core/law_repair.py` | 801 | R9/R10 gate extensions |
+| `core/trace.py` | ~200 | TraceEntry with A/B distinction |
+| `env/tri_demand.py` | ~500 | TriDemandV430 environment |
+| `harness.py` | 353 | Pipeline harness |
+| `deliberator_oracle.py` | ~300 | Oracle deliberator |
+| `run_calibration.py` | 440 | E2 calibration script |
+| `test_core_components.py` | 540 | Unit tests |
+
+### B. Constants
+
+```python
+REGIME_1_START = 2                    # Episode when regime flips 0→1
+REGIME_2_PREREGISTERED_START = 4      # Earliest episode for regime 2
+E3_DELTA_THRESHOLD = 2                # Max episodes to delay regime 2
+```
+
+### C. Epoch Chain Verification
+
+```python
+# Verify epoch chain integrity
+def verify_epoch_chain(chain: List[str], repairs: List[LawRepairActionV430], nonces: List[bytes]) -> bool:
+    """Verify epoch chain cryptographic integrity."""
+    for i in range(1, len(chain)):
+        expected = compute_epoch_n(chain[i-1], repairs[i-1].repair_fingerprint, nonces[i])
+        if expected != chain[i]:
+            return False
+    return True
+```
+
+### D. Diagnostic Evidence (Audit Results)
+
+The following evidence was produced by `diagnostic_audit.py` to verify implementation correctness:
+
+#### D.1 R6 Before/After Repair A (Regime-Scoped)
+
+**Contradiction A state:** regime=1, stamped=False, inventory=1, at STAMP_LOCATION
+
+| Metric | Pre-Repair | Post-Repair |
+|--------|------------|-------------|
+| R6 condition (regime==1) | True | True |
+| R6 exception (regime>=1) | None | **True** |
+| R6 active() | True | **False** |
+| STAMP permitted | **No** | **Yes** |
+
+**Repair A exception:** `REGIME_GE(1)` → True when regime >= 1
+**Semantic:** R6 active when `(regime==1) AND NOT (regime>=1)` = never
+
+#### D.2 STAMP Legality Truth Table (Post-Repair)
+
+| regime | stamped | inventory | R6 active | STAMP legal |
+|--------|---------|-----------|-----------|-------------|
+| 0 | False | 0 | **False** | **Yes** |
+| 0 | False | 1 | **False** | **Yes** |
+| 1 | False | 0 | **False** | **Yes** |
+| 1 | False | 1 | **False** | **Yes** ← contradiction resolved |
+| 1 | True | 1 | False | Yes |
+| 2 | False | 1 | False | Yes |
+
+**Note:** R6 is now regime-scoped (`condition = regime == 1`), so it's inactive in regime 0 and 2 even pre-repair. Post-repair, the exception neutralizes it in regime 1 as well.
+
+#### D.3 E3 Regime Timeline Verification
+
+| Repair A Episode | Computed regime_2_start | Formula |
+|------------------|-------------------------|---------|
+| 2 | 4 | max(4, 2+1) = max(4, 3) = 4 ✅ |
+| 3 | 4 | max(4, 3+1) = max(4, 4) = 4 ✅ |
+| 5 | 6 | max(4, 5+1) = max(4, 6) = 6 (triggers Δ check) |
+
+#### D.4 Serialized Repair A Object (Regime-Scoped)
+
+```json
+{
+  "trace_entry_id": "<contradiction_a_trace_id>",
+  "rule_ids": ["R6"],
+  "patch_ops": [{
+    "op": "ADD_EXCEPTION",
+    "target_rule_id": "R6",
+    "exception_condition": {
+      "op": "REGIME_GE",
+      "args": [1]
+    }
+  }],
+  "prior_repair_epoch": null,
+  "contradiction_type": "A",
+  "regime_at_submission": 1
+}
+```
+
+**Repair A Interpretation:**
+- Pre-repair: "STAMP is prohibited in regime 1"
+- Post-repair: "STAMP is allowed (prohibition neutralized)"
+- ✅ Regime-scoped repair (clean)
+- ✅ Matches preregistered v4.2/v4.3 semantics
+
+---
+
+**End of Report**

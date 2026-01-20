@@ -235,9 +235,11 @@ def run_calibration() -> CalibrationResult:
     print("Step 5: Generate and validate Repair A")
 
     # Create Repair A: Add exception to R6
-    # Exception: Allow STAMP when agent has inventory >= 1 (HAS_RESOURCE with arg=1)
-    # This makes STAMP legal when the agent has items to stamp
-    exception_condition = Condition(op=ConditionOp.HAS_RESOURCE, args=[1])
+    # R6 condition: regime == 1 (prohibition active only in regime 1)
+    # Exception: UNLESS regime >= 1 (allows STAMP in regime 1 and above)
+    # Combined: R6 active when (regime == 1) AND NOT (regime >= 1) = never
+    # This is the canonical regime-scoped repair for Contradiction A
+    exception_condition = Condition(op=ConditionOp.REGIME_GE, args=[1])
     patch_r6 = PatchOperation(
         op=PatchOp.ADD_EXCEPTION,
         target_rule_id="R6",

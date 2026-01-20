@@ -39,6 +39,7 @@ class ConditionOp(str, Enum):
     FALSE = "FALSE"
     # v4.2 operators
     REGIME_EQ = "REGIME_EQ"  # Check regime == value
+    REGIME_GE = "REGIME_GE"  # Check regime >= value (for repair exceptions)
     STAMPED = "STAMPED"  # Check stamped == True
     # v4.3 operators (S_B predicates)
     POSITION_EQ = "POSITION_EQ"  # Check position == zone_name
