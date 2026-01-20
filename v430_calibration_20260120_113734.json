@@ -1,0 +1,14 @@
+{
+  "success": false,
+  "repair_a_valid": false,
+  "repair_b_valid": false,
+  "epoch_chain": [
+    "af85521ea085236c2873414f335901eecaee50c4733a5aa8efdd67a7c4c0f2da"
+  ],
+  "errors": [
+    "Repair A failed: RepairFailureReasonV430.R2_STILL_NO_PROGRESS"
+  ],
+  "details": {
+    "repair_a_failure": "Repair cosmetic: progress=set(), new_permitted={'A2', 'A1', 'A4', 'A0', 'A3'}, intersection empty"
+  }
+}
