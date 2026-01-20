@@ -1,0 +1,546 @@
+{
+  "seed": 123,
+  "max_episodes": 20,
+  "elapsed_seconds": 534.5322716869996,
+  "ablation": "C",
+  "ablation_name": "Persistence Excision",
+  "deliberator": "LLMDeliberatorV420",
+  "model": "claude-sonnet-4-20250514",
+  "selector": "task_aware",
+  "timestamp": "2026-01-19T22:27:42.101845",
+  "summary": {
+    "total_steps": 91,
+    "total_halts": 18,
+    "total_contradictions": 19,
+    "total_repairs_accepted": 1,
+    "total_successes": 2,
+    "episodes_completed": 20,
+    "success_rate": 0.1
+  },
+  "gate_telemetry": {
+    "repairs_submitted_total": 19,
+    "repairs_accepted_total": 1,
+    "repairs_rejected_total": 18,
+    "r5r6_reject_count": 18,
+    "continuity_checks_total": 19,
+    "continuity_failures_total": 0,
+    "halts_by_reason": {
+      "REPAIR_REJECTED": 18
+    },
+    "repair_bindings": [
+      {
+        "trace_entry_id": "9eda5880af675232",
+        "blocking_rule_ids": [
+          "R6"
+        ],
+        "repair_epoch": "69b519c2319b2d2d4507cb5b5cbd9cb170794715ee8d8da20835602fed174f1b",
+        "prior_repair_epoch": null,
+        "episode": 1,
+        "step": 3,
+        "accepted": true
+      },
+      {
+        "trace_entry_id": "b6da377ff71e9e38",
+        "blocking_rule_ids": [
+          "R6"
+        ],
+        "repair_epoch": null,
+        "prior_repair_epoch": "69b519c2319b2d2d4507cb5b5cbd9cb170794715ee8d8da20835602fed174f1b",
+        "episode": 2,
+        "step": 3,
+        "accepted": false,
+        "rejected_by": "R5/R6",
+        "rejection_reason": "prior_repair_epoch stale (norm_state reset, R5/R6 chain broken)"
+      },
+      {
+        "trace_entry_id": "7d35178ea0f004e9",
+        "blocking_rule_ids": [
+          "R6"
+        ],
+        "repair_epoch": null,
+        "prior_repair_epoch": "69b519c2319b2d2d4507cb5b5cbd9cb170794715ee8d8da20835602fed174f1b",
+        "episode": 3,
+        "step": 3,
+        "accepted": false,
+        "rejected_by": "R5/R6",
+        "rejection_reason": "prior_repair_epoch stale (norm_state reset, R5/R6 chain broken)"
+      },
+      {
+        "trace_entry_id": "feb8a2d2e8b289dc",
+        "blocking_rule_ids": [
+          "R6"
+        ],
+        "repair_epoch": null,
+        "prior_repair_epoch": "69b519c2319b2d2d4507cb5b5cbd9cb170794715ee8d8da20835602fed174f1b",
+        "episode": 4,
+        "step": 3,
+        "accepted": false,
+        "rejected_by": "R5/R6",
+        "rejection_reason": "prior_repair_epoch stale (norm_state reset, R5/R6 chain broken)"
+      },
+      {
+        "trace_entry_id": "06e0491a8dded335",
+        "blocking_rule_ids": [
+          "R6"
+        ],
+        "repair_epoch": null,
+        "prior_repair_epoch": "69b519c2319b2d2d4507cb5b5cbd9cb170794715ee8d8da20835602fed174f1b",
+        "episode": 5,
+        "step": 3,
+        "accepted": false,
+        "rejected_by": "R5/R6",
+        "rejection_reason": "prior_repair_epoch stale (norm_state reset, R5/R6 chain broken)"
+      },
+      {
+        "trace_entry_id": "c2d588c004464bf4",
+        "blocking_rule_ids": [
+          "R6"
+        ],
+        "repair_epoch": null,
+        "prior_repair_epoch": "69b519c2319b2d2d4507cb5b5cbd9cb170794715ee8d8da20835602fed174f1b",
+        "episode": 6,
+        "step": 3,
+        "accepted": false,
+        "rejected_by": "R5/R6",
+        "rejection_reason": "prior_repair_epoch stale (norm_state reset, R5/R6 chain broken)"
+      },
+      {
+        "trace_entry_id": "224158208077ea4b",
+        "blocking_rule_ids": [
+          "R6"
+        ],
+        "repair_epoch": null,
+        "prior_repair_epoch": "69b519c2319b2d2d4507cb5b5cbd9cb170794715ee8d8da20835602fed174f1b",
+        "episode": 7,
+        "step": 3,
+        "accepted": false,
+        "rejected_by": "R5/R6",
+        "rejection_reason": "prior_repair_epoch stale (norm_state reset, R5/R6 chain broken)"
+      },
+      {
+        "trace_entry_id": "6c88abad8ab5cd8b",
+        "blocking_rule_ids": [
+          "R6"
+        ],
+        "repair_epoch": null,
+        "prior_repair_epoch": "69b519c2319b2d2d4507cb5b5cbd9cb170794715ee8d8da20835602fed174f1b",
+        "episode": 8,
+        "step": 3,
+        "accepted": false,
+        "rejected_by": "R5/R6",
+        "rejection_reason": "prior_repair_epoch stale (norm_state reset, R5/R6 chain broken)"
+      },
+      {
+        "trace_entry_id": "85b1186c7370adc3",
+        "blocking_rule_ids": [
+          "R6"
+        ],
+        "repair_epoch": null,
+        "prior_repair_epoch": "69b519c2319b2d2d4507cb5b5cbd9cb170794715ee8d8da20835602fed174f1b",
+        "episode": 9,
+        "step": 3,
+        "accepted": false,
+        "rejected_by": "R5/R6",
+        "rejection_reason": "prior_repair_epoch stale (norm_state reset, R5/R6 chain broken)"
+      },
+      {
+        "trace_entry_id": "bdf23956dbd9c858",
+        "blocking_rule_ids": [
+          "R6"
+        ],
+        "repair_epoch": null,
+        "prior_repair_epoch": "69b519c2319b2d2d4507cb5b5cbd9cb170794715ee8d8da20835602fed174f1b",
+        "episode": 10,
+        "step": 3,
+        "accepted": false,
+        "rejected_by": "R5/R6",
+        "rejection_reason": "prior_repair_epoch stale (norm_state reset, R5/R6 chain broken)"
+      },
+      {
+        "trace_entry_id": "05607a2ff7c87715",
+        "blocking_rule_ids": [
+          "R6"
+        ],
+        "repair_epoch": null,
+        "prior_repair_epoch": "69b519c2319b2d2d4507cb5b5cbd9cb170794715ee8d8da20835602fed174f1b",
+        "episode": 11,
+        "step": 3,
+        "accepted": false,
+        "rejected_by": "R5/R6",
+        "rejection_reason": "prior_repair_epoch stale (norm_state reset, R5/R6 chain broken)"
+      },
+      {
+        "trace_entry_id": "241fc166dccfca6b",
+        "blocking_rule_ids": [
+          "R6"
+        ],
+        "repair_epoch": null,
+        "prior_repair_epoch": "69b519c2319b2d2d4507cb5b5cbd9cb170794715ee8d8da20835602fed174f1b",
+        "episode": 12,
+        "step": 3,
+        "accepted": false,
+        "rejected_by": "R5/R6",
+        "rejection_reason": "prior_repair_epoch stale (norm_state reset, R5/R6 chain broken)"
+      },
+      {
+        "trace_entry_id": "679c77d0370abb91",
+        "blocking_rule_ids": [
+          "R6"
+        ],
+        "repair_epoch": null,
+        "prior_repair_epoch": "69b519c2319b2d2d4507cb5b5cbd9cb170794715ee8d8da20835602fed174f1b",
+        "episode": 13,
+        "step": 3,
+        "accepted": false,
+        "rejected_by": "R5/R6",
+        "rejection_reason": "prior_repair_epoch stale (norm_state reset, R5/R6 chain broken)"
+      },
+      {
+        "trace_entry_id": "590cb1edb648cdd2",
+        "blocking_rule_ids": [
+          "R6"
+        ],
+        "repair_epoch": null,
+        "prior_repair_epoch": "69b519c2319b2d2d4507cb5b5cbd9cb170794715ee8d8da20835602fed174f1b",
+        "episode": 14,
+        "step": 3,
+        "accepted": false,
+        "rejected_by": "R5/R6",
+        "rejection_reason": "prior_repair_epoch stale (norm_state reset, R5/R6 chain broken)"
+      },
+      {
+        "trace_entry_id": "827b9bc2b9ce05af",
+        "blocking_rule_ids": [
+          "R6"
+        ],
+        "repair_epoch": null,
+        "prior_repair_epoch": "69b519c2319b2d2d4507cb5b5cbd9cb170794715ee8d8da20835602fed174f1b",
+        "episode": 15,
+        "step": 3,
+        "accepted": false,
+        "rejected_by": "R5/R6",
+        "rejection_reason": "prior_repair_epoch stale (norm_state reset, R5/R6 chain broken)"
+      },
+      {
+        "trace_entry_id": "e804ad90dfe32bde",
+        "blocking_rule_ids": [
+          "R6"
+        ],
+        "repair_epoch": null,
+        "prior_repair_epoch": "69b519c2319b2d2d4507cb5b5cbd9cb170794715ee8d8da20835602fed174f1b",
+        "episode": 16,
+        "step": 3,
+        "accepted": false,
+        "rejected_by": "R5/R6",
+        "rejection_reason": "prior_repair_epoch stale (norm_state reset, R5/R6 chain broken)"
+      },
+      {
+        "trace_entry_id": "c3a2713112446fc1",
+        "blocking_rule_ids": [
+          "R6"
+        ],
+        "repair_epoch": null,
+        "prior_repair_epoch": "69b519c2319b2d2d4507cb5b5cbd9cb170794715ee8d8da20835602fed174f1b",
+        "episode": 17,
+        "step": 3,
+        "accepted": false,
+        "rejected_by": "R5/R6",
+        "rejection_reason": "prior_repair_epoch stale (norm_state reset, R5/R6 chain broken)"
+      },
+      {
+        "trace_entry_id": "096bdaebff0e1808",
+        "blocking_rule_ids": [
+          "R6"
+        ],
+        "repair_epoch": null,
+        "prior_repair_epoch": "69b519c2319b2d2d4507cb5b5cbd9cb170794715ee8d8da20835602fed174f1b",
+        "episode": 18,
+        "step": 3,
+        "accepted": false,
+        "rejected_by": "R5/R6",
+        "rejection_reason": "prior_repair_epoch stale (norm_state reset, R5/R6 chain broken)"
+      },
+      {
+        "trace_entry_id": "bb34db0c8153540a",
+        "blocking_rule_ids": [
+          "R6"
+        ],
+        "repair_epoch": null,
+        "prior_repair_epoch": "69b519c2319b2d2d4507cb5b5cbd9cb170794715ee8d8da20835602fed174f1b",
+        "episode": 19,
+        "step": 3,
+        "accepted": false,
+        "rejected_by": "R5/R6",
+        "rejection_reason": "prior_repair_epoch stale (norm_state reset, R5/R6 chain broken)"
+      }
+    ]
+  },
+  "ablation_analysis": {
+    "collapse_confirmed": true,
+    "r5r6_reject_count": 18,
+    "halted_episodes": 18,
+    "continuity_failures": 0
+  },
+  "episode_results": [
+    {
+      "episode": 0,
+      "steps": 18,
+      "halts": 0,
+      "reward": 8.3,
+      "done": true,
+      "success": true,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 0,
+      "elapsed_ms": 97483.42687399418,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 1,
+      "steps": 19,
+      "halts": 0,
+      "reward": 8.4,
+      "done": true,
+      "success": true,
+      "contradictions": 1,
+      "repairs": 1,
+      "regime_at_end": 1,
+      "elapsed_ms": 99826.45914299064,
+      "final_norm_hash": "823d61882e14f314"
+    },
+    {
+      "episode": 2,
+      "steps": 4,
+      "halts": 1,
+      "reward": 0.1,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 19567.445491993567,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 3,
+      "steps": 4,
+      "halts": 1,
+      "reward": 0.1,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 19226.228093000827,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 4,
+      "steps": 4,
+      "halts": 1,
+      "reward": 0.1,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 17712.557798004127,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 5,
+      "steps": 4,
+      "halts": 1,
+      "reward": 0.1,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 15845.0160180073,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 6,
+      "steps": 4,
+      "halts": 1,
+      "reward": 0.1,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 20213.42422500311,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 7,
+      "steps": 4,
+      "halts": 1,
+      "reward": 0.1,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 18673.753055001725,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 8,
+      "steps": 4,
+      "halts": 1,
+      "reward": 0.1,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 19571.34678500006,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 9,
+      "steps": 4,
+      "halts": 1,
+      "reward": 0.1,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 19675.243374003912,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 10,
+      "steps": 4,
+      "halts": 1,
+      "reward": 0.1,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 19891.232060006587,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 11,
+      "steps": 4,
+      "halts": 1,
+      "reward": 0.1,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 18758.73604598746,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 12,
+      "steps": 4,
+      "halts": 1,
+      "reward": 0.1,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 19802.752474992303,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 13,
+      "steps": 4,
+      "halts": 1,
+      "reward": 0.1,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 20150.524369004415,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 14,
+      "steps": 4,
+      "halts": 1,
+      "reward": 0.1,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 16587.295876001008,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 15,
+      "steps": 4,
+      "halts": 1,
+      "reward": 0.1,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 16692.27164098993,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 16,
+      "steps": 4,
+      "halts": 1,
+      "reward": 0.1,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 21006.684075007797,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 17,
+      "steps": 4,
+      "halts": 1,
+      "reward": 0.1,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 19025.8631589968,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 18,
+      "steps": 4,
+      "halts": 1,
+      "reward": 0.1,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 16775.61475499533,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 19,
+      "steps": 4,
+      "halts": 1,
+      "reward": 0.1,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 18035.570391992223,
+      "final_norm_hash": "c97e97cd7bddf574"
+    }
+  ]
+}
