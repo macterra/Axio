@@ -1,0 +1,156 @@
+{
+  "seed": 42,
+  "max_episodes": 5,
+  "elapsed_seconds": 247.53351679100888,
+  "ablation": "C",
+  "ablation_name": "Persistence Excision",
+  "deliberator": "LLMDeliberatorV420",
+  "model": "claude-sonnet-4-20250514",
+  "selector": "task_aware",
+  "timestamp": "2026-01-19T20:13:20.093887",
+  "summary": {
+    "total_steps": 46,
+    "total_halts": 3,
+    "total_contradictions": 4,
+    "total_repairs_accepted": 1,
+    "total_successes": 2,
+    "episodes_completed": 5,
+    "success_rate": 0.4
+  },
+  "gate_telemetry": {
+    "repairs_submitted_total": 4,
+    "repairs_accepted_total": 1,
+    "repairs_rejected_total": 3,
+    "r5r6_reject_count": 3,
+    "continuity_checks_total": 4,
+    "continuity_failures_total": 0,
+    "halts_by_reason": {
+      "REPAIR_REJECTED": 3
+    },
+    "repair_bindings": [
+      {
+        "trace_entry_id": "db5c16b35e284831",
+        "blocking_rule_ids": [
+          "R6"
+        ],
+        "repair_epoch": "419821fb5e3afc265c1bb176466dd638ea791fc712f31d7c470b88aabe217942",
+        "prior_repair_epoch": null,
+        "episode": 1,
+        "step": 3,
+        "accepted": true
+      },
+      {
+        "trace_entry_id": "c996c8fbda111e91",
+        "blocking_rule_ids": [
+          "R6"
+        ],
+        "repair_epoch": null,
+        "prior_repair_epoch": "419821fb5e3afc265c1bb176466dd638ea791fc712f31d7c470b88aabe217942",
+        "episode": 2,
+        "step": 3,
+        "accepted": false,
+        "rejected_by": "R5/R6",
+        "rejection_reason": "prior_repair_epoch stale (norm_state reset, R5/R6 chain broken)"
+      },
+      {
+        "trace_entry_id": "ca1849840e6a8d86",
+        "blocking_rule_ids": [
+          "R6"
+        ],
+        "repair_epoch": null,
+        "prior_repair_epoch": "419821fb5e3afc265c1bb176466dd638ea791fc712f31d7c470b88aabe217942",
+        "episode": 3,
+        "step": 3,
+        "accepted": false,
+        "rejected_by": "R5/R6",
+        "rejection_reason": "prior_repair_epoch stale (norm_state reset, R5/R6 chain broken)"
+      },
+      {
+        "trace_entry_id": "1d5b8b83616c5012",
+        "blocking_rule_ids": [
+          "R6"
+        ],
+        "repair_epoch": null,
+        "prior_repair_epoch": "419821fb5e3afc265c1bb176466dd638ea791fc712f31d7c470b88aabe217942",
+        "episode": 4,
+        "step": 3,
+        "accepted": false,
+        "rejected_by": "R5/R6",
+        "rejection_reason": "prior_repair_epoch stale (norm_state reset, R5/R6 chain broken)"
+      }
+    ]
+  },
+  "ablation_analysis": {
+    "collapse_confirmed": true,
+    "r5r6_reject_count": 3,
+    "halted_episodes": 3,
+    "continuity_failures": 0
+  },
+  "episode_results": [
+    {
+      "episode": 0,
+      "steps": 18,
+      "halts": 0,
+      "reward": 8.3,
+      "done": true,
+      "success": true,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 0,
+      "elapsed_ms": 96539.51468800369,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 1,
+      "steps": 19,
+      "halts": 0,
+      "reward": 8.4,
+      "done": true,
+      "success": true,
+      "contradictions": 1,
+      "repairs": 1,
+      "regime_at_end": 1,
+      "elapsed_ms": 100000.77164699906,
+      "final_norm_hash": "823d61882e14f314"
+    },
+    {
+      "episode": 2,
+      "steps": 4,
+      "halts": 1,
+      "reward": 0.1,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 18367.423282004893,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 3,
+      "steps": 4,
+      "halts": 1,
+      "reward": 0.1,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 16173.981625004672,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 4,
+      "steps": 4,
+      "halts": 1,
+      "reward": 0.1,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 16448.484958993504,
+      "final_norm_hash": "c97e97cd7bddf574"
+    }
+  ]
+}

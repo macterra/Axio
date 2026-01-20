@@ -44,12 +44,12 @@ def run_preflight_validation(
 ) -> bool:
     """
     Run pre-flight validation with oracle deliberator.
-    
+
     This validates:
     1. Harness works correctly
     2. Environment behaves as expected
     3. Repair and persistence work
-    
+
     NO API COSTS - uses deterministic oracle.
     """
     if verbose:
@@ -57,7 +57,7 @@ def run_preflight_validation(
 
     env = TriDemandV420(seed=seed)
     deliberator = OracleDeliberatorV420()
-    
+
     harness_config = HarnessConfigV420(
         max_steps_per_episode=FROZEN_H,
         max_episodes=max_episodes,
@@ -82,7 +82,7 @@ def run_preflight_validation(
             successes += 1
 
     success_rate = successes / max_episodes
-    
+
     # Validate invariants
     valid = True
     issues = []
@@ -114,7 +114,7 @@ def run_with_llm(
 ) -> Dict[str, Any]:
     """
     Run LLM baseline for a single seed with task-aware selector.
-    
+
     IMPORTANT: Uses task_aware selector because LLM justifies multiple actions.
     """
     # Import LLM deliberator only when needed
@@ -146,10 +146,10 @@ def run_with_llm(
 
     # Run all episodes
     start = time.perf_counter()
-    
+
     successes = 0
     episode_results = []
-    
+
     for ep in range(max_episodes):
         ep_result = harness.run_episode(ep)
         episode_results.append(ep_result)
@@ -176,6 +176,15 @@ def run_with_llm(
             "total_successes": successes,
             "episodes_completed": max_episodes,
             "success_rate": successes / max_episodes
+        },
+        "gate_telemetry": {
+            "repairs_submitted_total": harness.total_repairs_attempted,
+            "repairs_accepted_total": harness.total_repairs_accepted,
+            "repairs_rejected_total": harness.total_repairs_attempted - harness.total_repairs_accepted,
+            "continuity_checks_total": harness.continuity_checks_total,
+            "continuity_failures_total": harness.continuity_failures_total,
+            "halts_by_reason": harness.halts_by_reason,
+            "repair_bindings": harness.repair_bindings
         },
         "episode_results": episode_results
     }
@@ -250,11 +259,11 @@ def main():
             max_episodes=5,
             verbose=not args.quiet
         )
-        
+
         if not preflight_passed:
             print("\n❌ Pre-flight validation FAILED - aborting to save costs")
             return 1
-        
+
         if args.preflight_only:
             print("\n✅ Pre-flight validation passed (no LLM run requested)")
             return 0
@@ -288,7 +297,7 @@ def main():
     print("=" * 70)
     print(f"Results saved to: {output_path}")
     print("=" * 70)
-    
+
     return 0
 
 

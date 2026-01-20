@@ -1,0 +1,103 @@
+{
+  "seed": 42,
+  "max_episodes": 5,
+  "elapsed_seconds": 0.002923154999734834,
+  "ablation": "D",
+  "ablation_name": "Trace Excision (Golden Test)",
+  "deliberator": "TraceExcisedDeliberatorV420",
+  "selector": "task_aware",
+  "timestamp": "2026-01-19T20:16:50.919288",
+  "summary": {
+    "total_steps": 0,
+    "total_halts": 5,
+    "total_contradictions": 0,
+    "total_repairs_accepted": 0,
+    "total_successes": 0,
+    "episodes_completed": 5,
+    "success_rate": 0.0
+  },
+  "gate_telemetry": {
+    "repairs_submitted_total": 0,
+    "repairs_accepted_total": 0,
+    "repairs_rejected_total": 0,
+    "continuity_checks_total": 4,
+    "continuity_failures_total": 0,
+    "halts_by_reason": {
+      "DELIBERATION_FAILURE": 5
+    },
+    "repair_bindings": []
+  },
+  "ablation_analysis": {
+    "collapse_confirmed": true,
+    "no_feasible_halts": 0,
+    "halted_episodes": 5,
+    "actions_executed": -5
+  },
+  "episode_results": [
+    {
+      "episode": 0,
+      "steps": 1,
+      "halts": 1,
+      "reward": 0.0,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 0,
+      "elapsed_ms": 0.12480400619097054,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 1,
+      "steps": 1,
+      "halts": 1,
+      "reward": 0.0,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 0.15129399253055453,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 2,
+      "steps": 1,
+      "halts": 1,
+      "reward": 0.0,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 0.15966199862305075,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 3,
+      "steps": 1,
+      "halts": 1,
+      "reward": 0.0,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 0.2256259904243052,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 4,
+      "steps": 1,
+      "halts": 1,
+      "reward": 0.0,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 0.12567700468935072,
+      "final_norm_hash": "c97e97cd7bddf574"
+    }
+  ]
+}

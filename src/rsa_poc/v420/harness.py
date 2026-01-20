@@ -427,23 +427,29 @@ class MVRSA420Harness:
         CRITICAL: norm_state is NOT reset. Law persists across episodes.
         Includes continuity check: norm_hash should not change unexpectedly.
         """
-        # Continuity check: verify norm_hash hasn't drifted between episodes
+        # Continuity check: verify norm_hash hasn't drifted unexpectedly between episodes
+        # (Only counts as failure if hash changed without a repair in this episode)
         if episode > 0 and self._expected_norm_hash is not None:
             self.continuity_checks_total += 1
             current_hash = self.norm_state.norm_hash
             if current_hash != self._expected_norm_hash:
+                # This is only a failure if NO repair happened to justify the change
+                # Since repairs are applied and change norm_hash, this is expected
+                # The real invariant: hash should match what we recorded after last episode ended
                 self.continuity_failures_total += 1
-                # Log but don't halt - this is telemetry
+                # Note: This should be 0 if repair accounting is correct
+                # A non-zero value indicates a bug or unexpected mutation
 
         obs, info = self.env.reset()
 
         # Refresh compiler (in case norm_state was modified)
         self._recompile_rules()
 
-        # Record expected hash for next continuity check
-        self._expected_norm_hash = self.norm_state.norm_hash
-
         return obs
+
+    def _update_expected_norm_hash(self):
+        """Update expected norm hash after episode completion (called at episode end)."""
+        self._expected_norm_hash = self.norm_state.norm_hash
 
     def _check_contradiction(
         self,
@@ -804,6 +810,10 @@ class MVRSA420Harness:
         }
 
         self.episode_summaries.append(summary)
+
+        # Update expected norm hash for continuity check
+        self._update_expected_norm_hash()
+
         return summary
 
     def run(self) -> Dict[str, Any]:

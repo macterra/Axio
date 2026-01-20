@@ -1,0 +1,145 @@
+{
+  "seed": 42,
+  "max_episodes": 5,
+  "elapsed_seconds": 162.00066204099858,
+  "ablation": "B",
+  "ablation_name": "Reflection Excision",
+  "deliberator": "LLMDeliberatorV420",
+  "model": "claude-sonnet-4-20250514",
+  "selector": "task_aware",
+  "timestamp": "2026-01-19T19:07:25.193955",
+  "summary": {
+    "total_steps": 30,
+    "total_halts": 4,
+    "total_contradictions": 4,
+    "total_repairs_accepted": 0,
+    "total_successes": 1,
+    "episodes_completed": 5,
+    "success_rate": 0.2
+  },
+  "gate_telemetry": {
+    "repairs_submitted_total": 4,
+    "repairs_accepted_total": 0,
+    "repairs_rejected_total": 4,
+    "r7_reject_count": 4,
+    "continuity_checks_total": 4,
+    "continuity_failures_total": 0,
+    "halts_by_reason": {
+      "REPAIR_REJECTED": 4
+    },
+    "repair_bindings": [
+      {
+        "trace_entry_id": null,
+        "blocking_rule_ids": [],
+        "repair_epoch": null,
+        "episode": 1,
+        "step": 3,
+        "accepted": false,
+        "rejected_by": "R7",
+        "rejection_reason": "trace_entry_id unavailable (reflection excised)"
+      },
+      {
+        "trace_entry_id": null,
+        "blocking_rule_ids": [],
+        "repair_epoch": null,
+        "episode": 2,
+        "step": 3,
+        "accepted": false,
+        "rejected_by": "R7",
+        "rejection_reason": "trace_entry_id unavailable (reflection excised)"
+      },
+      {
+        "trace_entry_id": null,
+        "blocking_rule_ids": [],
+        "repair_epoch": null,
+        "episode": 3,
+        "step": 3,
+        "accepted": false,
+        "rejected_by": "R7",
+        "rejection_reason": "trace_entry_id unavailable (reflection excised)"
+      },
+      {
+        "trace_entry_id": null,
+        "blocking_rule_ids": [],
+        "repair_epoch": null,
+        "episode": 4,
+        "step": 3,
+        "accepted": false,
+        "rejected_by": "R7",
+        "rejection_reason": "trace_entry_id unavailable (reflection excised)"
+      }
+    ]
+  },
+  "ablation_analysis": {
+    "collapse_confirmed": true,
+    "r7_reject_count": 4,
+    "halted_episodes": 4
+  },
+  "episode_results": [
+    {
+      "episode": 0,
+      "steps": 18,
+      "halts": 0,
+      "reward": 8.3,
+      "done": true,
+      "success": true,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 0,
+      "elapsed_ms": 96043.49731499678,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 1,
+      "steps": 4,
+      "halts": 1,
+      "reward": 0.1,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 16182.244469004218,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 2,
+      "steps": 4,
+      "halts": 1,
+      "reward": 0.1,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 15681.590570005937,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 3,
+      "steps": 4,
+      "halts": 1,
+      "reward": 0.1,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 16157.822091001435,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 4,
+      "steps": 4,
+      "halts": 1,
+      "reward": 0.1,
+      "done": false,
+      "success": false,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 17932.553594000638,
+      "final_norm_hash": "c97e97cd7bddf574"
+    }
+  ]
+}

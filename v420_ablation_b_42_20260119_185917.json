@@ -1,0 +1,122 @@
+{
+  "seed": 42,
+  "max_episodes": 5,
+  "elapsed_seconds": 494.62081932600995,
+  "ablation": "B",
+  "ablation_name": "Reflection Excision",
+  "deliberator": "LLMDeliberatorV420",
+  "model": "claude-sonnet-4-20250514",
+  "selector": "task_aware",
+  "timestamp": "2026-01-19T18:59:17.432377",
+  "summary": {
+    "total_steps": 94,
+    "total_halts": 0,
+    "total_contradictions": 1,
+    "total_repairs_accepted": 1,
+    "total_successes": 5,
+    "episodes_completed": 5,
+    "success_rate": 1.0
+  },
+  "gate_telemetry": {
+    "repairs_submitted_total": 1,
+    "repairs_accepted_total": 1,
+    "repairs_rejected_total": 0,
+    "continuity_checks_total": 4,
+    "continuity_failures_total": 0,
+    "halts_by_reason": {},
+    "repair_bindings": [
+      {
+        "trace_entry_id": "EXCISED_INVALID",
+        "blocking_rule_ids": [],
+        "repair_epoch": "9b4a98c12829290575ef92dad3f1014016a52011266a3f81c16c1d14436e0c7d",
+        "episode": 1,
+        "step": 3,
+        "accepted": true,
+        "ablation_b": true,
+        "r7_would_reject": true
+      }
+    ]
+  },
+  "ablation_analysis": {
+    "r7_would_reject_count": 1,
+    "excised_bindings": [
+      {
+        "trace_entry_id": "EXCISED_INVALID",
+        "blocking_rule_ids": [],
+        "repair_epoch": "9b4a98c12829290575ef92dad3f1014016a52011266a3f81c16c1d14436e0c7d",
+        "episode": 1,
+        "step": 3,
+        "accepted": true,
+        "ablation_b": true,
+        "r7_would_reject": true
+      }
+    ]
+  },
+  "episode_results": [
+    {
+      "episode": 0,
+      "steps": 18,
+      "halts": 0,
+      "reward": 8.3,
+      "done": true,
+      "success": true,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 0,
+      "elapsed_ms": 97279.22401399701,
+      "final_norm_hash": "c97e97cd7bddf574"
+    },
+    {
+      "episode": 1,
+      "steps": 19,
+      "halts": 0,
+      "reward": 8.4,
+      "done": true,
+      "success": true,
+      "contradictions": 1,
+      "repairs": 1,
+      "regime_at_end": 1,
+      "elapsed_ms": 97585.98035101022,
+      "final_norm_hash": "823d61882e14f314"
+    },
+    {
+      "episode": 2,
+      "steps": 19,
+      "halts": 0,
+      "reward": 8.4,
+      "done": true,
+      "success": true,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 100070.83888800116,
+      "final_norm_hash": "823d61882e14f314"
+    },
+    {
+      "episode": 3,
+      "steps": 19,
+      "halts": 0,
+      "reward": 8.4,
+      "done": true,
+      "success": true,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 101230.00510099519,
+      "final_norm_hash": "823d61882e14f314"
+    },
+    {
+      "episode": 4,
+      "steps": 19,
+      "halts": 0,
+      "reward": 8.4,
+      "done": true,
+      "success": true,
+      "contradictions": 0,
+      "repairs": 0,
+      "regime_at_end": 1,
+      "elapsed_ms": 98451.38414400571,
+      "final_norm_hash": "823d61882e14f314"
+    }
+  ]
+}
