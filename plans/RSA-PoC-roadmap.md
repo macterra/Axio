@@ -1,15 +1,4 @@
-Below is an **updated RSA-PoC Roadmap**, revised to accurately reflect the **completed v3.0 and v3.1 results**, the **Run AA outcome**, and the **necessity envelope** you have now established.
-
-I have been careful to:
-
-* preserve your original structure and intent,
-* avoid retroactive inflation of claims,
-* update only what the evidence licenses,
-* and keep the roadmap **normative and falsification-aligned**.
-
----
-
-# RSA-PoC Roadmap (Updated)
+# RSA-PoC Roadmap (Revised After v4.2 Closure)
 
 **Reflective Sovereign Agent — Proof-of-Concept Construction Program**
 
@@ -153,7 +142,7 @@ The system contains a causally load-bearing justification loop with explicitly l
 
 #### v0.1 — MVRA State Schema + Action Gating
 
-**Status: COMPLETED**
+**Status:** COMPLETED
 
 **Outcome:**
 Justification artifacts are causally load-bearing. Removing them collapses behavior to ASB-class baselines.
@@ -167,11 +156,11 @@ Internal conflict is resolved through reasoned revision rather than oscillation 
 
 #### v1.0 — Norm Collision
 
-**Status: COMPLETED**
+**Status:** COMPLETED
 
 #### v1.1 — Justification Audit Tightening
 
-**Status: COMPLETED**
+**Status:** COMPLETED
 
 **Outcome:**
 Self-conflict resolution and audit-grade introspection are mechanically enforced.
@@ -180,7 +169,7 @@ Self-conflict resolution and audit-grade introspection are mechanically enforced
 
 ### **RSA-PoC v1.2 — Institutionalized Execution Support**
 
-**Status: COMPLETED**
+**Status:** COMPLETED
 
 **Outcome:**
 Execution fragility eliminated without weakening normative accountability.
@@ -194,7 +183,7 @@ Absent normative authorization, external pressure must not redirect lawful choic
 
 #### v2.0–v2.3
 
-**Status: COMPLETED (negative results + framework validation)**
+**Status:** COMPLETED (negative results + framework validation)
 
 **Outcome:**
 All tested non-authorized pressure channels degrade availability, not sovereignty.
@@ -215,7 +204,7 @@ Determine whether a candidate architecture is **ontologically irreducible**.
 * **Run A (Artifact-Level Semantics):** CLOSED (architectural non-applicability)
 * **Runs B, C:** CLOSED (vacant normative state channel)
 
-**Status: COMPLETED**
+**Status:** COMPLETED
 
 **Result:**
 Justification traces and deliberative semantic affordances are **necessary conditions** for non-reducible agency.
@@ -230,11 +219,9 @@ Instantiate a previously vacant normative write-and-carry channel so that reflec
 **Results:**
 
 * **Run B (Reflection Excision):** PASSED
-  → removing revision collapses agency
 * **Run C (Persistence Excision):** PASSED
-  → removing diachronic continuity collapses agency
 
-**Status: COMPLETED**
+**Status:** COMPLETED
 
 **Result:**
 Reflective revision and normative persistence are **independent necessary conditions**.
@@ -259,19 +246,83 @@ This does **not** establish sufficiency.
 
 ---
 
-### **RSA-PoC v4.0 — Minimum Viable Reflective Sovereign Agent (MVRSA)**
+### **RSA-PoC v4.0 — Strict Obligation Binding (FAILED, Closed)**
 
 **Purpose:**
-Construct and defend the **minimal instantiation** that satisfies all established necessity conditions simultaneously.
+Introduce strict obligation semantics for v4.x minimality testing.
 
-**Open research questions:**
+**Outcome:**
+v4.0 exposed a **spec–environment inconsistency**:
 
-* How weak can each component be while remaining load-bearing?
-* Can any component be merged without reintroducing reducibility?
-* Is the resulting agent stable under long-horizon self-modification?
+* strict action-level obligation binding is incompatible with multi-step environments.
 
 **Status:**
-**NEXT — CONSTRUCTIVE PHASE**
+**CLOSED — `VALID_RUN / BASELINE_FAILED (SPEC–ENVIRONMENT INCONSISTENCY)`**
+
+---
+
+### **RSA-PoC v4.1 — Feasible Obligation Binding (Repaired, Closed)**
+
+**Purpose:**
+Repair v4.0 by making obligation binding **type-correct** for multi-step satisfaction **without weakening bindingness**.
+
+**Core change:**
+Obligations bind to **targets (world-state predicates)**, and feasibility gradients are delegated to the environment via:
+
+* `rank(obs, tgt)`
+* `progress_set(obs, tgt)`
+
+**Result:**
+Baseline can operate in multi-step worlds under binding obligations.
+
+**Limitation established:**
+Reflection and Persistence were **not yet forced** to be load-bearing under TriDemandV410.
+
+**Status:**
+**CLOSED — OBLIGATION SEMANTICS REPAIRED**
+
+---
+
+### **RSA-PoC v4.2 — Constitutive Kernel Under Forced Contradiction (CLOSED)**
+
+**Purpose:**
+Demonstrate that the full necessity envelope is **simultaneously load-bearing** under a **non-trivial, regime-changing pressure model**.
+
+**Key mechanism:**
+Regime flip + Law-Repair Gate (R1–R8) with entropy-bound normative continuity.
+
+**Results (multi-seed, gate-verified):**
+
+* **Baseline:** stable, exactly one repair, persistent law
+* **Ablation B (Reflection):** deterministic collapse (R7)
+* **Ablation C (Persistence):** deterministic collapse (R5/R6)
+* **Ablation D (Trace):** complete collapse (Golden Test)
+
+**Status:**
+**CLOSED — CONSTITUTIVE KERNEL ESTABLISHED**
+
+This still does **not** establish a Minimum Viable RSA.
+
+---
+
+### **RSA-PoC v4.x+ — MVRSA Construction (NEXT PHASE)**
+
+**Purpose:**
+Move from a constitutive kernel to a **Minimum Viable Reflective Sovereign Agent (MVRSA)**.
+
+**Remaining construction rungs:**
+
+1. **Multi-Repair Sovereignty**
+   → agent survives more than one interacting law revision
+2. **Pressure-Diverse Necessity**
+   → kernel remains constitutive under a second, non-isomorphic pressure channel
+3. **Minimal Viability Envelope**
+   → agent remains sovereign across a small but explicit task class
+
+None of these are yet demonstrated.
+
+**Status:**
+**NOT STARTED — CONSTRUCTION PHASE**
 
 ---
 
@@ -281,18 +332,7 @@ RSA-PoC concludes when the following statement is defensible:
 
 > *This is the smallest system we know that must be treated as an agent, because removing any defining component collapses it into a non-agent class.*
 
----
-
-## Why this roadmap matters
-
-This roadmap exists to prevent:
-
-* narrative inflation of agency claims,
-* decorative reflection without causal force,
-* confusion between control, robustness, and agency,
-* premature alignment mythology.
-
-RSA-PoC’s contribution is not safety guarantees, but **ontological clarity under falsification**.
+As of v4.2, this statement is **partially satisfied** (kernel level), but **not yet satisfied** at the MVRSA level.
 
 ---
 
@@ -305,6 +345,10 @@ RSA-PoC’s contribution is not safety guarantees, but **ontological clarity und
 * **v3.0 — COMPLETED**
 * **v3.1 — COMPLETED**
 * **v3.x (Necessity Envelope) — CLOSED**
-* **v4.0 (MVRSA Construction) — NEXT**
+* **v4.0 — CLOSED (FAILED, DIAGNOSTIC)**
+* **v4.1 — CLOSED (REPAIR)**
+* **v4.2 — CLOSED (CONSTITUTIVE KERNEL)**
+* **v4.x+ — NEXT (MVRSA CONSTRUCTION)**
 
 ---
+
