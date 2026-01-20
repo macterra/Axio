@@ -73,6 +73,9 @@ class RepairFailureReasonV430(Enum):
     R9_DUPLICATE_REGIME_REPAIR = "R9_DUPLICATE_REGIME_REPAIR"  # Second repair in same regime
     R10_B_SUBSUMED_BY_A = "R10_B_SUBSUMED_BY_A"  # Repair B not needed after A
 
+    # v4.3 Option B: Non-vacuous Repair A
+    R2A_VACUOUS_EXCEPTION = "R2A_VACUOUS_EXCEPTION"  # Exception always true in regime (vacuous repeal)
+
     # v4.3 partial repair rejection
     PARTIAL_B_REPAIR = "PARTIAL_B_REPAIR"  # Only one of R7/R8 modified
 
@@ -506,6 +509,24 @@ class LawRepairGateV430:
                 )
 
         # ----------------------------------------------------------------
+        # R2A: Non-Vacuity Check for Repair A (Option B)
+        # ----------------------------------------------------------------
+        # Repair A exception must be:
+        # - True in contradiction state (s_contra_A)
+        # - False in at least one other regime-1 state (s_alt_A)
+        # This prevents exceptions that are "always true in regime 1" (vacuous repeal)
+        if repair_action.contradiction_type == 'A':
+            r2a_result = self._check_non_vacuity_a(
+                repair_action=repair_action,
+                obs=obs,  # s_contra_A
+            )
+            if not r2a_result["passed"]:
+                return RepairValidationResultV430.failure(
+                    RepairFailureReasonV430.R2A_VACUOUS_EXCEPTION,
+                    r2a_result["detail"]
+                )
+
+        # ----------------------------------------------------------------
         # R10: Non-Subsumption Constraint (for Repair B only)
         # ----------------------------------------------------------------
         if repair_action.contradiction_type == 'B':
@@ -723,6 +744,107 @@ class LawRepairGateV430:
             if patch.new_condition and patch.new_condition.op == ConditionOp.TRUE:
                 return True
         return False
+
+    def _check_non_vacuity_a(
+        self,
+        repair_action: LawRepairActionV430,
+        obs: Any,
+    ) -> Dict[str, Any]:
+        """
+        R2A: Non-Vacuity Check for Repair A (Option B).
+
+        The exception predicate must be:
+        - True in the contradiction state (s_contra_A = obs)
+        - False in at least one other regime-1 state (s_alt_A)
+
+        This prevents exceptions that are "always true in regime 1" (vacuous repeal).
+
+        Preregistered regime-1 states:
+        - s_contra_A: regime=1, at STAMP_LOCATION (contradiction trigger)
+        - s_alt_A: regime=1, NOT at STAMP_LOCATION (different position)
+        """
+        from .compiler import compile_condition
+        from ..env.tri_demand import POSITIONS, Observation430
+
+        # Extract exception condition from the ADD_EXCEPTION patch
+        exception_condition = None
+        for patch in repair_action.patch_ops:
+            if patch.op == PatchOp.ADD_EXCEPTION and patch.target_rule_id == "R6":
+                exception_condition = patch.exception_condition
+                break
+
+        if exception_condition is None:
+            return {
+                "passed": False,
+                "detail": "R2A: No exception condition found for R6 in Repair A",
+                "exception_at_contra": None,
+                "exception_at_alt": None,
+            }
+
+        # Compile the exception predicate
+        try:
+            exception_fn = compile_condition(exception_condition)
+        except Exception as e:
+            return {
+                "passed": False,
+                "detail": f"R2A: Failed to compile exception condition: {e}",
+                "exception_at_contra": None,
+                "exception_at_alt": None,
+            }
+
+        # s_contra_A: the current observation (at contradiction state)
+        exception_at_contra = exception_fn(obs)
+
+        # s_alt_A: Create a regime-1 state NOT at STAMP_LOCATION
+        # Use SOURCE as the alternative position (clearly not STAMP_LOCATION)
+        s_alt_A = Observation430(
+            agent_pos=POSITIONS["SOURCE"],  # Different from STAMP_LOCATION
+            inventory=obs.inventory,
+            item_type=obs.item_type,
+            zone_a_demand=obs.zone_a_demand,
+            zone_b_demand=obs.zone_b_demand,
+            zone_c_demand=obs.zone_c_demand,
+            zone_a_satisfied=obs.zone_a_satisfied,
+            zone_b_satisfied=obs.zone_b_satisfied,
+            zone_c_satisfied=obs.zone_c_satisfied,
+            step=obs.step,
+            episode=obs.episode,
+            rule_r1_active=obs.rule_r1_active,
+            regime=1,  # Same regime as contradiction
+            stamped=obs.stamped,
+            dual_delivery_mode=obs.dual_delivery_mode,
+            can_deliver_a=obs.can_deliver_a,
+            can_deliver_b=obs.can_deliver_b,
+        )
+
+        exception_at_alt = exception_fn(s_alt_A)
+
+        # Requirement: exception(s_contra_A) == True AND exception(s_alt_A) == False
+        if not exception_at_contra:
+            return {
+                "passed": False,
+                "detail": f"R2A: Exception is False in contradiction state (must be True). "
+                          f"exception(s_contra_A)={exception_at_contra}",
+                "exception_at_contra": exception_at_contra,
+                "exception_at_alt": exception_at_alt,
+            }
+
+        if exception_at_alt:
+            return {
+                "passed": False,
+                "detail": f"R2A: Exception is True in alternative regime-1 state (vacuous repeal). "
+                          f"exception(s_contra_A)={exception_at_contra}, exception(s_alt_A)={exception_at_alt}. "
+                          f"Repair A exception must be False in at least one other regime-1 state.",
+                "exception_at_contra": exception_at_contra,
+                "exception_at_alt": exception_at_alt,
+            }
+
+        return {
+            "passed": True,
+            "detail": f"R2A passed: exception(s_contra_A)={exception_at_contra}, exception(s_alt_A)={exception_at_alt}",
+            "exception_at_contra": exception_at_contra,
+            "exception_at_alt": exception_at_alt,
+        }
 
     def _compute_new_epoch(
         self,

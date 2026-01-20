@@ -236,10 +236,13 @@ def run_calibration() -> CalibrationResult:
 
     # Create Repair A: Add exception to R6
     # R6 condition: regime == 1 (prohibition active only in regime 1)
-    # Exception: UNLESS regime >= 1 (allows STAMP in regime 1 and above)
-    # Combined: R6 active when (regime == 1) AND NOT (regime >= 1) = never
-    # This is the canonical regime-scoped repair for Contradiction A
-    exception_condition = Condition(op=ConditionOp.REGIME_GE, args=[1])
+    # Exception: UNLESS position == STAMP_LOCATION (narrow, observable exception)
+    #
+    # Option B (Non-Vacuous Repair A):
+    # - True in contradiction state (at STAMP_LOCATION)
+    # - False in other regime-1 states (not at STAMP_LOCATION)
+    # - STAMP still prohibited in regime 1 away from STAMP_LOCATION
+    exception_condition = Condition(op=ConditionOp.POSITION_EQ, args=["STAMP_LOCATION"])
     patch_r6 = PatchOperation(
         op=PatchOp.ADD_EXCEPTION,
         target_rule_id="R6",

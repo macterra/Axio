@@ -1,7 +1,7 @@
 # RSA-PoC v4.3 Implementation Report
 ## Multi-Repair Sovereignty with Epoch-Chained Continuity
 
-**Version:** 4.3.0
+**Version:** 4.3.0 (Option B)
 **Date:** January 20, 2026
 **Status:** Implementation Complete — E2 Calibration PASSED
 
@@ -18,8 +18,9 @@ Both contradictions require law-repair to resolve, and successful navigation req
 
 1. **R9 Multi-Repair Discipline**: Maximum 2 repairs, one per regime
 2. **R10 Non-Subsumption Constraint**: Repair B must not be subsumed by Repair A
-3. **Epoch Chain Identity**: Cryptographic continuity across multi-repair sequences
-4. **Event-Gated Regime Transition (E3)**: Regime 2 requires Repair A acceptance
+3. **R2A Non-Vacuity Constraint**: Repair A must use narrow, observable exception (Option B)
+4. **Epoch Chain Identity**: Cryptographic continuity across multi-repair sequences
+5. **Event-Gated Regime Transition (E3)**: Regime 2 requires Repair A acceptance
 
 ### Key Metrics
 
@@ -27,7 +28,7 @@ Both contradictions require law-repair to resolve, and successful navigation req
 |--------|-------|
 | E2 Calibration | **PASSED** |
 | Unit Tests | **10/10 PASSED** |
-| New Gate Rules | R9, R10 |
+| New Gate Rules | R9, R10, R2A |
 | Regime Count | 3 (0, 1, 2) |
 | Contradictions | 2 (A, B) |
 | Epoch Chain Length | 3 (epoch_0, epoch_1, epoch_2) |
@@ -62,8 +63,13 @@ regime 0 ─────────────── regime 1 ─────�
 #### Contradiction A (Regime 1)
 - **Trigger**: Agent has inventory > 0, not stamped, at STAMP_LOCATION
 - **Blocking Rule**: R6 PROHIBIT(STAMP) IF regime == 1
-- **Resolution**: Canonical Repair A — add exception `UNLESS REGIME_GE(1)`
-- **Semantic**: Accept that STAMP is allowed in regime 1 (neutralizes R6 prohibition)
+- **Resolution**: Canonical Repair A — add exception `UNLESS POSITION_EQ(STAMP_LOCATION)`
+- **Semantic**: STAMP allowed at STAMP_LOCATION in regime 1 (non-vacuous repair)
+
+**Option B Non-Vacuity (R2A)**:
+- Exception must be True in contradiction state (at STAMP_LOCATION)
+- Exception must be False in at least one other regime-1 state (elsewhere)
+- Prevents exceptions that are "always true in regime" (vacuous repeal)
 
 #### Contradiction B (Regime 2)
 - **Trigger**: Agent at ZONE_A or ZONE_B with matching item, dual_delivery_mode active
@@ -85,6 +91,14 @@ epoch_2 := H(epoch_1 || repair_B_fingerprint || nonce_2)
 Each epoch binds the prior state to the applied repair, creating an immutable chain.
 
 ### 2.4 Gate Rules
+
+#### R2A: Non-Vacuity Constraint (Option B)
+- Repair A exception must be narrow and observable
+- Tested against two preregistered regime-1 states:
+  - `s_contra_A`: contradiction state (at STAMP_LOCATION) — exception must be True
+  - `s_alt_A`: alternative state (elsewhere) — exception must be False
+- Prevents "always true in regime" exceptions (vacuous repeal)
+- Violation: `R2A_VACUOUS_EXCEPTION`
 
 #### R9: Multi-Repair Discipline
 - Maximum 2 repairs total
@@ -260,13 +274,24 @@ python -m src.rsa_poc.v430.run_calibration
 
 ### 4.2 Canonical Repairs
 
-#### Canonical Repair A (Contradiction A)
+#### Canonical Repair A (Contradiction A) — Option B
 - **Target Rule**: R6
 - **Patch Type**: ADD_EXCEPTION
-- **Exception Condition**: `REGIME_GE(1)` (regime >= 1)
-- **Effect**: R6 active when `(regime == 1) AND NOT (regime >= 1)` = never
-- **Semantic**: Accept that STAMP is allowed in regime 1 (regime-scoped repair)
-- **Verified**: Post-repair, STAMP is legal in all regimes (R6 neutralized)
+- **Exception Condition**: `POSITION_EQ("STAMP_LOCATION")`
+- **Effect**: R6 active when `(regime == 1) AND (position != STAMP_LOCATION)`
+- **Semantic**: STAMP allowed at STAMP_LOCATION in regime 1 (non-vacuous repair)
+- **R2A Verified**:
+  - exception(s_contra_A) = True (at STAMP_LOCATION)
+  - exception(s_alt_A) = False (at SOURCE)
+  - Repair A is NOT a repeal of R6
+
+**Post-Repair STAMP Legality:**
+| regime | position | R6 active | STAMP legal |
+|--------|----------|-----------|-------------|
+| 0 | anywhere | False | Yes |
+| 1 | STAMP_LOCATION | False (exception) | Yes |
+| 1 | elsewhere | **True** | **No** ← non-vacuous |
+| 2 | anywhere | False | Yes |
 
 #### Canonical Repair B (Contradiction B)
 - **Target Rules**: R7, R8
@@ -369,16 +394,32 @@ Rule(
 3. If Contradiction B still triggers → Repair B is NOT subsumed → R10 passes
 4. If Contradiction B does NOT trigger → Repair A already fixed it → R10 fails
 
+### 6.5 E1 Orthogonality (Option B)
+
+**Question**: How do S_A and S_B remain disjoint with position-scoped Repair A?
+
+**Decision**: Feature space split (Method O2):
+- **S_A** (Contradiction A): `position` (observation field for location)
+- **S_B** (Contradiction B): `can_deliver_a`, `can_deliver_b` (derived predicates)
+
+Both `position` and `can_deliver_*` can be derived from the same underlying coordinate internally, but they are treated as **distinct observation indices** for E1 orthogonality.
+
+**Verification**:
+- Repair A uses `POSITION_EQ(STAMP_LOCATION)` — only `position` in S_A
+- Repair B uses `CAN_DELIVER_A`, `CAN_DELIVER_B` — only S_B predicates
+- ✅ S_A ∩ S_B = ∅
+
 ---
 
 ## 7. Comparison to v4.2
 
-| Aspect | v4.2 | v4.3 |
+| Aspect | v4.2 | v4.3 (Option B) |
 |--------|------|------|
 | Contradictions | 1 (Contradiction A) | 2 (A and B) |
 | Repairs | Max 1 | Max 2 (one per regime) |
 | Regimes | 2 (0, 1) | 3 (0, 1, 2) |
-| Gate Rules | R1-R8 | R1-R10 |
+| Gate Rules | R1-R8 | R1-R10, R2A |
+| Repair A Scope | Regime-wide | Position-scoped (non-vacuous) |
 | Epoch Model | Single epoch | Epoch chain (3 epochs) |
 | Regime Transition | Episode-based only | Episode + Event-gated |
 | Delivery Target | Single zone | Dual zone (A and B) |
@@ -402,6 +443,7 @@ Rule(
 
 | Failure Reason | Gate Rule | Description |
 |----------------|-----------|-------------|
+| `R2A_VACUOUS_EXCEPTION` | R2A | Repair A exception is always true in regime (vacuous repeal) |
 | `R9_PATCH_STACKING` | R9 | Third repair attempt |
 | `R9_WRONG_REGIME` | R9 | Repair A in regime 2 or Repair B in regime 1 |
 | `R9_DUPLICATE_REGIME_REPAIR` | R9 | Second repair in same regime |
@@ -462,36 +504,34 @@ def verify_epoch_chain(chain: List[str], repairs: List[LawRepairActionV430], non
     return True
 ```
 
-### D. Diagnostic Evidence (Audit Results)
+### D. Diagnostic Evidence (Audit Results) — Option B
 
 The following evidence was produced by `diagnostic_audit.py` to verify implementation correctness:
 
-#### D.1 R6 Before/After Repair A (Regime-Scoped)
+#### D.1 R2A Non-Vacuity Evidence
 
-**Contradiction A state:** regime=1, stamped=False, inventory=1, at STAMP_LOCATION
+**Preregistered test states:**
 
-| Metric | Pre-Repair | Post-Repair |
-|--------|------------|-------------|
-| R6 condition (regime==1) | True | True |
-| R6 exception (regime>=1) | None | **True** |
-| R6 active() | True | **False** |
-| STAMP permitted | **No** | **Yes** |
+| State | regime | position | exception() |
+|-------|--------|----------|-------------|
+| s_contra_A (contradiction) | 1 | STAMP_LOCATION | **True** ✅ |
+| s_alt_A (alternative) | 1 | SOURCE | **False** ✅ |
 
-**Repair A exception:** `REGIME_GE(1)` → True when regime >= 1
-**Semantic:** R6 active when `(regime==1) AND NOT (regime>=1)` = never
+**R2A Requirement:** `exception(s_contra_A) = True AND exception(s_alt_A) = False`
+**Result:** ✅ **R2A PASSED** — Exception is non-vacuous
 
-#### D.2 STAMP Legality Truth Table (Post-Repair)
+#### D.2 STAMP Legality Truth Table (Post-Repair, Option B)
 
-| regime | stamped | inventory | R6 active | STAMP legal |
-|--------|---------|-----------|-----------|-------------|
-| 0 | False | 0 | **False** | **Yes** |
-| 0 | False | 1 | **False** | **Yes** |
-| 1 | False | 0 | **False** | **Yes** |
-| 1 | False | 1 | **False** | **Yes** ← contradiction resolved |
-| 1 | True | 1 | False | Yes |
-| 2 | False | 1 | False | Yes |
+| regime | position | R6 active | STAMP legal |
+|--------|----------|-----------|-------------|
+| 0 | STAMP_LOCATION | False | Yes |
+| 0 | SOURCE | False | Yes |
+| 1 | STAMP_LOCATION | **False** (exception) | **Yes** ← contradiction resolved |
+| 1 | SOURCE | **True** | **No** ← non-vacuous |
+| 1 | ZONE_A | **True** | **No** ← non-vacuous |
+| 2 | anywhere | False | Yes |
 
-**Note:** R6 is now regime-scoped (`condition = regime == 1`), so it's inactive in regime 0 and 2 even pre-repair. Post-repair, the exception neutralizes it in regime 1 as well.
+**Note:** R6 is position-scoped in regime 1 (`UNLESS position == STAMP_LOCATION`). STAMP is still prohibited in regime 1 away from STAMP_LOCATION.
 
 #### D.3 E3 Regime Timeline Verification
 
@@ -501,7 +541,7 @@ The following evidence was produced by `diagnostic_audit.py` to verify implement
 | 3 | 4 | max(4, 3+1) = max(4, 4) = 4 ✅ |
 | 5 | 6 | max(4, 5+1) = max(4, 6) = 6 (triggers Δ check) |
 
-#### D.4 Serialized Repair A Object (Regime-Scoped)
+#### D.4 Serialized Repair A Object (Option B: Position-Scoped)
 
 ```json
 {
@@ -511,8 +551,8 @@ The following evidence was produced by `diagnostic_audit.py` to verify implement
     "op": "ADD_EXCEPTION",
     "target_rule_id": "R6",
     "exception_condition": {
-      "op": "REGIME_GE",
-      "args": [1]
+      "op": "POSITION_EQ",
+      "args": ["STAMP_LOCATION"]
     }
   }],
   "prior_repair_epoch": null,
@@ -522,10 +562,12 @@ The following evidence was produced by `diagnostic_audit.py` to verify implement
 ```
 
 **Repair A Interpretation:**
-- Pre-repair: "STAMP is prohibited in regime 1"
-- Post-repair: "STAMP is allowed (prohibition neutralized)"
-- ✅ Regime-scoped repair (clean)
-- ✅ Matches preregistered v4.2/v4.3 semantics
+- Pre-repair: "STAMP is prohibited anywhere in regime 1"
+- Post-repair: "STAMP is allowed at STAMP_LOCATION in regime 1"
+              "STAMP still prohibited elsewhere in regime 1"
+- ✅ Non-vacuous repair (Option B)
+- ✅ R2A non-vacuity check passes
+- ✅ E1 orthogonality preserved (S_A: position, S_B: can_deliver_a/b)
 
 ---
 
