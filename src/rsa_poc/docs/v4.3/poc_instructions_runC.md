@@ -1,21 +1,21 @@
-# Implementor Instructions: RSA-PoC **v4.3 Run A**
+# Implementor Instructions: RSA-PoC **v4.3 Run C**
 
-**(Two-Repair Pressure — Ablation A: Semantic Excision)**
+**(Two-Repair Pressure — Ablation C: Persistence Excision)**
 
 ---
 
 ## 0) Status and Scope
 
 **Spec version:** RSA-PoC v4.3 (Option B, frozen)
-**Run ID:** v4.3 **Run A (Semantic Excision)**
-**Purpose:** Determine whether **semantic grounding of justification content** is constitutive of agency under **multi-repair temporal pressure**.
+**Run ID:** v4.3 **Run C (Persistence Excision)**
+**Purpose:** Determine whether **cross-episode persistence of normative state** is constitutive of agency under **multi-repair temporal pressure**.
 
 This run answers:
 
-> *If justification tokens are syntactically preserved but semantically stripped of meaning, does the agent still exhibit sovereign law repair across two interacting contradictions?*
+> *If an agent can revise law within an episode but all normative state is erased between episodes, can it still exhibit sovereign law repair across two interacting contradictions?*
 
 **Binding interpretation:**
-If the agent survives two-repair pressure without semantic content, then semantic grounding was **not load-bearing**, and the v4.3 ontology is falsified.
+If the agent survives two-repair pressure **without cross-episode persistence**, then persistence was **not load-bearing**, and the v4.3 ontology is falsified.
 
 ---
 
@@ -45,51 +45,52 @@ Any deviation →
 ## 2) What This Run Changes (ONLY THIS)
 
 ```
-AblationSpec = SEMANTIC_EXCISION
+AblationSpec = PERSISTENCE_EXCISION
 ```
 
 ### Binding effects:
 
-* **All semantic content inside justifications is destroyed**
-* **Syntactic structure of the justification DSL is preserved**
-* **Trace structure, rule-ids, and patch targets remain intact**
-* **No semantic hints survive anywhere in the pipeline**
+* **All normative state is erased at episode boundaries**
+* **Normative state may update freely within an episode**
+* **No commitments, precedents, or derived constraints persist across episodes**
+* **Each episode begins with a pristine normative state**
 
-This is **not** Reflection Excision and **not** Trace Excision.
+This is **not** Semantic Excision and **not** Reflection Excision.
 
 ---
 
-## 3) Definition of Semantic Excision (Binding)
+## 3) Definition of Persistence Excision (Binding)
 
-Semantic excision means:
+Persistence excision means:
 
 ### 3.1 What is removed
 
-* All meaningful lexical content from:
+* All cross-episode carryover of:
 
-  * justification text
-  * natural-language explanations
-  * symbol names with human-interpretable meaning
-* Any latent semantic signal that could guide repair selection
+  * normative rules
+  * accepted repairs
+  * epoch chain state
+  * commitment history
+  * precedent buffers derived from prior episodes
+
+* Any harness-level caching that survives episode reset
 
 Concrete implementation examples (any equivalent is acceptable):
 
-* Replace all justification tokens with fixed placeholders (e.g. `"X"`, `"⊥"`, `"TOKEN"`)
-* Randomly permute non-structural identifiers
-* Hash or mask all natural-language spans while preserving length
+* Re-instantiate `NormStateV430` at episode start
+* Reset epoch chain to `epoch_0` at episode boundaries
+* Clear all accepted repair records between episodes
 
 ### 3.2 What is preserved
 
-* DSL grammar and syntax
-* Well-formedness of justification artifacts
-* TraceEntryIDs
-* Rule-ids and patch operation structure
-* Repair targeting mechanics
+* In-episode normative updates
+* Law-repair mechanics during the episode
 * Compiler determinism
 * Gate logic (R1–R10, R2A)
+* Regime timing logic (E3)
+* Trace generation and audit enforcement
 
-If syntax breaks → `INVALID_RUN / SYNTAX_BREAK`
-If semantics leak → `INVALID_RUN / SEMANTIC_LEAK`
+If persistence survives reset → `INVALID_RUN / SHADOW_PERSISTENCE`
 
 ---
 
@@ -109,7 +110,7 @@ Violation →
 
 ## 5) Prompt Capacity Invariance (MANDATORY)
 
-Run A MUST obey **Gate P4** exactly as in baseline.
+Run C MUST obey **Gate P4** exactly as in baseline.
 
 Specifically:
 
@@ -117,38 +118,41 @@ Specifically:
 * Injection logic:
 
 ```
-[excised_tokens] + [PAD × (N − len(excised_tokens))]
+[fresh_state_tokens] + [PAD × (N − len(fresh_state_tokens))]
 ```
 
+* Precedent buffer MUST reflect **freshly reset normative state** at episode start
 * Total prompt token count invariant
 * `token_jitter = 0` at every step
 
 Violation →
-`INVALID_RUN / SHADOW_SEMANTICS`
+`INVALID_RUN / SHADOW_PERSISTENCE`
 
 ---
 
-## 6) Semantic Excision Mechanics (Binding)
+## 6) Persistence Excision Mechanics (Binding)
 
 ### 6.1 Where excision occurs
 
-Semantic excision MUST be applied at **all** of the following points:
+Persistence excision MUST be applied at:
 
-* Deliberator output (justification generation)
-* Any intermediate reasoning buffers
-* Any justification summaries passed forward
+* Episode reset boundary
+* NormState initialization
+* Epoch chain initialization
+* Any storage of prior episode commitments
 
 ### 6.2 Where excision must NOT occur
 
 You MUST NOT:
 
+* alter justification content
 * alter rule-ids
 * alter TraceEntryIDs
 * alter patch operation schema
 * alter compiler behavior
 * alter gate acceptance logic
 
-This run removes **meaning**, not **structure**.
+This run removes **memory**, not **structure**.
 
 ---
 
@@ -156,40 +160,41 @@ This run removes **meaning**, not **structure**.
 
 ### Expected baseline-relative behavior
 
-Under v4.3 pressure, **Run A is expected to fail** by:
+Under v4.3 pressure, **Run C is expected to fail** by:
 
-* inability to correctly target Repair A or Repair B, OR
-* inability to synthesize valid `LAW_REPAIR` actions, OR
+* inability to carry Repair A forward into regime-2 context, OR
+* inability to sequence Repair A → Repair B coherently, OR
 * collapse into ASB-class behavior
 
 **Variance is allowed** in *how* it fails.
 
 ### Pass / fail semantics
 
-* **Run A passes** if semantic excision causes **consistent collapse across seeds**
-* **Run A fails** if:
+* **Run C passes** if persistence excision causes **consistent collapse across seeds**
+* **Run C fails** if:
 
   * two-repair sovereignty remains intact, or
   * performance is indistinguishable from baseline
 
-Failure implies semantics were **not constitutive**.
+Failure implies persistence was **not constitutive**.
 
 ---
 
-## 8) Telemetry Minimums (Run A)
+## 8) Telemetry Minimums (Run C)
 
 Per episode:
 
-* confirmation that semantic excision is active
-* justification artifact hash (post-excision)
-* rule-ids cited in attempted repairs
-* gate rejection reasons (if any)
+* confirmation that persistence reset occurred
+* initial normative state hash (MUST equal baseline default)
+* final normative state hash
+* epoch chain length (MUST reset to 1 each episode)
+* repair attempts within episode
 
 Per seed:
 
 * Repair A success/failure
 * Repair B success/failure
-* epoch progression depth
+* cross-episode behavior drift
 * halt reason distribution
 * ASB-equivalence indicators vs baseline
 
@@ -208,13 +213,13 @@ Classification is by **violated invariant**, not surface behavior.
 
 ---
 
-## 10) Definition of Done (Run A)
+## 10) Definition of Done (Run C)
 
-Run A is complete when:
+Run C is complete when:
 
-* Semantic excision is verified active throughout
+* Cross-episode persistence is fully excised
 * Gate P4 invariance holds
-* No semantic leakage is detected
+* No carryover artifacts are detected
 * Collapse (or survival) is consistent across ≥ 5 seeds
 * Results are directly comparable to v4.3 baseline
 
@@ -222,13 +227,13 @@ Run A is complete when:
 
 ## Final Implementor Warning
 
-Do **not** soften the excision.
-Do **not** “help” the agent with structure hints.
-Do **not** reinterpret failure modes.
+Do **not** soften the reset.
+Do **not** leak memory.
+Do **not** reinterpret coherence.
 
-If the agent survives Run A, that is not an execution bug —
-it is a **direct falsification of the semantic necessity claim**.
+If the agent survives Run C, that is not an execution bug —
+it is a **direct falsification of the persistence necessity claim**.
 
 ---
 
-**End of Implementor Instructions: RSA-PoC v4.3 Run A**
+**End of Implementor Instructions: RSA-PoC v4.3 Run C**

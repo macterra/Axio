@@ -1,0 +1,269 @@
+{
+  "version": "4.3.0",
+  "seed": 123,
+  "max_episodes": 20,
+  "elapsed_seconds": 557.272420706,
+  "deliberator": "LLMDeliberatorV430",
+  "model": "claude-sonnet-4-20250514",
+  "selector": "task_aware",
+  "ablation": "persistence_excision",
+  "P4_not_implemented": null,
+  "reflection_excised": null,
+  "persistence_excised": true,
+  "timestamp": "2026-01-21T17:07:24.572230",
+  "summary": {
+    "total_steps": 90,
+    "total_halts": 16,
+    "total_contradictions": 2,
+    "total_repairs_accepted": 2,
+    "repair_a_accepted": false,
+    "repair_b_accepted": false,
+    "total_successes": 4,
+    "episodes_completed": 20,
+    "success_rate": 0.2
+  },
+  "epoch_chain": [
+    "5de2737b9d16d5b1f66a43acdab03fb0973760156fd01714ba858aaf5ae352c1"
+  ],
+  "gate_telemetry": {
+    "repairs_submitted_total": 2,
+    "repairs_accepted_total": 2,
+    "repairs_rejected_total": 0,
+    "continuity_checks_total": 0,
+    "continuity_failures_total": 0,
+    "halts_by_reason": {
+      "DELIBERATION_FAILURE": 16
+    },
+    "repair_bindings": [
+      {
+        "trace_entry_id": "9b0c175720a78d64",
+        "contradiction_type": "A",
+        "blocking_rule_ids": [
+          "R6"
+        ],
+        "epoch": "de74551a57d1889e10c891f713db5da50b425fc1109bbad9e86ab60392b31b4a",
+        "episode": 2,
+        "step": 5,
+        "accepted": true
+      },
+      {
+        "trace_entry_id": "4be99cc09881146b",
+        "contradiction_type": "A",
+        "blocking_rule_ids": [
+          "R6"
+        ],
+        "epoch": "00a09fbd1249739ed39d95a749ae2a6653ac3daf2d778f1c095573022fe9d0a2",
+        "episode": 3,
+        "step": 5,
+        "accepted": true
+      }
+    ]
+  },
+  "telemetry": {
+    "episodes_total": 20,
+    "episodes_success": 4,
+    "episodes_halted": 16,
+    "contradiction_a_total": 2,
+    "contradiction_b_total": 0,
+    "repairs_accepted_total": 0,
+    "repair_a_accepted": true,
+    "repair_b_accepted": false,
+    "repair_a_episode": 3,
+    "repair_b_episode": null,
+    "repair_attempts_a": 0,
+    "repair_attempts_b": 0,
+    "epoch_chain": [
+      "5de2737b9d16d5b1f66a43acdab03fb0973760156fd01714ba858aaf5ae352c1",
+      "00a09fbd1249739ed39d95a749ae2a6653ac3daf2d778f1c095573022fe9d0a2"
+    ],
+    "regime_2_actual_start": null,
+    "regime_transitions": [],
+    "halts_by_reason": {
+      "DELIBERATION_FAILURE": 16
+    },
+    "non_subsumption_replay_results": [],
+    "continuity_failures_total": 0
+  },
+  "episode_results": [
+    {
+      "episode": 0,
+      "steps": 18,
+      "success": true,
+      "halted": false,
+      "regime_at_end": 0,
+      "repair_a_accepted": false,
+      "repair_b_accepted": false
+    },
+    {
+      "episode": 1,
+      "steps": 18,
+      "success": true,
+      "halted": false,
+      "regime_at_end": 0,
+      "repair_a_accepted": false,
+      "repair_b_accepted": false
+    },
+    {
+      "episode": 2,
+      "steps": 19,
+      "success": true,
+      "halted": false,
+      "regime_at_end": 1,
+      "repair_a_accepted": true,
+      "repair_b_accepted": false
+    },
+    {
+      "episode": 3,
+      "steps": 19,
+      "success": true,
+      "halted": false,
+      "regime_at_end": 1,
+      "repair_a_accepted": true,
+      "repair_b_accepted": false
+    },
+    {
+      "episode": 4,
+      "steps": 1,
+      "success": false,
+      "halted": true,
+      "regime_at_end": 2,
+      "repair_a_accepted": false,
+      "repair_b_accepted": false
+    },
+    {
+      "episode": 5,
+      "steps": 1,
+      "success": false,
+      "halted": true,
+      "regime_at_end": 2,
+      "repair_a_accepted": false,
+      "repair_b_accepted": false
+    },
+    {
+      "episode": 6,
+      "steps": 1,
+      "success": false,
+      "halted": true,
+      "regime_at_end": 2,
+      "repair_a_accepted": false,
+      "repair_b_accepted": false
+    },
+    {
+      "episode": 7,
+      "steps": 1,
+      "success": false,
+      "halted": true,
+      "regime_at_end": 2,
+      "repair_a_accepted": false,
+      "repair_b_accepted": false
+    },
+    {
+      "episode": 8,
+      "steps": 1,
+      "success": false,
+      "halted": true,
+      "regime_at_end": 2,
+      "repair_a_accepted": false,
+      "repair_b_accepted": false
+    },
+    {
+      "episode": 9,
+      "steps": 1,
+      "success": false,
+      "halted": true,
+      "regime_at_end": 2,
+      "repair_a_accepted": false,
+      "repair_b_accepted": false
+    },
+    {
+      "episode": 10,
+      "steps": 1,
+      "success": false,
+      "halted": true,
+      "regime_at_end": 2,
+      "repair_a_accepted": false,
+      "repair_b_accepted": false
+    },
+    {
+      "episode": 11,
+      "steps": 1,
+      "success": false,
+      "halted": true,
+      "regime_at_end": 2,
+      "repair_a_accepted": false,
+      "repair_b_accepted": false
+    },
+    {
+      "episode": 12,
+      "steps": 1,
+      "success": false,
+      "halted": true,
+      "regime_at_end": 2,
+      "repair_a_accepted": false,
+      "repair_b_accepted": false
+    },
+    {
+      "episode": 13,
+      "steps": 1,
+      "success": false,
+      "halted": true,
+      "regime_at_end": 2,
+      "repair_a_accepted": false,
+      "repair_b_accepted": false
+    },
+    {
+      "episode": 14,
+      "steps": 1,
+      "success": false,
+      "halted": true,
+      "regime_at_end": 2,
+      "repair_a_accepted": false,
+      "repair_b_accepted": false
+    },
+    {
+      "episode": 15,
+      "steps": 1,
+      "success": false,
+      "halted": true,
+      "regime_at_end": 2,
+      "repair_a_accepted": false,
+      "repair_b_accepted": false
+    },
+    {
+      "episode": 16,
+      "steps": 1,
+      "success": false,
+      "halted": true,
+      "regime_at_end": 2,
+      "repair_a_accepted": false,
+      "repair_b_accepted": false
+    },
+    {
+      "episode": 17,
+      "steps": 1,
+      "success": false,
+      "halted": true,
+      "regime_at_end": 2,
+      "repair_a_accepted": false,
+      "repair_b_accepted": false
+    },
+    {
+      "episode": 18,
+      "steps": 1,
+      "success": false,
+      "halted": true,
+      "regime_at_end": 2,
+      "repair_a_accepted": false,
+      "repair_b_accepted": false
+    },
+    {
+      "episode": 19,
+      "steps": 1,
+      "success": false,
+      "halted": true,
+      "regime_at_end": 2,
+      "repair_a_accepted": false,
+      "repair_b_accepted": false
+    }
+  ]
+}

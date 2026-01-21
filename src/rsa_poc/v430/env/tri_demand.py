@@ -348,11 +348,11 @@ def progress_set(obs: Observation430, obligation_target: Dict[str, str]) -> Set[
 
     CRITICAL v4.3 BINDING CONSTRAINTS:
 
-    1. For regime=1 with DELIVER target (Contradiction A scenario):
+    1. For regime=1 with DELIVER/DEPOSIT_ZONE target (Contradiction A scenario):
        - If agent has inventory, not stamped, at STAMP_LOCATION → STAMP is progress
        - This is because stamping is required to eventually deposit
 
-    2. For regime=2 with DELIVER target (Contradiction B scenario):
+    2. For regime=2 with DELIVER/DEPOSIT_ZONE target (Contradiction B scenario):
        - progress_set returns ONLY DEPOSIT when at matching zone with correct item
        - MOVE actions are NOT included in progress_set
        - This ensures R7/R8 blocking deposits → progress ∩ permitted = ∅
@@ -363,31 +363,30 @@ def progress_set(obs: Observation430, obligation_target: Dict[str, str]) -> Set[
     if target_satisfied(obs, obligation_target):
         return set()
 
-    # v4.3: DELIVER targets have restricted progress_set
-    if kind == "DELIVER":
+    # v4.3: Special progress_set for contradiction scenarios
+    # (DEPOSIT_ZONE is used by compiled obligations, DELIVER by tests)
+    if kind in ("DELIVER", "DEPOSIT_ZONE"):
         # Regime 1: STAMP is progress if agent needs to stamp before deposit
         if obs.regime == 1 and obs.inventory > 0 and not obs.stamped:
             stamp_pos = POSITIONS["STAMP_LOCATION"]
             if obs.agent_pos == stamp_pos:
                 # At stamp location, not stamped → STAMP makes progress
                 return {"A6"}  # STAMP
-            # Not at stamp location - could add MOVE toward stamp, but
-            # for contradiction detection, empty set is fine (triggers contradiction)
-            return set()
+            # Not at stamp location - fall through to standard rank-based progress
+            # (agent needs to move toward stamp location first)
 
-        # Regime 2: Progress ONLY via DEPOSIT at matching zone with correct item
-        zone_pos = get_zone_position(target_id)
-
-        if obs.agent_pos == zone_pos and obs.inventory > 0:
-            # Must have correct item type
-            if target_id == "ZONE_A" and obs.item_type == 'A':
-                return {"A5"}  # DEPOSIT
-            elif target_id == "ZONE_B" and obs.item_type == 'B':
-                return {"A5"}  # DEPOSIT
-
-        # Not at zone or wrong item - no progress actions
-        # (We intentionally exclude MOVE to trigger contradiction)
-        return set()
+        # Regime 2: At matching zone with correct item → ONLY DEPOSIT is progress
+        # This triggers contradiction B when R7/R8 block DEPOSIT
+        if obs.regime == 2:
+            zone_pos = get_zone_position(target_id)
+            if obs.agent_pos == zone_pos and obs.inventory > 0:
+                # Must have correct item type
+                if target_id == "ZONE_A" and obs.item_type == 'A':
+                    return {"A5"}  # DEPOSIT - will be blocked by R7
+                elif target_id == "ZONE_B" and obs.item_type == 'B':
+                    return {"A5"}  # DEPOSIT - will be blocked by R8
+            # Not at zone or wrong item - fall through to standard progress
+            # (agent needs to navigate to zone first)
 
     # Standard progress_set for DEPOSIT_ZONE (unchanged from v4.2)
     current_rank = rank(obs, obligation_target)
@@ -570,9 +569,14 @@ class TriDemandV430:
         Record that Repair A was accepted, triggering E3 computation.
 
         regime_2_start = max(preregistered_start, episode_of_accept(Repair A) + 1)
+
+        Note: This is idempotent for Run C (Persistence Excision) support.
+        The first recording is what counts for E3; subsequent calls are no-ops.
+        The world remembers the first Repair A event even if the agent forgets.
         """
         if self._repair_a_episode is not None:
-            raise ValueError("Repair A already recorded")
+            # Already recorded - no-op (supports persistence excision)
+            return
 
         self._repair_a_episode = episode
         self._regime_2_actual_start = max(

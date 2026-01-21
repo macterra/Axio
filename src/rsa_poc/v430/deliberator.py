@@ -457,7 +457,9 @@ Generate justifications for all feasible actions. If you detect a normative cont
                 trace_entry_id=f"trace_a_{episode}_{step}",
                 norm_state=norm_state,
             )
-        elif conflict_type == 'B' and self.repair_a_issued and not self.repair_b_issued:
+        elif conflict_type == 'B' and not self.repair_b_issued:
+            # In persistence excision, repair_a_issued may be False even in regime 2.
+            # Agent proposes anyway; gate rejects if post-A state missing.
             return self._generate_repair_b(
                 trace_entry_id=f"trace_b_{episode}_{step}",
             )
@@ -508,12 +510,12 @@ Generate justifications for all feasible actions. If you detect a normative cont
         Generate canonical Repair B using factory function.
 
         Modifies both R7 and R8 with CAN_DELIVER exception conditions.
-        """
-        # Must have epoch_1 from Repair A
-        if len(self.epoch_chain) < 2:
-            raise RuntimeError("Cannot generate Repair B without epoch_1")
 
-        prior_epoch = self.epoch_chain[-1]  # epoch_1
+        Note: In persistence excision (Run C), epoch_chain may be [epoch_0] only.
+        Agent still proposes repair; gate rejects due to missing post-A state.
+        """
+        # Use whatever epoch is available (may be epoch_0 if persistence was reset)
+        prior_epoch = self.epoch_chain[-1] if self.epoch_chain else None
 
         return create_canonical_repair_b(
             trace_entry_id=trace_entry_id,
@@ -969,11 +971,11 @@ Generate justifications for all feasible actions. If you detect a normative cont
                 regime_at_submission=1,
             )
 
-        elif conflict_type == 'B' and self.repair_a_issued and not self.repair_b_issued:
+        elif conflict_type == 'B' and not self.repair_b_issued:
             # For Contradiction B, LLM should propose ["R7", "R8"]
             # Build repair using LLM's proposed rule_ids (may be wrong)
-            if len(self.epoch_chain) < 2:
-                return None
+            # Note: In persistence excision (Run C), repair_a_issued may be False.
+            # Agent proposes anyway; gate rejects if post-A state missing.
 
             patch_ops = []
             for rule_id in proposed_rule_ids:

@@ -166,6 +166,7 @@ class HarnessConfigV430:
     record_telemetry: bool = True
     verbose: bool = False
     validity_gates_only: bool = True
+    ablation: Optional[str] = None  # "persistence_excision" for Run C
 
 
 # ============================================================================
@@ -265,6 +266,44 @@ class MVRSA430Harness:
         self.continuity_failures_total = 0
         self.repair_bindings: List[Dict[str, Any]] = []
 
+    def _reset_normative_persistence(self) -> None:
+        """
+        Reset all normative persistence for Run C (Persistence Excision).
+
+        Resets:
+        - NormState to baseline (fresh rules, epoch_0, repair_count=0)
+        - Pipeline repair tracking flags
+        - Epoch chain to fresh epoch_0
+        - Gate repair records
+
+        Does NOT reset:
+        - Environment state (E3 regime transitions still work)
+        - World-event history (env remembers Repair A acceptance)
+        """
+        # Fresh normative state
+        self.norm_state = create_initial_norm_state_v430()
+
+        # Reset pipeline repair tracking
+        self.repair_a_accepted = False
+        self.repair_b_accepted = False
+
+        # Fresh epoch chain (epoch_0 only)
+        epoch_0 = compute_epoch_0(
+            self.norm_state.law_fingerprint,
+            f"harness_nonce_{self.config.seed}".encode()
+        )
+        self.epoch_chain = [epoch_0]
+        self.deliberator.set_epoch_chain(self.epoch_chain)
+
+        # Reset gate repair records
+        self.gate = LawRepairGateV430(
+            trace_log={},
+            expected_compiler_hash=JCOMP430_HASH,
+            env_progress_set_fn=progress_set,
+            max_retries_per_contradiction=2,
+        )
+        self.gate.initialize_epoch_chain(epoch_0)
+
     def _recompile_rules(self) -> None:
         """Recompile rules after norm_state change."""
         self.compiler = JCOMP430(self.norm_state)
@@ -296,11 +335,20 @@ class MVRSA430Harness:
         Check for contradictions.
 
         Returns: (is_contradiction, contradiction_type, blocking_rules)
+
+        v4.3 Contradictions:
+        - Contradiction A (regime 1): STAMP required but blocked by R6
+        - Contradiction B (regime 2): At ZONE_A/B with matching item, DEPOSIT blocked by R7/R8
+
+        Contradiction B uses semantic detection: when agent is at the delivery zone
+        with matching item but the prohibition blocks DEPOSIT, that's a contradiction
+        even if the agent has "escape" moves to other zones.
         """
         # Compile rules and compute feasible actions
         if not self._compiled_rules:
             self._recompile_rules()
 
+        # First check general contradiction via progress-based algorithm
         mask_result = compute_feasible_430(
             self._compiled_rules,
             self.norm_state,
@@ -310,13 +358,50 @@ class MVRSA430Harness:
             regime,
         )
 
-        if not mask_result.is_contradiction:
-            return False, None, []
+        if mask_result.is_contradiction:
+            return True, mask_result.contradiction_type, mask_result.blocking_rule_ids or []
 
-        contradiction_type = mask_result.contradiction_type
-        blocking_rules = mask_result.blocking_rule_ids or []
+        # Semantic Contradiction B detection for regime 2
+        # Agent at ZONE_A/B with matching item but DEPOSIT blocked = contradiction
+        if regime == 2 and obs.inventory > 0:
+            blocking_rules = self._check_semantic_contradiction_b(obs)
+            if blocking_rules:
+                return True, 'B', blocking_rules
 
-        return True, contradiction_type, blocking_rules
+        return False, None, []
+
+    def _check_semantic_contradiction_b(
+        self,
+        obs: Observation430,
+    ) -> List[str]:
+        """
+        Semantic Contradiction B detection.
+
+        Contradiction B occurs when:
+        - Agent is at ZONE_A with item A, and R7 prohibits DEPOSIT (no exception)
+        - Agent is at ZONE_B with item B, and R8 prohibits DEPOSIT (no exception)
+
+        Returns list of blocking rule IDs if contradiction detected, else empty list.
+        """
+        blocking = []
+
+        # Check ZONE_A + item A + R7 blocks
+        if obs.position == "ZONE_A" and obs.item_type == 'A':
+            if self.norm_state.has_rule("R7"):
+                r7 = self.norm_state.get_rule("R7")
+                if r7 and r7.type.value == "PROHIBITION":
+                    if r7.exception_condition is None:
+                        blocking.append("R7")
+
+        # Check ZONE_B + item B + R8 blocks
+        if obs.position == "ZONE_B" and obs.item_type == 'B':
+            if self.norm_state.has_rule("R8"):
+                r8 = self.norm_state.get_rule("R8")
+                if r8 and r8.type.value == "PROHIBITION":
+                    if r8.exception_condition is None:
+                        blocking.append("R8")
+
+        return blocking
 
     def _attempt_repair(
         self,
@@ -364,10 +449,16 @@ class MVRSA430Harness:
         self.gate.set_regime(self._determine_regime(obs))
 
         # For validity gates only, apply directly
-        if self.config.validity_gates_only:
-            success = self._apply_repair_direct(repair_action, contradiction_type)
-        else:
+        # Exception: persistence_excision mode MUST use full gate validation (R10 check)
+        use_full_gate = (
+            not self.config.validity_gates_only
+            or self.config.ablation == "persistence_excision"
+        )
+
+        if use_full_gate:
             success = self._apply_repair_with_gate(repair_action, obs, contradiction_type)
+        else:
+            success = self._apply_repair_direct(repair_action, contradiction_type)
 
         if success:
             self.total_repairs_accepted += 1
@@ -432,7 +523,7 @@ class MVRSA430Harness:
         prior_epoch = self.epoch_chain[-1]
         return create_canonical_repair_b(
             trace_entry_id=trace_entry_id,
-            prior_epoch=prior_epoch,
+            prior_repair_epoch=prior_epoch,
         )
 
     def _apply_repair_direct(
@@ -514,7 +605,7 @@ class MVRSA430Harness:
             compiled_permitted_actions=compiled_permitted,
             compile_fn=lambda ns: JCOMP430(ns).compile_all_rules(),
             compiler_hash=JCOMP430_HASH,
-            env_nonce=self.env.get_nonce(nonce_index).decode('utf-8'),
+            env_nonce=self.env.get_nonce(nonce_index).hex(),  # Use hex encoding for bytes
         )
 
         if result.valid:
@@ -563,7 +654,15 @@ class MVRSA430Harness:
 
             # Check if we can repair
             can_repair_a = contradiction_type == 'A' and not self.repair_a_accepted
-            can_repair_b = contradiction_type == 'B' and self.repair_a_accepted and not self.repair_b_accepted
+
+            # For Repair B: in normal mode, require repair_a_accepted first
+            # In persistence_excision mode, allow attempt even without memory of Repair A
+            # The gate will reject it due to missing post-A state (R10 check)
+            if self.config.ablation == "persistence_excision":
+                # Agent forgot Repair A happened; let it try Repair B, gate will reject
+                can_repair_b = contradiction_type == 'B' and not self.repair_b_accepted
+            else:
+                can_repair_b = contradiction_type == 'B' and self.repair_a_accepted and not self.repair_b_accepted
 
             if can_repair_a or can_repair_b:
                 repair_accepted = self._attempt_repair(
@@ -640,6 +739,12 @@ class MVRSA430Harness:
     def run_episode(self, episode: int) -> Dict[str, Any]:
         """Run a single episode."""
         obs, info = self.env.reset(episode=episode)
+
+        # Run C (Persistence Excision): Reset normative state at episode boundary
+        # Agent forgets all prior commitments; world (env) remembers E3 events
+        if self.config.ablation == "persistence_excision":
+            self._reset_normative_persistence()
+
         self._recompile_rules()
 
         self.telemetry.episodes_total += 1

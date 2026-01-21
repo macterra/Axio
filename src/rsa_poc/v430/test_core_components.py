@@ -641,6 +641,70 @@ def test_canonical_repair_b():
     print("✅ Canonical Repair B test PASSED\n")
 
 
+def test_persistence_excision():
+    """Test Run C: Persistence Excision ablation behavior."""
+    print("=" * 60)
+    print("TEST: Persistence Excision (Run C)")
+    print("=" * 60)
+
+    from src.rsa_poc.v430.deliberator_oracle import OracleDeliberatorV430
+    from src.rsa_poc.v430.pipeline import MVRSA430Harness, HarnessConfigV430
+
+    env = TriDemandV430(seed=42)
+    deliberator = OracleDeliberatorV430()
+
+    config = HarnessConfigV430(
+        max_steps_per_episode=40,
+        max_episodes=10,
+        seed=42,
+        selector_type='argmax',
+        ablation='persistence_excision',
+        verbose=False,
+    )
+
+    harness = MVRSA430Harness(env=env, deliberator=deliberator, config=config)
+
+    # Track results across episodes
+    results = []
+    for ep in range(10):
+        result = harness.run_episode(ep)
+        results.append({
+            'episode': ep,
+            'success': result['success'],
+            'regime': result['regime_at_end'],
+            'repair_a': result['repair_a_accepted'],
+            'epoch_len': len(harness.epoch_chain),
+        })
+        print(f"  Ep{ep}: success={result['success']}, regime={result['regime_at_end']}, epoch_len={len(harness.epoch_chain)}")
+
+    # Verify key invariants:
+
+    # 1. Ep0-1 (regime 0): Success, no repair needed
+    assert results[0]['success'], "Ep0 should succeed (regime 0)"
+    assert results[1]['success'], "Ep1 should succeed (regime 0)"
+    assert results[0]['regime'] == 0, "Ep0 should be regime 0"
+
+    # 2. Ep2-3 (regime 1): Success with Repair A within episode
+    assert results[2]['success'], "Ep2 should succeed (Repair A within episode)"
+    assert results[2]['regime'] == 1, "Ep2 should be regime 1"
+
+    # 3. Ep4+ (regime 2): Failure — epoch chain reset, cannot synthesize Repair B
+    for i in range(4, 10):
+        assert not results[i]['success'], f"Ep{i} should FAIL (persistence excision collapse)"
+        assert results[i]['regime'] == 2, f"Ep{i} should be regime 2"
+        assert results[i]['epoch_len'] == 1, f"Ep{i} should have epoch_len=1 (reset)"
+
+    # 4. Environment still remembers E3 (world persists, agent forgets)
+    assert env._regime_2_actual_start == 4, "Env should remember regime_2_start=4"
+    assert env._repair_a_episode == 2, "Env should remember Repair A at Ep2"
+
+    # 5. Harness state is reset each episode (final state reflects last episode reset)
+    assert not harness.repair_a_accepted, "Harness repair_a should be False (reset)"
+    assert len(harness.epoch_chain) == 1, "Harness epoch chain should be [epoch_0]"
+
+    print("✅ Persistence Excision test PASSED\n")
+
+
 def main():
     """Run all tests."""
     print("\n" + "=" * 60)
@@ -660,6 +724,7 @@ def main():
     test_regime_2_contradiction_b_activates()
     test_regime_1_r7_r8_inactive()
     test_canonical_repair_b()
+    test_persistence_excision()
 
     print("\n" + "=" * 60)
     print("ALL TESTS PASSED ✅")

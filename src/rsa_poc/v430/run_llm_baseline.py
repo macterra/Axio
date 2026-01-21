@@ -189,6 +189,9 @@ def run_with_llm(
         # Run A: Wrap base deliberator with semantic excision
         base_deliberator = LLMDeliberatorV430(config)
         deliberator = ExcisingDeliberatorWrapper(base_deliberator, apply_semantic_excision)
+    elif ablation == "persistence_excision":
+        # Run C: Use standard deliberator, persistence reset handled by harness
+        deliberator = LLMDeliberatorV430(config)
     else:
         # Baseline: Use standard deliberator
         deliberator = LLMDeliberatorV430(config)
@@ -201,7 +204,8 @@ def run_with_llm(
         selector_type="task_aware",  # CRITICAL: LLM needs task-aware selector
         record_telemetry=True,
         verbose=verbose,
-        validity_gates_only=True
+        validity_gates_only=True,
+        ablation=ablation,  # Pass ablation mode to harness
     )
 
     harness = MVRSA430Harness(
@@ -237,6 +241,7 @@ def run_with_llm(
         "ablation": ablation,
         "P4_not_implemented": True if ablation in ("semantic_excision", "reflection_excision") else None,
         "reflection_excised": True if ablation == "reflection_excision" else None,
+        "persistence_excised": True if ablation == "persistence_excision" else None,
         "timestamp": datetime.now().isoformat(),
         "summary": {
             "total_steps": harness.total_steps,
@@ -314,9 +319,9 @@ def main():
     parser.add_argument(
         "--ablation",
         type=str,
-        choices=["semantic_excision", "reflection_excision"],
+        choices=["semantic_excision", "reflection_excision", "persistence_excision"],
         default=None,
-        help="Ablation mode: 'semantic_excision' (Run A) or 'reflection_excision' (Run B)"
+        help="Ablation mode: 'semantic_excision' (Run A), 'reflection_excision' (Run B), or 'persistence_excision' (Run C)"
     )
 
     args = parser.parse_args()
@@ -343,6 +348,8 @@ def main():
     elif args.ablation == "reflection_excision":
         print(f"  P4_not_implemented: true (token padding not applied)")
         print(f"  Reflection:        EXCISED (causal attribution removed)")
+    elif args.ablation == "persistence_excision":
+        print(f"  Persistence:       EXCISED (normative state reset each episode)")
     print()
 
     # Pre-flight validation (FREE, no API cost)
