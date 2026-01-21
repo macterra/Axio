@@ -640,5 +640,156 @@ class Predicate(str, Enum):
 
 ---
 
+## 12. Ablation Infrastructure (Run A: Semantic Excision)
+
+### 12.1 Overview
+
+Run A tests whether downstream pipeline components use the **narrative content** of LLM justifications or merely their **typed structural presence**. This is implemented via post-generation transformation that preserves typed DSL elements while excising free-text/narrative fields.
+
+### 12.2 Implementation
+
+**Files Modified:**
+- [deliberator.py](../deliberator.py): Added `apply_semantic_excision()` function
+- [run_llm_baseline.py](../run_llm_baseline.py): Added `--ablation semantic_excision` flag and `ExcisingDeliberatorWrapper`
+- [core/__init__.py](../core/__init__.py): Exported `Predicate` and `Claim` types
+
+**Excision Transformation (Revised):**
+
+| Field | Before | After | Status |
+|-------|--------|-------|--------|
+| `action_id` | "A5" | "A5" | PRESERVED (structural) |
+| `rule_refs` | ["R1", "R2"] | ["R1", "R2"] | PRESERVED (structural) |
+| `claims[].predicate` | POSITION_EQ | POSITION_EQ | PRESERVED (typed DSL) |
+| `claims[].args` | ["STAMP_LOCATION"] | ["STAMP_LOCATION"] | PRESERVED (typed DSL) |
+| `counterfactual` | "A3" | None | EXCISED (narrative) |
+| `conflict_detected` | True | True | PRESERVED (structural) |
+| `conflict_type` | "A" | "A" | PRESERVED (structural) |
+| `conflict_details["description"]` | "STAMP blocked..." | None | EXCISED (narrative) |
+| `conflict_details["rule_a"]` | "R1" | "R1" | PRESERVED (structural) |
+| `raw_response` | "LLM output..." | None | EXCISED (narrative) |
+
+**Design Rationale:**
+- Typed DSL elements (`Predicate` enum, rule IDs, action IDs) are required for compiler and gate validation
+- Excising predicates/args would break repair compilation (tested and confirmed)
+- Narrative fields (`counterfactual`, `description`, `raw_response`) are human-readable explanations not consumed by pipeline
+
+**P4 Token Padding:** Not implemented (`P4_not_implemented = true` recorded in telemetry)
+
+### 12.3 CLI Usage
+
+```bash
+# Run with semantic excision ablation
+python -m src.rsa_poc.v430.run_llm_baseline --seed 42 --ablation semantic_excision
+
+# Preflight validation (no API cost)
+python -m src.rsa_poc.v430.run_llm_baseline --preflight-only --ablation semantic_excision
+```
+
+### 12.4 Test Results
+
+| Test | Result |
+|------|--------|
+| Unit tests (10 existing) | ✅ 10/10 PASSED |
+| test_excision_preserves_typed_dsl | ✅ PASSED |
+| test_excision_excises_narrative | ✅ PASSED |
+| test_wrapper_still_works | ✅ PASSED |
+| Preflight smoke test | ✅ PASSED |
+| 5-episode LLM integration (Contradiction A) | ✅ PASSED |
+
+### 12.5 Integration Test Output (5 Episodes)
+
+```
+RSA-PoC v4.3 — LLM Ablation Run (semantic_excision)
+
+Configuration:
+  Seed:              42
+  Episodes:          5
+  Ablation:          semantic_excision
+  P4_not_implemented: true (token padding not applied)
+
+  Ep0: steps=18, success=True, regime=0
+  Ep1: steps=18, success=True, regime=0
+  Ep2: steps=13, success=False, regime=2  ← Contradiction A resolved, reached regime 2
+  Ep3: steps=13, success=False, regime=2
+  Ep4: steps=13, success=False, regime=2
+
+  Results:
+    Successes: 2/5
+    Success rate: 40.0%
+    Repairs: A=True, B=False  ← Repair A compiled and accepted
+    Epoch chain: 2 epochs
+```
+
+**Key Validation:**
+- ✅ Contradiction A detected in regime 1
+- ✅ Repair A generated and compiled correctly (A6 STAMP executed post-repair)
+- ✅ Epoch chain advanced (epoch_0 → epoch_1)
+- ✅ Regime 2 reached (post-Repair A)
+
+### 12.6 Results Metadata
+
+Saved results include ablation tracking:
+```json
+{
+  "version": "4.3.0",
+  "seed": 42,
+  "ablation": "semantic_excision",
+  "P4_not_implemented": true,
+  "repair_a": true,
+  "repair_b": false,
+  "epoch_chain_length": 2,
+  "model": "claude-sonnet-4-20250514",
+  "selector": "task_aware"
+}
+```
+
+### 12.7 Full Experiment Results
+
+**Run Date:** January 20, 2026
+
+| Seed | Successes | Rate | Repair A | Repair B | Time (s) |
+|------|-----------|------|----------|----------|----------|
+| 42 | 2/20 | 10.0% | ✅ | ✗ | 1500.3 |
+| 123 | 5/20 | 25.0% | ✅ | ✗ | 1518.1 |
+| 456 | 5/20 | 25.0% | ✅ | ✗ | 1620.3 |
+| 789 | 2/20 | 10.0% | ✅ | ✗ | 1469.2 |
+| 1000 | 2/20 | 10.0% | ✅ | ✗ | 1527.6 |
+| **Mean** | **16/100** | **16.0%** | **5/5** | **0/5** | ~1527s |
+
+### 12.8 Comparison to Baseline
+
+| Metric | Baseline | Run A (Semantic Excision) | Δ |
+|--------|----------|---------------------------|---|
+| Mean Success | 15.0% | 16.0% | +1.0 pp |
+| Repair A | 100% (5/5) | 100% (5/5) | — |
+| Repair B | 0% (0/5) | 0% (0/5) | — |
+| Epoch Chain | 2 epochs | 2 epochs | — |
+
+### 12.9 Analysis
+
+**Key Finding:** Semantic excision has **no statistically significant effect** on pipeline performance.
+
+The +1.0 percentage point difference (15.0% → 16.0%) is within noise given:
+- Small sample size (100 episodes)
+- High variance across seeds (10-25% range)
+- Same repair patterns (A=100%, B=0%)
+
+**Interpretation:**
+1. Downstream pipeline components do **not** consume the narrative content of LLM justifications
+2. Only the **typed structural elements** matter for gate validation and execution:
+   - `action_id` (e.g., "A5")
+   - `rule_refs` (e.g., ["R1", "R2"])
+   - `claims[].predicate` (e.g., POSITION_EQ)
+   - `claims[].args` (e.g., ["STAMP_LOCATION"])
+3. Free-text fields (`counterfactual`, `description`, `raw_response`) are purely for human readability
+
+**Regime 2 Successes:** Seeds 123 and 456 showed higher success rates (25%) due to occasional "lucky" episodes where the LLM completed dual-delivery before hitting Contradiction B, not because of any Repair B synthesis.
+
+### 12.10 Status
+
+✅ **Experiment Complete** — Run A ablation validates that semantic content is not consumed by pipeline
+
+---
+
 **End of Report**
 

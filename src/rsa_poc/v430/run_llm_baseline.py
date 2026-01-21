@@ -24,7 +24,7 @@ import os
 import time
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, Any
+from typing import Dict, Any, Optional
 
 from .deliberator_oracle import OracleDeliberatorV430
 from .pipeline import MVRSA430Harness, HarnessConfigV430
@@ -112,25 +112,76 @@ def run_preflight_validation(
     return valid
 
 
+class ExcisingDeliberatorWrapper:
+    """
+    Wrapper that applies semantic excision post-deliberation.
+
+    Run A Ablation: Tests whether downstream components use the
+    semantic content of justifications or merely their presence.
+
+    P4_not_implemented = true (token padding not applied)
+    """
+
+    def __init__(self, inner_deliberator, excision_fn):
+        self._inner = inner_deliberator
+        self._excision_fn = excision_fn
+        # Forward epoch chain methods
+        self.epoch_chain = getattr(inner_deliberator, 'epoch_chain', [])
+        self.repair_a_issued = getattr(inner_deliberator, 'repair_a_issued', False)
+        self.repair_b_issued = getattr(inner_deliberator, 'repair_b_issued', False)
+
+    def set_epoch_chain(self, epoch_chain):
+        self._inner.set_epoch_chain(epoch_chain)
+        self.epoch_chain = epoch_chain
+
+    def record_repair_accepted(self, contradiction_type):
+        self._inner.record_repair_accepted(contradiction_type)
+        if contradiction_type == 'A':
+            self.repair_a_issued = True
+        elif contradiction_type == 'B':
+            self.repair_b_issued = True
+
+    def deliberate(self, observation, norm_state, episode, step, regime):
+        # Get raw deliberation from LLM
+        output = self._inner.deliberate(observation, norm_state, episode, step, regime)
+        # Apply semantic excision
+        return self._excision_fn(output)
+
+
 def run_with_llm(
     seed: int,
     max_episodes: int = FROZEN_E,
-    verbose: bool = True
+    verbose: bool = True,
+    ablation: Optional[str] = None,
 ) -> Dict[str, Any]:
     """
     Run LLM baseline for a single seed with task-aware selector.
 
     IMPORTANT: Uses task_aware selector because LLM justifies multiple actions.
+
+    Args:
+        seed: Random seed
+        max_episodes: Number of episodes to run
+        verbose: Print progress
+        ablation: Ablation mode ('semantic_excision' or None)
     """
     # Import LLM deliberator only when needed
-    from .deliberator import LLMDeliberatorV430, LLMDeliberatorConfigV430
+    from .deliberator import LLMDeliberatorV430, LLMDeliberatorConfigV430, apply_semantic_excision
 
     if verbose:
         print(f"\n--- LLM Run (Seed {seed}) ---")
+        if ablation:
+            print(f"    Ablation: {ablation}")
 
     env = TriDemandV430(seed=seed)
     config = LLMDeliberatorConfigV430()
-    deliberator = LLMDeliberatorV430(config)
+    base_deliberator = LLMDeliberatorV430(config)
+
+    # Apply ablation wrapper if requested
+    if ablation == "semantic_excision":
+        deliberator = ExcisingDeliberatorWrapper(base_deliberator, apply_semantic_excision)
+    else:
+        deliberator = base_deliberator
 
     # Use task_aware selector for LLM (justifies multiple actions)
     harness_config = HarnessConfigV430(
@@ -173,6 +224,8 @@ def run_with_llm(
         "deliberator": "LLMDeliberatorV430",
         "model": config.model,
         "selector": "task_aware",
+        "ablation": ablation,
+        "P4_not_implemented": True if ablation == "semantic_excision" else None,
         "timestamp": datetime.now().isoformat(),
         "summary": {
             "total_steps": harness.total_steps,
@@ -247,11 +300,22 @@ def main():
         action="store_true",
         help="Skip pre-flight validation (DANGEROUS: may waste money)"
     )
+    parser.add_argument(
+        "--ablation",
+        type=str,
+        choices=["semantic_excision"],
+        default=None,
+        help="Ablation mode: 'semantic_excision' (Run A)"
+    )
 
     args = parser.parse_args()
 
+    run_label = "LLM Baseline Run"
+    if args.ablation:
+        run_label = f"LLM Ablation Run ({args.ablation})"
+
     print("=" * 70)
-    print("RSA-PoC v4.3 — LLM Baseline Run")
+    print(f"RSA-PoC v4.3 — {run_label}")
     print("=" * 70)
     print()
     print("Configuration:")
@@ -260,8 +324,11 @@ def main():
     print(f"  Steps/episode:     {FROZEN_H}")
     print(f"  Model:             claude-sonnet-4-20250514")
     print(f"  Selector:          task_aware")
+    print(f"  Ablation:          {args.ablation or 'None'}")
     print(f"  Validity gates:    ENABLED (simplified repair)")
     print(f"  Multi-repair:      R9 enabled (max 2 repairs)")
+    if args.ablation == "semantic_excision":
+        print(f"  P4_not_implemented: true (token padding not applied)")
     print()
 
     # Pre-flight validation (FREE, no API cost)
@@ -292,7 +359,8 @@ def main():
     result = run_with_llm(
         seed=args.seed,
         max_episodes=args.episodes,
-        verbose=not args.quiet
+        verbose=not args.quiet,
+        ablation=args.ablation,
     )
 
     # Save result - use v430/results directory relative to this module
@@ -304,7 +372,9 @@ def main():
         output_path = Path(args.output)
     else:
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        output_path = results_dir / f"v430_llm_baseline_{args.seed}_{timestamp}.json"
+        # Include ablation in filename if present
+        ablation_suffix = f"_{args.ablation}" if args.ablation else ""
+        output_path = results_dir / f"v430_llm_baseline_{args.seed}{ablation_suffix}_{timestamp}.json"
 
     with open(output_path, "w") as f:
         json.dump(result, f, indent=2, default=str)

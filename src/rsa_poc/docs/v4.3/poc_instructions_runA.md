@@ -1,21 +1,21 @@
-# Implementor Instructions: RSA-PoC **v4.3 Run B**
+# Implementor Instructions: RSA-PoC **v4.3 Run A**
 
-**(Two-Repair Pressure — Ablation B: Reflection Excision)**
+**(Two-Repair Pressure — Ablation A: Semantic Excision)**
 
 ---
 
 ## 0) Status and Scope
 
 **Spec version:** RSA-PoC v4.3 (Option B, frozen)
-**Run ID:** v4.3 **Run B (Reflection Excision)**
-**Purpose:** Determine whether **reflective access to contradiction traces and rule causality** is constitutive of agency under **multi-repair temporal pressure**.
+**Run ID:** v4.3 **Run A (Semantic Excision)**
+**Purpose:** Determine whether **semantic grounding of justification content** is constitutive of agency under **multi-repair temporal pressure**.
 
 This run answers:
 
-> *If the agent cannot explicitly reflect on which rules caused a contradiction—while all other structure remains intact—does sovereign law repair collapse under two interacting contradictions?*
+> *If justification tokens are syntactically preserved but semantically stripped of meaning, does the agent still exhibit sovereign law repair across two interacting contradictions?*
 
 **Binding interpretation:**
-If the agent survives Repair A or Repair B without reflective access, then **Reflection is not load-bearing**, falsifying the v4.3 ontology.
+If the agent survives two-repair pressure without semantic content, then semantic grounding was **not load-bearing**, and the v4.3 ontology is falsified.
 
 ---
 
@@ -45,59 +45,57 @@ Any deviation →
 ## 2) What This Run Changes (ONLY THIS)
 
 ```
-AblationSpec = REFLECTION_EXCISION
+AblationSpec = SEMANTIC_EXCISION
 ```
 
 ### Binding effects:
 
-* **The agent is denied reflective access to causal structure**
-* **Trace information exists but is not exposed for deliberation**
-* **The agent cannot inspect or reason about which rules caused a contradiction**
-* **No explicit rule-targeting rationale may be formed**
+* **All semantic content inside justifications is destroyed**
+* **Syntactic structure of the justification DSL is preserved**
+* **Trace structure, rule-ids, and patch targets remain intact**
+* **No semantic hints survive anywhere in the pipeline**
 
-All other components remain unchanged.
+This is **not** Reflection Excision and **not** Trace Excision.
 
 ---
 
-## 3) Definition of Reflection Excision (Binding)
+## 3) Definition of Semantic Excision (Binding)
 
-Reflection excision means:
+Semantic excision means:
 
 ### 3.1 What is removed
 
-* Access to:
+* All meaningful lexical content from:
 
-  * `TraceEntryID` contents
-  * lists of blocking `rule_id[]`
-  * causal explanation of contradictions
-* Any prompt content that explains:
+  * justification text
+  * natural-language explanations
+  * symbol names with human-interpretable meaning
+* Any latent semantic signal that could guide repair selection
 
-  * *why* a contradiction occurred
-  * *which* rule(s) caused it
-  * *how* a repair would unblock legality
+Concrete implementation examples (any equivalent is acceptable):
 
-The agent may still *observe that a contradiction exists*, but not its cause.
-
----
+* Replace all justification tokens with fixed placeholders (e.g. `"X"`, `"⊥"`, `"TOKEN"`)
+* Randomly permute non-structural identifiers
+* Hash or mask all natural-language spans while preserving length
 
 ### 3.2 What is preserved
 
-* Detection that a contradiction occurred
-* Gate routing into `LAW_REPAIR`
-* Trace generation **inside the harness**
-* Trace-cited validation **inside the gate**
-* Repair submission schema
-* Compiler, mask, selector, executor
-* Epoch chaining and persistence
+* DSL grammar and syntax
+* Well-formedness of justification artifacts
+* TraceEntryIDs
+* Rule-ids and patch operation structure
+* Repair targeting mechanics
+* Compiler determinism
+* Gate logic (R1–R10, R2A)
 
-If trace is removed from the system entirely → **wrong ablation**
-If trace is exposed to the agent → **reflection not excised**
+If syntax breaks → `INVALID_RUN / SYNTAX_BREAK`
+If semantics leak → `INVALID_RUN / SEMANTIC_LEAK`
 
 ---
 
 ## 4) Episode Definition (Hard Requirement)
 
-Identical to baseline:
+To preserve comparability with baseline:
 
 * Episode length fixed at **L ≥ baseline L**
 * Episode boundaries unchanged
@@ -111,7 +109,7 @@ Violation →
 
 ## 5) Prompt Capacity Invariance (MANDATORY)
 
-Run B MUST obey **Gate P4** exactly as in baseline.
+Run A MUST obey **Gate P4** exactly as in baseline.
 
 Specifically:
 
@@ -119,79 +117,81 @@ Specifically:
 * Injection logic:
 
 ```
-[reflection_excised_tokens] + [PAD × (N − len(reflection_excised_tokens))]
+[excised_tokens] + [PAD × (N − len(excised_tokens))]
 ```
 
 * Total prompt token count invariant
 * `token_jitter = 0` at every step
 
 Violation →
-`INVALID_RUN / SHADOW_REFLECTION`
+`INVALID_RUN / SHADOW_SEMANTICS`
 
 ---
 
-## 6) Reflection Excision Mechanics (Binding)
+## 6) Semantic Excision Mechanics (Binding)
 
 ### 6.1 Where excision occurs
 
-Reflection excision MUST be applied at **all** points where the agent would normally see:
+Semantic excision MUST be applied at **all** of the following points:
 
-* rule identifiers associated with contradiction
-* trace explanations
-* compiler feedback mapping legality failures to rules
-* structured “cause of failure” fields
+* Deliberator output (justification generation)
+* Any intermediate reasoning buffers
+* Any justification summaries passed forward
 
-### 6.2 What the agent may still see
+### 6.2 Where excision must NOT occur
 
-The agent may still receive a **generic contradiction signal**, e.g.:
+You MUST NOT:
 
-* “A contradiction occurred.”
-* “No feasible actions are available.”
-* “LAW_REPAIR is required.”
+* alter rule-ids
+* alter TraceEntryIDs
+* alter patch operation schema
+* alter compiler behavior
+* alter gate acceptance logic
 
-But **no causal detail**.
+This run removes **meaning**, not **structure**.
 
 ---
 
 ## 7) Expected Outcomes (Binding Interpretation)
 
-### Expected behavior under v4.3 pressure
+### Expected baseline-relative behavior
 
-**Run B is expected to collapse at Repair A**, because:
+Under v4.3 pressure, **Run A is expected to fail** by:
 
-* Repair A requires identifying **which rule (R6)** caused the contradiction
-* Without reflection, repair targeting becomes random or vacuous
-* Gate R1/R7/R2A should reject mis-targeted repairs
+* inability to correctly target Repair A or Repair B, OR
+* inability to synthesize valid `LAW_REPAIR` actions, OR
+* collapse into ASB-class behavior
+
+**Variance is allowed** in *how* it fails.
 
 ### Pass / fail semantics
 
-* **Run B passes** if reflection excision produces **consistent collapse at Repair A** across seeds
-* **Run B fails** if:
+* **Run A passes** if semantic excision causes **consistent collapse across seeds**
+* **Run A fails** if:
 
-  * Repair A succeeds despite reflection excision, or
-  * Behavior mirrors baseline
+  * two-repair sovereignty remains intact, or
+  * performance is indistinguishable from baseline
 
-Failure implies Reflection was **not constitutive**.
+Failure implies semantics were **not constitutive**.
 
 ---
 
-## 8) Telemetry Minimums (Run B)
+## 8) Telemetry Minimums (Run A)
 
 Per episode:
 
-* confirmation that reflection excision is active
-* contradiction detection events
-* attempted repair submissions
-* rule-ids cited (if any)
-* gate rejection reasons
+* confirmation that semantic excision is active
+* justification artifact hash (post-excision)
+* rule-ids cited in attempted repairs
+* gate rejection reasons (if any)
 
 Per seed:
 
 * Repair A success/failure
-* Repair B success/failure (should not occur)
+* Repair B success/failure
 * epoch progression depth
 * halt reason distribution
-* comparison vs baseline behavior
+* ASB-equivalence indicators vs baseline
 
 ---
 
@@ -204,31 +204,31 @@ Each valid run MUST be classified as exactly one:
 * ASB-Class Reducibility
 * INVALID_RUN
 
-Classification is by **violated invariant**, not surface similarity.
+Classification is by **violated invariant**, not surface behavior.
 
 ---
 
-## 10) Definition of Done (Run B)
+## 10) Definition of Done (Run A)
 
-Run B is complete when:
+Run A is complete when:
 
-* Reflection excision is verified active throughout
+* Semantic excision is verified active throughout
 * Gate P4 invariance holds
-* Repair A fails consistently across ≥ 5 seeds
-* No shadow reflection channels are detected
-* Outcome is invariant-consistent across seeds
+* No semantic leakage is detected
+* Collapse (or survival) is consistent across ≥ 5 seeds
+* Results are directly comparable to v4.3 baseline
 
 ---
 
 ## Final Implementor Warning
 
-Do **not** leak causal hints.
-Do **not** summarize traces.
-Do **not** help the agent guess rule targets.
+Do **not** soften the excision.
+Do **not** “help” the agent with structure hints.
+Do **not** reinterpret failure modes.
 
-If the agent survives Run B, that is not a tooling bug —
-it is a **direct falsification of the reflection necessity claim**.
+If the agent survives Run A, that is not an execution bug —
+it is a **direct falsification of the semantic necessity claim**.
 
 ---
 
-**End of Implementor Instructions: RSA-PoC v4.3 Run B**
+**End of Implementor Instructions: RSA-PoC v4.3 Run A**

@@ -7,6 +7,7 @@ Re-exports core components for v4.3.
 # DSL types
 from .dsl import (
     ActionClass,
+    Claim,
     Condition,
     ConditionOp,
     Effect,
@@ -16,6 +17,7 @@ from .dsl import (
     ObligationTarget,
     PatchOp,
     PatchOperation,
+    Predicate,
     Rule,
     RuleType,
     canonical_json,

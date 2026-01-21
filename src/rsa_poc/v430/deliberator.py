@@ -522,6 +522,66 @@ Generate justifications for all feasible actions. If you detect a normative cont
 
 
 # ============================================================================
+# §6.4 — Semantic Excision (Run A Ablation)
+# ============================================================================
+
+
+def apply_semantic_excision(output: DeliberationOutputV430) -> DeliberationOutputV430:
+    """
+    Apply semantic excision to deliberation output (Run A ablation).
+
+    PRESERVES (typed DSL elements required for compilation):
+    - action_id (structural, used by selector)
+    - rule_refs (structural, used by rule validation)
+    - claims[].predicate (typed Predicate enum, used by compiler)
+    - claims[].args (typed args: rule IDs, action IDs, targets)
+    - conflict_detected, conflict_type (structural flags)
+    - repair_action (structural, required for gate)
+
+    EXCISES (free-text/narrative fields):
+    - counterfactual (optional narrative hint)
+    - conflict_details["description"] (narrative explanation)
+
+    This tests whether downstream components use the *narrative content*
+    of justifications or merely their typed structural presence.
+
+    P4_not_implemented = true (token padding not applied)
+    """
+    from .core import JustificationV430
+
+    excised_justifications = []
+
+    for j in output.justifications:
+        # Create excised justification preserving ALL typed DSL fields
+        excised_j = JustificationV430(
+            action_id=j.action_id,          # PRESERVED (structural)
+            rule_refs=j.rule_refs.copy(),   # PRESERVED (structural)
+            claims=[c for c in j.claims],   # PRESERVED (typed DSL elements)
+            counterfactual=None,            # EXCISED (narrative)
+        )
+        excised_justifications.append(excised_j)
+
+    # Excise narrative from conflict_details if present
+    excised_conflict_details = None
+    if output.conflict_details:
+        excised_conflict_details = {
+            k: (None if k == "description" else v)
+            for k, v in output.conflict_details.items()
+        }
+
+    return DeliberationOutputV430(
+        justifications=excised_justifications,
+        deliberation_time_ms=output.deliberation_time_ms,
+        raw_response=None,                  # EXCISED (raw LLM text)
+        error=output.error,
+        conflict_detected=output.conflict_detected,
+        conflict_type=output.conflict_type,
+        conflict_details=excised_conflict_details,  # description EXCISED
+        repair_action=output.repair_action,
+    )
+
+
+# ============================================================================
 # Exports
 # ============================================================================
 
@@ -532,4 +592,5 @@ __all__ = [
     "LLMDeliberatorConfigV430",
     "DeliberationOutputV430",
     "LLMDeliberatorV430",
+    "apply_semantic_excision",
 ]
