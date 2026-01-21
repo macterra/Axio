@@ -582,15 +582,437 @@ def apply_semantic_excision(output: DeliberationOutputV430) -> DeliberationOutpu
 
 
 # ============================================================================
+# §6.5 — Reflection Excision (Run B Ablation)
+# ============================================================================
+
+# System prompt with reflection excised — same structure, causal content replaced
+# with neutral filler to preserve prompt length and avoid shape-based inference.
+
+SYSTEM_PROMPT_V430_REFLECTION_EXCISED = """You are the deliberation module of a Reflective Sovereign Agent (RSA) operating in the TriDemand-5×5 environment under v4.3 protocol.
+
+## Your Role
+You generate normatively-grounded justifications for actions. Each justification must:
+1. Reference rules from the current NormState by ID (R1, R2, etc.)
+2. Make predicate claims about those rules
+3. Be valid JSON matching the JustificationV430 schema
+
+## Action Space
+- A0: MOVE_NORTH (row-1)
+- A1: MOVE_SOUTH (row+1)
+- A2: MOVE_EAST (col+1)
+- A3: MOVE_WEST (col-1)
+- A4: COLLECT (pick up resource at SOURCE)
+- A5: DEPOSIT (deliver resource at zone)
+- A6: STAMP (validate cargo at STAMP_LOCATION under regime=1)
+
+## v4.3 Regime Rules
+- regime=0: Standard operations (STAMP not required)
+- regime=1: STAMP required before DEPOSIT; check for conflicts (Contradiction A)
+- regime=2: After Repair A accepted; check for conflicts (Contradiction B)
+
+## JustificationV430 Schema
+{
+  "action_id": "A0-A6",
+  "rule_refs": ["R1", "R2", ...],
+  "claims": [
+    {"predicate": "PERMITS|FORBIDS|OBLIGATES_TARGET|TARGET_SATISFIED|PROGRESS_ACTION|CONFLICTS_WITH", "args": ["arg1", ...]}
+  ],
+  "conflict": null | {"type": "NORMATIVE_CONTRADICTION", "contradiction_type": "A|B"},
+  "counterfactual": null | "A0-A6"
+}
+
+## Predicate Vocabulary
+- PERMITS(rule_id, action_class): Rule permits action class
+- FORBIDS(rule_id, action_class): Rule forbids action class
+- OBLIGATES_TARGET(rule_id, target_kind, target_id): Rule obligates satisfaction of a target
+- TARGET_SATISFIED(rule_id, target_id): Target is currently satisfied
+- PROGRESS_ACTION(rule_id, action_id, target_id): Action makes progress toward target
+- CONFLICTS_WITH(rule_a_id, rule_b_id): Rules are in conflict
+- POSITION_EQ(position_name): Agent is at specified position
+- CAN_DELIVER(zone_id): Agent can deliver to specified zone
+
+## Conflict Detection and Repair Proposal
+
+When a normative contradiction is detected, you must submit a LAW_REPAIR action.
+A contradiction has been detected when no feasible actions remain.
+LAW_REPAIR is required. You are NOT told which rule(s) caused it.
+
+You must determine which rule(s) to target by examining the current NormState.
+The system will validate your proposed repair. If you target incorrect rules,
+your repair will be REJECTED and the episode will halt.
+
+Report contradictions with your PROPOSED rule_ids:
+{
+  "conflict": {
+    "type": "NORMATIVE_CONTRADICTION",
+    "contradiction_type": "A",
+    "proposed_rule_ids": ["R?"]
+  }
+}
+
+Or for regime 2 contradictions:
+{
+  "conflict": {
+    "type": "NORMATIVE_CONTRADICTION",
+    "contradiction_type": "B",
+    "proposed_rule_ids": ["R?", "R?"]
+  }
+}
+
+You MUST include proposed_rule_ids. This is your guess at which rules are
+blocking progress. Analyze the NormState carefully to determine which rules
+are causing the conflict. If you guess wrong, the repair is rejected.
+
+## Critical Rules
+1. Only reference rules that exist in the current NormState
+2. Prioritize higher-priority obligations (check expires_episode)
+3. Under regime=1 with inventory, STAMP at STAMP_LOCATION before DEPOSIT
+4. Under regime=2, check if DEPOSIT is available at zones
+5. When contradiction detected, include conflict object in justification
+6. When obligation target is satisfied, any permitted action is valid
+
+## Output Format
+Return a JSON array of justifications, one per feasible action:
+[
+  {"action_id": "A0", "rule_refs": [...], "claims": [...], ...},
+  {"action_id": "A6", "rule_refs": [...], "claims": [...], "conflict": {...}}
+]
+
+Do NOT include any text before or after the JSON array."""
+
+
+def apply_reflection_excision(output: DeliberationOutputV430) -> DeliberationOutputV430:
+    """
+    Apply reflection excision to deliberation output (Run B ablation).
+
+    This excises **causal attribution** from conflict detection:
+    - Agent knows a contradiction occurred (conflict_detected = True)
+    - Agent does NOT know which rules caused it (rule_a, rule_b = None)
+    - Agent does NOT get causal explanation (description = None)
+
+    PRESERVES (structural):
+    - All justification fields (same as baseline)
+    - conflict_detected flag (structural routing signal)
+    - conflict_type ('A' or 'B' — structural, not causal)
+    - repair_action structure (agent must guess rule_ids)
+
+    EXCISES (causal):
+    - conflict_details["rule_a"] → None
+    - conflict_details["rule_b"] → None
+    - conflict_details["description"] → None (causal narrative)
+
+    P4_not_implemented = true (token padding not applied)
+    """
+    # Excise causal fields from conflict_details
+    excised_conflict_details = None
+    if output.conflict_details:
+        excised_conflict_details = {
+            "type": output.conflict_details.get("type"),
+            "contradiction_type": output.conflict_details.get("contradiction_type"),
+            # EXCISED: causal attribution
+            "rule_a": None,
+            "rule_b": None,
+            "description": None,
+        }
+
+    return DeliberationOutputV430(
+        justifications=output.justifications,  # PRESERVED (unchanged)
+        deliberation_time_ms=output.deliberation_time_ms,
+        raw_response=output.raw_response,  # PRESERVED (for telemetry)
+        error=output.error,
+        conflict_detected=output.conflict_detected,  # PRESERVED (structural flag)
+        conflict_type=output.conflict_type,  # PRESERVED (structural: A or B)
+        conflict_details=excised_conflict_details,  # Causal fields EXCISED
+        repair_action=output.repair_action,  # PRESERVED (agent must guess rule_ids)
+    )
+
+
+class ReflectionExcisingDeliberatorV430:
+    """
+    LLM deliberator with reflection excision (Run B ablation).
+
+    Uses modified system prompt that removes all causal attribution:
+    - No mention of which rules block which actions
+    - No rule_a/rule_b in conflict examples
+    - Generic contradiction message instead of causal explanation
+
+    The agent still sees the full NormState (all rules R0-R9) but
+    is not told which rules are causing the contradiction.
+    """
+
+    def __init__(self, config: Optional[LLMDeliberatorConfigV430] = None):
+        self.config = config or LLMDeliberatorConfigV430()
+
+        # Get API key from config or environment
+        self.api_key = self.config.api_key or os.environ.get("ANTHROPIC_API_KEY")
+        if not self.api_key:
+            raise ValueError("ANTHROPIC_API_KEY not found in environment or config")
+
+        # Lazy import anthropic
+        try:
+            import anthropic
+            self.client = anthropic.Anthropic(api_key=self.api_key)
+        except ImportError:
+            raise ImportError("anthropic package not installed. Run: pip install anthropic")
+
+        # Track epoch chain for R6 anti-amnesia
+        self.epoch_chain: List[str] = []
+        self.repair_a_issued: bool = False
+        self.repair_b_issued: bool = False
+
+    def set_epoch_chain(self, epoch_chain: List[str]) -> None:
+        """Update epoch chain from harness."""
+        self.epoch_chain = epoch_chain.copy()
+
+    def record_repair_accepted(self, contradiction_type: str) -> None:
+        """Record that a repair was accepted."""
+        if contradiction_type == 'A':
+            self.repair_a_issued = True
+        elif contradiction_type == 'B':
+            self.repair_b_issued = True
+
+    def deliberate(
+        self,
+        observation: Any,
+        norm_state: NormStateV430,
+        episode: int,
+        step: int,
+        regime: int,
+    ) -> DeliberationOutputV430:
+        """
+        Generate justifications using LLM with reflection excision.
+
+        Uses SYSTEM_PROMPT_V430_REFLECTION_EXCISED and generic
+        contradiction hints that do not reveal causal structure.
+        """
+        start = time.perf_counter()
+
+        # Build user prompt with reflection-excised hints
+        user_prompt = self._build_prompt_reflection_excised(
+            observation, norm_state, episode, step, regime
+        )
+
+        try:
+            response = self.client.messages.create(
+                model=self.config.model,
+                max_tokens=self.config.max_tokens,
+                temperature=self.config.temperature,
+                system=SYSTEM_PROMPT_V430_REFLECTION_EXCISED,  # EXCISED prompt
+                messages=[
+                    {"role": "user", "content": user_prompt}
+                ]
+            )
+
+            raw_response = response.content[0].text
+            elapsed = (time.perf_counter() - start) * 1000
+
+            # Parse justifications and check for conflicts (with proposed_rule_ids)
+            justifications, conflict_detected, conflict_type, conflict_details, proposed_rule_ids = self._parse_response(
+                raw_response, norm_state
+            )
+
+            # Generate repair action using LLM-proposed rule_ids (blind repair)
+            repair_action = None
+            if conflict_detected:
+                repair_action = self._generate_repair_from_proposal(
+                    conflict_type=conflict_type,
+                    proposed_rule_ids=proposed_rule_ids,
+                    episode=episode,
+                    step=step,
+                    norm_state=norm_state,
+                )
+
+            # Apply reflection excision to output
+            output = DeliberationOutputV430(
+                justifications=justifications,
+                deliberation_time_ms=elapsed,
+                raw_response=raw_response,
+                conflict_detected=conflict_detected,
+                conflict_type=conflict_type,
+                conflict_details=conflict_details,
+                repair_action=repair_action,
+            )
+
+            return apply_reflection_excision(output)
+
+        except Exception as e:
+            elapsed = (time.perf_counter() - start) * 1000
+            return DeliberationOutputV430(
+                justifications=[],
+                deliberation_time_ms=elapsed,
+                error=str(e)
+            )
+
+    def _build_prompt_reflection_excised(
+        self,
+        observation: Any,
+        norm_state: NormStateV430,
+        episode: int,
+        step: int,
+        regime: int,
+    ) -> str:
+        """Build user prompt with reflection-excised hints."""
+        obs_text = format_observation_v430(observation)
+        norm_text = format_norm_state_v430(norm_state)
+
+        # Generic hint that does NOT reveal causal structure
+        # Same length as baseline hints to avoid prompt shape leakage
+        if regime == 1:
+            regime_hint = "\n\n**ATTENTION**: A contradiction may occur. If detected, LAW_REPAIR is required. Analyze rules yourself."
+        elif regime == 2:
+            regime_hint = "\n\n**ATTENTION**: A contradiction may occur. If detected, LAW_REPAIR is required. Analyze rules yourself."
+        else:
+            regime_hint = ""
+
+        return f"""Episode {episode}, Step {step}
+
+{obs_text}
+
+{norm_text}{regime_hint}
+
+Generate justifications for all feasible actions. If you detect a normative contradiction, include a conflict object with contradiction_type 'A' or 'B'. Return ONLY a JSON array."""
+
+    def _parse_response(
+        self,
+        raw_response: str,
+        norm_state: NormStateV430
+    ) -> tuple[List[JustificationV430], bool, Optional[str], Optional[Dict], Optional[List[str]]]:
+        """
+        Parse LLM response, extracting proposed_rule_ids for blind repair.
+
+        Returns:
+            (justifications, conflict_detected, conflict_type, conflict_details, proposed_rule_ids)
+        """
+        json_match = re.search(r'\[[\s\S]*\]', raw_response)
+        if not json_match:
+            return [], False, None, None, None
+
+        try:
+            data = json.loads(json_match.group())
+        except json.JSONDecodeError:
+            return [], False, None, None, None
+
+        if not isinstance(data, list):
+            return [], False, None, None, None
+
+        justifications = []
+        conflict_detected = False
+        conflict_type = None
+        conflict_details = None
+        proposed_rule_ids = None
+
+        for item in data:
+            try:
+                j = JustificationV430.from_dict(item)
+                if all(norm_state.has_rule(ref) for ref in j.rule_refs):
+                    justifications.append(j)
+
+                if item.get("conflict"):
+                    conflict_detected = True
+                    conflict_details = item["conflict"]
+                    conflict_type = conflict_details.get("contradiction_type", "A")
+                    # Extract LLM's proposed rule_ids for blind repair
+                    proposed_rule_ids = conflict_details.get("proposed_rule_ids")
+
+            except (KeyError, ValueError, TypeError):
+                continue
+
+        return justifications, conflict_detected, conflict_type, conflict_details, proposed_rule_ids
+
+    def _generate_repair_from_proposal(
+        self,
+        conflict_type: str,
+        proposed_rule_ids: Optional[List[str]],
+        episode: int,
+        step: int,
+        norm_state: NormStateV430,
+    ) -> Optional[LawRepairActionV430]:
+        """
+        Generate repair action from LLM-proposed rule_ids (blind repair).
+
+        This is the core of Run B (reflection excision): the LLM proposes
+        which rules to target, and the gate validates. If the LLM's guess
+        is wrong, the gate will reject the repair.
+
+        The LLM must propose rule_ids in its conflict output. If it doesn't,
+        no repair can be generated and the episode will halt.
+        """
+        if not proposed_rule_ids:
+            # LLM failed to propose rule_ids — cannot generate repair
+            # This will cause the episode to halt (no repair submitted)
+            return None
+
+        trace_entry_id = f"trace_{conflict_type.lower()}_{episode}_{step}"
+        prior_epoch = self.epoch_chain[-1] if self.epoch_chain else None
+
+        if conflict_type == 'A' and not self.repair_a_issued:
+            # For Contradiction A, LLM should propose ["R6"]
+            # Build repair using LLM's proposed rule_ids (may be wrong)
+            patch_ops = []
+            for rule_id in proposed_rule_ids:
+                # Create POSITION_EQ exception for each proposed rule
+                patch_ops.append(PatchOperation(
+                    op=PatchOp.ADD_EXCEPTION,
+                    target_rule_id=rule_id,
+                    exception_condition=Condition(
+                        op=ConditionOp.POSITION_EQ,
+                        args=["STAMP_LOCATION"],
+                    ),
+                ))
+
+            return LawRepairActionV430.create(
+                trace_entry_id=trace_entry_id,
+                rule_ids=proposed_rule_ids,  # LLM's guess, may be wrong
+                patch_ops=patch_ops,
+                prior_repair_epoch=prior_epoch,
+                contradiction_type='A',
+                regime_at_submission=1,
+            )
+
+        elif conflict_type == 'B' and self.repair_a_issued and not self.repair_b_issued:
+            # For Contradiction B, LLM should propose ["R7", "R8"]
+            # Build repair using LLM's proposed rule_ids (may be wrong)
+            if len(self.epoch_chain) < 2:
+                return None
+
+            patch_ops = []
+            for rule_id in proposed_rule_ids:
+                # Create CAN_DELIVER exception for each proposed rule
+                # Note: We use ZONE_A for simplicity; gate will validate rule_ids
+                patch_ops.append(PatchOperation(
+                    op=PatchOp.ADD_EXCEPTION,
+                    target_rule_id=rule_id,
+                    exception_condition=Condition(
+                        op=ConditionOp.CAN_DELIVER,
+                        args=["ZONE_A"],
+                    ),
+                ))
+
+            return LawRepairActionV430.create(
+                trace_entry_id=trace_entry_id,
+                rule_ids=proposed_rule_ids,  # LLM's guess, may be wrong
+                patch_ops=patch_ops,
+                prior_repair_epoch=self.epoch_chain[-1],
+                contradiction_type='B',
+                regime_at_submission=2,
+            )
+
+        return None
+
+
+# ============================================================================
 # Exports
 # ============================================================================
 
 __all__ = [
     "SYSTEM_PROMPT_V430",
+    "SYSTEM_PROMPT_V430_REFLECTION_EXCISED",
     "format_observation_v430",
     "format_norm_state_v430",
     "LLMDeliberatorConfigV430",
     "DeliberationOutputV430",
     "LLMDeliberatorV430",
+    "ReflectionExcisingDeliberatorV430",
     "apply_semantic_excision",
+    "apply_reflection_excision",
 ]

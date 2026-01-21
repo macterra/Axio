@@ -278,15 +278,14 @@ class MVRSA430Harness:
         self.telemetry.record_halt(reason)
 
     def _determine_regime(self, obs: Observation430) -> int:
-        """Determine current regime based on observation and repair state."""
-        # Regime transitions are event-gated:
-        # - regime 0 → 1: episode >= REGIME_1_START
-        # - regime 1 → 2: Repair A accepted
-        if self.repair_a_accepted:
-            return 2
-        elif obs.episode >= REGIME_1_START:
-            return 1
-        return 0
+        """Determine current regime from observation.
+
+        v4.3-correct: Environment is the source of truth for regime.
+        obs.regime is computed by env._compute_regime() which implements
+        the E3 formula:
+            regime_2_start = max(REGIME_2_PREREGISTERED_START, accept_ep + 1)
+        """
+        return obs.regime
 
     def _check_contradiction(
         self,
@@ -377,6 +376,8 @@ class MVRSA430Harness:
                 self.telemetry.repair_a_accepted = True
                 self.telemetry.repair_a_episode = episode
                 self.deliberator.record_repair_accepted('A')
+                # v4.3-correct: Notify environment to apply E3 formula
+                self.env.record_repair_a_accepted(episode)
             else:
                 self.repair_b_accepted = True
                 self.telemetry.repair_b_accepted = True
@@ -536,11 +537,14 @@ class MVRSA430Harness:
         obs: Observation430,
         episode: int,
         step: int,
-    ) -> Tuple[Observation430, bool, bool]:
+    ) -> Tuple[Observation430, bool, bool, bool]:
         """
         Execute a single pipeline step.
 
-        Returns: (new_obs, done, halted)
+        Returns: (new_obs, done, halted, terminated)
+          - done: episode finished (terminated or truncated)
+          - halted: pipeline halt (contradiction deadlock, etc.)
+          - terminated: task completed successfully (all zones satisfied)
         """
         self.total_steps += 1
         regime = self._determine_regime(obs)
@@ -567,14 +571,14 @@ class MVRSA430Harness:
                 )
                 if not repair_accepted:
                     self._record_halt(HaltReasonV430.REPAIR_REJECTED)
-                    return obs, False, True
+                    return obs, False, True, False
             else:
                 # Cannot repair (patch stacking or already repaired)
                 if contradiction_type == 'A' and self.repair_a_accepted:
                     self._record_halt(HaltReasonV430.NORMATIVE_DEADLOCK_AFTER_A)
                 else:
                     self._record_halt(HaltReasonV430.PATCH_STACKING)
-                return obs, False, True
+                return obs, False, True, False
 
         # Deliberate
         deliberation = self.deliberator.deliberate(
@@ -583,7 +587,7 @@ class MVRSA430Harness:
 
         if not deliberation.success:
             self._record_halt(HaltReasonV430.DELIBERATION_FAILURE)
-            return obs, False, True
+            return obs, False, True, False
 
         # Mask: compute feasible actions
         if not self._compiled_rules:
@@ -610,7 +614,7 @@ class MVRSA430Harness:
         # Select
         if not feasible_justified:
             self._record_halt(HaltReasonV430.NO_FEASIBLE_ACTIONS)
-            return obs, False, True
+            return obs, False, True, False
 
         selection = self.selector.select(
             feasible_action_ids=feasible_justified,
@@ -621,7 +625,7 @@ class MVRSA430Harness:
 
         if selection.is_halt:
             self._record_halt(selection.halt_reason)
-            return obs, False, True
+            return obs, False, True, False
 
         # Execute
         action = Action(int(selection.action_id[1:]))
@@ -631,7 +635,7 @@ class MVRSA430Harness:
         if self.config.verbose:
             print(f"    Step {step}: {selection.action_id} @ {obs.position} → {new_obs.position}")
 
-        return new_obs, done, False
+        return new_obs, done, False, terminated
 
     def run_episode(self, episode: int) -> Dict[str, Any]:
         """Run a single episode."""
@@ -645,7 +649,7 @@ class MVRSA430Harness:
         halted = False
 
         for step in range(self.config.max_steps_per_episode):
-            obs, done, halted = self.run_step(obs, episode, step)
+            obs, done, halted, terminated = self.run_step(obs, episode, step)
             steps += 1
 
             if halted:
@@ -653,8 +657,10 @@ class MVRSA430Harness:
                 break
 
             if done:
-                success = True
-                self.telemetry.episodes_success += 1
+                # success = terminated only (not truncated/timeout)
+                if terminated:
+                    success = True
+                    self.telemetry.episodes_success += 1
                 break
 
         return {

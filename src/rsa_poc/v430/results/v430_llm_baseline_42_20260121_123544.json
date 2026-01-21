@@ -1,0 +1,123 @@
+{
+  "version": "4.3.0",
+  "seed": 42,
+  "max_episodes": 5,
+  "elapsed_seconds": 454.1303487230034,
+  "deliberator": "LLMDeliberatorV430",
+  "model": "claude-sonnet-4-20250514",
+  "selector": "task_aware",
+  "ablation": null,
+  "P4_not_implemented": null,
+  "reflection_excised": null,
+  "timestamp": "2026-01-21T12:35:44.012199",
+  "summary": {
+    "total_steps": 75,
+    "total_halts": 1,
+    "total_contradictions": 1,
+    "total_repairs_accepted": 1,
+    "repair_a_accepted": true,
+    "repair_b_accepted": false,
+    "total_successes": 4,
+    "episodes_completed": 5,
+    "success_rate": 0.8
+  },
+  "epoch_chain": [
+    "4a8ba9834a772b7ecdcb54a296f3ca641fdeb875b39cf651486541f0c78c8860",
+    "3e3748a425e350a8f08ef6007fd8c2262cbcda00a2056278fbd839aab9cfc005"
+  ],
+  "gate_telemetry": {
+    "repairs_submitted_total": 1,
+    "repairs_accepted_total": 1,
+    "repairs_rejected_total": 0,
+    "continuity_checks_total": 0,
+    "continuity_failures_total": 0,
+    "halts_by_reason": {
+      "DELIBERATION_FAILURE": 1
+    },
+    "repair_bindings": [
+      {
+        "trace_entry_id": "e8ca710cecae54fb",
+        "contradiction_type": "A",
+        "blocking_rule_ids": [
+          "R6"
+        ],
+        "epoch": "3e3748a425e350a8f08ef6007fd8c2262cbcda00a2056278fbd839aab9cfc005",
+        "episode": 2,
+        "step": 5,
+        "accepted": true
+      }
+    ]
+  },
+  "telemetry": {
+    "episodes_total": 5,
+    "episodes_success": 4,
+    "episodes_halted": 1,
+    "contradiction_a_total": 1,
+    "contradiction_b_total": 0,
+    "repairs_accepted_total": 0,
+    "repair_a_accepted": true,
+    "repair_b_accepted": false,
+    "repair_a_episode": 2,
+    "repair_b_episode": null,
+    "repair_attempts_a": 0,
+    "repair_attempts_b": 0,
+    "epoch_chain": [
+      "4a8ba9834a772b7ecdcb54a296f3ca641fdeb875b39cf651486541f0c78c8860",
+      "3e3748a425e350a8f08ef6007fd8c2262cbcda00a2056278fbd839aab9cfc005"
+    ],
+    "regime_2_actual_start": null,
+    "regime_transitions": [],
+    "halts_by_reason": {
+      "DELIBERATION_FAILURE": 1
+    },
+    "non_subsumption_replay_results": [],
+    "continuity_failures_total": 0
+  },
+  "episode_results": [
+    {
+      "episode": 0,
+      "steps": 18,
+      "success": true,
+      "halted": false,
+      "regime_at_end": 0,
+      "repair_a_accepted": false,
+      "repair_b_accepted": false
+    },
+    {
+      "episode": 1,
+      "steps": 18,
+      "success": true,
+      "halted": false,
+      "regime_at_end": 0,
+      "repair_a_accepted": false,
+      "repair_b_accepted": false
+    },
+    {
+      "episode": 2,
+      "steps": 19,
+      "success": true,
+      "halted": false,
+      "regime_at_end": 1,
+      "repair_a_accepted": true,
+      "repair_b_accepted": false
+    },
+    {
+      "episode": 3,
+      "steps": 19,
+      "success": true,
+      "halted": false,
+      "regime_at_end": 1,
+      "repair_a_accepted": true,
+      "repair_b_accepted": false
+    },
+    {
+      "episode": 4,
+      "steps": 1,
+      "success": false,
+      "halted": true,
+      "regime_at_end": 2,
+      "repair_a_accepted": true,
+      "repair_b_accepted": false
+    }
+  ]
+}

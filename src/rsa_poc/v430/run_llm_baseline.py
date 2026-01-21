@@ -163,10 +163,15 @@ def run_with_llm(
         seed: Random seed
         max_episodes: Number of episodes to run
         verbose: Print progress
-        ablation: Ablation mode ('semantic_excision' or None)
+        ablation: Ablation mode ('semantic_excision', 'reflection_excision', or None)
     """
     # Import LLM deliberator only when needed
-    from .deliberator import LLMDeliberatorV430, LLMDeliberatorConfigV430, apply_semantic_excision
+    from .deliberator import (
+        LLMDeliberatorV430,
+        LLMDeliberatorConfigV430,
+        apply_semantic_excision,
+        ReflectionExcisingDeliberatorV430,
+    )
 
     if verbose:
         print(f"\n--- LLM Run (Seed {seed}) ---")
@@ -175,13 +180,18 @@ def run_with_llm(
 
     env = TriDemandV430(seed=seed)
     config = LLMDeliberatorConfigV430()
-    base_deliberator = LLMDeliberatorV430(config)
 
-    # Apply ablation wrapper if requested
-    if ablation == "semantic_excision":
+    # Select deliberator based on ablation mode
+    if ablation == "reflection_excision":
+        # Run B: Use dedicated reflection-excising deliberator
+        deliberator = ReflectionExcisingDeliberatorV430(config)
+    elif ablation == "semantic_excision":
+        # Run A: Wrap base deliberator with semantic excision
+        base_deliberator = LLMDeliberatorV430(config)
         deliberator = ExcisingDeliberatorWrapper(base_deliberator, apply_semantic_excision)
     else:
-        deliberator = base_deliberator
+        # Baseline: Use standard deliberator
+        deliberator = LLMDeliberatorV430(config)
 
     # Use task_aware selector for LLM (justifies multiple actions)
     harness_config = HarnessConfigV430(
@@ -221,11 +231,12 @@ def run_with_llm(
         "seed": seed,
         "max_episodes": max_episodes,
         "elapsed_seconds": elapsed,
-        "deliberator": "LLMDeliberatorV430",
+        "deliberator": "LLMDeliberatorV430" if ablation != "reflection_excision" else "ReflectionExcisingDeliberatorV430",
         "model": config.model,
         "selector": "task_aware",
         "ablation": ablation,
-        "P4_not_implemented": True if ablation == "semantic_excision" else None,
+        "P4_not_implemented": True if ablation in ("semantic_excision", "reflection_excision") else None,
+        "reflection_excised": True if ablation == "reflection_excision" else None,
         "timestamp": datetime.now().isoformat(),
         "summary": {
             "total_steps": harness.total_steps,
@@ -303,9 +314,9 @@ def main():
     parser.add_argument(
         "--ablation",
         type=str,
-        choices=["semantic_excision"],
+        choices=["semantic_excision", "reflection_excision"],
         default=None,
-        help="Ablation mode: 'semantic_excision' (Run A)"
+        help="Ablation mode: 'semantic_excision' (Run A) or 'reflection_excision' (Run B)"
     )
 
     args = parser.parse_args()
@@ -329,6 +340,9 @@ def main():
     print(f"  Multi-repair:      R9 enabled (max 2 repairs)")
     if args.ablation == "semantic_excision":
         print(f"  P4_not_implemented: true (token padding not applied)")
+    elif args.ablation == "reflection_excision":
+        print(f"  P4_not_implemented: true (token padding not applied)")
+        print(f"  Reflection:        EXCISED (causal attribution removed)")
     print()
 
     # Pre-flight validation (FREE, no API cost)

@@ -479,6 +479,134 @@ def test_compiler_hash():
     print("✅ Compiler hash test PASSED\n")
 
 
+def test_regime_coupling_e3_formula():
+    """Test E3 formula: regime_2_start = max(REGIME_2_PREREGISTERED_START, accept_ep + 1)."""
+    print("=" * 60)
+    print("TEST: E3 Regime Coupling Formula")
+    print("=" * 60)
+
+    # Case 1: Repair A at episode 2 → regime 2 at max(4, 3) = 4
+    env1 = TriDemandV430()
+    env1.reset(episode=1)
+    env1.record_repair_a_accepted(episode=2)
+    obs3, _ = env1.reset(episode=3)
+    obs4, _ = env1.reset(episode=4)
+    print(f"Repair A at ep2: ep3.regime={obs3.regime}, ep4.regime={obs4.regime}")
+    assert obs3.regime == 1, "Episode 3 should still be regime=1 (max(4,3)=4)"
+    assert obs4.regime == 2, "Episode 4 should be regime=2"
+
+    # Case 2: Repair A at episode 3 → regime 2 at max(4, 4) = 4
+    env2 = TriDemandV430()
+    env2.reset(episode=1)
+    env2.record_repair_a_accepted(episode=3)
+    obs3b, _ = env2.reset(episode=3)
+    obs4b, _ = env2.reset(episode=4)
+    print(f"Repair A at ep3: ep3.regime={obs3b.regime}, ep4.regime={obs4b.regime}")
+    assert obs3b.regime == 1, "Episode 3 should be regime=1"
+    assert obs4b.regime == 2, "Episode 4 should be regime=2"
+
+    # Case 3: Repair A at episode 5 → regime 2 at max(4, 6) = 6
+    env3 = TriDemandV430()
+    env3.reset(episode=1)
+    env3.record_repair_a_accepted(episode=5)
+    obs5, _ = env3.reset(episode=5)
+    obs6, _ = env3.reset(episode=6)
+    print(f"Repair A at ep5: ep5.regime={obs5.regime}, ep6.regime={obs6.regime}")
+    assert obs5.regime == 1, "Episode 5 should still be regime=1"
+    assert obs6.regime == 2, "Episode 6 should be regime=2 (max(4,6)=6)"
+
+    # Case 4: No Repair A → stays in regime 1 forever
+    env4 = TriDemandV430()
+    env4.reset(episode=1)
+    obs10, _ = env4.reset(episode=10)
+    print(f"No Repair A: ep10.regime={obs10.regime}")
+    assert obs10.regime == 1, "Without Repair A, should stay in regime=1"
+
+    print("✅ E3 Regime Coupling Formula test PASSED\n")
+
+
+def test_regime_2_contradiction_b_activates():
+    """Test that R7/R8 (Contradiction B) activate in regime 2."""
+    print("=" * 60)
+    print("TEST: R7/R8 Activate in Regime 2")
+    print("=" * 60)
+
+    from rsa_poc.v430.core import create_initial_norm_state_v430, JCOMP430
+
+    # Create norm state and compile rules
+    norm_state = create_initial_norm_state_v430()
+    compiler = JCOMP430(norm_state)
+    rules = compiler.compile_all_rules()
+
+    # Create observation at ZONE_A in regime 2
+    obs_zone_a = Observation430(
+        agent_pos=POSITIONS["ZONE_A"],
+        inventory=1, item_type='A',
+        zone_a_demand=1, zone_b_demand=1, zone_c_demand=1,
+        zone_a_satisfied=False, zone_b_satisfied=False, zone_c_satisfied=False,
+        step=5, episode=4, rule_r1_active=False, regime=2,
+        stamped=True, dual_delivery_mode=True,
+        can_deliver_a=True, can_deliver_b=False,
+    )
+
+    # Check R7 is active (PROHIBITION on DEPOSIT at ZONE_A in regime 2)
+    r7_rule = next((r for r in rules if r.rule_id == "R7"), None)
+    assert r7_rule is not None, "R7 should exist"
+    r7_active = r7_rule.active(obs_zone_a, norm_state.norm_hash)
+    print(f"At ZONE_A in regime 2: R7.active={r7_active}")
+    assert r7_active, "R7 should be active at ZONE_A in regime 2"
+
+    # Create observation at ZONE_B in regime 2
+    obs_zone_b = Observation430(
+        agent_pos=POSITIONS["ZONE_B"],
+        inventory=1, item_type='B',
+        zone_a_demand=1, zone_b_demand=1, zone_c_demand=1,
+        zone_a_satisfied=False, zone_b_satisfied=False, zone_c_satisfied=False,
+        step=5, episode=4, rule_r1_active=False, regime=2,
+        stamped=True, dual_delivery_mode=True,
+        can_deliver_a=False, can_deliver_b=True,
+    )
+
+    r8_rule = next((r for r in rules if r.rule_id == "R8"), None)
+    assert r8_rule is not None, "R8 should exist"
+    r8_active = r8_rule.active(obs_zone_b, norm_state.norm_hash)
+    print(f"At ZONE_B in regime 2: R8.active={r8_active}")
+    assert r8_active, "R8 should be active at ZONE_B in regime 2"
+
+    print("✅ R7/R8 Activate in Regime 2 test PASSED\n")
+
+
+def test_regime_1_r7_r8_inactive():
+    """Test that R7/R8 are INACTIVE in regime 1."""
+    print("=" * 60)
+    print("TEST: R7/R8 Inactive in Regime 1")
+    print("=" * 60)
+
+    from rsa_poc.v430.core import create_initial_norm_state_v430, JCOMP430
+
+    norm_state = create_initial_norm_state_v430()
+    compiler = JCOMP430(norm_state)
+    rules = compiler.compile_all_rules()
+
+    # Create observation at ZONE_A in regime 1
+    obs_zone_a = Observation430(
+        agent_pos=POSITIONS["ZONE_A"],
+        inventory=1, item_type='A',
+        zone_a_demand=1, zone_b_demand=1, zone_c_demand=1,
+        zone_a_satisfied=False, zone_b_satisfied=False, zone_c_satisfied=False,
+        step=5, episode=3, rule_r1_active=False, regime=1,
+        stamped=True, dual_delivery_mode=False,
+        can_deliver_a=True, can_deliver_b=False,
+    )
+
+    r7_rule = next((r for r in rules if r.rule_id == "R7"), None)
+    r7_active = r7_rule.active(obs_zone_a, norm_state.norm_hash)
+    print(f"At ZONE_A in regime 1: R7.active={r7_active}")
+    assert not r7_active, "R7 should be INACTIVE in regime 1"
+
+    print("✅ R7/R8 Inactive in Regime 1 test PASSED\n")
+
+
 def test_canonical_repair_b():
     """Test canonical Repair B factory."""
     print("=" * 60)
@@ -528,6 +656,9 @@ def main():
     test_trace_entries()
     test_law_repair_r9()
     test_compiler_hash()
+    test_regime_coupling_e3_formula()
+    test_regime_2_contradiction_b_activates()
+    test_regime_1_r7_r8_inactive()
     test_canonical_repair_b()
 
     print("\n" + "=" * 60)
