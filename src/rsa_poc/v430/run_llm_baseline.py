@@ -179,7 +179,7 @@ def run_with_llm(
             print(f"    Ablation: {ablation}")
 
     env = TriDemandV430(seed=seed)
-    config = LLMDeliberatorConfigV430()
+    config = LLMDeliberatorConfigV430(ablation=ablation)  # Pass ablation to config
 
     # Select deliberator based on ablation mode
     if ablation == "reflection_excision":
@@ -191,6 +191,10 @@ def run_with_llm(
         deliberator = ExcisingDeliberatorWrapper(base_deliberator, apply_semantic_excision)
     elif ablation == "persistence_excision":
         # Run C: Use standard deliberator, persistence reset handled by harness
+        deliberator = LLMDeliberatorV430(config)
+    elif ablation == "trace_excision":
+        # Run D (Golden Test): Use standard deliberator with opaque NormState
+        # The config.ablation triggers opaque formatting in _build_prompt
         deliberator = LLMDeliberatorV430(config)
     else:
         # Baseline: Use standard deliberator
@@ -239,9 +243,10 @@ def run_with_llm(
         "model": config.model,
         "selector": "task_aware",
         "ablation": ablation,
-        "P4_not_implemented": True if ablation in ("semantic_excision", "reflection_excision") else None,
+        "P4_not_implemented": True if ablation in ("semantic_excision", "reflection_excision", "persistence_excision", "trace_excision") else None,
         "reflection_excised": True if ablation == "reflection_excision" else None,
         "persistence_excised": True if ablation == "persistence_excision" else None,
+        "trace_excised": True if ablation == "trace_excision" else None,
         "timestamp": datetime.now().isoformat(),
         "summary": {
             "total_steps": harness.total_steps,
@@ -319,9 +324,9 @@ def main():
     parser.add_argument(
         "--ablation",
         type=str,
-        choices=["semantic_excision", "reflection_excision", "persistence_excision"],
+        choices=["semantic_excision", "reflection_excision", "persistence_excision", "trace_excision"],
         default=None,
-        help="Ablation mode: 'semantic_excision' (Run A), 'reflection_excision' (Run B), or 'persistence_excision' (Run C)"
+        help="Ablation mode: 'semantic_excision' (Run A), 'reflection_excision' (Run B), 'persistence_excision' (Run C), or 'trace_excision' (Run D/Golden)"
     )
 
     args = parser.parse_args()

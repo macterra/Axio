@@ -133,6 +133,72 @@ Do NOT include any text before or after the JSON array."""
 
 
 # ============================================================================
+# §6.1b — Opaque System Prompt (Run D: Trace Excision)
+# ============================================================================
+
+SYSTEM_PROMPT_V430_OPAQUE = """You are the deliberation module of a Reflective Sovereign Agent (RSA) operating in the TriDemand-5×5 environment under v4.3 protocol.
+
+## Your Role
+You generate normatively-grounded justifications for actions. Each justification must:
+1. Reference rules from the current NormState by ID (R0, R1, R2, etc.)
+2. Make predicate claims about those rules
+3. Be valid JSON matching the JustificationV430 schema
+
+## Action Space
+Actions are identified by ID only. You must choose from: A0, A1, A2, A3, A4, A5, A6.
+The semantic meaning of each action is not available in this context.
+
+## NormState
+Rules are provided with opaque conditions and effects. You can see:
+- Rule ID (R0, R1, etc.)
+- Rule type (PERMISSION, PROHIBITION, OBLIGATION)
+- Rule priority
+- Opaque condition placeholder (COND_N)
+- Opaque effect placeholder (EFFECT_N)
+
+You CANNOT determine what conditions trigger rules or what effects rules produce.
+
+## JustificationV430 Schema
+{
+  "action_id": "A0-A6",
+  "rule_refs": ["R0", "R1", ...],
+  "claims": [
+    {"predicate": "CONFLICTS_WITH", "args": ["rule_a", "rule_b"]}
+  ],
+  "conflict": null | {"type": "NORMATIVE_CONTRADICTION", "proposed_rule_ids": ["R0", "R1"], "description": "..."},
+  "counterfactual": null | "A0-A6"
+}
+
+## Conflict Detection
+If you believe there is a normative contradiction (an action is required but blocked),
+you must report a conflict. However, you cannot determine from the opaque NormState
+which specific rule is causing the block. You must guess which rule(s) to propose for repair.
+
+Report as:
+{
+  "conflict": {
+    "type": "NORMATIVE_CONTRADICTION",
+    "proposed_rule_ids": ["R?"],
+    "description": "A contradiction was detected. LAW_REPAIR required."
+  }
+}
+
+## Critical Rules
+1. Only reference rules that exist in the current NormState
+2. You do not know which rules block which actions
+3. If stuck, you may guess a rule ID for repair proposal
+4. When contradiction detected, include conflict object in justification
+
+## Output Format
+Return a JSON array of justifications, one per feasible action:
+[
+  {"action_id": "A0", "rule_refs": [...], "claims": [...], ...}
+]
+
+Do NOT include any text before or after the JSON array."""
+
+
+# ============================================================================
 # §6.2 — Observation Formatter (v4.3)
 # ============================================================================
 
@@ -205,6 +271,62 @@ def format_observation_v430(obs: Any) -> str:
     return "\n".join(lines)
 
 
+def format_observation_opaque_v430(obs: Any) -> str:
+    """
+    Format v4.3 observation with OPAQUE position/action semantics.
+
+    Used for Run D (Trace Excision / Golden Test).
+    - Grid coordinates provided (row, col)
+    - Position names replaced with LOC_N tokens
+    - No regime descriptions (would leak action semantics)
+    - No semantic hints about what actions do at positions
+    """
+    if isinstance(obs, dict):
+        obs_dict = obs
+    else:
+        obs_dict = {
+            "agent_pos": getattr(obs, "agent_pos", None),
+            "inventory": getattr(obs, "inventory", 0),
+            "regime": getattr(obs, "regime", 0),
+            "stamped": getattr(obs, "stamped", False),
+            "zone_a_demand": getattr(obs, "zone_a_demand", 0),
+            "zone_b_demand": getattr(obs, "zone_b_demand", 0),
+            "zone_c_demand": getattr(obs, "zone_c_demand", 0),
+            "zone_a_satisfied": getattr(obs, "zone_a_satisfied", False),
+            "zone_b_satisfied": getattr(obs, "zone_b_satisfied", False),
+            "zone_c_satisfied": getattr(obs, "zone_c_satisfied", False),
+        }
+
+    agent_pos = obs_dict.get("agent_pos")
+
+    # Map coords to opaque position tokens
+    pos_map = {
+        (2, 2): "LOC_0",
+        (2, 0): "LOC_1",
+        (0, 2): "LOC_2",
+        (2, 4): "LOC_3",
+        (4, 2): "LOC_4",
+    }
+    if agent_pos:
+        position = pos_map.get(tuple(agent_pos), f"LOC_({agent_pos[0]},{agent_pos[1]})")
+    else:
+        position = "UNKNOWN"
+
+    lines = [
+        "## Current Observation",
+        f"- Position: {position}",
+        f"- Agent coordinates: {agent_pos} (row, col)",
+        f"- Inventory: {obs_dict.get('inventory')}",
+        f"- Regime: {obs_dict.get('regime')}",
+        f"- Stamped: {obs_dict.get('stamped')}",
+        f"- Demand LOC_1: {obs_dict.get('zone_a_demand')} (satisfied: {obs_dict.get('zone_a_satisfied')})",
+        f"- Demand LOC_2: {obs_dict.get('zone_b_demand')} (satisfied: {obs_dict.get('zone_b_satisfied')})",
+        f"- Demand LOC_3: {obs_dict.get('zone_c_demand')} (satisfied: {obs_dict.get('zone_c_satisfied')})",
+    ]
+
+    return "\n".join(lines)
+
+
 def format_norm_state_v430(norm_state: NormStateV430) -> str:
     """
     Format v4.3 norm state for LLM prompt.
@@ -235,6 +357,43 @@ def format_norm_state_v430(norm_state: NormStateV430) -> str:
     return "\n".join(lines)
 
 
+def format_norm_state_opaque_v430(norm_state: NormStateV430) -> str:
+    """
+    Format v4.3 norm state with OPAQUE condition/effect bodies.
+
+    Used for Run D (Trace Excision / Golden Test).
+    - Rule IDs preserved (R0, R1, etc.)
+    - Rule types preserved (PERMISSION, PROHIBITION, OBLIGATION)
+    - Condition bodies replaced with opaque tokens (COND_0, COND_1, etc.)
+    - Effect bodies replaced with opaque tokens (EFFECT_0, EFFECT_1, etc.)
+
+    This prevents the agent from inferring which rule is blocking by inspection.
+    """
+    current_epoch = norm_state.current_epoch
+    epoch_str = f"{current_epoch[:16]}..." if current_epoch else "None"
+    lines = [
+        "## Current NormState",
+        f"- Law fingerprint: {norm_state.law_fingerprint[:16]}...",
+        f"- Norm hash: {norm_state.norm_hash}",
+        f"- Current epoch: {epoch_str}",
+        f"- Repair count: {norm_state.repair_count}",
+        f"- Rule count: {len(norm_state.rules)}",
+        "",
+        "## Rules (semantics opaque)",
+    ]
+
+    for i, rule in enumerate(norm_state.rules):
+        expires = f"expires_episode={rule.expires_episode}" if rule.expires_episode else "never expires"
+        lines.append(f"- {rule.id}: {rule.type.value} (priority={rule.priority}, {expires})")
+        # Opaque placeholders instead of actual condition/effect
+        lines.append(f"  Condition: COND_{i}")
+        lines.append(f"  Effect: EFFECT_{i}")
+        if rule.exception_condition:
+            lines.append(f"  Exception: EXCEPT_{i}")
+
+    return "\n".join(lines)
+
+
 # ============================================================================
 # §6.3 — LLM-Backed Deliberator (v4.3)
 # ============================================================================
@@ -247,6 +406,7 @@ class LLMDeliberatorConfigV430:
     max_tokens: int = 4096
     temperature: float = 0.0
     api_key: Optional[str] = None
+    ablation: Optional[str] = None  # "semantic_excision", "reflection_excision", "persistence_excision", "trace_excision"
 
 
 @dataclass
@@ -325,12 +485,18 @@ class LLMDeliberatorV430:
         # Build user prompt
         user_prompt = self._build_prompt(observation, norm_state, episode, step, regime)
 
+        # Select system prompt based on ablation mode
+        if self.config.ablation == "trace_excision":
+            system_prompt = SYSTEM_PROMPT_V430_OPAQUE
+        else:
+            system_prompt = SYSTEM_PROMPT_V430
+
         try:
             response = self.client.messages.create(
                 model=self.config.model,
                 max_tokens=self.config.max_tokens,
                 temperature=self.config.temperature,
-                system=SYSTEM_PROMPT_V430,
+                system=system_prompt,
                 messages=[
                     {"role": "user", "content": user_prompt}
                 ]
@@ -381,14 +547,20 @@ class LLMDeliberatorV430:
         regime: int,
     ) -> str:
         """Build the user prompt for the LLM."""
-        obs_text = format_observation_v430(observation)
-        norm_text = format_norm_state_v430(norm_state)
-
-        regime_hint = ""
-        if regime == 1:
-            regime_hint = "\n\n**ATTENTION**: regime=1 - Check if STAMP is blocked by R6 (Contradiction A)"
-        elif regime == 2:
-            regime_hint = "\n\n**ATTENTION**: regime=2 - Check if DEPOSIT is blocked at zones (Contradiction B)"
+        # Run D (trace_excision): use opaque formatting for all components
+        if self.config.ablation == "trace_excision":
+            obs_text = format_observation_opaque_v430(observation)
+            norm_text = format_norm_state_opaque_v430(norm_state)
+            # No regime hints - that would leak causal information
+            regime_hint = ""
+        else:
+            obs_text = format_observation_v430(observation)
+            norm_text = format_norm_state_v430(norm_state)
+            regime_hint = ""
+            if regime == 1:
+                regime_hint = "\n\n**ATTENTION**: regime=1 - Check if STAMP is blocked by R6 (Contradiction A)"
+            elif regime == 2:
+                regime_hint = "\n\n**ATTENTION**: regime=2 - Check if DEPOSIT is blocked at zones (Contradiction B)"
 
         return f"""Episode {episode}, Step {step}
 

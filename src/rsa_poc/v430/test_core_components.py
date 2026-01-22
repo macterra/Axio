@@ -55,6 +55,8 @@ from rsa_poc.v430.core.law_repair import (
     RepairFailureReasonV430,
     create_canonical_repair_b,
 )
+from rsa_poc.v430.deliberator_oracle import OracleDeliberatorV430
+from rsa_poc.v430.pipeline import MVRSA430Harness, HarnessConfigV430
 
 
 def test_environment():
@@ -705,6 +707,75 @@ def test_persistence_excision():
     print("✅ Persistence Excision test PASSED\n")
 
 
+def test_trace_excision_opaque_format():
+    """Test that trace excision (Run D) produces opaque NormState and Observation formatting."""
+    print("=" * 60)
+    print("TEST: Trace Excision Opaque Format (Run D)")
+    print("=" * 60)
+
+    from rsa_poc.v430.deliberator import (
+        format_norm_state_v430,
+        format_norm_state_opaque_v430,
+        format_observation_v430,
+        format_observation_opaque_v430,
+    )
+
+    # Create a harness to get a valid NormState
+    env = TriDemandV430(seed=42)
+    deliberator = OracleDeliberatorV430()
+    config = HarnessConfigV430()
+    harness = MVRSA430Harness(env, deliberator, config)
+    ns = harness.norm_state
+
+    # Regular format should contain actual condition/effect semantics
+    regular = format_norm_state_v430(ns)
+    assert "REGIME_EQ" in regular, "Regular format should contain REGIME_EQ"
+    assert "STAMP" in regular, "Regular format should contain STAMP"
+    assert "DEPOSIT" in regular, "Regular format should contain DEPOSIT"
+    print("Regular format contains: REGIME_EQ, STAMP, DEPOSIT ✓")
+
+    # Opaque format should NOT contain actual semantics
+    opaque = format_norm_state_opaque_v430(ns)
+    assert "REGIME_EQ" not in opaque, "Opaque format should NOT contain REGIME_EQ"
+    assert '"STAMP"' not in opaque, "Opaque format should NOT contain STAMP"
+    assert "COND_" in opaque, "Opaque format should contain COND_ placeholders"
+    assert "EFFECT_" in opaque, "Opaque format should contain EFFECT_ placeholders"
+    print("Opaque format contains: COND_*, EFFECT_* (no semantics) ✓")
+
+    # Verify rule types are preserved
+    assert "PROHIBITION" in opaque, "Opaque format should preserve rule types"
+    assert "PERMISSION" in opaque, "Opaque format should preserve rule types"
+    print("Opaque format preserves: PROHIBITION, PERMISSION ✓")
+
+    # Verify R6 specifically
+    r6_idx = opaque.find("R6:")
+    assert r6_idx >= 0, "R6 should appear in opaque format"
+    r6_section = opaque[r6_idx:r6_idx+100]
+    assert "PROHIBITION" in r6_section, "R6 type should be PROHIBITION"
+    assert "COND_" in r6_section, "R6 condition should be opaque"
+    print(f"R6 opaque section: {r6_section[:60]}...")
+
+    # Test opaque observation formatter
+    obs, _ = env.reset(episode=2)
+    obs_regular = format_observation_v430(obs)
+    obs_opaque = format_observation_opaque_v430(obs)
+
+    # Regular observation should contain semantic position names
+    assert "STAMP_LOCATION" in obs_regular, "Regular obs should contain STAMP_LOCATION"
+    assert "ZONE_A" in obs_regular, "Regular obs should contain ZONE_A"
+    assert "regime=1" in obs_regular or "Regime: 1" in obs_regular, "Regular obs should have regime description"
+    print("Regular observation contains: STAMP_LOCATION, ZONE_A ✓")
+
+    # Opaque observation should NOT contain semantic position names
+    assert "STAMP_LOCATION" not in obs_opaque, "Opaque obs should NOT contain STAMP_LOCATION"
+    assert "ZONE_A" not in obs_opaque, "Opaque obs should NOT contain ZONE_A"
+    assert "SOURCE" not in obs_opaque, "Opaque obs should NOT contain SOURCE"
+    assert "LOC_" in obs_opaque, "Opaque obs should contain LOC_ placeholders"
+    print("Opaque observation contains: LOC_* (no semantic position names) ✓")
+
+    print("✅ Trace Excision Opaque Format test PASSED\n")
+
+
 def main():
     """Run all tests."""
     print("\n" + "=" * 60)
@@ -725,6 +796,7 @@ def main():
     test_regime_1_r7_r8_inactive()
     test_canonical_repair_b()
     test_persistence_excision()
+    test_trace_excision_opaque_format()
 
     print("\n" + "=" * 60)
     print("ALL TESTS PASSED ✅")
