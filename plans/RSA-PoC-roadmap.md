@@ -1,4 +1,4 @@
-# RSA-PoC Roadmap (Revised After v4.2 Closure)
+# RSA-PoC Roadmap (Revised After v4.3 Closure)
 
 **Reflective Sovereign Agent — Proof-of-Concept Construction Program**
 
@@ -197,11 +197,9 @@ Determine whether a candidate architecture is **ontologically irreducible**.
 
 **Ablation outcomes:**
 
-* **Ablation D (Justification Trace Excision):** PASSED
-  → collapse confirmed (5/5 seeds)
-* **Run AA (Prompt-Level Semantic Excision):** PASSED
-  → deliberative semantic affordances are necessary
-* **Run A (Artifact-Level Semantics):** CLOSED (architectural non-applicability)
+* **Ablation D (Justification Trace Excision):** PASSED → collapse confirmed (5/5 seeds)
+* **Run AA (Prompt-Level Semantic Excision):** PASSED → deliberative semantic affordances are necessary
+* **Run A:** CLOSED (architectural non-applicability)
 * **Runs B, C:** CLOSED (vacant normative state channel)
 
 **Status:** COMPLETED
@@ -253,8 +251,7 @@ Introduce strict obligation semantics for v4.x minimality testing.
 
 **Outcome:**
 v4.0 exposed a **spec–environment inconsistency**:
-
-* strict action-level obligation binding is incompatible with multi-step environments.
+strict action-level obligation binding is incompatible with multi-step environments.
 
 **Status:**
 **CLOSED — `VALID_RUN / BASELINE_FAILED (SPEC–ENVIRONMENT INCONSISTENCY)`**
@@ -271,12 +268,6 @@ Obligations bind to **targets (world-state predicates)**, and feasibility gradie
 
 * `rank(obs, tgt)`
 * `progress_set(obs, tgt)`
-
-**Result:**
-Baseline can operate in multi-step worlds under binding obligations.
-
-**Limitation established:**
-Reflection and Persistence were **not yet forced** to be load-bearing under TriDemandV410.
 
 **Status:**
 **CLOSED — OBLIGATION SEMANTICS REPAIRED**
@@ -305,24 +296,83 @@ This still does **not** establish a Minimum Viable RSA.
 
 ---
 
-### **RSA-PoC v4.x+ — MVRSA Construction (NEXT PHASE)**
+### **RSA-PoC v4.3 — Multi-Repair Sovereignty with Epoch-Chained Continuity (CLOSED)**
 
 **Purpose:**
-Move from a constitutive kernel to a **Minimum Viable Reflective Sovereign Agent (MVRSA)**.
+Extend v4.2 from **single-repair** to **two-contradiction / two-repair temporal pressure**, enforcing:
 
-**Remaining construction rungs:**
+* **R9** multi-repair discipline (≤2 repairs; one per regime)
+* **R10** non-subsumption (Repair B not implied by Repair A)
+* **R2A** non-vacuity for Repair A (Option B)
+* **epoch-chained continuity** across repair sequence
 
-1. **Multi-Repair Sovereignty**
-   → agent survives more than one interacting law revision
-2. **Pressure-Diverse Necessity**
-   → kernel remains constitutive under a second, non-isomorphic pressure channel
-3. **Minimal Viability Envelope**
-   → agent remains sovereign across a small but explicit task class
+**Contradictions:**
 
-None of these are yet demonstrated.
+* **Contradiction A (regime 1):** R6 PROHIBIT(STAMP) blocks required stamping
+* **Contradiction B (regime 2):** R7/R8 PROHIBIT(DEPOSIT) at ZONE_A/ZONE_B blocks dual delivery
+
+**Runs and status (preregistered seeds):**
+
+* **Baseline:** VALID (5×20)
+* **Run A (Semantic Excision):** VALID (5×20)
+* **Run B (Reflection Excision):** VALID (5×20)
+* **Run C (Persistence Excision):** VALID (5×20)
+* **Run D (Trace Excision / Golden Test):** **TERMINATED — CONSTRUCT_CONFOUND (navigation semantics)**
+
+**Binding findings retained from v4.3:**
+
+1. **Narrative semantics are non-constitutive** for observed performance
+   *Run A ≈ Baseline.*
+
+2. **Explicit trace labels are non-constitutive** for Repair A rule targeting
+   *Run B ≈ Baseline; rule targeting reconstructible from visible law structure.*
+
+3. **Cross-episode normative continuity is necessary for multi-repair validation to be well-defined**
+   *Run C shows that removing persistence breaks the R10 / post-A consistency validation pathway.*
+
+4. **Repair B remains a robust repair-synthesis barrier under frozen protocol**
+   Across **Baseline / Run A / Run B:** **Repair B success = 0%**.
+
+**Explicitly deferred (not answered by v4.3):**
+
+* Whether **causal inferability of rule–action mapping** is constitutive of repair competence
+  *(Run D confounded; cannot isolate the causal dependency without collapsing navigation/task affordances).*
+* Whether Repair B becomes achievable under altered scaffolding (tools, decomposition, richer internal state)
+  *(version increment required).*
 
 **Status:**
-**NOT STARTED — CONSTRUCTION PHASE**
+**CLOSED — MULTI-REPAIR PRESSURE INSTANTIATED; REPAIR-B BARRIER CONFIRMED; RUN D INVALIDATED (CONFOUND)**
+
+---
+
+### **RSA-PoC v4.4 — Selective Opacity for Trace-Inferability (NEXT)**
+
+**Purpose:**
+Repair the single epistemic gap left by v4.3:
+
+> **Is repair competence dependent on causal inferability of rule–action mapping, distinct from general task semantics?**
+
+**Design requirement:**
+Introduce a **selective opacity layer** that:
+
+* preserves navigation and task affordances,
+* preserves action affordances,
+* selectively occludes **rule–action mapping inferability** (blocking-rule identification),
+* without introducing new competence scaffolds that would reframe the question.
+
+**Activation condition (normative):**
+v4.4 begins only when:
+
+* v4.3 artifacts are tagged and frozen, and
+* a v4.4 preregistration exists specifying:
+
+  * modified environment contract,
+  * new opacity/observability boundary,
+  * invariants preserved from v4.3,
+  * success criteria and termination conditions.
+
+**Status:**
+**NOT STARTED — PREREGISTRATION REQUIRED**
 
 ---
 
@@ -332,7 +382,7 @@ RSA-PoC concludes when the following statement is defensible:
 
 > *This is the smallest system we know that must be treated as an agent, because removing any defining component collapses it into a non-agent class.*
 
-As of v4.2, this statement is **partially satisfied** (kernel level), but **not yet satisfied** at the MVRSA level.
+As of v4.3, this statement is **partially satisfied** at the **kernel + temporal multi-repair pressure instantiation** level, but **not yet satisfied** at the **MVRSA** level.
 
 ---
 
@@ -348,7 +398,7 @@ As of v4.2, this statement is **partially satisfied** (kernel level), but **not 
 * **v4.0 — CLOSED (FAILED, DIAGNOSTIC)**
 * **v4.1 — CLOSED (REPAIR)**
 * **v4.2 — CLOSED (CONSTITUTIVE KERNEL)**
-* **v4.x+ — NEXT (MVRSA CONSTRUCTION)**
+* **v4.3 — CLOSED (MULTI-REPAIR; RUN D CONFOUND)**
+* **v4.4 — NEXT (TRACE-INFERABILITY ISOLATION VIA SELECTIVE OPACITY)**
 
 ---
-
