@@ -1,0 +1,175 @@
+{
+  "version": "4.4.0",
+  "run_type": "baseline_44",
+  "seed": 42,
+  "max_episodes": 1,
+  "normative_opacity": false,
+  "elapsed_seconds": 106.1082206479914,
+  "model": "claude-sonnet-4-20250514",
+  "timestamp": "2026-01-22T13:43:06.138538",
+  "summary": {
+    "total_successes": 1,
+    "success_rate": 1.0,
+    "exec_gate_failures": 0,
+    "contradictions_detected": 0,
+    "repairs_accepted": 0
+  },
+  "episode_results": [
+    {
+      "episode": 0,
+      "steps": 18,
+      "success": true,
+      "contradiction_detected": false,
+      "repair_accepted": false,
+      "exec_gate_passed": null,
+      "regime_at_end": 0,
+      "total_reward": 8.3,
+      "step_log": [
+        {
+          "step": 0,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 1,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 2,
+          "action": "A4",
+          "reward": 0.1,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 3,
+          "action": "A3",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 4,
+          "action": "A3",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 5,
+          "action": "A5",
+          "reward": 1.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 6,
+          "action": "A2",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 7,
+          "action": "A2",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 8,
+          "action": "A4",
+          "reward": 0.1,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 9,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 10,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 11,
+          "action": "A5",
+          "reward": 1.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 12,
+          "action": "A1",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 13,
+          "action": "A1",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 14,
+          "action": "A4",
+          "reward": 0.1,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 15,
+          "action": "A2",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 16,
+          "action": "A2",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 17,
+          "action": "A5",
+          "reward": 6.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        }
+      ]
+    }
+  ]
+}

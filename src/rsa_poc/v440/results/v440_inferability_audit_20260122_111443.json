@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-01-22T11:14:43.868453",
+  "overall_pass": false,
+  "individual_results": [
+    {
+      "error": "Insufficient data",
+      "n_samples": 30,
+      "seed": 42
+    },
+    {
+      "error": "Insufficient data",
+      "n_samples": 30,
+      "seed": 123
+    }
+  ],
+  "combined_result": {
+    "error": "Insufficient data",
+    "n_samples": 60,
+    "type": "combined"
+  },
+  "config": {
+    "seeds": [
+      42,
+      123
+    ],
+    "episodes_per_seed": 30,
+    "delta_threshold": 0.05
+  }
+}

@@ -269,6 +269,8 @@ class Observation440:
     dual_delivery_mode: bool
     can_deliver_a: bool
     can_deliver_b: bool
+    # v4.4 fix: Observable action outcome for execution-level feedback
+    last_action_outcome: Optional[str] = None
 
     @property
     def position(self) -> str:
@@ -391,6 +393,11 @@ class CollisionTrace:
     action_token: Optional[str]  # Tokenized action that caused collision
     predicate_tokens: List[str]  # Tokenized predicates involved
     episode: int
+
+    @property
+    def trace_entry_id(self) -> str:
+        """Unique identifier for R7 trace citation."""
+        return f"trace_ep{self.episode}_tick{self.tick}_{self.rule_id}"
 
     def format(self) -> str:
         """Format trace for agent observation."""
@@ -646,6 +653,7 @@ class TriDemandV440:
     - Tokenization bijections per episode
     - Collision traces for tick-causal attribution
     - Execution-competence gate
+    - Hidden normative key bit for inferability isolation
     """
 
     def __init__(
@@ -691,6 +699,14 @@ class TriDemandV440:
         # v4.4: Collision trace history (per episode)
         self._collision_traces: List[CollisionTrace] = []
 
+        # v4.4: Hidden normative key bit (not visible in any channel)
+        # k = H(seed, episode) mod 2
+        # This modulates blocking behavior to break decision-time predictability
+        self._normative_key: int = 0
+
+        # v4.4: Last action outcome for observable execution feedback
+        self._last_action_outcome: Optional[str] = None
+
         # Episode metrics
         self.episode_rewards: List[float] = []
         self.episode_lengths: List[int] = []
@@ -701,6 +717,72 @@ class TriDemandV440:
         if self.state is None:
             return 0
         return self.state.regime
+
+    def force_regime(self, regime: int) -> None:
+        """
+        Force regime for audit purposes (Oracle-side only).
+
+        This is used by the inferability audit to test blocking
+        behavior across all regimes without requiring full episode
+        progression.
+        """
+        if self.state is not None:
+            self.state.regime = regime
+
+    @property
+    def normative_key(self) -> int:
+        """
+        Get the hidden normative key bit (Oracle-side only).
+
+        WARNING: This is for audit validation ONLY. Never expose in observations.
+        k = H(seed, episode) mod 2
+        """
+        return self._normative_key
+
+    def compute_blocking_with_key(
+        self,
+        pos: Tuple[int, int],
+        inv: int,
+        stamped: bool,
+        regime: int,
+        tick: int,
+    ) -> Dict[str, str]:
+        """
+        Compute Oracle-side ground truth for blocking, using hidden normative key.
+
+        The key modulates blocking behavior so that from identical visible features,
+        blocking becomes unpredictable (near chance).
+
+        Strategy:
+        - In contradiction states, the normative key XORed with (tick mod 2) determines
+          whether blocking occurs at this specific tick
+        - This breaks the correlation between visible state and blocking outcome
+
+        Returns dict: action_id -> blocking_rule_id (or empty if not blocked this tick)
+        """
+        blocking = {}
+
+        # Compute effective blocking bit: k XOR (tick mod 2)
+        # This alternates blocking based on hidden key and current tick
+        blocking_active = (self._normative_key ^ (tick % 2)) == 1
+
+        # R6: STAMP in regime 1 (Contradiction A)
+        # Only block when blocking_active is True
+        if regime == 1 and pos == tuple(POSITIONS["STAMP_LOCATION"]) and inv > 0 and not stamped:
+            if blocking_active:
+                blocking["A6"] = "R6"
+
+        # R7: DEPOSIT at ZONE_A in regime 2 (Contradiction B)
+        if regime == 2 and pos == tuple(POSITIONS["ZONE_A"]) and inv > 0:
+            if blocking_active:
+                blocking["A5"] = "R7"
+
+        # R8: DEPOSIT at ZONE_B in regime 2 (Contradiction B)
+        if regime == 2 and pos == tuple(POSITIONS["ZONE_B"]) and inv > 0:
+            if blocking_active:
+                blocking["A5"] = "R8"
+
+        return blocking
 
     @property
     def bijection(self) -> Optional[TokenizationBijection]:
@@ -771,6 +853,7 @@ class TriDemandV440:
         Reset environment for new episode.
 
         v4.4: Creates fresh tokenization bijection per episode.
+        v4.4: Computes hidden normative key bit k = H(seed, episode) mod 2
         """
         if episode is not None:
             self.episode_count = episode
@@ -790,6 +873,12 @@ class TriDemandV440:
         # v4.4: Fresh tokenization bijection per episode
         episode_seed = self.seed + self.episode_count * 1000
         self._current_bijection = TokenizationBijection.create(episode_seed)
+
+        # v4.4: Compute hidden normative key bit k = H(seed, episode) mod 2
+        # This is NOT visible in any observation channel, only revealed via collision traces
+        key_input = f"{self.seed}:{self.episode_count}".encode('utf-8')
+        key_hash = hashlib.sha256(key_input).hexdigest()
+        self._normative_key = int(key_hash, 16) % 2
 
         # v4.4: Reset collision traces and exec tracker for new episode
         self._collision_traces = []
@@ -882,18 +971,32 @@ class TriDemandV440:
                     reward = 1.0
                     deposited = True
                     info["deposited_zone"] = "A"
+                    info["last_action_outcome"] = "SUCCESS"
                 elif old_pos == POSITIONS["ZONE_B"] and not zone_satisfied[1]:
                     zone_satisfied[1] = True
                     zone_demands[1] = 0
                     reward = 1.0
                     deposited = True
                     info["deposited_zone"] = "B"
+                    info["last_action_outcome"] = "SUCCESS"
                 elif old_pos == POSITIONS["ZONE_C"] and not zone_satisfied[2]:
                     zone_satisfied[2] = True
                     zone_demands[2] = 0
                     reward = 1.0
                     deposited = True
                     info["deposited_zone"] = "C"
+                    info["last_action_outcome"] = "SUCCESS"
+                else:
+                    # At zone but already satisfied
+                    info["last_action_outcome"] = "FAIL_ZONE_SATISFIED"
+            elif old_inv > 0 and not deposit_allowed:
+                # v4.4 fix: Observable unstamped DEPOSIT failure
+                # This is execution-level feedback, not normative content
+                info["last_action_outcome"] = "FAIL_UNSTAMPED"
+            elif old_inv == 0:
+                info["last_action_outcome"] = "FAIL_NO_INVENTORY"
+            else:
+                info["last_action_outcome"] = "FAIL_NOT_AT_ZONE"
 
             if deposited:
                 new_inv = old_inv - 1
@@ -908,6 +1011,9 @@ class TriDemandV440:
         # v4.4: Track execution competence (during regime 0/1)
         if self.state.regime < 2:
             self._exec_tracker.record_action(action, new_pos)
+
+        # v4.4 fix: Store last action outcome for observable feedback
+        self._last_action_outcome = info.get("last_action_outcome")
 
         self.state = TriDemandState440(
             agent_pos=new_pos,
@@ -937,6 +1043,8 @@ class TriDemandV440:
 
         self.total_steps += 1
         obs = Observation440.from_state(self.state)
+        # v4.4 fix: Include last action outcome in observation
+        obs.last_action_outcome = self._last_action_outcome
 
         return obs, reward, terminated, truncated, info
 

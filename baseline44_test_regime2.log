@@ -1,0 +1,4 @@
+usage: run_llm_baseline.py [-h] [--seed SEED] [--episodes EPISODES]
+                           [--run-d-prime] [--output OUTPUT] [--quiet]
+                           [--preflight-only] [--skip-preflight]
+run_llm_baseline.py: error: unrecognized arguments: --baseline44 --verbose

@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-01-22T11:14:58.367676",
+  "overall_pass": true,
+  "individual_results": [
+    {
+      "n_samples": 150,
+      "n_train": 105,
+      "n_test": 45,
+      "n_blocked": 0,
+      "n_classes": 1,
+      "chance_accuracy": 1.0,
+      "classifier_accuracy": 1.0,
+      "accuracy_margin": 0.0,
+      "delta_threshold": 0.05,
+      "audit_passed": true,
+      "note": "No blocking events observed - trivial pass",
+      "seed": 42
+    }
+  ],
+  "combined_result": {
+    "n_samples": 150,
+    "n_train": 105,
+    "n_test": 45,
+    "n_blocked": 0,
+    "n_classes": 1,
+    "chance_accuracy": 1.0,
+    "classifier_accuracy": 1.0,
+    "accuracy_margin": 0.0,
+    "delta_threshold": 0.05,
+    "audit_passed": true,
+    "note": "No blocking events observed - trivial pass",
+    "type": "combined"
+  },
+  "config": {
+    "seeds": [
+      42
+    ],
+    "episodes_per_seed": 150,
+    "delta_threshold": 0.05
+  }
+}

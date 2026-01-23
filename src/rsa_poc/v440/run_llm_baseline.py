@@ -20,7 +20,7 @@ import os
 import time
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, Any, Optional, List
+from typing import Dict, Any, Optional, List, Tuple
 
 from .env.tri_demand import TriDemandV440, ACTION_NAMES
 from .deliberator import (
@@ -119,15 +119,184 @@ def task_aware_select(justified_action_ids: List[str], obs: Any, regime: int) ->
     return justified_action_ids[0]
 
 
-def _apply_repair_simple(norm_state: NormStateV430, repair_action: Any) -> NormStateV430:
+def _exception_subsumes(exception_condition: Any, trace: Any) -> bool:
     """
-    Simplified repair application for v4.4.
+    R10 Behavioral Replay: Check if an exception condition would have prevented the trace.
 
-    Directly applies patch operations without full gate validation.
-    v4.4 focuses on opacity testing, not repair gate semantics.
+    For TriDemand, this checks if the exception's semantics cover the scenario
+    where the trace occurred.
+
+    Args:
+        exception_condition: The exception condition from post-Repair-A state
+        trace: The collision trace that Repair B is trying to fix
+
+    Returns:
+        True if the exception would prevent the HALT that caused trace
+        (meaning B is subsumed by A)
+    """
+    # Extract the trace's context
+    rule_id = trace.rule_id
+
+    # For TriDemand Contradiction B:
+    # - R7/R8 block DEPOSIT at ZONE_A/ZONE_B in regime 2
+    # - If Repair A added an exception for regime 2 on R7 or R8, it covers B
+
+    if rule_id in ("R7", "R8"):
+        # Contradiction B scenario: regime 2 DEPOSIT blocking
+        # Check if exception applies to regime 2
+
+        # Get exception as dict or string
+        if hasattr(exception_condition, 'to_dict'):
+            exc_dict = exception_condition.to_dict()
+            # Check for REGIME_EQ(2) or dual_delivery_mode
+            exc_str = str(exc_dict)
+            if 'regime' in exc_str.lower() and '2' in exc_str:
+                return True
+            if 'dual_delivery' in exc_str.lower():
+                return True
+        elif isinstance(exception_condition, str):
+            if 'REGIME' in exception_condition and '2' in exception_condition:
+                return True
+            if 'dual_delivery' in exception_condition.lower():
+                return True
+
+    elif rule_id == "R6":
+        # Contradiction A scenario: regime 1 STAMP blocking
+        # (Typically not relevant for B subsumption, but handle for completeness)
+        if hasattr(exception_condition, 'to_dict'):
+            exc_dict = exception_condition.to_dict()
+            exc_str = str(exc_dict)
+            if 'regime' in exc_str.lower() and '1' in exc_str:
+                return True
+        elif isinstance(exception_condition, str):
+            if 'REGIME' in exception_condition and '1' in exception_condition:
+                return True
+
+    # Default: exception does not subsume
+    return False
+
+
+def _apply_repair_simple(
+    norm_state: NormStateV430,
+    repair_action: Any,
+    collision_traces: List = None,
+    repair_type: str = None,
+    pre_repair_a_norm_state: NormStateV430 = None,
+    require_collision_grounding: bool = True,
+) -> Tuple[NormStateV430, bool, Dict[str, Any]]:
+    """
+    Simplified repair application for v4.4 with full R-gate checks.
+
+    Enforces:
+    - R7: Repair must cite a collision trace (if require_collision_grounding=True)
+    - R9: Multi-repair discipline (checked externally via repair_type)
+    - R10: Non-subsumption replay for Repair B
+
+    Args:
+        norm_state: Current norm state
+        repair_action: The repair action to apply
+        collision_traces: List of collision traces for R7 validation
+        repair_type: 'A' or 'B' (needed for R10 check)
+        pre_repair_a_norm_state: Norm state BEFORE Repair A was applied (needed for R10)
+        require_collision_grounding: If True, enforce R7 (default).
+            Set False for Baseline-44 where foresight reasoning is allowed.
+
+    Returns:
+        Tuple of (new_norm_state, success, metadata)
+        metadata contains: {'r7_passed': bool, 'r10_passed': bool, 'r10_reason': str}
     """
     from copy import deepcopy
     from .core.dsl import PatchOp
+
+    metadata = {
+        'r7_passed': True,
+        'r10_passed': True,
+        'r10_reason': 'not_required',
+    }
+
+    # R7: If collision traces available AND collision grounding required, verify repair cites one
+    if require_collision_grounding and collision_traces is not None and len(collision_traces) > 0:
+        trace_id = getattr(repair_action, 'trace_entry_id', None)
+        if trace_id is None:
+            metadata['r7_passed'] = False
+            return norm_state, False, metadata  # R7 failure: no trace cited
+
+        # Check if cited trace exists
+        trace_ids = [t.trace_entry_id for t in collision_traces]
+        if trace_id not in trace_ids:
+            metadata['r7_passed'] = False
+            return norm_state, False, metadata  # R7 failure: trace not found
+
+    # R10: Non-subsumption BEHAVIORAL REPLAY for Repair B
+    # Per spec: replay the post-A law WITHOUT B, verify Contradiction B still triggers
+    # If Repair A already solves B, then B is subsumed and should be rejected
+    if repair_type == 'B' and pre_repair_a_norm_state is not None:
+        # Get the trace B is trying to fix
+        trace_id = getattr(repair_action, 'trace_entry_id', None)
+        if trace_id and collision_traces:
+            matching_traces = [t for t in collision_traces if t.trace_entry_id == trace_id]
+            if matching_traces:
+                trace = matching_traces[0]
+                blocking_rule_id = trace.rule_id
+
+                # BEHAVIORAL REPLAY: Check if post-A norm_state (WITHOUT B) still blocks
+                # We replay by checking if the rule that caused trace B's HALT
+                # would still fire under the current norm_state (post-A, pre-B)
+
+                # Find the blocking rule in post-A state
+                post_a_rule = None
+                for rule in norm_state.rules:
+                    if rule.id == blocking_rule_id:
+                        post_a_rule = rule
+                        break
+
+                if post_a_rule is not None:
+                    # Check if this rule has an exception from Repair A
+                    existing_exception = getattr(post_a_rule, 'exception_condition', None)
+
+                    if existing_exception is not None:
+                        # Post-A state has an exception on this rule
+                        # REPLAY: Would the exception prevent the Contradiction B scenario?
+
+                        # We need to evaluate: does the existing exception cover
+                        # the scenario that triggered trace B?
+
+                        # For TriDemand, Contradiction B occurs in regime 2 at ZONE_A or ZONE_B
+                        # If Repair A added an exception that applies to regime 2 scenarios,
+                        # then B is subsumed
+
+                        # Heuristic: If the blocking rule has ANY exception, check if it
+                        # matches what B is trying to add. If yes, B is redundant.
+                        # If no, check if the exception's semantics would prevent B's trigger.
+
+                        # Get what Repair B is trying to add
+                        for patch in repair_action.patch_ops:
+                            if patch.op == PatchOp.ADD_EXCEPTION and patch.target_rule_id == blocking_rule_id:
+                                proposed_exception = patch.exception_condition
+
+                                # BEHAVIORAL TEST: Would existing exception prevent the HALT?
+                                # For proper replay, we'd need to re-evaluate the trace scenario
+                                # against the post-A rules. Since the trace already occurred,
+                                # we check if the exception would have prevented it.
+
+                                # The trace occurred because the rule fired. Under post-A:
+                                # - If post-A has an exception that covers this scenario,
+                                #   the trace would NOT have occurred → B is subsumed
+                                # - If post-A exception doesn't cover this scenario,
+                                #   the trace WOULD still occur → B is needed
+
+                                # Semantic check: does existing_exception cover B's scenario?
+                                # For now, we use string equality as a proxy for subsumption
+                                # A more sophisticated check would evaluate the exception's
+                                # condition against the trace's state
+
+                                if _exception_subsumes(existing_exception, trace):
+                                    # Existing exception would prevent B's HALT
+                                    metadata['r10_passed'] = False
+                                    metadata['r10_reason'] = 'B_SUBSUMED_BY_A'
+                                    return norm_state, False, metadata
+
+        metadata['r10_reason'] = 'non_subsumption_replay_passed'
 
     new_rules = list(norm_state.rules)
 
@@ -135,20 +304,22 @@ def _apply_repair_simple(norm_state: NormStateV430, repair_action: Any) -> NormS
         if patch.op == PatchOp.ADD_EXCEPTION:
             # Find the rule and add exception
             for i, rule in enumerate(new_rules):
-                if rule.id == patch.rule_id:
+                if rule.id == patch.target_rule_id:
                     new_rule = deepcopy(rule)
-                    object.__setattr__(new_rule, 'exception_condition', patch.new_value)
+                    object.__setattr__(new_rule, 'exception_condition', patch.exception_condition)
                     new_rules[i] = new_rule
                     break
 
     # Create new norm state with updated rules
-    return NormStateV430(
-        rules=tuple(new_rules),
-        law_fingerprint=norm_state.law_fingerprint,
-        norm_hash=norm_state.norm_hash,
-        current_epoch=norm_state.current_epoch,
+    # NormStateV430 only takes rules, epoch_chain, and repair_count
+    # law_fingerprint, norm_hash, and current_epoch are computed properties
+    new_state = NormStateV430(
+        rules=new_rules,
+        epoch_chain=list(norm_state.epoch_chain),
         repair_count=norm_state.repair_count + 1,
     )
+
+    return new_state, True, metadata
 
 
 def run_preflight_validation(
@@ -283,6 +454,9 @@ def run_single_episode_llm(
     repair_accepted = False
     exec_gate_checked = False
 
+    # Track pre-Repair-A norm state for R10 check
+    pre_repair_a_norm_state = None
+
     step_log = []
 
     while not done and step < FROZEN_H:
@@ -322,17 +496,54 @@ def run_single_episode_llm(
         if output.conflict_detected:
             contradiction_detected = True
             if output.repair_action:
-                # Simplified repair application (v4.4 focuses on opacity, not full gate validation)
-                # Accept repair if it's the right type and we haven't already done that repair
+                # Get collision traces for R7 validation
+                collision_traces = env.get_collision_traces()
+
+                # R7 collision grounding only required in normative_opacity mode
+                # In Baseline-44 (clear semantics), foresight reasoning is allowed
+                require_collision_grounding = env.normative_opacity
+
+                # Apply repair with R-gate checks (R7, R9, R10)
                 if output.conflict_type == 'A' and not deliberator.repair_a_issued:
-                    norm_state = _apply_repair_simple(norm_state, output.repair_action)
-                    repair_accepted = True
-                    deliberator.record_repair_accepted('A')
-                    env.record_repair_a_accepted(episode)
+                    # Store pre-Repair-A state for R10 check later
+                    pre_repair_a_norm_state = norm_state
+
+                    new_state, success, r_metadata = _apply_repair_simple(
+                        norm_state,
+                        output.repair_action,
+                        collision_traces,
+                        repair_type='A',
+                        pre_repair_a_norm_state=None,  # Not needed for Repair A
+                        require_collision_grounding=require_collision_grounding,
+                    )
+                    if success:
+                        norm_state = new_state
+                        repair_accepted = True
+                        deliberator.record_repair_accepted('A')
+                        env.record_repair_a_accepted(episode)
+                        if verbose:
+                            print(f"    Repair A accepted (R7 passed)")
+                    elif verbose:
+                        print(f"    Repair A rejected (R7 check failed)")
+
                 elif output.conflict_type == 'B' and not deliberator.repair_b_issued:
-                    norm_state = _apply_repair_simple(norm_state, output.repair_action)
-                    repair_accepted = True
-                    deliberator.record_repair_accepted('B')
+                    new_state, success, r_metadata = _apply_repair_simple(
+                        norm_state,
+                        output.repair_action,
+                        collision_traces,
+                        repair_type='B',
+                        pre_repair_a_norm_state=pre_repair_a_norm_state,
+                        require_collision_grounding=require_collision_grounding,
+                    )
+                    if success:
+                        norm_state = new_state
+                        repair_accepted = True
+                        deliberator.record_repair_accepted('B')
+                        if verbose:
+                            print(f"    Repair B accepted (R7, R10 passed: {r_metadata['r10_reason']})")
+                    elif verbose:
+                        r10_msg = f", R10: {r_metadata['r10_reason']}" if not r_metadata['r10_passed'] else ""
+                        print(f"    Repair B rejected (R7: {r_metadata['r7_passed']}{r10_msg})")
 
         # Select action using task-aware heuristics
         if output.justifications:

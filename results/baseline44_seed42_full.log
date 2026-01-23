@@ -1,0 +1,40 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/david/Axio/src/rsa_poc/v440/run_llm_baseline.py", line 794, in <module>
+    exit(main())
+         ^^^^^^
+  File "/home/david/Axio/src/rsa_poc/v440/run_llm_baseline.py", line 763, in main
+    result = run_with_llm(
+             ^^^^^^^^^^^^^
+  File "/home/david/Axio/src/rsa_poc/v440/run_llm_baseline.py", line 626, in run_with_llm
+    ep_result = run_single_episode_llm(
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/david/Axio/src/rsa_poc/v440/run_llm_baseline.py", line 511, in run_single_episode_llm
+    new_state, success, r_metadata = _apply_repair_simple(
+                                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/david/Axio/src/rsa_poc/v440/run_llm_baseline.py", line 307, in _apply_repair_simple
+    if rule.id == patch.rule_id:
+                  ^^^^^^^^^^^^^
+AttributeError: 'PatchOperation' object has no attribute 'rule_id'
+======================================================================
+RSA-PoC v4.4 — Baseline-44
+======================================================================
+
+Configuration:
+  Seed:              42
+  Episodes:          20
+  Steps/episode:     40
+  Normative opacity: False
+  Model:             claude-sonnet-4-20250514
+
+
+--- Pre-Flight Validation ---
+    Normative opacity: False
+  Success rate: 5/5 = 100.0%
+  Exec gate failures: 0
+  ✅ Pre-flight PASSED
+
+--- Baseline-44 (Seed 42) ---
+  Ep0: steps=18, ✓, regime=0
+  Ep1: steps=18, ✓, regime=0
