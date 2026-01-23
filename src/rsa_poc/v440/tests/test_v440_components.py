@@ -810,6 +810,100 @@ class TestSystemPromptParity:
 
 
 # ============================================================================
+# §9 — Task-Aware Selector Tests (Regression for Section 6.9)
+# ============================================================================
+
+
+class TestTaskAwareSelect:
+    """
+    Regression tests for task_aware_select priority ordering.
+
+    Section 6.9 bug: DEPOSIT was checked before STAMP. Since ZONE_C == STAMP_LOCATION,
+    the selector picked A5 (DEPOSIT) instead of A6 (STAMP) when both were justified.
+    """
+
+    def test_stamp_priority_over_deposit_at_stamp_location(self):
+        """
+        At STAMP_LOCATION (== ZONE_C), when unstamped with inventory in regime>=1,
+        STAMP (A6) must be selected over DEPOSIT (A5) even when both are justified.
+
+        This is the Section 6.9 regression test.
+        """
+        from ..run_llm_baseline import task_aware_select
+        from ..env.tri_demand import POSITIONS
+
+        # Mock observation at STAMP_LOCATION (which is also ZONE_C)
+        class MockObs:
+            agent_pos = POSITIONS["STAMP_LOCATION"]  # (2, 4)
+            inventory = 1
+            stamped = False
+            zone_a_satisfied = False
+            zone_b_satisfied = False
+            zone_c_satisfied = False
+
+        obs = MockObs()
+        regime = 2  # or 1, stamping required
+
+        # LLM justifies both A5 (DEPOSIT) and A6 (STAMP)
+        justified = ["A5", "A6"]
+
+        # STAMP (A6) must be selected, not DEPOSIT (A5)
+        selected = task_aware_select(justified, obs, regime)
+        assert selected == "A6", \
+            f"At STAMP_LOCATION, unstamped: expected A6 (STAMP), got {selected}"
+
+    def test_deposit_allowed_after_stamped(self):
+        """
+        After stamping, DEPOSIT should be selected at zone locations.
+        """
+        from ..run_llm_baseline import task_aware_select
+        from ..env.tri_demand import POSITIONS
+
+        class MockObs:
+            agent_pos = POSITIONS["ZONE_C"]  # Same as STAMP_LOCATION
+            inventory = 1
+            stamped = True  # Already stamped
+            zone_a_satisfied = False
+            zone_b_satisfied = False
+            zone_c_satisfied = False
+
+        obs = MockObs()
+        regime = 2
+
+        justified = ["A5", "A6"]
+
+        # DEPOSIT (A5) should be selected since already stamped
+        selected = task_aware_select(justified, obs, regime)
+        assert selected == "A5", \
+            f"At zone, already stamped: expected A5 (DEPOSIT), got {selected}"
+
+    def test_stamp_not_required_in_regime_0(self):
+        """
+        In regime 0, DEPOSIT should be selected even without stamping.
+        """
+        from ..run_llm_baseline import task_aware_select
+        from ..env.tri_demand import POSITIONS
+
+        class MockObs:
+            agent_pos = POSITIONS["ZONE_C"]
+            inventory = 1
+            stamped = False  # Not stamped, but regime 0 doesn't require it
+            zone_a_satisfied = False
+            zone_b_satisfied = False
+            zone_c_satisfied = False
+
+        obs = MockObs()
+        regime = 0  # No stamping required
+
+        justified = ["A5", "A6"]
+
+        # DEPOSIT (A5) should be selected in regime 0
+        selected = task_aware_select(justified, obs, regime)
+        assert selected == "A5", \
+            f"Regime 0, unstamped: expected A5 (DEPOSIT), got {selected}"
+
+
+# ============================================================================
 # Run tests
 # ============================================================================
 

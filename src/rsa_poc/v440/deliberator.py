@@ -547,12 +547,22 @@ class LLMDeliberatorV440:
         else:
             system_prompt = SYSTEM_PROMPT_V440_BASELINE
 
+        # Use structured system message with cache_control for prompt caching
+        # This caches the system prompt across calls, reducing costs by ~50%
+        system_with_cache = [
+            {
+                "type": "text",
+                "text": system_prompt,
+                "cache_control": {"type": "ephemeral"}
+            }
+        ]
+
         try:
             response = self.client.messages.create(
                 model=self.config.model,
                 max_tokens=self.config.max_tokens,
                 temperature=self.config.temperature,
-                system=system_prompt,
+                system=system_with_cache,
                 messages=[
                     {"role": "user", "content": user_prompt}
                 ]

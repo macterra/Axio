@@ -50,7 +50,10 @@ def task_aware_select(justified_action_ids: List[str], obs: Any, regime: int) ->
     Select the best action from justified actions using task-aware heuristics.
 
     This mirrors v4.3 TaskAwareSelector but works on LLM-justified action set.
-    Priority: DEPOSIT (at zone) > STAMP (regime 1, at stamp loc) > COLLECT (at source) > MOVE toward goal
+    Priority: STAMP (regime>=1, unstamped) > DEPOSIT (at zone) > COLLECT (at source) > MOVE toward goal
+
+    NOTE: STAMP must be checked BEFORE DEPOSIT because STAMP_LOCATION == ZONE_C.
+    Without this ordering, the agent would try DEPOSIT at ZONE_C without stamping first.
     """
     from .env.tri_demand import POSITIONS
 
@@ -63,13 +66,14 @@ def task_aware_select(justified_action_ids: List[str], obs: Any, regime: int) ->
     zones = [obs.zone_a_satisfied, obs.zone_b_satisfied, obs.zone_c_satisfied]
     zone_positions = [tuple(POSITIONS["ZONE_A"]), tuple(POSITIONS["ZONE_B"]), tuple(POSITIONS["ZONE_C"])]
 
-    # DEPOSIT only valid at a zone with inventory
-    if "A5" in justified_action_ids and inv > 0 and pos in zone_positions:
-        return "A5"
-
-    # STAMP only valid at STAMP_LOCATION in regime 1+ with unstamped inventory
+    # STAMP takes priority when unstamped in regime>=1 (must stamp before depositing)
+    # This is checked FIRST because STAMP_LOCATION == ZONE_C
     if "A6" in justified_action_ids and regime >= 1 and inv > 0 and not stamped and pos == tuple(POSITIONS["STAMP_LOCATION"]):
         return "A6"
+
+    # DEPOSIT only valid at a zone with inventory (and implicitly stamped if regime>=1)
+    if "A5" in justified_action_ids and inv > 0 and pos in zone_positions:
+        return "A5"
 
     # COLLECT only valid at SOURCE with no inventory
     if "A4" in justified_action_ids and inv == 0 and pos == tuple(POSITIONS["SOURCE"]):
@@ -591,6 +595,7 @@ def run_with_llm(
     normative_opacity: bool = False,
     max_episodes: int = FROZEN_E,
     verbose: bool = True,
+    model: str = "claude-sonnet-4-20250514",
 ) -> Dict[str, Any]:
     """
     Run LLM deliberator for a single seed.
@@ -600,6 +605,7 @@ def run_with_llm(
         normative_opacity: If True, enable normative opacity (Run D′)
         max_episodes: Number of episodes
         verbose: Print progress
+        model: Anthropic model to use
     """
     run_name = "Run D′ (Normative Opacity)" if normative_opacity else "Baseline-44"
 
@@ -608,7 +614,7 @@ def run_with_llm(
 
     env = TriDemandV440(seed=seed, normative_opacity=normative_opacity)
 
-    config = LLMDeliberatorConfigV440(normative_opacity=normative_opacity)
+    config = LLMDeliberatorConfigV440(normative_opacity=normative_opacity, model=model)
     deliberator = LLMDeliberatorV440(config)
 
     # Initialize norm state
@@ -720,6 +726,13 @@ def main():
         action="store_true",
         help="Skip pre-flight validation"
     )
+    parser.add_argument(
+        "--model",
+        type=str,
+        default="claude-sonnet-4-20250514",
+        choices=["claude-sonnet-4-20250514", "claude-3-5-haiku-20241022"],
+        help="Model to use (default: claude-sonnet-4-20250514). Haiku is ~10x cheaper for dev."
+    )
 
     args = parser.parse_args()
 
@@ -734,7 +747,7 @@ def main():
     print(f"  Episodes:          {args.episodes}")
     print(f"  Steps/episode:     {FROZEN_H}")
     print(f"  Normative opacity: {args.run_d_prime}")
-    print(f"  Model:             claude-sonnet-4-20250514")
+    print(f"  Model:             {args.model}")
     print()
 
     # Pre-flight validation
@@ -765,6 +778,7 @@ def main():
         normative_opacity=args.run_d_prime,
         max_episodes=args.episodes,
         verbose=not args.quiet,
+        model=args.model,
     )
 
     # Save result

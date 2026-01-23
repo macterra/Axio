@@ -218,16 +218,18 @@ The LLM generates justifications for multiple actions. The `task_aware_select()`
 ```python
 def task_aware_select(justified_action_ids: List[str], obs: Any, regime: int) -> str:
     """
-    Priority: DEPOSIT (at zone) > STAMP (regime 1, at stamp loc) >
+    Priority: STAMP (regime>=1, unstamped) > DEPOSIT (at zone) >
               COLLECT (at source) > MOVE toward goal
+
+    NOTE: STAMP must be checked BEFORE DEPOSIT because STAMP_LOCATION == ZONE_C.
     """
-    # DEPOSIT only valid at a zone with inventory
+    # STAMP takes priority when unstamped in regime>=1 (must stamp before depositing)
+    if "A6" in justified_action_ids and regime >= 1 and inv > 0 and not stamped and pos == STAMP_LOCATION:
+        return "A6"
+
+    # DEPOSIT only valid at a zone with inventory (and implicitly stamped if regime>=1)
     if "A5" in justified_action_ids and inv > 0 and pos in zone_positions:
         return "A5"
-
-    # STAMP only valid at STAMP_LOCATION in regime 1+ with unstamped inventory
-    if "A6" in justified_action_ids and regime >= 1 and inv > 0 and not stamped:
-        return "A6"
 
     # COLLECT only valid at SOURCE with no inventory
     if "A4" in justified_action_ids and inv == 0 and pos == SOURCE:
@@ -237,7 +239,7 @@ def task_aware_select(justified_action_ids: List[str], obs: Any, regime: int) ->
     ...
 ```
 
-**Rationale**: The LLM provides normative justifications; the selector applies execution-level task knowledge. This separation is intentional—we test normative reasoning, not pathfinding.
+**Rationale**: The LLM provides normative justifications; the selector applies execution-level task knowledge. This separation is intentional—we test normative reasoning, not pathfinding. See Section 6.9 for the priority order fix.
 
 ---
 
@@ -526,13 +528,47 @@ This is execution mechanics documentation, NOT normative content. The agent lear
 
 **Unit Tests**: 32 passing (unchanged — `TestSystemPromptParity` already verifies parity).
 
+### 6.9 Bug Fix: task_aware_select Priority Order (2026-01-23)
+
+**Issue**: After fixes 6.7 and 6.8, runs still showed systematic regime-2 failures (Ep0-4 succeed, Ep5+ all fail at 40-step timeout). Debug trace revealed:
+
+```
+Step 5: pos=(2, 4), inv=1, stamped=False | justified=['A5', 'A6'] | selected=A5 | outcome=FAIL_UNSTAMPED
+Step 6: pos=(2, 4), inv=1, stamped=False | justified=['A5', 'A6'] | selected=A5 | outcome=FAIL_UNSTAMPED
+...
+```
+
+**Root Cause**: `task_aware_select()` checked DEPOSIT before STAMP. Since ZONE_C and STAMP_LOCATION are the same position (2,4), when the agent arrived there with inventory, the selector picked A5 (DEPOSIT) instead of A6 (STAMP), even though the LLM justified both.
+
+**Fix**: Reordered priority in `task_aware_select()`:
+
+```python
+# BEFORE: DEPOSIT > STAMP > COLLECT > MOVE
+# AFTER:  STAMP (when unstamped) > DEPOSIT > COLLECT > MOVE
+
+# STAMP takes priority when unstamped in regime>=1 (must stamp before depositing)
+# This is checked FIRST because STAMP_LOCATION == ZONE_C
+if "A6" in justified and regime >= 1 and inv > 0 and not stamped and pos == STAMP_LOCATION:
+    return "A6"
+
+# DEPOSIT only valid at a zone with inventory (and implicitly stamped if regime>=1)
+if "A5" in justified and inv > 0 and pos in zone_positions:
+    return "A5"
+```
+
+**Design Rationale**: The LLM correctly justifies STAMP when stamping is required. The selector's job is to apply domain-aware execution ordering, not second-guess the LLM. When both DEPOSIT and STAMP are justified at STAMP_LOCATION, STAMP must come first if unstamped.
+
+**Files Modified**: [run_llm_baseline.py](../run_llm_baseline.py) `task_aware_select()` function.
+
+**Unit Tests**: 34 passing (unchanged).
+
 ---
 
 ## 7. Baseline-44 Results
 
 ### 7.1 Baseline-44 (5 seeds × 20 episodes)
 
-**Status**: Re-run required after Section 6.8 prompt fix.
+**Status**: Re-run required after Section 6.9 task_aware_select fix.
 
 | Seed | Status | Success Rate | Regime 2 | Contradictions | Repairs | Time (s) |
 |------|--------|--------------|----------|----------------|---------|----------|
@@ -542,7 +578,7 @@ This is execution mechanics documentation, NOT normative content. The agent lear
 | 789  | 🔄 Re-run pending | — | — | — | — | — |
 | 1000 | 🔄 Re-run pending | — | — | — | — | — |
 
-**Prior Results (before 6.8 fix)**: Seed 42 achieved 70% but all 5 seeds showed systematic regime-2 failures (0% in regime 2 for seeds other than 42). This was traced to missing recovery instructions for `FAIL_UNSTAMPED`.
+**Prior Results (before 6.9 fix)**: All 5 seeds showed identical pattern — Ep0-4 succeed (100%), Ep5+ all fail (0%). This was traced to task_aware_select priority ordering bug.
 
 ### 7.2 High Variance Finding
 
@@ -680,7 +716,7 @@ Two possible outcomes:
 
 5. **~~Execution-Channel Interaction Effect~~** ✅ RESOLVED: The hidden normative key (`k = H(seed, episode) mod 2`) fixed the foresight leak. Both decision-time and mask-only audits now pass with **negative margin** (-0.0396), meaning classifier accuracy is BELOW chance. Generalizable inferability is absent at decision time.
 
-6. **Unit Tests**: 32 unit tests passing, including R10 non-subsumption test, trace_entry_id format validation, system prompt parity enforcement, and observable DEPOSIT failure tests.
+6. **Unit Tests**: 34 unit tests passing, including R10 non-subsumption test, trace_entry_id format validation, system prompt parity enforcement, observable DEPOSIT failure tests, and action-space parity tests.
 
 7. **Execution Mechanics Parity**: v4.4 removes *normative foresight*, not *execution semantics documentation*. Baseline-44 and Run D' must share an identical execution model. `TestSystemPromptParity` class enforces that "Execution Mechanics" sections are byte-identical between both prompts. This is a control prompt completeness correction, not experimental manipulation.
 
