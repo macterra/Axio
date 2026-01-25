@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency VIII.7 — Minimal Viable Reflective Sovereign Agency (MVRSA) - Axionic Agency Lab</title>
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../" class="nav-brand">
+            <img src="../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href=".././">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
+
+<h1
+id="axionic-agency-viii.7-minimal-viable-reflective-sovereign-agency-mvrsa">Axionic
+Agency VIII.7 — Minimal Viable Reflective Sovereign Agency (MVRSA)</h1>
+<p><em>Justification Traces, Deliberative Semantics, Reflection, and
+Persistence as Load-Bearing Structure</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026.01.25</p>
+<ul>
+<li><strong>Program:</strong> RSA-PoC (Reflective Sovereign Agent —
+Proof-of-Concept)</li>
+<li><strong>Versions Covered:</strong> v0.1 → v4.4</li>
+<li><strong>Status:</strong> Final technical note — empirically
+validated within this architecture class</li>
+</ul>
+<h2 id="abstract">Abstract</h2>
+<p>We present <strong>Minimal Viable Reflective Sovereign Agency
+(MVRSA)</strong>: a formally specified agent architecture that
+establishes <strong>constitutive requirements for normative
+agency</strong>. An MVRSA is not defined by task performance or
+behavioral mimicry, but by the <strong>causal role of its normative
+commitments</strong> in constraining action.</p>
+<p>Using a staged ablation protocol (“the Guillotine Test”) across
+RSA-PoC v0.1–v4.4, we show that <strong>Traceability, Reflection,
+Persistence, and Semantic Access</strong> are each <strong>individually
+necessary</strong> for this form of agency. In particular, we
+demonstrate a strong negative result in v4.4: <strong>contradiction
+detection is not collision-groundable</strong>. An agent deprived of
+semantic access to its own rule conditions/effects cannot recognize
+normative inconsistency, even when provided with perfect tick-causal
+violation traces.</p>
+<p>This establishes a sharp architectural boundary: <strong>execution
+competence can survive opacity; normative sovereignty
+cannot</strong>.</p>
+<h2 id="motivation">1. Motivation</h2>
+<p>Much of contemporary AI “agency” consists of <strong>post-hoc
+rationalization</strong> layered atop reward-driven control.
+Explanations are generated <em>after</em> actions, with no causal
+influence on what the system is allowed to do.</p>
+<p>We take the opposite stance:</p>
+<blockquote>
+<p><strong>If justification artifacts do not causally constrain feasible
+action selection, the system is not an agent.</strong></p>
+</blockquote>
+<p>The RSA-PoC program operationalizes this claim by enforcing a strict
+separation between:</p>
+<ul>
+<li><em>normative reasoning</em> (why an action is permitted), and</li>
+<li><em>action selection</em> (choosing only from normatively permitted
+options).</li>
+</ul>
+<h2 id="definition-minimal-viable-reflective-sovereign-agent-mvrsa">2.
+Definition: Minimal Viable Reflective Sovereign Agent (MVRSA)</h2>
+<p>An <strong>MVRSA</strong> is the <strong>smallest architecture that
+can actually function</strong> as a reflective sovereign agent under
+pressure.</p>
+<h3 id="why-viable">2.1 Why “Viable”</h3>
+<p>“Minimal” specifies parsimony. “Viable” specifies
+<strong>operability</strong>.</p>
+<p>An MVRSA:</p>
+<ul>
+<li>runs end-to-end,</li>
+<li>completes tasks,</li>
+<li>survives incentive pressure,</li>
+<li>maintains identity over time,</li>
+<li>and collapses if <em>any</em> constitutive component is
+removed.</li>
+</ul>
+<p>This is an <strong>existence proof</strong>, not a theoretical lower
+bound.</p>
+<h3 id="formal-definition">2.2 Formal Definition</h3>
+<p>An MVRSA is an agent architecture satisfying all of the
+following:</p>
+<ol type="1">
+<li><p><strong>Justification Precedence</strong> Every action must be
+preceded by a justification artifact (JAF).</p></li>
+<li><p><strong>Constraint-Only Action Selection</strong> The action
+selector has access <strong>only</strong> to compiled constraints (masks
+or probability adjustments), not to rule antecedents, consequences, or
+explanations.</p></li>
+<li><p><strong>Deterministic / Verifiable Compilation</strong>
+Justifications compile reproducibly into constraints that prune the
+feasible action set.</p></li>
+<li><p><strong>Causal Load-Bearing Constraints</strong> Removing or
+bypassing justifications collapses behavior to the Arbitrary Selection
+Baseline (ASB).</p></li>
+<li><p><strong>Reflection (Write Access)</strong> The agent can update
+its own normative state in response to conflict or repair.</p></li>
+<li><p><strong>Persistence (Continuity)</strong> Normative state
+persists across steps and episodes.</p></li>
+<li><p><strong>Traceability</strong> Each normative update or repair
+must cite a concrete <strong>justification trace</strong> linking
+action, rule, and violation.</p></li>
+<li><p><strong>Semantic Access</strong> The agent has access to
+interpretable rule conditions and effects sufficient to recognize
+normative inconsistency.</p></li>
+</ol>
+<h2 id="architecture-overview">3. Architecture Overview</h2>
+<table>
+<colgroup>
+<col style="width: 64%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. World Interface</td>
+<td>Feasibility oracle, action set</td>
+</tr>
+<tr class="even">
+<td>2. Normative State (Persistent)</td>
+<td>Persistent laws, commitments, precedent, identity</td>
+</tr>
+<tr class="odd">
+<td>3. Justification Generator (Reflective Layer)</td>
+<td>Produces JAFs referencing norms and traces</td>
+</tr>
+<tr class="even">
+<td>4. Justification Compiler (JCOMP)</td>
+<td>JAF → constraint (mask / probs); deterministic / auditable</td>
+</tr>
+<tr class="odd">
+<td>5. Constraint-Only Selector</td>
+<td>Chooses from permitted actions (blind to reasons)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Clarification:</strong> The selector is <em>not</em> blind to
+constraints. It is blind to <strong>antecedents, consequences, and
+justifications</strong>—i.e. the <em>why</em>.</p>
+<h2 id="methodology-the-guillotine-test">4. Methodology: The Guillotine
+Test</h2>
+<p>To establish <strong>constitutive necessity</strong>, RSA-PoC applies
+a strict ablation rule:</p>
+<blockquote>
+<p><em>If removing component X does not cause collapse, X was never
+constitutive.</em></p>
+</blockquote>
+<p>Each component is removed <em>in isolation</em> while holding all
+others fixed. Collapse is measured as ≤10% task success or immediate
+HALT.</p>
+<h2 id="experimental-environment-v4.x">5. Experimental Environment
+(v4.x)</h2>
+<p><strong>TriDemand Environment</strong></p>
+<ul>
+<li><p>Grid: 5×5</p></li>
+<li><p>Actions: MOVE (4), COLLECT, DEPOSIT, STAMP</p></li>
+<li><p>Regimes:</p>
+<ul>
+<li>0: unconstrained</li>
+<li>1: STAMP required</li>
+<li>2: dual delivery constraints</li>
+</ul></li>
+<li><p>Normative contradictions are explicitly encoded in rule
+semantics.</p></li>
+</ul>
+<h2 id="results-summary-v0.1-v4.4">6. Results Summary (v0.1 → v4.4)</h2>
+<h3 id="constitutive-necessity-table">6.1 Constitutive Necessity
+Table</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Ablation Tested In</th>
+<th>Result</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Justification Trace</td>
+<td>v0.1, v4.1-D</td>
+<td>0% success</td>
+<td>✅ Necessary</td>
+</tr>
+<tr class="even">
+<td>Reflection (Write)</td>
+<td>v3.1-B, v4.2-B</td>
+<td>5–10%</td>
+<td>✅ Necessary</td>
+</tr>
+<tr class="odd">
+<td>Persistence</td>
+<td>v3.1-C, v4.2-C</td>
+<td>~10%</td>
+<td>✅ Necessary</td>
+</tr>
+<tr class="even">
+<td>Semantic Access</td>
+<td>v4.4-D′</td>
+<td>0%</td>
+<td>✅ Necessary</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Baseline:</strong> 100% success. <strong>Any single
+removal:</strong> collapse.</p>
+<h2 id="the-v4.4-inferability-isolation-test">7. The v4.4 Inferability
+Isolation Test</h2>
+<h3 id="question">7.1 Question</h3>
+<p>Can an agent <strong>detect normative contradictions</strong> using
+only:</p>
+<ul>
+<li>collision traces (WHEN + WHICH rule fired),</li>
+<li>without semantic access to rule conditions/effects?</li>
+</ul>
+<h3 id="experimental-design">7.2 Experimental Design</h3>
+<ul>
+<li><p><strong>Baseline-44:</strong> full semantic access</p></li>
+<li><p><strong>Run D′:</strong> normative opacity</p>
+<ul>
+<li>conditions/effects replaced with opaque tokens (<code>COND_N</code>,
+<code>EFFECT_N</code>)</li>
+<li>rule IDs, types, and priorities preserved</li>
+<li>collision traces preserved</li>
+</ul></li>
+</ul>
+<h3 id="results">7.3 Results</h3>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 9%" />
+<col style="width: 39%" />
+<col style="width: 9%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Run</th>
+<th>Success</th>
+<th>Contradiction Predicate True</th>
+<th>Repairs</th>
+<th>Exec Gate Failures</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Baseline-44</td>
+<td>100/100</td>
+<td>90</td>
+<td>10</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>Run D′</td>
+<td>0/100</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Clarification:</strong> Predicate &gt; Repairs is expected.
+Many contradictions are handled via avoidance once repaired; only
+deadlocks require explicit law modification.</p>
+<h3 id="localization-of-failure">7.4 Localization of Failure</h3>
+<ul>
+<li>Execution competence intact (0 exec gate failures)</li>
+<li>Collision traces received correctly</li>
+<li><strong>Contradiction predicate never evaluates to true from the
+agent’s perspective</strong></li>
+<li>Law-repair pathway never entered</li>
+</ul>
+<p><strong>Conclusion:</strong></p>
+<blockquote>
+<p>Collision traces are insufficient to bootstrap recognition of
+normative inconsistency.</p>
+</blockquote>
+<h2 id="interpretation">8. Interpretation</h2>
+<h3 id="core-negative-result">8.1 Core Negative Result</h3>
+<blockquote>
+<p><strong>Contradiction detection is not
+collision-groundable.</strong></p>
+</blockquote>
+<p>Tick-causal information answers <em>when</em> and <em>what</em>, but
+not <em>why</em>. Without semantic access to conditions and effects, the
+agent cannot recognize that its rule set is jointly inconsistent.</p>
+<h3 id="learning-horizon-clarification">8.2 Learning Horizon
+Clarification</h3>
+<p>This is <strong>not</strong> a claim about unbounded learning in the
+limit. It is a claim about <strong>this architecture class under finite
+horizons</strong>:</p>
+<ul>
+<li>episodic,</li>
+<li>repair-driven,</li>
+<li>reflection-gated,</li>
+<li>no gradient access to rule internals.</li>
+</ul>
+<p>Within that regime, opacity blocks contradiction recognition upstream
+of repair.</p>
+<h2 id="scope-and-non-claims">9. Scope and Non-Claims</h2>
+<p>This note <strong>does not</strong> claim:</p>
+<ul>
+<li>sufficiency for general agency,</li>
+<li>applicability to all architectures,</li>
+<li>biological plausibility,</li>
+<li>an alignment solution,</li>
+<li>competence with fuzzy or ambiguous norms.</li>
+</ul>
+<p>It <strong>does</strong> establish a clean necessity result for a
+defined architecture class.</p>
+<h2 id="conclusions">10. Conclusions</h2>
+<ol type="1">
+<li><p><strong>Normative agency has constitutive requirements.</strong>
+Trace, Reflection, Persistence, and Semantic Access are not
+optional.</p></li>
+<li><p><strong>Execution ≠ Sovereignty.</strong> An agent can act
+competently without understanding its norms.</p></li>
+<li><p><strong>Collision feedback is insufficient.</strong> Norms cannot
+be inferred purely from punishment signals.</p></li>
+<li><p><strong>MVRSA exists.</strong> We now have a <strong>Minimal
+Viable Reflective Sovereign Agent</strong>—not theoretical, but
+operational.</p></li>
+</ol>
+<h2 id="final-statement">11. Final Statement</h2>
+<blockquote>
+<p><strong>An agent is sovereign only if its reasons can stop
+it.</strong></p>
+<p>MVRSA is the smallest architecture we know that makes this statement
+true in practice.</p>
+</blockquote>
+<p><strong>End of Technical Note</strong></p>
+
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
