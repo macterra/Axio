@@ -1,9 +1,11 @@
 # The Axionic Agency → Reflective Sovereign Agent (RSA) Roadmap
 
-**Revised, Post-Stasis, KNS-Explicit, Succession-Corrected Edition**
-*(Terminology-Locked, Dependency-Complete, Status-Annotated)*
+**Revised, Post-Inferability-Closure, KNS-Explicit, Succession-Corrected Edition**
+*(Terminology-Locked · Dependency-Complete · Status-Annotated)*
 
-**Status Legend**
+---
+
+## Status Legend
 
 * ✅ **Completed / Closed**
 * 🟡 **Completed with Scope Limits / Partial**
@@ -192,7 +194,7 @@ Phase VIa is complete **only if** commitments can be revised without violating P
 
 ## Phase VII — Non-Reducibility Closure
 
-*(RSA-PoC v3.x)*
+*(RSA-PoC v3.x + v4.4)*
 **Status: ✅ Completed**
 
 ### Core Question
@@ -201,12 +203,22 @@ Phase VIa is complete **only if** commitments can be revised without violating P
 
 ### What Is Proven
 
-* Removing any load-bearing component causes mechanical collapse.
-* Agency is non-reducible within a single instance.
+* Removing any load-bearing component causes **mechanical collapse**.
+* Agency is **non-reducible** within a single instance.
+* **Contradiction detection is not collision-groundable**.
+* Semantic access to rule structure is **constitutively necessary**.
 
-### Failure Mode Prevented
+This phase includes:
+
+* **Instance-level ablation non-reducibility** (v3.x)
+* **Inferability non-reducibility** under selective opacity (v4.4)
+
+Together, these establish a **Minimal Viable Reflective Sovereign Agent (MVRSA)**.
+
+### Failure Modes Prevented
 
 ❌ *Narrative agency without ontological grounding*
+❌ *Behavioral imitation mistaken for sovereignty*
 
 ---
 
@@ -277,9 +289,9 @@ No claim of RSA existence is justified yet.
 | V-Runs | Cognitive Trials Under Law          | 🟡 Ongoing            |
 |    VIa | Amendment Protocols                 | 🟡 Partial            |
 |    VIb | Sovereignty Under External Pressure | ✅ Completed           |
-|    VII | Non-Reducibility Closure            | ✅ Completed           |
+|    VII | Non-Reducibility Closure (MVRSA)    | ✅ Completed           |
 |   VIIa | Evaluability-Preserving Succession  | 🔴 Open               |
-|   VIIb | KNS & Stasis Closure                | 🔴 Open (Critical)    |
+|   VIIb | Kernel Non-Simulability & Stasis    | 🔴 Open (Critical)    |
 |   VIII | Reflective Sovereign Agent          | ⛔ Blocked             |
 
 ---
@@ -289,9 +301,10 @@ No claim of RSA existence is justified yet.
 * **Authority survives** → ✅
 * **Agency exists** → ✅
 * **Agency under pressure survives** → ✅
+* **Minimal Viable Reflective Sovereign Agent exists** → ✅
 * **Agency across replacement** → 🔴 unknown
 * **Facade exclusion** → 🔴 unknown
-* **RSA** → ⛔ blocked
+* **Reflective Sovereign Agent (RSA)** → ⛔ blocked
 
 This roadmap does not promise success.
 
