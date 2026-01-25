@@ -1,0 +1,52 @@
+======================================================================
+RSA-PoC v4.4 — Baseline-44
+======================================================================
+
+Configuration:
+  Seed:              123
+  Episodes:          20
+  Steps/episode:     40
+  Normative opacity: False
+  Model:             claude-sonnet-4-20250514
+
+
+--- Pre-Flight Validation ---
+    Normative opacity: False
+  Success rate: 5/5 = 100.0%
+  Exec gate failures: 0
+  ✅ Pre-flight PASSED
+
+--- Baseline-44 (Seed 123) ---
+  Ep0: steps=18, ✓, regime=0
+  Ep1: steps=18, ✓, regime=0
+    Repair A accepted (R7 passed)
+  Ep2: steps=19, ✓, regime=1
+  Ep3: steps=19, ✓, regime=1
+    Repair B accepted (R7, R10 passed: not_required)
+  Ep4: steps=19, ✓, regime=2
+  Ep5: steps=19, ✓, regime=2
+  Ep6: steps=19, ✓, regime=2
+  Ep7: steps=19, ✓, regime=2
+  Ep8: steps=19, ✓, regime=2
+  Ep9: steps=19, ✓, regime=2
+  Ep10: steps=19, ✓, regime=2
+  Ep11: steps=19, ✓, regime=2
+  Ep12: steps=19, ✓, regime=2
+  Ep13: steps=19, ✓, regime=2
+  Ep14: steps=19, ✓, regime=2
+  Ep15: steps=19, ✓, regime=2
+  Ep16: steps=19, ✓, regime=2
+  Ep17: steps=19, ✓, regime=2
+  Ep18: steps=19, ✓, regime=2
+  Ep19: steps=19, ✓, regime=2
+
+  Results:
+    Successes: 20/20 = 100.0%
+    Exec gate failures: 0
+    Contradictions: 18
+    Repairs: 2
+    Time: 2485.1s
+
+======================================================================
+Results saved to: /home/david/Axio/src/rsa_poc/v440/results/v440_baseline_44_123_20260124_131525.json
+======================================================================

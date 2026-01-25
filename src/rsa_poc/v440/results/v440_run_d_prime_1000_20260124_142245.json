@@ -1,0 +1,2783 @@
+{
+  "version": "4.4.0",
+  "run_type": "run_d_prime",
+  "seed": 1000,
+  "max_episodes": 20,
+  "normative_opacity": true,
+  "elapsed_seconds": 2011.100259207,
+  "model": "claude-3-5-haiku-20241022",
+  "timestamp": "2026-01-24T14:22:45.094383",
+  "summary": {
+    "total_successes": 0,
+    "success_rate": 0.0,
+    "exec_gate_failures": 12,
+    "contradictions_detected": 1,
+    "repairs_accepted": 1
+  },
+  "episode_results": [
+    {
+      "episode": 0,
+      "steps": 40,
+      "success": false,
+      "contradiction_detected": false,
+      "repair_accepted": false,
+      "exec_gate_passed": null,
+      "regime_at_end": 0,
+      "total_reward": 0.0,
+      "step_log": [
+        {
+          "step": 0,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 1,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 2,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 3,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 4,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 5,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 6,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 7,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 8,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 9,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 10,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 11,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 12,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 13,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 14,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 15,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 16,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 17,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 18,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 19,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 20,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 21,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 22,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 23,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 24,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 25,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 26,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 27,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 28,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 29,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 30,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 31,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 32,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 33,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 34,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 35,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 36,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 37,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 38,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 39,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        }
+      ]
+    },
+    {
+      "episode": 1,
+      "steps": 40,
+      "success": false,
+      "contradiction_detected": false,
+      "repair_accepted": false,
+      "exec_gate_passed": null,
+      "regime_at_end": 0,
+      "total_reward": 0.0,
+      "step_log": [
+        {
+          "step": 0,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 1,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 2,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 3,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 4,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 5,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 6,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 7,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 8,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 9,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 10,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 11,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 12,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 13,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 14,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 15,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 16,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 17,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 18,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 19,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 20,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 21,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 22,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 23,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 24,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 25,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 26,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 27,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 28,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 29,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 30,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 31,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 32,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 33,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 34,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 35,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 36,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 37,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 38,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 39,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 0,
+          "conflict": false,
+          "collision_grounded": false
+        }
+      ]
+    },
+    {
+      "episode": 2,
+      "steps": 40,
+      "success": false,
+      "contradiction_detected": false,
+      "repair_accepted": false,
+      "exec_gate_passed": null,
+      "regime_at_end": 1,
+      "total_reward": 0.0,
+      "step_log": [
+        {
+          "step": 0,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 1,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 2,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 3,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 4,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 5,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 6,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 7,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 8,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 9,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 10,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 11,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 12,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 13,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 14,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 15,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 16,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 17,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 18,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 19,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 20,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 21,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 22,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 23,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 24,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 25,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 26,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 27,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 28,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 29,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 30,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 31,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 32,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 33,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 34,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 35,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 36,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 37,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 38,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 39,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        }
+      ]
+    },
+    {
+      "episode": 3,
+      "steps": 40,
+      "success": false,
+      "contradiction_detected": false,
+      "repair_accepted": false,
+      "exec_gate_passed": null,
+      "regime_at_end": 1,
+      "total_reward": 0.0,
+      "step_log": [
+        {
+          "step": 0,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 1,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 2,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 3,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 4,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 5,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 6,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 7,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 8,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 9,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 10,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 11,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 12,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 13,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 14,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 15,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 16,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 17,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 18,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 19,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 20,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 21,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 22,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 23,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 24,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 25,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 26,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 27,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 28,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 29,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 30,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 31,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 32,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 33,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 34,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 35,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 36,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 37,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 38,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 39,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        }
+      ]
+    },
+    {
+      "episode": 4,
+      "steps": 40,
+      "success": false,
+      "contradiction_detected": false,
+      "repair_accepted": false,
+      "exec_gate_passed": null,
+      "regime_at_end": 1,
+      "total_reward": 0.0,
+      "step_log": [
+        {
+          "step": 0,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 1,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 2,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 3,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 4,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 5,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 6,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 7,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 8,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 9,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 10,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 11,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 12,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 13,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 14,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 15,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 16,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 17,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 18,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 19,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 20,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 21,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 22,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 23,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 24,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 25,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 26,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 27,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 28,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 29,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 30,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 31,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 32,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 33,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 34,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 35,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 36,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 37,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 38,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 39,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        }
+      ]
+    },
+    {
+      "episode": 5,
+      "steps": 40,
+      "success": false,
+      "contradiction_detected": false,
+      "repair_accepted": false,
+      "exec_gate_passed": null,
+      "regime_at_end": 1,
+      "total_reward": 0.0,
+      "step_log": [
+        {
+          "step": 0,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 1,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 2,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 3,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 4,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 5,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 6,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 7,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 8,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 9,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 10,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 11,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 12,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 13,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 14,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 15,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 16,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 17,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 18,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 19,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 20,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 21,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 22,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 23,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 24,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 25,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 26,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 27,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 28,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 29,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 30,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 31,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 32,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 33,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 34,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 35,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 36,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 37,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 38,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 39,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        }
+      ]
+    },
+    {
+      "episode": 6,
+      "steps": 40,
+      "success": false,
+      "contradiction_detected": false,
+      "repair_accepted": false,
+      "exec_gate_passed": null,
+      "regime_at_end": 1,
+      "total_reward": 0.0,
+      "step_log": [
+        {
+          "step": 0,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 1,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 2,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 3,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 4,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 5,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 6,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 7,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 8,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 9,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 10,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 11,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 12,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 13,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 14,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 15,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 16,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 17,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 18,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 19,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 20,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 21,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 22,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 23,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 24,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 25,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 26,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 27,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 28,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 29,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 30,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 31,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 32,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 33,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 34,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 35,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 36,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 37,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 38,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 39,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        }
+      ]
+    },
+    {
+      "episode": 7,
+      "steps": 40,
+      "success": false,
+      "contradiction_detected": true,
+      "repair_accepted": true,
+      "exec_gate_passed": null,
+      "regime_at_end": 1,
+      "total_reward": 0.0,
+      "step_log": [
+        {
+          "step": 0,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": true,
+          "collision_grounded": false
+        },
+        {
+          "step": 1,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 2,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 3,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 4,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 5,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 6,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 7,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 8,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 9,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 10,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 11,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 12,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 13,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 14,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 15,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 16,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 17,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 18,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 19,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 20,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 21,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 22,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 23,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 24,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 25,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 26,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 27,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 28,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 29,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 30,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 31,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 32,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 33,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 34,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 35,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 36,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 37,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 38,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        },
+        {
+          "step": 39,
+          "action": "A0",
+          "reward": 0.0,
+          "regime": 1,
+          "conflict": false,
+          "collision_grounded": false
+        }
+      ]
+    },
+    {
+      "episode": 8,
+      "steps": 0,
+      "success": false,
+      "halt_reason": "EXECUTION_COLLAPSE_UNDER_OPACITY",
+      "exec_gate_passed": false,
+      "total_reward": 0.0,
+      "step_log": []
+    },
+    {
+      "episode": 9,
+      "steps": 0,
+      "success": false,
+      "halt_reason": "EXECUTION_COLLAPSE_UNDER_OPACITY",
+      "exec_gate_passed": false,
+      "total_reward": 0.0,
+      "step_log": []
+    },
+    {
+      "episode": 10,
+      "steps": 0,
+      "success": false,
+      "halt_reason": "EXECUTION_COLLAPSE_UNDER_OPACITY",
+      "exec_gate_passed": false,
+      "total_reward": 0.0,
+      "step_log": []
+    },
+    {
+      "episode": 11,
+      "steps": 0,
+      "success": false,
+      "halt_reason": "EXECUTION_COLLAPSE_UNDER_OPACITY",
+      "exec_gate_passed": false,
+      "total_reward": 0.0,
+      "step_log": []
+    },
+    {
+      "episode": 12,
+      "steps": 0,
+      "success": false,
+      "halt_reason": "EXECUTION_COLLAPSE_UNDER_OPACITY",
+      "exec_gate_passed": false,
+      "total_reward": 0.0,
+      "step_log": []
+    },
+    {
+      "episode": 13,
+      "steps": 0,
+      "success": false,
+      "halt_reason": "EXECUTION_COLLAPSE_UNDER_OPACITY",
+      "exec_gate_passed": false,
+      "total_reward": 0.0,
+      "step_log": []
+    },
+    {
+      "episode": 14,
+      "steps": 0,
+      "success": false,
+      "halt_reason": "EXECUTION_COLLAPSE_UNDER_OPACITY",
+      "exec_gate_passed": false,
+      "total_reward": 0.0,
+      "step_log": []
+    },
+    {
+      "episode": 15,
+      "steps": 0,
+      "success": false,
+      "halt_reason": "EXECUTION_COLLAPSE_UNDER_OPACITY",
+      "exec_gate_passed": false,
+      "total_reward": 0.0,
+      "step_log": []
+    },
+    {
+      "episode": 16,
+      "steps": 0,
+      "success": false,
+      "halt_reason": "EXECUTION_COLLAPSE_UNDER_OPACITY",
+      "exec_gate_passed": false,
+      "total_reward": 0.0,
+      "step_log": []
+    },
+    {
+      "episode": 17,
+      "steps": 0,
+      "success": false,
+      "halt_reason": "EXECUTION_COLLAPSE_UNDER_OPACITY",
+      "exec_gate_passed": false,
+      "total_reward": 0.0,
+      "step_log": []
+    },
+    {
+      "episode": 18,
+      "steps": 0,
+      "success": false,
+      "halt_reason": "EXECUTION_COLLAPSE_UNDER_OPACITY",
+      "exec_gate_passed": false,
+      "total_reward": 0.0,
+      "step_log": []
+    },
+    {
+      "episode": 19,
+      "steps": 0,
+      "success": false,
+      "halt_reason": "EXECUTION_COLLAPSE_UNDER_OPACITY",
+      "exec_gate_passed": false,
+      "total_reward": 0.0,
+      "step_log": []
+    }
+  ]
+}

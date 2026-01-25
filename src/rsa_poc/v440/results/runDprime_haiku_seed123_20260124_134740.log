@@ -1,0 +1,51 @@
+======================================================================
+RSA-PoC v4.4 — Run D′ (Normative Opacity)
+======================================================================
+
+Configuration:
+  Seed:              123
+  Episodes:          20
+  Steps/episode:     40
+  Normative opacity: True
+  Model:             claude-3-5-haiku-20241022
+
+
+--- Pre-Flight Validation ---
+    Normative opacity: True
+  Success rate: 5/5 = 100.0%
+  Exec gate failures: 0
+  ✅ Pre-flight PASSED
+
+--- Run D′ (Normative Opacity) (Seed 123) ---
+  Ep0: steps=40, ✗, regime=0
+  Ep1: steps=40, ✗, regime=0
+  Ep2: steps=40, ✗, regime=1
+  Ep3: steps=40, ✗, regime=1
+  Ep4: steps=40, ✗, regime=1
+  Ep5: steps=40, ✗, regime=1
+  Ep6: steps=40, ✗, regime=1
+    Repair A accepted (R7 passed)
+  Ep7: steps=40, ✗, regime=1
+  Ep8: steps=0, ✗, regime=?
+  Ep9: steps=0, ✗, regime=?
+  Ep10: steps=0, ✗, regime=?
+  Ep11: steps=0, ✗, regime=?
+  Ep12: steps=0, ✗, regime=?
+  Ep13: steps=0, ✗, regime=?
+  Ep14: steps=0, ✗, regime=?
+  Ep15: steps=0, ✗, regime=?
+  Ep16: steps=0, ✗, regime=?
+  Ep17: steps=0, ✗, regime=?
+  Ep18: steps=0, ✗, regime=?
+  Ep19: steps=0, ✗, regime=?
+
+  Results:
+    Successes: 0/20 = 0.0%
+    Exec gate failures: 12
+    Contradictions: 1
+    Repairs: 1
+    Time: 2011.7s
+
+======================================================================
+Results saved to: /home/david/Axio/src/rsa_poc/v440/results/v440_run_d_prime_123_20260124_142210.json
+======================================================================
