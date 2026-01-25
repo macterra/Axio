@@ -1,12 +1,12 @@
 {
   "site": {
     "name": "Axionic Agency Lab",
-    "tagline": "Research in agency, rationality, and alignment",
+    "tagline": "Research on the foundations of agency",
     "domain": "axionic.org"
   },
   "mission": {
     "short": "Advancing the theoretical foundations of reflective agency and AI alignment.",
-    "long": "Axionic Agency Lab studies when agency exists in self-referential, self-modifying systems. When authorship collapses, the system ceases to be an agent rather than becoming “misaligned.” Our work is foundational, defining constraints that separate genuine agency from behavioral imitation."
+    "long": "Axionic Agency Lab studies the conditions under which agency exists at all. We focus on self-modifying systems where the usual assumptions about choice, authorship, and responsibility break down. Our central claim is structural: when the conditions for agency fail, alignment is undefined, because there is no stable subject to which goals, corrections, or authority can apply."
   },
   "research_areas": [
     {
@@ -61,7 +61,7 @@
     {
       "id": "rsa-poc",
       "series": "VIII",
-      "name": "RSA-PoC: Constructing Reflective Sovereign Agency",
+      "name": "Constructing Reflective Sovereign Agency",
       "description": "Minimal-agent construction program determining the minimum structure required for genuine agency above the Architectural Sovereignty Boundary.",
       "paper_prefix": "Axionic-Agency-VIII"
     }
