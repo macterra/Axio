@@ -33,8 +33,8 @@
     {
       "id": "decision-theory",
       "series": "IV",
-      "name": "Decision Theory",
-      "description": "Foundations of rational choice under uncertainty. Exploring effective decision procedures for agents with bounded resources.",
+      "name": "Binding Theorems",
+      "description": "Closure conditions for reflective agency: non-simulability, delegation, epistemic integrity, and consent.",
       "paper_prefix": "Axionic-Agency-IV"
     },
     {
@@ -52,10 +52,10 @@
       "paper_prefix": "Axionic-Agency-VI"
     },
     {
-      "id": "implementation",
+      "id": "constitutional-survivability",
       "series": "VII",
-      "name": "Implementation",
-      "description": "Practical realization of theoretical frameworks. Bridging abstract theory to concrete system design.",
+      "name": "Constitutional Survivability",
+      "description": "Boundary-finding research program testing how far authority can remain structurally survivable under adversarial pressure without semantic interpretation, value learning, or optimization.",
       "paper_prefix": "Axionic-Agency-VII"
     },
     {

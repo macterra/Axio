@@ -382,10 +382,10 @@ def generate_papers_index(papers_metadata):
         ('I', 'Series I: Sovereign Kernel Theory'),
         ('II', 'Series II: Semantic Transport'),
         ('III', 'Series III: Structural Alignment'),
-        ('IV', 'Series IV: Decision Theory'),
+        ('IV', 'Series IV: Binding Theorems'),
         ('V', 'Series V: Agency Dynamics'),
         ('VI', 'Series VI: Governance and Coordination'),
-        ('VII', 'Series VII: Implementation'),
+        ('VII', 'Series VII: Constitutional Survivability'),
         ('VIII', 'Series VIII: RSA-PoC'),
     ]
 
