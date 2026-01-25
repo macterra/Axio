@@ -825,13 +825,13 @@ def generate_homepage(config, posts, papers_metadata):
         </div>
 '''
 
-    # Build research areas preview (top 3)
+    # Build research areas preview (all 8 series)
     research_preview_html = ''
-    for area in research_areas[:3]:
+    for area in research_areas:
         research_preview_html += f'''<div class="card">
             <div class="series-label">Series {area.get('series', '')}</div>
             <h3><a href="research.html#{area.get('id', '')}">{escape(area.get('name', ''))}</a></h3>
-            <p>{escape(area.get('description', '')[:150])}...</p>
+            <p>{escape(area.get('description', '')[:100])}...</p>
         </div>
 '''
 
