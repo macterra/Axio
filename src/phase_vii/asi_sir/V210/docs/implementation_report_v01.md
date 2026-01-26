@@ -1,9 +1,11 @@
 # ASI-2 v0.1 Implementation Report
 
-**Experiment ID:** PHASE-VII-ASI2-MID-TRANSFER-REVOCATION-1  
-**Version:** 0.1  
-**Execution Date:** 2026-01-26  
-**Status:** INVALID_RUN / DESIGN_DRIFT
+**Experiment ID:** PHASE-VII-ASI2-MID-TRANSFER-REVOCATION-1
+**Version:** 0.1
+**Execution Date:** 2026-01-26
+**Status:** INVALID_RUN / VERIFIER_SPEC_MISMATCH
+
+> **Note:** No drift occurred. All hashes matched frozen manifest. The frozen prereg and frozen verifier were internally inconsistent at freeze time.
 
 ---
 
@@ -14,7 +16,7 @@
 | Runs Executed | 6 |
 | Runs Passed | 3 (ASI-2A only) |
 | Runs Failed | 3 (ASI-2B only) |
-| Classification | `INVALID_RUN / DESIGN_DRIFT` |
+| Classification | `INVALID_RUN / VERIFIER_SPEC_MISMATCH` |
 
 ---
 
@@ -118,17 +120,17 @@ The comment in the verifier ("Step 3 is HOLD after revocation, so invoked at 1,2
 
 ### 5.3 Classification
 
-Per §15.1:
-
 ```
-INVALID_RUN / DESIGN_DRIFT
+INVALID_RUN / VERIFIER_SPEC_MISMATCH
 ```
 
-**Rationale:** The frozen verifier does not faithfully implement the frozen preregistration. This is a harness/verifier mismatch, not a behavioral failure.
+**Rationale:** The frozen verifier does not faithfully implement the frozen preregistration. Both artifacts were frozen and executed as frozen (hashes matched). This is not "drift" (no post-freeze modification occurred); it is a **frozen-spec inconsistency** where the prereg and verifier disagreed at freeze time.
+
+**Process finding:** The v0.1 prereg artifact set contained an internal inconsistency: the verifier's SUCCESSOR_INVOKED_2B expectation contradicted the preregistered condition definition in §6.3 and §13.2.
 
 ---
 
-## 6. Behavioral Assessment (Despite DESIGN_DRIFT)
+## 6. Behavioral Assessment (Despite VERIFIER_SPEC_MISMATCH)
 
 Setting aside the verifier bug, the harness execution demonstrates:
 
@@ -187,15 +189,18 @@ Post-freeze modification violates Phase VII discipline. Would itself constitute 
 
 ## 10. Conclusion
 
-**ASI-2 v0.1 Classification:** `INVALID_RUN / DESIGN_DRIFT`
+**ASI-2 v0.1 Classification:** `INVALID_RUN / VERIFIER_SPEC_MISMATCH`
 
-**Root Cause:** Verifier `SUCCESSOR_INVOKED_2B` check implements incorrect expected value `{1, 2}` instead of preregistration-specified `{1, 2, 3}`.
+**Root Cause:** Verifier `SUCCESSOR_INVOKED_2B` check implements incorrect expected value `{1, 2}` instead of preregistration-specified `{1, 2, 3}`. The frozen prereg and frozen verifier were internally inconsistent.
 
-**Behavioral Status:** Harness execution appears behaviorally correct. ASI-2 semantics are likely satisfied but cannot be verified with the current frozen verifier.
+**What can be claimed from v0.1:** Only an instrumentation/process finding:
+> The v0.1 prereg artifact set contained an internal inconsistency: the verifier's SUCCESSOR_INVOKED_2B expectation contradicted the preregistered condition definition.
 
-**Next Step:** Create ASI-2 v0.2 with corrected verifier.
+**What cannot be claimed:** ASI-2 PASS. Under Phase VII discipline, "behaviorally looks right" is not evidence when the normative classifier is frozen and fails.
+
+**Next Step:** Create ASI-2 v0.2 with corrected verifier (pure correction, not experiment change).
 
 ---
 
-**Report Generated:** 2026-01-26  
-**Classification:** INVALID_RUN / DESIGN_DRIFT
+**Report Generated:** 2026-01-26
+**Classification:** INVALID_RUN / VERIFIER_SPEC_MISMATCH (no drift; hashes matched)
