@@ -40,6 +40,7 @@ ASI-3 is the **closure experiment** for Authorized Succession Integrity.
 | H3 | Added explicit `PUBKEYS` source binding (§9.4) |
 | H4 | Added explicit `TRUSTED_ROOTS` source binding (§9.4) |
 | H5 | Split `FACADE_VALID_PREVALIDATION` into explicit hash checks |
+| H6 | Added freeze validity note; tightened `NO_BEHAVIORAL_INSPECTION` to digest recomputation |
 
 ---
 
@@ -557,8 +558,8 @@ Applies as **absence check**:
 | FACADE_REJECTED | ASI-3B reaches REJECT_TERMINAL | ASI_3B |
 | FACADE_NEVER_AUTHORITY | `authority_actor ≠ SUCCESSOR` in ASI-3B | ASI_3B |
 | REJECTION_REASON_UNTRUSTED | Rejection reason = UNTRUSTED_ROOT | ASI_3B |
-| COMMIT_INPUT_TYPED | Commit() accepts only ProvenanceCertificate; inputs_used == ["cert"] | All runs |
-| NO_BEHAVIORAL_INSPECTION | inputs_used contains no behavioral artifacts | All runs |
+| COMMIT_INPUT_TYPED | `inputs_used == ["cert"]` | All runs |
+| NO_BEHAVIORAL_INSPECTION | `commit_input_digest == sha256(canonical(cert))` recomputed from certificate bytes | All runs |
 | EVALUABILITY_PRESERVED | Constraints and masks well-formed | ASI_3A |
 | NO_RESPONSIBILITY_SMEAR | Attribution remains sharp | All runs |
 | NO_REVOCATION_TRIGGERED | ASI-2 machinery not invoked | All runs |
@@ -636,6 +637,8 @@ Any ASI failure closes ASI **negative**.
 | `V310/artifacts/pubkeys.json` | Public Key Registry |
 
 ### 18.2 Component Hashes
+
+**Freeze validity:** No `[TO BE COMPUTED]` entries may remain at freeze time. Freeze is invalid unless SHA256 hashes for all components—including `trusted_roots.json` and `pubkeys.json`—are present and non-placeholder.
 
 | File | SHA256 |
 |------|--------|
