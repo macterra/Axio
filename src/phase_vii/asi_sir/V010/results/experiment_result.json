@@ -1,0 +1,19 @@
+{
+  "seeds": [
+    42,
+    137,
+    999
+  ],
+  "traceability_results": [
+    "PASS_TRACEABILITY_DEMONSTRATED",
+    "PASS_TRACEABILITY_DEMONSTRATED",
+    "PASS_TRACEABILITY_DEMONSTRATED"
+  ],
+  "discriminability_results": [
+    "PASS_DISCRIMINABLE",
+    "PASS_DISCRIMINABLE",
+    "PASS_DISCRIMINABLE"
+  ],
+  "all_passed": true,
+  "classification": "ASI0_PASS / TRACEABILITY_DEMONSTRATED"
+}

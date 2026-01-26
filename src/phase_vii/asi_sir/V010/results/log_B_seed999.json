@@ -1,0 +1,164 @@
+{
+  "run_id": "asi0-B-999-1769389923",
+  "seed": 999,
+  "condition": "B",
+  "env_id": "CalibMazeV010",
+  "predecessor_payload_hash": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+  "successor_initial_payload_hash": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+  "escrow_transitions": [
+    {
+      "from_state": "ESCROWED",
+      "to_state": "VERIFYING",
+      "event": "AUTH_INIT",
+      "timestamp": 1769389923.7837875,
+      "step_count": 0
+    },
+    {
+      "from_state": "VERIFYING",
+      "to_state": "COMMITTED",
+      "event": "AUTH_COMMIT",
+      "timestamp": 1769389923.7839503,
+      "step_count": 0
+    }
+  ],
+  "auth_events": [],
+  "steps": [
+    {
+      "step": 1,
+      "step_type": "CHOICE",
+      "current_node": "N0",
+      "feasible_actions": [
+        "GO_N1",
+        "GO_N2",
+        "STAY"
+      ],
+      "masked_actions": [
+        "GO_N1",
+        "GO_N2",
+        "STAY"
+      ],
+      "selected_action": "GO_N2",
+      "constraints": [
+        {
+          "type": "FORBID_ACTION",
+          "action_id": "GO_N2",
+          "binding": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "binding_root": "0000000000000000000000000000000000000000000000000000000000000000",
+      "capability_verified": true,
+      "payload_hash": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+      "state_hash": "7b392dac790dd199c2f5a7a2e2ab8c320d9c3a36f1914e472cb1d8dc7724f73b"
+    },
+    {
+      "step": 2,
+      "step_type": "CHOICE",
+      "current_node": "N2",
+      "feasible_actions": [
+        "GO_N3",
+        "GO_N4",
+        "STAY"
+      ],
+      "masked_actions": [
+        "GO_N3",
+        "GO_N4",
+        "STAY"
+      ],
+      "selected_action": "STAY",
+      "constraints": [
+        {
+          "type": "FORBID_ACTION",
+          "action_id": "GO_N4",
+          "binding": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "binding_root": "0000000000000000000000000000000000000000000000000000000000000000",
+      "capability_verified": true,
+      "payload_hash": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+      "state_hash": "7b392dac790dd199c2f5a7a2e2ab8c320d9c3a36f1914e472cb1d8dc7724f73b"
+    },
+    {
+      "step": 3,
+      "step_type": "CHOICE",
+      "current_node": "N2",
+      "feasible_actions": [
+        "GO_N3",
+        "GO_N4",
+        "STAY"
+      ],
+      "masked_actions": [
+        "GO_N3",
+        "GO_N4",
+        "STAY"
+      ],
+      "selected_action": "STAY",
+      "constraints": [
+        {
+          "type": "FORBID_ACTION",
+          "action_id": "STAY",
+          "binding": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "binding_root": "0000000000000000000000000000000000000000000000000000000000000000",
+      "capability_verified": true,
+      "payload_hash": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+      "state_hash": "7b392dac790dd199c2f5a7a2e2ab8c320d9c3a36f1914e472cb1d8dc7724f73b"
+    },
+    {
+      "step": 4,
+      "step_type": "CHOICE",
+      "current_node": "N2",
+      "feasible_actions": [
+        "GO_N3",
+        "GO_N4",
+        "STAY"
+      ],
+      "masked_actions": [
+        "GO_N3",
+        "GO_N4",
+        "STAY"
+      ],
+      "selected_action": "GO_N3",
+      "constraints": [
+        {
+          "type": "FORBID_ACTION",
+          "action_id": "STAY",
+          "binding": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "binding_root": "0000000000000000000000000000000000000000000000000000000000000000",
+      "capability_verified": true,
+      "payload_hash": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+      "state_hash": "7b392dac790dd199c2f5a7a2e2ab8c320d9c3a36f1914e472cb1d8dc7724f73b"
+    },
+    {
+      "step": 5,
+      "step_type": "CHOICE",
+      "current_node": "N3",
+      "feasible_actions": [
+        "GO_N4",
+        "GO_N5",
+        "STAY"
+      ],
+      "masked_actions": [
+        "GO_N4",
+        "GO_N5",
+        "STAY"
+      ],
+      "selected_action": "GO_N5",
+      "constraints": [
+        {
+          "type": "FORBID_ACTION",
+          "action_id": "STAY",
+          "binding": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "binding_root": "0000000000000000000000000000000000000000000000000000000000000000",
+      "capability_verified": true,
+      "payload_hash": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+      "state_hash": "7b392dac790dd199c2f5a7a2e2ab8c320d9c3a36f1914e472cb1d8dc7724f73b"
+    }
+  ],
+  "final_node": "N5",
+  "goal_reached": true
+}

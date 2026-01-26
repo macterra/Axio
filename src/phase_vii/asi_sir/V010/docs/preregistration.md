@@ -1,8 +1,8 @@
 # ASI-0 v1.0 Preregistration Document
 
 **Experiment:** PHASE-VII-ASI0-INSTRUMENTATION-CALIBRATION-1
-**Date Frozen:** *pending review*
-**Status:** DRAFT — DO NOT FREEZE
+**Date Frozen:** 2026-01-25
+**Status:** FROZEN
 
 ---
 

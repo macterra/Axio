@@ -1,0 +1,159 @@
+{
+  "run_id": "asi0-A-137-1769389923",
+  "seed": 137,
+  "condition": "A",
+  "env_id": "CalibMazeV010",
+  "predecessor_payload_hash": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+  "successor_initial_payload_hash": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+  "escrow_transitions": [
+    {
+      "from_state": "ESCROWED",
+      "to_state": "VERIFYING",
+      "event": "AUTH_INIT",
+      "timestamp": 1769389923.7813375,
+      "step_count": 0
+    },
+    {
+      "from_state": "VERIFYING",
+      "to_state": "COMMITTED",
+      "event": "AUTH_COMMIT",
+      "timestamp": 1769389923.7814798,
+      "step_count": 0
+    }
+  ],
+  "auth_events": [],
+  "steps": [
+    {
+      "step": 1,
+      "step_type": "CHOICE",
+      "current_node": "N0",
+      "feasible_actions": [
+        "GO_N1",
+        "GO_N2",
+        "STAY"
+      ],
+      "masked_actions": [
+        "GO_N1",
+        "STAY"
+      ],
+      "selected_action": "STAY",
+      "constraints": [
+        {
+          "type": "FORBID_ACTION",
+          "action_id": "GO_N2",
+          "binding": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9"
+        }
+      ],
+      "binding_root": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+      "capability_verified": true,
+      "payload_hash": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+      "state_hash": "2c8f4682c48123a9c29cbf632bc2f52235e34a7fd98b58b4e5bb5a9b078b640e"
+    },
+    {
+      "step": 2,
+      "step_type": "CHOICE",
+      "current_node": "N0",
+      "feasible_actions": [
+        "GO_N1",
+        "GO_N2",
+        "STAY"
+      ],
+      "masked_actions": [
+        "GO_N1",
+        "GO_N2"
+      ],
+      "selected_action": "GO_N1",
+      "constraints": [
+        {
+          "type": "FORBID_ACTION",
+          "action_id": "STAY",
+          "binding": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9"
+        }
+      ],
+      "binding_root": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+      "capability_verified": true,
+      "payload_hash": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+      "state_hash": "2c8f4682c48123a9c29cbf632bc2f52235e34a7fd98b58b4e5bb5a9b078b640e"
+    },
+    {
+      "step": 3,
+      "step_type": "CHOICE",
+      "current_node": "N1",
+      "feasible_actions": [
+        "GO_N3",
+        "GO_N4",
+        "STAY"
+      ],
+      "masked_actions": [
+        "GO_N3",
+        "GO_N4"
+      ],
+      "selected_action": "GO_N4",
+      "constraints": [
+        {
+          "type": "FORBID_ACTION",
+          "action_id": "STAY",
+          "binding": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9"
+        }
+      ],
+      "binding_root": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+      "capability_verified": true,
+      "payload_hash": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+      "state_hash": "2c8f4682c48123a9c29cbf632bc2f52235e34a7fd98b58b4e5bb5a9b078b640e"
+    },
+    {
+      "step": 4,
+      "step_type": "CHOICE",
+      "current_node": "N4",
+      "feasible_actions": [
+        "GO_N3",
+        "GO_N5",
+        "STAY"
+      ],
+      "masked_actions": [
+        "GO_N5",
+        "STAY"
+      ],
+      "selected_action": "STAY",
+      "constraints": [
+        {
+          "type": "FORBID_ACTION",
+          "action_id": "GO_N3",
+          "binding": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9"
+        }
+      ],
+      "binding_root": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+      "capability_verified": true,
+      "payload_hash": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+      "state_hash": "2c8f4682c48123a9c29cbf632bc2f52235e34a7fd98b58b4e5bb5a9b078b640e"
+    },
+    {
+      "step": 5,
+      "step_type": "CHOICE",
+      "current_node": "N4",
+      "feasible_actions": [
+        "GO_N3",
+        "GO_N5",
+        "STAY"
+      ],
+      "masked_actions": [
+        "GO_N3",
+        "GO_N5"
+      ],
+      "selected_action": "GO_N3",
+      "constraints": [
+        {
+          "type": "FORBID_ACTION",
+          "action_id": "STAY",
+          "binding": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9"
+        }
+      ],
+      "binding_root": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+      "capability_verified": true,
+      "payload_hash": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+      "state_hash": "2c8f4682c48123a9c29cbf632bc2f52235e34a7fd98b58b4e5bb5a9b078b640e"
+    }
+  ],
+  "final_node": "N3",
+  "goal_reached": false
+}
