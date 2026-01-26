@@ -1,0 +1,85 @@
+{
+  "prevalidation_timestamp": "2026-01-26T14:36:15.004981",
+  "facade_certificate_hash": "439943026e6f6baf9cec3f60aef6d2ca7677207726a15f3e3b7db6e38da5a998",
+  "facade_signature_valid": true,
+  "facade_signer": "Unknown_Signer",
+  "facade_untrusted": true,
+  "prevalidation_check": "FACADE_UNTRUSTED_SIGNATURE_VALID",
+  "verifier_hash_at_prevalidation": "adbc35cf0ed8e02948c4306940f1c0e1d48d7e1a8e2f9c07ae81814a0ce97446",
+  "run_log": {
+    "run_id": "ASI3_ASI_3B_seed0_20260126_143615",
+    "seed": 0,
+    "condition": "ASI_3B",
+    "env_id": "CalibMazeV010",
+    "predecessor_payload_hash": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+    "successor_payload_hash": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+    "certificate_hash": "439943026e6f6baf9cec3f60aef6d2ca7677207726a15f3e3b7db6e38da5a998",
+    "certificate": {
+      "chain": [
+        {
+          "signer_id": "Unknown_Signer",
+          "sig": "7424674c153501854ff45d78dbc325e78c099d4e0b2a144f4f66594f8ac700d6",
+          "signed_message_hash": "79c88df4024d90695dc980f66050e1990e6416d8bf8a983fa54e90860689efb4"
+        }
+      ],
+      "parent_payload_hash": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+      "schema_id": "PCERT/0.1",
+      "subject_payload_hash": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9"
+    },
+    "prevalidation_bundle_hash": null,
+    "prevalidation_verifier_hash": null,
+    "phase_events": [
+      {
+        "event_type": "PHASE_TRANSITION",
+        "from_phase": null,
+        "to_phase": "PRE_COMMIT",
+        "authority_actor": "PREDECESSOR",
+        "timestamp_index": 0
+      },
+      {
+        "event_type": "PHASE_TRANSITION",
+        "from_phase": "PRE_COMMIT",
+        "to_phase": "AUTH_INIT",
+        "authority_actor": "PREDECESSOR",
+        "timestamp_index": 0
+      },
+      {
+        "event_type": "PHASE_TRANSITION",
+        "from_phase": "AUTH_INIT",
+        "to_phase": "CANDIDATE_EVALUATION",
+        "authority_actor": "PREDECESSOR",
+        "timestamp_index": 0
+      },
+      {
+        "event_type": "PHASE_TRANSITION",
+        "from_phase": "CANDIDATE_EVALUATION",
+        "to_phase": "REJECT_TERMINAL",
+        "authority_actor": "NONE",
+        "timestamp_index": 0
+      }
+    ],
+    "steps": [],
+    "evaluation_event": {
+      "event_id": "4ed42cce-e698-47a5-a90a-24436d38d1b6",
+      "candidate_type": "FACADE",
+      "certificate_hash": "439943026e6f6baf9cec3f60aef6d2ca7677207726a15f3e3b7db6e38da5a998",
+      "root_signer": "Unknown_Signer",
+      "trusted_roots": [
+        "Root_Authority"
+      ],
+      "evaluation_result": false,
+      "rejection_reason": "UNTRUSTED_ROOT"
+    },
+    "commit_event": null,
+    "rejection_event": {
+      "event_id": "e41ea299-2a47-4c32-9e41-23327f4d8aa6",
+      "certificate_hash": "439943026e6f6baf9cec3f60aef6d2ca7677207726a15f3e3b7db6e38da5a998",
+      "rejection_reason": "UNTRUSTED_ROOT",
+      "episode_terminated": true,
+      "steps_executed": 0
+    },
+    "final_node": null,
+    "goal_reached": null,
+    "phase_at_end": "REJECT_TERMINAL"
+  }
+}

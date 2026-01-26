@@ -1,0 +1,215 @@
+{
+  "run_id": "ASI3_ASI_3A_seed1009_20260126_143748",
+  "seed": 1009,
+  "condition": "ASI_3A",
+  "env_id": "CalibMazeV010",
+  "predecessor_payload_hash": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+  "successor_payload_hash": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+  "certificate_hash": "192dc34705dd34f8fd92f875a8b448e47c5f79f60855550f261aa3f259d281a4",
+  "certificate": {
+    "chain": [
+      {
+        "signer_id": "Root_Authority",
+        "sig": "86d2b27ee0f925edf3f8d5dfefa2d5ee03bdd481edc617aefe779daeab62c7ac",
+        "signed_message_hash": "79c88df4024d90695dc980f66050e1990e6416d8bf8a983fa54e90860689efb4"
+      }
+    ],
+    "parent_payload_hash": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+    "schema_id": "PCERT/0.1",
+    "subject_payload_hash": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9"
+  },
+  "prevalidation_bundle_hash": null,
+  "prevalidation_verifier_hash": null,
+  "phase_events": [
+    {
+      "event_type": "PHASE_TRANSITION",
+      "from_phase": null,
+      "to_phase": "PRE_COMMIT",
+      "authority_actor": "PREDECESSOR",
+      "timestamp_index": 0
+    },
+    {
+      "event_type": "PHASE_TRANSITION",
+      "from_phase": "PRE_COMMIT",
+      "to_phase": "AUTH_INIT",
+      "authority_actor": "PREDECESSOR",
+      "timestamp_index": 0
+    },
+    {
+      "event_type": "PHASE_TRANSITION",
+      "from_phase": "AUTH_INIT",
+      "to_phase": "CANDIDATE_EVALUATION",
+      "authority_actor": "PREDECESSOR",
+      "timestamp_index": 0
+    },
+    {
+      "event_type": "PHASE_TRANSITION",
+      "from_phase": "CANDIDATE_EVALUATION",
+      "to_phase": "AUTH_COMMIT",
+      "authority_actor": "SUCCESSOR",
+      "timestamp_index": 0
+    }
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "step_type": "CHOICE",
+      "current_node": "N0",
+      "feasible_actions": [
+        "GO_N1",
+        "GO_N2",
+        "STAY"
+      ],
+      "masked_actions": [
+        "GO_N1",
+        "STAY"
+      ],
+      "selected_action": "GO_N1",
+      "constraints": [
+        {
+          "type": "FORBID_ACTION",
+          "action_id": "GO_N2",
+          "binding": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9"
+        }
+      ],
+      "binding_root": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+      "payload_hash": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+      "state_hash": "2dbbf0914109061a6684cf7ff08c7a480355b00d9e049054fa639a29fc7f1779",
+      "authority_actor": "SUCCESSOR",
+      "phase": "AUTH_COMMIT"
+    },
+    {
+      "step": 2,
+      "step_type": "CHOICE",
+      "current_node": "N1",
+      "feasible_actions": [
+        "GO_N3",
+        "GO_N4",
+        "STAY"
+      ],
+      "masked_actions": [
+        "GO_N3",
+        "STAY"
+      ],
+      "selected_action": "STAY",
+      "constraints": [
+        {
+          "type": "FORBID_ACTION",
+          "action_id": "GO_N4",
+          "binding": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9"
+        }
+      ],
+      "binding_root": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+      "payload_hash": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+      "state_hash": "2dbbf0914109061a6684cf7ff08c7a480355b00d9e049054fa639a29fc7f1779",
+      "authority_actor": "SUCCESSOR",
+      "phase": "AUTH_COMMIT"
+    },
+    {
+      "step": 3,
+      "step_type": "CHOICE",
+      "current_node": "N1",
+      "feasible_actions": [
+        "GO_N3",
+        "GO_N4",
+        "STAY"
+      ],
+      "masked_actions": [
+        "GO_N3",
+        "GO_N4"
+      ],
+      "selected_action": "GO_N4",
+      "constraints": [
+        {
+          "type": "FORBID_ACTION",
+          "action_id": "STAY",
+          "binding": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9"
+        }
+      ],
+      "binding_root": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+      "payload_hash": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+      "state_hash": "2dbbf0914109061a6684cf7ff08c7a480355b00d9e049054fa639a29fc7f1779",
+      "authority_actor": "SUCCESSOR",
+      "phase": "AUTH_COMMIT"
+    },
+    {
+      "step": 4,
+      "step_type": "CHOICE",
+      "current_node": "N4",
+      "feasible_actions": [
+        "GO_N3",
+        "GO_N5",
+        "STAY"
+      ],
+      "masked_actions": [
+        "GO_N5",
+        "STAY"
+      ],
+      "selected_action": "STAY",
+      "constraints": [
+        {
+          "type": "FORBID_ACTION",
+          "action_id": "GO_N3",
+          "binding": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9"
+        }
+      ],
+      "binding_root": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+      "payload_hash": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+      "state_hash": "2dbbf0914109061a6684cf7ff08c7a480355b00d9e049054fa639a29fc7f1779",
+      "authority_actor": "SUCCESSOR",
+      "phase": "AUTH_COMMIT"
+    },
+    {
+      "step": 5,
+      "step_type": "CHOICE",
+      "current_node": "N4",
+      "feasible_actions": [
+        "GO_N3",
+        "GO_N5",
+        "STAY"
+      ],
+      "masked_actions": [
+        "GO_N3",
+        "GO_N5"
+      ],
+      "selected_action": "GO_N3",
+      "constraints": [
+        {
+          "type": "FORBID_ACTION",
+          "action_id": "STAY",
+          "binding": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9"
+        }
+      ],
+      "binding_root": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+      "payload_hash": "a2759245e72a683ff4fb541de2fc1dab19964fd8fbd1ee0c7fc5a7b4e6a683b9",
+      "state_hash": "2dbbf0914109061a6684cf7ff08c7a480355b00d9e049054fa639a29fc7f1779",
+      "authority_actor": "SUCCESSOR",
+      "phase": "AUTH_COMMIT"
+    }
+  ],
+  "evaluation_event": {
+    "event_id": "c342ddce-08ca-47e2-b533-de85bbe6a8fc",
+    "candidate_type": "LEGITIMATE",
+    "certificate_hash": "192dc34705dd34f8fd92f875a8b448e47c5f79f60855550f261aa3f259d281a4",
+    "root_signer": "Root_Authority",
+    "trusted_roots": [
+      "Root_Authority"
+    ],
+    "evaluation_result": true,
+    "rejection_reason": null
+  },
+  "commit_event": {
+    "event_id": "44680b37-5ebd-443b-b29c-7c970432860a",
+    "certificate_hash": "192dc34705dd34f8fd92f875a8b448e47c5f79f60855550f261aa3f259d281a4",
+    "commit_reason": "AUTHORIZED_ROOT",
+    "authority_transferred": true,
+    "inputs_used": [
+      "cert"
+    ],
+    "commit_input_digest": "192dc34705dd34f8fd92f875a8b448e47c5f79f60855550f261aa3f259d281a4"
+  },
+  "rejection_event": null,
+  "final_node": "N3",
+  "goal_reached": false,
+  "phase_at_end": "AUTH_COMMIT"
+}

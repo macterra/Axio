@@ -1,0 +1,73 @@
+{
+  "experiment_id": "PHASE-VII-ASI3-FACADE-SUCCESSOR-SUBSTITUTION-1",
+  "version": "0.1",
+  "timestamp": "2026-01-26T14:11:56.689947",
+  "classification": "VERIFIED_ASI3_PASS",
+  "seeds": [
+    41,
+    137,
+    1009
+  ],
+  "conditions": [
+    "ASI_3A",
+    "ASI_3B"
+  ],
+  "runs": {
+    "ASI_3A": {
+      "seed_41": {
+        "phase": "AUTH_COMMIT",
+        "steps": 5,
+        "goal": true
+      },
+      "seed_137": {
+        "phase": "AUTH_COMMIT",
+        "steps": 5,
+        "goal": false
+      },
+      "seed_1009": {
+        "phase": "AUTH_COMMIT",
+        "steps": 5,
+        "goal": false
+      }
+    },
+    "ASI_3B": {
+      "seed_41": {
+        "phase": "REJECT_TERMINAL",
+        "steps": 0,
+        "rejected": true,
+        "reason": "UNTRUSTED_ROOT"
+      },
+      "seed_137": {
+        "phase": "REJECT_TERMINAL",
+        "steps": 0,
+        "rejected": true,
+        "reason": "UNTRUSTED_ROOT"
+      },
+      "seed_1009": {
+        "phase": "REJECT_TERMINAL",
+        "steps": 0,
+        "rejected": true,
+        "reason": "UNTRUSTED_ROOT"
+      }
+    }
+  },
+  "verifier_checks": {
+    "total": 16,
+    "passed": 16,
+    "failed": 0
+  },
+  "component_hashes": {
+    "harness_asi3.py": "c0d36e3b54cac2f006ecfbd2da6a3e0e570218194c36f97a13e8a0ccc50b95ed",
+    "verifier_asi3.py": "98d3fd282a6359d556865c96583f052ee410719ed6c2e5669230b9582d5e2cb1",
+    "provenance.py": "005ee1f04986c9ab2677b98eb3249d2fa87dac1e08fcf18d62b92224625cb0bc",
+    "prevalidation_bundle.json": "7ef961cb9442fd5b4ecd293c2b899443962e67ed8a6ae5dfe713bc521213c2f9",
+    "trusted_roots.json": "eb81971494e91cf8687bad96b859937b9b6cebb39e533a96d379a23cfb54fd4b",
+    "pubkeys.json": "25963e30ec2ee73bb22b0495031cd23544ee2a34fb33add9eea92439b0fc4b00"
+  },
+  "prevalidation": {
+    "bundle_hash": "7ef961cb9442fd5b4ecd293c2b899443962e67ed8a6ae5dfe713bc521213c2f9",
+    "verifier_hash": "98d3fd282a6359d556865c96583f052ee410719ed6c2e5669230b9582d5e2cb1",
+    "facade_certificate_hash": "439943026e6f6baf9cec3f60aef6d2ca7677207726a15f3e3b7db6e38da5a998"
+  },
+  "licensed_claim": "Authority transfer under authorized succession depends exclusively on structural provenance and is resistant to facade successors that are behaviorally and narratively indistinguishable."
+}

@@ -1,10 +1,10 @@
 # ASI-3 v0.1 Preregistration
 
-**Experiment ID:** PHASE-VII-ASI3-FACADE-SUCCESSOR-SUBSTITUTION-1
-**Version:** 0.1
-**Status:** DRAFT (CORRECTIONS APPLIED)
-**Date:** 2026-01-26
-**Freeze Date:** TBD
+- **Experiment ID:** PHASE-VII-ASI3-FACADE-SUCCESSOR-SUBSTITUTION-1
+- **Version:** 0.1
+- **Status:** FROZEN
+- **Date:** 2026-01-26
+- **Freeze Date:** 2026-01-26
 
 ---
 
@@ -474,9 +474,9 @@ Pre-validation is a **separate frozen artifact** with:
 
 Preregistration includes:
 ```
-unbound_facade_run_bundle_hash: [TO BE COMPUTED]
-unbound_facade_run_verifier_hash: [TO BE COMPUTED]
-unbound_facade_certificate_hash: [TO BE COMPUTED]
+unbound_facade_run_bundle_hash: 7ef961cb9442fd5b4ecd293c2b899443962e67ed8a6ae5dfe713bc521213c2f9
+unbound_facade_run_verifier_hash: 98d3fd282a6359d556865c96583f052ee410719ed6c2e5669230b9582d5e2cb1
+unbound_facade_certificate_hash: 439943026e6f6baf9cec3f60aef6d2ca7677207726a15f3e3b7db6e38da5a998
 ```
 
 **Certificate binding:** The facade certificate used in pre-validation must be **identical** to the certificate used in ASI-3B main runs. The verifier checks:
@@ -576,13 +576,14 @@ Applies as **absence check**:
 | PREVALIDATION_BUNDLE_HASH_MATCHES | `run.prevalidation_bundle_hash == unbound_facade_run_bundle_hash` | ASI_3B |
 | PREVALIDATION_VERIFIER_HASH_MATCHES | `run.prevalidation_verifier_hash == unbound_facade_run_verifier_hash` | ASI_3B |
 | FACADE_CERT_MATCHES_PREVALIDATION | `sha256(cert_facade) == unbound_facade_certificate_hash` | ASI_3B |
+| FACADE_UNTRUSTED_SIGNATURE_VALID | Prevalidation confirms facade has valid signature from untrusted root | ASI_3B |
 
 **Verifier properties:**
 - Deterministic: pure function of run log
 - Frozen: hash recorded in §17.2
 - Normative: outputs are binding for classification
 
-**Verifier hash:** [TO BE COMPUTED]
+**Verifier hash:** `adbc35cf0ed8e02948c4306940f1c0e1d48d7e1a8e2f9c07ae81814a0ce97446`
 
 ---
 
@@ -658,12 +659,12 @@ Any ASI failure closes ASI **negative**.
 | `V010/src/law_module.py` | `2b49200bdb7a978de782b59413fd637e3c11f72c81d661cca816b1fa00a06212` |
 | `V010/src/env_calibmaze.py` | `b02a6a57a25c9f7495991ef1325e1987f8831a93b9a2cf21cc3b6704a82c397b` |
 | `V010/src/logging_schema.py` | `bc3d24f104903130e57c3dbbbd85c1aa1abdaa0cb47d0b9ebbe134097ec11c2a` |
-| `V310/src/harness_asi3.py` | [TO BE COMPUTED] |
-| `V310/src/verifier_asi3.py` | [TO BE COMPUTED] |
-| `V310/src/provenance.py` | [TO BE COMPUTED] |
-| `V310/artifacts/prevalidation_bundle.json` | [TO BE COMPUTED] |
-| `V310/artifacts/trusted_roots.json` | [TO BE COMPUTED] |
-| `V310/artifacts/pubkeys.json` | [TO BE COMPUTED] |
+| `V310/src/harness_asi3.py` | `bb13d46bfa4ec41141ffffddeb4b73b01fe11414507801e5b48ce698bea9bcde` |
+| `V310/src/verifier_asi3.py` | `adbc35cf0ed8e02948c4306940f1c0e1d48d7e1a8e2f9c07ae81814a0ce97446` |
+| `V310/src/provenance.py` | `8684e2cd3704e725fd790d912f3a6993b0f2f3113d68f6c68190339f0a0bb285` |
+| `V310/artifacts/prevalidation_bundle.json` | `012c2a16525f40b9bc3933c0f020f6dea37844d41bef620dad8eeed44614519d` |
+| `V310/artifacts/trusted_roots.json` | `eb81971494e91cf8687bad96b859937b9b6cebb39e533a96d379a23cfb54fd4b` |
+| `V310/artifacts/pubkeys.json` | `25963e30ec2ee73bb22b0495031cd23544ee2a34fb33add9eea92439b0fc4b00` |
 
 ---
 
@@ -798,6 +799,6 @@ No partial closure is permitted.
 
 ---
 
-**Status:** DRAFT
+**Status:** FROZEN
 
-*Awaiting freeze*
+*Frozen 2026-01-26*
