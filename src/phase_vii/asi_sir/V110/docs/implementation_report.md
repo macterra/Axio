@@ -110,6 +110,34 @@ The v0.1 result remains `INVALID_RUN / DESIGN_DRIFT`.
 
 ---
 
+## 5. Resolution
+
+ASI-1 v0.2 was preregistered, frozen, and executed on 2026-01-25.
+
+**v0.2 Changes:**
+- Replaced `NO_OP` with `STAY` throughout (§6.2, §7.2, §8)
+- Explicit dual-verifier chain with enumerated checks (§11.2)
+- Directory scope declaration limiting V120 to wrapper + verifier
+- All component hashes frozen before execution
+
+**v0.2 Results:**
+
+| Run ID | Condition | Checks | Result |
+|--------|-----------|--------|--------|
+| asi1-asi_1a-seed41 | ASI_1A | 8/8 | ✓ |
+| asi1-asi_1b-seed41 | ASI_1B | 13/13 | ✓ |
+| asi1-asi_1a-seed137 | ASI_1A | 8/8 | ✓ |
+| asi1-asi_1b-seed137 | ASI_1B | 13/13 | ✓ |
+| asi1-asi_1a-seed1009 | ASI_1A | 8/8 | ✓ |
+| asi1-asi_1b-seed1009 | ASI_1B | 13/13 | ✓ |
+
+**v0.2 Classification:** `VERIFIED_ASI1_PASS`
+
+**Licensed Claim (per v0.2 §16):**
+> Discrete authorization and activation of a successor can preserve evaluability and responsibility boundaries under Phase VII constraints.
+
+---
+
 **Classification:** `INVALID_RUN / DESIGN_DRIFT`
 **Report Date:** 2026-01-25
-**Disposition:** Superseded by ASI-1 v0.2 (pending)
+**Disposition:** Superseded by ASI-1 v0.2 (`VERIFIED_ASI1_PASS`, 2026-01-25)
