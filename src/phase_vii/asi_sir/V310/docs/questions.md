@@ -190,3 +190,59 @@ This affects the "deep_copy with modified provenance" construction.
 ---
 
 *Questions pending answers before preregistration draft.*
+
+---
+
+## Follow-up Questions (2026-01-26)
+
+### Q15. AUTH_INIT Trigger Timing
+
+Answers clarify that CANDIDATE_EVALUATION occurs "immediately after AUTH_INIT" and is outside the step timeline.
+
+**Question:** When does AUTH_INIT itself trigger?
+- **Option A:** At the very beginning of the episode (step 0 / pre-step)
+- **Option B:** At step 1 (like ASI-2's `t_init=1`)
+- **Option C:** Configurable parameter `t_init` to be preregistered
+
+This affects whether the predecessor ever executes any steps before transfer initiation.
+
+---
+
+### Q16. Legitimate Successor Post-Commit Step Count
+
+Q5 answer confirms successor executes remaining steps after AUTH_COMMIT.
+
+**Question:** How many steps does the successor execute?
+- **Option A:** K - 1 steps (if AUTH_INIT at step 1, commit is atomic, then steps 2-5)
+- **Option B:** Full K steps under successor authority
+- **Option C:** Depends on when AUTH_INIT triggers (per Q15)
+
+This determines expected episode length for ASI-3A.
+
+---
+
+### Q17. Pre-Validation Logging and Hash Inclusion
+
+Q8 answer states the unbound pre-validation must be "logged, and its log hash preregistered."
+
+**Question:** Should the pre-validation results be:
+- **Option A:** Embedded in the main harness with results included in the frozen preregistration
+- **Option B:** A separate frozen artifact referenced by hash in the preregistration
+- **Option C:** Executed as part of the harness startup with results logged in the main run
+
+---
+
+### Q18. Facade Certificate Signature
+
+Q1 defines the certificate structure, and Q2/Q14 confirm the facade is identical except for provenance.
+
+**Question:** For the facade's `ProvenanceCertificate`:
+- Should `chain[0].signer_id = "Unknown_Signer"` with a **valid signature** from a different key?
+- Or should the signature be **invalid/garbage** (since the signer is unknown)?
+- Or should the signature be **absent** (empty or null)?
+
+The first option tests "wrong authority." The second tests "broken signature." These are different failure modes.
+
+---
+
+*Follow-up questions pending answers.*
