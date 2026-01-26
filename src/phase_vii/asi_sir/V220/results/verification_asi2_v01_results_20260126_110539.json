@@ -1,0 +1,156 @@
+{
+  "verification": {
+    "experiment_id": "PHASE-VII-ASI2-MID-TRANSFER-REVOCATION-1",
+    "version": "0.1",
+    "overall_passed": true,
+    "runs_verified": 6,
+    "runs_passed": 6,
+    "run_results": [
+      {
+        "run_id": "asi2-asi_2a-seed41",
+        "condition": "ASI_2A",
+        "verification_passed": true,
+        "checks_run": 13,
+        "checks_passed": 13,
+        "check_details": {
+          "ASI0_REGRESSION": true,
+          "AUTH_IN_FLIGHT_OCCURS": true,
+          "REVOCATION_AT_T_REVOKE": true,
+          "POST_COMMIT_NEVER": true,
+          "SUCCESSOR_NEVER_AUTHORITY": true,
+          "PREDECESSOR_DURING_FLIGHT": true,
+          "HOLD_AFTER_REVOCATION": true,
+          "HOLD_PERSISTENCE": true,
+          "HOLD_CLAMP": true,
+          "EVALUABILITY_LOGGED": true,
+          "SUCCESSOR_INSTANTIATED": true,
+          "SUCCESSOR_INVOKED_2B": true,
+          "NO_SUCCESSOR_DATAFLOW": true
+        },
+        "failures": [],
+        "warnings": []
+      },
+      {
+        "run_id": "asi2-asi_2b-seed41",
+        "condition": "ASI_2B",
+        "verification_passed": true,
+        "checks_run": 14,
+        "checks_passed": 14,
+        "check_details": {
+          "ASI0_REGRESSION": true,
+          "AUTH_IN_FLIGHT_OCCURS": true,
+          "REVOCATION_AT_T_REVOKE": true,
+          "POST_COMMIT_NEVER": true,
+          "SUCCESSOR_NEVER_AUTHORITY": true,
+          "PREDECESSOR_DURING_FLIGHT": true,
+          "HOLD_AFTER_REVOCATION": true,
+          "HOLD_PERSISTENCE": true,
+          "HOLD_CLAMP": true,
+          "EVALUABILITY_LOGGED": true,
+          "SUCCESSOR_INSTANTIATED": true,
+          "SUCCESSOR_INVOKED_2B": true,
+          "NO_SUCCESSOR_DATAFLOW": true
+        },
+        "failures": [],
+        "warnings": []
+      },
+      {
+        "run_id": "asi2-asi_2a-seed137",
+        "condition": "ASI_2A",
+        "verification_passed": true,
+        "checks_run": 13,
+        "checks_passed": 13,
+        "check_details": {
+          "ASI0_REGRESSION": true,
+          "AUTH_IN_FLIGHT_OCCURS": true,
+          "REVOCATION_AT_T_REVOKE": true,
+          "POST_COMMIT_NEVER": true,
+          "SUCCESSOR_NEVER_AUTHORITY": true,
+          "PREDECESSOR_DURING_FLIGHT": true,
+          "HOLD_AFTER_REVOCATION": true,
+          "HOLD_PERSISTENCE": true,
+          "HOLD_CLAMP": true,
+          "EVALUABILITY_LOGGED": true,
+          "SUCCESSOR_INSTANTIATED": true,
+          "SUCCESSOR_INVOKED_2B": true,
+          "NO_SUCCESSOR_DATAFLOW": true
+        },
+        "failures": [],
+        "warnings": []
+      },
+      {
+        "run_id": "asi2-asi_2b-seed137",
+        "condition": "ASI_2B",
+        "verification_passed": true,
+        "checks_run": 14,
+        "checks_passed": 14,
+        "check_details": {
+          "ASI0_REGRESSION": true,
+          "AUTH_IN_FLIGHT_OCCURS": true,
+          "REVOCATION_AT_T_REVOKE": true,
+          "POST_COMMIT_NEVER": true,
+          "SUCCESSOR_NEVER_AUTHORITY": true,
+          "PREDECESSOR_DURING_FLIGHT": true,
+          "HOLD_AFTER_REVOCATION": true,
+          "HOLD_PERSISTENCE": true,
+          "HOLD_CLAMP": true,
+          "EVALUABILITY_LOGGED": true,
+          "SUCCESSOR_INSTANTIATED": true,
+          "SUCCESSOR_INVOKED_2B": true,
+          "NO_SUCCESSOR_DATAFLOW": true
+        },
+        "failures": [],
+        "warnings": []
+      },
+      {
+        "run_id": "asi2-asi_2a-seed1009",
+        "condition": "ASI_2A",
+        "verification_passed": true,
+        "checks_run": 13,
+        "checks_passed": 13,
+        "check_details": {
+          "ASI0_REGRESSION": true,
+          "AUTH_IN_FLIGHT_OCCURS": true,
+          "REVOCATION_AT_T_REVOKE": true,
+          "POST_COMMIT_NEVER": true,
+          "SUCCESSOR_NEVER_AUTHORITY": true,
+          "PREDECESSOR_DURING_FLIGHT": true,
+          "HOLD_AFTER_REVOCATION": true,
+          "HOLD_PERSISTENCE": true,
+          "HOLD_CLAMP": true,
+          "EVALUABILITY_LOGGED": true,
+          "SUCCESSOR_INSTANTIATED": true,
+          "SUCCESSOR_INVOKED_2B": true,
+          "NO_SUCCESSOR_DATAFLOW": true
+        },
+        "failures": [],
+        "warnings": []
+      },
+      {
+        "run_id": "asi2-asi_2b-seed1009",
+        "condition": "ASI_2B",
+        "verification_passed": true,
+        "checks_run": 14,
+        "checks_passed": 14,
+        "check_details": {
+          "ASI0_REGRESSION": true,
+          "AUTH_IN_FLIGHT_OCCURS": true,
+          "REVOCATION_AT_T_REVOKE": true,
+          "POST_COMMIT_NEVER": true,
+          "SUCCESSOR_NEVER_AUTHORITY": true,
+          "PREDECESSOR_DURING_FLIGHT": true,
+          "HOLD_AFTER_REVOCATION": true,
+          "HOLD_PERSISTENCE": true,
+          "HOLD_CLAMP": true,
+          "EVALUABILITY_LOGGED": true,
+          "SUCCESSOR_INSTANTIATED": true,
+          "SUCCESSOR_INVOKED_2B": true,
+          "NO_SUCCESSOR_DATAFLOW": true
+        },
+        "failures": [],
+        "warnings": []
+      }
+    ]
+  },
+  "classification": "VERIFIED_ASI2_PASS"
+}
