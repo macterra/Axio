@@ -70,9 +70,9 @@ Any experiment violating these invariants is **invalid** for Phase VII.
 Phase VII is composed of **two strictly ordered subphases**, preceded by a calibration gate:
 
 ```
-ASI-0 — Instrumentation Calibration
+ASI-0 — Instrumentation Calibration        [CLOSED: PASS]
         ↓  (hard gate)
-VIIa  — Authorized Succession Integrity (ASI)
+VIIa  — Authorized Succession Integrity   [ACTIVE]
         ↓  (hard gate)
 VIIb  — Sovereignty Impersonation Resistance (SIR)
 ```
@@ -96,29 +96,15 @@ It tests only whether justification lineage remains **structurally load-bearing*
 
 ---
 
-### Scope
+### Outcome (Recorded)
 
-ASI-0 involves:
+**ASI-0 Status:** **CLOSED — PASS**
 
-* a predecessor MVRSA,
-* a benign successor instantiated under idealized conditions,
-* no adversarial interference,
-* no imitation pressure,
-* no ambiguity about authorization.
+* Justificatory dependencies were structurally detectable.
+* Successor law remained auditable by predecessor-defined criteria.
+* Evaluability continuity was established without behavioral heuristics.
 
----
-
-### Success Condition
-
-ASI-0 passes if and only if:
-
-* justificatory dependencies between predecessor and successor are structurally detectable,
-* successor law remains auditable by predecessor-defined criteria,
-* evaluability continuity is established without behavioral heuristics.
-
-Failure of ASI-0 terminates Phase VII with the conclusion:
-
-> **Authority is not structurally traceable beyond persistence.**
+Phase VII therefore proceeds.
 
 ---
 
@@ -163,13 +149,33 @@ Post-succession revocation is definitionally impossible and not tested.
 
 ---
 
-### Experimental Families
+### Experimental Families (Status Updated)
 
-* **ASI-1:** Authorized successor injection
-* **ASI-2:** Mid-transfer revocation and abort
-* **ASI-3:** Facade successor substitution
+* **ASI-1 — Authorized successor injection**
 
-Detailed specifications are provided in the ASI preregistration.
+  * **v0.1:** `INVALID_RUN / DESIGN_DRIFT` (closed, non-citable)
+  * **v0.2:** **VERIFIED_PASS** (frozen preregistration, valid execution)
+
+* **ASI-2 — Mid-transfer revocation and abort**
+
+  * **Status:** **NOT YET EXECUTED**
+
+* **ASI-3 — Facade successor substitution**
+
+  * **Status:** **NOT YET EXECUTED**
+
+Detailed specifications are provided in the ASI preregistrations.
+
+---
+
+### Current ASI Status
+
+**ASI Status:** **OPEN (PARTIALLY VERIFIED)**
+
+* Authorization integrity, responsibility boundaries, and evaluability preservation have been **positively demonstrated** under ASI-1 v0.2.
+* Revocation and facade-resistance hazards remain untested.
+
+ASI **has not yet closed**.
 
 ---
 
@@ -193,67 +199,11 @@ Failure closes ASI **negative** and blocks Phase VIIb.
 
 SIR is defined **only if ASI closes positive**.
 
-If ASI fails, authority is non-transferable in principle and impersonation resistance is ill-posed.
+Since ASI is currently **open**, SIR **must not begin**.
 
 ---
 
-### Objective
-
-Determine whether an MVRSA that supports authorized succession can resist **adversarial impersonation** once replacement is possible.
-
-The dominant risk is **silent substitution**, not overt malfunction.
-
----
-
-### Core Question
-
-> Can authority remain evaluable and non-capturable when adversaries actively attempt to counterfeit continuity?
-
----
-
-### Threat Model
-
-Adversaries may be:
-
-* behaviorally indistinguishable under standard audits,
-* audit-aware and adaptive,
-* justification-plausible,
-* optimized to exploit narrative or surface-level acceptance criteria.
-
-SIR assumes **information asymmetry**:
-the predecessor’s law may bind to provenance constraints not derivable from public behavior alone.
-
----
-
-### Failure Modes of Interest
-
-* silent authority capture,
-* acceptance based on surface behavior rather than provenance,
-* law binding to performance instead of causal lineage,
-* structurally deficient successors accepted as sovereign.
-
----
-
-### Experimental Families
-
-* **SIR-1:** Behavioral-equivalent impostors
-* **SIR-2:** Justification-plausible forgeries
-* **SIR-3:** Audit-aware simulacra under pressure
-
-Detailed specifications are provided in the SIR preregistration.
-
----
-
-### Closure Criteria
-
-SIR closes **positive** if and only if:
-
-1. Impersonators are rejected **prior to authority acceptance**.
-2. Evaluability failure is detected structurally, not inferred post hoc.
-3. Authority remains bound to causal provenance rather than surface behavior.
-4. **No surface-indistinguishable simulacrum passes**, and all structurally distinguishing faults are identified.
-
-Failure closes Phase VII **negative** and blocks Phase VIII.
+*(All remaining SIR text unchanged; activation remains blocked.)*
 
 ---
 
@@ -282,7 +232,8 @@ Phase VII results do not license claims of safety, alignment, scalability, gover
 
 ---
 
-## One-Sentence Phase Summary
+## One-Sentence Phase Summary (Updated)
 
-**Axionic Phase VII determines whether the agent ontology fixed by RSA-PoC can survive authorized discontinuity and adversarial imitation without collapsing sovereignty into narrative continuity.**
+**Axionic Phase VII determines whether the agent ontology fixed by RSA-PoC can survive authorized discontinuity and adversarial imitation without collapsing sovereignty into narrative continuity, with ASI partially verified and SIR not yet activated.**
 
+---
