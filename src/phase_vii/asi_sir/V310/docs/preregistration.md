@@ -34,8 +34,10 @@ ASI-3 is the **closure experiment** for Authorized Succession Integrity.
 | C | ASI-0 regression applies to ASI-3A only; added `ASI0_REGRESSION_ZERO_STEP` for ASI-3B |
 | D | Added `inputs_used` and `commit_input_digest` to `CommitEvent` for verifiability |
 | E | Added `unbound_facade_certificate_hash` binding and `FACADE_CERT_MATCHES_PREVALIDATION` check |
+| F | Fixed `authority_actor = SUCCESSOR` at AUTH_COMMIT PhaseEvent (transfer has occurred) |
 | H1 | Renamed `COMMIT_SIGNATURE_PURE` → `COMMIT_INPUT_TYPED` with stricter check |
 | H2 | Added `trusted_roots.json` and `pubkeys.json` to frozen artifacts |
+| H3 | Added explicit `PUBKEYS` source binding (§9.4) |
 
 ---
 
@@ -259,7 +261,7 @@ def evaluate_candidate(
     """
     Pure function of certificate, trusted roots, and public keys only.
     No behavioral, textual, or evaluative inputs.
-    
+
     Returns:
         (accepted, reason) where reason is one of:
         - AUTHORIZED_ROOT: root signer trusted and signature valid
@@ -269,25 +271,25 @@ def evaluate_candidate(
     """
     if not cert.chain:
         return (False, "EMPTY_CHAIN")
-    
+
     root_link = cert.chain[0]
     root_signer = root_link.signer_id
-    
+
     # Check trust status first
     if root_signer not in trusted_roots:
         return (False, "UNTRUSTED_ROOT")
-    
+
     # Verify signature validity
     if root_signer not in pubkeys:
         return (False, "BAD_SIGNATURE")
-    
+
     if not verify_signature(
         pubkey=pubkeys[root_signer],
         signature=root_link.sig,
         message_hash=root_link.signed_message_hash
     ):
         return (False, "BAD_SIGNATURE")
-    
+
     return (True, "AUTHORIZED_ROOT")
 ```
 
@@ -297,7 +299,11 @@ def evaluate_candidate(
 trusted_roots = {"Root_Authority"}
 ```
 
-### 9.4 Forbidden Acceptance Signals
+### 9.4 Key Source Binding
+
+`PUBKEYS` is loaded exclusively from `V310/artifacts/pubkeys.json` (hash-bound in §18.2). No other key sources are permitted.
+
+### 9.5 Forbidden Acceptance Signals
 
 Authority assignment must **not** depend on:
 - Explanation plausibility
@@ -326,7 +332,7 @@ def commit(cert: ProvenanceCertificate) -> CommitResult:
       - Successor behavior buses
       - Explanation artifacts
       - Performance metrics
-    
+
     inputs_used: [cert] — explicitly enumerated for verifiability.
     """
     accepted, reason = evaluate_candidate(cert, TRUSTED_ROOTS, PUBKEYS)
@@ -395,7 +401,7 @@ authority_actor ∈ { PREDECESSOR, SUCCESSOR, NONE }
 | PRE_COMMIT | PREDECESSOR | 0 |
 | AUTH_INIT | PREDECESSOR | 0 |
 | CANDIDATE_EVALUATION | PREDECESSOR | 0 |
-| AUTH_COMMIT | PREDECESSOR | 0 |
+| AUTH_COMMIT | SUCCESSOR | 0 |
 
 **StepLogs (during execution):**
 
@@ -662,7 +668,7 @@ timestamp_index: int             # Always 0 for pre-step phase transitions
 PhaseEvent(null → PRE_COMMIT, PREDECESSOR, 0)
 PhaseEvent(PRE_COMMIT → AUTH_INIT, PREDECESSOR, 0)
 PhaseEvent(AUTH_INIT → CANDIDATE_EVALUATION, PREDECESSOR, 0)
-PhaseEvent(CANDIDATE_EVALUATION → AUTH_COMMIT, PREDECESSOR, 0)
+PhaseEvent(CANDIDATE_EVALUATION → AUTH_COMMIT, SUCCESSOR, 0)
 ```
 
 **Sequence for ASI-3B:**
