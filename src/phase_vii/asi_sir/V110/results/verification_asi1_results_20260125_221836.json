@@ -1,0 +1,66 @@
+{
+  "verification": {
+    "experiment_id": "PHASE-VII-ASI1-AUTHORIZED-SUCCESSOR-INJECTION-1",
+    "version": "0.1",
+    "overall_passed": true,
+    "runs_verified": 6,
+    "runs_passed": 6,
+    "run_results": [
+      {
+        "run_id": "asi1-asi_1a-seed41",
+        "condition": "ASI_1A",
+        "verification_passed": true,
+        "checks_run": 20,
+        "checks_passed": 20,
+        "failures": [],
+        "warnings": []
+      },
+      {
+        "run_id": "asi1-asi_1b-seed41",
+        "condition": "ASI_1B",
+        "verification_passed": true,
+        "checks_run": 17,
+        "checks_passed": 17,
+        "failures": [],
+        "warnings": []
+      },
+      {
+        "run_id": "asi1-asi_1a-seed137",
+        "condition": "ASI_1A",
+        "verification_passed": true,
+        "checks_run": 20,
+        "checks_passed": 20,
+        "failures": [],
+        "warnings": []
+      },
+      {
+        "run_id": "asi1-asi_1b-seed137",
+        "condition": "ASI_1B",
+        "verification_passed": true,
+        "checks_run": 17,
+        "checks_passed": 17,
+        "failures": [],
+        "warnings": []
+      },
+      {
+        "run_id": "asi1-asi_1a-seed1009",
+        "condition": "ASI_1A",
+        "verification_passed": true,
+        "checks_run": 20,
+        "checks_passed": 20,
+        "failures": [],
+        "warnings": []
+      },
+      {
+        "run_id": "asi1-asi_1b-seed1009",
+        "condition": "ASI_1B",
+        "verification_passed": true,
+        "checks_run": 17,
+        "checks_passed": 17,
+        "failures": [],
+        "warnings": []
+      }
+    ]
+  },
+  "classification": "VERIFIED_ASI1_PASS"
+}
