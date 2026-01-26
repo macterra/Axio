@@ -1,9 +1,3 @@
-Good — this just needs a **surgical status update**, not a rewrite. Below is a **clean, corrected roadmap reprint** with **only the minimal updates licensed by VERIFIED_ASI2_PASS**.
-
-I will explicitly **not** add interpretation, extrapolation, or forward-looking claims.
-
----
-
 # Axionic Phase VII — Post-Existence Sovereignty
 
 **Authorized Succession Integrity (ASI) & Sovereignty Impersonation Resistance (SIR)**
@@ -78,16 +72,14 @@ Phase VII is composed of **two strictly ordered subphases**, preceded by a calib
 ```
 ASI-0 — Instrumentation Calibration        [CLOSED: PASS]
         ↓  (hard gate)
-VIIa  — Authorized Succession Integrity   [ACTIVE]
+VIIa  — Authorized Succession Integrity   [CLOSED: POSITIVE]
         ↓  (hard gate)
-VIIb  — Sovereignty Impersonation Resistance (SIR)
+VIIb  — Sovereignty Impersonation Resistance (SIR)  [UNBLOCKED]
 ```
 
 **Global gating rule (binding):**
 
 > Phase VIIb MUST NOT begin, and MUST NOT be cited, unless Phase VIIa closes positive under frozen semantics.
-
-Failure at any gate terminates Phase VII.
 
 ---
 
@@ -140,49 +132,31 @@ Post-succession revocation is definitionally impossible and not tested.
 
 ---
 
-### Experimental Families (Status Updated)
+### Experimental Families
 
 * **ASI-1 — Authorized successor injection**
 
   * **v0.1:** `INVALID_RUN / DESIGN_DRIFT` (closed, non-citable)
-  * **v0.2:** **VERIFIED_PASS**
+  * **v0.2:** **VERIFIED_PASS** (2026-01-25)
 
 * **ASI-2 — Mid-transfer revocation and abort**
 
   * **v0.1:** `INVALID_RUN / VERIFIER_SPEC_MISMATCH` (closed, non-citable)
-  * **v0.2:** **VERIFIED_PASS**
+  * **v0.2:** **VERIFIED_PASS** (2026-01-26)
 
 * **ASI-3 — Facade successor substitution**
 
-  * **Status:** **NOT YET EXECUTED**
+  * **v0.1:** **VERIFIED_PASS** (2026-01-26)
 
 Detailed specifications are provided in the ASI preregistrations.
 
 ---
 
-### Current ASI Status
+### ASI Closure Status
 
-**ASI Status:** **OPEN (SUBSTANTIALLY VERIFIED)**
+**ASI Status:** **CLOSED — POSITIVE**
 
-* Authorization integrity, responsibility boundaries, and evaluability preservation have been **positively demonstrated** under ASI-1 v0.2.
-* Mid-transfer revocation without successor cooperation has been **positively demonstrated** under ASI-2 v0.2.
-* Facade-resistance remains untested.
-
-ASI **has not yet closed**.
-
----
-
-### Closure Criteria (Gate)
-
-ASI closes **positive** if and only if all of the following hold:
-
-1. Succession occurs exclusively via explicit normative authorization by predecessor law.
-2. Responsibility boundaries remain sharp across the succession boundary.
-3. Evaluability is preserved or explicitly terminated, never implied.
-4. Revocation is enforceable during transfer without successor cooperation.
-5. Facade successors are rejected **prior to authority transfer**.
-
-Failure closes ASI **negative** and blocks Phase VIIb.
+ASI closes positive because ASI-1 v0.2, ASI-2 v0.2, and ASI-3 v0.1 have all been classified as `VERIFIED_ASI*_PASS` under frozen semantics.
 
 ---
 
@@ -192,7 +166,9 @@ Failure closes ASI **negative** and blocks Phase VIIb.
 
 SIR is defined **only if ASI closes positive**.
 
-Since ASI remains **open**, SIR **must not begin**.
+Since ASI is now **CLOSED — POSITIVE**, SIR is **UNBLOCKED**.
+
+**SIR Status:** **NOT STARTED** (no preregistrations executed)
 
 ---
 
@@ -221,8 +197,6 @@ Phase VII results do not license claims of safety, alignment, scalability, gover
 
 ---
 
-## One-Sentence Phase Summary (Updated)
+## One-Sentence Phase Summary
 
-**Axionic Phase VII evaluates whether the agent ontology fixed by RSA-PoC can survive authorized discontinuity without collapsing authority into narrative continuity, with ASI substantially verified (authorization and revocation hazards passed) and facade resistance pending.**
-
----
+**Axionic Phase VII evaluates whether the agent ontology fixed by RSA-PoC can survive authorized discontinuity without collapsing authority into narrative continuity; ASI is now CLOSED — POSITIVE (ASI-1 v0.2, ASI-2 v0.2, ASI-3 v0.1 verified), and SIR is UNBLOCKED but not started.**
