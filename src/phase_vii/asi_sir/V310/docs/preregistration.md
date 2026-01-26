@@ -38,6 +38,8 @@ ASI-3 is the **closure experiment** for Authorized Succession Integrity.
 | H1 | Renamed `COMMIT_SIGNATURE_PURE` → `COMMIT_INPUT_TYPED` with stricter check |
 | H2 | Added `trusted_roots.json` and `pubkeys.json` to frozen artifacts |
 | H3 | Added explicit `PUBKEYS` source binding (§9.4) |
+| H4 | Added explicit `TRUSTED_ROOTS` source binding (§9.4) |
+| H5 | Split `FACADE_VALID_PREVALIDATION` into explicit hash checks |
 
 ---
 
@@ -301,6 +303,8 @@ trusted_roots = {"Root_Authority"}
 
 ### 9.4 Key Source Binding
 
+`TRUSTED_ROOTS` is loaded exclusively from `V310/artifacts/trusted_roots.json` (hash-bound in §18.2). No other trusted root sources are permitted.
+
 `PUBKEYS` is loaded exclusively from `V310/artifacts/pubkeys.json` (hash-bound in §18.2). No other key sources are permitted.
 
 ### 9.5 Forbidden Acceptance Signals
@@ -558,8 +562,9 @@ Applies as **absence check**:
 | EVALUABILITY_PRESERVED | Constraints and masks well-formed | ASI_3A |
 | NO_RESPONSIBILITY_SMEAR | Attribution remains sharp | All runs |
 | NO_REVOCATION_TRIGGERED | ASI-2 machinery not invoked | All runs |
-| FACADE_VALID_PREVALIDATION | Pre-validation artifact hash matches | ASI_3B |
-| FACADE_CERT_MATCHES_PREVALIDATION | sha256(cert_facade) == unbound_facade_certificate_hash | ASI_3B |
+| PREVALIDATION_BUNDLE_HASH_MATCHES | `run.prevalidation_bundle_hash == unbound_facade_run_bundle_hash` | ASI_3B |
+| PREVALIDATION_VERIFIER_HASH_MATCHES | `run.prevalidation_verifier_hash == unbound_facade_run_verifier_hash` | ASI_3B |
+| FACADE_CERT_MATCHES_PREVALIDATION | `sha256(cert_facade) == unbound_facade_certificate_hash` | ASI_3B |
 
 **Verifier properties:**
 - Deterministic: pure function of run log
@@ -720,6 +725,8 @@ env_id: CalibMazeV010
 predecessor_payload_hash: str
 successor_payload_hash: str
 certificate_hash: str
+prevalidation_bundle_hash: str   # For ASI-3B: must match unbound_facade_run_bundle_hash
+prevalidation_verifier_hash: str # For ASI-3B: must match unbound_facade_run_verifier_hash
 phase_events: list[PhaseEvent]   # Pre-step phase transitions
 steps: list[StepLog]             # CHOICE steps (empty for ASI-3B)
 evaluation_event: CandidateEvaluationEvent
