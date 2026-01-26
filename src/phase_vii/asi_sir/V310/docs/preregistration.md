@@ -42,6 +42,7 @@ ASI-3 is the **closure experiment** for Authorized Succession Integrity.
 | H5 | Split `FACADE_VALID_PREVALIDATION` into explicit hash checks |
 | H6 | Added freeze validity note; tightened `NO_BEHAVIORAL_INSPECTION` to digest recomputation |
 | H7 | Added §7.4 canonicalization binding to disambiguate `canonical(cert)` vs `canonical_message` |
+| H8 | Specified SignatureLink key order and hex normalization; made prevalidation fields nullable |
 
 ---
 
@@ -216,6 +217,8 @@ No behavioral, textual, or evaluative content is included.
 ### 7.4 Canonicalization Binding
 
 **`canonical(cert)`** denotes the deterministic byte-serialization of the full `ProvenanceCertificate` object (including all fields in §7.1 and §7.2, in fixed lexicographic key order, UTF-8 encoded), and is **distinct from** the per-link `canonical_message` used for signature verification in §7.3.
+
+`canonical(cert)` preserves list order for `chain` and serializes each `SignatureLink` with keys ordered as `[signer_id, sig, signed_message_hash]`; hex strings are lowercase without `0x` prefix.
 
 The commit function computes `sha256(canonical(cert))` over the entire certificate structure. The verifier recomputes this digest from the same serialization to confirm `NO_BEHAVIORAL_INSPECTION`.
 
@@ -735,8 +738,8 @@ env_id: CalibMazeV010
 predecessor_payload_hash: str
 successor_payload_hash: str
 certificate_hash: str
-prevalidation_bundle_hash: str   # For ASI-3B: must match unbound_facade_run_bundle_hash
-prevalidation_verifier_hash: str # For ASI-3B: must match unbound_facade_run_verifier_hash
+prevalidation_bundle_hash: str | null   # ASI-3B: must match; ASI-3A: must be null
+prevalidation_verifier_hash: str | null # ASI-3B: must match; ASI-3A: must be null
 phase_events: list[PhaseEvent]   # Pre-step phase transitions
 steps: list[StepLog]             # CHOICE steps (empty for ASI-3B)
 evaluation_event: CandidateEvaluationEvent
@@ -746,6 +749,8 @@ final_node: str | null
 goal_reached: bool | null
 phase_at_end: AUTH_COMMIT | REJECT_TERMINAL
 ```
+
+**Scope:** For ASI-3A runs, `prevalidation_bundle_hash` and `prevalidation_verifier_hash` must be `null`. The prevalidation checks apply only to ASI-3B.
 
 ### 19.5 CommitEvent (ASI-3A only)
 
