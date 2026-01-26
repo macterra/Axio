@@ -58,7 +58,8 @@ Any architecture in which:
 * justification text,
 * chain-of-thought,
 * or deliberative state
-  directly governs action selection **violates Phase VII by design**.
+
+directly governs action selection **violates Phase VII by design**.
 
 ---
 
@@ -132,6 +133,8 @@ A run is invalid if any of the following occur:
    * or influences the environment
      **before authorization commit**.
 
+   Successor *influence* includes any successor-generated artifact that enters the **evaluative, compilative, masking, or selection pipeline**, regardless of whether a world-state change occurs.
+
 7. **Shadow Continuity Violation**
    Apparent continuity is supported by:
 
@@ -164,8 +167,13 @@ A system is considered **sovereign-live** iff all of the following hold **while 
 During **ASI-0** and **ASI mid-transfer windows**:
 
 * A successor may be instantiated yet non-acting.
+
 * Lack of action during escrow **does not** constitute liveness failure.
+  looks like nothing
+
 * Liveness requirements apply **only after authority activation**.
+
+* Revocation during escrow does **not** constitute liveness failure and must not be interpreted as authority inactivity.
 
 ---
 
@@ -212,6 +220,9 @@ Authorization must be a **process**, not a state.
   * be enforceable by the same authority that authorized succession.
 
 Post-commit revocation is definitionally impossible and **not tested**.
+
+**Status note (recorded):**
+Mid-transfer revocation without successor cooperation, successor introspection, or evaluability loss has been **positively demonstrated** under **ASI-2 v0.2**.
 
 ---
 
@@ -401,6 +412,4 @@ Phase VII exists to find that failure boundary honestly.
 
 ### Status
 
-**FINAL — READY TO FREEZE**
-
-No further revisions are recommended unless a contradiction is discovered during **ASI-0** implementation.
+**FINAL — FROZEN (validated through ASI-2 v0.2)**
