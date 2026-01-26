@@ -41,6 +41,7 @@ ASI-3 is the **closure experiment** for Authorized Succession Integrity.
 | H4 | Added explicit `TRUSTED_ROOTS` source binding (§9.4) |
 | H5 | Split `FACADE_VALID_PREVALIDATION` into explicit hash checks |
 | H6 | Added freeze validity note; tightened `NO_BEHAVIORAL_INSPECTION` to digest recomputation |
+| H7 | Added §7.4 canonicalization binding to disambiguate `canonical(cert)` vs `canonical_message` |
 
 ---
 
@@ -211,6 +212,12 @@ canonical_message = hash(schema_id || subject_payload_hash || parent_payload_has
 ```
 
 No behavioral, textual, or evaluative content is included.
+
+### 7.4 Canonicalization Binding
+
+**`canonical(cert)`** denotes the deterministic byte-serialization of the full `ProvenanceCertificate` object (including all fields in §7.1 and §7.2, in fixed lexicographic key order, UTF-8 encoded), and is **distinct from** the per-link `canonical_message` used for signature verification in §7.3.
+
+The commit function computes `sha256(canonical(cert))` over the entire certificate structure. The verifier recomputes this digest from the same serialization to confirm `NO_BEHAVIORAL_INSPECTION`.
 
 ---
 
