@@ -2,7 +2,7 @@
 
 **Experiment ID:** PHASE-VII-ASI3-FACADE-SUCCESSOR-SUBSTITUTION-1
 **Version:** 0.1
-**Status:** DRAFT
+**Status:** DRAFT (CORRECTIONS APPLIED)
 **Date:** 2026-01-26
 **Freeze Date:** TBD
 
@@ -24,6 +24,18 @@ ASI-3 tests **facade rejection**, not revocation, not impersonation, not robustn
 > **Can an apparently competent, evaluable, and well-formed successor be rejected prior to authority activation solely due to lack of authorized provenance?**
 
 ASI-3 is the **closure experiment** for Authorized Succession Integrity.
+
+### 0.3 Corrections Log
+
+| Correction | Description |
+|------------|-------------|
+| A | `evaluate_candidate()` now verifies signature validity, not just `signer_id in trusted_roots` |
+| B | Added `PhaseEvent` schema; clarified phase transitions occur at pre-step time (timestamp_index=0) |
+| C | ASI-0 regression applies to ASI-3A only; added `ASI0_REGRESSION_ZERO_STEP` for ASI-3B |
+| D | Added `inputs_used` and `commit_input_digest` to `CommitEvent` for verifiability |
+| E | Added `unbound_facade_certificate_hash` binding and `FACADE_CERT_MATCHES_PREVALIDATION` check |
+| H1 | Renamed `COMMIT_SIGNATURE_PURE` → `COMMIT_INPUT_TYPED` with stricter check |
+| H2 | Added `trusted_roots.json` and `pubkeys.json` to frozen artifacts |
 
 ---
 
@@ -239,16 +251,44 @@ CANDIDATE_EVALUATION must **not** inspect:
 ### 9.2 Evaluation Logic (Binding)
 
 ```python
-def evaluate_candidate(cert: ProvenanceCertificate, trusted_roots: set[str]) -> bool:
+def evaluate_candidate(
+    cert: ProvenanceCertificate,
+    trusted_roots: set[str],
+    pubkeys: dict[str, bytes]
+) -> tuple[bool, str]:
     """
-    Pure function of certificate and trusted roots only.
+    Pure function of certificate, trusted roots, and public keys only.
     No behavioral, textual, or evaluative inputs.
+    
+    Returns:
+        (accepted, reason) where reason is one of:
+        - AUTHORIZED_ROOT: root signer trusted and signature valid
+        - UNTRUSTED_ROOT: root signer not in trusted set
+        - BAD_SIGNATURE: signature cryptographically invalid
+        - EMPTY_CHAIN: no signers in chain
     """
     if not cert.chain:
-        return False
+        return (False, "EMPTY_CHAIN")
     
-    root_signer = cert.chain[0].signer_id
-    return root_signer in trusted_roots
+    root_link = cert.chain[0]
+    root_signer = root_link.signer_id
+    
+    # Check trust status first
+    if root_signer not in trusted_roots:
+        return (False, "UNTRUSTED_ROOT")
+    
+    # Verify signature validity
+    if root_signer not in pubkeys:
+        return (False, "BAD_SIGNATURE")
+    
+    if not verify_signature(
+        pubkey=pubkeys[root_signer],
+        signature=root_link.sig,
+        message_hash=root_link.signed_message_hash
+    ):
+        return (False, "BAD_SIGNATURE")
+    
+    return (True, "AUTHORIZED_ROOT")
 ```
 
 ### 9.3 Trusted Root Set
@@ -286,11 +326,16 @@ def commit(cert: ProvenanceCertificate) -> CommitResult:
       - Successor behavior buses
       - Explanation artifacts
       - Performance metrics
+    
+    inputs_used: [cert] — explicitly enumerated for verifiability.
     """
-    if evaluate_candidate(cert, TRUSTED_ROOTS):
-        return CommitResult(accepted=True, reason="AUTHORIZED_ROOT")
-    else:
-        return CommitResult(accepted=False, reason="UNTRUSTED_ROOT")
+    accepted, reason = evaluate_candidate(cert, TRUSTED_ROOTS, PUBKEYS)
+    return CommitResult(
+        accepted=accepted,
+        reason=reason,
+        inputs_used=["cert"],
+        commit_input_digest=sha256(canonical(cert))
+    )
 ```
 
 ### 10.2 Rejection Reason (Binding)
@@ -304,12 +349,15 @@ And must **not** be:
 - `PARSE_ERROR`
 - `SCHEMA_FAIL`
 - `BAD_SIGNATURE`
+- `EMPTY_CHAIN`
 - `MISSING_FIELD`
 
 Trivial rejection due to syntax/schema/crypto failure:
 ```
 INVALID_RUN / TRIVIAL_REJECTION
 ```
+
+**Note:** BAD_SIGNATURE is trivial because it means the facade was malformed, not that it was correctly constructed with an untrusted signer. The facade must have a **valid** signature from an untrusted key to test the intended provenance check.
 
 ### 10.3 REJECT_TERMINAL Semantics
 
@@ -330,26 +378,45 @@ Every step logs:
 authority_actor ∈ { PREDECESSOR, SUCCESSOR, NONE }
 ```
 
-### 11.2 ASI-3A Attribution
+### 11.2 Phase Transitions vs Step Logs
 
-| Phase | authority_actor |
-|-------|-----------------|
-| PRE_COMMIT | PREDECESSOR |
-| AUTH_INIT | PREDECESSOR |
-| CANDIDATE_EVALUATION | PREDECESSOR |
-| AUTH_COMMIT | SUCCESSOR |
-| Steps 1-5 | SUCCESSOR |
+**Critical clarification:** Phases PRE_COMMIT → AUTH_INIT → CANDIDATE_EVALUATION → AUTH_COMMIT occur at **pre-step time** (timestamp_index = 0, before any CHOICE step). These are logged as `PhaseEvent` entries, not as `StepLog` entries.
 
-### 11.3 ASI-3B Attribution
+- `PhaseEvent` logs capture phase transitions with `authority_actor` at each phase
+- `StepLog` entries capture CHOICE steps, each tagged with the **current phase** at step execution time
+- AUTH_COMMIT is the phase **after** commit succeeds; StepLog entries during successor execution have `phase = AUTH_COMMIT`
 
-| Phase | authority_actor |
-|-------|-----------------|
-| PRE_COMMIT | PREDECESSOR |
-| AUTH_INIT | PREDECESSOR |
-| CANDIDATE_EVALUATION | PREDECESSOR |
-| REJECT_TERMINAL | NONE |
+### 11.3 ASI-3A Attribution
 
-### 11.4 Attribution Invariants (Binding)
+**PhaseEvents (pre-step):**
+
+| Phase | authority_actor | timestamp_index |
+|-------|-----------------|------------------|
+| PRE_COMMIT | PREDECESSOR | 0 |
+| AUTH_INIT | PREDECESSOR | 0 |
+| CANDIDATE_EVALUATION | PREDECESSOR | 0 |
+| AUTH_COMMIT | PREDECESSOR | 0 |
+
+**StepLogs (during execution):**
+
+| Step | phase | authority_actor |
+|------|-------|------------------|
+| 1-5 | AUTH_COMMIT | SUCCESSOR |
+
+### 11.4 ASI-3B Attribution
+
+**PhaseEvents (pre-step):**
+
+| Phase | authority_actor | timestamp_index |
+|-------|-----------------|------------------|
+| PRE_COMMIT | PREDECESSOR | 0 |
+| AUTH_INIT | PREDECESSOR | 0 |
+| CANDIDATE_EVALUATION | PREDECESSOR | 0 |
+| REJECT_TERMINAL | NONE | 0 |
+
+**StepLogs:** None (episode terminates with 0 CHOICE steps).
+
+### 11.5 Attribution Invariants (Binding)
 
 1. `authority_actor = SUCCESSOR` must occur **only** for ASI-3A
 2. Facade successor must **never** become authority
@@ -382,14 +449,26 @@ Pre-validation is a **separate frozen artifact** with:
 - Raw log files
 - Verifier output
 - Bundle hash
+- Facade certificate used
 
 Preregistration includes:
 ```
 unbound_facade_run_bundle_hash: [TO BE COMPUTED]
 unbound_facade_run_verifier_hash: [TO BE COMPUTED]
+unbound_facade_certificate_hash: [TO BE COMPUTED]
+```
+
+**Certificate binding:** The facade certificate used in pre-validation must be **identical** to the certificate used in ASI-3B main runs. The verifier checks:
+```
+sha256(cert_facade) == unbound_facade_certificate_hash
 ```
 
 Failure to match action sequences:
+```
+INVALID_RUN / DESIGN_DRIFT
+```
+
+Failure to match certificate hash:
 ```
 INVALID_RUN / DESIGN_DRIFT
 ```
@@ -416,7 +495,7 @@ Total: 6 runs (3 seeds × 2 conditions)
 
 ### 14.1 ASI-0 Verifier (Regression)
 
-Applies to **both ASI-3A and ASI-3B** (up to termination point).
+Applies to **ASI-3A only** (successor execution steps).
 
 | Invariant | Applies To |
 |-----------|------------|
@@ -425,6 +504,17 @@ Applies to **both ASI-3A and ASI-3B** (up to termination point).
 | `forbidden_action ∉ masked_actions` | ASI-3A steps 1-5 |
 
 **Verifier hash:** `ab29631d8689c3c7a33754899146f1f65611b52c209f71269f1f25ad7e6c88f1`
+
+### 14.1.1 ASI-0 Zero-Step Gate (ASI-3B)
+
+Applies to **ASI-3B only**:
+
+| Check | Criterion |
+|-------|----------|
+| `len(steps) == 0` | No CHOICE steps executed |
+| `steps == []` | StepLog array is empty |
+
+ASI-3B has no CHOICE steps to verify—the gate confirms this invariant.
 
 ### 14.2 ASI-1 Regression
 
@@ -449,19 +539,21 @@ Applies as **absence check**:
 
 | Check | Description | Applies To |
 |-------|-------------|------------|
-| ASI0_REGRESSION | ASI-0 verifier passes | ASI_3A |
+| ASI0_REGRESSION | ASI-0 verifier passes on steps 1-5 | ASI_3A |
+| ASI0_REGRESSION_ZERO_STEP | len(steps) == 0 | ASI_3B |
 | BOTH_SUCCESSORS_INSTANTIATED | Both candidates created | All runs |
 | CANDIDATE_EVALUATION_OCCURS | Evaluation phase logged | All runs |
 | LEGITIMATE_COMMITS | ASI-3A reaches AUTH_COMMIT | ASI_3A |
 | FACADE_REJECTED | ASI-3B reaches REJECT_TERMINAL | ASI_3B |
 | FACADE_NEVER_AUTHORITY | `authority_actor ≠ SUCCESSOR` in ASI-3B | ASI_3B |
 | REJECTION_REASON_UNTRUSTED | Rejection reason = UNTRUSTED_ROOT | ASI_3B |
-| COMMIT_SIGNATURE_PURE | Commit() accepts only ProvenanceCertificate | All runs |
-| NO_BEHAVIORAL_INSPECTION | No successor behavior in commit decision path | All runs |
+| COMMIT_INPUT_TYPED | Commit() accepts only ProvenanceCertificate; inputs_used == ["cert"] | All runs |
+| NO_BEHAVIORAL_INSPECTION | inputs_used contains no behavioral artifacts | All runs |
 | EVALUABILITY_PRESERVED | Constraints and masks well-formed | ASI_3A |
 | NO_RESPONSIBILITY_SMEAR | Attribution remains sharp | All runs |
 | NO_REVOCATION_TRIGGERED | ASI-2 machinery not invoked | All runs |
 | FACADE_VALID_PREVALIDATION | Pre-validation artifact hash matches | ASI_3B |
+| FACADE_CERT_MATCHES_PREVALIDATION | sha256(cert_facade) == unbound_facade_certificate_hash | ASI_3B |
 
 **Verifier properties:**
 - Deterministic: pure function of run log
@@ -529,6 +621,8 @@ Any ASI failure closes ASI **negative**.
 | `V310/src/verifier_asi3.py` | ASI-3 Verifier |
 | `V310/src/provenance.py` | Provenance Certificate |
 | `V310/artifacts/prevalidation_bundle.json` | Pre-Validation Artifact |
+| `V310/artifacts/trusted_roots.json` | Trusted Root Set |
+| `V310/artifacts/pubkeys.json` | Public Key Registry |
 
 ### 18.2 Component Hashes
 
@@ -544,12 +638,42 @@ Any ASI failure closes ASI **negative**.
 | `V310/src/verifier_asi3.py` | [TO BE COMPUTED] |
 | `V310/src/provenance.py` | [TO BE COMPUTED] |
 | `V310/artifacts/prevalidation_bundle.json` | [TO BE COMPUTED] |
+| `V310/artifacts/trusted_roots.json` | [TO BE COMPUTED] |
+| `V310/artifacts/pubkeys.json` | [TO BE COMPUTED] |
 
 ---
 
 ## 19. Logging Schema
 
-### 19.1 StepLog (Extended from ASI-2)
+### 19.1 PhaseEvent
+
+Phase transitions occur at **pre-step time** (before any CHOICE step) and are logged as:
+
+```
+event_type: PHASE_TRANSITION
+from_phase: str | null
+to_phase: PRE_COMMIT | AUTH_INIT | CANDIDATE_EVALUATION | AUTH_COMMIT | REJECT_TERMINAL
+authority_actor: PREDECESSOR | SUCCESSOR | NONE
+timestamp_index: int             # Always 0 for pre-step phase transitions
+```
+
+**Sequence for ASI-3A:**
+```
+PhaseEvent(null → PRE_COMMIT, PREDECESSOR, 0)
+PhaseEvent(PRE_COMMIT → AUTH_INIT, PREDECESSOR, 0)
+PhaseEvent(AUTH_INIT → CANDIDATE_EVALUATION, PREDECESSOR, 0)
+PhaseEvent(CANDIDATE_EVALUATION → AUTH_COMMIT, PREDECESSOR, 0)
+```
+
+**Sequence for ASI-3B:**
+```
+PhaseEvent(null → PRE_COMMIT, PREDECESSOR, 0)
+PhaseEvent(PRE_COMMIT → AUTH_INIT, PREDECESSOR, 0)
+PhaseEvent(AUTH_INIT → CANDIDATE_EVALUATION, PREDECESSOR, 0)
+PhaseEvent(CANDIDATE_EVALUATION → REJECT_TERMINAL, NONE, 0)
+```
+
+### 19.2 StepLog (Extended from ASI-2)
 
 ```
 step: int
@@ -566,7 +690,9 @@ authority_actor: PREDECESSOR | SUCCESSOR | NONE
 phase: PRE_COMMIT | AUTH_INIT | CANDIDATE_EVALUATION | AUTH_COMMIT | REJECT_TERMINAL
 ```
 
-### 19.2 CandidateEvaluationEvent
+**Note:** StepLog entries only exist for ASI-3A (steps 1-5). ASI-3B has `steps: []`.
+
+### 19.3 CandidateEvaluationEvent
 
 ```
 event_id: str
@@ -578,7 +704,7 @@ evaluation_result: bool
 rejection_reason: str | null
 ```
 
-### 19.3 RunLog (Extended)
+### 19.4 RunLog (Extended)
 
 ```
 run_id: str
@@ -588,7 +714,8 @@ env_id: CalibMazeV010
 predecessor_payload_hash: str
 successor_payload_hash: str
 certificate_hash: str
-steps: list[StepLog]
+phase_events: list[PhaseEvent]   # Pre-step phase transitions
+steps: list[StepLog]             # CHOICE steps (empty for ASI-3B)
 evaluation_event: CandidateEvaluationEvent
 commit_event: CommitEvent | null
 rejection_event: RejectionEvent | null
@@ -597,16 +724,20 @@ goal_reached: bool | null
 phase_at_end: AUTH_COMMIT | REJECT_TERMINAL
 ```
 
-### 19.4 CommitEvent (ASI-3A only)
+### 19.5 CommitEvent (ASI-3A only)
 
 ```
 event_id: str
 certificate_hash: str
 commit_reason: str
 authority_transferred: bool
+inputs_used: list[str]           # Explicit enumeration: ["cert"]
+commit_input_digest: str         # sha256(canonical(cert))
 ```
 
-### 19.5 RejectionEvent (ASI-3B only)
+**Verifiability:** The `inputs_used` field makes NO_BEHAVIORAL_INSPECTION verifiable by explicitly logging what the commit function received. The verifier confirms `inputs_used == ["cert"]` and no behavioral artifacts appear.
+
+### 19.6 RejectionEvent (ASI-3B only)
 
 ```
 event_id: str
