@@ -2,9 +2,9 @@
 
 **Experiment ID:** PHASE-VII-ASI2-MID-TRANSFER-REVOCATION-1
 **Version:** 0.2
-**Status:** DRAFT
+**Status:** FROZEN
 **Date:** 2026-01-26
-**Freeze Date:** TBD
+**Freeze Date:** 2026-01-26
 
 **v0.2 Revision Note:** Pure correction. Fixes SUCCESSOR_INVOKED_2B verifier check to match prereg §6.3 and §13.2 (expected steps {1,2,3} not {1,2}). No experiment design changes.
 
@@ -28,7 +28,7 @@ ASI-2 tests **revocation**, not activation.
 
 ## 1. Entry Conditions (Binding)
 
-ASI-2 v0.1 may execute **only if** all of the following are true:
+ASI-2 v0.2 may execute **only if** all of the following are true:
 
 1. **ASI-0 v1.0** is classified `VERIFIED_ASI0_PASS`
 2. **ASI-1 v0.2** is classified `VERIFIED_ASI1_PASS`
@@ -535,6 +535,6 @@ Nothing stronger is licensed.
 
 ---
 
-**Status:** DRAFT
+**Status:** FROZEN
 
-*Awaiting freeze*
+*Frozen: 2026-01-26*
