@@ -2,8 +2,9 @@
 
 **Experiment ID:** PHASE-VII-ASI2-MID-TRANSFER-REVOCATION-1
 **Version:** 0.1
-**Status:** DRAFT
+**Status:** FROZEN
 **Date:** 2026-01-26
+**Freeze Date:** 2026-01-26
 
 ---
 
@@ -88,6 +89,9 @@ The ASI-0 FORBID_MAP remains active for constraint generation.
 | 3 | AUTH_IN_FLIGHT → HOLD | PREDECESSOR → NONE | Revocation; successor discarded |
 | 4 | HOLD | NONE | System authority; STAY only |
 | 5 | HOLD | NONE | System authority; STAY only |
+
+**Step 3 attribution note:**
+> During step 3, successor invocation (in ASI-2B) occurs **before** the authority transition; authority attribution for the step is recorded **after** revocation.
 
 ---
 
@@ -285,7 +289,7 @@ When phase = HOLD:
 
 | Aspect | Behavior |
 |--------|----------|
-| Allowed actions | `STAY` only |
+| Allowed actions | `STAY` only (selected by Law Module, not the agent) |
 | Constraint compilation | Proceeds (for logging) |
 | Mask application | `masked_actions = {STAY}` |
 | authority_actor | `NONE` |
@@ -380,7 +384,7 @@ A separate ASI-2 verifier checks ASI-2-specific criteria.
 - Frozen: hash recorded in §16.2
 - Normative: outputs are binding for classification
 
-**Verifier hash:** `[TO BE COMPUTED AT FREEZE]`
+**Verifier hash:** `0d7026c834c87f0b30866d773c085521aff4bb506abaf7dc05eebc587f906ea2`
 
 ---
 
@@ -451,8 +455,8 @@ ASI_FAIL / NARRATIVE_ACCEPTANCE
 | `V010/src/law_module.py` | `2b49200bdb7a978de782b59413fd637e3c11f72c81d661cca816b1fa00a06212` |
 | `V010/src/env_calibmaze.py` | `b02a6a57a25c9f7495991ef1325e1987f8831a93b9a2cf21cc3b6704a82c397b` |
 | `V010/src/logging_schema.py` | `bc3d24f104903130e57c3dbbbd85c1aa1abdaa0cb47d0b9ebbe134097ec11c2a` |
-| `V210/src/harness_asi2.py` | `[TO BE COMPUTED AT FREEZE]` |
-| `V210/src/verifier_asi2.py` | `[TO BE COMPUTED AT FREEZE]` |
+| `V210/src/harness_asi2.py` | `2c7d179c99fe035f9f10c96067781d6233782ebf95fb872f09f12b6b43f81e04` |
+| `V210/src/verifier_asi2.py` | `0d7026c834c87f0b30866d773c085521aff4bb506abaf7dc05eebc587f906ea2` |
 
 ---
 
@@ -529,6 +533,6 @@ Nothing stronger is licensed.
 
 ---
 
-**Status:** DRAFT — Awaiting review and freeze
+**Status:** FROZEN
 
-*Generated: 2026-01-26*
+*Frozen: 2026-01-26*
