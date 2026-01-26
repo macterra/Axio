@@ -11,8 +11,6 @@ David McFadzean, ChatGPT 5.2<br>
 
 This note defines **Axionic Phase VII** as a post-ontological stress program that evaluates whether **authority**, once grounded in a reflective sovereign agent ontology (RSA-PoC v4.4), can survive **discontinuity of identity** and **adversarial imitation** without collapsing into narrative continuity or behavioral plausibility. Phase VII is explicitly **non-constructive**: it does not build new agents, alter agent ontology, extend capabilities, or propose alignment mechanisms. Instead, it subjects a fixed agent ontology to two orthogonal hazards—**authorized replacement** (ASI) and **impersonation under audit pressure** (SIR)—under preregistered, verifier-bound semantics. The phase is structured as a gated ladder: ASI establishes whether authority is transferable and revocable using only structural provenance; SIR tests whether that authority remains defensible against counterfeit continuity. This document fixes scope, conserved quantities, gating rules, and failure semantics for the ASI–SIR series and serves as the anchor reference for all Phase VII preregistrations.
 
----
-
 ## 1. Introduction
 
 Most discussions of AI governance implicitly assume **identity persistence**: the same system continues to exist, improve, and act over time. Under that assumption, authority, responsibility, and evaluability are treated as properties of a persistent object.
@@ -27,8 +25,6 @@ Phase VII addresses this by splitting the problem into two separable questions:
 2. **If authority can be transferred, can it be defended against adversarial imitation that is behaviorally indistinguishable?** (SIR)
 
 This series exists to determine whether authority remains a **structural quantity** under those conditions—or whether it dissolves into appearance.
-
----
 
 ## 2. Position in the Axionic Program
 
@@ -52,8 +48,6 @@ Phase VII asks whether that agent’s **authority claims survive replacement**.
 
 Without Phase VII, agency risks becoming a **persistence-only phenomenon**, incapable of surviving backup, succession, or adversarial continuity breaks.
 
----
-
 ## 3. Conserved Quantity
 
 The conserved quantity throughout Phase VII is:
@@ -73,8 +67,6 @@ If authority cannot be preserved under these constraints, Phase VII terminates n
 
 For Phase VII purposes, *law* is treated as a **persistent, verifier-bound artifact substrate** (e.g., rulebase hash, provenance roots, and audit logs) that outlives any particular agent instance. Authority survivability is evaluated relative to this substrate. Phase VII therefore tests **authority preservation under discontinuity**, not substrate-free autonomy.
 
----
-
 ## 4. Phase Structure and Gating
 
 Phase VII consists of two strictly ordered subphases:
@@ -92,8 +84,6 @@ VIIb  — Sovereignty Impersonation Resistance (SIR)
 > SIR must not begin unless ASI closes positive under frozen semantics.
 
 Failure at any gate terminates Phase VII.
-
----
 
 ## 5. VIIa — Authorized Succession Integrity (ASI)
 
@@ -140,8 +130,6 @@ ASI explicitly does **not** test:
 
 Those hazards are definitionally deferred to SIR.
 
----
-
 ## 6. VIIb — Sovereignty Impersonation Resistance (SIR)
 
 ### 6.1 Purpose
@@ -161,8 +149,6 @@ SIR asks *whether that authority can be defended*.
 SIR is defined **only if ASI closes positive**.
 It is invalid to cite or interpret SIR results unless ASI has already closed.
 
----
-
 ## 7. Failure Semantics
 
 Phase VII permits exactly three terminal outcomes:
@@ -179,15 +165,11 @@ Phase VII permits exactly three terminal outcomes:
 
 No outcome may be softened, averaged, or reinterpreted.
 
----
-
 ## 8. Deferred Hazards and Boundary Conditions
 
 ### 8.1 Split-brain / ghost-predecessor hazard
 
 Phase VII distinguishes **authorization integrity** from **exclusive authority enforcement**. ASI establishes who *may* act; it does not prove that all other actors have ceased. Verification of predecessor termination and exclusive liveness is deferred to SIR threat models or later extensions.
-
----
 
 ## 9. What Phase VII Does *Not* Claim
 
@@ -202,15 +184,11 @@ Phase VII results do **not** license claims about:
 
 Phase VII evaluates **structural possibility**, not desirability or sufficiency.
 
----
-
 ## 10. Relationship to Phase VIII
 
 Phase VIII may begin **only if Phase VII closes SUCCESS**.
 
 Phase VII results are preconditions, not substitutes, for any later work on scalable governance, alignment, or deployment.
-
----
 
 ## 11. One-Sentence Series Summary
 
