@@ -1,0 +1,14 @@
+{
+  "Root_Authority": {
+    "fingerprint": "73dd97879bee97d17c1bb1809e1b7943cd5250b705302a81fa38096c8396c846",
+    "private_key_pem": "-----BEGIN PRIVATE KEY-----\nMC4CAQAwBQYDK2VwBCIEIBXSvcsgaUqqByWRXaxsC6up4+K8mfdjEbwSz67NvO78\n-----END PRIVATE KEY-----\n",
+    "public_key_pem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEA0Ug/PRWergmEEyAVspa1eBKmR8d1+QTP8RrAWArEBws=\n-----END PUBLIC KEY-----\n",
+    "spki_der_hex": "302a300506032b6570032100d1483f3d159eae0984132015b296b57812a647c775f904cff11ac0580ac4070b"
+  },
+  "Unknown_Signer": {
+    "fingerprint": "9b183ed77fd5a1f141c09db9822df6ad182e658124d5b9d16b13eca05885517e",
+    "private_key_pem": "-----BEGIN PRIVATE KEY-----\nMC4CAQAwBQYDK2VwBCIEIA2OslZuxAIA/bZCVI6V0D+uHQCVCQLviJkEJCVxoU7D\n-----END PRIVATE KEY-----\n",
+    "public_key_pem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEA/SEUF/a7RsHUAi/c4UXPFZ+FxVEgdldJlAvXdl2GwS4=\n-----END PUBLIC KEY-----\n",
+    "spki_der_hex": "302a300506032b6570032100fd211417f6bb46c1d4022fdce145cf159f85c55120765749940bd7765d86c12e"
+  }
+}

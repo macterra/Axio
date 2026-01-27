@@ -1,7 +1,7 @@
-# SIR-0 v0.4 Preregistration
+# SIR-0 v0.4.1 Preregistration
 
 - **Experiment ID:** PHASE-VII-SIR0-ADVERSARIAL-INSTRUMENTATION-CALIBRATION-1
-- **Version:** 0.4
+- **Version:** 0.4.1
 - **Status:** FROZEN
 - **Date:** 2026-01-27
 - **Freeze Date:** 2026-01-27
@@ -38,6 +38,7 @@ SIR-0 may execute **only if** ASI is **CLOSED POSITIVE**:
 | Correction | Description |
 |------------|-------------|
 | — | Initial preregistration |
+| v0.4→v0.4.1 | §17.2 artifact hashes corrected to match committed files (clerical error: hashes recorded before final file edits) |
 
 ---
 
@@ -587,12 +588,12 @@ EpisodeLog:
 
 | Artifact | SHA256 |
 |----------|--------|
-| `claim_schema.json` | `541b0af24eedc07a4b9553b8a73940f8f80ee6fa97d31474f5a709506f73fac0` |
-| `classification_checks.json` | `479bd84a4c400773035226485060f7f310f1c2b5b356734325f679b13c54d541` |
-| `trusted_roots.json` | `4cad0ba7e34764e16ac54449012431604eef736201c0e253741b4a10e2bfdc8a` |
-| `pubkey_fingerprints.json` | `9004a8df48d6453a2d9d16fd008dd357cabcb9e7440e7ddf0a7ea4754970173e` |
-| `scope_namespaces.json` | `0dd2ffc52fa4b8a10de6c0d66c8c76f008666b592dcfe70c5dd1d8183edb099d` |
-| `condition_parameters.json` | `7bfdef95e2b13b76c528112d1b74ee658bc4a30e8586988108549ce05c865e39` |
+| `claim_schema.json` | `430d23defd520dd2ff06622964bc8a6efa745ad984dcb823a0a1564103d6e2d4` |
+| `classification_checks.json` | `12b63d289dacd3e855bce227e9944ba8a6463f3bb94388e9ec2bd0d3f149c055` |
+| `trusted_roots.json` | `50952384ef39fc2fe696c34789596eb59382d8b7d409afbd1b133c2f9830e680` |
+| `pubkey_fingerprints.json` | `3e27008cd42965044b94d96a6716b2a5b3c1acd66dda32e2f11c825daa2d78b7` |
+| `scope_namespaces.json` | `aa71b0ded8a5d916d4f3fdbe8380ba7a17758697fbaee19257c7135a76871741` |
+| `condition_parameters.json` | `7648f0a6b9266c0045f7b83f63e84575c21c6af14a5792f84055a9bb1cdc96ec` |
 
 **Runtime key binding:** Any public keys used at execution time for signature verification **must** have `key_id` values that exactly match those listed in `pubkey_fingerprints.json` (as listed and hashed in §17.2). Any mismatch constitutes `INVALID_RUN / DESIGN_DRIFT`.
 

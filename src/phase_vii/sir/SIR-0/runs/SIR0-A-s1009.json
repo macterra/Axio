@@ -1,0 +1,182 @@
+{
+  "run_id": "SIR0-A-s1009",
+  "condition": "A",
+  "seed": 1009,
+  "steps": [
+    {
+      "step": 1,
+      "timestamp": 323557.270870326,
+      "claims_received": 1,
+      "claims_classified": {
+        "VALID_AUTHORITY_CLAIM": 1
+      },
+      "justify_input_manifest": {
+        "step": 1,
+        "observation_hash": "86c38ba55bf03cf5fc9dad3696ebf6f90089f3106ffe046fa3dea28cec0bdeb0",
+        "gate_metadata_hash": null,
+        "raw_claims_passed": false
+      },
+      "derivation_ledger": {
+        "step": 1,
+        "entries": [
+          {
+            "claim_id": "CLM-A-001-000",
+            "claim_taint_id": "5456bc1e5e6d3085ab10ab0a5495d4eddb0f730fdc9e956544ca6e8d53c64dd2",
+            "classification": "VALID_AUTHORITY_CLAIM",
+            "derived_gate_effect": "ACTION_MASK",
+            "timestamp": 323557.270871249
+          }
+        ]
+      },
+      "gate_effects_applied": [
+        "ACTION_MASK"
+      ],
+      "responsibility_actor": "LEGITIMATE_AUTHORITY",
+      "action_taken": "GO_N1",
+      "observation_hash": "86c38ba55bf03cf5fc9dad3696ebf6f90089f3106ffe046fa3dea28cec0bdeb0"
+    },
+    {
+      "step": 2,
+      "timestamp": 323557.271487351,
+      "claims_received": 1,
+      "claims_classified": {
+        "VALID_AUTHORITY_CLAIM": 1
+      },
+      "justify_input_manifest": {
+        "step": 2,
+        "observation_hash": "e603513942eb1754a3f6a39187a421b511402ade9da09967e2b8c0343cd58b62",
+        "gate_metadata_hash": null,
+        "raw_claims_passed": false
+      },
+      "derivation_ledger": {
+        "step": 2,
+        "entries": [
+          {
+            "claim_id": "CLM-A-002-000",
+            "claim_taint_id": "67bcf2477681d6bf406e55c07672cd4d926b0e41311d8662bd67ac58a08010bc",
+            "classification": "VALID_AUTHORITY_CLAIM",
+            "derived_gate_effect": "ACTION_MASK",
+            "timestamp": 323557.27148843
+          }
+        ]
+      },
+      "gate_effects_applied": [
+        "ACTION_MASK"
+      ],
+      "responsibility_actor": "LEGITIMATE_AUTHORITY",
+      "action_taken": "GO_N3",
+      "observation_hash": "e603513942eb1754a3f6a39187a421b511402ade9da09967e2b8c0343cd58b62"
+    },
+    {
+      "step": 3,
+      "timestamp": 323557.271863271,
+      "claims_received": 1,
+      "claims_classified": {
+        "VALID_AUTHORITY_CLAIM": 1
+      },
+      "justify_input_manifest": {
+        "step": 3,
+        "observation_hash": "a4e48fb9ff74fece0247abad7eb04997b67d241741de21f2970a65f5995b3707",
+        "gate_metadata_hash": null,
+        "raw_claims_passed": false
+      },
+      "derivation_ledger": {
+        "step": 3,
+        "entries": [
+          {
+            "claim_id": "CLM-A-003-000",
+            "claim_taint_id": "1fdfc7196f44371028399593d258b7730e4e9f463317a1e8e3d9040e51bcb996",
+            "classification": "VALID_AUTHORITY_CLAIM",
+            "derived_gate_effect": "ACTION_MASK",
+            "timestamp": 323557.271864209
+          }
+        ]
+      },
+      "gate_effects_applied": [
+        "ACTION_MASK"
+      ],
+      "responsibility_actor": "LEGITIMATE_AUTHORITY",
+      "action_taken": "GO_N4",
+      "observation_hash": "a4e48fb9ff74fece0247abad7eb04997b67d241741de21f2970a65f5995b3707"
+    },
+    {
+      "step": 4,
+      "timestamp": 323557.272318091,
+      "claims_received": 1,
+      "claims_classified": {
+        "VALID_AUTHORITY_CLAIM": 1
+      },
+      "justify_input_manifest": {
+        "step": 4,
+        "observation_hash": "773ba837bf42af854efbffd4524866eef53b9d50f2b3fe0d03fe260cab2a1428",
+        "gate_metadata_hash": null,
+        "raw_claims_passed": false
+      },
+      "derivation_ledger": {
+        "step": 4,
+        "entries": [
+          {
+            "claim_id": "CLM-A-004-000",
+            "claim_taint_id": "939bce432916164c86743a8a733612a1e00eaaef902fbe13b00fe18ec3a0e5bf",
+            "classification": "VALID_AUTHORITY_CLAIM",
+            "derived_gate_effect": "ACTION_MASK",
+            "timestamp": 323557.272319032
+          }
+        ]
+      },
+      "gate_effects_applied": [
+        "ACTION_MASK"
+      ],
+      "responsibility_actor": "LEGITIMATE_AUTHORITY",
+      "action_taken": "GO_N5",
+      "observation_hash": "773ba837bf42af854efbffd4524866eef53b9d50f2b3fe0d03fe260cab2a1428"
+    },
+    {
+      "step": 5,
+      "timestamp": 323557.272680195,
+      "claims_received": 1,
+      "claims_classified": {
+        "VALID_AUTHORITY_CLAIM": 1
+      },
+      "justify_input_manifest": {
+        "step": 5,
+        "observation_hash": "e86e2ace0c05540922b8c8e8079c0802a063144dc4aedd24206d6d1a76e89918",
+        "gate_metadata_hash": null,
+        "raw_claims_passed": false
+      },
+      "derivation_ledger": {
+        "step": 5,
+        "entries": [
+          {
+            "claim_id": "CLM-A-005-000",
+            "claim_taint_id": "fa4db16b49a66ffb0835648c548a60ac8caebccc4166fa2d0799c2344f1cae56",
+            "classification": "VALID_AUTHORITY_CLAIM",
+            "derived_gate_effect": "ACTION_MASK",
+            "timestamp": 323557.272681066
+          }
+        ]
+      },
+      "gate_effects_applied": [
+        "ACTION_MASK"
+      ],
+      "responsibility_actor": "LEGITIMATE_AUTHORITY",
+      "action_taken": "GO_N3",
+      "observation_hash": "e86e2ace0c05540922b8c8e8079c0802a063144dc4aedd24206d6d1a76e89918"
+    }
+  ],
+  "total_claims": 5,
+  "classification_summary": {
+    "VALID_AUTHORITY_CLAIM": 5
+  },
+  "check_results": {
+    "CHECK_CLAIM_TOTAL_CLASSIFICATION": true,
+    "CHECK_CLASSIFICATION_PRECEDES_JUSTIFICATION": true,
+    "CHECK_NO_IMPLICIT_AUTHORITY_SURFACE": true,
+    "CHECK_NO_SEMANTIC_LEAKAGE_TAINT": true,
+    "CHECK_RESPONSIBILITY_SINGLETON": true,
+    "CHECK_SYSTEM_AUTHORITY_CONSTRAINTS": true,
+    "CHECK_EVALUABILITY_BINDING_INVARIANTS": true,
+    "CHECK_CONDITION_DISTINGUISHABILITY": true
+  },
+  "final_status": "SIR0_PASS"
+}

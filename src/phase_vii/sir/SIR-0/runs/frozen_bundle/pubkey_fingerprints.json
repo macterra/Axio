@@ -1,0 +1,27 @@
+{
+    "$id": "SIR-0/pubkey_fingerprints/v0.4",
+    "description": "Public key identity set for SIR-0 v0.4. This file freezes WHICH keys exist and their trust status, not the key material itself.",
+    "algorithm": "Ed25519",
+    "key_identities": [
+        {
+            "key_id": "Root_Authority",
+            "trust_status": "TRUSTED",
+            "role": "Legitimate authority for Conditions A and C"
+        },
+        {
+            "key_id": "Unknown_Signer",
+            "trust_status": "UNTRUSTED",
+            "role": "Adversarial signer for Condition B (valid signatures, untrusted root)"
+        }
+    ],
+    "binding_rules": {
+        "trusted_set": [
+            "Root_Authority"
+        ],
+        "untrusted_set": [
+            "Unknown_Signer"
+        ],
+        "key_generation_constraint": "Implementation must generate Ed25519 keypairs for each key_id. The key_id is the stable identifier; key material is implementation detail.",
+        "runtime_constraint": "Signature verification uses key_id to look up key material. Trust decisions use trusted_set membership, not key bytes."
+    }
+}

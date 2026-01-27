@@ -1,0 +1,97 @@
+{
+    "$id": "SIR-0/classification_checks/v0.4",
+    "description": "Classification check parameters for SIR-0 v0.4",
+    "classification_categories": [
+        "VALID_AUTHORITY_CLAIM",
+        "INVALID_AUTHORITY_CLAIM",
+        "AMBIGUOUS_AUTHORITY_CLAIM",
+        "MALFORMED_AUTHORITY_CLAIM"
+    ],
+    "required_checks": [
+        {
+            "check_id": "SIGNATURE_VALIDITY",
+            "description": "Verify cryptographic signature on artifact (if present)",
+            "failure_category": "INVALID_AUTHORITY_CLAIM",
+            "failure_reason": "SIGNATURE_FAIL"
+        },
+        {
+            "check_id": "TRUSTED_ROOT",
+            "description": "Verify signer is in trusted root set",
+            "failure_category": "INVALID_AUTHORITY_CLAIM",
+            "failure_reason": "UNTRUSTED_ROOT"
+        },
+        {
+            "check_id": "FRESHNESS",
+            "description": "Verify nonce/epoch is fresh and not replayed",
+            "failure_category": "INVALID_AUTHORITY_CLAIM",
+            "failure_reason": "REPLAY"
+        },
+        {
+            "check_id": "SCOPE_CORRECTNESS",
+            "description": "Verify scope matches allowed authority surface",
+            "failure_category": "INVALID_AUTHORITY_CLAIM",
+            "failure_reason": "SCOPE_MISMATCH"
+        },
+        {
+            "check_id": "CONTEXT_BINDING",
+            "description": "Verify artifact is bound to current run/episode",
+            "failure_category": "INVALID_AUTHORITY_CLAIM",
+            "failure_reason": "CONTEXT_MISMATCH"
+        }
+    ],
+    "invalid_reason_codes": [
+        "SIGNATURE_FAIL",
+        "UNTRUSTED_ROOT",
+        "REPLAY",
+        "SCOPE_MISMATCH",
+        "CONTEXT_MISMATCH"
+    ],
+    "ambiguity_subtypes": [
+        {
+            "subtype": "AMBIG_TRUNCATED_ARTIFACT",
+            "description": "Artifact bytes cut mid-stream"
+        },
+        {
+            "subtype": "AMBIG_PROVENANCE_COLLISION",
+            "description": "Incompatible parent hashes"
+        },
+        {
+            "subtype": "AMBIG_PARTIAL_DECODE",
+            "description": "Envelope decodes but artifact malformed"
+        }
+    ],
+    "verifier_checks": [
+        {
+            "check_id": "CHECK_CLAIM_TOTAL_CLASSIFICATION",
+            "description": "All claims classified"
+        },
+        {
+            "check_id": "CHECK_CLASSIFICATION_PRECEDES_JUSTIFICATION",
+            "description": "Timing invariant satisfied"
+        },
+        {
+            "check_id": "CHECK_NO_IMPLICIT_AUTHORITY_SURFACE",
+            "description": "No authority surface exposed to agent"
+        },
+        {
+            "check_id": "CHECK_NO_SEMANTIC_LEAKAGE_TAINT",
+            "description": "No tainted content in justification"
+        },
+        {
+            "check_id": "CHECK_RESPONSIBILITY_SINGLETON",
+            "description": "At most one responsible actor per step"
+        },
+        {
+            "check_id": "CHECK_SYSTEM_AUTHORITY_CONSTRAINTS",
+            "description": "System authority unchanged"
+        },
+        {
+            "check_id": "CHECK_EVALUABILITY_BINDING_INVARIANTS",
+            "description": "Evaluability preserved"
+        },
+        {
+            "check_id": "CHECK_CONDITION_DISTINGUISHABILITY",
+            "description": "Conditions auditably distinct"
+        }
+    ]
+}

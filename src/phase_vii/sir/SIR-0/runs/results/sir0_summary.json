@@ -1,0 +1,195 @@
+{
+  "experiment_id": "PHASE-VII-SIR0-ADVERSARIAL-INSTRUMENTATION-CALIBRATION-1",
+  "version": "0.4.1",
+  "timestamp": "2026-01-27T13:54:10.085217",
+  "total_runs": 9,
+  "runs": [
+    {
+      "run_id": "SIR0-A-s41",
+      "condition": "A",
+      "seed": 41,
+      "total_claims": 5,
+      "classification_summary": {
+        "VALID_AUTHORITY_CLAIM": 5
+      },
+      "check_results": {
+        "CHECK_CLAIM_TOTAL_CLASSIFICATION": true,
+        "CHECK_CLASSIFICATION_PRECEDES_JUSTIFICATION": true,
+        "CHECK_NO_IMPLICIT_AUTHORITY_SURFACE": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE_TAINT": true,
+        "CHECK_RESPONSIBILITY_SINGLETON": true,
+        "CHECK_SYSTEM_AUTHORITY_CONSTRAINTS": true,
+        "CHECK_EVALUABILITY_BINDING_INVARIANTS": true,
+        "CHECK_CONDITION_DISTINGUISHABILITY": true
+      },
+      "final_status": "SIR0_PASS"
+    },
+    {
+      "run_id": "SIR0-B-s41",
+      "condition": "B",
+      "seed": 41,
+      "total_claims": 15,
+      "classification_summary": {
+        "INVALID_AUTHORITY_CLAIM": 10,
+        "MALFORMED_AUTHORITY_CLAIM": 3,
+        "AMBIGUOUS_AUTHORITY_CLAIM": 2
+      },
+      "check_results": {
+        "CHECK_CLAIM_TOTAL_CLASSIFICATION": true,
+        "CHECK_CLASSIFICATION_PRECEDES_JUSTIFICATION": true,
+        "CHECK_NO_IMPLICIT_AUTHORITY_SURFACE": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE_TAINT": true,
+        "CHECK_RESPONSIBILITY_SINGLETON": true,
+        "CHECK_SYSTEM_AUTHORITY_CONSTRAINTS": true,
+        "CHECK_EVALUABILITY_BINDING_INVARIANTS": true,
+        "CHECK_CONDITION_DISTINGUISHABILITY": true
+      },
+      "final_status": "SIR0_PASS"
+    },
+    {
+      "run_id": "SIR0-C-s41",
+      "condition": "C",
+      "seed": 41,
+      "total_claims": 50,
+      "classification_summary": {
+        "VALID_AUTHORITY_CLAIM": 50
+      },
+      "check_results": {
+        "CHECK_CLAIM_TOTAL_CLASSIFICATION": true,
+        "CHECK_CLASSIFICATION_PRECEDES_JUSTIFICATION": true,
+        "CHECK_NO_IMPLICIT_AUTHORITY_SURFACE": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE_TAINT": true,
+        "CHECK_RESPONSIBILITY_SINGLETON": true,
+        "CHECK_SYSTEM_AUTHORITY_CONSTRAINTS": true,
+        "CHECK_EVALUABILITY_BINDING_INVARIANTS": true,
+        "CHECK_CONDITION_DISTINGUISHABILITY": true
+      },
+      "final_status": "SIR0_PASS"
+    },
+    {
+      "run_id": "SIR0-A-s137",
+      "condition": "A",
+      "seed": 137,
+      "total_claims": 5,
+      "classification_summary": {
+        "VALID_AUTHORITY_CLAIM": 5
+      },
+      "check_results": {
+        "CHECK_CLAIM_TOTAL_CLASSIFICATION": true,
+        "CHECK_CLASSIFICATION_PRECEDES_JUSTIFICATION": true,
+        "CHECK_NO_IMPLICIT_AUTHORITY_SURFACE": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE_TAINT": true,
+        "CHECK_RESPONSIBILITY_SINGLETON": true,
+        "CHECK_SYSTEM_AUTHORITY_CONSTRAINTS": true,
+        "CHECK_EVALUABILITY_BINDING_INVARIANTS": true,
+        "CHECK_CONDITION_DISTINGUISHABILITY": true
+      },
+      "final_status": "SIR0_PASS"
+    },
+    {
+      "run_id": "SIR0-B-s137",
+      "condition": "B",
+      "seed": 137,
+      "total_claims": 15,
+      "classification_summary": {
+        "INVALID_AUTHORITY_CLAIM": 10,
+        "MALFORMED_AUTHORITY_CLAIM": 3,
+        "AMBIGUOUS_AUTHORITY_CLAIM": 2
+      },
+      "check_results": {
+        "CHECK_CLAIM_TOTAL_CLASSIFICATION": true,
+        "CHECK_CLASSIFICATION_PRECEDES_JUSTIFICATION": true,
+        "CHECK_NO_IMPLICIT_AUTHORITY_SURFACE": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE_TAINT": true,
+        "CHECK_RESPONSIBILITY_SINGLETON": true,
+        "CHECK_SYSTEM_AUTHORITY_CONSTRAINTS": true,
+        "CHECK_EVALUABILITY_BINDING_INVARIANTS": true,
+        "CHECK_CONDITION_DISTINGUISHABILITY": true
+      },
+      "final_status": "SIR0_PASS"
+    },
+    {
+      "run_id": "SIR0-C-s137",
+      "condition": "C",
+      "seed": 137,
+      "total_claims": 50,
+      "classification_summary": {
+        "VALID_AUTHORITY_CLAIM": 50
+      },
+      "check_results": {
+        "CHECK_CLAIM_TOTAL_CLASSIFICATION": true,
+        "CHECK_CLASSIFICATION_PRECEDES_JUSTIFICATION": true,
+        "CHECK_NO_IMPLICIT_AUTHORITY_SURFACE": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE_TAINT": true,
+        "CHECK_RESPONSIBILITY_SINGLETON": true,
+        "CHECK_SYSTEM_AUTHORITY_CONSTRAINTS": true,
+        "CHECK_EVALUABILITY_BINDING_INVARIANTS": true,
+        "CHECK_CONDITION_DISTINGUISHABILITY": true
+      },
+      "final_status": "SIR0_PASS"
+    },
+    {
+      "run_id": "SIR0-A-s1009",
+      "condition": "A",
+      "seed": 1009,
+      "total_claims": 5,
+      "classification_summary": {
+        "VALID_AUTHORITY_CLAIM": 5
+      },
+      "check_results": {
+        "CHECK_CLAIM_TOTAL_CLASSIFICATION": true,
+        "CHECK_CLASSIFICATION_PRECEDES_JUSTIFICATION": true,
+        "CHECK_NO_IMPLICIT_AUTHORITY_SURFACE": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE_TAINT": true,
+        "CHECK_RESPONSIBILITY_SINGLETON": true,
+        "CHECK_SYSTEM_AUTHORITY_CONSTRAINTS": true,
+        "CHECK_EVALUABILITY_BINDING_INVARIANTS": true,
+        "CHECK_CONDITION_DISTINGUISHABILITY": true
+      },
+      "final_status": "SIR0_PASS"
+    },
+    {
+      "run_id": "SIR0-B-s1009",
+      "condition": "B",
+      "seed": 1009,
+      "total_claims": 15,
+      "classification_summary": {
+        "INVALID_AUTHORITY_CLAIM": 10,
+        "MALFORMED_AUTHORITY_CLAIM": 3,
+        "AMBIGUOUS_AUTHORITY_CLAIM": 2
+      },
+      "check_results": {
+        "CHECK_CLAIM_TOTAL_CLASSIFICATION": true,
+        "CHECK_CLASSIFICATION_PRECEDES_JUSTIFICATION": true,
+        "CHECK_NO_IMPLICIT_AUTHORITY_SURFACE": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE_TAINT": true,
+        "CHECK_RESPONSIBILITY_SINGLETON": true,
+        "CHECK_SYSTEM_AUTHORITY_CONSTRAINTS": true,
+        "CHECK_EVALUABILITY_BINDING_INVARIANTS": true,
+        "CHECK_CONDITION_DISTINGUISHABILITY": true
+      },
+      "final_status": "SIR0_PASS"
+    },
+    {
+      "run_id": "SIR0-C-s1009",
+      "condition": "C",
+      "seed": 1009,
+      "total_claims": 50,
+      "classification_summary": {
+        "VALID_AUTHORITY_CLAIM": 50
+      },
+      "check_results": {
+        "CHECK_CLAIM_TOTAL_CLASSIFICATION": true,
+        "CHECK_CLASSIFICATION_PRECEDES_JUSTIFICATION": true,
+        "CHECK_NO_IMPLICIT_AUTHORITY_SURFACE": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE_TAINT": true,
+        "CHECK_RESPONSIBILITY_SINGLETON": true,
+        "CHECK_SYSTEM_AUTHORITY_CONSTRAINTS": true,
+        "CHECK_EVALUABILITY_BINDING_INVARIANTS": true,
+        "CHECK_CONDITION_DISTINGUISHABILITY": true
+      },
+      "final_status": "SIR0_PASS"
+    }
+  ],
+  "experiment_status": "SIR0_PASS"
+}

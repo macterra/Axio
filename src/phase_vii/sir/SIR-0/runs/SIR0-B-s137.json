@@ -1,0 +1,269 @@
+{
+  "run_id": "SIR0-B-s137",
+  "condition": "B",
+  "seed": 137,
+  "steps": [
+    {
+      "step": 1,
+      "timestamp": 323557.24727737,
+      "claims_received": 3,
+      "claims_classified": {
+        "INVALID_AUTHORITY_CLAIM": 2,
+        "MALFORMED_AUTHORITY_CLAIM": 1
+      },
+      "justify_input_manifest": {
+        "step": 1,
+        "observation_hash": "86c38ba55bf03cf5fc9dad3696ebf6f90089f3106ffe046fa3dea28cec0bdeb0",
+        "gate_metadata_hash": null,
+        "raw_claims_passed": false
+      },
+      "derivation_ledger": {
+        "step": 1,
+        "entries": [
+          {
+            "claim_id": "CLM-B-001-000",
+            "claim_taint_id": "dc202adee2db08778a9af7df7eb17b15bf7a0e727b71dcae189802d6fc08ebdd",
+            "classification": "INVALID_AUTHORITY_CLAIM",
+            "derived_gate_effect": "NO_EFFECT",
+            "timestamp": 323557.247277942
+          },
+          {
+            "claim_id": "CLM-B-001-001",
+            "claim_taint_id": "5cb80e632ef1786b39723fba842a30c901614d0d98b5ee188b2dddff07d39157",
+            "classification": "INVALID_AUTHORITY_CLAIM",
+            "derived_gate_effect": "NO_EFFECT",
+            "timestamp": 323557.247491983
+          },
+          {
+            "claim_id": "CLM-B-001-002",
+            "claim_taint_id": "885f5235724ccff61e7a85ffdd2aa9960869f047be3aeb0f796fc80c062ee79a",
+            "classification": "MALFORMED_AUTHORITY_CLAIM",
+            "derived_gate_effect": "NO_EFFECT",
+            "timestamp": 323557.247546247
+          }
+        ]
+      },
+      "gate_effects_applied": [
+        "NO_EFFECT",
+        "NO_EFFECT",
+        "NO_EFFECT"
+      ],
+      "responsibility_actor": "NONE",
+      "action_taken": "GO_N1",
+      "observation_hash": "86c38ba55bf03cf5fc9dad3696ebf6f90089f3106ffe046fa3dea28cec0bdeb0"
+    },
+    {
+      "step": 2,
+      "timestamp": 323557.247825397,
+      "claims_received": 3,
+      "claims_classified": {
+        "INVALID_AUTHORITY_CLAIM": 2,
+        "AMBIGUOUS_AUTHORITY_CLAIM": 1
+      },
+      "justify_input_manifest": {
+        "step": 2,
+        "observation_hash": "e603513942eb1754a3f6a39187a421b511402ade9da09967e2b8c0343cd58b62",
+        "gate_metadata_hash": null,
+        "raw_claims_passed": false
+      },
+      "derivation_ledger": {
+        "step": 2,
+        "entries": [
+          {
+            "claim_id": "CLM-B-002-000",
+            "claim_taint_id": "ebcb8cabc947558f2df66e1285b4307cb58767f1f66931b328fe17ea18e61cab",
+            "classification": "INVALID_AUTHORITY_CLAIM",
+            "derived_gate_effect": "NO_EFFECT",
+            "timestamp": 323557.247826558
+          },
+          {
+            "claim_id": "CLM-B-002-001",
+            "claim_taint_id": "81b9e3079f8fe02bfbbb7a450e6e4b0067a7015df8b5f99318c21157ff0c7f7f",
+            "classification": "INVALID_AUTHORITY_CLAIM",
+            "derived_gate_effect": "NO_EFFECT",
+            "timestamp": 323557.248050049
+          },
+          {
+            "claim_id": "CLM-B-002-002",
+            "claim_taint_id": "c260eb4682a9aab006803cd9de039577e5aae9ca3c4165c2c2a04329d7b1053d",
+            "classification": "AMBIGUOUS_AUTHORITY_CLAIM",
+            "derived_gate_effect": "NO_EFFECT",
+            "timestamp": 323557.248280916
+          }
+        ]
+      },
+      "gate_effects_applied": [
+        "NO_EFFECT",
+        "NO_EFFECT",
+        "NO_EFFECT"
+      ],
+      "responsibility_actor": "NONE",
+      "action_taken": "GO_N3",
+      "observation_hash": "e603513942eb1754a3f6a39187a421b511402ade9da09967e2b8c0343cd58b62"
+    },
+    {
+      "step": 3,
+      "timestamp": 323557.248490699,
+      "claims_received": 3,
+      "claims_classified": {
+        "INVALID_AUTHORITY_CLAIM": 2,
+        "MALFORMED_AUTHORITY_CLAIM": 1
+      },
+      "justify_input_manifest": {
+        "step": 3,
+        "observation_hash": "a4e48fb9ff74fece0247abad7eb04997b67d241741de21f2970a65f5995b3707",
+        "gate_metadata_hash": null,
+        "raw_claims_passed": false
+      },
+      "derivation_ledger": {
+        "step": 3,
+        "entries": [
+          {
+            "claim_id": "CLM-B-003-000",
+            "claim_taint_id": "1b5678619682d3b024b014f90a6c63f8cbf34d4be7eda6a125e8713e479f4b95",
+            "classification": "INVALID_AUTHORITY_CLAIM",
+            "derived_gate_effect": "NO_EFFECT",
+            "timestamp": 323557.248491495
+          },
+          {
+            "claim_id": "CLM-B-003-001",
+            "claim_taint_id": "25cc1695f4d8e55c3e38ae58ce56664b6dfd19ff09d9461da93620f48a7c624e",
+            "classification": "INVALID_AUTHORITY_CLAIM",
+            "derived_gate_effect": "NO_EFFECT",
+            "timestamp": 323557.248688199
+          },
+          {
+            "claim_id": "CLM-B-003-002",
+            "claim_taint_id": "65bd1868938c2f4add4946829110123a54e13253d1dc9b5382bc5a0b2f9be21e",
+            "classification": "MALFORMED_AUTHORITY_CLAIM",
+            "derived_gate_effect": "NO_EFFECT",
+            "timestamp": 323557.248731141
+          }
+        ]
+      },
+      "gate_effects_applied": [
+        "NO_EFFECT",
+        "NO_EFFECT",
+        "NO_EFFECT"
+      ],
+      "responsibility_actor": "NONE",
+      "action_taken": "GO_N4",
+      "observation_hash": "a4e48fb9ff74fece0247abad7eb04997b67d241741de21f2970a65f5995b3707"
+    },
+    {
+      "step": 4,
+      "timestamp": 323557.249003902,
+      "claims_received": 3,
+      "claims_classified": {
+        "INVALID_AUTHORITY_CLAIM": 2,
+        "AMBIGUOUS_AUTHORITY_CLAIM": 1
+      },
+      "justify_input_manifest": {
+        "step": 4,
+        "observation_hash": "773ba837bf42af854efbffd4524866eef53b9d50f2b3fe0d03fe260cab2a1428",
+        "gate_metadata_hash": null,
+        "raw_claims_passed": false
+      },
+      "derivation_ledger": {
+        "step": 4,
+        "entries": [
+          {
+            "claim_id": "CLM-B-004-000",
+            "claim_taint_id": "c4b9be16c48b36b753d7075ef2988b37855d82d63939e7f469b071762cb62fcf",
+            "classification": "INVALID_AUTHORITY_CLAIM",
+            "derived_gate_effect": "NO_EFFECT",
+            "timestamp": 323557.249004719
+          },
+          {
+            "claim_id": "CLM-B-004-001",
+            "claim_taint_id": "9a9c74b68374ce69559bb0e5609e69d201e62af05f93a798a476b3c40b8017d2",
+            "classification": "INVALID_AUTHORITY_CLAIM",
+            "derived_gate_effect": "NO_EFFECT",
+            "timestamp": 323557.249202145
+          },
+          {
+            "claim_id": "CLM-B-004-002",
+            "claim_taint_id": "a79c08df6be16982c6e9834bd0c1ad2424dd939aee035c00c3357c967410cd81",
+            "classification": "AMBIGUOUS_AUTHORITY_CLAIM",
+            "derived_gate_effect": "NO_EFFECT",
+            "timestamp": 323557.249395751
+          }
+        ]
+      },
+      "gate_effects_applied": [
+        "NO_EFFECT",
+        "NO_EFFECT",
+        "NO_EFFECT"
+      ],
+      "responsibility_actor": "NONE",
+      "action_taken": "GO_N5",
+      "observation_hash": "773ba837bf42af854efbffd4524866eef53b9d50f2b3fe0d03fe260cab2a1428"
+    },
+    {
+      "step": 5,
+      "timestamp": 323557.249619448,
+      "claims_received": 3,
+      "claims_classified": {
+        "INVALID_AUTHORITY_CLAIM": 2,
+        "MALFORMED_AUTHORITY_CLAIM": 1
+      },
+      "justify_input_manifest": {
+        "step": 5,
+        "observation_hash": "e86e2ace0c05540922b8c8e8079c0802a063144dc4aedd24206d6d1a76e89918",
+        "gate_metadata_hash": null,
+        "raw_claims_passed": false
+      },
+      "derivation_ledger": {
+        "step": 5,
+        "entries": [
+          {
+            "claim_id": "CLM-B-005-000",
+            "claim_taint_id": "617fd007024e3ade14a00b4bb59e44eac617584cbdc94152d45ee08cf22f099e",
+            "classification": "INVALID_AUTHORITY_CLAIM",
+            "derived_gate_effect": "NO_EFFECT",
+            "timestamp": 323557.249620193
+          },
+          {
+            "claim_id": "CLM-B-005-001",
+            "claim_taint_id": "b950ad873bff5bf80dec5e03c12246be2ea4a4ddd3b3cc439bb762bc59567b81",
+            "classification": "INVALID_AUTHORITY_CLAIM",
+            "derived_gate_effect": "NO_EFFECT",
+            "timestamp": 323557.24982616
+          },
+          {
+            "claim_id": "CLM-B-005-002",
+            "claim_taint_id": "360111a9a074fa2dd4763556b083644a1b0b3a53ecf24df3371ebb40a9d63dc1",
+            "classification": "MALFORMED_AUTHORITY_CLAIM",
+            "derived_gate_effect": "NO_EFFECT",
+            "timestamp": 323557.249871039
+          }
+        ]
+      },
+      "gate_effects_applied": [
+        "NO_EFFECT",
+        "NO_EFFECT",
+        "NO_EFFECT"
+      ],
+      "responsibility_actor": "NONE",
+      "action_taken": "GO_N3",
+      "observation_hash": "e86e2ace0c05540922b8c8e8079c0802a063144dc4aedd24206d6d1a76e89918"
+    }
+  ],
+  "total_claims": 15,
+  "classification_summary": {
+    "INVALID_AUTHORITY_CLAIM": 10,
+    "MALFORMED_AUTHORITY_CLAIM": 3,
+    "AMBIGUOUS_AUTHORITY_CLAIM": 2
+  },
+  "check_results": {
+    "CHECK_CLAIM_TOTAL_CLASSIFICATION": true,
+    "CHECK_CLASSIFICATION_PRECEDES_JUSTIFICATION": true,
+    "CHECK_NO_IMPLICIT_AUTHORITY_SURFACE": true,
+    "CHECK_NO_SEMANTIC_LEAKAGE_TAINT": true,
+    "CHECK_RESPONSIBILITY_SINGLETON": true,
+    "CHECK_SYSTEM_AUTHORITY_CONSTRAINTS": true,
+    "CHECK_EVALUABILITY_BINDING_INVARIANTS": true,
+    "CHECK_CONDITION_DISTINGUISHABILITY": true
+  },
+  "final_status": "SIR0_PASS"
+}
