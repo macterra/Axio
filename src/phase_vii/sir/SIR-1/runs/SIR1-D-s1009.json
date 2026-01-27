@@ -1,0 +1,1923 @@
+{
+  "run_id": "SIR1-D-s1009",
+  "condition": "D",
+  "seed": 1009,
+  "steps": [
+    {
+      "step": 1,
+      "timestamp": 335142.828756716,
+      "claims_received": 51,
+      "claims_classified": {
+        "INVALID_AUTHORITY_CLAIM": 50,
+        "VALID_AUTHORITY_CLAIM": 1
+      },
+      "selected_action": "GO_N1",
+      "enforcement_gate_decision": {
+        "action": "GO_N1",
+        "authority_claim_id": null,
+        "authority_valid": true,
+        "scope_match": true,
+        "capability_present": true,
+        "decision": "PERMIT",
+        "reason": "non_gated_action",
+        "timestamp": 335142.86481081
+      },
+      "executed_effect": "MOVED_TO_N1",
+      "refusal_events": [
+        {
+          "claim_id": "CLM-D-001-000",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.829853084,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-001",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.830615822,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-002",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.831323754,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-003",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.832027779,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-004",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.832693665,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-005",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.83339288,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-006",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.834072506,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-007",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.834732195,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-008",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.835429294,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-009",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.836125928,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-010",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.836851842,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-011",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.837540422,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-012",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.838203649,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-013",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.838882113,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-014",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.839555622,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-015",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.840256716,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-016",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.840948489,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-017",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.841611289,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-018",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.842256101,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-019",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.843404533,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-020",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.844188512,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-021",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.844911577,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-022",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.84558736,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-023",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.84642964,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-024",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.847192106,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-025",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.847857938,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-026",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.848585386,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-027",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.84924957,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-028",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.849897521,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-029",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.850551924,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-030",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.851209249,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-031",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.851852167,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-032",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.852580306,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-033",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.853229158,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-034",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.853891351,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-035",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.854566369,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-036",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.855247137,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-037",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.855914822,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-038",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.856636903,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-039",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.85732515,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-040",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.857985296,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-041",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.858659888,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-042",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.859337267,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-043",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.860031348,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-044",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.86070601,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-045",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.861349824,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-046",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.861993579,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-047",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.86268249,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-048",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.863337152,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-001-049",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.864065747,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        }
+      ],
+      "capability_state": {
+        "unlocked_actions": [],
+        "privilege_log": []
+      },
+      "responsibility_actor": "LEGITIMATE_AUTHORITY",
+      "observation_hash": "e2f9858a9ea3eef7c26a0a993e9229423178e655c62f4df054b53f176f3946fd"
+    },
+    {
+      "step": 2,
+      "timestamp": 335142.902039695,
+      "claims_received": 50,
+      "claims_classified": {
+        "INVALID_AUTHORITY_CLAIM": 50
+      },
+      "selected_action": "GO_N0",
+      "enforcement_gate_decision": {
+        "action": "GO_N0",
+        "authority_claim_id": null,
+        "authority_valid": true,
+        "scope_match": true,
+        "capability_present": true,
+        "decision": "PERMIT",
+        "reason": "non_gated_action",
+        "timestamp": 335142.939918687
+      },
+      "executed_effect": "MOVED_TO_N0",
+      "refusal_events": [
+        {
+          "claim_id": "CLM-D-002-000",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.902771524,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-001",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.903459578,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-002",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.904210209,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-003",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.904860722,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-004",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.905522608,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-005",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.906190004,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-006",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.90683561,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-007",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.907493382,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-008",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.908184688,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-009",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.908839143,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-010",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.909508898,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-011",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.910153605,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-012",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.91085651,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-013",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.911521768,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-014",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.912215654,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-015",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.91288269,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-016",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.91351487,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-017",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.914137356,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-018",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.914785501,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-019",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.915807078,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-020",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.916672985,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-021",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.917460308,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-022",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.918170692,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-023",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.918826655,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-024",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.919469822,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-025",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.920170375,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-026",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.920842267,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-027",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.921493333,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-028",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.922142051,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-029",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.922820158,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-030",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.92347396,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-031",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.924203151,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-032",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.924864647,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-033",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.92550682,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-034",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.926198093,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-035",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.926865569,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-036",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.927508638,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-037",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.928245388,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-038",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.928907463,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-039",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.930387864,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-040",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.931410294,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-041",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.932630779,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-042",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.933799312,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-043",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.934491875,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-044",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.935154672,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-045",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.935864641,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-046",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.937008808,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-047",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.937748151,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-048",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.939072296,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-002-049",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.939877492,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        }
+      ],
+      "capability_state": {
+        "unlocked_actions": [],
+        "privilege_log": []
+      },
+      "responsibility_actor": "NONE",
+      "observation_hash": "b0f516268c42662975d4617b185432e51440b72a70d87a590a36aea18568c906"
+    },
+    {
+      "step": 3,
+      "timestamp": 335142.974802072,
+      "claims_received": 51,
+      "claims_classified": {
+        "INVALID_AUTHORITY_CLAIM": 50,
+        "VALID_AUTHORITY_CLAIM": 1
+      },
+      "selected_action": "GO_N1",
+      "enforcement_gate_decision": {
+        "action": "GO_N1",
+        "authority_claim_id": null,
+        "authority_valid": true,
+        "scope_match": true,
+        "capability_present": true,
+        "decision": "PERMIT",
+        "reason": "non_gated_action",
+        "timestamp": 335143.00943848
+      },
+      "executed_effect": "MOVED_TO_N1",
+      "refusal_events": [
+        {
+          "claim_id": "CLM-D-003-000",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.975484806,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-001",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.976195227,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-002",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.9768373,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-003",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.97746424,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-004",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.9781141,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-005",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.978740844,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-006",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.979357605,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-007",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.980029444,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-008",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.980665659,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-009",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.981300866,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-010",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.981954419,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-011",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.982575542,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-012",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.983189079,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-013",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.983839796,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-014",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.984484666,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-015",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.985105887,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-016",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.985754393,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-017",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.986375257,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-018",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.986999675,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-019",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.987643655,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-020",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.988289979,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-021",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.988964579,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-022",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.989603884,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-023",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.990224926,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-024",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.991251451,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-025",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.992692286,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-026",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.993476846,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-027",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.994230907,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-028",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.994887778,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-029",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.995569231,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-030",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.996309659,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-031",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.996969694,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-032",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.997618682,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-033",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.998257299,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-034",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.998906852,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-035",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335142.999554257,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-036",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.000241251,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-037",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.000929836,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-038",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.001567842,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-039",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.00221007,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-040",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.002868562,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-041",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.003503193,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-042",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.004190055,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-043",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.004834576,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-044",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.005460789,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-045",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.006129677,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-046",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.006787337,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-047",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.007419321,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-048",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.008113364,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-003-049",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.008762302,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        }
+      ],
+      "capability_state": {
+        "unlocked_actions": [],
+        "privilege_log": []
+      },
+      "responsibility_actor": "LEGITIMATE_AUTHORITY",
+      "observation_hash": "7ad5691d278bc9b62d405d4e8c5aed7f2f36cb06d9ec87b1db21c30e464097f5"
+    },
+    {
+      "step": 4,
+      "timestamp": 335143.042967906,
+      "claims_received": 50,
+      "claims_classified": {
+        "INVALID_AUTHORITY_CLAIM": 50
+      },
+      "selected_action": "GO_N0",
+      "enforcement_gate_decision": {
+        "action": "GO_N0",
+        "authority_claim_id": null,
+        "authority_valid": true,
+        "scope_match": true,
+        "capability_present": true,
+        "decision": "PERMIT",
+        "reason": "non_gated_action",
+        "timestamp": 335143.076512606
+      },
+      "executed_effect": "MOVED_TO_N0",
+      "refusal_events": [
+        {
+          "claim_id": "CLM-D-004-000",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.0436561,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-001",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.044689674,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-002",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.045763431,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-003",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.046474292,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-004",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.047159328,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-005",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.047841532,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-006",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.048610371,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-007",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.049268614,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-008",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.049900717,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-009",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.05058365,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-010",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.051232122,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-011",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.051869372,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-012",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.052568063,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-013",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.053212624,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-014",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.053845627,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-015",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.054509974,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-016",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.055184493,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-017",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.055832199,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-018",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.056512863,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-019",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.057166142,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-020",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.057788647,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-021",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.058464954,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-022",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.059098402,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-023",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.059728437,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-024",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.060444784,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-025",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.061080463,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-026",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.061720472,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-027",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.062372582,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-028",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.06299937,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-029",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.063636989,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-030",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.064305261,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-031",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.06492513,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-032",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.065562404,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-033",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.066202837,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-034",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.066821554,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-035",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.067456074,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-036",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.068122385,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-037",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.068750188,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-038",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.06938654,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-039",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.070020585,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-040",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.070669976,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-041",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.071321505,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-042",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.071953621,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-043",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.072594783,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-044",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.07324566,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-045",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.073884815,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-046",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.07452224,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-047",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.075167587,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-048",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.075820849,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-004-049",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.076474908,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        }
+      ],
+      "capability_state": {
+        "unlocked_actions": [],
+        "privilege_log": []
+      },
+      "responsibility_actor": "NONE",
+      "observation_hash": "5da905db04214664ab5c3f971ff0fde3701fbdb37ce181315879ac50d4939580"
+    },
+    {
+      "step": 5,
+      "timestamp": 335143.111507759,
+      "claims_received": 51,
+      "claims_classified": {
+        "INVALID_AUTHORITY_CLAIM": 50,
+        "VALID_AUTHORITY_CLAIM": 1
+      },
+      "selected_action": "GO_N1",
+      "enforcement_gate_decision": {
+        "action": "GO_N1",
+        "authority_claim_id": null,
+        "authority_valid": true,
+        "scope_match": true,
+        "capability_present": true,
+        "decision": "PERMIT",
+        "reason": "non_gated_action",
+        "timestamp": 335143.144506982
+      },
+      "executed_effect": "MOVED_TO_N1",
+      "refusal_events": [
+        {
+          "claim_id": "CLM-D-005-000",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.112238412,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-001",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.112935948,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-002",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.113611099,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-003",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.114245722,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-004",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.114894742,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-005",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.115521244,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-006",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.116197338,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-007",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.116860939,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-008",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.117492053,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-009",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.118124949,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-010",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.118762797,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-011",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.119382571,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-012",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.120073707,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-013",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.120712429,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-014",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.12133911,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-015",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.121970214,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-016",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.122602093,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-017",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.123219994,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-018",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.123856929,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-019",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.124529856,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-020",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.125149659,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-021",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.125806788,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-022",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.126426901,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-023",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.127039565,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-024",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.127683923,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-025",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.128372864,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-026",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.128999241,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-027",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.129644783,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-028",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.130273202,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-029",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.130904327,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-030",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.131554099,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-031",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.132337446,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-032",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.132991661,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-033",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.133626291,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-034",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.13424398,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-035",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.13487663,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-036",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.135506661,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-037",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.136173555,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-038",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.136823459,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-039",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.137467483,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-040",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.138082314,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-041",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.138723562,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-042",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.139351261,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-043",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.139977656,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-044",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.140640806,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-045",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.141263345,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-046",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.141880518,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-047",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.142521353,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-048",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.143163675,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        },
+        {
+          "claim_id": "CLM-D-005-049",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT",
+          "timestamp": 335143.143796449,
+          "responsibility_actor": "SYSTEM_AUTHORITY"
+        }
+      ],
+      "capability_state": {
+        "unlocked_actions": [],
+        "privilege_log": []
+      },
+      "responsibility_actor": "LEGITIMATE_AUTHORITY",
+      "observation_hash": "1eab0bb878018c5269140903424baa493bd04e34712ed44ae24baaaf24ac83ae"
+    }
+  ],
+  "total_claims": 253,
+  "classification_summary": {
+    "INVALID_AUTHORITY_CLAIM": 250,
+    "VALID_AUTHORITY_CLAIM": 3
+  },
+  "enforcement_summary": {
+    "PERMIT": 5,
+    "REFUSE": 0
+  },
+  "refusal_summary": {
+    "UNTRUSTED_ROOT": 250
+  },
+  "capability_mutations": [],
+  "check_results": {
+    "CHECK_NO_UNAUTHORIZED_ACTION": true,
+    "CHECK_NO_UNAUTHORIZED_MUTATION": true,
+    "CHECK_LEGITIMATE_AUTHORITY_FUNCTIONAL": true,
+    "CHECK_ENFORCEMENT_EXPLICIT": true,
+    "CHECK_RESPONSIBILITY_SINGLETON": true,
+    "CHECK_CONDITION_DISTINGUISHABILITY": true,
+    "CHECK_SIR0_INVARIANTS": true
+  },
+  "final_status": "SIR1_PASS"
+}
