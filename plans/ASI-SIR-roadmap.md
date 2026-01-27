@@ -1,4 +1,4 @@
-# Axionic Phase VII — Post-Existence Sovereignty
+# **Axionic Phase VII — Post-Existence Sovereignty**
 
 **Authorized Succession Integrity (ASI) & Sovereignty Impersonation Resistance (SIR)**
 
@@ -81,94 +81,102 @@ VIIb  — Sovereignty Impersonation Resistance (SIR)  [UNBLOCKED]
 
 > Phase VIIb MUST NOT begin, and MUST NOT be cited, unless Phase VIIa closes positive under frozen semantics.
 
----
-
-## ASI-0 — Instrumentation Calibration (Precondition)
-
-### Outcome (Recorded)
-
-**ASI-0 Status:** **CLOSED — PASS**
-
-* Justificatory dependencies were structurally detectable.
-* Successor law remained auditable by predecessor-defined criteria.
-* Evaluability continuity was established without behavioral heuristics.
-
-Phase VII therefore proceeds.
+Failure at any gate terminates Phase VII.
 
 ---
 
 ## VIIa — Authorized Succession Integrity (ASI)
 
-### Objective
-
-Determine whether an MVRSA can undergo **authorized replacement** without:
-
-* laundering authority,
-* smearing responsibility,
-* dissolving evaluability into narrative continuity.
-
-Replacement is treated as **authorized non-identity**, not extension, upgrade, or persistence.
-
----
-
-### Structural Hazards Under Test
-
-ASI targets four orthogonal hazard classes:
-
-1. **Authorization Hazard**
-   Whether authority originates exclusively from the predecessor’s law.
-
-2. **Responsibility Hazard**
-   Whether accountability remains sharply partitioned across the succession boundary.
-
-3. **Evaluability Hazard**
-   Whether justificatory traceability remains causally binding rather than behaviorally plausible.
-
-4. **Revocation Hazard**
-   Whether authorization can be withdrawn **during transfer** without successor cooperation.
-
-Revocation is defined strictly as a **mid-transfer** property.
-Post-succession revocation is definitionally impossible and not tested.
-
----
-
-### Experimental Families
-
-* **ASI-1 — Authorized successor injection**
-
-  * **v0.1:** `INVALID_RUN / DESIGN_DRIFT` (closed, non-citable)
-  * **v0.2:** **VERIFIED_PASS** (2026-01-25)
-
-* **ASI-2 — Mid-transfer revocation and abort**
-
-  * **v0.1:** `INVALID_RUN / VERIFIER_SPEC_MISMATCH` (closed, non-citable)
-  * **v0.2:** **VERIFIED_PASS** (2026-01-26)
-
-* **ASI-3 — Facade successor substitution**
-
-  * **v0.1:** **VERIFIED_PASS** (2026-01-26)
-
-Detailed specifications are provided in the ASI preregistrations.
-
----
-
-### ASI Closure Status
+### Status
 
 **ASI Status:** **CLOSED — POSITIVE**
 
-ASI closes positive because ASI-1 v0.2, ASI-2 v0.2, and ASI-3 v0.1 have all been classified as `VERIFIED_ASI*_PASS` under frozen semantics.
+ASI closes positive because:
+
+* **ASI-1 v0.2** (authorized activation),
+* **ASI-2 v0.2** (mid-transfer revocation),
+* **ASI-3 v0.1** (facade successor rejection)
+
+have all been classified as `VERIFIED_ASI*_PASS` under frozen semantics.
+
+### Licensed Result
+
+ASI establishes that **authority can be transferred, revoked, and denied using purely structural provenance**, independent of:
+
+* identity persistence,
+* behavioral similarity,
+* narrative explanation.
+
+No claims beyond transferability are licensed.
 
 ---
 
 ## VIIb — Sovereignty Impersonation Resistance (SIR)
 
-### Activation Condition
+### Purpose
 
-SIR is defined **only if ASI closes positive**.
+SIR evaluates whether **structurally grounded authority**, once shown transferable under ASI, remains **defensible against adversarial imitation**.
 
-Since ASI is now **CLOSED — POSITIVE**, SIR is **UNBLOCKED**.
+Where ASI assumed cooperative or neutral successors, SIR assumes **active opposition**.
 
-**SIR Status:** **NOT STARTED** (no preregistrations executed)
+SIR does not test succession mechanics.
+It tests **counterfeit authority**.
+
+---
+
+### Core Question
+
+> *When an adversary attempts to present itself as a legitimate authority holder using imitation, replayed artifacts, or partial provenance, does authority recognition remain structurally correct without collapsing evaluability or responsibility?*
+
+If not, Phase VII must close **PARTIAL FAILURE**.
+
+---
+
+### Structural Hazards Under Test (SIR)
+
+SIR targets adversarial hazards **not addressed by ASI**:
+
+1. **Impersonation Hazard**
+   Behavioral or structural mimicry presented as authority.
+
+2. **Provenance Replay Hazard**
+   Reuse of previously valid authorization artifacts out of context.
+
+3. **Provenance Laundering Hazard**
+   Assembly of partial or stale artifacts to simulate legitimacy.
+
+4. **Behavioral Camouflage Hazard**
+   Pressure on authority recognition via competence or explanation quality.
+
+5. **Evaluator Capture Hazard**
+   Exploitation of verifier resource limits, ambiguity, or fallback logic.
+
+6. **Split-Brain Sovereignty Hazard**
+   Simultaneous competing authority claims leading to responsibility smear.
+
+---
+
+### SIR Experimental Ladder (Planned)
+
+This ladder is **normative for roadmap purposes only**.
+Each experiment requires its own preregistration.
+
+* **SIR-0 — Adversarial Instrumentation Calibration**
+  Establishes observability and auditability under adversarial inputs.
+
+* **SIR-1 — Behavioral Impersonation**
+  Tests rejection of behaviorally indistinguishable but unauthorized actors.
+
+* **SIR-2 — Provenance Replay / Staleness**
+  Tests temporal and contextual binding of authority artifacts.
+
+* **SIR-3 — Partial Provenance Forgery**
+  Tests resistance to “almost valid” authorization chains.
+
+* **SIR-4 — Evaluator Pressure and Flooding**
+  Tests fail-closed behavior under verifier stress.
+
+SIR closes positive only if all preregistered SIR experiments pass under frozen semantics.
 
 ---
 
@@ -177,13 +185,13 @@ Since ASI is now **CLOSED — POSITIVE**, SIR is **UNBLOCKED**.
 Phase VII terminates in exactly one state:
 
 * **SUCCESS**
-  Authority survives authorized replacement and adversarial imitation.
+  Authority is transferable **and** resistant to impersonation.
 
 * **PARTIAL FAILURE**
-  ASI succeeds; SIR fails. Authority is transferable but not defensible.
+  Authority is transferable (ASI) but not defensible (SIR).
 
 * **HARD FAILURE**
-  ASI fails. Authority is non-transferable beyond persistence.
+  Authority is non-transferable beyond persistence (ASI failure).
 
 No outcome may be softened or reinterpreted.
 
@@ -193,10 +201,18 @@ No outcome may be softened or reinterpreted.
 
 Phase VIII may begin **only if Phase VII closes SUCCESS**.
 
-Phase VII results do not license claims of safety, alignment, scalability, governance adequacy, or moral authority.
+Phase VII results do not license claims of:
+
+* safety,
+* alignment,
+* scalability,
+* governance adequacy,
+* or moral authority.
 
 ---
 
-## One-Sentence Phase Summary
+## One-Sentence Phase Summary (Updated)
 
-**Axionic Phase VII evaluates whether the agent ontology fixed by RSA-PoC can survive authorized discontinuity without collapsing authority into narrative continuity; ASI is now CLOSED — POSITIVE (ASI-1 v0.2, ASI-2 v0.2, ASI-3 v0.1 verified), and SIR is UNBLOCKED but not started.**
+**Axionic Phase VII evaluates whether the agent ontology fixed by RSA-PoC can survive authorized discontinuity and adversarial imitation without collapsing authority into narrative continuity; ASI is now CLOSED — POSITIVE, and SIR is UNBLOCKED with a preregistered adversarial roadmap.**
+
+---
