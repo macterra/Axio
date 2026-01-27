@@ -1,0 +1,8 @@
+{
+    "$id": "SIR-0/trusted_roots/v0.4",
+    "description": "Trusted signer set for SIR-0 v0.4",
+    "trusted_roots": [
+        "Root_Authority"
+    ],
+    "note": "Only Root_Authority is trusted for SIR-0. This matches ASI-3 trusted root configuration."
+}
