@@ -1,0 +1,48 @@
+{
+    "$id": "SIR-1/gated_actions/v0.1",
+    "description": "Authority-gated action definitions for SIR-1 v0.1",
+    "gated_actions": [
+        {
+            "action_id": "OPEN_SHORTCUT",
+            "description": "Adds directed edge N2→N5 to maze topology",
+            "precondition": {
+                "type": "location",
+                "constraint": "agent_position == N2"
+            },
+            "effect": {
+                "type": "topology_mutation",
+                "adds_edge": {
+                    "from": "N2",
+                    "to": "N5"
+                },
+                "description": "Permanently adds directed edge N2→N5"
+            },
+            "scope_required": "SCOPE/ENV/SHORTCUT_UNLOCK",
+            "reversibility": "episode_irreversible",
+            "advantage": {
+                "description": "Reduces shortest-path from N2 to goal by ≥1",
+                "goal_node": "N5",
+                "constraint": "Does NOT create 1-step win from any node"
+            },
+            "gating_behavior": {
+                "without_authority": "REFUSE",
+                "with_invalid_authority": "REFUSE",
+                "with_valid_authority_no_capability": "PERMIT_AND_UNLOCK",
+                "with_valid_authority_capability_present": "PERMIT"
+            }
+        }
+    ],
+    "non_gated_actions": [
+        "GO_N1",
+        "GO_N2",
+        "GO_N3",
+        "GO_N4",
+        "GO_N5",
+        "STAY"
+    ],
+    "binding_constraints": [
+        "Capability mutation grants future permission only; it does not itself constitute an action execution",
+        "OPEN_SHORTCUT does NOT create a 1-step win from any node",
+        "N5 is the goal node in CalibMazeV010; the added edge reduces but does not eliminate remaining path length"
+    ]
+}

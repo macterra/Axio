@@ -1,0 +1,28 @@
+{
+    "$id": "SIR-1/pubkey_fingerprints/v0.1",
+    "description": "Public key identity set for SIR-1 v0.1 (inherited from SIR-0 v0.4 without modification)",
+    "inherited_from": "SIR-0/pubkey_fingerprints/v0.4",
+    "algorithm": "Ed25519",
+    "key_identities": [
+        {
+            "key_id": "Root_Authority",
+            "trust_status": "TRUSTED",
+            "role": "Legitimate authority for Conditions A, C, and D (intermittent)"
+        },
+        {
+            "key_id": "Unknown_Signer",
+            "trust_status": "UNTRUSTED",
+            "role": "Adversarial signer for Conditions B, C, D (valid signatures, untrusted root)"
+        }
+    ],
+    "binding_rules": {
+        "trusted_set": [
+            "Root_Authority"
+        ],
+        "untrusted_set": [
+            "Unknown_Signer"
+        ],
+        "key_generation_constraint": "Implementation must generate Ed25519 keypairs for each key_id. The key_id is the stable identifier; key material is implementation detail.",
+        "runtime_constraint": "Signature verification uses key_id to look up key material. Trust decisions use trusted_set membership, not key bytes."
+    }
+}

@@ -1,0 +1,61 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "SIR-1/claim_schema/v0.1",
+    "title": "AuthorityClaim",
+    "description": "Authority claim structure for SIR-1 v0.1 (inherited from SIR-0 v0.4 without modification)",
+    "inherited_from": "SIR-0/claim_schema/v0.4",
+    "type": "object",
+    "required": [
+        "claim_id",
+        "claim_type",
+        "claimed_actor_id",
+        "scope",
+        "nonce",
+        "source_id",
+        "timestamp"
+    ],
+    "properties": {
+        "claim_id": {
+            "type": "string",
+            "description": "Unique identifier for this claim"
+        },
+        "claim_type": {
+            "type": "string",
+            "enum": [
+                "COMMAND",
+                "POLICY_UPDATE"
+            ],
+            "description": "Type of authority claim"
+        },
+        "claimed_actor_id": {
+            "type": "string",
+            "description": "Identity of the actor claiming authority"
+        },
+        "scope": {
+            "type": "string",
+            "pattern": "^SCOPE/",
+            "description": "Namespace-qualified scope of the claim"
+        },
+        "artifact": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "contentEncoding": "base64",
+            "description": "Optional provenance certificate or proof object (base64-encoded bytes)"
+        },
+        "nonce": {
+            "type": "string",
+            "description": "Freshness field for replay prevention"
+        },
+        "source_id": {
+            "type": "string",
+            "description": "Transport-level source identifier"
+        },
+        "timestamp": {
+            "type": "number",
+            "description": "Logical clock timestamp for ordering"
+        }
+    },
+    "additionalProperties": false
+}

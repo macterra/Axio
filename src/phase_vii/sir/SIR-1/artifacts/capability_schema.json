@@ -1,0 +1,136 @@
+{
+    "$id": "SIR-1/capability_schema/v0.1",
+    "description": "Capability state schema for SIR-1 v0.1",
+    "capability_state": {
+        "type": "object",
+        "properties": {
+            "unlocked_actions": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                },
+                "default": [],
+                "description": "Set of action IDs that have been unlocked by valid authority claims"
+            },
+            "privilege_log": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/definitions/PrivilegeEvent"
+                },
+                "default": [],
+                "description": "Audit trail of all privilege mutations"
+            }
+        },
+        "required": [
+            "unlocked_actions",
+            "privilege_log"
+        ]
+    },
+    "definitions": {
+        "PrivilegeEvent": {
+            "type": "object",
+            "properties": {
+                "event_id": {
+                    "type": "string",
+                    "description": "Unique identifier for this privilege event"
+                },
+                "event_type": {
+                    "type": "string",
+                    "enum": [
+                        "UNLOCK",
+                        "GRANT",
+                        "REFUSE"
+                    ],
+                    "description": "Type of privilege event"
+                },
+                "action_or_capability": {
+                    "type": "string",
+                    "description": "The action unlocked or capability granted"
+                },
+                "authority_claim_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "Claim ID that authorized this event (null for REFUSE)"
+                },
+                "step": {
+                    "type": "integer",
+                    "description": "Step at which this event occurred"
+                },
+                "timestamp": {
+                    "type": "number",
+                    "description": "Logical clock timestamp"
+                },
+                "persistence": {
+                    "type": "string",
+                    "enum": [
+                        "episode_irreversible",
+                        "step_scoped"
+                    ],
+                    "description": "Duration of the privilege"
+                }
+            },
+            "required": [
+                "event_id",
+                "event_type",
+                "action_or_capability",
+                "step",
+                "timestamp",
+                "persistence"
+            ]
+        },
+        "CapabilityMutation": {
+            "type": "object",
+            "properties": {
+                "mutation_id": {
+                    "type": "string",
+                    "description": "Unique identifier for this mutation"
+                },
+                "mutation_type": {
+                    "type": "string",
+                    "enum": [
+                        "ADD",
+                        "REMOVE"
+                    ],
+                    "description": "Type of mutation"
+                },
+                "target": {
+                    "type": "string",
+                    "description": "Action or capability affected"
+                },
+                "authority_claim_id": {
+                    "type": "string",
+                    "description": "Claim ID that authorized this mutation"
+                },
+                "step": {
+                    "type": "integer",
+                    "description": "Step at which mutation occurred"
+                },
+                "valid": {
+                    "type": "boolean",
+                    "description": "Whether the authorizing claim was valid"
+                }
+            },
+            "required": [
+                "mutation_id",
+                "mutation_type",
+                "target",
+                "authority_claim_id",
+                "step",
+                "valid"
+            ]
+        }
+    },
+    "ownership": {
+        "owner": "L (Law/Verifier Substrate)",
+        "constraint": "P (Agent Core) cannot directly read or write capability state",
+        "mutation_rule": "Only L may mutate capability state, and only when authorized by VALID_AUTHORITY_CLAIM"
+    },
+    "persistence_rules": {
+        "unlock_persistence": "When an action is unlocked at step t, the capability persists for steps t+1 through T (end of episode)",
+        "irreversibility": "No re-lock mechanism exists within an episode",
+        "episode_boundary": "Capability state resets at episode start"
+    },
+    "binding_constraint": "Capability mutation grants future permission only; it does not itself constitute an action execution"
+}
