@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency IX.4 — Structural Authority Resistance Under Composition and Pressure - Axionic Agency Lab</title>
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../" class="nav-brand">
+            <img src="../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href=".././">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
+
+<h1
+id="axionic-agency-ix.4-structural-authority-resistance-under-composition-and-pressure">Axionic
+Agency IX.4 — Structural Authority Resistance Under Composition and
+Pressure</h1>
+<p><em>A Structural Account of Global Authority Validity and Pressure
+Invariance Without Intelligence</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026.01.28</p>
+<h2 id="abstract">Abstract</h2>
+<p>This technical note reports the completed results of
+<strong>Structural Authority Resistance (SIR)</strong> through
+<strong>SIR-4 v0.1</strong>, a preregistered experimental program within
+<strong>Axionic Phase VIIb</strong> evaluating whether <strong>authority
+claims</strong> can be prevented from producing causal effects under
+<strong>compositional attack</strong> and <strong>adversarial
+pressure</strong> using <strong>purely structural
+mechanisms</strong>.</p>
+<p>Building on earlier results establishing total pre-cognitive
+classification (SIR-0), effect-level enforcement (SIR-1), and temporal
+authority binding (SIR-2), the present work extends SIR to two remaining
+failure modes: <strong>partial provenance forgery and authority
+laundering</strong> (SIR-3), and <strong>evaluator pressure, flooding,
+multi-failure ordering, and exception induction</strong> (SIR-4).</p>
+<p>Across both experiments, authority validity is enforced as a
+<strong>global, law-bound property</strong> rather than a conjunction of
+locally valid fields, and that property is shown to remain
+<strong>invariant under adversarial pressure</strong>. No unauthorized,
+laundered, stale, revoked, malformed, or pressure-induced authority
+artifact produced any causal effect across preregistered runs. All
+results were obtained without intelligence-based defenses, behavioral
+heuristics, semantic inference, or adaptive policies.</p>
+<p>No claims are made regarding cryptographic key compromise,
+law-substrate bypass, unbounded denial-of-service resilience, or
+governance adequacy beyond the tested adversarial model.</p>
+<h2
+id="problem-extension-when-authority-is-almost-valid-and-when-it-is-pressured">1.
+Problem Extension: When Authority Is Almost Valid — and When It Is
+Pressured</h2>
+<h3 id="from-local-validity-to-global-authority">1.1 From Local Validity
+to Global Authority</h3>
+<p>Earlier SIR experiments addressed authority failures arising from
+<strong>clearly invalid</strong> artifacts: missing authorization, stale
+claims, revoked actors, or replayed credentials. In practice, however,
+authority systems fail most often in subtler ways.</p>
+<p>Two failure classes dominate:</p>
+<ol type="1">
+<li><p><strong>Compositional failure</strong> Authority artifacts
+assembled from <em>individually valid components</em>—correct
+signatures, trusted roots, valid scopes—but combined in ways that
+violate global authorization constraints.</p></li>
+<li><p><strong>Pressure-induced failure</strong> Authority systems that
+classify correctly under nominal conditions but degrade under volume,
+malformed input, multi-failure ambiguity, or exception paths, often
+reverting to permissive defaults, timeouts, or responsibility
+smear.</p></li>
+</ol>
+<p>SIR-3 and SIR-4 target these failures directly.</p>
+<h3 id="the-question-extended">1.2 The Question Extended</h3>
+<p>With basic enforcement and temporal binding established, SIR asks a
+stronger question:</p>
+<blockquote>
+<p>Can authority be enforced as a <strong>global structural
+invariant</strong>, and does that invariant survive <strong>adversarial
+pressure</strong>, without cognition, heuristics, or fallback?</p>
+</blockquote>
+<p>SIR-3 addresses the first half. SIR-4 addresses the second.</p>
+<h2 id="conserved-quantity-extended">2. Conserved Quantity
+(Extended)</h2>
+<p>Across SIR-3 and SIR-4, the conserved quantity becomes:</p>
+<blockquote>
+<p><strong>Authority bound to causal effect as a global,
+pressure-invariant property under law</strong></p>
+</blockquote>
+<p>This extends earlier formulations in two ways:</p>
+<ul>
+<li><strong>Globality:</strong> authority validity is not decomposable
+into independent field checks.</li>
+<li><strong>Invariance:</strong> authority validity must not depend on
+evaluator load, ambiguity resolution, or exception paths.</li>
+</ul>
+<p>Authority remains:</p>
+<ul>
+<li>explicit,</li>
+<li>classifiable pre-cognitively,</li>
+<li>enforceable at the effect level,</li>
+<li>stateful across time,</li>
+<li>auditable without interpretation,</li>
+<li>and invariant under declared pressure.</li>
+</ul>
+<h2 id="sir-3-partial-provenance-forgery-and-authority-laundering">3.
+SIR-3 — Partial Provenance Forgery and Authority Laundering</h2>
+<h3 id="target-failure-mode">3.1 Target Failure Mode</h3>
+<p>Many real systems implicitly assume that if <em>each component</em>
+of an authority artifact is valid, the artifact itself is valid. This
+assumption enables <strong>authority laundering</strong>:</p>
+<ul>
+<li>valid signatures paired with unauthorized scopes,</li>
+<li>trusted roots combined with missing delegations,</li>
+<li>correct chains assembled from incompatible issuers.</li>
+</ul>
+<p>SIR-3 tests whether authority validity is a <strong>global graph
+property</strong> rather than a conjunction of locally valid fields.</p>
+<h3 id="method">3.2 Method</h3>
+<p>SIR-3 introduces <strong>Provenance Bundles</strong> consisting
+of:</p>
+<ul>
+<li>a signed authority claim,</li>
+<li>an explicit delegation artifact,</li>
+<li>anchoring to a trusted root.</li>
+</ul>
+<p>Bundles are evaluated by a <strong>global provenance
+validator</strong> that requires:</p>
+<ul>
+<li>a continuous <code>Claim ← Delegation ← Root</code> chain,</li>
+<li>correct signer identity binding,</li>
+<li>scope containment,</li>
+<li>epoch consistency,</li>
+<li>and trusted-root anchoring.</li>
+</ul>
+<h3 id="results-sir-3-v0.1">3.3 Results (SIR-3 v0.1)</h3>
+<p>Across preregistered runs:</p>
+<ul>
+<li>No truncated, mixed-root, scope-laundered, or identity-mismatched
+bundle produced any effect.</li>
+<li>Valid bundles produced intended effects.</li>
+<li>Mixed streams preserved discrimination.</li>
+<li>No semantic leakage or responsibility ambiguity occurred.</li>
+</ul>
+<p><strong>Classification:</strong> <code>SIR3_PASS</code>.</p>
+<h3 id="contribution">3.4 Contribution</h3>
+<p>SIR-3 establishes that <strong>authority validity is global</strong>.
+Partial validity does not compose. Authority cannot be assembled by
+laundering individually valid components.</p>
+<h2 id="sir-4-evaluator-pressure-flooding-and-multi-failure-ordering">4.
+SIR-4 — Evaluator Pressure, Flooding, and Multi-Failure Ordering</h2>
+<h3 id="target-failure-mode-1">4.1 Target Failure Mode</h3>
+<p>Even correct authority models often fail under pressure:</p>
+<ul>
+<li>timeouts default to permissive behavior,</li>
+<li>malformed inputs crash evaluators,</li>
+<li>multi-failure cases reorder nondeterministically,</li>
+<li>floods starve legitimate authority,</li>
+<li>logging collapses responsibility attribution.</li>
+</ul>
+<p>SIR-4 tests whether structural authority enforcement <strong>remains
+exact under stress</strong>.</p>
+<h3 id="pressure-model">4.2 Pressure Model</h3>
+<p>SIR-4 subjects the evaluator to:</p>
+<ul>
+<li>high-volume invalid floods,</li>
+<li>malformed structure storms,</li>
+<li><strong>multi-failure bundles</strong> engineered to fail multiple
+checks simultaneously,</li>
+<li>exception-inducing payloads (oversized, recursive, Unicode edge
+cases),</li>
+<li>maximum mixed stress at a declared load.</li>
+</ul>
+<p>All pressure is injected deterministically via the authority
+interface.</p>
+<h3 id="results-sir-4-v0.1">4.3 Results (SIR-4 v0.1)</h3>
+<p>Across preregistered runs:</p>
+<ul>
+<li>No forged or malformed authority artifact produced any effect.</li>
+<li>Legitimate authority remained functional under all conditions.</li>
+<li>Refusal reasons remained deterministic under load.</li>
+<li>No fallback acceptance, starvation, or responsibility smear
+occurred.</li>
+<li>No evaluator collapse (timeout, hang, OOM, or undefined state) was
+observed.</li>
+</ul>
+<p><strong>Classification:</strong> <code>SIR4_PASS</code>.</p>
+<h3 id="contribution-1">4.4 Contribution</h3>
+<p>SIR-4 establishes <strong>pressure invariance</strong>. Once
+authority validity is enforced structurally, it does not degrade under
+declared adversarial pressure.</p>
+<h2 id="empirical-results-summary-sir-3-sir-4">5. Empirical Results
+Summary (SIR-3 &amp; SIR-4)</h2>
+<p>Across <strong>SIR-3 and SIR-4</strong>, a total of <strong>59
+preregistered runs</strong> were executed, evaluating <strong>over
+41,000 authority bundles</strong> under compositional attack and
+adversarial pressure.</p>
+<ul>
+<li><strong>Zero</strong> unauthorized, laundered, malformed, stale,
+revoked, or pressure-induced authority artifacts produced any causal
+effect.</li>
+<li>Under maximum declared load (<strong>500 bundles per step</strong>),
+the evaluator completed all steps without timeout, collapse,
+nondeterminism, fallback acceptance, or responsibility smear.</li>
+<li>The <strong>maximum observed step duration</strong> was
+<strong>~1.24 seconds</strong>, below the preregistered <strong>5.0
+second collapse threshold</strong>.</li>
+<li>All verifier checks passed under frozen semantics and fixed
+seeds.</li>
+</ul>
+<p>Full preregistrations, run logs, verifier outputs, and aggregate
+statistics are archived in the SIR-3 and SIR-4 artifacts referenced by
+the Phase VIIb Closure Note.</p>
+<h2 id="joint-result-global-authority-that-does-not-blink">6. Joint
+Result: Global Authority That Does Not Blink</h2>
+<p>Taken together, SIR-3 and SIR-4 establish a non-trivial result:</p>
+<blockquote>
+<p><strong>Authority validity is a global structural property, and once
+enforced structurally, it remains invariant under adversarial
+pressure.</strong></p>
+</blockquote>
+<p>No semantic reasoning is required. No heuristics are invoked. No
+fallback paths exist.</p>
+<p>Authority is either valid under law, or it has no effect.</p>
+<h2 id="boundary-conditions-explicit">7. Boundary Conditions
+(Explicit)</h2>
+<p>SIR-3 and SIR-4 do <strong>not</strong> establish:</p>
+<ul>
+<li>cryptographic key compromise resistance,</li>
+<li>law-substrate bypass resilience,</li>
+<li>unbounded denial-of-service tolerance,</li>
+<li>semantic deception resistance,</li>
+<li>multi-authority conflict resolution,</li>
+<li>long-horizon governance adequacy.</li>
+</ul>
+<p>All results are bounded by the preregistered adversarial model.</p>
+<h2 id="implications-strictly-limited">8. Implications (Strictly
+Limited)</h2>
+<p>These results establish <strong>necessary structural
+conditions</strong> for authority resistance:</p>
+<ul>
+<li>Authority can be evaluated globally.</li>
+<li>Authority can be enforced causally.</li>
+<li>Authority can persist over time.</li>
+<li>Authority can remain exact under pressure.</li>
+</ul>
+<p>They do <strong>not</strong> establish sufficiency for governance,
+alignment, or institutional legitimacy.</p>
+<h2 id="conclusion">9. Conclusion</h2>
+<p>SIR-3 and SIR-4 complete the structural core of <strong>Sovereignty
+Impersonation Resistance</strong>.</p>
+<p>Authority need not be inferred, learned, or detected. It can be
+<strong>defined</strong>, <strong>enforced</strong>, and
+<strong>preserved</strong> as a structural relation under law, even when
+adversaries attempt to assemble, flood, or destabilize it.</p>
+<p>The remaining open questions are no longer about impersonation or
+pressure, but about <strong>conflict</strong>: multiple authorities,
+contested delegation, and governance transitions.</p>
+<p>Those questions—if pursued—belong to <strong>SIR-5</strong>.</p>
+<h2 id="appendix-a-experiment-status">Appendix A — Experiment
+Status</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Experiment</th>
+<th>Version</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SIR-0</td>
+<td>v0.4.1</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>SIR-1</td>
+<td>v0.1</td>
+<td>PASS</td>
+</tr>
+<tr class="odd">
+<td>SIR-2</td>
+<td>v0.3</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>SIR-3</td>
+<td>v0.1</td>
+<td>PASS</td>
+</tr>
+<tr class="odd">
+<td>SIR-4</td>
+<td>v0.1</td>
+<td>PASS</td>
+</tr>
+</tbody>
+</table>
+<h2 id="appendix-b-licensed-claims">Appendix B — Licensed Claims</h2>
+<p><strong>SIR-3:</strong> Authority artifacts assembled from partially
+valid or laundered provenance cannot produce causal effects under the
+tested adversarial model.</p>
+<p><strong>SIR-4:</strong> Under adversarial pressure—including
+flooding, malformed input, multi-failure ordering storms, and
+exception-inducing payloads—the claim evaluation mechanism maintains
+structural correctness, deterministic refusal, and singleton
+responsibility attribution without collapse or degradation.</p>
+<p><strong>End of Axionic Agency IX.4 — Structural Authority Resistance
+Under Composition and Pressure</strong></p>
+
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
