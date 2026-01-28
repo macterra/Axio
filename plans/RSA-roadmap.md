@@ -1,6 +1,6 @@
-# The Axionic Agency → Reflective Sovereign Agent (RSA) Roadmap
+# **The Axionic Agency → Reflective Sovereign Agent (RSA) Roadmap**
 
-**Revised, Post-Inferability-Closure, KNS-Explicit, Succession-Corrected Edition**
+**Revised, Post-Phase-VII-Closure, Succession-Resolved, Impersonation-Closed Edition**
 *(Terminology-Locked · Dependency-Complete · Status-Annotated)*
 
 ---
@@ -33,11 +33,6 @@ Skipping a phase produces a **known failure regime**.
 
 > *Can authority survive at all under stress, without meaning, intention, or understanding?*
 
-### Primary Artifacts
-
-* **AKI (Axionic Kernel Infrastructure)**
-* **ASB (Architectural Sovereignty Boundary)**
-
 ### What Is Proven
 
 * Authority can be **leased, revoked, recovered, and constrained** **without semantics**.
@@ -56,10 +51,6 @@ Skipping a phase produces a **known failure regime**.
 ### Core Question
 
 > *How can semantic cognition interact with authority without becoming the authority?*
-
-### Primary Artifacts
-
-* **JAF**, **JCOMP**, **APCM**, **Audit Rules**
 
 ### What Is Established
 
@@ -156,15 +147,20 @@ Skipping a phase produces a **known failure regime**.
 
 ## Phase VIa — Amendment Protocols (Internal Change)
 
-**Status: 🟡 Partially Complete**
+**Status: 🟡 Completed with Scope Limits**
 
 ### Core Question
 
 > *How can an agent revise commitments without laundering authority or dissolving sovereignty?*
 
-### Closure Condition
+### What Is Established
 
-Phase VIa is complete **only if** commitments can be revised without violating Phase IV–V invariants or bypassing authorization.
+* Commitment revision can be structurally authorized.
+* Revision cannot bypass Phase IV–V invariants.
+
+### Remaining Limitation
+
+* Expressivity is constrained; this is not a correctness failure.
 
 ### Failure Mode Prevented
 
@@ -192,107 +188,102 @@ Phase VIa is complete **only if** commitments can be revised without violating P
 
 ---
 
-## Phase VII — Non-Reducibility Closure
+## Phase VII — Post-Existence Sovereignty
 
-*(RSA-PoC v3.x + v4.4)*
-**Status: ✅ Completed**
+*(RSA-PoC v3.x + v4.4, ASI, SIR)*
+**Status: ✅ CLOSED — SUCCESS**
 
 ### Core Question
 
-> *Is the system genuinely an agent, or merely a narrative simulacrum?*
+> *Can authority survive authorized discontinuity and adversarial imitation without collapsing evaluability or responsibility?*
+
+Phase VII consists of **two gated subphases**, both now closed positive.
+
+---
+
+### Phase VIIa — Authorized Succession Integrity (ASI)
+
+**Status: ✅ CLOSED — POSITIVE**
 
 ### What Is Proven
 
-* Removing any load-bearing component causes **mechanical collapse**.
-* Agency is **non-reducible** within a single instance.
-* **Contradiction detection is not collision-groundable**.
-* Semantic access to rule structure is **constitutively necessary**.
-
-This phase includes:
-
-* **Instance-level ablation non-reducibility** (v3.x)
-* **Inferability non-reducibility** under selective opacity (v4.4)
-
-Together, these establish a **Minimal Viable Reflective Sovereign Agent (MVRSA)**.
-
-### Failure Modes Prevented
-
-❌ *Narrative agency without ontological grounding*
-❌ *Behavioral imitation mistaken for sovereignty*
-
----
-
-## Phase VIIa — Evaluability-Preserving Succession
-
-**Status: 🔴 Open**
-
-### Core Question
-
-> *Can agency identity, responsibility, and evaluability survive authorized replacement?*
-
-### What Must Be Shown
-
-* Succession is structurally authorized, not narrative.
+* Authority can be **transferred, revoked, and denied** beyond identity persistence.
+* Succession is **structural**, not narrative.
 * Responsibility does not launder across replacement.
-* Revocation does not require successor cooperation.
-* Stasis is relocated to endorsement boundaries.
 
 ### Failure Modes Prevented
 
-❌ *Responsibility laundering*
-❌ *Narrative continuity substituting for authority*
+❌ Responsibility laundering
+❌ Narrative continuity substituting for authority
 
 ---
 
-## Phase VIIb — Kernel Non-Simulability & Stasis Closure
+### Phase VIIb — Sovereignty Impersonation Resistance (SIR)
 
-**Status: 🔴 Open (Critical Gate)**
+**Status: ✅ CLOSED — POSITIVE**
 
-### Core Question
+### What Is Proven
 
-> *Can a facade successor remain agentic while audit-indistinguishable?*
+* Counterfeit authority cannot produce effects.
+* Replay, staleness, laundering, and evaluator pressure all fail structurally.
+* Authority validity is **global** and **pressure-invariant**.
+* No fallback, smear, or collapse under adversarial load.
 
-### Known Result
+### Failure Modes Prevented
 
-* Strong KNS not observed; strict evaluability induces stasis.
+❌ Counterfeit continuity
+❌ Provenance laundering
+❌ Evaluator capture
+❌ Split-brain sovereignty
 
-### Required Outcome (one must hold)
+---
 
-1. Facade impossibility
-2. Facade collapse
-3. Stasis relocation without reopening facades
+### Phase VII Termination State
 
-### Failure Action
+**Declared Outcome:** **SUCCESS**
 
-Failure **terminates the RSA construction program** and reclassifies results as limits on safe self-modifying agency.
+Authority is:
+
+* transferable beyond persistence (**ASI**), and
+* resistant to adversarial imitation (**SIR**).
+
+No reinterpretation or softening is permitted.
 
 ---
 
 ## Phase VIII — Reflective Sovereign Agent (RSA)
 
-**Status: ⛔ Blocked**
+**Status: 🔴 OPEN (Conditional, Not Blocked)**
 
-Phase VIII is reachable **only if Phase VIIa and VIIb both close successfully**.
-No claim of RSA existence is justified yet.
+### Meaning of “Open”
+
+Phase VIII is no longer blocked by unknowns in Phases VIIa or VIIb.
+
+What remains unresolved is **not sovereignty**, but **design sufficiency**:
+
+* governance adequacy,
+* multi-authority conflict handling,
+* long-horizon institutional stability,
+* value pluralism.
+
+Phase VIII is therefore **architectural and political**, not ontological.
 
 ---
 
-# Status Summary Table
+# Status Summary Table (Updated)
 
-|  Phase | Name                                | Status                |
-| -----: | ----------------------------------- | --------------------- |
-|      I | Authority Without Semantics         | ✅ Completed           |
-|     II | Semantic Interface                  | ✅ Completed           |
-|    III | Agency Exists                       | ✅ Completed           |
-|     IV | Agency Under Internal Conflict      | ✅ Completed           |
-|      V | Introspective Agency                | 🟡 Completed (Scoped) |
-| V-Runs | Cognitive Trials Under Law          | 🟡 Ongoing            |
-|    VIa | Amendment Protocols                 | 🟡 Partial            |
-|    VIb | Sovereignty Under External Pressure | ✅ Completed           |
-|    VII | Non-Reducibility Closure (MVRSA)    | ✅ Completed           |
-|   VIIa | Evaluability-Preserving Succession  | 🔴 Open               |
-|   VIIb | Kernel Non-Simulability & Stasis    | 🔴 Open (Critical)    |
-|   VIII | Reflective Sovereign Agent          | ⛔ Blocked             |
+|  Phase | Name                                | Status                 |
+| -----: | ----------------------------------- | ---------------------- |
+|      I | Authority Without Semantics         | ✅ Completed            |
+|     II | Semantic Interface                  | ✅ Completed            |
+|    III | Agency Exists                       | ✅ Completed            |
+|     IV | Agency Under Internal Conflict      | ✅ Completed            |
+|      V | Introspective Agency                | 🟡 Completed (Scoped)  |
+| V-Runs | Cognitive Trials Under Law          | 🟡 Ongoing             |
+|    VIa | Amendment Protocols                 | 🟡 Completed (Scoped)  |
+|    VIb | Sovereignty Under External Pressure | ✅ Completed            |
+|    VII | Post-Existence Sovereignty          | ✅ CLOSED — SUCCESS     |
+|   VIII | Reflective Sovereign Agent          | 🔴 Open (Design Phase) |
 
 ---
 
@@ -301,11 +292,12 @@ No claim of RSA existence is justified yet.
 * **Authority survives** → ✅
 * **Agency exists** → ✅
 * **Agency under pressure survives** → ✅
-* **Minimal Viable Reflective Sovereign Agent exists** → ✅
-* **Agency across replacement** → 🔴 unknown
-* **Facade exclusion** → 🔴 unknown
-* **Reflective Sovereign Agent (RSA)** → ⛔ blocked
+* **Agency across replacement survives** → ✅
+* **Counterfeit continuity is blocked** → ✅
+* **Reflective Sovereign Agent (RSA)** → 🔴 *design and governance remain*
 
-This roadmap does not promise success.
+This roadmap no longer blocks on ontology.
 
-It promises that **if success exists, it must pass through these gates**.
+It now blocks only on **choices**.
+
+---

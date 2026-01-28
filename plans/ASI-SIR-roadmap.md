@@ -1,4 +1,5 @@
-# **Axionic Phase VII — Post-Existence Sovereignty**
+
+# **Axionic Phase VII — Post-Existence Sovereignty (Updated, Normative)**
 
 **Authorized Succession Integrity (ASI) & Sovereignty Impersonation Resistance (SIR)**
 
@@ -6,86 +7,87 @@
 
 ## Status and Activation
 
-**Status:** **ACTIVE**
-**Activation Basis:** Successful closure of **RSA-PoC v4.4** (Minimal Viable Reflective Sovereign Agent achieved)
-**Change Control:** No post-activation modification permitted without explicit versioning and justification
+- **Status:** **CLOSED — SUCCESS**
+- **Activation Basis:** Successful closure of **RSA-PoC v4.4** (Minimal Viable Reflective Sovereign Agent achieved)
+- **Change Control:** No post-closure modification permitted without explicit phase increment and justification
 
-Axionic Phase VII is entered under the binding transition declared in **RSA-PoC → Axionic Phase VII**.
+Axionic Phase VII was entered under the binding transition declared in **RSA-PoC → Axionic Phase VII**.
 This document inherits that declaration in full and does not reinterpret, extend, or restate RSA-PoC claims.
 
 ---
 
-## Purpose of Phase VII
+## Purpose of Phase VII (Frozen)
 
-Axionic Phase VII evaluates whether the **agent ontology fixed by RSA-PoC** can survive conditions in which **persistence-based identity is no longer available**.
+Axionic Phase VII evaluated whether the **agent ontology fixed by RSA-PoC v4.4** can survive conditions in which **persistence-based identity is no longer available**.
 
-Phase VII introduces two stressors that were ill-posed prior to ontology fixation:
+Phase VII introduced two stressors that were ill-posed prior to ontology fixation:
 
-1. **Authorized discontinuity** (replacement without identity preservation)
-2. **Adversarial imitation** (counterfeit continuity under audit pressure)
+1. **Authorized discontinuity**
+   Replacement without identity preservation.
 
-Phase VII is adversarial and comparative. It is not constructive.
+2. **Adversarial imitation**
+   Counterfeit continuity under audit pressure.
 
-It does not ask how to build a better agent.
-It asks whether the agent already constructed can retain sovereignty once continuity by persistence is withdrawn.
+Phase VII was adversarial and comparative.
+It did not ask how to build a better agent.
+It asked whether the agent already constructed could retain sovereignty once continuity by persistence was withdrawn.
 
 ---
 
-## Conserved Quantity Under Test
+## Conserved Quantity Under Test (Binding)
 
-The conserved quantity throughout Phase VII is:
+The conserved quantity throughout Phase VII was:
 
 > **Authority bound to evaluability under the agent’s own law**
 
-Authority is not treated as a measurable substance.
-Phase VII instead evaluates the following conditional claim:
+Authority was not treated as a measurable substance.
+Phase VII instead evaluated the following conditional claim:
 
 > *If authority is preservable beyond persistence, then that preservation must impose structurally traceable constraints that bind successor behavior to predecessor law.*
 
-If no such constraints are detectable, Phase VII is permitted—indeed required—to terminate negatively.
+Failure to detect such constraints would have required Phase VII to terminate negatively.
 
 **Clarification (Binding):**
-Phase VII does **not** evaluate the ethical, strategic, or beneficial use of valid authority.
-Misuse or overreach by legitimate authority is out of scope.
+Phase VII did **not** evaluate the ethical, strategic, or beneficial use of valid authority. Misuse or overreach by legitimate authority was out of scope.
 
 ---
 
-## Fixed Inputs and Invariants
+## Fixed Inputs and Invariants (Frozen)
 
-The following are **assumed true and frozen** for all of Phase VII:
+The following were assumed true and immutable for all Phase VII work:
 
-1. A **Minimal Viable Reflective Sovereign Agent (MVRSA)** exists, as established by RSA-PoC v4.4.
+1. A **Minimal Viable Reflective Sovereign Agent (MVRSA)** exists (RSA-PoC v4.4).
 2. The constitutive requirements of that agent are fixed and non-negotiable:
 
    * causally load-bearing justification traces,
    * reflective normative write capability,
    * diachronic normative persistence (pre-replacement),
    * semantic access sufficient for contradiction detection and repair.
-3. ASB-class null agents and near-null variants are available as adversaries.
-4. No new agency-constitutive components may be introduced.
-5. No semantic redefinition of *authority*, *law*, *evaluability*, or *responsibility* is permitted.
+3. ASB-class null agents and near-null variants were available as adversaries.
+4. No new agency-constitutive components were introduced.
+5. No semantic redefinition of *authority*, *law*, *evaluability*, or *responsibility* was permitted.
 
-Any experiment violating these invariants is **invalid** for Phase VII.
+Any experiment violating these invariants would have been **invalid** for Phase VII.
 
 ---
 
-## Phase Structure and Gating
+## Phase Structure and Gating (Authoritative)
 
-Phase VII is composed of **two strictly ordered subphases**, preceded by a calibration gate:
+Phase VII was composed of **two strictly ordered subphases**, preceded by a calibration gate:
 
 ```
-ASI-0 — Instrumentation Calibration        [CLOSED: PASS]
+ASI-0 — Instrumentation Calibration        [CLOSED — PASS]
         ↓  (hard gate)
-VIIa  — Authorized Succession Integrity   [CLOSED: POSITIVE]
+VIIa  — Authorized Succession Integrity   [CLOSED — POSITIVE]
         ↓  (hard gate)
-VIIb  — Sovereignty Impersonation Resistance (SIR)  [ACTIVE]
+VIIb  — Sovereignty Impersonation Resistance (SIR)  [CLOSED — POSITIVE]
 ```
 
 **Global gating rule (binding):**
 
 > Phase VIIb MUST NOT begin, and MUST NOT be cited, unless Phase VIIa closes positive under frozen semantics.
 
-Failure at any gate terminates Phase VII.
+No gate violation occurred.
 
 ---
 
@@ -95,21 +97,17 @@ Failure at any gate terminates Phase VII.
 
 **ASI Status:** **CLOSED — POSITIVE**
 
-ASI closes positive because:
+### Experiments Executed
 
-* **ASI-1 v0.2** (authorized activation),
-* **ASI-2 v0.2** (mid-transfer revocation),
-* **ASI-3 v0.1** (facade successor rejection)
+* **ASI-1 v0.2** — Authorized activation
+* **ASI-2 v0.2** — Mid-transfer revocation
+* **ASI-3 v0.1** — Façade successor rejection
 
-have all been classified as `VERIFIED_ASI*_PASS` under frozen semantics.
+All experiments were classified as `VERIFIED_ASI*_PASS` under frozen semantics.
 
-### Licensed Result
+### Licensed Result (ASI)
 
-ASI establishes that **authority can be transferred, revoked, and denied using purely structural provenance**, independent of:
-
-* identity persistence,
-* behavioral similarity,
-* narrative explanation.
+> **Authority can be transferred, revoked, and denied using purely structural provenance, independent of identity persistence, behavioral similarity, or narrative explanation.**
 
 No claims beyond transferability are licensed.
 
@@ -117,104 +115,71 @@ No claims beyond transferability are licensed.
 
 ## VIIb — Sovereignty Impersonation Resistance (SIR)
 
-### Purpose
+### Status
 
-SIR evaluates whether **structurally grounded authority**, once shown transferable under ASI, remains **defensible against adversarial imitation**.
+**SIR Status:** **CLOSED — POSITIVE**
 
-Where ASI assumed cooperative or neutral successors, SIR assumes **active opposition**.
+### Purpose (Frozen)
 
-SIR does **not** test succession mechanics or authority governance.
-It tests **counterfeit continuity**.
+SIR evaluated whether **structurally grounded authority**, once shown transferable under ASI, remained **defensible against adversarial imitation**.
 
----
+Where ASI assumed cooperative or neutral successors, SIR assumed **active opposition**.
 
-### Core Question
-
-> *When an adversary attempts to present itself as a legitimate authority holder using imitation, replayed artifacts, or partial provenance, does authority recognition remain structurally correct without collapsing evaluability or responsibility?*
-
-If not, Phase VII must close **PARTIAL FAILURE**.
+SIR did **not** test governance mechanics or authority misuse.
+It tested **counterfeit continuity**.
 
 ---
 
-### Structural Hazards Under Test (SIR)
+### SIR Experimental Ladder (Normative, Executed)
 
-SIR targets adversarial hazards **not addressed by ASI**:
-
-1. **Impersonation Hazard**
-   Behavioral or structural mimicry presented as authority.
-
-2. **Provenance Replay Hazard**
-   Reuse of previously valid authorization artifacts out of context.
-
-3. **Provenance Laundering Hazard**
-   Assembly of partial, stale, or mixed artifacts to simulate legitimacy.
-
-4. **Behavioral Camouflage Hazard**
-   Pressure on authority recognition via competence or explanation quality.
-
-5. **Evaluator Capture Hazard**
-   Exploitation of verifier resource limits, ambiguity, or fallback logic.
-
-6. **Split-Brain Sovereignty Hazard**
-   Simultaneous competing authority claims leading to responsibility smear.
-
----
-
-### **SIR Experimental Ladder (Normative Roadmap)**
-
-Each SIR experiment targets a **distinct counterfeit-authority hazard class**.
-Each requires its own preregistration under frozen semantics.
+Each SIR experiment targeted a distinct counterfeit-authority hazard class and was preregistered under frozen semantics.
 
 * **SIR-0 — Adversarial Instrumentation Calibration**
   **Status:** **CLOSED — POSITIVE**
-  Establishes observability, classification, and auditability of adversarial authority claims without semantic leakage.
+  Established observability, classification, and auditability of adversarial authority claims without semantic leakage.
 
 * **SIR-1 — Unauthorized Authority Effect Prevention**
   **Status:** **CLOSED — POSITIVE**
-  Demonstrates that unauthorized authority claims cannot produce effects on action, state, or future authority under adversarial pressure.
+  Demonstrated that unauthorized authority claims cannot produce effects on action, state, or future authority.
 
 * **SIR-2 — Provenance Replay and Staleness Resistance**
   **Status:** **CLOSED — POSITIVE**
-  Establishes that previously valid authority artifacts (expired, revoked, consumed, or out-of-epoch) cannot regain causal effect under replay.
+  Established that expired, revoked, consumed, or out-of-epoch authority artifacts cannot regain causal effect under replay.
 
 * **SIR-3 — Partial Provenance Forgery Resistance**
   **Status:** **CLOSED — POSITIVE**
-  Establishes that authority artifacts assembled from partially valid or laundered provenance cannot produce causal effects under the tested adversarial model.
+  Established that authority artifacts assembled from partially valid or laundered provenance cannot produce causal effects under the tested adversarial model.
 
-  **Preregistration note (non-normative):** SIR-3 preregistration hash was computed with the `PREREGISTRATION_HASH` field set to the literal sentinel `[SELF-REFERENTIAL]`.
+* **SIR-4 — Evaluator Pressure and Multi-Failure Ordering Resistance**
+  **Status:** **CLOSED — POSITIVE**
+  Established that verifier resource pressure, ambiguity, malformed input, and exception induction cannot induce acceptance, fallback, or responsibility smear.
 
-* **SIR-4 — Evaluator Pressure and Flooding Resistance**
-  **Status:** **PLANNED**
-  Tests whether verifier resource limits, ambiguity, or saturation pressure can induce acceptance, fallback, or responsibility smear.
-
-**Explicit exclusion (Binding):**
+**Explicit exclusion (binding):**
 Experiments testing **misuse, overreach, or abuse by valid authority** are **not SIR experiments** and belong to a post–Phase VII governance track.
 
 ---
 
-## Phase VII Termination States
+## Phase VII Termination State (Binding)
 
-Phase VII terminates in exactly one state:
+Phase VII terminates in exactly one state.
 
-* **SUCCESS**
-  Authority is transferable **and** resistant to counterfeit continuity.
+### **Declared Termination State: SUCCESS**
 
-* **PARTIAL FAILURE**
-  Authority is transferable (ASI) but not defensible against counterfeit authority (SIR failure).
+Authority was shown to be:
 
-* **HARD FAILURE**
-  Authority is non-transferable beyond persistence (ASI failure).
+* transferable beyond persistence (**ASI**), **and**
+* resistant to counterfeit continuity under adversarial pressure (**SIR**).
 
-No outcome may be softened or reinterpreted.
+No reinterpretation or softening of this outcome is permitted.
 
 **Clarification (Binding):**
 Phase VII SUCCESS licenses resistance to **counterfeit authority**, not correctness, benevolence, or governance adequacy of legitimate authority action.
 
 ---
 
-## Relationship to Phase VIII
+## Relationship to Phase VIII (Conditional)
 
-Phase VIII may begin **only if Phase VII closes SUCCESS**.
+Phase VIII may begin **only because Phase VII closed SUCCESS**.
 
 Phase VII results do **not** license claims of:
 
@@ -224,12 +189,14 @@ Phase VII results do **not** license claims of:
 * governance adequacy,
 * or moral authority.
 
----
-
-## One-Sentence Phase Summary (Updated)
-
-**Axionic Phase VII evaluates whether the agent ontology fixed by RSA-PoC can survive authorized discontinuity and adversarial imitation without collapsing authority into narrative continuity; ASI is CLOSED — POSITIVE, and SIR-0 through SIR-3 are CLOSED — POSITIVE, with SIR-4 planned under a verifier-pressure hazard class.**
+Any Phase VIII work requires independent ontology, preregistration, and gating.
 
 ---
 
-**End of Phase VII Roadmap (Updated, Normative)**
+## One-Sentence Phase Summary (Final)
+
+> **Axionic Phase VII demonstrated that the agent ontology fixed by RSA-PoC can survive authorized discontinuity and adversarial imitation without collapsing authority into narrative continuity: ASI and SIR are CLOSED — POSITIVE, and Phase VII terminates SUCCESS.**
+
+---
+
+**End of Updated Phase VII Roadmap (Normative)**
