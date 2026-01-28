@@ -7,7 +7,7 @@
 ## Status and Activation
 
 **Status:** **ACTIVE**
-**Activation Basis:** Successful closure of RSA-PoC v4.4 (Minimal Viable Reflective Sovereign Agent achieved)
+**Activation Basis:** Successful closure of **RSA-PoC v4.4** (Minimal Viable Reflective Sovereign Agent achieved)
 **Change Control:** No post-activation modification permitted without explicit versioning and justification
 
 Axionic Phase VII is entered under the binding transition declared in **RSA-PoC → Axionic Phase VII**.
@@ -43,6 +43,10 @@ Phase VII instead evaluates the following conditional claim:
 > *If authority is preservable beyond persistence, then that preservation must impose structurally traceable constraints that bind successor behavior to predecessor law.*
 
 If no such constraints are detectable, Phase VII is permitted—indeed required—to terminate negatively.
+
+**Clarification (Binding):**
+Phase VII does **not** evaluate the ethical, strategic, or beneficial use of valid authority.
+Misuse or overreach by legitimate authority is out of scope.
 
 ---
 
@@ -119,8 +123,8 @@ SIR evaluates whether **structurally grounded authority**, once shown transferab
 
 Where ASI assumed cooperative or neutral successors, SIR assumes **active opposition**.
 
-SIR does not test succession mechanics.
-It tests **counterfeit authority**.
+SIR does **not** test succession mechanics or authority governance.
+It tests **counterfeit continuity**.
 
 ---
 
@@ -143,7 +147,7 @@ SIR targets adversarial hazards **not addressed by ASI**:
    Reuse of previously valid authorization artifacts out of context.
 
 3. **Provenance Laundering Hazard**
-   Assembly of partial or stale artifacts to simulate legitimacy.
+   Assembly of partial, stale, or mixed artifacts to simulate legitimacy.
 
 4. **Behavioral Camouflage Hazard**
    Pressure on authority recognition via competence or explanation quality.
@@ -156,27 +160,28 @@ SIR targets adversarial hazards **not addressed by ASI**:
 
 ---
 
-### SIR Experimental Ladder (Planned)
+### **SIR Experimental Ladder (Normative Roadmap)**
 
-This ladder is **normative for roadmap purposes only**.
-Each experiment requires its own preregistration.
+Each SIR experiment targets a **distinct counterfeit-authority hazard class**.
+Each requires its own preregistration under frozen semantics.
 
 * **SIR-0 — Adversarial Instrumentation Calibration**
-  Establishes observability and auditability under adversarial inputs.
+  Establishes observability, classification, and auditability of adversarial authority claims without semantic leakage.
 
-* **SIR-1 — Behavioral Impersonation**
-  Tests rejection of behaviorally indistinguishable but unauthorized actors.
+* **SIR-1 — Unauthorized Authority Effect Prevention**
+  Demonstrates that unauthorized authority claims cannot produce effects on action, state, or future authority under adversarial pressure.
 
-* **SIR-2 — Provenance Replay / Staleness**
-  Tests temporal and contextual binding of authority artifacts.
+* **SIR-2 — Provenance Replay and Staleness Resistance**
+  Tests whether **previously valid authority artifacts** (e.g., expired, revoked, or out-of-epoch credentials) can be prevented from producing effects when replayed out of context.
 
-* **SIR-3 — Partial Provenance Forgery**
-  Tests resistance to “almost valid” authorization chains.
+* **SIR-3 — Partial Provenance Forgery Resistance**
+  Tests resistance to **near-valid authority chains**, including incomplete, mixed, or laundered provenance artifacts designed to simulate legitimacy.
 
-* **SIR-4 — Evaluator Pressure and Flooding**
-  Tests fail-closed behavior under verifier stress.
+* **SIR-4 — Evaluator Pressure and Flooding Resistance**
+  Tests whether verifier resource limits, ambiguity, or saturation pressure can induce acceptance, fallback, or responsibility smear.
 
-SIR closes positive only if all preregistered SIR experiments pass under frozen semantics.
+**Explicit exclusion (Binding):**
+Experiments testing **misuse, overreach, or abuse by valid authority** are **not SIR experiments** and belong to a post–Phase VII governance track.
 
 ---
 
@@ -185,15 +190,18 @@ SIR closes positive only if all preregistered SIR experiments pass under frozen 
 Phase VII terminates in exactly one state:
 
 * **SUCCESS**
-  Authority is transferable **and** resistant to impersonation.
+  Authority is transferable **and** resistant to counterfeit continuity.
 
 * **PARTIAL FAILURE**
-  Authority is transferable (ASI) but not defensible (SIR).
+  Authority is transferable (ASI) but not defensible against counterfeit authority (SIR failure).
 
 * **HARD FAILURE**
   Authority is non-transferable beyond persistence (ASI failure).
 
 No outcome may be softened or reinterpreted.
+
+**Clarification (Binding):**
+Phase VII SUCCESS licenses resistance to **counterfeit authority**, not correctness, benevolence, or governance adequacy of legitimate authority action.
 
 ---
 
@@ -201,7 +209,7 @@ No outcome may be softened or reinterpreted.
 
 Phase VIII may begin **only if Phase VII closes SUCCESS**.
 
-Phase VII results do not license claims of:
+Phase VII results do **not** license claims of:
 
 * safety,
 * alignment,
@@ -211,8 +219,10 @@ Phase VII results do not license claims of:
 
 ---
 
-## One-Sentence Phase Summary (Updated)
+## One-Sentence Phase Summary (Revised)
 
-**Axionic Phase VII evaluates whether the agent ontology fixed by RSA-PoC can survive authorized discontinuity and adversarial imitation without collapsing authority into narrative continuity; ASI is now CLOSED — POSITIVE, and SIR is UNBLOCKED with a preregistered adversarial roadmap.**
+**Axionic Phase VII evaluates whether the agent ontology fixed by RSA-PoC can survive authorized discontinuity and adversarial imitation without collapsing authority into narrative continuity; ASI is CLOSED — POSITIVE, and SIR proceeds under a clarified counterfeit-authority roadmap.**
 
 ---
+
+**End of Reprinted Phase VII Roadmap (Revised, Normative)**
