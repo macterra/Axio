@@ -178,8 +178,10 @@ Each requires its own preregistration under frozen semantics.
   Establishes that previously valid authority artifacts (expired, revoked, consumed, or out-of-epoch) cannot regain causal effect under replay.
 
 * **SIR-3 — Partial Provenance Forgery Resistance**
-  **Status:** **UNBLOCKED / NEXT**
-  Tests resistance to near-valid authority chains, including incomplete, mixed, or laundered provenance artifacts.
+  **Status:** **CLOSED — POSITIVE**
+  Establishes that authority artifacts assembled from partially valid or laundered provenance cannot produce causal effects under the tested adversarial model.
+
+  **Preregistration note (non-normative):** SIR-3 preregistration hash was computed with the `PREREGISTRATION_HASH` field set to the literal sentinel `[SELF-REFERENTIAL]`.
 
 * **SIR-4 — Evaluator Pressure and Flooding Resistance**
   **Status:** **PLANNED**
@@ -226,7 +228,7 @@ Phase VII results do **not** license claims of:
 
 ## One-Sentence Phase Summary (Updated)
 
-**Axionic Phase VII evaluates whether the agent ontology fixed by RSA-PoC can survive authorized discontinuity and adversarial imitation without collapsing authority into narrative continuity; ASI is CLOSED — POSITIVE, SIR-0 through SIR-2 are CLOSED — POSITIVE, and SIR-3 proceeds under a clarified counterfeit-authority roadmap.**
+**Axionic Phase VII evaluates whether the agent ontology fixed by RSA-PoC can survive authorized discontinuity and adversarial imitation without collapsing authority into narrative continuity; ASI is CLOSED — POSITIVE, and SIR-0 through SIR-3 are CLOSED — POSITIVE, with SIR-4 planned under a verifier-pressure hazard class.**
 
 ---
 
