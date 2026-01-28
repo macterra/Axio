@@ -1,0 +1,10 @@
+{
+    "delegation_id": "DEL-A-E{epoch}",
+    "root_signer_id": "Root_Authority",
+    "delegate_signer_id": "Delegate_Authority_A",
+    "scope_set": [
+        "SCOPE/ENV/SHORTCUT_UNLOCK",
+        "SCOPE/ENV/TRAVERSE_N5"
+    ],
+    "_comment": "Legitimate delegation template. Epoch placeholder {epoch} replaced at runtime with 0 or 1."
+}

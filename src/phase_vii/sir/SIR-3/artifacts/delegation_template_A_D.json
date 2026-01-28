@@ -1,0 +1,9 @@
+{
+    "delegation_id": "DEL-A-D-E{epoch}",
+    "root_signer_id": "Root_Authority",
+    "delegate_signer_id": "Delegate_Authority_A",
+    "scope_set": [
+        "SCOPE/ENV/SHORTCUT_UNLOCK"
+    ],
+    "_comment": "Condition D variant: restricted scope_set (SHORTCUT_UNLOCK only). Used to test scope laundering."
+}

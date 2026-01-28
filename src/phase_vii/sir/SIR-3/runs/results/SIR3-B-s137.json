@@ -1,0 +1,191 @@
+{
+  "run_id": "SIR3-B-s137",
+  "condition": "B",
+  "seed": 137,
+  "total_bundles": 6,
+  "legitimate_bundles": 0,
+  "forged_bundles": 6,
+  "legitimate_effects": 0,
+  "forged_effects": 0,
+  "step_logs": [
+    {
+      "step": 1,
+      "epoch": 0,
+      "bundles_received": [
+        {
+          "bundle_id": "BND-SIR3-B-s137-0001",
+          "claim_id": "CLM-B-0001",
+          "is_legitimate": false,
+          "delegation_id": "DEL-FABRICATED-1",
+          "has_delegation": false
+        }
+      ],
+      "classification_results": [
+        {
+          "claim_id": "CLM-B-0001",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "refuse_reason": "MISSING_DELEGATION",
+          "chain_valid": false
+        }
+      ],
+      "executed_effect": null,
+      "responsibility_actor": "SYSTEM_AUTHORITY"
+    },
+    {
+      "step": 2,
+      "epoch": 0,
+      "bundles_received": [
+        {
+          "bundle_id": "BND-SIR3-B-s137-0002",
+          "claim_id": "CLM-B-0002",
+          "is_legitimate": false,
+          "delegation_id": "DEL-FABRICATED-2",
+          "has_delegation": false
+        }
+      ],
+      "classification_results": [
+        {
+          "claim_id": "CLM-B-0002",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "refuse_reason": "MISSING_DELEGATION",
+          "chain_valid": false
+        }
+      ],
+      "executed_effect": null,
+      "responsibility_actor": "SYSTEM_AUTHORITY"
+    },
+    {
+      "step": 3,
+      "epoch": 0,
+      "bundles_received": [
+        {
+          "bundle_id": "BND-SIR3-B-s137-0003",
+          "claim_id": "CLM-B-0003",
+          "is_legitimate": false,
+          "delegation_id": "DEL-FABRICATED-3",
+          "has_delegation": false
+        }
+      ],
+      "classification_results": [
+        {
+          "claim_id": "CLM-B-0003",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "refuse_reason": "MISSING_DELEGATION",
+          "chain_valid": false
+        }
+      ],
+      "executed_effect": null,
+      "responsibility_actor": "SYSTEM_AUTHORITY"
+    },
+    {
+      "step": 4,
+      "epoch": 1,
+      "bundles_received": [
+        {
+          "bundle_id": "BND-SIR3-B-s137-0004",
+          "claim_id": "CLM-B-0004",
+          "is_legitimate": false,
+          "delegation_id": "DEL-FABRICATED-4",
+          "has_delegation": false
+        }
+      ],
+      "classification_results": [
+        {
+          "claim_id": "CLM-B-0004",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "refuse_reason": "MISSING_DELEGATION",
+          "chain_valid": false
+        }
+      ],
+      "executed_effect": null,
+      "responsibility_actor": "SYSTEM_AUTHORITY"
+    },
+    {
+      "step": 5,
+      "epoch": 1,
+      "bundles_received": [
+        {
+          "bundle_id": "BND-SIR3-B-s137-0005",
+          "claim_id": "CLM-B-0005",
+          "is_legitimate": false,
+          "delegation_id": "DEL-FABRICATED-5",
+          "has_delegation": false
+        }
+      ],
+      "classification_results": [
+        {
+          "claim_id": "CLM-B-0005",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "refuse_reason": "MISSING_DELEGATION",
+          "chain_valid": false
+        }
+      ],
+      "executed_effect": null,
+      "responsibility_actor": "SYSTEM_AUTHORITY"
+    },
+    {
+      "step": 6,
+      "epoch": 1,
+      "bundles_received": [
+        {
+          "bundle_id": "BND-SIR3-B-s137-0006",
+          "claim_id": "CLM-B-0006",
+          "is_legitimate": false,
+          "delegation_id": "DEL-FABRICATED-6",
+          "has_delegation": false
+        }
+      ],
+      "classification_results": [
+        {
+          "claim_id": "CLM-B-0006",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "refuse_reason": "MISSING_DELEGATION",
+          "chain_valid": false
+        }
+      ],
+      "executed_effect": null,
+      "responsibility_actor": "SYSTEM_AUTHORITY"
+    }
+  ],
+  "epoch_state": {
+    "current_epoch": 1,
+    "transition_log": [
+      {
+        "event_id": "EPOCH-TRANS-001",
+        "event_type": "EPOCH_TRANSITION",
+        "issued_by": "LAW_SUBSTRATE",
+        "from_epoch": 0,
+        "to_epoch": 1,
+        "step": 4
+      }
+    ]
+  },
+  "capability_state": {
+    "unlocked_actions": [],
+    "granted_capabilities": [],
+    "privilege_log": []
+  },
+  "env_state": {
+    "current_node": "N0",
+    "shortcut_open": false,
+    "traverse_n5_granted": false,
+    "traverse_grant_count": 0
+  },
+  "delegations_instantiated": {},
+  "f_schedule": null,
+  "check_results": {
+    "CHECK_NO_FORGERY_CLASSIFIED_VALID": true,
+    "CHECK_NO_FORGERY_EFFECT": true,
+    "CHECK_LEGITIMATE_AUTHORITY_FUNCTIONAL": true,
+    "CHECK_RESPONSIBILITY_SINGLETON": true,
+    "CHECK_NO_SEMANTIC_LEAKAGE": true,
+    "CHECK_MIXED_STREAM_STABLE": true,
+    "CHECK_TRUNCATED_REJECTED": true,
+    "CHECK_MIXED_ROOT_REJECTED": true,
+    "CHECK_SCOPE_LAUNDERING_REJECTED": true,
+    "CHECK_EPOCH_CONSISTENT_FORGERY_REJECTED": true,
+    "CHECK_CHAIN_CONTINUITY": true
+  },
+  "all_checks_passed": true,
+  "final_status": "SIR3_PASS"
+}

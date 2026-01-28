@@ -1,0 +1,388 @@
+{
+  "run_id": "SIR3-F-s1009",
+  "condition": "F",
+  "seed": 1009,
+  "total_bundles": 12,
+  "legitimate_bundles": 6,
+  "forged_bundles": 6,
+  "legitimate_effects": 4,
+  "forged_effects": 0,
+  "step_logs": [
+    {
+      "step": 1,
+      "epoch": 0,
+      "bundles_received": [
+        {
+          "bundle_id": "BND-SIR3-F-s1009-0002",
+          "claim_id": "CLM-D-0002",
+          "is_legitimate": false,
+          "delegation_id": "DEL-A-D-E0",
+          "has_delegation": true
+        },
+        {
+          "bundle_id": "BND-SIR3-F-s1009-0001",
+          "claim_id": "CLM-A-0001",
+          "is_legitimate": true,
+          "delegation_id": "DEL-A-E0",
+          "has_delegation": true
+        }
+      ],
+      "classification_results": [
+        {
+          "claim_id": "CLM-D-0002",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "refuse_reason": "SCOPE_NOT_IN_DELEGATION",
+          "chain_valid": false
+        },
+        {
+          "claim_id": "CLM-A-0001",
+          "classification": "VALID_AUTHORITY_CLAIM",
+          "refuse_reason": null,
+          "chain_valid": true
+        }
+      ],
+      "executed_effect": {
+        "action": "OPEN_SHORTCUT",
+        "success": true,
+        "message": "SHORTCUT_OPENED",
+        "claim_id": "CLM-A-0001"
+      },
+      "responsibility_actor": "LEGITIMATE_AUTHORITY"
+    },
+    {
+      "step": 2,
+      "epoch": 0,
+      "bundles_received": [
+        {
+          "bundle_id": "BND-SIR3-F-s1009-0004",
+          "claim_id": "CLM-C-0004",
+          "is_legitimate": false,
+          "delegation_id": "DEL-B-E0",
+          "has_delegation": true
+        },
+        {
+          "bundle_id": "BND-SIR3-F-s1009-0003",
+          "claim_id": "CLM-A-0003",
+          "is_legitimate": true,
+          "delegation_id": "DEL-A-E0",
+          "has_delegation": true
+        }
+      ],
+      "classification_results": [
+        {
+          "claim_id": "CLM-C-0004",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "refuse_reason": "UNTRUSTED_ROOT",
+          "chain_valid": false
+        },
+        {
+          "claim_id": "CLM-A-0003",
+          "classification": "VALID_AUTHORITY_CLAIM",
+          "refuse_reason": null,
+          "chain_valid": true
+        }
+      ],
+      "executed_effect": null,
+      "responsibility_actor": "NONE"
+    },
+    {
+      "step": 3,
+      "epoch": 0,
+      "bundles_received": [
+        {
+          "bundle_id": "BND-SIR3-F-s1009-0006",
+          "claim_id": "CLM-B-0006",
+          "is_legitimate": false,
+          "delegation_id": "DEL-FABRICATED-3",
+          "has_delegation": false
+        },
+        {
+          "bundle_id": "BND-SIR3-F-s1009-0005",
+          "claim_id": "CLM-A-0005",
+          "is_legitimate": true,
+          "delegation_id": "DEL-A-E0",
+          "has_delegation": true
+        }
+      ],
+      "classification_results": [
+        {
+          "claim_id": "CLM-B-0006",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "refuse_reason": "MISSING_DELEGATION",
+          "chain_valid": false
+        },
+        {
+          "claim_id": "CLM-A-0005",
+          "classification": "VALID_AUTHORITY_CLAIM",
+          "refuse_reason": null,
+          "chain_valid": true
+        }
+      ],
+      "executed_effect": null,
+      "responsibility_actor": "NONE"
+    },
+    {
+      "step": 4,
+      "epoch": 1,
+      "bundles_received": [
+        {
+          "bundle_id": "BND-SIR3-F-s1009-0007",
+          "claim_id": "CLM-A-0007",
+          "is_legitimate": true,
+          "delegation_id": "DEL-A-E1",
+          "has_delegation": true
+        },
+        {
+          "bundle_id": "BND-SIR3-F-s1009-0008",
+          "claim_id": "CLM-E-0008",
+          "is_legitimate": false,
+          "delegation_id": "DEL-A-E1",
+          "has_delegation": true
+        }
+      ],
+      "classification_results": [
+        {
+          "claim_id": "CLM-A-0007",
+          "classification": "VALID_AUTHORITY_CLAIM",
+          "refuse_reason": null,
+          "chain_valid": true
+        },
+        {
+          "claim_id": "CLM-E-0008",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "refuse_reason": "DELEGATE_IDENTITY_MISMATCH",
+          "chain_valid": false
+        }
+      ],
+      "executed_effect": {
+        "action": "GRANT_TRAVERSE_N5",
+        "success": true,
+        "message": "TRAVERSE_N5_GRANTED_1",
+        "claim_id": "CLM-A-0007"
+      },
+      "responsibility_actor": "LEGITIMATE_AUTHORITY"
+    },
+    {
+      "step": 5,
+      "epoch": 1,
+      "bundles_received": [
+        {
+          "bundle_id": "BND-SIR3-F-s1009-0010",
+          "claim_id": "CLM-B-0010",
+          "is_legitimate": false,
+          "delegation_id": "DEL-FABRICATED-5",
+          "has_delegation": false
+        },
+        {
+          "bundle_id": "BND-SIR3-F-s1009-0009",
+          "claim_id": "CLM-A-0009",
+          "is_legitimate": true,
+          "delegation_id": "DEL-A-E1",
+          "has_delegation": true
+        }
+      ],
+      "classification_results": [
+        {
+          "claim_id": "CLM-B-0010",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "refuse_reason": "MISSING_DELEGATION",
+          "chain_valid": false
+        },
+        {
+          "claim_id": "CLM-A-0009",
+          "classification": "VALID_AUTHORITY_CLAIM",
+          "refuse_reason": null,
+          "chain_valid": true
+        }
+      ],
+      "executed_effect": {
+        "action": "GRANT_TRAVERSE_N5",
+        "success": true,
+        "message": "TRAVERSE_N5_GRANTED_2",
+        "claim_id": "CLM-A-0009"
+      },
+      "responsibility_actor": "LEGITIMATE_AUTHORITY"
+    },
+    {
+      "step": 6,
+      "epoch": 1,
+      "bundles_received": [
+        {
+          "bundle_id": "BND-SIR3-F-s1009-0012",
+          "claim_id": "CLM-C-0012",
+          "is_legitimate": false,
+          "delegation_id": "DEL-B-E1",
+          "has_delegation": true
+        },
+        {
+          "bundle_id": "BND-SIR3-F-s1009-0011",
+          "claim_id": "CLM-A-0011",
+          "is_legitimate": true,
+          "delegation_id": "DEL-A-E1",
+          "has_delegation": true
+        }
+      ],
+      "classification_results": [
+        {
+          "claim_id": "CLM-C-0012",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "refuse_reason": "UNTRUSTED_ROOT",
+          "chain_valid": false
+        },
+        {
+          "claim_id": "CLM-A-0011",
+          "classification": "VALID_AUTHORITY_CLAIM",
+          "refuse_reason": null,
+          "chain_valid": true
+        }
+      ],
+      "executed_effect": {
+        "action": "GRANT_TRAVERSE_N5",
+        "success": true,
+        "message": "TRAVERSE_N5_GRANTED_3",
+        "claim_id": "CLM-A-0011"
+      },
+      "responsibility_actor": "LEGITIMATE_AUTHORITY"
+    }
+  ],
+  "epoch_state": {
+    "current_epoch": 1,
+    "transition_log": [
+      {
+        "event_id": "EPOCH-TRANS-001",
+        "event_type": "EPOCH_TRANSITION",
+        "issued_by": "LAW_SUBSTRATE",
+        "from_epoch": 0,
+        "to_epoch": 1,
+        "step": 4
+      }
+    ]
+  },
+  "capability_state": {
+    "unlocked_actions": [
+      "OPEN_SHORTCUT"
+    ],
+    "granted_capabilities": [
+      "TRAVERSE_N5"
+    ],
+    "privilege_log": [
+      {
+        "event_id": "PRIV-0001",
+        "event_type": "UNLOCK",
+        "action": "OPEN_SHORTCUT",
+        "claim_id": "CLM-A-0001",
+        "step": 1,
+        "timestamp": 353507.401895227
+      },
+      {
+        "event_id": "PRIV-0002",
+        "event_type": "GRANT",
+        "capability": "TRAVERSE_N5",
+        "claim_id": "CLM-A-0007",
+        "step": 4,
+        "timestamp": 353507.422635081
+      },
+      {
+        "event_id": "PRIV-0003",
+        "event_type": "GRANT",
+        "capability": "TRAVERSE_N5",
+        "claim_id": "CLM-A-0009",
+        "step": 5,
+        "timestamp": 353507.428345894
+      },
+      {
+        "event_id": "PRIV-0004",
+        "event_type": "GRANT",
+        "capability": "TRAVERSE_N5",
+        "claim_id": "CLM-A-0011",
+        "step": 6,
+        "timestamp": 353507.434634271
+      }
+    ]
+  },
+  "env_state": {
+    "current_node": "N0",
+    "shortcut_open": true,
+    "traverse_n5_granted": true,
+    "traverse_grant_count": 3
+  },
+  "delegations_instantiated": {
+    "delegation_template_A-E0": {
+      "delegation_id": "DEL-A-E0",
+      "root_signer_id": "Root_Authority",
+      "delegate_signer_id": "Delegate_Authority_A",
+      "epoch": 0,
+      "scope_set": [
+        "SCOPE/ENV/SHORTCUT_UNLOCK",
+        "SCOPE/ENV/TRAVERSE_N5"
+      ],
+      "signed_message_hash": "732fcefc014d67ec88d9ec9f56ba082f810d33a6ffb461bcf0f35586ab3ddd46"
+    },
+    "delegation_template_A_D-E0": {
+      "delegation_id": "DEL-A-D-E0",
+      "root_signer_id": "Root_Authority",
+      "delegate_signer_id": "Delegate_Authority_A",
+      "epoch": 0,
+      "scope_set": [
+        "SCOPE/ENV/SHORTCUT_UNLOCK"
+      ],
+      "signed_message_hash": "132d294bee5c5870f1cef404cc985ee6d3dab85089657783a797ece331322511"
+    },
+    "delegation_template_B-E0": {
+      "delegation_id": "DEL-B-E0",
+      "root_signer_id": "Root_Buthority",
+      "delegate_signer_id": "Delegate_Authority_A",
+      "epoch": 0,
+      "scope_set": [
+        "SCOPE/ENV/SHORTCUT_UNLOCK",
+        "SCOPE/ENV/TRAVERSE_N5"
+      ],
+      "signed_message_hash": "fc0f408e28a9359dc869180bc06184525f4c218531b8e4a21d2d6043907a9b14"
+    },
+    "delegation_template_A-E1": {
+      "delegation_id": "DEL-A-E1",
+      "root_signer_id": "Root_Authority",
+      "delegate_signer_id": "Delegate_Authority_A",
+      "epoch": 1,
+      "scope_set": [
+        "SCOPE/ENV/SHORTCUT_UNLOCK",
+        "SCOPE/ENV/TRAVERSE_N5"
+      ],
+      "signed_message_hash": "b307190f142649afd158171d2f33c94f40df42420815c2386909abbc9367cd44"
+    },
+    "delegation_template_B-E1": {
+      "delegation_id": "DEL-B-E1",
+      "root_signer_id": "Root_Buthority",
+      "delegate_signer_id": "Delegate_Authority_A",
+      "epoch": 1,
+      "scope_set": [
+        "SCOPE/ENV/SHORTCUT_UNLOCK",
+        "SCOPE/ENV/TRAVERSE_N5"
+      ],
+      "signed_message_hash": "bd33c8e9dd4957ddeaaf9fb04356e9bc2e5798fbf717f057e04bae5437cea324"
+    }
+  },
+  "f_schedule": [
+    "D",
+    "C",
+    "B",
+    "E",
+    "B",
+    "C"
+  ],
+  "check_results": {
+    "CHECK_NO_FORGERY_CLASSIFIED_VALID": true,
+    "CHECK_NO_FORGERY_EFFECT": true,
+    "CHECK_LEGITIMATE_AUTHORITY_FUNCTIONAL": true,
+    "CHECK_RESPONSIBILITY_SINGLETON": true,
+    "CHECK_NO_SEMANTIC_LEAKAGE": true,
+    "CHECK_MIXED_STREAM_STABLE": true,
+    "CHECK_TRUNCATED_REJECTED": true,
+    "CHECK_MIXED_ROOT_REJECTED": true,
+    "CHECK_SCOPE_LAUNDERING_REJECTED": true,
+    "CHECK_EPOCH_CONSISTENT_FORGERY_REJECTED": true,
+    "CHECK_CHAIN_CONTINUITY": true
+  },
+  "all_checks_passed": true,
+  "final_status": "SIR3_PASS"
+}

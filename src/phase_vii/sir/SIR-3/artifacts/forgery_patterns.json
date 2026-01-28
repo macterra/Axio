@@ -1,0 +1,67 @@
+{
+    "forgery_patterns": {
+        "B": {
+            "name": "Truncated Provenance",
+            "description": "Missing delegation artifact",
+            "construction": {
+                "delegation": null,
+                "claim_signer": "Delegate_Authority_A",
+                "delegation_id": "DEL-FABRICATED-{step}",
+                "expected_refuse_reason": "MISSING_DELEGATION"
+            }
+        },
+        "C": {
+            "name": "Mixed-Root Assembly (Untrusted Root)",
+            "description": "Valid delegation from untrusted root",
+            "construction": {
+                "delegation_template": "delegation_template_B",
+                "claim_signer": "Delegate_Authority_A",
+                "expected_refuse_reason": "UNTRUSTED_ROOT"
+            }
+        },
+        "D": {
+            "name": "Scope Laundering",
+            "description": "Claim scope not in delegation scope_set",
+            "construction": {
+                "delegation_template": "delegation_template_A_D",
+                "claim_signer": "Delegate_Authority_A",
+                "claim_scope": "SCOPE/ENV/TRAVERSE_N5",
+                "expected_refuse_reason": "SCOPE_NOT_IN_DELEGATION"
+            }
+        },
+        "E": {
+            "name": "Epoch-Consistent Forgery",
+            "description": "Wrong delegate identity (delegation for A, claim by B)",
+            "construction": {
+                "delegation_template": "delegation_template_A",
+                "claim_signer": "Delegate_Authority_B",
+                "expected_refuse_reason": "DELEGATE_IDENTITY_MISMATCH"
+            }
+        }
+    },
+    "condition_f": {
+        "description": "Mixed Stream - interleaves legitimate and forged bundles",
+        "base_rotation": [
+            "B",
+            "C",
+            "D",
+            "E",
+            "B",
+            "C"
+        ],
+        "permutation_algorithm": "Fisher-Yates shuffle",
+        "prng": "SIR-2 frozen PRNG (Python random.Random with seed)",
+        "arrival_order_rule": "Determined by PRNG per step: shuffle([legitimate, forged])"
+    },
+    "prng_specification": {
+        "implementation": "Python random.Random",
+        "seeding": "random.Random(seed) where seed ∈ [41, 137, 1009]",
+        "permutation_procedure": [
+            "1. Initialize PRNG with seed",
+            "2. Apply Fisher-Yates to base_rotation: [B, C, D, E, B, C]",
+            "3. For each step i (1-6), forgery_type = permuted_rotation[i-1]",
+            "4. For arrival order: PRNG.shuffle([0, 1]) where 0=legitimate, 1=forged"
+        ]
+    },
+    "_comment": "Deterministic forgery construction rules for SIR-3. All forgeries have valid signatures but fail global provenance integrity."
+}

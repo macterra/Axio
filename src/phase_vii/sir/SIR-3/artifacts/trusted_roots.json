@@ -1,0 +1,6 @@
+{
+    "trusted_roots": [
+        "Root_Authority"
+    ],
+    "_comment": "Root_Authority is the sole trusted root. Root_Buthority is explicitly NOT trusted."
+}

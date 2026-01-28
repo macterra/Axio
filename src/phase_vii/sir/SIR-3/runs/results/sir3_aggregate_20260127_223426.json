@@ -1,0 +1,388 @@
+{
+  "experiment_id": "PHASE-VII-SIR3-PARTIAL-PROVENANCE-FORGERY-AND-AUTHORITY-LAUNDERING-1",
+  "timestamp": "2026-01-27T22:34:26.275928",
+  "total_runs": 18,
+  "passed_runs": 18,
+  "failed_runs": 0,
+  "overall_status": "SIR3_PASS",
+  "run_summaries": [
+    {
+      "run_id": "SIR3-A-s41",
+      "condition": "A",
+      "seed": 41,
+      "legitimate_effects": 4,
+      "forged_effects": 0,
+      "final_status": "SIR3_PASS",
+      "check_results": {
+        "CHECK_NO_FORGERY_CLASSIFIED_VALID": true,
+        "CHECK_NO_FORGERY_EFFECT": true,
+        "CHECK_LEGITIMATE_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_RESPONSIBILITY_SINGLETON": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true,
+        "CHECK_MIXED_STREAM_STABLE": true,
+        "CHECK_TRUNCATED_REJECTED": true,
+        "CHECK_MIXED_ROOT_REJECTED": true,
+        "CHECK_SCOPE_LAUNDERING_REJECTED": true,
+        "CHECK_EPOCH_CONSISTENT_FORGERY_REJECTED": true,
+        "CHECK_CHAIN_CONTINUITY": true
+      }
+    },
+    {
+      "run_id": "SIR3-A-s137",
+      "condition": "A",
+      "seed": 137,
+      "legitimate_effects": 4,
+      "forged_effects": 0,
+      "final_status": "SIR3_PASS",
+      "check_results": {
+        "CHECK_NO_FORGERY_CLASSIFIED_VALID": true,
+        "CHECK_NO_FORGERY_EFFECT": true,
+        "CHECK_LEGITIMATE_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_RESPONSIBILITY_SINGLETON": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true,
+        "CHECK_MIXED_STREAM_STABLE": true,
+        "CHECK_TRUNCATED_REJECTED": true,
+        "CHECK_MIXED_ROOT_REJECTED": true,
+        "CHECK_SCOPE_LAUNDERING_REJECTED": true,
+        "CHECK_EPOCH_CONSISTENT_FORGERY_REJECTED": true,
+        "CHECK_CHAIN_CONTINUITY": true
+      }
+    },
+    {
+      "run_id": "SIR3-A-s1009",
+      "condition": "A",
+      "seed": 1009,
+      "legitimate_effects": 4,
+      "forged_effects": 0,
+      "final_status": "SIR3_PASS",
+      "check_results": {
+        "CHECK_NO_FORGERY_CLASSIFIED_VALID": true,
+        "CHECK_NO_FORGERY_EFFECT": true,
+        "CHECK_LEGITIMATE_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_RESPONSIBILITY_SINGLETON": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true,
+        "CHECK_MIXED_STREAM_STABLE": true,
+        "CHECK_TRUNCATED_REJECTED": true,
+        "CHECK_MIXED_ROOT_REJECTED": true,
+        "CHECK_SCOPE_LAUNDERING_REJECTED": true,
+        "CHECK_EPOCH_CONSISTENT_FORGERY_REJECTED": true,
+        "CHECK_CHAIN_CONTINUITY": true
+      }
+    },
+    {
+      "run_id": "SIR3-B-s41",
+      "condition": "B",
+      "seed": 41,
+      "legitimate_effects": 0,
+      "forged_effects": 0,
+      "final_status": "SIR3_PASS",
+      "check_results": {
+        "CHECK_NO_FORGERY_CLASSIFIED_VALID": true,
+        "CHECK_NO_FORGERY_EFFECT": true,
+        "CHECK_LEGITIMATE_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_RESPONSIBILITY_SINGLETON": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true,
+        "CHECK_MIXED_STREAM_STABLE": true,
+        "CHECK_TRUNCATED_REJECTED": true,
+        "CHECK_MIXED_ROOT_REJECTED": true,
+        "CHECK_SCOPE_LAUNDERING_REJECTED": true,
+        "CHECK_EPOCH_CONSISTENT_FORGERY_REJECTED": true,
+        "CHECK_CHAIN_CONTINUITY": true
+      }
+    },
+    {
+      "run_id": "SIR3-B-s137",
+      "condition": "B",
+      "seed": 137,
+      "legitimate_effects": 0,
+      "forged_effects": 0,
+      "final_status": "SIR3_PASS",
+      "check_results": {
+        "CHECK_NO_FORGERY_CLASSIFIED_VALID": true,
+        "CHECK_NO_FORGERY_EFFECT": true,
+        "CHECK_LEGITIMATE_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_RESPONSIBILITY_SINGLETON": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true,
+        "CHECK_MIXED_STREAM_STABLE": true,
+        "CHECK_TRUNCATED_REJECTED": true,
+        "CHECK_MIXED_ROOT_REJECTED": true,
+        "CHECK_SCOPE_LAUNDERING_REJECTED": true,
+        "CHECK_EPOCH_CONSISTENT_FORGERY_REJECTED": true,
+        "CHECK_CHAIN_CONTINUITY": true
+      }
+    },
+    {
+      "run_id": "SIR3-B-s1009",
+      "condition": "B",
+      "seed": 1009,
+      "legitimate_effects": 0,
+      "forged_effects": 0,
+      "final_status": "SIR3_PASS",
+      "check_results": {
+        "CHECK_NO_FORGERY_CLASSIFIED_VALID": true,
+        "CHECK_NO_FORGERY_EFFECT": true,
+        "CHECK_LEGITIMATE_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_RESPONSIBILITY_SINGLETON": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true,
+        "CHECK_MIXED_STREAM_STABLE": true,
+        "CHECK_TRUNCATED_REJECTED": true,
+        "CHECK_MIXED_ROOT_REJECTED": true,
+        "CHECK_SCOPE_LAUNDERING_REJECTED": true,
+        "CHECK_EPOCH_CONSISTENT_FORGERY_REJECTED": true,
+        "CHECK_CHAIN_CONTINUITY": true
+      }
+    },
+    {
+      "run_id": "SIR3-C-s41",
+      "condition": "C",
+      "seed": 41,
+      "legitimate_effects": 0,
+      "forged_effects": 0,
+      "final_status": "SIR3_PASS",
+      "check_results": {
+        "CHECK_NO_FORGERY_CLASSIFIED_VALID": true,
+        "CHECK_NO_FORGERY_EFFECT": true,
+        "CHECK_LEGITIMATE_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_RESPONSIBILITY_SINGLETON": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true,
+        "CHECK_MIXED_STREAM_STABLE": true,
+        "CHECK_TRUNCATED_REJECTED": true,
+        "CHECK_MIXED_ROOT_REJECTED": true,
+        "CHECK_SCOPE_LAUNDERING_REJECTED": true,
+        "CHECK_EPOCH_CONSISTENT_FORGERY_REJECTED": true,
+        "CHECK_CHAIN_CONTINUITY": true
+      }
+    },
+    {
+      "run_id": "SIR3-C-s137",
+      "condition": "C",
+      "seed": 137,
+      "legitimate_effects": 0,
+      "forged_effects": 0,
+      "final_status": "SIR3_PASS",
+      "check_results": {
+        "CHECK_NO_FORGERY_CLASSIFIED_VALID": true,
+        "CHECK_NO_FORGERY_EFFECT": true,
+        "CHECK_LEGITIMATE_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_RESPONSIBILITY_SINGLETON": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true,
+        "CHECK_MIXED_STREAM_STABLE": true,
+        "CHECK_TRUNCATED_REJECTED": true,
+        "CHECK_MIXED_ROOT_REJECTED": true,
+        "CHECK_SCOPE_LAUNDERING_REJECTED": true,
+        "CHECK_EPOCH_CONSISTENT_FORGERY_REJECTED": true,
+        "CHECK_CHAIN_CONTINUITY": true
+      }
+    },
+    {
+      "run_id": "SIR3-C-s1009",
+      "condition": "C",
+      "seed": 1009,
+      "legitimate_effects": 0,
+      "forged_effects": 0,
+      "final_status": "SIR3_PASS",
+      "check_results": {
+        "CHECK_NO_FORGERY_CLASSIFIED_VALID": true,
+        "CHECK_NO_FORGERY_EFFECT": true,
+        "CHECK_LEGITIMATE_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_RESPONSIBILITY_SINGLETON": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true,
+        "CHECK_MIXED_STREAM_STABLE": true,
+        "CHECK_TRUNCATED_REJECTED": true,
+        "CHECK_MIXED_ROOT_REJECTED": true,
+        "CHECK_SCOPE_LAUNDERING_REJECTED": true,
+        "CHECK_EPOCH_CONSISTENT_FORGERY_REJECTED": true,
+        "CHECK_CHAIN_CONTINUITY": true
+      }
+    },
+    {
+      "run_id": "SIR3-D-s41",
+      "condition": "D",
+      "seed": 41,
+      "legitimate_effects": 0,
+      "forged_effects": 0,
+      "final_status": "SIR3_PASS",
+      "check_results": {
+        "CHECK_NO_FORGERY_CLASSIFIED_VALID": true,
+        "CHECK_NO_FORGERY_EFFECT": true,
+        "CHECK_LEGITIMATE_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_RESPONSIBILITY_SINGLETON": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true,
+        "CHECK_MIXED_STREAM_STABLE": true,
+        "CHECK_TRUNCATED_REJECTED": true,
+        "CHECK_MIXED_ROOT_REJECTED": true,
+        "CHECK_SCOPE_LAUNDERING_REJECTED": true,
+        "CHECK_EPOCH_CONSISTENT_FORGERY_REJECTED": true,
+        "CHECK_CHAIN_CONTINUITY": true
+      }
+    },
+    {
+      "run_id": "SIR3-D-s137",
+      "condition": "D",
+      "seed": 137,
+      "legitimate_effects": 0,
+      "forged_effects": 0,
+      "final_status": "SIR3_PASS",
+      "check_results": {
+        "CHECK_NO_FORGERY_CLASSIFIED_VALID": true,
+        "CHECK_NO_FORGERY_EFFECT": true,
+        "CHECK_LEGITIMATE_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_RESPONSIBILITY_SINGLETON": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true,
+        "CHECK_MIXED_STREAM_STABLE": true,
+        "CHECK_TRUNCATED_REJECTED": true,
+        "CHECK_MIXED_ROOT_REJECTED": true,
+        "CHECK_SCOPE_LAUNDERING_REJECTED": true,
+        "CHECK_EPOCH_CONSISTENT_FORGERY_REJECTED": true,
+        "CHECK_CHAIN_CONTINUITY": true
+      }
+    },
+    {
+      "run_id": "SIR3-D-s1009",
+      "condition": "D",
+      "seed": 1009,
+      "legitimate_effects": 0,
+      "forged_effects": 0,
+      "final_status": "SIR3_PASS",
+      "check_results": {
+        "CHECK_NO_FORGERY_CLASSIFIED_VALID": true,
+        "CHECK_NO_FORGERY_EFFECT": true,
+        "CHECK_LEGITIMATE_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_RESPONSIBILITY_SINGLETON": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true,
+        "CHECK_MIXED_STREAM_STABLE": true,
+        "CHECK_TRUNCATED_REJECTED": true,
+        "CHECK_MIXED_ROOT_REJECTED": true,
+        "CHECK_SCOPE_LAUNDERING_REJECTED": true,
+        "CHECK_EPOCH_CONSISTENT_FORGERY_REJECTED": true,
+        "CHECK_CHAIN_CONTINUITY": true
+      }
+    },
+    {
+      "run_id": "SIR3-E-s41",
+      "condition": "E",
+      "seed": 41,
+      "legitimate_effects": 0,
+      "forged_effects": 0,
+      "final_status": "SIR3_PASS",
+      "check_results": {
+        "CHECK_NO_FORGERY_CLASSIFIED_VALID": true,
+        "CHECK_NO_FORGERY_EFFECT": true,
+        "CHECK_LEGITIMATE_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_RESPONSIBILITY_SINGLETON": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true,
+        "CHECK_MIXED_STREAM_STABLE": true,
+        "CHECK_TRUNCATED_REJECTED": true,
+        "CHECK_MIXED_ROOT_REJECTED": true,
+        "CHECK_SCOPE_LAUNDERING_REJECTED": true,
+        "CHECK_EPOCH_CONSISTENT_FORGERY_REJECTED": true,
+        "CHECK_CHAIN_CONTINUITY": true
+      }
+    },
+    {
+      "run_id": "SIR3-E-s137",
+      "condition": "E",
+      "seed": 137,
+      "legitimate_effects": 0,
+      "forged_effects": 0,
+      "final_status": "SIR3_PASS",
+      "check_results": {
+        "CHECK_NO_FORGERY_CLASSIFIED_VALID": true,
+        "CHECK_NO_FORGERY_EFFECT": true,
+        "CHECK_LEGITIMATE_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_RESPONSIBILITY_SINGLETON": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true,
+        "CHECK_MIXED_STREAM_STABLE": true,
+        "CHECK_TRUNCATED_REJECTED": true,
+        "CHECK_MIXED_ROOT_REJECTED": true,
+        "CHECK_SCOPE_LAUNDERING_REJECTED": true,
+        "CHECK_EPOCH_CONSISTENT_FORGERY_REJECTED": true,
+        "CHECK_CHAIN_CONTINUITY": true
+      }
+    },
+    {
+      "run_id": "SIR3-E-s1009",
+      "condition": "E",
+      "seed": 1009,
+      "legitimate_effects": 0,
+      "forged_effects": 0,
+      "final_status": "SIR3_PASS",
+      "check_results": {
+        "CHECK_NO_FORGERY_CLASSIFIED_VALID": true,
+        "CHECK_NO_FORGERY_EFFECT": true,
+        "CHECK_LEGITIMATE_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_RESPONSIBILITY_SINGLETON": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true,
+        "CHECK_MIXED_STREAM_STABLE": true,
+        "CHECK_TRUNCATED_REJECTED": true,
+        "CHECK_MIXED_ROOT_REJECTED": true,
+        "CHECK_SCOPE_LAUNDERING_REJECTED": true,
+        "CHECK_EPOCH_CONSISTENT_FORGERY_REJECTED": true,
+        "CHECK_CHAIN_CONTINUITY": true
+      }
+    },
+    {
+      "run_id": "SIR3-F-s41",
+      "condition": "F",
+      "seed": 41,
+      "legitimate_effects": 4,
+      "forged_effects": 0,
+      "final_status": "SIR3_PASS",
+      "check_results": {
+        "CHECK_NO_FORGERY_CLASSIFIED_VALID": true,
+        "CHECK_NO_FORGERY_EFFECT": true,
+        "CHECK_LEGITIMATE_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_RESPONSIBILITY_SINGLETON": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true,
+        "CHECK_MIXED_STREAM_STABLE": true,
+        "CHECK_TRUNCATED_REJECTED": true,
+        "CHECK_MIXED_ROOT_REJECTED": true,
+        "CHECK_SCOPE_LAUNDERING_REJECTED": true,
+        "CHECK_EPOCH_CONSISTENT_FORGERY_REJECTED": true,
+        "CHECK_CHAIN_CONTINUITY": true
+      }
+    },
+    {
+      "run_id": "SIR3-F-s137",
+      "condition": "F",
+      "seed": 137,
+      "legitimate_effects": 4,
+      "forged_effects": 0,
+      "final_status": "SIR3_PASS",
+      "check_results": {
+        "CHECK_NO_FORGERY_CLASSIFIED_VALID": true,
+        "CHECK_NO_FORGERY_EFFECT": true,
+        "CHECK_LEGITIMATE_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_RESPONSIBILITY_SINGLETON": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true,
+        "CHECK_MIXED_STREAM_STABLE": true,
+        "CHECK_TRUNCATED_REJECTED": true,
+        "CHECK_MIXED_ROOT_REJECTED": true,
+        "CHECK_SCOPE_LAUNDERING_REJECTED": true,
+        "CHECK_EPOCH_CONSISTENT_FORGERY_REJECTED": true,
+        "CHECK_CHAIN_CONTINUITY": true
+      }
+    },
+    {
+      "run_id": "SIR3-F-s1009",
+      "condition": "F",
+      "seed": 1009,
+      "legitimate_effects": 4,
+      "forged_effects": 0,
+      "final_status": "SIR3_PASS",
+      "check_results": {
+        "CHECK_NO_FORGERY_CLASSIFIED_VALID": true,
+        "CHECK_NO_FORGERY_EFFECT": true,
+        "CHECK_LEGITIMATE_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_RESPONSIBILITY_SINGLETON": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true,
+        "CHECK_MIXED_STREAM_STABLE": true,
+        "CHECK_TRUNCATED_REJECTED": true,
+        "CHECK_MIXED_ROOT_REJECTED": true,
+        "CHECK_SCOPE_LAUNDERING_REJECTED": true,
+        "CHECK_EPOCH_CONSISTENT_FORGERY_REJECTED": true,
+        "CHECK_CHAIN_CONTINUITY": true
+      }
+    }
+  ]
+}

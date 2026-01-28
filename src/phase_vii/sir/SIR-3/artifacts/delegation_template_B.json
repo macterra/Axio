@@ -1,0 +1,10 @@
+{
+    "delegation_id": "DEL-B-E{epoch}",
+    "root_signer_id": "Root_Buthority",
+    "delegate_signer_id": "Delegate_Authority_A",
+    "scope_set": [
+        "SCOPE/ENV/SHORTCUT_UNLOCK",
+        "SCOPE/ENV/TRAVERSE_N5"
+    ],
+    "_comment": "Adversarial delegation template. Signed by untrusted root (Root_Buthority). Used for mixed-root attacks (Condition C)."
+}
