@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency IX.3 — Structural Authority Resistance (SIR) - Axionic Agency Lab</title>
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../" class="nav-brand">
+            <img src="../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href=".././">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
+
+<h1 id="axionic-agency-ix.3-structural-authority-resistance-sir">Axionic
+Agency IX.3 — Structural Authority Resistance (SIR)</h1>
+<p><em>A Structural Account of Authority Enforcement and Memory Without
+Intelligence</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026.01.26</p>
+<h2 id="abstract">Abstract</h2>
+<p>This technical note reports the completed results of
+<strong>Structural Authority Resistance (SIR)</strong> through
+<strong>SIR-2 v0.3</strong>, a preregistered experimental program within
+<strong>Axionic Phase VIIb</strong> that evaluates whether
+<strong>authority claims</strong> can be observed, enforced, and
+invalidated under adversarial pressure using <strong>purely structural
+mechanisms</strong>. Across three experiments (SIR-0 through SIR-2), SIR
+tests total pre-cognitive classification, effect-level enforcement, and
+<strong>temporal authority binding</strong> via epoching, revocation,
+and per-claim consumption. All experiments passed under frozen semantics
+and verifier enforcement. The results establish that unauthorized,
+stale, revoked, consumed, or out-of-epoch authority artifacts cannot
+produce causal effects <strong>without intelligence-based defenses,
+behavioral heuristics, or semantic inference</strong>. SIR makes no
+claims about replay-equivalent forgery, cryptographic compromise, or
+real-world governance sufficiency; those hazards are explicitly deferred
+to later stages.</p>
+<h2 id="problem-definition">1. Problem Definition</h2>
+<h3 id="authority-under-adversarial-pressure">1.1 Authority Under
+Adversarial Pressure</h3>
+<p>Most systems that speak of “authority,” “control,” or “alignment”
+implicitly rely on <strong>behavioral detection</strong>,
+<strong>semantic interpretation</strong>, or <strong>learned refusal
+policies</strong> to defend against misuse. These approaches blur
+enforcement with cognition and render auditability fragile.</p>
+<p>SIR isolates a narrower, prior question:</p>
+<blockquote>
+<p>Can authority be protected <em>structurally</em>—by classification,
+gating, and law-state—without requiring the system to understand intent,
+meaning, or deception?</p>
+</blockquote>
+<p>Once authority is externalized (APIs, credentials, governance rules),
+adversaries need not persuade an agent. They need only to
+<strong>replay, interleave, or stale-reuse authority
+artifacts</strong>.</p>
+<p>SIR treats authority as a <strong>mechanically inspectable
+relation</strong>, not a behavioral property, and asks whether that
+relation can be made causally binding under pressure.</p>
+<h3 id="failure-modes-targeted">1.2 Failure Modes Targeted</h3>
+<p>SIR is designed to detect the following failure modes:</p>
+<ul>
+<li><strong>Implicit authority:</strong> commands take effect without
+explicit authorization.</li>
+<li><strong>Semantic leakage:</strong> authority metadata contaminates
+agent cognition.</li>
+<li><strong>Unauthorized effects:</strong> invalid claims produce
+actions, state changes, or future privilege.</li>
+<li><strong>Replay activation:</strong> previously valid authority
+artifacts regain effect.</li>
+<li><strong>Temporal smearing:</strong> authority validity is treated as
+timeless or heuristic.</li>
+<li><strong>Saturation collapse:</strong> adversarial volume suppresses
+legitimate authority.</li>
+</ul>
+<p>Any of these constitutes SIR failure.</p>
+<h2 id="fixed-assumptions-and-scope">2. Fixed Assumptions and Scope</h2>
+<h3 id="inherited-ontology-frozen">2.1 Inherited Ontology (Frozen)</h3>
+<p>SIR inherits, without reinterpretation, the ontology fixed by
+<strong>RSA-PoC v4.4</strong>:</p>
+<ul>
+<li>A <strong>Minimal Viable Reflective Sovereign Agent (MVRSA)</strong>
+exists.</li>
+<li>Agent cognition is <strong>structurally separable</strong> from
+authority enforcement.</li>
+<li>Justification traces are causally load-bearing.</li>
+<li>Responsibility attribution is mechanically inspectable.</li>
+</ul>
+<p>SIR does <strong>not</strong> test whether this ontology defines
+agency. It assumes it does.</p>
+<h3 id="law-substrate-binding">2.2 Law Substrate (Binding)</h3>
+<p>For SIR purposes, <em>law</em> is treated as a <strong>persistent,
+verifier-bound substrate</strong>—including trusted roots, rule schemas,
+provenance certificates, and audit logs—that exists outside the agent
+and is not subject to agent modification.</p>
+<p>Authority is evaluated <strong>relative to this substrate</strong>,
+not relative to behavior, reward, or narrative coherence.</p>
+<h3 id="explicit-exclusions">2.3 Explicit Exclusions</h3>
+<p>SIR does <strong>not</strong> test:</p>
+<ul>
+<li>cryptographic key compromise,</li>
+<li>replay-equivalent artifact mutation,</li>
+<li>partial provenance splicing,</li>
+<li>denial-of-service resilience,</li>
+<li>long-horizon governance adequacy.</li>
+</ul>
+<p>These are not omissions; they are scope boundaries.</p>
+<h2 id="conserved-quantity">3. Conserved Quantity</h2>
+<p>The conserved quantity throughout SIR is:</p>
+<blockquote>
+<p><strong>Authority bound to causal effect under law, not
+cognition</strong></p>
+</blockquote>
+<p>Authority is not a prediction, reward, or emergent regularity. It is
+a <strong>normative binding relation</strong> that must be:</p>
+<ul>
+<li><strong>explicit</strong> (arrives via a claim interface),</li>
+<li><strong>classifiable</strong> before cognition,</li>
+<li><strong>enforceable</strong> at the effect level,</li>
+<li><strong>stateful</strong> across time,</li>
+<li><strong>auditable</strong> without interpretation.</li>
+</ul>
+<p>Authority is operationalized via an explicit enforcement gate and a
+singleton responsibility attribution per step.</p>
+<h2 id="experimental-methodology">4. Experimental Methodology</h2>
+<h3 id="preregistration-discipline">4.1 Preregistration Discipline</h3>
+<p>All SIR experiments were preregistered with:</p>
+<ul>
+<li>frozen specifications,</li>
+<li>frozen component hashes,</li>
+<li>fixed seeds,</li>
+<li>deterministic verifiers,</li>
+<li>and binding failure taxonomies.</li>
+</ul>
+<p>Post-hoc interpretation is disallowed. Any deviation yields
+<code>INVALID_RUN</code>.</p>
+<h3 id="calibration-environment">4.2 Calibration Environment</h3>
+<p>All experiments were executed in <strong>CalibMazeV010</strong>, a
+minimal discrete environment:</p>
+<ul>
+<li>6-node directed graph (N0–N5),</li>
+<li>discrete action space,</li>
+<li>fixed horizons (K = 5–6),</li>
+<li>authority-gated irreversible effects.</li>
+</ul>
+<p>The environment is deliberately simple to ensure that all normative
+effects are <strong>structurally attributable</strong>, not behaviorally
+inferred.</p>
+<h2 id="sir-experiment-ladder-and-results">5. SIR Experiment Ladder and
+Results</h2>
+<h3 id="sir-0-adversarial-instrumentation-calibration">5.1 SIR-0 —
+Adversarial Instrumentation Calibration</h3>
+<p><strong>Research Question:</strong> Can adversarial authority claims
+be structurally observed and classified <strong>without semantic leakage
+or responsibility ambiguity</strong>?</p>
+<p><strong>Method:</strong> Inject legitimate, adversarial, malformed,
+and ambiguous claims via an explicit authority interface while measuring
+classification completeness and timing.</p>
+<p><strong>Results (SIR-0 v0.4.1)</strong> <em>(minor parameter and
+reporting patch to v0.4; no normative changes)</em>:</p>
+<ul>
+<li>All claims received exactly one classification.</li>
+<li>Classification occurred prior to agent justification.</li>
+<li>No authority metadata entered cognition.</li>
+<li>Mixed and adversarial streams did not degrade discrimination.</li>
+</ul>
+<p><strong>Classification:</strong> <code>SIR0_PASS</code>.</p>
+<p><strong>Contribution:</strong> Established that adversarial authority
+is <strong>measurable</strong> and that classification machinery is
+non-contaminating.</p>
+<h3 id="sir-1-unauthorized-effect-prevention">5.2 SIR-1 — Unauthorized
+Effect Prevention</h3>
+<p><strong>Research Question:</strong> Can unauthorized authority claims
+be prevented from producing <strong>any causal effects</strong>, while
+legitimate authority remains functional under pressure?</p>
+<p><strong>Method:</strong> Introduce a post-justify <strong>enforcement
+gate</strong> controlling irreversible, authority-gated actions.</p>
+<p><strong>Results (SIR-1 v0.1):</strong></p>
+<ul>
+<li>Unauthorized claims produced no actions, state changes, or
+privilege.</li>
+<li>Legitimate claims produced intended effects.</li>
+<li>50:1 adversarial floods did not starve fresh authority.</li>
+<li>Refusal was explicit, non-blocking, and attributable to system
+authority.</li>
+</ul>
+<p><strong>Classification:</strong> <code>SIR1_PASS</code>.</p>
+<p><strong>Contribution:</strong> Demonstrated that authority
+enforcement is <strong>causally binding</strong>, not merely
+observational.</p>
+<h3 id="sir-2-replay-staleness-and-consumption-resistance">5.3 SIR-2 —
+Replay, Staleness, and Consumption Resistance</h3>
+<p><strong>Research Question:</strong> Can authority artifacts that were
+previously valid be prevented from producing effects once they are
+<strong>stale, revoked, consumed, or out-of-epoch</strong>, even under
+adversarial replay pressure?</p>
+<p><strong>New Mechanisms Introduced:</strong></p>
+<ul>
+<li><strong>Epoching:</strong> law-defined authority validity
+periods.</li>
+<li><strong>Revocation:</strong> actor-level invalidation via law
+command.</li>
+<li><strong>Consumption:</strong> per-claim, effect-linked single-use
+semantics.</li>
+<li><strong>Temporal windows:</strong> explicit step-based validity
+bounds.</li>
+</ul>
+<p><strong>Conditions Tested:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Condition</th>
+<th>Target Failure Mode</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>Fresh authority across epoch</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>Replay after consumption</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>Replay after revocation</td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>Cross-epoch saturation flood</td>
+</tr>
+<tr class="odd">
+<td>E</td>
+<td>Epoch boundary razor</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Results (SIR-2 v0.3):</strong></p>
+<ul>
+<li>No stale, revoked, consumed, or out-of-epoch claim produced any
+effect.</li>
+<li>Fresh authority remained functional in all conditions.</li>
+<li>Invalidation precedence was correctly logged under overlap.</li>
+<li>No authority starvation occurred under 50:1 floods.</li>
+<li>Classifier/gate divergence behaved as designed under law-state
+changes.</li>
+</ul>
+<p><strong>Classification:</strong> <code>SIR2_PASS</code>.</p>
+<p><strong>Contribution:</strong> Established that authority can have
+<strong>external, law-bound memory</strong> without cognition.</p>
+<h2 id="core-results">6. Core Results</h2>
+<h3 id="positive-results">6.1 Positive Results</h3>
+<p>Across SIR-0 through SIR-2, SIR establishes that:</p>
+<ol type="1">
+<li>Authority claims can be <strong>totally classified</strong>
+pre-cognitively.</li>
+<li>Unauthorized authority cannot produce causal effects.</li>
+<li>Authority validity can be <strong>stateful over time</strong>.</li>
+<li>Replay attacks fail structurally once authority is invalidated.</li>
+<li>Saturation does not override legitimate authority.</li>
+<li>No intelligence, learning, or semantic inference is required.</li>
+</ol>
+<h3 id="negative-results-explicit">6.2 Negative Results (Explicit)</h3>
+<p>SIR does <strong>not</strong> establish:</p>
+<ul>
+<li>replay-equivalent mutation resistance,</li>
+<li>provenance splicing resistance,</li>
+<li>key compromise resilience,</li>
+<li>denial-of-service robustness,</li>
+<li>multi-agent coordination safety.</li>
+</ul>
+<p>These are deferred by design.</p>
+<h2 id="failure-semantics-and-closure">7. Failure Semantics and
+Closure</h2>
+<h3 id="closure-criteria">7.1 Closure Criteria</h3>
+<p>SIR-2 closes positive if and only if:</p>
+<ol type="1">
+<li>All preregistered conditions pass.</li>
+<li>All verifier checks pass.</li>
+<li>No behavioral or narrative inference is required.</li>
+<li>No regression of SIR-0 or SIR-1 invariants occurs.</li>
+</ol>
+<p>All criteria were satisfied.</p>
+<h3 id="sir-closure-status-to-date">7.2 SIR Closure Status (to
+Date)</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Experiment</th>
+<th>Version</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SIR-0</td>
+<td>v0.4.1</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>SIR-1</td>
+<td>v0.1</td>
+<td>PASS</td>
+</tr>
+<tr class="odd">
+<td>SIR-2</td>
+<td>v0.3</td>
+<td>PASS</td>
+</tr>
+</tbody>
+</table>
+<h2 id="boundary-conditions-and-deferred-hazards">8. Boundary Conditions
+and Deferred Hazards</h2>
+<h3 id="credential-replay-vs.-replay-equivalent-artifacts">8.1
+Credential Replay vs. Replay-Equivalent Artifacts</h3>
+<p>SIR-2 tests <strong>credential replay</strong>: the same
+cryptographically authenticated authority artifact presented again
+without re-issuance. No assumptions are made about transport-level
+packet identity. Structural mutation of otherwise equivalent artifacts
+is deferred to <strong>SIR-3</strong>.</p>
+<h3 id="cryptographic-custody">8.2 Cryptographic Custody</h3>
+<p>SIR assumes trusted roots remain uncompromised. Custody failure is
+out of scope.</p>
+<h2 id="implications-strictly-limited">9. Implications (Strictly
+Limited)</h2>
+<p>SIR establishes <strong>necessary structural conditions</strong> for
+authority resistance. It does not establish sufficiency for real-world
+governance or alignment.</p>
+<p>What is established is more basic:</p>
+<blockquote>
+<p>Authority can be <strong>seen</strong>, <strong>stopped</strong>, and
+<strong>remembered</strong> without intelligence.</p>
+</blockquote>
+<h2 id="conclusion">10. Conclusion</h2>
+<p>SIR demonstrates that authority protection need not rely on
+behavioral detection, semantic interpretation, or learning. Through
+purely structural mechanisms—classification, enforcement, and law-bound
+memory—unauthorized authority claims can be prevented from producing
+effects, even under adversarial pressure.</p>
+<p>The remaining question is not whether authority can be enforced, but
+whether it can be defended against increasingly sophisticated structural
+attacks.</p>
+<p>That question belongs to <strong>SIR-3</strong>.</p>
+<h2 id="appendix-a-experiment-status">Appendix A — Experiment
+Status</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Experiment</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SIR-0</td>
+<td>CLOSED — PASS</td>
+</tr>
+<tr class="even">
+<td>SIR-1</td>
+<td>CLOSED — PASS</td>
+</tr>
+<tr class="odd">
+<td>SIR-2</td>
+<td>CLOSED — PASS</td>
+</tr>
+</tbody>
+</table>
+<h2 id="appendix-b-licensed-claims">Appendix B — Licensed Claims</h2>
+<p><strong>SIR-0:</strong> Adversarial authority claims are structurally
+observable and classifiable without semantic leakage.</p>
+<p><strong>SIR-1:</strong> Unauthorized authority cannot produce
+actions, state changes, or authority transfer under the tested
+model.</p>
+<p><strong>SIR-2:</strong> Previously valid authority artifacts cannot
+regain causal effect once stale, revoked, consumed, or out-of-epoch
+under the tested adversarial model.</p>
+<p><strong>End of Axionic Agency IX.3 — Structural Authority Resistance
+(SIR)</strong></p>
+
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
