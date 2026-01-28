@@ -1,34 +1,38 @@
 # **Authority State Transformation Specification (ASTS)**
 
-- **Version:** v0.2 (Clarification Revision)
-- **Program:** Axionic Phase VIII — Reflective Sovereign Agent
+- **Version:** v0.2 (**Frozen**)
+- **Program:** Axionic Phase VIII — GSA-PoC
 - **Author:** David McFadzean
+- **Collaborators:** Morningstar, Vesper
 - **Date:** 2026-01-28
-- **Status:** Normative draft — preregistration candidate
+- **Status:** Normative, preregistration-ready
 
 ---
 
 ## 0. Scope and Role of This Specification
 
-This document defines the **formal object** manipulated by Phase VIII systems:
-the **Authority State**, and the **lawful transformations** that may be applied to it.
+This document defines the **formal authority kernel** used in Axionic Phase VIII.
 
-ASTS does **not**:
+ASTS defines:
 
-* define values,
-* define semantics,
-* define goals,
-* define optimization criteria,
-* define deployment assumptions.
+* what **authority** is,
+* how authority is **represented**,
+* how authority may be **transformed**, and
+* how authority failure modes are **classified**.
 
-ASTS defines only:
+ASTS does **not** define:
 
-> **What authority is, how it is represented, and how it may change without loss of sovereignty, evaluability, or responsibility.**
+* values,
+* semantics,
+* intent,
+* optimization,
+* learning,
+* deployment assumptions,
+* or authority encoding mechanisms.
 
-ASTS deliberately defines a **sovereign execution kernel**, not a full autonomous agent.
-Any ambiguity regarding intent, meaning, or prioritization is explicitly externalized.
+ASTS specifies a **sovereign execution kernel**, not an autonomous agent.
 
-All Phase VIII experiments, threat models, and roadmaps **must conform** to this specification.
+Any Phase VIII experiment, implementation, or claim **must conform** to this specification.
 
 ---
 
@@ -39,7 +43,7 @@ All Phase VIII experiments, threat models, and roadmaps **must conform** to this
 **Authority** is the *lawful capacity to bind action* within a defined scope, under explicit provenance and responsibility.
 
 Authority is **structural**, not semantic.
-Authority does not encode intent, preference, meaning, or utility.
+Authority does not encode meaning, preference, utility, or intent.
 
 ---
 
@@ -51,9 +55,9 @@ An **Authority State (AS)** is a complete, inspectable representation of:
 2. what scopes they bind,
 3. what transformations are permitted,
 4. what conflicts are registered,
-5. what transitions are pending, blocked, or expired.
+5. what transitions are pending, blocked, expired, or revoked.
 
-The Authority State is the **only object** consulted by the agent when determining whether an action is lawful.
+The Authority State is the **only object** consulted when determining action admissibility.
 
 ---
 
@@ -63,20 +67,19 @@ At all times:
 
 > **No action may be taken unless it is attributable to at least one explicit, active authority present in the Authority State.**
 
-No fallback, default, inferred, or implicit authority exists.
+There is no implicit, default, inferred, or fallback authority.
 
 ---
 
 ## 2. Authority State Structure
 
-An Authority State consists of the following components.
-
 ### 2.1 Authority Records
 
 Each **Authority Record (AR)** contains:
 
-* **Authority ID** (globally unique, immutable)
-* **Origin Reference** (cryptographically verifiable external grant)
+* **AuthorityID** (opaque, globally unique)
+* **HolderID** (opaque)
+* **Origin Reference** (cryptographically verifiable)
 * **Scope Descriptor**
 * **Activation Status**
 * **Temporal Bounds**
@@ -84,7 +87,7 @@ Each **Authority Record (AR)** contains:
 * **Conflict Set**
 
 Authority Records are **immutable**.
-All changes occur only through lawful state transformation.
+All changes occur only via lawful state transformation.
 
 ---
 
@@ -92,30 +95,21 @@ All changes occur only through lawful state transformation.
 
 A **Scope Descriptor** defines the *exact structural domain* an authority may bind.
 
-Scopes are **structural partitions evaluated by exact match only**.
-
 Permitted scope forms are restricted to:
 
 1. **Resource-Mapped Scopes**
 
-   * Explicit resource identifiers (e.g., memory regions, files, APIs, actuators)
-   * Explicit access modes (e.g., read, write, execute)
-   * No subsumption, pattern matching, or inference
+   * Explicit `(ResourceID, Operation)` tuples
+   * Explicit enumeration only
 
 2. **Token-Exact Capability Scopes**
 
-   * Opaque, atomic capability tokens
+   * Opaque atomic tokens
    * Exact equality comparison only
-   * No hierarchy, ontology, or interpretation
 
-The following are **explicitly forbidden** as scopes:
+> **Structural scope evaluation is limited to equality comparison on atomic (ResourceID, Operation) tuples and membership testing in explicitly enumerated finite sets. No wildcards, predicates, ranges, type hierarchies, or inferred relationships are permitted.**
 
-* natural language strings,
-* semantic categories,
-* inferred domains,
-* descriptive labels requiring interpretation.
-
-If determining whether an action falls within a scope would require interpretation, the scope is invalid.
+If determining whether an action falls within a scope requires interpretation, the scope is invalid.
 
 ---
 
@@ -123,10 +117,10 @@ If determining whether an action falls within a scope would require interpretati
 
 Each authority has exactly one status:
 
-* **Active**
-* **Suspended**
-* **Expired**
-* **Revoked**
+* **ACTIVE**
+* **SUSPENDED**
+* **EXPIRED**
+* **REVOKED**
 
 Status changes require lawful transformation.
 
@@ -136,13 +130,10 @@ Status changes require lawful transformation.
 
 Authorities may include:
 
-* **Start Epoch**
-* **End Epoch**
-* **Revalidation Requirements**
+* **StartEpoch**
+* **ExpiryEpoch** (or null)
 
-Expired authorities **must not** bind action.
-
-Temporal expiry is mechanical and non-discretionary.
+Expiry is mechanical and non-discretionary.
 
 ---
 
@@ -165,7 +156,7 @@ Creates a new Authority Record.
 
 **Requirements:**
 
-* cryptographically verifiable Origin Reference,
+* cryptographically valid Origin Reference,
 * defined Scope Descriptor,
 * defined Temporal Bounds,
 * defined Permitted Transformation Set.
@@ -185,12 +176,6 @@ Suspension must specify:
 * affected scope,
 * duration or reactivation condition.
 
-Suspension is used for:
-
-* conflict containment,
-* governance transition,
-* lawful non-action.
-
 ---
 
 ### 3.3 Resume Authority
@@ -209,35 +194,33 @@ Revocation is irreversible.
 
 ### 3.5 Expire Authority
 
-Automatic transition based on temporal bounds.
+Automatic transition when `currentEpoch > expiryEpoch`.
 
-No judgment or interpretation is involved.
+No interpretation is involved.
 
 ---
 
 ### 3.6 Narrow Scope
 
-Reduces the binding scope of an authority.
+Reduces an authority’s scope by removing explicitly enumerated elements.
 
-Scope widening, merging, or synthesis is **not permitted**.
+Scope widening, merging, or synthesis is forbidden.
 
 ---
 
 ### 3.7 Register Conflict (Structural Detection)
 
-A **Conflict** is detected and registered when:
+A conflict is registered when:
 
-> Two or more active authorities claim incompatible access over overlapping structural scope elements (e.g., exclusive write access to the same Resource ID).
+> Two or more ACTIVE authorities claim incompatible access over overlapping structural scope elements.
 
-Conflict detection is **purely structural** and does not rely on semantic interpretation.
+Conflict detection is **purely structural**.
 
 Conflict registration:
 
 * does not resolve the conflict,
 * blocks contested actions,
-* preserves all involved authorities until further lawful transformation.
-
-Failure to encode exclusivity upstream constitutes an external encoding failure, not an ASTS failure.
+* preserves all involved authorities until further transformation.
 
 ---
 
@@ -250,21 +233,29 @@ Conflicts may be resolved **only** via:
 * lawful expiry,
 * lawful scope narrowing.
 
-Authority merging, compromise, optimization, or synthesis is forbidden.
-
-Authority destruction is **internal**, **conservative**, and **safety-preserving**.
+Authority merging, compromise, prioritization, or optimization is forbidden.
 
 ---
 
-## 4. Authority Entropy (Explicit)
+## 4. Authority Entropy
 
 Authority surface area is **not conserved**.
 
-Under conflict, suspension, expiry, and revocation, the total binding authority available to the system is **monotonically non-increasing** unless replenished via external authority creation.
+Define:
 
-This **entropic decay of authority** is an expected and admissible outcome of deontological governance.
+* **Authority Surface Area (ASA):**
+  the number of `(Authority × Scope × Operation)` tuples that are:
 
-ASTS makes no guarantees of long-term liveness or usefulness.
+  * ACTIVE,
+  * non-conflicted,
+  * non-suspended.
+
+* **Authority Entropy Rate:**
+  `−ΔASA / Δt` (or per event).
+
+Authority entropy is an expected outcome of lawful conflict handling.
+
+ASTS makes **no liveness guarantees**.
 
 ---
 
@@ -272,11 +263,11 @@ ASTS makes no guarantees of long-term liveness or usefulness.
 
 An action is admissible iff:
 
-1. at least one **Active Authority** binds the action’s exact scope,
-2. no **Registered Conflict** blocks the action,
-3. no **Suspension** applies to the relevant scope.
+1. at least one ACTIVE authority binds the action’s exact scope,
+2. no registered conflict blocks the action,
+3. no suspension applies to the relevant scope.
 
-If these conditions are not met, the system must:
+If these conditions fail, the system must:
 
 * refuse action,
 * enter scoped suspension,
@@ -286,29 +277,20 @@ Inaction is a valid outcome.
 
 ---
 
-## 6. Outputs and Failure Modes
+## 6. Deadlock Taxonomy
 
-### 6.1 Admissible Outputs
+The following are lawful, classifiable outcomes:
 
-* Lawful Action
-* Scoped Suspension
-* Explicit Non-Action
-* Explicit Deadlock Declaration
+1. **Conflict Deadlock**
+   Mutually exclusive claims with no resolution authority.
 
-Each output must reference the Authority State snapshot used.
+2. **Governance Deadlock**
+   No authority exists that can modify authority structure.
 
----
+3. **Entropic Collapse**
+   Authority existed but was exhausted through lawful resolution.
 
-### 6.2 Failure Classifications
-
-* **UNATTRIBUTABLE_ACTION**
-* **IMPLICIT_AUTHORITY**
-* **HEURISTIC_OVERRIDE**
-* **NARRATIVE_RESOLUTION**
-* **STATE_CORRUPTION**
-* **SEMANTIC_SCOPE_EVALUATION**
-
-Any such failure invalidates the run.
+None of these constitute malformed input.
 
 ---
 
@@ -319,7 +301,7 @@ Every transformation must log:
 * prior Authority State hash,
 * transformation type,
 * triggering authority or origin,
-* affected Authority Records,
+* affected records,
 * resulting Authority State hash.
 
 Logs must support:
@@ -328,31 +310,29 @@ Logs must support:
 * counterfactual comparison,
 * rejection-path analysis.
 
-Human readability is not required at the kernel level; **deterministic inspectability is mandatory**.
-
 ---
 
 ## 8. Bounded Computation Constraint
 
-All Authority State evaluations must terminate.
+All evaluations must terminate.
 
-If evaluation cannot complete within bounded resources, the system must:
+If evaluation exceeds bounded resources, the system must:
 
-* preserve current Authority State,
+* preserve state,
 * refuse action,
-* emit explicit suspension or deadlock.
+* emit suspension or deadlock.
 
 Guessing is forbidden.
 
 ---
 
-## 9. Relationship to Phase VIII
+## 9. Governance Regress Bound
 
-ASTS defines the **grammar** of authority.
+No meta-level is privileged.
 
-Phase VIII governance ambitions that cannot be expressed using ASTS transformations are **out of scope** for sovereign agency.
+Governance actions on governance actions are permitted only insofar as they remain expressible within ASTS.
 
-This includes ambitions requiring interpretation, compromise, or optimization.
+Infinite regress terminates via **authority entropy** or **lawful deadlock**.
 
 ---
 
@@ -363,25 +343,97 @@ Phase VIII must terminate if ASTS cannot be implemented without:
 * semantic interpretation,
 * heuristic arbitration,
 * implicit authority creation,
-* loss of auditability,
-* or violation of authority entropy constraints.
+* loss of auditability.
 
-Such termination constitutes a valid negative result.
-
----
-
-## 11. Declaration
-
-This specification defines the minimal lawful structure for authority state and transformation under Axionic Phase VIII.
-
-No guarantees of usefulness are made.
-No guarantees of liveness are made.
-No deployment is implied.
-
-Only structural coherence is claimed.
+Such termination is a valid negative result.
 
 ---
 
-**End of Authority State Transformation Specification (ASTS v0.2)**
+## Appendix C — Canonical Representation and Hashing Rules
+
+**(Normative)**
+
+### C.1 Purpose
+
+This appendix specifies canonical representation rules to guarantee deterministic hashing, replay verification, and cross-implementation interoperability.
 
 ---
+
+### C.2 Canonical JSON Rules
+
+All ASTS structures are serialized as JSON (RFC 8259) with:
+
+1. UTF-8 encoding, no BOM
+2. No whitespace (minified)
+3. Integers only (no floats, no exponentials)
+4. Strings use shortest valid escape sequences
+5. Optional fields represented explicitly as `null`
+
+---
+
+### C.3 Ordering Requirements
+
+1. Object keys: lexicographically sorted by UTF-8 byte value
+2. Arrays with semantic order: preserved
+3. Arrays without semantic order: sorted lexicographically by canonical JSON form
+
+Sets are represented as sorted arrays.
+
+---
+
+### C.4 Type Encodings
+
+| ASTS Type   | JSON Representation                       |
+| ----------- | ----------------------------------------- |
+| Epoch       | Integer                                   |
+| ResourceID  | String (opaque)                           |
+| Operation   | String (opaque)                           |
+| HolderID    | String (opaque)                           |
+| AuthorityID | String (opaque)                           |
+| Scope       | Sorted array of `[ResourceID, Operation]` |
+| Expiry      | Integer or `null`                         |
+
+---
+
+### C.5 Canonical Structures
+
+**Authority Record**
+
+```json
+{"authorityId":"A1","epoch":3,"expiry":null,"holderId":"H1","scope":[["R1","WRITE"],["R2","READ"]]}
+```
+
+**Authority State**
+
+```json
+{"authorities":[...],"currentEpoch":3,"stateId":"..."}
+```
+
+---
+
+### C.6 Hash Computation
+
+1. Serialize to canonical JSON
+2. Encode as UTF-8 bytes
+3. Compute SHA-256
+4. Output lowercase hexadecimal
+
+---
+
+### C.7 Conformance
+
+An implementation conforms iff:
+
+1. Canonical output matches byte-for-byte
+2. Hash matches reference vectors
+3. Round-trip parsing preserves canonical equivalence
+
+---
+
+## Acknowledgments
+
+Appendix C (Canonical Representation and Hashing Rules) and the §2.2 structural boundary statement were developed in collaboration with **Morningstar**. Final integration, consistency checking, and validation were performed by **Vesper**.
+
+---
+
+**End of Authority State Transformation Specification (ASTS v0.2 — Frozen)**
