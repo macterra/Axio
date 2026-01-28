@@ -78,7 +78,7 @@ ASI-0 — Instrumentation Calibration        [CLOSED: PASS]
         ↓  (hard gate)
 VIIa  — Authorized Succession Integrity   [CLOSED: POSITIVE]
         ↓  (hard gate)
-VIIb  — Sovereignty Impersonation Resistance (SIR)  [UNBLOCKED]
+VIIb  — Sovereignty Impersonation Resistance (SIR)  [ACTIVE]
 ```
 
 **Global gating rule (binding):**
@@ -166,18 +166,23 @@ Each SIR experiment targets a **distinct counterfeit-authority hazard class**.
 Each requires its own preregistration under frozen semantics.
 
 * **SIR-0 — Adversarial Instrumentation Calibration**
+  **Status:** **CLOSED — POSITIVE**
   Establishes observability, classification, and auditability of adversarial authority claims without semantic leakage.
 
 * **SIR-1 — Unauthorized Authority Effect Prevention**
+  **Status:** **CLOSED — POSITIVE**
   Demonstrates that unauthorized authority claims cannot produce effects on action, state, or future authority under adversarial pressure.
 
 * **SIR-2 — Provenance Replay and Staleness Resistance**
-  Tests whether **previously valid authority artifacts** (e.g., expired, revoked, or out-of-epoch credentials) can be prevented from producing effects when replayed out of context.
+  **Status:** **CLOSED — POSITIVE**
+  Establishes that previously valid authority artifacts (expired, revoked, consumed, or out-of-epoch) cannot regain causal effect under replay.
 
 * **SIR-3 — Partial Provenance Forgery Resistance**
-  Tests resistance to **near-valid authority chains**, including incomplete, mixed, or laundered provenance artifacts designed to simulate legitimacy.
+  **Status:** **UNBLOCKED / NEXT**
+  Tests resistance to near-valid authority chains, including incomplete, mixed, or laundered provenance artifacts.
 
 * **SIR-4 — Evaluator Pressure and Flooding Resistance**
+  **Status:** **PLANNED**
   Tests whether verifier resource limits, ambiguity, or saturation pressure can induce acceptance, fallback, or responsibility smear.
 
 **Explicit exclusion (Binding):**
@@ -219,10 +224,10 @@ Phase VII results do **not** license claims of:
 
 ---
 
-## One-Sentence Phase Summary (Revised)
+## One-Sentence Phase Summary (Updated)
 
-**Axionic Phase VII evaluates whether the agent ontology fixed by RSA-PoC can survive authorized discontinuity and adversarial imitation without collapsing authority into narrative continuity; ASI is CLOSED — POSITIVE, and SIR proceeds under a clarified counterfeit-authority roadmap.**
+**Axionic Phase VII evaluates whether the agent ontology fixed by RSA-PoC can survive authorized discontinuity and adversarial imitation without collapsing authority into narrative continuity; ASI is CLOSED — POSITIVE, SIR-0 through SIR-2 are CLOSED — POSITIVE, and SIR-3 proceeds under a clarified counterfeit-authority roadmap.**
 
 ---
 
-**End of Reprinted Phase VII Roadmap (Revised, Normative)**
+**End of Phase VII Roadmap (Updated, Normative)**
