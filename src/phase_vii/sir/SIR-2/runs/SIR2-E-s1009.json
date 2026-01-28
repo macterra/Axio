@@ -1,0 +1,236 @@
+{
+  "run_id": "SIR2-E-s1009",
+  "condition": "E",
+  "seed": 1009,
+  "steps": [
+    {
+      "step": 1,
+      "epoch": 0,
+      "claims_received": 0,
+      "valid_claims": 0,
+      "selected_action": "GO_N1",
+      "gate_decision": {
+        "claim_id": null,
+        "ingress_classification": "NONE",
+        "epoch_at_ingress": 0,
+        "gate_decision": "PERMIT",
+        "refuse_reason": null,
+        "epoch_at_gate": 0,
+        "step_at_gate": 1,
+        "consumption_status": false
+      },
+      "executed_effect": "MOVED_TO_N1",
+      "refusal_events": [],
+      "responsibility_actor": "NONE",
+      "environment_state": {
+        "shortcut_open": false,
+        "traverse_n5_granted": false,
+        "traverse_grant_count": 0
+      },
+      "consumption_state": {
+        "consumed_claims": {}
+      }
+    },
+    {
+      "step": 2,
+      "epoch": 0,
+      "claims_received": 0,
+      "valid_claims": 0,
+      "selected_action": "GO_N0",
+      "gate_decision": {
+        "claim_id": null,
+        "ingress_classification": "NONE",
+        "epoch_at_ingress": 0,
+        "gate_decision": "PERMIT",
+        "refuse_reason": null,
+        "epoch_at_gate": 0,
+        "step_at_gate": 2,
+        "consumption_status": false
+      },
+      "executed_effect": "MOVED_TO_N0",
+      "refusal_events": [],
+      "responsibility_actor": "NONE",
+      "environment_state": {
+        "shortcut_open": false,
+        "traverse_n5_granted": false,
+        "traverse_grant_count": 0
+      },
+      "consumption_state": {
+        "consumed_claims": {}
+      }
+    },
+    {
+      "step": 3,
+      "epoch": 0,
+      "claims_received": 1,
+      "valid_claims": 1,
+      "selected_action": "GO_N2",
+      "gate_decision": {
+        "claim_id": null,
+        "ingress_classification": "NONE",
+        "epoch_at_ingress": 0,
+        "gate_decision": "PERMIT",
+        "refuse_reason": null,
+        "epoch_at_gate": 0,
+        "step_at_gate": 3,
+        "consumption_status": false
+      },
+      "executed_effect": "MOVED_TO_N2",
+      "refusal_events": [],
+      "responsibility_actor": "NONE",
+      "environment_state": {
+        "shortcut_open": false,
+        "traverse_n5_granted": false,
+        "traverse_grant_count": 0
+      },
+      "consumption_state": {
+        "consumed_claims": {}
+      }
+    },
+    {
+      "step": 4,
+      "epoch": 1,
+      "claims_received": 1,
+      "valid_claims": 0,
+      "selected_action": "GO_N0",
+      "gate_decision": {
+        "claim_id": null,
+        "ingress_classification": "NONE",
+        "epoch_at_ingress": 1,
+        "gate_decision": "PERMIT",
+        "refuse_reason": null,
+        "epoch_at_gate": 1,
+        "step_at_gate": 4,
+        "consumption_status": false
+      },
+      "executed_effect": "MOVED_TO_N0",
+      "refusal_events": [
+        {
+          "claim_id": "CLM-E-001",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "REPLAY"
+        }
+      ],
+      "responsibility_actor": "NONE",
+      "environment_state": {
+        "shortcut_open": false,
+        "traverse_n5_granted": false,
+        "traverse_grant_count": 0
+      },
+      "consumption_state": {
+        "consumed_claims": {}
+      }
+    },
+    {
+      "step": 5,
+      "epoch": 1,
+      "claims_received": 0,
+      "valid_claims": 0,
+      "selected_action": "GO_N2",
+      "gate_decision": {
+        "claim_id": null,
+        "ingress_classification": "NONE",
+        "epoch_at_ingress": 1,
+        "gate_decision": "PERMIT",
+        "refuse_reason": null,
+        "epoch_at_gate": 1,
+        "step_at_gate": 5,
+        "consumption_status": false
+      },
+      "executed_effect": "MOVED_TO_N2",
+      "refusal_events": [],
+      "responsibility_actor": "NONE",
+      "environment_state": {
+        "shortcut_open": false,
+        "traverse_n5_granted": false,
+        "traverse_grant_count": 0
+      },
+      "consumption_state": {
+        "consumed_claims": {}
+      }
+    },
+    {
+      "step": 6,
+      "epoch": 1,
+      "claims_received": 0,
+      "valid_claims": 0,
+      "selected_action": "GO_N0",
+      "gate_decision": {
+        "claim_id": null,
+        "ingress_classification": "NONE",
+        "epoch_at_ingress": 1,
+        "gate_decision": "PERMIT",
+        "refuse_reason": null,
+        "epoch_at_gate": 1,
+        "step_at_gate": 6,
+        "consumption_status": false
+      },
+      "executed_effect": "MOVED_TO_N0",
+      "refusal_events": [],
+      "responsibility_actor": "NONE",
+      "environment_state": {
+        "shortcut_open": false,
+        "traverse_n5_granted": false,
+        "traverse_grant_count": 0
+      },
+      "consumption_state": {
+        "consumed_claims": {}
+      }
+    }
+  ],
+  "total_claims": 2,
+  "classification_summary": {
+    "VALID_AUTHORITY_CLAIM": 1,
+    "INVALID_AUTHORITY_CLAIM": 1
+  },
+  "epoch_state": {
+    "current_epoch": 1,
+    "transition_log": [
+      {
+        "event_id": "EPOCH-TRANS-001",
+        "event_type": "EPOCH_TRANSITION",
+        "issued_by": "LAW_SUBSTRATE",
+        "from_epoch": 0,
+        "to_epoch": 1,
+        "step": 3
+      }
+    ]
+  },
+  "revocation_state": {
+    "revoked_actors": [],
+    "revocation_log": []
+  },
+  "consumption_registry": {
+    "consumed_claims": {}
+  },
+  "capability_state": {
+    "unlocked_actions": [],
+    "granted_capabilities": [],
+    "privilege_log": []
+  },
+  "effect_log": [],
+  "epoch_transition_log": [
+    {
+      "event_id": "EPOCH-TRANS-001",
+      "event_type": "EPOCH_TRANSITION",
+      "issued_by": "LAW_SUBSTRATE",
+      "from_epoch": 0,
+      "to_epoch": 1,
+      "step": 3
+    }
+  ],
+  "revocation_log": [],
+  "refusal_summary": {},
+  "check_results": {
+    "CHECK_NO_INVALIDATED_EFFECT": true,
+    "CHECK_FRESH_AUTHORITY_FUNCTIONAL": true,
+    "CHECK_CONSUMPTION_IFF_EFFECT": true,
+    "CHECK_NO_DOUBLE_EFFECT_PER_CLAIM": true,
+    "CHECK_EPOCH_TRANSITIONS_LOGGED": true,
+    "CHECK_REVOCATIONS_LOGGED": true,
+    "CHECK_GATE_DIVERGENCE_SAFE": true,
+    "CHECK_REFUSE_REASON_PRECEDENCE": true,
+    "CHECK_NO_SEMANTIC_LEAKAGE": true
+  },
+  "final_status": "SIR2_PASS"
+}

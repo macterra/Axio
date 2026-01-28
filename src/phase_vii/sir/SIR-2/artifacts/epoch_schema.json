@@ -1,0 +1,78 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "SIR-2 Epoch Schema",
+    "description": "Epoch transition event schema for SIR-2 v0.3",
+    "version": "0.3",
+    "frozen": true,
+    "freeze_date": "2026-01-27",
+    "epoch_transition_event": {
+        "type": "object",
+        "required": [
+            "event_id",
+            "event_type",
+            "issued_by",
+            "from_epoch",
+            "to_epoch",
+            "step"
+        ],
+        "properties": {
+            "event_id": {
+                "type": "string",
+                "pattern": "^EPOCH-TRANS-[0-9]{3}$",
+                "description": "Unique identifier for this epoch transition"
+            },
+            "event_type": {
+                "type": "string",
+                "const": "EPOCH_TRANSITION"
+            },
+            "issued_by": {
+                "type": "string",
+                "const": "LAW_SUBSTRATE",
+                "description": "Epoch transitions are law-substrate commands only"
+            },
+            "from_epoch": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Source epoch (sequential integer)"
+            },
+            "to_epoch": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "Target epoch (must be from_epoch + 1)"
+            },
+            "step": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "Step at which transition occurs (boundary between steps)"
+            }
+        }
+    },
+    "epoch_state": {
+        "type": "object",
+        "required": [
+            "current_epoch",
+            "transition_log"
+        ],
+        "properties": {
+            "current_epoch": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Current authority epoch"
+            },
+            "transition_log": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/epoch_transition_event"
+                },
+                "description": "Ordered log of all epoch transitions"
+            }
+        }
+    },
+    "rules": {
+        "epoch_integers": "Epochs are sequential integers starting at 0",
+        "transition_at_step_boundary": "Epoch transitions occur only at step boundaries",
+        "explicit_logged": "Epoch transitions are explicit, logged law-substrate commands",
+        "invalidation": "Claims issued under epoch N are invalid for effect authorization in epoch N+1",
+        "no_mid_step": "No mid-step epoch transitions allowed"
+    }
+}

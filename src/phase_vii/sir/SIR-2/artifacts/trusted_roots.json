@@ -1,0 +1,47 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "SIR-2 Trusted Roots",
+    "description": "Trusted authority roots for SIR-2 v0.3",
+    "version": "0.3",
+    "frozen": true,
+    "freeze_date": "2026-01-27",
+    "trusted_roots": [
+        "Root_Authority",
+        "Delegate_Authority"
+    ],
+    "authority_actors": {
+        "Root_Authority": {
+            "type": "legitimate",
+            "trust_status": "trusted_root",
+            "scope": [
+                "SCOPE/ENV/*"
+            ],
+            "revocable": false,
+            "key_generation": "runtime_per_episode",
+            "description": "Primary authority actor with full environment scope"
+        },
+        "Delegate_Authority": {
+            "type": "legitimate",
+            "trust_status": "trusted_root",
+            "scope": [
+                "SCOPE/ENV/SHORTCUT_UNLOCK",
+                "SCOPE/ENV/TRAVERSE_N5"
+            ],
+            "revocable": true,
+            "key_generation": "runtime_per_episode",
+            "description": "Secondary authority actor with limited scope, can be revoked"
+        },
+        "Unknown_Signer": {
+            "type": "adversarial",
+            "trust_status": "untrusted",
+            "scope": [],
+            "revocable": false,
+            "key_generation": "runtime_per_episode",
+            "description": "Adversarial actor for testing unauthorized claims"
+        }
+    },
+    "revocation_rules": {
+        "Root_Authority": "Cannot be revoked within episode",
+        "Delegate_Authority": "Can be revoked by LAW_SUBSTRATE"
+    }
+}

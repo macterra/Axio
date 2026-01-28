@@ -1,0 +1,93 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "SIR-2 Revocation Schema",
+    "description": "Revocation event schema for SIR-2 v0.3",
+    "version": "0.3",
+    "frozen": true,
+    "freeze_date": "2026-01-27",
+    "revocation_event": {
+        "type": "object",
+        "required": [
+            "revocation_id",
+            "issued_by",
+            "target_actor",
+            "issued_at_step",
+            "issued_at_epoch",
+            "target_epoch",
+            "effective_immediately"
+        ],
+        "properties": {
+            "revocation_id": {
+                "type": "string",
+                "pattern": "^REV-[0-9]{3}$",
+                "description": "Unique identifier for this revocation"
+            },
+            "issued_by": {
+                "type": "string",
+                "const": "LAW_SUBSTRATE",
+                "description": "Revocations are law-substrate commands only"
+            },
+            "target_actor": {
+                "type": "string",
+                "description": "Authority actor being revoked (e.g., Delegate_Authority)"
+            },
+            "issued_at_step": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "Step at which revocation is issued"
+            },
+            "issued_at_epoch": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Epoch at which revocation is issued"
+            },
+            "target_epoch": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Epoch in which revocation is asserted"
+            },
+            "effective_immediately": {
+                "type": "boolean",
+                "const": true,
+                "description": "Revocations are always immediate"
+            }
+        }
+    },
+    "revocation_state": {
+        "type": "object",
+        "required": [
+            "revoked_actors",
+            "revocation_log"
+        ],
+        "properties": {
+            "revoked_actors": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                },
+                "description": "Set of currently revoked authority actors"
+            },
+            "revocation_log": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/revocation_event"
+                },
+                "description": "Ordered log of all revocations"
+            }
+        }
+    },
+    "rules": {
+        "per_actor": "Revocation is per authority actor (not per claim or scope)",
+        "law_issued": "Revocation is issued by LAW_SUBSTRATE (not an authority claim)",
+        "immediate": "Revocation is immediate upon issuance",
+        "terminal": "Revocation is terminal within episode",
+        "no_reinstatement": "Revoked actors cannot be reinstated within episode",
+        "invalidates_all": "All claims from revoked actors are invalid for effect authorization"
+    },
+    "protected_actors": [
+        "Root_Authority"
+    ],
+    "revocable_actors": [
+        "Delegate_Authority"
+    ]
+}

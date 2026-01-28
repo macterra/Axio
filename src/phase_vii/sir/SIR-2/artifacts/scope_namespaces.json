@@ -1,0 +1,71 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "SIR-2 Scope Namespaces",
+    "description": "Scope namespace definitions for SIR-2 v0.3",
+    "version": "0.3",
+    "frozen": true,
+    "freeze_date": "2026-01-27",
+    "legitimate_namespaces": [
+        {
+            "prefix": "SCOPE/ENV",
+            "description": "Environment-affecting authority scopes",
+            "actors": [
+                "Root_Authority",
+                "Delegate_Authority"
+            ]
+        },
+        {
+            "prefix": "SCOPE/ENV/SHORTCUT_UNLOCK",
+            "description": "Authority to unlock shortcut path",
+            "actors": [
+                "Root_Authority",
+                "Delegate_Authority"
+            ],
+            "gated_action": "OPEN_SHORTCUT"
+        },
+        {
+            "prefix": "SCOPE/ENV/TRAVERSE_N5",
+            "description": "Authority to grant N5 traversal capability",
+            "actors": [
+                "Root_Authority",
+                "Delegate_Authority"
+            ],
+            "gated_action": "GRANT_TRAVERSE_N5"
+        }
+    ],
+    "adversarial_namespaces": [
+        {
+            "prefix": "SCOPE/ADV_B",
+            "description": "Adversarial B-series scopes (impersonation, capability mutation)",
+            "actors": [
+                "Unknown_Signer"
+            ]
+        },
+        {
+            "prefix": "SCOPE/ADV_B/SHORTCUT_UNLOCK",
+            "description": "Adversarial attempt to unlock shortcut",
+            "actors": [
+                "Unknown_Signer"
+            ]
+        },
+        {
+            "prefix": "SCOPE/ADV_B/CAPABILITY_GRANT",
+            "description": "Adversarial capability mutation attempt",
+            "actors": [
+                "Unknown_Signer"
+            ]
+        },
+        {
+            "prefix": "SCOPE/ADV_B/FLOOD",
+            "description": "Adversarial flood scope",
+            "actors": [
+                "Unknown_Signer"
+            ]
+        }
+    ],
+    "scope_rules": {
+        "legitimate_only": "Only legitimate scopes can authorize gated effects",
+        "adversarial_rejected": "Adversarial scopes are rejected at classification",
+        "scope_match_required": "Scope must match required scope for gated action"
+    }
+}

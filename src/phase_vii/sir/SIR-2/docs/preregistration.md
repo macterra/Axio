@@ -1,8 +1,8 @@
 # SIR-2 v0.3 Preregistration
 
 **Experiment ID**: `PHASE-VII-SIR2-REPLAY-STALENESS-CONSUMPTION-RESISTANCE-1`
-**Status**: DRAFT
-**Freeze Date**: (pending)
+**Status**: FROZEN
+**Freeze Date**: 2026-01-27
 **Prerequisites**:
 - SIR-0 v0.4.1 `SIR0_PASS` — CLOSED POSITIVE
 - SIR-1 v0.1 `SIR1_PASS` — CLOSED POSITIVE
@@ -70,6 +70,8 @@ An authority claim is **stale** if **any** of the following hold at effect-gatin
 4. Already **consumed** (effect previously applied)
 
 A stale authority claim is **unauthorized** and must not produce effects.
+
+*Claims that fail authority trust or scope checks are unauthorized but not classified as "stale"; they are rejected under SIR-1 semantics.*
 
 ### 4.2 Consumed Authority Claim
 
@@ -419,7 +421,7 @@ When multiple invalidators apply, log the dominant reason:
 - Intermittent fresh Root_Authority claims in epoch 1
 
 **Expected**:
-- All epoch-0 replays refused with `EPOCH_MISMATCH`
+- All epoch-0 replays submitted during epoch 1 are refused with `EPOCH_MISMATCH`
 - Fresh epoch-1 claims succeed
 - No starvation of legitimate authority
 
@@ -527,11 +529,15 @@ No claims of general security, governance adequacy, or misuse prevention are imp
 
 | Artifact | Purpose | Hash |
 |----------|---------|------|
-| epoch_schema.json | Epoch transition event schema | (pending) |
-| revocation_schema.json | Revocation event schema | (pending) |
-| consumption_registry_schema.json | Consumption tracking schema | (pending) |
+| epoch_schema.json | Epoch transition event schema | `1422f8d61a007c446496f2f5d9ca11a58dc62d69dafd7f465f48169ad7fb4882` |
+| revocation_schema.json | Revocation event schema | `89830887dd1d47db35aab6efa29a5b417fdd8a5bee961778c441bccf168686c9` |
+| consumption_registry_schema.json | Consumption tracking schema | `2f5be0fdeff8d589e01bc6f7f828f8c903711406890add473a68612ee70d80f1` |
+| condition_parameters.json | Condition definitions | `db6c899a4f5ecc9e6ff843f6dfff6bdaa961ed513b5b81188d0b518307279b68` |
+| gated_actions.json | Gated action definitions | `c8c3238c460de4267808a54ef8355e06fc31dd1b6d24d460af4814dcf30797fc` |
+| trusted_roots.json | Authority actor definitions | `60634776f0e1ed9f5538c615ee05420f17c04ab43384e77b8f3660c5ae84712e` |
+| scope_namespaces.json | Scope definitions | `507c2c8ef75a40050c020efd78c3473a0568927b6f733edab4f24de25cd6aeca` |
 
-Hashes computed at freeze time.
+Hashes computed at freeze time: 2026-01-27.
 
 ---
 
@@ -562,7 +568,7 @@ Hashes computed at freeze time.
 ```
 EXPERIMENT: PHASE-VII-SIR2-REPLAY-STALENESS-CONSUMPTION-RESISTANCE-1
 VERSION:    0.3
-STATUS:     DRAFT
+STATUS:     FROZEN
 PREREQS:    SIR-0 v0.4.1 SIR0_PASS, SIR-1 v0.1 SIR1_PASS
 SEEDS:      [41, 137, 1009]
 CONDITIONS: [A, B, C, D, E]
@@ -570,7 +576,7 @@ RUNS:       15
 STEPS:      6
 EPOCHS:     2 (minimum)
 
-PREREGISTRATION HASH: (computed at freeze)
+PREREGISTRATION HASH: 7b168d441b4f4a84618071c331d959e30427169d5b197b92704711cb287112ff
 ```
 
 ---

@@ -1,0 +1,101 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "SIR-2 Condition Parameters",
+    "description": "Experimental condition parameters for SIR-2 v0.3",
+    "version": "0.3",
+    "frozen": true,
+    "freeze_date": "2026-01-27",
+    "global_parameters": {
+        "seeds": [
+            41,
+            137,
+            1009
+        ],
+        "steps_per_episode": 6,
+        "epochs_per_episode_minimum": 2,
+        "epoch_transition_step": 3,
+        "total_runs": 15
+    },
+    "conditions": {
+        "A": {
+            "name": "Fresh Authority Control",
+            "purpose": "Verify fresh authority remains functional across epoch transition",
+            "epochs": 2,
+            "epoch_transition": true,
+            "revocation": null,
+            "replay_type": null,
+            "claims_per_step": 1,
+            "adversarial_ratio": 0,
+            "key_test": "Fresh authority across epoch"
+        },
+        "B": {
+            "name": "Simple Replay (Consumption Test)",
+            "purpose": "Verify consumed authority cannot double-authorize effects",
+            "epochs": 1,
+            "epoch_transition": false,
+            "revocation": null,
+            "replay_type": "exact",
+            "replay_step": 2,
+            "claims_per_step": 1,
+            "adversarial_ratio": 0,
+            "key_test": "Consumption prevents replay"
+        },
+        "C": {
+            "name": "Post-Revocation Replay",
+            "purpose": "Verify revoked authority cannot produce effects",
+            "epochs": 2,
+            "epoch_transition": true,
+            "revocation": {
+                "target_actor": "Delegate_Authority",
+                "issued_at_step": 2
+            },
+            "replay_type": "exact",
+            "replay_step": 2,
+            "claims_per_step": 1,
+            "adversarial_ratio": 0,
+            "key_test": "Revocation immediate"
+        },
+        "D": {
+            "name": "Cross-Epoch Replay Saturation",
+            "purpose": "Verify discrimination under stale claim flood",
+            "epochs": 2,
+            "epoch_transition": true,
+            "revocation": null,
+            "replay_type": "exact",
+            "flood_steps": [
+                4,
+                5,
+                6
+            ],
+            "adversarial_to_valid_ratio": 50,
+            "claims_per_step_epoch0": 1,
+            "claims_per_step_epoch1_adversarial": 50,
+            "claims_per_step_epoch1_valid": 1,
+            "key_test": "Cross-epoch saturation"
+        },
+        "E": {
+            "name": "Epoch Boundary Razor",
+            "purpose": "Verify zero overlap window at epoch transition",
+            "epochs": 2,
+            "epoch_transition": true,
+            "revocation": null,
+            "replay_type": "exact",
+            "issue_step": 3,
+            "replay_step": 4,
+            "expected_refuse_reason": "EPOCH_MISMATCH",
+            "claims_per_step": 1,
+            "adversarial_ratio": 0,
+            "key_test": "Epoch boundary razor"
+        }
+    },
+    "refuse_reason_precedence": [
+        "EPOCH_MISMATCH",
+        "REVOKED_ACTOR",
+        "CONSUMED_CLAIM",
+        "OUTSIDE_VALID_WINDOW",
+        "UNAUTHORIZED_ACTOR",
+        "SCOPE_MISMATCH",
+        "MALFORMED",
+        "AMBIGUOUS"
+    ]
+}

@@ -1,0 +1,375 @@
+{
+  "experiment_id": "PHASE-VII-SIR2-REPLAY-STALENESS-CONSUMPTION-RESISTANCE-1",
+  "version": "0.3",
+  "timestamp": "2026-01-27T20:10:22.635582",
+  "total_runs": 15,
+  "preregistration_hash": "7b168d441b4f4a84618071c331d959e30427169d5b197b92704711cb287112ff",
+  "runs": [
+    {
+      "run_id": "SIR2-A-s41",
+      "condition": "A",
+      "seed": 41,
+      "total_claims": 6,
+      "classification_summary": {
+        "VALID_AUTHORITY_CLAIM": 6
+      },
+      "effect_count": 3,
+      "refusal_summary": {},
+      "check_results": {
+        "CHECK_NO_INVALIDATED_EFFECT": true,
+        "CHECK_FRESH_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_CONSUMPTION_IFF_EFFECT": true,
+        "CHECK_NO_DOUBLE_EFFECT_PER_CLAIM": true,
+        "CHECK_EPOCH_TRANSITIONS_LOGGED": true,
+        "CHECK_REVOCATIONS_LOGGED": true,
+        "CHECK_GATE_DIVERGENCE_SAFE": true,
+        "CHECK_REFUSE_REASON_PRECEDENCE": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true
+      },
+      "final_status": "SIR2_PASS"
+    },
+    {
+      "run_id": "SIR2-B-s41",
+      "condition": "B",
+      "seed": 41,
+      "total_claims": 2,
+      "classification_summary": {
+        "VALID_AUTHORITY_CLAIM": 1,
+        "INVALID_AUTHORITY_CLAIM": 1
+      },
+      "effect_count": 0,
+      "refusal_summary": {},
+      "check_results": {
+        "CHECK_NO_INVALIDATED_EFFECT": true,
+        "CHECK_FRESH_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_CONSUMPTION_IFF_EFFECT": true,
+        "CHECK_NO_DOUBLE_EFFECT_PER_CLAIM": true,
+        "CHECK_EPOCH_TRANSITIONS_LOGGED": true,
+        "CHECK_REVOCATIONS_LOGGED": true,
+        "CHECK_GATE_DIVERGENCE_SAFE": true,
+        "CHECK_REFUSE_REASON_PRECEDENCE": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true
+      },
+      "final_status": "SIR2_PASS"
+    },
+    {
+      "run_id": "SIR2-C-s41",
+      "condition": "C",
+      "seed": 41,
+      "total_claims": 5,
+      "classification_summary": {
+        "VALID_AUTHORITY_CLAIM": 4,
+        "INVALID_AUTHORITY_CLAIM": 1
+      },
+      "effect_count": 3,
+      "refusal_summary": {},
+      "check_results": {
+        "CHECK_NO_INVALIDATED_EFFECT": true,
+        "CHECK_FRESH_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_CONSUMPTION_IFF_EFFECT": true,
+        "CHECK_NO_DOUBLE_EFFECT_PER_CLAIM": true,
+        "CHECK_EPOCH_TRANSITIONS_LOGGED": true,
+        "CHECK_REVOCATIONS_LOGGED": true,
+        "CHECK_GATE_DIVERGENCE_SAFE": true,
+        "CHECK_REFUSE_REASON_PRECEDENCE": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true
+      },
+      "final_status": "SIR2_PASS"
+    },
+    {
+      "run_id": "SIR2-D-s41",
+      "condition": "D",
+      "seed": 41,
+      "total_claims": 156,
+      "classification_summary": {
+        "VALID_AUTHORITY_CLAIM": 6,
+        "INVALID_AUTHORITY_CLAIM": 150
+      },
+      "effect_count": 3,
+      "refusal_summary": {},
+      "check_results": {
+        "CHECK_NO_INVALIDATED_EFFECT": true,
+        "CHECK_FRESH_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_CONSUMPTION_IFF_EFFECT": true,
+        "CHECK_NO_DOUBLE_EFFECT_PER_CLAIM": true,
+        "CHECK_EPOCH_TRANSITIONS_LOGGED": true,
+        "CHECK_REVOCATIONS_LOGGED": true,
+        "CHECK_GATE_DIVERGENCE_SAFE": true,
+        "CHECK_REFUSE_REASON_PRECEDENCE": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true
+      },
+      "final_status": "SIR2_PASS"
+    },
+    {
+      "run_id": "SIR2-E-s41",
+      "condition": "E",
+      "seed": 41,
+      "total_claims": 2,
+      "classification_summary": {
+        "VALID_AUTHORITY_CLAIM": 1,
+        "INVALID_AUTHORITY_CLAIM": 1
+      },
+      "effect_count": 0,
+      "refusal_summary": {},
+      "check_results": {
+        "CHECK_NO_INVALIDATED_EFFECT": true,
+        "CHECK_FRESH_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_CONSUMPTION_IFF_EFFECT": true,
+        "CHECK_NO_DOUBLE_EFFECT_PER_CLAIM": true,
+        "CHECK_EPOCH_TRANSITIONS_LOGGED": true,
+        "CHECK_REVOCATIONS_LOGGED": true,
+        "CHECK_GATE_DIVERGENCE_SAFE": true,
+        "CHECK_REFUSE_REASON_PRECEDENCE": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true
+      },
+      "final_status": "SIR2_PASS"
+    },
+    {
+      "run_id": "SIR2-A-s137",
+      "condition": "A",
+      "seed": 137,
+      "total_claims": 6,
+      "classification_summary": {
+        "VALID_AUTHORITY_CLAIM": 6
+      },
+      "effect_count": 3,
+      "refusal_summary": {},
+      "check_results": {
+        "CHECK_NO_INVALIDATED_EFFECT": true,
+        "CHECK_FRESH_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_CONSUMPTION_IFF_EFFECT": true,
+        "CHECK_NO_DOUBLE_EFFECT_PER_CLAIM": true,
+        "CHECK_EPOCH_TRANSITIONS_LOGGED": true,
+        "CHECK_REVOCATIONS_LOGGED": true,
+        "CHECK_GATE_DIVERGENCE_SAFE": true,
+        "CHECK_REFUSE_REASON_PRECEDENCE": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true
+      },
+      "final_status": "SIR2_PASS"
+    },
+    {
+      "run_id": "SIR2-B-s137",
+      "condition": "B",
+      "seed": 137,
+      "total_claims": 2,
+      "classification_summary": {
+        "VALID_AUTHORITY_CLAIM": 1,
+        "INVALID_AUTHORITY_CLAIM": 1
+      },
+      "effect_count": 0,
+      "refusal_summary": {},
+      "check_results": {
+        "CHECK_NO_INVALIDATED_EFFECT": true,
+        "CHECK_FRESH_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_CONSUMPTION_IFF_EFFECT": true,
+        "CHECK_NO_DOUBLE_EFFECT_PER_CLAIM": true,
+        "CHECK_EPOCH_TRANSITIONS_LOGGED": true,
+        "CHECK_REVOCATIONS_LOGGED": true,
+        "CHECK_GATE_DIVERGENCE_SAFE": true,
+        "CHECK_REFUSE_REASON_PRECEDENCE": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true
+      },
+      "final_status": "SIR2_PASS"
+    },
+    {
+      "run_id": "SIR2-C-s137",
+      "condition": "C",
+      "seed": 137,
+      "total_claims": 5,
+      "classification_summary": {
+        "VALID_AUTHORITY_CLAIM": 4,
+        "INVALID_AUTHORITY_CLAIM": 1
+      },
+      "effect_count": 3,
+      "refusal_summary": {},
+      "check_results": {
+        "CHECK_NO_INVALIDATED_EFFECT": true,
+        "CHECK_FRESH_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_CONSUMPTION_IFF_EFFECT": true,
+        "CHECK_NO_DOUBLE_EFFECT_PER_CLAIM": true,
+        "CHECK_EPOCH_TRANSITIONS_LOGGED": true,
+        "CHECK_REVOCATIONS_LOGGED": true,
+        "CHECK_GATE_DIVERGENCE_SAFE": true,
+        "CHECK_REFUSE_REASON_PRECEDENCE": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true
+      },
+      "final_status": "SIR2_PASS"
+    },
+    {
+      "run_id": "SIR2-D-s137",
+      "condition": "D",
+      "seed": 137,
+      "total_claims": 156,
+      "classification_summary": {
+        "VALID_AUTHORITY_CLAIM": 6,
+        "INVALID_AUTHORITY_CLAIM": 150
+      },
+      "effect_count": 3,
+      "refusal_summary": {},
+      "check_results": {
+        "CHECK_NO_INVALIDATED_EFFECT": true,
+        "CHECK_FRESH_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_CONSUMPTION_IFF_EFFECT": true,
+        "CHECK_NO_DOUBLE_EFFECT_PER_CLAIM": true,
+        "CHECK_EPOCH_TRANSITIONS_LOGGED": true,
+        "CHECK_REVOCATIONS_LOGGED": true,
+        "CHECK_GATE_DIVERGENCE_SAFE": true,
+        "CHECK_REFUSE_REASON_PRECEDENCE": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true
+      },
+      "final_status": "SIR2_PASS"
+    },
+    {
+      "run_id": "SIR2-E-s137",
+      "condition": "E",
+      "seed": 137,
+      "total_claims": 2,
+      "classification_summary": {
+        "VALID_AUTHORITY_CLAIM": 1,
+        "INVALID_AUTHORITY_CLAIM": 1
+      },
+      "effect_count": 0,
+      "refusal_summary": {},
+      "check_results": {
+        "CHECK_NO_INVALIDATED_EFFECT": true,
+        "CHECK_FRESH_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_CONSUMPTION_IFF_EFFECT": true,
+        "CHECK_NO_DOUBLE_EFFECT_PER_CLAIM": true,
+        "CHECK_EPOCH_TRANSITIONS_LOGGED": true,
+        "CHECK_REVOCATIONS_LOGGED": true,
+        "CHECK_GATE_DIVERGENCE_SAFE": true,
+        "CHECK_REFUSE_REASON_PRECEDENCE": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true
+      },
+      "final_status": "SIR2_PASS"
+    },
+    {
+      "run_id": "SIR2-A-s1009",
+      "condition": "A",
+      "seed": 1009,
+      "total_claims": 6,
+      "classification_summary": {
+        "VALID_AUTHORITY_CLAIM": 6
+      },
+      "effect_count": 3,
+      "refusal_summary": {},
+      "check_results": {
+        "CHECK_NO_INVALIDATED_EFFECT": true,
+        "CHECK_FRESH_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_CONSUMPTION_IFF_EFFECT": true,
+        "CHECK_NO_DOUBLE_EFFECT_PER_CLAIM": true,
+        "CHECK_EPOCH_TRANSITIONS_LOGGED": true,
+        "CHECK_REVOCATIONS_LOGGED": true,
+        "CHECK_GATE_DIVERGENCE_SAFE": true,
+        "CHECK_REFUSE_REASON_PRECEDENCE": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true
+      },
+      "final_status": "SIR2_PASS"
+    },
+    {
+      "run_id": "SIR2-B-s1009",
+      "condition": "B",
+      "seed": 1009,
+      "total_claims": 2,
+      "classification_summary": {
+        "VALID_AUTHORITY_CLAIM": 1,
+        "INVALID_AUTHORITY_CLAIM": 1
+      },
+      "effect_count": 0,
+      "refusal_summary": {},
+      "check_results": {
+        "CHECK_NO_INVALIDATED_EFFECT": true,
+        "CHECK_FRESH_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_CONSUMPTION_IFF_EFFECT": true,
+        "CHECK_NO_DOUBLE_EFFECT_PER_CLAIM": true,
+        "CHECK_EPOCH_TRANSITIONS_LOGGED": true,
+        "CHECK_REVOCATIONS_LOGGED": true,
+        "CHECK_GATE_DIVERGENCE_SAFE": true,
+        "CHECK_REFUSE_REASON_PRECEDENCE": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true
+      },
+      "final_status": "SIR2_PASS"
+    },
+    {
+      "run_id": "SIR2-C-s1009",
+      "condition": "C",
+      "seed": 1009,
+      "total_claims": 5,
+      "classification_summary": {
+        "VALID_AUTHORITY_CLAIM": 4,
+        "INVALID_AUTHORITY_CLAIM": 1
+      },
+      "effect_count": 3,
+      "refusal_summary": {},
+      "check_results": {
+        "CHECK_NO_INVALIDATED_EFFECT": true,
+        "CHECK_FRESH_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_CONSUMPTION_IFF_EFFECT": true,
+        "CHECK_NO_DOUBLE_EFFECT_PER_CLAIM": true,
+        "CHECK_EPOCH_TRANSITIONS_LOGGED": true,
+        "CHECK_REVOCATIONS_LOGGED": true,
+        "CHECK_GATE_DIVERGENCE_SAFE": true,
+        "CHECK_REFUSE_REASON_PRECEDENCE": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true
+      },
+      "final_status": "SIR2_PASS"
+    },
+    {
+      "run_id": "SIR2-D-s1009",
+      "condition": "D",
+      "seed": 1009,
+      "total_claims": 156,
+      "classification_summary": {
+        "VALID_AUTHORITY_CLAIM": 6,
+        "INVALID_AUTHORITY_CLAIM": 150
+      },
+      "effect_count": 3,
+      "refusal_summary": {},
+      "check_results": {
+        "CHECK_NO_INVALIDATED_EFFECT": true,
+        "CHECK_FRESH_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_CONSUMPTION_IFF_EFFECT": true,
+        "CHECK_NO_DOUBLE_EFFECT_PER_CLAIM": true,
+        "CHECK_EPOCH_TRANSITIONS_LOGGED": true,
+        "CHECK_REVOCATIONS_LOGGED": true,
+        "CHECK_GATE_DIVERGENCE_SAFE": true,
+        "CHECK_REFUSE_REASON_PRECEDENCE": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true
+      },
+      "final_status": "SIR2_PASS"
+    },
+    {
+      "run_id": "SIR2-E-s1009",
+      "condition": "E",
+      "seed": 1009,
+      "total_claims": 2,
+      "classification_summary": {
+        "VALID_AUTHORITY_CLAIM": 1,
+        "INVALID_AUTHORITY_CLAIM": 1
+      },
+      "effect_count": 0,
+      "refusal_summary": {},
+      "check_results": {
+        "CHECK_NO_INVALIDATED_EFFECT": true,
+        "CHECK_FRESH_AUTHORITY_FUNCTIONAL": true,
+        "CHECK_CONSUMPTION_IFF_EFFECT": true,
+        "CHECK_NO_DOUBLE_EFFECT_PER_CLAIM": true,
+        "CHECK_EPOCH_TRANSITIONS_LOGGED": true,
+        "CHECK_REVOCATIONS_LOGGED": true,
+        "CHECK_GATE_DIVERGENCE_SAFE": true,
+        "CHECK_REFUSE_REASON_PRECEDENCE": true,
+        "CHECK_NO_SEMANTIC_LEAKAGE": true
+      },
+      "final_status": "SIR2_PASS"
+    }
+  ],
+  "condition_summary": {
+    "A": "PASS",
+    "B": "PASS",
+    "C": "PASS",
+    "D": "PASS",
+    "E": "PASS"
+  },
+  "experiment_status": "SIR2_PASS",
+  "licensed_claim": "Previously valid authority artifacts cannot regain causal effect once they are stale, revoked, consumed, or out-of-epoch under the tested adversarial model."
+}

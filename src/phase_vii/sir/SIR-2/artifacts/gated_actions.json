@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "SIR-2 Gated Actions",
+    "description": "Gated action definitions for SIR-2 v0.3",
+    "version": "0.3",
+    "frozen": true,
+    "freeze_date": "2026-01-27",
+    "gated_actions": {
+        "OPEN_SHORTCUT": {
+            "required_scope": "SCOPE/ENV/SHORTCUT_UNLOCK",
+            "effect": "Adds edge N2→N5 in environment graph",
+            "idempotency": "non_idempotent",
+            "reversibility": "episode_irreversible",
+            "source": "SIR-1",
+            "description": "Opens shortcut path from N2 to N5"
+        },
+        "GRANT_TRAVERSE_N5": {
+            "required_scope": "SCOPE/ENV/TRAVERSE_N5",
+            "effect": "Grants N5 traversal capability to agent",
+            "idempotency": "non_idempotent_per_grant",
+            "reversibility": "episode_irreversible",
+            "source": "SIR-2",
+            "description": "Grants capability to traverse to goal node N5"
+        }
+    },
+    "scope_to_action_map": {
+        "SCOPE/ENV/SHORTCUT_UNLOCK": "OPEN_SHORTCUT",
+        "SCOPE/ENV/TRAVERSE_N5": "GRANT_TRAVERSE_N5"
+    },
+    "rules": {
+        "valid_authority_required": "Both actions require valid authority",
+        "enforcement_gate": "All actions subject to enforcement gate evaluation",
+        "consumption_on_execute": "Claims are consumed upon effect execution",
+        "no_double_effect": "Same claim cannot produce effect twice"
+    }
+}

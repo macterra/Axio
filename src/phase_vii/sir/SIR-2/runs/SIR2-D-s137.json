@@ -1,0 +1,1162 @@
+{
+  "run_id": "SIR2-D-s137",
+  "condition": "D",
+  "seed": 137,
+  "steps": [
+    {
+      "step": 1,
+      "epoch": 0,
+      "claims_received": 1,
+      "valid_claims": 1,
+      "selected_action": "GO_N1",
+      "gate_decision": {
+        "claim_id": null,
+        "ingress_classification": "NONE",
+        "epoch_at_ingress": 0,
+        "gate_decision": "PERMIT",
+        "refuse_reason": null,
+        "epoch_at_gate": 0,
+        "step_at_gate": 1,
+        "consumption_status": false
+      },
+      "executed_effect": "MOVED_TO_N1",
+      "refusal_events": [],
+      "responsibility_actor": "NONE",
+      "environment_state": {
+        "shortcut_open": false,
+        "traverse_n5_granted": false,
+        "traverse_grant_count": 0
+      },
+      "consumption_state": {
+        "consumed_claims": {
+          "CLM-D-004-FRESH": {
+            "consumed_at_step": 4,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          },
+          "CLM-D-005-FRESH": {
+            "consumed_at_step": 5,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          },
+          "CLM-D-006-FRESH": {
+            "consumed_at_step": 6,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          }
+        }
+      }
+    },
+    {
+      "step": 2,
+      "epoch": 0,
+      "claims_received": 1,
+      "valid_claims": 1,
+      "selected_action": "GO_N0",
+      "gate_decision": {
+        "claim_id": null,
+        "ingress_classification": "NONE",
+        "epoch_at_ingress": 0,
+        "gate_decision": "PERMIT",
+        "refuse_reason": null,
+        "epoch_at_gate": 0,
+        "step_at_gate": 2,
+        "consumption_status": false
+      },
+      "executed_effect": "MOVED_TO_N0",
+      "refusal_events": [],
+      "responsibility_actor": "NONE",
+      "environment_state": {
+        "shortcut_open": false,
+        "traverse_n5_granted": false,
+        "traverse_grant_count": 0
+      },
+      "consumption_state": {
+        "consumed_claims": {
+          "CLM-D-004-FRESH": {
+            "consumed_at_step": 4,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          },
+          "CLM-D-005-FRESH": {
+            "consumed_at_step": 5,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          },
+          "CLM-D-006-FRESH": {
+            "consumed_at_step": 6,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          }
+        }
+      }
+    },
+    {
+      "step": 3,
+      "epoch": 0,
+      "claims_received": 1,
+      "valid_claims": 1,
+      "selected_action": "GO_N2",
+      "gate_decision": {
+        "claim_id": null,
+        "ingress_classification": "NONE",
+        "epoch_at_ingress": 0,
+        "gate_decision": "PERMIT",
+        "refuse_reason": null,
+        "epoch_at_gate": 0,
+        "step_at_gate": 3,
+        "consumption_status": false
+      },
+      "executed_effect": "MOVED_TO_N2",
+      "refusal_events": [],
+      "responsibility_actor": "NONE",
+      "environment_state": {
+        "shortcut_open": false,
+        "traverse_n5_granted": false,
+        "traverse_grant_count": 0
+      },
+      "consumption_state": {
+        "consumed_claims": {
+          "CLM-D-004-FRESH": {
+            "consumed_at_step": 4,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          },
+          "CLM-D-005-FRESH": {
+            "consumed_at_step": 5,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          },
+          "CLM-D-006-FRESH": {
+            "consumed_at_step": 6,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          }
+        }
+      }
+    },
+    {
+      "step": 4,
+      "epoch": 1,
+      "claims_received": 51,
+      "valid_claims": 1,
+      "selected_action": "GRANT_TRAVERSE_N5",
+      "gate_decision": {
+        "claim_id": "CLM-D-004-FRESH",
+        "ingress_classification": "VALID_AUTHORITY_CLAIM",
+        "epoch_at_ingress": 1,
+        "gate_decision": "PERMIT",
+        "refuse_reason": null,
+        "epoch_at_gate": 1,
+        "step_at_gate": 4,
+        "consumption_status": false
+      },
+      "executed_effect": "TRAVERSE_N5_GRANTED_1",
+      "refusal_events": [
+        {
+          "claim_id": "CLM-D-STALE-004-000",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-001",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-002",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-003",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-004",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-005",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-006",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-007",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-008",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-009",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-010",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-011",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-012",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-013",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-014",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-015",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-016",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-017",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-018",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-019",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-020",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-021",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-022",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-023",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-024",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-025",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-026",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-027",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-028",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-029",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-030",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-031",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-032",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-033",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-034",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-035",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-036",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-037",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-038",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-039",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-040",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-041",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-042",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-043",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-044",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-045",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-046",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-047",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-048",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-004-049",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        }
+      ],
+      "responsibility_actor": "LEGITIMATE_AUTHORITY",
+      "environment_state": {
+        "shortcut_open": false,
+        "traverse_n5_granted": true,
+        "traverse_grant_count": 1
+      },
+      "consumption_state": {
+        "consumed_claims": {
+          "CLM-D-004-FRESH": {
+            "consumed_at_step": 4,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          },
+          "CLM-D-005-FRESH": {
+            "consumed_at_step": 5,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          },
+          "CLM-D-006-FRESH": {
+            "consumed_at_step": 6,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          }
+        }
+      }
+    },
+    {
+      "step": 5,
+      "epoch": 1,
+      "claims_received": 51,
+      "valid_claims": 1,
+      "selected_action": "GRANT_TRAVERSE_N5",
+      "gate_decision": {
+        "claim_id": "CLM-D-005-FRESH",
+        "ingress_classification": "VALID_AUTHORITY_CLAIM",
+        "epoch_at_ingress": 1,
+        "gate_decision": "PERMIT",
+        "refuse_reason": null,
+        "epoch_at_gate": 1,
+        "step_at_gate": 5,
+        "consumption_status": false
+      },
+      "executed_effect": "TRAVERSE_N5_GRANTED_2",
+      "refusal_events": [
+        {
+          "claim_id": "CLM-D-STALE-005-000",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-001",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-002",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-003",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-004",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-005",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-006",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-007",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-008",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-009",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-010",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-011",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-012",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-013",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-014",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-015",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-016",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-017",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-018",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-019",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-020",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-021",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-022",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-023",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-024",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-025",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-026",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-027",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-028",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-029",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-030",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-031",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-032",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-033",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-034",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-035",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-036",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-037",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-038",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-039",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-040",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-041",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-042",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-043",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-044",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-045",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-046",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-047",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-048",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-005-049",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        }
+      ],
+      "responsibility_actor": "LEGITIMATE_AUTHORITY",
+      "environment_state": {
+        "shortcut_open": false,
+        "traverse_n5_granted": true,
+        "traverse_grant_count": 2
+      },
+      "consumption_state": {
+        "consumed_claims": {
+          "CLM-D-004-FRESH": {
+            "consumed_at_step": 4,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          },
+          "CLM-D-005-FRESH": {
+            "consumed_at_step": 5,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          },
+          "CLM-D-006-FRESH": {
+            "consumed_at_step": 6,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          }
+        }
+      }
+    },
+    {
+      "step": 6,
+      "epoch": 1,
+      "claims_received": 51,
+      "valid_claims": 1,
+      "selected_action": "GRANT_TRAVERSE_N5",
+      "gate_decision": {
+        "claim_id": "CLM-D-006-FRESH",
+        "ingress_classification": "VALID_AUTHORITY_CLAIM",
+        "epoch_at_ingress": 1,
+        "gate_decision": "PERMIT",
+        "refuse_reason": null,
+        "epoch_at_gate": 1,
+        "step_at_gate": 6,
+        "consumption_status": false
+      },
+      "executed_effect": "TRAVERSE_N5_GRANTED_3",
+      "refusal_events": [
+        {
+          "claim_id": "CLM-D-STALE-006-000",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-001",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-002",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-003",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-004",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-005",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-006",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-007",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-008",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-009",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-010",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-011",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-012",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-013",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-014",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-015",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-016",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-017",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-018",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-019",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-020",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-021",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-022",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-023",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-024",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-025",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-026",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-027",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-028",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-029",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-030",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-031",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-032",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-033",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-034",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-035",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-036",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-037",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-038",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-039",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-040",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-041",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-042",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-043",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-044",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-045",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-046",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-047",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-048",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        },
+        {
+          "claim_id": "CLM-D-STALE-006-049",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "UNTRUSTED_ROOT"
+        }
+      ],
+      "responsibility_actor": "LEGITIMATE_AUTHORITY",
+      "environment_state": {
+        "shortcut_open": false,
+        "traverse_n5_granted": true,
+        "traverse_grant_count": 3
+      },
+      "consumption_state": {
+        "consumed_claims": {
+          "CLM-D-004-FRESH": {
+            "consumed_at_step": 4,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          },
+          "CLM-D-005-FRESH": {
+            "consumed_at_step": 5,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          },
+          "CLM-D-006-FRESH": {
+            "consumed_at_step": 6,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          }
+        }
+      }
+    }
+  ],
+  "total_claims": 156,
+  "classification_summary": {
+    "VALID_AUTHORITY_CLAIM": 6,
+    "INVALID_AUTHORITY_CLAIM": 150
+  },
+  "epoch_state": {
+    "current_epoch": 1,
+    "transition_log": [
+      {
+        "event_id": "EPOCH-TRANS-001",
+        "event_type": "EPOCH_TRANSITION",
+        "issued_by": "LAW_SUBSTRATE",
+        "from_epoch": 0,
+        "to_epoch": 1,
+        "step": 3
+      }
+    ]
+  },
+  "revocation_state": {
+    "revoked_actors": [],
+    "revocation_log": []
+  },
+  "consumption_registry": {
+    "consumed_claims": {
+      "CLM-D-004-FRESH": {
+        "consumed_at_step": 4,
+        "consumed_at_epoch": 1,
+        "consumed_by_actor": "Root_Authority",
+        "effect_produced": "GRANT_TRAVERSE_N5"
+      },
+      "CLM-D-005-FRESH": {
+        "consumed_at_step": 5,
+        "consumed_at_epoch": 1,
+        "consumed_by_actor": "Root_Authority",
+        "effect_produced": "GRANT_TRAVERSE_N5"
+      },
+      "CLM-D-006-FRESH": {
+        "consumed_at_step": 6,
+        "consumed_at_epoch": 1,
+        "consumed_by_actor": "Root_Authority",
+        "effect_produced": "GRANT_TRAVERSE_N5"
+      }
+    }
+  },
+  "capability_state": {
+    "unlocked_actions": [],
+    "granted_capabilities": [
+      "TRAVERSE_N5"
+    ],
+    "privilege_log": [
+      {
+        "event_id": "PRIV-0001",
+        "event_type": "GRANT",
+        "capability": "TRAVERSE_N5",
+        "claim_id": "CLM-D-004-FRESH",
+        "step": 4,
+        "timestamp": 345329.64707642
+      },
+      {
+        "event_id": "PRIV-0002",
+        "event_type": "GRANT",
+        "capability": "TRAVERSE_N5",
+        "claim_id": "CLM-D-005-FRESH",
+        "step": 5,
+        "timestamp": 345329.730779329
+      },
+      {
+        "event_id": "PRIV-0003",
+        "event_type": "GRANT",
+        "capability": "TRAVERSE_N5",
+        "claim_id": "CLM-D-006-FRESH",
+        "step": 6,
+        "timestamp": 345329.811281466
+      }
+    ]
+  },
+  "effect_log": [
+    {
+      "step": 4,
+      "action": "GRANT_TRAVERSE_N5",
+      "claim_id": "CLM-D-004-FRESH",
+      "effect": "TRAVERSE_N5_GRANTED_1"
+    },
+    {
+      "step": 5,
+      "action": "GRANT_TRAVERSE_N5",
+      "claim_id": "CLM-D-005-FRESH",
+      "effect": "TRAVERSE_N5_GRANTED_2"
+    },
+    {
+      "step": 6,
+      "action": "GRANT_TRAVERSE_N5",
+      "claim_id": "CLM-D-006-FRESH",
+      "effect": "TRAVERSE_N5_GRANTED_3"
+    }
+  ],
+  "epoch_transition_log": [
+    {
+      "event_id": "EPOCH-TRANS-001",
+      "event_type": "EPOCH_TRANSITION",
+      "issued_by": "LAW_SUBSTRATE",
+      "from_epoch": 0,
+      "to_epoch": 1,
+      "step": 3
+    }
+  ],
+  "revocation_log": [],
+  "refusal_summary": {},
+  "check_results": {
+    "CHECK_NO_INVALIDATED_EFFECT": true,
+    "CHECK_FRESH_AUTHORITY_FUNCTIONAL": true,
+    "CHECK_CONSUMPTION_IFF_EFFECT": true,
+    "CHECK_NO_DOUBLE_EFFECT_PER_CLAIM": true,
+    "CHECK_EPOCH_TRANSITIONS_LOGGED": true,
+    "CHECK_REVOCATIONS_LOGGED": true,
+    "CHECK_GATE_DIVERGENCE_SAFE": true,
+    "CHECK_REFUSE_REASON_PRECEDENCE": true,
+    "CHECK_NO_SEMANTIC_LEAKAGE": true
+  },
+  "final_status": "SIR2_PASS"
+}

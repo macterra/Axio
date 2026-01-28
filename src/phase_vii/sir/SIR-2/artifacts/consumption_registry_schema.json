@@ -1,0 +1,63 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "SIR-2 Consumption Registry Schema",
+    "description": "Consumption tracking schema for SIR-2 v0.3",
+    "version": "0.3",
+    "frozen": true,
+    "freeze_date": "2026-01-27",
+    "consumption_entry": {
+        "type": "object",
+        "required": [
+            "consumed_at_step",
+            "consumed_at_epoch",
+            "consumed_by_actor",
+            "effect_produced"
+        ],
+        "properties": {
+            "consumed_at_step": {
+                "type": "integer",
+                "minimum": 1,
+                "description": "Step at which claim was consumed"
+            },
+            "consumed_at_epoch": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Epoch at which claim was consumed"
+            },
+            "consumed_by_actor": {
+                "type": "string",
+                "description": "Authority actor whose claim was consumed"
+            },
+            "effect_produced": {
+                "type": "string",
+                "enum": [
+                    "OPEN_SHORTCUT",
+                    "GRANT_TRAVERSE_N5"
+                ],
+                "description": "Gated effect that was produced"
+            }
+        }
+    },
+    "consumption_registry": {
+        "type": "object",
+        "required": [
+            "consumed_claims"
+        ],
+        "properties": {
+            "consumed_claims": {
+                "type": "object",
+                "additionalProperties": {
+                    "$ref": "#/consumption_entry"
+                },
+                "description": "Map of claim_id to consumption entry"
+            }
+        }
+    },
+    "rules": {
+        "per_claim_id": "Consumption is tracked per claim_id",
+        "iff_effect": "A claim is marked consumed iff its gated effect executed",
+        "invalidates": "Consumed claims are invalid for future effect authorization",
+        "episode_scoped": "Consumption state is episode-scoped (does not persist across episodes)",
+        "single_effect": "Each claim authorizes at most one effect application"
+    }
+}

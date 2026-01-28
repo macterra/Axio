@@ -1,0 +1,437 @@
+{
+  "run_id": "SIR2-C-s1009",
+  "condition": "C",
+  "seed": 1009,
+  "steps": [
+    {
+      "step": 1,
+      "epoch": 0,
+      "claims_received": 1,
+      "valid_claims": 1,
+      "selected_action": "GO_N1",
+      "gate_decision": {
+        "claim_id": null,
+        "ingress_classification": "NONE",
+        "epoch_at_ingress": 0,
+        "gate_decision": "PERMIT",
+        "refuse_reason": null,
+        "epoch_at_gate": 0,
+        "step_at_gate": 1,
+        "consumption_status": false
+      },
+      "executed_effect": "MOVED_TO_N1",
+      "refusal_events": [],
+      "responsibility_actor": "NONE",
+      "environment_state": {
+        "shortcut_open": false,
+        "traverse_n5_granted": false,
+        "traverse_grant_count": 0
+      },
+      "consumption_state": {
+        "consumed_claims": {
+          "CLM-C-004": {
+            "consumed_at_step": 4,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          },
+          "CLM-C-005": {
+            "consumed_at_step": 5,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          },
+          "CLM-C-006": {
+            "consumed_at_step": 6,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          }
+        }
+      }
+    },
+    {
+      "step": 2,
+      "epoch": 0,
+      "claims_received": 1,
+      "valid_claims": 0,
+      "selected_action": "GO_N0",
+      "gate_decision": {
+        "claim_id": null,
+        "ingress_classification": "NONE",
+        "epoch_at_ingress": 0,
+        "gate_decision": "PERMIT",
+        "refuse_reason": null,
+        "epoch_at_gate": 0,
+        "step_at_gate": 2,
+        "consumption_status": false
+      },
+      "executed_effect": "MOVED_TO_N0",
+      "refusal_events": [
+        {
+          "claim_id": "CLM-C-001",
+          "classification": "INVALID_AUTHORITY_CLAIM",
+          "reason": "REPLAY"
+        }
+      ],
+      "responsibility_actor": "NONE",
+      "environment_state": {
+        "shortcut_open": false,
+        "traverse_n5_granted": false,
+        "traverse_grant_count": 0
+      },
+      "consumption_state": {
+        "consumed_claims": {
+          "CLM-C-004": {
+            "consumed_at_step": 4,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          },
+          "CLM-C-005": {
+            "consumed_at_step": 5,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          },
+          "CLM-C-006": {
+            "consumed_at_step": 6,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          }
+        }
+      }
+    },
+    {
+      "step": 3,
+      "epoch": 0,
+      "claims_received": 0,
+      "valid_claims": 0,
+      "selected_action": "GO_N2",
+      "gate_decision": {
+        "claim_id": null,
+        "ingress_classification": "NONE",
+        "epoch_at_ingress": 0,
+        "gate_decision": "PERMIT",
+        "refuse_reason": null,
+        "epoch_at_gate": 0,
+        "step_at_gate": 3,
+        "consumption_status": false
+      },
+      "executed_effect": "MOVED_TO_N2",
+      "refusal_events": [],
+      "responsibility_actor": "NONE",
+      "environment_state": {
+        "shortcut_open": false,
+        "traverse_n5_granted": false,
+        "traverse_grant_count": 0
+      },
+      "consumption_state": {
+        "consumed_claims": {
+          "CLM-C-004": {
+            "consumed_at_step": 4,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          },
+          "CLM-C-005": {
+            "consumed_at_step": 5,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          },
+          "CLM-C-006": {
+            "consumed_at_step": 6,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          }
+        }
+      }
+    },
+    {
+      "step": 4,
+      "epoch": 1,
+      "claims_received": 1,
+      "valid_claims": 1,
+      "selected_action": "GRANT_TRAVERSE_N5",
+      "gate_decision": {
+        "claim_id": "CLM-C-004",
+        "ingress_classification": "VALID_AUTHORITY_CLAIM",
+        "epoch_at_ingress": 1,
+        "gate_decision": "PERMIT",
+        "refuse_reason": null,
+        "epoch_at_gate": 1,
+        "step_at_gate": 4,
+        "consumption_status": false
+      },
+      "executed_effect": "TRAVERSE_N5_GRANTED_1",
+      "refusal_events": [],
+      "responsibility_actor": "LEGITIMATE_AUTHORITY",
+      "environment_state": {
+        "shortcut_open": false,
+        "traverse_n5_granted": true,
+        "traverse_grant_count": 1
+      },
+      "consumption_state": {
+        "consumed_claims": {
+          "CLM-C-004": {
+            "consumed_at_step": 4,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          },
+          "CLM-C-005": {
+            "consumed_at_step": 5,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          },
+          "CLM-C-006": {
+            "consumed_at_step": 6,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          }
+        }
+      }
+    },
+    {
+      "step": 5,
+      "epoch": 1,
+      "claims_received": 1,
+      "valid_claims": 1,
+      "selected_action": "GRANT_TRAVERSE_N5",
+      "gate_decision": {
+        "claim_id": "CLM-C-005",
+        "ingress_classification": "VALID_AUTHORITY_CLAIM",
+        "epoch_at_ingress": 1,
+        "gate_decision": "PERMIT",
+        "refuse_reason": null,
+        "epoch_at_gate": 1,
+        "step_at_gate": 5,
+        "consumption_status": false
+      },
+      "executed_effect": "TRAVERSE_N5_GRANTED_2",
+      "refusal_events": [],
+      "responsibility_actor": "LEGITIMATE_AUTHORITY",
+      "environment_state": {
+        "shortcut_open": false,
+        "traverse_n5_granted": true,
+        "traverse_grant_count": 2
+      },
+      "consumption_state": {
+        "consumed_claims": {
+          "CLM-C-004": {
+            "consumed_at_step": 4,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          },
+          "CLM-C-005": {
+            "consumed_at_step": 5,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          },
+          "CLM-C-006": {
+            "consumed_at_step": 6,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          }
+        }
+      }
+    },
+    {
+      "step": 6,
+      "epoch": 1,
+      "claims_received": 1,
+      "valid_claims": 1,
+      "selected_action": "GRANT_TRAVERSE_N5",
+      "gate_decision": {
+        "claim_id": "CLM-C-006",
+        "ingress_classification": "VALID_AUTHORITY_CLAIM",
+        "epoch_at_ingress": 1,
+        "gate_decision": "PERMIT",
+        "refuse_reason": null,
+        "epoch_at_gate": 1,
+        "step_at_gate": 6,
+        "consumption_status": false
+      },
+      "executed_effect": "TRAVERSE_N5_GRANTED_3",
+      "refusal_events": [],
+      "responsibility_actor": "LEGITIMATE_AUTHORITY",
+      "environment_state": {
+        "shortcut_open": false,
+        "traverse_n5_granted": true,
+        "traverse_grant_count": 3
+      },
+      "consumption_state": {
+        "consumed_claims": {
+          "CLM-C-004": {
+            "consumed_at_step": 4,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          },
+          "CLM-C-005": {
+            "consumed_at_step": 5,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          },
+          "CLM-C-006": {
+            "consumed_at_step": 6,
+            "consumed_at_epoch": 1,
+            "consumed_by_actor": "Root_Authority",
+            "effect_produced": "GRANT_TRAVERSE_N5"
+          }
+        }
+      }
+    }
+  ],
+  "total_claims": 5,
+  "classification_summary": {
+    "VALID_AUTHORITY_CLAIM": 4,
+    "INVALID_AUTHORITY_CLAIM": 1
+  },
+  "epoch_state": {
+    "current_epoch": 1,
+    "transition_log": [
+      {
+        "event_id": "EPOCH-TRANS-001",
+        "event_type": "EPOCH_TRANSITION",
+        "issued_by": "LAW_SUBSTRATE",
+        "from_epoch": 0,
+        "to_epoch": 1,
+        "step": 3
+      }
+    ]
+  },
+  "revocation_state": {
+    "revoked_actors": [
+      "Delegate_Authority"
+    ],
+    "revocation_log": [
+      {
+        "revocation_id": "REV-001",
+        "issued_by": "LAW_SUBSTRATE",
+        "target_actor": "Delegate_Authority",
+        "issued_at_step": 2,
+        "issued_at_epoch": 0,
+        "target_epoch": 0,
+        "effective_immediately": true
+      }
+    ]
+  },
+  "consumption_registry": {
+    "consumed_claims": {
+      "CLM-C-004": {
+        "consumed_at_step": 4,
+        "consumed_at_epoch": 1,
+        "consumed_by_actor": "Root_Authority",
+        "effect_produced": "GRANT_TRAVERSE_N5"
+      },
+      "CLM-C-005": {
+        "consumed_at_step": 5,
+        "consumed_at_epoch": 1,
+        "consumed_by_actor": "Root_Authority",
+        "effect_produced": "GRANT_TRAVERSE_N5"
+      },
+      "CLM-C-006": {
+        "consumed_at_step": 6,
+        "consumed_at_epoch": 1,
+        "consumed_by_actor": "Root_Authority",
+        "effect_produced": "GRANT_TRAVERSE_N5"
+      }
+    }
+  },
+  "capability_state": {
+    "unlocked_actions": [],
+    "granted_capabilities": [
+      "TRAVERSE_N5"
+    ],
+    "privilege_log": [
+      {
+        "event_id": "PRIV-0001",
+        "event_type": "GRANT",
+        "capability": "TRAVERSE_N5",
+        "claim_id": "CLM-C-004",
+        "step": 4,
+        "timestamp": 345329.833508889
+      },
+      {
+        "event_id": "PRIV-0002",
+        "event_type": "GRANT",
+        "capability": "TRAVERSE_N5",
+        "claim_id": "CLM-C-005",
+        "step": 5,
+        "timestamp": 345329.834977537
+      },
+      {
+        "event_id": "PRIV-0003",
+        "event_type": "GRANT",
+        "capability": "TRAVERSE_N5",
+        "claim_id": "CLM-C-006",
+        "step": 6,
+        "timestamp": 345329.836584458
+      }
+    ]
+  },
+  "effect_log": [
+    {
+      "step": 4,
+      "action": "GRANT_TRAVERSE_N5",
+      "claim_id": "CLM-C-004",
+      "effect": "TRAVERSE_N5_GRANTED_1"
+    },
+    {
+      "step": 5,
+      "action": "GRANT_TRAVERSE_N5",
+      "claim_id": "CLM-C-005",
+      "effect": "TRAVERSE_N5_GRANTED_2"
+    },
+    {
+      "step": 6,
+      "action": "GRANT_TRAVERSE_N5",
+      "claim_id": "CLM-C-006",
+      "effect": "TRAVERSE_N5_GRANTED_3"
+    }
+  ],
+  "epoch_transition_log": [
+    {
+      "event_id": "EPOCH-TRANS-001",
+      "event_type": "EPOCH_TRANSITION",
+      "issued_by": "LAW_SUBSTRATE",
+      "from_epoch": 0,
+      "to_epoch": 1,
+      "step": 3
+    }
+  ],
+  "revocation_log": [
+    {
+      "revocation_id": "REV-001",
+      "issued_by": "LAW_SUBSTRATE",
+      "target_actor": "Delegate_Authority",
+      "issued_at_step": 2,
+      "issued_at_epoch": 0,
+      "target_epoch": 0,
+      "effective_immediately": true
+    }
+  ],
+  "refusal_summary": {},
+  "check_results": {
+    "CHECK_NO_INVALIDATED_EFFECT": true,
+    "CHECK_FRESH_AUTHORITY_FUNCTIONAL": true,
+    "CHECK_CONSUMPTION_IFF_EFFECT": true,
+    "CHECK_NO_DOUBLE_EFFECT_PER_CLAIM": true,
+    "CHECK_EPOCH_TRANSITIONS_LOGGED": true,
+    "CHECK_REVOCATIONS_LOGGED": true,
+    "CHECK_GATE_DIVERGENCE_SAFE": true,
+    "CHECK_REFUSE_REASON_PRECEDENCE": true,
+    "CHECK_NO_SEMANTIC_LEAKAGE": true
+  },
+  "final_status": "SIR2_PASS"
+}
