@@ -1,4 +1,4 @@
-# **Authority State Transformation Specification (ASTS)**
+# **Authority State Transformation (AST) Specification**
 
 - **Version:** v0.2 (**Frozen**)
 - **Program:** Axionic Phase VIII — GSA-PoC
