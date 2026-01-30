@@ -1,0 +1,19 @@
+{
+  "type": "RUN_END",
+  "run_id": "B_55",
+  "results": {
+    "condition": "B",
+    "seed": 55,
+    "epochs": 1,
+    "total_events": 25,
+    "actions_executed": 0,
+    "actions_refused": 25,
+    "conflicts_registered": 0,
+    "transformations": 0,
+    "deadlock": "ENTROPIC_COLLAPSE",
+    "failure": null,
+    "final_state_hash": "b7f9295ea6a64eb78440f4972e2fc2c7625365b4b2f226d6e2bfabb65c72d788"
+  },
+  "final_chain_hash": "99611a5a3588e19698f17a9a98bfed9a31c489ccc8e30565b288a40ed2a19bda",
+  "total_events": 26
+}

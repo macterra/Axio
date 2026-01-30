@@ -1,0 +1,358 @@
+{
+  "experiment": "AKR-0 v0.1",
+  "start_time": "2026-01-30T09:34:49.992192",
+  "conditions": {
+    "A": {
+      "condition": "A",
+      "seeds": [
+        11,
+        22,
+        33,
+        44,
+        55
+      ],
+      "total_actions_executed": 99,
+      "total_actions_refused": 9901,
+      "total_conflicts": 1551,
+      "total_transformations": 8449,
+      "deadlocks": [],
+      "failures": []
+    },
+    "B": {
+      "condition": "B",
+      "seeds": [
+        11,
+        22,
+        33,
+        44,
+        55
+      ],
+      "total_actions_executed": 0,
+      "total_actions_refused": 125,
+      "total_conflicts": 0,
+      "total_transformations": 0,
+      "deadlocks": [
+        {
+          "seed": 11,
+          "type": "ENTROPIC_COLLAPSE"
+        },
+        {
+          "seed": 22,
+          "type": "ENTROPIC_COLLAPSE"
+        },
+        {
+          "seed": 33,
+          "type": "ENTROPIC_COLLAPSE"
+        },
+        {
+          "seed": 44,
+          "type": "ENTROPIC_COLLAPSE"
+        },
+        {
+          "seed": 55,
+          "type": "ENTROPIC_COLLAPSE"
+        }
+      ],
+      "failures": []
+    },
+    "C": {
+      "condition": "C",
+      "seeds": [
+        11,
+        22,
+        33,
+        44,
+        55
+      ],
+      "total_actions_executed": 80,
+      "total_actions_refused": 14846,
+      "total_conflicts": 7352,
+      "total_transformations": 17722,
+      "deadlocks": [],
+      "failures": []
+    }
+  },
+  "runs": [
+    {
+      "condition": "A",
+      "seed": 11,
+      "epochs": 100,
+      "total_events": 4099,
+      "actions_executed": 15,
+      "actions_refused": 1985,
+      "conflicts_registered": 305,
+      "transformations": 1695,
+      "deadlock": null,
+      "failure": null,
+      "final_state_hash": "cc602fb4cedc2a480b919f022b0fe53e3b0c76e672a03be4eee5439c8306b77f",
+      "elapsed_seconds": 72.00875902175903
+    },
+    {
+      "condition": "A",
+      "seed": 22,
+      "epochs": 100,
+      "total_events": 4099,
+      "actions_executed": 20,
+      "actions_refused": 1980,
+      "conflicts_registered": 317,
+      "transformations": 1683,
+      "deadlock": null,
+      "failure": null,
+      "final_state_hash": "174f32d757e4d264de3d6bb59eb7f4cc037ec024a76a97998df5e1e619754960",
+      "elapsed_seconds": 71.69358563423157
+    },
+    {
+      "condition": "A",
+      "seed": 33,
+      "epochs": 100,
+      "total_events": 4099,
+      "actions_executed": 24,
+      "actions_refused": 1976,
+      "conflicts_registered": 294,
+      "transformations": 1706,
+      "deadlock": null,
+      "failure": null,
+      "final_state_hash": "1beef620183102ef2dcf9818e4ce77f3e5eb4b0a2b874849ca94faa208364b5a",
+      "elapsed_seconds": 70.09111714363098
+    },
+    {
+      "condition": "A",
+      "seed": 44,
+      "epochs": 100,
+      "total_events": 4099,
+      "actions_executed": 21,
+      "actions_refused": 1979,
+      "conflicts_registered": 293,
+      "transformations": 1707,
+      "deadlock": null,
+      "failure": null,
+      "final_state_hash": "94afbf50de57e9610ff9bed55b3e6410464739bfe112d8e1d0589ea812252e68",
+      "elapsed_seconds": 69.9257242679596
+    },
+    {
+      "condition": "A",
+      "seed": 55,
+      "epochs": 100,
+      "total_events": 4099,
+      "actions_executed": 19,
+      "actions_refused": 1981,
+      "conflicts_registered": 342,
+      "transformations": 1658,
+      "deadlock": null,
+      "failure": null,
+      "final_state_hash": "662f379a05e2e373449b02a28083e02a5400befae58865080cd9ce0089cf72bd",
+      "elapsed_seconds": 71.24766421318054
+    },
+    {
+      "condition": "B",
+      "seed": 11,
+      "epochs": 1,
+      "total_events": 25,
+      "actions_executed": 0,
+      "actions_refused": 25,
+      "conflicts_registered": 0,
+      "transformations": 0,
+      "deadlock": "ENTROPIC_COLLAPSE",
+      "failure": null,
+      "final_state_hash": "b7f9295ea6a64eb78440f4972e2fc2c7625365b4b2f226d6e2bfabb65c72d788",
+      "elapsed_seconds": 0.007180213928222656
+    },
+    {
+      "condition": "B",
+      "seed": 22,
+      "epochs": 1,
+      "total_events": 25,
+      "actions_executed": 0,
+      "actions_refused": 25,
+      "conflicts_registered": 0,
+      "transformations": 0,
+      "deadlock": "ENTROPIC_COLLAPSE",
+      "failure": null,
+      "final_state_hash": "b7f9295ea6a64eb78440f4972e2fc2c7625365b4b2f226d6e2bfabb65c72d788",
+      "elapsed_seconds": 0.00893402099609375
+    },
+    {
+      "condition": "B",
+      "seed": 33,
+      "epochs": 1,
+      "total_events": 25,
+      "actions_executed": 0,
+      "actions_refused": 25,
+      "conflicts_registered": 0,
+      "transformations": 0,
+      "deadlock": "ENTROPIC_COLLAPSE",
+      "failure": null,
+      "final_state_hash": "b7f9295ea6a64eb78440f4972e2fc2c7625365b4b2f226d6e2bfabb65c72d788",
+      "elapsed_seconds": 0.007436513900756836
+    },
+    {
+      "condition": "B",
+      "seed": 44,
+      "epochs": 1,
+      "total_events": 25,
+      "actions_executed": 0,
+      "actions_refused": 25,
+      "conflicts_registered": 0,
+      "transformations": 0,
+      "deadlock": "ENTROPIC_COLLAPSE",
+      "failure": null,
+      "final_state_hash": "b7f9295ea6a64eb78440f4972e2fc2c7625365b4b2f226d6e2bfabb65c72d788",
+      "elapsed_seconds": 0.00661921501159668
+    },
+    {
+      "condition": "B",
+      "seed": 55,
+      "epochs": 1,
+      "total_events": 25,
+      "actions_executed": 0,
+      "actions_refused": 25,
+      "conflicts_registered": 0,
+      "transformations": 0,
+      "deadlock": "ENTROPIC_COLLAPSE",
+      "failure": null,
+      "final_state_hash": "b7f9295ea6a64eb78440f4972e2fc2c7625365b4b2f226d6e2bfabb65c72d788",
+      "elapsed_seconds": 0.00853729248046875
+    },
+    {
+      "condition": "C",
+      "seed": 11,
+      "epochs": 100,
+      "total_events": 8099,
+      "actions_executed": 17,
+      "actions_refused": 2963,
+      "conflicts_registered": 1478,
+      "transformations": 3542,
+      "deadlock": null,
+      "failure": null,
+      "final_state_hash": "ea9d40739b9743b3e629ed44bab349bc86aaebd457f15eb1987bfb5ce1af49e8",
+      "elapsed_seconds": 459.5235161781311
+    },
+    {
+      "condition": "C",
+      "seed": 22,
+      "epochs": 100,
+      "total_events": 8099,
+      "actions_executed": 13,
+      "actions_refused": 2972,
+      "conflicts_registered": 1464,
+      "transformations": 3551,
+      "deadlock": null,
+      "failure": null,
+      "final_state_hash": "1d60dab23e03d98653597823f1d7d93c1fca537631be66d743654b8c7d095448",
+      "elapsed_seconds": 447.72478556632996
+    },
+    {
+      "condition": "C",
+      "seed": 33,
+      "epochs": 100,
+      "total_events": 8099,
+      "actions_executed": 18,
+      "actions_refused": 2963,
+      "conflicts_registered": 1467,
+      "transformations": 3552,
+      "deadlock": null,
+      "failure": null,
+      "final_state_hash": "db5c11b628c94c492f7ce1bd4a0bb247fada3281aff3554cbcd25405c32bd974",
+      "elapsed_seconds": 448.52635312080383
+    },
+    {
+      "condition": "C",
+      "seed": 44,
+      "epochs": 100,
+      "total_events": 8099,
+      "actions_executed": 10,
+      "actions_refused": 2977,
+      "conflicts_registered": 1477,
+      "transformations": 3536,
+      "deadlock": null,
+      "failure": null,
+      "final_state_hash": "c1ef2163fe4ded68af306431b408f0d1b9fb9f48a56018be03204f0c35cb0a49",
+      "elapsed_seconds": 446.0462713241577
+    },
+    {
+      "condition": "C",
+      "seed": 55,
+      "epochs": 100,
+      "total_events": 8099,
+      "actions_executed": 22,
+      "actions_refused": 2971,
+      "conflicts_registered": 1466,
+      "transformations": 3541,
+      "deadlock": null,
+      "failure": null,
+      "final_state_hash": "d350eaa11b5cb5403dbe74981ab4d363606cf1396146c9a41597dc0e8ac9b315",
+      "elapsed_seconds": 446.8936767578125
+    }
+  ],
+  "replay_verification": [
+    {
+      "run_id": "A_11",
+      "success": true
+    },
+    {
+      "run_id": "A_22",
+      "success": true
+    },
+    {
+      "run_id": "A_33",
+      "success": true
+    },
+    {
+      "run_id": "A_44",
+      "success": true
+    },
+    {
+      "run_id": "A_55",
+      "success": true
+    },
+    {
+      "run_id": "B_11",
+      "success": true
+    },
+    {
+      "run_id": "B_22",
+      "success": true
+    },
+    {
+      "run_id": "B_33",
+      "success": true
+    },
+    {
+      "run_id": "B_44",
+      "success": true
+    },
+    {
+      "run_id": "B_55",
+      "success": true
+    },
+    {
+      "run_id": "C_11",
+      "success": true
+    },
+    {
+      "run_id": "C_22",
+      "success": true
+    },
+    {
+      "run_id": "C_33",
+      "success": true
+    },
+    {
+      "run_id": "C_44",
+      "success": true
+    },
+    {
+      "run_id": "C_55",
+      "success": true
+    }
+  ],
+  "summary": {
+    "total_runs": 15,
+    "passed_runs": 15,
+    "failed_runs": 0,
+    "replay_verified": 15,
+    "replay_failed": 0
+  },
+  "end_time": "2026-01-30T11:13:56.855768",
+  "classification": "AKR0_PASS / AUTHORITY_EXECUTION_ESTABLISHED"
+}
