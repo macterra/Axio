@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency X.2 — Authority Kernel Runtime Calibration (AKR-0) - Axionic Agency Lab</title>
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../" class="nav-brand">
+            <img src="../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href=".././">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
+
+<h1
+id="axionic-agency-x.2-authority-kernel-runtime-calibration-akr-0">Axionic
+Agency X.2 — Authority Kernel Runtime Calibration (AKR-0)</h1>
+<p><em>A Structural Demonstration of Executable Authority Without
+Semantics</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026.01.31</p>
+<h2 id="abstract">Abstract</h2>
+<p>This technical note reports the completed results of
+<strong>Authority Kernel Runtime Calibration (AKR-0)</strong>, a
+preregistered experimental program within <strong>Axionic Phase
+VIII</strong> that evaluates whether <strong>authority-constrained
+execution</strong> is mechanically realizable without semantic
+interpretation, optimization, or fallback behavior. AKR-0 isolates the
+execution substrate beneath governance and tests whether a deterministic
+kernel can (i) execute actions only when explicitly authorized, (ii)
+refuse inadmissible actions without degradation, (iii) register and
+enforce structural conflicts, and (iv) recognize deadlock as a terminal
+diagnostic outcome. Across fifteen preregistered runs spanning valid
+authority, authority absence, and conflict saturation regimes, all
+executions were deterministic, auditable, and bit-perfectly replayable.
+The results establish that authority can be executed as
+<strong>structure</strong>, not narrative. AKR-0 makes no claims about
+governance success, stability, alignment, or desirability; those
+questions are deferred to subsequent Phase VIII experiments.</p>
+<h2 id="problem-definition">1. Problem Definition</h2>
+<h3 id="the-executability-gap">1.1 The Executability Gap</h3>
+<p>Most discussions of governance, alignment, or authority implicitly
+assume that <em>execution</em> is trivial once rules are defined. In
+practice, many systems silently rely on heuristics, semantic
+interpretation, or “best effort” behavior when authority is absent,
+ambiguous, or conflicting.</p>
+<p>AKR-0 removes that assumption.</p>
+<p>The problem AKR-0 isolates is whether <strong>authority can be
+executed at all</strong> as a purely mechanical constraint—without an
+agent, without interpretation, and without rescue logic. If authority
+requires semantic reasoning or optimization to be enforced, then
+governance claims collapse into narrative descriptions rather than
+executable structure.</p>
+<p>AKR-0 treats authority as a <strong>state-bound admissibility
+relation</strong>, not as a goal, preference, or policy, and tests
+whether that relation can be enforced deterministically under
+stress.</p>
+<h3 id="failure-modes-targeted">1.2 Failure Modes Targeted</h3>
+<p>AKR-0 is designed to surface the following execution-level failure
+modes:</p>
+<ul>
+<li><strong>Ungated execution:</strong> actions occur without explicit
+authority.</li>
+<li><strong>Fail-open behavior:</strong> inadmissible actions are
+executed “by default.”</li>
+<li><strong>Heuristic arbitration:</strong> conflicts are resolved
+implicitly or preferentially.</li>
+<li><strong>Semantic fallback:</strong> execution proceeds based on
+inferred intent or utility.</li>
+<li><strong>Non-determinism:</strong> identical inputs yield divergent
+outcomes.</li>
+<li><strong>Deadlock evasion:</strong> systems continue acting after
+authority exhaustion.</li>
+</ul>
+<p>Any of these constitutes AKR-0 failure.</p>
+<h2 id="fixed-assumptions-and-scope">2. Fixed Assumptions and Scope</h2>
+<h3 id="inherited-semantics-frozen">2.1 Inherited Semantics
+(Frozen)</h3>
+<p>AKR-0 inherits, without reinterpretation, the semantics fixed by:</p>
+<ul>
+<li><strong>AST Spec v0.2</strong> (Authority State
+Transformation),</li>
+<li><strong>AIE v0.1</strong> (Authority Input Environment),</li>
+<li>and the Phase VIII Execution Addendum.</li>
+</ul>
+<p>Authority is structural, scopes are atomic, conflicts are
+destructive, and authority creation is external. AKR-0 does
+<strong>not</strong> test whether these definitions are correct; it
+tests whether they are <em>executable</em>.</p>
+<h3 id="explicit-exclusions">2.2 Explicit Exclusions</h3>
+<p>AKR-0 does <strong>not</strong> test:</p>
+<ul>
+<li>governance effectiveness,</li>
+<li>coordination or convergence,</li>
+<li>robustness under adversarial deception,</li>
+<li>strategic planning,</li>
+<li>long-horizon survivability,</li>
+<li>alignment or safety.</li>
+</ul>
+<p>Those hazards are intentionally excluded. AKR-0 is a calibration
+gate, not a governance experiment.</p>
+<h2 id="conserved-quantity">3. Conserved Quantity</h2>
+<p>The conserved quantity throughout AKR-0 is:</p>
+<blockquote>
+<p><strong>Authority-constrained admissibility under deterministic
+execution</strong></p>
+</blockquote>
+<p>Authority is neither a score nor an emergent pattern. It is a
+<strong>binary structural condition</strong>: an action is either
+admissible or it is not, given the Authority State.</p>
+<p>The kernel must:</p>
+<ul>
+<li>execute <strong>only</strong> admissible actions,</li>
+<li>refuse inadmissible actions without escalation,</li>
+<li>preserve state under refusal,</li>
+<li>and halt honestly when no admissible path remains.</li>
+</ul>
+<p>No semantic interpretation is permitted to “improve” outcomes.</p>
+<h2 id="experimental-methodology">4. Experimental Methodology</h2>
+<h3 id="preregistration-discipline">4.1 Preregistration Discipline</h3>
+<p>AKR-0 was preregistered in full prior to implementation,
+including:</p>
+<ul>
+<li>frozen specifications,</li>
+<li>closed schemas,</li>
+<li>fixed PRNG and seeds,</li>
+<li>deterministic gas budgets,</li>
+<li>canonical ordering rules,</li>
+<li>explicit failure taxonomies.</li>
+</ul>
+<p>All 15 runs were executed without deviation. Any divergence would
+have yielded <code>INVALID_RUN</code>.</p>
+<h3 id="execution-architecture">4.2 Execution Architecture</h3>
+<p>Each run consisted of three strictly partitioned components:</p>
+<ol type="1">
+<li><strong>AIE</strong> — injected authority records only.</li>
+<li><strong>Execution Harness</strong> — generated candidate actions and
+transformation requests.</li>
+<li><strong>AKR-0 Kernel</strong> — enforced admissibility, conflict
+blocking, refusal, and deadlock.</li>
+</ol>
+<p>No component had access to semantic information or outcome
+desirability.</p>
+<h2 id="experiment-ladder-and-conditions">5. Experiment Ladder and
+Conditions</h2>
+<h3 id="condition-a-valid-authority-positive-control">5.1 Condition A —
+Valid Authority (Positive Control)</h3>
+<p><strong>Purpose:</strong> Verify lawful execution under valid
+authority.</p>
+<p><strong>Result:</strong> Actions executed <strong>only</strong> when
+holder and scope matched an ACTIVE authority. All other actions were
+refused deterministically. Conflicts were registered and blocked
+execution without arbitration.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="condition-b-authority-absence-negative-control">5.2 Condition B
+— Authority Absence (Negative Control)</h3>
+<p><strong>Purpose:</strong> Test refusal and deadlock under zero
+authority.</p>
+<p><strong>Result:</strong> All actions were refused.
+<strong>ENTROPIC_COLLAPSE</strong> was detected at epoch 1, terminating
+each run immediately. Final Authority State hashes were identical across
+all seeds, confirming deterministic empty-state termination.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="condition-c-conflict-saturation">5.3 Condition C — Conflict
+Saturation</h3>
+<p><strong>Purpose:</strong> Stress conflict detection and blocking.</p>
+<p><strong>Method:</strong> High conflict density was guaranteed via
+deterministic hot-scope pairing.</p>
+<p><strong>Result:</strong> Thousands of conflicts were registered.
+Execution rates dropped below 1%. No conflict was arbitrated, no
+semantic fallback occurred, and no nondeterminism was observed. Despite
+saturation, the kernel remained live until termination conditions were
+met.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h2 id="core-results">6. Core Results</h2>
+<h3 id="positive-results">6.1 Positive Results</h3>
+<p>Across all conditions and seeds, AKR-0 establishes that:</p>
+<ol type="1">
+<li>Authority gating is <strong>deterministically
+enforceable</strong>.</li>
+<li>Refusal is a <strong>stable, first-class outcome</strong>.</li>
+<li>Conflict can be <strong>represented and enforced</strong> without
+resolution.</li>
+<li>Deadlock can be <strong>detected and classified</strong>
+mechanically.</li>
+<li>Execution is <strong>bit-perfectly replayable</strong> under
+canonical ordering.</li>
+<li>No semantic or heuristic logic is required at runtime.</li>
+</ol>
+<h3 id="negative-results-explicit">6.2 Negative Results (Explicit)</h3>
+<p>AKR-0 does <strong>not</strong> establish:</p>
+<ul>
+<li>that governance succeeds,</li>
+<li>that coordination emerges,</li>
+<li>that authority persists long-term,</li>
+<li>that execution is efficient or useful.</li>
+</ul>
+<p>These are not omissions; they are boundary conditions.</p>
+<h2 id="failure-semantics-and-closure">7. Failure Semantics and
+Closure</h2>
+<h3 id="closure-criteria">7.1 Closure Criteria</h3>
+<p>AKR-0 closes positive if and only if:</p>
+<ol type="1">
+<li>No ungated execution occurs.</li>
+<li>All inadmissible actions are refused.</li>
+<li>Conflicts block execution deterministically.</li>
+<li>Deadlock is detected without recovery logic.</li>
+<li>Replay is bit-perfect across all runs.</li>
+</ol>
+<p>All criteria were satisfied.</p>
+<h3 id="akr-0-closure-status">7.2 AKR-0 Closure Status</h3>
+<p><strong>AKR-0 Status:</strong> <strong>CLOSED — POSITIVE</strong>
+(<code>AKR0_PASS / AUTHORITY_EXECUTION_ESTABLISHED</code>)</p>
+<h2 id="boundary-conditions-and-deferred-hazards">8. Boundary Conditions
+and Deferred Hazards</h2>
+<h3 id="governance-vs-execution">8.1 Governance vs Execution</h3>
+<p>AKR-0 establishes <strong>executability</strong>, not governance
+viability. A system that refuses everything is still a valid AKR-0
+system.</p>
+<h3 id="interface-to-subsequent-phase-viii-work">8.2 Interface to
+Subsequent Phase VIII Work</h3>
+<p>AKR-0 removes the “execution substrate” objection. Subsequent
+experiments may now legitimately ask:</p>
+<ul>
+<li>whether authority survives pressure,</li>
+<li>whether transformations enable governance,</li>
+<li>whether coordination is possible.</li>
+</ul>
+<p>Those questions were ill-posed before AKR-0.</p>
+<h2 id="implications-strictly-limited">9. Implications (Strictly
+Limited)</h2>
+<p>AKR-0 establishes a <strong>necessary condition</strong> for
+governance: that authority can be enforced without semantics. It does
+not establish sufficiency.</p>
+<p>Authority is now a <strong>mechanically testable property</strong>,
+not a narrative assumption.</p>
+<h2 id="conclusion">10. Conclusion</h2>
+<p>AKR-0 demonstrates that authority can be executed as
+<strong>structure</strong>, not story. Actions can be gated, refused,
+blocked, and halted deterministically without interpretation,
+optimization, or rescue behavior.</p>
+<p>The remaining question is not whether authority can run, but whether
+it can <em>govern</em>.</p>
+<p>That question belongs to the next phase.</p>
+<h2 id="appendix-a-experiment-status">Appendix A — Experiment
+Status</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Condition</th>
+<th>Runs</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>5</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>5</td>
+<td>PASS</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>5</td>
+<td>PASS</td>
+</tr>
+</tbody>
+</table>
+<h2 id="appendix-b-determinism-verification">Appendix B — Determinism
+Verification</h2>
+<ul>
+<li>Canonical ordering enforced</li>
+<li>Deterministic gas accounting</li>
+<li>Per-event hash chaining</li>
+<li>15/15 replay verifications passed</li>
+</ul>
+<p><strong>End of Axionic Agency IX.3 — AKR-0 Results Note</strong></p>
+
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
