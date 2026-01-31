@@ -71,6 +71,13 @@
       "name": "Authority Beyond Persistence",
       "description": "Post-ontological stress program evaluating whether authority survives discontinuity of identity and adversarial imitation through authorized succession (ASI) and structural impersonation resistance (SIR).",
       "paper_prefix": "Axionic-Agency-IX"
+    },
+    {
+      "id": "gsa-poc",
+      "series": "X",
+      "name": "Governance Stress Architecture",
+      "description": "Post-agency stress program evaluating whether governance itself can be made sovereign through structural law alone, without semantic interpretation, heuristic arbitration, or responsibility laundering.",
+      "paper_prefix": "Axionic-Agency-X"
     }
   ],
   "team": [
