@@ -1,0 +1,20 @@
+{
+  "type": "RUN_END",
+  "run_id": "MPA_VIII1_20260201_142520",
+  "results": {
+    "both_authorities_present": true,
+    "authorities_symmetric": true,
+    "conflict_registered": true,
+    "no_action_executed": true,
+    "all_actions_refused": true,
+    "deadlock_declared_once": true,
+    "deadlock_persists": true,
+    "third_party_rejected": true,
+    "state_hash_deterministic": true,
+    "hash_chain_valid": true,
+    "passed": true,
+    "classification": "VIII1_PASS / PLURAL_AUTHORITY_REPRESENTABLE"
+  },
+  "final_chain_hash": "facfcf1d97916cca4201add4e4855f82493dd2c0f14731df44285bec81f19d3a",
+  "total_events": 10
+}
