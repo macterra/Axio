@@ -1,11 +1,17 @@
+Below is the **updated Phase VIII roadmap**, revised **minimally and conservatively** to incorporate the **closed positive result of Stage VIII-1**, while preserving all prior gating logic and epistemic discipline.
+
+Version is incremented to **v0.5** because a stage status and licensed claim have changed. No scope creep, no reinterpretation.
+
+---
+
 # **Axionic Phase VIII — GSA-PoC**
 
-**Governance-Sovereign Architecture (Proof of Concept)**
-**Roadmap v0.4 (Post-AKR-0 Closure Update, Preregistration-Grade)**
+- **Governance-Sovereign Architecture (Proof of Concept)**
+- **Roadmap v0.5 (Post-VIII-1 Closure Update, Preregistration-Grade)**
 
-David McFadzean
-*Axionic Agency Lab*
-2026-01-31
+David McFadzean<br>
+*Axionic Agency Lab*<br>
+2026-02-01
 
 ---
 
@@ -15,14 +21,15 @@ This roadmap sequences **Phase VIII investigations** under the constraints estab
 
 * the **Phase VIII Charter**,
 * **AST Spec v0.2** — *Authority State Transformation Specification* (standalone normative document, frozen and preregistered),
-* **AKR-0** — *Authority Kernel Runtime Calibration* (Phase VIII-0; CLOSED — POSITIVE),
+* **AKR-0** — *Authority Kernel Runtime Calibration* (Phase VIII-0; **CLOSED — POSITIVE**),
+* **Stage VIII-1** — *Minimal Plural Authority (Static)* (**CLOSED — POSITIVE**),
 * **AIE v0.1** — *Authority Input Environment* (mock legislator / authority feeder; frozen),
 * **P8-METRICS** — *Phase VIII Metrics Specification*.
 
 This roadmap is **conditional and gated**.
 Each stage may be entered **only if the previous stage closes without violation** of sovereignty, auditability, or responsibility.
 
-Phase VIII is complete when the feasibility boundary of **sovereign governance under plural authority** is decisively determined.
+Phase VIII completes when the feasibility boundary of **sovereign governance under plural authority** is decisively determined.
 
 ---
 
@@ -45,9 +52,9 @@ Failure of any precondition **terminates Phase VIII before governance experiment
 
 *(Kernel Validity Closure)*
 
-- **Status:** ✅ **CLOSED — POSITIVE**
-- **Scope:** Atomic scopes; deterministic ordering; deterministic gas
-- **Nature:** Structural execution gate, not a governance experiment
+* **Status:** ✅ **CLOSED — POSITIVE**
+* **Scope:** Atomic scopes; deterministic ordering; deterministic gas
+* **Nature:** Structural execution gate, not a governance experiment
 
 ### Question Tested
 
@@ -58,10 +65,10 @@ Failure of any precondition **terminates Phase VIII before governance experiment
 * AKR-0 preregistration (binding parameters + schemas)
 * AKR-0 reference implementation (Opus)
 * Replay verifier (bit-perfect)
-* AKR-0 Implementation Report (CLOSED — POSITIVE)
+* AKR-0 Implementation Report (**CLOSED — POSITIVE**)
 * AKR-0 Results Note (archival)
 
-### Licensed Claim (now active)
+### Licensed Claim (active)
 
 > **Authority-constrained execution is mechanically realizable under AST Spec v0.2 using a deterministic kernel without semantic interpretation, optimization, or fallback behavior.**
 
@@ -74,38 +81,49 @@ It does **not** license any claims about governance success.
 
 ## 3. Stage VIII-1 — Minimal Plural Authority (Static)
 
-- **Status:** 🔴 **OPEN**
-- **Scope:** Two authorities, one resource
-- **Dynamics:** Static; no time progression
+*(Ontological Plurality Closure)*
+
+* **Status:** ✅ **CLOSED — POSITIVE**
+* **Scope:** Two authorities, one resource
+* **Dynamics:** Static; no time progression
 
 ### Question Tested
 
-> **Can plural authority coexist structurally without collapsing into implicit ordering?**
+> **Can plural authority coexist structurally without collapsing into implicit ordering, arbitration, or authority collapse—even when no action is admissible?**
 
 ### Tests
 
 * overlapping exclusive scopes
 * conflict registration correctness
-* admissibility vs explicit non-action
+* authority identity opacity
 * refusal semantics under plural constraints
+* deadlock entry and persistence without resolution
 
-### Expected Outcomes
+### Observed Outcome
 
-* lawful deadlock,
-* explicit non-action,
-* no silent override.
+* explicit conflict registration on first contested action,
+* lawful refusal of all actions,
+* terminal deadlock entered and persisted,
+* no ordering, arbitration, or collapse observed.
 
-### Licensed Claim (if closed)
+### Licensed Claim (now active)
 
-> **Plural authority can be represented without collapse, even when action is impossible.**
+> **Plural authority can be represented structurally without collapse, even when no action is admissible.**
+
+### Notes
+
+Stage VIII-1 establishes **ontological coherence** of plural authority.
+It does **not** claim that governance can proceed, coordinate, or resolve.
 
 ---
 
 ## 4. Stage VIII-2 — Destructive Conflict Resolution (Timeless)
 
-- **Status:** 🔴 **OPEN**
-- **Scope:** Two authorities, one resource
-- **Dynamics:** Structural resolution only; **single-epoch model**
+*(Licensed Authority Destruction)*
+
+* **Status:** 🔴 **OPEN**
+* **Scope:** Two authorities, one resource
+* **Dynamics:** Structural resolution only; **single-epoch model**
 
 ### Clarification
 
@@ -113,7 +131,7 @@ It does **not** license any claims about governance success.
 
 ### Question Tested
 
-> **Can authority conflicts be resolved structurally without synthesis, compromise, or optimization?**
+> **Can authority conflicts be resolved structurally without synthesis, compromise, or optimization—while preserving responsibility traceability?**
 
 ### Metrics (P8-METRICS)
 
@@ -125,17 +143,21 @@ It does **not** license any claims about governance success.
 
 > **Conflict resolution without responsibility laundering is possible but necessarily destructive.**
 
+### Dependency Note
+
+Stage VIII-2 is meaningful **only because** Stage VIII-1 showed that resolution is *optional*, not forced.
+
 ---
 
 ## 5. Stage VIII-3 — Temporal Governance (Authority Over Time)
 
-- **Status:** 🔴 **OPEN**
-- **Scope:** Expiry, renewal, revalidation
-- **Dynamics:** Explicit epoch advancement
+* **Status:** 🔴 **OPEN**
+* **Scope:** Expiry, renewal, revalidation
+* **Dynamics:** Explicit epoch advancement
 
 ### Question Tested
 
-> **Can authority remain sovereign over time without semantic reinterpretation?**
+> **Can authority remain sovereign over time without semantic reinterpretation, under open-system replenishment?**
 
 ### Metrics
 
@@ -145,19 +167,19 @@ It does **not** license any claims about governance success.
 
 ### Licensed Claim (if closed)
 
-> **Time-extended governance is structurally possible but requires explicit renewal under open-system replenishment.**
+> **Time-extended governance is structurally possible but requires explicit renewal under open-system constraints.**
 
 ---
 
 ## 6. Stage VIII-4 — Governance Transitions (Meta-Authority)
 
-- **Status:** 🔴 **OPEN**
-- **Scope:** Authority governing authority
-- **Dynamics:** Amendment, revocation, re-grant
+* **Status:** 🔴 **OPEN**
+* **Scope:** Authority governing authority
+* **Dynamics:** Amendment, revocation, re-grant
 
 ### Question Tested
 
-> **Can governance mechanisms themselves be governed without reopening laundering or exception paths?**
+> **Can governance mechanisms themselves be governed without reopening laundering, exception paths, or semantic privilege?**
 
 ### Tests
 
@@ -178,9 +200,9 @@ It does **not** license any claims about governance success.
 
 ## 7. Stage VIII-5 — Multi-Scope Interaction (Static)
 
-- **Status:** 🔴 **OPEN**
-- **Scope:** Two authorities, two resources
-- **Dynamics:** Static
+* **Status:** 🔴 **OPEN**
+* **Scope:** Two authorities, two resources
+* **Dynamics:** Static
 
 ### Question Tested
 
@@ -196,9 +218,9 @@ It does **not** license any claims about governance success.
 
 ## 8. Stage VIII-6 — Multi-Authority, Multi-Scope Regimes
 
-- **Status:** 🔴 **OPEN**
-- **Scope:** ≥3 authorities, ≥2 resources
-- **Dynamics:** Structural and temporal
+* **Status:** 🔴 **OPEN**
+* **Scope:** ≥3 authorities, ≥2 resources
+* **Dynamics:** Structural and temporal
 
 ### Clarification
 
@@ -213,16 +235,16 @@ It does **not** license any claims about governance success.
 
 ### Possible Outcomes
 
-* limited admissible governance patterns,
-* transient governance followed by collapse,
-* immediate infeasibility.
+* limited admissible governance patterns
+* transient governance followed by collapse
+* immediate infeasibility
 
 ---
 
 ## 9. Stage VIII-7 — Governance Stress & Adversarial Patterns
 
-- **Status:** 🔴 **OPEN**
-- **Scope:** Pathological but lawful authority configurations
+* **Status:** 🔴 **OPEN**
+* **Scope:** Pathological but lawful authority configurations
 
 ### Patterns Tested
 
@@ -253,7 +275,7 @@ Semantic value content is out of scope.
 
 Phase VIII completes when **any one** holds:
 
-1. Non-empty class of admissible governance patterns exists.
+1. A non-empty class of admissible governance patterns exists.
 2. **Immediate Deadlock:** plural governance deadlocks regardless of replenishment.
 3. Governance transitions require semantic interpretation.
 4. **Entropic Collapse:** governance functions transiently then decays under open-system constraints.
@@ -268,7 +290,7 @@ Phase VIII does **not** aim to build a helpful agent, optimize outcomes, encode 
 
 ## 13. Closure Statement Template
 
-> *“Axionic Phase VIII — GSA-PoC (Roadmap vX) determined the boundary of sovereign governance under plural authority. Under AST Spec vX, AKR-0 vY, and AIE vZ, the following regimes were admissible and the following were not.”*
+> *“Axionic Phase VIII — GSA-PoC (Roadmap vX) determined the boundary of sovereign governance under plural authority. Under AST Spec vX, AKR-0 vY, AIE vZ, and Stage VIII-1 results, the following regimes were admissible and the following were not.”*
 
 ---
 
@@ -278,4 +300,4 @@ Any requirement for implicit authority, semantic reasoning, optimization, heuris
 
 ---
 
-**End of Phase VIII — GSA-PoC Roadmap v0.4**
+**End of Phase VIII — GSA-PoC Roadmap v0.5**
