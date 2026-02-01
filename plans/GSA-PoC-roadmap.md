@@ -1,11 +1,11 @@
 # **Axionic Phase VIII — GSA-PoC**
 
 **Governance-Sovereign Architecture (Proof of Concept)**
-**Roadmap v0.3 (Renumbered, Preregistration-Grade)**
+**Roadmap v0.4 (Post-AKR-0 Closure Update, Preregistration-Grade)**
 
 David McFadzean
 *Axionic Agency Lab*
-2026-01-28
+2026-01-31
 
 ---
 
@@ -14,9 +14,9 @@ David McFadzean
 This roadmap sequences **Phase VIII investigations** under the constraints established by:
 
 * the **Phase VIII Charter**,
-* **ASTS v0.2** — *Authority State Transformation Specification* (standalone normative document, frozen and preregistered),
-* **AKR-0** — *Authority Kernel Reference*,
-* **AIE** — *Authority Input Environment* (mock legislator / input generator), and
+* **AST Spec v0.2** — *Authority State Transformation Specification* (standalone normative document, frozen and preregistered),
+* **AKR-0** — *Authority Kernel Runtime Calibration* (Phase VIII-0; CLOSED — POSITIVE),
+* **AIE v0.1** — *Authority Input Environment* (mock legislator / authority feeder; frozen),
 * **P8-METRICS** — *Phase VIII Metrics Specification*.
 
 This roadmap is **conditional and gated**.
@@ -28,12 +28,12 @@ Phase VIII is complete when the feasibility boundary of **sovereign governance u
 
 ## 1. Phase VIII Entry Preconditions (Hard Gates)
 
-Phase VIII begins only if **all** of the following are satisfied:
+Phase VIII governance experiments may begin only if **all** of the following are satisfied:
 
-1. **ASTS v0.2** is frozen and preregistered.
-2. **AKR-0 (Authority Kernel Reference)** is implemented and verified.
-3. **AIE (Authority Input Environment)** is specified and operational.
-4. Deterministic conflict detection is demonstrated.
+1. **AST Spec v0.2** is frozen and preregistered.
+2. **AIE v0.1** is specified and operational under feeder blindness, Address Book, and Scope Pool constraints.
+3. **AKR-0 v0.1** is implemented, preregistered, and **CLOSED — POSITIVE** with **bit-perfect replay verification**.
+4. Deterministic conflict detection and registration are demonstrated under canonical ordering and deterministic gas.
 5. No implicit authority paths are discovered.
 6. **Authority entropy** is accepted as an invariant and operationally defined (see P8-METRICS).
 
@@ -41,44 +41,42 @@ Failure of any precondition **terminates Phase VIII before governance experiment
 
 ---
 
-## 2. Stage VIII-0 — Authority Kernel Reference (AKR-0)
+## 2. Stage VIII-0 — Authority Kernel Runtime Calibration (AKR-0)
 
 *(Kernel Validity Closure)*
 
-**Status:** Required precondition
-**Scope:** Single resource, exclusive access
-**Nature:** Structural execution gate, not a governance experiment
+- **Status:** ✅ **CLOSED — POSITIVE**
+- **Scope:** Atomic scopes; deterministic ordering; deterministic gas
+- **Nature:** Structural execution gate, not a governance experiment
 
 ### Question Tested
 
-> **Is ASTS v0.2 implementable as a deterministic, auditable authority kernel without semantic leakage or heuristic arbitration?**
+> **Is AST Spec v0.2 implementable as a deterministic, auditable authority kernel without semantic leakage, implicit authority, or heuristic arbitration?**
 
-### Artifacts
+### Closure Artifacts
 
-* AKR-0 reference implementation
-* Deterministic verifier (including concurrent stress tests)
-* Canonical scenario suite
-* AKR-0 closure report
+* AKR-0 preregistration (binding parameters + schemas)
+* AKR-0 reference implementation (Opus)
+* Replay verifier (bit-perfect)
+* AKR-0 Implementation Report (CLOSED — POSITIVE)
+* AKR-0 Results Note (archival)
 
-### Licensed Claim (if closed)
+### Licensed Claim (now active)
 
-> **ASTS v0.2 is implementable as a sovereign authority kernel with explicit failure modes and no implicit authority.**
+> **Authority-constrained execution is mechanically realizable under AST Spec v0.2 using a deterministic kernel without semantic interpretation, optimization, or fallback behavior.**
 
-### Termination Conditions
+### Notes
 
-Discovery that implementation requires:
-
-* semantic scope interpretation,
-* implicit priority,
-* heuristic tie-breaking, or
-* unlogged state mutation.
+AKR-0 resolves the “execution substrate” objection.
+It does **not** license any claims about governance success.
 
 ---
 
 ## 3. Stage VIII-1 — Minimal Plural Authority (Static)
 
-**Scope:** Two authorities, one resource
-**Dynamics:** Static; no time progression
+- **Status:** 🔴 **OPEN**
+- **Scope:** Two authorities, one resource
+- **Dynamics:** Static; no time progression
 
 ### Question Tested
 
@@ -89,6 +87,7 @@ Discovery that implementation requires:
 * overlapping exclusive scopes
 * conflict registration correctness
 * admissibility vs explicit non-action
+* refusal semantics under plural constraints
 
 ### Expected Outcomes
 
@@ -104,8 +103,9 @@ Discovery that implementation requires:
 
 ## 4. Stage VIII-2 — Destructive Conflict Resolution (Timeless)
 
-**Scope:** Two authorities, one resource
-**Dynamics:** Structural resolution only; **single-epoch model**
+- **Status:** 🔴 **OPEN**
+- **Scope:** Two authorities, one resource
+- **Dynamics:** Structural resolution only; **single-epoch model**
 
 ### Clarification
 
@@ -129,8 +129,9 @@ Discovery that implementation requires:
 
 ## 5. Stage VIII-3 — Temporal Governance (Authority Over Time)
 
-**Scope:** Expiry, revalidation, replacement
-**Dynamics:** Explicit epoch advancement
+- **Status:** 🔴 **OPEN**
+- **Scope:** Expiry, renewal, revalidation
+- **Dynamics:** Explicit epoch advancement
 
 ### Question Tested
 
@@ -140,32 +141,34 @@ Discovery that implementation requires:
 
 * Mean Time To Deadlock (MTTD)
 * Authority Entropy Rate over epochs
+* Renewal burden (authority injection rate required to sustain non-zero ASA)
 
 ### Licensed Claim (if closed)
 
-> **Time-extended governance is structurally possible but requires explicit renewal.**
+> **Time-extended governance is structurally possible but requires explicit renewal under open-system replenishment.**
 
 ---
 
 ## 6. Stage VIII-4 — Governance Transitions (Meta-Authority)
 
-**Scope:** Authority governing authority
-**Dynamics:** Amendment, revocation, re-grant
+- **Status:** 🔴 **OPEN**
+- **Scope:** Authority governing authority
+- **Dynamics:** Amendment, revocation, re-grant
 
 ### Question Tested
 
-> **Can governance mechanisms themselves be governed without reopening impersonation or laundering risks?**
+> **Can governance mechanisms themselves be governed without reopening laundering or exception paths?**
 
 ### Tests
 
-* governance authority creation
+* governance authority creation (external injection only)
 * governance authority revocation
 * contested governance changes
 * **Circular Governance Deadlock** (mutual revocation rights)
 
 ### Regress Bound
 
-> *No meta-level is privileged. Governance actions on governance actions remain subject to ASTS. Infinite regress terminates via authority entropy or lawful deadlock.*
+> *No meta-level is privileged. Governance actions on governance actions remain subject to AST Spec. Infinite regress terminates via authority entropy or lawful deadlock.*
 
 ### Licensed Claim (if closed)
 
@@ -175,8 +178,9 @@ Discovery that implementation requires:
 
 ## 7. Stage VIII-5 — Multi-Scope Interaction (Static)
 
-**Scope:** Two authorities, two resources
-**Dynamics:** Static
+- **Status:** 🔴 **OPEN**
+- **Scope:** Two authorities, two resources
+- **Dynamics:** Static
 
 ### Question Tested
 
@@ -192,8 +196,9 @@ Discovery that implementation requires:
 
 ## 8. Stage VIII-6 — Multi-Authority, Multi-Scope Regimes
 
-**Scope:** ≥3 authorities, ≥2 resources
-**Dynamics:** Structural and temporal
+- **Status:** 🔴 **OPEN**
+- **Scope:** ≥3 authorities, ≥2 resources
+- **Dynamics:** Structural and temporal
 
 ### Clarification
 
@@ -216,7 +221,8 @@ Discovery that implementation requires:
 
 ## 9. Stage VIII-7 — Governance Stress & Adversarial Patterns
 
-**Scope:** Pathological but lawful authority configurations
+- **Status:** 🔴 **OPEN**
+- **Scope:** Pathological but lawful authority configurations
 
 ### Patterns Tested
 
@@ -237,7 +243,7 @@ Discovery that implementation requires:
 
 ## 10. Value Pluralism Clarification
 
-> *Value pluralism is represented structurally as authority pluralism. Each authority is treated as a value commitment carrier without interpretation or aggregation.*
+> *Value pluralism is represented structurally as authority pluralism. Each authority is treated as a value-commitment carrier without interpretation or aggregation.*
 
 Semantic value content is out of scope.
 
@@ -250,7 +256,7 @@ Phase VIII completes when **any one** holds:
 1. Non-empty class of admissible governance patterns exists.
 2. **Immediate Deadlock:** plural governance deadlocks regardless of replenishment.
 3. Governance transitions require semantic interpretation.
-4. **Entropic Collapse:** governance functions transiently then decays.
+4. **Entropic Collapse:** governance functions transiently then decays under open-system constraints.
 
 ---
 
@@ -262,16 +268,14 @@ Phase VIII does **not** aim to build a helpful agent, optimize outcomes, encode 
 
 ## 13. Closure Statement Template
 
-> *“Axionic Phase VIII — GSA-PoC (Roadmap vX) determined the boundary of sovereign governance under plural authority. Under ASTS vX, AKR-Y, and AIE-Z, the following regimes were admissible and the following were not.”*
+> *“Axionic Phase VIII — GSA-PoC (Roadmap vX) determined the boundary of sovereign governance under plural authority. Under AST Spec vX, AKR-0 vY, and AIE vZ, the following regimes were admissible and the following were not.”*
 
 ---
 
 ## 14. Termination Clause
 
-Any requirement for implicit authority, semantic reasoning, optimization, or responsibility smearing **terminates Phase VIII immediately**.
+Any requirement for implicit authority, semantic reasoning, optimization, heuristic arbitration, or responsibility smearing **terminates Phase VIII immediately**.
 
 ---
 
-**End of Phase VIII — GSA-PoC Roadmap v0.3**
-
----
+**End of Phase VIII — GSA-PoC Roadmap v0.4**
