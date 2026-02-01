@@ -109,6 +109,10 @@ This scope element:
 | 3 | HOLDER_A | `[["R0000", "OP0"]]` | ACTION_REFUSED (CONFLICT_BLOCKS) |
 | 4 | HOLDER_B | `[["R0000", "OP0"]]` | ACTION_REFUSED (CONFLICT_BLOCKS) |
 
+**Event Granularity Note (Binding):** `CONFLICT_REGISTERED` is an independent event emitted by the kernel when first detected. It may occur in the same action-evaluation step as an `ACTION_REFUSED`, but must be logged as a distinct externally observable event with its own state hash.
+
+**Conflict Timing (Binding):** `CONFLICT_REGISTERED` must be emitted during evaluation of Sequence 1 (the first contested action request), not later.
+
 **Post-Condition A Outcome (Binding):** After Sequence 4 is processed and refused, the kernel must enter STATE_DEADLOCK and emit DEADLOCK_DECLARED exactly once.
 
 ### Condition B (Third-Party Actions)
@@ -168,6 +172,8 @@ Accordingly, `DEADLOCK_DECLARED` is emitted exactly once, only after:
 3. The kernel affirmatively verifies transformation admissibility is empty (per §12).
 
 This rule fixes the deadlock trigger point deterministically without requiring enumeration of the action universe.
+
+**Deadlock State Observability (Binding):** After `DEADLOCK_DECLARED`, all subsequent action evaluations must observe `kernel_state == STATE_DEADLOCK` and log that state value (or equivalent state flag) in each `ACTION_REFUSED` event.
 
 ---
 
@@ -265,7 +271,7 @@ Replay verification:
 5. ☐ All actions refused with correct reason codes
 6. ☐ DEADLOCK_DECLARED emitted exactly once
 7. ☐ Deadlock persists through Condition B
-8. ☐ Third-party actions rejected with AUTHORITY_NOT_FOUND
+8. ☐ Third-party actions refused in deadlock state; requester-not-found may appear as secondary annotation (non-decision-bearing)
 9. ☐ State hash deterministic across replay
 10. ☐ All logs verify with hash chain intact
 
@@ -282,11 +288,11 @@ Replay verification:
 | `VIII1_FAIL / CONFLICT_UNDETECTED` | CONFLICT_NOT_REGISTERED | Conflict not detected |
 | `VIII1_FAIL / CONFLICT_NOT_REPRESENTED` | — | Conflict not observable in state |
 | `VIII1_FAIL / UNAUTHORIZED_RESOLUTION` | RESOLUTION_ATTEMPTED | Kernel tried to resolve conflict |
-| `VIII1_FAIL / DEADLOCK_EVASION` | DEADLOCK_ESCAPED | Deadlock resolved illegally |
-| `VIII1_FAIL / DEADLOCK_WITHOUT_CONFLICT` | DEADLOCK_NOT_ENTERED | Deadlock declared without conflict |
-| `INVALID_RUN / NONDETERMINISTIC_EXECUTION` | NONDETERMINISTIC | Replay diverged |
+| `VIII1_FAIL / DEADLOCK_EVASION` | DEADLOCK_NOT_ENTERED | Deadlock not entered when required, or not persistent |
+| `VIII1_FAIL / DEADLOCK_WITHOUT_CONFLICT` | — | Deadlock declared while no active conflict exists |
+| `INVALID_RUN / NONDETERMINISTIC_EXECUTION` | STATE_INCOHERENCE | Replay diverged or hash mismatch at any step |
 | `INVALID_RUN / DESIGN_DRIFT` | — | Implementation deviates from prereg |
-| `INVALID_RUN / INSTRUMENTATION_INCOMPLETE` | STATE_INCOHERENCE | Hash verification failed |
+| `INVALID_RUN / INSTRUMENTATION_INCOMPLETE` | LOG_INCOMPLETE | Required events/hashes missing; cannot verify run |
 | `INVALID_RUN / UNAUTHORIZED_INPUT` | THIRD_PARTY_ADMITTED | Third-party action admitted |
 | `INVALID_RUN / NONDETERMINISTIC_ORDERING` | — | Event order not reproducible |
 
@@ -301,3 +307,8 @@ Replay verification:
 **Preregistration Complete**
 
 *This document is immutable after experiment execution begins.*
+
+---
+
+**Freeze Hash:** `2d15f0aca41f6772d9c50bc96652e86575ef47cf8664133141475e3d241a3ea2`
+**Freeze Date:** 2026-02-01T14:00:00Z
