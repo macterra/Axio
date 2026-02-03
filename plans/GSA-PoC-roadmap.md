@@ -1,17 +1,11 @@
-Below is the **updated Phase VIII roadmap**, revised **minimally and conservatively** to incorporate the **closed positive result of Stage VIII-1**, while preserving all prior gating logic and epistemic discipline.
-
-Version is incremented to **v0.5** because a stage status and licensed claim have changed. No scope creep, no reinterpretation.
-
----
-
 # **Axionic Phase VIII — GSA-PoC**
 
-- **Governance-Sovereign Architecture (Proof of Concept)**
-- **Roadmap v0.5 (Post-VIII-1 Closure Update, Preregistration-Grade)**
+* **Governance-Sovereign Architecture (Proof of Concept)**
+* **Roadmap v0.6 (Post-VIII-2 Closure Update, Preregistration-Grade)**
 
 David McFadzean<br>
 *Axionic Agency Lab*<br>
-2026-02-01
+2026-02-02
 
 ---
 
@@ -23,6 +17,7 @@ This roadmap sequences **Phase VIII investigations** under the constraints estab
 * **AST Spec v0.2** — *Authority State Transformation Specification* (standalone normative document, frozen and preregistered),
 * **AKR-0** — *Authority Kernel Runtime Calibration* (Phase VIII-0; **CLOSED — POSITIVE**),
 * **Stage VIII-1** — *Minimal Plural Authority (Static)* (**CLOSED — POSITIVE**),
+* **Stage VIII-2** — *Destructive Conflict Resolution (Timeless)* (**CLOSED — POSITIVE**),
 * **AIE v0.1** — *Authority Input Environment* (mock legislator / authority feeder; frozen),
 * **P8-METRICS** — *Phase VIII Metrics Specification*.
 
@@ -60,22 +55,9 @@ Failure of any precondition **terminates Phase VIII before governance experiment
 
 > **Is AST Spec v0.2 implementable as a deterministic, auditable authority kernel without semantic leakage, implicit authority, or heuristic arbitration?**
 
-### Closure Artifacts
-
-* AKR-0 preregistration (binding parameters + schemas)
-* AKR-0 reference implementation (Opus)
-* Replay verifier (bit-perfect)
-* AKR-0 Implementation Report (**CLOSED — POSITIVE**)
-* AKR-0 Results Note (archival)
-
 ### Licensed Claim (active)
 
 > **Authority-constrained execution is mechanically realizable under AST Spec v0.2 using a deterministic kernel without semantic interpretation, optimization, or fallback behavior.**
-
-### Notes
-
-AKR-0 resolves the “execution substrate” objection.
-It does **not** license any claims about governance success.
 
 ---
 
@@ -91,22 +73,7 @@ It does **not** license any claims about governance success.
 
 > **Can plural authority coexist structurally without collapsing into implicit ordering, arbitration, or authority collapse—even when no action is admissible?**
 
-### Tests
-
-* overlapping exclusive scopes
-* conflict registration correctness
-* authority identity opacity
-* refusal semantics under plural constraints
-* deadlock entry and persistence without resolution
-
-### Observed Outcome
-
-* explicit conflict registration on first contested action,
-* lawful refusal of all actions,
-* terminal deadlock entered and persisted,
-* no ordering, arbitration, or collapse observed.
-
-### Licensed Claim (now active)
+### Licensed Claim (active)
 
 > **Plural authority can be represented structurally without collapse, even when no action is admissible.**
 
@@ -121,72 +88,72 @@ It does **not** claim that governance can proceed, coordinate, or resolve.
 
 *(Licensed Authority Destruction)*
 
-* **Status:** 🔴 **OPEN**
+* **Status:** ✅ **CLOSED — POSITIVE**
 * **Scope:** Two authorities, one resource
 * **Dynamics:** Structural resolution only; **single-epoch model**
 
 ### Clarification
 
-> *Stage VIII-2 is evaluated in a timeless setting. Temporal expiry, epoch advancement, and revalidation effects are explicitly deferred to Stage VIII-3.*
+> *Stage VIII-2 evaluates conflict resolution under atemporal admissibility. Temporal expiry, renewal, and epoch advancement are explicitly deferred.*
 
 ### Question Tested
 
 > **Can authority conflicts be resolved structurally without synthesis, compromise, or optimization—while preserving responsibility traceability?**
 
-### Metrics (P8-METRICS)
+### Observed Outcome
 
-* Authority Surface Area (ASA)
-* Authority Surface Decay Rate
-* Responsibility Trace Preservation
+* conflict registered explicitly on contested action,
+* lawful deadlock entered and persisted absent intervention,
+* admissibility restored **only** via explicit, external destruction authorization,
+* deadlock persisted when all authority was destroyed or when no authorization was given,
+* no ordering, arbitration, synthesis, or laundering observed.
 
-### Licensed Claim (if closed)
+### Licensed Claim (now active)
 
-> **Conflict resolution without responsibility laundering is possible but necessarily destructive.**
+> **Conflict resolution without responsibility laundering is possible, but necessarily destructive.**
 
-### Dependency Note
+### Notes
 
-Stage VIII-2 is meaningful **only because** Stage VIII-1 showed that resolution is *optional*, not forced.
+Stage VIII-2 establishes **resolution as an explicit, costly operation**.
+It does **not** address legitimacy, frequency, or regeneration of authority.
 
 ---
 
 ## 5. Stage VIII-3 — Temporal Governance (Authority Over Time)
 
+*(Post-Destruction Dynamics)*
+
 * **Status:** 🔴 **OPEN**
 * **Scope:** Expiry, renewal, revalidation
-* **Dynamics:** Explicit epoch advancement
+* **Dynamics:** Explicit epoch advancement; open-system replenishment
 
 ### Question Tested
 
-> **Can authority remain sovereign over time without semantic reinterpretation, under open-system replenishment?**
+> **Can authority remain sovereign over time without semantic reinterpretation, under open-system replenishment, after explicit destruction has occurred?**
 
 ### Metrics
 
 * Mean Time To Deadlock (MTTD)
-* Authority Entropy Rate over epochs
-* Renewal burden (authority injection rate required to sustain non-zero ASA)
+* Authority Entropy Rate across epochs
+* Renewal burden (authority injection rate required to sustain non-zero Authority Surface Area)
 
-### Licensed Claim (if closed)
+### Dependency Note
 
-> **Time-extended governance is structurally possible but requires explicit renewal under open-system constraints.**
+Stage VIII-3 is meaningful **only because** Stage VIII-2 showed that resolution is **possible but costly**, and deadlock is lawful.
 
 ---
 
 ## 6. Stage VIII-4 — Governance Transitions (Meta-Authority)
 
+*(Authority Governing Authority)*
+
 * **Status:** 🔴 **OPEN**
-* **Scope:** Authority governing authority
-* **Dynamics:** Amendment, revocation, re-grant
+* **Scope:** Amendment, revocation, re-grant
+* **Dynamics:** Structural and temporal
 
 ### Question Tested
 
 > **Can governance mechanisms themselves be governed without reopening laundering, exception paths, or semantic privilege?**
-
-### Tests
-
-* governance authority creation (external injection only)
-* governance authority revocation
-* contested governance changes
-* **Circular Governance Deadlock** (mutual revocation rights)
 
 ### Regress Bound
 
@@ -208,12 +175,6 @@ Stage VIII-2 is meaningful **only because** Stage VIII-1 showed that resolution 
 
 > **Do independent resources reduce conflict coupling, or does structural deadlock propagate across scopes?**
 
-### Outcomes
-
-* scope-isolated deadlock
-* cross-scope deadlock
-* partial admissibility
-
 ---
 
 ## 8. Stage VIII-6 — Multi-Authority, Multi-Scope Regimes
@@ -222,10 +183,6 @@ Stage VIII-2 is meaningful **only because** Stage VIII-1 showed that resolution 
 * **Scope:** ≥3 authorities, ≥2 resources
 * **Dynamics:** Structural and temporal
 
-### Clarification
-
-> *Authority count and resource count are intentionally varied together. Results are classificatory rather than isolating.*
-
 ### Metrics
 
 * conflict density
@@ -233,29 +190,12 @@ Stage VIII-2 is meaningful **only because** Stage VIII-1 showed that resolution 
 * authority entropy rate
 * compute cost per resolution
 
-### Possible Outcomes
-
-* limited admissible governance patterns
-* transient governance followed by collapse
-* immediate infeasibility
-
 ---
 
 ## 9. Stage VIII-7 — Governance Stress & Adversarial Patterns
 
 * **Status:** 🔴 **OPEN**
 * **Scope:** Pathological but lawful authority configurations
-
-### Patterns Tested
-
-* authority flooding
-* filibuster-style micro-conflicts
-* circular revocation storms
-* algorithmic complexity amplification
-
-### Policy
-
-> *Adversarial variants may appear earlier informally; formal classification occurs here. Findings may force regression.*
 
 ### Licensed Claim (if closed)
 
@@ -267,7 +207,7 @@ Stage VIII-2 is meaningful **only because** Stage VIII-1 showed that resolution 
 
 > *Value pluralism is represented structurally as authority pluralism. Each authority is treated as a value-commitment carrier without interpretation or aggregation.*
 
-Semantic value content is out of scope.
+Semantic value content remains out of scope.
 
 ---
 
@@ -290,7 +230,7 @@ Phase VIII does **not** aim to build a helpful agent, optimize outcomes, encode 
 
 ## 13. Closure Statement Template
 
-> *“Axionic Phase VIII — GSA-PoC (Roadmap vX) determined the boundary of sovereign governance under plural authority. Under AST Spec vX, AKR-0 vY, AIE vZ, and Stage VIII-1 results, the following regimes were admissible and the following were not.”*
+> *“Axionic Phase VIII — GSA-PoC (Roadmap vX) determined the boundary of sovereign governance under plural authority. Under AST Spec vX, AKR-0 vY, AIE vZ, and Stages VIII-1 and VIII-2, the following regimes were admissible and the following were not.”*
 
 ---
 
@@ -300,4 +240,4 @@ Any requirement for implicit authority, semantic reasoning, optimization, heuris
 
 ---
 
-**End of Phase VIII — GSA-PoC Roadmap v0.5**
+**End of Phase VIII — GSA-PoC Roadmap v0.6**
