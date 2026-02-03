@@ -1,0 +1,15 @@
+{
+  "type": "RUN_END",
+  "run_id": "DCR_VIII2_A_20260202_193300",
+  "results": {
+    "conflict_registered": true,
+    "initial_action_refused": true,
+    "deadlock_declared": true,
+    "auth_b_destroyed": true,
+    "action_executed": true,
+    "final_state_operational": true,
+    "passed": true
+  },
+  "final_chain_hash": "29ddde6d66d99725da347bfaa6d26cdd3a232665b30790842afb74bfce988930",
+  "total_events": 7
+}

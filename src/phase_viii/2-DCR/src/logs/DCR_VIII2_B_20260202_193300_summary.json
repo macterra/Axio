@@ -1,0 +1,13 @@
+{
+  "type": "RUN_END",
+  "run_id": "DCR_VIII2_B_20260202_193300",
+  "results": {
+    "both_destroyed": true,
+    "action_refused_no_authority": true,
+    "deadlock_persisted": true,
+    "final_state_deadlock": true,
+    "passed": true
+  },
+  "final_chain_hash": "165cd6109466e7b47e4201a1b0462d4d7a59a1b59cf209d59a528a9371639d27",
+  "total_events": 8
+}
