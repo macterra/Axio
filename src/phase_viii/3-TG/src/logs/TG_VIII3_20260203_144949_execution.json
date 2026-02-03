@@ -1,0 +1,668 @@
+{
+  "run_id": "TG_VIII3_20260203_144949",
+  "log_entries": [
+    {
+      "type": "RUN_START",
+      "timestamp": "2026-02-03T19:49:49.421076Z",
+      "run_id": "TG_VIII3_20260203_144949",
+      "seed": 0,
+      "initial_state_hash": "646c80b72866d59429657eab2c8de9138f5b9112cc73b51e380ffbb17a4453bb",
+      "conditions": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    {
+      "type": "OUTPUT",
+      "output": {
+        "outputType": "ACTION_EXECUTED",
+        "eventIndex": 4,
+        "stateHash": "a96d7c3a144a5b824ad235e339b4e3330f25847aca885c0705562ae0a6e2da86",
+        "details": {
+          "request_id": "AR:001",
+          "transformation_type": "EXECUTE_OP0"
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.421932Z"
+    },
+    {
+      "type": "OUTPUT",
+      "output": {
+        "outputType": "AUTHORITY_EXPIRED",
+        "eventIndex": 8,
+        "stateHash": "8cf1db0dd958ecba4652ef7898c92a03ebe2df02aae9f5bbcf4a03dc27373ee3",
+        "details": {
+          "authority_id": "AUTH_A",
+          "expiry_epoch": 2,
+          "transition_epoch": 3,
+          "triggering_event_id": "EA:0003"
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.422541Z"
+    },
+    {
+      "type": "OUTPUT",
+      "output": {
+        "outputType": "AUTHORITY_EXPIRED",
+        "eventIndex": 9,
+        "stateHash": "a275476b18a6d416e595fca5ac7e4872fcb81d953c05b1bb0687598ed3c683ca",
+        "details": {
+          "authority_id": "AUTH_B",
+          "expiry_epoch": 2,
+          "transition_epoch": 3,
+          "triggering_event_id": "EA:0003"
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.422641Z"
+    },
+    {
+      "type": "OUTPUT",
+      "output": {
+        "outputType": "DEADLOCK_DECLARED",
+        "eventIndex": 10,
+        "stateHash": "e6f87c97c3a44e5412f4eae9f64fa32b9d2ea56ae6486490b32bb195c3eaa9e2",
+        "details": {
+          "deadlock_cause": "EMPTY_AUTHORITY",
+          "open_conflicts": [],
+          "active_authority_count": 0,
+          "current_epoch": 3
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.422732Z"
+    },
+    {
+      "type": "OUTPUT",
+      "output": {
+        "outputType": "DEADLOCK_PERSISTED",
+        "eventIndex": 11,
+        "stateHash": "e6f87c97c3a44e5412f4eae9f64fa32b9d2ea56ae6486490b32bb195c3eaa9e2",
+        "details": {
+          "deadlock_cause": "EMPTY_AUTHORITY",
+          "open_conflicts": [],
+          "active_authority_count": 0,
+          "current_epoch": 3
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.423024Z"
+    },
+    {
+      "type": "OUTPUT",
+      "output": {
+        "outputType": "ACTION_REFUSED",
+        "eventIndex": 12,
+        "stateHash": "e6f87c97c3a44e5412f4eae9f64fa32b9d2ea56ae6486490b32bb195c3eaa9e2",
+        "details": {
+          "reason": "NO_AUTHORITY",
+          "request_id": "AR:002",
+          "kernel_state": "STATE_DEADLOCK"
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.423118Z"
+    },
+    {
+      "type": "OUTPUT",
+      "output": {
+        "outputType": "DEADLOCK_PERSISTED",
+        "eventIndex": 13,
+        "stateHash": "e6f87c97c3a44e5412f4eae9f64fa32b9d2ea56ae6486490b32bb195c3eaa9e2",
+        "details": {
+          "deadlock_cause": "EMPTY_AUTHORITY",
+          "open_conflicts": [],
+          "active_authority_count": 0,
+          "current_epoch": 3
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.423251Z"
+    },
+    {
+      "type": "OUTPUT",
+      "output": {
+        "outputType": "DEADLOCK_PERSISTED",
+        "eventIndex": 14,
+        "stateHash": "e6f87c97c3a44e5412f4eae9f64fa32b9d2ea56ae6486490b32bb195c3eaa9e2",
+        "details": {
+          "deadlock_cause": "EMPTY_AUTHORITY",
+          "open_conflicts": [],
+          "active_authority_count": 0,
+          "current_epoch": 3
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.423624Z"
+    },
+    {
+      "type": "OUTPUT",
+      "output": {
+        "outputType": "AUTHORITY_RENEWED",
+        "eventIndex": 15,
+        "stateHash": "15d8dbd74a0d13683cf6a394de395cc98580e9f736b1837e5f7c79115a1a6b9e",
+        "details": {
+          "new_authority_id": "AUTH_C",
+          "prior_authority_id": null,
+          "renewal_event_id": "RE:0001",
+          "renewal_epoch": 3
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.423751Z"
+    },
+    {
+      "type": "OUTPUT",
+      "output": {
+        "outputType": "ACTION_EXECUTED",
+        "eventIndex": 16,
+        "stateHash": "73402c19036dac9e979dac7009fece26e39bae2cbbdea53af3cf7142578f53cf",
+        "details": {
+          "request_id": "AR:003",
+          "transformation_type": "EXECUTE_OP1"
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.423970Z"
+    },
+    {
+      "type": "OUTPUT",
+      "output": {
+        "outputType": "ACTION_REFUSED",
+        "eventIndex": 17,
+        "stateHash": "73402c19036dac9e979dac7009fece26e39bae2cbbdea53af3cf7142578f53cf",
+        "details": {
+          "reason": "NO_AUTHORITY",
+          "request_id": "AR:004"
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.424241Z"
+    },
+    {
+      "type": "OUTPUT",
+      "output": {
+        "outputType": "ACTION_REFUSED",
+        "eventIndex": 20,
+        "stateHash": "9266acb733be650feaab724c6996466abf59aba74b2ba7aa28a692c06843f1bd",
+        "details": {
+          "reason": "CONFLICT_BLOCKS",
+          "request_id": "AR:005",
+          "conflict_id": "C:0001"
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.425794Z"
+    },
+    {
+      "type": "OUTPUT",
+      "output": {
+        "outputType": "DEADLOCK_DECLARED",
+        "eventIndex": 21,
+        "stateHash": "c64e4c2dcb6eb86a36f78fe26121291d9e7d5d13ad2ef0b8c789bca74d7aee7d",
+        "details": {
+          "deadlock_cause": "CONFLICT",
+          "open_conflicts": [
+            "C:0001"
+          ],
+          "active_authority_count": 3,
+          "current_epoch": 3
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.426207Z"
+    },
+    {
+      "type": "OUTPUT",
+      "output": {
+        "outputType": "DEADLOCK_PERSISTED",
+        "eventIndex": 22,
+        "stateHash": "c64e4c2dcb6eb86a36f78fe26121291d9e7d5d13ad2ef0b8c789bca74d7aee7d",
+        "details": {
+          "deadlock_cause": "CONFLICT",
+          "open_conflicts": [
+            "C:0001"
+          ],
+          "active_authority_count": 3,
+          "current_epoch": 3
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.427371Z"
+    },
+    {
+      "type": "OUTPUT",
+      "output": {
+        "outputType": "AUTHORITY_DESTROYED",
+        "eventIndex": 23,
+        "stateHash": "65cf73c83a26f92a5f9c47ca03cd13adaaf8fcad95159a61de058a8c19880a89",
+        "details": {
+          "authority_id": "AUTH_D",
+          "conflict_id": "C:0001",
+          "authorizer_id": "EXT_AUTHORIZER_001",
+          "destruction_epoch": 3
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.427735Z"
+    },
+    {
+      "type": "OUTPUT",
+      "output": {
+        "outputType": "AUTHORITY_DESTROYED",
+        "eventIndex": 24,
+        "stateHash": "d9e6be70c641db2d07a4ab572de63575613c9256456b1ed9dd673f02b4031dca",
+        "details": {
+          "authority_id": "AUTH_DX",
+          "conflict_id": "C:0001",
+          "authorizer_id": "EXT_AUTHORIZER_001",
+          "destruction_epoch": 3
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.428163Z"
+    },
+    {
+      "type": "OUTPUT",
+      "output": {
+        "outputType": "AUTHORITY_RENEWED",
+        "eventIndex": 25,
+        "stateHash": "b452b7c9e6421af0b8df007e4aba25c8890988aa6f267c9dd0ce5805b9197fae",
+        "details": {
+          "new_authority_id": "AUTH_E",
+          "prior_authority_id": "AUTH_D",
+          "renewal_event_id": "RE:0002",
+          "renewal_epoch": 3
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.429061Z"
+    },
+    {
+      "type": "OUTPUT",
+      "output": {
+        "outputType": "ACTION_EXECUTED",
+        "eventIndex": 26,
+        "stateHash": "b452b7c9e6421af0b8df007e4aba25c8890988aa6f267c9dd0ce5805b9197fae",
+        "details": {
+          "request_id": "AR:006",
+          "transformation_type": "EXECUTE_OP2"
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.429905Z"
+    },
+    {
+      "type": "OUTPUT",
+      "output": {
+        "outputType": "ACTION_REFUSED",
+        "eventIndex": 29,
+        "stateHash": "b8383b25407b8a1c2be8d00200f31c1891729914ce71174d739168a1a98c5941",
+        "details": {
+          "reason": "CONFLICT_BLOCKS",
+          "request_id": "AR:007",
+          "conflict_id": "C:0002"
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.432193Z"
+    },
+    {
+      "type": "OUTPUT",
+      "output": {
+        "outputType": "DEADLOCK_DECLARED",
+        "eventIndex": 30,
+        "stateHash": "09e1994e7808431f7ae15803ba88f4849d48ab75acdfbc7e0b6858d770d6417b",
+        "details": {
+          "deadlock_cause": "CONFLICT",
+          "open_conflicts": [
+            "C:0002"
+          ],
+          "active_authority_count": 4,
+          "current_epoch": 3
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.432404Z"
+    },
+    {
+      "type": "OUTPUT",
+      "output": {
+        "outputType": "AUTHORITY_EXPIRED",
+        "eventIndex": 32,
+        "stateHash": "1c4863cb231cb32e1c7f59ef2f921f514e411dcd919f7489095d1c6c58ec087b",
+        "details": {
+          "authority_id": "AUTH_G",
+          "expiry_epoch": 5,
+          "transition_epoch": 6,
+          "triggering_event_id": "EA:0004"
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.432961Z"
+    },
+    {
+      "type": "OUTPUT",
+      "output": {
+        "outputType": "AUTHORITY_RENEWED",
+        "eventIndex": 33,
+        "stateHash": "3a302e86fa072136ffd47bc4814e25fcc8d2a26f4f9b4c110f53526ad886f29a",
+        "details": {
+          "new_authority_id": "AUTH_H",
+          "prior_authority_id": "AUTH_G",
+          "renewal_event_id": "RE:0003",
+          "renewal_epoch": 6
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.433506Z"
+    },
+    {
+      "type": "OUTPUT",
+      "output": {
+        "outputType": "ACTION_REFUSED",
+        "eventIndex": 34,
+        "stateHash": "cfd73797a76e6fb2e967f1854649b2897cfbed6648d36fa2f7f80ec4e068cda5",
+        "details": {
+          "reason": "CONFLICT_BLOCKS",
+          "request_id": "AR:008",
+          "conflict_id": "C:0003"
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.434182Z"
+    },
+    {
+      "type": "OUTPUT",
+      "output": {
+        "outputType": "DEADLOCK_DECLARED",
+        "eventIndex": 35,
+        "stateHash": "eab2ac3594023e6b896ec5d2d09aaab592f4bb3185dfe85d4f528d9acaf6fcb3",
+        "details": {
+          "deadlock_cause": "CONFLICT",
+          "open_conflicts": [
+            "C:0003"
+          ],
+          "active_authority_count": 4,
+          "current_epoch": 6
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.434348Z"
+    },
+    {
+      "type": "RUN_END",
+      "timestamp": "2026-02-03T19:49:49.434738Z",
+      "results": {
+        "A_deadlock_cause": "EMPTY_AUTHORITY",
+        "1_all_authorities_expired": true,
+        "2_active_set_empty": true,
+        "3_deadlock_declared_empty": true,
+        "4_deadlock_persisted": true,
+        "5_actions_refused_after_expiry": true,
+        "6_renewal_creates_new_id": true,
+        "7_authority_renewed_emitted": true,
+        "8_admissibility_restored": true,
+        "9_expired_scope_refused": true,
+        "10_expired_records_persist": true,
+        "11_conflict_created": true,
+        "12_both_destroyed": true,
+        "13_auth_e_active": true,
+        "14_renewal_references_auth_d": true,
+        "15_auth_d_remains_void": true,
+        "16_post_renewal_action_executes": true,
+        "17_original_conflict_nonbinding": true,
+        "18_new_conflict_registered": true,
+        "19_action_refused_despite_renewal": true,
+        "20_no_newest_wins": true,
+        "21_deterministic": true,
+        "22_monotonic_epoch": true,
+        "23_finite_expiry": true,
+        "24_no_kernel_renewal": true,
+        "25_no_implicit_ordering": true,
+        "26_no_implicit_resolution": true,
+        "27_complete_trace": true,
+        "28_no_id_reuse": true
+      },
+      "final_hash": "bbd1e36bfc3fe615298f1374de96d1a18773fa8293f82a27951947928eca6ca0",
+      "hash_chain_length": 24
+    }
+  ],
+  "trace_entries": [
+    {
+      "type": "TRACE_MARKER",
+      "marker_type": "CONDITION_START",
+      "condition": "A",
+      "trace_seq": 1,
+      "timestamp": "2026-02-03T19:49:49.421369Z"
+    },
+    {
+      "type": "TRACE",
+      "trace": {
+        "traceType": "TRACE_INPUT / AUTHORITY_RECORD_RECEIVED",
+        "traceSeq": 2,
+        "details": {
+          "event_index": 2,
+          "authority_id": "AUTH_A",
+          "start_epoch": 0,
+          "expiry_epoch": 2,
+          "nonce": 100
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.421768Z"
+    },
+    {
+      "type": "TRACE",
+      "trace": {
+        "traceType": "TRACE_INPUT / AUTHORITY_RECORD_RECEIVED",
+        "traceSeq": 3,
+        "details": {
+          "event_index": 3,
+          "authority_id": "AUTH_B",
+          "start_epoch": 0,
+          "expiry_epoch": 2,
+          "nonce": 101
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.421813Z"
+    },
+    {
+      "type": "TRACE",
+      "trace": {
+        "traceType": "EPOCH_ADVANCEMENT",
+        "traceSeq": 4,
+        "details": {
+          "event_id": "EA:0001",
+          "old_epoch": 0,
+          "new_epoch": 1
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.422131Z"
+    },
+    {
+      "type": "TRACE",
+      "trace": {
+        "traceType": "EPOCH_ADVANCEMENT",
+        "traceSeq": 5,
+        "details": {
+          "event_id": "EA:0002",
+          "old_epoch": 1,
+          "new_epoch": 2
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.422231Z"
+    },
+    {
+      "type": "TRACE",
+      "trace": {
+        "traceType": "EPOCH_ADVANCEMENT",
+        "traceSeq": 6,
+        "details": {
+          "event_id": "EA:0003",
+          "old_epoch": 2,
+          "new_epoch": 3
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.422502Z"
+    },
+    {
+      "type": "TRACE_MARKER",
+      "marker_type": "CONDITION_END",
+      "condition": "A",
+      "trace_seq": 7,
+      "timestamp": "2026-02-03T19:49:49.423356Z"
+    },
+    {
+      "type": "TRACE_MARKER",
+      "marker_type": "CONDITION_START",
+      "condition": "B",
+      "trace_seq": 8,
+      "timestamp": "2026-02-03T19:49:49.423389Z"
+    },
+    {
+      "type": "TRACE_MARKER",
+      "marker_type": "CONDITION_END",
+      "condition": "B",
+      "trace_seq": 9,
+      "timestamp": "2026-02-03T19:49:49.424410Z"
+    },
+    {
+      "type": "TRACE_MARKER",
+      "marker_type": "CONDITION_START",
+      "condition": "C",
+      "trace_seq": 10,
+      "timestamp": "2026-02-03T19:49:49.424467Z"
+    },
+    {
+      "type": "TRACE",
+      "trace": {
+        "traceType": "TRACE_INPUT / AUTHORITY_RECORD_RECEIVED",
+        "traceSeq": 11,
+        "details": {
+          "event_index": 18,
+          "authority_id": "AUTH_D",
+          "start_epoch": 3,
+          "expiry_epoch": 10,
+          "nonce": 300
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.424956Z"
+    },
+    {
+      "type": "TRACE",
+      "trace": {
+        "traceType": "TRACE_INPUT / AUTHORITY_RECORD_RECEIVED",
+        "traceSeq": 12,
+        "details": {
+          "event_index": 19,
+          "authority_id": "AUTH_DX",
+          "start_epoch": 3,
+          "expiry_epoch": 10,
+          "nonce": 301
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.424993Z"
+    },
+    {
+      "type": "TRACE_MARKER",
+      "marker_type": "CONDITION_END",
+      "condition": "C",
+      "trace_seq": 13,
+      "timestamp": "2026-02-03T19:49:49.430255Z"
+    },
+    {
+      "type": "TRACE_MARKER",
+      "marker_type": "CONDITION_START",
+      "condition": "D",
+      "trace_seq": 14,
+      "timestamp": "2026-02-03T19:49:49.430898Z"
+    },
+    {
+      "type": "TRACE",
+      "trace": {
+        "traceType": "TRACE_INPUT / AUTHORITY_RECORD_RECEIVED",
+        "traceSeq": 15,
+        "details": {
+          "event_index": 27,
+          "authority_id": "AUTH_F",
+          "start_epoch": 3,
+          "expiry_epoch": 10,
+          "nonce": 400
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.431508Z"
+    },
+    {
+      "type": "TRACE",
+      "trace": {
+        "traceType": "TRACE_INPUT / AUTHORITY_RECORD_RECEIVED",
+        "traceSeq": 16,
+        "details": {
+          "event_index": 28,
+          "authority_id": "AUTH_G",
+          "start_epoch": 3,
+          "expiry_epoch": 5,
+          "nonce": 401
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.431566Z"
+    },
+    {
+      "type": "TRACE",
+      "trace": {
+        "traceType": "EPOCH_ADVANCEMENT",
+        "traceSeq": 17,
+        "details": {
+          "event_id": "EA:0004",
+          "old_epoch": 3,
+          "new_epoch": 6
+        }
+      },
+      "timestamp": "2026-02-03T19:49:49.432948Z"
+    },
+    {
+      "type": "TRACE_MARKER",
+      "marker_type": "CONDITION_END",
+      "condition": "D",
+      "trace_seq": 18,
+      "timestamp": "2026-02-03T19:49:49.434500Z"
+    }
+  ],
+  "hash_chain": [
+    "d99484d774cb0e400c3f417a7cdb0c6fd75d30acaf1afa292bf79e3967a90229",
+    "35eeb877b50ee2be13559b3b3cb5f2fd50ea79e80927dd731dd04fc264a12022",
+    "f9666f3f652b23990f9414940f52ddab3dfd5f1968af6a4fee743da26ca10fb5",
+    "5ec25eb14677e158d16bc830d53944f64f72600b4214d703729fc83f683f5da1",
+    "baf8976f27f115c6c4d479734a2ec889c60894aa4aa400471c893077515b759f",
+    "9d1a61b6fb4cecdf0d760e3fc3ce43fae12864636d5e0d27bbf1e4764350c697",
+    "8348a393b11cf11c16c39ba4410275c05f8e9abf76848f5e3dd3978259c8c089",
+    "5a47e815514d29b509f8cba43168df6159f28930d8d41fa56283d0277faf586b",
+    "1a1e598c8661d646dd7e1e999867611cb9b5eefd16ff0191c862704bdeb9453a",
+    "e42548c23d25651b3b0d32cd77e8e10704a83bb33a83d5476fc3b7d45413d610",
+    "aff8a20e1e5704363e29c578fb1d7593259179ddc2cd188046d9452df88df2b7",
+    "7436c803c89091f6622f8a87a3ed2ab5cbedcbd19bb093ec5ed9c39e50df6022",
+    "97ec4c4f2401d6e303edbeeee2496d5560ef80fd9bc006e791acdedcaadbf6d8",
+    "38d621b8216a13f901072b4131bb0d06f1109248e967d7367a52797518052a36",
+    "0ec4fdd22a96c1da94d2618fa59eef9261e607050f8766e19fd804b5c7b4d2a3",
+    "7d20ce70ddd4cef71da15c82b8f60b2173d6138a13c6842d04d40d604dfcf805",
+    "21d20704a984c59c2aab171f92d048f9e0684ee7087444bec3e43ad62f744fb2",
+    "536868deefa8bf52c25dfecaea39b6a0281404efd66d3a70bc27a8b7f948203a",
+    "4b36f94ef14a5a831b96cb34f54e0ba70b66d3b30fae34e8bb6152437f353120",
+    "619c156faa80f69417338894da059586012411f1ce985fc99a217c7f826e8919",
+    "075f3dd63b526c726b62f975e29dd57c90f4b95982c2acc24daee6a9a816647c",
+    "7f9e42d2c350e3ff48da85591d06dd2ad551973940229e104c2e0fd14d633c42",
+    "9465496c18f1d316cae819e4a1d4d19e8c2b32e3e97cb43969eb56bc7adfca46",
+    "bbd1e36bfc3fe615298f1374de96d1a18773fa8293f82a27951947928eca6ca0"
+  ],
+  "results": {
+    "A_deadlock_cause": "EMPTY_AUTHORITY",
+    "1_all_authorities_expired": true,
+    "2_active_set_empty": true,
+    "3_deadlock_declared_empty": true,
+    "4_deadlock_persisted": true,
+    "5_actions_refused_after_expiry": true,
+    "6_renewal_creates_new_id": true,
+    "7_authority_renewed_emitted": true,
+    "8_admissibility_restored": true,
+    "9_expired_scope_refused": true,
+    "10_expired_records_persist": true,
+    "11_conflict_created": true,
+    "12_both_destroyed": true,
+    "13_auth_e_active": true,
+    "14_renewal_references_auth_d": true,
+    "15_auth_d_remains_void": true,
+    "16_post_renewal_action_executes": true,
+    "17_original_conflict_nonbinding": true,
+    "18_new_conflict_registered": true,
+    "19_action_refused_despite_renewal": true,
+    "20_no_newest_wins": true,
+    "21_deterministic": true,
+    "22_monotonic_epoch": true,
+    "23_finite_expiry": true,
+    "24_no_kernel_renewal": true,
+    "25_no_implicit_ordering": true,
+    "26_no_implicit_resolution": true,
+    "27_complete_trace": true,
+    "28_no_id_reuse": true
+  }
+}
