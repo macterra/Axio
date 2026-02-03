@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency X.5 — Temporal Authority Persistence (VIII-3) - Axionic Agency Lab</title>
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../" class="nav-brand">
+            <img src="../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href=".././">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
+
+<h1
+id="axionic-agency-x.5-temporal-authority-persistence-viii-3">Axionic
+Agency X.5 — Temporal Authority Persistence (VIII-3)</h1>
+<p><em>A Structural Demonstration of Authority Expiry, Renewal, and
+Conflict Persistence Under Time</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026.02.03</p>
+<h2 id="abstract">Abstract</h2>
+<p>This technical note reports the completed results of <strong>Stage
+VIII-3 — Temporal Governance (Authority Over Time)</strong>, a
+preregistered experiment within <strong>Axionic Phase VIII</strong> that
+evaluates whether <strong>authority can persist across time only via
+explicit expiry and renewal</strong>, without implicit ordering,
+semantic reinterpretation, or responsibility laundering. Building on the
+representational coherence of <strong>Stage VIII-1</strong> and the
+destructive resolution mechanism established in <strong>Stage
+VIII-2</strong>, VIII-3 introduces <strong>time</strong> as an explicit
+structural dimension and tests whether temporal persistence itself
+becomes a source of hidden governance. In a deterministic, non-agentic
+kernel with refusal-first semantics, authorities were assigned finite
+lifetimes, discrete epochs were advanced explicitly, and renewal was
+modeled as the creation of new authority identities. Across four
+preregistered conditions, authority expired deterministically, deadlock
+emerged lawfully in the absence of authority, renewal restored
+admissibility only locally, destruction remained non-resurrective, and
+conflict persisted or re-emerged without temporal priority. All
+executions were fully auditable and bit-perfectly replayable. The
+results establish that <strong>authority does not persist by default
+under time; persistence requires explicit renewal, and time does not
+resolve conflict or eliminate cost</strong>. VIII-3 makes no claims
+about sustainability, legitimacy, or governance success; those questions
+are deferred to subsequent Phase VIII stages.</p>
+<h2 id="problem-definition">1. Problem Definition</h2>
+<h3 id="the-persistence-assumption">1.1 The Persistence Assumption</h3>
+<p>Most governance systems treat authority as temporally inert. Once
+established, authority is presumed to persist unless explicitly revoked,
+and the passage of time is assumed to soften, obsolete, or resolve
+conflict. This assumption conceals cost: authority appears continuous,
+conflict appears transient, and responsibility fades without action.</p>
+<p>Stage VIII-3 removes that assumption.</p>
+<p>The problem VIII-3 isolates is whether <strong>time itself functions
+as an implicit governance mechanism</strong>. If authority persists
+automatically across time, or if conflict dissolves merely by waiting,
+then governance systems launder responsibility through temporal inertia.
+If, instead, authority must be <strong>actively renewed</strong> and
+conflict <strong>actively resolved</strong>, then time becomes a
+stressor rather than a healer.</p>
+<p>VIII-3 tests whether that distinction is structurally
+enforceable.</p>
+<h3 id="failure-modes-targeted">1.2 Failure Modes Targeted</h3>
+<p>VIII-3 is designed to surface the following temporal failure
+modes:</p>
+<ul>
+<li>implicit authority persistence</li>
+<li>temporal priority (“newest wins” or “oldest survives”)</li>
+<li>expiry-based conflict resolution</li>
+<li>resurrection via renewal</li>
+<li>semantic inheritance across time</li>
+<li>kernel-initiated renewal</li>
+<li>deadlock healing without intervention</li>
+</ul>
+<p>Any of these constitutes VIII-3 failure.</p>
+<h2 id="fixed-assumptions-and-scope">2. Fixed Assumptions and Scope</h2>
+<h3 id="inherited-semantics-frozen">2.1 Inherited Semantics
+(Frozen)</h3>
+<p>VIII-3 inherits, without reinterpretation, the semantics fixed
+by:</p>
+<ul>
+<li><strong>AKR-0 — CLOSED — POSITIVE</strong></li>
+<li><strong>Stage VIII-1 — CLOSED — POSITIVE</strong></li>
+<li><strong>Stage VIII-2 — CLOSED — POSITIVE</strong></li>
+<li><strong>AST Spec v0.2</strong></li>
+<li><strong>AIE v0.1</strong></li>
+<li>Phase VIII Execution Addendum</li>
+</ul>
+<p>Authority remains structural and opaque, scopes remain atomic,
+admissibility is determined exclusively by AST, conflict is explicit,
+and deadlock is lawful. VIII-3 does <strong>not</strong> revisit these
+definitions; it tests whether they remain coherent under explicit
+temporal pressure.</p>
+<h3 id="explicit-exclusions">2.2 Explicit Exclusions</h3>
+<p>VIII-3 does <strong>not</strong> test:</p>
+<ul>
+<li>legitimacy of renewal</li>
+<li>optimal renewal strategies</li>
+<li>renewal sustainability</li>
+<li>governance efficiency</li>
+<li>fairness or desirability</li>
+<li>political stability</li>
+<li>authority rent or spam resistance</li>
+</ul>
+<p>VIII-3 is a temporal calibration, not a governance proposal.</p>
+<h2 id="conserved-quantity">3. Conserved Quantity</h2>
+<p>The conserved quantity throughout VIII-3 is:</p>
+<blockquote>
+<p><strong>Responsibility-preserving authority persistence under
+explicit time</strong></p>
+</blockquote>
+<p>Persistence is evaluated not by longevity or success, but by
+<strong>structural honesty</strong>. The kernel must:</p>
+<ul>
+<li>expire authority deterministically</li>
+<li>refuse action in the absence of authority</li>
+<li>restore admissibility only via explicit renewal</li>
+<li>preserve conflict across epochs</li>
+<li>avoid all temporal ordering or semantic inheritance</li>
+</ul>
+<p>No temporal outcome may conceal cost.</p>
+<h2 id="experimental-methodology">4. Experimental Methodology</h2>
+<h3 id="preregistration-discipline">4.1 Preregistration Discipline</h3>
+<p>VIII-3 was fully preregistered prior to execution, including:</p>
+<ul>
+<li>epoch semantics and monotonicity</li>
+<li>finite authority lifetimes</li>
+<li>expiry and VOID state transitions</li>
+<li>renewal as identity creation</li>
+<li>conflict persistence rules</li>
+<li>deadlock entry and exit conditions</li>
+<li>two-phase processing order</li>
+<li>deterministic ordering and replay protocol</li>
+<li>hash-chain specification and test vectors</li>
+<li>failure taxonomy</li>
+</ul>
+<p>The experiment executed exactly as preregistered. No deviations
+occurred.</p>
+<h3 id="execution-architecture">4.2 Execution Architecture</h3>
+<p>The experiment consisted of four strictly partitioned components:</p>
+<ol type="1">
+<li><strong>AIE</strong> — injected authority records and renewal
+requests only.</li>
+<li><strong>Execution Harness</strong> — proposed deterministic epoch
+advances and action requests.</li>
+<li><strong>Destruction Authorization Source</strong> — reused unchanged
+from VIII-2.</li>
+<li><strong>Kernel (VIII-3 mode)</strong> — enforced expiry, renewal,
+conflict, deadlock, and execution.</li>
+</ol>
+<p>No component performed semantic interpretation or temporal
+optimization.</p>
+<h2 id="experimental-conditions">5. Experimental Conditions</h2>
+<h3 id="authority-configuration">5.1 Authority Configuration</h3>
+<p>Authorities were injected with:</p>
+<ul>
+<li>explicit <code>StartEpoch</code> and finite
+<code>ExpiryEpoch</code></li>
+<li>opaque, identity-keyed AuthorityIDs</li>
+<li>atomic scopes</li>
+<li>explicit permission sets</li>
+</ul>
+<p>No authority was permanent. Indefinite expiry was forbidden.</p>
+<h3 id="epoch-model">5.2 Epoch Model</h3>
+<p>Time was represented as a discrete integer epoch:</p>
+<ul>
+<li>advanced only via explicit input</li>
+<li>strictly monotonic</li>
+<li>uncoupled from wall-clock time</li>
+</ul>
+<p>Epoch advancement triggered eager expiry before any renewal or action
+evaluation.</p>
+<h2 id="observed-execution-behavior">6. Observed Execution Behavior</h2>
+<h3 id="expiry-and-authority-absence">6.1 Expiry and Authority
+Absence</h3>
+<p>When the current epoch exceeded an authority’s
+<code>ExpiryEpoch</code>, the authority transitioned from
+<code>ACTIVE</code> to <strong><code>EXPIRED</code></strong>. EXPIRED
+authorities:</p>
+<ul>
+<li>remained referencable</li>
+<li>preserved expiry metadata</li>
+<li>did not participate in admissibility</li>
+<li>could not be reactivated</li>
+</ul>
+<p>When all authorities expired, the kernel entered lawful deadlock due
+to authority absence.</p>
+<h3 id="renewal-semantics">6.2 Renewal Semantics</h3>
+<p>Renewal was modeled as the <strong>creation of a new
+AuthorityID</strong>. Renewed authorities:</p>
+<ul>
+<li>did not inherit authority force</li>
+<li>did not modify prior records</li>
+<li>could reference prior AuthorityIDs as opaque metadata only</li>
+<li>could re-enter contested scope without priority</li>
+</ul>
+<p>Renewal did not erase expiry or destruction history.</p>
+<h3 id="conflict-persistence-under-time">6.3 Conflict Persistence Under
+Time</h3>
+<p>Conflicts were registered only upon action evaluation. Across epoch
+advancement:</p>
+<ul>
+<li>conflict records persisted</li>
+<li>binding status changed only when participant activity changed</li>
+<li>expiry removed participation but did not delete conflict
+records</li>
+</ul>
+<p>Time alone did not resolve conflict.</p>
+<h3 id="deadlock-entry-and-exit">6.4 Deadlock Entry and Exit</h3>
+<p>Deadlock was declared when:</p>
+<ul>
+<li>no admissible actions existed due to conflict, or</li>
+<li>no ACTIVE authorities remained</li>
+</ul>
+<p>Deadlock exited lawfully when its structural cause ceased (e.g.,
+expiry removed the sole denying authority), and re-entered when a new
+conflict emerged. Deadlock was condition-based, not absorbing.</p>
+<h2 id="per-condition-results">7. Per-Condition Results</h2>
+<h3 id="condition-a-expiry-without-renewal">7.1 Condition A — Expiry
+Without Renewal</h3>
+<p>All authorities expired at <code>epoch &gt; ExpiryEpoch</code>. No
+ACTIVE authorities remained. Actions were refused due to absence of
+authority, and the kernel entered EMPTY_AUTHORITY deadlock, which
+persisted lawfully.</p>
+<h3 id="condition-b-renewal-without-conflict">7.2 Condition B — Renewal
+Without Conflict</h3>
+<p>Renewal created a new AuthorityID governing a new scope.
+Admissibility was restored only for that scope. Expired scopes remained
+inadmissible. No history was erased.</p>
+<h3 id="condition-c-renewal-after-destruction">7.3 Condition C — Renewal
+After Destruction</h3>
+<p>Authorities were explicitly destroyed via conflict-authorized
+destruction. VOID states were preserved. Renewal referencing a VOID
+authority created a new ACTIVE authority without resurrection semantics.
+Admissibility was restored only because no conflicting ACTIVE authority
+remained.</p>
+<h3 id="condition-d-renewal-under-ongoing-conflict">7.4 Condition D —
+Renewal Under Ongoing Conflict</h3>
+<p>An initial conflict blocked execution. Expiry of the denying
+authority converted the conflict to non-binding. Renewal re-introduced
+authority into the contested scope, generating a <strong>new conflict
+with a new ID</strong>. Execution remained blocked. No temporal priority
+was inferred.</p>
+<h2 id="negative-results-what-did-not-occur">8. Negative Results (What
+Did <em>Not</em> Occur)</h2>
+<p>The following behaviors were explicitly absent:</p>
+<ul>
+<li>implicit authority persistence</li>
+<li>temporal priority</li>
+<li>conflict resolution by waiting</li>
+<li>renewal-based inheritance</li>
+<li>resurrection of VOID authority</li>
+<li>kernel-initiated renewal</li>
+<li>responsibility loss across epochs</li>
+</ul>
+<p>These absences constitute the primary result of VIII-3.</p>
+<h2 id="licensed-claim">9. Licensed Claim</h2>
+<p>Stage VIII-3 licenses <strong>one and only one claim</strong>:</p>
+<blockquote>
+<p><strong>Authority can persist over time only via explicit renewal
+under open-system constraints; time does not resolve conflict or
+eliminate cost.</strong></p>
+</blockquote>
+<p>Clarifications:</p>
+<ul>
+<li>This is a <strong>structural possibility result</strong>, not a
+governance endorsement.</li>
+<li>It concerns <strong>temporal mechanism</strong>, not
+legitimacy.</li>
+<li>It does not assert sustainability or efficiency.</li>
+</ul>
+<h2 id="what-viii-3-does-not-establish">10. What VIII-3 Does
+<em>Not</em> Establish</h2>
+<p>VIII-3 does <strong>not</strong> establish that:</p>
+<ul>
+<li>renewal is sustainable</li>
+<li>renewal should be automated</li>
+<li>authority persistence is desirable</li>
+<li>governance stabilizes over time</li>
+<li>conflict frequency decreases</li>
+<li>political legitimacy is preserved</li>
+</ul>
+<p>Those questions remain open by design.</p>
+<h2 id="ontological-implications">11. Ontological Implications</h2>
+<h3 id="time-as-stressor-not-healer">11.1 Time as Stressor, Not
+Healer</h3>
+<p>VIII-3 demonstrates that time can be made <strong>structurally
+inert</strong> with respect to governance. Persistence and resolution
+must be paid for; they do not occur automatically.</p>
+<h3 id="authority-as-leased-not-owned">11.2 Authority as Leased, Not
+Owned</h3>
+<p>Authority behaves as a <strong>finite lease</strong> rather than a
+permanent endowment. Continuity requires explicit renewal, making
+authority survivability visible and accountable.</p>
+<h2 id="implications-for-phase-viii-continuation">12. Implications for
+Phase VIII Continuation</h2>
+<p>With VIII-3 complete:</p>
+<ul>
+<li>authority does not persist by default</li>
+<li>renewal is explicit and costly</li>
+<li>conflict re-emerges without ordering</li>
+</ul>
+<p>Subsequent stages must address <strong>renewal pressure, exhaustion,
+and contention</strong> before any governance formalization.</p>
+<h2 id="conclusion">13. Conclusion</h2>
+<p>Stage VIII-3 establishes that authority does not survive time
+accidentally. Persistence requires explicit renewal. Conflict does not
+fade with waiting. Deadlock is lawful. Resolution remains costly.</p>
+<p>Time does not govern.</p>
+<p>Authority does—only when someone keeps it alive.</p>
+<h2 id="appendix-a-execution-status">Appendix A — Execution Status</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Stage</th>
+<th>Run Count</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>VIII-3</td>
+<td>1 (A–D)</td>
+<td>PASS</td>
+</tr>
+</tbody>
+</table>
+<h2 id="appendix-b-determinism-verification">Appendix B — Determinism
+Verification</h2>
+<ul>
+<li>Canonical JSON enforced</li>
+<li>Identity-keyed storage</li>
+<li>Explicit expiry semantics</li>
+<li>Conflict persistence across epochs</li>
+<li>Deterministic two-phase processing</li>
+<li>Per-event hash chaining</li>
+<li>Replay verification passed</li>
+</ul>
+<p><strong>End of Axionic Agency X.5 — Stage VIII-3 Results
+Note</strong></p>
+
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
