@@ -1,11 +1,11 @@
 # **Axionic Phase VIII — GSA-PoC**
 
 * **Governance-Sovereign Architecture (Proof of Concept)**
-* **Roadmap v0.6 (Post-VIII-2 Closure Update, Preregistration-Grade)**
+* **Roadmap v0.7 (Post-VIII-3 Closure Update, Preregistration-Grade)**
 
 David McFadzean<br>
 *Axionic Agency Lab*<br>
-2026-02-02
+2026-02-03
 
 ---
 
@@ -18,6 +18,7 @@ This roadmap sequences **Phase VIII investigations** under the constraints estab
 * **AKR-0** — *Authority Kernel Runtime Calibration* (Phase VIII-0; **CLOSED — POSITIVE**),
 * **Stage VIII-1** — *Minimal Plural Authority (Static)* (**CLOSED — POSITIVE**),
 * **Stage VIII-2** — *Destructive Conflict Resolution (Timeless)* (**CLOSED — POSITIVE**),
+* **Stage VIII-3** — *Temporal Governance (Authority Over Time)* (**CLOSED — POSITIVE**),
 * **AIE v0.1** — *Authority Input Environment* (mock legislator / authority feeder; frozen),
 * **P8-METRICS** — *Phase VIII Metrics Specification*.
 
@@ -108,7 +109,7 @@ It does **not** claim that governance can proceed, coordinate, or resolve.
 * deadlock persisted when all authority was destroyed or when no authorization was given,
 * no ordering, arbitration, synthesis, or laundering observed.
 
-### Licensed Claim (now active)
+### Licensed Claim (active)
 
 > **Conflict resolution without responsibility laundering is possible, but necessarily destructive.**
 
@@ -121,25 +122,37 @@ It does **not** address legitimacy, frequency, or regeneration of authority.
 
 ## 5. Stage VIII-3 — Temporal Governance (Authority Over Time)
 
-*(Post-Destruction Dynamics)*
+*(Expiry, Renewal, and Conflict Persistence)*
 
-* **Status:** 🔴 **OPEN**
-* **Scope:** Expiry, renewal, revalidation
+* **Status:** ✅ **CLOSED — POSITIVE**
+* **Scope:** Authority expiry, renewal, destruction carry-through
 * **Dynamics:** Explicit epoch advancement; open-system replenishment
+
+### Clarification
+
+> *Stage VIII-3 introduces time as a structural stressor, not a resolver. Authority persistence, conflict behavior, and deadlock are evaluated under explicit temporal progression.*
 
 ### Question Tested
 
-> **Can authority remain sovereign over time without semantic reinterpretation, under open-system replenishment, after explicit destruction has occurred?**
+> **Can authority persist over time only via explicit renewal, without semantic reinterpretation, implicit ordering, or responsibility laundering?**
 
-### Metrics
+### Observed Outcome
 
-* Mean Time To Deadlock (MTTD)
-* Authority Entropy Rate across epochs
-* Renewal burden (authority injection rate required to sustain non-zero Authority Surface Area)
+* authority expires deterministically at finite epoch bounds,
+* deadlock emerges lawfully when no ACTIVE authority remains,
+* renewal restores admissibility only locally and only via new authority identity,
+* renewal does **not** resurrect destroyed authority,
+* conflict persists across epochs and re-emerges without temporal priority,
+* time does **not** resolve conflict or eliminate cost.
 
-### Dependency Note
+### Licensed Claim (active)
 
-Stage VIII-3 is meaningful **only because** Stage VIII-2 showed that resolution is **possible but costly**, and deadlock is lawful.
+> **Authority can persist over time only via explicit renewal under open-system constraints; time does not resolve conflict or eliminate cost.**
+
+### Notes
+
+Stage VIII-3 closes the **temporal dimension** of Phase VIII.
+Authority persistence is no longer implicit; continuity is a paid operation.
 
 ---
 
@@ -158,6 +171,13 @@ Stage VIII-3 is meaningful **only because** Stage VIII-2 showed that resolution 
 ### Regress Bound
 
 > *No meta-level is privileged. Governance actions on governance actions remain subject to AST Spec. Infinite regress terminates via authority entropy or lawful deadlock.*
+
+### Dependency Note
+
+Stage VIII-4 is meaningful **only because**:
+
+* conflict resolution is explicit and destructive (VIII-2),
+* authority persistence is explicit and non-default (VIII-3).
 
 ### Licensed Claim (if closed)
 
@@ -230,7 +250,7 @@ Phase VIII does **not** aim to build a helpful agent, optimize outcomes, encode 
 
 ## 13. Closure Statement Template
 
-> *“Axionic Phase VIII — GSA-PoC (Roadmap vX) determined the boundary of sovereign governance under plural authority. Under AST Spec vX, AKR-0 vY, AIE vZ, and Stages VIII-1 and VIII-2, the following regimes were admissible and the following were not.”*
+> *“Axionic Phase VIII — GSA-PoC (Roadmap vX) determined the boundary of sovereign governance under plural authority. Under AST Spec vX, AKR-0 vY, AIE vZ, and Stages VIII-1 through VIII-3, the following regimes were admissible and the following were not.”*
 
 ---
 
@@ -240,4 +260,4 @@ Any requirement for implicit authority, semantic reasoning, optimization, heuris
 
 ---
 
-**End of Phase VIII — GSA-PoC Roadmap v0.6**
+**End of Phase VIII — GSA-PoC Roadmap v0.7**
