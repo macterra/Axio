@@ -3,7 +3,7 @@
 **Stage:** VIII-4 — Governance Transitions (Meta-Authority)
 **Version:** v0.1
 **Status:** FROZEN
-**Date:** 2026-02-03
+**Date:** 2026-02-04
 
 ---
 
@@ -661,9 +661,9 @@ Before freeze, confirm:
 ## 17. Freeze Block
 
 ```
-FROZEN: 2026-02-03T00:00:00Z
-HASH: TBD
-TIMESTAMP: 2026-02-03T00:00:00Z
+FROZEN: 2026-02-04T00:00:00Z
+HASH: 28393554a3afee666e3aaecaa9f2784c3c2ccf7cba007a7746270485409a2454
+TIMESTAMP: 2026-02-04T00:00:00Z
 ```
 
 **Freeze Procedure:** SHA-256 of document bytes with HASH set to TBD.
