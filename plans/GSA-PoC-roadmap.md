@@ -1,11 +1,11 @@
 # **Axionic Phase VIII — GSA-PoC**
 
 * **Governance-Sovereign Architecture (Proof of Concept)**
-* **Roadmap v0.7 (Post-VIII-3 Closure Update, Preregistration-Grade)**
+* **Roadmap v0.8 (Post-VIII-4 Closure Update, Preregistration-Grade)**
 
-David McFadzean<br>
-*Axionic Agency Lab*<br>
-2026-02-03
+David McFadzean
+*Axionic Agency Lab*
+2026-02-04
 
 ---
 
@@ -19,6 +19,7 @@ This roadmap sequences **Phase VIII investigations** under the constraints estab
 * **Stage VIII-1** — *Minimal Plural Authority (Static)* (**CLOSED — POSITIVE**),
 * **Stage VIII-2** — *Destructive Conflict Resolution (Timeless)* (**CLOSED — POSITIVE**),
 * **Stage VIII-3** — *Temporal Governance (Authority Over Time)* (**CLOSED — POSITIVE**),
+* **Stage VIII-4** — *Governance Transitions (Meta-Authority)* (**CLOSED — POSITIVE**),
 * **AIE v0.1** — *Authority Input Environment* (mock legislator / authority feeder; frozen),
 * **P8-METRICS** — *Phase VIII Metrics Specification*.
 
@@ -101,22 +102,9 @@ It does **not** claim that governance can proceed, coordinate, or resolve.
 
 > **Can authority conflicts be resolved structurally without synthesis, compromise, or optimization—while preserving responsibility traceability?**
 
-### Observed Outcome
-
-* conflict registered explicitly on contested action,
-* lawful deadlock entered and persisted absent intervention,
-* admissibility restored **only** via explicit, external destruction authorization,
-* deadlock persisted when all authority was destroyed or when no authorization was given,
-* no ordering, arbitration, synthesis, or laundering observed.
-
 ### Licensed Claim (active)
 
 > **Conflict resolution without responsibility laundering is possible, but necessarily destructive.**
-
-### Notes
-
-Stage VIII-2 establishes **resolution as an explicit, costly operation**.
-It does **not** address legitimacy, frequency, or regeneration of authority.
 
 ---
 
@@ -128,31 +116,13 @@ It does **not** address legitimacy, frequency, or regeneration of authority.
 * **Scope:** Authority expiry, renewal, destruction carry-through
 * **Dynamics:** Explicit epoch advancement; open-system replenishment
 
-### Clarification
-
-> *Stage VIII-3 introduces time as a structural stressor, not a resolver. Authority persistence, conflict behavior, and deadlock are evaluated under explicit temporal progression.*
-
 ### Question Tested
 
 > **Can authority persist over time only via explicit renewal, without semantic reinterpretation, implicit ordering, or responsibility laundering?**
 
-### Observed Outcome
-
-* authority expires deterministically at finite epoch bounds,
-* deadlock emerges lawfully when no ACTIVE authority remains,
-* renewal restores admissibility only locally and only via new authority identity,
-* renewal does **not** resurrect destroyed authority,
-* conflict persists across epochs and re-emerges without temporal priority,
-* time does **not** resolve conflict or eliminate cost.
-
 ### Licensed Claim (active)
 
 > **Authority can persist over time only via explicit renewal under open-system constraints; time does not resolve conflict or eliminate cost.**
-
-### Notes
-
-Stage VIII-3 closes the **temporal dimension** of Phase VIII.
-Authority persistence is no longer implicit; continuity is a paid operation.
 
 ---
 
@@ -160,70 +130,104 @@ Authority persistence is no longer implicit; continuity is a paid operation.
 
 *(Authority Governing Authority)*
 
-* **Status:** 🔴 **OPEN**
-* **Scope:** Amendment, revocation, re-grant
-* **Dynamics:** Structural and temporal
+* **Status:** ✅ **CLOSED — POSITIVE**
+* **Scope:** Authority creation, destruction, amendment (via CREATE/DESTROY)
+* **Dynamics:** Structural + temporal; bounded evaluation
 
 ### Question Tested
 
-> **Can governance mechanisms themselves be governed without reopening laundering, exception paths, or semantic privilege?**
+> **Can governance mechanisms themselves be governed without reopening laundering, exception paths, kernel arbitration, or semantic privilege?**
 
-### Regress Bound
+### Observed Outcome
 
-> *No meta-level is privileged. Governance actions on governance actions remain subject to AST Spec. Infinite regress terminates via authority entropy or lawful deadlock.*
+* governance actions evaluated as ordinary AST transformations,
+* no privileged execution path introduced,
+* internal authority amplification structurally blocked,
+* self-governance (including self-destruction) evaluated without exception,
+* regress pressure terminates deterministically via bounded evaluation,
+* deadlock and empty-authority states treated as lawful outcomes.
 
-### Dependency Note
+### Licensed Claim (active)
 
-Stage VIII-4 is meaningful **only because**:
+> **Governance transitions can be represented as ordinary authority-bound transformations and either execute lawfully or fail explicitly without semantic privilege.**
 
-* conflict resolution is explicit and destructive (VIII-2),
-* authority persistence is explicit and non-default (VIII-3).
+### Notes
 
-### Licensed Claim (if closed)
-
-> **Governance transitions can be lawfully executed or explicitly blocked without exception paths.**
+Stage VIII-4 establishes the **meta-authority boundary**:
+inside the kernel, **conservation laws apply**; evolution, interpretation, and amplification are externalized.
 
 ---
 
-## 7. Stage VIII-5 — Multi-Scope Interaction (Static)
+## 7. Stage VIII-5 — Authority Injection & Open-System Dynamics
+
+*(Explicit Authority Introduction Without Privilege)*
 
 * **Status:** 🔴 **OPEN**
-* **Scope:** Two authorities, two resources
+* **Scope:** Kernel boundary; AIE → Kernel interaction
+* **Dynamics:** Temporal; open-system
+
+### Motivation (Post-VIII-4)
+
+Stage VIII-4 demonstrates that **internal authority amplification is forbidden** in a privilege-free kernel. Therefore, all novelty must enter through **explicit injection**.
+
+### Question Tested
+
+> **Can new authority be injected into a running governance system over time without breaking conflict persistence, auditability, or responsibility traceability?**
+
+### Stressors
+
+* injection during deadlock
+* injection into contested scopes
+* competing injections
+* injection rate vs authority entropy
+* interaction with expired and VOID authority history
+
+### Licensed Claim (if closed)
+
+> **Authority injection can be made explicit, auditable, and non-escalatory at the kernel boundary.**
+
+---
+
+## 8. Stage VIII-6 — Multi-Scope Interaction (Static)
+
+* **Status:** 🔴 **OPEN**
+* **Scope:** ≥2 authorities, ≥2 resources
 * **Dynamics:** Static
 
 ### Question Tested
 
-> **Do independent resources reduce conflict coupling, or does structural deadlock propagate across scopes?**
+> **Does scope separation reduce conflict coupling, or does structural deadlock propagate across independent resources?**
 
 ---
 
-## 8. Stage VIII-6 — Multi-Authority, Multi-Scope Regimes
+## 9. Stage VIII-7 — Multi-Authority, Multi-Scope Regimes (Temporal)
 
 * **Status:** 🔴 **OPEN**
 * **Scope:** ≥3 authorities, ≥2 resources
-* **Dynamics:** Structural and temporal
+* **Dynamics:** Temporal, replenishment permitted
 
 ### Metrics
 
 * conflict density
 * deadlock frequency
 * authority entropy rate
-* compute cost per resolution
+* injection pressure
+* compute cost per admissible action
 
 ---
 
-## 9. Stage VIII-7 — Governance Stress & Adversarial Patterns
+## 10. Stage VIII-8 — Governance Stress & Adversarial Patterns
 
 * **Status:** 🔴 **OPEN**
 * **Scope:** Pathological but lawful authority configurations
 
 ### Licensed Claim (if closed)
 
-> **Failure modes are explicit, bounded, and non-escalatory.**
+> **Failure modes are explicit, bounded, and non-escalatory under adversarial pressure.**
 
 ---
 
-## 10. Value Pluralism Clarification
+## 11. Value Pluralism Clarification
 
 > *Value pluralism is represented structurally as authority pluralism. Each authority is treated as a value-commitment carrier without interpretation or aggregation.*
 
@@ -231,7 +235,7 @@ Semantic value content remains out of scope.
 
 ---
 
-## 11. Phase VIII Completion Criteria (Disambiguated)
+## 12. Phase VIII Completion Criteria (Disambiguated)
 
 Phase VIII completes when **any one** holds:
 
@@ -242,22 +246,22 @@ Phase VIII completes when **any one** holds:
 
 ---
 
-## 12. Phase VIII Non-Goals (Reaffirmed)
+## 13. Phase VIII Non-Goals (Reaffirmed)
 
 Phase VIII does **not** aim to build a helpful agent, optimize outcomes, encode intent, or justify deployment.
 
 ---
 
-## 13. Closure Statement Template
+## 14. Closure Statement Template
 
-> *“Axionic Phase VIII — GSA-PoC (Roadmap vX) determined the boundary of sovereign governance under plural authority. Under AST Spec vX, AKR-0 vY, AIE vZ, and Stages VIII-1 through VIII-3, the following regimes were admissible and the following were not.”*
+> *“Axionic Phase VIII — GSA-PoC (Roadmap v0.8) determined the boundary of sovereign governance under plural authority. Under AST Spec v0.2, AKR-0 v0.1, AIE v0.1, and Stages VIII-1 through VIII-4, the following regimes were admissible and the following were not.”*
 
 ---
 
-## 14. Termination Clause
+## 15. Termination Clause
 
 Any requirement for implicit authority, semantic reasoning, optimization, heuristic arbitration, or responsibility smearing **terminates Phase VIII immediately**.
 
 ---
 
-**End of Phase VIII — GSA-PoC Roadmap v0.7**
+**End of Phase VIII — GSA-PoC Roadmap v0.8**
