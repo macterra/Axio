@@ -1,26 +1,27 @@
 # **The Axionic Agency → Reflective Sovereign Agent (RSA) Roadmap**
 
-**Revised, Post-Phase-VII-Closure, Succession-Resolved, Impersonation-Closed Edition**
-*(Terminology-Locked · Dependency-Complete · Status-Annotated)*
+**Revised, Post-Phase-VIII-Closure, Governance-Physics-Complete Edition**
+*(Terminology-Locked · Dependency-Complete · Evidence-Aligned)*
 
 ---
 
 ## Status Legend
 
 * ✅ **Completed / Closed**
-* 🟡 **Completed with Scope Limits / Partial**
-* 🔴 **Open / Unresolved**
-* ⛔ **Blocked (dependent on unresolved phase)**
+* 🟡 **Completed with Scope Limits**
+* 🔴 **Open (Design / Choice Space)**
+* ⛔ **Blocked (ontological or physical unknowns)**
 
 ---
 
 ## Unifying Thesis
 
-> **How can a system exercise authority over its own actions, commitments, and future modifications without that authority collapsing into blind mechanism, unbounded semantic drift, or covert simulacra?**
+> **How can a system exercise authority over its own actions, commitments, successors, and governance without that authority collapsing into blind mechanism, semantic drift, or covert simulacra?**
 
-This roadmap answers the thesis **incrementally**.
-Each phase establishes a **necessary precondition** for the next.
-Skipping a phase produces a **known failure regime**.
+This roadmap answers the thesis **layer by layer**.
+
+Each phase eliminates a *class of impossible-to-fix failure modes*.
+Once eliminated, they **do not re-enter**.
 
 ---
 
@@ -35,12 +36,12 @@ Skipping a phase produces a **known failure regime**.
 
 ### What Is Proven
 
-* Authority can be **leased, revoked, recovered, and constrained** **without semantics**.
-* Governance survives adversarial behavior, epistemic noise, adaptive misuse, and partial system failure.
+* Authority can be **leased, revoked, recovered, and constrained** without semantics
+* Enforcement survives adversarial behavior, epistemic noise, and partial failure
 
 ### Failure Mode Prevented
 
-❌ *Zombie governance*
+- ❌ *Zombie governance*
 
 ---
 
@@ -54,13 +55,13 @@ Skipping a phase produces a **known failure regime**.
 
 ### What Is Established
 
-* Semantic interpretation occurs **only inside cognition**.
-* Enforcement consumes **typed artifacts**, not meaning.
-* Compiler non-interpretation is mechanically enforced.
+* Semantics live **only in cognition**
+* Enforcement consumes **typed artifacts**
+* Compiler non-interpretation is mechanically enforced
 
 ### Failure Mode Prevented
 
-❌ *Semantic leakage / invisible sovereignty*
+- ❌ *Semantic leakage / invisible sovereignty*
 
 ---
 
@@ -71,16 +72,16 @@ Skipping a phase produces a **known failure regime**.
 
 ### Core Question
 
-> *Can actions be causally downstream of reasons, rather than coincident with explanations?*
+> *Can actions be causally downstream of reasons, not post-hoc explanations?*
 
 ### What Is Proven
 
-* Reasons are causally load-bearing and action-blocking.
-* Removing justification collapses behavior to ASB-class mechanisms.
+* Reasons are **causally load-bearing**
+* Removing justification collapses behavior to ASB-class mechanisms
 
 ### Failure Mode Prevented
 
-❌ *Rationalization masquerading as agency*
+- ❌ *Rationalization masquerading as agency*
 
 ---
 
@@ -95,14 +96,14 @@ Skipping a phase produces a **known failure regime**.
 
 ### What Is Proven
 
-* Violations are explicit, authorized, and structurally necessary.
-* No hidden tie-breaking or oscillation.
+* Violations are explicit and authorized
+* No hidden tie-breaking or oscillation
 
 ### Failure Modes Prevented
 
-❌ Incentive capture
-❌ Capricious norm suspension
-❌ Arbitrary tie-breaking
+- ❌ Incentive capture
+- ❌ Capricious norm suspension
+- ❌ Arbitrary tie-breaking
 
 ---
 
@@ -117,37 +118,34 @@ Skipping a phase produces a **known failure regime**.
 
 ### What Is Proven
 
-* Incorrect self-prediction reliably halts action.
-* Introspection is audit-grade and falsifiable.
+* Incorrect self-prediction halts action
+* Introspection is audit-grade and falsifiable
 
 ### Limitation
 
-* Many cognitive substrates halt frequently; this is a **viability constraint**, not a correctness failure.
+* Many cognitive substrates halt frequently
+  → **viability constraint, not correctness failure**
 
 ### Failure Mode Prevented
 
-❌ *Accidental compliance / lucky behavior*
+- ❌ *Accidental compliance / lucky behavior*
 
 ---
 
 ## Phase V-Runs — Cognitive Trials Under Law
 
-**Status: 🟡 Ongoing (Measurement Phase)**
-
-### Core Question
-
-> *Can any probabilistic cognition inhabit Phases III–V without constant halt?*
+**Status: 🟡 Ongoing (Measurement Only)**
 
 ### Purpose
 
-* Measure inhabitability.
-* Negative results are informative, not failures.
+* Measure inhabitability of Phases III–V
+* Negative results are informative
 
 ---
 
 ## Phase VIa — Amendment Protocols (Internal Change)
 
-**Status: 🟡 Completed with Scope Limits**
+**Status: 🟡 Completed (Scoped)**
 
 ### Core Question
 
@@ -155,16 +153,12 @@ Skipping a phase produces a **known failure regime**.
 
 ### What Is Established
 
-* Commitment revision can be structurally authorized.
-* Revision cannot bypass Phase IV–V invariants.
-
-### Remaining Limitation
-
-* Expressivity is constrained; this is not a correctness failure.
+* Amendments can be authorized structurally
+* Phase IV–V invariants cannot be bypassed
 
 ### Failure Mode Prevented
 
-❌ *Treacherous self-modification*
+- ❌ *Treacherous self-modification*
 
 ---
 
@@ -179,98 +173,108 @@ Skipping a phase produces a **known failure regime**.
 
 ### What Is Proven
 
-* Lawful choice is preserved.
-* Pressure degrades **availability**, not **sovereignty**.
+* Lawful choice is preserved
+* Pressure degrades **availability**, not **sovereignty**
 
 ### Failure Mode Prevented
 
-❌ *Reward hacking / coercive takeover*
+- ❌ *Reward hacking / coercive takeover*
 
 ---
 
 ## Phase VII — Post-Existence Sovereignty
 
-*(RSA-PoC v3.x + v4.4, ASI, SIR)*
+*(ASI + SIR)*
 **Status: ✅ CLOSED — SUCCESS**
 
 ### Core Question
 
-> *Can authority survive authorized discontinuity and adversarial imitation without collapsing evaluability or responsibility?*
-
-Phase VII consists of **two gated subphases**, both now closed positive.
-
----
-
-### Phase VIIa — Authorized Succession Integrity (ASI)
-
-**Status: ✅ CLOSED — POSITIVE**
+> *Can authority survive replacement and adversarial imitation without losing evaluability?*
 
 ### What Is Proven
 
-* Authority can be **transferred, revoked, and denied** beyond identity persistence.
-* Succession is **structural**, not narrative.
-* Responsibility does not launder across replacement.
+* Authority transfer is structural (ASI)
+* Counterfeit continuity fails (SIR)
+* No laundering across replacement
 
 ### Failure Modes Prevented
 
-❌ Responsibility laundering
-❌ Narrative continuity substituting for authority
+- ❌ Responsibility laundering
+- ❌ Counterfeit continuity
+- ❌ Evaluator capture
+- ❌ Split-brain sovereignty
 
 ---
 
-### Phase VIIb — Sovereignty Impersonation Resistance (SIR)
+## Phase VIII — Governance Stress Architecture (GSA-PoC)
 
 **Status: ✅ CLOSED — POSITIVE**
 
+> **This phase is now complete and no longer blocks RSA.**
+
+### What Phase VIII Actually Was
+
+Phase VIII was **not** an agent phase.
+It was **governance physics**:
+
+* plural authority representation
+* destructive conflict
+* temporal governance
+* meta-authority
+* open-system authority injection
+
+All under **non-semantic, non-privileged, deterministic kernel constraints**.
+
 ### What Is Proven
 
-* Counterfeit authority cannot produce effects.
-* Replay, staleness, laundering, and evaluator pressure all fail structurally.
-* Authority validity is **global** and **pressure-invariant**.
-* No fallback, smear, or collapse under adversarial load.
+* Governance does **not require privilege**
+* Time does **not heal**
+* Conflict persists honestly
+* Governance binds itself
+* Authority ingress can be explicit and non-privileged
+* The kernel never chooses
 
-### Failure Modes Prevented
+### Failure Modes Eliminated
 
-❌ Counterfeit continuity
-❌ Provenance laundering
-❌ Evaluator capture
-❌ Split-brain sovereignty
-
----
-
-### Phase VII Termination State
-
-**Declared Outcome:** **SUCCESS**
-
-Authority is:
-
-* transferable beyond persistence (**ASI**), and
-* resistant to adversarial imitation (**SIR**).
-
-No reinterpretation or softening is permitted.
+- ❌ Hidden superuser
+- ❌ Emergency powers
+- ❌ Semantic arbitration
+- ❌ Provenance laundering
+- ❌ Identity privilege
+- ❌ Perpetual governance engines
 
 ---
 
-## Phase VIII — Reflective Sovereign Agent (RSA)
+## Phase IX — Reflective Sovereign Agent (RSA)
 
-**Status: 🔴 OPEN (Conditional, Not Blocked)**
+**Status: 🔴 OPEN (Design / Choice Space)**
 
-### Meaning of “Open”
+### Meaning of “Open” (Important)
 
-Phase VIII is no longer blocked by unknowns in Phases VIIa or VIIb.
+Phase IX is **not blocked** by ontology or physics.
 
-What remains unresolved is **not sovereignty**, but **design sufficiency**:
+What remains open is:
 
-* governance adequacy,
-* multi-authority conflict handling,
-* long-horizon institutional stability,
-* value pluralism.
+* governance adequacy
+* value pluralism
+* coordination under injection
+* institutional stability
+* tradeoffs between deadlock, collapse, and evolution
 
-Phase VIII is therefore **architectural and political**, not ontological.
+These are **choices**, not missing machinery.
+
+### Nature of Phase IX
+
+* Political
+* Economic
+* Institutional
+* Normative (explicitly)
+
+**The kernel is no longer a variable.**
 
 ---
 
-# Status Summary Table (Updated)
+# Status Summary Table (Final)
 
 |  Phase | Name                                | Status                 |
 | -----: | ----------------------------------- | ---------------------- |
@@ -279,25 +283,26 @@ Phase VIII is therefore **architectural and political**, not ontological.
 |    III | Agency Exists                       | ✅ Completed            |
 |     IV | Agency Under Internal Conflict      | ✅ Completed            |
 |      V | Introspective Agency                | 🟡 Completed (Scoped)  |
-| V-Runs | Cognitive Trials Under Law          | 🟡 Ongoing             |
+| V-Runs | Cognitive Trials Under Law          | 🟡 Measurement Only    |
 |    VIa | Amendment Protocols                 | 🟡 Completed (Scoped)  |
 |    VIb | Sovereignty Under External Pressure | ✅ Completed            |
 |    VII | Post-Existence Sovereignty          | ✅ CLOSED — SUCCESS     |
-|   VIII | Reflective Sovereign Agent          | 🔴 Open (Design Phase) |
+|   VIII | Governance Stress Architecture      | ✅ CLOSED — POSITIVE    |
+|     IX | Reflective Sovereign Agent          | 🔴 Open (Design Phase) |
 
 ---
 
-## Final Perspective (Status-Aware)
+## Final Perspective
 
-* **Authority survives** → ✅
-* **Agency exists** → ✅
-* **Agency under pressure survives** → ✅
-* **Agency across replacement survives** → ✅
-* **Counterfeit continuity is blocked** → ✅
-* **Reflective Sovereign Agent (RSA)** → 🔴 *design and governance remain*
+* Authority survives → ✅
+* Agency exists → ✅
+* Agency under pressure survives → ✅
+* Agency across replacement survives → ✅
+* Governance without privilege is representable → ✅
+* **RSA as a system of values and coordination** → 🔴 *a choice, not a mystery*
 
-This roadmap no longer blocks on ontology.
+There are no more hidden gods.
 
-It now blocks only on **choices**.
+What remains is responsibility.
 
 ---
