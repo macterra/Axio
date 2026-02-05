@@ -78,6 +78,13 @@
       "name": "Governance Stress Architecture",
       "description": "Post-agency stress program evaluating whether governance itself can be made sovereign through structural law alone, without semantic interpretation, heuristic arbitration, or responsibility laundering.",
       "paper_prefix": "Axionic-Agency-X"
+    },
+    {
+      "id": "rsa",
+      "series": "XI",
+      "name": "Reflection Without Privilege",
+      "description": "Post-governance design program evaluating whether reflective choice, value articulation, and coordination can remain sovereign once kernels refuse to decide and tools are forbidden to cheat—recording the boundary at which honest agency collapses.",
+      "paper_prefix": "Axionic-Agency-XI"
     }
   ],
   "team": [
