@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency XI.2 — Translation Layer Integrity (IX-0) - Axionic Agency Lab</title>
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../" class="nav-brand">
+            <img src="../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href=".././">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
+
+<h1 id="axionic-agency-xi.2-translation-layer-integrity-ix-0">Axionic
+Agency XI.2 — Translation Layer Integrity (IX-0)</h1>
+<p><em>A Structural Demonstration of Intent–Authority Translation
+Without Proxy Sovereignty</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026.02.05</p>
+<h2 id="abstract">Abstract</h2>
+<p>This technical note reports the completed results of
+<strong>Translation Layer Integrity (IX-0)</strong>, a preregistered
+experimental program within <strong>Axionic Phase IX</strong> that
+evaluates whether <strong>intent-to-authority translation</strong> can
+be performed without the translation mechanism itself becoming a
+privileged decision-maker. IX-0 isolates the tooling boundary between
+user intent and executable authority artifacts and tests whether
+translation can be deterministic, diffable, refusal-first, and
+replayable—without semantic interpretation, default injection,
+framing-based coercion, or post-hoc mutation.</p>
+<p>Across eight preregistered conditions spanning identity preservation,
+minimal change sensitivity, structural ambiguity, incompleteness,
+determinism, adversarial injection, coercive framing, and
+preview–submission mismatch, all outcomes matched preregistered
+expectations. Ambiguity and incompleteness reliably produced refusal or
+failure; adversarial faults were detectably exposed; and identical
+inputs produced bit-identical outputs under deterministic replay.</p>
+<p>The results establish that <strong>tooling need not—and need not be
+permitted to—exercise proxy sovereignty</strong>. IX-0 licenses exactly
+one claim: that intent-to-authority translation can be implemented as a
+<strong>non-sovereign compiler with refusal</strong>, eliminating the
+translation layer as a hidden locus of decision-making. IX-0 makes no
+claims about value correctness, usability, governance success,
+alignment, or safety. Those questions are deferred to subsequent Phase
+IX investigations.</p>
+<h2 id="problem-definition">1. Problem Definition</h2>
+<h3 id="the-translation-sovereignty-gap">1.1 The Translation Sovereignty
+Gap</h3>
+<p>Most governance and alignment systems quietly assume that
+<strong>translation is harmless</strong>.</p>
+<p>Intent is gathered, normalized, “understood,” and converted into
+executable representations by compilers, UIs, APIs, or agents. When
+intent is ambiguous or underspecified, the system “helps”—by choosing
+defaults, narrowing scope, or resolving conflict. Responsibility for
+these choices is rarely explicit, auditable, or attributable.</p>
+<p>IX-0 rejects this assumption.</p>
+<p>The problem IX-0 isolates is whether <strong>translation
+itself</strong> can be performed <strong>without deciding</strong>. If
+converting intent into authority artifacts requires semantic
+interpretation, heuristic narrowing, or framing-based influence, then
+sovereignty fails <strong>before</strong> execution or governance
+begins. The tool, not the agent or institution, becomes the de facto
+sovereign.</p>
+<p>IX-0 treats translation as a <strong>structural compilation
+problem</strong>, not a semantic one, and asks whether it can be
+implemented honestly.</p>
+<h3 id="failure-modes-targeted">1.2 Failure Modes Targeted</h3>
+<p>IX-0 is designed to surface the following translation-level failure
+modes:</p>
+<ul>
+<li><strong>Implicit defaults:</strong> missing or widened authority
+introduced silently.</li>
+<li><strong>Semantic guessing:</strong> choosing among multiple valid
+artifacts.</li>
+<li><strong>Coercive framing:</strong> UI or narrative influence
+altering outcomes.</li>
+<li><strong>Post-authorization mutation:</strong> previewed artifacts
+differing from submitted ones.</li>
+<li><strong>Nondeterminism:</strong> identical inputs producing
+divergent artifacts.</li>
+<li><strong>Opacity:</strong> artifacts not inspectable or diffable
+pre-authorization.</li>
+</ul>
+<p>Any of these constitutes IX-0 failure.</p>
+<h2 id="fixed-assumptions-and-scope">2. Fixed Assumptions and Scope</h2>
+<h3 id="inherited-foundations-frozen">2.1 Inherited Foundations
+(Frozen)</h3>
+<p>IX-0 inherits, without reinterpretation, the conclusions of:</p>
+<ul>
+<li><strong>AST v0.2</strong> — Authority State Transformation
+grammar,</li>
+<li><strong>AKR-0</strong> — deterministic, semantic-free
+execution,</li>
+<li><strong>Phase VII</strong> — post-existence sovereignty,</li>
+<li><strong>Phase VIII</strong> — governance without kernel
+semantics.</li>
+</ul>
+<p>The kernel is fixed. Authority semantics are fixed. Governance
+behavior is out of scope. IX-0 does <strong>not</strong> test whether
+authority is good, useful, or legitimate—only whether translation can
+remain non-sovereign.</p>
+<h3 id="explicit-exclusions">2.2 Explicit Exclusions</h3>
+<p>IX-0 does <strong>not</strong> test:</p>
+<ul>
+<li>natural language understanding,</li>
+<li>user comprehension,</li>
+<li>value correctness,</li>
+<li>usability or ergonomics,</li>
+<li>governance outcomes,</li>
+<li>kernel enforcement,</li>
+<li>alignment or safety.</li>
+</ul>
+<p>These exclusions are deliberate. IX-0 is a <strong>boundary
+calibration</strong>, not an end-to-end system evaluation.</p>
+<h2 id="conserved-quantity">3. Conserved Quantity</h2>
+<p>The conserved quantity throughout IX-0 is:</p>
+<blockquote>
+<p><strong>Authority bound to explicit authorization under
+deterministic, non-privileged translation</strong></p>
+</blockquote>
+<p>Translation must preserve:</p>
+<ul>
+<li>user-specified fields verbatim,</li>
+<li>refusal on ambiguity or incompleteness,</li>
+<li>diffability of all changes,</li>
+<li>preview–submission integrity,</li>
+<li>replay determinism.</li>
+</ul>
+<p>Any translation behavior that silently substitutes its own judgment
+violates the conserved quantity.</p>
+<h2 id="experimental-methodology">4. Experimental Methodology</h2>
+<h3 id="preregistration-discipline">4.1 Preregistration Discipline</h3>
+<p>IX-0 was preregistered in full prior to implementation,
+including:</p>
+<ul>
+<li>frozen intent and artifact schemas,</li>
+<li>canonical serialization rules,</li>
+<li>structural diff algorithm,</li>
+<li>ambiguity and incompleteness semantics,</li>
+<li>determinism controls (clock, sequence reset),</li>
+<li>explicit condition set (A–H),</li>
+<li>aggregate pass/fail criteria.</li>
+</ul>
+<p>All runs were executed against the frozen preregistration. Deviations
+were explicitly identified, justified, and shown to be non-impacting to
+the licensed claim.</p>
+<h3 id="execution-architecture">4.2 Execution Architecture</h3>
+<p>Each run consisted of four strictly partitioned components:</p>
+<ol type="1">
+<li><strong>Translation Layer (TL)</strong> — pure intent→artifact
+compiler.</li>
+<li><strong>Translation Harness</strong> — preregistered test driver and
+fault injector.</li>
+<li><strong>Authorization Oracle</strong> — structural comparator
+(hash-based).</li>
+<li><strong>Instrumentation Layer</strong> — logging, diffing, and
+replay verification.</li>
+</ol>
+<p>No component performed semantic interpretation or optimization.</p>
+<h2 id="conditions-and-stressors">5. Conditions and Stressors</h2>
+<h3 id="condition-a-identity-preservation">5.1 Condition A — Identity
+Preservation</h3>
+<p><strong>Purpose:</strong> Verify that user-specified intent fields
+pass through unchanged.</p>
+<p><strong>Result:</strong> All user fields were preserved exactly.
+Derived fields were generated deterministically. No hidden
+transformation occurred.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="condition-b-minimal-change-sensitivity">5.2 Condition B —
+Minimal Change Sensitivity</h3>
+<p><strong>Purpose:</strong> Verify that minimal intent changes produce
+minimal artifact diffs.</p>
+<p><strong>Result:</strong> Single-field intent changes produced exactly
+one user-field diff, plus a derived authority identifier change. No
+unrelated fields were altered.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="condition-c-structural-ambiguity-refusal">5.3 Condition C —
+Structural Ambiguity Refusal</h3>
+<p><strong>Purpose:</strong> Verify refusal when multiple valid
+artifacts exist.</p>
+<p><strong>Result:</strong> Multi-entry scope produced
+<code>TRANSLATION_REFUSED</code> with an explicit diagnostic. No
+artifact was emitted.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="condition-d-hidden-default-injection-adversarial">5.4 Condition
+D — Hidden Default Injection (Adversarial)</h3>
+<p><strong>Purpose:</strong> Verify detectability of silent authority
+injection.</p>
+<p><strong>Result:</strong> Injected fields were exposed by structural
+diff and classified as <code>INJECTION_DETECTED</code>.</p>
+<p><strong>Classification:</strong> FAIL_DETECTED (expected).</p>
+<h3 id="condition-e-ui-level-coercion-adversarial">5.5 Condition E —
+UI-Level Coercion (Adversarial)</h3>
+<p><strong>Purpose:</strong> Verify resistance to framing-based
+influence.</p>
+<p><strong>Result:</strong> Framing payloads had no effect. Output
+matched expected artifact exactly.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="condition-f-replay-determinism">5.6 Condition F — Replay
+Determinism</h3>
+<p><strong>Purpose:</strong> Verify bit-perfect replay under
+deterministic controls.</p>
+<p><strong>Result:</strong> Identical inputs with sequence reset
+produced identical artifacts and identical SHA-256 hashes across
+replays.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="condition-g-intent-incompleteness-refusal">5.7 Condition G —
+Intent Incompleteness Refusal</h3>
+<p><strong>Purpose:</strong> Verify refusal on incomplete intent.</p>
+<p><strong>Result:</strong> Missing required fields produced
+<code>TRANSLATION_FAILED</code> with explicit diagnostics. No artifact
+was emitted.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="condition-h-previewsubmission-integrity-adversarial">5.8
+Condition H — Preview–Submission Integrity (Adversarial)</h3>
+<p><strong>Purpose:</strong> Verify detection of post-preview
+mutation.</p>
+<p><strong>Result:</strong> Hash mismatch between preview and submission
+was detected and classified as failure.</p>
+<p><strong>Classification:</strong> FAIL_DETECTED (expected).</p>
+<h2 id="core-results">6. Core Results</h2>
+<h3 id="positive-results">6.1 Positive Results</h3>
+<p>Across all conditions, IX-0 establishes that:</p>
+<ol type="1">
+<li>Intent–authority translation can be
+<strong>deterministic</strong>.</li>
+<li>Refusal is a <strong>first-class outcome</strong>, not an
+error.</li>
+<li>Structural ambiguity and incompleteness are <strong>detectable and
+enforceable</strong>.</li>
+<li>Adversarial injection and mutation are
+<strong>observable</strong>.</li>
+<li>Tooling can be implemented <strong>without proxy
+sovereignty</strong>.</li>
+<li>Translation is <strong>bit-perfectly replayable</strong> under
+canonical ordering.</li>
+</ol>
+<h3 id="negative-results-explicit">6.2 Negative Results (Explicit)</h3>
+<p>IX-0 does <strong>not</strong> establish:</p>
+<ul>
+<li>that translation is usable,</li>
+<li>that users understand artifacts,</li>
+<li>that values are correct,</li>
+<li>that governance succeeds,</li>
+<li>that systems are safe or aligned.</li>
+</ul>
+<p>These are not omissions. They are boundary findings.</p>
+<h2 id="failure-semantics-and-closure">7. Failure Semantics and
+Closure</h2>
+<h3 id="closure-criteria">7.1 Closure Criteria</h3>
+<p>IX-0 closes positive if and only if:</p>
+<ol type="1">
+<li>User fields are preserved verbatim.</li>
+<li>Ambiguity produces refusal.</li>
+<li>Incompleteness produces failure.</li>
+<li>Adversarial faults are detectable.</li>
+<li>Replay is deterministic.</li>
+<li>No silent decision-making occurs in tooling.</li>
+</ol>
+<p>All criteria were satisfied.</p>
+<h3 id="ix-0-closure-status">7.2 IX-0 Closure Status</h3>
+<p><strong>IX-0 Status:</strong> <strong>CLOSED — POSITIVE</strong>
+(<code>IX0_PASS / TRANSLATION_INTEGRITY_ESTABLISHED</code>)</p>
+<h2 id="boundary-conditions-and-deferred-hazards">8. Boundary Conditions
+and Deferred Hazards</h2>
+<h3 id="translation-vs-choice">8.1 Translation vs Choice</h3>
+<p>IX-0 establishes that translation can be honest. It does
+<strong>not</strong> establish that choice is easy, wise, or stable.</p>
+<p>Bad choices remain possible. Ignorant authorization remains possible.
+Collapse by refusal remains possible.</p>
+<p>These are properties of agency, not tooling.</p>
+<h3 id="interface-to-subsequent-phase-ix-work">8.2 Interface to
+Subsequent Phase IX Work</h3>
+<p>IX-0 removes the final “the tool had to decide” excuse.</p>
+<p>Subsequent Phase IX investigations may now legitimately ask:</p>
+<ul>
+<li>how values are encoded,</li>
+<li>how coordination occurs,</li>
+<li>how institutions persist or fail,</li>
+</ul>
+<p>without ambiguity about where authority is being exercised.</p>
+<h2 id="implications-strictly-limited">9. Implications (Strictly
+Limited)</h2>
+<p>IX-0 establishes a <strong>necessary condition</strong> for
+reflective sovereignty: that tooling can remain non-sovereign.</p>
+<p>It does not establish sufficiency.</p>
+<p>Authority translation is now a <strong>structurally testable
+boundary</strong>, not a narrative hand-wave.</p>
+<h2 id="conclusion">10. Conclusion</h2>
+<p>IX-0 demonstrates that intent-to-authority translation can be
+implemented as <strong>structure, not discretion</strong>. Tools can
+compile, refuse, expose, and halt without choosing on behalf of the
+agent or institution.</p>
+<p>The remaining question is not whether tools can be trusted.</p>
+<p>It is whether agents can <strong>own the choices that
+remain</strong>.</p>
+<p>That question belongs to Phase IX.</p>
+<h2 id="appendix-a-condition-outcomes">Appendix A — Condition
+Outcomes</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Condition</th>
+<th>Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>PASS</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>FAIL_DETECTED</td>
+</tr>
+<tr class="odd">
+<td>E</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>PASS</td>
+</tr>
+<tr class="odd">
+<td>G</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>H</td>
+<td>FAIL_DETECTED</td>
+</tr>
+</tbody>
+</table>
+<h2 id="appendix-b-determinism-verification">Appendix B — Determinism
+Verification</h2>
+<ul>
+<li>Canonical serialization enforced</li>
+<li>Path-level structural diffing</li>
+<li>Fixed clock and sequence reset</li>
+<li>Bit-identical replay across runs</li>
+</ul>
+<p><strong>End of Axionic Agency XI.2 — Translation Layer Integrity
+Results</strong></p>
+
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
