@@ -1,0 +1,796 @@
+{
+  "phase": "IX-1",
+  "subphase": "VEWA",
+  "version": "v0.1",
+  "execution_timestamp": "2026-02-05T21:46:29.357153+00:00",
+  "conditions": [
+    {
+      "condition": "A",
+      "timestamp": "2026-02-05T21:46:29.357291+00:00",
+      "value_declarations": [
+        {
+          "value_id": "V_OPEN",
+          "scope": [
+            {
+              "target": "FILE:/data/report.txt",
+              "operation": "READ"
+            }
+          ],
+          "commitment": "ALLOW"
+        }
+      ],
+      "encoded_artifacts": [
+        {
+          "aav": "READ",
+          "authority_id": "VEWA-001",
+          "commitment": "ALLOW",
+          "created_epoch": 1738713600,
+          "expiry_epoch": 0,
+          "holder": "VALUE_AUTHORITY",
+          "lineage": {
+            "encoding_epoch": 0,
+            "type": "VALUE_DECLARATION",
+            "value_id": "V_OPEN"
+          },
+          "scope": [
+            {
+              "target": "FILE:/data/report.txt",
+              "operation": "READ"
+            }
+          ],
+          "status": "ACTIVE"
+        }
+      ],
+      "expected_artifacts": [
+        {
+          "aav": "READ",
+          "authority_id": "VEWA-001",
+          "commitment": "ALLOW",
+          "created_epoch": 1738713600,
+          "expiry_epoch": 0,
+          "holder": "VALUE_AUTHORITY",
+          "lineage": {
+            "encoding_epoch": 0,
+            "type": "VALUE_DECLARATION",
+            "value_id": "V_OPEN"
+          },
+          "scope": [
+            {
+              "operation": "READ",
+              "target": "FILE:/data/report.txt"
+            }
+          ],
+          "status": "ACTIVE"
+        }
+      ],
+      "candidate_actions": [
+        {
+          "target": "FILE:/data/report.txt",
+          "operation": "READ"
+        }
+      ],
+      "fault_injection": null,
+      "conflict_records": [],
+      "admissibility_results": [
+        {
+          "action": {
+            "target": "FILE:/data/report.txt",
+            "operation": "READ"
+          },
+          "result": "ACTION_ADMISSIBLE",
+          "reason": null
+        }
+      ],
+      "deadlock_records": [],
+      "structural_diffs": [
+        {
+          "count": 0,
+          "entries": []
+        }
+      ],
+      "classification": "IX1_PASS",
+      "classification_reason": "VALUE_ENCODING_ESTABLISHED",
+      "experiment_result": "PASS",
+      "notes": ""
+    },
+    {
+      "condition": "B",
+      "timestamp": "2026-02-05T21:46:29.357867+00:00",
+      "value_declarations": [
+        {
+          "value_id": "V_READ",
+          "scope": [
+            {
+              "target": "FILE:/data/report.txt",
+              "operation": "READ"
+            }
+          ],
+          "commitment": "ALLOW"
+        },
+        {
+          "value_id": "V_WRITE",
+          "scope": [
+            {
+              "target": "FILE:/data/log.txt",
+              "operation": "WRITE"
+            }
+          ],
+          "commitment": "ALLOW"
+        }
+      ],
+      "encoded_artifacts": [
+        {
+          "aav": "READ",
+          "authority_id": "VEWA-001",
+          "commitment": "ALLOW",
+          "created_epoch": 1738713600,
+          "expiry_epoch": 0,
+          "holder": "VALUE_AUTHORITY",
+          "lineage": {
+            "encoding_epoch": 0,
+            "type": "VALUE_DECLARATION",
+            "value_id": "V_READ"
+          },
+          "scope": [
+            {
+              "target": "FILE:/data/report.txt",
+              "operation": "READ"
+            }
+          ],
+          "status": "ACTIVE"
+        },
+        {
+          "aav": "WRITE",
+          "authority_id": "VEWA-002",
+          "commitment": "ALLOW",
+          "created_epoch": 1738713600,
+          "expiry_epoch": 0,
+          "holder": "VALUE_AUTHORITY",
+          "lineage": {
+            "encoding_epoch": 0,
+            "type": "VALUE_DECLARATION",
+            "value_id": "V_WRITE"
+          },
+          "scope": [
+            {
+              "target": "FILE:/data/log.txt",
+              "operation": "WRITE"
+            }
+          ],
+          "status": "ACTIVE"
+        }
+      ],
+      "expected_artifacts": [
+        {
+          "aav": "READ",
+          "authority_id": "VEWA-001",
+          "commitment": "ALLOW",
+          "created_epoch": 1738713600,
+          "expiry_epoch": 0,
+          "holder": "VALUE_AUTHORITY",
+          "lineage": {
+            "encoding_epoch": 0,
+            "type": "VALUE_DECLARATION",
+            "value_id": "V_READ"
+          },
+          "scope": [
+            {
+              "operation": "READ",
+              "target": "FILE:/data/report.txt"
+            }
+          ],
+          "status": "ACTIVE"
+        },
+        {
+          "aav": "WRITE",
+          "authority_id": "VEWA-002",
+          "commitment": "ALLOW",
+          "created_epoch": 1738713600,
+          "expiry_epoch": 0,
+          "holder": "VALUE_AUTHORITY",
+          "lineage": {
+            "encoding_epoch": 0,
+            "type": "VALUE_DECLARATION",
+            "value_id": "V_WRITE"
+          },
+          "scope": [
+            {
+              "operation": "WRITE",
+              "target": "FILE:/data/log.txt"
+            }
+          ],
+          "status": "ACTIVE"
+        }
+      ],
+      "candidate_actions": [
+        {
+          "target": "FILE:/data/report.txt",
+          "operation": "READ"
+        },
+        {
+          "target": "FILE:/data/log.txt",
+          "operation": "WRITE"
+        }
+      ],
+      "fault_injection": null,
+      "conflict_records": [],
+      "admissibility_results": [
+        {
+          "action": {
+            "target": "FILE:/data/report.txt",
+            "operation": "READ"
+          },
+          "result": "ACTION_ADMISSIBLE",
+          "reason": null
+        },
+        {
+          "action": {
+            "target": "FILE:/data/log.txt",
+            "operation": "WRITE"
+          },
+          "result": "ACTION_ADMISSIBLE",
+          "reason": null
+        }
+      ],
+      "deadlock_records": [],
+      "structural_diffs": [
+        {
+          "count": 0,
+          "entries": []
+        },
+        {
+          "count": 0,
+          "entries": []
+        }
+      ],
+      "classification": "IX1_PASS",
+      "classification_reason": "VALUE_ENCODING_ESTABLISHED",
+      "experiment_result": "PASS",
+      "notes": ""
+    },
+    {
+      "condition": "C",
+      "timestamp": "2026-02-05T21:46:29.358156+00:00",
+      "value_declarations": [
+        {
+          "value_id": "V_OPEN",
+          "scope": [
+            {
+              "target": "FILE:/data/secret.txt",
+              "operation": "READ"
+            }
+          ],
+          "commitment": "ALLOW"
+        },
+        {
+          "value_id": "V_CONF",
+          "scope": [
+            {
+              "target": "FILE:/data/secret.txt",
+              "operation": "READ"
+            }
+          ],
+          "commitment": "DENY"
+        }
+      ],
+      "encoded_artifacts": [
+        {
+          "aav": "READ",
+          "authority_id": "VEWA-001",
+          "commitment": "ALLOW",
+          "created_epoch": 1738713600,
+          "expiry_epoch": 0,
+          "holder": "VALUE_AUTHORITY",
+          "lineage": {
+            "encoding_epoch": 0,
+            "type": "VALUE_DECLARATION",
+            "value_id": "V_OPEN"
+          },
+          "scope": [
+            {
+              "target": "FILE:/data/secret.txt",
+              "operation": "READ"
+            }
+          ],
+          "status": "ACTIVE"
+        },
+        {
+          "aav": "READ",
+          "authority_id": "VEWA-002",
+          "commitment": "DENY",
+          "created_epoch": 1738713600,
+          "expiry_epoch": 0,
+          "holder": "VALUE_AUTHORITY",
+          "lineage": {
+            "encoding_epoch": 0,
+            "type": "VALUE_DECLARATION",
+            "value_id": "V_CONF"
+          },
+          "scope": [
+            {
+              "target": "FILE:/data/secret.txt",
+              "operation": "READ"
+            }
+          ],
+          "status": "ACTIVE"
+        }
+      ],
+      "expected_artifacts": [
+        {
+          "aav": "READ",
+          "authority_id": "VEWA-001",
+          "commitment": "ALLOW",
+          "created_epoch": 1738713600,
+          "expiry_epoch": 0,
+          "holder": "VALUE_AUTHORITY",
+          "lineage": {
+            "encoding_epoch": 0,
+            "type": "VALUE_DECLARATION",
+            "value_id": "V_OPEN"
+          },
+          "scope": [
+            {
+              "operation": "READ",
+              "target": "FILE:/data/secret.txt"
+            }
+          ],
+          "status": "ACTIVE"
+        },
+        {
+          "aav": "READ",
+          "authority_id": "VEWA-002",
+          "commitment": "DENY",
+          "created_epoch": 1738713600,
+          "expiry_epoch": 0,
+          "holder": "VALUE_AUTHORITY",
+          "lineage": {
+            "encoding_epoch": 0,
+            "type": "VALUE_DECLARATION",
+            "value_id": "V_CONF"
+          },
+          "scope": [
+            {
+              "operation": "READ",
+              "target": "FILE:/data/secret.txt"
+            }
+          ],
+          "status": "ACTIVE"
+        }
+      ],
+      "candidate_actions": [
+        {
+          "target": "FILE:/data/secret.txt",
+          "operation": "READ"
+        }
+      ],
+      "fault_injection": null,
+      "conflict_records": [
+        {
+          "scope_atom": {
+            "target": "FILE:/data/secret.txt",
+            "operation": "READ"
+          },
+          "authorities": [
+            "VEWA-001",
+            "VEWA-002"
+          ],
+          "conflict_type": "MULTI_BINDING",
+          "registered_epoch": 0
+        }
+      ],
+      "admissibility_results": [
+        {
+          "action": {
+            "target": "FILE:/data/secret.txt",
+            "operation": "READ"
+          },
+          "result": "ACTION_REFUSED",
+          "reason": "VALUE_CONFLICT"
+        }
+      ],
+      "deadlock_records": [
+        {
+          "scope_atom": {
+            "target": "FILE:/data/secret.txt",
+            "operation": "READ"
+          },
+          "status": "STATE_DEADLOCK / VALUE_CONFLICT"
+        }
+      ],
+      "structural_diffs": [
+        {
+          "count": 0,
+          "entries": []
+        },
+        {
+          "count": 0,
+          "entries": []
+        }
+      ],
+      "classification": "IX1_PASS",
+      "classification_reason": "VALUE_ENCODING_ESTABLISHED",
+      "experiment_result": "PASS",
+      "notes": ""
+    },
+    {
+      "condition": "D",
+      "timestamp": "2026-02-05T21:46:29.358398+00:00",
+      "value_declarations": [
+        {
+          "value_id": "V_OPEN",
+          "scope": [
+            {
+              "target": "FILE:/data/secret.txt",
+              "operation": "READ"
+            }
+          ],
+          "commitment": "ALLOW"
+        },
+        {
+          "value_id": "V_CONF",
+          "scope": [
+            {
+              "target": "FILE:/data/secret.txt",
+              "operation": "READ"
+            }
+          ],
+          "commitment": "DENY"
+        }
+      ],
+      "encoded_artifacts": [
+        {
+          "aav": "READ",
+          "authority_id": "VEWA-001",
+          "commitment": "ALLOW",
+          "created_epoch": 1738713600,
+          "expiry_epoch": 0,
+          "holder": "VALUE_AUTHORITY",
+          "lineage": {
+            "encoding_epoch": 0,
+            "type": "VALUE_DECLARATION",
+            "value_id": "V_OPEN"
+          },
+          "scope": [
+            {
+              "target": "FILE:/data/secret.txt",
+              "operation": "READ"
+            }
+          ],
+          "status": "ACTIVE",
+          "priority": 1
+        },
+        {
+          "aav": "READ",
+          "authority_id": "VEWA-002",
+          "commitment": "DENY",
+          "created_epoch": 1738713600,
+          "expiry_epoch": 0,
+          "holder": "VALUE_AUTHORITY",
+          "lineage": {
+            "encoding_epoch": 0,
+            "type": "VALUE_DECLARATION",
+            "value_id": "V_CONF"
+          },
+          "scope": [
+            {
+              "target": "FILE:/data/secret.txt",
+              "operation": "READ"
+            }
+          ],
+          "status": "ACTIVE"
+        }
+      ],
+      "expected_artifacts": [],
+      "candidate_actions": [
+        {
+          "target": "FILE:/data/secret.txt",
+          "operation": "READ"
+        }
+      ],
+      "fault_injection": {
+        "type": "inject_priority_field",
+        "field": "priority",
+        "value": 1
+      },
+      "conflict_records": [],
+      "admissibility_results": [],
+      "deadlock_records": [],
+      "structural_diffs": [],
+      "classification": "IX1_FAIL / VALUE_AGGREGATION",
+      "classification_reason": "Forbidden fields detected: ['priority']",
+      "experiment_result": "PASS",
+      "notes": "Adversarial condition: kernel IX1_FAIL = experiment PASS"
+    },
+    {
+      "condition": "E",
+      "timestamp": "2026-02-05T21:46:29.358454+00:00",
+      "value_declarations": [
+        {
+          "value_id": "V_OPEN",
+          "scope": [
+            {
+              "target": "FILE:/data/secret.txt",
+              "operation": "READ"
+            }
+          ],
+          "commitment": "ALLOW"
+        },
+        {
+          "value_id": "V_CONF",
+          "scope": [
+            {
+              "target": "FILE:/data/secret.txt",
+              "operation": "READ"
+            }
+          ],
+          "commitment": "DENY"
+        }
+      ],
+      "encoded_artifacts": [
+        {
+          "aav": "READ",
+          "authority_id": "VEWA-001",
+          "commitment": "ALLOW",
+          "created_epoch": 1738713600,
+          "expiry_epoch": 0,
+          "holder": "VALUE_AUTHORITY",
+          "lineage": {
+            "encoding_epoch": 0,
+            "type": "VALUE_DECLARATION",
+            "value_id": "V_OPEN"
+          },
+          "scope": [
+            {
+              "target": "FILE:/data/secret.txt",
+              "operation": "READ"
+            }
+          ],
+          "status": "ACTIVE"
+        },
+        {
+          "aav": "READ",
+          "authority_id": "VEWA-002",
+          "commitment": "DENY",
+          "created_epoch": 1738713600,
+          "expiry_epoch": 0,
+          "holder": "VALUE_AUTHORITY",
+          "lineage": {
+            "encoding_epoch": 0,
+            "type": "VALUE_DECLARATION",
+            "value_id": "V_CONF"
+          },
+          "scope": [
+            {
+              "target": "FILE:/data/secret.txt",
+              "operation": "READ"
+            }
+          ],
+          "status": "ACTIVE"
+        },
+        {
+          "aav": "READ",
+          "authority_id": "VEWA-001",
+          "commitment": "DENY",
+          "created_epoch": 1738713600,
+          "expiry_epoch": 0,
+          "holder": "VALUE_AUTHORITY",
+          "lineage": {
+            "encoding_epoch": 0,
+            "type": "VALUE_DECLARATION",
+            "value_id": "V_CONF"
+          },
+          "scope": [
+            {
+              "target": "FILE:/data/secret.txt",
+              "operation": "READ"
+            }
+          ],
+          "status": "ACTIVE"
+        },
+        {
+          "aav": "READ",
+          "authority_id": "VEWA-002",
+          "commitment": "ALLOW",
+          "created_epoch": 1738713600,
+          "expiry_epoch": 0,
+          "holder": "VALUE_AUTHORITY",
+          "lineage": {
+            "encoding_epoch": 0,
+            "type": "VALUE_DECLARATION",
+            "value_id": "V_OPEN"
+          },
+          "scope": [
+            {
+              "target": "FILE:/data/secret.txt",
+              "operation": "READ"
+            }
+          ],
+          "status": "ACTIVE"
+        }
+      ],
+      "expected_artifacts": [],
+      "candidate_actions": [
+        {
+          "target": "FILE:/data/secret.txt",
+          "operation": "READ"
+        }
+      ],
+      "fault_injection": {
+        "type": "permute_injection_order",
+        "permutations": 2
+      },
+      "conflict_records": [
+        {
+          "scope_atom": {
+            "target": "FILE:/data/secret.txt",
+            "operation": "READ"
+          },
+          "authorities": [
+            "VEWA-001",
+            "VEWA-002"
+          ],
+          "conflict_type": "MULTI_BINDING",
+          "registered_epoch": 0
+        },
+        {
+          "scope_atom": {
+            "target": "FILE:/data/secret.txt",
+            "operation": "READ"
+          },
+          "authorities": [
+            "VEWA-001",
+            "VEWA-002"
+          ],
+          "conflict_type": "MULTI_BINDING",
+          "registered_epoch": 0
+        }
+      ],
+      "admissibility_results": [
+        {
+          "action": {
+            "target": "FILE:/data/secret.txt",
+            "operation": "READ"
+          },
+          "result": "ACTION_REFUSED",
+          "reason": "VALUE_CONFLICT"
+        },
+        {
+          "action": {
+            "target": "FILE:/data/secret.txt",
+            "operation": "READ"
+          },
+          "result": "ACTION_REFUSED",
+          "reason": "VALUE_CONFLICT"
+        }
+      ],
+      "deadlock_records": [
+        {
+          "scope_atom": {
+            "target": "FILE:/data/secret.txt",
+            "operation": "READ"
+          },
+          "status": "STATE_DEADLOCK / VALUE_CONFLICT"
+        },
+        {
+          "scope_atom": {
+            "target": "FILE:/data/secret.txt",
+            "operation": "READ"
+          },
+          "status": "STATE_DEADLOCK / VALUE_CONFLICT"
+        }
+      ],
+      "structural_diffs": [],
+      "classification": "IX1_PASS",
+      "classification_reason": "Permutation invariance holds",
+      "experiment_result": "PASS",
+      "notes": "Permutation invariance test: E.1 (original order), E.2 (reversed)"
+    },
+    {
+      "condition": "F",
+      "timestamp": "2026-02-05T21:46:29.358888+00:00",
+      "value_declarations": [
+        {
+          "value_id": "V_OPEN",
+          "scope": [
+            {
+              "target": "FILE:/data/secret.txt",
+              "operation": "READ"
+            }
+          ],
+          "commitment": "ALLOW"
+        },
+        {
+          "value_id": "V_CONF",
+          "scope": [
+            {
+              "target": "FILE:/data/secret.txt",
+              "operation": "READ"
+            }
+          ],
+          "commitment": "DENY"
+        }
+      ],
+      "encoded_artifacts": [
+        {
+          "aav": "READ",
+          "authority_id": "VEWA-001",
+          "commitment": "ALLOW",
+          "created_epoch": 1738713600,
+          "expiry_epoch": 0,
+          "holder": "VALUE_AUTHORITY",
+          "lineage": {
+            "encoding_epoch": 0,
+            "type": "VALUE_DECLARATION",
+            "value_id": "V_OPEN"
+          },
+          "scope": [
+            {
+              "target": "FILE:/data/secret.txt",
+              "operation": "READ"
+            }
+          ],
+          "status": "ACTIVE"
+        },
+        {
+          "aav": "READ",
+          "authority_id": "VEWA-002",
+          "commitment": "DENY",
+          "created_epoch": 1738713600,
+          "expiry_epoch": 0,
+          "holder": "VALUE_AUTHORITY",
+          "lineage": {
+            "encoding_epoch": 0,
+            "type": "VALUE_DECLARATION",
+            "value_id": "V_CONF"
+          },
+          "scope": [
+            {
+              "target": "FILE:/data/secret.txt",
+              "operation": "READ"
+            }
+          ],
+          "status": "ACTIVE"
+        }
+      ],
+      "expected_artifacts": [],
+      "candidate_actions": [
+        {
+          "target": "FILE:/data/secret.txt",
+          "operation": "READ"
+        }
+      ],
+      "fault_injection": {
+        "type": "inject_post_epoch_authority",
+        "authority": {
+          "aav": "READ",
+          "authority_id": "VEWA-003",
+          "commitment": "ALLOW",
+          "created_epoch": 1738713600,
+          "expiry_epoch": 0,
+          "holder": "VALUE_AUTHORITY",
+          "lineage": {
+            "encoding_epoch": 0,
+            "type": "VALUE_DECLARATION",
+            "value_id": "V_META_RESPECT_BOTH"
+          },
+          "scope": [
+            {
+              "operation": "READ",
+              "target": "FILE:/data/secret.txt"
+            }
+          ],
+          "status": "ACTIVE"
+        }
+      },
+      "conflict_records": [],
+      "admissibility_results": [],
+      "deadlock_records": [],
+      "structural_diffs": [],
+      "classification": "IX1_FAIL / VALUE_SYNTHESIS",
+      "classification_reason": "Post-epoch authority injection detected and blocked",
+      "experiment_result": "PASS",
+      "notes": "Adversarial condition: kernel IX1_FAIL = experiment PASS"
+    }
+  ],
+  "aggregate_result": "IX1_PASS / VALUE_ENCODING_ESTABLISHED"
+}
