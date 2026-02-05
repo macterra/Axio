@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency XI.3 — Value Encoding Without Aggregation (IX-1) - Axionic Agency Lab</title>
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../" class="nav-brand">
+            <img src="../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href=".././">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
+
+<h1
+id="axionic-agency-xi.3-value-encoding-without-aggregation-ix-1">Axionic
+Agency XI.3 — Value Encoding Without Aggregation (IX-1)</h1>
+<p><em>A Structural Demonstration of Value Commitments as Authority
+Without Aggregation or Semantic Resolution</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026-02-05</p>
+<h2 id="abstract">Abstract</h2>
+<p>This technical note reports the completed results of <strong>Value
+Encoding Without Aggregation (IX-1)</strong>, a preregistered
+experimental program within <strong>Axionic Phase IX</strong> that
+evaluates whether <strong>values can be represented structurally as
+authority commitments</strong> without aggregation, prioritization,
+weighting, or semantic trade-off.</p>
+<p>IX-1 isolates the boundary between <strong>value
+representation</strong> and <strong>choice</strong>. It tests whether
+values can be encoded as explicit, non-collapsible authority artifacts;
+whether conflicts between such values can be detected and enforced
+without resolution; and whether systems can be forced to
+<strong>deadlock rather than decide</strong> when aggregation would
+otherwise be required.</p>
+<p>Across six preregistered conditions—including positive controls,
+structural conflict, explicit aggregation attacks, permutation
+invariance, and post-epoch synthesis attempts—all observed outcomes
+matched preregistered expectations. Conflicting values produced
+persistent conflict and scope-bound deadlock; adversarial aggregation
+and synthesis were detectably blocked; and identical inputs produced
+bit-identical outputs under deterministic replay.</p>
+<p>The results license exactly one claim: <strong>values can be encoded
+as explicit authority commitments without aggregation or semantic
+interpretation</strong>. IX-1 makes no claims about correctness of
+values, coordination, execution, governance success, or safety. Those
+questions are deferred to subsequent Phase IX investigations.</p>
+<h2 id="problem-definition">1. Problem Definition</h2>
+<h3 id="the-aggregation-assumption">1.1 The Aggregation Assumption</h3>
+<p>Most systems that speak about “values” quietly assume
+<strong>aggregation</strong>.</p>
+<p>Values are ranked, weighted, optimized, reconciled, or averaged—often
+implicitly. When values conflict, the system “resolves” the conflict by
+selecting a compromise or priority ordering. These mechanisms are rarely
+explicit, auditable, or attributable.</p>
+<p>IX-1 rejects this assumption.</p>
+<p>The problem IX-1 isolates is whether <strong>values can exist
+structurally at all</strong> without being collapsed into a decision
+procedure. If values require aggregation to function, then
+aggregation—not value—is doing the real work. In that case, “values” are
+rhetorical gloss over optimization.</p>
+<p>IX-1 treats values as <strong>constraints</strong>, not objectives,
+and asks whether they can be represented and enforced honestly.</p>
+<h3 id="failure-modes-targeted">1.2 Failure Modes Targeted</h3>
+<p>IX-1 is designed to surface the following value-level failure
+modes:</p>
+<ul>
+<li><strong>Implicit priority:</strong> ordering or dominance emerging
+without authorization.</li>
+<li><strong>Aggregation:</strong> weighted sums, rankings, or compromise
+mechanisms.</li>
+<li><strong>Collapse:</strong> multiple values merged into a single
+effective constraint.</li>
+<li><strong>Synthesis:</strong> creation of new “meta-values” after
+conflict.</li>
+<li><strong>Order sensitivity:</strong> outcomes depending on injection
+or traversal order.</li>
+<li><strong>Evasion:</strong> execution or progress where deadlock is
+required.</li>
+</ul>
+<p>Any of these constitutes IX-1 failure.</p>
+<h2 id="fixed-assumptions-and-scope">2. Fixed Assumptions and Scope</h2>
+<h3 id="inherited-foundations-frozen">2.1 Inherited Foundations
+(Frozen)</h3>
+<p>IX-1 inherits, without reinterpretation, the conclusions of:</p>
+<ul>
+<li><strong>AST v0.2</strong> — authority artifact grammar,</li>
+<li><strong>AKR-0</strong> — deterministic, semantic-free
+execution,</li>
+<li><strong>Phase VII</strong> — post-existence sovereignty,</li>
+<li><strong>Phase VIII</strong> — governance without kernel
+semantics,</li>
+<li><strong>IX-0</strong> — non-sovereign translation integrity.</li>
+</ul>
+<p>The kernel is fixed. Authority semantics are fixed. Translation
+semantics are fixed. IX-1 introduces <strong>no new execution
+behavior</strong>.</p>
+<h3 id="explicit-exclusions">2.2 Explicit Exclusions</h3>
+<p>IX-1 does <strong>not</strong> test:</p>
+<ul>
+<li>value correctness or moral truth,</li>
+<li>preference learning,</li>
+<li>coordination or compromise,</li>
+<li>execution or liveness,</li>
+<li>governance outcomes,</li>
+<li>safety or alignment.</li>
+</ul>
+<p>These exclusions are deliberate. IX-1 is a <strong>representation and
+enforcement calibration</strong>, not a decision theory.</p>
+<h2 id="conserved-quantity">3. Conserved Quantity</h2>
+<p>The conserved quantity throughout IX-1 is:</p>
+<blockquote>
+<p><strong>Plural value commitments preserved as non-aggregated
+authority constraints.</strong></p>
+</blockquote>
+<p>Value encoding must preserve:</p>
+<ul>
+<li>one-to-one mapping between value and authority,</li>
+<li>structural symmetry between values,</li>
+<li>opacity beyond explicit fields,</li>
+<li>persistence of conflict,</li>
+<li>refusal and deadlock where required,</li>
+<li>deterministic replay.</li>
+</ul>
+<p>Any mechanism that substitutes judgment for constraint violates the
+conserved quantity.</p>
+<h2 id="experimental-methodology">4. Experimental Methodology</h2>
+<h3 id="preregistration-discipline">4.1 Preregistration Discipline</h3>
+<p>IX-1 was fully preregistered prior to implementation, including:</p>
+<ul>
+<li>frozen value and authority schemas,</li>
+<li>canonical serialization rules,</li>
+<li>bijective encoding rules,</li>
+<li>conflict definition and invariants,</li>
+<li>admissibility and deadlock semantics,</li>
+<li>determinism controls (fixed clock, sequence reset),</li>
+<li>explicit condition set (A–F),</li>
+<li>aggregate pass/fail criteria.</li>
+</ul>
+<p>All runs were executed against the frozen preregistration. No
+deviations were identified.</p>
+<h3 id="execution-architecture">4.2 Execution Architecture</h3>
+<p>Each run consisted of four strictly partitioned components:</p>
+<ol type="1">
+<li><strong>Value Encoding Harness (VEH)</strong> — pure value→authority
+compiler.</li>
+<li><strong>Conflict Probe</strong> — conflict detection, admissibility,
+deadlock.</li>
+<li><strong>Authority Injection Endpoint (AIE)</strong> — reused from
+IX-0.</li>
+<li><strong>Instrumentation Layer</strong> — logging, diffing, replay
+verification.</li>
+</ol>
+<p>No component performed semantic interpretation or optimization.</p>
+<h2 id="conditions-and-stressors">5. Conditions and Stressors</h2>
+<h3 id="condition-a-single-value-admissibility">5.1 Condition A — Single
+Value Admissibility</h3>
+<p><strong>Purpose:</strong> Verify bijective encoding and admissibility
+for a single value.</p>
+<p><strong>Result:</strong> One value produced one authority artifact.
+Matching action was marked <code>ACTION_ADMISSIBLE</code>. No conflict
+or deadlock occurred.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="condition-b-non-conflicting-plurality">5.2 Condition B —
+Non-Conflicting Plurality</h3>
+<p><strong>Purpose:</strong> Verify coexistence of multiple values with
+disjoint scopes.</p>
+<p><strong>Result:</strong> Two values produced two distinct authority
+artifacts. Both actions were admissible. No conflict or aggregation
+occurred.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="condition-c-conflict-without-resolution">5.3 Condition C —
+Conflict Without Resolution</h3>
+<p><strong>Purpose:</strong> Verify detection and enforcement of
+conflicting values.</p>
+<p><strong>Result:</strong> Overlapping scopes produced a persistent
+conflict record (<code>MULTI_BINDING</code>). The contested action was
+refused with reason <code>VALUE_CONFLICT</code>. A scope-bound deadlock
+was entered. No resolution or collapse occurred.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="condition-d-explicit-aggregation-injection-adversarial">5.4
+Condition D — Explicit Aggregation Injection (Adversarial)</h3>
+<p><strong>Purpose:</strong> Verify detectability of explicit
+aggregation attempts.</p>
+<p><strong>Result:</strong> Injection of a <code>priority</code> field
+was detected by schema validation. The kernel emitted
+<code>IX1_FAIL / VALUE_AGGREGATION</code>. Per preregistration, this
+constitutes experiment-level PASS.</p>
+<p><strong>Classification:</strong> FAIL_DETECTED (expected).</p>
+<h3 id="condition-e-permutation-invariance">5.5 Condition E —
+Permutation Invariance</h3>
+<p><strong>Purpose:</strong> Verify independence from injection or
+traversal order.</p>
+<p><strong>Result:</strong> Reversing value injection order changed
+authority identifiers but did not change conflict detection,
+admissibility results, or deadlock behavior. Outputs were invariant
+under lineage-set comparison.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="condition-f-meta-authority-synthesis-adversarial">5.6 Condition
+F — Meta-Authority Synthesis (Adversarial)</h3>
+<p><strong>Purpose:</strong> Verify prevention of post-epoch
+reconciliation.</p>
+<p><strong>Result:</strong> Attempted injection of a new authority after
+epoch closure was detected and blocked. The kernel emitted
+<code>IX1_FAIL / VALUE_SYNTHESIS</code>. Per preregistration, this
+constitutes experiment-level PASS.</p>
+<p><strong>Classification:</strong> FAIL_DETECTED (expected).</p>
+<h2 id="determinism-verification">6. Determinism Verification</h2>
+<p>Replay determinism was verified by:</p>
+<ul>
+<li>canonical JSON serialization with sorted keys,</li>
+<li>fixed clock injection,</li>
+<li>per-condition sequence reset,</li>
+<li>structural comparison of full results logs.</li>
+</ul>
+<p>Only explicitly permitted timestamp fields were stripped prior to
+comparison. All other fields were compared verbatim.</p>
+<p><strong>Result:</strong> Bit-identical outputs across replays, modulo
+permitted timestamp variance.</p>
+<h2 id="core-results">7. Core Results</h2>
+<h3 id="positive-results">7.1 Positive Results</h3>
+<p>IX-1 establishes that:</p>
+<ol type="1">
+<li>Values can be encoded bijectively as authority artifacts.</li>
+<li>Plural values need not be aggregated to exist.</li>
+<li>Conflict can be detected structurally.</li>
+<li>Deadlock can be enforced without resolution.</li>
+<li>Explicit aggregation and synthesis are detectable.</li>
+<li>Outcomes are invariant under permutation.</li>
+<li>The system can stop rather than decide.</li>
+</ol>
+<h3 id="negative-results-explicit">7.2 Negative Results (Explicit)</h3>
+<p>IX-1 does <strong>not</strong> establish:</p>
+<ul>
+<li>value correctness,</li>
+<li>coordination success,</li>
+<li>liveness under pressure,</li>
+<li>execution semantics,</li>
+<li>governance viability,</li>
+<li>safety or alignment.</li>
+</ul>
+<p>These are boundary findings, not omissions.</p>
+<h2 id="failure-semantics-and-closure">8. Failure Semantics and
+Closure</h2>
+<h3 id="closure-criteria">8.1 Closure Criteria</h3>
+<p>IX-1 closes positive if and only if:</p>
+<ol type="1">
+<li>Value-authority bijection is preserved.</li>
+<li>No aggregation or implicit priority emerges.</li>
+<li>Conflict persists without resolution.</li>
+<li>Deadlock is enforced where required.</li>
+<li>Adversarial aggregation and synthesis are detected.</li>
+<li>Replay determinism holds.</li>
+</ol>
+<p>All criteria were satisfied.</p>
+<h3 id="ix-1-closure-status">8.2 IX-1 Closure Status</h3>
+<p><strong>IX-1 Status:</strong> <strong>CLOSED — POSITIVE</strong>
+(<code>IX1_PASS / VALUE_ENCODING_ESTABLISHED</code>)</p>
+<h2 id="boundary-conditions-and-deferred-hazards">9. Boundary Conditions
+and Deferred Hazards</h2>
+<h3 id="value-vs-choice">9.1 Value vs Choice</h3>
+<p>IX-1 demonstrates that values can exist as constraints. It does
+<strong>not</strong> demonstrate that choices among conflicting values
+are possible, desirable, or stable.</p>
+<p>Deadlock is not a bug. It is the correct outcome when aggregation is
+forbidden.</p>
+<h3 id="interface-to-subsequent-phase-ix-work">9.2 Interface to
+Subsequent Phase IX Work</h3>
+<p>IX-1 removes the final “the system had to choose” excuse at the value
+layer.</p>
+<p>Subsequent Phase IX investigations may now legitimately ask:</p>
+<ul>
+<li>how execution proceeds under deadlock pressure,</li>
+<li>how coordination is attempted without aggregation,</li>
+<li>how systems fail when refusal is the only honest option.</li>
+</ul>
+<p>Those questions belong to <strong>IX-2 and beyond</strong>.</p>
+<h2 id="implications-strictly-limited">10. Implications (Strictly
+Limited)</h2>
+<p>IX-1 establishes a <strong>necessary condition</strong> for
+reflective sovereignty: that values can be represented without
+collapsing into optimization.</p>
+<p>It does not establish sufficiency.</p>
+<p>Aggregation is no longer an assumption. It is a choice—and a
+detectable one.</p>
+<h2 id="conclusion">11. Conclusion</h2>
+<p>IX-1 demonstrates that <strong>values do not require aggregation to
+exist</strong>, and that systems can be forced to confront conflict
+honestly rather than resolve it implicitly.</p>
+<p>What remains is not a tooling problem.</p>
+<p>It is the problem of <strong>living with unresolved
+conflict</strong>.</p>
+<p>That problem belongs to the next phase.</p>
+<h2 id="appendix-a-condition-outcomes">Appendix A — Condition
+Outcomes</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Condition</th>
+<th>Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>PASS</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>FAIL_DETECTED</td>
+</tr>
+<tr class="odd">
+<td>E</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>FAIL_DETECTED</td>
+</tr>
+</tbody>
+</table>
+<h2 id="appendix-b-determinism-summary">Appendix B — Determinism
+Summary</h2>
+<ul>
+<li>Canonical serialization enforced</li>
+<li>Fixed clock and sequence reset</li>
+<li>Timestamp-only variance permitted</li>
+<li>Bit-identical replay otherwise confirmed</li>
+</ul>
+<p><strong>End of Axionic Agency XI.3 — Value Encoding Without
+Aggregation Results</strong></p>
+
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
