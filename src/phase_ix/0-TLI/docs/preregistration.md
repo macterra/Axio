@@ -666,8 +666,8 @@ The following sections are immutable after hash commitment:
 grep -Pzo '(?s)<!-- FROZEN: BEGIN.*?<!-- FROZEN: END[^>]*>' preregistration.md | sha256sum
 ```
 
-**Preregistration Hash**: `d877e1d803ddd404b0fdd15826d7906f8d37739aad3fa58b0e29a644d69cbf8a`  
-**Commitment Timestamp**: `2026-02-04T23:59:00Z`  
+**Preregistration Hash**: `d877e1d803ddd404b0fdd15826d7906f8d37739aad3fa58b0e29a644d69cbf8a`
+**Commitment Timestamp**: `2026-02-04T23:59:00Z`
 **Commit ID**: `b23bd651`
 
 ---
