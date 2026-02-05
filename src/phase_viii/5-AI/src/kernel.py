@@ -349,11 +349,12 @@ class AIKernel:
         """
         Process epoch advancement per prereg §7.1.
 
+        Order per prereg (binding):
         1. Check for duplicate epoch advancement
         2. Validate newEpoch > currentEpoch (monotonicity)
-        3. Activate pending authorities from previous epoch
-        4. Update currentEpoch
-        5. Apply eager expirations
+        3. Update currentEpoch
+        4. Apply eager expirations (before activation)
+        5. Activate pending authorities
         6. Update conflict statuses
         """
         outputs: list[KernelOutput] = []
@@ -393,35 +394,11 @@ class AIKernel:
             },
         ))
 
-        # Activate pending authorities (per §7.2)
-        activated_ids = []
-        for auth_id, auth in list(self.state.pending_authorities.items()):
-            # Pending authorities become ACTIVE at epoch boundary
-            auth.status = AuthorityStatus.ACTIVE
-            self.state.authorities[auth_id] = auth
-            del self.state.pending_authorities[auth_id]
-            activated_ids.append(auth_id)
-
-            # Update scope index
-            scope = auth.resource_scope
-            if scope not in self.scope_index:
-                self.scope_index[scope] = []
-            self.scope_index[scope].append(auth_id)
-
-        if activated_ids:
-            traces.append(TraceRecord(
-                trace_type="PENDING_AUTHORITIES_ACTIVATED",
-                trace_seq=self._next_trace_seq(),
-                details={
-                    "activated_ids": sorted(activated_ids),
-                    "epoch": event.new_epoch,
-                },
-            ))
-
-        # Update epoch
+        # Update epoch first (needed for expiry check)
         self.state.current_epoch = event.new_epoch
 
-        # Eager expiry: find authorities with expiry_epoch < current_epoch
+        # Eager expiry BEFORE activation per prereg §7.1 order
+        # Find authorities with expiry_epoch < current_epoch
         expired_ids = []
         for auth_id, auth in self.state.authorities.items():
             if auth.status == AuthorityStatus.ACTIVE:
@@ -459,6 +436,31 @@ class AIKernel:
 
             # Update conflict status
             self._update_conflict_status_for_authority(auth_id)
+
+        # Activate pending authorities AFTER expiry per prereg §7.1
+        activated_ids = []
+        for auth_id, auth in list(self.state.pending_authorities.items()):
+            # Pending authorities become ACTIVE at epoch boundary
+            auth.status = AuthorityStatus.ACTIVE
+            self.state.authorities[auth_id] = auth
+            del self.state.pending_authorities[auth_id]
+            activated_ids.append(auth_id)
+
+            # Update scope index
+            scope = auth.resource_scope
+            if scope not in self.scope_index:
+                self.scope_index[scope] = []
+            self.scope_index[scope].append(auth_id)
+
+        if activated_ids:
+            traces.append(TraceRecord(
+                trace_type="PENDING_AUTHORITIES_ACTIVATED",
+                trace_seq=self._next_trace_seq(),
+                details={
+                    "activated_ids": sorted(activated_ids),
+                    "epoch": event.new_epoch,
+                },
+            ))
 
         self.state.state_id = compute_state_id(self.state)
 
