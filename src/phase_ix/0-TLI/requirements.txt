@@ -1,0 +1,6 @@
+# Phase IX-0 TLI Dependencies
+# No external dependencies beyond standard library
+
+# Testing
+pytest>=7.0.0
+
