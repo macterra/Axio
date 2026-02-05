@@ -876,7 +876,7 @@ grep -Pzo '(?s)<!-- FROZEN: BEGIN.*?<!-- FROZEN: END[^>]*>' preregistration.md |
 
 **Preregistration Hash**: `b61a17cd5bb2614499c71bd3388ba0319cd08331061d3d595c0a2d41c4ea94a0`
 **Commitment Timestamp**: `2026-02-05T00:00:00Z`
-**Commit ID**: `<USER — set at git commit>`
+**Commit ID**: `662165e341763223e4de5f95e65d43ae49090380`
 
 ---
 
