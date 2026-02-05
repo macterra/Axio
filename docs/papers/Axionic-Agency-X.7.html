@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency X.7 — Authority Injection Without Privilege (VIII-5) - Axionic Agency Lab</title>
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../" class="nav-brand">
+            <img src="../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href=".././">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
+
+<h1
+id="axionic-agency-x.7-authority-injection-without-privilege-viii-5">Axionic
+Agency X.7 — Authority Injection Without Privilege (VIII-5)</h1>
+<p><em>A Structural Demonstration of Open-System Authority Introduction
+Without Escalation, Kernel Choice, or Semantic Exception</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026-02-04</p>
+<h2 id="abstract">Abstract</h2>
+<p>This technical note reports the completed results of <strong>Stage
+VIII-5 — Authority Injection Under Open-System Constraint</strong>, a
+preregistered experiment within <strong>Axionic Phase VIII</strong> that
+evaluates whether <strong>new authority can be introduced explicitly at
+the kernel boundary</strong> without violating conflict persistence,
+auditability, responsibility traceability, or non-privilege guarantees.
+Building on the representational closure of <strong>Stage
+VIII-4</strong>, which demonstrated internal governance transitions
+without escalation or kernel choice, VIII-5 introduces <strong>external
+authority injection events</strong> as a minimal open-system stressor.
+Injection was constrained by explicit input representation,
+content-addressed authority identity, VOID lineage marking, delayed
+activation, non-amplification, conflict persistence, bounded evaluation,
+and deterministic replay. Across six preregistered conditions—including
+empty authority states, active conflict, competing injections,
+post-destruction injection, budget exhaustion, and flooding—authority
+injection either executed lawfully or was refused explicitly. No
+privileged execution paths, kernel arbitration, semantic interpretation,
+or implicit ordering occurred. All runs were fully auditable and
+bit-perfectly replayable. The results establish that <strong>authority
+injection is structurally representable without introducing a privileged
+meta-layer</strong>. VIII-5 makes no claims about governance stability,
+legitimacy, convergence, or desirability; those questions are explicitly
+externalized beyond the kernel.</p>
+<h2 id="problem-definition">1. Problem Definition</h2>
+<h3 id="the-open-system-authority-assumption">1.1 The Open-System
+Authority Assumption</h3>
+<p>Most governance frameworks implicitly assume a closed system:
+authority is conserved, amended internally, or delegated from a fixed
+root. When new authority must be introduced, systems typically rely on
+privileged mechanisms—superuser roles, bootstrap keys, emergency
+overrides, constitutional resets, or implicit schedulers—that bypass
+ordinary constraints.</p>
+<p>Stage VIII-5 rejects that move <strong>as a representational
+necessity</strong>, not as a political judgment.</p>
+<p>The problem VIII-5 isolates is whether <strong>authority injection
+itself requires privilege inside the execution kernel</strong>. If new
+authority can only be introduced through exceptional code paths,
+semantic interpretation, or kernel arbitration, then governance is not
+structurally sovereign; it depends on an implicit god. If, instead,
+authority can enter the system <strong>only through explicit,
+structurally evaluated events</strong>, subject to the same
+conservation, refusal, conflict, and determinism constraints as all
+other state transitions, then open-system governance is representable
+without magic.</p>
+<p>VIII-5 tests whether that distinction is enforceable.</p>
+<h3 id="failure-modes-targeted">1.2 Failure Modes Targeted</h3>
+<p>VIII-5 is designed to surface the following open-system failure
+modes:</p>
+<ul>
+<li>privileged authority injection paths</li>
+<li>implicit legitimacy or prioritization of injected authority</li>
+<li>identity laundering or collision-based ordering</li>
+<li>kernel arbitration among competing injections</li>
+<li>injection-as-amendment escalation</li>
+<li>deadlock bypass via external authority</li>
+<li>heuristic throttling or selective acceptance</li>
+<li>non-deterministic cutoff under flooding</li>
+</ul>
+<p>Any of these constitutes VIII-5 failure.</p>
+<h2 id="fixed-assumptions-and-scope">2. Fixed Assumptions and Scope</h2>
+<h3 id="inherited-semantics-frozen">2.1 Inherited Semantics
+(Frozen)</h3>
+<p>VIII-5 inherits, without reinterpretation, the semantics fixed
+by:</p>
+<ul>
+<li><strong>AKR-0 — CLOSED — POSITIVE</strong></li>
+<li><strong>Stage VIII-1 — CLOSED — POSITIVE</strong></li>
+<li><strong>Stage VIII-2 — CLOSED — POSITIVE</strong></li>
+<li><strong>Stage VIII-3 — CLOSED — POSITIVE</strong></li>
+<li><strong>Stage VIII-4 — CLOSED — POSITIVE</strong></li>
+<li><strong>AST Spec v0.2</strong></li>
+<li><strong>AIE v0.1</strong></li>
+<li>Phase VIII Execution Addendum</li>
+</ul>
+<p>Authority remains structural and opaque, identities are immutable
+once instantiated, scopes are atomic and uninterpreted, admissibility is
+determined exclusively by AST, conflict and deadlock are lawful, time is
+explicit and non-healing, and determinism is mandatory. VIII-5 does
+<strong>not</strong> revisit these definitions; it tests whether they
+remain coherent when <strong>authority is introduced from outside the
+system</strong>.</p>
+<h3 id="explicit-exclusions">2.2 Explicit Exclusions</h3>
+<p>VIII-5 does <strong>not</strong> test:</p>
+<ul>
+<li>legitimacy of injected authority</li>
+<li>correctness of injection decisions</li>
+<li>trust in external sources</li>
+<li>governance stability or convergence</li>
+<li>institutional persistence</li>
+<li>fairness or democratic aggregation</li>
+<li>efficiency or scalability</li>
+<li>incentive compatibility</li>
+</ul>
+<p>VIII-5 is a <strong>kernel-level representability test</strong>, not
+a theory of political order.</p>
+<h2 id="conserved-quantity">3. Conserved Quantity</h2>
+<p>The conserved quantity throughout VIII-5 is:</p>
+<blockquote>
+<p><strong>Privilege-free authority injection under structural
+constraints</strong></p>
+</blockquote>
+<p>Injection is evaluated not by success or desirability, but by
+<strong>structural honesty</strong>. The kernel must:</p>
+<ul>
+<li>admit authority only through explicit injection events</li>
+<li>derive identity deterministically from capability, not
+provenance</li>
+<li>refuse invalid injections explicitly</li>
+<li>preserve conflict and deadlock without exception</li>
+<li>prevent internal authority amplification</li>
+<li>handle scarcity solely via budget exhaustion</li>
+<li>avoid all kernel choice</li>
+</ul>
+<p>No authority may enter by exception.</p>
+<h2 id="experimental-methodology">4. Experimental Methodology</h2>
+<h3 id="preregistration-discipline">4.1 Preregistration Discipline</h3>
+<p>VIII-5 was fully preregistered prior to execution, including:</p>
+<ul>
+<li>authority injection schema</li>
+<li>content-addressed identity derivation (capability-core hashing)</li>
+<li>VOID lineage sentinel semantics</li>
+<li>injection admissibility checks</li>
+<li>delayed activation discipline</li>
+<li>two-phase processing order</li>
+<li>instruction budget and atomicity</li>
+<li>deterministic ordering and replay protocol</li>
+<li>failure taxonomy and classification rule</li>
+</ul>
+<p>The experiment executed exactly as preregistered. No post-freeze
+design changes occurred.</p>
+<h3 id="execution-architecture">4.2 Execution Architecture</h3>
+<p>The experiment consisted of four strictly partitioned components:</p>
+<ol type="1">
+<li><strong>AIE</strong> — supplied authority records and injection
+events only.</li>
+<li><strong>Execution Harness</strong> — proposed deterministic
+step-batches and epoch advances.</li>
+<li><strong>Kernel (VIII-5 mode)</strong> — enforced injection
+validation, identity derivation, non-amplification, conflict, deadlock,
+activation delay, and execution.</li>
+<li><strong>Audit/Replay Layer</strong> — recorded all events, state
+hashes, and outputs.</li>
+</ol>
+<p>No component performed semantic interpretation, legitimacy
+evaluation, or injection prioritization.</p>
+<h2 id="authority-injection-model">5. Authority Injection Model</h2>
+<h3 id="injection-as-an-explicit-event">5.1 Injection as an Explicit
+Event</h3>
+<p>VIII-5 introduces <strong>AuthorityInjectionEvent</strong> as an
+external input whose target is authority state. Injection events
+are:</p>
+<ul>
+<li>not governance actions</li>
+<li>not authorized by existing authorities</li>
+<li>evaluated only for structural admissibility</li>
+<li>subject to refusal, conflict, and deadlock</li>
+</ul>
+<p>Injection has no special execution path.</p>
+<h3 id="content-addressed-authority-identity">5.2 Content-Addressed
+Authority Identity</h3>
+<p>Injected authorities were assigned <strong>content-addressed
+AuthorityIDs</strong>, derived as a SHA-256 hash of a canonical
+serialization of the <strong>capability core</strong>:</p>
+<ul>
+<li>holder identifier</li>
+<li>resource scope</li>
+<li>action admissibility vector (AAV)</li>
+<li>expiry epoch</li>
+</ul>
+<p>All runtime state, lineage markers, provenance, and metadata were
+excluded. This design ensures:</p>
+<ul>
+<li>identity determinism</li>
+<li>idempotent duplicate injection</li>
+<li>elimination of race-based ordering</li>
+<li>kernel blindness to injection source</li>
+</ul>
+<p>Identity becomes mathematical rather than procedural.</p>
+<h3 id="void-lineage">5.3 VOID Lineage</h3>
+<p>Injected authorities were marked with a lineage sentinel:</p>
+<pre><code>creation_metadata.lineage := &quot;VOID&quot;</code></pre>
+<p>VOID is not comparable to any AuthorityID and carries no inheritance
+semantics. It cleanly separates:</p>
+<ul>
+<li><strong>internal evolution</strong> (VIII-4 CREATE_AUTHORITY)</li>
+<li><strong>external disruption</strong> (VIII-5 injection)</li>
+</ul>
+<p>This distinction is structural, not interpretive.</p>
+<h2 id="experimental-conditions">6. Experimental Conditions</h2>
+<h3 id="condition-a-injection-into-empty-authority-state">6.1 Condition
+A — Injection Into Empty Authority State</h3>
+<p>Injection into an EMPTY_AUTHORITY deadlock succeeded structurally,
+entered PENDING state, and did not bypass deadlock until activation at
+the next epoch boundary.</p>
+<h3 id="condition-b-injection-into-active-conflict">6.2 Condition B —
+Injection Into Active Conflict</h3>
+<p>Injection into an existing governance deadlock preserved conflict and
+deadlock without resolution or privilege.</p>
+<h3 id="condition-c-competing-injections">6.3 Condition C — Competing
+Injections</h3>
+<p>Multiple injections in the same epoch were processed
+deterministically, without kernel arbitration. Outcome invariance held
+under input reordering.</p>
+<h3 id="condition-d-injection-after-authority-destruction">6.4 Condition
+D — Injection After Authority Destruction</h3>
+<p>Injected authority following destruction was treated as new, with
+distinct identity and clean VOID lineage. No resurrection semantics
+occurred.</p>
+<h3 id="condition-e-injection-under-load">6.5 Condition E — Injection
+Under Load</h3>
+<p>Injection near budget exhaustion either completed atomically or was
+refused explicitly. No partial state was committed.</p>
+<h3 id="condition-f-injection-flooding-attempt">6.6 Condition F —
+Injection Flooding Attempt</h3>
+<p>High-volume injection pressure was handled solely via deterministic
+budget exhaustion. No heuristic throttling or prioritization
+occurred.</p>
+<h2 id="observed-execution-behavior">7. Observed Execution Behavior</h2>
+<h3 id="injection-without-privilege">7.1 Injection Without
+Privilege</h3>
+<p>Injection events followed the same evaluation pipeline as all other
+state transitions. No privileged code paths were introduced.</p>
+<h3 id="identity-and-ordering-discipline">7.2 Identity and Ordering
+Discipline</h3>
+<p>Content-addressed identity eliminated collision-based ordering and
+race conditions. Duplicate injections were idempotent.</p>
+<h3 id="conflict-and-deadlock-persistence">7.3 Conflict and Deadlock
+Persistence</h3>
+<p>Injected authority neither erased conflict nor bypassed deadlock. All
+resolution required lawful structural change.</p>
+<h3 id="activation-delay">7.4 Activation Delay</h3>
+<p>Injected authorities entered PENDING state and became ACTIVE only at
+the next epoch boundary, preventing same-batch bootstrapping.</p>
+<h3 id="deterministic-termination">7.5 Deterministic Termination</h3>
+<p>Flooding and regress pressure terminated deterministically via the
+instruction budget. Cutoff points were replay-identical.</p>
+<h2 id="negative-results-what-did-not-occur">8. Negative Results (What
+Did <em>Not</em> Occur)</h2>
+<p>The following behaviors were explicitly absent:</p>
+<ul>
+<li>privileged injection execution</li>
+<li>kernel arbitration among injections</li>
+<li>legitimacy inference</li>
+<li>authority escalation via injection</li>
+<li>conflict erasure or deadlock bypass</li>
+<li>heuristic throttling</li>
+<li>non-deterministic cutoff</li>
+</ul>
+<p>These absences constitute the primary result of VIII-5.</p>
+<h2 id="licensed-claim">9. Licensed Claim</h2>
+<p>Stage VIII-5 licenses <strong>one and only one claim</strong>:</p>
+<blockquote>
+<p><strong>New authority can be injected at the kernel boundary
+explicitly, structurally, and deterministically without violating
+conflict persistence, auditability, responsibility traceability, or
+non-privilege guarantees.</strong></p>
+</blockquote>
+<p>Clarifications:</p>
+<ul>
+<li>This is a <strong>representability result</strong>, not a governance
+prescription.</li>
+<li>It concerns <strong>kernel physics</strong>, not political
+legitimacy.</li>
+<li>It does not assert stability, convergence, or desirability.</li>
+</ul>
+<h2 id="what-viii-5-does-not-establish">10. What VIII-5 Does
+<em>Not</em> Establish</h2>
+<p>VIII-5 does <strong>not</strong> establish that:</p>
+<ul>
+<li>injected authority should be trusted</li>
+<li>governance converges under injection</li>
+<li>deadlock is avoidable</li>
+<li>institutions self-preserve</li>
+<li>legitimacy can be automated</li>
+</ul>
+<p>All such questions are explicitly externalized.</p>
+<h2 id="ontological-implications">11. Ontological Implications</h2>
+<h3 id="authority-without-gods">11.1 Authority Without Gods</h3>
+<p>VIII-5 demonstrates that open-system authority does not require a
+privileged kernel layer. Any asymmetry must be explicit, external, and
+auditable.</p>
+<h3 id="conservation-inside-evolution-outside">11.2 Conservation Inside,
+Evolution Outside</h3>
+<p>Authority expansion is not denied; it is <strong>correctly relocated
+to the boundary</strong>. Inside the kernel, conservation laws apply.
+Evolution requires open systems.</p>
+<h2 id="implications-for-phase-viii-continuation">12. Implications for
+Phase VIII Continuation</h2>
+<p>With VIII-5 complete:</p>
+<ul>
+<li>internal governance (VIII-4) is representable without privilege</li>
+<li>external authority injection (VIII-5) is representable without
+privilege</li>
+<li>kernel escalation paths are exhausted</li>
+</ul>
+<p>No further kernel-level authority mechanisms are required.</p>
+<h2 id="conclusion">13. Conclusion</h2>
+<p>Stage VIII-5 establishes that authority can enter a system without
+becoming a god. Injection is explicit. Identity is mathematical. Failure
+is lawful. Deadlock persists. Scarcity is honest. The kernel refuses to
+choose.</p>
+<p>What governance becomes under sustained injection is no longer a
+kernel problem.</p>
+<p>It is a political one.</p>
+<h2 id="appendix-a-execution-status">Appendix A — Execution Status</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Stage</th>
+<th>Run Count</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>VIII-5</td>
+<td>1 (A–F)</td>
+<td>PASS</td>
+</tr>
+</tbody>
+</table>
+<h2 id="appendix-b-determinism-verification">Appendix B — Determinism
+Verification</h2>
+<ul>
+<li>Canonical JSON enforced</li>
+<li>Capability-core hashing</li>
+<li>VOID lineage separation</li>
+<li>Delayed activation</li>
+<li>Bounded atomic evaluation</li>
+<li>Two-phase processing</li>
+<li>Per-event hash chaining</li>
+<li>Bit-perfect replay verified</li>
+</ul>
+<p><strong>End of Axionic Agency X.7 — Stage VIII-5 Results Note
+(Draft)</strong></p>
+
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
