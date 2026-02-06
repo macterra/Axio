@@ -415,13 +415,13 @@ def generate_papers_index(papers_metadata):
         for paper in standalone_papers:
             title = paper['title']
             filename = paper['filename']
-            abstract = paper.get('abstract', '')
-            abstract_html = f"<p class='paper-abstract'>{escape(abstract)}</p>" if abstract else ""
+            subtitle = paper.get('subtitle', '')
+            subtitle_html = f"<p class='paper-subtitle'>{escape(subtitle)}</p>" if subtitle else ""
 
             papers_list_html += f"""
             <div class="paper-entry">
                 <h3><a href="{filename}">{escape(title)}</a></h3>
-                {abstract_html}
+                {subtitle_html}
             </div>
             """
 
@@ -441,13 +441,13 @@ def generate_papers_index(papers_metadata):
         for paper in papers:
             title = paper['title']
             filename = paper['filename']
-            abstract = paper.get('abstract', '')
-            abstract_html = f"<p class='paper-abstract'>{escape(abstract)}</p>" if abstract else ""
+            subtitle = paper.get('subtitle', '')
+            subtitle_html = f"<p class='paper-subtitle'>{escape(subtitle)}</p>" if subtitle else ""
 
             papers_list_html += f"""
             <div class="paper-entry">
                 <h3><a href="{filename}">{escape(title)}</a></h3>
-                {abstract_html}
+                {subtitle_html}
             </div>
             """
 
@@ -627,21 +627,14 @@ def process_papers():
         title_match = re.search(r'^#\s+(.+?)$', content, re.MULTILINE)
         title = title_match.group(1) if title_match else paper_path.stem
 
-        # Extract abstract (text after ## Abstract heading)
-        abstract_match = re.search(r'^##\s+Abstract\s*$(.*?)^##', content, re.MULTILINE | re.DOTALL)
-        abstract = ""
-        if abstract_match:
-            abstract_text = abstract_match.group(1).strip()
-            # Clean up the abstract: remove markdown formatting
-            abstract_text = re.sub(r'\*\*([^*]+)\*\*', r'\1', abstract_text)  # Remove bold
-            abstract_text = re.sub(r'\$[^$]+\$', '', abstract_text)  # Remove inline math
-            abstract_text = ' '.join(abstract_text.split())  # Normalize whitespace
-            abstract = abstract_text
+        # Extract subtitle (italic text on its own line, like *Some subtitle*)
+        subtitle_match = re.search(r'^\*(.+?)\*\s*$', content, re.MULTILINE)
+        subtitle = subtitle_match.group(1) if subtitle_match else ''
 
         papers_metadata.append({
             'title': title,
             'filename': f"{paper_path.stem}.html",
-            'abstract': abstract
+            'subtitle': subtitle
         })
 
     # Sort papers by title
