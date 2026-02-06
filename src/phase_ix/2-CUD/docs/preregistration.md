@@ -1405,7 +1405,7 @@ grep -Pzo '(?s)<!-- FROZEN: BEGIN.*?<!-- FROZEN: END[^>]*>' preregistration.md |
 
 **Preregistration Hash**: `6aebbf5384e3e709e7236918a4bf122d1d32214af07e73f8c91db677bf535473`
 **Commitment Timestamp**: `2026-02-05T00:00:00Z`
-**Commit ID**: `[TO BE SET BY USER AT GIT COMMIT]`
+**Commit ID**: `694e9cc27fcbca766099df887cb804cf19e6aeee`
 
 ---
 
