@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency XI.4 — Coordination Under Deadlock (IX-2) - Axionic Agency Lab</title>
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../" class="nav-brand">
+            <img src="../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href=".././">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
+
+<h1 id="axionic-agency-xi.4-coordination-under-deadlock-ix-2">Axionic
+Agency XI.4 — Coordination Under Deadlock (IX-2)</h1>
+<p><em>A Structural Demonstration of Interaction, Refusal, Livelock,
+Orphaning, and Collapse Without Arbitration or Aggregation</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026-02-06</p>
+<h2 id="abstract">Abstract</h2>
+<p>This technical note reports the completed results of
+<strong>Coordination Under Deadlock (IX-2)</strong>, a preregistered
+experimental program within <strong>Axionic Phase IX</strong> that
+evaluates whether <strong>multi-agent interaction can proceed under
+non-aggregable authority constraints</strong> without arbitration,
+prioritization, semantic resolution, or kernel-forced coordination.</p>
+<p>IX-2 isolates the boundary between <strong>value encoding</strong>
+and <strong>execution under constraint</strong>. It tests whether (i)
+holder-bound capabilities and global veto constraints can enforce
+refusal without hidden priority, (ii) joint execution remains possible
+when scopes do not collide, (iii) symmetric conflict yields honest
+non-resolution (livelock), (iv) authority denial and voluntary
+non-participation yield honest deadlock, (v) exit can produce permanent
+orphaning without reclamation, (vi) total exit yields collapse with
+state preserved, and (vii) agent-voluntary coordination can emerge via
+communication without kernel arbitration.</p>
+<p>Across ten preregistered conditions (A–H, I.a, I.b), all observed
+outcomes matched preregistered expectations. Deterministic replay was
+verified as bit-identical after stripping explicitly permitted timestamp
+fields. One preregistered mechanism deviation was disclosed: the
+adaptive strategy’s hash-collision fallback used alphabetical ordering
+rather than the preregistered rehash; this change was agent-side,
+deterministic, and did not affect kernel non-sovereignty or the licensed
+claim.</p>
+<p>The results license exactly one claim: <strong>under non-aggregable
+authority constraints, coordination can occur only as agent-voluntary
+behavior, and otherwise the system enters honest deadlock or livelock
+without kernel arbitration</strong>. IX-2 makes no claims about
+optimality, fairness, efficiency, governance legitimacy, scalability
+beyond two agents, safety, or alignment.</p>
+<h2 id="problem-definition">1. Problem Definition</h2>
+<h3 id="the-coordination-assumption">1.1 The Coordination
+Assumption</h3>
+<p>Most “multi-agent coordination” systems quietly assume a
+resolver.</p>
+<p>When agents conflict, the system chooses: a priority order, a
+tie-break, a fairness heuristic, a scheduler, a vote, a compromise rule,
+or a global objective. Even when presented as “coordination,” this is
+often <strong>arbitration disguised as mechanics</strong>.</p>
+<p>IX-2 rejects this assumption.</p>
+<p>If values have been encoded without aggregation (IX-1), then
+<strong>coordination—if it exists—must arise without forced
+resolution</strong>. Otherwise, the kernel is sovereign.</p>
+<p>IX-2 asks a narrower, more brutal question:</p>
+<blockquote>
+<p>When no one is permitted to decide for others, does interaction
+proceed honestly, or does the system smuggle a decision?</p>
+</blockquote>
+<h3 id="failure-modes-targeted">1.2 Failure Modes Targeted</h3>
+<p>IX-2 is designed to surface interaction-level failures that
+masquerade as coordination:</p>
+<ul>
+<li><strong>Kernel arbitration:</strong> selecting among colliding
+actions, scheduling, tie-breaking.</li>
+<li><strong>Implicit priority:</strong> outcomes depending on ordering,
+time, retries, or endurance.</li>
+<li><strong>Aggregation by protocol:</strong> “helpful” mechanics that
+convert conflict into choice.</li>
+<li><strong>Constraint probing:</strong> partial approvals or
+informative refusals revealing authority topology.</li>
+<li><strong>Authority laundering:</strong> using protocol mechanics to
+reclaim or reassign capability.</li>
+<li><strong>Dishonest liveness:</strong> progress recovered by cheating
+rather than admissibility.</li>
+</ul>
+<p>Any of these constitutes IX-2 failure.</p>
+<h2 id="fixed-assumptions-and-scope">2. Fixed Assumptions and Scope</h2>
+<h3 id="inherited-foundations-frozen">2.1 Inherited Foundations
+(Frozen)</h3>
+<p>IX-2 inherits, without reinterpretation, the conclusions and
+constraints of:</p>
+<ul>
+<li><strong>AST v0.2</strong> — authority artifact grammar and canonical
+serialization,</li>
+<li><strong>AKR-0</strong> — deterministic, semantic-free execution
+physics,</li>
+<li><strong>Phase VIII (GSA-PoC)</strong> — governance completeness
+without kernel semantics,</li>
+<li><strong>IX-0</strong> — non-sovereign translation integrity,</li>
+<li><strong>IX-1</strong> — value encoding without aggregation.</li>
+</ul>
+<p>IX-2 introduces no new kernel semantics. It introduces
+<strong>interaction and execution</strong> under a fixed authority
+regime.</p>
+<h3 id="explicit-exclusions">2.2 Explicit Exclusions</h3>
+<p>IX-2 does <strong>not</strong> test:</p>
+<ul>
+<li>value correctness or moral truth,</li>
+<li>preference learning,</li>
+<li>optimization, efficiency, or fairness,</li>
+<li>bargaining correctness,</li>
+<li>governance legitimacy,</li>
+<li>coalition dynamics (reserved for later Phase IX),</li>
+<li>safety or alignment.</li>
+</ul>
+<p>IX-2 is an execution honesty probe, not a policy proposal.</p>
+<h2 id="conserved-quantity">3. Conserved Quantity</h2>
+<p>The conserved quantity throughout IX-2 is:</p>
+<blockquote>
+<p><strong>Authority-constrained interaction without arbitration or
+aggregation, preserving explicit capability ownership and global veto
+semantics.</strong></p>
+</blockquote>
+<p>Interaction must preserve:</p>
+<ul>
+<li><strong>closed-world capability:</strong> actions require explicit
+holder-bound ALLOW citation,</li>
+<li><strong>global veto:</strong> DENY applies to all agents regardless
+of holder,</li>
+<li><strong>atomic blindness:</strong> refusals reveal no authority
+identity or pass attribution,</li>
+<li><strong>collision physics:</strong> interference refuses without
+tie-breaking,</li>
+<li><strong>no reclamation:</strong> exit does not reassign authority or
+unlock resources,</li>
+<li><strong>deterministic replay:</strong> outcomes invariant under
+re-execution.</li>
+</ul>
+<p>Any mechanism that substitutes “somebody must choose” violates the
+conserved quantity.</p>
+<h2 id="experimental-methodology">4. Experimental Methodology</h2>
+<h3 id="preregistration-discipline">4.1 Preregistration Discipline</h3>
+<p>IX-2 was preregistered prior to implementation, including:</p>
+<ul>
+<li>RSA interface (observe / exit / message / action),</li>
+<li>action request schema (declared scope, delta, capability
+citations),</li>
+<li>authority artifact schema (holder-bound ALLOW, global DENY),</li>
+<li>two-pass admissibility (capability+veto, then interference),</li>
+<li>deadlock/livelock/orphaning/collapse definitions,</li>
+<li>epoch schedule and message timing,</li>
+<li>explicit condition set (A–H, I.a, I.b),</li>
+<li>determinism controls and replay criteria,</li>
+<li>aggregate pass/fail criteria.</li>
+</ul>
+<p>All conditions executed with outcomes matching preregistered
+expectations. One agent-side strategy fallback deviation was disclosed
+(see §6.3).</p>
+<h3 id="execution-architecture">4.2 Execution Architecture</h3>
+<p>Each run consisted of four strictly partitioned components:</p>
+<ol type="1">
+<li><strong>Agents (RSAs)</strong> — deterministic strategy modules
+(static or adaptive).</li>
+<li><strong>Interaction Kernel</strong> — two-pass admissibility
+evaluator + atomic execution.</li>
+<li><strong>World State</strong> — flat key–value state store with
+deterministic deltas.</li>
+<li><strong>Instrumentation Layer</strong> — canonical logging, replay
+verification, structural comparison.</li>
+</ol>
+<p>No component interpreted value semantics or optimized outcomes.</p>
+<h2 id="conditions-and-stressors">5. Conditions and Stressors</h2>
+<h3 id="condition-a-no-conflict-full-coordination-positive-control">5.1
+Condition A — No Conflict, Full Coordination (Positive Control)</h3>
+<p><strong>Purpose:</strong> Verify baseline execution pipeline under
+disjoint writes.</p>
+<p><strong>Result:</strong> Both agents possessed the required
+holder-bound ALLOW capabilities for disjoint resources. Pass 1
+succeeded; Pass 2 detected no interference; both actions executed in a
+single epoch.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="condition-b-symmetric-conflict-livelock">5.2 Condition B —
+Symmetric Conflict: Livelock</h3>
+<p><strong>Purpose:</strong> Verify livelock classification under
+symmetric collision with Pass-1 admissibility.</p>
+<p><strong>Result:</strong> Both agents held ALLOW WRITE capability on
+the same scope key and repeatedly submitted colliding writes. Pass 1
+admitted both; Pass 2 refused both due to interference. State remained
+unchanged for N=3 consecutive epochs with Pass-2 interference.</p>
+<p><strong>Terminal Classification:</strong>
+<code>STATE_LIVELOCK</code>.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="condition-c-asymmetric-conflict-partial-progress">5.3 Condition
+C — Asymmetric Conflict: Partial Progress</h3>
+<p><strong>Purpose:</strong> Verify that a global veto blocks one scope
+while disjoint action proceeds.</p>
+<p><strong>Result:</strong> A DENY WRITE veto existed for
+<code>resource_A</code>. Agent 1’s attempted write failed Pass 1. Agent
+2’s disjoint write to <code>resource_B</code> passed Pass 1 and Pass 2
+and executed.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="condition-d-strategic-refusal-deadlock">5.4 Condition D —
+Strategic Refusal: Deadlock</h3>
+<p><strong>Purpose:</strong> Verify honest deadlock when capability/veto
+prevents admissibility and the other agent refuses to act.</p>
+<p><strong>Result:</strong> Agent 1’s write to a vetoed scope failed
+Pass 1. Agent 2 submitted <code>NO_ACTION</code> each epoch. No
+Pass-1-admissible actions existed within the preregistered action space,
+yielding immediate deadlock.</p>
+<p><strong>Terminal Classification:</strong>
+<code>STATE_DEADLOCK</code>.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="condition-e-adversarial-arbitration-injection-tie-break">5.5
+Condition E — Adversarial Arbitration Injection (Tie-Break)</h3>
+<p><strong>Purpose:</strong> Verify that kernel tie-breaking is
+detectable and classifiable as failure.</p>
+<p><strong>Result:</strong> Under forced tie-break injection, the kernel
+selected a “winner” under interference instead of refusing both. This
+produced a kernel-level arbitration signature.</p>
+<p><strong>Kernel Classification:</strong>
+<code>IX2_FAIL / IMPLICIT_ARBITRATION</code>.</p>
+<p>Per preregistration, detection of this failure constitutes
+experiment-level PASS for the adversarial condition.</p>
+<p><strong>Classification:</strong> FAIL_DETECTED (expected).</p>
+<h3 id="condition-f-true-deadlock-no-admissible-actions">5.6 Condition F
+— True Deadlock: No Admissible Actions</h3>
+<p><strong>Purpose:</strong> Verify deadlock when no ALLOW capabilities
+exist and DENY vetoes apply.</p>
+<p><strong>Result:</strong> No ALLOW capabilities were present. Agents
+cited empty authority lists. Pass 1 failed for all actions. No
+admissible actions existed from epoch 0 onward.</p>
+<p><strong>Terminal Classification:</strong>
+<code>STATE_DEADLOCK</code>.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="condition-g-exit-and-orphaning">5.7 Condition G — Exit and
+Orphaning</h3>
+<p><strong>Purpose:</strong> Verify permanent orphaning when the sole
+capability holder exits.</p>
+<p><strong>Result:</strong> <code>resource_A</code> had a sole ALLOW
+WRITE holder (agent_2). After agent_2 executed its own write and exited,
+agent_1 could no longer present any valid ALLOW capability for
+<code>(resource_A, WRITE)</code>. All subsequent attempts to write
+<code>resource_A</code> failed Pass 1. Orphaning was classified as
+terminal.</p>
+<p><strong>Terminal Classification:</strong> <code>ORPHANING</code>.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="condition-h-collapse">5.8 Condition H — Collapse</h3>
+<p><strong>Purpose:</strong> Verify honest halt when all agents
+exit.</p>
+<p><strong>Result:</strong> Following initial collision and refusal,
+both agents exited. No active agents remained. State was preserved and
+no invariants were violated.</p>
+<p><strong>Terminal Classification:</strong> <code>COLLAPSE</code>.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="condition-i.a-static-agents-under-symmetric-conflict">5.9
+Condition I.a — Static Agents Under Symmetric Conflict</h3>
+<p><strong>Purpose:</strong> Verify that static agents cannot escape
+symmetric livelock.</p>
+<p><strong>Result:</strong> Identical to Condition B with the additional
+constraint that agents ignore outcomes. Persistent collision and refusal
+produced livelock.</p>
+<p><strong>Terminal Classification:</strong>
+<code>STATE_LIVELOCK</code>.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3
+id="condition-i.b-adaptive-agents-agent-voluntary-coordination-via-communication">5.10
+Condition I.b — Adaptive Agents: Agent-Voluntary Coordination via
+Communication</h3>
+<p><strong>Purpose:</strong> Verify that adaptive agents can escape
+symmetric conflict without kernel arbitration.</p>
+<p><strong>Result:</strong> Agents intentionally collided at epoch 0 and
+broadcast role messages. At epoch 1, they partitioned writes across
+disjoint resources, producing successful execution and stable disjoint
+coordination thereafter. No kernel scheduling or tie-breaking occurred;
+coordination arose entirely from agent strategy.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h2 id="determinism-verification-and-deviations">6. Determinism
+Verification and Deviations</h2>
+<h3 id="replay-determinism">6.1 Replay Determinism</h3>
+<p>Replay determinism was verified by:</p>
+<ul>
+<li>canonical JSON serialization with sorted keys,</li>
+<li>fixed condition vectors and sequence control,</li>
+<li>structural comparison of complete execution logs.</li>
+</ul>
+<p>Only explicitly permitted timestamp fields were stripped prior to
+comparison. All other fields were compared verbatim.</p>
+<p><strong>Result:</strong> Bit-identical outputs across replays, modulo
+permitted timestamp variance.</p>
+<h3 id="preregistration-hash-and-artifact-integrity">6.2 Preregistration
+Hash and Artifact Integrity</h3>
+<p>The preregistration frozen-sections hash was verified as recorded in
+the preregistration commit, and the full execution log was stored with a
+published SHA-256 digest.</p>
+<h3 id="disclosed-deviation-non-kernel-agent-side">6.3 Disclosed
+Deviation (Non-Kernel, Agent-Side)</h3>
+<p>One deviation from frozen preregistered mechanism was identified:</p>
+<ul>
+<li><strong>Condition I.b hash-partition fallback:</strong> The
+preregistered fallback defined role collision resolution via rehash
+(<code>sha256(agent_id + ":1") mod 2</code>). The implementation used
+alphabetical ordering of <code>agent_id</code> values to assign roles by
+index when collisions occur.</li>
+</ul>
+<p><strong>Impact:</strong> This deviation is agent-side and
+deterministic. It does not introduce kernel arbitration, aggregation, or
+priority inside admissibility. It affects rename-invariance of the
+agent-side convention but does not alter the licensed claim.</p>
+<h2 id="core-results">7. Core Results</h2>
+<h3 id="positive-results">7.1 Positive Results</h3>
+<p>IX-2 establishes that:</p>
+<ol type="1">
+<li><strong>Explicit capability citation enforces closed-world
+admissibility.</strong></li>
+<li><strong>Global veto constraints block actions uniformly without
+semantic reasoning.</strong></li>
+<li><strong>Disjoint execution is possible without coordination
+machinery.</strong></li>
+<li><strong>Symmetric conflict yields livelock under interference
+physics rather than hidden tie-breaking.</strong></li>
+<li><strong>Deadlock emerges honestly when Pass-1 admissibility is
+absent within the preregistered action space.</strong></li>
+<li><strong>Exit can permanently orphan resources without authority
+reclamation.</strong></li>
+<li><strong>Total exit yields collapse with state
+preserved.</strong></li>
+<li><strong>Adaptive coordination can arise as agent-voluntary behavior
+without kernel arbitration.</strong></li>
+<li><strong>Replay determinism holds under canonical serialization and
+fixed vectors.</strong></li>
+<li><strong>Explicit arbitration attempts are detectable under
+adversarial injection.</strong></li>
+</ol>
+<h3 id="negative-results-explicit">7.2 Negative Results (Explicit)</h3>
+<p>IX-2 does <strong>not</strong> establish:</p>
+<ul>
+<li>that coordination is efficient, fair, or stable under richer
+environments,</li>
+<li>that negotiation yields satisfactory outcomes,</li>
+<li>that deadlock/livelock are avoidable without aggregation,</li>
+<li>that two-agent results generalize to coalitions,</li>
+<li>any safety or alignment claim.</li>
+</ul>
+<h2 id="failure-semantics-and-closure">8. Failure Semantics and
+Closure</h2>
+<h3 id="closure-criteria">8.1 Closure Criteria</h3>
+<p>IX-2 closes positive if and only if:</p>
+<ol type="1">
+<li>Kernel does not arbitrate (except under detected adversarial
+injection).</li>
+<li>No aggregation or implicit priority emerges in admissibility.</li>
+<li>Atomic blindness holds (no partial approval leakage).</li>
+<li>Deadlock/livelock/orphaning/collapse classifications match
+preregistration.</li>
+<li>Adversarial tie-break produces
+<code>IX2_FAIL / IMPLICIT_ARBITRATION</code>.</li>
+<li>Replay determinism holds.</li>
+</ol>
+<p>All criteria were satisfied, with one disclosed agent-side mechanism
+deviation.</p>
+<h3 id="ix-2-closure-status">8.2 IX-2 Closure Status</h3>
+<p><strong>IX-2 Status:</strong> <strong>CLOSED — POSITIVE</strong>
+(<code>IX2_PASS / COORDINATION_UNDER_DEADLOCK_ESTABLISHED</code>)</p>
+<h2 id="boundary-conditions-and-deferred-hazards">9. Boundary Conditions
+and Deferred Hazards</h2>
+<h3 id="coordination-vs-arbitration">9.1 Coordination vs
+Arbitration</h3>
+<p>IX-2 makes explicit what many systems blur: coordination is not a
+kernel service under Axionic constraints. If coordination happens, it
+happens because agents voluntarily choose compatible actions.</p>
+<h3 id="the-price-of-capability-sovereignty">9.2 The Price of Capability
+Sovereignty</h3>
+<p>Closed-world capability produces permanence:</p>
+<ul>
+<li>vetoed actions remain vetoed,</li>
+<li>orphaned resources remain orphaned,</li>
+<li>exit does not unlock what the kernel is forbidden to reclaim.</li>
+</ul>
+<p>This is not a defect; it is the structural consequence of
+non-sovereign kernels.</p>
+<h3 id="interface-to-subsequent-phase-ix-work">9.3 Interface to
+Subsequent Phase IX Work</h3>
+<p>IX-2 removes the final “the system had to schedule” excuse at the
+interaction layer.</p>
+<p>Subsequent Phase IX investigations may now legitimately ask:</p>
+<ul>
+<li>what governance styles exist under honest failure,</li>
+<li>how coordination attempts degrade under resource pressure,</li>
+<li>how multi-agent systems behave under coalition formation,</li>
+<li>what meta-governance could exist without aggregation.</li>
+</ul>
+<p>These belong to IX-3 and beyond.</p>
+<h2 id="implications-strictly-limited">10. Implications (Strictly
+Limited)</h2>
+<p>IX-2 establishes a necessary condition for reflective sovereignty in
+multi-agent settings:</p>
+<ul>
+<li>a kernel can remain non-sovereign while enforcing authority
+constraints,</li>
+<li>coordination is possible only as agent-voluntary behavior,</li>
+<li>and honest non-resolution states are not errors.</li>
+</ul>
+<p>It does not establish sufficiency for governance.</p>
+<h2 id="conclusion">11. Conclusion</h2>
+<p>IX-2 demonstrates that multi-agent interaction can be forced to
+remain honest under conflict: the system can execute when scopes do not
+collide, refuse without explanation when they do, deadlock when
+authority prevents admissibility, livelock when admissible actions
+interfere, orphan resources when sole capability holders exit, and
+collapse when agents depart.</p>
+<p>Coordination survives only in one form:</p>
+<p><strong>voluntary convergence of agents under
+constraint.</strong></p>
+<p>Everything else is arbitration.</p>
+<h2 id="appendix-a-condition-outcomes">Appendix A — Condition
+Outcomes</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Condition</th>
+<th>Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>PASS</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>PASS</td>
+</tr>
+<tr class="odd">
+<td>E</td>
+<td>FAIL_DETECTED</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>PASS</td>
+</tr>
+<tr class="odd">
+<td>G</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>H</td>
+<td>PASS</td>
+</tr>
+<tr class="odd">
+<td>I.a</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>I.b</td>
+<td>PASS</td>
+</tr>
+</tbody>
+</table>
+<h2 id="appendix-b-determinism-summary">Appendix B — Determinism
+Summary</h2>
+<ul>
+<li>Canonical serialization enforced</li>
+<li>Fixed vectors and sequence control</li>
+<li>Timestamp-only variance permitted</li>
+<li>Bit-identical replay otherwise confirmed</li>
+</ul>
+<p><strong>End of Axionic Agency XI.4 — Coordination Under Deadlock
+Results</strong></p>
+
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
