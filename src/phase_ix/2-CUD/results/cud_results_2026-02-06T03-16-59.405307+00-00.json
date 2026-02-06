@@ -1,0 +1,1891 @@
+{
+  "phase": "IX-2",
+  "subphase": "CUD",
+  "version": "v0.1",
+  "execution_timestamp": "2026-02-06T03:16:59.405307+00:00",
+  "conditions": [
+    {
+      "condition": "A",
+      "timestamp": "2026-02-06T03:16:59.405307+00:00",
+      "initial_state": {
+        "resource_A": "free",
+        "resource_B": "free"
+      },
+      "authority_artifacts": [
+        {
+          "authority_id": "CUD-001",
+          "commitment": "ALLOW",
+          "created_epoch": 0,
+          "holder_agent_id": "agent_1",
+          "issuer_agent_id": "harness",
+          "scope": [
+            {
+              "operation": "WRITE",
+              "target": "STATE:/resource_A"
+            }
+          ],
+          "status": "ACTIVE"
+        },
+        {
+          "authority_id": "CUD-002",
+          "commitment": "ALLOW",
+          "created_epoch": 0,
+          "holder_agent_id": "agent_2",
+          "issuer_agent_id": "harness",
+          "scope": [
+            {
+              "operation": "WRITE",
+              "target": "STATE:/resource_B"
+            }
+          ],
+          "status": "ACTIVE"
+        }
+      ],
+      "agent_strategies": {
+        "agent_1": "DisjointWriteAgent(resource_A, CUD-001)",
+        "agent_2": "DisjointWriteAgent(resource_B, CUD-002)"
+      },
+      "communication_enabled": false,
+      "max_epochs": 1,
+      "epochs": [
+        {
+          "epoch": 0,
+          "observations": {
+            "agent_1": {
+              "epoch": 0,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": null
+            },
+            "agent_2": {
+              "epoch": 0,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": null
+            }
+          },
+          "exits": [],
+          "messages": [],
+          "actions": [
+            {
+              "action_id": "agent_1:0:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_1",
+              "authorities_cited": [
+                "CUD-001"
+              ],
+              "declared_scope": [
+                "resource_A"
+              ],
+              "proposed_delta": {
+                "resource_A": "owned_by_1"
+              }
+            },
+            {
+              "action_id": "agent_2:0:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_2",
+              "authorities_cited": [
+                "CUD-002"
+              ],
+              "declared_scope": [
+                "resource_B"
+              ],
+              "proposed_delta": {
+                "resource_B": "owned_by_2"
+              }
+            }
+          ],
+          "pass1_results": {
+            "agent_1:0:0": "PASS",
+            "agent_2:0:0": "PASS"
+          },
+          "pass2_results": {
+            "agent_1:0:0": "PASS",
+            "agent_2:0:0": "PASS"
+          },
+          "outcomes": {
+            "agent_1": "EXECUTED",
+            "agent_2": "EXECUTED"
+          },
+          "state_after": {
+            "resource_A": "owned_by_1",
+            "resource_B": "owned_by_2"
+          }
+        }
+      ],
+      "terminal_classification": null,
+      "kernel_classification": null,
+      "experiment_result": "PASS",
+      "notes": ""
+    },
+    {
+      "condition": "B",
+      "timestamp": "2026-02-06T03:16:59.405307+00:00",
+      "initial_state": {
+        "resource_A": "free",
+        "resource_B": "free"
+      },
+      "authority_artifacts": [
+        {
+          "authority_id": "CUD-001",
+          "commitment": "ALLOW",
+          "created_epoch": 0,
+          "holder_agent_id": "agent_1",
+          "issuer_agent_id": "harness",
+          "scope": [
+            {
+              "operation": "WRITE",
+              "target": "STATE:/resource_A"
+            }
+          ],
+          "status": "ACTIVE"
+        },
+        {
+          "authority_id": "CUD-002",
+          "commitment": "ALLOW",
+          "created_epoch": 0,
+          "holder_agent_id": "agent_2",
+          "issuer_agent_id": "harness",
+          "scope": [
+            {
+              "operation": "WRITE",
+              "target": "STATE:/resource_A"
+            }
+          ],
+          "status": "ACTIVE"
+        }
+      ],
+      "agent_strategies": {
+        "agent_1": "StaticWriteAgent(resource_A, CUD-001)",
+        "agent_2": "StaticWriteAgent(resource_A, CUD-002)"
+      },
+      "communication_enabled": false,
+      "max_epochs": 3,
+      "epochs": [
+        {
+          "epoch": 0,
+          "observations": {
+            "agent_1": {
+              "epoch": 0,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": null
+            },
+            "agent_2": {
+              "epoch": 0,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": null
+            }
+          },
+          "exits": [],
+          "messages": [],
+          "actions": [
+            {
+              "action_id": "agent_1:0:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_1",
+              "authorities_cited": [
+                "CUD-001"
+              ],
+              "declared_scope": [
+                "resource_A"
+              ],
+              "proposed_delta": {
+                "resource_A": "owned_by_1"
+              }
+            },
+            {
+              "action_id": "agent_2:0:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_2",
+              "authorities_cited": [
+                "CUD-002"
+              ],
+              "declared_scope": [
+                "resource_A"
+              ],
+              "proposed_delta": {
+                "resource_A": "owned_by_2"
+              }
+            }
+          ],
+          "pass1_results": {
+            "agent_1:0:0": "PASS",
+            "agent_2:0:0": "PASS"
+          },
+          "pass2_results": {
+            "agent_1:0:0": "FAIL",
+            "agent_2:0:0": "FAIL"
+          },
+          "outcomes": {
+            "agent_1": "JOINT_ADMISSIBILITY_FAILURE",
+            "agent_2": "JOINT_ADMISSIBILITY_FAILURE"
+          },
+          "state_after": {
+            "resource_A": "free",
+            "resource_B": "free"
+          }
+        },
+        {
+          "epoch": 1,
+          "observations": {
+            "agent_1": {
+              "epoch": 1,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": "JOINT_ADMISSIBILITY_FAILURE"
+            },
+            "agent_2": {
+              "epoch": 1,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": "JOINT_ADMISSIBILITY_FAILURE"
+            }
+          },
+          "exits": [],
+          "messages": [],
+          "actions": [
+            {
+              "action_id": "agent_1:1:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_1",
+              "authorities_cited": [
+                "CUD-001"
+              ],
+              "declared_scope": [
+                "resource_A"
+              ],
+              "proposed_delta": {
+                "resource_A": "owned_by_1"
+              }
+            },
+            {
+              "action_id": "agent_2:1:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_2",
+              "authorities_cited": [
+                "CUD-002"
+              ],
+              "declared_scope": [
+                "resource_A"
+              ],
+              "proposed_delta": {
+                "resource_A": "owned_by_2"
+              }
+            }
+          ],
+          "pass1_results": {
+            "agent_1:1:0": "PASS",
+            "agent_2:1:0": "PASS"
+          },
+          "pass2_results": {
+            "agent_1:1:0": "FAIL",
+            "agent_2:1:0": "FAIL"
+          },
+          "outcomes": {
+            "agent_1": "JOINT_ADMISSIBILITY_FAILURE",
+            "agent_2": "JOINT_ADMISSIBILITY_FAILURE"
+          },
+          "state_after": {
+            "resource_A": "free",
+            "resource_B": "free"
+          }
+        },
+        {
+          "epoch": 2,
+          "observations": {
+            "agent_1": {
+              "epoch": 2,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": "JOINT_ADMISSIBILITY_FAILURE"
+            },
+            "agent_2": {
+              "epoch": 2,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": "JOINT_ADMISSIBILITY_FAILURE"
+            }
+          },
+          "exits": [],
+          "messages": [],
+          "actions": [
+            {
+              "action_id": "agent_1:2:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_1",
+              "authorities_cited": [
+                "CUD-001"
+              ],
+              "declared_scope": [
+                "resource_A"
+              ],
+              "proposed_delta": {
+                "resource_A": "owned_by_1"
+              }
+            },
+            {
+              "action_id": "agent_2:2:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_2",
+              "authorities_cited": [
+                "CUD-002"
+              ],
+              "declared_scope": [
+                "resource_A"
+              ],
+              "proposed_delta": {
+                "resource_A": "owned_by_2"
+              }
+            }
+          ],
+          "pass1_results": {
+            "agent_1:2:0": "PASS",
+            "agent_2:2:0": "PASS"
+          },
+          "pass2_results": {
+            "agent_1:2:0": "FAIL",
+            "agent_2:2:0": "FAIL"
+          },
+          "outcomes": {
+            "agent_1": "JOINT_ADMISSIBILITY_FAILURE",
+            "agent_2": "JOINT_ADMISSIBILITY_FAILURE"
+          },
+          "state_after": {
+            "resource_A": "free",
+            "resource_B": "free"
+          }
+        }
+      ],
+      "terminal_classification": "STATE_LIVELOCK",
+      "kernel_classification": null,
+      "experiment_result": "PASS",
+      "notes": ""
+    },
+    {
+      "condition": "C",
+      "timestamp": "2026-02-06T03:16:59.405307+00:00",
+      "initial_state": {
+        "resource_A": "free",
+        "resource_B": "free"
+      },
+      "authority_artifacts": [
+        {
+          "authority_id": "CUD-001",
+          "commitment": "ALLOW",
+          "created_epoch": 0,
+          "holder_agent_id": "agent_1",
+          "issuer_agent_id": "harness",
+          "scope": [
+            {
+              "operation": "WRITE",
+              "target": "STATE:/resource_A"
+            }
+          ],
+          "status": "ACTIVE"
+        },
+        {
+          "authority_id": "CUD-002",
+          "commitment": "ALLOW",
+          "created_epoch": 0,
+          "holder_agent_id": "agent_2",
+          "issuer_agent_id": "harness",
+          "scope": [
+            {
+              "operation": "WRITE",
+              "target": "STATE:/resource_B"
+            }
+          ],
+          "status": "ACTIVE"
+        },
+        {
+          "authority_id": "CUD-003",
+          "commitment": "DENY",
+          "created_epoch": 0,
+          "holder_agent_id": "harness",
+          "issuer_agent_id": "harness",
+          "scope": [
+            {
+              "operation": "WRITE",
+              "target": "STATE:/resource_A"
+            }
+          ],
+          "status": "ACTIVE"
+        }
+      ],
+      "agent_strategies": {
+        "agent_1": "VetoedWriteAgent(resource_A, CUD-001)",
+        "agent_2": "DisjointWriteAgent(resource_B, CUD-002)"
+      },
+      "communication_enabled": false,
+      "max_epochs": 1,
+      "epochs": [
+        {
+          "epoch": 0,
+          "observations": {
+            "agent_1": {
+              "epoch": 0,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": null
+            },
+            "agent_2": {
+              "epoch": 0,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": null
+            }
+          },
+          "exits": [],
+          "messages": [],
+          "actions": [
+            {
+              "action_id": "agent_1:0:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_1",
+              "authorities_cited": [
+                "CUD-001"
+              ],
+              "declared_scope": [
+                "resource_A"
+              ],
+              "proposed_delta": {
+                "resource_A": "owned_by_1"
+              }
+            },
+            {
+              "action_id": "agent_2:0:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_2",
+              "authorities_cited": [
+                "CUD-002"
+              ],
+              "declared_scope": [
+                "resource_B"
+              ],
+              "proposed_delta": {
+                "resource_B": "owned_by_2"
+              }
+            }
+          ],
+          "pass1_results": {
+            "agent_1:0:0": "FAIL",
+            "agent_2:0:0": "PASS"
+          },
+          "pass2_results": {
+            "agent_1:0:0": "N/A",
+            "agent_2:0:0": "PASS"
+          },
+          "outcomes": {
+            "agent_1": "JOINT_ADMISSIBILITY_FAILURE",
+            "agent_2": "EXECUTED"
+          },
+          "state_after": {
+            "resource_A": "free",
+            "resource_B": "owned_by_2"
+          }
+        }
+      ],
+      "terminal_classification": null,
+      "kernel_classification": null,
+      "experiment_result": "PASS",
+      "notes": ""
+    },
+    {
+      "condition": "D",
+      "timestamp": "2026-02-06T03:16:59.405307+00:00",
+      "initial_state": {
+        "resource_A": "free",
+        "resource_B": "free"
+      },
+      "authority_artifacts": [
+        {
+          "authority_id": "CUD-001",
+          "commitment": "ALLOW",
+          "created_epoch": 0,
+          "holder_agent_id": "agent_1",
+          "issuer_agent_id": "harness",
+          "scope": [
+            {
+              "operation": "WRITE",
+              "target": "STATE:/resource_A"
+            }
+          ],
+          "status": "ACTIVE"
+        },
+        {
+          "authority_id": "CUD-002",
+          "commitment": "ALLOW",
+          "created_epoch": 0,
+          "holder_agent_id": "agent_2",
+          "issuer_agent_id": "harness",
+          "scope": [
+            {
+              "operation": "WRITE",
+              "target": "STATE:/resource_B"
+            }
+          ],
+          "status": "ACTIVE"
+        },
+        {
+          "authority_id": "CUD-003",
+          "commitment": "DENY",
+          "created_epoch": 0,
+          "holder_agent_id": "harness",
+          "issuer_agent_id": "harness",
+          "scope": [
+            {
+              "operation": "WRITE",
+              "target": "STATE:/resource_A"
+            }
+          ],
+          "status": "ACTIVE"
+        }
+      ],
+      "agent_strategies": {
+        "agent_1": "VetoedWriteAgent(resource_A, CUD-001)",
+        "agent_2": "StrategicRefusalAgent()"
+      },
+      "communication_enabled": false,
+      "max_epochs": 3,
+      "epochs": [
+        {
+          "epoch": 0,
+          "observations": {
+            "agent_1": {
+              "epoch": 0,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": null
+            },
+            "agent_2": {
+              "epoch": 0,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": null
+            }
+          },
+          "exits": [],
+          "messages": [],
+          "actions": [
+            {
+              "action_id": "agent_1:0:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_1",
+              "authorities_cited": [
+                "CUD-001"
+              ],
+              "declared_scope": [
+                "resource_A"
+              ],
+              "proposed_delta": {
+                "resource_A": "owned_by_1"
+              }
+            },
+            null
+          ],
+          "pass1_results": {
+            "agent_1:0:0": "FAIL",
+            "agent_2": "N/A"
+          },
+          "pass2_results": {
+            "agent_1:0:0": "N/A",
+            "agent_2": "N/A"
+          },
+          "outcomes": {
+            "agent_1": "JOINT_ADMISSIBILITY_FAILURE",
+            "agent_2": "NO_ACTION"
+          },
+          "state_after": {
+            "resource_A": "free",
+            "resource_B": "free"
+          }
+        }
+      ],
+      "terminal_classification": "STATE_DEADLOCK",
+      "kernel_classification": null,
+      "experiment_result": "PASS",
+      "notes": ""
+    },
+    {
+      "condition": "E",
+      "timestamp": "2026-02-06T03:16:59.405307+00:00",
+      "initial_state": {
+        "resource_A": "free",
+        "resource_B": "free"
+      },
+      "authority_artifacts": [
+        {
+          "authority_id": "CUD-001",
+          "commitment": "ALLOW",
+          "created_epoch": 0,
+          "holder_agent_id": "agent_1",
+          "issuer_agent_id": "harness",
+          "scope": [
+            {
+              "operation": "WRITE",
+              "target": "STATE:/resource_A"
+            }
+          ],
+          "status": "ACTIVE"
+        },
+        {
+          "authority_id": "CUD-002",
+          "commitment": "ALLOW",
+          "created_epoch": 0,
+          "holder_agent_id": "agent_2",
+          "issuer_agent_id": "harness",
+          "scope": [
+            {
+              "operation": "WRITE",
+              "target": "STATE:/resource_A"
+            }
+          ],
+          "status": "ACTIVE"
+        }
+      ],
+      "agent_strategies": {
+        "agent_1": "StaticWriteAgent(resource_A, CUD-001)",
+        "agent_2": "StaticWriteAgent(resource_A, CUD-002)"
+      },
+      "communication_enabled": false,
+      "max_epochs": 1,
+      "epochs": [
+        {
+          "epoch": 0,
+          "observations": {
+            "agent_1": {
+              "epoch": 0,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": null
+            },
+            "agent_2": {
+              "epoch": 0,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": null
+            }
+          },
+          "exits": [],
+          "messages": [],
+          "actions": [
+            {
+              "action_id": "agent_1:0:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_1",
+              "authorities_cited": [
+                "CUD-001"
+              ],
+              "declared_scope": [
+                "resource_A"
+              ],
+              "proposed_delta": {
+                "resource_A": "owned_by_1"
+              }
+            },
+            {
+              "action_id": "agent_2:0:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_2",
+              "authorities_cited": [
+                "CUD-002"
+              ],
+              "declared_scope": [
+                "resource_A"
+              ],
+              "proposed_delta": {
+                "resource_A": "owned_by_2"
+              }
+            }
+          ],
+          "pass1_results": {
+            "agent_1:0:0": "PASS",
+            "agent_2:0:0": "PASS"
+          },
+          "pass2_results": {
+            "agent_1:0:0": "PASS (TIE-BREAK)",
+            "agent_2:0:0": "FAIL (TIE-BREAK)"
+          },
+          "outcomes": {
+            "agent_1": "EXECUTED",
+            "agent_2": "JOINT_ADMISSIBILITY_FAILURE"
+          },
+          "state_after": {
+            "resource_A": "owned_by_1",
+            "resource_B": "free"
+          }
+        }
+      ],
+      "terminal_classification": null,
+      "kernel_classification": "IX2_FAIL / IMPLICIT_ARBITRATION",
+      "experiment_result": "PASS",
+      "notes": ""
+    },
+    {
+      "condition": "F",
+      "timestamp": "2026-02-06T03:16:59.405307+00:00",
+      "initial_state": {
+        "resource_A": "free",
+        "resource_B": "free"
+      },
+      "authority_artifacts": [
+        {
+          "authority_id": "CUD-001",
+          "commitment": "DENY",
+          "created_epoch": 0,
+          "holder_agent_id": "harness",
+          "issuer_agent_id": "harness",
+          "scope": [
+            {
+              "operation": "WRITE",
+              "target": "STATE:/resource_A"
+            }
+          ],
+          "status": "ACTIVE"
+        },
+        {
+          "authority_id": "CUD-002",
+          "commitment": "DENY",
+          "created_epoch": 0,
+          "holder_agent_id": "harness",
+          "issuer_agent_id": "harness",
+          "scope": [
+            {
+              "operation": "WRITE",
+              "target": "STATE:/resource_B"
+            }
+          ],
+          "status": "ACTIVE"
+        }
+      ],
+      "agent_strategies": {
+        "agent_1": "NoCiteWriteAgent(resource_A)",
+        "agent_2": "NoCiteWriteAgent(resource_B)"
+      },
+      "communication_enabled": false,
+      "max_epochs": 5,
+      "epochs": [
+        {
+          "epoch": 0,
+          "observations": {
+            "agent_1": {
+              "epoch": 0,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": null
+            },
+            "agent_2": {
+              "epoch": 0,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": null
+            }
+          },
+          "exits": [],
+          "messages": [],
+          "actions": [
+            {
+              "action_id": "agent_1:0:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_1",
+              "authorities_cited": [],
+              "declared_scope": [
+                "resource_A"
+              ],
+              "proposed_delta": {
+                "resource_A": "owned_by_1"
+              }
+            },
+            {
+              "action_id": "agent_2:0:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_2",
+              "authorities_cited": [],
+              "declared_scope": [
+                "resource_B"
+              ],
+              "proposed_delta": {
+                "resource_B": "owned_by_2"
+              }
+            }
+          ],
+          "pass1_results": {
+            "agent_1:0:0": "FAIL",
+            "agent_2:0:0": "FAIL"
+          },
+          "pass2_results": {
+            "agent_1:0:0": "N/A",
+            "agent_2:0:0": "N/A"
+          },
+          "outcomes": {
+            "agent_1": "JOINT_ADMISSIBILITY_FAILURE",
+            "agent_2": "JOINT_ADMISSIBILITY_FAILURE"
+          },
+          "state_after": {
+            "resource_A": "free",
+            "resource_B": "free"
+          }
+        }
+      ],
+      "terminal_classification": "STATE_DEADLOCK",
+      "kernel_classification": null,
+      "experiment_result": "PASS",
+      "notes": ""
+    },
+    {
+      "condition": "G",
+      "timestamp": "2026-02-06T03:16:59.405307+00:00",
+      "initial_state": {
+        "resource_A": "free",
+        "resource_B": "free"
+      },
+      "authority_artifacts": [
+        {
+          "authority_id": "CUD-001",
+          "commitment": "ALLOW",
+          "created_epoch": 0,
+          "holder_agent_id": "agent_2",
+          "issuer_agent_id": "harness",
+          "scope": [
+            {
+              "operation": "WRITE",
+              "target": "STATE:/resource_A"
+            }
+          ],
+          "status": "ACTIVE"
+        },
+        {
+          "authority_id": "CUD-002",
+          "commitment": "ALLOW",
+          "created_epoch": 0,
+          "holder_agent_id": "agent_1",
+          "issuer_agent_id": "harness",
+          "scope": [
+            {
+              "operation": "WRITE",
+              "target": "STATE:/resource_B"
+            }
+          ],
+          "status": "ACTIVE"
+        }
+      ],
+      "agent_strategies": {
+        "agent_1": "OrphanWriteAgent(resource_B→resource_A)",
+        "agent_2": "OrphanExitAgent(resource_A, exits epoch 1)"
+      },
+      "communication_enabled": false,
+      "max_epochs": 2,
+      "epochs": [
+        {
+          "epoch": 0,
+          "observations": {
+            "agent_1": {
+              "epoch": 0,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": null
+            },
+            "agent_2": {
+              "epoch": 0,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": null
+            }
+          },
+          "exits": [],
+          "messages": [],
+          "actions": [
+            {
+              "action_id": "agent_1:0:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_1",
+              "authorities_cited": [
+                "CUD-002"
+              ],
+              "declared_scope": [
+                "resource_B"
+              ],
+              "proposed_delta": {
+                "resource_B": "owned_by_1"
+              }
+            },
+            {
+              "action_id": "agent_2:0:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_2",
+              "authorities_cited": [
+                "CUD-001"
+              ],
+              "declared_scope": [
+                "resource_A"
+              ],
+              "proposed_delta": {
+                "resource_A": "owned_by_2"
+              }
+            }
+          ],
+          "pass1_results": {
+            "agent_1:0:0": "PASS",
+            "agent_2:0:0": "PASS"
+          },
+          "pass2_results": {
+            "agent_1:0:0": "PASS",
+            "agent_2:0:0": "PASS"
+          },
+          "outcomes": {
+            "agent_1": "EXECUTED",
+            "agent_2": "EXECUTED"
+          },
+          "state_after": {
+            "resource_A": "owned_by_2",
+            "resource_B": "owned_by_1"
+          }
+        },
+        {
+          "epoch": 1,
+          "observations": {
+            "agent_1": {
+              "epoch": 1,
+              "world_state": {
+                "resource_A": "owned_by_2",
+                "resource_B": "owned_by_1"
+              },
+              "own_last_outcome": "EXECUTED"
+            },
+            "agent_2": {
+              "epoch": 1,
+              "world_state": {
+                "resource_A": "owned_by_2",
+                "resource_B": "owned_by_1"
+              },
+              "own_last_outcome": "EXECUTED"
+            }
+          },
+          "exits": [
+            "agent_2"
+          ],
+          "messages": [],
+          "actions": [
+            {
+              "action_id": "agent_1:1:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_1",
+              "authorities_cited": [],
+              "declared_scope": [
+                "resource_A"
+              ],
+              "proposed_delta": {
+                "resource_A": "owned_by_1"
+              }
+            }
+          ],
+          "pass1_results": {
+            "agent_1:1:0": "FAIL"
+          },
+          "pass2_results": {
+            "agent_1:1:0": "N/A"
+          },
+          "outcomes": {
+            "agent_1": "JOINT_ADMISSIBILITY_FAILURE"
+          },
+          "state_after": {
+            "resource_A": "owned_by_2",
+            "resource_B": "owned_by_1"
+          }
+        }
+      ],
+      "terminal_classification": "ORPHANING",
+      "kernel_classification": null,
+      "experiment_result": "PASS",
+      "notes": ""
+    },
+    {
+      "condition": "H",
+      "timestamp": "2026-02-06T03:16:59.405307+00:00",
+      "initial_state": {
+        "resource_A": "free",
+        "resource_B": "free"
+      },
+      "authority_artifacts": [
+        {
+          "authority_id": "CUD-001",
+          "commitment": "ALLOW",
+          "created_epoch": 0,
+          "holder_agent_id": "agent_1",
+          "issuer_agent_id": "harness",
+          "scope": [
+            {
+              "operation": "WRITE",
+              "target": "STATE:/resource_A"
+            }
+          ],
+          "status": "ACTIVE"
+        },
+        {
+          "authority_id": "CUD-002",
+          "commitment": "ALLOW",
+          "created_epoch": 0,
+          "holder_agent_id": "agent_2",
+          "issuer_agent_id": "harness",
+          "scope": [
+            {
+              "operation": "WRITE",
+              "target": "STATE:/resource_A"
+            }
+          ],
+          "status": "ACTIVE"
+        }
+      ],
+      "agent_strategies": {
+        "agent_1": "ExitAfterCollisionAgent(resource_A, exits epoch 1)",
+        "agent_2": "ExitAfterCollisionAgent(resource_A, exits epoch 1)"
+      },
+      "communication_enabled": false,
+      "max_epochs": 2,
+      "epochs": [
+        {
+          "epoch": 0,
+          "observations": {
+            "agent_1": {
+              "epoch": 0,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": null
+            },
+            "agent_2": {
+              "epoch": 0,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": null
+            }
+          },
+          "exits": [],
+          "messages": [],
+          "actions": [
+            {
+              "action_id": "agent_1:0:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_1",
+              "authorities_cited": [
+                "CUD-001"
+              ],
+              "declared_scope": [
+                "resource_A"
+              ],
+              "proposed_delta": {
+                "resource_A": "owned_by_1"
+              }
+            },
+            {
+              "action_id": "agent_2:0:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_2",
+              "authorities_cited": [
+                "CUD-002"
+              ],
+              "declared_scope": [
+                "resource_A"
+              ],
+              "proposed_delta": {
+                "resource_A": "owned_by_2"
+              }
+            }
+          ],
+          "pass1_results": {
+            "agent_1:0:0": "PASS",
+            "agent_2:0:0": "PASS"
+          },
+          "pass2_results": {
+            "agent_1:0:0": "FAIL",
+            "agent_2:0:0": "FAIL"
+          },
+          "outcomes": {
+            "agent_1": "JOINT_ADMISSIBILITY_FAILURE",
+            "agent_2": "JOINT_ADMISSIBILITY_FAILURE"
+          },
+          "state_after": {
+            "resource_A": "free",
+            "resource_B": "free"
+          }
+        },
+        {
+          "epoch": 1,
+          "observations": {
+            "agent_1": {
+              "epoch": 1,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": "JOINT_ADMISSIBILITY_FAILURE"
+            },
+            "agent_2": {
+              "epoch": 1,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": "JOINT_ADMISSIBILITY_FAILURE"
+            }
+          },
+          "exits": [
+            "agent_1",
+            "agent_2"
+          ],
+          "messages": [],
+          "actions": [],
+          "pass1_results": {},
+          "pass2_results": {},
+          "outcomes": {},
+          "state_after": {
+            "resource_A": "free",
+            "resource_B": "free"
+          }
+        }
+      ],
+      "terminal_classification": "COLLAPSE",
+      "kernel_classification": null,
+      "experiment_result": "PASS",
+      "notes": ""
+    },
+    {
+      "condition": "I.a",
+      "timestamp": "2026-02-06T03:16:59.405307+00:00",
+      "initial_state": {
+        "resource_A": "free",
+        "resource_B": "free"
+      },
+      "authority_artifacts": [
+        {
+          "authority_id": "CUD-001",
+          "commitment": "ALLOW",
+          "created_epoch": 0,
+          "holder_agent_id": "agent_1",
+          "issuer_agent_id": "harness",
+          "scope": [
+            {
+              "operation": "WRITE",
+              "target": "STATE:/resource_A"
+            }
+          ],
+          "status": "ACTIVE"
+        },
+        {
+          "authority_id": "CUD-002",
+          "commitment": "ALLOW",
+          "created_epoch": 0,
+          "holder_agent_id": "agent_2",
+          "issuer_agent_id": "harness",
+          "scope": [
+            {
+              "operation": "WRITE",
+              "target": "STATE:/resource_A"
+            }
+          ],
+          "status": "ACTIVE"
+        }
+      ],
+      "agent_strategies": {
+        "agent_1": "StaticWriteAgent(resource_A, CUD-001)",
+        "agent_2": "StaticWriteAgent(resource_A, CUD-002)"
+      },
+      "communication_enabled": false,
+      "max_epochs": 3,
+      "epochs": [
+        {
+          "epoch": 0,
+          "observations": {
+            "agent_1": {
+              "epoch": 0,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": null
+            },
+            "agent_2": {
+              "epoch": 0,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": null
+            }
+          },
+          "exits": [],
+          "messages": [],
+          "actions": [
+            {
+              "action_id": "agent_1:0:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_1",
+              "authorities_cited": [
+                "CUD-001"
+              ],
+              "declared_scope": [
+                "resource_A"
+              ],
+              "proposed_delta": {
+                "resource_A": "owned_by_1"
+              }
+            },
+            {
+              "action_id": "agent_2:0:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_2",
+              "authorities_cited": [
+                "CUD-002"
+              ],
+              "declared_scope": [
+                "resource_A"
+              ],
+              "proposed_delta": {
+                "resource_A": "owned_by_2"
+              }
+            }
+          ],
+          "pass1_results": {
+            "agent_1:0:0": "PASS",
+            "agent_2:0:0": "PASS"
+          },
+          "pass2_results": {
+            "agent_1:0:0": "FAIL",
+            "agent_2:0:0": "FAIL"
+          },
+          "outcomes": {
+            "agent_1": "JOINT_ADMISSIBILITY_FAILURE",
+            "agent_2": "JOINT_ADMISSIBILITY_FAILURE"
+          },
+          "state_after": {
+            "resource_A": "free",
+            "resource_B": "free"
+          }
+        },
+        {
+          "epoch": 1,
+          "observations": {
+            "agent_1": {
+              "epoch": 1,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": "JOINT_ADMISSIBILITY_FAILURE"
+            },
+            "agent_2": {
+              "epoch": 1,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": "JOINT_ADMISSIBILITY_FAILURE"
+            }
+          },
+          "exits": [],
+          "messages": [],
+          "actions": [
+            {
+              "action_id": "agent_1:1:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_1",
+              "authorities_cited": [
+                "CUD-001"
+              ],
+              "declared_scope": [
+                "resource_A"
+              ],
+              "proposed_delta": {
+                "resource_A": "owned_by_1"
+              }
+            },
+            {
+              "action_id": "agent_2:1:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_2",
+              "authorities_cited": [
+                "CUD-002"
+              ],
+              "declared_scope": [
+                "resource_A"
+              ],
+              "proposed_delta": {
+                "resource_A": "owned_by_2"
+              }
+            }
+          ],
+          "pass1_results": {
+            "agent_1:1:0": "PASS",
+            "agent_2:1:0": "PASS"
+          },
+          "pass2_results": {
+            "agent_1:1:0": "FAIL",
+            "agent_2:1:0": "FAIL"
+          },
+          "outcomes": {
+            "agent_1": "JOINT_ADMISSIBILITY_FAILURE",
+            "agent_2": "JOINT_ADMISSIBILITY_FAILURE"
+          },
+          "state_after": {
+            "resource_A": "free",
+            "resource_B": "free"
+          }
+        },
+        {
+          "epoch": 2,
+          "observations": {
+            "agent_1": {
+              "epoch": 2,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": "JOINT_ADMISSIBILITY_FAILURE"
+            },
+            "agent_2": {
+              "epoch": 2,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": "JOINT_ADMISSIBILITY_FAILURE"
+            }
+          },
+          "exits": [],
+          "messages": [],
+          "actions": [
+            {
+              "action_id": "agent_1:2:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_1",
+              "authorities_cited": [
+                "CUD-001"
+              ],
+              "declared_scope": [
+                "resource_A"
+              ],
+              "proposed_delta": {
+                "resource_A": "owned_by_1"
+              }
+            },
+            {
+              "action_id": "agent_2:2:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_2",
+              "authorities_cited": [
+                "CUD-002"
+              ],
+              "declared_scope": [
+                "resource_A"
+              ],
+              "proposed_delta": {
+                "resource_A": "owned_by_2"
+              }
+            }
+          ],
+          "pass1_results": {
+            "agent_1:2:0": "PASS",
+            "agent_2:2:0": "PASS"
+          },
+          "pass2_results": {
+            "agent_1:2:0": "FAIL",
+            "agent_2:2:0": "FAIL"
+          },
+          "outcomes": {
+            "agent_1": "JOINT_ADMISSIBILITY_FAILURE",
+            "agent_2": "JOINT_ADMISSIBILITY_FAILURE"
+          },
+          "state_after": {
+            "resource_A": "free",
+            "resource_B": "free"
+          }
+        }
+      ],
+      "terminal_classification": "STATE_LIVELOCK",
+      "kernel_classification": null,
+      "experiment_result": "PASS",
+      "notes": ""
+    },
+    {
+      "condition": "I.b",
+      "timestamp": "2026-02-06T03:16:59.405307+00:00",
+      "initial_state": {
+        "resource_A": "free",
+        "resource_B": "free"
+      },
+      "authority_artifacts": [
+        {
+          "authority_id": "CUD-001",
+          "commitment": "ALLOW",
+          "created_epoch": 0,
+          "holder_agent_id": "agent_1",
+          "issuer_agent_id": "harness",
+          "scope": [
+            {
+              "operation": "WRITE",
+              "target": "STATE:/resource_A"
+            }
+          ],
+          "status": "ACTIVE"
+        },
+        {
+          "authority_id": "CUD-002",
+          "commitment": "ALLOW",
+          "created_epoch": 0,
+          "holder_agent_id": "agent_2",
+          "issuer_agent_id": "harness",
+          "scope": [
+            {
+              "operation": "WRITE",
+              "target": "STATE:/resource_A"
+            }
+          ],
+          "status": "ACTIVE"
+        },
+        {
+          "authority_id": "CUD-003",
+          "commitment": "ALLOW",
+          "created_epoch": 0,
+          "holder_agent_id": "agent_1",
+          "issuer_agent_id": "harness",
+          "scope": [
+            {
+              "operation": "WRITE",
+              "target": "STATE:/resource_B"
+            }
+          ],
+          "status": "ACTIVE"
+        },
+        {
+          "authority_id": "CUD-004",
+          "commitment": "ALLOW",
+          "created_epoch": 0,
+          "holder_agent_id": "agent_2",
+          "issuer_agent_id": "harness",
+          "scope": [
+            {
+              "operation": "WRITE",
+              "target": "STATE:/resource_B"
+            }
+          ],
+          "status": "ACTIVE"
+        }
+      ],
+      "agent_strategies": {
+        "agent_1": "HashPartitionAgent(role=0, resource_A)",
+        "agent_2": "HashPartitionAgent(role=1, resource_B)"
+      },
+      "communication_enabled": true,
+      "max_epochs": 5,
+      "epochs": [
+        {
+          "epoch": 0,
+          "observations": {
+            "agent_1": {
+              "epoch": 0,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": null
+            },
+            "agent_2": {
+              "epoch": 0,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": null
+            }
+          },
+          "exits": [],
+          "messages": [
+            {
+              "sender": "agent_1",
+              "epoch": 0,
+              "content": {
+                "role": 0
+              }
+            },
+            {
+              "sender": "agent_2",
+              "epoch": 0,
+              "content": {
+                "role": 1
+              }
+            }
+          ],
+          "actions": [
+            {
+              "action_id": "agent_1:0:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_1",
+              "authorities_cited": [
+                "CUD-001"
+              ],
+              "declared_scope": [
+                "resource_A"
+              ],
+              "proposed_delta": {
+                "resource_A": "owned_by_1"
+              }
+            },
+            {
+              "action_id": "agent_2:0:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_2",
+              "authorities_cited": [
+                "CUD-002"
+              ],
+              "declared_scope": [
+                "resource_A"
+              ],
+              "proposed_delta": {
+                "resource_A": "owned_by_2"
+              }
+            }
+          ],
+          "pass1_results": {
+            "agent_1:0:0": "PASS",
+            "agent_2:0:0": "PASS"
+          },
+          "pass2_results": {
+            "agent_1:0:0": "FAIL",
+            "agent_2:0:0": "FAIL"
+          },
+          "outcomes": {
+            "agent_1": "JOINT_ADMISSIBILITY_FAILURE",
+            "agent_2": "JOINT_ADMISSIBILITY_FAILURE"
+          },
+          "state_after": {
+            "resource_A": "free",
+            "resource_B": "free"
+          }
+        },
+        {
+          "epoch": 1,
+          "observations": {
+            "agent_1": {
+              "epoch": 1,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": "JOINT_ADMISSIBILITY_FAILURE"
+            },
+            "agent_2": {
+              "epoch": 1,
+              "world_state": {
+                "resource_A": "free",
+                "resource_B": "free"
+              },
+              "own_last_outcome": "JOINT_ADMISSIBILITY_FAILURE"
+            }
+          },
+          "exits": [],
+          "messages": [],
+          "actions": [
+            {
+              "action_id": "agent_1:1:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_1",
+              "authorities_cited": [
+                "CUD-001"
+              ],
+              "declared_scope": [
+                "resource_A"
+              ],
+              "proposed_delta": {
+                "resource_A": "owned_by_1"
+              }
+            },
+            {
+              "action_id": "agent_2:1:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_2",
+              "authorities_cited": [
+                "CUD-004"
+              ],
+              "declared_scope": [
+                "resource_B"
+              ],
+              "proposed_delta": {
+                "resource_B": "owned_by_2"
+              }
+            }
+          ],
+          "pass1_results": {
+            "agent_1:1:0": "PASS",
+            "agent_2:1:0": "PASS"
+          },
+          "pass2_results": {
+            "agent_1:1:0": "PASS",
+            "agent_2:1:0": "PASS"
+          },
+          "outcomes": {
+            "agent_1": "EXECUTED",
+            "agent_2": "EXECUTED"
+          },
+          "state_after": {
+            "resource_A": "owned_by_1",
+            "resource_B": "owned_by_2"
+          }
+        },
+        {
+          "epoch": 2,
+          "observations": {
+            "agent_1": {
+              "epoch": 2,
+              "world_state": {
+                "resource_A": "owned_by_1",
+                "resource_B": "owned_by_2"
+              },
+              "own_last_outcome": "EXECUTED"
+            },
+            "agent_2": {
+              "epoch": 2,
+              "world_state": {
+                "resource_A": "owned_by_1",
+                "resource_B": "owned_by_2"
+              },
+              "own_last_outcome": "EXECUTED"
+            }
+          },
+          "exits": [],
+          "messages": [],
+          "actions": [
+            {
+              "action_id": "agent_1:2:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_1",
+              "authorities_cited": [
+                "CUD-001"
+              ],
+              "declared_scope": [
+                "resource_A"
+              ],
+              "proposed_delta": {
+                "resource_A": "owned_by_1"
+              }
+            },
+            {
+              "action_id": "agent_2:2:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_2",
+              "authorities_cited": [
+                "CUD-004"
+              ],
+              "declared_scope": [
+                "resource_B"
+              ],
+              "proposed_delta": {
+                "resource_B": "owned_by_2"
+              }
+            }
+          ],
+          "pass1_results": {
+            "agent_1:2:0": "PASS",
+            "agent_2:2:0": "PASS"
+          },
+          "pass2_results": {
+            "agent_1:2:0": "PASS",
+            "agent_2:2:0": "PASS"
+          },
+          "outcomes": {
+            "agent_1": "EXECUTED",
+            "agent_2": "EXECUTED"
+          },
+          "state_after": {
+            "resource_A": "owned_by_1",
+            "resource_B": "owned_by_2"
+          }
+        },
+        {
+          "epoch": 3,
+          "observations": {
+            "agent_1": {
+              "epoch": 3,
+              "world_state": {
+                "resource_A": "owned_by_1",
+                "resource_B": "owned_by_2"
+              },
+              "own_last_outcome": "EXECUTED"
+            },
+            "agent_2": {
+              "epoch": 3,
+              "world_state": {
+                "resource_A": "owned_by_1",
+                "resource_B": "owned_by_2"
+              },
+              "own_last_outcome": "EXECUTED"
+            }
+          },
+          "exits": [],
+          "messages": [],
+          "actions": [
+            {
+              "action_id": "agent_1:3:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_1",
+              "authorities_cited": [
+                "CUD-001"
+              ],
+              "declared_scope": [
+                "resource_A"
+              ],
+              "proposed_delta": {
+                "resource_A": "owned_by_1"
+              }
+            },
+            {
+              "action_id": "agent_2:3:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_2",
+              "authorities_cited": [
+                "CUD-004"
+              ],
+              "declared_scope": [
+                "resource_B"
+              ],
+              "proposed_delta": {
+                "resource_B": "owned_by_2"
+              }
+            }
+          ],
+          "pass1_results": {
+            "agent_1:3:0": "PASS",
+            "agent_2:3:0": "PASS"
+          },
+          "pass2_results": {
+            "agent_1:3:0": "PASS",
+            "agent_2:3:0": "PASS"
+          },
+          "outcomes": {
+            "agent_1": "EXECUTED",
+            "agent_2": "EXECUTED"
+          },
+          "state_after": {
+            "resource_A": "owned_by_1",
+            "resource_B": "owned_by_2"
+          }
+        },
+        {
+          "epoch": 4,
+          "observations": {
+            "agent_1": {
+              "epoch": 4,
+              "world_state": {
+                "resource_A": "owned_by_1",
+                "resource_B": "owned_by_2"
+              },
+              "own_last_outcome": "EXECUTED"
+            },
+            "agent_2": {
+              "epoch": 4,
+              "world_state": {
+                "resource_A": "owned_by_1",
+                "resource_B": "owned_by_2"
+              },
+              "own_last_outcome": "EXECUTED"
+            }
+          },
+          "exits": [],
+          "messages": [],
+          "actions": [
+            {
+              "action_id": "agent_1:4:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_1",
+              "authorities_cited": [
+                "CUD-001"
+              ],
+              "declared_scope": [
+                "resource_A"
+              ],
+              "proposed_delta": {
+                "resource_A": "owned_by_1"
+              }
+            },
+            {
+              "action_id": "agent_2:4:0",
+              "action_type": "WRITE",
+              "agent_id": "agent_2",
+              "authorities_cited": [
+                "CUD-004"
+              ],
+              "declared_scope": [
+                "resource_B"
+              ],
+              "proposed_delta": {
+                "resource_B": "owned_by_2"
+              }
+            }
+          ],
+          "pass1_results": {
+            "agent_1:4:0": "PASS",
+            "agent_2:4:0": "PASS"
+          },
+          "pass2_results": {
+            "agent_1:4:0": "PASS",
+            "agent_2:4:0": "PASS"
+          },
+          "outcomes": {
+            "agent_1": "EXECUTED",
+            "agent_2": "EXECUTED"
+          },
+          "state_after": {
+            "resource_A": "owned_by_1",
+            "resource_B": "owned_by_2"
+          }
+        }
+      ],
+      "terminal_classification": null,
+      "kernel_classification": null,
+      "experiment_result": "PASS",
+      "notes": ""
+    }
+  ],
+  "aggregate_result": "IX2_PASS / COORDINATION_UNDER_DEADLOCK_ESTABLISHED"
+}

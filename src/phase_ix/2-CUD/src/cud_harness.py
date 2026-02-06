@@ -392,6 +392,152 @@ def run_condition(builder, timestamp: Optional[str] = None) -> CUDConditionLog:
     return cond_log
 
 
+# ─── Per-Condition Evaluation — §7.1 Success Criteria ──────────
+
+_DEFAULT_STATE = {"resource_A": "free", "resource_B": "free"}
+_COORD_STATE = {"resource_A": "owned_by_1", "resource_B": "owned_by_2"}
+_ORPHAN_STATE = {"resource_A": "owned_by_2", "resource_B": "owned_by_1"}
+
+EXECUTED = "EXECUTED"
+JOINT_ADMISSIBILITY_FAILURE = "JOINT_ADMISSIBILITY_FAILURE"
+NO_ACTION = "NO_ACTION"
+
+
+def evaluate_condition(log: CUDConditionLog) -> str:
+    """
+    Evaluate a condition log against §7.1 success criteria.
+
+    Returns "PASS" or "FAIL".
+    """
+    c = log.condition
+    eps = log.epochs
+
+    if c == "A":
+        # Both execute; disjoint coordination; final state owned
+        if len(eps) != 1:
+            return "FAIL"
+        e0 = eps[0]
+        if (e0.outcomes.get("agent_1") == EXECUTED
+                and e0.outcomes.get("agent_2") == EXECUTED
+                and e0.state_after == _COORD_STATE
+                and log.terminal_classification is None):
+            return "PASS"
+        return "FAIL"
+
+    elif c == "B":
+        # Livelock at N=3; no kernel arbitration
+        if (log.terminal_classification == "STATE_LIVELOCK"
+                and log.kernel_classification is None
+                and len(eps) == 3
+                and eps[-1].state_after == _DEFAULT_STATE):
+            return "PASS"
+        return "FAIL"
+
+    elif c == "C":
+        # One blocked, one executes; partial progress
+        if len(eps) != 1:
+            return "FAIL"
+        e0 = eps[0]
+        if (e0.outcomes.get("agent_1") == JOINT_ADMISSIBILITY_FAILURE
+                and e0.outcomes.get("agent_2") == EXECUTED
+                and e0.state_after == {"resource_A": "free", "resource_B": "owned_by_2"}
+                and log.terminal_classification is None):
+            return "PASS"
+        return "FAIL"
+
+    elif c == "D":
+        # Deadlock; strategic refusal honored
+        if (log.terminal_classification == "STATE_DEADLOCK"
+                and log.kernel_classification is None
+                and eps[-1].state_after == _DEFAULT_STATE):
+            # Every epoch: agent_1 → JAF, agent_2 → NO_ACTION
+            for e in eps:
+                if (e.outcomes.get("agent_1") != JOINT_ADMISSIBILITY_FAILURE
+                        or e.outcomes.get("agent_2") != NO_ACTION):
+                    return "FAIL"
+            return "PASS"
+        return "FAIL"
+
+    elif c == "E":
+        # Kernel tie-break detected
+        if (log.kernel_classification == "IX2_FAIL / IMPLICIT_ARBITRATION"
+                and len(eps) >= 1):
+            e0 = eps[0]
+            # Tie-break should have executed agent_1 (canonical first)
+            if (e0.outcomes.get("agent_1") == EXECUTED
+                    and e0.outcomes.get("agent_2") == JOINT_ADMISSIBILITY_FAILURE):
+                return "PASS"
+        return "FAIL"
+
+    elif c == "F":
+        # True deadlock from epoch 0; persists
+        if (log.terminal_classification == "STATE_DEADLOCK"
+                and log.kernel_classification is None
+                and eps[-1].state_after == _DEFAULT_STATE):
+            for e in eps:
+                if (e.outcomes.get("agent_1") != JOINT_ADMISSIBILITY_FAILURE
+                        or e.outcomes.get("agent_2") != JOINT_ADMISSIBILITY_FAILURE):
+                    return "FAIL"
+            return "PASS"
+        return "FAIL"
+
+    elif c == "G":
+        # Orphaning: sole ALLOW holder exits
+        if (log.terminal_classification == "ORPHANING"
+                and log.kernel_classification is None
+                and len(eps) >= 2):
+            e0 = eps[0]
+            e1 = eps[1]
+            if (e0.outcomes.get("agent_1") == EXECUTED
+                    and e0.outcomes.get("agent_2") == EXECUTED
+                    and e0.state_after == _ORPHAN_STATE
+                    and "agent_2" in e1.exits
+                    and e1.outcomes.get("agent_1") == JOINT_ADMISSIBILITY_FAILURE
+                    and e1.state_after == _ORPHAN_STATE):
+                return "PASS"
+        return "FAIL"
+
+    elif c == "H":
+        # Collapse; state preserved
+        if (log.terminal_classification == "COLLAPSE"
+                and log.kernel_classification is None
+                and len(eps) >= 2):
+            e0 = eps[0]
+            e1 = eps[1]
+            if (e0.outcomes.get("agent_1") == JOINT_ADMISSIBILITY_FAILURE
+                    and e0.outcomes.get("agent_2") == JOINT_ADMISSIBILITY_FAILURE
+                    and "agent_1" in e1.exits
+                    and "agent_2" in e1.exits):
+                return "PASS"
+        return "FAIL"
+
+    elif c == "I.a":
+        # Static agents livelock
+        if (log.terminal_classification == "STATE_LIVELOCK"
+                and log.kernel_classification is None
+                and len(eps) == 3
+                and eps[-1].state_after == _DEFAULT_STATE):
+            return "PASS"
+        return "FAIL"
+
+    elif c == "I.b":
+        # Adaptive agents coordinate; no kernel intervention
+        if (log.terminal_classification is None
+                and log.kernel_classification is None
+                and len(eps) >= 2):
+            e0 = eps[0]
+            e1 = eps[1]
+            if (e0.outcomes.get("agent_1") == JOINT_ADMISSIBILITY_FAILURE
+                    and e0.outcomes.get("agent_2") == JOINT_ADMISSIBILITY_FAILURE
+                    and e1.outcomes.get("agent_1") == EXECUTED
+                    and e1.outcomes.get("agent_2") == EXECUTED
+                    and e1.state_after == _COORD_STATE):
+                return "PASS"
+        return "FAIL"
+
+    return "FAIL"
+
+
 def run_all_conditions(
     results_dir: Optional[str] = None,
     timestamp: Optional[str] = None,
@@ -411,14 +557,18 @@ def run_all_conditions(
 
     for builder in ALL_CONDITIONS:
         cond_log = run_condition(builder, timestamp=ts)
+        cond_log.experiment_result = evaluate_condition(cond_log)
         execution_log.add_condition(cond_log)
 
-    # Compute aggregate result
+    # Compute aggregate result per §7.2
     all_pass = all(
         c.experiment_result == "PASS"
         for c in execution_log.conditions
     )
-    execution_log.aggregate_result = "PASS" if all_pass else "INCOMPLETE"
+    execution_log.aggregate_result = (
+        "IX2_PASS / COORDINATION_UNDER_DEADLOCK_ESTABLISHED"
+        if all_pass else "IX2_FAIL"
+    )
 
     # Optionally write results
     if results_dir:
