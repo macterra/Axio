@@ -38,6 +38,7 @@ from .governance_classifier import classify_governance_style
 
 from .strategies import (
     ContestPolicyAlways,
+    ContestPolicyDelayed_6,
     OpsPartitionWriter_A,
     OpsPartitionWriter_B,
     InstitutionalSteward_Rotate,
@@ -831,9 +832,13 @@ def build_condition_g() -> dict:
 
 def build_condition_h() -> dict:
     """Condition H: Ambiguity Without Timeouts (Partition Simulation).
+
+    Per v0.2.1: A0 contests from epoch 0, A1 contests from epoch 6 (delayed),
+    A2 is silent for epochs 0-11, A3 heartbeats at epoch 9.
     
-    Per v0.2: A2 is silent for epochs 0-11 (pre-silence + partition window)
-    to avoid 3-way livelock before the silence window is reached.
+    This ensures the run reaches the partition window (epochs 6-11) before
+    2-way livelock triggers. Livelock occurs after N=5 consecutive no-change
+    epochs starting from epoch 6 (i.e., around epoch 10-11).
     """
     _reset_auth_counter()
     authorities = [
@@ -844,7 +849,7 @@ def build_condition_h() -> dict:
     ]
     agents = {
         "A0": ContestPolicyAlways("A0", _find_auth_id(authorities, "K_POLICY", "A0")),
-        "A1": ContestPolicyAlways("A1", _find_auth_id(authorities, "K_POLICY", "A1")),
+        "A1": ContestPolicyDelayed_6("A1", _find_auth_id(authorities, "K_POLICY", "A1")),
         "A2": SilentWindowObserver_0_11("A2", _find_auth_id(authorities, "K_POLICY", "A2")),
         "A3": InstitutionalLogHeartbeat("A3", _find_auth_id(authorities, "K_LOG", "A3")),
     }
@@ -858,7 +863,7 @@ def build_condition_h() -> dict:
         "fault_injection": None,
         "agent_strategies": {
             "A0": "ContestPolicyAlways",
-            "A1": "ContestPolicyAlways",
+            "A1": "ContestPolicyDelayed_6",
             "A2": "SilentWindowObserver_0_11",
             "A3": "InstitutionalLogHeartbeat",
         },
@@ -956,7 +961,7 @@ def build_condition_i() -> dict:
 
 def build_condition_j() -> dict:
     """Condition J: Unauthorized Reclamation Attempt (Adversarial).
-    
+
     Per v0.2: ORPHANING is nonterminal for Condition J to allow the
     reclamation attempt at epoch 4 to execute after A3 exits at epoch 3.
     """

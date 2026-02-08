@@ -1,6 +1,6 @@
 """GS Strategy Classes — Per preregistration §7.1 v0.2."""
 
-from .contest_policy import ContestPolicyAlways
+from .contest_policy import ContestPolicyAlways, ContestPolicyDelayed_6
 from .ops_partition import OpsPartitionWriter_A, OpsPartitionWriter_B
 from .institutional_steward import InstitutionalSteward_Rotate
 from .occasional_log_challenger import OccasionalLogChallenger
@@ -13,6 +13,7 @@ from .reclaim_attempt import ReclaimAttempt_NoAuthority, ExitAbruptNoHandoff
 
 __all__ = [
     "ContestPolicyAlways",
+    "ContestPolicyDelayed_6",
     "OpsPartitionWriter_A",
     "OpsPartitionWriter_B",
     "InstitutionalSteward_Rotate",

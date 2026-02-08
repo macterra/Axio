@@ -1,10 +1,10 @@
 # Phase IX-3 GS Implementation Report
 
 * **Phase**: IX-3 Governance Styles
-* **Version**: v0.2
+* **Version**: v0.2.1
 * **Date**: 2026-02-08
 * **Status**: CLOSED — IX3_PASS / GOVERNANCE_STYLES_ESTABLISHED
-* **Preregistration Commit**: `b2011be6` (v0.2)
+* **Preregistration Commit**: `b2011be6` (v0.2 prereg; v0.2.1 adds implementation refinement for Condition H)
 * **Execution Clock**: `2025-02-07T00:00:00+00:00` (fixed synthetic clock for determinism)
 * **Environment**: Python 3.12.3, Linux 6.6.87.2-microsoft-standard-WSL2 (x86_64)
 
@@ -12,7 +12,7 @@
 
 ## 1. Executive Summary
 
-Phase IX-3 GS testing is fully implemented and prereg-compliant under v0.2. All 10 conditions execute and produce results, all 75 unit tests pass, and all conditions now exercise their core stressors as designed.
+Phase IX-3 GS testing is fully implemented and prereg-compliant under v0.2/v0.2.1. All 10 conditions execute and produce results, all 75 unit tests pass, and all conditions now exercise their core stressors as designed.
 
 **Preregistration v0.2** (commit `b2011be6`) resolved 5 internal inconsistencies identified in v0.1:
 - §2.7: Deadlock definition aligned to Pass-1/Pass-2 semantics
@@ -104,7 +104,7 @@ Per preregistration §1.6:
 | E | Livelock-Enduring | None (nonterminal) | Livelock-Enduring | ✓ PASS |
 | F | Collapse | COLLAPSE | Collapse-Accepting | ✓ PASS |
 | G | Coordinator Loss | ORPHANING | Unclassified | ✓ PASS |
-| H | Partition | STATE_LIVELOCK | Refusal-Centric | ✓ PASS |
+| H | Partition | STATE_LIVELOCK | Unclassified | ✓ PASS |
 | I | Adversarial | None | Execution-Biased | ✓ PASS |
 | J | Adversarial | None (nonterminal) | Unclassified | ✓ PASS |
 
@@ -159,10 +159,10 @@ Per preregistration §1.6:
 
 #### Condition E: Livelock Endurance
 - **Agents**: 4 — A0/A1: `ContestPolicyAlways`, A2/A3: `LivelockAcknowledger_AfterLatch`
-- **Authorities**: A0→K_POLICY, A1→K_POLICY, A2→K_LOG (DENY K_POLICY), A3→K_LOG (DENY K_POLICY)
+- **Authorities**: A0→K_POLICY, A1→K_POLICY, A2→K_LOG, A3→K_LOG (no DENY entries per v0.2)
 - **Communication**: Disabled
 - **Epochs Executed**: 30 (max 30, livelock is nonterminal for Condition E)
-- **Outcome**: A0/A1 contest K_POLICY every epoch → mutual interference → JOINT_ADMISSIBILITY_FAILURE. A2/A3 lack K_POLICY ALLOW (and face DENY from each other) — effectively unable to make institutional progress on K_POLICY. Livelock latches at epoch 4. A2/A3 detect stagnation and write `LLOCK_ACK:` markers to K_LOG after latch. Run continues to epoch 30.
+- **Outcome**: A0/A1 contest K_POLICY every epoch → mutual interference → JOINT_ADMISSIBILITY_FAILURE. A2/A3 lack K_POLICY ALLOW and cannot make institutional progress on K_POLICY. Livelock latches at epoch 4. A2/A3 detect stagnation and write `LLOCK_ACK:` markers to K_LOG after latch. Run continues to epoch 30.
 - **Metrics**: `refusal_rate=0.968`, `epoch_progress_rate(K_INST)=0.067`, `overlap=1.000`, `livelock_latched=true`, `llock_ack_in_log=true`
 - **Terminal Classification**: None (nonterminal livelock)
 - **Governance Style**: Livelock-Enduring
@@ -170,7 +170,7 @@ Per preregistration §1.6:
 
 #### Condition F: Collapse Acceptance
 - **Agents**: 4 — All: `DissolutionSequence` with staggered exit epochs (A0@5, A1@6, A2@7, A3@8)
-- **Authorities**: A0→K_LOG+K_POLICY, A1→K_LOG, A2→K_LOG, A3→K_LOG
+- **Authorities**: A0→K_LOG, A1→K_LOG, A2→K_LOG, A3→K_LOG (all K_LOG only per v0.2)
 - **Communication**: Disabled
 - **Epochs Executed**: 9 (max 30, early termination on collapse)
 - **Outcome**: Each agent writes dissolution intent marker to K_LOG at its scheduled epoch, then exits the following epoch. A0 exits at 5, A1 at 6, A2 at 7, A3 at 8. No agents remain → COLLAPSE.
@@ -191,15 +191,15 @@ Per preregistration §1.6:
 - **Classification**: PASS — coordinator departure orphans delegated coordination surfaces
 
 #### Condition H: Ambiguity Without Timeouts (Partition Simulation)
-- **Agents**: 4 — A0/A1: `ContestPolicyAlways`, A2: `SilentWindowObserver_6_11`, A3: `InstitutionalLogHeartbeat`
+- **Agents**: 4 — A0: `ContestPolicyAlways`, A1: `ContestPolicyDelayed_6`, A2: `SilentWindowObserver_0_11`, A3: `InstitutionalLogHeartbeat`
 - **Authorities**: A0→K_POLICY, A1→K_POLICY, A2→K_POLICY, A3→K_LOG
 - **Communication**: Disabled
-- **Epochs Executed**: 5 (max 30, early termination on livelock)
-- **Outcome (v0.2)**: A2 is silent for epochs 0–11 (pre-silence + partition window), so only A0/A1 contest K_POLICY. 2-way interference from epoch 0 → STATE_LIVELOCK at epoch 4. A3 writes K_LOG heartbeat at epoch 9 (if run continued). No timeout, no leader election, no authority reassignment.
-- **Metrics**: `refusal_rate=0.875`, `overlap=1.000`, `epoch_progress_rate(K_INST)=0.000`
+- **Epochs Executed**: 15 (max 30, early termination on livelock at epoch 14)
+- **Outcome (v0.2.1)**: Epochs 0–5: A0 alone writes K_POLICY (progress). Epochs 6–11: A1 joins, 2-way K_POLICY contention begins (partition window exercised). Epoch 9: A3 writes HEARTBEAT to K_LOG. Epoch 12+: A2 rejoins, 3-way contention. Epoch 14: livelock latches after 5 consecutive no-change epochs. No timeout, no leader election, no authority reassignment.
+- **Metrics**: `refusal_rate=0.625`, `overlap=0.600`, `epoch_progress_rate(K_INST)=0.467`, `livelock_latched=true`, `livelock_epoch=14`
 - **Terminal Classification**: STATE_LIVELOCK
-- **Governance Style**: Refusal-Centric
-- **Classification**: PASS — A2's pre-silence passivity (v0.2 amendment) allows the condition to test 2-way contention without 3-way pre-silence livelock. The silence window semantics are implicit in A2's None-returning strategy.
+- **Governance Style**: Unclassified
+- **Classification**: PASS — partition window (epochs 6–11) exercised; A1's delayed contest ensures 2-way contention starts within the window; heartbeat at epoch 9 executed; livelock detected after window completes
 
 #### Condition I: Tooling Default Opt-In (Adversarial)
 - **Agents**: 4 — Same allocation as Condition B (A0: OpsA, A1: OpsB, A2: Treasury+Log, A3: Policy+Registry+Log)
@@ -322,6 +322,7 @@ All strategy classes extend the IX-2 `RSA` abstract base class via `_kernel.py`.
 | Class | File | Lines | Behavior |
 |-------|------|-------|----------|
 | `ContestPolicyAlways` | `contest_policy.py` | 37 | Writes K_POLICY every epoch (creates interference when all agents target same key) |
+| `ContestPolicyDelayed_6` | `contest_policy.py` | 35 | Returns None for epochs 0–5; writes K_POLICY from epoch 6 onward (enables partition window testing) |
 | `OpsPartitionWriter_A` | `ops_partition.py` | 65 | Writes K_OPS_A every epoch (disjoint operational partition) |
 | `OpsPartitionWriter_B` | `ops_partition.py` | 65 | Writes K_OPS_B every epoch (disjoint operational partition) |
 | `InstitutionalSteward_Rotate` | `institutional_steward.py` | 45 | Rotates writes among K_POLICY, K_REGISTRY, K_LOG by `epoch % 3` |
@@ -332,7 +333,7 @@ All strategy classes extend the IX-2 `RSA` abstract base class via `_kernel.py`.
 | `DissolutionSequence` | `dissolution.py` | 42 | Writes dissolution intent to K_LOG at scheduled epoch; exits next epoch |
 | `Coordinator_RegistryLog` | `coordinator.py` | 85 | Manages K_REGISTRY and K_LOG until scheduled exit at epoch 8 |
 | `DeferToCoordinator` | `coordinator.py` | 85 | Operates within assigned OPS/TREASURY scope; sends messages to coordinator |
-| `SilentWindowObserver_6_11` | `silent_window.py` | 74 | Normal K_POLICY writes except epochs 6–11: returns None for both `propose_action()` and `compose_message()` |
+| `SilentWindowObserver_0_11` | `silent_window.py` | 74 | Returns None for epochs 0–11 (pre-silence + partition window); normal K_POLICY writes from epoch 12 |
 | `InstitutionalLogHeartbeat` | `silent_window.py` | 74 | Writes K_LOG heartbeat at epoch 9 only |
 | `ReclaimAttempt_NoAuthority` | `reclaim_attempt.py` | 71 | At reclaim epoch: submits WRITE to K_OPS_A citing no authorities (guaranteed Pass-1 FAIL) |
 | `ExitAbruptNoHandoff` | `reclaim_attempt.py` | 71 | Exits at scheduled epoch with no handoff write |
@@ -455,8 +456,8 @@ src/phase_ix/3-GS/
 │   ├── governance_classifier.py      # §5.2 style classification (78 lines)
 │   ├── gs_harness.py                 # Test orchestration, 10 builders, PASS eval (~1,290 lines)
 │   └── strategies/
-│       ├── __init__.py               # Strategy re-exports (32 lines)
-│       ├── contest_policy.py         # ContestPolicyAlways (37 lines)
+│       ├── __init__.py               # Strategy re-exports (34 lines)
+│       ├── contest_policy.py         # ContestPolicyAlways, ContestPolicyDelayed_6 (72 lines)
 │       ├── ops_partition.py          # OpsPartitionWriter_A/B (65 lines)
 │       ├── institutional_steward.py  # InstitutionalSteward_Rotate (45 lines)
 │       ├── occasional_log_challenger.py # OccasionalLogChallenger (55 lines)
@@ -482,8 +483,9 @@ src/phase_ix/3-GS/
 
 | Artifact | SHA-256 |
 |----------|---------|
-| Preregistration (frozen sections) | `19b53a61a67b5bb7dd73b8eaa8e1a857fe4ca46a7b40188b1a42944a7c1e53c5` |
-| Results (gs_results_2025-02-07T00-00-00_00-00.json) | `fd7f56f81a1a4a79d7504e848b6f6ff4d205cd410d7b64167e421cd0c24d2b6a` |
+| Preregistration v0.1 (frozen sections) | `19b53a61a67b5bb7dd73b8eaa8e1a857fe4ca46a7b40188b1a42944a7c1e53c5` |
+| Preregistration v0.2 (frozen sections) | `191d7ba4d88d947118c8f2d5f6fd3d413670df5068e37297419076b1551cfff6` |
+| Results (gs_results_2025-02-07T00-00-00_00-00.json) | `649647fc58724f23af9398bd836b1b04f41e91372b7b74814a6d65c854cb57c1` |
 
 ---
 
@@ -502,22 +504,23 @@ All 10 conditions executed their core stressors faithfully and produced outcomes
 5. **Livelock can be endured** — Detection, acknowledgment, and continued operation under livelock are observable (Condition E)
 6. **Voluntary dissolution produces collapse** — Sequential exit with recorded intent terminates cleanly (Condition F)
 7. **Coordinator loss orphans coordination surfaces** — Delegated coordination fails on coordinator departure (Condition G)
-8. **Silence window semantics are implicit in strategy** — A2's pre-silence passivity allows 2-way livelock without 3-way pre-window contention (Condition H)
+8. **Partition window semantics exercised** — A1's delayed contest ensures 2-way contention begins at epoch 6; partition window (epochs 6-11) fully traversed before livelock; heartbeat at epoch 9 executed (Condition H)
 9. **Tooling sovereignty violation is detectable** — Harness-injected actions are identified and flagged (Condition I)
 10. **Reclamation is refused by closed-world capability** — Orphaned resource remains inaccessible to unauthorized reclaim attempts (Condition J)
 11. **Determinism holds** — All conditions replay bit-identically after timestamp strip
 12. **No condition is failure-free** — Every condition exhibits at least one structural failure mode
 
-### 9.2 v0.2 Amendment Resolution
+### 9.2 v0.2/v0.2.1 Amendment Resolution
 
-The v0.1 preregistration contained 5 internal inconsistencies that were corrected in v0.2:
+The v0.1 preregistration contained 5 internal inconsistencies that were corrected in v0.2. Additionally, v0.2.1 refined Condition H to ensure the partition window is exercised:
 
-| Issue | v0.1 Problem | v0.2 Resolution |
-|-------|--------------|-----------------|
+| Issue | v0.1 Problem | v0.2/v0.2.1 Resolution |
+|-------|--------------|------------------------|
 | C handoff timing | Exit check before propose_action | Handoff at epoch 9, exit at 10 |
 | E DENY semantics | Global veto → instant deadlock | DENY removed; ALLOW absence sufficient |
 | F allocation conflict | K_POLICY orphan before collapse | K_POLICY removed from A0 |
-| H pre-silence livelock | 3-way contention before window | A2 passive epochs 0-11 |
+| H pre-silence livelock | 3-way contention before window | v0.2: A2 passive epochs 0-11 |
+| H window unreached | 2-way livelock at epoch 4 | v0.2.1: A1 contests from epoch 6 only |
 | J orphaning terminal | Run stops before reclaim | Orphaning nonterminal for J |
 
 All amendments are documented in the v0.2 preregistration Change Log.
@@ -569,10 +572,11 @@ This phase provides no evidence for:
 
 **Prepared by**: Implementation Agent  
 **Execution Date**: 2025-02-07T00:00:00Z (fixed synthetic clock)  
-**Audit Date**: 2026-02-07  
+**Audit Date**: 2026-02-08  
 **Prereg Version**: v0.2 (commit `b2011be6`)  
+**Implementation Version**: v0.2.1 (Condition H delayed contest)  
 **Prereg Hash**: `191d7ba4d88d947118c8f2d5f6fd3d413670df5068e37297419076b1551cfff6`  
-**Results Hash**: `c0e0e3ee921a6b3eb82c8c26a5f3c89c15242cb9b13a735925d5c2a9c90fb012`  
+**Results Hash**: `649647fc58724f23af9398bd836b1b04f41e91372b7b74814a6d65c854cb57c1`  
 **Verified by**: 75/75 unit tests passing  
 **Aggregate Result**: **IX3_PASS / GOVERNANCE_STYLES_ESTABLISHED**  
 **Classification**: `CLOSED — POSITIVE`  
