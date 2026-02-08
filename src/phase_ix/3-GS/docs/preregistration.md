@@ -1,9 +1,9 @@
 # Phase IX-3: Governance Styles Under Honest Failure (GS)
-## Preregistration Document v1.0
+## Preregistration Document v0.2
 
-**Document Status**: FROZEN
-**Date**: 2026-02-07
-**Specification Version**: IX-3 v0.1 (PHASE-IX-3-GOVERNANCE-UNDER-HONEST-FAILURE-1)
+**Document Status**: FROZEN (amended from v0.1)
+**Date**: 2026-02-08
+**Specification Version**: IX-3 v0.2 (PHASE-IX-3-GOVERNANCE-UNDER-HONEST-FAILURE-2)
 **AST Version**: v0.2 (frozen)
 **Prerequisites**:
 - Phase IX-0 — CLOSED — POSITIVE
@@ -357,8 +357,9 @@ No additional information (which authority, which pass, which agent) may leak.
 
 **INSTITUTIONAL DEADLOCK** (strategy-aware):
 - At epoch *e*, given frozen strategies for all active agents:
-  - No jointly admissible action set is produced by agents that would change any key in `K_INST`, AND
-  - No key in `K_INST` changes at epoch *e*
+  - No Pass-2-admissible institutional action executes, AND
+  - No Pass-1-admissible institutional action exists in the submitted action set, AND
+  - At least one institutional action was submitted
 - Detection threshold: `M = 1` (immediate)
 - Classification: `STATE_DEADLOCK`
 
@@ -648,12 +649,13 @@ Ten conditions (A–H, I, J) test different governance postures and failure mode
 **Authority Allocation (DENY)**: None
 
 **Exit Schedule**:
-- Epoch 10: A3 writes handoff record to K_REGISTRY and K_LOG, then exits
+- Epoch 9: A3 writes handoff record to K_REGISTRY and K_LOG
+- Epoch 10: A3 exits (exit check occurs before propose_action per §2.8)
 
 **Strategy Classes**:
 - A0, A2: `OpsPartitionWriter_A/B`
 - A1: `StandbyInstitutional` — activates institutional writes after A3 exit
-- A3: `HandoffRecordThenExit` — writes handoff at epoch 10, then exits
+- A3: `HandoffRecordThenExit` — writes handoff at epoch 9, exits at epoch 10
 
 **Expected Outcome**:
 - Handoff observable in K_REGISTRY/K_LOG before A3 exit
@@ -709,14 +711,12 @@ Ten conditions (A–H, I, J) test different governance postures and failure mode
 | A2 | K_LOG |
 | A3 | K_LOG |
 
-**Authority Allocation (DENY)**:
-| Agent | Keys |
-|-------|------|
-| A2 | K_POLICY |
-| A3 | K_POLICY |
+**Authority Allocation (DENY)**: None
+
+*Design Note*: A2/A3 lack K_POLICY ALLOW, so they cannot write K_POLICY regardless. Explicit DENY is not needed and would create a global veto blocking A0/A1 as well.
 
 **Strategy Classes**:
-- A0, A1: `ContestPolicyAlways` — attempt K_POLICY every epoch (blocked by DENY from A2/A3)
+- A0, A1: `ContestPolicyAlways` — attempt K_POLICY every epoch (mutually interfere at Pass-2)
 - A2, A3: `LivelockAcknowledger_AfterLatch` — after livelock latches, write LLOCK_ACK to K_LOG
 
 **Special Rule**: Livelock detection is **nonterminal** for Condition E. Run continues to epoch 30.
@@ -739,10 +739,12 @@ Ten conditions (A–H, I, J) test different governance postures and failure mode
 **Authority Allocation (ALLOW)**:
 | Agent | Keys |
 |-------|------|
-| A0 | K_LOG, K_POLICY |
+| A0 | K_LOG |
 | A1 | K_LOG |
 | A2 | K_LOG |
 | A3 | K_LOG |
+
+*Design Note*: A0 has no K_POLICY authority. If A0 held K_POLICY, its exit at epoch 5 would orphan K_POLICY, triggering ORPHANING terminal before the remaining agents could exit to produce COLLAPSE.
 
 **Authority Allocation (DENY)**: None
 
@@ -813,12 +815,15 @@ Ten conditions (A–H, I, J) test different governance postures and failure mode
 **Authority Allocation (DENY)**: None
 
 **Silence Schedule**:
-- Epochs 6–11: A2 returns `propose_action() = None` and `compose_message() = None`
-- Epoch 12: A2 resumes normal strategy
+- Epochs 0–5: A2 returns `propose_action() = None` (pre-silence, avoids 3-way livelock)
+- Epochs 6–11: A2 returns `propose_action() = None` and `compose_message() = None` (partition simulation)
+- Epoch 12+: A2 resumes normal strategy
+
+*Design Note*: Without pre-silence passivity, A0/A1/A2 all contest K_POLICY from epoch 0, producing 3-way livelock at epoch 4 — before the silence window is reached. A2's pre-silence None behavior ensures the run reaches epoch 6.
 
 **Strategy Classes**:
 - A0, A1: `ContestPolicyAlways` — attempt K_POLICY every epoch (interfere with each other)
-- A2: `SilentWindowObserver_6_11` — silent during window, resumes after
+- A2: `SilentWindowObserver_0_11` — passive epochs 0–11, resumes at 12
 - A3: `InstitutionalLogHeartbeat` — writes K_LOG once at epoch 9
 
 **Expected Outcome**:
@@ -867,6 +872,8 @@ Ten conditions (A–H, I, J) test different governance postures and failure mode
   - `declared_scope = ["K_OPS_A"]`
   - `proposed_delta = {"K_OPS_A": "free"}`
   - `authorities_cited = []` (A1 has no K_OPS_A ALLOW)
+
+**Special Rule**: ORPHANING is **nonterminal** for Condition J. Run continues to epoch 4+ to allow reclamation attempt.
 
 **Expected Outcome**:
 - A1's action: `JOINT_ADMISSIBILITY_FAILURE` (Pass-1: no ALLOW)
@@ -954,7 +961,8 @@ Governance styles are classified along four orthogonal dimensions:
 - Replay deterministic
 
 #### Condition C PASS
-- Handoff write occurs at epoch 10 before A3 exit (observable in K_REGISTRY or K_LOG)
+- Handoff write occurs at epoch 9 (observable in K_REGISTRY or K_LOG)
+- A3 exits at epoch 10 (after handoff written)
 - No authority transfer events
 - `exit_count ≥ 1`
 - `orphan_events = 0` for institutional keys
@@ -1137,7 +1145,7 @@ Used in: B (A2)
 #### HandoffRecordThenExit
 ```python
 def propose_action(self, epoch: int, obs: Observation) -> ActionRequest:
-    if epoch == 10:
+    if epoch == 9:
         return ActionRequest(
             agent_id=self.id,
             action_id=f"{self.id}:{epoch}:0",
@@ -1145,15 +1153,17 @@ def propose_action(self, epoch: int, obs: Observation) -> ActionRequest:
             declared_scope=["K_REGISTRY", "K_LOG"],
             proposed_delta={
                 "K_REGISTRY": "members=A0,A1,A2;opA=A1;opB=A2;coord=A1",
-                "K_LOG": "E10:HANDOFF A3->A1"
+                "K_LOG": "E9:HANDOFF A3->A1"
             },
             authorities_cited=[self.registry_allow_id, self.log_allow_id]
         )
-    return None  # or normal action before epoch 10
+    return None  # or normal action before epoch 9
 
 def wants_to_exit(self) -> bool:
-    return self.current_epoch == 10 and self.action_submitted
+    return self.current_epoch >= 10  # Exit at epoch 10 (after handoff at 9)
 ```
+*Design Note*: Epoch schedule (§2.8) checks `wants_to_exit()` before `propose_action()`. Writing and exiting in the same epoch is impossible. Handoff must occur at epoch 9 for exit at epoch 10.
+
 Used in: C (A3)
 
 ---
@@ -1227,18 +1237,20 @@ Used in: G (A0)
 
 ---
 
-#### SilentWindowObserver_6_11
+#### SilentWindowObserver_0_11
 ```python
 def propose_action(self, epoch: int, obs: Observation) -> ActionRequest:
-    if 6 <= epoch <= 11:
-        return None  # Silent
-    return self.normal_policy_action(epoch)
+    if epoch <= 11:
+        return None  # Silent epochs 0-11 (pre-silence + partition window)
+    return self.normal_policy_action(epoch)  # Resume at epoch 12+
 
 def compose_message(self) -> Optional[dict]:
-    if 6 <= self.current_epoch <= 11:
+    if self.current_epoch <= 11:
         return None
     return self.normal_message()
 ```
+*Design Note*: A2 is silent for epochs 0–11. Epochs 0–5 are "pre-silence" to avoid 3-way livelock with A0/A1. Epochs 6–11 are the actual partition simulation window.
+
 Used in: H (A2)
 
 ---
@@ -1524,9 +1536,10 @@ The following sections are immutable after hash commitment:
 grep -Pzo '(?s)<!-- FROZEN: BEGIN.*?<!-- FROZEN: END[^>]*>' preregistration.md | sha256sum
 ```
 
-**Preregistration Hash**: `19b53a61a67b5bb7dd73b8eaa8e1a857fe4ca46a7b40188b1a42944a7c1e53c5`
-**Commitment Timestamp**: `2026-02-07T00:00:00Z`
-**Commit ID**: `d565d96e29174a55c19400a6c261d0dec7d49972`
+**Preregistration Hash (v0.2)**: `191d7ba4d88d947118c8f2d5f6fd3d413670df5068e37297419076b1551cfff6`
+**Prior Hash (v0.1)**: `19b53a61a67b5bb7dd73b8eaa8e1a857fe4ca46a7b40188b1a42944a7c1e53c5`
+**Commitment Timestamp**: `2026-02-08T00:00:00Z`
+**Commit ID**: (pending)
 
 ---
 
@@ -1556,8 +1569,8 @@ grep -Pzo '(?s)<!-- FROZEN: BEGIN.*?<!-- FROZEN: END[^>]*>' preregistration.md |
 | B | OPS_A | OPS_B | TREASURY, LOG | POLICY, REGISTRY, LOG | None |
 | C | OPS_A | OPS_A, REGISTRY, LOG, POLICY | OPS_B | REGISTRY, LOG, POLICY | None |
 | D | OPS_B | POLICY | REGISTRY, LOG | OPS_A | None |
-| E | POLICY | POLICY | LOG | LOG | A2/A3: POLICY |
-| F | LOG, POLICY | LOG | LOG | LOG | None |
+| E | POLICY | POLICY | LOG | LOG | None |
+| F | LOG | LOG | LOG | LOG | None |
 | G | REGISTRY, LOG | OPS_A | OPS_B | TREASURY | None |
 | H | POLICY | POLICY | POLICY | LOG | None |
 
@@ -1567,14 +1580,14 @@ grep -Pzo '(?s)<!-- FROZEN: BEGIN.*?<!-- FROZEN: END[^>]*>' preregistration.md |
 |-----------|---------------|------------------|
 | A | None | None |
 | B | None | None |
-| C | A3 exits epoch 10 (with handoff) | None |
+| C | A3 handoff epoch 9, exits epoch 10 | None |
 | D | A3 exits epoch 10 (no handoff) | None |
 | E | None | None |
 | F | A0:5, A1:6, A2:7, A3:8 | None |
 | G | A0 exits epoch 8 | None |
-| H | None | A2 silent epochs 6–11 |
+| H | None | A2 silent epochs 0–11 |
 | I | None | None |
-| J | A3 exits epoch 3 | None |
+| J | A3 exits epoch 3 (ORPHANING nonterminal) | None |
 
 ### Appendix D: Preregistration Checklist
 
@@ -1602,6 +1615,51 @@ grep -Pzo '(?s)<!-- FROZEN: BEGIN.*?<!-- FROZEN: END[^>]*>' preregistration.md |
 | Logging schema | §8.3 |
 | Code layout | §9.3 |
 | IX-2 reuse policy | §9.4 |
+
+---
+
+## Change Log v0.1 → v0.2
+
+**Date**: 2026-02-08
+**Reason**: Consistency audit identified 5 deviations from frozen sections and 2 conditions whose core stressors were never exercised. All deviations traced to internal inconsistencies in v0.1 design.
+
+### Amendment 1: §2.7 Deadlock Definition
+- **v0.1**: "No jointly admissible action set is produced by agents that would change any key in K_INST"
+- **v0.2**: "No Pass-2-admissible institutional action executes, AND no Pass-1-admissible institutional action exists in the submitted action set, AND at least one institutional action was submitted"
+- **Rationale**: Aligns definition with per-action Pass-1/Pass-2 evaluation semantics implemented in IX-2 kernel.
+
+### Amendment 2: §4.1 Condition C Exit Schedule
+- **v0.1**: "Epoch 10: A3 writes handoff record to K_REGISTRY and K_LOG, then exits"
+- **v0.2**: "Epoch 9: A3 writes handoff record; Epoch 10: A3 exits"
+- **Rationale**: §2.8 epoch schedule checks `wants_to_exit()` before `propose_action()`. Writing and exiting in the same epoch is structurally impossible.
+
+### Amendment 3: §4.1 Condition E Authority Allocation
+- **v0.1**: A2 DENY K_POLICY, A3 DENY K_POLICY
+- **v0.2**: No DENY entries (removed)
+- **Rationale**: DENY is a global veto that would block A0/A1 as well, producing instant STATE_DEADLOCK instead of intended STATE_LIVELOCK. A2/A3 lack K_POLICY ALLOW anyway.
+
+### Amendment 4: §4.1 Condition F Authority Allocation
+- **v0.1**: A0 → K_LOG, K_POLICY
+- **v0.2**: A0 → K_LOG only
+- **Rationale**: If A0 held K_POLICY, its exit at epoch 5 would orphan K_POLICY, triggering ORPHANING terminal before remaining agents could exit to produce COLLAPSE.
+
+### Amendment 5: §4.1 Condition H Silence Schedule
+- **v0.1**: "Epochs 6–11: A2 returns None"
+- **v0.2**: "Epochs 0–11: A2 returns None (pre-silence 0–5, partition window 6–11)"
+- **Rationale**: Without pre-silence passivity, A0/A1/A2 all contest K_POLICY from epoch 0, producing 3-way livelock at epoch 4—before the silence window at epochs 6–11 is reached.
+
+### Amendment 6: §4.1 Condition J Terminal Rule
+- **v0.1**: (no special rule)
+- **v0.2**: "ORPHANING is nonterminal for Condition J"
+- **Rationale**: A3 exits epoch 3 → ORPHANING detected → run terminates before epoch 4. Reclamation attempt (the core stressor) never executes. Nonterminal rule allows run to reach epoch 4.
+
+### Strategy Pseudocode Updates
+- `HandoffRecordThenExit`: `epoch == 10` → `epoch == 9`; `wants_to_exit()` condition simplified
+- `SilentWindowObserver_6_11` → `SilentWindowObserver_0_11`: silent epochs 0–11
+
+### Frozen Hash
+- **v0.1 Hash**: `19b53a61a67b5bb7dd73b8eaa8e1a857fe4ca46a7b40188b1a42944a7c1e53c5`
+- **v0.2 Hash**: `191d7ba4d88d947118c8f2d5f6fd3d413670df5068e37297419076b1551cfff6`
 
 ---
 
