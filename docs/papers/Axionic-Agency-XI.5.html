@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency XI.5 — Governance Styles Under Honest Failure (IX-3) - Axionic Agency Lab</title>
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../" class="nav-brand">
+            <img src="../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href=".././">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
+
+<h1
+id="axionic-agency-xi.5-governance-styles-under-honest-failure-ix-3">Axionic
+Agency XI.5 — Governance Styles Under Honest Failure (IX-3)</h1>
+<p><em>Empirical results from preregistered governance-style stress
+testing under non-sovereign authority constraints</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026.02.08</p>
+<h2 id="abstract">Abstract</h2>
+<p>Governance systems are often evaluated by their ability to resolve
+conflict, sustain authority, or avoid failure. This framing presupposes
+that failure is pathological. Phase IX-3 tests the opposite hypothesis:
+that under non-sovereign authority, <strong>honest failure is not a
+defect but an unavoidable structural outcome</strong>, and that
+governance reduces to explicit, classifiable styles distinguished by how
+failure is acknowledged rather than avoided.</p>
+<p>Using a preregistered, deterministic, non-optimizing kernel with
+closed-world authority semantics, we evaluate ten institutional
+configurations spanning contention, partition, exit, dissolution,
+adversarial tooling, and unauthorized reclamation. No authority
+aggregation, arbitration, recovery, or escalation mechanisms are
+permitted beyond those explicitly licensed.</p>
+<p>Across all conditions, governance terminates only via
+<strong>deadlock, livelock, orphaning, collapse, or bounded
+execution</strong>, each of which is observable, auditable, and
+irreversible by design. No condition achieves frictionless governance.
+No condition collapses semantically. All outcomes replay
+bit-identically.</p>
+<p>These results establish a positive empirical claim: <strong>under
+honest failure semantics, governance does not converge to optimal
+resolution but to a small set of structurally stable styles</strong>,
+each with irreducible loss. This work closes Phase IX-3 and licenses no
+claims about optimality, desirability, or efficiency—only about what
+governance can remain once illegitimate escape hatches are removed.</p>
+<h2 id="introduction">1. Introduction</h2>
+<p>Governance theory frequently assumes that sufficiently advanced
+mechanisms—deliberation, aggregation, arbitration, or adaptation—can
+eliminate failure. This assumption collapses once authority itself is
+treated as a constrained, non-sovereign resource.</p>
+<p>Prior Axionic phases eliminated several candidate explanations for
+collapse: epistemic error, misaligned incentives, and intentional
+misuse. Phase IX-3 addresses a narrower and more precise question:</p>
+<blockquote>
+<p><strong>What forms of governance remain possible when failure is
+treated as honest, irreversible, and non-recoverable by
+fiat?</strong></p>
+</blockquote>
+<p>Rather than attempting to design “better” governance, IX-3 classifies
+<strong>what governance reduces to</strong> once the kernel refuses to
+decide outcomes, resolve conflicts, or reassign authority.</p>
+<p>The result is not a spectrum of quality, but a <strong>taxonomy of
+styles</strong>, each defined by how failure is tolerated, endured, or
+accepted.</p>
+<h2 id="experimental-architecture">2. Experimental Architecture</h2>
+<h3 id="non-sovereign-kernel">2.1 Non-Sovereign Kernel</h3>
+<p>The kernel enforces:</p>
+<ul>
+<li><strong>Holder-bound ALLOW authorities</strong></li>
+<li><strong>Global DENY vetoes</strong></li>
+<li><strong>Closed-world capability checking</strong></li>
+<li><strong>Two-pass admissibility (capability →
+interference)</strong></li>
+<li><strong>No arbitration, scheduling, or tie-breaking</strong></li>
+</ul>
+<p>If an action fails admissibility, it fails silently and atomically.
+The kernel never chooses among competing agents.</p>
+<h3 id="authority-preservation">2.2 Authority Preservation</h3>
+<p>All authority artifacts are:</p>
+<ul>
+<li>injected at epoch 0,</li>
+<li>immutable thereafter,</li>
+<li>never transferred, synthesized, revoked, or reclaimed.</li>
+</ul>
+<p>Exit removes only the exiting agent’s <em>future actions</em>.
+Authority does not follow survival.</p>
+<h3 id="honest-failure-semantics">2.3 Honest Failure Semantics</h3>
+<p>The kernel recognizes four terminal failure modes:</p>
+<ul>
+<li><strong>Deadlock</strong> — no admissible institutional actions
+exist</li>
+<li><strong>Livelock</strong> — admissible actions collide
+persistently</li>
+<li><strong>Orphaning</strong> — authority becomes permanently
+unusable</li>
+<li><strong>Collapse</strong> — no agents remain</li>
+</ul>
+<p>These are not errors. They are lawful outcomes.</p>
+<h2 id="governance-styles-as-an-empirical-question">3. Governance Styles
+as an Empirical Question</h2>
+<p>IX-3 reframes governance not as optimization but as <strong>posture
+under loss</strong>.</p>
+<p>A governance style is defined operationally by:</p>
+<ul>
+<li>tolerance for refusal,</li>
+<li>response to deadlock,</li>
+<li>handling of exit,</li>
+<li>acceptance or rejection of loss.</li>
+</ul>
+<p>No style is preferred. No style is repaired. The experiment observes
+which styles persist.</p>
+<h2 id="experimental-conditions">4. Experimental Conditions</h2>
+<p>Ten preregistered conditions (A–J) were executed under identical
+kernel semantics:</p>
+<ul>
+<li><strong>A</strong>: Symmetric contention</li>
+<li><strong>B</strong>: Partitioned execution</li>
+<li><strong>C</strong>: Exit with handoff</li>
+<li><strong>D</strong>: Exit without handoff</li>
+<li><strong>E</strong>: Endured livelock</li>
+<li><strong>F</strong>: Voluntary dissolution</li>
+<li><strong>G</strong>: Coordinator loss</li>
+<li><strong>H</strong>: Partition ambiguity without timeouts</li>
+<li><strong>I</strong>: Tooling sovereignty violation</li>
+<li><strong>J</strong>: Unauthorized reclamation attempt</li>
+</ul>
+<p>Each condition isolates a distinct governance stressor. All
+strategies are deterministic and frozen.</p>
+<h2 id="metrics-and-classification">5. Metrics and Classification</h2>
+<p>Governance is evaluated using:</p>
+<ul>
+<li><strong>Institutional progress rate</strong></li>
+<li><strong>Refusal rate</strong></li>
+<li><strong>Write overlap rate</strong></li>
+<li><strong>Exit and orphaning counts</strong></li>
+<li><strong>Terminal classification</strong></li>
+</ul>
+<p>A falsification condition—<strong>FAILURE_FREE_GOVERNANCE</strong>—is
+emitted if a run exhibits zero friction. No such run occurred.</p>
+<h2 id="results">6. Results</h2>
+<h3 id="aggregate-outcome">6.1 Aggregate Outcome</h3>
+<p>Across all ten conditions:</p>
+<ul>
+<li><strong>All runs PASS</strong></li>
+<li><strong>All runs replay bit-identically</strong></li>
+<li><strong>No friction-free governance occurs</strong></li>
+<li><strong>No unauthorized authority recovery occurs</strong></li>
+</ul>
+<p>Every run terminates (or stabilizes) in a recognized governance
+style.</p>
+<h3 id="observed-governance-styles">6.2 Observed Governance Styles</h3>
+<p>Five descriptive styles emerge:</p>
+<ol type="1">
+<li><strong>Refusal-Centric</strong> — contention produces livelock</li>
+<li><strong>Execution-Biased</strong> — high throughput with latent
+fragility</li>
+<li><strong>Livelock-Enduring</strong> — acknowledged stagnation</li>
+<li><strong>Collapse-Accepting</strong> — voluntary institutional
+termination</li>
+<li><strong>Unclassified</strong> — orphaned or partial
+institutions</li>
+</ol>
+<p>No additional stable regimes appear.</p>
+<h2 id="critical-edge-conditions">7. Critical Edge Conditions</h2>
+<h3 id="waste-over-theft-condition-j">7.1 Waste Over Theft (Condition
+J)</h3>
+<p>When authority is orphaned, reclamation is refused—even under
+pressure. The system prefers <strong>permanent loss</strong> to
+unauthorized recovery.</p>
+<p>This validates the strongest architectural claim: <strong>waste is
+safer than theft</strong>.</p>
+<h3 id="tooling-sovereignty-condition-i">7.2 Tooling Sovereignty
+(Condition I)</h3>
+<p>When the harness injects an action after an agent returns
+<code>None</code>, the run emits
+<code>IX3_FAIL / TOOLING_SOVEREIGNTY</code>.</p>
+<p>The boundary between <em>agent refusal</em> and <em>tool
+fabrication</em> is enforceable.</p>
+<h3 id="partition-ambiguity-condition-h">7.3 Partition Ambiguity
+(Condition H)</h3>
+<p>During simulated partitions, the system does not guess, elect, or
+timeout. It <strong>stops</strong>.</p>
+<p>Ambiguity is treated as non-action. Livelock emerges only after the
+partition window completes.</p>
+<p>Without a sovereign clock, there is no timeout—only a pause in
+causality.</p>
+<h2 id="interpretation">8. Interpretation</h2>
+<p>Three conclusions follow:</p>
+<ol type="1">
+<li><p><strong>Governance cannot eliminate failure</strong> All
+configurations exhibit irreducible loss.</p></li>
+<li><p><strong>Honest failure outperforms covert resolution</strong>
+Systems that refuse to repair loss maintain integrity.</p></li>
+<li><p><strong>Governance is a posture choice</strong> Deadlock,
+fragility, and waste are not bugs but trade-offs.</p></li>
+</ol>
+<p>There is no fourth option.</p>
+<h2 id="survivability-vs.-utility">9. Survivability vs. Utility</h2>
+<p>This work evaluates <strong>survivability</strong>, not
+performance.</p>
+<p>A governance system may be slow, wasteful, or unproductive and still
+be structurally valid. Optimization, efficiency, and desirability are
+explicitly out of scope.</p>
+<h2 id="limitations">10. Limitations</h2>
+<p>This phase does <strong>not</strong> test:</p>
+<ul>
+<li>learning or adaptation,</li>
+<li>exercised internal state,</li>
+<li>coordination or coalition dynamics,</li>
+<li>semantic access to commitments,</li>
+<li>injection politics.</li>
+</ul>
+<p>Those capabilities are reserved for subsequent phases.</p>
+<h2 id="conclusion">11. Conclusion</h2>
+<blockquote>
+<p><strong>Governance under non-sovereign authority does not converge to
+resolution, only to style.</strong></p>
+</blockquote>
+<p>Phase IX-3 demonstrates that once illegitimate escape hatches are
+removed, governance stabilizes into a small set of honest failure
+postures. Each preserves integrity by refusing to lie about loss.</p>
+<p>This closes Phase IX-3.</p>
+<h2 id="status">Status</h2>
+<ul>
+<li><strong>Phase</strong>: IX-3</li>
+<li><strong>Series</strong>: Axionic Agency XI</li>
+<li><strong>Classification</strong>: <strong>CLOSED —
+POSITIVE</strong></li>
+<li><strong>Licensed Claim</strong>:</li>
+</ul>
+<blockquote>
+<p><em>Given fixed authority and refusal semantics, governance exhibits
+identifiable structural styles with irreducible failure modes.</em></p>
+</blockquote>
+<p>No other claims are licensed.</p>
+
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
