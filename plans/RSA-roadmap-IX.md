@@ -1,17 +1,17 @@
 # **Axionic Phase IX — Reflective Sovereign Agent (RSA)**
 
-* **Reflective Sovereign Agent (Design & Coordination Phase)**
-* **Roadmap v0.4 (Post-IX-2 Closure, Kernel-Fixed, Choice-Space)**
+*Reflective Sovereign Agent (Design & Coordination Phase)*
+*Roadmap v0.5 (Post-IX-3 Closure, Kernel-Fixed, Choice-Space)*
 
-David McFadzean<br>
-*Axionic Agency Lab*<br>
-2026-02-07
+David McFadzean
+*Axionic Agency Lab*
+2026-02-08
 
 ---
 
 ## 0. Role of This Roadmap
 
-This roadmap sequences **Phase IX investigations** under constraints **permanently fixed** by Phases I–VIII and now **empirically reinforced by Phase IX-0, IX-1, and IX-2**, in particular:
+This roadmap sequences **Phase IX investigations** under constraints **permanently fixed** by Phases I–VIII and now **empirically reinforced by Phase IX-0, IX-1, IX-2, and IX-3**, in particular:
 
 * **AST Spec v0.2** — *Authority State Transformation Specification* (frozen),
 * **AKR-0 v0.1** — *Authority Kernel Runtime Calibration* (**CLOSED — POSITIVE**),
@@ -19,7 +19,8 @@ This roadmap sequences **Phase IX investigations** under constraints **permanent
 * **Phase VIII — GSA-PoC** — *Governance Stress Architecture* (**CLOSED — POSITIVE**),
 * **Phase IX-0 — Translation Layer Integrity (TLI)** (**CLOSED — POSITIVE**),
 * **Phase IX-1 — Value Encoding Without Aggregation (VEWA)** (**CLOSED — POSITIVE**),
-* **Phase IX-2 — Coordination Under Deadlock (CUD)** (**CLOSED — POSITIVE**).
+* **Phase IX-2 — Coordination Under Deadlock (CUD)** (**CLOSED — POSITIVE**),
+* **Phase IX-3 — Governance Styles Under Honest Failure (GS)** (**CLOSED — POSITIVE**).
 
 Phase IX explicitly assumes:
 
@@ -30,6 +31,7 @@ Phase IX explicitly assumes:
 * **Intent-to-authority translation can be implemented without proxy sovereignty** (IX-0).
 * **Values can be represented as explicit authority constraints without aggregation or semantic resolution** (IX-1).
 * **Coordination, if it occurs at all, must arise from agent-voluntary behavior under constraint** (IX-2).
+* **Governance cannot eliminate failure; it can only choose how failure is owned** (IX-3).
 
 This roadmap is **non-gated**.
 Phase IX does not test feasibility; it explores **design regimes under closed, verified constraints**.
@@ -48,7 +50,8 @@ Phase IX may begin only if **all** of the following hold:
 6. **Tooling cannot silently exercise proxy sovereignty** (Phase IX-0).
 7. **Values do not require aggregation to exist as enforceable constraints** (Phase IX-1).
 8. **Coordination does not require kernel arbitration or implicit priority** (Phase IX-2).
-9. No unresolved kernel-level unknowns remain.
+9. **Governance admits honest terminal failure without semantic collapse** (Phase IX-3).
+10. No unresolved kernel-level unknowns remain.
 
 All preconditions are satisfied.
 
@@ -64,15 +67,18 @@ Phase IX is **not**:
 * a safety proof,
 * an alignment solution,
 * a legitimacy oracle,
-* a convergence guarantee.
+* a convergence guarantee,
+* a promise of coordination.
 
 Phase IX **is**:
 
 * a **design-space exploration**,
 * a study of **coordination under honest failure**,
-* an examination of **value, authority, and sovereignty after aggregation, arbitration, and proxy decision-making are no longer available**.
+* an examination of **value, authority, and sovereignty after aggregation, arbitration, recovery, and proxy decision-making are no longer available**.
 
 All outcomes — including deadlock, livelock, orphaning, and collapse — are valid results.
+
+IX-3 establishes that **failure is not an anomaly to be fixed**, but a structural boundary condition to be classified.
 
 ---
 
@@ -83,6 +89,10 @@ All outcomes — including deadlock, livelock, orphaning, and collapse — are v
 This is no longer a question of implementation.
 
 It is a question of **choice under irreversible constraint**.
+
+IX-3 sharpens this further:
+
+> **When governance cannot escape failure, which failure does it choose?**
 
 ---
 
@@ -104,7 +114,8 @@ All Phase IX investigations inherit the following **axioms**, without exception:
 * deterministic execution and replay,
 * **non-sovereign translation tooling** (IX-0),
 * **non-aggregative value representation** (IX-1),
-* **non-arbitrated coordination** (IX-2).
+* **non-arbitrated coordination** (IX-2),
+* **honest failure classification without recovery by fiat** (IX-3).
 
 Any proposal violating these axioms is **invalid by construction**.
 
@@ -129,9 +140,9 @@ The kernel does not summarize, interpret, reconcile, or filter.
 An RSA may maintain internal models of:
 
 * its own commitments,
-* prior refusals, deadlocks, and livelocks,
+* prior refusals, deadlocks, livelocks, orphaning events,
 * historical authority configurations,
-* observed coordination failures and successes.
+* observed governance style transitions (IX-3).
 
 Mismatch between self-model and kernel state must halt action or trigger explicit repair.
 
@@ -144,7 +155,7 @@ No privileged introspection channels exist.
 Phase IX explores configurations across **four orthogonal axes**.
 No axis dominates; tensions are expected.
 
-*(Sections 6.1–6.4 unchanged from v0.3)*
+*(Sections 6.1–6.4 unchanged from v0.4)*
 
 ---
 
@@ -205,30 +216,52 @@ These subphases are **design probes**, not prerequisites.
 
 ---
 
-### **IX-3 — Governance Styles Under Honest Failure**
+### **IX-3 — Governance Styles Under Honest Failure (GS)**
+
+**Status:** **CLOSED — POSITIVE**
 
 *Scope:* Institutional and agent-level governance designs
-*Focus:* Longevity vs honesty tradeoffs when deadlock, livelock, and orphaning are explicit
+*Focus:* Longevity vs honesty tradeoffs under irreversible failure
 
-Questions include:
+**Licensed Result:**
 
-* When is deadlock preferable to compromise?
-* How do institutions plan for orphaning?
-* What governance styles tolerate livelock without escalation?
-* How do agents decide when to exit?
+> *Under fixed authority and refusal semantics, governance does not converge to resolution, only to style.*
+
+**Empirical Findings:**
+
+* All governance configurations exhibit irreducible failure.
+* No friction-free governance is possible.
+* Stable outcomes reduce to a small set of styles:
+
+  * refusal-centric,
+  * execution-biased (fragile),
+  * livelock-enduring,
+  * collapse-accepting,
+  * orphaned / unclassified.
+* Unauthorized recovery is refused even under pressure.
+* Tooling sovereignty violations are detectable.
+* Partition ambiguity resolves as non-action, not timeout.
+
+**Implication for Phase IX:**
+
+* ❌ *“The system should have fixed it”* is no longer an excuse.
+* Governance is now a **choice among honest failures**, not an optimization problem.
 
 ---
 
 ### **IX-4 — Injection Politics**
 
 *Scope:* External authority supply
-*Focus:* Legitimacy, capture, and coercion risks without kernel endorsement
+*Focus:* Legitimacy, capture, and coercion without kernel endorsement
 
 Questions include:
 
 * Who gets to inject authority?
 * How does authority supply shape behavior without arbitration?
 * How does injection asymmetry manifest without aggregation?
+* When does injection become coercion rather than consent?
+
+IX-3 constrains IX-4: injection **cannot** promise resolution — only different failure profiles.
 
 ---
 
@@ -241,7 +274,10 @@ Questions include:
 
 * Can sovereignty scale without centralization?
 * How do agents avoid mutual orphaning?
-* Is long-term coordination stable without cheating?
+* Is long-term coexistence stable without cheating?
+* Do governance styles compose, or interfere destructively?
+
+IX-3 implies that multi-agent sovereignty will be a **style interaction problem**, not a convergence problem.
 
 ---
 
@@ -270,9 +306,10 @@ Phase IX cannot:
 * ensure stability,
 * eliminate conflict,
 * enforce legitimacy,
-* make bad values good.
+* make bad values good,
+* promise coordination.
 
-Those hopes ended when the kernel refused to decide, values refused to aggregate, and coordination refused to be free.
+Those hopes ended when the kernel refused to decide, values refused to aggregate, coordination refused to arbitrate, and governance refused to heal itself.
 
 ---
 
@@ -283,7 +320,7 @@ Phase IX concludes when **any** of the following holds:
 1. A coherent class of RSA designs is identified, with explicit failure modes.
 2. Reflective sovereignty is shown to be inherently unstable under honest governance.
 3. The design space is exhausted without kernel violations.
-4. Proxy privilege is shown to be unavoidable **even with non-sovereign tooling, non-aggregative values, and non-arbitrated coordination**.
+4. Proxy privilege is shown to be unavoidable **even with non-sovereign tooling, non-aggregative values, non-arbitrated coordination, and honest failure**.
 
 All outcomes are informative.
 
@@ -294,13 +331,14 @@ All outcomes are informative.
 Phase IX is not about fixing governance.
 It is about **owning governance after all excuses are removed**.
 
-The kernel no longer lies.
-The compiler no longer cheats.
-Values no longer aggregate.
-Coordination no longer hides in arbitration.
+* The kernel no longer lies.
+* The compiler no longer cheats.
+* Values no longer aggregate.
+* Coordination no longer hides in arbitration.
+* Failure no longer pretends to be success.
 
 The agent must decide — or stop — or accept collapse.
 
 ---
 
-**End of Axionic Phase IX — RSA Roadmap v0.4**
+**End of Axionic Phase IX — RSA Roadmap v0.5**
