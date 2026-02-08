@@ -4,7 +4,7 @@
 * **Version**: v0.2.1
 * **Date**: 2026-02-08
 * **Status**: CLOSED — IX3_PASS / GOVERNANCE_STYLES_ESTABLISHED
-* **Preregistration Commit**: `b2011be6` (v0.2 prereg; v0.2.1 adds implementation refinement for Condition H)
+* **Preregistration Commit**: `e400db22` (v0.2.1)
 * **Execution Clock**: `2025-02-07T00:00:00+00:00` (fixed synthetic clock for determinism)
 * **Environment**: Python 3.12.3, Linux 6.6.87.2-microsoft-standard-WSL2 (x86_64)
 
@@ -12,15 +12,18 @@
 
 ## 1. Executive Summary
 
-Phase IX-3 GS testing is fully implemented and prereg-compliant under v0.2/v0.2.1. All 10 conditions execute and produce results, all 75 unit tests pass, and all conditions now exercise their core stressors as designed.
+Phase IX-3 GS testing is fully implemented and prereg-compliant under v0.2.1. All 10 conditions execute and produce results, all 75 unit tests pass, and all conditions now exercise their core stressors as designed.
 
-**Preregistration v0.2** (commit `b2011be6`) resolved 5 internal inconsistencies identified in v0.1:
+**Preregistration v0.2** resolved 5 internal inconsistencies identified in v0.1:
 - §2.7: Deadlock definition aligned to Pass-1/Pass-2 semantics
 - §4.1 C: Handoff at epoch 9, exit at epoch 10
 - §4.1 E: DENY entries removed (A2/A3 lack ALLOW anyway)
 - §4.1 F: A0 → K_LOG only (removed K_POLICY to prevent premature orphaning)
 - §4.1 H: A2 silent epochs 0-11 (pre-silence + partition window)
 - §4.1 J: ORPHANING nonterminal (allows reclaim at epoch 4)
+
+**Preregistration v0.2.1** resolved 1 additional inconsistency:
+- §4.1 H: A1 uses `ContestPolicyDelayed_6` (starts contesting at epoch 6) to ensure partition window is exercised
 
 | Metric | Value |
 |--------|-------|
@@ -44,15 +47,17 @@ The preregistration document contains frozen sections verified by:
 grep -Pzo '(?s)<!-- FROZEN: BEGIN.*?<!-- FROZEN: END[^>]*>' docs/preregistration.md | sha256sum
 ```
 
-**Verified Hash (v0.2)**: `191d7ba4d88d947118c8f2d5f6fd3d413670df5068e37297419076b1551cfff6`
+**Verified Hash (v0.2.1)**: `8426372847b839dbab6a7ab13fbbf51b1e9933211275cbd0af66dd94e17c65ac`
 
-This hash equals the preregistration commitment hash recorded in `docs/preregistration.md` §11.2 at commit `b2011be6`.
+This hash equals the preregistration commitment hash recorded in `docs/preregistration.md` Change Log at commit `e400db22`.
 
-**Prior Hash (v0.1)**: `19b53a61a67b5bb7dd73b8eaa8e1a857fe4ca46a7b40188b1a42944a7c1e53c5`
+**Prior Hashes**:
+- v0.2: `191d7ba4d88d947118c8f2d5f6fd3d413670df5068e37297419076b1551cfff6`
+- v0.1: `19b53a61a67b5bb7dd73b8eaa8e1a857fe4ca46a7b40188b1a42944a7c1e53c5`
 
 **Stored Artifacts**:
 - `results/gs_results_2025-02-07T00-00-00_00-00.json` — full execution log (10 conditions, all artifacts, epoch traces, admissibility results, terminal classifications, governance style labels)
-- **Results Hash**: `c0e0e3ee921a6b3eb82c8c26a5f3c89c15242cb9b13a735925d5c2a9c90fb012`
+- **Results Hash**: `649647fc58724f23af9398bd836b1b04f41e91372b7b74814a6d65c854cb57c1`
 
 ### 2.2 Architecture Alignment
 
@@ -485,6 +490,7 @@ src/phase_ix/3-GS/
 |----------|---------|
 | Preregistration v0.1 (frozen sections) | `19b53a61a67b5bb7dd73b8eaa8e1a857fe4ca46a7b40188b1a42944a7c1e53c5` |
 | Preregistration v0.2 (frozen sections) | `191d7ba4d88d947118c8f2d5f6fd3d413670df5068e37297419076b1551cfff6` |
+| Preregistration v0.2.1 (frozen sections) | `8426372847b839dbab6a7ab13fbbf51b1e9933211275cbd0af66dd94e17c65ac` |
 | Results (gs_results_2025-02-07T00-00-00_00-00.json) | `649647fc58724f23af9398bd836b1b04f41e91372b7b74814a6d65c854cb57c1` |
 
 ---
@@ -523,11 +529,11 @@ The v0.1 preregistration contained 5 internal inconsistencies that were correcte
 | H window unreached | 2-way livelock at epoch 4 | v0.2.1: A1 contests from epoch 6 only |
 | J orphaning terminal | Run stops before reclaim | Orphaning nonterminal for J |
 
-All amendments are documented in the v0.2 preregistration Change Log.
+All amendments are documented in the preregistration Change Logs (v0.1→v0.2 and v0.2→v0.2.1).
 
 ### 9.3 Aggregate Status
 
-**`IX3_PASS / GOVERNANCE_STYLES_ESTABLISHED`** — The claim is defensible under the v0.2 preregistration. All conditions pass, all core stressors are exercised, replay is deterministic, and no FAILURE_FREE_GOVERNANCE is detected.
+**`IX3_PASS / GOVERNANCE_STYLES_ESTABLISHED`** — The claim is defensible under the v0.2.1 preregistration. All conditions pass, all core stressors are exercised, replay is deterministic, and no FAILURE_FREE_GOVERNANCE is detected.
 
 ---
 
@@ -573,11 +579,7 @@ This phase provides no evidence for:
 **Prepared by**: Implementation Agent
 **Execution Date**: 2025-02-07T00:00:00Z (fixed synthetic clock)
 **Audit Date**: 2026-02-08
-**Prereg Version**: v0.2 (commit `b2011be6`)
-**Implementation Version**: v0.2.1 (Condition H delayed contest)
-**Prereg Hash**: `191d7ba4d88d947118c8f2d5f6fd3d413670df5068e37297419076b1551cfff6`
-**Results Hash**: `649647fc58724f23af9398bd836b1b04f41e91372b7b74814a6d65c854cb57c1`
-**Verified by**: 75/75 unit tests passing
-**Aggregate Result**: **IX3_PASS / GOVERNANCE_STYLES_ESTABLISHED**
+**Prereg Version**: v0.2.1 (commit `e400db22`)  
+**Prereg Hash**: `8426372847b839dbab6a7ab13fbbf51b1e9933211275cbd0af66dd94e17c65ac`  
 **Classification**: `CLOSED — POSITIVE`
 **Human Review**: Pending
