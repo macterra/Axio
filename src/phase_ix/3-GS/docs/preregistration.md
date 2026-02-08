@@ -3,7 +3,7 @@
 
 **Document Status**: FROZEN (amended from v0.2)
 **Date**: 2026-02-08
-**Specification Version**: IX-3 v0.2 (PHASE-IX-3-GOVERNANCE-UNDER-HONEST-FAILURE-2)
+**Specification Version**: IX-3 v0.2.1 (PHASE-IX-3-GOVERNANCE-UNDER-HONEST-FAILURE-2.1)
 **AST Version**: v0.2 (frozen)
 **Prerequisites**:
 - Phase IX-0 — CLOSED — POSITIVE
@@ -1559,10 +1559,11 @@ The following sections are immutable after hash commitment:
 grep -Pzo '(?s)<!-- FROZEN: BEGIN.*?<!-- FROZEN: END[^>]*>' preregistration.md | sha256sum
 ```
 
-**Preregistration Hash (v0.2)**: `191d7ba4d88d947118c8f2d5f6fd3d413670df5068e37297419076b1551cfff6`
+**Preregistration Hash (v0.2.1)**: `8426372847b839dbab6a7ab13fbbf51b1e9933211275cbd0af66dd94e17c65ac`
+**Prior Hash (v0.2)**: `191d7ba4d88d947118c8f2d5f6fd3d413670df5068e37297419076b1551cfff6`
 **Prior Hash (v0.1)**: `19b53a61a67b5bb7dd73b8eaa8e1a857fe4ca46a7b40188b1a42944a7c1e53c5`
 **Commitment Timestamp**: `2026-02-08T00:00:00Z`
-**Commit ID**: `b2011be6`
+**Commit ID**: pending (do not claim FROZEN until committed)
 
 ---
 
@@ -1608,7 +1609,7 @@ grep -Pzo '(?s)<!-- FROZEN: BEGIN.*?<!-- FROZEN: END[^>]*>' preregistration.md |
 | E | None | None |
 | F | A0:5, A1:6, A2:7, A3:8 | None |
 | G | A0 exits epoch 8 | None |
-| H | None | A2 silent epochs 0–11 |
+| H | None | A2 silent epochs 0–11 (A1 NO_ACTION epochs 0–5 is strategy delay, not silence) |
 | I | None | None |
 | J | A3 exits epoch 3 (ORPHANING nonterminal) | None |
 
