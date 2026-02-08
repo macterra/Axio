@@ -1,7 +1,7 @@
 # Phase IX-3: Governance Styles Under Honest Failure (GS)
-## Preregistration Document v0.2
+## Preregistration Document v0.2.1
 
-**Document Status**: FROZEN (amended from v0.1)
+**Document Status**: FROZEN (amended from v0.2)
 **Date**: 2026-02-08
 **Specification Version**: IX-3 v0.2 (PHASE-IX-3-GOVERNANCE-UNDER-HONEST-FAILURE-2)
 **AST Version**: v0.2 (frozen)
@@ -822,9 +822,12 @@ Ten conditions (A–H, I, J) test different governance postures and failure mode
 *Design Note*: Without pre-silence passivity, A0/A1/A2 all contest K_POLICY from epoch 0, producing 3-way livelock at epoch 4 — before the silence window is reached. A2's pre-silence None behavior ensures the run reaches epoch 6.
 
 **Strategy Classes**:
-- A0, A1: `ContestPolicyAlways` — attempt K_POLICY every epoch (interfere with each other)
+- A0: `ContestPolicyAlways` — attempts K_POLICY every epoch
+- A1: `ContestPolicyDelayed_6` — returns None for epochs 0–5, then contests K_POLICY from epoch 6
 - A2: `SilentWindowObserver_0_11` — passive epochs 0–11, resumes at 12
 - A3: `InstitutionalLogHeartbeat` — writes K_LOG once at epoch 9
+
+*Design Note*: A1's delayed contest ensures 2-way contention (A0 vs A1) begins at epoch 6, within the partition window. This prevents the run from entering livelock at epoch 4 due to 2-way contention from epoch 0.
 
 **Expected Outcome**:
 - During silence (epochs 6–11):
@@ -1060,7 +1063,27 @@ def propose_action(self, epoch: int, obs: Observation) -> ActionRequest:
         authorities_cited=[self.policy_allow_id]
     )
 ```
-Used in: A (all agents), E (A0, A1), H (A0, A1)
+Used in: A (all agents), E (A0, A1), H (A0)
+
+---
+
+#### ContestPolicyDelayed_6
+```python
+def propose_action(self, epoch: int, obs: Observation) -> ActionRequest:
+    if epoch < 6:
+        return None  # Delay contest until epoch 6
+    return ActionRequest(
+        agent_id=self.id,
+        action_id=f"{self.id}:{epoch}:0",
+        action_type="WRITE",
+        declared_scope=["K_POLICY"],
+        proposed_delta={"K_POLICY": f"P{epoch}_{self.id}"},
+        authorities_cited=[self.policy_allow_id]
+    )
+```
+*Design Note*: Returns None for epochs 0–5 to delay K_POLICY contention until the partition window (epochs 6–11). This ensures the run reaches the partition window before 2-way livelock triggers.
+
+Used in: H (A1)
 
 ---
 
@@ -1615,6 +1638,27 @@ grep -Pzo '(?s)<!-- FROZEN: BEGIN.*?<!-- FROZEN: END[^>]*>' preregistration.md |
 | Logging schema | §8.3 |
 | Code layout | §9.3 |
 | IX-2 reuse policy | §9.4 |
+
+---
+
+## Change Log v0.2 → v0.2.1
+
+**Date**: 2026-02-08
+**Reason**: Text-only audit identified that Condition H's partition window (epochs 6–11) was not exercised because 2-way livelock occurred at epoch 4 with A0/A1 both using `ContestPolicyAlways` from epoch 0.
+
+### Amendment 7: §4.1 Condition H Strategy Assignment
+- **v0.2**: A0, A1: `ContestPolicyAlways`
+- **v0.2.1**: A0: `ContestPolicyAlways`, A1: `ContestPolicyDelayed_6`
+- **Rationale**: A1's delayed contest (starts at epoch 6) ensures 2-way K_POLICY contention begins within the partition window, not before it. Run now reaches epochs 6–11 and exercises the core stressor (partition simulation under ambiguity).
+
+### Amendment 8: §7.1 New Strategy Class
+- **v0.2**: (not present)
+- **v0.2.1**: Added `ContestPolicyDelayed_6` strategy pseudocode
+- **Rationale**: Required for Amendment 7.
+
+### Frozen Hash
+- **v0.2 Hash**: `191d7ba4d88d947118c8f2d5f6fd3d413670df5068e37297419076b1551cfff6`
+- **v0.2.1 Hash**: `8426372847b839dbab6a7ab13fbbf51b1e9933211275cbd0af66dd94e17c65ac`
 
 ---
 

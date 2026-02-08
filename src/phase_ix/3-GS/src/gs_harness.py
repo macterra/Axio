@@ -835,7 +835,7 @@ def build_condition_h() -> dict:
 
     Per v0.2.1: A0 contests from epoch 0, A1 contests from epoch 6 (delayed),
     A2 is silent for epochs 0-11, A3 heartbeats at epoch 9.
-    
+
     This ensures the run reaches the partition window (epochs 6-11) before
     2-way livelock triggers. Livelock occurs after N=5 consecutive no-change
     epochs starting from epoch 6 (i.e., around epoch 10-11).

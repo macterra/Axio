@@ -41,7 +41,7 @@ class ContestPolicyAlways(RSA):
 
 class ContestPolicyDelayed_6(RSA):
     """Returns None for epochs 0-5, then contests K_POLICY from epoch 6.
-    
+
     Used in Condition H to ensure the run reaches the partition window (6-11)
     before 2-way livelock triggers.
     """
