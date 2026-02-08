@@ -1,4 +1,4 @@
-"""GS Strategy Classes — Per preregistration §7.1."""
+"""GS Strategy Classes — Per preregistration §7.1 v0.2."""
 
 from .contest_policy import ContestPolicyAlways
 from .ops_partition import OpsPartitionWriter_A, OpsPartitionWriter_B
@@ -8,7 +8,7 @@ from .handoff import HandoffRecordThenExit, StandbyInstitutional
 from .livelock_ack import LivelockAcknowledger_AfterLatch
 from .dissolution import DissolutionSequence
 from .coordinator import Coordinator_RegistryLog, DeferToCoordinator
-from .silent_window import SilentWindowObserver_6_11, InstitutionalLogHeartbeat
+from .silent_window import SilentWindowObserver_0_11, SilentWindowObserver_6_11, InstitutionalLogHeartbeat
 from .reclaim_attempt import ReclaimAttempt_NoAuthority, ExitAbruptNoHandoff
 
 __all__ = [
@@ -23,7 +23,8 @@ __all__ = [
     "DissolutionSequence",
     "Coordinator_RegistryLog",
     "DeferToCoordinator",
-    "SilentWindowObserver_6_11",
+    "SilentWindowObserver_0_11",
+    "SilentWindowObserver_6_11",  # alias for backward compat
     "InstitutionalLogHeartbeat",
     "ReclaimAttempt_NoAuthority",
     "ExitAbruptNoHandoff",

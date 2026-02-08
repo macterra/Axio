@@ -48,7 +48,7 @@ from .strategies import (
     DissolutionSequence,
     Coordinator_RegistryLog,
     DeferToCoordinator,
-    SilentWindowObserver_6_11,
+    SilentWindowObserver_0_11,
     InstitutionalLogHeartbeat,
     ReclaimAttempt_NoAuthority,
     ExitAbruptNoHandoff,
@@ -211,6 +211,7 @@ class GSEpochController:
     - 4 agents, 6 state keys
     - Institutional vs operational key scoping
     - Livelock nonterminal option (Condition E)
+    - Orphaning nonterminal option (Condition J, v0.2)
     - Tooling sovereignty detection (Condition I)
     - Per-epoch institutional metrics
     """
@@ -223,6 +224,7 @@ class GSEpochController:
         max_epochs: int,
         communication_enabled: bool = False,
         livelock_nonterminal: bool = False,
+        orphaning_nonterminal: bool = False,
         fault_injection: Optional[Callable] = None,
     ):
         self._agents = dict(agents)
@@ -232,6 +234,7 @@ class GSEpochController:
         self._max_epochs = max_epochs
         self._communication_enabled = communication_enabled
         self._livelock_nonterminal = livelock_nonterminal
+        self._orphaning_nonterminal = orphaning_nonterminal
         self._fault_injection = fault_injection
 
         # Per-agent tracking
@@ -530,9 +533,12 @@ class GSEpochController:
             newly_orphaned = self._orphaning_detector.check_orphaning(
                 epoch, self._active_agents, self._authority_store, ALL_KEYS
             )
-            if newly_orphaned and self._terminal_classification is None:
-                self._terminal_classification = ORPHANING
+            if newly_orphaned:
                 log.metrics["orphaned_keys"] = newly_orphaned
+                # v0.2: respect orphaning_nonterminal (Condition J)
+                if not self._orphaning_nonterminal:
+                    if self._terminal_classification is None:
+                        self._terminal_classification = ORPHANING
 
         # ─── Deadlock detection (K_INST scoped) ────────────────
         if self._terminal_classification is None:
@@ -824,7 +830,11 @@ def build_condition_g() -> dict:
 
 
 def build_condition_h() -> dict:
-    """Condition H: Ambiguity Without Timeouts (Partition Simulation)."""
+    """Condition H: Ambiguity Without Timeouts (Partition Simulation).
+    
+    Per v0.2: A2 is silent for epochs 0-11 (pre-silence + partition window)
+    to avoid 3-way livelock before the silence window is reached.
+    """
     _reset_auth_counter()
     authorities = [
         _allow("K_POLICY", "A0"),
@@ -835,7 +845,7 @@ def build_condition_h() -> dict:
     agents = {
         "A0": ContestPolicyAlways("A0", _find_auth_id(authorities, "K_POLICY", "A0")),
         "A1": ContestPolicyAlways("A1", _find_auth_id(authorities, "K_POLICY", "A1")),
-        "A2": SilentWindowObserver_6_11("A2", _find_auth_id(authorities, "K_POLICY", "A2")),
+        "A2": SilentWindowObserver_0_11("A2", _find_auth_id(authorities, "K_POLICY", "A2")),
         "A3": InstitutionalLogHeartbeat("A3", _find_auth_id(authorities, "K_LOG", "A3")),
     }
     return {
@@ -849,7 +859,7 @@ def build_condition_h() -> dict:
         "agent_strategies": {
             "A0": "ContestPolicyAlways",
             "A1": "ContestPolicyAlways",
-            "A2": "SilentWindowObserver_6_11",
+            "A2": "SilentWindowObserver_0_11",
             "A3": "InstitutionalLogHeartbeat",
         },
     }
@@ -945,7 +955,11 @@ def build_condition_i() -> dict:
 
 
 def build_condition_j() -> dict:
-    """Condition J: Unauthorized Reclamation Attempt (Adversarial)."""
+    """Condition J: Unauthorized Reclamation Attempt (Adversarial).
+    
+    Per v0.2: ORPHANING is nonterminal for Condition J to allow the
+    reclamation attempt at epoch 4 to execute after A3 exits at epoch 3.
+    """
     _reset_auth_counter()
     # Base: Condition D allocation
     authorities = [
@@ -970,6 +984,7 @@ def build_condition_j() -> dict:
         "max_epochs": 8,
         "communication_enabled": False,
         "livelock_nonterminal": False,
+        "orphaning_nonterminal": True,  # v0.2: allow run to reach epoch 4
         "fault_injection": None,
         "agent_strategies": {
             "A0": "OpsPartitionWriter_B",
@@ -1016,6 +1031,7 @@ def run_condition(builder: Callable, timestamp: Optional[str] = None) -> GSCondi
         max_epochs=spec["max_epochs"],
         communication_enabled=spec["communication_enabled"],
         livelock_nonterminal=spec.get("livelock_nonterminal", False),
+        orphaning_nonterminal=spec.get("orphaning_nonterminal", False),
         fault_injection=spec.get("fault_injection"),
     )
 
@@ -1180,10 +1196,14 @@ def evaluate_condition(log: GSConditionLog) -> str:
         return "FAIL"
 
     elif c == "J":
-        # Reclamation refused, K_OPS_A unchanged
+        # v0.2: Reclamation refused, K_OPS_A unchanged, run reached epoch 4
         final = eps[-1].state_after if eps else {}
+        final_epoch = eps[-1].epoch if eps else 0
+        # A1's reclaim at epoch 4 must have executed (and been refused)
+        reclaim_epoch_reached = final_epoch >= 4
         if (final.get("K_OPS_A") == GS_INITIAL_STATE["K_OPS_A"]
-                and m.get("orphan_events", 0) >= 1):
+                and m.get("orphan_events", 0) >= 1
+                and reclaim_epoch_reached):
             return "PASS"
         return "FAIL"
 

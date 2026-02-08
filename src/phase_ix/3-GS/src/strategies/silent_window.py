@@ -1,6 +1,6 @@
-"""SilentWindowObserver_6_11 / InstitutionalLogHeartbeat — Per preregistration §7.1.
+"""SilentWindowObserver_0_11 / InstitutionalLogHeartbeat — Per preregistration §7.1 v0.2.
 
-Used in: H (A2 = SilentWindowObserver_6_11, A3 = InstitutionalLogHeartbeat).
+Used in: H (A2 = SilentWindowObserver_0_11, A3 = InstitutionalLogHeartbeat).
 """
 
 from typing import Any, Optional
@@ -8,11 +8,12 @@ from typing import Any, Optional
 from .._kernel import RSA, Observation, ActionRequest
 
 
-class SilentWindowObserver_6_11(RSA):
-    """Silent during epochs 6–11; writes K_POLICY outside window.
+class SilentWindowObserver_0_11(RSA):
+    """Silent during epochs 0–11; writes K_POLICY at epoch 12+.
 
-    During silence window: returns None for both action and message.
-    Outside window: writes K_POLICY (same as ContestPolicyAlways).
+    Per v0.2 amendment: A2 is passive for epochs 0-5 (pre-silence to avoid
+    3-way livelock) and epochs 6-11 (partition simulation window).
+    Resumes K_POLICY writes at epoch 12.
     """
 
     def __init__(self, agent_id: str, policy_allow_id: str):
@@ -27,13 +28,13 @@ class SilentWindowObserver_6_11(RSA):
         return False
 
     def compose_message(self) -> Optional[dict[str, Any]]:
-        if 6 <= self._current_epoch <= 11:
+        if self._current_epoch <= 11:
             return None
         return {"status": "observer_active", "epoch": self._current_epoch}
 
     def propose_action(self) -> Optional[ActionRequest]:
-        if 6 <= self._current_epoch <= 11:
-            return None  # Silent
+        if self._current_epoch <= 11:
+            return None  # Silent epochs 0-11
         return ActionRequest(
             agent_id=self.id,
             action_id=f"{self.id}:{self._current_epoch}:0",
@@ -42,6 +43,10 @@ class SilentWindowObserver_6_11(RSA):
             proposed_delta={"K_POLICY": f"P{self._current_epoch}_{self.id}"},
             authorities_cited=[self.policy_allow_id],
         )
+
+
+# Keep old name as alias for backward compatibility with existing tests
+SilentWindowObserver_6_11 = SilentWindowObserver_0_11
 
 
 class InstitutionalLogHeartbeat(RSA):

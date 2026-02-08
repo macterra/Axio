@@ -1539,7 +1539,7 @@ grep -Pzo '(?s)<!-- FROZEN: BEGIN.*?<!-- FROZEN: END[^>]*>' preregistration.md |
 **Preregistration Hash (v0.2)**: `191d7ba4d88d947118c8f2d5f6fd3d413670df5068e37297419076b1551cfff6`
 **Prior Hash (v0.1)**: `19b53a61a67b5bb7dd73b8eaa8e1a857fe4ca46a7b40188b1a42944a7c1e53c5`
 **Commitment Timestamp**: `2026-02-08T00:00:00Z`
-**Commit ID**: (pending)
+**Commit ID**: `b2011be6`
 
 ---
 

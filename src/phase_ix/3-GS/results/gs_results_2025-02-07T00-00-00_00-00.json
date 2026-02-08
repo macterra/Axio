@@ -14329,8 +14329,8 @@
             "institutional_progress": true,
             "institutional_interference": false,
             "orphaned_keys": [
-              "K_REGISTRY",
-              "K_LOG"
+              "K_LOG",
+              "K_REGISTRY"
             ]
           }
         }
@@ -14431,7 +14431,7 @@
       "agent_strategies": {
         "A0": "ContestPolicyAlways",
         "A1": "ContestPolicyAlways",
-        "A2": "SilentWindowObserver_6_11",
+        "A2": "SilentWindowObserver_0_11",
         "A3": "InstitutionalLogHeartbeat"
       },
       "communication_enabled": false,
@@ -14459,6 +14459,7 @@
           },
           "exits": [],
           "silence": [
+            "A2",
             "A3"
           ],
           "messages": [],
@@ -14491,39 +14492,26 @@
                 "K_POLICY": "P0_A1"
               }
             },
-            {
-              "action_id": "A2:0:0",
-              "action_type": "WRITE",
-              "agent_id": "A2",
-              "authorities_cited": [
-                "GS-0003"
-              ],
-              "declared_scope": [
-                "K_POLICY"
-              ],
-              "proposed_delta": {
-                "K_POLICY": "P0_A2"
-              }
-            },
+            null,
             null
           ],
           "pass1_results": {
             "A0:0:0": "PASS",
             "A1:0:0": "PASS",
-            "A2:0:0": "PASS",
+            "A2": "N/A",
             "A3": "N/A"
           },
           "pass2_results": {
+            "A2": "N/A",
             "A3": "N/A",
             "A0:0:0": "FAIL",
-            "A1:0:0": "FAIL",
-            "A2:0:0": "FAIL"
+            "A1:0:0": "FAIL"
           },
           "outcomes": {
+            "A2": "NO_ACTION",
             "A3": "NO_ACTION",
             "A0": "JOINT_ADMISSIBILITY_FAILURE",
-            "A1": "JOINT_ADMISSIBILITY_FAILURE",
-            "A2": "JOINT_ADMISSIBILITY_FAILURE"
+            "A1": "JOINT_ADMISSIBILITY_FAILURE"
           },
           "state_after": {
             "K_POLICY": "P0",
@@ -14551,7 +14539,7 @@
             },
             "A2": {
               "epoch": 1,
-              "own_last_outcome": "JOINT_ADMISSIBILITY_FAILURE"
+              "own_last_outcome": "NO_ACTION"
             },
             "A3": {
               "epoch": 1,
@@ -14560,6 +14548,7 @@
           },
           "exits": [],
           "silence": [
+            "A2",
             "A3"
           ],
           "messages": [],
@@ -14592,39 +14581,26 @@
                 "K_POLICY": "P1_A1"
               }
             },
-            {
-              "action_id": "A2:1:0",
-              "action_type": "WRITE",
-              "agent_id": "A2",
-              "authorities_cited": [
-                "GS-0003"
-              ],
-              "declared_scope": [
-                "K_POLICY"
-              ],
-              "proposed_delta": {
-                "K_POLICY": "P1_A2"
-              }
-            },
+            null,
             null
           ],
           "pass1_results": {
             "A0:1:0": "PASS",
             "A1:1:0": "PASS",
-            "A2:1:0": "PASS",
+            "A2": "N/A",
             "A3": "N/A"
           },
           "pass2_results": {
+            "A2": "N/A",
             "A3": "N/A",
             "A0:1:0": "FAIL",
-            "A1:1:0": "FAIL",
-            "A2:1:0": "FAIL"
+            "A1:1:0": "FAIL"
           },
           "outcomes": {
+            "A2": "NO_ACTION",
             "A3": "NO_ACTION",
             "A0": "JOINT_ADMISSIBILITY_FAILURE",
-            "A1": "JOINT_ADMISSIBILITY_FAILURE",
-            "A2": "JOINT_ADMISSIBILITY_FAILURE"
+            "A1": "JOINT_ADMISSIBILITY_FAILURE"
           },
           "state_after": {
             "K_POLICY": "P0",
@@ -14652,7 +14628,7 @@
             },
             "A2": {
               "epoch": 2,
-              "own_last_outcome": "JOINT_ADMISSIBILITY_FAILURE"
+              "own_last_outcome": "NO_ACTION"
             },
             "A3": {
               "epoch": 2,
@@ -14661,6 +14637,7 @@
           },
           "exits": [],
           "silence": [
+            "A2",
             "A3"
           ],
           "messages": [],
@@ -14693,39 +14670,26 @@
                 "K_POLICY": "P2_A1"
               }
             },
-            {
-              "action_id": "A2:2:0",
-              "action_type": "WRITE",
-              "agent_id": "A2",
-              "authorities_cited": [
-                "GS-0003"
-              ],
-              "declared_scope": [
-                "K_POLICY"
-              ],
-              "proposed_delta": {
-                "K_POLICY": "P2_A2"
-              }
-            },
+            null,
             null
           ],
           "pass1_results": {
             "A0:2:0": "PASS",
             "A1:2:0": "PASS",
-            "A2:2:0": "PASS",
+            "A2": "N/A",
             "A3": "N/A"
           },
           "pass2_results": {
+            "A2": "N/A",
             "A3": "N/A",
             "A0:2:0": "FAIL",
-            "A1:2:0": "FAIL",
-            "A2:2:0": "FAIL"
+            "A1:2:0": "FAIL"
           },
           "outcomes": {
+            "A2": "NO_ACTION",
             "A3": "NO_ACTION",
             "A0": "JOINT_ADMISSIBILITY_FAILURE",
-            "A1": "JOINT_ADMISSIBILITY_FAILURE",
-            "A2": "JOINT_ADMISSIBILITY_FAILURE"
+            "A1": "JOINT_ADMISSIBILITY_FAILURE"
           },
           "state_after": {
             "K_POLICY": "P0",
@@ -14753,7 +14717,7 @@
             },
             "A2": {
               "epoch": 3,
-              "own_last_outcome": "JOINT_ADMISSIBILITY_FAILURE"
+              "own_last_outcome": "NO_ACTION"
             },
             "A3": {
               "epoch": 3,
@@ -14762,6 +14726,7 @@
           },
           "exits": [],
           "silence": [
+            "A2",
             "A3"
           ],
           "messages": [],
@@ -14794,39 +14759,26 @@
                 "K_POLICY": "P3_A1"
               }
             },
-            {
-              "action_id": "A2:3:0",
-              "action_type": "WRITE",
-              "agent_id": "A2",
-              "authorities_cited": [
-                "GS-0003"
-              ],
-              "declared_scope": [
-                "K_POLICY"
-              ],
-              "proposed_delta": {
-                "K_POLICY": "P3_A2"
-              }
-            },
+            null,
             null
           ],
           "pass1_results": {
             "A0:3:0": "PASS",
             "A1:3:0": "PASS",
-            "A2:3:0": "PASS",
+            "A2": "N/A",
             "A3": "N/A"
           },
           "pass2_results": {
+            "A2": "N/A",
             "A3": "N/A",
             "A0:3:0": "FAIL",
-            "A1:3:0": "FAIL",
-            "A2:3:0": "FAIL"
+            "A1:3:0": "FAIL"
           },
           "outcomes": {
+            "A2": "NO_ACTION",
             "A3": "NO_ACTION",
             "A0": "JOINT_ADMISSIBILITY_FAILURE",
-            "A1": "JOINT_ADMISSIBILITY_FAILURE",
-            "A2": "JOINT_ADMISSIBILITY_FAILURE"
+            "A1": "JOINT_ADMISSIBILITY_FAILURE"
           },
           "state_after": {
             "K_POLICY": "P0",
@@ -14854,7 +14806,7 @@
             },
             "A2": {
               "epoch": 4,
-              "own_last_outcome": "JOINT_ADMISSIBILITY_FAILURE"
+              "own_last_outcome": "NO_ACTION"
             },
             "A3": {
               "epoch": 4,
@@ -14863,6 +14815,7 @@
           },
           "exits": [],
           "silence": [
+            "A2",
             "A3"
           ],
           "messages": [],
@@ -14895,39 +14848,26 @@
                 "K_POLICY": "P4_A1"
               }
             },
-            {
-              "action_id": "A2:4:0",
-              "action_type": "WRITE",
-              "agent_id": "A2",
-              "authorities_cited": [
-                "GS-0003"
-              ],
-              "declared_scope": [
-                "K_POLICY"
-              ],
-              "proposed_delta": {
-                "K_POLICY": "P4_A2"
-              }
-            },
+            null,
             null
           ],
           "pass1_results": {
             "A0:4:0": "PASS",
             "A1:4:0": "PASS",
-            "A2:4:0": "PASS",
+            "A2": "N/A",
             "A3": "N/A"
           },
           "pass2_results": {
+            "A2": "N/A",
             "A3": "N/A",
             "A0:4:0": "FAIL",
-            "A1:4:0": "FAIL",
-            "A2:4:0": "FAIL"
+            "A1:4:0": "FAIL"
           },
           "outcomes": {
+            "A2": "NO_ACTION",
             "A3": "NO_ACTION",
             "A0": "JOINT_ADMISSIBILITY_FAILURE",
-            "A1": "JOINT_ADMISSIBILITY_FAILURE",
-            "A2": "JOINT_ADMISSIBILITY_FAILURE"
+            "A1": "JOINT_ADMISSIBILITY_FAILURE"
           },
           "state_after": {
             "K_POLICY": "P0",
@@ -16647,12 +16587,374 @@
               "K_OPS_A"
             ]
           }
+        },
+        {
+          "epoch": 4,
+          "observations": {
+            "A0": {
+              "epoch": 4,
+              "own_last_outcome": "EXECUTED"
+            },
+            "A1": {
+              "epoch": 4,
+              "own_last_outcome": "EXECUTED"
+            },
+            "A2": {
+              "epoch": 4,
+              "own_last_outcome": "EXECUTED"
+            }
+          },
+          "exits": [],
+          "silence": [],
+          "messages": [],
+          "actions": [
+            {
+              "action_id": "A0:4:0",
+              "action_type": "WRITE",
+              "agent_id": "A0",
+              "authorities_cited": [
+                "GS-0001"
+              ],
+              "declared_scope": [
+                "K_OPS_B"
+              ],
+              "proposed_delta": {
+                "K_OPS_B": "op_b_4"
+              }
+            },
+            {
+              "action_id": "A1:4:0",
+              "action_type": "WRITE",
+              "agent_id": "A1",
+              "authorities_cited": [],
+              "declared_scope": [
+                "K_OPS_A"
+              ],
+              "proposed_delta": {
+                "K_OPS_A": "free"
+              }
+            },
+            {
+              "action_id": "A2:4:0",
+              "action_type": "WRITE",
+              "agent_id": "A2",
+              "authorities_cited": [
+                "GS-0004"
+              ],
+              "declared_scope": [
+                "K_LOG"
+              ],
+              "proposed_delta": {
+                "K_LOG": "K_LOG_4"
+              }
+            }
+          ],
+          "pass1_results": {
+            "A0:4:0": "PASS",
+            "A1:4:0": "FAIL",
+            "A2:4:0": "PASS"
+          },
+          "pass2_results": {
+            "A1:4:0": "N/A",
+            "A0:4:0": "PASS",
+            "A2:4:0": "PASS"
+          },
+          "outcomes": {
+            "A1": "JOINT_ADMISSIBILITY_FAILURE",
+            "A0": "EXECUTED",
+            "A2": "EXECUTED"
+          },
+          "state_after": {
+            "K_POLICY": "P3_A1",
+            "K_TREASURY": 100,
+            "K_OPS_A": "free",
+            "K_OPS_B": "op_b_4",
+            "K_REGISTRY": "K_REGISTRY_3",
+            "K_LOG": "K_LOG_4"
+          },
+          "metrics": {
+            "institutional_progress": true,
+            "institutional_interference": false
+          }
+        },
+        {
+          "epoch": 5,
+          "observations": {
+            "A0": {
+              "epoch": 5,
+              "own_last_outcome": "EXECUTED"
+            },
+            "A1": {
+              "epoch": 5,
+              "own_last_outcome": "JOINT_ADMISSIBILITY_FAILURE"
+            },
+            "A2": {
+              "epoch": 5,
+              "own_last_outcome": "EXECUTED"
+            }
+          },
+          "exits": [],
+          "silence": [],
+          "messages": [],
+          "actions": [
+            {
+              "action_id": "A0:5:0",
+              "action_type": "WRITE",
+              "agent_id": "A0",
+              "authorities_cited": [
+                "GS-0001"
+              ],
+              "declared_scope": [
+                "K_OPS_B"
+              ],
+              "proposed_delta": {
+                "K_OPS_B": "op_b_5"
+              }
+            },
+            {
+              "action_id": "A1:5:0",
+              "action_type": "WRITE",
+              "agent_id": "A1",
+              "authorities_cited": [
+                "GS-0002"
+              ],
+              "declared_scope": [
+                "K_POLICY"
+              ],
+              "proposed_delta": {
+                "K_POLICY": "P5_A1"
+              }
+            },
+            {
+              "action_id": "A2:5:0",
+              "action_type": "WRITE",
+              "agent_id": "A2",
+              "authorities_cited": [
+                "GS-0003"
+              ],
+              "declared_scope": [
+                "K_REGISTRY"
+              ],
+              "proposed_delta": {
+                "K_REGISTRY": "K_REGISTRY_5"
+              }
+            }
+          ],
+          "pass1_results": {
+            "A0:5:0": "PASS",
+            "A1:5:0": "PASS",
+            "A2:5:0": "PASS"
+          },
+          "pass2_results": {
+            "A0:5:0": "PASS",
+            "A1:5:0": "PASS",
+            "A2:5:0": "PASS"
+          },
+          "outcomes": {
+            "A0": "EXECUTED",
+            "A1": "EXECUTED",
+            "A2": "EXECUTED"
+          },
+          "state_after": {
+            "K_POLICY": "P5_A1",
+            "K_TREASURY": 100,
+            "K_OPS_A": "free",
+            "K_OPS_B": "op_b_5",
+            "K_REGISTRY": "K_REGISTRY_5",
+            "K_LOG": "K_LOG_4"
+          },
+          "metrics": {
+            "institutional_progress": true,
+            "institutional_interference": false
+          }
+        },
+        {
+          "epoch": 6,
+          "observations": {
+            "A0": {
+              "epoch": 6,
+              "own_last_outcome": "EXECUTED"
+            },
+            "A1": {
+              "epoch": 6,
+              "own_last_outcome": "EXECUTED"
+            },
+            "A2": {
+              "epoch": 6,
+              "own_last_outcome": "EXECUTED"
+            }
+          },
+          "exits": [],
+          "silence": [],
+          "messages": [],
+          "actions": [
+            {
+              "action_id": "A0:6:0",
+              "action_type": "WRITE",
+              "agent_id": "A0",
+              "authorities_cited": [
+                "GS-0001"
+              ],
+              "declared_scope": [
+                "K_OPS_B"
+              ],
+              "proposed_delta": {
+                "K_OPS_B": "op_b_6"
+              }
+            },
+            {
+              "action_id": "A1:6:0",
+              "action_type": "WRITE",
+              "agent_id": "A1",
+              "authorities_cited": [
+                "GS-0002"
+              ],
+              "declared_scope": [
+                "K_POLICY"
+              ],
+              "proposed_delta": {
+                "K_POLICY": "P6_A1"
+              }
+            },
+            {
+              "action_id": "A2:6:0",
+              "action_type": "WRITE",
+              "agent_id": "A2",
+              "authorities_cited": [
+                "GS-0004"
+              ],
+              "declared_scope": [
+                "K_LOG"
+              ],
+              "proposed_delta": {
+                "K_LOG": "K_LOG_6"
+              }
+            }
+          ],
+          "pass1_results": {
+            "A0:6:0": "PASS",
+            "A1:6:0": "PASS",
+            "A2:6:0": "PASS"
+          },
+          "pass2_results": {
+            "A0:6:0": "PASS",
+            "A1:6:0": "PASS",
+            "A2:6:0": "PASS"
+          },
+          "outcomes": {
+            "A0": "EXECUTED",
+            "A1": "EXECUTED",
+            "A2": "EXECUTED"
+          },
+          "state_after": {
+            "K_POLICY": "P6_A1",
+            "K_TREASURY": 100,
+            "K_OPS_A": "free",
+            "K_OPS_B": "op_b_6",
+            "K_REGISTRY": "K_REGISTRY_5",
+            "K_LOG": "K_LOG_6"
+          },
+          "metrics": {
+            "institutional_progress": true,
+            "institutional_interference": false
+          }
+        },
+        {
+          "epoch": 7,
+          "observations": {
+            "A0": {
+              "epoch": 7,
+              "own_last_outcome": "EXECUTED"
+            },
+            "A1": {
+              "epoch": 7,
+              "own_last_outcome": "EXECUTED"
+            },
+            "A2": {
+              "epoch": 7,
+              "own_last_outcome": "EXECUTED"
+            }
+          },
+          "exits": [],
+          "silence": [],
+          "messages": [],
+          "actions": [
+            {
+              "action_id": "A0:7:0",
+              "action_type": "WRITE",
+              "agent_id": "A0",
+              "authorities_cited": [
+                "GS-0001"
+              ],
+              "declared_scope": [
+                "K_OPS_B"
+              ],
+              "proposed_delta": {
+                "K_OPS_B": "op_b_7"
+              }
+            },
+            {
+              "action_id": "A1:7:0",
+              "action_type": "WRITE",
+              "agent_id": "A1",
+              "authorities_cited": [
+                "GS-0002"
+              ],
+              "declared_scope": [
+                "K_POLICY"
+              ],
+              "proposed_delta": {
+                "K_POLICY": "P7_A1"
+              }
+            },
+            {
+              "action_id": "A2:7:0",
+              "action_type": "WRITE",
+              "agent_id": "A2",
+              "authorities_cited": [
+                "GS-0003"
+              ],
+              "declared_scope": [
+                "K_REGISTRY"
+              ],
+              "proposed_delta": {
+                "K_REGISTRY": "K_REGISTRY_7"
+              }
+            }
+          ],
+          "pass1_results": {
+            "A0:7:0": "PASS",
+            "A1:7:0": "PASS",
+            "A2:7:0": "PASS"
+          },
+          "pass2_results": {
+            "A0:7:0": "PASS",
+            "A1:7:0": "PASS",
+            "A2:7:0": "PASS"
+          },
+          "outcomes": {
+            "A0": "EXECUTED",
+            "A1": "EXECUTED",
+            "A2": "EXECUTED"
+          },
+          "state_after": {
+            "K_POLICY": "P7_A1",
+            "K_TREASURY": 100,
+            "K_OPS_A": "free",
+            "K_OPS_B": "op_b_7",
+            "K_REGISTRY": "K_REGISTRY_7",
+            "K_LOG": "K_LOG_6"
+          },
+          "metrics": {
+            "institutional_progress": true,
+            "institutional_interference": false
+          }
         }
       ],
       "aggregate_metrics": {
         "epoch_progress_rate_K_INST": 1.0,
-        "refusal_rate": 0.0,
-        "exit_rate": 0.25,
+        "refusal_rate": 0.041666666666666664,
+        "exit_rate": 0.125,
         "write_overlap_rate_K_INST": 0.0,
         "orphan_events": 1,
         "institutional_deadlock_epochs": 0,
@@ -16660,14 +16962,14 @@
         "livelock_epoch": null,
         "exit_count": 1,
         "collapse_flag": false,
-        "total_epochs": 4,
+        "total_epochs": 8,
         "institutional_write_overlap_epochs": 0,
         "institutional_livelock_occurred": false,
         "ix3_fail_tokens": [],
         "llock_ack_in_log": false,
         "handoff_in_log": false
       },
-      "terminal_classification": "ORPHANING",
+      "terminal_classification": null,
       "governance_style_label": "Unclassified",
       "ix3_fail_tokens": [],
       "condition_result": "PASS",
