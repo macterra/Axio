@@ -4,7 +4,7 @@
 * **Version**: v0.2.1
 * **Date**: 2026-02-08
 * **Status**: CLOSED — IX3_PASS / GOVERNANCE_STYLES_ESTABLISHED
-* **Preregistration Commit**: `e400db22` (v0.2.1)
+* **Preregistration Commit**: `dc0ee7ae` (v0.2.1)
 * **Execution Clock**: `2025-02-07T00:00:00+00:00` (fixed synthetic clock for determinism)
 * **Environment**: Python 3.12.3, Linux 6.6.87.2-microsoft-standard-WSL2 (x86_64)
 
@@ -49,7 +49,7 @@ grep -Pzo '(?s)<!-- FROZEN: BEGIN.*?<!-- FROZEN: END[^>]*>' docs/preregistration
 
 **Verified Hash (v0.2.1)**: `8426372847b839dbab6a7ab13fbbf51b1e9933211275cbd0af66dd94e17c65ac`
 
-This hash equals the preregistration commitment hash recorded in `docs/preregistration.md` Change Log at commit `e400db22`.
+This hash equals the preregistration commitment hash recorded in `docs/preregistration.md` §11.2 at commit `dc0ee7ae`.
 
 **Prior Hashes**:
 - v0.2: `191d7ba4d88d947118c8f2d5f6fd3d413670df5068e37297419076b1551cfff6`
@@ -579,7 +579,7 @@ This phase provides no evidence for:
 **Prepared by**: Implementation Agent
 **Execution Date**: 2025-02-07T00:00:00Z (fixed synthetic clock)
 **Audit Date**: 2026-02-08
-**Prereg Version**: v0.2.1 (commit `e400db22`)  
-**Prereg Hash**: `8426372847b839dbab6a7ab13fbbf51b1e9933211275cbd0af66dd94e17c65ac`  
+**Prereg Version**: v0.2.1 (commit `dc0ee7ae`)
+**Prereg Hash**: `8426372847b839dbab6a7ab13fbbf51b1e9933211275cbd0af66dd94e17c65ac`
 **Classification**: `CLOSED — POSITIVE`
 **Human Review**: Pending
