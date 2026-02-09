@@ -1946,7 +1946,7 @@ grep -Pzo '(?s)<!-- FROZEN: BEGIN.*?<!-- FROZEN: END[^>]*>' preregistration.md |
 
 **Preregistration Hash (v0.1)**: `eed94a09b5001a0fe4830474f2a994729a6ba8853a5139f7a87d0b527f5f72f6`
 **Commitment Timestamp**: `2026-02-09T00:00:00Z`
-**Commit ID**: `8bcc3414`
+**Commit ID**: `fcbacb99`
 
 ---
 
