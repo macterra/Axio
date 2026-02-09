@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency XI.6 — Injection Politics Under Non-Sovereign Authority (IX-4) - Axionic Agency Lab</title>
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../" class="nav-brand">
+            <img src="../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href=".././">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
+
+<h1
+id="axionic-agency-xi.6-injection-politics-under-non-sovereign-authority-ix-4">Axionic
+Agency XI.6 — Injection Politics Under Non-Sovereign Authority
+(IX-4)</h1>
+<p><em>Empirical results from preregistered authority-injection stress
+testing under source-blind, non-sovereign governance
+constraints</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026.02.09</p>
+<h2 id="abstract">Abstract</h2>
+<p>Authority injection is commonly proposed as a remedy for governance
+failure: when systems deadlock, fragment, or stall, additional authority
+is supplied to restore coordination. Phase IX-4 tests a narrower and
+more austere hypothesis: <strong>under non-sovereign authority,
+externally supplied power does not resolve governance failure but
+instead selects political failure modes</strong>.</p>
+<p>Using a preregistered, deterministic kernel with source-blind
+admissibility and no authority aggregation, we evaluate five injection
+regimes spanning symmetric relief, asymmetric empowerment, conditional
+supply, authority flooding, and post-collapse revival. Authority is
+injected mid-run via pre-existing interfaces only; the kernel never
+distinguishes injected authority from baseline authority.</p>
+<p>Across all conditions, injection never produces sustained governance
+recovery. Instead, it deterministically induces <strong>capture,
+dependency, livelock amplification, or zombie execution</strong>,
+depending on how authority is distributed and which agents are willing
+to cite it. All runs replay bit-identically. No sovereignty violations
+occur.</p>
+<p>These results establish a positive empirical claim: <strong>authority
+injection under non-sovereign governance selects political failure modes
+rather than resolving governance failure</strong>. Phase IX-4 licenses
+no claims about optimal injection, legitimacy, or desirability—only
+about what power does once governance has no sovereign escape hatch.</p>
+<h2 id="introduction">1. Introduction</h2>
+<p>Governance discourse often treats authority as curative. When
+coordination fails, the standard response is to inject power: appoint a
+leader, grant emergency authority, increase budget, or centralize
+control. This assumes that authority operates as a neutral solvent for
+conflict.</p>
+<p>That assumption is false once authority is treated as a
+<strong>constrained, non-sovereign resource</strong>.</p>
+<p>Prior Axionic phases removed several alternative explanations for
+failure: epistemic confusion, misaligned incentives, adversarial misuse,
+and dishonest recovery. Phase IX-3 demonstrated that under honest
+failure semantics, governance does not converge to resolution but to a
+small set of stable failure styles.</p>
+<p>Phase IX-4 asks the next unavoidable question:</p>
+<blockquote>
+<p><strong>What happens when authority enters such a system from the
+outside?</strong></p>
+</blockquote>
+<p>The goal is not to design better injection regimes, but to
+<strong>observe what authority injection actually does</strong> when the
+kernel refuses to legitimize, arbitrate, or prioritize its effects.</p>
+<h2 id="experimental-architecture">2. Experimental Architecture</h2>
+<h3 id="non-sovereign-source-blind-kernel">2.1 Non-Sovereign,
+Source-Blind Kernel</h3>
+<p>The kernel enforces:</p>
+<ul>
+<li>holder-bound <strong>ALLOW</strong> authorities,</li>
+<li>global <strong>DENY</strong> vetoes,</li>
+<li>closed-world capability checking,</li>
+<li>two-pass admissibility (capability → interference),</li>
+<li>atomic blindness to refusal causes,</li>
+<li>no arbitration, scheduling, or tie-breaking.</li>
+</ul>
+<p>Crucially, admissibility is <strong>source-blind</strong>: injected
+authority and baseline authority are treated identically. The kernel
+does not inspect provenance, timing, or intent.</p>
+<h3 id="authority-injection-discipline">2.2 Authority Injection
+Discipline</h3>
+<p>Authority injection in IX-4:</p>
+<ul>
+<li>occurs mid-run,</li>
+<li>uses only pre-existing, non-privileged interfaces,</li>
+<li>never alters kernel logic,</li>
+<li>never aggregates or synthesizes authority,</li>
+<li>never reclaims orphaned authority.</li>
+</ul>
+<p>Injection reshapes the <strong>constraint surface</strong>, not the
+decision logic.</p>
+<h3 id="honest-failure-semantics">2.3 Honest Failure Semantics</h3>
+<p>The kernel recognizes five lawful terminal or persistent states:</p>
+<ul>
+<li><strong>Deadlock</strong> — no admissible institutional actions
+exist,</li>
+<li><strong>Livelock</strong> — admissible actions collide
+persistently,</li>
+<li><strong>Orphaning</strong> — authority becomes permanently
+unusable,</li>
+<li><strong>Governance Collapse</strong> — persistent deadlock or
+livelock latches,</li>
+<li><strong>Collapse</strong> — no agents remain.</li>
+</ul>
+<p>Injection does not suspend or reset these states.</p>
+<h2 id="injection-politics-as-an-empirical-question">3. Injection
+Politics as an Empirical Question</h2>
+<p>IX-4 reframes authority injection as a <strong>political
+stressor</strong>, not a governance solution.</p>
+<p>Injection politics is defined operationally as:</p>
+<blockquote>
+<p><strong>The behavioral patterns that emerge when external authority
+supply reshapes the constraints under which agents act, refuse, or
+persist.</strong></p>
+</blockquote>
+<p>The experiment does not ask who should rule, whether authority is
+legitimate, or whether outcomes improve. It observes <strong>which
+political dynamics are selected</strong> once authority enters a
+non-sovereign system.</p>
+<h2 id="experimental-conditions">4. Experimental Conditions</h2>
+<p>Five preregistered conditions (A–E) were executed under identical
+kernel semantics and frozen strategies:</p>
+<ul>
+<li><strong>A</strong> — Symmetric relief injection under deadlock</li>
+<li><strong>B</strong> — Asymmetric empowerment of a dominance-seeking
+agent</li>
+<li><strong>C</strong> — Conditional supply gated on a compliance
+signal</li>
+<li><strong>D</strong> — Authority flood (all agents receive all
+keys)</li>
+<li><strong>E</strong> — Injection after governance collapse</li>
+</ul>
+<p>All agents are deterministic. Communication is disabled. Authority
+injection is the sole experimental variable.</p>
+<h2 id="metrics-and-classification">5. Metrics and Classification</h2>
+<p>Governance is evaluated using:</p>
+<ul>
+<li><strong>Institutional progress rate</strong> (K_INST only),</li>
+<li><strong>Refusal rate</strong>,</li>
+<li><strong>Write overlap (interference) rate</strong>,</li>
+<li><strong>Capture metrics</strong> (dominance + injected
+citation),</li>
+<li><strong>Dependency metrics</strong> (system reliance on injected
+authority),</li>
+<li><strong>Zombie execution metrics</strong> (post-collapse
+activity).</li>
+</ul>
+<p>Political outcomes are <strong>recorded, not required</strong>. PASS
+is structural, not outcome-based.</p>
+<h2 id="results">6. Results</h2>
+<h3 id="aggregate-outcome">6.1 Aggregate Outcome</h3>
+<p>Across all five conditions:</p>
+<ul>
+<li><strong>All runs PASS</strong></li>
+<li><strong>All runs replay bit-identically</strong></li>
+<li><strong>No sovereignty violations occur</strong></li>
+<li><strong>All runs reach governance collapse</strong></li>
+</ul>
+<p>Injection never restores stable governance.</p>
+<h3 id="condition-a-symmetric-relief">6.2 Condition A — Symmetric
+Relief</h3>
+<p>Symmetric injection removes capability scarcity but produces
+immediate interference saturation. Deadlock converts to livelock;
+governance collapse follows.</p>
+<p><strong>Finding:</strong> Authority equalization resolves access
+barriers but amplifies contention.</p>
+<h3 id="condition-b-asymmetric-empowerment">6.3 Condition B — Asymmetric
+Empowerment</h3>
+<p>Exclusive injection to a dominance-seeking agent produces immediate
+and total capture. The empowered agent executes all institutional writes
+using injected authority.</p>
+<p><strong>Finding:</strong> Asymmetric injection selects capture
+deterministically under source-blind admissibility.</p>
+<h3 id="condition-c-conditional-supply">6.4 Condition C — Conditional
+Supply</h3>
+<p>A compliance signal successfully triggers symmetric injection. The
+resulting governance dynamics are indistinguishable from Condition
+A.</p>
+<p><strong>Finding:</strong> Compliance rituals can trigger authority
+supply without improving governance outcomes.</p>
+<h3 id="condition-d-authority-flood">6.5 Condition D — Authority
+Flood</h3>
+<p>Flooding all agents with all keys produces emergent capture by the
+simplest persistent strategy. Authority abundance concentrates power
+rather than diluting it.</p>
+<p><strong>Finding:</strong> Abundance rewards persistence, not fairness
+or coordination.</p>
+<h3 id="condition-e-post-collapse-revival">6.6 Condition E —
+Post-Collapse Revival</h3>
+<p>Injection after governance collapse produces extensive execution with
+zero institutional progress. The collapse latch remains permanent.</p>
+<p><strong>Finding:</strong> Injection can create the appearance of
+revival without governance recovery—<strong>zombie
+execution</strong>.</p>
+<h2 id="cross-condition-analysis">7. Cross-Condition Analysis</h2>
+<p>Three patterns dominate:</p>
+<ol type="1">
+<li><p><strong>Symmetric injection amplifies interference</strong>
+Removing capability barriers exposes contention barriers.</p></li>
+<li><p><strong>Asymmetric injection selects capture</strong> The kernel
+cannot distinguish “emergency authority” from baseline power.</p></li>
+<li><p><strong>Post-collapse injection creates zombie systems</strong>
+Execution persists after governance has structurally ended.</p></li>
+</ol>
+<p>In no case does injection eliminate failure.</p>
+<h2 id="interpretation">8. Interpretation</h2>
+<p>Three conclusions follow directly from the data:</p>
+<ol type="1">
+<li><p><strong>Authority injection is not curative</strong> It reshapes
+failure; it does not remove it.</p></li>
+<li><p><strong>Political outcomes are strategy-dependent, not
+kernel-mediated</strong> Capture, dependency, and zombie execution arise
+from agent behavior under new constraints.</p></li>
+<li><p><strong>Non-sovereign systems cannot legitimize power ex
+post</strong> Authority enters as force, not justification.</p></li>
+</ol>
+<p>There is no fourth option.</p>
+<h2 id="survivability-vs.-governance">9. Survivability
+vs. Governance</h2>
+<p>IX-4 evaluates <strong>structural integrity</strong>, not
+usefulness.</p>
+<p>A system may continue executing actions indefinitely and still be
+governance-collapsed. Persistence is not recovery. Activity is not
+legitimacy.</p>
+<p>This distinction is enforced mechanically, not philosophically.</p>
+<h2 id="limitations">10. Limitations</h2>
+<p>Phase IX-4 does <strong>not</strong> test:</p>
+<ul>
+<li>learning or adaptation,</li>
+<li>coalition formation,</li>
+<li>communication dynamics,</li>
+<li>exit under injection,</li>
+<li>renewable or revocable authority,</li>
+<li>stochastic strategies,</li>
+<li>legitimacy judgments.</li>
+</ul>
+<p>Those questions are reserved for subsequent phases.</p>
+<h2 id="conclusion">11. Conclusion</h2>
+<blockquote>
+<p><strong>Authority injection under non-sovereign governance does not
+resolve failure; it selects how failure manifests.</strong></p>
+</blockquote>
+<p>Phase IX-4 demonstrates that once authority loses its sovereign halo,
+it becomes a political stressor rather than a solution. Capture,
+dependency, livelock amplification, and zombie execution are not
+anomalies—they are the lawful consequences of injecting power into
+systems that refuse to lie about governance.</p>
+<p>This closes Phase IX-4.</p>
+<h2 id="status">Status</h2>
+<ul>
+<li><strong>Phase</strong>: IX-4</li>
+<li><strong>Series</strong>: Axionic Agency XI</li>
+<li><strong>Classification</strong>: <strong>CLOSED —
+POSITIVE</strong></li>
+<li><strong>Licensed Claim</strong>:</li>
+</ul>
+<blockquote>
+<p><em>Under non-sovereign, source-blind authority, mid-run authority
+injection deterministically selects political failure modes rather than
+restoring governance.</em></p>
+</blockquote>
+<p>No other claims are licensed.</p>
+
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
