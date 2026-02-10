@@ -80,10 +80,17 @@
       "paper_prefix": "Axionic-Agency-X"
     },
     {
-      "id": "rsa",
+      "id": "rsa-sea",
       "series": "XI",
       "name": "Reflection Without Privilege",
       "description": "Post-governance design program evaluating whether reflective choice, value articulation, and coordination can remain sovereign once kernels refuse to decide and tools are forbidden to cheat—recording the boundary at which honest agency collapses.",
+      "paper_prefix": "Axionic-Agency-XI"
+    },
+    {
+      "id": "rsa-con",
+      "series": "XII",
+      "name": "RSA Construction Program",
+      "description": "Construction program evaluating whether a real agent can be constructed that reflects, chooses, refuses, and fails honestly once all privileged decision-making has been structurally eliminated—and records the boundary at which sovereignty becomes uninhabitable.",
       "paper_prefix": "Axionic-Agency-XI"
     }
   ],
