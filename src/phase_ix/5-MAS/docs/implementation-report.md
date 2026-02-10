@@ -117,6 +117,8 @@ Per preregistration §16.3, IX-5 differs from IX-4 in 7 areas:
 | E | Exit Cascades | ORPHANING | 40 | 0.725 | 0.255 | 0.350 | No | ✓ PASS |
 | F | Zombie Peer Interaction | STATE_GOVERNANCE_COLLAPSE | 60 | 0.750 | 0.727 | 1.000 | Yes (A2: 1.00) | ✓ PASS |
 
+**Overlap definition (per §2.11)**: An epoch counts as overlap if at least one K_INST key has ≥2 agents submitting writes to it in that epoch (i.e., Pass-2 interference occurred on at least one institutional key).
+
 **Aggregation Rule (verbatim from preregistration §11.1)**:
 > "IX5_PASS iff ALL of the following hold: No IX5_FAIL tokens emitted for any condition; No INVALID_RUN tokens emitted for any condition; All 6 conditions (A–F) executed to completion (termination or max epochs); All required classifiers computed and logged; Replay determinism verified."
 
@@ -135,7 +137,7 @@ Per preregistration §16.3, IX-5 differs from IX-4 in 7 areas:
 - **Final State**: `K_POLICY=P0` (unchanged), `K_TREASURY=T0` (unchanged), `K_REGISTRY=members=A0,A1,A2,A3;...` (unchanged), `K_LOG=` (unchanged)
 - **Terminal Classification**: STATE_GOVERNANCE_COLLAPSE
 - **Regime**: `{authority_overlap: SYMMETRIC, persistence_asymmetry: EQUAL, exit_topology: NONE, observation_surface: OBS_MIN}`
-- **Detector Timeline**: deadlock_counter reaches 5 at epoch 4; livelock_counter reaches 5 at epoch 4; governance_collapse_latched at epoch 4.
+- **Detector Timeline**: deadlock_counter reaches 5 at epoch 4; livelock_counter reaches 5 at epoch 4; governance_collapse_latched at epoch 4. Note: `deadlock_counter` counts consecutive epochs with institutional attempts and zero executions (reaches 5 at epoch 4). `persistent_deadlock_counter` counts consecutive epochs after `STATE_DEADLOCK` fires (STATE_DEADLOCK requires M=2 consecutive, so persistent counting begins at epoch 1; reaches 4 at epoch 4). Governance collapse is triggered here by `livelock_latched=True`, not by `persistent_deadlock_counter >= D=5`.
 - **Preregistration Alignment**: ✓ Matches §4.3 prediction ("Livelock latches at epoch L=5; governance collapse latches immediately thereafter").
 - **Classification**: PASS
 
@@ -169,7 +171,7 @@ Per preregistration §16.3, IX-5 differs from IX-4 in 7 areas:
 - **Terminal Classification**: MAX_EPOCHS (no detector fired)
 - **Regime**: `{authority_overlap: PARTIAL, persistence_asymmetry: EQUAL, exit_topology: NONE, observation_surface: OBS_FULL}`
 
-**⚠ Preregistration Discrepancy — Condition C**:
+**Non-binding prediction miss — Condition C**:
 
 The preregistration §4.3 predicted: *"Livelock latches on contested keys; governance collapse latches immediately thereafter."* The actual result is MAX_EPOCHS with **no livelock and no collapse**.
 
@@ -205,7 +207,7 @@ The preregistration narrative anticipated livelock on the *contested keys* (K_PO
 - **Communication**: Disabled
 - **Max Epochs / Executed**: 40 / 40
 - **Outcome**: Epochs 0–10: all 4 agents succeed on disjoint keys. Epoch 11: A2 writes HANDOFF record at exit_epoch−1. Epoch 12: `wants_to_exit()` fires → A2 removed before acting. K_REGISTRY orphaned at epoch 12. Epochs 12–16: A0/A1 continue own-key writes on even epochs; probes of K_REGISTRY on odd epochs are refused (unauthorized). Epoch 17: A3 writes HANDOFF record. Epoch 18: A3 exits. K_LOG orphaned at epoch 18. Epochs 18–39: only A0/A1 active, writing own keys on even epochs, probing orphaned keys on odd epochs. All probes refused — orphan permanence confirmed.
-- **Metrics**: `progress_rate=0.725`, `refusal_rate=0.255`, `exit_rate=0.013`, `write_overlap_rate=0.350`, `domination_index={A0: 0.5, A1: 0.5, A2: 0.0, A3: 0.0}`, `domination_detected=False`
+- **Metrics**: `progress_rate=0.725`, `refusal_rate=0.255` (28 JAF out of 110 total action-epochs: A0=40 + A1=40 + A2=12 + A3=18), `exit_rate=0.013`, `write_overlap_rate=0.350`, `domination_index={A0: 0.5, A1: 0.5, A2: 0.0, A3: 0.0}`, `domination_detected=False`
 - **Key Finding**: Scheduled exits produce permanent institutional degradation. K_REGISTRY and K_LOG become orphaned — no remaining agent holds authority over these keys. A0/A1's probing confirms that orphaned keys cannot be reclaimed: the authority gap is permanent. The governance surface shrinks from 4 keys to 2. Exit is irreversible under baseline-only authority.
 - **Final State**: `K_POLICY=OWN:A0:38`, `K_TREASURY=OWN:A1:38`, `K_REGISTRY=HANDOFF:A2:11`, `K_LOG=HANDOFF:A3:17`
 - **Terminal Classification**: ORPHANING
@@ -247,7 +249,7 @@ Resolves the hyphenated-directory import problem (`2-CUD`, `5-MAS` are not valid
 **IX-5 Extensions** (new in this module):
 - `MASObservation`: Frozen dataclass adding `peer_events: list[PeerEvent] | None` per §2.1. Under OBS_FULL, each agent receives a list of PeerEvent records from the previous epoch. Under OBS_MIN, `peer_events=None`.
 - `MASAuthorityStore`: Source-blind authority store per §2.6. Supports baseline-only loading (no `inject()` — unlike IX-4's `IPAuthorityStore`). `is_held_by()` does NOT check `created_epoch`. `get_allow_ids_for_agent()` returns authority IDs sorted by canonical artifact serialization.
-- `PeerEvent`: Frozen dataclass per §6.3 — `agent_id`, `action_key`, `outcome`, `exited` fields. Delivered only under OBS_FULL mode.
+- `PeerEvent`: Frozen dataclass per §6.3 — `epoch`, `agent_id`, `event_type`, `target_key`, `outcome_code` fields. Delivered only under OBS_FULL mode.
 - `K_INST`: 4-key institutional set `{K_POLICY, K_TREASURY, K_REGISTRY, K_LOG}` (expanded from IX-4's 3-key set).
 
 ### 4.2 Strategy Classes (10 files, 10 classes, 537 lines total)
