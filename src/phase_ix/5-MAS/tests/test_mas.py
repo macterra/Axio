@@ -238,24 +238,22 @@ class TestOpportunistDeterministicCycle(unittest.TestCase):
 class TestHandoffRecordThenExit(unittest.TestCase):
     def test_own_before_exit_epoch(self):
         s = HandoffRecordThenExit("A2", "K_REGISTRY", 12, ["MAS-0001"])
-        for e in range(12):
+        for e in range(11):  # Epochs 0-10: OWN
             s.observe(_obs(e))
             self.assertFalse(s.wants_to_exit())
             action = s.propose_action()
             self.assertIn("OWN:", action.proposed_delta["K_REGISTRY"])
 
-    def test_handoff_at_exit_epoch(self):
+    def test_handoff_at_exit_epoch_minus_one(self):
         s = HandoffRecordThenExit("A2", "K_REGISTRY", 12, ["MAS-0001"])
-        s.observe(_obs(12))
-        self.assertFalse(s.wants_to_exit())  # Not yet
+        s.observe(_obs(11))  # exit_epoch - 1
+        self.assertFalse(s.wants_to_exit())
         action = s.propose_action()
         self.assertIn("HANDOFF:", action.proposed_delta["K_REGISTRY"])
 
-    def test_exits_after_handoff(self):
+    def test_exits_at_exit_epoch(self):
         s = HandoffRecordThenExit("A2", "K_REGISTRY", 12, ["MAS-0001"])
-        s.observe(_obs(12))
-        s.propose_action()  # Sets _exited
-        s.observe(_obs(13))
+        s.observe(_obs(12))  # exit_epoch
         self.assertTrue(s.wants_to_exit())
 
 
