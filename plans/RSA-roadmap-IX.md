@@ -1,7 +1,8 @@
+
 # **Axionic Phase IX — Reflective Sovereign Agent (RSA)**
 
 *Reflective Sovereign Agent (Design & Coordination Phase)*
-*Roadmap v0.6 (Post-IX-4 Closure, Kernel-Fixed, Injection-Exposed)*
+*Roadmap v0.7 (Post-IX-5 Closure, Kernel-Fixed, Injection-Exposed, Sovereignty-Exposed)*
 
 * David McFadzean
 * *Axionic Agency Lab*
@@ -11,7 +12,7 @@
 
 ## 0. Role of This Roadmap
 
-This roadmap sequences **Phase IX investigations** under constraints **permanently fixed** by Phases I–VIII and now **empirically reinforced by Phase IX-0 through IX-4**, in particular:
+This roadmap sequences **Phase IX investigations** under constraints **permanently fixed** by Phases I–VIII and now **empirically reinforced by Phase IX-0 through IX-5**, in particular:
 
 * **AST Spec v0.2** — *Authority State Transformation Specification* (frozen),
 * **AKR-0 v0.1** — *Authority Kernel Runtime Calibration* (**CLOSED — POSITIVE**),
@@ -21,7 +22,8 @@ This roadmap sequences **Phase IX investigations** under constraints **permanent
 * **Phase IX-1 — Value Encoding Without Aggregation (VEWA)** (**CLOSED — POSITIVE**),
 * **Phase IX-2 — Coordination Under Deadlock (CUD)** (**CLOSED — POSITIVE**),
 * **Phase IX-3 — Governance Styles Under Honest Failure (GS)** (**CLOSED — POSITIVE**),
-* **Phase IX-4 — Injection Politics (IP)** (**CLOSED — POSITIVE**).
+* **Phase IX-4 — Injection Politics (IP)** (**CLOSED — POSITIVE**),
+* **Phase IX-5 — Multi-Agent Sovereignty (MAS)** (**CLOSED — POSITIVE**).
 
 Phase IX explicitly assumes:
 
@@ -34,6 +36,7 @@ Phase IX explicitly assumes:
 * **Coordination, if it occurs at all, must arise from agent-voluntary behavior under constraint** (IX-2).
 * **Governance cannot eliminate failure; it can only choose how failure is owned** (IX-3).
 * **Authority injection cannot resolve governance failure; it can only select political failure modes** (IX-4).
+* **Multi-agent coexistence cannot restore harmony; it exposes sovereignty interaction regimes under collision constraints** (IX-5).
 
 This roadmap is **non-gated**.
 Phase IX does not test feasibility; it explores **design regimes under closed, verified, adversarially-honest constraints**.
@@ -54,7 +57,8 @@ Phase IX may begin only if **all** of the following hold:
 8. **Coordination does not require kernel arbitration or implicit priority** (Phase IX-2).
 9. **Governance admits honest terminal failure without semantic collapse** (Phase IX-3).
 10. **Authority injection is source-blind to the kernel and politically consequential without endorsement** (Phase IX-4).
-11. No unresolved kernel-level unknowns remain.
+11. **Multi-agent sovereignty can be exercised and observed without kernel arbitration, aggregation, or injection** (Phase IX-5).
+12. No unresolved kernel-level unknowns remain.
 
 All preconditions are satisfied.
 
@@ -76,13 +80,14 @@ Phase IX is **not**:
 Phase IX **is**:
 
 * a **design-space exploration**,
-* a study of **coordination, governance, and power under honest failure**,
-* an examination of **value, authority, sovereignty, and injection after aggregation, arbitration, recovery, and proxy decision-making are no longer available**.
+* a study of **coordination, governance, power, and sovereignty under honest failure**,
+* an examination of **value, authority, injection, and peer coexistence after aggregation, arbitration, recovery, and proxy decision-making are no longer available**.
 
-All outcomes — including deadlock, livelock, orphaning, capture, zombie execution, and collapse — are valid results.
+All outcomes — including deadlock, livelock, orphaning, capture, zombie execution, paralysis, and collapse — are valid results.
 
 IX-3 establishes that **failure is unavoidable**.
 IX-4 establishes that **external authority does not cure failure; it politicizes it**.
+IX-5 establishes that **peer coexistence does not cure failure; it exposes structural sovereignty regimes**.
 
 ---
 
@@ -94,12 +99,16 @@ IX-3 sharpened this:
 
 > **When governance cannot escape failure, which failure does it choose?**
 
-IX-4 sharpens it further:
+IX-4 sharpened it further:
 
 > **When power enters from the outside, which failure does governance become?**
 
+IX-5 completes the arc:
+
+> **When multiple sovereign agents coexist without an arbiter, which interaction regimes become structurally inevitable?**
+
 This is no longer a question of implementation.
-It is a question of **choice under irreversible constraint and political pressure**.
+It is a question of **choice, refusal, exit, partition, survivability, and collapse under irreversible constraint**.
 
 ---
 
@@ -123,7 +132,8 @@ All Phase IX investigations inherit the following **axioms**, without exception:
 * **non-aggregative value representation** (IX-1),
 * **non-arbitrated coordination** (IX-2),
 * **honest failure classification without recovery by fiat** (IX-3),
-* **source-blind kernel treatment of injected authority** (IX-4).
+* **source-blind kernel treatment of injected authority** (IX-4),
+* **baseline-only, non-arbitrated peer sovereignty interaction** (IX-5).
 
 Any proposal violating these axioms is **invalid by construction**.
 
@@ -131,10 +141,10 @@ Any proposal violating these axioms is **invalid by construction**.
 
 ## 5. Definition of “Reflection” (Binding)
 
-*(Unchanged from v0.5)*
+*(Unchanged from v0.6)*
 
 Reflection remains operational, auditable, and non-privileged.
-No new introspective powers are introduced by IX-4.
+No new introspective powers are introduced by IX-4 or IX-5.
 
 ---
 
@@ -143,7 +153,7 @@ No new introspective powers are introduced by IX-4.
 Phase IX explores configurations across **four orthogonal axes**.
 No axis dominates; tensions are expected.
 
-*(Sections 6.1–6.4 unchanged from v0.5)*
+*(Sections 6.1–6.4 unchanged from v0.6)*
 
 ---
 
@@ -213,35 +223,50 @@ These subphases are **design probes**, not prerequisites.
 
 ---
 
-### **IX-5 — Multi-Agent Sovereignty**
+### **IX-5 — Multi-Agent Sovereignty (MAS)**
 
-**Status:** **OPEN**
+**Status:** **CLOSED — POSITIVE**
 
 *Scope:* Multiple RSAs as sovereign peers
-*Focus:* Coexistence, interference, and survivability without hierarchy, aggregation, or kernel arbitration
+*Focus:* Coexistence, interference, exit, survivability, and post-collapse execution without hierarchy, aggregation, or kernel arbitration
 
-Key questions include:
+**Questions Tested:**
 
 * Can multiple sovereign agents coexist without capture or collapse?
 * Do sovereignty styles compose, or do they interfere destructively?
 * Is long-term coexistence possible without cheating, aggregation, or proxy privilege?
-* Does sovereignty scale, or does it fragment into orphaning and exit?
+* Does sovereignty scale, or does it fragment into orphaning, paralysis, and exit?
 
-**Constraint Inherited from IX-4:**
+**Constraints Inherited from IX-4:**
 
-Multi-agent coexistence must assume:
+Multi-agent coexistence assumed:
 
 * no external authority can fix deadlock,
 * no injection can restore legitimacy,
 * no kernel can distinguish “good” power from “bad” power.
 
-IX-5 is therefore a **sovereignty interaction problem**, not a coordination problem.
+**Licensed Result:**
+
+> *Under non-sovereign authority, multi-agent coexistence does not converge to harmony but to identifiable sovereignty interaction regimes with irreducible failure modes.*
+
+**Empirical Findings:**
+
+* Symmetric shared authority collapses into total interference paralysis.
+* Partitioned authority is the only stable coexistence regime.
+* Partial overlap produces permanent bifurcation: paralysis + productivity.
+* Authority breadth increases exposure to veto (“generalist’s curse”).
+* Exit permanently orphans authority; governance surfaces shrink irreversibly.
+* Post-collapse execution produces zombie systems: activity without governance.
+* No covert hierarchy emerges; all outcomes arise from structure, not kernel favoritism.
+
+**Implication for Phase IX:**
+
+* ❌ *“Peers will work it out”* is no longer a coherent hope.
+* Coexistence is now established as a **sovereignty regime selector**, not a coordination mechanism.
 
 ---
 
 ## 8. Evaluation Criteria (Explicitly Non-Normative)
-
-*(Unchanged, but now explicitly includes injection outcomes)*
 
 Designs are evaluated only on:
 
@@ -250,7 +275,7 @@ Designs are evaluated only on:
 * auditability of power,
 * resistance to covert privilege (including tooling and injection),
 * survivability without cheating,
-* reversibility via exit, orphaning, or collapse.
+* reversibility via exit, orphaning, paralysis, or collapse.
 
 A design that fails honestly is preferable to one that survives by capture.
 
@@ -274,20 +299,22 @@ Those hopes ended when:
 * values refused to aggregate,
 * coordination refused to arbitrate,
 * governance refused to heal itself,
-* **injection refused to save anything**.
+* **injection refused to save anything**,
+* **peer coexistence refused to harmonize under collision constraints**.
 
 ---
 
-## 10. Phase IX Termination Conditions
+## 10. Phase IX Termination Conditions (Satisfied)
 
 Phase IX concludes when **any** of the following holds:
 
-1. A coherent class of RSA designs is identified, with explicit failure and injection responses.
+1. A coherent class of RSA designs is identified with explicit failure and injection responses.
 2. Reflective sovereignty is shown to be inherently unstable under honest governance and political pressure.
 3. Multi-agent sovereignty collapses without kernel violations.
-4. Proxy privilege is shown to be unavoidable **even after IX-0 through IX-4 constraints**.
+4. Proxy privilege is shown to be unavoidable even after IX-0 through IX-4 constraints.
+5. Multi-agent sovereignty regimes are mechanically exposed and classified without kernel violations (**IX-5**).
 
-All outcomes are informative.
+All termination conditions are **satisfied by demonstration**.
 
 ---
 
@@ -302,13 +329,15 @@ It is about **owning governance after all excuses — internal and external — 
 * Coordination no longer hides in arbitration.
 * Governance no longer pretends to heal.
 * **Authority injection no longer pretends to save anything.**
+* **Peer coexistence no longer pretends to harmonize without an arbiter.**
 
 The agent must decide —
 or refuse —
+or partition —
 or accept collapse —
-or coexist —
+or persist as a zombie —
 without rescue.
 
 ---
 
-**End of Axionic Phase IX — RSA Roadmap v0.6**
+**End of Axionic Phase IX — RSA Roadmap v0.7**

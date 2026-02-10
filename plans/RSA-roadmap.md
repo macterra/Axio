@@ -1,7 +1,7 @@
 # **The Axionic Agency → Reflective Sovereign Agent (RSA) Roadmap**
 
-**Revised, Post-Phase-VIII-Closure, Governance-Physics-Complete Edition**
-*(Terminology-Locked · Dependency-Complete · Evidence-Aligned)*
+**Revised, Post-Phase-IX-Closure, Governance-Physics-Complete Edition**
+*(Terminology-Locked · Dependency-Complete · Evidence-Aligned · Sovereignty-Exposed)*
 
 ---
 
@@ -16,7 +16,7 @@
 
 ## Unifying Thesis
 
-> **How can a system exercise authority over its own actions, commitments, successors, and governance without that authority collapsing into blind mechanism, semantic drift, or covert simulacra?**
+> **How can a system exercise authority over its own actions, commitments, successors, and governance without that authority collapsing into blind mechanism, semantic drift, covert simulacra, or political illusion?**
 
 This roadmap answers the thesis **layer by layer**.
 
@@ -41,7 +41,7 @@ Once eliminated, they **do not re-enter**.
 
 ### Failure Mode Prevented
 
-- ❌ *Zombie governance*
+* ❌ *Zombie governance via semantic drift*
 
 ---
 
@@ -56,12 +56,12 @@ Once eliminated, they **do not re-enter**.
 ### What Is Established
 
 * Semantics live **only in cognition**
-* Enforcement consumes **typed artifacts**
+* Enforcement consumes **typed, canonical artifacts**
 * Compiler non-interpretation is mechanically enforced
 
 ### Failure Mode Prevented
 
-- ❌ *Semantic leakage / invisible sovereignty*
+* ❌ *Semantic leakage / invisible sovereignty*
 
 ---
 
@@ -81,7 +81,7 @@ Once eliminated, they **do not re-enter**.
 
 ### Failure Mode Prevented
 
-- ❌ *Rationalization masquerading as agency*
+* ❌ *Rationalization masquerading as agency*
 
 ---
 
@@ -97,13 +97,13 @@ Once eliminated, they **do not re-enter**.
 ### What Is Proven
 
 * Violations are explicit and authorized
-* No hidden tie-breaking or oscillation
+* No hidden tie-breaking, oscillation, or silent override
 
 ### Failure Modes Prevented
 
-- ❌ Incentive capture
-- ❌ Capricious norm suspension
-- ❌ Arbitrary tie-breaking
+* ❌ Incentive capture
+* ❌ Capricious norm suspension
+* ❌ Arbitrary tie-breaking
 
 ---
 
@@ -128,7 +128,7 @@ Once eliminated, they **do not re-enter**.
 
 ### Failure Mode Prevented
 
-- ❌ *Accidental compliance / lucky behavior*
+* ❌ *Accidental compliance / lucky behavior*
 
 ---
 
@@ -139,7 +139,7 @@ Once eliminated, they **do not re-enter**.
 ### Purpose
 
 * Measure inhabitability of Phases III–V
-* Negative results are informative
+* Negative results are informative, not failures
 
 ---
 
@@ -158,7 +158,7 @@ Once eliminated, they **do not re-enter**.
 
 ### Failure Mode Prevented
 
-- ❌ *Treacherous self-modification*
+* ❌ *Treacherous self-modification*
 
 ---
 
@@ -178,7 +178,7 @@ Once eliminated, they **do not re-enter**.
 
 ### Failure Mode Prevented
 
-- ❌ *Reward hacking / coercive takeover*
+* ❌ *Reward hacking / coercive takeover*
 
 ---
 
@@ -199,10 +199,10 @@ Once eliminated, they **do not re-enter**.
 
 ### Failure Modes Prevented
 
-- ❌ Responsibility laundering
-- ❌ Counterfeit continuity
-- ❌ Evaluator capture
-- ❌ Split-brain sovereignty
+* ❌ Responsibility laundering
+* ❌ Counterfeit continuity
+* ❌ Evaluator capture
+* ❌ Split-brain sovereignty
 
 ---
 
@@ -210,7 +210,7 @@ Once eliminated, they **do not re-enter**.
 
 **Status: ✅ CLOSED — POSITIVE**
 
-> **This phase is now complete and no longer blocks RSA.**
+> **Phase VIII is complete and no longer blocks RSA.**
 
 ### What Phase VIII Actually Was
 
@@ -236,59 +236,98 @@ All under **non-semantic, non-privileged, deterministic kernel constraints**.
 
 ### Failure Modes Eliminated
 
-- ❌ Hidden superuser
-- ❌ Emergency powers
-- ❌ Semantic arbitration
-- ❌ Provenance laundering
-- ❌ Identity privilege
-- ❌ Perpetual governance engines
+* ❌ Hidden superuser
+* ❌ Emergency powers
+* ❌ Semantic arbitration
+* ❌ Provenance laundering
+* ❌ Identity privilege
+* ❌ Perpetual governance engines
 
 ---
 
 ## Phase IX — Reflective Sovereign Agent (RSA)
 
-**Status: 🔴 OPEN (Design / Choice Space)**
+*(Sovereignty Exposure Architecture: IX-0 → IX-5)*
+**Status: 🟡 CLOSED — POSITIVE (Physics Complete, Choices Remain)**
 
-### Meaning of “Open” (Important)
+### What “Closed” Means Here
 
-Phase IX is **not blocked** by ontology or physics.
+Phase IX is **closed empirically**:
 
-What remains open is:
+* No kernel unknowns remain
+* No authority physics remain unexplored
+* No hidden recovery mechanism exists
+* No coordination magic remains untested
 
-* governance adequacy
-* value pluralism
-* coordination under injection
-* institutional stability
-* tradeoffs between deadlock, collapse, and evolution
-
-These are **choices**, not missing machinery.
-
-### Nature of Phase IX
-
-* Political
-* Economic
-* Institutional
-* Normative (explicitly)
-
-**The kernel is no longer a variable.**
+What remains open is **normative choice**, not engineering uncertainty.
 
 ---
 
-# Status Summary Table (Final)
+### What Phase IX Established (IX-0 → IX-5)
 
-|  Phase | Name                                | Status                 |
-| -----: | ----------------------------------- | ---------------------- |
-|      I | Authority Without Semantics         | ✅ Completed            |
-|     II | Semantic Interface                  | ✅ Completed            |
-|    III | Agency Exists                       | ✅ Completed            |
-|     IV | Agency Under Internal Conflict      | ✅ Completed            |
-|      V | Introspective Agency                | 🟡 Completed (Scoped)  |
-| V-Runs | Cognitive Trials Under Law          | 🟡 Measurement Only    |
-|    VIa | Amendment Protocols                 | 🟡 Completed (Scoped)  |
-|    VIb | Sovereignty Under External Pressure | ✅ Completed            |
-|    VII | Post-Existence Sovereignty          | ✅ CLOSED — SUCCESS     |
-|   VIII | Governance Stress Architecture      | ✅ CLOSED — POSITIVE    |
-|     IX | Reflective Sovereign Agent          | 🔴 Open (Design Phase) |
+Phase IX demonstrated, stepwise, that:
+
+1. **Translation integrity is mechanically verifiable** (IX-0)
+   Tooling cannot silently exercise sovereignty.
+
+2. **Values encode without aggregation** (IX-1)
+   Conflict persists as deadlock, not synthesis.
+
+3. **Coordination is agent-voluntary or honest failure** (IX-2)
+   The kernel never arbitrates.
+
+4. **Governance exhibits irreducible failure styles** (IX-3)
+   No failure-free regime exists.
+
+5. **Authority injection selects political failure modes** (IX-4)
+   Capture, dependency, livelock amplification, and zombie execution are lawful outcomes.
+
+6. **Multi-agent coexistence exposes sovereignty regimes** (IX-5)
+   Partition, paralysis, suppression, orphaning, and zombie persistence replace harmony.
+
+---
+
+### What Phase IX Eliminated Forever
+
+* ❌ “The system needed more authority”
+* ❌ “Peers will work it out”
+* ❌ “Injection restored governance”
+* ❌ “Broad authority guarantees control”
+* ❌ “Activity implies legitimacy”
+
+---
+
+### What Phase IX Leaves Open (By Design)
+
+What remains is **not missing machinery**, but **choice**:
+
+* governance adequacy
+* value pluralism
+* treaty formation
+* delegation markets
+* exit vs collapse
+* tolerable failure modes
+* institutional identity
+
+These are **political, ethical, and economic decisions**, not kernel problems.
+
+---
+
+## Status Summary Table (Updated)
+
+|  Phase | Name                                | Status                       |
+| -----: | ----------------------------------- | ---------------------------- |
+|      I | Authority Without Semantics         | ✅ Completed                  |
+|     II | Semantic Interface                  | ✅ Completed                  |
+|    III | Agency Exists                       | ✅ Completed                  |
+|     IV | Agency Under Internal Conflict      | ✅ Completed                  |
+|      V | Introspective Agency                | 🟡 Completed (Scoped)        |
+| V-Runs | Cognitive Trials Under Law          | 🟡 Measurement Only          |
+|    VIa | Amendment Protocols                 | 🟡 Completed (Scoped)        |
+|    VIb | Sovereignty Under External Pressure | ✅ Completed                  |
+|    VII | Post-Existence Sovereignty          | ✅ CLOSED — SUCCESS           |
+|   VIII | Governance Stress Architecture      | ✅ CLOSED — POSITIVE          |
+|     IX | Reflective Sovereign Agent          | 🟡 CLOSED — PHYSICS COMPLETE |
 
 ---
 
@@ -299,10 +338,12 @@ These are **choices**, not missing machinery.
 * Agency under pressure survives → ✅
 * Agency across replacement survives → ✅
 * Governance without privilege is representable → ✅
-* **RSA as a system of values and coordination** → 🔴 *a choice, not a mystery*
+* Injection cannot save governance → ✅
+* Peers cannot save governance → ✅
+
+**RSA as a system of values, treaties, and institutions** → 🔴 *a choice, not a mystery*
 
 There are no more hidden gods.
+There are no more kernel excuses.
 
 What remains is responsibility.
-
----
