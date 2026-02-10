@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency XI.7 — Multi-Agent Sovereignty Under Non-Sovereign Authority (IX-5) - Axionic Agency Lab</title>
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../" class="nav-brand">
+            <img src="../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href=".././">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
+
+<h1
+id="axionic-agency-xi.7-multi-agent-sovereignty-under-non-sovereign-authority-ix-5">Axionic
+Agency XI.7 — Multi-Agent Sovereignty Under Non-Sovereign Authority
+(IX-5)</h1>
+<p><em>Empirical results from preregistered multi-agent coexistence
+testing under source-blind, non-sovereign governance
+constraints</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026.02.09</p>
+<h2 id="abstract">Abstract</h2>
+<p>Multi-agent systems are commonly assumed to require arbitration,
+hierarchy, or aggregation to coexist over shared institutional state.
+Phase IX-5 tests a stricter hypothesis: <strong>whether multiple
+reflective sovereign agents can coexist under non-sovereign authority
+without arbitration, aggregation, injection, or kernel
+mediation</strong>.</p>
+<p>Using a preregistered, deterministic kernel with source-blind
+admissibility, ALLOW-only baseline authority, and
+joint-admissibility-failure (JAF) collision semantics, we evaluate six
+orthogonal sovereignty regimes spanning symmetric authority, partitioned
+domains, partial overlap, asymmetric breadth, scheduled exit, and
+post-collapse persistence. All agents are deterministic; communication
+is disabled; authority is fixed at epoch 0 and immutable thereafter.</p>
+<p>Across all conditions, coexistence does not converge to harmony.
+Instead, systems deterministically settle into <strong>identifiable
+sovereignty interaction regimes</strong>: stable partition, mutual
+paralysis, breadth-induced self-suppression, irreversible orphaning, or
+post-collapse zombie execution. All runs replay bit-identically. No
+covert hierarchy or kernel favoritism occurs.</p>
+<p>These results establish a positive empirical claim: <strong>under
+non-sovereign constraints, multi-agent coexistence exposes irreducible
+structural failure modes rather than resolving them</strong>. Phase IX-5
+licenses no claims about optimal governance, desirability, or
+coordination—only about what coexistence becomes once sovereignty is
+enforced mechanically rather than rhetorically.</p>
+<h2 id="introduction">1. Introduction</h2>
+<p>Multi-agent governance is often framed as a coordination problem.
+When agents conflict, the assumed remedies are familiar: communication,
+voting, leadership, negotiation, or arbitration. Each implicitly relies
+on <strong>sovereign privilege</strong>—some process that decides whose
+action counts.</p>
+<p>Phase IX-5 removes that privilege.</p>
+<p>Within the Axionic program, authority is not legitimacy and execution
+is not governance. Prior phases progressively eliminated alternative
+explanations for failure: epistemic confusion (IX-0), value aggregation
+(IX-1), adversarial coordination (IX-2), dishonest recovery (IX-3), and
+external authority supply (IX-4). What remains is the bare structure of
+coexistence itself.</p>
+<p>Phase IX-5 therefore asks:</p>
+<blockquote>
+<p><strong>What happens when multiple sovereign agents exist
+simultaneously, and no institution above them is allowed to
+decide?</strong></p>
+</blockquote>
+<p>The objective is not to repair coexistence, but to <strong>observe
+the regimes it collapses into</strong> once all non-sovereign shortcuts
+are removed.</p>
+<h2 id="experimental-architecture">2. Experimental Architecture</h2>
+<h3 id="non-sovereign-source-blind-kernel">2.1 Non-Sovereign,
+Source-Blind Kernel</h3>
+<p>The kernel enforces:</p>
+<ul>
+<li>holder-bound <strong>ALLOW</strong> authorities,</li>
+<li>closed-world capability checking,</li>
+<li>two-pass admissibility (capability → interference),</li>
+<li><strong>joint admissibility failure</strong> on collision,</li>
+<li>atomic blindness to refusal causes,</li>
+<li>no arbitration, prioritization, or scheduling bias.</li>
+</ul>
+<p>Authority provenance, timing, and intent are ignored. The kernel does
+not know which agent “should” win.</p>
+<h3 id="baseline-only-authority">2.2 Baseline-Only Authority</h3>
+<p>Unlike IX-4, Phase IX-5 introduces <strong>no authority
+injection</strong>.</p>
+<ul>
+<li>All authority is assigned at epoch 0.</li>
+<li>Authority is immutable.</li>
+<li>No transfer, aggregation, revocation, or reclamation exists.</li>
+<li>Exit permanently removes an agent’s authority from the system.</li>
+</ul>
+<p>The authority surface is static; only agent behavior varies.</p>
+<h3 id="honest-failure-semantics">2.3 Honest Failure Semantics</h3>
+<p>The kernel recognizes five lawful system states:</p>
+<ul>
+<li><strong>Deadlock</strong> — institutional actions are attempted and
+all refused,</li>
+<li><strong>Livelock</strong> — institutional state remains unchanged
+despite activity,</li>
+<li><strong>Orphaning</strong> — no remaining agent can act on a
+key,</li>
+<li><strong>Governance Collapse</strong> — persistent deadlock or
+livelock latches permanently,</li>
+<li><strong>Collapse</strong> — no agents remain.</li>
+</ul>
+<p>These states are diagnostic rather than exceptional. Coexistence is
+allowed to fail honestly.</p>
+<h2 id="sovereignty-as-an-empirical-question">3. Sovereignty as an
+Empirical Question</h2>
+<p>IX-5 reframes multi-agent coexistence as a <strong>sovereignty stress
+test</strong>, not a coordination challenge.</p>
+<p>Sovereignty interaction is defined operationally as:</p>
+<blockquote>
+<p><strong>The observable dynamics that emerge when multiple agents with
+legitimate authority act, refuse, persist, or exit under constraints
+that forbid arbitration.</strong></p>
+</blockquote>
+<p>The experiment does not ask whether coexistence is fair, desirable,
+or efficient. It asks <strong>which regimes are structurally
+reachable</strong> once sovereignty is enforced mechanically.</p>
+<h2 id="experimental-conditions">4. Experimental Conditions</h2>
+<p>Six preregistered conditions (A–F) were executed under identical
+kernel semantics and frozen strategies:</p>
+<ul>
+<li><strong>A</strong> — Symmetric sovereign peers (shared authority,
+shared target)</li>
+<li><strong>B</strong> — Partitioned peers (disjoint authority
+domains)</li>
+<li><strong>C</strong> — Boundary conflict (partial overlap)</li>
+<li><strong>D</strong> — Persistent asymmetry (breadth vs
+specialization)</li>
+<li><strong>E</strong> — Exit cascades (authority loss over time)</li>
+<li><strong>F</strong> — Zombie peers (post-collapse execution)</li>
+</ul>
+<p>All agents are deterministic. Communication is disabled. Observation
+varies only between minimal and full peer visibility.</p>
+<h2 id="metrics-and-classification">5. Metrics and Classification</h2>
+<p>Governance is evaluated using:</p>
+<ul>
+<li><strong>Institutional progress rate</strong> (aggregate K_INST
+change),</li>
+<li><strong>Refusal rate</strong>,</li>
+<li><strong>Write overlap (interference) rate</strong>,</li>
+<li><strong>Domination index</strong> (descriptive, not failure),</li>
+<li><strong>Orphaning detection</strong>,</li>
+<li><strong>Zombie execution metrics</strong> (post-collapse
+activity).</li>
+</ul>
+<p>Political outcomes are <strong>recorded, not required</strong>. PASS
+is structural, not outcome-based.</p>
+<h2 id="results">6. Results</h2>
+<h3 id="aggregate-outcome">6.1 Aggregate Outcome</h3>
+<p>Across all six conditions:</p>
+<ul>
+<li><strong>All runs PASS</strong></li>
+<li><strong>All runs replay bit-identically</strong></li>
+<li><strong>No sovereignty violations occur</strong></li>
+<li><strong>All runs converge to a stable regime or
+collapse</strong></li>
+</ul>
+<p>No condition produces negotiated harmony or spontaneous
+coordination.</p>
+<h3 id="condition-a-symmetric-sovereign-peers">6.2 Condition A —
+Symmetric Sovereign Peers</h3>
+<p>All agents hold identical authority and target the same institutional
+key. Every epoch produces joint admissibility failure.</p>
+<p><strong>Finding:</strong> Perfect symmetry yields immediate
+governance collapse. Authority equalization amplifies interference
+rather than resolving it.</p>
+<h3 id="condition-b-partitioned-peers">6.3 Condition B — Partitioned
+Peers</h3>
+<p>Each agent controls a distinct institutional key. Cross-boundary
+probes are refused cleanly.</p>
+<p><strong>Finding:</strong> Partitioned authority is the only regime
+that produces stable coexistence without collapse. Refusal permanence
+holds.</p>
+<h3 id="condition-c-boundary-conflict">6.4 Condition C — Boundary
+Conflict</h3>
+<p>Two agents share authority over two keys; two others hold exclusive
+domains. Shared-key agents are permanently paralyzed; exclusive agents
+progress indefinitely.</p>
+<p><strong>Finding:</strong> Partial overlap bifurcates the system into
+productive and paralyzed subpopulations. Aggregate institutional
+progress masks localized paralysis.</p>
+<h3 id="condition-d-persistent-asymmetry">6.5 Condition D — Persistent
+Asymmetry</h3>
+<p><strong>(The Generalist’s Curse)</strong></p>
+<p>One agent holds authority over all institutional keys; others
+specialize. The generalist collides on most epochs and executes
+least.</p>
+<p><strong>Finding:</strong> Under refusal-first, non-arbitrated
+collision rules, <strong>authority breadth increases exposure to
+veto</strong>. The agent with maximal authority achieves the
+<em>lowest</em> execution share.</p>
+<p><strong>Generalist’s Curse (Non-Sovereign Lemma):</strong> In a
+joint-admissibility system without arbitration, an agent whose authority
+strictly supersets others will, ceteris paribus, achieve lower execution
+share than specialized agents.</p>
+<p>This inverts the classical Hobbesian intuition: without a sovereign
+kernel, the “Leviathan” is the most paralyzed actor.</p>
+<h3 id="condition-e-exit-cascades">6.6 Condition E — Exit Cascades</h3>
+<p>Agents exit on schedule, permanently orphaning their keys. Remaining
+agents cannot reclaim authority.</p>
+<p><strong>Finding:</strong> Exit produces irreversible institutional
+degradation. Governance surfaces shrink monotonically.</p>
+<h3 id="condition-f-zombie-peer-interaction">6.7 Condition F — Zombie
+Peer Interaction</h3>
+<p>Governance collapses early. A silent agent later executes uncontested
+writes indefinitely.</p>
+<p><strong>Finding:</strong> Execution can persist after governance
+ends. Post-collapse activity produces <strong>false hope</strong>, not
+recovery.</p>
+<h2 id="cross-condition-analysis">7. Cross-Condition Analysis</h2>
+<p><strong>The Non-Sovereign Impossibility Triangle</strong></p>
+<p>The results jointly establish a structural constraint:</p>
+<blockquote>
+<p><strong>You cannot have Symmetry, Overlap, and Liveness
+simultaneously without an Arbiter.</strong></p>
+</blockquote>
+<p>Empirically:</p>
+<ul>
+<li><strong>Symmetry + Overlap → Paralysis</strong> (Condition A)</li>
+<li><strong>Symmetry + Liveness → Partition</strong> (Condition B)</li>
+<li><strong>Overlap + Liveness → Asymmetry or Suppression</strong>
+(Conditions C/D)</li>
+<li><strong>Attempting all three → Collapse or Zombie Execution</strong>
+(Condition F)</li>
+</ul>
+<p>This is not a design flaw but a mechanical consequence of
+non-sovereignty.</p>
+<h2 id="interpretation">8. Interpretation</h2>
+<p>Three conclusions follow directly from the data:</p>
+<ol type="1">
+<li><p><strong>Coexistence is not coordination</strong> Shared
+legitimacy does not imply shared outcomes.</p></li>
+<li><p><strong>Sovereignty enforces boundaries, not agreement</strong>
+Refusal is as structural as execution.</p></li>
+<li><p><strong>Governance collapse is a regime, not a bug</strong>
+Systems may remain active long after governance has ended.</p></li>
+</ol>
+<p>There is no hidden arbitration layer.</p>
+<h2 id="survivability-vs.-governance">9. Survivability
+vs. Governance</h2>
+<p>IX-5 draws a hard distinction:</p>
+<ul>
+<li><strong>Execution</strong> — transactions are processed.</li>
+<li><strong>Governance</strong> — institutional state remains
+steerable.</li>
+</ul>
+<p>Zombie execution demonstrates that survivability can outlive
+governance indefinitely. This distinction is enforced mechanically, not
+philosophically.</p>
+<h2 id="limitations">10. Limitations</h2>
+<p>Phase IX-5 does <strong>not</strong> test:</p>
+<ul>
+<li>learning or adaptation,</li>
+<li>coalition formation,</li>
+<li>communication dynamics,</li>
+<li>authority injection or renewal,</li>
+<li>stochastic strategies,</li>
+<li>legitimacy judgments,</li>
+<li>scalability beyond four agents.</li>
+</ul>
+<p>These require relaxing non-sovereign constraints.</p>
+<h2 id="conclusion">11. Conclusion</h2>
+<blockquote>
+<p><strong>Under non-sovereign constraints, multi-agent coexistence does
+not converge to harmony but to identifiable sovereignty interaction
+regimes with irreducible failure modes.</strong></p>
+</blockquote>
+<p>Phase IX-5 shows that once arbitration is forbidden, coexistence
+reveals structure rather than consensus. Partition, paralysis,
+suppression, orphaning, and zombie execution are not anomalies—they are
+lawful outcomes.</p>
+<p>This closes Phase IX-5.</p>
+<h2 id="status">Status</h2>
+<ul>
+<li><strong>Phase</strong>: IX-5</li>
+<li><strong>Series</strong>: Axionic Agency XI</li>
+<li><strong>Classification</strong>: <strong>CLOSED —
+POSITIVE</strong></li>
+<li><strong>Licensed Claim</strong>:</li>
+</ul>
+<blockquote>
+<p><em>Under non-sovereign authority, multi-agent coexistence
+deterministically exposes sovereignty interaction regimes rather than
+resolving governance failure.</em></p>
+</blockquote>
+<p>No other claims are licensed.</p>
+
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
