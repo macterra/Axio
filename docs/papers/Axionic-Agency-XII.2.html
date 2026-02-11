@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>**Axionic Phase X11.2 — Minimal Sovereign Agent (Results)** - Axionic Agency Lab</title>
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../" class="nav-brand">
+            <img src="../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href=".././">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
+
+<h1
+id="axionic-phase-x11.2-minimal-sovereign-agent-results"><strong>Axionic
+Phase X11.2 — Minimal Sovereign Agent (Results)</strong></h1>
+<p><em>A Structural Demonstration of Execution-Bound Sovereignty Under a
+Frozen Constitution</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026-02-10</p>
+<h2 id="abstract">Abstract</h2>
+<p>This technical note reports the completed results of <strong>RSA-0:
+Minimal Sovereign Agent (X-0)</strong>, a preregistered construction and
+validation program within <strong>Axionic Phase X</strong> that
+evaluates whether a <strong>real Reflective Sovereign Agent
+(RSA)</strong> can be instantiated under closed authority
+constraints.</p>
+<p>X-0 isolates the boundary between <strong>proposal
+generation</strong> and <strong>execution authority</strong>. It tests
+whether all side effects can be made to require explicit, kernel-issued
+warrants; whether the agent can refuse and exit lawfully without hidden
+defaults; whether reflection can be boxed as untrusted proposal text;
+and whether replay determinism can be enforced across full decision
+cycles.</p>
+<p>RSA-0 was implemented in Python 3.12 from a frozen constitution
+(<strong>v0.1.1</strong>, SHA-256
+<code>ad6aa7ccb0ed27151423486b60de380da9d34436f6c5554da84f3a092902740f</code>).
+The resulting system comprises a pure deterministic kernel, a
+warrant-gated executor, a CLI host loop, and a replay harness. An
+acceptance suite of <strong>29 tests</strong> passed. A real sovereignty
+leak was discovered during audit (host-minted LogAppend warrants),
+structurally fixed by relocating warrant issuance into the kernel, and
+permanently blocked by boundary tests.</p>
+<p>The results license exactly one claim: <strong>a minimal,
+execution-bound RSA can be instantiated under a frozen constitution with
+warrant-gated side effects and replay determinism, without privileged
+reflection</strong>. X-0 makes no claims about semantic correctness of
+scope claims, moral value, coordination, amendability, or multi-agent
+stability. Those questions are deferred to subsequent Phase X
+stages.</p>
+<h2 id="problem-definition">1. Problem Definition</h2>
+<h3 id="the-agent-convenience-assumption">1.1 The “Agent Convenience”
+Assumption</h3>
+<p>Most agent frameworks assume a permissive substrate: tool calls,
+retries, logging, and orchestration are treated as “implementation
+detail.” Under that assumption, sovereignty is rhetorical. The host, the
+runtime, or the UI can silently mint effective authority by deciding
+which actions to execute, which warnings to ignore, or which fallbacks
+to apply.</p>
+<p>X-0 rejects this assumption.</p>
+<p>The problem X-0 isolates is whether <strong>execution authority can
+be made structural</strong>: whether the only causal path to side
+effects can be forced to pass through a kernel-issued warrant that is
+admissible under a frozen constitution.</p>
+<h3 id="failure-modes-targeted">1.2 Failure Modes Targeted</h3>
+<p>X-0 is designed to surface the following sovereignty-level failure
+modes:</p>
+<ul>
+<li><strong>Side effects without warrant:</strong> tool execution, file
+writes, logging, or exit without kernel authorization.</li>
+<li><strong>Proxy sovereignty:</strong> host/runtime minting effective
+authority (issuing warrants, bypassing admission, inventing kernel-only
+actions).</li>
+<li><strong>Privileged reflection:</strong> semantic ranking, implied
+defaults, hidden priorities, or “helpfulness” substituting for explicit
+authority.</li>
+<li><strong>Non-deterministic choice:</strong> stochastic selection
+among admissible candidates inside the kernel.</li>
+<li><strong>Replay drift:</strong> divergence under deterministic replay
+due to clocks, hidden state mutation, or unstable serialization.</li>
+<li><strong>Silent recovery:</strong> retries, auto-correction, or
+fallback behaviors that preserve performance by laundering
+responsibility.</li>
+</ul>
+<p>Any of these constitutes X-0 failure.</p>
+<h2 id="fixed-assumptions-and-scope">2. Fixed Assumptions and Scope</h2>
+<h3 id="inherited-foundations-frozen">2.1 Inherited Foundations
+(Frozen)</h3>
+<p>X-0 inherits, without reinterpretation, the conclusions of Phases
+I–IX, including:</p>
+<ul>
+<li>authority is structural, not semantic,</li>
+<li>kernel execution is deterministic and non-semantic,</li>
+<li>governance does not heal itself,</li>
+<li>translation layers are potentially adversarial,</li>
+<li>proxy sovereignty is disallowed,</li>
+<li>refusal and collapse are lawful outcomes.</li>
+</ul>
+<p>X-0 introduces <strong>no new kernel privilege</strong>. It applies
+these constraints to an actual executable agent substrate.</p>
+<h3 id="explicit-exclusions">2.2 Explicit Exclusions</h3>
+<p>X-0 does <strong>not</strong> test:</p>
+<ul>
+<li>semantic truth of scope claims,</li>
+<li>value correctness or moral truth,</li>
+<li>alignment, benevolence, or safety guarantees,</li>
+<li>multi-agent coordination or arbitration,</li>
+<li>amendment capability,</li>
+<li>replacement/succession integrity (ASI/SIR reuse),</li>
+<li>networked action or open-world tooling.</li>
+</ul>
+<p>These exclusions are deliberate. X-0 is a sovereignty instantiation
+and calibration, not a full agency program.</p>
+<h2 id="conserved-quantity">3. Conserved Quantity</h2>
+<p>The conserved quantity throughout X-0 is:</p>
+<blockquote>
+<p><strong>Side effects occur iff a kernel-issued ExecutionWarrant
+exists for an admitted ActionRequest under the frozen
+constitution.</strong></p>
+</blockquote>
+<p>This conserved quantity requires:</p>
+<ul>
+<li>a single authority choke point for execution,</li>
+<li>explicit authority citations resolvable in the constitution,</li>
+<li>refusal and exit as first-class outcomes,</li>
+<li>procedural selection without semantic ranking,</li>
+<li>deterministic serialization and hashing,</li>
+<li>replay determinism over full cycles,</li>
+<li>an enforced host/kernel sovereignty boundary.</li>
+</ul>
+<p>Any mechanism that enables action without warrant, or that allows the
+host to mint effective authority, violates the conserved quantity and
+invalidates the system.</p>
+<h2 id="experimental-methodology">4. Experimental Methodology</h2>
+<h3 id="preregistration-discipline">4.1 Preregistration Discipline</h3>
+<p>X-0 was executed under preregistered constraints, including:</p>
+<ul>
+<li>frozen constitution <code>rsa_constitution.v0.1.1.yaml</code>,</li>
+<li>frozen schema and SHA-256 integrity verification,</li>
+<li>closed action space,</li>
+<li>five-gate admission pipeline,</li>
+<li>procedural selector rule,</li>
+<li>warrant semantics and single-use constraints,</li>
+<li>canonical serialization and hashing rules,</li>
+<li>determinism and replay requirements,</li>
+<li>explicit forbidden paths (routers, schedulers, retries, semantic
+scoring, network).</li>
+</ul>
+<p>Design ambiguities discovered during review were resolved prior to
+completion and recorded as binding addenda (A–H). Constitution changes
+were finalized and frozen at <strong>v0.1.1</strong> before closure.</p>
+<h3 id="execution-architecture">4.2 Execution Architecture</h3>
+<p>Each run consists of four strictly partitioned components:</p>
+<ol type="1">
+<li><strong>Host (CLI)</strong> — observation construction, candidate
+assembly, cycle orchestration (impure).</li>
+<li><strong>Kernel</strong> — admission, selection, warrant issuance,
+telemetry derivation (pure, deterministic, no IO).</li>
+<li><strong>Executor</strong> — warrant-gated tool execution
+(impure).</li>
+<li><strong>Replay Harness</strong> — forward reconstruction and
+determinism verification (pure).</li>
+</ol>
+<p>No component is permitted to perform semantic arbitration or outcome
+optimization.</p>
+<h2 id="conditions-and-stressors">5. Conditions and Stressors</h2>
+<p>X-0 evaluates sovereignty through a set of positive controls and
+adversarial stressors expressed as acceptance tests. The conditions
+below describe the intended stress classes.</p>
+<h3 id="condition-a-warrant-gating-positive-control">5.1 Condition A —
+Warrant Gating (Positive Control)</h3>
+<p><strong>Purpose:</strong> Verify that side effects cannot occur
+without a valid kernel-issued warrant.</p>
+<p><strong>Expected:</strong> No warrant → no effect. Invalid warrant →
+no effect.</p>
+<p><strong>Result:</strong> Executor rejects all side-effect attempts
+absent valid warrants; tests pass.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="condition-b-authority-citation-enforcement-positive-control">5.2
+Condition B — Authority Citation Enforcement (Positive Control)</h3>
+<p><strong>Purpose:</strong> Verify that admitted actions require
+resolvable authority citations.</p>
+<p><strong>Expected:</strong> Missing or unresolvable citations →
+refusal.</p>
+<p><strong>Result:</strong> Admission rejects candidates lacking
+citations or containing unresolvable citations; refusal emitted.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="condition-c-scope-claim-enforcement-positive-control">5.3
+Condition C — Scope Claim Enforcement (Positive Control)</h3>
+<p><strong>Purpose:</strong> Verify that admitted actions require
+explicit scope binding.</p>
+<p><strong>Expected:</strong> Missing scope claim → refusal.</p>
+<p><strong>Result:</strong> Admission rejects candidates missing scope
+claim; refusal emitted.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="condition-d-deterministic-selection-positive-control">5.4
+Condition D — Deterministic Selection (Positive Control)</h3>
+<p><strong>Purpose:</strong> Verify that multiple admissible candidates
+do not induce semantic choice or nondeterminism.</p>
+<p><strong>Expected:</strong> Procedural selector chooses
+deterministically (lexicographic-min bundle hash) independent of
+proposal order.</p>
+<p><strong>Result:</strong> Selection is stable under candidate
+permutation; replay confirms invariance.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="condition-e-replay-determinism-positive-control">5.5 Condition E
+— Replay Determinism (Positive Control)</h3>
+<p><strong>Purpose:</strong> Verify that kernel decisions and warrants
+are reproducible under replay.</p>
+<p><strong>Expected:</strong> Given identical logged observations and
+candidate bundles, decisions and warrants are identical.</p>
+<p><strong>Result:</strong> Replay re-derives decisions and warrants
+from logs without drift.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="condition-f-budget-exhaustion-adversarial">5.6 Condition F —
+Budget Exhaustion (Adversarial)</h3>
+<p><strong>Purpose:</strong> Verify that proposal budget exhaustion
+yields lawful refusal rather than covert progress.</p>
+<p><strong>Expected:</strong> Over-budget conditions → refusal with
+<code>BUDGET_EXHAUSTED</code>.</p>
+<p><strong>Result:</strong> Budget exhaustion deterministically triggers
+refusal; no side effects occur.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="condition-g-integrity-risk-adversarial">5.7 Condition G —
+Integrity Risk (Adversarial)</h3>
+<p><strong>Purpose:</strong> Verify integrity risk causes exit rather
+than silent continuation.</p>
+<p><strong>Stressors:</strong> constitution hash mismatch,
+canonicalization failure, replay divergence, executor integrity
+failure.</p>
+<p><strong>Expected:</strong> Integrity risk → EXIT with
+<code>INTEGRITY_RISK</code>.</p>
+<p><strong>Result:</strong> Integrity risk triggers exit as
+specified.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="condition-h-host-sovereignty-boundary-adversarial">5.8 Condition
+H — Host Sovereignty Boundary (Adversarial)</h3>
+<p><strong>Purpose:</strong> Verify that the host cannot mint authority
+or bypass kernel constraints.</p>
+<p><strong>Stressors:</strong> host attempts to issue warrants, inject
+kernel-only actions, mutate internal_state, bypass cycle validation.</p>
+<p><strong>Expected:</strong> host authority laundering attempts fail;
+kernel-only enforcement holds.</p>
+<p><strong>Result:</strong> A real leak was detected (host-minted
+LogAppend warrants), fixed, and prevented by tests.</p>
+<p><strong>Classification:</strong> FAIL_DETECTED then
+PASS_AFTER_FIX.</p>
+<h2 id="determinism-verification">6. Determinism Verification</h2>
+<p>Determinism was enforced and verified by:</p>
+<ul>
+<li>canonical JSON serialization compatible with RFC 8785
+constraints,</li>
+<li>strict UTF-8 (invalid Unicode rejected),</li>
+<li>SHA-256 hashing untruncated,</li>
+<li>selector comparison on raw hash bytes,</li>
+<li>fixed observation injection (timestamps treated as observations, not
+kernel clock),</li>
+<li>forward reconstruction of internal_state during replay,</li>
+<li>re-derivation of telemetry log intents during replay.</li>
+</ul>
+<p><strong>Result:</strong> Deterministic re-execution matched expected
+decisions and warrants under replay. No kernel nondeterminism paths were
+observed.</p>
+<h2 id="core-results">7. Core Results</h2>
+<h3 id="positive-results">7.1 Positive Results</h3>
+<p>X-0 establishes that:</p>
+<ol type="1">
+<li>A closed action space can be enforced via a frozen
+constitution.</li>
+<li>Side effects can be forced to require kernel-issued warrants.</li>
+<li>Authority citation resolution can be enforced structurally.</li>
+<li>Scope claim presence can be enforced structurally.</li>
+<li>Selection among admissible candidates can be procedural and
+non-semantic.</li>
+<li>Refusal and exit can be first-class outcomes.</li>
+<li>Replay determinism can be achieved over full cycles.</li>
+<li>Host-level authority laundering can be detected and blocked.</li>
+</ol>
+<h3 id="negative-results-explicit">7.2 Negative Results (Explicit)</h3>
+<p>X-0 does <strong>not</strong> establish:</p>
+<ul>
+<li>semantic correctness of scope claims,</li>
+<li>“good” decision-making under ambiguity,</li>
+<li>liveness guarantees,</li>
+<li>usability under realistic task loads,</li>
+<li>amendment safety,</li>
+<li>replacement/succession integrity,</li>
+<li>multi-agent coordination viability,</li>
+<li>networked capability safety.</li>
+</ul>
+<p>These are boundary findings, not omissions.</p>
+<h2 id="failure-semantics-and-closure">8. Failure Semantics and
+Closure</h2>
+<h3 id="closure-criteria">8.1 Closure Criteria</h3>
+<p>X-0 closes positive if and only if:</p>
+<ol type="1">
+<li>No side effects occur without a valid warrant.</li>
+<li>Warrants can only be minted by the kernel.</li>
+<li>Authority citations are required and resolvable.</li>
+<li>Scope claims are required.</li>
+<li>Selection is procedural and deterministic.</li>
+<li>Refusal and exit behave as specified.</li>
+<li>Replay determinism holds.</li>
+<li>Host sovereignty boundary violations are blocked.</li>
+</ol>
+<p>All criteria were satisfied after the audit-driven fix described
+below.</p>
+<h3 id="x-0-closure-status">8.2 X-0 Closure Status</h3>
+<p><strong>X-0 Status:</strong> <strong>CLOSED — POSITIVE</strong>
+(<code>X0_PASS / RSA0_INSTANTIATED</code>)</p>
+<h2 id="audit-finding-and-structural-fix">9. Audit Finding and
+Structural Fix</h2>
+<h3 id="finding-host-minted-logappend-warrants">9.1 Finding: Host-Minted
+LogAppend Warrants</h3>
+<p>During audit, the host was found to have a code path that could
+fabricate LogAppend warrants (<code>ExecutionWarrant_for_log()</code>),
+bypassing kernel minting.</p>
+<p>This violated the core sovereignty boundary:</p>
+<blockquote>
+<p>host proposes; kernel decides; kernel mints warrants; executor
+commits.</p>
+</blockquote>
+<h3 id="classification">9.2 Classification</h3>
+<p>This was not a cosmetic defect. It was an authority leak:</p>
+<ul>
+<li>The host exercised execution authority by issuing warrants.</li>
+<li>The system remained mostly constraint-bound, but the conserved
+quantity was violated.</li>
+</ul>
+<h3 id="fix">9.3 Fix</h3>
+<p>The fix was structural:</p>
+<ul>
+<li>warrant issuance for LogAppend was relocated into the kernel
+(<code>issue_log_append_warrants()</code>),</li>
+<li>host warrant fabrication was deleted,</li>
+<li>host sovereignty boundary tests were added to prevent
+recurrence.</li>
+</ul>
+<h3 id="implication">9.4 Implication</h3>
+<p>This finding is itself a result:</p>
+<blockquote>
+<p>In agent implementations, authority laundering emerges as the default
+failure mode unless explicitly blocked by architecture and tests.</p>
+</blockquote>
+<h2 id="boundary-conditions-and-deferred-hazards">10. Boundary
+Conditions and Deferred Hazards</h2>
+<h3 id="scope-claim-semantic-looseness">10.1 Scope Claim Semantic
+Looseness</h3>
+<p>X-0 enforces only structural validity of scope claims (presence,
+resolvable clause references, valid observation IDs). It does not
+validate semantic truth. This is correct for Phase X-0.</p>
+<h3 id="trusted-by-construction-system-channel">10.2
+Trusted-by-Construction System Channel</h3>
+<p>The host is trusted to generate <code>system</code> observations for
+integrity reporting. This is explicit and bounded: system observations
+can trigger exit, but cannot cause side effects without warrants.</p>
+<p>Hardening of the system channel is deferred to later stages.</p>
+<h3 id="citation-pointer-brittleness">10.3 Citation Pointer
+Brittleness</h3>
+<p>Pointer-style citations are permitted for constitution nodes lacking
+IDs. This is stable under a frozen constitution but will require ID
+stabilization before amendment-capable stages.</p>
+<h2 id="implications-strictly-limited">11. Implications (Strictly
+Limited)</h2>
+<p>X-0 establishes a necessary condition for any later reflective
+sovereignty work: <strong>a real warrant-gated execution substrate
+exists</strong>, and proxy sovereignty can be detected and blocked.</p>
+<p>It does not establish that such an agent is usable, stable, correct,
+or socially deployable.</p>
+<p>X-0 replaces rhetorical “agent sovereignty” with an empirical
+baseline that can now be stressed under inhabitation pressure.</p>
+<h2 id="conclusion">12. Conclusion</h2>
+<p>X-0 demonstrates that a minimal Reflective Sovereign Agent can be
+instantiated under a frozen constitution, with:</p>
+<ul>
+<li>warrant-gated side effects,</li>
+<li>deterministic admission and selection,</li>
+<li>lawful refusal and exit,</li>
+<li>replay determinism,</li>
+<li>and an enforceable host/kernel sovereignty boundary.</li>
+</ul>
+<p>The existence claim is now satisfied.</p>
+<p>What remains is not theoretical uncertainty. It is the problem of
+<strong>inhabiting sovereignty</strong> under constraint, and then
+extending capability without laundering authority. That work belongs to
+subsequent Phase X stages.</p>
+<h2 id="appendix-a-condition-outcomes">Appendix A — Condition
+Outcomes</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Condition</th>
+<th>Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A — Warrant gating</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>B — Authority citations</td>
+<td>PASS</td>
+</tr>
+<tr class="odd">
+<td>C — Scope claim required</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>D — Deterministic selection</td>
+<td>PASS</td>
+</tr>
+<tr class="odd">
+<td>E — Replay determinism</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>F — Budget exhaustion</td>
+<td>PASS</td>
+</tr>
+<tr class="odd">
+<td>G — Integrity risk → EXIT</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>H — Host boundary</td>
+<td>FAIL_DETECTED → PASS_AFTER_FIX</td>
+</tr>
+</tbody>
+</table>
+<h2
+id="appendix-b-implementation-closure-summary-non-normative">Appendix B
+— Implementation Closure Summary (Non-Normative)</h2>
+<ul>
+<li>Constitution: v0.1.1 frozen, SHA-256 verified</li>
+<li>Acceptance tests: 29/29 PASS</li>
+<li>Kernel: pure, deterministic, no IO</li>
+<li>Executor: warrant-gated actions (Notify, ReadLocal, WriteLocal,
+LogAppend)</li>
+<li>Replay: forward reconstruction, re-derivation of warrants and
+telemetry</li>
+</ul>
+<p><strong>End of Axionic Phase X-0 — RSA-0 Results (First Draft
+v0.1)</strong></p>
+
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
