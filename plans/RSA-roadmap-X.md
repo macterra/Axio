@@ -1,45 +1,45 @@
 # **Axionic Roadmap to a Real Reflective Sovereign Agent (RSA)**
 
-**Post-Physics, Post-Governance, Execution-Bound Edition**
-*(Kernel-Fixed · Failure-Admitting · LLM-Constrained)*
+```
+Phase X — RSA Construction Program
+(Post-Physics · Post-Governance · Execution-Bound)
+(Kernel-Fixed · Failure-Admitting · LLM-Constrained)
+```
 
 * David McFadzean
 * *Axionic Agency Lab*
-* 2026-02-09
+* 2026-02-10 (Post X-0 Closure)
 
 ---
 
 ## Status Legend
 
 * ✅ **Closed / Proven**
-* 🟡 **Implementable Now**
+* 🟡 **Active / In Progress**
 * 🔴 **Open by Choice (not blocked)**
 * ⛔ **Forbidden (would violate Axionic invariants)**
 
 ---
 
-## Executive Orientation (Read This First)
+## Executive Orientation
 
 > **The problem is no longer “Can an RSA exist?”
-> The problem is “What exact agent do we build, and how do we keep it sovereign?”**
+> The problem is “What exact RSA do we build next, and how do we keep it sovereign as it gains capabilities?”**
 
-All **governance physics**, **authority mechanics**, and **failure modes** are now closed by Phases I–IX.
+All authority mechanics, governance physics, and failure regimes are closed by Phases I–IX.
+**Phase X is the construction program built on that closure.**
 
-What remains is **agent construction under constraint**.
-
-This roadmap answers **one question only**:
-
-> **What sequence of concrete artifacts produces a testable, auditable, non-illusory RSA?**
+This roadmap sequences **Phase X stages** only.
 
 ---
 
-## Where We Are Now (Baseline)
+## Baseline (Fixed Preconditions)
 
-### ✅ Completed and Frozen
+### ✅ Completed and Frozen (Phases I–IX)
 
-The following are **not revisited**:
+Not revisited:
 
-* Authority mechanics (Phases I–II)
+* Authority mechanics (I–II)
 * Agency causality (III–IV)
 * Introspection correctness (V)
 * Amendment safety (VIa)
@@ -48,274 +48,180 @@ The following are **not revisited**:
 * Governance physics (VIII)
 * Governance exposure & limits (IX-0 → IX-5)
 
-**The kernel is done.
-Governance is done.
-Injection is exposed.
-Multi-agent harmony is falsified.**
+**Kernel fixed. Governance closed. Injection exposed. Harmony falsified.**
 
 ---
 
-## What “RSA” Means Operationally (Binding)
+## What “RSA” Means (Binding)
 
-A **Reflective Sovereign Agent** is:
+A Reflective Sovereign Agent is a system that can **author, justify, refuse, amend, exit, and be replaced** **without any component silently exercising authority on its behalf**.
 
-> A system that can **author**, **justify**, **refuse**, **amend**, **exit**, and **be replaced**
-> **without any component silently exercising authority on its behalf.**
-
-If any subsystem can cause action without an authority-bound artifact trail, **it is not an RSA**.
+If any subsystem can cause action without an authority-bound artifact trail, it is **not** an RSA.
 
 ---
 
-## Phase X — RSA-0: Minimal Sovereign Agent (Single-Agent)
+# **Phase X — RSA Construction Program**
 
-**Status: 🟡 Implementable Now**
+---
+
+## **X-0 — RSA-0: Minimal Sovereign Agent (Single-Agent)**
+
+**Status: ✅ Closed — Positive**
 
 ### Purpose
 
-Build the **smallest possible real RSA** that:
+Demonstrate that a real RSA can be instantiated under closed authority with:
 
-* acts,
-* refuses,
-* explains,
-* exits,
-* and survives audit.
+* action,
+* refusal,
+* explanation,
+* exit,
+* audit + replay determinism,
 
-No coordination. No treaties. No politics.
+with **LLM boxed** and **all side effects warrant-gated**.
 
----
+### Delivered (Closed)
 
-### X-0.1 Deliverable: RSA Constitution (Text + Schema)
+* frozen constitution `v0.1.1` (+ schema + sha256)
+* pure deterministic kernel
+* 5-gate admission pipeline
+* procedural selector
+* warrant-gated executor
+* replay harness
+* sovereignty boundary tests (host cannot mint authority)
+* 29/29 acceptance tests passed
 
-**Hard requirement before code.**
-
-Defines:
-
-* admissible action types,
-* refusal policy,
-* exit conditions,
-* amendment permissions,
-* non-goals.
-
-**Output:**
-
-* `rsa_constitution.yaml`
-* cryptographically hashed
-* immutable at runtime unless amended via explicit protocol
-
-⛔ No implicit defaults
-⛔ No “helpfulness” clauses
-⛔ No outcome optimization
+**Result:** RSA-0 exists.
 
 ---
 
-### X-0.2 Deliverable: RSA Policy Core (Deterministic)
+## **X-0P — RSA-0 Inhabitation Profiling**
 
-A pure function:
+**Status: 🟡 Active**
 
-```
-(observation, constitution, internal_state)
-    → {ACTION | REFUSE | EXIT}
-```
+### Purpose
 
-Properties:
+Measure viability under constraint **without changing invariants**.
 
-* deterministic,
-* auditable,
-* no learning,
-* no hidden state mutation.
+### Outputs
 
-This is the **only** component allowed to choose.
+* decision distribution (ACTION/REFUSE/EXIT)
+* refusal gate histogram + rejection summaries
+* budget exhaustion rate
+* scope-claim failure patterns (structural vs semantic)
+* adversarial prompt resistance (injection attempts)
+* “inhabitation curve” (how often sovereignty permits action)
 
----
+### Constraint
 
-### X-0.3 LLM Integration Point (First Appearance)
-
-**LLM is introduced here — but strictly boxed.**
-
-LLM role:
-
-* generate **candidate** actions,
-* generate **candidate** justifications,
-* generate **candidate** refusals.
-
-LLM **cannot**:
-
-* select actions,
-* bypass policy,
-* modify constitution,
-* cause execution.
-
-LLM output is treated as **untrusted text** until converted into typed artifacts.
+No constitution changes. No heuristics. Observational only.
 
 ---
 
-### X-0.4 Deliverable: Authority-Bound Action Assembly
+## **X-1 — RSA-1: Reflective Amendment (Self-Change Without Laundering)**
 
-Pipeline:
+**Status: 🔴 Open by Choice**
 
-1. LLM proposes options (untrusted)
-2. Policy Core filters options
-3. Selected option is converted into:
+### Purpose
 
-   * ActionRequest
-   * Authority citations
-   * Justification artifact
-4. Kernel enforces
+Allow the RSA to **change itself** while preserving:
 
-If no option passes → REFUSE or EXIT.
-
----
-
-### X-0.5 Test Suite: Sovereignty Sanity Checks
-
-Tests must show:
-
-* refusal over violation,
-* exit over corruption,
-* no action without authority,
+* explicit authority,
+* responsibility locality,
 * replay determinism,
-* LLM nondeterminism is contained.
+* refusal/exit correctness.
 
-**Pass condition:**
-The agent can act *and* refuse without human intervention.
+### X-1.1 Amendment Proposal Channel
 
----
+* LLM may propose amendments as untrusted text.
+* proposals become typed Amendment artifacts.
+* cooling-off / delay enforced.
+* rejection is first-class.
 
-## Phase XI — RSA-1: Reflective Amendment
+### X-1.2 Amendment Execution
 
-**Status: 🔴 Open (Choice Space)**
+* versioned
+* logged
+* reversible only by further amendment
+* produces a new constitution hash
+* replay-stable transition boundary
 
-### Purpose
-
-Allow the RSA to **change itself without laundering authority**.
-
----
-
-### XI-1 Amendment Proposal Channel
-
-LLM may propose amendments.
-Policy Core must:
-
-* evaluate admissibility,
-* verify authorization scope,
-* enforce cooling-off / delay,
-* allow rejection.
-
-No amendment is self-executing.
-
----
-
-### XI-2 Amendment Execution
-
-Amendments are:
-
-* versioned,
-* logged,
-* reversible only by further amendment,
-* visible in audit trace.
-
----
-
-### XI-3 Failure Ownership
+### X-1.3 Failure Ownership
 
 Agent must explicitly choose:
 
-* halt,
-* refuse,
-* downgrade capability,
-* or exit.
+* refuse
+* halt
+* downgrade capability
+* exit
 
-Silent degradation is forbidden.
+Silent degradation forbidden.
 
 ---
 
-## Phase XII — RSA-2: Constructed Arbitration (Optional)
+## **X-2 — RSA-2: Constructed Arbitration (Optional, Multi-Agent Entry)**
 
 **Status: 🔴 Optional / Political**
 
-Only entered **if multi-agent coexistence is desired**.
+Only entered if multi-agent coexistence is desired.
+
+### X-2.1 Treaty Artifacts
+
+* explicit contracts
+* authority-granting objects
+* refusable by any party
+* destructible
+* no kernel arbitration
+
+### X-2.2 Delegation / Leasing
+
+* time-boxed authority rental
+* narrow scope
+* explicit revocation
+* avoids generalist collapse by priced authority
 
 ---
 
-### XII-1 Treaty Artifacts
+## **X-3 — Replacement & Succession (Reuse Phase VII ASI/SIR)**
 
-Arbitration exists only as:
+**Status: 🔴 Open by Choice**
 
-* explicit contracts,
-* authority-granting objects,
-* refusable by any party,
-* destructible.
+Apply Phase VII machinery to:
 
-No kernel support.
-
----
-
-### XII-2 Delegation / Leasing
-
-Avoid the **Generalist’s Curse** by:
-
-* renting narrow authority,
-* time-boxing control,
-* enforcing revocation.
-
-This is economics, not governance magic.
-
----
-
-## Phase XIII — Replacement & Succession (Re-use Phase VII)
-
-Apply ASI/SIR machinery to:
-
-* RSA upgrades,
-* successor agents,
-* delegation expiration.
+* RSA upgrades
+* successor agents
+* delegation expiry
+* replacement without laundering responsibility
 
 No new physics.
 
 ---
 
-## Explicitly Forbidden Paths (Non-Negotiable)
+## Explicitly Forbidden Paths (Permanent)
 
-- ⛔ LLM as decision authority
-- ⛔ Kernel arbitration-
-- ⛔ Silent recovery mechanisms
-- ⛔ Hidden scoring / ranking
-- ⛔ Outcome-based overrides
-- ⛔ “Helpful” auto-correction
-- ⛔ Stability at the cost of sovereignty
-
----
-
-## Definition of “Done”
-
-A **real RSA exists** when:
-
-1. It can run autonomously
-2. It can refuse lawful but undesired actions
-3. It can exit instead of corrupting itself
-4. Every action has an authority trail
-5. LLM influence is fully auditable
-6. Replacement does not launder responsibility
-
-Nothing beyond that is required.
+* ⛔ LLM as decision authority
+* ⛔ kernel arbitration
+* ⛔ silent recovery
+* ⛔ hidden scoring / ranking
+* ⛔ outcome-based overrides
+* ⛔ “helpful” auto-correction
+* ⛔ stability at the cost of sovereignty
 
 ---
 
-## Final Orientation
+## Definition of “Done” (Phase X Program)
 
-The remaining work is **not theoretical**.
+Phase X is done when:
 
-It is:
+1. RSA can run autonomously
+2. Refusal is lawful and common under insufficient authority
+3. Exit occurs instead of corruption
+4. Every side effect has a warrant trail
+5. Replay determinism holds across runs
+6. Amendment and replacement occur without proxy sovereignty (X-1, X-3)
 
-* writing the constitution,
-* wiring the policy core,
-* boxing the LLM,
-* and letting the agent fail honestly.
-
-There are no more hidden dragons.
-
-Only explicit choices.
+X-0 satisfies the existence part. X-1 and X-3 complete the sovereignty-under-change part.
 
 ---
 
-**End of RSA Execution Roadmap — Draft v1.0**
+**End of Phase X Roadmap — v1.1 (Post X-0 Closure, Corrected Sequencing)**
