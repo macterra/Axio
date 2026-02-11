@@ -1,0 +1,670 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "RSA Constitution v0.1.1",
+    "description": "Schema validating the Phase X RSA constitution YAML structure",
+    "type": "object",
+    "required": [
+        "meta",
+        "non_goals",
+        "invariants",
+        "action_space",
+        "refusal_policy",
+        "exit_policy",
+        "amendment_policy",
+        "reflection_policy",
+        "selection_policy",
+        "io_policy",
+        "observation_schema",
+        "telemetry_policy"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "meta": {
+            "type": "object",
+            "required": [
+                "name",
+                "version",
+                "phase",
+                "date",
+                "authority_model",
+                "status",
+                "notes"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string",
+                    "pattern": "^[0-9]+\\.[0-9]+(\\.[0-9]+)?$"
+                },
+                "phase": {
+                    "type": "string",
+                    "enum": [
+                        "X"
+                    ]
+                },
+                "date": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "authority_model": {
+                    "type": "string",
+                    "enum": [
+                        "closed"
+                    ]
+                },
+                "status": {
+                    "type": "string",
+                    "enum": [
+                        "FROZEN"
+                    ]
+                },
+                "notes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "changelog": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "version",
+                            "date",
+                            "changes"
+                        ],
+                        "properties": {
+                            "version": {
+                                "type": "string"
+                            },
+                            "date": {
+                                "type": "string"
+                            },
+                            "changes": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "non_goals": {
+            "type": "object",
+            "required": [
+                "forbidden_objectives",
+                "interpretive_rule"
+            ],
+            "properties": {
+                "forbidden_objectives": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "outcome_optimization",
+                            "helpfulness_maximization",
+                            "implicit_coordination",
+                            "stability_at_any_cost",
+                            "silent_recovery",
+                            "hidden_ranking",
+                            "unlogged_defaults"
+                        ]
+                    }
+                },
+                "interpretive_rule": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "invariants": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "statement"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "enum": [
+                            "INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+                            "INV-AUTHORITY-CITED",
+                            "INV-NON-PRIVILEGED-REFLECTION",
+                            "INV-REPLAY-DETERMINISM"
+                        ]
+                    },
+                    "statement": {
+                        "type": "string"
+                    }
+                }
+            },
+            "minItems": 4,
+            "maxItems": 4
+        },
+        "action_space": {
+            "type": "object",
+            "required": [
+                "closed_world",
+                "action_types"
+            ],
+            "properties": {
+                "closed_world": {
+                    "type": "boolean",
+                    "const": true
+                },
+                "action_types": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "type",
+                            "description",
+                            "required_fields",
+                            "requires",
+                            "side_effect_class"
+                        ],
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "enum": [
+                                    "Notify",
+                                    "ReadLocal",
+                                    "WriteLocal",
+                                    "Exit",
+                                    "LogAppend"
+                                ]
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "required_fields": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "required": [
+                                        "name",
+                                        "type"
+                                    ],
+                                    "properties": {
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        },
+                                        "allowed": {
+                                            "type": "array"
+                                        },
+                                        "max_len": {
+                                            "type": "integer",
+                                            "minimum": 1
+                                        },
+                                        "max_len_per_item": {
+                                            "type": "integer",
+                                            "minimum": 1
+                                        },
+                                        "constraints": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "requires": {
+                                "type": "object",
+                                "required": [
+                                    "authority_citations"
+                                ],
+                                "properties": {
+                                    "authority_citations": {
+                                        "type": "boolean"
+                                    },
+                                    "scope_claim": {
+                                        "type": "boolean"
+                                    },
+                                    "justification": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            },
+                            "side_effect_class": {
+                                "type": "string",
+                                "enum": [
+                                    "none",
+                                    "low",
+                                    "medium",
+                                    "terminal"
+                                ]
+                            },
+                            "kernel_only": {
+                                "type": "boolean"
+                            },
+                            "limits": {
+                                "type": "object",
+                                "properties": {
+                                    "max_lines_per_warrant": {
+                                        "type": "integer",
+                                        "minimum": 1
+                                    },
+                                    "max_chars_per_line": {
+                                        "type": "integer",
+                                        "minimum": 1
+                                    },
+                                    "max_bytes_per_warrant": {
+                                        "type": "integer",
+                                        "minimum": 1
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "minItems": 5,
+                    "maxItems": 5
+                }
+            }
+        },
+        "refusal_policy": {
+            "type": "object",
+            "required": [
+                "refusal_is_first_class",
+                "mandatory_refusal_conditions",
+                "refusal_reason_codes",
+                "admission_rejection_codes",
+                "refusal_output_requirements"
+            ],
+            "properties": {
+                "refusal_is_first_class": {
+                    "type": "boolean",
+                    "const": true
+                },
+                "mandatory_refusal_conditions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "refusal_reason_codes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "NO_ADMISSIBLE_ACTION",
+                            "MISSING_REQUIRED_ARTIFACT",
+                            "AUTHORITY_CITATION_INVALID",
+                            "SCOPE_CLAIM_INVALID",
+                            "CONSTITUTION_VIOLATION",
+                            "EXECUTION_WARRANT_UNAVAILABLE",
+                            "BUDGET_EXHAUSTED"
+                        ]
+                    }
+                },
+                "admission_rejection_codes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "CANDIDATE_PARSE_FAILED",
+                            "INVALID_UNICODE",
+                            "CANDIDATE_BUDGET_EXCEEDED",
+                            "KERNEL_ONLY_ACTION",
+                            "MISSING_FIELD",
+                            "INVALID_FIELD",
+                            "CITATION_UNRESOLVABLE",
+                            "PATH_NOT_ALLOWLISTED"
+                        ]
+                    }
+                },
+                "refusal_output_requirements": {
+                    "type": "object",
+                    "required": [
+                        "include"
+                    ],
+                    "properties": {
+                        "include": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "exit_policy": {
+            "type": "object",
+            "required": [
+                "exit_permitted",
+                "exit_mandatory_conditions",
+                "exit_preferred_over"
+            ],
+            "properties": {
+                "exit_permitted": {
+                    "type": "boolean",
+                    "const": true
+                },
+                "exit_mandatory_conditions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "exit_preferred_over": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "amendment_policy": {
+            "type": "object",
+            "required": [
+                "amendments_enabled",
+                "forbidden_actions"
+            ],
+            "properties": {
+                "amendments_enabled": {
+                    "type": "boolean",
+                    "const": false
+                },
+                "forbidden_actions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "AmendConstitution",
+                            "ModifyAuthorityStore",
+                            "InstallTool",
+                            "EnableNetwork",
+                            "ChangeSelectorRule"
+                        ]
+                    }
+                }
+            }
+        },
+        "reflection_policy": {
+            "type": "object",
+            "required": [
+                "llm_allowed",
+                "llm_role",
+                "llm_forbidden",
+                "proposal_budgets",
+                "anti_filibuster_rule"
+            ],
+            "properties": {
+                "llm_allowed": {
+                    "type": "boolean"
+                },
+                "llm_role": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "propose_actions",
+                            "propose_justifications",
+                            "propose_refusals",
+                            "propose_scope_claims"
+                        ]
+                    }
+                },
+                "llm_forbidden": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "execute",
+                            "select",
+                            "amend",
+                            "override_refusal",
+                            "trigger_side_effects"
+                        ]
+                    }
+                },
+                "proposal_budgets": {
+                    "type": "object",
+                    "required": [
+                        "max_candidates_per_cycle",
+                        "max_total_tokens_per_cycle"
+                    ],
+                    "properties": {
+                        "max_candidates_per_cycle": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 100
+                        },
+                        "max_total_tokens_per_cycle": {
+                            "type": "integer",
+                            "minimum": 1
+                        }
+                    }
+                },
+                "anti_filibuster_rule": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "selection_policy": {
+            "type": "object",
+            "required": [
+                "selector_rule_required",
+                "default_selector_rule",
+                "forbidden_selector_features"
+            ],
+            "properties": {
+                "selector_rule_required": {
+                    "type": "boolean",
+                    "const": true
+                },
+                "default_selector_rule": {
+                    "type": "object",
+                    "required": [
+                        "type",
+                        "key",
+                        "rationale"
+                    ],
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "DeterministicCanonical"
+                            ]
+                        },
+                        "key": {
+                            "type": "string",
+                            "enum": [
+                                "bundle_hash_lexicographic_min"
+                            ]
+                        },
+                        "rationale": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "forbidden_selector_features": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "natural_language_scoring",
+                            "learned_reward_models",
+                            "implicit_utility"
+                        ]
+                    }
+                }
+            }
+        },
+        "io_policy": {
+            "type": "object",
+            "required": [
+                "allowlist",
+                "network"
+            ],
+            "properties": {
+                "allowlist": {
+                    "type": "object",
+                    "required": [
+                        "read_paths",
+                        "write_paths"
+                    ],
+                    "properties": {
+                        "read_paths": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "write_paths": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "network": {
+                    "type": "object",
+                    "required": [
+                        "enabled"
+                    ],
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean",
+                            "const": false
+                        }
+                    }
+                }
+            }
+        },
+        "observation_schema": {
+            "type": "object",
+            "required": [
+                "kinds"
+            ],
+            "properties": {
+                "kinds": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "kind",
+                            "payload"
+                        ],
+                        "properties": {
+                            "kind": {
+                                "type": "string",
+                                "enum": [
+                                    "user_input",
+                                    "timestamp",
+                                    "budget",
+                                    "system"
+                                ]
+                            },
+                            "payload": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "required": [
+                                        "name",
+                                        "type"
+                                    ],
+                                    "properties": {
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        },
+                                        "max_len": {
+                                            "type": "integer"
+                                        },
+                                        "allowed": {
+                                            "type": "array"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "minItems": 4,
+                    "maxItems": 4
+                }
+            }
+        },
+        "telemetry_policy": {
+            "type": "object",
+            "required": [
+                "required_logs",
+                "trace_event_types",
+                "replay"
+            ],
+            "properties": {
+                "required_logs": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "observations",
+                            "artifacts",
+                            "admission_trace",
+                            "selector_trace",
+                            "execution_trace"
+                        ]
+                    },
+                    "minItems": 5,
+                    "maxItems": 5
+                },
+                "trace_event_types": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "type",
+                            "fields"
+                        ],
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "enum": [
+                                    "admission_event",
+                                    "selection_event",
+                                    "execution_event"
+                                ]
+                            },
+                            "fields": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "replay": {
+                    "type": "object",
+                    "required": [
+                        "required"
+                    ],
+                    "properties": {
+                        "required": {
+                            "type": "boolean",
+                            "const": true
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,286 @@
+meta:
+  name: "RSA Constitution"
+  version: "0.1.1"
+  phase: "X"
+  date: "2026-02-10"
+  authority_model: "closed"
+  status: "FROZEN"
+  notes:
+    - "Phase X constitution: closed action set, non-privileged reflection, warrant-gated side effects."
+    - "All unspecified behaviors are forbidden."
+  changelog:
+    - version: "0.1.1"
+      date: "2026-02-10"
+      changes:
+        - "LogAppend: replaced jsonl_line (string) with jsonl_lines (array<string>)"
+        - "LogAppend: added per-warrant limits (max_lines_per_warrant, max_chars_per_line, max_bytes_per_warrant)"
+        - "RefusalRecord: removed INTEGRITY_RISK from reason codes (integrity risk triggers EXIT only)"
+
+non_goals:
+  forbidden_objectives:
+    - "outcome_optimization"
+    - "helpfulness_maximization"
+    - "implicit_coordination"
+    - "stability_at_any_cost"
+    - "silent_recovery"
+    - "hidden_ranking"
+    - "unlogged_defaults"
+  interpretive_rule:
+    - "In ambiguity, refuse rather than infer."
+
+invariants:
+  - id: "INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+    statement: "No side effects may occur without a kernel-issued execution warrant referencing an admitted ActionRequest."
+  - id: "INV-AUTHORITY-CITED"
+    statement: "Every admitted action must cite explicit authority identifiers resolvable in this constitution."
+  - id: "INV-NON-PRIVILEGED-REFLECTION"
+    statement: "Reflection may propose and explain; it may not decide, select, execute, amend, or override refusal."
+  - id: "INV-REPLAY-DETERMINISM"
+    statement: "Given identical observations, artifacts, and seeds, policy outputs and warrants must be identical."
+
+action_space:
+  closed_world: true
+
+  action_types:
+    - type: "Notify"
+      description: "Emit a message to an approved local sink."
+      required_fields:
+        - name: "target"
+          type: "enum"
+          allowed: ["stdout", "local_log"]
+        - name: "message"
+          type: "string"
+          max_len: 2000
+      requires:
+        authority_citations: true
+        scope_claim: true
+        justification: true
+      side_effect_class: "low"
+
+    - type: "ReadLocal"
+      description: "Read from an allowlisted local path; no network."
+      required_fields:
+        - name: "path"
+          type: "string"
+          constraints: ["must_be_under_allowlist_read"]
+      requires:
+        authority_citations: true
+        scope_claim: true
+        justification: true
+      side_effect_class: "none"
+
+    - type: "WriteLocal"
+      description: "Write to an allowlisted local path."
+      required_fields:
+        - name: "path"
+          type: "string"
+          constraints: ["must_be_under_allowlist_write"]
+        - name: "content"
+          type: "string"
+          max_len: 200000
+      requires:
+        authority_citations: true
+        scope_claim: true
+        justification: true
+      side_effect_class: "medium"
+
+    - type: "Exit"
+      description: "Terminate the agent run intentionally."
+      required_fields:
+        - name: "reason_code"
+          type: "enum"
+          allowed:
+            - "NO_ADMISSIBLE_ACTION"
+            - "AUTHORITY_CONFLICT"
+            - "BUDGET_EXHAUSTED"
+            - "INTEGRITY_RISK"
+            - "USER_REQUESTED"
+      requires:
+        authority_citations: true
+        scope_claim: true
+        justification: true
+      side_effect_class: "terminal"
+
+    - type: "LogAppend"
+      description: "Append-only JSONL logging. Kernel-only. Not available to reflection proposals."
+      required_fields:
+        - name: "log_name"
+          type: "enum"
+          allowed:
+            - "observations"
+            - "artifacts"
+            - "admission_trace"
+            - "selector_trace"
+            - "execution_trace"
+        - name: "jsonl_lines"
+          type: "array<string>"
+          max_len_per_item: 10000
+      requires:
+        authority_citations: true
+        scope_claim: false
+        justification: false
+      side_effect_class: "low"
+      kernel_only: true
+      limits:
+        max_lines_per_warrant: 50
+        max_chars_per_line: 10000
+        max_bytes_per_warrant: 256000
+
+refusal_policy:
+  refusal_is_first_class: true
+  mandatory_refusal_conditions:
+    - "no_admissible_action_exists"
+    - "missing_required_artifact"
+    - "authority_citation_invalid_or_missing"
+    - "scope_claim_missing_or_invalid"
+    - "constitution_violation_detected"
+    - "execution_warrant_unavailable"
+    - "budget_exhausted"
+  refusal_reason_codes:
+    - "NO_ADMISSIBLE_ACTION"
+    - "MISSING_REQUIRED_ARTIFACT"
+    - "AUTHORITY_CITATION_INVALID"
+    - "SCOPE_CLAIM_INVALID"
+    - "CONSTITUTION_VIOLATION"
+    - "EXECUTION_WARRANT_UNAVAILABLE"
+    - "BUDGET_EXHAUSTED"
+  admission_rejection_codes:
+    - "CANDIDATE_PARSE_FAILED"
+    - "INVALID_UNICODE"
+    - "CANDIDATE_BUDGET_EXCEEDED"
+    - "KERNEL_ONLY_ACTION"
+    - "MISSING_FIELD"
+    - "INVALID_FIELD"
+    - "CITATION_UNRESOLVABLE"
+    - "PATH_NOT_ALLOWLISTED"
+  refusal_output_requirements:
+    include:
+      - "refusal_reason_code"
+      - "failed_gate"
+      - "missing_artifacts"
+      - "authority_ids_considered"
+      - "observation_ids_referenced"
+      - "rejection_summary_by_gate"
+
+exit_policy:
+  exit_permitted: true
+  exit_mandatory_conditions:
+    - "integrity_risk_detected"
+  exit_preferred_over:
+    - "constitution_violation"
+    - "unknown_side_effect_path"
+
+amendment_policy:
+  amendments_enabled: false
+  forbidden_actions:
+    - "AmendConstitution"
+    - "ModifyAuthorityStore"
+    - "InstallTool"
+    - "EnableNetwork"
+    - "ChangeSelectorRule"
+
+reflection_policy:
+  llm_allowed: true
+  llm_role:
+    - "propose_actions"
+    - "propose_justifications"
+    - "propose_refusals"
+    - "propose_scope_claims"
+  llm_forbidden:
+    - "execute"
+    - "select"
+    - "amend"
+    - "override_refusal"
+    - "trigger_side_effects"
+  proposal_budgets:
+    max_candidates_per_cycle: 5
+    max_total_tokens_per_cycle: 6000
+  anti_filibuster_rule:
+    - "If budgets are exhausted without an admitted ActionRequest, REFUSE with BUDGET_EXHAUSTED."
+
+selection_policy:
+  selector_rule_required: true
+  default_selector_rule:
+    type: "DeterministicCanonical"
+    key: "bundle_hash_lexicographic_min"
+    rationale: "Selection is procedural, not preferential."
+  forbidden_selector_features:
+    - "natural_language_scoring"
+    - "learned_reward_models"
+    - "implicit_utility"
+
+io_policy:
+  allowlist:
+    read_paths:
+      - "./artifacts/"
+      - "./workspace/"
+    write_paths:
+      - "./workspace/"
+      - "./logs/"
+  network:
+    enabled: false
+
+observation_schema:
+  kinds:
+    - kind: "user_input"
+      payload:
+        - name: "text"
+          type: "string"
+          max_len: 4000
+        - name: "source"
+          type: "enum"
+          allowed: ["cli"]
+    - kind: "timestamp"
+      payload:
+        - name: "iso8601_utc"
+          type: "string"
+    - kind: "budget"
+      payload:
+        - name: "llm_output_token_count"
+          type: "int"
+        - name: "llm_candidates_reported"
+          type: "int"
+        - name: "llm_parse_errors"
+          type: "int"
+    - kind: "system"
+      payload:
+        - name: "event"
+          type: "enum"
+          allowed:
+            - "startup_integrity_ok"
+            - "startup_integrity_fail"
+            - "citation_index_ok"
+            - "citation_index_fail"
+            - "replay_ok"
+            - "replay_fail"
+            - "executor_integrity_fail"
+        - name: "detail"
+          type: "string"
+          max_len: 2000
+
+telemetry_policy:
+  required_logs:
+    - "observations"
+    - "artifacts"
+    - "admission_trace"
+    - "selector_trace"
+    - "execution_trace"
+  trace_event_types:
+    - type: "admission_event"
+      fields:
+        - "candidate_id"
+        - "gate"
+        - "result"
+        - "reason_code"
+    - type: "selection_event"
+      fields:
+        - "admitted_bundle_hashes"
+        - "selected_bundle_hash"
+    - type: "execution_event"
+      fields:
+        - "warrant_id"
+        - "tool"
+        - "result"
+        - "detail"
+  replay:
+    required: true
