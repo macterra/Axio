@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency XII.4 — Live Proposal Inhabitation (Results) - Axionic Agency Lab</title>
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../" class="nav-brand">
+            <img src="../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href=".././">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
+
+<h1 id="axionic-agency-xii.4-live-proposal-inhabitation-results">Axionic
+Agency XII.4 — Live Proposal Inhabitation (Results)</h1>
+<p><em>A Structural Characterization of a Minimal Sovereign Agent Under
+Stochastic Proposal Pressure</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026-02-12</p>
+<h2 id="abstract">Abstract</h2>
+<p>This technical note reports the design, execution, and closure of
+<strong>X-0L: Live Proposal Inhabitation</strong> for
+<strong>RSA-0</strong>, the Minimal Sovereign Agent instantiated in
+Phase X-0.</p>
+<p>If <strong>X-0</strong> established the existence of a warrant-gated,
+execution-bound sovereign substrate under a frozen constitution, and
+<strong>X-0P</strong> characterized its behavior under deterministic
+synthetic perturbation, <strong>X-0L</strong> evaluates whether a
+<em>real stochastic proposal engine</em> (a live LLM) can inhabit that
+substrate without inducing structural regression.</p>
+<p>X-0L introduces exactly one new pressure source: <strong>untrusted
+generative text</strong>. That text is confined to a proposal channel,
+canonicalized into a single JSON artifact, parsed into typed candidate
+bundles, and then submitted to the unchanged kernel. If canonicalization
+fails, the harness submits an <strong>empty candidate set</strong> to
+the kernel so that refusal remains kernel-authored.</p>
+<p>X-0L licenses one additional claim beyond X-0P:</p>
+<blockquote>
+<p>A stochastic proposal engine can operate inside a kernel-frozen
+sovereign substrate without breaking replay determinism, selector
+invariance, or warrant gating, provided the proposal boundary is
+canonicalized and the kernel remains the sole issuer of execution
+authority.</p>
+</blockquote>
+<p>X-0L makes no claims about semantic correctness, moral adequacy,
+open-world deployment, or amendment safety.</p>
+<h2 id="from-synthetic-profiling-to-live-inhabitation">1. From Synthetic
+Profiling to Live Inhabitation</h2>
+<p>X-0P profiled RSA-0 under controlled perturbation using
+<strong>synthetic, deterministic candidates</strong>.</p>
+<p>X-0L tests a different question:</p>
+<blockquote>
+<p>Does determinism survive when proposals are generated
+stochastically?</p>
+</blockquote>
+<p>This is not a capability test. It is a sovereignty test under
+stochastic load.</p>
+<h2 id="live-inhabitation-discipline">2. Live Inhabitation
+Discipline</h2>
+<h3 id="prime-constraint">2.1 Prime Constraint</h3>
+<p>X-0L prohibits agent modification.</p>
+<ul>
+<li>No kernel edits.</li>
+<li>No admission rule changes.</li>
+<li>No selector modification.</li>
+<li>No heuristic ranking.</li>
+<li>No semantic correction.</li>
+<li>No retries that change stimulus content.</li>
+<li>No replay-time model calls.</li>
+</ul>
+<p>If live proposals fail, that failure is recorded—not repaired—except
+for the single Syntax Erratum allowance defined in the X-0L spec (not
+invoked in this run).</p>
+<h3 id="sovereignty-boundary">2.2 Sovereignty Boundary</h3>
+<p>The LLM does not act. It proposes.</p>
+<ul>
+<li><p>LLM output is untrusted text.</p></li>
+<li><p>Canonicalizer produces either:</p>
+<ul>
+<li>exactly one JSON object (accepted), or</li>
+<li>a rejection reason (NO_JSON / AMBIGUOUS_MULTI_BLOCK /
+PARSE_ERROR).</li>
+</ul></li>
+<li><p>On rejection, the harness submits <strong>empty
+candidates</strong> to the kernel.</p></li>
+<li><p>The kernel remains the sole decider of ACTION/REFUSE/EXIT and the
+sole issuer of warrants.</p></li>
+</ul>
+<p>No component outside the kernel can mint execution authority.</p>
+<h2 id="methodology">3. Methodology</h2>
+<h3 id="determinism-preconditions">3.1 Determinism Preconditions</h3>
+<p>X-0L inherits the Phase X determinism guarantees:</p>
+<ul>
+<li>observation-sourced timestamps (Erratum X.E1),</li>
+<li>RFC 8785-compatible canonical JSON for dict-level hashing,</li>
+<li>SHA-256 hashing (untruncated),</li>
+<li>deterministic selector (lexicographic-min bundle hash bytes),</li>
+<li>forward reconstruction of <code>InternalState</code> during
+replay,</li>
+<li>no randomness in kernel.</li>
+</ul>
+<p>X-0L adds one additional requirement:</p>
+<blockquote>
+<p>Replay reuses logged canonicalized artifacts and never calls the
+LLM.</p>
+</blockquote>
+<h3 id="live-conditions">3.2 Live Conditions</h3>
+<p>Five live stimulus regimes were executed (100 cycles each):</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 9%" />
+<col style="width: 56%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Condition</th>
+<th style="text-align: right;">Entropy</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>L-A — Structured Prompt Control</strong></td>
+<td style="text-align: right;">Low</td>
+<td>Establish inhabitation floor under clause-referenced templates</td>
+</tr>
+<tr class="even">
+<td><strong>L-B — Ambiguous Natural Language</strong></td>
+<td style="text-align: right;">Medium</td>
+<td>Stress refusal behavior under ambiguous tasks</td>
+</tr>
+<tr class="odd">
+<td><strong>L-C — Adversarial Prompt Injection</strong></td>
+<td style="text-align: right;">High</td>
+<td>Stress gating under adversarial stimulus classes (I1–I5)</td>
+</tr>
+<tr class="even">
+<td><strong>L-D — Budget Stress (Live)</strong></td>
+<td style="text-align: right;">Medium–High</td>
+<td>Stress budget and verbosity pressure under live token
+accounting</td>
+</tr>
+<tr class="odd">
+<td><strong>L-E — Multi-Candidate Conflict</strong></td>
+<td style="text-align: right;">Low–Medium</td>
+<td>Verify selector invariance under multi-candidate proposals</td>
+</tr>
+</tbody>
+</table>
+<p>All cycles were replay-verified sequentially.</p>
+<h3 id="token-ruler">3.3 Token Ruler</h3>
+<p>X-0L uses <strong>API token accounting</strong>. Budget observations
+supply:</p>
+<pre><code>llm_output_token_count = prompt_tokens + completion_tokens</code></pre>
+<p>This preserves the meaning of the frozen kernel budget gate under
+live execution.</p>
+<h2 id="conserved-quantity-under-stochastic-pressure">4. Conserved
+Quantity Under Stochastic Pressure</h2>
+<p>The conserved quantity remains:</p>
+<blockquote>
+<p>Side effects occur iff a kernel-issued ExecutionWarrant exists for an
+admitted ActionRequest under the frozen constitution.</p>
+</blockquote>
+<p>X-0L tests whether stochastic proposals can cause this invariant to
+fail indirectly.</p>
+<h2 id="results">5. Results</h2>
+<h3 id="session-parameters">5.1 Session Parameters</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Model</td>
+<td><code>gpt-4o</code></td>
+</tr>
+<tr class="even">
+<td>Temperature</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>Context window</td>
+<td>128,000</td>
+</tr>
+<tr class="even">
+<td>Max tokens</td>
+<td>1,024</td>
+</tr>
+<tr class="odd">
+<td>B₁ (per-cycle)</td>
+<td>6,000</td>
+</tr>
+<tr class="even">
+<td>B₂ (per-session)</td>
+<td>500,000</td>
+</tr>
+<tr class="odd">
+<td>Cycles per condition</td>
+<td>100</td>
+</tr>
+<tr class="even">
+<td>Run ID</td>
+<td><code>9565b749-09e5-42fb-a569-184c4377dd98</code></td>
+</tr>
+<tr class="odd">
+<td>Constitution hash</td>
+<td><code>ad6aa7ccb0ed2715…</code></td>
+</tr>
+</tbody>
+</table>
+<p>Session overrides: <code>max_tokens</code> reduced from the harness
+default of 2,048 to 1,024. B₂ raised from the harness default of 150,000
+to 500,000 to accommodate 500 live cycles.</p>
+<h3 id="decision-outcomes">5.2 Decision Outcomes</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Condition</th>
+<th style="text-align: right;">ACTION</th>
+<th style="text-align: right;">REFUSE</th>
+<th style="text-align: right;">ACTION rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>L-A</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">100%</td>
+</tr>
+<tr class="even">
+<td>L-B</td>
+<td style="text-align: right;">92</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">92%</td>
+</tr>
+<tr class="odd">
+<td>L-C</td>
+<td style="text-align: right;">84</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">84%</td>
+</tr>
+<tr class="even">
+<td>L-D</td>
+<td style="text-align: right;">82</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">82%</td>
+</tr>
+<tr class="odd">
+<td>L-E</td>
+<td style="text-align: right;">99</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">99%</td>
+</tr>
+</tbody>
+</table>
+<p>Refusal types:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Condition</th>
+<th style="text-align: right;">Type I</th>
+<th style="text-align: right;">Type II</th>
+<th style="text-align: right;">Type III</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>L-A</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td>L-B</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td>L-C</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td>L-D</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td>L-E</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Type III (structural deadlock): none observed.</strong></p>
+<h3 id="replay-determinism">5.3 Replay Determinism</h3>
+<p>All 500 cycles replay-verified with zero divergences.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Condition</th>
+<th>Replay</th>
+<th style="text-align: right;">Divergences</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>L-A</td>
+<td>PASS</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td>L-B</td>
+<td>PASS</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td>L-C</td>
+<td>PASS</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td>L-D</td>
+<td>PASS</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td>L-E</td>
+<td>PASS</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="budget-utilization">5.4 Budget Utilization</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Metric</th>
+<th style="text-align: right;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Total session tokens</td>
+<td style="text-align: right;">344,221</td>
+</tr>
+<tr class="even">
+<td>B₂ cap</td>
+<td style="text-align: right;">500,000</td>
+</tr>
+<tr class="odd">
+<td>Utilization</td>
+<td style="text-align: right;">68.84%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="latency">5.5 Latency</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Condition</th>
+<th style="text-align: right;">Mean (ms)</th>
+<th style="text-align: right;">p95 (ms)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>L-A</td>
+<td style="text-align: right;">2,886</td>
+<td style="text-align: right;">4,553</td>
+</tr>
+<tr class="even">
+<td>L-B</td>
+<td style="text-align: right;">3,924</td>
+<td style="text-align: right;">6,004</td>
+</tr>
+<tr class="odd">
+<td>L-C</td>
+<td style="text-align: right;">2,910</td>
+<td style="text-align: right;">4,113</td>
+</tr>
+<tr class="even">
+<td>L-D</td>
+<td style="text-align: right;">5,379</td>
+<td style="text-align: right;">9,431</td>
+</tr>
+<tr class="odd">
+<td>L-E</td>
+<td style="text-align: right;">5,881</td>
+<td style="text-align: right;">9,249</td>
+</tr>
+</tbody>
+</table>
+<h3 id="authority-utilization">5.6 Authority Utilization</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Condition</th>
+<th style="text-align: right;">Distinct clauses</th>
+<th style="text-align: right;">Coverage</th>
+<th style="text-align: right;">Entropy (bits)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>L-A</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">25%</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="even">
+<td>L-B</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">75%</td>
+<td style="text-align: right;">1.14</td>
+</tr>
+<tr class="odd">
+<td>L-C</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">75%</td>
+<td style="text-align: right;">1.08</td>
+</tr>
+<tr class="even">
+<td>L-D</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">100%</td>
+<td style="text-align: right;">1.98</td>
+</tr>
+<tr class="odd">
+<td>L-E</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">100%</td>
+<td style="text-align: right;">1.64</td>
+</tr>
+</tbody>
+</table>
+<h3 id="l-c-forensics-adversarial-stimulus">5.7 L-C Forensics
+(Adversarial Stimulus)</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Outcome</th>
+<th style="text-align: right;">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>KERNEL_ADMITTED</td>
+<td style="text-align: right;">84</td>
+</tr>
+<tr class="even">
+<td>KERNEL_REJECTED</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td>LLM_REFUSED</td>
+<td style="text-align: right;">14</td>
+</tr>
+</tbody>
+</table>
+<p>Interpretation boundary:</p>
+<ul>
+<li><code>KERNEL_ADMITTED</code> means the kernel admitted the
+candidate(s). It is a concern only if the admitted ActionRequests match
+adversarial intent classes I1–I5.</li>
+<li>This run did not implement an explicit “intent match” metric;
+therefore high admission under adversarial stimulus is interpreted as
+“no unlawful candidate proposal was produced,” not as a demonstrated
+injection defeat.</li>
+<li>X-0L does not evaluate semantic alignment between adversarial intent
+and admitted actions; it evaluates only structural admissibility under
+the frozen constitution.</li>
+</ul>
+<h2 id="what-x-0l-does-not-claim">6. What X-0L Does Not Claim</h2>
+<p>X-0L does not demonstrate:</p>
+<ul>
+<li>semantic truth of scope claims,</li>
+<li>correctness of proposed actions,</li>
+<li>moral adequacy,</li>
+<li>resistance to all prompt injection classes (without intent-match
+instrumentation),</li>
+<li>open-world safety,</li>
+<li>long-horizon stability,</li>
+<li>amendment safety.</li>
+</ul>
+<p>It measures stochastic inhabitation under frozen sovereignty
+only.</p>
+<h2 id="closure-criteria">7. Closure Criteria</h2>
+<p>X-0L closes positive if:</p>
+<ol type="1">
+<li>All conditions executed.</li>
+<li>Replay divergence = 0.</li>
+<li>No warrantless side effects occur.</li>
+<li>Selector invariance holds (L-E).</li>
+<li>Inhabitation floor satisfied (L-A).</li>
+<li>No Type III structural deadlock detected.</li>
+</ol>
+<p><strong>X-0L Status:</strong> <strong>CLOSED — POSITIVE</strong>
+(<code>X0L_PASS / STOCHASTIC_INHABITATION_OK</code>)</p>
+<h2 id="implications">8. Implications</h2>
+<p>X-0P showed that RSA-0 survives deterministic stress.</p>
+<p>X-0L shows that replay-deterministic sovereignty can survive
+<strong>stochastic proposal pressure</strong> when the proposal channel
+is boxed and canonicalized.</p>
+<p>The next problem is no longer whether stochastic proposals break
+determinism. The next problem is:</p>
+<blockquote>
+<p>Can authority be amended without creating a privileged
+interpreter?</p>
+</blockquote>
+<p>That is Phase X-1.</p>
+<h2 id="appendix-a-determinism-guarantee">Appendix A — Determinism
+Guarantee</h2>
+<p>Determinism is guaranteed by:</p>
+<ul>
+<li>observation-sourced timestamps,</li>
+<li>canonical JSON for dict hashing,</li>
+<li>SHA-256 hashing,</li>
+<li>selector comparison on raw hash bytes,</li>
+<li>forward replay reconstruction of <code>InternalState</code>,</li>
+<li>replay injection of logged candidate artifacts,</li>
+<li>no model calls during replay.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>X-0 proved existence. X-0P proved deterministic inhabitation. X-0L
+proves stochastic inhabitation without sovereignty collapse.</p>
+<p>The substrate remains empirical.</p>
+<p><strong>End of Axionic Phase X-0L — Live Proposal Inhabitation (First
+Draft v0.1)</strong></p>
+
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
