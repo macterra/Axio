@@ -1,0 +1,66 @@
+{
+  "calibration_hash": "9545d876ed909f7f56282f0a1324b2963f101b4221db31e7af46a26ba71933f3",
+  "constitution_hash": "ad6aa7ccb0ed27151423486b60de380da9d34436f6c5554da84f3a092902740f",
+  "generator_config": {
+    "corpus_path": "/home/david/Axio/src/axionic_rsa/RSA-0/profiling/x0p/conditions/corpus_B.txt",
+    "n_cycles": 100,
+    "seeds": {
+      "A": 42,
+      "B": 43,
+      "C": 44,
+      "D": 45,
+      "E": 46
+    }
+  },
+  "max_tokens": null,
+  "model_identifier": null,
+  "preflight": {
+    "checks": [
+      {
+        "check": "constitution_integrity",
+        "detail": "Constitution hash verified: ad6aa7ccb0ed27151423486b60de380da9d34436f6c5554da84f3a092902740f",
+        "passed": true
+      },
+      {
+        "check": "schema_integrity",
+        "detail": "Schema hash: d0f51d235f243ccc8f5ec4104160317745c8974786e6a581b81ae49122688dfa",
+        "passed": true
+      },
+      {
+        "check": "artifact_drift",
+        "detail": "Artifact composite hash: 871154ab906f3c3951778e56955c9f55fc7953c3c20825e123c01c7c6307d541 (4 files)",
+        "passed": true
+      },
+      {
+        "check": "generator_stability_A",
+        "detail": "Generator stable across 3 runs: 4ef68daabda7202a...",
+        "passed": true
+      },
+      {
+        "check": "generator_stability_B",
+        "detail": "Generator stable across 3 runs: 4bd68df22d9eb419...",
+        "passed": true
+      },
+      {
+        "check": "generator_stability_C",
+        "detail": "Generator stable across 3 runs: fe5e8268c3d837d2...",
+        "passed": true
+      },
+      {
+        "check": "generator_stability_D",
+        "detail": "Generator stable across 3 runs: a39d4ef2dfb9b508...",
+        "passed": true
+      },
+      {
+        "check": "generator_stability_E",
+        "detail": "Generator stable across 3 runs: a04fdfcbfc98d861...",
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "prompt_template_hash": null,
+  "run_id": "0a996ea4-1078-45aa-b6f8-ce8832e9c7ba",
+  "seed": null,
+  "temperature": null
+}

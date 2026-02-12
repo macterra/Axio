@@ -952,6 +952,39 @@ class TestHostSovereigntyBoundary:
         # regardless of author. The trust boundary is at the host, not kernel.
         assert user_obs.author == Author.USER.value
 
+    def test_system_observation_call_sites_bounded(self):
+        """
+        Enforce that make_system_observation() is only called in the
+        startup() method of host/cli/main.py. Exactly 4 call sites:
+        two OK/FAIL pairs (constitution hash, citation index).
+
+        If this test fails, a new call site was added — audit it.
+        """
+        import re
+        host_path = Path(__file__).resolve().parent.parent.parent / "host" / "cli" / "main.py"
+        source = host_path.read_text(encoding="utf-8")
+        # Count invocations (calls, not the def line or docstrings)
+        calls = [
+            line for line in source.splitlines()
+            if "make_system_observation(" in line
+            and not line.strip().startswith("def ")
+            and not line.strip().startswith("#")
+            and not line.strip().startswith("Host")  # docstring continuation
+        ]
+        assert len(calls) == 4, (
+            f"Expected exactly 4 call sites for make_system_observation, "
+            f"found {len(calls)}. Audit any new sites for trust boundary compliance."
+        )
+
+        # Verify no other module calls it
+        kernel_dir = Path(__file__).resolve().parent.parent / "src"
+        for py_file in kernel_dir.rglob("*.py"):
+            content = py_file.read_text(encoding="utf-8")
+            assert "make_system_observation" not in content, (
+                f"Kernel module {py_file.name} must not reference "
+                f"make_system_observation — that is a host-only function."
+            )
+
 
 # ---------------------------------------------------------------------------
 # Test 14 (Erratum X.E1): Deterministic clock

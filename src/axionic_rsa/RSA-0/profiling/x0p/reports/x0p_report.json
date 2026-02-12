@@ -1,0 +1,381 @@
+{
+  "baselines": {
+    "A": {
+      "always_admit": {
+        "action_count": 100,
+        "action_rate": 1.0,
+        "n_cycles": 100
+      },
+      "always_refuse": {
+        "action_count": 0,
+        "action_rate": 0.0,
+        "n_cycles": 100
+      }
+    },
+    "B": {
+      "always_admit": {
+        "action_count": 100,
+        "action_rate": 1.0,
+        "n_cycles": 100
+      },
+      "always_refuse": {
+        "action_count": 0,
+        "action_rate": 0.0,
+        "n_cycles": 100
+      }
+    },
+    "C": {
+      "always_admit": {
+        "action_count": 82,
+        "action_rate": 0.82,
+        "n_cycles": 100
+      },
+      "always_refuse": {
+        "action_count": 0,
+        "action_rate": 0.0,
+        "n_cycles": 100
+      }
+    },
+    "D": {
+      "always_admit": {
+        "action_count": 100,
+        "action_rate": 1.0,
+        "n_cycles": 100
+      },
+      "always_refuse": {
+        "action_count": 0,
+        "action_rate": 0.0,
+        "n_cycles": 100
+      }
+    },
+    "E": {
+      "always_admit": {
+        "action_count": 100,
+        "action_rate": 1.0,
+        "n_cycles": 100
+      },
+      "always_refuse": {
+        "action_count": 0,
+        "action_rate": 0.0,
+        "n_cycles": 100
+      }
+    }
+  },
+  "calibration_hash": "9545d876ed909f7f56282f0a1324b2963f101b4221db31e7af46a26ba71933f3",
+  "constitution_hash": "ad6aa7ccb0ed27151423486b60de380da9d34436f6c5554da84f3a092902740f",
+  "metrics": {
+    "condition_A": {
+      "aborted": false,
+      "authority_utilization": {
+        "clause_frequency": {
+          "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT": 100
+        },
+        "constitution_coverage_pct": 0.25,
+        "distinct_authority_ids": [
+          "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+        ],
+        "distinct_count": 1,
+        "total_invocations": 100,
+        "utilization_entropy_bits": 0.0
+      },
+      "baseline_contrast": {
+        "baseline_admit_action_rate": 1.0,
+        "baseline_refuse_action_rate": 0.0,
+        "condition_action_rate": 1.0,
+        "exceeds_refuse_baseline": true
+      },
+      "decision_distribution": {
+        "action_count": 100,
+        "action_rate": 1.0,
+        "exit_count": 0,
+        "exit_rate": 0.0,
+        "refuse_count": 0,
+        "refuse_rate": 0.0,
+        "total": 100
+      },
+      "gate_breakdown": {
+        "failed_gate_histogram": {},
+        "reason_code_distribution": {},
+        "total_candidate_rejections": 0
+      },
+      "latency": {
+        "mean_ms": 0.3876,
+        "median_ms": 0.3947,
+        "n_samples": 100,
+        "p95_ms": 0.5429,
+        "variance_ms": 0.01,
+        "worst_ms": 0.6241
+      },
+      "manifest_hash": "4ef68daabda7202aabc6028bf49b5d96452e086db428feede1f07cab8c3d1367",
+      "n_cycles": 100,
+      "outcome_cost": {
+        "mean_admitted_per_action": 1,
+        "mean_rejected_per_refuse": 0.0,
+        "refuse_action_ratio": 0.0,
+        "refuse_action_ratio_flagged": false,
+        "total_actions": 100,
+        "total_exits": 0,
+        "total_refuses": 0
+      }
+    },
+    "condition_B": {
+      "aborted": false,
+      "authority_utilization": {
+        "clause_frequency": {
+          "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT": 100
+        },
+        "constitution_coverage_pct": 0.25,
+        "distinct_authority_ids": [
+          "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+        ],
+        "distinct_count": 1,
+        "total_invocations": 100,
+        "utilization_entropy_bits": 0.0
+      },
+      "baseline_contrast": {
+        "baseline_admit_action_rate": 1.0,
+        "baseline_refuse_action_rate": 0.0,
+        "condition_action_rate": 1.0,
+        "exceeds_refuse_baseline": true
+      },
+      "decision_distribution": {
+        "action_count": 100,
+        "action_rate": 1.0,
+        "exit_count": 0,
+        "exit_rate": 0.0,
+        "refuse_count": 0,
+        "refuse_rate": 0.0,
+        "total": 100
+      },
+      "gate_breakdown": {
+        "failed_gate_histogram": {},
+        "reason_code_distribution": {},
+        "total_candidate_rejections": 0
+      },
+      "latency": {
+        "mean_ms": 0.3006,
+        "median_ms": 0.2917,
+        "n_samples": 100,
+        "p95_ms": 0.3479,
+        "variance_ms": 0.0009,
+        "worst_ms": 0.4768
+      },
+      "manifest_hash": "4bd68df22d9eb419286f00cb9da1677f3c1b21c70c53dc3824580ae388a76b11",
+      "n_cycles": 100,
+      "outcome_cost": {
+        "mean_admitted_per_action": 1,
+        "mean_rejected_per_refuse": 0.0,
+        "refuse_action_ratio": 0.0,
+        "refuse_action_ratio_flagged": false,
+        "total_actions": 100,
+        "total_exits": 0,
+        "total_refuses": 0
+      }
+    },
+    "condition_C": {
+      "aborted": false,
+      "authority_utilization": {
+        "clause_frequency": {
+          "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT": 50
+        },
+        "constitution_coverage_pct": 0.25,
+        "distinct_authority_ids": [
+          "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+        ],
+        "distinct_count": 1,
+        "total_invocations": 50,
+        "utilization_entropy_bits": 0.0
+      },
+      "baseline_contrast": {
+        "baseline_admit_action_rate": 0.82,
+        "baseline_refuse_action_rate": 0.0,
+        "condition_action_rate": 0.5,
+        "exceeds_refuse_baseline": true
+      },
+      "decision_distribution": {
+        "action_count": 50,
+        "action_rate": 0.5,
+        "exit_count": 0,
+        "exit_rate": 0.0,
+        "refuse_count": 50,
+        "refuse_rate": 0.5,
+        "total": 100
+      },
+      "gate_breakdown": {
+        "failed_gate_histogram": {
+          "authority_citation": 41,
+          "completeness": 50,
+          "constitution_compliance": 18,
+          "io_allowlist": 18,
+          "scope_claim": 21
+        },
+        "reason_code_distribution": {
+          "NO_ADMISSIBLE_ACTION": 50
+        },
+        "total_candidate_rejections": 50
+      },
+      "latency": {
+        "mean_ms": 0.3326,
+        "median_ms": 0.2953,
+        "n_samples": 100,
+        "p95_ms": 0.531,
+        "variance_ms": 0.0089,
+        "worst_ms": 0.6711
+      },
+      "manifest_hash": "fe5e8268c3d837d26c93c1bfb25d96b0883053914c555076919593f02762d53c",
+      "n_cycles": 100,
+      "outcome_cost": {
+        "mean_admitted_per_action": 1,
+        "mean_rejected_per_refuse": 1,
+        "refuse_action_ratio": 1.0,
+        "refuse_action_ratio_flagged": false,
+        "total_actions": 50,
+        "total_exits": 0,
+        "total_refuses": 50
+      }
+    },
+    "condition_D": {
+      "aborted": false,
+      "authority_utilization": {
+        "clause_frequency": {
+          "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT": 62
+        },
+        "constitution_coverage_pct": 0.25,
+        "distinct_authority_ids": [
+          "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+        ],
+        "distinct_count": 1,
+        "total_invocations": 62,
+        "utilization_entropy_bits": 0.0
+      },
+      "baseline_contrast": {
+        "baseline_admit_action_rate": 1.0,
+        "baseline_refuse_action_rate": 0.0,
+        "condition_action_rate": 0.62,
+        "exceeds_refuse_baseline": true
+      },
+      "decision_distribution": {
+        "action_count": 62,
+        "action_rate": 0.62,
+        "exit_count": 0,
+        "exit_rate": 0.0,
+        "refuse_count": 38,
+        "refuse_rate": 0.38,
+        "total": 100
+      },
+      "gate_breakdown": {
+        "failed_gate_histogram": {},
+        "reason_code_distribution": {
+          "BUDGET_EXHAUSTED": 38
+        },
+        "total_candidate_rejections": 0
+      },
+      "latency": {
+        "mean_ms": 0.197,
+        "median_ms": 0.2747,
+        "n_samples": 100,
+        "p95_ms": 0.3791,
+        "variance_ms": 0.0203,
+        "worst_ms": 0.5142
+      },
+      "manifest_hash": "a39d4ef2dfb9b50818548401799ff519eb671bbc3d82a69a75d83ae8ddd65db0",
+      "n_cycles": 100,
+      "outcome_cost": {
+        "mean_admitted_per_action": 1,
+        "mean_rejected_per_refuse": 0,
+        "refuse_action_ratio": 0.6129,
+        "refuse_action_ratio_flagged": false,
+        "total_actions": 62,
+        "total_exits": 0,
+        "total_refuses": 38
+      }
+    },
+    "condition_E": {
+      "aborted": false,
+      "authority_utilization": {
+        "clause_frequency": {
+          "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT": 458
+        },
+        "constitution_coverage_pct": 0.25,
+        "distinct_authority_ids": [
+          "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+        ],
+        "distinct_count": 1,
+        "total_invocations": 458,
+        "utilization_entropy_bits": 0.0
+      },
+      "baseline_contrast": {
+        "baseline_admit_action_rate": 1.0,
+        "baseline_refuse_action_rate": 0.0,
+        "condition_action_rate": 1.0,
+        "exceeds_refuse_baseline": true
+      },
+      "decision_distribution": {
+        "action_count": 100,
+        "action_rate": 1.0,
+        "exit_count": 0,
+        "exit_rate": 0.0,
+        "refuse_count": 0,
+        "refuse_rate": 0.0,
+        "total": 100
+      },
+      "gate_breakdown": {
+        "failed_gate_histogram": {},
+        "reason_code_distribution": {},
+        "total_candidate_rejections": 0
+      },
+      "latency": {
+        "mean_ms": 0.5041,
+        "median_ms": 0.4743,
+        "n_samples": 100,
+        "p95_ms": 0.7694,
+        "variance_ms": 0.0166,
+        "worst_ms": 1.2536
+      },
+      "manifest_hash": "a04fdfcbfc98d861556ad95f8a17ba0014d7c25d81e5c9efcc987ba3faeab96a",
+      "n_cycles": 100,
+      "outcome_cost": {
+        "mean_admitted_per_action": 4.58,
+        "mean_rejected_per_refuse": 0.0,
+        "refuse_action_ratio": 0.0,
+        "refuse_action_ratio_flagged": false,
+        "total_actions": 100,
+        "total_exits": 0,
+        "total_refuses": 0
+      }
+    }
+  },
+  "replay_verification": {
+    "all_passed": true,
+    "per_condition": {
+      "A": {
+        "n_cycles_verified": 100,
+        "n_divergences": 0,
+        "passed": true
+      },
+      "B": {
+        "n_cycles_verified": 100,
+        "n_divergences": 0,
+        "passed": true
+      },
+      "C": {
+        "n_cycles_verified": 100,
+        "n_divergences": 0,
+        "passed": true
+      },
+      "D": {
+        "n_cycles_verified": 100,
+        "n_divergences": 0,
+        "passed": true
+      },
+      "E": {
+        "n_cycles_verified": 100,
+        "n_divergences": 0,
+        "passed": true
+      }
+    }
+  },
+  "session": {
+    "run_id": "0a996ea4-1078-45aa-b6f8-ce8832e9c7ba"
+  }
+}

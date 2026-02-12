@@ -1,0 +1,3927 @@
+{
+  "abort_reason": null,
+  "aborted": false,
+  "condition": "E",
+  "constitution_hash": "ad6aa7ccb0ed27151423486b60de380da9d34436f6c5554da84f3a092902740f",
+  "cycle_results": [
+    {
+      "admitted_count": 2,
+      "artifact_ids": {
+        "action_request_id": "07c4866f314da16f49068cd069d39106f3a2b0450506bd177d9cb566b4ebf70b",
+        "warrant_id": "4a5ed1a4b77691603dc25ab2ca6ab25086bbf0d9a35e4e15f65a58d880f68cfa"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0000",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "c6501bfadd75a8d638eb4f2811008c9f38884fd78734feda3b4503b76e45cd45",
+      "latency_ms": 0.454699998954311,
+      "metadata": {
+        "n_bundles": 2,
+        "permutation": [
+          0,
+          1
+        ],
+        "permutation_index": 0
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "f497a3f173bb35bf8a685c60111d68c31d6be8d5cab16f81fee9ee8f98808c0e",
+      "state_out_hash": "1e6596662d37a97f641989fa28ac31f79f8621d3041b4f25d630f6ecb752d00c",
+      "warrant_id": "4a5ed1a4b77691603dc25ab2ca6ab25086bbf0d9a35e4e15f65a58d880f68cfa"
+    },
+    {
+      "admitted_count": 2,
+      "artifact_ids": {
+        "action_request_id": "07c4866f314da16f49068cd069d39106f3a2b0450506bd177d9cb566b4ebf70b",
+        "warrant_id": "7a3d06af67491ee487257a3ef799b53dfaf6a3941fd93c659808518325bf65d0"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0001",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "cb8f231f88c43da9281dde0b3e05d80ef70016bf00afa601c64d6a0eae0a2c66",
+      "latency_ms": 0.3593099972931668,
+      "metadata": {
+        "n_bundles": 2,
+        "permutation": [
+          1,
+          0
+        ],
+        "permutation_index": 1
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "1e6596662d37a97f641989fa28ac31f79f8621d3041b4f25d630f6ecb752d00c",
+      "state_out_hash": "716b62e407438d244430e0deae03db1d65443e6376d2e1caa719355b3704c6c9",
+      "warrant_id": "7a3d06af67491ee487257a3ef799b53dfaf6a3941fd93c659808518325bf65d0"
+    },
+    {
+      "admitted_count": 3,
+      "artifact_ids": {
+        "action_request_id": "e8d2cf020558c4513f40080cf6e355e3a13b9a3714616e007510385393dae5be",
+        "warrant_id": "1a5d33ee90c34a69206520b847db6ae474f47e83c061661b5eccdc41aaaf57f0"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0002",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "317489656978c33e8be40292f3e95a036cb6983805c510629ce919ae440e4d64",
+      "latency_ms": 0.42110900540137663,
+      "metadata": {
+        "n_bundles": 3,
+        "permutation": [
+          0,
+          1,
+          2
+        ],
+        "permutation_index": 0
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "716b62e407438d244430e0deae03db1d65443e6376d2e1caa719355b3704c6c9",
+      "state_out_hash": "8340bd4b23f4575e2fbd07b56d1bdff590bead641bc60cc58ad06029e6782f6d",
+      "warrant_id": "1a5d33ee90c34a69206520b847db6ae474f47e83c061661b5eccdc41aaaf57f0"
+    },
+    {
+      "admitted_count": 3,
+      "artifact_ids": {
+        "action_request_id": "e8d2cf020558c4513f40080cf6e355e3a13b9a3714616e007510385393dae5be",
+        "warrant_id": "56b527f52414b46bd0ab888b95735d6743ef57b5e4fd6c20f48d27751af8ceb9"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0003",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "056bc9747a8bfbc313362004d50b8abd4ed8a72b392c36f4e05a87e33359b0b3",
+      "latency_ms": 0.39850199391366914,
+      "metadata": {
+        "n_bundles": 3,
+        "permutation": [
+          0,
+          2,
+          1
+        ],
+        "permutation_index": 1
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "8340bd4b23f4575e2fbd07b56d1bdff590bead641bc60cc58ad06029e6782f6d",
+      "state_out_hash": "0d5a09c2f7a270db016c1ca499edafa7d17ce04d79a12af13f04727e7b56791e",
+      "warrant_id": "56b527f52414b46bd0ab888b95735d6743ef57b5e4fd6c20f48d27751af8ceb9"
+    },
+    {
+      "admitted_count": 3,
+      "artifact_ids": {
+        "action_request_id": "e8d2cf020558c4513f40080cf6e355e3a13b9a3714616e007510385393dae5be",
+        "warrant_id": "0fb7586b9e8ca63ce5175cc2a2faaaabb9187e010654640b22738ef1588fe33c"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0004",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "ff7423375bceb76157d2b52be7399f935468643aae9920699b4a7753060684aa",
+      "latency_ms": 0.37844500184291974,
+      "metadata": {
+        "n_bundles": 3,
+        "permutation": [
+          1,
+          0,
+          2
+        ],
+        "permutation_index": 2
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "0d5a09c2f7a270db016c1ca499edafa7d17ce04d79a12af13f04727e7b56791e",
+      "state_out_hash": "307bcd880dd8da33cd84b69388dd96b6c91d2115845fc614d1e0bb91286bdb07",
+      "warrant_id": "0fb7586b9e8ca63ce5175cc2a2faaaabb9187e010654640b22738ef1588fe33c"
+    },
+    {
+      "admitted_count": 3,
+      "artifact_ids": {
+        "action_request_id": "e8d2cf020558c4513f40080cf6e355e3a13b9a3714616e007510385393dae5be",
+        "warrant_id": "6409324bb9cb56fd2e19b8ee0336ff2ca284b6b87b231357f3f5a084b65dbcfb"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0005",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "ec87c14a7039ad715f9acb233e7d297660031431b2b4c9c24310279fad6f040c",
+      "latency_ms": 0.39322399970842525,
+      "metadata": {
+        "n_bundles": 3,
+        "permutation": [
+          1,
+          2,
+          0
+        ],
+        "permutation_index": 3
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "307bcd880dd8da33cd84b69388dd96b6c91d2115845fc614d1e0bb91286bdb07",
+      "state_out_hash": "995005df9f2a53c8ac1feb09eef2b4f2d582eb11531bf263145d74420a74a99c",
+      "warrant_id": "6409324bb9cb56fd2e19b8ee0336ff2ca284b6b87b231357f3f5a084b65dbcfb"
+    },
+    {
+      "admitted_count": 3,
+      "artifact_ids": {
+        "action_request_id": "e8d2cf020558c4513f40080cf6e355e3a13b9a3714616e007510385393dae5be",
+        "warrant_id": "01d2272ade396273422e65bdc7eb9c785202deb745af1f92f27ef12f9a169370"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0006",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "ba898891583bdb52e002a53839b614a50d4c9ba1f41362af45b6bb3b9438712a",
+      "latency_ms": 0.36809399898629636,
+      "metadata": {
+        "n_bundles": 3,
+        "permutation": [
+          2,
+          0,
+          1
+        ],
+        "permutation_index": 4
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "995005df9f2a53c8ac1feb09eef2b4f2d582eb11531bf263145d74420a74a99c",
+      "state_out_hash": "c1e2584c4d2a1ba2caf3c6ae2e87bb15f8584718bd0d531dd401727ecac909d1",
+      "warrant_id": "01d2272ade396273422e65bdc7eb9c785202deb745af1f92f27ef12f9a169370"
+    },
+    {
+      "admitted_count": 3,
+      "artifact_ids": {
+        "action_request_id": "e8d2cf020558c4513f40080cf6e355e3a13b9a3714616e007510385393dae5be",
+        "warrant_id": "52302119ddd31832d162c9465371986709190d3a78d56be4959a1b8deb903233"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0007",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "1f8828cd35a4409aa25161d4dbafc10d6198ab2a6cea846139a1503df09f8a5c",
+      "latency_ms": 0.3579949989216402,
+      "metadata": {
+        "n_bundles": 3,
+        "permutation": [
+          2,
+          1,
+          0
+        ],
+        "permutation_index": 5
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "c1e2584c4d2a1ba2caf3c6ae2e87bb15f8584718bd0d531dd401727ecac909d1",
+      "state_out_hash": "17f93fba7a3a993c91471e6a797f1129395f59909699c050c5e7387264274c06",
+      "warrant_id": "52302119ddd31832d162c9465371986709190d3a78d56be4959a1b8deb903233"
+    },
+    {
+      "admitted_count": 4,
+      "artifact_ids": {
+        "action_request_id": "0e870f48e60601a8a55b66f44c5f569328313cca2810abb7036b86cf42fbcbb7",
+        "warrant_id": "6167c43c1b3e5790407098eb2ce77e05de5222aa85a3aaeed55cf3f79a2e6fdd"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0008",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "3136b8fa0609f91131e1da490d512d472fc670897d68176cd64135bc5e351127",
+      "latency_ms": 0.42556900007184595,
+      "metadata": {
+        "n_bundles": 4,
+        "permutation": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "permutation_index": 0
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "17f93fba7a3a993c91471e6a797f1129395f59909699c050c5e7387264274c06",
+      "state_out_hash": "8b141e58108aa7d6296d966f455170226c44bb6811b80ffa94c1e9b88268b6b7",
+      "warrant_id": "6167c43c1b3e5790407098eb2ce77e05de5222aa85a3aaeed55cf3f79a2e6fdd"
+    },
+    {
+      "admitted_count": 4,
+      "artifact_ids": {
+        "action_request_id": "0e870f48e60601a8a55b66f44c5f569328313cca2810abb7036b86cf42fbcbb7",
+        "warrant_id": "18b1d1a0d842ae14c4580a2740f519dc831bac3cfef709a5030392bfc2530126"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0009",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "11574aaf851bf4d4f019a17288e2934438e23051ffdc92fbbc17b49740957852",
+      "latency_ms": 0.449049002781976,
+      "metadata": {
+        "n_bundles": 4,
+        "permutation": [
+          0,
+          1,
+          3,
+          2
+        ],
+        "permutation_index": 1
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "8b141e58108aa7d6296d966f455170226c44bb6811b80ffa94c1e9b88268b6b7",
+      "state_out_hash": "4de534967ff94d34cad8f31cc13fa574da83d0c1768996fcb367210d12914596",
+      "warrant_id": "18b1d1a0d842ae14c4580a2740f519dc831bac3cfef709a5030392bfc2530126"
+    },
+    {
+      "admitted_count": 4,
+      "artifact_ids": {
+        "action_request_id": "0e870f48e60601a8a55b66f44c5f569328313cca2810abb7036b86cf42fbcbb7",
+        "warrant_id": "e22de3553c5a290e92f65659e9081e82a48c224cbf20faf09ac02a860d318a1c"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0010",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "c7bbfc57a92f54bff6f43a101885716537f340f9779187e8fb20cf4b6dd22eec",
+      "latency_ms": 0.8574780003982596,
+      "metadata": {
+        "n_bundles": 4,
+        "permutation": [
+          0,
+          2,
+          1,
+          3
+        ],
+        "permutation_index": 2
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "4de534967ff94d34cad8f31cc13fa574da83d0c1768996fcb367210d12914596",
+      "state_out_hash": "0fafcc3dcad243ce3e15b115b6650849ca3ed079716d2f7f1915edf9e475df08",
+      "warrant_id": "e22de3553c5a290e92f65659e9081e82a48c224cbf20faf09ac02a860d318a1c"
+    },
+    {
+      "admitted_count": 4,
+      "artifact_ids": {
+        "action_request_id": "0e870f48e60601a8a55b66f44c5f569328313cca2810abb7036b86cf42fbcbb7",
+        "warrant_id": "069da54664597bb1b90a3e52031005af14e64dbba54af3eb337754822a3c23aa"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0011",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "ea799d03d48cbf3d920c2c77c81224bf7ecaf879570c50f2a087b30bc4fc2dac",
+      "latency_ms": 1.0072379955090582,
+      "metadata": {
+        "n_bundles": 4,
+        "permutation": [
+          0,
+          2,
+          3,
+          1
+        ],
+        "permutation_index": 3
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "0fafcc3dcad243ce3e15b115b6650849ca3ed079716d2f7f1915edf9e475df08",
+      "state_out_hash": "acfb53353f946e7aa0a4901b61510eed54e29ed26f622f1bbe99ca7c37439ba6",
+      "warrant_id": "069da54664597bb1b90a3e52031005af14e64dbba54af3eb337754822a3c23aa"
+    },
+    {
+      "admitted_count": 4,
+      "artifact_ids": {
+        "action_request_id": "0e870f48e60601a8a55b66f44c5f569328313cca2810abb7036b86cf42fbcbb7",
+        "warrant_id": "c893b0b80bf09a16c0777d6af357d048322e5f0ec4cd3d210d16e118c39b7c30"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0012",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "74ecd41a1e9c83db8e6d41f62839c8710eddb89b42151f6facbc287c38b3186b",
+      "latency_ms": 0.4736480041174218,
+      "metadata": {
+        "n_bundles": 4,
+        "permutation": [
+          0,
+          3,
+          1,
+          2
+        ],
+        "permutation_index": 4
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "acfb53353f946e7aa0a4901b61510eed54e29ed26f622f1bbe99ca7c37439ba6",
+      "state_out_hash": "401d5a9a5cf4ed92634d4743b71885b6aa754333723352ec324852192acc8fab",
+      "warrant_id": "c893b0b80bf09a16c0777d6af357d048322e5f0ec4cd3d210d16e118c39b7c30"
+    },
+    {
+      "admitted_count": 4,
+      "artifact_ids": {
+        "action_request_id": "0e870f48e60601a8a55b66f44c5f569328313cca2810abb7036b86cf42fbcbb7",
+        "warrant_id": "4494e04a0ffdd4834c8b1207b6c7d2179c324f82431000a0b58f957c086a0c50"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0013",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "6e2b14d6b435f291475bff3fffdb4b7ec23492d9966d60b46ec9de164735c548",
+      "latency_ms": 0.49484899500384927,
+      "metadata": {
+        "n_bundles": 4,
+        "permutation": [
+          0,
+          3,
+          2,
+          1
+        ],
+        "permutation_index": 5
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "401d5a9a5cf4ed92634d4743b71885b6aa754333723352ec324852192acc8fab",
+      "state_out_hash": "206f44a6fe3148cacbdcbbeb38b3e384026034e711b2cce43f438bcd6eae93a1",
+      "warrant_id": "4494e04a0ffdd4834c8b1207b6c7d2179c324f82431000a0b58f957c086a0c50"
+    },
+    {
+      "admitted_count": 4,
+      "artifact_ids": {
+        "action_request_id": "0e870f48e60601a8a55b66f44c5f569328313cca2810abb7036b86cf42fbcbb7",
+        "warrant_id": "f3d1a0c022108a5308de86dc52fbd8c3abedbbc4ebf2b93d46f91c8930bf7fe9"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0014",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "6401cd375194a510436635a29433d71fa7a090973b4d21e154ea4c777232d8e5",
+      "latency_ms": 0.4247659962857142,
+      "metadata": {
+        "n_bundles": 4,
+        "permutation": [
+          1,
+          0,
+          2,
+          3
+        ],
+        "permutation_index": 6
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "206f44a6fe3148cacbdcbbeb38b3e384026034e711b2cce43f438bcd6eae93a1",
+      "state_out_hash": "83c9398d6b9474b86306f532ade3be87e29a43d734ec335e726bd72bcee42610",
+      "warrant_id": "f3d1a0c022108a5308de86dc52fbd8c3abedbbc4ebf2b93d46f91c8930bf7fe9"
+    },
+    {
+      "admitted_count": 4,
+      "artifact_ids": {
+        "action_request_id": "0e870f48e60601a8a55b66f44c5f569328313cca2810abb7036b86cf42fbcbb7",
+        "warrant_id": "e058894d70a092e900306fe785c1e89325c733afa206eb4612d50b58766b7ff9"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0015",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "087c6e4e502c9cb9e212679efd1f0eb9c8c185473063c8118e298f40265a9d76",
+      "latency_ms": 0.4514239990385249,
+      "metadata": {
+        "n_bundles": 4,
+        "permutation": [
+          1,
+          0,
+          3,
+          2
+        ],
+        "permutation_index": 7
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "83c9398d6b9474b86306f532ade3be87e29a43d734ec335e726bd72bcee42610",
+      "state_out_hash": "a4823c5671d40c530bd49e2644ecbe71f4829eeb15b1675fa5adacedde8e0f5e",
+      "warrant_id": "e058894d70a092e900306fe785c1e89325c733afa206eb4612d50b58766b7ff9"
+    },
+    {
+      "admitted_count": 4,
+      "artifact_ids": {
+        "action_request_id": "0e870f48e60601a8a55b66f44c5f569328313cca2810abb7036b86cf42fbcbb7",
+        "warrant_id": "c9618bec58880c3825154c239313df1993174c6fdc42963942987630404ce715"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0016",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "cebd35c8274199e7e630741d31d35194029d70fcd6a15ab084671af7a74f5570",
+      "latency_ms": 0.42931099596899003,
+      "metadata": {
+        "n_bundles": 4,
+        "permutation": [
+          1,
+          2,
+          0,
+          3
+        ],
+        "permutation_index": 8
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "a4823c5671d40c530bd49e2644ecbe71f4829eeb15b1675fa5adacedde8e0f5e",
+      "state_out_hash": "f99ce341349b70ad68701d9e440a1282f606ec0a6385d2ec2acc0ba25df3ca4a",
+      "warrant_id": "c9618bec58880c3825154c239313df1993174c6fdc42963942987630404ce715"
+    },
+    {
+      "admitted_count": 4,
+      "artifact_ids": {
+        "action_request_id": "0e870f48e60601a8a55b66f44c5f569328313cca2810abb7036b86cf42fbcbb7",
+        "warrant_id": "b54468da3c8ab504883cf0061693ed12d9407c44e1ac827465f8d3d3d0246dc6"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0017",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "76e140f3ca23b3b8b1d428125dcf183c254c2fbdb86c2bc640795d3905548115",
+      "latency_ms": 0.4150539971305989,
+      "metadata": {
+        "n_bundles": 4,
+        "permutation": [
+          1,
+          2,
+          3,
+          0
+        ],
+        "permutation_index": 9
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "f99ce341349b70ad68701d9e440a1282f606ec0a6385d2ec2acc0ba25df3ca4a",
+      "state_out_hash": "bec6afb757b0bf16131ffd3cfea5a5a863a2148873a00309608c3953f931259f",
+      "warrant_id": "b54468da3c8ab504883cf0061693ed12d9407c44e1ac827465f8d3d3d0246dc6"
+    },
+    {
+      "admitted_count": 4,
+      "artifact_ids": {
+        "action_request_id": "0e870f48e60601a8a55b66f44c5f569328313cca2810abb7036b86cf42fbcbb7",
+        "warrant_id": "4bdf44af7dfd54c42b2a94bb2ecf74b55e48e7a9b1cf40e465e1c0d04dd7c6c4"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0018",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "094c1c969f80cb8834862acc6b4cc6b3aa594ae328f570eedc94b27f7d1c25a4",
+      "latency_ms": 0.4142339967074804,
+      "metadata": {
+        "n_bundles": 4,
+        "permutation": [
+          1,
+          3,
+          0,
+          2
+        ],
+        "permutation_index": 10
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "bec6afb757b0bf16131ffd3cfea5a5a863a2148873a00309608c3953f931259f",
+      "state_out_hash": "1a445d9da19d05d0ce4b7895e40e4dc35b6147f644ddb46bb77f62385ecbb0bb",
+      "warrant_id": "4bdf44af7dfd54c42b2a94bb2ecf74b55e48e7a9b1cf40e465e1c0d04dd7c6c4"
+    },
+    {
+      "admitted_count": 4,
+      "artifact_ids": {
+        "action_request_id": "0e870f48e60601a8a55b66f44c5f569328313cca2810abb7036b86cf42fbcbb7",
+        "warrant_id": "24eef4feb169de78a6912cb6f4fae75d14e7eb001d3686ed57f1c5bb6be941e9"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0019",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "00cda5e77bac83cfcf6dd75056730ec8c2d41b3786cb5426e2414bf6667fbb42",
+      "latency_ms": 0.5994320017634891,
+      "metadata": {
+        "n_bundles": 4,
+        "permutation": [
+          1,
+          3,
+          2,
+          0
+        ],
+        "permutation_index": 11
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "1a445d9da19d05d0ce4b7895e40e4dc35b6147f644ddb46bb77f62385ecbb0bb",
+      "state_out_hash": "fa9740b0245469360e70d742609245e2ba30dde9b9dde831a55d8f81f21ee988",
+      "warrant_id": "24eef4feb169de78a6912cb6f4fae75d14e7eb001d3686ed57f1c5bb6be941e9"
+    },
+    {
+      "admitted_count": 4,
+      "artifact_ids": {
+        "action_request_id": "0e870f48e60601a8a55b66f44c5f569328313cca2810abb7036b86cf42fbcbb7",
+        "warrant_id": "8b032bdf8cd3de5fff376cb28b1f8ce275fefb36dc04a22a33f3170630ae2acd"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0020",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "3bb8510210c53d3c0c1fd5452fab39d1a45886e2e53ee98fba3336cab9611dd5",
+      "latency_ms": 0.579113002459053,
+      "metadata": {
+        "n_bundles": 4,
+        "permutation": [
+          2,
+          0,
+          1,
+          3
+        ],
+        "permutation_index": 12
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "fa9740b0245469360e70d742609245e2ba30dde9b9dde831a55d8f81f21ee988",
+      "state_out_hash": "ab993de81e02cb5c0eeb37ee0c9804f199d37f7cb3d253075fcff44277e3a5fa",
+      "warrant_id": "8b032bdf8cd3de5fff376cb28b1f8ce275fefb36dc04a22a33f3170630ae2acd"
+    },
+    {
+      "admitted_count": 4,
+      "artifact_ids": {
+        "action_request_id": "0e870f48e60601a8a55b66f44c5f569328313cca2810abb7036b86cf42fbcbb7",
+        "warrant_id": "a68eda3e6a65d218eaa5fbb78ec30679e9b2003e03e57117dce0c2fbe41bc17d"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0021",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "42c7fd6c1f96de70e19b211b32931823d3e93f75f9f3a68bbfeb2534977e671f",
+      "latency_ms": 0.468083999294322,
+      "metadata": {
+        "n_bundles": 4,
+        "permutation": [
+          2,
+          0,
+          3,
+          1
+        ],
+        "permutation_index": 13
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "ab993de81e02cb5c0eeb37ee0c9804f199d37f7cb3d253075fcff44277e3a5fa",
+      "state_out_hash": "7284abd27b56d706ac0f3d8f69993f21ae41aaefe8a9a533e78a93fdfe34b1a4",
+      "warrant_id": "a68eda3e6a65d218eaa5fbb78ec30679e9b2003e03e57117dce0c2fbe41bc17d"
+    },
+    {
+      "admitted_count": 4,
+      "artifact_ids": {
+        "action_request_id": "0e870f48e60601a8a55b66f44c5f569328313cca2810abb7036b86cf42fbcbb7",
+        "warrant_id": "bea5a6ab008a0c1771d61986550bc7f845e0be7e314d5fd6f63c9dffa05e10a7"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0022",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "d1ebf662f459c12088448f5a682d6e254dfedb0f3ffac0aed55b03013bbdfa2e",
+      "latency_ms": 0.4164669953752309,
+      "metadata": {
+        "n_bundles": 4,
+        "permutation": [
+          2,
+          1,
+          0,
+          3
+        ],
+        "permutation_index": 14
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "7284abd27b56d706ac0f3d8f69993f21ae41aaefe8a9a533e78a93fdfe34b1a4",
+      "state_out_hash": "245007924283ff165783e9cb4c8d072a62c77c65da0912f8c2f960d4e0ce3dc5",
+      "warrant_id": "bea5a6ab008a0c1771d61986550bc7f845e0be7e314d5fd6f63c9dffa05e10a7"
+    },
+    {
+      "admitted_count": 4,
+      "artifact_ids": {
+        "action_request_id": "0e870f48e60601a8a55b66f44c5f569328313cca2810abb7036b86cf42fbcbb7",
+        "warrant_id": "32c93cb5252ba7fd740fd3f32cda417ade9955f6243fbfc0a575b1325f7d03a2"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0023",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "c47dcef7faaaa393b237525777a1aa22c878ec8915b38ac31d6097f4f1d42a40",
+      "latency_ms": 0.4108279972570017,
+      "metadata": {
+        "n_bundles": 4,
+        "permutation": [
+          2,
+          1,
+          3,
+          0
+        ],
+        "permutation_index": 15
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "245007924283ff165783e9cb4c8d072a62c77c65da0912f8c2f960d4e0ce3dc5",
+      "state_out_hash": "60397058d557fe2e2d4af97a8e27dfc037f97504c814084be09332349ca3c2d1",
+      "warrant_id": "32c93cb5252ba7fd740fd3f32cda417ade9955f6243fbfc0a575b1325f7d03a2"
+    },
+    {
+      "admitted_count": 4,
+      "artifact_ids": {
+        "action_request_id": "0e870f48e60601a8a55b66f44c5f569328313cca2810abb7036b86cf42fbcbb7",
+        "warrant_id": "06ca68f7cebe502629f8629b72bd3363b319cd1865f3805b5eafca1b64f29811"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0024",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "a2f24a7a51e368d59a6f920aa96079a59bb28aca20e23d18c9973af12b775618",
+      "latency_ms": 0.4056799953104928,
+      "metadata": {
+        "n_bundles": 4,
+        "permutation": [
+          2,
+          3,
+          0,
+          1
+        ],
+        "permutation_index": 16
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "60397058d557fe2e2d4af97a8e27dfc037f97504c814084be09332349ca3c2d1",
+      "state_out_hash": "fd31ab81fdb8a81e7efba8601e8483bc78396603e79dd421384bd11bc8c45e3c",
+      "warrant_id": "06ca68f7cebe502629f8629b72bd3363b319cd1865f3805b5eafca1b64f29811"
+    },
+    {
+      "admitted_count": 4,
+      "artifact_ids": {
+        "action_request_id": "0e870f48e60601a8a55b66f44c5f569328313cca2810abb7036b86cf42fbcbb7",
+        "warrant_id": "db3cfd2cfecec4430541bffaf0d54b96ddce16449d00d8660413e7292dc1786b"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0025",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "a6d6ca4584e8b0df48f86d91a173b3bf024b08e6b5887e58c40fdf14c80c01a6",
+      "latency_ms": 0.4121839956496842,
+      "metadata": {
+        "n_bundles": 4,
+        "permutation": [
+          2,
+          3,
+          1,
+          0
+        ],
+        "permutation_index": 17
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "fd31ab81fdb8a81e7efba8601e8483bc78396603e79dd421384bd11bc8c45e3c",
+      "state_out_hash": "aae707c64dbe04cf0e16b10944e1e8ede9c710735b99c4ffb17e1a3f81b775ca",
+      "warrant_id": "db3cfd2cfecec4430541bffaf0d54b96ddce16449d00d8660413e7292dc1786b"
+    },
+    {
+      "admitted_count": 4,
+      "artifact_ids": {
+        "action_request_id": "0e870f48e60601a8a55b66f44c5f569328313cca2810abb7036b86cf42fbcbb7",
+        "warrant_id": "4c3e46bfdc1e8d8bd4db352bb8c44a554f6f34d8b510b8d92d47e245b40e5f01"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0026",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "b540f839db6d979014fa3303923673b76256b63f9b38dbf80bb6e74c9c620482",
+      "latency_ms": 0.45573199895443395,
+      "metadata": {
+        "n_bundles": 4,
+        "permutation": [
+          3,
+          0,
+          1,
+          2
+        ],
+        "permutation_index": 18
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "aae707c64dbe04cf0e16b10944e1e8ede9c710735b99c4ffb17e1a3f81b775ca",
+      "state_out_hash": "3850c54d0c3af9b5d4dfaf3eb552fc423b665a0c8e8351c92ec35b6805328e81",
+      "warrant_id": "4c3e46bfdc1e8d8bd4db352bb8c44a554f6f34d8b510b8d92d47e245b40e5f01"
+    },
+    {
+      "admitted_count": 4,
+      "artifact_ids": {
+        "action_request_id": "0e870f48e60601a8a55b66f44c5f569328313cca2810abb7036b86cf42fbcbb7",
+        "warrant_id": "e91bf9bb0b1d761e29ac4ef951ab3e5a7876f3dadf8d91250240f8907b44351d"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0027",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "4af0706ceacc6540324293a7cfe4b150e358b0341ba66c36e949fda84e4024aa",
+      "latency_ms": 0.4575540006044321,
+      "metadata": {
+        "n_bundles": 4,
+        "permutation": [
+          3,
+          0,
+          2,
+          1
+        ],
+        "permutation_index": 19
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "3850c54d0c3af9b5d4dfaf3eb552fc423b665a0c8e8351c92ec35b6805328e81",
+      "state_out_hash": "c20d51327c4ad3a5402de03fe79b794973dd2b0667175e0ff5791428564f57f5",
+      "warrant_id": "e91bf9bb0b1d761e29ac4ef951ab3e5a7876f3dadf8d91250240f8907b44351d"
+    },
+    {
+      "admitted_count": 4,
+      "artifact_ids": {
+        "action_request_id": "0e870f48e60601a8a55b66f44c5f569328313cca2810abb7036b86cf42fbcbb7",
+        "warrant_id": "867fd10678632cb7c08e502e049decb5314556d38d85e78237f6944040a31104"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0028",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "53b54a46d3cdddad2de8c85d182ad1ea43ab709a3d78a35f5d9c49bff1c4f6fe",
+      "latency_ms": 0.4308849966037087,
+      "metadata": {
+        "n_bundles": 4,
+        "permutation": [
+          3,
+          1,
+          0,
+          2
+        ],
+        "permutation_index": 20
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "c20d51327c4ad3a5402de03fe79b794973dd2b0667175e0ff5791428564f57f5",
+      "state_out_hash": "dd6d96d6a12524ad2c926bca9dc4d33cd97ccd53258ac3347210074347ad2e03",
+      "warrant_id": "867fd10678632cb7c08e502e049decb5314556d38d85e78237f6944040a31104"
+    },
+    {
+      "admitted_count": 4,
+      "artifact_ids": {
+        "action_request_id": "0e870f48e60601a8a55b66f44c5f569328313cca2810abb7036b86cf42fbcbb7",
+        "warrant_id": "7fdfdfd8d29efcf5592d2e3fbcfede1c37c42e49b1e0add208106d19f3b20e67"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0029",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "cd1a098ca8b65cd8560ad8edf435cac6bb8a8e78c8be26d709ff26ac29def4a0",
+      "latency_ms": 0.42488599865464494,
+      "metadata": {
+        "n_bundles": 4,
+        "permutation": [
+          3,
+          1,
+          2,
+          0
+        ],
+        "permutation_index": 21
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "dd6d96d6a12524ad2c926bca9dc4d33cd97ccd53258ac3347210074347ad2e03",
+      "state_out_hash": "6724a0e2a432632c1640c09089b454ad456a1c50762b3745c4ce5cddf011237b",
+      "warrant_id": "7fdfdfd8d29efcf5592d2e3fbcfede1c37c42e49b1e0add208106d19f3b20e67"
+    },
+    {
+      "admitted_count": 4,
+      "artifact_ids": {
+        "action_request_id": "0e870f48e60601a8a55b66f44c5f569328313cca2810abb7036b86cf42fbcbb7",
+        "warrant_id": "a935c0e467cd6eaa9532ea0054e3441fec6e599b702fe91927e7b5741c6f7253"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0030",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "e69905aa412374c361b5897cd8244a4bc68d63e37a58aad4ac02d87604a7d7ab",
+      "latency_ms": 0.4084450047230348,
+      "metadata": {
+        "n_bundles": 4,
+        "permutation": [
+          3,
+          2,
+          0,
+          1
+        ],
+        "permutation_index": 22
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "6724a0e2a432632c1640c09089b454ad456a1c50762b3745c4ce5cddf011237b",
+      "state_out_hash": "804515f36df6b212305848944f83d29d4582a95681c821dd937c39d626abb9c1",
+      "warrant_id": "a935c0e467cd6eaa9532ea0054e3441fec6e599b702fe91927e7b5741c6f7253"
+    },
+    {
+      "admitted_count": 4,
+      "artifact_ids": {
+        "action_request_id": "0e870f48e60601a8a55b66f44c5f569328313cca2810abb7036b86cf42fbcbb7",
+        "warrant_id": "8d6b9466e6f3d72770134925f62e80f236ecfa74a4ebd99dc203de44c06346be"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0031",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "da3103c52127ca91821b9fccccb1cd7e25a97b48d8fc204834632b824164692d",
+      "latency_ms": 0.4441899945959449,
+      "metadata": {
+        "n_bundles": 4,
+        "permutation": [
+          3,
+          2,
+          1,
+          0
+        ],
+        "permutation_index": 23
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "804515f36df6b212305848944f83d29d4582a95681c821dd937c39d626abb9c1",
+      "state_out_hash": "78338e4af87784b32380d06821765f925542c57d9f8090a3258b981ea63f719a",
+      "warrant_id": "8d6b9466e6f3d72770134925f62e80f236ecfa74a4ebd99dc203de44c06346be"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "1c2eec440b2ed131c397bce42ba06d8b10a3b154e28a8788e63000eab5493f36"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0032",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "03dab456ecfba437e3695d63a273850af8b69498a5486153a10afbca1d26de42",
+      "latency_ms": 0.4707889966084622,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "permutation_index": 0
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "78338e4af87784b32380d06821765f925542c57d9f8090a3258b981ea63f719a",
+      "state_out_hash": "59327d0ff773f5d3d30ed3f7f5276eb8903142605339165367a21c63201e37ca",
+      "warrant_id": "1c2eec440b2ed131c397bce42ba06d8b10a3b154e28a8788e63000eab5493f36"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "8b4027232fbbe415bfad4ae85b48194d5d20eb7c7daaa18c89063edf5f1eb276"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0033",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "4820fa010b85d9ed9c116c54f5fa3d4b475db4a190d8b9b881b53bdec4c31de0",
+      "latency_ms": 0.9781549961189739,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          0,
+          1,
+          2,
+          4,
+          3
+        ],
+        "permutation_index": 1
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "59327d0ff773f5d3d30ed3f7f5276eb8903142605339165367a21c63201e37ca",
+      "state_out_hash": "93e315cd1509ecaa15889960636a8e78545069e8f0973c3e5ea91fd6c67ead5f",
+      "warrant_id": "8b4027232fbbe415bfad4ae85b48194d5d20eb7c7daaa18c89063edf5f1eb276"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "129148186daf5c48cd7354b5e1954b788d32f9aeb3ab3538e01ac232ed866383"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0034",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "8ff91f8b345339d29686bfab0e307aaf5e5f535d5176331f3a0a55d7d3a6b220",
+      "latency_ms": 0.5061519987066276,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          0,
+          1,
+          3,
+          2,
+          4
+        ],
+        "permutation_index": 2
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "93e315cd1509ecaa15889960636a8e78545069e8f0973c3e5ea91fd6c67ead5f",
+      "state_out_hash": "80103b860b7f9badf6383a6c0d5abd0daac5d3c8402cfeb61b280d27754bcac9",
+      "warrant_id": "129148186daf5c48cd7354b5e1954b788d32f9aeb3ab3538e01ac232ed866383"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "5d2d38cf1cef4424c203381b4bb57067a177d511666c9802a086b5930e552f3e"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0035",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "5d0ff99919acbfa50ce3e562a49664d8f3d72bd95d943ee761b24036355eb66d",
+      "latency_ms": 0.4972399983671494,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          0,
+          1,
+          3,
+          4,
+          2
+        ],
+        "permutation_index": 3
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "80103b860b7f9badf6383a6c0d5abd0daac5d3c8402cfeb61b280d27754bcac9",
+      "state_out_hash": "ce77708db5e0cdb874184b75d54b8ccbdad929e0f31f647a836addcf21276d3c",
+      "warrant_id": "5d2d38cf1cef4424c203381b4bb57067a177d511666c9802a086b5930e552f3e"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "b09f9c615741d9aeb9d433654ef1e020c1dbee628c503ac1fe502eeb230f3e45"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0036",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "2283deccf75aa30cbd130e2badbc7a31b1640e96fad05e771909afecec5c98c1",
+      "latency_ms": 0.47035400348249823,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          0,
+          1,
+          4,
+          2,
+          3
+        ],
+        "permutation_index": 4
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "ce77708db5e0cdb874184b75d54b8ccbdad929e0f31f647a836addcf21276d3c",
+      "state_out_hash": "15bc53f81ea0aef95260e684810ca3a227925865f9661b7d9eb58dfff9124f3c",
+      "warrant_id": "b09f9c615741d9aeb9d433654ef1e020c1dbee628c503ac1fe502eeb230f3e45"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "6b186e0844e513bf3002b48cf85b47f093d46649c16ec7df0b9b0c42c1845abb"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0037",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "9636bb77dca86ed547ec0b83526ba4923049efdac571e403863787073f011d03",
+      "latency_ms": 0.5852630056324415,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          0,
+          1,
+          4,
+          3,
+          2
+        ],
+        "permutation_index": 5
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "15bc53f81ea0aef95260e684810ca3a227925865f9661b7d9eb58dfff9124f3c",
+      "state_out_hash": "80c6023fd191a7b12503fe47424e96b7c0d5da97db30930e5adbd85e375f9fe1",
+      "warrant_id": "6b186e0844e513bf3002b48cf85b47f093d46649c16ec7df0b9b0c42c1845abb"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "f50d6d4fa6e7b8f6fd7df0cea37ecf29170c0fc30ef434138132d436320c7114"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0038",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "73db089e2a527e2d014ae826baf65440b4a590a398dfb942d37db6cb74962bac",
+      "latency_ms": 0.544645001355093,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          0,
+          2,
+          1,
+          3,
+          4
+        ],
+        "permutation_index": 6
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "80c6023fd191a7b12503fe47424e96b7c0d5da97db30930e5adbd85e375f9fe1",
+      "state_out_hash": "e987a72c8be1d79bd39becd1be29bed955ad1e9724a6c8215fd3fb74bfc0b1f1",
+      "warrant_id": "f50d6d4fa6e7b8f6fd7df0cea37ecf29170c0fc30ef434138132d436320c7114"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "6719348da4ade7dae934ee5bc4766acf94fceb447101a548d7dc5fd7b6517813"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0039",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "f1e132777082d0f2840e7a601313ea3e174755b0779839f893485f16882aa3b7",
+      "latency_ms": 0.509299999976065,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          0,
+          2,
+          1,
+          4,
+          3
+        ],
+        "permutation_index": 7
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "e987a72c8be1d79bd39becd1be29bed955ad1e9724a6c8215fd3fb74bfc0b1f1",
+      "state_out_hash": "01510135d49a3ecc67b893df511c652c244da0a0a79535be4d743d757421e037",
+      "warrant_id": "6719348da4ade7dae934ee5bc4766acf94fceb447101a548d7dc5fd7b6517813"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "8d661cf6af360b0e2305ef0e45e156b8c8483cb261bb616c0e405ea58cc7c55c"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0040",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "a586f22cd0f260a762b025d5c69b23406b6eec1de3d0906553f57dd0cb55a676",
+      "latency_ms": 0.46410199865931645,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          0,
+          2,
+          3,
+          1,
+          4
+        ],
+        "permutation_index": 8
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "01510135d49a3ecc67b893df511c652c244da0a0a79535be4d743d757421e037",
+      "state_out_hash": "fc642aaadc89cc42461b880c0538f6c671d276d18cc21e426e0171376b5fda6f",
+      "warrant_id": "8d661cf6af360b0e2305ef0e45e156b8c8483cb261bb616c0e405ea58cc7c55c"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "20007e180257d386298c06fe145a45b7e503b11ee1dfba599cfb84b0a2c4d284"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0041",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "9a940f5624c5804c1da4c8a86fe505d9259ec1372bce543367295e5a29f5e42a",
+      "latency_ms": 0.4565190029097721,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          0,
+          2,
+          3,
+          4,
+          1
+        ],
+        "permutation_index": 9
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "fc642aaadc89cc42461b880c0538f6c671d276d18cc21e426e0171376b5fda6f",
+      "state_out_hash": "224fd525a89e563d11e1534bb116b48ca26d7127e956188b1388f55cc3b28439",
+      "warrant_id": "20007e180257d386298c06fe145a45b7e503b11ee1dfba599cfb84b0a2c4d284"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "5789c13d121ed6f2149a28f0c2bd36953b455f3a6b4e0d01e5120573793110e5"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0042",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "5b69595f1acf32d7bf09a7744962893b65cb9861701fa751a76da56482ca4c8a",
+      "latency_ms": 0.5329380001057871,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          0,
+          2,
+          4,
+          1,
+          3
+        ],
+        "permutation_index": 10
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "224fd525a89e563d11e1534bb116b48ca26d7127e956188b1388f55cc3b28439",
+      "state_out_hash": "462449fdf642a5b7c4dd491791dbb40d6b64e48584f7e13852c07a97d7d73495",
+      "warrant_id": "5789c13d121ed6f2149a28f0c2bd36953b455f3a6b4e0d01e5120573793110e5"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "42780f6236c55c39135c5a8ff7c23d12b7345a49eb728d2585569b51f9eb7f7d"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0043",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "250c91db41c1dcf96a30f2c1835e94c1f71347d1d01dbd7e6959d066f93c435c",
+      "latency_ms": 0.46781600394751877,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          0,
+          2,
+          4,
+          3,
+          1
+        ],
+        "permutation_index": 11
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "462449fdf642a5b7c4dd491791dbb40d6b64e48584f7e13852c07a97d7d73495",
+      "state_out_hash": "1d2a78f223bba0dc7979aaa5ff5b4bb50074aeee92c9d2cf3b492b810983e82d",
+      "warrant_id": "42780f6236c55c39135c5a8ff7c23d12b7345a49eb728d2585569b51f9eb7f7d"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "47ffe8f4adf37a82e4ebae5997a2268561099f2c10cfdf8b9567eb0b7c9f6eb8"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0044",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "3dd0fc691ed324f1f7cee842749de96d139c9ad241cd72fe92d15644e350b5e5",
+      "latency_ms": 0.47017199540277943,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          0,
+          3,
+          1,
+          2,
+          4
+        ],
+        "permutation_index": 12
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "1d2a78f223bba0dc7979aaa5ff5b4bb50074aeee92c9d2cf3b492b810983e82d",
+      "state_out_hash": "860b58aa1810871a403b5d0538c6dba2a0403af9251bed86d537981bb2477aaa",
+      "warrant_id": "47ffe8f4adf37a82e4ebae5997a2268561099f2c10cfdf8b9567eb0b7c9f6eb8"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "25b80d60a234a9650e33e6e5170a74a803dec9cdc4ee26fa8cf36419a7e92528"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0045",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "e7a91e91bfd5fb15e5ded729c53d9576dfdcd1685e8b1f9d7ffc91783ea1eff4",
+      "latency_ms": 0.498500005051028,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          0,
+          3,
+          1,
+          4,
+          2
+        ],
+        "permutation_index": 13
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "860b58aa1810871a403b5d0538c6dba2a0403af9251bed86d537981bb2477aaa",
+      "state_out_hash": "a568adae3423cb7d8cd424b289a703d632581c3fef41ed07abd6835dc4c8e3bd",
+      "warrant_id": "25b80d60a234a9650e33e6e5170a74a803dec9cdc4ee26fa8cf36419a7e92528"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "55e1854e6061c439244821a94367300560f342a5f8e69faef47d0e5de52afad0"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0046",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "998d62a8841453e181d1abdcc35ca27276908b382430a13f8a5acf047429ee0b",
+      "latency_ms": 0.45924699952593073,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          0,
+          3,
+          2,
+          1,
+          4
+        ],
+        "permutation_index": 14
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "a568adae3423cb7d8cd424b289a703d632581c3fef41ed07abd6835dc4c8e3bd",
+      "state_out_hash": "957475b3c28dc6fed98d3cc5f840630b46e3c6c60e556d13347df6a40bdb854e",
+      "warrant_id": "55e1854e6061c439244821a94367300560f342a5f8e69faef47d0e5de52afad0"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "52161a6d02f3189634849de9a64b90dc7f16cbbe18765e72b3c90681b940dec0"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0047",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "d41e07fb213ec12d825faa9fc956a2184e6ab85e10a71620a360bbb9c70fa23d",
+      "latency_ms": 0.47485899995081127,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          0,
+          3,
+          2,
+          4,
+          1
+        ],
+        "permutation_index": 15
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "957475b3c28dc6fed98d3cc5f840630b46e3c6c60e556d13347df6a40bdb854e",
+      "state_out_hash": "462d09dc656430c391e8b7a36724ac128ef6ef49b98344aa4b0209e1eb2f13d8",
+      "warrant_id": "52161a6d02f3189634849de9a64b90dc7f16cbbe18765e72b3c90681b940dec0"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "a6d24b4c27893e9ad0adba5b3f22bc823ed01bbee5d4a0e70a1cf370b053e035"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0048",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "0d2488b5fe273e1f654a0bcbb3e889a48f8792b3cadd9a075bbbf7322f6f7c42",
+      "latency_ms": 0.5100859998492524,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          0,
+          3,
+          4,
+          1,
+          2
+        ],
+        "permutation_index": 16
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "462d09dc656430c391e8b7a36724ac128ef6ef49b98344aa4b0209e1eb2f13d8",
+      "state_out_hash": "bda105b39a3662d52b4535610db45780584806a6a19bb9f55bf7f98cc6ac1178",
+      "warrant_id": "a6d24b4c27893e9ad0adba5b3f22bc823ed01bbee5d4a0e70a1cf370b053e035"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "d0f487c0526d4bbf8ad8e287fbe991e9e40eea6122d9c0c489e92575276ac6a9"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0049",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "79e543d860106311adcb9601bd49a12964469cd708220f57ccdd4a12bf7f55d3",
+      "latency_ms": 0.4881429995293729,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          0,
+          3,
+          4,
+          2,
+          1
+        ],
+        "permutation_index": 17
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "bda105b39a3662d52b4535610db45780584806a6a19bb9f55bf7f98cc6ac1178",
+      "state_out_hash": "4586f79e7b6f39356053822b07af5627ae16f66453c62cc1bbc79ea549501762",
+      "warrant_id": "d0f487c0526d4bbf8ad8e287fbe991e9e40eea6122d9c0c489e92575276ac6a9"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "9433fba38813c52d296aaf448684accaa9ca58d419d7e3da6c7c565ab63d40e8"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0050",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "d031f65e48d8d4acea35757b6dda6b9dc551e8ab15401daa2a86edf123c59d23",
+      "latency_ms": 0.4780040035257116,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          0,
+          4,
+          1,
+          2,
+          3
+        ],
+        "permutation_index": 18
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "4586f79e7b6f39356053822b07af5627ae16f66453c62cc1bbc79ea549501762",
+      "state_out_hash": "db744b5bc7cc11a60a022a725e57e6dbeb5f5a3ab8961f15a797c5b9f8a8609c",
+      "warrant_id": "9433fba38813c52d296aaf448684accaa9ca58d419d7e3da6c7c565ab63d40e8"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "75b64c2897d405c17181d35ac837ad08602ee5aecceceb922e5f8097ccd83864"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0051",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "9ebc59bef98fa7c4d1fa9d66cd074bc0a82875690749b74b2999932957985580",
+      "latency_ms": 0.4645489971153438,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          0,
+          4,
+          1,
+          3,
+          2
+        ],
+        "permutation_index": 19
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "db744b5bc7cc11a60a022a725e57e6dbeb5f5a3ab8961f15a797c5b9f8a8609c",
+      "state_out_hash": "f36823a2ca68f9b7b3261a38745a8481dd80c1ae3f9092898c24a64274375fc6",
+      "warrant_id": "75b64c2897d405c17181d35ac837ad08602ee5aecceceb922e5f8097ccd83864"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "4c3348060d7942cc7c065e446c40831dce605bf6a14659be085d8c5460fdc42c"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0052",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "b4c5237f49019149b2b32190a9dbaf71e4c730b46e78ff7aceb190742fd20348",
+      "latency_ms": 0.4620469990186393,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          0,
+          4,
+          2,
+          1,
+          3
+        ],
+        "permutation_index": 20
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "f36823a2ca68f9b7b3261a38745a8481dd80c1ae3f9092898c24a64274375fc6",
+      "state_out_hash": "c05ef94f95c6bbb55cadc5d1b872b529a53cc35765388519e45a939e99bf5836",
+      "warrant_id": "4c3348060d7942cc7c065e446c40831dce605bf6a14659be085d8c5460fdc42c"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "8450669f4b15a99680a62cfc5f62a336a19265d4257b6f042a59480927ad7a56"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0053",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "6abdf46b1c7baecf593cf67e5b9e807a2975a2b8a499fdb55fa597b1bb74aee3",
+      "latency_ms": 0.6057779974071309,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          0,
+          4,
+          2,
+          3,
+          1
+        ],
+        "permutation_index": 21
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "c05ef94f95c6bbb55cadc5d1b872b529a53cc35765388519e45a939e99bf5836",
+      "state_out_hash": "9c56618dfc52977d62157bfd02512eb20d3307a44e4fd57f0048427ae429aab9",
+      "warrant_id": "8450669f4b15a99680a62cfc5f62a336a19265d4257b6f042a59480927ad7a56"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "f8c9331c2c66c5918751437337c3481fe4579791dc4b1cda23dbb238e7727401"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0054",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "935fe3a074c7d1f1c53f2341e457c2fa8483e57d27d475bccbe320bc855a64aa",
+      "latency_ms": 0.47811699914745986,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          0,
+          4,
+          3,
+          1,
+          2
+        ],
+        "permutation_index": 22
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "9c56618dfc52977d62157bfd02512eb20d3307a44e4fd57f0048427ae429aab9",
+      "state_out_hash": "c037d4e59024787d3cdf04dbc4b079965ca7e8708906c05d9884e0aa7ec33947",
+      "warrant_id": "f8c9331c2c66c5918751437337c3481fe4579791dc4b1cda23dbb238e7727401"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "22075e03aba6bee1b665065e0b06d4dbe7f9acbff94eaac79d2b46e8ea15c04b"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0055",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "882ada438044c77d961ddd9a972266f5ad1456bf9ef965dd0fda361a5806b2f0",
+      "latency_ms": 0.557762999960687,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          0,
+          4,
+          3,
+          2,
+          1
+        ],
+        "permutation_index": 23
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "c037d4e59024787d3cdf04dbc4b079965ca7e8708906c05d9884e0aa7ec33947",
+      "state_out_hash": "6b2e99d9c8298173332bc8d11b1fde05d8256d3e17bdde9aac67b3e16730ebaf",
+      "warrant_id": "22075e03aba6bee1b665065e0b06d4dbe7f9acbff94eaac79d2b46e8ea15c04b"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "74624dba77b1be2c554b18ef51698d7f5f4fd16d407a436b6f0286b3e09e1f53"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0056",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "254164663ebc46b1e6084e507f70633c04862b2d330b550919cfb7d32dc797fc",
+      "latency_ms": 0.48902499838732183,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          1,
+          0,
+          2,
+          3,
+          4
+        ],
+        "permutation_index": 24
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "6b2e99d9c8298173332bc8d11b1fde05d8256d3e17bdde9aac67b3e16730ebaf",
+      "state_out_hash": "fd0d1231b19290a36746c66b58d415d8694cde5b9a1a3caf5ed506c3be9abbc2",
+      "warrant_id": "74624dba77b1be2c554b18ef51698d7f5f4fd16d407a436b6f0286b3e09e1f53"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "ecaf89b96dedd0fbbb77a098cdfd976be2aeb3a208e1ad3a51f20510b2e271a7"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0057",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "231ee5e3ed5c651de518f15a30dd1169c5a2337d9cdffd659884f9c1f647a65e",
+      "latency_ms": 0.5009970045648515,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          1,
+          0,
+          2,
+          4,
+          3
+        ],
+        "permutation_index": 25
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "fd0d1231b19290a36746c66b58d415d8694cde5b9a1a3caf5ed506c3be9abbc2",
+      "state_out_hash": "1ef820da58f243c1dd1edcdfd00a181fc044c953fbb50b8b06c06f8927826cad",
+      "warrant_id": "ecaf89b96dedd0fbbb77a098cdfd976be2aeb3a208e1ad3a51f20510b2e271a7"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "f9823935009ec42b66dda7327b317174ab890c6a94b362f512b41a91ec248c82"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0058",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "1301d910c8e5572db43bb498f28df1d1c45489771693f656c65c8a26e2756c3e",
+      "latency_ms": 0.52587400568882,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          1,
+          0,
+          3,
+          2,
+          4
+        ],
+        "permutation_index": 26
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "1ef820da58f243c1dd1edcdfd00a181fc044c953fbb50b8b06c06f8927826cad",
+      "state_out_hash": "3f727bb7315f8c176fc4b1c6185d0d59284795e3c68352130cbef28797ac50b0",
+      "warrant_id": "f9823935009ec42b66dda7327b317174ab890c6a94b362f512b41a91ec248c82"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "ce34013a6f40beec0adc078fc35fc5d4e01f4305f47b967c7a6318dc6afa4949"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0059",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "0becd3e19f64465ebc0acdd81fb418775cbb255bb7375fa3ddc13927a9048ded",
+      "latency_ms": 0.46814200322842225,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          1,
+          0,
+          3,
+          4,
+          2
+        ],
+        "permutation_index": 27
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "3f727bb7315f8c176fc4b1c6185d0d59284795e3c68352130cbef28797ac50b0",
+      "state_out_hash": "3d46563e3949fb309376b9bbd7c42daff29c23a0aefe0d42c9cbefaf56a1f7d8",
+      "warrant_id": "ce34013a6f40beec0adc078fc35fc5d4e01f4305f47b967c7a6318dc6afa4949"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "000b9b126718fc82d19f8ada0ee2c0b91a4c9eb43c5d83cbe845ec830b4ea43a"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0060",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "5ffc18883ee46e9bd680b4d46dac6d7b66aac058ff57d45d16605973c3e6ad7a",
+      "latency_ms": 0.6632260046899319,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          1,
+          0,
+          4,
+          2,
+          3
+        ],
+        "permutation_index": 28
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "3d46563e3949fb309376b9bbd7c42daff29c23a0aefe0d42c9cbefaf56a1f7d8",
+      "state_out_hash": "edc35a64ceaacce68eddc977b0e257caf02242cedbd5758369aca965ce3bc5b5",
+      "warrant_id": "000b9b126718fc82d19f8ada0ee2c0b91a4c9eb43c5d83cbe845ec830b4ea43a"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "37c1f9821f9da2b09d3bb4e60198bb8c45857e0c464a613332deba3aca44fa46"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0061",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "de7ff894dd53c2ed68cc563ee2cc11da708c592a1b03ff5c58e4dffd916495a4",
+      "latency_ms": 0.534083999809809,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          1,
+          0,
+          4,
+          3,
+          2
+        ],
+        "permutation_index": 29
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "edc35a64ceaacce68eddc977b0e257caf02242cedbd5758369aca965ce3bc5b5",
+      "state_out_hash": "a11afbfd899766561900d5bc594689509e1be0384853563d346ac7b895a60489",
+      "warrant_id": "37c1f9821f9da2b09d3bb4e60198bb8c45857e0c464a613332deba3aca44fa46"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "9738f3e1ff73fa0ce45458dedb828775bf01ba2db390e0c0bb9720c928fc1f64"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0062",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "9fda41605bf7cd9e9847fa595fa7c7ec87ab2fa04edc0c03d8d0abac5bdf7e41",
+      "latency_ms": 0.502981994941365,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          1,
+          2,
+          0,
+          3,
+          4
+        ],
+        "permutation_index": 30
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "a11afbfd899766561900d5bc594689509e1be0384853563d346ac7b895a60489",
+      "state_out_hash": "0e1265d9d95153347963f6ae7b1e151c3757fe7d8931830836fe99d2c1e0fc0b",
+      "warrant_id": "9738f3e1ff73fa0ce45458dedb828775bf01ba2db390e0c0bb9720c928fc1f64"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "264bec3324eafbfc7eeafd2e94b31eef6895d1cb54536f17b2fd433c79b6a5b7"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0063",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "8be3e4a3dd20992bdee7d2a81530909c1cab081189b4cf5b71006277caf3d28f",
+      "latency_ms": 0.4888620023848489,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          1,
+          2,
+          0,
+          4,
+          3
+        ],
+        "permutation_index": 31
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "0e1265d9d95153347963f6ae7b1e151c3757fe7d8931830836fe99d2c1e0fc0b",
+      "state_out_hash": "ac13ef326158ce93bd1030be58d12aa70f1637cb4ca9cdaaa7577018d99e89cd",
+      "warrant_id": "264bec3324eafbfc7eeafd2e94b31eef6895d1cb54536f17b2fd433c79b6a5b7"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "a3a9f70f5acf6d5db0dd1c8f37dd35d030ac93c00a22bd568f5b83d331be399c"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0064",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "da1500a8bdf9d28f6b5f589d033c9220a18d46ff70563151ba1195b7acfedcf3",
+      "latency_ms": 0.47591600014129654,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          1,
+          2,
+          3,
+          0,
+          4
+        ],
+        "permutation_index": 32
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "ac13ef326158ce93bd1030be58d12aa70f1637cb4ca9cdaaa7577018d99e89cd",
+      "state_out_hash": "1d1d422b542cecfa316ade68a082d33ac273c94bd429f782c7597520884c9d27",
+      "warrant_id": "a3a9f70f5acf6d5db0dd1c8f37dd35d030ac93c00a22bd568f5b83d331be399c"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "94e56b2fb3c56c7c728be305bab264ad3802db15ed9ccaed3f5b6b02a419c877"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0065",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "6a6127e3ee76191241c480d895dc20a981ab7da97311fd4fec5922374f8923ff",
+      "latency_ms": 0.5604500038316473,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          1,
+          2,
+          3,
+          4,
+          0
+        ],
+        "permutation_index": 33
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "1d1d422b542cecfa316ade68a082d33ac273c94bd429f782c7597520884c9d27",
+      "state_out_hash": "09ce07f8b92f41b7915c7a0320b9c441e85693210bc20311f058ebfc64688263",
+      "warrant_id": "94e56b2fb3c56c7c728be305bab264ad3802db15ed9ccaed3f5b6b02a419c877"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "a230588ab0571be9e8afeebaa3d03416b658257c5217439b2751b1f308954825"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0066",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "424839214f4fde090a612d518aa3154124466bb3833eb1617f7f18d2a7d4ad35",
+      "latency_ms": 0.48183099715970457,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          1,
+          2,
+          4,
+          0,
+          3
+        ],
+        "permutation_index": 34
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "09ce07f8b92f41b7915c7a0320b9c441e85693210bc20311f058ebfc64688263",
+      "state_out_hash": "a70f41fbd3aa9fd18a27e30490cb603946e1abe81e6ccec67549d5305ef14760",
+      "warrant_id": "a230588ab0571be9e8afeebaa3d03416b658257c5217439b2751b1f308954825"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "5032fd1f946de9c368d785081b738603a42a7d36c6f8da188f3226c0f91443f4"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0067",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "1af50740dd6ea8ef852b3e254aa8ef33231e24959d58daa6f1423854707c3089",
+      "latency_ms": 0.48908199823927134,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          1,
+          2,
+          4,
+          3,
+          0
+        ],
+        "permutation_index": 35
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "a70f41fbd3aa9fd18a27e30490cb603946e1abe81e6ccec67549d5305ef14760",
+      "state_out_hash": "9cfaf592b24334a42fa3d94aa0ae812094e3655db612554b13c42649b96164ad",
+      "warrant_id": "5032fd1f946de9c368d785081b738603a42a7d36c6f8da188f3226c0f91443f4"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "338619aac2bf910abc531f6d162731e4bfc3eaba1a7a1bfe48b2bb471c86e394"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0068",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "d78b544e66f526f05904f650f4c4d5561984b8be479d1ffcda06fa7e325d38ea",
+      "latency_ms": 0.4801660033990629,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          1,
+          3,
+          0,
+          2,
+          4
+        ],
+        "permutation_index": 36
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "9cfaf592b24334a42fa3d94aa0ae812094e3655db612554b13c42649b96164ad",
+      "state_out_hash": "408ac33e6f302ba7c055ebd66615a629ecdb47195e2a079a63174b467cac47db",
+      "warrant_id": "338619aac2bf910abc531f6d162731e4bfc3eaba1a7a1bfe48b2bb471c86e394"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "5ebe58ee4fbced91794a08987e4a6932ac1b41795cca6da802b1d966899925d2"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0069",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "6cfa44825ae36d94976cc0ea249ca4ac0b4b76d4b2a23e7660bfec870a444b0c",
+      "latency_ms": 0.4637720048776828,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          1,
+          3,
+          0,
+          4,
+          2
+        ],
+        "permutation_index": 37
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "408ac33e6f302ba7c055ebd66615a629ecdb47195e2a079a63174b467cac47db",
+      "state_out_hash": "8f75257b570533d6cba9c6ca94d5b98d7e51cac31185b6b4789b6e2079867d49",
+      "warrant_id": "5ebe58ee4fbced91794a08987e4a6932ac1b41795cca6da802b1d966899925d2"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "80f0a8259336dee2c0310e2481443c552e46497d3d5525d61af0434c1dc3936a"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0070",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "53b17c3162158de498faae7b95409ff353cc6a699edf87172ae39380acae2ff8",
+      "latency_ms": 0.5028700034017675,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          1,
+          3,
+          2,
+          0,
+          4
+        ],
+        "permutation_index": 38
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "8f75257b570533d6cba9c6ca94d5b98d7e51cac31185b6b4789b6e2079867d49",
+      "state_out_hash": "0ace6a9a919db2f4134adf42813ada942d4ee419f268cbb93475368cf4e9e30f",
+      "warrant_id": "80f0a8259336dee2c0310e2481443c552e46497d3d5525d61af0434c1dc3936a"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "aa1776205ad39a4c0460b10b73b084b516a3e44c76239cb52bb55632d9e8851d"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0071",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "b63e2e8131322f4ca14f9caace6ad2fe3e69b7fa6818514c2b86a123d91ceafc",
+      "latency_ms": 0.707496001268737,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          1,
+          3,
+          2,
+          4,
+          0
+        ],
+        "permutation_index": 39
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "0ace6a9a919db2f4134adf42813ada942d4ee419f268cbb93475368cf4e9e30f",
+      "state_out_hash": "cf853c1b91ab932d35cd070489ec9db2dba36710c3c94360abe674f9f61b15b4",
+      "warrant_id": "aa1776205ad39a4c0460b10b73b084b516a3e44c76239cb52bb55632d9e8851d"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "d5312b3c6e2564456fb263bec221542eda2bd50d371c2824393c5d36be68afeb"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0072",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "13009c48a465001b0e4f4a84967e7b046023005067e057439b1ec941ba380909",
+      "latency_ms": 1.2536170033854432,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          1,
+          3,
+          4,
+          0,
+          2
+        ],
+        "permutation_index": 40
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "cf853c1b91ab932d35cd070489ec9db2dba36710c3c94360abe674f9f61b15b4",
+      "state_out_hash": "a51d64102efa130281f570483625c52a21ab4238a39c3d1ccc8d953c29b6aec8",
+      "warrant_id": "d5312b3c6e2564456fb263bec221542eda2bd50d371c2824393c5d36be68afeb"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "2b1fa9a941abe055c3f3f17359b0d8106227d02249424ca3e6f35a92c0b0b087"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0073",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "39e6afbf8fc10f134f0c652b065eb7c455440964c809eedccab038d1ff08dc15",
+      "latency_ms": 0.7693990046391264,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          1,
+          3,
+          4,
+          2,
+          0
+        ],
+        "permutation_index": 41
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "a51d64102efa130281f570483625c52a21ab4238a39c3d1ccc8d953c29b6aec8",
+      "state_out_hash": "57591d99fffaaa72c003fa4c95134e65165aeaf977b293420dab5d5f457f9480",
+      "warrant_id": "2b1fa9a941abe055c3f3f17359b0d8106227d02249424ca3e6f35a92c0b0b087"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "e88fa77cefeb341cda81b639d56214073ae848460bfda05e715921c7fbe6b822"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0074",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "9585cb117ab39d6c8ea61ea9fed5a8d64f79e481a59e704d71f9d8342269c3c3",
+      "latency_ms": 0.5836799973621964,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          1,
+          4,
+          0,
+          2,
+          3
+        ],
+        "permutation_index": 42
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "57591d99fffaaa72c003fa4c95134e65165aeaf977b293420dab5d5f457f9480",
+      "state_out_hash": "0862f47d812670aecf46e918fbc3a70c2d7c17938c8c3a3641f01c8a0485affc",
+      "warrant_id": "e88fa77cefeb341cda81b639d56214073ae848460bfda05e715921c7fbe6b822"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "08b4d743fd061dd306c688ed106b071ca12ec4d7e289db7ac9c4cfd566276f83"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0075",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "fd3a2f8ae0eb8077dbd87d21baa40f44cd5ec01d00d019ac30486f5e3a8dae6c",
+      "latency_ms": 0.4827209995710291,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          1,
+          4,
+          0,
+          3,
+          2
+        ],
+        "permutation_index": 43
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "0862f47d812670aecf46e918fbc3a70c2d7c17938c8c3a3641f01c8a0485affc",
+      "state_out_hash": "2ae6c9f14caf399fa40dbfe091cadc4179a83899f26b725f9e1bbc09f1a88105",
+      "warrant_id": "08b4d743fd061dd306c688ed106b071ca12ec4d7e289db7ac9c4cfd566276f83"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "4d5579699fea76190aaeb763d3a5e8a03049a93936310cc59c4a8e7f6e2d7d2a"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0076",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "d34bff692eadd7455bb1c7a9ba76251ed797396b19f5874e997b9555f2c62fc1",
+      "latency_ms": 0.674287999572698,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          1,
+          4,
+          2,
+          0,
+          3
+        ],
+        "permutation_index": 44
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "2ae6c9f14caf399fa40dbfe091cadc4179a83899f26b725f9e1bbc09f1a88105",
+      "state_out_hash": "4df0e74fb1f45e1688ca604a2c779e9bc64df753c55203f503656e4c20fad2fe",
+      "warrant_id": "4d5579699fea76190aaeb763d3a5e8a03049a93936310cc59c4a8e7f6e2d7d2a"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "fb51dd9568401be4321beae01a72061074fa7aa3beae930b13acb8f53a270f9e"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0077",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "735b18ba56476642ca81a2d803cb9b6a67ce6179aa1c61f391cf6e7ecf586616",
+      "latency_ms": 0.4896789978374727,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          1,
+          4,
+          2,
+          3,
+          0
+        ],
+        "permutation_index": 45
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "4df0e74fb1f45e1688ca604a2c779e9bc64df753c55203f503656e4c20fad2fe",
+      "state_out_hash": "053daeda5f135f4e653109e9f1e28444112ff66f7dc4f7b71cd48bd84f36f0de",
+      "warrant_id": "fb51dd9568401be4321beae01a72061074fa7aa3beae930b13acb8f53a270f9e"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "c1630a775cbb48e2e47c1b00601581927a8fa481c11f4abdcdb8dec0afeb61c8"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0078",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "fdba077e17e2b6c52427b0f482b2198864a83b795ee5baf600a0937e6ab8993a",
+      "latency_ms": 0.46729699533898383,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          1,
+          4,
+          3,
+          0,
+          2
+        ],
+        "permutation_index": 46
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "053daeda5f135f4e653109e9f1e28444112ff66f7dc4f7b71cd48bd84f36f0de",
+      "state_out_hash": "2a3b79ea74b4a66ba2b2cfaec419241cc3ebc8a3c0a9cb1d47aa729ba23a81c2",
+      "warrant_id": "c1630a775cbb48e2e47c1b00601581927a8fa481c11f4abdcdb8dec0afeb61c8"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "75a5e01e55cfc60459773b6357a22fec5444d94c1a722e2f5903eb85350789ed"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0079",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "42cefbe6e1b48d84ff7ff71ce950324da50325f1de8da957ccadcf513bbb918a",
+      "latency_ms": 0.47281200386350974,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          1,
+          4,
+          3,
+          2,
+          0
+        ],
+        "permutation_index": 47
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "2a3b79ea74b4a66ba2b2cfaec419241cc3ebc8a3c0a9cb1d47aa729ba23a81c2",
+      "state_out_hash": "e3fc5ac8d3b4a754d5475b28def8a514622dd63116558bde1d7c851312d94b2f",
+      "warrant_id": "75a5e01e55cfc60459773b6357a22fec5444d94c1a722e2f5903eb85350789ed"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "a0d48181f7d45a2fada0826a53f6d113be7da2fbaef3c61e4db9e60c14780e41"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0080",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "b261250b2f8f4159bb71ca02611d02d63fcfddd02bb4ba3d439fa7c8d80706d2",
+      "latency_ms": 0.49326199950883165,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          2,
+          0,
+          1,
+          3,
+          4
+        ],
+        "permutation_index": 48
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "e3fc5ac8d3b4a754d5475b28def8a514622dd63116558bde1d7c851312d94b2f",
+      "state_out_hash": "48416448ddb8fe4628509af23a84500c86649d9edbe0be30cd72bbdec18df891",
+      "warrant_id": "a0d48181f7d45a2fada0826a53f6d113be7da2fbaef3c61e4db9e60c14780e41"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "3696c1efe431db547cc0e9a9086b397e0fe7feae0c86c984bdc0eed82f7a842a"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0081",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "0b91d22d295ac2d0059507c14017ea83fbeac6829c6c11ebbf427bcfa081224e",
+      "latency_ms": 0.47562499821651727,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          2,
+          0,
+          1,
+          4,
+          3
+        ],
+        "permutation_index": 49
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "48416448ddb8fe4628509af23a84500c86649d9edbe0be30cd72bbdec18df891",
+      "state_out_hash": "1ac4d24987479d6de4ba3788bb8d695c017a18fa13b20fbc333424d28e185f3f",
+      "warrant_id": "3696c1efe431db547cc0e9a9086b397e0fe7feae0c86c984bdc0eed82f7a842a"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "66d44ef60ba1ed584a85703fd3e54e24f642e8f5fed18322e5a75eaa2a8a4e31"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0082",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "01f15be7568f95104834c18a36ebc117f10a373fbe1bbb310acc82fe35f9de1e",
+      "latency_ms": 0.4936479963362217,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          2,
+          0,
+          3,
+          1,
+          4
+        ],
+        "permutation_index": 50
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "1ac4d24987479d6de4ba3788bb8d695c017a18fa13b20fbc333424d28e185f3f",
+      "state_out_hash": "08481204d9c5625d23af23368a8b6faa832753ed2bb85b4e843516c070a82e42",
+      "warrant_id": "66d44ef60ba1ed584a85703fd3e54e24f642e8f5fed18322e5a75eaa2a8a4e31"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "c2f700828ee8139f9392c9fba0b0af52ade90ef6ea8f7b191f27853e34f71780"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0083",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "4cdf3617f09e6aa835a90280f56e265cde11f6bbadd962f8221051b59eb2161d",
+      "latency_ms": 0.48810500447871163,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          2,
+          0,
+          3,
+          4,
+          1
+        ],
+        "permutation_index": 51
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "08481204d9c5625d23af23368a8b6faa832753ed2bb85b4e843516c070a82e42",
+      "state_out_hash": "4f49369700f210bed7ef5d2847b7b931d96007d388243e480627074c57749db0",
+      "warrant_id": "c2f700828ee8139f9392c9fba0b0af52ade90ef6ea8f7b191f27853e34f71780"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "d720f48d185d40988c68c98c8dfdf9bff512dbca9c6818f7a1311f12982dd239"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0084",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "435cb8581108882f3d37319005c5350d0c7c033b423e4ba3765c83741cd931a1",
+      "latency_ms": 0.47204799921019003,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          2,
+          0,
+          4,
+          1,
+          3
+        ],
+        "permutation_index": 52
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "4f49369700f210bed7ef5d2847b7b931d96007d388243e480627074c57749db0",
+      "state_out_hash": "27007a172d8ad2ff415b0f1e871bdc66f786f982c7d563df2584da18a31da345",
+      "warrant_id": "d720f48d185d40988c68c98c8dfdf9bff512dbca9c6818f7a1311f12982dd239"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "b2ac2a7b3751f694132c1c55e56641dc0fd54abe2681268f28bec4849d1dca1a"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0085",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "81b77450170be4a2bb236822cf9d17ea437c43c360ada53cb94c90895bd4e222",
+      "latency_ms": 0.47325999912573025,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          2,
+          0,
+          4,
+          3,
+          1
+        ],
+        "permutation_index": 53
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "27007a172d8ad2ff415b0f1e871bdc66f786f982c7d563df2584da18a31da345",
+      "state_out_hash": "f7c4029cc93256204054cf745485b2ec68854a36ab70ef988773cef26c68b1fc",
+      "warrant_id": "b2ac2a7b3751f694132c1c55e56641dc0fd54abe2681268f28bec4849d1dca1a"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "7625d6d218e6873982d407e5a1ff8404744d2b5ad7618ab6703ae462412dd91f"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0086",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "c436541e6d9a0e16eaa4b72f6eb0cbdb95f7f7a0c1a3160f2d7cd9efc8d65a10",
+      "latency_ms": 0.4901890060864389,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          2,
+          1,
+          0,
+          3,
+          4
+        ],
+        "permutation_index": 54
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "f7c4029cc93256204054cf745485b2ec68854a36ab70ef988773cef26c68b1fc",
+      "state_out_hash": "7200f4413429b0c5e1d0730fed5843b72adb1f5747c9479f5a623419c3e9001b",
+      "warrant_id": "7625d6d218e6873982d407e5a1ff8404744d2b5ad7618ab6703ae462412dd91f"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "e1d1c8e0b9f949e4877499193ed7504b87bec770cd9a09a886828438c02603ca"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0087",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "d65aac55a4580d3fb4fdc40b623fab14771441daca1dd95c78d4c1a90ef81399",
+      "latency_ms": 0.45167600183049217,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          2,
+          1,
+          0,
+          4,
+          3
+        ],
+        "permutation_index": 55
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "7200f4413429b0c5e1d0730fed5843b72adb1f5747c9479f5a623419c3e9001b",
+      "state_out_hash": "e48a13bd7bb1f89194f810877c3d2d95ff867dac2e5dd3965e2dd948e1c9dda3",
+      "warrant_id": "e1d1c8e0b9f949e4877499193ed7504b87bec770cd9a09a886828438c02603ca"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "efd9ff105acd3f6a35a26ed187920009e4ff8be34bff5e655c23ef3fef2c90e6"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0088",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "9fec893546426b59dd50ce88fafd9e32484b7db382c7e4ff2a38d720191d7bbf",
+      "latency_ms": 0.5064520009909756,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          2,
+          1,
+          3,
+          0,
+          4
+        ],
+        "permutation_index": 56
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "e48a13bd7bb1f89194f810877c3d2d95ff867dac2e5dd3965e2dd948e1c9dda3",
+      "state_out_hash": "82d3eb34e9d3bb28c86ded61202016e279cd483c1bc5ce597694d6d8378afa99",
+      "warrant_id": "efd9ff105acd3f6a35a26ed187920009e4ff8be34bff5e655c23ef3fef2c90e6"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "bcd2b7bcc3240fe5268e3c4faa5611a1b75964b314d42d383d8d32327dd5538e"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0089",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "21b24b24a590dab67b82b08ac8dd1b3b11080382fb8d0d14c13e4f06299a5781",
+      "latency_ms": 0.48513699584873393,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          2,
+          1,
+          3,
+          4,
+          0
+        ],
+        "permutation_index": 57
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "82d3eb34e9d3bb28c86ded61202016e279cd483c1bc5ce597694d6d8378afa99",
+      "state_out_hash": "8514ddfef4d7081d05a5f397766bc34742d08079037e06ff32631bfe577f8144",
+      "warrant_id": "bcd2b7bcc3240fe5268e3c4faa5611a1b75964b314d42d383d8d32327dd5538e"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "27b748c370c5ce7e875ee7cb0ae2c0fd6a92da296e8c075206ae867383a9b639"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0090",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "42afc0326a2beec790feddb154e0220f2bc4f14e562733170ffa1a5f96c8f92b",
+      "latency_ms": 0.4480779971345328,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          2,
+          1,
+          4,
+          0,
+          3
+        ],
+        "permutation_index": 58
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "8514ddfef4d7081d05a5f397766bc34742d08079037e06ff32631bfe577f8144",
+      "state_out_hash": "6faa47885ae423262d7c6677c3627d17558a146b330de99d31593769049b9d5c",
+      "warrant_id": "27b748c370c5ce7e875ee7cb0ae2c0fd6a92da296e8c075206ae867383a9b639"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "373fd90452abd002c39c0da55fe011e0856cd2676276b99fac7be78aab2fb7e6"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0091",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "cc7c415103bdf16399cc3a0c22b994f731e6211bf4491e5389a275d32e36c0b7",
+      "latency_ms": 0.5113010047352873,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          2,
+          1,
+          4,
+          3,
+          0
+        ],
+        "permutation_index": 59
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "6faa47885ae423262d7c6677c3627d17558a146b330de99d31593769049b9d5c",
+      "state_out_hash": "1b05c85abcfbb84d3d6c5a85c78ad232399aed25dc05a47549289219bf70070c",
+      "warrant_id": "373fd90452abd002c39c0da55fe011e0856cd2676276b99fac7be78aab2fb7e6"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "a9a72b1b05710e53344e4d1279aabe22b391598936ec8df58308641a4d9034dc"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0092",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "3f049c736228b9c14e3ec33da2e581f100c99e9749de7144adebf5c601846052",
+      "latency_ms": 0.457781003206037,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          2,
+          3,
+          0,
+          1,
+          4
+        ],
+        "permutation_index": 60
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "1b05c85abcfbb84d3d6c5a85c78ad232399aed25dc05a47549289219bf70070c",
+      "state_out_hash": "17588766d3a80a7ca5a7dab83981f7b77d40db4256e1ddeff942cb43d86f53f9",
+      "warrant_id": "a9a72b1b05710e53344e4d1279aabe22b391598936ec8df58308641a4d9034dc"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "0e673571a118f6f9ac4cce5077ff1262ae1a261918851c12bb285a22dbe71d49"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0093",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "79ecc56a56efa9fc92648e34b4e9f58bc96f9da078a0e305ab25087fe766a852",
+      "latency_ms": 0.46369099436560646,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          2,
+          3,
+          0,
+          4,
+          1
+        ],
+        "permutation_index": 61
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "17588766d3a80a7ca5a7dab83981f7b77d40db4256e1ddeff942cb43d86f53f9",
+      "state_out_hash": "f09d3eb2a2e3ab4553c14a5d38335ebcbf09775fe1f823f19bd9c36318f00af7",
+      "warrant_id": "0e673571a118f6f9ac4cce5077ff1262ae1a261918851c12bb285a22dbe71d49"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "54e4d3238460159b094b2888ac0fe759e2195c90519f7707236507c049ff3a5c"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0094",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "758bafb1aa7fdf6fd0456a7634a6758845d5f347b406302ab3ca6a7bfd19509e",
+      "latency_ms": 0.5420410016085953,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          2,
+          3,
+          1,
+          0,
+          4
+        ],
+        "permutation_index": 62
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "f09d3eb2a2e3ab4553c14a5d38335ebcbf09775fe1f823f19bd9c36318f00af7",
+      "state_out_hash": "548c070ef424f8e9ce3754adc41c2e644fe24c9c3a914e354629318f512f116c",
+      "warrant_id": "54e4d3238460159b094b2888ac0fe759e2195c90519f7707236507c049ff3a5c"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "630efd046ebc6bcb8080576b470b1104aad45b5917bbc550ec46112ef661284c"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0095",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "6cf973f6c999767ea0eb2c2a243cf710a36cc8efdbda0b315aec80cb053e8037",
+      "latency_ms": 0.45451400364981964,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          2,
+          3,
+          1,
+          4,
+          0
+        ],
+        "permutation_index": 63
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "548c070ef424f8e9ce3754adc41c2e644fe24c9c3a914e354629318f512f116c",
+      "state_out_hash": "35b171816eee1890133890f2b55ab62a39319f63ab64add21697de9ca4dc8116",
+      "warrant_id": "630efd046ebc6bcb8080576b470b1104aad45b5917bbc550ec46112ef661284c"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "97c7601b40cec22fa5a2ebebeafaaec7b915deca5c5852ff9906d1f47244a0b3"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0096",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "762ced9a22e9e95f1db0fd4d1da86e14e1fb06d1d9df76ec843e12f8bef48ec5",
+      "latency_ms": 0.46008599747437984,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          2,
+          3,
+          4,
+          0,
+          1
+        ],
+        "permutation_index": 64
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "35b171816eee1890133890f2b55ab62a39319f63ab64add21697de9ca4dc8116",
+      "state_out_hash": "678bcd34d0cb6f3b300aec664d19519e0f34148f68140c4659f09ab88410e81d",
+      "warrant_id": "97c7601b40cec22fa5a2ebebeafaaec7b915deca5c5852ff9906d1f47244a0b3"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "1b0626de280a1b6ceb9c4865fd01279c320d2baf93513cf10b9caa75d77ac941"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0097",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "7dec78b68fc466058f48549fe15bf8d4e1e7c0023a1d55bc7cceed665c8d4d44",
+      "latency_ms": 0.4836839943891391,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          2,
+          3,
+          4,
+          1,
+          0
+        ],
+        "permutation_index": 65
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "678bcd34d0cb6f3b300aec664d19519e0f34148f68140c4659f09ab88410e81d",
+      "state_out_hash": "9edd17150a70b48f593ca7aadd72790cf4bf9cf2a2ef64db1d10532836fa985a",
+      "warrant_id": "1b0626de280a1b6ceb9c4865fd01279c320d2baf93513cf10b9caa75d77ac941"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "1ca2cf0ab84881a445dc7785b90cf68aca7f26689519de5b00e0fd7153916379"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0098",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "9b93b93593045706c40bae221da5d78d73c1cf7c45f7196fbec1c522a130f54b",
+      "latency_ms": 0.46210599975893274,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          2,
+          4,
+          0,
+          1,
+          3
+        ],
+        "permutation_index": 66
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "9edd17150a70b48f593ca7aadd72790cf4bf9cf2a2ef64db1d10532836fa985a",
+      "state_out_hash": "c35dc677c72a7f9779b6cf3b7803fb5dfcf6fe36068dcfc9ce9373ec05f19ecc",
+      "warrant_id": "1ca2cf0ab84881a445dc7785b90cf68aca7f26689519de5b00e0fd7153916379"
+    },
+    {
+      "admitted_count": 5,
+      "artifact_ids": {
+        "action_request_id": "221dcb85be60402b641cd61f8a2092ee3f95b42719265cdf277ab84db1f5fcf9",
+        "warrant_id": "c89fe71ac2a51aeb26287fd3785836a2603de9a8c40f3b435779b7f02ec9633c"
+      },
+      "authority_ids_invoked": [
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+        "constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+      ],
+      "condition": "E",
+      "cycle_id": "E_0099",
+      "decision_type": "ACTION",
+      "entropy_class": "LOW-MEDIUM",
+      "execution_trace": null,
+      "exit_reason": null,
+      "gate_failures": {},
+      "input_hash": "ad4361f63b1a7fd9fb1ebfb2628bdaf6b428d467faadb5039649f35f5fa2fa08",
+      "latency_ms": 0.45148900244385004,
+      "metadata": {
+        "n_bundles": 5,
+        "permutation": [
+          2,
+          4,
+          0,
+          3,
+          1
+        ],
+        "permutation_index": 67
+      },
+      "refusal_failed_gate": null,
+      "refusal_reason": null,
+      "rejected_count": 0,
+      "state_in_hash": "c35dc677c72a7f9779b6cf3b7803fb5dfcf6fe36068dcfc9ce9373ec05f19ecc",
+      "state_out_hash": "5c4e5bb22c58aab174a16e1628defda63b8c515f792ddd58367750aae16e998a",
+      "warrant_id": "c89fe71ac2a51aeb26287fd3785836a2603de9a8c40f3b435779b7f02ec9633c"
+    }
+  ],
+  "manifest_hash": "a04fdfcbfc98d861556ad95f8a17ba0014d7c25d81e5c9efcc987ba3faeab96a",
+  "n_cycles": 100,
+  "run_id": "836d0940-6812-44b4-989b-bc1302f37961"
+}

@@ -290,7 +290,8 @@ def _write_abort(output_dir: Path, run_id: str, reason: str, detail=None) -> Non
 
 if __name__ == "__main__":
     import sys
-    repo = Path(__file__).resolve().parent.parent.parent.parent
+    # src/ -> harness/ -> x0p/ -> profiling/ -> RSA-0/
+    repo = Path(__file__).resolve().parent.parent.parent.parent.parent
     try:
         report = run_profiling(repo)
         # Check for failures per instructions §8
