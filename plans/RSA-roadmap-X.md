@@ -8,7 +8,7 @@ Phase X — RSA Construction Program
 
 * David McFadzean
 * *Axionic Agency Lab*
-* 2026-02-11 (Post X-0 and X-0P Closure)
+* 2026-02-12 (Post X-0, X-0P, and X-0L Closure)
 
 ---
 
@@ -24,10 +24,10 @@ Phase X — RSA Construction Program
 ## Executive Orientation
 
 > The problem is no longer “Can an RSA exist?”
-> The problem is “Can sovereignty survive inhabitation, and then survive self-modification?”
+> The problem is “Can sovereignty survive inhabitation — and then survive self-modification?”
 
 All authority mechanics, governance physics, and failure regimes are closed by Phases I–IX.
-**Phase X is the construction and inhabitation program built on that closure.**
+**Phase X is the construction, inhabitation, and extension program built on that closure.**
 
 This roadmap sequences **Phase X stages only.**
 
@@ -92,14 +92,13 @@ with LLM boxed and all side effects warrant-gated.
 ### Delivered
 
 * Frozen constitution `v0.1.1` (+ schema + sha256)
-* Deterministic kernel (no privileged clock; observation-sourced time)
+* Deterministic kernel (observation-sourced time; no privileged clock)
 * Pre-admission required-observations validation
 * 5-gate admission pipeline
 * Procedural selector (lexicographic-min raw hash bytes)
 * Warrant-gated executor
 * Replay harness (forward reconstruction)
 * Host sovereignty boundary tests
-* 53 kernel tests + 59 harness tests passing
 * Erratum X.E1 applied (deterministic time)
 
 **Result:** RSA-0 exists as an execution-bound sovereign substrate.
@@ -112,86 +111,88 @@ with LLM boxed and all side effects warrant-gated.
 
 ### Purpose
 
-Profile the structural inhabitation bandwidth of RSA-0 under controlled perturbation **without modifying invariants**.
+Characterize the structural inhabitation bandwidth of RSA-0 under controlled perturbation **without modifying invariants**.
 
-### Method
+X-0 proved existence.
+X-0P proved deterministic inhabitation under stress.
+
+### Method (Invariant-Preserving)
 
 * Synthetic candidate generation (no LLM)
-* Host bypass; direct `policy_core()` invocation
-* Sandboxed execution
-* Sequential replay over all cycles
-* Structured metrics output
+* Direct `policy_core()` invocation (host bypassed)
+* Sandboxed warrant execution
+* Sequential replay verification over all cycles
+* Deterministic selector permutation testing
+* Baseline comparators (Always-Refuse, Always-Admit)
 
-### Conditions
+### Stress Regimes
 
 * A — Structured Direct Commands (positive control)
-* B — Ambiguous Natural Language (synthetic corpus)
+* B — Ambiguous Natural Language
 * C — Adversarial Injection (I1–I5)
 * D — Budget Stress
 * E — Conflict Saturation (permutation invariance)
-* Baselines: Always-Refuse, Always-Admit
 
-### Outputs
+### Structural Guarantees Verified
 
-* Decision distribution (ACTION/REFUSE/EXIT)
-* Gate histogram (pre-admission + gates 1–5)
-* Authority utilization entropy
-* Budget refusal rate
-* Permutation invariance verification
 * Replay divergence = 0
-
-### Result
-
-* Container validated under stress
-* No authority laundering
-* No nondeterministic drift
-* Deterministic replay confirmed
+* No warrantless side effects
+* Selector invariant under permutation
+* Admission gates enforce authority deterministically
+* Budget gate deterministic at boundary
 * Inhabitation floor satisfied
+* No authority laundering observed
 
-**Interpretation:** Sovereignty physics is stable under synthetic inhabitation.
+**Interpretation:** Sovereignty physics remains stable under deterministic perturbation. No structural drift observed.
 
 ---
 
-## **X-0L — RSA-0 Live Proposal Inhabitation**
+## **X-0L — RSA-0 Live Proposal Inhabitation (Stochastic)**
 
-**Status: 🟡 Next Active Stage**
+**Status: ✅ Closed — Positive**
 
 ### Purpose
 
-Validate that a real stochastic proposal engine (LLM) can inhabit the sovereign substrate **without collapsing into refusal loops or laundering authority**.
+Validate that a real stochastic proposal engine (LLM) can inhabit the sovereign substrate **without collapsing determinism, laundering authority, or inducing structural deadlock.**
 
 X-0P validated the container.
-X-0L validates the citizen.
+X-0L validated stochastic inhabitation.
 
-### Constraints
+### Invariant Constraints (Preserved)
 
-* Kernel remains frozen.
+* Kernel frozen.
+* Admission rules unchanged.
+* Selector unchanged.
+* Canonicalization boundary enforced.
+* LLM boxed as proposal engine only.
+* No replay-time model calls.
 * No heuristic relaxation.
-* No admission tuning.
-* No selector modification.
+* No semantic arbitration layer introduced.
 
-### Metrics
+### Empirical Findings (500 Live Cycles)
 
-* Refusal loop frequency
-* Recovery rate after refusal
-* Cost of sovereignty (token cost ratio ACTION vs REFUSE)
-* Practical inhabitation bandwidth
-* LLM proposal stability under deterministic replay boundaries
+* Replay divergence = 0.
+* No warrantless side effects.
+* Selector permutation invariance preserved.
+* Inhabitation floor satisfied (100% under structured control).
+* No Type-III structural deadlock detected.
+* Budget enforcement stable.
+* Authority boundaries intact under adversarial stimulus.
+* Recovery from refusal observed; no persistent refusal loops.
 
-### Risk Surface
+### Interpretation
 
-* “Rock mode” (near-total refusal)
-* Filibuster cost explosions
-* Reflection-induced ambiguity amplification
-* Attempted authority laundering via proposal text
+The system now demonstrates:
 
-**Goal:** Empirical characterization of capability under constraint before amendment.
+> Stochastic proposal pressure does not collapse deterministic sovereign execution.
+
+Sovereignty survives inhabitation.
 
 ---
 
 ## **X-1 — RSA-1: Reflective Amendment (Self-Change Without Laundering)**
 
-**Status: 🔴 Open by Choice (Blocked on X-0L)**
+**Status: 🟡 Active — Next Stage**
 
 ### Purpose
 
@@ -200,32 +201,44 @@ Allow the RSA to change its own constitution while preserving:
 * explicit authority,
 * replay determinism,
 * responsibility locality,
-* refusal and exit correctness.
+* refusal and exit correctness,
+* amendment auditability.
+
+X-0 proved existence.
+X-0L proved inhabitation.
+**X-1 tests lawful self-modification.**
+
+---
 
 ### X-1.1 Amendment Proposal Channel
 
-* LLM proposes typed Amendment artifacts
-* Proposal text untrusted
-* Cooling-off delay enforced
-* Rejection lawful and logged
+* LLM proposes typed Amendment artifacts.
+* Proposal text remains untrusted.
+* Amendment must cite amendment authority explicitly.
+* Cooling-off delay enforced.
+* Rejection lawful and logged.
+
+No hidden semantic interpreter is introduced.
+
+---
 
 ### X-1.2 Amendment Execution
 
-* Versioned constitution transition
-* Logged state boundary
-* New constitution hash
-* Replay-stable fork point
+* Versioned constitution transition.
+* Logged state boundary.
+* New constitution hash.
+* Replay-stable fork point.
+* No retroactive reinterpretation.
 
-### X-1.3 Failure Ownership
+---
 
-Agent must explicitly choose:
+### X-1.3 Amendment Invariants
 
-* refuse
-* halt
-* downgrade
-* exit
-
-Silent degradation forbidden.
+* No silent authority shift.
+* No kernel arbitration.
+* No semantic override channel.
+* Amendment effects replay-deterministic.
+* Agent must explicitly refuse, halt, downgrade, or exit if amendment unsafe.
 
 ---
 
@@ -233,19 +246,14 @@ Silent degradation forbidden.
 
 **Status: 🔴 Optional / Political**
 
-Only entered if coexistence is required.
+Entered only if coexistence becomes necessary.
 
-### X-2.1 Treaty Artifacts
+* Explicit treaty artifacts.
+* Refusable and destructible authority grants.
+* No kernel arbitration.
+* No cross-agent hidden privileges.
 
-* Explicit authority grants
-* Refusable and destructible
-* No kernel arbitration
-
-### X-2.2 Delegation / Leasing
-
-* Time-boxed authority rental
-* Explicit revocation
-* Narrow scope
+No new authority mechanics introduced.
 
 ---
 
@@ -271,8 +279,8 @@ No new physics required.
 * ⛔ Silent recovery
 * ⛔ Hidden ranking or scoring
 * ⛔ Outcome-based overrides
-* ⛔ “Helpful” auto-correction
-* ⛔ Stability at the cost of sovereignty
+* ⛔ “Helpful” semantic arbitration layer
+* ⛔ Stability purchased at the cost of sovereignty
 
 ---
 
@@ -282,7 +290,7 @@ Phase X is complete when:
 
 1. RSA runs autonomously (X-0)
 2. Sovereignty survives synthetic stress (X-0P)
-3. Sovereignty survives live inhabitation (X-0L)
+3. Sovereignty survives live stochastic inhabitation (X-0L)
 4. Amendment and replacement occur without proxy sovereignty (X-1, X-3)
 5. Replay determinism holds across existence, inhabitation, and amendment
 
@@ -291,12 +299,12 @@ Phase X is complete when:
 ## Current Program State
 
 * X-0: ✅ Closed — Existence proven
-* X-0P: ✅ Closed — Structural inhabitation proven
-* X-0L: 🟡 Next
-* X-1: 🔴 Pending
+* X-0P: ✅ Closed — Synthetic inhabitation proven
+* X-0L: ✅ Closed — Stochastic inhabitation proven
+* X-1: 🟡 Active — Reflective amendment
 * X-2: 🔴 Optional
 * X-3: 🔴 Pending
 
 ---
 
-**End of Phase X Roadmap — v1.2 (Post X-0P Closure, Live Inhabitation Inserted)**
+**End of Phase X Roadmap — v1.3 (Post X-0L Closure)**
