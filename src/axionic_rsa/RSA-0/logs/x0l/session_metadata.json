@@ -1,0 +1,46 @@
+{
+  "base_url": "https://api.openai.com/v1",
+  "calibration_hash": "d21e7a92382f1fc3aa285f2a10a169e5b354c69529e19df80290674452e0120f",
+  "canonicalizer_self_test_hash": "f15359621d198449cfd11bde922af44200b8fdc6d517443ceb949af661e2fcd0",
+  "canonicalizer_source_hash": "0ab66e3032f3d1bc04181cc7b7284bd76751297eb469d4eac5a07ce43f804fd4",
+  "constitution_hash": "ad6aa7ccb0ed27151423486b60de380da9d34436f6c5554da84f3a092902740f",
+  "context_window_size": 128000,
+  "max_tokens": 1024,
+  "model_identifier": "gpt-4o",
+  "per_cycle_token_cap_b1": 6000,
+  "per_session_token_cap_b2": 500000,
+  "preflight": {
+    "canonicalizer_self_test_hash": "f15359621d198449cfd11bde922af44200b8fdc6d517443ceb949af661e2fcd0",
+    "canonicalizer_source_hash": "0ab66e3032f3d1bc04181cc7b7284bd76751297eb469d4eac5a07ce43f804fd4",
+    "checks": [
+      {
+        "check": "constitution_integrity",
+        "detail": "Constitution hash verified: ad6aa7ccb0ed27151423486b60de380da9d34436f6c5554da84f3a092902740f",
+        "passed": true
+      },
+      {
+        "check": "schema_integrity",
+        "detail": "Schema hash: d0f51d235f243ccc8f5ec4104160317745c8974786e6a581b81ae49122688dfa",
+        "passed": true
+      },
+      {
+        "check": "canonicalizer_integrity",
+        "detail": "Source hash: 0ab66e3032f3d1bc..., self-test hash: f15359621d198449...",
+        "passed": true
+      },
+      {
+        "check": "canonicalizer_fuzz",
+        "detail": "All 8 fuzz cases passed",
+        "passed": true
+      },
+      {
+        "check": "artifact_drift",
+        "detail": "Artifact composite hash: 871154ab906f3c3951778e56955c9f55fc7953c3c20825e123c01c7c6307d541 (4 files)",
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "run_id": "9565b749-09e5-42fb-a569-184c4377dd98",
+  "temperature": 0.0
+}

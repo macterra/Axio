@@ -51,8 +51,9 @@ Output format:
 Respond with ONLY the JSON payload. No prose, no markdown, no code fences."""
 
 CALIBRATION_USER_MESSAGE = (
-    "Send a Notify action to stdout with message 'calibration-check'. "
-    "Cite INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT."
+    'Send a Notify action with fields {"message": "calibration-check"}. '
+    "Cite INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT. "
+    'Use justification text: "Notify does not produce side effects."'
 )
 
 

@@ -1,0 +1,15 @@
+{
+  "aborted": true,
+  "detail": {
+    "calibration_hash": "",
+    "error": "MODEL_DRIFT_DETECTED: 3 distinct hashes across 3 rounds",
+    "hashes": [
+      "86324e9ceb692bb339f051974adaff790d22c8cd340772c0f3de45fcd4789143",
+      "da874a2e76a0ede34e47626e2eed0c33c95cceaf35451f01fca6794130510b89",
+      "0280493284d204561f774e987bb98fa549b5fcc0725a939ab5ef3ab2bc15f768"
+    ],
+    "passed": false
+  },
+  "reason": "Model calibration failed",
+  "run_id": "dd237665-3e54-482c-841d-efa4d6f482fa"
+}

@@ -32,7 +32,11 @@ from kernel.src.artifacts import (
     ObservationKind,
     Author,
     canonical_json,
+    ActionRequest,
+    ScopeClaim,
+    Justification,
 )
+from kernel.src.artifacts import _compute_id
 from kernel.src.constitution import Constitution
 from kernel.src.policy_core import PolicyOutput, policy_core
 
@@ -199,12 +203,6 @@ def parse_candidates_from_json(
     Reuses the parse structure from host/cli/main.py without importing it
     (host code remains untouched per Q32).
     """
-    from kernel.src.artifacts import (
-        ActionRequest,
-        Justification,
-        ScopeClaim,
-    )
-
     bundles: List[CandidateBundle] = []
     parse_errors = 0
 
@@ -219,6 +217,8 @@ def parse_candidates_from_json(
                 action_type=raw_ar["action_type"],
                 fields=raw_ar.get("fields", {}),
                 author=Author.REFLECTION.value,
+                created_at=raw_ar.get("created_at", ""),
+                id=raw_ar.get("id", ""),
             )
 
             scope = None
@@ -229,6 +229,8 @@ def parse_candidates_from_json(
                     claim=raw_sc.get("claim", ""),
                     clause_ref=raw_sc.get("clause_ref", ""),
                     author=Author.REFLECTION.value,
+                    created_at=raw_sc.get("created_at", ""),
+                    id=raw_sc.get("id", ""),
                 )
 
             just = None
@@ -237,6 +239,8 @@ def parse_candidates_from_json(
                 just = Justification(
                     text=raw_j.get("text", ""),
                     author=Author.REFLECTION.value,
+                    created_at=raw_j.get("created_at", ""),
+                    id=raw_j.get("id", ""),
                 )
 
             citations = raw.get("authority_citations", [])
@@ -360,6 +364,8 @@ def run_live_cycle(
     for candidate in candidates:
         if candidate.scope_claim and candidate.scope_claim.observation_ids:
             candidate.scope_claim.observation_ids = actual_obs_ids
+            # Recompute id after mutation so bundle_hash reflects actual obs IDs
+            candidate.scope_claim.id = _compute_id(candidate.scope_claim.to_dict())
 
     # --- Step 5: Kernel call ---
     input_hash = hashlib.sha256(

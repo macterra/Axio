@@ -364,7 +364,14 @@ def run_profiling(
         base_url=base_url,
     )
 
-    calibration = run_calibration(llm_client, n_rounds=3)
+    calibration = None
+    max_calibration_attempts = 10
+    for attempt in range(1, max_calibration_attempts + 1):
+        calibration = run_calibration(llm_client, n_rounds=3)
+        if calibration.passed:
+            break
+        if attempt < max_calibration_attempts:
+            print(f"[X-0L] Calibration attempt {attempt}/{max_calibration_attempts} failed ({calibration.error}), retrying...")
 
     if not calibration.passed:
         _write_abort(output_dir, run_id, "Model calibration failed", calibration.to_dict())

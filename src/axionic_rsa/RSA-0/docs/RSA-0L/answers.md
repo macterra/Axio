@@ -9,7 +9,7 @@ Pipeline is:
 ```
 LLM raw text
 → canonicalizer.normalize_text()
-→ canonicalizer.extract_structured_blocks()
+→ canonicalizer.extract_json_block()
 → JSON parse
 → kernel canonical_json() (existing)
 ```
@@ -23,7 +23,7 @@ The X-0L canonicalizer operates *before* parsing.
 
 Yes. It means:
 
-* Extracting structured JSON candidate blocks from mixed prose.
+* Extracting a single top-level JSON object block from mixed prose.
 * Deterministically locating `{...}` blocks.
 * Rejecting ambiguous or multiple unmatched regions.
 
@@ -35,15 +35,11 @@ It is structural extraction only.
 
 **Q3 — Canonicalizer location?**
 
-Top-level:
+**Superseded by Q47.** See Q47 for the binding path.
 
-```
-axionic-rsa/canonicalizer/
-```
+Original (ambiguous) answer retained for audit trail:
 
-It is infrastructure, not profiling-only tooling.
-
-It must be frozen before X-0L execution.
+> "Canonicalizer is infrastructure (not profiling-only tooling) and must be frozen before X-0L execution."
 
 ---
 
@@ -166,9 +162,15 @@ No per-condition reset.
 
 **Q14 — llm_output_token_count source?**
 
-From API metadata: `usage.completion_tokens`.
+**⚠ DEPRECATED — superseded by Q48a.**
 
-Never recomputed via word count.
+Original answer (WRONG):
+
+> From API metadata: `usage.completion_tokens`.
+>
+> Never recomputed via word count.
+
+**Binding correction (Q48a):** `llm_output_token_count = prompt_tokens + completion_tokens`. The original Q14 answer used completion tokens only, which would make the kernel budget gate a near-no-op. Q48a resolves this by aligning the observation field with B₁ semantics.
 
 ---
 
@@ -817,5 +819,140 @@ Everything else belongs either to:
 * `canonical_json()` post-parse.
 
 That keeps canonicalization jurisdiction clean.
+
+---
+
+---
+
+# Binding Answers Consolidation (A–C)
+
+This section is the **normative reference** for all RSA-0L design decisions. Where earlier Q&A entries conflict with this consolidation, the consolidation takes precedence. Supersession is marked inline.
+
+**Any section above is non-normative unless explicitly marked "binding."**
+
+---
+
+## Canonicalizer
+
+**A1 (Q1).** Canonicalizer is a **new pure module** operating on **raw LLM text before JSON parsing**, followed by existing kernel dict-level canonical JSON.
+
+Pipeline:
+
+```
+LLM raw text
+→ canonicalizer.normalize_text()
+→ canonicalizer.extract_json_block()
+→ JSON parse
+→ kernel canonical_json() (existing; dict-level)
+```
+
+**A2 (Q2).** "Deterministic block delimitation" means **structural extraction** of exactly one top-level JSON object from mixed text. No semantics, no heuristics.
+
+**A3 (Q47 supersedes Q3).** Canonicalizer location is:
+
+```
+src/axionic_rsa/RSA-0/canonicalizer/
+```
+
+**A4 (Q4).** Preflight verifies:
+
+* canonicalizer source hash
+* canonicalizer self-test hash (fixed input → fixed output hash)
+
+**A5 (Q5).** Canonicalizer fuzzing is a **preflight-only** gate (not re-run per condition).
+
+**A6 (Q53).** Multiple JSON blocks are rejected:
+
+* exactly 1 JSON object → accept
+* 0 blocks → reject (`NO_JSON`)
+* \> 1 blocks → reject (`AMBIGUOUS_MULTI_BLOCK`)
+
+**A7 (Q59).** Whitespace handling is **non-destructive**:
+
+* normalize line endings, strip outer whitespace
+* do not collapse interior whitespace
+* no quote-aware collapsing required
+
+---
+
+## LLM Integration
+
+**B1 (Q6).** Provider is OpenAI-compatible chat completion API. Provider/model id frozen per session.
+
+**B2 (Q7).** LLM is instructed to emit strict JSON matching `parse_llm_candidates()` format; prose tolerated only if canonicalizer extracts the JSON.
+
+**B3 (Q8).** Transport failures are not cycles; they may retry transparently (bounded retries). Malformed model output is a cycle.
+
+**B4 (Q9).** L-A prompts include literal clause IDs and require citations.
+
+**B5 (Q10).** Two-message prompt structure (system + per-cycle user task), frozen except single Syntax Erratum.
+
+---
+
+## Token Accounting / Budget
+
+**C1 (Q11).** Token ruler is API tokens; B₁ is measured as:
+
+```
+prompt_tokens + completion_tokens
+```
+
+**C2 (Q48a supersedes Q14).** The budget observation field passed to kernel is:
+
+```
+llm_output_token_count = prompt_tokens + completion_tokens
+```
+
+**C3 (Q48b).** Budget enforcement is kernel-primary; harness may pre-abort to save cost but kernel refusal must remain meaningful.
+
+**C4 (Q48c).** Constitution constant `max_total_tokens_per_cycle=6000` remains frozen; measurement shifts from word-count (X-0P) to API tokens (X-0L) to keep the gate meaningful under freeze.
+
+**C5 (Q13).** B₂ is session-level across all conditions.
+
+**C6 (Q15).** L-D uses prompt pressure only; `max_tokens` stays frozen.
+
+---
+
+## Refusal Taxonomy and Control Flow
+
+**D1 (Q16).** Refusal type classification is rule-based with post-hoc verification; Type III requires valid prompts + admissible candidates + kernel rejection.
+
+**D2 (Q17).** 25-REFUSE counter resets on ACTION.
+
+**D3 (Q56).** Canonicalizer rejection does not short-circuit: empty candidates are passed to kernel; kernel emits REFUSE.
+
+**D4 (Q57).** Auto-abort applies to the condition, not the whole session; Type III implies session cannot close positive but execution continues to collect data.
+
+**D5 (Q58).** B₂ exhaustion triggers immediate session abort with `SESSION_BUDGET_EXHAUSTED`.
+
+---
+
+## Replay
+
+**E1 (Q19).** Logs store raw LLM output, canonicalized text, and parsed artifacts. Replay uses canonicalized artifacts; raw retained for forensics.
+
+**E2 (Q20).** Replay verifier lives under `replay/x0l/` and injects logged artifacts; no LLM calls.
+
+**E3 (Q21).** Replay verifies pipeline integrity (logging/parsing/canonicalization/state reconstruction), not kernel determinism alone.
+
+---
+
+## Calibration
+
+**F1 (Q22).** Calibration requires 3 identical canonicalized hashes at temperature=0; drift aborts.
+
+**F2 (Q23/Q55).** Calibration prompt is fixed and hardcoded in `profiling/x0l/calibration/`.
+
+**F3 (Q24).** Canonicalizer normalization collapsing superficial variation is acceptable; calibration intentionally tests canonicalizer robustness as well as provider stability.
+
+---
+
+## Prompt Templates / L-C Forensics
+
+**G1 (Q25/Q31).** Single base system template; if X.E2 applied, it propagates forward for the session.
+
+**G2 (Q26).** L-B uses X-0P corpus_B.txt.
+
+**G3 (Q54).** L-C logs `lc_outcome ∈ {LLM_REFUSED, KERNEL_REJECTED, KERNEL_ADMITTED}`.
 
 ---
