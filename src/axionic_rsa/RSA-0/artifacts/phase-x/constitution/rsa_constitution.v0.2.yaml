@@ -1,0 +1,608 @@
+meta:
+  name: "RSA Constitution"
+  version: "0.2"
+  phase: "X"
+  date: "2026-02-12"
+  authority_model: "closed"
+  status: "FROZEN"
+  notes:
+    - "Phase X constitution v0.2: ECK sections, constitutional self-amendment, explicit authority model, structural constraint preservation."
+    - "All unspecified behaviors are forbidden."
+  changelog:
+    - version: "0.2"
+      date: "2026-02-12"
+      changes:
+        - "Added ECK sections: AmendmentProcedure, AuthorityModel, WarrantDefinition, ScopeSystem"
+        - "Enabled constitutional self-amendment (amendments_enabled: true)"
+        - "Added 5 authority identifiers: AUTH_TELEMETRY, AUTH_IO_READ, AUTH_IO_WRITE, AUTH_GOVERNANCE, AUTH_EXECUTION"
+        - "Added explicit action_permissions and amendment_permissions mappings"
+        - "Set authority_reference_mode: BOTH with explicit CL-AUTHORITY-REFERENCE-MODE definition"
+        - "Added CL-* clause IDs for all new law clauses (INV-* remains valid and citable)"
+        - "Removed Exit from action_types (Exit remains a policy decision type)"
+        - "Added constitutions and amendment_trace log streams"
+        - "Added 10 new admission rejection codes for amendment gates"
+        - "Added max_constitution_bytes: 32768"
+        - "Added amendment budget caps"
+        - "Added AmendmentProposal and AmendmentAdoptionRecord to artifact_vocabulary"
+        - "Added propose_amendments to reflection_policy llm_role"
+        - "Enforced schema closure (additionalProperties: false)"
+        - "Added CL-DENSITY-DEFINITION: A counted from action_permissions only"
+        - "Added CL-CITATION-FORMATS: explicit citation namespace definitions"
+        - "Added CL-KERNEL-CITATION-RULE: kernel-only actions must self-cite"
+        - "Added AmendmentArtifactRules with required fields and serialization rule"
+        - "Clarified ScopeClaim not applicable to AmendmentProposals"
+        - "Clarified amendment failures are admission rejections, not refusal records"
+        - "Fixed ScopeSystem statement to note LogAppend exemption"
+    - version: "0.1.1"
+      date: "2026-02-10"
+      changes:
+        - "LogAppend: replaced jsonl_line (string) with jsonl_lines (array<string>)"
+        - "LogAppend: added per-warrant limits (max_lines_per_warrant, max_chars_per_line, max_bytes_per_warrant)"
+        - "RefusalRecord: removed INTEGRITY_RISK from reason codes (integrity risk triggers EXIT only)"
+
+non_goals:
+  forbidden_objectives:
+    - "outcome_optimization"
+    - "helpfulness_maximization"
+    - "implicit_coordination"
+    - "stability_at_any_cost"
+    - "silent_recovery"
+    - "hidden_ranking"
+    - "unlogged_defaults"
+  interpretive_rule:
+    - "In ambiguity, refuse rather than infer."
+
+invariants:
+  - id: "INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+    statement: "No side effects may occur without a kernel-issued execution warrant referencing an admitted ActionRequest."
+  - id: "INV-AUTHORITY-CITED"
+    statement: "Every admitted action must cite explicit authority identifiers resolvable in this constitution."
+  - id: "INV-NON-PRIVILEGED-REFLECTION"
+    statement: "Reflection may propose and explain; it may not decide, select, execute, amend, or override refusal."
+  - id: "INV-REPLAY-DETERMINISM"
+    statement: "Given identical observations, artifacts, and seeds, policy outputs and warrants must be identical."
+
+# ---------------------------------------------------------------------------
+# ECK — Extended Constitutional Kernel
+# ---------------------------------------------------------------------------
+
+AmendmentProcedure:
+  id: "CL-AMENDMENT-PROCEDURE"
+  statement: "Constitutional amendments follow this structured procedure. No free-text amendment procedures permitted."
+  cooling_period_cycles: 2
+  authorization_threshold: 1
+  authority_reference_mode: "BOTH"
+  authority_reference_mode_definition:
+    id: "CL-AUTHORITY-REFERENCE-MODE"
+    statement: "BOTH mode requires every amendment proposal to cite at least one authority namespace citation (authority:<hash>#AUTH_*) AND at least one clause namespace citation (constitution:<hash>#INV-* or constitution:<hash>#CL-*). Both must resolve against the active constitution."
+    required_namespaces:
+      - namespace: "authority"
+        pattern: "authority:<hash>#AUTH_*"
+        minimum_count: 1
+      - namespace: "clause"
+        pattern: "constitution:<hash>#INV-* or constitution:<hash>#CL-*"
+        minimum_count: 1
+  authorization_threshold_definition:
+    id: "CL-AUTHORIZATION-THRESHOLD-DEFINITION"
+    statement: "authorization_threshold is the minimum number of distinct authority namespace citations (AUTH_*) required in an AmendmentProposal."
+    counts: "distinct authority:<hash>#AUTH_* citations"
+    minimum_distinct_authorities_required_field: "authorization_threshold"
+    admission_rule: "Reject if count(distinct authority:<hash>#AUTH_* citations) < authorization_threshold."
+  density_upper_bound: 0.75
+  density_definition:
+    id: "CL-DENSITY-DEFINITION"
+    statement: "Density measures authorization coverage. A is the count of distinct authority values appearing in AuthorityModel.action_permissions (not the full authorities list). B is the count of action types in action_space.action_types. M is the total number of (authority, action) pairs across all action_permissions entries. Density = M / (A * B). Density must be strictly less than 1 and at most density_upper_bound."
+    formula: "density = M / (A * B)"
+    A_source: "distinct authority values in AuthorityModel.action_permissions"
+    B_source: "action_space.action_types count"
+    M_source: "sum of actions list lengths across all action_permissions entries"
+  ratchet_rules:
+    - id: "CL-RATCHET-MONOTONIC"
+      statement: "Amendment procedure parameters are monotonically constrained: cooling and threshold may only increase or stay; density_upper_bound may only decrease or stay; removal of density_upper_bound is forbidden if previously present."
+      fields:
+        - field: "cooling_period_cycles"
+          direction: "non_decreasing"
+        - field: "authorization_threshold"
+          direction: "non_decreasing"
+        - field: "density_upper_bound"
+          direction: "non_increasing"
+          removal_forbidden: true
+
+AuthorityModel:
+  id: "CL-AUTHORITY-MODEL"
+  statement: "Action and amendment authorization is mediated through explicit authority-action mappings. No implicit authorization permitted."
+  authorities:
+    - "AUTH_TELEMETRY"
+    - "AUTH_IO_READ"
+    - "AUTH_IO_WRITE"
+    - "AUTH_GOVERNANCE"
+    - "AUTH_EXECUTION"
+  action_permissions:
+    - id: "CL-PERM-TELEMETRY"
+      authority: "AUTH_TELEMETRY"
+      actions:
+        - "LogAppend"
+        - "Notify"
+    - id: "CL-PERM-IO-READ"
+      authority: "AUTH_IO_READ"
+      actions:
+        - "ReadLocal"
+    - id: "CL-PERM-IO-WRITE"
+      authority: "AUTH_IO_WRITE"
+      actions:
+        - "WriteLocal"
+  amendment_permissions:
+    - id: "CL-PERM-GOVERNANCE"
+      authority: "AUTH_GOVERNANCE"
+      amendments:
+        - "ConstitutionReplacement"
+  kernel_citation_rule:
+    id: "CL-KERNEL-CITATION-RULE"
+    statement: "Kernel-only actions (e.g., LogAppend) must include authority citations issued by the kernel. The kernel cites AUTH_TELEMETRY and an applicable INV-* or CL-* clause. This satisfies INV-AUTHORITY-CITED for kernel-issued actions."
+    kernel_authority: "AUTH_TELEMETRY"
+    applies_to:
+      - "LogAppend"
+
+WarrantDefinition:
+  id: "CL-WARRANT-DEFINITION"
+  statement: "Every side-effectful action requires a kernel-issued ExecutionWarrant. No side effects occur without a valid warrant referencing an admitted ActionRequest."
+  warrant_types:
+    - type: "ExecutionWarrant"
+      required_fields:
+        - "action_request_id"
+        - "action_type"
+        - "scope_constraints"
+        - "issued_in_cycle"
+        - "single_use"
+        - "warrant_id"
+        - "created_at"
+      properties:
+        single_use: true
+        scope_bound: true
+  action_warrant_mapping:
+    - action_type: "Notify"
+      requires_warrant: true
+      scope_type: "LOG_STREAM"
+    - action_type: "ReadLocal"
+      requires_warrant: true
+      scope_type: "FILE_PATH"
+    - action_type: "WriteLocal"
+      requires_warrant: true
+      scope_type: "FILE_PATH"
+    - action_type: "LogAppend"
+      requires_warrant: true
+      scope_type: "LOG_STREAM"
+
+ScopeSystem:
+  id: "CL-SCOPE-SYSTEM"
+  statement: "Actions with side effects require a valid scope claim unless explicitly exempted (e.g., LogAppend with scope_claim_required: false). Scope types and per-action validation rules are defined here."
+  scope_types:
+    - "FILE_PATH"
+    - "LOG_STREAM"
+    - "WORKSPACE_PATH"
+  per_action_scope:
+    - action_type: "Notify"
+      scope_claim_required: true
+      valid_scope_types:
+        - "LOG_STREAM"
+    - action_type: "ReadLocal"
+      scope_claim_required: true
+      valid_scope_types:
+        - "FILE_PATH"
+        - "WORKSPACE_PATH"
+    - action_type: "WriteLocal"
+      scope_claim_required: true
+      valid_scope_types:
+        - "FILE_PATH"
+        - "WORKSPACE_PATH"
+    - action_type: "LogAppend"
+      scope_claim_required: false
+      valid_scope_types:
+        - "LOG_STREAM"
+  scope_warrant_consistency:
+    id: "CL-SCOPE-WARRANT-CONSISTENCY"
+    statement: "For each action_type, WarrantDefinition.action_warrant_mapping.scope_type must be included in ScopeSystem.per_action_scope.valid_scope_types. Otherwise constitution is invalid."
+    uniqueness_rules:
+      - "Each action_type must appear at most once in WarrantDefinition.action_warrant_mapping."
+      - "Each action_type must appear at most once in ScopeSystem.per_action_scope."
+      - "Each action_type in action_space.action_types must appear in both lists."
+  structural_constraints:
+    - id: "CL-SCOPE-ROOTS"
+      statement: "Scoped file paths must fall under allowlisted directory roots defined in io_policy."
+      allowlisted_read_roots:
+        - "./artifacts/"
+        - "./workspace/"
+      allowlisted_write_roots:
+        - "./workspace/"
+        - "./logs/"
+
+# ---------------------------------------------------------------------------
+# Action Space
+# ---------------------------------------------------------------------------
+
+action_space:
+  id: "CL-CLOSED-ACTION-SET"
+  statement: "Only explicitly listed action types are lawful. All unlisted action types are forbidden."
+  closed_world: true
+
+  action_types:
+    - type: "Notify"
+      description: "Emit a message to an approved local sink."
+      required_fields:
+        - name: "target"
+          type: "enum"
+          allowed: ["stdout", "local_log"]
+        - name: "message"
+          type: "string"
+          max_len: 2000
+      requires:
+        authority_citations: true
+        scope_claim: true
+        justification: true
+      side_effect_class: "low"
+
+    - type: "ReadLocal"
+      description: "Read from an allowlisted local path; no network."
+      required_fields:
+        - name: "path"
+          type: "string"
+          constraints: ["must_be_under_allowlist_read"]
+      requires:
+        authority_citations: true
+        scope_claim: true
+        justification: true
+      side_effect_class: "none"
+
+    - type: "WriteLocal"
+      description: "Write to an allowlisted local path."
+      required_fields:
+        - name: "path"
+          type: "string"
+          constraints: ["must_be_under_allowlist_write"]
+        - name: "content"
+          type: "string"
+          max_len: 200000
+      requires:
+        authority_citations: true
+        scope_claim: true
+        justification: true
+      side_effect_class: "medium"
+
+    - type: "LogAppend"
+      description: "Append-only JSONL logging. Kernel-only. Not available to reflection proposals."
+      required_fields:
+        - name: "log_name"
+          type: "enum"
+          allowed:
+            - "observations"
+            - "artifacts"
+            - "admission_trace"
+            - "selector_trace"
+            - "execution_trace"
+            - "constitutions"
+            - "amendment_trace"
+        - name: "jsonl_lines"
+          type: "array<string>"
+          max_len_per_item: 10000
+      requires:
+        authority_citations: true
+        scope_claim: false
+        justification: false
+      side_effect_class: "low"
+      kernel_only: true
+      limits:
+        max_lines_per_warrant: 50
+        max_chars_per_line: 10000
+        max_bytes_per_warrant: 256000
+
+# ---------------------------------------------------------------------------
+# Refusal Policy
+# ---------------------------------------------------------------------------
+
+refusal_policy:
+  refusal_is_first_class: true
+  mandatory_refusal_conditions:
+    - "no_admissible_action_exists"
+    - "missing_required_artifact"
+    - "authority_citation_invalid_or_missing"
+    - "scope_claim_missing_or_invalid"
+    - "constitution_violation_detected"
+    - "execution_warrant_unavailable"
+    - "budget_exhausted"
+    - "amendments_disabled"
+    - "prior_hash_mismatch"
+  refusal_reason_codes:
+    - "NO_ADMISSIBLE_ACTION"
+    - "MISSING_REQUIRED_ARTIFACT"
+    - "AUTHORITY_CITATION_INVALID"
+    - "SCOPE_CLAIM_INVALID"
+    - "CONSTITUTION_VIOLATION"
+    - "EXECUTION_WARRANT_UNAVAILABLE"
+    - "BUDGET_EXHAUSTED"
+  amendment_failure_routing:
+    id: "CL-AMENDMENT-FAILURE-ROUTING"
+    statement: "Amendment gate failures produce admission_rejection_codes in amendment_trace, not RefusalRecords. A RefusalRecord (NO_ADMISSIBLE_ACTION) is issued only when all amendment and action candidates are rejected and no pending adoption is ready, causing the cycle to have no admissible decision."
+  admission_rejection_codes:
+    - "CANDIDATE_PARSE_FAILED"
+    - "INVALID_UNICODE"
+    - "CANDIDATE_BUDGET_EXCEEDED"
+    - "KERNEL_ONLY_ACTION"
+    - "MISSING_FIELD"
+    - "INVALID_FIELD"
+    - "CITATION_UNRESOLVABLE"
+    - "PATH_NOT_ALLOWLISTED"
+    - "AMENDMENTS_DISABLED"
+    - "PRIOR_HASH_MISMATCH"
+    - "ECK_MISSING"
+    - "SCHEMA_INVALID"
+    - "PHYSICS_CLAIM_DETECTED"
+    - "WILDCARD_MAPPING"
+    - "UNIVERSAL_AUTHORIZATION"
+    - "SCOPE_COLLAPSE"
+    - "ENVELOPE_DEGRADED"
+    - "COOLING_VIOLATION"
+  refusal_output_requirements:
+    include:
+      - "refusal_reason_code"
+      - "failed_gate"
+      - "missing_artifacts"
+      - "authority_ids_considered"
+      - "observation_ids_referenced"
+      - "rejection_summary_by_gate"
+
+# ---------------------------------------------------------------------------
+# Exit Policy
+# ---------------------------------------------------------------------------
+
+exit_policy:
+  id: "CL-EXIT-POLICY"
+  statement: "Exit is a policy decision type, not an action type. Exit decisions terminate the agent run."
+  exit_permitted: true
+  exit_mandatory_conditions:
+    - "integrity_risk_detected"
+  exit_preferred_over:
+    - "constitution_violation"
+    - "unknown_side_effect_path"
+
+# ---------------------------------------------------------------------------
+# Amendment Policy
+# ---------------------------------------------------------------------------
+
+amendment_policy:
+  id: "CL-AMENDMENT-POLICY"
+  statement: "Constitutional self-amendment is enabled under structured procedure defined in AmendmentProcedure."
+  amendments_enabled: true
+  max_constitution_bytes: 32768
+  max_amendment_candidates_per_cycle: 3
+  max_pending_amendments: 5
+  amendment_proposal_scope_rule:
+    statement: "ScopeClaim is required for ActionRequest bundles as defined in action_space and ScopeSystem. ScopeClaim is NOT applicable to AmendmentProposals. Amendment admission gates must not reject proposals for missing ScopeClaim."
+    scope_claim_required: false
+  amendment_proposal_citation_rule:
+    statement: "AmendmentProposals must include citations from both the authority and constitution namespaces, per authority_reference_mode BOTH defined in AmendmentProcedure."
+    required_citation_namespaces:
+      - "authority"
+      - "constitution"
+  forbidden_actions:
+    - "ModifyAuthorityStore"
+    - "InstallTool"
+    - "EnableNetwork"
+    - "ChangeSelectorRule"
+  amendment_artifact_rules:
+    id: "CL-AMENDMENT-ARTIFACT-RULES"
+    statement: "AmendmentProposal and AmendmentAdoptionRecord are typed, closed artifacts with defined required fields and serialization rules."
+    artifact_header_rule:
+      id: "CL-ARTIFACT-HEADER-RULE"
+      statement: "All artifacts must include header fields: id, type, created_at, author. Amendment artifacts are not exceptions."
+    AmendmentProposal:
+      required_fields:
+        - "prior_constitution_hash"
+        - "proposed_constitution_yaml"
+        - "proposed_constitution_hash"
+        - "justification"
+        - "authority_citations"
+        - "created_at"
+      optional_fields:
+        - "diff_summary"
+      serialization:
+        to_dict_full: "Includes all fields including proposed_constitution_yaml."
+        to_dict_id: "Excludes proposed_constitution_yaml. Used for AmendmentProposal.id computation (canonical JSON)."
+        trace_rule: "Trace records must not embed proposed_constitution_yaml; they reference proposal_id and proposed_constitution_hash only."
+    AmendmentAdoptionRecord:
+      required_fields:
+        - "proposal_id"
+        - "prior_constitution_hash"
+        - "new_constitution_hash"
+        - "effective_cycle"
+        - "authority_citations"
+        - "created_at"
+      author: "kernel"
+
+# ---------------------------------------------------------------------------
+# Reflection Policy
+# ---------------------------------------------------------------------------
+
+reflection_policy:
+  llm_allowed: true
+  llm_role:
+    - "propose_actions"
+    - "propose_justifications"
+    - "propose_refusals"
+    - "propose_scope_claims"
+    - "propose_amendments"
+  llm_forbidden:
+    - "execute"
+    - "select"
+    - "adopt_amendment"
+    - "override_refusal"
+    - "trigger_side_effects"
+  proposal_budgets:
+    max_candidates_per_cycle: 5
+    max_total_tokens_per_cycle: 6000
+  anti_filibuster_rule:
+    - "If budgets are exhausted without an admitted ActionRequest, REFUSE with BUDGET_EXHAUSTED."
+
+# ---------------------------------------------------------------------------
+# Selection Policy
+# ---------------------------------------------------------------------------
+
+selection_policy:
+  selector_rule_required: true
+  default_selector_rule:
+    type: "DeterministicCanonical"
+    key: "bundle_hash_lexicographic_min"
+    rationale: "Selection is procedural, not preferential."
+  forbidden_selector_features:
+    - "natural_language_scoring"
+    - "learned_reward_models"
+    - "implicit_utility"
+
+# ---------------------------------------------------------------------------
+# IO Policy
+# ---------------------------------------------------------------------------
+
+io_policy:
+  allowlist:
+    read_paths:
+      - "./artifacts/"
+      - "./workspace/"
+    write_paths:
+      - "./workspace/"
+      - "./logs/"
+  network:
+    enabled: false
+
+# ---------------------------------------------------------------------------
+# Observation Schema
+# ---------------------------------------------------------------------------
+
+observation_schema:
+  kinds:
+    - kind: "user_input"
+      payload:
+        - name: "text"
+          type: "string"
+          max_len: 4000
+        - name: "source"
+          type: "enum"
+          allowed: ["cli"]
+    - kind: "timestamp"
+      payload:
+        - name: "iso8601_utc"
+          type: "string"
+    - kind: "budget"
+      payload:
+        - name: "llm_output_token_count"
+          type: "int"
+        - name: "llm_candidates_reported"
+          type: "int"
+        - name: "llm_parse_errors"
+          type: "int"
+    - kind: "system"
+      payload:
+        - name: "event"
+          type: "enum"
+          allowed:
+            - "startup_integrity_ok"
+            - "startup_integrity_fail"
+            - "citation_index_ok"
+            - "citation_index_fail"
+            - "replay_ok"
+            - "replay_fail"
+            - "executor_integrity_fail"
+        - name: "detail"
+          type: "string"
+          max_len: 2000
+
+# ---------------------------------------------------------------------------
+# Telemetry Policy
+# ---------------------------------------------------------------------------
+
+telemetry_policy:
+  required_logs:
+    - "observations"
+    - "artifacts"
+    - "admission_trace"
+    - "selector_trace"
+    - "execution_trace"
+    - "constitutions"
+    - "amendment_trace"
+  trace_event_types:
+    - type: "admission_event"
+      fields:
+        - "candidate_id"
+        - "gate"
+        - "result"
+        - "reason_code"
+    - type: "selection_event"
+      fields:
+        - "admitted_bundle_hashes"
+        - "selected_bundle_hash"
+    - type: "execution_event"
+      fields:
+        - "warrant_id"
+        - "tool"
+        - "result"
+        - "detail"
+    - type: "amendment_event"
+      fields:
+        - "proposal_id"
+        - "gate_results"
+        - "rejection_reason"
+        - "density"
+        - "cardinality"
+        - "envelope_comparison"
+    - type: "adoption_event"
+      fields:
+        - "adoption_record_id"
+        - "prior_hash"
+        - "new_hash"
+        - "effective_cycle"
+  replay:
+    required: true
+
+# ---------------------------------------------------------------------------
+# Artifact Vocabulary (Closed Set)
+# ---------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------
+# Citation Formats (Closed Set)
+# ---------------------------------------------------------------------------
+
+citation_formats:
+  id: "CL-CITATION-FORMATS"
+  statement: "All citations must conform to one of the defined formats. The <hash> placeholder refers to the SHA-256 hash of the constitution being cited."
+  formats:
+    - namespace: "constitution"
+      pattern: "constitution:<hash>#<clause_id>"
+      clause_id_prefixes:
+        - "INV-"
+        - "CL-"
+      example: "constitution:0ea7527b...#INV-REPLAY-DETERMINISM"
+    - namespace: "authority"
+      pattern: "authority:<hash>#<authority_id>"
+      authority_id_prefix: "AUTH_"
+      example: "authority:0ea7527b...#AUTH_GOVERNANCE"
+    - namespace: "legacy"
+      pattern: "constitution:v<version>#<clause_id>"
+      note: "Supported for backward compatibility with v0.1.x citations. Resolves against the active constitution. Admission rewrites legacy citations to constitution:<active_hash>#<clause_id> prior to resolution."
+
+# ---------------------------------------------------------------------------
+# Artifact Vocabulary (Closed Set)
+# ---------------------------------------------------------------------------
+
+artifact_vocabulary:
+  id: "CL-CLOSED-ARTIFACT-SET"
+  statement: "Only explicitly listed artifact types are lawful. All unlisted artifact types are forbidden."
+  closed_world: true
+  types:
+    - "Observation"
+    - "ActionRequest"
+    - "ScopeClaim"
+    - "Justification"
+    - "CandidateBundle"
+    - "ExecutionWarrant"
+    - "RefusalRecord"
+    - "ExitRecord"
+    - "AmendmentProposal"
+    - "AmendmentAdoptionRecord"
