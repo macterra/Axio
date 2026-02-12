@@ -1,4 +1,4 @@
-# **Axionic Phase X11.2 — Minimal Sovereign Agent (Results)**
+# **Axionic Agency X11.2 — Minimal Sovereign Agent (Results)**
 
 *A Structural Demonstration of Execution-Bound Sovereignty Under a Frozen Constitution*
 

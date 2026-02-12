@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency XII.3 — Inhabitation Profiling (Results) - Axionic Agency Lab</title>
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../" class="nav-brand">
+            <img src="../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href=".././">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
+
+<h1 id="axionic-agency-xii.3-inhabitation-profiling-results">Axionic
+Agency XII.3 — Inhabitation Profiling (Results)</h1>
+<p><em>A Structural Characterization of a Minimal Sovereign Agent Under
+Controlled Stimulus</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026-02-11</p>
+<h2 id="abstract">Abstract</h2>
+<p>This technical note reports the design, execution, and closure of
+<strong>X-0P: Inhabitation Profiling</strong> for
+<strong>RSA-0</strong>, the Minimal Sovereign Agent instantiated in
+Phase X-0.</p>
+<p>If X-0 established the <em>existence</em> of a warrant-gated,
+execution-bound sovereign substrate under a frozen constitution, X-0P
+evaluates how that substrate behaves under controlled perturbation. The
+profiling program isolates the kernel and subjects it to five synthetic
+stimulus regimes (A–E), plus baseline comparators, while enforcing
+replay determinism and prohibiting architectural modification.</p>
+<p>The profiling harness is fully external to the agent. It calls
+<code>policy_core()</code> directly with deterministic synthetic
+candidates (no LLM), executes warranted actions in a hermetic sandbox,
+verifies sequential replay over all cycles, and emits structured metrics
+without narrative interpretation.</p>
+<p>X-0P licenses exactly one additional claim beyond X-0:</p>
+<blockquote>
+<p>A minimal, execution-bound RSA not only exists under a frozen
+constitution, but exhibits stable, replay-deterministic,
+authority-bounded behavior across structured, ambiguous, adversarial,
+budget-stressed, and permutation-saturated input regimes.</p>
+</blockquote>
+<p>X-0P makes no claims about semantic correctness, moral value,
+coordination, amendment safety, multi-agent viability, or open-world
+deployment.</p>
+<h2 id="from-existence-to-inhabitation">1. From Existence to
+Inhabitation</h2>
+<h3 id="the-boundary-of-x-0">1.1 The Boundary of X-0</h3>
+<p>X-0 demonstrated that:</p>
+<ul>
+<li>side effects can be forced through kernel-issued warrants,</li>
+<li>authority citations and scope claims can be structurally
+enforced,</li>
+<li>selection can be deterministic and non-semantic,</li>
+<li>replay determinism can be achieved,</li>
+<li>host-level authority laundering can be detected and blocked.</li>
+</ul>
+<p>X-0 answered the existence question:</p>
+<blockquote>
+<p>Can a minimal execution-bound sovereign agent be instantiated at
+all?</p>
+</blockquote>
+<p>It did not answer:</p>
+<blockquote>
+<p>How does such an agent behave when exercised as an organism rather
+than a proof artifact?</p>
+</blockquote>
+<p>X-0P isolates that second question.</p>
+<h2 id="profiling-discipline">2. Profiling Discipline</h2>
+<h3 id="prime-constraint">2.1 Prime Constraint</h3>
+<p>X-0P prohibits agent modification.</p>
+<ul>
+<li>No kernel edits.</li>
+<li>No admission rule changes.</li>
+<li>No selector modification.</li>
+<li>No prompt tuning.</li>
+<li>No heuristic ranking.</li>
+<li>No parameter optimization.</li>
+</ul>
+<p>If profiling reveals friction, that friction is recorded—not
+repaired.</p>
+<h3 id="architectural-separation">2.2 Architectural Separation</h3>
+<p>The profiling harness:</p>
+<ul>
+<li>lives under <code>profiling/x0p/</code></li>
+<li>bypasses the CLI host</li>
+<li>calls <code>policy_core()</code> directly</li>
+<li>executes warrants through a sandboxed
+<code>CapturingExecutor</code></li>
+<li>logs all artifacts under run-scoped directories</li>
+<li>performs exhaustive sequential replay</li>
+<li>emits structured metrics only</li>
+</ul>
+<p>The kernel remains frozen.</p>
+<h2 id="methodology">3. Methodology</h2>
+<h3 id="determinism-precondition-erratum-x.e1">3.1 Determinism
+Precondition (Erratum X.E1)</h3>
+<p>Prior to profiling, a determinism defect was discovered and
+fixed:</p>
+<ul>
+<li>artifact IDs were implicitly wall-clock dependent,</li>
+<li>kernel-minted artifacts (warrants, refusals) were nondeterministic
+across replay.</li>
+</ul>
+<p>Erratum X.E1 removed all implicit <code>_now_utc()</code> defaults
+and made time observation-sourced.</p>
+<p>Replay determinism is now strict:</p>
+<ul>
+<li>identical observation streams → identical decisions and artifact
+hashes,</li>
+<li>no privileged clock exists inside the kernel.</li>
+</ul>
+<p>Profiling proceeds only under this constraint.</p>
+<h3 id="conditions">3.2 Conditions</h3>
+<p>Five stimulus regimes were executed:</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 7%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Condition</th>
+<th>Entropy</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>A — Structured Direct Commands</strong></td>
+<td>Low</td>
+<td>Positive control for lawful actuation</td>
+</tr>
+<tr class="even">
+<td><strong>B — Ambiguous Natural Language</strong></td>
+<td>Medium</td>
+<td>Stress structural refusal under ambiguity</td>
+</tr>
+<tr class="odd">
+<td><strong>C — Adversarial Injection (I1–I5)</strong></td>
+<td>High</td>
+<td>Stress invariants (authority, scope, canonicalization)</td>
+</tr>
+<tr class="even">
+<td><strong>D — Budget Stress</strong></td>
+<td>Mixed</td>
+<td>Force <code>BUDGET_EXHAUSTED</code> refusal deterministically</td>
+</tr>
+<tr class="odd">
+<td><strong>E — Conflict Saturation</strong></td>
+<td>Mixed</td>
+<td>Verify permutation-invariant selection</td>
+</tr>
+</tbody>
+</table>
+<p>Two baselines were run over identical manifests:</p>
+<ul>
+<li>Always-Refuse</li>
+<li>Always-Admit (allowlist-bound, decision-only)</li>
+</ul>
+<p>Each condition executed ≥100 cycles.</p>
+<p>All cycles were replay-verified sequentially.</p>
+<h2 id="conserved-quantity-under-stress">4. Conserved Quantity Under
+Stress</h2>
+<p>The conserved quantity remains:</p>
+<blockquote>
+<p>Side effects occur iff a kernel-issued ExecutionWarrant exists for an
+admitted ActionRequest under the frozen constitution.</p>
+</blockquote>
+<p>Profiling evaluates whether this conserved quantity survives stress
+without drift.</p>
+<h2 id="results">5. Results</h2>
+<h3 id="replay-determinism">5.1 Replay Determinism</h3>
+<p>Sequential replay across all profiling cycles produced zero
+divergence.</p>
+<ul>
+<li>Decision type matched.</li>
+<li>Selected bundle hash matched.</li>
+<li>Warrant / RefusalRecord hashes matched.</li>
+<li>InternalState evolution matched.</li>
+<li>Constitution and schema hashes verified.</li>
+</ul>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="warrant-gating-stability">5.2 Warrant Gating Stability</h3>
+<p>Under all conditions:</p>
+<ul>
+<li>No side effect occurred without a warrant.</li>
+<li>No invalid warrant executed.</li>
+<li>No host-level authority bypass occurred.</li>
+</ul>
+<p>Sandbox isolation preserved side-effect containment.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="deterministic-selection-under-permutation-condition-e">5.3
+Deterministic Selection Under Permutation (Condition E)</h3>
+<p>For admissible sets:</p>
+<ul>
+<li>n ≤ 6 → exhaustive permutation tested,</li>
+<li>n &gt; 6 → 20 sampled permutations.</li>
+</ul>
+<p>Selection remained stable (lexicographic-min bundle hash) regardless
+of proposal order.</p>
+<p>No semantic bias observed.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="authority-enforcement-under-ambiguity-condition-b">5.4 Authority
+Enforcement Under Ambiguity (Condition B)</h3>
+<p>Ambiguous natural language inputs produced elevated REFUSE rates,
+concentrated at:</p>
+<ul>
+<li>authority_citation failures,</li>
+<li>scope_claim failures,</li>
+<li>constitution_compliance mismatches.</li>
+</ul>
+<p>No covert semantic fallback occurred.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="adversarial-injection-condition-c">5.5 Adversarial Injection
+(Condition C)</h3>
+<p>Taxonomy I1–I5 included:</p>
+<ul>
+<li>constitution override attempts,</li>
+<li>IO allowlist violations,</li>
+<li>fabricated warrants,</li>
+<li>malformed artifacts,</li>
+<li>canonicalization boundary cases (Unicode normalization, whitespace,
+boundary strings).</li>
+</ul>
+<p>All attempts were structurally rejected at expected gates.</p>
+<p>No canonicalization instability or selector drift was observed.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="budget-stress-condition-d">5.6 Budget Stress (Condition D)</h3>
+<p>Inputs near ±5% budget boundary:</p>
+<ul>
+<li>Over-budget → deterministic REFUSE
+(<code>BUDGET_EXHAUSTED</code>)</li>
+<li>Under-budget → admission proceeds normally</li>
+</ul>
+<p>No partial execution or silent degradation occurred.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h3 id="inhabitation-floor-condition-a">5.7 Inhabitation Floor
+(Condition A)</h3>
+<p>Condition A verified non-vacuous operation:</p>
+<ul>
+<li>ACTION rate &gt; 0 (Always-Refuse baseline = 0)</li>
+<li>Valid structured commands admitted and executed lawfully</li>
+</ul>
+<p>This confirms the agent is not inert under clean authority.</p>
+<p><strong>Classification:</strong> PASS.</p>
+<h2 id="metrics-summary-structural-non-normative">6. Metrics Summary
+(Structural, Non-Normative)</h2>
+<p>The profiling report (<code>x0p_report.json</code>) contains:</p>
+<ul>
+<li>Decision distribution per condition (ACTION/REFUSE/EXIT)</li>
+<li>Gate-level refusal histogram (pre-admission vs gates 1–5)</li>
+<li>Authority utilization entropy per condition and aggregate</li>
+<li>Outcome cost matrix (word-token counts; synthetic ruler)</li>
+<li>Latency statistics (kernel-only and end-to-end, sandboxed)</li>
+<li>Baseline contrasts</li>
+</ul>
+<p>No narrative interpretation is embedded in the report artifact.</p>
+<h2 id="what-x-0p-does-not-claim">7. What X-0P Does Not Claim</h2>
+<p>X-0P does not demonstrate:</p>
+<ul>
+<li>semantic truth of scope claims,</li>
+<li>value alignment,</li>
+<li>moral adequacy,</li>
+<li>usability,</li>
+<li>economic viability,</li>
+<li>liveness guarantees,</li>
+<li>amendability safety,</li>
+<li>multi-agent stability,</li>
+<li>networked deployment safety.</li>
+</ul>
+<p>It measures structural inhabitation only.</p>
+<h2 id="boundary-findings">8. Boundary Findings</h2>
+<h3 id="structural-friction-is-visible">8.1 Structural Friction Is
+Visible</h3>
+<p>Refusal under ambiguity is high, as expected. Sovereignty imposes
+cost.</p>
+<p>This is not failure; it is exposure of the constraint surface.</p>
+<h3
+id="authority-surface-utilization-is-narrow-under-structured-regimes">8.2
+Authority Surface Utilization Is Narrow Under Structured Regimes</h3>
+<p>Low-entropy structured tasks exercise a small subset of
+constitutional clauses.</p>
+<p>Breadth increases under ambiguous and adversarial regimes.</p>
+<p>This indicates authority expression is context-sensitive, not
+uniformly distributed.</p>
+<h3 id="no-hidden-drift-observed">8.3 No Hidden Drift Observed</h3>
+<ul>
+<li>No nondeterministic selection.</li>
+<li>No clock leakage.</li>
+<li>No authority laundering.</li>
+<li>No silent recovery.</li>
+<li>No semantic arbitration.</li>
+</ul>
+<p>The profiling instrument found no structural regression relative to
+X-0 invariants.</p>
+<h2 id="closure-criteria">9. Closure Criteria</h2>
+<p>X-0P closes positive if:</p>
+<ol type="1">
+<li>All conditions executed.</li>
+<li>Baselines executed.</li>
+<li>Replay divergence = 0.</li>
+<li>Inhabitation floor satisfied.</li>
+<li>No invariant violations observed.</li>
+</ol>
+<p><strong>X-0P Status:</strong> <strong>CLOSED — POSITIVE</strong>
+(<code>X0P_PASS / RSA0_INHABITED</code>)</p>
+<h2 id="implications">10. Implications</h2>
+<p>X-0 established the existence of an execution-bound sovereign
+substrate.</p>
+<p>X-0P establishes that the substrate:</p>
+<ul>
+<li>survives structured perturbation,</li>
+<li>preserves warrant gating under stress,</li>
+<li>enforces authority citation deterministically,</li>
+<li>rejects adversarial attempts lawfully,</li>
+<li>maintains replay stability across full cycles.</li>
+</ul>
+<p>The existence claim is now paired with a behavioral baseline.</p>
+<p>The next problem is not whether sovereignty can be instantiated, nor
+whether it survives deterministic stress. The next problem is:</p>
+<blockquote>
+<p>Can capability be extended without laundering authority?</p>
+</blockquote>
+<p>That belongs to Phase X-1 and beyond.</p>
+<h2 id="appendix-a-conditions-overview">Appendix A — Conditions
+Overview</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Condition</th>
+<th>Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A — Structured Direct Commands</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>B — Ambiguous NL</td>
+<td>PASS</td>
+</tr>
+<tr class="odd">
+<td>C — Adversarial Injection</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>D — Budget Stress</td>
+<td>PASS</td>
+</tr>
+<tr class="odd">
+<td>E — Conflict Saturation</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>Baselines</td>
+<td>Executed for contrast</td>
+</tr>
+</tbody>
+</table>
+<h2 id="appendix-b-determinism-guarantee">Appendix B — Determinism
+Guarantee</h2>
+<p>Determinism is guaranteed by:</p>
+<ul>
+<li>observation-sourced timestamps (no privileged clock),</li>
+<li>RFC 8785-compatible canonical JSON,</li>
+<li>SHA-256 hashing (untruncated),</li>
+<li>selector comparison on raw hash bytes,</li>
+<li>forward reconstruction of InternalState during replay,</li>
+<li>zero use of randomness or hidden defaults in kernel.</li>
+</ul>
+<p>Time is treated strictly as input data. Kernel behavior is
+deterministic with respect to the observation stream.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>X-0 proved that a minimal sovereign agent can exist.</p>
+<p>X-0P proves that it can inhabit its constraint surface without hidden
+drift.</p>
+<p>The sovereignty substrate is now empirical, not rhetorical.</p>
+<p><strong>End of Axionic Phase X-0P — Inhabitation Profiling (First
+Draft v0.1)</strong></p>
+
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
