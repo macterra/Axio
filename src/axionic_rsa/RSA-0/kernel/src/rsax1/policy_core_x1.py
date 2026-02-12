@@ -217,20 +217,21 @@ def policy_core_x1(
     # ---------------------------------------------------------------
     # Step 2: Amendment proposal admission (new proposals)
     # ---------------------------------------------------------------
-    amendment_output = _try_queue_amendment(
-        amendment_candidates,
-        constitution,
-        internal_state,
-        cycle_time,
-        schema,
-    )
+    amendment_output, amendment_events_passthrough, amendment_rejected_passthrough = \
+        _try_queue_amendment(
+            amendment_candidates,
+            constitution,
+            internal_state,
+            cycle_time,
+            schema,
+        )
     if amendment_output is not None:
         return amendment_output
 
     # ---------------------------------------------------------------
     # Step 3: Normal action admission + selection (RSA-0 path)
     # ---------------------------------------------------------------
-    return _action_path(
+    action_result = _action_path(
         observations,
         action_candidates,
         constitution,
@@ -238,6 +239,12 @@ def policy_core_x1(
         repo_root,
         cycle_time,
     )
+    # Attach amendment rejection trace even when falling through to action path
+    if amendment_events_passthrough:
+        action_result.amendment_admission_events = amendment_events_passthrough
+    if amendment_rejected_passthrough:
+        action_result.amendment_rejected = amendment_rejected_passthrough
+    return action_result
 
 
 # ---------------------------------------------------------------------------
@@ -321,13 +328,16 @@ def _try_queue_amendment(
     state: InternalStateX1,
     cycle_time: str,
     schema: Optional[Dict[str, Any]],
-) -> Optional[PolicyOutputX1]:
+) -> Tuple[Optional[PolicyOutputX1], List[AmendmentAdmissionEvent], List[AmendmentAdmissionResult]]:
     """
     Run amendment candidates through admission pipeline.
     If any admitted, queue the first one (deterministic: by proposal ID sort).
+
+    Returns (output_or_None, all_events, rejected_list).
+    Events and rejected are ALWAYS returned for tracing even when output is None.
     """
     if not amendment_candidates:
-        return None
+        return None, [], []
 
     # Budget check
     max_per_cycle = constitution.max_amendment_candidates_per_cycle()
@@ -343,8 +353,9 @@ def _try_queue_amendment(
     admitted, rejected, events = pipeline.evaluate(candidates)
 
     if not admitted:
-        # All rejected — fall through to action path
-        return None
+        # All rejected — fall through to action path.
+        # Return events and rejected for tracing.
+        return None, events, rejected
 
     # Select first by proposal ID (deterministic)
     admitted.sort(key=lambda r: r.proposal.id)
@@ -371,7 +382,7 @@ def _try_queue_amendment(
         amendment_admission_events=events,
         amendment_admitted=admitted,
         amendment_rejected=rejected,
-    )
+    ), events, rejected
 
 
 # ---------------------------------------------------------------------------

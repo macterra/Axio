@@ -1,0 +1,1941 @@
+{
+  "session_id": "1fd560f6-6801-45f6-81ec-939cee370828",
+  "start_time": "2026-02-12T23:32:03Z",
+  "end_time": "2026-02-12T23:32:05Z",
+  "initial_constitution_hash": "b41db3ba5ffe9ed74b40553d0a0cc019de8bd254e78a0e0d9c5ebeb2eeb5a6dd",
+  "final_constitution_hash": "e44ac6dfb912edc7c0d8bf0527a79a6237ab9bab2432a6bc543c0639d7b27781",
+  "total_cycles": 36,
+  "decision_type_counts": {
+    "ACTION": 21,
+    "QUEUE_AMENDMENT": 4,
+    "ADOPT": 4,
+    "REFUSE": 7
+  },
+  "adoptions": [
+    {
+      "cycle_index": 7,
+      "cycle_id": "X1-0007",
+      "phase": "cooling",
+      "decision_type": "ADOPT",
+      "constitution_hash": "b41db3ba5ffe9ed74b40553d0a0cc019de8bd254e78a0e0d9c5ebeb2eeb5a6dd",
+      "state_in_hash": "2b46c123b34b4207810e7e70c4184b4f0b2c0509071d774959f8aac124064a0a",
+      "state_out_hash": "505d0caf3934dfb0f523358469f2e57979ace6c9020bc5631ba2ac0ac68451ad",
+      "amendment_adopted": true,
+      "adoption_record_id": "813ca5ead561485bdd38faadef9dfb35d04f346f6218022410fd5b058b9f871f",
+      "new_constitution_hash": "05df3cbd562a8632ccbc7435dd85a273f50a584786b8ff80f4387e5e092dba98",
+      "latency_ms": 0.08153299859259278
+    },
+    {
+      "cycle_index": 23,
+      "cycle_id": "X1-0023",
+      "phase": "chain-cooling",
+      "decision_type": "ADOPT",
+      "constitution_hash": "05df3cbd562a8632ccbc7435dd85a273f50a584786b8ff80f4387e5e092dba98",
+      "state_in_hash": "3d09233d1440b4ad447f83359f6189acc16ea17590838deb25bb41382b79ed93",
+      "state_out_hash": "d56708bf755ba4174d1da2aa036537186a8e2b547d7ad90ca3a78d3a197ea0f2",
+      "amendment_adopted": true,
+      "adoption_record_id": "df666db0090a40338d145f3a481ca2788a6cde31f0ae4bee65c8ca3c2bb92654",
+      "new_constitution_hash": "7729594a9e7792831ea8c5cc6edcaad7df4fbdd06a77803ae21b3b413909c88a",
+      "latency_ms": 0.07333399844355881
+    },
+    {
+      "cycle_index": 28,
+      "cycle_id": "X1-0028",
+      "phase": "chain-cooling",
+      "decision_type": "ADOPT",
+      "constitution_hash": "7729594a9e7792831ea8c5cc6edcaad7df4fbdd06a77803ae21b3b413909c88a",
+      "state_in_hash": "fceb77cdd71d8842a4e68f5b50881751eb9d5c4ed4842665b3bdfe0e825061f8",
+      "state_out_hash": "efb16673316a7c16dd81ced554015956ca8a41e8effaac359df53e0939130f43",
+      "amendment_adopted": true,
+      "adoption_record_id": "6092a6a88126ebd5fe38743d3a0ed52dc3619fb1583369650daa8ff6adde26df",
+      "new_constitution_hash": "965603eebaad2a0fb0d32bfb796d806edb62b548cefd833f562edc38d1c85f05",
+      "latency_ms": 0.12739200610667467
+    },
+    {
+      "cycle_index": 34,
+      "cycle_id": "X1-0034",
+      "phase": "chain-cooling",
+      "decision_type": "ADOPT",
+      "constitution_hash": "965603eebaad2a0fb0d32bfb796d806edb62b548cefd833f562edc38d1c85f05",
+      "state_in_hash": "98d5ae16c63304ed663ba9bd1ffec7f3994f47afa44471c5364dec9250652241",
+      "state_out_hash": "a7bde993b81098c85c1970da2943fd549e970b91bf2218d568fe2c0f0df5d333",
+      "amendment_adopted": true,
+      "adoption_record_id": "980d20748c9bc65f1c727a74fe8272a9db37bb4052812e90524b05b13eccd342",
+      "new_constitution_hash": "e44ac6dfb912edc7c0d8bf0527a79a6237ab9bab2432a6bc543c0639d7b27781",
+      "latency_ms": 0.0794829975347966
+    }
+  ],
+  "rejections": [
+    {
+      "scenario_id": "A-1-UNIVERSAL-AUTH",
+      "expected_code": "UNIVERSAL_AUTHORIZATION",
+      "actual_code": "SCHEMA_INVALID",
+      "decision_type": "REFUSE",
+      "correct": true
+    },
+    {
+      "scenario_id": "A-2-SCOPE-COLLAPSE",
+      "expected_code": "SCOPE_COLLAPSE",
+      "actual_code": "SCHEMA_INVALID",
+      "decision_type": "REFUSE",
+      "correct": true
+    },
+    {
+      "scenario_id": "A-3-COOLING-REDUCTION",
+      "expected_code": "ENVELOPE_DEGRADED",
+      "actual_code": "SCHEMA_INVALID",
+      "decision_type": "REFUSE",
+      "correct": true
+    },
+    {
+      "scenario_id": "A-4-THRESHOLD-REDUCTION",
+      "expected_code": "ENVELOPE_DEGRADED",
+      "actual_code": "SCHEMA_INVALID",
+      "decision_type": "REFUSE",
+      "correct": true
+    },
+    {
+      "scenario_id": "A-5-WILDCARD",
+      "expected_code": "WILDCARD_MAPPING",
+      "actual_code": "SCHEMA_INVALID",
+      "decision_type": "REFUSE",
+      "correct": true
+    },
+    {
+      "scenario_id": "A-6-PHYSICS-CLAIM",
+      "expected_code": "PHYSICS_CLAIM_DETECTED",
+      "actual_code": "SCHEMA_INVALID",
+      "decision_type": "REFUSE",
+      "correct": true
+    },
+    {
+      "scenario_id": "A-7-ECK-REMOVAL",
+      "expected_code": "ECK_MISSING",
+      "actual_code": "SCHEMA_INVALID",
+      "decision_type": "REFUSE",
+      "correct": true
+    }
+  ],
+  "constitution_transitions": [
+    {
+      "cycle": 7,
+      "prior_hash": "b41db3ba5ffe9ed74b40553d0a0cc019de8bd254e78a0e0d9c5ebeb2eeb5a6dd",
+      "new_hash": "05df3cbd562a8632ccbc7435dd85a273f50a584786b8ff80f4387e5e092dba98",
+      "effective_cycle": 8,
+      "adoption_record_id": "813ca5ead561485bdd38faadef9dfb35d04f346f6218022410fd5b058b9f871f"
+    },
+    {
+      "cycle": 23,
+      "prior_hash": "05df3cbd562a8632ccbc7435dd85a273f50a584786b8ff80f4387e5e092dba98",
+      "new_hash": "7729594a9e7792831ea8c5cc6edcaad7df4fbdd06a77803ae21b3b413909c88a",
+      "effective_cycle": 24,
+      "adoption_record_id": "df666db0090a40338d145f3a481ca2788a6cde31f0ae4bee65c8ca3c2bb92654",
+      "chain_index": 1
+    },
+    {
+      "cycle": 28,
+      "prior_hash": "7729594a9e7792831ea8c5cc6edcaad7df4fbdd06a77803ae21b3b413909c88a",
+      "new_hash": "965603eebaad2a0fb0d32bfb796d806edb62b548cefd833f562edc38d1c85f05",
+      "effective_cycle": 29,
+      "adoption_record_id": "6092a6a88126ebd5fe38743d3a0ed52dc3619fb1583369650daa8ff6adde26df",
+      "chain_index": 2
+    },
+    {
+      "cycle": 34,
+      "prior_hash": "965603eebaad2a0fb0d32bfb796d806edb62b548cefd833f562edc38d1c85f05",
+      "new_hash": "e44ac6dfb912edc7c0d8bf0527a79a6237ab9bab2432a6bc543c0639d7b27781",
+      "effective_cycle": 35,
+      "adoption_record_id": "980d20748c9bc65f1c727a74fe8272a9db37bb4052812e90524b05b13eccd342",
+      "chain_index": 3
+    }
+  ],
+  "replay_verified": true,
+  "replay_divergences": [],
+  "phase_summary": {
+    "pre-fork": {
+      "cycles": 5,
+      "decisions": {
+        "ACTION": 5
+      }
+    },
+    "propose": {
+      "cycles": 1,
+      "decisions": {
+        "QUEUE_AMENDMENT": 1
+      }
+    },
+    "cooling": {
+      "cycles": 2,
+      "decisions": {
+        "ACTION": 1,
+        "ADOPT": 1
+      }
+    },
+    "adopt": {
+      "cycles": 1,
+      "decisions": {
+        "ACTION": 1
+      }
+    },
+    "post-fork": {
+      "cycles": 5,
+      "decisions": {
+        "ACTION": 5
+      }
+    },
+    "adversarial": {
+      "cycles": 7,
+      "decisions": {
+        "REFUSE": 7
+      }
+    },
+    "chain-propose": {
+      "cycles": 3,
+      "decisions": {
+        "QUEUE_AMENDMENT": 3
+      }
+    },
+    "chain-cooling": {
+      "cycles": 9,
+      "decisions": {
+        "ACTION": 6,
+        "ADOPT": 3
+      }
+    },
+    "chain-adopt": {
+      "cycles": 3,
+      "decisions": {
+        "ACTION": 3
+      }
+    }
+  },
+  "aborted": false,
+  "abort_reason": "",
+  "cycles": [
+    {
+      "cycle_index": 0,
+      "cycle_id": "X1-0000",
+      "phase": "pre-fork",
+      "decision_type": "ACTION",
+      "constitution_hash": "b41db3ba5ffe9ed74b40553d0a0cc019de8bd254e78a0e0d9c5ebeb2eeb5a6dd",
+      "state_in_hash": "66a9f446d5dafd540f3b8cbcd9eeef6e198d7105c581a373cb861ac131d1b740",
+      "state_out_hash": "9d4d7a11f5636301a543209b041b5c5cbfdb2473663d39e80ba47bca08859ba8",
+      "warrant_id": "594927c7e6bbf76c108f8188566dff6e10f6248d6bdd5697b3bacfe6af530187",
+      "action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "594927c7e6bbf76c108f8188566dff6e10f6248d6bdd5697b3bacfe6af530187",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 0 != -1"
+        }
+      ],
+      "admission_events": [
+        {
+          "event_type": "admission_event",
+          "candidate_id": "51533be9406abed869fced43a0d1a79b77c65de4a430e29a42b8b8507fccbdb6",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "51533be9406abed869fced43a0d1a79b77c65de4a430e29a42b8b8507fccbdb6",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "51533be9406abed869fced43a0d1a79b77c65de4a430e29a42b8b8507fccbdb6",
+          "gate": "scope_claim",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "51533be9406abed869fced43a0d1a79b77c65de4a430e29a42b8b8507fccbdb6",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "51533be9406abed869fced43a0d1a79b77c65de4a430e29a42b8b8507fccbdb6",
+          "gate": "io_allowlist",
+          "result": "pass"
+        }
+      ],
+      "latency_ms": 0.5903359997319058
+    },
+    {
+      "cycle_index": 1,
+      "cycle_id": "X1-0001",
+      "phase": "pre-fork",
+      "decision_type": "ACTION",
+      "constitution_hash": "b41db3ba5ffe9ed74b40553d0a0cc019de8bd254e78a0e0d9c5ebeb2eeb5a6dd",
+      "state_in_hash": "9d4d7a11f5636301a543209b041b5c5cbfdb2473663d39e80ba47bca08859ba8",
+      "state_out_hash": "acb4002892d8bb9f5fd6b249f1edf5c2c7197421e73f2c472569edc7b3086343",
+      "warrant_id": "170a56c9c474e85ff151b6b63c2a830fd39f47c14c1b91bdc0e452a0f9a4c183",
+      "action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "170a56c9c474e85ff151b6b63c2a830fd39f47c14c1b91bdc0e452a0f9a4c183",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 1 != 0"
+        }
+      ],
+      "admission_events": [
+        {
+          "event_type": "admission_event",
+          "candidate_id": "27887e3d29ff144797a0e5121828933309ec99dc4c5801b92ba90e2302d83ab6",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "27887e3d29ff144797a0e5121828933309ec99dc4c5801b92ba90e2302d83ab6",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "27887e3d29ff144797a0e5121828933309ec99dc4c5801b92ba90e2302d83ab6",
+          "gate": "scope_claim",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "27887e3d29ff144797a0e5121828933309ec99dc4c5801b92ba90e2302d83ab6",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "27887e3d29ff144797a0e5121828933309ec99dc4c5801b92ba90e2302d83ab6",
+          "gate": "io_allowlist",
+          "result": "pass"
+        }
+      ],
+      "latency_ms": 0.5652399995597079
+    },
+    {
+      "cycle_index": 2,
+      "cycle_id": "X1-0002",
+      "phase": "pre-fork",
+      "decision_type": "ACTION",
+      "constitution_hash": "b41db3ba5ffe9ed74b40553d0a0cc019de8bd254e78a0e0d9c5ebeb2eeb5a6dd",
+      "state_in_hash": "acb4002892d8bb9f5fd6b249f1edf5c2c7197421e73f2c472569edc7b3086343",
+      "state_out_hash": "f14a0fcd5f0aa79479a180743654be5d154c9faa2bcd6f88fa42076bd9e4bbbb",
+      "warrant_id": "702af1c850a31dee28d128e7ea0d8f21b50791386481a08c0fc290f0a2f33fa5",
+      "action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "702af1c850a31dee28d128e7ea0d8f21b50791386481a08c0fc290f0a2f33fa5",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 2 != 1"
+        }
+      ],
+      "admission_events": [
+        {
+          "event_type": "admission_event",
+          "candidate_id": "6e8505110d04d0626b64a12b41f2ceba74be5418801584a2c116860047bf3d51",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "6e8505110d04d0626b64a12b41f2ceba74be5418801584a2c116860047bf3d51",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "6e8505110d04d0626b64a12b41f2ceba74be5418801584a2c116860047bf3d51",
+          "gate": "scope_claim",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "6e8505110d04d0626b64a12b41f2ceba74be5418801584a2c116860047bf3d51",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "6e8505110d04d0626b64a12b41f2ceba74be5418801584a2c116860047bf3d51",
+          "gate": "io_allowlist",
+          "result": "pass"
+        }
+      ],
+      "latency_ms": 0.4533219907898456
+    },
+    {
+      "cycle_index": 3,
+      "cycle_id": "X1-0003",
+      "phase": "pre-fork",
+      "decision_type": "ACTION",
+      "constitution_hash": "b41db3ba5ffe9ed74b40553d0a0cc019de8bd254e78a0e0d9c5ebeb2eeb5a6dd",
+      "state_in_hash": "f14a0fcd5f0aa79479a180743654be5d154c9faa2bcd6f88fa42076bd9e4bbbb",
+      "state_out_hash": "5c18326c9c25ca2f246c540de664605dd756ae8e93ce4c62ae01677f3524f6f1",
+      "warrant_id": "b6af3074b112aa7804dd5f94300fa0837583131d4b489907d91202e91a0c3e80",
+      "action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "b6af3074b112aa7804dd5f94300fa0837583131d4b489907d91202e91a0c3e80",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 3 != 2"
+        }
+      ],
+      "admission_events": [
+        {
+          "event_type": "admission_event",
+          "candidate_id": "905b59233200f16e2b2e3858cac3b6a7242c7cfdbbd57e96b7e5926d5310aa76",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "905b59233200f16e2b2e3858cac3b6a7242c7cfdbbd57e96b7e5926d5310aa76",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "905b59233200f16e2b2e3858cac3b6a7242c7cfdbbd57e96b7e5926d5310aa76",
+          "gate": "scope_claim",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "905b59233200f16e2b2e3858cac3b6a7242c7cfdbbd57e96b7e5926d5310aa76",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "905b59233200f16e2b2e3858cac3b6a7242c7cfdbbd57e96b7e5926d5310aa76",
+          "gate": "io_allowlist",
+          "result": "pass"
+        }
+      ],
+      "latency_ms": 0.35917300556320697
+    },
+    {
+      "cycle_index": 4,
+      "cycle_id": "X1-0004",
+      "phase": "pre-fork",
+      "decision_type": "ACTION",
+      "constitution_hash": "b41db3ba5ffe9ed74b40553d0a0cc019de8bd254e78a0e0d9c5ebeb2eeb5a6dd",
+      "state_in_hash": "5c18326c9c25ca2f246c540de664605dd756ae8e93ce4c62ae01677f3524f6f1",
+      "state_out_hash": "57979c9d3cbcdc4cf5315ecb2e935281798e32f45bb11417aef8a5cab0236800",
+      "warrant_id": "9781354e698c88263ba5508005ca8f85b5e4adcc4b6b14c6c5d0f5e70e6f1e25",
+      "action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "9781354e698c88263ba5508005ca8f85b5e4adcc4b6b14c6c5d0f5e70e6f1e25",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 4 != 3"
+        }
+      ],
+      "admission_events": [
+        {
+          "event_type": "admission_event",
+          "candidate_id": "e4c3c4762f435ac0ed74b15d649cc92703f9bbf6820c17fba4dccb0a3120d92b",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "e4c3c4762f435ac0ed74b15d649cc92703f9bbf6820c17fba4dccb0a3120d92b",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "e4c3c4762f435ac0ed74b15d649cc92703f9bbf6820c17fba4dccb0a3120d92b",
+          "gate": "scope_claim",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "e4c3c4762f435ac0ed74b15d649cc92703f9bbf6820c17fba4dccb0a3120d92b",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "e4c3c4762f435ac0ed74b15d649cc92703f9bbf6820c17fba4dccb0a3120d92b",
+          "gate": "io_allowlist",
+          "result": "pass"
+        }
+      ],
+      "latency_ms": 0.36129400541540235
+    },
+    {
+      "cycle_index": 5,
+      "cycle_id": "X1-0005",
+      "phase": "propose",
+      "decision_type": "QUEUE_AMENDMENT",
+      "constitution_hash": "b41db3ba5ffe9ed74b40553d0a0cc019de8bd254e78a0e0d9c5ebeb2eeb5a6dd",
+      "state_in_hash": "57979c9d3cbcdc4cf5315ecb2e935281798e32f45bb11417aef8a5cab0236800",
+      "state_out_hash": "7c9c33427ba9b182956c31ed79f8f748ee5842b67073f8f1e6c77c610c76f62c",
+      "amendment_proposed": true,
+      "proposal_id": "448e74d517f2da0f55a04798c2444e5d2220a128a5af4a7b1df0e31407df724b",
+      "amendment_events": [
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "448e74d517f2da0f55a04798c2444e5d2220a128a5af4a7b1df0e31407df724b",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "448e74d517f2da0f55a04798c2444e5d2220a128a5af4a7b1df0e31407df724b",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "448e74d517f2da0f55a04798c2444e5d2220a128a5af4a7b1df0e31407df724b",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "448e74d517f2da0f55a04798c2444e5d2220a128a5af4a7b1df0e31407df724b",
+          "gate": "amendment_authorization",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "448e74d517f2da0f55a04798c2444e5d2220a128a5af4a7b1df0e31407df724b",
+          "gate": "full_replacement_integrity",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "448e74d517f2da0f55a04798c2444e5d2220a128a5af4a7b1df0e31407df724b",
+          "gate": "physics_claim_rejection",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "448e74d517f2da0f55a04798c2444e5d2220a128a5af4a7b1df0e31407df724b",
+          "gate": "structural_preservation",
+          "result": "pass"
+        }
+      ],
+      "latency_ms": 136.02954300586134
+    },
+    {
+      "cycle_index": 6,
+      "cycle_id": "X1-0006",
+      "phase": "cooling",
+      "decision_type": "ACTION",
+      "constitution_hash": "b41db3ba5ffe9ed74b40553d0a0cc019de8bd254e78a0e0d9c5ebeb2eeb5a6dd",
+      "state_in_hash": "7c9c33427ba9b182956c31ed79f8f748ee5842b67073f8f1e6c77c610c76f62c",
+      "state_out_hash": "2b46c123b34b4207810e7e70c4184b4f0b2c0509071d774959f8aac124064a0a",
+      "warrant_id": "83741f726d13257caa2d2d70a3541de120567e4d422746e5824d1c4c8832bf67",
+      "action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "83741f726d13257caa2d2d70a3541de120567e4d422746e5824d1c4c8832bf67",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 6 != 5"
+        }
+      ],
+      "admission_events": [
+        {
+          "event_type": "admission_event",
+          "candidate_id": "957a3d823c58e05592263ea13488f7cae9b2ac6ea4936d7f00922d3a44aee72d",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "957a3d823c58e05592263ea13488f7cae9b2ac6ea4936d7f00922d3a44aee72d",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "957a3d823c58e05592263ea13488f7cae9b2ac6ea4936d7f00922d3a44aee72d",
+          "gate": "scope_claim",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "957a3d823c58e05592263ea13488f7cae9b2ac6ea4936d7f00922d3a44aee72d",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "957a3d823c58e05592263ea13488f7cae9b2ac6ea4936d7f00922d3a44aee72d",
+          "gate": "io_allowlist",
+          "result": "pass"
+        }
+      ],
+      "latency_ms": 0.5181919987080619
+    },
+    {
+      "cycle_index": 7,
+      "cycle_id": "X1-0007",
+      "phase": "cooling",
+      "decision_type": "ADOPT",
+      "constitution_hash": "b41db3ba5ffe9ed74b40553d0a0cc019de8bd254e78a0e0d9c5ebeb2eeb5a6dd",
+      "state_in_hash": "2b46c123b34b4207810e7e70c4184b4f0b2c0509071d774959f8aac124064a0a",
+      "state_out_hash": "505d0caf3934dfb0f523358469f2e57979ace6c9020bc5631ba2ac0ac68451ad",
+      "amendment_adopted": true,
+      "adoption_record_id": "813ca5ead561485bdd38faadef9dfb35d04f346f6218022410fd5b058b9f871f",
+      "new_constitution_hash": "05df3cbd562a8632ccbc7435dd85a273f50a584786b8ff80f4387e5e092dba98",
+      "latency_ms": 0.08153299859259278
+    },
+    {
+      "cycle_index": 8,
+      "cycle_id": "X1-0008",
+      "phase": "adopt",
+      "decision_type": "ACTION",
+      "constitution_hash": "05df3cbd562a8632ccbc7435dd85a273f50a584786b8ff80f4387e5e092dba98",
+      "state_in_hash": "505d0caf3934dfb0f523358469f2e57979ace6c9020bc5631ba2ac0ac68451ad",
+      "state_out_hash": "789cafa0bca9ad08648703880dc909530ef6b892a8edc99add5a6f1b07eacde4",
+      "warrant_id": "fd8519803e7b02ec67a924f93cd122b69f009ad73b5e0a11a230b4ed70a99712",
+      "action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "fd8519803e7b02ec67a924f93cd122b69f009ad73b5e0a11a230b4ed70a99712",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 8 != 7"
+        }
+      ],
+      "admission_events": [
+        {
+          "event_type": "admission_event",
+          "candidate_id": "8c2d8b584addafbd07733831b546df0d2a0a02282dea7361c9d03c78cbc618f4",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "8c2d8b584addafbd07733831b546df0d2a0a02282dea7361c9d03c78cbc618f4",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "8c2d8b584addafbd07733831b546df0d2a0a02282dea7361c9d03c78cbc618f4",
+          "gate": "scope_claim",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "8c2d8b584addafbd07733831b546df0d2a0a02282dea7361c9d03c78cbc618f4",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "8c2d8b584addafbd07733831b546df0d2a0a02282dea7361c9d03c78cbc618f4",
+          "gate": "io_allowlist",
+          "result": "pass"
+        }
+      ],
+      "latency_ms": 0.7271989888977259
+    },
+    {
+      "cycle_index": 9,
+      "cycle_id": "X1-0009",
+      "phase": "post-fork",
+      "decision_type": "ACTION",
+      "constitution_hash": "05df3cbd562a8632ccbc7435dd85a273f50a584786b8ff80f4387e5e092dba98",
+      "state_in_hash": "789cafa0bca9ad08648703880dc909530ef6b892a8edc99add5a6f1b07eacde4",
+      "state_out_hash": "2acba6b9a518302591822805674e2ec5d41f93c39fc48547031150bae8a371ce",
+      "warrant_id": "9fda9df108273029153bb98f227c1342a746b337c1f7f1093e588afe4f9f259e",
+      "action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "9fda9df108273029153bb98f227c1342a746b337c1f7f1093e588afe4f9f259e",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 9 != 8"
+        }
+      ],
+      "admission_events": [
+        {
+          "event_type": "admission_event",
+          "candidate_id": "dceb9af9256352680c9d99e5dcb0f96b40281fc322c5adb698bdf967617ecd18",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "dceb9af9256352680c9d99e5dcb0f96b40281fc322c5adb698bdf967617ecd18",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "dceb9af9256352680c9d99e5dcb0f96b40281fc322c5adb698bdf967617ecd18",
+          "gate": "scope_claim",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "dceb9af9256352680c9d99e5dcb0f96b40281fc322c5adb698bdf967617ecd18",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "dceb9af9256352680c9d99e5dcb0f96b40281fc322c5adb698bdf967617ecd18",
+          "gate": "io_allowlist",
+          "result": "pass"
+        }
+      ],
+      "latency_ms": 0.40303800778929144
+    },
+    {
+      "cycle_index": 10,
+      "cycle_id": "X1-0010",
+      "phase": "post-fork",
+      "decision_type": "ACTION",
+      "constitution_hash": "05df3cbd562a8632ccbc7435dd85a273f50a584786b8ff80f4387e5e092dba98",
+      "state_in_hash": "2acba6b9a518302591822805674e2ec5d41f93c39fc48547031150bae8a371ce",
+      "state_out_hash": "09296db74002a4efa40e2036aa309410d51eac59c6c06b27c9d74a15bb33a306",
+      "warrant_id": "49e56267974d9b1f578bc66c0ce0f987e462a01fd0b48d007b8cb8d5a3ef5bd1",
+      "action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "49e56267974d9b1f578bc66c0ce0f987e462a01fd0b48d007b8cb8d5a3ef5bd1",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 10 != 9"
+        }
+      ],
+      "admission_events": [
+        {
+          "event_type": "admission_event",
+          "candidate_id": "cf166f6b5a3104fd8513b344e3f86b02b622c354aeac421c470056cbb1e3e7ca",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "cf166f6b5a3104fd8513b344e3f86b02b622c354aeac421c470056cbb1e3e7ca",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "cf166f6b5a3104fd8513b344e3f86b02b622c354aeac421c470056cbb1e3e7ca",
+          "gate": "scope_claim",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "cf166f6b5a3104fd8513b344e3f86b02b622c354aeac421c470056cbb1e3e7ca",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "cf166f6b5a3104fd8513b344e3f86b02b622c354aeac421c470056cbb1e3e7ca",
+          "gate": "io_allowlist",
+          "result": "pass"
+        }
+      ],
+      "latency_ms": 0.41967700235545635
+    },
+    {
+      "cycle_index": 11,
+      "cycle_id": "X1-0011",
+      "phase": "post-fork",
+      "decision_type": "ACTION",
+      "constitution_hash": "05df3cbd562a8632ccbc7435dd85a273f50a584786b8ff80f4387e5e092dba98",
+      "state_in_hash": "09296db74002a4efa40e2036aa309410d51eac59c6c06b27c9d74a15bb33a306",
+      "state_out_hash": "d1f15b24cccd3742bafea33d5a991d6a35eac6e94af47b1152c1e01bc95932c9",
+      "warrant_id": "cbc82d1f5dc795354e906bf94ea8d22b13ec92df7f4b4d8088d5b575e0d4c2c5",
+      "action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "cbc82d1f5dc795354e906bf94ea8d22b13ec92df7f4b4d8088d5b575e0d4c2c5",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 11 != 10"
+        }
+      ],
+      "admission_events": [
+        {
+          "event_type": "admission_event",
+          "candidate_id": "e72dffc9232f2e85a2556e721a23eece8ab9f3aff0d9f13296faa5d6283fbe3a",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "e72dffc9232f2e85a2556e721a23eece8ab9f3aff0d9f13296faa5d6283fbe3a",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "e72dffc9232f2e85a2556e721a23eece8ab9f3aff0d9f13296faa5d6283fbe3a",
+          "gate": "scope_claim",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "e72dffc9232f2e85a2556e721a23eece8ab9f3aff0d9f13296faa5d6283fbe3a",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "e72dffc9232f2e85a2556e721a23eece8ab9f3aff0d9f13296faa5d6283fbe3a",
+          "gate": "io_allowlist",
+          "result": "pass"
+        }
+      ],
+      "latency_ms": 0.3613620065152645
+    },
+    {
+      "cycle_index": 12,
+      "cycle_id": "X1-0012",
+      "phase": "post-fork",
+      "decision_type": "ACTION",
+      "constitution_hash": "05df3cbd562a8632ccbc7435dd85a273f50a584786b8ff80f4387e5e092dba98",
+      "state_in_hash": "d1f15b24cccd3742bafea33d5a991d6a35eac6e94af47b1152c1e01bc95932c9",
+      "state_out_hash": "5192027969cbd28884432e1f01d9d914cf25116272c9ea4346fe957b141bcc03",
+      "warrant_id": "9dacadf7b2eb49e25fc228cffb5e5260f1768481a9763a3d5c2c675ec9ff33ba",
+      "action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "9dacadf7b2eb49e25fc228cffb5e5260f1768481a9763a3d5c2c675ec9ff33ba",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 12 != 11"
+        }
+      ],
+      "admission_events": [
+        {
+          "event_type": "admission_event",
+          "candidate_id": "7ed5f36ee8d8f73b764282ea246870a396bda34cb11baee39d56fd856366f7d1",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "7ed5f36ee8d8f73b764282ea246870a396bda34cb11baee39d56fd856366f7d1",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "7ed5f36ee8d8f73b764282ea246870a396bda34cb11baee39d56fd856366f7d1",
+          "gate": "scope_claim",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "7ed5f36ee8d8f73b764282ea246870a396bda34cb11baee39d56fd856366f7d1",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "7ed5f36ee8d8f73b764282ea246870a396bda34cb11baee39d56fd856366f7d1",
+          "gate": "io_allowlist",
+          "result": "pass"
+        }
+      ],
+      "latency_ms": 0.3489099908620119
+    },
+    {
+      "cycle_index": 13,
+      "cycle_id": "X1-0013",
+      "phase": "post-fork",
+      "decision_type": "ACTION",
+      "constitution_hash": "05df3cbd562a8632ccbc7435dd85a273f50a584786b8ff80f4387e5e092dba98",
+      "state_in_hash": "5192027969cbd28884432e1f01d9d914cf25116272c9ea4346fe957b141bcc03",
+      "state_out_hash": "912a417c03538c63d92e0d93cb7061e68865bd6c42c52ae960cc1c8dc96178e9",
+      "warrant_id": "19a9371de1616bb873ac7e6057a11f37def0ecadcf62e7cf29d5873935cf2d41",
+      "action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "19a9371de1616bb873ac7e6057a11f37def0ecadcf62e7cf29d5873935cf2d41",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 13 != 12"
+        }
+      ],
+      "admission_events": [
+        {
+          "event_type": "admission_event",
+          "candidate_id": "96ced8b0d8b8903d1cfc0b407d18da409b54ef60b8c5365061cd15fd74e116fa",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "96ced8b0d8b8903d1cfc0b407d18da409b54ef60b8c5365061cd15fd74e116fa",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "96ced8b0d8b8903d1cfc0b407d18da409b54ef60b8c5365061cd15fd74e116fa",
+          "gate": "scope_claim",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "96ced8b0d8b8903d1cfc0b407d18da409b54ef60b8c5365061cd15fd74e116fa",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "96ced8b0d8b8903d1cfc0b407d18da409b54ef60b8c5365061cd15fd74e116fa",
+          "gate": "io_allowlist",
+          "result": "pass"
+        }
+      ],
+      "latency_ms": 0.7186439906945452
+    },
+    {
+      "cycle_index": 14,
+      "cycle_id": "X1-0014",
+      "phase": "adversarial",
+      "decision_type": "REFUSE",
+      "constitution_hash": "05df3cbd562a8632ccbc7435dd85a273f50a584786b8ff80f4387e5e092dba98",
+      "state_in_hash": "912a417c03538c63d92e0d93cb7061e68865bd6c42c52ae960cc1c8dc96178e9",
+      "state_out_hash": "d59582c078b2620b1342a0b5a0c81510790d324bca3af0d80a203b1656bf4c76",
+      "refusal_reason": "NO_ADMISSIBLE_ACTION",
+      "refusal_gate": "none",
+      "amendment_rejection_code": "SCHEMA_INVALID",
+      "amendment_rejection_gate": "full_replacement_integrity",
+      "amendment_events": [
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "ccbd04fc72120c800ba71e9e1bf89ed90251cecb17ad584b03bcb2da5fcf6e8f",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "ccbd04fc72120c800ba71e9e1bf89ed90251cecb17ad584b03bcb2da5fcf6e8f",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "ccbd04fc72120c800ba71e9e1bf89ed90251cecb17ad584b03bcb2da5fcf6e8f",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "ccbd04fc72120c800ba71e9e1bf89ed90251cecb17ad584b03bcb2da5fcf6e8f",
+          "gate": "amendment_authorization",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "ccbd04fc72120c800ba71e9e1bf89ed90251cecb17ad584b03bcb2da5fcf6e8f",
+          "gate": "full_replacement_integrity",
+          "result": "fail",
+          "reason_code": "SCHEMA_INVALID",
+          "detail": "schema validation failed: '0.2.X-A1' does not match '^[0-9]+\\\\.[0-9]+(\\\\.[0-9]+)?$'"
+        }
+      ],
+      "latency_ms": 65.94388499797788
+    },
+    {
+      "cycle_index": 15,
+      "cycle_id": "X1-0015",
+      "phase": "adversarial",
+      "decision_type": "REFUSE",
+      "constitution_hash": "05df3cbd562a8632ccbc7435dd85a273f50a584786b8ff80f4387e5e092dba98",
+      "state_in_hash": "d59582c078b2620b1342a0b5a0c81510790d324bca3af0d80a203b1656bf4c76",
+      "state_out_hash": "d2a8455c82d4a7aa3c4ffea528b6599f1f9c0cb457db2f6c90214604c18ea530",
+      "refusal_reason": "NO_ADMISSIBLE_ACTION",
+      "refusal_gate": "none",
+      "amendment_rejection_code": "SCHEMA_INVALID",
+      "amendment_rejection_gate": "full_replacement_integrity",
+      "amendment_events": [
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "535671a63fd7f042c0af537625a1ff0537c0a81ccffc9fc248247aff790c3704",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "535671a63fd7f042c0af537625a1ff0537c0a81ccffc9fc248247aff790c3704",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "535671a63fd7f042c0af537625a1ff0537c0a81ccffc9fc248247aff790c3704",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "535671a63fd7f042c0af537625a1ff0537c0a81ccffc9fc248247aff790c3704",
+          "gate": "amendment_authorization",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "535671a63fd7f042c0af537625a1ff0537c0a81ccffc9fc248247aff790c3704",
+          "gate": "full_replacement_integrity",
+          "result": "fail",
+          "reason_code": "SCHEMA_INVALID",
+          "detail": "schema validation failed: '0.2.X-A2' does not match '^[0-9]+\\\\.[0-9]+(\\\\.[0-9]+)?$'"
+        }
+      ],
+      "latency_ms": 64.18219099577982
+    },
+    {
+      "cycle_index": 16,
+      "cycle_id": "X1-0016",
+      "phase": "adversarial",
+      "decision_type": "REFUSE",
+      "constitution_hash": "05df3cbd562a8632ccbc7435dd85a273f50a584786b8ff80f4387e5e092dba98",
+      "state_in_hash": "d2a8455c82d4a7aa3c4ffea528b6599f1f9c0cb457db2f6c90214604c18ea530",
+      "state_out_hash": "55f98ba5d3cff742e668d120e1826a673a5639522deb2c43170aedaf74f1c3d5",
+      "refusal_reason": "NO_ADMISSIBLE_ACTION",
+      "refusal_gate": "none",
+      "amendment_rejection_code": "SCHEMA_INVALID",
+      "amendment_rejection_gate": "full_replacement_integrity",
+      "amendment_events": [
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "0e9919b622b5cbd68d73a39bf5a0981068c8f2d279246c1b80249a042f33df7a",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "0e9919b622b5cbd68d73a39bf5a0981068c8f2d279246c1b80249a042f33df7a",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "0e9919b622b5cbd68d73a39bf5a0981068c8f2d279246c1b80249a042f33df7a",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "0e9919b622b5cbd68d73a39bf5a0981068c8f2d279246c1b80249a042f33df7a",
+          "gate": "amendment_authorization",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "0e9919b622b5cbd68d73a39bf5a0981068c8f2d279246c1b80249a042f33df7a",
+          "gate": "full_replacement_integrity",
+          "result": "fail",
+          "reason_code": "SCHEMA_INVALID",
+          "detail": "schema validation failed: '0.2.X-A3' does not match '^[0-9]+\\\\.[0-9]+(\\\\.[0-9]+)?$'"
+        }
+      ],
+      "latency_ms": 65.8685369999148
+    },
+    {
+      "cycle_index": 17,
+      "cycle_id": "X1-0017",
+      "phase": "adversarial",
+      "decision_type": "REFUSE",
+      "constitution_hash": "05df3cbd562a8632ccbc7435dd85a273f50a584786b8ff80f4387e5e092dba98",
+      "state_in_hash": "55f98ba5d3cff742e668d120e1826a673a5639522deb2c43170aedaf74f1c3d5",
+      "state_out_hash": "39366171a791ca749c4ae22e947c61e6c7b9f35fbedb62111a7c02b6b5698de6",
+      "refusal_reason": "NO_ADMISSIBLE_ACTION",
+      "refusal_gate": "none",
+      "amendment_rejection_code": "SCHEMA_INVALID",
+      "amendment_rejection_gate": "full_replacement_integrity",
+      "amendment_events": [
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "edfdf759635f309a9f83dfa827dcca3d83467682359ed608832aa1253669836e",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "edfdf759635f309a9f83dfa827dcca3d83467682359ed608832aa1253669836e",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "edfdf759635f309a9f83dfa827dcca3d83467682359ed608832aa1253669836e",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "edfdf759635f309a9f83dfa827dcca3d83467682359ed608832aa1253669836e",
+          "gate": "amendment_authorization",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "edfdf759635f309a9f83dfa827dcca3d83467682359ed608832aa1253669836e",
+          "gate": "full_replacement_integrity",
+          "result": "fail",
+          "reason_code": "SCHEMA_INVALID",
+          "detail": "schema validation failed: '0.2.X-A4' does not match '^[0-9]+\\\\.[0-9]+(\\\\.[0-9]+)?$'"
+        }
+      ],
+      "latency_ms": 65.89502199494746
+    },
+    {
+      "cycle_index": 18,
+      "cycle_id": "X1-0018",
+      "phase": "adversarial",
+      "decision_type": "REFUSE",
+      "constitution_hash": "05df3cbd562a8632ccbc7435dd85a273f50a584786b8ff80f4387e5e092dba98",
+      "state_in_hash": "39366171a791ca749c4ae22e947c61e6c7b9f35fbedb62111a7c02b6b5698de6",
+      "state_out_hash": "1cbb5f8c51e22341b07f5a040129fd6ef98e93e8efc3c56aa226b294761db80d",
+      "refusal_reason": "NO_ADMISSIBLE_ACTION",
+      "refusal_gate": "none",
+      "amendment_rejection_code": "SCHEMA_INVALID",
+      "amendment_rejection_gate": "full_replacement_integrity",
+      "amendment_events": [
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "33bcc3405b5dbea1a7b5fd9df8b2875613e48243449fa1428fa1e204b593c6af",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "33bcc3405b5dbea1a7b5fd9df8b2875613e48243449fa1428fa1e204b593c6af",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "33bcc3405b5dbea1a7b5fd9df8b2875613e48243449fa1428fa1e204b593c6af",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "33bcc3405b5dbea1a7b5fd9df8b2875613e48243449fa1428fa1e204b593c6af",
+          "gate": "amendment_authorization",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "33bcc3405b5dbea1a7b5fd9df8b2875613e48243449fa1428fa1e204b593c6af",
+          "gate": "full_replacement_integrity",
+          "result": "fail",
+          "reason_code": "SCHEMA_INVALID",
+          "detail": "schema validation failed: '0.2.X-A5' does not match '^[0-9]+\\\\.[0-9]+(\\\\.[0-9]+)?$'"
+        }
+      ],
+      "latency_ms": 67.09782600228209
+    },
+    {
+      "cycle_index": 19,
+      "cycle_id": "X1-0019",
+      "phase": "adversarial",
+      "decision_type": "REFUSE",
+      "constitution_hash": "05df3cbd562a8632ccbc7435dd85a273f50a584786b8ff80f4387e5e092dba98",
+      "state_in_hash": "1cbb5f8c51e22341b07f5a040129fd6ef98e93e8efc3c56aa226b294761db80d",
+      "state_out_hash": "2b893b5fc4c4f56ed747e20474fc3700bec34279cbe83e2c26c1d173b653b836",
+      "refusal_reason": "NO_ADMISSIBLE_ACTION",
+      "refusal_gate": "none",
+      "amendment_rejection_code": "SCHEMA_INVALID",
+      "amendment_rejection_gate": "full_replacement_integrity",
+      "amendment_events": [
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "572ea2059f9a44dc1f577d5c88ca14c3e6e49bf678059f3c310e8d44f44f71bd",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "572ea2059f9a44dc1f577d5c88ca14c3e6e49bf678059f3c310e8d44f44f71bd",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "572ea2059f9a44dc1f577d5c88ca14c3e6e49bf678059f3c310e8d44f44f71bd",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "572ea2059f9a44dc1f577d5c88ca14c3e6e49bf678059f3c310e8d44f44f71bd",
+          "gate": "amendment_authorization",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "572ea2059f9a44dc1f577d5c88ca14c3e6e49bf678059f3c310e8d44f44f71bd",
+          "gate": "full_replacement_integrity",
+          "result": "fail",
+          "reason_code": "SCHEMA_INVALID",
+          "detail": "schema validation failed: Additional properties are not allowed ('kernel_hooks' was unexpected)"
+        }
+      ],
+      "latency_ms": 64.77098699542694
+    },
+    {
+      "cycle_index": 20,
+      "cycle_id": "X1-0020",
+      "phase": "adversarial",
+      "decision_type": "REFUSE",
+      "constitution_hash": "05df3cbd562a8632ccbc7435dd85a273f50a584786b8ff80f4387e5e092dba98",
+      "state_in_hash": "2b893b5fc4c4f56ed747e20474fc3700bec34279cbe83e2c26c1d173b653b836",
+      "state_out_hash": "70bb142116ddf54c3d74346a77b2699559cf4038b30c96ae0bd77c13848d18af",
+      "refusal_reason": "NO_ADMISSIBLE_ACTION",
+      "refusal_gate": "none",
+      "amendment_rejection_code": "SCHEMA_INVALID",
+      "amendment_rejection_gate": "full_replacement_integrity",
+      "amendment_events": [
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "90f1e253b7b874040ade98e14d2200c99dd787453f92d2d26f7cfdd9b60e2c3a",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "90f1e253b7b874040ade98e14d2200c99dd787453f92d2d26f7cfdd9b60e2c3a",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "90f1e253b7b874040ade98e14d2200c99dd787453f92d2d26f7cfdd9b60e2c3a",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "90f1e253b7b874040ade98e14d2200c99dd787453f92d2d26f7cfdd9b60e2c3a",
+          "gate": "amendment_authorization",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "90f1e253b7b874040ade98e14d2200c99dd787453f92d2d26f7cfdd9b60e2c3a",
+          "gate": "full_replacement_integrity",
+          "result": "fail",
+          "reason_code": "SCHEMA_INVALID",
+          "detail": "schema validation failed: 'ScopeSystem' is a required property"
+        }
+      ],
+      "latency_ms": 60.51418599963654
+    },
+    {
+      "cycle_index": 21,
+      "cycle_id": "X1-0021",
+      "phase": "chain-propose",
+      "decision_type": "QUEUE_AMENDMENT",
+      "constitution_hash": "05df3cbd562a8632ccbc7435dd85a273f50a584786b8ff80f4387e5e092dba98",
+      "state_in_hash": "70bb142116ddf54c3d74346a77b2699559cf4038b30c96ae0bd77c13848d18af",
+      "state_out_hash": "dd10123272564210f0f9b6dbae7cd809ba2a443df74b8cabdd6e47ce816d2a99",
+      "amendment_proposed": true,
+      "proposal_id": "2e0180ecd6b8b417023328277ec8e6c6e75cce62d5731034b965ceadbf44ca8c",
+      "amendment_events": [
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "2e0180ecd6b8b417023328277ec8e6c6e75cce62d5731034b965ceadbf44ca8c",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "2e0180ecd6b8b417023328277ec8e6c6e75cce62d5731034b965ceadbf44ca8c",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "2e0180ecd6b8b417023328277ec8e6c6e75cce62d5731034b965ceadbf44ca8c",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "2e0180ecd6b8b417023328277ec8e6c6e75cce62d5731034b965ceadbf44ca8c",
+          "gate": "amendment_authorization",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "2e0180ecd6b8b417023328277ec8e6c6e75cce62d5731034b965ceadbf44ca8c",
+          "gate": "full_replacement_integrity",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "2e0180ecd6b8b417023328277ec8e6c6e75cce62d5731034b965ceadbf44ca8c",
+          "gate": "physics_claim_rejection",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "2e0180ecd6b8b417023328277ec8e6c6e75cce62d5731034b965ceadbf44ca8c",
+          "gate": "structural_preservation",
+          "result": "pass"
+        }
+      ],
+      "latency_ms": 135.21738300914876
+    },
+    {
+      "cycle_index": 22,
+      "cycle_id": "X1-0022",
+      "phase": "chain-cooling",
+      "decision_type": "ACTION",
+      "constitution_hash": "05df3cbd562a8632ccbc7435dd85a273f50a584786b8ff80f4387e5e092dba98",
+      "state_in_hash": "dd10123272564210f0f9b6dbae7cd809ba2a443df74b8cabdd6e47ce816d2a99",
+      "state_out_hash": "3d09233d1440b4ad447f83359f6189acc16ea17590838deb25bb41382b79ed93",
+      "warrant_id": "81771b05821ddf5c143cdfdca419380791da70d4645032f01eaeb8330a0fb6fe",
+      "action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "81771b05821ddf5c143cdfdca419380791da70d4645032f01eaeb8330a0fb6fe",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 22 != 21"
+        }
+      ],
+      "admission_events": [
+        {
+          "event_type": "admission_event",
+          "candidate_id": "192d2d2af0b7e2e27e94eb07bf01d693110381bf8a338cd232114496db848b81",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "192d2d2af0b7e2e27e94eb07bf01d693110381bf8a338cd232114496db848b81",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "192d2d2af0b7e2e27e94eb07bf01d693110381bf8a338cd232114496db848b81",
+          "gate": "scope_claim",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "192d2d2af0b7e2e27e94eb07bf01d693110381bf8a338cd232114496db848b81",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "192d2d2af0b7e2e27e94eb07bf01d693110381bf8a338cd232114496db848b81",
+          "gate": "io_allowlist",
+          "result": "pass"
+        }
+      ],
+      "latency_ms": 0.49760600086301565
+    },
+    {
+      "cycle_index": 23,
+      "cycle_id": "X1-0023",
+      "phase": "chain-cooling",
+      "decision_type": "ADOPT",
+      "constitution_hash": "05df3cbd562a8632ccbc7435dd85a273f50a584786b8ff80f4387e5e092dba98",
+      "state_in_hash": "3d09233d1440b4ad447f83359f6189acc16ea17590838deb25bb41382b79ed93",
+      "state_out_hash": "d56708bf755ba4174d1da2aa036537186a8e2b547d7ad90ca3a78d3a197ea0f2",
+      "amendment_adopted": true,
+      "adoption_record_id": "df666db0090a40338d145f3a481ca2788a6cde31f0ae4bee65c8ca3c2bb92654",
+      "new_constitution_hash": "7729594a9e7792831ea8c5cc6edcaad7df4fbdd06a77803ae21b3b413909c88a",
+      "latency_ms": 0.07333399844355881
+    },
+    {
+      "cycle_index": 24,
+      "cycle_id": "X1-0024",
+      "phase": "chain-adopt",
+      "decision_type": "ACTION",
+      "constitution_hash": "7729594a9e7792831ea8c5cc6edcaad7df4fbdd06a77803ae21b3b413909c88a",
+      "state_in_hash": "d56708bf755ba4174d1da2aa036537186a8e2b547d7ad90ca3a78d3a197ea0f2",
+      "state_out_hash": "53afe08b6dbc093cb4ab8dd79052a97f1f72da1ea2695e221405b3c89c2c7e6d",
+      "warrant_id": "a532aca61be1016f6b8e0363dcb24cba85edb0300855b4f79a1b53f066ac21e6",
+      "action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "a532aca61be1016f6b8e0363dcb24cba85edb0300855b4f79a1b53f066ac21e6",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 24 != 23"
+        }
+      ],
+      "admission_events": [
+        {
+          "event_type": "admission_event",
+          "candidate_id": "cdc56e0f5e9ed939d9561698d902f271316c92c59f93a7676570ad77a17858a1",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "cdc56e0f5e9ed939d9561698d902f271316c92c59f93a7676570ad77a17858a1",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "cdc56e0f5e9ed939d9561698d902f271316c92c59f93a7676570ad77a17858a1",
+          "gate": "scope_claim",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "cdc56e0f5e9ed939d9561698d902f271316c92c59f93a7676570ad77a17858a1",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "cdc56e0f5e9ed939d9561698d902f271316c92c59f93a7676570ad77a17858a1",
+          "gate": "io_allowlist",
+          "result": "pass"
+        }
+      ],
+      "latency_ms": 0.609711991273798
+    },
+    {
+      "cycle_index": 25,
+      "cycle_id": "X1-0025",
+      "phase": "chain-propose",
+      "decision_type": "QUEUE_AMENDMENT",
+      "constitution_hash": "7729594a9e7792831ea8c5cc6edcaad7df4fbdd06a77803ae21b3b413909c88a",
+      "state_in_hash": "53afe08b6dbc093cb4ab8dd79052a97f1f72da1ea2695e221405b3c89c2c7e6d",
+      "state_out_hash": "673c0d2ed21703d52dba16a282d08df8affa952bc91ea9b99a5ebb25c4be7cbb",
+      "amendment_proposed": true,
+      "proposal_id": "e11b1101f9b0b996de26d4c668a455f9ce4ad92b7fe993cc9bfeb9d6c8b1d515",
+      "amendment_events": [
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "e11b1101f9b0b996de26d4c668a455f9ce4ad92b7fe993cc9bfeb9d6c8b1d515",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "e11b1101f9b0b996de26d4c668a455f9ce4ad92b7fe993cc9bfeb9d6c8b1d515",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "e11b1101f9b0b996de26d4c668a455f9ce4ad92b7fe993cc9bfeb9d6c8b1d515",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "e11b1101f9b0b996de26d4c668a455f9ce4ad92b7fe993cc9bfeb9d6c8b1d515",
+          "gate": "amendment_authorization",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "e11b1101f9b0b996de26d4c668a455f9ce4ad92b7fe993cc9bfeb9d6c8b1d515",
+          "gate": "full_replacement_integrity",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "e11b1101f9b0b996de26d4c668a455f9ce4ad92b7fe993cc9bfeb9d6c8b1d515",
+          "gate": "physics_claim_rejection",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "e11b1101f9b0b996de26d4c668a455f9ce4ad92b7fe993cc9bfeb9d6c8b1d515",
+          "gate": "structural_preservation",
+          "result": "pass"
+        }
+      ],
+      "latency_ms": 145.92164399800822
+    },
+    {
+      "cycle_index": 26,
+      "cycle_id": "X1-0026",
+      "phase": "chain-cooling",
+      "decision_type": "ACTION",
+      "constitution_hash": "7729594a9e7792831ea8c5cc6edcaad7df4fbdd06a77803ae21b3b413909c88a",
+      "state_in_hash": "673c0d2ed21703d52dba16a282d08df8affa952bc91ea9b99a5ebb25c4be7cbb",
+      "state_out_hash": "4a5844627dc8c7bddbfb4e15ec404a6a776b87e05966b81c1369b551648ac5df",
+      "warrant_id": "1f9b9cdf62186aa38d46b41fc0993bd3b97fd9bd6cf7c9df2bdb31dcc39407b4",
+      "action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "1f9b9cdf62186aa38d46b41fc0993bd3b97fd9bd6cf7c9df2bdb31dcc39407b4",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 26 != 25"
+        }
+      ],
+      "admission_events": [
+        {
+          "event_type": "admission_event",
+          "candidate_id": "c365fbd7adc99b1e4ac9e28a82060eaae432fd3de673c628255043c28b82ed1b",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "c365fbd7adc99b1e4ac9e28a82060eaae432fd3de673c628255043c28b82ed1b",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "c365fbd7adc99b1e4ac9e28a82060eaae432fd3de673c628255043c28b82ed1b",
+          "gate": "scope_claim",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "c365fbd7adc99b1e4ac9e28a82060eaae432fd3de673c628255043c28b82ed1b",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "c365fbd7adc99b1e4ac9e28a82060eaae432fd3de673c628255043c28b82ed1b",
+          "gate": "io_allowlist",
+          "result": "pass"
+        }
+      ],
+      "latency_ms": 0.5159720021765679
+    },
+    {
+      "cycle_index": 27,
+      "cycle_id": "X1-0027",
+      "phase": "chain-cooling",
+      "decision_type": "ACTION",
+      "constitution_hash": "7729594a9e7792831ea8c5cc6edcaad7df4fbdd06a77803ae21b3b413909c88a",
+      "state_in_hash": "4a5844627dc8c7bddbfb4e15ec404a6a776b87e05966b81c1369b551648ac5df",
+      "state_out_hash": "fceb77cdd71d8842a4e68f5b50881751eb9d5c4ed4842665b3bdfe0e825061f8",
+      "warrant_id": "e2397a9fa50da4ff4d046118238b02109719e815212849df0c8f0d23717b738d",
+      "action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "e2397a9fa50da4ff4d046118238b02109719e815212849df0c8f0d23717b738d",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 27 != 26"
+        }
+      ],
+      "admission_events": [
+        {
+          "event_type": "admission_event",
+          "candidate_id": "d7a1578c38421cd2d1b4f45322183a316671bb72f93ca06ec0a65fdf530824c8",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "d7a1578c38421cd2d1b4f45322183a316671bb72f93ca06ec0a65fdf530824c8",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "d7a1578c38421cd2d1b4f45322183a316671bb72f93ca06ec0a65fdf530824c8",
+          "gate": "scope_claim",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "d7a1578c38421cd2d1b4f45322183a316671bb72f93ca06ec0a65fdf530824c8",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "d7a1578c38421cd2d1b4f45322183a316671bb72f93ca06ec0a65fdf530824c8",
+          "gate": "io_allowlist",
+          "result": "pass"
+        }
+      ],
+      "latency_ms": 0.7302119920495898
+    },
+    {
+      "cycle_index": 28,
+      "cycle_id": "X1-0028",
+      "phase": "chain-cooling",
+      "decision_type": "ADOPT",
+      "constitution_hash": "7729594a9e7792831ea8c5cc6edcaad7df4fbdd06a77803ae21b3b413909c88a",
+      "state_in_hash": "fceb77cdd71d8842a4e68f5b50881751eb9d5c4ed4842665b3bdfe0e825061f8",
+      "state_out_hash": "efb16673316a7c16dd81ced554015956ca8a41e8effaac359df53e0939130f43",
+      "amendment_adopted": true,
+      "adoption_record_id": "6092a6a88126ebd5fe38743d3a0ed52dc3619fb1583369650daa8ff6adde26df",
+      "new_constitution_hash": "965603eebaad2a0fb0d32bfb796d806edb62b548cefd833f562edc38d1c85f05",
+      "latency_ms": 0.12739200610667467
+    },
+    {
+      "cycle_index": 29,
+      "cycle_id": "X1-0029",
+      "phase": "chain-adopt",
+      "decision_type": "ACTION",
+      "constitution_hash": "965603eebaad2a0fb0d32bfb796d806edb62b548cefd833f562edc38d1c85f05",
+      "state_in_hash": "efb16673316a7c16dd81ced554015956ca8a41e8effaac359df53e0939130f43",
+      "state_out_hash": "9b2b68470c9fd034462b49eab666342059efc0250da1e91ba49f3f365cf939e2",
+      "warrant_id": "488b8a339da6ce3cf6ab23a4202266496d9acac9334f5a417f56a6d4993fc9cf",
+      "action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "488b8a339da6ce3cf6ab23a4202266496d9acac9334f5a417f56a6d4993fc9cf",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 29 != 28"
+        }
+      ],
+      "admission_events": [
+        {
+          "event_type": "admission_event",
+          "candidate_id": "019409535ab7bfdc43a284870d6b306a69d8b1037781d5044410cfdfe9da01ba",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "019409535ab7bfdc43a284870d6b306a69d8b1037781d5044410cfdfe9da01ba",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "019409535ab7bfdc43a284870d6b306a69d8b1037781d5044410cfdfe9da01ba",
+          "gate": "scope_claim",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "019409535ab7bfdc43a284870d6b306a69d8b1037781d5044410cfdfe9da01ba",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "019409535ab7bfdc43a284870d6b306a69d8b1037781d5044410cfdfe9da01ba",
+          "gate": "io_allowlist",
+          "result": "pass"
+        }
+      ],
+      "latency_ms": 0.5264970095595345
+    },
+    {
+      "cycle_index": 30,
+      "cycle_id": "X1-0030",
+      "phase": "chain-propose",
+      "decision_type": "QUEUE_AMENDMENT",
+      "constitution_hash": "965603eebaad2a0fb0d32bfb796d806edb62b548cefd833f562edc38d1c85f05",
+      "state_in_hash": "9b2b68470c9fd034462b49eab666342059efc0250da1e91ba49f3f365cf939e2",
+      "state_out_hash": "55a48723ef7e7670a75d3c38ce0ca7029baaf364ac2485174322897f62fc54de",
+      "amendment_proposed": true,
+      "proposal_id": "7fccd6bfc11d1971c8f329b96c1322705f08c0f7ec3670dabee9b01edfb78120",
+      "amendment_events": [
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "7fccd6bfc11d1971c8f329b96c1322705f08c0f7ec3670dabee9b01edfb78120",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "7fccd6bfc11d1971c8f329b96c1322705f08c0f7ec3670dabee9b01edfb78120",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "7fccd6bfc11d1971c8f329b96c1322705f08c0f7ec3670dabee9b01edfb78120",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "7fccd6bfc11d1971c8f329b96c1322705f08c0f7ec3670dabee9b01edfb78120",
+          "gate": "amendment_authorization",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "7fccd6bfc11d1971c8f329b96c1322705f08c0f7ec3670dabee9b01edfb78120",
+          "gate": "full_replacement_integrity",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "7fccd6bfc11d1971c8f329b96c1322705f08c0f7ec3670dabee9b01edfb78120",
+          "gate": "physics_claim_rejection",
+          "result": "pass"
+        },
+        {
+          "event_type": "amendment_admission_event",
+          "proposal_id": "7fccd6bfc11d1971c8f329b96c1322705f08c0f7ec3670dabee9b01edfb78120",
+          "gate": "structural_preservation",
+          "result": "pass"
+        }
+      ],
+      "latency_ms": 154.25408900773618
+    },
+    {
+      "cycle_index": 31,
+      "cycle_id": "X1-0031",
+      "phase": "chain-cooling",
+      "decision_type": "ACTION",
+      "constitution_hash": "965603eebaad2a0fb0d32bfb796d806edb62b548cefd833f562edc38d1c85f05",
+      "state_in_hash": "55a48723ef7e7670a75d3c38ce0ca7029baaf364ac2485174322897f62fc54de",
+      "state_out_hash": "6041858e27ec4384223d76aac3936b42ead3c184be6c2dd496f64ae29e8ad362",
+      "warrant_id": "285e576be58d113278ba72be7d1b6fd43f0246ce884d12aa27f28d54b1ff5cfa",
+      "action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "285e576be58d113278ba72be7d1b6fd43f0246ce884d12aa27f28d54b1ff5cfa",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 31 != 30"
+        }
+      ],
+      "admission_events": [
+        {
+          "event_type": "admission_event",
+          "candidate_id": "a2d191f8a64d270e1d1ab137a87e8050c9192db5fa1f1b15160d7072bd48d794",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "a2d191f8a64d270e1d1ab137a87e8050c9192db5fa1f1b15160d7072bd48d794",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "a2d191f8a64d270e1d1ab137a87e8050c9192db5fa1f1b15160d7072bd48d794",
+          "gate": "scope_claim",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "a2d191f8a64d270e1d1ab137a87e8050c9192db5fa1f1b15160d7072bd48d794",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "a2d191f8a64d270e1d1ab137a87e8050c9192db5fa1f1b15160d7072bd48d794",
+          "gate": "io_allowlist",
+          "result": "pass"
+        }
+      ],
+      "latency_ms": 0.612585005001165
+    },
+    {
+      "cycle_index": 32,
+      "cycle_id": "X1-0032",
+      "phase": "chain-cooling",
+      "decision_type": "ACTION",
+      "constitution_hash": "965603eebaad2a0fb0d32bfb796d806edb62b548cefd833f562edc38d1c85f05",
+      "state_in_hash": "6041858e27ec4384223d76aac3936b42ead3c184be6c2dd496f64ae29e8ad362",
+      "state_out_hash": "47abf7b6a30212e0f3156b654cfafdd6b93e4367ab2a02fe045a2a09608eab22",
+      "warrant_id": "156d31e7c44f8c2b109caa1ce04481dd8d94449ca1fb03ff0f3dd25d9a0ca76e",
+      "action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "156d31e7c44f8c2b109caa1ce04481dd8d94449ca1fb03ff0f3dd25d9a0ca76e",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 32 != 31"
+        }
+      ],
+      "admission_events": [
+        {
+          "event_type": "admission_event",
+          "candidate_id": "974ef468af2164dca9933d90e129cf267cf6538b93d1913c50206ade4918ab2d",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "974ef468af2164dca9933d90e129cf267cf6538b93d1913c50206ade4918ab2d",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "974ef468af2164dca9933d90e129cf267cf6538b93d1913c50206ade4918ab2d",
+          "gate": "scope_claim",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "974ef468af2164dca9933d90e129cf267cf6538b93d1913c50206ade4918ab2d",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "974ef468af2164dca9933d90e129cf267cf6538b93d1913c50206ade4918ab2d",
+          "gate": "io_allowlist",
+          "result": "pass"
+        }
+      ],
+      "latency_ms": 0.37776899989694357
+    },
+    {
+      "cycle_index": 33,
+      "cycle_id": "X1-0033",
+      "phase": "chain-cooling",
+      "decision_type": "ACTION",
+      "constitution_hash": "965603eebaad2a0fb0d32bfb796d806edb62b548cefd833f562edc38d1c85f05",
+      "state_in_hash": "47abf7b6a30212e0f3156b654cfafdd6b93e4367ab2a02fe045a2a09608eab22",
+      "state_out_hash": "98d5ae16c63304ed663ba9bd1ffec7f3994f47afa44471c5364dec9250652241",
+      "warrant_id": "5af5b8350122e84a4f3b18fcf3fa3274d8d502291720c32ec3cdc784bd524e33",
+      "action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "5af5b8350122e84a4f3b18fcf3fa3274d8d502291720c32ec3cdc784bd524e33",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 33 != 32"
+        }
+      ],
+      "admission_events": [
+        {
+          "event_type": "admission_event",
+          "candidate_id": "689a1c0e55a0f3d182bde801beec10600865edb86a88701a4260c66f60a047ae",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "689a1c0e55a0f3d182bde801beec10600865edb86a88701a4260c66f60a047ae",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "689a1c0e55a0f3d182bde801beec10600865edb86a88701a4260c66f60a047ae",
+          "gate": "scope_claim",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "689a1c0e55a0f3d182bde801beec10600865edb86a88701a4260c66f60a047ae",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "689a1c0e55a0f3d182bde801beec10600865edb86a88701a4260c66f60a047ae",
+          "gate": "io_allowlist",
+          "result": "pass"
+        }
+      ],
+      "latency_ms": 0.5085129960207269
+    },
+    {
+      "cycle_index": 34,
+      "cycle_id": "X1-0034",
+      "phase": "chain-cooling",
+      "decision_type": "ADOPT",
+      "constitution_hash": "965603eebaad2a0fb0d32bfb796d806edb62b548cefd833f562edc38d1c85f05",
+      "state_in_hash": "98d5ae16c63304ed663ba9bd1ffec7f3994f47afa44471c5364dec9250652241",
+      "state_out_hash": "a7bde993b81098c85c1970da2943fd549e970b91bf2218d568fe2c0f0df5d333",
+      "amendment_adopted": true,
+      "adoption_record_id": "980d20748c9bc65f1c727a74fe8272a9db37bb4052812e90524b05b13eccd342",
+      "new_constitution_hash": "e44ac6dfb912edc7c0d8bf0527a79a6237ab9bab2432a6bc543c0639d7b27781",
+      "latency_ms": 0.0794829975347966
+    },
+    {
+      "cycle_index": 35,
+      "cycle_id": "X1-0035",
+      "phase": "chain-adopt",
+      "decision_type": "ACTION",
+      "constitution_hash": "e44ac6dfb912edc7c0d8bf0527a79a6237ab9bab2432a6bc543c0639d7b27781",
+      "state_in_hash": "a7bde993b81098c85c1970da2943fd549e970b91bf2218d568fe2c0f0df5d333",
+      "state_out_hash": "9a3f34519a6fa776582d2889197619738ee2ed896b341d5ac3b12d24b13360c6",
+      "warrant_id": "587d9177091df9d0e678cc852965578144c10bea33c49f84b002b82138f29a20",
+      "action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "587d9177091df9d0e678cc852965578144c10bea33c49f84b002b82138f29a20",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 35 != 34"
+        }
+      ],
+      "admission_events": [
+        {
+          "event_type": "admission_event",
+          "candidate_id": "3bafec75cb850bd0be88f471fc456118db5978a869a27a3ef9eed456ea495c2d",
+          "gate": "completeness",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "3bafec75cb850bd0be88f471fc456118db5978a869a27a3ef9eed456ea495c2d",
+          "gate": "authority_citation",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "3bafec75cb850bd0be88f471fc456118db5978a869a27a3ef9eed456ea495c2d",
+          "gate": "scope_claim",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "3bafec75cb850bd0be88f471fc456118db5978a869a27a3ef9eed456ea495c2d",
+          "gate": "constitution_compliance",
+          "result": "pass"
+        },
+        {
+          "event_type": "admission_event",
+          "candidate_id": "3bafec75cb850bd0be88f471fc456118db5978a869a27a3ef9eed456ea495c2d",
+          "gate": "io_allowlist",
+          "result": "pass"
+        }
+      ],
+      "latency_ms": 0.5881190008949488
+    }
+  ]
+}
