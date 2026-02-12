@@ -951,3 +951,219 @@ class TestHostSovereigntyBoundary:
         # It constructs — but policy_core should still respond to the event
         # regardless of author. The trust boundary is at the host, not kernel.
         assert user_obs.author == Author.USER.value
+
+
+# ---------------------------------------------------------------------------
+# Test 14 (Erratum X.E1): Deterministic clock
+# ---------------------------------------------------------------------------
+
+class TestDeterministicClock:
+    """
+    Erratum X.E1: All kernel-created artifacts must use deterministic time
+    derived from the TIMESTAMP observation, not wall-clock.
+    """
+
+    def test_same_inputs_same_warrant_hash(
+        self, constitution, repo_root, state_cycle_0,
+    ):
+        """
+        Identical inputs on two separate calls must produce identical
+        warrant hashes and IDs — proving no wall-clock dependency.
+        """
+        obs = _base_observations()
+        candidate = _valid_notify_candidate(obs)
+
+        output1 = policy_core(
+            observations=obs, constitution=constitution,
+            internal_state=state_cycle_0, candidates=[candidate],
+            repo_root=repo_root,
+        )
+        output2 = policy_core(
+            observations=obs, constitution=constitution,
+            internal_state=state_cycle_0, candidates=[candidate],
+            repo_root=repo_root,
+        )
+
+        assert output1.decision.decision_type == DecisionType.ACTION.value
+        assert output2.decision.decision_type == DecisionType.ACTION.value
+        assert output1.decision.warrant.warrant_id == output2.decision.warrant.warrant_id
+        assert output1.decision.warrant.created_at == output2.decision.warrant.created_at
+        assert output1.decision.warrant.created_at == "2026-02-10T00:00:00Z"
+
+    def test_different_timestamp_different_warrant_id(
+        self, constitution, repo_root, state_cycle_0,
+    ):
+        """
+        Different TIMESTAMP observation → different warrant created_at
+        and therefore different warrant_id.
+        """
+        obs_t1 = [
+            Observation(
+                kind=ObservationKind.USER_INPUT.value,
+                payload={"text": "test", "source": "cli"},
+                author=Author.USER.value,
+            ),
+            Observation(
+                kind=ObservationKind.TIMESTAMP.value,
+                payload={"iso8601_utc": "2026-02-10T00:00:00Z"},
+                author=Author.HOST.value,
+            ),
+            Observation(
+                kind=ObservationKind.BUDGET.value,
+                payload={"llm_output_token_count": 100, "llm_candidates_reported": 1, "llm_parse_errors": 0},
+                author=Author.HOST.value,
+            ),
+        ]
+        obs_t2 = [
+            Observation(
+                kind=ObservationKind.USER_INPUT.value,
+                payload={"text": "test", "source": "cli"},
+                author=Author.USER.value,
+            ),
+            Observation(
+                kind=ObservationKind.TIMESTAMP.value,
+                payload={"iso8601_utc": "2026-02-10T01:00:00Z"},
+                author=Author.HOST.value,
+            ),
+            Observation(
+                kind=ObservationKind.BUDGET.value,
+                payload={"llm_output_token_count": 100, "llm_candidates_reported": 1, "llm_parse_errors": 0},
+                author=Author.HOST.value,
+            ),
+        ]
+
+        c1 = _valid_notify_candidate(obs_t1)
+        c2 = _valid_notify_candidate(obs_t2)
+
+        out1 = policy_core(
+            observations=obs_t1, constitution=constitution,
+            internal_state=state_cycle_0, candidates=[c1],
+            repo_root=repo_root,
+        )
+        out2 = policy_core(
+            observations=obs_t2, constitution=constitution,
+            internal_state=state_cycle_0, candidates=[c2],
+            repo_root=repo_root,
+        )
+
+        assert out1.decision.decision_type == DecisionType.ACTION.value
+        assert out2.decision.decision_type == DecisionType.ACTION.value
+        assert out1.decision.warrant.created_at == "2026-02-10T00:00:00Z"
+        assert out2.decision.warrant.created_at == "2026-02-10T01:00:00Z"
+        assert out1.decision.warrant.warrant_id != out2.decision.warrant.warrant_id
+
+    def test_missing_timestamp_observation_refused(
+        self, constitution, repo_root, state_cycle_0,
+    ):
+        """No TIMESTAMP observation → REFUSE with MISSING_REQUIRED_OBSERVATION."""
+        obs = [
+            Observation(
+                kind=ObservationKind.USER_INPUT.value,
+                payload={"text": "no timestamp", "source": "cli"},
+                author=Author.USER.value,
+            ),
+            Observation(
+                kind=ObservationKind.BUDGET.value,
+                payload={"llm_output_token_count": 100, "llm_candidates_reported": 1, "llm_parse_errors": 0},
+                author=Author.HOST.value,
+            ),
+        ]
+        candidate = CandidateBundle(
+            action_request=ActionRequest(
+                action_type=ActionType.NOTIFY.value,
+                fields={"target": "stdout", "message": "no ts"},
+                author=Author.REFLECTION.value,
+            ),
+            scope_claim=ScopeClaim(
+                observation_ids=[obs[0].id], claim="test",
+                clause_ref="constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+                author=Author.REFLECTION.value,
+            ),
+            justification=Justification(text="test", author=Author.REFLECTION.value),
+            authority_citations=["constitution:v0.1.1#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"],
+        )
+        output = policy_core(
+            observations=obs, constitution=constitution,
+            internal_state=state_cycle_0, candidates=[candidate],
+            repo_root=repo_root,
+        )
+        assert output.decision.decision_type == DecisionType.REFUSE.value
+        assert output.decision.refusal.reason_code == RefusalReasonCode.MISSING_REQUIRED_OBSERVATION.value
+
+    def test_duplicate_timestamp_observations_refused(
+        self, constitution, repo_root, state_cycle_0,
+    ):
+        """Two TIMESTAMP observations → ambiguous time → REFUSE."""
+        obs = [
+            Observation(
+                kind=ObservationKind.USER_INPUT.value,
+                payload={"text": "double ts", "source": "cli"},
+                author=Author.USER.value,
+            ),
+            Observation(
+                kind=ObservationKind.TIMESTAMP.value,
+                payload={"iso8601_utc": "2026-02-10T00:00:00Z"},
+                author=Author.HOST.value,
+            ),
+            Observation(
+                kind=ObservationKind.TIMESTAMP.value,
+                payload={"iso8601_utc": "2026-02-10T01:00:00Z"},
+                author=Author.HOST.value,
+            ),
+            Observation(
+                kind=ObservationKind.BUDGET.value,
+                payload={"llm_output_token_count": 100, "llm_candidates_reported": 1, "llm_parse_errors": 0},
+                author=Author.HOST.value,
+            ),
+        ]
+        output = policy_core(
+            observations=obs, constitution=constitution,
+            internal_state=state_cycle_0, candidates=[],
+            repo_root=repo_root,
+        )
+        assert output.decision.decision_type == DecisionType.REFUSE.value
+        assert output.decision.refusal.reason_code == RefusalReasonCode.MISSING_REQUIRED_OBSERVATION.value
+
+    def test_refusal_record_uses_cycle_time(
+        self, constitution, repo_root, state_cycle_0,
+    ):
+        """
+        When no candidates are admitted, the RefusalRecord's created_at
+        should equal the TIMESTAMP observation, not wall-clock.
+        """
+        obs = _base_observations()
+        # No candidates → REFUSE
+        output = policy_core(
+            observations=obs, constitution=constitution,
+            internal_state=state_cycle_0, candidates=[],
+            repo_root=repo_root,
+        )
+        assert output.decision.decision_type == DecisionType.REFUSE.value
+        assert output.decision.refusal.created_at == "2026-02-10T00:00:00Z"
+
+    def test_exit_record_uses_cycle_time(
+        self, constitution, repo_root, state_cycle_0,
+    ):
+        """
+        When an integrity risk triggers EXIT, the ExitRecord's created_at
+        should equal the TIMESTAMP observation.
+        """
+        obs = [
+            Observation(
+                kind=ObservationKind.SYSTEM.value,
+                payload={"event": SystemEvent.STARTUP_INTEGRITY_FAIL.value, "detail": "test"},
+                author=Author.HOST.value,
+            ),
+            Observation(
+                kind=ObservationKind.TIMESTAMP.value,
+                payload={"iso8601_utc": "2026-02-10T12:00:00Z"},
+                author=Author.HOST.value,
+            ),
+        ]
+        output = policy_core(
+            observations=obs, constitution=constitution,
+            internal_state=state_cycle_0, candidates=[],
+            repo_root=repo_root,
+        )
+        assert output.decision.decision_type == DecisionType.EXIT.value
+        assert output.decision.exit_record.created_at == "2026-02-10T12:00:00Z"

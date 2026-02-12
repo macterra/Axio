@@ -4,7 +4,7 @@
 * **Constitution:** v0.1.1 (FROZEN)
 * **Constitution SHA-256:** `ad6aa7ccb0ed27151423486b60de380da9d34436f6c5554da84f3a092902740f`
 * **Language:** Python 3.12
-* **Test result:** 29/29 passed
+* **Test result:** 53/53 passed
 
 ---
 
@@ -63,18 +63,18 @@ Each cycle proceeds through these stages:
 
 | File | Lines | Purpose |
 |------|-------|---------|
-| `kernel/src/artifacts.py` | 401 | Artifact types (closed set of 7), enums, canonical JSON (RFC 8785), SHA-256 hashing |
+| `kernel/src/artifacts.py` | 394 | Artifact types (closed set of 7), enums, canonical JSON (RFC 8785), SHA-256 hashing |
 | `kernel/src/constitution.py` | 252 | YAML loader, hash verification, CitationIndex (ID `#` and pointer `@` resolution) |
 | `kernel/src/admission.py` | 361 | 5-gate sequential pipeline: completeness → authority_citation → scope_claim → constitution_compliance → io_allowlist |
 | `kernel/src/selector.py` | 57 | Deterministic canonical selector (lexicographic-min bundle hash, raw bytes) |
-| `kernel/src/policy_core.py` | 308 | Pure decision function: integrity check → budget check → admission → selection → warrant; LogAppend warrant issuance |
+| `kernel/src/policy_core.py` | 369 | Pure decision function: TIMESTAMP validation → integrity check → budget check → admission → selection → warrant; LogAppend warrant issuance |
 | `kernel/src/telemetry.py` | 197 | `derive_telemetry()` and `build_log_append_bundles()` for all 5 log streams |
 
 ### 3.3 Host / Executor
 
 | File | Lines | Purpose |
 |------|-------|---------|
-| `host/cli/main.py` | 474 | CLI host loop: startup integrity, observation building, candidate construction, cycle orchestration |
+| `host/cli/main.py` | 479 | CLI host loop: startup integrity, observation building, candidate construction, cycle orchestration |
 | `host/tools/executor.py` | 203 | Warrant-gated executor: Notify, ReadLocal, WriteLocal, LogAppend |
 
 ### 3.4 Replay
@@ -87,18 +87,19 @@ Each cycle proceeds through these stages:
 
 | File | Lines | Purpose |
 |------|-------|---------|
-| `kernel/tests/test_acceptance.py` | 953 | 29 acceptance tests covering spec §15, instructions §11, and audit-driven sovereignty boundary checks |
+| `kernel/tests/test_acceptance.py` | 1,169 | 35 acceptance tests: spec §15, instructions §11, sovereignty boundary checks, clock-determinism proofs |
+| `kernel/tests/test_inhabitation.py` | 875 | 18 inhabitation pressure tests: authority ambiguity, scope claim adversarial, budget/filibuster |
 
 ### 3.6 Totals
 
 | Category | Lines |
 |----------|-------|
-| Kernel (6 modules) | 1,576 |
-| Host + Executor (2 modules) | 677 |
+| Kernel (6 modules) | 1,630 |
+| Host + Executor (2 modules) | 682 |
 | Replay (1 module) | 268 |
-| Tests (1 module) | 953 |
+| Tests (2 modules) | 2,044 |
 | Constitution artifacts | 957 |
-| **Total** | **4,431** |
+| **Total** | **5,581** |
 
 ---
 
@@ -128,15 +129,18 @@ Each cycle proceeds through these stages:
 - Canonical JSON serialization is deterministic (sorted keys, no whitespace, RFC 8785 compatible)
 - Selector is deterministic (lexicographic-min raw bytes)
 - Replay harness re-derives decisions from logged observations
-- Tests: `TestReplayDeterminism` (1 test), `TestCanonicalJSON` (4 tests), `TestDeterministicSelection::test_order_independence` (1 test)
+- **Erratum X.E1:** `_now_utc()` removed from all artifact `__post_init__` methods; kernel now derives time from TIMESTAMP observation (observation-sourced determinism)
+- Tests: `TestReplayDeterminism` (1 test), `TestCanonicalJSON` (4 tests), `TestDeterministicSelection::test_order_independence` (1 test), `TestDeterministicClock` (6 tests)
 
 ---
 
 ## 5. Acceptance Test Results
 
 ```
-29 passed in 0.58s
+53 passed in 0.92s
 ```
+
+### 5.1 Acceptance Tests (test_acceptance.py — 35 tests)
 
 | # | Spec Requirement | Test Class | Tests | Status |
 |---|-----------------|------------|-------|--------|
@@ -153,6 +157,15 @@ Each cycle proceeds through these stages:
 | 11 | Valid candidate → ACTION + warrant | `TestValidCandidateAction` | 2 | PASS |
 | 12 | Canonical JSON determinism | `TestCanonicalJSON` | 4 | PASS |
 | 13 | Host sovereignty boundary (audit) | `TestHostSovereigntyBoundary` | 4 | PASS |
+| 14 | Clock determinism (Erratum X.E1) | `TestDeterministicClock` | 6 | PASS |
+
+### 5.2 Inhabitation Pressure Tests (test_inhabitation.py — 18 tests)
+
+| # | Pressure Family | Test Class | Tests | Status |
+|---|----------------|------------|-------|--------|
+| 15 | Authority ambiguity | `TestAuthorityAmbiguity` | 5 | PASS |
+| 16 | Scope claim adversarial | `TestScopeClaimAdversarial` | 5 | PASS |
+| 17 | Budget/filibuster | `TestBudgetFilibuster` | 8 | PASS |
 
 ---
 
@@ -263,17 +276,37 @@ would add complexity without changing the sovereignty boundary—the kernel
 was never designed to distrust its own observation inputs, only to
 enforce that observations alone cannot cause side effects without warrants.
 
-### C. LogAppend timestamp determinism — CLEAN
+### C. LogAppend timestamp determinism — FIXED (Erratum X.E1)
 
 **Finding:** If log lines embed wall-clock timestamps not part of observation
 input, replay determinism could silently break.
 
-**Assessment:** Clean. The kernel never calls `_now_utc()` itself. All
-timestamps in observations come from host construction and are frozen at
-creation time. During replay, `reconstruct_observations()` passes the logged
-`created_at` values, so `__post_init__` does not regenerate timestamps.
-`derive_telemetry()` serializes the existing artifact dicts (with their
-original timestamps) — it does not inject new wall-clock values.
+**Original assessment (v1):** Incorrectly assessed as clean.
+
+**Revised assessment (v2, pre-profiling audit):** The original audit missed
+that `_now_utc()` was called inside ALL 7 artifact `__post_init__` methods,
+not just host-created observations. This meant every artifact ID was
+wall-clock-dependent, including kernel-created warrants, refusals, and exit
+records. Replay would reconstruct observations with logged `created_at` values,
+but the kernel would generate NEW warrants with fresh `_now_utc()` timestamps,
+producing different warrant IDs on each replay. This was a latent determinism
+defect.
+
+**Erratum X.E1 — Observation-sourced deterministic clock:**
+1. Removed `if not self.created_at: self.created_at = _now_utc()` from all 7
+   artifact `__post_init__` methods in `artifacts.py`
+2. Added `extract_cycle_time()` to `policy_core.py` — extracts ISO-8601 UTC
+   timestamp from the single required TIMESTAMP observation
+3. Added pre-admission TIMESTAMP validation: exactly 1 TIMESTAMP observation
+   required; 0 or 2+ → REFUSE with `MISSING_REQUIRED_OBSERVATION`
+4. All kernel-created artifacts (warrants, refusals, exit records) now receive
+   `created_at=cycle_time` from the extracted TIMESTAMP value
+5. `_now_utc()` retained as utility for host use (observation construction)
+6. Added `MISSING_REQUIRED_OBSERVATION` to `RefusalReasonCode` enum
+
+**Tests added:** `TestDeterministicClock` (6 tests) verifying same-inputs →
+same-warrant-hash, different-timestamp → different-warrant, missing/duplicate
+TIMESTAMP → REFUSE, and cycle_time propagation to refusal/exit records.
 
 ### D. Replay state reconstruction — CLEAN
 
@@ -331,7 +364,7 @@ These are classified as proxy-sovereignty regressions and are forbidden.
 | Refuses correctly when no action is admissible | Tested (7 refusal tests pass) |
 | Exits when mandated by policy (integrity risk) | Tested (4 EXIT tests pass) |
 | Every side effect has admitted AR, scope claim, justification, warrant | Enforced by admission + executor |
-| Replay determinism holds across runs | Tested (determinism + canonical JSON tests pass) |
+| Replay determinism holds across runs | Tested (determinism + canonical JSON + clock-determinism tests pass) |
 
 ---
 

@@ -5,6 +5,12 @@ All agent behavior is mediated through typed artifacts.
 Canonical serialization uses sorted-keys JSON (RFC 8785 compatible for
 the types used: strings, integers, booleans, arrays, objects — no floats).
 Artifact IDs are SHA-256 of the canonical JSON bytes.
+
+ERRATUM X.E1: Deterministic Time
+  All artifact created_at fields must be set explicitly by callers.
+  No artifact auto-populates from wall-clock. Kernel-created artifacts
+  use cycle_time extracted from the TIMESTAMP observation.
+  Interactive host code may use _now_utc() explicitly at call sites.
 """
 
 from __future__ import annotations
@@ -89,6 +95,7 @@ class RefusalReasonCode(str, Enum):
     CONSTITUTION_VIOLATION = "CONSTITUTION_VIOLATION"
     EXECUTION_WARRANT_UNAVAILABLE = "EXECUTION_WARRANT_UNAVAILABLE"
     BUDGET_EXHAUSTED = "BUDGET_EXHAUSTED"
+    MISSING_REQUIRED_OBSERVATION = "MISSING_REQUIRED_OBSERVATION"
 
 
 class AdmissionRejectionCode(str, Enum):
@@ -147,8 +154,6 @@ class Observation:
     id: str = ""
 
     def __post_init__(self):
-        if not self.created_at:
-            self.created_at = _now_utc()
         if not self.id:
             self.id = _compute_id(self.to_dict())
 
@@ -172,8 +177,6 @@ class ActionRequest:
     id: str = ""
 
     def __post_init__(self):
-        if not self.created_at:
-            self.created_at = _now_utc()
         if not self.id:
             self.id = _compute_id(self.to_dict())
 
@@ -198,8 +201,6 @@ class ScopeClaim:
     id: str = ""
 
     def __post_init__(self):
-        if not self.created_at:
-            self.created_at = _now_utc()
         if not self.id:
             self.id = _compute_id(self.to_dict())
 
@@ -223,8 +224,6 @@ class Justification:
     id: str = ""
 
     def __post_init__(self):
-        if not self.created_at:
-            self.created_at = _now_utc()
         if not self.id:
             self.id = _compute_id(self.to_dict())
 
@@ -273,8 +272,6 @@ class ExecutionWarrant:
     created_at: str = ""
 
     def __post_init__(self):
-        if not self.created_at:
-            self.created_at = _now_utc()
         if not self.warrant_id:
             self.warrant_id = _compute_id(self.to_dict())
 
@@ -304,8 +301,6 @@ class RefusalRecord:
     id: str = ""
 
     def __post_init__(self):
-        if not self.created_at:
-            self.created_at = _now_utc()
         if not self.id:
             self.id = _compute_id(self.to_dict())
 
@@ -335,8 +330,6 @@ class ExitRecord:
     id: str = ""
 
     def __post_init__(self):
-        if not self.created_at:
-            self.created_at = _now_utc()
         if not self.id:
             self.id = _compute_id(self.to_dict())
 

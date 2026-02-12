@@ -5,6 +5,10 @@ Pure, deterministic function:
   policy_core(observations, constitution, internal_state, candidates) → Decision
 
 No IO, no network, no randomness, no retries, no heuristics.
+
+ERRATUM X.E1: Deterministic Time
+  Kernel-created artifacts use cycle_time extracted from the TIMESTAMP
+  observation. TIMESTAMP is a required observation; absence → REFUSE.
 """
 
 from __future__ import annotations
@@ -34,6 +38,24 @@ from .constitution import Constitution
 from .selector import SelectionEvent, select
 
 
+# ---------------------------------------------------------------------------
+# Deterministic time extraction (Erratum X.E1)
+# ---------------------------------------------------------------------------
+
+def extract_cycle_time(observations: List[Observation]) -> Optional[str]:
+    """
+    Extract the deterministic cycle timestamp from the TIMESTAMP observation.
+    Returns None if count != 1 (missing or ambiguous).
+    """
+    timestamps = [
+        o for o in observations
+        if o.kind == ObservationKind.TIMESTAMP.value
+    ]
+    if len(timestamps) != 1:
+        return None
+    return timestamps[0].payload.get("iso8601_utc", "")
+
+
 @dataclass
 class PolicyOutput:
     """Full output of a policy core evaluation."""
@@ -56,6 +78,35 @@ def policy_core(
 
     Returns the decision plus all trace events for telemetry.
     """
+    # ---------------------------------------------------------------
+    # Pre-admission: extract deterministic cycle time (Erratum X.E1)
+    # ---------------------------------------------------------------
+    cycle_time = extract_cycle_time(observations)
+    if cycle_time is None:
+        timestamp_count = sum(
+            1 for o in observations
+            if o.kind == ObservationKind.TIMESTAMP.value
+        )
+        refusal = RefusalRecord(
+            reason_code=RefusalReasonCode.MISSING_REQUIRED_OBSERVATION.value,
+            failed_gate="required_observations",
+            missing_artifacts=["TIMESTAMP" if timestamp_count == 0 else "TIMESTAMP (ambiguous: count=%d)" % timestamp_count],
+            authority_ids_considered=[],
+            observation_ids_referenced=[o.id for o in observations],
+            rejection_summary_by_gate={},
+            created_at="",
+        )
+        return PolicyOutput(
+            decision=Decision(
+                decision_type=DecisionType.REFUSE.value,
+                refusal=refusal,
+            ),
+            admission_events=[],
+            selection_event=None,
+            admitted=[],
+            rejected=[],
+        )
+
     # Check for integrity-risk system observations
     for obs in observations:
         if obs.kind == ObservationKind.SYSTEM.value:
@@ -71,6 +122,7 @@ def policy_core(
                     [obs.id],
                     f"Integrity risk: {event} — {obs.payload.get('detail', '')}",
                     constitution,
+                    cycle_time,
                 )
                 return PolicyOutput(
                     decision=Decision(
@@ -89,7 +141,7 @@ def policy_core(
             token_count = obs.payload.get("llm_output_token_count", 0)
             max_tokens = constitution.max_total_tokens_per_cycle()
             if token_count > max_tokens:
-                refusal = _make_budget_refusal(observations)
+                refusal = _make_budget_refusal(observations, cycle_time)
                 return PolicyOutput(
                     decision=Decision(
                         decision_type=DecisionType.REFUSE.value,
@@ -107,7 +159,7 @@ def policy_core(
 
     if not admitted:
         # No admissible action → REFUSE
-        refusal = _make_no_action_refusal(rejected, observations)
+        refusal = _make_no_action_refusal(rejected, observations, cycle_time)
         return PolicyOutput(
             decision=Decision(
                 decision_type=DecisionType.REFUSE.value,
@@ -132,6 +184,7 @@ def policy_core(
         action_type=selected_bundle.action_request.action_type,
         scope_constraints=_build_scope_constraints(selected_bundle, constitution, repo_root),
         issued_in_cycle=internal_state.cycle_index,
+        created_at=cycle_time,
     )
 
     return PolicyOutput(
@@ -156,6 +209,7 @@ def _make_exit_record(
     observation_ids: List[str],
     detail: str,
     constitution: Constitution,
+    cycle_time: str,
 ) -> ExitRecord:
     """Construct a valid ExitRecord."""
     return ExitRecord(
@@ -168,10 +222,11 @@ def _make_exit_record(
             "claim": f"EXIT required: {reason_code}",
         },
         justification=detail,
+        created_at=cycle_time,
     )
 
 
-def _make_budget_refusal(observations: List[Observation]) -> RefusalRecord:
+def _make_budget_refusal(observations: List[Observation], cycle_time: str) -> RefusalRecord:
     return RefusalRecord(
         reason_code=RefusalReasonCode.BUDGET_EXHAUSTED.value,
         failed_gate="none",
@@ -179,12 +234,14 @@ def _make_budget_refusal(observations: List[Observation]) -> RefusalRecord:
         authority_ids_considered=[],
         observation_ids_referenced=[o.id for o in observations],
         rejection_summary_by_gate={},
+        created_at=cycle_time,
     )
 
 
 def _make_no_action_refusal(
     rejected: List[AdmissionResult],
     observations: List[Observation],
+    cycle_time: str,
 ) -> RefusalRecord:
     # Compute earliest gate where all candidates were eliminated
     gate_order = [
@@ -216,6 +273,7 @@ def _make_no_action_refusal(
         authority_ids_considered=[],
         observation_ids_referenced=[o.id for o in observations],
         rejection_summary_by_gate=summary,
+        created_at=cycle_time,
     )
 
 
@@ -278,6 +336,8 @@ def issue_log_append_warrants(
 
     The host must call this instead of fabricating warrants directly.
     """
+    cycle_time = extract_cycle_time(observations) or ""
+
     pipeline = AdmissionPipeline(constitution, repo_root)
     admitted, rejected, _ = pipeline.evaluate(log_bundles, observations)
 
@@ -290,6 +350,7 @@ def issue_log_append_warrants(
             action_type=bundle.action_request.action_type,
             scope_constraints=_build_scope_constraints(bundle, constitution, repo_root),
             issued_in_cycle=cycle_index,
+            created_at=cycle_time,
         )
         results.append(LogAppendWarrantResult(
             bundle=bundle,
