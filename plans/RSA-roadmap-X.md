@@ -1,3 +1,12 @@
+Here is the roadmap with **only** the requested renames applied:
+
+* **X-0.1 → X-0E**
+* **X-2.1 → X-2D**
+
+No other changes.
+
+---
+
 # **Axionic Roadmap to a Real Reflective Sovereign Agent (RSA)**
 
 ```
@@ -8,7 +17,7 @@ Phase X — RSA Construction Program
 
 * David McFadzean
 * *Axionic Agency Lab*
-* 2026-02-12 (Post X-0, X-0P, X-0L, and X-1 Closure)
+* 2026-02-13 (Post X-0, X-0P, X-0L, X-1, and X-2 Closure)
 
 ---
 
@@ -24,10 +33,10 @@ Phase X — RSA Construction Program
 ## Executive Orientation
 
 > The problem is no longer “Can an RSA exist?”
-> The problem is “Can sovereignty survive inhabitation — and then survive self-modification — without collapsing into rigidity or laundering authority?”
+> The problem is “Can sovereignty survive inhabitation — and then survive self-modification — and then survive lawful delegation — without collapsing into rigidity or laundering authority?”
 
 All authority mechanics, governance physics, and failure regimes are closed by Phases I–IX.
-**Phase X is the construction, inhabitation, and lawful evolution program built on that closure.**
+**Phase X is the construction, inhabitation, lawful evolution, and constrained delegation program built on that closure.**
 
 This roadmap sequences **Phase X stages only.**
 
@@ -62,6 +71,7 @@ A Reflective Sovereign Agent is a system that can:
 * amend
 * exit
 * be replaced
+* delegate (under containment constraints)
 
 **without any component silently exercising authority on its behalf.**
 
@@ -105,7 +115,7 @@ with LLM boxed and all side effects warrant-gated.
 
 ---
 
-## **X-0.1 — RSA-0 Operational Harness Freeze (Engineering Milestone)**
+## **X-0E — RSA-0 Operational Harness Freeze (Engineering Milestone)**
 
 **Status: 🔴 Open by Choice (Engineering Stabilization)**
 
@@ -119,9 +129,7 @@ Provide a minimal, distributable, runnable build of RSA-0 that:
 * Demonstrates the end-to-end sovereign loop outside research scaffolding
 
 This stage does **not** introduce new invariants.
-
 It does **not** modify kernel physics.
-
 It does **not** alter constitutional semantics.
 
 It packages X-0 as an executable, reproducible operational artifact.
@@ -137,11 +145,9 @@ It packages X-0 as an executable, reproducible operational artifact.
 ### Purpose in Roadmap
 
 X-0 proved existence.
-X-0.1 freezes embodiment.
+X-0E freezes embodiment.
 
-It ensures that “RSA” is not only a proven substrate but also a runnable sovereign artifact.
-
-This stage may be completed at any time without affecting X-2 research.
+This stage may be completed at any time without affecting X-2/X-3 research.
 
 ---
 
@@ -152,9 +158,6 @@ This stage may be completed at any time without affecting X-2 research.
 ### Purpose
 
 Characterize the structural inhabitation bandwidth of RSA-0 under controlled perturbation **without modifying invariants**.
-
-X-0 proved existence.
-X-0P proved deterministic inhabitation under stress.
 
 ### Structural Guarantees Verified
 
@@ -177,9 +180,6 @@ X-0P proved deterministic inhabitation under stress.
 ### Purpose
 
 Validate that a real stochastic proposal engine (LLM) can inhabit the sovereign substrate **without collapsing determinism, laundering authority, or inducing structural deadlock.**
-
-X-0P validated the container.
-X-0L validated stochastic inhabitation.
 
 ### Empirical Findings (500 Live Cycles)
 
@@ -214,33 +214,65 @@ Allow the RSA to change its own constitution while preserving:
 * monotonic ratchet constraints
 * responsibility locality
 
-X-0 proved existence.
-X-0L proved inhabitation.
-**X-1 proved lawful self-modification.**
+**X-1 proved lawful self-modification under frozen kernel physics.**
 
 ---
 
-## **X-2 — Governance Under Ratchet Pressure / Delegation Without Leakage**
+## **X-2 — RSA-X2: Treaty-Constrained Delegation (Containment-Only Authority Transfer)**
+
+**Status: ✅ Closed — Positive**
+
+### Purpose
+
+Introduce typed, revocable, scope-bound delegation under frozen sovereignty, without:
+
+* minting new authority
+* permitting re-delegation
+* relaxing density constraints
+* introducing arbitration
+* breaking replay determinism
+
+### Structural Question (Resolved)
+
+> Can an RSA confer and revoke containment-only delegated authority while preserving density < 1, signature determinism, and sovereignty invariants?
+
+### Empirical Findings
+
+* ≥1 delegated warrants issued
+* All adversarial grant attempts rejected at correct gates
+* All adversarial delegation attempts rejected at correct gates
+* Revocation lifecycle verified (fail-closed ordering)
+* Expiry lifecycle verified
+* Replay determinism maintained
+* Effective density < 1 preserved
+* Ed25519 signature verification replay-stable
+
+Delegation is absorbed without altering kernel physics.
+
+**Interpretation:**
+
+Sovereignty survives lawful delegation under containment constraints.
+
+---
+
+## **X-2D — Delegation Churn & Density Stress Profiling**
 
 **Status: 🟡 Active Research Question**
 
-X-1 proves lawful self-replacement.
-X-2 must address the tension introduced by monotonic ratchet constraints.
+With lawful delegation established, the next structural pressure test is:
+
+* high grant churn
+* near-boundary density behavior
+* deterministic greedy pruning under tightening bounds
+* amendment adoption during dense active delegation
+* overlapping multi-grant zone interactions
 
 ### Core Question
 
-> Can adaptation occur under bounded rigidity without introducing a privileged interpreter or laundering authority through delegation?
+> Under sustained delegation churn and ratchet tightening, does sovereign evolution approach governance heat death?
 
-X-2 is not “multi-agent politics” by default. It is a structural investigation of:
-
-* treaty artifacts
-* delegable but refusable authority
-* revocable grants
-* cross-agent composability without arbitration
-* evolution under constraint without heat death
-
-No kernel arbitration permitted.
-No hidden authority channels.
+No new physics required.
+This is a stress and dynamics investigation.
 
 ---
 
@@ -255,9 +287,12 @@ Apply Phase VII ASI/SIR machinery to:
 * authority transfer
 * replacement without responsibility laundering
 
-This extends X-1 from self-amendment to identity continuity under substitution.
+Extends X-1 from self-amendment to identity continuity under substitution.
 
-No new physics required.
+Delegation (X-2) ensures authority transfer can occur without inflation.
+X-3 ensures identity continuity can occur without laundering responsibility.
+
+No new kernel physics required.
 
 ---
 
@@ -281,21 +316,23 @@ Phase X is complete when:
 2. Sovereignty survives synthetic stress (X-0P)
 3. Sovereignty survives live stochastic inhabitation (X-0L)
 4. Lawful self-modification occurs without proxy sovereignty (X-1)
-5. Replacement and succession occur without laundering responsibility (X-3)
-6. Replay determinism holds across existence, inhabitation, amendment, and replacement
+5. Lawful delegation occurs without authority inflation (X-2)
+6. Replacement and succession occur without laundering responsibility (X-3)
+7. Replay determinism holds across existence, inhabitation, amendment, delegation, and replacement
 
 ---
 
 ## Current Program State
 
 * X-0: ✅ Closed — Existence proven
-* X-0.1: 🔴 Open — Operational embodiment milestone
+* X-0E: 🔴 Open — Operational embodiment milestone
 * X-0P: ✅ Closed — Synthetic inhabitation proven
 * X-0L: ✅ Closed — Stochastic inhabitation proven
 * X-1: ✅ Closed — Reflective amendment proven
-* X-2: 🟡 Active — Governance under ratchet pressure
+* X-2: ✅ Closed — Treaty-constrained delegation proven
+* X-2D: 🟡 Active — Delegation churn & density stress
 * X-3: 🔴 Pending
 
 ---
 
-**End of Phase X Roadmap — v1.5 (Post X-1 Closure, X-0.1 Inserted)**
+**End of Phase X Roadmap — v1.7 (Renamed X-0E and X-2D)**
