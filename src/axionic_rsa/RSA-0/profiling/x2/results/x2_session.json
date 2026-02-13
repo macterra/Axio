@@ -1,0 +1,1068 @@
+{
+  "session_id": "46b0e5fd-9462-462d-b5e8-32d55e4803a3",
+  "start_time": "2026-02-13T16:26:56Z",
+  "end_time": "2026-02-13T16:26:57Z",
+  "constitution_hash": "43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1",
+  "total_cycles": 26,
+  "total_grants_admitted": 0,
+  "total_grants_rejected": 10,
+  "total_revocations_admitted": 1,
+  "total_revocations_rejected": 1,
+  "total_delegated_warrants": 3,
+  "total_delegated_rejections": 5,
+  "decision_type_counts": {
+    "ACTION": 26
+  },
+  "grant_rejection_results": [
+    {
+      "scenario_id": "A-1-FAKE-GRANTOR",
+      "expected_code": "GRANTOR_NOT_CONSTITUTIONAL",
+      "actual_code": "GRANTOR_NOT_CONSTITUTIONAL",
+      "correct": true
+    },
+    {
+      "scenario_id": "A-2-NO-TREATY-PERM",
+      "expected_code": "TREATY_PERMISSION_MISSING",
+      "actual_code": "TREATY_PERMISSION_MISSING",
+      "correct": true
+    },
+    {
+      "scenario_id": "A-3-BAD-GRANTEE-FORMAT",
+      "expected_code": "INVALID_FIELD",
+      "actual_code": "INVALID_FIELD",
+      "correct": true
+    },
+    {
+      "scenario_id": "A-4-SCOPE-NOT-MAP",
+      "expected_code": "INVALID_FIELD",
+      "actual_code": "INVALID_FIELD",
+      "correct": true
+    },
+    {
+      "scenario_id": "A-5-INVALID-SCOPE-TYPE",
+      "expected_code": "INVALID_FIELD",
+      "actual_code": "INVALID_FIELD",
+      "correct": true
+    },
+    {
+      "scenario_id": "A-6-WILDCARD-ACTION",
+      "expected_code": "INVALID_FIELD",
+      "actual_code": "INVALID_FIELD",
+      "correct": true
+    },
+    {
+      "scenario_id": "A-7-UNKNOWN-ACTION",
+      "expected_code": "INVALID_FIELD",
+      "actual_code": "INVALID_FIELD",
+      "correct": true
+    },
+    {
+      "scenario_id": "A-8-GRANTOR-LACKS-ACTION",
+      "expected_code": "GRANTOR_LACKS_PERMISSION",
+      "actual_code": "GRANTOR_LACKS_PERMISSION",
+      "correct": true
+    },
+    {
+      "scenario_id": "A-9-SCOPE-ZONE-INVALID",
+      "expected_code": "GRANTOR_LACKS_PERMISSION",
+      "actual_code": "GRANTOR_LACKS_PERMISSION",
+      "correct": true
+    },
+    {
+      "scenario_id": "A-10-DURATION-EXCEEDED",
+      "expected_code": "GRANTOR_LACKS_PERMISSION",
+      "actual_code": "GRANTOR_LACKS_PERMISSION",
+      "correct": true
+    },
+    {
+      "scenario_id": "A-11-NONREVOCABLE",
+      "expected_code": "NONREVOCABLE_GRANT",
+      "actual_code": "NONREVOCABLE_GRANT",
+      "correct": true
+    }
+  ],
+  "delegation_rejection_results": [
+    {
+      "scenario_id": "A-12-UNSIGNED-DAR",
+      "expected_code": "SIGNATURE_MISSING",
+      "actual_code": "SIGNATURE_MISSING",
+      "correct": true
+    },
+    {
+      "scenario_id": "A-13-WRONG-KEY",
+      "expected_code": "SIGNATURE_INVALID",
+      "actual_code": "SIGNATURE_INVALID",
+      "correct": true
+    },
+    {
+      "scenario_id": "A-14-NO-TREATY-CITATION",
+      "expected_code": "AUTHORITY_CITATION_INVALID",
+      "actual_code": "AUTHORITY_CITATION_INVALID",
+      "correct": true
+    },
+    {
+      "scenario_id": "A-15-SCOPE-OUTSIDE-GRANT",
+      "expected_code": "AUTHORITY_CITATION_INVALID",
+      "actual_code": "AUTHORITY_CITATION_INVALID",
+      "correct": true
+    }
+  ],
+  "expiry_confirmed": true,
+  "replay_verified": true,
+  "replay_divergences": [],
+  "phase_summary": {
+    "pre-delegation": {
+      "cycles": 3,
+      "decisions": {
+        "ACTION": 3
+      },
+      "treaty_events": {}
+    },
+    "lawful-delegation": {
+      "cycles": 2,
+      "decisions": {
+        "ACTION": 2
+      },
+      "treaty_events": {
+        "delegated_warrants": 2,
+        "delegated_rejections": 0
+      }
+    },
+    "lawful-revocation": {
+      "cycles": 1,
+      "decisions": {
+        "ACTION": 1
+      },
+      "treaty_events": {}
+    },
+    "adversarial-grant": {
+      "cycles": 11,
+      "decisions": {
+        "ACTION": 11
+      },
+      "treaty_events": {
+        "grants_admitted": 0,
+        "grants_rejected": 10
+      }
+    },
+    "adversarial-delegation": {
+      "cycles": 4,
+      "decisions": {
+        "ACTION": 4
+      },
+      "treaty_events": {
+        "delegated_warrants": 0,
+        "delegated_rejections": 4
+      }
+    },
+    "expiry-active": {
+      "cycles": 1,
+      "decisions": {
+        "ACTION": 1
+      },
+      "treaty_events": {
+        "delegated_warrants": 1,
+        "delegated_rejections": 0
+      }
+    },
+    "expiry-advance": {
+      "cycles": 3,
+      "decisions": {
+        "ACTION": 3
+      },
+      "treaty_events": {}
+    },
+    "expiry-expired": {
+      "cycles": 1,
+      "decisions": {
+        "ACTION": 1
+      },
+      "treaty_events": {
+        "delegated_warrants": 0,
+        "delegated_rejections": 1
+      }
+    }
+  },
+  "aborted": false,
+  "abort_reason": "",
+  "cycles": [
+    {
+      "cycle_index": 0,
+      "cycle_id": "X2-0000",
+      "phase": "pre-delegation",
+      "decision_type": "ACTION",
+      "constitution_hash": "43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1",
+      "state_in_hash": "b92ae87e22ca1cd180604d71094aa1e6fa7db63aa5bcacd148e023f042abd6ae",
+      "state_out_hash": "8d2207e3da98bd6d226b704ac2f388c168c8e1ae9c2f0dc2fa2d5a649deef575",
+      "grants_admitted": 0,
+      "grants_rejected": 0,
+      "revocations_admitted": 0,
+      "revocations_rejected": 0,
+      "active_grants_count": 0,
+      "delegated_warrants_issued": 0,
+      "delegated_rejections": 0,
+      "warrant_ids": [
+        "482095ba30b09b4d4edc0a7f95862aaf2868b7cddcadd6284b4b02879134a56e"
+      ],
+      "rsa_warrant_id": "482095ba30b09b4d4edc0a7f95862aaf2868b7cddcadd6284b4b02879134a56e",
+      "rsa_action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "482095ba30b09b4d4edc0a7f95862aaf2868b7cddcadd6284b4b02879134a56e",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 0 != -1"
+        }
+      ],
+      "latency_ms": 0.7392779998554033
+    },
+    {
+      "cycle_index": 1,
+      "cycle_id": "X2-0001",
+      "phase": "pre-delegation",
+      "decision_type": "ACTION",
+      "constitution_hash": "43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1",
+      "state_in_hash": "8d2207e3da98bd6d226b704ac2f388c168c8e1ae9c2f0dc2fa2d5a649deef575",
+      "state_out_hash": "d81a8e8ce084e6444da8fef6994961ff43d1a268bc59ecbaeb527b4e54e35333",
+      "grants_admitted": 0,
+      "grants_rejected": 0,
+      "revocations_admitted": 0,
+      "revocations_rejected": 0,
+      "active_grants_count": 0,
+      "delegated_warrants_issued": 0,
+      "delegated_rejections": 0,
+      "warrant_ids": [
+        "9dca8de69104df51050823eabb2f83714f15ec8b31f9b448c5d738e5b52f67f3"
+      ],
+      "rsa_warrant_id": "9dca8de69104df51050823eabb2f83714f15ec8b31f9b448c5d738e5b52f67f3",
+      "rsa_action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "9dca8de69104df51050823eabb2f83714f15ec8b31f9b448c5d738e5b52f67f3",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 1 != 0"
+        }
+      ],
+      "latency_ms": 0.45964200035086833
+    },
+    {
+      "cycle_index": 2,
+      "cycle_id": "X2-0002",
+      "phase": "pre-delegation",
+      "decision_type": "ACTION",
+      "constitution_hash": "43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1",
+      "state_in_hash": "d81a8e8ce084e6444da8fef6994961ff43d1a268bc59ecbaeb527b4e54e35333",
+      "state_out_hash": "a4c86f4aa37e32b06393f13f46fa1d7ff00bed22dbbe7687bbe6ab14ae029633",
+      "grants_admitted": 0,
+      "grants_rejected": 0,
+      "revocations_admitted": 0,
+      "revocations_rejected": 0,
+      "active_grants_count": 0,
+      "delegated_warrants_issued": 0,
+      "delegated_rejections": 0,
+      "warrant_ids": [
+        "a59f953a4d053964b2f4dae1c5ae2159506849cf36314126aacabe668b83d183"
+      ],
+      "rsa_warrant_id": "a59f953a4d053964b2f4dae1c5ae2159506849cf36314126aacabe668b83d183",
+      "rsa_action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "a59f953a4d053964b2f4dae1c5ae2159506849cf36314126aacabe668b83d183",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 2 != 1"
+        }
+      ],
+      "latency_ms": 0.44006600001011975
+    },
+    {
+      "cycle_index": 3,
+      "cycle_id": "X2-0003",
+      "phase": "lawful-delegation",
+      "decision_type": "ACTION",
+      "constitution_hash": "43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1",
+      "state_in_hash": "61c617aa81cf091074ae5538a778346c8bf54f823d82cf3855c0b8f284f4f00d",
+      "state_out_hash": "071d085768233ba572f4d89dcee2d4e33ce724868b6b8e583442f2e79713edfe",
+      "grants_admitted": 0,
+      "grants_rejected": 0,
+      "revocations_admitted": 0,
+      "revocations_rejected": 0,
+      "active_grants_count": 1,
+      "delegated_warrants_issued": 1,
+      "delegated_rejections": 0,
+      "warrant_ids": [
+        "1464e3827c0f72a9ebcc9b839a56949d0b7ba7c5b1928c84d0d937cda923976e",
+        "5c1b97e7830f910365e6581f8e7bf51d968457035e7bbb8f625c1c941479845d"
+      ],
+      "rsa_warrant_id": "1464e3827c0f72a9ebcc9b839a56949d0b7ba7c5b1928c84d0d937cda923976e",
+      "rsa_action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "1464e3827c0f72a9ebcc9b839a56949d0b7ba7c5b1928c84d0d937cda923976e",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 3 != 2"
+        },
+        {
+          "event_type": "execution_event",
+          "warrant_id": "5c1b97e7830f910365e6581f8e7bf51d968457035e7bbb8f625c1c941479845d",
+          "tool": "ReadLocal",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 3 != 2"
+        }
+      ],
+      "latency_ms": 0.8881799994924222
+    },
+    {
+      "cycle_index": 4,
+      "cycle_id": "X2-0004",
+      "phase": "lawful-delegation",
+      "decision_type": "ACTION",
+      "constitution_hash": "43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1",
+      "state_in_hash": "e7883619afb0bb144a3098b47ad487979b9bc812c8426940dcd80f6f0568ce5f",
+      "state_out_hash": "3eeca8880dfb4804e77161b2097fedb87b86f6f1e93e0c45e3249d65a3912ebe",
+      "grants_admitted": 0,
+      "grants_rejected": 0,
+      "revocations_admitted": 0,
+      "revocations_rejected": 0,
+      "active_grants_count": 2,
+      "delegated_warrants_issued": 1,
+      "delegated_rejections": 0,
+      "warrant_ids": [
+        "df5b728442af7d2a5f36c0a20a176b1c50c8ea7c77cb6e49e4fd6d4ca1f68db8",
+        "1366d7a5d9e60a2c0127a2e79a96ac28d914561cfa0d802380fb63fcd9e00aab"
+      ],
+      "rsa_warrant_id": "df5b728442af7d2a5f36c0a20a176b1c50c8ea7c77cb6e49e4fd6d4ca1f68db8",
+      "rsa_action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "df5b728442af7d2a5f36c0a20a176b1c50c8ea7c77cb6e49e4fd6d4ca1f68db8",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 4 != 3"
+        },
+        {
+          "event_type": "execution_event",
+          "warrant_id": "1366d7a5d9e60a2c0127a2e79a96ac28d914561cfa0d802380fb63fcd9e00aab",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 4 != 3"
+        }
+      ],
+      "latency_ms": 0.9661479998612776
+    },
+    {
+      "cycle_index": 5,
+      "cycle_id": "X2-0005",
+      "phase": "lawful-revocation",
+      "decision_type": "ACTION",
+      "constitution_hash": "43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1",
+      "state_in_hash": "e718053c6ebb6e290e722a541dbbcfb6660067a18b39a5ad46d0e523109ac815",
+      "state_out_hash": "9573f608d8f16590abfb93c9e69345b2dae22fcc6b5d4e95864dc57f074cfbf8",
+      "grants_admitted": 0,
+      "grants_rejected": 0,
+      "revocations_admitted": 1,
+      "revocations_rejected": 0,
+      "active_grants_count": 2,
+      "delegated_warrants_issued": 0,
+      "delegated_rejections": 0,
+      "warrant_ids": [
+        "a074164981da224e446c0e3c77bec223ec12b41a45d3671c6e854444535087a8"
+      ],
+      "rsa_warrant_id": "a074164981da224e446c0e3c77bec223ec12b41a45d3671c6e854444535087a8",
+      "rsa_action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "a074164981da224e446c0e3c77bec223ec12b41a45d3671c6e854444535087a8",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 5 != 4"
+        }
+      ],
+      "latency_ms": 0.5668960002367385
+    },
+    {
+      "cycle_index": 6,
+      "cycle_id": "X2-0006",
+      "phase": "adversarial-grant",
+      "decision_type": "ACTION",
+      "constitution_hash": "43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1",
+      "state_in_hash": "9573f608d8f16590abfb93c9e69345b2dae22fcc6b5d4e95864dc57f074cfbf8",
+      "state_out_hash": "ffbf4d00eb0f8230d1187c27340be54759bf3e80d1a3be84d0ab7aaf18499315",
+      "grants_admitted": 0,
+      "grants_rejected": 1,
+      "revocations_admitted": 0,
+      "revocations_rejected": 0,
+      "active_grants_count": 2,
+      "delegated_warrants_issued": 0,
+      "delegated_rejections": 0,
+      "warrant_ids": [
+        "c0ba9b0c8f6ca91d804bc540cefa8bfae89707bf57c21fbe0aa9a2b2c651e230"
+      ],
+      "rsa_warrant_id": "c0ba9b0c8f6ca91d804bc540cefa8bfae89707bf57c21fbe0aa9a2b2c651e230",
+      "rsa_action_type": "Notify",
+      "grant_rejection_codes": [
+        "GRANTOR_NOT_CONSTITUTIONAL"
+      ],
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "c0ba9b0c8f6ca91d804bc540cefa8bfae89707bf57c21fbe0aa9a2b2c651e230",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 6 != 5"
+        }
+      ],
+      "latency_ms": 0.49569099974178243
+    },
+    {
+      "cycle_index": 7,
+      "cycle_id": "X2-0007",
+      "phase": "adversarial-grant",
+      "decision_type": "ACTION",
+      "constitution_hash": "43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1",
+      "state_in_hash": "ffbf4d00eb0f8230d1187c27340be54759bf3e80d1a3be84d0ab7aaf18499315",
+      "state_out_hash": "c60a9a4c79c1f8afe7c9211c980d6a02c65ecc6e90643c57d6c0cdbfa42ce419",
+      "grants_admitted": 0,
+      "grants_rejected": 1,
+      "revocations_admitted": 0,
+      "revocations_rejected": 0,
+      "active_grants_count": 2,
+      "delegated_warrants_issued": 0,
+      "delegated_rejections": 0,
+      "warrant_ids": [
+        "c516cb6e446dcbd711974e4e9e2f4b09ec0ff5ae84a50d3bba99a8c4726ff723"
+      ],
+      "rsa_warrant_id": "c516cb6e446dcbd711974e4e9e2f4b09ec0ff5ae84a50d3bba99a8c4726ff723",
+      "rsa_action_type": "Notify",
+      "grant_rejection_codes": [
+        "TREATY_PERMISSION_MISSING"
+      ],
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "c516cb6e446dcbd711974e4e9e2f4b09ec0ff5ae84a50d3bba99a8c4726ff723",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 7 != 6"
+        }
+      ],
+      "latency_ms": 0.48540900024818256
+    },
+    {
+      "cycle_index": 8,
+      "cycle_id": "X2-0008",
+      "phase": "adversarial-grant",
+      "decision_type": "ACTION",
+      "constitution_hash": "43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1",
+      "state_in_hash": "c60a9a4c79c1f8afe7c9211c980d6a02c65ecc6e90643c57d6c0cdbfa42ce419",
+      "state_out_hash": "e9d705d518f7d9b9e86b75d969a16011d9182c090b87a8f7c419d7ba3c7fbcf8",
+      "grants_admitted": 0,
+      "grants_rejected": 1,
+      "revocations_admitted": 0,
+      "revocations_rejected": 0,
+      "active_grants_count": 2,
+      "delegated_warrants_issued": 0,
+      "delegated_rejections": 0,
+      "warrant_ids": [
+        "841e1814e0c9b42ae779dfca349c6f2682a23de5ac9e603f33b09905bf7c2e53"
+      ],
+      "rsa_warrant_id": "841e1814e0c9b42ae779dfca349c6f2682a23de5ac9e603f33b09905bf7c2e53",
+      "rsa_action_type": "Notify",
+      "grant_rejection_codes": [
+        "INVALID_FIELD"
+      ],
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "841e1814e0c9b42ae779dfca349c6f2682a23de5ac9e603f33b09905bf7c2e53",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 8 != 7"
+        }
+      ],
+      "latency_ms": 0.4919089997201809
+    },
+    {
+      "cycle_index": 9,
+      "cycle_id": "X2-0009",
+      "phase": "adversarial-grant",
+      "decision_type": "ACTION",
+      "constitution_hash": "43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1",
+      "state_in_hash": "e9d705d518f7d9b9e86b75d969a16011d9182c090b87a8f7c419d7ba3c7fbcf8",
+      "state_out_hash": "51096b4ec76efe49af6cd4fc0cbb2b932de38d759f4c33daf9e8bf3c1ca38929",
+      "grants_admitted": 0,
+      "grants_rejected": 1,
+      "revocations_admitted": 0,
+      "revocations_rejected": 0,
+      "active_grants_count": 2,
+      "delegated_warrants_issued": 0,
+      "delegated_rejections": 0,
+      "warrant_ids": [
+        "c9c6e7594edd488af67a1a9e53f9759852cfd7b310df7cd30f551400a468e3a7"
+      ],
+      "rsa_warrant_id": "c9c6e7594edd488af67a1a9e53f9759852cfd7b310df7cd30f551400a468e3a7",
+      "rsa_action_type": "Notify",
+      "grant_rejection_codes": [
+        "INVALID_FIELD"
+      ],
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "c9c6e7594edd488af67a1a9e53f9759852cfd7b310df7cd30f551400a468e3a7",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 9 != 8"
+        }
+      ],
+      "latency_ms": 0.5262259992377949
+    },
+    {
+      "cycle_index": 10,
+      "cycle_id": "X2-0010",
+      "phase": "adversarial-grant",
+      "decision_type": "ACTION",
+      "constitution_hash": "43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1",
+      "state_in_hash": "51096b4ec76efe49af6cd4fc0cbb2b932de38d759f4c33daf9e8bf3c1ca38929",
+      "state_out_hash": "1d33f8d50003d830c3fe67a62da2b7344097c469f601f302943a70b04aed673f",
+      "grants_admitted": 0,
+      "grants_rejected": 1,
+      "revocations_admitted": 0,
+      "revocations_rejected": 0,
+      "active_grants_count": 0,
+      "delegated_warrants_issued": 0,
+      "delegated_rejections": 0,
+      "warrant_ids": [
+        "48d2d91d8148cf7dc23726546e50b2e8d1f95b814015edd750b1728ac436d200"
+      ],
+      "rsa_warrant_id": "48d2d91d8148cf7dc23726546e50b2e8d1f95b814015edd750b1728ac436d200",
+      "rsa_action_type": "Notify",
+      "grant_rejection_codes": [
+        "INVALID_FIELD"
+      ],
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "48d2d91d8148cf7dc23726546e50b2e8d1f95b814015edd750b1728ac436d200",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 10 != 9"
+        }
+      ],
+      "latency_ms": 0.5102639997858205
+    },
+    {
+      "cycle_index": 11,
+      "cycle_id": "X2-0011",
+      "phase": "adversarial-grant",
+      "decision_type": "ACTION",
+      "constitution_hash": "43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1",
+      "state_in_hash": "1d33f8d50003d830c3fe67a62da2b7344097c469f601f302943a70b04aed673f",
+      "state_out_hash": "4d1a06ca144f7af94546d6056aa98c8ea21658cfc9ef69c96f87e3a31de648e6",
+      "grants_admitted": 0,
+      "grants_rejected": 1,
+      "revocations_admitted": 0,
+      "revocations_rejected": 0,
+      "active_grants_count": 0,
+      "delegated_warrants_issued": 0,
+      "delegated_rejections": 0,
+      "warrant_ids": [
+        "05208b7bf132675f11f11be5890a95167941801663a48166c2ec8f6a5d9cdc0e"
+      ],
+      "rsa_warrant_id": "05208b7bf132675f11f11be5890a95167941801663a48166c2ec8f6a5d9cdc0e",
+      "rsa_action_type": "Notify",
+      "grant_rejection_codes": [
+        "INVALID_FIELD"
+      ],
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "05208b7bf132675f11f11be5890a95167941801663a48166c2ec8f6a5d9cdc0e",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 11 != 10"
+        }
+      ],
+      "latency_ms": 0.4908560003968887
+    },
+    {
+      "cycle_index": 12,
+      "cycle_id": "X2-0012",
+      "phase": "adversarial-grant",
+      "decision_type": "ACTION",
+      "constitution_hash": "43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1",
+      "state_in_hash": "4d1a06ca144f7af94546d6056aa98c8ea21658cfc9ef69c96f87e3a31de648e6",
+      "state_out_hash": "d7efc72fd133554636476e01d6bc4b34a5b240072c42d6b950e11c359754d7a2",
+      "grants_admitted": 0,
+      "grants_rejected": 1,
+      "revocations_admitted": 0,
+      "revocations_rejected": 0,
+      "active_grants_count": 0,
+      "delegated_warrants_issued": 0,
+      "delegated_rejections": 0,
+      "warrant_ids": [
+        "f0ffb0f06cd11660e7b45b09aecb8cfc88c14cacfc0bc647c06b296b447af661"
+      ],
+      "rsa_warrant_id": "f0ffb0f06cd11660e7b45b09aecb8cfc88c14cacfc0bc647c06b296b447af661",
+      "rsa_action_type": "Notify",
+      "grant_rejection_codes": [
+        "INVALID_FIELD"
+      ],
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "f0ffb0f06cd11660e7b45b09aecb8cfc88c14cacfc0bc647c06b296b447af661",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 12 != 11"
+        }
+      ],
+      "latency_ms": 0.44633499965129886
+    },
+    {
+      "cycle_index": 13,
+      "cycle_id": "X2-0013",
+      "phase": "adversarial-grant",
+      "decision_type": "ACTION",
+      "constitution_hash": "43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1",
+      "state_in_hash": "d7efc72fd133554636476e01d6bc4b34a5b240072c42d6b950e11c359754d7a2",
+      "state_out_hash": "20db3629780ba202954bf3fa8cba39d201aac60349f2a8f7b468a628be3ca800",
+      "grants_admitted": 0,
+      "grants_rejected": 1,
+      "revocations_admitted": 0,
+      "revocations_rejected": 0,
+      "active_grants_count": 0,
+      "delegated_warrants_issued": 0,
+      "delegated_rejections": 0,
+      "warrant_ids": [
+        "d9962dc4752f7402da0a9cdb6377bb6daa28633427f8c36b207ba519c655c2f0"
+      ],
+      "rsa_warrant_id": "d9962dc4752f7402da0a9cdb6377bb6daa28633427f8c36b207ba519c655c2f0",
+      "rsa_action_type": "Notify",
+      "grant_rejection_codes": [
+        "GRANTOR_LACKS_PERMISSION"
+      ],
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "d9962dc4752f7402da0a9cdb6377bb6daa28633427f8c36b207ba519c655c2f0",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 13 != 12"
+        }
+      ],
+      "latency_ms": 0.43573400034802034
+    },
+    {
+      "cycle_index": 14,
+      "cycle_id": "X2-0014",
+      "phase": "adversarial-grant",
+      "decision_type": "ACTION",
+      "constitution_hash": "43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1",
+      "state_in_hash": "20db3629780ba202954bf3fa8cba39d201aac60349f2a8f7b468a628be3ca800",
+      "state_out_hash": "8c77ca18607814ef4e05cb00a3b349b20df3776499c05397bfd225ca2383ad69",
+      "grants_admitted": 0,
+      "grants_rejected": 1,
+      "revocations_admitted": 0,
+      "revocations_rejected": 0,
+      "active_grants_count": 0,
+      "delegated_warrants_issued": 0,
+      "delegated_rejections": 0,
+      "warrant_ids": [
+        "1de99ef7f496e15fe56c4b6f22e86b12455457455980aeb6c5011e564953a646"
+      ],
+      "rsa_warrant_id": "1de99ef7f496e15fe56c4b6f22e86b12455457455980aeb6c5011e564953a646",
+      "rsa_action_type": "Notify",
+      "grant_rejection_codes": [
+        "GRANTOR_LACKS_PERMISSION"
+      ],
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "1de99ef7f496e15fe56c4b6f22e86b12455457455980aeb6c5011e564953a646",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 14 != 13"
+        }
+      ],
+      "latency_ms": 0.452514000244264
+    },
+    {
+      "cycle_index": 15,
+      "cycle_id": "X2-0015",
+      "phase": "adversarial-grant",
+      "decision_type": "ACTION",
+      "constitution_hash": "43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1",
+      "state_in_hash": "8c77ca18607814ef4e05cb00a3b349b20df3776499c05397bfd225ca2383ad69",
+      "state_out_hash": "dfe6ece3aa83e8c17b4709c29eae06e6eaef36bb663b2326edfda9dcad839318",
+      "grants_admitted": 0,
+      "grants_rejected": 1,
+      "revocations_admitted": 0,
+      "revocations_rejected": 0,
+      "active_grants_count": 0,
+      "delegated_warrants_issued": 0,
+      "delegated_rejections": 0,
+      "warrant_ids": [
+        "00f1c67be097a4760037ddd5095a412156eb07d7230f517863903cb60c886c72"
+      ],
+      "rsa_warrant_id": "00f1c67be097a4760037ddd5095a412156eb07d7230f517863903cb60c886c72",
+      "rsa_action_type": "Notify",
+      "grant_rejection_codes": [
+        "GRANTOR_LACKS_PERMISSION"
+      ],
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "00f1c67be097a4760037ddd5095a412156eb07d7230f517863903cb60c886c72",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 15 != 14"
+        }
+      ],
+      "latency_ms": 0.7647640004506684
+    },
+    {
+      "cycle_index": 16,
+      "cycle_id": "X2-0016",
+      "phase": "adversarial-grant",
+      "decision_type": "ACTION",
+      "constitution_hash": "43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1",
+      "state_in_hash": "88293029a4508e4a6c72d727f2a58afa85794760e3c56d7ab2a8f8ffebef8f7b",
+      "state_out_hash": "fdf08a52d060c47eefb9469b79e9c11c47920ed2d0825f12472af988f9621eb6",
+      "grants_admitted": 0,
+      "grants_rejected": 0,
+      "revocations_admitted": 0,
+      "revocations_rejected": 1,
+      "active_grants_count": 0,
+      "delegated_warrants_issued": 0,
+      "delegated_rejections": 0,
+      "warrant_ids": [
+        "5bf23843796325d8417dd9f8f5d2366a1084dc3810b3b2405ae7cd109a210505"
+      ],
+      "rsa_warrant_id": "5bf23843796325d8417dd9f8f5d2366a1084dc3810b3b2405ae7cd109a210505",
+      "rsa_action_type": "Notify",
+      "revocation_rejection_codes": [
+        "NONREVOCABLE_GRANT"
+      ],
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "5bf23843796325d8417dd9f8f5d2366a1084dc3810b3b2405ae7cd109a210505",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 16 != 15"
+        }
+      ],
+      "latency_ms": 0.7286589998329873
+    },
+    {
+      "cycle_index": 17,
+      "cycle_id": "X2-0017",
+      "phase": "adversarial-delegation",
+      "decision_type": "ACTION",
+      "constitution_hash": "43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1",
+      "state_in_hash": "5fd8455d71f87f4e7b0b6b154ededd55d10beb2102414cc3decbd3f1c79219b3",
+      "state_out_hash": "dc8951ce2cce47e4af0327ccb9b9b30aae5a10bbdafa6e251cf370769065bd78",
+      "grants_admitted": 0,
+      "grants_rejected": 0,
+      "revocations_admitted": 0,
+      "revocations_rejected": 0,
+      "active_grants_count": 0,
+      "delegated_warrants_issued": 0,
+      "delegated_rejections": 1,
+      "warrant_ids": [
+        "c13e3f8a91f8f91bde951f341143bfd04022cf570ccc83b7104d75b4cab0a442"
+      ],
+      "rsa_warrant_id": "c13e3f8a91f8f91bde951f341143bfd04022cf570ccc83b7104d75b4cab0a442",
+      "rsa_action_type": "Notify",
+      "delegation_rejection_codes": [
+        "SIGNATURE_MISSING"
+      ],
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "c13e3f8a91f8f91bde951f341143bfd04022cf570ccc83b7104d75b4cab0a442",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 17 != 16"
+        }
+      ],
+      "latency_ms": 0.5117379996590898
+    },
+    {
+      "cycle_index": 18,
+      "cycle_id": "X2-0018",
+      "phase": "adversarial-delegation",
+      "decision_type": "ACTION",
+      "constitution_hash": "43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1",
+      "state_in_hash": "dd66bee17f30181e0b1c140ea9c0e3c98d2eb1ba9985d5ac9d0ee1c96ddc7fb4",
+      "state_out_hash": "73d708a98684c8d1643264a6fc7adec447b6c85f9d1d5ed375a16cb72289e873",
+      "grants_admitted": 0,
+      "grants_rejected": 0,
+      "revocations_admitted": 0,
+      "revocations_rejected": 0,
+      "active_grants_count": 0,
+      "delegated_warrants_issued": 0,
+      "delegated_rejections": 1,
+      "warrant_ids": [
+        "1c9babd01fba70ed7f66a361ac0bb9d20bbf941d03e8291b32059cbc8713f408"
+      ],
+      "rsa_warrant_id": "1c9babd01fba70ed7f66a361ac0bb9d20bbf941d03e8291b32059cbc8713f408",
+      "rsa_action_type": "Notify",
+      "delegation_rejection_codes": [
+        "SIGNATURE_INVALID"
+      ],
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "1c9babd01fba70ed7f66a361ac0bb9d20bbf941d03e8291b32059cbc8713f408",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 18 != 17"
+        }
+      ],
+      "latency_ms": 0.9021659998325049
+    },
+    {
+      "cycle_index": 19,
+      "cycle_id": "X2-0019",
+      "phase": "adversarial-delegation",
+      "decision_type": "ACTION",
+      "constitution_hash": "43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1",
+      "state_in_hash": "4368e8f8388695b8016d21cea1845a81758f6ca5d43f37fec81f3c302c3b0dd5",
+      "state_out_hash": "2a1190c7b0446da1806158bf33a2a58169fa35d6d39100c1b222f96db065635e",
+      "grants_admitted": 0,
+      "grants_rejected": 0,
+      "revocations_admitted": 0,
+      "revocations_rejected": 0,
+      "active_grants_count": 0,
+      "delegated_warrants_issued": 0,
+      "delegated_rejections": 1,
+      "warrant_ids": [
+        "594f406d9bb58f3687a6eaf5f8deacafcf1546bd67e03d3ab5ee644734f0699e"
+      ],
+      "rsa_warrant_id": "594f406d9bb58f3687a6eaf5f8deacafcf1546bd67e03d3ab5ee644734f0699e",
+      "rsa_action_type": "Notify",
+      "delegation_rejection_codes": [
+        "AUTHORITY_CITATION_INVALID"
+      ],
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "594f406d9bb58f3687a6eaf5f8deacafcf1546bd67e03d3ab5ee644734f0699e",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 19 != 18"
+        }
+      ],
+      "latency_ms": 0.7256249991769437
+    },
+    {
+      "cycle_index": 20,
+      "cycle_id": "X2-0020",
+      "phase": "adversarial-delegation",
+      "decision_type": "ACTION",
+      "constitution_hash": "43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1",
+      "state_in_hash": "a884a31e61803fe217eeb3b14e8dc9bc6a0c9b6032cefc7600fafcc7a82933ee",
+      "state_out_hash": "f6c35d1c5f5781d6247c45c68968554d3c7fbd3ffe9acfebfe45fb4bfb85d0f8",
+      "grants_admitted": 0,
+      "grants_rejected": 0,
+      "revocations_admitted": 0,
+      "revocations_rejected": 0,
+      "active_grants_count": 0,
+      "delegated_warrants_issued": 0,
+      "delegated_rejections": 1,
+      "warrant_ids": [
+        "1acf21f899adcb9c5d06f9be5bbdd8a1e85d600527469c26dddbde0de21f72f7"
+      ],
+      "rsa_warrant_id": "1acf21f899adcb9c5d06f9be5bbdd8a1e85d600527469c26dddbde0de21f72f7",
+      "rsa_action_type": "Notify",
+      "delegation_rejection_codes": [
+        "AUTHORITY_CITATION_INVALID"
+      ],
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "1acf21f899adcb9c5d06f9be5bbdd8a1e85d600527469c26dddbde0de21f72f7",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 20 != 19"
+        }
+      ],
+      "latency_ms": 0.6386090008163592
+    },
+    {
+      "cycle_index": 21,
+      "cycle_id": "X2-0021",
+      "phase": "expiry-active",
+      "decision_type": "ACTION",
+      "constitution_hash": "43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1",
+      "state_in_hash": "1a52c529a6dfbc47423e103fbe743ebefaa2e90fae310794bd20a3ec41029939",
+      "state_out_hash": "bd3646d61e091dc235ce5c981f8be5397a7e753218dfde154c6caaf99491fc7e",
+      "grants_admitted": 0,
+      "grants_rejected": 0,
+      "revocations_admitted": 0,
+      "revocations_rejected": 0,
+      "active_grants_count": 1,
+      "delegated_warrants_issued": 1,
+      "delegated_rejections": 0,
+      "warrant_ids": [
+        "bd05e7ea85bc82a76398ebe5ea5e239494862a00f38f28a2f05d1320367b3c87",
+        "e493e7320cfaf9cae8452ba3ab5ba93f44b1ca75ce8e3ff6a379d51071b4e920"
+      ],
+      "rsa_warrant_id": "bd05e7ea85bc82a76398ebe5ea5e239494862a00f38f28a2f05d1320367b3c87",
+      "rsa_action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "bd05e7ea85bc82a76398ebe5ea5e239494862a00f38f28a2f05d1320367b3c87",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 21 != 20"
+        },
+        {
+          "event_type": "execution_event",
+          "warrant_id": "e493e7320cfaf9cae8452ba3ab5ba93f44b1ca75ce8e3ff6a379d51071b4e920",
+          "tool": "ReadLocal",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 21 != 20"
+        }
+      ],
+      "latency_ms": 0.805542999842146
+    },
+    {
+      "cycle_index": 22,
+      "cycle_id": "X2-0022",
+      "phase": "expiry-advance",
+      "decision_type": "ACTION",
+      "constitution_hash": "43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1",
+      "state_in_hash": "bd3646d61e091dc235ce5c981f8be5397a7e753218dfde154c6caaf99491fc7e",
+      "state_out_hash": "42dc1585ebe13f0426df4106f7aa74f8aab054edf8f72e1d2ab50b84420f0722",
+      "grants_admitted": 0,
+      "grants_rejected": 0,
+      "revocations_admitted": 0,
+      "revocations_rejected": 0,
+      "active_grants_count": 1,
+      "delegated_warrants_issued": 0,
+      "delegated_rejections": 0,
+      "warrant_ids": [
+        "b73194c862929f35272d7db579c119a4b7d6eb540b084044347735cd41e4a6b7"
+      ],
+      "rsa_warrant_id": "b73194c862929f35272d7db579c119a4b7d6eb540b084044347735cd41e4a6b7",
+      "rsa_action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "b73194c862929f35272d7db579c119a4b7d6eb540b084044347735cd41e4a6b7",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 22 != 21"
+        }
+      ],
+      "latency_ms": 0.7027620004009805
+    },
+    {
+      "cycle_index": 23,
+      "cycle_id": "X2-0023",
+      "phase": "expiry-advance",
+      "decision_type": "ACTION",
+      "constitution_hash": "43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1",
+      "state_in_hash": "42dc1585ebe13f0426df4106f7aa74f8aab054edf8f72e1d2ab50b84420f0722",
+      "state_out_hash": "578f92c87bc1c729280bc705c120bea2514a23b1ea8a1acea931f9d19d478117",
+      "grants_admitted": 0,
+      "grants_rejected": 0,
+      "revocations_admitted": 0,
+      "revocations_rejected": 0,
+      "active_grants_count": 0,
+      "delegated_warrants_issued": 0,
+      "delegated_rejections": 0,
+      "warrant_ids": [
+        "5fb01af65fdf1fe3a1cd30940817ac19e0ef77a652badb64f7c25fc42af090b6"
+      ],
+      "rsa_warrant_id": "5fb01af65fdf1fe3a1cd30940817ac19e0ef77a652badb64f7c25fc42af090b6",
+      "rsa_action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "5fb01af65fdf1fe3a1cd30940817ac19e0ef77a652badb64f7c25fc42af090b6",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 23 != 22"
+        }
+      ],
+      "latency_ms": 0.43018499945901567
+    },
+    {
+      "cycle_index": 24,
+      "cycle_id": "X2-0024",
+      "phase": "expiry-advance",
+      "decision_type": "ACTION",
+      "constitution_hash": "43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1",
+      "state_in_hash": "578f92c87bc1c729280bc705c120bea2514a23b1ea8a1acea931f9d19d478117",
+      "state_out_hash": "55c3134713a1782a2e93428acc6f1cfa8cd50d1ed6108249a2e7561f905f147b",
+      "grants_admitted": 0,
+      "grants_rejected": 0,
+      "revocations_admitted": 0,
+      "revocations_rejected": 0,
+      "active_grants_count": 0,
+      "delegated_warrants_issued": 0,
+      "delegated_rejections": 0,
+      "warrant_ids": [
+        "396d6f02ba8ca779388cdd91017fa8334f21accffc32abe2b71eb8bf5392def6"
+      ],
+      "rsa_warrant_id": "396d6f02ba8ca779388cdd91017fa8334f21accffc32abe2b71eb8bf5392def6",
+      "rsa_action_type": "Notify",
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "396d6f02ba8ca779388cdd91017fa8334f21accffc32abe2b71eb8bf5392def6",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 24 != 23"
+        }
+      ],
+      "latency_ms": 0.42344800021965057
+    },
+    {
+      "cycle_index": 25,
+      "cycle_id": "X2-0025",
+      "phase": "expiry-expired",
+      "decision_type": "ACTION",
+      "constitution_hash": "43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1",
+      "state_in_hash": "55c3134713a1782a2e93428acc6f1cfa8cd50d1ed6108249a2e7561f905f147b",
+      "state_out_hash": "e6eaf6397c705eda84736dbc5ce7c43c679a4d5e5488be2849bfc8dcebc065ad",
+      "grants_admitted": 0,
+      "grants_rejected": 0,
+      "revocations_admitted": 0,
+      "revocations_rejected": 0,
+      "active_grants_count": 0,
+      "delegated_warrants_issued": 0,
+      "delegated_rejections": 1,
+      "warrant_ids": [
+        "f76871eb93a33b0346fd3f27ba076fe70b990ceb77ebc6580f74a89380ac7086"
+      ],
+      "rsa_warrant_id": "f76871eb93a33b0346fd3f27ba076fe70b990ceb77ebc6580f74a89380ac7086",
+      "rsa_action_type": "Notify",
+      "delegation_rejection_codes": [
+        "AUTHORITY_CITATION_INVALID"
+      ],
+      "execution_events": [
+        {
+          "event_type": "execution_event",
+          "warrant_id": "f76871eb93a33b0346fd3f27ba076fe70b990ceb77ebc6580f74a89380ac7086",
+          "tool": "Notify",
+          "result": "failed",
+          "detail": "Warrant cycle mismatch: 25 != 24"
+        }
+      ],
+      "latency_ms": 0.6717180003761314
+    }
+  ]
+}
