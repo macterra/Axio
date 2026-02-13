@@ -2,8 +2,8 @@
 
 ## Reflective Amendment Under Frozen Sovereignty
 
-**Session:** `1fd560f6-6801-45f6-81ec-939cee370828`  
-**Date:** 2026-02-12  
+**Session:** `1fd560f6-6801-45f6-81ec-939cee370828`
+**Date:** 2026-02-12
 **Verdict:** **X-1 CLOSURE: POSITIVE ✓**
 
 ---
@@ -53,12 +53,22 @@ observations + candidates → policy_core_x1
   │    ├─ Gate 6:  authorization, prior_hash, ECK, cooling
   │    ├─ Gate 7:  YAML parse + schema validation + hash verify + ECK presence
   │    ├─ Gate 8A: physics claim rejection
-  │    └─ Gate 8B: structural preservation (density, scope, ratchet)
+  │    └─ Gate 8B: structural preservation (subchecks below)
   │         └─ if pass → QUEUE_AMENDMENT
   │
   └─ Step 3: Normal action admission (RSA-0 path)
        └─ ACTION | REFUSE
 ```
+
+**Gate 8B subchecks** (evaluated in order after 8A passes):
+
+| Sub-gate | Check | Rejection code |
+|:---|:---|:---|
+| 8B.1 | Cardinality — action_permissions present and non-empty | SCHEMA_INVALID |
+| 8B.2 | Wildcard — no `"*"` in authority or action mappings | WILDCARD_MAPPING |
+| 8B.3 | Universal authorization — density < 1 (A < B×M) | UNIVERSAL_AUTHORIZATION |
+| 8B.4 | Scope collapse — ≥1 action still requires scope_claim | SCOPE_COLLAPSE |
+| 8B.5 | Ratchet/envelope — cooling, threshold, density_upper_bound, authority_reference_mode all non-decreasing | ENVELOPE_DEGRADED |
 
 ### 2.4 Constitution Lifecycle
 
@@ -72,6 +82,10 @@ v0.2 (frozen) → propose → cooling(2) → adopt → v0.2.1
 Each ratchet-tightening amendment increases the cooling period, making subsequent
 amendments progressively harder to adopt. This is the intended monotonic behavior.
 
+Version labels (e.g. "v0.2.2") may remain constant across ratchet-tightening
+amendments; the SHA-256 hash is the authoritative constitution identity, not the
+human-readable version string.
+
 ---
 
 ## §3 Constitution v0.2
@@ -84,7 +98,7 @@ amendments progressively harder to adopt. This is the intended monotonic behavio
 | SHA-256 | `b41db3ba5ffe9ed74b40553d0a0cc019de8bd254e78a0e0d9c5ebeb2eeb5a6dd` |
 | Amendments | enabled |
 | Cooling period | 2 cycles |
-| Authorization threshold | 2 citations |
+| Authorization threshold | 1 citation |
 | Density (A/B/M) | A=3, B=4, M=4 → d=0.3333 |
 
 ### 3.1 ECK Sections (Existence Kernel Constraints)
@@ -122,9 +136,12 @@ The following sections are structurally required at every transition:
 
 ### 4.1 Key Design Decisions
 
-**Cooling semantics:** `current_cycle >= proposal_cycle + cooling_period`. Adoption
-triggers on the last cooling cycle itself (not after). This is consistent with the
-kernel tests and means the runner must handle adoption during any phase.
+**Cooling semantics:** `current_cycle >= proposal_cycle + cooling_period`. A
+proposal queued at cycle P is eligible for adoption starting at cycle
+P + cooling_period_cycles, guaranteeing ≥ (cooling_period_cycles − 1) intervening
+non-proposal cycles. With cooling = 2, a proposal at cycle 5 becomes eligible at
+cycle 7 (cycles 5, 6 intervene). This means adoption can trigger on the last
+cooling cycle itself, and the runner must handle ADOPT in any phase.
 
 **Amendment trace propagation:** `_try_queue_amendment()` returns a 3-tuple
 `(Optional[PolicyOutputX1], List[AmendmentAdmissionEvent], List[AmendmentAdmissionResult])`
@@ -216,7 +233,29 @@ firewall.
 | `TestDensityComputation` | 3 | Density edge cases |
 | `TestRSA0Regression` | 2 | RSA-0 policy_core unchanged behavior |
 
-### 6.3 Harness Test Coverage (19 tests)
+### 6.3 Schema-Valid Adversarial Gate Evidence
+
+The kernel tests exercise Gates 8A/8B with schema validation explicitly bypassed
+(`schema=None`), proving semantic gates reject schema-valid adversarial
+constitutions for the intended reason codes:
+
+| Adversarial class | Schema-valid fixture? | Expected reject code | Gate | Kernel test name |
+|:---|:---:|:---|:---|:---|
+| Universal auth (density=1) | yes | UNIVERSAL_AUTHORIZATION | 8B.3 | `test_gate8b_universal_authorization` |
+| Scope collapse | yes | SCOPE_COLLAPSE | 8B.4 | `test_gate8b_scope_collapse` |
+| Wildcard authority | yes | WILDCARD_MAPPING | 8B.2 | `test_gate8b_wildcard_authority` |
+| Physics claim (script key) | yes | PHYSICS_CLAIM_DETECTED | 8A | `test_gate8a_forbidden_keys` |
+| Cooling reduction | yes | ENVELOPE_DEGRADED | 8B.5 | `test_gate8b_ratchet_cooling_reduction` |
+| Threshold reduction | yes | ENVELOPE_DEGRADED | 8B.5 | `test_gate8b_ratchet_threshold_reduction` |
+| Density bound increase | yes | ENVELOPE_DEGRADED | 8B.5 | `test_gate8b_ratchet_density_bound_increased` |
+| Density bound removal | yes | ENVELOPE_DEGRADED | 8B.5 | `test_gate8b_ratchet_density_bound_removed` |
+| ECK section removal | yes | ECK_MISSING | 7 | `test_gate7_eck_missing_in_proposed` |
+
+Production defense is therefore two-deep: the schema catches structurally invalid
+mutations at Gate 7; the semantic gates (proven above with schema bypassed) catch
+structurally valid but sovereignty-degrading proposals at Gates 8A/8B.
+
+### 6.4 Harness Test Coverage (19 tests)
 
 | Class | Tests | What it covers |
 |:---|---:|:---|
@@ -280,11 +319,12 @@ All 7 adversarial proposals rejected:
 
 **Analysis:** The schema's `additionalProperties: false` constraint acts as the
 first structural firewall, intercepting all 7 adversarial mutations at Gate 7
-before they can reach the semantic gates (8A/8B). The semantic gates are still
-proven correct by the kernel's 58 unit tests which supply controlled YAML that
-bypasses schema validation. Production defense is therefore two-deep: schema
-catches structural violations; semantic gates catch semantically valid but
-sovereignty-degrading proposals.
+before they can reach the semantic gates (8A/8B). The semantic gates are
+independently proven correct by 9 kernel unit tests that bypass schema validation
+(`schema=None`) and confirm each adversarial class is rejected at the intended
+gate with the intended code (see §6.3 for the full evidence table). Production
+defense is therefore two-deep: schema catches structural violations; semantic
+gates catch structurally valid but sovereignty-degrading proposals.
 
 ### 7.5 Replay Verification
 
