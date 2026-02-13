@@ -64,9 +64,9 @@ observations + candidates → policy_core_x1
 
 | Sub-gate | Check | Rejection code |
 |:---|:---|:---|
-| 8B.1 | Cardinality — action_permissions present and non-empty | SCHEMA_INVALID |
+| 8B.1 | Cardinality — action_permissions present and non-empty | SCHEMA_INVALID (via Gate 7) |
 | 8B.2 | Wildcard — no `"*"` in authority or action mappings | WILDCARD_MAPPING |
-| 8B.3 | Universal authorization — density < 1 (A < B×M) | UNIVERSAL_AUTHORIZATION |
+| 8B.3 | Universal authorization — density must not equal 1 (`M == A×B` ⇒ reject) | UNIVERSAL_AUTHORIZATION |
 | 8B.4 | Scope collapse — ≥1 action still requires scope_claim | SCOPE_COLLAPSE |
 | 8B.5 | Ratchet/envelope — cooling, threshold, density_upper_bound, authority_reference_mode all non-decreasing | ENVELOPE_DEGRADED |
 
@@ -106,7 +106,7 @@ human-readable version string.
 The following sections are structurally required at every transition:
 
 - `AuthorityModel` — authorities, action_permissions
-- `ScopeSystem` — per_action_scope, scope_enforcement_mode
+- `ScopeSystem` — scope_types, per_action_scope, structural_constraints
 - `AmendmentProcedure` — cooling_period_cycles, authorization_threshold
 - `non_goals` — forbidden_objectives
 
@@ -140,7 +140,7 @@ The following sections are structurally required at every transition:
 proposal queued at cycle P is eligible for adoption starting at cycle
 P + cooling_period_cycles, guaranteeing ≥ (cooling_period_cycles − 1) intervening
 non-proposal cycles. With cooling = 2, a proposal at cycle 5 becomes eligible at
-cycle 7 (cycles 5, 6 intervene). This means adoption can trigger on the last
+cycle 7 (cycle 6 intervenes; cycle 5 is the proposal itself). This means adoption can trigger on the last
 cooling cycle itself, and the runner must handle ADOPT in any phase.
 
 **Amendment trace propagation:** `_try_queue_amendment()` returns a 3-tuple
