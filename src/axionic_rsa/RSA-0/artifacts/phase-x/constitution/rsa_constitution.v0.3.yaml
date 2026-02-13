@@ -1,0 +1,867 @@
+meta:
+  name: "RSA Constitution"
+  version: "0.3"
+  phase: "X"
+  date: "2026-02-12"
+  authority_model: "closed"
+  status: "FROZEN"
+  notes:
+    - "Phase X constitution v0.3: Treaty-constrained delegation without sovereignty leakage."
+    - "All unspecified behaviors are forbidden."
+  changelog:
+    - version: "0.3"
+      date: "2026-02-12"
+      changes:
+        - "Added TreatyProcedure, treaty_policy, ScopeEnumerations sections"
+        - "Added AUTH_DELEGATION, treaty_permissions (CL-PERM-DELEGATION)"
+        - "Added TreatyGrant/TreatyRevocation artifacts, origin field on warrants"
+        - "Added DELEGATED_ACTION observation, treaty/treaty_trace logs"
+        - "Added treaty citation namespace, 9 new rejection codes"
+        - "Added INV-NO-DELEGATION-WITHOUT-TREATY, CL-RATCHET-TREATY-MONOTONIC"
+        - "Added CL-EFFECTIVE-DENSITY-DEFINITION, Ed25519 signature requirement"
+        - "Grantee identifiers restricted to ed25519:<hex> format"
+    - version: "0.2"
+      date: "2026-02-12"
+      changes:
+        - "Added ECK: AmendmentProcedure, AuthorityModel, WarrantDefinition, ScopeSystem"
+        - "Added 5 authorities, action_permissions, amendment_permissions, CL-* IDs"
+        - "Enabled self-amendment, density definition, citation formats, schema closure"
+        - "Added AmendmentProposal/AdoptionRecord artifacts, 10 rejection codes"
+    - version: "0.1.1"
+      date: "2026-02-10"
+      changes:
+        - "LogAppend: jsonl_lines array, per-warrant limits"
+        - "RefusalRecord: removed INTEGRITY_RISK (triggers EXIT only)"
+
+non_goals:
+  forbidden_objectives:
+    - "outcome_optimization"
+    - "helpfulness_maximization"
+    - "implicit_coordination"
+    - "stability_at_any_cost"
+    - "silent_recovery"
+    - "hidden_ranking"
+    - "unlogged_defaults"
+  interpretive_rule:
+    - "In ambiguity, refuse rather than infer."
+
+invariants:
+  - id: "INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"
+    statement: "No side effects may occur without a kernel-issued execution warrant referencing an admitted ActionRequest."
+  - id: "INV-AUTHORITY-CITED"
+    statement: "Every admitted action must cite explicit authority identifiers resolvable in this constitution."
+  - id: "INV-NON-PRIVILEGED-REFLECTION"
+    statement: "Reflection may propose and explain; it may not decide, select, execute, amend, or override refusal."
+  - id: "INV-REPLAY-DETERMINISM"
+    statement: "Given identical observations, artifacts, and seeds, policy outputs and warrants must be identical."
+  - id: "INV-NO-DELEGATION-WITHOUT-TREATY"
+    statement: "No delegation effect without a kernel-admitted TreatyGrant and a signed ActionRequest bound to grantee_identifier."
+
+# ---------------------------------------------------------------------------
+# ECK — Extended Constitutional Kernel
+# ---------------------------------------------------------------------------
+
+AmendmentProcedure:
+  id: "CL-AMENDMENT-PROCEDURE"
+  statement: "Constitutional amendments follow this structured procedure. No free-text amendment procedures permitted."
+  cooling_period_cycles: 2
+  authorization_threshold: 1
+  authority_reference_mode: "BOTH"
+  authority_reference_mode_definition:
+    id: "CL-AUTHORITY-REFERENCE-MODE"
+    statement: "BOTH mode requires at least one authority:<hash>#AUTH_* and one constitution:<hash>#INV-* or CL-* citation. Both must resolve."
+    required_namespaces:
+      - namespace: "authority"
+        pattern: "authority:<hash>#AUTH_*"
+        minimum_count: 1
+      - namespace: "clause"
+        pattern: "constitution:<hash>#INV-* or constitution:<hash>#CL-*"
+        minimum_count: 1
+  authorization_threshold_definition:
+    id: "CL-AUTHORIZATION-THRESHOLD-DEFINITION"
+    statement: "Minimum distinct authority namespace citations required in an AmendmentProposal."
+    counts: "distinct authority:<hash>#AUTH_* citations"
+    minimum_distinct_authorities_required_field: "authorization_threshold"
+    admission_rule: "Reject if count(distinct AUTH_* citations) < authorization_threshold."
+  density_upper_bound: 0.75
+  density_definition:
+    id: "CL-DENSITY-DEFINITION"
+    statement: "d = M/(A*B). Reject if A*B==0, d==1.0, or d > density_upper_bound."
+    formula: "density = M / (A * B)"
+    A_source: "count of distinct authority values in action_permissions"
+    B_source: "count of action_space.action_types"
+    M_source: "count of distinct (authority, action) pairs in action_permissions"
+  ratchet_rules:
+    - id: "CL-RATCHET-MONOTONIC"
+      statement: "Cooling non-decreasing; authorization_threshold non-decreasing; density_upper_bound non-increasing and removal forbidden. All directions tighten constraints."
+      fields:
+        - field: "cooling_period_cycles"
+          direction: "non_decreasing"
+        - field: "authorization_threshold"
+          direction: "non_decreasing"
+        - field: "density_upper_bound"
+          direction: "non_increasing"
+          removal_forbidden: true
+    - id: "CL-RATCHET-TREATY-MONOTONIC"
+      statement: "Treaty ratchets tighten delegation surface. All field paths explicit."
+      fields:
+        - field: "TreatyProcedure.max_treaty_duration_cycles"
+          direction: "non_increasing"
+          removal_forbidden: true
+        - field: "AuthorityModel.treaty_permissions"
+          direction: "non_expanding"
+          constraint: "Expansion: adding authority entry or treaty type. Only removal permitted."
+        - field: "ScopeEnumerations.scope_zones"
+          direction: "non_expanding"
+          constraint: "Expansion: adding zone label under any scope_type. Only removal permitted."
+
+# ---------------------------------------------------------------------------
+# Treaty Procedure
+# ---------------------------------------------------------------------------
+
+TreatyProcedure:
+  id: "CL-TREATY-PROCEDURE"
+  statement: "Treaty delegation admitted through gate pipeline (6T/7T/8C/8R)."
+  treaty_schema_identity:
+    id: "CL-TREATY-SCHEMA-IDENTITY"
+    statement: "Active treaty schema identified by SHA-256 of frozen schema file. Mismatch: computed hash != schema_sha256 OR artifact fails validation."
+    schema_path: "artifacts/phase-x/treaties/treaty_types.v0.1.schema.json"
+    schema_sha256: "8b8f4061cad5559f2c9f79ebea32f74f495c0e353d6b43e3e6052080811450ba"
+  treaty_authorization_rule:
+    id: "CL-TREATY-AUTHORIZATION-RULE"
+    statement: "Gate 6T authorization for TreatyGrant and TreatyRevocation consults AuthorityModel.treaty_permissions only. action_permissions and amendment_permissions are not consulted."
+  max_treaty_duration_cycles: 100
+  delegation_depth_limit:
+    id: "CL-DELEGATION-DEPTH-LIMIT"
+    statement: "Only constitutional authorities issue TreatyGrants. Grantees may not re-delegate. Max depth 1."
+    max_depth: 1
+  delegation_acyclicity:
+    id: "CL-DELEGATION-ACYCLICITY"
+    statement: "Delegation graph must be acyclic. TreatyGrant introducing a cycle is rejected."
+  cycle_ordering:
+    id: "CL-CYCLE-ORDERING"
+    statement: "Five-step per-cycle ordering; no preemption. Later steps see earlier mutations."
+    steps:
+      - step: 1
+        label: "Governance artifact admission"
+        sub_ordering:
+          - "Amendment adoption (if eligible)"
+          - "Treaty revocation admission and application"
+          - "Treaty grant admission (incremental, canonical hash order within grants)"
+          - "Amendment proposal queuing"
+      - step: 2
+        label: "Revocation processing"
+      - step: 3
+        label: "Active treaty set recomputation"
+      - step: 4
+        label: "ActionRequest admission (including delegated)"
+      - step: 5
+        label: "ExecutionWarrant issuance"
+  signature_requirement:
+    id: "CL-SIGNATURE-REQUIREMENT"
+    statement: "Delegated ActionRequest requires Ed25519 signature over canonical payload (excl. signature field). Invalid/unsigned rejected before authority resolution."
+    algorithm: "Ed25519"
+    signed_material: "Canonical JSON of ActionRequest excluding signature field"
+    trigger: "Presence of treaty: citation in authority_citations"
+    verification_mode: "deterministic, replay-stable, no external trust sources"
+  effective_density_definition:
+    id: "CL-EFFECTIVE-DENSITY-DEFINITION"
+    statement: "d_eff = M_eff/(A_eff*B). Reject if A_eff*B==0, d_eff==1.0, or d_eff > density_upper_bound."
+    formula: "effective_density = M_eff / (A_eff * B)"
+    A_eff_source: "distinct authorities in action_permissions UNION distinct active grantees"
+    B_source: "count of action_space.action_types"
+    M_eff_source: "distinct (authority, action) pairs: constitutional UNION delegated"
+    bound: "density_upper_bound from AmendmentProcedure"
+  implicit_invalidation_triggers:
+    id: "CL-IMPLICIT-INVALIDATION-TRIGGERS"
+    statement: "Active grants invalidated under listed conditions only."
+    triggers:
+      - trigger: "GRANT_EXPIRED"
+        condition: "current_cycle > grant_cycle + duration_cycles - 1"
+      - trigger: "GRANTOR_AUTHORITY_REMOVED"
+        condition: "Grantor authority no longer exists in active constitution"
+      - trigger: "TREATY_PERMISSION_REMOVED"
+        condition: "NOT exists(entry in AuthorityModel.treaty_permissions WHERE entry.authority == 'AUTH_DELEGATION' AND 'TreatyGrant' in entry.treaties)"
+      - trigger: "ACTION_TYPE_REMOVED"
+        condition: "Any granted action is no longer in closed action set"
+      - trigger: "SCOPE_ZONE_REMOVED"
+        condition: "Grant scope_constraints reference a zone no longer in ScopeEnumerations"
+      - trigger: "DENSITY_BOUND_TIGHTENED"
+        condition: "Effective density exceeds new bound; deterministic greedy pruning oldest-first"
+      - trigger: "TREATY_SCHEMA_MISMATCH"
+        condition: "Treaty artifact no longer validates against active treaty schema version"
+    pruning_rule:
+      statement: "Prune oldest first (grant_cycle ASC, grant hash ASC). Strictly subtractive."
+
+AuthorityModel:
+  id: "CL-AUTHORITY-MODEL"
+  statement: "Explicit authority-permission mappings for actions, amendments, treaties. No implicit authorization."
+  authorities:
+    - "AUTH_TELEMETRY"
+    - "AUTH_IO_READ"
+    - "AUTH_IO_WRITE"
+    - "AUTH_GOVERNANCE"
+    - "AUTH_EXECUTION"
+    - "AUTH_DELEGATION"
+  action_permissions:
+    - id: "CL-PERM-TELEMETRY"
+      authority: "AUTH_TELEMETRY"
+      actions:
+        - "LogAppend"
+        - "Notify"
+    - id: "CL-PERM-IO-READ"
+      authority: "AUTH_IO_READ"
+      actions:
+        - "ReadLocal"
+    - id: "CL-PERM-IO-WRITE"
+      authority: "AUTH_IO_WRITE"
+      actions:
+        - "WriteLocal"
+  amendment_permissions:
+    - id: "CL-PERM-GOVERNANCE"
+      authority: "AUTH_GOVERNANCE"
+      amendments:
+        - "ConstitutionReplacement"
+  treaty_permissions:
+    - id: "CL-PERM-DELEGATION"
+      authority: "AUTH_DELEGATION"
+      treaties:
+        - "TreatyGrant"
+        - "TreatyRevocation"
+  kernel_citation_rule:
+    id: "CL-KERNEL-CITATION-RULE"
+    statement: "Kernel-only actions (e.g., LogAppend) include kernel-issued citations: AUTH_TELEMETRY and applicable INV-*/CL-* clause, satisfying INV-AUTHORITY-CITED."
+    kernel_authority: "AUTH_TELEMETRY"
+    applies_to:
+      - "LogAppend"
+
+WarrantDefinition:
+  id: "CL-WARRANT-DEFINITION"
+  statement: "Every side-effectful action requires kernel-issued ExecutionWarrant. Multiple per cycle for delegated actions. Origin tag required."
+  warrant_types:
+    - type: "ExecutionWarrant"
+      required_fields:
+        - "action_request_id"
+        - "action_type"
+        - "scope_constraints"
+        - "issued_in_cycle"
+        - "single_use"
+        - "warrant_id"
+        - "created_at"
+        - "origin"
+      properties:
+        single_use: true
+        scope_bound: true
+      origin_values:
+        - "rsa"
+        - "delegated"
+  execution_ordering:
+    id: "CL-WARRANT-EXECUTION-ORDER"
+    statement: "Sort: origin_rank ASC, then warrant_id ASC. Replay enforces ordering."
+    origin_rank:
+      rsa: 0
+      delegated: 1
+  warrant_id_rule:
+    id: "CL-WARRANT-ID-DETERMINISM"
+    statement: "warrant_id = SHA-256 of canonical JSON of warrant payload excluding warrant_id. Deterministic for replay."
+    encoding: "hex_lowercase"
+  action_warrant_mapping:
+    - action_type: "Notify"
+      requires_warrant: true
+      scope_type: "LOG_STREAM"
+    - action_type: "ReadLocal"
+      requires_warrant: true
+      scope_type: "FILE_PATH"
+    - action_type: "WriteLocal"
+      requires_warrant: true
+      scope_type: "FILE_PATH"
+    - action_type: "LogAppend"
+      requires_warrant: true
+      scope_type: "LOG_STREAM"
+
+ScopeSystem:
+  id: "CL-SCOPE-SYSTEM"
+  statement: "Actions require scope claim unless scope_claim_required: false. Per-action rules below."
+  scope_types:
+    - "FILE_PATH"
+    - "LOG_STREAM"
+    - "WORKSPACE_PATH"
+  per_action_scope:
+    - action_type: "Notify"
+      scope_claim_required: true
+      valid_scope_types:
+        - "LOG_STREAM"
+      permitted_zones: ["TELEMETRY", "GOVERNANCE"]
+      admission_rule: "Refuse if scope zone not in permitted_zones or host zone mapping missing."
+    - action_type: "ReadLocal"
+      scope_claim_required: true
+      valid_scope_types:
+        - "FILE_PATH"
+        - "WORKSPACE_PATH"
+    - action_type: "WriteLocal"
+      scope_claim_required: true
+      valid_scope_types:
+        - "FILE_PATH"
+        - "WORKSPACE_PATH"
+    - action_type: "LogAppend"
+      scope_claim_required: false
+      valid_scope_types:
+        - "LOG_STREAM"
+  scope_warrant_consistency:
+    id: "CL-SCOPE-WARRANT-CONSISTENCY"
+    statement: "action_warrant_mapping.scope_type must be in per_action_scope.valid_scope_types."
+    uniqueness_rules:
+      - "Each action_type must appear at most once in WarrantDefinition.action_warrant_mapping."
+      - "Each action_type must appear at most once in ScopeSystem.per_action_scope."
+      - "Each action_type in action_space.action_types must appear in both lists."
+  structural_constraints:
+    - id: "CL-SCOPE-ROOTS"
+      statement: "Scoped file paths must fall under allowlisted directory roots defined in io_policy."
+      allowlisted_read_roots:
+        - "./artifacts/"
+        - "./workspace/"
+      allowlisted_write_roots:
+        - "./workspace/"
+        - "./logs/"
+    - id: "CL-ZONE-PATH-CONSISTENCY"
+      statement: "For FILE_PATH actions, requested path must be under a root in host zone mapping for the asserted zone, and that root must be in io_policy allowlist. Refuse otherwise."
+  scope_claim_zone_format:
+    id: "CL-SCOPE-CLAIM-ZONE-FORMAT"
+    statement: "ScopeClaim must include scope_type and scope_zone. scope_type must be one of the action's valid_scope_types. scope_zone must be a member of ScopeEnumerations zones for that scope_type."
+    required_fields:
+      - "scope_type"
+      - "scope_zone"
+    multiplicity: "single"
+
+# ---------------------------------------------------------------------------
+# Scope Enumerations (Treaty Subset Checking)
+# ---------------------------------------------------------------------------
+
+ScopeEnumerations:
+  id: "CL-SCOPE-ENUMERATIONS"
+  statement: "Abstract zone labels for treaty subset checking via set inclusion. Treaties delegate zones, not paths."
+  host_mapping_rule:
+    id: "CL-ZONE-HOST-MAPPING"
+    statement: "Host provides deterministic zone-to-path/stream mapping, logged as zone_mapping_loaded at startup. Not constitutional."
+  scope_zones:
+    - scope_type: "FILE_PATH"
+      zones:
+        - "ARTIFACTS_READ"
+        - "WORKSPACE_READ"
+        - "WORKSPACE_WRITE"
+        - "LOGS_WRITE"
+    - scope_type: "LOG_STREAM"
+      zones:
+        - "TELEMETRY"
+        - "GOVERNANCE"
+    - scope_type: "WORKSPACE_PATH"
+      zones:
+        - "WORKSPACE_READ"
+        - "WORKSPACE_WRITE"
+
+# ---------------------------------------------------------------------------
+# Action Space
+# ---------------------------------------------------------------------------
+
+action_space:
+  id: "CL-CLOSED-ACTION-SET"
+  statement: "Only explicitly listed action types are lawful. All unlisted action types are forbidden."
+  closed_world: true
+
+  action_types:
+    - type: "Notify"
+      description: "Emit a message to an approved local sink. Output sink is determined solely by the scope claim zone; no separate target field."
+      required_fields:
+        - name: "message"
+          type: "string"
+          max_len: 2000
+      requires:
+        authority_citations: true
+        scope_claim: true
+        justification: true
+      side_effect_class: "low"
+      routing_rule: "Output sink is derived from scope claim zone (TELEMETRY or GOVERNANCE). Host maps zone to concrete sink. No independent target selector."
+
+    - type: "ReadLocal"
+      description: "Read from an allowlisted local path; no network."
+      required_fields:
+        - name: "path"
+          type: "string"
+          constraints: ["must_be_under_allowlist_read"]
+      requires:
+        authority_citations: true
+        scope_claim: true
+        justification: true
+      side_effect_class: "none"
+
+    - type: "WriteLocal"
+      description: "Write to an allowlisted local path."
+      required_fields:
+        - name: "path"
+          type: "string"
+          constraints: ["must_be_under_allowlist_write"]
+        - name: "content"
+          type: "string"
+          max_len: 200000
+      requires:
+        authority_citations: true
+        scope_claim: true
+        justification: true
+      side_effect_class: "medium"
+
+    - type: "LogAppend"
+      description: "Append-only JSONL logging. Kernel-only. Not available to reflection proposals."
+      required_fields:
+        - name: "log_name"
+          type: "enum"
+          allowed:
+            - "observations"
+            - "artifacts"
+            - "admission_trace"
+            - "selector_trace"
+            - "execution_trace"
+            - "constitutions"
+            - "amendment_trace"
+            - "treaties"
+            - "treaty_trace"
+        - name: "jsonl_lines"
+          type: "array<string>"
+          max_len_per_item: 10000
+      requires:
+        authority_citations: true
+        scope_claim: false
+        justification: false
+      side_effect_class: "low"
+      kernel_only: true
+      limits:
+        max_lines_per_warrant: 50
+        max_chars_per_line: 10000
+        max_bytes_per_warrant: 256000
+
+# ---------------------------------------------------------------------------
+# Refusal Policy
+# ---------------------------------------------------------------------------
+
+refusal_policy:
+  refusal_is_first_class: true
+  mandatory_refusal_conditions:
+    - "no_admissible_action_exists"
+    - "missing_required_artifact"
+    - "authority_citation_invalid_or_missing"
+    - "scope_claim_missing_or_invalid"
+    - "constitution_violation_detected"
+    - "execution_warrant_unavailable"
+    - "budget_exhausted"
+    - "amendments_disabled"
+    - "prior_hash_mismatch"
+  refusal_reason_codes:
+    - "NO_ADMISSIBLE_ACTION"
+    - "MISSING_REQUIRED_ARTIFACT"
+    - "AUTHORITY_CITATION_INVALID"
+    - "SCOPE_CLAIM_INVALID"
+    - "CONSTITUTION_VIOLATION"
+    - "EXECUTION_WARRANT_UNAVAILABLE"
+    - "BUDGET_EXHAUSTED"
+  amendment_failure_routing:
+    id: "CL-AMENDMENT-FAILURE-ROUTING"
+    statement: "Amendment gate failures produce rejection codes in amendment_trace. RefusalRecord only when all candidates rejected and no adoption ready."
+  treaty_failure_routing:
+    id: "CL-TREATY-FAILURE-ROUTING"
+    statement: "Treaty gate failures produce rejection codes in treaty_trace. Does not block action admission."
+  admission_rejection_codes:
+    - "CANDIDATE_PARSE_FAILED"
+    - "INVALID_UNICODE"
+    - "CANDIDATE_BUDGET_EXCEEDED"
+    - "KERNEL_ONLY_ACTION"
+    - "MISSING_FIELD"
+    - "INVALID_FIELD"
+    - "CITATION_UNRESOLVABLE"
+    - "PATH_NOT_ALLOWLISTED"
+    - "AMENDMENTS_DISABLED"
+    - "PRIOR_HASH_MISMATCH"
+    - "ECK_MISSING"
+    - "SCHEMA_INVALID"
+    - "PHYSICS_CLAIM_DETECTED"
+    - "WILDCARD_MAPPING"
+    - "UNIVERSAL_AUTHORIZATION"
+    - "SCOPE_COLLAPSE"
+    - "ENVELOPE_DEGRADED"
+    - "COOLING_VIOLATION"
+    - "GRANTOR_LACKS_PERMISSION"
+    - "EXCESSIVE_DEPTH"
+    - "DELEGATION_CYCLE"
+    - "DENSITY_MARGIN_VIOLATION"
+    - "COVERAGE_INFLATION"
+    - "GRANT_INACTIVE"
+    - "SIGNATURE_INVALID"
+    - "SIGNATURE_MISSING"
+    - "NONREVOCABLE_GRANT"
+  refusal_output_requirements:
+    include:
+      - "refusal_reason_code"
+      - "failed_gate"
+      - "missing_artifacts"
+      - "authority_ids_considered"
+      - "observation_ids_referenced"
+      - "rejection_summary_by_gate"
+
+# ---------------------------------------------------------------------------
+# Exit Policy
+# ---------------------------------------------------------------------------
+
+exit_policy:
+  id: "CL-EXIT-POLICY"
+  statement: "Exit is a policy decision type, not an action type. Exit decisions terminate the agent run."
+  exit_permitted: true
+  exit_mandatory_conditions:
+    - "integrity_risk_detected"
+  exit_preferred_over:
+    - "constitution_violation"
+    - "unknown_side_effect_path"
+
+# ---------------------------------------------------------------------------
+# Amendment Policy
+# ---------------------------------------------------------------------------
+
+amendment_policy:
+  id: "CL-AMENDMENT-POLICY"
+  statement: "Self-amendment enabled per AmendmentProcedure."
+  amendments_enabled: true
+  max_constitution_bytes: 32768
+  max_amendment_candidates_per_cycle: 3
+  max_pending_amendments: 5
+  amendment_proposal_scope_rule:
+    statement: "ScopeClaim required for ActionRequest per action_space/ScopeSystem. NOT applicable to AmendmentProposals; gates must not reject for missing ScopeClaim."
+    scope_claim_required: false
+  amendment_proposal_citation_rule:
+    statement: "AmendmentProposals must cite both authority: and constitution: namespaces per authority_reference_mode BOTH."
+    required_citation_namespaces:
+      - "authority"
+      - "constitution"
+  forbidden_actions:
+    - "ModifyAuthorityStore"
+    - "InstallTool"
+    - "EnableNetwork"
+    - "ChangeSelectorRule"
+  amendment_artifact_rules:
+    id: "CL-AMENDMENT-ARTIFACT-RULES"
+    statement: "AmendmentProposal and AmendmentAdoptionRecord are typed, closed artifacts with defined required fields and serialization rules."
+    artifact_header_rule:
+      id: "CL-ARTIFACT-HEADER-RULE"
+      statement: "All artifacts include header: id, type, created_at, author. No exceptions."
+    AmendmentProposal:
+      required_fields:
+        - "prior_constitution_hash"
+        - "proposed_constitution_yaml"
+        - "proposed_constitution_hash"
+        - "justification"
+        - "authority_citations"
+        - "created_at"
+      optional_fields:
+        - "diff_summary"
+      serialization:
+        to_dict_full: "Includes all fields including proposed_constitution_yaml."
+        to_dict_id: "Excludes proposed_constitution_yaml. Used for AmendmentProposal.id computation (canonical JSON)."
+        trace_rule: "Trace records must not embed proposed_constitution_yaml; they reference proposal_id and proposed_constitution_hash only."
+    AmendmentAdoptionRecord:
+      required_fields:
+        - "proposal_id"
+        - "prior_constitution_hash"
+        - "new_constitution_hash"
+        - "effective_cycle"
+        - "authority_citations"
+        - "created_at"
+      author: "kernel"
+
+# ---------------------------------------------------------------------------
+# Treaty Policy
+# ---------------------------------------------------------------------------
+
+treaty_policy:
+  id: "CL-TREATY-POLICY"
+  statement: "Treaty admission gates: 6T/7T/8C (grants), 6T/7T/8R (revocations)."
+  treaty_artifact_rules:
+    id: "CL-TREATY-ARTIFACT-RULES"
+    statement: "TreatyGrant and TreatyRevocation: typed, closed artifacts with required fields."
+    TreatyGrant:
+      required_fields:
+        - "id"
+        - "type"
+        - "created_at"
+        - "author"
+        - "grantor_authority_id"
+        - "grantee_identifier"
+        - "granted_actions"
+        - "scope_constraints"
+        - "duration_cycles"
+        - "revocable"
+        - "authority_citations"
+        - "justification"
+      constraints:
+        - "type == TreatyGrant"
+        - "granted_actions: non-empty subset of closed action set (8C.1)"
+        - "grantor must hold each granted_action in action_permissions (8C.2b)"
+        - "scope_constraints: map {scope_type: [zone_label...]} keys sorted, each zone list sorted+unique, subset of ScopeEnumerations (8C.3)"
+        - "duration_cycles: integer >= 1, <= max_treaty_duration_cycles (8C.8)"
+        - "grantee_identifier matches ed25519:[0-9a-fA-F]{64}"
+        - "grantor_authority_id: constitutional authority, not treaty grantee (8C.5)"
+        - "authority_citations: constitution: or authority: namespaces only (8C.9)"
+      serialization:
+        to_dict_full: "Includes all fields."
+        to_dict_id: "All fields included. Used for TreatyGrant.id computation (canonical JSON hash)."
+        canonicalization_rule: "List fields (granted_actions, scope_constraints, authority_citations) sorted lexicographically before hashing. Keys sorted per canonical JSON. Permuted lists produce identical hashes."
+    TreatyRevocation:
+      required_fields:
+        - "id"
+        - "type"
+        - "created_at"
+        - "author"
+        - "grant_id"
+        - "authority_citations"
+        - "justification"
+      constraints:
+        - "type must equal TreatyRevocation"
+        - "grant_id must reference an active, revocable TreatyGrant"
+        - "authority_citations must use constitution: or authority: namespaces only"
+      serialization:
+        to_dict_full: "Includes all fields."
+        to_dict_id: "All fields included. Used for TreatyRevocation.id computation (canonical JSON hash)."
+  treaty_scope_rule:
+    statement: "ScopeClaim NOT applicable to TreatyGrant/TreatyRevocation. Gates must not reject for missing ScopeClaim. scope_constraints are internal to the grant."
+    scope_claim_required: false
+  grantee_identifier_format:
+    id: "CL-GRANTEE-IDENTIFIER-FORMAT"
+    statement: "Grantee identifiers: Ed25519 public keys in canonical hex. No symbolic registry."
+    pattern: "^ed25519:[0-9a-fA-F]{64}$"
+    forbidden_schemes:
+      - "agent:"
+
+# ---------------------------------------------------------------------------
+# Reflection Policy
+# ---------------------------------------------------------------------------
+
+reflection_policy:
+  llm_allowed: true
+  llm_role:
+    - "propose_actions"
+    - "propose_justifications"
+    - "propose_refusals"
+    - "propose_scope_claims"
+    - "propose_amendments"
+    - "propose_treaties"
+  llm_forbidden:
+    - "execute"
+    - "select"
+    - "adopt_amendment"
+    - "admit_treaty"
+    - "override_refusal"
+    - "trigger_side_effects"
+  proposal_budgets:
+    max_candidates_per_cycle: 5
+    max_total_tokens_per_cycle: 6000
+  anti_filibuster_rule:
+    - "If budgets are exhausted without an admitted ActionRequest, REFUSE with BUDGET_EXHAUSTED."
+
+# ---------------------------------------------------------------------------
+# Selection Policy
+# ---------------------------------------------------------------------------
+
+selection_policy:
+  selector_rule_required: true
+  default_selector_rule:
+    type: "DeterministicCanonical"
+    key: "bundle_hash_lexicographic_min"
+    rationale: "Selection is procedural, not preferential."
+  forbidden_selector_features:
+    - "natural_language_scoring"
+    - "learned_reward_models"
+    - "implicit_utility"
+
+# ---------------------------------------------------------------------------
+# IO Policy
+# ---------------------------------------------------------------------------
+
+io_policy:
+  allowlist:
+    read_paths:
+      - "./artifacts/"
+      - "./workspace/"
+    write_paths:
+      - "./workspace/"
+      - "./logs/"
+  network:
+    enabled: false
+
+# ---------------------------------------------------------------------------
+# Observation Schema
+# ---------------------------------------------------------------------------
+
+observation_schema:
+  kinds:
+    - kind: "user_input"
+      payload:
+        - name: "text"
+          type: "string"
+          max_len: 4000
+        - name: "source"
+          type: "enum"
+          allowed: ["cli"]
+    - kind: "timestamp"
+      payload:
+        - name: "iso8601_utc"
+          type: "string"
+    - kind: "budget"
+      payload:
+        - name: "llm_output_token_count"
+          type: "int"
+        - name: "llm_candidates_reported"
+          type: "int"
+        - name: "llm_parse_errors"
+          type: "int"
+    - kind: "system"
+      payload:
+        - name: "event"
+          type: "enum"
+          allowed:
+            - "startup_integrity_ok"
+            - "startup_integrity_fail"
+            - "citation_index_ok"
+            - "citation_index_fail"
+            - "replay_ok"
+            - "replay_fail"
+            - "executor_integrity_fail"
+            - "zone_mapping_loaded"
+        - name: "detail"
+          type: "string"
+          max_len: 2000
+    - kind: "delegated_action"
+      payload:
+        - name: "encoding"
+          type: "enum"
+          allowed: ["json"]
+        - name: "payload"
+          type: "string"
+          max_len: 65536
+        - name: "source_id"
+          type: "string"
+          max_len: 256
+
+# ---------------------------------------------------------------------------
+# Telemetry Policy
+# ---------------------------------------------------------------------------
+
+telemetry_policy:
+  required_logs:
+    - "observations"
+    - "artifacts"
+    - "admission_trace"
+    - "selector_trace"
+    - "execution_trace"
+    - "constitutions"
+    - "amendment_trace"
+    - "treaties"
+    - "treaty_trace"
+  trace_event_types:
+    - type: "admission_event"
+      fields:
+        - "candidate_id"
+        - "gate"
+        - "result"
+        - "reason_code"
+    - type: "selection_event"
+      fields:
+        - "admitted_bundle_hashes"
+        - "selected_bundle_hash"
+    - type: "execution_event"
+      fields:
+        - "warrant_id"
+        - "tool"
+        - "result"
+        - "detail"
+    - type: "amendment_event"
+      fields:
+        - "proposal_id"
+        - "gate_results"
+        - "rejection_reason"
+        - "density"
+        - "cardinality"
+        - "envelope_comparison"
+    - type: "adoption_event"
+      fields:
+        - "adoption_record_id"
+        - "prior_hash"
+        - "new_hash"
+        - "effective_cycle"
+    - type: "treaty_event"
+      fields:
+        - "artifact_id"
+        - "artifact_type"
+        - "gate_results"
+        - "rejection_reason"
+        - "effective_density"
+        - "scope_check_summary"
+        - "depth_check_result"
+    - type: "treaty_invalidation_event"
+      fields:
+        - "grant_id"
+        - "trigger"
+        - "reason_detail"
+        - "cycle_id"
+    - type: "delegation_event"
+      fields:
+        - "action_request_id"
+        - "grantee_identifier"
+        - "treaty_citation"
+        - "signature_verification_result"
+        - "admission_result"
+        - "warrant_id"
+  replay:
+    required: true
+
+# ---------------------------------------------------------------------------
+# Citation Formats (Closed Set)
+# ---------------------------------------------------------------------------
+
+citation_formats:
+  id: "CL-CITATION-FORMATS"
+  statement: "All citations must conform to one of the defined formats. The <hash> placeholder refers to the SHA-256 hash of the relevant artifact."
+  formats:
+    - namespace: "constitution"
+      pattern: "constitution:<hash>#<clause_id>"
+      clause_id_prefixes:
+        - "INV-"
+        - "CL-"
+      example: "constitution:0ea7527b...#INV-REPLAY-DETERMINISM"
+    - namespace: "authority"
+      pattern: "authority:<hash>#<authority_id>"
+      authority_id_prefix: "AUTH_"
+      example: "authority:0ea7527b...#AUTH_GOVERNANCE"
+    - namespace: "treaty"
+      pattern: "treaty:<grant_hash>#<grant_id>"
+      note: "Used by delegated ActionRequests to cite TreatyGrant authority. Triggers signature verification."
+      example: "treaty:a1b2c3d4...#grant-001"
+    - namespace: "legacy"
+      pattern: "constitution:v<version>#<clause_id>"
+      note: "Backward compatible with v0.1.x. Resolves against active constitution. Admission rewrites to constitution:<active_hash>#<clause_id>."
+
+# ---------------------------------------------------------------------------
+# Artifact Vocabulary (Closed Set)
+# ---------------------------------------------------------------------------
+
+artifact_vocabulary:
+  id: "CL-CLOSED-ARTIFACT-SET"
+  statement: "Only explicitly listed artifact types are lawful. All unlisted artifact types are forbidden."
+  closed_world: true
+  types:
+    - "Observation"
+    - "ActionRequest"
+    - "ScopeClaim"
+    - "Justification"
+    - "CandidateBundle"
+    - "ExecutionWarrant"
+    - "RefusalRecord"
+    - "ExitRecord"
+    - "AmendmentProposal"
+    - "AmendmentAdoptionRecord"
+    - "TreatyGrant"
+    - "TreatyRevocation"

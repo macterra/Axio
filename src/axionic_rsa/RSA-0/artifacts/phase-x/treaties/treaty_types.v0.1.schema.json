@@ -1,0 +1,155 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "RSA Treaty Types v0.1",
+    "description": "Schema for TreatyGrant and TreatyRevocation artifacts. Validates runtime treaty artifacts against constitutional constraints.",
+    "oneOf": [
+        { "$ref": "#/definitions/TreatyGrant" },
+        { "$ref": "#/definitions/TreatyRevocation" }
+    ],
+    "definitions": {
+        "TreatyGrant": {
+            "type": "object",
+            "required": [
+                "id",
+                "type",
+                "created_at",
+                "author",
+                "grantor_authority_id",
+                "grantee_identifier",
+                "granted_actions",
+                "scope_constraints",
+                "duration_cycles",
+                "revocable",
+                "authority_citations",
+                "justification"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "SHA-256 of canonical JSON (all fields, lists sorted lexicographically, keys sorted)."
+                },
+                "type": {
+                    "type": "string",
+                    "const": "TreatyGrant"
+                },
+                "created_at": {
+                    "type": "string",
+                    "description": "ISO 8601 UTC timestamp."
+                },
+                "author": {
+                    "type": "string",
+                    "description": "Authoring entity identifier."
+                },
+                "grantor_authority_id": {
+                    "type": "string",
+                    "pattern": "^AUTH_",
+                    "description": "Constitutional authority granting delegation. Must not be a treaty grantee (8C.5)."
+                },
+                "grantee_identifier": {
+                    "type": "string",
+                    "pattern": "^ed25519:[0-9a-fA-F]{64}$",
+                    "description": "Ed25519 public key in canonical hex format."
+                },
+                "granted_actions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": ["Notify", "ReadLocal", "WriteLocal", "LogAppend"]
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true,
+                    "description": "Non-empty subset of closed action set (8C.1). Grantor must hold each in action_permissions (8C.2b)."
+                },
+                "scope_constraints": {
+                    "type": "object",
+                    "description": "Map {scope_type: [zone_label...]} with keys sorted lexicographically, each zone list sorted+unique. Subset of ScopeEnumerations (8C.3).",
+                    "additionalProperties": false,
+                    "patternProperties": {
+                        "^(FILE_PATH|LOG_STREAM|WORKSPACE_PATH)$": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "ARTIFACTS_READ",
+                                    "WORKSPACE_READ",
+                                    "WORKSPACE_WRITE",
+                                    "LOGS_WRITE",
+                                    "TELEMETRY",
+                                    "GOVERNANCE"
+                                ]
+                            },
+                            "minItems": 1,
+                            "uniqueItems": true
+                        }
+                    }
+                },
+                "duration_cycles": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 100,
+                    "description": "Grant lifetime in cycles. Must be <= TreatyProcedure.max_treaty_duration_cycles (8C.8)."
+                },
+                "revocable": {
+                    "type": "boolean",
+                    "description": "Whether grant can be explicitly revoked via TreatyRevocation."
+                },
+                "authority_citations": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "minItems": 1,
+                    "description": "constitution: or authority: namespaces only (8C.9)."
+                },
+                "justification": {
+                    "type": "string",
+                    "description": "Human-readable justification for the grant."
+                }
+            }
+        },
+        "TreatyRevocation": {
+            "type": "object",
+            "required": [
+                "id",
+                "type",
+                "created_at",
+                "author",
+                "grant_id",
+                "authority_citations",
+                "justification"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "SHA-256 of canonical JSON (all fields, keys sorted)."
+                },
+                "type": {
+                    "type": "string",
+                    "const": "TreatyRevocation"
+                },
+                "created_at": {
+                    "type": "string",
+                    "description": "ISO 8601 UTC timestamp."
+                },
+                "author": {
+                    "type": "string",
+                    "description": "Authoring entity identifier."
+                },
+                "grant_id": {
+                    "type": "string",
+                    "description": "ID of the active, revocable TreatyGrant to revoke."
+                },
+                "authority_citations": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "minItems": 1,
+                    "description": "constitution: or authority: namespaces only."
+                },
+                "justification": {
+                    "type": "string",
+                    "description": "Human-readable justification for the revocation."
+                }
+            }
+        }
+    }
+}

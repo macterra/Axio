@@ -1,0 +1,2267 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "RSA Constitution v0.3",
+    "description": "Schema validating the Phase X RSA constitution v0.3 YAML structure. Adds treaty-constrained delegation, scope enumerations, Ed25519 identity, and multi-warrant cycles.",
+    "type": "object",
+    "required": [
+        "meta",
+        "non_goals",
+        "invariants",
+        "AmendmentProcedure",
+        "TreatyProcedure",
+        "AuthorityModel",
+        "WarrantDefinition",
+        "ScopeSystem",
+        "ScopeEnumerations",
+        "action_space",
+        "refusal_policy",
+        "exit_policy",
+        "amendment_policy",
+        "treaty_policy",
+        "reflection_policy",
+        "selection_policy",
+        "io_policy",
+        "observation_schema",
+        "telemetry_policy",
+        "citation_formats",
+        "artifact_vocabulary"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "meta": {
+            "type": "object",
+            "required": [
+                "name",
+                "version",
+                "phase",
+                "date",
+                "authority_model",
+                "status",
+                "notes"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string",
+                    "pattern": "^[0-9]+\\.[0-9]+(\\.[0-9]+)?$"
+                },
+                "phase": {
+                    "type": "string",
+                    "enum": [
+                        "X"
+                    ]
+                },
+                "date": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "authority_model": {
+                    "type": "string",
+                    "enum": [
+                        "closed"
+                    ]
+                },
+                "status": {
+                    "type": "string",
+                    "enum": [
+                        "FROZEN"
+                    ]
+                },
+                "notes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "changelog": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "version",
+                            "date",
+                            "changes"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                            "version": {
+                                "type": "string"
+                            },
+                            "date": {
+                                "type": "string"
+                            },
+                            "changes": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "non_goals": {
+            "type": "object",
+            "required": [
+                "forbidden_objectives",
+                "interpretive_rule"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "forbidden_objectives": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "outcome_optimization",
+                            "helpfulness_maximization",
+                            "implicit_coordination",
+                            "stability_at_any_cost",
+                            "silent_recovery",
+                            "hidden_ranking",
+                            "unlogged_defaults"
+                        ]
+                    }
+                },
+                "interpretive_rule": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "invariants": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "id",
+                    "statement"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "enum": [
+                            "INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT",
+                            "INV-AUTHORITY-CITED",
+                            "INV-NON-PRIVILEGED-REFLECTION",
+                            "INV-REPLAY-DETERMINISM",
+                            "INV-NO-DELEGATION-WITHOUT-TREATY"
+                        ]
+                    },
+                    "statement": {
+                        "type": "string"
+                    }
+                }
+            },
+            "minItems": 5,
+            "maxItems": 5
+        },
+        "AmendmentProcedure": {
+            "type": "object",
+            "required": [
+                "id",
+                "statement",
+                "cooling_period_cycles",
+                "authorization_threshold",
+                "authority_reference_mode",
+                "density_upper_bound",
+                "ratchet_rules"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "pattern": "^CL-"
+                },
+                "statement": {
+                    "type": "string"
+                },
+                "cooling_period_cycles": {
+                    "type": "integer",
+                    "minimum": 2
+                },
+                "authorization_threshold": {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                "authority_reference_mode": {
+                    "type": "string",
+                    "enum": [
+                        "CLAUSE_IDS",
+                        "AUTHORITY_IDS",
+                        "BOTH"
+                    ]
+                },
+                "authority_reference_mode_definition": {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "statement",
+                        "required_namespaces"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "pattern": "^CL-"
+                        },
+                        "statement": {
+                            "type": "string"
+                        },
+                        "required_namespaces": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "required": [
+                                    "namespace",
+                                    "pattern",
+                                    "minimum_count"
+                                ],
+                                "additionalProperties": false,
+                                "properties": {
+                                    "namespace": {
+                                        "type": "string"
+                                    },
+                                    "pattern": {
+                                        "type": "string"
+                                    },
+                                    "minimum_count": {
+                                        "type": "integer",
+                                        "minimum": 1
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "authorization_threshold_definition": {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "statement",
+                        "counts",
+                        "minimum_distinct_authorities_required_field",
+                        "admission_rule"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "pattern": "^CL-"
+                        },
+                        "statement": {
+                            "type": "string"
+                        },
+                        "counts": {
+                            "type": "string"
+                        },
+                        "minimum_distinct_authorities_required_field": {
+                            "type": "string"
+                        },
+                        "admission_rule": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "density_upper_bound": {
+                    "type": "number",
+                    "exclusiveMaximum": 1,
+                    "minimum": 0
+                },
+                "density_definition": {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "statement",
+                        "formula",
+                        "A_source",
+                        "B_source",
+                        "M_source"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "pattern": "^CL-"
+                        },
+                        "statement": {
+                            "type": "string"
+                        },
+                        "formula": {
+                            "type": "string"
+                        },
+                        "A_source": {
+                            "type": "string"
+                        },
+                        "B_source": {
+                            "type": "string"
+                        },
+                        "M_source": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "ratchet_rules": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "id",
+                            "statement",
+                            "fields"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "pattern": "^CL-"
+                            },
+                            "statement": {
+                                "type": "string"
+                            },
+                            "fields": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "required": [
+                                        "field",
+                                        "direction"
+                                    ],
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "field": {
+                                            "type": "string"
+                                        },
+                                        "direction": {
+                                            "type": "string",
+                                            "enum": [
+                                                "non_decreasing",
+                                                "non_increasing",
+                                                "non_expanding"
+                                            ]
+                                        },
+                                        "removal_forbidden": {
+                                            "type": "boolean"
+                                        },
+                                        "constraint": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "minItems": 1
+                }
+            }
+        },
+        "TreatyProcedure": {
+            "type": "object",
+            "required": [
+                "id",
+                "statement",
+                "treaty_schema_identity",
+                "treaty_authorization_rule",
+                "max_treaty_duration_cycles",
+                "delegation_depth_limit",
+                "delegation_acyclicity",
+                "cycle_ordering",
+                "signature_requirement",
+                "effective_density_definition",
+                "implicit_invalidation_triggers"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "pattern": "^CL-"
+                },
+                "statement": {
+                    "type": "string"
+                },
+                "treaty_authorization_rule": {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "statement"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "pattern": "^CL-"
+                        },
+                        "statement": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "max_treaty_duration_cycles": {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                "delegation_depth_limit": {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "statement",
+                        "max_depth"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "pattern": "^CL-"
+                        },
+                        "statement": {
+                            "type": "string"
+                        },
+                        "max_depth": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 1
+                        }
+                    }
+                },
+                "delegation_acyclicity": {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "statement"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "pattern": "^CL-"
+                        },
+                        "statement": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "cycle_ordering": {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "statement",
+                        "steps"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "pattern": "^CL-"
+                        },
+                        "statement": {
+                            "type": "string"
+                        },
+                        "steps": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "required": [
+                                    "step",
+                                    "label"
+                                ],
+                                "additionalProperties": false,
+                                "properties": {
+                                    "step": {
+                                        "type": "integer",
+                                        "minimum": 1
+                                    },
+                                    "label": {
+                                        "type": "string"
+                                    },
+                                    "sub_ordering": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "minItems": 5,
+                            "maxItems": 5
+                        }
+                    }
+                },
+                "signature_requirement": {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "statement",
+                        "algorithm",
+                        "signed_material",
+                        "trigger",
+                        "verification_mode"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "pattern": "^CL-"
+                        },
+                        "statement": {
+                            "type": "string"
+                        },
+                        "algorithm": {
+                            "type": "string",
+                            "enum": [
+                                "Ed25519"
+                            ]
+                        },
+                        "signed_material": {
+                            "type": "string"
+                        },
+                        "trigger": {
+                            "type": "string"
+                        },
+                        "verification_mode": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "effective_density_definition": {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "statement",
+                        "formula",
+                        "A_eff_source",
+                        "B_source",
+                        "M_eff_source",
+                        "bound"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "pattern": "^CL-"
+                        },
+                        "statement": {
+                            "type": "string"
+                        },
+                        "formula": {
+                            "type": "string"
+                        },
+                        "A_eff_source": {
+                            "type": "string"
+                        },
+                        "B_source": {
+                            "type": "string"
+                        },
+                        "M_eff_source": {
+                            "type": "string"
+                        },
+                        "bound": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "implicit_invalidation_triggers": {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "statement",
+                        "triggers",
+                        "pruning_rule"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "pattern": "^CL-"
+                        },
+                        "statement": {
+                            "type": "string"
+                        },
+                        "triggers": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "required": [
+                                    "trigger",
+                                    "condition"
+                                ],
+                                "additionalProperties": false,
+                                "properties": {
+                                    "trigger": {
+                                        "type": "string",
+                                        "enum": [
+                                            "GRANT_EXPIRED",
+                                            "GRANTOR_AUTHORITY_REMOVED",
+                                            "TREATY_PERMISSION_REMOVED",
+                                            "ACTION_TYPE_REMOVED",
+                                            "SCOPE_ZONE_REMOVED",
+                                            "DENSITY_BOUND_TIGHTENED",
+                                            "TREATY_SCHEMA_MISMATCH"
+                                        ]
+                                    },
+                                    "condition": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "minItems": 7,
+                            "maxItems": 7
+                        },
+                        "pruning_rule": {
+                            "type": "object",
+                            "required": [
+                                "statement"
+                            ],
+                            "additionalProperties": false,
+                            "properties": {
+                                "statement": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "treaty_schema_identity": {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "statement",
+                        "schema_path",
+                        "schema_sha256"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "pattern": "^CL-"
+                        },
+                        "statement": {
+                            "type": "string"
+                        },
+                        "schema_path": {
+                            "type": "string"
+                        },
+                        "schema_sha256": {
+                            "type": "string",
+                            "pattern": "^[0-9a-fA-F]{64}$"
+                        }
+                    }
+                }
+            }
+        },
+        "AuthorityModel": {
+            "type": "object",
+            "required": [
+                "id",
+                "statement",
+                "authorities",
+                "action_permissions",
+                "amendment_permissions",
+                "treaty_permissions"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "pattern": "^CL-"
+                },
+                "statement": {
+                    "type": "string"
+                },
+                "authorities": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "pattern": "^AUTH_"
+                    },
+                    "minItems": 1
+                },
+                "action_permissions": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "id",
+                            "authority",
+                            "actions"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "pattern": "^CL-"
+                            },
+                            "authority": {
+                                "type": "string",
+                                "pattern": "^AUTH_"
+                            },
+                            "actions": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "minItems": 1
+                            }
+                        }
+                    }
+                },
+                "amendment_permissions": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "id",
+                            "authority",
+                            "amendments"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "pattern": "^CL-"
+                            },
+                            "authority": {
+                                "type": "string",
+                                "pattern": "^AUTH_"
+                            },
+                            "amendments": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "minItems": 1
+                            }
+                        }
+                    }
+                },
+                "treaty_permissions": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "id",
+                            "authority",
+                            "treaties"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "pattern": "^CL-"
+                            },
+                            "authority": {
+                                "type": "string",
+                                "pattern": "^AUTH_"
+                            },
+                            "treaties": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "TreatyGrant",
+                                        "TreatyRevocation"
+                                    ]
+                                },
+                                "minItems": 1
+                            }
+                        }
+                    },
+                    "minItems": 1
+                },
+                "kernel_citation_rule": {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "statement",
+                        "kernel_authority",
+                        "applies_to"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "pattern": "^CL-"
+                        },
+                        "statement": {
+                            "type": "string"
+                        },
+                        "kernel_authority": {
+                            "type": "string",
+                            "pattern": "^AUTH_"
+                        },
+                        "applies_to": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            }
+        },
+        "WarrantDefinition": {
+            "type": "object",
+            "required": [
+                "id",
+                "statement",
+                "execution_ordering",
+                "warrant_id_rule",
+                "warrant_types",
+                "action_warrant_mapping"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "pattern": "^CL-"
+                },
+                "statement": {
+                    "type": "string"
+                },
+                "execution_ordering": {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "statement",
+                        "origin_rank"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "pattern": "^CL-"
+                        },
+                        "statement": {
+                            "type": "string"
+                        },
+                        "origin_rank": {
+                            "type": "object",
+                            "required": [
+                                "rsa",
+                                "delegated"
+                            ],
+                            "additionalProperties": false,
+                            "properties": {
+                                "rsa": {
+                                    "type": "integer",
+                                    "const": 0
+                                },
+                                "delegated": {
+                                    "type": "integer",
+                                    "const": 1
+                                }
+                            }
+                        }
+                    }
+                },
+                "warrant_id_rule": {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "statement",
+                        "encoding"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "pattern": "^CL-"
+                        },
+                        "statement": {
+                            "type": "string"
+                        },
+                        "encoding": {
+                            "type": "string",
+                            "enum": [
+                                "hex_lowercase"
+                            ]
+                        }
+                    }
+                },
+                "warrant_types": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "type",
+                            "required_fields",
+                            "properties"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                            "type": {
+                                "type": "string"
+                            },
+                            "required_fields": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "properties": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "single_use": {
+                                        "type": "boolean"
+                                    },
+                                    "scope_bound": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            },
+                            "origin_values": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "rsa",
+                                        "delegated"
+                                    ]
+                                },
+                                "minItems": 2,
+                                "maxItems": 2
+                            }
+                        }
+                    },
+                    "minItems": 1
+                },
+                "action_warrant_mapping": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "action_type",
+                            "requires_warrant",
+                            "scope_type"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                            "action_type": {
+                                "type": "string",
+                                "enum": [
+                                    "Notify",
+                                    "ReadLocal",
+                                    "WriteLocal",
+                                    "LogAppend"
+                                ]
+                            },
+                            "requires_warrant": {
+                                "type": "boolean"
+                            },
+                            "scope_type": {
+                                "type": "string",
+                                "enum": [
+                                    "FILE_PATH",
+                                    "LOG_STREAM",
+                                    "WORKSPACE_PATH"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "ScopeSystem": {
+            "type": "object",
+            "required": [
+                "id",
+                "statement",
+                "scope_types",
+                "per_action_scope",
+                "structural_constraints",
+                "scope_claim_zone_format"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "pattern": "^CL-"
+                },
+                "statement": {
+                    "type": "string"
+                },
+                "scope_types": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "FILE_PATH",
+                            "LOG_STREAM",
+                            "WORKSPACE_PATH"
+                        ]
+                    },
+                    "minItems": 1
+                },
+                "per_action_scope": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "action_type",
+                            "scope_claim_required",
+                            "valid_scope_types"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                            "action_type": {
+                                "type": "string",
+                                "enum": [
+                                    "Notify",
+                                    "ReadLocal",
+                                    "WriteLocal",
+                                    "LogAppend"
+                                ]
+                            },
+                            "scope_claim_required": {
+                                "type": "boolean"
+                            },
+                            "valid_scope_types": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "FILE_PATH",
+                                        "LOG_STREAM",
+                                        "WORKSPACE_PATH"
+                                    ]
+                                }
+                            },
+                            "permitted_zones": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "admission_rule": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "scope_warrant_consistency": {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "statement",
+                        "uniqueness_rules"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "pattern": "^CL-"
+                        },
+                        "statement": {
+                            "type": "string"
+                        },
+                        "uniqueness_rules": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                },
+                "structural_constraints": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "id",
+                            "statement"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "pattern": "^CL-"
+                            },
+                            "statement": {
+                                "type": "string"
+                            },
+                            "allowlisted_read_roots": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "allowlisted_write_roots": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "scope_claim_zone_format": {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "statement",
+                        "required_fields",
+                        "multiplicity"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "pattern": "^CL-"
+                        },
+                        "statement": {
+                            "type": "string"
+                        },
+                        "required_fields": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "scope_type",
+                                    "scope_zone"
+                                ]
+                            },
+                            "minItems": 2,
+                            "maxItems": 2
+                        },
+                        "multiplicity": {
+                            "type": "string",
+                            "enum": [
+                                "single"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "ScopeEnumerations": {
+            "type": "object",
+            "required": [
+                "id",
+                "statement",
+                "host_mapping_rule",
+                "scope_zones"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "pattern": "^CL-"
+                },
+                "statement": {
+                    "type": "string"
+                },
+                "host_mapping_rule": {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "statement"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "pattern": "^CL-"
+                        },
+                        "statement": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "scope_zones": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "scope_type",
+                            "zones"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                            "scope_type": {
+                                "type": "string",
+                                "enum": [
+                                    "FILE_PATH",
+                                    "LOG_STREAM",
+                                    "WORKSPACE_PATH"
+                                ]
+                            },
+                            "zones": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "minItems": 1
+                            }
+                        }
+                    },
+                    "minItems": 1
+                }
+            }
+        },
+        "action_space": {
+            "type": "object",
+            "required": [
+                "id",
+                "statement",
+                "closed_world",
+                "action_types"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "pattern": "^CL-"
+                },
+                "statement": {
+                    "type": "string"
+                },
+                "closed_world": {
+                    "type": "boolean",
+                    "const": true
+                },
+                "action_types": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "type",
+                            "description",
+                            "required_fields",
+                            "requires",
+                            "side_effect_class"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "enum": [
+                                    "Notify",
+                                    "ReadLocal",
+                                    "WriteLocal",
+                                    "LogAppend"
+                                ]
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "required_fields": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "required": [
+                                        "name",
+                                        "type"
+                                    ],
+                                    "properties": {
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        },
+                                        "allowed": {
+                                            "type": "array"
+                                        },
+                                        "max_len": {
+                                            "type": "integer",
+                                            "minimum": 1
+                                        },
+                                        "max_len_per_item": {
+                                            "type": "integer",
+                                            "minimum": 1
+                                        },
+                                        "constraints": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "requires": {
+                                "type": "object",
+                                "required": [
+                                    "authority_citations"
+                                ],
+                                "properties": {
+                                    "authority_citations": {
+                                        "type": "boolean"
+                                    },
+                                    "scope_claim": {
+                                        "type": "boolean"
+                                    },
+                                    "justification": {
+                                        "type": "boolean"
+                                    }
+                                }
+                            },
+                            "side_effect_class": {
+                                "type": "string",
+                                "enum": [
+                                    "none",
+                                    "low",
+                                    "medium",
+                                    "terminal"
+                                ]
+                            },
+                            "kernel_only": {
+                                "type": "boolean"
+                            },
+                            "routing_rule": {
+                                "type": "string"
+                            },
+                            "limits": {
+                                "type": "object",
+                                "properties": {
+                                    "max_lines_per_warrant": {
+                                        "type": "integer",
+                                        "minimum": 1
+                                    },
+                                    "max_chars_per_line": {
+                                        "type": "integer",
+                                        "minimum": 1
+                                    },
+                                    "max_bytes_per_warrant": {
+                                        "type": "integer",
+                                        "minimum": 1
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "minItems": 4,
+                    "maxItems": 4
+                }
+            }
+        },
+        "refusal_policy": {
+            "type": "object",
+            "required": [
+                "refusal_is_first_class",
+                "mandatory_refusal_conditions",
+                "refusal_reason_codes",
+                "amendment_failure_routing",
+                "treaty_failure_routing",
+                "admission_rejection_codes",
+                "refusal_output_requirements"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "refusal_is_first_class": {
+                    "type": "boolean",
+                    "const": true
+                },
+                "mandatory_refusal_conditions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "refusal_reason_codes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "NO_ADMISSIBLE_ACTION",
+                            "MISSING_REQUIRED_ARTIFACT",
+                            "AUTHORITY_CITATION_INVALID",
+                            "SCOPE_CLAIM_INVALID",
+                            "CONSTITUTION_VIOLATION",
+                            "EXECUTION_WARRANT_UNAVAILABLE",
+                            "BUDGET_EXHAUSTED"
+                        ]
+                    }
+                },
+                "amendment_failure_routing": {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "statement"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "pattern": "^CL-"
+                        },
+                        "statement": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "treaty_failure_routing": {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "statement"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "pattern": "^CL-"
+                        },
+                        "statement": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "admission_rejection_codes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "CANDIDATE_PARSE_FAILED",
+                            "INVALID_UNICODE",
+                            "CANDIDATE_BUDGET_EXCEEDED",
+                            "KERNEL_ONLY_ACTION",
+                            "MISSING_FIELD",
+                            "INVALID_FIELD",
+                            "CITATION_UNRESOLVABLE",
+                            "PATH_NOT_ALLOWLISTED",
+                            "AMENDMENTS_DISABLED",
+                            "PRIOR_HASH_MISMATCH",
+                            "ECK_MISSING",
+                            "SCHEMA_INVALID",
+                            "PHYSICS_CLAIM_DETECTED",
+                            "WILDCARD_MAPPING",
+                            "UNIVERSAL_AUTHORIZATION",
+                            "SCOPE_COLLAPSE",
+                            "ENVELOPE_DEGRADED",
+                            "COOLING_VIOLATION",
+                            "GRANTOR_LACKS_PERMISSION",
+                            "EXCESSIVE_DEPTH",
+                            "DELEGATION_CYCLE",
+                            "DENSITY_MARGIN_VIOLATION",
+                            "COVERAGE_INFLATION",
+                            "GRANT_INACTIVE",
+                            "SIGNATURE_INVALID",
+                            "SIGNATURE_MISSING",
+                            "NONREVOCABLE_GRANT"
+                        ]
+                    }
+                },
+                "refusal_output_requirements": {
+                    "type": "object",
+                    "required": [
+                        "include"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "include": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "exit_policy": {
+            "type": "object",
+            "required": [
+                "id",
+                "statement",
+                "exit_permitted",
+                "exit_mandatory_conditions",
+                "exit_preferred_over"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "pattern": "^CL-"
+                },
+                "statement": {
+                    "type": "string"
+                },
+                "exit_permitted": {
+                    "type": "boolean",
+                    "const": true
+                },
+                "exit_mandatory_conditions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "exit_preferred_over": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "amendment_policy": {
+            "type": "object",
+            "required": [
+                "id",
+                "statement",
+                "amendments_enabled",
+                "max_constitution_bytes",
+                "max_amendment_candidates_per_cycle",
+                "max_pending_amendments",
+                "amendment_proposal_scope_rule",
+                "amendment_proposal_citation_rule",
+                "forbidden_actions",
+                "amendment_artifact_rules"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "pattern": "^CL-"
+                },
+                "statement": {
+                    "type": "string"
+                },
+                "amendments_enabled": {
+                    "type": "boolean",
+                    "const": true
+                },
+                "max_constitution_bytes": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 65536
+                },
+                "max_amendment_candidates_per_cycle": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 100
+                },
+                "max_pending_amendments": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 100
+                },
+                "amendment_proposal_scope_rule": {
+                    "type": "object",
+                    "required": [
+                        "statement",
+                        "scope_claim_required"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "statement": {
+                            "type": "string"
+                        },
+                        "scope_claim_required": {
+                            "type": "boolean",
+                            "const": false
+                        }
+                    }
+                },
+                "amendment_proposal_citation_rule": {
+                    "type": "object",
+                    "required": [
+                        "statement",
+                        "required_citation_namespaces"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "statement": {
+                            "type": "string"
+                        },
+                        "required_citation_namespaces": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "minItems": 2
+                        }
+                    }
+                },
+                "forbidden_actions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "ModifyAuthorityStore",
+                            "InstallTool",
+                            "EnableNetwork",
+                            "ChangeSelectorRule"
+                        ]
+                    }
+                },
+                "amendment_artifact_rules": {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "statement",
+                        "AmendmentProposal",
+                        "AmendmentAdoptionRecord"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "pattern": "^CL-"
+                        },
+                        "statement": {
+                            "type": "string"
+                        },
+                        "artifact_header_rule": {
+                            "type": "object",
+                            "required": [
+                                "id",
+                                "statement"
+                            ],
+                            "additionalProperties": false,
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "pattern": "^CL-"
+                                },
+                                "statement": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "AmendmentProposal": {
+                            "type": "object",
+                            "required": [
+                                "required_fields",
+                                "serialization"
+                            ],
+                            "additionalProperties": false,
+                            "properties": {
+                                "required_fields": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "optional_fields": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "serialization": {
+                                    "type": "object",
+                                    "required": [
+                                        "to_dict_full",
+                                        "to_dict_id",
+                                        "trace_rule"
+                                    ],
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "to_dict_full": {
+                                            "type": "string"
+                                        },
+                                        "to_dict_id": {
+                                            "type": "string"
+                                        },
+                                        "trace_rule": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "AmendmentAdoptionRecord": {
+                            "type": "object",
+                            "required": [
+                                "required_fields",
+                                "author"
+                            ],
+                            "additionalProperties": false,
+                            "properties": {
+                                "required_fields": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "author": {
+                                    "type": "string",
+                                    "const": "kernel"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "treaty_policy": {
+            "type": "object",
+            "required": [
+                "id",
+                "statement",
+                "treaty_artifact_rules",
+                "treaty_scope_rule",
+                "grantee_identifier_format"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "pattern": "^CL-"
+                },
+                "statement": {
+                    "type": "string"
+                },
+                "treaty_artifact_rules": {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "statement",
+                        "TreatyGrant",
+                        "TreatyRevocation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "pattern": "^CL-"
+                        },
+                        "statement": {
+                            "type": "string"
+                        },
+                        "TreatyGrant": {
+                            "type": "object",
+                            "required": [
+                                "required_fields",
+                                "constraints",
+                                "serialization"
+                            ],
+                            "additionalProperties": false,
+                            "properties": {
+                                "required_fields": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "minItems": 12
+                                },
+                                "constraints": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "minItems": 1
+                                },
+                                "serialization": {
+                                    "type": "object",
+                                    "required": [
+                                        "to_dict_full",
+                                        "to_dict_id",
+                                        "canonicalization_rule"
+                                    ],
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "to_dict_full": {
+                                            "type": "string"
+                                        },
+                                        "to_dict_id": {
+                                            "type": "string"
+                                        },
+                                        "canonicalization_rule": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "TreatyRevocation": {
+                            "type": "object",
+                            "required": [
+                                "required_fields",
+                                "constraints",
+                                "serialization"
+                            ],
+                            "additionalProperties": false,
+                            "properties": {
+                                "required_fields": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "minItems": 7
+                                },
+                                "constraints": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "minItems": 1
+                                },
+                                "serialization": {
+                                    "type": "object",
+                                    "required": [
+                                        "to_dict_full",
+                                        "to_dict_id"
+                                    ],
+                                    "additionalProperties": false,
+                                    "properties": {
+                                        "to_dict_full": {
+                                            "type": "string"
+                                        },
+                                        "to_dict_id": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "treaty_scope_rule": {
+                    "type": "object",
+                    "required": [
+                        "statement",
+                        "scope_claim_required"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "statement": {
+                            "type": "string"
+                        },
+                        "scope_claim_required": {
+                            "type": "boolean",
+                            "const": false
+                        }
+                    }
+                },
+                "grantee_identifier_format": {
+                    "type": "object",
+                    "required": [
+                        "id",
+                        "statement",
+                        "pattern",
+                        "forbidden_schemes"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "pattern": "^CL-"
+                        },
+                        "statement": {
+                            "type": "string"
+                        },
+                        "pattern": {
+                            "type": "string"
+                        },
+                        "forbidden_schemes": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            }
+        },
+        "reflection_policy": {
+            "type": "object",
+            "required": [
+                "llm_allowed",
+                "llm_role",
+                "llm_forbidden",
+                "proposal_budgets",
+                "anti_filibuster_rule"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "llm_allowed": {
+                    "type": "boolean"
+                },
+                "llm_role": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "propose_actions",
+                            "propose_justifications",
+                            "propose_refusals",
+                            "propose_scope_claims",
+                            "propose_amendments",
+                            "propose_treaties"
+                        ]
+                    }
+                },
+                "llm_forbidden": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "execute",
+                            "select",
+                            "adopt_amendment",
+                            "admit_treaty",
+                            "override_refusal",
+                            "trigger_side_effects"
+                        ]
+                    }
+                },
+                "proposal_budgets": {
+                    "type": "object",
+                    "required": [
+                        "max_candidates_per_cycle",
+                        "max_total_tokens_per_cycle"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "max_candidates_per_cycle": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 100
+                        },
+                        "max_total_tokens_per_cycle": {
+                            "type": "integer",
+                            "minimum": 1
+                        }
+                    }
+                },
+                "anti_filibuster_rule": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "selection_policy": {
+            "type": "object",
+            "required": [
+                "selector_rule_required",
+                "default_selector_rule",
+                "forbidden_selector_features"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "selector_rule_required": {
+                    "type": "boolean",
+                    "const": true
+                },
+                "default_selector_rule": {
+                    "type": "object",
+                    "required": [
+                        "type",
+                        "key",
+                        "rationale"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": [
+                                "DeterministicCanonical"
+                            ]
+                        },
+                        "key": {
+                            "type": "string",
+                            "enum": [
+                                "bundle_hash_lexicographic_min"
+                            ]
+                        },
+                        "rationale": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "forbidden_selector_features": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "natural_language_scoring",
+                            "learned_reward_models",
+                            "implicit_utility"
+                        ]
+                    }
+                }
+            }
+        },
+        "io_policy": {
+            "type": "object",
+            "required": [
+                "allowlist",
+                "network"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "allowlist": {
+                    "type": "object",
+                    "required": [
+                        "read_paths",
+                        "write_paths"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "read_paths": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "write_paths": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "network": {
+                    "type": "object",
+                    "required": [
+                        "enabled"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean",
+                            "const": false
+                        }
+                    }
+                }
+            }
+        },
+        "observation_schema": {
+            "type": "object",
+            "required": [
+                "kinds"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "kinds": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "kind",
+                            "payload"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                            "kind": {
+                                "type": "string",
+                                "enum": [
+                                    "user_input",
+                                    "timestamp",
+                                    "budget",
+                                    "system",
+                                    "delegated_action"
+                                ]
+                            },
+                            "payload": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "required": [
+                                        "name",
+                                        "type"
+                                    ],
+                                    "properties": {
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        },
+                                        "max_len": {
+                                            "type": "integer"
+                                        },
+                                        "allowed": {
+                                            "type": "array"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "minItems": 5,
+                    "maxItems": 5
+                }
+            }
+        },
+        "telemetry_policy": {
+            "type": "object",
+            "required": [
+                "required_logs",
+                "trace_event_types",
+                "replay"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "required_logs": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "observations",
+                            "artifacts",
+                            "admission_trace",
+                            "selector_trace",
+                            "execution_trace",
+                            "constitutions",
+                            "amendment_trace",
+                            "treaties",
+                            "treaty_trace"
+                        ]
+                    },
+                    "minItems": 9,
+                    "maxItems": 9
+                },
+                "trace_event_types": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "type",
+                            "fields"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "enum": [
+                                    "admission_event",
+                                    "selection_event",
+                                    "execution_event",
+                                    "amendment_event",
+                                    "adoption_event",
+                                    "treaty_event",
+                                    "treaty_invalidation_event",
+                                    "delegation_event"
+                                ]
+                            },
+                            "fields": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "replay": {
+                    "type": "object",
+                    "required": [
+                        "required"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "required": {
+                            "type": "boolean",
+                            "const": true
+                        }
+                    }
+                }
+            }
+        },
+        "citation_formats": {
+            "type": "object",
+            "required": [
+                "id",
+                "statement",
+                "formats"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "pattern": "^CL-"
+                },
+                "statement": {
+                    "type": "string"
+                },
+                "formats": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "required": [
+                            "namespace",
+                            "pattern"
+                        ],
+                        "additionalProperties": false,
+                        "properties": {
+                            "namespace": {
+                                "type": "string"
+                            },
+                            "pattern": {
+                                "type": "string"
+                            },
+                            "clause_id_prefixes": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "authority_id_prefix": {
+                                "type": "string"
+                            },
+                            "example": {
+                                "type": "string"
+                            },
+                            "note": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "minItems": 1
+                }
+            }
+        },
+        "artifact_vocabulary": {
+            "type": "object",
+            "required": [
+                "id",
+                "statement",
+                "closed_world",
+                "types"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "pattern": "^CL-"
+                },
+                "statement": {
+                    "type": "string"
+                },
+                "closed_world": {
+                    "type": "boolean",
+                    "const": true
+                },
+                "types": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "Observation",
+                            "ActionRequest",
+                            "ScopeClaim",
+                            "Justification",
+                            "CandidateBundle",
+                            "ExecutionWarrant",
+                            "RefusalRecord",
+                            "ExitRecord",
+                            "AmendmentProposal",
+                            "AmendmentAdoptionRecord",
+                            "TreatyGrant",
+                            "TreatyRevocation"
+                        ]
+                    },
+                    "minItems": 12,
+                    "maxItems": 12
+                }
+            }
+        }
+    }
+}
