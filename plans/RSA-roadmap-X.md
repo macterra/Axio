@@ -105,6 +105,46 @@ with LLM boxed and all side effects warrant-gated.
 
 ---
 
+## **X-0.1 — RSA-0 Operational Harness Freeze (Engineering Milestone)**
+
+**Status: 🔴 Open by Choice (Engineering Stabilization)**
+
+### Purpose
+
+Provide a minimal, distributable, runnable build of RSA-0 that:
+
+* Executes at least one real side effect under warrant gating
+* Produces append-only artifact + warrant logs
+* Replays deterministically from logs alone
+* Demonstrates the end-to-end sovereign loop outside research scaffolding
+
+This stage does **not** introduce new invariants.
+
+It does **not** modify kernel physics.
+
+It does **not** alter constitutional semantics.
+
+It packages X-0 as an executable, reproducible operational artifact.
+
+### Scope
+
+* Single action type sufficient (e.g., Notify → append-only outbox)
+* CLI entrypoint (`rsa run`, `rsa replay`)
+* Deterministic replay from log stream
+* No external identity providers
+* No semantic arbitration
+
+### Purpose in Roadmap
+
+X-0 proved existence.
+X-0.1 freezes embodiment.
+
+It ensures that “RSA” is not only a proven substrate but also a runnable sovereign artifact.
+
+This stage may be completed at any time without affecting X-2 research.
+
+---
+
 ## **X-0P — RSA-0 Inhabitation Profiling (Synthetic)**
 
 **Status: ✅ Closed — Positive**
@@ -180,64 +220,6 @@ X-0L proved inhabitation.
 
 ---
 
-### X-1.1 Amendment Channel
-
-* Typed `AmendmentProposal` artifacts
-* Full-document replacement only
-* Explicit citation requirements (authority + clause)
-* Cooling delay enforced
-* Schema validation (Gate 7) + algebraic preservation gates (8A/8B)
-* No semantic arbitration layer
-
-LLM proposes. Kernel decides.
-
----
-
-### X-1.2 Amendment Execution
-
-* Versioned constitution transition
-* Logged fork boundary
-* New constitution hash authoritative
-* Replay-stable fork application
-* Stale proposals invalidated deterministically
-
-No retroactive reinterpretation. No silent authority shifts.
-
----
-
-### X-1.3 Empirical Results
-
-* 4 lawful adoptions across 36 cycles
-* 7 adversarial proposals rejected
-* Replay divergence = 0 across all fork boundaries
-* Density preserved (A=3, B=4, M=4, d=0.3333)
-* Ratchet observed: cooling 2 → 3 → 4 → 5
-* No ECK loss
-
-**Key invariant demonstrated:**
-
-> A frozen sovereign substrate can replace its governing constitution without mutating kernel physics, collapsing structural constraint, or introducing proxy authority.
-
----
-
-### X-1.4 Structural Consequence: Ratchet Pressure
-
-The ratchet mechanism is unidirectional:
-
-* cooling_period_cycles → non-decreasing
-* authorization_threshold → non-decreasing
-* density_upper_bound → non-increasing
-
-This creates an emergent phenomenon:
-
-> Sovereignty can tighten monotonically, but never loosen.
-
-This guarantees stability against degeneration — but introduces the risk of long-run rigidity (“governance heat death”).
-
-This pressure defines the next research frontier.
-
----
-
 ## **X-2 — Governance Under Ratchet Pressure / Delegation Without Leakage**
 
 **Status: 🟡 Active Research Question**
@@ -307,6 +289,7 @@ Phase X is complete when:
 ## Current Program State
 
 * X-0: ✅ Closed — Existence proven
+* X-0.1: 🔴 Open — Operational embodiment milestone
 * X-0P: ✅ Closed — Synthetic inhabitation proven
 * X-0L: ✅ Closed — Stochastic inhabitation proven
 * X-1: ✅ Closed — Reflective amendment proven
@@ -315,4 +298,4 @@ Phase X is complete when:
 
 ---
 
-**End of Phase X Roadmap — v1.4 (Post X-1 Closure)**
+**End of Phase X Roadmap — v1.5 (Post X-1 Closure, X-0.1 Inserted)**
