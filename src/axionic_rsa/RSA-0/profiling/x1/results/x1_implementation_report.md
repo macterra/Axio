@@ -64,11 +64,11 @@ observations + candidates → policy_core_x1
 
 | Sub-gate | Check | Rejection code |
 |:---|:---|:---|
-| 8B.1 | Cardinality — action_permissions present and non-empty | SCHEMA_INVALID (via Gate 7) |
+| 8B.1 | Schema-guaranteed cardinality — action_permissions present and non-empty (enforced at Gate 7 in production; unit-tested via schema bypass) | SCHEMA_INVALID (via Gate 7) |
 | 8B.2 | Wildcard — no `"*"` in authority or action mappings | WILDCARD_MAPPING |
-| 8B.3 | Universal authorization — density must not equal 1 (`M == A×B` ⇒ reject) | UNIVERSAL_AUTHORIZATION |
+| 8B.3 | Universal authorization — reject if `density == 1` (equivalently `M == A×B`) | UNIVERSAL_AUTHORIZATION |
 | 8B.4 | Scope collapse — ≥1 action still requires scope_claim | SCOPE_COLLAPSE |
-| 8B.5 | Ratchet/envelope — cooling, threshold, density_upper_bound, authority_reference_mode all non-decreasing | ENVELOPE_DEGRADED |
+| 8B.5 | Ratchet/envelope — cooling and threshold non-decreasing; density_upper_bound non-increasing; authority_reference_mode cannot relax | ENVELOPE_DEGRADED |
 
 ### 2.4 Constitution Lifecycle
 
