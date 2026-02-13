@@ -1,0 +1,289 @@
+"""
+RSA X-2 — Constitution Loader Extension
+
+Extends ConstitutionX1 with v0.3 accessors:
+  - TreatyProcedure accessors (schema identity, delegation depth, duration)
+  - ScopeEnumerations accessors (zone labels per scope_type)
+  - treaty_permissions accessors
+  - treaty: citation namespace resolution
+  - Per-action scope accessors (valid_scope_types, permitted_zones, admission_rule)
+  - Effective density computation using distinct (authority, action) pairs
+"""
+
+from __future__ import annotations
+
+from typing import Any, Dict, List, Optional, Set, Tuple
+
+from ..rsax1.constitution_x1 import (
+    CitationIndexX1,
+    ConstitutionX1,
+    ConstitutionError,
+)
+
+
+# ---------------------------------------------------------------------------
+# Extended Citation Index (X-2: adds treaty: namespace)
+# ---------------------------------------------------------------------------
+
+class CitationIndexX2(CitationIndexX1):
+    """
+    Extends CitationIndexX1 with treaty: namespace support.
+
+    Formats:
+      - treaty:<grant_hash>#<grant_id>  (resolved against active treaty set)
+      - All X-1 formats (constitution:, authority:)
+    """
+
+    def __init__(self, constitution_hash: str, version: str, data: Dict[str, Any]):
+        super().__init__(constitution_hash, version, data)
+        self._treaty_map: Dict[str, Any] = {}
+
+    def register_treaty(self, grant_hash: str, grant_id: str, grant_data: Dict[str, Any]) -> None:
+        """Register an active treaty for citation resolution."""
+        self._treaty_map[f"treaty:{grant_hash}#{grant_id}"] = grant_data
+
+    def clear_treaties(self) -> None:
+        self._treaty_map.clear()
+
+    def resolve(self, citation: str) -> Optional[Any]:
+        # Treaty namespace
+        if citation.startswith("treaty:"):
+            return self._treaty_map.get(citation)
+        # Delegate to X-1
+        return super().resolve(citation)
+
+
+# ---------------------------------------------------------------------------
+# Extended Constitution (X-2)
+# ---------------------------------------------------------------------------
+
+class ConstitutionX2(ConstitutionX1):
+    """
+    Constitution with X-2 extensions for treaty-constrained delegation.
+
+    Adds accessors for:
+      - TreatyProcedure (schema identity, delegation limits, duration)
+      - ScopeEnumerations (per scope_type zone labels)
+      - treaty_permissions in AuthorityModel
+      - treaty_policy
+      - Per-action scope rules (valid_scope_types, permitted_zones)
+    """
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        # Re-build citation index as X-2 variant
+        self._citation_index_x2 = CitationIndexX2(
+            self._sha256, self._version, self._data
+        )
+
+    @property
+    def citation_index_x2(self) -> CitationIndexX2:
+        return self._citation_index_x2
+
+    # --- TreatyProcedure accessors ---
+
+    @property
+    def treaty_procedure(self) -> Dict[str, Any]:
+        return self._data.get("TreatyProcedure", {})
+
+    def max_treaty_duration_cycles(self) -> int:
+        return self.treaty_procedure.get("max_treaty_duration_cycles", 100)
+
+    def delegation_depth_limit(self) -> int:
+        tp = self.treaty_procedure
+        ddl = tp.get("delegation_depth_limit", {})
+        return ddl.get("max_depth", 1) if isinstance(ddl, dict) else 1
+
+    def delegation_acyclicity_required(self) -> bool:
+        return "delegation_acyclicity" in self.treaty_procedure
+
+    def implicit_invalidation_triggers(self) -> List[Dict[str, Any]]:
+        return self.treaty_procedure.get("implicit_invalidation_triggers", {}).get("triggers", [])
+
+    # --- Treaty Schema Identity ---
+
+    def treaty_schema_path(self) -> str:
+        """Return the constitutional schema_path for treaty types."""
+        tsi = self.treaty_procedure.get("treaty_schema_identity", {})
+        return tsi.get("schema_path", "")
+
+    def treaty_schema_sha256(self) -> str:
+        """Return the constitutional SHA-256 of the frozen treaty schema."""
+        tsi = self.treaty_procedure.get("treaty_schema_identity", {})
+        return tsi.get("schema_sha256", "")
+
+    # --- ScopeEnumerations accessors ---
+
+    @property
+    def scope_enumerations(self) -> Dict[str, Any]:
+        return self._data.get("ScopeEnumerations", {})
+
+    def get_zone_labels(self) -> Dict[str, List[str]]:
+        """Return {scope_type: [zone_labels]} mapping."""
+        zones: Dict[str, List[str]] = {}
+        for entry in self.scope_enumerations.get("scope_zones", []):
+            scope_type = entry.get("scope_type", "")
+            zone_list = entry.get("zones", [])
+            zones[scope_type] = zone_list
+        return zones
+
+    def get_all_zone_labels(self) -> Set[str]:
+        """Return all zone labels across all scope types."""
+        result: Set[str] = set()
+        for labels in self.get_zone_labels().values():
+            result.update(labels)
+        return result
+
+    def get_zones_for_scope_type(self, scope_type: str) -> List[str]:
+        """Return zone labels for a specific scope_type."""
+        return self.get_zone_labels().get(scope_type, [])
+
+    # --- Per-action scope rules ---
+
+    def get_per_action_scope(self) -> List[Dict[str, Any]]:
+        """Return per_action_scope list from ScopeSystem."""
+        return self.scope_system.get("per_action_scope", [])
+
+    def get_action_scope_rule(self, action_type: str) -> Optional[Dict[str, Any]]:
+        """Return the per_action_scope entry for a specific action type."""
+        for rule in self.get_per_action_scope():
+            if rule.get("action_type") == action_type:
+                return rule
+        return None
+
+    def get_valid_scope_types(self, action_type: str) -> List[str]:
+        """Return valid_scope_types for a given action_type."""
+        rule = self.get_action_scope_rule(action_type)
+        if rule:
+            return rule.get("valid_scope_types", [])
+        return []
+
+    def get_permitted_zones(self, action_type: str) -> Optional[List[str]]:
+        """Return permitted_zones for a given action_type (None if unconstrained)."""
+        rule = self.get_action_scope_rule(action_type)
+        if rule and "permitted_zones" in rule:
+            return rule["permitted_zones"]
+        return None
+
+    # --- AuthorityModel treaty_permissions ---
+
+    def get_treaty_permissions(self) -> List[Dict[str, Any]]:
+        return self.authority_model.get("treaty_permissions", [])
+
+    def authority_can_delegate(self, authority_id: str) -> bool:
+        """Check if authority has treaty delegation permission."""
+        for perm in self.get_treaty_permissions():
+            if perm.get("authority") == authority_id:
+                return True
+        return False
+
+    def authority_can_delegate_type(self, authority_id: str, treaty_type: str) -> bool:
+        """Check if authority can issue a specific treaty type."""
+        for perm in self.get_treaty_permissions():
+            if perm.get("authority") == authority_id:
+                # Constitution uses "treaties" key, not "treaty_types"
+                return treaty_type in perm.get("treaties", [])
+        return False
+
+    # --- Constitutional authorities ---
+
+    def get_constitutional_authorities(self) -> List[str]:
+        return self.authority_model.get("authorities", [])
+
+    def is_constitutional_authority(self, auth_id: str) -> bool:
+        return auth_id in self.get_constitutional_authorities()
+
+    # --- Action permissions helpers ---
+
+    def authority_holds_action(self, authority_id: str, action_type: str) -> bool:
+        """Check if a constitutional authority holds a specific action permission (8C.2b)."""
+        for perm in self.get_action_permissions():
+            if perm.get("authority") == authority_id:
+                return action_type in perm.get("actions", [])
+        return False
+
+    # --- Closed action set ---
+
+    def get_closed_action_set(self) -> List[str]:
+        return self.get_action_types()
+
+    # --- Warrant definition helpers ---
+
+    def get_action_warrant_mapping(self) -> List[Dict[str, Any]]:
+        """Return the action_warrant_mapping list from WarrantDefinition."""
+        return self.warrant_definition.get("action_warrant_mapping", [])
+
+    def get_warrant_scope_type(self, action_type: str) -> Optional[str]:
+        """Return the scope_type required by warrants for a given action_type."""
+        for entry in self.get_action_warrant_mapping():
+            if entry.get("action_type") == action_type:
+                return entry.get("scope_type")
+        return None
+
+    def get_origin_rank(self) -> Dict[str, int]:
+        """Return the origin_rank mapping from WarrantDefinition."""
+        eo = self.warrant_definition.get("execution_ordering", {})
+        return eo.get("origin_rank", {"rsa": 0, "delegated": 1})
+
+    # --- treaty_policy ---
+
+    @property
+    def treaty_policy(self) -> Dict[str, Any]:
+        return self._data.get("treaty_policy", {})
+
+    # --- Effective density (distinct pairs) ---
+
+    def compute_effective_density(
+        self,
+        active_grants: list,
+    ) -> Tuple[int, int, int, float]:
+        """
+        Compute effective density including active treaty grants.
+        Per CL-EFFECTIVE-DENSITY-DEFINITION:
+          A_eff = distinct authorities in action_permissions UNION distinct active grantees
+          B = action_types count
+          M_eff = distinct (authority, action) pairs: constitutional UNION delegated
+        Returns (A_eff, B, M_eff, density).
+        """
+        # Constitutional: distinct (authority, action) pairs
+        action_perms = self.get_action_permissions()
+        const_authorities: set = set()
+        const_pairs: set = set()
+        for p in action_perms:
+            auth = p["authority"]
+            const_authorities.add(auth)
+            for act in p.get("actions", []):
+                const_pairs.add((auth, act))
+
+        # Treaty: distinct (grantee, action) pairs
+        treaty_grantees: set = set()
+        treaty_pairs: set = set()
+        for grant in active_grants:
+            treaty_grantees.add(grant.grantee_identifier)
+            for act in grant.granted_actions:
+                treaty_pairs.add((grant.grantee_identifier, act))
+
+        A_eff = len(const_authorities) + len(treaty_grantees)
+        B = len(self.get_action_types())
+        M_eff = len(const_pairs | treaty_pairs)  # distinct pairs via set union
+
+        if A_eff == 0 or B == 0:
+            return A_eff, B, M_eff, 0.0
+
+        density = M_eff / (A_eff * B)
+        return A_eff, B, M_eff, density
+
+    # --- Has X-2 sections ---
+
+    def has_x2_sections(self) -> bool:
+        """Check X-2-specific sections are present."""
+        return all(
+            s in self._data
+            for s in ("TreatyProcedure", "ScopeEnumerations", "treaty_policy")
+        )
+
+    # --- Citation helpers (X-2) ---
+
+    def resolve_citation(self, citation: str) -> Optional[Any]:
+        """Resolve citation including treaty: namespace."""
+        return self._citation_index_x2.resolve(citation)
