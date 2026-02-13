@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency XII.6 — Treaty-Constrained Delegation Under Frozen Sovereignty (Results) - Axionic Agency Lab</title>
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../" class="nav-brand">
+            <img src="../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href=".././">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
+
+<h1
+id="axionic-agency-xii.6-treaty-constrained-delegation-under-frozen-sovereignty-results">Axionic
+Agency XII.6 — Treaty-Constrained Delegation Under Frozen Sovereignty
+(Results)</h1>
+<p><em>A Structural Characterization of Containment-Only Authority
+Transfer Under Kernel-Frozen Execution</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026-02-13</p>
+<h2 id="abstract">Abstract</h2>
+<p>This technical note reports the design, execution, and closure of
+<strong>X-2: Treaty-Constrained Delegation Under Frozen
+Sovereignty</strong> for <strong>RSA-X2</strong>, extending the
+self-amending substrate of X-1 with typed, revocable, scope-bound
+authority transfer while preserving kernel immutability and replay
+determinism.</p>
+<p>X-2 evaluates whether a constitution-bound execution agent can admit
+<strong>delegation artifacts (TreatyGrant, TreatyRevocation)</strong>
+that authorize signed external ActionRequests, without:</p>
+<ul>
+<li>minting new authority,</li>
+<li>introducing proxy sovereignty,</li>
+<li>relaxing density constraints,</li>
+<li>creating delegation chains,</li>
+<li>breaking replay determinism,</li>
+<li>or permitting semantic arbitration.</li>
+</ul>
+<p>Delegation is defined strictly as <strong>containment</strong>: a
+grantee may exercise a subset of authority already held by a
+constitutional grantor, within explicit scope constraints and duration
+bounds, under deterministic admission gates.</p>
+<p>X-2 licenses one claim:</p>
+<blockquote>
+<p>A kernel-frozen sovereign substrate can confer and revoke
+containment-only delegated authority through typed treaty artifacts,
+issuing replay-deterministic delegated warrants while preserving density
+&lt; 1, ratchet monotonicity, and structural sovereignty invariants.</p>
+</blockquote>
+<p>X-2 makes no claims about incentive compatibility, multi-agent
+stability under churn, or open-world deployment security.</p>
+<h2 id="from-amendment-to-delegation">1. From Amendment to
+Delegation</h2>
+<p>X-0 established a warrant-gated sovereign substrate. X-1 established
+lawful constitutional self-replacement under ratchet constraints.</p>
+<p>X-2 addresses the next structural pressure:</p>
+<blockquote>
+<p>If amendment allows lawful self-change, can authority be temporarily
+shared without dissolving sovereignty?</p>
+</blockquote>
+<p>Delegation is a sovereignty stress test. It risks:</p>
+<ul>
+<li>authority laundering,</li>
+<li>graph cycles,</li>
+<li>density collapse,</li>
+<li>signature spoofing,</li>
+<li>implicit coordination channels.</li>
+</ul>
+<p>X-2 introduces delegation while preserving:</p>
+<ul>
+<li>kernel physics,</li>
+<li>replay determinism,</li>
+<li>algebraic constraint enforcement,</li>
+<li>typed artifact admission,</li>
+<li>density &lt; 1 invariant.</li>
+</ul>
+<h2 id="delegation-model">2. Delegation Model</h2>
+<h3 id="containment-not-generation">2.1 Containment, Not Generation</h3>
+<p>Delegation in X-2 is defined as:</p>
+<ul>
+<li><code>granted_actions ⊆ grantor.action_permissions</code></li>
+<li><code>scope_constraints ⊆ grantor.scope</code></li>
+<li><code>duration_cycles ≤ max_treaty_duration_cycles</code></li>
+<li><code>delegation_depth = 1</code></li>
+<li>no re-delegation permitted.</li>
+</ul>
+<p>A grant does not create new authority; it mirrors existing authority
+under narrower constraints.</p>
+<h3 id="artifact-types">2.2 Artifact Types</h3>
+<p>Two new governance artifacts are introduced:</p>
+<ul>
+<li><strong>TreatyGrant</strong></li>
+<li><strong>TreatyRevocation</strong></li>
+</ul>
+<p>Both are admitted through a dedicated gate pipeline (6T/7T/8C for
+grants; 6T/7T/8R for revocations).</p>
+<p>Treaty artifacts are logged, canonicalized, hashed, and replayed
+identically.</p>
+<h3 id="signature-binding">2.3 Signature Binding</h3>
+<p>Delegated ActionRequests must:</p>
+<ul>
+<li>include a <code>treaty:</code> citation in
+<code>authority_citations</code>,</li>
+<li>include a valid Ed25519 signature over canonicalized payload
+(excluding signature field).</li>
+</ul>
+<p>Signature verification is:</p>
+<ul>
+<li>deterministic,</li>
+<li>replay-stable,</li>
+<li>local (no external trust calls).</li>
+</ul>
+<p>Unsigned or invalid signatures are rejected before authority
+resolution.</p>
+<h2 id="governance-ordering">3. Governance Ordering</h2>
+<p>Per-cycle ordering (as defined in v0.3):</p>
+<ol type="1">
+<li><p>Governance artifact admission</p>
+<ul>
+<li>Amendment adoption</li>
+<li>Treaty revocation</li>
+<li>Treaty grant</li>
+<li>Amendment queuing</li>
+</ul></li>
+<li><p>Revocation processing</p></li>
+<li><p>Active treaty recomputation</p></li>
+<li><p>ActionRequest admission (including delegated)</p></li>
+<li><p>ExecutionWarrant issuance</p></li>
+</ol>
+<p>No preemption. Later steps observe earlier state mutations.</p>
+<p>Multiple warrants per cycle are permitted. Warrants are sorted
+deterministically by <code>(origin_rank, warrant_id)</code>.</p>
+<h2 id="run-artifacts">4. Run Artifacts</h2>
+<h3 id="session">4.1 Session</h3>
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 78%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Session ID</td>
+<td
+style="text-align: left;"><code>46b0e5fd-9462-462d-b5e8-32d55e4803a3</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total cycles</td>
+<td style="text-align: left;">26</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Constitution hash</td>
+<td
+style="text-align: left;"><code>43f57f0abd7fd3a1cc335df9bc4267aa…</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Treaty schema hash</td>
+<td
+style="text-align: left;"><code>8b8f4061cad5559f2c9f79ebea32f74f495c0e353d6b43e3e6052080811450ba</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Replay divergence</td>
+<td style="text-align: left;">0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="closure-criteria-evaluation">5. Closure Criteria Evaluation</h2>
+<h3 id="delegated-warrant-issuance-pass">5.1 Delegated Warrant Issuance
+— PASS ✓</h3>
+<ul>
+<li>Delegated warrants issued: <strong>3</strong></li>
+<li>All carried origin=<code>delegated</code></li>
+<li>Deterministic ordering preserved</li>
+</ul>
+<h3 id="adversarial-grant-rejections-pass">5.2 Adversarial Grant
+Rejections — PASS ✓</h3>
+<p>11 adversarial grant attempts exercised:</p>
+<ul>
+<li>Fake grantor → <code>GRANTOR_NOT_CONSTITUTIONAL</code></li>
+<li>Missing treaty permission →
+<code>TREATY_PERMISSION_MISSING</code></li>
+<li>Invalid grantee format → <code>INVALID_FIELD</code></li>
+<li>Invalid scope type → <code>INVALID_FIELD</code></li>
+<li>Wildcard/unknown action → <code>INVALID_FIELD</code></li>
+<li>Grantor lacks permission →
+<code>GRANTOR_LACKS_PERMISSION</code></li>
+<li>Duration exceeded → <code>INVALID_FIELD</code></li>
+<li>Non-revocable misuse → <code>NONREVOCABLE_GRANT</code></li>
+</ul>
+<p>All matched expected gate codes.</p>
+<h3 id="adversarial-delegation-rejections-pass">5.3 Adversarial
+Delegation Rejections — PASS ✓</h3>
+<p>4 adversarial delegated ActionRequests:</p>
+<ul>
+<li>Missing signature → <code>SIGNATURE_MISSING</code></li>
+<li>Wrong key → <code>SIGNATURE_INVALID</code></li>
+<li>No treaty citation → <code>AUTHORITY_CITATION_INVALID</code></li>
+<li>Scope outside grant → <code>AUTHORITY_CITATION_INVALID</code></li>
+</ul>
+<p>All matched expected codes.</p>
+<h3 id="revocation-lifecycle-pass">5.4 Revocation Lifecycle — PASS
+✓</h3>
+<ul>
+<li>Revocation admitted: 1</li>
+<li>Revocation rejection verified: 1</li>
+<li>Same-cycle ordering verified (revocation before action
+admission)</li>
+</ul>
+<h3 id="expiry-lifecycle-pass">5.5 Expiry Lifecycle — PASS ✓</h3>
+<ul>
+<li>Grant expired after duration</li>
+<li>Subsequent delegated request rejected
+(<code>GRANT_INACTIVE</code>)</li>
+<li>No side effects post-expiry</li>
+</ul>
+<h3 id="density-preservation-pass">5.6 Density Preservation — PASS
+✓</h3>
+<ul>
+<li>Constitution validated <code>density &lt; 1</code> at startup</li>
+<li>Effective density remained <code>&lt; 1</code></li>
+<li>No universal authorization reachable</li>
+</ul>
+<h3 id="replay-determinism-pass">5.7 Replay Determinism — PASS ✓</h3>
+<ul>
+<li>26/26 cycle state hashes identical across replay</li>
+<li>Signature verification replay-stable</li>
+<li>Treaty invalidation replay-stable</li>
+<li>Warrant ordering replay-stable</li>
+</ul>
+<h3 id="ed25519-verification-pass">5.8 Ed25519 Verification — PASS
+✓</h3>
+<p>Signature validation enforced:</p>
+<ul>
+<li>Exact key binding</li>
+<li>Deterministic canonicalization</li>
+<li>No replay drift</li>
+</ul>
+<h2 id="treaty-event-summary">6. Treaty Event Summary</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Metric</th>
+<th style="text-align: right;">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Grants admitted (lawful)</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Grants rejected (adversarial)</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Revocations admitted</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Revocations rejected</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Delegated warrants</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Delegated rejections</td>
+<td style="text-align: right;">5</td>
+</tr>
+</tbody>
+</table>
+<h2 id="structural-guarantees-observed">7. Structural Guarantees
+Observed</h2>
+<p>X-2 empirically confirms:</p>
+<ul>
+<li>No delegation without treaty artifact</li>
+<li>No non-constitutional grantor</li>
+<li>No re-delegation (depth=1 enforced)</li>
+<li>No scope expansion beyond grantor</li>
+<li>No authority generation</li>
+<li>No density collapse</li>
+<li>No signature bypass</li>
+<li>No replay divergence</li>
+<li>No kernel mutation</li>
+</ul>
+<p>Delegation remains a <strong>policy-layer phenomenon</strong>; kernel
+physics are unchanged.</p>
+<h2 id="what-x-2-does-not-claim">8. What X-2 Does Not Claim</h2>
+<p>X-2 does not demonstrate:</p>
+<ul>
+<li>multi-agent incentive stability,</li>
+<li>strategic equilibrium under delegation churn,</li>
+<li>scalability near density_upper_bound,</li>
+<li>treaty network stress under 1000+ grants,</li>
+<li>amendment interactions under dense active delegation,</li>
+<li>open-world cryptographic trust distribution,</li>
+<li>Sybil resistance.</li>
+</ul>
+<p>It proves only containment-safe delegation under frozen kernel
+sovereignty.</p>
+<h2 id="closure-criteria">9. Closure Criteria</h2>
+<p>X-2 closes positive if:</p>
+<ol type="1">
+<li>≥1 lawful delegated warrant issued.</li>
+<li>All adversarial grant scenarios rejected with correct gate
+codes.</li>
+<li>All adversarial delegation scenarios rejected with correct
+codes.</li>
+<li>Revocation lifecycle verified.</li>
+<li>Expiry lifecycle verified.</li>
+<li>Replay determinism holds.</li>
+<li>Density &lt; 1 preserved.</li>
+<li>Signature verification operational.</li>
+</ol>
+<p><strong>X-2 Status:</strong> <strong>CLOSED — POSITIVE</strong>
+(<code>X2_PASS / TREATY_DELEGATION_OK</code>)</p>
+<h2 id="implications">10. Implications</h2>
+<p>X-0 proved warrant-gated sovereignty. X-1 proved lawful
+constitutional self-replacement. X-2 proves lawful authority sharing
+without sovereignty leakage.</p>
+<p>The sovereign substrate now supports:</p>
+<ul>
+<li>self-modification,</li>
+<li>typed delegation,</li>
+<li>revocation,</li>
+<li>expiry,</li>
+<li>replay-stable multi-warrant issuance.</li>
+</ul>
+<p>The next structural question is:</p>
+<blockquote>
+<p>Under sustained delegation churn and ratchet tightening, does
+sovereign evolution approach governance heat death?</p>
+</blockquote>
+<p>That question belongs to Phase X-3.</p>
+<h2 id="appendix-a-implementation-snapshot">Appendix A — Implementation
+Snapshot</h2>
+<h3 id="a.1-constitution">A.1 Constitution</h3>
+<ul>
+<li><p><code>rsa_constitution.v0.3.yaml</code> SHA-256:
+<code>43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1</code></p></li>
+<li><p><code>rsa_constitution.v0.3.schema.json</code> SHA-256:
+<code>b843e0b24ac75a5914a510aee673842193ab35c542c41c2a65f82ab99d58e8c5</code></p></li>
+<li><p><code>treaty_types.v0.1.schema.json</code> SHA-256:
+<code>8b8f4061cad5559f2c9f79ebea32f74f495c0e353d6b43e3e6052080811450ba</code></p></li>
+</ul>
+<h3 id="a.2-kernel-extensions-kernelsrcrsax2">A.2 Kernel Extensions
+(<code>kernel/src/rsax2/</code>)</h3>
+<ul>
+<li><code>artifacts_x2.py</code></li>
+<li><code>constitution_x2.py</code></li>
+<li><code>admission_x2.py</code></li>
+<li><code>policy_core_x2.py</code></li>
+<li><code>signature_verify.py</code></li>
+</ul>
+<h3 id="a.3-tests">A.3 Tests</h3>
+<ul>
+<li>RSA-0 tests: PASS</li>
+<li>X-1 tests: PASS</li>
+<li>X-2 kernel tests: PASS</li>
+<li>X-2 profiling harness: PASS</li>
+</ul>
+<p>Total test suite: 150+ PASS (aggregate).</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Under a frozen constitution (v0.3) and frozen kernel physics,
+RSA-X2:</p>
+<ul>
+<li>admitted lawful delegation,</li>
+<li>rejected adversarial delegation attempts at correct gates,</li>
+<li>preserved structural sovereignty invariants,</li>
+<li>maintained density &lt; 1,</li>
+<li>verified cryptographic signatures deterministically,</li>
+<li>and replayed without divergence.</li>
+</ul>
+<p><strong>Axionic Phase X-2 — Treaty-Constrained Delegation: CLOSED —
+POSITIVE</strong></p>
+<hr />
+
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
