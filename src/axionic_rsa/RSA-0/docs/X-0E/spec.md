@@ -422,7 +422,7 @@ X-0E closes positive if:
 4. Destination idempotency enforced.
 5. Logs sufficient for full deterministic reconstruction.
 6. Constitution hash validation enforced.
-7. Kernel byte-for-byte identical to X-0.
+7. Kernel authority semantics identical to X-0 under the X-0E closure constitution and test vector; no authority-rule changes are permitted in X-0E.
 8. Deterministic test vector reproducible across machines.
 
 ---

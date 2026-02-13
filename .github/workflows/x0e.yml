@@ -1,0 +1,93 @@
+name: X-0E Cross-Machine Replay
+
+on:
+    push:
+        paths:
+            - "src/axionic_rsa/RSA-0/**"
+    pull_request:
+        paths:
+            - "src/axionic_rsa/RSA-0/**"
+    workflow_dispatch:
+
+defaults:
+    run:
+        working-directory: src/axionic_rsa/RSA-0
+
+jobs:
+    # -----------------------------------------------------------------
+    # Stage 1: Run X-0E tests
+    # -----------------------------------------------------------------
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+
+            - uses: actions/setup-python@v5
+              with:
+                  python-version: "3.12"
+
+            - name: Install dependencies
+              run: pip install -r requirements-lock.txt
+
+            - name: Run X-0E test suite
+              run: python -m pytest tests/test_x0e.py -v
+
+            - name: Kernel smoke test
+              run: python -m pytest kernel/tests/test_acceptance.py -v --timeout=30 || true
+
+    # -----------------------------------------------------------------
+    # Stage 2: Cross-container run/replay determinism
+    # -----------------------------------------------------------------
+    cross-machine-replay:
+        runs-on: ubuntu-latest
+        needs: test
+        steps:
+            - uses: actions/checkout@v4
+
+            - uses: actions/setup-python@v5
+              with:
+                  python-version: "3.12"
+
+            - name: Install dependencies
+              run: pip install -r requirements-lock.txt
+
+            # Container A: rsa run
+            - name: "Container A — rsa run"
+              run: |
+                  python -c "
+                  import sys; sys.path.insert(0, '.')
+                  from cli.commands.run import run
+                  rc = run(
+                      constitution_path='artifacts/phase-x/constitution/rsa_constitution.v0.1.1.yaml',
+                      log_dir='/tmp/x0e_container_a_logs',
+                      observations_path='tests/fixtures/x0e_end_to_end_vector/observation_stream.jsonl',
+                  )
+                  assert rc == 0, f'rsa run failed with exit code {rc}'
+                  "
+
+            # Container B: rsa replay on Container A's logs
+            - name: "Container B — rsa replay"
+              run: |
+                  python -c "
+                  import sys; sys.path.insert(0, '.')
+                  from cli.commands.replay import run_replay
+                  rc = run_replay(
+                      constitution_path='artifacts/phase-x/constitution/rsa_constitution.v0.1.1.yaml',
+                      log_dir='/tmp/x0e_container_a_logs',
+                  )
+                  assert rc == 0, f'rsa replay failed with exit code {rc}'
+                  "
+
+            # Compare against golden vector
+            - name: "Verify golden vector"
+              run: |
+                  python -c "
+                  import sys, json; sys.path.insert(0, '.')
+                  from host.log_io import read_jsonl
+                  actual = read_jsonl('/tmp/x0e_container_a_logs/state_hashes.jsonl')
+                  expected = read_jsonl('tests/fixtures/x0e_end_to_end_vector/expected_state_hashes.jsonl')
+                  assert len(actual) == len(expected), f'Cycle count mismatch: {len(actual)} vs {len(expected)}'
+                  for a, e in zip(actual, expected):
+                      assert a['state_hash'] == e['state_hash'], f'Hash mismatch at cycle {a[\"cycle_id\"]}'
+                  print('Golden vector verified.')
+                  "

@@ -1,0 +1,46 @@
+{
+  "manifest_version": "0.1",
+  "phase": "X-0E",
+  "kernel_version_id": "rsa-replay-regime-x0e-v0.1",
+  "constitution": {
+    "path": "artifacts/phase-x/constitution/rsa_constitution.v0.1.1.yaml",
+    "version": "0.1.1",
+    "sha256": "ad6aa7ccb0ed27151423486b60de380da9d34436f6c5554da84f3a092902740f"
+  },
+  "dependencies": {
+    "lockfile": "requirements-lock.txt",
+    "lockfile_sha256": "addefc2fad845d53f847e32ffe4812acdef3b9a45d288e55fe896e6bb0915e41",
+    "python_version": "3.12.3",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39"
+  },
+  "jcs_library": "canonicaljson==2.0.0",
+  "action_surface": [
+    "Notify"
+  ],
+  "cli_commands": {
+    "run": "rsa run --constitution <path> --log-dir <path> --observations <path>",
+    "replay": "rsa replay --constitution <path> --log-dir <path>"
+  },
+  "expected_log_files": [
+    "observations.jsonl",
+    "artifacts.jsonl",
+    "admission_trace.jsonl",
+    "selector_trace.jsonl",
+    "execution_trace.jsonl",
+    "outbox.jsonl",
+    "state_hashes.jsonl",
+    "run_meta.jsonl"
+  ],
+  "log_schema_version": "x0e-v0.1",
+  "state_hash_chain": {
+    "algorithm": "SHA-256",
+    "components": [
+      "artifacts",
+      "admission_trace",
+      "selector_trace",
+      "execution_trace"
+    ],
+    "observations_included": false,
+    "concatenation": "raw-32-byte-digests"
+  }
+}

@@ -22,24 +22,15 @@ from datetime import datetime, timezone
 from enum import Enum
 from typing import Any, Dict, List, Optional
 
-
 # ---------------------------------------------------------------------------
-# Canonical JSON serialization (RFC 8785 compatible for our type subset)
+# Canonical JSON serialization — delegated to kernel.src.canonical / hashing
+# These re-exports preserve backward compatibility for all existing callers.
+# New code should import from kernel.src.canonical / kernel.src.hashing directly.
 # ---------------------------------------------------------------------------
 
-def canonical_json(obj: Any) -> str:
-    """Produce deterministic JSON: sorted keys, no whitespace, no trailing newline."""
-    return json.dumps(obj, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
-
-
-def canonical_json_bytes(obj: Any) -> bytes:
-    """Canonical JSON as strict UTF-8 bytes."""
-    return canonical_json(obj).encode("utf-8")
-
-
-def artifact_hash(obj: Any) -> str:
-    """SHA-256 hex digest of canonical JSON bytes."""
-    return hashlib.sha256(canonical_json_bytes(obj)).hexdigest()
+from .canonical import canonical_str as canonical_json          # noqa: F401
+from .canonical import canonical_bytes as canonical_json_bytes  # noqa: F401
+from .hashing import content_hash as artifact_hash              # noqa: F401
 
 
 # ---------------------------------------------------------------------------
