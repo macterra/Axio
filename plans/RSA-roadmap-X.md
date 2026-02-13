@@ -8,7 +8,7 @@ Phase X — RSA Construction Program
 
 * David McFadzean
 * *Axionic Agency Lab*
-* 2026-02-12 (Post X-0, X-0P, and X-0L Closure)
+* 2026-02-12 (Post X-0, X-0P, X-0L, and X-1 Closure)
 
 ---
 
@@ -24,10 +24,10 @@ Phase X — RSA Construction Program
 ## Executive Orientation
 
 > The problem is no longer “Can an RSA exist?”
-> The problem is “Can sovereignty survive inhabitation — and then survive self-modification?”
+> The problem is “Can sovereignty survive inhabitation — and then survive self-modification — without collapsing into rigidity or laundering authority?”
 
 All authority mechanics, governance physics, and failure regimes are closed by Phases I–IX.
-**Phase X is the construction, inhabitation, and extension program built on that closure.**
+**Phase X is the construction, inhabitation, and lawful evolution program built on that closure.**
 
 This roadmap sequences **Phase X stages only.**
 
@@ -42,7 +42,7 @@ Not revisited:
 * Authority mechanics (I–II)
 * Agency causality (III–IV)
 * Introspection correctness (V)
-* Amendment safety (VIa)
+* Amendment safety foundations (VIa)
 * External pressure resistance (VIb)
 * Post-existence sovereignty (VII)
 * Governance physics (VIII)
@@ -116,23 +116,6 @@ Characterize the structural inhabitation bandwidth of RSA-0 under controlled per
 X-0 proved existence.
 X-0P proved deterministic inhabitation under stress.
 
-### Method (Invariant-Preserving)
-
-* Synthetic candidate generation (no LLM)
-* Direct `policy_core()` invocation (host bypassed)
-* Sandboxed warrant execution
-* Sequential replay verification over all cycles
-* Deterministic selector permutation testing
-* Baseline comparators (Always-Refuse, Always-Admit)
-
-### Stress Regimes
-
-* A — Structured Direct Commands (positive control)
-* B — Ambiguous Natural Language
-* C — Adversarial Injection (I1–I5)
-* D — Budget Stress
-* E — Conflict Saturation (permutation invariance)
-
 ### Structural Guarantees Verified
 
 * Replay divergence = 0
@@ -143,7 +126,7 @@ X-0P proved deterministic inhabitation under stress.
 * Inhabitation floor satisfied
 * No authority laundering observed
 
-**Interpretation:** Sovereignty physics remains stable under deterministic perturbation. No structural drift observed.
+**Interpretation:** Sovereignty physics remains stable under deterministic perturbation.
 
 ---
 
@@ -158,31 +141,17 @@ Validate that a real stochastic proposal engine (LLM) can inhabit the sovereign 
 X-0P validated the container.
 X-0L validated stochastic inhabitation.
 
-### Invariant Constraints (Preserved)
-
-* Kernel frozen.
-* Admission rules unchanged.
-* Selector unchanged.
-* Canonicalization boundary enforced.
-* LLM boxed as proposal engine only.
-* No replay-time model calls.
-* No heuristic relaxation.
-* No semantic arbitration layer introduced.
-
 ### Empirical Findings (500 Live Cycles)
 
-* Replay divergence = 0.
-* No warrantless side effects.
-* Selector permutation invariance preserved.
-* Inhabitation floor satisfied (100% under structured control).
-* No Type-III structural deadlock detected.
-* Budget enforcement stable.
-* Authority boundaries intact under adversarial stimulus.
-* Recovery from refusal observed; no persistent refusal loops.
+* Replay divergence = 0
+* No warrantless side effects
+* Selector permutation invariance preserved
+* Inhabitation floor satisfied
+* No Type-III structural deadlock
+* Budget enforcement stable
+* Authority boundaries intact under adversarial stimulus
 
-### Interpretation
-
-The system now demonstrates:
+**Interpretation:**
 
 > Stochastic proposal pressure does not collapse deterministic sovereign execution.
 
@@ -190,83 +159,121 @@ Sovereignty survives inhabitation.
 
 ---
 
-## **X-1 — RSA-1: Reflective Amendment (Self-Change Without Laundering)**
+## **X-1 — RSA-X1: Reflective Amendment (Self-Change Without Laundering)**
 
-**Status: 🟡 Active — Next Stage**
+**Status: ✅ Closed — Positive**
 
 ### Purpose
 
 Allow the RSA to change its own constitution while preserving:
 
-* explicit authority,
-* replay determinism,
-* responsibility locality,
-* refusal and exit correctness,
-* amendment auditability.
+* explicit authority
+* replay determinism
+* structural constraint (density < 1)
+* ECK section preservation
+* monotonic ratchet constraints
+* responsibility locality
 
 X-0 proved existence.
 X-0L proved inhabitation.
-**X-1 tests lawful self-modification.**
+**X-1 proved lawful self-modification.**
 
 ---
 
-### X-1.1 Amendment Proposal Channel
+### X-1.1 Amendment Channel
 
-* LLM proposes typed Amendment artifacts.
-* Proposal text remains untrusted.
-* Amendment must cite amendment authority explicitly.
-* Cooling-off delay enforced.
-* Rejection lawful and logged.
+* Typed `AmendmentProposal` artifacts
+* Full-document replacement only
+* Explicit citation requirements (authority + clause)
+* Cooling delay enforced
+* Schema validation (Gate 7) + algebraic preservation gates (8A/8B)
+* No semantic arbitration layer
 
-No hidden semantic interpreter is introduced.
+LLM proposes. Kernel decides.
 
 ---
 
 ### X-1.2 Amendment Execution
 
-* Versioned constitution transition.
-* Logged state boundary.
-* New constitution hash.
-* Replay-stable fork point.
-* No retroactive reinterpretation.
+* Versioned constitution transition
+* Logged fork boundary
+* New constitution hash authoritative
+* Replay-stable fork application
+* Stale proposals invalidated deterministically
+
+No retroactive reinterpretation. No silent authority shifts.
 
 ---
 
-### X-1.3 Amendment Invariants
+### X-1.3 Empirical Results
 
-* No silent authority shift.
-* No kernel arbitration.
-* No semantic override channel.
-* Amendment effects replay-deterministic.
-* Agent must explicitly refuse, halt, downgrade, or exit if amendment unsafe.
+* 4 lawful adoptions across 36 cycles
+* 7 adversarial proposals rejected
+* Replay divergence = 0 across all fork boundaries
+* Density preserved (A=3, B=4, M=4, d=0.3333)
+* Ratchet observed: cooling 2 → 3 → 4 → 5
+* No ECK loss
 
----
+**Key invariant demonstrated:**
 
-## **X-2 — Multi-Agent Entry (Optional)**
-
-**Status: 🔴 Optional / Political**
-
-Entered only if coexistence becomes necessary.
-
-* Explicit treaty artifacts.
-* Refusable and destructible authority grants.
-* No kernel arbitration.
-* No cross-agent hidden privileges.
-
-No new authority mechanics introduced.
+> A frozen sovereign substrate can replace its governing constitution without mutating kernel physics, collapsing structural constraint, or introducing proxy authority.
 
 ---
 
-## **X-3 — Replacement & Succession (Reuse Phase VII)**
+### X-1.4 Structural Consequence: Ratchet Pressure
+
+The ratchet mechanism is unidirectional:
+
+* cooling_period_cycles → non-decreasing
+* authorization_threshold → non-decreasing
+* density_upper_bound → non-increasing
+
+This creates an emergent phenomenon:
+
+> Sovereignty can tighten monotonically, but never loosen.
+
+This guarantees stability against degeneration — but introduces the risk of long-run rigidity (“governance heat death”).
+
+This pressure defines the next research frontier.
+
+---
+
+## **X-2 — Governance Under Ratchet Pressure / Delegation Without Leakage**
+
+**Status: 🟡 Active Research Question**
+
+X-1 proves lawful self-replacement.
+X-2 must address the tension introduced by monotonic ratchet constraints.
+
+### Core Question
+
+> Can adaptation occur under bounded rigidity without introducing a privileged interpreter or laundering authority through delegation?
+
+X-2 is not “multi-agent politics” by default. It is a structural investigation of:
+
+* treaty artifacts
+* delegable but refusable authority
+* revocable grants
+* cross-agent composability without arbitration
+* evolution under constraint without heat death
+
+No kernel arbitration permitted.
+No hidden authority channels.
+
+---
+
+## **X-3 — Replacement & Succession (Reuse Phase VII Machinery)**
 
 **Status: 🔴 Open by Choice**
 
 Apply Phase VII ASI/SIR machinery to:
 
-* Upgrades
-* Successor agents
-* Authority transfer
-* Replacement without laundering responsibility
+* agent upgrades
+* successor instantiation
+* authority transfer
+* replacement without responsibility laundering
+
+This extends X-1 from self-amendment to identity continuity under substitution.
 
 No new physics required.
 
@@ -279,7 +286,7 @@ No new physics required.
 * ⛔ Silent recovery
 * ⛔ Hidden ranking or scoring
 * ⛔ Outcome-based overrides
-* ⛔ “Helpful” semantic arbitration layer
+* ⛔ Semantic arbitration layer
 * ⛔ Stability purchased at the cost of sovereignty
 
 ---
@@ -291,8 +298,9 @@ Phase X is complete when:
 1. RSA runs autonomously (X-0)
 2. Sovereignty survives synthetic stress (X-0P)
 3. Sovereignty survives live stochastic inhabitation (X-0L)
-4. Amendment and replacement occur without proxy sovereignty (X-1, X-3)
-5. Replay determinism holds across existence, inhabitation, and amendment
+4. Lawful self-modification occurs without proxy sovereignty (X-1)
+5. Replacement and succession occur without laundering responsibility (X-3)
+6. Replay determinism holds across existence, inhabitation, amendment, and replacement
 
 ---
 
@@ -301,10 +309,10 @@ Phase X is complete when:
 * X-0: ✅ Closed — Existence proven
 * X-0P: ✅ Closed — Synthetic inhabitation proven
 * X-0L: ✅ Closed — Stochastic inhabitation proven
-* X-1: 🟡 Active — Reflective amendment
-* X-2: 🔴 Optional
+* X-1: ✅ Closed — Reflective amendment proven
+* X-2: 🟡 Active — Governance under ratchet pressure
 * X-3: 🔴 Pending
 
 ---
 
-**End of Phase X Roadmap — v1.3 (Post X-0L Closure)**
+**End of Phase X Roadmap — v1.4 (Post X-1 Closure)**
