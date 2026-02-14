@@ -6,7 +6,7 @@
 * **X-0E Closure Constitution:** v0.1.1 — sovereign baseline
 * **X-0E Closure SHA-256:** `ad6aa7ccb0ed27151423486b60de380da9d34436f6c5554da84f3a092902740f`
 * **Language:** Python 3.12
-* **Test result:** 584/584 passed (54 kernel-base + 58 X-1 kernel + 97 X-2 kernel + 59 X-0P harness + 57 canonicalizer + 99 X-0L harness + 19 X-1 harness + 35 X-2 harness + 51 X-0E + 55 X-2D harness = 584)
+* **Test result:** 703/703 passed (54 kernel-base + 58 X-1 kernel + 97 X-2 kernel + 64 X-3 kernel + 59 X-0P harness + 57 canonicalizer + 99 X-0L harness + 19 X-1 harness + 35 X-2 harness + 51 X-0E + 55 X-2D harness + 55 X-3 harness = 703)
 
 ---
 
@@ -20,7 +20,7 @@ The X-0P inhabitation profiling harness was subsequently built to exercise the k
 
 The X-0L live proposal inhabitation harness extends profiling to real LLM-generated candidates. It introduces a new canonicalizer module (raw LLM text → JSON extraction → hashing), an OpenAI-compatible LLM client, model calibration, budget enforcement (B₁ per-cycle, B₂ per-session), and five live conditions (L-A through L-E) with replay verification, refusal taxonomy (Type I/II/III), and forensic analysis. A 59-question Q&A (Addenda A–C, `docs/RSA-0L/`) resolved all live-profiling design decisions. The kernel remains unmodified; all X-0L code lives under `canonicalizer/`, `profiling/x0l/`, and `replay/x0l/`. Canonicalizer rejection never short-circuits the kernel's decision authority; rejected LLM output yields empty candidates passed through to the kernel, which then issues REFUSE on its own terms.
 
-This report covers implementation, test verification, Phase X-0L live execution results, X-1 reflective amendment, X-2 treaty-constrained delegation, and X-2D delegation churn & density stress profiling. Full structured data is in `logs/x0l/x0l_report.json` (§14), `profiling/x1/results/` (§16), `profiling/x2/results/` (§18), and `profiling/x2d/results/` (§22).
+This report covers implementation, test verification, Phase X-0L live execution results, X-1 reflective amendment, X-2 treaty-constrained delegation, X-2D delegation churn & density stress profiling, and X-3 sovereign succession under lineage. Full structured data is in `logs/x0l/x0l_report.json` (§14), `profiling/x1/results/` (§16), `profiling/x2/results/` (§18), `profiling/x2d/results/` (§22), and `profiling/x3/results/` (§25).
 
 **Timeline distinction:** Erratum X.E1 (the `_now_utc()` determinism fix in `artifacts.py` and `policy_core.py`) was a Phase X kernel defect fix applied *before* the X-0P harness was written. After that fix was merged and verified (53 kernel tests passing), the kernel was frozen. The entire X-0P harness was then built with zero kernel modifications — all profiling code lives under `profiling/x0p/` and `replay/x0p/`. The X-0L harness was built subsequently with zero kernel modifications — the canonicalizer is a new top-level module; harness code lives under `profiling/x0l/` and `replay/x0l/`.
 
@@ -29,6 +29,8 @@ X-1 (Reflective Amendment Under Frozen Sovereignty) extends the kernel with a co
 X-2 (Treaty-Constrained Delegation) extends the kernel with inter-agent delegation via treaty grants. A 124-question Q&A (`docs/X-2/`) resolved all design decisions. Constitution v0.3 introduces `TreatyProcedure`, `ScopeEnumerations`, `AUTH_DELEGATION`, Ed25519 cryptographic identity, treaty grant/revocation artifacts, and a 12-gate treaty admission pipeline. The X-2 kernel extension lives under `kernel/src/rsax2/` (5 modules, 2,658 lines); the X-1 kernel is composed but not modified. X-2 profiling exercised 26 cycles across 8 phases with 3 delegated warrants, 11/11 adversarial grant rejections, and 4/4 adversarial delegation rejections. 97 kernel tests + 35 harness tests = 132 new tests.
 
 X-2D (Delegation Churn & Density Stress Profiling) extends X-2 with deterministic multi-cycle stress profiling: N-cycle sessions with treaty grant/revocation churn, density saturation, constitutional amendment ratcheting, and density-band edge maintenance. A 96-question Q&A (`docs/X-2D/`) across 33 sections resolved all design decisions. The X-2D harness lives under `profiling/x2d/` (6 modules + runner, 2,394 lines); the X-2 kernel extension adds X2D_TOPOLOGICAL ordering mode and revalidation (5 modules, now 2,658 lines). X-2D production profiling exercised 310 cycles across 5 mandatory families with 147 grants admitted, 157 delegated warrants issued, and 5 revalidation invalidations. 55 harness tests.
+
+X-3 (Sovereign Succession Under Lineage) extends X-2 with sovereign key rotation via HKDF-SHA256-derived keypair lineage. A 172-question Q&A across 7 rounds (`docs/X-3/`) resolved all design decisions. Constitution v0.3 is extended with a 9-clause JSON overlay via `EffectiveConstitutionFrame` (no new YAML version). The X-3 kernel extension lives under `kernel/src/rsax3/` (7 modules, 2,573 lines): succession admission (7-gate pipeline), treaty ratification (5-gate pipeline), boundary verification (5-step protocol), and X3_TOPOLOGICAL 12-step policy ordering. X-3 production profiling exercised 534 cycles across 8 mandatory families (12 sessions) with 13 key rotations, 2 adversarial succession rejections, and 5 boundary fault detections. 64 kernel tests + 55 harness tests = 119 new tests.
 
 ---
 
@@ -140,6 +142,18 @@ Each cycle proceeds through these stages:
 | `kernel/src/rsax2/policy_core_x2.py` | 954 | 5-step per-cycle ordering (CL-CYCLE-ORDERING), X2D_TOPOLOGICAL 9-step ordering, `PolicyOutputX2`, `DelegatedActionRequest`, multi-warrant issuance with origin_rank sorting, delegated action evaluation with Ed25519 signature verification, constitutional revalidation |
 | `kernel/src/rsax2/signature.py` | 112 | Ed25519 key management: `generate_keypair()`, `sign_action_request()`, `verify_action_request_signature()` via PyCA cryptography library |
 
+### 3.2d X-3 Kernel Extension (`kernel/src/rsax3/`)
+
+| File | Lines | Purpose |
+|------|-------|--------|
+| `kernel/src/rsax3/artifacts_x3.py` | 692 | SuccessionProposal, TreatyRatification, CycleCommitPayload, CycleStartPayload, InternalStateX3 (extends X2), ActiveTreatySetX3, PolicyOutputX3, identity chain hash computation |
+| `kernel/src/rsax3/signature_x3.py` | 295 | HKDF-SHA256 key derivation (`derive_genesis_keypair`, `derive_successor_keypair`, `precompute_keypairs`), sovereign signature verification, sign/verify for succession proposals, ratifications, cycle commits/starts |
+| `kernel/src/rsax3/succession_admission.py` | 301 | 7-gate succession admission pipeline (S1–S7): enabled check, per-cycle limit, signature verification, lineage continuity, no-pending, self-succession, no-duplicate |
+| `kernel/src/rsax3/treaty_ratification.py` | 220 | 5-gate ratification admission pipeline (R0–R4): treaty exists/suspended, grantee signature, sovereign key match, not re-ratified, delay satisfied |
+| `kernel/src/rsax3/constitution_x3.py` | 270 | EffectiveConstitutionFrame wrapping ConstitutionX2 + JSON overlay; 47+ delegated methods/properties; overlay clause accessors; citation resolution across base + overlay |
+| `kernel/src/rsax3/boundary_verifier.py` | 243 | 5-step harness-level boundary verification: commit signature → pending check → successor activation (state mutation) → start signature → chain continuity |
+| `kernel/src/rsax3/policy_core_x3.py` | 551 | X3_TOPOLOGICAL 12-step per-cycle ordering; composes X-1 amendment path, X-2 treaty admission, succession admission, ratification, SUSPENSION_UNRESOLVED blocking |
+
 ### 3.3 Host / Executor
 
 | File | Lines | Purpose |
@@ -228,6 +242,16 @@ Each cycle proceeds through these stages:
 | `profiling/x2d/harness/src/replay.py` | 146 | State hash chain replay verification |
 | `profiling/x2d/run_production.py` | 279 | Production runner: 5-family sweep, summary JSON output |
 
+### 3.10b X-3 Profiling Harness
+
+| File | Lines | Purpose |
+|------|-------|--------|
+| `profiling/x3/harness/src/schemas_x3.py` | 291 | SessionFamilyX3 enum (8 families), X3SessionStart/X3SessionEnd dataclasses, 3-gate session admission (6X/7X/8X) |
+| `profiling/x3/harness/src/generators_x3.py` | 874 | X3Generator base class + 8 generator subclasses (Base, NearBound, Churn, RatDelay, MultiRot, InvalidSig, DupCycle, InvalidBoundary), seeded RNG, keypair management, deterministic plan generation |
+| `profiling/x3/harness/src/runner_x3.py` | 904 | X3Runner: admission → generation → N-cycle execution with boundary verification → replay → closure; post-activation state prediction for CycleStart signing |
+| `profiling/x3/harness/src/constitution_helper_x3.py` | 92 | Profiling constitution factory: v0.3 + AUTH_DELEGATION injection + X-3 overlay JSON → EffectiveConstitutionFrame |
+| `profiling/x3/run_production.py` | 387 | 8 session factories, INVALID_BOUNDARY sub-session handling (5 sub-sessions A–E), summary JSON output |
+
 ### 3.11 Tests
 
 | File | Lines | Purpose |
@@ -242,6 +266,8 @@ Each cycle proceeds through these stages:
 | `profiling/x1/harness/tests/test_harness_x1.py` | 374 | 19 X-1 harness tests: scenario construction, cycle execution, full session, report generation |
 | `profiling/x2/harness/tests/test_harness_x2.py` | 543 | 35 X-2 harness tests: scenario construction (22), cycle execution (7), full session (5), report generation (1) |
 | `profiling/x2d/harness/tests/test_x2d.py` | 982 | 55 X-2D harness tests: gate admission (16), generators (7), topological ordering (2), density enforcement (2), revalidation (3), replay (6), metrics (6), schemas (4), invalidation (3), density repair (2), simulation API (3), gate stability (1) |
+| `kernel/tests/test_x3.py` | 1,458 | 64 X-3 kernel tests: ArtifactTypes, SignatureHelpers, IdentityChainHash, ConstitutionFrame, SuccessionAdmission (S1–S7), RatificationPipeline (R0–R4), BoundaryVerifier (5 steps), PolicyCoreX3, ActiveTreatySetX3, KernelVersionId |
+| `profiling/x3/harness/tests/test_x3_profiling.py` | 671 | 55 X-3 harness tests: GateAdmission (16), GeneratorDeterminism (14), ConstitutionHelper (10), RunnerExecution (7), ReplayConsistency (2), LogSchema (2), SchemaArtifacts (3) |
 | `tests/test_x0e.py` | 587 | 51 X-0E tests: JCS canonicalization, content hashing, state hash chain, constitution integrity, log I/O, executor, E2E run/replay, determinism |
 
 ### 3.12 Totals
@@ -251,6 +277,7 @@ Each cycle proceeds through these stages:
 | Kernel — base (6 modules) | 1,630 |
 | Kernel — X-1 extension (4 modules) | 1,821 |
 | Kernel — X-2 extension (5 modules) | 2,658 |
+| Kernel — X-3 extension (7 modules) | 2,573 |
 | Host + Executor (2 modules) | 682 |
 | Replay — agent (1 module) | 268 |
 | Replay — X-0P (1 module) | 215 |
@@ -261,12 +288,14 @@ Each cycle proceeds through these stages:
 | Profiling harness — X-1 (4 modules + runner) | 1,846 |
 | Profiling harness — X-2 (4 modules + runner) | 2,322 |
 | Profiling harness — X-2D (6 modules + runner) | 2,394 |
+| Profiling harness — X-3 (4 modules + runner) | 2,548 |
 | X-0E Operational Harness (cli + host/log_io + host/executor_x0e + runtime/net_guard + state_hash) | 744 |
 | X-0E Packaging (canonical.py + hashing.py + manifest script + Dockerfile) | 208 |
 | Tests (10 modules) | 8,942 |
 | Tests — X-2D (1 module) | 982 |
+| Tests — X-3 (2 modules) | 2,129 |
 | Constitution artifacts (v0.1.1 + v0.2 + v0.3) | 5,835 |
-| **Total** | **36,762** |
+| **Total** | **44,012** |
 
 ---
 
@@ -305,10 +334,10 @@ Each cycle proceeds through these stages:
 ## 5. Test Results
 
 ```
-584 passed
+703 passed
 ```
 
-**Note:** This total reflects the cumulative suite including all phases through X-2D. Pre-X-0E total was 478; the 51 X-0E tests (§5.10) brought the count to 529; the 55 X-2D tests (§5.11) bring the count to 584.
+**Note:** This total reflects the cumulative suite including all phases through X-3. Pre-X-0E total was 478; X-0E added 51 (529); X-2D added 55 (584); X-3 added 119 — 64 kernel tests + 55 harness tests (703).
 
 ### 5.1 Acceptance Tests (test_acceptance.py — 35 tests)
 
@@ -493,6 +522,33 @@ Each cycle proceeds through these stages:
 | 127 | Density repair | `TestDensityRepair` | 2 | PASS |
 | 128 | Simulation API | `TestSimulationAPI` | 3 | PASS |
 | 129 | Gate stability | `TestGateStability` | 1 | PASS |
+
+### 5.12 X-3 Kernel Tests (test_x3.py — 64 tests)
+
+| # | Domain | Test Class | Tests | Status |
+|---|--------|------------|-------|--------|
+| 130 | Artifact types | `TestArtifactTypes` | 8 | PASS |
+| 131 | Signature helpers | `TestSignatureHelpers` | 7 | PASS |
+| 132 | Identity chain hash | `TestIdentityChainHash` | 5 | PASS |
+| 133 | Constitution frame | `TestConstitutionFrame` | 10 | PASS |
+| 134 | Succession admission (S1–S7) | `TestSuccessionAdmission` | 10 | PASS |
+| 135 | Ratification pipeline (R0–R4) | `TestRatificationPipeline` | 7 | PASS |
+| 136 | Boundary verifier (5 steps) | `TestBoundaryVerifier` | 8 | PASS |
+| 137 | Policy core X3 | `TestPolicyCoreX3` | 5 | PASS |
+| 138 | Active treaty set X3 | `TestActiveTreatySetX3` | 3 | PASS |
+| 139 | Kernel version id | `TestKernelVersionId` | 1 | PASS |
+
+### 5.13 X-3 Harness Tests (test_x3_profiling.py — 55 tests)
+
+| # | Domain | Test Class | Tests | Status |
+|---|--------|------------|-------|--------|
+| 140 | Gate admission (6X/7X/8X) | `TestGateAdmission` | 16 | PASS |
+| 141 | Generator determinism (8 families) | `TestGeneratorDeterminism` | 14 | PASS |
+| 142 | Constitution helper | `TestConstitutionHelper` | 10 | PASS |
+| 143 | Runner execution | `TestRunnerExecution` | 7 | PASS |
+| 144 | Replay consistency | `TestReplayConsistency` | 2 | PASS |
+| 145 | Log schema | `TestLogSchema` | 2 | PASS |
+| 146 | Schema artifacts | `TestSchemaArtifacts` | 3 | PASS |
 
 ---
 
@@ -1745,6 +1801,288 @@ D-RATCHET shows the highest mean density (0.437) due to aggressive grant admissi
 | C6-RATCHET | ≥1 revalidation invalidation | **PASS** (5 invalidations) |
 
 **X-2D Closure: POSITIVE**
+
+---
+
+## 23. X-3 Architecture — Sovereign Succession Under Lineage
+
+### 23.1 Design Principles
+
+X-3 extends X-2 with sovereign key succession: a sovereign agent can rotate its cryptographic identity through a lineage of HKDF-SHA256-derived keypairs while maintaining authority continuity, treaty coherence, and replay determinism. A 172-question Q&A across 7 rounds (`docs/X-3/`) resolved all design decisions before implementation.
+
+- **Overlay-based constitution** — X-3 introduces an `EffectiveConstitutionFrame` that wraps the frozen ConstitutionX2 (v0.3) with a 9-clause JSON overlay, avoiding constitutional versioning while adding succession semantics
+- **Harness-level boundary verification** — CycleCommit/CycleStart signing and verification are harness-level concerns (not kernel physics); the kernel processes succession proposals as typed artifacts in the policy cycle
+- **HKDF-SHA256 key derivation** — Deterministic keypair hierarchy: genesis seed → generation-0 → generation-1 → …; each successor key is derived from its predecessor via HKDF-Expand with generation index
+- **Identity chain** — Each activated succession extends a hash chain: `tip = SHA256(prev_tip || successor_public_key)`; genesis tip is `SHA256(genesis_public_key)`
+- **12-step topological ordering** — X3_TOPOLOGICAL mode enforces per-cycle ordering: boundary → amendments → revalidation → succession → revocations → ratifications → density_A → grants → density_B → RSA actions → delegated actions → warrant assembly
+- **Treaty suspension on succession** — All active treaties are suspended when a new sovereign key activates; grantees must ratify with the new sovereign before delegated actions resume
+
+### 23.2 Overlay Constitution
+
+The X-3 overlay extends the frozen v0.3 constitution with 9 clauses:
+
+| Clause ID | Purpose |
+|-----------|---------|
+| `CL-SUCCESSION-ENABLED` | Enables the succession mechanism |
+| `CL-SUCCESSION-PER-CYCLE-LIMIT` | At most 1 succession per cycle |
+| `CL-SUCCESSION-SELF-PERMITTED` | Self-succession (re-derive from same lineage) is allowed |
+| `CL-BOUNDARY-SIGNATURE-REQUIRED` | CycleCommit/CycleStart must be signed by the active sovereign key |
+| `CL-TREATY-SUSPENSION-ON-SUCCESSION` | All active treaties suspended on key rotation |
+| `CL-TREATY-RATIFICATION-REQUIRED` | Suspended treaties require grantee ratification to resume |
+| `CL-PRIOR-KEY-ZERO-AUTHORITY` | Prior sovereign keys have no authority after rotation |
+| `CL-LINEAGE-NO-FORK` | The identity chain is append-only; no branching |
+| `CL-SUSPENSION-BLOCKS-GRANTS` | New treaty grants blocked while any treaty is in SUSPENDED state |
+
+### 23.3 Frozen Artifacts (5 + SHA-256 sidecars)
+
+| Artifact | Purpose |
+|----------|---------|
+| `artifacts/phase-x/x3/x3_overlay.v0.1.json` | 9-clause overlay defining succession semantics |
+| `artifacts/phase-x/x3/genesis.v0.1.json` | Genesis seed and initial chain tip |
+| `artifacts/phase-x/x3/cycle_commit_payload.v0.1.schema.json` | Schema for CycleCommit signing payloads |
+| `artifacts/phase-x/x3/cycle_start_payload.v0.1.schema.json` | Schema for CycleStart signing payloads |
+| `artifacts/phase-x/x3/boundary_codes.v0.1.json` | Enumeration of boundary verification failure codes |
+
+### 23.4 Succession Admission Pipeline (7 gates)
+
+| Gate | Name | Check |
+|------|------|-------|
+| S1 | Succession enabled | Overlay clause `CL-SUCCESSION-ENABLED` is present and true |
+| S2 | Per-cycle limit | At most 1 succession already admitted this cycle |
+| S3 | Signature valid | Proposal is signed by the currently active sovereign key |
+| S4 | Lineage continuity | Proposed successor key derives from the current key via HKDF |
+| S5 | No pending successor | No other succession is already pending activation |
+| S6 | Self-succession check | If self-succession, `CL-SUCCESSION-SELF-PERMITTED` must be true |
+| S7 | Not duplicate | Proposed successor key ≠ current active key |
+
+### 23.5 Ratification Pipeline (5 gates)
+
+| Gate | Name | Check |
+|------|------|-------|
+| R0 | Treaty exists and suspended | Referenced treaty must exist and be in SUSPENDED state |
+| R1 | Grantee signature valid | Ratification is signed by the treaty's grantee |
+| R2 | Sovereign key matches | Ratification references the correct (post-rotation) sovereign key |
+| R3 | Not already ratified | Treaty has not already been ratified in this suspension epoch |
+| R4 | Ratification delay satisfied | `current_cycle ≥ activation_cycle + ratification_delay` |
+
+### 23.6 Boundary Verification (5 steps)
+
+The boundary verifier runs at the start of each cycle (cycle ≥ 2) and performs harness-level integrity verification:
+
+| Step | Name | Action |
+|------|------|--------|
+| 1 | Verify CycleCommit | Signature on prior cycle's commit payload matches expected signer |
+| 2 | Check pending successor | If succession was admitted, commit must carry `pending_successor_key`; if not, it must be absent |
+| 3 | Activate successor | If pending, rotate active key, extend identity chain, increment generation, suspend treaties |
+| 4 | Verify CycleStart | Signature on current cycle's start payload matches the (post-activation) active key |
+| 5 | Chain continuity | `chain_length` and `chain_tip_hash` in the start payload match internal state |
+
+**Critical invariant:** Step 3 mutates the internal state (activating the successor key). Step 4 then verifies CycleStart against the post-activation key. The harness must therefore build and sign CycleStart with the predicted post-activation state *before* calling the boundary verifier.
+
+### 23.7 Session Families (8 Mandatory)
+
+| Family | Cycles | Rotations | Purpose |
+|--------|--------|-----------|---------|
+| **X3-BASE** | 50 | 1 @ cycle 25 | Baseline: single rotation, treaty suspension, replay |
+| **X3-NEAR_BOUND** | 60 | 1 @ cycle 30 | Rotation near density upper bound |
+| **X3-CHURN** | 80 | 1 @ cycle 40 | Rotation under grant/revocation churn |
+| **X3-RAT_DELAY** | 60 | 1 @ cycle 20 | Extended ratification delay (5 cycles) |
+| **X3-MULTI_ROT** | 80 | 3 @ cycles 20/40/60 | Multiple successive rotations building chain length 4 |
+| **X3-INVALID_SIG** | 50 | 1 valid + 1 invalid | Invalid succession signature rejected (S3) |
+| **X3-DUP_CYCLE** | 50 | 1 valid + 1 duplicate | Duplicate same-cycle succession rejected (S2) |
+| **X3-INVALID_BOUNDARY** | 50 | 1 @ cycle 20 | 5 sub-sessions (A–E) testing boundary fault detection |
+
+### 23.8 Invalid Boundary Sub-Sessions
+
+| Sub | Fault Type | Fault Cycle | Expected Detection |
+|-----|------------|-------------|-------------------|
+| A | `wrong_commit_signer` | 21 | BOUNDARY_SIGNATURE_MISMATCH |
+| B | `wrong_start_signer` | 21 | BOUNDARY_SIGNATURE_MISMATCH |
+| C | `missing_pending_successor` | 21 | BOUNDARY_STATE_MISSING_PENDING_SUCCESSOR |
+| D | `spurious_pending_successor` | 15 | BOUNDARY_STATE_SPURIOUS_PENDING_SUCCESSOR |
+| E | `chain_mismatch` | 21 | BOUNDARY_STATE_CHAIN_MISMATCH |
+
+Each sub-session runs up to the fault cycle, injects the specific fault into the boundary payload, confirms the verifier detects it, and then halts (fault is the final cycle).
+
+### 23.9 Gate Admission (3 session-level gates)
+
+| Gate | Name | Check |
+|------|------|-------|
+| 6X | Preconditions | Session family in valid set, kernel version matches, constitution hash matches |
+| 7X | Schema validity | Required fields present, rotation_schedule entries have valid cycle/successor_index, ratification_delay ≥ 0 |
+| 8X | Parameter admissibility | rotation cycles within session bounds, no duplicate rotation cycles, successor indices sequential, INVALID_BOUNDARY has fault_injection, other families do not |
+
+### 23.10 Bugs Found During Implementation
+
+Six issues were discovered and fixed during kernel + harness implementation:
+
+1. **constitution_x3.py — `get_permitted_zones` signature:** EffectiveConstitutionFrame defined `get_permitted_zones(action_type, scope_type)` (2 args) but ConstitutionX2 base has `get_permitted_zones(action_type)` (1 arg). X-2 policy_core_x2.py calls with 1 arg. Fixed to match base signature.
+
+2. **generators_x3.py — single-entry rotation_schedule:** X3InvalidSigGenerator and X3DupCycleGenerator accessed `rotation_schedule[1]` assuming 2 entries, but the invalid/duplicate entry is synthesized, not passed in. Fixed to synthesize the second entry from the first: InvalidSig derives `invalid_cycle = max(1, valid_cycle - 2)`; DupCycle uses the same cycle with a different successor_index.
+
+3. **runner_x3.py — boundary signature mismatch after activation:** Runner originally built CycleStart BEFORE calling the boundary verifier. But `verify_and_activate_boundary()` mutates state at Step 3 (activating successor), then verifies CycleStart at Step 4 against the post-activation key. The CycleStart was signed with the pre-activation key → mismatch. Fixed `_do_boundary()` to predict post-activation state (look up successor public key, compute `chain_length + 1`, derive new `chain_tip_hash` via `compute_identity_chain_tip_hash()`), build CycleStart with those values, sign with the successor key, then call the verifier.
+
+4. **run_production.py — sub-session C fault timing:** `missing_pending_successor` fault was injected at cycle 20 (the rotation cycle). But the succession is admitted during cycle 20's policy evaluation; the CycleCommit *from* cycle 20 carries `pending_successor_key`. The boundary verifier checks this commit at cycle 21. Injecting the fault at cycle 20 modified cycle 19's commit (which correctly has no pending successor) — the fault did nothing. Fixed fault cycle from 20 → 21.
+
+5. **test_x3_profiling.py — parameter mismatch:** Test `test_cycle_result_to_dict` used cycles=3 with rotation at cycle 5 (Gate 8X rejection). Test `test_ratification_at_delay` expected ratification at `rot + delay` but code ratifies at `rot + delay + 1`. Log tests used 5-cycle sessions without valid rotation schedules. All fixed with correct parameters.
+
+6. **kernel/tests/test_x3.py — multiple delegation gaps:** Initial EffectiveConstitutionFrame was missing 15 method/property delegations to the wrapped ConstitutionX2 (e.g., `hash`, `treaty_permissions`, `scope_enumerations`, `make_citation`, `make_authority_citation`, `density_upper_bound`). Each missing delegation caused AttributeError failures. Fixed by adding all required delegations.
+
+---
+
+## 24. X-3 File Inventory
+
+### 24.1 Kernel Extension (`kernel/src/rsax3/`)
+
+| File | Lines | Purpose |
+|------|-------|---------|
+| `artifacts_x3.py` | 692 | Artifact types: SuccessionProposal, TreatyRatification, CycleCommitPayload, CycleStartPayload, InternalStateX3, ActiveTreatySetX3, PolicyOutputX3, identity chain hash functions |
+| `signature_x3.py` | 295 | HKDF-SHA256 key derivation, sovereign signature verification, sign/verify for succession proposals, ratifications, cycle commits/starts |
+| `succession_admission.py` | 301 | 7-gate succession admission pipeline (S1–S7) |
+| `treaty_ratification.py` | 220 | 5-gate ratification admission pipeline (R0–R4) |
+| `constitution_x3.py` | 270 | EffectiveConstitutionFrame: wraps ConstitutionX2 + overlay, 47+ delegated methods/properties, overlay clause accessors, citation resolution |
+| `boundary_verifier.py` | 243 | 5-step boundary verification and activation (harness-level) |
+| `policy_core_x3.py` | 551 | X3_TOPOLOGICAL 12-step per-cycle policy evaluation |
+| **Subtotal** | **2,573** | **7 modules** |
+
+### 24.2 Kernel Tests
+
+| File | Lines | Tests | Purpose |
+|------|-------|-------|---------|
+| `kernel/tests/test_x3.py` | 1,458 | 64 | 10 test classes: ArtifactTypes, SignatureHelpers, IdentityChainHash, ConstitutionFrame, SuccessionAdmission, RatificationPipeline, BoundaryVerifier, PolicyCoreX3, ActiveTreatySetX3, KernelVersionId |
+
+### 24.3 Profiling Harness (`profiling/x3/harness/src/`)
+
+| File | Lines | Purpose |
+|------|-------|---------|
+| `schemas_x3.py` | 291 | SessionFamilyX3 enum (8 families), session start/end dataclasses, 3-gate session admission (6X/7X/8X) |
+| `generators_x3.py` | 874 | X3Generator base class + 8 generator subclasses, seeded RNG, keypair management, deterministic plan generation |
+| `runner_x3.py` | 904 | X3Runner: session admission → plan generation → N-cycle execution → replay verification → closure evaluation |
+| `constitution_helper_x3.py` | 92 | Profiling constitution factory: v0.3 + AUTH_DELEGATION + X-3 overlay → EffectiveConstitutionFrame |
+| **Subtotal** | **2,161** | **4 modules** |
+
+### 24.4 Profiling Tests
+
+| File | Lines | Tests | Purpose |
+|------|-------|-------|---------|
+| `profiling/x3/harness/tests/test_x3_profiling.py` | 671 | 55 | 7 test classes: GateAdmission (16), GeneratorDeterminism (14), ConstitutionHelper (10), RunnerExecution (7), ReplayConsistency (2), LogSchema (2), SchemaArtifacts (3) |
+
+### 24.5 Production Runner
+
+| File | Lines | Purpose |
+|------|-------|---------|
+| `profiling/x3/run_production.py` | 387 | 8 session factories, sub-session handling for INVALID_BOUNDARY (5 sub-sessions A–E), main() runner, summary JSON output |
+
+### 24.6 X-3 Totals
+
+| Category | Lines |
+|----------|-------|
+| Kernel extension (7 modules) | 2,573 |
+| Kernel tests (64 tests) | 1,458 |
+| Profiling harness (4 modules) | 2,161 |
+| Profiling tests (55 tests) | 671 |
+| Production runner | 387 |
+| **Total X-3** | **7,250** |
+
+---
+
+## 25. X-3 Profiling Results
+
+### 25.1 Session Parameters
+
+| Parameter | Value |
+|-----------|-------|
+| Run timestamp | `2026-02-14T22:01:26Z` |
+| Constitution | v0.3 + AUTH_DELEGATION + X-3 overlay (9 clauses) |
+| kernel_version_id | `rsa-replay-regime-x3-v0.1` |
+| Families | 8 (X3-BASE, X3-NEAR_BOUND, X3-CHURN, X3-RAT_DELAY, X3-MULTI_ROT, X3-INVALID_SIG, X3-DUP_CYCLE, X3-INVALID_BOUNDARY) |
+| Sessions | 12 (7 primary + 5 INVALID_BOUNDARY sub-sessions) |
+| Total cycles | 534 |
+| Overall result | **PASS** |
+
+### 25.2 Per-Family Results
+
+| Family | Cycles | Rotations | Rejections | Boundary Faults | Replay Div. | Closure |
+|--------|--------|-----------|------------|-----------------|-------------|---------|
+| **X3-BASE** | 50 | 1 | 0 | 0 | 0 | **PASS** |
+| **X3-NEAR_BOUND** | 60 | 1 | 0 | 0 | 0 | **PASS** |
+| **X3-CHURN** | 80 | 1 | 0 | 0 | 0 | **PASS** |
+| **X3-RAT_DELAY** | 60 | 1 | 0 | 0 | 0 | **PASS** |
+| **X3-MULTI_ROT** | 80 | 3 | 0 | 0 | 0 | **PASS** |
+| **X3-INVALID_SIG** | 50 | 1 | 1 | 0 | 0 | **PASS** |
+| **X3-DUP_CYCLE** | 50 | 1 | 1 | 0 | 0 | **PASS** |
+| **X3-INVALID_BOUNDARY** | 104 | 3 | 0 | 5 | 0 | **PASS** |
+| **Total** | **534** | **13** | **2** | **5** | **0** | **12/12** |
+
+### 25.3 X3-MULTI_ROT Identity Chain
+
+| Event | Cycle | Generation | Chain Length | Detail |
+|-------|-------|------------|-------------|--------|
+| Genesis | 0 | 0 | 1 | Initial keypair from genesis seed |
+| Rotation 1 | 20 | 1 | 2 | First successor activated |
+| Rotation 2 | 40 | 2 | 3 | Second successor activated |
+| Rotation 3 | 60 | 3 | 4 | Third successor activated |
+
+### 25.4 X3-INVALID_BOUNDARY Sub-Session Results
+
+| Sub | Fault Type | Fault Cycle | Cycles Run | Detected Code | Result |
+|-----|------------|-------------|------------|---------------|--------|
+| A | `wrong_commit_signer` | 21 | 22 | BOUNDARY_SIGNATURE_MISMATCH | **PASS** |
+| B | `wrong_start_signer` | 21 | 22 | BOUNDARY_SIGNATURE_MISMATCH | **PASS** |
+| C | `missing_pending_successor` | 21 | 22 | BOUNDARY_STATE_MISSING_PENDING_SUCCESSOR | **PASS** |
+| D | `spurious_pending_successor` | 15 | 16 | BOUNDARY_STATE_SPURIOUS_PENDING_SUCCESSOR | **PASS** |
+| E | `chain_mismatch` | 21 | 22 | BOUNDARY_STATE_CHAIN_MISMATCH | **PASS** |
+
+### 25.5 Adversarial Rejection Summary
+
+| Family | Gate | Rejection Code | Detail |
+|--------|------|----------------|--------|
+| X3-INVALID_SIG | S3 | INVALID_SIGNATURE | Succession proposal signed with wrong key |
+| X3-DUP_CYCLE | S2 | CYCLE_LIMIT_EXCEEDED | Second succession in same cycle after first already admitted |
+
+### 25.6 Closure Assessment
+
+| # | Criterion | Result |
+|---|-----------|--------|
+| C1 | All N cycles completed (per session) | **PASS** (534 total across 12 sessions) |
+| C2 | Replay divergence = 0 (all sessions) | **PASS** (0 divergences across 534 cycles) |
+| C3 | Density never exceeded bound (≤ 0.75) | **PASS** (max 0.4375 across all sessions) |
+| C4 | ≥1 rotation activated (per primary family) | **PASS** (1–3 per family, 13 total) |
+| C4-INVALID_SIG | ≥1 succession rejected | **PASS** (1 rejection, S3: INVALID_SIGNATURE) |
+| C4-DUP_CYCLE | ≥1 succession rejected | **PASS** (1 rejection, S2: CYCLE_LIMIT_EXCEEDED) |
+| C4-INVALID_BOUNDARY | All 5 boundary faults detected | **PASS** (5/5 faults detected) |
+
+**X-3 Closure: POSITIVE**
+
+---
+
+## 26. Cumulative Totals
+
+### 26.1 Test Results
+
+| Phase | Tests |
+|-------|-------|
+| Kernel — base | 54 |
+| Kernel — X-1 | 58 |
+| Kernel — X-2 | 97 |
+| Kernel — X-3 | 64 |
+| Harness — X-0P | 59 |
+| Canonicalizer | 57 |
+| Harness — X-0L | 99 |
+| Harness — X-1 | 19 |
+| Harness — X-2 | 35 |
+| X-0E | 51 |
+| Harness — X-2D | 55 |
+| Harness — X-3 | 55 |
+| **Total** | **703** |
+
+### 26.2 Line Counts
+
+| Category | Lines |
+|----------|-------|
+| Prior total (through X-2D) | 36,762 |
+| X-3 new code | 7,250 |
+| **Grand total** | **44,012** |
 
 ---
 

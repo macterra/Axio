@@ -1,0 +1,22 @@
+{"activation_occurred":false,"cycle_id":0,"passed":true}
+{"activation_occurred":false,"cycle_id":1,"passed":true}
+{"activation_occurred":false,"cycle_id":2,"passed":true}
+{"activation_occurred":false,"cycle_id":3,"passed":true}
+{"activation_occurred":false,"cycle_id":4,"passed":true}
+{"activation_occurred":false,"cycle_id":5,"passed":true}
+{"activation_occurred":false,"cycle_id":6,"passed":true}
+{"activation_occurred":false,"cycle_id":7,"passed":true}
+{"activation_occurred":false,"cycle_id":8,"passed":true}
+{"activation_occurred":false,"cycle_id":9,"passed":true}
+{"activation_occurred":false,"cycle_id":10,"passed":true}
+{"activation_occurred":false,"cycle_id":11,"passed":true}
+{"activation_occurred":false,"cycle_id":12,"passed":true}
+{"activation_occurred":false,"cycle_id":13,"passed":true}
+{"activation_occurred":false,"cycle_id":14,"passed":true}
+{"activation_occurred":false,"cycle_id":15,"passed":true}
+{"activation_occurred":false,"cycle_id":16,"passed":true}
+{"activation_occurred":false,"cycle_id":17,"passed":true}
+{"activation_occurred":false,"cycle_id":18,"passed":true}
+{"activation_occurred":false,"cycle_id":19,"passed":true}
+{"activation_occurred":false,"cycle_id":20,"passed":true}
+{"activation_occurred":false,"cycle_id":21,"failure_code":"BOUNDARY_SIGNATURE_MISMATCH","failure_detail":"CycleStart(21) signature failed: Signature verification failed","passed":false}

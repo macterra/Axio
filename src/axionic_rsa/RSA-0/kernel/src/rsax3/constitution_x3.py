@@ -117,8 +117,8 @@ class EffectiveConstitutionFrame:
     def get_valid_scope_types(self, action_type: str) -> List[str]:
         return self._constitution.get_valid_scope_types(action_type)
 
-    def get_permitted_zones(self, action_type: str, scope_type: str) -> List[str]:
-        return self._constitution.get_permitted_zones(action_type, scope_type)
+    def get_permitted_zones(self, action_type: str) -> Optional[List[str]]:
+        return self._constitution.get_permitted_zones(action_type)
 
     def authority_can_delegate(self, authority_id: str) -> bool:
         return self._constitution.authority_can_delegate(authority_id)
