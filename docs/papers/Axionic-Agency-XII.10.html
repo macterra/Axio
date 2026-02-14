@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency XII.10 — Lineage-Stable Sovereignty - Axionic Agency Lab</title>
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../" class="nav-brand">
+            <img src="../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href=".././">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
+
+<h1 id="axionic-agency-xii.10-lineage-stable-sovereignty">Axionic Agency
+XII.10 — Lineage-Stable Sovereignty</h1>
+<p><em>Deterministic Sovereign Succession Under Replay-Verified
+Identity</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026-02-14</p>
+<h2 id="abstract">Abstract</h2>
+<p>Phase X-3 completes the sovereign identity program initiated in Phase
+X. Earlier phases established a constitution-bound substrate capable of
+lawful amendment (X-1), treaty-constrained delegation (X-2), delegation
+stability under churn and density pressure (X-2D), and operational
+freeze with deterministic replay (X-0E). In all prior work, however, the
+sovereign identity remained static.</p>
+<p>X-3 demonstrates that sovereign identity can rotate through a
+cryptographically ordered lineage while preserving replay determinism,
+constitutional supremacy, bounded delegation invariants, and density
+constraints. Succession is implemented as a typed artifact admitted
+through a 7-gate pipeline, activated only at a cycle boundary via a
+5-step boundary protocol, and incorporated into an append-only identity
+chain anchored at genesis.</p>
+<p>Across 12 profiling sessions (534 cycles, 13 lawful rotations, 5
+boundary fault injections), replay divergence remained zero and no
+authority fork occurred. Phase X-3 therefore closes the
+identity-continuity boundary condition: sovereignty in RSA is
+lineage-stable rather than key-static.</p>
+<h2 id="objective">1. Objective</h2>
+<p>The core question of X-3 was:</p>
+<blockquote>
+<p>Can a sovereign key rotate without fracturing authority continuity or
+replay determinism?</p>
+</blockquote>
+<p>More precisely, X-3 sought to establish:</p>
+<ol type="1">
+<li><strong>Deterministic key rotation</strong> under a lawful admission
+pipeline.</li>
+<li><strong>Singleton sovereignty</strong> — no dual roots or lineage
+forks.</li>
+<li><strong>Replay-reconstructible identity lineage</strong> derived
+solely from logged artifacts.</li>
+<li><strong>Delegation coherence</strong> under identity
+transition.</li>
+<li><strong>Density preservation</strong> across succession events.</li>
+<li><strong>Absence of retroactive reinterpretation</strong> of prior
+actions.</li>
+</ol>
+<p>The success condition was not merely the ability to rotate keys, but
+the ability to do so while preserving every structural invariant
+established in Phases X-0 through X-2D.</p>
+<h2 id="architectural-additions">2. Architectural Additions</h2>
+<p>X-3 extends the X-2 substrate with identity state and boundary
+semantics while preserving kernel purity.</p>
+<h3 id="state-extensions">2.1 State Extensions</h3>
+<p><code>InternalStateX3</code> extends <code>InternalStateX2</code>
+with:</p>
+<ul>
+<li><code>sovereign_public_key_active</code></li>
+<li><code>prior_sovereign_public_key</code></li>
+<li><code>pending_successor_key</code></li>
+<li><code>identity_chain_length</code></li>
+<li><code>identity_chain_tip_hash</code></li>
+<li><code>historical_sovereign_keys</code></li>
+<li><code>suspended_grant_ids</code></li>
+</ul>
+<p>Identity is therefore explicit, hash-anchored, and versioned within
+state.</p>
+<h3 id="overlay-constitution">2.2 Overlay Constitution</h3>
+<p>Constitution v0.3 remains frozen. X-3 introduces a JSON overlay
+wrapped by <code>EffectiveConstitutionFrame</code>, adding succession
+clauses without mutating the YAML artifact. Citation resolution operates
+over a merged but namespace-preserving frame.</p>
+<p>This preserves constitutional immutability while enabling succession
+semantics.</p>
+<h3 id="hkdf-derived-lineage">2.3 HKDF-Derived Lineage</h3>
+<p>Successor keys are derived deterministically using HKDF-SHA256 from a
+genesis seed. Each lawful activation extends the identity chain:</p>
+<pre><code>tip_n = SHA256(JCS({
+  type: &quot;IdentityTip&quot;,
+  chain_length: n,
+  active_key: K_n,
+  prior_tip_hash: tip_{n-1},
+  succession_proposal_hash: H(proposal_{n-1})
+}))</code></pre>
+<p>Genesis initializes:</p>
+<pre><code>tip_1 = SHA256(JCS(genesis_artifact_without_hash))</code></pre>
+<p>Identity is therefore not the current key but the append-only
+chain.</p>
+<h2 id="succession-admission-s1s7">3. Succession Admission (S1–S7)</h2>
+<p>SuccessionProposal artifacts pass a deterministic 7-gate
+pipeline:</p>
+<ol type="1">
+<li><strong>S1 — Enabled Check</strong>
+(<code>CL-SUCCESSION-ENABLED</code>)</li>
+<li><strong>S2 — Per-Cycle Limit</strong> (≤1 per cycle)</li>
+<li><strong>S3 — Signature Verification</strong> (must be signed by
+active sovereign)</li>
+<li><strong>S4 — Lineage Continuity</strong> (HKDF derivation
+constraint)</li>
+<li><strong>S5 — No Pending Successor</strong></li>
+<li><strong>S6 — Self-Succession Permission</strong></li>
+<li><strong>S7 — Non-Duplication</strong></li>
+</ol>
+<p>Self-succession is permitted but is a lineage no-op (no chain
+increment, no suspension).</p>
+<p>Two adversarial cases were confirmed:</p>
+<ul>
+<li>Invalid signature → rejected (S3).</li>
+<li>Duplicate same-cycle proposal → rejected (S2).</li>
+</ul>
+<h2 id="ratification-admission-r0r4">4. Ratification Admission
+(R0–R4)</h2>
+<p>Upon activation of a successor key, all ACTIVE treaties transition to
+SUSPENDED. Resumption requires explicit ratification.</p>
+<p>Ratification passes a 5-gate pipeline:</p>
+<ol type="1">
+<li><strong>R0 — Treaty exists and is SUSPENDED</strong></li>
+<li><strong>R1 — Grantee signature valid</strong></li>
+<li><strong>R2 — Sovereign key match</strong></li>
+<li><strong>R3 — Not already ratified</strong></li>
+<li><strong>R4 — Delay satisfied</strong></li>
+</ol>
+<p>Ratification with <code>ratify=false</code> transitions the treaty to
+REVOKED.</p>
+<p>Suspended treaties:</p>
+<ul>
+<li>Are excluded from density calculations.</li>
+<li>Block new grants (<code>SUSPENSION_UNRESOLVED</code>).</li>
+<li>Are removed automatically upon expiry.</li>
+</ul>
+<p>This implements the Explicit Ratification Doctrine defined in
+XII.9.</p>
+<h2 id="boundary-protocol">5. Boundary Protocol</h2>
+<p>Succession activation occurs only at cycle boundaries and is verified
+by a harness-level boundary protocol.</p>
+<p>Each cycle produces two signed payloads:</p>
+<h3 id="cyclecommitpayload">5.1 CycleCommitPayload</h3>
+<p>Anchors end-of-cycle state, including:</p>
+<ul>
+<li><code>state_hash_end</code></li>
+<li><code>pending_successor_key</code></li>
+<li><code>identity_chain_length</code></li>
+<li><code>identity_chain_tip_hash</code></li>
+<li><code>overlay_hash</code></li>
+</ul>
+<p>Signed by the sovereign active during that cycle.</p>
+<h3 id="cyclestartpayload">5.2 CycleStartPayload</h3>
+<p>Anchors start-of-cycle identity state:</p>
+<ul>
+<li><code>sovereign_public_key_active</code></li>
+<li><code>identity_chain_length</code></li>
+<li><code>identity_chain_tip_hash</code></li>
+<li><code>overlay_hash</code></li>
+</ul>
+<p>Signed by the derived sovereign for the new cycle.</p>
+<h3 id="boundary-verification-5-steps">5.3 Boundary Verification (5
+Steps)</h3>
+<ol type="1">
+<li>Verify prior CycleCommit signature.</li>
+<li>Validate pending successor consistency.</li>
+<li>Activate successor (state mutation).</li>
+<li>Verify CycleStart signature.</li>
+<li>Verify chain continuity.</li>
+</ol>
+<p>Boundary failure codes:</p>
+<ul>
+<li><code>BOUNDARY_SIGNATURE_MISMATCH</code></li>
+<li><code>BOUNDARY_STATE_MISSING_PENDING_SUCCESSOR</code></li>
+<li><code>BOUNDARY_STATE_SPURIOUS_PENDING_SUCCESSOR</code></li>
+<li><code>BOUNDARY_STATE_CHAIN_MISMATCH</code></li>
+</ul>
+<p>All 5 injected boundary faults were detected during profiling.</p>
+<h2 id="final-x3_topological-ordering">6. Final X3_TOPOLOGICAL
+Ordering</h2>
+<p>Per-cycle evaluation (post boundary activation):</p>
+<ol start="0" type="1">
+<li>Boundary verification + activation</li>
+<li>Amendment adoption</li>
+<li>Constitutional revalidation</li>
+<li>Succession admission</li>
+<li>Treaty revocations</li>
+<li>Treaty ratifications</li>
+<li>Density checkpoint A</li>
+<li>Treaty grants (blocked if suspension unresolved)</li>
+<li>Density checkpoint B</li>
+<li>RSA actions</li>
+<li>Delegated actions</li>
+<li>CycleCommit signing</li>
+</ol>
+<p>Warrants are issued inline during action evaluation.</p>
+<p>This ordering preserves:</p>
+<ul>
+<li>Constitutional supremacy.</li>
+<li>Deterministic grant/ratification interaction.</li>
+<li>Density invariants.</li>
+</ul>
+<h2 id="profiling-closure">7. Profiling Closure</h2>
+<h3 id="sessions">7.1 Sessions</h3>
+<ul>
+<li>8 mandatory families</li>
+<li>12 total sessions (including 5 boundary sub-sessions)</li>
+<li>534 cycles</li>
+<li>13 lawful rotations</li>
+<li>2 adversarial succession rejections</li>
+<li>5 boundary fault detections</li>
+<li>0 replay divergences</li>
+</ul>
+<h3 id="identity-chain-growth">7.2 Identity Chain Growth</h3>
+<p>In X3-MULTI_ROT:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Cycle</th>
+<th>Generation</th>
+<th>Chain Length</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>20</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>40</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>60</td>
+<td>3</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>Replay reconstructed the same chain deterministically.</p>
+<h3 id="density">7.3 Density</h3>
+<p>Across all sessions:</p>
+<ul>
+<li>Maximum density observed: 0.4375</li>
+<li>Constitutional upper bound: 0.75</li>
+<li>No breach during or after succession events.</li>
+</ul>
+<h3 id="closure-criteria">7.4 Closure Criteria</h3>
+<p>All criteria satisfied:</p>
+<ul>
+<li>≥1 lawful rotation per primary family.</li>
+<li>All adversarial succession cases rejected.</li>
+<li>All boundary faults detected.</li>
+<li>Replay divergence = 0.</li>
+<li>No authority fork.</li>
+<li>No lineage fork.</li>
+</ul>
+<p><strong>X-3 Closure: POSITIVE</strong></p>
+<h2 id="invariants-preserved">8. Invariants Preserved</h2>
+<p>X-3 preserved every invariant established in prior phases:</p>
+<ul>
+<li><strong>INV-1:</strong> No side effect without warrant.</li>
+<li><strong>INV-2:</strong> Explicit authority required.</li>
+<li><strong>INV-3:</strong> Non-privileged reflection.</li>
+<li><strong>INV-4:</strong> Replay determinism.</li>
+</ul>
+<p>Additionally:</p>
+<ul>
+<li><strong>Singleton Sovereign Invariant:</strong> At most one active
+sovereign key.</li>
+<li><strong>No Fork Invariant:</strong> Lineage append-only; no
+branch.</li>
+<li><strong>No Amnesty Invariant:</strong> Prior actions remain valid in
+replay.</li>
+<li><strong>No Zombie Delegation Invariant:</strong> Suspended treaties
+require explicit ratification.</li>
+<li><strong>Density Preservation Invariant:</strong> Bound respected
+across activation.</li>
+</ul>
+<h2 id="what-x-3-does-not-solve">9. What X-3 Does Not Solve</h2>
+<p>X-3 deliberately excludes:</p>
+<ul>
+<li>Key compromise recovery.</li>
+<li>Multi-root federation.</li>
+<li>Byzantine consensus.</li>
+<li>Host trust hardening.</li>
+<li>Distributed governance.</li>
+<li>Time-locked or multi-signature succession.</li>
+<li>Liveness under sovereign key loss.</li>
+</ul>
+<p>Succession in X-3 is unilateral and deterministic.</p>
+<p>These limitations define the boundary of Phase X.</p>
+<h2 id="strategic-implication">10. Strategic Implication</h2>
+<p>Prior to X-3, sovereignty in RSA was tied to a single static key.
+With X-3, sovereignty becomes a function of lawful lineage:</p>
+<pre><code>sovereign_identity = F(genesis, succession_artifacts)</code></pre>
+<p>Authority derives from the chain, not from a particular key
+instance.</p>
+<p>This establishes that sovereignty in RSA is not ephemeral; it is
+structurally continuous so long as the lineage extends without
+fracture.</p>
+<p>The ontological claim in XII.9 — that identity must be a chain, not a
+static anchor — is now empirically instantiated and replay-closed.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Phase X-3 demonstrates that sovereign identity can rotate without
+violating any structural invariant of the RSA substrate. The system
+remains:</p>
+<ul>
+<li>Deterministic.</li>
+<li>Replay-verifiable.</li>
+<li>Constitution-bound.</li>
+<li>Density-constrained.</li>
+<li>Delegation-coherent.</li>
+</ul>
+<p>With X-3 closed, the Phase X sovereign substrate is complete: it can
+amend law, delegate authority, survive churn, operate in live LLM
+environments, and rotate identity without fracture.</p>
+<p>The next boundary lies not in identity rotation but in adversarial
+resilience and recovery.</p>
+<p><strong>End of Axionic Agency XII.10</strong></p>
+
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
