@@ -31,6 +31,7 @@ RSA0_ROOT = SCRIPT_DIR.parent.parent                # RSA-0/
 sys.path.insert(0, str(RSA0_ROOT))
 
 from kernel.src.rsax2.constitution_x2 import ConstitutionX2
+from profiling.x2d.harness.src.constitution_helper import create_x2d_profiling_constitution
 from profiling.x2d.harness.src.runner import X2DRunner, X2DSessionResult
 from profiling.x2d.harness.src.schemas import SessionFamily, X2DSessionStart
 from profiling.x2d.harness.src.metrics import (
@@ -186,10 +187,9 @@ ALL_SESSION_FACTORIES = [
 # ---------------------------------------------------------------------------
 
 def main() -> None:
-    constitution_path = str(
-        RSA0_ROOT / "artifacts" / "phase-x" / "constitution" / "rsa_constitution.v0.3.yaml"
-    )
-    constitution = ConstitutionX2(yaml_path=constitution_path)
+    # Profiling constitution: v0.3 + AUTH_DELEGATION action_permissions
+    # (AUTH_DELEGATION needs action_permissions for Gate 8C.2b to pass)
+    constitution = create_x2d_profiling_constitution(repo_root=RSA0_ROOT)
 
     log_root = RSA0_ROOT / "logs" / "x2d"
     results_dir = RSA0_ROOT / "profiling" / "x2d" / "results"

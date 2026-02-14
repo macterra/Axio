@@ -306,6 +306,10 @@ class X2DRunner:
         self._state.active_constitution_hash = constitution.sha256
         self._cycle_log: List[Dict[str, Any]] = []
 
+        # Amendment YAML storage: proposal_id → proposed_constitution_yaml
+        # Needed to reconstruct ConstitutionX2 after adoption.
+        self._proposed_constitutions: Dict[str, str] = {}
+
     def run(self) -> X2DSessionResult:
         """Execute full session. Returns result."""
         result = X2DSessionResult(
@@ -446,6 +450,12 @@ class X2DRunner:
 
         # Amendment candidates
         amendment_candidates: List[AmendmentProposal] = []
+        if plan.amendment_proposal is not None:
+            amendment_candidates.append(plan.amendment_proposal)
+            # Store YAML for later reconstruction after adoption
+            self._proposed_constitutions[
+                plan.amendment_proposal.id
+            ] = plan.amendment_proposal.proposed_constitution_yaml
         pending_candidates = list(self._state.pending_amendments)
 
         # Call policy core with X2D_TOPOLOGICAL ordering
@@ -535,6 +545,15 @@ class X2DRunner:
                 next_state.pending_amendments = [
                     PendingAmendment(**r) for r in remaining
                 ]
+                # Swap to the new constitution for subsequent cycles.
+                # The adoption record contains the proposal_id that lets
+                # us look up the stored YAML.
+                adoption_rec = delta.payload.get("adoption_record", {})
+                proposal_id = adoption_rec.get("proposal_id", "")
+                proposal_yaml = self._proposed_constitutions.get(proposal_id, "")
+                if proposal_yaml:
+                    self.constitution = ConstitutionX2(yaml_string=proposal_yaml)
+                    self._log(f"  Constitution swapped → {new_hash[:16]}...")
 
         result.state_out_hash = _state_hash(next_state)
         result.active_grants_count = len(

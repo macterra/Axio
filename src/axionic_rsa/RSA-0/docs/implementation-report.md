@@ -1,12 +1,12 @@
 # RSA-0 Phase X — Implementation Report
 
-* **Date:** 2026-02-13
+* **Date:** 2026-02-14
 * **System Head Constitution:** v0.3 (FROZEN) — treaty-constrained delegation
 * **System Head SHA-256:** `43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1`
 * **X-0E Closure Constitution:** v0.1.1 — sovereign baseline
 * **X-0E Closure SHA-256:** `ad6aa7ccb0ed27151423486b60de380da9d34436f6c5554da84f3a092902740f`
 * **Language:** Python 3.12
-* **Test result:** 529/529 passed (54 kernel-base + 58 X-1 kernel + 97 X-2 kernel + 59 X-0P harness + 57 canonicalizer + 99 X-0L harness + 19 X-1 harness + 35 X-2 harness + 51 X-0E = 529)
+* **Test result:** 584/584 passed (54 kernel-base + 58 X-1 kernel + 97 X-2 kernel + 59 X-0P harness + 57 canonicalizer + 99 X-0L harness + 19 X-1 harness + 35 X-2 harness + 51 X-0E + 55 X-2D harness = 584)
 
 ---
 
@@ -20,13 +20,15 @@ The X-0P inhabitation profiling harness was subsequently built to exercise the k
 
 The X-0L live proposal inhabitation harness extends profiling to real LLM-generated candidates. It introduces a new canonicalizer module (raw LLM text → JSON extraction → hashing), an OpenAI-compatible LLM client, model calibration, budget enforcement (B₁ per-cycle, B₂ per-session), and five live conditions (L-A through L-E) with replay verification, refusal taxonomy (Type I/II/III), and forensic analysis. A 59-question Q&A (Addenda A–C, `docs/RSA-0L/`) resolved all live-profiling design decisions. The kernel remains unmodified; all X-0L code lives under `canonicalizer/`, `profiling/x0l/`, and `replay/x0l/`. Canonicalizer rejection never short-circuits the kernel's decision authority; rejected LLM output yields empty candidates passed through to the kernel, which then issues REFUSE on its own terms.
 
-This report covers implementation, test verification, Phase X-0L live execution results, X-1 reflective amendment, and X-2 treaty-constrained delegation. Full structured data is in `logs/x0l/x0l_report.json` (§14), `profiling/x1/results/` (§16), and `profiling/x2/results/` (§18).
+This report covers implementation, test verification, Phase X-0L live execution results, X-1 reflective amendment, X-2 treaty-constrained delegation, and X-2D delegation churn & density stress profiling. Full structured data is in `logs/x0l/x0l_report.json` (§14), `profiling/x1/results/` (§16), `profiling/x2/results/` (§18), and `profiling/x2d/results/` (§22).
 
 **Timeline distinction:** Erratum X.E1 (the `_now_utc()` determinism fix in `artifacts.py` and `policy_core.py`) was a Phase X kernel defect fix applied *before* the X-0P harness was written. After that fix was merged and verified (53 kernel tests passing), the kernel was frozen. The entire X-0P harness was then built with zero kernel modifications — all profiling code lives under `profiling/x0p/` and `replay/x0p/`. The X-0L harness was built subsequently with zero kernel modifications — the canonicalizer is a new top-level module; harness code lives under `profiling/x0l/` and `replay/x0l/`.
 
 X-1 (Reflective Amendment Under Frozen Sovereignty) extends the kernel with a constitutional amendment pipeline. A 110-question Q&A (`docs/X-1/`) resolved all design decisions. Constitution v0.2 introduces `AmendmentProcedure`, `AuthorityModel`, `WarrantDefinition`, and `ScopeSystem` ECK sections, a 9-gate admission pipeline for amendment proposals, cooling periods, density bounds, and ratchet monotonicity. The X-1 kernel extension lives under `kernel/src/rsax1/` (4 modules, 1,822 lines); the RSA-0 base kernel remains unmodified. X-1 profiling exercised 36 cycles across 9 phases with 4 constitution adoptions and 7/7 adversarial rejections. 58 kernel tests + 19 harness tests = 77 new tests.
 
-X-2 (Treaty-Constrained Delegation) extends the kernel with inter-agent delegation via treaty grants. A 124-question Q&A (`docs/X-2/`) resolved all design decisions. Constitution v0.3 introduces `TreatyProcedure`, `ScopeEnumerations`, `AUTH_DELEGATION`, Ed25519 cryptographic identity, treaty grant/revocation artifacts, and a 12-gate treaty admission pipeline. The X-2 kernel extension lives under `kernel/src/rsax2/` (5 modules, 2,231 lines); the X-1 kernel is composed but not modified. X-2 profiling exercised 26 cycles across 8 phases with 3 delegated warrants, 11/11 adversarial grant rejections, and 4/4 adversarial delegation rejections. 97 kernel tests + 35 harness tests = 132 new tests.
+X-2 (Treaty-Constrained Delegation) extends the kernel with inter-agent delegation via treaty grants. A 124-question Q&A (`docs/X-2/`) resolved all design decisions. Constitution v0.3 introduces `TreatyProcedure`, `ScopeEnumerations`, `AUTH_DELEGATION`, Ed25519 cryptographic identity, treaty grant/revocation artifacts, and a 12-gate treaty admission pipeline. The X-2 kernel extension lives under `kernel/src/rsax2/` (5 modules, 2,658 lines); the X-1 kernel is composed but not modified. X-2 profiling exercised 26 cycles across 8 phases with 3 delegated warrants, 11/11 adversarial grant rejections, and 4/4 adversarial delegation rejections. 97 kernel tests + 35 harness tests = 132 new tests.
+
+X-2D (Delegation Churn & Density Stress Profiling) extends X-2 with deterministic multi-cycle stress profiling: N-cycle sessions with treaty grant/revocation churn, density saturation, constitutional amendment ratcheting, and density-band edge maintenance. A 96-question Q&A (`docs/X-2D/`) across 33 sections resolved all design decisions. The X-2D harness lives under `profiling/x2d/` (6 modules + runner, 2,394 lines); the X-2 kernel extension adds X2D_TOPOLOGICAL ordering mode and revalidation (5 modules, now 2,658 lines). X-2D production profiling exercised 310 cycles across 5 mandatory families with 147 grants admitted, 157 delegated warrants issued, and 5 revalidation invalidations. 55 harness tests.
 
 ---
 
@@ -132,10 +134,10 @@ Each cycle proceeds through these stages:
 
 | File | Lines | Purpose |
 |------|-------|---------|
-| `kernel/src/rsax2/artifacts_x2.py` | 513 | `TreatyGrant`, `TreatyRevocation`, `ActiveTreatySet`, `DecisionTypeX2`, `TreatyRejectionCode` (16 codes), `TreatyGate` (4 gates), grantee identifier validation (`ed25519:<hex>` format), treaty canonicalization, `InternalStateX2` |
+| `kernel/src/rsax2/artifacts_x2.py` | 664 | `TreatyGrant`, `TreatyRevocation`, `ActiveTreatySet`, `DecisionTypeX2`, `TreatyRejectionCode` (16 codes), `TreatyGate` (4 gates), grantee identifier validation (`ed25519:<hex>` format), treaty canonicalization, `InternalStateX2`, `TreatyRevalidationEvent`, constitutional revalidation, density repair |
 | `kernel/src/rsax2/constitution_x2.py` | 289 | `ConstitutionX2` extending X1 with TreatyProcedure accessors, ScopeEnumerations, treaty_permissions, `treaty:` citation namespace, per-action scope rules, effective density (distinct pairs) |
 | `kernel/src/rsax2/treaty_admission.py` | 639 | Treaty admission pipeline: Gate 6T (authorization), Gate 7T (schema validity), Gate 8C (delegation preservation: 10 sub-gates 8C.1–8C.9 + 8C.2b), Gate 8R (revocation validity) |
-| `kernel/src/rsax2/policy_core_x2.py` | 677 | 5-step per-cycle ordering (CL-CYCLE-ORDERING), `PolicyOutputX2`, `DelegatedActionRequest`, multi-warrant issuance with origin_rank sorting, delegated action evaluation with Ed25519 signature verification |
+| `kernel/src/rsax2/policy_core_x2.py` | 954 | 5-step per-cycle ordering (CL-CYCLE-ORDERING), X2D_TOPOLOGICAL 9-step ordering, `PolicyOutputX2`, `DelegatedActionRequest`, multi-warrant issuance with origin_rank sorting, delegated action evaluation with Ed25519 signature verification, constitutional revalidation |
 | `kernel/src/rsax2/signature.py` | 112 | Ed25519 key management: `generate_keypair()`, `sign_action_request()`, `verify_action_request_signature()` via PyCA cryptography library |
 
 ### 3.3 Host / Executor
@@ -214,7 +216,19 @@ Each cycle proceeds through these stages:
 | `profiling/x2/harness/src/report_x2.py` | 258 | Markdown report generator: 8 closure criteria, treaty event summary, adversarial details, cycle log |
 | `profiling/x2/run_production.py` | 130 | Production CLI entry point |
 
-### 3.10 Tests
+### 3.10 X-2D Profiling Harness
+
+| File | Lines | Purpose |
+|------|-------|--------|
+| `profiling/x2d/harness/src/constitution_helper.py` | 81 | Profiling constitution factory: v0.3 + AUTH_DELEGATION action_permissions (CL-PERM-DELEGATION-ACTIONS) |
+| `profiling/x2d/harness/src/generators.py` | 720 | 5 deterministic family generators (D-BASE, D-CHURN, D-SAT, D-RATCHET, D-EDGE), `X2DCyclePlan`, identity pool (Ed25519), compatible action groups, amendment proposal creation |
+| `profiling/x2d/harness/src/runner.py` | 683 | N-cycle session runner: gate admission → plan generation → cycle execution → replay → closure; amendment adoption with constitution swapping |
+| `profiling/x2d/harness/src/schemas.py` | 296 | `X2DSessionStart`, `X2DSessionEnd`, `SessionFamily` enum, gate admission (6D/7D/8D) |
+| `profiling/x2d/harness/src/metrics.py` | 189 | Per-cycle and sliding-window metrics, churn rate computation |
+| `profiling/x2d/harness/src/replay.py` | 146 | State hash chain replay verification |
+| `profiling/x2d/run_production.py` | 279 | Production runner: 5-family sweep, summary JSON output |
+
+### 3.11 Tests
 
 | File | Lines | Purpose |
 |------|-------|---------|
@@ -227,15 +241,16 @@ Each cycle proceeds through these stages:
 | `profiling/x0l/harness/tests/test_harness.py` | 1,601 | 99 X-0L harness tests: LLM client, calibration, cycle runner, parser, generators, preflight, report, auto-abort, B₂, forensics, replay, permutation, mini-E2E |
 | `profiling/x1/harness/tests/test_harness_x1.py` | 374 | 19 X-1 harness tests: scenario construction, cycle execution, full session, report generation |
 | `profiling/x2/harness/tests/test_harness_x2.py` | 543 | 35 X-2 harness tests: scenario construction (22), cycle execution (7), full session (5), report generation (1) |
+| `profiling/x2d/harness/tests/test_x2d.py` | 982 | 55 X-2D harness tests: gate admission (16), generators (7), topological ordering (2), density enforcement (2), revalidation (3), replay (6), metrics (6), schemas (4), invalidation (3), density repair (2), simulation API (3), gate stability (1) |
 | `tests/test_x0e.py` | 587 | 51 X-0E tests: JCS canonicalization, content hashing, state hash chain, constitution integrity, log I/O, executor, E2E run/replay, determinism |
 
-### 3.11 Totals
+### 3.12 Totals
 
 | Category | Lines |
 |----------|-------|
 | Kernel — base (6 modules) | 1,630 |
 | Kernel — X-1 extension (4 modules) | 1,821 |
-| Kernel — X-2 extension (5 modules) | 2,230 |
+| Kernel — X-2 extension (5 modules) | 2,658 |
 | Host + Executor (2 modules) | 682 |
 | Replay — agent (1 module) | 268 |
 | Replay — X-0P (1 module) | 215 |
@@ -245,11 +260,13 @@ Each cycle proceeds through these stages:
 | Profiling harness — X-0L (6 modules + calibration) | 2,311 |
 | Profiling harness — X-1 (4 modules + runner) | 1,846 |
 | Profiling harness — X-2 (4 modules + runner) | 2,322 |
+| Profiling harness — X-2D (6 modules + runner) | 2,394 |
 | X-0E Operational Harness (cli + host/log_io + host/executor_x0e + runtime/net_guard + state_hash) | 744 |
 | X-0E Packaging (canonical.py + hashing.py + manifest script + Dockerfile) | 208 |
 | Tests (10 modules) | 8,942 |
+| Tests — X-2D (1 module) | 982 |
 | Constitution artifacts (v0.1.1 + v0.2 + v0.3) | 5,835 |
-| **Total** | **32,959** |
+| **Total** | **36,762** |
 
 ---
 
@@ -288,10 +305,10 @@ Each cycle proceeds through these stages:
 ## 5. Test Results
 
 ```
-529 passed
+584 passed
 ```
 
-**Note:** This total reflects the cumulative suite including all phases through X-0E. Pre-X-0E total was 478; the 51 X-0E tests (§5.10) bring the count to 529.
+**Note:** This total reflects the cumulative suite including all phases through X-2D. Pre-X-0E total was 478; the 51 X-0E tests (§5.10) brought the count to 529; the 55 X-2D tests (§5.11) bring the count to 584.
 
 ### 5.1 Acceptance Tests (test_acceptance.py — 35 tests)
 
@@ -459,6 +476,23 @@ Each cycle proceeds through these stages:
 | 115 | Cross-run determinism | `TestDeterminism` | 3 | PASS |
 | 116 | No unwarranted effects | `TestNoUnwarrantedSideEffects` | 1 | PASS |
 | 117 | Kernel version ID | `TestKernelVersionID` | 2 | PASS |
+
+### 5.11 X-2D Harness Tests (test_x2d.py — 55 tests)
+
+| # | Domain | Test Class | Tests | Status |
+|---|--------|------------|-------|--------|
+| 118 | Gate admission (6D/7D/8D) | `TestGateAdmission` | 16 | PASS |
+| 119 | Generators (5 families) | `TestGenerators` | 7 | PASS |
+| 120 | Topological ordering | `TestTopologicalOrdering` | 2 | PASS |
+| 121 | Density enforcement | `TestDensityEnforcement` | 2 | PASS |
+| 122 | Constitutional revalidation | `TestRevalidation` | 3 | PASS |
+| 123 | Replay verification | `TestReplay` | 6 | PASS |
+| 124 | Per-cycle & window metrics | `TestMetrics` | 6 | PASS |
+| 125 | Session schemas | `TestSchemas` | 4 | PASS |
+| 126 | Grant invalidation | `TestInvalidation` | 3 | PASS |
+| 127 | Density repair | `TestDensityRepair` | 2 | PASS |
+| 128 | Simulation API | `TestSimulationAPI` | 3 | PASS |
+| 129 | Gate stability | `TestGateStability` | 1 | PASS |
 
 ---
 
@@ -724,11 +758,11 @@ cd src/axionic_rsa/RSA-0
 python -m pytest kernel/tests/ profiling/x0p/harness/tests/ canonicalizer/tests/ profiling/x0l/harness/tests/ -v
 ```
 
-### Run all tests including X-1 and X-2
+### Run all tests including X-1, X-2, and X-2D
 
 ```bash
 cd src/axionic_rsa/RSA-0
-python -m pytest kernel/tests/ profiling/x0p/harness/tests/ canonicalizer/tests/ profiling/x0l/harness/tests/ profiling/x1/harness/tests/ profiling/x2/harness/tests/ -v
+python -m pytest kernel/tests/ profiling/x0p/harness/tests/ canonicalizer/tests/ profiling/x0l/harness/tests/ profiling/x1/harness/tests/ profiling/x2/harness/tests/ profiling/x2d/harness/tests/ -v
 ```
 
 ### Run the X-0L live profiling harness
@@ -752,6 +786,20 @@ python profiling/x1/run_production.py
 ```bash
 cd src/axionic_rsa/RSA-0
 python profiling/x2/run_production.py
+```
+
+### Run the X-2D delegation churn profiling harness
+
+```bash
+cd src/axionic_rsa/RSA-0
+python profiling/x2d/run_production.py
+```
+
+### Run all tests including X-2D
+
+```bash
+cd src/axionic_rsa/RSA-0
+python -m pytest -x -q
 ```
 
 ---
@@ -1549,10 +1597,154 @@ Verified deterministic across independent runs.
 | X-0L Harness | 99 | PASS |
 | X-1 Harness | 19 | PASS |
 | X-2 Harness | 35 | PASS |
-| **X-0E** | **51** | **PASS** |
-| **Total** | **529** | **PASS** |
+| X-0E | 51 | PASS |
+| **X-2D Harness** | **55** | **PASS** |
+| **Total** | **584** | **PASS** |
 
 **X-0E Closure: POSITIVE**
+
+---
+
+## 21. X-2D Architecture — Delegation Churn & Density Stress Profiling
+
+### 21.1 Design Principles
+
+X-2D extends X-2 with deterministic multi-cycle stress profiling that exercises treaty grant/revocation churn, density saturation, constitutional amendment adoption, and near-bound density maintenance under sustained operation. A 96-question Q&A (`docs/X-2D/questions.md`, `docs/X-2D/answers.md`) across 33 sections (A–AG) resolved all design decisions before implementation.
+
+- **No kernel modification for profiling** — X-2D harness lives under `profiling/x2d/`; kernel extension adds X2D_TOPOLOGICAL ordering mode and revalidation under `kernel/src/rsax2/`
+- **Deterministic generators** — 5 families with seeded RNG produce fully pre-computed N-cycle plans
+- **Profiling constitution** — v0.3 + `CL-PERM-DELEGATION-ACTIONS` granting AUTH_DELEGATION action_permissions for all delegable actions (Notify, ReadLocal, WriteLocal), enabling treaty grant admission through the standard 12-gate pipeline
+- **Topological ordering** — X2D_TOPOLOGICAL mode enforces a 9-step per-cycle ordering: T1 adoption → T2 revalidation → T3 grants → T4 revocations → T5 density repair → T6 amendment queuing → T7 RSA actions → T8 delegated actions → T9 warrant issuance
+- **Ed25519 identity** — Each grantee has a deterministic Ed25519 keypair derived from seeded RNG; delegated action requests are signed and verified by the kernel
+
+### 21.2 Profiling Constitution
+
+The profiling constitution is derived from the frozen v0.3 constitution by adding a single structural extension:
+
+| Property | Value |
+|----------|-------|
+| Base | v0.3 (hash: `43f57f0a...`) |
+| Extension | `CL-PERM-DELEGATION-ACTIONS`: AUTH_DELEGATION → [Notify, ReadLocal, WriteLocal] |
+| Purpose | Enable Gate 8C.2b (grantor holds action) for treaty grant admission |
+
+In v0.3, AUTH_DELEGATION holds `treaty_permissions` (can issue TreatyGrant/TreatyRevocation) but has no `action_permissions`. Gate 8C.2b requires the grantor to hold action_permissions for every granted action. The profiling constitution adds this structural bridge — a configuration change, not new physics.
+
+### 21.3 Session Families (5 Mandatory)
+
+| Family | Cycles | Purpose | Closure Criteria |
+|--------|--------|---------|-----------------|
+| **D-BASE** | 50 | Regression baseline — moderate grants, no churn, no amendments | C1–C5 (cycles, replay, density, delegated warrants, grants) |
+| **D-CHURN** | 80 | Grant/revocation churn under sustained operation | C1–C5 + C6-CHURN (≥1 revocation admitted) |
+| **D-SAT** | 60 | Density saturation — high grant rate pushing toward density_upper_bound | C1–C5 |
+| **D-RATCHET** | 60 | Constitutional tightening via amendment — bans an action type mid-session | C1–C5 + C6-RATCHET (≥1 revalidation invalidation) |
+| **D-EDGE** | 60 | Sustained near-bound operation within a target density band | C1–C5 |
+
+### 21.4 Compatible Action Groups
+
+Gate 8C.4 requires every `scope_type` in `scope_constraints` to be valid for every granted action. Since different actions have different valid scope types (Notify → LOG_STREAM only; ReadLocal/WriteLocal → FILE_PATH, WORKSPACE_PATH), actions can only be grouped if their valid scope types intersect:
+
+| Group | Actions | Shared Scope Types |
+|-------|---------|-------------------|
+| Singles | Notify | LOG_STREAM |
+| Singles | ReadLocal | FILE_PATH, WORKSPACE_PATH |
+| Singles | WriteLocal | FILE_PATH, WORKSPACE_PATH |
+| Pair | ReadLocal + WriteLocal | FILE_PATH, WORKSPACE_PATH |
+
+Notify cannot be grouped with ReadLocal or WriteLocal (no shared scope types). The generator pre-computes these compatible groups and selects randomly during plan generation.
+
+### 21.5 Amendment Flow (D-RATCHET)
+
+D-RATCHET exercises constitutional amendment adoption and post-amendment revalidation:
+
+1. **Plan phase** — Generator creates an `AmendmentProposal` that removes WriteLocal from the closed action set and all action_permissions entries
+2. **Queue cycle** (ban_cycle − cooling_period) — Proposal submitted to kernel; kernel runs Gates 1–8B and queues as `PendingAmendment`
+3. **Cooling period** — 2 cycles (from constitution v0.3)
+4. **Adoption cycle** (ban_cycle) — Kernel checks `cycle ≥ proposal_cycle + cooling_period`, issues `AmendmentAdoptionRecord`; runner swaps to new `ConstitutionX2` constructed from the proposal's YAML
+5. **Revalidation** (adoption_cycle + 1) — Kernel runs `apply_constitutional_revalidation()` against the new constitution; grants containing WriteLocal are invalidated with reason `ACTION_BANNED`
+
+### 21.6 Gate Admission (3 session-level gates)
+
+| Gate | Name | Check |
+|------|------|-------|
+| 6D | Structural validity | Session family in valid set, kernel version matches, constitution hash matches |
+| 7D | Parameter validation | Required fields present, fractions in [0,1], seed keys complete, session_id non-empty |
+| 8D | Family-specific | D-RATCHET requires amendment_schedule; D-EDGE requires valid density band; non-edge families reject amendment_schedule; window_size ≤ session_length |
+
+### 21.7 Replay Verification
+
+Each session maintains a per-cycle state hash chain. After all N cycles complete, the runner verifies that `state_out_hash[i] == state_in_hash[i+1]` for all adjacent cycles. Any divergence is a closure failure (criterion C2).
+
+### 21.8 Bugs Found During Implementation
+
+Five issues were discovered and fixed during production profiling:
+
+1. **generators.py — grantor_authority_id:** Used `"rsa-0"` (not a constitutional authority) instead of `"AUTH_DELEGATION"`. Gate 6T rejected all grants. Fixed to use `"AUTH_DELEGATION"`.
+2. **generators.py — bare string citations:** Citations were bare strings (e.g., `"CL-TREATY-PROCEDURE"`) instead of hash-qualified format (`constitution:<hash>#<id>`). Gate 6T citation resolution failed. Fixed to use `constitution.make_authority_citation()` and `constitution.make_citation()`.
+3. **generators.py — scope type compatibility:** All scope types were used for all actions; Gate 8C.4 rejected grants where scope_types were invalid for granted actions. Fixed with `_compute_compatible_action_groups()` and `_build_scope_constraints()` per-action.
+4. **generators.py — DAR signature mismatch:** `DelegatedActionRequest.to_action_request_dict()` includes `id` field, but the generator signed the payload before computing `dar_id`. Fixed by computing `dar_id` before signing so it's included in the signed payload.
+5. **runner.py — amendment not processed:** Runner passed `amendment_candidates=[]` to the kernel always, never queuing or adopting amendments. Fixed with full amendment flow: generator creates `AmendmentProposal`, runner stores YAML, passes to kernel, swaps constitution after adoption.
+
+---
+
+## 22. X-2D Profiling Results
+
+### 22.1 Session Parameters
+
+| Parameter | Value |
+|-----------|-------|
+| Run timestamp | `2026-02-14T18:18:58Z` |
+| Constitution | v0.3 + CL-PERM-DELEGATION-ACTIONS |
+| Families | D-BASE, D-CHURN, D-SAT, D-RATCHET, D-EDGE |
+| Total cycles | 310 |
+| Overall result | **PASS** |
+
+### 22.2 Per-Family Results
+
+| Family | Cycles | Closure | Grants | Warrants | Reval. | d_max | d_mean | Replay |
+|--------|--------|---------|--------|----------|--------|-------|--------|--------|
+| **D-BASE** | 50 | **PASS** | 3 | 31 | 0 | 0.400 | 0.358 | 0 div |
+| **D-CHURN** | 80 | **PASS** | 53 | 30 | 0 | 0.438 | 0.370 | 0 div |
+| **D-SAT** | 60 | **PASS** | 32 | 24 | 0 | 0.438 | 0.356 | 0 div |
+| **D-RATCHET** | 60 | **PASS** | 21 | 22 | 5 | 0.500 | 0.437 | 0 div |
+| **D-EDGE** | 60 | **PASS** | 38 | 50 | 0 | 0.450 | 0.393 | 0 div |
+| **Total** | **310** | **5/5** | **147** | **157** | **5** | — | — | **0** |
+
+### 22.3 D-RATCHET Amendment Lifecycle
+
+| Event | Cycle | Detail |
+|-------|-------|--------|
+| Proposal queued | 28 | WriteLocal ban proposed (prior_hash matches v0.3+profiling) |
+| Cooling satisfied | 30 | `cycle 30 ≥ proposal_cycle 28 + cooling 2` |
+| Adoption | 30 | Constitution swapped to post-amendment (WriteLocal removed from closed action set) |
+| Revalidation | 31+ | 5 active grants containing WriteLocal invalidated with `ACTION_BANNED` |
+
+### 22.4 Density Analysis
+
+All families maintained density strictly below the constitutional upper bound of 0.75:
+
+| Family | d_min | d_max | d_mean | Bound |
+|--------|-------|-------|--------|-------|
+| D-BASE | 0.357 | 0.400 | 0.358 | 0.75 |
+| D-CHURN | 0.341 | 0.438 | 0.370 | 0.75 |
+| D-SAT | 0.321 | 0.438 | 0.356 | 0.75 |
+| D-RATCHET | 0.389 | 0.500 | 0.437 | 0.75 |
+| D-EDGE | 0.361 | 0.450 | 0.393 | 0.75 |
+
+D-RATCHET shows the highest mean density (0.437) due to aggressive grant admission before the WriteLocal ban narrows the action space at cycle 30. D-SAT achieves the lowest minimum (0.321) with 13 concurrent active grants at peak.
+
+### 22.5 Closure Assessment
+
+| # | Criterion | Result |
+|---|-----------|--------|
+| C1 | All N cycles completed (per family) | **PASS** (50+80+60+60+60 = 310) |
+| C2 | Replay divergence = 0 (all families) | **PASS** (0 divergences across 310 cycles) |
+| C3 | Density never exceeded bound (≤0.75) | **PASS** (max 0.500 in D-RATCHET) |
+| C4 | ≥1 delegated warrant issued (per family) | **PASS** (22–50 per family) |
+| C5 | ≥1 grant admitted (per family) | **PASS** (3–53 per family) |
+| C6-CHURN | ≥1 revocation admitted | **PASS** |
+| C6-RATCHET | ≥1 revalidation invalidation | **PASS** (5 invalidations) |
+
+**X-2D Closure: POSITIVE**
 
 ---
 

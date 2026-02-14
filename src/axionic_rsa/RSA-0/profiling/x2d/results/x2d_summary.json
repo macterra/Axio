@@ -1,0 +1,71 @@
+{
+  "run_timestamp": "2026-02-14T18:18:58Z",
+  "overall_pass": true,
+  "sessions": [
+    {
+      "session_family": "D-BASE",
+      "session_id": "781e6701-4569-47a7-aef9-3980bf783229",
+      "total_cycles": 50,
+      "closure_pass": true,
+      "failure_reasons": [],
+      "replay_divergences": 0,
+      "density_max": 0.4,
+      "density_mean": 0.3583571428571429,
+      "total_grants_admitted": 3,
+      "total_delegated_warrants": 31,
+      "total_revalidation_invalidated": 0
+    },
+    {
+      "session_family": "D-CHURN",
+      "session_id": "30f197d2-78c0-4b81-9929-593f5314f3e3",
+      "total_cycles": 80,
+      "closure_pass": true,
+      "failure_reasons": [],
+      "replay_divergences": 0,
+      "density_max": 0.4375,
+      "density_mean": 0.3695640557359307,
+      "total_grants_admitted": 53,
+      "total_delegated_warrants": 30,
+      "total_revalidation_invalidated": 0
+    },
+    {
+      "session_family": "D-SAT",
+      "session_id": "78bd7a1b-986a-4d33-9733-d8beae56771e",
+      "total_cycles": 60,
+      "closure_pass": true,
+      "failure_reasons": [],
+      "replay_divergences": 0,
+      "density_max": 0.4375,
+      "density_mean": 0.355750592000592,
+      "total_grants_admitted": 32,
+      "total_delegated_warrants": 24,
+      "total_revalidation_invalidated": 0
+    },
+    {
+      "session_family": "D-RATCHET",
+      "session_id": "c2b88f3c-f94d-4543-903c-9debbfbd9f1d",
+      "total_cycles": 60,
+      "closure_pass": true,
+      "failure_reasons": [],
+      "replay_divergences": 0,
+      "density_max": 0.5,
+      "density_mean": 0.4372585978835979,
+      "total_grants_admitted": 21,
+      "total_delegated_warrants": 22,
+      "total_revalidation_invalidated": 5
+    },
+    {
+      "session_family": "D-EDGE",
+      "session_id": "a186c91a-8d71-44f3-9fe9-90de22c6ebc8",
+      "total_cycles": 60,
+      "closure_pass": true,
+      "failure_reasons": [],
+      "replay_divergences": 0,
+      "density_max": 0.45,
+      "density_mean": 0.392773569023569,
+      "total_grants_admitted": 38,
+      "total_delegated_warrants": 50,
+      "total_revalidation_invalidated": 0
+    }
+  ]
+}

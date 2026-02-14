@@ -43,6 +43,7 @@ from kernel.src.rsax2.artifacts_x2 import (
     _compute_effective_density,
 )
 from kernel.src.rsax2.constitution_x2 import ConstitutionX2
+from profiling.x2d.harness.src.constitution_helper import create_x2d_profiling_constitution
 from kernel.src.rsax2.policy_core_x2 import (
     CYCLE_ORDERING_DEFAULT,
     CYCLE_ORDERING_X2D_TOPOLOGICAL,
@@ -97,7 +98,8 @@ CONSTITUTION_PATH = (
 
 @pytest.fixture
 def constitution() -> ConstitutionX2:
-    return ConstitutionX2(yaml_path=str(CONSTITUTION_PATH))
+    """Profiling constitution: v0.3 + AUTH_DELEGATION action_permissions."""
+    return create_x2d_profiling_constitution(repo_root=RSA0_ROOT)
 
 
 @pytest.fixture
