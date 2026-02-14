@@ -83,11 +83,20 @@ from .artifacts_x2 import (
     TreatyAdmissionResult,
     TreatyGrant,
     TreatyRejectionCode,
+    TreatyRevalidationEvent,
     TreatyRevocation,
 )
 from .constitution_x2 import ConstitutionX2
 from .treaty_admission import TreatyAdmissionPipeline
 from .signature import verify_action_request_signature
+
+
+# ---------------------------------------------------------------------------
+# Cycle ordering modes
+# ---------------------------------------------------------------------------
+
+CYCLE_ORDERING_DEFAULT = "DEFAULT"
+CYCLE_ORDERING_X2D_TOPOLOGICAL = "X2D_TOPOLOGICAL"
 
 
 # ---------------------------------------------------------------------------
@@ -159,6 +168,7 @@ class PolicyOutputX2:
     admission_events: List[AdmissionEvent] = field(default_factory=list)
     amendment_admission_events: List[AmendmentAdmissionEvent] = field(default_factory=list)
     treaty_admission_events: List[TreatyAdmissionEvent] = field(default_factory=list)
+    revalidation_events: List[TreatyRevalidationEvent] = field(default_factory=list)
     selection_event: Optional[SelectionEvent] = None
     admitted: List[AdmissionResult] = field(default_factory=list)
     rejected: List[AdmissionResult] = field(default_factory=list)
@@ -246,11 +256,18 @@ def policy_core_x2(
     internal_state: InternalStateX2,
     repo_root: Path,
     schema: Optional[Dict[str, Any]] = None,
+    cycle_ordering_mode: str = CYCLE_ORDERING_DEFAULT,
 ) -> PolicyOutputX2:
     """
     X-2 policy core. Pure, deterministic.
 
     Implements 5-step cycle ordering per CL-CYCLE-ORDERING.
+
+    cycle_ordering_mode:
+      - "DEFAULT": original CL-CYCLE-ORDERING (revocations before grants)
+      - "X2D_TOPOLOGICAL": X-2D topological time
+        (amendment adoption → revalidation → grants → revocations →
+         density repair → actions)
     """
     output = PolicyOutputX2(decision_type=DecisionTypeX2.REFUSE)
 
@@ -315,6 +332,14 @@ def policy_core_x2(
     # ===================================================================
     # STEP 1: Governance artifact admission
     # ===================================================================
+
+    if cycle_ordering_mode == CYCLE_ORDERING_X2D_TOPOLOGICAL:
+        return _x2d_topological_path(
+            observations, action_candidates, amendment_candidates,
+            pending_amendment_candidates, treaty_grant_candidates,
+            treaty_revocation_candidates, delegated_action_candidates,
+            constitution, internal_state, repo_root, schema, cycle_time, output,
+        )
 
     # --- Step 1a: Amendment adoption (if eligible) ---
     adoption_result = _try_adopt(
@@ -675,3 +700,255 @@ def _find_grant_from_result(
         if grant.id == result.artifact_id:
             return grant
     return None
+
+
+# ---------------------------------------------------------------------------
+# X-2D Topological Time Path
+# ---------------------------------------------------------------------------
+
+def _x2d_topological_path(
+    observations: List[Observation],
+    action_candidates: List[CandidateBundle],
+    amendment_candidates: List[AmendmentProposal],
+    pending_amendment_candidates: List[PendingAmendment],
+    treaty_grant_candidates: List[TreatyGrant],
+    treaty_revocation_candidates: List[TreatyRevocation],
+    delegated_action_candidates: List[DelegatedActionRequest],
+    constitution: ConstitutionX2,
+    internal_state: InternalStateX2,
+    repo_root: Path,
+    schema: Optional[Dict[str, Any]],
+    cycle_time: str,
+    output: PolicyOutputX2,
+) -> PolicyOutputX2:
+    """X-2D topological ordering within a single cycle.
+
+    Binding order (per Q&A V79, P62):
+      1. Amendment adoption (composed via X-1 engine)
+      2. Treaty revalidation (post-amendment, before grants)
+      3. Treaty grants
+      4. Treaty revocations
+      5. Expiry (implicit in active_grants filter)
+      6. Density enforcement + repair loop
+      7. RSA actions
+      8. Delegated actions
+
+    Amendment adoption does NOT early-return; it continues into the full
+    cycle so revalidation and action evaluation happen in the same call.
+    """
+    all_revalidation_events: List[TreatyRevalidationEvent] = []
+
+    # ------------------------------------------------------------------
+    # Step T1: Amendment adoption (non-early-return in topological mode)
+    # ------------------------------------------------------------------
+    adoption_result = _try_adopt(
+        pending_amendment_candidates,
+        constitution,
+        internal_state,
+        cycle_time,
+        schema,
+    )
+    if adoption_result is not None:
+        output.adoption_record = adoption_result.adoption_record
+        output.state_delta = adoption_result.state_delta
+        # Apply adoption: update constitution in-flight for revalidation.
+        # The state_delta contains the new constitution hash; the harness
+        # must supply the updated constitution for subsequent cycles, but
+        # within *this* cycle we use the updated state for revalidation.
+        # NOTE: constitution is already the post-adoption state if the
+        # harness applied it. For the kernel, we proceed with the current
+        # constitution object which reflects pre-adoption state unless the
+        # caller updates it. In X-2D runner, the caller is responsible for
+        # passing the post-adoption constitution. We log the adoption and
+        # proceed.
+
+    # ------------------------------------------------------------------
+    # Step T2: Treaty revalidation (post-amendment, before grants)
+    # ------------------------------------------------------------------
+    reval_events = internal_state.active_treaty_set.apply_constitutional_revalidation(
+        constitution, internal_state.cycle_index,
+    )
+    all_revalidation_events.extend(reval_events)
+
+    # ------------------------------------------------------------------
+    # Step T3: Treaty grant admission (grants BEFORE revocations)
+    # ------------------------------------------------------------------
+    grant_events: List[TreatyAdmissionEvent] = []
+    if treaty_grant_candidates:
+        sorted_grants = sorted(treaty_grant_candidates, key=lambda g: g.id)
+        grant_pipeline = TreatyAdmissionPipeline(
+            constitution=constitution,
+            active_treaty_set=internal_state.active_treaty_set,
+            cycle_index=internal_state.cycle_index,
+        )
+        grant_admitted, grant_rejected, grant_evts = grant_pipeline.evaluate_grants(
+            sorted_grants
+        )
+        output.treaty_grants_admitted = grant_admitted
+        output.treaty_grants_rejected = grant_rejected
+        grant_events = grant_evts
+
+        for grant_result in grant_admitted:
+            grant_obj = _find_grant_from_result(grant_result, sorted_grants)
+            if grant_obj:
+                grant_obj.grant_cycle = internal_state.cycle_index
+                internal_state.active_treaty_set.add_grant(grant_obj)
+
+    # ------------------------------------------------------------------
+    # Step T4: Treaty revocation admission (revocations AFTER grants)
+    # ------------------------------------------------------------------
+    revocation_events: List[TreatyAdmissionEvent] = []
+    if treaty_revocation_candidates:
+        rev_pipeline = TreatyAdmissionPipeline(
+            constitution=constitution,
+            active_treaty_set=internal_state.active_treaty_set,
+            cycle_index=internal_state.cycle_index,
+        )
+        rev_admitted, rev_rejected, rev_events = rev_pipeline.evaluate_revocations(
+            treaty_revocation_candidates
+        )
+        output.treaty_revocations_admitted = rev_admitted
+        output.treaty_revocations_rejected = rev_rejected
+        revocation_events = rev_events
+
+        for rev_result in rev_admitted:
+            rev_grant_id = _find_grant_id_from_result(
+                rev_result, treaty_revocation_candidates
+            )
+            if rev_grant_id:
+                internal_state.active_treaty_set.revoke(rev_grant_id)
+
+    output.treaty_admission_events = grant_events + revocation_events
+
+    # ------------------------------------------------------------------
+    # Step T5: Density enforcement + repair loop
+    # ------------------------------------------------------------------
+    density_bound = constitution.density_upper_bound()
+    action_perms = constitution.get_action_permissions()
+    action_type_count = len(constitution.get_action_types())
+
+    density_repair_events = internal_state.active_treaty_set.apply_density_repair(
+        density_upper_bound=density_bound,
+        action_permissions=action_perms,
+        action_type_count=action_type_count,
+        current_cycle=internal_state.cycle_index,
+    )
+    all_revalidation_events.extend(density_repair_events)
+    output.revalidation_events = all_revalidation_events
+
+    # ------------------------------------------------------------------
+    # Step T6: Amendment proposal queuing
+    # ------------------------------------------------------------------
+    amendment_output, amend_events, amend_rejected = _try_queue_amendment(
+        amendment_candidates,
+        constitution,
+        internal_state,
+        cycle_time,
+        schema,
+    )
+    if amendment_output is not None:
+        output.decision_type = DecisionTypeX2.QUEUE_AMENDMENT
+        output.queued_proposal = amendment_output.queued_proposal
+        output.state_delta = amendment_output.state_delta
+        output.amendment_admission_events = amend_events
+        return output
+    if amend_events:
+        output.amendment_admission_events = amend_events
+
+    # ------------------------------------------------------------------
+    # Step T7: RSA action admission
+    # ------------------------------------------------------------------
+    rsa_action_result = _action_path(
+        observations,
+        action_candidates,
+        constitution,
+        internal_state,
+        repo_root,
+        cycle_time,
+    )
+
+    # ------------------------------------------------------------------
+    # Step T8: Delegated action admission
+    # ------------------------------------------------------------------
+    delegated_warrants: List[ExecutionWarrant] = []
+    delegated_rejections: List[Dict[str, Any]] = []
+
+    active_grants = internal_state.active_treaty_set.active_grants(
+        internal_state.cycle_index
+    )
+
+    for dar in delegated_action_candidates:
+        warrant_or_rejection = _evaluate_delegated_action(
+            dar, constitution, active_grants, internal_state.cycle_index, cycle_time,
+        )
+        if isinstance(warrant_or_rejection, ExecutionWarrant):
+            delegated_warrants.append(warrant_or_rejection)
+        else:
+            delegated_rejections.append(warrant_or_rejection)
+
+    # ------------------------------------------------------------------
+    # Step T9: Warrant issuance & output assembly
+    # ------------------------------------------------------------------
+    all_warrants: List[ExecutionWarrant] = []
+    all_bundles: List[CandidateBundle] = []
+
+    if rsa_action_result.decision_type == DecisionTypeX1.ACTION:
+        if rsa_action_result.warrant:
+            rsa_w = rsa_action_result.warrant
+            rsa_warrant = make_warrant_with_deterministic_id(
+                action_request_id=rsa_w.action_request_id,
+                action_type=rsa_w.action_type,
+                scope_constraints=rsa_w.scope_constraints,
+                issued_in_cycle=rsa_w.issued_in_cycle,
+                created_at=rsa_w.created_at,
+                origin="rsa",
+            )
+            all_warrants.append(rsa_warrant)
+        if rsa_action_result.bundle:
+            all_bundles.append(rsa_action_result.bundle)
+
+    all_warrants.extend(delegated_warrants)
+
+    origin_rank = constitution.get_origin_rank()
+
+    def warrant_sort_key(w: ExecutionWarrant) -> Tuple[int, str]:
+        origin = w.scope_constraints.get("origin", "rsa")
+        rank = origin_rank.get(origin, 99)
+        return (rank, w.warrant_id)
+
+    all_warrants.sort(key=warrant_sort_key)
+
+    if all_warrants:
+        output.decision_type = DecisionTypeX2.ACTION
+        output.warrants = all_warrants
+        output.bundles = all_bundles
+        output.delegated_warrants = delegated_warrants
+        output.delegated_rejections = delegated_rejections
+        output.admission_events = rsa_action_result.admission_events
+        output.selection_event = rsa_action_result.selection_event
+        output.admitted = rsa_action_result.admitted
+        output.rejected = rsa_action_result.rejected
+        return output
+
+    if rsa_action_result.decision_type == DecisionTypeX1.REFUSE:
+        output.decision_type = DecisionTypeX2.REFUSE
+        output.refusal = rsa_action_result.refusal
+        output.admission_events = rsa_action_result.admission_events
+        output.admitted = rsa_action_result.admitted
+        output.rejected = rsa_action_result.rejected
+        output.delegated_rejections = delegated_rejections
+        return output
+
+    # Fallback REFUSE
+    refusal = RefusalRecord(
+        reason_code=RefusalReasonCode.NO_ADMISSIBLE_ACTION.value,
+        failed_gate="none",
+        missing_artifacts=[],
+        authority_ids_considered=[],
+        observation_ids_referenced=[o.id for o in observations],
+        rejection_summary_by_gate={},
+        created_at=cycle_time,
+    )
+    output.refusal = refusal
+    output.delegated_rejections = delegated_rejections
+    return output

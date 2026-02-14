@@ -283,12 +283,15 @@ class ActiveTreatySet:
     """
     grants: List[TreatyGrant] = field(default_factory=list)
     revoked_grant_ids: set = field(default_factory=set)
+    invalidated_grant_ids: set = field(default_factory=set)
 
     def active_grants(self, current_cycle: int) -> List[TreatyGrant]:
-        """Return grants that are active and not revoked in the given cycle."""
+        """Return grants that are active, not revoked, and not invalidated."""
         return [
             g for g in self.grants
-            if g.is_active(current_cycle) and g.id not in self.revoked_grant_ids
+            if g.is_active(current_cycle)
+            and g.id not in self.revoked_grant_ids
+            and g.id not in self.invalidated_grant_ids
         ]
 
     def add_grant(self, grant: TreatyGrant) -> None:
@@ -395,6 +398,121 @@ class ActiveTreatySet:
 
         return pruned
 
+    def invalidate(self, grant_id: str, cycle: int) -> bool:
+        """Mark a grant as invalidated by constitutional revalidation.
+        Semantically distinct from revocation — driven by supremacy, not by
+        the grantor. Returns True if the grant was found and invalidated."""
+        for g in self.grants:
+            if g.id == grant_id:
+                self.invalidated_grant_ids.add(grant_id)
+                return True
+        return False
+
+    def apply_constitutional_revalidation(
+        self,
+        constitution,  # ConstitutionX2
+        current_cycle: int,
+    ) -> List["TreatyRevalidationEvent"]:
+        """Deterministic narrow revalidation of all active treaties against
+        the current constitutional state.  Returns events only for treaties
+        that become INVALIDATED.
+
+        Checks (per Q&A C10):
+        - granted_actions still in closed action set
+        - no granted action is constitution-banned
+        - scope zones still within ScopeEnumerations
+
+        Does NOT re-run admission gates (signatures, citations, etc.).
+        """
+        events: List[TreatyRevalidationEvent] = []
+        active = self.active_grants(current_cycle)
+        closed_actions = set(constitution.get_closed_action_set())
+        zone_labels = constitution.get_all_zone_labels()
+        checked_count = len(active)
+
+        for grant in active:
+            reason = ""
+            # Check granted actions still in closed action set
+            for action in grant.granted_actions:
+                if action not in closed_actions:
+                    reason = "ACTION_BANNED"
+                    break
+            # Check scope zones still valid
+            if not reason:
+                for zone in grant.all_zone_labels():
+                    if zone not in zone_labels:
+                        reason = "SCOPE_ZONE_REMOVED"
+                        break
+            if reason:
+                self.invalidated_grant_ids.add(grant.id)
+                events.append(TreatyRevalidationEvent(
+                    cycle_id=current_cycle,
+                    grant_id=grant.id,
+                    result="INVALIDATED",
+                    reason_code=reason,
+                    pass_type="POST_AMENDMENT",
+                ))
+
+        # Always emit summary
+        events.insert(0, TreatyRevalidationEvent(
+            cycle_id=current_cycle,
+            grant_id="",
+            result="SUMMARY",
+            reason_code="",
+            pass_type="POST_AMENDMENT",
+            checked_count=checked_count,
+            invalidated_count=len(events),
+        ))
+        return events
+
+    def apply_density_repair(
+        self,
+        density_upper_bound: float,
+        action_permissions: List[Dict[str, Any]],
+        action_type_count: int,
+        current_cycle: int,
+    ) -> List["TreatyRevalidationEvent"]:
+        """Deterministic density-repair invalidation: newest-first until
+        density < bound or no active treaties remain.
+
+        Per Q&A W80/W81/AF93: intermediate spikes above bound are expected;
+        the invariant is convergence to density < bound OR A=0 → density=0.
+        """
+        events: List[TreatyRevalidationEvent] = []
+
+        while True:
+            active = self.active_grants(current_cycle)
+            if not active:
+                break  # A=0 → density=0 by convention
+            d = _compute_effective_density(
+                action_permissions, active, action_type_count
+            )
+            if d < density_upper_bound:
+                break
+            # Invalidate newest-first: highest grant_cycle, then id DESC
+            newest = max(active, key=lambda g: (g.grant_cycle, g.id))
+            self.invalidated_grant_ids.add(newest.id)
+            events.append(TreatyRevalidationEvent(
+                cycle_id=current_cycle,
+                grant_id=newest.id,
+                result="INVALIDATED",
+                reason_code="DENSITY_REPAIR",
+                pass_type="DENSITY_REPAIR",
+            ))
+
+        # Summary event
+        active_after = self.active_grants(current_cycle)
+        events.insert(0, TreatyRevalidationEvent(
+            cycle_id=current_cycle,
+            grant_id="",
+            result="SUMMARY",
+            reason_code="",
+            pass_type="DENSITY_REPAIR",
+            checked_count=len(active_after) + len(events) - 1,  # before repairs
+            invalidated_count=len(events) - 1,  # exclude summary itself
+        ))
+        return events
+
 
 # ---------------------------------------------------------------------------
 # Extended Internal State (X-2)
@@ -409,6 +527,7 @@ class InternalStateX2(InternalStateX1):
         d = super().to_dict()
         d["active_grants"] = [g.to_dict_internal() for g in self.active_treaty_set.grants]
         d["revoked_grant_ids"] = sorted(self.active_treaty_set.revoked_grant_ids)
+        d["invalidated_grant_ids"] = sorted(self.active_treaty_set.invalidated_grant_ids)
         return d
 
     def advance(self, decision_type: str) -> "InternalStateX2":
@@ -464,6 +583,38 @@ class TreatyAdmissionResult:
     effective_density: float = 0.0
     a_eff: int = 0
     m_eff: int = 0
+
+
+@dataclass
+class TreatyRevalidationEvent:
+    """Trace event for constitutional revalidation or density repair.
+
+    Per Q&A R67/W82: individual events emitted only for INVALIDATED treaties.
+    Summary events (result='SUMMARY') emitted once per pass for completeness.
+    """
+    cycle_id: int
+    grant_id: str  # empty for SUMMARY events
+    result: str  # "INVALIDATED" | "SUMMARY"
+    reason_code: str  # ACTION_BANNED | SCOPE_ZONE_REMOVED | DENSITY_REPAIR | ""
+    pass_type: str  # "POST_AMENDMENT" | "DENSITY_REPAIR"
+    checked_count: int = 0  # SUMMARY only
+    invalidated_count: int = 0  # SUMMARY only
+
+    def to_dict(self) -> Dict[str, Any]:
+        d: Dict[str, Any] = {
+            "event_type": "treaty_revalidation_event",
+            "cycle_id": self.cycle_id,
+            "result": self.result,
+            "pass_type": self.pass_type,
+        }
+        if self.grant_id:
+            d["grant_id"] = self.grant_id
+        if self.reason_code:
+            d["reason_code"] = self.reason_code
+        if self.result == "SUMMARY":
+            d["checked_count"] = self.checked_count
+            d["invalidated_count"] = self.invalidated_count
+        return d
 
 
 # ---------------------------------------------------------------------------
