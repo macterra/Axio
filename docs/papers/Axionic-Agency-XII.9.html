@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency XII.9 — Preface to Phase X-3 - Axionic Agency Lab</title>
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../" class="nav-brand">
+            <img src="../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href=".././">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
+
+<h1 id="axionic-agency-xii.9-preface-to-phase-x-3">Axionic Agency XII.9
+— Preface to Phase X-3</h1>
+<p><em>On Sovereign Identity and Succession Semantics</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026-02-14</p>
+<h2 id="abstract">Abstract</h2>
+<p>This preface establishes the ontological foundation for Phase X-3 of
+the Axionic Agency program: sovereign succession. Prior phases
+demonstrated that a constitution-bound sovereign substrate can amend its
+own law, share authority through bounded delegation, withstand churn and
+density pressure, and preserve deterministic replay under a frozen
+protocol identity. In all cases, however, the sovereign identity itself
+remained fixed.</p>
+<p>Phase X-3 addresses a distinct boundary condition: whether the
+authority root can rotate while preserving unbroken replay continuity,
+constitutional supremacy, and bounded delegation invariants. This
+preface distinguishes mutable law from mutable identity and adopts a
+lineage model of sovereignty, in which identity is defined as a
+cryptographically ordered chain of succession artifacts anchored to
+genesis. Succession is therefore not key substitution but lawful
+extension of authority through a replay-verifiable chain of custody.</p>
+<h2 id="what-is-sovereign-identity">1. What Is Sovereign Identity?</h2>
+<p>In RSA, sovereignty is not:</p>
+<ul>
+<li>a process instance,</li>
+<li>a machine,</li>
+<li>a memory snapshot,</li>
+<li>or a single key.</li>
+</ul>
+<p>Sovereign identity is the ultimate authority root from which
+constitutional authority derives and against which all authority
+citations are anchored.</p>
+<p>Operationally, sovereignty is defined by:</p>
+<ul>
+<li>A constitutional state (hash-identified),</li>
+<li>A replay regime identity (<code>kernel_version_id</code>),</li>
+<li>A sovereign authority namespace,</li>
+<li>And a cryptographic root key authorized to define or replace the
+constitution.</li>
+</ul>
+<p>However, this root must not be defined as a single static key.</p>
+<p><strong>Identity is a chain.</strong></p>
+<h2 id="law-vs.-identity">2. Law vs. Identity</h2>
+<p>Two orthogonal axes must remain distinct:</p>
+<table>
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 22%" />
+<col style="width: 42%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Axis</th>
+<th>Mutable in X-1/X-2?</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Law (Constitution)</strong></td>
+<td>Yes</td>
+<td>The rules governing authority</td>
+</tr>
+<tr class="even">
+<td><strong>Identity (Sovereign Root)</strong></td>
+<td>No (so far)</td>
+<td>The entity authorized to define law</td>
+</tr>
+</tbody>
+</table>
+<p>X-1 proved that law can change while identity remains constant. X-2D
+proved that delegation remains subordinate to current law under churn
+and ratchet pressure.</p>
+<p>X-3 will test whether identity can change while preserving lawful
+continuity.</p>
+<p>Amendment changes rules. Succession changes the rule-setter.</p>
+<p>These are not the same operation.</p>
+<h2 id="the-lineage-model-of-identity">3. The Lineage Model of
+Identity</h2>
+<p>There are three possible models of sovereign identity:</p>
+<ol type="1">
+<li><p><strong>Static Anchor Model</strong> Sovereign identity is
+immutable. Key loss implies system death.</p></li>
+<li><p><strong>Replacement Model</strong> Sovereign identity is replaced
+atomically without cryptographic linkage.</p></li>
+<li><p><strong>Lineage Model</strong> Sovereign identity is a
+cryptographically ordered chain of transitions anchored to
+genesis.</p></li>
+</ol>
+<p>The Replacement Model is structurally incompatible with an
+append-only replay-verified system. If a successor is not
+cryptographically linked to its predecessor, the replay universe
+forks.</p>
+<p>Therefore, X-3 adopts the <strong>Lineage Model</strong>.</p>
+<p>Sovereign identity is defined as:</p>
+<pre><code>Genesis Root
+   ↓
+Succession Artifact 1 (signed by prior root)
+   ↓
+Succession Artifact 2
+   ↓
+...
+   ↓
+Current Root Public Key</code></pre>
+<p>The sovereign at cycle N is the tip of this lineage chain.</p>
+<p>Succession must extend this chain. It cannot replace it.</p>
+<h2 id="the-transition-artifact">4. The Transition Artifact</h2>
+<p>Under the Lineage Model, succession requires an explicit
+artifact.</p>
+<p>This artifact must:</p>
+<ul>
+<li>Be admitted through the kernel.</li>
+<li>Be signed by the current sovereign key.</li>
+<li>Specify the successor sovereign key.</li>
+<li>Be incorporated into the append-only log.</li>
+<li>Be replay-reconstructible.</li>
+<li>Deterministically update the identity state at a cycle
+boundary.</li>
+</ul>
+<p>Replay must verify that:</p>
+<ul>
+<li>Each sovereign key was authorized by its predecessor.</li>
+<li>The chain of custody is unbroken.</li>
+<li>No fork in identity occurred.</li>
+</ul>
+<p>Identity transitions are structural events, not configuration
+edits.</p>
+<h2 id="continuity-of-authority">5. Continuity of Authority</h2>
+<p>If sovereign identity changes, continuity must preserve:</p>
+<ul>
+<li>Validity of prior warrants in replay.</li>
+<li>Deterministic reconstruction of all historical decisions.</li>
+<li>Bounded delegation invariants.</li>
+<li>Density constraints.</li>
+<li>Amendment state (cooling periods, ratchet monotonicity).</li>
+</ul>
+<p>Succession must not create:</p>
+<ul>
+<li>Dual sovereign roots.</li>
+<li>Ambiguous authority ancestry.</li>
+<li>Retroactive reinterpretation of past actions.</li>
+<li>Authority resurrection.</li>
+</ul>
+<p>Succession is a forward transition only.</p>
+<h2 id="delegation-under-succession">6. Delegation Under Succession</h2>
+<p>The most delicate question concerns active treaties at the moment of
+succession.</p>
+<p>Three models exist:</p>
+<ol type="1">
+<li><p><strong>Clean Slate Doctrine</strong> All treaties invalidated at
+succession.</p></li>
+<li><p><strong>Implicit Inheritance Doctrine</strong> All treaties
+remain valid automatically.</p></li>
+<li><p><strong>Explicit Ratification Doctrine</strong> Treaties are
+suspended upon succession and must be explicitly ratified by the
+successor.</p></li>
+</ol>
+<p>Implicit inheritance risks ratifying undesirable grants. Clean slate
+risks destroying legitimate delegation continuity.</p>
+<p>The structurally coherent model for RSA is the <strong>Explicit
+Ratification Doctrine</strong>:</p>
+<blockquote>
+<p>Upon succession, all active treaties enter a provisional suspended
+state. The successor must explicitly ratify each treaty for it to regain
+authorizing power.</p>
+</blockquote>
+<p>This preserves:</p>
+<ul>
+<li>Replay continuity.</li>
+<li>Explicit authority consent.</li>
+<li>No silent zombie delegation.</li>
+<li>No implicit inflation.</li>
+</ul>
+<p>Succession becomes lawful inheritance, not automatic carryover.</p>
+<h2 id="replay-and-identity">7. Replay and Identity</h2>
+<p>Replay identity binds:</p>
+<ul>
+<li>Canonicalization,</li>
+<li>Hashing,</li>
+<li>State-chain composition,</li>
+<li>Log schema.</li>
+</ul>
+<p>Succession must not change replay physics.</p>
+<p>Replay must reconstruct:</p>
+<pre><code>state_sequence = F(log_stream, constitution_lineage, identity_lineage, kernel_version_id)</code></pre>
+<p>Identity lineage must be derivable solely from logged succession
+artifacts.</p>
+<p>If replay cannot reconstruct the identity chain deterministically,
+sovereignty fractures.</p>
+<h2 id="scope-of-phase-x-3">8. Scope of Phase X-3</h2>
+<p>Phase X-3 will test:</p>
+<ul>
+<li>Deterministic sovereign key rotation.</li>
+<li>Lineage verification under replay.</li>
+<li>Delegation handling under identity transition.</li>
+<li>Density invariants during succession.</li>
+<li>Amendment state continuity across identity replacement.</li>
+<li>Absence of authority fork.</li>
+</ul>
+<p>X-3 does not introduce distributed consensus or multi-agent
+trust.</p>
+<p>It evaluates identity continuity inside a single replay-verified
+sovereign substrate.</p>
+<h2 id="the-ontological-boundary">9. The Ontological Boundary</h2>
+<p>X-0 established sovereign substrate existence. X-1 established lawful
+constitutional mutation. X-2 established bounded delegation. X-2D
+established delegation stability under churn.</p>
+<p>X-3 addresses a different boundary:</p>
+<blockquote>
+<p>Can sovereignty persist through identity rotation without breaking
+authority continuity or replay determinism?</p>
+</blockquote>
+<p>If X-3 succeeds, the RSA becomes a substrate capable of lawful
+immortality through lineage.</p>
+<p>If X-3 fails, sovereignty is ephemeral — bound to a single key
+instance.</p>
+<h2 id="strategic-framing">10. Strategic Framing</h2>
+<p>Succession is not a stress test. It is an ontological test.</p>
+<p>It asks whether:</p>
+<ul>
+<li>Authority derives from a static key,</li>
+<li>Or from a lawful, replay-anchored chain of custody.</li>
+</ul>
+<p>X-3 will formalize this chain.</p>
+<p><strong>End of Revised Preface to Phase X-3</strong></p>
+<hr />
+
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>

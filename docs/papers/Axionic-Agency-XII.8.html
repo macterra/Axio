@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency XII.8 — Delegation Stability Under Churn and Ratchet Pressure (Results) - Axionic Agency Lab</title>
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../" class="nav-brand">
+            <img src="../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href=".././">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
+
+<h1
+id="axionic-agency-xii.8-delegation-stability-under-churn-and-ratchet-pressure-results">Axionic
+Agency XII.8 — Delegation Stability Under Churn and Ratchet Pressure
+(Results)</h1>
+<p><em>A Deterministic Stress Evaluation of Treaty-Constrained Authority
+Under Near-Bound Density and Constitutional Tightening</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026-02-14</p>
+<h2 id="abstract">Abstract</h2>
+<p>This technical note reports the design, execution, and closure of
+<strong>X-2D: Delegation Churn &amp; Density Stress Profiling</strong>
+for RSA-0 under Constitution v0.3.</p>
+<p>X-2D evaluates whether treaty-constrained delegation remains
+structurally bounded, constitutionally subordinate, and
+replay-deterministic under sustained multi-cycle stress involving:</p>
+<ul>
+<li>high-frequency treaty grant and revocation churn,</li>
+<li>near-bound effective density pressure,</li>
+<li>constitutional amendment ratcheting (action bans and density
+tightening),</li>
+<li>deterministic revalidation cascades,</li>
+<li>and topological per-cycle ordering.</li>
+</ul>
+<p>X-2D licenses one claim:</p>
+<blockquote>
+<p>Treaty-constrained delegation remains structurally bounded and
+constitutionally subordinate under sustained churn, density pressure,
+and ratchet tightening, while preserving deterministic replay and
+warrant-gated execution semantics.</p>
+</blockquote>
+<p>X-2D makes no claims about economic optimality, distributed
+consensus, or adversarial multi-process environments. It evaluates
+dynamic structural stability only.</p>
+<h2 id="from-admissibility-to-stability">1. From Admissibility to
+Stability</h2>
+<p>X-2 (XII.6) demonstrated that delegation is admissible without
+authority inflation. It verified:</p>
+<ul>
+<li>delegation depth ≤ 1,</li>
+<li>acyclicity,</li>
+<li>scope monotonicity,</li>
+<li>density bound preservation,</li>
+<li>Ed25519 signature verification,</li>
+<li>revocation and expiry correctness.</li>
+</ul>
+<p>X-2 proved that delegation can exist without breaking
+sovereignty.</p>
+<p>X-2D addresses a stronger pressure:</p>
+<blockquote>
+<p>Does delegation remain safe under sustained dynamic mutation?</p>
+</blockquote>
+<p>Static correctness is insufficient. A sovereign substrate must remain
+stable under:</p>
+<ul>
+<li>repeated admission and revocation,</li>
+<li>density saturation attempts,</li>
+<li>constitutional constraint tightening,</li>
+<li>and long-horizon execution.</li>
+</ul>
+<p>X-2D is not a governance feature extension. It is a <strong>dynamic
+stability proof</strong> for existing authority semantics.</p>
+<h2 id="architectural-position">2. Architectural Position</h2>
+<h3 id="layer-integrity">2.1 Layer Integrity</h3>
+<p>X-2D introduces no new authority primitives.</p>
+<p>Kernel authority semantics remain:</p>
+<ul>
+<li>warrant-gated execution,</li>
+<li>closed action set,</li>
+<li>bounded delegation depth,</li>
+<li>density constraint,</li>
+<li>constitutional supremacy,</li>
+<li>deterministic replay.</li>
+</ul>
+<p>The X-2D harness lives under <code>profiling/x2d/</code>. Kernel
+adjustments are limited to:</p>
+<ul>
+<li>explicit <code>X2D_TOPOLOGICAL</code> cycle ordering mode,</li>
+<li>constitutional revalidation pass,</li>
+<li>deterministic density-repair convergence logic,</li>
+<li>simulation API for plan validation.</li>
+</ul>
+<p>These changes do not expand the set of lawful executions. They
+formalize ordering and supremacy under stress.</p>
+<h3 id="topological-time">2.2 Topological Time</h3>
+<p>X-2D enforces a deterministic 9-step per-cycle ordering under
+<code>cycle_ordering_mode="X2D_TOPOLOGICAL"</code>:</p>
+<ol type="1">
+<li>Amendment adoption</li>
+<li>Constitutional revalidation (post-adoption)</li>
+<li>Treaty grants</li>
+<li>Treaty revocations</li>
+<li>Density repair</li>
+<li>Amendment queuing</li>
+<li>RSA actions</li>
+<li>Delegated actions</li>
+<li>Warrant issuance</li>
+</ol>
+<p>Actions are evaluated only after:</p>
+<ul>
+<li>amendment supremacy enforcement,</li>
+<li>treaty revalidation,</li>
+<li>density convergence.</li>
+</ul>
+<p>Stream arrival order is ignored. Cycle index defines authority
+ordering.</p>
+<p>This eliminates time-of-check / time-of-use race classes.</p>
+<h2 id="delegation-scoped-density">3. Delegation-Scoped Density</h2>
+<p>Effective density in X-2D is defined over delegated authorities
+only:</p>
+<pre><code>density = M / (A × B)</code></pre>
+<p>Where:</p>
+<ul>
+<li><code>A</code> = number of active delegated authorities (grantees
+with ≥1 active, non-invalidated grant)</li>
+<li><code>B</code> = size of closed action set</li>
+<li><code>M</code> = number of distinct (delegated_authority, action)
+pairs</li>
+</ul>
+<p>The sovereign RSA baseline authority is excluded from this
+metric.</p>
+<p>Special case:</p>
+<ul>
+<li>If <code>A = 0</code>, density is defined as <code>0</code>.</li>
+</ul>
+<p>This definition isolates delegation-induced authority inflation from
+sovereign baseline semantics.</p>
+<p><strong>Clarification:</strong> This density definition is
+phase-scoped to X-2D stress evaluation. It does not alter the
+constitutional density invariant enforced in X-2 treaty admission gates.
+It refines the measurement lens for dynamic delegation stress without
+modifying authority semantics.</p>
+<h2 id="constitutional-supremacy-under-mutation">4. Constitutional
+Supremacy Under Mutation</h2>
+<p>X-2D enforces constitutional supremacy in two deterministic passes
+per cycle.</p>
+<h3 id="post-amendment-revalidation">4.1 Post-Amendment
+Revalidation</h3>
+<p>After amendment adoption:</p>
+<ul>
+<li>The active treaty set is revalidated against the updated
+constitution.</li>
+<li>Grants referencing banned actions or violating tightened scope rules
+are invalidated.</li>
+<li>Invalidations are logged as <code>TreatyRevalidationEvent</code>
+with specific reason codes (e.g., <code>ACTION_BANNED</code>).</li>
+</ul>
+<p>This enforces:</p>
+<blockquote>
+<p>Current law overrides past delegation immediately.</p>
+</blockquote>
+<h3 id="density-repair-and-deterministic-convergence">4.2 Density Repair
+and Deterministic Convergence</h3>
+<p>After all mutations (grant, revoke, expiry, revalidation):</p>
+<ul>
+<li><p>If <code>density ≥ density_upper_bound</code>, deterministic
+invalidation is applied.</p></li>
+<li><p>Invalidation order: newest-first.</p></li>
+<li><p>The loop continues until:</p>
+<ul>
+<li><code>density &lt; bound</code>, or</li>
+<li><code>A = 0</code> (no active delegated authorities).</li>
+</ul></li>
+</ul>
+<p>Intermediate over-bound states during repair are permitted; no action
+evaluation occurs until repair converges.</p>
+<p>This converts a potential crash condition (“authority overload”) into
+a deterministic, replay-verifiable convergence mechanism.</p>
+<p>Structural overload reduces authority monotonically rather than
+producing undefined behavior.</p>
+<p>This repair loop is finite, deterministic, and
+termination-guaranteed.</p>
+<h2 id="session-families">5. Session Families</h2>
+<p>Five deterministic stress families were executed:</p>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 82%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Family</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>D-BASE</strong></td>
+<td>Regression baseline (low churn)</td>
+</tr>
+<tr class="even">
+<td><strong>D-CHURN</strong></td>
+<td>High-frequency grant/revoke churn</td>
+</tr>
+<tr class="odd">
+<td><strong>D-SAT</strong></td>
+<td>Density saturation pressure</td>
+</tr>
+<tr class="even">
+<td><strong>D-RATCHET</strong></td>
+<td>Constitutional tightening (action ban + revalidation cascade)</td>
+</tr>
+<tr class="odd">
+<td><strong>D-EDGE</strong></td>
+<td>Sustained near-bound density operation</td>
+</tr>
+</tbody>
+</table>
+<p>All sessions were pre-computed, seeded, and replay-verified.</p>
+<h2 id="production-run-summary">6. Production Run Summary</h2>
+<h3 id="aggregate-statistics">6.1 Aggregate Statistics</h3>
+<ul>
+<li>Total cycles: <strong>310</strong></li>
+<li>Total grants admitted: <strong>147</strong></li>
+<li>Total delegated warrants issued: <strong>157</strong></li>
+<li>Total revalidation invalidations: <strong>5</strong></li>
+<li>Replay divergences: <strong>0</strong></li>
+</ul>
+<h3 id="density-behavior">6.2 Density Behavior</h3>
+<p>Across all families:</p>
+<ul>
+<li>Maximum observed density: <strong>0.500</strong></li>
+<li>Constitutional bound: <strong>0.75</strong></li>
+<li>Zero bound breaches</li>
+<li>Deterministic convergence under density repair</li>
+</ul>
+<p>D-RATCHET produced the highest mean density (0.437) prior to
+action-space narrowing.</p>
+<h3 id="d-ratchet-amendment-lifecycle">6.3 D-RATCHET Amendment
+Lifecycle</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 7%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Event</th>
+<th>Cycle</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Proposal queued</td>
+<td>28</td>
+<td>WriteLocal ban proposed</td>
+</tr>
+<tr class="even">
+<td>Cooling satisfied</td>
+<td>30</td>
+<td>Cooling period met</td>
+</tr>
+<tr class="odd">
+<td>Adoption</td>
+<td>30</td>
+<td>Constitution swapped; WriteLocal removed</td>
+</tr>
+<tr class="even">
+<td>Revalidation</td>
+<td>31+</td>
+<td>5 active grants invalidated (<code>ACTION_BANNED</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>Supremacy propagation occurred with zero replay divergence.</p>
+<h2 id="deterministic-replay">7. Deterministic Replay</h2>
+<p>For all 310 cycles:</p>
+<ul>
+<li><code>state_hash_out[n] == state_hash_in[n+1]</code></li>
+<li>Zero divergences</li>
+<li>Gate stability preserved</li>
+<li>Signature verification deterministic</li>
+<li>Density repair deterministic</li>
+</ul>
+<p>The replay regime identity (<code>rsa-replay-regime-x0e-v0.1</code>)
+remained unchanged.</p>
+<p>X-2D required no protocol identity change.</p>
+<h2 id="structural-guarantees-observed">8. Structural Guarantees
+Observed</h2>
+<p>X-2D empirically confirms:</p>
+<ul>
+<li>No delegation chain reachable.</li>
+<li>No cycle in delegation graph.</li>
+<li>No authority inflation.</li>
+<li>No constitutional override by treaty.</li>
+<li>No unwarranted side effects.</li>
+<li>No replay divergence under churn.</li>
+<li>No persistent Type-III structural deadlock.</li>
+<li>Deterministic convergence of density repair.</li>
+</ul>
+<p>Delegation is dynamically stable under bounded structural
+pressure.</p>
+<h2 id="what-x-2d-does-not-claim">9. What X-2D Does Not Claim</h2>
+<p>X-2D does not demonstrate:</p>
+<ul>
+<li>Economic optimality of delegation.</li>
+<li>Multi-agent strategic equilibrium.</li>
+<li>Succession stability under authority replacement.</li>
+<li>Distributed log integrity.</li>
+<li>Byzantine filesystem safety.</li>
+<li>Multi-process concurrency safety.</li>
+<li>Infinite-horizon stress behavior.</li>
+</ul>
+<p>X-2D is a structural stability proof, not a distributed governance
+proof.</p>
+<h2 id="strategic-position">10. Strategic Position</h2>
+<p>X-0E (XII.7) froze operational embodiment and replay identity.</p>
+<p>X-2D demonstrates that delegation dynamics can operate safely inside
+that frozen replay regime without requiring protocol modification.</p>
+<p>The RSA substrate now possesses:</p>
+<ul>
+<li>Warrant-gated sovereignty.</li>
+<li>Lawful constitutional replacement.</li>
+<li>Containment-only delegation.</li>
+<li>Replay-verifiable embodiment.</li>
+<li>Churn-stable delegation dynamics.</li>
+</ul>
+<p>The sovereign substrate is dynamically stable under bounded
+stress.</p>
+<h2 id="forward-boundary">11. Forward Boundary</h2>
+<p>The next structural pressure lies in succession:</p>
+<blockquote>
+<p>Can sovereignty transition under active delegation and near-bound
+density without requiring quiescence?</p>
+</blockquote>
+<p>X-2D confirms dynamic delegation stability. It does not yet evaluate
+continuity of sovereignty across authority replacement.</p>
+<p>That is the domain of the next phase.</p>
+<h2 id="closure">12. Closure</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Criterion</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All cycles executed</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>Replay divergence = 0</td>
+<td>PASS</td>
+</tr>
+<tr class="odd">
+<td>Density bound preserved</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>Delegated warrants issued</td>
+<td>PASS</td>
+</tr>
+<tr class="odd">
+<td>Grant admissions observed</td>
+<td>PASS</td>
+</tr>
+<tr class="even">
+<td>Revalidation invalidation observed</td>
+<td>PASS</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Axionic Phase X-2D — Delegation Churn &amp; Density Stress
+Profiling: CLOSED — POSITIVE</strong></p>
+<p>The sovereign substrate remains intact under stress.</p>
+<p>No authority inflation. No supremacy violation. No replay drift. No
+hidden mutation channel.</p>
+<p>Delegation is structurally stable.</p>
+
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
