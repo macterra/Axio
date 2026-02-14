@@ -1,0 +1,44 @@
+{
+    "version": "0.1",
+    "phase": "X-3",
+    "description": "Frozen boundary verification codes for X-3 Sovereign Succession Under Lineage. Per Q&A AQ1.",
+    "boundary_codes": {
+        "BOUNDARY_SIGNATURE_MISMATCH": {
+            "description": "CycleCommit or CycleStart signature verification failed under expected key.",
+            "layer": "signature"
+        },
+        "BOUNDARY_STATE_MISSING_PENDING_SUCCESSOR": {
+            "description": "No pending_successor_key in committed state despite succession admitted in this cycle.",
+            "layer": "pending_successor_consistency"
+        },
+        "BOUNDARY_STATE_SPURIOUS_PENDING_SUCCESSOR": {
+            "description": "Non-null pending_successor_key in committed state without any admitted succession.",
+            "layer": "pending_successor_consistency"
+        },
+        "BOUNDARY_STATE_CHAIN_MISMATCH": {
+            "description": "CycleStart identity_chain_tip_hash, identity_chain_length, or overlay_hash disagree with replay-reconstructed post-activation state.",
+            "layer": "chain_frame_continuity"
+        }
+    },
+    "succession_rejection_codes": {
+        "INVALID_FIELD": "S1 completeness gate — missing or malformed fields",
+        "AUTHORITY_CITATION_INVALID": "S2 authority citation snapshot check",
+        "SIGNATURE_INVALID": "S3 Ed25519 signature verification under prior sovereign key",
+        "PRIOR_SOVEREIGN_MISMATCH": "S4 prior_sovereign_public_key != active sovereign key",
+        "IDENTITY_CYCLE": "S5 successor would create cycle in lineage",
+        "LINEAGE_FORK": "S5 successor would create alternate root or fork",
+        "SUCCESSION_DISABLED": "S6 constitutional compliance — succession not enabled",
+        "MULTIPLE_SUCCESSIONS_IN_CYCLE": "S7 per-cycle uniqueness — only one succession per cycle"
+    },
+    "ratification_rejection_codes": {
+        "SCHEMA_INVALID": "R0 schema validity",
+        "INVALID_FIELD": "R1 completeness — missing or malformed fields",
+        "SIGNATURE_INVALID": "R2 Ed25519 signature verification under active sovereign",
+        "TREATY_NOT_SUSPENDED": "R3 referenced treaty is not in SUSPENDED state",
+        "DENSITY_MARGIN_VIOLATION": "R4 ratification would violate density bound"
+    },
+    "authority_codes": {
+        "PRIOR_KEY_PRIVILEGE_LEAK": "Post-activation attempt by prior sovereign key to issue sovereign-signed artifact",
+        "SUSPENSION_UNRESOLVED": "Attempt to issue new treaty grant while suspensions exist"
+    }
+}

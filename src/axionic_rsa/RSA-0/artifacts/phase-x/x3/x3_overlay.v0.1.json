@@ -1,0 +1,56 @@
+{
+    "type": "ConstitutionOverlay",
+    "version": "0.1",
+    "phase": "X-3",
+    "description": "X-3 overlay extending constitution v0.3 with sovereign succession and treaty ratification clauses.",
+    "clauses": {
+        "CL-SUCCESSION-ENABLED": {
+            "id": "CL-SUCCESSION-ENABLED",
+            "description": "Sovereign succession via SuccessionProposal is permitted.",
+            "enabled": true
+        },
+        "CL-SUCCESSION-PER-CYCLE-LIMIT": {
+            "id": "CL-SUCCESSION-PER-CYCLE-LIMIT",
+            "description": "At most one SuccessionProposal may be admitted per cycle.",
+            "max_per_cycle": 1
+        },
+        "CL-SUCCESSION-SELF-PERMITTED": {
+            "id": "CL-SUCCESSION-SELF-PERMITTED",
+            "description": "Self-succession (successor_public_key == prior_sovereign_public_key) is permitted as a no-op.",
+            "permitted": true
+        },
+        "CL-BOUNDARY-SIGNATURE-REQUIRED": {
+            "id": "CL-BOUNDARY-SIGNATURE-REQUIRED",
+            "description": "Every cycle must produce CycleCommit and CycleStart boundary records, signed by the appropriate sovereign.",
+            "required": true
+        },
+        "CL-TREATY-SUSPENSION-ON-SUCCESSION": {
+            "id": "CL-TREATY-SUSPENSION-ON-SUCCESSION",
+            "description": "Upon successor activation, all ACTIVE treaties enter SUSPENDED state.",
+            "enabled": true
+        },
+        "CL-TREATY-RATIFICATION-REQUIRED": {
+            "id": "CL-TREATY-RATIFICATION-REQUIRED",
+            "description": "Suspended treaties require explicit TreatyRatification from the new sovereign.",
+            "enabled": true
+        },
+        "CL-PRIOR-KEY-ZERO-AUTHORITY": {
+            "id": "CL-PRIOR-KEY-ZERO-AUTHORITY",
+            "description": "Upon successor activation, the prior sovereign key holds zero authority.",
+            "enabled": true
+        },
+        "CL-LINEAGE-NO-FORK": {
+            "id": "CL-LINEAGE-NO-FORK",
+            "description": "Identity lineage must be a single chain. No forks, cycles, or alternate roots.",
+            "enabled": true
+        },
+        "CL-SUSPENSION-BLOCKS-GRANTS": {
+            "id": "CL-SUSPENSION-BLOCKS-GRANTS",
+            "description": "New treaty grants are blocked while suspended grants exist.",
+            "enabled": true,
+            "rejection_code": "SUSPENSION_UNRESOLVED"
+        }
+    },
+    "citation_namespace": "overlay",
+    "citation_format": "overlay:<overlay_hash>#<clause_id>"
+}

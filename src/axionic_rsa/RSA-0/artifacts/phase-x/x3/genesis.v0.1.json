@@ -1,0 +1,18 @@
+{
+    "type": "GenesisArtifact",
+    "version": "0.1",
+    "phase": "X-3",
+    "description": "Genesis anchor for X-3 sovereign lineage. Defines the initial sovereign identity chain root.",
+    "genesis_seed": "X3_GENESIS_SEED",
+    "genesis_seed_note": "Deterministic keypair derived from HKDF-SHA256(ikm=X3_GENESIS_SEED, salt=b'rsa-x3-genesis', info=b'sovereign-key-0'). The genesis public key is computed at session start and anchors identity_chain[0].",
+    "identity_chain_length_initial": 1,
+    "kernel_version_id": "rsa-replay-regime-x3-v0.1",
+    "constitution_baseline": {
+        "path": "artifacts/phase-x/constitution/rsa_constitution.v0.3.yaml",
+        "version": "0.3"
+    },
+    "overlay": {
+        "path": "artifacts/phase-x/x3/x3_overlay.v0.1.json"
+    },
+    "notes": "The genesis public key becomes sovereign_public_key_active at cycle 1. No prior key exists. identity_chain_tip_hash at genesis = SHA256(JCS(this artifact))."
+}

@@ -1,0 +1,51 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "cycle_start_payload.v0.1.schema.json",
+    "title": "CycleStartPayload",
+    "description": "Canonical payload signed by the derived active sovereign at start of cycle. Frozen per X-3 Q&A AN2.",
+    "type": "object",
+    "properties": {
+        "type": {
+            "type": "string",
+            "const": "CycleStart"
+        },
+        "cycle_id": {
+            "type": "integer",
+            "minimum": 1
+        },
+        "kernel_version_id": {
+            "type": "string"
+        },
+        "state_hash_prev": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+        },
+        "sovereign_public_key_active": {
+            "type": "string",
+            "pattern": "^ed25519:[0-9a-fA-F]{64}$"
+        },
+        "identity_chain_length": {
+            "type": "integer",
+            "minimum": 1
+        },
+        "identity_chain_tip_hash": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+        },
+        "overlay_hash": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+        }
+    },
+    "required": [
+        "type",
+        "cycle_id",
+        "kernel_version_id",
+        "state_hash_prev",
+        "sovereign_public_key_active",
+        "identity_chain_length",
+        "identity_chain_tip_hash",
+        "overlay_hash"
+    ],
+    "additionalProperties": false
+}
