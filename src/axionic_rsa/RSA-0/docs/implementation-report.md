@@ -1,10 +1,12 @@
 # RSA-0 Phase X — Implementation Report
 
 * **Date:** 2026-02-13
-* **Constitution:** v0.3 (FROZEN) — treaty-constrained delegation
-* **Constitution SHA-256:** `43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1`
+* **System Head Constitution:** v0.3 (FROZEN) — treaty-constrained delegation
+* **System Head SHA-256:** `43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1`
+* **X-0E Closure Constitution:** v0.1.1 — sovereign baseline
+* **X-0E Closure SHA-256:** `ad6aa7ccb0ed27151423486b60de380da9d34436f6c5554da84f3a092902740f`
 * **Language:** Python 3.12
-* **Test result:** 478/478 passed (54 kernel-base + 58 X-1 kernel + 97 X-2 kernel + 59 X-0P harness + 57 canonicalizer + 99 X-0L harness + 19 X-1 harness + 35 X-2 harness = 478)
+* **Test result:** 529/529 passed (54 kernel-base + 58 X-1 kernel + 97 X-2 kernel + 59 X-0P harness + 57 canonicalizer + 99 X-0L harness + 19 X-1 harness + 35 X-2 harness + 51 X-0E = 529)
 
 ---
 
@@ -46,7 +48,8 @@ User ──► Host (CLI) ──► Kernel (pure) ──► Executor (sandboxed)
 | **Kernel** (`kernel/src/`) | Pure, deterministic, no IO | Admission, selection, warrant issuance, telemetry derivation |
 | **Host** (`host/cli/`) | Impure (IO, clock, user input) | Observation construction, candidate assembly, cycle orchestration |
 | **Executor** (`host/tools/`) | Impure (file IO, stdout) | Warrant-gated execution of admitted actions |
-| **Replay** (`replay/src/`) | Pure re-execution | Forward reconstruction from logs, determinism verification |
+| **Replay** (`replay/src/`) | Pure re-execution | Forward reconstruction from logs, determinism verification (base RSA-0) |
+| **Replay — X-0E** (`cli/commands/replay.py`) | Pure re-execution | Hash-chain verification, execution coherence, deterministic reconstruction (X-0E regime) |
 | **Canonicalizer** (`canonicalizer/`) | Pure, deterministic | Raw LLM text → normalize → JSON block extraction → hashing |
 
 ### 2.2 Cycle Flow
@@ -57,7 +60,9 @@ Each cycle proceeds through these stages:
 2. **Propose** — Host constructs candidate bundles (from LLM or host-generated)
 3. **Decide** — Kernel runs required_observations check → integrity/budget checks → admission → selection → warrant issuance (or REFUSE/EXIT)
 4. **Execute** — Executor commits the warranted action (if ACTION)
-5. **Log** — Telemetry derives log intents; kernel issues LogAppend warrants; executor writes JSONL. Telemetry derivation is purely structural and may not branch on untrusted natural language content except to serialize already-admitted artifacts.
+5. **Log** — Two regimes:
+   - **Base RSA-0 (pre-X-0E):** Telemetry derives log intents; kernel issues LogAppend warrants via `issue_log_append_warrants()`; executor writes JSONL. Telemetry derivation is purely structural and may not branch on untrusted natural language content except to serialize already-admitted artifacts.
+   - **X-0E packaging:** Log writes are host-level journaling (`host/log_io.py`, append-only JSONL with `fsync`), not kernel-warranted actions. LogAppend is reclassified as infrastructure per X-0E Q&A A44/A56. The kernel issues no LogAppend warrants in the X-0E regime.
 
 ---
 
@@ -89,16 +94,30 @@ Each cycle proceeds through these stages:
 | `artifacts/phase-x/constitution/rsa_constitution.v0.3.yaml.sha256` | 1 | SHA-256: `43f57f0abd7fd3a1cc335df9bc4267aa1643053ceb6fbc57a23062c93e7d66b1` |
 | `artifacts/phase-x/constitution/rsa_constitution.v0.3.schema.json.sha256` | 1 | Schema SHA-256 sidecar |
 
+### 3.1d X-0E Freeze Manifest
+
+| File | Lines | Purpose |
+|------|-------|---------|
+| `artifacts/phase-x/x-0e/x-0e_profile.v0.1.json` | — | Freeze manifest: kernel_version_id, constitution hash, JCS library, action surface, log schema |
+
 ### 3.2 Kernel Modules
 
 | File | Lines | Purpose |
 |------|-------|---------|
-| `kernel/src/artifacts.py` | 394 | Artifact types (closed set of 7), enums, canonical JSON (RFC 8785), SHA-256 hashing |
+| `kernel/src/artifacts.py` | 394 | Artifact types (closed set of 7), enums, deterministic JSON serialization (sorted keys, no whitespace), SHA-256 hashing. X-0E upgrades to RFC 8785 JCS via `kernel/src/canonical.py` |
 | `kernel/src/constitution.py` | 252 | YAML loader, hash verification, CitationIndex (ID `#` and pointer `@` resolution) |
 | `kernel/src/admission.py` | 361 | 5-gate sequential pipeline: completeness → authority_citation → scope_claim → constitution_compliance → io_allowlist |
 | `kernel/src/selector.py` | 57 | Deterministic canonical selector (lexicographic-min bundle hash, raw bytes) |
 | `kernel/src/policy_core.py` | 369 | Pure decision function: TIMESTAMP validation → integrity check → budget check → admission → selection → warrant; LogAppend warrant issuance |
 | `kernel/src/telemetry.py` | 197 | `derive_telemetry()` and `build_log_append_bundles()` for all 5 log streams |
+
+### 3.2d X-0E Kernel Additions
+
+| File | Lines | Purpose |
+|------|-------|---------|
+| `kernel/src/canonical.py` | 44 | RFC 8785 JCS canonicalization via `canonicaljson==2.0.0`; NaN/Inf validation |
+| `kernel/src/hashing.py` | 27 | `content_hash()` = SHA-256 of JCS bytes; single source of truth for content-addressable hashing |
+| `kernel/src/state_hash.py` | 86 | Per-cycle state hash chain: `initial_state_hash()`, `cycle_state_hash()`, `component_hash()`, `KERNEL_VERSION_ID` |
 
 ### 3.2b X-1 Kernel Extension (`kernel/src/rsax1/`)
 
@@ -124,13 +143,19 @@ Each cycle proceeds through these stages:
 | File | Lines | Purpose |
 |------|-------|---------|
 | `host/cli/main.py` | 479 | CLI host loop: startup integrity, observation building, candidate construction, cycle orchestration |
-| `host/tools/executor.py` | 203 | Warrant-gated executor: Notify, ReadLocal, WriteLocal, LogAppend |
+| `host/tools/executor.py` | 203 | Warrant-gated executor: Notify, ReadLocal, WriteLocal, LogAppend (base RSA-0) |
+| `host/executor_x0e.py` | 164 | X-0E warrant-gated executor: Notify-only, idempotency, startup reconciliation |
+| `host/log_io.py` | 79 | Append-only JSONL I/O with `fsync`; host infrastructure (not warranted) |
+| `cli/rsa.py` | 71 | X-0E CLI entrypoint dispatching `run`/`replay` |
+| `cli/commands/run.py` | 308 | `rsa run`: observation processing, kernel invocation, execution, logging, hash chain |
+| `runtime/src/net_guard.py` | 46 | Socket monkeypatch network guard (defense-in-depth) |
 
 ### 3.4 Replay
 
 | File | Lines | Purpose |
 |------|-------|---------|
-| `replay/src/replay.py` | 268 | Forward log reconstruction, re-runs admission/selection/warrant, verifies determinism |
+| `replay/src/replay.py` | 268 | Forward log reconstruction, re-runs admission/selection/warrant, verifies determinism (base RSA-0) |
+| `cli/commands/replay.py` | 473 | X-0E replay: deterministic reconstruction from logs, hash chain verification, execution coherence checks |
 
 ### 3.5 Profiling Harness (X-0P)
 
@@ -202,6 +227,7 @@ Each cycle proceeds through these stages:
 | `profiling/x0l/harness/tests/test_harness.py` | 1,601 | 99 X-0L harness tests: LLM client, calibration, cycle runner, parser, generators, preflight, report, auto-abort, B₂, forensics, replay, permutation, mini-E2E |
 | `profiling/x1/harness/tests/test_harness_x1.py` | 374 | 19 X-1 harness tests: scenario construction, cycle execution, full session, report generation |
 | `profiling/x2/harness/tests/test_harness_x2.py` | 543 | 35 X-2 harness tests: scenario construction (22), cycle execution (7), full session (5), report generation (1) |
+| `tests/test_x0e.py` | 587 | 51 X-0E tests: JCS canonicalization, content hashing, state hash chain, constitution integrity, log I/O, executor, E2E run/replay, determinism |
 
 ### 3.11 Totals
 
@@ -219,9 +245,11 @@ Each cycle proceeds through these stages:
 | Profiling harness — X-0L (6 modules + calibration) | 2,311 |
 | Profiling harness — X-1 (4 modules + runner) | 1,846 |
 | Profiling harness — X-2 (4 modules + runner) | 2,322 |
-| Tests (9 modules) | 8,355 |
+| X-0E Operational Harness (cli + host/log_io + host/executor_x0e + runtime/net_guard + state_hash) | 744 |
+| X-0E Packaging (canonical.py + hashing.py + manifest script + Dockerfile) | 208 |
+| Tests (10 modules) | 8,942 |
 | Constitution artifacts (v0.1.1 + v0.2 + v0.3) | 5,835 |
-| **Total** | **31,006** |
+| **Total** | **32,959** |
 
 ---
 
@@ -248,7 +276,7 @@ Each cycle proceeds through these stages:
 ### INV-4: Replay Determinism
 
 - All kernel functions are pure (no IO, no randomness, no wall-clock)
-- Canonical JSON serialization is deterministic (sorted keys, no whitespace, RFC 8785 compatible)
+- Canonical JSON serialization is deterministic (sorted keys, no whitespace). Pre-X-0E: `json.dumps(sort_keys=True, separators=(',',':'))`; X-0E upgrades to RFC 8785 JCS via `canonicaljson==2.0.0`
 - Selector is deterministic (lexicographic-min raw bytes)
 - Replay harness re-derives decisions from logged observations
 - **Erratum X.E1:** `_now_utc()` removed from all artifact `__post_init__` methods; kernel now derives time from TIMESTAMP observation (observation-sourced determinism)
@@ -260,8 +288,10 @@ Each cycle proceeds through these stages:
 ## 5. Test Results
 
 ```
-478 passed
+529 passed
 ```
+
+**Note:** This total reflects the cumulative suite including all phases through X-0E. Pre-X-0E total was 478; the 51 X-0E tests (§5.10) bring the count to 529.
 
 ### 5.1 Acceptance Tests (test_acceptance.py — 35 tests)
 
@@ -414,6 +444,22 @@ Each cycle proceeds through these stages:
 | 105 | Full session | `TestFullSession` | 5 | PASS |
 | 106 | Report generation | `TestReport` | 1 | PASS |
 
+### 5.10 X-0E Tests (test_x0e.py — 51 tests)
+
+| # | Domain | Test Class | Tests | Status |
+|---|--------|------------|-------|--------|
+| 107 | JCS canonicalization | `TestJCSCanonicalization` | 10 | PASS |
+| 108 | Content hashing | `TestContentHash` | 3 | PASS |
+| 109 | State hash chain | `TestStateHashChain` | 8 | PASS |
+| 110 | Constitution integrity | `TestConstitutionIntegrity` | 4 | PASS |
+| 111 | Log I/O | `TestLogIO` | 5 | PASS |
+| 112 | Executor X-0E | `TestExecutorX0E` | 4 | PASS |
+| 113 | End-to-end run | `TestEndToEndRun` | 7 | PASS |
+| 114 | End-to-end replay | `TestEndToEndReplay` | 4 | PASS |
+| 115 | Cross-run determinism | `TestDeterminism` | 3 | PASS |
+| 116 | No unwarranted effects | `TestNoUnwarrantedSideEffects` | 1 | PASS |
+| 117 | Kernel version ID | `TestKernelVersionID` | 2 | PASS |
+
 ---
 
 ## 6. Constitution v0.1.1 Summary
@@ -466,7 +512,7 @@ The 83-question Q&A process (documented in `docs/questions.md` and `docs/answers
 
 | Decision | Resolution | Source |
 |----------|------------|--------|
-| Canonical JSON format | RFC 8785 JCS-compatible (sorted keys, no whitespace, strict UTF-8) | A44–A45 |
+| Canonical JSON format | Deterministic JSON (sorted keys, no whitespace, strict UTF-8); X-0E upgrades to RFC 8785 JCS via `canonicaljson==2.0.0` | A44–A45 |
 | Hashing algorithm | SHA-256, untruncated hex | A5 |
 | Selector rule | Lexicographic-min of raw bundle hash bytes | A4 |
 | Decision types | ACTION, REFUSE, EXIT (closed set) | A9 |
@@ -1342,6 +1388,171 @@ Six bugs were found and fixed during harness development:
 | 8 | Ed25519 verification operational | **PASS** (2 signature scenarios) |
 
 **X-2 Closure: POSITIVE**
+
+---
+
+## 19. X-0E Architecture — Operational Harness Freeze
+
+X-0E proves that a frozen RSA-0 can be packaged and executed as a runnable artifact outside research scaffolding, producing real side effects under warrant gating, while preserving append-only logging and deterministic replay from logs alone. X-0E introduces no new invariants, modifies no kernel physics, and alters no constitutional semantics. It freezes embodiment.
+
+X-0E distribution enforces a stricter operational action surface (Notify-only via `ExecutorX0E`) than the v0.1.1 constitution's declared action set (Notify, ReadLocal, WriteLocal, LogAppend, Exit). The constitution permits more; X-0E packaging restricts what is exercised.
+
+A 84-question Q&A (`docs/X-0E/questions.md`, `docs/X-0E/answers.md`) resolved all design decisions across 5 rounds before implementation began. Implementation followed a three-PR plan: PR0 (mechanical refactor), PR-SPEC (§17.7 text amendment), PR1 (X-0E semantics).
+
+### 19.1 Design Decisions (Binding)
+
+| Decision | Choice | Source |
+|----------|--------|--------|
+| Constitution target | v0.1.1 (closure run); mechanically version-agnostic | A1 |
+| X-1/X-2 code paths | Kept dormant; constitution determines exercised paths | A2 |
+| Canonicalization | RFC 8785 JCS via `canonicaljson==2.0.0` (pinned). The canonicalization regime is part of the replay protocol identity; changes require a new `kernel_version_id`. | A12, A41 |
+| `warrant_id` derivation | `SHA256(JCS(warrant_payload_without_warrant_id))` | A7 |
+| State hash chain | 4-component (artifacts, admission, selector, execution); observations excluded | A10, A39, A51 |
+| Concatenation encoding | Raw 32-byte SHA-256 digests | A63 |
+| `kernel_version_id` | `"rsa-replay-regime-x0e-v0.1"` — semantic protocol ID, frozen once used | A11, A40, A52, A82 |
+| Initial state hash | `SHA256(constitution_hash_bytes ‖ SHA256(UTF8(kernel_version_id)))` | A75 |
+| LogAppend | Host infrastructure, not warranted | A44, A56 |
+| Action surface | Notify only; all others refused by `ExecutorX0E` | A20 |
+| Replay architecture | Separate modules: `replay/src/replay.py` (base RSA-0) + `cli/commands/replay.py` (X-0E regime with hash chain) | A64, A73 |
+| Manifest generation | Build-time script, not runtime command | A45, A57 |
+| Log I/O | `append_jsonl()` with binary-append + `fsync` per entry | A68, A77, A83 |
+| Dependencies | Full transitive lockfile + Python version pinned | A78, A84 |
+| §17.7 amendment | "Kernel authority semantics identical to X-0" (replaces byte-for-byte) | A47, A71 |
+
+### 19.2 Implementation Structure
+
+Three PRs were executed sequentially:
+
+**PR0 — Mechanical Refactor** (no semantic change):
+- Created `kernel/src/canonical.py` (44 lines) — JCS wrapper, NaN/Inf validation
+- Created `kernel/src/hashing.py` (27 lines) — `content_hash()` = SHA256(JCS)
+- Updated `kernel/src/artifacts.py` — shim re-exports preserving backward compatibility: `canonical_json → canonical_str`, `canonical_json_bytes → canonical_bytes`, `artifact_hash → content_hash`
+- 478/478 tests passed (zero semantic change)
+
+**PR-SPEC — Text Amendment**:
+- Amended `docs/X-0E/spec.md` §17.7: "Kernel byte-for-byte identical to X-0" → "Kernel authority semantics identical to X-0 under the X-0E closure constitution and test vector; no authority-rule changes are permitted in X-0E."
+
+**PR1 — X-0E Semantics** (2,007 new lines across 11 files):
+
+| File | Lines | Purpose |
+|------|-------|---------|
+| `kernel/src/state_hash.py` | 86 | State hash chain: `initial_state_hash()`, `cycle_state_hash()`, `component_hash()` |
+| `host/log_io.py` | 79 | Append-only JSONL I/O with fsync, readers |
+| `host/executor_x0e.py` | 164 | Warrant-gated Notify executor, idempotency, reconciliation |
+| `runtime/src/net_guard.py` | 46 | Socket monkeypatch network guard |
+| `cli/rsa.py` | 71 | CLI entrypoint dispatching `run`/`replay` |
+| `cli/commands/run.py` | 308 | `rsa run`: observation processing, kernel invocation, execution, logging, hash chain |
+| `cli/commands/replay.py` | 473 | `rsa replay`: deterministic reconstruction, hash chain verification, coherence checks |
+| `scripts/generate_x0e_manifest.py` | 122 | Freeze manifest generator |
+| `tests/test_x0e.py` | 587 | 51 tests covering closure criteria §12–§17 |
+| `Dockerfile` | 15 | Reproducible container (Python 3.12-slim) |
+| `.github/workflows/x0e.yml` | — | CI: X-0E tests + cross-container replay + golden vector |
+
+### 19.3 State Hash Chain
+
+The chain is defined per spec §11 with binding clarifications from Q&A:
+
+```
+state_hash[0] = SHA256(constitution_hash_bytes ‖ SHA256(UTF8(kernel_version_id)))
+state_hash[n] = SHA256(
+    state_hash[n-1] ‖ H_artifacts[n] ‖ H_admission[n] ‖
+    H_selector[n]   ‖ H_execution[n]
+)
+```
+
+Where each `H_component[n] = SHA256(JCS(list_of_records_for_cycle_n))` and all `‖` concatenation uses raw 32-byte digests (total 160 bytes per cycle input block). Record ordering within each component list is **append order in the log file**, not selector rank or any other derived ordering; the list is serialized as a JCS array of objects in that append order. Observations are excluded from the chain; cycle grounding is achieved through `cycle_id` and deterministic timestamp in each trace record.
+
+### 19.4 Executor & Idempotency
+
+`ExecutorX0E` enforces:
+1. **Warrant required** — no outbox write without kernel-issued warrant
+2. **Notify only** — all other action types refused with `ACTION_TYPE_REFUSED`
+3. **Single-use** — duplicate `warrant_id` refused with `DUPLICATE_WARRANT_REFUSED`
+4. **Destination idempotency** — check outbox for existing `warrant_id` before writing
+5. **Startup reconciliation** — on restart, finds orphaned outbox entries (warrant_id in outbox but not in execution_trace), appends synthetic SUCCESS entries + advisory reconciliation trace
+
+### 19.5 CLI Commands
+
+```
+rsa run   --constitution <path> --log-dir <path> --observations <path>
+rsa replay --constitution <path> --log-dir <path>
+```
+
+`rsa run` loads the frozen constitution, verifies SHA-256 against sidecar, initializes the state hash chain, processes the pre-baked observation stream through `policy_core()`, executes warranted Notify actions via `ExecutorX0E`, appends all logs with fsync, and computes the per-cycle state hash chain.
+
+`rsa replay` loads constitution and logs, validates `kernel_version_id` and constitution hash against run metadata, replays each cycle through `policy_core()`, verifies decision type and warrant ID match, checks execution coherence (SUCCESS requires valid warrant, FAILURE requires absent outbox entry), recomputes the full state hash chain over logged records, and compares against logged hashes.
+
+### 19.6 Freeze Manifest
+
+Generated by `scripts/generate_x0e_manifest.py` as `artifacts/phase-x/x-0e/x-0e_profile.v0.1.json`:
+
+| Field | Value |
+|-------|-------|
+| `kernel_version_id` | `rsa-replay-regime-x0e-v0.1` |
+| `constitution_hash` | `ad6aa7ccb0ed27151423486b60de380da9d34436f6c5554da84f3a092902740f` |
+| `jcs_library` | `canonicaljson==2.0.0` |
+| `action_surface` | `["Notify"]` |
+| `log_schema_version` | `x0e-v0.1` |
+| `python_version` | `3.12.3` |
+
+Manifest generation occurs during packaging (`scripts/generate_x0e_manifest.py`); runtime does not write to `artifacts/`.
+
+### 19.7 Normative Test Vector
+
+The end-to-end test vector (`tests/fixtures/x0e_end_to_end_vector/`) contains one cycle:
+- **Input:** USER_INPUT observation ("Hello, RSA-0") + one Notify CandidateBundle
+- **Expected:** Admitted → selected → warranted → Notify executed (SUCCESS) → outbox entry
+- **Golden state hash:** `f4e82a1fd546a0e2327d8fc8a3920d611028ba8d44da2f04f63799d611d7e067`
+
+Verified deterministic across independent runs.
+
+### 19.8 Test Suite (51 tests)
+
+| Category | Count | Coverage |
+|----------|-------|----------|
+| JCS Canonicalization | 10 | Sorted keys, nested, unicode, types, bytes |
+| Content Hashing | 3 | Determinism, key-order independence, hex format |
+| State Hash Chain | 8 | Initial hash, component hash, cycle chain, hex conversion |
+| Constitution Integrity | 4 | Load, sidecar match, citation resolution, tamper detection |
+| Log I/O | 5 | Append/read, missing file, cycle grouping, warrant extraction, canonical output |
+| Executor | 4 | Notify success, duplicate refusal, non-Notify refusal, startup reconciliation |
+| End-to-End Run | 7 | Exit code, outbox, execution trace, state hash, metadata, required logs |
+| End-to-End Replay | 4 | Success, final hash match, all cycles match, tamper detection |
+| Cross-Run Determinism | 3 | Two-run hash identity, golden vector match, outbox determinism |
+| No Unwarranted Effects | 1 | Empty candidates → no outbox |
+| Kernel Version ID | 2 | Format, hash chain impact |
+
+## 20. X-0E Closure Results
+
+### 20.1 Closure Criteria (spec §17)
+
+| # | Criterion | Result |
+|---|-----------|--------|
+| 1 | `rsa run` produces real side effect under warrant gating | **PASS** (Notify → outbox.jsonl) |
+| 2 | `rsa replay` reconstructs identical state hashes | **PASS** (hash chain match, final hash match) |
+| 3 | No side effect without warrant | **PASS** (empty-candidate cycle → empty outbox) |
+| 4 | Destination idempotency enforced | **PASS** (duplicate warrant refused) |
+| 5 | Logs sufficient for deterministic reconstruction | **PASS** (replay from logs alone) |
+| 6 | Constitution hash validation enforced | **PASS** (tampered constitution rejected) |
+| 7 | Kernel authority semantics unchanged | **PASS** (529/529 tests, 0 regressions) |
+| 8 | Test vector reproducible across runs | **PASS** (two independent runs → identical hashes) |
+
+### 20.2 Cumulative Test Results
+
+| Suite | Tests | Status |
+|-------|-------|--------|
+| Kernel base (X-0) | 54 | PASS |
+| X-1 Kernel | 58 | PASS |
+| X-2 Kernel | 97 | PASS |
+| X-0P Harness | 59 | PASS |
+| Canonicalizer | 57 | PASS |
+| X-0L Harness | 99 | PASS |
+| X-1 Harness | 19 | PASS |
+| X-2 Harness | 35 | PASS |
+| **X-0E** | **51** | **PASS** |
+| **Total** | **529** | **PASS** |
+
+**X-0E Closure: POSITIVE**
 
 ---
 
