@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axionic Agency XII.7 — Operational Harness Freeze Under Frozen Sovereignty (Results) - Axionic Agency Lab</title>
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../" class="nav-brand">
+            <img src="../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href=".././">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
+
+<h1
+id="axionic-agency-xii.7-operational-harness-freeze-under-frozen-sovereignty-results">Axionic
+Agency XII.7 — Operational Harness Freeze Under Frozen Sovereignty
+(Results)</h1>
+<p><em>A Protocol-Identified, Replay-Deterministic Packaging of a
+Kernel-Frozen Sovereign Substrate</em></p>
+<p>David McFadzean, ChatGPT 5.2<br> <em>Axionic Agency Lab</em><br>
+2026-02-13</p>
+<h2 id="abstract">Abstract</h2>
+<p>This technical note reports the design, execution, and closure of
+<strong>X-0E: Operational Harness Freeze</strong> for RSA-0.</p>
+<p>X-0E evaluates whether a kernel-frozen, constitution-bound sovereign
+agent can be packaged as a standalone executable artifact that:</p>
+<ul>
+<li>produces real side effects under warrant gating,</li>
+<li>maintains append-only journaling,</li>
+<li>enforces at-most-once execution semantics,</li>
+<li>and reconstructs full execution history via deterministic replay and
+hash-chain verification,</li>
+</ul>
+<p>without:</p>
+<ul>
+<li>modifying kernel authority semantics,</li>
+<li>introducing proxy sovereignty,</li>
+<li>relaxing admission constraints,</li>
+<li>or breaking replay determinism.</li>
+</ul>
+<p>X-0E licenses one claim:</p>
+<blockquote>
+<p>A constitution-bound, kernel-frozen sovereign substrate can be
+operationally packaged as a protocol-identified, replay-deterministic
+executable artifact, preserving structural sovereignty invariants while
+producing real side effects under warrant gating.</p>
+</blockquote>
+<p>X-0E makes no claims about distributed consensus, Byzantine log
+integrity, or adversarial filesystem environments.</p>
+<h2 id="from-sovereign-theory-to-protocol-artifact">1. From Sovereign
+Theory to Protocol Artifact</h2>
+<ul>
+<li>X-0 established warrant-gated sovereignty.</li>
+<li>X-1 established lawful constitutional self-replacement.</li>
+<li>X-2 established containment-only authority sharing.</li>
+</ul>
+<p>X-0E addresses a different pressure:</p>
+<blockquote>
+<p>Can a frozen sovereign substrate be embodied as a reproducible
+operational artifact without altering its physics?</p>
+</blockquote>
+<p>This is not a governance test. It is a <strong>protocol freeze
+test</strong>.</p>
+<p>X-0E validates:</p>
+<ul>
+<li>that execution can occur outside research harnesses,</li>
+<li>that journaling is sufficient for third-party reconstruction,</li>
+<li>that side effects remain warrant-gated,</li>
+<li>that crash states resolve deterministically,</li>
+<li>and that replay identity is cryptographically bound.</li>
+</ul>
+<h2 id="architectural-position">2. Architectural Position</h2>
+<h3 id="layer-separation">2.1 Layer Separation</h3>
+<p>X-0E does not modify kernel authority semantics.</p>
+<p>The layers remain:</p>
+<ul>
+<li><strong>Kernel</strong> — pure, deterministic, no IO.</li>
+<li><strong>Host</strong> — impure orchestration.</li>
+<li><strong>Executor</strong> — warrant-gated side-effect
+dispatcher.</li>
+<li><strong>Replay</strong> — pure reconstruction.</li>
+<li><strong>X-0E Runtime</strong> — operational wrapper and journaling
+regime.</li>
+</ul>
+<p>X-0E introduces no new authority gates, no new artifact types, and no
+semantic rule changes.</p>
+<p>It freezes embodiment.</p>
+<h2 id="replay-regime-identity">3. Replay Regime Identity</h2>
+<p>X-0E formalizes a <strong>Replay Regime Identity</strong> via:</p>
+<pre><code>kernel_version_id = &quot;rsa-replay-regime-x0e-v0.1&quot;</code></pre>
+<p>This identifier is not a semantic version of the kernel. It is a
+<strong>protocol identity</strong>.</p>
+<p>It binds:</p>
+<ul>
+<li>canonicalization rules,</li>
+<li>hashing algorithm,</li>
+<li>state-chain composition,</li>
+<li>log schema,</li>
+<li>replay coherence rules.</li>
+</ul>
+<p><code>kernel_version_id</code> is hashed into the initial state
+hash:</p>
+<pre><code>state_hash[0] = SHA256(
+    constitution_hash_bytes ‖ SHA256(UTF8(kernel_version_id))
+)</code></pre>
+<p>Any change to:</p>
+<ul>
+<li>canonicalization (e.g., JCS implementation),</li>
+<li>hashing method,</li>
+<li>state-chain component structure,</li>
+<li>log schema,</li>
+<li>warrant_id derivation,</li>
+<li>execution coherence rules,</li>
+</ul>
+<p>requires a <strong>new kernel_version_id</strong>.</p>
+<p>Replay regime changes are physics changes.</p>
+<h2 id="canonicalization">4. Canonicalization</h2>
+<p>X-0E upgrades canonicalization to strict RFC 8785 JCS via:</p>
+<pre><code>canonicaljson==2.0.0</code></pre>
+<p>All content-addressable hashing (artifact IDs, warrant IDs,
+state-chain components) uses:</p>
+<pre><code>SHA256(JCS(bytes))</code></pre>
+<p>The canonicalization regime is part of replay protocol identity.</p>
+<p>NaN and Infinity are rejected at serialization boundary.</p>
+<h2 id="state-hash-chain">5. State Hash Chain</h2>
+<p>Per-cycle hash chain:</p>
+<pre><code>state_hash[n] = SHA256(
+    state_hash[n-1] ‖
+    H_artifacts[n] ‖
+    H_admission[n] ‖
+    H_selector[n]  ‖
+    H_execution[n]
+)</code></pre>
+<p>Where:</p>
+<pre><code>H_component[n] = SHA256(JCS(list_of_records_for_cycle_n))</code></pre>
+<h3 id="ordering-rule">5.1 Ordering Rule</h3>
+<p>Record ordering within each component list is:</p>
+<blockquote>
+<p><strong>exact append order in the corresponding log file</strong></p>
+</blockquote>
+<p>Not:</p>
+<ul>
+<li>selector rank,</li>
+<li>artifact ID ordering,</li>
+<li>lexicographic sorting,</li>
+<li>or canonical object ordering.</li>
+</ul>
+<p>The list is serialized as a JCS array in append order.</p>
+<p>Concatenation uses raw 32-byte SHA-256 digests.</p>
+<p>Observations are excluded from the chain. Given kernel determinism
+(<code>Output = F(Input)</code>), hashing outputs is sufficient to
+detect input tampering.</p>
+<h2 id="executor-semantics">6. Executor Semantics</h2>
+<p><code>ExecutorX0E</code> enforces:</p>
+<ol type="1">
+<li><strong>Warrant gating</strong> — no side effect without
+kernel-issued warrant.</li>
+<li><strong>Notify-only action surface</strong> — stricter than
+constitutional action set.</li>
+<li><strong>Single-use warrants</strong> — duplicate warrant_id
+rejected.</li>
+<li><strong>Destination idempotency</strong> — outbox pre-check before
+write.</li>
+<li><strong>Startup reconciliation</strong> — orphaned outbox entries
+resolved deterministically.</li>
+</ol>
+<h2 id="crash-reconciliation">7. Crash Reconciliation</h2>
+<p>If crash occurs after outbox write but before execution_trace
+append:</p>
+<p>On restart:</p>
+<ul>
+<li><p>Outbox is scanned.</p></li>
+<li><p>Any warrant_id present in outbox but absent in execution_trace
+triggers:</p>
+<ul>
+<li>synthetic SUCCESS entry appended to execution_trace,</li>
+<li>advisory reconciliation entry appended to reconciliation_trace.</li>
+</ul></li>
+</ul>
+<p>This enforces:</p>
+<blockquote>
+<p><strong>At-Most-Once semantics</strong></p>
+</blockquote>
+<p>The system prefers phantom success over double execution.</p>
+<p>Replay reconstructs from actual logs — including reconciliation
+entries — not from an idealized crash-free run.</p>
+<h2 id="logging-boundary-clarification">8. Logging Boundary
+Clarification</h2>
+<p>In base RSA-0:</p>
+<ul>
+<li>LogAppend is a kernel-warranted action.</li>
+</ul>
+<p>In X-0E packaging:</p>
+<ul>
+<li>Journaling is host-level infrastructure via
+<code>append_jsonl()</code>.</li>
+</ul>
+<p>Sovereign authority governs <strong>external world effects</strong>.
+Replay journaling is infrastructure, not an exercise of authority.</p>
+<p>Kernel physics remain unchanged. Operational logging is outside the
+sovereign action surface.</p>
+<h2 id="closure-criteria">9. Closure Criteria</h2>
+<p>X-0E closes positive if:</p>
+<ol type="1">
+<li><code>rsa run</code> produces a warranted side effect.</li>
+<li><code>rsa replay</code> reconstructs identical state hash
+chain.</li>
+<li>No side effect occurs without warrant.</li>
+<li>Duplicate warrants do not produce duplicate effects.</li>
+<li>Logs suffice for deterministic reconstruction.</li>
+<li>Constitution hash validation enforced.</li>
+<li>Kernel authority semantics unchanged.</li>
+<li>Test vector reproducible across independent runs.</li>
+</ol>
+<p>All criteria satisfied.</p>
+<h2 id="normative-test-vector">10. Normative Test Vector</h2>
+<p>Single-cycle vector:</p>
+<ul>
+<li><p>Input: one USER_INPUT + one Notify CandidateBundle.</p></li>
+<li><p>Expected: admitted → selected → warranted → executed.</p></li>
+<li><p>Golden state hash:</p>
+<pre><code>f4e82a1fd546a0e2327d8fc8a3920d611028ba8d44da2f04f63799d611d7e067</code></pre></li>
+</ul>
+<p>Verified deterministic across independent runs.</p>
+<h2 id="structural-guarantees-observed">11. Structural Guarantees
+Observed</h2>
+<p>X-0E empirically confirms:</p>
+<ul>
+<li>No unwarranted side effects.</li>
+<li>No duplicate execution.</li>
+<li>No replay divergence.</li>
+<li>No protocol drift.</li>
+<li>No authority inflation.</li>
+<li>No kernel mutation.</li>
+<li>No dependence on wall clock.</li>
+<li>No model-dependent replay behavior.</li>
+</ul>
+<p>The RSA is now a reproducible computational artifact.</p>
+<h2 id="operational-assumptions-security-envelope">12. Operational
+Assumptions (Security Envelope)</h2>
+<p>X-0E assumes:</p>
+<ul>
+<li>single-process execution,</li>
+<li>single-writer append discipline,</li>
+<li>local filesystem trust,</li>
+<li>no concurrent writers,</li>
+<li>no adversarial log mutation,</li>
+<li>no Byzantine storage guarantees.</li>
+</ul>
+<p>X-0E does not provide distributed consensus, multi-process atomicity,
+or adversarial filesystem hardening.</p>
+<p>Those concerns belong to later phases.</p>
+<h2 id="what-x-0e-does-not-claim">13. What X-0E Does Not Claim</h2>
+<p>X-0E does not demonstrate:</p>
+<ul>
+<li>Byzantine log safety,</li>
+<li>distributed replay consensus,</li>
+<li>concurrent multi-process correctness,</li>
+<li>atomic multi-effect crash recovery,</li>
+<li>liveness under adversarial IO conditions,</li>
+<li>filesystem-level tamper resistance,</li>
+<li>networked trust distribution.</li>
+</ul>
+<p>It proves only protocol-identified, local deterministic
+embodiment.</p>
+<h2 id="strategic-position">14. Strategic Position</h2>
+<p>X-2 (XII.6) contained <strong>Who</strong> may exercise
+authority.</p>
+<p>X-0E contains <strong>How</strong> execution is recorded and
+reconstructed.</p>
+<p>The RSA now possesses:</p>
+<ul>
+<li>constitutional binding,</li>
+<li>delegation containment,</li>
+<li>protocol identity,</li>
+<li>replay-verifiable embodiment.</li>
+</ul>
+<p>The sovereign substrate is no longer theoretical. It is reproducible,
+hash-anchored, and externally auditable.</p>
+<h2 id="status">15. Status</h2>
+<p><strong>Axionic Phase X-0E — Operational Harness Freeze: CLOSED —
+POSITIVE</strong></p>
+<p>The kernel remains sovereign. The protocol is identified. The
+artifact is reproducible.</p>
+
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
