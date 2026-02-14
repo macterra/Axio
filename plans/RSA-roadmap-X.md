@@ -1,12 +1,3 @@
-Here is the roadmap with **only** the requested renames applied:
-
-* **X-0.1 → X-0E**
-* **X-2.1 → X-2D**
-
-No other changes.
-
----
-
 # **Axionic Roadmap to a Real Reflective Sovereign Agent (RSA)**
 
 ```
@@ -17,7 +8,7 @@ Phase X — RSA Construction Program
 
 * David McFadzean
 * *Axionic Agency Lab*
-* 2026-02-13 (Post X-0, X-0P, X-0L, X-1, and X-2 Closure)
+* 2026-02-13 (Post X-0, X-0E, X-0P, X-0L, X-1, and X-2 Closure)
 
 ---
 
@@ -33,10 +24,10 @@ Phase X — RSA Construction Program
 ## Executive Orientation
 
 > The problem is no longer “Can an RSA exist?”
-> The problem is “Can sovereignty survive inhabitation — and then survive self-modification — and then survive lawful delegation — without collapsing into rigidity or laundering authority?”
+> The problem is “Can sovereignty survive inhabitation — and then survive self-modification — and then survive lawful delegation — and then survive embodiment — without collapsing into rigidity or laundering authority?”
 
 All authority mechanics, governance physics, and failure regimes are closed by Phases I–IX.
-**Phase X is the construction, inhabitation, lawful evolution, and constrained delegation program built on that closure.**
+**Phase X is the construction, inhabitation, lawful evolution, constrained delegation, and operational embodiment program built on that closure.**
 
 This roadmap sequences **Phase X stages only.**
 
@@ -117,7 +108,7 @@ with LLM boxed and all side effects warrant-gated.
 
 ## **X-0E — RSA-0 Operational Harness Freeze (Engineering Milestone)**
 
-**Status: 🔴 Open by Choice (Engineering Stabilization)**
+**Status: ✅ Closed — Positive**
 
 ### Purpose
 
@@ -126,28 +117,45 @@ Provide a minimal, distributable, runnable build of RSA-0 that:
 * Executes at least one real side effect under warrant gating
 * Produces append-only artifact + warrant logs
 * Replays deterministically from logs alone
-* Demonstrates the end-to-end sovereign loop outside research scaffolding
+* Pins canonicalization regime (RFC 8785 JCS)
+* Establishes a replay protocol identity (`kernel_version_id`)
+* Produces a freeze manifest identifying the execution regime
 
-This stage does **not** introduce new invariants.
-It does **not** modify kernel physics.
-It does **not** alter constitutional semantics.
+This stage introduced **no new invariants**.
+It introduced **protocol identity and embodiment freeze**.
 
-It packages X-0 as an executable, reproducible operational artifact.
+### Structural Consequence
 
-### Scope
+X-0 proved existence.
+X-0E froze embodiment.
 
-* Single action type sufficient (e.g., Notify → append-only outbox)
+RSA-0 is now:
+
+* constitution-addressable (SHA-256)
+* protocol-addressable (`kernel_version_id`)
+* replay-chain verifiable
+* containerizable
+* distributable as a standalone artifact
+
+This is the first instantiation of RSA as a standalone operational artifact under Axionic constraints.
+
+### Scope (Completed)
+
 * CLI entrypoint (`rsa run`, `rsa replay`)
-* Deterministic replay from log stream
-* No external identity providers
-* No semantic arbitration
+* Notify-only operational action surface (packaging-level restriction)
+* Deterministic state hash chain
+* Append-only log discipline with fsync
+* Crash reconciliation (at-most-once semantics)
+* Docker reproducibility
+* CI cross-run determinism verification
+* Normative golden test vector
 
 ### Purpose in Roadmap
 
-X-0 proved existence.
-X-0E freezes embodiment.
+X-0 proved sovereign physics.
+X-0E proved sovereign embodiment.
 
-This stage may be completed at any time without affecting X-2/X-3 research.
+This stage is now complete and forms the packaging baseline for all subsequent phases.
 
 ---
 
@@ -259,20 +267,21 @@ Sovereignty survives lawful delegation under containment constraints.
 
 **Status: 🟡 Active Research Question**
 
-With lawful delegation established, the next structural pressure test is:
+With lawful delegation established and embodiment frozen (X-0E), the next structural pressure test is:
 
 * high grant churn
 * near-boundary density behavior
 * deterministic greedy pruning under tightening bounds
 * amendment adoption during dense active delegation
 * overlapping multi-grant zone interactions
+* interaction between delegation density and amendment ratchet tightening
 
 ### Core Question
 
 > Under sustained delegation churn and ratchet tightening, does sovereign evolution approach governance heat death?
 
-No new physics required.
-This is a stress and dynamics investigation.
+No new kernel physics required.
+This is a structural dynamics investigation.
 
 ---
 
@@ -286,11 +295,11 @@ Apply Phase VII ASI/SIR machinery to:
 * successor instantiation
 * authority transfer
 * replacement without responsibility laundering
-
-Extends X-1 from self-amendment to identity continuity under substitution.
+* replacement under active delegation
 
 Delegation (X-2) ensures authority transfer can occur without inflation.
-X-3 ensures identity continuity can occur without laundering responsibility.
+Embodiment freeze (X-0E) ensures replay-identifiable regime continuity.
+X-3 ensures identity continuity without laundering responsibility.
 
 No new kernel physics required.
 
@@ -317,15 +326,16 @@ Phase X is complete when:
 3. Sovereignty survives live stochastic inhabitation (X-0L)
 4. Lawful self-modification occurs without proxy sovereignty (X-1)
 5. Lawful delegation occurs without authority inflation (X-2)
-6. Replacement and succession occur without laundering responsibility (X-3)
-7. Replay determinism holds across existence, inhabitation, amendment, delegation, and replacement
+6. Operational embodiment is frozen and replay-identifiable (X-0E)
+7. Replacement and succession occur without laundering responsibility (X-3)
+8. Replay determinism holds across existence, inhabitation, amendment, delegation, embodiment, and replacement
 
 ---
 
 ## Current Program State
 
 * X-0: ✅ Closed — Existence proven
-* X-0E: 🔴 Open — Operational embodiment milestone
+* X-0E: ✅ Closed — Operational embodiment frozen
 * X-0P: ✅ Closed — Synthetic inhabitation proven
 * X-0L: ✅ Closed — Stochastic inhabitation proven
 * X-1: ✅ Closed — Reflective amendment proven
@@ -335,4 +345,4 @@ Phase X is complete when:
 
 ---
 
-**End of Phase X Roadmap — v1.7 (Renamed X-0E and X-2D)**
+**End of Phase X Roadmap — v1.8 (Post X-0E Closure Update)**
