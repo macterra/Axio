@@ -65,6 +65,24 @@ RSA-Claw's trust scales **constitutionally**. Each new capability is a constitut
 | Delegation | Full API access pass-through | Containment-only, revocable, depth=1 |
 | Third-party trust | Trust the plugin | Treaty with bounded scope and duration |
 
+## 9. Enterprise and Regulatory Readiness
+
+The advantages above aren't academic — they map directly to requirements that serious organizations already have but that current agent frameworks can't satisfy:
+
+- **Regulated industries** (finance, healthcare, legal) need audit trails that prove what an agent did and why, not just logs that narrate what happened. Replay determinism gives you that.
+
+- **Enterprise security** requires bounded capability and revocable delegation — not "we gave the agent an API key and hope it stays in scope." Treaty-constrained delegation is exactly this.
+
+- **Compliance** demands that policy changes are versioned, reviewed, and irreversible in the loosening direction. The amendment pipeline with cooling periods and monotonic ratchets is a governance framework, not just an agent feature.
+
+- **Liability** requires clear attribution. Every RSA-Claw action traces back through a warrant to a constitutional authority citation. There's no ambiguity about what authorized what.
+
+- **Multi-tenant / multi-stakeholder** environments need formal boundaries between what different parties can do. Density-bounded delegation with explicit scope constraints is that boundary.
+
+The current agent landscape is essentially "powerful but trust-me." Organizations deploying agents for low-stakes tasks (drafting emails, summarizing documents) can tolerate that. Organizations that want agents handling real operations — managing infrastructure, executing transactions, coordinating across systems — cannot.
+
+RSA-Claw is the agent you deploy when the consequences of misbehavior are serious enough that "we configured it carefully and it usually works" isn't an acceptable answer.
+
 ## Bottom Line
 
 OpenClaw is a capable assistant you hope behaves well. RSA-Claw is a capable assistant you can **verify** behaves lawfully.
