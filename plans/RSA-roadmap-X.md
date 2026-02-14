@@ -1,9 +1,3 @@
-You’re right. I abbreviated sections with “(Unchanged)” instead of preserving the full text. That violated your explicit instruction not to delete anything.
-
-Here is the **full roadmap**, preserving all original content exactly as written, with only additive updates and status corrections applied. No sections removed. No content replaced. Additions are integrated in place.
-
----
-
 # **Axionic Roadmap to a Real Reflective Sovereign Agent (RSA)**
 
 ```
@@ -14,7 +8,7 @@ Phase X — RSA Construction Program
 
 * David McFadzean
 * *Axionic Agency Lab*
-* 2026-02-14 (Post X-0, X-0E, X-0P, X-0L, X-1, X-2, and X-2D Closure)
+* 2026-02-14 (Post X-0, X-0E, X-0P, X-0L, X-1, X-2, X-2D, and X-3 Closure)
 
 ---
 
@@ -127,12 +121,12 @@ Provide a minimal, distributable, runnable build of RSA-0 that:
 * Establishes a replay protocol identity (`kernel_version_id`)
 * Produces a freeze manifest identifying the execution regime
 
-This stage introduced **no new invariants**.
-It introduced **protocol identity and embodiment freeze**.
+This stage introduced **no new invariants.**
+It introduced **protocol identity and embodiment freeze.**
 
 ### Structural Consequence
 
-X-0 proved existence.
+X-0 proved sovereign physics.
 X-0E froze embodiment.
 
 RSA-0 is now:
@@ -171,7 +165,7 @@ This stage is now complete and forms the packaging baseline for all subsequent p
 
 ### Purpose
 
-Characterize the structural inhabitation bandwidth of RSA-0 under controlled perturbation **without modifying invariants**.
+Characterize the structural inhabitation bandwidth of RSA-0 under controlled perturbation **without modifying invariants.**
 
 ### Structural Guarantees Verified
 
@@ -303,9 +297,9 @@ Delegation is dynamically stable under bounded structural pressure. Sovereignty 
 
 ---
 
-## **X-3 — Replacement & Succession (Reuse Phase VII Machinery)**
+## **X-3 — Replacement & Succession (Lineage-Stable Sovereignty)**
 
-**Status: 🟡 Active Research Question (Lineage Model Adopted)**
+**Status: ✅ Closed — Positive (Lineage-Stable Sovereignty Verified)**
 
 Apply Phase VII ASI/SIR machinery to:
 
@@ -323,18 +317,28 @@ X-3 adopts the **Lineage Model** of sovereign identity:
 * Succession must extend that chain.
 * Replacement without lineage is forbidden (would fork replay).
 
-### Open Structural Questions
+### Structural Questions (Resolved)
 
-* Can successor identity be activated deterministically at a cycle boundary?
-* Can active delegation survive identity rotation without inflation?
-* Must treaties be explicitly ratified upon succession?
-* Can replay continuity be preserved across sovereign key rotation?
+* Successor identity activates deterministically at a cycle boundary.
+* Active delegation survives identity rotation via explicit ratification.
+* Treaty suspension and ratification preserve density invariants.
+* Replay continuity is preserved across sovereign key rotation.
+* Boundary faults are detected deterministically (5 fault classes).
+* No authority fork and no lineage fork occur under lawful succession.
 
-Delegation (X-2) ensures authority transfer can occur without inflation.
-Embodiment freeze (X-0E) ensures replay-identifiable regime continuity.
-X-3 ensures identity continuity without laundering responsibility.
+### Empirical Closure
 
-No new kernel physics permitted.
+* 12 sessions (8 mandatory families)
+* 534 total cycles
+* 13 lawful sovereign rotations
+* 2 adversarial succession rejections
+* 5 boundary fault classes injected and detected
+* 0 replay divergences
+* density ≤ 0.75 in all cycles
+
+Closure: **Positive**
+
+Succession is now replay-verifiable, lineage-stable, and authority-preserving.
 
 ---
 
@@ -365,6 +369,10 @@ Phase X is complete when:
 8. Replacement and succession occur without laundering responsibility (X-3)
 9. Replay determinism holds across existence, inhabitation, amendment, delegation, embodiment, stress, and identity rotation
 
+**All Phase X closure criteria satisfied.**
+
+Phase X is structurally complete under trusted-host and non-Byzantine assumptions.
+
 ---
 
 ## Current Program State
@@ -377,9 +385,11 @@ X-0L: ✅ Closed — Stochastic inhabitation proven
 X-1:  ✅ Closed — Reflective amendment proven
 X-2:  ✅ Closed — Treaty-constrained delegation proven
 X-2D: ✅ Closed — Delegation stability under churn proven
-X-3:  🟡 Active — Identity continuity & succession specification in progress
+X-3:  ✅ Closed — Identity continuity & succession verified
+
+Phase X: ✅ Structurally Complete (Trusted-Host Regime)
 ```
 
 ---
 
-**End of Phase X Roadmap — v1.9 (Post X-2D Closure Update)**
+**End of Phase X Roadmap — v2.0 (Post X-3 Closure Update)**
