@@ -211,6 +211,9 @@ class Constitution:
     def is_network_enabled(self) -> bool:
         return self._data.get("io_policy", {}).get("network", {}).get("enabled", False)
 
+    def get_fetch_domains(self) -> List[str]:
+        return self._data.get("io_policy", {}).get("network", {}).get("fetch_domains", [])
+
     def max_candidates_per_cycle(self) -> int:
         return (
             self._data.get("reflection_policy", {})

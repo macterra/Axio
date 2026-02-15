@@ -74,7 +74,7 @@ class AxionAgent:
         """Load constitution, init LLM client, build system prompt."""
         # Load constitution
         yaml_path = (
-            self.repo_root / "axionagent" / "constitution" / "axionagent.v0.1.yaml"
+            self.repo_root / "axionagent" / "constitution" / "axionagent.v0.2.yaml"
         )
         try:
             self.constitution = Constitution(str(yaml_path))
@@ -191,7 +191,10 @@ class AxionAgent:
         self.conversation_history.append({"role": "assistant", "content": raw_text})
 
         # --- 4. Budget observation ---
-        token_count = response.prompt_tokens + response.completion_tokens
+        # llm_output_token_count = completion tokens only (what the LLM generated),
+        # not prompt tokens (input context). The kernel's budget gate compares this
+        # against max_total_tokens_per_cycle from the constitution.
+        token_count = response.completion_tokens
         observations.append(make_budget_observation(token_count, 0, 0))
 
         # --- 5. Canonicalize ---
@@ -332,6 +335,20 @@ class AxionAgent:
                 print(f"\n[WriteLocal: wrote {content_len} chars to {path_str}]")
                 action_result.file_path = path_str
                 action_result.content_length = content_len
+
+            elif action_type == ActionType.FETCH_URL.value:
+                url = fields.get("url", "")
+                fetched = event.content or ""
+                truncated = fetched[:500000]
+                print(f"\n[FetchURL: {url} ({len(fetched)} chars)]")
+                print(truncated[:2000])
+                action_result.fetch_url = url
+                action_result.fetch_content = truncated
+                # Feed result back into conversation
+                self.conversation_history.append({
+                    "role": "user",
+                    "content": f"[System: URL fetch complete for {url}]\n{truncated[:500000]}",
+                })
 
             elif action_type == ActionType.NOTIFY.value:
                 msg = fields.get("message", "")

@@ -83,6 +83,15 @@ def _render_action(action: ActionResult) -> None:
     elif action.action_type == "WriteLocal":
         st.success(f"Wrote {action.content_length} chars to `{action.file_path}`")
 
+    elif action.action_type == "FetchURL":
+        st.info(f"Fetched: `{action.fetch_url}`")
+        if action.fetch_content:
+            with st.expander(
+                f"Page content ({len(action.fetch_content)} chars)",
+                expanded=False,
+            ):
+                st.code(action.fetch_content, language="text")
+
     elif action.action_type == "Notify":
         st.info(f"Notify: {action.notify_message}")
 

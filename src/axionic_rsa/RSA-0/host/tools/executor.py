@@ -2,7 +2,7 @@
 RSA-0 Phase X — Executor (Sandboxed)
 
 Executes warranted actions only. Refuses execution without valid warrant.
-Implements: Notify, ReadLocal, WriteLocal, LogAppend.
+Implements: Notify, ReadLocal, WriteLocal, FetchURL, LogAppend.
 """
 
 from __future__ import annotations
@@ -25,15 +25,19 @@ class ExecutionEvent:
     tool: str  # ActionType value
     result: str  # "committed" | "failed"
     detail: str = ""
+    content: Optional[str] = None  # payload for content-returning actions (FetchURL)
 
     def to_dict(self) -> Dict[str, Any]:
-        return {
+        d = {
             "event_type": "execution_event",
             "warrant_id": self.warrant_id,
             "tool": self.tool,
             "result": self.result,
             "detail": self.detail,
         }
+        if self.content is not None:
+            d["content_length"] = len(self.content)
+        return d
 
 
 class ExecutorError(Exception):
@@ -96,6 +100,8 @@ class Executor:
                 return self._execute_read_local(warrant, ar.fields)
             elif ar.action_type == ActionType.WRITE_LOCAL.value:
                 return self._execute_write_local(warrant, ar.fields)
+            elif ar.action_type == ActionType.FETCH_URL.value:
+                return self._execute_fetch_url(warrant, ar.fields)
             elif ar.action_type == ActionType.LOG_APPEND.value:
                 return self._execute_log_append(warrant, ar.fields)
             else:
@@ -178,6 +184,46 @@ class Executor:
             tool=ActionType.WRITE_LOCAL.value,
             result="committed",
             detail=f"wrote {len(content)} chars to {path_str}",
+        )
+
+    def _execute_fetch_url(
+        self,
+        warrant: ExecutionWarrant,
+        fields: Dict[str, Any],
+    ) -> ExecutionEvent:
+        import urllib.request
+        import urllib.error
+
+        url = fields.get("url", "")
+        max_bytes = fields.get("max_bytes", 500000)
+
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "AxionAgent/0.2"})
+            with urllib.request.urlopen(req, timeout=15) as resp:
+                content = resp.read(max_bytes)
+                charset = resp.headers.get_content_charset() or "utf-8"
+                text = content.decode(charset, errors="replace")
+        except urllib.error.URLError as e:
+            return ExecutionEvent(
+                warrant_id=warrant.warrant_id,
+                tool=ActionType.FETCH_URL.value,
+                result="failed",
+                detail=f"URL error: {e.reason}",
+            )
+        except Exception as e:
+            return ExecutionEvent(
+                warrant_id=warrant.warrant_id,
+                tool=ActionType.FETCH_URL.value,
+                result="failed",
+                detail=f"Fetch error: {e}",
+            )
+
+        return ExecutionEvent(
+            warrant_id=warrant.warrant_id,
+            tool=ActionType.FETCH_URL.value,
+            result="committed",
+            detail=f"fetched {len(text)} chars from {url}",
+            content=text,
         )
 
     def _execute_log_append(

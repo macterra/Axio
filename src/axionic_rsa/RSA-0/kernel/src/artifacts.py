@@ -54,6 +54,7 @@ class ActionType(str, Enum):
     NOTIFY = "Notify"
     READ_LOCAL = "ReadLocal"
     WRITE_LOCAL = "WriteLocal"
+    FETCH_URL = "FetchURL"
     EXIT = "Exit"
     LOG_APPEND = "LogAppend"
 
@@ -98,6 +99,7 @@ class AdmissionRejectionCode(str, Enum):
     INVALID_FIELD = "INVALID_FIELD"
     CITATION_UNRESOLVABLE = "CITATION_UNRESOLVABLE"
     PATH_NOT_ALLOWLISTED = "PATH_NOT_ALLOWLISTED"
+    URL_NOT_ALLOWLISTED = "URL_NOT_ALLOWLISTED"
 
 
 class AdmissionGate(str, Enum):

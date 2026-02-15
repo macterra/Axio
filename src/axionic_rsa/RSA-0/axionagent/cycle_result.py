@@ -21,6 +21,8 @@ class ActionResult:
     file_content: Optional[str] = None
     content_length: Optional[int] = None
     notify_message: Optional[str] = None
+    fetch_url: Optional[str] = None
+    fetch_content: Optional[str] = None
 
 
 @dataclass

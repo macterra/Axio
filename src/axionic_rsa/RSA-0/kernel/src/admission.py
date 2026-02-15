@@ -319,6 +319,13 @@ class AdmissionPipeline:
             if not self._is_under_write_allowlist(path_str):
                 return False, AdmissionRejectionCode.PATH_NOT_ALLOWLISTED.value
 
+        elif ar.action_type == ActionType.FETCH_URL.value:
+            url = ar.fields.get("url", "")
+            if not self.constitution.is_network_enabled():
+                return False, AdmissionRejectionCode.URL_NOT_ALLOWLISTED.value
+            if not self._is_url_allowed(url):
+                return False, AdmissionRejectionCode.URL_NOT_ALLOWLISTED.value
+
         elif ar.action_type == ActionType.LOG_APPEND.value:
             # LogAppend writes to logs/ — check against write allowlist
             log_name = ar.fields.get("log_name", "")
@@ -349,6 +356,21 @@ class AdmissionPipeline:
         return any(
             resolved == root or _is_descendant(resolved, root)
             for root in self._write_roots
+        )
+
+    def _is_url_allowed(self, url: str) -> bool:
+        """Check if a URL is allowed by the fetch domain allowlist."""
+        from urllib.parse import urlparse
+        parsed = urlparse(url)
+        if parsed.scheme not in ("https", "http"):
+            return False
+        hostname = parsed.hostname or ""
+        domains = self.constitution.get_fetch_domains()
+        if "*" in domains:
+            return True
+        return any(
+            hostname == d or hostname.endswith("." + d)
+            for d in domains
         )
 
 
