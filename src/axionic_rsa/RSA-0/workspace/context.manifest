@@ -1,0 +1,7 @@
+# Persistent context files loaded into system prompt at startup.
+# One path per line, relative to repo root. Blank lines and # comments ignored.
+# The agent can update this file via WriteLocal to manage its own context.
+
+./workspace/identity.md
+./workspace/memory.md
+./workspace/research_axionic_papers.md

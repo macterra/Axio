@@ -34,7 +34,7 @@ _load_dotenv(_axio_root / ".env")
 import streamlit as st
 
 from axionagent.agent import AxionAgent
-from axionagent.cycle_result import ActionResult, CycleResult
+from axionagent.cycle_result import ActionResult, CycleResult, TurnResult
 
 
 # ---------------------------------------------------------------------------
@@ -124,16 +124,31 @@ def _render_kernel_feedback(result: CycleResult) -> None:
         st.caption("Tokens: " + " | ".join(parts))
 
 
+def _render_step(result: CycleResult) -> None:
+    """Render a single cycle step (prose + kernel feedback)."""
+    if result.prose:
+        st.markdown(result.prose)
+    _render_kernel_feedback(result)
+
+
 def _render_message(msg: dict) -> None:
     """Render a stored message for history replay."""
     with st.chat_message(msg["role"]):
         # Show images if present
         for img in msg.get("images", []):
             st.image(img["data"], width=300)
-        st.markdown(msg["content"])
-        meta = msg.get("meta")
-        if meta:
-            _render_kernel_feedback(meta)
+
+        steps = msg.get("steps")
+        if steps:
+            # Multi-step turn: render each step
+            for result in steps:
+                _render_step(result)
+        else:
+            # Simple message (user or single-step legacy)
+            st.markdown(msg["content"])
+            meta = msg.get("meta")
+            if meta:
+                _render_kernel_feedback(meta)
 
 
 # ---------------------------------------------------------------------------
@@ -217,30 +232,43 @@ def main() -> None:
             if user_text:
                 st.markdown(user_text)
 
-        # Run agent cycle
+        # Run agent turn (auto-continue loop)
         with st.chat_message("assistant"):
-            with st.spinner("Thinking..."):
-                cycle_result = agent._run_cycle(
-                    user_text or "[image]",
-                    content_blocks=content_blocks,
-                )
+            container = st.container()
+            all_steps: List[CycleResult] = []
 
-            if cycle_result.error:
-                st.error(f"LLM Error: {cycle_result.error}")
-                st.session_state.messages.append({
-                    "role": "assistant",
-                    "content": f"Error: {cycle_result.error}",
-                })
-            else:
-                st.markdown(cycle_result.prose)
-                _render_kernel_feedback(cycle_result)
-                st.session_state.messages.append({
-                    "role": "assistant",
-                    "content": cycle_result.prose,
-                    "meta": cycle_result,
-                })
+            def on_step(step_idx: int, result: CycleResult) -> None:
+                """Render each step as it completes."""
+                with container:
+                    if result.error:
+                        st.error(f"LLM Error: {result.error}")
+                    else:
+                        _render_step(result)
 
-        st.session_state.total_tokens += cycle_result.total_tokens
+            turn_result = agent._run_turn(
+                user_text or "[image]",
+                content_blocks=content_blocks,
+                on_step=on_step,
+            )
+            all_steps = turn_result.steps
+
+            if turn_result.stopped_by_limit:
+                with container:
+                    st.warning(
+                        f"Reached auto-continue limit "
+                        f"({agent.MAX_STEPS_PER_TURN} steps)"
+                    )
+
+        # Store as single assistant message with all steps
+        combined_prose = "\n\n".join(
+            s.prose for s in all_steps if s.prose
+        )
+        st.session_state.messages.append({
+            "role": "assistant",
+            "content": combined_prose,
+            "steps": all_steps,
+        })
+        st.session_state.total_tokens += turn_result.total_tokens
 
 
 if __name__ == "__main__":

@@ -44,7 +44,7 @@ class AnthropicClient:
     def __init__(
         self,
         model: str,
-        max_tokens: int = 4096,
+        max_tokens: int = 16384,
         temperature: float = 0.0,
         api_key: str | None = None,
     ):

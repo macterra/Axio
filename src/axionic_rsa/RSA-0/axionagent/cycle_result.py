@@ -7,8 +7,8 @@ used by the Streamlit UI (and any future non-CLI interface).
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional
+from dataclasses import dataclass, field
+from typing import List, Optional
 
 
 @dataclass
@@ -40,3 +40,26 @@ class CycleResult:
     action: Optional[ActionResult] = None
     candidate_count: int = 0
     parse_errors: int = 0
+
+
+@dataclass
+class TurnResult:
+    """Result of a full turn (one or more auto-continued cycles)."""
+    steps: List[CycleResult] = field(default_factory=list)
+
+    @property
+    def total_tokens(self) -> int:
+        return sum(s.total_tokens for s in self.steps)
+
+    @property
+    def final_prose(self) -> str:
+        """Prose from the last step (the final response to the user)."""
+        return self.steps[-1].prose if self.steps else ""
+
+    @property
+    def stopped_by_limit(self) -> bool:
+        """True if the turn ended because max_steps was reached."""
+        if not self.steps:
+            return False
+        last = self.steps[-1]
+        return last.decision_type == "ACTION" and last.action and last.action.committed

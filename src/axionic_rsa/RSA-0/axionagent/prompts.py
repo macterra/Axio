@@ -12,6 +12,38 @@ from typing import List
 from kernel.src.constitution import Constitution
 
 
+def _load_context_files(repo_root: Path) -> str:
+    """Load persistent context files listed in workspace/context.manifest.
+
+    The manifest is a plain text file with one relative path per line
+    (relative to repo_root). Blank lines and lines starting with # are
+    skipped. Files that don't exist are silently ignored.
+
+    The agent can manage its own context by writing to context.manifest
+    via WriteLocal — adding or removing files as needed.
+    """
+    manifest = repo_root / "workspace" / "context.manifest"
+    if not manifest.exists():
+        return ""
+
+    sections = []
+    for line in manifest.read_text("utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        path = (repo_root / line).resolve()
+        if not path.exists():
+            continue
+        content = path.read_text("utf-8").strip()
+        if content:
+            label = Path(line).name
+            sections.append(f"## {label}\n\n{content}")
+
+    if not sections:
+        return ""
+    return "\n\n---\n\n# Persistent Context\n\n" + "\n\n---\n\n".join(sections)
+
+
 def build_system_prompt(constitution: Constitution, repo_root: Path) -> str:
     """Build the system prompt from the loaded constitution."""
     version = constitution.version
@@ -95,4 +127,5 @@ Write paths: {', '.join(write_paths)}
 - If you cannot perform a requested action within your authority, explain why in prose.
 - Do not wrap the JSON block in markdown code fences. Output the raw JSON object directly.
 - Only include a JSON block when you need to perform a side effect. Pure conversation needs no JSON.
-"""
+- IMPORTANT: Include AT MOST ONE JSON action block per response. After your action executes, the system will automatically call you again with the result, and you can then perform the next action. Do NOT put multiple JSON blocks in a single response. When you have no more actions to perform, respond with prose only (no JSON block) and the turn ends. This lets you chain multi-step workflows (fetch a URL, then write a summary, etc.) without the user needing to intervene between steps.
+{_load_context_files(repo_root)}"""

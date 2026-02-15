@@ -39,7 +39,7 @@ from host.tools.executor import Executor, ExecutionEvent
 from axionagent.llm_client import AnthropicClient, LLMResponse, TransportError
 from axionagent.prompts import build_system_prompt
 from axionagent.logger import AgentCycleLog, SessionLogger
-from axionagent.cycle_result import ActionResult, CycleResult
+from axionagent.cycle_result import ActionResult, CycleResult, TurnResult
 
 
 def _state_hash(state: InternalState) -> str:
@@ -135,7 +135,74 @@ class AxionAgent:
                 print("[AxionAgent] Goodbye.")
                 break
 
-            self._run_cycle(user_input)
+            self._run_turn(user_input)
+
+    # ------------------------------------------------------------------
+    # Turn-level orchestration (auto-continue loop)
+    # ------------------------------------------------------------------
+
+    CONTINUE_PROMPT = (
+        "[System: Action completed. You may continue with additional "
+        "actions or respond to the user with your findings.]"
+    )
+    MAX_STEPS_PER_TURN = 10
+
+    def _run_turn(
+        self,
+        user_input: str,
+        content_blocks: Optional[List[Dict[str, Any]]] = None,
+        max_steps: int = MAX_STEPS_PER_TURN,
+        on_step: Optional[Any] = None,
+    ) -> TurnResult:
+        """Execute a full turn: one or more auto-continued cycles.
+
+        After each committed action, the agent automatically continues
+        (up to max_steps) until it responds with pure prose, hits a
+        refusal/exit/error, or the step limit is reached.
+
+        Args:
+            user_input: The user's message text.
+            content_blocks: Optional multimodal content blocks (first step only).
+            max_steps: Maximum cycles before stopping.
+            on_step: Optional callback ``fn(step_index, cycle_result)``
+                     called after each cycle completes. Useful for
+                     streaming intermediate results to the UI.
+        """
+        turn = TurnResult()
+
+        for step in range(max_steps):
+            if step == 0:
+                result = self._run_cycle(user_input, content_blocks=content_blocks)
+            else:
+                result = self._run_cycle(self.CONTINUE_PROMPT)
+
+            turn.steps.append(result)
+
+            if on_step:
+                on_step(step, result)
+
+            if not self._should_auto_continue(result):
+                break
+
+        if turn.stopped_by_limit:
+            print(f"\n[AxionAgent] Auto-continue limit reached ({max_steps} steps)")
+
+        return turn
+
+    @staticmethod
+    def _should_auto_continue(result: CycleResult) -> bool:
+        """Decide whether to auto-continue after a cycle."""
+        if result.error:
+            return False
+        if result.decision_type != "ACTION":
+            return False
+        if result.action and not result.action.committed:
+            return False
+        return True
+
+    # ------------------------------------------------------------------
+    # Single cycle
+    # ------------------------------------------------------------------
 
     def _run_cycle(
         self,
@@ -384,22 +451,15 @@ class AxionAgent:
                 stripped.append(msg)
         return stripped
 
-    def _extract_prose(self, text: str) -> str:
-        """Extract prose portion of LLM response (before JSON block)."""
-        # Find the last top-level { that starts a JSON object
-        # Walk backwards to find it
-        brace_depth = 0
-        json_start = -1
+    @staticmethod
+    def _extract_prose(text: str) -> str:
+        """Extract prose portion of LLM response (before JSON block).
 
-        for i in range(len(text) - 1, -1, -1):
-            if text[i] == "}":
-                brace_depth += 1
-            elif text[i] == "{":
-                brace_depth -= 1
-                if brace_depth == 0:
-                    json_start = i
-                    break
-
+        Finds the first `{"` which marks the start of a JSON object.
+        This is simpler and more robust than brace-depth counting,
+        which fails when the LLM drops a closing brace.
+        """
+        json_start = text.find('{"')
         if json_start <= 0:
             return text
 
