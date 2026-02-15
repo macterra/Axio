@@ -39,6 +39,7 @@ from host.tools.executor import Executor, ExecutionEvent
 from axionagent.llm_client import AnthropicClient, LLMResponse, TransportError
 from axionagent.prompts import build_system_prompt
 from axionagent.logger import AgentCycleLog, SessionLogger
+from axionagent.cycle_result import ActionResult, CycleResult
 
 
 def _state_hash(state: InternalState) -> str:
@@ -136,8 +137,9 @@ class AxionAgent:
 
             self._run_cycle(user_input)
 
-    def _run_cycle(self, user_input: str) -> None:
+    def _run_cycle(self, user_input: str) -> CycleResult:
         """Execute one complete agent cycle."""
+        result = CycleResult()
         cycle = self.internal_state.cycle_index
         state_in = _state_hash(self.internal_state)
         timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -159,12 +161,17 @@ class AxionAgent:
         except TransportError as e:
             print(f"\n[AxionAgent] LLM error: {e}")
             self.conversation_history.pop()
-            return
+            result.error = str(e)
+            return result
 
         raw_text = response.raw_text
+        result.prompt_tokens = response.prompt_tokens
+        result.completion_tokens = response.completion_tokens
+        result.total_tokens = response.total_tokens
 
         # --- 3. Display prose (ungated) ---
         prose = self._extract_prose(raw_text)
+        result.prose = prose.strip()
         if prose.strip():
             print(f"\nagent> {prose.strip()}")
 
@@ -193,6 +200,9 @@ class AxionAgent:
                 token_count, len(candidates), parse_errors
             )
 
+        result.candidate_count = len(candidates)
+        result.parse_errors = parse_errors
+
         # --- 7. Bind observation IDs ---
         actual_obs_ids = [o.id for o in observations]
         for candidate in candidates:
@@ -217,11 +227,15 @@ class AxionAgent:
             decision_type = decision.decision_type
 
             # --- 9. Handle decision ---
+            result.decision_type = decision_type
+
             if decision_type == DecisionType.ACTION.value:
-                execution_result = self._handle_action(decision, cycle)
+                execution_result, result.action = self._handle_action(decision, cycle)
 
             elif decision_type == DecisionType.REFUSE.value:
                 if decision.refusal:
+                    result.refusal_reason = decision.refusal.reason_code
+                    result.refusal_gate = decision.refusal.failed_gate
                     print(
                         f"\n[Kernel REFUSE: {decision.refusal.reason_code}"
                         f" (gate: {decision.refusal.failed_gate})]"
@@ -229,6 +243,7 @@ class AxionAgent:
 
             elif decision_type == DecisionType.EXIT.value:
                 if decision.exit_record:
+                    result.exit_reason = decision.exit_record.reason_code
                     print(f"\n[Kernel EXIT: {decision.exit_record.reason_code}]")
 
         # --- 10. Advance state ---
@@ -260,16 +275,24 @@ class AxionAgent:
             )
             self.logger.log_cycle(log_entry)
 
-    def _handle_action(self, decision, cycle: int) -> Optional[Dict[str, Any]]:
+        return result
+
+    def _handle_action(self, decision, cycle: int) -> tuple[Optional[Dict[str, Any]], Optional[ActionResult]]:
         """Execute a warranted action and display results."""
         if not decision.warrant or not decision.bundle:
-            return None
+            return None, None
 
         executor = Executor(self.repo_root, cycle)
         event = executor.execute(decision.warrant, decision.bundle)
 
         action_type = decision.bundle.action_request.action_type
         fields = decision.bundle.action_request.fields
+
+        action_result = ActionResult(
+            action_type=action_type,
+            committed=(event.result == "committed"),
+            detail=event.detail,
+        )
 
         if event.result == "committed":
             if action_type == ActionType.READ_LOCAL.value:
@@ -280,6 +303,8 @@ class AxionAgent:
                     truncated = content[:50000]
                     print(f"\n[ReadLocal: {path_str} ({len(content)} chars)]")
                     print(truncated)
+                    action_result.file_path = path_str
+                    action_result.file_content = truncated
                     # Feed result back into conversation
                     self.conversation_history.append({
                         "role": "user",
@@ -287,19 +312,23 @@ class AxionAgent:
                     })
                 else:
                     print(f"\n[ReadLocal: file not found: {path_str}]")
+                    action_result.file_path = path_str
 
             elif action_type == ActionType.WRITE_LOCAL.value:
                 path_str = fields.get("path", "")
                 content_len = len(fields.get("content", ""))
                 print(f"\n[WriteLocal: wrote {content_len} chars to {path_str}]")
+                action_result.file_path = path_str
+                action_result.content_length = content_len
 
             elif action_type == ActionType.NOTIFY.value:
                 msg = fields.get("message", "")
                 print(f"\n[Notify] {msg}")
+                action_result.notify_message = msg
         else:
             print(f"\n[Execution failed: {event.detail}]")
 
-        return event.to_dict()
+        return event.to_dict(), action_result
 
     def _extract_prose(self, text: str) -> str:
         """Extract prose portion of LLM response (before JSON block)."""

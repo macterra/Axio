@@ -1,0 +1,187 @@
+"""
+AxionAgent — Streamlit Chat UI
+
+Run via: cd src/axionic_rsa/RSA-0 && streamlit run axionagent/streamlit_app.py
+"""
+
+import os
+import sys
+from pathlib import Path
+
+# RSA-0 root is the parent of the axionagent/ package
+RSA0_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(RSA0_ROOT))
+
+
+def _load_dotenv(path: Path) -> None:
+    """Minimal .env loader (no external dependency)."""
+    if not path.exists():
+        return
+    for line in path.read_text().splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, _, value = line.partition("=")
+        os.environ.setdefault(key.strip(), value.strip())
+
+
+# Load .env before any imports that need API keys
+_axio_root = RSA0_ROOT.parent.parent.parent
+_load_dotenv(_axio_root / ".env")
+
+import streamlit as st
+
+from axionagent.agent import AxionAgent
+from axionagent.cycle_result import ActionResult, CycleResult
+
+
+# ---------------------------------------------------------------------------
+# Session state initialization
+# ---------------------------------------------------------------------------
+
+def _init_agent() -> AxionAgent:
+    """Create and start up the agent."""
+    agent = AxionAgent(repo_root=RSA0_ROOT)
+    if not agent.startup():
+        st.error(
+            "Agent startup failed. Check that ANTHROPIC_API_KEY is set "
+            "and the constitution file is valid."
+        )
+        st.stop()
+    return agent
+
+
+def _init_session() -> None:
+    """Initialize session state on first run."""
+    if "agent" not in st.session_state:
+        st.session_state.agent = _init_agent()
+        st.session_state.messages = []
+        st.session_state.total_tokens = 0
+
+
+# ---------------------------------------------------------------------------
+# Rendering helpers
+# ---------------------------------------------------------------------------
+
+def _render_action(action: ActionResult) -> None:
+    """Render an executed action in the chat."""
+    if not action.committed:
+        st.error(f"Execution failed: {action.detail}")
+        return
+
+    if action.action_type == "ReadLocal":
+        st.info(f"Read: `{action.file_path}`")
+        if action.file_content:
+            with st.expander(
+                f"File contents ({len(action.file_content)} chars)",
+                expanded=False,
+            ):
+                st.code(action.file_content[:10000], language="text")
+
+    elif action.action_type == "WriteLocal":
+        st.success(f"Wrote {action.content_length} chars to `{action.file_path}`")
+
+    elif action.action_type == "Notify":
+        st.info(f"Notify: {action.notify_message}")
+
+
+def _render_kernel_feedback(result: CycleResult) -> None:
+    """Render kernel decision metadata below the prose."""
+    if result.decision_type == "ACTION" and result.action:
+        _render_action(result.action)
+
+    elif result.decision_type == "REFUSE":
+        st.warning(
+            f"Kernel REFUSE: {result.refusal_reason} "
+            f"(gate: {result.refusal_gate})"
+        )
+
+    elif result.decision_type == "EXIT":
+        st.error(f"Kernel EXIT: {result.exit_reason}")
+
+    # Token usage
+    if result.total_tokens > 0:
+        parts = [
+            f"{result.prompt_tokens} in",
+            f"{result.completion_tokens} out",
+            f"{result.total_tokens} total",
+        ]
+        if result.candidate_count:
+            parts.append(f"{result.candidate_count} candidate(s)")
+        if result.parse_errors:
+            parts.append(f"{result.parse_errors} parse error(s)")
+        st.caption("Tokens: " + " | ".join(parts))
+
+
+def _render_message(msg: dict) -> None:
+    """Render a stored message for history replay."""
+    with st.chat_message(msg["role"]):
+        st.markdown(msg["content"])
+        meta = msg.get("meta")
+        if meta:
+            _render_kernel_feedback(meta)
+
+
+# ---------------------------------------------------------------------------
+# Main app
+# ---------------------------------------------------------------------------
+
+def main() -> None:
+    st.set_page_config(
+        page_title="AxionAgent",
+        page_icon="\u2693",
+        layout="wide",
+    )
+    st.title("AxionAgent")
+    st.caption("RSA-0 Sovereign Interactive Agent")
+
+    _init_session()
+    agent: AxionAgent = st.session_state.agent
+
+    # --- Sidebar ---
+    with st.sidebar:
+        st.markdown(f"**Session:** `{agent.session_id[:8]}...`")
+        st.markdown(f"**Constitution:** v{agent.constitution.version}")
+        st.markdown(f"**Model:** {os.environ.get('LLM_MODEL', 'claude-sonnet-4-20250514')}")
+        st.divider()
+        st.metric("Cycle", agent.internal_state.cycle_index)
+        st.metric("Total tokens", st.session_state.total_tokens)
+
+    # --- Conversation history ---
+    for msg in st.session_state.messages:
+        _render_message(msg)
+
+    # --- Chat input ---
+    if user_input := st.chat_input("Message AxionAgent..."):
+        # Display user message immediately
+        st.session_state.messages.append({"role": "user", "content": user_input})
+        with st.chat_message("user"):
+            st.markdown(user_input)
+
+        # Run agent cycle
+        with st.chat_message("assistant"):
+            with st.spinner("Thinking..."):
+                cycle_result = agent._run_cycle(user_input)
+
+            if cycle_result.error:
+                st.error(f"LLM Error: {cycle_result.error}")
+                st.session_state.messages.append({
+                    "role": "assistant",
+                    "content": f"Error: {cycle_result.error}",
+                })
+            else:
+                st.markdown(cycle_result.prose)
+                _render_kernel_feedback(cycle_result)
+                st.session_state.messages.append({
+                    "role": "assistant",
+                    "content": cycle_result.prose,
+                    "meta": cycle_result,
+                })
+
+        st.session_state.total_tokens += cycle_result.total_tokens
+
+
+if __name__ == "__main__":
+    main()
+else:
+    main()
