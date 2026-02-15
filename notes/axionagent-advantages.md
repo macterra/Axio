@@ -108,13 +108,13 @@ AxionAgent's trust scales **constitutionally**. Each new capability is a constit
 
 The advantages above aren't academic — they map directly to requirements that serious organizations already have but that current agent frameworks can't satisfy:
 
-- **Regulated industries** (finance, healthcare, legal) need audit trails that prove what an agent did and why, not just logs that narrate what happened. Replay determinism gives you that.
+- **Regulated industries** (finance, healthcare, legal) need audit trails that prove what an agent did and why, not just logs that narrate what happened. Replay determinism gives you that. (SOC 2 Type II requires demonstrable control effectiveness over time; HIPAA §164.312 requires access logging and audit controls; MiFID II Article 17 requires algorithmic trading accountability with reconstructible decision trails.)
 
-- **Enterprise security** requires bounded capability and revocable delegation — not "we gave the agent an API key and hope it stays in scope." Treaty-constrained delegation is exactly this.
+- **Enterprise security** requires bounded capability and revocable delegation — not "we gave the agent an API key and hope it stays in scope." Treaty-constrained delegation is exactly this. (ISO 27001 Annex A.9 access control; NIST SP 800-53 AC-6 least privilege.)
 
-- **Compliance** demands that policy changes are versioned, reviewed, and irreversible in the loosening direction. The amendment pipeline with cooling periods and monotonic ratchets is a governance framework, not just an agent feature.
+- **Compliance** demands that policy changes are versioned, reviewed, and irreversible in the loosening direction. The amendment pipeline with cooling periods and monotonic ratchets is a governance framework, not just an agent feature. (SOX Section 404 internal control documentation; FedRAMP continuous monitoring.)
 
-- **Liability** requires clear attribution. Every AxionAgent action traces back through a warrant to a constitutional authority citation. There's no ambiguity about what authorized what.
+- **Liability** requires clear attribution. Every AxionAgent action traces back through a warrant to a constitutional authority citation. There's no ambiguity about what authorized what. (EU AI Act Article 14 human oversight and traceability requirements.)
 
 - **Multi-tenant / multi-stakeholder** environments need formal boundaries between what different parties can do. Density-bounded delegation with explicit scope constraints is that boundary.
 
