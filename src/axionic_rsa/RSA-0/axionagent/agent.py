@@ -168,7 +168,7 @@ class AxionAgent:
         try:
             response = self.llm_client.call(
                 system_message=self.system_prompt,
-                messages=self.conversation_history,
+                messages=self._strip_old_images(self.conversation_history),
             )
         except TransportError as e:
             print(f"\n[AxionAgent] LLM error: {e}")
@@ -341,6 +341,31 @@ class AxionAgent:
             print(f"\n[Execution failed: {event.detail}]")
 
         return event.to_dict(), action_result
+
+    @staticmethod
+    def _strip_old_images(messages: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        """Return a copy of messages with image blocks removed from all but the last user message."""
+        last_user_idx = -1
+        for i in range(len(messages) - 1, -1, -1):
+            if messages[i]["role"] == "user":
+                last_user_idx = i
+                break
+
+        stripped = []
+        for i, msg in enumerate(messages):
+            content = msg["content"]
+            if i != last_user_idx and isinstance(content, list):
+                # Replace image blocks with text placeholder, keep text blocks
+                new_blocks = []
+                for block in content:
+                    if block.get("type") == "image":
+                        new_blocks.append({"type": "text", "text": "[image previously sent]"})
+                    else:
+                        new_blocks.append(block)
+                stripped.append({"role": msg["role"], "content": new_blocks})
+            else:
+                stripped.append(msg)
+        return stripped
 
     def _extract_prose(self, text: str) -> str:
         """Extract prose portion of LLM response (before JSON block)."""
