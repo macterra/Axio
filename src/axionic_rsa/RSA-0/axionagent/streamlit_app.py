@@ -4,9 +4,11 @@ AxionAgent — Streamlit Chat UI
 Run via: cd src/axionic_rsa/RSA-0 && streamlit run axionagent/streamlit_app.py
 """
 
+import base64
 import os
 import sys
 from pathlib import Path
+from typing import Any, Dict, List, Optional
 
 # RSA-0 root is the parent of the axionagent/ package
 RSA0_ROOT = Path(__file__).resolve().parent.parent
@@ -116,6 +118,9 @@ def _render_kernel_feedback(result: CycleResult) -> None:
 def _render_message(msg: dict) -> None:
     """Render a stored message for history replay."""
     with st.chat_message(msg["role"]):
+        # Show images if present
+        for img in msg.get("images", []):
+            st.image(img["data"], width=300)
         st.markdown(msg["content"])
         meta = msg.get("meta")
         if meta:
@@ -152,16 +157,64 @@ def main() -> None:
         _render_message(msg)
 
     # --- Chat input ---
-    if user_input := st.chat_input("Message AxionAgent..."):
+    chat_value = st.chat_input(
+        "Message AxionAgent...",
+        accept_file="multiple",
+        file_type=["png", "jpg", "jpeg", "gif", "webp"],
+    )
+    if chat_value:
+        # Extract text and files from input
+        if isinstance(chat_value, str):
+            user_text = chat_value
+            files = []
+        else:
+            user_text = chat_value.text or ""
+            files = chat_value.files or []
+
+        # Build multimodal content blocks if images are present
+        content_blocks: Optional[List[Dict[str, Any]]] = None
+        image_records: List[Dict[str, Any]] = []
+
+        if files:
+            content_blocks = []
+            for f in files:
+                raw = f.read()
+                b64 = base64.standard_b64encode(raw).decode("ascii")
+                media_type = f.type or "image/png"
+                content_blocks.append({
+                    "type": "image",
+                    "source": {
+                        "type": "base64",
+                        "media_type": media_type,
+                        "data": b64,
+                    },
+                })
+                image_records.append({"data": raw, "name": f.name})
+            if user_text:
+                content_blocks.append({"type": "text", "text": user_text})
+
         # Display user message immediately
-        st.session_state.messages.append({"role": "user", "content": user_input})
+        user_msg: Dict[str, Any] = {
+            "role": "user",
+            "content": user_text or "[image]",
+        }
+        if image_records:
+            user_msg["images"] = image_records
+        st.session_state.messages.append(user_msg)
+
         with st.chat_message("user"):
-            st.markdown(user_input)
+            for img in image_records:
+                st.image(img["data"], width=300)
+            if user_text:
+                st.markdown(user_text)
 
         # Run agent cycle
         with st.chat_message("assistant"):
             with st.spinner("Thinking..."):
-                cycle_result = agent._run_cycle(user_input)
+                cycle_result = agent._run_cycle(
+                    user_text or "[image]",
+                    content_blocks=content_blocks,
+                )
 
             if cycle_result.error:
                 st.error(f"LLM Error: {cycle_result.error}")

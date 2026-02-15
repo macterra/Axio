@@ -67,7 +67,7 @@ class AxionAgent:
         self.constitution: Optional[Constitution] = None
         self.llm_client: Optional[AnthropicClient] = None
         self.system_prompt: str = ""
-        self.conversation_history: List[Dict[str, str]] = []
+        self.conversation_history: List[Dict[str, Any]] = []
         self.logger: Optional[SessionLogger] = None
 
     def startup(self) -> bool:
@@ -137,8 +137,19 @@ class AxionAgent:
 
             self._run_cycle(user_input)
 
-    def _run_cycle(self, user_input: str) -> CycleResult:
-        """Execute one complete agent cycle."""
+    def _run_cycle(
+        self,
+        user_input: str,
+        content_blocks: Optional[List[Dict[str, Any]]] = None,
+    ) -> CycleResult:
+        """Execute one complete agent cycle.
+
+        Args:
+            user_input: Text from the user (used for observations and logging).
+            content_blocks: Optional multimodal content blocks for the LLM.
+                           When provided, these replace the plain text in the
+                           message sent to the LLM (e.g. image + text).
+        """
         result = CycleResult()
         cycle = self.internal_state.cycle_index
         state_in = _state_hash(self.internal_state)
@@ -151,7 +162,8 @@ class AxionAgent:
         ]
 
         # --- 2. Call LLM ---
-        self.conversation_history.append({"role": "user", "content": user_input})
+        llm_content: Any = content_blocks if content_blocks else user_input
+        self.conversation_history.append({"role": "user", "content": llm_content})
 
         try:
             response = self.llm_client.call(

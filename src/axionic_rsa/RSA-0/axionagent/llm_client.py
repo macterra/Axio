@@ -11,7 +11,7 @@ import hashlib
 import os
 import time
 from dataclasses import dataclass
-from typing import List, Dict
+from typing import Any, List, Dict
 
 
 class TransportError(Exception):
@@ -60,13 +60,15 @@ class AnthropicClient:
     def call(
         self,
         system_message: str,
-        messages: List[Dict[str, str]],
+        messages: List[Dict[str, Any]],
     ) -> LLMResponse:
         """Call the Anthropic Messages API with retry.
 
         Args:
             system_message: System prompt.
-            messages: List of {"role": "user"|"assistant", "content": "..."}.
+            messages: List of {"role": "user"|"assistant", "content": str | list}.
+                      Content can be a string or a list of content blocks
+                      (text, image) for multimodal input.
 
         Returns:
             LLMResponse with raw text and token usage.
