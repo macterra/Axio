@@ -2,7 +2,7 @@
 RSA-0 Phase X — Executor (Sandboxed)
 
 Executes warranted actions only. Refuses execution without valid warrant.
-Implements: Notify, ReadLocal, WriteLocal, FetchURL, LogAppend.
+Implements: Notify, ReadLocal, ListDir, WriteLocal, FetchURL, LogAppend.
 """
 
 from __future__ import annotations
@@ -98,6 +98,8 @@ class Executor:
                 return self._execute_notify(warrant, ar.fields)
             elif ar.action_type == ActionType.READ_LOCAL.value:
                 return self._execute_read_local(warrant, ar.fields)
+            elif ar.action_type == ActionType.LIST_DIR.value:
+                return self._execute_list_dir(warrant, ar.fields)
             elif ar.action_type == ActionType.WRITE_LOCAL.value:
                 return self._execute_write_local(warrant, ar.fields)
             elif ar.action_type == ActionType.FETCH_URL.value:
@@ -165,6 +167,40 @@ class Executor:
             tool=ActionType.READ_LOCAL.value,
             result="committed",
             detail=f"read {len(content)} chars from {path_str}",
+        )
+
+    def _execute_list_dir(
+        self,
+        warrant: ExecutionWarrant,
+        fields: Dict[str, Any],
+    ) -> ExecutionEvent:
+        path_str = fields.get("path", "")
+        resolved = (self.repo_root / path_str).resolve()
+
+        if not resolved.exists():
+            return ExecutionEvent(
+                warrant_id=warrant.warrant_id,
+                tool=ActionType.LIST_DIR.value,
+                result="failed",
+                detail=f"Directory not found: {resolved}",
+            )
+
+        if not resolved.is_dir():
+            return ExecutionEvent(
+                warrant_id=warrant.warrant_id,
+                tool=ActionType.LIST_DIR.value,
+                result="failed",
+                detail=f"Not a directory: {resolved}",
+            )
+
+        entries = sorted(p.name + ("/" if p.is_dir() else "") for p in resolved.iterdir())
+        listing = "\n".join(entries)
+        return ExecutionEvent(
+            warrant_id=warrant.warrant_id,
+            tool=ActionType.LIST_DIR.value,
+            result="committed",
+            detail=f"listed {len(entries)} entries in {path_str}",
+            content=listing,
         )
 
     def _execute_write_local(

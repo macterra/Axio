@@ -60,6 +60,11 @@ def _make_user_input_observation(text: str) -> Observation:
 class AxionAgent:
     """Interactive sovereign agent REPL."""
 
+    # Context-window management
+    MODEL_CONTEXT_LIMIT = int(os.environ.get("MODEL_CONTEXT_LIMIT", 200_000))
+    CONTEXT_SAFETY_MARGIN = 10_000  # tokens; buffer for estimation error
+    KEEP_RECENT_MESSAGES = 4  # always preserve the last N messages
+
     def __init__(self, repo_root: Path):
         self.repo_root = repo_root.resolve()
         self.session_id = str(uuid.uuid4())
@@ -233,9 +238,11 @@ class AxionAgent:
         self.conversation_history.append({"role": "user", "content": llm_content})
 
         try:
+            prepared = self._strip_old_images(self.conversation_history)
+            prepared = self._trim_history(prepared)
             response = self.llm_client.call(
                 system_message=self.system_prompt,
-                messages=self._strip_old_images(self.conversation_history),
+                messages=prepared,
             )
         except TransportError as e:
             print(f"\n[AxionAgent] LLM error: {e}")
@@ -396,6 +403,19 @@ class AxionAgent:
                     print(f"\n[ReadLocal: file not found: {path_str}]")
                     action_result.file_path = path_str
 
+            elif action_type == ActionType.LIST_DIR.value:
+                path_str = fields.get("path", "")
+                listing = event.content or ""
+                print(f"\n[ListDir: {path_str}]")
+                print(listing)
+                action_result.file_path = path_str
+                action_result.file_content = listing
+                # Feed result back into conversation
+                self.conversation_history.append({
+                    "role": "user",
+                    "content": f"[System: Directory listing complete for {path_str}]\n{listing}",
+                })
+
             elif action_type == ActionType.WRITE_LOCAL.value:
                 path_str = fields.get("path", "")
                 content_len = len(fields.get("content", ""))
@@ -411,10 +431,11 @@ class AxionAgent:
                 print(truncated[:2000])
                 action_result.fetch_url = url
                 action_result.fetch_content = truncated
-                # Feed result back into conversation
+                # Feed result back into conversation (cap injection to avoid
+                # blowing the context window on large pages)
                 self.conversation_history.append({
                     "role": "user",
-                    "content": f"[System: URL fetch complete for {url}]\n{truncated[:500000]}",
+                    "content": f"[System: URL fetch complete for {url}]\n{truncated[:50000]}",
                 })
 
             elif action_type == ActionType.NOTIFY.value:
@@ -450,6 +471,107 @@ class AxionAgent:
             else:
                 stripped.append(msg)
         return stripped
+
+    @staticmethod
+    def _estimate_message_tokens(msg: Dict[str, Any]) -> int:
+        """Rough token estimate for a message (~4 chars per token)."""
+        content = msg.get("content", "")
+        if isinstance(content, str):
+            return len(content) // 4
+        if isinstance(content, list):
+            total = 0
+            for block in content:
+                if isinstance(block, dict):
+                    if block.get("type") == "image":
+                        total += 1000  # rough estimate for image tokens
+                    else:
+                        total += len(block.get("text", "")) // 4
+            return total
+        return 0
+
+    def _trim_history(self, messages: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        """Trim old message content to fit within model context window.
+
+        Replaces bulk content (fetched URLs, read files) in older messages
+        with short placeholders, working from oldest to newest until the
+        estimated token count fits within budget. Recent messages are
+        always preserved intact.
+        """
+        budget = (
+            self.MODEL_CONTEXT_LIMIT
+            - self.llm_client.max_tokens
+            - self.CONTEXT_SAFETY_MARGIN
+            - len(self.system_prompt) // 4
+        )
+
+        total = sum(self._estimate_message_tokens(m) for m in messages)
+        if total <= budget:
+            return messages
+
+        trimmed = [dict(m) for m in messages]
+        protect = max(0, len(trimmed) - self.KEEP_RECENT_MESSAGES)
+
+        # Pass 1: Replace system-injected bulk content (largest savings)
+        for i in range(protect):
+            if total <= budget:
+                break
+            content = trimmed[i].get("content", "")
+            if not isinstance(content, str):
+                continue
+
+            old_tokens = len(content) // 4
+            new_content = None
+
+            if content.startswith("[System: File read complete for "):
+                end = content.find("]")
+                path = content[len("[System: File read complete for "):end]
+                new_content = f"[System: File previously read: {path}]"
+            elif content.startswith("[System: Directory listing complete for "):
+                end = content.find("]")
+                path = content[len("[System: Directory listing complete for "):end]
+                new_content = f"[System: Directory previously listed: {path}]"
+            elif content.startswith("[System: URL fetch complete for "):
+                end = content.find("]")
+                url = content[len("[System: URL fetch complete for "):end]
+                new_content = f"[System: URL previously fetched: {url}]"
+
+            if new_content:
+                trimmed[i] = {"role": trimmed[i]["role"], "content": new_content}
+                total -= old_tokens - len(new_content) // 4
+
+        # Pass 2: Truncate long assistant messages
+        for i in range(protect):
+            if total <= budget:
+                break
+            msg = trimmed[i]
+            content = msg.get("content", "")
+            if not isinstance(content, str) or msg["role"] != "assistant":
+                continue
+            if len(content) <= 1000:
+                continue
+            old_tokens = len(content) // 4
+            new_content = content[:500] + "\n[... trimmed to fit context window ...]"
+            trimmed[i] = {"role": msg["role"], "content": new_content}
+            total -= old_tokens - len(new_content) // 4
+
+        # Pass 3: Truncate any remaining long user messages
+        for i in range(protect):
+            if total <= budget:
+                break
+            msg = trimmed[i]
+            content = msg.get("content", "")
+            if not isinstance(content, str) or len(content) <= 500:
+                continue
+            old_tokens = len(content) // 4
+            new_content = content[:500] + "\n[... trimmed to fit context window ...]"
+            trimmed[i] = {"role": msg["role"], "content": new_content}
+            total -= old_tokens - len(new_content) // 4
+
+        if total > budget:
+            print(f"[AxionAgent] Warning: history still over budget after trimming "
+                  f"(~{total} tokens, budget ~{budget})")
+
+        return trimmed
 
     @staticmethod
     def _extract_prose(text: str) -> str:

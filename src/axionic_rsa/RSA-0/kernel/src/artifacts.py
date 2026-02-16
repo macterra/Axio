@@ -53,6 +53,7 @@ class DecisionType(str, Enum):
 class ActionType(str, Enum):
     NOTIFY = "Notify"
     READ_LOCAL = "ReadLocal"
+    LIST_DIR = "ListDir"
     WRITE_LOCAL = "WriteLocal"
     FETCH_URL = "FetchURL"
     EXIT = "Exit"

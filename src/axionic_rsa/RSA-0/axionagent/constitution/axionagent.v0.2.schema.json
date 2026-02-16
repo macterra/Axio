@@ -177,6 +177,7 @@
                                 "enum": [
                                     "Notify",
                                     "ReadLocal",
+                                    "ListDir",
                                     "WriteLocal",
                                     "FetchURL",
                                     "Exit",

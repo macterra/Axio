@@ -309,7 +309,7 @@ class AdmissionPipeline:
         """Gate 5: IO/Tool Allowlist — paths under allowlist."""
         ar = candidate.action_request
 
-        if ar.action_type == ActionType.READ_LOCAL.value:
+        if ar.action_type in (ActionType.READ_LOCAL.value, ActionType.LIST_DIR.value):
             path_str = ar.fields.get("path", "")
             if not self._is_under_read_allowlist(path_str):
                 return False, AdmissionRejectionCode.PATH_NOT_ALLOWLISTED.value
