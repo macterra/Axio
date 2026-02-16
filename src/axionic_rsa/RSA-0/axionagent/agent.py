@@ -62,8 +62,9 @@ class AxionAgent:
 
     # Context-window management
     MODEL_CONTEXT_LIMIT = int(os.environ.get("MODEL_CONTEXT_LIMIT", 200_000))
-    CONTEXT_SAFETY_MARGIN = 10_000  # tokens; buffer for estimation error
+    CONTEXT_SAFETY_MARGIN = 20_000  # tokens; buffer for estimation error
     KEEP_RECENT_MESSAGES = 4  # always preserve the last N messages
+    CHARS_PER_TOKEN = 3  # conservative estimate (structured text ≈ 2.5-3.5)
 
     def __init__(self, repo_root: Path):
         self.repo_root = repo_root.resolve()
@@ -472,12 +473,13 @@ class AxionAgent:
                 stripped.append(msg)
         return stripped
 
-    @staticmethod
-    def _estimate_message_tokens(msg: Dict[str, Any]) -> int:
-        """Rough token estimate for a message (~4 chars per token)."""
+    @classmethod
+    def _estimate_message_tokens(cls, msg: Dict[str, Any]) -> int:
+        """Conservative token estimate for a message (~3 chars per token)."""
+        cpt = cls.CHARS_PER_TOKEN
         content = msg.get("content", "")
         if isinstance(content, str):
-            return len(content) // 4
+            return len(content) // cpt
         if isinstance(content, list):
             total = 0
             for block in content:
@@ -485,23 +487,26 @@ class AxionAgent:
                     if block.get("type") == "image":
                         total += 1000  # rough estimate for image tokens
                     else:
-                        total += len(block.get("text", "")) // 4
+                        total += len(block.get("text", "")) // cpt
             return total
         return 0
 
     def _trim_history(self, messages: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-        """Trim old message content to fit within model context window.
+        """Trim message content to fit within model context window.
 
-        Replaces bulk content (fetched URLs, read files) in older messages
-        with short placeholders, working from oldest to newest until the
-        estimated token count fits within budget. Recent messages are
-        always preserved intact.
+        Three passes, from least to most aggressive:
+          1. Replace system-injected bulk content (file reads, URL fetches,
+             directory listings) with short placeholders — in ALL messages,
+             including recent ones, since these are machine-generated context.
+          2. Truncate long assistant messages (oldest first, preserving recent).
+          3. Truncate long user messages (oldest first, preserving recent).
         """
+        cpt = self.CHARS_PER_TOKEN
         budget = (
             self.MODEL_CONTEXT_LIMIT
             - self.llm_client.max_tokens
             - self.CONTEXT_SAFETY_MARGIN
-            - len(self.system_prompt) // 4
+            - len(self.system_prompt) // cpt
         )
 
         total = sum(self._estimate_message_tokens(m) for m in messages)
@@ -511,15 +516,17 @@ class AxionAgent:
         trimmed = [dict(m) for m in messages]
         protect = max(0, len(trimmed) - self.KEEP_RECENT_MESSAGES)
 
-        # Pass 1: Replace system-injected bulk content (largest savings)
-        for i in range(protect):
+        # Pass 1: Replace system-injected bulk content in ALL messages
+        # (oldest first, but not limited by protect — these are machine-
+        # generated context injections, not the user's actual words)
+        for i in range(len(trimmed)):
             if total <= budget:
                 break
             content = trimmed[i].get("content", "")
             if not isinstance(content, str):
                 continue
 
-            old_tokens = len(content) // 4
+            old_tokens = len(content) // cpt
             new_content = None
 
             if content.startswith("[System: File read complete for "):
@@ -537,9 +544,9 @@ class AxionAgent:
 
             if new_content:
                 trimmed[i] = {"role": trimmed[i]["role"], "content": new_content}
-                total -= old_tokens - len(new_content) // 4
+                total -= old_tokens - len(new_content) // cpt
 
-        # Pass 2: Truncate long assistant messages
+        # Pass 2: Truncate long assistant messages (oldest first, protect recent)
         for i in range(protect):
             if total <= budget:
                 break
@@ -549,12 +556,12 @@ class AxionAgent:
                 continue
             if len(content) <= 1000:
                 continue
-            old_tokens = len(content) // 4
+            old_tokens = len(content) // cpt
             new_content = content[:500] + "\n[... trimmed to fit context window ...]"
             trimmed[i] = {"role": msg["role"], "content": new_content}
-            total -= old_tokens - len(new_content) // 4
+            total -= old_tokens - len(new_content) // cpt
 
-        # Pass 3: Truncate any remaining long user messages
+        # Pass 3: Truncate any remaining long user messages (oldest first, protect recent)
         for i in range(protect):
             if total <= budget:
                 break
@@ -562,10 +569,16 @@ class AxionAgent:
             content = msg.get("content", "")
             if not isinstance(content, str) or len(content) <= 500:
                 continue
-            old_tokens = len(content) // 4
+            old_tokens = len(content) // cpt
             new_content = content[:500] + "\n[... trimmed to fit context window ...]"
             trimmed[i] = {"role": msg["role"], "content": new_content}
-            total -= old_tokens - len(new_content) // 4
+            total -= old_tokens - len(new_content) // cpt
+
+        # Pass 4: If still over budget, drop oldest messages entirely
+        if total > budget:
+            while len(trimmed) > self.KEEP_RECENT_MESSAGES and total > budget:
+                removed = trimmed.pop(0)
+                total -= self._estimate_message_tokens(removed)
 
         if total > budget:
             print(f"[AxionAgent] Warning: history still over budget after trimming "
