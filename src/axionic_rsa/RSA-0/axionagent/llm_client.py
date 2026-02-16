@@ -47,15 +47,23 @@ class AnthropicClient:
         max_tokens: int = 16384,
         temperature: float = 0.0,
         api_key: str | None = None,
+        auth_token: str | None = None,
     ):
         from anthropic import Anthropic
 
         self.model = model
         self.max_tokens = max_tokens
         self.temperature = temperature
-        self._client = Anthropic(
-            api_key=api_key or os.environ.get("ANTHROPIC_API_KEY", ""),
-        )
+
+        # Support both API key (x-api-key header) and OAuth token
+        # (Authorization: Bearer header). OAuth tokens use sk-ant-oat01- prefix.
+        token = auth_token or os.environ.get("ANTHROPIC_AUTH_TOKEN", "")
+        key = api_key or os.environ.get("ANTHROPIC_API_KEY", "")
+
+        if token:
+            self._client = Anthropic(auth_token=token)
+        else:
+            self._client = Anthropic(api_key=key)
 
     def call(
         self,
