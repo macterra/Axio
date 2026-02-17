@@ -1,4 +1,3 @@
-workspace/identity.md
-workspace/memory.md
-workspace/attention.md
-workspace/research_axionic_papers.md
+workspace/context/identity_prompt.md
+workspace/context/memory_prompt.md
+workspace/context/attention_prompt.md
