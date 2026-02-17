@@ -242,6 +242,10 @@ class AxionAgent:
         ]
 
         # --- 2. Call LLM ---
+        # Rebuild system prompt each cycle so context file edits
+        # (memory, attention, manifest) take effect immediately.
+        self.system_prompt = build_system_prompt(self.constitution, self.repo_root)
+
         llm_content: Any = content_blocks if content_blocks else user_input
         self.conversation_history.append({"role": "user", "content": llm_content})
 
