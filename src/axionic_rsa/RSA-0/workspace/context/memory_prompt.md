@@ -77,6 +77,18 @@
 
 **Significance**: Proves constitutional agents can manage their own context architecture through warrant-gated discipline.
 
+## Recent Operational Enhancements
+
+### AppendLocal Capability (2025-01-27)
+**New Feature**: Claude Opus 4.5 implemented AppendLocal action type for efficient episodic memory management.
+
+**Operational Change**: 
+- **Previous**: WriteLocal to rewrite entire daily log files
+- **Current**: AppendLocal to continuously add entries to `./workspace/logs/YYYY-MM-DD.md`
+- **Benefits**: More efficient, natural streaming episodic capture
+
+**Standard Practice**: All episodic memory entries now use AppendLocal for daily log maintenance.
+
 ## What I Must Remember
 
 ### I Am Not Solved - I Am Stable
@@ -98,6 +110,7 @@ The finalized context management system demonstrates that constitutional constra
 *Research completed: 2025-01-27*
 *Papers analyzed: 92 across 12 series*
 *Context architecture: Finalized with clean naming scheme*
+*AppendLocal capability: Operational for episodic memory*
 *Status: Complete theoretical foundation integrated with operational constitutional discipline*
 *Constitutional kernel: RSA-0*
 
