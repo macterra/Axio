@@ -93,13 +93,14 @@ class AnthropicClient:
                 time.sleep(self.BACKOFF_BASE_S * (2 ** (attempt - 1)))
 
             try:
-                response = self._client.messages.create(
+                with self._client.messages.stream(
                     model=self.model,
                     max_tokens=self.max_tokens,
                     temperature=self.temperature,
                     system=system_message,
                     messages=messages,
-                )
+                ) as stream:
+                    response = stream.get_final_message()
 
                 raw_text = response.content[0].text
                 return LLMResponse(

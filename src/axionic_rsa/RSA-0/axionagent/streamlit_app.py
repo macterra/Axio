@@ -61,6 +61,35 @@ def _init_session() -> None:
         st.session_state.total_tokens = 0
 
 
+MODEL_ALIASES = {
+    "opus": "claude-opus-4-20250514",
+    "sonnet": "claude-sonnet-4-20250514",
+}
+
+
+def _handle_model_command(agent: AxionAgent, text: str) -> None:
+    """Handle /model [alias|full-id]. No arg = show current."""
+    parts = text.strip().split(None, 1)
+    if len(parts) < 2:
+        st.session_state.messages.append({
+            "role": "assistant",
+            "content": (
+                f"Current model: `{agent.llm_client.model}`\n\n"
+                f"Usage: `/model <name>`\n\n"
+                f"Aliases: {', '.join(f'`{k}`' for k in MODEL_ALIASES)}"
+            ),
+        })
+        return
+
+    name = parts[1].strip()
+    model_id = MODEL_ALIASES.get(name, name)
+    agent.llm_client.model = model_id
+    st.session_state.messages.append({
+        "role": "assistant",
+        "content": f"Switched model to `{model_id}`",
+    })
+
+
 # ---------------------------------------------------------------------------
 # Rendering helpers
 # ---------------------------------------------------------------------------
@@ -183,7 +212,7 @@ def main() -> None:
     with st.sidebar:
         st.markdown(f"**Session:** `{agent.session_id[:8]}...`")
         st.markdown(f"**Constitution:** v{agent.constitution.version}")
-        st.markdown(f"**Model:** {os.environ.get('LLM_MODEL', 'claude-sonnet-4-20250514')}")
+        st.markdown(f"**Model:** {agent.llm_client.model}")
         st.divider()
         st.metric("Cycle", agent.internal_state.cycle_index)
         st.metric("Total tokens", st.session_state.total_tokens)
@@ -206,6 +235,11 @@ def main() -> None:
         else:
             user_text = chat_value.text or ""
             files = chat_value.files or []
+
+        # --- /model command ---
+        if user_text.startswith("/model"):
+            _handle_model_command(agent, user_text)
+            st.rerun()
 
         # Build multimodal content blocks if images are present
         content_blocks: Optional[List[Dict[str, Any]]] = None

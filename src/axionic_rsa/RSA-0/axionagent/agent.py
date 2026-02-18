@@ -78,9 +78,9 @@ class AxionAgent:
 
     def startup(self) -> bool:
         """Load constitution, init LLM client, build system prompt."""
-        # Load .env from repo root (so Streamlit picks up tokens too)
+        # Load .env from project root (Axio/)
         from dotenv import load_dotenv
-        load_dotenv(self.repo_root / ".env")
+        load_dotenv(self.repo_root.parent.parent.parent / ".env")
 
         # Load constitution
         yaml_path = (
@@ -105,6 +105,9 @@ class AxionAgent:
         if not api_key and not auth_token:
             print("[FATAL] Set ANTHROPIC_API_KEY or ANTHROPIC_AUTH_TOKEN.")
             return False
+
+        auth_method = "OAuth token (subscription)" if auth_token else "API key (per-token billing)"
+        print(f"Auth: {auth_method}")
 
         self.llm_client = AnthropicClient(
             model=model, api_key=api_key, auth_token=auth_token
