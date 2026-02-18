@@ -102,6 +102,8 @@ class Executor:
                 return self._execute_list_dir(warrant, ar.fields)
             elif ar.action_type == ActionType.WRITE_LOCAL.value:
                 return self._execute_write_local(warrant, ar.fields)
+            elif ar.action_type == ActionType.APPEND_LOCAL.value:
+                return self._execute_append_local(warrant, ar.fields)
             elif ar.action_type == ActionType.FETCH_URL.value:
                 return self._execute_fetch_url(warrant, ar.fields)
             elif ar.action_type == ActionType.LOG_APPEND.value:
@@ -220,6 +222,26 @@ class Executor:
             tool=ActionType.WRITE_LOCAL.value,
             result="committed",
             detail=f"wrote {len(content)} chars to {path_str}",
+        )
+
+    def _execute_append_local(
+        self,
+        warrant: ExecutionWarrant,
+        fields: Dict[str, Any],
+    ) -> ExecutionEvent:
+        path_str = fields.get("path", "")
+        content = fields.get("content", "")
+        resolved = (self.repo_root / path_str).resolve()
+
+        resolved.parent.mkdir(parents=True, exist_ok=True)
+        with open(resolved, "a", encoding="utf-8") as f:
+            f.write(content)
+
+        return ExecutionEvent(
+            warrant_id=warrant.warrant_id,
+            tool=ActionType.APPEND_LOCAL.value,
+            result="committed",
+            detail=f"appended {len(content)} chars to {path_str}",
         )
 
     def _execute_fetch_url(

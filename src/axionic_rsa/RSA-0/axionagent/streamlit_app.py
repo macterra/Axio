@@ -83,6 +83,18 @@ def _render_action(action: ActionResult) -> None:
     elif action.action_type == "WriteLocal":
         st.success(f"Wrote {action.content_length} chars to `{action.file_path}`")
 
+    elif action.action_type == "AppendLocal":
+        st.success(f"Appended {action.content_length} chars to `{action.file_path}`")
+
+    elif action.action_type == "ListDir":
+        st.info(f"Listed: `{action.file_path}`")
+        if action.file_content:
+            with st.expander(
+                f"Directory listing",
+                expanded=False,
+            ):
+                st.code(action.file_content, language="text")
+
     elif action.action_type == "FetchURL":
         st.info(f"Fetched: `{action.fetch_url}`")
         if action.fetch_content:

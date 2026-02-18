@@ -99,6 +99,21 @@ action_space:
         justification: true
       side_effect_class: "none"
 
+    - type: "AppendLocal"
+      description: "Append content to an allowlisted local path."
+      required_fields:
+        - name: "path"
+          type: "string"
+          constraints: ["must_be_under_allowlist_write"]
+        - name: "content"
+          type: "string"
+          max_len: 500000
+      requires:
+        authority_citations: true
+        scope_claim: true
+        justification: true
+      side_effect_class: "medium"
+
     - type: "FetchURL"
       description: "HTTP GET from an allowlisted domain. Returns page content as text."
       required_fields:

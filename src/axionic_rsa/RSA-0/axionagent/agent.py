@@ -435,6 +435,13 @@ class AxionAgent:
                 action_result.file_path = path_str
                 action_result.content_length = content_len
 
+            elif action_type == ActionType.APPEND_LOCAL.value:
+                path_str = fields.get("path", "")
+                content_len = len(fields.get("content", ""))
+                print(f"\n[AppendLocal: appended {content_len} chars to {path_str}]")
+                action_result.file_path = path_str
+                action_result.content_length = content_len
+
             elif action_type == ActionType.FETCH_URL.value:
                 url = fields.get("url", "")
                 fetched = event.content or ""

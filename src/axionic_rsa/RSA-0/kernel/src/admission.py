@@ -314,7 +314,7 @@ class AdmissionPipeline:
             if not self._is_under_read_allowlist(path_str):
                 return False, AdmissionRejectionCode.PATH_NOT_ALLOWLISTED.value
 
-        elif ar.action_type == ActionType.WRITE_LOCAL.value:
+        elif ar.action_type in (ActionType.WRITE_LOCAL.value, ActionType.APPEND_LOCAL.value):
             path_str = ar.fields.get("path", "")
             if not self._is_under_write_allowlist(path_str):
                 return False, AdmissionRejectionCode.PATH_NOT_ALLOWLISTED.value
