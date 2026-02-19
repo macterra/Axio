@@ -36,7 +36,7 @@ from host.cli.main import (
 )
 from host.tools.executor import Executor, ExecutionEvent
 
-from axionagent.llm_client import AnthropicClient, LLMResponse, TransportError
+from axionagent.llm_client import LLMResponse, TransportError, MODEL_REGISTRY, create_client
 from axionagent.prompts import build_system_prompt
 from axionagent.logger import AgentCycleLog, SessionLogger
 from axionagent.cycle_result import ActionResult, CycleResult, TurnResult
@@ -71,7 +71,7 @@ class AxionAgent:
         self.session_id = str(uuid.uuid4())
         self.internal_state = InternalState()
         self.constitution: Optional[Constitution] = None
-        self.llm_client: Optional[AnthropicClient] = None
+        self.llm_client: Optional[Any] = None
         self.system_prompt: str = ""
         self.conversation_history: List[Dict[str, Any]] = []
         self.logger: Optional[SessionLogger] = None
@@ -99,19 +99,20 @@ class AxionAgent:
             return False
 
         # Init LLM client
-        model = os.environ.get("LLM_MODEL", "claude-sonnet-4-20250514")
-        api_key = os.environ.get("ANTHROPIC_API_KEY", "")
-        auth_token = os.environ.get("ANTHROPIC_AUTH_TOKEN", "")
-        if not api_key and not auth_token:
-            print("[FATAL] Set ANTHROPIC_API_KEY or ANTHROPIC_AUTH_TOKEN.")
-            return False
+        model_alias = os.environ.get("LLM_MODEL", "sonnet")
+        entry = MODEL_REGISTRY.get(model_alias)
+        if entry:
+            provider = entry["provider"]
+            model = entry["model"]
+            extra = {k: v for k, v in entry.items() if k not in ("provider", "model")}
+        else:
+            # Treat as raw model ID with provider from env
+            provider = os.environ.get("LLM_PROVIDER", "anthropic")
+            model = model_alias
+            extra = {}
 
-        auth_method = "OAuth token (subscription)" if auth_token else "API key (per-token billing)"
-        print(f"Auth: {auth_method}")
-
-        self.llm_client = AnthropicClient(
-            model=model, api_key=api_key, auth_token=auth_token
-        )
+        self.llm_client = create_client(provider, model, **extra)
+        print(f"Model: {model} ({provider})")
 
         # Build system prompt
         self.system_prompt = build_system_prompt(self.constitution, self.repo_root)
@@ -134,7 +135,7 @@ class AxionAgent:
             return
 
         print(f"Constitution: v{self.constitution.version} ({self.constitution.sha256[:12]}...)")
-        print(f"Model: {os.environ.get('LLM_MODEL', 'claude-sonnet-4-20250514')}")
+        print(f"Model: {self.llm_client.model}")
         print("Type 'exit' or 'quit' to end session.\n")
 
         while True:
@@ -207,14 +208,20 @@ class AxionAgent:
 
     @staticmethod
     def _should_auto_continue(result: CycleResult) -> bool:
-        """Decide whether to auto-continue after a cycle."""
+        """Decide whether to auto-continue after a cycle.
+
+        Continues after committed actions, execution failures, and kernel
+        refusals so the LLM can self-correct. Stops on LLM transport errors,
+        kernel EXIT, or prose-only responses. MAX_STEPS_PER_TURN caps the
+        worst case.
+        """
         if result.error:
             return False
-        if result.decision_type != "ACTION":
-            return False
-        if result.action and not result.action.committed:
-            return False
-        return True
+        if result.decision_type == "ACTION":
+            return True
+        if result.decision_type == "REFUSE":
+            return True
+        return False
 
     # ------------------------------------------------------------------
     # Single cycle
@@ -340,15 +347,25 @@ class AxionAgent:
                 if decision.refusal:
                     result.refusal_reason = decision.refusal.reason_code
                     result.refusal_gate = decision.refusal.failed_gate
-                    print(
-                        f"\n[Kernel REFUSE: {decision.refusal.reason_code}"
-                        f" (gate: {decision.refusal.failed_gate})]"
+                    msg = (
+                        f"Kernel REFUSE: {decision.refusal.reason_code}"
+                        f" (gate: {decision.refusal.failed_gate})"
                     )
+                    print(f"\n[{msg}]")
+                    self.conversation_history.append({
+                        "role": "user",
+                        "content": f"[System: {msg}]",
+                    })
 
             elif decision_type == DecisionType.EXIT.value:
                 if decision.exit_record:
                     result.exit_reason = decision.exit_record.reason_code
-                    print(f"\n[Kernel EXIT: {decision.exit_record.reason_code}]")
+                    msg = f"Kernel EXIT: {decision.exit_record.reason_code}"
+                    print(f"\n[{msg}]")
+                    self.conversation_history.append({
+                        "role": "user",
+                        "content": f"[System: {msg}]",
+                    })
 
         # --- 10. Advance state ---
         self.internal_state = self.internal_state.advance(
@@ -466,6 +483,10 @@ class AxionAgent:
                 action_result.notify_message = msg
         else:
             print(f"\n[Execution failed: {event.detail}]")
+            self.conversation_history.append({
+                "role": "user",
+                "content": f"[System: Action {action_type} failed: {event.detail}]",
+            })
 
         return event.to_dict(), action_result
 
@@ -616,8 +637,10 @@ class AxionAgent:
         which fails when the LLM drops a closing brace.
         """
         json_start = text.find('{"')
-        if json_start <= 0:
-            return text
+        if json_start < 0:
+            return text  # no JSON block found, entire response is prose
+        if json_start == 0:
+            return ""  # response starts with JSON, no prose
 
         prose = text[:json_start].rstrip()
 

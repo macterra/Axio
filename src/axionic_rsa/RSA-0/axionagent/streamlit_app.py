@@ -35,6 +35,7 @@ import streamlit as st
 
 from axionagent.agent import AxionAgent
 from axionagent.cycle_result import ActionResult, CycleResult, TurnResult
+from axionagent.llm_client import MODEL_REGISTRY, create_client
 
 
 # ---------------------------------------------------------------------------
@@ -61,33 +62,38 @@ def _init_session() -> None:
         st.session_state.total_tokens = 0
 
 
-MODEL_ALIASES = {
-    "opus": "claude-opus-4-20250514",
-    "sonnet": "claude-sonnet-4-20250514",
-}
-
-
 def _handle_model_command(agent: AxionAgent, text: str) -> None:
-    """Handle /model [alias|full-id]. No arg = show current."""
+    """Handle /model [alias]. No arg = show current model and available aliases."""
     parts = text.strip().split(None, 1)
     if len(parts) < 2:
+        aliases = ", ".join(f"`{k}` ({v['model']})" for k, v in MODEL_REGISTRY.items())
         st.session_state.messages.append({
             "role": "assistant",
             "content": (
                 f"Current model: `{agent.llm_client.model}`\n\n"
                 f"Usage: `/model <name>`\n\n"
-                f"Aliases: {', '.join(f'`{k}`' for k in MODEL_ALIASES)}"
+                f"Available: {aliases}"
             ),
         })
         return
 
     name = parts[1].strip()
-    model_id = MODEL_ALIASES.get(name, name)
-    agent.llm_client.model = model_id
-    st.session_state.messages.append({
-        "role": "assistant",
-        "content": f"Switched model to `{model_id}`",
-    })
+    entry = MODEL_REGISTRY.get(name)
+    if entry:
+        provider = entry["provider"]
+        model_id = entry["model"]
+        extra = {k: v for k, v in entry.items() if k not in ("provider", "model")}
+        agent.llm_client = create_client(provider, model_id, **extra)
+        st.session_state.messages.append({
+            "role": "assistant",
+            "content": f"Switched to `{model_id}` ({provider})",
+        })
+    else:
+        available = ", ".join(f"`{k}`" for k in MODEL_REGISTRY)
+        st.session_state.messages.append({
+            "role": "assistant",
+            "content": f"Unknown model `{name}`. Available: {available}",
+        })
 
 
 # ---------------------------------------------------------------------------
