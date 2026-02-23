@@ -462,6 +462,18 @@ class AxionAgent:
                 action_result.file_path = path_str
                 action_result.content_length = content_len
 
+            elif action_type == ActionType.SEARCH_LOCAL.value:
+                query = fields.get("query", "")
+                results = event.content or ""
+                truncated = results[:50000]
+                print(f"\n[SearchLocal: '{query}' ({len(results)} chars)]")
+                print(truncated[:2000])
+                action_result.file_content = truncated
+                self.conversation_history.append({
+                    "role": "user",
+                    "content": f"[System: Search complete for '{query}']\n{truncated}",
+                })
+
             elif action_type == ActionType.FETCH_URL.value:
                 url = fields.get("url", "")
                 fetched = event.content or ""

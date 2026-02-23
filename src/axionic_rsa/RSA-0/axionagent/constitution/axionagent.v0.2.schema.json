@@ -179,6 +179,7 @@
                                     "ReadLocal",
                                     "ListDir",
                                     "WriteLocal",
+                                    "SearchLocal",
                                     "AppendLocal",
                                     "FetchURL",
                                     "Exit",
@@ -278,8 +279,8 @@
                             }
                         }
                     },
-                    "minItems": 8,
-                    "maxItems": 8
+                    "minItems": 9,
+                    "maxItems": 9
                 }
             }
         },

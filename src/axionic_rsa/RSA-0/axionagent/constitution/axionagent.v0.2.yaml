@@ -99,6 +99,18 @@ action_space:
         justification: true
       side_effect_class: "none"
 
+    - type: "SearchLocal"
+      description: "Search local markdown files using keyword search (BM25)."
+      required_fields:
+        - name: "query"
+          type: "string"
+          max_len: 1000
+      requires:
+        authority_citations: true
+        scope_claim: true
+        justification: true
+      side_effect_class: "none"
+
     - type: "AppendLocal"
       description: "Append content to an allowlisted local path."
       required_fields:

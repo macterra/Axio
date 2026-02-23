@@ -104,6 +104,8 @@ class Executor:
                 return self._execute_write_local(warrant, ar.fields)
             elif ar.action_type == ActionType.APPEND_LOCAL.value:
                 return self._execute_append_local(warrant, ar.fields)
+            elif ar.action_type == ActionType.SEARCH_LOCAL.value:
+                return self._execute_search_local(warrant, ar.fields)
             elif ar.action_type == ActionType.FETCH_URL.value:
                 return self._execute_fetch_url(warrant, ar.fields)
             elif ar.action_type == ActionType.LOG_APPEND.value:
@@ -242,6 +244,50 @@ class Executor:
             tool=ActionType.APPEND_LOCAL.value,
             result="committed",
             detail=f"appended {len(content)} chars to {path_str}",
+        )
+
+    def _execute_search_local(
+        self,
+        warrant: ExecutionWarrant,
+        fields: Dict[str, Any],
+    ) -> ExecutionEvent:
+        import subprocess
+
+        query = fields.get("query", "")
+
+        try:
+            subprocess.run(
+                ["qmd", "update"],
+                capture_output=True, text=True, timeout=30,
+            )
+            result = subprocess.run(
+                ["qmd", "search", query, "-c", "workspace", "-n", "10", "--json"],
+                capture_output=True,
+                text=True,
+                timeout=30,
+            )
+            if result.returncode != 0:
+                return ExecutionEvent(
+                    warrant_id=warrant.warrant_id,
+                    tool=ActionType.SEARCH_LOCAL.value,
+                    result="failed",
+                    detail=f"qmd error: {result.stderr.strip()}",
+                )
+            output = result.stdout
+        except Exception as e:
+            return ExecutionEvent(
+                warrant_id=warrant.warrant_id,
+                tool=ActionType.SEARCH_LOCAL.value,
+                result="failed",
+                detail=f"Search error: {e}",
+            )
+
+        return ExecutionEvent(
+            warrant_id=warrant.warrant_id,
+            tool=ActionType.SEARCH_LOCAL.value,
+            result="committed",
+            detail=f"found results for '{query}'",
+            content=output,
         )
 
     def _execute_fetch_url(

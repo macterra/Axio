@@ -56,6 +56,7 @@ class ActionType(str, Enum):
     LIST_DIR = "ListDir"
     WRITE_LOCAL = "WriteLocal"
     APPEND_LOCAL = "AppendLocal"
+    SEARCH_LOCAL = "SearchLocal"
     FETCH_URL = "FetchURL"
     EXIT = "Exit"
     LOG_APPEND = "LogAppend"

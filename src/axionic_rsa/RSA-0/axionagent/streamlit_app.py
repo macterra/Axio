@@ -130,6 +130,15 @@ def _render_action(action: ActionResult) -> None:
             ):
                 st.code(action.file_content, language="text")
 
+    elif action.action_type == "SearchLocal":
+        st.info(f"Searched: `{action.detail}`")
+        if action.file_content:
+            with st.expander(
+                f"Search results",
+                expanded=False,
+            ):
+                st.code(action.file_content[:10000], language="json")
+
     elif action.action_type == "FetchURL":
         st.info(f"Fetched: `{action.fetch_url}`")
         if action.fetch_content:

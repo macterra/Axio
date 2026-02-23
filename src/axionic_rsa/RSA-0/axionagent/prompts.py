@@ -7,6 +7,7 @@ Builds the system prompt dynamically from the constitution.
 from __future__ import annotations
 
 import os
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import List
 
@@ -97,7 +98,11 @@ def build_system_prompt(constitution: Constitution, repo_root: Path) -> str:
         f"  - constitution:v{version}#{cid}" for cid in clause_ids
     )
 
+    now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+
     return f"""You are AxionAgent, a sovereign assistant operating under the RSA-0 constitutional kernel.
+
+Current date and time: {now}
 
 You help users by answering questions, performing file operations, and fetching web pages. You operate in two layers:
 
