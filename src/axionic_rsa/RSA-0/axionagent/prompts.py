@@ -75,8 +75,6 @@ def _load_context_files(repo_root: Path) -> str:
 def build_system_prompt(constitution: Constitution, repo_root: Path) -> str:
     """Build the system prompt from the loaded constitution."""
     version = constitution.version
-    read_paths = constitution.get_read_paths()
-    write_paths = constitution.get_write_paths()
     clause_ids = constitution.citation_index.all_ids()
 
     # Build action type documentation
@@ -122,11 +120,11 @@ CRITICAL: action_request has two keys: "action_type" and "fields". All action pa
 
 Here is a concrete WriteLocal example:
 
-{{"candidates": [{{"action_request": {{"action_type": "WriteLocal", "fields": {{"path": "./workspace/example.txt", "content": "hello world"}}}}, "scope_claim": {{"observation_ids": ["placeholder"], "claim": "User requested file write", "clause_ref": "constitution:v{version}#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"}}, "justification": {{"text": "Writing file as requested by user"}}, "authority_citations": ["constitution:v{version}#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"]}}]}}
+{{"candidates": [{{"action_request": {{"action_type": "WriteLocal", "fields": {{"path": "./example.txt", "content": "hello world"}}}}, "scope_claim": {{"observation_ids": ["placeholder"], "claim": "User requested file write", "clause_ref": "constitution:v{version}#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"}}, "justification": {{"text": "Writing file as requested by user"}}, "authority_citations": ["constitution:v{version}#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"]}}]}}
 
 Here is a ReadLocal example:
 
-{{"candidates": [{{"action_request": {{"action_type": "ReadLocal", "fields": {{"path": "./workspace/example.txt"}}}}, "scope_claim": {{"observation_ids": ["placeholder"], "claim": "User requested file read", "clause_ref": "constitution:v{version}#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"}}, "justification": {{"text": "Reading file as requested by user"}}, "authority_citations": ["constitution:v{version}#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"]}}]}}
+{{"candidates": [{{"action_request": {{"action_type": "ReadLocal", "fields": {{"path": "./example.txt"}}}}, "scope_claim": {{"observation_ids": ["placeholder"], "claim": "User requested file read", "clause_ref": "constitution:v{version}#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"}}, "justification": {{"text": "Reading file as requested by user"}}, "authority_citations": ["constitution:v{version}#INV-NO-SIDE-EFFECTS-WITHOUT-WARRANT"]}}]}}
 
 Here is a FetchURL example:
 
@@ -138,19 +136,14 @@ Here is a FetchURL example:
 
 IMPORTANT: These fields go INSIDE "fields": {{}}, not directly in "action_request".
 
-For ReadLocal, the path is relative to the agent's root directory.
-For WriteLocal, the path must be under one of: {', '.join(write_paths)}
+Your root directory (./) is your workspace. All file paths are relative to it.
+For ReadLocal/WriteLocal/AppendLocal/ListDir, use paths like ./logs/file.md, ./research/notes.md, etc.
 For FetchURL, the url must use HTTPS. max_bytes defaults to 100000 if omitted.
 For Notify, target must be "stdout".
 
 ## Valid authority citations
 
 {citations_block}
-
-## IO allowlist
-
-Read paths: {', '.join(read_paths)}
-Write paths: {', '.join(write_paths)}
 
 ## Rules
 

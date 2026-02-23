@@ -68,6 +68,7 @@ class AxionAgent:
 
     def __init__(self, repo_root: Path):
         self.repo_root = repo_root.resolve()
+        self.agent_root = (self.repo_root / "workspace").resolve()
         self.session_id = str(uuid.uuid4())
         self.internal_state = InternalState()
         self.constitution: Optional[Constitution] = None
@@ -331,7 +332,7 @@ class AxionAgent:
                 constitution=self.constitution,
                 internal_state=self.internal_state,
                 candidates=candidates,
-                repo_root=self.repo_root,
+                repo_root=self.agent_root,
             )
 
             decision = output.decision
@@ -403,7 +404,7 @@ class AxionAgent:
         if not decision.warrant or not decision.bundle:
             return None, None
 
-        executor = Executor(self.repo_root, cycle)
+        executor = Executor(self.agent_root, cycle)
         event = executor.execute(decision.warrant, decision.bundle)
 
         action_type = decision.bundle.action_request.action_type
@@ -418,7 +419,7 @@ class AxionAgent:
         if event.result == "committed":
             if action_type == ActionType.READ_LOCAL.value:
                 path_str = fields.get("path", "")
-                resolved = (self.repo_root / path_str).resolve()
+                resolved = (self.agent_root / path_str).resolve()
                 if resolved.exists():
                     content = resolved.read_text("utf-8")
                     truncated = content[:50000]

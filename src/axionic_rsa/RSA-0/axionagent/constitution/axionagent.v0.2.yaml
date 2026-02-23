@@ -272,8 +272,7 @@ io_policy:
     read_paths:
       - "./"
     write_paths:
-      - "./workspace/"
-      - "./logs/"
+      - "./"
   network:
     enabled: true
     fetch_domains:
