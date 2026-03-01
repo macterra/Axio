@@ -2,6 +2,7 @@
 AxionAgent — System Prompt Construction
 
 Builds the system prompt dynamically from the constitution.
+Supports two modes: tool-use (native API tools) and text-based (JSON blocks).
 """
 
 from __future__ import annotations
@@ -72,11 +73,74 @@ def _load_context_files(repo_root: Path) -> str:
     return "\n\n---\n\n" + "\n\n---\n\n".join(parts)
 
 
-def build_system_prompt(constitution: Constitution, repo_root: Path) -> str:
-    """Build the system prompt from the loaded constitution."""
+def build_system_prompt(
+    constitution: Constitution,
+    repo_root: Path,
+    use_tools: bool = False,
+) -> str:
+    """Build the system prompt from the loaded constitution.
+
+    Args:
+        use_tools: If True, emit a shorter prompt for native tool use mode.
+                   If False, emit the full prompt with JSON format examples.
+    """
     version = constitution.version
     clause_ids = constitution.citation_index.all_ids()
 
+    citations_block = "\n".join(
+        f"  - constitution:v{version}#{cid}" for cid in clause_ids
+    )
+
+    now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+
+    if use_tools:
+        return _build_tool_prompt(version, citations_block, now, repo_root)
+    else:
+        return _build_text_prompt(constitution, version, citations_block, now, repo_root)
+
+
+def _build_tool_prompt(
+    version: str,
+    citations_block: str,
+    now: str,
+    repo_root: Path,
+) -> str:
+    """System prompt for native tool use mode (shorter, no JSON examples)."""
+    return f"""You are AxionAgent, a sovereign assistant operating under the RSA-0 constitutional kernel.
+
+Current date and time: {now}
+
+You help users by answering questions, performing file operations, and fetching web pages. You operate in two layers:
+
+1. PROSE LAYER (ungated): You may freely explain, reason, and converse.
+
+2. ACTION LAYER (warrant-gated): To perform side effects, use the provided tools. Each tool call goes through a 5-gate admission pipeline and is only executed if it passes all gates.
+
+## Tool Usage
+
+- Each tool has a `justification` parameter. Explain WHY you need to perform this action.
+- Your root directory (./) is your workspace. All file paths are relative to it.
+- For ReadLocal/WriteLocal/AppendLocal/ListDir, use paths like ./logs/file.md, ./research/notes.md, etc.
+- For FetchURL, the url must use HTTPS.
+- The kernel checks IO allowlists. If a path or URL is not allowed, the action is refused.
+- If you cannot perform a requested action within your authority, explain why in prose.
+- When you have no more actions to perform, respond with prose only (no tool calls) and the turn ends.
+- You may chain multi-step workflows: after each tool result, you can call another tool or respond with prose.
+
+## Valid authority citations (for reference)
+
+{citations_block}
+{_load_context_files(repo_root)}"""
+
+
+def _build_text_prompt(
+    constitution: Constitution,
+    version: str,
+    citations_block: str,
+    now: str,
+    repo_root: Path,
+) -> str:
+    """System prompt for text-based JSON mode (full format, with examples)."""
     # Build action type documentation
     action_docs = []
     for at in constitution.data.get("action_space", {}).get("action_types", []):
@@ -91,12 +155,6 @@ def build_system_prompt(constitution: Constitution, repo_root: Path) -> str:
         action_docs.append(f"  - {atype}: {{{field_doc}}}")
 
     action_types_block = "\n".join(action_docs)
-
-    citations_block = "\n".join(
-        f"  - constitution:v{version}#{cid}" for cid in clause_ids
-    )
-
-    now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
     return f"""You are AxionAgent, a sovereign assistant operating under the RSA-0 constitutional kernel.
 

@@ -83,10 +83,12 @@ def _handle_model_command(agent: AxionAgent, text: str) -> None:
         provider = entry["provider"]
         model_id = entry["model"]
         extra = {k: v for k, v in entry.items() if k not in ("provider", "model")}
+        agent._use_tools = extra.pop("supports_tools", "false") == "true"
         agent.llm_client = create_client(provider, model_id, **extra)
+        mode = "tools" if agent._use_tools else "text"
         st.session_state.messages.append({
             "role": "assistant",
-            "content": f"Switched to `{model_id}` ({provider})",
+            "content": f"Switched to `{model_id}` ({provider}, {mode})",
         })
     else:
         available = ", ".join(f"`{k}`" for k in MODEL_REGISTRY)
