@@ -153,6 +153,15 @@ def _render_action(action: ActionResult) -> None:
     elif action.action_type == "Notify":
         st.info(f"Notify: {action.notify_message}")
 
+    elif action.action_type == "SlackPost":
+        st.success(f"Posted to Slack: `{action.slack_channel}`")
+
+    elif action.action_type == "SlackReply":
+        st.success(f"Replied in Slack thread: `{action.slack_channel}`")
+
+    elif action.action_type == "SlackReact":
+        st.success(f"Reacted with :{action.slack_emoji}: in `{action.slack_channel}`")
+
 
 def _render_kernel_feedback(result: CycleResult) -> None:
     """Render kernel decision metadata below the prose."""

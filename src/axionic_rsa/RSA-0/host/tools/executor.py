@@ -49,10 +49,11 @@ class Executor:
     Warrant-gated executor. Will not execute without a valid warrant.
     """
 
-    def __init__(self, repo_root: Path, current_cycle: int):
+    def __init__(self, repo_root: Path, current_cycle: int, slack_client=None):
         self.repo_root = repo_root.resolve()
         self.current_cycle = current_cycle
         self._used_warrants: set = set()
+        self.slack_client = slack_client
 
     def execute(
         self,
@@ -108,6 +109,12 @@ class Executor:
                 return self._execute_search_local(warrant, ar.fields)
             elif ar.action_type == ActionType.FETCH_URL.value:
                 return self._execute_fetch_url(warrant, ar.fields)
+            elif ar.action_type == ActionType.SLACK_POST.value:
+                return self._execute_slack_post(warrant, ar.fields)
+            elif ar.action_type == ActionType.SLACK_REPLY.value:
+                return self._execute_slack_reply(warrant, ar.fields)
+            elif ar.action_type == ActionType.SLACK_REACT.value:
+                return self._execute_slack_react(warrant, ar.fields)
             elif ar.action_type == ActionType.LOG_APPEND.value:
                 return self._execute_log_append(warrant, ar.fields)
             else:
@@ -328,6 +335,88 @@ class Executor:
             result="committed",
             detail=f"fetched {len(text)} chars from {url}",
             content=text,
+        )
+
+    def _execute_slack_post(
+        self,
+        warrant: ExecutionWarrant,
+        fields: Dict[str, Any],
+    ) -> ExecutionEvent:
+        if not self.slack_client:
+            return ExecutionEvent(
+                warrant_id=warrant.warrant_id,
+                tool=ActionType.SLACK_POST.value,
+                result="failed",
+                detail="Slack client not configured",
+            )
+
+        channel = fields.get("channel", "")
+        message = fields.get("message", "")
+
+        response = self.slack_client.chat_postMessage(channel=channel, text=message)
+        ts = response.get("ts", "")
+        return ExecutionEvent(
+            warrant_id=warrant.warrant_id,
+            tool=ActionType.SLACK_POST.value,
+            result="committed",
+            detail=f"posted to {channel} (ts={ts})",
+            content=ts,
+        )
+
+    def _execute_slack_reply(
+        self,
+        warrant: ExecutionWarrant,
+        fields: Dict[str, Any],
+    ) -> ExecutionEvent:
+        if not self.slack_client:
+            return ExecutionEvent(
+                warrant_id=warrant.warrant_id,
+                tool=ActionType.SLACK_REPLY.value,
+                result="failed",
+                detail="Slack client not configured",
+            )
+
+        channel = fields.get("channel", "")
+        thread_ts = fields.get("thread_ts", "")
+        message = fields.get("message", "")
+
+        response = self.slack_client.chat_postMessage(
+            channel=channel, text=message, thread_ts=thread_ts
+        )
+        ts = response.get("ts", "")
+        return ExecutionEvent(
+            warrant_id=warrant.warrant_id,
+            tool=ActionType.SLACK_REPLY.value,
+            result="committed",
+            detail=f"replied in {channel} thread {thread_ts} (ts={ts})",
+            content=ts,
+        )
+
+    def _execute_slack_react(
+        self,
+        warrant: ExecutionWarrant,
+        fields: Dict[str, Any],
+    ) -> ExecutionEvent:
+        if not self.slack_client:
+            return ExecutionEvent(
+                warrant_id=warrant.warrant_id,
+                tool=ActionType.SLACK_REACT.value,
+                result="failed",
+                detail="Slack client not configured",
+            )
+
+        channel = fields.get("channel", "")
+        timestamp = fields.get("timestamp", "")
+        emoji = fields.get("emoji", "")
+
+        self.slack_client.reactions_add(
+            channel=channel, timestamp=timestamp, name=emoji
+        )
+        return ExecutionEvent(
+            warrant_id=warrant.warrant_id,
+            tool=ActionType.SLACK_REACT.value,
+            result="committed",
+            detail=f"reacted :{emoji}: in {channel} at {timestamp}",
         )
 
     def _execute_log_append(

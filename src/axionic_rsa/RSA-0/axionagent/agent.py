@@ -89,6 +89,7 @@ class AxionAgent:
         self.conversation_history: List[Dict[str, Any]] = []
         self.logger: Optional[SessionLogger] = None
         self._use_tools: bool = False  # set at startup based on model registry
+        self.slack_client = None  # set by slack_app.py when running as Slack bot
 
     def startup(self) -> bool:
         """Load constitution, init LLM client, build system prompt."""
@@ -549,7 +550,7 @@ class AxionAgent:
         if not decision.warrant or not decision.bundle:
             return None, None
 
-        executor = Executor(self.agent_root, cycle)
+        executor = Executor(self.agent_root, cycle, slack_client=self.slack_client)
         event = executor.execute(decision.warrant, decision.bundle)
 
         action_type = decision.bundle.action_request.action_type
@@ -641,6 +642,41 @@ class AxionAgent:
                 print(f"\n[Notify] {msg}")
                 action_result.notify_message = msg
                 self._inject_feedback(tool_call, f"Notification sent: {msg}")
+
+            elif action_type == ActionType.SLACK_POST.value:
+                channel = fields.get("channel", "")
+                msg_text = fields.get("message", "")
+                ts = event.content or ""
+                print(f"\n[SlackPost: sent to {channel}]")
+                action_result.slack_channel = channel
+                action_result.slack_message = msg_text
+                self._inject_feedback(
+                    tool_call, f"Posted to {channel} (ts={ts})"
+                )
+
+            elif action_type == ActionType.SLACK_REPLY.value:
+                channel = fields.get("channel", "")
+                thread_ts = fields.get("thread_ts", "")
+                msg_text = fields.get("message", "")
+                ts = event.content or ""
+                print(f"\n[SlackReply: replied in {channel} thread {thread_ts}]")
+                action_result.slack_channel = channel
+                action_result.slack_message = msg_text
+                action_result.slack_thread_ts = thread_ts
+                self._inject_feedback(
+                    tool_call, f"Replied in {channel} thread {thread_ts} (ts={ts})"
+                )
+
+            elif action_type == ActionType.SLACK_REACT.value:
+                channel = fields.get("channel", "")
+                timestamp = fields.get("timestamp", "")
+                emoji = fields.get("emoji", "")
+                print(f"\n[SlackReact: :{emoji}: in {channel}]")
+                action_result.slack_channel = channel
+                action_result.slack_emoji = emoji
+                self._inject_feedback(
+                    tool_call, f"Reacted :{emoji}: in {channel} at {timestamp}"
+                )
         else:
             print(f"\n[Execution failed: {event.detail}]")
             self._inject_feedback(

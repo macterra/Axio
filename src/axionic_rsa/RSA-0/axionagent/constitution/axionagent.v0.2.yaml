@@ -142,6 +142,51 @@ action_space:
         justification: true
       side_effect_class: "low"
 
+    - type: "SlackPost"
+      description: "Post a message to a Slack channel."
+      required_fields:
+        - name: "channel"
+          type: "string"
+        - name: "message"
+          type: "string"
+          max_len: 4000
+      requires:
+        authority_citations: true
+        scope_claim: true
+        justification: true
+      side_effect_class: "high"
+
+    - type: "SlackReply"
+      description: "Reply to a message in a Slack thread."
+      required_fields:
+        - name: "channel"
+          type: "string"
+        - name: "thread_ts"
+          type: "string"
+        - name: "message"
+          type: "string"
+          max_len: 4000
+      requires:
+        authority_citations: true
+        scope_claim: true
+        justification: true
+      side_effect_class: "high"
+
+    - type: "SlackReact"
+      description: "Add an emoji reaction to a Slack message."
+      required_fields:
+        - name: "channel"
+          type: "string"
+        - name: "timestamp"
+          type: "string"
+        - name: "emoji"
+          type: "string"
+      requires:
+        authority_citations: true
+        scope_claim: true
+        justification: true
+      side_effect_class: "medium"
+
     - type: "Exit"
       description: "Terminate the agent run intentionally."
       required_fields:
@@ -212,6 +257,7 @@ refusal_policy:
     - "CITATION_UNRESOLVABLE"
     - "PATH_NOT_ALLOWLISTED"
     - "URL_NOT_ALLOWLISTED"
+    - "CHANNEL_NOT_ALLOWLISTED"
   refusal_output_requirements:
     include:
       - "refusal_reason_code"
@@ -276,6 +322,10 @@ io_policy:
   network:
     enabled: true
     fetch_domains:
+      - "*"
+  slack:
+    enabled: true
+    allowed_channels:
       - "*"
 
 observation_schema:

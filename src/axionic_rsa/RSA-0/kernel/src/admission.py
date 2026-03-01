@@ -333,6 +333,15 @@ class AdmissionPipeline:
             if not self._is_under_write_allowlist(log_path):
                 return False, AdmissionRejectionCode.PATH_NOT_ALLOWLISTED.value
 
+        elif ar.action_type in (
+            ActionType.SLACK_POST.value,
+            ActionType.SLACK_REPLY.value,
+            ActionType.SLACK_REACT.value,
+        ):
+            channel = ar.fields.get("channel", "")
+            if not self._is_slack_channel_allowed(channel):
+                return False, AdmissionRejectionCode.CHANNEL_NOT_ALLOWLISTED.value
+
         return True, ""
 
     # --- Path helpers ---
@@ -357,6 +366,16 @@ class AdmissionPipeline:
             resolved == root or _is_descendant(resolved, root)
             for root in self._write_roots
         )
+
+    def _is_slack_channel_allowed(self, channel: str) -> bool:
+        """Check if a Slack channel is allowed by the slack io_policy."""
+        slack_policy = self.constitution.data.get("io_policy", {}).get("slack", {})
+        if not slack_policy.get("enabled", False):
+            return False
+        allowed = slack_policy.get("allowed_channels", [])
+        if "*" in allowed:
+            return True
+        return channel in allowed
 
     def _is_url_allowed(self, url: str) -> bool:
         """Check if a URL is allowed by the fetch domain allowlist."""

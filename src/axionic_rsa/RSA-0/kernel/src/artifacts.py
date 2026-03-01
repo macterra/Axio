@@ -58,6 +58,9 @@ class ActionType(str, Enum):
     APPEND_LOCAL = "AppendLocal"
     SEARCH_LOCAL = "SearchLocal"
     FETCH_URL = "FetchURL"
+    SLACK_POST = "SlackPost"
+    SLACK_REPLY = "SlackReply"
+    SLACK_REACT = "SlackReact"
     EXIT = "Exit"
     LOG_APPEND = "LogAppend"
 
@@ -103,6 +106,7 @@ class AdmissionRejectionCode(str, Enum):
     CITATION_UNRESOLVABLE = "CITATION_UNRESOLVABLE"
     PATH_NOT_ALLOWLISTED = "PATH_NOT_ALLOWLISTED"
     URL_NOT_ALLOWLISTED = "URL_NOT_ALLOWLISTED"
+    CHANNEL_NOT_ALLOWLISTED = "CHANNEL_NOT_ALLOWLISTED"
 
 
 class AdmissionGate(str, Enum):

@@ -23,6 +23,10 @@ class ActionResult:
     notify_message: Optional[str] = None
     fetch_url: Optional[str] = None
     fetch_content: Optional[str] = None
+    slack_channel: Optional[str] = None
+    slack_message: Optional[str] = None
+    slack_thread_ts: Optional[str] = None
+    slack_emoji: Optional[str] = None
 
 
 @dataclass
