@@ -35,6 +35,7 @@ from host.cli.main import (
     make_timestamp_observation,
 )
 from host.tools.executor import Executor, ExecutionEvent
+from host.mcp_servers import FilesystemServer, SlackServer
 
 from axionagent.llm_client import (
     AnthropicClient,
@@ -90,6 +91,8 @@ class AxionAgent:
         self.logger: Optional[SessionLogger] = None
         self._use_tools: bool = False  # set at startup based on model registry
         self.slack_client = None  # set by slack_app.py when running as Slack bot
+        self._fs_server = FilesystemServer(root=self.agent_root)
+        self._slack_server = SlackServer(client=None)
 
     def startup(self) -> bool:
         """Load constitution, init LLM client, build system prompt."""
@@ -550,7 +553,13 @@ class AxionAgent:
         if not decision.warrant or not decision.bundle:
             return None, None
 
-        executor = Executor(self.agent_root, cycle, slack_client=self.slack_client)
+        # Update slack server client in case it was set after init
+        self._slack_server.client = self.slack_client
+        servers = {
+            "filesystem": self._fs_server,
+            "slack": self._slack_server,
+        }
+        executor = Executor(self.agent_root, cycle, servers=servers)
         event = executor.execute(decision.warrant, decision.bundle)
 
         action_type = decision.bundle.action_request.action_type

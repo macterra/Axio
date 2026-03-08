@@ -65,6 +65,7 @@ class SlackFrontend:
     """Slack frontend for AxionAgent using Socket Mode."""
 
     CHANNEL_BUFFER_SIZE = 50
+    TURN_TIMEOUT = 120  # seconds before giving up on a stuck turn
 
     def __init__(self, agent: AxionAgent):
         self.agent = agent
@@ -198,14 +199,30 @@ class SlackFrontend:
     ) -> None:
         """Process a DM like the web UI, with optional image support."""
         image_blocks = self._extract_images(event)
-        content_blocks = self._build_content_blocks(text, image_blocks)
+        ts = event.get("ts", "")
+        meta = f"[Slack DM channel={channel} ts={ts}]\n"
+        enriched = meta + (text or "[image]")
+        content_blocks = self._build_content_blocks(enriched, image_blocks)
 
-        with self._lock:
+        if not self._lock.acquire(timeout=self.TURN_TIMEOUT):
+            logger.warning("Lock timeout on DM — skipping message")
+            self.client.chat_postMessage(
+                channel=channel, text="_Sorry, I'm still processing a previous message. Try again shortly._"
+            )
+            return
+        try:
             turn_result = self.agent._run_turn(
-                text or "[image]",
+                enriched,
                 content_blocks=content_blocks,
             )
             self._post_turn_result(turn_result, channel)
+        except Exception as e:
+            logger.exception("Error in DM turn")
+            self.client.chat_postMessage(
+                channel=channel, text=f"_Error: {e}_"
+            )
+        finally:
+            self._lock.release()
 
     def _handle_app_mention(self, event: Dict[str, Any], say: Any) -> None:
         """Handle @mentions in channels, with optional image support."""
@@ -224,7 +241,14 @@ class SlackFrontend:
 
         mention_images = self._extract_images(event)
 
-        with self._lock:
+        if not self._lock.acquire(timeout=self.TURN_TIMEOUT):
+            logger.warning("Lock timeout on @mention — skipping")
+            self.client.chat_postMessage(
+                channel=channel, text="_Still processing a previous request._",
+                thread_ts=thread_ts,
+            )
+            return
+        try:
             # Build context from channel buffer (may include images)
             context_input, context_images = self._build_channel_context(
                 text, channel, thread_ts
@@ -236,6 +260,14 @@ class SlackFrontend:
                 content_blocks=content_blocks,
             )
             self._post_mention_result(turn_result, channel, thread_ts)
+        except Exception as e:
+            logger.exception("Error in @mention turn")
+            self.client.chat_postMessage(
+                channel=channel, text=f"_Error: {e}_",
+                thread_ts=thread_ts,
+            )
+        finally:
+            self._lock.release()
 
     # ------------------------------------------------------------------
     # Response helpers

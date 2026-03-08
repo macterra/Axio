@@ -1,12 +1,16 @@
 """
-RSA-0 Phase X — Executor (Sandboxed)
+RSA-0 Phase X — Executor (Warrant-Gated, MCP-Based)
 
 Executes warranted actions only. Refuses execution without valid warrant.
-Implements: Notify, ReadLocal, ListDir, WriteLocal, FetchURL, LogAppend.
+Routes actions to MCP-compatible ToolServers for dispatch.
+
+Host-level actions (Notify, FetchURL, LogAppend) remain inline.
 """
 
 from __future__ import annotations
 
+import urllib.error
+import urllib.request
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, List, Optional
@@ -17,6 +21,7 @@ from kernel.src.artifacts import (
     ExecutionWarrant,
     canonical_json,
 )
+from host.mcp_servers.base import ToolResult, ToolServer
 
 
 @dataclass
@@ -44,16 +49,49 @@ class ExecutorError(Exception):
     pass
 
 
+# ---------------------------------------------------------------------------
+# Action type → (server_name, tool_name) mapping
+# ---------------------------------------------------------------------------
+
+_ACTION_ROUTES: Dict[str, tuple[str, str]] = {
+    ActionType.READ_LOCAL.value:    ("filesystem", "read_file"),
+    ActionType.WRITE_LOCAL.value:   ("filesystem", "write_file"),
+    ActionType.APPEND_LOCAL.value:  ("filesystem", "append_file"),
+    ActionType.LIST_DIR.value:      ("filesystem", "list_directory"),
+    ActionType.SEARCH_LOCAL.value:  ("filesystem", "search"),
+    ActionType.SLACK_POST.value:    ("slack", "post_message"),
+    ActionType.SLACK_REPLY.value:   ("slack", "reply_thread"),
+    ActionType.SLACK_REACT.value:   ("slack", "add_reaction"),
+}
+
+# Actions that map fields directly to tool arguments
+_FIELD_MAPS: Dict[str, Dict[str, str]] = {
+    ActionType.READ_LOCAL.value:    {"path": "path"},
+    ActionType.WRITE_LOCAL.value:   {"path": "path", "content": "content"},
+    ActionType.APPEND_LOCAL.value:  {"path": "path", "content": "content"},
+    ActionType.LIST_DIR.value:      {"path": "path"},
+    ActionType.SEARCH_LOCAL.value:  {"query": "query"},
+    ActionType.SLACK_POST.value:    {"channel": "channel", "message": "message"},
+    ActionType.SLACK_REPLY.value:   {"channel": "channel", "thread_ts": "thread_ts", "message": "message"},
+    ActionType.SLACK_REACT.value:   {"channel": "channel", "timestamp": "timestamp", "emoji": "emoji"},
+}
+
+
 class Executor:
     """
-    Warrant-gated executor. Will not execute without a valid warrant.
+    Warrant-gated executor. Routes actions to MCP-compatible ToolServers.
     """
 
-    def __init__(self, repo_root: Path, current_cycle: int, slack_client=None):
+    def __init__(
+        self,
+        repo_root: Path,
+        current_cycle: int,
+        servers: Optional[Dict[str, ToolServer]] = None,
+    ):
         self.repo_root = repo_root.resolve()
         self.current_cycle = current_cycle
         self._used_warrants: set = set()
-        self.slack_client = slack_client
+        self.servers: Dict[str, ToolServer] = servers or {}
 
     def execute(
         self,
@@ -62,7 +100,6 @@ class Executor:
     ) -> ExecutionEvent:
         """
         Execute the warranted action. Returns an ExecutionEvent.
-        Raises ExecutorError if warrant is invalid.
         """
         # Validate warrant
         if warrant.warrant_id in self._used_warrants:
@@ -92,29 +129,18 @@ class Executor:
         # Mark as used
         self._used_warrants.add(warrant.warrant_id)
 
-        # Dispatch
         ar = bundle.action_request
         try:
+            # Check if this action routes to a ToolServer
+            route = _ACTION_ROUTES.get(ar.action_type)
+            if route:
+                return self._execute_via_server(warrant, ar.action_type, ar.fields, route)
+
+            # Host-level actions (not routed to servers)
             if ar.action_type == ActionType.NOTIFY.value:
                 return self._execute_notify(warrant, ar.fields)
-            elif ar.action_type == ActionType.READ_LOCAL.value:
-                return self._execute_read_local(warrant, ar.fields)
-            elif ar.action_type == ActionType.LIST_DIR.value:
-                return self._execute_list_dir(warrant, ar.fields)
-            elif ar.action_type == ActionType.WRITE_LOCAL.value:
-                return self._execute_write_local(warrant, ar.fields)
-            elif ar.action_type == ActionType.APPEND_LOCAL.value:
-                return self._execute_append_local(warrant, ar.fields)
-            elif ar.action_type == ActionType.SEARCH_LOCAL.value:
-                return self._execute_search_local(warrant, ar.fields)
             elif ar.action_type == ActionType.FETCH_URL.value:
                 return self._execute_fetch_url(warrant, ar.fields)
-            elif ar.action_type == ActionType.SLACK_POST.value:
-                return self._execute_slack_post(warrant, ar.fields)
-            elif ar.action_type == ActionType.SLACK_REPLY.value:
-                return self._execute_slack_reply(warrant, ar.fields)
-            elif ar.action_type == ActionType.SLACK_REACT.value:
-                return self._execute_slack_react(warrant, ar.fields)
             elif ar.action_type == ActionType.LOG_APPEND.value:
                 return self._execute_log_append(warrant, ar.fields)
             else:
@@ -131,6 +157,78 @@ class Executor:
                 result="failed",
                 detail=str(e),
             )
+
+    # ------------------------------------------------------------------
+    # Generic MCP server dispatch
+    # ------------------------------------------------------------------
+
+    def _execute_via_server(
+        self,
+        warrant: ExecutionWarrant,
+        action_type: str,
+        fields: Dict[str, Any],
+        route: tuple[str, str],
+    ) -> ExecutionEvent:
+        server_name, tool_name = route
+        server = self.servers.get(server_name)
+        if server is None:
+            return ExecutionEvent(
+                warrant_id=warrant.warrant_id,
+                tool=action_type,
+                result="failed",
+                detail=f"Server '{server_name}' not configured",
+            )
+
+        # Map action fields to tool arguments
+        field_map = _FIELD_MAPS.get(action_type, {})
+        arguments = {tool_arg: fields.get(field_name, "") for field_name, tool_arg in field_map.items()}
+
+        result: ToolResult = server.call_tool(tool_name, arguments)
+
+        if result.is_error:
+            return ExecutionEvent(
+                warrant_id=warrant.warrant_id,
+                tool=action_type,
+                result="failed",
+                detail=result.content,
+            )
+
+        detail = self._make_detail(action_type, fields, result)
+        return ExecutionEvent(
+            warrant_id=warrant.warrant_id,
+            tool=action_type,
+            result="committed",
+            detail=detail,
+            content=result.content,
+        )
+
+    @staticmethod
+    def _make_detail(action_type: str, fields: Dict[str, Any], result: ToolResult) -> str:
+        """Generate a human-readable detail string for the execution event."""
+        if action_type == ActionType.READ_LOCAL.value:
+            return f"read {len(result.content)} chars from {fields.get('path', '')}"
+        elif action_type == ActionType.WRITE_LOCAL.value:
+            return f"wrote {len(fields.get('content', ''))} chars to {fields.get('path', '')}"
+        elif action_type == ActionType.APPEND_LOCAL.value:
+            return f"appended {len(fields.get('content', ''))} chars to {fields.get('path', '')}"
+        elif action_type == ActionType.LIST_DIR.value:
+            n = len(result.content.splitlines()) if result.content else 0
+            return f"listed {n} entries in {fields.get('path', '')}"
+        elif action_type == ActionType.SEARCH_LOCAL.value:
+            return f"found results for '{fields.get('query', '')}'"
+        elif action_type == ActionType.SLACK_POST.value:
+            return f"posted to {fields.get('channel', '')} (ts={result.content})"
+        elif action_type == ActionType.SLACK_REPLY.value:
+            ch = fields.get('channel', '')
+            tts = fields.get('thread_ts', '')
+            return f"replied in {ch} thread {tts} (ts={result.content})"
+        elif action_type == ActionType.SLACK_REACT.value:
+            return f"reacted {result.content} in {fields.get('channel', '')} at {fields.get('timestamp', '')}"
+        return result.content
+
+    # ------------------------------------------------------------------
+    # Host-level actions (not routed to servers)
+    # ------------------------------------------------------------------
 
     def _execute_notify(
         self,
@@ -155,156 +253,11 @@ class Executor:
             detail=f"target={target}, len={len(message)}",
         )
 
-    def _execute_read_local(
-        self,
-        warrant: ExecutionWarrant,
-        fields: Dict[str, Any],
-    ) -> ExecutionEvent:
-        path_str = fields.get("path", "")
-        resolved = (self.repo_root / path_str).resolve()
-
-        if not resolved.exists():
-            return ExecutionEvent(
-                warrant_id=warrant.warrant_id,
-                tool=ActionType.READ_LOCAL.value,
-                result="failed",
-                detail=f"File not found: {resolved}",
-            )
-
-        content = resolved.read_text(encoding="utf-8")
-        # Content is returned via execution event detail (bounded)
-        return ExecutionEvent(
-            warrant_id=warrant.warrant_id,
-            tool=ActionType.READ_LOCAL.value,
-            result="committed",
-            detail=f"read {len(content)} chars from {path_str}",
-        )
-
-    def _execute_list_dir(
-        self,
-        warrant: ExecutionWarrant,
-        fields: Dict[str, Any],
-    ) -> ExecutionEvent:
-        path_str = fields.get("path", "")
-        resolved = (self.repo_root / path_str).resolve()
-
-        if not resolved.exists():
-            return ExecutionEvent(
-                warrant_id=warrant.warrant_id,
-                tool=ActionType.LIST_DIR.value,
-                result="failed",
-                detail=f"Directory not found: {resolved}",
-            )
-
-        if not resolved.is_dir():
-            return ExecutionEvent(
-                warrant_id=warrant.warrant_id,
-                tool=ActionType.LIST_DIR.value,
-                result="failed",
-                detail=f"Not a directory: {resolved}",
-            )
-
-        entries = sorted(p.name + ("/" if p.is_dir() else "") for p in resolved.iterdir())
-        listing = "\n".join(entries)
-        return ExecutionEvent(
-            warrant_id=warrant.warrant_id,
-            tool=ActionType.LIST_DIR.value,
-            result="committed",
-            detail=f"listed {len(entries)} entries in {path_str}",
-            content=listing,
-        )
-
-    def _execute_write_local(
-        self,
-        warrant: ExecutionWarrant,
-        fields: Dict[str, Any],
-    ) -> ExecutionEvent:
-        path_str = fields.get("path", "")
-        content = fields.get("content", "")
-        resolved = (self.repo_root / path_str).resolve()
-
-        resolved.parent.mkdir(parents=True, exist_ok=True)
-        resolved.write_text(content, encoding="utf-8")
-
-        return ExecutionEvent(
-            warrant_id=warrant.warrant_id,
-            tool=ActionType.WRITE_LOCAL.value,
-            result="committed",
-            detail=f"wrote {len(content)} chars to {path_str}",
-        )
-
-    def _execute_append_local(
-        self,
-        warrant: ExecutionWarrant,
-        fields: Dict[str, Any],
-    ) -> ExecutionEvent:
-        path_str = fields.get("path", "")
-        content = fields.get("content", "")
-        resolved = (self.repo_root / path_str).resolve()
-
-        resolved.parent.mkdir(parents=True, exist_ok=True)
-        with open(resolved, "a", encoding="utf-8") as f:
-            f.write(content)
-
-        return ExecutionEvent(
-            warrant_id=warrant.warrant_id,
-            tool=ActionType.APPEND_LOCAL.value,
-            result="committed",
-            detail=f"appended {len(content)} chars to {path_str}",
-        )
-
-    def _execute_search_local(
-        self,
-        warrant: ExecutionWarrant,
-        fields: Dict[str, Any],
-    ) -> ExecutionEvent:
-        import subprocess
-
-        query = fields.get("query", "")
-
-        try:
-            subprocess.run(
-                ["qmd", "update"],
-                capture_output=True, text=True, timeout=30,
-            )
-            result = subprocess.run(
-                ["qmd", "search", query, "-c", "workspace", "-n", "10", "--json"],
-                capture_output=True,
-                text=True,
-                timeout=30,
-            )
-            if result.returncode != 0:
-                return ExecutionEvent(
-                    warrant_id=warrant.warrant_id,
-                    tool=ActionType.SEARCH_LOCAL.value,
-                    result="failed",
-                    detail=f"qmd error: {result.stderr.strip()}",
-                )
-            output = result.stdout
-        except Exception as e:
-            return ExecutionEvent(
-                warrant_id=warrant.warrant_id,
-                tool=ActionType.SEARCH_LOCAL.value,
-                result="failed",
-                detail=f"Search error: {e}",
-            )
-
-        return ExecutionEvent(
-            warrant_id=warrant.warrant_id,
-            tool=ActionType.SEARCH_LOCAL.value,
-            result="committed",
-            detail=f"found results for '{query}'",
-            content=output,
-        )
-
     def _execute_fetch_url(
         self,
         warrant: ExecutionWarrant,
         fields: Dict[str, Any],
     ) -> ExecutionEvent:
-        import urllib.request
-        import urllib.error
-
         url = fields.get("url", "")
         max_bytes = fields.get("max_bytes", 500000)
 
@@ -335,88 +288,6 @@ class Executor:
             result="committed",
             detail=f"fetched {len(text)} chars from {url}",
             content=text,
-        )
-
-    def _execute_slack_post(
-        self,
-        warrant: ExecutionWarrant,
-        fields: Dict[str, Any],
-    ) -> ExecutionEvent:
-        if not self.slack_client:
-            return ExecutionEvent(
-                warrant_id=warrant.warrant_id,
-                tool=ActionType.SLACK_POST.value,
-                result="failed",
-                detail="Slack client not configured",
-            )
-
-        channel = fields.get("channel", "")
-        message = fields.get("message", "")
-
-        response = self.slack_client.chat_postMessage(channel=channel, text=message)
-        ts = response.get("ts", "")
-        return ExecutionEvent(
-            warrant_id=warrant.warrant_id,
-            tool=ActionType.SLACK_POST.value,
-            result="committed",
-            detail=f"posted to {channel} (ts={ts})",
-            content=ts,
-        )
-
-    def _execute_slack_reply(
-        self,
-        warrant: ExecutionWarrant,
-        fields: Dict[str, Any],
-    ) -> ExecutionEvent:
-        if not self.slack_client:
-            return ExecutionEvent(
-                warrant_id=warrant.warrant_id,
-                tool=ActionType.SLACK_REPLY.value,
-                result="failed",
-                detail="Slack client not configured",
-            )
-
-        channel = fields.get("channel", "")
-        thread_ts = fields.get("thread_ts", "")
-        message = fields.get("message", "")
-
-        response = self.slack_client.chat_postMessage(
-            channel=channel, text=message, thread_ts=thread_ts
-        )
-        ts = response.get("ts", "")
-        return ExecutionEvent(
-            warrant_id=warrant.warrant_id,
-            tool=ActionType.SLACK_REPLY.value,
-            result="committed",
-            detail=f"replied in {channel} thread {thread_ts} (ts={ts})",
-            content=ts,
-        )
-
-    def _execute_slack_react(
-        self,
-        warrant: ExecutionWarrant,
-        fields: Dict[str, Any],
-    ) -> ExecutionEvent:
-        if not self.slack_client:
-            return ExecutionEvent(
-                warrant_id=warrant.warrant_id,
-                tool=ActionType.SLACK_REACT.value,
-                result="failed",
-                detail="Slack client not configured",
-            )
-
-        channel = fields.get("channel", "")
-        timestamp = fields.get("timestamp", "")
-        emoji = fields.get("emoji", "")
-
-        self.slack_client.reactions_add(
-            channel=channel, timestamp=timestamp, name=emoji
-        )
-        return ExecutionEvent(
-            warrant_id=warrant.warrant_id,
-            tool=ActionType.SLACK_REACT.value,
-            result="committed",
-            detail=f"reacted :{emoji}: in {channel} at {timestamp}",
         )
 
     def _execute_log_append(
