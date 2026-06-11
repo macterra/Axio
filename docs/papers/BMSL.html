@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Born Measure from Self-Location - Axionic Agency Lab</title>
+    <link rel="icon" type="image/png" href="../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles (Dark Theme) -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../" class="nav-brand">
+            <img src="../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href=".././">Home</a></li>
+<li><a href="../about.html">About</a></li>
+<li><a href="../research.html">Research</a></li>
+<li><a href="../team.html">Team</a></li>
+<li><a href="../publications.html" class="active">Publications</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content">
+
+<h1 id="born-measure-from-self-location">Born Measure from
+Self-Location</h1>
+<h2
+id="an-mcsl-account-of-probability-in-everettian-quantum-mechanics">An
+MCSL Account of Probability in Everettian Quantum Mechanics</h2>
+<h3 id="abstract">Abstract</h3>
+<p>Everettian quantum mechanics removes collapse from the physical
+ontology. The universal state evolves unitarily, and measurement
+produces decohered outcome branches rather than a single selected
+result. This creates a familiar problem: if all outcomes occur, in what
+sense should an observer assign probabilities to them, and why should
+those probabilities obey the Born rule?</p>
+<p>This paper offers not a derivation of probability from
+probability-free premises but a <em>conditional reduction</em>: the Born
+rule follows once two substantive and conceptually distinct posits are
+granted. The first is physical: the natural measure over decohered
+quantum alternatives is squared Hilbert-space norm. The second is
+epistemic: under self-locating uncertainty, rational credence should
+track the total objective measure of admissible coherent realizations of
+one’s evidence state. The second principle is Measure-Conditioned
+Self-Location, or MCSL. Neither posit is forced by the unitary formalism
+alone, and the paper is explicit about what each one costs.</p>
+<p>On this account, Everettian probability is neither ignorance about
+which outcome becomes real nor indifference over counted branches. It is
+measure-conditioned self-location within the universal wavefunction.
+Branch-counting fails because branches are emergent, non-canonically
+individuated, and indefinitely refinable. Squared Hilbert-space norm
+supplies the objective measure. MCSL supplies the bridge from objective
+measure to first-person credence.</p>
+<p>Applied to decohered measurement outcomes, MCSL assigns credence
+proportional to the squared norm of the observer-supporting component
+associated with each outcome. For an exhaustive normalized measurement,
+this is exactly the Born rule. The account does not dissolve the two
+residual difficulties it inherits — why squared norm rather than another
+function of amplitude, and whether self-locating uncertainty is even
+coherent when every outcome occurs — but it isolates them, so that each
+can be argued on its own terms.</p>
+<h2 id="the-everettian-probability-problem">1. The Everettian
+Probability Problem</h2>
+<p>Everettian quantum mechanics keeps the unitary dynamics of quantum
+theory and rejects physical collapse. The universal wavefunction evolves
+according to the Schrödinger equation. Measurement interactions entangle
+observer, system, apparatus, and environment. Decoherence then
+suppresses interference between macroscopic outcome components, yielding
+effectively autonomous branches.</p>
+<p>For a simple measurement,</p>
+<p><span class="math display">\[
+|\psi\rangle = a|0\rangle + b|1\rangle ,
+\]</span></p>
+<p>an observer measuring in the <span class="math inline">\(\{|0\rangle,
+|1\rangle\}\)</span> basis becomes entangled with the system:</p>
+<p><span class="math display">\[
+(a|0\rangle + b|1\rangle)|O_{\mathrm{ready}}\rangle
+\rightarrow
+a|0\rangle|O_0\rangle + b|1\rangle|O_1\rangle .
+\]</span></p>
+<p>Under collapse theories, one result becomes actual and the other does
+not. Under Everett, both decohered components remain in the universal
+state. Each contains an observer with a definite record. The observer
+seeing outcome <span class="math inline">\(0\)</span> records <span
+class="math inline">\(0\)</span>. The observer seeing outcome <span
+class="math inline">\(1\)</span> records <span
+class="math inline">\(1\)</span>.</p>
+<p>The Born rule says:</p>
+<p><span class="math display">\[
+P(0)=|a|^2,\qquad P(1)=|b|^2 .
+\]</span></p>
+<p>The difficulty is direct. If both outcomes occur, what does <span
+class="math inline">\(P(0)\)</span> mean? It cannot mean that outcome
+<span class="math inline">\(0\)</span> alone will become real. It cannot
+mean ordinary ignorance about which outcome exists. Both outcome records
+exist after branching.</p>
+<p>The Everettian must therefore explain probability as a feature of
+observer-location, expectation, rational credence, or empirical
+typicality inside a branching ontology. The problem is not merely to
+find a number between 0 and 1. Squared Hilbert-space norm already gives
+such a number. The problem is to explain why an embedded observer should
+treat that number as credence.</p>
+<p>This paper defends the following thesis:</p>
+<blockquote>
+<p>In Everettian quantum mechanics, the Born rule follows when squared
+Hilbert-space norm is used as the objective physical measure and MCSL is
+used as the self-location rule connecting objective measure to observer
+credence.</p>
+</blockquote>
+<p>The thesis has two separable claims:</p>
+<ol type="1">
+<li><strong>Physical measure claim:</strong> decohered quantum
+alternatives carry objective measure equal to squared Hilbert-space
+norm.</li>
+<li><strong>Epistemic bridge claim:</strong> rational self-locating
+credence tracks the total objective measure of admissible coherent
+realizations of one’s evidence state.</li>
+</ol>
+<p>The second claim is MCSL. The first claim is often treated as
+belonging to the structure of quantum theory, but as §3 and §11 make
+clear, the constraints usually cited do not by themselves single out the
+squared norm among competing functions of amplitude; that selection is
+itself a substantive step. The result of the paper is therefore a
+conditional reduction — <em>given</em> both claims, Born-rule credence
+follows — not a derivation of probability from non-probabilistic
+premises.</p>
+<h2 id="why-branch-counting-fails">2. Why Branch-Counting Fails</h2>
+<p>A tempting approach says that probabilities in Everett should be
+obtained by counting branches. If a measurement has two branches,
+perhaps each branch should receive probability <span
+class="math inline">\(1/2\)</span>. If many branches result, perhaps
+probability should be the fraction of branches with a given outcome.</p>
+<p>This approach fails for several reasons.</p>
+<h3 id="branches-are-emergent-not-fundamental-atoms">2.1 Branches Are
+Emergent, Not Fundamental Atoms</h3>
+<p>Branches are not fundamental objects in the formalism. The
+fundamental object is the quantum state. Branches are emergent
+quasi-classical patterns stabilized by decoherence. Their boundaries
+depend on coarse-graining, environmental records, macroscopic
+description, temporal resolution, and tolerance for residual
+interference.</p>
+<p>There is no unique fact of the matter about the exact number of
+branches produced by a measurement. One can describe the environment at
+high resolution or low resolution. One can coarse-grain over irrelevant
+microscopic degrees of freedom or split them into more detailed
+alternatives. These choices alter the branch count without altering the
+physical content relevant to the observer’s record.</p>
+<p>A probability rule that depends on arbitrary branch individuation
+cannot be fundamental.</p>
+<h3 id="infinite-branch-ontology-makes-counting-worse">2.2 Infinite
+Branch Ontology Makes Counting Worse</h3>
+<p>In an infinite-branch ontology, raw counting becomes unusable. If
+every outcome type is realized by infinitely many fine-grained branches,
+then branch ratios take the form:</p>
+<p><span class="math display">\[
+\frac{\infty}{\infty}.
+\]</span></p>
+<p>Cardinality alone does not define probability. Countably infinite
+sets can be rearranged to produce different apparent frequencies.
+Uncountable sets require a measure before relative size becomes
+meaningful. The mathematical problem is familiar from continuous
+probability theory: one cannot assign probabilities over the real line
+by counting points. Every interval contains the same cardinality of
+points. Probability requires a measure.</p>
+<p>The same applies to Everettian branches. If branches form an
+indefinitely refinable or continuous structure, counting branches is the
+wrong operation. The relevant question is not “how many branches have
+this outcome?” The relevant question is “what measure does the
+observer-supporting region associated with this outcome carry?”</p>
+<h3 id="branch-counting-conflicts-with-quantum-structure">2.3
+Branch-Counting Conflicts with Quantum Structure</h3>
+<p>Branch-counting also ignores the physical role of amplitude.
+Consider:</p>
+<p><span class="math display">\[
+|\psi\rangle = \sqrt{0.99}|0\rangle + \sqrt{0.01}|1\rangle .
+\]</span></p>
+<p>A naïve two-branch count assigns <span
+class="math inline">\(1/2\)</span> to each outcome. The quantum state
+assigns measures <span class="math inline">\(0.99\)</span> and <span
+class="math inline">\(0.01\)</span>. The branch-counting answer is
+insensitive to the amplitudes that control interference, decoherence,
+repeated-measurement statistics, and the geometry of state space.</p>
+<p>One might try to repair branch-counting by splitting the
+large-amplitude component into many equal-amplitude subbranches. But
+that move already appeals to amplitude-weighted structure. It is no
+longer primitive branch-counting. It has smuggled in the measure it was
+supposed to replace.</p>
+<p>Branch-counting fails because branches are not countable physical
+atoms, because infinite branch structures require measure, and because
+amplitude is part of the physical structure of the theory.</p>
+<p>Two cautions should be registered now and discharged later, so that
+the positive account is not read as a free lunch. First, the measure
+that replaces counting must still be applied to <em>some</em> partition
+of the state into alternatives; measure-weighting does not by itself
+supply that partition (§6). Second, calling squared norm “the” measure
+presupposes that one power of amplitude is privileged over the others
+(§3.6). Branch-counting fails for the reasons given, but the account
+that replaces it incurs these two debts.</p>
+<h2 id="hilbert-space-norm-as-physical-measure">3. Hilbert-Space Norm as
+Physical Measure</h2>
+<p>Quantum states live in Hilbert space. The geometry of Hilbert space
+supplies a natural measure over orthogonal components of the state.</p>
+<p>Let <span class="math inline">\(|\Psi\rangle\)</span> be the
+universal quantum state. Let <span class="math inline">\(P_i\)</span> be
+a projector onto the subspace corresponding to outcome <span
+class="math inline">\(i\)</span>. The component of the universal state
+associated with outcome <span class="math inline">\(i\)</span> is:</p>
+<p><span class="math display">\[
+P_i|\Psi\rangle .
+\]</span></p>
+<p>Its squared norm is:</p>
+<p><span class="math display">\[
+\mu(i)=\lVert P_i|\Psi\rangle\rVert^2 .
+\]</span></p>
+<p>For an exhaustive set of orthogonal outcomes,</p>
+<p><span class="math display">\[
+\sum_i P_i = I,
+\]</span></p>
+<p>and for a normalized state,</p>
+<p><span class="math display">\[
+\sum_i \lVert P_i|\Psi\rangle\rVert^2 = 1 .
+\]</span></p>
+<p>This is the familiar mathematical form of the Born rule. At this
+stage, however, it should be called objective quantum measure, not yet
+probability. The move from measure to credence still needs
+justification.</p>
+<p>The squared-norm measure has several properties required of any
+physically serious quantum measure.</p>
+<h3 id="non-negativity">3.1 Non-Negativity</h3>
+<p>A measure assigned to an outcome must be non-negative. Quantum
+amplitudes can be negative or complex. Squared norm converts complex
+amplitude into a non-negative real quantity:</p>
+<p><span class="math display">\[
+|a|^2 = a^*a .
+\]</span></p>
+<h3 id="additivity-over-orthogonal-alternatives">3.2 Additivity Over
+Orthogonal Alternatives</h3>
+<p>Decohered alternatives correspond, approximately, to orthogonal
+subspaces. If two alternatives are mutually exclusive and orthogonal,
+the measure of their union should be the sum of their measures:</p>
+<p><span class="math display">\[
+\mu(A \oplus B)=\mu(A)+\mu(B).
+\]</span></p>
+<p>Squared norm has this property. For orthogonal <span
+class="math inline">\(A\)</span> and <span
+class="math inline">\(B\)</span>, <span class="math inline">\(\lVert v_A
++ v_B\rVert^2 = \lVert v_A\rVert^2 + \lVert v_B\rVert^2\)</span> by the
+Pythagorean theorem. The sharpest way to see why it is the
+<em>square</em> that matters, and not the norm itself, is that the
+squared norm of a projected component is <em>linear in the
+projector</em>:</p>
+<p><span class="math display">\[
+\lVert P_i|\Psi\rangle\rVert^2 = \langle\Psi|P_i|\Psi\rangle,
+\]</span></p>
+<p>so additivity over orthogonal projectors holds identically, <span
+class="math inline">\(\langle\Psi|(P_A + P_B)|\Psi\rangle =
+\langle\Psi|P_A|\Psi\rangle + \langle\Psi|P_B|\Psi\rangle\)</span>.
+Projection alone does not deliver this number. It delivers the component
+<em>vector</em> <span class="math inline">\(P_i|\Psi\rangle\)</span>,
+whose norm is <span class="math inline">\(|a|\)</span> in the qubit
+case, and the squaring is a further step. What forces that step is the
+demand for additivity: among the powers <span
+class="math inline">\(|a|^p\)</span>, only <span class="math inline">\(p
+= 2\)</span> is additive over orthogonal alternatives, because only the
+square is linear in the projector; the plain norm (<span
+class="math inline">\(p = 1\)</span>) and the higher powers fail. Raw
+signed or complex amplitude is not even a candidate, since it fails
+non-negativity. A non-negative assignment that is additive over
+orthogonal direct sums and depends only on the subspace is thereby
+driven toward the squared-norm form, which is the content of Gleason’s
+theorem (§11). Whether that additivity constraint can be imposed
+<em>non-circularly</em> in a branching setting — where additivity over
+exclusive alternatives is also the probability axiom — is taken up in
+§3.6 and §11.</p>
+<h3 id="invariance-under-redescription">3.3 Invariance Under
+Redescription</h3>
+<p>The measure assigned to a physical alternative should not depend on
+an arbitrary choice of basis or notation. If two descriptions represent
+the same subspace, they should receive the same measure. Squared Hilbert
+norm is invariant under unitary changes of basis.</p>
+<h3 id="conservation-under-unitary-evolution">3.4 Conservation Under
+Unitary Evolution</h3>
+<p>Unitary evolution preserves the total Hilbert-space norm:</p>
+<p><span class="math display">\[
+\lVert\Psi(t)\rVert^2 = \lVert\Psi(0)\rVert^2.
+\]</span></p>
+<p>This is a conserved global quantity, which is part of what makes
+squared norm a natural candidate measure. A caveat is needed, however.
+Global conservation does <em>not</em> entail that the measure of any
+particular branch is conserved. While components remain coherent,
+interference and recoherence redistribute weight between them, and a
+branch’s squared norm is only approximately stable <em>after</em>
+decoherence has suppressed the relevant interference terms. The
+stability the account actually relies on is therefore a FAPP,
+post-decoherence stability of branch weights, not an exact conservation
+law for individual branches.</p>
+<h3 id="locality-to-the-relevant-subspace">3.5 Locality to the Relevant
+Subspace</h3>
+<p>The measure assigned to an outcome should depend on the component of
+the state realizing that outcome, rather than on arbitrary labeling or
+external bookkeeping. Projectors let us isolate the physically relevant
+component:</p>
+<p><span class="math display">\[
+\mu(E)=\lVert P_E|\Psi\rangle\rVert^2.
+\]</span></p>
+<p>Here <span class="math inline">\(E\)</span> may be an outcome, an
+evidence state, or a larger observer-supporting condition.</p>
+<p>These properties do not yet prove that squared norm is subjective
+probability. They identify squared norm as the canonical physical
+measure over decohered alternatives.</p>
+<h3 id="why-squared-norm-rather-than-another-power">3.6 Why Squared Norm
+Rather Than Another Power?</h3>
+<p>The properties above are necessary conditions, not a uniqueness
+proof. Non-negativity is shared by every <span
+class="math inline">\(|a|^p\)</span>. Redescription-invariance and the
+global conservation law constrain but do not fix the exponent. The one
+property that genuinely discriminates is additivity over orthogonal
+alternatives, and it discriminates only through a theorem — Gleason’s
+(§11) — whose premise is that the assignment to subspaces is a
+<em>non-contextual additive</em> one. That premise is already close to
+assuming that the quantity in question behaves like a probability.
+Appealing to Gleason to certify the physical measure therefore risks
+importing, as a premise about physical structure, the very additivity
+that is contested when the structure is reinterpreted as credence.</p>
+<p>Two non-circular routes remain, and the account leans on them rather
+than on the bare property-list.</p>
+<p>The first is <em>dynamical</em>. Squared amplitude is not an
+arbitrary label on a branch; it is the quantity that governs
+interference, the rate and structure of decoherence, transition rates,
+and the recombination of histories. A function such as <span
+class="math inline">\(|a|^4\)</span> has no comparable dynamical office.
+The exponent <span class="math inline">\(p=2\)</span> is the one written
+into the equations of motion, not merely into the bookkeeping. This is a
+substantive physical claim about <em>which</em> feature of a component
+does causal work, and it is what the paper means in calling squared norm
+“the objective measure.”</p>
+<p>One inference must be blocked here. That squared amplitude does the
+dynamical work does not, by itself, make it a <em>measure of how much a
+branch exists</em>. Dynamical salience and degree-of-being are different
+notions, and the argument must not slide from the first to the second.
+The account does not need the stronger reading. “Objective measure”
+means only the additive, redescription-invariant, refinement-invariant,
+dynamically-privileged scalar attached to a subspace — the quantity the
+bridge principle (§14.2) then says credence should track. Whether one
+further glosses it metaphysically as a “measure of existence” is
+optional and not load-bearing: nothing in the derivation turns on
+branches possessing graded amounts of reality, and §14.3 explicitly
+declines that picture.</p>
+<p>The second is <em>symmetry</em> (§12). Envariance-style arguments fix
+equal weights for equal-amplitude components from the structure of
+entanglement, and reach unequal amplitudes by fine-graining into
+equal-amplitude sub-structures. Where they succeed, they pin the
+exponent without first assuming an additive credence.</p>
+<p>Neither route is uncontested. The honest position is that the
+privileging of <span class="math inline">\(p=2\)</span> is a
+load-bearing physical posit, defended dynamically and by symmetry, and
+<em>not</em> a free consequence of the abstract notion of “a measure.”
+The split between the physical-measure claim and the epistemic bridge
+does not make the first claim cheap; it locates it precisely, so that it
+can be argued for rather than assumed.</p>
+<h2 id="the-missing-bridge">4. The Missing Bridge</h2>
+<p>The Everettian probability problem persists because objective measure
+and subjective credence are different concepts.</p>
+<p>A physical theory can tell us that one region of state space has
+greater measure than another. It does not automatically follow that an
+embedded observer’s first-person expectation should be proportional to
+that measure. This is the gap.</p>
+<p>Different Everettian programs try to bridge it differently.</p>
+<p>Decision-theoretic approaches argue that rational agents making bets
+in a branching universe should weight outcomes by Born measure. Symmetry
+approaches try to derive equiprobability for equal-amplitude components
+and extend that result to unequal amplitudes. Self-location approaches
+argue that after branching but before observation, an observer can know
+the universal state while remaining uncertain which branch they
+occupy.</p>
+<p>Each approach identifies a real feature of the problem. The
+decision-theoretic approach captures practical rationality. Symmetry
+arguments capture structural invariance. Self-location captures the
+first-person epistemic situation of an observer inside the
+wavefunction.</p>
+<p>MCSL belongs in the third family, with a sharper general
+principle.</p>
+<h2 id="measure-conditioned-self-location">5. Measure-Conditioned
+Self-Location</h2>
+<p>Measure-Conditioned Self-Location says:</p>
+<blockquote>
+<p>Under self-locating uncertainty, credence should track the total
+objective measure of admissible coherent realizations of one’s present
+evidence state.</p>
+</blockquote>
+<p>This principle is developed in full generality in the companion paper
+<a href="MCSL.html"><em>Measure-Conditioned Self-Location: A Conditional
+Axionic Alternative to SSA and SIA</em></a>, where it is defended
+against the Self-Sampling and Self-Indication Assumptions in anthropic
+reasoning. The present paper specializes it to the Everettian case,
+where the objective measure is fixed by Hilbert-space geometry rather
+than left contested.</p>
+<p>This rule is conditional. It requires:</p>
+<ol type="1">
+<li>an interpreted physical ontology;</li>
+<li>an admissible hypothesis space;</li>
+<li>an objective measure structure;</li>
+<li>an account of which realizations count as coherent evidence-bearing
+vantages.</li>
+</ol>
+<p>MCSL does not derive a measure from bare first-person experience. It
+tells an embedded observer how to use the objective measure supplied by
+a physical theory when assigning self-locating credence.</p>
+<p>In abstract form:</p>
+<p><span class="math display">\[
+C(H\mid E)=\frac{\mu(A(H,E))}{\mu(A(E))}.
+\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(C(H\mid E)\)</span> is the observer’s
+credence in hypothesis <span class="math inline">\(H\)</span>,
+conditional on evidence <span class="math inline">\(E\)</span>;</li>
+<li><span class="math inline">\(A(E)\)</span> is the class of admissible
+coherent realizations of the observer’s evidence state;</li>
+<li><span class="math inline">\(A(H,E)\)</span> is the subclass
+satisfying both <span class="math inline">\(H\)</span> and <span
+class="math inline">\(E\)</span>;</li>
+<li><span class="math inline">\(\mu\)</span> is the objective measure
+over admissible realizations.</li>
+</ul>
+<p>The key point is that MCSL does not count observer-copies. It weighs
+admissible observer-realizations by the measure assigned by the
+underlying physical ontology.</p>
+<p>In a classical duplication case, the relevant measure may reduce to
+copy-counting if all copies are physically equivalent and equally
+weighted. In cosmology, the measure problem becomes harder because the
+physical measure may be contested. In Everettian quantum mechanics, the
+candidate measure is unusually clear: squared Hilbert-space norm.</p>
+<p>This makes Everett the cleanest case for MCSL.</p>
+<h2 id="everettian-specialization-of-mcsl">6. Everettian Specialization
+of MCSL</h2>
+<p>Apply MCSL to an Everettian measurement.</p>
+<p>Let <span class="math inline">\(|\Psi\rangle\)</span> be the
+universal state before observation. Let <span
+class="math inline">\(E\)</span> be the observer’s current evidence
+state prior to learning the measurement result. Let <span
+class="math inline">\(H_i\)</span> be the hypothesis:</p>
+<p><span class="math display">\[
+H_i = \text{“I am located in, or will be continuous with, the
+outcome-}i\text{ observer-state.”}
+\]</span></p>
+<p>Let <span class="math inline">\(P_{A_i(E)}\)</span> be the projector
+onto the subspace containing admissible coherent observer-realizations
+satisfying both <span class="math inline">\(E\)</span> and <span
+class="math inline">\(H_i\)</span>. Then MCSL gives:</p>
+<p><span class="math display">\[
+C(H_i\mid E)
+=
+\frac{\lVert P_{A_i(E)}|\Psi\rangle\rVert^2}
+{\sum_j \lVert P_{A_j(E)}|\Psi\rangle\rVert^2}.
+\]</span></p>
+<p>For an ideal decohered measurement, each outcome subspace corresponds
+to one admissible class of observer-realizations. The measure of each
+class is the squared norm of the corresponding projected component.</p>
+<p>A concession is owed here. The projectors <span
+class="math inline">\(P_{A_i(E)}\)</span> presuppose a determinate
+partition of the universal state into observer-supporting subspaces —
+exactly the kind of individuation that §2 found to be emergent and
+non-canonical. MCSL does not escape this. What MCSL avoids is the
+<em>counting</em> of branches within a partition, which is
+refinement-dependent; the squared-norm measure is refinement-invariant,
+so finer or coarser admissible decompositions of the same outcome
+subspace return the same total measure. But the coarse partition into
+outcomes <span class="math inline">\(\{A_i(E)\}\)</span> is itself
+supplied, approximately and FAPP, by decoherence — the same resource
+every Everettian account draws on. The advantage of measure over
+counting is therefore real but narrower than it can first appear: it is
+invariance under refinement, not independence from the preferred
+basis.</p>
+<p>For a normalized exhaustive measurement,</p>
+<p><span class="math display">\[
+\sum_j \lVert P_{A_j(E)}|\Psi\rangle\rVert^2 = 1,
+\]</span></p>
+<p>so:</p>
+<p><span class="math display">\[
+C(H_i\mid E)=\lVert P_{A_i(E)}|\Psi\rangle\rVert^2.
+\]</span></p>
+<p>This is the Born rule, interpreted as measure-conditioned
+self-location.</p>
+<p>For the simple qubit case:</p>
+<p><span class="math display">\[
+|\psi\rangle = a|0\rangle + b|1\rangle,
+\]</span></p>
+<p>measurement yields:</p>
+<p><span class="math display">\[
+a|0\rangle|O_0\rangle + b|1\rangle|O_1\rangle.
+\]</span></p>
+<p>The relevant observer-outcome projectors isolate the two decohered
+observer-states:</p>
+<p><span class="math display">\[
+P_0|\Psi\rangle = a|0\rangle|O_0\rangle,
+\]</span></p>
+<p><span class="math display">\[
+P_1|\Psi\rangle = b|1\rangle|O_1\rangle.
+\]</span></p>
+<p>Their measures are:</p>
+<p><span class="math display">\[
+\mu(O_0)=|a|^2,
+\]</span></p>
+<p><span class="math display">\[
+\mu(O_1)=|b|^2.
+\]</span></p>
+<p>MCSL therefore gives:</p>
+<p><span class="math display">\[
+C(O_0)=|a|^2,\qquad C(O_1)=|b|^2.
+\]</span></p>
+<p>The Born rule is obtained by applying MCSL to the Hilbert-space
+measure over admissible observer-realizations.</p>
+<h2 id="why-this-is-probability">7. Why This Is Probability</h2>
+<p>The remaining question is why this should count as probability.</p>
+<p>In a single-outcome theory, probability can be interpreted as
+uncertainty about which outcome will become actual. In Everett, all
+outcomes become actual as decohered components of the universal state.
+Probability must therefore be reconstructed as self-locating credence.
+That this reconstruction is even available is itself contested: the
+objection that branching leaves <em>no</em> uncertainty for a credence
+to attach to is the most serious challenge to the entire program, and it
+is met directly in §14.6.</p>
+<p>Before observation, the agent knows the following:</p>
+<ol type="1">
+<li>the universal state will contain observer-states recording each
+decohered outcome;</li>
+<li>each future observer-state is continuous with the pre-measurement
+observer;</li>
+<li>the observer has no further evidence selecting one future record
+over another;</li>
+<li>the future observer-states carry different objective measures.</li>
+</ol>
+<p>The rational question is:</p>
+<blockquote>
+<p>How should the present observer distribute expectation across future
+admissible observer-realizations?</p>
+</blockquote>
+<p>MCSL answers:</p>
+<blockquote>
+<p>In proportion to their objective measure.</p>
+</blockquote>
+<p>Two registers are in play here, and they should be kept apart (they
+return in §14.6). The question just posed is <em>prospective</em>: how a
+pre-branching agent should apportion forward-looking expectation over
+successors it knows it will all become. There is also an
+<em>indexical</em> register: how a post-branching but pre-observation
+agent, who knows the universal state but not which branch they now
+occupy, should apportion present-tense credence. MCSL returns the same
+measure-weighting in both. The prospective register is the more
+demanding — strictly, the pre-branching agent faces no ignorance, so its
+“expectation” must be read as forward-looking subjective uncertainty or
+as a weighting of concern over successors — and where the distinction
+bites, the indexical register is the safer ground (§14.6).</p>
+<p>This is the same conceptual structure used in other measure-based
+theories. In statistical mechanics, atypical entropy-decreasing
+microstates are physically allowed, but rational expectation tracks
+phase-space measure. In continuous probability, individual points may
+all have measure zero, yet intervals have different probabilities. In
+cosmology, bare existence of observers does not determine anthropic
+expectation; one needs a reference measure. These parallels
+<em>illustrate</em> measure-conditioned expectation; they do not by
+themselves <em>justify</em> it. Statistical mechanics is the weakest of
+them as a precedent: read epistemically, its measure tracks ignorance of
+a single actual microstate, which has no analogue in Everett, where
+every outcome is actual; read as typicality, it inherits the very “why
+expect the typical?” burden it was meant to discharge (§14.4). The
+justificatory work is done by the bridge principle (§14.2), not by
+analogy.</p>
+<p>Everettian quantum mechanics is a measure theory over
+observer-realizing subspaces. Existence alone gives no usable credence
+rule. Branch-counting gives no invariant rule. Squared Hilbert-space
+measure gives the physical weighting. MCSL gives the epistemic
+bridge.</p>
+<h2 id="repeated-measurements-and-born-typical-records">8. Repeated
+Measurements and Born-Typical Records</h2>
+<p>The Born rule is empirically tested through repeated measurements.
+MCSL must therefore recover Born-typical observed frequencies.</p>
+<p>Consider <span class="math inline">\(N\)</span> repetitions of a
+two-outcome measurement with state:</p>
+<p><span class="math display">\[
+\sqrt{p}|0\rangle + \sqrt{1-p}|1\rangle .
+\]</span></p>
+<p>After <span class="math inline">\(N\)</span> measurements, the
+universal state contains decohered components corresponding to all
+binary sequences of length <span class="math inline">\(N\)</span>. A
+sequence with <span class="math inline">\(k\)</span> zeroes and <span
+class="math inline">\(N-k\)</span> ones has amplitude magnitude:</p>
+<p><span class="math display">\[
+p^{k/2}(1-p)^{(N-k)/2}.
+\]</span></p>
+<p>Its squared measure is:</p>
+<p><span class="math display">\[
+p^k(1-p)^{N-k}.
+\]</span></p>
+<p>There are:</p>
+<p><span class="math display">\[
+\binom{N}{k}
+\]</span></p>
+<p>such sequences. The total measure of observer-records with exactly
+<span class="math inline">\(k\)</span> zeroes is:</p>
+<p><span class="math display">\[
+\binom{N}{k}p^k(1-p)^{N-k}.
+\]</span></p>
+<p>This is the binomial distribution. As <span
+class="math inline">\(N\)</span> grows, the total measure concentrates
+around:</p>
+<p><span class="math display">\[
+k \approx pN.
+\]</span></p>
+<p>Branches with frequencies far from <span
+class="math inline">\(p\)</span> exist, but their total <em>measure</em>
+becomes small. MCSL says rational credence tracks that total measure, so
+an observer should expect to see Born-typical frequencies.</p>
+<p>It is essential to be clear about the logical status of this result.
+The concentration is a fact about the squared-norm measure, and it holds
+<em>because</em> the records are weighted by that measure rather than
+counted. If one instead counted maverick records, the conclusion would
+reverse. For <span class="math inline">\(p \neq \tfrac{1}{2}\)</span>
+the sequences with near-equal frequencies are exponentially the most
+numerous — there are about <span class="math inline">\(\binom{N}{N/2}
+\sim 2^N/\sqrt{N}\)</span> of them — even though each carries
+exponentially small squared norm. Branch-<em>count</em> is dominated by
+anti-Born frequencies; branch-<em>measure</em> is dominated by Born
+frequencies. The law of large numbers delivers Born statistics only once
+the squared-norm weighting is already in force.</p>
+<p>This section therefore does not provide independent confirmation of
+the Born rule. It is an internal consistency check: it shows that MCSL
+together with the squared-norm measure is empirically adequate — that it
+predicts the frequencies we observe and does not contradict itself
+across repeated trials. The weighting it assumes is exactly the bridge
+the paper is arguing for. The result is that the bridge, once granted,
+reproduces standard quantum statistics without collapse and without
+treating branch-count as fundamental.</p>
+<h2 id="relation-to-decision-theoretic-everettian-probability">9.
+Relation to Decision-Theoretic Everettian Probability</h2>
+<p>Deutsch-Wallace decision theory argues that rational agents in
+Everettian branching scenarios should act as though outcome weights are
+given by the Born rule. This is an important result because probability
+is tightly connected to rational action. If an agent’s betting behavior
+violates Born weights, that agent violates constraints on coherent
+preference under branching.</p>
+<p>MCSL differs in emphasis.</p>
+<p>Decision theory asks:</p>
+<blockquote>
+<p>How should a rational Everettian agent value branching games?</p>
+</blockquote>
+<p>MCSL asks:</p>
+<blockquote>
+<p>How should an embedded Everettian observer assign self-locating
+credence over admissible observer-realizations?</p>
+</blockquote>
+<p>These questions are related, but they are not identical. Betting
+behavior is downstream of credence plus utility. MCSL addresses the
+credence assignment directly.</p>
+<p>A decision-theoretic Everettian can accept MCSL as explaining why the
+rational betting weights have first-person epistemic meaning. An MCSL
+Everettian can accept decision theory as showing that agents who use
+MCSL-guided credences will make coherent decisions under branching.</p>
+<p>The approaches are compatible. MCSL is more directly aimed at the
+observer-location problem.</p>
+<h2 id="relation-to-sebens-carroll-self-location">10. Relation to
+Sebens-Carroll Self-Location</h2>
+<p>Sebens and Carroll argue that self-locating uncertainty after
+branching can ground the Born rule in Everettian quantum mechanics.
+Their approach identifies the period after measurement but before
+observation as one in which the observer knows the universal state but
+does not know which branch they occupy. They introduce an epistemic
+separability principle to block irrelevant environmental facts from
+altering branch probabilities.</p>
+<p>MCSL is close in spirit but broader in structure.</p>
+<p>The Sebens-Carroll approach is specialized to Everettian branching.
+MCSL is a general principle for self-location in any interpreted
+ontology with an objective measure over admissible
+observer-realizations. Applied to Everett, it yields the same broad kind
+of result: self-location credence should be amplitude-weighted rather
+than branch-counted.</p>
+<p>The advantage of MCSL is that it separates three issues that are
+often run together:</p>
+<ol type="1">
+<li>what the physical ontology contains;</li>
+<li>what objective measure the ontology supplies;</li>
+<li>how first-person credence should use that measure.</li>
+</ol>
+<p>Everett supplies the ontology. Hilbert-space geometry supplies the
+measure. MCSL supplies the self-location rule.</p>
+<p>It is worth being candid about what is and is not new here. MCSL’s
+two ingredients each have close precursors: the objective measure is the
+squared-norm weight that Vaidman glosses as a “measure of existence” —
+though, as §3.6 notes, MCSL needs the weight, not the metaphysical gloss
+— and the self-locating manoeuvre is essentially the Sebens–Carroll use
+of post-branching, pre-observation uncertainty together with an
+epistemic-separability constraint. What MCSL contributes is not a new
+mechanism but a <em>factorization</em> — the explicit separation of
+ontology, objective measure, and self-location rule into three
+independently assessable claims — together with a generalization of the
+third claim beyond Everett. That generalization is double-edged. A fully
+general “track the objective measure” principle says nothing, by itself,
+about <em>which</em> measure is objective in a given ontology; in
+cosmology that question is open, and even in Everett it is the
+substantive content of §3.6. The generality of MCSL should not be
+mistaken for added explanatory power on the hard question. The general
+principle organizes the problem; the Everett-specific physical-measure
+claim does the work.</p>
+<h2 id="relation-to-gleason-type-results">11. Relation to Gleason-Type
+Results</h2>
+<p>Gleason’s theorem and related results show that, given certain
+assumptions about assigning probabilities to projection operators, the
+Born form is forced by the structure of Hilbert space. These results are
+powerful because they show that the squared-norm rule is not an
+arbitrary choice among many equally natural alternatives.</p>
+<p>However, Gleason-style results have a limitation for Everettian
+purposes. They assume that probabilities are being assigned to quantum
+events. They constrain the form such assignments must take. They do not,
+by themselves, explain why an observer inside a branching universal
+wavefunction should interpret squared norm as self-locating
+credence.</p>
+<p>MCSL supplies that missing interpretive step.</p>
+<p>Gleason-type arguments support the physical measure claim. MCSL
+supplies the epistemic bridge claim.</p>
+<p>Together, the structure is:</p>
+<ol type="1">
+<li>If quantum events receive a non-contextual additive measure over
+projectors, the measure has Born form.</li>
+<li>Everettian observer-realizations are represented by decohered
+subspaces/projectors.</li>
+<li>MCSL says self-locating credence tracks the objective measure of
+admissible observer-realizations.</li>
+<li>Therefore Everettian credence tracks Born measure.</li>
+</ol>
+<p>This gives each argument the right job. Gleason-style reasoning
+constrains measure. MCSL interprets measure as self-location
+credence.</p>
+<h2 id="relation-to-envariance-and-symmetry-arguments">12. Relation to
+Envariance and Symmetry Arguments</h2>
+<p>Envariance arguments attempt to derive the Born rule from symmetries
+of entangled quantum states. Equal-amplitude alternatives are treated
+symmetrically; unequal amplitudes are handled by decomposing them into
+equal-amplitude structures.</p>
+<p>MCSL can accept these arguments as support for the objectivity of
+squared Hilbert-space measure. The self-location bridge remains
+distinct. Symmetry may help explain why a measure should assign equal
+weights to equal-amplitude alternatives. MCSL explains why an observer’s
+credence should track the resulting measure.</p>
+<p>This distinction prevents a common ambiguity. A symmetry argument may
+show that two alternatives deserve equal measure. It does not
+automatically explain why subjective expectation should follow measure
+in a universe where all alternatives are realized. MCSL handles that
+second step.</p>
+<h2 id="why-mangled-worlds-are-unnecessary-here">13. Why Mangled Worlds
+Are Unnecessary Here</h2>
+<p>Mangled-worlds approaches attempt to recover Born statistics by
+arguing that low-measure branches are dynamically damaged, overwritten,
+or rendered observationally unavailable by interaction with
+higher-measure branches. If only unmangled branches support coherent
+observers, and if the mangling threshold has the right structure, then
+observed frequencies may approximate the Born rule.</p>
+<p>This approach tries to make branch survival do the work of
+probability.</p>
+<p>MCSL does not need that machinery. Low-measure branches do not have
+to be destroyed, damaged, or made incoherent. They may exist as
+admissible observer-realizations. Their contribution to rational
+credence is small because their measure is small.</p>
+<p>The empirical claim becomes:</p>
+<blockquote>
+<p>Anti-Born observer records exist with low measure.</p>
+</blockquote>
+<p>It need not become:</p>
+<blockquote>
+<p>Anti-Born observer records must be physically eliminated.</p>
+</blockquote>
+<p>This is a cleaner Everettian position. It preserves unitary dynamics
+and avoids adding a quasi-collapse selection mechanism.</p>
+<h2 id="objections">14. Objections</h2>
+<h3 id="mcsl-assumes-the-born-rule">14.1 “MCSL Assumes the Born
+Rule”</h3>
+<p>MCSL does not assume the Born rule as a probability rule. It assumes
+that a physical ontology supplies an objective measure. In Everettian
+quantum mechanics, the candidate measure is squared Hilbert-space
+norm.</p>
+<p>The argument does require the physical measure claim:</p>
+<p><span class="math display">\[
+\mu(i)=\lVert P_i|\Psi\rangle\rVert^2.
+\]</span></p>
+<p>That claim is not MCSL itself. But it should not be waved through as
+“mere mathematics” either. As §3.6 argued, the usual Hilbert-space
+constraints — non-negativity, unitary invariance, norm conservation — do
+not by themselves single out the squared norm; only additivity over
+orthogonal subspaces does, and that route runs through Gleason’s
+theorem, whose non-contextual-additivity premise is itself close to a
+probabilistic assumption. The physical-measure claim is defended instead
+on dynamical and symmetry grounds (§3.6, §12). The point for the present
+objection is narrower: even granting that the privileging of squared
+norm is substantive, it is a claim about <em>physical</em> structure —
+about which feature of a component governs the dynamics — and not yet a
+claim that this structure is subjective probability.</p>
+<p>MCSL then says that self-locating credence should track that
+measure.</p>
+<p>So the derivation is conditional:</p>
+<blockquote>
+<p>Given Everettian ontology and squared Hilbert-space physical measure,
+MCSL yields Born-rule credence.</p>
+</blockquote>
+<p>This is not circular unless “squared Hilbert-space measure” is
+already interpreted as subjective probability. The paper explicitly
+avoids that conflation. Measure is physical structure. Credence is
+epistemic attitude. MCSL connects them.</p>
+<h3 id="why-should-credence-track-measure">14.2 “Why Should Credence
+Track Measure?”</h3>
+<p>This is the central objection.</p>
+<p>The answer is that self-location in a many-realization ontology
+requires a weighting rule. Bare existence gives no usable expectation.
+Branch-counting is not invariant. Subjective indifference over
+arbitrarily individuated branches produces contradictions under
+refinement.</p>
+<p>The rational weighting rule should track the objective measure
+supplied by the ontology. In Everett, that measure is squared
+Hilbert-space norm.</p>
+<p>This is a bridge principle. It cannot be derived from unitary
+dynamics alone, because unitary dynamics is third-person physics.
+Credence is a first-person epistemic norm. Every account of Everettian
+probability requires some bridge from physics to expectation. MCSL makes
+the bridge explicit.</p>
+<p>The bridge principle is modest:</p>
+<blockquote>
+<p>When an observer knows that multiple admissible coherent realizations
+of their evidence state exist, and those realizations carry unequal
+objective measure, their self-locating credence should be proportional
+to that measure.</p>
+</blockquote>
+<p>Rejecting this principle leaves no stable alternative. Equal
+weighting over branches depends on arbitrary branch individuation. Equal
+weighting over outcomes ignores refinement. Equal weighting over
+observer-descriptions ignores physical measure. Refusal to assign
+credence makes empirical confirmation unintelligible in Everett.</p>
+<p>This is the sense in which the paper’s result is a conditional
+reduction rather than a proof. MCSL is offered as a primitive norm of
+self-locating rationality, on a par with the principle that, absent
+other information, one’s credence should track objective chance. It is
+defended as the best — arguably the only stable — weighting rule
+available in a many-realization ontology, not deduced from the dynamics.
+A reader who rejects it owes an alternative; but a reader is not
+<em>compelled</em> to it by the formalism alone.</p>
+<h3 id="what-about-low-measure-observers">14.3 “What About Low-Measure
+Observers?”</h3>
+<p>Low-measure observers exist. MCSL does not deny them.</p>
+<p>An observer in an anti-Born branch can record anti-Born frequencies.
+That observer’s evidence is real from within that branch. MCSL says such
+observer-realizations carry low total measure. Therefore a
+pre-measurement observer should assign low credence to becoming such an
+observer, and a post-measurement observer should treat a long anti-Born
+record as evidence against the theory, because that record had low
+expected measure under the theory.</p>
+<p>This is the same structure used in ordinary probabilistic reasoning.
+Low-probability events can occur. Their occurrence is evidence,
+especially when repeated or extreme.</p>
+<p>The analogy to ordinary low-probability events is imperfect, however,
+and the disanalogy is the residual metaphysical cost of the view. In a
+single-world theory a low-probability outcome <em>usually does not
+happen</em>; here the anti-Born branch definitely happens, and the
+observer in it is fully real, with experience no less vivid than ours.
+MCSL does not soften this by making low-measure observers “partly real”
+or “faint.” It says only that their measure is low, and that low measure
+is what credence and confirmation track. Whether a fully real observer
+should regard their own branch’s low measure as a reason to discount
+their situation is precisely the force of the bridge principle (§14.2);
+the account does not pretend this is obvious. It claims that the
+alternative — granting equal standing to every realization regardless of
+measure — is worse, because it renders the observed statistical
+regularities of quantum mechanics inexplicable.</p>
+<h3 id="does-this-reduce-probability-to-typicality">14.4 “Does This
+Reduce Probability to Typicality?”</h3>
+<p>It reduces Everettian probability to measure-conditioned typicality
+over observer-realizations. That is the right reduction.</p>
+<p>In Everett, probability cannot be exclusive actuality selection. The
+universal state contains every decohered outcome. Probability must
+instead describe where observers should expect to find themselves within
+the measure-structured ontology.</p>
+<p>This is typicality, but not vague typicality. It is conditionalized
+typicality over admissible coherent evidence-bearing vantages:</p>
+<p><span class="math display">\[
+C(H\mid E)=\frac{\mu(A(H,E))}{\mu(A(E))}.
+\]</span></p>
+<p>Two caveats keep this from being a verbal victory. First, “typical =
+high measure” is itself a posit: nothing in the bare measure compels a
+rational agent to <em>expect</em> the typical rather than merely to
+<em>label</em> it so. This is the standing complaint against typicality
+accounts generally, and it recurs in the Boltzmannian and Bohmian
+literatures. MCSL’s answer is the bridge principle of §14.2; the
+reduction to typicality does not avoid that commitment, it relocates it.
+Second, the reduction is only as good as the admissibility criterion
+that fixes <span class="math inline">\(A(E)\)</span>, discussed
+next.</p>
+<h3 id="what-counts-as-an-admissible-coherent-realization">14.5 “What
+Counts as an Admissible Coherent Realization?”</h3>
+<p>An admissible coherent realization must support the evidence state in
+the right way. It must be a physically coherent observer-vantage, not a
+superficial pattern match. The realization must preserve the functional,
+causal, and evidential structure that makes the observer’s evidence
+genuinely present.</p>
+<p>This matters because self-location theories can be distorted by
+gerrymandered observer descriptions, Boltzmann-brain-like fluctuations,
+and accidental information-pattern matches. MCSL requires an
+admissibility criterion to exclude pseudo-realizations that do not
+instantiate the relevant evidence-bearing perspective.</p>
+<p>In Everettian laboratory measurements, this problem is usually mild.
+Decohered observer records produced by ordinary measurement interactions
+are admissible coherent realizations. The harder cases arise in
+cosmology, simulation, duplication, and disordered thermal fluctuation
+scenarios. The admissibility relation itself, and these harder cases,
+are treated at length in the companion MCSL paper, where Boltzmann-brain
+counterfeits and exact-duplicate presumptuousness are isolated as the
+principal open problems (<a href="MCSL.html">MCSL.md</a>, §§16–20).</p>
+<h3 id="there-is-no-uncertainty-to-be-uncertain-about">14.6 “There Is No
+Uncertainty to Be Uncertain About”</h3>
+<p>The deepest objection, pressed by Albert and by Kent, is prior to all
+of the above: it denies that there is any genuine uncertainty in Everett
+for a credence to be the credence <em>of</em>. Before the measurement,
+the agent knows the full deterministic future — every outcome occurs,
+each with a successor who records it. After the measurement, each
+successor knows their own result. The decision-theoretic and
+self-locating programs both try to exploit a sliver of time, after
+branching but before the agent reads the outcome, in which the agent
+supposedly “knows the universal state but not which branch they are in.”
+Critics argue that this sliver is illusory: with realistic decoherence
+there is no determinate moment at which the agent has split but not yet
+self-located, and in any case there is no single subject who is
+uncertain — there are several subjects, each with a settled outcome. “No
+probability without uncertainty,” on this view, is a constraint Everett
+cannot meet.</p>
+<p>MCSL does not refute this objection so much as decline its framing,
+and the cost of doing so should be stated plainly. MCSL does not require
+a temporal window of ignorance. Its “uncertainty” is indexical rather
+than dynamical: even with full knowledge of the universal state and of
+the deterministic dynamics, the question “which of the admissible
+observer-realizations of my present evidence am I about to be continuous
+with?” has no answer fixed by that knowledge, because the evidence does
+not discriminate among them. This is self-location in the sense of the
+standard Sleeping-Beauty and personal-duplication cases, where
+uncertainty survives complete knowledge of the third-person facts. If
+indexical self-location is a coherent locus for credence in those cases
+— and the burden is on the critic to explain why it would not be — then
+it is coherent here, and MCSL says how to apportion it.</p>
+<p>This requires one distinction to be made explicit, because the
+account uses two registers that the objection rightly refuses to
+conflate. In the <em>indexical</em> register the agent has already
+branched but has not yet observed the outcome; the uncertainty is the
+present-tense “which branch am I in?” of the Sleeping-Beauty and
+duplication cases, and it survives full knowledge of the third-person
+facts. In the <em>prospective</em> register — the framing of §7 — a
+pre-branching agent apportions forward-looking expectation over
+successors it knows it will all become; here there is, strictly, no
+present-tense ignorance, and “expectation” must be read either as
+Saunders–Wallace subjective uncertainty about one’s own future or as a
+Greaves-style weighting of care across successors. MCSL returns the same
+measure-weighting in both, but it earns it most cheaply in the indexical
+register. A reader unconvinced that pre-branching anticipation is
+genuine <em>uncertainty</em> can therefore retreat without loss: the
+post-branching, pre-observation agent’s ignorance of which branch they
+occupy is at least a recognizable species of self-locating uncertainty,
+even if the duration of its window is contested (Kent). That is a far
+narrower dispute than the wholesale claim that no uncertainty exists
+anywhere in the picture, and the indexical register alone suffices for
+MCSL to apply.</p>
+<p>What the objection does establish is that the Everettian cannot
+interpret probability as <em>uncertainty about which outcome will
+occur</em>; that reading is simply false in a branching world (§7). The
+defender’s claim is the weaker one, that <em>indexical</em> credence
+remains well-posed. Whether indexical credence under full physical
+knowledge counts as genuine “probability” or as a distinct propositional
+attitude wearing probability’s mathematics is, at this point, partly
+terminological — but the terminological question does not touch the
+empirical adequacy established in §8 or the confirmation structure of
+§15. The account stands or falls with the legitimacy of self-locating
+credence in general, not with any special infirmity of quantum
+branching.</p>
+<h2 id="confirmation-in-everett">15. Confirmation in Everett</h2>
+<p>A theory is empirically confirmed when observations that it assigns
+high credence occur and observations it assigns low credence fail to
+occur. In Everett, all physically possible records may occur somewhere,
+so confirmation must be measure-sensitive.</p>
+<p>Suppose theory <span class="math inline">\(T_1\)</span> assigns high
+measure to Born-typical records and low measure to anti-Born records.
+Suppose theory <span class="math inline">\(T_2\)</span> assigns high
+measure to a different pattern. An observer who records Born-typical
+frequencies should update toward <span
+class="math inline">\(T_1\)</span>, because their evidence has higher
+measure conditional on <span class="math inline">\(T_1\)</span>:</p>
+<p><span class="math display">\[
+C(T_1\mid E)\propto C(E\mid T_1)C(T_1).
+\]</span></p>
+<p>MCSL interprets <span class="math inline">\(C(E\mid T_1)\)</span> as
+the measure of admissible observer-realizations with evidence <span
+class="math inline">\(E\)</span> under <span
+class="math inline">\(T_1\)</span>.</p>
+<p>This preserves empirical confirmation in Everett. The fact that
+disconfirming records exist somewhere does not defeat confirmation,
+because confirmation was never based on bare existence. It is based on
+measure-conditioned likelihood.</p>
+<h2 id="the-full-argument">16. The Full Argument</h2>
+<p>The argument can now be stated compactly.</p>
+<ol type="1">
+<li>Everettian quantum mechanics contains all decohered measurement
+outcomes.</li>
+<li>Therefore probability cannot mean uncertainty about which outcome
+uniquely becomes real.</li>
+<li>Branch-counting cannot ground probability because branches are
+emergent, non-canonically individuated, and indefinitely refinable.</li>
+<li>Infinite branch ontology requires a measure rather than
+cardinality.</li>
+<li>Quantum theory supplies a natural objective measure over decohered
+subspaces: squared Hilbert-space norm.</li>
+<li>Observers inside Everettian quantum mechanics face self-locating
+uncertainty over admissible coherent observer-realizations.</li>
+<li>MCSL says self-locating credence should track the total objective
+measure of admissible coherent realizations of one’s evidence
+state.</li>
+<li>Therefore Everettian observer credence should be proportional to
+squared Hilbert-space measure.</li>
+<li>For exhaustive normalized measurements, this yields:</li>
+</ol>
+<p><span class="math display">\[
+C(H_i\mid E)=\lVert P_i|\Psi\rangle\rVert^2.
+\]</span></p>
+<ol start="10" type="1">
+<li>This is the Born rule.</li>
+</ol>
+<h2 id="conclusion">17. Conclusion</h2>
+<p>The Born rule in Everettian quantum mechanics requires both a measure
+and a bridge from measure to credence. Squared Hilbert-space norm
+supplies the measure. MCSL supplies the bridge.</p>
+<p>The account does not claim that subjective probability falls out of
+linear algebra alone. That would obscure the real structure of the
+problem. Linear algebra identifies the natural physical measure over
+decohered alternatives. MCSL explains why an embedded observer’s
+self-locating credence should track that measure.</p>
+<p>This gives a clean Everettian interpretation of quantum
+probability:</p>
+<p><span class="math display">\[
+\text{Born probability} = \text{squared-amplitude measure-conditioned
+self-location}.
+\]</span></p>
+<p>All outcomes occur. Observers should not count outcomes, branches, or
+copies. They should conditionalize over admissible coherent
+observer-realizations using the objective measure supplied by the
+universal quantum state.</p>
+<p>What is offered, then, is a conditional reduction, and its conditions
+should be kept in view. It assumes that squared norm — and not another
+function of amplitude — is the physically privileged measure, a claim
+defended on dynamical and symmetry grounds rather than read off the
+abstract notion of measure (§3.6). It assumes that indexical
+self-locating credence is a coherent attitude in a deterministic
+branching world, against a serious objection that it is not (§14.6). And
+it inherits, undissolved, the metaphysical discomfort of fully real
+low-measure observers (§14.3). Granting these, the Born rule is not a
+further postulate but a consequence; withholding any of them, the
+derivation lapses. The contribution is to have separated these
+commitments cleanly enough that each can be accepted, rejected, or
+improved on its own.</p>
+<h2 id="references">References</h2>
+<p>Albert, David Z. “Probability in the Everett Picture.” In Saunders,
+Barrett, Kent, and Wallace (eds.), <em>Many Worlds? Everett, Quantum
+Theory, and Reality</em>. Oxford University Press, 2010.</p>
+<p>Busch, Paul. “Quantum States and Generalized Observables: A Simple
+Proof of Gleason’s Theorem.” Physical Review Letters 91, 120403,
+2003.</p>
+<p>Carroll, Sean M., and Charles T. Sebens. “Many Worlds, the Born Rule,
+and Self-Locating Uncertainty.” arXiv:1405.7907.</p>
+<p>Deutsch, David. “Quantum Theory of Probability and Decisions.”
+Proceedings of the Royal Society A 455, 1999.</p>
+<p>Everett, Hugh. “‘Relative State’ Formulation of Quantum Mechanics.”
+Reviews of Modern Physics 29, 1957.</p>
+<p>Gleason, Andrew M. “Measures on the Closed Subspaces of a Hilbert
+Space.” Journal of Mathematics and Mechanics 6, 1957.</p>
+<p>Greaves, Hilary. “Understanding Deutsch’s Probability in a
+Deterministic Multiverse.” Studies in History and Philosophy of Modern
+Physics 35, 2004.</p>
+<p>Hanson, Robin. “Mangled Worlds.” 2003.</p>
+<p>Kent, Adrian. “Against Many-Worlds Interpretations.” International
+Journal of Modern Physics A 5, 1990.</p>
+<p>Kent, Adrian. “One World Versus Many: The Inadequacy of Everettian
+Accounts of Evolution, Probability, and Scientific Confirmation.” In
+Saunders, Barrett, Kent, and Wallace (eds.), <em>Many Worlds?</em>
+Oxford University Press, 2010.</p>
+<p>McFadzean, David. <em>Measure-Conditioned Self-Location: A
+Conditional Axionic Alternative to SSA and SIA</em>. Companion paper, <a
+href="MCSL.html">MCSL.md</a>.</p>
+<p>Saunders, Simon, Jonathan Barrett, Adrian Kent, and David Wallace,
+eds. <em>Many Worlds? Everett, Quantum Theory, and Reality</em>. Oxford
+University Press, 2010.</p>
+<p>Sebens, Charles T., and Sean M. Carroll. “Self-Locating Uncertainty
+and the Origin of Probability in Everettian Quantum Mechanics.” British
+Journal for the Philosophy of Science / arXiv:1405.7577.</p>
+<p>Vaidman, Lev. “Probability in the Many-Worlds Interpretation of
+Quantum Mechanics.” In Ben-Menahem and Hemmo (eds.), <em>Probability in
+Physics</em>. Springer, 2012.</p>
+<p>Wallace, David. <em>The Emergent Multiverse: Quantum Theory According
+to the Everett Interpretation</em>. Oxford University Press, 2012.</p>
+<p>Wallace, David. “A Formal Proof of the Born Rule from
+Decision-Theoretic Assumptions.” arXiv:0906.2718.</p>
+<p>Zurek, Wojciech H. “Environment-Assisted Invariance, Entanglement,
+and Probabilities in Quantum Physics.” Physical Review Letters 90,
+2003.</p>
+
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
