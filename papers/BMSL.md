@@ -211,6 +211,8 @@ Measure-Conditioned Self-Location says:
 
 > Under self-locating uncertainty, credence should track the total objective measure of admissible coherent realizations of one’s present evidence state.
 
+This principle is developed in full generality in the companion paper [*Measure-Conditioned Self-Location: A Conditional Axionic Alternative to SSA and SIA*](MCSL.md), where it is defended against the Self-Sampling and Self-Indication Assumptions in anthropic reasoning. The present paper specializes it to the Everettian case, where the objective measure is fixed by Hilbert-space geometry rather than left contested.
+
 This rule is conditional. It requires:
 
 1. an interpreted physical ontology;
@@ -542,7 +544,7 @@ An admissible coherent realization must support the evidence state in the right 
 
 This matters because self-location theories can be distorted by gerrymandered observer descriptions, Boltzmann-brain-like fluctuations, and accidental information-pattern matches. MCSL requires an admissibility criterion to exclude pseudo-realizations that do not instantiate the relevant evidence-bearing perspective.
 
-In Everettian laboratory measurements, this problem is usually mild. Decohered observer records produced by ordinary measurement interactions are admissible coherent realizations. The harder cases arise in cosmology, simulation, duplication, and disordered thermal fluctuation scenarios.
+In Everettian laboratory measurements, this problem is usually mild. Decohered observer records produced by ordinary measurement interactions are admissible coherent realizations. The harder cases arise in cosmology, simulation, duplication, and disordered thermal fluctuation scenarios. The admissibility relation itself, and these harder cases, are treated at length in the companion MCSL paper, where Boltzmann-brain counterfeits and exact-duplicate presumptuousness are isolated as the principal open problems ([MCSL.md](MCSL.md), §§16–20).
 
 ### 14.6 “There Is No Uncertainty to Be Uncertain About”
 
@@ -625,6 +627,8 @@ Hanson, Robin. “Mangled Worlds.” 2003.
 Kent, Adrian. “Against Many-Worlds Interpretations.” International Journal of Modern Physics A 5, 1990.
 
 Kent, Adrian. “One World Versus Many: The Inadequacy of Everettian Accounts of Evolution, Probability, and Scientific Confirmation.” In Saunders, Barrett, Kent, and Wallace (eds.), *Many Worlds?* Oxford University Press, 2010.
+
+McFadzean, David. *Measure-Conditioned Self-Location: A Conditional Axionic Alternative to SSA and SIA*. Companion paper, [MCSL.md](MCSL.md).
 
 Saunders, Simon, Jonathan Barrett, Adrian Kent, and David Wallace, eds. *Many Worlds? Everett, Quantum Theory, and Reality*. Oxford University Press, 2010.
 

@@ -271,7 +271,7 @@ All MCSL outputs are conditional on a specified admissibility relation. Anthropi
 
 ## 10. Measure in Everettian and Classical Contexts
 
-The notion of objective measure is clearest in Everettian settings, where branch measure has an obvious physical role. But MCSL should not be restricted to Everett alone, and the notion of measure must therefore be handled carefully in classical cases.
+The notion of objective measure is clearest in Everettian settings, where branch measure has an obvious physical role. (This Everettian specialization is worked out in detail in the companion paper [*Born Measure from Self-Location*](BMSL.md), which derives the Born rule as an instance of MCSL.) But MCSL should not be restricted to Everett alone, and the notion of measure must therefore be handled carefully in classical cases.
 
 In branch-structured theories, $\mu_i$ may be taken directly as branch measure or branch-derived weight over admissible vantage-events.
 
