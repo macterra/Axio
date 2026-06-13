@@ -687,7 +687,49 @@ by theorem rather than by count. Whether his implicit dependence is lighter
 or heavier than our explicit one is a fair question for a referee; we
 contend that an itemized bill beats an unitemized one at equal cost.
 
-**11.4 The ad-hocness probe.** The suspicion that the package was
+**11.4 Khawaja's indexed branch-counting.** The sharpest standing denial of
+our conclusion is a rival rule, not a circularity charge: Khawaja's *indexed
+branch-counting* (IBC), a well-defined self-locating credence that
+*diverges* from Born, defended positively on accuracy-theoretic grounds and
+from a requirement of exchangeability over event-sequences. It defuses the
+cheap stop — that branches are too vague to count — so we cannot lean on
+incoherence, and do not; and it attacks the very Saunders proposal §11.3
+credits. That last is easily discharged: §11.3 borrows only Saunders's
+observation that continuity-in-norm derives from the Hilbert norm, never his
+counting rule, so an attack on the rule leaves our use of him intact. Indeed
+Khawaja and we agree that Saunders's count does not by itself earn Born; we
+part on the moral — he takes the honest count to diverge from Born, we take
+the quadratic weight to be forced by Lela's theorem, with counting nowhere
+in the derivation.
+
+What IBC cannot evade is the uniqueness theorem. A non-Born
+refinement-stable induced weight is impossible, so its divergence from Born
+requires it to fail refinement-stability or internal equivalence — and
+Theorem 1 shows how. The saturation construction splits any sector, by a
+norm-fixing non-demolition coupling, into as many equal-norm sub-branches as
+one likes: the count is unbounded and refinement-relative exactly where the
+norm is invariant. Under Section 5's modal reading every such individuation
+is available, and under Section 8's delegation each is enacted in some
+sibling; there is no privileged count for IBC to index. What it fixes by
+fiat, our framework reads as representational surplus — a choice that leaves
+no record, hence by evidential internalism is weight-irrelevant. Its
+exchangeability premise is, structurally, the indifference principle
+Section 7 diagnoses as perishing under refinement, now backed by an
+accuracy-theoretic warrant rather than a bare symmetry; the warrant is the
+novelty, and it is exactly a positive case for tracking what EI forbids.
+
+We claim no knockout. If that accuracy case makes the index genuinely
+evidence-relevant, EI is false and IBC stands — which only repeats that
+everything turns on ledger item (a). What we add is a burden IBC has yet to
+discharge and squared norm discharges trivially: a credence diverging from
+Born predicts non-Born relative frequencies as typical, and the statistics
+an embedded experimenter records are Born. Exchangeability governs how a
+rule treats reorderings of a fixed frequency; it does not, by itself, say
+why the recorded frequencies are the Born ones. Until it does, IBC buys its
+rejection of EI at the price of the empirical contact our route keeps for
+free.
+
+**11.5 The ad-hocness probe.** The suspicion that the package was
 reverse-engineered to yield Born is answered by its exposure to failure. If
 refining couplings necessarily disturbed parent records, Theorem 1 fails;
 if decoherence did not screen contexts, Section 8's first argument fails;
@@ -704,7 +746,7 @@ showing the revised bill — all of it, including the small print.
 
 | # | Premise | Where | Status |
 |---|---------|-------|--------|
-| a | Evidential internalism (EI) | §7 | Open posit. Rejection severs credence from confirmation (§7) — strong reply, not theorem. |
+| a | Evidential internalism (EI) | §7, §11.4 | Open posit; Khawaja's indexed branch-counting (§11.4) is the worked-out rejection. Refusing EI severs credence from confirmation (§7) — strong reply, not theorem. |
 | b | Norm-gradedness (NG) | §6 | Open posit, challenge-shaped: no rival grading has dynamical standing. |
 | c | Well-posed additive self-locating credence | §9(iii), §10 | Inherited from companion §14.6; untouched here. |
 | d | Ancilla Availability (AA) | §3 | Local; mild for macroscopic sectors; state-relativity priced, defused for observer-containing sectors (§10). |
