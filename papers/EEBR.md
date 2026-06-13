@@ -46,8 +46,8 @@ critical literature — Albert, Kent, Baker, Dawid and Thébault, Dawid and
 Friederich — as demonstrations that each attempt buys the conclusion with
 premises of comparable strength differently disguised.
 
-In a companion paper (BMSL) one of us argued that the honest position is a
-conditional reduction: the Born rule in Everett rests on exactly two
+In a companion paper ([BMSL](BMSL.md)) we argued that the honest position
+is a conditional reduction: the Born rule in Everett rests on exactly two
 posits — a physical-measure claim (squared norm is the weight) and an
 epistemic bridge (rational self-locating credence tracks the weight) — and
 that the literature's derivations relocate rather than discharge them. The
@@ -615,8 +615,9 @@ companion paper, retained. What has changed is what the conditions are.
 
 ## 10. The slimmed bridge
 
-The companion paper's epistemic bridge, MCSL, asked the agent to align
-credence with *the* objective measure — which obliged the companion paper
+The companion paper's epistemic bridge, [MCSL](MCSL.md), asked the agent to
+align credence with *the* objective measure — which obliged the companion
+paper
 to defend squared norm's claim to be the measure, the burden its Section
 3.6 carried uneasily. The present route asks for less, and the difference
 is the paper's payoff. The bridge now consists of premise (iii) of Theorem
@@ -817,7 +818,8 @@ they were also payable.
 - Brown, H. & Ben-Porath, G. (2020). Everettian Probabilities, the
   Deutsch–Wallace Theorem and the Principal Principle. In Quantum,
   Probability, Logic (Springer, 2020), ch. 7. arXiv:2010.11591.
-- McFadzean, D. (2026). Born Measure from Self-Location: An MCSL Account of
-  Probability in Everettian Quantum Mechanics. Companion paper (BMSL).
-- McFadzean, D. (2026). Measure-Conditioned Self-Location: A Conditional
-  Axionic Alternative to SSA and SIA. Companion paper (MCSL).
+- McFadzean, D. (2026). [Born Measure from Self-Location: An MCSL Account of
+  Probability in Everettian Quantum Mechanics](BMSL.md). Companion paper
+  (BMSL).
+- McFadzean, D. (2026). [Measure-Conditioned Self-Location: A Conditional
+  Axionic Alternative to SSA and SIA](MCSL.md). Companion paper (MCSL).
