@@ -62,9 +62,13 @@ physical systems satisfy its conditions and on why anyone's credence should
 care about its weight.
 
 Our thesis is that Everettian quantum mechanics, and perhaps only
-Everettian quantum mechanics, crosses Lela's threshold — and that crossing
-it converts BMSL's first posit from an assumption into a theorem-mediated
-consequence of emergence, while shrinking the second to its minimal core.
+Everettian quantum mechanics, crosses Lela's threshold — the qualification
+resting on two features we argue are Everett-exclusive: the universal-state
+dissolution of the measurement-enlargement problem (§3) and the
+choice-as-branching route to cross-context identity (§8). Crossing the
+threshold converts BMSL's first posit from an assumption into a
+theorem-mediated consequence of emergence, while shrinking the second to
+its minimal core.
 The argument has a technical half and a philosophical half. The technical
 half (Sections 3–4) establishes admissible binary saturation for
 decoherence-stabilized record sectors in the universal Hilbert space, by a
@@ -86,15 +90,16 @@ contexts are all actual.
 
 Throughout, we hold ourselves to the accounting standard of the companion
 paper. Every premise is named when introduced and collected in a closing
-ledger (Section 12). The conclusion is conditional, and the conditions are
-individually attackable; we think this is a virtue, and we have tried to
-make each condition fail interestingly rather than vaguely. The reader who
-rejects the conclusion should, by the end, be able to say exactly which
-line item she declines to pay.
+ledger (Section 12). The conclusion is conditional and the conditions are
+individually attackable; the reader who rejects the conclusion should, by
+the end, be able to say exactly which line item she declines to pay.
 
 ## 2. The threshold theorem
 
-We restate Lela's result in the form we need; definition numbers are his.
+We restate Lela's result in the form we need; definition and theorem
+numbers are his. Lela (2026) is a recent preprint; we take its definitions
+and its uniqueness result — his Theorem 3 — as stated, and our conclusions
+inherit whatever standing that source ultimately earns.
 
 A *robust record sector* is a closed subspace $R$ of a Hilbert layer $H$
 satisfying three functional conditions (his Definition 1): internal
@@ -110,18 +115,20 @@ the weight $W_\Psi(R) := \mu(C_\Psi(R))$. An *admissible orthogonal
 refinement* $R = R_1 \oplus R_2$ (his Definition 3) requires the $R_i$ to
 be robust sectors representing mutually exclusive readable alternatives,
 and — clause (iii), on which much will turn — that every continuation in
-$C_\Psi(R)$ fall under exactly one $R_i$. His Continuation Partition Lemma
-then makes $W$ automatically additive over admissible refinements:
-refinement-stability is inherited, not postulated.
+$C_\Psi(R)$ fall under exactly one $R_i$. His Lemma 1 (continuation
+partition) then makes $W$ automatically additive over admissible
+refinements: refinement-stability is inherited, not postulated.
 
-The theorem: if, further, (Condition 1, *internal equivalence*) sectors
+The theorem (his Theorem 3): if, further, (Condition 1, *internal
+equivalence*) sectors
 with identical admissible binary refinement profiles carry identical
 weight, and (Condition 2, *admissible binary saturation*) every pair
 $(r_1, r_2)$ with $r_1^2 + r_2^2 = \lVert \Pi_R|\Psi\rangle\rVert^2$ is
 realized by some admissible refinement, then
 $W_\Psi(R) = c\,\lVert \Pi_R|\Psi\rangle\rVert^2$ for a constant
-$c \geq 0$; normalization yields the Born form. The proof is a profile reduction followed by the
-Pythagorean functional equation and a Cauchy-type lemma; the exponent $2$
+$c \geq 0$; normalization yields the Born form. The proof is a profile
+reduction followed by the Pythagorean functional equation and a Cauchy-type
+lemma; the exponent $2$
 is contributed entirely by the Pythagorean relation among orthogonal
 components. A supplementary proposition weakens exact saturation to dense
 saturation plus continuity of the profile function.
@@ -151,9 +158,8 @@ it is this paper's business.
 We now specialize: the record layer is the universal Hilbert space $H$,
 the state $|\Psi\rangle$ the universal state, and record sectors are
 macroscopic — $R$ is spanned by all microstates compatible with some
-definite,
-decoherence-stabilized record content: a pointer reading, a memory
-configuration, an environmental imprint.
+definite, decoherence-stabilized record content: a pointer reading, a
+memory configuration, an environmental imprint.
 
 Two consequences of the specialization do real work. There is no
 enlargement problem: the textbook realization of a generalized measurement
@@ -194,8 +200,8 @@ to write — which is not our world and not any world in which experimental
 physics is possible. One honest qualification: clause (ii) is
 state-relative — a claim about the actual universal state restricted to
 $R$, not about all states — and it can fail for contrived $|\Psi\rangle$.
-Our results are
-stated for sectors satisfying AA; Section 10 notes that the credence
+Our results are stated for sectors satisfying AA; Section 10 notes that the
+credence
 application only ever invokes observer-containing sectors, for which AA is
 uncontentious.
 
@@ -303,9 +309,8 @@ The reader will have noticed what the proof of Theorem 1 quietly did: it
 different $\theta$, and the processes $U_\theta$ for distinct $\theta$ are
 mutually incompatible — at most one of them is what actually happens.
 Saturation, as just established, is a claim about what the dynamics can do,
-not about what it does do.
-Everything in this paper that is philosophically expensive is contained in
-that observation, and we now stop deferring it.
+not about what it does do — and that gap is where the paper's philosophical
+cost lies. The next section takes it up.
 
 ## 5. What saturation costs: the modal reading
 
@@ -338,8 +343,7 @@ of demanding
 that a frame function assign a projector the same value in every orthogonal
 decomposition containing it. The route through continuation bundles did not
 eliminate Gleason's contested premise; it relocated it, one level down,
-from a lattice axiom to a cross-context identity claim. A paper in the
-tradition of pricing its assumptions must say so before its referees do.
+from a lattice axiom to a cross-context identity claim.
 
 Saying so prepares an exact bill, for the modal reading decomposes the
 theorem's premises into three items of sharply different standing. *Bundle
@@ -402,7 +406,7 @@ Hilbert space. None of these requires expectation values to state; where
 textbook derivations deploy density-matrix methods, these are calculational
 conveniences, and the underlying claims can be cast as perturbation bounds
 on vectors. One premise, however, hides in "suppression" and "small," and
-the honesty this paper aspires to requires dragging it into the light:
+must be made explicit:
 
 **(NG)** Dynamical relevance is norm-graded: norm-small perturbations have
 proportionally small record-functional effects.
@@ -509,8 +513,8 @@ context?
 
 The first argument is an application of what we already have. By Lemma
 1(i), contexts differing in which $U_\theta$ would be applied differ in
-nothing
-with record-functional footprint on the parent sector: the coarse record,
+nothing with record-functional footprint on the parent sector: the coarse
+record,
 its profile, its continuation structure are point-identical across
 contexts — that is what non-demolition means. A weight varying with context
 would vary without any profile difference, in direct violation of
@@ -519,8 +523,7 @@ should be routed back to Section 7.
 
 The second argument is the one no one-world theory can make. In Everett the
 agent and her choosing are physical systems, and a choice among refining
-contexts $\{\theta_i\}$ can always be delegated to a quantum randomizer —
-an
+contexts $\{\theta_i\}$ can always be delegated to a quantum randomizer — an
 ancilla-driven branching process, available whenever AA holds, i.e. always.
 Under delegation the choice event is itself a branching event, and every
 context is enacted in some sibling decision-branch: the "counterfactual"
@@ -539,23 +542,23 @@ identical in every sibling decision-branch.
 *Proof.* In each sibling branch the parent profile is preserved: by
 $[U_{\theta_i}, \Pi_R] = 0$, the parent norm and its admissible refinement
 structure are untouched by the enacted refinement. The profiles are
-therefore
-identical across siblings, and by Condition 1 — as derived in Section 7 —
+therefore identical across siblings, and by Condition 1 — as derived in
+Section 7 —
 the weights are identical. ∎
 
 Note what the proof does not use: at no point are the *measures* of the
 sibling decision-branches invoked — only their existence and their record
-structure. The argument is measure-free by construction, which is worth a
-deliberate sentence because it is where a circularity hunter will look
-first: a justification of the Born rule that needed Born weights over the
-randomizer's outcomes would be the old circle; Lemma 3 needs only that the
-outcomes are there.
+structure. The argument is measure-free by construction — the point a
+circularity check will probe first: a justification of the Born rule that
+needed Born
+weights over the randomizer's outcomes would be the old circle; Lemma 3
+needs only that the outcomes are there.
 
 The bridge from delegated to deliberate choices is one more application of
 EI. An agent whose parent-sector weight depended on whether she chose
 $\theta$ herself or let a quantum coin choose would treat the provenance of
-the
-context — an evidentially idle fact, leaving no trace in any parent-sector
+the context — an evidentially idle fact, leaving no trace in any
+parent-sector
 record — as weight-relevant. Provenance-sensitivity violates
 profile-supervenience exactly as context-sensitivity did. This move is kin
 to Wallace's branching-indifference arguments, and the kinship should be
@@ -572,9 +575,10 @@ always in stock. And the staked ground should be credited precisely: Bub
 and Pitowsky observed that the Deutsch–Wallace rationality constraints are
 justifiable only on the Everett interpretation, where all outcomes occur
 relative to branches — the germ of the present argument, grown in
-decision-theoretic soil; and it has been noted that in Everettian terms
-noncontextuality amounts to branch-dependence, an assumption flagged in
-that literature as exactly what the objectors reject. Neither develops the
+decision-theoretic soil; and Khawaja, defending branch-counting against the
+Born rule, makes the corresponding identification — that in Everettian
+terms noncontextuality amounts to branch-dependence — and flags it as
+exactly what the probability-objectors reject. Neither develops the
 choice-as-branching-event argument; Wallace's noncontextual-inference
 theorem reaches a cousin of our conclusion with rationality axioms this
 route does not need. Gleason had to posit non-contextuality, and
@@ -660,12 +664,15 @@ reading — epistemic separability in new clothing — is therefore half right,
 and the half matters: this is separability with a derivation, where ESS was
 separability as posit; the clothing is a theorem.
 
-**11.2 The circularity charges.** Handled in Section 6; the residue is
-restated honestly. Against Baker: no reduced density matrices or
-expectation values appear in AUT's support; against Dawid and Thébault: NG
-is a structural claim about perturbation bounds, not a significance
-judgment. The standing exposure is the challenge to exhibit a rival grading
-of dynamical relevance with any dynamical standing; until one is produced,
+**11.2 The circularity charges.** Section 6 met these in full; what remains
+is the residue. Against Baker: no reduced density matrices or expectation
+values appear in AUT's support — the emergence claims it rests on are cast
+as perturbation bounds on vectors, not as facts about expectation values.
+Against Dawid and Thébault: NG grades record-relevance by the norm, which
+is a structural claim checkable as perturbation bounds within the
+formalism, not the significance judgment their objection targets. The
+standing exposure is the challenge to exhibit a rival grading of dynamical
+relevance with any dynamical standing; until one is produced,
 NG stands as the only candidate the theory itself offers, and the ledger
 records it as challenge-shaped.
 
@@ -687,7 +694,8 @@ if decoherence did not screen contexts, Section 8's first argument fails;
 if dynamical relevance were not norm-graded, Section 6 fails; if
 self-locating credence is ill-posed, premise (iii) fails. Each component
 can lose on structural or physical grounds, and none is tunable to save the
-conclusion. Calibrated arguments do not take risks; this one takes four.
+conclusion — four independent risks, where a reverse-engineered package
+would take none.
 
 ## 12. The ledger
 
@@ -714,9 +722,9 @@ nowhere in the ledger; it is purchased by the Pythagorean relation inside a
 uniqueness theorem, which is to say by geometry. Everett stipulated in 1956
 that the measure of a trajectory be the sum of the measures of its branches
 and a function of their amplitudes alone, and was told for seventy years
-that the stipulations were the problem. The stipulations were the problem.
-We have tried to show that, in the one interpretation where every outcome
-is somebody's actual, they were also payable.
+that the stipulations were the problem. They were. We have tried to show
+that, in the one interpretation where every outcome is somebody's actual,
+they were also payable.
 
 ---
 
@@ -725,16 +733,21 @@ is somebody's actual, they were also payable.
 - Lela, M. (2026). The Born Rule as the Unique Refinement-Stable Induced
   Weight on Robust Record Sectors. arXiv:2603.24619.
 - Everett, H. (1957). "Relative State" Formulation of Quantum Mechanics.
-  Rev. Mod. Phys. 29, 454–462. [For the additivity derivation see also the
-  1956 long thesis, in the DeWitt–Graham volume (Princeton, 1973) or the
-  Barrett–Byrne edition (Princeton, 2012); exact page numbers for the
-  trajectory-measure passage still to be inserted.]
+  Rev. Mod. Phys. 29, 454–462. The fuller measure derivation appears in the
+  1956 long thesis, "The Theory of the Universal Wave Function," in DeWitt &
+  Graham (eds.), The Many-Worlds Interpretation of Quantum Mechanics
+  (Princeton, 1973), and in Barrett & Byrne (eds.), The Everett
+  Interpretation of Quantum Mechanics: Collected Works 1955–1980 (Princeton,
+  2012).
 - Barrett, J. (2017). Typical Worlds. Studies in History and Philosophy of
   Modern Physics 58, 31–40. arXiv:1912.05312.
 - Wallace, D. (2012). The Emergent Multiverse: Quantum Theory according to
   the Everett Interpretation. OUP.
 - Saunders, S. (2021). Branch-counting in the Everett interpretation of
   quantum mechanics. Proc. R. Soc. A 477: 20210600.
+- Khawaja, J. (2026). Conquering Mount Everett: Branch-Counting Versus the
+  Born Rule. British Journal for the Philosophy of Science (forthcoming).
+  doi:10.1086/726282.
 - Sebens, C. & Carroll, S. (2018). Self-locating Uncertainty and the Origin
   of Probability in Everettian Quantum Mechanics. BJPS 69(1), 25–74.
 - Dawid, R. & Friederich, S. (2022). Epistemic Separability and Everettian
@@ -762,4 +775,7 @@ is somebody's actual, they were also payable.
 - Brown, H. & Ben-Porath, G. (2020). Everettian Probabilities, the
   Deutsch–Wallace Theorem and the Principal Principle. In Quantum,
   Probability, Logic (Springer, 2020), ch. 7. arXiv:2010.11591.
-- BMSL and the MCSL companion paper — cite per your own bibliography.
+- McFadzean, D. (2026). Born Measure from Self-Location: An MCSL Account of
+  Probability in Everettian Quantum Mechanics. Companion paper (BMSL).
+- McFadzean, D. (2026). Measure-Conditioned Self-Location: A Conditional
+  Axionic Alternative to SSA and SIA. Companion paper (MCSL).
