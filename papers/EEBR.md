@@ -720,43 +720,46 @@ is somebody's actual, they were also payable.
 
 ---
 
-## References (TO VERIFY — flagged items especially)
+## References
 
 - Lela, M. (2026). The Born Rule as the Unique Refinement-Stable Induced
   Weight on Robust Record Sectors. arXiv:2603.24619.
 - Everett, H. (1957). "Relative State" Formulation of Quantum Mechanics.
-  Rev. Mod. Phys. 29, 454–462. [Also the 1956 long thesis for the
-  additivity derivation — cite the DeWitt–Graham volume or Barrett–Byrne
-  edition; VERIFY page numbers for the trajectory-measure passage.]
-- Barrett, J. (2020?). Typical Worlds. arXiv:1912.05312. [VERIFY journal:
-  Studies in HPS B?]
-- Wallace, D. (2012). The Emergent Multiverse. OUP.
-- Saunders, S. (2021). Branch-counting in the Everett interpretation.
-  Proc. R. Soc. A 477: 20210600.
+  Rev. Mod. Phys. 29, 454–462. [For the additivity derivation see also the
+  1956 long thesis, in the DeWitt–Graham volume (Princeton, 1973) or the
+  Barrett–Byrne edition (Princeton, 2012); exact page numbers for the
+  trajectory-measure passage still to be inserted.]
+- Barrett, J. (2017). Typical Worlds. Studies in History and Philosophy of
+  Modern Physics 58, 31–40. arXiv:1912.05312.
+- Wallace, D. (2012). The Emergent Multiverse: Quantum Theory according to
+  the Everett Interpretation. OUP.
+- Saunders, S. (2021). Branch-counting in the Everett interpretation of
+  quantum mechanics. Proc. R. Soc. A 477: 20210600.
 - Sebens, C. & Carroll, S. (2018). Self-locating Uncertainty and the Origin
   of Probability in Everettian Quantum Mechanics. BJPS 69(1), 25–74.
 - Dawid, R. & Friederich, S. (2022). Epistemic Separability and Everettian
-  Branches. BJPS 73(3). [axaa002]
+  Branches: A Critique of Sebens and Carroll. BJPS 73(3), 711–721.
+  [axaa002]
 - Dawid, R. & Thébault, K. (2015). Many Worlds: Decoherent or Incoherent?
-  [VERIFY venue: Synthese 192?]
+  Synthese 192(5), 1559–1580.
 - Baker, D. (2007). Measurement Outcomes and Probability in Everettian
   Quantum Mechanics. Studies in HPS B 38, 153–169.
-- Franklin, A. (2023/24?). Incoherent? No, Just Decoherent: How Quantum
-  Many Worlds Emerge. Philosophy of Science. [VERIFY author first name,
-  year, volume — arXiv:2501.16020.]
+- Franklin, A. (2024). Incoherent? No, Just Decoherent: How Quantum Many
+  Worlds Emerge. Philosophy of Science 91(2), 288–309. arXiv:2501.16020.
 - Bub, J. & Pitowsky, I. (2010). Two Dogmas About Quantum Mechanics. In
-  Saunders et al. (eds.), Many Worlds? OUP.
-- Elga, A. (2004). Defeating Dr. Evil with Self-Locating Belief. PPR 69(2).
+  Saunders et al. (eds.), Many Worlds? OUP, 433–459.
+- Elga, A. (2004). Defeating Dr. Evil with Self-Locating Belief. PPR 69(2),
+  383–396.
 - Zurek, W. (2009). Quantum Darwinism. Nature Physics 5, 181–188.
 - Busch, P. (2003). Quantum States and Generalized Observables: A Simple
   Proof of Gleason's Theorem. PRL 91, 120403. [Comparison only.]
 - Gleason, A. (1957). Measures on the Closed Subspaces of a Hilbert Space.
   J. Math. Mech. 6, 885–893.
-- [Author TBD] (2016). Quantum Probability as an Application of Data
-  Compression Principles. arXiv:1606.06802. [VERIFY author.]
-- [Author TBD] (2026). Summing to Uncertainty: On the Necessity of
-  Additivity in Deriving the Born Rule. arXiv:2603.06211. [VERIFY authors.]
+- Randall, A. F. (2016). Quantum Probability as an Application of Data
+  Compression Principles. arXiv:1606.06802.
+- Zhang, J. (2026). Summing to Uncertainty: On the Necessity of Additivity
+  in Deriving the Born Rule. arXiv:2603.06211.
 - Brown, H. & Ben-Porath, G. (2020). Everettian Probabilities, the
-  Deutsch–Wallace Theorem and the Principal Principle. arXiv:2010.11591.
-  [VERIFY published venue.]
+  Deutsch–Wallace Theorem and the Principal Principle. In Quantum,
+  Probability, Logic (Springer, 2020), ch. 7. arXiv:2010.11591.
 - BMSL and the MCSL companion paper — cite per your own bibliography.
