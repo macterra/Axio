@@ -1,0 +1,59 @@
+
+## OWNER'S PREFACE (not for submission — for the author)
+
+**The whole argument in four moves.**
+
+1. *The theorem (cited, not ours).* Lela (2026) proves: if a branch-weight
+   depends only on a branch's internally visible refinement structure
+   (Condition 1), and if branches can be split in every proportion
+   (Condition 2), the only consistent non-negative weight is
+   amplitude-squared. The exponent comes from the Pythagorean theorem.
+2. *Splitting in every proportion (our Theorem 1).* A tilted quantum coin —
+   a spare ancilla, rotated by θ, then decohered — splits any branch in any
+   ratio without disturbing the branch's own record. We verify this device
+   against the theorem's definitions, clause by clause.
+3. *Weight sees only internal structure (our §§6–7).* Decoherence seals a
+   branch's record-life off from its siblings and from might-have-been
+   experiments. A weight tracking the sealed-off stuff would track what no
+   possible evidence could reflect. If rational expectation must answer to
+   possible evidence — weaker than Elga's indifference principle — weight
+   supervenes on internal structure. That is Condition 1, derived.
+4. *The residue, faced (our §§5, 8).* The coin-tilts of move 2 are
+   alternatives; demanding one weight rule across all of them is
+   non-contextuality in disguise. Everettian answer: delegate the tilt
+   choice to a quantum coin and every tilt happens, in sibling branches of
+   you. Consistency across contexts becomes consistency across your own
+   actual futures.
+
+**What we still assume** (the ledger, §12): evidence-answerability (EI);
+the Hilbert norm as the dynamics' own yardstick (NG); that self-locating
+credence is well-posed (inherited from BMSL §14.6); plus three local,
+defused premises (Ancilla Availability; the functional reading of
+"readable"; delegation-availability). The exponent 2 is assumed nowhere.
+
+**Sentences you must be able to say in a seminar, cold:**
+- "The squaring is done by geometry, not by physics."
+- "Saturation is a claim about what the dynamics can do, not what it does
+  do — and we say openly that this is non-contextuality in modal dress."
+- "In Everett, every context is somebody's actual."
+- "We did not derive the Born rule from nothing; we replaced two strong
+  posits with two weaker ones and a theorem, and the ledger shows the
+  difference."
+
+If any of these feels unsayable after reading the draft twice, stop and we
+work on that section until it doesn't.
+
+
+## Outstanding TODOs before submission
+
+1. Verify every flagged reference; pull exact Everett 1956 passage.
+2. Re-read Lela §6.8 (truncated in our retrieval) against Lemma 1; cite if
+   his schematic example overlaps.
+3. Decide §8 ordering: delegation argument as lead or as reply to the
+   deterministic-chooser objection (currently: lead).
+4. One-pass grep for undeclared premises beyond the six in the ledger.
+5. Trim to venue length; current draft runs long for BJPS.
+6. Check venue policy on AI-assistance disclosure; add acknowledgment line
+   as required.
+7. Author to read the Owner's Preface until the four seminar sentences are
+   sayable cold — then delete the preface from the submission copy.

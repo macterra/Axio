@@ -1,7 +1,5 @@
 # Crossing the Threshold: Everettian Emergence and the Born Rule
 
-*Complete working draft — v0.1*
-
 ## Abstract
 
 Lela (2026) proves a conditional uniqueness theorem: on robust record
@@ -762,17 +760,3 @@ is somebody's actual, they were also payable.
   Deutsch–Wallace Theorem and the Principal Principle. arXiv:2010.11591.
   [VERIFY published venue.]
 - BMSL and the MCSL companion paper — cite per your own bibliography.
-
-## Outstanding TODOs before submission
-
-1. Verify every flagged reference; pull exact Everett 1956 passage.
-2. Re-read Lela §6.8 (truncated in our retrieval) against Lemma 1; cite if
-   his schematic example overlaps.
-3. Decide §8 ordering: delegation argument as lead or as reply to the
-   deterministic-chooser objection (currently: lead).
-4. One-pass grep for undeclared premises beyond the six in the ledger.
-5. Trim to venue length; current draft runs long for BJPS.
-6. Check venue policy on AI-assistance disclosure; add acknowledgment line
-   as required.
-7. Author to read the Owner's Preface until the four seminar sentences are
-   sayable cold — then delete the preface from the submission copy.
