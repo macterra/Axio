@@ -35,6 +35,7 @@ This makes your archive completely self-contained and independent of Substack's 
 ## Directory Structure
 
 - `posts/` - Original HTML files from Substack export (not published to site)
+- `book/` - Markdown source for the *Axio* book (manifest, catalog, volume/chapter files) — built into `docs/book/`; see `plans/book-roadmap.md`
 - `docs/` - Built site for GitHub Pages (auto-generated)
   - `docs/index.html` - Main landing page with search functionality
   - `docs/posts/` - Processed post HTML files with fixed links and custom CSS
@@ -56,7 +57,8 @@ This makes your archive completely self-contained and independent of Substack's 
   - Generates the search index
   - Generates the index page
 - `generate-index.py` - Generates index.html from posts.csv (called by build-site.py)
-- `update-site.sh` - Convenience wrapper that cleans up and runs the build
+- `build-book.py` - Builds the *Axio* book from `book/` into `docs/book/` (navigation, status badges, cross-link validation; requires pandoc)
+- `update-site.sh` - Convenience wrapper that cleans up and runs the build (site, then book)
 - `download-images.py` - Standalone script to download images (now integrated into build-site.py)
 - `fix-image-urls.py` - Standalone script to fix image URLs (now integrated into build-site.py)
 

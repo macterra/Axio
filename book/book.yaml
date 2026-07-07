@@ -1,0 +1,43 @@
+# Axio — book manifest
+#
+# Volume order here is the book's reading order.
+# Chapter order within a volume comes from filename prefixes (01-, 02-, ...).
+# Chapter status lives in each chapter's YAML frontmatter:
+#   outline → not published; draft/review → published with a status badge; final → published clean.
+# volume.md in each volume directory is the volume introduction; its status
+# gates whether the volume page is published.
+
+title: Axio
+subtitle: A book in progress, built from the Axio blog
+
+volumes:
+  - slug: 00-front
+    title: Front Matter
+    front_matter: true
+
+  - slug: 01-physics-of-agency
+    title: The Physics of Agency and the Branching Universe
+
+  - slug: 02-conditionalism
+    title: "Conditionalism: Truth, Bayes, and Rationality"
+
+  - slug: 03-minds-and-machines
+    title: "Minds and Machines: Consciousness, Intelligence, and AI"
+
+  - slug: 04-axionic-agency
+    title: "Axionic Agency: The Alignment Program"
+
+  - slug: 05-value-and-ethics
+    title: Value and Agency-Centered Ethics
+
+  - slug: 06-markets-and-money
+    title: Markets, Money, and Prosperity
+
+  - slug: 07-liberty-and-governance
+    title: Liberty, Coercion, and Governance
+
+  - slug: 08-culture-and-memetics
+    title: Culture, Memetics, and Ideology
+
+  - slug: 09-meaning
+    title: Meaning, Spirituality, and the Secular Sacred

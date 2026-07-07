@@ -49,6 +49,11 @@ echo "3. Building docs/ site..."
 python3 build-site.py
 echo
 
+# Build the book
+echo "3b. Building docs/book/..."
+python3 build-book.py
+echo
+
 # Show git status
 echo "4. Git status:"
 git status --short

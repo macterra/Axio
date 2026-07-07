@@ -744,6 +744,7 @@ def generate_navigation(current_page, prefix=''):
         ('research.html', 'Research'),
         ('team.html', 'Team'),
         ('publications.html', 'Publications'),
+        ('book/', 'Book'),
     ]
 
     links_html = ''

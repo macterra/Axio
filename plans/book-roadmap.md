@@ -2,7 +2,7 @@
 
 *A multi-volume web book built from the Axio blog corpus, published at `docs/book/` on the existing GitHub Pages site.*
 
-Status: **planning** · Created 2026-07-07
+Status: **Phases 0–1 complete** (infrastructure live, catalog written) · Created 2026-07-07 · Book title: **Axio**
 
 ## Vision
 
@@ -39,8 +39,8 @@ Follows the existing pattern (`papers/` → `docs/papers/`): editable source at 
 
 ```
 book/
-  book.yaml                  # manifest: book title, volume order, volume → chapter order, status per chapter
-  catalog.csv                # post_id → volume, chapter, role (primary/secondary source), notes
+  book.yaml                  # manifest: book title, volume order (chapter order comes from filename prefixes; status lives in chapter frontmatter)
+  catalog.csv                # post_id → volume, secondary volume for straddles, notes
   00-front/                  # book-level front matter: introduction, how-to-read-this
   01-physics-of-agency/
     volume.md                # volume introduction (written, not compiled)
@@ -60,7 +60,7 @@ Chapter file conventions:
 
 - Markdown with YAML frontmatter: `title`, `subtitle`, `status` (outline | draft | review | final), `sources` (list of post slugs the chapter reworks).
 - Cross-links written as relative markdown links between source files (`[reflective stability](../04-axionic-agency/03-reflective-stability.md#kernel)`); the build rewrites them to site URLs and **fails the build on broken targets**.
-- Links to blog posts and papers use site-root-relative URLs (`/Axio/posts/...`, `/Axio/papers/...`); the build validates these exist too.
+- Links to blog posts and papers use site-root-relative URLs (`/posts/...`, `/papers/...` — the site serves from the domain root at axionic.org); the build validates these exist and rewrites them to relative URLs.
 
 ## Build pipeline
 
@@ -95,7 +95,7 @@ Repeat Phases 2–3 per volume. After the first two volumes, revisit book-level 
 
 ## Open decisions
 
-- [ ] Overall book title (the volumes need an umbrella — "Axio"? "Axionic Agency"? something new)
+- [x] Overall book title: **Axio**
 - [ ] Which volume to draft first (recommendation above)
 - [ ] Split Vols 3 and/or 7 into two volumes each (decide at their Phase 2)
 - [ ] Author byline/collaboration credit convention for reworked chapters
