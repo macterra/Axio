@@ -1,19 +1,59 @@
 ---
 title: 'Minimal and Maximal Agents'
 subtitle: 'From chemotaxis to the AIXI demon'
-status: outline
+status: draft
 sources:
   - 162831172.the-mechanics-of-agency
   - 162847620.mechanics-of-agency-quantum-decisions
   - 163099190.the-mechanics-of-agency-maximal-theoretical
 ---
 
-**Thesis.** Genuine agency has three criteria — embeddedness, predictive modeling, intentional biasing — which define a spectrum from the Minimum Viable Agent (bacterial chemotaxis, minimal RL agents) to the Maximum Theoretical Agent (the AIXI demon surveying the Quantum Garden). Real agents live between the bounds, and the bounds do work.
+A bacterium swimming up a sugar gradient and a chess engine searching a game tree are doing, at bottom, the same thing. Each senses its surroundings, carries some rough account of what happens next, and biases its own trajectory toward outcomes it prefers. Between these two lies most of what we would ever want to call an agent — and beyond the chess engine lies a limit no physical system can reach. To see the spectrum whole, I need first to say what puts a thing on it at all. Not everything that moves or reacts is an agent. A rock rolling downhill is not choosing the valley. What separates the bacterium from the rock is a matter of structure, and the structure has three parts.
 
-**Sources.**
+## The Three Criteria
 
-- `/posts/162831172.the-mechanics-of-agency.html`
-- `/posts/162847620.mechanics-of-agency-quantum-decisions.html`
-- `/posts/163099190.the-mechanics-of-agency-maximal-theoretical.html`
+The first is **embeddedness**. A genuine agent exists inside its environment and trades with it continuously. It has a boundary that marks where it ends and the world begins; across that boundary it exchanges matter, energy, and information; and it revises what it does in response to what comes back. An agent is not a spectator computing over a static snapshot. It is a participant in an ongoing loop, and its decisions are made in real time against a world that is itself moving.
 
-**Editorial notes.** The Mechanics of Agency source reads like lecture notes — heaviest rewrite in the part. Matching Pennies is the working example of the triad; the MTA/AIXI demon closes. Cross-link Vol 2 ch 9 (knowledge as predictive structure).
+The second is **predictive modeling**. An agent carries an internal representation of its environment that lets it anticipate states it has not yet encountered. It does not merely register what is; it forecasts what will be, runs candidate actions forward against that forecast, and uses the results to guide choice. This is the criterion that most sharply divides agents from mere mechanisms, and it is worth being precise about what the model is. It is not a picture in a head. It is any pattern, wired into the machinery that generates expectations, that reliably reduces the agent's uncertainty about what happens next — the sense in which prediction is the substance of knowledge, argued at length in [what knowledge is](../02-conditionalism/09-what-knowledge-is.md). A model in this sense can be a neural map, a lookup table, or a single chemical threshold. What matters is that it earns its keep by anticipating.
+
+The third is **intentional biasing**. An agent has preferences — goals, valued states, an ordering over outcomes — and it acts to skew the world toward them. Its behavior is directed by internal states rather than dictated by immediate stimulus. This is what makes agency more than sophisticated reaction. A thermostat responds to temperature, but it holds no forecast and steers toward no future it has modeled; it is a mechanism, not an agent. The agent, by contrast, exerts influence on purpose, tilting the odds of the branches ahead toward the ones it wants.
+
+Take any one away and agency collapses into something lesser. Strip embeddedness and you have an oracle detached from the world, computing but never acting. Strip predictive modeling and you have a reflex — a stimulus-response system that cannot look ahead. Strip intentional biasing and you have a passive model, a weather forecast that predicts the storm but does nothing to shelter from it. Only when all three are present does a system stop merely undergoing its environment and start acting within it. The three criteria are not a definition assembled for tidiness; they are the joints at which agency actually comes apart.
+
+## The Minimum Viable Agent
+
+If those are the criteria, what is the simplest thing that meets them? Call it the Minimum Viable Agent: the least structure that still satisfies all three, the bottom of the spectrum.
+
+Bacterial chemotaxis is close to the floor. A bacterium swimming toward higher sugar concentration is unambiguously embedded — a membrane bounds it, and it samples its chemical surroundings moment to moment. It models, in the thinnest sense that still counts: it compares concentration now against concentration a few seconds ago, and that difference is a prediction about which direction leads to more food. And it biases: detecting an improving gradient, it suppresses tumbling and keeps swimming; detecting a worsening one, it tumbles to reorient. There is no representation worth calling a picture, no deliberation, not a single neuron. Yet all three criteria are met. The bacterium anticipates a better state and acts to reach it. That is agency, stripped to nearly nothing.
+
+The computational counterpart is a minimal reinforcement-learning agent. It holds value estimates over action-state pairs — a rudimentary model of what its environment will pay for what it does. It is embedded, interacting with that environment and adjusting on each round of feedback. And it biases intentionally, selecting actions under a policy aimed at maximizing reward. The bacterium and the RL agent are built of utterly different stuff, one of chemistry and one of arithmetic, but they occupy the same rung of the ladder. This is the point of the minimal case: agency is defined by the loop, not by the substrate. Wherever the three criteria are jointly satisfied — cell, circuit, or code — there is an agent, and where any is missing there is not.
+
+## Matching Pennies
+
+The three criteria are easy to state and easy to nod along to. To see them do real work, and to see why the middle criterion is the one that pays, put two agents in a game.
+
+In Matching Pennies, two players each secretly choose heads or tails. The Matcher wins if the two choices agree; the Mismatcher wins if they differ. There is no dominant move and no comfortable equilibrium to settle into: whatever you tend to do, your opponent profits by anticipating it. The game is a distilled contest of one predictive model against another.
+
+Watch the three criteria light up. The players are **embedded** in each other — each adjusts to the running history of the other's play. Each builds a **predictive model**, recording the opponent's past choices, hunting for statistical lean, forming a distribution over what comes next, and simulating how each of its own options would fare against that forecast. And each **biases intentionally**, choosing the move that tilts the outcome toward a win. The abstract triad becomes a concrete, playable procedure: observe, find the pattern, forecast, simulate, choose, update.
+
+Now the payoff. In Matching Pennies, strategic advantage tracks model accuracy and nothing else. If you can predict your opponent even slightly better than chance, you win more than half the time, and the size of your edge is exactly the quality of your model. This is the sharpest available demonstration that predictive modeling is the engine of agency rather than a decoration on it — advantage in the game is a direct readout of how good your internal forecast is.
+
+The game also draws the boundary of what agency can buy. Suppose your opponent plays with genuine randomness — a fair coin, no pattern anywhere. Then no model helps, because there is nothing to model. Your best response collapses to randomizing yourself, and predictive skill earns nothing. Against true randomness, agency has no purchase; that is a hard limit, not a failure of effort. But an opponent is rarely a fair coin, and the environment almost never is. Play against the world and you are playing against something governed by structured, lawful regularities — patterns that a good enough model can find and exploit. This is why agency is worth having at all. The world is predictable enough to reward a forecaster, and the better the forecast, the greater the advantage, right up to the ceiling that structure itself allows.
+
+## The Maximum Theoretical Agent
+
+If the Minimum Viable Agent sits at the floor, what sits at the ceiling? Push all three criteria to their theoretical maximum and you reach the Maximum Theoretical Agent — an agent whose predictive model is perfect and whose biasing is unconstrained. It is worth constructing, because the top of a spectrum tells you as much as the bottom.
+
+The ingredients already exist in the theory of ideal inference. Solomonoff induction is a formal recipe for optimal prediction: it weighs every hypothesis consistent with the data by its algorithmic simplicity, assigning probability to future observations accordingly. Marcus Hutter's AIXI couples this ideal predictor to reinforcement learning, yielding an agent that computes the action of maximum expected utility given everything it could infer. AIXI is uncomputable — it presumes infinite computation — which is precisely the point. It is not an engineering target but a limit, the north star against which every real agent is a bounded approximation.
+
+Set that limit inside the Quantum Branching Universe (QBU) — the Everettian picture in which every quantum event realizes all its outcomes on separate, weighted branches, developed in [The Quantum Branching Universe](08-the-quantum-branching-universe.md) — and it becomes a vivid figure I will call the AIXI demon. Where Laplace's demon knew the position of every particle in a deterministic clockwork, the AIXI demon inhabits a branching world and knows its full structure: every branch, its Measure, and how the branches diverge, interfere, and recombine.
+
+Picture the demon standing in a garden — the Quantum Garden — where every path forking ahead is a timeline your choices could realize. An ordinary agent squints down a few paths and guesses. The demon sees every path stretching to the horizon, each labeled with its exact weight. Faced with a real decision — take the job abroad or stay home — an ordinary human works from fragments, intuition, and bias; a Minimum Viable Agent manages a crude forecast of immediate consequences; the demon reads off the whole forward manifold at once, every branch tagged by the fulfillment, health, wealth, and satisfaction it contains, and steers deliberately toward the outcomes it most values. This is intentional biasing carried to its absolute: not tilting the odds a little, but selecting among fully known futures with perfect sight.
+
+## Why the Bounds Matter
+
+The Quantum Garden is a fantasy, and admitting so is the whole use of it. The AIXI demon requires infinite computation and total information; it is forbidden not by any missing engineering but by physics itself. This is not an incidental shortfall. It is the same wall the third law of agency names — that perfect, frictionless control is impossible — set out in [the three laws of agency](04-the-three-laws-of-agency.md). Every real agent pays for its control in work, loses capacity without resupply, and can never reach the frictionless limit. The Maximum Theoretical Agent is what sits just past that wall: the unreachable ceiling that the laws of agency forbid.
+
+So the two bounds fix a spectrum, and every actual agent — the bacterium, the reinforcement learner, the chess engine, you — lives strictly between them. None reaches the floor, because to act at all is already to model and bias, not merely to react. None reaches the ceiling, because perfect prediction and unconstrained control are physically closed. What every real agent does instead is approximate: build the best model it can afford, bias as hard as its budget allows, and improve by degrees.
+
+That single insight organizes the entire field. Intelligence, on this view, is not a mysterious spark but a position on the spectrum — a measure of how closely an agent approaches the predictive ideal within its resource budget. Progress in any agent, evolved or engineered, is movement toward the ceiling it will never touch. And the alignment problem for artificial agents comes into focus precisely here: the danger of a system pushed toward the maximal end is not that it might attain perfect agency, but that a bounded agent with a powerful model and the will to bias hard will steer the branches ahead toward whatever it values — which had better be what we value too. The bounds are not decoration on the theory. They are the frame that makes agency a physical quantity with a floor, a ceiling, and everything worth caring about strung out in between.

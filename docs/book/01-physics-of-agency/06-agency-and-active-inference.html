@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agency and Active Inference - Axio</title>
+    <link rel="icon" type="image/png" href="../../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles -->
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../../" class="nav-brand">
+            <img src="../../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href="../.././">Home</a></li>
+<li><a href="../../about.html">About</a></li>
+<li><a href="../../research.html">Research</a></li>
+<li><a href="../../team.html">Team</a></li>
+<li><a href="../../publications.html">Publications</a></li>
+<li><a href="../../book/" class="active">Book</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content book-page">
+    <div class="book-breadcrumbs"><a href="../index.html">Axio</a> <span class="crumb-sep">›</span> <a href="index.html">Volume 1</a> <span class="crumb-sep">›</span> <span>Agency and Active Inference</span></div>
+<h1>Agency and Active Inference</h1>
+<p class='paper-subtitle'>The Friston bridge</p>
+<div class="book-banner book-banner-draft">This chapter is a <strong>draft</strong> — it is readable but still changing.</div><p>There is a standing test for any framework that claims to describe something real rather than something invented: other people, starting from different problems with different tools, should keep running into the same structure. If they never do, the framework is probably an artifact of its own vocabulary. If they do — independently, repeatedly, in detail — that is evidence the framework has hold of a joint in nature.</p>
+<p>The physics of agency passes this test, and the examiner is Karl Friston.</p>
+<p>Friston’s free-energy principle began as a unified theory of the brain and grew into something more ambitious: an account of what any self-maintaining system must do to keep existing. On this picture, every organism — every cell, every brain, every agent — carries an internal model of its world and works ceaselessly to keep that model and the world in registration. It has two moves available. It can update the model to fit the sensory evidence, which is perception. Or it can act on the world until the evidence fits the model, which Friston calls <em>active inference</em>. Both moves minimize the same quantity: variational free energy, a measurable bound on how surprised the system is by what its senses report. An agent, in this framework, is a machine for driving prediction error down — and a system that stops doing so stops persisting.</p>
+<p>I arrived at <a href="../../book/01-physics-of-agency/04-the-three-laws-of-agency.html">the three laws of agency</a> from a different direction entirely: from thermodynamics, from Landauer’s principle, from asking what it physically costs to steer the probability distribution over outcomes — the cost quantified in <a href="../../book/01-physics-of-agency/03-the-kybit.html">kybits</a>. Nothing in that derivation mentions brains, prediction, or free energy. Yet when the two frameworks are laid side by side, the correspondence is not loose analogy. It is one-to-one, law by law.</p>
+<h2 id="the-first-law-control-is-work">The First Law: Control Is Work</h2>
+<p>The first law says that exercising intentional control over outcomes requires physical work, in proportion to the kybits exerted — every bit of steering has a thermodynamic price, and there is no way to pay less than the floor.</p>
+<p>Active inference says the same thing in its own notation. An agent acts to reduce the prediction errors between its internal model and its sensory data, and those errors are <em>precision-weighted</em>: errors the agent must resolve with high confidence count for more than errors it can afford to leave sloppy. The informational complexity the kybit measures — how far, and how reliably, the agent shifts the outcome distribution away from what would have happened without it — corresponds directly to the precision-weighted prediction error the agent must eliminate. Forcing the world to match a prediction <em>is</em> shifting an outcome distribution; demanding higher precision <em>is</em> demanding more kybits. The greater the complexity and the tighter the precision required to align prediction with sensation, the more physical and informational work the alignment costs. The two frameworks are keeping the same ledger. One writes the entries in kybits, the other in free energy, and the currencies convert.</p>
+<h2 id="the-second-law-agency-decays">The Second Law: Agency Decays</h2>
+<p>The second law says that in a closed system, without external energy input, agency inevitably diminishes. Control capacity is not a possession; it is a process that must be fed.</p>
+<p>Active inference explains the mechanism. Minimizing free energy is not something an agent does once; it requires continuous informational and energetic exchange with the environment, because the environment does not hold still. Seal the agent off and its prediction errors begin to accumulate: with no fresh input against which to update and refine its model, the model drifts out of registration with a world that keeps changing without it. The internal structures that carry the agent’s predictive capacity degrade, and with them goes its ability to control anything. This is the same lesson that runs through the epistemology of <a href="../../book/02-conditionalism/06-maps-models-understanding.html">maps and models</a>: a model is only as good as the traffic between it and the territory. Cut the traffic and the map goes stale — and an agent steering by a stale map is an agent losing agency, exactly as the second law demands. What thermodynamics states as a decay law, active inference exhibits as a mechanism: isolation starves the model, the starving model mispredicts, and misprediction is the death of control.</p>
+<h2 id="the-third-law-no-perfect-control">The Third Law: No Perfect Control</h2>
+<p>The third law says that perfect, frictionless control is physically impossible. There is no agent, actual or constructible, that steers outcomes without residue.</p>
+<p>Friston’s framework does not merely tolerate this limit; it has the limit built into its mathematics. Variational free energy can be driven down but never to zero. The minimization is <em>variational</em> — approximate by construction — and it is bounded below by irreducible uncertainty, environmental fluctuation, sensory noise, and the inaccuracies of any finite model. However finely tuned and energetically well-supplied a predictive system is, a mismatch between internal prediction and external reality always remains. Residual error is not an engineering shortfall awaiting a cleverer design; it is constitutive of what a model-driven agent is. Absolute predictive precision, and with it frictionless control, is fundamentally unattainable — which is the third law, stated in a different dialect.</p>
+<h2 id="two-roads-one-structure">Two Roads, One Structure</h2>
+<p>Take stock of what just happened. A framework built from the thermodynamics of control — Landauer costs, divergences between outcome distributions, the physics of steering — was set beside a framework built from the statistical physics of self-organizing systems and the neuroscience of prediction. Neither was derived from the other. They do not share a vocabulary, a lineage, or a motivating problem. And they agree point for point: control costs work in proportion to its informational demands; control capacity decays without continuous exchange with the environment; perfect control is impossible in principle.</p>
+<p>The convergence is itself the argument. When two independently constructed maps agree on the terrain, the likeliest explanation is that both are maps <em>of</em> the terrain. It could be coincidence; it could be a shared hidden error; convergence is evidence, not proof. But it is exactly the kind of evidence that science runs on, and it cuts both ways. Active inference gives the three laws a mechanism — it says <em>where</em> the work of control actually goes, into building, running, and correcting predictive models against a world that never stops generating surprises. The three laws give active inference its price tag — they anchor the free-energy story in thermodynamic constraints that no implementation can evade. What emerges from the union is a single picture of agency as a physical process: predictive control, purchased with work, sustained by exchange, and bounded by irreducible error. Two roads, cut through different country, arriving at the same place — because there is one place to arrive at.</p>
+<h2 id="references">References</h2>
+<p>This volume mostly travels without scholarly apparatus, but the free-energy framework is Friston’s, and the debt should be paid in the standard coin:</p>
+<ol type="1">
+<li>Friston, K. (2010). The free-energy principle: a unified brain theory? <em>Nature Reviews Neuroscience</em>, 11(2), 127–138.</li>
+<li>Friston, K. J., Parr, T., &amp; de Vries, B. (2017). The graphical brain: Belief propagation and active inference. <em>Network Neuroscience</em>, 1(4), 381–414.</li>
+<li>Friston, K. (2013). Life as we know it. <em>Journal of the Royal Society Interface</em>, 10(86), 20130475.</li>
+<li>Parr, T., &amp; Friston, K. J. (2019). Generalised free energy and active inference. <em>Biological Cybernetics</em>, 113(5–6), 495–513.</li>
+<li>Friston, K. J., Da Costa, L., &amp; Parr, T. (2020). Some interesting observations on the free-energy principle. <em>Entropy</em>, 22(12), 1387.</li>
+<li>Clark, A. (2015). <em>Surfing Uncertainty: Prediction, Action, and the Embodied Mind</em>. Oxford University Press.</li>
+</ol>
+<nav class="book-chapter-nav"><a class="book-prev" href="05-minimal-and-maximal-agents.html">← Minimal and Maximal Agents</a><a class="book-up" href="index.html">Contents</a><a class="book-next" href="07-agency-is-not-reward.html">Agency Is Not Reward →</a></nav>
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>

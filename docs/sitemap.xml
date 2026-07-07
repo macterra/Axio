@@ -3558,6 +3558,34 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://axionic.org/book/01-physics-of-agency/01-a-genealogy-of-agency.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/book/01-physics-of-agency/02-agency-against-drift.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/book/01-physics-of-agency/03-the-kybit.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/book/01-physics-of-agency/04-the-three-laws-of-agency.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/book/01-physics-of-agency/05-minimal-and-maximal-agents.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/book/01-physics-of-agency/06-agency-and-active-inference.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/book/01-physics-of-agency/07-agency-is-not-reward.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://axionic.org/book/02-conditionalism/</loc>
     <priority>0.8</priority>
   </url>
