@@ -3,56 +3,12 @@ title: 'Value and Agency-Centered Ethics'
 status: draft
 ---
 
-Meta-ethics and normative theory without objective value: subjectivism against moral realism, the agent-binding device, the "What Counts As" definitional machinery, Valorism and Phosphorism, the metagame of persistence, the mature Ethics of Viability, and the case against utilitarian moral arithmetic.
+The oldest promise in moral philosophy is that goodness is written into the world — by God, by reason, by nature, by the arc of history — and that ethics is the discipline of reading it off. This volume opens by breaking that promise, and then spends twenty-five chapters showing how much survives the breakage. The answer is: nearly everything worth keeping, and it comes back stronger, because a morality whose foundations you can state is sturdier than one you are forbidden to inspect.
 
-## Chapter plan (Phase 2 outline — pending author approval)
+The argument moves in six parts. **Part I** establishes the axiom: value exists only in relation to agents who want, choose, and sacrifice — no valuer, no value — and supplies the device that keeps judgment alive after realism falls: agent-binding, which converts naked moral preferences into conditionally objective, criticizable claims. **Part II** builds the positive architecture: value measured by sacrifice, the classical ethical traditions reconstructed as tools rather than authorities, and Phosphorism — the framework of consciously chosen, avowedly subjective, revisable values that this book's author actually holds. **Part III** forges the machinery: precise, operational definitions of coercion, consent, property, harm, and the boundaries of justified force, each tested against counterexamples until it cuts cleanly. **Part IV** answers who counts, and why the threshold is sovereign agency rather than species or sentience.
 
-**Part I — Against Objective Value**
-1. The Myth of Objective Value
-2. Agent-Binding
-3. Norms Need Agents
+**Part V** takes on the rivals — Singer's utilitarianism along six fractures, the Shallow Pond as moral extortion, Parfit and Rand as near misses that locate objectivity in value content when it lives in structure, and the antinatalists at the boundary of existence. **Part VI** is the destination: the mature Ethics of Viability, in which the metagame of persistence grounds a descriptive scoreboard, the viability criterion connects that scoreboard to chosen values without smuggling an *ought* across the bridge, harm radicalizes into Measure dynamics across branching futures, and a single invariant — no coercive harm against innocents — is stress-tested against burning hospitals, viral dilemmas, and battlefields where aggressors hide behind the innocent. The volume does not pretend its hardest case is solved: one contradiction is left deliberately visible, mapped, and owned. A **coda** explains why evil persists in any world worth living in — and why that persistence is the price of agency itself.
 
-**Part II — The Architecture of Value**
-4. Value as Sacrifice
-5. Virtues, Consequences, and Codes
-6. Phosphorism
-7. Judging Goodness
-8. Honesty and Hypocrisy
+Readers who want the epistemology beneath these arguments — conditional truth, Measure and Credence, the discipline of calibration — will find it in the Conditionalism volume, which this one cross-links throughout. The chapters are self-contained enough to read out of order; the volume was built as one argument, and it compounds.
 
-**Part III — The Moral Machinery**
-9. What Counts as Coercion
-10. Consent and Property
-11. What Counts as Harm
-12. The Boundaries of Force
-
-**Part IV — Who Counts**
-13. Sapientism
-
-**Part V — Against the Rivals**
-14. Against Utilitarianism
-15. Against Moral Extortion
-16. The Near Misses
-17. The Ethics of Existence
-
-**Part VI — The Ethics of Viability**
-18. The Ultimate Metagame
-19. The Viability Criterion
-20. Risk Is Harm
-21. Measure Responsibility
-22. The Ethics of Viability
-23. The Coexistence Protocol
-24. Viability Under Fire
-25. Innocence and Moral Debt
-
-**Coda**
-26. The Price of Agency
-
-## Design decisions
-
-- **The two-era problem, resolved as development.** The corpus speaks in two idioms: mid-2025 subjectivism ("no objective morality, so ethics is chosen") and the late-2025 structural turn ("non-coercion as a coherence condition for multi-agent coexistence"). The volume presents this as one argument unfolding — Parts I–II build the subjectivist foundation, Part VI erects the structural theory on top of it — with chs. 5 and 22 explicitly paired as the before/after.
-- **One harm definition with an upgrade path.** The harm definition evolves across three posts; ch. 11 presents the canonical early form and ch. 20 the mature radicalization (Risk = Harm), each saying so.
-- **Known tensions handled openly:** the Valorism-vs-persistence-scoreboard tension resolves in ch. 19 (descriptive scoreboard vs. normative choice); the Shrimp Ethics objection that contradicts Risk = Harm is dropped from ch. 14; the imposed-risk hard line vs. moral-debt contradiction (author's own addendum) becomes ch. 25's honest open problem.
-- **Roster changes:** *Navigating the Multiverse* pulled from Vol 1 (the payoff is ethical; Vol 1 cross-links); *Defending the Strong* released to Vol 8 (culture-war register, low doctrinal load here); the metagame installments on incentives and patterns stay in Vols 6/8 with cross-links; *Secular Sacredness* stays in Vol 9.
-- **Source recovery flags:** the ownership tuple (ch. 10) and the cosine-similarity table (ch. 6) live in KaTeX data-attrs; *The Physics of Harm* has garbled duplicated sentences to repair (ch. 20).
-
-*This volume is in preparation. Chapters publish as they reach draft status.*
+*This volume is a draft. Chapters carry their status openly, and the arguments are held the way the book says they should be held: at the strength the evidence licenses, and no stronger.*

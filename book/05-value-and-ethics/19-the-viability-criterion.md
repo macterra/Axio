@@ -1,15 +1,69 @@
 ---
 title: 'The Viability Criterion'
 subtitle: 'Preference architectures under selection pressure'
-status: outline
+status: draft
 sources:
   - 180427300.the-viability-criterion
 ---
 
-**Thesis.** Axio's mature turn: not moral doctrine but agentic control theory — which preference architectures remain viable under physical, informational, and recursive constraints. Traditional vices reclassify as predictive limitations; Phosphorism's values emerge as a long-run attractor, not an obligation. It does not teach you how to be good; it teaches you how to be real.
+A reader who has followed this volume attentively is now holding a contradiction. In [Phosphorism](06-phosphorism.md) I endorsed Valorism's central demand: values count only if consciously chosen, and the Valorist accepts — on principle — potential extinction over compromise. Integrity outranks existence. Then in [the ultimate metagame](18-the-ultimate-metagame.md) I argued that every game nests inside a larger one, and that the ladder terminates in the universal competition among patterns for persistence — a scoreboard no player gets to opt out of. So which is it? If persistence is the ultimate scoreboard, then the Valorist's willingness to die for authenticity is simply a losing strategy, and everything built on the primacy of chosen values was sentiment. If chosen values legitimately outrank survival, then the scoreboard has no authority, and the metagame was a category error. One of the two, it seems, has to go.
 
-**Sources.**
+Neither goes. Resolving the tension requires only getting clear about what kind of thing Axio is — and that clarification turns out to reframe everything the volume has done so far.
 
-- `/posts/180427300.the-viability-criterion.html`
+## A Model, Not a Doctrine
 
-**Editorial notes.** Single-source keystone of the descriptive turn. THIS CHAPTER RESOLVES the Valorism/persistence tension flagged across the corpus: the metagame is the descriptive scoreboard, Phosphorism the normative choice, and the criterion explains why chosen values that ignore viability get selected out — state this reconciliation explicitly.
+Most ethical systems begin by telling you what is right. Axio is not one of them. It is not a doctrine, a persuasion machine, or a call to collective virtue. It is a model: a description of how agents behave under physical, informational, and recursive constraints. The right frame is not moral philosophy at all but agentic control theory applied to branching futures — a framework for understanding which preference architectures remain viable over time, and which collapse. The point is not to prescribe values but to analyze how different value architectures behave under selection.
+
+This framing was implicit from the beginning. Axio starts from two denials: [there is no agent-independent value](01-the-myth-of-objective-value.md), and [there is no unconditional truth](../02-conditionalism/02-all-truth-is-conditional.md). Every "ought" depends on a prior assumption; there is no unconditional moral foundation, only conditional coherence. If you want X, then Y follows. If you maintain A, you must update B. If you contradict C, the system fails. This resembles Kant's hypothetical imperatives, but with recursive depth: the assumptions themselves depend on further assumptions, all the way down the dependency graph. The system is not foundational; it is self-consistent. It does not evade skepticism; it redirects skepticism into the dependency graph, where it does useful work.
+
+Nothing in Axio says you must value agency, coherence, or survival. It models what happens under each choice. Hold that sentence; the reconciliation lives inside it.
+
+## Value as Viability, Not Virtue
+
+Say "value theory" and people expect moral commitments — a list of rules, a ranking of goods, an account of virtue. Axio instead treats values as preference architectures whose long-term behavior can be analyzed, the way an engineer analyzes a control system.
+
+A preference set is not judged morally. It is judged structurally: whether it maintains the accuracy of the agent's world-model, preserves viable futures rather than foreclosing them, scales under recursive consequence, resists drift toward internal contradiction, and handles the complexity of the environment it actually inhabits. These are not ethical criteria. They are the criteria by which any feedback-governed system stands or falls, applied to the particular systems that have preferences.
+
+Run preference architectures through those pressures and a pattern emerges. Certain values tend to remain stable and generative — complexity, intelligence, truthfulness, authenticity — while others tend to erode their own conditions for persistence. A value system built on comfortable falsehood degrades the model accuracy it needs to pursue anything at all. A value system that forecloses futures loses precisely the optionality it would need to recover from its mistakes. This is not moral enforcement from outside the system. It is control-system behavior, emerging from how preference architectures respond to feedback and constraint.
+
+## Vices as Predictive Limitations
+
+The reclassification that follows is one of the framework's most clarifying moves. Many traditional "vices" turn out to be predictive limitations — failures of modeling, not failures of goodness.
+
+[Coercion](09-what-counts-as-coercion.md) triggers blowback the agent cannot fully model: every application of force creates resentment, resistance, and counter-coalitions whose dynamics outrun the coercer's predictive horizon. [Deception](08-honesty-and-hypocrisy.md) undermines long-run informational reliability — the liar pollutes the very channels he needs to navigate by, including, eventually, his own. Exploitation erodes coalition stability, converting allies into liabilities on a schedule the exploiter did not choose. Short-term gain strategies fail in iterated environments, because iterated environments are where consequences accumulate and every environment worth living in is iterated. A strategy may produce momentary advantage while degrading long-run control. That is not a moral condemnation; it is a stability analysis.
+
+In this framework, "evil" names low-fidelity prediction under recursion. Knaves are agents who win locally but lose globally. Psychopaths are agents who succeed in single-turn interactions but consistently fail in repeated, consequence-accumulating ones. Nothing supernatural is involved — no cosmic ledger, no karmic bookkeeping — only consequences unfolding within dynamical systems. The wicked are not punished. They are mispredicting, and reality collects on mispredictions with the indifference of a margin call.
+
+## The Attractor
+
+Now run the analysis forward and ask which architectures occupy the stable region.
+
+Phosphorism — the cluster of values emphasizing complexity, intelligence, life, coherence, and authenticity — emerges not as a commandment but as a persistent solution in the space of agentic architectures. Agents who adopt self-limiting values are not "wrong." They simply inhabit preference sets that shrink their optionality, degrade their model accuracy, reduce the effective control-work they can exert on their environment, or elevate their exposure to existential risk. Agents whose values align with long-run model accuracy and viable futures tend to retain or expand their influence; those whose values do not generally watch their agency erode under cumulative consequence.
+
+One refinement matters here. In Axio, "survival" does not mean merely remaining in existence. A pattern can persist as a fossil, a copy, a husk. Survival means maintaining the functional capacity to model, choose, and steer — agency itself is the measure of continued viability. An agent that endures but can no longer update its model or act on its preferences has not survived in any sense the framework cares about; it has merely failed to decompose.
+
+So the value list I chose and defended earlier in this volume turns out to be more than one man's avowed preferences. It is a description of the attractor — the region of value-space toward which surviving agents drift, because the values in that region are the ones that keep their holders modeling accurately and choosing effectively. This is not a metaphysical "good." It is the behavior of the system under selection pressure. Phosphorism's list keeps getting rediscovered for the same reason wings keep getting rediscovered by unrelated lineages: not because anything commands flight, but because the physics rewards it.
+
+## The Scoreboard and the Choice
+
+With that in hand, the contradiction dissolves — and it is worth being exact about how, because the resolution is the load-bearing joint of this volume's final part.
+
+The metagame is descriptive. It says what persists: patterns compete, selection operates, and the ladder of games terminates in the universal contest over which structures still exist tomorrow. It issues no instructions. A scoreboard is not a rulebook.
+
+Phosphorism is normative — for me, and for anyone who adopts it. It says what to choose: life over death, intelligence over ignorance, consent over coercion, held authentically and revised in the light. Its authority extends exactly as far as its adoption, which is what "avowedly subjective" meant.
+
+The viability criterion is the bridge between them: chosen values that ignore viability get selected out. Read that sentence carefully, because everything depends on its grammatical mood. It is in the indicative, not the imperative. It states a fact about selection, not a duty to survive. No ought crosses the bridge; what crosses is information — the one thing an authentic chooser cannot coherently refuse.
+
+This is why Valorism survives the metagame unrefuted. The Valorist who chooses extinction over compromise has made no error the model can identify; by her own criteria she has won, and nothing in Axio supplies criteria that override her own — that was the whole lesson of this volume's first part. What the model adds is simply what happens next: her pattern's representation in the space of futures shrinks, her values persist only as long as unrelated causes keep rediscovering them, and the futures are increasingly populated by agents who chose otherwise. She is not wrong. She is rare, and becoming rarer, and the model says so without raising its voice. Persistence is not a duty she has shirked; it is a precondition she has knowingly declined to pay for. The nobility and the vulnerability are still the same property — the criterion just prices it.
+
+And this is why Phosphorism's synthesis was not arbitrary. When I put life at the top of a consciously chosen list, I was not smuggling Vitalism back in through the front door; I was reading the scoreboard and choosing accordingly. Recall the distinction between what a value hierarchy runs on and what it is for: oxygen is not your apex value, but a hierarchy that ignores oxygen stops having values within minutes. Viability generalizes that point from minutes to generations. It is not the apex of the chosen hierarchy — authenticity still holds that seat — it is the substrate every hierarchy runs on, and a chosen value system that ignores its own substrate does not become false. It becomes extinct. The three positions of the earlier dialectic now restate cleanly in control-theoretic terms: Vitalism obeys the scoreboard without knowing there is one. Valorism defies it, knowingly, and pays. Phosphorism reads it — and then chooses, which is the only relationship to a fact that an ethic of authenticity permits.
+
+## How to Be Real
+
+Axio is not an attempt to create a universal morality. It is an attempt to describe the conditions under which agency persists.
+
+Some agents do not seek persistence. Some prefer short-run intensity over long-run stability. Axio does not argue against them; it models their consequences and leaves the choice where it always was. But for agents who do care about coherence, accuracy, and long-term influence, it provides a map — structured not by moral rules but by thermodynamic limits, cybernetic feedback, branching-future [Measure](../02-conditionalism/11-measure-and-credence.md), and recursive preference consistency. It is, in that sense, a philosophy for those who intend to remain agents tomorrow. Not because it excludes the others — the system makes no requirement that every pattern persist. It simply describes which architectures remain viable over time.
+
+In the end, Axio privileges no value system by decree. It analyzes how architectures behave under recursion, cost, and consequence; some remain stable, others fail their own preconditions. Agents who care about persistence will find the stable region. Agents who don't will find other attractors. The model judges neither — it maps where each choice leads and leaves each agent responsible for the structure they choose to inhabit. What normative weight that responsibility can bear — what an ethics built knowingly on this descriptive base looks like — is the work of [the ethics of viability](22-the-ethics-of-viability.md).
+
+Axio does not teach you how to be good. It teaches you how to be real.

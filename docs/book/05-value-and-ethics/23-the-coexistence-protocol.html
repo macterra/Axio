@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Coexistence Protocol - Axio</title>
+    <link rel="icon" type="image/png" href="../../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles -->
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../../" class="nav-brand">
+            <img src="../../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href="../.././">Home</a></li>
+<li><a href="../../about.html">About</a></li>
+<li><a href="../../research.html">Research</a></li>
+<li><a href="../../team.html">Team</a></li>
+<li><a href="../../publications.html">Publications</a></li>
+<li><a href="../../book/" class="active">Book</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content book-page">
+    <div class="book-breadcrumbs"><a href="../index.html">Axio</a> <span class="crumb-sep">›</span> <a href="index.html">Volume 5</a> <span class="crumb-sep">›</span> <span>The Coexistence Protocol</span></div>
+<h1>The Coexistence Protocol</h1>
+<p class='paper-subtitle'>The procedural layer</p>
+<div class="book-banner book-banner-draft">This chapter is a <strong>draft</strong> — it is readable but still changing.</div><p>A stranger shoves you off a curb and you hit the pavement hard. What just happened? If he shoved you out of the path of a bus you never saw, it was a rescue. If he shoved you to take your bag, it was coercion. If he stumbled against you in a crowd, it was friction — the ordinary background bump of agents sharing space. Same act, same bruise, three entirely different moral classifications. And lying on the pavement, you may not have the information to tell which world you are in. Neither, possibly, does he: perhaps he genuinely believed there was a bus.</p>
+<p><a href="../../book/05-value-and-ethics/22-the-ethics-of-viability.html">The ethics of viability</a> rests on a single invariant — no coercive harm against innocents — and under perfect information it works flawlessly. Every act either worsens an innocent agent’s prospects or it does not; every agent either coerced or did not; classification is mechanical. But no real agent ever enjoys perfect information. Real agents act under asymmetric data, partial visibility, time pressure, noise, misinterpretation, and conflicting probability models. In such conditions even perfect ethics cannot prevent disagreement. Two agents can interpret the same event from different vantage points, each sincerely believing the other imposed risk on him. Left unmanaged, these disagreements escalate — not because the agents are malicious, but because multi-agent epistemics is inherently unstable: each retaliation is, from the retaliator’s vantage, self-defense.</p>
+<p>This is why the invariant alone is not enough. It needs a second layer:</p>
+<blockquote>
+<p>The Procedural Layer is the epistemic operating system that determines whether a boundary violation has occurred when perceptions, probabilities, or vantage points diverge.</p>
+</blockquote>
+<p>Without it, even a flawless invariant dissolves into vendetta. This chapter specifies that layer.</p>
+<h2 id="ambiguity-is-the-normal-case">Ambiguity Is the Normal Case</h2>
+<p>Clear violations need no interpretation. Murder, theft, deliberate coercion — nobody convenes a tribunal to decide what category they belong to. Everything else does need interpretation, and everything else is most of what happens. Most real conflict arises not from malice but from uncertainty: mistaken inferences, hidden information, split-second decisions taken under compression.</p>
+<p>The mature harm theory sharpens the problem rather than solving it. <a href="../../book/05-value-and-ethics/20-risk-is-harm.html">Risk is harm</a>: imposing net-worsening risk on an agent reduces his viable futures whether or not the bad outcome lands, so the moral question is always whether an act shifted the affected agent’s risk profile for the worse — his Δ-risk. One clarification matters here and throughout: <em>net-worsening</em> means local Δ-risk relative to the affected agent’s own baseline, not a calculation of global utility or long-horizon outcomes. Nobody is being asked to audit the universe; the question is whether <em>this</em> agent’s prospects were made worse than they were before the act.</p>
+<p>But precisely because the criterion is probabilistic, ambiguity blurs it. Was the risk truly imposed, or merely perceived? Was the delta real, or an artifact of the victim’s fear and the observer’s angle? When risk and perception diverge, judgment cannot rest on intuition. It requires procedure.</p>
+<h2 id="procedural-agency">Procedural Agency</h2>
+<p>Procedural Agency is not a central authority. It is a distributed protocol — a process any set of agents can invoke when classification is contested — whose job is to determine whether a disputed act constituted:</p>
+<ul>
+<li><strong>Rescue</strong> — net risk reduction,</li>
+<li><strong>Coercion</strong> — net risk increase, or</li>
+<li><strong>Friction</strong> — risk effectively unchanged.</li>
+</ul>
+<p>And because the agents involved lack omniscience, the protocol must also distinguish three epistemic conditions:</p>
+<ul>
+<li><strong>Actual harm</strong> — objective net-worsening,</li>
+<li><strong>Perceived harm</strong> — subjective but mistaken, and</li>
+<li><strong>Ambiguous cases</strong> — where neither party has sufficient vantage to know.</li>
+</ul>
+<p>The core function is simple to state:</p>
+<blockquote>
+<p>Procedural Agency determines whether Δ-risk is real, negligible, or misinterpreted.</p>
+</blockquote>
+<p>Everything the protocol does serves that determination. It prevents premature expulsion of agents from the coexistence domain, protects innocents from being mislabeled as predators, and keeps the domain itself stable enough to be worth belonging to.</p>
+<p>The determination runs in three stages. It is a reconstruction, not a checklist: each stage illuminates a different dimension of the event, and no stage can be skipped without the classification failing.</p>
+<h2 id="stage-one-fact-finding">Stage One: Fact-Finding</h2>
+<p>The first stage reconstructs the physical event. What moved, what failed, what information was available to whom, and which risk deltas were actually introduced into the world. Procedure begins with physics, not psychology: before anyone asks what the shover believed, establish whether there was a bus.</p>
+<p>Fact-finding also establishes the facts of agreement, because <a href="../../book/05-value-and-ethics/10-consent-and-property.html">consent</a> changes what an act <em>is</em>. A surgeon’s incision and a knife assault are physically similar events separated by whether uncoerced, informed, intentional agreement existed — and whether it did is a factual question with a real definition behind it, not a matter of impression. An act performed inside the affected agent’s consent imposed nothing on him, whatever it looked like from outside.</p>
+<h2 id="stage-two-vantage-reconstruction">Stage Two: Vantage Reconstruction</h2>
+<p>The second stage reconstructs the epistemic vantage of the acting agent: what he knew, what he could have known, and what it was reasonable for him to believe at the moment of action. This stage exists because even when harm genuinely occurred, classification depends on vantage. The man who shoved you believing — reasonably, on the evidence available to him — that a bus was coming did not commit coercion, even if there was no bus. He committed an error, and errors are a different category with a different remedy.</p>
+<p>Vantage reconstruction is what prevents well-intentioned actors from being mislabeled as predators simply because the world surprised them. A protocol without this stage punishes bad luck as if it were bad faith, and agents governed by such a protocol learn the obvious lesson: never intervene, never act under uncertainty, never attempt a rescue. That lesson kills more innocents than it protects.</p>
+<h2 id="stage-three-the-coexistence-ruling">Stage Three: The Coexistence Ruling</h2>
+<p>Only after fact and vantage are established does classification happen. Some acts are rescues — net-improving interventions, owed thanks rather than restitution. Some are friction — irrelevant background bumps that no functioning system should litigate. Some are errors: real harm, honestly caused, requiring restitution but not expulsion. And some are coercions — deliberate, net-worsening, instrumental impositions of risk — and these alone force Domain Exit.</p>
+<p>The ruling is never punitive. It is not a verdict on the actor’s soul; it is a mechanism for ensuring that the coexistence domain remains what it claims to be — a space where risk cannot flow one-directionally from the innocent to the ambitious. Classification exists to keep the accounting honest, nothing more.</p>
+<h2 id="the-firewall-ambiguity-defaults-to-innocence">The Firewall: Ambiguity Defaults to Innocence</h2>
+<p>Some cases resist resolution even after fact-finding and vantage reconstruction. The evidence is gone, the vantages are irreconcilable, the Δ-risk cannot be established. For these the protocol has one rule, and it is not negotiable: <strong>ambiguity defaults to innocence.</strong></p>
+<p>If Δ-risk cannot be established, the accused remains inside the coexistence domain, with full standing. The burden of proof always lies with the accuser. Fear carries no authority; intuition carries no authority; ambiguous signals, suspicious patterns, and bad vibes carry no authority. An accusation that cannot survive the three stages is not a weak conviction — it is no conviction at all.</p>
+<p>This firewall is load-bearing. Without it, accusation itself becomes a weapon: any agent who wants a rival expelled need only generate ambiguity around him, and the domain devours its own members on suspicion. A system that lets fear reclassify innocents as threats has already dissolved into the vendetta it was built to prevent; it just hasn’t noticed yet.</p>
+<h2 id="restitution-and-re-entry">Restitution and Re-entry</h2>
+<p>Agents misread danger, misjudge timing, act under compression. The protocol does not exile them for this, because a domain that exiles the merely mistaken shrinks to zero. What it requires instead is repair. Non-predatory harm — the Stage Three category of <em>error</em> — obligates the actor to acknowledge the harm and make restitution.</p>
+<p>Restitution here is not penitence and not punishment. It is structural repair: restoring, as far as possible, the viable futures that were reduced, and signaling ongoing commitment to the domain. And the terms of re-entry are mechanical: reintegration is automatic once restitution is made. There is no probation, no lingering stain, no permanent underclass of the formerly mistaken. The books are balanced and the matter is closed.</p>
+<p>Which makes the refusal the interesting case. An agent who refuses restitution when the ruling requires it — or who refuses arbitration altogether, declining to submit the dispute to the three stages — has told the domain something the original act did not. The error was compatible with coexistence; everyone errs. The refusal is not. An agent who insists on being the sole judge of his own impositions has rejected the procedural layer itself, and rejecting the procedure is rejecting the domain. Refusing arbitration <em>is</em> Domain Exit. The refusal, not the initial harm, is what predation looks like from the inside.</p>
+<h2 id="the-shield-not-the-sword">The Shield, Not the Sword</h2>
+<p>Be precise about what Domain Exit means, because everything depends on its asymmetry. Exit removes the protection of the coexistence protocol: the domain’s members no longer owe the exited agent the absorption of risk on his behalf, and defensive coercion against him is no longer a violation. That is the whole of it. Exit removes the shield. It does not grant a sword.</p>
+<p>Domain Exit is not a warrant for aggression, punishment, or extermination. The exited agent has forfeited protection against <em>defensive</em> coercion — nothing licenses hunting him. Members who treat an exited agent as free prey have themselves become coercers, and the protocol classifies them accordingly. And the door remains describable even from outside: only true predators — those who knowingly and materially worsen another agent’s survival curve for instrumental gain, and who refuse the repair that would readmit them — remain beyond it.</p>
+<h2 id="why-civilization-requires-this">Why Civilization Requires This</h2>
+<p>Without the procedural layer, an ethics of viability collapses under its own precision. The invariant is sharp; the world is blurry; press a sharp rule against a blurry world without a resolution procedure and you get one of two failure modes. If every perceived risk justifies retaliation, society dissolves into vendetta — each agent enforcing the invariant as he sees it, each enforcement a fresh violation as the other side sees it. If, to avoid that, genuine predators are allowed to hide behind ambiguity, cooperation erodes instead — the domain keeps its manners and loses its members.</p>
+<p>Procedural Agency forecloses both. It forces evidence before retaliation, reconstructs vantage before judgment, classifies proportionally, defaults to innocence, and prices re-entry in restitution rather than blood. That is what scales the invariant from a personal ethic to a civilizational architecture: one rule, three stages, and a firewall.</p>
+<p>An ethics, in the end, is an operating system, and an operating system that cannot handle ambiguity, error, conflict, and divergent perception does not run on real hardware. The invariant says what coexistence is; the protocol is what keeps it running among agents who can be wrong. How a polity institutionalizes this arbitration layer — what its courts, charters, and enforcement look like when built on nothing but the invariant and the protocol — is the subject of a later volume, sketched in <a href="../../posts/181595554.the-axionic-constitution.html">the Axionic Constitution</a>.</p>
+<nav class="book-chapter-nav"><a class="book-prev" href="22-the-ethics-of-viability.html">← The Ethics of Viability</a><a class="book-up" href="index.html">Contents</a><a class="book-next" href="24-viability-under-fire.html">Viability Under Fire →</a></nav>
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
