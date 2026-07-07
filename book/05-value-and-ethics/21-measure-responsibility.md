@@ -13,7 +13,7 @@ The single-world question — *did harm occur or not?* — has stopped having a 
 
 It is not over. It is clarified. But the clarification forces a re-architecture, and this chapter builds it.
 
-The picture doing the damage is the **Quantum Branching Universe (QBU)** — the Everettian reading of quantum mechanics that Volume 2 put to epistemic work: no collapse, no outcome annihilated, every branch real, and each branch carrying an objective weight, its **Measure**, given by the squared amplitude of the wavefunction. [Measure and Credence](../02-conditionalism/11-measure-and-credence.md) is the primer; the formal construction of branches and timelines belongs to the physics volume, with the details in [The Quantum Branching Universe](/posts/162844036.the-quantum-branching-universe-qbu.html). Here I take the picture as given and ask what survives of responsibility, obligation, and the self. The answer is: all three — transformed.
+The picture doing the damage is the **Quantum Branching Universe (QBU)** — the Everettian reading of quantum mechanics that Volume 2 put to epistemic work: no collapse, no outcome annihilated, every branch real, and each branch carrying an objective weight, its **Measure**, given by the squared amplitude of the wavefunction. [Measure and Credence](../02-conditionalism/11-measure-and-credence.md) is the primer; the formal construction of branches and timelines belongs to the physics volume, with the details in [The Quantum Branching Universe](../01-physics-of-agency/08-the-quantum-branching-universe.md). Here I take the picture as given and ask what survives of responsibility, obligation, and the self. The answer is: all three — transformed.
 
 ## From Binary to Distributional
 

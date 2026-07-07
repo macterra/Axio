@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Quantum Branching Universe - Axio</title>
+    <link rel="icon" type="image/png" href="../../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles -->
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../../" class="nav-brand">
+            <img src="../../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href="../.././">Home</a></li>
+<li><a href="../../about.html">About</a></li>
+<li><a href="../../research.html">Research</a></li>
+<li><a href="../../team.html">Team</a></li>
+<li><a href="../../publications.html">Publications</a></li>
+<li><a href="../../book/" class="active">Book</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content book-page">
+    <div class="book-breadcrumbs"><a href="../index.html">Axio</a> <span class="crumb-sep">›</span> <a href="index.html">Volume 1</a> <span class="crumb-sep">›</span> <span>The Quantum Branching Universe</span></div>
+<h1>The Quantum Branching Universe</h1>
+<p class='paper-subtitle'>A formal map of parallel timelines</p>
+<div class="book-banner book-banner-draft">This chapter is a <strong>draft</strong> — it is readable but still changing.</div><p>Everett’s move is easy to state. Take the Schrödinger equation literally, drop the collapse postulate, and accept what the mathematics has been saying all along: every quantum event splits reality, and every outcome with nonzero amplitude occurs — each in its own branch. The case that this is the right reading of quantum mechanics is the business of <a href="../../book/01-physics-of-agency/12-the-interpretation-wars.html">The Interpretation Wars</a>. This chapter’s business is different: to say precisely what the picture <em>is</em>.</p>
+<p>Because as usually told, it isn’t precise. “Branch,” “world,” “timeline,” “history” get used interchangeably and informally, even by physicists who take branching seriously. That looseness is tolerable for popularization and fatal for everything I want to do with the picture. The questions this volume runs on — what makes one event the cause of another, what a counterfactual claim is true <em>of</em>, what an agent is choosing between, whether the you in another timeline is you — are questions about the <em>structure</em> of the branching, and structure cannot be interrogated in a vocabulary that never fixes its referents. Probability was a suggestive muddle until Kolmogorov gave it a formal object with defined operations; branching-universe talk is at the same pre-formal stage, and it needs the same treatment. So here is the object. I call it the <strong>Quantum Branching Universe</strong>, or <strong>QBU</strong>, and the rest of this book leans on the definitions in this chapter.</p>
+<h2 id="a-graph-of-events">A Graph of Events</h2>
+<p>A <strong>Quantum Branching Universe</strong> is a structured representation of all physically possible quantum timelines, organized as a directed acyclic graph — a DAG. In this graph:</p>
+<ul>
+<li><strong>Nodes</strong> represent quantum events or measurements.</li>
+<li><strong>Edges</strong> represent branching due to quantum outcomes.</li>
+<li><strong>Paths</strong> through the DAG represent distinct timelines.</li>
+</ul>
+<p>Formally:</p>
+<p><span class="math display">\[
+\text{QBU} \equiv (V, E)
+\]</span></p>
+<p>where <span class="math inline">\(V\)</span> is the set of all quantum events and <span class="math inline">\(E\)</span> is the set of directed edges indicating temporal and causal ordering.</p>
+<p>Each piece of the definition is doing work. The graph is <em>directed</em> because the edges carry the arrow of causal ordering: an edge runs from an event to the outcomes that follow from it, never back. It is <em>acyclic</em> because no timeline revisits an event; a history that looped through the same quantum event twice would not be a history. And the primitive objects are <em>events</em>, not worlds: a “world” or “timeline” is a derived notion, a maximal path through the graph, one complete way the universe’s quantum events could have resolved from beginning to end. Two timelines that share a path up to some event and diverge afterward are, in the ordinary loose sense, “the same world until the split” — and the DAG makes that loose sense exact.</p>
+<p>Ancestry falls out of the path structure. An <strong>ancestor</strong> event <span class="math inline">\(E_a\)</span> precedes another event <span class="math inline">\(E_b\)</span> if all timelines passing through <span class="math inline">\(E_b\)</span> necessarily pass through <span class="math inline">\(E_a\)</span>. This is stronger than merely coming earlier: it says that <span class="math inline">\(E_a\)</span> is unavoidable history for anything downstream of <span class="math inline">\(E_b\)</span>, part of the fixed past of every version of every observer at <span class="math inline">\(E_b\)</span>. Ancestry, so defined, is what causal reasoning in a branching universe hangs on, and nearly everything in this chapter’s second half is machinery for establishing it.</p>
+<h2 id="an-ensemble-of-block-universes">An Ensemble of Block Universes</h2>
+<p>Before the machinery, the metaphysics — because the word “branching” invites a picture that is exactly wrong.</p>
+<p>The classical <strong>block universe</strong> of relativity treats time as a static, four-dimensional structure in which past, present, and future coexist. Nothing flows; the block simply <em>is</em>, and what we call the passage of time is a feature of how observers embedded in the block experience their worldlines. The QBU does not reject this picture. It multiplies it. The QBU is an immense static structure composed of an astronomically vast — potentially infinite — number of distinct block universes, each a unique, deterministic timeline, related to one another by the branch structure of the DAG.</p>
+<p>So branching is not something that <em>happens</em>. The tree does not grow; no fork is ever poised, waiting for an outcome to be decided. Branching is a structural relationship among timelines — the fact that two block universes are identical up to some quantum event and differ after it — in precisely the way that a road’s fork is a fact about the map, not an occurrence on it. Every alternative outcome is equally real, a coexisting timeline, and ours enjoys no privileged status beyond being the one we find ourselves in. This is what makes the QBU fit for rigorous work on causality, counterfactual reasoning, and choice: the alternatives that counterfactuals gesture at are not fictions or abstract possibilia but actual, explicitly modeled timelines elsewhere in the structure. What that buys for the semantics of “would have” is the subject of <a href="../../book/01-physics-of-agency/10-causality-and-counterfactuals.html">Causality and Counterfactuals</a>.</p>
+<h2 id="pattern-identifiers">Pattern Identifiers</h2>
+<p>A map of every physically possible timeline is useless without a way to point at parts of it. “The timelines where I exist,” “the timelines where the coin landed heads,” “the timelines descending from my birth” — every interesting claim about the QBU quantifies over some subset of its paths, and the subset had better be well defined.</p>
+<p>The pointing device is the <strong>Pattern Identifier (PI)</strong>: a precise, reproducible pattern or state used to identify and select subsets of timelines within the QBU. A genotype is a PI. A neural connectome is a PI. A specific quantum state is a PI. So, more loosely, is a name — and the difference between those examples is the crux of this chapter, but first the operations, which are common to all of them.</p>
+<p>The primitive is the <strong>Match</strong> operation, which asks of a single timeline whether it contains the pattern:</p>
+<p><span class="math display">\[
+Match(PI, W) \rightarrow \{True, False\}
+\]</span></p>
+<p>From Match, selection over the whole structure is immediate. The <strong>SelectWorlds</strong> operation returns every timeline in which the pattern occurs:</p>
+<p><span class="math display">\[
+SelectWorlds(PI) = \{W \in QBU \mid Match(PI, W)\}
+\]</span></p>
+<p>This is the formal content of phrases like “the worlds where X”: a pattern, and the set of paths that match it.</p>
+<p>The third operation lifts ancestry from events to patterns. Given two PIs, it asks whether one is causally upstream of the other everywhere:</p>
+<p><span class="math display">\[
+AncestorDescendant(PI_a, PI_b) = \begin{cases} True, &amp; \text{if for all timelines containing } PI_b, \text{ there exists an ancestor timeline containing } PI_a \\ False, &amp; \text{otherwise} \end{cases}
+\]</span></p>
+<p>When <span class="math inline">\(AncestorDescendant\)</span> returns <span class="math inline">\(True\)</span>, the pattern <span class="math inline">\(PI_a\)</span> is fixed history for every instance of <span class="math inline">\(PI_b\)</span> anywhere in the QBU — the pattern-level analogue of an unavoidable ancestor event. That is a strong guarantee, and not every identifier can deliver it.</p>
+<h2 id="strong-and-weak-identifiers">Strong and Weak Identifiers</h2>
+<p>Pattern Identifiers divide into two kinds, and the division is where most careless reasoning about parallel selves goes wrong.</p>
+<p>A <strong>Strong PI</strong> is a pattern whose matching timelines necessarily share a common ancestor event. Select the worlds, and you have selected a family: every one of them descends from a single node in the DAG, and everything downstream of that node inherits it as fixed past. Strong PIs provide strict causal clarity.</p>
+<p>The canonical example is a <strong>genotype</strong>. A genotype uniquely identifies an individual at the biological level, and it is the product of a precise sequence of ancestral genetic events. Every timeline containing my exact genotype necessarily contains the event of my genetic formation — that specific fertilization, that specific recombination. It could not be otherwise: the pattern is so informationally particular that independent origination elsewhere in the structure has no purchase. So <span class="math inline">\(SelectWorlds(\text{my genotype})\)</span> returns a set of timelines with a guaranteed common ancestor, and every causal question about “the versions of me” is anchored to a definite node. This is what makes Strong PIs the working currency of rigorous investigation into causality and agency within the QBU. Neural connectomes and specific quantum states earn the same status the same way: by being precise enough that matching entails shared origin.</p>
+<p>A <strong>Weak PI</strong> is a pattern that carries no such guarantee. The canonical example is a <strong>name</strong>. A name is a culturally assigned label with no biological or causal constraint behind it; the same name arises independently in completely separate causal histories. <span class="math inline">\(SelectWorlds(\text{&quot;David&quot;})\)</span> returns a sprawl of timelines containing entirely unrelated individuals who happen to share a label — no common ancestor event, no shared causal root, no fact of the matter about “what happened to David across the branches,” because the selection never picked out a single lineage in the first place. Weak PIs are not useless — for cultural and historical analysis, patterns like names, labels, and general event-descriptions are exactly the right grain — but they cannot support causal claims, and arguments that quietly treat a Weak PI as if it were Strong are trading on an ambiguity.</p>
+<p>There is also a degenerate limit worth marking. Logical invariants — the value of π, the theorems of arithmetic — are patterns that match <em>every</em> timeline. They are universally true and therefore trivially differentiating: <span class="math inline">\(SelectWorlds\)</span> returns the whole QBU, which selects nothing. Universality makes an identifier operationally worthless, not maximally reliable. The useful PIs live between the two failure modes: particular enough to entail a shared origin, contingent enough to distinguish some timelines from others.</p>
+<p>The payoff of the distinction is discipline. When later chapters analyze a decision — an agent standing at a branch point, weighing futures — the agent is picked out by Strong PIs, so that “the branches where I do X” and “the branches where I do Y” are genuinely branches <em>of the same trunk</em>, downstream of a common ancestor, and comparing them is a well-posed causal comparison rather than a survey of strangers.</p>
+<h2 id="the-unweighted-skeleton">The Unweighted Skeleton</h2>
+<p>What this chapter has built is deliberately austere: a graph, an ancestry relation, and a selection calculus. Nothing yet says that some branches count for more than others. But they do — branches carry an objective weight, fixed by the squared amplitudes of the wavefunction, and that weight is <strong>Measure</strong>, the physical quantity that turns the QBU from a map of what is possible into an account of what is probable. Adding Measure to the skeleton, together with the observer-relative notions of Vantage and Branchcone, is the work of <a href="../../book/01-physics-of-agency/09-measure-vantage-branchcone.html">the next chapter</a>. And once Measure is in place as a fact about the world, there is a matching question about the head — how an agent’s subjective confidence should track objective branch weight — which is the epistemology of <a href="../../book/02-conditionalism/11-measure-and-credence.html">Measure and Credence</a>.</p>
+<p>The QBU framework draws on standing work: the many-worlds interpretation of quantum mechanics (Everett, 1957); the block universe reading of relativity (Putnam, 1967); causality and counterfactuals in quantum theory (Pearl, 2000; Deutsch, 1999); the formal structures of quantum mechanics and quantum computation (Nielsen &amp; Chuang, 2010); and quantum causality (Adlam, 2021).</p>
+<nav class="book-chapter-nav"><a class="book-prev" href="07-agency-is-not-reward.html">← Agency Is Not Reward</a><a class="book-up" href="index.html">Contents</a><a class="book-next" href="09-measure-vantage-branchcone.html">Measure, Vantage, Branchcone →</a></nav>
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
