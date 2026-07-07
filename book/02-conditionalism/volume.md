@@ -1,6 +1,6 @@
 ---
 title: 'Conditionalism: Truth, Bayes, and Rationality'
-status: outline
+status: draft
 sources:
   - 167664022.the-hedgefox
 ---
