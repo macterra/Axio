@@ -36,7 +36,7 @@ post_id,date,title,volume,secondary_volume,notes
 164270270.defending-bayes-part-3,2025-05-23,"Defending Bayes, Part 3",2,,
 164271340.the-pattern,2025-05-23,The Pattern,8,,
 164272915.nonsense,2025-05-23,Nonsense,2,,
-164275423.sacred-coherence,2025-05-23,Sacred Coherence,9,,
+164275423.sacred-coherence,2025-05-23,Sacred Coherence,2,9,pulled into Vol 2 ch.18 (Conditionalism sequence)
 164364452.defending-bayes-part-4,2025-05-24,"Defending Bayes, Part 4",2,,
 164411286.creativity-as-virtual-evolution,2025-05-25,Creativity as Virtual Evolution,1,,
 164423784.a-gigaplex-of-parallel-lives,2025-05-25,A Gigaplex of Parallel Lives,1,,
@@ -100,7 +100,7 @@ post_id,date,title,volume,secondary_volume,notes
 165499243.justice-after-colonization,2025-06-08,Justice After Colonization,7,,
 165641748.subjectivism-vs-moral-relativism,2025-06-10,Subjectivism vs. Moral Relativism,5,,
 165642623.the-covid-19-lab-leak-hypothesis,2025-06-10,The COVID-19 Lab Leak Hypothesis,2,,
-165665795.credibility-credence-and-coercion,2025-06-10,"Credibility, Credence, and Coercion",2,,
+165665795.credibility-credence-and-coercion,2025-06-10,"Credibility, Credence, and Coercion",5,2,released from Vol 2; applies credence to Vol 5 coercion definition
 165666289.what-counts-as-a-belief,2025-06-10,What Counts as a Belief,2,,
 165708751.when-to-kill-a-project,2025-06-11,When To Kill A Project,6,,
 165721326.the-woke-right,2025-06-11,The Woke Right,8,,
@@ -177,7 +177,7 @@ post_id,date,title,volume,secondary_volume,notes
 167614945.beyond-gender-balance,2025-07-05,Beyond Gender Balance,8,,
 167621027.catalyzing-curiosity,2025-07-06,Catalyzing Curiosity,3,,
 167660845.minds-as-recursive-simulations,2025-07-06,Minds as Recursive Simulations,3,,
-167664022.the-hedgefox,2025-07-06,The Hedgefox,2,,
+167664022.the-hedgefox,2025-07-06,The Hedgefox,2,,"Vol 2 volume front/back matter, not a chapter"
 167669720.rethinking-justice,2025-07-06,Rethinking Justice,7,,
 167672844.what-is-suffering,2025-07-06,What is Suffering? ,3,,
 167675968.governments-as-economic-parasites,2025-07-06,Governments as Economic Parasites,7,,
@@ -273,7 +273,7 @@ post_id,date,title,volume,secondary_volume,notes
 171666094.ghosts-in-the-machine,2025-08-22,Ghosts in the Machine,3,,
 171682575.false-kindness,2025-08-22,False Kindness,5,,
 171703023.incitement-is-not-coercion,2025-08-23,Incitement Is Not Coercion,7,,
-171824780.probability-without-collapse,2025-08-24,Probability Without Collapse,1,2,measure vs credence; companion to Defending Bayes
+171824780.probability-without-collapse,2025-08-24,Probability Without Collapse,2,1,Vol 2 ch.14 owns the epistemic argument; Vol 1 cross-links
 171841572.chaos-and-coherence,2025-08-24,Chaos and Coherence,1,,
 171905629.extortion-funded-organizations,2025-08-25,Extortion-Funded Organizations,7,,
 171846415.coherence-from-chaos,2025-08-25,Coherence From Chaos,1,,
@@ -358,7 +358,7 @@ post_id,date,title,volume,secondary_volume,notes
 176068779.the-geometry-of-inner-speech,2025-10-13,The Geometry of Inner Speech,3,,
 176140519.blue-flight,2025-10-14,Blue Flight,8,,
 176149353.the-double-helix-and-the-double-standard,2025-10-14,The Double Helix and the Double Standard,8,,
-176244039.truth-isnt-enough,2025-10-15,Truth Isn’t Enough,5,,
+176244039.truth-isnt-enough,2025-10-15,Truth Isn’t Enough,2,5,pulled into Vol 2 ch.23 coda
 176368883.against-the-minimum-wage,2025-10-16,Against the Minimum Wage,6,,
 176418100.sagency,2025-10-17,Sagency,9,,
 176442955.against-slavery,2025-10-17,Against Slavery,7,,
@@ -368,7 +368,7 @@ post_id,date,title,volume,secondary_volume,notes
 176595486.beyond-alignment,2025-10-19,Beyond Alignment,4,,
 176597723.what-counts-as-technology,2025-10-19,What Counts as Technology,1,,
 176688057.destructor-memes,2025-10-20,Destructor Memes,8,,
-176742358.the-coherence-criterion,2025-10-21,The Coherence Criterion,5,,
+176742358.the-coherence-criterion,2025-10-21,The Coherence Criterion,2,5,pulled into Vol 2 ch.18; is-ought bridge cross-links Vol 5
 176755720.against-cosmological-idealism,2025-10-21,Against Cosmological Idealism,1,,
 176756726.the-myth-of-chinas-communist-success,2025-10-21,The Myth of China’s Communist Success,6,,
 176838567.beauty-and-truth,2025-10-22,Beauty and Truth,2,,
@@ -379,8 +379,8 @@ post_id,date,title,volume,secondary_volume,notes
 177311215.order-from-contrast,2025-10-27,Order from Contrast,1,,
 177386987.from-inference-to-interpretation,2025-10-28,From Inference to Interpretation,3,,
 177433505.the-nature-of-beliefs,2025-10-29,The Nature of Beliefs,2,,
-177598036.against-faith,2025-10-30,Against Faith,9,,
-177654620.is-faith-ever-justifiable,2025-10-31,Is Faith Ever Justifiable?,9,,
+177598036.against-faith,2025-10-30,Against Faith,2,9,pulled into Vol 2 ch.10
+177654620.is-faith-ever-justifiable,2025-10-31,Is Faith Ever Justifiable?,2,9,pulled into Vol 2 ch.10
 177655646.godel-in-the-machine,2025-10-31,Gödel in the Machine,1,,
 177657478.the-cybernetic-ghost-of-satoshi,2025-10-31,The Cybernetic Ghost of Satoshi,6,,
 177758736.time-from-chaos,2025-11-01,Time From Chaos,1,,
@@ -416,7 +416,7 @@ post_id,date,title,volume,secondary_volume,notes
 178795619.prometheus-in-code,2025-11-13,Prometheus in Code,3,,
 178981771.religion-as-memetic-engineering,2025-11-15,Religion as Memetic Engineering,9,,
 179007101.principia-cybernetica,2025-11-15,Principia Cybernetica,3,,
-179013388.understanding-requires-models,2025-11-15,Understanding Requires Models,3,,
+179013388.understanding-requires-models,2025-11-15,Understanding Requires Models,2,3,pulled into Vol 2 ch.6
 179071634.control-requires-models,2025-11-16,Control Requires Models,3,,
 179148217.models-beliefs-and-agents,2025-11-17,"Models, Beliefs, and Agents",3,,
 179150747.lookup-tables-and-agents,2025-11-17,Lookup Tables and Agents,3,,
@@ -586,7 +586,7 @@ post_id,date,title,volume,secondary_volume,notes
 199987468.against-systemic-racism,2026-05-31,Against Systemic Racism,8,,
 200023446.coercion-beats-intelligence,2026-05-31,Coercion Beats Intelligence,3,,
 200030842.the-ai-fork-is-about-agency,2026-05-31,The AI Fork Is About Agency,3,,
-202129157.youre-not-a-random-branch,2026-06-15,You’re Not a Random Branch,1,2,Everettian probability; pairs with You're Not a Random Sample (vol 2)
+202129157.youre-not-a-random-branch,2026-06-15,You’re Not a Random Branch,2,1,Vol 2 ch.16; pairs with You're Not a Random Sample; Vol 1 cross-links
 202203795.the-algorithmic-corruption-of-language,2026-06-15,The Algorithmic Corruption of Language,8,7,AI moderation and speech; culture register
 202205387.free-speech-is-civilizational-infrastructure,2026-06-15,Free Speech Is Civilizational Infrastructure,7,,
 202354371.against-communism,2026-06-16,Against Communism,7,,

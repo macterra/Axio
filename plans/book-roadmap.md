@@ -2,7 +2,7 @@
 
 *A multi-volume web book built from the Axio blog corpus, published at `docs/book/` on the existing GitHub Pages site.*
 
-Status: **Phases 0–1 complete** (infrastructure live, catalog written) · Created 2026-07-07 · Book title: **Axio**
+Status: **Phase 2 in progress** — Volume 2 outline drafted (23 chapters, pending author approval); Phases 0–1 complete · Created 2026-07-07 · Book title: **Axio**
 
 ## Vision
 
