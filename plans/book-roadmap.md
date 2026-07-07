@@ -2,7 +2,7 @@
 
 *A multi-volume web book built from the Axio blog corpus, published at `docs/book/` on the existing GitHub Pages site.*
 
-Status: **Volumes 2 and 5 fully drafted** — Vol 2 (23 chapters) and Vol 5 (26 chapters) live in draft status, awaiting author review → review/final promotion. Next: author pass, or Phase 2 outline for the next volume. · Created 2026-07-07 · Book title: **Axio**
+Status: **Volumes 1, 2, and 5 fully drafted** — Vol 1 (28 chapters), Vol 2 (24), Vol 5 (27): the foundational trilogy, ~161k words, live in draft status awaiting author review → review/final promotion. Next: author pass, or Phase 2 outline for the next volume (Vol 6 smallest; Vols 3/7 largest). · Created 2026-07-07 · Book title: **Axio**
 
 ## Vision
 
