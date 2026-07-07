@@ -3487,4 +3487,24 @@
     <loc>https://axionic.org/book/02-conditionalism/</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://axionic.org/book/02-conditionalism/01-what-is-philosophy-for.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/book/02-conditionalism/02-all-truth-is-conditional.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/book/02-conditionalism/03-the-three-levels-of-truth.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/book/02-conditionalism/04-when-statements-fail.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/book/02-conditionalism/05-truth-machines.html</loc>
+    <priority>0.8</priority>
+  </url>
 </urlset>

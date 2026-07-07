@@ -57,7 +57,8 @@ def convert_markdown_to_html(markdown_content, src_path):
     """Convert markdown to an HTML fragment using pandoc (with math support)."""
     try:
         process = subprocess.run(
-            ['pandoc', '--from', 'markdown', '--to', 'html', '--mathjax'],
+            ['pandoc', '--from', 'markdown', '--to', 'html', '--mathjax',
+             '--wrap=none'],
             input=markdown_content,
             capture_output=True,
             text=True,
@@ -157,7 +158,7 @@ def rewrite_links(html, src_path, prefix, publish_index):
     src_dir = src_path.parent
 
     def fix(match):
-        href = match.group(1)
+        href, inner = match.group(1), match.group(2)
         if re.match(r'^(https?:|mailto:|#)', href):
             return match.group(0)
 
@@ -176,12 +177,16 @@ def rewrite_links(html, src_path, prefix, publish_index):
                 link_errors.append(f"{src_path}: broken chapter link: {href}")
                 return match.group(0)
             if not publish_index[str(rel)]:
+                # Target chapter not yet published: render as plain text so
+                # the live site has no dead links. It becomes a link
+                # automatically on the rebuild that publishes the target.
                 link_warnings.append(
-                    f"{src_path}: links to unpublished chapter: {href}")
+                    f"{src_path}: unlinked (unpublished chapter): {href}")
+                return inner
             out = str(rel).replace('volume.md', 'index.html')
             if out.endswith('.md'):
                 out = out[:-3] + '.html'
-            return f'href="{prefix}book/{out}{frag}"'
+            return f'<a href="{prefix}book/{out}{frag}">{inner}</a>'
 
         # Root-relative links into the rest of the site
         if target.startswith('/'):
@@ -191,11 +196,12 @@ def rewrite_links(html, src_path, prefix, publish_index):
             if not check.exists():
                 link_errors.append(f"{src_path}: broken site link: {href}")
                 return match.group(0)
-            return f'href="{prefix}{target.lstrip("/")}{frag}"'
+            return f'<a href="{prefix}{target.lstrip("/")}{frag}">{inner}</a>'
 
         return match.group(0)
 
-    return re.sub(r'href="([^"]+)"', fix, html)
+    return re.sub(r'<a\s[^>]*?href="([^"]+)"[^>]*>(.*?)</a>', fix, html,
+                  flags=re.DOTALL)
 
 # ============================================
 # HTML GENERATION
