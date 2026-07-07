@@ -421,9 +421,13 @@ def update_sitemap(page_urls):
     if not sitemap_path.exists():
         return False
     xml = sitemap_path.read_text(encoding='utf-8')
-    xml = re.sub(r'  <url>\n(?:[^\n]*\n)*?'
-                 r'    <loc>' + re.escape(BASE_URL) + r'/book/[^<]*</loc>\n'
-                 r'(?:[^\n]*\n)*?  </url>\n', '', xml)
+
+    def drop_book_entry(match):
+        block = match.group(0)
+        return '' if f'<loc>{BASE_URL}/book/' in block else block
+
+    xml = re.sub(r'  <url>\n.*?  </url>\n', drop_book_entry, xml,
+                 flags=re.DOTALL)
     entries = ''
     for url in page_urls:
         entries += ('  <url>\n'
