@@ -2,7 +2,7 @@
 
 *A multi-volume web book built from the Axio blog corpus, published at `docs/book/` on the existing GitHub Pages site.*
 
-Status: **Volume 2 fully drafted** — all 23 chapters live at /book/02-conditionalism/ in draft status, awaiting author review → review/final promotion. Next: author pass on Vol 2, or Phase 2 outline for the next volume. · Created 2026-07-07 · Book title: **Axio**
+Status: **Volumes 2 and 5 fully drafted** — Vol 2 (23 chapters) and Vol 5 (26 chapters) live in draft status, awaiting author review → review/final promotion. Next: author pass, or Phase 2 outline for the next volume. · Created 2026-07-07 · Book title: **Axio**
 
 ## Vision
 
