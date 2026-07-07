@@ -1,7 +1,7 @@
 ---
 title: 'In Defense of Bayes'
 subtitle: 'Answering the critical rationalists'
-status: outline
+status: draft
 sources:
   - 164130874.defending-bayes-part-2
   - 164270270.defending-bayes-part-3
@@ -9,13 +9,56 @@ sources:
   - 165272096.defending-bayes-part-8
 ---
 
-**Thesis.** Deutsch and Hall are right that explanatory theories are not probabilistic and that induction is a myth — but wrong to reject Bayesianism: credence legitimately quantifies uncertainty about which timeline you occupy and about whether a theory is correct. Bayes rules belief revision; abduction rules theory creation.
+Ask a certain kind of Bayesian how confident he is that evolution by natural selection is true, and he will give you a number — 0.99999, say — as if he had just read a very reliable weather forecast. Ask the critical rationalists what they make of that number, and they will tell you it is not merely wrong but meaningless. David Deutsch, and Brett Hall following him, mount the most serious standing attack on Bayesianism in circulation: induction is a myth, theories are not the kind of thing that has a probability, and Bayesian epistemology — which appears to be induction dressed in arithmetic, assigning probabilities to theories — is therefore rotten at the root.
 
-**Sources.**
+I think the critics are right about more than most Bayesians will admit, and wrong in a way that can be located precisely. The number attached to evolution is not meaningless; it is *mislabeled*. Getting the label right — seeing what the number is actually about — rescues Bayes from the critique while conceding everything in the critique that deserves to be conceded. That is the business of this chapter, and it discharges a debt: [what knowledge is](09-what-knowledge-is.md) drew the line between explanatory and empirical knowledge and deferred the question of whether explanatory theories can bear credences. Here is the answer.
 
-- `/posts/164130874.defending-bayes-part-2.html`
-- `/posts/164270270.defending-bayes-part-3.html`
-- `/posts/165065355.defending-bayes-part-7.html`
-- `/posts/165272096.defending-bayes-part-8.html`
+## The Critics' Case
 
-**Editorial notes.** RECONCILIATION REQUIRED: Part 1/3 concede that theories take no credences; Part 7 retracts that concession (credences about theories are fine; probabilities in theories are not). Write the chapter from the final position — do not reproduce the series' drift. FIX: Part 8 calls Brett Hall 'David Hall'.
+The attack has two prongs.
+
+First, induction is a myth. Induction is the doctrine that general theories are justified by accumulating observations — that each white swan you see incrementally confirms *all swans are white*. But no number of white swans entails, or even partially secures, the universal claim; the ten-thousandth observation leaves the logical gap exactly as wide as the first. This is Popper's insight, and Deutsch and Hall press it without compromise: all empirical knowledge is conjectural. Theories are not distilled from data; they are bold guesses, invented by creative acts, and our only leverage on them is criticism — testing, refutation, the search for better explanations. Science does not confirm its way up; it conjectures and culls.
+
+Second, theories are not probabilistic. What would it even mean to say general relativity has a 90 percent probability of being true? A coin has a probability of landing heads because there is a chance process behind it — an ensemble of outcomes with weights. There is no chance process behind general relativity. It is not one draw from an urn of possible physics. It either correctly describes the structure of spacetime or it does not, and no experiment anywhere samples from a distribution over its truth. A probability assigned to a theory refers to nothing.
+
+Bayesianism, as the critics read it, commits both sins at once. Its priors over theories are arbitrary numbers with no objective referent, and its updating rule is induction resurrected: every confirming observation nudges the theory's probability upward, as if justification accumulated by increments. They will grant that scientists reason under uncertainty — their own method demands it — but the reasoning they endorse is *abduction*, inference to the best explanation: propose conjectures, evaluate them by explanatory power and resistance to refutation, and provisionally adopt the best one, holding it not as probable but as *undefeated*. Abduction and Bayes look superficially alike — both are ampliative, both weigh rival hypotheses — but abduction assigns no priors, computes no numbers, and claims no incremental justification. On the critics' map, that is the whole difference between honest conjecture and inductivist bookkeeping.
+
+## What They Get Right
+
+A defense that concedes nothing convinces no one, and here there is real ground to give.
+
+Induction *is* a myth. Bayes' theorem contains no mechanism for generating hypotheses; it redistributes belief over a hypothesis space that must come from somewhere else, and the somewhere else is exactly what Deutsch and Hall say it is — creative conjecture, disciplined by criticism. A Bayesian who thinks his updating rule explains where quantum mechanics came from has mistaken an accounting identity for a research program. Theory *creation* is abductive through and through, and nothing in this chapter disputes it.
+
+And theories carry no objective probability. In the terms of this volume: Measure — the objective branch weight of the Quantum Branching Universe (QBU), the Everettian picture set out in [Measure and Credence](11-measure-and-credence.md) — is a weight over *branches*, and a theory is not a branch. Every timeline in the multiverse runs on the same physics; there is no branch where evolution is false and creationism true, because a theory's content is not a fact about which branch you are in. So there is no Measure over theories for a probability to report, and the scoreboard Bayesian who announces the objective probability of evolution as if it were a physical parameter is saying nothing. On this point Deutsch and Hall are simply correct, and the correction stings a great deal of practicing Bayesianism.
+
+But two errors keep the critics from stopping where their argument stops.
+
+## The First Error: Theories Are Not Binary
+
+The critique needs theories to be binary — flatly true or flatly false — so that any number strictly between zero and one marks a confusion. They are not binary. Newtonian mechanics is not false, full stop; it is valid to extraordinary accuracy within its domain and fails outside it. It was superseded by relativity and quantum mechanics, yet we still build bridges and fly spacecraft with it, and we are right to. A theory is contextually and approximately true — true *given* a domain, a scale, a tolerance — which is precisely the conditional structure that [all truth](02-all-truth-is-conditional.md) turns out to have. "Is Newtonian mechanics true?" is not a well-formed yes-or-no question until the conditions are filled in.
+
+Once theories have scope, accuracy, and limits, there are graded facts about them to be uncertain *of*. My uncertainty about a theory is rarely uncertainty about a single bit; it is uncertainty about where its domain ends, how good its approximations are, which of its idealizations will crack first. Those are exactly the kinds of questions that admit degrees of belief, because they resolve piecewise against evidence. The binary picture of theories — the picture the critique borrows without argument — is the same absolutism about truth this volume rejected in its opening chapters, wearing a lab coat.
+
+## The Second Error: Probability In, Credence About
+
+The deeper error is a conflation, and undoing it is the hinge of the whole defense.
+
+There are two entirely different things a probability attached to a theory could mean. It could be a probability *in* the theory's subject matter — an objective chance, a Measure, a claim that reality itself is running a weighted process over the theory's truth. That is what the critics attack, and they are right: no such chance exists. Or it could be a Credence *about* the theory — a quantified description of *my epistemic state*, my rationally managed uncertainty as to whether, and where, and how well the theory describes reality. That is a different claim about a different subject. The first puts the probability in the world; the second puts it in the believer, where the uncertainty actually lives.
+
+Deutsch and Hall demolish the first reading and then, without noticing the seam, extend the demolition to the second. But the second does not depend on the first. A Credence about a theory does not attribute partial truth or objective chance to the theory, any more than my uncertainty about the thousandth digit of $\pi$ attributes fuzziness to arithmetic. The digit is what it is, necessarily; *I* am the one who doesn't know it — and my not-knowing is real, graded, and consequential, so it had better be managed coherently. Garrabrant's Logical Induction makes the point rigorous: coherent credences can and must be assigned even to purely logical statements, where objective probability is not just absent but impossible — a result whose implications for the varieties of credence I develop in [the varieties of uncertainty](13-varieties-of-uncertainty.md). If credences are legitimate about necessary truths, the absence of a chance process behind general relativity is no obstacle to credences about general relativity.
+
+Nor is the quantification optional decoration. An agent who refuses to put numbers on his theoretical uncertainty still *acts* on theories — chooses which experiment to fund, which bridge design to trust, which medical model to bet a patient's life on — and action under uncertainty has a logic whether or not you keep the books. Weights that drive consistent choices behave like probabilities; if they violate the probability axioms, the agent can be led into sure losses. The critical rationalist who says "I hold this theory as undefeated, not as probable" has not escaped credence; he has one and won't write it down. Refusing the ledger does not prevent incoherence. It prevents *checking* for incoherence.
+
+So the boundary falls exactly here. Probabilities in theories: never — with one exception that proves the rule, namely probabilities a theory itself posits about its own subject matter, like the quantum weights that are Measure, whose interpretation I take up in [probability without collapse](14-probability-without-collapse.md). Credences about theories: always — explicitly if you are being careful, implicitly if you are not.
+
+## The Division of Labor
+
+What remains, once the conflation is undone, is not a truce between Bayesians and critical rationalists but a division of labor that each side has been mistaking for a turf war.
+
+Abduction governs theory creation. Explanatory theories are conjectured, not computed; they are judged by explanatory coherence, simplicity, generality, and resistance to criticism — the critical-rationalist virtues, whose foundations I examine in [rationality without foundations](17-rationality-without-foundations.md). No prior ever proposed a hypothesis and no update ever will. On the question *where do good explanations come from, and how is the stock of them improved?*, Deutsch and Hall own the answer.
+
+Bayes governs belief revision. Given the theories on the table and the evidence in hand, what should an agent believe, and how strongly, and how must those strengths change as evidence arrives? That question is not answered by "conjecture boldly," because it is not a question about creating anything. It is a question about the rational management of uncertainty, and conditionalization is its only coherent answer. Bayesian updating is conditional reasoning made quantitative — every Credence a Credence *given* evidence and background — and its native domain is empirical knowledge: knowledge of which branch you are in. In the QBU, all outcomes occur, weighted by Measure, and an agent's empirical uncertainty — about tomorrow's weather, a genetic test, a historical actor's motives — is uncertainty about which timeline it occupies within the branching structure that explanatory theory describes. Each observation trims the set of timelines consistent with your evidence; updating by Bayes is how you localize yourself, aligning subjective Credence with objective Measure. Credence manufactures no explanations, and explanation assigns no credences. The one maps the territory of timelines; the other finds you on the map.
+
+The two jobs interlock without competing. Abduction proposes; criticism culls; Bayes keeps the books — on your branch-location within the surviving theories' structure, and on the theories themselves, whose scope and accuracy are things you can be rationally more or less sure of. Even the drama of theory *choice*, which both camps claim, splits cleanly along the seam: the search for a better explanation is abductive, while your confidence that the current best explanation will survive its next test is a credence, revisable in the ordinary Bayesian way.
+
+So the answer to the question deferred from the knowledge chapter is: theories bear no probabilities, and believers bear credences about everything — theories included. Deutsch and Hall are right that science is not a scoreboard of rising probabilities, and right that induction never happened. But rationality cannot do without the ledger. An epistemology of pure conjecture and refutation tells you how the stock of explanations improves; it goes silent at the moment of action, when an agent must stake something on how likely it is that this map, here, holds. Bayes is not a rival theory of where knowledge comes from. It is the discipline of betting well on the knowledge you have — and no criticism yet offered has laid a glove on it.
