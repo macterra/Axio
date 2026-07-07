@@ -3642,11 +3642,15 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://axionic.org/book/02-conditionalism/22-deciding-under-uncertainty.html</loc>
+    <loc>https://axionic.org/book/02-conditionalism/22-probability-after-probabilism.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://axionic.org/book/02-conditionalism/23-the-beginning-of-wisdom.html</loc>
+    <loc>https://axionic.org/book/02-conditionalism/23-deciding-under-uncertainty.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/book/02-conditionalism/24-the-beginning-of-wisdom.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
@@ -3754,7 +3758,11 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://axionic.org/book/05-value-and-ethics/26-the-price-of-agency.html</loc>
+    <loc>https://axionic.org/book/05-value-and-ethics/26-sapient-agency-realism.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/book/05-value-and-ethics/27-the-price-of-agency.html</loc>
     <priority>0.8</priority>
   </url>
 </urlset>

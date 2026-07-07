@@ -73,7 +73,7 @@ If updating is alignment, it is tempting to conclude that Credence should equal 
 - **Psychological utility.** Optimism that sustains motivation, and caution that overweights danger, are Credences bent away from the best-estimate Measure on purpose. Sometimes the bent belief is the one that serves the agent — a trade-off to handle with open eyes, since it spends calibration to buy performance.
 - **Knightian uncertainty.** Sometimes the Measure is not merely unknown but unknowable in practice — no model of the branching structure is trustworthy enough to yield one. Here Credence has nothing to align with and must run on judgment alone; this is uncertainty of a different species, dissected in [the varieties of uncertainty](13-varieties-of-uncertainty.md).
 
-What these cases share is that the divergence is justified *decision-theoretically*, not epistemically: the agent is optimizing outcomes across the branches, not accuracy of the estimate. That boundary — where the theory of belief hands off to the theory of action — is where [deciding under uncertainty](22-deciding-under-uncertainty.md) picks up.
+What these cases share is that the divergence is justified *decision-theoretically*, not epistemically: the agent is optimizing outcomes across the branches, not accuracy of the estimate. That boundary — where the theory of belief hands off to the theory of action — is where [deciding under uncertainty](23-deciding-under-uncertainty.md) picks up.
 
 ## The Division of Labor
 

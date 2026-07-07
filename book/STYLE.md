@@ -6,6 +6,8 @@ These rules govern how blog posts become book chapters. They apply to every volu
 
 A chapter is a *rework*, not a compilation: merge the source posts into one continuous argument, in the order that serves the argument rather than the order they were published. Do not invent new philosophical positions; the intellectual content comes from the sources. Structural rewriting, reconciling drifted terminology, and fixes named in the chapter's editorial notes are required.
 
+**The blog is the record of the philosophy's evolution; the book is a coherent statement of its latest version.** When sources drift or a later post supersedes an earlier position, write every chapter from the latest position — do not present the drift as content. The exception is an honestly unresolved problem, which gets named as such (an open-problems section), never papered over. When new posts advance the position, the book updates to match.
+
 ## Voice
 
 - First person singular, direct, confident. The author argues; he does not survey.
