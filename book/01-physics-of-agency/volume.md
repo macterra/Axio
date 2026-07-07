@@ -3,54 +3,12 @@ title: 'The Physics of Agency and the Branching Universe'
 status: draft
 ---
 
-What agency is at the level of physics: the thermodynamics of control, the Quantum Branching Universe, Everettian choice and identity, and how coherent structure — constructors, filters, time itself — emerges from chaos, up through the question of why there is something rather than nothing.
+Most philosophy treats agency as a given and asks what agents should believe and do. This volume asks the prior question: what *is* an agent, physically? The answer built here is that agency is a measurable physical phenomenon — as real as energy, as constrained as entropy — and that taking its physics seriously transforms every downstream question: what choice is, what causes what, who you are when there are a Gigaplex of you, and why there is anything at all.
 
-## Chapter plan (Phase 2 outline — pending author approval)
+The argument runs in five parts. **Part I** founds the thermodynamics: agency as opposition to drift, the kybit as the unit of control (with its Landauer price), the three laws that bound every agent — control costs work, control decays, perfect control is impossible — and the spectrum from bacterial chemotaxis to the unattainable AIXI demon, closing with why agency is future-openness, not reward. **Part II** builds the arena: the Quantum Branching Universe defined formally — a directed acyclic graph of events whose paths are timelines — with Pattern Identifiers to pick things out of it, Measure, Vantage, and Branchcones as the machinery of objective probability, causality as branch structure, observation as physical correlation (the cat, the friend, and the Heisenberg cut dispatched), and the rival interpretations engaged. It ends at the volume's central junction — the thermodynamics welded to the branches — and at its honest ledger: the mechanism by which control shifts Measure is a framework commitment still awaiting derivation.
 
-**Part I — Origins and Thermodynamics**
-1. A Genealogy of Agency
-2. Agency Against Drift
-3. The Kybit
-4. The Three Laws of Agency
-5. Minimal and Maximal Agents
-6. Agency and Active Inference
-7. Agency Is Not Reward
+**Part III** lives inside the branches: Everett's demon replaces Laplace's; choice is the filtering, not the generating, of futures; no choice is trivial in a chaotically amplifying world; identity is a pattern with a Measure, not a thread through time; and creativity is evolution run virtually in the skull. **Part IV** digs beneath physics itself: the Chaos Reservoir — the totality of random sequences, the prior state of all priors — from which coherence filters carve structure, constructors give structure causal power, and life, consciousness, and time emerge as what coherence does when it turns inward. The part closes by redefining coherence as identity-preservation-under-transformation, mapping the tiers of reality from the Ruliad to the branching of this afternoon's weather, and testing the architecture against its rivals — simulations, the CTMU, divine cosmology, and Gödelian unsimulability. **Part V** ends where everything else begins: persistence across branches as the ultimate scoreboard, and the Modal Realization Principle's answer to why there is something rather than nothing.
 
-**Part II — The Quantum Branching Universe**
-8. The Quantum Branching Universe
-9. Measure, Vantage, Branchcone
-10. Causality and Counterfactuals
-11. The Observer Joins the Branch
-12. The Interpretation Wars
-13. Agency in the Emergent Multiverse
+This is the physics beneath the other volumes. The epistemology it supports — Credence, updating, self-location — lives in the Conditionalism volume; the ethics of steering Measure lives in the value volume; both cross-link here for their foundations, and this volume returns the favor.
 
-**Part III — Choice in a Branching World**
-14. Everett's Demon
-15. Quantum Free Will
-16. No Trivial Choices
-17. A Gigaplex of Parallel Lives
-18. Creativity as Virtual Evolution
-
-**Part IV — The Chaos Sequence**
-19. Infinite Randomness
-20. Chaos as Foundation
-21. Coherence Filters
-22. Constructors
-23. Life, Consciousness, and Time
-24. The Shape of Coherence
-25. The Tiers of Reality
-26. Rival Architectures
-
-**Part V — Capstones**
-27. The Quantum Metagame
-28. Why There Is Something Rather than Nothing
-
-## Design decisions
-
-- **Division of labor with the published volumes.** This volume owns the physics: the QBU's formal machinery (ch. 8 becomes the canonical definition the other volumes currently cite as a blog post), Measure as physical quantity, and the thermodynamics of control. Vol 2 keeps the epistemology (Credence, updating, Born-rule arguments); Vol 5 keeps the ethics (measure responsibility). Six posts already reworked into those volumes are cross-linked, not re-drafted.
-- **Heavy consolidation.** 71 source posts → 28 chapters. The ten-part Physics of Agency series compresses into chs. 2–4 (Part 10, pure recap, is mined and dropped); the two-draft pairs merge (Radical Contingency + Trivial Choice; the five Everett's-Demon shorts); the Measure/Credence/Vantage definitions, re-derived in at least five posts, are stated once (ch. 9) and referenced.
-- **Math and asset recovery.** This is the corpus's most formula-dense volume: ~25 formulas across nine posts live only in KaTeX data-attrs and must be recovered (worst: the QBU definition post, whose visible text has gaps where the math should be). Content-bearing images to transcribe: the three-laws comparison table, the technology taxonomy tables, the Chaos summary tables, one tweet screenshot, and one chart saved with a `.bin` extension. Text corruption to repair in two posts; one Python 2 listing to modernize.
-- **Honest ledger.** The known gap — the mechanism by which kybits shift Measure is asserted, never derived — is stated openly in ch. 13, in the same open-problems style as the other volumes.
-- **Arc reconciliation.** The Chaos sequence's internal ordering (semantic filters vs. constructors) varies across posts; the canonical order is fixed in chs. 20–22: Chaos → exclusion filters → semantic filters → constructors → life → consciousness.
-
-*This volume is in preparation. Chapters publish as they reach draft status.*
+*This volume is a draft. Chapters carry their status openly, and the arguments are held the way the book says they should be held: at the strength the evidence licenses, and no stronger.*
