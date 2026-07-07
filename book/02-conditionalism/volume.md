@@ -5,61 +5,14 @@ sources:
   - 167664022.the-hedgefox
 ---
 
-Epistemology on conditional foundations: the Conditionalism framework, the defense of Bayesian reasoning, theories of truth, pancritical rationalism, the nature of belief and faith, anthropic reasoning, and rational choice.
+Isaiah Berlin sorted thinkers into hedgehogs, who see everything through one big idea, and foxes, who distrust big ideas and know many small things. The hedgehog risks dogmatism — complexity forced into a system too neat to be true. The fox risks paralysis — nuance entertained forever, with no framework sturdy enough to act on. This volume is written in a third posture: one coherent framework, held the way a fox would hold it — conditionally, humbly, with every assumption on the table and open to attack.
 
-## Chapter plan (Phase 2 outline — pending author approval)
+The framework is **Conditionalism**: the thesis that all truth is conditional — that every claim bears its truth value only relative to background conditions, stated or hidden, and that progress in thinking is largely the work of dragging those conditions into the light. That single idea, followed honestly, turns out to reorganize everything epistemology cares about: what truth is, what statements mean, what models and beliefs are, what knowledge amounts to, how probability works, and what it is rational to do when you cannot be certain — which is always.
 
-**Part I — Foundations**
-1. What Is Philosophy For?
+The argument runs in six movements. **Part I** derives philosophy itself from the situation of any bounded agent that must act on incomplete information, and locates philosophy's job: making pre-theoretic commitments explicit and testing them for coherence. **Part II** develops the theory of conditional truth — against absolutism and relativism alike — through the three levels at which truth operates, the ways statements fail to say anything at all, and the twentieth-century formal results that arrived at the same verdict from inside logic itself. **Part III** turns to representation: all empirical knowledge is model-mediated, and realism survives that fact in conditional form. **Part IV** rebuilds the theory of mind's epistemic furniture — belief as a modeling construct, knowledge as reliable entropy reduction, and faith as the one epistemic structure the framework must condemn: belief with its update rule frozen shut.
 
-**Part II — Conditional Truth**
-2. All Truth Is Conditional
-3. The Three Levels of Truth
-4. When Statements Fail
-5. Truth Machines
+**Part V** is the volume's technical heart. It separates the two things ordinary language calls probability — **Measure**, the objective weight of branches in a quantum universe that never collapses, and **Credence**, an agent's rational uncertainty about where in that structure it stands — and shows how Bayesian updating couples them, why the critical rationalists' attack on Bayes fails, what varieties of uncertainty an agent can coherently carry, and why you are neither a random sample among observers nor a random branch among worlds. **Part VI** brings the machinery back to practice: rationality without foundations, coherence as the one value that can be held sacred without freezing thought, the discipline of changing your mind, the diagnosis of persistent disagreement, a live calibration exercise on a question your tribe has already answered for you, and decision-making when the tails are fat and the futures are many. A **coda** gathers it all into four commitments that mark the beginning of wisdom.
 
-**Part III — Models and Reality**
-6. Maps, Models, and Understanding
-7. Conditional Realism
+The chapters are self-contained enough to read out of order — cross-links mark every load-bearing dependency — but the volume was built as one argument, and it compounds. Readers who want the physics behind the branching universe will find it in the volume on the physics of agency; readers who want the formal treatments will find the papers linked where they are used.
 
-**Part IV — Belief, Knowledge, and Faith**
-8. What Beliefs Are
-9. What Knowledge Is
-10. Against Faith
-
-**Part V — Credence in a Branching World**
-11. Measure and Credence
-12. In Defense of Bayes
-13. The Varieties of Uncertainty
-14. Probability Without Collapse
-15. You're Not a Random Sample
-16. You're Not a Random Branch
-
-**Part VI — Rationality in Practice**
-17. Rationality Without Foundations
-18. Sacred Coherence
-19. The Discipline of Updating
-20. Reasonable Disagreement
-21. Bayes in the Wild
-22. Deciding Under Uncertainty
-
-**Coda**
-23. The Beginning of Wisdom
-
-## Roster changes vs. the catalog's first pass
-
-Pulled into this volume (the author's Conditionalism sequence claims them, and the arguments are epistemology): *Sacred Coherence*, *Against Faith*, *Is Faith Ever Justifiable?* (from Vol 9); *The Coherence Criterion*, *Truth Isn't Enough* (from Vol 5); *Understanding Requires Models* (from Vol 3); *Probability Without Collapse*, *You're Not a Random Branch* (from Vol 1 — Vol 1 keeps them as secondary and will cross-link).
-
-Released from this volume: *Credibility, Credence, and Coercion* → Vol 5 (it applies credence to the coercion definition; the machinery it needs lives there).
-
-Used for volume front/back matter rather than a chapter: *The Hedgefox* (characterizes the volume's overall stance).
-
-## Volume-wide editorial notes
-
-- **New writing needed:** volume introduction; a self-contained QBU/Measure primer in ch. 11 (cross-linking Vol 1); reconciliations noted below; volume conclusion.
-- **Reconcile before drafting:** the two belief definitions (ch. 8); the Defending Bayes series' drift on whether theories take credences — write from the Part-7 final position (ch. 12).
-- **Source recovery:** the Conditional Matrix table in *The Case for Reality* is empty in the archived HTML (ch. 7); the Newcomb payoff math is in KaTeX data-attrs (ch. 22).
-- **Fixes:** "David Hall" → Brett Hall (ch. 12); rename "Effective Decision Theory" to avoid the EDT/Evidential collision (ch. 22).
-- **Content risk:** the *Nonsense* post's contested demarcation examples (ch. 4); the lab-leak evidential record should be re-verified at publication (ch. 21).
-
-*This volume is in preparation. Chapters publish as they reach draft status.*
+*This volume is a draft. Chapters carry their status openly, and the arguments are held the way the book says they should be held: at the strength the evidence licenses, and no stronger.*
