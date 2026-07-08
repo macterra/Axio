@@ -1,6 +1,6 @@
 ---
 title: 'Axionic Agency: The Alignment Program'
-status: outline
+status: draft
 ---
 
 **Compact volume design (author-approved 2026-07-08).** 15 chapters from 71 posts (Oct 2025–Feb 2026), written from the program's LATEST position — the February 2026 posts and the formal papers, which run four document-series past the blog's last retrospective. The December 2025 burst is treated as working notes that later work superseded; the seven interludes become one narrative coda. This is the purest application of the book's editorial principle: the blog recorded the evolution; the book states the result. This is also the one volume drawing on both corpora — chapters link outward to the formal papers (axionic.org/papers/) for the technical record.

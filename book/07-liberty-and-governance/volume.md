@@ -1,6 +1,6 @@
 ---
 title: 'Liberty, Coercion, and Governance'
-status: outline
+status: draft
 ---
 
 **Design (Phase 2, 2026-07-08).** 35 chapters in seven parts from 94 posts (May 2025–Jul 2026) — the largest roster, no split per author decision. Most posts are short single-argument pieces; chapters merge two to five of them. The organizing editorial fact, found independently in every cluster: the corpus matures from categorical polemic (mid-2025) to conditional, structural argument (2026). The book writes every chapter from the mature register — the Grey Zone for coercion legitimacy, reciprocity for rights, the causal ladder for the speech/violence boundary, the dose/domain taxonomy for socialism, and the May/July 2026 Axiocracy statements — with the earlier polemics demoted to illustrative voice.

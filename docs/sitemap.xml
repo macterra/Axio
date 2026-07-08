@@ -3918,6 +3918,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://axionic.org/book/04-axionic-agency/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://axionic.org/book/05-value-and-ethics/</loc>
     <priority>0.8</priority>
   </url>
@@ -4135,6 +4139,10 @@
   </url>
   <url>
     <loc>https://axionic.org/book/06-markets-and-money/26-the-price-of-breath.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/book/07-liberty-and-governance/</loc>
     <priority>0.8</priority>
   </url>
 </urlset>
