@@ -1,15 +1,65 @@
 ---
 title: 'Attention Is an Economy'
 subtitle: 'The primordial market'
-status: outline
+status: draft
 sources:
   - 198325110.attention-is-an-economy
 ---
 
-**Thesis.** Attention is the first economy: scarce, rivalrous cognitive allocation with opportunity costs, prior to money. The commercial 'attention economy' is a derivative market that bids into the internal one through salience amplifiers — cognitive arbitrage against evolved relevance machinery. Executive function is governance of cognitive capital; freedom begins with control over allocation.
+A red badge appears on your phone. It costs almost nothing to process — a glance, a tap — and that is precisely the trap. A notification is cheap to process because it asks so little of you, and expensive to recover from because it forces the mind to rebuild the world it had just been inhabiting. To check the badge is to abandon, however briefly, the relevance structure of the task already underway. The cost of interruption is context reconstruction, and nobody bills you for it.
 
-**Sources.**
+That small transaction is worth taking seriously, because it is a transaction. This volume opened with [the discipline of value](01-the-discipline-of-value.md): value is relational, grounded in tradeoffs, revealed in what an agent gives up. Money, prices, and exchange are the visible machinery of that discipline. But the machinery does not start with money. Attention is the first economy every agent inhabits. Before money, language, law, trade, status, or politics, there is allocation: this rather than that, here rather than there, now rather than later. The mind survives by exclusion. Most of reality must be ignored so that anything can matter at all.
 
-- `/posts/198325110.attention-is-an-economy.html`
+## The First Economy
 
-**Editorial notes.** Single-source cornerstone closing Part I by extending the economic frame to cognition (Vervaeke engaged by name). Cross-link ../01-physics-of-agency/07-agency-is-not-reward.md (admissible futures) and Vol 8 territory via blog links (platform capture).
+At every moment, an agent is surrounded by more possible objects of attention than it can process. Sensory signals, memories, threats, plans, bodily sensations, social cues, unresolved obligations, fantasies, anxieties, habits, and abstract problems all compete for cognitive bandwidth. The agent cannot attend to all of them, so the field must be ranked, filtered, and compressed. What remains is not the world as such. It is the world made tractable.
+
+This makes attention an economic problem at the root of cognition. The resource is scarce: there is only one stream of focal awareness, and it does not scale. The resource is rivalrous: attention given to one thing is unavailable to everything else. And every act of attention therefore has an opportunity cost — to attend to one thing is to forgo attending to another. These are the defining conditions of an economy, and they hold in the mind before any coin is struck. Attention is also where the discipline of [value as sacrifice](../05-value-and-ethics/04-value-as-sacrifice.md) bites first and deepest: what you attend to is what you actually value, whatever your professed values say, because attention is the one expenditure you cannot fake and cannot defer.
+
+## Relevance Under Scarcity
+
+Cognitive scientist John Vervaeke's concept of relevance realization names the deeper process by which an agent discovers, discloses, and updates what matters. The world does not arrive pre-sorted into the relevant and the irrelevant. The organism must continually determine what deserves cognitive investment given its embodied situation, its skills, its purposes, and the affordances available to it.
+
+Attention is relevance under scarcity. It is what happens when the space of possible meaning exceeds the resources available to process it. The agent does not merely perceive the world and then choose where to look. Perception is already structured by relevance. The field is already weighted before conscious deliberation arrives.
+
+A distinction matters here, because salience, relevance, and value are routinely collapsed into one another. Salience is what stands out; relevance is what matters in context; value is what the agent cares about preserving, achieving, or becoming. The red badge is salient. A family obligation may be relevant. A long-term creative project may be valuable. Modern attention systems amplify salience in order to seize attention while remaining indifferent to relevance and hostile to long-term value.
+
+## Internal Economy, External Market
+
+The distinction between salience and relevance prevents a common confusion. The economy of attention inside the mind is not the same thing as the commercial attention economy outside it. The first is the agent's internal allocation problem. The second is the industrial attempt to influence, harvest, and monetize that allocation.
+
+Once attention is understood as allocation, the external market becomes easier to analyze. Platforms, advertisers, propagandists, ideologues, institutions, and social environments do not literally own attention. They bid into the internal economy of the agent by making some signals more salient than others. Their success depends on whether they can alter what the agent's relevance machinery treats as worth processing.
+
+The commercial attention economy is therefore a derivative market. It exists because internal attention is scarce, rivalrous, and valuable. The external system cannot allocate attention directly, but it can manipulate the conditions under which internal allocation occurs. That is the point of the red badge, the outrage headline, the infinite scroll, the intermittent reward, and the status cue. Each is an attempt to enter the agent's internal market through salience.
+
+## Cognitive Arbitrage
+
+The platform does not need to know what is good for you. It only needs to learn what can outbid your current attentional commitments. Outrage, novelty, eroticism, status anxiety, tribal conflict, threat cues, and intermittent reward function as bid amplifiers. They increase the probability that a signal wins the next allocation round.
+
+The system captures the upside while the agent pays the cognitive cost. The user's attention is consumed. The platform receives engagement. The user is left with broken concentration, emotional residue, and a degraded capacity for long-horizon goals. The transaction is presented as voluntary, but the market is radically asymmetric. One side has industrialized salience optimization, trained on billions of interactions and tuned by algorithms whose only practical loyalty is capture. The other side has a nervous system evolved for predators, mates, kin, food, coalition politics, and immediate environmental threats.
+
+The result is cognitive arbitrage: ancient relevance machinery exploited by modern bidding systems. Attention markets discover which signals can seize the organism before reflection, then package those signals as products. The profitable unit is not truth, understanding, friendship, beauty, or agency. The profitable unit is capture. Once that is understood, much of the modern internet becomes less mysterious. Informing you, improving you, connecting you, and entertaining you are optional side effects. Winning allocation rounds is the business model.
+
+None of this requires a villain. It is what any system does when the metric it is optimized on — engagement — diverges from the good it nominally serves, a pattern this volume returns to in [the metagame of incentives](15-the-metagame-of-incentives.md): behavior follows incentives, not mission statements, and a platform whose revenue is a function of capture will evolve toward capture whatever its founders intended. And the arbitrage does not stop at commerce. Ideologies run the same exploit without a balance sheet — [mind viruses](/posts/174938004.mind-viruses.html) are salience hijackers that pay their hosts in righteousness instead of dopamine.
+
+## Executive Function as Governance
+
+Executive function is governance over scarce cognitive capital. The usual language of impulse control, self-discipline, emotional regulation, and focus is too weak because it makes attention sound like a matter of personal tidiness rather than cognitive sovereignty. Executive function suppresses bad bids, protects long-term commitments, and prevents transient salience from monopolizing the mind. A distracted person is not merely weak; he is often operating in a hostile attention market with inadequate regulatory machinery.
+
+"Just focus" is useless advice because focus is not raw exertion. Focus is the successful defense of a relevance structure against competing bids. A serious task creates a world. Writing an essay, solving a technical problem, understanding an argument, loving another person, building a company, composing music, or raising a child each requires a structured field of relevance. Some things must become salient, others must recede, and the agent must preserve the frame long enough for intelligence to operate inside it. Distraction is the collapse of that frame under rival claims on attention.
+
+## Retraining the Pricing Mechanism
+
+Meditation, reflection, deep work, and contemplative practice are often sold as ways to calm the mind. Their deeper function is to retrain the pricing mechanism. They teach the agent to notice bids for attention without automatically accepting them. A thought can appear without deserving investment. An impulse can arise without gaining authority over action. A stimulus can become salient without becoming relevant. The space between salience and allocation is the space in which agency becomes possible.
+
+The wiser agent has learned to mistrust mere salience. What shouts for attention is often trying to bypass judgment. Wisdom is the training of relevance machinery so that the right signal appears in the right frame at the right time. This is a cognitive achievement, an ethical achievement, and an economic achievement at once, because the agent has redesigned the internal market by which scarce cognitive resources are priced and allocated.
+
+Vervaeke's relevance realization becomes powerful here because intelligence is not brute processing. A system that tried to evaluate every possible feature, memory, inference, and action would drown in combinatorial explosion. Intelligence requires selection, selection requires relevance, and relevance requires a dynamic pricing function over possible cognitive investments. The mind is an economy of limited processing power in which salience bids, attention allocates, executive function regulates, and wisdom designs the market.
+
+## Freedom Begins with Allocation
+
+A good life is therefore partly a question of attentional political economy. The practical questions are architectural. Who gets to bid for your mind? Which environments make the important things salient? Which practices strengthen your ability to refuse low-value bids? Which institutions profit from the degradation of your coherence?
+
+The stakes are the ones set out in the account of agency itself. Agency is not the maximization of reward, and not even the blind preservation of options; it is the preservation and navigation of a coherent field of [admissible future action](../01-physics-of-agency/07-agency-is-not-reward.md). Every one of those futures is reached, or lost, through allocation. An agent whose attention is captured has not lost its beliefs or its stated values; it has lost the ability to convert them into trajectories. Capture forecloses futures one allocation round at a time.
+
+The attention economy is now an industrial system for manufacturing counterfeit relevance. It does not need to defeat your beliefs. It only needs to win enough allocation rounds to keep you from thinking clearly, loving deeply, building patiently, and acting coherently. Freedom begins with attention because agency requires control over allocation, and allocation is always vulnerable to capture by systems built on false signals. Attention is where agency first becomes visible: in what the agent permits to matter.
