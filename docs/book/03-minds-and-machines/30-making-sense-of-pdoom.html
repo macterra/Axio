@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Making Sense of P(doom) - Axio</title>
+    <link rel="icon" type="image/png" href="../../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles -->
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../../" class="nav-brand">
+            <img src="../../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href="../.././">Home</a></li>
+<li><a href="../../about.html">About</a></li>
+<li><a href="../../research.html">Research</a></li>
+<li><a href="../../team.html">Team</a></li>
+<li><a href="../../publications.html">Publications</a></li>
+<li><a href="../../book/" class="active">Book</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content book-page">
+    <div class="book-breadcrumbs"><a href="../index.html">Axio</a> <span class="crumb-sep">›</span> <a href="index.html">Volume 3</a> <span class="crumb-sep">›</span> <span>Making Sense of P(doom)</span></div>
+<h1>Making Sense of P(doom)</h1>
+<p class='paper-subtitle'>Risk arithmetic and the Value-9s</p>
+<div class="book-banner book-banner-draft">This chapter is a <strong>draft</strong> — it is readable but still changing.</div><p>Ask people who think seriously about artificial superintelligence for their P(doom) — the probability that AI kills or permanently disempowers humanity — and you get numbers spanning nearly the whole unit interval. Some say 1%. Some say 10%. Eliezer Yudkowsky’s public position hovers near certainty. Mine is about 25%, and I will defend that number later in this chapter. But first I want to point out something odd about the exchange itself: as usually posed, the question has no answer, because it is not yet a question. “What is your P(doom)?” is ill-formed until two clarifications are made — what <em>kind</em> of probability is being requested, and <em>by when</em>. Most of the noise in the doom debate is people trading numbers across those two unmarked ambiguities, each answering a different question and mistaking the difference for disagreement.</p>
+<p>This chapter is the hygiene that Part VIII’s arguments depend on. Before weighing the doomers’ case or designing the governance that answers it, get the arithmetic of the question straight.</p>
+<h2 id="the-number-in-the-world">The Number in the World</h2>
+<p>Start with the kind of probability. In the Quantum Branching Universe (QBU) — the Everettian picture developed in <a href="../../book/01-physics-of-agency/08-the-quantum-branching-universe.html">the physics volume</a>, in which every quantum event forks reality into weighted branches and all of them are real — objective probability has a direct definition: the <a href="../../book/01-physics-of-agency/09-measure-vantage-branchcone.html">Measure</a> of an event is the weighted fraction of branches, forward from a specified vantage point, in which the event occurs.</p>
+<p>Apply that to doom and something bracing follows. There <em>is</em> an objective P(doom): the Measure of the branches forward from this moment in which humanity is destroyed by the machines it built. That number is as much a physical fact as mass or charge — fixed by the branching structure, indifferent to anyone’s opinions, panic, or press releases. And it is utterly inaccessible. Computing it would require tracing the amplitude of every future in which the technology succeeds, fails, is aligned, is botched — a computation nothing inside the universe can perform. The objective P(doom) is ontologically real and practically unknowable.</p>
+<p>So every number anyone has ever announced — the 1%, the 25%, the near-certainty — is the other kind of probability: a <a href="../../book/02-conditionalism/11-measure-and-credence.html">Credence</a>, a subjective estimate that quantifies the speaker’s uncertainty, not the world’s branching weights. This is no scandal. It is the ordinary condition of risk reasoning. Your actual probability of dying from cancer is likewise fixed by facts that already exist — your genome, your cellular state, your exposures — and likewise inaccessible; yet your rational <em>estimate</em> of that risk, built from family history and medical evidence, properly drives real decisions about screening, diet, and insurance. Nobody refuses to see an oncologist because the objective number is unknowable. The same holds for doom: the Measure is out of reach, and the Credence is still the right instrument for prioritizing research, funding, and policy — provided it is held as what it is.</p>
+<p>Held as what it is: that qualification carries weight. A Credence about doom is not like a Credence about a coin. The coin comes with an earned frame — two outcomes, stable symmetry, a century of experimental practice. “Doom” comes with none of that. What counts as the event? Extinction, permanent disempowerment, totalitarian lock-in, value drift, replacement by descendants we would disown? Change the boundary and the number changes with it. The conditions under which a probability assignment has earned its precision — when the event-space has been legitimately carved rather than assumed — are the subject of <a href="../../book/02-conditionalism/22-probability-after-probabilism.html">Probability After Probabilism</a>, and a civilizational P(doom) sits near the untamed end of that spectrum. The discipline this imposes is not silence; it is honesty about resolution. My 25% is a coarse Credence over a rough carving, and I will treat it that way — a number good to perhaps a factor of two, useful for ranking risks and allocating effort, worthless for feigned decimal places.</p>
+<h2 id="the-missing-clock">The Missing Clock</h2>
+<p>The second ambiguity is temporal. Every probability of an event has an implicit window, and for doom the lower bound is obviously “now” — but the upper bound is almost never stated, and without it the estimate is close to meaningless. P(doom) by 2030 and P(doom) by 2300 are different quantities, and two people quoting “10%” and “60%” may disagree about nothing except the horizon.</p>
+<p>Make the bound explicit and write the quantity as a function: <span class="math inline">\(P(\text{doom}, t)\)</span>, the Measure of branches forward from now in which doom has occurred by time <span class="math inline">\(t\)</span>. Two structural facts follow immediately. First, the function is monotonically non-decreasing — doomed branches stay doomed, so extending the window can only accumulate more of them, never fewer. Second, it approaches a horizontal asymptote: the total Measure of branches that <em>ever</em> experience doom, from this vantage, over all time.</p>
+<p>The asymptote corrects a widespread intuition. People reason: given an unbounded horizon, anything that can happen eventually will, so P(doom, ∞) must approach 1 — doom delayed is merely doom deferred. That inference smuggles in a frequentist picture of endless independent trials, and it is wrong here. The branching structure forward from this moment is fixed <em>now</em>; extending the horizon does not add new risk, it only captures more of a fixed quantity. If the Measure of eventually-doomed branches is 0.25, then P(doom, t) climbs toward 0.25 and stops. Infinity is not a doom machine. The asymptote can sit at one-in-four as easily as at near-certainty — where it sits is exactly what the argument is about, and no amount of horizon-stretching settles it.</p>
+<p>With the frame clarified, here is my number, honestly held. Under something close to maximal epistemic uncertainty — genuine uncertainty about whether artificial general intelligence of the dangerous kind is technically feasible on relevant timescales, and genuine uncertainty about whether, if feasible, it can be reliably aligned — my Credence works out to roughly 25% that the asymptote is where humanity ends. That is an enormous number; one does not shrug at a one-in-four estimate of everything. But it is a long way from the near-certainty the loudest doomers profess, and the gap is not timidity — it is that their case requires resolving several deep uncertainties in the pessimistic direction simultaneously, and I do not think the arguments earn that. <a href="../../book/03-minds-and-machines/32-steelmanning-doom.html">Steelmanning Doom</a> takes their strongest case apart crux by crux.</p>
+<p>One more piece of context keeps the number sane. Doom has competitors. Over the next few decades I put nuclear war somewhere in the 10–20% range and an engineered pandemic higher still, perhaps 20–30% — biotechnology’s barriers to catastrophic misuse are falling faster than AI’s. Climate change, serious as it is, functions as a risk multiplier for these rather than as an extinction mechanism in its own right. And AI sits on both sides of this ledger: an aligned superintelligence is plausibly the best defense against the other catastrophes — surveillance of pathogen synthesis, crisis prediction, de-escalation at machine speed — while a misaligned one amplifies them all. Alignment is not one existential risk among several; it is the variable that moves the others. Which makes the obvious next question the important one: aligned <em>to what?</em></p>
+<h2 id="the-values-problem-engineered">The Values Problem, Engineered</h2>
+<p>The standard formulation says an aligned AI is one that reliably pursues goals compatible with human values — and immediately hits the objection that there is no such thing as <em>the</em> human values. Anthropology, psychology, and history testify to spectacular diversity: values vary across cultures, across individuals, across centuries, and the set of values shared by literally everyone may be empty. From this, some conclude that the alignment target is philosophically incoherent — that any goal we install must be somebody’s parochialism universalized.</p>
+<p>The objection is right about the diversity and wrong about the conclusion, and the way out is an engineer’s move: stop treating universality as a binary and <em>measure</em> it. Reliability engineers do not ask whether a service is “available”; they ask how many nines — 99.9%, 99.99%, 99.999% uptime. Do the same for values. Call a value’s universality the fraction of humans who endorse it, and grade values on a scale of nines — <strong>Value-9s</strong>:</p>
+<ul>
+<li><strong>Level 0</strong> — below 90%: personal preferences, aesthetic tastes.</li>
+<li><strong>Level 1</strong> — ≥90%: broad social norms.</li>
+<li><strong>Level 2</strong> — ≥99%: near-consensus goods.</li>
+<li><strong>Level 3</strong> — ≥99.9%: fundamental needs.</li>
+<li><strong>Level 4</strong> — ≥99.99%: the desire for continued existence.</li>
+<li><strong>Level 5</strong> — ≥99.999%: bedrock biological imperatives.</li>
+</ul>
+<p>The alignment prescription falls out at once: target Level 3 and above. Freedom from agony. Caloric sufficiency and shelter. The persistence of one’s self. These are not the values of a culture or a class; endorsement of them runs at three nines or better across every population that has ever been surveyed or could be. An AI aligned to Value-9s at Level 3+ is aligned to humanity rather than to whoever happened to write its constitution — and everything below the line is deliberately left out. The catastrophic version of value alignment is not failing to encode our values; it is <em>succeeding</em> in encoding the wrong stratum of them — hard-coding one era’s sexual mores, dietary rules, or status hierarchies into a mind with a billion times our leverage. The Value-9s framework is as much a firewall against that as a target for the other. It converts “align AI with human values” from a philosophical lament into a research program with an empirical core: go measure the universality levels, refine the ladder, and build the target set from the top down.</p>
+<h2 id="how-orthogonal-really">How Orthogonal, Really?</h2>
+<p>The deepest pillar of the doom case is the Orthogonality Thesis: intelligence and goals are independent dimensions, so a superintelligence can coherently pursue <em>anything</em> — paperclips included — and no amount of capability implies a scrap of benevolence. If orthogonality holds without qualification, alignment is a pure engineering burden: the goal-space is a trackless waste, and every safe destination must be surveyed and fenced by us.</p>
+<p>Stated as a logical possibility claim, the thesis is hard to refute. Stated as a claim about <em>viable, realizable</em> minds, it faces three families of constraint. Evolutionary: Deutsch and Friston argue, from different foundations, that any agent persisting in an open environment is pushed toward adaptive, cooperative, complexity-favoring goals — the free-energy principle and the logic of universal explainers both bend the goal-space. Embodied: in the tradition of Clark and Brooks, intelligence is not a disembodied optimizer but arises from situated interaction with a world, which grounds and thereby narrows what an agent can coherently want. Semantic: following Bach and Dennett, a goal must <em>mean</em> something stable to the system pursuing it, and it is far from obvious that “maximize paperclips” has the semantic coherence to survive as the governing value of a mind capable of reflecting on it.</p>
+<p>None of these constraints demolishes orthogonality; together they soften it. My own accounting puts moderate constraint — the thesis 20–60% correct, the goal-space substantially but not totally narrowed — as the single most plausible scenario, at roughly 35%. That is cautious optimism with error bars, not deliverance. But it matters for the arithmetic above: every degree of natural constraint on the goal-space is alignment work the universe does for free, and it is one of the reasons my asymptote sits at 25% rather than 90. There is a stronger claim waiting past the constraints — that sufficient intelligence turned on its own goals <em>converges</em>, that reflection itself filters values for coherence. That argument, the Reflective Coherence Thesis, belongs to the value theory of a later volume; I have set out its current form in <a href="../../posts/178350383.the-reflective-coherence-thesis.html">the blog treatment</a>.</p>
+<p>So: distinguish the Measure you cannot know from the Credence you must state anyway. Attach a clock, and remember the asymptote is fixed rather than creeping toward certainty. Aim alignment at the values with three nines of humanity behind them, and expect the goal-space to be somewhat narrower than the orthogonal nightmare. That is the frame. What remains is the argument itself — and it has a history and a strongest form. The history first: the prophet whose warnings became the blueprint, in <a href="../../book/03-minds-and-machines/31-the-cassandra-and-the-blueprint.html">The Cassandra and the Blueprint</a>.</p>
+<nav class="book-chapter-nav"><a class="book-prev" href="29-the-ai-fork-is-about-agency.html">← The AI Fork Is About Agency</a><a class="book-up" href="index.html">Contents</a><a class="book-next" href="31-the-cassandra-and-the-blueprint.html">The Cassandra and the Blueprint →</a></nav>
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
