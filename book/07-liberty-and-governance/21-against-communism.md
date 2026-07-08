@@ -1,19 +1,114 @@
 ---
 title: 'Against Communism'
 subtitle: 'The machinery of maximum immiseration'
-status: outline
+status: draft
 sources:
   - 202354371.against-communism
   - 165430456.communism-at-home
   - 165424913.utopian-visions
 ---
 
-**Thesis.** Open with the conditions analysis: communism genuinely works inside families — trust, perfect information, flexibility, informal enforcement — and those enablers cannot survive past Dunbar scale, where the knowledge problem and incentive divergence force enforcement to supplant voluntarism. Then the verdict: Marxist-Leninist state communism, narrowly defined, immiserated more human beings than any other ideology — by scale, duration, recurrence, and mechanism — and its worst features are its architecture, not corruptions of it: historical certainty, one-party rule, command economics, class warfare, political terror, locked exit. The epistemic core: a society's prices, courts, press, and gossip are its nervous system; communism attacks the sense organs directly — congenital insensitivity to pain at civilizational scale. The retreats are the evidence: regimes became more humane precisely as they became less communist.
+Communism works. It works in the one place nearly every human being has seen it run: a family. Shared ownership, need-based distribution, collaborative decision-making — the household is the original commune, and it does not collapse into queues and secret police. *From each according to his ability, to each according to his needs* is not a utopian slogan at the kitchen table. It is Tuesday.
 
-**Sources.** against-communism (Jun 2026, canonical): the narrow category defended ("the looser versions acquit the guilty"), the rival-cases engagement (Nazism, empire — the deciding asymmetry: parasitic on engines of improvement vs switching them off), the case sequence (Soviet template → Mao's lying equilibrium → Cambodia as doctrine minus brakes → North Korea as end state), immiseration beyond body counts. communism-at-home (Jun 2025): the family-communism conditions showcase — Conditionalism doing the work moral condemnation can't. utopian-visions: its Marxism-absurdity verdict absorbed here; the naive/practical anarchism distinction exports to ch 29–30; the residue (blank statism coinage) to ch 22.
+It works there for reasons that can be named precisely. Trust, backed by genetic interest: family members have deeply interwoven incentives, and mutual investment makes exploitation rare and deception costly. Near-perfect information: the decision-makers know each member's needs and capacities in intimate, real-time detail, so resources flow to where they are needed without anyone filing a requisition. Adaptive flexibility: roles and responsibilities reallocate in minutes as circumstances change, with no bureaucracy to petition. Informal enforcement: love, shame, and reputation hold everyone accountable without a single formal punishment.
 
-**Editorial notes.**
-- The Maximum Immiseration infographic (081f167c-...1055x1491.png) is fully transcribed in the survey notes — rebuild the "How It Works" flow as a short list; the post's note that Gemini refused to generate it is a wry footnote candidate (author call).
-- The utopian-visions poll image says "Blank slatism" where the post reads "Blank Statism" — do not quote the poll without checking; likely repurposed.
-- Judge-by-the-road principle ("not the promised destination") echoes ch 22's closure critique — plant the link.
-- Cross-links: Vol 6 (Hayek knowledge problem in economic form — here it stays epistemic-political), ch 20, ch 23 (why the temptation recurs).
+Every one of those enablers is a condition, and every one of them dies with scale. Trust has a hard cognitive ceiling — Dunbar's number, roughly a hundred and fifty stable relationships — beyond which it is replaced by suspicion and opportunism among strangers. Information degrades catastrophically: past the village, no planner can know what a mother knows about her children, and Hayek's knowledge problem takes over — the facts a central office would need are dispersed, local, tacit, and perishable. Incentives diverge: among people who will never meet again, free-riding pays, and once voluntary cooperation stops carrying the load, enforcement must. That is the whole trajectory of communism at scale in one sentence: what the family does with affection, the state must do with coercion, and coercion does it badly.
+
+This is Conditionalism doing work that moral condemnation cannot. The claim is not that communism is evil in its aspirations — freedom from exploitation and want are admirable aims — but that its viability is contingent on conditions of trust, intimacy, and aligned incentives that exist inside families and cannot be replicated across societies ([All Truth Is Conditional](../02-conditionalism/02-all-truth-is-conditional.md)). An idea true at one scale can be catastrophic at another. The tragedy of the twentieth century is that this was treated as a detail of implementation rather than the entire question.
+
+So much for why it fails. What follows is the harder claim: *how* it fails, and why that failure mode earned communism a distinction no other ideology holds.
+
+## The Narrow Category
+
+The ideology that has immiserated the most human beings can be named with some precision. It is Marxist-Leninist state communism, in its twentieth-century revolutionary form.
+
+Keep the category narrow, because the looser versions acquit the guilty. "The left," "socialism," "equality," "concern for the poor" are all too broad to carry the charge. In [Against Socialism](20-against-socialism.md) I argue that socialist policy has to be judged along dimensions of dose, domain, monopoly, exit, and feedback; by that taxonomy, communism is the limiting case — maximal dose, every domain, total monopoly, locked exit, feedback destroyed. The catastrophe came from a specific machine with specific parts:
+
+- **Historical certainty** — a theory that history is going somewhere and the party knows where
+- **One-party rule** — the vanguard as history's appointed instrument
+- **Command economics** — the central plan in place of prices, property, and contract
+- **Class warfare** — crimes manufactured out of social categories
+- **Political terror** — coercion as ordinary administration, not emergency measure
+- **The locked exit** — sealed borders, because a paradise that needs prison walls has already pronounced its own verdict
+
+That machine produced disaster nearly everywhere it ran. And it has a recognizable shape, which is what makes it judgeable: canonical texts, a vanguard party, the dictatorship of the proletariat, hostility to private capital, the central plan, ideological policing. Its regimes differed, sometimes a great deal. The family resemblance is strong enough to convict the family.
+
+The theory was absurd before it was lethal. Marxism promises the eventual withering away of state, class, and money without any mechanism for incentive alignment or coordination — a destination that violates everything the family case teaches about the conditions cooperation actually requires. But the danger begins at a specific, identifiable moment: when the doctrine claims to read history's direction, and the party appoints itself history's instrument. From there the logic is automatic. Opposition is no longer disagreement; it is sabotage, false consciousness, counter-revolution. Markets, churches, courts, universities, families, the free press — every institution that thinks for itself becomes a rival power to be captured or destroyed. The party reads history, decides which lives are legitimate, and manufactures crimes out of social categories.
+
+Kulak. Wrecker. Hoarder. Right deviationist. Enemy of the people. Each word performed the same trick: it turned a human being into an administrative problem with a known solution.
+
+## The Nervous System of a Society
+
+The kindergarten objection is that communism loved equality too much. The real indictment starts somewhere colder: it tried to amputate the senses of an entire society.
+
+Consider what a society uses to know itself. Prices, property, contracts, firms, courts, families, churches, universities, gossip, dissident pamphlets, the informal favor traded between neighbors — these are not just institutions. They are sense organs. Each one detects some local fact that no central office could ever hold, and passes it along: this crop failed, that tool is scarce, this official is lying, that promise was broken. A market price is a nerve carrying news of scarcity ([The Price Illusion](../06-markets-and-money/04-the-price-illusion.md)). A free newspaper is a pain receptor. Taken together they form a nervous system distributed across millions of bodies, reporting the true state of things faster and more honestly than any committee could.
+
+The party-state severed those nerves on purpose, because a nerve that reports independently is a rival authority. And here is the cruelty of the design: once the nerves were cut, the state could still move but could no longer feel. It could command and could not perceive, punish and could not learn, print statistics it had no way to trust. It became a colossus that could clench its fist and never feel the burn.
+
+There is a rare human condition, congenital insensitivity to pain. The people who have it are not lucky. They bite through their tongues, walk on broken ankles, leave a hand on a hot stove because nothing tells them to pull it back, and they tend to die young from injuries that pain would have caught in time. Pain is not the enemy. Pain is information, urgently delivered. A regime that abolishes the signals of its own damage has not escaped pain. It has only arranged not to feel the fire until the limb is gone.
+
+This is why every one of these states became a theater of lying from top to bottom. The farmer lied to the local cadre. The cadre lied to the province. The province lied to the capital. The capital lied to the people, and everyone learned two languages, the public one and the private one, and everyone knew the plan was fiction and knew the price of saying so. A society can survive poverty and bad rulers. It struggles to survive the methodical destruction of its ability to tell itself the truth.
+
+## The Soviet Template
+
+The Soviet Union drew the blueprint. The revolution promised the end of exploitation and built a party monopoly over political, economic, and intellectual life. The state seized the commanding heights, then discovered that a society is not an engineering diagram. Peasants resisted collectivization. Workers kept their private interests. Intellectuals declined to submit on schedule. The markets vanished; the scarcity stayed.
+
+So the regime made its fateful move. It redefined failure as treason.
+
+The rest followed: forced collectivization, dekulakization, engineered famine, the camps, the purges, the informant who was your neighbor, and a moral inversion in which a state could destroy people in the name of humanity. The Soviet case is the theory under load. When a party claims to embody historical necessity, an ordinary bad harvest becomes resistance to history itself, and a man who reports the truth becomes an enemy of it.
+
+It will be said that these regimes grew from damaged ground — poverty, war, invasion, institutional collapse — and that is true, and it explains why revolutionary absolutism found buyers. It does not touch the later crimes. Hard conditions open a door; they do not require secret police, prison camps, sealed borders, or the deliberate starvation of villages to meet a quota. Plenty of societies have been invaded, humiliated, and impoverished without building a gulag. The decisive question is always what the ideology did with threat, and Marxist-Leninism supplied a frame in which nearly every obstacle — a shortfall, a complaint, a bad year — could be reclassified as enemy action. Correction became dangerous. Cruelty became righteous. Context can explain how a movement seized power. It cannot pardon what the movement did once it had power.
+
+## Maoism and Scale
+
+Maoist China ran the same program on a fifth of humanity, and with a wilder faith. Mao believed political will could overrule material reality. That belief is harmless on a banner and lethal in a state.
+
+The Great Leap Forward was that belief converted into agriculture. Local officials lied because the system paid for lies and punished candor. Targets became fantasies. Peasants were herded into communes. Grain was procured from starving villages to satisfy figures everyone knew were fictional, and the people who could have stopped the disaster were the people most afraid to speak. A normal government can make a catastrophic farming decision and reverse it the next season. A total ideological state cannot, because reversing it means admitting the doctrine was wrong, and the more absurd the official claim grows, the more dangerous it becomes to contradict. Suppressed reality does not disappear. In the Great Leap it came back as famine.
+
+The Cultural Revolution added a second kind of ruin: the deliberate wrecking of trust, learning, expertise, and inherited culture, taught through denunciation and ideological theater. The dead are only part of the bill. The survivors were trained into fear, conformity, and a permanent gap between what they said and what they thought.
+
+## Cambodia and the Pure Experiment
+
+The Khmer Rouge showed the doctrine stripped of even the practical brakes of industrial statecraft. Cities emptied. Money abolished. Families broken on purpose. Knowing a foreign language could get you killed. A whole society was driven through an agrarian fantasy run by armed teenagers.
+
+Cambodia gets filed as an outlier — too insane to count. The excuse is too convenient. Pol Pot did not invent a new hatred; he took the recurring communist hatreds and drove them to the end of the road: hatred of markets, of cities, of hierarchy, of intellect, of inherited culture, of any human bond the party did not author, and the dream of remaking man by force. Most communist regimes stopped short of Cambodia. They stopped because exhaustion or circumstance stopped them, not because the doctrine contained a brake.
+
+## North Korea and the End State
+
+North Korea is the syndrome in its mature form: the party-state, the command economy, the camps, the sealed information, the militarized population, the catechism, the near-total abolition of private life, plus dynastic god-worship and a quarantine against the outside world. Watch how fast revolutionary equality curdles into caste. The party that abolishes class becomes a class. The state that abolishes exploitation becomes the only exploiter left. The creed that promised emancipation produced subjects who cannot speak, move, trade, worship, read, or leave.
+
+## The Rival Cases
+
+Nazism is the more naked evil. Its doctrine is biological hierarchy, purification, conquest, extermination — the depravity sits on the surface and announces itself. If the question is which ideology is most monstrous in its explicit creed, Nazism wins without contest. But the Reich lasted twelve years over a continent it mostly never held in peace. If the question is which ideology produced the most total human immiseration in practice, communism has the stronger claim: it ruled more people, lasted longer, reproduced across more regimes, and ground societies down through famine, terror, surveillance, stagnation, and rot.
+
+Empire is the hardest case. The transatlantic slave trade, plantation slavery, settler conquest, the Belgian Congo, the imperial famines, indigenous dispossession — this belongs in the center of the evidence, not the footnotes. Under a broad reading of "ideology," colonialism is communism's strongest competitor; under a narrower one — a coherent modern doctrine instantiated again and again through a single recognizable state form — communism wins the grim prize. Colonialism also demands a more tangled causal account, because some colonized societies did inherit railways, courts, schools, clinics. Those inheritances do not absolve conquest. A railway laid to move troops and minerals may later carry farmers to market, but later usefulness is not retroactive consent. And most of what gets credited to empire is better credited to science, trade, and industrial technique, which traveled without requiring a flag planted by force. Japan and Thailand modernized without being colonized. The honest counterfactual is not empire versus stagnation; it is empire versus the other roads into the modern world.
+
+Here is the asymmetry that decides the ranking. Colonialism was often parasitic on real engines of human improvement — markets, navigation, science, law, medicine, literacy — engines it exploited and disfigured but did not switch off. Marxist-Leninism went after those engines directly. It attacked private enterprise, market prices, independent associations, secure property, free inquiry, and honest feedback, because each of them was a rival mind. Communist regimes did raise literacy and basic health in poor agrarian societies, and those gains were real. They came from mass education and public health, the common machinery of modernization. The distinctively communist addition was the party monopoly that turned modernization into coercion.
+
+The remaining rivals fall short on the same test. Religious absolutism has immiserated multitudes across the centuries through inquisition, heresy law, holy war, and caste, but in the modern period it does not match the communist combination of industrial administration, mass mobilization, economic monopoly, and total control of information. Nationalism is dangerous chiefly as an accelerant, lethal when it fuses with purity or empire, but the word stretches from liberal self-determination to genocide and so indicts nothing on its own.
+
+The Marxist will demand capitalism in the dock, and the word usually arrives overloaded. If capitalism means markets, prices, property, contract, and enterprise, it belongs nowhere near the top of this list. If it means slavery, colonial extraction, monopoly privilege, bailouts, and corporate capture, the critic has smuggled empire, bad law, and state favoritism in under one label and billed the market for all of it. Those harms should be tried under the mechanisms that produced them; no serious accounting holds markets responsible for every cruelty committed within sight of money. Communism stands apart because its worst features are not corruptions of its architecture. They are the architecture.
+
+## The Retreats Are the Evidence
+
+Communist regimes varied, and the variation is the proof, not the alibi. Yugoslavia under Tito, the Khrushchev thaw, Deng's market reforms, Gorbachev's glasnost — the worst suffering clustered where the doctrine was applied most completely, and the livable stretches arrived with retreat. Market leakage, tolerated black markets, a private plot, an official who had stopped believing quite so hard. Citizens carved out small rooms the plan could not see into. The reformers were conceding, openly or by their actions, that the system had to borrow from the very forms of life it set out to abolish. Communist states tended to become more humane precisely as they became less communist.
+
+Notice what the retreats restored, in every case: a sense organ. A price here, a plot of land there, a newspaper that could print a fraction of the truth. The regimes that survived longest were the ones that reconnected a few nerves and let themselves feel again.
+
+## Moral Alchemy
+
+The most dangerous ideologies turn cruelty into virtue, and communism ran the transmutation with rare efficiency. Confiscation became liberation. Censorship became responsibility. Forced labor became re-education. Political murder became historical necessity. Dissent became reaction; obedience became consciousness; a starved village became the birth pang of the future.
+
+This is much of its hold on intellectuals. It offered a total theory of society, a priestly role for the enlightened, and a vocabulary in which coercion could be rewritten as compassion at the scale of history. The victims were reclassified as obstacles, their suffering booked as the unavoidable cost of the world to come. An ideology that can explain away any quantity of suffering as transitional has disabled its own brakes. It has no rule that says: stop, this is too much. Why this temptation keeps finding new recruits — why the authoritarian offer is always in stock — is the subject of [The Authoritarian Default](23-the-authoritarian-default.md).
+
+## Beyond Body Counts
+
+The case should not rest on death tolls alone. The numbers are contested, and the damage runs well past the grave. A person can be immiserated without being killed — forbidden to publish, worship, travel, teach the truth, own his own work, remember his own history, or leave. A profession can be hollowed out by loyalty tests. A university can be gutted by a purge. A whole civilization can be injured by teaching every child that public speech is a performance and private thought is a risk. The dead are counted. The survivors, trained to live falsely, are not, and that training became the texture of ordinary life.
+
+## The Road, Not the Destination
+
+The standard defense says none of these regimes was real communism, since none reached the classless, stateless promised land. In a trivial sense, true. The defense still fails, because you judge a political system by the road it has to travel, not by the destination it swears lies just past the horizon once all opposition is gone.
+
+The road was always the same: dictatorship of the proletariat, party supremacy, the subordination of property, the suppression of rival institutions, the coercive remaking of society. Those instruments recur because every regime trying to build the theory reaches for them. A doctrine that keeps producing secret police and famine cannot be rescued by an unbuilt heaven — the general form of that rescue, and why utopian destinations corrupt the roads toward them, is the argument of [Against Utopia](22-against-utopia.md). The honest communist owes an answer to a harder question: why does the attempt keep ending in camps, censorship, sealed borders, party aristocracy, and economic sclerosis? Blaming each failure on betrayal, encirclement, or insufficient purity is not analysis. It is theology with the serial numbers filed off.
+
+Marxist-Leninist communism earns first place by scale, duration, recurrence, and mechanism. It produced a single recognizable syndrome wherever it took hold: one-party monopoly, the command economy, ideological policing, the locked border, the demolition of independent institutions, state ownership of truth, and the conversion of failure into treason. Its distinctive crime was the machine itself. It took an arrangement that works at the kitchen table — precisely because trust, knowledge, and love do the enforcing — and imposed it on hundreds of millions of strangers, where only terror could hold it in place. It built societies that were poorer, more frightened, more dishonest, and more dependent, that could no longer feel their own injuries or speak their own minds — and it called the whole apparatus emancipation.
