@@ -3774,6 +3774,46 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://axionic.org/book/03-minds-and-machines/01-a-cybernetic-lineage.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/book/03-minds-and-machines/02-what-is-a-model.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/book/03-minds-and-machines/03-control-requires-models.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/book/03-minds-and-machines/04-minds-and-agents.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/book/03-minds-and-machines/05-the-origin-of-meaning.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/book/03-minds-and-machines/06-the-geometry-of-inner-speech.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/book/03-minds-and-machines/07-consciousness-explained.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/book/03-minds-and-machines/08-beyond-dennett.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/book/03-minds-and-machines/09-mirrors-of-the-mind.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/book/03-minds-and-machines/10-why-zombies-dont-evolve.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://axionic.org/book/05-value-and-ethics/</loc>
     <priority>0.8</priority>
   </url>

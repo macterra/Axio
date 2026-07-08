@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Is a Model? - Axio</title>
+    <link rel="icon" type="image/png" href="../../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles -->
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../../" class="nav-brand">
+            <img src="../../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href="../.././">Home</a></li>
+<li><a href="../../about.html">About</a></li>
+<li><a href="../../research.html">Research</a></li>
+<li><a href="../../team.html">Team</a></li>
+<li><a href="../../publications.html">Publications</a></li>
+<li><a href="../../book/" class="active">Book</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content book-page">
+    <div class="book-breadcrumbs"><a href="../index.html">Axio</a> <span class="crumb-sep">›</span> <a href="index.html">Volume 3</a> <span class="crumb-sep">›</span> <span>What Is a Model?</span></div>
+<h1>What Is a Model?</h1>
+<p class='paper-subtitle'>Structure, representation, and purpose</p>
+<div class="book-banner book-banner-draft">This chapter is a <strong>draft</strong> — it is readable but still changing.</div><p>Consider two ways of knowing a railway. The first is a complete timetable: every train, every platform, every arrival and departure for the day, a table with tens of thousands of rows. The second is the Underground map — a few colored lines, a scatter of dots, distances and directions frankly falsified. The timetable contains vastly more information. Yet hand a stranger both and ask how to get from Paddington to Bank, and only the map answers. The timetable knows everything and understands nothing. The map is a <em>model</em>; the timetable is a <em>dataset</em>. What is the difference, exactly?</p>
+<p>That question is the hinge of this whole volume. All empirical knowledge is model-mediated — I argued that in <a href="../../book/02-conditionalism/06-maps-models-understanding.html">Maps, Models, and Understanding</a>, and I will not re-run the argument here. That chapter owns the epistemology: why there is no view of the territory except through some map, and why the map’s distortions are the source of its power rather than a defect in it. This chapter owns the anatomy. Granting that cognition, science, and control all run on models, what <em>is</em> a model, mechanically? What has to be true of a structure before it earns the name?</p>
+<h2 id="structured-representation">Structured Representation</h2>
+<p>At the most general level, a model is a <strong>structured representation</strong> of some domain — a structure whose internal relations preserve the distinctions and relations that matter for a particular task, and which discards the rest. A model need not resemble what it represents. It need not look like it, be made of the same stuff, or share its geometry. The Underground map resembles London in almost no respect a surveyor would recognize; it preserves connectivity — which line reaches which station, where the interchanges are — and throws away geography wholesale. That is not a compromise forced by the printer. It is what makes the map usable. A model is defined by two choices: what to preserve and what to discard.</p>
+<p>This definition is deliberately catholic about format. Newtonian mechanics is a model; so is a climate simulation, a probability distribution over disease states, a child’s expectation that dropped things fall, the tuning of a thermostat, and the pattern of synaptic weights in a visual cortex. What unifies these is not their medium — equations, code, neurons, expectations — but their function: each supplies a mapping from situations to expectations, a way of getting from <em>how things are</em> to <em>what to anticipate or do</em>. Ask of any candidate model not what it is made of but what mapping it computes and over what domain that mapping holds.</p>
+<p>From which the central discipline follows: adequacy is always <strong>relative to a purpose</strong>. A model is never adequate <em>full stop</em>, only adequate <em>for something</em>. The Tube map is adequate for planning a journey and useless for estimating walking distance between two stations that sit adjacent on the diagram and a mile apart in the city. Newtonian mechanics is adequate for launching a satellite and inadequate for the timing chips in the satellite’s GPS receiver, which need relativity. A model earns its status by enabling appropriate action or explanation within its domain of use, and forfeits it the moment it is carried past that domain’s edge. This is the same conditionality that governs <a href="../../book/02-conditionalism/02-all-truth-is-conditional.html">all truth</a>, specialized to representations: the model is where the conditions live.</p>
+<h2 id="implicit-and-explicit">Implicit and Explicit</h2>
+<p>Nothing in that account requires a model to be written down, or even to be the kind of thing that could be. Most models in the world are not.</p>
+<p>An <strong>explicit</strong> model is one constructed deliberately and represented symbolically: a system of equations, a simulation, a diagram, a stated theory. These are the models science refines — objects you can inspect, criticize, and hand to someone else. But a model can also be <strong>implicit</strong>: realized in the physical structure of a system rather than in any representation the system holds of itself. An enzyme pathway regulates a cell’s chemistry according to regularities it has evolved to exploit, without anywhere representing those regularities. A neural circuit encodes the statistics of the sensory world in its wiring without expressing them as propositions. The circuit <em>is</em> the model; there is no separate copy of it stored elsewhere for the organism to consult.</p>
+<p>The distinction matters because it stops us from looking for models in the wrong place. To ask whether a bacterium “has” a model, in the sense of holding a description it could recite, is to ask the wrong question. The model is in the doing — in the structure that reliably maps conditions to appropriate responses. Explicitness is a feature of some models, prized because it makes them shareable and revisable. It is not part of the definition.</p>
+<h2 id="the-generative-line">The Generative Line</h2>
+<p>Return now to the timetable and the map, because their difference is the sharpest line in this whole subject. A dataset is a record of what was observed. A model is a structure that generates expectations about what has <em>not</em> been observed. That is the line, and everything downstream of it — prediction, explanation, control, generalization — sits on the model side.</p>
+<p>A defining feature of a model is that, given a state of the system, it yields expectations about how that state will evolve or how the system will respond to an intervention you have never tried. It supplies a generative mechanism: a set of relations that map inputs to outputs, including inputs never yet seen. A list of observations, however long, has no such capacity of its own. The timetable can tell you when the 8:14 left last Tuesday; it cannot tell you what happens if a line closes, because it contains no structure relating closures to journeys — only the record. The map can, because it encodes the relations, not just the instances.</p>
+<p>This is why a model is not made truer by making it bigger. Adding rows to the timetable never turns it into a map. The generative structure is a different kind of thing from the data it might have been distilled from, and confusing the two — treating a rich enough dataset as though it were already an understanding — is one of the standing errors of the data age. Understanding is generative or it is not understanding.</p>
+<h2 id="compression-and-generalization">Compression and Generalization</h2>
+<p>Where does generative structure come from? Usually from <strong>compression</strong>. A model that captures a regularity can represent an unbounded range of cases in a compact form: three lines of Newton replace the individual trajectories of every projectile that ever flew. And compression is exactly what buys generalization. A rule that captures the underlying pattern applies to cases outside the sample that produced it, because it never referred to the sample in the first place — it referred to the pattern. The compression <em>is</em> the generalization, viewed from the other side.</p>
+<p>The contrast case sharpens this. A lookup table — a fixed list pairing each anticipated condition with a stored response — performs no compression. It can answer only for states it has already been given, and for a novel state it is simply silent. A compressed model, having thrown away the individual cases in favor of the structure behind them, extends smoothly to cases it was never shown. This is why complex environments reward compression so heavily: when the space of possible situations is astronomically larger than any list could enumerate, only a structure that generalizes can keep up. Compression is not strictly required for something to be a model — as we are about to see, the degenerate uncompressed case still counts — but in any environment large enough to matter, it is the difference between a model that copes and one that stalls the first time the world does something new.</p>
+<h2 id="the-interpretive-layer">The Interpretive Layer</h2>
+<p>There is one more use of “model” that has to be separated out cleanly, because conflating it with the others causes no end of trouble. When we deal with <em>agents</em>, models appear a second time — not inside the agent, but in us. To attribute beliefs, desires, and intentions to a system is to build a model of that system at a conceptual level: an interpretive scheme that predicts its behavior by treating it as if it wanted things and represented the world. These <strong>interpretive models</strong> are not components of the agent. They are our tools for making sense of it, and they live in a different representational layer than whatever regulatory machinery the agent actually runs on.</p>
+<p>Keeping the two layers apart is the whole game when we come to belief. A system’s own internal model — the structure that maps its conditions to its actions — is one thing. The model <em>we</em> build of that system, in the vocabulary of belief and desire, is another. A thermostat has the first and does not need the second; we may still find it convenient to say it “wants” the room at twenty degrees. Beliefs, I argue in <a href="../../book/02-conditionalism/08-what-beliefs-are.html">What Beliefs Are</a>, are not contents an agent stores but features of the interpretive model an observer attributes — including the model each agent keeps of itself. That is a claim about the second layer. It does not compete with the claim that the agent runs on an internal model of the first kind; the two coexist, at two levels, and most confusion about machine belief comes from collapsing them.</p>
+<h2 id="the-minimal-case">The Minimal Case</h2>
+<p>Push the definition down to its floor and you reach the lookup table — and the floor turns out to be inside the house, not outside it. The uncompressed condition-to-action list is a <em>degenerate</em> model, but it is a real one.</p>
+<p>The classic specimen is the <em>Sphex</em> wasp. Provisioning her nest, the wasp drags a paralyzed cricket to the burrow’s threshold, leaves it there, enters to inspect the nest, and then hauls the cricket in. Move the cricket a few inches while she is inside, and on emerging she drags it back to the threshold and inspects the nest again — and will repeat the whole loop indefinitely, as many times as the experimenter cares to nudge the prey. The behavior betrays no internal state carried across the steps, no representation of the cricket or the task beyond the immediate trigger. It is captured, with almost embarrassing fidelity, by a short list of condition–action rules: if the prey is near the threshold, drag it to the threshold; if the prey is at the threshold and the nest is uninspected, inspect it; if the nest is inspected, retrieve the prey. A finite state-transition table, and nothing more.</p>
+<p>The wasp is not alone. Bacterial chemotaxis maps a sensed change in chemical concentration directly onto a switch between swimming and tumbling. Fixed-action patterns in birds and fish fire on simple releasing stimuli. Plant tropisms convert a local gradient into differential growth. In every case the regulatory structure is effectively a lookup table, and in every case it works — because the environment supplies few, well-structured cues, the relevant state space is small, and the behavioral repertoire is rigid. Where the distinctions that matter for survival are few and stable, a controller succeeds by encoding exactly those few, and natural selection can furnish such a controller without ever building a general model of the world.</p>
+<p>That these tables count as models at all is guaranteed by the deepest result in this area, Conant and Ashby’s Good Regulator Theorem: any system that reliably regulates something must embody a model of what it regulates. I develop the theorem and its consequences in <a href="../../book/03-minds-and-machines/03-control-requires-models.html">Control Requires Models</a>; here it settles one point. The wasp’s table is a model not by courtesy but by function — it preserves precisely the distinctions the wasp’s task requires and discards everything else, which is the definition, met at its minimum. It generates no expectations beyond its fixed entries, compresses nothing, and generalizes not at all. It is a model with every optional feature stripped away, leaving only the mandatory core: structure that maps conditions to appropriate action within a domain.</p>
+<p>And it is a model <em>without</em> beliefs. The wasp regulates without instantiating anything resembling a propositional attitude; her internal structure is the first-layer kind, not the second. Reading beliefs into her is our interpretive overlay, and a poor fit at that. The lookup table thus marks both the lower bound of modeling and the cleanest illustration of the anatomy: a structural model with no interpretive layer, no generativity, no compression — real, adequate, and utterly minimal. Everything richer, from the child’s grasp of falling objects to the physicist’s field equations to whatever large language models are doing, is built by adding back what the wasp does without: compression, generativity, the capacity to generalize past what was ever encountered. Those additions are the subject of the chapters that follow. The floor is a model. The interesting question is what a mind builds on top of it.</p>
+<nav class="book-chapter-nav"><a class="book-prev" href="01-a-cybernetic-lineage.html">← A Cybernetic Lineage</a><a class="book-up" href="index.html">Contents</a><a class="book-next" href="03-control-requires-models.html">Control Requires Models →</a></nav>
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
