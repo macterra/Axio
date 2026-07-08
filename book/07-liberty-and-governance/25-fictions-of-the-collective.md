@@ -1,18 +1,85 @@
 ---
 title: 'Fictions of the Collective'
 subtitle: 'Nations are not agents; interests are not primitives'
-status: outline
+status: draft
 sources:
   - 183448517.the-national-interest-fallacy
   - 165264123.the-myth-of-the-collective-will
 ---
 
-**Thesis.** "National interest" is a category error twice over: interests are not primitives (they are worldview-dependent hypotheses — physics says "we cannot survive this," never "therefore we must do that") and nations are not agents (aggregate patterns, not unitary choosers). The fallacy's historical function has not been to guide societies wisely but to disable error correction at scale: dissent moralized into disloyalty, failure absorbed as necessary sacrifice, censorship as a symptom of epistemic weakness. The scaling argument completes it: "collective will," defined operationally as the intersection of universally held preferences, shrinks toward empty above a few thousand people — abstract values get superficial assent and fracture at policy application — so governments claiming to express it are imposing majority or elite preferences under rhetorical cover.
+> *"The 'realist' view of international affairs is false. People don't, and can't, act in their interests because they don't know what those are until they have a world view."*
+> — David Deutsch
 
-**Sources.** the-national-interest-fallacy (Jan 2026, anchor, canonical): the upstream move to the concept of interest itself, constraints-vs-interests, functional unfalsifiability, corrigibility as the mark of sound action, the Deutsch epigraph (keep). the-myth-of-the-collective-will: the scaling section — the operational definition and its evaporation with N; the Sean Carroll foil.
+Few phrases in politics carry as much moral authority while concealing as much conceptual confusion as *national interest*. It appears in speeches just before wars begin, in memoranda authorizing surveillance, in arguments for secrecy, sacrifice, and coercion. It is spoken with the cadence of inevitability, as though it names a hard constraint imposed by reality itself.
 
-**Editorial notes.**
-- This is ch 1's category error politically cashed out — open with that back-reference.
-- Corrigibility/error-correction thread connects ch 27 and ch 28's civilization-as-evolution framing; interests-as-conjectures echoes Vol 2 (Deutsch/Popper).
-- "Leaders should say: this is our best current judgment, not our destiny" — keeper line.
-- Cross-links: Vol 3 ch 33 (safety politics runs on the same fallacy), ch 31 (the "national interest" case for defense monopoly).
+That cadence is doing almost all the work.
+
+[The Individualist Premise](01-the-individualist-premise.md) identified the category error at the root of every collectivism: attributing mental states, choices, and moral standing to abstractions rather than to the decision-making agents who actually have them. This chapter is that error politically cashed out. "The national interest" and "the collective will" are its two most powerful incarnations — the phrases by which the reification of the group is converted into a license to compel its members. The phrase *national interest* does not describe a fact about the world. It describes a belief about the world — one that has been rhetorically upgraded from judgment to necessity. And the danger lies not only in the policies it justifies, but in how the concept disables the very mechanisms that could reveal those policies to be mistaken.
+
+The error is actually two errors, stacked. To say that something is "in the national interest" presupposes, first, that interests are objective facts waiting to be read off the world, and second, that a nation is the kind of thing that can have them. Both presuppositions are false, and they fail for different reasons. To see the first clearly, we have to move upstream, to the concept of *interest* itself.
+
+## Interests Are Not Primitives
+
+An interest is not a basic feature of reality. It does not exist prior to explanation, waiting to be discovered by sufficiently rational actors. To say that an action is "in one's interest" already presupposes an explanatory framework: a model of how the world works, a theory of causation, an evaluation of outcomes, an assessment of risk, and a choice of time horizon. Without such a framework, the claim has no determinate meaning. With a false framework, it acquires dangerous meaning.
+
+This is the force of Deutsch's claim. Actors do not generally fail because they irrationally pursue their interests. They fail because they misidentify what their interests even are, and that misidentification flows directly from the worldviews that generate them. The "realist" school of international affairs treats interests as fixed inputs that rational states then pursue well or badly; but the inputs are outputs — conclusions of fallible theories, wearing the costume of premises.
+
+Acknowledging this does not require denying hard constraints. Annihilation is incompatible with continued agency. Suffocation is incompatible with life. There are physical and biological limits that no worldview can negotiate away. But constraints are not interests. They rule out futures without selecting among the remaining ones. The moment a society moves from "we cannot survive this" to "therefore we must do *that*," it has crossed from physics into interpretation — and interpretation is fallible. Physics never issues policy. It closes doors; it does not tell you which of the open ones to walk through. Every "therefore" in a national-security argument is supplied by a theory, and theories can be wrong.
+
+So interests are conjectures — hypotheses generated by fallible models about which actions will bring about futures the actor would endorse. This is the same epistemological position defended throughout this book: knowledge grows by conjecture exposed to criticism, never by reading certainties off the world (see [Rationality Without Foundations](../02-conditionalism/17-rationality-without-foundations.md)). Held that way — contestable, revisable, answerable to outcomes — talk of interests is harmless and even useful. The trouble begins when a conjecture is promoted to a command.
+
+Once this distinction is made, the appeal to *national* interest begins to unravel. But the phrase has a second load-bearing component, and it fails independently.
+
+## Nations Are Not Agents
+
+Even if interests were objective facts, nations would still be the wrong kind of thing to possess them.
+
+A nation has no unified belief state, no single value function, no shared vantage from which futures are evaluated. It is an aggregate pattern composed of individuals, institutions, incentives, traditions, and power relations, all of which evolve asynchronously and often in conflict. Treating such a pattern as a coherent chooser is, at best, an analytical convenience.
+
+The phrase *national interest* silently converts that convenience into ontology. It treats a loose, historically contingent aggregate as though it were a unitary agent with stable preferences. In doing so, it erases individual agency while presenting the result as collective rationality.
+
+This critique is not aimed at shorthand. Historians and analysts who write "Britain sought to contain France" are compressing a pattern of individual decisions, filtered through institutions that amplified some voices and silenced others, and the compression can be useful. The critique is aimed at the elevation of "national interest" from analytical device to justificatory principle — where uncertainty may be acknowledged rhetorically but is erased operationally, and one faction's judgment is enforced on everyone as necessity. That elevation is what gives the concept its political potency, and it is exactly the move [The Individualist Premise](01-the-individualist-premise.md) called the compression becoming a lie.
+
+## The Vanishing Intersection
+
+Perhaps, though, the reification could be rescued by aggregation. A nation may not be a chooser, but might it not have a *collective will* — a shared core of values that government exists to express? Sean Carroll defines government as "the organized expression of our collective will," and the definition captures something many people find intuitively plausible: the image of government as the instrument of society's shared priorities.
+
+Take the idea seriously enough to define it operationally. The natural candidate is the intersection of preferences held universally within the group — the things *everyone* actually wants. For small, intimate groups, the definition has content. A family or a close-knit community shares experiences, traditions, and cultural narratives; a substantial overlap of genuinely held values is plausible there.
+
+Then scale up and watch what happens. The intersection of universally shared preferences shrinks rapidly with group size, because every additional member is another chance for a preference to be absent, and differences in upbringing, priorities, beliefs, and experience magnify even small divergences. By the time the group numbers a few thousand, meaningful consensus has evaporated. At the scale of a city or a nation, the intersection is approaching empty.
+
+The standard reply is that the collective will operates at the level of abstract values rather than particular preferences — surely everyone wants "fairness," "freedom," "prosperity," "security." But this agreement is superficial, and it fractures the instant it touches policy. Everyone endorses fairness until fairness must be cashed out as a tax schedule; everyone endorses security until security must be cashed out as a surveillance program, a conscription order, a war. The abstract word gathers unanimous assent precisely because each person fills it with his own theory of what it requires — theories that contradict each other at every concrete decision point. Consensus on the syllables is not consensus on anything a government can do.
+
+The conclusion is not that Carroll's definition describes a rare achievement. It is that the thing defined does not exist at the scales where governance operates. A government claiming to express the collective will is expressing something else — majority preferences, or elite preferences, or its own — under rhetorical cover. "Collective will," like "national interest," functions as legitimacy on credit: it borrows the moral standing of unanimous consent for decisions that have nothing of the kind behind them. Recognizing this does not settle when governance is justified — that was the work of [The Grey Zone](05-the-grey-zone.md) — but it strips away the pretense that coercion backed by these phrases is not coercion at all.
+
+## How the Fallacy Licenses Harm
+
+So the phrase is doubly empty: no objective interests, no national subject to hold them. Why, then, is it so durable? Because its emptiness is exactly what makes it useful. A claim with no determinate content can be filled by whoever wields it, and a claim upgraded to necessity cannot be answered.
+
+When an action is justified by national interest, it is no longer presented as a hypothesis about the future. It is presented as a requirement. Disagreement ceases to be epistemic and becomes moralized. The dissenter is not treated as someone with a different model of the world — a model that might be better — but as disloyal, weak, a traitor to the collective whose will has already been declared. The moralization is not an excess of enthusiasm; it is the mechanism working as designed, because a judgment defended as necessity has no other way to handle criticism than to reclassify the critic.
+
+At the same time, the claim becomes functionally unfalsifiable. If a policy justified by national interest produces disaster, the outcome is not treated as evidence against the underlying judgment. It is absorbed into the narrative as unavoidable sacrifice, insufficient resolve, or a necessary cost on the path to eventual security. The concept protects itself by redefining failure. A framework in which no outcome counts against the policy is not a framework for choosing policies; it is a framework for insulating them.
+
+Once this structure is in place, coercion ceases to be a regrettable last resort. It becomes a duty. Individuals are no longer agents whose judgments matter, but instruments whose compliance is required. Extreme harm no longer requires pathological actors; it requires only ordinary officials operating within a framework that has reclassified choice as necessity. This is why the strongest form of the fallacy always appears where the stakes are declared highest — above all in defense, where "the national interest" underwrites the claim that protection requires sovereignty, a claim [The Hardest Case: Defense](31-the-hardest-case-defense.md) takes apart at full strength. The same structure reappears wherever safety is invoked to place some judgment beyond challenge — including, in our own moment, the [politics of AI safety](../03-minds-and-machines/33-the-politics-of-safety.md), where "alignment" quietly presupposes an agreed collective target that does not exist.
+
+## Catastrophe as Epistemic Failure
+
+The historical record reflects this pattern with disturbing regularity. The most destructive regimes of the twentieth century did not collapse because they were insufficiently committed to their interests. They collapsed because they enforced false explanatory models, suppressed dissent, and thereby froze their own capacity for error correction.
+
+Once disagreement is criminalized and alternative models are excluded, rationality does not save a system. It accelerates its descent. Policy becomes more coherent, more optimized, and more catastrophic, precisely because the underlying model is wrong and cannot be challenged. The machinery of the state executes the plan faithfully; the plan executes the error faithfully; and no channel remains through which anyone can say so in time.
+
+This is why appeals to national interest are so often accompanied by censorship, propaganda, and punishment for dissent. These are not accidental excesses of otherwise sound projects. They are symptoms of epistemic weakness — the tell that a judgment is being defended by force because it cannot be defended by argument. A society's error-correction machinery — free speech, open criticism, contestable authority — is the most valuable thing it has, the engine by which [civilization converts coercion into coordination](28-the-conversion-of-coercion.md); and the national-interest fallacy is, historically, the single most effective device for switching that machinery off. Its function has never been to guide societies wisely. It has been to disable error correction at scale.
+
+## Best Current Judgment, Not Destiny
+
+None of this implies that political decisions can be deferred indefinitely, or that leaders must wait for consensus before acting. Consensus, as we have seen, is not coming. Decisions often must be made under severe time pressure and genuine uncertainty. But acting under uncertainty does not require pretending uncertainty has vanished.
+
+Science, engineering, and medicine all operate this way. Planes fly before theories are complete. Treatments are administered without certainty. What distinguishes successful action under uncertainty from catastrophic action is not hesitation but corrigibility. Decisions can be made rapidly while remaining open to revision. The danger is not commitment; it is commitment that cannot be criticized, reversed, or learned from. The language of national interest undermines precisely this capacity: by framing judgment as necessity, it converts provisional commitments into dogma. Corrigibility as a governing discipline — how to act decisively while keeping correction possible — is the subject of [Centrism as a Discipline](27-centrism-as-a-discipline.md); this chapter has been about the rhetoric that forecloses it.
+
+Political action is always an attempt to shape a distribution of possible futures without knowing which will occur. No individual and no collective has access to the full space of futures or their relative likelihoods. Claims of national interest pretend to solve this problem by collapsing uncertainty prematurely and enforcing a single narrative about which futures count. The harm lies not only in the outcomes that are realized, but in the alternative futures that are forcibly prevented from being explored.
+
+The only defensible way to speak about interests — political or otherwise — is as conjectures rather than commands. Interests are hypotheses generated by fallible models. They must remain contestable, revisable, and exposed to criticism. The moment they are enforced as objective necessities, agency collapses, and catastrophe becomes a matter of time rather than chance.
+
+There are no national interests in the sense political rhetoric requires. There is no collective will for government to express. There are only individual agents embedded in uncertain worlds, acting under imperfect models, whose survival depends on their ability to be wrong and to learn. "National interest" persists because it is rhetorically useful: it converts judgment into obligation and disagreement into disloyalty. Abandoning it does not require passivity or indecision. It requires leaders willing to say, openly and repeatedly: *this is our best current judgment, not our destiny* — and to remain answerable when that judgment proves wrong.
+
+That is why some of the worst acts in history have been justified in its name — and why they will continue to be, as long as the fallacy goes unchallenged.
