@@ -1,17 +1,82 @@
 ---
 title: 'Mechanisms for Honest Values'
 subtitle: 'Harberger insurance and prediction markets'
-status: outline
+status: draft
 sources:
   - 165432518.introducing-harberger-insurance
   - 179271344.prediction-markets
 ---
 
-**Thesis.** Mechanism design can make honesty the cheapest policy: Harberger-style self-assessed valuations price intangibles without disputes, and prediction markets bind belief to consequence — coherence filters that solve the pundit's dilemma by making confident wrongness expensive.
+Two scenes, apparently unrelated. In the first, a defamation suit: the plaintiff swears under oath that the reputation destroyed was worth millions; the defendant swears it was worth next to nothing; both numbers were manufactured for the occasion, both sides know it, and the court spends years and fortunes splitting the difference. In the second, a television panel: a pundit predicts with total confidence, is wrong, and is back the following week predicting with total confidence, because nothing in his world attaches any cost to having been wrong.
 
-**Sources.**
+These look like different failures — one about valuing, one about forecasting. They are the same failure. In both cases an institution asks people to report something private — what a thing is worth to them, how likely they believe an event to be — inside an incentive structure where the honest report costs money and the distorted one pays. Then the institution acts surprised when it harvests distortion. You cannot exhort your way out of this. Preaching honesty to people who are paid to lie is not a mechanism; it is a mood. The serious response is to redesign the game so that the honest report is the *cheapest* one available — so that lying, in either direction, hurts the liar first. This chapter is about two mechanisms that do exactly that: one for values, one for beliefs.
 
-- `/posts/165432518.introducing-harberger-insurance.html`
-- `/posts/179271344.prediction-markets.html`
+## The Self-Assessment Trick
 
-**Editorial notes.** KEEP THE AUTOBIOGRAPHY: the author coordinated the 1994 Calgary team that built the first web implementation of Hanson's Idea Futures (1995 Golden Nica) — first-person authority, the chapter's jewel. Cross-link ../02-conditionalism/21-bayes-in-the-wild.md (calibration) and Axiocracy via blog link.
+Start with the older idea, because it contains the trick in its purest form.
+
+A Harberger tax works like this: you declare, publicly, what your own property is worth, and you pay tax on the value you declared. The catch that makes it honest: you must stand ready to sell at that declared price to any buyer who shows up. Now watch the incentives. Declare too high and you bleed taxes on value you invented. Declare too low and someone buys your house out from under you at your own number. Two pressures squeeze from opposite directions, and the point of least pain sits at your true valuation. The mechanism never asks you to be honest. It arranges matters so that honesty is what a purely selfish optimizer does anyway.
+
+Notice what has *not* happened here. No assessor has divined the "objective value" of your property, because [there is no such thing to divine](01-the-discipline-of-value.md) — value is always value *to some agent*, and you are the agent best placed to know yours. The mechanism does not extract a cosmic truth. It extracts *your* truth, by making every misreport a bet against yourself.
+
+## Insuring the Intangible
+
+Now point the same trick at harm.
+
+When harm occurs — property damage, reputation loss, health impairment — society faces a perennial problem: quantifying the damages. Current practice estimates harm after the fact, which is precisely when every incentive is at its worst. The victim, post hoc, has every reason to exaggerate; the party who caused the harm has every reason to minimize; there is no pre-agreed benchmark to arbitrate between them, so the gap gets closed by litigation, which is slow, expensive, adversarial, and arbitrary. Everyone leaves poorer and angrier, except the lawyers.
+
+Harberger insurance moves the valuation to *before* the harm. You pre-value your assets — including the intangible ones that courts handle worst: reputation, privacy, intellectual property, digital identity, even personal health — by purchasing insurance coverage at your own self-assigned valuation. The Harberger squeeze does the rest. Inflate the value of your reputation and you pay inflated premiums on it, year after year, for a loss that may never occur. Lowball it and, when the defamation actually lands, you are compensated at your own lowball figure and have no one else to sue about it. Honesty, once again, is the cheapest policy — this time literally.
+
+Three properties fall out of the design. First, *pre-committed valuation*: the number exists before the dispute does, so there is nothing left to fight about after the fact — no ambiguity, no dueling expert witnesses, no strategic reconstruction of what the thing "must have been worth." Second, *market-driven honesty*: the premium schedule polices exaggeration continuously, without any assessor, regulator, or judge having to peer into your soul. Third, *rapid, conflict-free claims*: damage assessment collapses into looking up a number both parties accepted in advance, which strips out most of the litigation cost, the delay, and the emotional grind of disputed settlement.
+
+Imagine reputational harm from online defamation, a privacy violation, the distress of sustained harassment — each with a clear, pre-established financial benchmark, settled in weeks instead of litigated for years. The deep change is not procedural but conceptual: intangible assets acquire explicit, owner-declared values *before* anything happens to them. A society that adopted this would not just resolve disputes faster. It would know, for the first time and in the owners' own honest numbers, what its intangible wealth is worth to the people who hold it.
+
+## The Pundit's Dilemma
+
+So much for values. The same disease infects beliefs, and there the stakes are larger, because beliefs steer policy.
+
+Expert opinion is cheap to produce and difficult to falsify. A pundit can make confident forecasts that shape public discourse, move policy, and influence billions of dollars, and face no structured accountability whatsoever; the misfires dissolve into the churn of the news cycle. The asymmetry is brutally simple: the cost of being wrong is borne by others, while the rewards of being theatrically confident are kept by the pundit. [Behavior follows incentives](15-the-metagame-of-incentives.md), and this incentive landscape selects systematically for performance over accuracy, coalition signaling over clarity, rhetorical dominance over model-building. Punditry is not a truth-seeking institution that happens to fail. It is an attention-seeking institution working exactly as designed.
+
+Prediction markets are the countermeasure — the Harberger trick applied to belief. To assert a probability in a prediction market, you must buy or sell at the prices on offer, which means your confidence is no longer a costume; it is a position, and the position can lose. A prediction market forces belief to bear the cost of its own implications. It replaces performative epistemology with epistemology grounded in consequence.
+
+## Markets as Coherence Filters
+
+What a prediction market price actually expresses is the balance of conditional judgments made under incentive pressure — not a prophecy, not a verdict, and not any claim to certainty. The price is indifferent to narrative flair, institutional prestige, and rhetorical force. It reflects one thing only: the relative performance of the competing models whose holders were willing to stake something. In this sense a prediction market is a coherence filter — a mechanism that extracts a structured signal from distributed noise by charging admission to incoherence.
+
+The mechanics align naturally with everything the conditionalist volume established about probability. A market price is a conditional claim: *if* the offered odds are wrong, traders with better models profit by moving them, so a standing price is the frontier of collective inference under specified constraints — liquidity, information flow, the incentive structure, the set of models actually in circulation. Change the conditions and the meaning of the number changes with them. Nor is the price any single agent's [Credence](../02-conditionalism/11-measure-and-credence.md); it is what happens when many Credences are forced to bid against one another with real stakes attached, each trader's confidence disciplined by the possibility of paying for it. A price is never unconditioned truth. It is something more useful: the current output of a decentralized engine that continuously rewards whoever discovers a better pattern, and continuously taxes whoever clings to a worse one.
+
+## Calgary, 1994
+
+I did not come to this argument as a spectator.
+
+Prediction markets did not begin as speculative entertainment or a financial novelty. They began as an attempt to repair the epistemic failures of academia and public discourse. Through the late 1980s and early 1990s, Robin Hanson had been developing a proposal he called Idea Futures: a market mechanism for evaluating scientific claims. The premise was disarmingly simple — if you want to defend a scientific assertion, you should be willing to stake something on its accuracy. Peer review asks what the referees think; Idea Futures asks what you will bet.
+
+I brought Hanson's article to a discussion group I belonged to in Calgary, and it caught. In 1994 — when the web itself was barely out of its cradle — a small group of us, engineers, programmers, and researchers, decided to stop discussing the idea and build it. I served as coordinator and one of the main software developers: I helped shape the early design discussions, maintained the mailing lists that held the collaboration together, and worked on the implementation itself, including the early interface and infrastructure. What we shipped was the first public web-based prediction market — play-money, improvised, running on the enthusiasm of a handful of engineers and idealists — a working prototype of the systems that would later evolve into today's crypto-based markets. In 1995 the project won the Golden Nica at Ars Electronica, one of the earliest major awards given to an experiment in decentralized collective intelligence.
+
+Two lessons from that project have held up across three decades, and they are the reason I trust this chapter's argument at a level no literature review could supply.
+
+First: prediction markets are technically simple and socially disruptive, in exactly that combination. Almost none of our real obstacles were engineering or economics. They were regulation and institutional discomfort — the quiet, persistent resistance of people and organizations whose authority rested on pronouncing likelihoods without ever being scored on them. The technology was the easy part in 1994. It is trivially easy now. The barrier was, and remains, that the mechanism embarrasses the wrong people.
+
+Second: the value of a prediction market is the epistemic discipline it imposes on belief, not the forecast it emits. Ours ran on play money, and even play-money stakes — mere reputation among peers, a scoreboard anyone could check — changed how people asserted things. Claims got sharper. Confidence got quieter. Attaching consequence to a claim, any consequence at all, forces clarity in a way that no norm of intellectual honesty ever has.
+
+## Competitive Model Selection
+
+Why do markets outperform pundits? Not through "the wisdom of crowds" in the naive sense, as if averaging enough opinions launders them into truth. The power comes from competitive model selection under structured incentives. Where a pundit accumulates prestige by being entertainingly wrong, a trader loses capital when her model fails — and that single difference restructures the entire epistemic environment.
+
+Models must compress reality, because hand-waving has no cash value. Confidence must scale with evidence, because overconfidence is expensive — the market enforces, automatically and impersonally, [the calibration discipline](../02-conditionalism/21-bayes-in-the-wild.md) that a lone reasoner must impose on himself by force of will. Belief updating becomes mandatory, because stubbornness is a losing strategy with a visible running total. And distributed information becomes usable: a market integrates heterogeneous data from thousands of sources without any central authority deciding whose input counts.
+
+Trading, done seriously, is deliberate epistemic labor. The trader generates hypotheses, tests them against the market's current state, discovers the mismatches between her model and the world, and refines the model through feedback — active inference, scaled across a population and paid for its accuracy. The pundit produces confident noise without consequence; the trader produces calibrated signal because the alternative comes out of her account. The market does not make anyone smarter. It makes incoherence costly and coherence valuable, and then lets selection do the rest.
+
+## The Thinness Problem
+
+Honesty requires admitting where the mechanism fails. Prediction markets fail when they are thin — when liquidity is low or participation has been truncated by regulation or risk aversion. A thin market is fragile: it can be manipulated by a single motivated actor, and its prices carry weak signal dressed in the same authoritative-looking numbers as strong signal. Anyone who quotes a market price without asking how deep the market is has missed the point of the whole apparatus, which is that the number means something *because* of the conditions behind it.
+
+But thinness is a problem of design, not of principle. Modern crypto-based markets — Polymarket, Manifold, and their successors — attack it directly with automated market makers, subsidy mechanisms, and low-friction participation, and the signal quality improves as the engineering does. What the engineering cannot fix is the political problem, which is the same one we met in 1994: these markets face ongoing legal pressure precisely because they threaten entrenched epistemic hierarchies. A prediction market does not merely democratize forecasting. It decentralizes the authority to declare what is likely — and the incumbents of that authority, in media, government, and academia, have noticed. That makes prediction markets natural allies of agency and natural enemies of centralized narrative control, and it explains why a mechanism this useful has spent three decades being regulated as if it were a casino.
+
+## Honesty as Infrastructure
+
+Set the two mechanisms side by side and the shared design principle is plain: attach symmetric consequence to the report. The Harberger policyholder who inflates pays premiums; the one who lowballs eats the shortfall. The trader who overclaims loses capital; the one who underclaims leaves profit for someone better calibrated. In both cases the mechanism is content-blind — it never adjudicates what your reputation is *really* worth or what the *true* probability is. It simply makes every deviation from your honest estimate a bet against yourself, and lets self-interest do the work that exhortation never could.
+
+Understood this way, these are not financial curiosities. They are epistemic infrastructure. Prediction markets can serve as distributed inference engines for policy analysis, accountability mechanisms for experts and institutions, self-correcting scaffolds for scientific inquiry, and voluntary governance tools — the load-bearing instrument, in fact, of [Axiocracy](/posts/197763923.axiocracy-governance-by-value-discovery.html), governance by value discovery. Harberger valuation gives the same treatment to the asset side of the ledger: a civilization's intangible wealth made explicit, honest, and liquid before disputes arise rather than after.
+
+None of this comes with guarantees. The strength of these mechanisms is only ever the strength of their incentives: they reward accuracy, penalize incoherence, and align belief with consequence, nothing more. But look at what they are competing against — valuation by litigation, forecasting by theater, a public sphere in which confidence without calibration is a career asset. Wherever belief influences action, incentives should reward coherence rather than performance. These mechanisms achieve that without coercion, which makes them rare; given the ubiquity of confident error, it also makes them precious. The experiment we improvised in Calgary was small, but what it demonstrated was not: distributed epistemic coordination is possible, and incentives can be harnessed to produce clarity instead of distortion. The tools exist. They have existed since 1994. What has been missing is a civilization willing to be scored.
