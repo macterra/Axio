@@ -67,7 +67,7 @@ post_id,date,title,volume,secondary_volume,notes
 164911762.what-counts-as-consent,2025-06-01,What Counts as Consent,5,,
 164935709.what-counts-as-harm,2025-06-01,What Counts as Harm,5,,
 164937702.reasonable-disagreement,2025-06-01,Reasonable Disagreement,2,,
-164947886.inequality-is-not-the-problempoverty,2025-06-01,Inequality Is Not the Problem—Poverty Is,7,,
+164947886.inequality-is-not-the-problempoverty,2025-06-01,Inequality Is Not the Problem—Poverty Is,6,7,pulled into Vol 6 ch.9 (spine of the inequality defense); Vol 7 cross-links
 164949377.why-coercive-redistribution-is-always,2025-06-01,Why Coercive Redistribution Is Always Harmful,7,,
 164949734.the-libertarian-illusion-of-equal,2025-06-01,The Libertarian Illusion of Equal Opportunity,7,,
 164950264.immigration-restrictions-are-a-form,2025-06-01,Immigration Restrictions Are a Form of Harm,7,,
@@ -151,7 +151,7 @@ post_id,date,title,volume,secondary_volume,notes
 166857416.intelligence-as-a-hyperobject,2025-06-26,Intelligence as a Hyperobject,3,,
 166902989.thinking-vs-feeling,2025-06-26,Thinking vs. Feeling,3,,
 166913167.what-counts-as-evil,2025-06-26,What Counts as Evil,5,,
-166945477.demographics-without-coercion,2025-06-27,Demographics Without Coercion,7,,
+166945477.demographics-without-coercion,2025-06-27,Demographics Without Coercion,7,6,secondary source for Vol 6 ch.22 (prosperity paradox cluster)
 166976848.valorism-vs-vitalism,2025-06-27,Valorism vs. Vitalism,5,,
 166978754.valorism,2025-06-27,Valorism,5,,
 167007172.what-counts-as-knowledge,2025-06-27,What Counts as Knowledge,2,,
@@ -604,5 +604,5 @@ post_id,date,title,volume,secondary_volume,notes
 204028291.when-should-ai-get-rights,2026-06-28,When Should AI Get Rights?,5,7,"new 2026-07; sapientism companion, Vol 5 ch 13 adjacent"
 204932177.probability-after-probabilism,2026-07-03,Probability After Probabilism,2,1,new 2026-07; Chapman/frames-before-numbers; candidate new Vol 2 chapter
 205083797.mars-needs-axiocracy,2026-07-04,Mars Needs Axiocracy,7,,new 2026-07; axiocracy
-205272057.the-collapse-of-proof-of-work-credentials,2026-07-05,The Collapse of Proof-of-Work Credentials,8,6,new 2026-07; credentials/signaling
+205272057.the-collapse-of-proof-of-work-credentials,2026-07-05,The Collapse of Proof-of-Work Credentials,6,8,pulled into Vol 6 ch.16 (signaling pair with Ornament and Advantage)
 205410955.sapient-agency-realism,2026-07-05,Sapient Agency Realism,5,,new 2026-07; grounded conditional moral realism — doctrinal development past the drafted subjectivist framing; candidate new Vol 5 chapter
