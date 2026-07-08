@@ -3770,6 +3770,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://axionic.org/book/03-minds-and-machines/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://axionic.org/book/05-value-and-ethics/</loc>
     <priority>0.8</priority>
   </url>

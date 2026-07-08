@@ -2,7 +2,7 @@
 
 *A multi-volume web book built from the Axio blog corpus, published at `docs/book/` on the existing GitHub Pages site.*
 
-Status: **Volumes 1, 2, 5, and 6 fully drafted** — 105 chapters, ~218k words, live in draft status awaiting author review → review/final promotion. Remaining: Vols 3, 4, 7, 8, 9 (Vols 3/7 largest — revisit the split question). · Created 2026-07-07 · Book title: **Axio**
+Status: **Volumes 1, 2, 5, and 6 fully drafted** — 105 chapters, ~218k words, live in draft status awaiting author review → review/final promotion. Remaining: Vols 3, 4, 7, 8, 9 (Vols 3/7 largest; author decided: no splits). · Created 2026-07-07 · Book title: **Axio**
 
 ## Vision
 
@@ -29,7 +29,7 @@ Nine volumes, from a full thematic clustering of all 593 posts (every post assig
 Notes on the structure:
 
 - **Reading order is roughly foundational → applied**: physics/epistemology (1–2) ground mind/agency (3–4), which grounds ethics (5), which grounds economics/politics/culture (6–8), ending in meaning (9). Volumes remain independently readable; cross-links carry the dependencies.
-- **Volumes 3 and 7 are oversized (~92 each)** and each has a natural split point (3 → consciousness vs. AI discourse; 7 → the coercive state vs. governance beyond the state). Decide during outlining, not now.
+- **Volumes 3 and 7 are oversized (~92 each)** — author decision (2026-07-08): NO split; the book is online-only, so volume length is not a binding constraint.
 - **Straddle posts** (Viability Ethics as the on-ramp from Vol 5 to Vol 4, the Metagame series, free-speech posts split across 7/8, anthropics pair across 1/2) get resolved per-chapter during outlining; the catalog (Phase 1) records both primary and secondary volume assignments.
 - **The 13 sequence-index posts** (Chaos, Defending Bayes, Physics of Agency, Conditionalism, Metagame, Axiocracy, AI, Axionic Agency, …) are excluded as chapters but are **pre-made chapter orderings** — each is an author-curated reading path. Mine them first when outlining volumes.
 
