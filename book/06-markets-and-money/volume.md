@@ -3,55 +3,12 @@ title: 'Markets, Money, and Prosperity'
 status: draft
 ---
 
-Economics from subjective value up: what money, capital, and wealth actually are, the standard indictments of markets answered, Bitcoin and the limits of governing information, incentives and mechanism design, and the economics of progress, energy, and demographics — ending in a story about a civilization that makes power pay for its failures.
+Economics inherits its foundations from the volumes before it: value is agent-relative, truth is conditional, and coercion is a structural category — not a mood. What this volume adds is the machinery of coordination: how subjective valuations become prices, how prices become money, how money becomes capital, and how the whole apparatus creates the least appreciated fact in human history — that poverty, the default state of our species, is in headlong retreat.
 
-## Chapter plan (Phase 2 outline — pending author approval)
+The argument runs in five parts. **Part I** builds the foundations: the discipline of value (exchange, gifts, and the numeraire), the coat-and-ticket layer stack that untangles value from wealth from capital from money from currency, what money actually is (and the monetary theory that fatally misunderstands it), what prices reveal and hide, and the discovery that attention was an economy before money existed. **Part II** puts the standard indictments on trial — poverty, underprovision, hoarding, tariffs, monopoly — and finds the same three culprits behind every genuine failure: unclear property rights, monetary intervention, and regulatory capture. **Part III** turns to money that refuses to be governed: why open computational substrates cannot be regulated at the substrate level, why proof-of-stake re-couples authority to capital while proof-of-work keeps power contestable, and a Halloween portrait of Bitcoin as the first non-biological system to achieve sovereign self-maintenance.
 
-**Part I — Value and Exchange**
-1. The Discipline of Value
-2. The Coat and the Ticket
-3. What Is Money?
-4. The Price Illusion
-5. Attention Is an Economy
+**Part IV** is mechanism design: incentives as the game behind the game, costly signaling from the peacock's tail to the collapsing credential, markets that make honesty the cheapest policy — including a memoir of building the first web-based prediction market in 1994 — and incentive engineering where lives are on the line. **Part V** takes stock of progress and its price: the metrics that settle the argument, a field guide to doomsday predictions, the twenty-five-trillion-dollar nuclear mistake, why prosperous civilizations stop reproducing, the biology beneath the wage gap, the end of intellectual property and the question of who pays for the open web — and the one place this volume's optimism deliberately stops: an economy where humans have nothing left to trade. A **coda**, the book's first story, dramatizes everything the volume argued: a civilization measured by where its errors flow.
 
-**Part II — The Myths**
-6. Capitalism on Trial
-7. The Poverty Myth
-8. The Myth of Underprovision
-9. Wealth Is Not a Pile
-10. The Tariff Illusion
-11. Monopoly Hypocrisy
+The foundations live in the earlier volumes — the physics of agency, conditional truth, and agency-centered ethics — and this volume cross-links them throughout; the governance these markets imply is the business of the volume on liberty and Axiocracy.
 
-**Part III — Money Ungoverned**
-12. Ungovernable by Design
-13. The Fork and the Merge
-14. The Cybernetic Ghost of Satoshi
-
-**Part IV — Incentives and Mechanisms**
-15. The Metagame of Incentives
-16. Ornament and Advantage
-17. Mechanisms for Honest Values
-18. Engineering Morality into the Machine
-
-**Part V — Progress and Its Price**
-19. Great Progress
-20. Lessons From Peak Oil
-21. The Nuclear Counterfactual
-22. The Prosperity Paradox
-23. The Loaded Dice of Parenthood
-24. The End of Intellectual Property
-25. AGI Economics
-
-**Coda**
-26. The Price of Breath
-
-## Design decisions
-
-- **Heavy consolidation of short polemics.** 49 source posts → 26 chapters; a dozen tweet/meme rebuttals (many 300–500 words) merge into thematic chapters with occasions stripped to standing claims. The two late definitional essays (*The Discipline of Value*, *The Coat and the Ticket*) anchor Part I with an explicit division of labor to avoid duplication.
-- **Roster changes:** *Inequality Is Not the Problem — Poverty Is* pulled from Vol 7 (it is the spine of the inequality defense, cited by four chapters here); *The Collapse of Proof-of-Work Credentials* pulled from Vol 8 (signaling pair with Zahavi); *Demographics Without Coercion* joins the prosperity-paradox chapter as a secondary source and stays Vol 7 primary.
-- **First-person assets preserved:** the 1994 Idea Futures history (first web prediction market, Golden Nica) in ch. 17; the DAO-refund disclosure in ch. 13; the OEIS-style construction voice throughout.
-- **Deliberate tension made explicit:** ch. 20's anti-doomer checklist and ch. 25's AGI limit-case cite each other — the one place the volume's market optimism stops, licensed by the checklist's own questions.
-- **Flags for the author:** the archived *Metagame of Incentives* is missing sections 4–5 (check the Substack original); the Bitcoin energy figures (52% renewable, ~170 TWh) are dated and marked as-of-writing; one truncated sentence in the wealth-hoarding post is repaired in ch. 9.
-- **Recovery work:** two content-bearing screenshots to transcribe (the priceless-values tweet, the Adam Back thread), the Bitcoin energy table, the peak-oil chart stored as `.bin`, and assorted data charts recreated or cited.
-
-*This volume is in preparation. Chapters publish as they reach draft status.*
+*This volume is a draft. Chapters carry their status openly, and the arguments are held the way the book says they should be held: at the strength the evidence licenses, and no stronger.*
