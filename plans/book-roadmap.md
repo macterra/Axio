@@ -2,7 +2,7 @@
 
 *A multi-volume web book built from the Axio blog corpus, published at `docs/book/` on the existing GitHub Pages site.*
 
-Status: **Volumes 1, 2, 3, 5, 6, and 7 fully drafted** — 176 chapters, ~390k words, live in draft status awaiting author review → review/final promotion. Vol 4 outlined (compact 15-ch design, stubs await approval). Remaining to outline: Vols 8, 9. · Created 2026-07-07 · Book title: **Axio**
+Status: **Volumes 1–7 fully drafted** — 191 chapters, ~440k words, live in draft status awaiting author review → review/final promotion. Remaining to outline: Vols 8, 9. · Created 2026-07-07 · Book title: **Axio**
 
 ## Vision
 
