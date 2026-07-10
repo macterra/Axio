@@ -3550,7 +3550,11 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://axionic.org/book/00-front/01-introduction.html</loc>
+    <loc>https://axionic.org/book/00-front/01-preface.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://axionic.org/book/00-front/02-introduction.html</loc>
     <priority>0.8</priority>
   </url>
   <url>

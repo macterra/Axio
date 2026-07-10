@@ -1,0 +1,16 @@
+---
+title: Preface
+subtitle: How this book came to be
+status: draft
+sources: []
+---
+
+I did not set out to write a book. I set out to answer a single question — what is an agent, really, and what does it take for one to exist — and the answers would not stay put. Each one turned out to depend on another. To say what agency is, I had to say what the physical universe has to be like for choice to be possible in it. To say how an agent could know anything, I had to rebuild epistemology without foundations. To say what an agent should value, I had to work out where value comes from when the cosmos supplies none. And once value was on the table, everything followed it out: minds and the machines that may inherit from them, the markets and institutions that coordinate agents at scale, the cultures that program them, and — at the far end — the meaning a finite agent can make once the old certainties are gone. What began as one question became nine volumes because the question had nine dependencies, and none of them could be left standing on air.
+
+The material was written first as a blog. Between 2022 and 2026 I published nearly six hundred essays, working out the ideas in public, in the order that problems happened to arrive rather than the order that would make them cohere. The blog is the laboratory notebook: it records the experiments, the wrong turns, the positions I later abandoned, and the arguments as they first occurred to me, still warm and still rough. This book is the other thing — the considered statement. It takes the essays that survived, merges and rewrites them into continuous arguments, drops what a later insight superseded, and presents each idea from the latest position I hold rather than as a record of how I got there. Where the blog shows the philosophy evolving, the book states what it evolved into.
+
+The name is *Axio* — from the Greek *axios*, worthy, the root that also gives us *axiom* and *value*. It points at the two things the whole project keeps circling: worth, and the agent who does the valuing. The central claim, if a project this size can be said to have one, is that agency is not a given but an achievement — a fragile, derivative structure that exists only when specific conditions hold, and that ceases to be well-defined the moment they fail. Almost everything in these volumes is an attempt to say, for one domain after another, what those conditions are and what it takes to keep them.
+
+A word of honesty about the state of it. This is a book in progress, and it says so on every page. Chapters carry their status openly — most are drafts, still changing — and I have chosen to publish them as they are rather than wait for a finish that a living project never quite reaches. I would rather hand you the argument now, with its seams visible, than polish it into silence. If you find a place where the reasoning bends or breaks, you have found exactly what the open form is for. The book is held the way it asks throughout to be held: at the strength the evidence licenses, and no stronger.
+
+What follows the introduction is the argument itself, nine volumes of it. Where to begin, and how the volumes fit together, is the next page's business.
