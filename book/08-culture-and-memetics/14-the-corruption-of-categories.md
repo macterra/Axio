@@ -1,17 +1,94 @@
 ---
 title: 'The Corruption of Categories'
 subtitle: 'Classifier cant and untethered anchors'
-status: outline
+status: draft
 sources:
   - 202203795.the-algorithmic-corruption-of-language
   - 173611210.the-anchor-of-orientation
 ---
 
-**Thesis.** Two routes to the same failure: categories corrupted upstream of thought. Algospeak ("unalive," "seggs") is not organic slang but compliance speech — a cant optimized for classifiers rather than readers, produced by incentives rather than fragility, whose core intellectual failure is the use/mention collapse (word presence treated as evidence of the speaker's act: quoting a threat is not a threat). A foggy penalty function censors more than any explicit ban, and the workaround leaks — workaround becomes habit becomes style becomes cultural norm, a word starts feeling dangerous with no argument ever made against it; the damage is register degradation (childproofed speech for adults), not concept loss. The second route is identity-driven: orientation categories are only coherent when anchored in biological sex, and untethering them destroys the terms' descriptive function — with the tell that insisting a man attracted to male bodies is "heterosexual" quietly implies straight is preferable ("It's OK to be gay").
+Content creators now say *unalive* instead of *suicide*, *seggs* instead of *sex*, and sometimes write *s\*bst\*ck* as if naming a publishing platform were a form of contraband. This is embarrassing to watch, but the embarrassment is not mainly on the creators. They are adapting to an environment in which normal words can make a post harder to find, harder to monetize, or more likely to be buried by systems no one can inspect.
 
-**Sources.** the-algorithmic-corruption-of-language (Jun 2026, the volume's most mature language essay): keep the causal exculpation of creators, the bureaucratic preference for invisible false positives, the Sapir-Whorf disclaimer; the constructive moderation program belongs to Vol 7 ch 11 — one link. the-anchor-of-orientation (Sep 2025): the two-frameworks incompatibility and the Krassenstein/Wright exchange (transcribe as text).
+The euphemisms are silly. The incentives producing them are not.
 
-**Editorial notes.**
-- This is the language half of the Jun 15/16 diptych — signpost the pairing with [The Forbidden Pattern](21-the-forbidden-pattern.md) (lexicon corruption vs attention corruption, one governing system each).
-- Echoes-of-Freud completion: Freud enriched the explanatory lexicon; infrastructure impoverishes it — back-link [Echoes of Freud](08-echoes-of-freud.md).
-- Cross-links: Vol 7 ch 11 (../07-liberty-and-governance/11-civilizational-infrastructure.md), [Two Ontologies of Gender](22-two-ontologies-of-gender.md) (the ontology beneath the anchor dispute).
+Language has always had euphemisms. People soften terms for children, grieving families, ritual settings, public politeness, or plausible deniability. That is not new. What is new is that the pressure is no longer primarily social. Creators are not choosing these words because their audience is too fragile to hear *suicide*. They are choosing them because a machine may treat the word as evidence of unsafe content. The audience understands the real word. The speaker understands the real word. The euphemism is not being used to clarify meaning or reduce harm. It is being used as a routing protocol around automated enforcement.
+
+That is the first route by which categories get corrupted upstream of thought: an enforcement system attaches costs to words, and the words mutate to survive it. There is a second route, which looks nothing like the first — no algorithm, no platform, no penalty function — and arrives instead through identity politics: a category gets cut loose from the external anchor that made it a category at all, and the word stays in circulation after its descriptive function has been removed. This chapter tracks both routes, because they end in the same place. A vocabulary that answers to something other than reality stops being an instrument of thought and becomes an instrument of compliance — with a machine in the first case, with a social demand in the second.
+
+## Platform Cant
+
+A cant is a specialized dialect used by people communicating under constraint. Some cants create group identity. Some hide meaning from outsiders. Some let people speak under hostile supervision. The current platform cant is mostly the third kind.
+
+A creator saying *unalive* is not improving English. He is managing distribution risk. He has learned that certain words may trigger throttling, demonetization, age restriction, account strikes, or silent suppression. Since the rules are unstable and the penalties can be material, he mutates the language.
+
+That does not mean every use of algospeak is grim compliance. Humans are good at turning constraint into style. Teenagers, dissidents, prisoners, and subcultures have always made jokes out of surveillance. Some people now use *unalive* ironically, playfully, or as an in-group signal mocking the platforms that trained them to say it. That is real enough, but it does not change the causal story. A workaround can become a joke without ceasing to be a workaround.
+
+The result is a dialect optimized for classifiers rather than readers. It is not slang in the ordinary organic sense. It is compliance speech that later acquired the ornaments of slang. The creator is no longer speaking directly to the reader. He is speaking through an imagined moderation model, trying to remain intelligible to humans while remaining non-threatening to the machine. That is why the whole thing feels so degraded. It is not just that *unalive* sounds childish. It is that adults are being trained to route serious concepts through childish evasions.
+
+## Use and Mention
+
+The most basic failure underneath all of this is the collapse of use and mention.
+
+Encouraging suicide is one thing. Discussing suicide prevention is another. Threatening violence is one thing. Quoting a violent threat in order to analyze it is another. Promoting sexual exploitation is one thing. Reporting on sexual exploitation is another. These distinctions are not exotic. They are ordinary distinctions required by journalism, law, scholarship, education, and adult conversation.
+
+Keyword-sensitive moderation blurs those distinctions because it treats the presence of a word as if it were evidence of the speaker's act. That is intellectually primitive. A word is not an endorsement. A description is not an incitement. A quoted threat is not itself a threat. A discussion of harm is not equivalent to harm.
+
+When platforms get this wrong, creators respond predictably. They avoid the proper term. They invent baby-talk. They obscure names. They write like prisoners tapping on pipes. The especially absurd case is when people censor the word while discussing censorship of the word. At that point the system is not protecting discourse. It is deforming it.
+
+## The Foggy Penalty Function
+
+The dominant incentive here is not careful moral reasoning. It is brand safety, liability management, and executive risk avoidance. Advertisers do not want their products beside disturbing material. Platforms do not want scandals. Trust-and-safety departments do not want edge cases. What gets marketed as user safety is mostly advertiser safety wearing its clothes.
+
+And the bureaucracy prefers false positives, because false positives are usually invisible. A suicide-prevention video that gets quietly downranked creates less institutional heat than a harmful video that goes viral and ends up in a newspaper story. Nobody writes an exposé about the conversations that never found their audience. So the system becomes blunt. It learns to fear topics, then words, then clusters of words. It has no real theory of meaning. It has a risk surface.
+
+Creators then adapt to the risk surface. They learn the superstition of the platform. This word is dangerous. That spelling is safer. This name must be disguised. That subject should be gestured at indirectly. No one knows exactly what the rules are, so everyone behaves as if the rules are worse than stated.
+
+This is how vague enforcement creates broader censorship than explicit rules. A clear ban has boundaries; you can stand at the edge of a clear ban and speak freely. A foggy penalty function produces self-censorship in the surrounding territory, because every speaker has to price in his own worst guess about where the boundary might be. The fog does more work than the rule.
+
+None of this implies that large platforms can operate without moderation. That is not a serious position: any major platform has to deal with spam, scams, threats, harassment, fraud, child exploitation, and coordinated manipulation, and no system at global scale — human, automated, or hybrid — will reliably understand every case. The question is whether enforcement is legible and conceptually competent enough for adults to reason about: whether it can tell advocacy from quotation, instruction from testimony, and whether a creator who is punished can learn something stable from the result. What such a regime would require is an infrastructure problem, and I take it up with the rest of [civilizational infrastructure](../07-liberty-and-governance/11-civilizational-infrastructure.md). What concerns me here is what the current regime is doing to the language.
+
+## The Leak
+
+The really bad sign is that these terms no longer stay inside the environments that produced them. People say *unalive* in podcasts, private messages, essays, and ordinary conversation where no moderation system is involved. A workaround becomes a habit. A habit becomes a style. A style becomes a cultural norm.
+
+This is how infrastructure reshapes thought without issuing commands. No one has to officially ban a word. The platform merely changes the local cost of using it. People adapt. The adaptation spreads. Eventually the original word starts to feel dangerous or impolite — not because anyone made an argument against it, but because everyone has been trained to flinch.
+
+Notice what the damage is and what it is not. This does not require any strong Sapir-Whorf thesis. People do not forget what suicide means because they say *unalive*. They do not lose the biological concept of sex because they write *seggs*. The damage is subtler and more plausible than that: the public register for discussing these topics becomes less direct, less precise, and more submissive to platform incentives. What degrades is not the concept but the register — the shared, adult, load-bearing way of talking about the concept in public.
+
+There is a persistent institutional fantasy that public discourse can be made safe by making the vocabulary less direct. This is wrong. Serious subjects do not become less serious because people use softer labels. Suicide does not become safer to discuss because people say *unalive*. Sex does not become less sexual because people say *seggs*. What we get instead is a childproofed public language being used by adults to discuss adult realities. That is a bad trade. It reduces precision exactly where precision is most needed. Death, suicide, abuse, rape, addiction, war, and coercion are not topics improved by coy substitution. Some audiences require care and some contexts require restraint, but care and restraint are not the same as lexical vandalism. A serious culture needs a functioning adult register, and the platform dialect is eating that register.
+
+Set this against the meme complex dissected in [Echoes of Freud](08-echoes-of-freud.md). Freud's replicators did real damage to Western self-understanding, but say this for them: they *enriched* the explanatory lexicon. They handed the culture new distinctions — however dubious — and people could think new thoughts with them. The platform dialect runs the process in reverse. Moral progress usually gives us finer distinctions; this gives us cruder ones. It replaces semantic accuracy with platform survivability. That is the signature of this kind of corruption, and it is worth stating as a general law: when the selection pressure on a vocabulary stops being "does this word track the thing?" and becomes "does this word survive the system?", the vocabulary will keep evolving — but it will be evolving away from the world.
+
+## Categories Without Anchors
+
+Now the second route. It involves no algorithm and no penalty function, and it attacks a different part of the machinery: not the word's surface form, but the anchor underneath the category.
+
+Consider sexual orientation. There are two competing frameworks for defining it — one anchored in biological sex, the other in gender identity — and they are not compatible, because they yield contradictory classifications of the same relationships.
+
+In the sex-based framework, heterosexuality is attraction to the opposite sex, homosexuality is attraction to the same sex, and bisexuality is attraction to both. These categories were developed to describe empirical patterns of human desire relative to reproductive biology, and they remain coherent precisely because they rely on an external and stable reference point: male and female as biological classes.
+
+The identity-based framework grounds orientation in subjective self-identification instead. A man dating a trans woman is classified as heterosexual — not because of the sexes involved, but because of the declared genders. In this system the categories lose their descriptive clarity and become contingent on shifting identity claims. Homosexuality and heterosexuality can collapse into each other depending on the self-ascribed labels of the participants. The category has been untethered from its anchor, and an untethered category cannot do the one thing categories are for: sorting the world the same way twice.
+
+The collision between the two frameworks is easiest to see in a public exchange between the commentator Brian Krassenstein and the biologist Colin Wright. Krassenstein stated the identity-based position in its pure form:
+
+> If you're a man who has a relationship with a trans woman, you are in a heterosexual relationship, because she is a woman and you are a man.
+
+Wright's reply, in full:
+
+> It's OK to be gay, Brian.
+
+The retort is effective not merely as rhetoric but as a reminder that sexual orientation has an objective anchor. To state that a man attracted to male-bodied individuals is heterosexual erodes the category of heterosexuality itself. If orientation is untethered from sex, the terms cease to perform their intended function of mapping patterns of attraction in the human population.
+
+But the reply also exposes something better hidden, and this is the tell. The insistence on recasting same-sex attraction as heterosexuality carries an implicit judgment: that it is preferable, or less stigmatized, to be labeled straight than gay or bisexual. Why else would the reclassification be worth fighting for? If being gay or bisexual is truly legitimate, there should be no need to disguise it beneath a semantic reclassification. The maneuver presents itself as progressive and smuggles in the oldest prejudice in the file — that *gay* is a label to be escaped. That is what makes "It's OK to be gay" a diagnosis rather than a taunt: it names the value judgment the reclassification was built to avoid stating.
+
+None of this is a claim about how anyone should identify, and identity does real work in plenty of social contexts. The question here is narrower: what the orientation categories are *for*. They are for mapping desire, and desire tracks sex. Redefining them in terms of identity undermines both clarity and honesty — clarity, because the categories stop sorting; honesty, because the sorting failure is in service of a judgment nobody will say aloud. A coherent account keeps the anchor or surrenders the categories to incoherence. The deeper ontological dispute underneath this — what gender itself is, and why the two sides cannot even agree on what kind of thing they are arguing about — I take up in [Two Ontologies of Gender](22-two-ontologies-of-gender.md).
+
+## Two Routes, One Failure
+
+Put the two cases side by side and the common structure is exact.
+
+In the first, no one ever argued that *suicide* is a bad word. In the second, no one ever argued that the sex-based categories fail to describe human desire. In neither case was the category defeated on its merits. It was bent by a pressure external to its descriptive function — distribution risk in one case, identity affirmation in the other — and the bending happened upstream of anyone's reasoning. That is what makes the corruption of categories more dangerous than the corruption of arguments. A bad argument can be answered. A corrupted category is inherited: by the time you are reasoning, you are already reasoning *with* it, in a vocabulary that has quietly stopped answering to the world. The words remain in circulation, apparently intact — *suicide* still exists, *heterosexual* still exists — but one has been made expensive to say and the other has been made to mean whatever the identity claims of the moment require.
+
+Both routes also share a moral disguise. The platform cant presents itself as safety; it is mostly liability management. The untethered category presents itself as inclusion; it runs on an unstated judgment that the disfavored label is shameful. In both cases the stated kindness is doing cover work for an incentive that could not survive being stated plainly, and in both cases the cost lands on precision — which is to say, on everyone who needs the language to think with.
+
+This chapter is half of a pair: here an enforcement system corrupts the lexicon — what can be said — and in [The Forbidden Pattern](21-the-forbidden-pattern.md) an institutional system corrupts attention — what can be seen. Language and attention are the two channels through which reality reaches a culture, and each can be trained to flinch. A society that cannot say *suicide* while discussing suicide, or *sex* while discussing sex, has not become safer, and a society whose categories bend to identity claims has not become kinder. Both have made their public language less fit for adult thought. A serious culture needs the ability to name serious things — and it needs names that still name them.
