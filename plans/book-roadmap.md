@@ -2,7 +2,7 @@
 
 *A multi-volume web book built from the Axio blog corpus, published at `docs/book/` on the existing GitHub Pages site.*
 
-Status: **Volumes 1–7 fully drafted** — 191 chapters, ~440k words, live in draft status awaiting author review → review/final promotion. Vol 8 outlined (27 ch, stubs await approval). Remaining to outline: Vol 9. · Created 2026-07-07 · Book title: **Axio**
+Status: **All 9 volumes fully drafted** — the complete manuscript is in draft status, awaiting author review → review/final promotion. Vol 9 (Meaning, Spirituality, and the Secular Sacred) drafted 2026-07-09: 20 chapters / 4 parts / ~46k words, closing the book on the double envoi (Letter to Our Machine Descendants → Letter to the Faithful Reader). **Remaining task: book-level front matter (00-front).** · Created 2026-07-07 · Book title: **Axio**
 
 ## Vision
 
