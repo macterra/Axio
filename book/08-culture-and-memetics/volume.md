@@ -3,64 +3,12 @@ title: 'Culture, Memetics, and Ideology'
 status: draft
 ---
 
-**Design (Phase 2, 2026-07-09).** 27 chapters in five parts from 57 posts (May 2025–Jul 2026). The organizing editorial facts, found independently across the reader survey: the volume's unit-of-culture vocabulary evolved — belief-set schemas (Jun 2025) → memes/egregores (Sep) → **patterns** (Nov, the canonical definition) → exemplars and the Axionic Criterion (Dec, the normative test) — and the corpus matures from tweet-pegged polemic to the 2026 concessive-then-surgical register (grant the history and the steelman fully, then attack the mechanism). The book writes in the mature register with "pattern" as the master noun, the schema formalism as its formal special case, and "egregore" preserved as vivid register rather than load-bearing ontology.
+This volume treats culture the way the earlier volumes treated physics, minds, and markets: as a system with a mechanism, studied at the level where it actually operates. The mechanism is selection over patterns. A pattern is any coherent configuration of information stable enough to exert influence — a story, a schema, a ritual, a procedure, a slur — and patterns, not the people who carry them, are the true units of cultural competition. They are selected by fitness to their incentive environment, not by truth; they outlive their hosts; and they operate through us more than we operate them. Everything in this volume follows from taking that seriously.
 
-## Chapter plan
+The argument runs in five parts. **Part I** builds the theory: humans as the story-telling ape whose narrative hardware decoupled fitness from accuracy; the formal model of cultural schemas and the groups that instantiate them; the canonical account of patterns as players, with drift, lock, and collapse; and the exemplar as the transmission channel, tested by the Axionic Criterion — does a pattern support coherent choice under constraint, reduce reliance on coercion, and scale without collapsing autonomy? **Part II** is the ecology those patterns compete in: the egregoric singularity (the meme–mind merger that already happened); the geometry of a self-curved fitness landscape and the black holes of thought space; the two poles of memetic pathogen — the noble-faced virus and the nihilist destructor meme; Freud as a century of data on a single meme complex; and the containment of dangerous knowledge.
 
-**Part I — Culture as Patterns**
+**Part III** turns to the weapons — the techniques that win a discourse without winning the argument: the grammar of bad faith, the motte-and-bailey label and the shibboleth, the capture of words and time, victimhood as currency, the corruption of categories by classifier and by ideology, cancellation and the memory hole, and the two exploits that recruit through our virtues rather than our vices. **Part IV** is capture proper: the anatomy of a captured institution, the symmetry that makes capture non-partisan, the capture of the professions, the self-imposed enclosure of gated realities, and — the capstone — the forbidden pattern, where attention itself becomes moral infrastructure and a starved institution fails at random while a corrupted one fails in a pattern. **Part V** applies the whole apparatus to live cases, in the discipline the volume insists on: grant the history and the steelman in full, then attack the mechanism. Two ontologies of gender; the symmetrical equality paradox; a discrimination claim adjudicated as genuinely true; the rituals that borrow the vocabulary of justice while refusing its arithmetic; the oldest attractor; and a small taboo that hands over the volume's reusable instrument — find the asymmetry, and it names the hidden term.
 
-1. The Story-Telling Ape — narrative as cognition's native format; how legend colonizes history
-2. Schemas and Groups — the formal model: cultural schemas, cultural groups, the inverse relation, hierarchies
-3. Patterns as Players — the canonical theory: patterns as the units of selection; drift, lock, collapse
-4. Exemplars and the Axionic Criterion — transmission by imitation; behavioral attractors; the agency-preservation test
+A word on method, because the subject demands it. Much of this material is contested and some of it is incendiary, and the temptation on every side is to reach for the tribe's approved conclusion. The volume refuses that on principle: the same test that convicts one faction's ritual acquits an honest renaming; the same standard that rejects a spurious grievance affirms a real one; capture is diagnosed on the left and the right by one criterion. The foundations live in the earlier volumes — the epistemology in the second, the minds in the third, the value theory in the fifth, the economics in the sixth, the politics and speech law in the seventh — and this volume cross-links them throughout. What it adds is the layer between the individual mind and the political order: the patterns that think us, and the discipline required to think about them without being thought by them.
 
-**Part II — Memetic Ecology**
-
-5. The Egregoric Singularity — meme–host fusion; living shadows; nationalism as secular religion; critical mass
-6. The Geometry of Culture — the self-curved fitness manifold; ideologies as black holes; cultural invariants
-7. Memetic Pathogens — mind viruses (noble camouflage) and destructor memes (nihilist glamor); the antidotes
-8. Echoes of Freud — anatomy of a meme complex: how one man's replicators rewired Western explanation
-9. Dangerous Knowledge — infohazard containment by reframing; the ecology of contrarians
-
-**Part III — The Weapons of Discourse**
-
-10. The Grammar of Bad Faith — the tactic taxonomy; strategic misrepresentation; engineered ambiguity in measurement
-11. Weaponized Labels — the motte-and-bailey label; shibboleths as loyalty tests
-12. The Capture of Words and Time — hijacked labels, the nonexistent tribunal of history, statistical rhetoric
-13. The Wound and the Weapon — victimhood as currency: psychological, sociological, and gendered registers
-14. The Corruption of Categories — compliance speech and classifier cant; categories untethered from their anchors
-15. Enforcement and Erasure — cancel culture's three tiers; the memory hole as the terminal stage
-16. Exploiting the Best in Us — the empathy exploit and the catastrophe mindset (the hinge into Part IV)
-
-**Part IV — Capture**
-
-17. Anatomy of Capture — the Boghossian Principle; preference falsification; the epistemic vacuum; ideology as coping
-18. The Symmetry of Capture — the woke right; the equality trap; capture as a non-partisan attractor
-19. The Capture of the Professions — psychiatry's five symptoms; the ivory tower's forfeited neutrality; engineering
-20. Gated Realities — blue flight: self-segregation moralized as safety; the epistemic immune disorder
-21. The Forbidden Pattern — the capstone: attention as moral infrastructure; the institutional scotoma
-
-**Part V — Applied Cases**
-
-22. Two Ontologies of Gender — performance-as-imitation vs performance-as-creation; why the debate is stuck
-23. Parity Where It Pays — the gender equality paradox, symmetrical; no marches for the morgue
-24. When the Claim Is True — Rosalind Franklin: adjudicating a discrimination claim honestly
-25. The Rituals of Absolution — land acknowledgments, race-conditional remedies, the slavery myth; the West Asia foil
-26. The Oldest Attractor — antisemitism as a perverse Schelling point (retitled from "The Pattern" to avoid collision)
-27. The Taboo Test — the air-conditioning taboo; the asymmetry heuristic as the volume's reusable instrument (closer)
-
-## Design decisions
-
-- **Canonical vocabulary.** "Pattern" (the Nov 2025 definition: any coherent configuration of information stable enough to exert influence) is the master noun; chapter 3 anchors it. The schema formalism (ch 2) is presented as its formal special case. "Egregore" survives as register in chs 5/20. The Axionic Criterion (Dec 2025: coherent choice under constraint; reduced reliance on coercive stabilization; scales without collapsing autonomy) is the volume's normative test, introduced in ch 4 and applied throughout. One early note disambiguates the three "attractors" (Schelling-point, black-hole, behavioral).
-- **Latest-position discipline.** The Forbidden Pattern (Jun 2026) is canonical for capture theory — the Boghossian Principle and Kuran's preference falsification are absorbed as named concepts inside ch 17, with ch 21 carrying the full mechanism. Blue flight supersedes the exodus post (Kegan apparatus salvaged as mechanism). The equality trap corrects the woke-right framing (symmetry real; the syllogism version a caricature) — where they conflict, equality-trap wins. Exemplars' functional stance on religion is canonical over mythogenesis' debunking stance (descriptive mechanism vs evaluative frame — both kept, tone harmonized). The Jun 15/16 2026 diptych (algorithmic corruption + forbidden pattern) is signposted across chs 14/21.
-- **Tension reconciliations.** West Asia (Jun 2025, endorses symbolic renaming) vs Against Land Acknowledgments (May 2026, dissects symbolic ritual): reconciled as the criterion — linguistic reform justified by accuracy is legitimate; linguistic ritual substituting for material remedy is not; ch 25 uses the older post as its deliberate foil. The egregore ontology and the institutional-corruption vocabulary get one bridge paragraph (the "second client" abstraction in ch 21 is an egregore being fed).
-- **Cross-volume seams.** Vol 7 owns speech law (ch 15 links the causal ladder and censorship machine; cancel-culture is THIS volume's primary), egalitarian political theory, and restitution/discrimination theory (ch 25 links out). Vol 3 owns minds/consciousness and AI cognition. Vol 5 owns empathy theory, Phosphorism, and ressentiment ethics. Vol 6 owns the economics (wage data, inequality statistics, credential collapse — ch 19 cross-references Proof-of-Work Credentials in one paragraph). Vol 4 ch 15's worst-memes material (compression seduction) is the alignment-side cousin of chs 7/17 — cross-linked, not duplicated. Vol 2 owns the epistemology under everything.
-- **Hazards not to propagate.** The empathy-exploit post carries a copy-paste artifact (four stitched variants of its thesis sentence) — canonical wording chosen at drafting. The slavery-myth post's "women are more morally conformist" aside is thinly sourced — formalize the skeptic.com citation or cut. "The Pattern" retitled (ch 26) to avoid collision with the volume's master concept. The metagame post's quantum-bridge section is trimmed to a pointer (the Metagame sequence lives across Vols 5/6). Tweet screenshots are transcribed as text throughout.
-- **Assets.** The schema LaTeX identities and the Christianity Venn (redraw); the Dawkins/Butler ontology table; the skeptic.com slavery-belief charts; the cumulative-net-worth chart (ch 12); the NPR/Marist poll numbers (ch 10); the Bach black-holes line as ch 6 epigraph; the four-tier Freud meme inventory as boxed lists (ch 8).
-
-## Author-review flags
-
-- Part V is the book's most culture-war-adjacent material (race, gender, antisemitism); the stubs impose the mature concessive-then-surgical structure, but confirm the roster survives your review.
-- Ch 26 retitle ("The Oldest Attractor") — confirm.
-- Ch 25's use of the-case-for-west-asia as a foil (rather than dropping it) — confirm.
-- Ch 24 (Franklin) is deliberately placed as the adjudicated-true counterweight inside the gender cluster; confirm the placement reads as intended.
+*This volume is a draft. Chapters carry their status openly, and the arguments are held the way the book says they should be held: at the strength the evidence licenses, and no stronger.*
