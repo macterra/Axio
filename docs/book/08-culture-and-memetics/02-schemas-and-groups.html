@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schemas and Groups - Axio</title>
+    <link rel="icon" type="image/png" href="../../images/axionic-logo.png">
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+
+    <!-- Site Styles -->
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="../../" class="nav-brand">
+            <img src="../../images/axionic-logo.png" alt="Axionic">
+            <span>Axionic Agency Lab</span>
+        </a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+        <ul class="nav-links">
+            <li><a href="../.././">Home</a></li>
+<li><a href="../../about.html">About</a></li>
+<li><a href="../../research.html">Research</a></li>
+<li><a href="../../team.html">Team</a></li>
+<li><a href="../../publications.html">Publications</a></li>
+<li><a href="../../book/" class="active">Book</a></li>
+
+        </ul>
+    </nav>
+    <article class="paper-content book-page">
+    <div class="book-breadcrumbs"><a href="../index.html">Axio</a> <span class="crumb-sep">›</span> <a href="index.html">Volume 8</a> <span class="crumb-sep">›</span> <span>Schemas and Groups</span></div>
+<h1>Schemas and Groups</h1>
+<p class='paper-subtitle'>A formal model of culture</p>
+<div class="book-banner book-banner-draft">This chapter is a <strong>draft</strong> — it is readable but still changing.</div><p>Listen to any argument about culture and you will hear one word doing two jobs. “Christian culture shaped Europe” — is that a claim about a body of ideas or about a population of people? “Immigrants should adopt our culture” — adopt what, exactly: a set of beliefs, or membership in a group? “Western culture is in decline” — are the ideas losing coherence, or are the people who hold them losing numbers? The disputants slide between the two readings, often within a single sentence, and the slide is not harmless. It lets someone defend a set of ideas by pointing to the virtues of a population, or condemn a population by pointing to the vices of a set of ideas. Most of what passes for disagreement about culture is two people equivocating in opposite directions.</p>
+<p>The fix is to split the word. “Culture” denotes two distinct objects, and once they are named separately, a surprising amount of structure falls out for free.</p>
+<h2 id="two-objects-one-word">Two Objects, One Word</h2>
+<p>A <strong>Cultural Schema</strong> is an abstract collection of beliefs, values, preferences, and norms. It is the conceptual blueprint of a culture, independent of any particular individuals or communities: what the culture believes, values, and prioritizes, as an intangible but coherent structure. Formally, a schema is just a set:</p>
+<p><span class="math display">\[S_k = \{ b_1, b_2, \dots, b_m \}\]</span></p>
+<p>where each <span class="math inline">\(b\)</span> is a belief or value held within the schema. (What a belief <em>is</em> — not a sentence stored in a head but a feature of a model of an agent — is settled in <a href="../../book/02-conditionalism/08-what-beliefs-are.html">What Beliefs Are</a>; this chapter takes that ontology as given and builds on top of it. The set notation is an idealization in exactly the way all agent-modeling is, and it earns its keep the same way: by what it lets us predict.)</p>
+<p>A <strong>Cultural Group</strong> is the concrete set of agents — individuals, communities, populations — who instantiate a particular schema: real people whose belief systems contain it. Formally:</p>
+<p><span class="math display">\[G(S_k) = \{ a_i \mid S_k \subseteq B(a_i) \}\]</span></p>
+<p>where <span class="math inline">\(B(a)\)</span> is the belief system of agent <span class="math inline">\(a\)</span>. The group of a schema is everyone whose beliefs include all of it.</p>
+<p>Schemas are abstract; groups are tangible. Schemas are made of beliefs; groups are made of people. A schema can exist with an empty group — every extinct religion is a schema whose group has died out from under it — and a group can outlive large revisions of its schema. Keeping the two apart is the whole trick, and the function <span class="math inline">\(G\)</span> is the bridge between them: it maps each blueprint to its current population of instances.</p>
+<h2 id="a-toy-culture">A Toy Culture</h2>
+<p>The machinery is easiest to see at miniature scale. Take three agents:</p>
+<ul>
+<li><span class="math inline">\(a_1\)</span> with beliefs <span class="math inline">\(\{x, y, z\}\)</span></li>
+<li><span class="math inline">\(a_2\)</span> with beliefs <span class="math inline">\(\{x, y\}\)</span></li>
+<li><span class="math inline">\(a_3\)</span> with beliefs <span class="math inline">\(\{x, z\}\)</span></li>
+</ul>
+<p>Define two schemas: <span class="math inline">\(S_1 = \{x, y\}\)</span> and <span class="math inline">\(S_2 = \{x\}\)</span>. Then <span class="math inline">\(G(S_1) = \{a_1, a_2\}\)</span> — the agents whose belief systems contain both <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> — while <span class="math inline">\(G(S_2) = \{a_1, a_2, a_3\}\)</span>: everyone, since everyone holds <span class="math inline">\(x\)</span>.</p>
+<p>Notice what just happened. The <em>larger</em> schema, <span class="math inline">\(S_1\)</span>, picked out the <em>smaller</em> group. Adding a belief to a schema adds a requirement for membership, and every added requirement can only shrink the pool of agents who satisfy all of them. Demanding schemas have exclusive groups; permissive schemas have inclusive ones. In general, if <span class="math inline">\(S_j \subseteq S_k\)</span> — if one schema is contained in another — then:</p>
+<p><span class="math display">\[G(S_k) \subseteq G(S_j)\]</span></p>
+<p>The subset relation <em>inverts</em> on its way from schema-space to group-space. This inverse relationship is the model’s crucial and elegant property, and it is worth pausing on, because it runs against the grain of ordinary speech. We say Catholicism is “part of” Christianity, meaning the Catholics are among the Christians — a group-space statement. But in schema-space the containment points the other way: the Catholic schema <em>contains</em> the Christian schema and adds to it. The big tent is the small set. Whenever culture-talk feels paradoxical, the first thing to check is whether a schema-space claim is being read in group-space or vice versa.</p>
+<h2 id="schemas-within-schemas">Schemas Within Schemas</h2>
+<p>Cultures do not exist in isolation; they form hierarchies, where broader schemas encompass multiple narrower ones. The formalism does not need this added as an extra assumption — hierarchy emerges from set intersection.</p>
+<p>Take the obvious case. Let the Catholic and Protestant schemas be:</p>
+<ul>
+<li><span class="math inline">\(S_{\text{Catholic}} = \{x, y, z\}\)</span></li>
+<li><span class="math inline">\(S_{\text{Protestant}} = \{x, y, w\}\)</span></li>
+</ul>
+<p>where <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are the shared core — the divinity of Christ, the authority of scripture — while <span class="math inline">\(z\)</span> and <span class="math inline">\(w\)</span> are the distinctives: papal authority on one side, <em>sola fide</em> on the other. The two schemas share <span class="math inline">\(\{x, y\}\)</span>, and that intersection is itself a schema — the Christian schema:</p>
+<p><span class="math display">\[S_{\text{Christian}} = \{x, y\}\]</span></p>
+<p>The parent is not something over and above its children; it is literally their common part. And because it is the smaller set, the inversion delivers the hierarchy in both spaces at once. In schema-space:</p>
+<p><span class="math display">\[S_{\text{Christian}} \subseteq S_{\text{Catholic}} \quad \text{and} \quad S_{\text{Christian}} \subseteq S_{\text{Protestant}}\]</span></p>
+<p>Therefore, in group-space:</p>
+<p><span class="math display">\[G(S_{\text{Catholic}}) \subseteq G(S_{\text{Christian}}), \quad G(S_{\text{Protestant}}) \subseteq G(S_{\text{Christian}})\]</span></p>
+<p>Picture the group-space version as nested circles: one large circle, <span class="math inline">\(G(S_{\text{Christian}})\)</span>, containing everyone who holds the shared core <span class="math inline">\(\{x, y\}\)</span>; inside it, two smaller regions — <span class="math inline">\(G(S_{\text{Catholic}})\)</span>, those who also hold <span class="math inline">\(z\)</span>, and <span class="math inline">\(G(S_{\text{Protestant}})\)</span>, those who also hold <span class="math inline">\(w\)</span> — overlapping only in the odd agent who holds both distinctives at once. Every Catholic is a Christian; not every Christian is a Catholic; and the reason is nothing deeper than set inclusion running through the function <span class="math inline">\(G\)</span>.</p>
+<p>The construction iterates in both directions. Intersect the Christian schema with the Jewish and Muslim schemas and you get an Abrahamic schema — smaller still, with a correspondingly larger group. Add distinctives to the Catholic schema — the Jesuit charism, say — and you get a child schema with a smaller group inside the Catholic circle. The result is a lattice: every pair of schemas has a common parent (their intersection) and a common child (their union, whose group is the possibly-empty set of agents holding everything in both). “World culture,” if the phrase means anything, names a schema near the top of the lattice — the few beliefs and norms held nearly universally — and its group is correspondingly nearly everyone. The most demanding sects and tightest subcultures live near the bottom: enormous schemas, tiny groups.</p>
+<h2 id="what-the-lattice-buys">What the Lattice Buys</h2>
+<p>A formalism is worth its notation only if it clarifies things that were murky without it. This one pays for itself three times over.</p>
+<p><strong>Cultural transmission</strong> becomes belief-flow along the hierarchy. Beliefs propagate from broader to narrower schemas: a child raised in the Christian core acquires <span class="math inline">\(\{x, y\}\)</span> before acquiring a denomination’s distinctives, and a convert typically enters through the parent schema before settling into a child. The path of least resistance for a new belief runs through the schemas whose groups already contain its potential hosts.</p>
+<p><strong>Cultural divergence</strong> is a split in schema-space. A group whose members begin holding differing supersets of a shared schema is one dispute away from schism: the moment the difference is named and made criterial — you must hold <span class="math inline">\(z\)</span>; you must reject <span class="math inline">\(z\)</span> — one schema becomes two siblings, and the old schema is demoted to their parent. The Reformation, in this notation, is the appearance of <span class="math inline">\(w\)</span> and the promotion of <span class="math inline">\(\{x, y\}\)</span> from “the faith, entire” to “the common core of two rival faiths.”</p>
+<p><strong>Cultural convergence</strong> is the mirror image: schemas merging through shared beliefs, ecumenism as the deliberate migration of criterial beliefs out of the distinctives and into the core.</p>
+<p>And the hierarchy hands us the lever for conflict. When two cultural groups collide, the instinct is to negotiate at the level where they differ — the distinctives, precisely the beliefs each side is most committed to defending. The lattice says to look up instead: identify the shared higher-level schema, the parent whose group contains both parties. That schema is not a diplomatic fiction; it is a real set of beliefs that every member of both groups actually holds, and appeals grounded in it land on both sides as appeals to <em>their own</em> commitments. Reconciliation is easiest where the schemas already agree, and the intersection tells you exactly where that is. The same move explains why “we are all children of Abraham” is a standard opening in interfaith diplomacy, and why it so often works better than any argument about the distinctives ever could: it is an appeal to a parent schema whose group includes everyone at the table.</p>
+<h2 id="the-special-case">The Special Case</h2>
+<p>I have been describing culture as if it sits still — sets frozen in place, agents whose belief systems hold long enough to be measured against a schema. That is a deliberate idealization, and this chapter comes first in the theory because of it: a lattice of sets is easy to hold in the mind, and the statics are worth mastering before the dynamics. But the reader should know that this is the still photograph, not the film.</p>
+<p>The moving picture is the subject of <a href="../../book/08-culture-and-memetics/03-patterns-as-players.html">Patterns as Players</a>, which generalizes everything here. A cultural schema is a pattern in that chapter’s precise sense — a coherent configuration of information stable enough to exert influence — and a cultural group is that pattern’s host population, the set of minds currently instantiating it. What the schema formalism captures is the <em>synchronic slice</em> of the pattern ecology: who hosts what, right now, and how the hosting relations nest. What it deliberately omits is that patterns are not inert sets waiting to be counted. They compete for hosts, mutate under transmission, and are filtered by incentive environments that reward persistence rather than truth. In the dynamic theory, <span class="math inline">\(G(S_k)\)</span> is not a roster; it is a population under selection pressure, and the schema itself is one of the players.</p>
+<p>That reframing has consequences the static model cannot express. Nothing in set notation distinguishes a schema whose beliefs are independently held from one whose beliefs include <em>defenses</em> — beliefs whose function is to protect the other beliefs from revision and to punish exit from the group. Both are just sets of <span class="math inline">\(b\)</span>’s. But in the ecology they behave utterly differently, and when the fusion of schema and group becomes tight enough — when the hosts begin to serve the pattern rather than the reverse — the appropriate vocabulary shifts from set theory to something older and darker, taken up in <a href="../../book/08-culture-and-memetics/05-the-egregoric-singularity.html">The Egregoric Singularity</a>.</p>
+<p>So take the formalism for what it is: the special case where culture holds still long enough to be diagrammed, and the scaffolding on which the rest of the volume’s theory hangs. Splitting “culture” into schema and group dissolves the equivocations; the inverse relation explains why breadth of appeal trades off against depth of demand; the lattice locates every subculture, sect, and civilization in one structure and points to the shared parent whenever two of them fight. That is a great deal of work for two definitions and a subset relation — which is exactly what a good formalism looks like.</p>
+<nav class="book-chapter-nav"><a class="book-prev" href="01-the-story-telling-ape.html">← The Story-Telling Ape</a><a class="book-up" href="index.html">Contents</a><a class="book-next" href="03-patterns-as-players.html">Patterns as Players →</a></nav>
+    </article>
+    <footer>
+        <p>&copy; Axionic Agency Lab</p>
+    </footer>
+</body>
+</html>
