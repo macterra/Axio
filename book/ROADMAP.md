@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **First draft complete — editorial review pending.** The manuscript contains nine drafted volumes, 240 chapters, and roughly 550,000 words. Editing should proceed from architecture and load-bearing claims to applications, compression, prose, and final verification. Do not begin with a linear copyedit from page one.
+Status: **Phase 2 architecture audit complete — foundational volume editing next.** The manuscript contains nine drafted volumes, 240 chapters, and roughly 550,000 words. Phase 1 established the editorial control documents; Phase 2 confirmed the nine-volume architecture with targeted revisions recorded in `book/editorial/architecture/`. Editing now proceeds to the load-bearing volumes. Do not begin with a linear copyedit from page one.
 
 ## Editorial goals
 
