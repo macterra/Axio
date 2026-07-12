@@ -1,7 +1,7 @@
 ---
 title: "Everett's Demon"
 subtitle: 'Ontological randomness and the amplified quantum'
-status: draft
+status: review
 sources:
   - 166481863.everetts-demon
   - 166481044.quantum-chess

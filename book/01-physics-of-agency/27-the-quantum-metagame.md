@@ -1,7 +1,7 @@
 ---
 title: 'The Quantum Metagame'
 subtitle: 'Persistence across branches'
-status: draft
+status: review
 sources:
   - 180339872.the-quantum-metagame
 ---
@@ -22,15 +22,15 @@ Structural recognition here means the preservation of the pattern's defining inv
 
 ## Measure Is the Scoreboard
 
-If persistence is graded across branches, the grade needs a unit, and the QBU supplies exactly one: [Measure](09-measure-vantage-branchcone.md), the objective branch weight fixed by the squared amplitudes of the wavefunction. Measure is not belief, not frequency, not chance. It is a physical quantity on the same footing as mass or charge, and it prices the futures forward of any Vantage without consulting anyone's opinion of them.
+If persistence is graded across modeled alternatives, the grade needs a weighting rule. [Measure](09-measure-vantage-branchcone.md) supplies squared-amplitude weights for specified quantum events and coarse-grainings. It is not a new conserved substance like mass or charge, and applying it to a high-level pattern requires a projector or other operational criterion for that pattern.
 
 Applied to patterns, it gives the quantum metagame its scoreboard:
 
 **The score of a pattern is the total amplitude-weighted prevalence of structurally coherent versions of it across the branches forward of a Vantage.**
 
-Every property of Measure established earlier in this volume carries over. The score is Vantage-indexed — a pattern's standing is always its standing *from somewhere*, over the branchcone flowing out of a definite world-state. It is objective: the woman's recipe has a real, definite representation in the space of futures whether or not anyone can compute it. And it moves when the world moves: writing the recipe down is a physical act that leaves the score permanently different from every Vantage thereafter.
+The score is conditioning-relative: it depends on a state, horizon, coarse-graining, and criterion for recognizable continuation. Once those are fixed, the quantum model can assign a weight whether or not anyone computes it. Writing the recipe down can increase robust future prevalence by creating redundant records, though no act makes the universal total amplitude grow.
 
-Patterns with high Measure dominate future influence. Patterns with low Measure persist only as marginal branch weight. And death gets a sharper definition than annihilation: a pattern is dead when it has lost almost all of its Measure — even if faint copies linger in branches of negligible weight. Extinction, in a branching universe, is asymptotic.
+High-weight continuation can be one useful measure of prevalence. It is not by itself influence, value, or a definition of death. Those concepts require causal, biological, and normative criteria beyond quantum weight.
 
 ## Decoherence Is the Fitness Environment
 
@@ -40,7 +40,7 @@ But the arena is not neutral. Some structures pass through branching events inta
 
 ## Drift, Lock, and Collapse
 
-Pattern dynamics in a single timeline come in three modes — gradual deformation, stable equilibrium, and dissolution — and each has an exact branch-theoretic analogue.
+Gradual deformation, stable equilibrium, and dissolution have suggestive branch-theoretic analogues, not exact identities.
 
 **Drift becomes branch divergence.** Versions of a pattern instantiated in different branches undergo small, independent variations — environmental noise, stochastic interactions, local contingency. Over time the variations accumulate into structural branch divergence: a family of variants with shared ancestry and increasingly distinct futures. Where classical [drift](02-agency-against-drift.md) erodes one instance along one history, quantum drift shears a pattern apart *across* histories.
 
@@ -50,12 +50,12 @@ Pattern dynamics in a single timeline come in three modes — gradual deformatio
 
 ## Agency Is the Constructor of Measure
 
-Where does choice enter a contest like this? Not where the classical picture puts it. Agency does not choose which branch you go to; all branches exist, and [quantum free will](15-quantum-free-will.md) already established what choosing actually does — it determines which pattern you instantiate, and thereby the conditional correlation between that pattern and the branching structure that hosts its continuations. A choice changes three things: the structure of the pattern itself, the conditions under which it decoheres, and the Measure-weighted distribution of its future versions.
+Where does choice enter? On an Everettian model, an action is a physical process correlated with later records and outcomes. Comparing policies means conditioning on, or intervening on, different action processes within an explicit causal model. An agent does not globally redistribute conserved amplitude; different policies define different conditional distributions over later high-level patterns.
 
-Put that in the vocabulary of Part IV and the definition clicks shut. A [constructor](22-constructors.md) is a coherent pattern that enacts stable correlations between other patterns while preserving its own coherence. An agent is a constructor whose distinguished product is Measure: a structure that channels amplitude-weighted continuity toward the patterns it embodies and endorses. You shape not which single future occurs — none of them is single — but which *family* of futures contains coherent versions of you, your values, your works. Agency is the capacity to influence the amplitude-weighted continuity of the patterns you instantiate, and the two halves of this volume were always describing the same thing: the thermodynamics of control priced the work, and the branching structure is where the work lands.
+In the vocabulary of Part IV, an agent is a constructor-like system whose policies causally influence later pattern prevalence. Measure is not its product; the products are records, structures, and consequences to which a quantum model assigns weight. This preserves the useful synthesis without turning agency into amplitude creation.
 
 ## What the Scoreboard Settles
 
-The reflex objection is nihilism: if every branch exists, does anything matter? It matters *more*. In a single timeline, most acts wash out — one history, one outcome, averaged into the noise. In the branching universe, every choice reshapes the distribution of your pattern's coherent versions across the entire space of futures, and [no choice is too small](16-no-trivial-choices.md) for chaotic amplification to make it count. Meaning arises from continuity under branching; ethics becomes the study of pattern selection under amplitude-weighted consequences. And the scoreboard remains exactly what it was in the classical metagame — descriptive, never normative, a fact about what persists rather than an instruction about what should — a distinction whose full weight is carried by [the viability criterion](../05-value-and-ethics/19-the-viability-criterion.md).
+Everettian branching does not by itself settle what matters. It changes the decision problem by replacing a single-outcome picture with weighted consequences, assuming the interpretation and decision rule. Small choices sometimes amplify and sometimes wash out. Persistence remains descriptive rather than normative; the bridge to ethics requires arguments developed in [the viability criterion](../05-value-and-ethics/19-the-viability-criterion.md).
 
 So the deepest architecture, assembled: classical persistence is its surface. Incentives are its transmission mechanism. Patterns are its real players. Decoherence is its fitness landscape. Measure is its scoreboard. Agency is its constructor. Everything else is local detail. Existence, in the end, is not a state but a competition among patterns for amplitude-weighted continuity across branching futures — which leaves precisely one question standing beneath the whole edifice. A competition presupposes an arena. Why is there an arena at all — [why is there something rather than nothing](28-why-there-is-something.md)?

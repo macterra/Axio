@@ -1,7 +1,7 @@
 ---
 title: 'Minimal and Maximal Agents'
 subtitle: 'From chemotaxis to the AIXI demon'
-status: draft
+status: review
 sources:
   - 162831172.the-mechanics-of-agency
   - 162847620.mechanics-of-agency-quantum-decisions

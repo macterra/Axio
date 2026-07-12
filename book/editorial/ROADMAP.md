@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 2 architecture audit complete — foundational volume editing next.** The manuscript contains nine drafted volumes, 240 chapters, and roughly 550,000 words. Phase 1 established the editorial control documents; Phase 2 confirmed the nine-volume architecture with targeted revisions recorded in `book/editorial/architecture/`. Editing now proceeds to the load-bearing volumes. Do not begin with a linear copyedit from page one.
+Status: **Phase 3 underway — Volume 1 edited and in review; Volume 2 next.** The manuscript contains nine drafted volumes, 240 chapters, and roughly 550,000 words. Phase 1 established the editorial control documents; Phase 2 confirmed the nine-volume architecture with targeted revisions recorded in `book/editorial/architecture/`. The first foundational-volume pass is recorded in `book/editorial/volume-edits/01-physics-of-agency.md`. Editing proceeds dependency-first through the remaining load-bearing volumes.
 
 ## Editorial goals
 
@@ -88,6 +88,8 @@ Produce a short structural memo for each volume before editing chapters. Do not 
 ## Phase 3 — Foundational volumes
 
 ### Volume 1 — The Physics of Agency and the Branching Universe
+
+Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/01-physics-of-agency.md`.
 
 This receives the first full edit because almost every later volume borrows its ontology.
 

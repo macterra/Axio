@@ -1,7 +1,7 @@
 ---
 title: 'A Genealogy of Agency'
 subtitle: 'From Popper to Everett to Deutsch — and past them'
-status: draft
+status: review
 sources:
   - 172964152.a-genealogy-of-agency
 ---

@@ -1013,6 +1013,16 @@ mjx-container {
     line-height: 2;
 }
 
+.book-part-title {
+    margin: 1.6rem 0 0.2rem;
+    color: #d4d7dc;
+    font-size: 1.05rem;
+}
+
+.book-part-title + .book-toc {
+    margin-top: 0.25rem;
+}
+
 .book-muted {
     color: #8a8f98;
     font-size: 0.9em;

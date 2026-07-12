@@ -1,7 +1,7 @@
 ---
 title: 'The Observer Joins the Branch'
 subtitle: "Schrödinger's cat, Wigner's friend, and observation as physics"
-status: draft
+status: review
 sources:
   - 202626483.the-observer-joins-the-branch
   - 163789945.the-starlight-analogy

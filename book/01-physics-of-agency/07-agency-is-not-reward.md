@@ -1,7 +1,7 @@
 ---
 title: 'Agency Is Not Reward'
 subtitle: 'What the maximum-occupancy view gets right, and what it misses'
-status: draft
+status: review
 sources:
   - 194130281.agency-is-not-reward
 ---

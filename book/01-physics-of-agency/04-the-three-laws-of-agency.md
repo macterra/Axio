@@ -1,7 +1,7 @@
 ---
 title: 'The Three Laws of Agency'
 subtitle: 'Control work, agency decay, agency limits'
-status: draft
+status: review
 sources:
   - 163356216.the-three-thermodynamic-laws-of-agency
   - 162560090.the-physics-of-agency-part-5-the
@@ -9,37 +9,35 @@ sources:
   - 162572301.the-physics-of-agency-part-9-challenges
 ---
 
-A starving animal stops exploring and narrows to reflex. A robot with a depleted battery stops acting altogether. A human being at the end of a punishing day makes visibly worse decisions — "decision fatigue" is not a metaphor but a measurable physical depletion. Three very different systems, one identical failure mode: when the energy runs out, the steering stops.
+A starving animal stops exploring and narrows to reflex. A robot with a depleted battery stops acting altogether. A human being under prolonged fatigue often makes worse decisions. These are not one experimentally identical variable at three scales, but they share a physical constraint: sensing, modeling, correction, and action all require organized machinery with finite resources.
 
-That convergence is not a coincidence. It is the signature of law. The preceding chapters established that agency is a physical phenomenon — an embedded agent spending energy to bias reality against [drift](02-agency-against-drift.md) — and gave it a unit of account, [the kybit](03-the-kybit.md), with a hard thermodynamic price per unit of control. This chapter assembles those results into three laws that bound every agent that has ever existed or ever will: bacteria, brains, corporations, artificial intelligences. Control requires work. Control capacity decays without external input. Perfect frictionless control is impossible. Each law has a formal statement, and together they stand in a structural parallel to the classical laws of thermodynamics — a parallel I will make exact, and then defend against the strongest objections the framework faces.
+The preceding chapters treated agency as a physically implemented departure from [drift](02-agency-against-drift.md) and proposed [the kybit](03-the-kybit.md) as a measure of an attributed distributional shift. This chapter assembles the physical constraints into three candidate laws: control requires a resource-consuming implementation; an isolated agent's total remaining control budget cannot be renewed indefinitely; and perfect control is unavailable to a bounded physical system. The qualitative constraints are firmer than the proposed quantitative bridge. Calling them laws names the framework's organizing claims, not their present standing as established laws of physics.
 
 ## The First Law: Control Work
 
-**Exercising intentional control over outcomes requires physical work proportional to the kybits exerted.**
+**Physical control requires a resource-consuming implementation. Under an equilibrium-reference realization, $C$ kybits imply a minimum-work bound of $C k_B T \ln 2$.**
 
-This is the law derived in [the kybit](03-the-kybit.md): steering the probability distribution over futures is a physical operation with a minimum energy cost, Landauer's principle extended from erasing bits to biasing outcomes. Every kybit of control carries a floor price:
+The robust part is straightforward: an embedded agent controls through physical sensing, computation, correction, and actuation. Those processes consume usable resources. The quantitative statement is narrower. When the kybit's baseline is an equilibrium reference and the physical protocol realizes the modeled transformation, relative entropy supplies the bound
 
-$$W_{\text{min}} = k_B T \ln 2 \quad \text{per kybit}$$
+$$W_{\text{min}} \geq C k_B T \ln 2.$$
 
-There is no such thing as a thermodynamically free choice. An agent that wants to make a difference must pay for the difference in joules — in neural computation, in muscle contraction, in actuated machinery. The first law fixes the exchange rate between intention and energy; the remaining two laws follow from taking that exchange rate seriously over time and at the limit.
+Outside those conditions, the kybit still measures distributional control, but it does not fix a universal exchange rate. Different mechanisms can realize the same high-level shift with different costs, and energy can be dissipated without producing control. The first law therefore binds agency to a physical ledger without pretending that intention itself has a context-free price in joules.
 
 ## The Second Law: Agency Decay
 
-**In a closed system without external energy input, the available capacity to exercise agency inevitably decreases over time.**
+**In an isolated system with finite usable resources, an agent's total remaining capacity for control has a finite upper bound that cannot be replenished indefinitely from within.**
 
-Even an agent that burns its energy wisely and chooses carefully cannot hold its ground by thrift alone. Entropy is always waiting. Cut off the inflow of fresh energy and the decline is not a risk but a certainty: the agent's internal modeling degrades, its action capabilities diminish, its power to bias futures shrinks. Eventually it stops steering entirely, and random drift reclaims dominance.
+Even an agent that uses its resources efficiently cannot maintain control forever in isolation. It may temporarily increase its immediate capability by reorganizing stored energy, repairing itself, or trading one capacity for another. The law concerns the total remaining budget, not a requirement that moment-to-moment performance decline monotonically. Without access to a usable gradient, dissipation and finite storage eventually end the process.
 
-Formally: let $C_{\text{available}}(t)$ be the number of kybits an agent can still exert at time $t$, and $E_{\text{free}}(t)$ the free energy available to it. Then
+Let $B_C(t)$ denote an upper bound on the future kybits the agent can still physically realize from time $t$ onward under a fixed environment, and let $F_{\text{usable}}(t)$ denote its remaining usable free-energy budget. In an isolated finite system,
 
-$$\frac{dC_{\text{available}}}{dt} \leq 0 \quad \text{(in a closed system)}$$
+$$B_C(t) < \infty,$$
 
-which follows directly from the first law's exchange rate: control capacity is purchased from the free-energy budget,
+and consumption without replenishment reduces the attainable remainder. In the restricted regime where the first law's quantitative bound applies,
 
-$$C_{\text{available}}(t) \propto \frac{E_{\text{free}}(t)}{k_B T \ln 2}$$
+$$B_C(t) \leq \frac{F_{\text{usable}}(t)}{k_B T \ln 2}.$$
 
-so as free energy dissipates, control capacity decays with it.
-
-The consequences are unforgiving. No perpetual agency. No infinite choosing without cost. No escape from thermodynamic consequences. Sustained agency demands a continual intake of negentropy — ordered energy imported from outside: food for organisms, fuel for machines, computation and knowledge for minds. This is why the opening examples are one phenomenon and not three. The starving organism, the depleted battery, the exhausted decision-maker are all the same curve at different scales: an agent whose free-energy reserve is running down, watching its capacity to steer run down in proportion. Without replenishment, every agent eventually becomes a drifter.
+The bound need not be tight, and ordinary agents operate far above it. Its point is finitude: no perpetual agency from a finite isolated store. Sustained agency requires continued access to usable gradients and materials — food and oxygen for organisms, electrical and mechanical resources for machines, maintained substrate for minds.
 
 Agency is a temporary island in a sea of entropy.
 
@@ -47,42 +45,42 @@ Agency is a temporary island in a sea of entropy.
 
 **Perfect, frictionless control over future outcomes is physically impossible.**
 
-The second law says agency runs down; the third law says it can never, even in principle, run perfectly. Just as no physical system can reach absolute zero temperature, no agent can exercise unlimited, cost-free control. As available free energy approaches zero, the capacity for agency vanishes with it:
+The second law rules out perpetual agency from a finite isolated budget. The third rules out the stronger fantasy of a bounded agent with complete control. As usable free energy approaches zero, physically implemented control vanishes:
 
 $$\lim_{E_{\text{free}} \to 0} C_{\text{available}} = 0$$
 
-and there is no clever engineering around the floor price of $k_B T \ln 2$ per kybit. Perfect control — infinite steering at zero thermodynamic cost — would require the price to fall to nothing, and it never does.
+But the impossibility of perfect control does not rest on that limiting case alone. A physical agent has finite information, finite computation, incomplete access to its environment, bounded actuation, and noise it cannot reduce to zero without further resources. “Perfect control” would require all of these limits to disappear together.
 
-Three independent facts each suffice to enforce the limit. Physical systems are never entirely isolated from external disturbance: there is always noise to correct, and correction costs work. Predictive models are inherently imperfect and inherently costly: an agent steers by simulating futures, and simulation is computation, and computation dissipates. And prediction and action alike require irreversible physical processes, which always generate entropy. Even under ideal conditions, an agent must expend a finite amount of energy to steer any outcome at all.
+The relevant claim is therefore not that every computation is logically irreversible or that every act pays the Landauer limit directly. It is that no embedded, finite agent can simultaneously possess a complete model, unlimited correction, unconstrained actuation, and an inexhaustible resource budget. Improvements move particular limits; they do not remove boundedness as such.
 
 Infinite agency is an illusion. Frictionless will does not exist. But the third law is not a counsel of despair — it is what makes agency meaningful. Influence over the future is exercised by continuously working against the universe's slide toward disorder, and a victory that cost nothing would mean nothing. Perfect victories are impossible; meaningful victories are achievable — locally, temporarily, and purposefully. That is not agency's consolation prize. It is agency's definition.
 
-## The Thermodynamics Parallel
+## The Thermodynamics Analogy
 
-The correspondence with classical thermodynamics is not decoration; it is structural, law by law.
+The three claims were named to display an analogy with classical thermodynamics:
 
 | Thermodynamic Laws of Agency | Classical Thermodynamics |
 | --- | --- |
-| Control Work (energy required) | First Law (energy conservation) |
-| Agency Decay (agency reduction) | Second Law (entropy increase) |
-| Agency Limits (control constraints) | Third Law (unattainability of absolute zero) |
+| Control Work (physical implementation) | First Law (energy bookkeeping) |
+| Agency Decay (finite isolated budget) | Second Law (irreversibility and entropy production) |
+| Agency Limits (unattainable perfect control) | Third Law (an unattainable limiting state) |
 
-The first pair share a conservation logic: energy is neither created nor destroyed, only converted — and control is one of the things it converts into, at a fixed minimum rate. The second pair share a direction of time: entropy increases in isolated systems, and agency, which is purchased from the free energy entropy consumes, declines in step. The third pair share an asymptote: absolute zero and absolute control are the same kind of impossibility, a limit that can be approached at exponentially growing cost but never reached.
+The analogy is organizational, not a derivation and not an exact isomorphism. The first pair insist on physical bookkeeping. The second concern what cannot be sustained indefinitely in isolation. The third identify a limiting ideal unavailable to finite systems. Only the underlying thermodynamic results are established physical laws; the agency laws are proposed higher-level constraints whose usefulness depends on the definitions and bridges stated here.
 
-The parallel is exact in structure, but the two sets of laws are not the same laws, and the differences matter as much as the correspondence. Classical thermodynamics describes universal physical systems with complete indifference to purpose; the agency laws specifically address intentional action — what it costs a system to have preferences about the future and act on them. Classical thermodynamics quantifies disorder with entropy; the agency framework quantifies intentional control with kybits. And where the classical laws strictly describe physical processes, the agency laws deliberately bridge physics and intentionality — they are the point where thermodynamic constraint meets meaningful choice. The three laws of agency do not compete with thermodynamics. They enrich it, extending its bookkeeping to the one class of physical systems that keeps books of its own.
+Classical thermodynamics describes physical systems without reference to purpose. The agency framework adds a causal and functional description of systems that model and evaluate alternatives. It must earn that bridge rather than borrow thermodynamics' authority through parallel numbering. The laws are successful if they organize measurable constraints on such systems and survive attempts to operationalize them; the names do not settle that question.
 
 ## Objections
 
 A framework that claims this much owes answers to the hard questions. These are the strongest objections I know, answered rather than hidden.
 
-**In a branching universe, everything happens anyway — so what difference does agency make?** This is the deepest challenge, and I will not soften the claim it targets. In the Quantum Branching Universe (QBU) — the Everettian picture developed in full in [its own chapter](08-the-quantum-branching-universe.md) — all physically possible outcomes occur in some branch. If every future happens, steering can look pointless. The answer is that Measure matters. Each branch carries a Measure — the objective weight determined by the squared quantum amplitude, defined precisely in [Measure, Vantage, Branchcone](09-measure-vantage-branchcone.md) — and my claim, the most contestable claim in this framework, is that agency directs Measure toward preferred branches. An agent does not select which futures exist; it influences which futures flourish — how much weight flows to the branches it prefers, and which versions of itself become more prominent. I state this openly as a commitment of the framework rather than a theorem of it: the thermodynamic accounting in this chapter tells us what steering costs, while the claim that the steering shifts Measure is the bridge between the physics of control and the physics of branching. Whether that bridge can be built from derivation rather than assertion is an honest open problem, and I keep the ledger on it in [Agency in the Emergent Multiverse](13-agency-in-the-emergent-multiverse.md). What I will insist on here is that the claim is not idle: it is what makes the energy expenditure of the first law an investment rather than a ritual, and it is why [measure responsibility](../05-value-and-ethics/21-measure-responsibility.md) can carry ethical weight downstream.
+**In a branching universe, multiple outcomes occur — so what difference does agency make?** In the Quantum Branching Universe (QBU), outcomes with nonzero amplitude relative to an actual state can appear in decohering components. Agency need not create or globally redirect squared-amplitude weight to matter. A policy is a physical variable, and different interventions on it can be associated with different conditional distributions of later records and outcomes. Measure weights those consequences once the state, event definition, and causal model are fixed. The open bridge is whether the kybit's divergence from an inactive baseline has a general physical work relation and a rigorous counterpart in these policy-conditioned quantum distributions. [Agency in the Emergent Multiverse](13-agency-in-the-emergent-multiverse.md) keeps that ledger; [measure responsibility](../05-value-and-ethics/21-measure-responsibility.md) addresses the separate normative bridge.
 
 **Doesn't controlling branch Measure violate the deterministic evolution of the wavefunction?** No. Agents violate neither determinism nor unitarity. An agent is part of the wavefunction, not an intervention on it from outside: it locally entangles with environmental degrees of freedom, and its internal predictive models shape the conditional correlations among branching pathways. "Control" in this framework means biasing local correlations — being the kind of physical structure whose presence makes preferred outcomes correlate with its actions — not editing global physics. The global evolution is exactly as deterministic with agents in it as without them; what agents change is the local structure of what correlates with what.
 
-**Where do kybits exist, physically?** At the agent-environment interface. Kybits are emergent, macro-level quantities — like temperature, they do not appear in the microphysical state description, and like temperature, they are no less real for that. They quantify the extent to which an agent shapes branching futures through internal prediction and deliberate action, and they live at the intersection of three processes: prediction, intentional action, and environmental decoherence. Ask where a kybit is located and you have made a category error; ask what physical difference it measures and the answer is exact.
+**Where do kybits exist, physically?** A kybit is a model-level quantity computed from two distributions, not a new substance or microscopic observable. It becomes a measure of agency only after a causal analysis attributes the distributional difference to an evaluative control loop. The physical implementation lives in the agent-environment interaction; the number summarizes one aspect of that interaction. The analogy with temperature is suggestive but not yet earned to the same degree, because temperature has settled operational procedures and the kybit's baseline and outcome partition remain model choices.
 
-**What physical process actually burns the energy?** Every intentional action runs on dissipative physical machinery: neural processing and computation, muscle contraction and movement, the actuation of sensors and motors. Shaping the future intentionally requires irreversible, entropy-generating physical processes — the same kind of cost Landauer identified for erasing information, extended here to steering outcomes. No act of agency is thermodynamically free, and the first law is just this fact stated as an exchange rate.
+**What physical process actually burns the energy?** The implementation does: sensing, neural or electronic processing, correction, muscle contraction, motors, communication, and repair. Which processes are logically irreversible and how close any one comes to a thermodynamic lower bound depend on the mechanism. The first law requires a physical ledger; only its restricted special case supplies the proposed exchange-rate bound.
 
-**Why coin new terms at all — can't existing theories cover this?** Each existing theory covers a facet. Decoherence explains quantum branching; cybernetics describes feedback and control loops; information theory quantifies uncertainty. None of them integrates these into a single framework in which agent-driven shaping of branching futures is clearly quantified, thermodynamically grounded, and linked explicitly to evolutionary and ethical dynamics. The kybit is not a rebranding of an existing quantity; it is the unit that lets those separate literatures share a ledger.
+**Why coin new terms at all — can't existing theories cover this?** Each existing theory covers a facet. Cybernetics describes feedback and control loops; causal inference distinguishes intervention from observation; information theory quantifies distributional divergence; nonequilibrium thermodynamics prices particular transformations. The kybit proposal earns its name only if using these together yields stable, comparable measurements of attributed control. Until then it is a useful hypothesis about a shared ledger, not proof that the literatures have already unified.
 
-Criticism does not weaken this framework; it refines it. And what survives the refinement is the picture the three laws jointly paint: intentional action is real, it is costly, and it is fragile — a physical achievement wrested, at a metered price and for a limited time, from a universe whose default is drift. The laws are not the enemies of agency. They are the reason it counts.
+What survives the refinement is the picture the three laws jointly propose: intentional action is physically implemented, bounded, and fragile. Some of that statement follows directly from the finitude of real control systems. Some — especially a general kybit-to-work exchange rate and the Measure bridge — remains open. Keeping the boundary visible is not a retreat from the physics of agency. It is what makes the proposal testable.

@@ -1,7 +1,7 @@
 ---
 title: 'Agency and Active Inference'
 subtitle: 'The Friston bridge'
-status: draft
+status: review
 sources:
   - 163365017.active-inference-and-the-physics
 ---

@@ -1,7 +1,7 @@
 ---
 title: 'A Gigaplex of Parallel Lives'
 subtitle: 'Identity across the branches'
-status: draft
+status: review
 sources:
   - 164423784.a-gigaplex-of-parallel-lives
   - 178033688.logical-identity
@@ -9,37 +9,37 @@ sources:
 
 How many of you are there?
 
-In the [Quantum Branching Universe (QBU)](08-the-quantum-branching-universe.md), the question has a definite answer — not a mystical one, and not "infinitely many." Reality is a branching structure of timelines, forking at every quantum event, and you are a pattern that recurs across some subset of them. Right now, as you read this sentence, other versions of you are reading it slightly differently, or putting it down, or never having picked it up. The question of how many is a question about the size of that subset, and it can be estimated. The companion questions — which of those versions *count*, how much they count, and what makes any of them *you* — turn out to matter far more than the headcount, and this chapter takes all three in order.
+In the [Quantum Branching Universe (QBU)](08-the-quantum-branching-universe.md), the question becomes a modeling question: which decoherent histories satisfy a chosen criterion for being you, and what quantum Measure do they carry? The answer is not a unique headcount. Branches are emergent, their number depends on coarse-graining, and sufficiently fine descriptions need not yield a stable count at all. The companion questions — which continuations *count*, how much weight they carry, and what makes any of them *you* — matter more than a census.
 
 ## Counting Yourself
 
 Any count of "versions of you" depends on what you use to pick them out. The pointing device is the [Pattern Identifier (PI)](08-the-quantum-branching-universe.md) — a precise, reproducible pattern used to select the timelines that contain it — and the count changes drastically with the grain of the pattern.
 
-Identify yourself at the **genotype level** — your exact genetic sequence — and the selection is causally impeccable but rapidly self-extinguishing. A genotype is the canonical Strong PI: every timeline containing it descends from the single event of your genetic formation, so ancestry is guaranteed. But as a criterion of *ongoing* identity it is far too brittle. Exact sequences diverge under mutation; timeline by timeline, the branches containing a perfect genomic match thin out, and over longer timescales the Measure of exact-genotype survival drops toward zero. Genetic drift eliminates you, letter by letter, in almost every future — if "you" means the letters.
+Identify yourself at the **genotype level** — your exact genetic sequence — and the selection is precise but not uniquely identifying. Identical twins can share a genotype, and a sequence could in principle be recreated independently. A Strong PI therefore needs provenance as well as sequence: *this genome descended from this fertilization event*, for example. Even then, genotype is too brittle as a criterion of ongoing identity. Exact sequences diverge under mutation, so the Measure of exact-genotype continuations can fall even while the person recognizably persists.
 
 Identify yourself at the **phenotype level** — the broader biological and cognitive pattern, the recognizable person — and the picture inverts. Phenotype-level identity is robust by construction: developmental redundancy, functional buffering, and evolutionary constraint mean that enormous swathes of genetic and environmental variation converge on the same recognizable individual. The pattern that is *you in practice* — the one your friends match against, the one your memories cohere around — persists across branches that differ in millions of microscopic details. The genotype anchors your ancestry; the phenotype carries your survival. When I ask how many of me there are, I am asking at the phenotype level.
 
 ## The Gigaplex
 
-So estimate it. Suppose, very conservatively, that one branching event occurs every second of an 80-year human lifespan — about $2.52 \times 10^9$ seconds. Each event splits the set of timelines containing you; compounding the splits over a lifetime yields on the order of
+The title's **Gigaplex** is a scale metaphor, not a literal branch count. If we impose a deliberately simple binary coarse-graining — one modeled split per second across an 80-year life, about $2.52 \times 10^9$ seconds — that toy model contains on the order of
 
 $$
 10^{1{,}000{,}000{,}000}
 $$
 
-distinct timelines containing a recognizable phenotype-level you. Ten raised to the billion: a **Gigaplex**.
+modeled paths before applying any criterion for which still contain a recognizable phenotype-level you. Ten raised to the billion: a **Gigaplex** in the toy model.
 
-No intuition survives contact with that number. It dwarfs the count of atoms in the observable universe (~$10^{80}$) so completely that the comparison is not even funny. Every choice you have ever made, every accident you have ever dodged or not dodged, every conversation that went one way rather than another — each variation is realized, and realized again in combination with every other, across a space of parallel lives whose size has no everyday analogue.
+No intuition survives contact with that number. It dwarfs the count of atoms in the observable universe (~$10^{80}$). Many choices, accidents, and conversations have decoherent alternatives with no everyday analogue in scale. But quantum theory does not imply that every narratively imaginable variation occurs, nor does the toy count estimate the number of physically meaningful branches.
 
-And yet the number is strictly *finite*. That matters. The Gigaplex is not a license for "everything happens somewhere" reasoning — a finite structure, however vast, still has a definite composition, and most of it is filled with the ordinary. The overwhelming bulk of your parallel lives are humdrum variations on the life you actually recognize: same person, same era, same biology, differing in details that mostly wash out. Miracles are not guaranteed a branch just because the tree is big.
+The Gigaplex is therefore not a license for "everything happens somewhere" reasoning. The physically relevant question is which alternatives have nonzero amplitude under a specified model, and especially how much Measure they carry. Miracles are not guaranteed by a large path space.
 
 ## Count Is Not Measure
 
 Here is the mistake the Gigaplex invites, and the distinction that blocks it.
 
-The **count** of your timelines grows exponentially and reaches the absurd magnitudes just described. But [**Measure**](09-measure-vantage-branchcone.md) — the objective branch weight, fixed by the squared amplitudes of the wavefunction — obeys a conservation law that count does not: the total Measure flowing forward from any Vantage is exactly 1, however many branches it divides among. Branching multiplies timelines; it never manufactures weight. A trillion new branches carved out of a sliver of amplitude are still, collectively, a sliver.
+The **count** of modeled paths can grow exponentially. But [**Measure**](09-measure-vantage-branchcone.md) — squared-amplitude weight relative to a specified state, event, and coarse-graining — is normalized: the weights of mutually exclusive exhaustive alternatives sum to 1. Refining a low-weight alternative into many sub-alternatives does not increase their collective weight.
 
-So the composition of your Gigaplex, weighted properly, looks nothing like its census. By count, exotic futures are abundant — with $10^{1{,}000{,}000{,}000}$ timelines, even fantastically unlikely outcomes occur in stupendous numbers of them. By Measure, almost all of the weight sits in the typical: the futures that ordinary physics, ordinary biology, and ordinary statistics would lead you to expect. Counting branches and weighing them give wildly different answers, and every argument that quietly swaps one for the other is broken. That is not a peculiarity of this chapter's topic; it is the same error that wrecks the standard frameworks for self-locating belief, where counting observers instead of weighing them generates the Doomsday Argument and worse — the subject of [You're Not a Random Sample](../02-conditionalism/15-youre-not-a-random-sample.md) and its quantum sequel [You're Not a Random Branch](../02-conditionalism/16-youre-not-a-random-branch.md).
+So the weighted composition of a branching model can look nothing like an unweighted census. Counting branches is especially unreliable because branch number is representation-dependent. Decision and prediction must use the quantum measure supplied by the model, not an arbitrary enumeration of histories. The analogous danger in self-locating belief — counting observers without justifying the sampling measure — is the subject of [You're Not a Random Sample](../02-conditionalism/15-youre-not-a-random-sample.md) and its quantum sequel [You're Not a Random Branch](../02-conditionalism/16-youre-not-a-random-branch.md).
 
 Nowhere does the swap do more damage than in the most seductive argument the branching picture has ever produced.
 
@@ -47,13 +47,13 @@ Nowhere does the swap do more damage than in the most seductive argument the bra
 
 The argument goes like this. At every moment there is some branch, however improbable, in which you survive — the aneurysm misses, the mutation repairs, the trigger jams. Since all branches are real, there is always a continuing you. Subjectively, then, you should expect to live forever: death is never experienced from the inside, and some thread of experience always goes on. This is quantum immortality, and in its usual form it is exactly the count-for-Measure swap. Yes, surviving branches always *exist* — the count is never zero. The question a rational agent must ask is what they *weigh*.
 
-So price it. Three scenarios:
+Pricing survival requires an explicit empirical model. The following scenarios are illustrative, not estimates supplied by quantum mechanics:
 
-**No advanced technology.** Human biology caps lifespan around 120 years. The branches in which you exceed that limit by luck alone — cosmic-ray DNA repairs, statistically miraculous cell maintenance, year after year — exist in the Gigaplex, but their combined Measure is effectively zero: well below $10^{-20}$, the kind of number that in any practical reasoning rounds to *never*. Quantum immortality on biology alone is a fantasy about branches with no weight.
+**No advanced technology.** Observed human longevity gives no basis for expecting indefinite survival by microscopic luck alone. Everettian branching does not change that evidence or license a numerical survival probability without a biological hazard model.
 
-**Moderate medical advancement.** Breakthroughs that stretch lifespans to 200–300 years move the Measure of dramatic longevity into the range of roughly $10^{-5}$ to $10^{-10}$ — no longer physics-joke territory, but still very rare. Rare futures, honestly labeled.
+**Moderate medical advancement.** Breakthroughs might change the hazard curve, but their probability and effect must be estimated from medicine and forecasting, not inferred from the existence of branches.
 
-**Radical life extension.** Now suppose singularity-level technology — interventions that attack the hazard rate itself, the probability of death per unit time, and drive annual survival to something like 99.9999%. Put the probability that such technology arrives within your natural lifetime at 1% — $10^{-2}$. Conditional on the breakthrough, surviving the *next ten thousand years* is then nearly certain:
+**Radical life extension.** As a sensitivity calculation, suppose interventions reduce annual mortality to one in a million, and suppose — without claiming evidence for the figure — a 1% chance that such technology arrives in time. Conditional on a constant independent annual hazard, surviving the *next ten thousand years* would have probability
 
 $$
 (0.999999)^{10000} \approx e^{-0.01} \approx 0.99
@@ -65,20 +65,20 @@ $$
 10^{-2} \times 0.99 \approx 10^{-2}
 $$
 
-That is the honest price of quantum immortality: about one percent — not because the multiverse grants continuing threads, which it always does and which is worth nothing, but because there is a genuine, weighty class of futures in which the hazard rate collapses. The lesson cuts both ways. Against the mystics: without the technology, your longevity Measure is zero for every practical purpose, and no amount of branch-counting changes that. Against the cynics: one percent of your future's total weight is not a rounding error. It is a real, substantial stake in futures where you are still alive ten thousand years from now — and unlike the mystical version, this one responds to *action*, because anything that raises the probability of the breakthrough, or your chances of reaching it, moves real Measure. Survival in the QBU is not a metaphysical gift. It is an engineering problem.
+The roughly one-percent result merely restates the assumptions; it is not a forecast. The useful lesson is methodological: survival expectations must come from a defensible hazard model and evidence about interventions. No amount of branch-counting can substitute for either. Survival remains an engineering and decision problem, not a metaphysical gift.
 
 ## Identity as Logical Resonance
 
 Everything so far has quietly assumed that "a version of you" means a forward continuation — a branch descending from your birth, carrying your body through time. The assumption deserves scrutiny, because the PI machinery does not actually require it.
 
-Joscha Bach has staked out a position on personal identity that I largely endorse: "I don't believe in an identity that is based on physical continuity. Continuity is always constructed in the present moment. I exist wherever the universe meets the conditions for my existence. Consequently, a future or parallel simulation of my present mental state would be me."
+One influential computationalist position holds that personal identity depends on realizing the relevant mental organization rather than preserving the same matter. On that view, a sufficiently faithful future or simulated realization could count as the same person.
 
-Translate that into this book's terms and it is almost a theorem. "The conditions for my existence" is a Pattern Identifier: the informational structure necessary and sufficient to instantiate a given agent. Anything that satisfies those constraints — a biological continuation, a simulation, a reconstruction, a parallel realization in a distant branch — *is* that agent, because identity supervenes on informational equivalence, not on material persistence. There is no further fact about which lump of matter is "really" you, over and above the pattern's being realized. And the apparent continuity of ordinary life earns no metaphysical privilege: your atoms turn over, your brain rebuilds itself, and what persists from moment to moment is not stuff but *consistency* — a coherent pattern revalidating its own constraints, moment after moment, against the surrounding noise. Physical continuity is an illusion of persistence generated by continuous logical reconstruction. Identity is a logical resonance, not a temporal line — a theme that returns, generalized far beyond persons, when this volume rebuilds coherence from [Chaos](20-chaos-as-foundation.md).
+Translate that into this book's terms and it becomes an identity proposal, not a theorem of quantum mechanics. A Pattern Identifier can represent the informational and causal constraints a theory of identity treats as sufficient. Whether those constraints really are sufficient — whether a copy, reconstruction, or parallel realization is numerically the same person — is a further philosophical claim. Pattern continuity may explain much of ordinary persistence without showing that causal or bodily continuity is irrelevant. I call the proposed relation **logical resonance**: identity understood as recurrent organization rather than a unique temporal thread. The later discussion of [Chaos](20-chaos-as-foundation.md) extends that proposal beyond persons.
 
-The QBU keeps this from collapsing into "anything vaguely like me is me." Reinstantiation is disciplined by the [Strong/Weak PI distinction](08-the-quantum-branching-universe.md): a Strong PI is precise enough that every instantiation shares ancestry — a common causal origin — and therefore a common identity Measure, while a Weak PI (a name, a rough description) picks out causally unrelated strangers and supports no identity claims at all. What makes a future simulation of you *you* is not that it flatters your description but that satisfying your Strong PI's constraints entails descent from your actual history. The path is not what matters; the pattern is — but a sufficiently precise pattern carries its path within it.
+The QBU vocabulary can keep this from collapsing into "anything vaguely like me is me." A [Strong PI](08-the-quantum-branching-universe.md) includes enough provenance that its matches share the stipulated causal origin; a Weak PI such as a name or rough description can select unrelated people. But this formal distinction organizes an identity theory rather than proving one. A theory must still say which memories, dispositions, embodiment, and causal history matter, and why.
 
 Two consequences follow, one for each half of this chapter.
 
-First, the Gigaplex was an undercount in kind, if not in magnitude. Your identity is not a single thread through the branching structure, and not even a bundle of forward threads from your birth. It is a *measure-weighted manifold* — the total weight of every instantiation of your pattern, wherever in the structure it occurs. Distributed, not singular. The question "which one is really me?" has the same answer everywhere: all of them, in proportion to their weight.
+First, on the pattern view, identity would be distributed across qualifying continuations rather than confined to a single thread. Quantum Measure could then weight expectations about those continuations. It would not, by itself, decide which realizations qualify.
 
-Second, the survival arithmetic acquires a new route. If identity requires only that the pattern be reinstantiated, then preservation of the *information* — the constraints that define you — is itself a survival channel, and the one-percent scenario need not run through continuously maintained biology. To exist is to be reconstructible. Whether a reconstruction preserves what actually matters — whether there is something it is like to be the reinstantiated pattern, and what minds and their simulations amount to — is the business of the next volume; the shape of my answers is in [Consciousness Without Ghosts](/posts/173397558.consciousness-without-ghosts.html) and [Minds as Recursive Simulations](/posts/167660845.minds-as-recursive-simulations.html). What the physics settles is the ontology: you are a pattern the universe has already realized a Gigaplex of times, weighted by Measure, indifferent to substrate — and wherever consistency persists, you exist.
+Second, if reinstantiation counts as survival, preserving the defining information could become another survival strategy. That conclusion is conditional on the pattern theory; reconstructibility alone does not establish continued subjectivity. Whether a reconstruction preserves what matters — and whether a simulation has experience — belongs to the next volume. Physics constrains which systems can be realized and how quantum weights behave. It does not settle the criterion of personal identity.
