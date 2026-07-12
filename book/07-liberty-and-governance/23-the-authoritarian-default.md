@@ -1,7 +1,7 @@
 ---
 title: 'The Authoritarian Default'
 subtitle: 'Psychology, dynamics, definition'
-status: draft
+status: review
 sources:
   - 165726066.instinct-for-submission
   - 165023774.the-authoritarian-cycle

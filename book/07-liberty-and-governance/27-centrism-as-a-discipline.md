@@ -1,7 +1,7 @@
 ---
 title: 'Centrism as a Discipline'
 subtitle: 'Governance under uncertainty and irreversibility'
-status: draft
+status: review
 sources:
   - 184137688.in-defense-of-centrism
 ---

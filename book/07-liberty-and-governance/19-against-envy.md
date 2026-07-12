@@ -1,7 +1,7 @@
 ---
 title: 'Against Envy'
 subtitle: 'The invalid inference from disparity to injury'
-status: draft
+status: review
 sources:
   - 196270509.against-envy
   - 183197544.against-moralizing-distributions

@@ -1,7 +1,7 @@
 ---
 title: 'The Hardest Case: Defense'
 subtitle: 'Protection without sovereignty'
-status: draft
+status: review
 sources:
   - 194708064.when-the-protector-becomes-the-ruler
 ---

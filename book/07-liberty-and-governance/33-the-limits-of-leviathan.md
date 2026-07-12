@@ -1,7 +1,7 @@
 ---
 title: 'The Limits of Leviathan'
 subtitle: 'Scale, evaluability, and the Dominion alternative'
-status: draft
+status: review
 sources:
   - 182655739.against-leviathan
   - 182730693.dominions

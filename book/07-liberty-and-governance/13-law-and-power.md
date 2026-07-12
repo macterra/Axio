@@ -1,19 +1,19 @@
 ---
 title: 'Law and Power'
 subtitle: 'Who the rules actually bind'
-status: draft
+status: review
 sources:
   - 180208315.above-the-law
   - 170942410.the-tail-that-wags-the-dog
 ---
 
-In September 2025, a missile fired by U.S. forces struck a small boat off the coast of Trinidad. The vessel was suspected of carrying drugs. Commanders watched it burn on a live drone feed, and as the smoke cleared they saw something they had not planned for: two survivors clinging to the smoldering wreck. The Special Operations commander overseeing the attack ordered a second strike — reportedly to comply with instructions from the Secretary of Defense — and the two men were killed in the water.
+In September 2025, U.S. forces struck a boat in the Caribbean that the administration alleged was trafficking drugs. Two survivors of the initial attack were killed in a follow-up strike. Some operational details and the chain of authorization remain contested, and congressional inquiries continued after the first reports. The episode must therefore be narrated with attributed claims rather than omniscient certainty.
 
-I want to state the legal situation plainly, because it is not complicated. There is no plausible legal theory, domestic or international, under which either strike was lawful. The men were not combatants in any armed conflict. They had been convicted of nothing, charged with nothing, warned of nothing. Suspicion of smuggling is not a capital offense in any legal system on Earth, and even if it were, suspicion is not a verdict. These were intentional killings of civilians outside any war — and the second strike, against helpless survivors, is the kind of act the laws of war were specifically written to prohibit.
+The legal dispute is grave but not accurately described as nonexistent. The administration asserted an armed-conflict theory and defended the operation as lawful; critics disputed that any relevant armed conflict existed and argued that suspected trafficking should be handled through arrest and trial. Even under the law of armed conflict, persons *hors de combat*, including qualifying shipwrecked survivors, receive protection. The [UN High Commissioner for Human Rights concluded that the broader boat-strike campaign violated international human-rights law](https://www.ungeneva.org/en/news-media/news/2025/10/112362/us-strikes-caribbean-and-pacific-breach-international-law-says-un). That is an authoritative legal assessment, not yet a final adjudication of individual criminal liability.
 
-Conduct like that should trigger investigations, hearings, and formal charges. Instead it triggered nothing. The event dropped out of public consciousness within days. Institutions fell silent. The machinery of enforcement never engaged — not because the facts were hidden, but because everyone who might have engaged it understood, without needing to be told, that it would go nowhere.
+The strike did trigger bipartisan scrutiny, demands for documents, hearings, public legal analysis, and continuing congressional investigation. Those processes matter and should not be erased merely because they had not produced a prosecution. The sharper question is whether oversight has timely access to evidence, independence, remedial power, and the capacity to impose consequences on senior officials.
 
-There is a comforting civic mantra meant to cover moments like this: *no one is above the law.* It is repeated with the same ritual confidence as *justice is blind* and *the rules apply equally to all.* But these are not descriptions of the world. They are aspirational myths — moral architecture deployed to obscure a far simpler truth: **law binds only where power cannot override it.**
+There is a comforting civic mantra: *no one is above the law.* It is an aspiration and a design requirement, not a description that verifies itself. The episode illustrates a more defensible proposition: **law's practical force weakens when investigative independence, jurisdiction, evidence, and sanction cannot reach the actor.** Norms can still shape legitimacy and later accountability; power affects whether they bite now.
 
 ## How the Strong Slip the Net
 
@@ -21,7 +21,7 @@ There is a comforting civic mantra meant to cover moments like this: *no one is 
 
 Legal systems depend on something deeper than written rules: the capacity to impose consequences. A statute with no enforcement behind it is a press release. When an actor's reach extends beyond the system's ability to respond, the rules lose operational force — not repealed, not amended, just dead at the point of application.
 
-The United States sits precisely in that zone. It holds veto power over the global institutions that would judge it. It refuses the jurisdictions that might hold it accountable. It classifies the evidence that would be needed to test its actions. And even the allies who object privately will not challenge it openly, because they depend on American security guarantees and economic weight. The point is not that the rules are unclear. The rules governing the Trinidad strikes are among the clearest in international law. The point is that no institution has the leverage to enforce them upward.
+The United States has unusual capacity to resist external sanction: a Security Council veto, selective acceptance of international jurisdiction, control over classified evidence, and great military and economic leverage. Domestic courts, inspectors general, Congress, elections, allies, service law, and public disclosure still form possible constraint circuits. The empirical question is which of them can obtain the facts and impose consequences, not whether literally no institution exists.
 
 Run the counterfactual and the structure becomes explicit. If a small state had carried out the identical attack — a missile strike on civilians in international waters, followed by a second strike on the survivors — the legal process would move predictably: condemnations, resolutions, sanctions, possibly a referral to an international court. The conduct is the same in both cases. Only the identity of the actor changes. And the identity of the actor, not the conduct, determines the legal consequence.
 
@@ -35,7 +35,7 @@ When one actor becomes capable of projecting force without fear of reprisal, the
 
 And this is not an anomaly or a corruption of the current order. It is how the current order is built. The postwar institutions were designed by the powers they would nominally constrain, and the design shows.
 
-Rather than treating impunity as an occasion for moral outrage — though outrage is warranted — I treat it as a diagnostic. Impunity is information. It reveals where enforcement capacity stops. It reveals where coercive authority has escaped feedback. It reveals where institutional constraints are too weak to shape behavior, and where future harms will accumulate because no corrective force exists to check them. The lesson is not merely that the world is unjust, though it is. The lesson is that our political architecture concentrates power faster than it distributes responsibility — and the gap between the two is exactly where events like the Trinidad strikes happen. The epistemic dimension of that event — what it means for a state to treat an accusation as a warrant for execution — is taken up in [the next chapter](14-the-epistemics-of-guilt.md). Here the point is structural: whatever the epistemics, no process existed that could have imposed a consequence.
+Rather than treating possible impunity only as an occasion for outrage, treat it as a diagnostic. Delayed, secret, dependent, or toothless review reveals where enforcement capacity weakens and where coercive authority may escape feedback. The lesson is not that no corrective process exists; it is that concentrated power can outrun the speed, information, and leverage of the processes meant to constrain it. The epistemic dimension — what it means for a state to treat accusation as a warrant for lethal force — is taken up in [the next chapter](14-the-epistemics-of-guilt.md).
 
 So the phrase "above the law" turns out to denote something more precise than privilege. It denotes a **structural position**: a point in the political landscape where reciprocal constraints cannot reach. The Trinidad strikes make that topology visible — an actor with overwhelming reach, acting in a space where no mechanism can impose consequences, before an audience that has stopped expecting one.
 

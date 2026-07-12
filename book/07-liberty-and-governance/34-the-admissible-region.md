@@ -1,7 +1,7 @@
 ---
 title: 'The Admissible Region'
 subtitle: 'Politics as phase space'
-status: draft
+status: review
 sources:
   - 185641221.politics-as-phase-space
 ---

@@ -1,7 +1,7 @@
 ---
 title: 'Fictions of the Collective'
 subtitle: 'Nations are not agents; interests are not primitives'
-status: draft
+status: review
 sources:
   - 183448517.the-national-interest-fallacy
   - 165264123.the-myth-of-the-collective-will

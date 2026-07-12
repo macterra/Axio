@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 4 underway — Volumes 1–6 edited and in author review; Volume 7 is next.** The manuscript contains nine volumes, 241 chapters, and roughly 550,000 words. Phase 1 established the editorial control documents; Phase 2 confirmed the nine-volume architecture with targeted revisions recorded in `book/editorial/architecture/`. Volume passes are recorded in `book/editorial/volume-edits/`. Editing now proceeds through the applied volumes.
+Status: **Phase 4 underway — Volumes 1–7 edited and in author review; Volume 8 is next.** The manuscript contains nine volumes, 241 chapters, and roughly 550,000 words. Phase 1 established the editorial control documents; Phase 2 confirmed the nine-volume architecture with targeted revisions recorded in `book/editorial/architecture/`. Volume passes are recorded in `book/editorial/volume-edits/`. Editing now proceeds through the applied volumes.
 
 ## Editorial goals
 
@@ -184,6 +184,8 @@ Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/0
 
 At roughly 95,000 words, this is the strongest candidate for substantial compression.
 
+Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/07-liberty-and-governance.md`.
+
 - Preserve the mature Grey Zone position and revise earlier categorical passages around it.
 - Reconcile the earlier treatment of incitement as non-coercive speech with its later classification as delegated violence.
 - Apply reciprocity and symmetry tests to the book's preferred institutions.
@@ -333,4 +335,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Continue Phase 4 with the Volume 7 chapter-level edit. Preserve its mature Grey Zone position, reconcile incitement and delegated violence with Volume 5, compress repeated ideological prosecutions, and subject preferred governance institutions to the same contestability, capture, coercion, and evidence standards applied to states and firms in Volume 6.
+Continue Phase 4 with the Volume 8 chapter-level edit. Define the explanatory work of cultural patterns without literalizing group minds, establish one capture mechanism before its applications, steelman contemporary cases symmetrically, and separate diagnosis from factional judgment.

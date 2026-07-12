@@ -1,7 +1,7 @@
 ---
 title: 'The Coercion Continuum'
 subtitle: 'Degree, not kind'
-status: draft
+status: review
 sources:
   - 164678345.from-sovereignty-to-slavery
   - 170825921.statism-is-always-authoritarian

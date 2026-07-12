@@ -279,6 +279,59 @@ volumes:
 
   - slug: 07-liberty-and-governance
     title: Liberty, Coercion, and Governance
+    parts:
+      - title: "Part I — Coercion and Its Burden"
+        chapters:
+          - 01-the-individualist-premise
+          - 02-upgrading-liberty
+          - 03-the-coercion-continuum
+          - 04-extortion-funded-organizations
+          - 05-the-grey-zone
+      - title: "Part II — Rights and Their Collisions"
+        chapters:
+          - 06-rights-are-forged
+          - 07-needs-conflicts-and-hard-cases
+      - title: "Part III — Speech and the Causal Boundary"
+        chapters:
+          - 08-the-listeners-right
+          - 09-where-speech-ends
+          - 10-the-censorship-machine
+          - 11-civilizational-infrastructure
+      - title: "Part IV — Law, Justice, and Movement"
+        chapters:
+          - 12-two-kinds-of-law
+          - 13-law-and-power
+          - 14-the-epistemics-of-guilt
+          - 15-restitution-not-retribution
+          - 16-borders-and-movement
+      - title: "Part V — Equality, Need, and Utopia"
+        chapters:
+          - 17-agency-not-equality
+          - 18-the-corruption-of-compassion
+          - 19-against-envy
+          - 20-against-socialism
+          - 21-against-communism
+          - 22-against-utopia
+      - title: "Part VI — Political Pathologies and Epistemic Discipline"
+        chapters:
+          - 23-the-authoritarian-default
+          - 24-why-liberalism-loses
+          - 25-fictions-of-the-collective
+          - 26-words-that-lost-their-teeth
+          - 27-centrism-as-a-discipline
+      - title: "Part VII — From Monopoly to Protocol"
+        chapters:
+          - 28-the-conversion-of-coercion
+          - 29-the-archist-axiom
+          - 30-anarchy-is-not-chaos
+          - 31-the-hardest-case-defense
+          - 32-exit-to-protocol
+          - 33-the-limits-of-leviathan
+          - 34-the-admissible-region
+          - 35-axiocracy
+      - title: "Fictional Coda — The Price of Breath"
+        chapters:
+          - 36-the-price-of-breath
 
   - slug: 08-culture-and-memetics
     title: Culture, Memetics, and Ideology

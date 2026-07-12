@@ -1,7 +1,7 @@
 ---
 title: 'The Censorship Machine'
 subtitle: 'How liberal societies drift into cognitive regulation'
-status: draft
+status: review
 sources:
   - 180658803.the-thought-police
   - 179943509.not-up-for-debate

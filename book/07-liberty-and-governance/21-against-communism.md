@@ -1,7 +1,7 @@
 ---
-title: 'Against Communism'
-subtitle: 'The machinery of maximum immiseration'
-status: draft
+title: 'Against Marxist-Leninist Communism'
+subtitle: 'The machinery of one-party command'
+status: review
 sources:
   - 202354371.against-communism
   - 165430456.communism-at-home
@@ -20,7 +20,7 @@ So much for why it fails. What follows is the harder claim: *how* it fails, and 
 
 ## The Narrow Category
 
-The ideology that has immiserated the most human beings can be named with some precision. It is Marxist-Leninist state communism, in its twentieth-century revolutionary form.
+The target can be named with precision: Marxist-Leninist state communism in its twentieth-century revolutionary form. Claims that it “immiserated the most” depend on disputed categories, counterfactuals, time spans, and measures; the argument does not need that ranking.
 
 Keep the category narrow, because the looser versions acquit the guilty. "The left," "socialism," "equality," "concern for the poor" are all too broad to carry the charge. In [Against Socialism](20-against-socialism.md) I argue that socialist policy has to be judged along dimensions of dose, domain, monopoly, exit, and feedback; by that taxonomy, communism is the limiting case — maximal dose, every domain, total monopoly, locked exit, feedback destroyed. The catastrophe came from a specific machine with specific parts:
 
@@ -67,27 +67,19 @@ The Great Leap Forward was that belief converted into agriculture. Local officia
 
 The Cultural Revolution added a second kind of ruin: the deliberate wrecking of trust, learning, expertise, and inherited culture, taught through denunciation and ideological theater. The dead are only part of the bill. The survivors were trained into fear, conformity, and a permanent gap between what they said and what they thought.
 
-## Cambodia and the Pure Experiment
+## Cambodia and the Extreme Case
 
 The Khmer Rouge showed the doctrine stripped of even the practical brakes of industrial statecraft. Cities emptied. Money abolished. Families broken on purpose. Knowing a foreign language could get you killed. A whole society was driven through an agrarian fantasy run by armed teenagers.
 
-Cambodia gets filed as an outlier — too insane to count. The excuse is too convenient. Pol Pot did not invent a new hatred; he took the recurring communist hatreds and drove them to the end of the road: hatred of markets, of cities, of hierarchy, of intellect, of inherited culture, of any human bond the party did not author, and the dream of remaking man by force. Most communist regimes stopped short of Cambodia. They stopped because exhaustion or circumstance stopped them, not because the doctrine contained a brake.
+Cambodia is an extreme case, and extremity complicates rather than erases comparison. Khmer Rouge rule combined communist revolution, agrarianism, nationalism, war, racial persecution, institutional collapse, and extraordinary leadership choices. Several mechanisms recur elsewhere — destruction of independent institutions, abolition of price signals, class enemies, forced collectivization, locked exit — but the case does not prove that every communist movement contains Cambodia in miniature. It shows what a revolutionary monopoly without effective brakes can do under those conditions.
 
 ## North Korea and the End State
 
 North Korea is the syndrome in its mature form: the party-state, the command economy, the camps, the sealed information, the militarized population, the catechism, the near-total abolition of private life, plus dynastic god-worship and a quarantine against the outside world. Watch how fast revolutionary equality curdles into caste. The party that abolishes class becomes a class. The state that abolishes exploitation becomes the only exploiter left. The creed that promised emancipation produced subjects who cannot speak, move, trade, worship, read, or leave.
 
-## The Rival Cases
+## Comparative Scope
 
-Nazism is the more naked evil. Its doctrine is biological hierarchy, purification, conquest, extermination — the depravity sits on the surface and announces itself. If the question is which ideology is most monstrous in its explicit creed, Nazism wins without contest. But the Reich lasted twelve years over a continent it mostly never held in peace. If the question is which ideology produced the most total human immiseration in practice, communism has the stronger claim: it ruled more people, lasted longer, reproduced across more regimes, and ground societies down through famine, terror, surveillance, stagnation, and rot.
-
-Empire is the hardest case. The transatlantic slave trade, plantation slavery, settler conquest, the Belgian Congo, the imperial famines, indigenous dispossession — this belongs in the center of the evidence, not the footnotes. Under a broad reading of "ideology," colonialism is communism's strongest competitor; under a narrower one — a coherent modern doctrine instantiated again and again through a single recognizable state form — communism wins the grim prize. Colonialism also demands a more tangled causal account, because some colonized societies did inherit railways, courts, schools, clinics. Those inheritances do not absolve conquest. A railway laid to move troops and minerals may later carry farmers to market, but later usefulness is not retroactive consent. And most of what gets credited to empire is better credited to science, trade, and industrial technique, which traveled without requiring a flag planted by force. Japan and Thailand modernized without being colonized. The honest counterfactual is not empire versus stagnation; it is empire versus the other roads into the modern world.
-
-Here is the asymmetry that decides the ranking. Colonialism was often parasitic on real engines of human improvement — markets, navigation, science, law, medicine, literacy — engines it exploited and disfigured but did not switch off. Marxist-Leninism went after those engines directly. It attacked private enterprise, market prices, independent associations, secure property, free inquiry, and honest feedback, because each of them was a rival mind. Communist regimes did raise literacy and basic health in poor agrarian societies, and those gains were real. They came from mass education and public health, the common machinery of modernization. The distinctively communist addition was the party monopoly that turned modernization into coercion.
-
-The remaining rivals fall short on the same test. Religious absolutism has immiserated multitudes across the centuries through inquisition, heresy law, holy war, and caste, but in the modern period it does not match the communist combination of industrial administration, mass mobilization, economic monopoly, and total control of information. Nationalism is dangerous chiefly as an accelerant, lethal when it fuses with purity or empire, but the word stretches from liberal self-determination to genocide and so indicts nothing on its own.
-
-The Marxist will demand capitalism in the dock, and the word usually arrives overloaded. If capitalism means markets, prices, property, contract, and enterprise, it belongs nowhere near the top of this list. If it means slavery, colonial extraction, monopoly privilege, bailouts, and corporate capture, the critic has smuggled empire, bad law, and state favoritism in under one label and billed the market for all of it. Those harms should be tried under the mechanisms that produced them; no serious accounting holds markets responsible for every cruelty committed within sight of money. Communism stands apart because its worst features are not corruptions of its architecture. They are the architecture.
+Nazism, colonial empires, racial slavery, religious absolutism, nationalist conquest, and predatory market-state systems generated different forms of mass harm. Ranking them on a single ledger would repeat the aggregation error this book rejects: definitions, populations, duration, counterfactual development, death, deprivation, and lost agency do not collapse cleanly into one score. Comparison is still useful at the level of mechanisms. Marxist-Leninist regimes repeatedly combined one-party monopoly, command allocation, political terror, information control, and locked exit. Their public-health, literacy, industrial, and social outcomes must be included alongside famine, repression, scarcity, and foregone alternatives. The defensible indictment is recurrence of that institutional syndrome, not a trophy for being history's uniquely worst ideology.
 
 ## The Retreats Are the Evidence
 
@@ -109,6 +101,6 @@ The case should not rest on death tolls alone. The numbers are contested, and th
 
 The standard defense says none of these regimes was real communism, since none reached the classless, stateless promised land. In a trivial sense, true. The defense still fails, because you judge a political system by the road it has to travel, not by the destination it swears lies just past the horizon once all opposition is gone.
 
-The road was always the same: dictatorship of the proletariat, party supremacy, the subordination of property, the suppression of rival institutions, the coercive remaking of society. Those instruments recur because every regime trying to build the theory reaches for them. A doctrine that keeps producing secret police and famine cannot be rescued by an unbuilt heaven — the general form of that rescue, and why utopian destinations corrupt the roads toward them, is the argument of [Against Utopia](22-against-utopia.md). The honest communist owes an answer to a harder question: why does the attempt keep ending in camps, censorship, sealed borders, party aristocracy, and economic sclerosis? Blaming each failure on betrayal, encirclement, or insufficient purity is not analysis. It is theology with the serial numbers filed off.
+The recurring road ran through dictatorship of the proletariat, party supremacy, subordinated property, suppressed rival institutions, and coercive social remaking. The cases differed and external conflict mattered, but repeated resort to secret police, censorship, forced collectivization, restricted exit, and party privilege is evidence about the institutional program, not merely a succession of unrelated betrayals. [Against Utopia](22-against-utopia.md) addresses the general error of acquitting a road by appealing to an unbuilt destination.
 
-Marxist-Leninist communism earns first place by scale, duration, recurrence, and mechanism. It produced a single recognizable syndrome wherever it took hold: one-party monopoly, the command economy, ideological policing, the locked border, the demolition of independent institutions, state ownership of truth, and the conversion of failure into treason. Its distinctive crime was the machine itself. It took an arrangement that works at the kitchen table — precisely because trust, knowledge, and love do the enforcing — and imposed it on hundreds of millions of strangers, where only terror could hold it in place. It built societies that were poorer, more frightened, more dishonest, and more dependent, that could no longer feel their own injuries or speak their own minds — and it called the whole apparatus emancipation.
+Marxist-Leninist communism warrants condemnation by scale, duration, recurrence, and mechanism. Across varied cases it repeatedly produced one-party monopoly, command allocation, ideological policing, restricted exit, weakened independent institutions, official control of truth, and the conversion of failure into treason. Its lesson is institutional: arrangements sustained by intimacy and local knowledge cannot simply be imposed on millions of strangers, and a party empowered to force the substitution will predictably destroy the feedback that could correct it.

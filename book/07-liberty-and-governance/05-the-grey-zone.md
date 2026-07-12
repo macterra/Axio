@@ -1,7 +1,7 @@
 ---
 title: 'The Grey Zone'
 subtitle: 'When coercion can be justified — provisionally'
-status: draft
+status: review
 sources:
   - 197280708.the-grey-zone-of-coercion
 ---

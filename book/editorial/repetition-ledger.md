@@ -92,10 +92,14 @@ Status labels:
 
 ### Volume 7
 
-- At roughly 95,000 words, this volume contains the largest repetition burden.
-- State/coercion comparisons, collective-will critiques, and anti-utopian arguments recur across Parts I, V, VI, and VII.
-- The mature Grey Zone position should govern earlier polemics; otherwise the volume appears to alternate between categorical anarchism and conditional legitimacy.
-- Socialism and communism chapters should remain distinct only where mechanisms differ.
+- **Phase 4 decision:** Chapters 2–5 own the coercion-to-legitimacy sequence. The Agency Protection Principle supplies a necessary threshold; the Grey Zone supplies evidence, necessity, proportionality, reciprocity, containment, and review. Later labels do not decide legitimacy categorically.
+- **Phase 4 decision:** Chapter 4 and Volume 6 own the funding seam. Voluntary payment is evidence of value; nonpayment is ambiguous under collective action, purchasing power, liquidity, and transaction costs.
+- **Phase 4 decision:** Chapter 9 owns the speech reconciliation. Preparatory propaganda remains an analytic category; only intentional operational participation in a specific credible harm process can qualify as delegated violence.
+- **Phase 4 decision:** Chapters 12–16 treat common law, juries, restitution, and borders as comparative institutions. No preferred mechanism is self-validating, and current legal controversies are attributed and time-indexed.
+- **Phase 4 decision:** Part V escalates by mechanism rather than repeating “need is not title”: inequality mechanisms, coercive compassion, envy, socialized provision, Marxist-Leninist one-party command, and utopian closure. Repeated premises and the ideology-ranking detour were compressed.
+- **Phase 4 decision:** Chapters 29–32 preserve defense as open. Partial private provision and protocol experiments keep alternatives available but do not prove that collective defense, enforcement, universal access, or physical monopoly have been solved.
+- **Phase 4 decision:** Chapters 30 and 33–35 use realistic exit, not formal permission, and pair exit with voice, remedy, portability, dependency analysis, and protection of third parties.
+- **Phase 4 decision:** Chapter 35 owns Axiocracy as a research proposal. Prices and costly signals inform resource governance but do not determine equal standing, legitimate force, succession, amendment, or the claims of agents without purchasing power. Chapter 36 is a fictional stress test, not evidence.
 
 ### Volume 8
 

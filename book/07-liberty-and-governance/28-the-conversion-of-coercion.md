@@ -1,7 +1,7 @@
 ---
 title: 'The Conversion of Coercion'
 subtitle: 'Politics as exploit; civilization as its replacement'
-status: draft
+status: review
 sources:
   - 175530394.the-death-of-politics
   - 165751936.civilization-as-an-evolutionary-process

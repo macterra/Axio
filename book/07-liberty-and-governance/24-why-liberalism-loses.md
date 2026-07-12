@@ -1,7 +1,7 @@
 ---
 title: 'Why Liberalism Loses'
 subtitle: 'The structural unpopularity of liberty'
-status: draft
+status: review
 sources:
   - 165488598.the-paradox-of-classical-liberalism
   - 165419043.forever-adolescents
