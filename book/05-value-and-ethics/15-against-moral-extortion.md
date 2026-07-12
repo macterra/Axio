@@ -1,7 +1,7 @@
 ---
 title: 'Against Moral Extortion'
 subtitle: 'Need does not create claim'
-status: draft
+status: review
 sources:
   - 181154770.against-moral-extortion
   - 197238968.death-does-not-command-service

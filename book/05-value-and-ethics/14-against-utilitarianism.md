@@ -1,7 +1,7 @@
 ---
 title: 'Against Utilitarianism'
 subtitle: "Six fractures in Singer's moral arithmetic"
-status: draft
+status: review
 sources:
   - 194936295.against-utilitarianism
   - 164891451.against-cosmic-utility

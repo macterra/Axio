@@ -1,7 +1,7 @@
 ---
 title: 'What Counts as Coercion'
 subtitle: 'The credible threat of harm to gain compliance'
-status: draft
+status: review
 sources:
   - 164902314.what-counts-as-coercion
   - 165665795.credibility-credence-and-coercion
@@ -12,9 +12,9 @@ A mugger holds a loaded gun and says, "Give me your wallet or I'll shoot." Every
 
 Here is the definition:
 
-**Coercion is the credible threat of actual harm to gain compliance.**
+**Coercion is a credible conditional threat of a material, non-consensual setback used to obtain compliance.**
 
-The formulation owes a debt to Robert Nozick, who offered something similar in *Anarchy, State, and Utopia*; this version is refined for clarity and operational use. It has four elements — *credible*, *threat*, *actual harm*, *to gain compliance* — and every one of them is load-bearing. Remove any single element and coercion vanishes, leaving behind something else that deserves a different name. The way to see this is the way to test any definition: pair each element with a case that has it and a near-neighbor that lacks it, and watch the verdict flip.
+The formulation owes a debt to Robert Nozick, who offered something similar in *Anarchy, State, and Utopia*. It has four elements — *credible*, *conditional threat*, *material setback*, *to obtain compliance* — and each excludes important near-neighbors. Hard cases remain at the baseline, materiality, and attribution boundaries; this is a decision rule to test, not a discovery that ordinary language has only one correct extension.
 
 ## The Four Elements
 
@@ -22,7 +22,7 @@ The formulation owes a debt to Robert Nozick, who offered something similar in *
 
 **Threat.** The harm must be conditional: if you do not comply, harm will follow; if you do, it won't. "If you don't sign this contract, we'll destroy your reputation" is a threat — the harm is avoidable through compliance, which is precisely what gives it leverage. "I'm going to fire you" is not a threat in this sense; it is a statement of fact, a prediction of unconditional harm. It becomes coercion the moment an escape hatch is attached: "...unless you work this weekend." The conditionality is the mechanism. A harm you cannot avoid by complying cannot be bargaining with your agency.
 
-**Actual harm.** The threatened consequence must be something the coerced agent has genuine reason to avoid. "Pay your taxes or you'll be imprisoned" qualifies — imprisonment is harm by any account. "If you don't agree, I'll be disappointed" does not, unless the disappointment is backed by material consequence. Emotional discomfort, withheld approval, the prospect of someone thinking less of you: these can influence behavior, but they are not actual harm, and calling them coercion inflates the concept until it covers all social life. Exactly what harm is gets its own definition in [What Counts as Harm](11-what-counts-as-harm.md); for now the working test is that the consequence must be a real setback, not a mere displeasure.
+**Material setback.** The threatened consequence must credibly worsen the target's bodily integrity, liberty, property, livelihood, reputation, relationships, or functional agency relative to an appropriate baseline. Mere disappointment is not enough, but emotional and social mechanisms cannot be excluded categorically: dependency, isolation, humiliation, and withdrawal of essential support can materially constrain agency. Exactly what counts as harm is developed in [What Counts as Harm](11-what-counts-as-harm.md); this element prevents ordinary persuasion and every unwelcome feeling from becoming coercion while retaining nonphysical threats that genuinely narrow options.
 
 **To gain compliance.** The purpose of the threat must be to induce specific behavior. "Hand over the documents or I'll leak your private messages" is aimed at altering what you do next. "You're going to jail because you broke the law" is not — it is punishment, delivered after the fact, with no behavior left to alter. Punishment can be unjust, disproportionate, or cruel, but it is a different act with a different analysis. (The *advance* threat of punishment — pay your taxes or else — is exactly how law coerces; the retrospective sentence is not.)
 
@@ -40,7 +40,7 @@ The framework already owns the right instrument. **Credence** — the subjective
 
 The consequence falls out immediately: credibility is subjective and agent-relative. It is not an absolute feature of the threat itself — not a fact about the gun, the muscles, or the leaked documents — but a fact about the epistemic state of the agent receiving it.
 
-The test case: a mugger implies he has a gun concealed in his pocket. In reality it is a toy, incapable of harming anyone. But the victim, reading the context, the behavior, and the implication, rationally assigns a high Credence to a real firearm. The threat is credible, and the scenario is coercion — even though no genuine harm could ever have been delivered. Coercion does not require the capacity to harm. It requires only the rational expectation of harm, because it is the expectation, not the capacity, that reaches into the victim's decision and bends it.
+The test case: a mugger implies he has a gun concealed in his pocket. In reality it is a toy, but the victim rationally assigns substantial Credence to a real firearm. The threat can coerce because the expected setback alters the victim's choice. This requires a distinction between the coercive act and the threatener's capacity: a bluff may successfully coerce, while an incredible threat backed by real force may fail to influence. Evidence and context determine credibility; no universal numerical threshold does.
 
 The relativity cuts both ways. A perfectly serious threat, backed by real capability, fails to coerce an agent who assigns it low Credence — the mugger with a real gun that his victim mistakes for a toy is attempting coercion and failing at it. And a seemingly minor threat can be profoundly coercive if it commands high Credence in its particular target. This is why coercion cannot be read off the threatener's resources; you have to look at the victim's rational epistemic state.
 
@@ -54,13 +54,13 @@ Coercion's nearest neighbor deserves more than a boundary line, because the two 
 
 **Coercion** is the conditional attack. "Hand over your wallet or I'll stab you" leaves the victim's options physically intact — comply, resist, escape are all still there. What the threat does is revalue them. The alternatives to compliance are poisoned with extreme negative expected consequences, so that only compliance appears rationally accessible. Nothing has been removed from the choice landscape; the landscape has been distorted until every path but one runs uphill into fear.
 
-In the Quantum Branching Universe (QBU) — the Everettian picture of reality as branching timelines, whose [formal construction](../01-physics-of-agency/08-the-quantum-branching-universe.md) belongs to another volume — the distinction becomes exact. Violence *deletes branches*: death, injury, and destroyed resources prune entire sets of possible futures permanently from the tree. Coercion *revalues branches*: none are removed, but most are loaded with such negative value that the agent is funneled toward one distorted path. Violence is brute force in action; coercion is violence-in-potential, harnessed strategically.
+The Quantum Branching Universe (QBU) — the Everettian picture developed in another volume — offers a limited analogy, not an exact distinction. Violence physically changes which future capacities remain available to an injured agent within a history. Coercion changes the target's decision landscape by attaching a threatened setback to refusal. Everettian branches are not literally deleted by violence, and a threat can cause physical effects of its own; the point is functional. Violence directly degrades capacity, while coercion recruits the target's anticipation of degradation.
 
 The distinction is normative as well as analytic. Defensive violence can be justified — self-defense is the countering of force with force. Coercion is harder to justify, because it does not merely counter force; it instrumentalizes another's agency, conscripting the victim's own rationality as the delivery mechanism of the attack. Where the boundaries of justified coercion actually lie — the pre-consented, the defensive, the compensatory — is the work of [The Boundaries of Force](12-the-boundaries-of-force.md).
 
 ## Speech at the Boundary
 
-One application matters enough to state here, briefly. Speech is not violence: words, however harsh or inflammatory, do not collapse anyone's choice space, and violence requires physical force or its direct equivalent. But sometimes speech *is* coercion: when words constitute a credible threat of actual harm to gain compliance, they are not expression about a coercive act — they are the coercive act itself. "We should rise up against the government" is protected; "Do what I say or I'll burn your house down" is not. Incitement is not coercion: calls to action are permissible, threats are not. That single line marks the precise boundary at which speech becomes an agency-violating act, and it lets you protect all speech short of coercion without pretending that threats are opinions or that opinions are violence. The full defense of that position — [why speech is not violence](/posts/173476672.speech-is-not-violence.html), [why incitement is not coercion](/posts/171703023.incitement-is-not-coercion.html), and [the case for free speech itself](/posts/169560195.free-speech.html) — belongs to a later volume.
+Speech is not automatically violence or coercion. A direct credible threat used to obtain compliance is itself coercive. Incitement occupies a different but adjacent category: a general expression of approval or advocacy is not coercion merely because it is inflammatory, while intentional direction or solicitation of a specific harmful act can function as delegated violence when the speaker's communication is sufficiently connected to the actor and the threatened target. Volume 7 owns the legal and political boundary. The ethical point needed here is narrower: classification turns on causal role, intent, specificity, and credible connection to harm, not on whether the medium was words.
 
 ## The Shape of the Threat
 

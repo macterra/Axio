@@ -1,7 +1,7 @@
 ---
 title: 'Phosphorism'
 subtitle: 'Chosen values, illuminated'
-status: draft
+status: review
 sources:
   - 167118984.phosphorism-illuminating-agency
   - 166978754.valorism
@@ -76,27 +76,8 @@ One distinction keeps this honest. At any given moment your most pressing requir
 
 The apex, then, is exactly where the Valorist demand bites hardest. Since you have a highest value either way, the only question is whether it was installed or chosen. In the epistemic domain I have already argued the apex belongs to coherence, held as [sacred](../02-conditionalism/18-sacred-coherence.md) — the one value that can occupy the top without freezing, because a commitment to coherence just is a commitment to correction. In the axiological domain Phosphorism makes the parallel move: authenticity at the apex, the value that governs how every other value is held. The two crowns are consistent, and they had better be — an authentically chosen value system that contradicted itself would fail both tests at once. Everyone worships something. Phosphorism's whole content is: know what, and choose it in the light.
 
-## Measuring the Distance
+## Comparing the Commitments
 
-A sidebar, for those who want the comparison of value systems to be more than rhetoric. Value systems can be compared quantitatively. Represent each system as a high-dimensional vector — one dimension per ethical principle, weighted by importance — and measure alignment with cosine similarity, the angle between the vectors:
+A comparison of value systems can be more disciplined than trading labels, but numerical precision is usually false precision. The dimensions, scales, and weights would all be chosen by an assessor; a cosine score produced from them would primarily measure that assessor's encoding. The useful work comes earlier: state the commitments, identify convergence, and expose the disagreements that affect conduct.
 
-$$\text{Cosine Similarity} = \frac{\vec{A} \cdot \vec{B}}{||\vec{A}|| \times ||\vec{B}||}$$
-
-A value of $+1$ is perfect alignment, $0$ is orthogonality (the systems are simply about different things), and $-1$ is direct opposition. As an illustration, here are Christianity and Phosphorism as 10-dimensional vectors:
-
-| Ethical Dimension | Christianity | Phosphorism |
-|---|---:|---:|
-| Sanctity of Life | 0.9 | 0.3 |
-| Universal Obligation | 1.0 | 0.1 |
-| Love (Agape) | 0.9 | 0.5 |
-| Truthfulness/Integrity | 0.8 | 0.9 |
-| Stewardship/Responsibility | 0.8 | 0.9 |
-| Forgiveness/Mercy | 0.9 | 0.2 |
-| Humility/Service | 0.7 | 0.8 |
-| Justice/Social Responsibility | 0.7 | 0.6 |
-| Faithfulness/Fidelity | 0.6 | 0.2 |
-| Human Dignity (Imago Dei/Complexity) | 0.9 | 1.0 |
-
-The cosine similarity computes to **0.842** — significant alignment. The divergences are exactly where the two frameworks' foundations differ: universal obligation (Phosphorism claims none), sanctity of life (a preference, not a sanctity), forgiveness and fidelity as duties. The convergences — truthfulness, stewardship, humility, human dignity — are where a chosen value system and an inherited one arrive at the same conduct by different routes.
-
-Two systems this philosophically opposed, sharing better than 84% of their direction: that is worth knowing before a debate begins. The measure tells you where cooperation is cheap and where negotiation is unavoidable — which dimensions will produce friction and which are already aligned — and it does so without either side pretending the other's foundations are its own. The numbers are, of course, one assessor's weightings; the point is not the third decimal place but the method. Disagreements between value systems are usually argued as if they were total. Measured, they rarely are.
+Christianity and Phosphorism, for example, can converge on truthfulness, stewardship, humility, care, and human dignity while diverging on their grounds and scope. Phosphorism claims no universal obligation, treats life as deeply valued rather than metaphysically sanctified, and does not make forgiveness or fidelity exceptionless duties. Those are real differences, but they do not make cooperation mysterious. A comparison table may help negotiate a particular case if the participants define its dimensions together; no context-free percentage can tell them how morally close they are.

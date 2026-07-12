@@ -1,7 +1,7 @@
 ---
 title: 'Consent and Property'
 subtitle: 'Two load-bearing definitions'
-status: draft
+status: review
 sources:
   - 164911762.what-counts-as-consent
   - 166739921.what-counts-as-property
@@ -19,7 +19,7 @@ The remedy is the same one I applied to [coercion](09-what-counts-as-coercion.md
 
 Every element of this definition is necessary, and one further element — revocability — applies wherever the thing consented to is ongoing rather than instantaneous. Take them in turn.
 
-**Agent.** Consent requires a decision-capable agent. An adult who signs a medical waiver after reading and understanding the risks has consented: the signer is a competent agent. A five-year-old who "agrees" to a contract selling off his toys has not — children are not presumed to have the requisite agency for consent. Nor has the unconscious patient whose "consent" to surgery is a pre-sedation video: if the person is unconscious at the time of action, agency is suspended, and whatever the video records, no agent is present to be agreeing.
+**Agent and continuity.** Consent must originate in a decision-capable agent, but valid authorization can persist through a later loss of consciousness. A competent patient's advance directive or preoperative consent is not erased by anesthesia; it binds the later action precisely because the same continuing agent authorized it while capable. Children and impaired adults require capacity-sensitive standards, supported decision-making, and tightly bounded surrogate authority rather than the fiction that present incapacity means no preferences or standing exist.
 
 **Intentional.** Consent must reflect a deliberate decision. Someone who is asked to share their location and explicitly says "yes, I agree" has performed a clear volitional act. Someone who mumbles "okay" while distracted, not realizing they are agreeing to surveillance, has not — there was no deliberate act, only a noise that got counted as one. The same goes for consent inferred from silence in a complex legal setting: silence is not necessarily intentional, and treating it as agreement manufactures consent out of its absence.
 
@@ -27,7 +27,7 @@ Every element of this definition is necessary, and one further element — revoc
 
 **Uncoerced.** Consent must not be extracted under threat of harm. A volunteer who joins a study after being told there are no consequences for refusal has agreed voluntarily. The employee facing "sign this or we'll fire you" has not — the [credible threat of harm to gain compliance](09-what-counts-as-coercion.md) invalidates the voluntariness of whatever follows it. Likewise the detainee who "consents" to a search under threat of increased charges: a conditional threat is coercion, and coercion means no consent, however cooperative the surface behavior looks.
 
-**Revocable.** In contexts of ongoing participation — sex, medical research, any arrangement where the agreed-to condition persists — consent must remain revocable. A study participant who withdraws consent and is allowed to exit has had revocability honored. "You already agreed, you can't back out now," said in a sexual context, violates it, and the violation invalidates the consent retroactively claimed. Agreement to begin is not agreement to continue.
+**Revocable where revocation remains possible.** Ongoing participation generally requires a meaningful way to withdraw prospectively. Withdrawal ends authorization for continuation; it does not retroactively convert previously authorized acts into violations. Some transactions create irreversible reliance or transfer, so revocability must be specified rather than assumed. Agreement to begin is not automatically agreement to continue.
 
 Put the pieces together and the composite is unmistakable:
 
@@ -37,7 +37,7 @@ Agent, intentional, informed, uncoerced, revocable: true consent. Remove any one
 
 ## What Counts as Property
 
-Now the second definition, which the first turns out to need. What makes something property, rather than mere possession or temporary control? A resource qualifies as property if and only if it satisfies five criteria, and again each earns its place by what it excludes.
+Now the second proposal, which the first turns out to need. What makes something property, rather than mere possession or temporary control? In the framework used here, a strong property claim has five features. This is an operational model for evaluating claims, not a discovery that every legal or cultural system must use the word in exactly this way.
 
 **Scarcity.** The resource must be inherently rivalrous: one agent's use necessarily diminishes its availability or utility to others. A plot of land passes — my farming it precludes yours. The open air fails, and so does a tune once everyone has heard it: my use subtracts nothing from yours, so there is nothing for a property claim to protect.
 
@@ -47,7 +47,7 @@ Now the second definition, which the first turns out to need. What makes somethi
 
 **Durability.** The resource must persist through time long enough to justify enforcement, investment, and maintenance of exclusive rights. A house passes. A snowbank in spring fails: there is no point defending title to something that will not outlast the paperwork.
 
-**Transferability.** Ownership must be voluntarily transferable between agents through explicit negotiation, exchange, or agreement. Deeded land passes — it can be sold, gifted, bequeathed. A wolf pack's territory fails: the wolves can hold it and defend it, but they cannot sell it, and holding-plus-defending without the possibility of voluntary transfer is territoriality, not property. That answers the opening question about the wolves, and it exposes the joint between the two halves of this chapter: *voluntary* transfer is consensual transfer. The fifth condition of property quietly imports the entire definition of consent. A transfer extracted at gunpoint moves possession; it does not move ownership.
+**Transferability.** A mature ownership system normally specifies how control can be voluntarily transferred through negotiation, exchange, gift, or inheritance. Deeded land is the clean case. A wolf pack's territory is better described as de facto territorial control than as socially recognized title: the distinction concerns the kind of institution involved, not an assertion that animals lack every precursor of ownership. *Voluntary* transfer imports the chapter's definition of consent. A transfer extracted at gunpoint may move possession without moving legitimate title.
 
 With the conditions in place, ownership itself can be stated formally, as a tuple that enumerates each required component:
 
@@ -65,7 +65,7 @@ The tuple is not ornamentation; each slot is a place where an ownership claim ca
 
 Which is to say that property is conditional and interpretive all the way down. Readers of the earlier volumes will recognize the move: [all truth is conditional](../02-conditionalism/02-all-truth-is-conditional.md), and property rights are an especially vivid case, because they require interpretative frameworks and societal norms for their very existence. No molecule of the house records who owns it. The evolutionary record says the same thing from the other direction: property likely evolved from territorial behaviors, with proto-property forms among pre-human hominins — resource caching, tool ownership, territory marking — setting the stage for the fully symbolic, transferable ownership norms that emerged in humans. What was added along the way was not a metaphysical ingredient but a social technology: symbols, agreements, enforcement.
 
-The hard cases confirm the analysis rather than embarrassing it. Animal territories, as the wolves showed, meet scarcity and excludability but fail transferability and the symbolic criteria, so they are not genuine property — they are its evolutionary ancestor. Intangible property runs the other way: intellectual property and digital assets are weak on natural boundaries and natural excludability, so they exist only where explicit social or technological frameworks — copyright law, cryptography — manufacture the boundary identification and exclusion that physical goods get from fences and walls. That such frameworks *can* manufacture them is the proof that enforcement, not substance, is what property is made of.
+The hard cases test the model rather than merely confirming it. Animal territories meet scarcity and excludability but lack many of the symbolic and institutional features of human title, so the model classifies them as territorial control or proto-property. Intangible property runs the other way: intellectual property and digital assets are weak on natural boundaries and natural excludability, so explicit social or technological frameworks — copyright law, cryptography — construct boundaries and enforcement. Whether those constructions are legitimate remains a separate question; enforceability explains how a property regime exists, not why every rule it enforces is just.
 
 ## Two Definitions, One Machine
 

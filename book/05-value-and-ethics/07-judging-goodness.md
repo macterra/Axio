@@ -1,7 +1,7 @@
 ---
 title: 'Judging Goodness'
 subtitle: "Moral judgment without a god's eye"
-status: draft
+status: review
 sources:
   - 168901803.judging-goodness
   - 164888678.effective-altruism-without-moral

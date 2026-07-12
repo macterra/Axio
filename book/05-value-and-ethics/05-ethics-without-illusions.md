@@ -1,7 +1,7 @@
 ---
 title: 'Virtues, Consequences, and Codes'
 subtitle: 'The three traditions, de-objectified'
-status: draft
+status: review
 sources:
   - 164892948.virtues-consequences-and-codes
 ---

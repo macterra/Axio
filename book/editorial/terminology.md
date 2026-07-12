@@ -311,13 +311,13 @@ A mechanically recognized, provenance-bearing permission to cause a specified st
 
 ### Value
 
-An agent-relative ordering of possibilities disclosed through choice, tradeoff, and sacrifice; no value exists without a valuer and a comparison class.
+An agent-relative ordering of possibilities disclosed imperfectly through choice, tradeoff, and sacrifice; no value exists without a valuer and a comparison class. Observed sacrifice is defeasible evidence, especially under duress, addiction, compulsion, misinformation, poverty, or impaired capacity.
 
 **Canonical homes:** Volume 5, Chapters 1 and 4.
 
 ### Agent-binding
 
-The practice of binding an evaluative claim to the agent or class of agents whose commitments give the claim content, making its conditional structure explicit and criticizable.
+The practice of binding an evaluative claim to the agent or class of agents, the model of the act and its consequences, and the commitments or rules that supply its standard, making the claim's conditional structure explicit and criticizable.
 
 **Canonical home:** Volume 5, Chapter 2.
 
@@ -331,15 +331,15 @@ The author's explicitly chosen, revisable value framework centered on life, inte
 
 ### Coercion
 
-A credible threat of actual harm used to obtain compliance.
+A credible conditional threat of a material, non-consensual setback used to obtain compliance.
 
 **Canonical home:** Volume 5, Chapter 9.
 
-**Reconciliation required:** Volume 7's delegated-violence account of incitement must be reconciled with earlier categorical claims that incitement is not coercion.
+**Constraint:** Directed solicitation or incitement can function as delegated violence when intent, specificity, causal connection, and the threatened actor's role support that classification. Volume 7 owns the fuller legal and political boundary.
 
 ### Consent
 
-Informed, intentional, uncoerced authorization by an agent with sufficient capacity and, for ongoing arrangements, meaningful revocability.
+Informed, intentional, uncoerced authorization originating from an agent with sufficient decision-specific capacity. Valid advance authorization can persist through later incapacity; revocation operates prospectively and, for ongoing arrangements, must remain meaningful.
 
 **Canonical home:** Volume 5, Chapter 10.
 
@@ -353,11 +353,11 @@ A socially and procedurally maintained authorization structure governing control
 
 ### Harm
 
-The non-consensual reduction of an agent's functional capacity or viable future option space relative to an appropriate baseline.
+A material degradation of an agent's functional capacity or viable option space relative to an explicit, appropriate baseline. A setback or injury can occur with authorization; wrongfulness additionally depends on consent, causation, foreseeability, justification, and responsibility. Prospective harm requires a material, foreseeable, attributable worsening rather than any non-zero risk.
 
 **Canonical homes:** Volume 5, Chapters 11 and 20.
 
-**Reconciliation required:** Chapter 20's prospective “risk is harm” formulation should be presented as the mature extension of, not an unnoticed replacement for, Chapter 11's capacity account.
+**Constraint:** Chapter 20's prospective account extends Chapter 11; it does not collapse attempt, negligence, endangerment, realized injury, and wrongful harm into one category.
 
 ### Violence
 
@@ -399,7 +399,7 @@ An agent who has not crossed the framework's evidentiary and procedural threshol
 
 ### Domain Exit
 
-Loss of the coexistence protocol's shield against proportionate defensive coercion after established predation or refusal of required arbitration and restitution; not a license for punishment or aggression.
+Loss of the coexistence protocol's shield against proportionate defensive coercion after established predation or refusal of a legitimate, previously specified process of arbitration and restitution; not a license for punishment, aggression, or wholesale forfeiture of standing.
 
 **Canonical home:** Volume 5, Chapter 23.
 

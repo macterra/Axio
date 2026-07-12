@@ -1,7 +1,7 @@
 ---
 title: 'Viability Under Fire'
 subtitle: 'Stress-testing the invariant'
-status: draft
+status: review
 sources:
   - 181274232.viability-ethics-under-fire
   - 195414549.against-button-morality
@@ -32,7 +32,7 @@ A fire engulfs a hospital. Five of your closest friends are trapped in a wing th
 
 If your first reaction is "I can't imagine letting five friends die," congratulations — your tribal brain works. Loyalty, kinship, proximity, and shared history are the oldest moral circuits in the mammalian nervous system. But tribal morality does not scale. It is the origin of favoritism, corruption, vigilantism, clan conflict, and atrocity; every genocide in history begins with a sentence structurally identical to "our people matter more than those people." Axio does not fight your loyalty. It fights the idea that your loyalty licenses you to use innocent strangers as fuel for your values. That is the line most ethical systems blur. Axio draws it in steel.
 
-The line is [the invariant](22-the-ethics-of-viability.md): **no coercive harm against innocents.** Everything else — values, loyalties, identities, commitments — must be chosen. Harm, in this frame, is not about pain; it is a reduction of another agent's viable futures caused by your action, and crucially, [the reduction can be probabilistic](20-risk-is-harm.md): impose a non-zero chance of severe injury or death on an innocent and you have already reduced their viable futures, whether or not the worst case materializes. Imposed risk is harm. Harm deployed instrumentally — to override another agent's agency or redirect their trajectory — is coercion. And coercion against innocents is always impermissible.
+The line is [the proposed invariant](22-the-ethics-of-viability.md): **no coercive harm against innocents.** Prospective harm requires a material, foreseeable, attributable risk increase relative to an explicit baseline — not any non-zero causal contribution. Instrumentally imposing such a risk without authorization is coercion under the framework. Whether that prohibition admits an exception in aggressor-contaminated fields is the unresolved conflict Chapter 25 preserves.
 
 This is why the Burning Hospital is a perfect crucible, and why the three variants collapse into one. In a disaster environment there is no such thing as harmless confinement: smoke, heat, falling debris, and panicking crowds make every enclosed space a probabilistic death trap. Locking the stranger behind a door always worsens their risk profile, and that alone is coercive harm. The distinction between "unharmed" and "injured" is morally irrelevant; the violation occurred the moment you worsened their survival odds to advance your ends. If the risk later materializes, the stranger's burns do not *create* the violation — they *reveal* it. It does not matter that the harm is small, that the stranger survives, that you love your friends, that you stand ready to compensate. Those are emotional aftershocks around a structural fact: you used an innocent stranger's body as an instrument to save others. There is no permissible version of locking an innocent in a burning building.
 

@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 3 underway — Volumes 1–4 edited and in author review; Volume 5 is next.** The manuscript contains nine drafted volumes, 240 chapters, and roughly 550,000 words. Phase 1 established the editorial control documents; Phase 2 confirmed the nine-volume architecture with targeted revisions recorded in `book/editorial/architecture/`. Foundational-volume passes are recorded in `book/editorial/volume-edits/`. Editing proceeds dependency-first through the remaining load-bearing volumes.
+Status: **Phase 3 complete — Volumes 1–5 edited and in author review; Volume 6 is next in Phase 4.** The manuscript contains nine drafted volumes, 240 chapters, and roughly 550,000 words. Phase 1 established the editorial control documents; Phase 2 confirmed the nine-volume architecture with targeted revisions recorded in `book/editorial/architecture/`. Volume passes are recorded in `book/editorial/volume-edits/`. Editing proceeds dependency-first through the applied volumes.
 
 ## Editorial goals
 
@@ -150,6 +150,8 @@ This is the formal center and should receive the most demanding evidentiary revi
 ### Volume 5 — Value and Agency-Centered Ethics
 
 This is the normative hinge.
+
+Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/05-value-and-ethics.md`.
 
 - Reconcile the opening rejection of objective value with the later introduction of Sapient Agency Realism.
 - Make agent-binding operational rather than merely rhetorical.
@@ -329,4 +331,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-The first concrete deliverable is the book-wide argument map plus nine structural memos. This will reveal which changes are genuinely necessary before sentence-level attention is spent across 550,000 words.
+Begin Phase 4 with the Volume 6 chapter-level edit. Apply Volume 5's mature definitions of value, consent, property, harm, and non-aggregation without re-arguing their foundations, and audit the economic and historical evidence under the claim-calibration standard.
