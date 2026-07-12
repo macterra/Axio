@@ -36,7 +36,7 @@ Notice what this fixes that the loose version of the argument gets wrong. It is 
 
 A likelihood ratio asks one question of each piece of evidence: how much more (or less) probable is this observation if the lab hypothesis is true than if the natural hypothesis is true? Greater than one, it pushes toward the lab; less than one, toward nature; near one, it is noise dressed as signal. Bayes in odds form is then almost insultingly simple — multiply the prior odds by each ratio in turn:
 
-$$\text{posterior odds} \;=\; \text{prior odds} \;\times\; \prod_i \text{LR}_i$$
+$$\text{posterior odds} = \text{prior odds} \times \prod_i \text{LR}_i$$
 
 **The location and research-program bundle.** The earlier ledger treated Wuhan's research institutions and the outbreak's location as its strongest evidence. That observation is relevant, but "very nearly guaranteed" under laboratory association and highly surprising under zoonosis were both unsupported simplifications. A valid likelihood must model multiple possible facilities and pathways, the geography and transport network of wildlife trade, outbreak detection, and the early concentration of cases around the Huanan market.
 
@@ -52,7 +52,7 @@ Bundling avoids one obvious double count, but the assigned ratio of $40$ is stil
 
 Assemble the pieces. Prior odds $1:9$. Multiply through:
 
-$$\text{posterior odds} \;=\; \frac{1}{9} \times 40 \times 2 \times 1.5 \times 0.7 \;\approx\; \frac{84}{9} \;\approx\; 9.3 : 1$$
+$$\text{posterior odds} = \frac{1}{9} \times 40 \times 2 \times 1.5 \times 0.7 \approx \frac{84}{9} \approx 9.3 : 1$$
 
 The arithmetic converts those inputs to a Credence near $0.90$. It does not show that the inputs were calibrated. The factor of $40$ dominates, the evidence terms are not demonstrably independent, and the narrow **85-to-95-percent** band merely held the model structure fixed. It was an output of the earlier ledger, not a defensible current interval.
 
@@ -64,7 +64,7 @@ Now earn the word *calibration*. Writing the calculation down makes assumptions 
 
 Suppose you think the location ratio is badly inflated — that the Wuhan institute sits where it does *because* these viruses circulate in the broader region, that the early Huanan market cluster is real evidence of a zoonotic venue, and that a natural spillover reaching a city of eleven million with a major transport hub is not so freakish. Drop the ratio from $40$ to $15$. Then:
 
-$$\frac{1}{9} \times 15 \times 2 \times 1.5 \times 0.7 \;\approx\; 3.5 : 1 \;\approx\; 0.78$$
+$$\frac{1}{9} \times 15 \times 2 \times 1.5 \times 0.7 \approx 3.5 : 1 \approx 0.78$$
 
 Still favoring laboratory association, but already outside the claimed band. Varying the prior, reducing the opacity term, incorporating market evidence, or modeling dependence can move the result much further. The point is not that one altered ledger wins; it is that the posterior is structurally sensitive and should not be advertised without those alternatives.
 
