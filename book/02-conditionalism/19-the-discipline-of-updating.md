@@ -1,7 +1,7 @@
 ---
 title: 'The Discipline of Updating'
 subtitle: 'Priors, rationalization, and the courage to change your mind'
-status: draft
+status: review
 sources:
   - 172914356.the-garden-path-of-history
   - 174063496.the-limits-of-rationalization

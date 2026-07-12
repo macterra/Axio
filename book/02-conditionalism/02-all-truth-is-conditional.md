@@ -1,7 +1,7 @@
 ---
 title: 'All Truth Is Conditional'
 subtitle: 'Beyond absolutism and relativism'
-status: draft
+status: review
 sources:
   - 172736394.in-defence-of-conditional-truth
   - 162831503.conditionalism
@@ -23,9 +23,9 @@ Alan Rome speaks for many defenders of absolute truth when he argues that the cu
 
 ## Why Relativism Fails
 
-Relativism is incoherent because it makes an absolute claim: *it is universally true that all truth is relative*. It eats itself alive. This is not a debater's trick; it is the fatal structural flaw. A relativism modest enough to apply to itself has no force, and a relativism strong enough to have force is self-refuting.
+The strongest global relativism is self-undermining when it asserts, without qualification, that every truth is merely relative. More local forms—about taste, standards, or conceptual schemes—need not make that mistake. Conditionalism's objection is therefore not that every view called relativist refutes itself; it is that perspective alone cannot determine a claim's truth without specifying what is held fixed and what evidence can correct the evaluation.
 
-Worse, relativism dissolves the possibility of critique. If moral claims are only ever true relative to a culture, then condemning slavery or genocide can never be more than an expression of parochial taste — the slaveholding culture's standards are, by hypothesis, as valid for it as ours are for us. You lose the ability to appeal across vantage points, which is precisely what moral argument is for. Relativism is not humility. It is surrender.
+Culture-relative description also cannot, by itself, ground cross-cultural critique. Condemning slavery requires stated evaluative premises and facts about agency, suffering, consent, and coercion. Those premises can be defended across vantage points; their force does not come from pretending no premises are involved.
 
 ## Why Absolutism Fails
 
@@ -35,23 +35,35 @@ Masking the dependencies is what makes absolutist reasoning fragile and absoluti
 
 ## What Conditionalism States
 
-Conditionalism is the thesis that every truth claim depends on conditions, implicit or explicit — and that, in consequence, only conditional statements, statements of the form *if X, then Y*, can meaningfully bear truth values. Truth is not absolute ("X is true, full stop"). Truth is not relative ("X is only true for me or my group"). **Truth is conditional validity relative to specified assumptions.**
+Conditionalism is the thesis that every truth evaluation depends on conditions, implicit or explicit. This is not the claim that every meaningful sentence must be rewritten as a material conditional, *if X then Y*. A material conditional can be vacuously true when its antecedent is false, which is not the point. The truth-bearer is better represented as an interpreted proposition together with an evaluation context:
+
+$$
+\langle P, C \rangle,
+$$
+
+where $P$ is the proposition and $C$ fixes the material parameters—language, referents, domain, time, model, and standards—needed to evaluate it. **Truth is validity of $P$ under $C$.**
 
 The argument for this has three steps:
 
 1. **Every truth claim requires interpretation.** A string of words does not evaluate itself; someone or something must fix what it means before asking whether it holds.
 2. **Every interpretation requires background conditions.** Interpretation leans on linguistic conventions, conceptual frameworks, axiomatic systems, observational parameters. There is no view from nowhere to interpret from.
-3. **Therefore only conditional statements can meaningfully bear truth values.** The conditions are doing load-bearing work whether we state them or not; a statement evaluated apart from its conditions has not yet been given anything to be true *of*.
+3. **Therefore truth attaches to interpreted claims under conditions.** The conditions do load-bearing work whether stated or pragmatically supplied. A sentence with no sufficiently fixed interpretation or domain is not yet ready for evaluation.
 
-The conditions usually stay implicit, and for everyday purposes that is fine — "water boils at 100°C" is a perfectly serviceable compression when everyone shares the background. Even the strongest apparent counterexamples — logical tautologies, mathematical theorems — depend on hidden conditions: a choice of logic, a set of axioms, conventions fixing what the symbols mean. Every attempt to produce a genuinely unconditional truth ends the same way, with the conditional dependencies exposed. Conditionalism's job is to surface the conditions when it matters: when frameworks clash, when a "simple truth" is pushed beyond the domain its silent conditions define, or when a statement's conditions cannot be filled in at all and it turns out to say nothing — cases I take up in [when statements fail](04-when-statements-fail.md).
+The conditions usually stay implicit, and ordinary communication requires that compression. “Water boils at 100°C” is serviceable when speakers share the relevant standard conditions. Logical and mathematical claims likewise require a formal language, semantics, and inference rules, though notation and historical origin should not be confused with what makes a theorem follow. Conditionalism's job is to surface the *material* conditions when frameworks clash, a claim is pushed beyond its domain, or an utterance remains too underdetermined to evaluate—cases taken up in [When Statements Fail](04-when-statements-fail.md).
 
-The position is a close cousin of Quinean holism, which teaches that statements face experience together rather than one by one, and of Wittgenstein's insight that meaning lives inside language games. Conditionalism sharpens both into a claim about truth itself: it is not merely that statements are tested in bundles, but that truth values attach only to conditionals — to statements evaluated *given* their background, never to statements floating free of one. What it takes for a conditional statement to be true — the layered work of pragmatic success, correspondence, and coherence — is the subject of [the three levels of truth](03-the-three-levels-of-truth.md).
+The position is a close cousin of Quinean holism and of approaches that locate meaning in linguistic practice. Conditionalism sharpens those insights into a claim about evaluation: truth values attach to interpreted propositions under conditions, never to uninterpreted strings. [The Three Levels of Truth](03-the-three-levels-of-truth.md) asks how purpose, correspondence, and coherence contribute without collapsing into a single definition.
+
+## Conditionalism Applied to Itself
+
+The thesis must meet its own standard. Conditionalism is asserted under conditions: ordinary inferential and semantic practices, enough stability to identify claims across contexts, and a realist constraint that evidence can make some interpretations perform better than others. Within those conditions, it says that truth evaluation requires an interpreted proposition and a domain. It does not pronounce, from outside every framework, that all conceivable logics or languages must use this vocabulary.
+
+If a rival supplies a genuinely condition-free truth-bearer, or shows that evaluation can proceed without interpretation or domain, Conditionalism should be revised. Its standing is that of a criticizable argument inside the practices it recommends, not an exception to them.
 
 ## Stronger, Not Weaker
 
 The immediate objection is that conditional truth sounds like diluted truth — that adding "given these assumptions" to a moral claim turns conviction into equivocation. The opposite is the case.
 
-When I say *"slavery is wrong,"* Conditionalism unpacks it as: *given that we value agency, autonomy, and human flourishing, slavery violates those values and is therefore wrong.* That conditional form is stronger, not weaker, because it makes the grounding explicit and debatable. The absolutist version dares an opponent to deny an oracle; the conditional version shows its premises and invites anyone to reject them out loud — and almost no one, pressed in the open, will stand up and reject agency, autonomy, and flourishing. Shared conditions can be adopted, articulated, and defended. They do not need to masquerade as eternal absolutes, and they are more secure for not doing so: a foundation you can inspect is sturdier than one you are forbidden to look at. This preserves exactly what the absolutist rightly refuses to give up — objectivity, the ability to say the slaveholder is *wrong* and not merely unfashionable — without the incoherent metaphysics. And it preserves what the relativist rightly notices — that all judgment happens inside a framework — without surrendering judgment across frameworks. Objectivity without absolutism; contextual sensitivity without relativism. The most sophisticated modern attempt to secure unconditional moral truths, Parfit's moral realism, fails by this same diagnosis — its allegedly unconditional truths beg the question by presupposing the very conditions they refuse to state — an argument I make in [the near misses](../05-value-and-ethics/16-the-near-misses.md).
+When I say *“slavery is wrong,”* Conditionalism asks which evaluative and factual premises support the verdict: the standing of enslaved people as agents, the harms imposed, the absence of consent, and the coercive destruction of autonomy. Making those premises explicit makes the claim more inspectable, not automatically stronger. An opponent must contest the values, their scope, or the factual inference rather than trade incompatible verdicts. Given defensible commitments to the agency and standing of enslaved people, the condemnation follows independently of the slaveholder's approval. Volume 5 undertakes the separate work of defending those commitments and comparing them with moral realism.
 
 ## Shared Conditions
 
@@ -69,4 +81,4 @@ In science, it locates exactly what an experiment tests: never a hypothesis in i
 
 Conditionalism keeps everything worth keeping from the traditional reverence for truth, including its humility. We are biased, error-prone creatures, and we must climb toward better approximations. But the climb is not toward an impossible Absolute; it is the refinement and expansion of our conditional frameworks — stating conditions more precisely, replacing narrow ones with broader ones, discarding frameworks whose conditions cannot survive being made explicit. The climb is real. The progress is measurable. The grounding is honest.
 
-The defence of truth requires rejecting both of its traditional defenders. Relativism must go because it is self-refuting and morally disarming; absolutism must go because it is blind to its own foundations. What remains is not a compromise between them but the position both were failing to articulate: truth as conditional validity relative to explicit assumptions. In a world split between dogmatists and nihilists, conditional truth is the only solid ground.
+Conditionalism rejects global relativism's lack of shared correction and absolutism's suppression of material assumptions. What remains is not a midpoint but a method: identify the proposition, bind the conditions that control its evaluation, and expose both to criticism. Conditional truth is not the only vocabulary in which that method can be expressed; it is this book's proposed account of why the method works.

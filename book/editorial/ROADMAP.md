@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 3 underway — Volume 1 edited and in review; Volume 2 next.** The manuscript contains nine drafted volumes, 240 chapters, and roughly 550,000 words. Phase 1 established the editorial control documents; Phase 2 confirmed the nine-volume architecture with targeted revisions recorded in `book/editorial/architecture/`. The first foundational-volume pass is recorded in `book/editorial/volume-edits/01-physics-of-agency.md`. Editing proceeds dependency-first through the remaining load-bearing volumes.
+Status: **Phase 3 underway — Volumes 1 and 2 edited; Volume 2 is in author review and Volume 3 is next.** The manuscript contains nine drafted volumes, 240 chapters, and roughly 550,000 words. Phase 1 established the editorial control documents; Phase 2 confirmed the nine-volume architecture with targeted revisions recorded in `book/editorial/architecture/`. Foundational-volume passes are recorded in `book/editorial/volume-edits/`. Editing proceeds dependency-first through the remaining load-bearing volumes.
 
 ## Editorial goals
 
@@ -104,6 +104,8 @@ This receives the first full edit because almost every later volume borrows its 
 **Exit:** A skeptical technical reader can identify precisely where accepted physics ends and the book's philosophical construction begins.
 
 ### Volume 2 — Conditionalism: Truth, Bayes, and Rationality
+
+Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/02-conditionalism.md`.
 
 - Make the self-application of “all truth is conditional” explicit and stable.
 - Distinguish Conditionalism from contextualism, relativism, holism, and ordinary qualification.

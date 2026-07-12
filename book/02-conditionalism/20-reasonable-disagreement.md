@@ -1,7 +1,7 @@
 ---
 title: 'Reasonable Disagreement'
 subtitle: "What Aumann's theorem actually implies"
-status: draft
+status: review
 sources:
   - 165822194.aumanns-agreement-theorem
   - 164937702.reasonable-disagreement
@@ -13,20 +13,20 @@ A famous theorem says it should be impossible.
 
 ## The Theorem
 
-Robert Aumann proved in 1976 that two rational agents who share common priors and have common knowledge of each other's beliefs cannot agree to disagree. If their Credences in a proposition differ, and those Credences are common knowledge, Bayesian updating must drive them to converge on the same value.
+Robert Aumann proved in 1976 that Bayesian agents with a common prior cannot have different posteriors for the same event when those posteriors are common knowledge. The theorem is static: under its formal information-partition assumptions, the posteriors must already be equal. Dialogue protocols can produce convergence results, but that is additional machinery.
 
 The result hinges on two idealizations:
 
-1. **Perfect Bayesian rationality.** Both agents update strictly by Bayes' theorem — no bias, no laziness, no motivated reasoning.
-2. **Common knowledge.** Each knows the other's beliefs, priors, and updating methodology; knows that the other knows this; knows that the other knows that they know it — and so on, all the way up.
+1. **Common prior.** Both agents' posteriors arise by conditioning the same prior probability on their respective information.
+2. **Common knowledge of posteriors.** Each posterior value, and the fact that both values have been announced, is common knowledge to the usual infinite depth.
 
 The intuition behind the proof is worth having in your bones, because it changes how you hear a disagreement. Under these conditions, your announced Credence is *evidence* for me. If you are a flawless Bayesian working from the same priors I am, and you have arrived at a different posterior, the only possible explanation is that you have seen something I have not — so your number tells me about your evidence, and I must update on it. But my updated Credence then tells you about *my* evidence, and you must update in turn. Iterate the exchange and the gap closes. The mere fact that a rational peer disagrees with me is itself data, and a persistent refusal to converge would mean one of us is ignoring data — which perfect Bayesians, by definition, never do.
 
-So when two agents *do* persistently disagree, the theorem hands us an exhaustive diagnosis. At least one of the following must hold:
+So when people persistently disagree, the theorem identifies assumptions worth checking; it does not hand us an exhaustive psychological diagnosis. At least one formal premise fails:
 
 - **They hold different priors.** They were never starting from the same place, so shared evidence cannot force them to the same destination.
 - **They have asymmetric information.** Something one of them knows — evidence, or the reasoning of the other — has not actually made it into common knowledge.
-- **At least one of them is not updating rationally.** Cognitive bias, misunderstanding of the other's reasoning, or plain error has broken the Bayesian machinery somewhere.
+- **The formal representation differs or fails.** The proposition or model spaces may differ; agents may be bounded, use imprecise probabilities, or lack a shared representation of the evidence.
 
 That is the theorem's whole content, and it is easy to misread. It does not say that disagreement is irrational. It says that disagreement is *informative*: every persistent disagreement carries information about its own causes.
 
@@ -34,7 +34,7 @@ That is the theorem's whole content, and it is easy to misread. It does not say 
 
 No pair of humans has ever satisfied Aumann's conditions. Real agents almost never share identical priors; a lifetime of different evidence, different training, and different temperament guarantees they arrive at any question from different starting points. Common knowledge is even more demanding than it sounds — not merely that we have both read the same papers, but that our entire epistemic states are mutually transparent to infinite depth. And perfect Bayesian rationality is an ideal that flesh-and-blood reasoners approximate at best, riddled as we are with systematic biases that push our updating off the Bayesian rails.
 
-This is why the theological standoff above involves no failure of rationality at all. My one-to-two percent and my interlocutor's hundredth of that are both defensible outputs given our respective priors, our different evaluation methods, and our different epistemic thresholds for taking a metaphysical argument seriously. The theorem never promised that we would agree. It promised that our disagreement has a *location* — and it tells us where to look.
+This is why the theological standoff above need not demonstrate a failure of rationality. The two estimates may reflect different priors, models, evidence assessments, or thresholds—and those differences remain open to criticism. The theorem never promised that actual people would agree; it tells us which idealized conditions would rule disagreement out.
 
 That reframing is the theorem's real gift. The naive reaction to persistent disagreement with an apparently rational peer is accusation: one of us must be stupid, dishonest, or blinded. Aumann replaces the accusation with a checklist. When a disagreement refuses to close, do not ask *who is being irrational?* Ask *which condition failed?* Do we differ in priors — and if so, can we state them and examine where they came from? Is there information one of us holds that the other has not truly absorbed? Is one of us making an identifiable error? Working through that checklist is [the discipline of updating](19-the-discipline-of-updating.md) applied socially: the disagreement itself becomes an instrument for surfacing hidden assumptions that neither party knew they were making. Used this way, rational disagreement is not something to be tolerated. It is a diagnostic tool, and often the sharpest one available.
 
@@ -54,7 +54,7 @@ Now watch where the agent-relativity enters each one:
 
 And beneath all three lies a further layer of unavoidable uncertainty: evaluating these claims requires modeling the internal states of other agents — what they knew, believed, valued, feared, and intended. Minds are not transparent. Even ideally rational observers, working from identical external evidence, will build somewhat different models of the mental facts, and the verdicts on harm, coercion, and consent inherit that variance.
 
-So here is the fourth entry on the checklist. When two reasonable people, given precisely the same information, persistently disagree about whether an act was coercive, the explanation need not be divergent priors, hidden evidence, or bias. It may be that *"this was coercion"* is shorthand for a conditional whose conditions — the credibility threshold, the model of intent, the standard of adequate information — are filled in differently by each evaluator. Both have reasoned impeccably. They have evaluated different conditionals.
+So add another diagnostic entry. When two reasonable people appear to have the same information but disagree about whether an act was coercive, they may be evaluating differently specified propositions or applying different normative thresholds. They can both reason competently about different conditionals; whether either conditional is normatively defensible remains open to criticism.
 
 ## A Feature, Not a Flaw
 

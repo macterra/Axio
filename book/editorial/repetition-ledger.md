@@ -51,8 +51,10 @@ Status labels:
 
 ### Volume 2
 
-- The absolutism/relativism contrast recurs after Conditionalism is already established.
-- The defenses of Bayes and distinctions among uncertainty types should form one accumulating argument rather than repeatedly resetting the critics' case.
+- **Phase 3 decision:** Chapters 2–4 retain the canonical absolutism/relativism treatment. Later chapters state only the locally relevant conditions and cross-link rather than re-arguing it.
+- **Phase 3 decision:** Chapters 11–16 form an explicitly optional QBU module. Later chapters may use general Credence and decision language without repeating the QBU primer or assuming Measure.
+- **Phase 3 decision:** Chapter 10 owns *epistemic faith* as a frozen update rule; later uses must preserve that scope rather than generalize over trust, hope, resolve, or religious practice.
+- **Phase 3 decision:** Chapter 22 owns the epistemic–decision gate. Chapter 23 applies utilities, robustness, and policy choice without altering Credence for motivational reasons.
 
 ### Volume 3
 

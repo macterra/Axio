@@ -1,7 +1,7 @@
 ---
 title: 'Conditional Realism'
 subtitle: 'A minimal ontology and the case for reality'
-status: draft
+status: review
 sources:
   - 167444843.a-minimal-ontology
   - 174785128.the-case-for-reality

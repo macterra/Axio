@@ -1,7 +1,7 @@
 ---
 title: 'When Statements Fail'
 subtitle: 'Binding, nonsense, and crooked questions'
-status: draft
+status: review
 sources:
   - 178181286.truth-as-a-function-of-binding
   - 164272915.nonsense
@@ -11,7 +11,7 @@ sources:
 
 "It's raining." Is that true?
 
-You cannot say. Not because the weather is mysterious — the weather is as factual as anything gets — but because the sentence is incomplete. Raining where? When? Bind those variables — "It's raining in Montreal at 9am" — and the statement snaps into focus: now it is true or false, and a glance out the window settles which. Unbound, it is not a proposition at all. It is a gesture toward one.
+In ordinary conversation you often can say, because speaker, place, and time are pragmatically supplied. Written on an undated card with no context, however, the sentence is incomplete. Bind the variables—“It's raining in Montreal at 9 a.m. on 12 July 2026”—and it becomes directly evaluable. Conditionalism concerns when the pragmatic binding is insufficient, not a demand that speakers verbalize what their context already fixes.
 
 This chapter is about the sentences that fail this way. [All truth is conditional](02-all-truth-is-conditional.md), and most of the time the conditions are bound tacitly and nobody notices. But a large class of well-formed, grammatical, confident-sounding sentences are neither true nor false, because the conditions that would make them evaluable have never been fixed. These failures are not moral or preferential claims awaiting an agent; they collapse for a simpler reason. They are **underdetermined**. Ambiguity involves multiple possible meanings; underdetermination involves *no fixed meaning at all* until certain background variables are bound. Diagnosing exactly how a statement fails tells you exactly what it would take to repair it — and reveals, in the cases where no repair is possible, a principled definition of nonsense.
 
@@ -21,7 +21,7 @@ I count six failure modes.
 
 **The indexical gap.** "It's raining" is the canonical case. Indexicals — *here, now, today, she, they* — are invisible placeholders for context. Bound to a place, a time, a referent, they do honest work. Unbound, they yield vacuous propositions that merely feel factual.
 
-**The referential void.** "The present King of France is bald" is Russell's classic. The sentence is syntactically valid but semantically empty: no entity in the current world model satisfies the subject term. The failure here is not about preference or probability; it is about ontological absence. There is nothing for the predicate to be true *of*.
+**The referential void.** “The present King of France is bald” is Russell's classic. On Russell's analysis it is a determinate and false existential claim, not semantically empty; other semantic theories treat the failed presupposition differently. The example therefore marks a diagnostic question: does a missing referent make an utterance false, truth-valueless, or pragmatically defective under the chosen semantics?
 
 **The quantifier abyss.** "Everyone is online." "Nothing is certain." Everyone where? Certainty about what? Claims like these depend on an unstated quantifier domain, and until the quantifier is bound to a scope, the truth value floats. Formal logic solves this with explicit domains of discourse; natural language routinely leaves them implicit and lets the reader supply whichever domain flatters the claim.
 
@@ -29,7 +29,7 @@ I count six failure modes.
 
 **The standardless evaluation.** "The system is secure." "This is fair." "That's efficient." Many technical and normative claims collapse for lack of a defined metric. Without a threat model, an ethical standard, or an optimization criterion, they cannot be falsified. These are not opinions; they are evaluations awaiting a standard — and until the standard arrives, agreeing or disagreeing with them is equally empty.
 
-**The category violation.** Finally there are sentences like "The color green is angry" or "Truth is heavy." These fail not by ambiguity or omission but by category error: the predicate cannot logically apply to the subject. They are syntactically well-formed but semantically void — a different kind of failure, because no amount of added context repairs them.
+**The category violation.** Sentences like “the color green is angry” or “truth is heavy” resist a literal interpretation because their predicates ordinarily apply to different categories. Context can still repair them as metaphor, synesthesia, or technical stipulation. A category error is relative to an interpretation, not proof that no possible interpretation exists.
 
 ## Binding as Resolution
 
@@ -39,19 +39,19 @@ This is the Conditionalist diagnosis of why unconditional truth is impossible. E
 
 ## Nonsense, Properly Defined
 
-The sixth failure mode is different, and it points at something worth defining precisely. "Nonsense" is thrown about casually as a term of abuse; it can be made technical. A proposition $P$ is **nonsense** if
+“Nonsense” is thrown about casually as abuse. It can be made locally technical. Relative to an interpretation family $\mathcal I$ declared relevant to the conversation, an utterance $P$ is **uninterpretable** if
 
-$$\nexists\, I : I(P) \in \{T, F\}$$
+$$\nexists\, I \in \mathcal I : I(P) \in \{T, F\}.$$
 
-— if no coherent semantic interpretation assigns it a truth value, *even under maximally charitable interpretation*. Nonsense is an utterance lacking interpretability within any coherent semantic or syntactic framework: it fails to convey determinate meaning, reference, or truth conditions no matter how generously you read it.
+The restriction to $\mathcal I$ matters. With enough invention, almost any string can be assigned a meaning. The useful verdict is that no contextually licensed, charitable interpretation yields truth conditions—not that interpretation is impossible in every conceivable language.
 
 The charity clause is what gives the definition teeth, and what distinguishes nonsense from the milder failures above. An underdetermined statement is nonsense-so-far: it lacks a truth value *as uttered*, but there exists a binding that would repair it, and a charitable listener often supplies one automatically. Nonsense proper is the limiting case where the repair cannot succeed — where every candidate interpretation fails. And note what nonsense is *not*: it is not falsehood. "The Earth is six thousand years old" is bound, evaluable, and false. A false claim has done the honest work of exposing itself to refutation. Nonsense never gets that far.
 
-The definition applies to statements, not to disciplines. A field of discourse qualifies as nonsense only to the extent that its load-bearing claims do, statement by statement — which is why the interesting demarcation work happens at the level of particular sentences. Consider two bodies of practice whose central claims fail the test as stated.
+The definition applies to utterances under declared interpretive constraints, not to whole disciplines by insult. It must also be kept separate from empirical failure. Two familiar cases show why.
 
-Homeopathy's foundational claim is that water retains a memory of substances it once contained, and that extreme dilution amplifies medicinal effect. This is not a false chemical claim awaiting refutation; it has no coherent chemical or physical interpretation to refute. Dilution past Avogadro's limit leaves no molecules to do the remembering, and no mechanism is offered by which "memory" could attach to a solvent — under any charitable reading, the claim fails to specify truth conditions. It is referential nonsense: the load-bearing term names nothing.
+Homeopathy's claims about “water memory” and therapeutic effects are interpretable enough to test. The absence of a credible mechanism and failure to outperform controls count against them; they make the claims unsupported or false under ordinary scientific interpretations, not meaningless by definition.
 
-Astrology fails by category violation. "Mars entering Aries brings passionate energy to your career" splices an astronomical event onto a psychological and economic outcome with no causal or semantic bridge between the domains — the same structural failure as "the color green is angry," dressed in ephemeris tables. Individual astrological sentences can sometimes be rescued as metaphor or as sociology of the believer, but the system's claims, read as the system intends them, assign planetary geometry a predicate class it cannot take.
+Astrological predictions are likewise often vague but interpretable: they propose correlations or causal influence between astronomical configurations and human outcomes. The scientific objection is that the mechanism and predictive record are inadequate. Calling the claims category errors would evade rather than perform that empirical evaluation.
 
 Contrast the claims that clearly pass. "Water boils at 100 degrees Celsius at standard atmospheric pressure" binds every condition — substance, threshold, standard — and stands ready for evaluation. So does a claim like "within the Quantum Branching Universe (QBU), branches are weighted by [Measure](11-measure-and-credence.md)": exotic subject matter, but coherent truth conditions and determinate reference throughout. Nonsense is not a verdict on how strange a claim sounds. It is a verdict on whether there is anything there to evaluate.
 
@@ -71,7 +71,7 @@ The courage is real and I do not want to dismiss it. But run the three questions
 
 *Is God real?* If "God" names a supernatural being who intervenes in history: no. If it is a metaphor for coherence or sacredness: yes, those referents exist. And some formulations are ill-posed outright — the term is doing standardless, reference-shifting work that no single binding captures. The question looks binary because the indexical machinery is hidden.
 
-*Does superintelligent AI pose a major extinction risk?* Nonzero probability: yes, plainly. But "major" is a standardless evaluation — major relative to what baseline, over what horizon? Weighed against other extinction risks, the answer depends on branch weightings — on Measure. The honest answer is yes, *conditionally*, with the conditions stated.
+*Does superintelligent AI pose a major extinction risk?* The answer depends on what capabilities, deployment conditions, horizon, probability threshold, and comparison class “major” denotes. This is an ordinary Credence and modeling problem; it does not require the QBU's Measure unless that optional ontology has already been adopted.
 
 *Blockchain?* As an efficiency play against databases: no. For trustless coordination without a central authority: yes — a real but rare use case. "Rare but real" is not a hedge; it is the shape of the truth, and the blunt "No" erases exactly the conditional structure that makes the answer informative.
 

@@ -1,7 +1,7 @@
 ---
 title: "You're Not a Random Sample"
 subtitle: 'Anthropics without observer-counting'
-status: draft
+status: review
 sources:
   - 193379647.youre-not-a-random-sample
 ---
@@ -10,11 +10,11 @@ Imagine you are Adam — literally the first human. You are about to flip a perf
 
 Before you flip, how confident should you be that the coin will land heads?
 
-If you said 50/50, congratulations — you have better instincts than one of the most widely discussed principles in the philosophy of probability. According to the Self-Sampling Assumption, the dominant framework for reasoning about your place in the universe, Adam should be nearly certain the coin will land *tails*.
+If you said 50/50, you have identified the intuition the Lazy Adam case is designed to defend. Under one application of the Self-Sampling Assumption (SSA), Adam's indexical evidence can instead favor *tails*. SSA is influential, but neither it nor the relevant reference class is uniquely dominant.
 
 The reasoning goes like this: if you should think of yourself as a random sample from all humans who will ever live, then being literally the first human is wildly unlikely in a world with billions of people but perfectly normal in a world with only two. So the coin is probably going to land tails.
 
-This is, to put it plainly, absurd. A fair coin does not care how many people will exist afterward. Something has gone wrong at a deep level.
+That verdict is counterintuitive because the physical coin mechanism is unchanged. Defenders of anthropic updating will answer that the evidence is not only about the mechanism but about Adam's location. The example therefore exposes a disagreement about what belongs in the likelihood rather than ending it by ridicule.
 
 ## The Two Orthodox Answers
 
@@ -34,7 +34,7 @@ Both frameworks share the same deep flaw: they treat **counting observers** as t
 
 I propose a framework called Measure-Conditioned Self-Location (MCSL) — the formal treatment is in [the MCSL paper](/papers/MCSL.html) — and its central move is deceptively simple: replace observer-counting with [Measure](11-measure-and-credence.md).
 
-What is Measure? Think of it as the objective physical "weight" or "reality-share" that a particular situation has. In the Quantum Branching Universe (QBU) — the Everettian picture developed in [Measure and Credence](11-measure-and-credence.md) — this is a natural concept: different branches of reality have different weights, and two branches can exist without being equally real. But even in classical physics, Measure shows up as physical probability.
+What is Measure? In the optional QBU model, it is the Born weight assigned to a specified record sector—not a quantity of reality or a claim that one branch is less real than another. Classical stochastic models can also supply objective probabilities, but there is no theory-neutral measure over arbitrary observers or cosmologies.
 
 The crucial difference: if you duplicate someone, SSA and SIA just see "two observers now" and start counting. MCSL asks: what is the physical weight behind each copy? Two copies created by a symmetric process share Measure equally — you get the intuitive 50/50 answer. But two "copies" with very different physical grounding can have very different weights. Counting cannot see that distinction. Measure can.
 
@@ -46,7 +46,7 @@ MCSL says the question is not "From which observer was I randomly sampled?" or "
 
 Three words in that sentence are doing heavy lifting: *objective*, *physical*, and *evidence*.
 
-**Objective and physical** means we are talking about something real in the world — branch weights, physical probabilities — not an arbitrary philosophical sampling rule.
+**Objective and physical** means the weights must come from a stated physical model rather than an arbitrary sampling rule. Comparing theories still requires priors, likelihoods, and a common account of evidence; MCSL does not obtain those for free.
 
 **Evidence** means we are not just looking for situations that *feel* the same from the inside. We need situations that genuinely support the full structure of what we currently know. This matters because of what might be the hardest problem in this whole area.
 
@@ -62,13 +62,13 @@ MCSL's answer is to distinguish between three levels of "matching":
 2. **Evidential match**: the full structure of memories, knowledge, and context matches. (Better, but still not enough — a sufficiently detailed counterfeit passes this too.)
 3. **Admissible coherent match**: it not only matches your evidence but actually *supports* the structures that make your evidence count as evidence in the first place. Your memories are not just present as a pattern — they connect to a real history. Your inferences are not just locally mimicked — they are grounded in genuine structure.
 
-Only the third level is good enough. A one-frame counterfeit might perfectly replicate every detail of your experience, but it lacks the structural backbone that makes experience *mean* anything. It is like a movie set that looks perfect in a photograph but has nothing behind the facades.
+MCSL proposes that only the third level is admissible. But calling a causally ordinary observer "genuine" and a Boltzmann brain "counterfeit" risks assuming the conclusion unless the relevance of causal history is independently defended.
 
-This is the hardest part of the framework, and I am candid about that. I do not claim to have a complete theory of exactly where to draw the line between genuine and counterfeit. But the *framework* is right. The question "what counts as a genuine realization of my evidence?" is a much better question than "from which reference class am I sampled?"
+This is the hardest part of the framework. I do not claim to have a complete theory of exactly where to draw the line. The proposal's promise depends on whether admissibility can be specified without building the preferred conclusion into the rule.
 
 ## The Famous Puzzles
 
-**Lazy Adam**: Adam has no new information about the coin. The physical weight behind his evidence is symmetric between heads and tails. The answer is 50/50, as it should be. No sampling gymnastics required.
+**Lazy Adam**: given symmetric physical weights and an evidential specification that does not reweight by future observer count, MCSL returns 50/50.
 
 **The Doomsday Argument**: The existence of many future humans does not dilute the physical weight of your current situation. A bigger future does not make your present less real. So your birth rank is not evidence of impending doom — at least not through this route.
 
@@ -91,6 +91,6 @@ But these are honest open problems, not hidden failures. Identifying the *right*
 
 This might seem like an abstract philosophical exercise, but the stakes are surprisingly concrete. If you are trying to reason about the multiverse, the far future of humanity, the simulation hypothesis, or the foundations of quantum mechanics, you need a theory of self-location. And if that theory is fundamentally broken — if it tells you fair coins are biased or that headcount trumps evidence — then every conclusion built on it is suspect.
 
-MCSL does not claim to be the final answer. It claims to be asking the right question. Not "how many observers are there?" but "how much reality stands behind my evidence?" That is a shift from counting to weighing, from sampling to measuring, from arbitrary reference classes to physical structure.
+MCSL is a research proposal. It asks how much model-grounded weight supports situations matching the evidence, replacing simple observer counts with physical structure. It still owes a general account of cross-theory weights, priors, likelihoods, and admissibility.
 
 The same shift has a twin. Self-location asks where you are among observers; the QBU poses the mirror-image question of where you are among branches — and there, too, the orthodox instinct is to count when it should weigh. Why your Credence should track Measure at all, and why the amplitude-squared weight is the only self-consistent way to do the weighing, is the subject of the companion chapter, [You're Not a Random Branch](16-youre-not-a-random-branch.md).
