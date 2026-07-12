@@ -1,7 +1,7 @@
 ---
 title: 'Structure Is Not Salvation'
 subtitle: 'What the program refuses to claim'
-status: draft
+status: review
 sources:
   - 188741196.structure-is-not-salvation
   - 182250795.against-vibe-alignment

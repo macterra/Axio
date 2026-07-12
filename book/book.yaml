@@ -159,6 +159,32 @@ volumes:
 
   - slug: 04-axionic-agency
     title: "Axionic Agency: The Alignment Program"
+    parts:
+      - title: "Part I — Reframing Alignment"
+        chapters:
+          - 01-beyond-alignment
+          - 02-what-can-be-aligned
+          - 03-the-reflective-coherence-thesis
+      - title: "Part II — The Sovereign Architecture"
+        chapters:
+          - 04-the-sovereign-kernel
+          - 05-reflective-stability
+          - 06-structural-alignment
+          - 07-what-the-kernel-binds
+      - title: "Part III — Verification, Authority, and Pressure"
+        chapters:
+          - 08-verifiable-agency
+          - 09-authority-without-a-self
+          - 10-agency-under-pressure
+          - 11-sentience-without-sovereignty
+      - title: "Part IV — Governance, Construction, and Limits"
+        chapters:
+          - 12-governance-without-gods
+          - 13-possibility-became-real
+          - 14-structure-is-not-salvation
+      - title: "Coda — The Research Program"
+        chapters:
+          - 15-the-program
 
   - slug: 05-value-and-ethics
     title: Value and Agency-Centered Ethics

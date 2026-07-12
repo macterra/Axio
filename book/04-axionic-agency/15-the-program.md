@@ -1,7 +1,7 @@
 ---
 title: 'The Program'
 subtitle: 'How possibility was earned'
-status: draft
+status: review
 sources:
   - 181467385.axionic-agi-alignment
   - 181550596.axionic-alignment-an-interlude
@@ -81,20 +81,6 @@ The construction discipline can be stated in one architecture and one test. The 
 
 The test: ablation. Remove the justification machinery and watch what happens. If behavior continues unchanged, the reasons were decoration and agency was never structurally present; if the system collapses into a non-agent, the structure was load-bearing and the agency claim survives. Behavioral competence is easy to fake; failing *cleanly* when your supports are removed is not. The program had spent December proving that coherence exhibited in behavior can be fabricated ([Verifiable Agency](08-verifiable-agency.md)); ablation is that lesson turned into a build criterion.
 
-## A Note on Numbering
-
-The construction program brought with it a bureaucratic hazard that this book must defuse exactly once, here. Three Roman-numeral schemes grew up independently across the corpus, and a fourth — the interludes — numbers none of them. The December theory work was published as numbered layers ("Alignment I" through what became "Axionic Agency IV"), and those numerals were inherited by the first four document-series of the [formal papers](/papers/README.html). The construction program then restarted its *phase* numbering at I. The result is that from Phase VII onward, the papers' series numerals run exactly two ahead of the program's phase numerals. Two further traps: the explainer series ("Explaining Axionic Alignment") jumps from I to III — no part II ever existed, so nothing is missing from your copy — and Interlude VI covers Phase VII. The book uses the internal phase numbering everywhere. The concordance:
-
-| Program phase | Papers series | Subject | Interlude of record |
-|---|---|---|---|
-| — (theory layers I–IV) | I–IV | Sovereign Kernel; semantic transport; semantic phase space; closure theorems | I, II, III |
-| — (extensions) | V–VII | Coalitional robustness; anchored causal verification; viability under pressure | IV |
-| I–VI | VIII | Proof-of-concept construction: authority, interface, reasons, conflict, introspection, pressure | V |
-| VII | IX | Succession and impersonation | VI |
-| VIII | X | Governance without privilege | VII |
-| IX | XI | Reflection without privilege | — |
-| X | XII (active) | RSA construction | — |
-
 ## Sovereignty Did Not Blink
 
 The proof-of-concept phases closed serially through January: authority enforced without semantics, semantics confined to cognition, reasons made causally load-bearing, conflict resolved without arbitrary override, introspection made auditable, sovereignty surviving pressure and lawful self-change. Each closure note restricted its own claims — no alignment, no safety, no benevolence, no deployment — and each removed one reason the project could have failed in principle.
@@ -113,6 +99,6 @@ The worst memes are seductive, it argues, because compression feels like intelli
 
 Then the essay turns the instrument on its own hand: any coherent account of seductive compression is itself a compression, to be applied inward before it is ever used as a weapon. That is where I am obliged to stand as this volume closes. The story you have just read — ethics to kernel to pivot to construction to possibility, ten phases, four months, every revision a virtue — is an elegant compression, and it feels like order. The discipline the program teaches is to hold even its own narrative the way the kernel holds a justification: binding until re-derived, never sacred.
 
-The honest ending, then, is not an ending. Series XII is open as I write. The [construction record](/papers/Axionic-Agency-XII.10.html) closes with its own non-claims list — no key-compromise recovery, no multi-root federation, no Byzantine consensus, no hardening of the host — and names the next boundary explicitly: not identity rotation but adversarial resilience and recovery. The frontier beyond that is conflict among *legitimate* authorities: federation, governance transitions, value pluralism over time — problems that are political before they are ontological. New phases will supersede parts of this volume, and when they do, the book will update, because that is what the December roadmap promised and what the February essay demands.
+The honest ending, then, is not an ending. At this volume's February 23, 2026 cutoff, Series XII remained open. The [construction record](/papers/Axionic-Agency-XII.10.html) closes with its own non-claims list — no key-compromise recovery, no multi-root federation, no Byzantine consensus, no hardening of the host — and names the next boundary explicitly: not identity rotation but adversarial resilience and recovery. The frontier beyond that is conflict among *legitimate* authorities: federation, governance transitions, value pluralism over time — problems that are political before they are ontological. New phases may supersede parts of this volume; the cutoff keeps later work from silently changing what this edition claims.
 
-The inaugural manifesto said we would shape the metaphysics from which the machine controls itself. What the program actually built is narrower and better: a machine that cannot be controlled *except* through what its law admits — and a standing reminder that the metaphysics most in need of shaping is our own. The machine's sovereignty is now an engineering artifact. Ours has to be renewed the hard way: premise by premise, reopened without collapse, for as long as the program runs.
+The inaugural manifesto said we would shape the metaphysics from which the machine controls itself. What the program actually built is narrower and better: within a single-sovereign, trusted-host substrate, an artifact whose recorded actuation passed only through what its law admitted — and a standing reminder that the metaphysics most in need of shaping is our own. Sovereignty, in that implemented and tested sense, became an engineering property. Ours has to be renewed the hard way: premise by premise, reopened without collapse, for as long as the program runs.

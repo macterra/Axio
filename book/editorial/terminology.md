@@ -281,6 +281,18 @@ Alignment pursued by restricting the architecture and admissible transformations
 
 **Canonical home:** Volume 4, Chapter 6.
 
+### Verifiable agency
+
+An evidentiary program for testing whether claimed reasons, constraints, and authority relations were causally load-bearing in an implemented system. Verification is always relative to an observation model, protocol, and threat model; it does not establish benevolence or exhaustive access to internal causation.
+
+**Canonical home:** Volume 4, Chapter 8.
+
+### Semantic phase
+
+A model-relative region of states connected by admissible interpretation-preserving transitions. Crossing a phase boundary means that recovery is unavailable through the agent's own admissible operations under the specified model.
+
+**Canonical homes:** Volume 4, Chapters 6–7.
+
 ### Axion
 
 A reflective sovereign agent whose self-modification operator is defined only over futures preserving the Axionic invariants.

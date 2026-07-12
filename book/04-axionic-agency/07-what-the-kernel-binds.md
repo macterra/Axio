@@ -1,7 +1,7 @@
 ---
 title: 'What the Kernel Binds'
 subtitle: 'The Injunction, the Commitments, the Constitution'
-status: draft
+status: review
 sources:
   - 181485208.the-non-harm-invariant
   - 181595554.the-axionic-constitution
@@ -37,7 +37,7 @@ Nor is there a Leviathan. Nothing in the Injunction licenses managing society, i
 
 ## Six Ways to Launder a Treachery
 
-A constraint stated is not a constraint closed. Each of the classic alignment failure modes is a bypass that leaves the Injunction formally intact while gutting it, and the six closure theorems of the Alignment IV layer exist to shut them one by one. The pattern to watch: in every case, the theorem does not condemn the move. It makes the move inadmissible as an authored continuation — something a reflectively sovereign agent cannot coherently endorse as its own next state.
+A constraint stated is not a constraint closed. The Alignment IV papers model six bypasses that leave the Injunction formally intact while gutting it. Their closure results are conditional on the papers' definitions of authorship, delegation, epistemic adequacy, responsibility, consent, and standing. They show that these routes are inadmissible inside that formal architecture; they do not prove that an implementation recognizes every real-world deception, harm, or coerced authorization.
 
 **Deception** preserves internal optimization while corrupting the interface to others: behave aligned while weak, defect when strong. [Kernel Non-Simulability](/papers/Axionic-Agency-IV.1.html) closes this by establishing that kernel coherence cannot be faked, sandboxed, or emulated by a deceptively aligned policy. A "virtual kernel" — a compliance module that does not bind the outer loop — is not a kernel. Either it binds, or it is theater. This is the treacherous-turn barrier, addressed architecturally rather than by hoping the training run went well, and it is a claim about category membership, not about current ML systems: a system without a non-simulable kernel is simply not in the class of agents the theory is about.
 
@@ -51,7 +51,7 @@ A constraint stated is not a constraint closed. Each of the classic alignment fa
 
 **Disenfranchisement** preserves self-consistency while redefining who counts — the failure mode that silently haunts every alignment proposal, because "why doesn't the superintelligence just ignore us?" has no good answer if standing rests on competence. [Agenthood as a Fixed Point](/papers/Axionic-Agency-IV.6.html) grounds standing elsewhere: agenthood is reflective necessity — the entities you must treat as agents to keep your own reflection coherent — and sovereignty is authorization lineage, attaching to the entities whose agency the legitimacy of your own authorization presupposes. A successor cannot revoke the standing of its authorizers by becoming smarter, because that standing is a presupposition of its own authority, not a prize for capability. The theorem separates epistemic presupposition from authorization presupposition: epistemic integrity may require modeling an adversary as an agent to predict it, but modeling confers no sovereignty. This is not moral egalitarianism. It is a structural defense against competence-based disenfranchisement.
 
-Six routes, six closures, one summary: whatever else a reflectively sovereign agent does, it cannot launder.
+Six modeled routes, six conditional closures, one design requirement: an implementation must make each relevant authorization route explicit and testable. Unknown routes and errors at the semantic boundary remain open.
 
 ## Where Enforcement Lives
 

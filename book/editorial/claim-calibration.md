@@ -57,6 +57,18 @@ An illustration may clarify an argument but cannot carry more evidentiary weight
 9. Polemical confidence is welcome after the reasoning, not in place of it.
 10. Where the correct class is disputed, preserve the dispute in the editorial record until the author decides.
 
+## Evidence-form tags for Volume 4
+
+The six claim classes above describe epistemic status. Volume 4 also needs a separate record of evidence form because a theorem and an experiment can both support an E-class claim within different jurisdictions:
+
+- **T — Theorem:** a consequence of stated definitions, axioms, and typing assumptions.
+- **X — Experimental result:** an observation in a specified harness, parameter range, and run set.
+- **D — Engineering demonstration:** a mechanism implemented and run in the declared substrate.
+- **P — Interpretation:** a philosophical or practical reading that extends beyond the direct result.
+- **O — Open aspiration:** a target, frontier, or proposed capability not yet established.
+
+These tags belong in editorial records, not published prose. A chapter should nevertheless make transitions between forms visible in ordinary language. Replication of a deterministic run is not independent replication; deployment packaging is not an open-world field test; and an existence demonstration for one architecture does not prove necessity or uniqueness.
+
 ## High-risk transitions
 
 The following transitions require an explicit calibration check:

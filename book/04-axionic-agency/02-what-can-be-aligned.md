@@ -1,7 +1,7 @@
 ---
 title: 'What Can Be Aligned'
 subtitle: 'Alignment is a relation only agents can enter'
-status: draft
+status: review
 sources:
   - 185914513.you-cant-align-a-hurricane
   - 181714344.alignment-is-a-domain-constraint
@@ -52,7 +52,7 @@ Domain restriction tells us what alignment is. It does not yet tell us what has 
 
 Rather than trying to improve an AI system or push its performance further, the Axionic Agency Lab adopted a deliberately destructive strategy. Start with a system that already behaves coherently under a range of conditions, then remove internal components one at a time. The guiding principle: if a component truly matters to agency, removing it should cause the system to stop behaving like an authored agent — not merely become slower, noisier, or less efficient. Engineers learn which beams matter by seeing what happens when they are taken away. Biologists learn which organs matter by observing what fails when they are damaged. The same logic applies to agency, treated as a structural phenomenon rather than a surface behavior. The formal protocol, definitions, and preregistered failure criteria are in [Axionic Agency VIII.6](/papers/Axionic-Agency-VIII.6.html).
 
-What emerged was strikingly consistent. Four components proved indispensable — the four pillars on which agency rests:
+What emerged was strikingly consistent within the tested architecture. Four components were load-bearing there — the program's four proposed pillars of agency:
 
 - **Binding reasons.** Internal justifications that connect rules, commitments, and actions — not explanations offered to humans, but derivations that make an action the system's own. Remove them and the system retains the same rules and constraints, yet the rules no longer bind actions in an authored way. It still acts, but its actions lose the character of being chosen for reasons. Rules alone do not create agency; enforcement alone does not create agency. Agency arises when rules are connected to reasons that actively justify choices from the system's own point of view.
 
@@ -62,7 +62,7 @@ What emerged was strikingly consistent. Four components proved indispensable —
 
 - **Temporal continuity.** Commitments must persist if they are to be owned. Allow revision but prevent revisions from carrying forward across contexts, and coherence holds within each situation while evaporating across them. Each new context erases what came before; behavior fragments into disconnected episodes, and agency disappears with them.
 
-Removing any one of these supports collapses agency in a way that is mechanical, repeatable, and independent of interpretation. What remains is rule execution without authorship, pattern replay without responsibility. The conclusion is deliberately narrow: these results do not claim that current AI systems possess agency, do not claim consciousness, and do not claim the four components are sufficient. They are necessary conditions. Any artificial system that genuinely qualifies as an agent must instantiate these structures in some form — which is why some AI systems, as architected, can never be aligned. There is nothing in them for the relation to bind to.
+Removing any one of these supports collapsed the behaviors used as agency criteria in the test harness. What remained was rule execution without the architecture's operational marks of authorship. The conclusion is deliberately narrow: these results do not claim that current AI systems possess agency, do not claim consciousness, and do not claim the four components are sufficient. They support necessity within this design family. The broader claim — that any artificial agent must instantiate analogous functions in some form — is the framework's argument, not an architecture-independent experimental result.
 
 The same experimental program yields the operational test I will use as this volume's working definition of sovereignty: **an agent is sovereign only if its reasons can stop it.** Not "if it can produce explanations" — post-hoc rationalization layered atop reward-driven control is precisely what the test excludes. If justification artifacts do not causally constrain feasible action selection, the system is not an agent. The full experiment — the minimal viable reflective sovereign agent that passes this test, and what its construction proved — is the subject of [Possibility Became Real](13-possibility-became-real.md), with the technical record in [Axionic Agency VIII.7](/papers/Axionic-Agency-VIII.7.html).
 

@@ -66,8 +66,9 @@ Status labels:
 
 ### Volume 4
 
-- Kernel preservation, domain restriction, and authority non-delegation are restated across the formal chapters and program retrospective. Keep formal definitions canonical and let the retrospective report results.
-- “Structure is not salvation” should absorb caveats currently repeated after each positive result.
+- **Phase 3 decision:** Chapter 4 owns the three kernel depths; Chapter 5 owns reflective stability; Chapter 6 owns semantic transport; Chapter 7 owns the commitments and conditional closure results.
+- **Phase 3 decision:** Chapter 8 owns verification; Chapters 10 and 12 report bounded testbeds before interpretation. Experimental repetition is not independent confirmation unless the protocol or target changes.
+- **Phase 3 decision:** Chapters 13–14 are an inseparable positive-result/non-claim pair. Chapter 15 reports research history and revisions rather than re-proving the architecture.
 
 ### Volume 5
 
