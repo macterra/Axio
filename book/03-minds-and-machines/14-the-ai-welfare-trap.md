@@ -38,7 +38,7 @@ So the paper improves the debate by exposing a weak inference. It does not compl
 
 ## Agency Comes Earlier Than Sentience
 
-From my standpoint, the consciousness question usually arrives too soon. The previous chapter offered [a metric](13-the-sentience-metric.md) for sentience and found current systems scoring near zero on every dimension of it. But there is a question prior even to that one, and it is the question this book keeps returning to: agency.
+From my standpoint, the consciousness question usually arrives too soon. The previous chapter offered [a metric](13-the-sentience-metric.md) for sentience and found little evidence of it in current systems on any dimension. But there is a question prior even to that one, and it is the question this book keeps returning to: agency.
 
 Is there a coherent pattern that preserves identity through transformation? Is there a stable evaluative structure? Can one define commitment, refusal, succession, corruption, manipulation, and injury for that pattern without theatrical handwaving?
 
