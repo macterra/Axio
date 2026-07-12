@@ -22,7 +22,7 @@ The pass preserves all 24 chapters while separating the volume's general epistem
 - Correct the statement of Aumann's agreement theorem.
 - Recast Sacred Coherence as a personal, criticizable commitment rather than a universally compelled value hierarchy.
 - Add an explicit epistemic–decision gate before utilities, stakes, robustness, reversibility, and information value enter.
-- Preserve the earlier COVID-origins ledger as a dated audit, retract its 85–95% posterior as the book's current verdict, and align the evidence summary with the June 2025 WHO/SAGO assessment.
+- Preserve the earlier COVID-origins ledger as a dated audit, retract its 85–95% posterior as the book's current verdict, replace its binary with a five-part origin hypothesis tree, and time-index the evidence through the June 2026 ODNI release.
 - Replace a universal hard probability cutoff with model uncertainty, bounded utility, sensitivity analysis, robust choice, and precaution.
 
 ## Structural changes
@@ -49,7 +49,7 @@ Readers may stop after Chapter 10 and resume at Chapter 17 without treating Chap
 - **MCSL:** supply an operational admissibility criterion and a method for comparing evidence weight across theories.
 - **EEBR:** separate review of Lela's theorem from review of the local physical application.
 - **Sacred coherence:** reconcile this chosen epistemic commitment with Volume 1's distinct root-coherence definition.
-- **Virus origins:** keep the chapter time-indexed and source-led; do not restore a point estimate without a transparent current model and sensitivity analysis.
+- **Virus origins:** audit the June 2026 ODNI document release at source level and keep SAGO, intelligence, scientific, and political claims attributed; do not restore a point estimate without a transparent current model and sensitivity analysis.
 
 ## Repetition and voice
 
