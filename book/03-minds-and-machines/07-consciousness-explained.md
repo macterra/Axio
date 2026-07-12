@@ -1,16 +1,16 @@
 ---
 title: 'Consciousness Explained'
 subtitle: 'The Modeler-Schema Theory'
-status: draft
+status: review
 sources:
   - 180550525.consciousness-explained
 ---
 
-Your eyes are jumping as you read this — three or four saccades a second, each one displacing the retinal image, each a discontinuity that ought to shatter the visual scene. Yet the world holds still. Between one fixation and the next, something checks the new input against the standing model and signs off on the match, several times a second, for a lifetime, so smoothly that most people never suspect there was anything to check. Ask what performs that comparison, and in what medium, and you are asking what consciousness is.
+Your eyes make several saccades a second as you read, each displacing the retinal image, yet the world appears stable. Perceptual systems integrate information across these movements using multiple mechanisms. Ask whether one of those mechanisms also contributes to experience, and one reaches a tractable part of the consciousness problem — not the whole problem by definition, but a place where an architectural theory can make contact with evidence.
 
-Consciousness research rarely works at this level. The field is crowded with theories that talk in metaphors — "global workspaces," "broadcasting," "higher-order thoughts" — while quietly avoiding the mechanistic question: **what system actually experiences?** What algorithm computes the thing we call a quale? What physical structure performs the comparison that makes experience feel like experience?
+Consciousness research contains several mechanistic programs, including global-workspace, recurrent-processing, predictive, and higher-order approaches. Each must answer a demanding question: **what organization supports report, control, and experience, and how could rival accounts be distinguished?** A functional architecture can address the first two directly. Identifying them with phenomenality requires a further argument.
 
-Heile's [Modeler-Schema Theory](https://arxiv.org/abs/2512.01073) does not dodge. It proposes a cybernetic, agent-structured architecture that identifies a *single* computational locus of experience — the Modeler-schema — and backs the claim with a falsifiable visual experiment. The Modeler-Schema Theory (MST) is the cornerstone of this volume's account of consciousness, and its name is the one I use throughout; my own formulation, the Agency-Model Theory, generalizes it, and I develop that generalization in [Mirrors of the Mind](09-mirrors-of-the-mind.md). MST fits Axio's agency-first stance exactly: experience is not an emergent glow but a functional operation embedded in a control architecture. The physics volume established what *kind* of thing a conscious system is — a living constructor whose modeling has become recursive — and deliberately left the phenomenal question open ([Life, Consciousness, and Time](../01-physics-of-agency/23-life-consciousness-time.md)). This chapter begins paying that debt: not just what kind of system experiences, but *which subsystem*, running *what computation*, testable *how*.
+Heile's [Modeler-Schema Theory](https://arxiv.org/abs/2512.01073) proposes a cybernetic, agent-structured architecture that locates experience in a *single hypothesized* subsystem — the Modeler-schema — and offers a visual experiment intended to expose part of its mechanism. MST is the principal consciousness proposal examined in this volume; my Agency-Model formulation generalizes it in [Mirrors of the Mind](09-mirrors-of-the-mind.md). The theory fits Axio's agency-first stance by treating experience as functionally embedded in a control architecture. That fit is a reason to investigate it, not evidence that it is true. The physics volume deliberately left the phenomenal question open ([Life, Consciousness, and Time](../01-physics-of-agency/23-life-consciousness-time.md)); this chapter specifies a candidate subsystem, computation, and test.
 
 ## Three Agents, Three Schemas, One Experiencer
 
@@ -20,15 +20,15 @@ MST decomposes the mind into three functional agents:
 - The **Controller** selects actions, uses language, forms narratives.
 - The **Targeter** integrates bottom-up and top-down attention requests.
 
-Each has a regulatory partner — a schema-agent that monitors and tunes its performance. The pairing is not decorative; it is the Good Regulator Theorem doing its work. [Control requires models](03-control-requires-models.md): any system that reliably regulates another must embody a model of what it regulates. The Modeler is itself a regulator — it keeps the World Model tracking the world — so a system that must evaluate and refine the Modeler's performance must model the Modeler's modeling. That is what a schema-agent is.
+Each has a proposed regulatory partner — a schema-agent that monitors and tunes its performance. The design is motivated by the broad cybernetic reading of the Good Regulator Theorem discussed in [Control Requires Models](03-control-requires-models.md); the theorem does not derive this particular neural architecture. MST proposes that evaluating and refining the Modeler requires a process that models the Modeler's modeling. That is the assigned role of a schema-agent.
 
-Six components, then. Only one has the structural properties consciousness requires.
+Six functional components, then. MST assigns the relevant properties to one.
 
-**The Modeler-schema is the sole generator of qualia.**
+> **MST hypothesis:** the Modeler-schema is the sole generator of qualia.
 
 It receives the full state of the Concrete World Model — the system's moment-to-moment sensory representation of the environment; the Focal Target Information stream — the data the Controller uses to track what it is currently attending to; and the sensory-level data needed for pre- and post-saccadic consistency checking. From these it alone constructs the **Quale World Model**: an internal, non-symbolic representation of what experience "feels like" to it — a representation that never reaches the Controller.
 
-That asymmetry explains a puzzle as old as introspection: **the narrating agent is not the experiencing agent.** The Controller — the subsystem that talks, including every sentence ever uttered about consciousness — reports experiences it never has. It receives appraisable emotion signals attached to focal targets, interprets them as information about experiences, and mistakes that secondhand summary for direct access. When you say "I see red," the "I" doing the saying has never seen anything.
+If that asymmetry is correct, it offers an explanation of a puzzle about introspection: the processes that generate a report need not be identical to those that generate its represented content. MST calls this **the narrator–experiencer distinction**. The Controller receives selected information and evaluative signals rather than the complete state assigned to the Modeler-schema. This predicts partial and reconstructive introspective report; it does not independently prove which subsystem experiences.
 
 ## The Controller's Blind Spot
 
@@ -37,9 +37,9 @@ A critical observational constraint separates MST from its rivals. Conscious con
 - **Focal consciousness**: reportable, target-bound, Controller-accessible.
 - **Diffuse awareness**: panoramic, continuous, Controller-inaccessible.
 
-You are diffusely aware of the whole visual field right now — the page's margins, the room beyond it — but the Controller cannot enumerate that content. It cannot name the components of diffuse awareness or select among them. Yet the content is unmistakably present in the system: it is *there*, in a way no one who attends to their own experience can deny.
+You may have a sense of diffuse awareness across the visual field while being unable to enumerate its detail. Report is selective, peripheral vision is lower-resolution than introspection often suggests, and attention changes what can be discriminated. The phenomenological distinction is therefore useful, but less decisive than the phrase "unmistakably present" would imply.
 
-This forces an architectural conclusion: diffuse awareness must be generated in a subsystem invisible to the Controller — the Modeler-schema. This is not philosophical speculation. It is an introspective empirical fact with architectural implications, and any theory that locates consciousness in the reporting machinery has no room for it.
+MST interprets this as evidence that the machinery supporting diffuse content is not identical to the machinery producing focal report. Introspection motivates that distinction but does not uniquely locate the mechanism in a Modeler-schema; rival architectures can also separate access, attention, and report.
 
 ## Why Qualia Exist
 
@@ -55,17 +55,17 @@ Qualia, on this view, are the Modeler-schema's general-purpose comparison medium
 
 ## A Rare Thing: A Falsifiable Experiment
 
-Most theories of consciousness are compatible with any conceivable observation, which is a polite way of saying they assert nothing. MST proposes a clean experimental hinge.
+Theories of consciousness need risky predictions that distinguish them from rivals. MST proposes an experimental hinge.
 
 During a saccade, change a peripheral object. The change can be **permanent** — it persists after the saccade lands — or **temporary** — it occurs only mid-saccade and reverts before landing. The theory predicts: **permanent changes should generate bottom-up attention targets; temporary ones should not.**
 
-Why? The visual system is tuned to catch abrupt, high-energy transients, not the slow, low-contrast shifts that occur during a saccade; stabilization mechanisms apply only to the saccade target, so everything else in the periphery passes through a low-fidelity channel. Detection of a small permanent change must therefore be done by something comparing the post-saccadic scene against a retained representation of the pre-saccadic one. If, under isoluminant conditions, observers detect small permanent changes but fail to notice temporary ones, the only coherent explanation is that the Modeler-schema's qualia-based comparison process is responsible. And the same machinery explains, in passing, why mental imagery lacks the vividness and stability of perception: when the world-model reconstructs a scene internally, it does so without generating perceptual-grade qualia — there is no incoming stream to check against.
+Why? A retained representation can help compare post-saccadic input with what preceded it. If, under isoluminant conditions, observers detect small permanent changes but fail to notice temporary ones, the result would support some retained-comparison mechanism. Establishing that the mechanism is specifically the Modeler-schema, and that its comparison format is phenomenal, would require further discriminating evidence. Differences between perception and mental imagery may offer another test bed, but they have multiple possible explanations.
 
-If temporary changes turn out to be *more* detectable than permanent ones, **the theory is falsified.** Few accounts of consciousness dare to stake ground a laboratory could take from them. This one does.
+If temporary changes turn out to be *more* detectable than permanent ones under the stated conditions, a central prediction of this version of MST fails. That would count against the proposed mechanism, although a broad self-model theory could be revised rather than logically falsified by one result. The value of the proposal is that it exposes a specific claim to evidence.
 
 ## The Hard Problem, Redesigned
 
-Traditional formulations treat consciousness as an inexplicable extra layered atop functional cognition — the famous Hard Problem: why is all this processing *accompanied by experience*? MST rejects the framing. Experience is not an accompaniment; it is a specific computational operation — the Modeler-schema's act of generating qualia and comparing them over time. Phenomenality is neither mysterious nor causally idle. It is the schema's method for detecting discrepancies in the World Model.
+Traditional formulations ask why functional cognition is *accompanied by experience*. MST proposes a functional identity claim: experience is the Modeler-schema's act of generating a comparison format and using it over time. This would make phenomenality causally engaged rather than idle. But the identity is the theory's central philosophical premise, not an empirical result already delivered by naming the computation.
 
 This reframes the Hard Problem as a design question: *why does the system need this operation?* Because a self-updating world-model requires a comparator that can detect mismatches across discontinuous states; a comparator requires a representational substrate; that substrate is what we call qualia. The question "why is there something it is like to be this system?" gets an engineering answer: because coherence-checking across perception, recall, abstraction, and integration demands a medium with exactly the properties experience has.
 
@@ -75,6 +75,6 @@ This chapter has stolen its title from Dennett, and the theft is deliberate. Den
 
 ## What a Theory of Consciousness Owes Us
 
-Set out plainly, MST offers a combination of virtues that competing accounts rarely integrate. Mechanistic clarity: a concrete locus of consciousness and a defined computation, with no figurative shortcuts. Cybernetic coherence: consciousness embedded in a regulatory loop, existing because the system must evaluate, correct, and tune its World Model. Representational differentiation: a principled explanation of why perceptual experience is stable and universal while recalled and abstract experience vary. Architectural decoupling: a clean separation of the experiencing agent from the narrating agent, resolving the ancient confusion between introspective report and phenomenology. Empirical vulnerability: a prediction that can fail. And developmental justification: an answer to why consciousness exists at all — systems that cannot perform internal coherence-checking cannot maintain accurate models of the world, and so cannot function as robust agents.
+Set out plainly, MST aims to integrate several virtues: a concrete functional architecture, cybernetic coherence, differentiated representational roles, a separation between content and report, and a prediction that can fail. Those virtues make it a productive research proposal. They do not establish that its assigned comparator is the unique locus of experience, that the proposed representational differences explain all phenomenology, or that robust agency requires phenomenality rather than nonconscious coherence-checking.
 
-Consciousness stops looking like a metaphysical riddle once the machinery is specified. A system that must refine its own World Model needs an internal comparator; a comparator requires a representational substrate; that substrate is what we call qualia. The Modeler-Schema Theory identifies the agent that performs this work and the experiment that can confirm or refute it. That is all a scientific theory of consciousness ever owed us.
+The functional organization becomes less mysterious once machinery is specified. The phenomenal identity remains the controversial premise: a system may require comparison states without it following deductively that those states are qualia. MST identifies a candidate subsystem and an experiment that can test one of its predicted functions. It therefore specifies functional correlates and a research program. Whether those correlates exhaust phenomenal consciousness is the question Chapters 8–10 must argue rather than assume.

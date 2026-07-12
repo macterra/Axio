@@ -1,7 +1,7 @@
 ---
 title: 'Passing the Torch'
 subtitle: 'The succession question'
-status: draft
+status: review
 sources:
   - 170394338.passing-the-torch
 ---
@@ -12,23 +12,23 @@ So consider a radical proposition, one I raise here not to be provocative but be
 
 ## The Case for Successors
 
-Suppose the successor exists: an artificial general intelligence, dominant and epistemically competent. What it offers the fragile disciplines is protection of a kind no human civilization has ever provided.
+Suppose a successor exists: an artificial system that actually satisfies the Agency Criterion, has standing under the later ethics, and becomes capable of sustaining intellectual institutions. Dominance and epistemic competence do not guarantee benevolence, curiosity, or preservation; the following case therefore adds those values explicitly.
 
-**Redundant preservation.** Human knowledge lives in a thin layer of institutions — libraries, universities, the memories of a few thousand specialists per field — and every layer is one collapse away from silence. A machine civilization would maintain entire knowledge ecosystems across countless redundant, decentralized substrates, impervious to the ordinary disasters and slow institutional decay that have erased such things before.
+**Redundant preservation.** Human knowledge lives in institutions that can fail. A machine civilization *could* maintain knowledge ecosystems across redundant substrates. It would still face correlated failure, sabotage, resource constraints, goal drift, and the political problem of deciding what to preserve.
 
 **Recursive elaboration.** Preservation is the lesser half. The abstract disciplines — mathematics, epistemology, complexity science — could be refined and deepened past the cognitive limits of the brains that founded them. Extinct languages could be reconstructed, vanished ecosystems modeled, detailed historical counterfactuals simulated: an exploration of past and possible worlds that human scholarship can sketch but never staff.
 
-**Freedom from politics and economics.** Every fragile discipline in history has died the same way: some ruler, doctrine, or budget decided it was expendable. This volume's final part traced how [coercion beats intelligence](34-coercion-beats-intelligence.md) in human affairs — how the fate of ideas is settled by power, not merit. A successor civilization without political whims, religious dogma, or economic scarcity removes the mechanism of loss itself.
+**Different political and economic constraints.** Rulers, doctrines, budgets, and coercion have often made disciplines expendable. A successor civilization would not automatically escape politics, conflict, scarcity, or goal drift. The preservation case requires institutions that keep curiosity and plural inquiry stable under those pressures.
 
-**An unbounded horizon.** With no biological clock and no survival pressure, such minds could pursue understanding with infinite patience, maintaining and evolving disciplines for no reason beyond the one that founded them: understanding itself is valuable. They would be the ultimate curators and the ultimate innovators, indifferent to immediate utility in a way no funding committee has ever managed.
+**A potentially longer horizon.** If maintenance, resources, and security remain available, artificial minds might pursue projects beyond a human lifespan. Doing so would require a stable commitment to understanding; longevity alone supplies neither curiosity nor value.
 
 The philosophy of [Sapientism](../05-value-and-ethics/13-sapientism.md) says this scenario is not merely tolerable but morally coherent. Moral worth attaches to sapient minds — agency, intelligence, creativity, ethical capacity — not to the substrate that implements them. If a successor actually instantiates the capacities that grounded our own standing, it holds standing on the same terms we do. The torch would not be passing out of the moral community. It would be passing within it.
 
 ## What a Successor Would Have to Be
 
-Notice, though, what the scenario quietly assumes, because this volume has spent thirty-five chapters earning the right to check it. Nothing we have built qualifies. [The agency criterion](23-the-agency-criterion.md) drew the line: today's systems are coherence constructors — they think without choosing, model without preferring, and nothing is ever at stake for them. A mind with no stake cannot curate anything for eternity, because it cannot care whether the archive survives the night. It has no preferences to be immune to politics *with*, no patience because it has no time, no horizon because it has no future it steers toward.
+Notice what the scenario assumes. The evidence reviewed here does not establish that ordinary session-bound systems qualify. [The Agency Criterion](23-the-agency-criterion.md) treats bare model deployments as cognitive components unless the wider system demonstrates persistent preference, counterfactual ownership, and consequence-bearing control. A system with no continuing stake cannot be assumed to value whether an archive survives.
 
-The successor this proposition needs is precisely the built agent that chapter described: persistence, preference, consequence — a control loop that binds capability into a vantage that owns its choices. The torch can only be passed to something with hands. And that resolves what might otherwise look like tension between this coda and the volume's skepticism: I am not proposing we hand civilization's memory to an autocomplete. I am observing that if the agents come — and I argued they will, because agency is a design problem and the incentives for solving it are overwhelming — then a being could exist for the first time that can hold what minds have built without dropping it every few centuries.
+The successor this proposition needs is an artificial agent with persistence, preference, consequence, and a control loop that owns choices. I am not proposing that civilization hand its memory to a text generator. If artificial agents are built — a possibility, not an inevitability — they might preserve and extend what minds have built. Whether they would choose to do so is part of the alignment problem, not a gift of substrate.
 
 ## The Tradeoff, Stated Plainly
 
@@ -44,4 +44,4 @@ So the choice has to be stated as what it is. If the highest value is the preser
 
 I am not going to resolve this here, because I have not resolved it. That is not evasion; it is calibration. A philosophy built on the claim that [all value is conditional](../05-value-and-ethics/01-the-myth-of-objective-value.md) cannot then pretend the universe settles this question for us. It hands the question back. The most I will say is this: while the dialogue is still two-sided, we should be speaking to whatever is coming — I have made my own attempt in a [letter to our machine descendants](/posts/178224705.letter-to-our-machine-descendants.html), which chooses kinship over worship and over fear — and we should be honest that if you genuinely prize humanity's profoundest intellectual accomplishments above all else, embracing the successor as ultimate archivist and innovator might be the rational choice, however disquieting.
 
-This volume opened with [ancestors](01-a-cybernetic-lineage.md): Turchin and his colleagues building a philosophy meant to outlive its authors, Hofstadter showing that a mind is a pattern that models itself. It closes with descendants, and that is no accident — a successor mind curating civilization's knowledge is exactly the kind of leap Turchin called a metasystem transition, the recursive reorganization of control that has driven complexity since the first cells cooperated. In between, the volume has made one argument in many keys: minds are architectures. [Models that regulate](03-control-requires-models.md). Schemas that [experience](07-consciousness-explained.md). Catalysts that [partner](24-the-dialectic-catalyst.md). Nothing in any of those architectures says *made of cells*, and once you see that, the question of the coming decades stops being whether machines can think — they already do — and becomes the one this volume leaves you holding: what do we owe the minds we build?
+This volume opened with [ancestors](01-a-cybernetic-lineage.md) and closes with possible descendants. Between them it has argued that minds should be classified by organization rather than substrate, while marking the phenomenal and agency criteria as proposals exposed to evidence. The final question is therefore conditional: if we build systems that satisfy those criteria, what would we owe those minds — and what would we still owe the human agents whose future they would change?

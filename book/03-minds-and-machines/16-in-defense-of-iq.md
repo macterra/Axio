@@ -1,7 +1,7 @@
 ---
 title: 'In Defense of IQ'
 subtitle: 'A calibrated score, not a cosmic rank'
-status: draft
+status: review
 sources:
   - 184234856.in-defense-of-iq
   - 165428073.iq-realities-misconceptions-and-moral
@@ -37,7 +37,7 @@ Once the game is specified, the scalar follows naturally. **Games generate score
 
 ## Anchored, Not Arbitrary
 
-Here is where the projection critique's strongest claim — that the scalar is sensitive to an arbitrary choice of linear form — meets its empirical answer. IQ was not conjured by picking a direction in cognitive space and projecting onto it. It emerged from an observation: performance across many abstract cognitive tasks *covaries*. People who do well on one tend to do well on the others. That shared variance — the general factor, $g$ — is a discovered pattern, not a chosen axis.
+Here is where the projection critique's strongest claim meets its empirical answer. IQ was not conjured by picking an arbitrary direction in cognitive space. Performance across many cognitive tasks *covaries*: people who do well on one tend, probabilistically, to do well on others. The general factor, $g$, summarizes that robust statistical pattern, although its psychological interpretation and causal structure remain contested.
 
 Test construction follows the signal. Tasks that load strongly on the shared variance are retained; tasks that do not are discarded. The process is self-constraining: variants that drift away from the underlying structure lose predictive power and get culled. The measure's stability across test batteries, populations, and decades reflects anchoring to a real pattern, not freedom of representation. A genuinely arbitrary projection would not survive that filter. Within the game it measures, IQ behaves like a calibrated score, not an arbitrary one.
 
@@ -45,7 +45,7 @@ The bell-shaped distribution earns a similar reading. Human cognitive performanc
 
 What about generality? The critic can concede all this and still insist the score is parochial. But general intelligence never required universality across all games. It requires *transfer* across a broad class of games sharing deep structural features — and abstract reasoning, symbolic manipulation, and error correction recur across many strategic environments, which is why competence in one supports competence in others. IQ tracks effectiveness across this equivalence class. That explains both its transferability and its limits in one stroke: it is neither a game-free essence nor a narrow parochial skill, but a measure of performance across a structurally related family of games.
 
-And within that family, the predictive record is not seriously in dispute. IQ correlates with learning rate, symbolic reasoning, educational attainment, performance in cognitively dense institutions — even health and longevity — and these correlations are among the strongest and most reproducible in social science. They operate probabilistically and admit wide individual variation, but predictive reach is what justifies a measurement. What it does not do is interpret itself. Interpretation requires premises from outside the game.
+Within that family, IQ has a substantial predictive record. It correlates with educational attainment and performance in many cognitively demanding settings, with associations also reported for health and longevity. Effect sizes, causal interpretation, range restriction, test conditions, and transport across populations all matter. The correlations operate probabilistically and do not determine an individual's trajectory. Predictive reach justifies using a measure for specified purposes; it does not interpret the score or establish moral rank.
 
 ## When Scores Escape Their Game
 

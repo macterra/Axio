@@ -58,8 +58,11 @@ Status labels:
 
 ### Volume 3
 
-- Several chapters separately conclude that current LLMs can reason or model without being sovereign agents. Assign the canonical verdict to the Agency Criterion and make surrounding chapters evidentiary windows.
-- AI fluency, projection, artificial intimacy, and catalyst risks share the same warning about confusing simulation with accountable agency. Reduce repeated conclusions.
+- **Phase 3 decision:** Chapter 7 owns the Modeler-Schema architecture, Chapter 8 owns the Dennett scope dispute, Chapter 9 owns the phenomenal identity claim and objections, and Chapter 10 owns the conditional evolutionary support. Restatement is not cumulative evidence.
+- **Phase 3 decision:** Chapter 11 owns awareness/sentience/sapience definitions. Chapter 13 supplies theory-dependent evidence, not a universal scalar or categorical current-system score.
+- **Phase 3 decision:** Chapters 18–22 are evidentiary windows. Chapter 23 alone states the machine-agency verdict, at the level of a specified deployed system and subject to intervention tests.
+- **Phase 3 decision:** Chapter 24 owns the Dialectic Catalyst definition. Chapters 25–29 apply the workflow without repeatedly declaring that fluency lacks accountable agency.
+- **Phase 3 decision:** Chapters 30–35 introduce additional risk, institutional, and value premises. Their political conclusions do not follow deductively from the Agency Criterion.
 
 ### Volume 4
 

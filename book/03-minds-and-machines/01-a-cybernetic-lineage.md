@@ -1,7 +1,7 @@
 ---
 title: 'A Cybernetic Lineage'
 subtitle: 'From Principia Cybernetica and GEB to Axio'
-status: draft
+status: review
 sources:
   - 179007101.principia-cybernetica
   - 179971939.defending-geb
@@ -9,7 +9,7 @@ sources:
 
 In the early 1990s, before wikis existed, before social knowledge graphs, before anyone used the term "extended mind," three scientists set out to build a philosophy that could rewrite itself. Valentin Turchin, Francis Heylighen, and Cliff Joslyn launched the Principia Cybernetica Project — the Newtonian echo in the name was deliberate — as one of the earliest explicit attempts to construct a self-modifying philosophical system on the internet. Not a book about cybernetics: a philosophical organism, living on the network, meant to grow, reorganize, and refine itself the way any adaptive system does. In retrospect it looks like a prototype for what a twenty-first-century philosophy could have become, if the substrate and the conceptual discipline had been strong enough.
 
-This volume is about minds and machines — what models are, what consciousness is, what intelligence measures, what the new artificial minds can and cannot do, and what their arrival demands of us. Like [Volume 1's genealogy](../01-physics-of-agency/01-a-genealogy-of-agency.md), it opens with ancestry, because these questions have ancestors and the ancestors were nearly right. Two matter most here: a project and a book. The Principia Cybernetica Project got the vision right and was defeated by an immature medium and missing formal tools. Hofstadter's *Gödel, Escher, Bach* taught a generation of system-builders that self-reference is the root of mind, and has been condemned by critics judging it against a genre it never belonged to. Axio is what both were reaching for.
+This volume is about minds and machines: what models are, how consciousness might relate to self-modeling, what intelligence measures, and how to assess artificial systems without collapsing cognition into agency or sentience. It opens with two influences rather than a claim of succession: the Principia Cybernetica Project and Hofstadter's *Gödel, Escher, Bach*. Both supplied generative questions and metaphors. Neither uniquely entailed Axio, and the framework developed here remains one proposed continuation among many.
 
 ## The Worldview That Wanted to Evolve
 
@@ -33,7 +33,7 @@ The critique is a category error. It treats Hofstadter's book as if it were mean
 
 What GEB actually does well is reveal *structural isomorphisms* between domains that usually remain separate. Bach's canons, Escher's impossible prints, and Gödel's arithmetization of syntax become variations of a single recursive principle. This cross-domain resonance is the book's central achievement: Hofstadter shows that meaning emerges from patterns that loop back on themselves — that the strange loop is not a trick of arithmetic but a generative mechanism of mind. Readers attuned to that level of abstraction discover that the book is not explaining consciousness so much as modeling the *style of explanation* consciousness requires.
 
-Which is why the strongest defenders of GEB are always the builders. The book's most consistent effect — so consistent it borders on a demographic law — is on readers who go on to construct conceptual systems themselves: theories of agency, identity, formal systems, emergent cognition. They read it not as a compendium of answers but as a demonstration of how to build frameworks, and it becomes the formative blueprint for their later intellectual architecture.
+Many of GEB's strongest defenders are builders. Its influence on readers who later construct theories of agency, identity, formal systems, or emergent cognition is visible in anecdotes, not established as a demographic law. They often read it less as a compendium of answers than as a demonstration of framework-building.
 
 I am one of them. GEB was a key motivation for leaving a well-paid engineering position at HP to pursue a graduate degree in artificial intelligence. The book did not teach me logic or computability. It did something more fundamental: it revealed the architecture of deep problems worth devoting a life to — the structural unity between recursion, representation, self-modeling, and cognition — and it planted the idea that intelligence itself might be a recursive, self-maintaining pattern. That idea reappears throughout my later work on agency, the Quantum Branching Universe, Pattern Identifiers, and Conditionalism. GEB did not provide those theories. It gave me the conceptual vocabulary from which they could grow.
 

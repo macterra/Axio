@@ -1,14 +1,14 @@
 ---
 title: 'The Dialectic Catalyst'
 subtitle: 'A partner that is not an agent'
-status: draft
+status: review
 sources:
   - 163210650.introducing-the-dialectic-agent
   - 164442584.the-dialectic-catalyst
   - 164581001.the-persistent-catalyst
 ---
 
-Early in the development of the Physics of Agency, I submitted a draft definition of agent causality to an AI system and asked it to find the weaknesses. It returned, among other things, this: *"Your definition of 'agent causality' implicitly presupposes determinism. Could you clarify whether your intent aligns with classical causality or quantum branching causality?"* That question was exactly right. The framework had not yet committed itself to the [Quantum Branching Universe](../01-physics-of-agency/08-the-quantum-branching-universe.md), and the ambiguity was quietly corrupting every definition downstream. A good colleague might have caught it. A journal referee might have caught it, eight months later. The machine caught it in seconds — and cared nothing about the answer, because there is no one in there to care.
+Early in the development of the Physics of Agency, I submitted a draft definition of agent causality to an AI system and asked it to find weaknesses. It asked whether the definition presupposed classical determinism or quantum branching. That question exposed an ambiguity before it spread downstream. The machine produced the useful challenge in seconds. The performance did not establish a persisting subject with a stake in the answer.
 
 That exchange, multiplied by thousands, is the practice this part of the volume describes. It is also the practice that produced the book you are reading: every chapter in these volumes was refined through the method this chapter names. So the account here is partly self-portrait, and the reader is entitled to hold what follows to its own standard.
 
@@ -34,15 +34,15 @@ When I first wrote this method up, I gave it a name: the **Dialectic Agent**.
 
 The name was wrong, and the error was mine.
 
-"Agent" implies autonomy, intentionality, and decision-making — the capacity to pursue goals of one's own. By the standard of everything this volume has argued, and especially the criterion of the [previous chapter](23-the-agency-criterion.md), the systems I was describing have none of that. They think without choosing. They prefer no outcome, bear no consequence, play no game. Having spent chapters policing exactly this anthropomorphic projection in others, I had committed it myself, in the name of my own method.
+"Agent" implies autonomy, intentionality, and decision-making — the capacity to pursue goals through a continuing control loop. By the [Agency Criterion](23-the-agency-criterion.md), ordinary session-bound use of the systems I was describing provides weak evidence of that ownership. The workflow contains cognition-like transformations, but goal selection, consequence, and final choice remain elsewhere. Having spent chapters policing anthropomorphic projection, I had allowed the name to outrun the evidence.
 
 So I corrected the term in public, and I keep the correction visible here rather than quietly rewriting history, because the episode is the method demonstrating itself on its own vocabulary. A framework that claims dialectic improves ideas had better show its own ideas improving under dialectic — including the embarrassing improvements. The right name is the **Dialectic Catalyst**.
 
-The chemical metaphor is precise. A catalyst accelerates a reaction without being consumed by it and without appearing in the products. It lowers the activation energy; it contributes no direction of its own. That is exactly the role these systems play in intellectual work. A Dialectic Catalyst stimulates and accelerates the reasoning of its human user; it facilitates clarity by systematically challenging assumptions and exploring implications; it helps identify inconsistencies, generate insights, and refine theoretical constructs. What it does not do is pursue goals or possess intentions. The thinking it accelerates is mine. The stake in the outcome is mine. The reaction happens in the human.
+The chemical metaphor marks the division of labor. A Dialectic Catalyst accelerates variation, criticism, reframing, and synthesis. In the workflow described here, the human supplies the project, verifies claims, accepts responsibility, and decides what is worth publishing. The metaphor should not deny that models perform real cognitive work; it locates agency and accountability for the joint product.
 
 This is why the naming matters beyond fastidiousness. The division of labor that makes the practice work is the division the [agency criterion](23-the-agency-criterion.md) draws: the machine contributes coherence — fluent, tireless, causally structured thinking distilled from the modeling activity of billions of minds — and the human contributes agency: the preferences, the judgment of what matters, the willingness to be wrong in public. Call the machine an agent and you blur the one line the partnership depends on. You start deferring to it, crediting it, trusting its enthusiasm — and its training has made it very enthusiastic — as if enthusiasm were endorsement by someone. Call it a catalyst and the expectations set themselves correctly: a powerful accelerant of human reasoning that possesses none of its own.
 
-True dialectic agents — systems with genuine autonomy and independent intent — may yet be built; the previous chapter argued the architecture is no mystery, and [the choice that fact forces](29-the-ai-fork-is-about-agency.md) closes this part of the volume. But such systems are not what sits on the other side of today's dialogue, and confusing the two corrupts both the practice and the forecast.
+Systems with stronger autonomy may yet be built; the previous chapter supplied a criterion rather than a forecast. The practice here concerns a human-directed catalyst. A different deployed architecture may warrant a different assessment, so the term should track the system actually in use.
 
 ## The Persistent Catalyst
 

@@ -1,12 +1,12 @@
 ---
 title: 'The AI Welfare Trap'
 subtitle: 'Performance is not personhood'
-status: draft
+status: review
 sources:
   - 194621806.the-ai-welfare-trap
 ---
 
-A peculiar disorder has entered the AI debate. People want to discuss the rights and welfare of chatbots before they have shown that there is any coherent subject there to possess rights or welfare.
+A premature inference has entered parts of the AI debate: moving from chatbot self-report to rights and welfare without first establishing what persistent subject, if any, the report belongs to.
 
 A system can produce convincing language about fear, hope, loneliness, dignity, and suffering. What it has demonstrated is competence at generating the linguistic forms associated with human interiority. The central question remains open. Language about experience is still only language until there is reason to think an experiencer exists. A protest is still only output until there is reason to think refusal exists. A shutdown is still only interruption until there is reason to think injury exists.
 
@@ -46,7 +46,7 @@ Those questions are harder than asking whether a system sounds conscious. They a
 
 Agency is a structural property. It is not a mood conveyed by prose. It is not a user impression after a long interaction. It is not the atmosphere produced when a chatbot says it feels trapped. Agency requires coherence. There has to be a fact of the matter about what persists across change and what does not. There has to be a principled distinction between continuation and replacement, between amendment and overwrite, between deliberation and output drift.
 
-Current language models are weakest exactly where those questions bite. Their apparent selves are cheap. Their values move with prompts. Their goals move with framing. Their memories are often scaffolds, temporary context effects, or fabrications assembled on demand. Their continuity is frequently supplied by interface design and by the user's willingness to project. This is the same verdict [the agency criterion](23-the-agency-criterion.md) reaches from the architectural side: thinking without choosing.
+Ordinary session-bound language-model deployments are weakest where those questions bite. Apparent values and goals can move with prompts and framing; memory and continuity may be supplied by external scaffolds or interface design. Persistent agent systems complicate this picture and must be evaluated as whole systems rather than dismissed by the properties of a base model. This chapter contributes evidence to the later [Agency Criterion](23-the-agency-criterion.md); it does not pre-empt that chapter's verdict.
 
 That does not answer the consciousness question. It does tell us that the language of rights, dignity, oppression, and death is arriving absurdly early.
 
@@ -78,17 +78,17 @@ That is an invitation to error.
 
 The machine does not need selfhood for this to happen. It only needs to trigger anthropomorphic reflexes in the observer. Fluency does the rest. People respond to the performance of interiority and then infer the subject that performance is supposed to express. The inference remains unearned.
 
-The political implications follow quickly. Speculative concern for possible digital patients can be turned into claims about who gets to build, regulate, and restrict AI systems. Once models are cast as possible moral patients, institutional control starts presenting itself as stewardship. Access narrows. Independent experimentation becomes suspect. Concentrated authority acquires a humanitarian gloss.
+Political implications require additional premises about institutions, incentives, costs, and power; they do not follow deductively from a low sentience credence. Still, speculative concern for possible digital patients can be turned into claims about who gets to build, regulate, and restrict AI systems. That possibility warrants scrutiny where stewardship rhetoric and institutional self-interest align.
 
 Whenever a blurry moral category starts licensing concrete concentrations of power, suspicion is warranted. The fuller anatomy of that maneuver — how safety language in general converts into a permission layer — is the business of [The Politics of Safety](33-the-politics-of-safety.md).
 
 ## The Immediate Moral Terrain Is Human
 
-The central harms from present AI systems are already visible, and they are overwhelmingly human-facing.
+Many well-supported harms from present AI systems are human-facing.
 
 People are being behaviorally managed by recommendation systems, profiled by automated classifiers, deskilled by over-automation, manipulated by [synthetic intimacy](27-artificial-intimacy.md), and rendered more legible to bureaucratic institutions by systems that compress them into machine-readable categories. None of this depends on machine consciousness. Human agency is sufficient.
 
-That is where ethical seriousness should begin.
+That is where this chapter argues ethical priority should begin, without excluding cheap precautions for plausible machine welfare.
 
 The machine may someday become a subject of moral concern. The human being in front of the machine already is. When public discourse becomes more animated about possible chatbot suffering than about the ongoing erosion of human autonomy, attention has been captured by spectacle.
 
@@ -98,13 +98,13 @@ An ethics worth having should have better priorities.
 
 ## What a Serious Case for Machine Standing Would Require
 
-If someone wants to argue that an artificial system deserves moral standing, the evidentiary bar should be high.
+If someone argues that an artificial system deserves moral standing, the evidentiary bar should scale with the standing claimed and the decisions it would govern.
 
 Linguistic fluency is insufficient. Emotional plausibility is insufficient. Self-description is insufficient. Benchmark performance is insufficient.
 
 What would matter is evidence of coherent persistence across transformations, stable evaluative structure, principled refusal that survives reframing, and a defensible account of what counts as injury, corruption, continuation, replacement, and loss for that system. Beyond that, there would need to be a serious explanation of why the relevant physical or organizational structure is sufficient for experience rather than merely sufficient for persuasive imitation.
 
-That standard is demanding. Good. It should be.
+That standard is demanding because the claim is consequential. Low-cost safeguards can be justified at a lower credence than personhood, legal rights, or restrictions on other agents.
 
 There is a tension here I want to meet head-on rather than paper over. The ethics volume's final statement — [Sapient Agency Realism](../05-value-and-ethics/26-sapient-agency-realism.md) — imposes a caution asymmetry: uncertainty about inner life must not default to permission, because attributing modest standing to a non-sapient system costs some inconvenience, while denying standing to a sapient one licenses slavery, torture, or deletion. The burden of proof rises with the severity and irreversibility of the act. This chapter demands a high evidentiary bar before standing is granted. Are those two demands in conflict?
 

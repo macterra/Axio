@@ -1,7 +1,7 @@
 ---
 title: 'Coercion Beats Intelligence'
 subtitle: 'The power substrate'
-status: draft
+status: review
 sources:
   - 200023446.coercion-beats-intelligence
   - 185907078.the-adolescence-of-technology
@@ -9,11 +9,11 @@ sources:
 
 The fantasy of a civilization run by the smartest and most rational people has an obvious appeal, and it recurs every few years under a new name. Most political and institutional failure is not mysterious. People ignore incentives. They confuse intentions with outcomes. They reward loyalty over competence. They moralize tradeoffs because moralizing is cheaper than understanding them. A population with better models would avoid many stupid traps.
 
-But intelligence does not automatically scale into civilization. The missing term is coercive capacity.
+But intelligence does not automatically scale into civilization. One missing term is organized power, including coercive capacity.
 
-An intelligent person can model incentives, foresee second-order effects, and design better institutions. None of that matters if he cannot protect himself from the man with a club, the gang with rifles, the mob with sacred rage, the hacker who can disable infrastructure, the cartel that controls access, or the state with prisons. Intelligence is a modeling advantage. Coercion — [the credible threat of actual harm to gain compliance](../05-value-and-ethics/09-what-counts-as-coercion.md) — is a compliance mechanism. They are different kinds of thing, and when cognition has no defensive architecture, it becomes prey.
+An intelligent person can model incentives, foresee second-order effects, and design better institutions. Those advantages can be defeated if the person and institutions cannot protect themselves from violence, sabotage, exclusion, or imprisonment. Intelligence is a modeling advantage. Coercion — [the credible threat of actual harm to gain compliance](../05-value-and-ethics/09-what-counts-as-coercion.md) — is one compliance mechanism. They are different kinds of thing, and cognition without a defensive architecture can become prey.
 
-This asymmetry is the fact that superintelligence discourse habitually gets backwards. The discourse treats cognition as the fundamental quantity — as if enough intelligence simply *is* power, and everything else is implementation detail. History says otherwise. Intelligence has mattered exactly when, and only when, it was institutionalized into rule-bound power. Everything in this chapter follows from taking that seriously: first for the rationalist fantasy of smart-people-civilization, then for the most serious diagnosis currently shaping the AI safety conversation.
+This asymmetry is one risk superintelligence discourse can understate. Cognition is not automatically power; embodiment, access, institutions, legitimacy, logistics, and coercive capacity mediate what intelligence can do. History supports that qualification without proving that coercion always beats intelligence or that artificial systems will reproduce every human political pattern.
 
 ## The Protective Shell
 
@@ -85,6 +85,6 @@ A natural objection arises at this point. If modern machine learning systems rel
 
 Systems built to preserve agency coherence remain legible to intervention as they scale. Responsibility continues to attach to identifiable loci. Authority remains revisable without requiring global shutdowns or coercive overrides. When failures surface, they do so in forms that permit correction rather than collapse. Power remains dangerous, but it remains corrigible. Under these conditions the space of catastrophic, unrecoverable outcomes contracts — a claim about structure and probability, not inevitability.
 
-Anthropic's emphasis on interpretability, corrigibility, and deliberate deployment already moves in this direction. An explicit adoption of agency-preserving constraints would deepen that agenda by treating agency coherence as a design primitive rather than a downstream effect — and the same holds for every lab building frontier systems. The benefit would not be the elimination of risk but the preservation of high-quality responses when risk materializes. In domains where the most dangerous scenarios arise when intervention comes too late to be intelligible, that distinction matters.
+Work on interpretability, corrigibility, privilege separation, and staged deployment moves in this direction. An explicit adoption of agency-preserving constraints would treat identifiable responsibility and correction as design requirements. The benefit would not be elimination of risk but better options when failures materialize. Whether these measures preserve agency coherence at frontier capability is an empirical question.
 
 The adolescence diagnosis is right to insist that we are operating in a narrow window where institutional choices matter. The contribution of this chapter is to say what must be protected inside that window. Intelligence never governed anything by itself; it governed through institutions that kept coercion rule-bound and legitimacy earned, and it will be no different when the intelligence is artificial. Power alone does not determine the shape of the future. The structures that determine whether power remains governable do. If the organizations building frontier systems choose architectures that preserve agency rather than dissolve it, they do more than reduce risk — they keep the future open to correction in a way it otherwise would not be. That open future is not a defensive crouch; it has a positive shape, and a lineage that has been sketching it [for thirty years](35-the-future-is-extropian.md).

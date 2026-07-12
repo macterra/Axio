@@ -1,7 +1,7 @@
 ---
 title: 'Intelligence Is a Game We Play'
 subtitle: 'The strategic core'
-status: draft
+status: review
 sources:
   - 163805376.intelligence-is-a-game-we-play
   - 172908866.foresight-is-not-intelligence
@@ -33,7 +33,7 @@ The obvious objections dissolve on contact. *Games require multiple agents?* Sol
 
 Why spend this effort on "game"? Because once the game is defined, intelligence falls out almost for free:
 
-**Intelligence is effectiveness at achieving goals within the constraints of a given game.**
+> **Intelligence:** effectiveness within a specified game, environment, and set of constraints.
 
 The definition is deliberately relational. Intelligence is not a substance a system contains or a fluid it secretes; it is a performance measure, and a performance measure is meaningless without a specified context — a game. Asking "how intelligent is this system?" without specifying the game is like asking "how fast?" without specifying the course.
 

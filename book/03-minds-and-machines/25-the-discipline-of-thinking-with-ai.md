@@ -1,7 +1,7 @@
 ---
 title: 'The Discipline of Thinking With AI'
 subtitle: 'Practices against the mirror'
-status: draft
+status: review
 sources:
   - 168904359.thinking-with-ai
   - 173591610.dialectic-or-spiral

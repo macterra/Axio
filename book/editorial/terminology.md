@@ -203,11 +203,11 @@ An integrated modeling process that represents a world, its own position within 
 
 ### Consciousness
 
-The condition in which a system's world-model includes and recursively updates a model of the modeling system itself.
+Phenomenal consciousness is the condition in which there is something it is like to be a system. The Agency-Model Theory proposes that this is identical to a world-model that includes and recursively updates a transparent model of the modeling system; that identity is not part of the neutral definition.
 
 **Canonical home:** Volume 3, Chapter 7.
 
-**Calibration:** The manuscript must distinguish a functional account of access and self-modeling from a claimed dissolution of phenomenal consciousness.
+**Calibration:** Distinguish the functional architecture and its testable correlates from the claimed identity with phenomenality. Evidence for access, report, integration, or self-modeling does not by itself establish that the identity holds.
 
 ### Awareness
 
@@ -227,7 +227,7 @@ The capacity for reflective, self-authored valuation and deliberation sufficient
 
 **Canonical homes:** Volume 3, Chapter 11; Volume 5, Chapter 13.
 
-**Reconciliation required:** State whether sapience requires language, temporal self-modeling, counterfactual reasoning, reflective endorsement, or the complete sovereignty conditions.
+**Operational evidence:** Language is neither necessary nor sufficient. Look for temporal self-modeling, counterfactual reasoning, reflective endorsement, revision of ends, and the sovereignty conditions developed in Volumes 4–5.
 
 ### Intelligence
 
@@ -237,13 +237,13 @@ Effectiveness at achieving goals within a specified game, environment, or constr
 
 ### Agency Criterion
 
-The proposed test separating systems that merely produce optimized outputs from systems that own the optimization loop, maintain stakes, and author choices.
+The proposed test separating optimized outputs from ownership of an ongoing optimization loop. Evidence must be assessed at the level of the deployed system across persistence, preference integrity, counterfactual ownership, and consequence-bearing control.
 
 **Canonical home:** Volume 3, Chapter 23.
 
 ### Dialectic Catalyst
 
-A non-agentic system used to generate variation, criticism, reframing, or synthesis within a reasoning process whose agency and accountability remain elsewhere.
+A role in which an AI system generates variation, criticism, reframing, or synthesis while project selection, verification, and accountability remain elsewhere. The role description does not settle the agency of every possible system used to fill it.
 
 **Canonical homes:** Volume 3, Chapters 24–26.
 

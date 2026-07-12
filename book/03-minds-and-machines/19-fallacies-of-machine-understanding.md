@@ -1,7 +1,7 @@
 ---
 title: 'Fallacies of Machine Understanding'
 subtitle: 'The Chinese Room and its descendants'
-status: draft
+status: review
 sources:
   - 168496408.the-chinese-room
   - 168986621.the-vector-fallacy

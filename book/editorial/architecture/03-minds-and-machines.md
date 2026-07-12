@@ -37,7 +37,7 @@ Chapter 10's evolutionary argument should be calibrated as support for functiona
 
 ### Sentience and intelligence
 
-Chapters 11–17 perform necessary taxonomy. Keep the ladder before the metric and welfare chapters. Ensure the move from untestable suffering in Chapter 12 to three AI tests in Chapter 13 explains what those tests can establish if suffering itself cannot be tested.
+Chapters 11–17 perform necessary taxonomy. Keep the ladder before the metric and welfare chapters. Ensure the move from first-person inaccessibility in Chapter 12 to three AI tests in Chapter 13 explains how architecture and behavior can update a sentience Credence without deductively proving experience.
 
 ### Machine verdict
 

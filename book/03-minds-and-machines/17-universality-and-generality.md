@@ -1,7 +1,7 @@
 ---
 title: 'Universality and Generality'
 subtitle: 'Two fallacies about the space of minds'
-status: draft
+status: review
 sources:
   - 181841657.general-intelligence-is-not-an-illusion
   - 177051505.the-false-equivalence-of-minds
@@ -33,7 +33,7 @@ The Turing analogy that inspires the thesis also exposes it. Yes, a calculator a
 
 Every real agent operates under bounded rationality: finite memory, limited perception, noisy sensors, strict time budgets. Universality hand-waves all of it away. The question that matters is never *can it compute?* but *how fast, how reliably, and how much before it matters?* A system that can simulate the reasoning of a human mind a million times faster does not need new physics to be superintelligent. It just needs to exist.
 
-And equivalence-in-principle ignores the dynamics. Even marginal advantages in speed or accuracy compound under recursive self-improvement: an agent that can redesign itself, test hypotheses, and optimize its own substrate faster than humans can follow escapes the equivalence class almost immediately. Universality is a static property; intelligence is a dynamic one. Power lies in the gradient, not the limit.
+And equivalence-in-principle ignores dynamics. Advantages in speed or accuracy could compound if a system can improve relevant components without offsetting bottlenecks. Recursive self-improvement is a consequential scenario, not an automatic consequence of computational universality. Universality is a static property; practical capability depends on rate, resources, reliability, and feedback.
 
 Claiming that humans and machines are equal in principle is like saying a candle and a star both emit light. True — and irrelevant when one can engulf the other. The universe does not reward potential; it rewards realized capacity within causal time.
 
@@ -63,4 +63,4 @@ Which leaves the irony. Denying general intelligence in LeCun's fashion — abst
 
 Set the camps side by side and the symmetry is exact. Deutsch's camp locates the essence of intelligence in universality and claims we possess it; since universality admits no degrees, no mind can surpass us. LeCun's camp locates the essence of intelligence in universality and observes that nothing possesses it; since universality is impossible, generality is an illusion. Both arguments run through the same false identification, and both collapse the moment universality and generality come apart. Universality is an idealized limit — instructive, unreachable, and irrelevant to any contest between actual minds. Generality is a real, graded, conditional property: the capacity to acquire competence, exercised under bounds, decided by rate and scale and feedback.
 
-This is what should be expected if [intelligence is a game we play](15-intelligence-is-a-game-we-play.md) — effectiveness at achieving goals within a game's constraints. There is no play without constraints, and no meaningful notion of capability without a reference class. Generality is not exemption from the games; it is proficiency at learning new ones, including games no ancestor ever played, up to and including redesigning the board. Humans have that capacity in abundance. Machines are acquiring it. Neither fact is comfortable, and neither is an illusion.
+This is what should be expected if [intelligence is game-relative](15-intelligence-is-a-game-we-play.md). There is no meaningful capability without a reference class. Generality is proficiency at learning new games and revising representations under error. Humans display that capacity across an unusually broad range. Some machine systems display increasingly broad transfer, but robust self-directed representation revision remains an empirical question. Neither universality rhetoric nor denial by definition settles it.

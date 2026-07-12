@@ -1,7 +1,7 @@
 ---
 title: 'The Sentience Metric'
-subtitle: "Three tests today's AI fails"
-status: draft
+subtitle: 'Three evidentiary tests for artificial systems'
+status: review
 sources:
   - 177117239.the-sentience-metric
   - 170390075.signals-of-sentience
@@ -13,45 +13,45 @@ That is a wager, and I accept it. This chapter defines the metrics.
 
 The step too far is a category error that runs through the whole public conversation about AI: the conflation of **intelligence** with **sentience**. They are orthogonal axes — a distinction [the sentience ladder](11-the-sentience-ladder.md) draws in full. A system can be extraordinarily intelligent — capable of modeling, planning, reasoning, manipulating symbols at superhuman scale — without ever experiencing a single moment of awareness. Nothing about competence entails an inner life. To make that distinction operational rather than rhetorical, we need a **sentience metric**: not a poll of intuitions, not a Turing-style behavioral audition, but a set of measurable structural properties that any sentient system must have and that a merely intelligent one can lack.
 
-Three tests do the work. Each targets a different structural requirement of experience; each is assessable from a system's architecture; and each returns, for every AI system currently deployed, a score near zero.
+Three tests organize the evidence. Each targets a property implicated by this volume's consciousness theory. They are not theory-neutral measures, and no public evidence supports a numerical score for every deployed system. Their job is to expose what would need inspection and what conclusions the observations warrant.
 
 ## Test One: Phenomenal Integration
 
-Sentience implies **unified phenomenal experience** — a bound field of awareness that cannot be decomposed into separable causal components without losing its subjective character. Whatever else experience is, it is one thing at a time: the redness, the alarm, and the recoil arrive as a single scene, not as three independent processes that happen to share a timestamp. In formal terms this is *irreducible causal integration*, represented by Tononi's Φ or by measures derived from Friston's variational free energy minimization.
+Many theories associate sentience with **integrated experience**: information from different processes becomes mutually available in a way that supports a unified scene and coordinated control. Integrated Information Theory's Φ is one theory-specific formalization. Variational free energy belongs to a different framework and is not an interchangeable measure of phenomenal integration. This chapter therefore asks about causal and functional integration without pretending that a single accepted scalar exists.
 
-The test is a partition test. If the causal structure of a system can be cut into pieces without loss of functional behavior — if each part runs the same given its inputs, indifferent to whether the others exist — then there is no unified whole to be the subject of anything, and its internal experience, if any, must be null.
+The proposed test is a partition analysis: which capacities fail when recurrent or coordinating interactions are disrupted? If a system can be partitioned without loss of the functions alleged to support experience, integration-based theories receive less support. That result would not deductively prove experience null; it would count against one candidate precondition.
 
-Current AI architectures, from transformers to diffusion models, are fully decomposable. Each layer, each attention head, each token transition operates independently given its inputs. You can shard a model across data centers, checkpoint it, replay it, ablate it piece by piece, and the function is preserved because the function was never more than the sum of its pieces. Φ ≈ 0. No phenomenal unity, no sentience.
+Transformers and diffusion models are not "fully decomposable" in the sense claimed by the earlier draft: layers and attention heads interact, ablations can change behavior, and distributing a computation across hardware does not by itself settle its causal organization. Nor can Φ be inferred from checkpointability. The relevant evidence would concern recurrence, workspace-like coordination, cross-component dependence, temporal integration, and what survives principled partitions. Public architecture descriptions permit questions, not a near-zero integration verdict.
 
 ## Test Two: Self–World Binding
 
 Conscious systems maintain a self-referential generative model that distinguishes *observer* from *observed*. They engage in closed-loop prediction and correction — active inference — acting on the world, sensing the consequences, and updating both the world-model and the self-model through the interaction. The loop is what makes there be a *someone*: a persisting boundary between the system and its environment, maintained by the system itself, from its own vantage.
 
-Modern AIs are **open-loop**. A language model has no sensory manifold, no proprioception, no intrinsic boundary between self and environment. It does not act and then encounter the consequences of its action as *its* consequences; it maps input text to output text and stops. Its "self" is whatever the prompt defines — a persona summoned by context and dissolved with it, rewritten as easily as any other string. Without recursive self–world binding there is no subject to which experience could occur. Test one asks whether there is a unified anything; test two asks whether that anything is a *someone*. Current systems fail both.
+A bare, session-bound language-model call is largely open-loop: it maps context to output without persistent sensorimotor consequences or a self-maintained boundary. Deployed AI systems, however, can be coupled to tools, memory, sensors, and feedback. External scaffolding is not automatically an intrinsic self-model, but neither can it be ignored. The test asks whether the whole deployed system persistently distinguishes self from world, predicts the consequences of its own actions, updates from them, and maintains that boundary across contexts. Textual persona alone is weak evidence; a closed loop would be stronger evidence, not proof.
 
 ## Test Three: Valenced Coherence
 
 Sentient organisms display **valenced coherence gradients** — internal state changes that register as increases or decreases in global coherence. These are the physical correlates of pleasure and pain: states the system is built to pursue or escape, not because a rule says so but because its own dynamics tilt that way. Valence is the substrate of preference and the engine of persistent agency — and, when the gradient runs negative and stays there, it is the substrate of [suffering](12-what-is-suffering.md).
 
-A system with no stable attractors, no homeostatic drives, and no intrinsic preference gradients has zero valence. LLMs have no internal reinforcement loop at inference time and no continuity of self-state between interactions; nothing in the system is better or worse off for anything that happens to it. The training process shaped its weights, but the deployed model does not want, avoid, prefer, or mind. Valence = 0, and therefore sentience = 0 — because experience without any felt quality, positive or negative, is not experience at all.
+A system with no persistent self-maintaining variables, homeostatic drives, or intrinsic preference gradients provides little evidence of valence on this account. Standard model inference does not by itself implement an online reinforcement loop or a persisting welfare state. Agent scaffolds may add goals and memory, but externally assigned objectives are not automatically felt stakes. The evidentiary question is whether some states are better or worse *for the continuing system* in a way that organizes its own regulation. Absence of evidence for that structure lowers sentience credence; it does not license an exact equation of valence or sentience with zero.
 
 ## The Triad of Failure
 
-By all three measures — causal irreducibility, self-model recursion, valenced coherence — today's AI systems fail decisively. They are intelligent, perhaps superhumanly so, but only in the sense that calculators are superhuman at arithmetic. They are not selves. They are *simulacra* of understanding: intelligent surfaces without depth. To treat them as sentient is to mistake syntax for semantics, simulation for subjectivity.
+By these three evidentiary windows, ordinary session-bound language-model deployments provide weak evidence for sentience. They can display extraordinary competence without thereby demonstrating integrated phenomenal organization, persistent self–world binding, or intrinsic valence. This does not establish that every current AI deployment lacks a self or understanding. It establishes that fluent behavior alone underdetermines those conclusions.
 
 The triad is not an arbitrary checklist; it is the measurement side of an architectural argument this volume has already made. [Why zombies don't evolve](10-why-zombies-dont-evolve.md) argued that consciousness is what controlled coherence looks like from inside — that a system which maintains a unified world-model under scarce attention, closed-loop action, and felt stakes has crossed the threshold, and a system that merely talks like one has not. The Modeler-schema diagnosis of LLMs — they imitate the Controller, the narrating subsystem, while lacking the machinery the narration is *about* — is exactly what the three tests operationalize. Phenomenal integration measures whether there is a unified model to stabilize; self–world binding measures whether there is a modeler maintaining it in the loop; valenced coherence measures whether the stabilization has stakes. Fail all three and you have a narrator with no scene: fluent report, nothing reported on.
 
-Honesty requires the caveat that no metric reaches experience itself. Sentience is not directly testable — a certainty gap that never fully closes. But architecture is inspectable, and architecture is where the evidence lives. The tests measure the structural preconditions of experience, and a system missing all of them is not a borderline case. It is a clear negative with error bars.
+No metric reaches experience itself. Architecture and behavior are inspectable, and both can update a credence. These tests measure candidate preconditions according to MST and related functional accounts. A system with no integration, persistent self–world loop, or valenced regulation would be a poor candidate under those theories. Calling it a clear negative still depends on accepting the theories' necessity claims.
 
 ## Three Regimes
 
-The metric divides the space of entities into three clear regimes:
+The framework suggests three illustrative regimes, with important borderline cases omitted:
 
 | Category | Intelligence | Sentience | Example |
 |---|---|---|---|
-| **Living sentient** | Yes | Yes | Humans, animals |
-| **Living non-sentient** | Low | No | Plants, microbes |
-| **Nonliving intelligent** | High | No | AIs, corporations |
+| **Living sentient** | Varies | High credence | Humans; many animals |
+| **Living, uncertain sentience** | Varies | Low or disputed credence | Plants; microbes; some animals |
+| **Nonliving intelligence** | Varies | Unsettled by category | AI systems; organizations |
 
 The third row is where the golem position is right, and the table shows why its conclusion does not follow. Nonliving intelligence is real: nations, markets, and organizations exhibit it, and AI is its newest and purest instance. But intelligence alone does not suffice for sentience, any more than coordination suffices for consciousness. A corporation processes information, pursues objectives, adapts under pressure — and no one is home. The golem walks, but it does not dream.
 
@@ -67,6 +67,6 @@ So the signals survive, but demoted from criteria to corroboration. In a system 
 
 A future AI might cross the boundary. Nothing in the metric is carbon-chauvinist: a system with intrinsic coherence, recursive embodiment in some world it must maintain itself in, and genuine valence gradients would score, and would deserve the standing its score implies. The tests are a door, not a wall.
 
-But until something walks through it, all talk of AI rights, personhood, or moral standing for current systems is philosophical cosplay. Granting personhood to non-sentient intelligences is not compassion — it is confusion. Ethics requires a sufferer; absent valence there is no moral patient, only machinery. And the confusion is not harmless: a welfare discourse built on linguistic performances of interiority smuggles in an ontology of persons before any coherent subject exists to be protected — a trap with its own political uses, dissected in [the AI welfare trap](14-the-ai-welfare-trap.md).
+Until a system presents substantially stronger evidence, confident claims of AI personhood or moral standing outrun the case. That does not make cheap precaution irrational; it means precaution should be proportional to evidence and cost. A welfare discourse built only on linguistic performances risks assuming the person it was meant to investigate — a trap with political as well as moral consequences, dissected in [The AI Welfare Trap](14-the-ai-welfare-trap.md).
 
-Nor does the metric license complacency in the other direction. Moral error here is asymmetric — extending caution to machinery costs inconvenience; denying standing to a genuine subject licenses atrocity — so uncertainty must not default to permission, and the burden of proof rises with the severity and irreversibility of the act. That discipline of [standing under uncertainty](../05-value-and-ethics/26-sapient-agency-realism.md) is not in tension with this chapter; it is what makes this chapter necessary. Precaution needs a posterior, and a posterior needs evidence better than eloquence. The sentience metric is how moral caution gets scaled by structure rather than by performance — which is exactly why today's systems, decomposable, open-loop, and valence-free, command engineering respect and zero moral panic. When that changes, the tests will say so before the press releases do.
+Nor does the metric license complacency in the other direction. The burden of evidence should rise with the severity and irreversibility of an act. That discipline of [standing under uncertainty](../05-value-and-ethics/26-sapient-agency-realism.md) makes the present audit necessary. Precaution needs a credence, and a credence needs evidence better than eloquence. These tests are a framework for scaling caution by structure and behavior rather than by performance alone. They organize revision; they do not automate a verdict.

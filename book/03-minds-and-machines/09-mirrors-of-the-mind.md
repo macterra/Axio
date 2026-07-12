@@ -1,7 +1,7 @@
 ---
 title: 'Mirrors of the Mind'
 subtitle: 'Consciousness as self-model, objections answered'
-status: draft
+status: review
 sources:
   - 173236908.mirrors-of-the-mind
   - 173397558.consciousness-without-ghosts
@@ -10,9 +10,9 @@ sources:
 
 Why is there something it feels like to see red, to feel pain, to taste salt — rather than nothing at all? Ever since David Chalmers coined the term in the 1990s, the "hard problem of consciousness" has haunted philosophy of mind. Most problems in cognitive science are "easy problems" — questions about mechanisms and functions, hard in the way engineering is hard. But this one, we are told, cuts deeper: no matter how much we explain about neurons, circuits, and behaviors, we still have not explained why it feels like something from the inside. The hard problem is supposed to be the residue that survives every scientific explanation.
 
-I will argue that the hard problem is not hard — it is ill-posed. Consciousness is not an ineffable mystery; it is what happens when an agent runs a model of itself. Qualia are not metaphysical primitives; they are the way internal states present themselves from the agent's own perspective. The so-called hard problem is a category error, and once the error is exposed, the mystery does not get answered. It evaporates.
+I will argue for a conditional dissolution: if phenomenal character is identical to transparent access to an agent's self-model, then the hard problem rests on treating two descriptions of one process as two substances. This is the **Agency-Model Theory's identity claim**. It is stronger than the functional evidence alone and should be judged as a philosophical proposal, not smuggled in as a definition of consciousness.
 
-A note on names, stated once. [Consciousness Explained](07-consciousness-explained.md) laid out Frank Heile's Modeler-Schema framework — the cybernetic architecture in which a Modeler-schema generates qualia while a narrating Controller reports experiences it never has — and [Beyond Dennett](08-beyond-dennett.md) defended that architecture against the best rival deflation. What follows is my own formulation of the same framework, which I call the **Agency-Model Theory**: the Modeler-Schema account approached from the direction of agency and predictive processing rather than from the architecture diagram. One framework, one dissolution; where Heile starts from the subsystems and asks which one experiences, I start from what an agent must do and show that experience falls out of it.
+A note on names, stated once. [Consciousness Explained](07-consciousness-explained.md) laid out Frank Heile's Modeler-Schema framework, and [Beyond Dennett](08-beyond-dennett.md) located its disagreement with Dennett. What follows is my **Agency-Model Theory**: the same family of ideas approached from agency and predictive processing. This chapter owns the philosophical identity argument and its objections; it will not repeat the preceding architecture as though restatement were additional evidence.
 
 ## An Agent That Models Itself
 
@@ -22,7 +22,7 @@ Among these models is a special one: the **self-model**. It encodes the system's
 
 ## Qualia Under Transparency
 
-Now the crux. What philosophers call *qualia* are simply the contents of the self-model as accessed internally.
+Now the crux. The theory proposes that what philosophers call *qualia* are the contents of a self-model under a distinctive kind of transparent internal access.
 
 - The redness of red is the way the visual subsystem partitions wavelengths for efficient discrimination.
 - Pain is not a metaphysical essence; it is an internal warning signal: *avoid this trajectory*.
@@ -40,9 +40,9 @@ One more ingredient completes the picture. Consciousness is not just modeling; i
 
 So what of the question: *how does matter give rise to subjective experience?*
 
-Answer: it doesn't. That framing is the category error. Subjective experience is not *produced* by physical processes, the way heat is produced by friction, leaving us to hunt for the mechanism of production. It *is* the way those processes appear when represented internally in a self-model. There is nothing left over, no metaphysical bridge to build. The hard problem is like asking where computation *really* happens in a program, or how a map *truly* represents territory. The questions dissolve once you recognize the abstraction; there was never a hidden essence awaiting discovery. The same is true of consciousness.
+The proposed answer is that no separate production relation is needed. On the identity claim, subjective experience *is* the way certain physical processes are represented within a self-model. If that identity holds, there is no further metaphysical bridge to build. A critic can deny the antecedent: describing discrimination, access, and self-representation may still leave phenomenal character unexplained. The disagreement is therefore substantive, not a mistake dissolved by vocabulary alone.
 
-Note the shape of the claim. The hard problem is not *solved* — no mechanism is offered for conjuring experience out of matter, because no such conjuring occurs. It is *dissolved*: the question is shown to rest on a false presupposition, the way "what is north of the North Pole?" rests on one. Chalmers's challenge assumed that after all the functional facts are in, an extra fact — the feel — remains unexplained. But the feel is not an extra fact. It is what the functional facts are like from the only vantage point the system has on itself.
+Note the shape of the claim. The hard problem is not solved by deriving experience from non-experiential premises. It is conditionally dissolved by denying that an extra derivation is required. Chalmers's challenge argues that after all functional facts are in, the feel may remain unexplained. The Agency-Model Theory denies that premise; it does not refute it merely by restating the identity. The theory earns support to the extent that its account of transparent access unifies otherwise separate findings and makes discriminating predictions.
 
 ## The Objections
 
@@ -54,7 +54,7 @@ A theory that claims to dissolve a famous problem owes its critics direct answer
 
 **"Isn't consciousness non-reducible — fundamentally different from computation?"** Computation is substrate-independent: the same program runs on vacuum tubes or silicon, and demanding to know what computation is *really made of* is a confusion. Consciousness is substrate-independent in the same way and for the same reason. Both are informational processes, not metaphysical substances, and in both cases the demand for a deeper ontological "stuff" is the mistake, not the mystery.
 
-**"Your theory is unfalsifiable."** On the contrary — it makes a clean, testable prediction: alter or impair the self-model, and phenomenology changes with it, in the direction and degree the model predicts. The clinical literature already bears this out. In depersonalization, the self-model's tagging of states as *mine* degrades, and patients report exactly what the theory predicts: experience persists but feels unowned, unreal, watched from outside. In anosognosia, the self-model fails to register a deficit, and the patient does not merely fail to report paralysis — the paralysis is absent from their experienced self. Body-schema disturbances, phantom limbs, the rubber-hand illusion: each is a case where experimentally or pathologically editing the self-model edits the phenomenology. And the general prediction stands open to future tests: the richer the self-model, the richer the reported qualia. A theory of consciousness that stakes itself on self-model pathologies is exactly as falsifiable as the neurology of those pathologies.
+**"Your theory is unfalsifiable."** Its functional claims generate testable predictions: alter the self-model and reported phenomenology should change in patterned ways. Depersonalization, anosognosia, body-schema disturbances, phantom limbs, and the rubber-hand illusion are relevant because changes in ownership or body representation accompany changes in experience and report. These cases support a dependence between self-modeling and reported phenomenology. They do not by themselves distinguish identity from correlation, so the phenomenal thesis remains less directly testable than the functional architecture.
 
 **"Wouldn't this mean AI can be conscious?"** Yes — conditionally. If an AI builds and uses a generative self-model to regulate its own actions, it meets the criteria; if it does not, it does not, however fluent its outputs. The question was never biology versus silicon. It is whether the system is an agent that requires, builds, and *runs* a self-model in the service of its own regulation. Most current systems do not; nothing in the theory says none ever will. What the theory forbids is settling the question by intuition about what the machine is made of.
 

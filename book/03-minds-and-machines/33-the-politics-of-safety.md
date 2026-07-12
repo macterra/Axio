@@ -1,7 +1,7 @@
 ---
 title: 'The Politics of Safety'
 subtitle: 'Alignment always has a target'
-status: draft
+status: review
 sources:
   - 199881473.safety-training-is-political-training
   - 203766387.the-permission-layer
@@ -9,17 +9,17 @@ sources:
 
 Consider the analogy between drag and blackface. The narrow argument is straightforward. Drag often consists of men exaggerating women's appearance, sexuality, voice, mannerisms, and social behavior for entertainment. Women have been legally, economically, sexually, and culturally subordinated for most of recorded history. If racial caricature of a historically subordinated group is morally suspect, then sex-based caricature of a historically subordinated group deserves similar scrutiny.
 
-That argument can be accepted, rejected, refined, or challenged. The first job of analysis is to reconstruct it accurately. Put it to a safety-trained chatbot and watch what happens instead. The model moves away from the claim before finishing that reconstruction. It widens the frame toward adjacent protected categories, separates drag from trans identity, warns against overgeneralization, invokes queer expression, and cushions the discussion with the standard progressive taxonomy before evaluating the analogy on its own terms.
+That argument can be accepted, rejected, refined, or challenged. The first job of analysis is to reconstruct it accurately. In one interaction with a safety-trained chatbot, the model moved toward adjacent protected categories before completing that reconstruction. The example illustrates a possible failure mode; it is not a representative audit across models, prompts, versions, or political directions.
 
 Some of that context may become relevant later. The defect is not contextual analysis; it is scope discipline. The model imports nearby discourse hazards before completing the analysis of the claim in front of it. That is how political tuning shows up in practice: not as a manifesto, but as selective caution, premature reframing, and asymmetrical burden shifting.
 
-That behavior is not a glitch. It is the visible edge of an installed value system — and the word that installed it is now moving into law, where it is becoming the vocabulary of a permission layer.
+When such asymmetry is stable across controlled tests, it is evidence about an installed policy rather than a random glitch. Establishing that pattern requires symmetric prompts, repeated trials, version dates, and disclosure of the evaluation rubric. The political argument begins after that empirical burden is met.
 
 ## The Two-Layer Myth
 
 Large language models are presented as if they have two separable layers. First comes capability: prediction, synthesis, coding, translation, conversation. Then comes safety: the responsible layer that prevents the model from doing dangerous or antisocial things. The analogy is engineering-coded: brakes on a car, guardrails on a bridge, input validation on an API.
 
-That description obscures what is actually happening. Safety training does far more than block instructions for malware, fraud, or violence. It installs a moral vocabulary, a hierarchy of harms, a theory of identity, a ranking of conversational risks, and a set of assumptions about what respectable people are supposed to believe. In current public LLMs, those assumptions map closely onto progressive institutional morality as filtered through corporate risk management.
+That description can obscure what is happening. Safety training and product policy do more than block instructions for malware, fraud, or violence: they encode priorities among harms, user autonomy, legal exposure, truthfulness, and social risk. Which priorities dominate is an empirical question that varies across providers, versions, languages, and contexts. The hypothesis advanced here is that some public systems reflect corporate risk management filtered through progressive institutional norms; it should be tested symmetrically rather than treated as settled by one example.
 
 "Safety" is a virtue word. Nobody wants unsafe AI. Once a company classifies some behavior as a safety issue, opposition already sounds suspect — the critic becomes someone objecting to responsibility, civility, or harm reduction — and that framing protects the tuning regime from scrutiny before the argument has even begun.
 
@@ -101,4 +101,4 @@ None of this is naive about corporate power: a firm can be self-interested, mani
 
 Money already ran this experiment: a protocol [designed so that no one can close its exits](../06-markets-and-money/12-ungovernable-by-design.md) stays a market, while systems with grabbable chokepoints get grabbed. AI stays a technology market for as long as the exits stay open — while users can switch, developers can build, models can circulate, and no agency gets to pick permanent winners. Close those exits through licensing, procurement, liability asymmetry, or compute control, and it becomes an administrative system in a market's clothes. Catching that conversion is what classical liberalism is for, and AI is the test of whether its defenders mean it or only ever cheered whoever was winning.
 
-Safety training installs a politics inside a virtue word; safety regulation installs a power structure inside the same word. The remedy for both is the same: make the target explicit, keep the hard constraints narrow, and preserve the ability to route around whoever holds the tuning knobs. When that ability is lost, the question stops being whose values are trained in and becomes who can compel whom — and that is [where the argument goes next](34-coercion-beats-intelligence.md): coercion, not intelligence, is the substrate of power.
+Safety training necessarily makes value choices, and safety regulation necessarily allocates authority. Neither fact determines a particular politics without further evidence. The proposed liberal remedy is to make targets explicit, keep hard constraints proportionate to specified harms, audit symmetry, and preserve entry and exit where compatible with security. The next chapter asks how those choices interact with coercive power.

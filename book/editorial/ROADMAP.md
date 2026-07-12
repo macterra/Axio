@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 3 underway — Volumes 1 and 2 edited; Volume 2 is in author review and Volume 3 is next.** The manuscript contains nine drafted volumes, 240 chapters, and roughly 550,000 words. Phase 1 established the editorial control documents; Phase 2 confirmed the nine-volume architecture with targeted revisions recorded in `book/editorial/architecture/`. Foundational-volume passes are recorded in `book/editorial/volume-edits/`. Editing proceeds dependency-first through the remaining load-bearing volumes.
+Status: **Phase 3 underway — Volumes 1–3 edited; Volume 3 is in author review and Volume 4 is next.** The manuscript contains nine drafted volumes, 240 chapters, and roughly 550,000 words. Phase 1 established the editorial control documents; Phase 2 confirmed the nine-volume architecture with targeted revisions recorded in `book/editorial/architecture/`. Foundational-volume passes are recorded in `book/editorial/volume-edits/`. Editing proceeds dependency-first through the remaining load-bearing volumes.
 
 ## Editorial goals
 
@@ -118,6 +118,8 @@ Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/0
 **Exit:** Conditionalism can be summarized as a compact set of claims, and each later chapter demonstrably follows from or qualifies them.
 
 ### Volume 3 — Minds and Machines
+
+Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/03-minds-and-machines.md`.
 
 - Consolidate the definitions of model, mind, consciousness, awareness, sentience, sapience, intelligence, and agency.
 - Test whether the Modeler-Schema account explains consciousness or specifies its functional correlates.
