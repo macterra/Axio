@@ -1,0 +1,59 @@
+# Volume 1 edit record — The Physics of Agency and the Branching Universe
+
+Status: **In author review**
+
+## Editorial outcome
+
+The pass preserves the volume's progression from physical agency through Everettian modeling to the Chaos metaphysics, while making the epistemic boundary at each transition visible. The volume introduction and navigation now divide the material into five parts. Part IV is explicitly labeled a metaphysical extension, and readers are given a natural stopping point after the physical core in Part III.
+
+## Principal decisions
+
+- Define drift as an uncontrolled baseline rather than a force or synonym for entropy.
+- Present the kybit as a proposed causal, distributional control measure. KL divergence alone neither proves agency nor establishes a work cost.
+- Restrict Landauer's principle to logically irreversible operations and state the additional equilibrium-reference assumptions needed for a relative-entropy work bound.
+- Present the three laws of agency as candidate framework claims with restricted physical bounds, not established laws derived from thermodynamics.
+- Treat the QBU as an Everettian coarse-grained modeling layer. Branches are emergent and representation-dependent; Measure is squared-amplitude weight over specified events, not branch count or an amplitude substance.
+- Define counterfactual influence through an explicit intervention model. Ancestry and correlation alone do not establish causation.
+- Replace global “Measure steering” with policy-conditioned causal comparisons. Agents affect later physical consequences without creating or globally reallocating normalized amplitude.
+- Recast quantum immortality and Gigaplex branch counts as warnings about measure, coarse-graining, empirical hazard models, and identity assumptions.
+- Mark the Chaos sequence as speculative metaphysics. String containment is not realization; program encoding is not execution; a semantic map is not a physical mechanism.
+- Correct the filter discussion's algorithmic-randomness, coding, and equivalence-class claims. Fixed points establish self-reference, not persistence or causal power.
+- Treat constructor theory as an analogy and possible bridge rather than a derivation of physics from Chaos.
+- Treat recursive self-modeling, block-style time, tiered rule-space, and mathematical realization as research proposals with named missing bridges.
+- Present the final “something rather than nothing” argument as conditional on both a modal space and a substantive realization principle.
+
+## Structural changes
+
+The volume now renders these parts in its table of contents:
+
+1. Agency as Physical Control
+2. The Quantum Branching Universe
+3. Choice, Identity, and Persistence
+4. Metaphysical Extension: Chaos and Coherence
+5. Consequences and the Explanatory Boundary
+
+The build supports optional manifest-defined parts while retaining flat navigation between chapters.
+
+## Open technical and author decisions
+
+- **Kybit/work bridge:** derive a nontrivial physical implementation theorem or keep the linear work relation explicitly restricted to chosen models.
+- **Agency/Measure bridge:** decide whether “Measure steering” remains as declared shorthand for policy-conditioned distributions or should be retired project-wide.
+- **Everett commitment:** decide whether later volumes require Everettian ontology or only a weighted-possibility formalism.
+- **Pattern projectors:** supply operational criteria for high-level patterns before calling their Measure determinate.
+- **Identity:** choose and defend the role of causal provenance, bodily continuity, memory, and functional equivalence.
+- **Chaos realization:** supply a realization relation, privileged interpreter, and measure, or frame the sequence as representational metaphysics only.
+- **Law-space:** do not assign anthropic probabilities across Root PIs until a common measure is justified.
+- **Consciousness:** recursive self-modeling is not yet shown necessary or sufficient for phenomenal experience.
+- **Normativity:** weighted consequence and persistence remain descriptive; ethical force must be established in Volume 5.
+
+## Repetition and voice
+
+Repeated reset paragraphs were compressed where they obscured the argument. Strong images—drift, garden, Gigaplex, Chaos, filters, constructors—remain, but formal-sounding metaphors are now followed by their modeling assumptions or limits.
+
+## Validation checklist
+
+- Build the complete book and inspect the grouped Volume 1 table of contents.
+- Confirm previous/next navigation remains flat and complete across part boundaries.
+- Confirm `book/editorial/` is absent from generated publication pages.
+- Run the argument-map generator and link checker.
+- Review generated diffs for unrelated build drift before publication.

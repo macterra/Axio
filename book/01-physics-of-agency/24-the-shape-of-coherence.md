@@ -1,7 +1,7 @@
 ---
 title: 'The Shape of Coherence'
 subtitle: 'Identity preservation across transformation'
-status: draft
+status: review
 sources:
   - 183495093.the-shape-of-coherence
   - 177311215.order-from-contrast

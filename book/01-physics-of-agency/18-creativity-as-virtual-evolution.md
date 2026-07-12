@@ -1,7 +1,7 @@
 ---
 title: 'Creativity as Virtual Evolution'
 subtitle: 'Variation, selection, and thought made persistent'
-status: draft
+status: review
 sources:
   - 164411286.creativity-as-virtual-evolution
   - 176597723.what-counts-as-technology

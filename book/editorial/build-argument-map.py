@@ -26,11 +26,12 @@ THESIS_OVERRIDES = {
     "01-physics-of-agency/03-the-kybit": "Intentional control can be quantified by a proposed information-theoretic unit, the kybit, defined from the divergence between baseline and steered outcome distributions.",
     "01-physics-of-agency/04-the-three-laws-of-agency": "Every agent is constrained by the proposed laws that control costs work, control capacity decays, and perfect control is impossible.",
     "01-physics-of-agency/08-the-quantum-branching-universe": "The QBU supplies a formal event-and-timeline structure for treating Everettian branches as the physical arena of agency.",
-    "01-physics-of-agency/10-causality-and-counterfactuals": "Causality can be represented structurally through counterfactual implication across branches sharing an appropriate ancestor event.",
-    "01-physics-of-agency/15-quantum-free-will": "Free choice in a branching universe consists in an agent's physically realized modulation of future Measure rather than selection of one uniquely actual world.",
-    "01-physics-of-agency/20-chaos-as-foundation": "A maximally unconstrained reservoir of possible sequences is proposed as a foundation presupposing less structure than matter, law, mathematics, or computation.",
+    "01-physics-of-agency/10-causality-and-counterfactuals": "Causal influence is modeled as the change in outcome Measure under an explicit intervention and declared causal model, not inferred from ancestry or correlation alone.",
+    "01-physics-of-agency/12-the-interpretation-wars": "The QBU is the book's chosen Everettian model, supported by philosophical comparison but not uniquely derived from current quantum evidence.",
+    "01-physics-of-agency/15-quantum-free-will": "Everett-compatible agency consists in reasons-responsive policies that causally affect conditional distributions of later outcomes without creating or globally reallocating Measure.",
+    "01-physics-of-agency/20-chaos-as-foundation": "Chaos is proposed as a maximally inclusive sequence-space representation whose promotion to physical ontology requires additional realization, interpretation, and measure assumptions.",
     "01-physics-of-agency/24-the-shape-of-coherence": "Coherence is identity preservation across transformation and supplies the common structural form underlying persistence, recognition, and agency.",
-    "01-physics-of-agency/28-why-there-is-something": "Absolute nothingness is not an eligible alternative within contrastive explanation, so the demand to explain existence rather than nothingness dissolves.",
+    "01-physics-of-agency/28-why-there-is-something": "Given a structured modal space and a substantive realization principle, absolute nothingness cannot function as an ordinary competing state in contrastive explanation.",
     "02-conditionalism/02-all-truth-is-conditional": "Truth values attach only after the conditions fixing a statement's meaning and domain have been supplied; this avoids both absolutism and relativism.",
     "02-conditionalism/03-the-three-levels-of-truth": "Pragmatic success, correspondence, and coherence form nested tests through which conditionally interpreted claims earn truth.",
     "02-conditionalism/09-what-knowledge-is": "Knowledge is physically encoded structure that reliably reduces an agent's decision-relevant uncertainty across future contingencies.",
@@ -73,9 +74,11 @@ REVIEW_OVERRIDES = {
     "01-physics-of-agency/08-the-quantum-branching-universe":
         "Does the formal graph represent emergent Everettian branching without assuming uniquely countable classical worlds?",
     "01-physics-of-agency/10-causality-and-counterfactuals":
-        "Does descendant-branch implication handle overdetermination, preemption, probabilistic causation, and choice of comparison class?",
+        "What fixes the intervention, causal model, comparison class, and coarse-graining used to measure influence?",
+    "01-physics-of-agency/12-the-interpretation-wars":
+        "Does the comparison accurately state QBism, Bell locality, and Raymond-Robichaud's model without treating compatibility as unique empirical vindication?",
     "01-physics-of-agency/15-quantum-free-will":
-        "Does Measure steering supply authorship, or only redescribe physical evolution from an agent-relative Vantage?",
+        "Does policy-conditioned causal control supply the authorship compatibilism needs, or only redescribe unitary evolution?",
     "01-physics-of-agency/20-chaos-as-foundation":
         "Is Chaos explanatory rather than a redescribed space of possibilities, and what fixes the measure or admissibility of its contents?",
     "01-physics-of-agency/24-the-shape-of-coherence":

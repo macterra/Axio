@@ -1,23 +1,23 @@
 ---
 title: 'The Quantum Branching Universe'
 subtitle: 'A formal map of parallel timelines'
-status: draft
+status: review
 sources:
   - 162844036.the-quantum-branching-universe-qbu
   - 162845671.identifying-branches-in-the-qbu
 ---
 
-Everett's move is easy to state. Take the Schrödinger equation literally, drop the collapse postulate, and accept what the mathematics has been saying all along: every quantum event splits reality, and every outcome with nonzero amplitude occurs — each in its own branch. The case that this is the right reading of quantum mechanics is the business of [The Interpretation Wars](12-the-interpretation-wars.md). This chapter's business is different: to say precisely what the picture *is*.
+Everett's move is easy to state. Take unitary quantum evolution seriously and do not add a collapse process the dynamics does not contain. Decoherence then produces effectively autonomous records that can be described as branches. The branches are emergent and approximate: the universal state does not come labeled with a unique set of worlds, and not every microscopic interaction defines one exact split. The case that this is the right reading of quantum mechanics is the business of [The Interpretation Wars](12-the-interpretation-wars.md). This chapter's business is to construct the coarse-grained representation the rest of this book uses.
 
-Because as usually told, it isn't precise. "Branch," "world," "timeline," "history" get used interchangeably and informally, even by physicists who take branching seriously. That looseness is tolerable for popularization and fatal for everything I want to do with the picture. The questions this volume runs on — what makes one event the cause of another, what a counterfactual claim is true *of*, what an agent is choosing between, whether the you in another timeline is you — are questions about the *structure* of the branching, and structure cannot be interrogated in a vocabulary that never fixes its referents. Probability was a suggestive muddle until Kolmogorov gave it a formal object with defined operations; branching-universe talk is at the same pre-formal stage, and it needs the same treatment. So here is the object. I call it the **Quantum Branching Universe**, or **QBU**, and the rest of this book leans on the definitions in this chapter.
+“Branch,” “world,” “timeline,” and “history” are often used at several grains, even by physicists who take Everett seriously. The questions this volume runs on — causation, counterfactuals, choice, identity — require a declared grain. The **Quantum Branching Universe**, or **QBU**, is my modeling layer for that purpose. It is not a replacement for Hilbert-space quantum mechanics and not a claim that one exact graph is written into nature. It is a representation of decoherent histories at whatever coarse-graining makes the records relevant to the question stable. The rest of the book leans on that conditional object.
 
 ## A Graph of Events
 
-A **Quantum Branching Universe** is a structured representation of all physically possible quantum timelines, organized as a directed acyclic graph — a DAG. In this graph:
+A **Quantum Branching Universe** is a coarse-grained representation of decoherent quantum histories, organized as a directed acyclic graph — a DAG. Relative to a specified decomposition:
 
-- **Nodes** represent quantum events or measurements.
-- **Edges** represent branching due to quantum outcomes.
-- **Paths** through the DAG represent distinct timelines.
+- **Nodes** represent stable event records at the chosen grain.
+- **Edges** represent decoherent continuation between records.
+- **Paths** represent histories distinguished by those records.
 
 Formally:
 
@@ -25,23 +25,23 @@ $$
 \text{QBU} \equiv (V, E)
 $$
 
-where $V$ is the set of all quantum events and $E$ is the set of directed edges indicating temporal and causal ordering.
+where $V$ is the selected set of event records and $E$ is the selected continuation relation. A complete physical model would also carry amplitudes, quantum states, and a decoherence functional; the bare graph is the book's causal skeleton.
 
-Each piece of the definition is doing work. The graph is *directed* because the edges carry the arrow of causal ordering: an edge runs from an event to the outcomes that follow from it, never back. It is *acyclic* because no timeline revisits an event; a history that looped through the same quantum event twice would not be a history. And the primitive objects are *events*, not worlds: a "world" or "timeline" is a derived notion, a maximal path through the graph, one complete way the universe's quantum events could have resolved from beginning to end. Two timelines that share a path up to some event and diverge afterward are, in the ordinary loose sense, "the same world until the split" — and the DAG makes that loose sense exact.
+The graph is *directed* because its edges encode record succession at this grain. It is *acyclic* because the same record occurrence does not become its own ancestor. The primitive objects are selected events, not worlds: a “world” or “timeline” is a derived path through the representation. Two paths may share records and later diverge. This makes the loose branching picture explicit once a coarse-graining has been fixed; it does not make the choice of coarse-graining unique.
 
-Ancestry falls out of the path structure. An **ancestor** event $E_a$ precedes another event $E_b$ if all timelines passing through $E_b$ necessarily pass through $E_a$. This is stronger than merely coming earlier: it says that $E_a$ is unavoidable history for anything downstream of $E_b$, part of the fixed past of every version of every observer at $E_b$. Ancestry, so defined, is what causal reasoning in a branching universe hangs on, and nearly everything in this chapter's second half is machinery for establishing it.
+Ancestry falls out of the path structure. An **ancestor** event $E_a$ precedes another event $E_b$ in a specified QBU if every represented history through $E_b$ also passes through $E_a$. This is stronger than merely coming earlier within the model. Whether the relation captures physical causation rather than record ancestry is a further argument taken up later.
 
 ## An Ensemble of Block Universes
 
 Before the machinery, the metaphysics — because the word "branching" invites a picture that is exactly wrong.
 
-The classical **block universe** of relativity treats time as a static, four-dimensional structure in which past, present, and future coexist. Nothing flows; the block simply *is*, and what we call the passage of time is a feature of how observers embedded in the block experience their worldlines. The QBU does not reject this picture. It multiplies it. The QBU is an immense static structure composed of an astronomically vast — potentially infinite — number of distinct block universes, each a unique, deterministic timeline, related to one another by the branch structure of the DAG.
+The classical **block universe** reading of relativity treats time as a static, four-dimensional structure in which past, present, and future coexist. The QBU combines that picture with an Everettian state containing decoherent histories. It can be visualized as a static family of block-like paths related by the DAG. The visualization is useful, but the paths remain emergent descriptions of one quantum state, not a fundamental census of separately packaged classical universes.
 
-So branching is not something that *happens*. The tree does not grow; no fork is ever poised, waiting for an outcome to be decided. Branching is a structural relationship among timelines — the fact that two block universes are identical up to some quantum event and differ after it — in precisely the way that a road's fork is a fact about the map, not an occurrence on it. Every alternative outcome is equally real, a coexisting timeline, and ours enjoys no privileged status beyond being the one we find ourselves in. This is what makes the QBU fit for rigorous work on causality, counterfactual reasoning, and choice: the alternatives that counterfactuals gesture at are not fictions or abstract possibilia but actual, explicitly modeled timelines elsewhere in the structure. What that buys for the semantics of "would have" is the subject of [Causality and Counterfactuals](10-causality-and-counterfactuals.md).
+On this static reading, branching is a structural relationship among histories rather than a tree growing into an external future. The records represented by different paths are components of the universal state; none is selected by collapse, and ours has no privileged dynamical status. This makes the QBU useful for causality, counterfactual reasoning, and choice while leaving open how much semantic work physical co-realization can carry. That question is the subject of [Causality and Counterfactuals](10-causality-and-counterfactuals.md).
 
 ## Pattern Identifiers
 
-A map of every physically possible timeline is useless without a way to point at parts of it. "The timelines where I exist," "the timelines where the coin landed heads," "the timelines descending from my birth" — every interesting claim about the QBU quantifies over some subset of its paths, and the subset had better be well defined.
+A map of represented histories is useless without a way to point at parts of it. “The histories where I exist,” “the histories where the coin landed heads,” “the histories descending from my birth” — every interesting claim about the QBU selects some subset of its paths, and the selection rule had better be explicit.
 
 The pointing device is the **Pattern Identifier (PI)**: a precise, reproducible pattern or state used to identify and select subsets of timelines within the QBU. A genotype is a PI. A neural connectome is a PI. A specific quantum state is a PI. So, more loosely, is a name — and the difference between those examples is the crux of this chapter, but first the operations, which are common to all of them.
 
@@ -62,27 +62,27 @@ This is the formal content of phrases like "the worlds where X": a pattern, and 
 The third operation lifts ancestry from events to patterns. Given two PIs, it asks whether one is causally upstream of the other everywhere:
 
 $$
-AncestorDescendant(PI_a, PI_b) = \begin{cases} True, & \text{if for all timelines containing } PI_b, \text{ there exists an ancestor timeline containing } PI_a \\ False, & \text{otherwise} \end{cases}
+AncestorDescendant(PI_a, PI_b) = \begin{cases} True, & \text{if every path matching } PI_b \text{ contains an earlier match of } PI_a \\ False, & \text{otherwise} \end{cases}
 $$
 
-When $AncestorDescendant$ returns $True$, the pattern $PI_a$ is fixed history for every instance of $PI_b$ anywhere in the QBU — the pattern-level analogue of an unavoidable ancestor event. That is a strong guarantee, and not every identifier can deliver it.
+When $AncestorDescendant$ returns $True$, $PI_a$ is represented as prior history for every selected instance of $PI_b$ in this QBU. That is a strong model-relative guarantee, and not every identifier can deliver it.
 
 ## Strong and Weak Identifiers
 
 Pattern Identifiers divide into two kinds, and the division is where most careless reasoning about parallel selves goes wrong.
 
-A **Strong PI** is a pattern whose matching timelines necessarily share a common ancestor event. Select the worlds, and you have selected a family: every one of them descends from a single node in the DAG, and everything downstream of that node inherits it as fixed past. Strong PIs provide strict causal clarity.
+A **Strong PI** combines state constraints with provenance constraints strong enough that every match descends from a specified ancestor event. Select the histories, and you have selected a family by construction. A **Weak PI** matches descriptive features without guaranteeing that provenance. Precision alone does not create shared ancestry: two independent processes can instantiate the same description, however improbable the coincidence.
 
-The canonical example is a **genotype**. A genotype uniquely identifies an individual at the biological level, and it is the product of a precise sequence of ancestral genetic events. Every timeline containing my exact genotype necessarily contains the event of my genetic formation — that specific fertilization, that specific recombination. It could not be otherwise: the pattern is so informationally particular that independent origination elsewhere in the structure has no purchase. So $SelectWorlds(\text{my genotype})$ returns a set of timelines with a guaranteed common ancestor, and every causal question about "the versions of me" is anchored to a definite node. This is what makes Strong PIs the working currency of rigorous investigation into causality and agency within the QBU. Neural connectomes and specific quantum states earn the same status the same way: by being precise enough that matching entails shared origin.
+A genotype by itself is therefore not canonical proof of identity: identical twins already show that a sequence need not pick out one individual, and independent re-instantiation is conceptually possible. A strong identifier would instead specify something like *this genotype descending from this fertilization event*, or a later physical state together with a cryptographically or causally traceable history. Neural connectomes and quantum states face the same rule. Their descriptive detail may make accidental duplication negligible for practical work, but only provenance makes ancestry part of the identifier rather than a probabilistic inference.
 
-A **Weak PI** is a pattern that carries no such guarantee. The canonical example is a **name**. A name is a culturally assigned label with no biological or causal constraint behind it; the same name arises independently in completely separate causal histories. $SelectWorlds(\text{"David"})$ returns a sprawl of timelines containing entirely unrelated individuals who happen to share a label — no common ancestor event, no shared causal root, no fact of the matter about "what happened to David across the branches," because the selection never picked out a single lineage in the first place. Weak PIs are not useless — for cultural and historical analysis, patterns like names, labels, and general event-descriptions are exactly the right grain — but they cannot support causal claims, and arguments that quietly treat a Weak PI as if it were Strong are trading on an ambiguity.
+A **Weak PI** carries no provenance guarantee. A name is the obvious example: $SelectWorlds(\text{"David"})$ returns unrelated individuals who share a label. Weak PIs are not useless — names, roles, genotypes, and general event descriptions can be the right grain for many questions — but they cannot support lineage claims without an added causal condition.
 
-There is also a degenerate limit worth marking. Logical invariants — the value of π, the theorems of arithmetic — are patterns that match *every* timeline. They are universally true and therefore trivially differentiating: $SelectWorlds$ returns the whole QBU, which selects nothing. Universality makes an identifier operationally worthless, not maximally reliable. The useful PIs live between the two failure modes: particular enough to entail a shared origin, contingent enough to distinguish some timelines from others.
+There is also a degenerate limit worth marking. Logical invariants — the value of π, the theorems of arithmetic — match every history under the relevant interpretation. $SelectWorlds$ then returns the whole represented QBU and distinguishes nothing. Useful PIs must state both what equivalence they track and, when identity or responsibility is at issue, what provenance they require.
 
-The payoff of the distinction is discipline. When later chapters analyze a decision — an agent standing at a branch point, weighing futures — the agent is picked out by Strong PIs, so that "the branches where I do X" and "the branches where I do Y" are genuinely branches *of the same trunk*, downstream of a common ancestor, and comparing them is a well-posed causal comparison rather than a survey of strangers.
+The payoff is discipline. When later chapters analyze a decision, “the branches where I do X” and “the branches where I do Y” must be selected by an identifier anchored to the same pre-decision agent-state. The shared trunk comes from that declared provenance, not from resemblance alone.
 
 ## The Unweighted Skeleton
 
-What this chapter has built is deliberately austere: a graph, an ancestry relation, and a selection calculus. Nothing yet says that some branches count for more than others. But they do — branches carry an objective weight, fixed by the squared amplitudes of the wavefunction, and that weight is **Measure**, the physical quantity that turns the QBU from a map of what is possible into an account of what is probable. Adding Measure to the skeleton, together with the observer-relative notions of Vantage and Branchcone, is the work of [the next chapter](09-measure-vantage-branchcone.md). And once Measure is in place as a fact about the world, there is a matching question about the head — how an agent's subjective confidence should track objective branch weight — which is the epistemology of [Measure and Credence](../02-conditionalism/11-measure-and-credence.md).
+What this chapter has built is deliberately austere: a graph, an ancestry relation, and a selection calculus, all relative to a coarse-graining. Nothing yet says how much quantum weight belongs to the histories selected by a pattern. That weight is **Measure**, obtained from squared amplitudes over the relevant decoherent components. Adding Measure to the skeleton, together with Vantage and Branchcone, is the work of [the next chapter](09-measure-vantage-branchcone.md). The matching epistemic question — how an agent's subjective confidence should track objective quantum weight — belongs to [Measure and Credence](../02-conditionalism/11-measure-and-credence.md).
 
 The QBU framework draws on standing work: the many-worlds interpretation of quantum mechanics (Everett, 1957); the block universe reading of relativity (Putnam, 1967); causality and counterfactuals in quantum theory (Pearl, 2000; Deutsch, 1999); the formal structures of quantum mechanics and quantum computation (Nielsen & Chuang, 2010); and quantum causality (Adlam, 2021).

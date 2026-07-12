@@ -123,6 +123,28 @@ def load_book():
                 'status': status,
                 'published': status in PUBLISHED_STATUSES,
             })
+
+        # Optional manifest-defined parts control TOC grouping without
+        # changing chapter URLs or filename-based reading order.
+        parts = vol.get('parts', [])
+        if parts:
+            chapter_slugs = [c['slug'] for c in chapters]
+            part_slugs = [slug for part in parts
+                          for slug in part.get('chapters', [])]
+            duplicates = sorted({slug for slug in part_slugs
+                                 if part_slugs.count(slug) > 1})
+            missing = sorted(set(chapter_slugs) - set(part_slugs))
+            unknown = sorted(set(part_slugs) - set(chapter_slugs))
+            if duplicates or missing or unknown:
+                details = []
+                if duplicates:
+                    details.append(f'duplicate chapters: {duplicates}')
+                if missing:
+                    details.append(f'unassigned chapters: {missing}')
+                if unknown:
+                    details.append(f'unknown chapters: {unknown}')
+                print(f"   ✗ {vol['slug']}: invalid parts ({'; '.join(details)})")
+                sys.exit(1)
         vol['chapters'] = chapters
 
         intro_status = (vol['intro']['meta'].get('status', 'outline')
@@ -361,12 +383,30 @@ def build_volume_page(vol, publish_index):
     unpublished = [c for c in vol['chapters'] if not c['published']]
 
     if published:
-        content += '<h2>Chapters</h2>\n<ol class="book-toc">\n'
-        for ch in published:
-            title = escape(ch['meta'].get('title', ch['slug']))
-            content += (f'<li><a href="{ch["slug"]}.html">{title}</a> '
-                        f'{status_badge(ch["status"])}</li>\n')
-        content += '</ol>\n'
+        content += '<h2>Chapters</h2>\n'
+        published_by_slug = {ch['slug']: ch for ch in published}
+        if vol.get('parts'):
+            for part in vol['parts']:
+                part_chapters = [published_by_slug[slug]
+                                 for slug in part.get('chapters', [])
+                                 if slug in published_by_slug]
+                if not part_chapters:
+                    continue
+                content += (f'<h3 class="book-part-title">'
+                            f'{escape(part["title"])}</h3>\n'
+                            '<ol class="book-toc">\n')
+                for ch in part_chapters:
+                    title = escape(ch['meta'].get('title', ch['slug']))
+                    content += (f'<li><a href="{ch["slug"]}.html">{title}</a> '
+                                f'{status_badge(ch["status"])}</li>\n')
+                content += '</ol>\n'
+        else:
+            content += '<ol class="book-toc">\n'
+            for ch in published:
+                title = escape(ch['meta'].get('title', ch['slug']))
+                content += (f'<li><a href="{ch["slug"]}.html">{title}</a> '
+                            f'{status_badge(ch["status"])}</li>\n')
+            content += '</ol>\n'
     if unpublished:
         content += ('<p class="book-muted">'
                     f'{len(unpublished)} more chapter(s) in preparation.</p>\n')

@@ -1,7 +1,7 @@
 ---
 title: 'The Kybit'
 subtitle: 'A unit of control'
-status: draft
+status: review
 sources:
   - 162485677.the-physics-of-agency-part-3-the
   - 162543579.the-physics-of-agency-part-4-the
@@ -9,13 +9,13 @@ sources:
 
 Physics runs on units. Energy is measured in joules, entropy in Boltzmann's constant, information in bits — and each of those quantities became a real subject of science only once it had a unit. Before Shannon, "information" was a loose intuition; after Shannon, it was a measurable quantity with theorems attached. Agency is still stuck on the wrong side of that transition. We say one act shows more deliberate control than another, that a thermostat exercises less agency than a chess engine, that forcing an outcome takes more effort than merely nudging it — and we say all of this without any way to put a number on it.
 
-If agency is a physical phenomenon — an embedded agent spending energy to bias reality toward preferred futures, against the entropic slide I call drift, as argued in [Agency Against Drift](02-agency-against-drift.md) — then intentional control ought to be quantifiable, the way energy and information are. This chapter supplies the unit. I call it the **kybit**. Just as the bit measures information, the kybit measures an agent's intentional influence on future outcomes. And like the bit, it turns out to carry a thermodynamic price tag.
+If agency is physically implemented — an embedded system using a model to change outcomes relative to an uncontrolled baseline, as argued in [Agency Against Drift](02-agency-against-drift.md) — then at least its distributional effect ought to be quantifiable. This chapter proposes a unit. I call it the **kybit**. The kybit measures how far an intervention moves a distribution over outcomes from a specified baseline. Whether that movement is attributable to an agent, and what minimum work its physical implementation requires, are separate questions that the definition alone cannot settle.
 
 ## Control as Distance Between Futures
 
 Start with what control actually does. Before an agent intervenes, the world has some probability distribution over outcomes — call it $P_{\text{initial}}$, the distribution drift would deliver on its own. After the agent acts, the outcomes follow a different distribution, $P_{\text{final}}$, reshaped in the agent's favor. The control exerted is precisely the gap between those two futures: how far the agent dragged the probabilities from where they were going to where the agent wanted them.
 
-There is a standard measure of the distance between two probability distributions: the **Kullback–Leibler (KL) divergence**. The total control exerted in shifting the outcome distribution from $P_{\text{initial}}$ to $P_{\text{final}}$ is
+There is a standard measure of how one probability distribution diverges from another: the **Kullback–Leibler (KL) divergence**. It is not a mathematical distance — it is asymmetric and does not obey the triangle inequality — but its asymmetry fits an intervention evaluated against a baseline. Define the distributional control registered by a shift from $P_{\text{initial}}$ to $P_{\text{final}}$ as
 
 $$
 D_{KL}(P_{\text{final}} \parallel P_{\text{initial}}) = \sum_{i} P_{\text{final}}(i)\,\log_2\frac{P_{\text{final}}(i)}{P_{\text{initial}}(i)}
@@ -23,7 +23,7 @@ $$
 
 measured in kybits. The logarithm is base 2 for the same reason Shannon's is: it makes the unit binary, and it makes the simplest possible act of control come out to exactly one.
 
-Two properties make this the right measure. First, it is always non-negative, and it is zero only when the initial and final distributions are identical — an agent who changes nothing has, by definition, exerted no control, and there is no way to score points by shuffling probability around pointlessly. Second, as I will argue below, it represents the total thermodynamic work required to rearrange the probability distribution — the number is not just a bookkeeping convenience but tracks a physical cost.
+Two properties make this a useful candidate measure. First, it is always non-negative, and it is zero only when the distributions are identical. Second, it measures the information required to distinguish the steered distribution from the baseline. That does not make every divergence an act of agency: a storm, a broken bearing, or an unnoticed confounder can also change an outcome distribution. Attribution requires a causal intervention model, a defensible baseline, and evidence that the change ran through the system's evaluative control loop. The kybit measures the size of an attributed distributional shift after those conditions have been met; it does not meet them by itself.
 
 Note that the measure is asymmetric: it is computed over the final distribution, from the agent's achieved future looking back at the future drift would have delivered. That is as it should be. Control is not a symmetric relation between two possible worlds; it is the act of steering from one to the other, and the steering is what the kybit counts.
 
@@ -55,7 +55,7 @@ $$
 D_{KL}(P_{\text{final}} \parallel P_{\text{initial}}) = 1.0 \text{ kybit}
 $$
 
-Forcing a previously uncertain 50/50 outcome to complete certainty costs exactly **one kybit** of control. The symmetry with information theory is exact and deliberate: one bit is what it takes to *learn* which way a fair coin landed; one kybit is what it takes to *decide* which way it lands. The outcome that was steered away from contributes nothing — the convention that eliminates zero-probability terms is what makes the measure robust rather than blowing up whenever an agent rules something out entirely.
+Forcing a previously uncertain 50/50 outcome to complete certainty registers exactly **one kybit** of distributional control. The symmetry with information theory is deliberate: one bit resolves which way a fair coin landed; one kybit records the divergence produced by fixing which way it lands. This is a statement about distributions, not yet a statement that every physical device capable of forcing the coin pays the same energy price.
 
 ## Fractions of a Kybit: The Biased Die
 
@@ -72,36 +72,30 @@ D_{KL} &= (0.5) \log_2 \frac{0.5}{1/6} + (0.25) \log_2 \frac{0.25}{1/6} + 4 \tim
 \end{aligned}
 $$
 
-Reshaping the die's future this far from fair costs about **0.585 kybits** — more than half the control needed to force a coin, but nowhere near the control needed to force the die outright. Notice how the arithmetic distributes credit: the amplified faces contribute positive terms, the suppressed faces contribute negative ones, and the total still comes out positive, as it must. Every act of steering, however partial, registers as a definite, comparable quantity. A drug that shifts recovery odds from 40% to 60%, a campaign that moves an election by three points, a thermostat that narrows a room's temperature distribution — all of them exert some measurable number of kybits, and the numbers can be compared on a single scale.
+Reshaping the die's future this far from fair registers about **0.585 kybits** — more than half the divergence of the forced coin, but less than forcing the die outright. Notice how the arithmetic distributes the shift: amplified faces contribute positive terms, suppressed faces negative ones, and the total remains non-negative. Partial steering therefore receives a definite number once its baseline, intervention, and outcome partition are fixed. Change any of those choices and the number may change, which is why a kybit comparison is meaningful only when the modeled domains are commensurable.
 
-## The Law of Control Work
+## From Information to Work
 
-So far the kybit could pass for pure mathematics — a scoring rule for interventions. It is more than that. Kybits represent real thermodynamic costs.
+So far the kybit is an information measure applied to interventions. Connecting it to work requires a physical model of the transformation.
 
-The precedent is Landauer's principle, one of the deepest results connecting information to physics: erasing one bit of information in an environment at temperature $T$ costs a minimum of $k_B T \ln 2$ in dissipated work, where $k_B$ is Boltzmann's constant. Erasure is a compression of a system's state space — two possible states forced into one — and physics charges for it. But steering an outcome is *also* a compression of possibility: forcing the coin collapses two live futures into one, exactly the operation Landauer priced. The same floor applies. Each kybit of control corresponds to a minimum energy expenditure required to intentionally bias outcomes:
-
-$$
-W_{\text{min}} = k_B T \ln 2 \quad \text{per kybit}
-$$
-
-This is Landauer's principle extended from erasure to steering, and it generalizes immediately. I state it as the **Law of Control Work**:
-
-> **Exercising intentional control over future outcomes requires physical work proportional to the kybits of control exerted.**
-
-Formally, if an agent exerts $C$ kybits of control, the minimum energy cost is
+Landauer's principle connects logically irreversible information erasure to physics: resetting one bit in an environment at temperature $T$ dissipates at least $k_B T \ln 2$ under the principle's standard assumptions. A related result in nonequilibrium thermodynamics connects relative entropy to excess free energy when a distribution is transformed relative to an equilibrium reference. In the special case where the kybit baseline is that reference and the physical protocol realizes the modeled transformation, the information divergence supplies a lower bound of the same form:
 
 $$
-W_{\text{min}} = C \times k_B T \ln 2
+W_{\text{min}} \geq C k_B T \ln 2
 $$
 
-where $C$ is the number of kybits exerted, $k_B$ is Boltzmann's constant, $T$ is the temperature of the agent's environment, and $\ln 2$ reflects the binary nature of the kybit. At room temperature the floor per kybit is on the order of $3 \times 10^{-21}$ joules — vanishingly small, which is why it is a floor and not a typical price. Real agents, running on muscles and microchips, pay many orders of magnitude above the Landauer minimum. But the floor is what matters in principle: it can never be zero.
+where $C$ is measured in kybits. This is the strongest clean bridge presently available, and its conditions matter. An arbitrary $P_{\text{initial}}$ is not automatically an equilibrium distribution; an abstract change in outcome probabilities does not specify the microphysical protocol; and the same high-level divergence may be realized by devices with radically different costs. The universal claim that physical control consumes resources is secure. A universal linear exchange rate between every attributed kybit and work remains a conjecture outside the restricted thermodynamic case.
 
-That is the significance of the law. Just as erasing information has a known thermodynamic cost, intentionally shaping future outcomes — exercising agency — incurs a measurable thermodynamic cost. **Agency is never free.** Every deliberate act that biases the future consumes real physical resources. There is no such thing as influence from outside the ledger; a preference that costs nothing to enact has, by this accounting, controlled nothing. This is what it means to say agency is embedded in physical reality rather than hovering above it.
+I therefore state the **Law of Control Work** in two layers:
 
-## Drift Is Free; Control Is Not
+> **Physical control requires a resource-consuming implementation. Under an equilibrium-reference realization, $C$ kybits imply the lower bound $W_{\text{min}} \geq C k_B T \ln 2$.**
 
-The law sharpens the asymmetry that the previous chapter drew between agency and drift. Drift — the spontaneous entropic evolution of a system toward disorder — happens without intentional effort and without anyone paying for it. It is the default trajectory, the $P_{\text{initial}}$ in every calculation above. Control is the paid alternative: an intentional investment of energy to move against that default and selectively amplify specific futures. The further you push the distribution from where drift was taking it — the more kybits you exert — the more work you must do. The exchange rate is fixed by physics.
+At room temperature $k_B T \ln 2$ is on the order of $3 \times 10^{-21}$ joules. Real control systems usually dissipate many orders of magnitude more because sensing, computation, correction, and actuation are not quasistatic ideal transformations. The bound matters as a limiting case, not as a meter that converts any observed behavioral divergence directly into joules.
 
-You can see the law operating wherever genuine agency shows up. A drone adjusting its flight path in real time, running predictive simulations to steer around obstacles, is buying kybits with battery charge: narrowing the distribution over its future positions from "wherever wind and momentum take it" to "through the gap." A portfolio algorithm continuously rebalancing holdings against its forecasts is spending compute and transaction costs to drag the distribution of future returns away from the market's drift. An animal caching food against a predicted scarce season is burning calories now to compress the probability distribution over its winter — trading present energy for a future where starvation has been steered toward zero. In every case the signature is the same: a predictive internal model, an energy expenditure, and a measurable gap between the future that would have happened and the future the agent made happen. That gap, in kybits, is what the energy bought.
+## Drift Needs No Agent
 
-The Law of Control Work is the first of three. Control costs work; the capacity for control decays without continuous energy input; and perfect, frictionless control is impossible even in principle. Together they bound what any agent — bacterium, animal, human, machine — can ever do, and they are the subject of [The Three Laws of Agency](04-the-three-laws-of-agency.md).
+The distinction from the previous chapter can now be stated without saying drift is energetically free. Uncontrolled dynamics may release, transfer, or dissipate enormous energy. What they do not require is an agent maintaining a model and paying the additional costs of sensing, correction, and actuation. Drift is the comparison trajectory, the $P_{\text{initial}}$ in the calculation. Control is the causally attributed departure from it.
+
+Consider a drone correcting its flight toward a gap. Its battery powers sensing, computation, and actuation; a causal model compares the resulting position distribution with the wind-and-momentum baseline; the KL divergence records the size of the shift. The energy use and the kybit count describe related aspects of the same intervention, but neither alone determines the other. A more efficient drone can realize the same outcome divergence with less work, while a wasteful controller can burn energy without producing control at all.
+
+The kybit is therefore a proposed unit with a disciplined scope: it measures an attributed distributional shift relative to an explicit baseline. The next chapter asks what physical bounds survive once that definition, its causal prerequisites, and its restricted thermodynamic bridge are kept separate.
