@@ -1,7 +1,7 @@
 ---
 title: 'Mechanisms for Honest Values'
 subtitle: 'Harberger insurance and prediction markets'
-status: draft
+status: review
 sources:
   - 165432518.introducing-harberger-insurance
   - 179271344.prediction-markets
@@ -61,7 +61,7 @@ Second: the value of a prediction market is the epistemic discipline it imposes 
 
 ## Competitive Model Selection
 
-Why do markets outperform pundits? Not through "the wisdom of crowds" in the naive sense, as if averaging enough opinions launders them into truth. The power comes from competitive model selection under structured incentives. Where a pundit accumulates prestige by being entertainingly wrong, a trader loses capital when her model fails — and that single difference restructures the entire epistemic environment.
+When well-designed prediction markets outperform selected polls or experts, the advantage need not come from a mystical wisdom of crowds. Prices can aggregate heterogeneous information while rewarding correction. Performance depends on question resolution, liquidity, participant selection, subsidies, fees, manipulation, time horizon, and the comparison forecast. A trader can also profit from noise, hedge for non-epistemic reasons, or face limits to arbitrage; the incentive is useful without guaranteeing truth.
 
 Models must compress reality, because hand-waving has no cash value. Confidence must scale with evidence, because overconfidence is expensive — the market enforces, automatically and impersonally, [the calibration discipline](../02-conditionalism/21-bayes-in-the-wild.md) that a lone reasoner must impose on himself by force of will. Belief updating becomes mandatory, because stubbornness is a losing strategy with a visible running total. And distributed information becomes usable: a market integrates heterogeneous data from thousands of sources without any central authority deciding whose input counts.
 
@@ -71,7 +71,7 @@ Trading, done seriously, is deliberate epistemic labor. The trader generates hyp
 
 Honesty requires admitting where the mechanism fails. Prediction markets fail when they are thin — when liquidity is low or participation has been truncated by regulation or risk aversion. A thin market is fragile: it can be manipulated by a single motivated actor, and its prices carry weak signal dressed in the same authoritative-looking numbers as strong signal. Anyone who quotes a market price without asking how deep the market is has missed the point of the whole apparatus, which is that the number means something *because* of the conditions behind it.
 
-But thinness is a problem of design, not of principle. Modern crypto-based markets — Polymarket, Manifold, and their successors — attack it directly with automated market makers, subsidy mechanisms, and low-friction participation, and the signal quality improves as the engineering does. What the engineering cannot fix is the political problem, which is the same one we met in 1994: these markets face ongoing legal pressure precisely because they threaten entrenched epistemic hierarchies. A prediction market does not merely democratize forecasting. It decentralizes the authority to declare what is likely — and the incumbents of that authority, in media, government, and academia, have noticed. That makes prediction markets natural allies of agency and natural enemies of centralized narrative control, and it explains why a mechanism this useful has spent three decades being regulated as if it were a casino.
+Automated market makers, subsidies, and low-friction participation can reduce thinness while introducing model, subsidy, oracle, and platform risks. Legal pressure also has multiple stated grounds: gambling law, consumer protection, manipulation, insider information, sanctions, election integrity, and jurisdiction. Some restrictions may protect incumbent forecasters; that motive requires evidence rather than inference from the restriction itself. The institutional question is which rules preserve useful aggregation without pretending a market price is authoritative merely because it is numerical.
 
 ## Honesty as Infrastructure
 
@@ -79,4 +79,4 @@ Set the two mechanisms side by side and the shared design principle is plain: at
 
 Understood this way, these are not financial curiosities. They are epistemic infrastructure. Prediction markets can serve as distributed inference engines for policy analysis, accountability mechanisms for experts and institutions, self-correcting scaffolds for scientific inquiry, and voluntary governance tools — the load-bearing instrument, in fact, of [Axiocracy](/posts/197763923.axiocracy-governance-by-value-discovery.html), governance by value discovery. Harberger valuation gives the same treatment to the asset side of the ledger: a civilization's intangible wealth made explicit, honest, and liquid before disputes arise rather than after.
 
-None of this comes with guarantees. The strength of these mechanisms is only ever the strength of their incentives: they reward accuracy, penalize incoherence, and align belief with consequence, nothing more. But look at what they are competing against — valuation by litigation, forecasting by theater, a public sphere in which confidence without calibration is a career asset. Wherever belief influences action, incentives should reward coherence rather than performance. These mechanisms achieve that without coercion, which makes them rare; given the ubiquity of confident error, it also makes them precious. The experiment we improvised in Calgary was small, but what it demonstrated was not: distributed epistemic coordination is possible, and incentives can be harnessed to produce clarity instead of distortion. The tools exist. They have existed since 1994. What has been missing is a civilization willing to be scored.
+None of this comes with guarantees. The strength of these mechanisms is the strength of their participation, resolution rules, incentives, and safeguards. The Calgary experiment was an early demonstration that a web interface could support distributed forecasting and that even play-money scoring changed discussion. It did not establish comparative accuracy or a universal governance instrument without a published benchmark, sample, and evaluation protocol. The tools make claims more scoreable; whether they produce clarity is itself a claim that should be scored.

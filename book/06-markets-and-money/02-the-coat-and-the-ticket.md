@@ -1,7 +1,7 @@
 ---
 title: 'The Coat and the Ticket'
 subtitle: 'Value, wealth, capital, money, currency'
-status: draft
+status: review
 sources:
   - 202441816.the-coat-and-the-ticket
 ---

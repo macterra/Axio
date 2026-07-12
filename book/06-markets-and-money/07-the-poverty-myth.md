@@ -1,14 +1,14 @@
 ---
 title: 'The Poverty Myth'
 subtitle: 'Poverty is the default; wealth is the anomaly'
-status: draft
+status: review
 sources:
   - 175235972.the-poverty-myth
   - 168875141.the-myth-of-late-stage-capitalism
   - 166020698.capitalisms-forbidden-cure
 ---
 
-There is a claim that circulates endlessly in one form or another: *capitalism is unnatural; capitalism created poverty; poverty is man-made.* It is the kind of statement that makes you wonder whether people's intuitions have been so warped by abundance that they can no longer remember reality. It is not just wrong — it is an inversion of the truth, and the very comforts that make it possible to pronounce it so casually are products of the system it condemns.
+There is a claim that circulates in several forms: *capitalism is unnatural; capitalism created poverty; poverty is man-made.* The flat historical claim confuses the existence of material scarcity with the institutions that distribute, relieve, or entrench it. Nature supplies scarcity; human systems shape who bears it and which escape routes exist. This chapter asks what explains the extraordinary production of modern wealth without treating every institution called capitalist as innocent by definition.
 
 This chapter takes up that inversion and two of its most popular companions: the claim that we are living through capitalism's terminal phase, and the claim that markets can deliver a wall of condiments but not a working healthcare system. The three make a natural set. Each takes something capitalism achieved and reads it as an indictment; each dissolves the moment you ask the right question. The fuller docket of charges against markets — externalities, public goods, boom and bust, and the rest — gets its systematic hearing in [Capitalism on Trial](06-capitalism-on-trial.md). These three come first because they are not really charges at all. They are failures to see what needs explaining.
 
@@ -20,13 +20,13 @@ This is the pivot on which the whole argument turns. You do not need to explain 
 
 Wealth is the anomaly — the fragile exception carved out of chaos by ingenuity. It emerges when humans invent, accumulate capital, trade, and specialize. It is not a given. It is an achievement. Capitalism did not create poverty; capitalism created the mechanisms by which human beings could *escape* it.
 
-The historical record is brutally clear. In 1820, more than 90% of humanity lived in what we would today call extreme poverty. Today, fewer than 9% do — and the number continues to fall. That is not a coincidence riding alongside capitalism's spread; it tracks it. Where markets and property rights took root, poverty receded. Where they did not, it persisted. The wealth of nations was not delivered by kings or commissars. It was delivered by free exchange. To say capitalism created poverty is like saying medicine created disease, or fire created cold.
+Long-run estimates place the great majority of humanity near subsistence in the early nineteenth century. Using its 2024 international line and purchasing-power method, the [World Bank estimated](https://www.worldbank.org/en/publication/poverty-prosperity-and-planet) that about 8.5% of the world lived in extreme poverty, while warning that recent reduction had slowed nearly to a standstill and that much larger shares remain poor at higher thresholds. Industrialization, trade, technological change, public health, education, infrastructure, state capacity, and market institutions developed together; the time series alone cannot assign each a clean causal share. Comparative evidence supports an important role for secure exchange and productive investment. It does not license the claim that free exchange delivered the entire result unaided.
 
 And what of "unnatural"? That word is semantic camouflage. Markets are emergent human behavior. Hunter-gatherers bartered; ancient tribes exchanged surpluses; comparative advantage is as real and spontaneous as language. What is genuinely unnatural is the attempt to abolish voluntary exchange and replace it with command — the project that required gulags, famine quotas, and firing squads to sustain. What actually entrenched poverty across the centuries were feudalism, slavery, and collectivist command economies. Capitalism was the solvent that broke those structures apart.
 
 ## Why the Myth Persists
 
-If the record is this one-sided, why does the inversion survive? Three reasons, and they will recur throughout this Part.
+Why does the inversion survive despite the long-run production gains? Three recurrent framing errors explain part of it, while current deprivation and institutional failures explain why criticism does not simply disappear.
 
 **Abundance-induced amnesia.** Prosperity is now so ubiquitous that people treat it as the baseline — as the natural state from which any visible hardship must be a man-made subtraction. Once wealth is mistaken for the default, poverty can only be read as something *done to* people, and a culprit must be found. But this gets the ledger backwards. The smartphone in the critic's hand, the antibiotics in his body, the food flown in from another continent — none of it is baseline. All of it is the anomaly, and all of it had to be built.
 
@@ -34,7 +34,7 @@ If the record is this one-sided, why does the inversion survive? Three reasons, 
 
 **Aesthetic distaste.** Markets involve competition, unequal outcomes, and profit, and many people find these ugly. Finding a thing ugly is a permissible taste; promoting the taste to an economic history is not. The vilification comes first and the "capitalism created poverty" story is recruited afterward as its justification.
 
-Every critic who types their disdain into a phone while enjoying heat, light, medicine, and decades of life their ancestors could never have dreamed of is a walking monument to the system's triumph. To sneer at it is not merely ungrateful. It is historically blind.
+Modern abundance is evidence that a vast productive achievement occurred. It does not tell us that every current rule produced it, that gains were fairly acquired, or that a beneficiary forfeits standing to criticize the system. The historical discipline is to explain both the achievement and the exclusions without converting either into a total verdict.
 
 ## The Myth of Lateness
 
@@ -54,11 +54,11 @@ The third myth arrives as an image: a supermarket shelf sagging under 175 variet
 
 The comparison is exactly backwards, and instructively so. The wall of sauces is not a bug. It is capitalism's signature: the efficient satisfaction of wildly diverse individual preferences, discovered and served at a granularity no planner could specify. Wherever you find that kind of variety, you are looking at a market that has been left alone to compete. Which suggests the right question about healthcare is not *why does capitalism fail here?* but *why does this sector, almost uniquely, lack capitalism's signature?*
 
-The answer is straightforward: in healthcare, genuine market competition is largely illegal. It is one of the most heavily regulated sectors in existence — constrained by licensing cartels and credentialism enforced by state-backed professional bodies, by opaque pricing laundered through third-party payers so that almost no one ever sees or compares the cost of anything, and by regulatory capture that lets entrenched incumbents write the rules their would-be competitors must satisfy. Entry is blocked, prices are hidden, and experimentation is criminalized. The hallmarks of a functioning market — competition, transparency, innovation — are not absent because capitalism gave up on medicine. They are absent because they are forbidden.
+Healthcare combines restricted entry, opaque prices, third-party payment, patents, information asymmetry, emergency demand, adverse selection, public subsidy, and the fact that patients often cannot shop while sick. Some regulations protect incumbents; others respond to genuine competence and safety problems. The relevant comparison is among concrete systems that handle these constraints, including regulated competition, public provision, mutual insurance, direct primary care, and hybrids. The absence of a sauce aisle is not proof that competition was forbidden, just as the presence of regulation is not proof that regulation caused every failure.
 
 Imagine healthcare with the freedom of the sauce aisle. There would not be one or two rigid systems but an ecosystem of models tailored to different needs, budgets, risk tolerances, and values: ultra-premium concierge services at one end, cheap catastrophic-only coverage at the other; telemedicine subscriptions, AI-driven diagnostics, community co-ops, traditional family-doctor networks, and paradigms nobody has invented yet. Not 175 kinds of healthcare — countless kinds.
 
-The irony is deep. The critic pointing at the sauce shelf is, without realizing it, indicting the regulatory interventions he typically supports. Variety is what capitalism does whenever it is permitted. Where the variety is missing, look for the prohibition. Healthcare does not refute the market; it is the control condition that proves it — the demonstration of what every sector would look like if competition were outlawed there too. What healthcare desperately needs is not less capitalism but more.
+The sauce comparison nevertheless exposes a real question: which rules prevent entry, transparent prices, and experimentation without producing offsetting safety gains? More contestability may improve parts of healthcare. Other parts require risk pooling, universal emergency access, or quality assurance that a spot market does not spontaneously supply. Healthcare is not a control condition for an ideological experiment; it is a difficult institutional design problem.
 
 ## The Anomaly and the Achievement
 

@@ -82,8 +82,13 @@ Status labels:
 
 ### Volume 6
 
-- Subjective value, opportunity cost, and price discovery are reintroduced across the opening chapters.
-- Critiques of intervention repeatedly attribute failure to unclear property rights, monetary distortion, or regulatory capture. Consolidate the causal taxonomy and refer back to it.
+- **Phase 4 decision:** Chapters 1–5 apply Volume 5 rather than re-prove it. Choice, sacrifice, attention, price, and funding are defeasible evidence under specified information, capacity, purchasing-power, and collective-action conditions.
+- **Phase 4 decision:** Chapter 6 owns the market-failure taxonomy. Unclear rights, weak liability, monetary distortion, and capture recur as mechanisms but do not exhaust private power, transaction cost, coordination, information, history, or public capacity.
+- **Phase 4 decision:** Chapters 8 and 4 jointly own the public-goods/funding seam. Nonpayment is ambiguous under free-riding and missing mechanisms; underprovision neither proves state necessity nor disappears when a voluntary example exists.
+- **Phase 4 decision:** Chapters 12–14 form a conditional Bitcoin module. Syntax rules alter cost without guaranteeing semantic exclusion; proof-of-work and proof-of-stake expose different concentration risks; organism, mind, autopoiesis, and sovereignty language is explicitly metaphorical.
+- **Phase 4 decision:** Chapters 15–18 are the constructive mechanism-design center. Prediction markets, insurance, liability, and safeguards are proposals whose performance depends on participation, measurement, consent, appeal, and institutional error.
+- **Phase 4 decision:** Chapters 19–25 distinguish outcome trends, causal explanations, scenario calculations, and forecasts. The nuclear ledger is illustrative rather than an estimate; fertility and earnings are multicausal; the IP and AGI conclusions are policy arguments under stated conditions.
+- **Phase 4 decision:** The former Volume 6 story moves unchanged to Volume 7 as Chapter 36. New Chapter 26 owns the economic-to-political boundary: prices coordinate but cannot decide standing or legitimate coercion.
 
 ### Volume 7
 

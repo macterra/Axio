@@ -233,6 +233,49 @@ volumes:
 
   - slug: 06-markets-and-money
     title: Markets, Money, and Prosperity
+    parts:
+      - title: "Part I — Value, Price, Money, and Capital"
+        chapters:
+          - 01-the-discipline-of-value
+          - 02-the-coat-and-the-ticket
+          - 03-what-is-money
+          - 04-the-price-illusion
+          - 05-attention-is-an-economy
+      - title: "Part II — Market Failures and Institutional Failures"
+        chapters:
+          - 06-capitalism-on-trial
+          - 07-the-poverty-myth
+          - 08-the-myth-of-underprovision
+          - 09-wealth-is-not-a-pile
+          - 10-the-tariff-illusion
+          - 11-monopoly-hypocrisy
+      - title: "Part III — Ungovernable Money"
+        chapters:
+          - 12-ungovernable-by-design
+          - 13-the-fork-and-the-merge
+          - 14-the-cybernetic-ghost-of-satoshi
+      - title: "Part IV — Mechanism Design"
+        chapters:
+          - 15-the-metagame-of-incentives
+          - 16-ornament-and-advantage
+          - 17-mechanisms-for-honest-values
+          - 18-engineering-morality-into-the-machine
+      - title: "Part V — Progress, Forecasts, and Energy"
+        chapters:
+          - 19-great-progress
+          - 20-lessons-from-peak-oil
+          - 21-the-nuclear-counterfactual
+      - title: "Part VI — Prosperity and Family Formation"
+        chapters:
+          - 22-the-prosperity-paradox
+          - 23-the-loaded-dice-of-parenthood
+      - title: "Part VII — Information and the AGI Boundary"
+        chapters:
+          - 24-the-end-of-intellectual-property
+          - 25-agi-economics
+      - title: "Coda — Coordination Is Not Salvation"
+        chapters:
+          - 26-coordination-is-not-salvation
 
   - slug: 07-liberty-and-governance
     title: Liberty, Coercion, and Governance

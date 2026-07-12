@@ -1,7 +1,7 @@
 ---
 title: 'The Discipline of Value'
 subtitle: 'Exchange, gifts, and the numeraire'
-status: draft
+status: review
 sources:
   - 193172713.the-discipline-of-value
 ---
@@ -10,7 +10,7 @@ There is a familiar kind of conceptual decay in discussions of economics, ethics
 
 I want to fix the frame and keep it fixed, because everything in this volume depends on it.
 
-My claim is simple. Value is relational. It exists only in relation to agents who want things — the position argued in [the myth of objective value](../05-value-and-ethics/01-the-myth-of-objective-value.md), and the axiom this volume builds on. And it is grounded in tradeoffs: to value something is to prefer it to alternatives one must forego. If nothing is sacrificed, displaced, renounced, or risked, then no valuation has been expressed — the standard [value as sacrifice](../05-value-and-ethics/04-value-as-sacrifice.md) develops in full. And if one wishes to compare values quantitatively, one needs a common denominator.
+My claim is simple. Value is relational. It exists only in relation to agents who want things—the position argued in [the myth of objective value](../05-value-and-ethics/01-the-myth-of-objective-value.md), and the axiom this volume builds on. Choice under scarcity expresses tradeoffs, so informed and voluntary sacrifice supplies evidence of a preference ordering. It is not conclusive under duress, compulsion, misinformation, poverty, or constrained alternatives, as [value as sacrifice](../05-value-and-ethics/04-value-as-sacrifice.md) now emphasizes. Quantitative comparison additionally requires a chosen denominator and model.
 
 Dollars are the most convenient denominator in a monetary economy, though they are not metaphysically privileged. Gold, wheat, labor-hours, or bitcoin could serve as numeraires in principle. The point is not that money is sacred. The point is that scalar comparison requires a shared unit. Without that discipline, people slide from price to sentiment, from exchange value to moral importance, from cost to significance, and then pretend they are still talking about the same thing. They are not.
 
@@ -60,7 +60,7 @@ This point is routinely muddled. People say that exchange happens because two go
 
 So let the point be stated plainly. If I have X and you value X at $10, and you have Y and I value Y at $10, then at that margin we are indifferent. There is no reason to exchange. Exchange becomes possible only if I value Y at more than what I assign to X, and you value X at more than what you assign to Y.
 
-That is the whole secret. It is not hidden. It is merely neglected. Note what it implies: saying that two items have equal value in a common denominator does not make them identical objects, identical experiences, or socially interchangeable — and it is not enough to motivate exchange. To motivate exchange, the comparative valuations must diverge at the level of surrender versus receipt. If they do not, the trade is inert. If they do, both parties walk away better off *by their own rankings*. The discipline here is simple: keep the denominator fixed and state the preference ordering honestly. Most muddle vanishes when that is done.
+That is the basic mechanism. Saying that two items have equal value in a common denominator does not make them identical objects, experiences, or socially interchangeable—and it is not enough to motivate exchange. Comparative valuations must diverge at the level of surrender versus receipt. If they do, both parties expect to improve by their own rankings. Error, fraud, hidden information, externalities, and later outcomes can defeat that expectation without erasing the structure of the exchange. Keep the denominator and information conditions explicit.
 
 ## Gifts Are Not Exchange
 
@@ -126,7 +126,7 @@ Once these distinctions are kept straight, we can say something more precise abo
 
 **Gifts** rearrange holdings through unilateral voluntary transfer because the giver values the resulting state more than retention.
 
-**Coercion** rearranges holdings without the voluntary endorsement of at least one party, whatever later justifications may be offered.
+**Coercion** uses a credible conditional threat of a material, non-consensual setback to obtain compliance. A non-voluntary transfer can also result from force, incapacity, mistake, or fraud; those categories should not be collapsed merely because exchange failed.
 
 These are not the same phenomenon. Treating them as interchangeable guarantees confusion.
 

@@ -1,7 +1,7 @@
 ---
 title: 'Lessons From Peak Oil'
 subtitle: 'A field guide to doomsday predictions'
-status: draft
+status: review
 sources:
   - 168867250.lessons-from-peak-oil
 ---
@@ -10,7 +10,7 @@ In 1956, a Shell geologist named M. King Hubbert stood up at a petroleum industr
 
 That vindication mattered, because it lent Hubbert's method — fit a bell curve to the extraction history of a finite resource, find the top — a credibility that outlived its assumptions. If the curve worked for one country, why not for the planet? By the early 2000s, "peak oil" had grown from a geological model into one of the most compelling alarm narratives in circulation. Global extraction was about to top out, the argument ran, and after the peak came irreversible decline: fuel shortages, economic collapse, resource wars, the end of growth itself. The proponents were not cranks. They had data, a track record, and a mechanism. Oil is finite; we were burning it faster every year; arithmetic would do the rest.
 
-Then the prediction failed, and it failed in the most instructive way possible: not by decline arriving late, but by the entire quantity being predicted moving in the wrong direction. Proved global reserves — the oil known to exist and economically recoverable — did not shrink as humanity drew down a fixed tank. They grew, decade after decade, through the panic and long past it.
+The near-term global production-collapse forecasts failed on their stated horizons. Proved reserves—the quantities classified as economically recoverable under current prices, technology, and reporting rules—grew rather than behaving like a fixed tank. That does not refute finitude or prove that production can never peak. It shows that a reserve series is not the same variable as geological stock and that production peaks can arrive through geology, price, policy, or falling demand.
 
 ![Global proven oil reserves, 1980–2020: a steadily rising line from roughly 680 billion barrels in 1980 to about 1,000 billion in 1990, 1,300 billion in 2000, 1,530 billion in 2010, and about 1,730 billion barrels in 2020.](../../images/cfbecba4-c3a1-4a18-8065-51a3ff66e416_1979x1180.png)
 
@@ -18,7 +18,7 @@ Forty years of accelerating consumption, and the tank got fuller. Hydraulic frac
 
 ## The Four Errors
 
-**Static resource models.** The foundational mistake was treating "reserves" as a fact about the ground. It is not. A reserve is a joint fact about geology, technology, and price: the oil that can be extracted economically with current methods at current prices. Rock that is worthless overburden at forty dollars a barrel and with vertical drilling becomes a bonanza at eighty dollars with horizontal drilling. The atoms never moved; the resource appeared anyway. Modeling reserves as a fixed tank with a tap makes the arithmetic of doom easy and wrong, because the tank's size is endogenous — it is partly a function of the very scarcity the model predicts. This is the deep reason resource doomsdays keep failing: resources are not found in nature, they are *defined* by the interaction of nature with human knowledge, and knowledge grows.
+**Static resource models.** A reserve is a joint classification involving geology, technology, price, regulation, and confidence, not merely a count of atoms underground. Modeling reported reserves as a fixed tank can therefore fail badly. Yet knowledge does not guarantee economical substitution at the required rate, and extraction can impose external costs not captured by the reserve definition. Endogeneity is a reason to model response, not a proof against scarcity.
 
 **Linear extrapolation.** The forecasts took current trends — extraction rates, discovery rates, decline curves of existing fields — and ran them forward as if the system would not notice being forecast. But an economy is not a projectile; it is a control system, dense with feedback loops. Every trend in it is the output of millions of agents responding to conditions, and when conditions change, the agents change, and the trend bends. Extrapolating the curve while ignoring the mechanism that generates the curve is the signature move of quantitative doomsaying: it produces charts that look rigorous precisely because they have removed everything that makes the system adaptive.
 
@@ -42,7 +42,7 @@ The more of these that come up yes, the more the prediction resembles peak oil, 
 
 ## The Checklist Applied
 
-**Climate catastrophism.** Distinguish the physics from the forecasts of civilizational ruin built on top of it. The worst-case narratives typically run high-end emission scenarios forward while holding technology near-constant — which is to say they fail questions one through four at once. In the actual world, solar and battery costs collapsed faster than nearly any official projection, driven by exactly the price-and-scale feedback the models mute, and the most reliable proven tool for cheap clean baseload has been available for half a century — I take up what its suppression cost us in [the next chapter](21-the-nuclear-counterfactual.md). None of this makes warming fictional. It makes the *no-adaptation* scenarios fictional. The projections that assumed humanity would watch the water rise with its hands in its pockets were always projections about someone else.
+**Climate forecasts.** Distinguish physical projections, socioeconomic scenarios, impact models, and rhetorical claims of civilizational ruin. Some high-end narratives understate adaptation or technology change; formal scenario work often models both, with uncertainty. Falling clean-energy costs are evidence that response is endogenous, not evidence that residual warming and tail risks are fictional. The checklist should expose frozen assumptions without treating adaptation as costless, evenly distributed, or guaranteed to arrive before damage.
 
 **Overpopulation.** The purest specimen. In 1968 Paul Ehrlich opened *The Population Bomb* by declaring the battle to feed humanity already lost: hundreds of millions would starve in the 1970s, nothing could prevent it. What happened instead was the Green Revolution — agricultural yields rose faster than population — and then something the static model could not even represent: as prosperity spread, fertility fell voluntarily, so far and so fast that the live demographic worry has inverted from too many births to [too few](22-the-prosperity-paradox.md). Ehrlich ran every play in the book: population as a curve rather than a set of choosing agents, food supply as a static ceiling, no price feedback in agriculture, humans as mouths rather than minds. Five questions, five yeses, zero catastrophe.
 
@@ -66,4 +66,4 @@ None of this is a license to relax. The checklist is a filter, not a blindfold, 
 
 What the filter removes is a specific, common, and costly failure mode: the confident catastrophe built on a static model of a dynamic world. That failure mode is worth removing not because optimism feels better but because false alarms have real prices — resources misallocated, credibility burned, fatalism where agency was needed, and genuine risks drowned in the noise of fake ones. A civilization that panics about everything protects itself against nothing.
 
-So the discipline runs in both directions. Ask the five questions of every doom, and accept both kinds of answer. Most catastrophe narratives are peak oil wearing a new costume: real constraint, static model, muted prices, passive humans, single scenario. Notice the costume and discount accordingly. But when a claim passes — when the threat itself holds the adaptability that has always been our exit — take it seriously *because* you were skeptical of the others, not in spite of it. Calibration, not mood, is the lesson of the peak that never came.
+So the discipline runs in both directions. Ask the five questions of every doom, and accept both kinds of answer. Some catastrophe narratives repeat the peak-oil errors: real constraint, static model, muted prices, passive humans, single scenario. The frequency of that pattern is an empirical question; skepticism should not turn one memorable counterexample into a base rate it never measured. Calibration, not mood, is the lesson of the peak that did not arrive on the forecast horizon.

@@ -1,7 +1,7 @@
 ---
 title: 'Wealth Is Not a Pile'
 subtitle: 'Hoarding, trillionaires, and the inequality confusion'
-status: draft
+status: review
 sources:
   - 165112254.the-myth-of-wealth-hoarding
   - 174059558.should-trillionaires-exist
@@ -10,13 +10,13 @@ sources:
 
 There is a nightmare image that haunts every conversation about extreme wealth: the trillionaire in his bunker. Advances in AI, the worry goes, will mint a handful of trillionaires who wall themselves off from a ruined world — hiding their wealth in underground vaults in New Zealand while everyone else fights over the scraps. The image is a modern dragon on a modern hoard, and it does the same work the dragon always did: it makes wealth look like something *withheld*, a pile that could feed the village if only the beast were slain.
 
-The image is emotionally provocative and economically ignorant. It fails not at the level of politics or ethics but at the level of accounting. There is no pile. There is no vault. Modern wealth is not a stack of currency or gold bullion hidden away from the world; it is predominantly invested capital — equity in companies, real estate, infrastructure, technology. A fortune of that size does not sit anywhere. It is *deployed*, and being deployed is what it is made of.
+The image is emotionally provocative and economically incomplete. Modern fortunes are usually claims on firms, real estate, intellectual property, and other assets rather than vaults of idle currency. That matters for accounting and for the consequences of taxation or liquidation. It does not settle who controls the assets, how the claims were acquired, or what alternative deployment would have produced.
 
 ## Where a Fortune Actually Lives
 
 Recall the layer stack from [the coat and the ticket](02-the-coat-and-the-ticket.md): money is the ticket, wealth is the coat, and capital is wealth deployed in production. A trillion-dollar fortune is almost entirely coats-in-use — factories running, buildings occupied, software serving customers, rockets under construction. The tickets pass through it; they do not accumulate in it. Ask where the trillionaire's money *is* and the honest answer is: in other people's paychecks, continuously.
 
-When a trillionaire invests billions in massive projects — advanced AI facilities, sprawling infrastructure, large-scale developments — the money does not vanish into a vault; it is paid out, immediately and at every stage, as income to the people who do the work and supply the materials. Every dollar invested or spent by the ultra-wealthy becomes income for someone else. The breakdown is standard and worth stating in full:
+When an investor funds a massive project, payments become revenue and income elsewhere in the economy. That accounting identity does not make every investment socially beneficial: the project can create productive capacity, bid scarce inputs away from better uses, extract rents, impose externalities, or fail. Spending distributes claims; evaluation still depends on what is built, who bears risk, and the counterfactual use of the resources. The channels include:
 
 - **Direct employment**: tens of thousands of skilled and unskilled workers — construction crews, engineers, architects — paid to build and run the thing.
 - **Indirect employment**: hundreds of thousands more employed through the supply chains — manufacturing, logistics, materials producers — that the project pulls on.
@@ -34,7 +34,7 @@ I do, and the reason is that the objection asks the wrong question. The right qu
 
 Agency in a network does not spread evenly. It clumps, it hubs, it accelerates where vectors align. In biology, this is how neurons form brains. In economics, this is how capital forms titans. To call the clumping "inequality" is to miss its function: concentration is the amplifier that makes a civilization more than the sum of its parts. A brain in which no neuron was allowed more connections than the median would not be a fairer brain; it would not be a brain.
 
-Musk is the clearest living case. He is not a dragon sitting on a pile of gold; he is a hub node converting capital into existential leverage — reusable rockets, planetary internet, scalable electrification, autonomous robotics. The value of his wealth is not that it exists but that it is *channeled*. Disperse those same dollars through welfare payments or bureaucratic programs and they dissolve into consumerist entropy: a hundred million marginally nicer purchases, and no rocket. Concentrated, they fund expansion — the kind of project too large, too long-horizon, and too weird for any committee to approve.
+Entrepreneurial concentration can fund projects that fragmented investors or political committees would reject, including long-horizon infrastructure and high-variance research. It can also concentrate mistake, dependency, workplace power, and political influence. Redistribution can fund consumption, but consumption includes nutrition, health, education, and the time in which future capability is built; public institutions also finance projects at scales private investors avoid. The comparison must specify the project and counterfactual rather than treating concentration as construction and dispersion as entropy by definition.
 
 Underneath the disagreement lie two worldviews. One is Malthusian: assume the pie is fixed and fight over the slices, in which case every large fortune really is a theft from someone's plate. The other is expansionist: make more pies, on more worlds, in which case the large fortune is the oven. On the Malthusian premise, redistribution is justice; on the expansionist one, it is stagnation dressed as morality. The evidence of the last two centuries — taken up in [the poverty myth](07-the-poverty-myth.md) — is not kind to the fixed pie.
 
@@ -52,4 +52,4 @@ What about equality as a value in its own right — the intuition that a more eq
 
 There is one more asymmetry, and it cuts against the standard remedy. Policy that targets inequality rather than poverty proceeds by coercive redistribution, and coercion is itself the other genuine harm on the axis. Compelling people to surrender resources under threat reduces *their* agency; the policy intended to relieve harm merely relocates it. This is not an argument against helping the poor — it is an argument about means. Poverty alleviation through voluntary, agent-bound methods respects consent while addressing deprivation directly, and it aims at the actual target: raising the floor, not lowering the ceiling.
 
-Wealth disparity itself is ethically neutral. What matters — the only thing that has ever mattered — is whether agency and voluntary interaction are enhanced or reduced. Real harm arises from poverty and from coercion, never from mere inequality. Get this distinction right and the economics falls into place behind it: the trillionaire's fortune is not a pile withheld from the poor but capital working through millions of hands, and the question worth asking about any concentration of wealth is not *how much* but *what does it do* — does it fund expansion or extraction, does it enhance agency or suppress it? Demonizing the wealth itself answers none of these questions. It only guarantees we stop asking them.
+Wealth disparity is not identical to harm. It becomes ethically relevant when it changes effective bargaining power, political access, exposure to risk, positional goods, or the realism of exit. What matters is whether the institutions that produced and preserve the concentration enhance agency, extract rents, or let private command escape correction. A fortune is not necessarily a pile withheld from the poor, but neither is deployment automatically public benefit. The questions worth asking are *what does it do, under which rules, with which liabilities, and answerable to whom?*

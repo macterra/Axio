@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 3 complete — Volumes 1–5 edited and in author review; Volume 6 is next in Phase 4.** The manuscript contains nine drafted volumes, 240 chapters, and roughly 550,000 words. Phase 1 established the editorial control documents; Phase 2 confirmed the nine-volume architecture with targeted revisions recorded in `book/editorial/architecture/`. Volume passes are recorded in `book/editorial/volume-edits/`. Editing proceeds dependency-first through the applied volumes.
+Status: **Phase 4 underway — Volumes 1–6 edited and in author review; Volume 7 is next.** The manuscript contains nine volumes, 241 chapters, and roughly 550,000 words. Phase 1 established the editorial control documents; Phase 2 confirmed the nine-volume architecture with targeted revisions recorded in `book/editorial/architecture/`. Volume passes are recorded in `book/editorial/volume-edits/`. Editing now proceeds through the applied volumes.
 
 ## Editorial goals
 
@@ -169,6 +169,8 @@ Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/0
 
 ### Volume 6 — Markets, Money, and Prosperity
 
+Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/06-markets-and-money.md`.
+
 - Separate economic theory from empirical and historical claims.
 - Verify or qualify claims about poverty, regulation, tariffs, monopoly, Bitcoin, nuclear energy, demographics, and intellectual property.
 - Reduce repetition of subjective-value foundations already established in Volume 5.
@@ -331,4 +333,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Begin Phase 4 with the Volume 6 chapter-level edit. Apply Volume 5's mature definitions of value, consent, property, harm, and non-aggregation without re-arguing their foundations, and audit the economic and historical evidence under the claim-calibration standard.
+Continue Phase 4 with the Volume 7 chapter-level edit. Preserve its mature Grey Zone position, reconcile incitement and delegated violence with Volume 5, compress repeated ideological prosecutions, and subject preferred governance institutions to the same contestability, capture, coercion, and evidence standards applied to states and firms in Volume 6.

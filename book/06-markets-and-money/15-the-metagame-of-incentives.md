@@ -1,7 +1,7 @@
 ---
 title: 'The Metagame of Incentives'
 subtitle: "Why systems fail when people don't"
-status: draft
+status: review
 sources:
   - 180058480.the-metagame-of-incentives
   - 180188906.the-pathologies-of-misaligned-incentives
@@ -35,7 +35,7 @@ Incentives scale. That is their signature. A gradient imposed at one level propa
 
 When the incentives running through a stack of nested games line up, the system behaves coherently: actions that satisfy local goals also advance the aims of the larger game, and the whole structure pulls in one direction. It is tempting to treat that as the normal condition and misalignment as the occasional breakdown. The truth is the reverse.
 
-**An incentive misalignment arises when actions that optimize performance at level $L$ degrade coherence, stability, or persistence at level $L+1$.** The strategy that wins the lower game loses the higher one. And because nested games have reward landscapes that partially overlap but never fully coincide — the scientist's career is not the same objective as science's accuracy, the firm's quarter is not the same objective as the firm's survival, the institution's growth is not the same objective as its mission — misalignment is not a rare defect. It is the default state of layered systems. It can open between any two adjacent levels: individual and group, group and institution, institution and society, society and culture, culture and persistence itself.
+**An incentive misalignment arises when actions that optimize performance at level $L$ degrade coherence, stability, or persistence at level $L+1$.** The strategy that wins the lower game loses the higher one. Because nested games have reward landscapes that partially overlap but need not coincide — the scientist's career is not the same objective as science's accuracy, the firm's quarter is not the same objective as the firm's survival, the institution's growth is not the same objective as its mission — misalignment is a persistent risk rather than a universal default. It can open between any two adjacent levels: individual and group, group and institution, institution and society, society and culture, culture and persistence itself.
 
 This is also why misalignment is not a moral failure, and why moralizing about it fixes nothing. Agents optimizing their local game are doing what agents do. The fault line is structural, and it has to be diagnosed structurally.
 
