@@ -72,9 +72,13 @@ Status labels:
 
 ### Volume 5
 
-- Subjective value and agent-binding are repeatedly re-earned before applied definitions.
-- Chapters 11 and 20 intentionally evolve the harm definition; make the upgrade explicit enough that later repetitions do not look contradictory.
-- The non-aggregation critique appears in the utilitarianism, moral-extortion, viability, and innocence chapters. Give each occurrence a distinct target.
+- **Phase 3 decision:** Chapter 1 owns the no-value-without-a-valuer argument; Chapter 2 owns agent-binding. Later chapters state their operative conditions instead of re-earning subjectivism.
+- **Phase 3 decision:** Chapter 4 treats sacrifice and opportunity cost as defeasible evidence of value under informed, voluntary, capacity-preserving choice, not as a complete preference theory.
+- **Phase 3 decision:** Chapters 9–12 own the operational definitions. Chapter 20 extends harm prospectively only to material, foreseeable, attributable setbacks relative to an explicit baseline.
+- **Phase 3 decision:** The QBU passages are conditional modules and analogies. Measure informs distributions but neither supplies value nor authorizes aggregation across protected agents.
+- **Phase 3 decision:** Chapters 18–22 distinguish descriptive persistence from the explicit commitment to reciprocal agency protection. Chapter 25 preserves the contaminated-field contradiction rather than optimizing it away.
+- **Phase 3 decision:** Chapters 22–23 propose institutions whose authority depends on public rules, evidence, due process, appeal, and safeguards against capture; distributed procedure is not self-legitimating.
+- **Phase 3 decision:** Chapter 26 owns Sapient Agency Realism as conditional constructivism with an explicit normative premise, not a recovery of unconditional moral facts.
 
 ### Volume 6
 

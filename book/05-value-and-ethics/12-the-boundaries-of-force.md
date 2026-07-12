@@ -1,7 +1,7 @@
 ---
 title: 'The Boundaries of Force'
 subtitle: 'When coercion is justified'
-status: draft
+status: review
 sources:
   - 173541004.the-boundaries-of-force
   - 173541285.the-edge-cases-of-coercion
@@ -35,7 +35,7 @@ Three purported justifications fail, and the third is the one that matters most.
 
 Preemptive domination — "obey me or else," with no prior agreement and no defensive rationale — fails immediately: it treats others as property rather than agents. Exploitation fails even when both parties benefit: using threats to extract value that was never consented to remains illegitimate however the ledger nets out, because the objection was never about the ledger.
 
-And the greater good fails, always. Invoking aggregate welfare does not by itself justify coercion — not sometimes, not in emergencies, not when the numbers get large. Coercion justified only by an aggregate welfare calculation is still coercion without consent; the calculation adds nothing, because appeals to utility cannot override the primacy of agency. This exclusion is the teeth of the whole framework. Every tyranny in history has marketed itself as a greater-good machine, and the marketing works precisely because aggregate-good reasoning has no internal brake: any violation of any agent can be purchased by a sufficiently large benefit to others. A theory of justified coercion that admits the aggregate-good justification has no boundaries at all — it has a price list. The deeper pathology of moral arithmetic gets a full chapter in [against utilitarianism](14-against-utilitarianism.md); here it suffices that the three justifications are an exhaustive list, and "it's worth it on net" is not on it.
+And the greater good fails as a sufficient justification. Invoking aggregate welfare does not by itself legitimize coercion, even in an emergency or when the numbers grow large. Aggregate-good reasoning has no internal protection for the person it asks others to sacrifice: any violation can be purchased by a sufficiently large benefit elsewhere unless independent constraints are supplied. A theory that treats aggregate gain as sufficient has a price list where it needs boundaries. The deeper pathology of moral arithmetic gets a full chapter in [against utilitarianism](14-against-utilitarianism.md). This framework therefore recognizes three proposed grounds — prior consent, defense, and compensation — and places the burden on any alleged fourth ground to show how it protects rather than merely prices agency.
 
 One clarification before the hard cases, because it disarms a common objection. Rights are not free-floating abstractions that enforcement merely serves; rights *are* preferences we enforce by coercion. "You have a right to your property" means, cashed out: we are prepared to coerce those who take it. So the question "when is coercion justified?" is not a side issue in political philosophy — it is the question of which rights exist. The justification comes from the same three sources: consent to the enforcement mechanism, defense of agency, restoration of what was taken.
 

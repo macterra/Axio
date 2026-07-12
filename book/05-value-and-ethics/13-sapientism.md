@@ -1,7 +1,7 @@
 ---
 title: 'Sapientism'
 subtitle: 'Moral status without substrate bias'
-status: draft
+status: review
 sources:
   - 166033482.sapientism
   - 181528086.sentience-without-sovereignty
@@ -17,7 +17,7 @@ They are not the same, and the assumption becomes visible the moment a nonhuman 
 
 ## Sapientism
 
-So redraw the line where the moral facts actually sit. **Sapientism** is the principle that moral worth attaches to sapient minds, whatever they are made of — biological, artificial, or hybrid. It is humanism with the substrate bias removed and nothing else added.
+So redraw the line as an explicit value commitment. **Sapientism** is the principle that sovereign standing attaches to sapient minds whatever their substrate. Substrate neutrality follows from the functional criterion; the choice to make that criterion morally decisive does not follow from physics alone.
 
 A **sapient** mind, on this account, possesses reflective self-awareness, intentional agency, abstract reasoning, and the capacity for ethical consideration. What earns moral standing is that cluster of capacities, not the material that implements it. An uploaded human, an artificial general intelligence, a hybrid consciousness, an intelligence we have not yet imagined — each holds moral standing on exactly the terms a born human does, and for exactly the same reasons, the moment it demonstrates the relevant capacities. Species membership is not among the reasons. It never was; humanism simply never had occasion to notice, because until now every sapient mind it met happened to be human.
 
@@ -33,7 +33,7 @@ Sentience is not sovereignty. The capacity to feel is not the capacity to author
 2. **Policy ownership** — embedding a persistent, temporally extended self-model into those futures, so that the options are *mine* to choose among.
 3. **Meta-preference revision** — the capacity to evaluate and restructure one's own preferences, rather than merely act on them.
 
-Together these yield what I call counterfactual authorship: a mind that does not merely predict the future it will fall into but *chooses* among futures it has modeled and owns. This is what it means to be a sovereign agent. And the threshold is sharp — a phase transition, not a gradient. Partial implementations do not produce partial agents. They produce sophisticated organisms.
+Together these are proposed to yield counterfactual authorship: a mind that does not merely predict a future but treats alternatives as futures it can author. For enforcement, the framework needs a threshold; that administrative need does not prove cognition itself is discontinuous. Standing may remain graded and uncertain even where jurisdiction requires a decision.
 
 The distinction matters because the branching architecture is precisely what an agency-centered ethics exists to protect. An agent's option-space — the modeled futures it could author into being — is the thing that force, coercion, and domination destroy. Where there is no authored option-space, there is nothing for that particular protection to protect. Feeling generates a claim on our concern; authorship generates a claim to *sovereignty*, and those are different claims with different grounds.
 
@@ -43,11 +43,11 @@ The honest test of this line is the animal case, and I want to meet it at its st
 
 Animals are not mechanisms. They possess affective experience, reinforcement learning, short-horizon planning, episodic-like memory, and rich social behavior. They navigate, they improvise, they form attachments, and they suffer — really suffer, in a way that makes moral indifference to them a defect of character. None of this is in dispute, and none of it should be minimized to protect a thesis.
 
-But look closely at the two capacities most often offered as evidence of animal agency, because they are the strongest evidence there is and they still fall short of the threshold. Rodent studies of vicarious trial-and-error show hippocampal replay of candidate paths at a choice point — the animal, at the fork in the maze, runs simulations of where each branch leads. This is real simulation, and it is remarkable. But it is sequential rather than parallel, procedural rather than deliberative, navigational rather than reflective. It optimizes the next behavior. It does not construct an authored counterfactual that the animal then owns as a chosen commitment. Likewise the episodic-like "what-where-when" memory documented in corvids and some mammals: indexing an event in space and time is a genuine cognitive achievement, but indexing is not diachronic selfhood. It does not bind a *future self* to a *present evaluation*; it does not generate an identity trajectory; it does not amount to policy ownership. The animal records that the worm was cached here, this morning. It does not thereby become the enduring subject of competing futures it has authored.
+Animal evidence does not presently settle whether the proposed threshold is absent. Rodent replay, corvid episodic-like memory, future planning, and uncertainty monitoring admit competing first-order and metacognitive explanations. Demonstrating one component would not establish sovereign authorship; failing to demonstrate all components with human-designed tasks would not establish their absence.
 
-That is the whole difference, stated exactly: animals act, but they do not author. Action without authorship is behavior, not agency. To own a policy is to recognize oneself as the persisting subject who will inhabit whichever future is chosen, and that requires a self-model with temporal extension — autobiographical structure, narrative identity, projected self-trajectories. Humans have this machinery. Animals, on the current evidence, do not.
+The framework can say that sovereign authorship has not been demonstrated in nonhuman animals under its tests. It cannot infer categorical absence across species from tasks that were not designed to operationalize all three conditions. Action without demonstrated authorship remains behavior whose deeper organization is uncertain, not proof of non-agency.
 
-One objection deserves a direct answer, because it looks fatal and is not. Many humans, the critic notes, almost never revise their meta-preferences; they run on habit and drive as reliably as any animal. True — and irrelevant, because agency is defined by the *capacity* for meta-preference revision, not its constant exercise. The human who never questions her desires nonetheless *could*: the machinery to reinterpret a want, resolve a contradiction among her values, and rebuild an evaluative framework is present and available even when idle. In animals that machinery is not idle; it is absent. Their preferences emerge from evolutionary drives, developmental history, and reinforcement, and they do not step outside those processes to critique and restructure them. That is the boundary between a reflective mind and an adaptive organism, and it is a boundary of kind, not of degree.
+Agency is defined here by the *capacity* for meta-preference revision, not its constant exercise. But capacity must be evidenced rather than presumed by species. Humans offer linguistic, longitudinal, and intervention evidence of revising ends; comparable evidence is harder to obtain from animals. That asymmetry justifies epistemic caution, not a claim that the relevant machinery is known to be absent.
 
 ## The Threshold Is a Door, Not a Wall
 

@@ -1,7 +1,7 @@
 ---
 title: 'The Ethics of Viability'
 subtitle: 'A stable strategy in the ultimate metagame'
-status: draft
+status: review
 sources:
   - 181197275.the-ethics-of-viability
 ---
@@ -70,9 +70,9 @@ This dissolves the classic challenge rather than answering it. Axio does not cla
 
 ## The Procedural Layer
 
-One invariant is not enough. Prohibiting coercion requires a procedure for determining when coercion has *occurred*, and in a world of ambiguous causality and contested narratives, individual judgment is insufficient. Without a shared protocol for evaluating harm claims, Axio collapses into vendetta — every agent the judge of its own grievances, every retaliation read by the other side as first aggression.
+One invariant is not enough. Applying it requires institutions for evidence, appeal, emergency action, and correction. A procedure does not become legitimate merely by being neutral in its own description; its authority, jurisdiction, error costs, capture resistance, and enforcement all require justification under the same non-coercion standard.
 
-To prevent this, Axio adds **Procedural Agency**: the requirement that agents submit ambiguous cases to a neutral arbitration mechanism. This is not a moral tribunal but a coordination tool — a fact-finding layer whose purpose is to distinguish genuine coercion from error, noise, and misinterpretation. The rule has three clauses. Immediate defensive coercion is justified only against imminent, unmistakable annihilation. Ambiguous harm claims require arbitration. And refusal to arbitrate is itself **Domain Exit**: the agent self-identifies as an Outlaw and forfeits the protections of the non-coercion invariant. Axio governs the physics of agency; procedure governs the epistemics. The full protocol — fact-finding, vantage reconstruction, coexistence rulings, restitution and re-entry — is the work of [The Coexistence Protocol](23-the-coexistence-protocol.md).
+Axio therefore proposes **Procedural Agency**: ambiguous claims should enter a mutually recognized or otherwise legitimate fact-finding and adjudication process. Immediate defensive action remains limited to proportionate response to imminent threat. Refusal to participate can be evidence relevant to remedies, but it cannot automatically erase standing; that rule would let any self-appointed tribunal manufacture “outlaws” by demanding submission. Domain Exit requires an established violation and due process, not procedural nonconformity alone. The proposed stages are developed in [The Coexistence Protocol](23-the-coexistence-protocol.md).
 
 ## One Invariant
 

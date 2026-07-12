@@ -1,15 +1,15 @@
 ---
 title: 'The Myth of Objective Value'
 subtitle: 'Value without a valuer is a category error'
-status: draft
+status: review
 sources:
   - 164846085.the-myth-of-objective-value
   - 164891095.the-death-of-objective-morality
 ---
 
-A rainforest burns, and someone objects that a thing of intrinsic value is being destroyed — that the forest matters in itself, independently of what anyone wants or feels about it. The claim sounds noble. It is also incoherent. In what sense does the forest have value, and to whom? If no agent anywhere cares whether it stands or burns — if no one would pay a cost, take a risk, or give up anything at all to preserve it — then where, exactly, is the value located? Point to it. You cannot, because there is nothing to point to. What you will find, every time, is a valuer: a person who loves the forest, a community that depends on it, a scientist who prizes what it can teach. The value is real, but it lives in them.
+A rainforest burns, and someone objects that a thing of intrinsic value is being destroyed — that the forest matters independently of what anyone wants or feels about it. This chapter disputes that claim. Asking where value is located is not by itself a refutation of moral realism; a realist may answer that normative properties are not physical objects to be pointed at. The positive argument here is relational: valuing is an activity of agents, reasons acquire practical force within their forms of life, and removing every possible valuer also removes every standpoint from which better and worse can matter.
 
-All value is subjective. This is not a slogan or a counsel of despair but a rigorous philosophical position, and it is the axiom on which this entire volume rests. Value does not float free in the world, inherent in objects or embedded in nature. It arises only in relation to agents capable of wanting, choosing, and sacrificing. An object, state, or outcome has value only if some agent would willingly trade for it or give something up to obtain it. Without a valuer, value is incoherent — there is no such thing as value "in itself" any more than there is money without a market.
+The position advanced here is that all value is agent-relative. It is an axiom of this volume, defended by the arguments that follow rather than established merely by definition. Value arises in relation to agents capable of wanting, choosing, and revising ends. Later chapters recover objective facts about whether actions preserve or frustrate those ends, but those facts become morally relevant only once a normative standpoint is supplied.
 
 ## Value Without a Valuer
 
@@ -33,7 +33,7 @@ But morality is made of value judgments, and all value is subjective. The conclu
 
 Morality is not a special kind of truth. It is a structured hierarchy of preferences — a vocabulary for expressing what one values, detests, prioritizes, and avoids. It includes rules, duties, goals, and taboos, but at root it is a system for saying what matters to someone. When someone says "stealing is wrong," what they are really saying — whether they know it or not — is: *I value a world where people don't steal. I am willing to punish or shame those who do. I prefer non-stealing outcomes.* That is a perfectly coherent position, and I hold it myself. What is incoherent is pretending that the wrongness of stealing exists independently of anyone's preferences, experiences, or goals.
 
-This is not a philosopher's game. It is a fact about how minds work, and it is checkable: you will not find a moral claim that does not presuppose a valuer. "Murder is wrong" — why? Because it causes suffering, because it violates autonomy? Those are valued outcomes; if no agent valued autonomy or the reduction of suffering, the rule would not exist. "Slavery is evil" — why? Because it dehumanizes, because it coerces? Again, evaluations: meaning-dependent judgments that require a mind to generate them. Run the experiment in imagination — take away all valuing agents — and every moral claim evaporates. The atoms remain; the wrongness does not.
+This is not offered as a neuroscientific finding about how every mind works. It is a semantic claim: every moral judgment presented here presupposes a standpoint from which its objects matter. "Murder is wrong" invokes suffering, autonomy, or authorship as reasons; "slavery is evil" invokes coercion and domination. The descriptive facts remain in a mindless universe, but their normative significance does not evaluate itself.
 
 Readers of the earlier volumes will recognize the structure. [All truth is conditional](../02-conditionalism/02-all-truth-is-conditional.md): every claim holds only relative to background conditions, and progress comes from dragging the conditions into the light. Moral claims are no exception; they merely have a condition that moral realists refuse to state. The unstated condition is an agent — some particular valuer whose preferences give the claim its content.
 

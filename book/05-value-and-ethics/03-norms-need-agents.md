@@ -1,7 +1,7 @@
 ---
 title: 'Norms Need Agents'
 subtitle: 'Constraint is not obligation'
-status: draft
+status: review
 sources:
   - 175891239.against-worldly-oughts
   - 177896415.the-illusion-of-moral-collapse

@@ -1,7 +1,7 @@
 ---
 title: 'Agent-Binding'
 subtitle: 'From naked preferences to empirical truths'
-status: draft
+status: review
 sources:
   - 164684907.navigating-moral-realism-with-agent
   - 165641748.subjectivism-vs-moral-relativism
@@ -11,7 +11,7 @@ sources:
 
 Is that true? Most people say yes without hesitation, and most of meta-ethics is a long quarrel about what could possibly make them right. The realist says a moral fact makes them right. The error theorist says nothing could, so they are wrong. The fictionalist says they are usefully wrong. The relativist says "right for them," which is a way of abandoning the question while appearing to answer it.
 
-I say the sentence, as it stands, is not the kind of thing that can be true or false at all — and that seeing exactly *why* dissolves the quarrel. "Lying is wrong" fails the same way "It's raining" fails. The weather sentence is not mysterious; it is incomplete. Bind the missing variables — raining *where*, *when* — and it snaps into a proposition a glance out the window can settle. The moral sentence has a missing variable too, and it is not a place or a time. It is a *valuer*. Bind the claim to a specified agent — "given agent A's values, lying is wrong" — and what was a naked preference becomes an empirically evaluable statement. I call this move **agent-binding**, and this chapter is about what it buys: a way through moral realism's wreckage that is neither error theory, nor fictionalism, and — emphatically — not relativism.
+I say the sentence, as it stands, leaves its standard implicit. "It's raining" needs a place and time; "lying is wrong" needs at least a normative standpoint, a description of the lie, and rules for resolving conflicts among commitments. Bind those variables — "given agent A's stated commitments and this model of the act, lying conflicts with those commitments" — and the disagreement becomes more tractable. I call this move **agent-binding**. It repairs under-specification; it does not by itself prove that the bound commitments are coherent, shared, or worthy of adoption.
 
 ## Hume's Gap
 
@@ -31,7 +31,7 @@ Agent-binding is condition-binding applied to the domain of value. A moral claim
 - *Weakly bound:* "Agent A believes lying is wrong." A perfectly ordinary empirical claim about A's psychology — verifiable, falsifiable, and true or false in the plainest way.
 - *Fully bound:* "Given agent A's explicitly articulated values and goals, lying is wrong." This is the interesting form. It asserts a relation: that lying objectively conflicts with a specified set of commitments. Whether it does is not a matter of taste. It is a matter of logic and fact — you examine the values, you examine the act and its consequences, and you check whether they collide.
 
-The fully bound form is what I mean by **conditional objectivity**. The foundation is subjective — the values belong to an agent, and nothing in the fabric of the universe endorses them. But the judgment made on that foundation is objective: given the vantage, the verdict follows or it doesn't, and anyone can check. "X is morally wrong," said by me, translates precisely to: *given my clearly defined values and preferences, X objectively conflicts with those.* That statement is true or false. It respects Hume's gap completely — no ought has been conjured from an is. It simply relocates the moral claim to where it can be evaluated: inside the conditional, bound to the valuer whose ought it always was.
+The fully bound form is what I mean by **conditional objectivity**. The foundation is agent-relative. Once the relevant commitments, facts, scope, and inference rules are fixed, some verdicts follow and others do not. In practice, observers may disagree about consequences, interpretation, priority among commitments, or whether the binding description is faithful to the agent. Agent-binding makes those disagreements explicit; it does not turn every moral dispute into an empirical lookup or conjure an ought from descriptive premises.
 
 ## Neither Error nor Fiction
 

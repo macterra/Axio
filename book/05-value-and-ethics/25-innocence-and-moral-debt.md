@@ -1,15 +1,15 @@
 ---
 title: 'Innocence and Moral Debt'
 subtitle: 'The contaminated field'
-status: draft
+status: review
 sources:
   - 191499348.innocence-is-not-armor
   - 180046178.agency-conservation
 ---
 
-A contractor accepts payment and then quietly cuts corners, leaving structural flaws the client must later repair. Locally, his agency has grown: time saved, effort spared, profit pocketed. He has more options than he had before, and more than honesty would have bought him. So here is an uncomfortable question for everything this volume has built: if the point of the whole framework is to maximize agency, has the contractor just done ethics correctly?
+A contractor accepts payment and then quietly cuts corners, leaving structural flaws the client must later repair. Locally, his options have grown at the client's expense. If the framework protects agency rather than maximizing an aggregate quantity, the wrong is already visible: the contractor violated an undertaking and imposed an unauthorized deficit. No global agency sum is needed.
 
-The question exposes an apparent mismatch of layers. "Maximize agency" sounds like civilizational architecture — the global objective that [the ethics of viability](22-the-ethics-of-viability.md) erects on the ruins of objective value. "Pay your debts" sounds like a moral injunction from a desert trading culture. One reads as physics, the other as folklore. The tension dissolves once you examine the mechanics of agency itself, and the dissolution matters far beyond contractors — because the same accounting, followed to its limit, is what governs the darkest case this volume has to face: the killing of innocents in self-defense.
+The case exposes an important distinction. [The ethics of viability](22-the-ethics-of-viability.md) protects agents against being used as inputs to others' goals; it does not instruct a planner to maximize total agency. "Pay your debts" is one relational consequence of that commitment. The distinction matters far beyond contractors because it governs how the framework treats losses that cannot be aggregated away.
 
 ## Agency Is Networked
 
@@ -28,14 +28,14 @@ Refusing to repair the deficit does not make it disappear. It exports the loss i
 - If you reduce another agent's agency, you introduce a deficit.
 - If the deficit is not compensated, it propagates.
 - Propagation degrades the agency substrate.
-- A degraded substrate reduces total agency.
-- Therefore maximizing agency requires repairing the deficits you cause.
+- A degraded substrate raises the cost and fragility of future cooperation.
+- Therefore agents committed to coexistence have reason to repair attributable deficits they cause.
 
-Paying debts is not an optional courtesy bolted onto the objective; it is a term in the objective function. Without it, "maximize agency" collapses into pathology — the unbounded maximizer becomes a vandal, and the strategy self-defeats. With it, individual flourishing aligns with collective flourishing, because every agent is forced to repair the distortions he introduces. In game-theoretic terms, the rule prevents exploitation equilibria. In cybernetic terms, it preserves the feedback dynamics that coherence requires. The objective and the injunction are the same system at different scales:
+Restitution is not a term in a global objective function. It is a remedy owed within the chosen coexistence framework when one agent breaches a commitment or wrongfully degrades another's prospects. Repair may be partial, contested, or impossible, and enforcing it still requires legitimate procedure.
 
-**Maximize agency is the physics. Pay your debts is the engineering.**
+**Protect agency is the commitment. Repair attributable violations is one implementation.**
 
-And the contractor's question answers itself: agency maximization cannot justify parasitism, because parasitism destroys the very field it exploits.
+The contractor's question answers itself without aggregation: a local gain does not authorize breaking a commitment or exporting its costs to another agent.
 
 ## The Contaminated Field
 

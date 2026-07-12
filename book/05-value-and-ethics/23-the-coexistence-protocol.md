@@ -1,7 +1,7 @@
 ---
 title: 'The Coexistence Protocol'
 subtitle: 'The procedural layer'
-status: draft
+status: review
 sources:
   - 181293912.the-coexistence-protocol
 ---
@@ -26,7 +26,7 @@ But precisely because the criterion is probabilistic, ambiguity blurs it. Was th
 
 ## Procedural Agency
 
-Procedural Agency is not a central authority. It is a distributed protocol — a process any set of agents can invoke when classification is contested — whose job is to determine whether a disputed act constituted:
+Procedural Agency need not be a single central authority, but calling it distributed does not solve authority. Any process capable of compelling evidence, issuing rulings, ordering restitution, or authorizing force exercises governance. Its legitimacy depends on prior agreement where possible, public rules, independence, appeal, proportional enforcement, and safeguards against capture. Subject to those conditions, its job is to classify whether a disputed act constituted:
 
 - **Rescue** — net risk reduction,
 - **Coercion** — net risk increase, or
@@ -62,13 +62,13 @@ Vantage reconstruction is what prevents well-intentioned actors from being misla
 
 Only after fact and vantage are established does classification happen. Some acts are rescues — net-improving interventions, owed thanks rather than restitution. Some are friction — irrelevant background bumps that no functioning system should litigate. Some are errors: real harm, honestly caused, requiring restitution but not expulsion. And some are coercions — deliberate, net-worsening, instrumental impositions of risk — and these alone force Domain Exit.
 
-The ruling is never punitive. It is not a verdict on the actor's soul; it is a mechanism for ensuring that the coexistence domain remains what it claims to be — a space where risk cannot flow one-directionally from the innocent to the ambitious. Classification exists to keep the accounting honest, nothing more.
+The ruling need not condemn the actor's character, but it can still impose serious burdens and therefore cannot be declared non-punitive by definition. Classification should identify harm, intent, authorization, and remedy while preserving review and proportionality.
 
 ## The Firewall: Ambiguity Defaults to Innocence
 
 Some cases resist resolution even after fact-finding and vantage reconstruction. The evidence is gone, the vantages are irreconcilable, the Δ-risk cannot be established. For these the protocol has one rule, and it is not negotiable: **ambiguity defaults to innocence.**
 
-If Δ-risk cannot be established, the accused remains inside the coexistence domain, with full standing. The burden of proof always lies with the accuser. Fear carries no authority; intuition carries no authority; ambiguous signals, suspicious patterns, and bad vibes carry no authority. An accusation that cannot survive the three stages is not a weak conviction — it is no conviction at all.
+If a material attributable risk increase cannot be established to the applicable standard, coercive sanction is not justified. The burden lies with the party seeking to impose it. This presumption does not prohibit reversible precautions under genuine uncertainty; it requires that their scope, duration, and review track the evidence rather than convert suspicion into permanent status loss.
 
 This firewall is load-bearing. Without it, accusation itself becomes a weapon: any agent who wants a rival expelled need only generate ambiguity around him, and the domain devours its own members on suspicion. A system that lets fear reclassify innocents as threats has already dissolved into the vendetta it was built to prevent; it just hasn't noticed yet.
 
@@ -78,7 +78,7 @@ Agents misread danger, misjudge timing, act under compression. The protocol does
 
 Restitution here is not penitence and not punishment. It is structural repair: restoring, as far as possible, the viable futures that were reduced, and signaling ongoing commitment to the domain. And the terms of re-entry are mechanical: reintegration is automatic once restitution is made. There is no probation, no lingering stain, no permanent underclass of the formerly mistaken. The books are balanced and the matter is closed.
 
-Which makes the refusal the interesting case. An agent who refuses restitution when the ruling requires it — or who refuses arbitration altogether, declining to submit the dispute to the three stages — has told the domain something the original act did not. The error was compatible with coexistence; everyone errs. The refusal is not. An agent who insists on being the sole judge of his own impositions has rejected the procedural layer itself, and rejecting the procedure is rejecting the domain. Refusing arbitration *is* Domain Exit. The refusal, not the initial harm, is what predation looks like from the inside.
+Refusal matters differently depending on the process. Rejecting a forum one never authorized, reasonably believes captured, or cannot safely access is not Domain Exit. Refusing a legitimate final ruling after notice, evidence, opportunity to answer, and appeal may justify enforcement of restitution or protective constraints. Standing is not forfeited wholesale; remedies remain tied to the established violation and continuing threat.
 
 ## The Shield, Not the Sword
 

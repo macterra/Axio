@@ -188,6 +188,48 @@ volumes:
 
   - slug: 05-value-and-ethics
     title: Value and Agency-Centered Ethics
+    parts:
+      - title: "Part I — Value After Objectivity"
+        chapters:
+          - 01-the-myth-of-objective-value
+          - 02-agent-binding
+          - 03-norms-need-agents
+      - title: "Part II — Chosen Values"
+        chapters:
+          - 04-value-as-sacrifice
+          - 05-ethics-without-illusions
+          - 06-phosphorism
+          - 07-judging-goodness
+          - 08-honesty-and-hypocrisy
+      - title: "Part III — Coercion, Consent, Harm, and Force"
+        chapters:
+          - 09-what-counts-as-coercion
+          - 10-consent-and-property
+          - 11-what-counts-as-harm
+          - 12-the-boundaries-of-force
+      - title: "Part IV — Moral Standing"
+        chapters:
+          - 13-sapientism
+      - title: "Part V — Rival Frameworks and Boundary Cases"
+        chapters:
+          - 14-against-utilitarianism
+          - 15-against-moral-extortion
+          - 16-the-near-misses
+          - 17-the-ethics-of-existence
+      - title: "Part VI — The Ethics of Viability"
+        chapters:
+          - 18-the-ultimate-metagame
+          - 19-the-viability-criterion
+          - 20-risk-is-harm
+          - 21-measure-responsibility
+          - 22-the-ethics-of-viability
+          - 23-the-coexistence-protocol
+          - 24-viability-under-fire
+          - 25-innocence-and-moral-debt
+          - 26-sapient-agency-realism
+      - title: "Coda — The Price of Agency"
+        chapters:
+          - 27-the-price-of-agency
 
   - slug: 06-markets-and-money
     title: Markets, Money, and Prosperity

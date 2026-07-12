@@ -1,7 +1,7 @@
 ---
 title: 'The Ultimate Metagame'
 subtitle: 'Every game presupposes a player that persists'
-status: draft
+status: review
 sources:
   - 179967878.games-and-metagames
   - 180026930.the-ultimate-metagame
@@ -30,7 +30,7 @@ That is the lens, and it works immediately: on your own decisions, on the incent
 
 If every game is shaped by incentives from a larger game, you can keep climbing — tactical games inside strategic ones, strategic inside institutional, institutional inside cultural, cultural inside evolutionary. It can feel like an endless ascent.
 
-It is not, and the reason is structural. A metagame is defined by what it does: it provides the goals that lower games optimize for, imposes the incentives that shape their strategies, and determines the meaning of success inside them. That process cannot regress upward forever. If every metagame depended on another metagame above it, the whole system would lack grounding — goals with no origin, incentives with no source, strategies serving no end. A hierarchy of evaluation requires a point at which evaluation becomes self-sustaining. The ladder must terminate, and it terminates at the one criterion every game presupposes.
+The regress need not terminate in a single final value. Agents can hold plural ends, abandon games, sacrifice themselves for projects, or accept that justification bottoms out in chosen commitments. Persistence supplies a narrower structural fact: continued pursuit by an agent requires some continuity of the agent or a successor pattern. It is a precondition for ongoing play, not the goal of every game and not a proof that every hierarchy has one apex.
 
 **The player must exist long enough to play.**
 
@@ -38,15 +38,15 @@ You cannot optimize for checkmate if you are not alive to move the pieces. You c
 
 ## The Ultimate Metagame
 
-So the ladder has a highest rung, and we can state it plainly. **The ultimate metagame is the competition among patterns for persistence across time** — the universal selection process that determines which patterns continue to exist, which dissolve, and which propagate into the future. It is the background process every other game is embedded in, the condition that makes every other goal possible, and the contest every agent participates in whether it knows it or not.
+The framework calls the background selection among patterns for persistence the **ultimate metagame**. This is an analytic lens: it tracks which agents, institutions, and ideas continue, dissolve, or propagate. Calling it a game must not imply a chooser, a universal objective function, or one scoreboard that overrides the local purposes of its participants.
 
 I say *patterns* rather than *players* deliberately, because the ultimate metagame is not limited to biological life. Ideas play it. Technologies, institutions, behaviors, cultures, strategies, and cognitive habits play it — any coherent structure capable of replication or maintenance. A bureaucracy preserves its procedures long after everyone who understood their purpose is gone; a religion carries its doctrines through centuries of upheaval; an incentive structure survives complete turnover of the people inside it. In the deepest analysis it is patterns, not people, that are the units of selection — a claim I develop separately in [The Metagame of Patterns](/posts/180199129.the-metagame-of-patterns.html). If something persists, it has won, at least temporarily. If it spreads, it is succeeding. If it disappears, it has lost.
 
 Unlike lower games, the ultimate metagame has no explicit rules. It has constraints: entropy, available energy, the physics of replication, the stability of structures, the durability of information, the coherence of strategies. These constraints are the boundary conditions of a universal contest, and every pattern must navigate them. Nor is persistence mere continuation. A pattern persists only by remaining *coherent* — stable enough to maintain its identity across time. Rot, drift, and dissolution into noise are losses just as surely as destruction is.
 
-Every game humans play is a subgame of this one. Biological evolution is a subgame optimizing genetic persistence. Culture is a subgame optimizing memetic persistence. Institutions optimize structural persistence, technologies functional persistence, individual agents cognitive and behavioral persistence. When a strategy in a lower game gets selected, rewarded, or propagated, it is ultimately because it improved some pattern's position in the persistence contest, directly or indirectly; when a strategy fails, it is ultimately because it degraded some pattern's ability to endure. The "irrational" behaviors that opened this chapter are all of this kind: the movement, the scientist, the corporation, and the culture were each protecting persistence in a larger context while observers scored them against the narrow local game.
+Every continuing human practice is exposed to selection for persistence, but that does not mean every participant optimizes persistence or every success is explained by it. Biological, cultural, institutional, technological, and individual patterns persist through different mechanisms, and selection can preserve dysfunction, parasitism, or historical accident. The metagame describes survivorship; it does not supply a complete causal explanation of whatever survives.
 
-One refinement belongs on the record here, though its full development lies elsewhere. Classical persistence imagines a single timeline — one future in which a pattern either survives or does not. In the Quantum Branching Universe (QBU), the Everettian picture introduced in [Measure and Credence](../02-conditionalism/11-measure-and-credence.md), reality branches, and persistence generalizes accordingly: a pattern persists to the extent that recognizable versions of it continue across the branching structure, and its Measure — objective branch weight — becomes the true scoreboard. Single-timeline survival is just the special case where branching is ignored. I work out that extension in [The Quantum Metagame](/posts/180339872.the-quantum-metagame.html); nothing in this volume depends on it, but readers of the earlier volumes will recognize that the metagame and the physics were always going to meet.
+One refinement belongs on the record here, though its full development lies elsewhere. Classical persistence imagines a single timeline — one future in which a pattern either survives or does not. Conditional on the Quantum Branching Universe (QBU), the Everettian picture introduced in [Measure and Credence](../02-conditionalism/11-measure-and-credence.md), persistence can instead be modeled across decohering histories. Measure then weights those modeled continuations; it does not by itself decide which patterns count as the same or why persistence should be valued. I work out that extension in [The Quantum Metagame](/posts/180339872.the-quantum-metagame.html). Nothing in this volume depends on it.
 
 ## What the Metagame Does Not Tell You
 

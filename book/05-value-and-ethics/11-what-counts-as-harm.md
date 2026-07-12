@@ -1,7 +1,7 @@
 ---
 title: 'What Counts as Harm'
 subtitle: 'Capacity, consent, and the limits of the concept'
-status: draft
+status: review
 sources:
   - 164935709.what-counts-as-harm
   - 166913167.what-counts-as-evil
@@ -12,7 +12,9 @@ A student tells a dean that a lecture harmed her — the speaker's views were of
 
 The remedy is the same one applied to [coercion](09-what-counts-as-coercion.md): a precise, functional definition, tested against cases. There is also a debt to pay. Coercion was defined as the credible threat of actual *harm* to gain compliance — a definition that borrowed this chapter's term on credit. Here is the payment.
 
-**Harm is the non-consensual degradation of an agent's capacity to pursue or maintain its valued goals.**
+**Harm is a material degradation of an agent's functional capacity or viable option space relative to an explicit baseline.**
+
+Whether that harm is wrongful is a second question, governed by authorization, causation, foreseeability, and justification. Keeping impact and wrongness distinct prevents consent from magically erasing injury and prevents every setback from becoming an accusation.
 
 Every word is doing work, so take the components in turn.
 
@@ -22,7 +24,7 @@ Every word is doing work, so take the components in turn.
 
 *Capacity degradation.* Harm occurs when the agent's ability to act effectively toward its goals is impaired — physically, cognitively, socially, or structurally. The impact is functional, not emotional. Feeling terrible is neither necessary nor sufficient: an agent can be gravely harmed without noticing (a slow fraud, a poisoned well) and can feel devastated without being harmed at all.
 
-*Non-consensual.* If the agent knowingly accepted the risk or outcome, it is not harm in this framework. Surgery degrades bodily function, temporarily and sometimes permanently; a boxer's opponent degrades it enthusiastically. Neither harms, because [consent](10-consent-and-property.md) — uncoerced, informed, intentional agreement — transforms the transaction.
+*Authorization.* Consent does not make injury or capacity loss disappear as a descriptive matter; a surgical complication can harm a patient who validly accepted the risk. Consent changes attribution and permissibility by making a risk part of the agent's authorized plan. The mature framework should therefore distinguish **setback** from **wrongful harm**: the former describes degraded capacity or prospects, while the latter adds lack of valid authorization or justification.
 
 ## The Test Cases
 
@@ -64,4 +66,4 @@ Genuine compassion is not sentimentality; it is resolve. It respects the other a
 
 The definition presented here — non-consensual degradation of an agent's capacity to pursue its valued goals — is the canonical early form of this framework's harm concept, and I should say plainly that it is not the final form. Part VI radicalizes it. When the ethics of viability arrives, harm gets reframed as the reduction of an agent's viable futures, and imposed *risk* turns out to be harm in its probabilistic form — harm at the moment of decision, whether or not the bullet lands. That move, made in [Risk Is Harm](20-risk-is-harm.md), extends this chapter rather than replacing it: the capacity definition survives as the special case where the degraded futures have already collapsed into the present, and every exclusion argued here — offense, rejection, envy — survives with it, because none of them reduces anyone's viable futures either. One definition with an honest upgrade path, not three competing ones.
 
-What is settled already, and will not move: harm is about agents, measured against their own valued goals, in terms of functional capacity, and filtered by consent. It is a fact about impact, not a verdict about wrongness — the verdicts come later, and they come out cleaner for having a clean fact to rest on.
+What survives the upgrade: harm concerns setbacks to agents' functional capacity or viable option space, assessed against an explicit baseline and the goals they can author. Consent, causation, foreseeability, magnitude, and justification determine responsibility and wrongness rather than whether a setback occurred. Chapter 20 extends the account prospectively, but only material and attributable risk increases can do normative work; otherwise ordinary coexistence would become universal wrongdoing.

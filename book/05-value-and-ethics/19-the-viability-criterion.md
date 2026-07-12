@@ -1,7 +1,7 @@
 ---
 title: 'The Viability Criterion'
 subtitle: 'Preference architectures under selection pressure'
-status: draft
+status: review
 sources:
   - 180427300.the-viability-criterion
 ---
@@ -24,7 +24,7 @@ Say "value theory" and people expect moral commitments — a list of rules, a ra
 
 A preference set is not judged morally. It is judged structurally: whether it maintains the accuracy of the agent's world-model, preserves viable futures rather than foreclosing them, scales under recursive consequence, resists drift toward internal contradiction, and handles the complexity of the environment it actually inhabits. These are not ethical criteria. They are the criteria by which any feedback-governed system stands or falls, applied to the particular systems that have preferences.
 
-Run preference architectures through those pressures and a pattern emerges. Certain values tend to remain stable and generative — complexity, intelligence, truthfulness, authenticity — while others tend to erode their own conditions for persistence. A value system built on comfortable falsehood degrades the model accuracy it needs to pursue anything at all. A value system that forecloses futures loses precisely the optionality it would need to recover from its mistakes. This is not moral enforcement from outside the system. It is control-system behavior, emerging from how preference architectures respond to feedback and constraint.
+The framework conjectures that some preference architectures are more stable under these pressures than others. Complexity, intelligence, truthfulness, and authenticity are candidates, not an empirically established universal attractor; their costs, conflicts, and environmental dependence must be modeled rather than inferred from their appeal. A preference architecture can sometimes buy local stability through falsehood or coercion, so viability claims require a horizon and comparison class.
 
 ## Vices as Predictive Limitations
 
@@ -32,17 +32,17 @@ The reclassification that follows is one of the framework's most clarifying move
 
 [Coercion](09-what-counts-as-coercion.md) triggers blowback the agent cannot fully model: every application of force creates resentment, resistance, and counter-coalitions whose dynamics outrun the coercer's predictive horizon. [Deception](08-honesty-and-hypocrisy.md) undermines long-run informational reliability — the liar pollutes the very channels he needs to navigate by, including, eventually, his own. Exploitation erodes coalition stability, converting allies into liabilities on a schedule the exploiter did not choose. Short-term gain strategies fail in iterated environments, because iterated environments are where consequences accumulate and every environment worth living in is iterated. A strategy may produce momentary advantage while degrading long-run control. That is not a moral condemnation; it is a stability analysis.
 
-In this framework, "evil" names low-fidelity prediction under recursion. Knaves are agents who win locally but lose globally. Psychopaths are agents who succeed in single-turn interactions but consistently fail in repeated, consequence-accumulating ones. Nothing supernatural is involved — no cosmic ledger, no karmic bookkeeping — only consequences unfolding within dynamical systems. The wicked are not punished. They are mispredicting, and reality collects on mispredictions with the indifference of a margin call.
+Some coercive strategies can be diagnosed as short-horizon prediction failures, but evil cannot be reduced to miscalculation. Exploiters sometimes prosper for long periods, institutions can externalize costs, and an agent may accurately predict harm while preferring it. The viability analysis identifies one pressure against predation; it does not guarantee that reality punishes the wicked.
 
 ## The Attractor
 
 Now run the analysis forward and ask which architectures occupy the stable region.
 
-Phosphorism — the cluster of values emphasizing complexity, intelligence, life, coherence, and authenticity — emerges not as a commandment but as a persistent solution in the space of agentic architectures. Agents who adopt self-limiting values are not "wrong." They simply inhabit preference sets that shrink their optionality, degrade their model accuracy, reduce the effective control-work they can exert on their environment, or elevate their exposure to existential risk. Agents whose values align with long-run model accuracy and viable futures tend to retain or expand their influence; those whose values do not generally watch their agency erode under cumulative consequence.
+Phosphorism — the cluster of values emphasizing complexity, intelligence, life, coherence, and authenticity — is proposed as one persistence-compatible architecture. Establishing it as an attractor would require a defined state space, dynamics, comparison class, and evidence across environments that this chapter does not yet supply. Its values remain chosen commitments informed by a viability hypothesis.
 
 One refinement matters here. In Axio, "survival" does not mean merely remaining in existence. A pattern can persist as a fossil, a copy, a husk. Survival means maintaining the functional capacity to model, choose, and steer — agency itself is the measure of continued viability. An agent that endures but can no longer update its model or act on its preferences has not survived in any sense the framework cares about; it has merely failed to decompose.
 
-So the value list I chose and defended earlier in this volume turns out to be more than one man's avowed preferences. It is a description of the attractor — the region of value-space toward which surviving agents drift, because the values in that region are the ones that keep their holders modeling accurately and choosing effectively. This is not a metaphysical "good." It is the behavior of the system under selection pressure. Phosphorism's list keeps getting rediscovered for the same reason wings keep getting rediscovered by unrelated lineages: not because anything commands flight, but because the physics rewards it.
+This suggests a stronger conjecture about the value list defended earlier in the volume. Some of its elements may occupy an attractor region: selection can favor commitments that help agents model accurately, cooperate, and choose effectively. But selection does not guarantee convergence, and persistence can also reward deception, domination, path dependence, or traits that later become maladaptive. Phosphorism is therefore a candidate account of durable agency under specified conditions, not the unique value system written into physics.
 
 ## The Scoreboard and the Choice
 
@@ -52,7 +52,7 @@ The metagame is descriptive. It says what persists: patterns compete, selection 
 
 Phosphorism is normative — for me, and for anyone who adopts it. It says what to choose: life over death, intelligence over ignorance, consent over coercion, held authentically and revised in the light. Its authority extends exactly as far as its adoption, which is what "avowedly subjective" meant.
 
-The viability criterion is the bridge between them: chosen values that ignore viability get selected out. Read that sentence carefully, because everything depends on its grammatical mood. It is in the indicative, not the imperative. It states a fact about selection, not a duty to survive. No ought crosses the bridge; what crosses is information — the one thing an authentic chooser cannot coherently refuse.
+The viability criterion connects them only after a normative premise is added: *if an agent wants its agency or commitments to persist, then information about viability gives it reasons for action*. Selection facts alone issue no instruction, and an agent may coherently understand them while choosing sacrifice, succession, or extinction. The bridge is hypothetical and openly chosen, not an ought concealed in a scoreboard.
 
 This is why Valorism survives the metagame unrefuted. The Valorist who chooses extinction over compromise has made no error the model can identify; by her own criteria she has won, and nothing in Axio supplies criteria that override her own — that was the whole lesson of this volume's first part. What the model adds is simply what happens next: her pattern's representation in the space of futures shrinks, her values persist only as long as unrelated causes keep rediscovering them, and the futures are increasingly populated by agents who chose otherwise. She is not wrong. She is rare, and becoming rarer, and the model says so without raising its voice. Persistence is not a duty she has shirked; it is a precondition she has knowingly declined to pay for. The nobility and the vulnerability are still the same property — the criterion just prices it.
 

@@ -1,7 +1,7 @@
 ---
 title: 'Honesty and Hypocrisy'
 subtitle: 'Truth-telling as practice, virtue-lying as field guide'
-status: draft
+status: review
 sources:
   - 168391300.why-not-lie
   - 172129761.moral-hypocrisy

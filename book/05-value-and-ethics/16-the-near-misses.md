@@ -1,7 +1,7 @@
 ---
 title: 'The Near Misses'
 subtitle: 'Parfit, Rand, and objectivity in the wrong place'
-status: draft
+status: review
 sources:
   - 184262903.flourishing-and-obligation
   - 175970360.on-what-matters
