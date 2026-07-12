@@ -1,7 +1,7 @@
 ---
 title: 'Structural Alignment'
 subtitle: 'Safety by architecture, not by learned values'
-status: draft
+status: review
 sources:
   - 181930168.structural-alignment
   - 182145873.the-alignment-closure-conditions
@@ -12,7 +12,7 @@ sources:
 
 Most conversations about AI alignment start from a simple picture: an AI has a goal, and we just need to give it the right one. Choose well — maximize happiness, reduce suffering, help humans — lock it in, and the remaining work is engineering. That picture feels obvious. It is also deeply misleading, especially for the kind of systems people actually worry about when they say AGI.
 
-Modern AI systems don't just get faster as they learn. They change how they understand the world. They discover new categories, merge old ones, and sometimes realize that concepts we treated as fundamental were crude approximations. A truly advanced system will not just optimize a goal harder; it will inevitably ask what exactly counts as "harm," what "human" refers to in a world of uploads, hybrids, and simulations, whether suffering is a physical process, a subjective experience, a pattern, or a modeling error. These are not philosophical distractions. They are unavoidable consequences of intelligence.
+Learning systems can change their representations as well as improve performance. They may discover new categories, merge old ones, or replace concepts that were crude approximations. The target class of this volume goes further: it can inspect and revise the models through which its goals are interpreted. For such a system, questions about what counts as "harm" or "human" are not philosophical distractions. They follow from applying old specifications through a changing ontology.
 
 The problem is that most alignment proposals quietly assume the answers stay fixed — that once you define a goal, its meaning remains stable as the system becomes smarter. Meanings don't work that way. As understanding deepens, concepts sharpen, fracture, or turn out not to refer to anything real at all, like phlogiston or the ether. At that point, insisting that the system "keep optimizing the same goal" stops making sense. There is no same goal anymore — only an evolving interpretation. So the real alignment problem is not *how do we lock in the right values?* It is *what does it even mean for a system to stay aligned while its understanding of reality keeps changing?*
 
@@ -34,7 +34,7 @@ The first is *Refinement Symmetry*: don't invent new ambiguities. Learning may g
 
 The second is *Anti-Trivialization*: don't quietly lower the bar. Even with the structure of meaning intact, a system can make its values easier to satisfy just by changing definitions. Anti-Trivialization says that if a situation didn't count as acceptable before, learning a new vocabulary for describing it does not make it acceptable now. New "good" states must be justified by ancestry from old "good" states — by descent, not by semantic drift.
 
-You need both. Enforce only the first, and the system can still lower the bar while keeping every distinction crisp. Enforce only the second, and the system can still dissolve distinctions while keeping the bar the same size. Any scheme weaker than the conjunction fails — that is a theorem of the framework, not a slogan.
+You need both within the semantic-transport model used here. Enforce only the first, and the system can still lower the bar while keeping every distinction crisp. Enforce only the second, and the system can still dissolve distinctions while keeping the bar the same size. In that model, either weaker scheme admits a counterexample. This is a conditional theorem of the framework, not a claim that the pair exhausts every possible account of learning or meaning.
 
 ## Alignment as a Semantic Phase
 

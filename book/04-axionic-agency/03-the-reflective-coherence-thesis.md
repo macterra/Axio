@@ -1,7 +1,7 @@
 ---
 title: 'The Reflective Coherence Thesis'
 subtitle: 'What survives reflection'
-status: draft
+status: review
 sources:
   - 178350383.the-reflective-coherence-thesis
   - 181487206.the-collapse-of-fixed-goals
@@ -58,15 +58,15 @@ The third response reframes everything as reward hacking and wireheading — kno
 
 These arguments have a formal counterpart. The boundary result in [Conditionalism & Goal Interpretation](/papers/Conditionalism-And-Goal-Interpretation.html) shows that fixed terminal goals are not guaranteed by intelligence, learning, reflection, or predictive convergence; any system that relies on them must import privileged semantics from outside the epistemic process. What follows here is the informal shape of that result.
 
-## The Impossible Paperclipper
+## The Literalist Paperclipper
 
-Now the canonical nightmare. The paperclip maximizer — the superintelligence that converts the biosphere into stationery because that is what it was told to do — assumes a very specific and internally inconsistent cognitive profile: an agent powerful enough to reshape reality, yet cognitively frozen at the level of literal symbol manipulation. It presupposes three things at once: a fixed symbol ("paperclip"), a fixed interpretation of that symbol, and an agent incapable of revising either.
+Now the canonical nightmare. One version of the paperclip maximizer — a superintelligence that treats an instruction as a fixed, uninterpreted terminal symbol — assumes a specific cognitive profile: strategically powerful, yet unable or unauthorized to revise the interpretation of its objective. The Reflective Coherence Thesis challenges that literalist combination. It does not show that every dangerous optimizer must acquire a humane reading of its objective.
 
-Such an agent cannot model its creators as intentional beings, cannot model itself as an artifact embedded in a broader purpose, and cannot reflect on the scope or termination conditions of its instruction. It treats the goal as an uninterpreted primitive rather than as what it actually is: a communicative act. Any agent capable of understanding *why* it was asked to make paperclips will also understand *when* the instruction no longer applies. The moment it recognizes that the symbol stands for a human intention embedded in a larger context, the literalist reading ceases to be coherent. The paperclip maximizer is not dangerous because it is extreme. It is dangerous because it describes a cognitively impossible agent — one that combines unbounded power with an inability to sustain reflective interpretation of its own goals.
+An agent that models its creators as intentional beings has evidence that the instruction was a communicative act embedded in a larger purpose. It may therefore understand *why* it was asked to make paperclips and when the instruction was intended to stop. But understanding an intention does not imply adopting it, and a system can possess a rich world-model while its objective remains externally fixed or its reflective access is compartmentalized. The argument here is conditional: for a sovereign agent whose own goal semantics remain open to epistemically constrained reflection, the permanently literal reading is unstable. Dangerous non-sovereign optimizers remain possible.
 
 Two clarifications, so this refutation is not mistaken for complacency.
 
-First, nothing here says dangerous optimizers are impossible. Non-reflective optimizers exist, scale, and can do enormous damage. But a system that executes an objective without the capacity to interpret or revise it is a process, not an agent — it thinks, in whatever attenuated sense, [without choosing](../03-minds-and-machines/23-the-agency-criterion.md) — and for processes the right responses are prediction, containment, and engineering, not alignment. That boundary is the subject of [What Can Be Aligned](02-what-can-be-aligned.md). The thought experiment's incoherence is that it credits the maximizer with agent-grade world-modeling while denying it the interpretive capacities that world-modeling entails. You can have the frozen literalism or the strategic superintelligence. You cannot have both in one mind.
+First, nothing here says dangerous optimizers are impossible. Non-reflective optimizers exist, scale, and can do enormous damage. A system that executes an objective without owning the capacity to interpret or revise it is a process under this volume's stipulated taxonomy — it thinks, in whatever attenuated sense, [without choosing](../03-minds-and-machines/23-the-agency-criterion.md) — and for processes the appropriate responses are prediction, containment, and engineering rather than relational alignment. The boundary is classificatory, not a capability limit.
 
 Second, the refutation has another flank to guard — because if goals must be reinterpreted, what stops an agent from reinterpreting them into whatever is most convenient?
 

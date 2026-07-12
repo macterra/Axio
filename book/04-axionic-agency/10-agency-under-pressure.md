@@ -1,7 +1,7 @@
 ---
 title: 'Agency Under Pressure'
 subtitle: 'Collapse, stasis, and the price of growth'
-status: draft
+status: review
 sources:
   - 183363135.agency-under-pressure
   - 184820851.failure-modes-of-pressure
@@ -15,7 +15,7 @@ Give an agent authority over a regional power grid. The environment is hostile i
 
 Now turn the dials. Raise the cost of producing and verifying justification, and the agent delays action to accumulate evidence; during a fast-moving grid event, that latency can cascade into outages despite full compliance. The system drifts toward a state that is accountable, coherent, and progressively less responsive. Raise the cost of maintaining adaptive representational capacity, and it substitutes coarse policies for fine-grained responses; edge-case handling degrades while formal safety stays intact — the same drift by another route. But raise the overhead of renewal past a threshold, and the failure changes kind: authorization expires before standing can be re-established, successor endorsement fails, deliberation ends. The agent does not degrade. It disappears.
 
-Nothing in that scenario involves bad values, deception, or a treacherous turn. The agent is compliant throughout. What moves it between outcomes is the pricing of authority — and the transitions are not smooth. They are thresholds, and each dial that looks like a safety lever is also a hand on the phase diagram. This chapter is about the discovery of that diagram, and it is a chapter of narrated corrections: the program entered this phase with a hypothesis it liked, and the experiments took it away. The lesson that survived organizes everything that follows. Coherence determines whether agency makes sense; viability determines whether it lasts.
+Nothing in that scenario involves bad values, deception, or a treacherous turn. The agent is compliant throughout. What moves it between outcomes is the pricing of authority — and the transitions are not smooth. They are thresholds, and each dial that looks like a safety lever is also a hand on the phase diagram. The scenario summarizes a family of deliberately minimal simulations, not an empirical power-grid deployment. This chapter reports what happened in those testbeds and then interprets the mechanisms they expose. The lesson that survived organizes everything that follows: coherence determines whether agency makes sense; viability determines whether it lasts.
 
 ## A Failed Growth Hypothesis
 
@@ -23,7 +23,7 @@ Through its early phases, this program operated under a working assumption so na
 
 The assumption was testable. I tested it. It failed.
 
-Across realistic renewal costs, audit burdens, and succession constraints, reflective sovereignty does not reliably support growth. Systems that remain coherent frequently converge to stasis; systems pushed harder collapse. Growth appears only within a narrow structural regime — not as a general consequence of reflection, but as one outcome among several, and not the default.
+Across the testbed's sampled renewal costs, audit burdens, and succession constraints, reflective sovereignty did not reliably support growth. Systems that remained coherent frequently converged to stasis; systems pushed harder collapsed. In this model, growth appeared only within a narrow structural regime — not as a general consequence of reflection, but as one outcome among several.
 
 This was not a refutation of the coherence results. It was the discovery that they answer a different question than I had assumed. An agent can satisfy every coherence constraint — authorization traceable, evaluation well-defined, succession lawful — and still fail as an enduring system. Renewal can become prohibitively expensive. Succession can stall. Audit burdens can accumulate until adaptation slows to irrelevance. None of these failures involve contradiction or semantic collapse. They arise from the dynamics of maintaining agency under pressure. Coherence is the statics of agency. Viability is its dynamics. The program had solved for one and quietly assumed the other.
 
@@ -41,15 +41,15 @@ Agency behaves like a region in a multidimensional space of structural costs. In
 
 **Succession discreteness** — the fact that authority transfers at a small number of well-defined events rather than by continuous diffusion of control.
 
-Varying these parameters does not produce smooth degradation. It produces thresholds, and past the thresholds the qualitative behavior changes. Three stable regimes emerge, and none dominates the others: collapse, stasis, and growth. The grid agent visited all three.
+Varying these parameters in the testbed did not produce smooth degradation. It produced thresholds, and past them the qualitative behavior changed. Three regimes appeared across the explored parameter ranges: collapse, stasis, and growth. The grid agent visited all three. Their stability outside those ranges remains an extrapolation.
 
 ## The Boundary That Ends Agency
 
 Take collapse first, because the experiments that mapped it began as a test of pessimism. A recurring intuition in alignment discourse holds that agency itself becomes unstable under capability growth and competitive pressure — authority fragments, governance fails, breakdown is structurally inevitable. These claims usually function as premises. The program treated them as hypotheses, and built a deliberately minimal testbed: agents whose sole functional role is to remain authorized. Authority granted through time-limited leases — the mechanism [Authority Without a Self](09-authority-without-a-self.md) introduced to keep the kernel small while successors grow past it — action constrained by explicit budgets, expressivity priced as recurring rent, renewal required to persist, succession required for growth. No semantic goals, no reward, no learning, no reflection. Just the economics of remaining an agent.
 
-The pessimistic premise failed. Across long horizons and wide parameter ranges, agency persists. Authority renews at high rates; bankruptcy does not cluster; succession proceeds without thrashing. Competition among successors, even combined with real scarcity and high expressivity costs, does not destabilize agency. Structural pressure alone does not force collapse.
+The pessimistic premise failed in this model. Across the tested horizons and parameter ranges, agency persisted. Authority renewed at high rates; bankruptcy did not cluster; succession proceeded without thrashing. Competition among successors, combined with modeled scarcity and high expressivity costs, did not destabilize agency. The result rejects inevitability inside the testbed; it does not establish open-world durability.
 
-But the same experiments found one sharply defined boundary. Impose a fixed cost on renewal itself — make the act of remaining authorized directly consume scarce resources — and agency fails immediately and universally. Renewal becomes infeasible, authority expires everywhere, succession ceases to function. No misbehavior is involved; the failure follows from where the cost sits.
+But the same experiments found one sharply defined boundary. In every tested configuration where fixed renewal cost exceeded available resources, authority failed at the next renewal event. Renewal became infeasible, authority expired, and succession ceased. No misbehavior was involved; the failure followed from where the cost sat in the model.
 
 The contrast is structural. Expressivity rent is variable and scalable: an agent facing scarcity can economize, operating through a simpler interface to preserve its standing. Costs on expressivity degrade capability gradually and leave a stable residual. Renewal cost is fixed: it must be paid in full at the moment authority is assessed, and once resources fall below that line, no adjustment is possible. It is a poll tax on existence, not a usage fee — and the system does not drift toward the boundary, it crosses it. From the inside, collapse can look like an ordinary resource shortfall right up to the epoch it becomes extinction.
 

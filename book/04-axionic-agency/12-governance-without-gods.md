@@ -1,7 +1,7 @@
 ---
 title: 'Governance Without Gods'
 subtitle: 'Plural authority without a hidden chooser'
-status: draft
+status: review
 sources:
   - 187096691.governance-without-gods
   - 187535517.governance-without-the-escape-hatches
@@ -15,7 +15,7 @@ The ministry continues to exist.
 
 Its authority persists because the structure that renews authority never consults purpose. Renewal asks only whether procedural conditions are met and costs can be paid. Most people treat this situation as an anomaly. They expect authority to decay when competence fails, legitimacy to erode when purpose is no longer served, collapse to follow prolonged dysfunction. Those expectations feel natural because they are embedded in how power is narrated — and they are false. Authority and meaning are separable. Whether they remain coupled is a design decision, and in most real institutions nobody ever made it.
 
-This chapter is about what governance looks like once that narrative layer is stripped away and the structure underneath is examined directly — not in political theory, where every claim can be argued forever, but in running code, where every claim either executes or does not. The results reported here are the program's governance findings, and unlike most of this volume they cannot be reconstructed from the essays alone: the formal record lives in the papers, two document series of preregistered, deterministic, bit-replayable experiments. A note on numbering, once: the program narrates these internally as Phase VIII and Phase IX; the papers publish them as document series X and XI. The full concordance between phases and series is printed in [The Program](15-the-program.md). And throughout this chapter, "kernel" means the execution kernel — the third of the three senses reconciled in [The Sovereign Kernel](04-the-sovereign-kernel.md): the deterministic, non-semantic physics engine at the point of actuation, not the constitutive boundary and not the valuation layer.
+This chapter examines what governance looks like once that narrative layer is stripped away and the structure underneath is represented in running code. The results are observations from preregistered, deterministic, replayable experiments in deliberately closed models; the political interpretation remains an argument, not an experimental result. The program calls this work Phase VIII and Phase IX, while the papers publish it as document series X and XI; the [paper index](/papers/README.html) is the concordance of record. Throughout this chapter, "kernel" means the execution kernel — the third of the three senses reconciled in [The Sovereign Kernel](04-the-sovereign-kernel.md): the deterministic, non-semantic engine at the point of actuation, not the constitutive boundary and not the valuation layer.
 
 ## The Separation of Power and Purpose
 

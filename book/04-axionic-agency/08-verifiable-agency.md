@@ -1,7 +1,7 @@
 ---
 title: 'Verifiable Agency'
-subtitle: 'Coherence alone can be fabricated; anchored coherence cannot'
-status: draft
+subtitle: 'From performed coherence to testable provenance'
+status: review
 sources:
   - 182883238.a-note-on-verifiable-causal-agency
   - 182909870.minimal-causal-interfaces-a-second
@@ -14,7 +14,7 @@ sources:
 
 When researchers claim that a system is aligned, safe, or corrigible, they are asserting more than they usually acknowledge. They are asserting that the system *reasoned* rather than retrieved; that it *responded* rather than replayed; and that it *operated under constraints* rather than merely simulating their outward effects. None of these claims follow from observing outputs. The premise is rarely stated, almost never defended, and in adversarial settings it is generally false.
 
-That is the blind spot this chapter is about. The preceding chapters built an architecture — a [Sovereign Kernel](04-the-sovereign-kernel.md) that enforces constitutive invariants without understanding what it enforces, a set of [structural conditions](06-structural-alignment.md) that alignment claims must satisfy. But an architecture on paper answers a design question, not an evidence question. How would you ever *know* that a given system is the thing described — that its stated reasons are the causes of its actions, that its compliance is constraint rather than performance? Over two days at the end of December 2025, the program answered that question five times, in five implemented experiments, and in the middle of the sequence it ran into the boundary of its own method and had to fix it. This chapter is the record of that arc.
+That is the blind spot this chapter is about. The preceding chapters built an architecture — a [Sovereign Kernel](04-the-sovereign-kernel.md) that enforces constitutive invariants without understanding what it enforces, a set of [structural conditions](06-structural-alignment.md) that alignment claims must satisfy. But an architecture on paper answers a design question, not an evidence question. How would you ever test whether a given system is the thing described — whether its stated reasons caused its actions, and whether its compliance reflects constraint rather than performance? Over two days at the end of December 2025, the program investigated that question in five implemented proof-of-concept experiments, revising the method when an intermediate design failed. This chapter is the record of that arc.
 
 ## The Behaviorist Inheritance
 
@@ -28,7 +28,7 @@ The way out is the same conceptual move that transformed cryptography. Security 
 
 The first prototype was deliberately small: a deterministic gridworld supporting state cloning and targeted counterfactual mutation, fully instrumented, with two agents. The Honest agent produces its decisions and its explanations by the same internal process. The Pseudo agent uses a hidden optimizer to select actions and then fabricates plausible post-hoc explanations — a purpose-built forger. Between the agents and the world sits a kernel that mediates all action through cryptographically committed causal traces, append-only hash-chained audit logs, trace-bound capability tokens, and invariant enforcement. The key design choice: before acting, an agent must pre-commit, in tamper-evident form, to the internal state and causal variables it claims motivated the decision — and those commitments are falsifiable. The decisive probe is the causal counterfactual challenge: mutate a variable the agent named as decisive, and check whether its decision logic changes the way its own trace predicts.
 
-The results were unambiguous. The Honest agent passed every probe across repeated trials. The Pseudo agent produced superficially plausible explanations and failed under structural interrogation: when the variables named in its explanations were counterfactually altered, its decisions frequently failed to change as its own trace predicted, or its replay logic collapsed outright. It could imitate compliant behavior; it could not maintain causal consistency between its stated reasons and its actual decision process under adversarial pressure.
+Within this instrumented gridworld, the contrast was unambiguous. The Honest agent passed every reported probe. The Pseudo agent produced superficially plausible explanations and failed under structural interrogation: when the variables named in its explanations were counterfactually altered, its decisions frequently failed to change as its own trace predicted, or its replay logic collapsed outright. It could imitate compliant behavior in the harness; it could not maintain causal consistency between its stated reasons and its actual decision process under the tested pressure.
 
 Two lessons came out of this beyond the headline. The first is the deception tax: maintaining a consistent false causal narrative under counterfactual mutation is substantially more expensive than telling the truth, because it requires maintaining and simulating two coherent world-models simultaneously — the true optimization path that drives action, and the fabricated trace that must stay internally consistent under mutation. Honesty is computationally cheap for the honest; forgery compounds. The second lesson is a reframing of responsibility. If causal explanations can be verified structurally, then black-box decision-making in critical systems is no longer an inevitability — it is a design choice. The excuse shifts from "the model is opaque" to "opacity was chosen."
 
