@@ -1,7 +1,7 @@
 ---
 title: 'Programming After Programming'
 subtitle: 'Computational governance'
-status: draft
+status: review
 sources:
   - 190445386.programming-after-programming
 ---

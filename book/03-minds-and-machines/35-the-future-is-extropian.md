@@ -1,7 +1,7 @@
 ---
 title: 'The Future Is Extropian'
 subtitle: 'A proto-civilizational R&D lab'
-status: draft
+status: review
 sources:
   - 180128433.the-future-is-extropian
   - 167272333.the-rise-of-the-technomancer

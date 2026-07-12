@@ -1,15 +1,15 @@
 ---
 title: 'Beyond Dennett'
 subtitle: 'The error of architectural scope'
-status: draft
+status: review
 sources:
   - 180915271.beyond-consciousness-explained
   - 170205491.the-pragmatic-self
 ---
 
-Daniel Dennett was the first major thinker to insist that consciousness must be explained by mechanism rather than metaphysics. He demolished the Cartesian Theater, exposed the homunculus fallacy, and replaced the folk image of an all-seeing inner subject with a competitive draft architecture: multiple parallel processes proposing interpretations and actions, stitched together only after the fact. Every serious theory of consciousness now builds on ground he cleared, including mine. The previous chapter borrowed the title of his most famous book deliberately: [Consciousness Explained](07-consciousness-explained.md) presented the Modeler-Schema Theory, which specifies the machinery Dennett never did. This chapter makes the lineage explicit by isolating the exact point where his architecture breaks and the missing agent must be inserted.
+Daniel Dennett was among the most influential thinkers to insist that consciousness be explained without a Cartesian inner witness. He exposed the homunculus fallacy and replaced an all-seeing inner subject with parallel, competing processes. The previous chapter borrowed the title of his most famous book deliberately. This chapter makes the lineage explicit by isolating the point where, on MST's interpretation, his architecture leaves functional room for an additional subsystem. Calling that subsystem an experiencer is precisely what remains to be defended.
 
-His demolition was correct; his inference was not. The mistake came later. He assumed that because the narrating subsystem confabulates, experience itself must be a confabulation. He found a subsystem that talks blindly about sensation and concluded that no subsystem ever sees. The narrating agent he identified with such clarity was never the locus of phenomenality to begin with. He found the Controller, not the experiencer. He mistook the reporter for the reality of mind.
+My claim is that his demolition was correct while a later inference was too quick: limitations of introspective report do not by themselves show that no other process supports experience. MST redescribes some reporting functions as the Controller and asks whether the architecture requires another process beneath it. This is a reconstruction of Dennett through MST's vocabulary, not an identification Dennett accepted.
 
 ## The Narrator He Found
 
@@ -59,7 +59,7 @@ Dennett failed to find a function for consciousness because he searched in the s
 
 If the first half of this chapter takes something away from Dennett, the second half gives something back. His account of the self — a "center of narrative gravity," a useful abstraction rather than a thing — was correct, and it deserves a stronger defense than he gave it.
 
-The intuitive picture is that each of us is a unified, coherent agent: an individual self who makes conscious decisions, steers a life, and takes responsibility for outcomes. That picture seems self-evident; it is the unquestioned baseline beneath morality, law, and personal identity. Yet neuroscience, psychology, and philosophy relentlessly undermine it. The sense of a unified self — the "I" behind the eyes making choices — is not fundamental to reality. It is a narrative construct the Controller continuously generates, retrospectively knitting fragments of perception, impulse, deliberation, and habit into a coherent story. We do not find agency in nature; we impose it on a continuous flow of neural and physical processes. At the metaphysical level, no discrete agent stands outside causality pulling levers: brain, body, genetics, environment, and past experience collectively shape every choice, and none of it originates from an independent entity called the self.
+The intuitive picture is that each of us is a perfectly unified agent: an independent self that stands behind decisions and steers a life. Neuroscience, psychology, and philosophy complicate that picture. The narrated self integrates perception, impulse, deliberation, and habit into a relatively coherent story, but no discrete entity stands outside causality pulling levers. Brain, body, development, environment, and past experience collectively shape choice. That does not make agency unreal; it locates agency at the organized, higher-level process rather than in an uncaused inner essence.
 
 So far, this is Dennett's position, and the Modeler-Schema architecture vindicates it: the narrated self is the Controller's product, and the Controller confabulates. But here is the essential twist that "illusion" talk obscures: **agency is not merely an illusion; it is a highly consequential pragmatic reality.**
 
@@ -71,8 +71,8 @@ Holding the distinction clearly yields real dividends. Responsibility becomes fo
 
 ## Completing the Picture
 
-Dennett was right to demolish the false picture of an inner spectator. There is no little person in the head watching an inner movie, no Cartesian homunculus directing the show from a privileged vantage point. There is, however, a mechanistic experiencer: a cybernetic regulator that maintains representational coherence by generating and comparing qualia. It is not a spectator; it is a comparator — an agent in the control-theoretic sense, defined by its role in regulating the world model.
+Dennett was right to demolish the false picture of an inner spectator. There is no little person in the head watching an inner movie. MST proposes, however, a mechanistic experiencer: a cybernetic regulator that maintains representational coherence through comparison states identified by the theory with qualia. It is not a spectator but a candidate comparator. Its regulatory function can be investigated separately from the contested phenomenal identity.
 
 Dennett's multiple drafts, his narratives, his center of narrative gravity — these remain intact. The Controller still stitches stories from partial data; the autobiographical self is still a pragmatic construction worth keeping. What changes is the layer beneath: those drafts emerge from a system that experiences. The Controller narrates *what* happened in the model; it does not instantiate *how* experience is implemented.
 
-The last step is straightforward once the pieces are on the table: the subsystem that talks is not the subsystem that experiences. The missing experiencer is real, mechanistic, and necessary — and the claim that a self-model can genuinely be a subject, along with the objections that claim attracts, is where the argument goes next, in [mirrors of the mind](09-mirrors-of-the-mind.md).
+The architectural claim is now clear: the subsystem that reports need not be identical to the subsystem MST assigns experience. The proposed experiencer is mechanistic and functionally motivated; whether it is phenomenally sufficient remains open. The claim that a self-model can genuinely be a subject, along with the objections it attracts, is where the argument goes next, in [Mirrors of the Mind](09-mirrors-of-the-mind.md).

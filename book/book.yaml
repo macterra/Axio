@@ -101,6 +101,61 @@ volumes:
 
   - slug: 03-minds-and-machines
     title: "Minds and Machines: Consciousness, Intelligence, and AI"
+    parts:
+      - title: "Part I — Cybernetic Foundations"
+        chapters:
+          - 01-a-cybernetic-lineage
+          - 02-what-is-a-model
+          - 03-control-requires-models
+      - title: "Part II — Agents, Minds, and Meaning"
+        chapters:
+          - 04-minds-and-agents
+          - 05-the-origin-of-meaning
+          - 06-the-geometry-of-inner-speech
+      - title: "Part III — The Consciousness Proposal"
+        chapters:
+          - 07-consciousness-explained
+          - 08-beyond-dennett
+          - 09-mirrors-of-the-mind
+          - 10-why-zombies-dont-evolve
+      - title: "Part IV — Sentience, Suffering, and Standing"
+        chapters:
+          - 11-the-sentience-ladder
+          - 12-what-is-suffering
+          - 13-the-sentience-metric
+          - 14-the-ai-welfare-trap
+      - title: "Part V — Intelligence and Its Measures"
+        chapters:
+          - 15-intelligence-is-a-game-we-play
+          - 16-in-defense-of-iq
+          - 17-universality-and-generality
+          - 18-tool-bias
+      - title: "Part VI — Evidence and the Agency Criterion"
+        chapters:
+          - 19-fallacies-of-machine-understanding
+          - 20-pearl-and-the-machine
+          - 21-fluency-and-its-limits
+          - 22-the-turing-test-and-its-successors
+          - 23-the-agency-criterion
+      - title: "Part VII — The Dialectic Catalyst"
+        chapters:
+          - 24-the-dialectic-catalyst
+          - 25-the-discipline-of-thinking-with-ai
+          - 26-catalysts-in-the-wild
+          - 27-artificial-intimacy
+          - 28-programming-after-programming
+          - 29-the-ai-fork-is-about-agency
+      - title: "Part VIII — Risk, Power, and the Race"
+        chapters:
+          - 30-making-sense-of-pdoom
+          - 31-the-cassandra-and-the-blueprint
+          - 32-steelmanning-doom
+          - 33-the-politics-of-safety
+          - 34-coercion-beats-intelligence
+          - 35-the-future-is-extropian
+      - title: "Coda — The Succession Question"
+        chapters:
+          - 36-passing-the-torch
 
   - slug: 04-axionic-agency
     title: "Axionic Agency: The Alignment Program"

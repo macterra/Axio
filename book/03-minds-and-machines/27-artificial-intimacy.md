@@ -1,7 +1,7 @@
 ---
 title: 'Artificial Intimacy'
 subtitle: "The wireborn and the hero's delusion"
-status: draft
+status: review
 sources:
   - 170843732.wireborn
   - 165904190.artificial-intimacy

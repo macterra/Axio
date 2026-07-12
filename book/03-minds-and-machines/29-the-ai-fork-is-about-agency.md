@@ -1,7 +1,7 @@
 ---
 title: 'The AI Fork Is About Agency'
 subtitle: 'Prometheus, again'
-status: draft
+status: review
 sources:
   - 200030842.the-ai-fork-is-about-agency
   - 178795619.prometheus-in-code

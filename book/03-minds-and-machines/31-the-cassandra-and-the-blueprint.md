@@ -1,7 +1,7 @@
 ---
 title: 'The Cassandra and the Blueprint'
 subtitle: 'Yudkowsky, witnessed'
-status: draft
+status: review
 sources:
   - 179761268.the-agi-torment-nexus
   - 173473123.the-sysop-and-the-cassandra

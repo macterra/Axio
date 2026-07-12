@@ -1,13 +1,13 @@
 ---
 title: 'The Geometry of Inner Speech'
 subtitle: 'Projection, not narration'
-status: draft
+status: review
 sources:
   - 176068779.the-geometry-of-inner-speech
   - 167104397.the-inner-monologue-fallacy
 ---
 
-The experience of inner speech has a peculiar phenomenological texture. It feels not like abstract cognition but like *hearing* a voice — your own, or sometimes another's — in the theater of the mind. Yet no sound waves strike the ear. The phenomenon sits halfway between imagination and perception, halfway between thought and memory. Most accounts try to resolve that ambiguity by picking a side: inner speech is a *prediction* of sound, the brain rehearsing what it would hear if it spoke aloud. I think that gets the geometry backwards. Inner speech is not a prediction. It is a **projection** — high-dimensional thought collapsed onto a lower-dimensional auditory subspace, so that the mind can perceive its own contents.
+The experience of inner speech has a peculiar phenomenological texture. It can feel like *hearing* a voice — your own, or sometimes another's — although no sound waves strike the ear. Predictive and efference-copy accounts describe the brain rehearsing what it would hear if it spoke aloud. I propose a compatible geometric description: inner speech can involve prediction while also functioning as a **projection** — richer cognitive content rendered into a lower-bandwidth auditory format for rehearsal and inspection.
 
 Getting this right matters well beyond the phenomenology, because the same mistake that treats the inner voice as the substance of thought — rather than a rendering of it — underwrites a whole family of errors about who thinks and what thinking is worth.
 
@@ -15,23 +15,23 @@ Getting this right matters well beyond the phenomenology, because the same mista
 
 Speaking aloud is a high-dimensional act. It coordinates activation across motor cortex, somatosensory cortex, auditory cortex, Broca's and Wernicke's areas, and the limbic and social circuits that frame context and intention. The complete manifold of speaking integrates meaning, motor command, timing, rhythm, and acoustic feedback — a dense braid of processes, only one strand of which is the sound.
 
-Inner speech is what happens when the system collapses that manifold into a smaller subspace. It is a *partial rendering* of the same structure, one that preserves some modes — chiefly auditory and semantic — and suppresses others, above all motor output and external coupling. The result is a sensory shadow: a compressed but recognizably linguistic signal projected onto the auditory cortex. Nothing is being predicted. Something is being *displayed*.
+On the proposed description, inner speech partially renders a distributed process into a smaller working format. It preserves some auditory and semantic features while suppressing overt motor output and external coupling. The claim is not that prediction stops. It is that content is also made available in a recognizably linguistic form.
 
 ## Projection, Not Prediction
 
 Cognitive science often calls inner speech a *simulation* or *prediction* of auditory feedback, borrowing from the theory of efference copy: the brain models what it expects to hear from its own voice. That view captures part of the truth, but it misses the shape of the operation. Inner dialogue is not merely predictive; it is **projective**. The transformation is not from past to future, but from high dimensionality to low.
 
-We can represent the operation directly:
+We can represent the idea schematically:
 
 $$P_{aud} : \mathbb{R}^n_{conceptual} \to \mathbb{R}^m_{auditory}, \quad m \ll n$$
 
-Here $P_{aud}$ is the projection operator from conceptual space to auditory space — the process of rendering meaning into imagined sound. The conceptual manifold has dimension $n$; the auditory subspace has dimension $m$; and $m \ll n$, which is the whole point. The voice in your head is not thought itself but a drastic compression of it, the way a photograph is a two-dimensional shadow of a three-dimensional scene. Most of what you are thinking never reaches the auditory surface at all.
+Here $P_{aud}$ is an illustrative projection operator from conceptual to auditory space. The symbols do not report measured neural dimensions. They express the hypothesis that a richer cognitive state is rendered into a lower-bandwidth auditory format. The voice in your head need not be thought itself; it may be one compressed rendering of it.
 
 The operator is one thing; what varies is what you feed it. When you recall a conversation, you apply $P_{aud}$ retroactively to a *stored* conceptual trace. When you imagine one, you apply it generatively to a *live* semantic state. The phenomenology of the two is similar — remembered speech and imagined speech both feel like inner voices — precisely because both traverse the same projection path. The felt similarity is not a coincidence to be explained away; it is a direct consequence of the geometry. One operator, two sources.
 
 ## The Auditory Cortex as a Projection Surface
 
-The neuroimaging cooperates. Inner speech activates the superior temporal gyrus and primary auditory cortex — the same regions that light up during actual hearing. In predictive-coding terms, these are top-down activations without bottom-up error signals: descending expectations with no arriving sensory input to correct them. But the projectional reading is more natural. These regions form the **projection surface** onto which the brain renders the inner voice. It is a cortical hologram of speech, a sound-field without air. The auditory cortex is not waiting to be surprised by a sound it predicted; it is being used as a screen.
+Neuroimaging is compatible with part of this picture, although findings vary by task and person. Inner speech can recruit superior temporal and other language-related regions also involved in actual speech and hearing. Predictive-coding accounts describe top-down expectations without matching sensory input. The projectional language offered here is a functional interpretation of that reuse, not a demonstrated neural operator or a replacement for predictive accounts.
 
 This is also why the inner voice feels at once intimately personal and faintly alien — unmistakably yours, yet somehow not quite you speaking. The projection keeps the indexical features of self but drops the motor embodiment. You get the signature of your own voice without the act of producing it: an echo of agency, meaning reverberating through the brain's acoustic geometry with the muscles left out.
 

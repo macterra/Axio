@@ -1,7 +1,7 @@
 ---
 title: 'Catalysts in the Wild'
 subtitle: 'From theorem-proving to triadic intelligence'
-status: draft
+status: review
 sources:
   - 174855132.dialectic-catalysts-in-the-wild
   - 181073134.the-gemini-protocol

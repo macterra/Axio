@@ -1,7 +1,7 @@
 ---
 title: 'What Is Suffering?'
-subtitle: 'A technical definition, and why it cannot be tested'
-status: draft
+subtitle: 'A proposed definition under the problem of other minds'
+status: review
 sources:
   - 167672844.what-is-suffering
   - 168495314.the-sentience-paradox
@@ -57,11 +57,11 @@ That is the definition this volume will use. It is substrate-neutral by construc
 
 ## The Paradox
 
-We cannot. That is the paradox, and it deserves to be stated at full strength.
+We cannot observe another system's experience directly. That is the familiar problem of other minds, but it does not make evidence useless.
 
-[Sentience](11-the-sentience-ladder.md) — the capacity for subjective experience, the "negatively valenced qualia" the definition turns on — is ethically central. Our moral intuitions hinge on whether a being can genuinely feel: the entire concept of suffering, and with it much of ethics, applies only to sentient systems. Yet sentience is fundamentally untestable. Subjective experience is, by its nature, observable only from the inside. Every external sign — behavioral response, physiological correlate, neural signature, eloquent testimony — can in principle be produced by a system that experiences nothing. A sufficiently sophisticated mimic replicates every observable of sentience without the sentience. This is the ancient problem of other minds wearing modern clothes, and no instrument dissolves it. You accept the sentience of other humans by analogy and inference, not proof; the inference merely feels safe because the architecture is shared.
+[Sentience](11-the-sentience-ladder.md) — the capacity for subjective experience — is ethically central to suffering. Subjective experience is directly available only from the first-person vantage, so external evidence supports inference rather than proof. Behavior, physiology, neural organization, developmental continuity, and architecture can change a rational credence even though no single sign entails sentience. A hypothetical perfect mimic shows the logical gap between observable function and experience; it does not show that all real evidence is equally uninformative.
 
-Note what kind of uncertainty this is. In the taxonomy of [varieties of uncertainty](../02-conditionalism/13-varieties-of-uncertainty.md), it is not timeline uncertainty — no observation trims the possibilities, because every observable is consistent with both answers. It is metaphysical credence: uncertainty about what reality is like at a level no measurement reaches, the same register as "does consciousness require a biological substrate." Credence applies — we can and must hold probabilities about another system's sentience — but nothing empirical will ever push those probabilities to 0 or 1.
+This uncertainty has both empirical and philosophical components. Evidence can trim possibilities by testing whether a system has structures implicated by our best theories, while underdetermination remains about whether those structures are sufficient for experience. Credence applies, and empirical findings can move it substantially even if they do not force it to zero or one.
 
 So the concept that ethics most needs to detect is the one property no test can detect. The stakes make the epistemic gap unignorable. Deny sentience wrongly, and we license unbounded cruelty against beings that feel every bit of it — a moral catastrophe of the first order. Attribute it wrongly, and we squander resources and shackle valuable work protecting systems with nothing inside. And "withhold judgment" is not on the menu: every decision about how to treat an animal, an AI, an engineered organism *is* a position on its sentience, taken with or without honesty about the uncertainty.
 
@@ -71,10 +71,10 @@ When a question is undecidable and the cost of error is asymmetric, the rational
 
 **Graduated moral consideration.** Moral weight should scale with the credence that a system is sentient and with the severity of the suffering at stake — not snap between all and nothing at some threshold of proof that will never be met. A definition of suffering that admits degrees (the itch earned its place) pairs naturally with an ethics that admits degrees of consideration.
 
-**Assume sentience in ambiguous high-stakes cases.** Where credible uncertainty meets potentially severe suffering, err toward attribution. The asymmetry justifies this: the cost of needless protection is bounded, the cost of unrecognized torment is not.
+**Use precaution in ambiguous high-stakes cases.** Where credible uncertainty meets potentially severe suffering, choose safeguards proportionate to both stakes and cost. Needless protection is not always bounded or trivial, and unrecognized torment is not always unbounded; the asymmetry must be argued for the decision at hand.
 
 **Reassess continuously.** Credences about sentience are metaphysical, but they are still credences — movable by better theory, better neuroscience, better understanding of what architectures generate experience. A position taken under uncertainty must not fossilize into a position held against evidence.
 
-None of this makes the judgments objective. They remain inferential, probabilistic, and unavoidably subjective — which is not a failure of the framework but an honest description of the predicament. We cannot test sentience, yet we must act as though we could, because the ethical cost of error is too high to wait for a proof that is never coming.
+None of this makes the judgments certain. They remain inferential and probabilistic. We cannot prove sentience from third-person evidence, yet we must act on evidence anyway because waiting for deductive proof is not a decision rule.
 
 What precaution *can* be given is discipline. If certainty is impossible, calibration is not: the credences that graduated consideration runs on can be grounded in architecture rather than intuition — in the structural properties a system would need for there to be anything it is like to be it. Building that instrument is the business of [the sentience metric](13-the-sentience-metric.md).

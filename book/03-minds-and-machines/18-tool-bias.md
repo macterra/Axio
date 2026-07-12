@@ -1,7 +1,7 @@
 ---
 title: 'Tool Bias'
 subtitle: 'When intelligence flatters its own instruments'
-status: draft
+status: review
 sources:
   - 180334193.tool-bias
 ---
