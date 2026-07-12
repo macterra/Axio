@@ -14,10 +14,12 @@ This directory contains working editorial material for *Axio*. It is tracked in 
 
 ## Phase 1 control documents
 
+- `ROADMAP.md` is the governing editorial plan and current phase record.
 - `argument-map.csv` inventories every chapter's thesis, premises, dependencies, distinctive contribution, main review question, structural function, and provisional disposition.
 - `terminology.md` is the internal authority for terms of art during editing. It is not the future reader-facing glossary.
 - `claim-calibration.md` defines how the edit distinguishes results, interpretations, arguments, conjectures, commitments, and illustrations.
 - `repetition-ledger.md` identifies recurring material and assigns canonical treatments before compression begins.
+- `architecture/` contains the Phase 2 book-wide audit and nine volume structural memos.
 
 The argument map is intentionally provisional about keep/merge/move/cut decisions. Phase 1 establishes complete coverage; Phase 2 makes book- and volume-level structural decisions after reading the architecture as a whole.
 
