@@ -6,7 +6,7 @@ sources:
   - 197767782.the-price-of-breath
 ---
 
-*This coda is the book's first story. Everything this volume has argued — subjective value, prices as information, liability as discipline, incentives as architecture — is here dramatized rather than argued, in a civilization that runs on it.*
+*This coda is the book's first story. Everything this volume has argued — authority as a conditional claim rather than an office, liability that follows the power that caused the harm, coercion checked by exit and challenge, governance that must continuously justify itself or drain away — is here dramatized rather than argued, in a civilization that runs on it.*
 
 Mara first noticed the oxygen gardens when the train slowed above old Manhattan.
 
@@ -363,4 +363,4 @@ That was axiocracy.
 
 ---
 
-The governance framework this story dramatizes — authority as a bonded, continuously justified claim, discovered and revoked by the same mechanisms that discover prices — is developed in earnest in the governance volume; until it drafts, the working statement is [Axiocracy: Governance by Value Discovery](/posts/197763923.axiocracy-governance-by-value-discovery.html).
+The governance framework this story dramatizes — authority as a bonded, continuously justified claim, discovered and revoked by the same mechanisms that discover prices — is the [Axiocracy](35-axiocracy.md) argued in the preceding chapter.
