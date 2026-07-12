@@ -1,25 +1,25 @@
 ---
 title: 'The Varieties of Uncertainty'
 subtitle: 'Timeline, logical, semantic, and metaphysical credence'
-status: draft
+status: review
 sources:
   - 164433813.defending-bayes-part-5
   - 164364452.defending-bayes-part-4
   - 165064896.defending-bayes-part-6
 ---
 
-Eliezer Yudkowsky has compressed a deep claim about probability into a single sentence: the only true randomness, the only irreducible uncertainty, is the kind that "results from standing in more than one place and being unable to tell who you are" — indexical uncertainty. I think he is right, and rightness of this kind is rare enough in the foundations of probability to be worth dwelling on. But the claim is also easy to over-read. If indexical uncertainty is the only *irreducible* uncertainty, it is tempting to conclude that it is the only thing a credence can legitimately be *about* — that every honest probability is secretly a self-location probability, and everything else is confusion. That conclusion is wrong, and seeing exactly why it is wrong yields something useful: a complete map of the kinds of uncertainty a rational agent can carry, and a demonstration that the Bayesian machinery runs coherently on every one of them.
+Eliezer Yudkowsky has proposed that the only irreducible uncertainty is indexical: the predicament of occupying one of several locations an observer's evidence cannot distinguish. The claim is suggestive within a branching interpretation, but it is not established independently of that framework and should not be over-read. This chapter offers four useful kinds of uncertainty and asks which probabilistic tools fit each. The map is diagnostic, not exhaustive.
 
 ## Standing in More Than One Place
 
 Start with what Yudkowsky gets right. Indexical uncertainty arises whenever an observer's evidence is consistent with more than one location, identity, or vantage point — whenever there are several places you could be standing and nothing in your experience settles which. The classic cases are self-location puzzles: Sleeping Beauty waking without knowing whether it is Monday or Tuesday; the simulation hypothesis, on which your experiences are consistent with being flesh or being software; the observer outside Schrödinger's box, about to open it.
 
-In the Quantum Branching Universe (QBU) — the Everettian picture whose primer, and whose twin terms of art Measure and Credence, I set out in [Measure and Credence](11-measure-and-credence.md) — this is not one exotic species of uncertainty among many. It is what quantum uncertainty *is*. When a measurement branches the world, every outcome occurs, weighted by Measure, and there is a successor of you in each branch. Before you look, your evidence is consistent with all of them. Your uncertainty about "what the result will be" is exactly uncertainty about which timeline you are on — and that is an indexical question. The two framings are one phenomenon described twice:
+Conditional on the Quantum Branching Universe (QBU), indexical uncertainty is one way to model quantum uncertainty. A measurement produces multiple robust future records, and before observing one an agent's present evidence may not distinguish among its successors. The two framings can then describe the same modeled predicament:
 
 - **Indexical framing:** *Who am I, given multiple observers my evidence cannot distinguish?*
 - **Timeline framing:** *Which branch am I on, given multiple branches consistent with my evidence?*
 
-This identification earns its keep. It dissolves the old mystery of quantum "randomness": nothing in the physics is random — the universal wavefunction evolves deterministically — and the irreducible uncertainty Yudkowsky points at is not in the world but in the self-locating predicament of an observer who is about to stand in more than one place at once. It is also the native habitat of empirical Credence generally. Empirical knowledge, as I argued in [what knowledge is](09-what-knowledge-is.md), is knowledge of which branch you are in, and Bayesian updating on observation is the trimming of the timelines consistent with your evidence. Whether it rains tomorrow, whether you carry the genetic variant, what the die will show: all timeline uncertainty, all indexical.
+This reframes rather than dissolves the probability problem: universal evolution is deterministic, while an embedded observer must still connect physical weight to expectations about future records. Some ordinary empirical uncertainty can be represented this way if QBU is assumed, but weather, genetics, and dice also involve ignorance about models and initial conditions. They are not automatically nothing but self-location.
 
 How the numbers should actually be assigned in self-location puzzles — why you are not a random sample from the observers, and not a random branch from the tree — is a hard enough question to need two chapters of its own, [You're Not a Random Sample](15-youre-not-a-random-sample.md) and [You're Not a Random Branch](16-youre-not-a-random-branch.md). Here I need only the taxonomy point: timeline uncertainty is the central case of Credence, the one that empirical evidence bears on and Measure objectively underwrites.
 
@@ -43,14 +43,14 @@ What is your credence that consciousness requires a biological substrate? That t
 
 These are not questions about which timeline you occupy — the answers, whatever they are, hold across all of them. Nor are they mere computation deficits or definitional fuzz. They are uncertainty about the fundamental furniture of reality, about which explanatory framework is true. And credence applies here too. My own confidence in the QBU is high but it is a *credence* — I hold the theory the way a rational agent holds any deep theory, with a probability short of one. This is the position I defend [in defense of Bayes](12-in-defense-of-bayes.md): explanatory theories contain no probabilities, but credences *about* theories are perfectly coherent, and metaphysical uncertainty is exactly such credence at maximum depth.
 
-So the map has four regions:
+The proposed map has four regions:
 
-1. **Timeline (indexical) uncertainty** — which branch am I on? The empirical core, objectively underwritten by Measure.
+1. **Timeline (indexical) uncertainty** — which location or record am I associated with? Under QBU, Measure can weight the alternatives.
 2. **Logical uncertainty** — what do my premises entail? Bounded computation facing unbounded mathematics.
 3. **Semantic uncertainty** — what do the words mean? Unsettled conditions on vague or ambiguous statements.
 4. **Metaphysical uncertainty** — what is reality fundamentally like? Credence about frameworks themselves.
 
-Yudkowsky's claim survives intact, properly scoped: timeline uncertainty is the only *irreducible* variety, the only one that would persist for an agent with unlimited computation, perfected language, and the true theory in hand. Even that ideal agent, standing at a quantum branchpoint, cannot know which successor it is about to be. The other three varieties are reducible in principle — compute more, define sharper, discover the truth — but no agent that actually exists has done the reducing, and Credence is the honest bookkeeping of agents that actually exist.
+Within QBU, timeline uncertainty may persist even for an idealized agent with unlimited computation and a complete state description. Whether that makes it the only irreducible variety depends on controversial assumptions about identity, branching, language, and what the ideal agent knows. The other categories plainly matter to finite agents whether or not they are reducible in principle.
 
 ## Betting on Mathematics
 
@@ -60,12 +60,12 @@ Timeline credence has something objective to answer to: Measure. When I say the 
 
 The answer comes from [Logical Induction](https://intelligence.org/files/LogicalInduction.pdf), a formal framework due to Garrabrant, Benson-Tilsen, Critch, Soares, and Taylor. Its mechanism is a market. Picture the unresolved statements of mathematics as tradeable contracts — a share of "the trillionth digit of π is 7" pays out a dollar if true, nothing if false — and picture a population of traders, each an algorithm implementing some computable betting strategy: one exploits digit statistics, another hunts partial proofs, another arbitrages related theorems against each other. The market price of each contract is the system's credence in that statement. As logical evidence accumulates — a proof lands, a computation terminates, a heuristic pans out — traders profit or bleed, prices move, and the credences update.
 
-The central theorem is that this market cannot be systematically exploited: no polynomial-time trading strategy can pump unbounded profit out of its prices. That is Dutch-book resistance, generalized — and it is the answer to the critic. The reason credences must obey the probability laws was never, at bottom, that objective chances exist. It is that incoherent credences are exploitable: an agent whose betting odds violate the axioms is an agent someone can construct a guaranteed win against. Coherence is a discipline on the *agent*, not a mirror of chance in the *world*. Logical Induction proves the discipline is achievable where no chance exists — its credences satisfy the probability axioms in the limit, converge toward the truth as evidence arrives, and answer to nothing but the demand that no bookie beat them.
+A central guarantee is that no efficiently computable trader can exploit a logical inductor to obtain unbounded profit while keeping downside bounded. This resembles market-based resistance to exploitation, but it is not simply the ordinary Dutch-book theorem. Logical induction shows that resource-bounded prices can acquire coherence and convergence properties over time even where no objective chance is posited. Its assumptions and guarantees are specific to the constructed market and deductive process.
 
-And notice what updating looks like inside the mechanism: a proof is evidence, a computation is an observation, a partial result shifts the posterior. Bayesian practice survives unchanged across all four regions of the map. What varies is only the target — Measure in the timeline case, and in the other three cases nothing at all except the standing requirement of coherence. Bayes never needed an objective probability under every credence. It needed agents who cannot be turned into money pumps.
+A proof, computation, or partial result can change a logical inductor's prices. This supports disciplined graded belief about mathematics, but the update mechanism is not ordinary Bayesian conditionalization unchanged. The broader lesson is narrower: coherent Credence need not mirror an objective chance in every domain.
 
 ## A Meta-Credence Check
 
-Is the four-fold classification exhaustive? I have reasoned through each category and I cannot rule out a subtler variety the map fails to mark. So the honest answer is itself a credence: around 95 percent that the list is complete, responsibly short of certainty.
+Is the four-fold classification exhaustive? Probably not in any strict sense: categories overlap, and uncertainty about models, parameters, data quality, and other agents can be carved differently. Its value is diagnostic rather than numerical.
 
 And the residual 5 percent is the chapter in miniature. It is not timeline uncertainty — no branch of the multiverse contains a fifth category that other branches lack. It is logical uncertainty about what my own distinctions entail, semantic uncertainty about where the category boundaries fall, and metaphysical uncertainty about whether reality has joints my taxonomy misses. The map classifies even the doubt about the map. That is what a framework in good working order looks like: not certainty, but uncertainty that knows its own varieties.

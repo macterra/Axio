@@ -59,6 +59,45 @@ volumes:
 
   - slug: 02-conditionalism
     title: "Conditionalism: Truth, Bayes, and Rationality"
+    parts:
+      - title: "Part I — The Agent's Epistemic Situation"
+        chapters:
+          - 01-what-is-philosophy-for
+      - title: "Part II — Conditional Truth"
+        chapters:
+          - 02-all-truth-is-conditional
+          - 03-the-three-levels-of-truth
+          - 04-when-statements-fail
+          - 05-truth-machines
+      - title: "Part III — Models and Reality"
+        chapters:
+          - 06-maps-models-understanding
+          - 07-conditional-realism
+      - title: "Part IV — Belief, Knowledge, and Faith"
+        chapters:
+          - 08-what-beliefs-are
+          - 09-what-knowledge-is
+          - 10-against-faith
+      - title: "Part V — Conditional Module: Probability in the QBU"
+        chapters:
+          - 11-measure-and-credence
+          - 12-in-defense-of-bayes
+          - 13-varieties-of-uncertainty
+          - 14-probability-without-collapse
+          - 15-youre-not-a-random-sample
+          - 16-youre-not-a-random-branch
+      - title: "Part VI — Rational Practice"
+        chapters:
+          - 17-rationality-without-foundations
+          - 18-sacred-coherence
+          - 19-the-discipline-of-updating
+          - 20-reasonable-disagreement
+          - 21-bayes-in-the-wild
+          - 22-probability-after-probabilism
+          - 23-deciding-under-uncertainty
+      - title: "Coda — The Beginning of Wisdom"
+        chapters:
+          - 24-the-beginning-of-wisdom
 
   - slug: 03-minds-and-machines
     title: "Minds and Machines: Consciousness, Intelligence, and AI"

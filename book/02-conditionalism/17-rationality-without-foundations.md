@@ -1,7 +1,7 @@
 ---
 title: 'Rationality Without Foundations'
 subtitle: 'Pancritical rationalism and evolutionary epistemology'
-status: draft
+status: review
 sources:
   - 167452557.pancritical-rationalism
   - 166439024.evolutionary-rationalism
@@ -51,7 +51,7 @@ None of this demotes logic. Deduction remains the sharpest selection instrument 
 
 ## Commitments, Not Foundations
 
-Now I can discharge the worry this volume has been accumulating. Conditionalism says every truth claim holds only relative to conditions. The conditions themselves rest on further conditions, and [Truth Machines](05-truth-machines.md) closed the last exit: Gödel and Turing guarantee that no interpreter can certify itself, so there is no ultimate vantage — truth is locally consistent and globally ungrounded. The natural response is vertigo. If it is conditions all the way down, what holds the edifice up?
+Now I can discharge the worry this volume has been accumulating. Conditionalism says truth claims are assessed relative to conditions, and those conditions can themselves be examined. [Truth Machines](05-truth-machines.md) showed that Gödel and Turing establish precise limits for sufficiently expressive formal systems and algorithms; they do not prove that every interpreter fails to understand or assess itself. The broader rejection of an ultimate vantage is a philosophical conclusion argued here, not a direct corollary of those theorems.
 
 Bartley's answer, and mine: nothing holds it up, and nothing needs to. The demand for a ground floor is justificationism's demand, and justificationism is false — not sadly, regrettably false, but *well lost*, because the demand was incoherent from the start and every attempt to meet it produced either dogma or despair. Frameworks are not buildings, which stand only if something bears their weight. They are organisms, which stand only if they survive — and survival is a matter of exposure, not support. A conditional framework is held rationally when it is held open: its conditions stated, its rivals engaged, its update rule live.
 

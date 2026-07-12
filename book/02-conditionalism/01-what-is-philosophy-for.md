@@ -1,7 +1,7 @@
 ---
 title: 'What Is Philosophy For?'
 subtitle: 'Philosophy as the engineering of coherent agency under constraint'
-status: draft
+status: review
 sources:
   - 183152926.what-is-philosophy
   - 183154208.constraint-formalism-and-empiricism
@@ -10,7 +10,7 @@ sources:
 
 Philosophy is usually introduced in one of three ways: historically ("what Plato thought"), stylistically ("armchair reasoning"), or defensively ("the questions science cannot yet answer"). All three miss the point. The first makes philosophy a museum, the second a temperament, the third a shrinking remainder. None of them explains why anyone should still be doing it.
 
-I want to derive philosophy from first principles instead — not as a tradition, a temperament, or a discourse, but as a structural necessity for any agent capable of reflection and choice. If the derivation works, it will also settle an old quarrel about philosophy's relationship to mathematics and science, and it will tell us what this book is doing before the arguments begin.
+I want to motivate a functional account instead: philosophy as an activity bounded agents undertake when they examine the assumptions guiding reflection and choice. This will not settle every boundary dispute among philosophy, mathematics, and science, but it will state the division of labor used in this book.
 
 ## The Agent's Situation
 
@@ -22,9 +22,9 @@ Any bounded agent embedded in reality faces the following facts:
 - **Fallibility.** The agent can be wrong about both facts and values.
 - **Plurality.** Other agents exist, with intersecting incentives and interpretations.
 
-These are not temporary limitations that more data, more intelligence, or more computation will eventually cure. They are structural. No amount of sensing yields full observability, because relevance itself depends on prior models — you cannot measure everything, so you must already have a view about what matters. No amount of inference eliminates underdetermination, because evidence constrains theories but does not uniquely select among them. No amount of caution suspends action pressure, because inaction is itself a choice with consequences. No amount of reflection eliminates fallibility, because self-correction presupposes standards that can themselves be mistaken. And no amount of coordination removes plurality, because agents do not share a single vantage point or a single value function.
+For agents like us, these are persistent structural limitations, though better data, institutions, models, and computation can reduce their severity. Measurement is selective; evidence can underdetermine theory; inaction can have consequences; standards of correction can themselves be criticized; and coordination does not erase differences of information or value.
 
-From these facts follows a requirement that no agent can decline: it must adopt rules for believing, reasoning, valuing, and acting *before* it can do science, engineering, politics, or ethics. Those rules are not delivered by observation. You cannot see them through a telescope or derive them from a dataset. They are pre-theoretic commitments — and every agent already has them, whether or not it has ever examined them.
+Reflective agents operate with rules or dispositions for believing, reasoning, valuing, and acting. Some are explicit, others embodied or socially inherited. They are not derived from observation alone, but observation and scientific practice can test and revise them. Philosophy begins when such commitments become objects of deliberate criticism.
 
 ## The Boundary
 
@@ -40,7 +40,7 @@ That boundary — the layer of assumptions that make the domains possible withou
 
 Every term in that definition is doing work. *Systematic*: not intuition trading or rhetoric. *Implicit commitments*: the hidden axioms agents already use. *Interpretive and normative*: beliefs and reasons for action are inseparable, and philosophy governs both. *Coherence under reflection*: the agent must survive its own self-critique. *Preserve integrity*: philosophy is maintenance, not decoration.
 
-On this definition, philosophy is not a competitor to science. It is the constraint-architecture that makes science possible.
+On this definition, philosophy is not a competitor to science. It is one practice through which science's concepts, norms, and limits are made explicit and criticized.
 
 ## Why Philosophy Cannot End
 
@@ -70,7 +70,7 @@ So "sub-discipline" fails in one direction: philosophy does not evaluate proofs,
 
 None of this makes philosophy static or authoritarian. When empirical inquiry hits persistent anomalies — quantum nonlocality, relativistic spacetime, evolutionary explanations of cognition — it does not bypass philosophy; it forces a revision of the admissibility conditions themselves. Philosophy sets the rules, but the game can expose cracks in the rules that require patching. The dependence is asymmetric, but it is not inert.
 
-There is a single test that dissolves the whole confusion. Ask of any domain: *can it justify its own standards of success without circularity?* Mathematics cannot. Science cannot. Engineering cannot. Law cannot. Only philosophy even attempts the task. That does not make philosophy superior. It makes it prior.
+A useful test is to ask of any domain: *how are its standards of success selected and criticized?* No practice answers that question from a wholly external vantage. Philosophy makes the reflexive task central, while foundations of mathematics, methodology, legal theory, and scientific practice also contribute to it. The relationship is collaborative, not a proof that philosophy is simply prior.
 
 ## Metaphysics as Invention
 

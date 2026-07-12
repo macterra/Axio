@@ -1,7 +1,7 @@
 ---
 title: 'Truth Machines'
 subtitle: 'From Leibniz to Tarski, Gödel, and Turing'
-status: draft
+status: review
 sources:
   - 177760320.truth-machines
   - 174125219.entangled-truths
@@ -13,7 +13,7 @@ Leibniz drew the line most cleanly:
 
 > "There are two kinds of truths: those of reasoning and those of fact. The truths of reasoning are necessary and their opposite is impossible; the truths of fact are contingent and their opposites are possible."
 
-I want to trace what happened to that line. It survived two centuries of philosophy essentially intact, and then the twentieth century's formal logicians — Tarski, Gödel, Turing, Chaitin — dismantled it from the inside, using the very tools of necessity it was supposed to protect. What they discovered, though none of them put it this way, is that truth is not a property of statements at all. It is a property of evaluations. The formal history of logic converges on Conditionalism.
+I want to use twentieth-century logic to qualify that line. Tarski, Gödel, Turing, and Chaitin did not jointly prove Conditionalism or abolish the distinction between necessary and contingent truth. Their results show, in different ways, that formal consequence, semantic truth, proof, computation, and resource-bounded knowability must be distinguished. Conditionalism is my philosophical interpretation of those distinctions.
 
 ## Leibniz's Two Kinds of Truth
 
@@ -23,11 +23,11 @@ The scheme was enormously productive. It gave early modern philosophy a map for 
 
 ## Necessity Is Framework-Relative
 
-Conditionalism holds that [all truth is conditional](02-all-truth-is-conditional.md): every truth takes the form *if X, then Y*, and there are no unconditional truths — only conditionals whose background conditions often remain hidden. Apply this to Leibniz's paradigm cases of necessity.
+Conditionalism holds that truth evaluations require an interpretation and domain. Apply this to Leibniz's paradigm cases without confusing contextual dependence with material implication.
 
-*2+2=4* becomes: *if* one accepts Peano arithmetic and Indo-Arabic numerals, *then* 2+2=4. The law of non-contradiction, $\neg(P \wedge \neg P)$, becomes: *if* one adopts classical logic, *then* contradictions are excluded.
+The inscription *2+2=4* requires conventions fixing its symbols. The corresponding arithmetic proposition follows in standard arithmetic and many weaker systems; it does not owe its truth to Indo-Arabic notation or uniquely to Peano's axioms. The law $\neg(P \wedge \neg P)$ is valid in classical logic, while paraconsistent systems revise what follows from contradiction. Framework-relative evaluation does not make a theorem historically contingent inside a fixed structure.
 
-What Leibniz called necessary rests on a stack of historical contingencies. The **notation** is a cultural invention — numerals and logical symbols had to be devised, and were devised differently in different places. The **definitions** are stipulations — equality, addition, and the logical connectives mean what they mean because we introduced them that way. The **inference rules** vary across systems — classical, intuitionistic, paraconsistent, quantum logics each license different moves, and the choice among them is not itself settled by logic. Necessity survives, but as *framework-relative* necessity: unshakeable inside the framework, contingent in the framework's selection.
+Our expressions and choices of formal framework have historical contingencies. Notation is invented, definitions fix structures, and inference rules differ across logics. Necessity survives as validity across the models or derivations fixed by a framework. Conditionalism explains the evaluation context; it does not reduce mathematical necessity to the sociology of choosing notation.
 
 ## Contingency Is Coherence-Dependent
 
@@ -35,7 +35,7 @@ Now run the recasting in the other direction. *It rained in Paris yesterday* bec
 
 Contingency, then, is *coherence-dependent* contingency. Leibniz's two domains turn out to lean on each other for their very intelligibility. Reasoning rests on an empirical substrate: notations, definitions, and rules emerge historically and are stabilized socially. Fact rests on a logical substrate: empirical claims require logical form to be intelligible and testable. Leibniz saw a boundary; there is actually a braid.
 
-What remains when the dichotomy dissolves is a **continuum of conditional stability**. Some conditionals are highly stable because they rest on entrenched conventions — mathematics, formal logic. Others are fragile, dependent on volatile background conditions — weather, politics, history. Scientific laws sit between the poles: stable conditionals anchored in measurement and modeling conventions. The distinction is one of degree, not kind. What we call "necessary" is merely the upper limit of conditional robustness.
+Alongside the modal distinction between necessity and contingency, there is a **continuum of epistemic and model stability**. Mathematical conclusions can be stable across many representations; weather claims depend on volatile conditions; scientific laws have domains and idealizations. That continuum is a difference of degree. The formal distinction between truth in all relevant models and truth in some remains a difference of kind.
 
 That is the philosophical argument. The remarkable thing is that when logic was finally made rigorous enough to test Leibniz's picture from the inside, it delivered the same verdict.
 
@@ -49,29 +49,29 @@ Tarski supplied the somewhere else. His formal definition of truth reads:
 
 > A statement 'P' is true under an interpretation I if and only if P holds in the model I.
 
-That single clause encodes Conditionalism avant la lettre. Truth is not absolute; it is *evaluated relative to an interpretation*. Even "snow is white" — Tarski's own flagship example — is only true in English, given that "snow" refers to frozen precipitation and "white" denotes a spectral range of reflected light. Formally, truth is conditional on interpretation:
+That semantic schema illustrates one premise Conditionalism emphasizes: truth in a formal language is defined relative to an interpretation or model. Even Tarski's “snow is white” schema distinguishes the mentioned sentence in one language from the condition stated in a metalanguage. Formally, the model-relative idea can be written:
 
 $$\mathrm{Truth}(P \mid I)$$
 
-And once the interpreter $I$ is made explicit, a machine can evaluate the condition. Tarski built the bridge between Turing's meaningless syntax and truth — but the bridge has a toll: you must always declare which interpretation you are using. There is no crossing it unconditionally.
+For decidable fragments and supplied representations, a machine may evaluate the condition. Tarski's semantic account does not make truth mechanically decidable in general. Its lesson here is narrower: object language, metalanguage, and interpretation must not be silently conflated.
 
 ## Gödel's Limit, Chaitin's Boundary
 
-Gödel proved that any sufficiently expressive formal system contains true statements unprovable within the system itself. The theorem is often glossed as a result about the limits of mathematics; what it actually exposes is *semantic dependency*. The truth of certain propositions depends on an interpretation that cannot be fully captured by the system's own syntactic rules. The system can write the sentence; it cannot supply the standpoint from which the sentence is true.
+Gödel proved that any consistent, effectively axiomatized formal system sufficiently expressive for arithmetic is incomplete: there are sentences for which it proves neither the sentence nor its negation. Calling a Gödel sentence “true” invokes an intended interpretation outside the proof system. This is a precise separation between provability and semantic truth, not a general theorem that semantics always escapes systems.
 
-Chaitin later tightened the insight using algorithmic information theory: the boundary of provability coincides with the boundary of *compressibility*. Truths that exceed a system's descriptive capacity cannot be generated by it. In both cases the lesson is the same: no system carries its own semantics. Interpretation leaks out of syntax.
+Chaitin later established incompleteness results using algorithmic information: a fixed formal system can determine only finitely much irreducible algorithmic information beyond a bound tied to the system. This connects provability and description complexity without making their boundaries simply identical.
 
 ## Computation as Interpretation
 
-Now observe the inversion. A computation *is itself* an interpretive act. Given input data $P$ and a program $I$, the machine produces an output $O = I(P)$. Semantically, $I$ interprets $P$. Every evaluation — of arithmetic, of logic, of natural language — is a mapping from pattern to meaning under some interpreter. Change the program, change the meaning.
+Now observe a possible implementation. A computation can implement an interpretation when a user or system supplies semantics for its inputs, program, and outputs. Given data $P$ and program $I$, the machine produces $O=I(P)$; what $P$, $I$, and $O$ mean is not fixed by that syntax alone.
 
-This is Conditionalism rendered operational: for every pattern $P$ there exists some interpreter $I$ under which $I(P)$ comes out true. There are no absolute truths, only consistent interpreter–pattern pairs. A statement that has been handed to no interpreter has not yet been evaluated at all — it is a candidate for truth, not a bearer of it. (What happens when a statement's conditions are never properly bound is the subject of [when statements fail](04-when-statements-fail.md).)
+This renders one part of Conditionalism operational: evaluation is a mapping under a specified interpreter. The trivial fact that some contrived interpreter can label a pattern “true” does not make the pattern true about a target. Interpretations remain answerable to reference, evidence, and use. An uninterpreted string is not yet a truth claim. ([When Statements Fail](04-when-statements-fail.md) examines that boundary.)
 
-Shannon's information theory shows why interpretation is not free. Shannon stripped semantics out of the theory deliberately: entropy measures surprise, not meaning. Chaitin's incompressible numbers show what fills the gap — most patterns admit no shorter description than themselves; they resist interpretation. Meaning arises only when a pattern admits a compact interpreter that reconstructs it predictively. Interpretation *is* compression, and truth becomes a measure of how coherently an interpreter maps a pattern to an outcome within finite resources.
+Shannon's theory deliberately excludes semantics: entropy measures uncertainty under a distribution, not meaning. Compact predictive reconstruction can support interpretation, but compression is neither necessary nor sufficient for meaning. Reference, causal use, and the practices of an interpreting system also matter. Truth should not be redefined as compression performance.
 
 ## No Ultimate Vantage
 
-The natural objection is to ask for the master interpreter — the one whose evaluations are simply *the* truth. But every act of reasoning presupposes an interpreter evaluating another interpreter, and the formal results close the exit: Gödel's self-reference and Turing's halting problem show that a system cannot perfectly interpret itself. There is no ultimate vantage.
+The natural objection is to ask for a master interpreter. Reasoning relies on rules and interpretations that can themselves be examined. Gödel and Turing establish specific limits on proof and computation; they do not prove the metaphysical claim that no ultimate vantage exists or that no system can model any aspect of itself. They motivate a narrower fallibilism: sufficiently rich formal and computational procedures cannot be assumed complete merely because they are internally specified.
 
 When philosophers speak of "unconditional truth," they are implicitly assuming exactly such a vantage — a hidden universal interpreter, a divine Tarski model in which every statement gets its absolute verdict. Leibniz had a candidate for the position; his necessary truths were true in the mind of God. Conditionalism simply removes that ghost. What is left is not chaos but recursion without closure: truth, like computation, is locally consistent and globally ungrounded.
 
@@ -79,4 +79,4 @@ So the pieces assemble into one picture. Computation gives us syntax; Tarski giv
 
 > Truth is not a property of statements, but of evaluations. To compute is to interpret, and to interpret is to condition.
 
-Every truth lives inside an interpreter. Outside interpretation there is only unparsed chaos — patterns without meaning, syntax without truth.
+Every expressed truth claim requires interpretation. The target structures an interpretation is about need not depend on an interpreter for their existence. Formal logic supplies constraints on this relation; Conditionalism supplies the philosophical reading defended here.

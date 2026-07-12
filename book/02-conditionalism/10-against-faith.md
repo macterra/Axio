@@ -1,7 +1,7 @@
 ---
 title: 'Against Faith'
 subtitle: 'The calibration criterion and its case law'
-status: draft
+status: review
 sources:
   - 177598036.against-faith
   - 177654620.is-faith-ever-justifiable
@@ -12,13 +12,13 @@ A pilot descends through fog on instruments. She cannot see the runway; she trus
 
 Now consider the believer whose confidence does the opposite: when counterevidence arrives, it rises. The failed prophecy proves the prophecy was misread. The unanswered prayer proves the answer was "not yet." Doubt itself is reclassified as a test to be endured rather than a signal to be processed. We use the same word — faith — for the pilot and the believer, and the word is hiding the fact that these are opposite epistemic structures. One updates. The other has made not-updating the point.
 
-This chapter is about the second structure: what it is, why it survives, whether any defense of it succeeds, and how it reappears — scrubbed of theology — in the modern impulse to choose worldviews for their beauty.
+This chapter is about the second structure. I will call it **epistemic faith** to distinguish it from trust, loyalty, hope, religious practice, and other uses of the same word. The target is a belief protected from correction, not every commitment people describe as faith.
 
 ## A Frozen Update Rule
 
 To say precisely what faith is, I need the account of belief from [What Beliefs Are](08-what-beliefs-are.md): a belief is not a static proposition lodged inside a skull but a modeling construct. Beliefs exist in models of agents — in an agent's self-model, and in our models of other agents — as representations of expectations, values, and predictive regularities. The term belongs to the level of interpretation, not the level of causation. And a belief's virtue, on that account, is calibration: confidence proportioned to evidence, revised as evidence changes.
 
-Faith is what you get when that virtue is deliberately disabled. Faith is a property of a model of an agent that represents one of that agent's beliefs as immune to calibration. It is not strong confidence — strong confidence is fine, when the evidence is strong. It is confidence that resists evidence: unreasonably high, and held unchangeable by design. Faith is belief persistence within a model of an agent — a refusal of conditionality.
+Epistemic faith, as the term is defined here, is what you get when calibration is deliberately disabled. It is a property of a model of an agent that represents one belief as immune to relevant counterevidence. It is not strong confidence — strong confidence is appropriate when the evidence is strong — but confidence held unchangeable by design. The conclusion of this chapter follows under that stipulative definition; it should not be smuggled into arguments about every broader use of *faith*.
 
 It operates on two levels. Internal faith: an agent's self-model portrays one of its own beliefs as beyond revision — "nothing could ever convince me otherwise," offered as a boast. External faith: an observer's model ascribes that same rigidity to someone else — "her faith is unshakeable," offered as praise. In both cases the model has redefined the terms of epistemic appraisal: stability is counted as virtue, adaptability as weakness. That inversion is the essence of the thing. Faith is a frozen update rule — a belief that has become its own justification.
 
@@ -50,7 +50,7 @@ Again the mechanism being praised is not the mechanism doing the work. What hold
 
 ## Religious Faith
 
-Here is the archetype the other defenses exist to protect: belief in things unseen, held firm against every worldly discouragement, with the firmness itself counted as merit. Religious traditions do not merely permit the frozen update rule; they elevate it into the highest virtue and name doubt as the sin.
+Some forms of religious belief provide the clearest examples of the target: belief in things unseen, held firm against every possible discouragement, with the firmness itself counted as merit. Religious traditions are diverse, however. Many contain practices of doubt, interpretation, revision, and evidential argument; the criticism applies where a tradition or believer makes immunity to correction a virtue.
 
 By the calibration criterion this is the clearest case, because the rigidity is not a bug being excused but the explicit design. A model that treats its own unfalsifiability as a strength has inverted epistemic virtue: it maximizes psychological coherence rather than correspondence with reality, and it has arranged matters so that no possible experience can tell it the difference. The meaning derived from such faith is real as an experience — I do not doubt the consolation, the community, the felt depth. But it is illusory as knowledge. Faith may console; it cannot inform. The two functions come apart exactly at the point where the update rule froze.
 
@@ -62,9 +62,9 @@ I have real sympathy for this — and it concedes my case. What the existentiali
 
 ## The Verdict
 
-The case law is now complete, and every entry resolves the same way. Each coherent defense of faith either reduces to calibrated confidence under another name — courage, provisional assumption, conditional trust, resolve — or admits uncalibrated rigidity: dogma, denial, delusion. There is no third outcome, because the criterion partitions the space: either the update rule is live or it is frozen. When it is live, the thing being defended is not faith; when it is frozen, the thing being defended is not defensible.
+Across these cases, the same distinction does most of the work. Some defenses concern calibrated confidence under another name — courage, provisional assumption, conditional trust, resolve. Others defend rigidity against relevant evidence. Real people can fall between those ideal types: update rules can be slow, compartmentalized, or unclear about what would count as evidence. The diagnostic question is not whether a person uses the word *faith*, but whether correction remains possible in practice.
 
-At best, faith is a poetic name for commitment under uncertainty. But commitment is a property of will, not of belief, and the poetry has consequences: it launders a virtue of the will into an alibi for a vice of the model. By the calibration criterion, faith is never epistemically justifiable — full stop, with the conditions stated.
+Faith can be a poetic name for commitment under uncertainty, and that use is outside the chapter's objection. But where *epistemic faith* means immunity to relevant evidence, it is not epistemically justifiable by the calibration criterion. The force of the verdict comes from the stated condition, not from the word alone.
 
 ## The Aesthetic Variant
 
@@ -74,9 +74,9 @@ Watch the mechanism. When a worldview is chosen for its beauty, it becomes insul
 
 The incentive behind the inversion is social, and it is strong. Beauty-first systems generate community — belonging, ritual, shared metaphysics, everything hyper-individualized moderns crave. Truth-seeking, by contrast, is lonely; it demands the willingness to stand apart from collective narratives until reality itself offers reconciliation. So beauty-first belief systems thrive not because they are true but because they are adaptive: they reward conformity with belonging and punish dissent with exile. Their function is sociological, not epistemic — which is exactly the function I identified for faith itself. Same structure, same payoff, different vestments.
 
-The intellectual cover for the inversion is the appeal to coherence: the beautiful worldview hangs together, and doesn't everything we believe ultimately rest on coherence anyway? It does — and that is why the appeal fails. As I argued in [The Three Levels of Truth](03-the-three-levels-of-truth.md), coherence is our method for detecting correspondence, not a substitute for it: it earns its authority only while it stays tethered to intersubjective evidence — to falsifiability, feedback, contact with the world. A perfectly coherent worldview can still be false if it corresponds to nothing outside itself. When external correction is replaced by communal affirmation and aesthetic resonance, coherence becomes theatre.
+The intellectual cover for the inversion is sometimes an appeal to coherence: the beautiful worldview hangs together, so perhaps its internal fit is enough. As I argued in [The Three Levels of Truth](03-the-three-levels-of-truth.md), coherence is one indispensable constraint, not a substitute for empirical contact where empirical claims are at issue. A coherent worldview can still fail to represent its target. When external correction is replaced by communal affirmation and aesthetic resonance, coherence has been asked to do work it cannot do alone.
 
-None of this requires renouncing beauty. Aesthetics anchors choice; truth constrains belief. Beauty tells us what to care about; truth tells us what is real. The felt rightness of a worldview is evidence about you — your values, your longings — and no evidence at all about the world. Beauty can guide our values, but only truth can correct our maps, and confusing the two collapses the boundary between agency and epistemology. The long-run equilibrium of any epistemic process is set by its error-correction mechanisms: systems that reward coherence over accuracy converge on dogma; systems that reward accuracy over coherence converge on truth. The former produce comfort. The latter produce knowledge.
+None of this requires renouncing beauty. Aesthetic response is direct evidence about our values and preferences, and qualities such as simplicity or elegance can sometimes serve as weak, defeasible evidence in theory choice. They are not a substitute for tests that bear on the world. A healthy epistemic process therefore balances coherence, explanatory virtues, and external correction; any one of them can mislead when insulated from the others.
 
 ## Conviction Without Faith
 

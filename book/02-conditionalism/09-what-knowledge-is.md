@@ -1,7 +1,7 @@
 ---
 title: 'What Knowledge Is'
-subtitle: 'Entropy reduction across branching timelines'
-status: draft
+subtitle: 'Reliable, decision-relevant uncertainty reduction'
+status: review
 sources:
   - 167007172.what-counts-as-knowledge
   - 164270270.defending-bayes-part-3
@@ -9,27 +9,27 @@ sources:
 
 You glance at the hallway clock, read 4:17, and go on with your day believing it is 4:17. It is, in fact, 4:17. Your belief is true. It is also justified — consulting a clock that has served you faithfully for years is exactly what a responsible epistemic agent does. But the clock stopped last night, at 4:17, and you happened to walk past during the one minute in twelve hours when a dead clock tells the truth.
 
-Do you know what time it is? On the classical definition of knowledge — justified true belief, a formula that goes back to Plato — you do. All three boxes are checked. And yet the verdict is obviously wrong: a true belief acquired by dumb luck is not knowledge, whatever boxes it checks. This is the Gettier problem, and since 1963 it has spawned an entire industry of patches — fourth conditions, "no false lemmas," defeasibility clauses — each of which falls to the next round of counterexamples. When a definition needs a new epicycle every decade, the definition is wrong. I propose to replace it.
+Do you know what time it is? A simple justified-true-belief analysis appears to say yes, although a true belief acquired by this kind of luck does not look like knowledge. This is the Gettier problem. It has generated sophisticated proposals about safety, sensitivity, defeat, and epistemic luck rather than a single agreed repair. The functional account developed here is another proposal: it puts reliable uncertainty reduction at the center.
 
 ## The Definition
 
-Knowledge is pattern-encoded information in an agent's predictive structure that reliably and quantifiably reduces entropy about specified future events or states across branching timelines.
+Knowledge is pattern-encoded information that reliably reduces decision-relevant uncertainty within a specified domain.
 
 Every word is doing work, so let me unpack them.
 
 **Pattern.** Knowledge lives in a reproducible structure — a neural configuration, a logical rule, an algorithm, a cultural convention. The form does not matter; the stability does. A pattern too fragile or too idiosyncratic to be exercised twice cannot support prediction, and prediction is the job.
 
-**Predictive structure.** The pattern must be *installed in an agent* — wired into the machinery that generates expectations and guides action. Knowledge is not a property of propositions floating in Plato's heaven; it is a property of agents in the world, and it earns its title by what it lets those agents anticipate and do. The predictive structures themselves are the models whose workings I examine in [maps, models, and understanding](06-maps-models-understanding.md).
+**Decision-relevant structure.** The pattern must be available to an agent or community — encoded in memory, practice, a trusted record, or machinery that can guide expectation and action. This accommodates both exercised skill and stored knowledge while excluding information that no one can recover or use. The relevant structures are among the models examined in [maps, models, and understanding](06-maps-models-understanding.md).
 
-**Reliably reduces entropy.** Here is where the definition gets its teeth. Uncertainty has a currency: Shannon entropy, measured in bits,
+**Reliably reduces uncertainty.** Here is where the definition gets its teeth. When an agent has a well-defined probability distribution over outcomes, one useful measure is Shannon entropy,
 
 $$H = -\sum_i p_i \log_2 p_i.$$
 
-Before you learn the outcome of a fair coin flip, your uncertainty is one bit; a pattern that tells you the outcome in advance removes that bit. Knowledge is whatever removes bits — not once, by accident, but consistently across repeated and analogous situations. The reliability criterion is not a fourth condition bolted onto justified true belief. It replaces the whole apparatus: no justification clause, no truth clause, no belief clause, just a measurable track record of shrinking uncertainty.
+Before you learn the outcome of a fair coin flip, this entropy is one bit; reliable information about the outcome removes some or all of it. Not every epistemic state comes with a precise distribution, so entropy is a model when quantification is available, not a claim that all ignorance literally arrives in bits. The essential requirement is reliability across relevantly similar cases. A useful false model can reduce uncertainty inside a narrow regime, but the knowledge claim must state that domain and remain answerable to observed error; predictive success does not make every part of the model true.
 
-**Across branching timelines.** The events knowledge predicts are events in a physical world, and on the physics I take seriously that world is the Quantum Branching Universe (QBU) — the Everettian picture in which all outcomes occur, weighted by Measure, and an agent's uncertainty is Credence about which branch it occupies. [Measure and Credence](11-measure-and-credence.md) gives the primer; for this chapter, the phrase does one essential job. It fixes what "reliably" quantifies over: not a single history replayed in imagination, but the actual ensemble of branches an agent faces. A pattern constitutes knowledge when it reduces uncertainty across that ensemble — in most of the futures, by weight — not merely in the one thread of history where it happened to luck out.
+**Within a specified domain.** Reliability is always indexed to a reference class, environment, timescale, and purpose. In ordinary cases it can be assessed by replication, counterfactual robustness, and out-of-sample performance. If the QBU framework introduced later is adopted, branch Measure supplies an additional model-relative way to weight future cases. The definition itself does not require that physical interpretation.
 
-Now watch the stopped clock dissolve. The clock face is a pattern, and consulting it is a procedure you can repeat — so run the reliability test. Across the ensemble of moments at which you might glance at a stopped clock, the reading reduces your uncertainty about the time by nothing: the entropy before and after the glance is the same, because the reading carries no information about the actual hour. Your 4:17 belief was true by coincidence of timing, and coincidence is precisely what the reliability criterion filters out. There is no puzzle left to patch. The Gettier industry was reverse-engineering, case by case, a distinction the entropy criterion draws in one stroke: knowledge is not belief that happens to be true, it is a pattern that reliably *makes* your expectations true.
+Now apply the proposal to the stopped clock. Across the relevant moments at which you might consult it, its reading carries almost no information about the actual time. The 4:17 belief was true by coincidence, which the reliability criterion is designed to filter out. Knowledge, on this account, is not a belief that happens to be true but a capacity whose connection to the result is robust. Whether this handles every Gettier case remains a test for the proposal, not a victory by definition.
 
 ## Ten Stress Tests
 
@@ -37,7 +37,7 @@ A definition earns its keep against hard cases. Here are ten, spanning the pedes
 
 **A weather forecast.** The model says rain tomorrow, and its track record shows it is right far more often than chance. Your uncertainty about tomorrow drops by a measurable number of bits, reliably, forecast after forecast. Knowledge — the everyday kind, and the definition certifies it without ceremony.
 
-**A false belief.** However sincerely held, a false belief does not reliably reduce entropy about outcomes; acting on it makes your predictions worse, not better. It fails, as it should. Note *how* it fails: not because a truth clause excludes it by fiat, but because falsehood shows up in the track record.
+**A false belief.** A false generalization may predict well inside a limited regime: Newtonian mechanics is the familiar example. What is known in such a case is the model's reliable domain and consequences, not the unrestricted literal claim. Persistent falsehood eventually appears as systematic error when the model is pushed beyond that domain.
 
 **A random guess.** You guess the coin will land heads, and it does. No pattern was exercised; no entropy was reduced in advance — your predictive distribution was exactly as flat after the guess as before. The lucky hit is not knowledge, and the definition never has to consult your feelings of confidence to say so.
 
@@ -49,27 +49,27 @@ A definition earns its keep against hard cases. Here are ten, spanning the pedes
 
 **Knowing which key opens which door.** The pattern is real and reliable, and it is useless in front of any other door. All knowledge is like this; the front-door key is just the case where the conditions are too obvious to suppress. A pattern reduces entropy *given* a context, within a domain, under standing assumptions — knowledge inherits the conditional structure of [truth itself](02-all-truth-is-conditional.md), and a knowledge claim, like a truth claim, is compressed shorthand for a conditional.
 
-**A database no one reads.** A hard drive of climate data contains correlations that would, if exercised, predict a great deal. Sitting inert, it predicts nothing. Information alone is not knowledge; it must be installed in an agent's predictive structure, actively reducing some agent's uncertainty. This is not a verbal stipulation but the load-bearing wall of the definition — entropy is always somebody's uncertainty about something, and where there is no agent there is no one for the pattern to inform.
+**A database no one presently reads.** A recoverable, trusted archive can preserve communal knowledge even while no one is consulting it; availability, not continuous exercise, matters. A drive whose encoding and provenance are lost contains physical structure but no usable record. This distinction connects stored information to agents without pretending that knowledge vanishes whenever the library closes.
 
-**A perfectly known quantum state.** Suppose you know the complete quantum state of a system about to be measured. Your epistemic uncertainty is zero — no fact about the state is hidden from you — and yet you cannot predict "the" outcome, because in the QBU every outcome occurs and the branching itself is irreducible. The definition handles this cleanly by respecting the line between Credence and Measure: knowledge eliminates the epistemic uncertainty and leaves the ontic branching untouched, exactly as it should. A definition that demanded prediction of single outcomes here would be demanding clairvoyance about a fact that does not exist.
+**A quantum state under the QBU interpretation.** Even a complete state description does not select a unique future observation. Within QBU, the state and its Measure distribution can be known while an observer still has self-locating uncertainty about its future record. This conditional example illustrates the later distinction between a physical model and an agent's Credence; other interpretations describe the uncertainty differently.
 
-**Steering across branches.** Conversely, an agent whose patterns tell it which actions lead to favorable branch-weights — which choices put most of its future Measure in branches worth occupying — is exercising knowledge in the fullest sense. This is what knowledge is ultimately *for* in a branching world: not passive anticipation but navigation.
+**Steering across branches.** Conditional on QBU and a decision rule that uses Measure, an agent can use reliable models to compare the weighted consequences of actions. That is a specialized instance of the general function: knowledge supports navigation, not merely passive anticipation.
 
-Ten scenarios, no epicycles. The definition certifies the forecast, the bicycle, the handshake, the key, and the branch-navigator; it rejects the false belief, the lucky guess, the stopped clock, and the unread database; and it draws the epistemic-ontic line exactly where the physics draws it.
+The cases expose both the reach and the conditions of the proposal. It handles skill, convention, records, luck, and prediction in one functional vocabulary, while the quantum cases remain conditional on the physical model adopted later.
 
 ## Four Kinds of Knowledge
 
-One definition, then — but not one kind. Patterns can reduce entropy in structurally different ways, and running the kinds together produces some of epistemology's most persistent confusions. Four categories cover the territory.
+One definition, then — but not one kind. Patterns can reduce uncertainty in structurally different ways. Four categories provide a useful, non-exhaustive map.
 
-**Explanatory knowledge** consists of general theories — quantum mechanics in its many-worlds form, evolution by natural selection, general relativity. These are frameworks that hold across every branch within their explanatory domain: there is no timeline where evolution is false and creationism true, because the theory's content is not a fact *about which branch you are in* at all. Accordingly, explanatory theories are evaluated by explanatory coherence, simplicity, generality, and resistance to criticism — the critical-rationalist virtues — and the interesting question of whether they can also bear credences is one I settle [in defense of Bayes](12-in-defense-of-bayes.md).
+**Explanatory knowledge** consists of general theories — evolution by natural selection and general relativity, for example. Such frameworks organize and explain families of observations rather than merely reporting one outcome. They are evaluated by empirical adequacy alongside coherence, simplicity, scope, and resistance to criticism. Competing theories and versions of theories can also bear graded Credence, as [In Defense of Bayes](12-in-defense-of-bayes.md) argues.
 
-**Empirical knowledge** is knowledge of which branch you are in: whether you carry the genetic variant, whether it will rain tomorrow, what a historical actor's motives were. This is the native domain of Credence and Bayesian updating — probabilistic through and through, with each new observation trimming the set of timelines consistent with your evidence. The taxonomy of what, exactly, an agent can be uncertain *about* is richer than it first appears, and I map it in [the varieties of uncertainty](13-varieties-of-uncertainty.md).
+**Empirical knowledge** concerns contingent conditions: whether you carry a genetic variant, whether it will rain tomorrow, or what evidence supports an account of a historical actor's motives. This is a natural domain for graded Credence and statistical updating. Under QBU some such uncertainty can be modeled as self-location among records, but the category does not depend on that interpretation. The taxonomy of what an agent can be uncertain *about* is richer than it first appears, and I map it in [the varieties of uncertainty](13-varieties-of-uncertainty.md).
 
-The explanatory-empirical line is worth drawing sharply because each side's method fails on the other's territory. Judging a universal explanatory framework as if it were a weather forecast — the misuse of Bayes that Deutsch and his followers rightly attack — is one error; treating a branch-specific empirical question as if criticism alone could settle it, with no probabilistic bookkeeping, is the mirror error. Most of the shouting between Bayesians and critical rationalists is a failure to notice that they are custodians of different categories.
+The explanatory-empirical distinction is useful, but it does not assign exclusive methods. Explanations face evidence and can receive comparative probabilities; forecasts depend on explanatory models and criticism. Bayesian bookkeeping and critical scrutiny are complementary tools whose importance varies with the problem.
 
 Sharply drawn is not exhaustively drawn, though, and the boundary has honest hybrid cases. A parameterized theory — general relativity plus a Hubble constant, particle physics plus a dark-matter density — is an explanatory framework wrapped around an empirical dial: the framework answers to criticism while the parameter answers to Bayes. Historical interpretation blends the two the other way, running general explanatory machinery (economics, sociology, evolutionary psychology) over irreducibly branch-specific gaps in the record. The categories are joints in the territory, not a demand that every specimen fall on one side.
 
-**Formal knowledge** — mathematics and logic — is non-empirical, necessary, and derivable a priori: arithmetic, set theory, Gödel's incompleteness theorems. No branch of the multiverse makes seven prime and no observation was ever needed to establish it. Its entropy reduction is real but distinctive: it removes uncertainty about the consequences of premises, which is why it multiplies the power of the other three kinds — the forecast model is empirical patterns run through formal machinery.
+**Formal knowledge** — mathematics and logic — concerns what follows under specified axioms, definitions, and inference rules: arithmetic, set theory, Gödel's incompleteness theorems. Once the formal context is fixed, no empirical observation changes the derivation, although our choice and understanding of formal systems remain historically and cognitively situated. Its uncertainty reduction is distinctive: it exposes consequences of premises and multiplies the power of empirical models.
 
 **Tacit knowledge** — the bicycle, the violin, the seasoned diagnostician's hunch — is embodied, implicit, and resistant to explicit formulation. It passed the stress test above on the same terms as everything else, and that is the point of listing it as a full category rather than a footnote: the definition never required knowledge to be statable, only to be encoded and reliable.
 
