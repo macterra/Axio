@@ -1,7 +1,7 @@
 ---
 title: 'Ornament and Advantage'
 subtitle: 'Costly signals and collapsing credentials'
-status: draft
+status: review
 sources:
   - 174783426.ornament-and-advantage
   - 205272057.the-collapse-of-proof-of-work-credentials

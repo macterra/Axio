@@ -1,7 +1,7 @@
 ---
 title: 'Attention Is an Economy'
 subtitle: 'The primordial market'
-status: draft
+status: review
 sources:
   - 198325110.attention-is-an-economy
 ---
@@ -14,7 +14,7 @@ That small transaction is worth taking seriously, because it is a transaction. T
 
 At every moment, an agent is surrounded by more possible objects of attention than it can process. Sensory signals, memories, threats, plans, bodily sensations, social cues, unresolved obligations, fantasies, anxieties, habits, and abstract problems all compete for cognitive bandwidth. The agent cannot attend to all of them, so the field must be ranked, filtered, and compressed. What remains is not the world as such. It is the world made tractable.
 
-This makes attention an economic problem at the root of cognition. The resource is scarce: there is only one stream of focal awareness, and it does not scale. The resource is rivalrous: attention given to one thing is unavailable to everything else. And every act of attention therefore has an opportunity cost — to attend to one thing is to forgo attending to another. These are the defining conditions of an economy, and they hold in the mind before any coin is struck. Attention is also where the discipline of [value as sacrifice](../05-value-and-ethics/04-value-as-sacrifice.md) bites first and deepest: what you attend to is what you actually value, whatever your professed values say, because attention is the one expenditure you cannot fake and cannot defer.
+This makes attention an allocation problem at the root of cognition. Focal processing is limited and rival across simultaneous demands, even though attention has multiple systems and can sometimes be divided or trained. Each allocation has opportunity cost. Attention therefore supplies evidence about operative priorities, but not an infallible value meter: salience capture, addiction, threat, habit, compulsion, misinformation, and platform design can pull attention away from reflectively endorsed ends. [Value as Sacrifice](../05-value-and-ethics/04-value-as-sacrifice.md) now states that qualification explicitly.
 
 ## Relevance Under Scarcity
 

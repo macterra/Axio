@@ -1,7 +1,7 @@
 ---
 title: 'Monopoly Hypocrisy'
 subtitle: "The state's case against competition"
-status: draft
+status: review
 sources:
   - 172679351.monopoly-hypocrisy
   - 176368883.against-the-minimum-wage
@@ -9,17 +9,17 @@ sources:
 
 The United States government once prosecuted Microsoft for bundling a web browser with an operating system. Consider the prosecuting party. It bundles law with policing, policing with courts, courts with prisons, prisons with armies, and the whole package with the exclusive right to take a share of your income — one bundle, one supplier, no unsubscribe. The entity that finds a free browser sinister is the entity whose own product you cannot decline.
 
-This is not a gotcha. It is the entrance to an argument, and the argument is the point of this chapter. Monopoly is one of the standard indictments of markets — the charge sheet is worked through in [Capitalism on Trial](06-capitalism-on-trial.md), and this chapter is the monopoly count answered in full. The answer is not that corporate dominance never matters. It is that the concept of monopoly, taken seriously, indicts the prosecutor far more completely than the defendant — and that once you see this inversion in antitrust, you will recognize it again, running the same way, in the labor market.
+This is not a complete antitrust argument. It is a reciprocity test. Monopoly is one of the standard indictments of markets, and the coercive institution judging private dominance must disclose its own exclusivity, capture risks, and error-correction limits. That does not make private exclusion harmless or invalidate every public remedy. It means regulator and regulated should face the same questions about contestability, due process, imposed costs, and meaningful exit.
 
 ## The Only Absolute Monopoly
 
 A company that grows large enough is accused of anti-competitive behavior. It is fined, split apart, or shackled with regulatory obligations. Meanwhile the government pressing the charge claims a monopoly on taxation, a monopoly on lawmaking, a monopoly on policing, a monopoly on legitimate violence — and claims all of them within its borders without exception, without expiry, and without asking.
 
-These monopolies differ in kind, not merely in degree, from anything a corporation holds. A market monopoly, however dominant, is conditional on the continued preference of its customers. A state monopoly is conditional on nothing. You cannot contract with a rival supplier of courts. You cannot take your policing business elsewhere. You cannot opt out of the tax system the way you opt out of a subscription. The alternatives on offer are exile, prison, or worse — which is to say, they are not alternatives; they are the enforcement mechanism. By the definition defended in [What Counts as Coercion](../05-value-and-ethics/09-what-counts-as-coercion.md) — the credible threat of actual harm to gain compliance — the state's monopolies are not merely protected by coercion. They are constituted by it.
+Territorial states claim forms of authority that ordinary firms do not: taxation, legislation, policing, and final adjudication. Those powers are backed by conditional threats and therefore require the coercion analysis developed in [What Counts as Coercion](../05-value-and-ethics/09-what-counts-as-coercion.md). Yet private dominance is not always renewed by unconstrained preference. Network effects, control of essential infrastructure, switching costs, contractual lock-in, and acquisition of rivals can make exit nominal. The difference between state and firm remains important without making either category self-legitimating.
 
 Set the corporate cases beside this. Google dominates search, and its dominance lasts exactly as long as no one builds something users prefer; the moment they do, the empire drains away one voluntary defection at a time. Bitcoin can be freely chosen over any national currency by anyone who wants a money [no government can inflate or forbid into compliance](12-ungovernable-by-design.md). But try offering a rival legal system in Washington or Ottawa — a competing supplier of the state's core product — and the response will not be a price war.
 
-The asymmetry is exact. Business monopolies are fragile because they rest on consent, renewed with every transaction. State monopolies are entrenched precisely because they do not.
+The asymmetry is substantial but not exact. Firms can lose customers and states can lose residents, legitimacy, elections, or jurisdiction, but all of those exits carry different costs. Contestability must be measured rather than inferred from the label *public* or *private*.
 
 ## What Antitrust Protects
 
@@ -27,7 +27,7 @@ The official theory of antitrust is consumer protection: monopolies raise prices
 
 Higher prices? The state sets mandatory price floors and administers the only institution — monetary inflation — that guarantees prices rise everywhere at once, not through market dynamics but as deliberate policy. Suppressed innovation? The state bans entire categories of it outright, from medicines to money. Degraded quality? The state regulates quality by fiat in every industry it touches, then exempts its own services — schools, permits, courts — from any competitive test at all. Every harm antitrust attributes to the monopolist is one the state inflicts systematically, at national scale, with no rival to discipline it.
 
-So the consumer-protection theory fails on its own evidence, and a better theory is needed for what antitrust actually responds to. Here is one: what draws the prosecution is not market share but resemblance. A firm with billions in capital, millions of users, and its own payment rails, communication channels, and dispute-resolution systems has begun to look like a proto-state — a structure that can coordinate, persuade, and organize life at a scale that rivals government's own. That is the profile that gets a company sued. Antitrust is not the protection of consumers from monopoly. It is the protection of the reigning monopoly from competition.
+Public institutions can also raise prices, suppress innovation, and degrade quality. That reciprocity exposes a governance problem; it does not show that consumer protection is fictitious. Antitrust cases can target exclusionary contracts, tying, collusion, predatory acquisition, or control of bottlenecks, and their merits depend on evidence of mechanism and consumer or competitive harm. Regulators can misuse those powers to protect themselves or favored incumbents. The chapter's claim is therefore a risk diagnosis, not a universal explanation of antitrust motive.
 
 This reading explains what the official theory cannot: why the public's fear is calibrated to the wrong targets. We are taught to dread Standard Oil but not the IRS, to rage against Meta's data collection but not the NSA's, to find a bundled browser more alarming than the bundling of law with violence. In every pairing, the voluntary institution — the one you can quit — draws the suspicion, and the coercive one draws the trust. An error this systematic is not a quirk of public psychology. It is the predictable output of civics taught by the monopolist, and the most complete monopoly turns out to include a monopoly on the moral framing of monopoly itself. The regulator's robes are the monopolist's best disguise.
 
@@ -41,7 +41,7 @@ True compassion expands agency. This law contracts it, and contracts it most for
 
 ## The Seen and the Unseen
 
-The economics is not subtle. A minimum wage is a price control, and price controls do what price controls do: raise the price of anything above its market-clearing level and less of it is bought. This is not ideology; it is arithmetic. When the mandated cost of an hour of labor exceeds what that hour produces, the worker is not lifted to the mandated wage. He is priced out of the market entirely. The employer automates, outsources, restructures — or simply never posts the job.
+The mechanism is clear; its empirical magnitude is not arithmetic. A binding wage floor raises the cost of some labor and can reduce hours, hiring, or employment at the margin. It also raises earnings for workers who remain employed and may affect turnover, productivity, vacancies, prices, firm entry, and employer market power. The sign and size of the net effect depend on the level of the floor, local labor demand, enforcement, monopsony, substitution, and time horizon. A categorical verdict requires evidence the simple competitive model does not contain.
 
 Bastiat's old distinction between the seen and the unseen was built for this case. The seen is the worker who keeps her job at the higher wage — photographable, interviewable, grateful. The unseen is the job that was never created: the position that stopped making sense at the new price, the small business that never opened, the first rung of the ladder quietly sawn off. No one marches for the unseen. There is no photograph of a job that never existed. And so the policy's cost is borne by people who cannot be pointed to, which is precisely what makes it politically durable.
 
@@ -57,10 +57,10 @@ It is not justice. It is a ritual — a way of purchasing the feeling of virtue 
 
 And there is no shortage of genuinely compassionate alternatives, every one of them voluntary. If a society judges that low-skill wages are too low, it can subsidize them directly — a wage subsidy raises take-home pay without making the worker more expensive to hire, so it creates none of the unseen casualties. It can fund apprenticeships that raise what workers produce, attacking low wages at the cause instead of banning the symptom. It can give — unconditional charity, no bureaucrat's decree required. The distinguishing mark of every real remedy is the same: it adds resources or capability without prohibiting a single voluntary exchange. The minimum wage is the one instrument in the set that works by prohibition alone, and it is the one the state reaches for — because prohibition is the instrument the state is.
 
-You cannot legislate value into existence. You can only ban the people who would have created it.
+You cannot legislate productivity into existence. You can change bargaining constraints and the distribution of a surplus, sometimes with employment costs and sometimes in a market where employers already possess wage-setting power. The policy should be judged by measured effects and alternatives, not by compassionate intent or by a one-model proof.
 
 ## The Inversion, Named
 
 The two halves of this chapter are one argument. Antitrust prosecutes voluntary dominance in the product market; the minimum wage prosecutes voluntary agreement in the labor market. Both are administered by the only institution whose own monopoly is absolute, territorial, and non-consensual. Both wear a protective mask — the consumer's shield, the worker's floor — and both, unmasked, do the same work: they criminalize alternatives to the state's preferred arrangements while exempting the state's own coercion from every standard being enforced.
 
-The monopolist accuses its rivals of monopoly. The coercer accuses consent of exploitation. That is not irony, and it is not hypocrisy of the casual, human kind. It is inversion as method — the systematic relocation of blame from force to freedom — and the measure of its success is how natural the inverted picture has come to feel. The spell is broken the same way every spell is broken: by saying what the thing is. The state's case against competition was never about protecting you from monopoly. It is the monopoly, protecting itself.
+The monopolist can accuse its rivals of monopoly, and a coercive institution can override agreements in the name of protecting consent. Sometimes that is self-protection or capture; sometimes an apparently voluntary agreement sits inside domination or market power. The safeguard is symmetry: require evidence of the private mechanism, evidence that the remedy improves it, public reasons, appeal, and accountability for regulatory error. Neither consent nor protection should function as a costume.

@@ -1,14 +1,14 @@
 ---
 title: 'The Loaded Dice of Parenthood'
-subtitle: 'Biological asymmetry and the wage gap'
-status: draft
+subtitle: 'Biology, institutions, and earnings differences'
+status: review
 sources:
   - 180970594.the-loaded-dice-of-parenthood
 ---
 
 The gender wage gap may be the most moralized statistic in economics. It is routinely presented as a direct readout of discrimination: women earn less, therefore someone is doing something wrong to them, and the size of the gap measures the size of the wrong. [The previous chapter](22-the-prosperity-paradox.md) asked why prosperous societies stop having children, and part of the answer was that children have become enormously costly. This chapter asks a harder question about the same cost: who, inside the household, ends up paying it — and whether the pattern of payment is the injustice it is taken to be.
 
-My answer is that the wage gap is primarily an equilibrium, not an atrocity. Human labor markets do not begin from a neutral baseline. They rest on an asymmetric biological foundation: one sex absorbs the non-delegable physiological costs of gestation, childbirth, postpartum recovery, and early breastfeeding. These events do not predetermine years of childcare. What they do impose is an early **volatility penalty** — a structural disturbance to continuity, availability, and productivity, arriving at precisely the career stage when returns start compounding.
+Aggregate earnings differences can emerge from several interacting mechanisms and are not a direct meter of discrimination alone. In 2024, the [U.S. Bureau of Labor Statistics reported](https://www.bls.gov/opub/reports/womens-earnings/2024/home.htm) median weekly earnings for full-time women at 82.7% of men's, while warning that the comparison does not control for occupation, experience, specialization, responsibilities, or other relevant factors. Gestation, childbirth, recovery, and some early feeding create an asymmetric starting condition for many parents. Whether that becomes a career-long penalty depends on households, employers, policy, health, bargaining, and social norms.
 
 This is not biological determinism. It is economic path dependence. Biology creates the initial asymmetry; markets magnify it; households stabilize it. Each step in that chain deserves to be stated precisely, because the argument's force — and its limits — live in the precision.
 
@@ -16,7 +16,7 @@ This is not biological determinism. It is economic path dependence. Biology crea
 
 A clean analysis distinguishes three interacting layers, and most of the confusion in this debate comes from collapsing them into one.
 
-**Layer 1 — the biological hard constraint.** Gestation, childbirth, recovery, and early breastfeeding are not transferable. No policy, norm, or technology currently reassigns them. They impose mandatory downtime and physiological instability on the mother, and on no one else. This layer is small in calendar time — months, not decades — but it is a genuine hard constraint, the only one in the model.
+**Layer 1 — the biological constraint.** Gestation, childbirth, and some recovery are not transferable; breastfeeding is partly substitutable where formula, pumping, health, and preference allow. Effects vary widely across pregnancies and people. This layer is measured in months rather than entire careers, but its timing can interact with workplaces and later choices.
 
 **Layer 2 — the continuity spillover.** The hard constraint generates a secondary pattern of volatility that outlasts it. Medical recovery and follow-ups, disrupted sleep, uneven energy, a higher baseline risk of interruption — these create a disruptive rhythm rather than a single absence. And early childcare, which is time-sensitive, unpredictable, and physically coupled to the mother's initial role, extends that volatility well past the biological window. Nothing at this layer is mandatory in the way Layer 1 is. But it flows downhill from Layer 1, and rerouting it costs something.
 
@@ -32,7 +32,7 @@ It comes in two main forms. Deep-work roles — coding, law, research, design �
 
 Underneath reliability sits what I call **deployable time**: cognitive readiness, stable hours, focused attention, predictable energy, low interruption variance. Pregnancy and early childcare degrade every component of it. And because productivity in complex work is nonlinear — continuity compounds output while fragmentation suppresses it — equal total effort cannot rescue unequal interruption patterns. Forty fragmented hours do not buy what forty continuous ones do. The parent who works the same number of hours in shattered blocks is not being cheated of the difference; the difference was never produced.
 
-This is the step where "the market discriminates" gets the mechanism wrong. Firms do not buy sincerity, effort, or intention; they buy legible, repeatable productivity. Productivity requires reliability, reliability requires continuity, and continuity requires uninterrupted deployable time. Biological asymmetry alters deployable time, and competitive markets price what alters output. A firm that paid fragmented and continuous work identically would be outcompeted by one that priced them correctly — and the pricing would look the same if the interrupted employees were selected by lottery instead of by sex. Markets price continuity, not gender. Gender enters only because Layers 1 and 2 determine, asymmetrically, whose continuity gets broken first.
+Continuity and availability can affect output in some roles, but the market does not observe productivity without error. Employers use proxies, expectations, bargaining power, networks, promotion rules, and statistical beliefs; those mechanisms can price actual interruption, anticipated motherhood, sex itself, or institutional convention. Competitive pressure may punish discrimination, and it may preserve it when information is costly, customers or managers share a bias, or job design makes one model of availability artificially decisive. Biology is one input to test, not an acquittal of labor-market institutions.
 
 ## The Zero on the Books
 
@@ -58,14 +58,14 @@ Nothing in this model requires villains, and nothing in it requires perfectly ra
 
 Nor does the wage differential rank the choices. [All value is subjective](../05-value-and-ethics/01-the-myth-of-objective-value.md): there is no objective scale on which the continuity earner's path outranks the caregiver's, and the market's zero valuation of domestic labor is an accounting convention, not a verdict on worth. A household that trades market income for a parent at home has revealed what it values, and its evaluation stands on equal footing with any other. The couple that chooses otherwise has revealed something too. Neither needs correcting.
 
-The opposing view has to claim that a freely chosen asymmetric outcome is itself a harm — that difference is damage. But [harm is the non-consensual degradation of an agent's capacity to pursue its goals](../05-value-and-ethics/11-what-counts-as-harm.md), and a specialization the household chose, under constraints nobody imposed, degrades nothing non-consensually. Enforced symmetry gets both categories wrong at once: it misidentifies difference as harm and voluntary specialization as subjugation, and it can only "correct" the pattern by overriding the choices that produce it. Where genuine discrimination exists — equal continuity, equal output, unequal pay — it is a real wrong, and this framework has no trouble naming it. What the framework refuses is the inference from *unequal outcome* to *someone did wrong*.
+An asymmetric specialization can be genuinely chosen and mutually valued. “Household choice” can also contain income dependence, constrained childcare, employer inflexibility, cultural pressure, poor information, or bargaining inequality. Under Volume V's consent standard, a stable equilibrium is evidence but not proof of uncoerced authorization. The analysis must ask whose options were feasible, who can revise the arrangement, and who owns the long-run risks. Unequal outcome does not prove wrongdoing; neither does aggregate voluntariness disprove it.
 
 ## The Structural Asymmetry Principle
 
 The whole dynamic compresses into a single principle:
 
-> **When labor inputs carry asymmetric biological volatility, competitive pressures drive households toward asymmetric specialization, and that specialization produces persistent wage differences through compounding productivity.**
+> **When biological and institutional constraints create asymmetric interruption, households and employers may respond with specialization that compounds into persistent earnings differences.**
 
 Every term is load-bearing. *Biological volatility* is Layer 1 plus its spillover. *Competitive pressures* are the market's continuity premium, which operates on interruption patterns and is blind to who carries them. *Household specialization* is the free, locally sensible response. *Compounding productivity* is why small early differences become large late ones.
 
-Read this way, the wage gap is not primarily a measure of discrimination. It is a record of how households optimize for continuity in a biologically asymmetric world — a trace of starting conditions expressed through free choices. Policy can shift where the cost lands, and there are decent arguments for shifting it. But a statistic produced by loaded dice and voluntary throws is not a map of injustice, and treating it as one guarantees that the interventions will keep aiming at oppressors who are not there, while the actual structure — constraint, spillover, equilibrium — rolls on untouched.
+Read this way, the raw earnings gap is not a measure of discrimination alone. It is a mixture of hours, occupation, experience, parenthood, job design, selection, bargaining, discrimination, and other factors whose shares vary by population and method. The proposed biological-to-continuity pathway is one causal hypothesis within that mixture. Policy can shift costs and can also change job design or bargaining institutions; each intervention needs an identified mechanism and measured result.

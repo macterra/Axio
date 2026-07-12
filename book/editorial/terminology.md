@@ -405,6 +405,60 @@ Loss of the coexistence protocol's shield against proportionate defensive coerci
 
 ## Coordination, governance, and culture
 
+### Price
+
+An exchange ratio formed under specified conditions of scarcity, information, institutions, bargaining power, alternatives, and effective demand. A price is public evidence about a transaction or market; it is not intrinsic value or a complete aggregation of affected agents' values.
+
+**Canonical homes:** Volume 6, Chapters 1 and 4.
+
+### Wealth
+
+Control over resources, capabilities, relationships, or institutions that agents can use to satisfy purposes. Monetary valuation compresses these capacities under assumptions and is not identical to them.
+
+**Canonical home:** Volume 6, Chapter 2.
+
+### Capital
+
+Wealth organized toward future production or maintained productive capacity. Whether an object or claim functions as capital depends on its role, complementary inputs, institutions, and time horizon.
+
+**Canonical home:** Volume 6, Chapter 2.
+
+### Money and currency
+
+Money is a transferable claim and accounting system that supports exchange across unlike goods and time. A currency is a particular unit, rule set, and institutional implementation of money. Neither creates real productive capacity merely by increasing nominal claims.
+
+**Canonical homes:** Volume 6, Chapters 2–3.
+
+### Market
+
+An institution or process through which agents make offers, exchange, and revise plans under rules governing entry, exit, information, property, liability, and enforcement. The presence of a price does not by itself establish meaningful consent, competition, or efficient correction.
+
+**Canonical homes:** Volume 6, Chapters 1, 4, and 6.
+
+### Public good
+
+A good that is non-rival in consumption and costly to exclude non-payers from using under the relevant technology and institutions. These properties create a potential funding problem; they do not select an optimal quantity or remedy by definition.
+
+**Canonical home:** Volume 6, Chapter 8.
+
+### Externality
+
+A material cost or benefit of an action borne by agents who are not fully represented in the transaction or decision. Property, liability, bargaining, standards, taxes, collective governance, and prohibition are alternative responses whose transaction, knowledge, coercion, and capture costs require comparison.
+
+**Canonical home:** Volume 6, Chapter 6.
+
+### Contestability
+
+The degree to which an incumbent's control can be challenged or displaced without its prior permission, considering entry barriers, switching costs, infrastructure, law, concentration, and the practical cost of exit.
+
+**Canonical homes:** Volume 6, Chapters 6, 11, and 13.
+
+### Funding test
+
+Failure to attract voluntary funding is evidence that a project and its offered mechanism have not assembled enough effective support to cover cost. It is not a definition of insufficient value where collective action, purchasing power, liquidity, missing beneficiaries, or transaction costs are active.
+
+**Canonical homes:** Volume 6, Chapters 4 and 8.
+
 ### Metagame
 
 A higher-order game whose incentives alter which strategies and outcomes matter within a lower-order game.
