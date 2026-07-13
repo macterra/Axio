@@ -2,7 +2,23 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 4 complete — Volumes 1–9 edited and in author review; Phase 5 is next.** The manuscript contains nine volumes, 241 chapters, and roughly 550,000 words. Phase 1 established the editorial control documents; Phase 2 confirmed the nine-volume architecture with targeted revisions recorded in `book/editorial/architecture/`. Volume passes are recorded in `book/editorial/volume-edits/`. The next pass reconciles load-bearing concepts across volumes.
+Status: **Phase 4 complete — all nine chapter-level volume passes are merged; Phase 5 is next.** The manuscript contains nine volumes, 241 chapters, and roughly 550,000 words. All 248 volume manuscript files—introductions and chapters, excluding front matter—are in `review`. Merged editorial passes are not yet promotion to `final`; cross-volume reconciliation, glossary work, continuous-reading compression, framing, and final verification remain.
+
+## Progress at a glance
+
+| Phase | Status | Result or next gate |
+|---|---|---|
+| 1. Editorial controls | **Complete** | Argument map, terminology authority, claim-calibration standard, and repetition ledger established. |
+| 2. Architecture audit | **Complete** | Book-wide architecture and nine volume memos completed. |
+| 3. Foundational volumes | **Complete** | Volume 1–5 passes merged; manuscript remains in `review`. |
+| 4. Applied volumes | **Complete** | Volume 6–9 passes merged; manuscript remains in `review`. |
+| 5. Cross-volume reconciliation | **Next** | Begin with agency and sovereignty, then reconcile the remaining load-bearing concept clusters. |
+| 6. Reader-facing glossary | **Pending Phase 5** | Canonical definitions must stabilize before publication. |
+| 7. Compression and prose | **Pending** | Continuous-reading and cross-volume repetition decisions remain. |
+| 8. Framing material | **Pending** | Revise front matter and introductions after the manuscript stabilizes. |
+| 9. Verification and promotion | **Pending** | Promote `review` to `final` only after author approval and full validation. |
+
+Completed controls now cover all 241 argument-map records, nine architecture memos, and nine volume-edit records. The complete book build and internal-link validation passed at the end of the Volume 9 pass.
 
 ## Editorial goals
 
@@ -18,6 +34,8 @@ The edit should make *Axio*:
 A reasonable result would be an 8–15% reduction overall, driven by redundancy rather than a word-count quota. Volume 7 is likely to need the greatest compression.
 
 ## Phase 1 — Editorial control documents
+
+Progress: **Complete.** The four control documents are established and were updated throughout the volume passes.
 
 Create four working documents before changing prose.
 
@@ -70,6 +88,8 @@ Track recurring definitions, examples, slogans, and miniature summaries. Choose 
 
 ## Phase 2 — Complete architecture audit
 
+Progress: **Complete.** The book-wide architecture and all nine volume memos are recorded in `book/editorial/architecture/`.
+
 Read only the Preface, Introduction, nine volume introductions, and final chapter of each volume.
 
 Test:
@@ -87,9 +107,11 @@ Produce a short structural memo for each volume before editing chapters. Do not 
 
 ## Phase 3 — Foundational volumes
 
+Progress: **Complete.** The Volume 1–5 chapter-level passes are merged; their manuscript files remain in `review` pending later phases.
+
 ### Volume 1 — The Physics of Agency and the Branching Universe
 
-Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/01-physics-of-agency.md`.
+Progress: **Pass merged; manuscript in review.** See `book/editorial/volume-edits/01-physics-of-agency.md`.
 
 This receives the first full edit because almost every later volume borrows its ontology.
 
@@ -105,7 +127,7 @@ This receives the first full edit because almost every later volume borrows its 
 
 ### Volume 2 — Conditionalism: Truth, Bayes, and Rationality
 
-Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/02-conditionalism.md`.
+Progress: **Pass merged; manuscript in review.** See `book/editorial/volume-edits/02-conditionalism.md`.
 
 - Make the self-application of “all truth is conditional” explicit and stable.
 - Distinguish Conditionalism from contextualism, relativism, holism, and ordinary qualification.
@@ -119,7 +141,7 @@ Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/0
 
 ### Volume 3 — Minds and Machines
 
-Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/03-minds-and-machines.md`.
+Progress: **Pass merged; manuscript in review.** See `book/editorial/volume-edits/03-minds-and-machines.md`.
 
 - Consolidate the definitions of model, mind, consciousness, awareness, sentience, sapience, intelligence, and agency.
 - Test whether the Modeler-Schema account explains consciousness or specifies its functional correlates.
@@ -133,7 +155,7 @@ Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/0
 
 ### Volume 4 — Axionic Agency
 
-Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/04-axionic-agency.md`.
+Progress: **Pass merged; manuscript in review.** See `book/editorial/volume-edits/04-axionic-agency.md`.
 
 This is the formal center and should receive the most demanding evidentiary review.
 
@@ -151,7 +173,7 @@ This is the formal center and should receive the most demanding evidentiary revi
 
 This is the normative hinge.
 
-Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/05-value-and-ethics.md`.
+Progress: **Pass merged; manuscript in review.** See `book/editorial/volume-edits/05-value-and-ethics.md`.
 
 - Reconcile the opening rejection of objective value with the later introduction of Sapient Agency Realism.
 - Make agent-binding operational rather than merely rhetorical.
@@ -167,9 +189,11 @@ Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/0
 
 ## Phase 4 — Applied volumes
 
+Progress: **Complete.** The Volume 6–9 chapter-level passes are merged; their manuscript files remain in `review` pending later phases.
+
 ### Volume 6 — Markets, Money, and Prosperity
 
-Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/06-markets-and-money.md`.
+Progress: **Pass merged; manuscript in review.** See `book/editorial/volume-edits/06-markets-and-money.md`.
 
 - Separate economic theory from empirical and historical claims.
 - Verify or qualify claims about poverty, regulation, tariffs, monopoly, Bitcoin, nuclear energy, demographics, and intellectual property.
@@ -184,7 +208,7 @@ Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/0
 
 At roughly 95,000 words, this is the strongest candidate for substantial compression.
 
-Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/07-liberty-and-governance.md`.
+Progress: **Pass merged; manuscript in review.** See `book/editorial/volume-edits/07-liberty-and-governance.md`.
 
 - Preserve the mature Grey Zone position and revise earlier categorical passages around it.
 - Reconcile the earlier treatment of incitement as non-coercive speech with its later classification as delegated violence.
@@ -199,7 +223,7 @@ Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/0
 
 ### Volume 8 — Culture, Memetics, and Ideology
 
-Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/08-culture-and-memetics.md`.
+Progress: **Pass merged; manuscript in review.** See `book/editorial/volume-edits/08-culture-and-memetics.md`.
 
 - Define what explanatory work “patterns as players” performs beyond metaphor.
 - Apply the Axionic Criterion consistently to friendly and hostile ideologies.
@@ -213,7 +237,7 @@ Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/0
 
 ### Volume 9 — Meaning, Spirituality, and the Secular Sacred
 
-Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/09-meaning.md`.
+Progress: **Pass merged; manuscript in review.** See `book/editorial/volume-edits/09-meaning.md`.
 
 - Separate arguments the book claims to establish from the author's chosen credo.
 - Avoid re-arguing the preceding book in compressed form.
@@ -225,6 +249,8 @@ Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/0
 **Exit:** The conclusion follows from the book without pretending chosen meaning has been deductively established, and the double envoi retains its force.
 
 ## Phase 5 — Cross-volume reconciliation
+
+Progress: **Next.** No reconciliation cluster is yet complete; the first pass is agency and sovereignty.
 
 Run dedicated continuity passes for:
 
@@ -251,6 +277,8 @@ Resolve the incitement, objective-value, moral-realism, and institutional-author
 
 ## Phase 6 — Reader-facing glossary
 
+Progress: **Pending Phase 5.** The internal terminology sheet exists, but the published glossary has not been created.
+
 Build a published glossary only after cross-volume reconciliation has stabilized the terminology. The glossary is a reader aid, not a substitute for defining terms where the argument first introduces them.
 
 - Create `book/00-front/03-glossary.md` and include it in the book's front matter and navigation.
@@ -265,6 +293,8 @@ Build a published glossary only after cross-volume reconciliation has stabilized
 **Exit:** A reader can locate and distinguish every load-bearing term without encountering a definition that conflicts with the chapters.
 
 ## Phase 7 — Compression and prose
+
+Progress: **Pending.** Volume-level compression occurred during the merged passes; the dedicated continuous-reading and cross-volume compression pass remains.
 
 Perform three distinct passes.
 
@@ -286,6 +316,8 @@ Improve rhythm, clarity, transitions, pronoun consistency, examples, and sentenc
 
 ## Phase 8 — Framing material
 
+Progress: **Pending.** Some introductions changed during volume edits, but the dedicated final framing pass has not begun.
+
 After the manuscript has stabilized, revise:
 
 - Volume introductions.
@@ -300,6 +332,8 @@ The front matter should describe the book that survived editing, not the first d
 **Exit:** The book's framing accurately promises the argument the final manuscript delivers.
 
 ## Phase 9 — Verification and promotion
+
+Progress: **Pending.** Full builds have passed during editing, but reproducibility, final link/source checks, author approval, and promotion to `final` remain.
 
 Before changing any chapter to `final`:
 
