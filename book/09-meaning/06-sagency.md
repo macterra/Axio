@@ -1,7 +1,7 @@
 ---
 title: 'Sagency'
 subtitle: 'Power disciplined by wisdom'
-status: draft
+status: review
 sources:
   - 176418100.sagency
 ---
@@ -10,7 +10,7 @@ A person who can move the world and does not know where it should go is not a le
 
 You can watch the multiplier work in almost any biography of ruin. The engineer whose refinement of an ordinary process made a whole industry more lethal; the executive who optimized a metric until the metric ate the company it was supposed to measure; the movement that grew powerful enough to seize the thing it wanted and discovered, holding it, that wanting had been the only part it understood. In each case the failure was not a deficit of capability. It was a surplus of it, unmatched by anything that could say where the capability should point. Competence arrived; guidance did not; the gap between them is exactly the size of the damage.
 
-Call the bare capacity to act **agency**: power without guidance. It is the ability to cause effects, to bend the world toward one's will, and in isolation it is amoral. The same engine that drives invention drives ruin; the same nerve that founds a company forecloses on a town. Agency answers the question *can I*. It has nothing to say about *should I*, and it cannot, because steering is not part of the engine. Agency is acceleration. It gets you somewhere faster without any opinion about whether that somewhere is worth arriving at.
+Call the capacity for intentional, authored action **agency**, in the sense developed throughout this book. Agency includes steering toward an end; it does not, by itself, establish that the end is wise. The same capacity that drives invention can drive ruin. Agency can answer *can I make this future more likely?* without settling *is this future worth making?* In that limited contrast, agency is power under an agent's direction but not yet under sound judgment.
 
 This is not a complaint about power. Power is not the problem; unguided power is. The remedy is not less agency — a world of the well-meaning and the ineffective is its own kind of catastrophe — but agency brought under discipline. I call that discipline **sagency**, fusing *sage* and *agency*: the ability to act as a sage would act. Not the possession of wisdom, which any book can hold, but its enactment. Sagency is what wisdom looks like once it has hands. It is understanding converted into motion, insight made causal, judgment that reaches the world instead of dying in the head that had it.
 

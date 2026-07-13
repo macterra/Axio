@@ -1,7 +1,7 @@
 ---
 title: 'Ultimate Beauty'
 subtitle: 'Where the reasons run out'
-status: draft
+status: review
 sources:
   - 172368510.ultimate-beauty
 ---
@@ -18,7 +18,7 @@ The regress of practical justification faces the same trilemma as the regress of
 
 The epistemic escape, following Bartley, was to drop the demand for justification altogether: a belief is held rationally not because it rests on something secure but because it is held open to criticism. The regress does not terminate; it dissolves, because nothing was ever required to touch bottom. That works for beliefs, which answer to the world and can be tested against it. But values are not beliefs. A preference is not true or false, and no amount of exposure to evidence will tell me whether to want longevity for its own sake. So the practical regress cannot be dissolved the same way. It really does bottom out — and the interesting question is what it bottoms out *in*.
 
-The honest answer is: in values that are self-justifying, meaning not that they justify themselves by argument but that they need no argument. They are recognized as good, fitting, or compelling in themselves. When the last *because* falls away, what remains is not a proof and not a duty. It is a recognition — *this resonates, this fits, this is worth it* — and that recognition is aesthetic.
+My answer is: in values held for themselves, meaning not that they justify themselves by argument but that the agent supplies no further instrumental reason. They are experienced as good, fitting, or compelling. When the last *because* falls away, what remains is not a proof and not a duty but a recognition — *this resonates, this fits, this is worth it*. I call that recognition aesthetic. The label is a proposal about terminal valuing, not a claim that every agent experiences its final commitments as beauty.
 
 ## Aesthetics as the Terminal Attractor
 
@@ -38,7 +38,7 @@ Approach it as **ethics** and the chain bottoms out in moral intuitions — the 
 
 Approach it as **agency** — the bare fact of being a chooser — and the chain bottoms out in preference itself, the felt orientation without which there would be no choosing at all, only mechanism.
 
-Three descents, one floor. Utility functions, moral intuitions, and raw preference are the same terminus seen through three windows, and in each case what sits at the base is a recognition that some pattern is to be pursued, holding its warrant in itself. This is why the scientist's preference for an elegant theory, the mathematician's pull toward a simple proof, and the engineer's delight in a clean design are not ornamental asides to their work. They are the same terminal condition of choice, surfacing in domains we like to think of as purely rational. Beauty is doing load-bearing work in physics; it always was.
+Three descents reach related stopping points, not necessarily one identical psychological faculty. Utility functions, moral intuitions, and raw preferences each mark something a local analysis takes as given. What they share is the absence of a further instrumental reason inside that analysis; whether all three reduce to aesthetic recognition remains the stronger thesis advanced here. Scientists, mathematicians, and engineers do use elegance as a guide, but elegance does not replace empirical adequacy or proof. Beauty can do heuristic work without becoming evidence by itself.
 
 ## The Benign Circularity
 
@@ -54,4 +54,4 @@ This is where the creed of the last chapter gets its grounding, and where the [P
 
 Life is not chosen because it purchases some further good; it is chosen because existence itself glows with intrinsic worth. Intelligence is chosen because clarity and understanding are beautiful. Complexity is chosen because emergent richness resonates. Flourishing is chosen because the blossoming of a potential into its fullness is elegant. Authenticity is chosen because coherence between what one is and what one does simply *feels right* — and that felt rightness is exactly why, in Volume 5, a hard moral choice made with integrity strikes us as beautiful and a genuinely beautiful choice carries moral weight. The two domains converge because they were always the same faculty. To live authentically is to live beautifully; existence becomes a work of art whose medium is choice. That is not a metaphor decorating the ethics. It is the ethics, seen from underneath.
 
-So the four pillars of the Credo stand where they stand for the same reason. Agency, flourishing, authenticity, truth are not conclusions of an argument that could in principle have gone the other way if the premises had. They are recognitions — patterns that, when I look at them clearly, I find luminous and worth building a life around. I cannot prove them to someone who feels nothing before them, any more than I can prove a sunrise. I can only show them, and hope the showing lands. This is not the death of reason. Reason keeps every one of its jobs: it guides, it calculates, it optimizes, it tests my recognitions for coherence and catches the ones that contradict each other. What it cannot do, and was never able to do, is select its own goals. Only aesthetics does that. When the reasons run out — and they always run out — what remains is the plainest and most profound recognition an agent can have: *this is beautiful, and so I choose it.*
+So the four pillars of the Credo stand where they stand for the same reason. Agency, flourishing, authenticity, and truth are not conclusions forced by premises; they are patterns that, when I look at them clearly, I find luminous and worth building a life around. I cannot prove them to someone who feels nothing before them. I can show what they enable, test their relations for coherence, and expose the costs of abandoning them. Reason keeps those jobs. What it cannot do without some evaluative premise is select its own goals. For the commitments named in the Credo, aesthetics does that final work for me. When my reasons run out, what remains is the plainest recognition I can offer: *this is beautiful, and so I choose it.*

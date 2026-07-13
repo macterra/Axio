@@ -1,7 +1,7 @@
 ---
 title: 'The Shadow War'
 subtitle: 'Refusing the frames of the old gods'
-status: draft
+status: review
 sources:
   - 179726756.the-shadow-war
 ---

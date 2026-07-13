@@ -111,9 +111,10 @@ Status labels:
 
 ### Volume 9
 
-- Earlier volumes' naturalism, subjectivism, and coherence claims are summarized repeatedly as the sacred is reconstructed.
-- Protect the double envoi by removing earlier formulations that already deliver its central emotional conclusions.
-- Keep the Credo visibly chosen; do not repeatedly repackage it as a conclusion compelled by the preceding framework.
+- **Phase 4 decision:** Chapters 1–5 own the experience/interpretation boundary. They adopt the book's naturalism without re-prosecuting Volume 2's faith argument or treating phenomenology as metaphysical proof.
+- **Phase 4 decision:** Chapter 2 proposes sacredness as a protected role that may be filled by an apex, cluster, or priority rule. Chapter 10 alone declares the author's chosen Credo; Chapters 11–15 do not convert it into a universal deduction.
+- **Phase 4 decision:** Chapter 14 uses information theory analogically across physical, cognitive, and cultural registers. Chapter 18 owns the avowed meta-myth and does not present physical persistence, epistemic consistency, ethical integration, and lineage as one discovered cosmic law.
+- **Phase 4 decision:** Chapter 19 presents provenance as a resource for interpretation and error correction, not a necessary condition of all successor coherence. Chapter 20 owns the final reconciliation; awe is experience requiring interpretation, and the self-model account of unity remains a hypothesis.
 
 ## Decisions deferred to Phase 2
 

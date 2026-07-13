@@ -1,7 +1,7 @@
 ---
 title: 'The Credo'
 subtitle: 'The fire remains'
-status: draft
+status: review
 sources:
   - 171160523.credo
   - 171221751.the-fire-remains

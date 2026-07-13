@@ -1,7 +1,7 @@
 ---
 title: 'The Hidden Depths of Simple Advice'
 subtitle: 'Folk maxims as disciplines of attention'
-status: draft
+status: review
 sources:
   - 166024344.look-where-youre-going
   - 168315861.mind-your-own-business
@@ -29,7 +29,7 @@ Start at the surface and descend. Each layer is already contained in the sentenc
 
 **The existential layer** returns the whole thing to agency. The direction of your gaze is not given to you; you set it, and in setting it you declare what you value. A life is a long trajectory, and to choose where to look is to choose, cumulatively, what that life will have been about.
 
-There is one more layer, and it is where this maxim quietly touches the rest of my project. If your vantage — your present standpoint and your intentional focus — genuinely shapes the trajectory you travel through the space of possible futures, then attention is not merely how you observe your path. It is, in part, how you lay it. That is the claim developed at length elsewhere in the [Quantum Branching Universe](../01-physics-of-agency/08-the-quantum-branching-universe.md) and in conditionalist epistemology, and I will not re-derive it here. It is enough to notice that a mother chasing a toddler down a sidewalk has, without knowing it, handed him the whole of it: reality, in the sense that matters to a living agent, emerges from where he chooses to look.
+There is one more layer, and it is where this maxim touches the rest of my project. Attention changes which information an agent samples, which opportunities it notices, and therefore which actions become available. Within the [Quantum Branching Universe](../01-physics-of-agency/08-the-quantum-branching-universe.md), the book gives that ordinary causal point a branching interpretation; the maxim does not depend on readers accepting it. A mother chasing a toddler down a sidewalk has, without knowing it, handed him a compact lesson in agency: where he looks helps determine where he can go.
 
 ## Mind Your Own Business
 

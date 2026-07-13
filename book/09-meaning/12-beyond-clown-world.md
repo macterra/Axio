@@ -1,7 +1,7 @@
 ---
 title: 'Beyond Clown World'
 subtitle: 'Meaning without absolutes'
-status: draft
+status: review
 sources:
   - 172141003.beyond-clown-world
   - 166022218.true-neutral

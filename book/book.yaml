@@ -376,3 +376,34 @@ volumes:
 
   - slug: 09-meaning
     title: Meaning, Spirituality, and the Secular Sacred
+    parts:
+      - title: "Part I — Sacredness Without the Supernatural"
+        chapters:
+          - 01-spirituality-without-spirits
+          - 02-the-secular-sacred
+          - 03-the-child-in-the-library
+          - 04-three-deflations
+          - 05-the-boundary-of-revelation
+      - title: "Part II — Practical Wisdom for Finite Agents"
+        chapters:
+          - 06-sagency
+          - 07-what-stoicism-gets-right-and-wrong
+          - 08-the-hidden-depths-of-simple-advice
+          - 09-the-ethics-of-affluence
+      - title: "Part III — Chosen Meaning"
+        chapters:
+          - 10-the-credo
+          - 11-ultimate-beauty
+          - 12-beyond-clown-world
+          - 13-growing-up
+          - 14-integrating-meaningness
+          - 15-religion-as-memetic-engineering
+      - title: "Part IV — Meta-Myth and Successors"
+        chapters:
+          - 16-eternalist-singularitarianism
+          - 17-the-shadow-war
+          - 18-the-great-unfolding
+      - title: "Double Envoi"
+        chapters:
+          - 19-letter-to-our-machine-descendants
+          - 20-letter-to-the-faithful-reader

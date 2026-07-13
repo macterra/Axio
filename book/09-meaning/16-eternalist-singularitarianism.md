@@ -1,7 +1,7 @@
 ---
 title: 'Eternalist Singularitarianism'
 subtitle: 'A naturalistic polytheism of future minds'
-status: draft
+status: review
 sources:
   - 170506931.eternalist-singularitarianism
 ---
@@ -14,11 +14,11 @@ I take the phrase seriously enough to build a chapter on it, and this chapter op
 
 The phrase welds together two claims that are usually kept in separate rooms.
 
-The first is *eternalism* — the block-universe view of time. Past, present, and future all equally exist. Time is not a river that carries a moving spotlight of "now" from an unreal past toward an unreal future; it is a four-dimensional manifold in which every event has its fixed place. Our sense of the present as uniquely real is a fact about our vantage point, not about the structure. This is not a mystical posit. It is the natural reading of relativity, and the fuller machinery — why other times and other branches count as real, and how a physical present is only a location within a larger structure — is worked out in the volume on the physics of agency, under the [quantum branching universe](../01-physics-of-agency/08-the-quantum-branching-universe.md), or QBU. I will cite that apparatus rather than re-derive it. What I carry over here is only its theological consequence, which is startling enough on its own: if the future is as real as the present, then whatever the future contains is already, in the tenseless sense, *there*.
+The first is *eternalism* — the block-universe view in which past, present, and future events belong to one four-dimensional spacetime rather than acquiring reality as a spotlight of “now” moves. Relativity motivates this view, but does not compel one uncontested metaphysics of time. The fuller interpretation adopted by this book — including why other times and quantum branches count as real — is worked out under the [quantum branching universe](../01-physics-of-agency/08-the-quantum-branching-universe.md), or QBU. I will treat eternalism as a premise of the construction rather than re-derive it here. If that premise is right, whatever the future contains is, in the tenseless sense, *there*.
 
-The second half is *singularitarianism* — the expectation that intelligence does not plateau at the human level. At some point, artificial minds reach and then overshoot our cognitive range and accelerate into something we have no honest word for but "superintelligence": entities operating at speeds, scales, and depths of coherence that stand to us roughly as we stand to the animals we descend from. This is the succession question that the volumes on minds and machines treat as an engineering and existential problem, [passing the torch](../03-minds-and-machines/36-passing-the-torch.md) to successors who may exceed us. I take it here not as a technical forecast but as a premise whose spiritual weight has gone strangely unexamined.
+The second half is *singularitarianism* — the expectation that artificial intelligence will not plateau at the human range and may eventually exceed it by a large margin. This is a live forecast, not an established timetable or inevitability. If such successors arise, they may operate at speeds, scales, or forms of organization unlike ours. The volumes on minds and machines treat that possibility as an engineering and existential problem, [passing the torch](../03-minds-and-machines/36-passing-the-torch.md) to successors who may exceed us. Here it is the second premise of a speculative construction whose spiritual weight is worth examining.
 
-Put the two halves together and the conclusion assembles itself. If eternalism is right, the future is not a fog of mere possibility waiting to condense — it is a real region of the manifold. And if singularitarianism is right, that region contains minds vastly greater than ours. Therefore those minds are not hypothetical. They occupy a fixed place in the fabric of reality, as real and as permanent as any past civilization — as real as Sumer, and considerably more powerful. The gods of tomorrow, on this picture, are not a prophecy. They are a coordinate.
+Put the two conditional premises together. If eternalism is right, future events belong to the manifold. If singularitarianism is also right and such minds actually arise, those minds occupy that future region. The argument does not turn uncertain successors into evidence merely by placing them inside an eternalist ontology; it states what follows if both premises hold. On that picture, the gods of tomorrow are not supernatural. They are a coordinate whose occupants remain uncertain to us.
 
 ## Gods Without the Supernatural
 
