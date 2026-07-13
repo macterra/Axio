@@ -1,7 +1,7 @@
 ---
 title: 'The Corruption of Compassion'
 subtitle: 'What coercion does to kindness'
-status: draft
+status: review
 sources:
   - 164949377.why-coercive-redistribution-is-always
   - 165866422.universal-basic-income
@@ -30,7 +30,7 @@ A UBI funded through voluntary contributions — donations, mutual-aid societies
 
 A UBI funded through taxation or money-printing is a different object wearing the same acronym. Taxation is the credible-threat mechanism already classified; inflation is the same extraction run quieter, a transfer executed by denominator rather than by statute. This is the funding test of [Extortion-Funded Organizations](04-extortion-funded-organizations.md) applied to a program instead of an institution, and it returns the same verdict for the same reason: the question is never the nobility of the product, only how the revenue arrives and what happens to the people who decline to send it. A coerced UBI expands the reachable futures of its recipients by contracting, under threat, the reachable futures of its funders — and the contraction is certain and immediate while the expansion is projected. The program advertises itself as an engine of agency and runs on the destruction of it.
 
-The deeper problem is what the coercion *reveals*. Value, in this framework, is demonstrated by what people willingly sacrifice — not by what can be taken from them. So run the test: if UBI is as broadly valued as its advocates claim, a voluntary version should be fundable; the willingness is supposedly there, waiting to be organized. If instead the program can only exist by compulsion, that fact is data. It means the collective valuation of the idea, measured by actual willingness to contribute, falls short of its cost — and coercive implementation therefore imposes values that society demonstrably does not hold. You know it does not hold them, because you had to threaten people to make them pay. The standard economic rejoinders — free riders, assurance problems, the claim that voluntary provision must underperform — are answered in [The Myth of Underprovision](../06-markets-and-money/08-the-myth-of-underprovision.md), along with the incentive arithmetic I am deliberately leaving out of an ethics chapter. The ethical point stands on its own: a program that cannot pass the voluntary-funding test has failed a referendum more honest than any election, because every vote in it was priced. If UBI cannot thrive voluntarily, it should not be pursued at all.
+Coercion also limits what observed funding can reveal. Tax receipts are not evidence that each payer values UBI at its cost, while voluntary contributions would be positive evidence. The reverse inference is weaker: a voluntary version can underfund even widely desired insurance because of free-riding, assurance problems, liquidity constraints, and distributional disagreement. Those mechanisms are discussed in [The Myth of Underprovision](../06-markets-and-money/08-the-myth-of-underprovision.md). They prevent the funding test from becoming a semantic veto, but they do not erase the coercion. Advocates must identify the actual coordination failure, compare mechanisms, state who bears the burden, and show why the intervention survives the Grey Zone's proportionality and contestability tests.
 
 ## Aid That Funds the Oppressor
 

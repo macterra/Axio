@@ -1,7 +1,7 @@
 ---
 title: 'Upgrading Liberty'
 subtitle: 'From the harm principle to agency'
-status: draft
+status: review
 sources:
   - 170630000.on-liberty
   - 167587968.the-agency-protection-principle
@@ -35,7 +35,9 @@ Both principles fail the same way: they are rules about coercion built on an und
 
 So state the rule in terms of it. I call this the Agency Protection Principle:
 
-**Coercion is justified if, and only if, it prevents or remedies violations of voluntary agency.**
+**Coercion has a prima facie justification only when it prevents or remedies violations of voluntary agency.**
+
+This is a threshold, not an automatic verdict. The intervention must still meet the evidentiary, necessity, proportionality, reciprocity, and review burdens developed in [The Grey Zone](05-the-grey-zone.md).
 
 The terms here are not left to intuition; they are defined and defended in Volume 5, and I will use them as defined. Coercion is the credible threat of actual harm to gain compliance — four elements, each load-bearing, developed in [What Counts as Coercion](../05-value-and-ethics/09-what-counts-as-coercion.md). Harm is the non-consensual contraction of an agent's reachable futures — enforced impossibility, not mere difficulty — the definition built and stress-tested in [What Counts as Harm](../05-value-and-ethics/11-what-counts-as-harm.md). With those definitions plugged in, the APP repairs each of the three defects in turn.
 

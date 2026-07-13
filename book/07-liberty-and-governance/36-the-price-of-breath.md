@@ -1,10 +1,12 @@
 ---
 title: 'The Price of Breath'
 subtitle: 'A story of markets that fail better'
-status: draft
+status: review
 sources:
   - 197767782.the-price-of-breath
 ---
+
+*Fictional coda. This story stress-tests the proposed institutions by making them fail, assign liability, and encounter a privacy conflict. It is a thought experiment about coherence and consequences, not empirical evidence that Axiocracy would work.*
 
 *This coda is the book's first story. Everything this volume has argued — authority as a conditional claim rather than an office, liability that follows the power that caused the harm, coercion checked by exit and challenge, governance that must continuously justify itself or drain away — is here dramatized rather than argued, in a civilization that runs on it.*
 

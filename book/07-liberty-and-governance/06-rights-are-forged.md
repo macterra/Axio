@@ -1,7 +1,7 @@
 ---
 title: 'Rights Are Forged — and Reciprocal'
 subtitle: 'Power makes boundaries real; reciprocity makes them legitimate'
-status: draft
+status: review
 sources:
   - 203896169.rights-are-reciprocal
   - 164901368.rights-are-forged

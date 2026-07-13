@@ -1,7 +1,7 @@
 ---
 title: 'Against Socialism'
 subtitle: 'Need is not title'
-status: draft
+status: review
 sources:
   - 202962824.against-socialism
 ---
@@ -14,23 +14,13 @@ The sentence also hides the argument. A person's need can be urgent, tragic, unb
 
 Socialism has many official definitions, and the ambiguity protects it. Point the word at Soviet command planning and its defenders retreat to libraries and hospitals. Point it at libraries and hospitals and they insist socialism means only collective ownership of the means of production. The word expands to collect moral credit and contracts to escape accountability. It is a textbook motte-and-bailey, and the first task is to pin it.
 
-I will use the word in its operational sense: the coercive socialization of a function — coercive in the exact sense established in [What Counts as Coercion](../05-value-and-ethics/09-what-counts-as-coercion.md). The domain can be narrow or vast. A public school socializes education, a public pension socializes retirement income, a public hospital socializes medical finance and often delivery, a command economy socializes production as such. The stakes vary enormously from case to case, but the political move is the same: private resources are converted by law into collective provision or collective control.
+I will use a deliberately broad operational category: **coercive socialization of a function** — coercive in the sense established in [What Counts as Coercion](../05-value-and-ethics/09-what-counts-as-coercion.md). This is not the only accepted definition of socialism. Many traditions reserve the word for social ownership or control of productive capital, and ordinary welfare-state provision can coexist with predominantly private production. The broad category is useful for comparing mechanisms across domains, but conclusions about a public library cannot be transferred to a command economy merely because both involve taxation.
 
-This definition bites in both directions, and I accept the bite. Public schools, public hospitals, pensions, roads, and libraries are all socialism under it. Familiarity and popularity do not change the structure: tax-funded provision is coercive socialization of a function. A society may choose a little of it or a great deal, competent versions or ruinous ones. Once the state taxes people to provide a service collectively, the socialist principle has been invoked. What follows is an argument about that principle — what it gets wrong, what it costs, and where its danger actually lies.
+Under this stipulated category, public schools, hospitals, pensions, roads, and libraries sit on the same map as much more comprehensive systems, but at radically different coordinates of dose, domain, monopoly, exit, and feedback. The shared coercive funding mechanism starts the inquiry; it does not determine performance or legitimacy by analogy.
 
-## Need and Title
+## Need, Title, and Coercion
 
-If a man is starving, his condition matters, and any moral theory that cannot see that is broken. But need alone does not name the debtor. Who owes him food? His parents? His employer? The nearest farmer? Every taxpayer in the country, or every wealthy person on Earth? How much, for how long, and who enforces the answer when several needs compete for the same loaf? Socialism tends to skip these questions by treating compassion as though it already contained jurisdiction.
-
-Obligation needs a bridge from the need to the person who must meet it. Contract can build one. Parenthood can. Restitution after harm can. A legitimate political compact may. Need by itself leaves the crucial span unbuilt. This is the same structure that sorts rights in [Needs, Conflicts, and Hard Cases](07-needs-conflicts-and-hard-cases.md): a need, however desperate, identifies no debtor, which is why valid rights are boundaries rather than conscription orders — and why the rights that do bind are the [forged, reciprocal](06-rights-are-forged.md) kind rather than declarations of what everyone deserves.
-
-A drowning stranger gives me a powerful reason to act, and if I can throw a rope at little cost, refusing would be cruelty. It does not follow that every unmet need anywhere generates an enforceable claim against everyone who has resources. Moral opportunity and enforceable title are different things, and socialism's whole rhetorical method is to blur them.
-
-## Charity, Welfare, and Coercion
-
-Charity is voluntary aid. It belongs to the moral life of persons and associations, and it stays charity because the giver acts as a moral agent. Socialism uses law to collectivize provision. It taxes, transfers, and commands. It may relieve suffering, it may be popular, it may be defended under some theory of citizenship or social peace, and it is still coercive provision. The taxpayer pays under compulsion, the official distributes what was collected by force, the recipient receives an entitlement created by statute.
-
-Many arguments for socialism borrow the warm light of charity while reaching for the tools of coercion. They begin with "we should help" and arrive at "the state may compel," and that movement is the whole thing that needs justifying. It cannot be carried across on sentiment. The slogan says compassion; the mechanism says tax authority, asset seizure, courts, and prison at the limit. A serious defense of socialism has to defend that machinery, not just point at the suffering that motivates it. What that borrowed warmth does to the compassion itself — how coercive funding corrupts the kindness it claims to institutionalize — is the subject of [The Corruption of Compassion](18-the-corruption-of-compassion.md); here the point is narrower: the warmth is not an argument.
+The prior chapters have already established the premise this chapter needs: need is morally urgent but does not, by itself, specify a debtor or an enforcement mechanism. Contract, guardianship, restitution, fiduciary duty, and a justified political compact can create positive obligations. [Needs, Conflicts, and Hard Cases](07-needs-conflicts-and-hard-cases.md) asks how; [The Corruption of Compassion](18-the-corruption-of-compassion.md) classifies the coercive funding mechanism. The distinct question here is institutional: once provision is socialized, what happens as its dose, domain, monopoly, exit, and feedback change?
 
 ## Voluntary Failure Creates No State Title
 
@@ -52,14 +42,6 @@ But scarcity and coercion are not the same thing. Poverty constrains; coercion c
 
 Socialism blurs this because the blur pays. Once hardship is renamed coercion, every hard condition becomes a license for counter-coercion: the hungry man's condition licenses authority, the worker's weak hand licenses the power to tax and prohibit and seize, and the vocabulary slides from suffering to jurisdiction without ever passing through an argument. A free society should attack desperation by widening options — more housing, more competition, more entry and mobility, cheaper goods, stronger civil society. Socialism usually runs the other way and treats the existence of hardship as proof that choice should give way to command.
 
-## Production Comes Before Distribution
-
-The standard objection comes fast: without socialism the hungry starve and the poor go without medicine. It assumes what it has to prove, casting socialism as the only mechanism that feeds people, and it starts the story at distribution, after the food and medicine already exist.
-
-But they have to exist first. Food has to be grown, stored, and moved before anyone can allocate it; medicine has to be discovered, tested, manufactured, and shipped before it reaches a patient. That is the main event, and it depends on land, labour, capital, logistics, risk-taking, and a mountain of local knowledge. A government can pass a law declaring a right to bread or antibiotics. The law plants no wheat, synthesizes no compound, staffs no clinic. A distribution scheme cannot hand out what the productive order failed to make.
-
-Socialism fixes moral attention on allocation and then reaches for control over the systems that make allocation possible. Prices look suspect because they exclude, profit because it offends, private ownership because it concentrates control, independent institutions because they resist direction. But prices, profit, property, and institutional independence are feedback: they reveal scarcity, reward competence, punish waste, attract capital, and expose error. Damage them in the name of distribution and you may earn applause for your intentions while making hunger worse. Socialism asks who gets the bread. It rarely asks who keeps the bread coming, which is the question that decides whether there is any.
-
 ## The Infrastructure Concession
 
 States can sometimes help production. Roads, sanitation, basic research, courts, and some infrastructure improve the conditions under which private enterprise works, and the internet, the highway system, and publicly funded medical research are the usual examples. I concede the examples; they do not rescue socialism as a general principle. They show that a few bounded socialized functions can coexist with, and sometimes assist, a wider order still run by property, prices, enterprise, and exit. A grant to a laboratory is not political ownership of medical production. A road network is not state allocation of transport, fuel, and labour. Public sanitation is not state administration of the economy. Meanwhile, the record on whether socialized *control* scales into a better productive order is long and consistent: overpromising, underproducing, rationing, and blaming the shortage on someone else.
@@ -79,12 +61,6 @@ The right biological picture is parasitism — and the parasite is the coercive 
 Socialists usually think scale is their advantage. A national program covers everyone, a central agency standardizes eligibility, a ministry guarantees uniform provision. Scale also manufactures ignorance. Human need is local, varied, and often hidden. One person needs cash, another needs supervision, another needs addiction treatment, another needs a job or a ride to an appointment or protection from a violent house. Some need help once; some need it for years; some need it in ways that will wreck them if it comes in the wrong form.
 
 Central systems flatten all that. They run on categories, thresholds, forms, and measurable outputs, which makes them good at moving standardized resources to standardized cases and bad at judgment, discretion, and context. This is the knowledge problem that wrecks central planning of production — the planner's numbers have nothing to be about once the decentralized signals are gone, as [The Price Illusion](../06-markets-and-money/04-the-price-illusion.md) shows — reappearing in the currency of care. Markets and charities have their own knowledge problems, and plenty of private institutions are cruel or incompetent or corrupt. The difference is the number of correction points. A bad charity can be abandoned, a bad clinic loses its patients, a failed mutual-aid society gets replaced, a neighbour notices what no form can capture. Socialism concentrates judgment, and concentrated judgment raises the price of being wrong. When the plan is wrong, everyone under the plan is wronged at once.
-
-## Moral Displacement
-
-When every serious need becomes the state's department, suffering starts to feel like someone else's assignment. The moral relation between persons gets displaced upward into administration: the taxpayer has complied, the official has processed, the recipient has claimed, and the neighbours may never meet. Welfare states still hold private charity, families still sacrifice, many public servants still act with real care. The tendency holds anyway. Large systems convert moral problems into budget lines and eligibility rules, and that quietly thins the habit of voluntary responsibility.
-
-Churches, fraternal orders, unions, neighbourhood associations, and philanthropic hospitals once carried much of this weight. They were imperfect, uneven, sometimes parochial and sometimes humiliating — and they were also human-scale places where the obligation stayed visible. A centralized apparatus can relieve suffering while thinning the moral muscles of the society paying for it, until people learn to outsource compassion to systems and keep their own energy for complaining about the system's failures. A society of clients, taxpayers, and administrators is a poorer thing than a society of neighbours and benefactors who owe each other something they can see.
 
 ## Refusing the Premise
 

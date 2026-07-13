@@ -1,6 +1,6 @@
 ---
 title: 'Liberty, Coercion, and Governance'
-status: draft
+status: review
 ---
 
 Politics inherits its foundations from everything before it: value is agent-relative, harm is the contraction of reachable futures, coercion is a structural category with a canonical definition — and the moral unit is the individual, because only individuals concretely exist as valuing agents. What this volume adds is the political consequence: an account of the state, rights, speech, justice, equality, and governance built on agency rather than on the fictions — the collective will, the national interest, the moral ledger of disparities — that political philosophy usually runs on.
@@ -11,6 +11,8 @@ The argument moves in seven parts. **Part I** confronts the state directly: the 
 
 **Part VII** is the destination. Politics is an exploit, not a law of nature, and civilization is the long conversion of coercion into coordination. The archist axiom — that the state holds moral permissions individuals lack — fails its symmetry test; anarchy means the absence of coercive monopoly, not of order, and the international system already runs on it; defense, the hardest case, gets its full strength and ends honestly open. The state is seventeenth-century technology out-competed by protocolized governance; Leviathan is not evil but something worse — not an agent at all; and the admissible region replaces left-and-right with the only political question that matters: inside or outside the region where agency remains viable. The volume closes with Axiocracy — governance by value discovery — and its first constitution, drafted for the one place where institutional error runs out of oxygen.
 
-The definitions live in the fifth volume, the economics in the sixth, the formal governance results in the fourth; this volume cross-links all three throughout. Its own editorial signature is worth naming: the source corpus matured, over a single year, from categorical polemic to conditional structural argument, and every chapter here is written from the mature position — with the polemics kept as voice, not doctrine.
+After the seven parts, the fictional coda “The Price of Breath” places the proposed institutions under pressure. Its failure, liability, and privacy conflict test consequences; fiction supplies no empirical evidence that the design will work.
 
-*This volume is a draft. Chapters carry their status openly, and the arguments are held the way the book says they should be held: at the strength the evidence licenses, and no stronger.*
+The definitions live in the fifth volume, the economics in the sixth, the formal governance results in the fourth; this volume cross-links all three throughout. Its controlling position is the Grey Zone: coercion is classified without euphemism, but legitimacy remains conditional, burden-scaled, evidence-bound, and open to revision. Polemic remains voice, not doctrine.
+
+*This volume is in author review. Chapters carry their status openly, and the arguments are held the way the book says they should be held: at the strength the evidence licenses, and no stronger.*

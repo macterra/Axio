@@ -1,7 +1,7 @@
 ---
 title: 'Needs, Conflicts, and Hard Cases'
 subtitle: 'Negative rights, colliding rights, and the freedom to exclude'
-status: draft
+status: review
 sources:
   - 165967029.against-positive-rights
   - 165997692.negative-rights-in-conflict
@@ -10,7 +10,7 @@ sources:
 
 A right to healthcare. A right to education. A right to housing, to food, to a basic income. Half the modern rights catalogue reads this way, and the entries feel like natural extensions of the older list — if I have a right not to be killed, surely I have a right to what keeps me alive. The extension is not natural. It smuggles in a different species of claim, and the difference is not a technicality. It is the difference between a boundary and a conscription order.
 
-This chapter finishes the account of rights begun in [Rights Are Forged — and Reciprocal](06-rights-are-forged.md) by working through its three hardest consequences. First: all valid rights are negative, because a need, however desperate, identifies no debtor. Second: honesty cuts both ways — even purely negative rights collide, constantly, and a rigorous system must say how the collisions get resolved instead of pretending they cannot occur. Third: freedom of association means the freedom to exclude, which puts the framework in the uncomfortable position of defending the bigot's choice while opposing the bigotry — and I will argue that the discomfort is exactly where the position proves itself.
+This chapter finishes the account of rights begun in [Rights Are Forged — and Reciprocal](06-rights-are-forged.md) by working through three hard consequences of the book's agency framework. First: need alone identifies no debtor, so an enforceable provision claim needs an additional bridge from need to obligation. Second: honesty cuts both ways — even purely negative rights collide, constantly, and a rigorous system must say how the collisions get resolved instead of pretending they cannot occur. Third: freedom of association includes a power to exclude, but concentrated power and coordinated exclusion complicate any easy claim that refusal is harmless.
 
 ## Needs Are Not Rights
 
@@ -20,7 +20,7 @@ But coercion is only ever justified defensively — as response to invasion, act
 
 Negative rights pass. A right against assault, theft, or fraud demands nothing from you except restraint. It imposes no project on your life; it says only that certain moves against my agency are barred. Enforcing it is defensive by construction: the coercion answers an invasion.
 
-Positive rights fail, and they fail structurally, not because their advocates picked the wrong entries. A positive right is a claim on someone else's active provision — labor, goods, money, time. If the provision comes voluntarily, no right was needed. If it does not, enforcement means initiating coercion against a person who has invaded no one: taxing him, mandating his services, redistributing what he built. The enforcement is offensive by construction. A "right" whose enforcement requires violating rights is not a hard case. It is a contradiction.
+Positive rights pose a different structure. They are claims on active provision — labor, goods, money, time — and therefore require institutions that allocate duties and costs. [Modern international law recognizes rights to health, education, housing, food, and social security](https://europe.ohchr.org/index.php/areas-of-work/economic-scocial); dismissing that vocabulary does not answer its argument. The agency objection is narrower: need by itself does not identify who may be compelled, how much, under what authority, or with what limits. A provision right must supply that missing bridge and then survive the Grey Zone's burden like any other coercive institution.
 
 The deep reason is that need identifies no debtor. Many things are necessary for agency: oxygen, sleep, language, luck, other people's cooperation. Necessity does not tell us who owes them. If I assault you, the wrong has an author and the debt has an address. If you need medicine and I did not cause the need, my failure to become your provider is not an invasion of your agency — and turning your need into my enforceable duty requires someone to assert jurisdiction over my labor, property, or time. That assertion needs its own justification, and pointing at the need is not one. Ask any positive right the debtor question — *who, specifically, may be compelled?* — and the answer is always "whoever has resources," which is not the name of a wrongdoer. It is a license to invade one agent for the benefit of another.
 
@@ -28,7 +28,7 @@ There are exactly five bridges that can carry a need across into enforceable obl
 
 The standard rejoinder is "structural violence": deprivation is itself a kind of assault, so the deprived are rights-victims after all and society is the assailant. The move works by erasing the distinction between being harmed by an agent and lacking something one needs — and that distinction, as the previous chapter argued, is morally load-bearing. Break my leg and you owe me restitution. If my leg breaks from disease, others may have excellent reasons to help, but they have not wronged me by failing to become my involuntary providers. Collapse that difference and every misfortune becomes a standing indictment of everyone solvent — jurisdiction over other people's lives, manufactured from bad luck.
 
-None of this demotes generosity. Charity, mutual aid, family obligation, insurance, rescue norms, voluntary solidarity — these can be virtues, even duties within particular relationships, and historically they have carried most of the weight positive rights claim to carry. What they cannot be is enforceable entitlements, precisely because voluntariness is what makes them ethical. The objection writes itself: without positive rights, won't some people suffer and die? Some will — as some do now, under the largest redistributive apparatus ever constructed. The objection conflates an ethical imperative with an enforceable right, and the conflation is not merely a category error; institutionalized, it produces machinery with its own pathologies, which I take up in [The Corruption of Compassion](18-the-corruption-of-compassion.md). Here the point is narrower: compassion is a reason to act. It is not a warrant to coerce.
+None of this demotes generosity or denies the historical role of public provision. Charity, mutual aid, family obligation, insurance, commercial services, and tax-funded systems have all carried parts of the burden, with sharply different records across places and domains. The question is not whether provision matters but how duties become specific, financeable, contestable, and bounded without turning every unmet need into unlimited jurisdiction. Compassion is a reason to act; by itself it is not a complete warrant to coerce.
 
 ## When Negative Rights Collide
 
@@ -72,9 +72,9 @@ Saying so endorses no bigot. The position is that unjustified discrimination is 
 
 **Transparency.** Reputation only disciplines what it can see. Open information about how firms and institutions actually behave lets customers, workers, and investors discriminate — justifiedly — against the unjustified discriminators.
 
-**Persuasion and culture.** Norms are not made by statutes. Education, argument, art, and moral leadership changed more minds about prejudice than any enforcement action, and they are the only instruments that change the preference rather than driving it underground.
+**Persuasion and culture.** Norms are not made by statutes alone. Education, argument, art, organizing, and moral leadership can change preferences rather than merely constrain conduct.
 
-**Institutional competition.** Discrimination on irrelevant traits is self-taxing: the firm that filters talent by prejudice hands its rivals every candidate it refuses. Inclusive institutions outcompete exclusionary ones wherever markets are free enough to let the penalty bite.
+**Institutional competition.** Discrimination on irrelevant traits can be self-taxing: the firm that filters talent by prejudice hands rivals candidates it refuses. But concentrated markets, network effects, segregation, information gaps, and coordinated exclusion can weaken that penalty. Whether competition disciplines discrimination is an empirical question, not a market theorem.
 
 The general principle deserves stating baldly, because it extends far beyond this case. Consider adultery: one can hold it a serious moral wrong — a betrayal that wrecks lives — while flatly opposing laws that criminalize it, because the enforcement apparatus such laws require would be worse than the wrong. Moral opposition to X and political opposition to *laws against* X are compatible positions, and a free society depends on the space between them. The reflex that collapses that space — *if it is wrong, ban it* — is the totalizing reflex, and it does not stay confined to the wrongs you had in mind.
 

@@ -335,7 +335,7 @@ A credible conditional threat of a material, non-consensual setback used to obta
 
 **Canonical home:** Volume 5, Chapter 9.
 
-**Constraint:** Directed solicitation or incitement can function as delegated violence when intent, specificity, causal connection, and the threatened actor's role support that classification. Volume 7 owns the fuller legal and political boundary.
+**Constraint:** Speech can function as delegated violence only when it intentionally recruits, directs, targets, coordinates, or supplies actionable assistance within a specific, credible harm process. Preparatory propaganda and hateful advocacy can supply context but are not, without operational participation, a coercive exception to expression. Volume 7 owns the fuller legal and political boundary.
 
 ### Consent
 
@@ -467,9 +467,39 @@ A higher-order game whose incentives alter which strategies and outcomes matter 
 
 ### Agency Protection Principle
 
-The political principle that coercion is admissible only as a proportionate response protecting agency from demonstrated coercive harm, subject to evidence and reciprocity.
+The political principle that prevention or remedy of agency violation is a necessary threshold for coercion, not a sufficient verdict. Any intervention remains subject to evidence, necessity, proportionality, reciprocity, containment, review, and the Grey Zone.
 
 **Canonical homes:** Volume 7, Chapters 2–5.
+
+### Right
+
+A defensible, institutionally maintained boundary or claim around agency. Negative rights primarily require restraint; provision rights allocate active duties and therefore must specify the bridge from need to debtor, funding, authority, scope, and remedy.
+
+**Canonical homes:** Volume 7, Chapters 6–7.
+
+### Delegated violence
+
+Intentional operational participation in a specific, credible process of non-consensual harm executed through other agents. It is distinct from a compliance-shaped threat and from advocacy that influences beliefs without recruiting, directing, targeting, coordinating, or materially assisting the operation.
+
+**Canonical home:** Volume 7, Chapter 9.
+
+### Realistic exit
+
+The practical capacity to leave an authority or provider without permission and without destructive loss of legal standing, essential assets, livelihood, identity, or access to necessities. Formal permission is insufficient where dependency, monopoly, sunk costs, retaliation, or non-portability make departure ruinous.
+
+**Canonical homes:** Volume 7, Chapters 30 and 33–35.
+
+### Protocolized governance
+
+A proposal to make suitable governance functions modular, auditable, interoperable, and open to competing implementations. Protocols redistribute judgment among maintainers, clients, communities, users, and enforcement institutions; they do not eliminate interpretation, authority, capture, or force.
+
+**Canonical home:** Volume 7, Chapter 32.
+
+### Restitution
+
+A remedy directed toward repairing an identifiable victim's loss or restoring agency. Compensation is one instrument; prevention, restraint, rehabilitation, public safety, and procedural legitimacy remain separate requirements that cannot always be priced.
+
+**Canonical home:** Volume 7, Chapter 15.
 
 ### Grey Zone
 

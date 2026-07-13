@@ -1,22 +1,22 @@
 ---
 title: 'The Individualist Premise'
 subtitle: 'The moral unit, and the axis that isn''t left–right'
-status: draft
+status: review
 sources:
   - 163272667.why-im-an-individualist
 ---
 
 Somewhere right now a government official, a party theorist, or an earnest activist is explaining that a particular person's plans must yield — that his savings, his speech, his labor, or his life belongs in part to something larger than himself. The nation needs it. Society has decided. The class struggle demands it. The community's values require it. The explanations differ in vocabulary and in body count, but they share a single load-bearing assumption: that the group is the kind of thing that can *need*, *decide*, *demand*, and *require* — and that when its claims collide with an individual's, the individual is the one who owes the justification.
 
-Everything in this volume runs against that assumption. So before arguing about coercion, rights, speech, justice, or the state, I want to state the premise underneath all of it and defend it directly. The premise is individualism: the individual person is the primary moral unit, and groups — however real their patterns, however valuable their cooperation — are abstractions with no independent moral standing. This chapter says what that means, clears away the most common confusion about it, and makes the case that it is not merely one political taste among others but the position that survives scrutiny.
+Everything in this volume runs against that assumption. So before arguing about coercion, rights, speech, justice, or the state, I want to state the premise underneath all of it and defend it directly. The premise is individualism: the individual person is the primary moral unit, and claims made in a group's name must remain traceable to the persons exposed to their benefits and burdens. Groups can be real, durable, causally powerful patterns; what they do not acquire merely by being named is moral priority over their members. This chapter says what that means and why politics must keep its accounting attached to actual agents.
 
 ## The Essential Difference
 
 Collectivism, in all its variants, treats the group — society, nation, class, race, community, faith — as the primary moral unit. Individuals are valued according to their contribution to collective goals and their alignment with collective identity. Rights, where they exist at all, are derived from membership: the group grants them, and the group can withdraw them. And crucially, individual autonomy can be ethically subordinated to collective interests — not as a regrettable emergency measure but as a matter of principle, because the collective is what ultimately matters.
 
-Individualism inverts the priority. The individual is the primary moral unit. Persons have worth that does not derive from their usefulness to any project larger than themselves, and their rights and freedoms cannot be ethically subordinated to a group's purposes without their consent. Groups are real in the way that patterns are real — families, firms, movements, and nations exist, persist, and matter enormously to the individuals who compose them — but they are abstractions over individuals, and they carry no moral priority of their own.
+Individualism inverts the priority. The individual is the primary moral unit. Persons have worth that does not derive from their usefulness to any project larger than themselves. Groups are real in the way that organized patterns are real — families, firms, movements, and nations exist, persist, coordinate, and matter enormously — but any coercive claim made for them must identify whose agency is protected, whose is burdened, and why the burden is justified. Emergency coordination and accepted role obligations can constrain a person without turning the collective into a higher-order owner.
 
-Notice what the disagreement is actually about. It is not about whether humans are social animals (everyone concedes this), or whether cooperation is valuable (everyone concedes this too), or whether individuals owe anything to others (a separate question, taken up when this volume reaches [rights](06-rights-are-forged.md)). The disagreement is about which direction the justification flows. For the collectivist, the individual must justify himself to the group. For the individualist, any claim the group makes on the individual must justify itself to *him* — and "the group needs it" is not a justification, because a group is not the kind of thing that has needs. It has members, who have needs, which is a different and far more honest accounting.
+Notice what the disagreement is actually about. It is not about whether humans are social animals, whether cooperation is valuable, or whether individuals owe anything to others. The disagreement is about which direction the justification flows. For the individualist, any coercive claim made in a group's name must be justified to the people who bear it. “The group needs it” may summarize a genuine coordination problem, but it is not yet a justification: the summary must be unpacked into affected agents, evidence, alternatives, authority, and burden.
 
 ## The Axis That Isn't Left–Right
 

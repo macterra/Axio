@@ -1,7 +1,7 @@
 ---
 title: 'Words That Lost Their Teeth'
 subtitle: 'Semantic hygiene for political language'
-status: draft
+status: review
 sources:
   - 167677533.beyond-left-and-right
   - 173478203.not-everyone-is-a-fascist

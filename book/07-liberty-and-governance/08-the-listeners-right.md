@@ -1,7 +1,7 @@
 ---
 title: 'The Listener''s Right'
 subtitle: 'What free speech is, and whose it is'
-status: draft
+status: review
 sources:
   - 169560195.free-speech
   - 171518778.cognitive-freedom
