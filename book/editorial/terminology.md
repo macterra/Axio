@@ -521,6 +521,8 @@ A coherent informational or physical configuration stable enough to be re-identi
 
 **Canonical homes:** Volume 1, Chapter 24; Volume 8, Chapter 3.
 
+**Calibration:** In cultural analysis, a pattern is a model-level unit of persistence implemented through people, artifacts, incentives, and institutions. It does not learn, intend, choose, or bear responsibility; “selection” abbreviates differential copying, reward, enforcement, and survival under specified conditions.
+
 ### Schema
 
 A structured cognitive or cultural pattern organizing interpretation, expectation, and response.
@@ -541,11 +543,21 @@ The process by which an institution's selection pressures and enforcement mechan
 
 **Canonical homes:** Volume 8, Chapters 17–21.
 
+**Calibration:** Diagnose capture from a sustained pattern: evidence-insensitive protection of a core commitment, asymmetric treatment of friendly and hostile errors, professional penalties substituting for argument, and failed correction or appeal. One rejected question, policy change, or controversial conclusion is insufficient. Compare resource, competence, coordination, legal, and ordinary quality-control explanations.
+
 ### Axionic Criterion
 
 The cultural test asking whether a pattern supports coherent choice under constraint, reduces reliance on coercion, and scales without collapsing autonomy.
 
 **Canonical home:** Volume 8, Chapter 4.
+
+### Asymmetry heuristic
+
+A controlled-comparison prompt: where apparently comparable cases receive different treatment, hold the stated variable fixed where possible, enumerate uncontrolled differences, and test which omitted variables explain the change.
+
+**Canonical home:** Volume 8, Chapter 27.
+
+**Calibration:** Asymmetry can falsify a simple explanation or reveal a morally relevant distinction. It does not identify motive or a unique hidden cause without further evidence.
 
 ## Meaning
 

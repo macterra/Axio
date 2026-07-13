@@ -1,7 +1,7 @@
 ---
 title: 'Dangerous Knowledge'
 subtitle: 'Infohazards, containment, and the contrarian ecology'
-status: draft
+status: review
 sources:
   - 172362753.infohazards-and-games
   - 175065575.an-ecology-of-contrarians

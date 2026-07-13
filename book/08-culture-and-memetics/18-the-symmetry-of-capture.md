@@ -1,7 +1,7 @@
 ---
 title: 'The Symmetry of Capture'
 subtitle: 'A non-partisan attractor'
-status: draft
+status: review
 sources:
   - 165721326.the-woke-right
   - 172367780.the-equality-trap

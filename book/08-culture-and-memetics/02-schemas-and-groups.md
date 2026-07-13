@@ -1,7 +1,7 @@
 ---
 title: 'Schemas and Groups'
 subtitle: 'A formal model of culture'
-status: draft
+status: review
 sources:
   - 166080146.understanding-culture
   - 166409545.culture-hierarchies

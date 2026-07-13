@@ -1,7 +1,7 @@
 ---
 title: 'Gated Realities'
 subtitle: 'The sociology of self-segregation'
-status: draft
+status: review
 sources:
   - 176140519.blue-flight
   - 169479666.the-progressive-exodus

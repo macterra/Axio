@@ -1,7 +1,7 @@
 ---
 title: 'The Geometry of Culture'
 subtitle: 'Curved landscapes and black holes'
-status: draft
+status: review
 sources:
   - 173608962.cultural-gravity
   - 170492163.singularities-in-thought-space

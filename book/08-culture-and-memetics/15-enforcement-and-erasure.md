@@ -1,7 +1,7 @@
 ---
 title: 'Enforcement and Erasure'
 subtitle: 'From silencing the speaker to erasing the record'
-status: draft
+status: review
 sources:
   - 173950922.cancel-culture
   - 171155815.memory-holed

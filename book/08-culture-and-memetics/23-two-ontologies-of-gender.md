@@ -1,7 +1,7 @@
 ---
 title: 'Two Ontologies of Gender'
 subtitle: 'Why the debate is stuck'
-status: draft
+status: review
 sources:
   - 176036886.gender-as-performance
 ---
@@ -60,4 +60,4 @@ Sex is a descriptive category. It carves a real biological joint — bimodal, de
 
 This does not make the hard questions easy, and I want to be exact about what the frame does and does not deliver. It does not tell you which layer governs in a given room — the sports league, the prison ward, the clinic, the dating pool, the census — because those are questions about which real category should control a particular decision, and they cannot be answered by ontology alone. What the frame delivers is the precondition for arguing about them without talking past each other: an agreement that *both* categories are real, on their own terms, so that the fight becomes a tractable dispute over jurisdiction rather than a shouting match in which each side denies the other's reality exists at all. That is the difference between a war and a negotiation.
 
-So this chapter takes no side in the object-level dispute, and that restraint is deliberate. Its work is to show why the war persists — not because one camp loves truth and the other hates it, but because the word *gender* straddles two ontologies of the word itself, and until that is made explicit every argument circles the same invisible axis. The chapters that follow do take positions. One examines where the demand for gender [parity tracks something real](23-parity-where-it-pays.md) and where it does not; another adjudicates a specific claim of sex discrimination and finds it [true](24-when-the-claim-is-true.md). Those are arguments within the frame. This chapter only builds the frame — the recognition that sex and gender are real in two different senses of *real*, and that almost everything said about them goes wrong at the moment one sense is mistaken for the other.
+So this chapter takes no side in the object-level dispute, and that restraint is deliberate. Its work is to show why the war persists — not because one camp loves truth and the other hates it, but because the word *gender* straddles descriptive and constitutive uses, and until that is made explicit every argument circles the same invisible axis. The [parity case that follows](24-parity-where-it-pays.md) asks what occupational distributions can and cannot establish. This chapter only builds the frame, and the frame is a proposal rather than an exhaustive map: sex and gender can be real in different senses of *real*, without that distinction deciding every boundary case or policy jurisdiction.

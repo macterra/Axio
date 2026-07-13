@@ -1,7 +1,7 @@
 ---
 title: 'Weaponized Labels'
 subtitle: 'Motte, bailey, and shibboleth'
-status: draft
+status: review
 sources:
   - 173137799.the-islamophobia-trap
   - 170274859.progressive-shibboleths

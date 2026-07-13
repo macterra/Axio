@@ -1,7 +1,7 @@
 ---
 title: 'The Corruption of Categories'
 subtitle: 'Classifier cant and untethered anchors'
-status: draft
+status: review
 sources:
   - 202203795.the-algorithmic-corruption-of-language
   - 173611210.the-anchor-of-orientation
@@ -81,7 +81,7 @@ The retort is effective not merely as rhetoric but as a reminder that sexual ori
 
 But the reply also exposes something better hidden, and this is the tell. The insistence on recasting same-sex attraction as heterosexuality carries an implicit judgment: that it is preferable, or less stigmatized, to be labeled straight than gay or bisexual. Why else would the reclassification be worth fighting for? If being gay or bisexual is truly legitimate, there should be no need to disguise it beneath a semantic reclassification. The maneuver presents itself as progressive and smuggles in the oldest prejudice in the file — that *gay* is a label to be escaped. That is what makes "It's OK to be gay" a diagnosis rather than a taunt: it names the value judgment the reclassification was built to avoid stating.
 
-None of this is a claim about how anyone should identify, and identity does real work in plenty of social contexts. The question here is narrower: what the orientation categories are *for*. They are for mapping desire, and desire tracks sex. Redefining them in terms of identity undermines both clarity and honesty — clarity, because the categories stop sorting; honesty, because the sorting failure is in service of a judgment nobody will say aloud. A coherent account keeps the anchor or surrenders the categories to incoherence. The deeper ontological dispute underneath this — what gender itself is, and why the two sides cannot even agree on what kind of thing they are arguing about — I take up in [Two Ontologies of Gender](22-two-ontologies-of-gender.md).
+None of this is a claim about how anyone should identify, and identity does real work in plenty of social contexts. The question here is narrower: what the orientation categories are *for*. They are for mapping desire, and desire tracks sex. Redefining them in terms of identity undermines both clarity and honesty — clarity, because the categories stop sorting; honesty, because the sorting failure is in service of a judgment nobody will say aloud. A coherent account keeps the anchor or surrenders the categories to incoherence. The deeper ontological dispute underneath this — what gender itself is, and why the two sides cannot even agree on what kind of thing they are arguing about — I take up in [Two Ontologies of Gender](23-two-ontologies-of-gender.md).
 
 ## Two Routes, One Failure
 
