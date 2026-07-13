@@ -1,7 +1,7 @@
 ---
 title: 'The Capture of Words and Time'
 subtitle: 'Hijacked labels, the tribunal of history, and statistical rhetoric'
-status: draft
+status: review
 sources:
   - 169312064.hijacking-liberalism
   - 170694694.the-right-side-of-history
@@ -57,7 +57,7 @@ When someone declares their place on the right side of history, remember what is
 
 The third territory is arithmetic. Words can be redefined and the future can be ventriloquized, but numbers carry an aura of objectivity that makes them the most valuable capture of all — a statistic feels like a fact even when it functions as a slogan.
 
-Take the stock comparison of inequality rhetoric, deployed for years by Bernie Sanders and repeated endlessly downstream of him: *Elon Musk owns more wealth than the bottom half of Americans combined.* The move is always the same — set a very large positive net worth against the aggregate wealth of a low percentile group, and let the disparity sound morally damning on its own.
+Take a stock comparison in inequality rhetoric: *one billionaire owns more wealth than the bottom portion of the population combined.* The move is to set a very large positive net worth against the aggregate wealth of a low-percentile group and let the disparity sound morally diagnostic on its own.
 
 The comparison survives on one fact that its users never mention: in the United States, the bottom 20 percent of the population has *negative* aggregate net worth. For that segment taken as a whole, debts — student loans, mortgages, consumer credit — exceed assets. The cumulative distribution makes the artifact visible at a glance:
 
@@ -65,7 +65,7 @@ The comparison survives on one fact that its users never mention: in the United 
 
 Follow the curve. It begins underwater, surfaces around the 20th percentile, and crawls along near zero for the next several deciles before rocketing upward at the far right. Which means that anyone with a positive net worth — a solvent barista, a debt-free college graduate with a thousand dollars in savings — "owns more than the bottom 20 percent of Americans combined." The statement is true of tens of millions of unremarkable people, because the group being summed nets out below zero. A comparison that anyone can win is not a measure of anything.
 
-Now apply the consistency test — the same instrument that dismantles so much statistical rhetoric. Turn the metric on its own promoters. Sanders has an estimated personal net worth of two to three million dollars, placing him comfortably in the top few percent of American households. By his own chosen yardstick, he owns more wealth than the bottom 20 percent of the country combined — more than tens of millions of his fellow citizens taken together — in precisely the way he presents as damning when the name attached is Musk. If the comparison indicts Musk, it indicts Sanders. If Sanders rejects the application to himself — and of course he must — then he concedes that the comparison was never a valid measure of injustice in the first place. Either way the rhetoric collapses. The reversal is not a gotcha about one senator's finances; it is a proof about the metric. A statistic that indicts its own wielder the moment it is applied consistently was never doing statistical work. It was doing theatrical work.
+Now apply the consistency test. Because the aggregate net worth of a sufficiently indebted bottom group can be negative, anyone with positive net worth may “own more” than that group combined. The reversal is not a defense of extreme wealth and does not show that inequality is harmless. It shows that this particular comparison cannot measure injustice by itself. A serious analysis would instead specify consumption, income, assets, liabilities, age, expected earnings, material deprivation, and the mechanisms that produced the distribution.
 
 There is a substantive error underneath the theatrical one. Negative net worth in a wealthy economy is not a portrait of destitution. The bottom of the net-worth distribution is heavily populated by people in the leveraged phase of prosperous lives: the medical resident with six figures of student debt and seven figures of expected earnings, the young family whose mortgage temporarily swamps its equity. Their debts are claims they chose against futures they expect — access to credit is itself a form of wealth that the snapshot records as its opposite. The bottom of the net-worth distribution is simply not the bottom of the well-being distribution, and a rhetoric that conflates the two is not measuring deprivation; it is manufacturing it.
 

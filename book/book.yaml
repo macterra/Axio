@@ -335,6 +335,44 @@ volumes:
 
   - slug: 08-culture-and-memetics
     title: Culture, Memetics, and Ideology
+    parts:
+      - title: "Part I — Theory and Transmission"
+        chapters:
+          - 01-the-story-telling-ape
+          - 02-schemas-and-groups
+          - 03-patterns-as-players
+          - 04-exemplars-and-the-axionic-criterion
+      - title: "Part II — Memetic Ecology"
+        chapters:
+          - 05-the-egregoric-singularity
+          - 06-the-geometry-of-culture
+          - 07-memetic-pathogens
+          - 08-echoes-of-freud
+          - 09-dangerous-knowledge
+      - title: "Part III — Discursive Weapons"
+        chapters:
+          - 10-the-grammar-of-bad-faith
+          - 11-weaponized-labels
+          - 12-the-capture-of-words-and-time
+          - 13-the-wound-and-the-weapon
+          - 14-the-corruption-of-categories
+          - 15-enforcement-and-erasure
+          - 16-exploiting-the-best-in-us
+      - title: "Part IV — Institutional Capture"
+        chapters:
+          - 17-anatomy-of-capture
+          - 18-the-symmetry-of-capture
+          - 19-the-capture-of-the-professions
+          - 20-gated-realities
+          - 21-the-forbidden-pattern
+      - title: "Part V — Controlled Applications"
+        chapters:
+          - 22-when-the-claim-is-true
+          - 23-two-ontologies-of-gender
+          - 24-parity-where-it-pays
+          - 25-the-rituals-of-absolution
+          - 26-the-oldest-attractor
+          - 27-the-taboo-test
 
   - slug: 09-meaning
     title: Meaning, Spirituality, and the Secular Sacred

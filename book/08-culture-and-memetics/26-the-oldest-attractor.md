@@ -1,7 +1,7 @@
 ---
 title: 'The Oldest Attractor'
 subtitle: 'Antisemitism as a perverse Schelling point'
-status: draft
+status: review
 sources:
   - 164271340.the-pattern
 ---

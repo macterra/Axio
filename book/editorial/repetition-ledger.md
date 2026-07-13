@@ -103,9 +103,11 @@ Status labels:
 
 ### Volume 8
 
-- Bad faith, category corruption, institutional capture, and enforcement are described through overlapping vocabularies.
-- Establish one capture mechanism, then make each applied chapter test a different stage or failure mode.
-- Repeated declarations of political symmetry should be replaced by demonstrated symmetry in case selection and standards.
+- **Phase 4 decision:** Chapter 3 owns the pattern model; Chapter 5's egregore and organism language is explicitly analogical. People remain the choosing and responsible agents.
+- **Phase 4 decision:** Chapters 10–16 retain distinct discourse mechanisms. Surface tactics are not evidence of intent by themselves; labels, statistics, categories, enforcement, empathy, and dread each require their own causal showing.
+- **Phase 4 decision:** Chapters 17–21 own capture. Diagnose a sustained failure of symmetric error correction after comparing resource, competence, coordination, legal, and ordinary quality-control explanations.
+- **Phase 4 decision:** Part V begins with the Franklin control case, then applies one evidence burden to gender categories, occupational parity, symbolic and categorical remedies, antisemitism, and taboo.
+- **Phase 4 decision:** Chapter 27 owns the asymmetry heuristic. It identifies omitted variables and designs further inquiry; it does not reveal motive or a unique hidden term by itself.
 
 ### Volume 9
 

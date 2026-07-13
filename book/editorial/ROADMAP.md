@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 4 underway — Volumes 1–7 edited and in author review; Volume 8 is next.** The manuscript contains nine volumes, 241 chapters, and roughly 550,000 words. Phase 1 established the editorial control documents; Phase 2 confirmed the nine-volume architecture with targeted revisions recorded in `book/editorial/architecture/`. Volume passes are recorded in `book/editorial/volume-edits/`. Editing now proceeds through the applied volumes.
+Status: **Phase 4 underway — Volumes 1–8 edited and in author review; Volume 9 is next.** The manuscript contains nine volumes, 241 chapters, and roughly 550,000 words. Phase 1 established the editorial control documents; Phase 2 confirmed the nine-volume architecture with targeted revisions recorded in `book/editorial/architecture/`. Volume passes are recorded in `book/editorial/volume-edits/`. Editing now proceeds through the applied volumes.
 
 ## Editorial goals
 
@@ -199,6 +199,8 @@ Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/0
 
 ### Volume 8 — Culture, Memetics, and Ideology
 
+Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/08-culture-and-memetics.md`.
+
 - Define what explanatory work “patterns as players” performs beyond metaphor.
 - Apply the Axionic Criterion consistently to friendly and hostile ideologies.
 - Separate diagnosis of a mechanism from judgment about a contemporary faction.
@@ -335,4 +337,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Continue Phase 4 with the Volume 8 chapter-level edit. Define the explanatory work of cultural patterns without literalizing group minds, establish one capture mechanism before its applications, steelman contemporary cases symmetrically, and separate diagnosis from factional judgment.
+Continue Phase 4 with the Volume 9 chapter-level edit. Separate proposed conclusions from chosen commitments, preserve the distinction between transcendent experience and supernatural interpretation, and protect the double envoi from premature repetition.

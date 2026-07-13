@@ -1,7 +1,7 @@
 ---
 title: 'Patterns as Players'
 subtitle: 'The real units of selection'
-status: draft
+status: review
 sources:
   - 180199129.the-metagame-of-patterns
 ---
@@ -14,9 +14,9 @@ The standard way to explain these things is to point at people. Find the bureauc
 
 ## The Wrong Unit of Analysis
 
-Every visible system — political, scientific, cultural, technological — appears to be driven by individuals making choices. The appearance is not exactly false; individuals do make the choices. But individuals are not the true competitors in the game of cultural persistence. **Patterns** are.
+Every visible system — political, scientific, cultural, technological — appears to be driven by individuals making choices. Individuals do make the choices and remain responsible for them. But they are not always the most useful units for explaining cultural persistence. **Patterns** can be.
 
-When a scientist publishes for prestige, a politician signals loyalty, a corporation chases quarterly metrics, or a movement drifts from its mission, the real actor is a pattern: a stable configuration of behavior and incentives that has, in a perfectly non-mysterious sense, learned how to survive. Not learned consciously — patterns have no minds and need none. They are selected. Variants that happen to secure their own reproduction are still here; variants that did not are not. The publishing scientist is doing what her environment rewards, and the pattern "publish striking novel results" is doing what *its* environment rewards, which is to keep finding scientists whose careers it can ride. Incentives do not reward intentions; they reward patterns that perform well in their environment. Selection operates on patterns long before it operates on people.
+When a scientist publishes for prestige, a politician signals loyalty, a corporation chases quarterly metrics, or a movement drifts from its mission, a pattern-level model can reveal what an inventory of intentions misses: a stable configuration of behavior and incentives is being reproduced. Patterns do not learn, want, choose, or bear responsibility. People and organizations do those things. The selection claim is narrower: variants that induce people to copy, reward, or enforce them become more common, while variants that do not tend to disappear. “Publish striking novel results,” for example, can persist because career incentives repeatedly reward the people who enact it. Pattern language compresses that causal loop; it does not add another mind to the system.
 
 This is the claim that anchors everything else in this volume, so I should say precisely what it quantifies over.
 
@@ -44,7 +44,7 @@ People die. Institutions churn. Regimes collapse. Yet patterns continue.
 
 The bureaucracy preserves its procedures long after anyone remembers why they exist. The religion maintains doctrines through centuries of upheaval. The outrage cycle persists across platforms and generations. Corporate incentive structures survive entire leadership turnovers. Cultural norms endure migrations, wars, and technological shocks. In each case the informational structure has decoupled its lifespan from the lifespans of its hosts, because what sustains it is not any particular person's commitment but the incentive gradient that keeps recruiting new people into the roles the pattern defines.
 
-This inverts the intuitive picture of agency, and the inversion is the threshold insight of the whole theory: **you do not operate patterns; patterns operate through you.** The language you argue in, the career script you are following, the moral reflexes you deploy without deliberation, the institutional procedures you enact at work — you executed none of the design decisions. The patterns predate you; they were shaped by selection pressures you never witnessed; they will recruit your successors after you are gone. Most of what feels like choosing is instantiating. Until you see this, you will keep trying to fix systems by replacing their people, and you will keep being amazed that the replacements behave like the people they replaced.
+This qualifies the intuitive picture of agency: **we operate through inherited patterns, and inherited patterns constrain what we notice and choose.** The language you argue in, the career script you are following, the moral reflexes you deploy without deliberation, the institutional procedures you enact at work — you executed few of their design decisions. The patterns predate you; they were shaped by selection pressures you never witnessed; they may recruit your successors after you are gone. Much choosing begins from inherited scripts. Until you see this, you will keep trying to fix systems only by replacing their people, and you will keep being amazed that the replacements encounter the same incentives.
 
 ## The Pattern Economy
 
@@ -52,7 +52,7 @@ Patterns do not persist in isolation. They exist within a competitive ecology �
 
 Some patterns are self-reinforcing: each execution strengthens the conditions for the next, the way a credential requirement entrenches itself by populating hiring committees with the credentialed. Others decay unless actively maintained, the way a norm of rigorous peer review survives only as long as someone pays its costs. High-fitness patterns commandeer institutions, bending budgets, procedures, and careers into their own reproductive machinery. Low-fitness patterns lose influence and fade, however fondly their last carriers remember them.
 
-This economy operates independently of human preference. It rewards performance, not virtue — and "performance" means performance at persisting, nothing more.
+This ecology need not track any one person's preference. Its aggregate result reflects what people and institutions repeatedly reward, copy, or enforce; “performance” here means persistence, not virtue.
 
 ## Incentives as Pattern Filters
 
@@ -72,7 +72,7 @@ Patterns mutate as they replicate — every retelling, every reimplementation, e
 
 **Pattern collapse** occurs when coherence fails: replication becomes too noisy, competing patterns overwhelm it, or the costs of maintaining coherence exceed what the environment pays for it. The pattern stops being one thing, and then it stops being a thing at all. This is the general form of ideological implosion — the belief system that fragments into warring interpretations, each too small to sustain the institutions the whole once commanded.
 
-Drift explains mission drift. Lock explains stagnation. Collapse explains implosion. The dynamics mirror natural selection — variation, inheritance, differential persistence — operating at the level of information rather than biology.
+Drift explains mission drift. Lock explains stagnation. Collapse explains implosion. The dynamics are analogous to natural selection — variation, inheritance, differential persistence — but the analogy has limits. Cultural variants are deliberately revised, transmitted unevenly, and filtered by reflective agents; “fitness” is therefore a local description of persistence under specified conditions, not a biological quantity imported whole.
 
 ## A Note on Attractors
 

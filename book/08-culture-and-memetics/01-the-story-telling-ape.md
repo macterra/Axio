@@ -1,7 +1,7 @@
 ---
 title: 'The Story-Telling Ape'
 subtitle: 'Narrative as cognition''s native format'
-status: draft
+status: review
 sources:
   - 166013336.homo-narrans
   - 175193629.mythogenesis

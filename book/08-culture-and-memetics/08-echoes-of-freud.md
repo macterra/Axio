@@ -1,7 +1,7 @@
 ---
 title: 'Echoes of Freud'
 subtitle: 'Anatomy of a meme complex'
-status: draft
+status: review
 sources:
   - 182785676.echoes-of-freud
 ---

@@ -1,7 +1,7 @@
 ---
 title: 'Memetic Pathogens'
 subtitle: 'Angel''s wings and burning flowers'
-status: draft
+status: review
 sources:
   - 174938004.mind-viruses
   - 176688057.destructor-memes

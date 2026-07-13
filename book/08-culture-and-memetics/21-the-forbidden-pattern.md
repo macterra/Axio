@@ -1,7 +1,7 @@
 ---
 title: 'The Forbidden Pattern'
 subtitle: 'Attention as moral infrastructure'
-status: draft
+status: review
 sources:
   - 202362354.the-forbidden-pattern
 ---
@@ -30,7 +30,10 @@ In these cases, the forbidden pattern was networks of mostly Pakistani-heritage 
 
 The wording has to be exact, and exactness cuts in several directions. "Muslim-background" does not establish a religious motive. "Pakistani-heritage" carries no guilt by itself. "South Asian" is too wide for most of these cases. "Asian" — the favored British euphemism — hides more than it reveals. "Men" is true and operationally useless when the pattern being avoided is far more specific. The demand is not for a louder accusation. It is for an accurate one.
 
-Rotherham is the clearest case because so much was finally written down. The independent inquiry led by Alexis Jay estimated that at least 1,400 children were sexually exploited there between 1997 and 2013, often girls already known to services, often preyed on by networks that were heavily Pakistani-heritage. The damning fact is not that officials knew nothing. They knew a great deal and declined to assemble it into an honest model. Youth workers raised the alarm. Families were brushed off. Victims were logged as troublesome, promiscuous, unreliable, complicit in their own abuse. The category error was fatal: adult predation was read through the conduct of the child.
+Rotherham is the clearest case because so much was finally written down. The independent inquiry led by Alexis Jay estimated that at least 1,400 children were sexually exploited there between 1997 and 2013. It described collective failure by the council and police, victims who were blamed or treated as making choices, perpetrators commonly described by victims as Asian, and staff who reported nervousness about identifying ethnic origins for fear of being thought racist.[^jay] A later national audit described the local model more specifically while warning against stereotyping offenders or treating it as the only form of group-based abuse.[^national-audit] The record supports both propositions: ethnicity was relevant in this local pattern, and overgeneralizing it would obscure other offenders and victims.
+
+[^jay]: Alexis Jay, [*Independent Inquiry into Child Sexual Exploitation in Rotherham, 1997–2013*](https://www.rotherham.gov.uk/downloads/download/31/independent-inquiry-into-child-sexual-exploitation-in-rotherham-1997---2013), Rotherham Metropolitan Borough Council, 2014.
+[^national-audit]: UK Government, [*National Audit on Group-based Child Sexual Exploitation and Abuse*](https://www.gov.uk/government/publications/national-audit-on-group-based-child-sexual-exploitation-and-abuse/national-audit-on-group-based-child-sexual-exploitation-and-abuse-accessible), 2025.
 
 ## Euphemism Is Machinery
 
@@ -56,11 +59,11 @@ Beneath that was a mechanism this book has already named. Most of the officials 
 
 Austerity is the standard alibi for public-sector failure, and in many areas it earns its place. Thin staffing forces triage, delays investigations, erodes competence, and burns out frontline workers. But austerity does not explain the *shape* of this failure. Scarcity can account for missed appointments, weak follow-up, sloppy records, crude triage. It cannot account for why raped girls were redescribed as risky adolescents, why ethnicity turned radioactive, why parents were handled as nuisances, why offender networks stayed less legible to the system than the reputational cost of naming them.
 
-Here is the diagnostic, and it is portable to every case in this Part: a starved institution fails at random, and a corrupted one fails in a pattern. This failure had a pattern — the same kind of fact softened, buried, and misclassified in town after town, year after year. A funding curve does not do that. A taboo does. Promoted to the central explanation, austerity performs its own act of misdirection: it moves agency away from the moral and epistemic failure and turns a scandal of evasion into one more argument about council budgets. The children were not failed for lack of capacity to notice them. They were failed by institutions that had the capacity and the incentive to look away.
+The proposed diagnostic is comparative: resource scarcity predicts broad degradation, while capture predicts errors concentrated around protected commitments. Real institutions can show both. Staffing, competence, fragmented authority, evidentiary difficulty, class prejudice, and fear of racial controversy may jointly shape the pattern. The inference therefore requires comparison: were analogous warnings handled differently, did the same euphemisms recur, who imposed them, and did contrary evidence have a working route to action? Patterned failure is evidence for a selective filter, not proof of a single taboo.
 
 ## The Half of Anti-Racism That Was Kept
 
-Anti-racism failed here the moment it lost sight of the individual. An innocent Muslim man is innocent, completely. An innocent Pakistani-heritage family is innocent, completely. And a girl being raped by Pakistani-heritage men is also an individual, whose reality cannot be sacrificed to protect a narrative about group innocence. The official reflex treated the possible staining of a community as more urgent than the actual destruction of a child, and then dressed that inversion up as sophistication: sensitivity, restraint, responsible language. An anti-racism that requires silence about raped children has gone morally insane.
+Anti-racism failed wherever it lost sight of the individual. An innocent Muslim man and an innocent Pakistani-heritage family bear no guilt for another person's crime. A child being abused is also an individual whose evidence cannot be suppressed to protect a narrative about group innocence. The relevant official failure was not anti-racism as such, but a distorted application that confused avoiding collective blame with avoiding accurate description.
 
 The correct principle is not complicated, and it has two halves. Never assign guilt by group, and never suppress evidence because a group is involved. The first half shields the innocent minority citizen from collective blame. The second half shields the victim from being erased when her attackers belong to a protected category. You need both halves. The officials kept only the first, mistook half a principle for the whole of it, and called the amputation virtue.
 

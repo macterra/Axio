@@ -1,7 +1,7 @@
 ---
 title: 'The Grammar of Bad Faith'
 subtitle: 'The tactic taxonomy, from person to poll'
-status: draft
+status: review
 sources:
   - 170182045.bad-faith
   - 170122138.silencing-through-stigma
@@ -10,13 +10,13 @@ sources:
 
 Everyone who has spent time arguing in public knows the moment. You are mid-conversation, patiently laying out a position, when you notice that your interlocutor is not actually confused. The misreadings are too convenient. The outrage arrives too precisely on cue. The standards keep moving, but always in one direction. You came to clarify; they came to obstruct. And the sinking realization is not that you are losing the argument — it is that there was never an argument to lose. You were a prop in a performance staged for someone else.
 
-That performance has a name: bad faith. Arguing in bad faith means intentionally misleading others to manipulate, derail, or sabotage meaningful dialogue — presenting oneself as sincere while acting dishonestly. The diagnostic is intent. Honest disagreement aims at clarification even when it fails; sincere misunderstanding wants to be corrected. Bad faith is calculated to obstruct rather than clarify, to convert productive conversation into confusion or hostility, because confusion and hostility are the product. The distinction matters because the surface behavior can look identical. A confused person and a bad-faith actor may utter the same sentence; only one of them is disappointed when the confusion clears.
+That performance has a name: bad faith. Arguing in bad faith means intentionally misleading others while presenting oneself as sincere. Intent is constitutive, but rarely observable directly. A confused person and a bad-faith actor may utter the same sentence. Repetition after clear correction, selective standards across comparable cases, private evidence, and a stable pattern of evasions can raise confidence; one disagreeable exchange cannot. The tactics below are therefore warning signs and discourse failures before they are diagnoses of a person's inner state.
 
 The previous chapters treated cultural patterns ecologically — how they replicate, mutate, merge with hosts, and curve the fitness landscape they compete on. This part turns to armaments. Discourse is the arena where patterns fight for hosts, and like any arena it has weapons native to it: techniques that win the exchange without winning the argument. Bad faith is the general form of those weapons, and it has a grammar — a small set of composable tactics that recur so reliably, across every topic and every faction, that once you learn to parse them you can never again mistake them for conversation. This chapter lays out that grammar, and then reads two texts written in it: one aimed at a person, one embedded in a poll.
 
 ## The Seven Tactics
 
-Bad faith is characterized by a recognizable repertoire. The tactics combine freely, but each is distinct enough to name.
+Bad-faith exchanges often use a recognizable repertoire. The same surface moves can also arise from confusion, emotion, or incompatible assumptions, so each must be tested in context.
 
 **Motivated misinterpretation.** Deliberately distorting statements to portray an opponent negatively — reading a factual claim as an attack, a nuanced position as an extremist one. The move works by stripping context: keep the words, discard the qualifications, and the misleading paraphrase does the rest. It is the workhorse tactic, and the first case study below is built almost entirely out of it.
 
@@ -32,7 +32,7 @@ Bad faith is characterized by a recognizable repertoire. The tactics combine fre
 
 **Personal attacks and deflection.** When all else fails, attack the arguer — character, motives, credibility — rather than the argument. Ad hominem is the oldest entry in the repertoire and still the most reliable, because it discredits and distracts simultaneously, and because there is no defense against it that does not look like protesting too much.
 
-Notice what unites the seven. None engages the actual content of the opposing position. Each substitutes a maneuver for an answer. That is the grammatical signature of bad faith: the tactics are content-independent, which is why the same repertoire appears on every side of every issue. The grammar has no politics. Only the vocabulary changes.
+Notice what unites the seven. None, when sustained, engages the actual content of the opposing position. The repertoire appears across factions; what distinguishes intentional obstruction from ordinary failure is the pattern, evidence of state of mind, and response to correction.
 
 ## What It Costs
 

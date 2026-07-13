@@ -1,7 +1,7 @@
 ---
 title: 'Exemplars and the Axionic Criterion'
 subtitle: 'How patterns travel, and which deserve to'
-status: draft
+status: review
 sources:
   - 182596460.exemplars-and-agency
 ---
