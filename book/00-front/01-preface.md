@@ -1,7 +1,7 @@
 ---
 title: Preface
 subtitle: How this book came to be
-status: draft
+status: review
 sources: []
 ---
 

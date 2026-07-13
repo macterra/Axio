@@ -1,7 +1,7 @@
 ---
 title: Introduction
 subtitle: How to read this book
-status: draft
+status: review
 sources: []
 ---
 
@@ -9,7 +9,7 @@ sources: []
 
 ## The arc
 
-The volumes are arranged so that each rests on the ones before it, but each was also written to stand on its own. The spine is agency — what it is, what it requires, and what it makes possible — and the book follows that spine from physics to meaning.
+The volumes run from foundations to applications, but the order is not a strict ladder in which every idea is proved once before it is ever used. The real structure is a spine with two braids. Volumes 1 and 2 stabilize each other: the physics of agency leans on the epistemology to say what its claims amount to, and the epistemology borrows the branching universe for its account of probability. Volumes 4 and 5 do the same: the formal theory of sovereign agency takes the problem of viability from the ethics, and the ethics takes the architecture of agency from the formal theory. So a claim in an earlier volume sometimes rests on one that comes later, and following a cross-link *backward* is part of how the book is meant to be read, not a sign that the order failed. What runs unbroken through all of it is the spine — agency, what it is, what it requires, and what it makes possible — traced from physics to meaning. Each volume was also written to stand on its own, opening with the assumptions it makes and pointing to where they are earned.
 
 1. **The Physics of Agency and the Branching Universe** grounds choice in the physical world: the thermodynamics of agency, the quantum branching universe, and the distinction between the objective weight of a branch (Measure) and an agent's subjective confidence (Credence). If choice is real, the universe has to be a certain way; this volume says which way.
 
@@ -31,7 +31,7 @@ The volumes are arranged so that each rests on the ones before it, but each was 
 
 ## How to read it
 
-You can read straight through, and the arc will build in order. But you do not have to. Each volume opens with an introduction that says what it assumes and where those assumptions are established, and each chapter cross-links back to the arguments it depends on. Start where your interest is; follow the links back when you want the ground beneath a claim. Volumes 1 and 2 are the deepest foundations — the physics and the epistemology — and everything else leans on them, so a reader who wants the load-bearing structure first should begin there. A reader who wants to see where it all leads could begin at the end and read backward into the reasons.
+You can read straight through, and the arc will build in order. But you do not have to. Each volume opens with an introduction that says what it assumes and where those assumptions are established, and each chapter cross-links back to the arguments it depends on. Start where your interest is, and follow the links back when you want the ground beneath a claim. Three routes are worth naming. The **full argument** runs Volumes 1 through 9. **Agency and alignment** runs 1 → 3 → 4 → 5, for readers who came for minds and machines. **Ethics to meaning** runs 2 → 5 → 8 → 9, for readers who came for value and culture. Not every volume stands equally alone: Volume 4, the formal core, is the hardest to enter cold, while Volume 5 is the most self-contained place to begin among the applied volumes. Volumes 1 and 2 remain the deepest foundations — the physics and the epistemology — so a reader who wants the load-bearing structure first should start there.
 
 The book is web-native by design. Chapters link freely to one another across volumes, and outward to two other layers of the record: the [original blog posts](/), where the full and often more technical argument lives, and the [research papers](/papers/), where the formal treatments are worked out in detail. A chapter is a considered synthesis; when it compresses a longer technical record, the links are how you reach the rest.
 
