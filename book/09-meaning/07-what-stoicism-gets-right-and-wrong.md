@@ -1,7 +1,7 @@
 ---
 title: 'What Stoicism Gets Right and Wrong'
 subtitle: 'The critique, then the recovery'
-status: draft
+status: review
 sources:
   - 167365336.stoicism-in-context
   - 167442753.what-stoicism-gets-right
@@ -45,9 +45,9 @@ The first is **objective value**: the Stoic conviction that virtue is *the* good
 
 Both commitments collide with positions I have argued for at length elsewhere. Against objective value stands [subjective value](../05-value-and-ethics/01-the-myth-of-objective-value.md): value is not a feature the universe contains but a relation between an agent and the world, real but always *value-for-someone*, never value-from-nowhere. There is no cosmic ledger in which virtue is entered as the good; there are only agents, valuing, from vantages. Against the Stoic's confident metaphysics of the good stands [Conditionalism](../02-conditionalism/02-all-truth-is-conditional.md): every truth is true relative to a framework, and a claim like "virtue is the only good" is not a report on the furniture of reality but a stance held within one. The Stoic states his ethics in the indicative mood of physics. I think that mood is a category error, and a consequential one — it is precisely what lets the resilient asshole tell himself that his hardness is not a choice but a law.
 
-And against cosmic determinism stands the [Quantum Branching Universe](../01-physics-of-agency/08-the-quantum-branching-universe.md) (QBU) — the picture, developed in Volume 1, of a reality that continually branches, in which the future is not a single ordained thread to be aligned with but a fan of realized possibilities whose weights your choices genuinely shape. There is no single *logos* whose script you are reading. "Living according to nature," in a branching universe, does not pick out one path to be accepted; it opens onto a space of paths to be chosen among. The Stoic's serene "it was always going to be so" has no referent. In a branching world nothing was always going to be so, and the equanimity that trades on cosmic necessity is drawing on a bank that does not exist.
+Against providential determinism, this book sets the [Quantum Branching Universe](../01-physics-of-agency/08-the-quantum-branching-universe.md) (QBU) — the interpretation developed in Volume 1, in which the future is not one ordained thread but a branching structure of weighted outcomes. If that interpretation is right, “living according to nature” does not identify one providential path to accept; it opens onto possibilities among which agency operates. Other physical and philosophical forms of determinism remain live, and ancient Stoic practice need not stand or fall with contemporary quantum interpretation. The narrower point is that the book does not inherit the providential *logos* that once warranted the move from “this happened” to “this was for the best.”
 
-This is not a quibble. The most beautiful move in Stoicism — the alchemy that turns "this is happening" into "this is as it should be" — runs on cosmic determinism plus objective value as fuel. Remove the fuel and you keep the psychological technique, which is powerful, but you lose the metaphysical warrant that told you the technique was tracking the truth of things rather than merely soothing you. That is a real loss, and I would rather face it than pretend the ancient physics still runs.
+This is not a quibble. One powerful Stoic move turns “this is happening” into acceptance of its place in a rational whole. Remove providence and objective cosmic value, and you keep valuable disciplines of attention, judgment, and action, but lose that particular metaphysical warrant. Stoics who reconstruct the practice on other grounds may accept the loss. This chapter does too, rather than pretending the ancient physics still runs.
 
 ## What Survives
 

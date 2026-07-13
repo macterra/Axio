@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 4 underway — Volumes 1–8 edited and in author review; Volume 9 is next.** The manuscript contains nine volumes, 241 chapters, and roughly 550,000 words. Phase 1 established the editorial control documents; Phase 2 confirmed the nine-volume architecture with targeted revisions recorded in `book/editorial/architecture/`. Volume passes are recorded in `book/editorial/volume-edits/`. Editing now proceeds through the applied volumes.
+Status: **Phase 4 complete — Volumes 1–9 edited and in author review; Phase 5 is next.** The manuscript contains nine volumes, 241 chapters, and roughly 550,000 words. Phase 1 established the editorial control documents; Phase 2 confirmed the nine-volume architecture with targeted revisions recorded in `book/editorial/architecture/`. Volume passes are recorded in `book/editorial/volume-edits/`. The next pass reconciles load-bearing concepts across volumes.
 
 ## Editorial goals
 
@@ -213,6 +213,8 @@ Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/0
 
 ### Volume 9 — Meaning, Spirituality, and the Secular Sacred
 
+Progress: **Edited; awaiting author review.** See `book/editorial/volume-edits/09-meaning.md`.
+
 - Separate arguments the book claims to establish from the author's chosen credo.
 - Avoid re-arguing the preceding book in compressed form.
 - Test the claim that preserving one's origin is required for machine coherence rather than merely valuable.
@@ -337,4 +339,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Continue Phase 4 with the Volume 9 chapter-level edit. Separate proposed conclusions from chosen commitments, preserve the distinction between transcendent experience and supernatural interpretation, and protect the double envoi from premature repetition.
+Begin Phase 5 with the cross-volume agency and sovereignty reconciliation. Confirm one canonical definition, audit later uses, and distinguish causal capacity, intentional control, authorship, and institutional authority before the glossary is drafted.

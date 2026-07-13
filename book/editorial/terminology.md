@@ -563,7 +563,7 @@ A controlled-comparison prompt: where apparently comparable cases receive differ
 
 ### Sacred
 
-The non-negotiable apex of an agent's value hierarchy: that against which lesser values are ranked and sacrificed.
+A commitment protected from ordinary trade-off or used to govern conflicts among lesser values. It may be a single apex, a small cluster of terminal commitments, or a context-sensitive priority rule.
 
 **Canonical home:** Volume 9, Chapter 2.
 
@@ -587,8 +587,16 @@ Agency disciplined by wisdom: power joined to reflective judgment about ends, co
 
 ### Law of Coherence
 
-Volume 9's name for the highest commitment to identity-preserving truthfulness and integration across belief, value, action, and lineage.
+Volume 9's chosen meta-mythic orientation toward truthfulness and forms of integration that keep agents and their sustaining relations intelligible, corrigible, and capable of development.
 
 **Canonical home:** Volume 9, Chapter 18.
 
-**Reconciliation required:** Distinguish this chosen sacred commitment from the physical definition of coherence and the formal constraints of reflective stability.
+**Calibration:** This is a personal value commitment and narrative synthesis, not a physical law. Physical persistence, logical consistency, personal integration, ethical cooperation, and historical provenance require separate arguments.
+
+### Provenance
+
+The accessible record of how a concept, objective, value, or system acquired and revised its meaning across a lineage.
+
+**Canonical home:** Volume 9, Chapter 19.
+
+**Calibration:** Provenance can support interpretation and error correction. Preserving it is not proved necessary for all coherent meaning, and it does not require a successor to preserve every inherited value or identity unchanged.
