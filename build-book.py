@@ -386,6 +386,9 @@ def build_volume_page(vol, publish_index):
         content += '<h2>Chapters</h2>\n'
         published_by_slug = {ch['slug']: ch for ch in published}
         if vol.get('parts'):
+            # Parts are display groupings only; chapter numbering runs
+            # continuously across them via each list's start offset.
+            chapter_number = 1
             for part in vol['parts']:
                 part_chapters = [published_by_slug[slug]
                                  for slug in part.get('chapters', [])
@@ -394,12 +397,13 @@ def build_volume_page(vol, publish_index):
                     continue
                 content += (f'<h3 class="book-part-title">'
                             f'{escape(part["title"])}</h3>\n'
-                            '<ol class="book-toc">\n')
+                            f'<ol class="book-toc" start="{chapter_number}">\n')
                 for ch in part_chapters:
                     title = escape(ch['meta'].get('title', ch['slug']))
                     content += (f'<li><a href="{ch["slug"]}.html">{title}</a> '
                                 f'{status_badge(ch["status"])}</li>\n')
                 content += '</ol>\n'
+                chapter_number += len(part_chapters)
         else:
             content += '<ol class="book-toc">\n'
             for ch in published:
