@@ -17,6 +17,13 @@ set -e  # Exit on error
 echo "=== Updating Axio Blog Archive ==="
 echo
 
+# Verify pandoc matches the pinned version before generating anything.
+# Building with a different pandoc re-renders the committed HTML as
+# cosmetic-only churn; halt so it cannot slip into a commit.
+echo "0. Checking pinned pandoc version..."
+python3 pandoc_version.py
+echo
+
 # Extract any zip files in the root directory
 echo "1. Checking for Substack archive ZIP files..."
 ZIP_COUNT=$(find . -maxdepth 1 -type f -name "*.zip" 2>/dev/null | wc -l)
