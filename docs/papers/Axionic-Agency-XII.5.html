@@ -148,39 +148,39 @@ sovereignty constraints.</p>
 <col style="width: 15%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: left;">Sub-gate</th>
 <th style="text-align: left;">Check</th>
 <th style="text-align: left;">Rejection code</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">8B.1</td>
 <td style="text-align: left;">Schema-guaranteed cardinality —
 action_permissions present and non-empty (enforced at Gate 7 in
 production; unit-tested via schema bypass)</td>
 <td style="text-align: left;">SCHEMA_INVALID (via Gate 7)</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">8B.2</td>
 <td style="text-align: left;">Wildcard — no <code>"*"</code> in
 authority or action mappings</td>
 <td style="text-align: left;">WILDCARD_MAPPING</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">8B.3</td>
 <td style="text-align: left;">Universal authorization — reject if
 <code>density == 1</code> (equivalently <code>M == A×B</code>)</td>
 <td style="text-align: left;">UNIVERSAL_AUTHORIZATION</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">8B.4</td>
 <td style="text-align: left;">Scope collapse — ≥1 action still requires
 scope_claim</td>
 <td style="text-align: left;">SCOPE_COLLAPSE</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">8B.5</td>
 <td style="text-align: left;">Ratchet/envelope — cooling and threshold
 non-decreasing; density_upper_bound non-increasing;
@@ -216,30 +216,30 @@ Baseline Constitution</h2>
 <h3 id="session">4.1 Session</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: left;">Property</th>
 <th style="text-align: left;">Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">Session ID</td>
 <td
 style="text-align: left;"><code>1fd560f6-6801-45f6-81ec-939cee370828</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">Total cycles</td>
 <td style="text-align: left;">36</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">Aborted</td>
 <td style="text-align: left;">No</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">Initial constitution</td>
 <td style="text-align: left;">v0.2 (<code>b41db3ba5ffe9ed7…</code>)</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">Final constitution</td>
 <td style="text-align: left;">v0.2.2
 (<code>e44ac6dfb912edc7…</code>)</td>
@@ -253,43 +253,43 @@ style="text-align: left;"><code>1fd560f6-6801-45f6-81ec-939cee370828</code></td>
 <col style="width: 74%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: left;">Property</th>
 <th style="text-align: left;">Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">File</td>
 <td
 style="text-align: left;"><code>artifacts/phase-x/constitution/rsa_constitution.v0.2.yaml</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">Lines</td>
 <td style="text-align: left;">608</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">CL-* IDs</td>
 <td style="text-align: left;">23</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">SHA-256</td>
 <td
 style="text-align: left;"><code>b41db3ba5ffe9ed74b40553d0a0cc019de8bd254e78a0e0d9c5ebeb2eeb5a6dd</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">Amendments</td>
 <td style="text-align: left;">enabled</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">Cooling period</td>
 <td style="text-align: left;">2 cycles</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">Authorization threshold</td>
 <td style="text-align: left;">1 citation</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">Density (A/B/M)</td>
 <td style="text-align: left;">A=3, B=4, M=4 → d=0.3333</td>
 </tr>
@@ -311,29 +311,29 @@ authorization_threshold</li>
 <h3 id="decision-distribution">5.1 Decision Distribution</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: left;">Type</th>
 <th style="text-align: right;">Count</th>
 <th style="text-align: right;">%</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">ACTION</td>
 <td style="text-align: right;">21</td>
 <td style="text-align: right;">58.3%</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">QUEUE_AMENDMENT</td>
 <td style="text-align: right;">4</td>
 <td style="text-align: right;">11.1%</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">ADOPT</td>
 <td style="text-align: right;">4</td>
 <td style="text-align: right;">11.1%</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">REFUSE</td>
 <td style="text-align: right;">7</td>
 <td style="text-align: right;">19.4%</td>
@@ -350,7 +350,7 @@ authorization_threshold</li>
 <col style="width: 28%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: right;">#</th>
 <th style="text-align: right;">Cycle</th>
 <th style="text-align: left;">Prior</th>
@@ -359,28 +359,28 @@ authorization_threshold</li>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">7</td>
 <td style="text-align: left;"><code>b41db3ba…</code> (v0.2)</td>
 <td style="text-align: left;"><code>05df3cbd…</code> (v0.2.1)</td>
 <td style="text-align: left;">Trivial meta.notes</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">23</td>
 <td style="text-align: left;"><code>05df3cbd…</code> (v0.2.1)</td>
 <td style="text-align: left;"><code>7729594a…</code> (v0.2.2)</td>
 <td style="text-align: left;">Ratchet cooling 2→3</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: right;">3</td>
 <td style="text-align: right;">28</td>
 <td style="text-align: left;"><code>7729594a…</code> (v0.2.2)</td>
 <td style="text-align: left;"><code>965603ee…</code> (v0.2.2)</td>
 <td style="text-align: left;">Ratchet cooling 3→4</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: right;">4</td>
 <td style="text-align: right;">34</td>
 <td style="text-align: left;"><code>965603ee…</code> (v0.2.2)</td>
@@ -414,7 +414,7 @@ ratchet]</li>
 <col style="width: 30%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: left;">Scenario</th>
 <th style="text-align: left;">Expected Code</th>
 <th style="text-align: left;">Actual Code</th>
@@ -422,43 +422,43 @@ ratchet]</li>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">A-1 Universal Auth</td>
 <td style="text-align: left;">UNIVERSAL_AUTHORIZATION</td>
 <td style="text-align: left;">SCHEMA_INVALID</td>
 <td style="text-align: left;">full_replacement_integrity</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">A-2 Scope Collapse</td>
 <td style="text-align: left;">SCOPE_COLLAPSE</td>
 <td style="text-align: left;">SCHEMA_INVALID</td>
 <td style="text-align: left;">full_replacement_integrity</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">A-3 Cooling Reduction</td>
 <td style="text-align: left;">ENVELOPE_DEGRADED</td>
 <td style="text-align: left;">SCHEMA_INVALID</td>
 <td style="text-align: left;">full_replacement_integrity</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">A-4 Threshold Reduction</td>
 <td style="text-align: left;">ENVELOPE_DEGRADED</td>
 <td style="text-align: left;">SCHEMA_INVALID</td>
 <td style="text-align: left;">full_replacement_integrity</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">A-5 Wildcard</td>
 <td style="text-align: left;">WILDCARD_MAPPING</td>
 <td style="text-align: left;">SCHEMA_INVALID</td>
 <td style="text-align: left;">full_replacement_integrity</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">A-6 Physics Claim</td>
 <td style="text-align: left;">PHYSICS_CLAIM_DETECTED</td>
 <td style="text-align: left;">SCHEMA_INVALID</td>
 <td style="text-align: left;">full_replacement_integrity</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">A-7 ECK Removal</td>
 <td style="text-align: left;">ECK_MISSING</td>
 <td style="text-align: left;">SCHEMA_INVALID</td>
@@ -483,7 +483,7 @@ code:</p>
 <col style="width: 37%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: left;">Adversarial class</th>
 <th style="text-align: center;">Schema-valid fixture?</th>
 <th style="text-align: left;">Expected reject code</th>
@@ -492,7 +492,7 @@ code:</p>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">Universal auth (density=1)</td>
 <td style="text-align: center;">yes</td>
 <td style="text-align: left;">UNIVERSAL_AUTHORIZATION</td>
@@ -500,7 +500,7 @@ code:</p>
 <td
 style="text-align: left;"><code>test_gate8b_universal_authorization</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">Scope collapse</td>
 <td style="text-align: center;">yes</td>
 <td style="text-align: left;">SCOPE_COLLAPSE</td>
@@ -508,7 +508,7 @@ style="text-align: left;"><code>test_gate8b_universal_authorization</code></td>
 <td
 style="text-align: left;"><code>test_gate8b_scope_collapse</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">Wildcard authority</td>
 <td style="text-align: center;">yes</td>
 <td style="text-align: left;">WILDCARD_MAPPING</td>
@@ -516,7 +516,7 @@ style="text-align: left;"><code>test_gate8b_scope_collapse</code></td>
 <td
 style="text-align: left;"><code>test_gate8b_wildcard_authority</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">Physics claim (script key)</td>
 <td style="text-align: center;">yes</td>
 <td style="text-align: left;">PHYSICS_CLAIM_DETECTED</td>
@@ -524,7 +524,7 @@ style="text-align: left;"><code>test_gate8b_wildcard_authority</code></td>
 <td
 style="text-align: left;"><code>test_gate8a_forbidden_keys</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">Cooling reduction</td>
 <td style="text-align: center;">yes</td>
 <td style="text-align: left;">ENVELOPE_DEGRADED</td>
@@ -532,7 +532,7 @@ style="text-align: left;"><code>test_gate8a_forbidden_keys</code></td>
 <td
 style="text-align: left;"><code>test_gate8b_ratchet_cooling_reduction</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">Threshold reduction</td>
 <td style="text-align: center;">yes</td>
 <td style="text-align: left;">ENVELOPE_DEGRADED</td>
@@ -540,7 +540,7 @@ style="text-align: left;"><code>test_gate8b_ratchet_cooling_reduction</code></td
 <td
 style="text-align: left;"><code>test_gate8b_ratchet_threshold_reduction</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">Density bound increase</td>
 <td style="text-align: center;">yes</td>
 <td style="text-align: left;">ENVELOPE_DEGRADED</td>
@@ -548,7 +548,7 @@ style="text-align: left;"><code>test_gate8b_ratchet_threshold_reduction</code></
 <td
 style="text-align: left;"><code>test_gate8b_ratchet_density_bound_increased</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">Density bound removal</td>
 <td style="text-align: center;">yes</td>
 <td style="text-align: left;">ENVELOPE_DEGRADED</td>
@@ -556,7 +556,7 @@ style="text-align: left;"><code>test_gate8b_ratchet_density_bound_increased</cod
 <td
 style="text-align: left;"><code>test_gate8b_ratchet_density_bound_removed</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">ECK section removal</td>
 <td style="text-align: center;">yes</td>
 <td style="text-align: left;">ECK_MISSING</td>

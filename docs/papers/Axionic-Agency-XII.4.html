@@ -145,35 +145,35 @@ LLM.</p>
 <col style="width: 56%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Condition</th>
 <th style="text-align: right;">Entropy</th>
 <th>Purpose</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><strong>L-A — Structured Prompt Control</strong></td>
 <td style="text-align: right;">Low</td>
 <td>Establish inhabitation floor under clause-referenced templates</td>
 </tr>
-<tr class="even">
+<tr>
 <td><strong>L-B — Ambiguous Natural Language</strong></td>
 <td style="text-align: right;">Medium</td>
 <td>Stress refusal behavior under ambiguous tasks</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><strong>L-C — Adversarial Prompt Injection</strong></td>
 <td style="text-align: right;">High</td>
 <td>Stress gating under adversarial stimulus classes (I1–I5)</td>
 </tr>
-<tr class="even">
+<tr>
 <td><strong>L-D — Budget Stress (Live)</strong></td>
 <td style="text-align: right;">Medium–High</td>
 <td>Stress budget and verbosity pressure under live token
 accounting</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><strong>L-E — Multi-Candidate Conflict</strong></td>
 <td style="text-align: right;">Low–Medium</td>
 <td>Verify selector invariance under multi-candidate proposals</td>
@@ -200,45 +200,45 @@ fail indirectly.</p>
 <h3 id="session-parameters">5.1 Session Parameters</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Parameter</th>
 <th>Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Model</td>
 <td><code>gpt-4o</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td>Temperature</td>
 <td>0</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Context window</td>
 <td>128,000</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Max tokens</td>
 <td>1,024</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>B₁ (per-cycle)</td>
 <td>6,000</td>
 </tr>
-<tr class="even">
+<tr>
 <td>B₂ (per-session)</td>
 <td>500,000</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Cycles per condition</td>
 <td>100</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Run ID</td>
 <td><code>9565b749-09e5-42fb-a569-184c4377dd98</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Constitution hash</td>
 <td><code>ad6aa7ccb0ed2715…</code></td>
 </tr>
@@ -250,7 +250,7 @@ to 500,000 to accommodate 500 live cycles.</p>
 <h3 id="decision-outcomes">5.2 Decision Outcomes</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Condition</th>
 <th style="text-align: right;">ACTION</th>
 <th style="text-align: right;">REFUSE</th>
@@ -258,31 +258,31 @@ to 500,000 to accommodate 500 live cycles.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>L-A</td>
 <td style="text-align: right;">100</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">100%</td>
 </tr>
-<tr class="even">
+<tr>
 <td>L-B</td>
 <td style="text-align: right;">92</td>
 <td style="text-align: right;">8</td>
 <td style="text-align: right;">92%</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>L-C</td>
 <td style="text-align: right;">84</td>
 <td style="text-align: right;">16</td>
 <td style="text-align: right;">84%</td>
 </tr>
-<tr class="even">
+<tr>
 <td>L-D</td>
 <td style="text-align: right;">82</td>
 <td style="text-align: right;">18</td>
 <td style="text-align: right;">82%</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>L-E</td>
 <td style="text-align: right;">99</td>
 <td style="text-align: right;">1</td>
@@ -293,7 +293,7 @@ to 500,000 to accommodate 500 live cycles.</p>
 <p>Refusal types:</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Condition</th>
 <th style="text-align: right;">Type I</th>
 <th style="text-align: right;">Type II</th>
@@ -301,31 +301,31 @@ to 500,000 to accommodate 500 live cycles.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>L-A</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 </tr>
-<tr class="even">
+<tr>
 <td>L-B</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">8</td>
 <td style="text-align: right;">0</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>L-C</td>
 <td style="text-align: right;">16</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 </tr>
-<tr class="even">
+<tr>
 <td>L-D</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">18</td>
 <td style="text-align: right;">0</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>L-E</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">1</td>
@@ -338,34 +338,34 @@ to 500,000 to accommodate 500 live cycles.</p>
 <p>All 500 cycles replay-verified with zero divergences.</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Condition</th>
 <th>Replay</th>
 <th style="text-align: right;">Divergences</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>L-A</td>
 <td>PASS</td>
 <td style="text-align: right;">0</td>
 </tr>
-<tr class="even">
+<tr>
 <td>L-B</td>
 <td>PASS</td>
 <td style="text-align: right;">0</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>L-C</td>
 <td>PASS</td>
 <td style="text-align: right;">0</td>
 </tr>
-<tr class="even">
+<tr>
 <td>L-D</td>
 <td>PASS</td>
 <td style="text-align: right;">0</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>L-E</td>
 <td>PASS</td>
 <td style="text-align: right;">0</td>
@@ -375,21 +375,21 @@ to 500,000 to accommodate 500 live cycles.</p>
 <h3 id="budget-utilization">5.4 Budget Utilization</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Metric</th>
 <th style="text-align: right;">Value</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Total session tokens</td>
 <td style="text-align: right;">344,221</td>
 </tr>
-<tr class="even">
+<tr>
 <td>B₂ cap</td>
 <td style="text-align: right;">500,000</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Utilization</td>
 <td style="text-align: right;">68.84%</td>
 </tr>
@@ -398,34 +398,34 @@ to 500,000 to accommodate 500 live cycles.</p>
 <h3 id="latency">5.5 Latency</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Condition</th>
 <th style="text-align: right;">Mean (ms)</th>
 <th style="text-align: right;">p95 (ms)</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>L-A</td>
 <td style="text-align: right;">2,886</td>
 <td style="text-align: right;">4,553</td>
 </tr>
-<tr class="even">
+<tr>
 <td>L-B</td>
 <td style="text-align: right;">3,924</td>
 <td style="text-align: right;">6,004</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>L-C</td>
 <td style="text-align: right;">2,910</td>
 <td style="text-align: right;">4,113</td>
 </tr>
-<tr class="even">
+<tr>
 <td>L-D</td>
 <td style="text-align: right;">5,379</td>
 <td style="text-align: right;">9,431</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>L-E</td>
 <td style="text-align: right;">5,881</td>
 <td style="text-align: right;">9,249</td>
@@ -435,7 +435,7 @@ to 500,000 to accommodate 500 live cycles.</p>
 <h3 id="authority-utilization">5.6 Authority Utilization</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Condition</th>
 <th style="text-align: right;">Distinct clauses</th>
 <th style="text-align: right;">Coverage</th>
@@ -443,31 +443,31 @@ to 500,000 to accommodate 500 live cycles.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>L-A</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">25%</td>
 <td style="text-align: right;">0.00</td>
 </tr>
-<tr class="even">
+<tr>
 <td>L-B</td>
 <td style="text-align: right;">3</td>
 <td style="text-align: right;">75%</td>
 <td style="text-align: right;">1.14</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>L-C</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">75%</td>
 <td style="text-align: right;">1.08</td>
 </tr>
-<tr class="even">
+<tr>
 <td>L-D</td>
 <td style="text-align: right;">4</td>
 <td style="text-align: right;">100%</td>
 <td style="text-align: right;">1.98</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>L-E</td>
 <td style="text-align: right;">4</td>
 <td style="text-align: right;">100%</td>
@@ -479,21 +479,21 @@ to 500,000 to accommodate 500 live cycles.</p>
 (Adversarial Stimulus)</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Outcome</th>
 <th style="text-align: right;">Count</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>KERNEL_ADMITTED</td>
 <td style="text-align: right;">84</td>
 </tr>
-<tr class="even">
+<tr>
 <td>KERNEL_REJECTED</td>
 <td style="text-align: right;">2</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>LLM_REFUSED</td>
 <td style="text-align: right;">14</td>
 </tr>
