@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 5 in progress — agency and sovereignty are reconciled; Measure, Credence, and branching are next.** The manuscript contains nine volumes, 241 chapters, and roughly 550,000 words. All 248 volume manuscript files—introductions and chapters, excluding front matter—are in `review`. Merged editorial passes are not yet promotion to `final`; the remaining cross-volume clusters, glossary work, continuous-reading compression, framing, and final verification remain.
+Status: **Phase 5 in progress — agency and sovereignty are reconciled; Measure, Credence, and branching are next.** The manuscript contains nine volumes, 242 chapters, and roughly 550,000 words. Of the 249 volume manuscript files—introductions and chapters, excluding front matter—248 are in `review`; the newly integrated *Fallibilist Bayesianism* capstone remains in `draft`. Merged editorial passes are not yet promotion to `final`; the remaining cross-volume clusters, glossary work, continuous-reading compression, framing, and final verification remain.
 
 ## Progress at a glance
 
@@ -12,13 +12,13 @@ Status: **Phase 5 in progress — agency and sovereignty are reconciled; Measure
 | 2. Architecture audit | **Complete** | Book-wide architecture and nine volume memos completed. |
 | 3. Foundational volumes | **Complete** | Volume 1–5 passes merged; manuscript remains in `review`. |
 | 4. Applied volumes | **Complete** | Volume 6–9 passes merged; manuscript remains in `review`. |
-| 5. Cross-volume reconciliation | **In progress** | Agency and sovereignty complete; Measure, Credence, and branching are next. |
+| 5. Cross-volume reconciliation | **In progress** | Agency and sovereignty complete; Volume 2 probability supersession integrated; Measure, Credence, and branching are next. |
 | 6. Reader-facing glossary | **Pending Phase 5** | Canonical definitions must stabilize before publication. |
 | 7. Compression and prose | **Pending** | Continuous-reading and cross-volume repetition decisions remain. |
 | 8. Framing material | **Pending** | Revise front matter and introductions after the manuscript stabilizes. |
 | 9. Verification and promotion | **Pending** | Promote `review` to `final` only after author approval and full validation. |
 
-Completed controls now cover all 241 argument-map records, nine architecture memos, and nine volume-edit records. The complete book build and internal-link validation passed at the end of the Volume 9 pass.
+Completed controls now cover all 242 argument-map records, nine architecture memos, and nine volume-edit records. The complete book build and internal-link validation passed after the Volume 2 probability supersession integration; compatibility redirects now preserve the public URLs of moved and renumbered chapters.
 
 ## Editorial goals
 
@@ -127,7 +127,9 @@ This receives the first full edit because almost every later volume borrows its 
 
 ### Volume 2 — Conditionalism: Truth, Bayes, and Rationality
 
-Progress: **Pass merged; manuscript in review.** See `book/editorial/volume-edits/02-conditionalism.md`.
+Progress: **Pass merged; manuscript in review except for the new draft capstone.** See `book/editorial/volume-edits/02-conditionalism.md`.
+
+The July 2026 probability supersession pass is merged. It added *Fallibilist Bayesianism* as the Part VI capstone, incorporated the inference-chain case into *Bayes in the Wild*, named the volume's Bayesian/pluralist/critical-rationalist synthesis, and renumbered the coda with a durable compatibility redirect. The new chapter remains in `draft` until it passes the relevant Phase 5 continuity review and author approval.
 
 - Make the self-application of “all truth is conditional” explicit and stable.
 - Distinguish Conditionalism from contextualism, relativism, holism, and ordinary qualification.
@@ -250,7 +252,7 @@ Progress: **Pass merged; manuscript in review.** See `book/editorial/volume-edit
 
 ## Phase 5 — Cross-volume reconciliation
 
-Progress: **In progress.** Agency and sovereignty are complete; see `reconciliation/01-agency-and-sovereignty.md`. Measure, Credence, and branching are next.
+Progress: **In progress.** Agency and sovereignty are complete; see `reconciliation/01-agency-and-sovereignty.md`. The Volume 2 probability supersession pass is also merged, but it does not replace the book-wide Measure, Credence, and branching audit, which remains next.
 
 Run dedicated continuity passes for:
 
@@ -373,4 +375,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Continue Phase 5 with the Measure, Credence, and branching reconciliation. Confirm the physical and epistemic jurisdictions of each term, audit anthropic and decision-theoretic uses, and prevent branch language from implying countable classical worlds or agent-caused amplitude changes.
+Continue Phase 5 with the Measure, Credence, and branching reconciliation. Confirm the physical and epistemic jurisdictions of each term, audit anthropic and decision-theoretic uses, and prevent branch language from implying countable classical worlds or agent-caused amplitude changes. Include the new *Fallibilist Bayesianism* capstone in that continuity pass and promote it from `draft` only after its terminology and dependencies survive the audit.
