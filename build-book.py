@@ -492,6 +492,36 @@ def update_sitemap(page_urls):
 # MAIN
 # ============================================
 
+def write_redirects(manifest):
+    """Emit compatibility redirect stubs so URLs of moved/renamed chapters
+    keep resolving. Configured by a top-level `redirects` list in book.yaml,
+    each entry {from, to} giving paths under docs/book/ without the .html
+    suffix. Written after the real pages so targets can be verified to exist.
+    """
+    import os
+    written = 0
+    for r in manifest.get('redirects', []) or []:
+        src = BOOK_DEST / (r['from'] + '.html')
+        target = BOOK_DEST / (r['to'] + '.html')
+        if not target.exists():
+            link_errors.append(f"redirect target missing: {r['to']} (from {r['from']})")
+            continue
+        if src.exists():
+            link_errors.append(f"redirect would overwrite a real page: {r['from']}")
+            continue
+        rel = os.path.relpath(target, src.parent)
+        src.parent.mkdir(parents=True, exist_ok=True)
+        src.write_text(
+            '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
+            f'<meta http-equiv="refresh" content="0; url={rel}">\n'
+            f'<link rel="canonical" href="{rel}">\n'
+            '<title>Moved</title>\n</head>\n<body>\n'
+            f'<p>This chapter has moved. <a href="{rel}">Continue &rarr;</a></p>\n'
+            '</body>\n</html>\n', encoding='utf-8')
+        written += 1
+    return written
+
+
 def main():
     print("=== Building Axio book ===")
     try:
@@ -532,6 +562,10 @@ def main():
     print(f"   ✓ Generated book index with "
           f"{sum(1 for v in volumes if v['published'] and not v.get('front_matter'))} "
           f"published volume(s)")
+
+    n_redirects = write_redirects(manifest)
+    if n_redirects:
+        print(f"   ✓ Wrote {n_redirects} chapter redirect stub(s)")
 
     urls = [f"{BASE_URL}/{p.relative_to(DOCS)}" for p in pages]
     urls = [u.replace('/index.html', '/') for u in urls]
