@@ -408,3 +408,22 @@ volumes:
         chapters:
           - 19-letter-to-our-machine-descendants
           - 20-letter-to-the-faithful-reader
+
+# Compatibility redirects for chapters whose URL changed (renamed or moved
+# between volumes). Each writes a stub at docs/book/<from>.html that forwards
+# to <to>.html, so previously published URLs keep resolving. Do not remove
+# entries once a URL has been public.
+redirects:
+  # Vol 2: coda renumbered when Fallibilist Bayesianism (ch 24) was inserted
+  - from: 02-conditionalism/24-the-beginning-of-wisdom
+    to: 02-conditionalism/25-the-beginning-of-wisdom
+  # Vol 8: applied-cases reorder (When the Claim Is True moved ahead)
+  - from: 08-culture-and-memetics/22-two-ontologies-of-gender
+    to: 08-culture-and-memetics/23-two-ontologies-of-gender
+  - from: 08-culture-and-memetics/23-parity-where-it-pays
+    to: 08-culture-and-memetics/24-parity-where-it-pays
+  - from: 08-culture-and-memetics/24-when-the-claim-is-true
+    to: 08-culture-and-memetics/22-when-the-claim-is-true
+  # Price of Breath relocated from Vol 6 to the end of Vol 7
+  - from: 06-markets-and-money/26-the-price-of-breath
+    to: 07-liberty-and-governance/36-the-price-of-breath

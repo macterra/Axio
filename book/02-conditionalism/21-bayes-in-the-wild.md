@@ -4,6 +4,7 @@ subtitle: 'A dated ledger, audited as a calibration exercise'
 status: review
 sources:
   - 165642623.the-covid-19-lab-leak-hypothesis
+  - 206337512.the-bayesian-trapdoor
 ---
 
 The origin of SARS-CoV-2 remains scientifically and politically contested. Public discussion often turns uncertainty into team identity, while the evidential record contains major gaps. This makes the case useful for studying calibration—but dangerous as a stage for false precision.
