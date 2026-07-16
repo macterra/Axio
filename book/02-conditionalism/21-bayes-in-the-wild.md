@@ -4,6 +4,7 @@ subtitle: 'A dated ledger, audited as a calibration exercise'
 status: review
 sources:
   - 165642623.the-covid-19-lab-leak-hypothesis
+  - 206337512.the-bayesian-trapdoor
 ---
 
 The origin of SARS-CoV-2 remains scientifically and politically contested. Public discussion often turns uncertainty into team identity, while the evidential record contains major gaps. This makes the case useful for studying calibration—but dangerous as a stage for false precision.
@@ -85,6 +86,12 @@ $$\frac{1}{9} \times 15 \times 2 \times 1.5 \times 0.7 \approx 3.5 : 1 \approx 0
 Still favoring laboratory association, but already outside the claimed band. Varying the prior, reducing the opacity term, incorporating market evidence, or modeling dependence can move the result much further. The point is not that one altered ledger wins; it is that the posterior is structurally sensitive and should not be advertised without those alternatives.
 
 The exercise must wear its date on its sleeve. Every ratio above records an earlier reading of the evidence and should not be carried forward unchanged. New animal-source evidence, verified laboratory records, or stronger genomic analysis would alter the comparison. Updating requires more than rerunning the same spreadsheet: sometimes the hypotheses, dependence structure, and event definitions must change as well.
+
+## A Second Shape of Overreach
+
+The failure the COVID ledger guards against is a *flat* one: a single multiplication of evidence terms, where the danger is a mispriced ratio, a coincidence counted twice, or an outrage smuggled in as data. But Bayesian reasoning fails in a second shape, harder to see because every step looks impeccable, and it happens along a *chain*. Consider a point of light on an old photographic plate — present in one exposure, gone from the next, carrying the same optical signature as the stars around it. That the light passed through the telescope rather than a scanner artifact or a dust speck is a real inference, honestly earned: *something produced light*. The trapdoor opens when that earned update is quietly inherited by the next link, and the next. Something produced light becomes there was an object; an object becomes an object in orbit; in orbit becomes artificial; artificial becomes not ours — until a plate has apparently photographed a satellite decades before satellites existed.
+
+This is referential drift: evidence enters at a high-level category and exits, several unexamined steps later, at a favored story. The correction is the same discipline the flat ledger demands, run link by link rather than term by term. **Every arrow pays its own rent.** The likelihood ratio that lifts "light" to "object" says nothing about "orbit"; the one that lifts "object" to "orbit" says nothing about "artificial." Where a link carries no ratio of its own it is not a bridge but a gap — and a gap is not a passage, however badly the story on the far side wants to be reached. A chain of anomalies is only as strong as its weakest justified transition, which sits, almost always, much earlier and much lower than the conclusion pretends.
 
 ## What the Exercise Shows
 
