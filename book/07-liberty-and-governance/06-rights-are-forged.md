@@ -67,7 +67,7 @@ Second, property is not a magical exception to reciprocity. It is one of the mai
 
 ## Hard Cases
 
-Rights are not identical across all beings and all institutions. Reciprocity does not erase relevant differences in agency, capacity, dependence, knowledge, or responsibility; it forbids using them as pretexts for capture. Agency is not binary. It is a profile of capacities — perception, memory, anticipation, learning, self-direction, vulnerability — and rights track the domains in which those capacities can be captured.
+Rights are not identical across all beings and all institutions. Reciprocity does not erase relevant differences in agency, capacity, dependence, knowledge, or responsibility; it forbids using them as pretexts for capture. The interests rights protect form a profile — perception, memory, anticipation, learning, self-direction, vulnerability — even though the book separately distinguishes basal agency from the threshold it proposes for sovereign authorship. Rights track the domains in which those capacities or interests can be captured; they need not turn every difference of degree into a different kind of agent.
 
 Children are the obvious case. A child does not have the same contractual capacity, sexual autonomy, or political authority as an adult, but a child still has rights against assault, abuse, enslavement, and exploitation. Parental authority is fiduciary: justified by the child's dependence and development, and nothing like ownership.
 

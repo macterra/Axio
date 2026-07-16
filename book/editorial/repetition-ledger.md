@@ -13,7 +13,7 @@ Status labels:
 
 | Cluster | Canonical treatment | Recurring locations | Action |
 |---|---|---|---|
-| Agency as control, authorship, and sovereignty | Vol. 1 chs. 2–5; Vol. 4 ch. 2 for authorship | Nearly every volume introduction; Vol. 3 chs. 3–4, 23; Vol. 5 chs. 13, 18–22; Vol. 7 chs. 1–5 | **Reconcile** the layers, then give each volume no more than the layer it needs. |
+| Agency as control, authorship, and sovereignty | Vol. 1 chs. 2 and 5 for basal agency; Vol. 4 chs. 2 and 4 for authorship and sovereignty | Nearly every volume introduction; Vol. 3 ch. 23; Vol. 5 chs. 13 and 26; Vol. 7 chs. 2, 30, and 33 | **Reconciled in Phase 5.** Use *basal agency*, *reflective agency/authorship*, *sovereignty*, *effective agency*, or *institutional agency* when the layer could be ambiguous; otherwise summarize and cross-link. |
 | All truth is conditional | Vol. 2 chs. 2–4 | Vol. 1 chs. 1, 20, 28; Vol. 4 ch. 2; Vol. 5 chs. 2, 16, 26; Vols. 7–9 introductions and conclusions | **Compress** later defenses. Retain conditions relevant to the local argument rather than repeating absolutism/relativism. |
 | Measure versus Credence | Vol. 2 ch. 11, with physical machinery in Vol. 1 ch. 9 | Vol. 1 chs. 11–17; Vol. 2 chs. 12–16, 21–23; Vol. 3 ch. 30; Vol. 5 chs. 20–21 | **Canonical/Bridge.** Use one compact standard paragraph outside Volumes 1–2. |
 | QBU primer | Vol. 1 ch. 8 | Vol. 2 chs. 11, 14–16; Vol. 5 chs. 9, 18, 20–21; later volume introductions | **Compress** to one sentence plus link after first full use. Avoid reasserting interpretation as settled physics. |

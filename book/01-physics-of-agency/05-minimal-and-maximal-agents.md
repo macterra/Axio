@@ -18,6 +18,8 @@ The second is **predictive modeling**. An agent carries an internal representati
 
 The third is **intentional biasing**. An agent has preferences — goals, valued states, an ordering over outcomes — and it acts to skew the world toward them. Its behavior is directed by internal states rather than dictated by immediate stimulus. This is what makes agency more than sophisticated reaction. A thermostat responds to temperature, but it holds no forecast and steers toward no future it has modeled; it is a mechanism, not an agent. The agent, by contrast, exerts influence on purpose, tilting the odds of the branches ahead toward the ones it wants.
 
+*Intentional* is functional at this floor: the system's own evaluative organization makes the difference to what it does. It does not yet imply consciousness, self-interpretation, moral standing, or the reflective authorship developed in Volume 4. Those stronger properties require further evidence.
+
 Take any one away and agency collapses into something lesser. Strip embeddedness and you have an oracle detached from the world, computing but never acting. Strip predictive modeling and you have a reflex — a stimulus-response system that cannot look ahead. Strip intentional biasing and you have a passive model, a weather forecast that predicts the storm but does nothing to shelter from it. Only when all three are present does a system stop merely undergoing its environment and start acting within it. The three criteria are not a definition assembled for tidiness; they are the joints at which agency actually comes apart.
 
 ## The Minimum Viable Agent

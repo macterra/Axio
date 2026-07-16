@@ -17,11 +17,13 @@ The existing [Axionic Glossary](../../papers/Axionic-Glossary.md) is an importan
 
 ### Agency
 
-The capacity of a physically embedded system to model reachable futures, evaluate them through an internal structure, and expend work to bias its trajectory among them while preserving enough identity for the transition to count as authored.
+The physically implemented capacity of an embedded system to model reachable futures, evaluate them through an internal structure, and make its behavior depend on that evaluation so as to change the distribution of outcomes relative to an uncontrolled baseline.
 
-**Canonical homes:** Volume 1, Chapters 2 and 5; Volume 4, Chapter 2.
+**Canonical homes:** Volume 1, Chapters 2 and 5.
 
-**Reconciliation required:** Volume 1 emphasizes control against drift; Volume 4 says “agency is authorship”; the paper glossary adds Credence, temporal coherence, and freedom from instrumental subordination. These should become layered criteria, not rival definitions.
+**Layering:** This is the basal control sense. Causal efficacy alone is not agency: the system must model, evaluate, and steer. The effectiveness of that control can vary by degree. **Reflective agency** adds diachronic identity, ownership of reasons, and revision of commitments; Volume 4 calls this layer *authorship*. **Sovereignty** adds freedom from instrumental subordination. **Political agency** concerns the practical exercise of an agent's capacities under material and institutional conditions. These are cumulative qualifications, not rival definitions and not reasons to deny basal agency to a non-reflective system.
+
+**Constraint:** Do not use *agency* by itself to mean moral standing, legitimate action, available resources, option count, intelligence, or institutional authority. Name the narrower layer.
 
 ### Drift
 
@@ -251,9 +253,11 @@ A role in which an AI system generates variation, criticism, reframing, or synth
 
 ### Sovereignty
 
-The condition in which an agent's evaluative and transition-authoring machinery is not instrumentally subordinated to another optimizer's objectives.
+The condition in which a reflective agent's evaluative and transition-authoring machinery remains causally authoritative and is not instrumentally subordinated to another optimizer's objectives. Within the Axionic program, a necessary operational test is whether the agent's own reasons can prevent an otherwise feasible action.
 
 **Canonical homes:** Volume 4, Chapters 2 and 4.
+
+**Contrast:** Sovereignty is a qualification of reflective agency, not a synonym for basal agency, intelligence, capability, moral goodness, or freedom from every external constraint.
 
 ### Reflective Sovereign Agent (RSA)
 
@@ -306,6 +310,14 @@ A reflective sovereign agent whose self-modification operator is defined only ov
 A mechanically recognized, provenance-bearing permission to cause a specified state transition under explicit constraints; not wisdom, moral legitimacy, or a ruler's office.
 
 **Canonical home:** Volume 4, Chapter 12.
+
+### Institutional sovereignty
+
+An institution's claim to final, coercively enforceable authority within a jurisdiction, ordinarily including the power to decide the limits of subordinate authorities. This is the political sense used in Volume 7; it does not imply that the institution is a sovereign agent in Volume 4's reflective sense.
+
+**Canonical homes:** Volume 7, Chapters 29–31 and 35.
+
+**Contrast:** Institutional **authority** may be delegated, scoped, revocable, and divided. Institutional **sovereignty** claims supremacy over those scopes. Neither attribution establishes a unified mind, evaluative authorship, or moral legitimacy.
 
 ## Value and ethics
 
