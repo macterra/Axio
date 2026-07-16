@@ -76,17 +76,17 @@ Here is a concise, deliberately circular ontology:
 - **Object**: a set of related properties.
 - **System**: a set of related objects.
 - **Process**: a system that evolves over time.
-- **Agent**: a process that interprets observables as properties.
+- **Interpreter**: a process that interprets observables as properties.
 
-At first glance this is self-referential — and indeed it is, explicitly so. Follow the chain: properties presuppose agents, and agents are defined, four steps later, in terms of the properties they interpret. Rather than a defect, the circularity embodies the Conditionalist insight directly: all interpretation demands context, and contexts depend on interpretations. By openly embracing the circle, the ontology acknowledges the mutual dependency that foundationalist schemes are forced to hide.
+At first glance this is self-referential — and indeed it is, explicitly so. Follow the chain: properties presuppose interpreters, and interpreters are defined, four steps later, in terms of the properties they interpret. Rather than a defect, the circularity embodies the Conditionalist insight directly: all interpretation demands context, and contexts depend on interpretations. By openly embracing the circle, the ontology acknowledges the mutual dependency that foundationalist schemes are forced to hide.
 
 Two design choices deserve defense.
 
-First, defining "agent" as a type of "process" makes agency dynamic, temporal, and interpretive rather than static or foundational. An agent is not a substance that *has* interpretations; it is an ongoing activity of interpreting, continually reconstituting meaning. This aligns agency with systems theory, active inference, and the branching-universe framework, where an agent just is a self-locating process threading through the branch structure.
+First, defining the interpreter as a type of process makes interpretation dynamic and temporal rather than static or foundational. This does not supply a competing definition of agency. The physical account requires an agent to be embedded and to use a model and evaluation to steer outcomes; a passive interpreter, if such a process can be realized, would not qualify merely by assigning properties.
 
 Second, "observable" is purposefully left undefined. Is observability physical, quantum, computational, perceptual? The ontology does not say — not as an oversight but as deliberate openness to context-specific clarification. What counts as observable is itself subject to agent interpretation, which returns us, again, to the central claim: meaning always hinges on conditions. A definition that pretended to fix observability once and for all would smuggle a foundation back in through the side door.
 
-The same openness lets the ontology scale. Because agency is framed as interpretive process rather than sophisticated cognition, the circle covers minimal computational systems, thermostat-grade regulators, human minds, and potential artificial intelligences without requiring separate frameworks. What varies across that range is the richness of the interpretation, not the ontological category.
+The same openness lets the ontology scale. Interpretation can be attributed at different levels to minimal computational systems, thermostat-grade regulators, human minds, and potential artificial intelligences without forcing every interpreter into the category of agent. What varies across that range is the richness of the interpretation; whether a system is also an agent depends on the separate control-loop criteria.
 
 ## Reality Without Foundations
 

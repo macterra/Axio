@@ -11,9 +11,9 @@ A contractor accepts payment and then quietly cuts corners, leaving structural f
 
 The case exposes an important distinction. [The ethics of viability](22-the-ethics-of-viability.md) protects agents against being used as inputs to others' goals; it does not instruct a planner to maximize total agency. "Pay your debts" is one relational consequence of that commitment. The distinction matters far beyond contractors because it governs how the framework treats losses that cannot be aggregated away.
 
-## Agency Is Networked
+## Effective Agency Is Networked
 
-The contractor's mistake — and the mistake of anyone who thinks parasitism could maximize agency — is treating agency as a private commodity. It is not. Agency is a systemic property of a multi-agent environment. It depends on predictable expectations, the reliability of commitments, the stability of cooperation, and the absence of [coercive threat](09-what-counts-as-coercion.md). None of those structures is manufactured by an isolated will; they emerge from networks of trust.
+The contractor's mistake — and the mistake of anyone who thinks parasitism could maximize agency — is treating effective agency in social life as a private commodity. An individual agent's basal control loop is its own, but the range over which it can act depends on a multi-agent environment: predictable expectations, reliable commitments, stable cooperation, and the absence of [coercive threat](09-what-counts-as-coercion.md). None of those supporting structures is manufactured by an isolated will; they emerge from networks of trust.
 
 An individual can temporarily enlarge his option space by exploiting others, but the gain is parasitic: it is borrowed from a trust reservoir he did not create, and the borrowing shrinks the substrate that made the gain possible. Look back at the contractor. The client's agency contracts through unexpected cost, risk, and disruption. Trust erodes. Verification overhead rises. Future transactions, for everyone in the network, now require defensive postures. The local gain generated a global loss — and the contractor lives in the global system too.
 

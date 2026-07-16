@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 4 complete — all nine chapter-level volume passes are merged; Phase 5 is next.** The manuscript contains nine volumes, 241 chapters, and roughly 550,000 words. All 248 volume manuscript files—introductions and chapters, excluding front matter—are in `review`. Merged editorial passes are not yet promotion to `final`; cross-volume reconciliation, glossary work, continuous-reading compression, framing, and final verification remain.
+Status: **Phase 5 in progress — agency and sovereignty are reconciled; Measure, Credence, and branching are next.** The manuscript contains nine volumes, 241 chapters, and roughly 550,000 words. All 248 volume manuscript files—introductions and chapters, excluding front matter—are in `review`. Merged editorial passes are not yet promotion to `final`; the remaining cross-volume clusters, glossary work, continuous-reading compression, framing, and final verification remain.
 
 ## Progress at a glance
 
@@ -12,7 +12,7 @@ Status: **Phase 4 complete — all nine chapter-level volume passes are merged; 
 | 2. Architecture audit | **Complete** | Book-wide architecture and nine volume memos completed. |
 | 3. Foundational volumes | **Complete** | Volume 1–5 passes merged; manuscript remains in `review`. |
 | 4. Applied volumes | **Complete** | Volume 6–9 passes merged; manuscript remains in `review`. |
-| 5. Cross-volume reconciliation | **Next** | Begin with agency and sovereignty, then reconcile the remaining load-bearing concept clusters. |
+| 5. Cross-volume reconciliation | **In progress** | Agency and sovereignty complete; Measure, Credence, and branching are next. |
 | 6. Reader-facing glossary | **Pending Phase 5** | Canonical definitions must stabilize before publication. |
 | 7. Compression and prose | **Pending** | Continuous-reading and cross-volume repetition decisions remain. |
 | 8. Framing material | **Pending** | Revise front matter and introductions after the manuscript stabilizes. |
@@ -250,11 +250,11 @@ Progress: **Pass merged; manuscript in review.** See `book/editorial/volume-edit
 
 ## Phase 5 — Cross-volume reconciliation
 
-Progress: **Next.** No reconciliation cluster is yet complete; the first pass is agency and sovereignty.
+Progress: **In progress.** Agency and sovereignty are complete; see `reconciliation/01-agency-and-sovereignty.md`. Measure, Credence, and branching are next.
 
 Run dedicated continuity passes for:
 
-- Agency and sovereignty.
+- Agency and sovereignty. **Complete.**
 - Measure, Credence, and branching.
 - Consciousness, sentience, and sapience.
 - Coherence and viability.
@@ -373,4 +373,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Begin Phase 5 with the cross-volume agency and sovereignty reconciliation. Confirm one canonical definition, audit later uses, and distinguish causal capacity, intentional control, authorship, and institutional authority before the glossary is drafted.
+Continue Phase 5 with the Measure, Credence, and branching reconciliation. Confirm the physical and epistemic jurisdictions of each term, audit anthropic and decision-theoretic uses, and prevent branch language from implying countable classical worlds or agent-caused amplitude changes.
