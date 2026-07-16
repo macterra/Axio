@@ -95,9 +95,10 @@ volumes:
           - 21-bayes-in-the-wild
           - 22-probability-after-probabilism
           - 23-deciding-under-uncertainty
+          - 24-fallibilist-bayesianism
       - title: "Coda — The Beginning of Wisdom"
         chapters:
-          - 24-the-beginning-of-wisdom
+          - 25-the-beginning-of-wisdom
 
   - slug: 03-minds-and-machines
     title: "Minds and Machines: Consciousness, Intelligence, and AI"
