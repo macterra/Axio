@@ -66,7 +66,7 @@ My framework begins somewhere else entirely. Its central primitive is the **agen
 
 So: one framework phenomenological and fluid, one structural and architectural. The contrast is real — until you examine how either process actually functions, at which point it dissolves.
 
-**Agency requires participation.** An agent cannot form predictions without sensory coupling, cannot update beliefs without feedback from the world, cannot maintain a stable identity without a continuous stream of interaction. Agency is not a sealed monad choosing from the inside. It is a self-organizing pattern that depends, moment to moment, on what it encounters. Agency is, at root, endogenous participation.
+**Agency requires participation.** An agent cannot form predictions without coupling to an environment, cannot update beliefs without feedback, and cannot maintain a stable identity without continuing interaction. Agency is not a sealed monad choosing from the inside. It is an embedded control process sustained by what it encounters. Participation is therefore a condition of agency, not a competing definition of it.
 
 **Participation requires agency.** The moment you describe attunement, responsiveness, improvisation, you have already presupposed selective attention, intentional arcs, sensitivity to some patterns rather than others. Participation is not passive absorption and it is not dissolution into the flux. It is a way of acting. Participation is exogenous agency.
 

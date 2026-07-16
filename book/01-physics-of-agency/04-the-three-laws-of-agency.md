@@ -53,7 +53,7 @@ But the impossibility of perfect control does not rest on that limiting case alo
 
 The relevant claim is therefore not that every computation is logically irreversible or that every act pays the Landauer limit directly. It is that no embedded, finite agent can simultaneously possess a complete model, unlimited correction, unconstrained actuation, and an inexhaustible resource budget. Improvements move particular limits; they do not remove boundedness as such.
 
-Infinite agency is an illusion. Frictionless will does not exist. But the third law is not a counsel of despair — it is what makes agency meaningful. Influence over the future is exercised by continuously working against the universe's slide toward disorder, and a victory that cost nothing would mean nothing. Perfect victories are impossible; meaningful victories are achievable — locally, temporarily, and purposefully. That is not agency's consolation prize. It is agency's definition.
+Infinite agency is an illusion. Frictionless will does not exist. But the third law is not a counsel of despair — it is what makes agency meaningful. Influence over the future is exercised by continuously working against the universe's slide toward disorder, and a victory that cost nothing would mean nothing. Perfect victories are impossible; meaningful victories are achievable — locally, temporarily, and purposefully. That is not agency's consolation prize. It is the physical condition under which agency exists.
 
 ## The Thermodynamics Analogy
 
