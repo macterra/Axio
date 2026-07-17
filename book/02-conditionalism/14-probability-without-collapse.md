@@ -14,7 +14,7 @@ This is the notorious **probability problem**, and it is the standard indictment
 
 The literature offers several strategies. Each has strengths and disputed premises; the brief sketches below identify the gap this book's proposal tries to address.
 
-**Declare amplitudes to be probabilities.** Zurek's envariance program tries to show that $|\psi|^2$ is objectively *the* probability measure, built into the symmetries of Hilbert space itself. The construction is elegant, but it ends by conflating the geometry of the wavefunction with the uncertainty of an agent. No theorem about entanglement symmetries, however pretty, tells anyone what to *expect* — a measure defined on branches is not yet a degree of belief, and calling it one is the very step that needed justifying.
+**Declare amplitudes to be probabilities.** Zurek's envariance program tries to show that $|\psi|^2$ is objectively *the* probability measure, built into the symmetries of Hilbert space itself. The construction is elegant, but it does not by itself identify physical weight with an agent's uncertainty. No theorem about entanglement symmetries, however pretty, tells anyone what to *expect* — a measure defined on event sectors is not yet a degree of belief, and calling it one is the very step that needed justifying.
 
 **Derive the Born rule from decision theory.** Deutsch, Wallace, and Sebens & Carroll argue that a rational agent in an Everettian universe must act *as if* branch weights are probabilities. This is closer to the truth — close enough that the argument below is its debtor. But the critics' accusation sticks: the derivations smuggle the Born rule in through rationality axioms that already presuppose it, constraints on preference whose innocence evaporates the moment you ask why a rational agent must obey them in a branching world.
 
@@ -28,7 +28,7 @@ So build the bridge deliberately, starting from the distinction that the whole o
 
 **Measure** is a physical weight within the QBU model. For a specified state and record projector it is given by the Born expression; it is not a uniquely countable property of a fundamental branch, nor is it analogous in every respect to charge or spin. **Credence** is an agent's graded uncertainty about future observations or present self-location. Both can use probability mathematics, but their assignment rules and interpretations differ.
 
-Keep them apart and the probability problem changes shape. Before the measurement, "you will see spin-up" has no unconditional truth value — both successors exist, and each will see what he sees. What the world offers is branch-relative facts plus the Measure over branches; truth about outcomes, like [truth everywhere](02-all-truth-is-conditional.md), is conditional — here, conditional on a branch. Your uncertainty is therefore not ignorance of some hidden cosmic coin flip. It is *self-locating* uncertainty: certainty about the wavefunction, uncertainty about where in it you are about to be. And self-locating uncertainty is exactly the kind of thing Credence quantifies.
+Keep them apart and the probability problem changes shape. Before the measurement, "you will see spin-up" has no unconditional truth value on the Everettian model — successor records exist for both nonzero alternatives. What the model offers is record-relative facts plus Measure over specified sectors; truth about outcomes, like [truth everywhere](02-all-truth-is-conditional.md), is conditional — here, conditional on a record. The proposed uncertainty is therefore not ignorance of some hidden cosmic coin flip but self-location within the represented structure. Whether that pre-observation attitude is genuine uncertainty remains a disputed premise, and Credence is the proposed way to represent it.
 
 The question the probability problem was actually asking now stands exposed. It was never "what are the probabilities?" — the theory has no chancy events to pin them on. It was: **why should an agent's Credences track the branch Measures?** That is a normative question, and it gets a normative answer.
 
@@ -42,7 +42,7 @@ The proof sketch generalizes past coin flips and wagers:
 
 1. The agent chooses an action with payoffs contingent on outcomes.
 2. They evaluate it using their Credences.
-3. But the actual distribution of payoffs across their descendants is governed by Measure.
+3. The accepted QBU model assigns Measure to the corresponding payoff sectors.
 4. If Credence and Measure diverge, some available bet turns the divergence into systematic loss.
 5. The overwhelming majority of descendants, weighted by Measure, regret the action relative to the Measure-aligned alternative.
 

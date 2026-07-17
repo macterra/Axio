@@ -15,6 +15,7 @@ The pass preserves the volume's progression from physical agency through Everett
 - Treat the QBU as an Everettian coarse-grained modeling layer. Branches are emergent and representation-dependent; Measure is squared-amplitude weight over specified events, not branch count or an amplitude substance.
 - Define counterfactual influence through an explicit intervention model. Ancestry and correlation alone do not establish causation.
 - Replace global “Measure steering” with policy-conditioned causal comparisons. Agents affect later physical consequences without creating or globally reallocating normalized amplitude.
+- Treat claims that neural or creative variation has a specifically quantum source as conditional modeling possibilities, not established neuroscience.
 - Recast quantum immortality and Gigaplex branch counts as warnings about measure, coarse-graining, empirical hazard models, and identity assumptions.
 - Mark the Chaos sequence as speculative metaphysics. String containment is not realization; program encoding is not execution; a semantic map is not a physical mechanism.
 - Correct the filter discussion's algorithmic-randomness, coding, and equivalence-class claims. Fixed points establish self-reference, not persistence or causal power.
@@ -37,7 +38,7 @@ The build supports optional manifest-defined parts while retaining flat navigati
 ## Open technical and author decisions
 
 - **Kybit/work bridge:** derive a nontrivial physical implementation theorem or keep the linear work relation explicitly restricted to chosen models.
-- **Agency/Measure bridge:** decide whether “Measure steering” remains as declared shorthand for policy-conditioned distributions or should be retired project-wide.
+- **Agency/Measure bridge:** “Measure steering” is retired as a technical description. The remaining open task is to derive any general relationship among intervention-relative control, work, KL divergence, and conditional event weight.
 - **Everett commitment:** decide whether later volumes require Everettian ontology or only a weighted-possibility formalism.
 - **Pattern projectors:** supply operational criteria for high-level patterns before calling their Measure determinate.
 - **Identity:** choose and defend the role of causal provenance, bodily continuity, memory, and functional equivalence.

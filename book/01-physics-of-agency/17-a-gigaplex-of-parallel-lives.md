@@ -45,7 +45,7 @@ Nowhere does the swap do more damage than in the most seductive argument the bra
 
 ## Quantum Immortality, Priced in Measure
 
-The argument goes like this. At every moment there is some branch, however improbable, in which you survive — the aneurysm misses, the mutation repairs, the trigger jams. Since all branches are real, there is always a continuing you. Subjectively, then, you should expect to live forever: death is never experienced from the inside, and some thread of experience always goes on. This is quantum immortality, and in its usual form it is exactly the count-for-Measure swap. Yes, surviving branches always *exist* — the count is never zero. The question a rational agent must ask is what they *weigh*.
+The argument goes like this. Suppose every hazard leaves some nonzero event sector in which you survive — the aneurysm misses, the mutation repairs, the trigger jams. Since those records are real on the Everettian model, the argument says there is always a continuing you and that subjectively you should expect to live forever. This is quantum immortality, and in its usual form it swaps mere nonzero existence for Measure. The premise is not guaranteed: a survival sector must be physically available from the actual state, and even when it is, the rational question is what total weight it carries under a defensible identity and hazard model.
 
 Pricing survival requires an explicit empirical model. The following scenarios are illustrative, not estimates supplied by quantum mechanics:
 
