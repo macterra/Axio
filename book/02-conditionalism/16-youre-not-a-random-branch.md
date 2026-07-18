@@ -1,6 +1,6 @@
 ---
 title: "You're Not a Random Branch"
-subtitle: 'Weighing worlds instead of counting them'
+subtitle: 'Weighing outcome sectors instead of counting worlds'
 status: review
 sources:
   - 202129157.youre-not-a-random-branch
@@ -10,7 +10,7 @@ sources:
 
 Here's the setup. You run a quantum experiment rigged so that one outcome is overwhelmingly likely — say, 99% to flash green, 1% to flash red. You press the button. The detector flashes.
 
-In the ordinary picture of quantum mechanics, one outcome happens and the other doesn't, and "99%" means what it always meant: the green light will probably come on. But there's a rival picture — the Quantum Branching Universe (QBU), the Everettian picture introduced in [Measure and Credence](11-measure-and-credence.md) — that takes the equations at face value and refuses to bolt on any collapse, any magic moment where one outcome is chosen and the rest are deleted. On that picture, both outcomes happen. The world splits. There is a version of you who sees green and a version of you who sees red, each equally real, each walking away with a perfectly definite memory of what they saw.
+In a collapse picture, one outcome happens and the other doesn't, and "99%" gives the chance that the green light comes on. But there's a rival picture — the Quantum Branching Universe (QBU), the Everettian model introduced in [Measure and Credence](11-measure-and-credence.md) — that keeps unitary evolution and represents both nonzero outcome records. In the simple coarse-graining used here, there is a green-record continuation and a red-record continuation, each locally definite and neither selected as uniquely real.
 
 Now ask again: what could "99%" possibly mean?
 
@@ -30,23 +30,23 @@ This is the same mistake the anthropic theories made, wearing a new costume. SSA
 
 ## Stop Counting, Start Weighing
 
-Here is what the count throws away: the outcomes don't come with equal billing. Each branch carries an objective weight — its [Measure](11-measure-and-credence.md); in quantum mechanics, the amplitude, squared — and that weight is not a label someone pencils in afterward. It's the very quantity that already runs the physics. It governs how the waves interfere, how fast a measurement settles into a definite record, how repeated trials come out. The 99 and the 1 are doing real work in the equations long before anyone asks a question about probability.
+Here is what the count throws away: the outcome sectors need not have equal Born weight. Their [Measure](11-measure-and-credence.md) — represented by squared amplitude for a specified projector — is not a label someone pencils in afterward. Amplitudes already govern interference and the formal predictions for repeated trials. The 99 and the 1 are doing real work in the equations long before anyone asks a question about probability.
 
-A quick guardrail, because it's easy to slip here: the high-Measure branch is not "more real" than the low-Measure one. They are both completely real. Nobody in the red branch is faint, or ghostly, or half-there; they are as solid to themselves as you are to you. Measure is not a measure of how much a world exists. It's an objective quantity attached to each world that — the claim goes — your expectations ought to track. Keeping those two ideas apart is most of the battle, and it's a distinction the popular telling usually fumbles.
+A quick guardrail, because it's easy to slip here: a high-Measure record is not "more real" than a low-Measure one. Nobody in the red sector is faint, ghostly, or half-there. Measure is not a measure of how much a world exists. It is the normalized Born weight of a specified event sector, relative to the state and decomposition, that — the claim goes — expectations ought to track. Keeping those ideas apart is most of the battle, and it's a distinction the popular telling usually fumbles.
 
-And notice the contrast with the anthropic case. In cosmology, the whole problem was that nobody agreed on what the measure even was — the "weight" of a situation was exactly the thing in dispute. Quantum mechanics simply hands it to you. The Measure is right there in the formalism, the same number physicists have used for a hundred years. That is why the quantum case is the cleanest possible place to make this argument: you get the measure for free.
+And notice the contrast with the anthropic case. In cosmology, the whole problem was that nobody agreed on what the measure even was — the "weight" of a situation was exactly the thing in dispute. Quantum mechanics supplies a canonical Born weight once a state and event projector are fixed. That is why the quantum case is cleaner: the physical weighting rule is not inferred from a census, though its interpretation and the relevant coarse-graining still require argument.
 
 ## The Bridge
 
-Physics gives you the weights. But a weight sitting in an equation is a fact about the world, not yet a fact about what you should expect. You still need a rule connecting the two — a bridge from "this branch carries more objective weight" to "you should expect to find yourself seeing this outcome."
+Physics gives you event weights. But a weight sitting in an equation is a physical-model fact, not yet a fact about what you should expect. You still need a rule connecting the two — a bridge from "this record sector has greater Born weight" to "you should assign greater Credence to observing this outcome."
 
-That bridge is exactly the principle from the companion chapter: under self-locating uncertainty, your Credence should track the total objective Measure behind the situations that match your evidence. Point it at branches. Before the measurement, you know both futures will exist, each continuous with you-right-now, each carrying its Measure. The rule says: spread your expectation in proportion to that weight.
+That bridge is exactly the principle from the companion chapter: under the disputed self-locating-uncertainty premise, your Credence should track the total objective Measure of record sectors matching your evidence. Before the measurement, the model contains successor records for both nonzero outcomes. The proposed rule spreads expectation in proportion to their weights; it does not follow from the existence of multiple records alone.
 
 You might object that there is nothing here to be uncertain about: before the experiment, the Everettian description already includes both future records. A self-location response considers the interval after decoherence and before the result is inspected. Under a chosen branch decomposition, each record is definite relative to its sector while the observer lacks indexical information about the record it will report. Whether that constitutes genuine uncertainty, and whether a pre-branch agent can identify with exactly one successor, remain disputed assumptions rather than neutral facts.
 
 For a clean measurement, that delivers precisely the rule physicists already use — weight each outcome by its amplitude squared. The textbook recipe, the one confirmed to absurd precision, turns out to be measure-conditioned self-location applied to a universe of branches — the same conclusion the normative argument of [Probability Without Collapse](14-probability-without-collapse.md) reaches from the direction of rational decision-making. Same move as the anthropic case; far cleaner measure.
 
-And it dissolves the thing that looked most paradoxical: why we observe probabilities at all. Run the lopsided experiment a thousand times. There are now branches for every possible sequence of greens and reds — including a branch that saw red nearly every time. That strange branch genuinely exists. But add up the objective Measure of all the branches that disagree wildly with the 99% expectation, and it is vanishingly small. The witnesses to anti-textbook statistics are real, but they carry almost no weight — and weight is what your expectations track. So you should expect to see the ordinary frequencies, and you do.
+And it addresses the thing that looked most paradoxical: why we observe Born frequencies at all. Run the lopsided experiment a thousand times. The model contains record sectors for each sequence with nonzero amplitude, including red-heavy sequences. But the total Measure of sectors that disagree wildly with the 99% expectation is vanishingly small. Witnesses to anti-textbook statistics remain in the model, but their record class has little weight — and the bridge principle says expectation tracks weight. Under that principle, ordinary frequencies receive overwhelming Credence.
 
 ## The Honest Version
 
@@ -67,7 +67,7 @@ The honest answer, for a while, was: these are real, unsolved, and at least now 
 
 That was the state of play. Then a new mathematical result moved the first of those two hard questions from "assumption" toward "theorem."
 
-The result — [a 2026 uniqueness theorem due to Lela](https://arxiv.org/abs/2603.24619) — says, stripped of its machinery: once you require a weight to behave consistently when you slice worlds more finely — to never contradict itself as you refine the picture — the amplitude-squared weight is the only one that survives, given two structural conditions. Every other candidate weighting breaks somewhere.
+The result — [a 2026 uniqueness theorem due to Lela](https://arxiv.org/abs/2603.24619) — says, stripped of its machinery: once you require a weight to behave consistently under finer decompositions — to never contradict itself as you refine the represented event structure — the amplitude-squared weight is the only one that survives, given two structural conditions. Every other candidate weighting breaks somewhere.
 
 The theorem is deliberately neutral: it does not claim that a physical system satisfies its conditions. The separate local paper [Crossing the Threshold](/papers/EEBR.html) argues that Everettian quantum mechanics can satisfy them. That application adds substantive assumptions and should not be conflated with Lela's mathematical result.
 
@@ -81,7 +81,7 @@ Put together, the result narrows the available weighting rules under its structu
 
 There's one move in that second treatment too good not to share, because it's the rare spot where many-worlds helps instead of hurting.
 
-The theorem needs the weight to come out the same no matter which way you could have sliced a world. In a single-world universe, those alternative slicings are mere hypotheticals — roads not taken — and you'd simply have to assume they all agree. That assumption is exactly the kind of thing skeptics jam a crowbar into.
+The theorem needs the induced weight to remain consistent across admissible refinements of an event representation. Treating those refinements as a census of literal worlds would beg the question; the relevant objects are decompositions within the formal model.
 
 The local application proposes using a quantum-controlled ancillary system so that alternative refinements occur in different record sectors. This makes the consistency requirement concrete within QBU. It does not establish that no single-world or operational framework can motivate an analogous invariance, and it remains subject to the physical assumptions behind the construction.
 
@@ -95,7 +95,7 @@ Same rule as the companion chapter: name the open problems instead of hiding the
 
 - Lela's result is a March 2026 preprint, not yet peer reviewed. It proves conditional mathematical uniqueness under internal-equivalence and refinement-richness assumptions; the book's physical application is a separate argument and inherits additional risk.
 
-- The low-Measure witnesses are still there. The version of you who saw red almost every time is real, carries on, and is fully convinced of the wrong odds — and a critic will press that this lets the theory mint perfectly rational observers for whom science reliably misfires. The reply is that confirmation tracks Measure, not existence: that branch no more refutes quantum mechanics than a fair coin landing heads a thousand times running refutes probability — both are real possibilities of negligible weight, and confirmation was never a head-count. What genuinely remains is narrower but real: in a single world the maverick run merely could happen and almost never does; here it flatly does. That much the account owns rather than erases.
+- Low-Measure witnesses remain. A continuation that recorded red almost every time is real within the Everettian model and is locally convinced of the wrong odds. A critic can press that the theory therefore contains observers for whom induction reliably misfires. The reply is that confirmation tracks Measure, not existence: the aggregate record sector no more refutes quantum mechanics than a fair coin landing heads a thousand times running refutes a probabilistic model. What remains is narrower but real: collapse pictures say the maverick run merely could occur, while Everett represents a nonzero sector in which it does.
 
 These are honest debts, written into a closing ledger rather than swept under a rug.
 
@@ -103,7 +103,7 @@ These are honest debts, written into a closing ledger rather than swept under a 
 
 Step back and this chapter and its companion tell one story twice.
 
-Faced with "where am I, among all the observers?", the fix was: don't count the observers, weigh them. Faced with "which outcome should I expect, when all of them happen?", the fix is the same: don't count the worlds, weigh them. Both times the error was treating counting as fundamental. Both times the repair is to ask how much objective weight stands behind the situations that match what you actually know.
+Faced with "where am I, among all the observers?", the anthropic proposal was: do not count without a justified sampling measure. Faced with "which record should I expect on an Everettian model?", the quantum proposal is: do not count worlds; use the total Born weight of sectors matching the evidence. Both times the error was treating counting as fundamental. The quantum case has a physical candidate measure; the anthropic case may not.
 
 The quantum case supplies a precise candidate weight from the formalism and a recent conditional uniqueness result. The remaining work is substantial: justify the physical assumptions, defend self-locating uncertainty, and establish why the induced weight should guide Credence.
 

@@ -6,7 +6,7 @@ The existing [Axionic Glossary](../../papers/Axionic-Glossary.md) is an importan
 
 ## Editorial conventions
 
-- Capitalize **Measure**, **Credence**, and **Vantage** as terms of art.
+- Capitalize **Measure**, **Credence**, **Vantage**, and **Branchcone** as terms of art.
 - Spell out **Quantum Branching Universe (QBU)** on first use in each chapter.
 - Capitalize named frameworks, principles, laws, tests, and formal system components.
 - Use lowercase for ordinary instances of agency, coherence, viability, harm, consent, and sovereignty unless they begin a named term.
@@ -51,11 +51,11 @@ The proposed constraints that control requires work, control capacity decays wit
 
 ### Quantum Branching Universe (QBU)
 
-Axio's operational Everettian ontology: a branching structure of physically realized, decohered outcomes used to define Measure, Vantage, branchcones, causality, identity, and choice.
+Axio's coarse-grained Everettian modeling layer: a representation of decoherent record histories used conditionally to analyze Measure, Vantage, Branchcones, causality, identity, and choice. It is not a replacement for Hilbert-space quantum mechanics, a uniquely selected graph, or a result shared by every interpretation.
 
 **Canonical home:** Volume 1, Chapter 8.
 
-**Reconciliation required:** Avoid alternating among “Many Worlds,” “Everettian quantum mechanics,” and “QBU” as if they were identical. QBU is the book's elaboration of an Everettian interpretation.
+**Contrast:** “Many Worlds” names a family of interpretations, “Everettian quantum mechanics” names the no-fundamental-collapse approach, and QBU names this book's elaborated representation. Do not treat them as interchangeable.
 
 ### Branch
 
@@ -63,33 +63,33 @@ An effectively decohered continuation represented as part of the QBU's event str
 
 **Canonical home:** Volume 1, Chapter 8.
 
-**Calibration:** Branch decomposition can be approximate and emergent. Avoid language implying uniquely countable classical worlds unless the argument supplies that criterion.
+**Calibration:** Branch decomposition is approximate, emergent, and coarse-graining-dependent. A branch is shorthand for a represented history or record sector, not a fundamental pebble. Do not infer a unique count, attach an intrinsic quantum property to an individual world, or assume that every imaginable outcome occurs.
 
 ### Measure
 
-The objective weight assigned to a branch or set of branches, ordinarily associated with squared quantum amplitude.
+The normalized Born weight of a specified event or record sector relative to a quantum state, event definition or projector, conditioning record, and coarse-graining. Informal “branch weight” language is acceptable only when those inputs and the approximate branch representation are already clear.
 
 **Canonical homes:** Volume 1, Chapter 9; Volume 2, Chapter 11.
 
-**Contrast:** Measure belongs to the modeled physical structure; Credence belongs to an agent's uncertainty.
+**Contrast:** Measure belongs to the modeled physical structure; Credence belongs to an agent's epistemic state. Measure is not branch count, amount of reality, a moral currency, a directly observable risk estimate, or a substance that an agent creates, destroys, or globally reallocates.
 
 ### Credence
 
-The subjective probability an agent assigns to a proposition or self-location given its information and Vantage.
+The epistemic probability an agent assigns to a proposition or self-location given evidence, background assumptions, and a model. Credence applies beyond branching cases, including uncertainty about fixed facts and theories.
 
 **Canonical home:** Volume 2, Chapter 11.
 
-**Contrast:** Rational Credence may track Measure under stated assumptions; it is not itself Measure.
+**Contrast:** A physical model may supply likelihoods numerically derived from Measure. Rational Credence tracks Measure only under stated self-location, typicality, and decision assumptions; neither the Born rule nor branch existence completes that bridge by itself.
 
 ### Vantage
 
-The event or observer-location that anchors “here and now” for prediction, self-location, counterfactual comparison, and future Measure.
+The physical conditioning record that anchors “here and now” for a QBU calculation. It states which historical and physical conditions the model holds fixed; it is not identical to consciousness, subjective perspective, or an exact microstate.
 
 **Canonical home:** Volume 1, Chapter 9.
 
 ### Branchcone
 
-The set of physically reachable future branches extending from a specified Vantage.
+The set of represented decoherent histories extending from a specified Vantage through a stated horizon in a declared QBU model.
 
 **Canonical home:** Volume 1, Chapter 9.
 
@@ -101,11 +101,11 @@ A criterion for re-identifying a pattern across time or branches. A strong ident
 
 ### Causality
 
-Within the QBU, a proposed structural relation defined through counterfactual implication across descendants of an appropriate common ancestor event.
+Within the QBU, a proposed intervention-relative relation: changing a modeled cause under a stated contrast changes the conditional Measure of a later event while the causal path respects the representation's ancestry relation.
 
 **Canonical home:** Volume 1, Chapter 10.
 
-**Calibration:** This is the Axionic account of causality, not a neutral summary of every causal theory.
+**Calibration:** This is the Axionic account of causality, not a neutral summary of every causal theory. A policy comparison concerns different conditional distributions; it does not imply that an agent edits global amplitude or selects one destination branch.
 
 ### Chaos
 

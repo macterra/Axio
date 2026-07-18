@@ -6,7 +6,7 @@ sources:
   - 171824780.probability-without-collapse
 ---
 
-Prepare an electron in a superposition weighted two to one and measure its spin. In Everettian quantum mechanics nothing collapses: the universal wavefunction branches, and both outcomes occur — one set of your future selves records spin-up, another records spin-down. Now repeat the experiment a thousand times. The lab notebook in front of you — the one in this branch — shows spin-up on about two-thirds of the runs, exactly as the Born rule prescribes: frequencies track the squared amplitude, $|\psi|^2$. But if every outcome occurs on every run, what is the "probability" of an outcome even supposed to mean? Why should the number two-thirds show up in anyone's notebook at all?
+Prepare an electron in a superposition weighted two to one and measure its spin. In Everettian quantum mechanics nothing collapses: the universal wavefunction branches, and both outcomes — each carrying nonzero amplitude — occur: one set of your future selves records spin-up, another records spin-down. Now repeat the experiment a thousand times. The lab notebook in front of you — the one in this branch — shows spin-up on about two-thirds of the runs, exactly as the Born rule prescribes: frequencies track the squared amplitude, $|\psi|^2$. But if every nonzero outcome occurs on every run, what is the "probability" of an outcome even supposed to mean? Why should the number two-thirds show up in anyone's notebook at all?
 
 This is the notorious **probability problem**, and it is the standard indictment of the Everett interpretation. Collapse theories dodge the puzzle by fiat: they postulate that at each measurement exactly one outcome occurs, at random, with exactly the Born probabilities. That is not an explanation — it is the answer written directly into the axioms, and the purchase price is a mysterious, unobserved, dynamics-violating collapse process bolted onto an otherwise deterministic theory. Everett refuses to pay. The Schrödinger equation holds universally; every outcome happens in some branch of the Quantum Branching Universe (QBU) — the picture whose physical credentials I lay out in [Measure and Credence](11-measure-and-credence.md). But having refused collapse, the Everettian owes an account of what probability is doing in a theory where everything happens. Deterministic branching plus Born-rule experience: that is the debt this chapter pays.
 
@@ -14,7 +14,7 @@ This is the notorious **probability problem**, and it is the standard indictment
 
 The literature offers several strategies. Each has strengths and disputed premises; the brief sketches below identify the gap this book's proposal tries to address.
 
-**Declare amplitudes to be probabilities.** Zurek's envariance program tries to show that $|\psi|^2$ is objectively *the* probability measure, built into the symmetries of Hilbert space itself. The construction is elegant, but it ends by conflating the geometry of the wavefunction with the uncertainty of an agent. No theorem about entanglement symmetries, however pretty, tells anyone what to *expect* — a measure defined on branches is not yet a degree of belief, and calling it one is the very step that needed justifying.
+**Declare amplitudes to be probabilities.** Zurek's envariance program tries to show that $|\psi|^2$ is objectively *the* probability measure, built into the symmetries of Hilbert space itself. The construction is elegant, but it does not by itself identify physical weight with an agent's uncertainty. No theorem about entanglement symmetries, however pretty, tells anyone what to *expect* — a measure defined on event sectors is not yet a degree of belief, and calling it one is the very step that needed justifying.
 
 **Derive the Born rule from decision theory.** Deutsch, Wallace, and Sebens & Carroll argue that a rational agent in an Everettian universe must act *as if* branch weights are probabilities. This is closer to the truth — close enough that the argument below is its debtor. But the critics' accusation sticks: the derivations smuggle the Born rule in through rationality axioms that already presuppose it, constraints on preference whose innocence evaporates the moment you ask why a rational agent must obey them in a branching world.
 
@@ -28,7 +28,7 @@ So build the bridge deliberately, starting from the distinction that the whole o
 
 **Measure** is a physical weight within the QBU model. For a specified state and record projector it is given by the Born expression; it is not a uniquely countable property of a fundamental branch, nor is it analogous in every respect to charge or spin. **Credence** is an agent's graded uncertainty about future observations or present self-location. Both can use probability mathematics, but their assignment rules and interpretations differ.
 
-Keep them apart and the probability problem changes shape. Before the measurement, "you will see spin-up" has no unconditional truth value — both successors exist, and each will see what he sees. What the world offers is branch-relative facts plus the Measure over branches; truth about outcomes, like [truth everywhere](02-all-truth-is-conditional.md), is conditional — here, conditional on a branch. Your uncertainty is therefore not ignorance of some hidden cosmic coin flip. It is *self-locating* uncertainty: certainty about the wavefunction, uncertainty about where in it you are about to be. And self-locating uncertainty is exactly the kind of thing Credence quantifies.
+Keep them apart and the probability problem changes shape. Before the measurement, "you will see spin-up" has no unconditional truth value on the Everettian model — successor records exist for both nonzero alternatives. What the model offers is record-relative facts plus Measure over specified sectors; truth about outcomes, like [truth everywhere](02-all-truth-is-conditional.md), is conditional — here, conditional on a record. The proposed uncertainty is therefore not ignorance of some hidden cosmic coin flip but self-location within the represented structure. Whether that pre-observation attitude is genuine uncertainty remains a disputed premise, and Credence is the proposed way to represent it.
 
 The question the probability problem was actually asking now stands exposed. It was never "what are the probabilities?" — the theory has no chancy events to pin them on. It was: **why should an agent's Credences track the branch Measures?** That is a normative question, and it gets a normative answer.
 
@@ -42,7 +42,7 @@ The proof sketch generalizes past coin flips and wagers:
 
 1. The agent chooses an action with payoffs contingent on outcomes.
 2. They evaluate it using their Credences.
-3. But the actual distribution of payoffs across their descendants is governed by Measure.
+3. The accepted QBU model assigns Measure to the corresponding payoff sectors.
 4. If Credence and Measure diverge, some available bet turns the divergence into systematic loss.
 5. The overwhelming majority of descendants, weighted by Measure, regret the action relative to the Measure-aligned alternative.
 

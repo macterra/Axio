@@ -4,7 +4,7 @@ Status: **In author review**
 
 ## Editorial outcome
 
-The pass preserves all 24 chapters while separating the volume's general epistemology from its optional QBU probability module. Conditionalism now applies explicitly to itself, ordinary contextual qualification is distinguished from the book's stronger methodological proposal, and the later return to updating and decision is readable without accepting Everettian ontology.
+The pass preserves all 25 chapters while separating the volume's general epistemology from its optional QBU probability module. Conditionalism now applies explicitly to itself, ordinary contextual qualification is distinguished from the book's stronger methodological proposal, and the later return to updating and decision is readable without accepting Everettian ontology. The new *Fallibilist Bayesianism* capstone has passed the Phase 5 Measure/Credence continuity audit and is now in `review`.
 
 ## Principal decisions
 
@@ -19,6 +19,7 @@ The pass preserves all 24 chapters while separating the volume's general epistem
 - Recast the regret/typicality argument as conditional on utilities, available bets, Measure-weighted evaluation, and decision axioms.
 - Present MCSL as a research proposal that still owes priors, cross-theory likelihoods, and a non-question-begging admissibility rule.
 - Describe Lela's March 2026 preprint as a conditional mathematical uniqueness result. The local EEBR paper's physical application is separate, and neither result alone bridges weight to Credence.
+- Keep anthropic sampling measures distinct from quantum Measure; the latter is defined only after a state, event projector, Vantage, and decomposition are supplied.
 - Correct the statement of Aumann's agreement theorem.
 - Recast Sacred Coherence as a personal, criticizable commitment rather than a universally compelled value hierarchy.
 - Add an explicit epistemic–decision gate before utilities, stakes, robustness, reversibility, and information value enter.

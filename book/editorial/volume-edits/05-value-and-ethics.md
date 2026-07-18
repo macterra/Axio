@@ -19,6 +19,7 @@ The central editorial decision is to separate four layers the draft sometimes fu
 - Restrict prospective risk-harm to material, foreseeable, attributable worsening. Ordinary reciprocal risk, negligence, predation, rescue, and due care do not collapse into one category.
 - Treat Sapientism as an explicit substrate-neutral standing commitment under graded uncertainty, not as a discontinuity proved by an administrative threshold.
 - Mark the QBU ethics as conditional. Measure can weight modeled continuations but supplies neither value, interpersonal aggregation, nor permission to trade away protected claims.
+- Treat “navigating Measure” as counterfactual decision language, not a physical mechanism. Ethical comparisons remain indexed to policies, Vantages, evidence, and protected claims.
 - Present viability convergence as a conjecture under stated selection conditions. Persistence supplies reasons to agents who value continued agency; it does not derive a universal duty or explain every durable strategy.
 - Distinguish reciprocal protection of agency from maximization of total agency. Restitution is a relational remedy, not a term in a global objective function.
 - Require the coexistence protocol's institutions to earn legitimacy through public rules, evidence, due process, appeal, reciprocity, and safeguards against capture. Distributed procedure is not self-authorizing.

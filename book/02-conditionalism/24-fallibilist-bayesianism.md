@@ -1,7 +1,7 @@
 ---
 title: 'Fallibilist Bayesianism'
 subtitle: 'Bayes within models, criticism between them'
-status: draft
+status: review
 sources:
   - 206603023.fallibilist-bayesianism
   - 206615368.the-probability-tribes
