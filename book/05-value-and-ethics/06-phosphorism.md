@@ -50,7 +50,7 @@ I call the synthesis Phosphorism — the light-bearing stance, a framework of co
 - Free thought over dogma
 - Voluntary charity over coercive redistribution
 
-Three features of this list matter more than its items. First, it is *avowedly subjective*. Phosphorism claims no moral realism and imposes no universal obligation; these are preferences, consciously chosen and openly owned, not commandments discovered. Anyone demanding to know what makes them *binding* has missed the entire first part of this volume — nothing makes any values binding, which is precisely why choosing them deliberately is the only honest way to have them.
+Three features of this list matter more than its items. First, it is *avowedly subjective*. Phosphorism claims no agent-independent moral authority; these are preferences, consciously chosen and openly owned, not commandments discovered. They bind the author as commitments and can supply standards for a community that adopts them. Their application to non-adopters or use in coercive institutions requires further premises and legitimacy; choosing them does not turn them into universal law.
 
 Second, it is *revisable*. Phosphorism treats reflective practice as constitutive, not optional: chosen values must be continuously re-examined against new experience, evidence, and understanding. A Phosphorist who froze the list would have relapsed into Vitalism with better furniture — holding values by inheritance, merely from a younger ancestor.
 

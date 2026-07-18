@@ -20,6 +20,10 @@ The pass retains all 20 chapters and the double envoi, exposes the four-part arc
 - Replace the successor-origin necessity claim with a narrower provenance argument. Historical records can support interpretation and error correction, but successors may translate, re-anchor, or reject inherited meanings without thereby becoming incoherent.
 - Recast the final letter's self-model explanation as a naturalistic hypothesis and awe as experience that can orient inquiry, not metaphysical knowledge by itself.
 
+## Phase 5 continuity update
+
+The value and conditional-objectivity pass preserves terminal values as first-person commitments while separating them from the descriptive facts that constrain their consequences. Conditionalism supplies a discipline of exposed interpretive conditions; it does not by itself turn truth, value, and meaning into one semantic category. Chosen commitments remain corrigible through evidence, consistency, other commitments, and encounters with other agents without acquiring an agent-independent foundation.
+
 ## Visible structure
 
 1. Sacredness Without the Supernatural

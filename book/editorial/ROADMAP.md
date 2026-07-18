@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 5 in progress — the first four concept clusters, through coherence and viability, are reconciled; value and conditional objectivity are next.** The manuscript contains nine volumes, 242 chapters, and roughly 550,000 words. All 249 volume manuscript files—introductions and chapters, excluding front matter—are in `review`; the newly integrated *Fallibilist Bayesianism* capstone passed its Phase 5 continuity gate. Merged editorial passes are not yet promotion to `final`; the remaining cross-volume clusters, glossary work, continuous-reading compression, framing, and final verification remain.
+Status: **Phase 5 in progress — the first five concept clusters, through value and conditional objectivity, are reconciled; harm, coercion, consent, and justified force are next.** The manuscript contains nine volumes, 242 chapters, and roughly 550,000 words. All 249 volume manuscript files—introductions and chapters, excluding front matter—are in `review`; the newly integrated *Fallibilist Bayesianism* capstone passed its Phase 5 continuity gate. Merged editorial passes are not yet promotion to `final`; the remaining cross-volume clusters, glossary work, continuous-reading compression, framing, and final verification remain.
 
 ## Progress at a glance
 
@@ -12,7 +12,7 @@ Status: **Phase 5 in progress — the first four concept clusters, through coher
 | 2. Architecture audit | **Complete** | Book-wide architecture and nine volume memos completed. |
 | 3. Foundational volumes | **Complete** | Volume 1–5 passes merged; manuscript remains in `review`. |
 | 4. Applied volumes | **Complete** | Volume 6–9 passes merged; manuscript remains in `review`. |
-| 5. Cross-volume reconciliation | **In progress** | First four clusters complete; value and conditional objectivity are next. |
+| 5. Cross-volume reconciliation | **In progress** | First five clusters complete; harm, coercion, consent, and justified force are next. |
 | 6. Reader-facing glossary | **Pending Phase 5** | Canonical definitions must stabilize before publication. |
 | 7. Compression and prose | **Pending** | Continuous-reading and cross-volume repetition decisions remain. |
 | 8. Framing material | **Pending** | Revise front matter and introductions after the manuscript stabilizes. |
@@ -252,7 +252,7 @@ Progress: **Pass merged; manuscript in review.** See `book/editorial/volume-edit
 
 ## Phase 5 — Cross-volume reconciliation
 
-Progress: **In progress.** Agency and sovereignty are complete; see `reconciliation/01-agency-and-sovereignty.md`. Measure, Credence, and branching are complete; see `reconciliation/02-measure-credence-and-branching.md`. Consciousness, sentience, and sapience are complete; see `reconciliation/03-consciousness-sentience-and-sapience.md`. Coherence and viability are complete; see `reconciliation/04-coherence-and-viability.md`. The new Volume 2 probability capstone passed its continuity gate and remains in `review` with the rest of the manuscript.
+Progress: **In progress.** Agency and sovereignty are complete; see `reconciliation/01-agency-and-sovereignty.md`. Measure, Credence, and branching are complete; see `reconciliation/02-measure-credence-and-branching.md`. Consciousness, sentience, and sapience are complete; see `reconciliation/03-consciousness-sentience-and-sapience.md`. Coherence and viability are complete; see `reconciliation/04-coherence-and-viability.md`. Value and conditional objectivity are complete; see `reconciliation/05-value-and-conditional-objectivity.md`. The new Volume 2 probability capstone passed its continuity gate and remains in `review` with the rest of the manuscript.
 
 Run dedicated continuity passes for:
 
@@ -260,7 +260,7 @@ Run dedicated continuity passes for:
 - Measure, Credence, and branching. **Complete.**
 - Consciousness, sentience, and sapience. **Complete.**
 - Coherence and viability. **Complete.**
-- Value and conditional objectivity.
+- Value and conditional objectivity. **Complete.**
 - Harm, coercion, consent, and justified force.
 - Patterns, selection, and cultural agency.
 - Sacredness, meaning, and chosen commitments.
@@ -375,4 +375,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Continue Phase 5 with value and conditional objectivity. Make the arc from valuer-dependent value to Sapient Agency Realism explicit; specify the normative premise, domain, agent-binding conditions, and sense of objectivity at each step; and prevent conditional facts about agency from silently restoring the agent-independent moral authority rejected at the volume's opening.
+Continue Phase 5 with harm, coercion, consent, and justified force. Reconcile the canonical definitions and baselines across ethics and governance; distinguish injury, risk, wrongfulness, coercion, violence, defensive permission, and institutional authority; and ensure that classification does not silently grant enforcement legitimacy.
