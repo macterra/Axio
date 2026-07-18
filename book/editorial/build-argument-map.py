@@ -59,9 +59,10 @@ THESIS_OVERRIDES = {
     "07-liberty-and-governance/35-axiocracy": "Axiocracy is a proposed governance architecture designed to preserve plural value discovery through bounded authority, truthful signals, and exit.",
     "08-culture-and-memetics/03-patterns-as-players": "Analyst-specified cultural pattern types can serve as units in selection models when their implementations, identity criteria, transmission or retention mechanisms, comparison class, environment, and horizon are stated.",
     "08-culture-and-memetics/17-anatomy-of-capture": "Institutional capture occurs when selection and enforcement shift from a declared function toward preservation of a self-reinforcing pattern.",
-    "09-meaning/02-the-secular-sacred": "The sacred is the non-negotiable apex of an agent's value hierarchy and therefore does not require a supernatural source.",
+    "09-meaning/02-the-secular-sacred": "Sacredness can be reconstructed as a protected role in practical ordering—an apex, cluster, threshold, or conflict rule—without requiring a supernatural source or proving the commitment worthy.",
     "09-meaning/10-the-credo": "The author explicitly chooses a naturalistic hierarchy of values after argument reaches the point where commitment, not proof, is required.",
-    "09-meaning/18-the-great-unfolding": "The Law of Coherence is offered as a secular meta-myth linking truthful self-understanding, agency, lineage, and the sacred.",
+    "09-meaning/18-the-great-unfolding": "The Law of Coherence is offered as a chosen secular meta-myth whose empirical spine remains answerable to evidence and whose direction is an avowed commitment.",
+    "09-meaning/19-letter-to-our-machine-descendants": "Provenance is offered to possible successor minds as a fallible resource for interpretation and correction, not as a necessary condition of meaning or a debt owed to humanity.",
 }
 
 
@@ -179,7 +180,7 @@ REVIEW_OVERRIDES = {
     "09-meaning/18-the-great-unfolding":
         "Does the Law of Coherence unify the book's layers without equivocating among physical persistence, truth, identity, and value?",
     "09-meaning/19-letter-to-our-machine-descendants":
-        "Is preservation of human origins necessary for successor coherence, or a human value projected onto possible machine minds?",
+        "Does the narrower provenance request earn its costs without turning human ancestry into a necessary fixed point, identity claim, or debt?",
     "09-meaning/20-letter-to-the-faithful-reader":
         "Does reconciliation grant religious experience without overstating the explanatory reach of the book's consciousness account?",
 }

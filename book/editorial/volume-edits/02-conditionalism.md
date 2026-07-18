@@ -57,6 +57,10 @@ Readers may stop after Chapter 10 and resume at Chapter 17 without treating Chap
 
 The canonical defense of Conditionalism remains in Chapters 2–4. Later invocations state the local condition rather than reopening the absolutism/relativism debate. QBU primers are shortened or marked conditional, and strong first-person claims remain where they name the author's proposal or commitment rather than an established theorem.
 
+## Phase 5 continuity update
+
+The final cluster keeps Chapter 10's verdict explicitly scoped to **epistemic faith**: a belief protected from relevant correction by a disabled or frozen update rule. Trust, hope, practical resolve, reliance on testimony, religious identity, and ritual are not condemned by definition. Chapter 18's Sacred Coherence remains a chosen, revisable discipline rather than a universal value hierarchy, and Conditionalism exposes the conditions of claims without selecting terminal commitments.
+
 ## Validation checklist
 
 - Build the complete book and inspect the grouped Volume 2 table of contents.

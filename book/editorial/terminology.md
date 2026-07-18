@@ -189,6 +189,8 @@ Belief protected from revision by a disabled or frozen update rule, rather than 
 
 **Canonical home:** Volume 2, Chapter 10.
 
+**Calibration:** This is the book's stipulative definition of **epistemic faith**. Trust, hope, practical resolve, reliance on testimony, and religious belonging fall outside the verdict unless they also protect a claim from relevant correction.
+
 ### Rationality
 
 The fallible discipline of maintaining and revising models, Credences, and actions for coherence with evidence and stated commitments without requiring ultimate foundations.
@@ -346,6 +348,24 @@ An agent-relative ordering of possibilities disclosed imperfectly through choice
 **Canonical homes:** Volume 5, Chapters 1 and 4.
 
 **Constraint:** Agent-relative does not mean arbitrary, whimsical, incorrigible, or immune to interpersonal criticism. Facts can constrain means, outcomes, and the consistency of an ordering without supplying its terminal normative premise.
+
+### Commitment
+
+An endorsed policy, priority, or evaluative stance that stabilizes action across time, temptation, uncertainty, or cost. A commitment may be inherited, encountered, or newly formulated; reflective authorship consists in understanding, endorsing, revising, and answering for it rather than creating it without causes.
+
+**Canonical homes:** Volume 5, Chapters 2 and 6; Volume 9, Chapters 10–12.
+
+### Terminal commitment
+
+A commitment for which no further instrumental end is supplied in the current account. *Terminal* does not mean uncaused, arbitrary, unrevisable, maximally ranked on a single scale, or shared by every agent.
+
+**Canonical homes:** Volume 5, Chapters 1–2; Volume 9, Chapter 11.
+
+### Function and purpose
+
+A **function** is a causal-system role or selected effect relative to a specified system, analysis, or history. A **purpose** is an end represented, adopted, or endorsed by an agent. Functions can exist without an agent currently representing them; purposes require an appropriate bearer and do not follow from function alone.
+
+**Canonical homes:** Volume 3, Chapters 2 and 5; Volume 5, Chapters 1–2.
 
 ### Agent-binding
 
@@ -687,17 +707,45 @@ A commitment protected from ordinary trade-off or used to govern conflicts among
 
 **Canonical home:** Volume 9, Chapter 2.
 
+**Calibration:** This first identifies a descriptive role, not a verdict that the commitment is true, good, coherent, or legitimate. Protection from ordinary trade-off permits extraordinary reflection and revision. The definition is a proposed secular reconstruction and need not exhaust religious holiness.
+
 ### Spirituality
 
 The pursuit or experience of self-transcendence, depth, unity, and orientation toward the sacred without requiring supernatural entities.
 
 **Canonical home:** Volume 9, Chapter 1.
 
-### Meaning
+**Calibration:** The experience or pursuit does not by itself authenticate a supernatural interpretation. Religious and nonreligious accounts may agree about phenomenology while disagreeing about its cause and significance.
 
-An agent-created relation that situates experience and action within an endorsed hierarchy of value, purpose, and narrative.
+### Semantic meaning
 
-**Canonical homes:** Volume 3, Chapter 5; Volume 9, Chapters 10–14.
+Interpreted aboutness: a sign, representation, state, or practice stands for something to an interpretant within a use, causal history, or inferential system.
+
+**Canonical home:** Volume 3, Chapter 5.
+
+**Contrast:** Semantic meaning does not by itself supply purpose, value, consciousness, or existential significance.
+
+### Existential meaning
+
+A sustained relation that situates an agent's experience and action within endorsed values, purposes, narratives, relationships, and practices. It can be inherited, encountered, revised, or made; it becomes the agent's through participation, reflective endorsement, care, and answerability rather than creation *ex nihilo*.
+
+**Canonical homes:** Volume 9, Chapters 10–14.
+
+**Contrast:** Existential meaning is not a cosmic property established independently of valuers, but neither is it reducible to whim or to a system's causal function.
+
+### Revelation
+
+An experience or report that presents itself as disclosure. The occurrence and phenomenology are evidence; claims about an external source, metaphysical referent, or infallible content require independent support.
+
+**Canonical home:** Volume 9, Chapter 5.
+
+### Meta-myth
+
+An avowed narrative synthesis that joins an evidence-constrained account of what happened to a chosen orientation about what it means and what should be carried forward.
+
+**Canonical home:** Volume 9, Chapter 18.
+
+**Calibration:** The empirical spine remains corrigible; narrative direction and vocation are commitments, not discoveries hidden in physics or history.
 
 ### Sagency
 

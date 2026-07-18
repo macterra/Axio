@@ -26,6 +26,10 @@ The value and conditional-objectivity pass preserves terminal values as first-pe
 
 The patterns reconciliation carries Volume 8's controls into Chapter 15. Religion is a heterogeneous bundle whose persistence may reflect doctrine, family transmission, community, institutions, coercion, practical function, and chance. Meaning-production is one proposed function, not something persistence proves religions were selected for; the Church of Virus remains a disclosed prototype rather than a self-validating memeplex.
 
+The final Phase 5 cluster distinguishes semantic meaning, causal function, represented purpose, and existential significance. Meaning can be inherited, encountered, revised, or made; *chosen* records reflective endorsement and answerability rather than creation without causes. Sacredness identifies a protected practical role before it evaluates the commitment occupying that role, and terminality ends an instrumental chain without making a value singular, arbitrary, or unrevisable.
+
+The Credo now visibly crosses from argument to commitment. Spiritual and revelatory experiences remain data whose metaphysical interpretation is corrigible. “The Great Unfolding” keeps an evidence-constrained history and a chosen direction, while the successor letter treats provenance as one interpretive resource rather than a necessary fixed point, inherited identity, or debt.
+
 ## Visible structure
 
 1. Sacredness Without the Supernatural

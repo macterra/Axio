@@ -1315,11 +1315,8 @@ def generate_publications_page(config, posts, papers_count):
 def main():
     print("=== Building Docs Site ===")
     print()
-    try:
-        from pandoc_version import check as _check_pandoc
-        _check_pandoc()  # warns (does not halt) on a pandoc-version mismatch
-    except ImportError:
-        pass
+    from pandoc_version import check as _check_pandoc
+    _check_pandoc(strict=True)
 
     # Load post mapping and metadata
     print("1. Loading post data from posts.csv...")
