@@ -1,6 +1,6 @@
 # Canonical Terminology Sheet
 
-This is the internal editorial authority for *Axio*. It records the definitions the manuscript should use consistently while also flagging calibration and reconciliation issues. It is not the reader-facing glossary planned for a later phase.
+This is the internal editorial authority for *Axio*. It records the definitions the manuscript should use consistently while also flagging calibration and reconciliation issues. The reader-facing [Glossary](../00-front/03-glossary.md) derives from this sheet but compresses its editorial instructions.
 
 The existing [Axionic Glossary](../../papers/Axionic-Glossary.md) is an important source, but it predates the complete book. Where that paper and the manuscript differ, the discrepancy must be resolved explicitly rather than silently granting either source automatic precedence.
 
@@ -181,7 +181,7 @@ Pattern-encoded structure that reliably reduces an agent's decision-relevant unc
 
 **Canonical home:** Volume 2, Chapter 9.
 
-**Reconciliation required:** The paper glossary adds integration, reflection, and causal efficacy. Decide which are constitutive conditions and which are common consequences.
+**Calibration:** Integration, reflection, and causal efficacy can make knowledge usable within a wider agent architecture, but they are common consequences or enabling conditions rather than additional constitutive requirements in this definition.
 
 ### Faith
 
@@ -323,7 +323,7 @@ A reflective sovereign agent whose self-modification operator is defined only ov
 
 **Canonical source:** [Axionic Glossary](../../papers/Axionic-Glossary.md).
 
-**Reconciliation required:** Decide whether the term belongs in the reader-facing book glossary when the manuscript more often uses RSA and Axionic agent.
+**Reader-facing decision:** Retain the term because Volume 4 Chapter 11 defines it explicitly. Cross-link it to RSA and explain that *Axion* names the strongest configured Axionic case rather than every agent discussed by the book.
 
 ### Authority
 
@@ -425,7 +425,7 @@ A socially and procedurally maintained authorization structure governing control
 
 **Canonical home:** Volume 5, Chapter 10.
 
-**Reconciliation required:** The manuscript treatment and paper glossary differ over whether community consent is constitutive.
+**Calibration:** Social recognition and procedure constitute property's practical operation. Unanimous community consent is not a constitutive condition; moral legitimacy, jurisdiction, and enforceability remain separate questions.
 
 ### Harm
 

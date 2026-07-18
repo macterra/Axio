@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 5 complete — all eight cross-volume concept clusters are reconciled; Phase 6's reader-facing glossary is next.** The manuscript contains nine volumes, 242 chapters, and roughly 550,000 words. All 249 volume manuscript files—introductions and chapters, excluding front matter—are in `review`; the newly integrated *Fallibilist Bayesianism* capstone passed its Phase 5 continuity gate. Merged editorial passes are not yet promotion to `final`; glossary work, continuous-reading compression, framing, and final verification remain.
+Status: **Phase 6 complete — the reader-facing glossary now publishes all 101 canonical terms; Phase 7's continuous-reading compression and prose pass is next.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Continuous-reading compression, framing, and final verification remain.
 
 ## Progress at a glance
 
@@ -13,12 +13,12 @@ Status: **Phase 5 complete — all eight cross-volume concept clusters are recon
 | 3. Foundational volumes | **Complete** | Volume 1–5 passes merged; manuscript remains in `review`. |
 | 4. Applied volumes | **Complete** | Volume 6–9 passes merged; manuscript remains in `review`. |
 | 5. Cross-volume reconciliation | **Complete** | All eight clusters reconciled; canonical definitions are stable enough to govern the glossary. |
-| 6. Reader-facing glossary | **Next** | Derive the published glossary from the internal terminology authority. |
-| 7. Compression and prose | **Pending** | Continuous-reading and cross-volume repetition decisions remain. |
+| 6. Reader-facing glossary | **Complete** | All 101 canonical terms publish with defining-chapter links and visible calibration. |
+| 7. Compression and prose | **Next** | Begin the dedicated continuous-reading and cross-volume compression pass. |
 | 8. Framing material | **Pending** | Revise front matter and introductions after the manuscript stabilizes. |
 | 9. Verification and promotion | **Pending** | Promote `review` to `final` only after author approval and full validation. |
 
-Completed controls now cover all 242 argument-map records, nine architecture memos, and nine volume-edit records. The complete book build and internal-link validation passed after the Volume 2 probability supersession integration; compatibility redirects now preserve the public URLs of moved and renumbered chapters.
+Completed controls now cover all 243 argument-map records, nine architecture memos, nine volume-edit records, eight reconciliation records, and the reader-facing glossary audit. The complete book build and internal-link validation passed after the Volume 2 probability supersession integration; compatibility redirects preserve the public URLs of moved and renumbered chapters.
 
 ## Editorial goals
 
@@ -279,7 +279,7 @@ Resolve the incitement, objective-value, moral-realism, and institutional-author
 
 ## Phase 6 — Reader-facing glossary
 
-Progress: **Next.** Phase 5 stabilized the internal terminology sheet; the published glossary has not yet been created.
+Progress: **Complete.** The published glossary is recorded in `book/00-front/03-glossary.md`, with its coverage and verification decisions in `book/editorial/glossary-audit.md`.
 
 Build a published glossary only after cross-volume reconciliation has stabilized the terminology. The glossary is a reader aid, not a substitute for defining terms where the argument first introduces them.
 
@@ -292,11 +292,11 @@ Build a published glossary only after cross-volume reconciliation has stabilized
 - Add links to the glossary from the first natural use of specialized terms where this materially helps navigation.
 - Verify that glossary wording matches every canonical use across the manuscript.
 
-**Exit:** A reader can locate and distinguish every load-bearing term without encountering a definition that conflicts with the chapters.
+**Exit achieved:** A reader can locate and distinguish every load-bearing term without encountering a definition that conflicts with the chapters.
 
 ## Phase 7 — Compression and prose
 
-Progress: **Pending.** Volume-level compression occurred during the merged passes; the dedicated continuous-reading and cross-volume compression pass remains.
+Progress: **Next.** Volume-level compression occurred during the merged passes; the dedicated continuous-reading and cross-volume compression pass remains.
 
 Perform three distinct passes.
 
@@ -375,4 +375,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Begin Phase 6 by deriving the reader-facing glossary from the internal terminology authority. Add the published front-matter chapter and navigation entry, link each term to its canonical treatment and important applications, preserve the calibration labels established in Phase 5, and verify every glossary definition against manuscript usage.
+Begin Phase 7 with a measured continuous-reading inventory. Recalculate chapter and volume word counts, identify repeated definitions and arguments that survived the independent-volume edits, rank chapters above the 3,000-word target by structural risk, and propose the first bounded compression cluster without turning the glossary into a substitute for local explanation.

@@ -22,6 +22,7 @@ DEST = Path(__file__).resolve().parent / "argument-map.csv"
 THESIS_OVERRIDES = {
     "00-front/01-preface": "Axio grew from one question about the conditions of agency into nine dependent inquiries, and the book is the considered synthesis of that public development.",
     "00-front/02-introduction": "The nine volumes form a dependency-ordered argument from the physics of agency to chosen meaning while remaining navigable as independent web volumes.",
+    "00-front/03-glossary": "The glossary gives readers concise, calibrated definitions for the book's terms of art and routes each term back to its canonical chapter.",
     "01-physics-of-agency/02-agency-against-drift": "Agency is physically embodied, purposive navigation against default drift, paid for through thermodynamic work.",
     "01-physics-of-agency/03-the-kybit": "Intentional control can be quantified by a proposed information-theoretic unit, the kybit, defined from the divergence between baseline and steered outcome distributions.",
     "01-physics-of-agency/04-the-three-laws-of-agency": "Every agent is constrained by the proposed laws that control costs work, control capacity decays, and perfect control is impossible.",
@@ -71,6 +72,8 @@ REVIEW_OVERRIDES = {
         "Does the origin story accurately frame the final manuscript without making its nine-volume shape appear more inevitable than it was?",
     "00-front/02-introduction":
         "Does the reading map describe the dependencies and independent entry points the edited book actually preserves?",
+    "00-front/03-glossary":
+        "Does every entry match the terminology authority, expose proposal or commitment status where needed, and link to the chapter that governs the full definition?",
     "01-physics-of-agency/03-the-kybit":
         "Does KL divergence quantify physically attributable intentional control, and is the claimed Landauer price derived rather than analogized?",
     "01-physics-of-agency/04-the-three-laws-of-agency":
