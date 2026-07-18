@@ -66,6 +66,8 @@ The standing argument now assigns different work to two axes: sentience can grou
 
 The value and conditional-objectivity pass now separates empirical attribution from normative application. Agent-binding specifies the standard, agent or class, act model, scope, baseline, evidence, horizon, and conflict rules; it does not prove endorsement, authority, motivation, or enforceability. “Conditional objectivity” is reserved for public assessability under fixed inputs. Sapient Agency Realism may apply its reciprocal-authorship premise to non-adopters within its declared domain, but that coverage does not convert the chosen premise into agent-independent value or legitimate coercive enforcement by itself.
 
+The harm, coercion, consent, and force pass now gives the operational sequence one stable taxonomy. Harm is a material welfare or capacity setback against an explicit appropriate baseline; prospective exposure, realized injury, and wrongful responsibility remain distinct. Coercion uses a credible conditional threat to obtain compliance, force directly compels, and violence is injurious or destructive physical force. Consent changes authorization and responsibility without erasing impact. Prior authorization, protection, defense, rescue, and remedy only open the justification inquiry; evidence, authority, necessity, proportionality, minimally harmful means, process, time limits, accountability, and review constrain it. The coexistence protocol no longer turns classification into enforcement legitimacy or Domain Exit into wholesale standing loss. Chapter 25's contaminated-field contradiction remains an explicit author decision.
+
 ## Validation checklist
 
 - Build the complete book and inspect the grouped Volume 5 table of contents.

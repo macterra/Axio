@@ -233,7 +233,7 @@ The capacity for valenced phenomenal experience: states can feel better or worse
 
 ### Suffering
 
-The proposed experience of negatively valenced divergence between a subject's represented condition and a preferred condition. Severity can depend on intensity, scope, and persistence. Harm is a functional degradation and can occur without suffering; suffering can occur through a false model without the same functional degradation.
+The proposed experience of negatively valenced divergence between a subject's represented condition and a preferred condition. Severity can depend on intensity, scope, and persistence. Harm and suffering overlap without being identical: harm can occur without felt suffering, while sufficiently severe or prolonged suffering can itself be a welfare harm even before separate functional degradation is shown.
 
 **Canonical home:** Volume 3, Chapter 12.
 
@@ -383,17 +383,21 @@ The strength and kind of protection warranted for a subject or agent under the b
 
 ### Coercion
 
-A credible conditional threat of a material, non-consensual setback used to obtain compliance.
+The deliberate use of a credible conditional threat of material setback to obtain compliance. Credibility is assessed from the target's warranted anticipation; an attempted bluff can be wrongful without successfully coercing.
 
 **Canonical home:** Volume 5, Chapter 9.
 
-**Constraint:** Speech can function as delegated violence only when it intentionally recruits, directs, targets, coordinates, or supplies actionable assistance within a specific, credible harm process. Preparatory propaganda and hateful advocacy can supply context but are not, without operational participation, a coercive exception to expression. Volume 7 owns the fuller legal and political boundary.
+**Contrast:** Coercion works through anticipated setback. **Force** directly compels, restrains, seizes, or moves. **Violence** is physical force that causes bodily injury, destruction, or material damage. The categories can overlap in one episode, but neither force nor violence is coercion without the conditional demand.
+
+**Constraint:** The threat/offer distinction depends on an appropriate legitimate baseline, including entitlement, duty, dependency, and authority—not merely the instant before the proposal. Classification does not settle wrongfulness, justification, or enforcement authority. Speech can function as delegated violence only when it intentionally recruits, directs, targets, coordinates, or supplies actionable assistance within a specific, credible harm process. Preparatory propaganda and hateful advocacy can supply context but are not, without operational participation, a coercive exception to expression. Volume 7 owns the fuller legal and political boundary.
 
 ### Consent
 
-Informed, intentional, uncoerced authorization originating from an agent with sufficient decision-specific capacity. Valid advance authorization can persist through later incapacity; revocation operates prospectively and, for ongoing arrangements, must remain meaningful.
+A scoped, decision-specific authorization given with sufficient capacity, material understanding, intention, and voluntariness. Valid advance authorization can persist through later incapacity; revocation operates prospectively where possible and must remain meaningful for ongoing arrangements.
 
 **Canonical home:** Volume 5, Chapter 10.
+
+**Constraint:** Consent need not require omniscience, complete disclosure of immaterial facts, or costless refusal. Pressure, dependency, asymmetry, and limited alternatives are evidence relevant to voluntariness; they do not automatically invalidate every hard choice. Consent can alter permission and responsibility without erasing physical injury or setback.
 
 ### Property
 
@@ -405,11 +409,19 @@ A socially and procedurally maintained authorization structure governing control
 
 ### Harm
 
-A material degradation of an agent's functional capacity or viable option space relative to an explicit, appropriate baseline. A setback or injury can occur with authorization; wrongfulness additionally depends on consent, causation, foreseeability, justification, and responsibility. Prospective harm requires a material, foreseeable, attributable worsening rather than any non-zero risk.
+A material setback to a sentient subject's welfare or an agent's functional capacity and viable options relative to an explicit, appropriate baseline. A setback or injury can occur with authorization or justification; wrongfulness additionally depends on authorization, causation, duty, foreseeability, due care, justification, and responsibility. Prospective harm requires a material, foreseeable, attributable worsening of exposure rather than any non-zero risk.
 
 **Canonical homes:** Volume 5, Chapters 11 and 20.
 
 **Constraint:** Chapter 20's prospective account extends Chapter 11; it does not collapse attempt, negligence, endangerment, realized injury, and wrongful harm into one category.
+
+### Force
+
+Direct physical or institutional compulsion, restraint, seizure, or movement of a person or resource.
+
+**Canonical home:** Volume 5, Chapters 9 and 12.
+
+**Constraint:** Force is a mechanism, not a verdict. Valid authorization, protection, defense, rescue, and remedy can open a justification inquiry; evidence, legitimate authority, necessity, proportionality, least harmful feasible means, time limits, due process where feasible, accountability, and review constrain any permission.
 
 ### Violence
 
@@ -445,7 +457,7 @@ The stipulated position that joins an explicit commitment to reciprocal standing
 
 ### Innocent
 
-An agent who has not crossed the framework's evidentiary and procedural threshold for coercive harm or Domain Exit in the matter at issue.
+An agent presumed not responsible for the violation or continuing threat at issue unless the applicable evidentiary and procedural threshold is met.
 
 **Canonical homes:** Volume 5, Chapters 22–25.
 
@@ -453,9 +465,19 @@ An agent who has not crossed the framework's evidentiary and procedural threshol
 
 ### Domain Exit
 
-Loss of the coexistence protocol's shield against proportionate defensive coercion after established predation or refusal of a legitimate, previously specified process of arbitration and restitution; not a license for punishment, aggression, or wholesale forfeiture of standing.
+A limited, act-relative status permitting proportionate protective constraints after an established serious violation or continuing threat and refusal of legitimate protective or remedial terms. It is reviewable and terminable, and it does not erase standing wholesale.
 
 **Canonical home:** Volume 5, Chapter 23.
+
+**Constraint:** Domain Exit is not triggered by accusation, harm, coercion, or non-payment alone. It requires evidence, attribution, legitimate process where feasible, necessity, proportionality, review, and a continuing relation to the established violation or threat. It must never create an outlaw caste.
+
+### Moral right, legal right, and enforcement
+
+A **moral right** is a defensible protection or claim whose justification survives reciprocal application. A **legal right** is an institutionally recognized claim. **Enforcement** is a mechanism used to secure a claim and can involve persuasion, coordination, conditional threat, or direct force.
+
+**Canonical homes:** Volume 5, Chapter 12; Volume 7, Chapters 6–7.
+
+**Constraint:** Recognition and enforcement affect a right's practical security but do not constitute its moral legitimacy. A valid claim does not automatically authorize a particular enforcer or remedy; jurisdiction, evidence, necessity, proportionality, process, and review remain separate.
 
 ## Coordination, governance, and culture
 
