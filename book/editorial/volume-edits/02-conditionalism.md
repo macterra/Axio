@@ -22,6 +22,7 @@ The pass preserves all 25 chapters while separating the volume's general epistem
 - Keep anthropic sampling measures distinct from quantum Measure; the latter is defined only after a state, event projector, Vantage, and decomposition are supplied.
 - Correct the statement of Aumann's agreement theorem.
 - Recast Sacred Coherence as a personal, criticizable commitment rather than a universally compelled value hierarchy.
+- Keep logical consistency, epistemic fit, and the Sacred Coherence discipline distinct. Coherence is one indispensable family of checks inside a wider evidential network, not the sole gauge or a truth guarantee.
 - Add an explicit epistemic–decision gate before utilities, stakes, robustness, reversibility, and information value enter.
 - Preserve the earlier COVID-origins ledger as a dated audit, retract its 85–95% posterior as the book's current verdict, replace its binary with a five-part origin hypothesis tree, and time-index the evidence through the June 2026 ODNI release.
 - Replace a universal hard probability cutoff with model uncertainty, bounded utility, sensitivity analysis, robust choice, and precaution.

@@ -15,7 +15,7 @@ The proposal assigns claims an address — the assumptions under which they are 
 
 ## Three Tiers of Contingency
 
-Start at the foundation. [Chaos](20-chaos-as-foundation.md) is the undifferentiated reservoir of all possible informational patterns — not physics, not even law-space, just raw potential presupposing nothing. Nothing in the reservoir is yet a world. Worlds, laws, and objects are what [coherence filters](21-coherence-filters.md) carve out of it: every layer of reality is a filtration, an island of order extracted from seas of noise. What the tiers add to that picture is a claim about *how many times* the filtering happens, and what gets fixed at each pass.
+Start with the proposal's foundation. [Chaos](20-chaos-as-foundation.md) represents an undifferentiated reservoir of possible informational patterns — not physics or law-space, but the conjectured possibility space. Formal and semantic [coherence filters](21-coherence-filters.md) describe selected subsets and modeled worlds. A realization principle would still be needed to show why those descriptions correspond to physical worlds, laws, and objects. The tiers organize the proposal by asking how many selection or interpretation layers it needs and what each layer fixes.
 
 To name what each pass fixes, I will extend a piece of vocabulary from [the QBU chapter](08-the-quantum-branching-universe.md): the **Pattern Identifier (PI)**, a precise, reproducible pattern used to select a subset of possibilities. There the PIs picked out subsets of timelines within one branching universe. Here the same device operates at three different scopes.
 

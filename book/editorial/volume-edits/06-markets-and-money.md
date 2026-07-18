@@ -11,6 +11,7 @@ The substantive edit applies a symmetric causal standard. A price is neither a m
 ## Principal decisions
 
 - Treat sacrifice, attention, observed exchange, price, and voluntary funding as defeasible evidence of value. Duress, addiction, misinformation, purchasing power, free-riding, transaction costs, and missing mechanisms can distort what is observed.
+- Treat metagames as nested incentive models only where a transmission mechanism is named. Markets, institutions, cultures, and selection processes do not automatically form one ladder with a universal objective.
 - Recast the capitalism trial as comparative institutional analysis. Unclear rights, weak liability, monetary distortion, and regulatory capture explain many failures but do not exhaust private power, information asymmetry, coordination failure, transaction costs, history, or public capacity.
 - Correct the lighthouse case: privately operated British lights often relied on legally backed dues and grants. The history defeats categorical impossibility, not the public-goods mechanism.
 - Distinguish inequality from poverty without declaring concentration neutral. Bargaining power, political influence, risk, positional goods, entry, and realistic exit connect distribution to agency.

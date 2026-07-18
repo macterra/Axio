@@ -22,6 +22,7 @@ The central editorial decision is to separate four kinds of claim that the draft
 - Make the Agency Criterion operational at the deployed-system level through persistence, preference integrity, counterfactual ownership, and consequence-bearing control. A base model, chat product, and persistent tool-using system are not interchangeable units of analysis.
 - Define the Dialectic Catalyst by workflow and accountability rather than by a universal claim about every system that might fill the role.
 - Recast P(doom) as a time-, model-, event-, and information-indexed Credence. Remove the undefended 25% verdict, comparative catastrophe percentages, and numerical Value-9 claims.
+- Treat reflective coherence as a conditional proposal for a specified agent architecture, not an alignment force supplied by intelligence or persistence. Coherent and compartmentalized dangerous goals remain possible.
 - Remove “doom-Measure” and global distribution-shifting language from the policy chapters. Alternative governance regimes require evidence-backed causal comparisons; branching does not guarantee that a technology is built somewhere.
 - Present the decentralized governance stack as a proposal with unresolved feasibility, race, coordination, capture, and rights cruxes. Political conclusions require additional empirical and value premises.
 - Condition the succession coda on artificial systems actually satisfying the earlier agency and standing criteria. Artificial agents remain possible, not inevitable.

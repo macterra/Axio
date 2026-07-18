@@ -16,6 +16,7 @@ The pass retains all 20 chapters and the double envoi, exposes the four-part arc
 - Preserve the Part III hinge. The Credo declares a first-person commitment; aesthetics describes how the author's reasons terminate, not a universal proof that every agent's values reduce to beauty.
 - Apply the Volume 8 pattern calibration to religion as memetic engineering. People remain the agents, and the Church of Virus is a limited prototype rather than proof that a durable secular religion has been solved.
 - Make “The Great Unfolding” explicitly engineered. Its physical history remains answerable to evidence; its direction, vocation, and Law of Coherence are disclosed normative choices.
+- Preserve coherence as a candidate sacred discipline and chosen meta-mythic axis without treating internal fit as truth, persistence as authority, or physical, logical, reflective, and ethical coherence as one discovered law.
 - Replace the successor-origin necessity claim with a narrower provenance argument. Historical records can support interpretation and error correction, but successors may translate, re-anchor, or reject inherited meanings without thereby becoming incoherent.
 - Recast the final letter's self-model explanation as a naturalistic hypothesis and awe as experience that can orient inquiry, not metaphysical knowledge by itself.
 

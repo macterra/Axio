@@ -13,6 +13,7 @@ The positive construction claim remains. Its licensed form is that the program i
 - Treat the Reflective Stability Theorem as a typing result. It assumes that every relevant self-modification passes through a sound admissibility operator whose domain already requires kernel preservation.
 - Present Refinement Symmetry and Anti-Trivialization as jointly required within the paper's semantic-transport model, not as an exhaustive theorem about every possible theory of meaning.
 - Recast the literalist paperclipper argument conditionally. Understanding an instruction does not entail adopting its author's intention, and rich world-modeling can coexist with a fixed or compartmentalized objective.
+- Require reflective-convergence claims to state the architecture, environment, revision rule, and stability criterion. Semantic drift can preserve meaning, corrupt it, or replace it; coherence does not enforce itself.
 - Treat the six authorization-closure results as conditional on their formal definitions. They do not guarantee that an implementation identifies every real deception, harm, or coerced authorization.
 - Report Anchored Causal Verification as proof-of-concept experiments in instrumented domains. Anchoring makes provenance claims testable under protocol assumptions; it does not make causal truth universally unforgeable.
 - Identify the pressure and governance results as observations from deliberately minimal simulations. Their phase diagrams and political implications are interpretations outside tested parameter ranges.
