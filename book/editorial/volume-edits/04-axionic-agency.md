@@ -75,6 +75,8 @@ The pass preserves the volume's confident voice but removes universal language w
 
 The standing boundary now distinguishes sentience, demonstrated authorship, and precautionary protection. Animal authorship remains empirically open; infant protection rests on present welfare, developmental and authorization lineage, vulnerability, expected maturation, and false-negative cost rather than a complete latent RSA detected by definition. The jurisdiction threshold remains an Axionic governance proposal inside a graded evidentiary field, not a discovered discontinuity in minds.
 
+The harm and coercion continuity pass now treats this volume's agency-reduction language as one reflective-layer application rather than a competing definition. Welfare harm to sentient subjects remains visible, and coercion requires a deliberate credible conditional threat used to obtain compliance. The papers preserve earlier formulations but do not supersede Volume 5's canonical manuscript definitions.
+
 ## Validation checklist
 
 - Build the complete book and inspect the grouped Volume 4 table of contents.

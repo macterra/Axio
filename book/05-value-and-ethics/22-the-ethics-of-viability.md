@@ -10,7 +10,7 @@ Ask academic philosophy to map the ethical landscape and it hands you a taxonomy
 
 This volume began by demolishing that standpoint. [Value without a valuer is a category error](01-the-myth-of-objective-value.md); moral claims bind only the agents whose values give them content; and the three traditions survive de-objectification only as chosen frameworks — agent-relative decision theory, voluntary codes, moral style. That was the argument of [Virtues, Consequences, and Codes](05-ethics-without-illusions.md), and it ended on a question it could not answer: if every code is chosen, are all choices of code on a par? This chapter answers it. The answer does not retract the freedom established there — it maps its edges, and the edges turn out to have a precise shape.
 
-Axionic Ethics begins with a chosen commitment to protect **sapient agency**: the authored capacity of an agent to generate, navigate, and defend futures. This is the ethical layer of the book's agency hierarchy, not a replacement for the basal control definition in Volume 1 and not a duty derived from persistence alone. Within that committed domain, the framework is boundary-driven rather than maximizing, centered on consent rather than a universal welfare ledger. It proposes one governing constraint — **no coercive harm against innocents** — and recognizes consent and caused harm as sources of agent-binding obligation. The best way to locate the proposal is to run it against six neighboring traditions.
+Axionic Ethics begins with a chosen commitment to protect **sapient agency**: the authored capacity of an agent to generate, navigate, and defend futures. This is the ethical layer of the book's agency hierarchy, not a replacement for the basal control definition in Volume 1 and not a duty derived from persistence alone. Within that committed domain, the framework is boundary-driven rather than maximizing. It proposes one governing constraint — **do not use innocents as instruments by imposing material harm or exposure for another's ends** — and recognizes valid authorization and wrongfully caused harm as sources of agent-binding obligation. Sentient welfare remains a distinct protected interest rather than disappearing into the sovereignty analysis.
 
 ## Utilitarianism
 
@@ -22,7 +22,7 @@ Axio rejects the conversion of suffering into obligation at the first step. Agen
 
 Deontology demands obedience to universal rules. Kant's edict — never treat persons as mere means — is absolute and indifferent to circumstance, and it is supposed to bind every rational being because reason itself decrees it.
 
-Axio preserves the *form* of a protected boundary while rejecting a cosmic foundation for it. The prohibition on coercing innocents is a normative commitment supported by facts about reciprocal agency: coercion damages the capacities and trust on which the chosen form of coexistence depends. It does not literally make coexistence impossible; domination, deterrence, and unequal orders can persist. The framework rejects those equilibria because they violate its agency commitment, not because viability mechanically filters them out. Where deontology universalizes obligation, Axio localizes agent-binding claims to commitments undertaken and harms caused within this framework.
+Axio preserves the *form* of a protected boundary while rejecting a cosmic foundation for it. The prohibition on instrumental harm to innocents is a normative commitment supported by facts about reciprocal agency. It does not literally make coexistence impossible; domination, deterrence, and unequal orders can persist. The framework rejects those equilibria because they violate its agency commitment, not because viability mechanically filters them out. Where deontology universalizes obligation, Axio binds claims to stated commitments, established harms, and the framework's avowed protection premise.
 
 ## Virtue Ethics
 
@@ -52,10 +52,10 @@ The difference is not decorative. Axio supplies precise definitions of [coercion
 
 Six contrasts, one pattern. The neighboring theories foreground welfare, rules, character, agreement, self-interest, or rights. Axio instead takes protection of authored agency as its avowed normative primitive. The following definitions organize the framework once that commitment is in place; they are not deductions from a descriptive viability metric:
 
-- **Harm** is the reduction of viable futures for an agent — the mature form of the definition, [radicalized to include imposed risk](20-risk-is-harm.md).
-- **Coercion** is harm deployed to control another agent's future — operationally, [the credible threat of actual harm to gain compliance](09-what-counts-as-coercion.md).
-- **Consent** is the voluntary alignment of futures.
-- **Obligation** is caused harm or chosen commitment — nothing else.
+- **Harm** is a material setback to welfare, functional capacity, or viable options relative to an appropriate baseline, including qualifying [prospective exposure](20-risk-is-harm.md).
+- **Coercion** is the deliberate use of a credible conditional threat of material setback to obtain compliance; direct force and violence are adjacent but distinct.
+- **Consent** is scoped, decision-specific authorization by an agent with sufficient capacity, material understanding, intention, and voluntariness.
+- **Obligation** arises here through valid commitments, wrongfully caused harm, fiduciary relations, or the framework's stated reciprocal-protection premise; enforcement requires further authority and procedure.
 - **Value** is the future-architecture an agent elects to pursue.
 
 Agency is not one variable among many inside this ethic; it is what the framework chooses to protect. Ethics becomes the study of how autonomous agents can coexist without treating one another's futures as disposable.
@@ -76,6 +76,6 @@ Axio therefore proposes **Procedural Agency**: ambiguous claims should enter a m
 
 ## One Invariant
 
-Axio is not reducible to consequentialism, deontology, virtue ethics, contractualism, egoism, or natural-rights libertarianism, though it has points of contact with each. It is an agency-centered proposal organized around a chosen constraint — no coercive harm against innocents — and two stated sources of agent-binding obligation: consent and caused harm. Its definitions and institutions determine how those commitments apply; viability alone does not.
+Axio is not reducible to consequentialism, deontology, virtue ethics, contractualism, egoism, or natural-rights libertarianism, though it has points of contact with each. It is an agency-centered proposal organized around a chosen constraint against instrumental harm to innocents. Authorization, responsibility, protective duties, and the reciprocal-standing premise supply different normative relations; its definitions and institutions determine how they apply. Viability alone does not.
 
 Where some systems generate unbounded demands, Axio limits obligation through its account of consent and caused harm. Where others invoke metaphysics, Axio discloses an agency-protection commitment and asks what structures could implement it. [The ultimate metagame](18-the-ultimate-metagame.md) describes conditions under which patterns persist; Axio adds the normative decision that reciprocal sapient agency, rather than persistence at any price, is what this framework will protect.

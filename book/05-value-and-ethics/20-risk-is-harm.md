@@ -13,13 +13,13 @@ An exclusively outcome-based framing fails under adversarial pressure in three w
 
 The repair is a single move, and this chapter is that move:
 
-Harm includes material reductions in an agent's viable option space. A non-consensual, foreseeable, and attributable increase in expected loss can be a present **prospective harm**, even when the adverse outcome does not occur.
+Harm includes material setbacks to welfare, functional capacity, or viable options. A foreseeable and attributable worsening of exposure relative to an appropriate baseline can be a present **prospective harm**, even when the adverse outcome does not occur. Authorization and justification affect wrongfulness, not whether the exposure changed.
 
 ## Harm at the Moment of Decision
 
 This is the promised extension of the harm concept — the upgrade that [What Counts as Harm](11-what-counts-as-harm.md) announced and deferred. The definition given there — material degradation of an agent's capacity or viable options — is not discarded. What changes is the moment of evaluation. A setback can be realized — you break an arm — or prospective — you wrongfully raise a person's chance of death from two percent to eight. These are related but not identical impacts: one is an injury, the other an exposure. Both can degrade the agent's position, and their different magnitudes and remedies must remain visible.
 
-The prospective harm occurs when the act imposes the worse distribution. Locking the door exposes the stranger to danger and removes control before any injury lands. Run the four endings: escape without injury, light injury, grave injury, death. The initial endangerment exists in every story, but injury and death add harms of radically different magnitude. Outcomes still matter to responsibility, repair, and grief.
+The prospective harm occurs when the act materially worsens the distribution relative to the appropriate baseline. Locking the door exposes the stranger to danger and removes control before any injury lands. Run the four endings: escape without injury, light injury, grave injury, death. The initial endangerment exists in every story, but exposure, injury, and death remain different harms with different magnitudes and remedies. Outcomes still matter to responsibility, repair, and grief.
 
 This limits one form of moral luck without annihilating it. The quality of the decision can be assessed at the time of action using foreseeable risk, while actual consequences remain morally and legally relevant. Choice and outcome answer different questions; neither makes the other disappear.
 
@@ -47,11 +47,11 @@ On the Quantum Branching Universe (QBU) interpretation introduced in [Measure an
 
 The branching picture can represent distributed consequences, but it does not by itself turn the moral classification “risk is harm” into physics. That classification still depends on the chosen baseline, protected interests, materiality threshold, and account of responsibility. Attempt, negligence, endangerment, and realized injury remain distinct even when a common distributional model represents them.
 
-One clarification carries over from the capacity definition and must survive the upgrade. A negative-outcome future is not any future that feels bad. It is one that degrades the agent's functional capacity to pursue or maintain its valued goals. Offense, disappointment, and heartbreak do not qualify unless they impair agency — every exclusion argued in the earlier chapter survives here, because being offended does not reduce anyone's viable futures either. Extreme or prolonged suffering, by contrast, reliably does: it collapses optionality, distorts preferences traumatically, and erodes long-term functional capacity. Such states count as negative-outcome futures for exactly the reason hurt feelings do not.
+One clarification carries over and must survive the upgrade. A negative-outcome future is not any future that feels bad. Material welfare setbacks, severe suffering, loss of function, and contraction of viable options can qualify. Offense, disappointment, and heartbreak do not establish prospective harm merely by being unwelcome; the materiality, causal, and baseline tests still apply. Extreme or prolonged suffering need not wait for separately proved agency loss before counting as welfare harm, though its effects on optionality and long-term function often make the case stronger.
 
 ## Measuring the Damage
 
-Distributional change can be modeled, but no validated scalar measure of coercive harm is established here. One candidate begins with a baseline distribution $P_1$ and a post-intervention distribution $P_2$, then computes Kullback–Leibler divergence:
+Distributional change can be modeled, but no validated scalar measure of prospective harm is established here. One candidate begins with a baseline distribution $P_1$ and a post-intervention distribution $P_2$, then computes Kullback–Leibler divergence:
 
 $$D_{\mathrm{KL}}(P_2 \,\|\, P_1) = \sum_{x} P_2(x) \log \frac{P_2(x)}{P_1(x)}$$
 
@@ -63,4 +63,4 @@ The structural consequence is narrower. A predator, in this framework, is an age
 
 Here the narrower verdict suffices. An ethics built for uncertainty should treat material, non-consensual endangerment as a present setback rather than waiting for injury. It must also distinguish ordinary reciprocal risk, justified rescue, due-care practices, negligence, and predatory risk transfer. Agents inevitably affect one another's futures; the ethical work lies in baselines, authorization, materiality, and justification.
 
-Harm is not exhausted by what someone reports feeling. In this framework it concerns a material setback to capacity or viable options, including an attributable worsening of prospective exposure relative to an explicit baseline. Physics can help model the change; authorization, materiality, causation, and standing determine its moral classification.
+Harm is not exhausted by what someone reports feeling, nor is felt suffering excluded. In this framework it concerns a material setback to welfare, capacity, or viable options, including an attributable worsening of prospective exposure relative to an appropriate explicit baseline. Physics can help model the change; authorization, materiality, causation, duty, and justification determine responsibility and wrongfulness.

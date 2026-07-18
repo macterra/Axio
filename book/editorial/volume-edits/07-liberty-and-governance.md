@@ -45,6 +45,12 @@ The pass retains all 36 chapters, makes the seven-part structure and fictional c
 - Define measurable baselines for protocolized arbitration, finance, identity, reputation, and commons governance before claiming superior performance.
 - Complete Axiocracy's enforcement, capture, succession, amendment, insolvency, emergency, and low-purchasing-power design. The Mars constitution remains a sketch.
 
+## Phase 5 continuity update
+
+The harm, coercion, consent, and force pass preserves the Grey Zone while correcting definitions that had outrun it. Coercion is now consistently the deliberate use of a credible conditional threat of material setback to obtain compliance; direct force and violence are separate mechanisms. Harm, prospective exposure, wrongfulness, and legitimacy are no longer inferred from one another. Taxation and slavery remain comparable on a dimension of compelled extraction without being declared one moral kind, and hard employment choices are not automatically non-consensual without a baseline, entitlement, and dependency analysis.
+
+The rights sequence now distinguishes moral protection, legal recognition, practical enforcement, and legitimate authority. A right can be valid but insecure; enforcement can be effective but unjust. The Grey Zone's evidence, jurisdiction, necessity, proportionality, minimally harmful means, procedure, accountability, and review requirements therefore apply after classification. The incitement chapter retains its calibrated expression/preparation/operational-participation boundary while correcting the claim that coercive intent was not an element of coercion.
+
 ## Validation checklist
 
 - Regenerate the argument map and build the complete book.

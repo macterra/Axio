@@ -64,6 +64,10 @@ Chapters 1–5 own the economic layer of value, price, money, capital, and atten
 
 The pass preserves the volume's argumentative and first-person voice while removing false dichotomies, unsupported universals, stale current numbers, and rhetorical totals presented as measurements. Advocacy remains explicit where evidence does not select one institution uniquely.
 
+## Phase 5 continuity update
+
+The harm and coercion pass keeps market pressure, poverty, voluntary exchange, conditional threat, prospective exposure, and wrongful enforcement distinct. A costly refusal is not automatically coercion; dependency, entitlement, breach, monopoly control, and the appropriate baseline matter. Coercive funding burdens agency, but the label does not by itself establish realized injury, illegitimacy, or institutional authority. Market applications now link to Volume 5's canonical welfare-and-capacity harm definition rather than narrowing harm to option count alone.
+
 ## Validation checklist
 
 - Build the complete book and inspect the grouped Volume 6 table of contents and new coda.

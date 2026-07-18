@@ -11,7 +11,7 @@ The fantasy of a civilization run by the smartest and most rational people has a
 
 But intelligence does not automatically scale into civilization. One missing term is organized power, including coercive capacity.
 
-An intelligent person can model incentives, foresee second-order effects, and design better institutions. Those advantages can be defeated if the person and institutions cannot protect themselves from violence, sabotage, exclusion, or imprisonment. Intelligence is a modeling advantage. Coercion — [the credible threat of actual harm to gain compliance](../05-value-and-ethics/09-what-counts-as-coercion.md) — is one compliance mechanism. They are different kinds of thing, and cognition without a defensive architecture can become prey.
+An intelligent person can model incentives, foresee second-order effects, and design better institutions. Those advantages can be defeated if the person and institutions cannot protect themselves from violence, sabotage, exclusion, or imprisonment. Intelligence is a modeling advantage. Coercion — [the deliberate use of a credible conditional threat of material setback to obtain compliance](../05-value-and-ethics/09-what-counts-as-coercion.md) — is one compliance mechanism. They are different kinds of thing, and cognition without a defensive architecture can become prey.
 
 This asymmetry is one risk superintelligence discourse can understate. Cognition is not automatically power; embodiment, access, institutions, legitimacy, logistics, and coercive capacity mediate what intelligence can do. History supports that qualification without proving that coercion always beats intelligence or that artificial systems will reproduce every human political pattern.
 
@@ -19,7 +19,7 @@ This asymmetry is one risk superintelligence discourse can understate. Cognition
 
 Scholars have historically needed patrons. Merchants have needed guards. Engineers have needed property law. Scientists have needed institutions that protect inquiry from priests, soldiers, commissars, mobs, and bureaucrats. The library survives because someone keeps the arsonists outside. The market works because contracts are enforced. The laboratory produces truth because its instruments, funding, personnel, and physical safety are protected by a surrounding order that can punish predation.
 
-Coercion is broader than kinetic violence. Violence is the primitive form: clubs, rifles, prisons, armies. Modern coercion also includes cyberattack, financial exclusion, regulatory strangulation, surveillance, confiscation, blackmail, infrastructure sabotage, and bureaucratic destruction. The common feature is the credible capacity to impose actual harm in order to compel compliance.
+Coercion and kinetic violence overlap but neither contains the other. Violence is physical force causing bodily injury, destruction, or material damage. Coercion uses a credible conditional threat of material setback to obtain compliance; the threatened setback may involve violence, cyberattack, exclusion, confiscation, blackmail, sabotage, or bureaucratic action. A cyberattack or seizure carried out without a conditional demand is direct harm or force, not coercion merely because it compels in an everyday sense.
 
 That is the hard substrate underneath politics. A civilization is a system for organizing, limiting, legitimizing, and directing coercive capacity.
 
