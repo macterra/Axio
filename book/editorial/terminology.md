@@ -117,19 +117,25 @@ The conjectured maximally unconstrained reservoir of possible sequences from whi
 
 ### Coherence
 
-At the root physical level, the capacity of a pattern's identity to remain re-identifiable across transformation. At epistemic and agentive levels, consistency and identity preservation under update or reflection.
+An indexed family resemblance, not one cross-domain scalar:
 
-**Canonical home:** Volume 1, Chapter 24.
+- **Logical consistency:** non-contradiction relative to a stated logic; paraconsistent systems may contain contradictions without explosion.
+- **Epistemic or model coherence:** mutual fit among claims, evidence, models, and commitments. It is an indispensable evidential virtue, not truth or correspondence by itself.
+- **Dynamical or identity coherence:** re-identifiability under a stated grain, identity criterion, transformation class, and set of constraints.
+- **Reflective coherence:** consistency among an agent's interpreted goals, reasons, policies, self-model, and authorized revisions.
+- **Sacred Coherence:** the author's personal epistemic discipline of consistency, exposed premises, correction, and resistance to double standards.
 
-**Reconciliation required:** “Sacred Coherence,” logical consistency, physical persistence, truthful modeling, and reflective stability are related layers, not interchangeable synonyms.
+**Canonical homes:** Volume 1, Chapter 24 for dynamical identity; Volume 2, Chapters 3 and 18 for epistemic coherence and the chosen discipline; Volume 4, Chapters 3–6 for reflective coherence.
+
+**Constraint:** Always name or make inferable the layer. Coherence does not entail truth, physical realization, agency, benevolence, safety, legitimacy, or moral authority. The layers can be compared as preservation under pressure without being declared one discovered cosmic quantity.
 
 ### Coherence Filter
 
-A finite criterion or process that selects self-consistent, identity-preserving patterns from a wider possibility space.
+A predicate, semantic map, physical selection process, or metaphor that restricts a wider possibility space under stated criteria.
 
 **Canonical home:** Volume 1, Chapter 21.
 
-**Calibration:** Clarify whether a given filter is a mathematical description, physical process, semantic interpretation, or metaphor.
+**Calibration:** Clarify which register is intended. Encoding or applying a formal predicate does not establish autonomous physical selection or realization; a semantic quotient is interpretation-relative.
 
 ### Constructor
 
@@ -401,17 +407,19 @@ Direct physical force causing bodily injury, destruction, or damage to the mater
 
 ### Viability
 
-The capacity of an agent or coherent pattern to preserve the conditions of its continued identity and agency across reachable futures.
+The capacity of a specified system, pattern, agent, commitment, institution, or lineage to maintain a stated identity, organization, or function under a stated environment, constraints, perturbations, baseline, and time horizon.
 
 **Canonical homes:** Volume 5, Chapters 18–22.
 
+**Constraint:** Every material claim should identify or make inferable the unit, preserved function or identity, conditions, and horizon. Viability is not bare existence, health, agency, welfare, truth, strategic dominance, or moral worth. Persistence of one unit can consume the viability of another.
+
 ### Ethics of Viability
 
-The framework connecting descriptive constraints on persistent agency to chosen commitments about protecting sovereign agents from coercive harm.
+The agency-centered framework that adds an explicit chosen commitment to protect reciprocal sapient authorship to descriptive facts about persistence and strategic stability.
 
 **Canonical home:** Volume 5, Chapter 22.
 
-**Calibration:** The viability scoreboard is descriptive; the commitment to protect what remains viable requires an explicit evaluative bridge.
+**Calibration:** “Scoreboard” and “metagame” are analytic metaphors, not one universal objective function. Persistence facts issue no obligation and can favor predation, domination, dysfunction, or lock-in. Protection, standing, rights, legitimate defense, and institutional authority require the framework's stated normative and procedural premises.
 
 ### Sapient Agency Realism
 

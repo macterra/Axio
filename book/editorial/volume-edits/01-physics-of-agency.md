@@ -15,10 +15,12 @@ The pass preserves the volume's progression from physical agency through Everett
 - Treat the QBU as an Everettian coarse-grained modeling layer. Branches are emergent and representation-dependent; Measure is squared-amplitude weight over specified events, not branch count or an amplitude substance.
 - Define counterfactual influence through an explicit intervention model. Ancestry and correlation alone do not establish causation.
 - Replace global “Measure steering” with policy-conditioned causal comparisons. Agents affect later physical consequences without creating or globally reallocating normalized amplitude.
+- Treat the quantum metagame as an optional pattern-prevalence model indexed to an event sector, horizon, coarse-graining, and identity criterion. Measure is neither a universal scoreboard nor a definition of death, selection, value, or importance.
 - Treat claims that neural or creative variation has a specifically quantum source as conditional modeling possibilities, not established neuroscience.
 - Recast quantum immortality and Gigaplex branch counts as warnings about measure, coarse-graining, empirical hazard models, and identity assumptions.
 - Mark the Chaos sequence as speculative metaphysics. String containment is not realization; program encoding is not execution; a semantic map is not a physical mechanism.
 - Correct the filter discussion's algorithmic-randomness, coding, and equivalence-class claims. Fixed points establish self-reference, not persistence or causal power.
+- Define dynamical coherence as re-identifiability under a stated grain, identity criterion, transformation class, and constraints. Formal filters, semantic quotients, and physical selection remain separate registers until a realization relation connects them.
 - Treat constructor theory as an analogy and possible bridge rather than a derivation of physics from Chaos.
 - Treat recursive self-modeling, block-style time, tiered rule-space, and mathematical realization as research proposals with named missing bridges.
 - Present the final “something rather than nothing” argument as conditional on both a modal space and a substantive realization principle.

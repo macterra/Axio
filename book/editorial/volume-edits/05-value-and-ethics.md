@@ -21,6 +21,8 @@ The central editorial decision is to separate four layers the draft sometimes fu
 - Mark the QBU ethics as conditional. Measure can weight modeled continuations but supplies neither value, interpersonal aggregation, nor permission to trade away protected claims.
 - Treat “navigating Measure” as counterfactual decision language, not a physical mechanism. Ethical comparisons remain indexed to policies, Vantages, evidence, and protected claims.
 - Present viability convergence as a conjecture under stated selection conditions. Persistence supplies reasons to agents who value continued agency; it does not derive a universal duty or explain every durable strategy.
+- Index viability to a unit, preserved identity or function, environment, perturbations, baseline, and horizon. Treat metagame and scoreboard language as analytic metaphor rather than a universal optimizer.
+- State the Ethics of Viability's agency-protection premise explicitly. Coercive orders can persist, reciprocal respect is not the only equilibrium, and defensive permission or loss of standing still requires normative and procedural premises.
 - Distinguish reciprocal protection of agency from maximization of total agency. Restitution is a relational remedy, not a term in a global objective function.
 - Require the coexistence protocol's institutions to earn legitimacy through public rules, evidence, due process, appeal, reciprocity, and safeguards against capture. Distributed procedure is not self-authorizing.
 - Preserve Chapter 25's aggressor-contaminated-field contradiction. Chapter 26 acknowledges rather than solves it, and the coda claims only that zero-harm guarantees conflict with robust agency—not that any one institutional boundary is optimal.
