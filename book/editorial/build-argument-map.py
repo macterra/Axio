@@ -57,7 +57,7 @@ THESIS_OVERRIDES = {
     "06-markets-and-money/15-the-metagame-of-incentives": "System behavior is governed by the higher-order incentive structure that changes which lower-level strategies remain worthwhile.",
     "07-liberty-and-governance/05-the-grey-zone": "The legitimacy of coercion is conditional, provisional, evidence-sensitive, and burden-scaled rather than categorically settled by state or anti-state labels.",
     "07-liberty-and-governance/35-axiocracy": "Axiocracy is a proposed governance architecture designed to preserve plural value discovery through bounded authority, truthful signals, and exit.",
-    "08-culture-and-memetics/03-patterns-as-players": "Cultural patterns behave as units of selection whose persistence and spread can diverge from the truth and interests of their human hosts.",
+    "08-culture-and-memetics/03-patterns-as-players": "Analyst-specified cultural pattern types can serve as units in selection models when their implementations, identity criteria, transmission or retention mechanisms, comparison class, environment, and horizon are stated.",
     "08-culture-and-memetics/17-anatomy-of-capture": "Institutional capture occurs when selection and enforcement shift from a declared function toward preservation of a self-reinforcing pattern.",
     "09-meaning/02-the-secular-sacred": "The sacred is the non-negotiable apex of an agent's value hierarchy and therefore does not require a supernatural source.",
     "09-meaning/10-the-credo": "The author explicitly chooses a naturalistic hierarchy of values after argument reaches the point where commitment, not proof, is required.",
@@ -163,9 +163,9 @@ REVIEW_OVERRIDES = {
     "07-liberty-and-governance/35-axiocracy":
         "How does Axiocracy resist capture, enforce decisions, handle succession, and correct value-discovery errors without collective fiction?",
     "08-culture-and-memetics/03-patterns-as-players":
-        "Does treating patterns as players add testable causal structure beyond selection-language metaphor and host-level explanation?",
+        "Do the stated identity, lineage, transmission, and differential-retention mechanisms add testable causal structure beyond resemblance or host-level description?",
     "08-culture-and-memetics/04-exemplars-and-the-axionic-criterion":
-        "Can the Axionic Criterion be applied independently of the evaluator's political commitments and with reproducible verdicts?",
+        "Given the disclosed commitment to reciprocal agency, can effects on choice, coercion, and scale be assessed with explicit baselines, evidence, authority, and appeal?",
     "08-culture-and-memetics/17-anatomy-of-capture":
         "What observable evidence distinguishes capture from ordinary institutional disagreement, drift, specialization, or error?",
     "08-culture-and-memetics/21-the-forbidden-pattern":

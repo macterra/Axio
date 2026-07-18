@@ -593,17 +593,51 @@ A proposed governance architecture organized around discovering, representing, a
 
 ### Pattern
 
-A coherent informational or physical configuration stable enough to be re-identified, maintained, replicated, or exert causal influence across transformations.
+A coherent informational or physical configuration that can be re-identified at a stated grain and that is maintained, copied, or causally influential across the comparison being made.
 
 **Canonical homes:** Volume 1, Chapter 24; Volume 8, Chapter 3.
 
-**Calibration:** In cultural analysis, a pattern is a model-level unit of persistence implemented through people, artifacts, incentives, and institutions. It does not learn, intend, choose, or bear responsibility; “selection” abbreviates differential copying, reward, enforcement, and survival under specified conditions.
+**Calibration:** A **pattern token** is a particular physical implementation or performance. A **pattern type** is an analyst-specified equivalence class whose identity depends on selected features and tolerated transformations. Claims of lineage require a transmission path or other causal continuity; resemblance alone establishes at most a pattern match. In cultural analysis, the type is implemented through people, artifacts, incentives, and institutions. It does not learn, intend, choose, or bear responsibility.
 
-### Schema
+### Cultural selection
 
-A structured cognitive or cultural pattern organizing interpretation, expectation, and response.
+Change in the relative representation of cultural variants through differential copying, teaching, retention, reward, enforcement, implementation, or loss across a specified population, environment, and horizon.
+
+**Canonical homes:** Volume 8, Chapters 1–3.
+
+**Calibration:** A selection explanation must identify variants, an identity grain, transmission or retention, differential outcomes, the relevant environment or filters, and a horizon. Distinguish blind differential persistence, deliberate human selection, algorithmic filtering, and analogy. Selection does not imply truth, value, progress, agency, intention, or one global objective.
+
+### Cultural fitness
+
+A comparative propagation or persistence outcome for a specified cultural variant under a specified population, mechanism, environment, and horizon.
+
+**Canonical home:** Volume 8, Chapter 3.
+
+**Constraint:** Fitness is not an intrinsic property, an agent's represented objective, moral worth, practical usefulness, or popularity without a comparison class. Cultural fitness landscapes can change through reflection, institutions, frequency dependence, resource constraints, and niche construction.
+
+### Meme
+
+Optional shorthand for a culturally transmitted variant or pattern tracked in a particular selection analysis.
+
+**Canonical homes:** Volume 8, Chapters 1 and 3.
+
+**Calibration:** The term does not establish that culture consists of discrete gene-like replicators. State or make inferable the variant boundary, carrier, transmission path, and differential outcome. *Memeplex* names a modeled bundle whose elements reinforce transmission; it is not a literal organism.
+
+### Cultural schema
+
+An analyst-specified structured model of beliefs, values, preferences, practices, or norms used to organize interpretation, expectation, membership, or response.
 
 **Canonical home:** Volume 8, Chapter 2.
+
+**Calibration:** Actual people may instantiate a schema partially, by degree, inconsistently, or under contested interpretations. Set containment is a toy model whose deductions depend on stipulated membership criteria; algebra alone does not establish a historically meaningful parent identity, transmission path, or reconciliation.
+
+### Cultural group
+
+A collection of agents identified independently by history, organization, practice, self-identification, or a disclosed schema-membership rule.
+
+**Canonical home:** Volume 8, Chapter 2.
+
+**Constraint:** Do not slide among schema, population, community, and institution. A group is not automatically an agent. Collective or institutional agency requires a persistent boundary, information integration, a decision procedure, control over attributable action, and channels of accountability sufficient for the agency claim being made.
 
 ### Egregore
 
@@ -611,7 +645,15 @@ A self-reinforcing cultural pattern implemented across multiple minds and instit
 
 **Canonical home:** Volume 8, Chapter 5.
 
-**Calibration:** A model of distributed cultural causation, not evidence of a literal group mind.
+**Calibration:** A model of distributed cultural causation, not evidence of a literal group mind, organism, life form, intention, or independent responsibility. Cash agency-like verbs out in decisions, records, incentives, coordination, transmission, and enforcement.
+
+### Cultural attractor
+
+In a specified dynamical model, a state or region toward which nearby trajectories tend and within which they remain.
+
+**Canonical homes:** Volume 8, Chapters 3–6 and 26.
+
+**Calibration:** A literal attractor claim requires a state space, dynamics, and basin. Otherwise *attractor*, *gravity*, *curvature*, *event horizon*, and *singularity* are analogies for recurrent behavior, feedback, or rising exit costs and cannot borrow mathematical necessity from physics.
 
 ### Capture
 
@@ -626,6 +668,8 @@ The process by which an institution's selection pressures and enforcement mechan
 The cultural test asking whether a pattern supports coherent choice under constraint, reduces reliance on coercion, and scales without collapsing autonomy.
 
 **Canonical home:** Volume 8, Chapter 4.
+
+**Calibration:** The Criterion applies the book's explicit commitment to reciprocal agency preservation; agency's role as a precondition of valuing does not derive that normative priority. Local testimony is evidence rather than a complete verdict. Institutional application additionally requires authority, baselines, evidence, proportionality, process, and appeal. Selection does not automatically remove patterns that fail the test.
 
 ### Asymmetry heuristic
 

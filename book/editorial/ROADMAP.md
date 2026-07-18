@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 5 in progress — the first six concept clusters, through harm, coercion, consent, and justified force, are reconciled; patterns, selection, and cultural agency are next.** The manuscript contains nine volumes, 242 chapters, and roughly 550,000 words. All 249 volume manuscript files—introductions and chapters, excluding front matter—are in `review`; the newly integrated *Fallibilist Bayesianism* capstone passed its Phase 5 continuity gate. Merged editorial passes are not yet promotion to `final`; the remaining cross-volume clusters, glossary work, continuous-reading compression, framing, and final verification remain.
+Status: **Phase 5 in progress — the first seven concept clusters, through patterns, selection, and cultural agency, are reconciled; sacredness, meaning, and chosen commitments are next.** The manuscript contains nine volumes, 242 chapters, and roughly 550,000 words. All 249 volume manuscript files—introductions and chapters, excluding front matter—are in `review`; the newly integrated *Fallibilist Bayesianism* capstone passed its Phase 5 continuity gate. Merged editorial passes are not yet promotion to `final`; the final cross-volume cluster, glossary work, continuous-reading compression, framing, and final verification remain.
 
 ## Progress at a glance
 
@@ -12,7 +12,7 @@ Status: **Phase 5 in progress — the first six concept clusters, through harm, 
 | 2. Architecture audit | **Complete** | Book-wide architecture and nine volume memos completed. |
 | 3. Foundational volumes | **Complete** | Volume 1–5 passes merged; manuscript remains in `review`. |
 | 4. Applied volumes | **Complete** | Volume 6–9 passes merged; manuscript remains in `review`. |
-| 5. Cross-volume reconciliation | **In progress** | First six clusters complete; patterns, selection, and cultural agency are next. |
+| 5. Cross-volume reconciliation | **In progress** | First seven clusters complete; sacredness, meaning, and chosen commitments are next. |
 | 6. Reader-facing glossary | **Pending Phase 5** | Canonical definitions must stabilize before publication. |
 | 7. Compression and prose | **Pending** | Continuous-reading and cross-volume repetition decisions remain. |
 | 8. Framing material | **Pending** | Revise front matter and introductions after the manuscript stabilizes. |
@@ -252,7 +252,7 @@ Progress: **Pass merged; manuscript in review.** See `book/editorial/volume-edit
 
 ## Phase 5 — Cross-volume reconciliation
 
-Progress: **In progress.** Agency and sovereignty are complete; see `reconciliation/01-agency-and-sovereignty.md`. Measure, Credence, and branching are complete; see `reconciliation/02-measure-credence-and-branching.md`. Consciousness, sentience, and sapience are complete; see `reconciliation/03-consciousness-sentience-and-sapience.md`. Coherence and viability are complete; see `reconciliation/04-coherence-and-viability.md`. Value and conditional objectivity are complete; see `reconciliation/05-value-and-conditional-objectivity.md`. Harm, coercion, consent, and justified force are complete; see `reconciliation/06-harm-coercion-consent-and-force.md`. The new Volume 2 probability capstone passed its continuity gate and remains in `review` with the rest of the manuscript.
+Progress: **In progress.** Agency and sovereignty are complete; see `reconciliation/01-agency-and-sovereignty.md`. Measure, Credence, and branching are complete; see `reconciliation/02-measure-credence-and-branching.md`. Consciousness, sentience, and sapience are complete; see `reconciliation/03-consciousness-sentience-and-sapience.md`. Coherence and viability are complete; see `reconciliation/04-coherence-and-viability.md`. Value and conditional objectivity are complete; see `reconciliation/05-value-and-conditional-objectivity.md`. Harm, coercion, consent, and justified force are complete; see `reconciliation/06-harm-coercion-consent-and-force.md`. Patterns, selection, and cultural agency are complete; see `reconciliation/07-patterns-selection-and-cultural-agency.md`. The new Volume 2 probability capstone passed its continuity gate and remains in `review` with the rest of the manuscript.
 
 Run dedicated continuity passes for:
 
@@ -262,7 +262,7 @@ Run dedicated continuity passes for:
 - Coherence and viability. **Complete.**
 - Value and conditional objectivity. **Complete.**
 - Harm, coercion, consent, and justified force. **Complete.**
-- Patterns, selection, and cultural agency.
+- Patterns, selection, and cultural agency. **Complete.**
 - Sacredness, meaning, and chosen commitments.
 
 For each concept, identify:
@@ -375,4 +375,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Continue Phase 5 with patterns, selection, and cultural agency. Reconcile pattern identity, copying, selection, capture, and group or institutional agency across the physics, mind, agency, market, and culture volumes; distinguish descriptive persistence and causal influence from authorship, standing, and authority; and replace repeated metaphors with explicit mechanisms where the argument depends on them.
+Complete Phase 5 with sacredness, meaning, and chosen commitments. Reconcile descriptive meaning, interpreted aboutness, personally chosen purpose, sacred priority, and the engineered meta-myth across the mind, value, culture, and meaning volumes; preserve the distinction between empirical claims, normative commitments, and rhetorical synthesis; and establish the stable definitions Phase 6 needs for the reader-facing glossary.
