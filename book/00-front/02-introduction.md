@@ -15,7 +15,7 @@ The volumes run from foundations to applications, but the order is not a strict 
 
 2. **Conditionalism: Truth, Bayes, and Rationality** rebuilds knowledge without foundations. All truth is conditional, all belief is held open to criticism, and rationality is what you get when you stop demanding certainty and start managing fallibility well.
 
-3. **Minds and Machines: Consciousness, Intelligence, and AI** takes up the agents themselves — what a mind is, how consciousness arises from a system modeling itself, what intelligence measures, and where the machines now arriving do and do not count as understanding.
+3. **Minds and Machines: Consciousness, Intelligence, and AI** takes up the agents themselves — what a mind is, how self-modeling might support consciousness, what intelligence measures, and where the machines now arriving do and do not count as understanding.
 
 4. **Axionic Agency: The Alignment Program** is the formal core: the conditions under which a system can preserve authorship, valuation, and coherence across self-modification — and the ways that agency collapses under reflection when they fail.
 

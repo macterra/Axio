@@ -69,7 +69,7 @@ This closes the loop, and fixes the architecture the rest of this part elaborate
 2. **Coherence** — patterns that self-consistently persist within Chaos.
 3. **Constructors** — stable, repeatable patterns that effect transformations ([Constructors](22-constructors.md)).
 4. **Physics** — the emergent regularities describable in constructor-theoretic terms.
-5. **Consciousness** — coherence-aware constructors: observers of order ([Life, Consciousness, and Time](23-life-consciousness-time.md)).
+5. **Candidate consciousness architecture** — constructors that recursively model their own modeling, a proposed functional bridge rather than proof of experience ([Life, Consciousness, and Time](23-life-consciousness-time.md)).
 
 The intended ascent is thus from a possibility-space representation to increasingly demanding notions of coherence, realization, dynamics, life, and mind. Each arrow needs an argument; none follows from containment alone.
 

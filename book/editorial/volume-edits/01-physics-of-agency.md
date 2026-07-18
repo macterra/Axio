@@ -51,6 +51,10 @@ The build supports optional manifest-defined parts while retaining flat navigati
 
 Repeated reset paragraphs were compressed where they obscured the argument. Strong images—drift, garden, Gigaplex, Chaos, filters, constructors—remain, but formal-sounding metaphors are now followed by their modeling assumptions or limits.
 
+## Phase 5 continuity update
+
+The consciousness reconciliation now makes the Chaos ascent stop at recursive self-modeling as a candidate functional bridge. Coherence filters, constructors, recursion, perceptual modeling, and felt time no longer establish phenomenality before Volume 3 states the Modeler-Schema and Agency-Model identity claims. The open consciousness question is preserved as an explicit bridge rather than embedded in the emergence ladder's nouns.
+
 ## Validation checklist
 
 - Build the complete book and inspect the grouped Volume 1 table of contents.

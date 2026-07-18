@@ -70,6 +70,10 @@ Chapter 4 owns the three meanings of *kernel*; Chapter 5 owns reflective stabili
 
 The pass preserves the volume's confident voice but removes universal language where the evidence is conditional, simulated, or closed-world. Terms such as *proved*, *impossible*, *real*, *closed*, and *all* should receive special scrutiny in future revisions.
 
+## Phase 5 continuity update
+
+The standing boundary now distinguishes sentience, demonstrated authorship, and precautionary protection. Animal authorship remains empirically open; infant protection rests on present welfare, developmental and authorization lineage, vulnerability, expected maturation, and false-negative cost rather than a complete latent RSA detected by definition. The jurisdiction threshold remains an Axionic governance proposal inside a graded evidentiary field, not a discovered discontinuity in minds.
+
 ## Validation checklist
 
 - Build the complete book and inspect the grouped Volume 4 table of contents.

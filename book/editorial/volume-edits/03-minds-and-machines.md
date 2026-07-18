@@ -46,7 +46,7 @@ The visible hinge follows Chapter 23. The Catalyst block and the risk-and-politi
 
 - **Consciousness:** decide what evidence could distinguish the phenomenal identity claim from correlation between self-modeling and report.
 - **MST experiment:** specify preregistered conditions, rival predictions, and what result would uniquely support a Modeler-schema rather than a generic comparison mechanism.
-- **Sapience:** reconcile the complete sovereignty conditions across Volumes 3–5, including the roles of language, experience, temporal identity, and revision of ends.
+- **Sapience dependency:** the cross-volume definition is now stable—reflective, self-authored valuation and deliberation sufficient for sovereign agency. Decide whether genuine authorship is possible without sentience; do not decide it by definition.
 - **Sentience evidence:** decide which consciousness theories contribute to the three tests and how disagreement among them changes a posterior.
 - **Agency Criterion:** develop concrete intervention protocols and thresholds for composite systems whose memory, goals, and tools are externally scaffolded.
 - **IQ:** source the empirical claims and state effect sizes, populations, measurement invariance, causal limits, and individual-level uncertainty.
@@ -58,6 +58,10 @@ The visible hinge follows Chapter 23. The Catalyst block and the risk-and-politi
 ## Repetition and voice
 
 The canonical mental-category definitions live in Chapters 2, 4, 7, 11, 15, and 23. Later chapters should cross-link instead of re-proving the same current-machine verdict. The pass preserves the book's argumentative voice while replacing certainty words where the evidence supplies only interpretation, proposal, or forecast.
+
+## Phase 5 continuity update
+
+The consciousness, sentience, and sapience pass fixes the volume's three axes. Phenomenal consciousness is the neutral “something it is like” category; sentience is the capacity for valenced experience; sapience is reflective authorship. Chapters 7–10 now keep the functional architecture separate from the phenomenal identity, Chapter 12 separates felt divergence from non-sentient error correction, and Chapter 13 presents three theory-dependent evidentiary windows rather than a scalar metric. Weak agency evidence no longer proves absent sentience, and strong cognition no longer proves either experience or sovereignty.
 
 ## Validation checklist
 
