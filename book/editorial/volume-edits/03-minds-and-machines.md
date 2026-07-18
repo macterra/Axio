@@ -66,6 +66,8 @@ The consciousness, sentience, and sapience pass fixes the volume's three axes. P
 
 The patterns reconciliation aligns Chapter 5's foresight account with generate–evaluate–retain and reserves cultural selection for transmitted variants with differential retention. The Agency Criterion remains the gate for collective or institutional agency: recurrent aggregate outcomes alone do not supply ownership, choice, or responsibility.
 
+The final meaning reconciliation reserves Chapter 5 for semantic meaning—interpreted aboutness within a use, history, or inferential system. Minimal interpretants and biological signals do not thereby possess existential purpose or significance. Volume 9 owns existential meaning as a relation sustained through an agent's values, purposes, narratives, relationships, and practices.
+
 ## Validation checklist
 
 - Build the complete book and inspect the grouped Volume 3 table of contents and Chapter 23 hinge.

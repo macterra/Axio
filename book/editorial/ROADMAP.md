@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 5 in progress — the first seven concept clusters, through patterns, selection, and cultural agency, are reconciled; sacredness, meaning, and chosen commitments are next.** The manuscript contains nine volumes, 242 chapters, and roughly 550,000 words. All 249 volume manuscript files—introductions and chapters, excluding front matter—are in `review`; the newly integrated *Fallibilist Bayesianism* capstone passed its Phase 5 continuity gate. Merged editorial passes are not yet promotion to `final`; the final cross-volume cluster, glossary work, continuous-reading compression, framing, and final verification remain.
+Status: **Phase 5 complete — all eight cross-volume concept clusters are reconciled; Phase 6's reader-facing glossary is next.** The manuscript contains nine volumes, 242 chapters, and roughly 550,000 words. All 249 volume manuscript files—introductions and chapters, excluding front matter—are in `review`; the newly integrated *Fallibilist Bayesianism* capstone passed its Phase 5 continuity gate. Merged editorial passes are not yet promotion to `final`; glossary work, continuous-reading compression, framing, and final verification remain.
 
 ## Progress at a glance
 
@@ -12,8 +12,8 @@ Status: **Phase 5 in progress — the first seven concept clusters, through patt
 | 2. Architecture audit | **Complete** | Book-wide architecture and nine volume memos completed. |
 | 3. Foundational volumes | **Complete** | Volume 1–5 passes merged; manuscript remains in `review`. |
 | 4. Applied volumes | **Complete** | Volume 6–9 passes merged; manuscript remains in `review`. |
-| 5. Cross-volume reconciliation | **In progress** | First seven clusters complete; sacredness, meaning, and chosen commitments are next. |
-| 6. Reader-facing glossary | **Pending Phase 5** | Canonical definitions must stabilize before publication. |
+| 5. Cross-volume reconciliation | **Complete** | All eight clusters reconciled; canonical definitions are stable enough to govern the glossary. |
+| 6. Reader-facing glossary | **Next** | Derive the published glossary from the internal terminology authority. |
 | 7. Compression and prose | **Pending** | Continuous-reading and cross-volume repetition decisions remain. |
 | 8. Framing material | **Pending** | Revise front matter and introductions after the manuscript stabilizes. |
 | 9. Verification and promotion | **Pending** | Promote `review` to `final` only after author approval and full validation. |
@@ -252,7 +252,7 @@ Progress: **Pass merged; manuscript in review.** See `book/editorial/volume-edit
 
 ## Phase 5 — Cross-volume reconciliation
 
-Progress: **In progress.** Agency and sovereignty are complete; see `reconciliation/01-agency-and-sovereignty.md`. Measure, Credence, and branching are complete; see `reconciliation/02-measure-credence-and-branching.md`. Consciousness, sentience, and sapience are complete; see `reconciliation/03-consciousness-sentience-and-sapience.md`. Coherence and viability are complete; see `reconciliation/04-coherence-and-viability.md`. Value and conditional objectivity are complete; see `reconciliation/05-value-and-conditional-objectivity.md`. Harm, coercion, consent, and justified force are complete; see `reconciliation/06-harm-coercion-consent-and-force.md`. Patterns, selection, and cultural agency are complete; see `reconciliation/07-patterns-selection-and-cultural-agency.md`. The new Volume 2 probability capstone passed its continuity gate and remains in `review` with the rest of the manuscript.
+Progress: **Complete.** Agency and sovereignty are recorded in `reconciliation/01-agency-and-sovereignty.md`; Measure, Credence, and branching in `02-measure-credence-and-branching.md`; consciousness, sentience, and sapience in `03-consciousness-sentience-and-sapience.md`; coherence and viability in `04-coherence-and-viability.md`; value and conditional objectivity in `05-value-and-conditional-objectivity.md`; harm, coercion, consent, and justified force in `06-harm-coercion-consent-and-force.md`; patterns, selection, and cultural agency in `07-patterns-selection-and-cultural-agency.md`; and sacredness, meaning, and chosen commitments in `08-sacredness-meaning-and-chosen-commitments.md`. The new Volume 2 probability capstone passed its continuity gate and remains in `review` with the rest of the manuscript.
 
 Run dedicated continuity passes for:
 
@@ -263,7 +263,7 @@ Run dedicated continuity passes for:
 - Value and conditional objectivity. **Complete.**
 - Harm, coercion, consent, and justified force. **Complete.**
 - Patterns, selection, and cultural agency. **Complete.**
-- Sacredness, meaning, and chosen commitments.
+- Sacredness, meaning, and chosen commitments. **Complete.**
 
 For each concept, identify:
 
@@ -275,11 +275,11 @@ For each concept, identify:
 
 Resolve the incitement, objective-value, moral-realism, and institutional-authority seams during this phase.
 
-**Exit:** No material cross-volume contradiction remains unacknowledged, and every load-bearing term has one canonical treatment.
+**Exit achieved:** No material cross-volume contradiction remains unacknowledged, and every load-bearing term has one canonical treatment.
 
 ## Phase 6 — Reader-facing glossary
 
-Progress: **Pending Phase 5.** The internal terminology sheet exists, but the published glossary has not been created.
+Progress: **Next.** Phase 5 stabilized the internal terminology sheet; the published glossary has not yet been created.
 
 Build a published glossary only after cross-volume reconciliation has stabilized the terminology. The glossary is a reader aid, not a substitute for defining terms where the argument first introduces them.
 
@@ -375,4 +375,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Complete Phase 5 with sacredness, meaning, and chosen commitments. Reconcile descriptive meaning, interpreted aboutness, personally chosen purpose, sacred priority, and the engineered meta-myth across the mind, value, culture, and meaning volumes; preserve the distinction between empirical claims, normative commitments, and rhetorical synthesis; and establish the stable definitions Phase 6 needs for the reader-facing glossary.
+Begin Phase 6 by deriving the reader-facing glossary from the internal terminology authority. Add the published front-matter chapter and navigation entry, link each term to its canonical treatment and important applications, preserve the calibration labels established in Phase 5, and verify every glossary definition against manuscript usage.

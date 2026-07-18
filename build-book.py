@@ -524,11 +524,8 @@ def write_redirects(manifest):
 
 def main():
     print("=== Building Axio book ===")
-    try:
-        from pandoc_version import check as _check_pandoc
-        _check_pandoc()  # warns (does not halt) on a pandoc-version mismatch
-    except ImportError:
-        pass
+    from pandoc_version import check as _check_pandoc
+    _check_pandoc(strict=True)
     if not (BOOK_SRC / 'book.yaml').exists():
         print(f"   ✗ {BOOK_SRC}/book.yaml not found (run from the repo root)")
         sys.exit(1)

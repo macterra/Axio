@@ -13,6 +13,8 @@ The mystery has a precise shape once you refuse to be sloppy about what a symbol
 
 On this semantic convention, prebiotic patterns were not yet symbols. Lightning correlates with electrical discharge, but the correlation alone is not Peircean interpretation. The proposal is that the first minimal interpreter and the first minimal agent arose together. This is a biosemiotic thesis, not a result established simply by defining correlation or computation.
 
+This chapter concerns **semantic meaning**: interpreted aboutness. Volume 9 later concerns **existential meaning**: the relation through which reflective agents situate experience and action within endorsed values, purposes, narratives, and relationships. The first can be attributed to minimal interpreters under this proposal; the second requires richer capacities and should not be inferred from a signal-response relation alone.
+
 ## The First Interpreter
 
 So the question "when did meaning begin?" becomes "when did the first interpreter appear?" This account locates the transition near the origin of life, because living regulation supplies the first plausible interpreters.
