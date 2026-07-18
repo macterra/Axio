@@ -1,6 +1,6 @@
 ---
 title: 'The Ethics of Viability'
-subtitle: 'A stable strategy in the ultimate metagame'
+subtitle: 'A chosen strategy in the ultimate metagame'
 status: review
 sources:
   - 181197275.the-ethics-of-viability
