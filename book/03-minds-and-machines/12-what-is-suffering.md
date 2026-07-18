@@ -35,19 +35,19 @@ A definition earns its keep on the edge cases, so run them.
 
 *Persistent mild discomfort.* A chronic low-grade headache: each moment contributes little, but the moments accumulate. Intuition says chronic mild pain can add up to serious suffering, and the definition should agree. It almost does — but "resulting from divergence" says nothing yet about time. Hold that thought; it becomes the final clause.
 
-So far the definition bends but does not break. The case that breaks it is the one this chapter opened with.
+So far the definition bends but does not break. The case this chapter opened with shows why its central term had to be *represented* condition — and what any definition without that term would get wrong.
 
 ## The Man in the Living Room
 
 Can a subject suffer while objectively in a preferred condition? The man at home, convinced he is stranded, says yes — vividly. His actual situation and preferred situation coincide. Any definition comparing preference directly with territory would find no divergence. But suffering operates through a model; the relevant mismatch is in the represented condition.
 
-The key is to notice *where* the divergence lives. It is not between his actual situation and his preference — those match. It is between his *representation* of his situation and his preference. Suffering has no unmediated access to the world; it runs on the subject's model. The definition therefore says:
+The key is to notice *where* the divergence lives. It is not between his actual situation and his preference — those match. It is between his *representation* of his situation and his preference. Suffering has no unmediated access to the world; it runs on the subject's model. That is why the definition reads as it does:
 
 > **Suffering** is the subjective experience of negatively valenced qualia resulting from divergence between a subject's represented condition and a preferred condition.
 
 The man in the living room is now accounted for. So is its mirror image: the subject objectively in trouble who does not represent the trouble — no felt divergence from that fact during the interval, however much harm is underway. Representation is not a qualifier bolted on to save the definition; it is load-bearing. Suffering is a property of experience structured by a model, not of the territory alone.
 
-And the refinement pays an unexpected dividend: it recovers, in cybernetic vocabulary, what two ancient traditions concluded by introspection. Buddhism locates dukkha in craving and ignorance — attachment to preferred states plus distorted perception of actual ones — and prescribes correcting the perception and loosening the preference. The Stoics held that suffering arises not from events but from judgments about events, and prescribed correcting the judgment. Both traditions independently found the two variables the definition exposes: since suffering is perceived-versus-preferred divergence, there are exactly two levers — fix the perception or adjust the preference — and both traditions built their entire therapeutic programs on those levers. When a definition derived from control theory converges with two traditions that spent centuries testing their accounts against human experience, that is evidence the joint has been found.
+And the representational term pays an unexpected dividend: it recovers, in cybernetic vocabulary, what two ancient traditions concluded by introspection. Buddhism locates dukkha in craving and ignorance — attachment to preferred states plus distorted perception of actual ones — and prescribes correcting the perception and loosening the preference. The Stoics held that suffering arises not from events but from judgments about events, and prescribed correcting the judgment. Both traditions independently found the two variables the definition exposes: since suffering is perceived-versus-preferred divergence, there are exactly two levers — fix the perception or adjust the preference — and both traditions built their entire therapeutic programs on those levers. When a definition derived from control theory converges with two traditions that spent centuries testing their accounts against human experience, that is evidence the joint has been found.
 
 The chronic headache supplies the last clause. Suffering has a magnitude, and it scales with two things: how far the perceived state diverges from the preferred one, and how long the divergence persists. Assemble everything:
 
