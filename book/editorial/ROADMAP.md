@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 6 complete — the reader-facing glossary now publishes all 101 canonical terms; Phase 7's continuous-reading compression and prose pass is next.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Continuous-reading compression, framing, and final verification remain.
+Status: **Phase 7 in progress — the measured inventory and first Volume 4 compression cluster are complete.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Further continuous-reading compression, framing, and final verification remain.
 
 ## Progress at a glance
 
@@ -14,7 +14,7 @@ Status: **Phase 6 complete — the reader-facing glossary now publishes all 101 
 | 4. Applied volumes | **Complete** | Volume 6–9 passes merged; manuscript remains in `review`. |
 | 5. Cross-volume reconciliation | **Complete** | All eight clusters reconciled; canonical definitions are stable enough to govern the glossary. |
 | 6. Reader-facing glossary | **Complete** | All 101 canonical terms publish with defining-chapter links and visible calibration. |
-| 7. Compression and prose | **Next** | Begin the dedicated continuous-reading and cross-volume compression pass. |
+| 7. Compression and prose | **In progress** | Baseline inventory and Volume 4 Chapters 2–7 complete; evidence-and-program cluster next. |
 | 8. Framing material | **Pending** | Revise front matter and introductions after the manuscript stabilizes. |
 | 9. Verification and promotion | **Pending** | Promote `review` to `final` only after author approval and full validation. |
 
@@ -296,7 +296,7 @@ Build a published glossary only after cross-volume reconciliation has stabilized
 
 ## Phase 7 — Compression and prose
 
-Progress: **Next.** Volume-level compression occurred during the merged passes; the dedicated continuous-reading and cross-volume compression pass remains.
+Progress: **In progress.** The measured baseline and sequencing decision are recorded in `compression/00-inventory-and-sequencing.md`. The first bounded cluster, Volume 4 Chapters 2–7, now inherits each prior result rather than repeating its primer; the five edited chapters fell by 3,365 words while Chapter 3 remained intact.
 
 Perform three distinct passes.
 
@@ -375,4 +375,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Begin Phase 7 with a measured continuous-reading inventory. Recalculate chapter and volume word counts, identify repeated definitions and arguments that survived the independent-volume edits, rank chapters above the 3,000-word target by structural risk, and propose the first bounded compression cluster without turning the glossary into a substitute for local explanation.
+Continue Phase 7 with Volume 4 Chapters 8–15. Preserve the verification → authority → pressure → standing → governance → construction → limitation → research-history progression, while removing repeated architecture primers and keeping experiment, interpretation, and non-claim registers distinct. Then begin Volume 7's mechanism-defined continuous-reading clusters.

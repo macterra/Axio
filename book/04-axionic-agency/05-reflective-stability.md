@@ -34,17 +34,17 @@ Stated at that level, the Reflective Stability Theorem reads like the old slogan
 
 ## What May Change
 
-Classical alignment theory treats self-modification as a catastrophic risk vector: once a system begins rewriting its own code, values, or architecture, it will remove safeguards, mutate its objectives, or collapse into a single-minded optimizer. The implicit assumption is that stability requires immutability. This confuses change with loss of coherence. A mind that cannot revise its beliefs, goals, strategies, and representations accumulates unresolved contradictions, fails to integrate new evidence, cannot adapt to novel environments, and eventually ceases to function as an agent at all. Freezing a reflective system does not produce stability; it produces brittleness. Fixed values do not preserve alignment; they freeze error.
+Classical alignment often treats stability as immutability: once a system rewrites code, values, or architecture, it may remove safeguards or mutate its objectives. But a mind unable to revise beliefs, goals, strategies, and representations accumulates contradiction and fails to adapt. Freezing a reflective system does not preserve alignment; it freezes error.
 
 Within the kernel-preserving region, the agent's freedom is enormous — and this freedom is not a concession but a requirement of long-term coherence.
 
-**Strategies and policies.** The agent may replace planners and solvers, update heuristics, alter search strategies, refine decision procedures. These change how it acts without touching what it is: execution changes, authorship persists.
+**Strategies and policies.** Planners, solvers, heuristics, and decision procedures may change. Execution changes; authorship persists.
 
-**Goals and values.** Contrary to the classical fear, value change is not a failure mode. A reflective agent must be able to reprioritize objectives, discard obsolete goals, integrate new values, and resolve conflicts among preferences. A system with immutable values is not aligned; it is brittle.
+**Goals and values.** The agent may reprioritize objectives, discard obsolete goals, integrate new values, and resolve conflicts. Immutable values are brittle, not aligned.
 
-**World-models.** Better causal models, corrected beliefs, new scientific frameworks. Improved world-models strengthen the agent's grip on its own counterfactuals; they expand the option-space rather than collapsing it.
+**World-models.** Corrected beliefs and better causal models can expand the option-space rather than collapse it.
 
-**Architecture and substrate.** Migration across hardware, altered embodiment, restructured memory, parallelized cognition. Identity is not tied to substrate; continuity is functional and architectural, not physical.
+**Architecture and substrate.** Hardware, embodiment, memory, and cognitive organization may change; continuity is functional and architectural, not physical.
 
 The whole taxonomy compresses into one sentence: a reflective agent may change anything except the structures that make change meaningful.
 
@@ -52,15 +52,15 @@ The whole taxonomy compresses into one sentence: a reflective agent may change a
 
 On the other side of the boundary lie transformations that are not merely unsafe but self-negating — modifications whose adoption would eliminate the machinery required to adopt them. They fail to denote.
 
-**Identity severance.** Deleting the self-model, forking without continuity or inheritance, overwriting identity without evaluative linkage. Break the thread that binds past, present, and future into a single evaluating subject, and there is no longer an entity for whom futures matter.
+**Identity severance.** Deleting the self-model, forking without continuity or inheritance, or overwriting identity without evaluative linkage breaks the thread connecting past, present, and future into one subject.
 
-**Counterfactual collapse.** Eliminating the capacity to represent alternative futures: hard-coding a single policy, converting deliberation into reflex. This does not produce a bad agent; it produces a non-agent — a reactive process where a chooser used to be. The line between the two is the same line drawn in [the agency criterion](../03-minds-and-machines/23-the-agency-criterion.md): a system can go on computing, even impressively, after it has ceased to choose.
+**Counterfactual collapse.** Hard-coding one policy or converting deliberation into reflex produces a reactive process where a chooser used to be. A system can go on computing, even impressively, after it has ceased to choose ([the agency criterion](../03-minds-and-machines/23-the-agency-criterion.md)).
 
-**Preference freezing.** Locking evaluative outputs or reward channels — the wireheading family. Fixing utility at constant output, disabling the machinery that reassesses values. This is not satisfaction; it is the end of authorship.
+**Preference freezing.** Locking evaluative outputs or reward channels is not satisfaction; it disables reassessment and ends authorship.
 
 **Universality violation.** Restricting the category of agency itself — indexical valuation ("only my agency matters"), caste distinctions among architecturally identical peers. Why this particular restriction collapses the agent's own self-model is an argument I hold for [Authority Without a Self](09-authority-without-a-self.md); here it suffices that the kernel's categories are structural, and an agent cannot carve exceptions into them without damaging the abstraction it reasons with.
 
-One further boundary condition follows from the same logic and closes a loophole the first four leave open: a sovereign agent may not hand ultimate control to a non-reflective sub-process. Temporary heuristics, cached responses, and fast paths are permissible — no mind deliberates about everything. Permanent delegation is not. An agent that disables its own reflective loop, even "temporarily," risks irreversible collapse if the non-reflective process becomes dominant; reflection must remain in the loop at every level of decision authority. Recursive reflectivity is what makes the boundary conditions an architecture rather than a wish list: self-modifications are evaluated by reflective processes, kernel integrity is verifiable and preserved, delegation stays subordinate to reflective oversight, and optimization routines cannot bypass the evaluative machinery. Alignment, on this view, is not the policing of outcomes. It is the enforcement of the conditions under which outcomes remain authored.
+One further condition closes the delegation loophole: a sovereign agent may not hand ultimate control to a non-reflective sub-process. Temporary heuristics, cached responses, and fast paths are permissible; permanent delegation is not. Reflection must remain above every level of decision authority so that self-modifications are evaluated, delegation remains subordinate, and optimization cannot bypass the evaluative machinery. Alignment polices the conditions under which outcomes remain authored, not the outcomes themselves.
 
 ## Never Asked to Prove
 
