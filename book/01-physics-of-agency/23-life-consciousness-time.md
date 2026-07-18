@@ -15,7 +15,7 @@ This chapter tests three functional proposals. Self-maintenance, replication, an
 
 One claim runs underneath all three, so it is worth stating once and clearly. The laws of physics are not imposed on Chaos from outside. Chaos, the total ensemble of incompressible reals, encodes every possible rule as a pattern among its sequences; the overwhelming majority collapse into noise. [Coherence filters](21-coherence-filters.md) select the rules that are self-consistent — that do not contradict themselves across the sequence. Constructors *embody* the survivors: the hydrogen atom embodies QED, the crystal embodies solid-state regularity, the catalyst embodies a chemical transformation. A law of physics is nothing over and above a correlation that constructors repeatedly and reliably realize.
 
-So the laws are emergent regularities — stable patterns distilled from Chaos, selected by coherence, embodied in constructors. This matters for what follows because it fixes the relationship between each new layer and physics. Life does not break the laws; it *exploits* them for self-maintenance and replication. Consciousness does not transcend them; it *models* them, representing internally the very rules that make its own coherence possible. Each layer is a new stance toward the same embodied regularities, not a new set of them.
+So the laws are emergent regularities — stable patterns distilled from Chaos, selected by coherence, embodied in constructors. This matters for what follows because it fixes the relationship between each proposed layer and physics. Life does not break the laws; it *exploits* them for self-maintenance and replication. A candidate consciousness architecture does not transcend them; it models aspects of world and self within the same physical regularities. Whether that modeling is phenomenally experienced is the bridge this chapter leaves to Volume 3.
 
 ## Life: The Self-Maintaining Constructor
 
@@ -29,7 +29,7 @@ On this proposed definition, life is a constructor that helps preserve and repro
 
 Once there is life, some living constructors develop *internal models*. A subpattern inside the organism comes to correspond, structurally, to a correlation out in the environment — a map that tracks the territory the organism depends on. This buys something enormous: the organism can simulate and predict before it acts, running the consequences of a move internally instead of paying for them in the world. Representation is coherence reflected inward — life encoding, within itself, models of the correlations it must exploit to stay coherent.
 
-Representation alone is not yet consciousness. The step to consciousness is *recursion*. Stack the modeling on itself:
+Representation alone is not consciousness. The proposed functional step toward the later theory is *recursion*. Stack the modeling on itself:
 
 - **First order:** a correlation in the world is represented internally. The model tracks the environment.
 - **Second order:** a representation is itself represented — the system models its own modeling. This is a self-model.
@@ -51,6 +51,6 @@ On a block-style reading, **change is represented as a relation within Chaos rat
 
 Which leaves the felt arrow. One candidate explanation is **coherence traversal**: a self-model accesses successive states, integrates memory, and represents change from a remembered past toward anticipated futures. This may explain aspects of temporal experience, but “traversal” cannot be the unexplained temporal process on which the account secretly depends.
 
-In the proposal's compressed language, consciousness is coherence modeled by the system, and **felt time is how a self-model represents ordered change**. This formulation states a research program. A complete account must still connect the representational structure to phenomenal experience.
+In the Agency-Model proposal's compressed language, consciousness is coherence modeled by the system, and **felt time is how a self-model represents ordered change**. These are identity claims within a research program, not neutral definitions. A complete account must still show why the representational structure is phenomenally experienced and how rival accounts could be distinguished.
 
 That felt flow is not the end of the arc — consciousness was only a milestone, and higher forms of coherence may traverse themselves in ways we cannot picture. But it is the height from which the rest of the volume is written. What the whole hierarchy has in common — Chaos, filter, constructor, life, mind, time — is a single principle applied at every scale: identity preserved across transformation. That principle, and the pre-semantic notion of coherence it rests on, is [the shape of coherence](24-the-shape-of-coherence.md) itself.

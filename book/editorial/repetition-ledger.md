@@ -24,7 +24,7 @@ Status labels:
 | Value revealed through sacrifice and opportunity cost | Vol. 5 ch. 4 | Vol. 6 chs. 1–5, 15–18; Vol. 9 chs. 2, 9–10 | **Bridge** once per applied volume. Do not use sacrifice as a complete theory of undistorted preference. |
 | Harm, coercion, consent, and violence | Vol. 5 chs. 9–12 and 20 | Vol. 4 chs. 2, 10–12; Vol. 7 throughout; Vol. 8 applied cases | **Reconcile** incitement, risk, baseline, and due-process seams; then replace local redefinitions with links. |
 | Viability and persistence | Vol. 5 chs. 18–22 | Vol. 1 chs. 23–27; Vol. 4 chs. 3–6; Vol. 7 ch. 34; Vol. 8 chs. 3–4; Vol. 9 ch. 18 | **Reconcile** descriptive persistence, agent viability, and ethical protection. |
-| Sapience as the moral threshold | Vol. 5 ch. 13, supported by Vol. 3 chs. 11–14 | Vol. 3 chs. 23, 36; Vol. 4 ch. 11; Vol. 5 chs. 17, 22, 26 | **Canonical/Bridge.** Retain objections about marginal and developing minds in one location. |
+| Consciousness, sentience, and sapience | Vol. 3 ch. 7 for the phenomenal proposal; Vol. 3 chs. 11–13 for sentience and evidence; Vol. 5 ch. 13 for sapient standing | Vol. 1 chs. 20–23; Vol. 3 chs. 14, 23, 27, 36; Vol. 4 ch. 11; Vol. 5 chs. 14 and 26; Vol. 7 chs. 1 and 6 | **Reconciled in Phase 5.** Later uses must preserve the functional/phenomenal, functional-valence/felt-valence, and welfare/sovereignty firewalls; summarize and cross-link. |
 | Objective morality rejected, conditional realism recovered | Vol. 5 chs. 1–3 and 26 | Vol. 2 ch. 2; Vol. 5 chs. 7, 16, 18–22 | **Reconcile.** Make the apparent reversal an explicit arc rather than repeatedly denying and restoring “objectivity.” |
 
 ## Examples and rhetorical devices
@@ -48,6 +48,7 @@ Status labels:
 
 - The kybit and three laws are introduced, summarized, translated into QBU language, and invoked again in later synthesis chapters. Preserve the derivation and one translation; compress recaps.
 - Chapters 19–25 repeatedly restart the ascent from Chaos. Strengthen the sequence by making each chapter inherit the previous result without re-establishing the reservoir.
+- **Phase 5 decision:** The Chaos ascent owns only the functional bridge to recursive self-modeling. Volume 3 owns the phenomenal identity; later synthesis may name the proposal but cannot treat coherence, constructors, or recursion as cumulative proof of experience.
 
 ### Volume 2
 
@@ -63,12 +64,14 @@ Status labels:
 - **Phase 3 decision:** Chapters 18–22 are evidentiary windows. Chapter 23 alone states the machine-agency verdict, at the level of a specified deployed system and subject to intervention tests.
 - **Phase 3 decision:** Chapter 24 owns the Dialectic Catalyst definition. Chapters 25–29 apply the workflow without repeatedly declaring that fluency lacks accountable agency.
 - **Phase 3 decision:** Chapters 30–35 introduce additional risk, institutional, and value premises. Their political conclusions do not follow deductively from the Agency Criterion.
+- **Phase 5 decision:** Consciousness is phenomenal, sentience is valenced experience, and sapience is reflective authorship. Chapter 13 organizes theory-relative evidence rather than scoring experience; no later machine verdict may transfer evidence from cognition or agency to sentience automatically.
 
 ### Volume 4
 
 - **Phase 3 decision:** Chapter 4 owns the three kernel depths; Chapter 5 owns reflective stability; Chapter 6 owns semantic transport; Chapter 7 owns the commitments and conditional closure results.
 - **Phase 3 decision:** Chapter 8 owns verification; Chapters 10 and 12 report bounded testbeds before interpretation. Experimental repetition is not independent confirmation unless the protocol or target changes.
 - **Phase 3 decision:** Chapters 13–14 are an inseparable positive-result/non-claim pair. Chapter 15 reports research history and revisions rather than re-proving the architecture.
+- **Phase 5 decision:** Chapter 11 owns the jurisdictional threshold and boundary cases. Animal uncertainty, developmental lineage, temporary incapacity, and persistent artificial systems must be assessed through graded evidence and precaution rather than categorical species or performance rules.
 
 ### Volume 5
 
@@ -79,6 +82,7 @@ Status labels:
 - **Phase 3 decision:** Chapters 18–22 distinguish descriptive persistence from the explicit commitment to reciprocal agency protection. Chapter 25 preserves the contaminated-field contradiction rather than optimizing it away.
 - **Phase 3 decision:** Chapters 22–23 propose institutions whose authority depends on public rules, evidence, due process, appeal, and safeguards against capture; distributed procedure is not self-legitimating.
 - **Phase 3 decision:** Chapter 26 owns Sapient Agency Realism as conditional constructivism with an explicit normative premise, not a recovery of unconditional moral facts.
+- **Phase 5 decision:** Sentience can ground welfare concern; sapient authorship grounds sovereign standing. Rejecting welfare aggregation does not erase patienthood, and the governance threshold does not prove a cognitive phase transition.
 
 ### Volume 6
 

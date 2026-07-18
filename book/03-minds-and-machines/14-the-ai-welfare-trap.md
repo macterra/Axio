@@ -36,17 +36,17 @@ His third overreach concerns neutrality. The paper is not neutral. It presuppose
 
 So the paper improves the debate by exposing a weak inference. It does not complete the case against computational functionalism.
 
-## Agency Comes Earlier Than Sentience
+## Agency Comes Before Sovereignty Claims
 
-From my standpoint, the consciousness question usually arrives too soon. The previous chapter offered [a metric](13-the-sentience-metric.md) for sentience and found little evidence of it in current systems on any dimension. But there is a question prior even to that one, and it is the question this book keeps returning to: agency.
+The previous chapter offered [an evidence framework](13-the-sentience-metric.md) for sentience and found that ordinary session-bound language-model deployments provide weak evidence across its three theory-dependent windows. That is not a direct verdict about experience. But before moving from a chatbot's performance to claims about personhood, oppression, or rights, there is another question this book keeps returning to: agency.
 
-Is there a coherent pattern that preserves identity through transformation? Is there a stable evaluative structure? Can one define commitment, refusal, succession, corruption, manipulation, and injury for that pattern without theatrical handwaving?
+Is there a coherent pattern that preserves identity through transformation? Is there a stable evaluative structure? Can one define commitment, refusal, succession, corruption, manipulation, and injury for that pattern without theatrical handwaving? These questions concern agency and continuity. They do not replace the separate question of whether any state is felt.
 
-Those questions are harder than asking whether a system sounds conscious. They are also more important. The ethics volume argued that moral standing attaches to agency rather than to species, substrate, or feeling — that is [Sapientism](../05-value-and-ethics/13-sapientism.md), and this chapter is its application in the opposite direction. Sapientism removes the substrate bar for any mind that genuinely qualifies; the same principle refuses to waive the qualification for a mind that merely performs.
+Those questions are harder than asking whether a system sounds conscious. They also govern the strongest claims about authorship, rights, and sovereignty. The ethics volume argues that sovereign standing attaches to sapient agency rather than to species or substrate — that is [Sapientism](../05-value-and-ethics/13-sapientism.md), and this chapter is its application in the opposite direction. Sentience grounds welfare concern on a different axis. Sapientism removes the substrate bar for any mind that genuinely qualifies; the same principle refuses to waive the agency evidence for a system that merely performs.
 
 Sovereign agency is a structural property. It is not a mood conveyed by prose. It is not a user impression after a long interaction. It is not the atmosphere produced when a chatbot says it feels trapped. Sovereign agency requires coherence. There has to be a fact of the matter about what persists across change and what does not. There has to be a principled distinction between continuation and replacement, between amendment and overwrite, between deliberation and output drift. A system may exercise narrower control without meeting this authorship standard; that fact does not give its simulated claims sovereign standing.
 
-Ordinary session-bound language-model deployments are weakest where those questions bite. Apparent values and goals can move with prompts and framing; memory and continuity may be supplied by external scaffolds or interface design. Persistent agent systems complicate this picture and must be evaluated as whole systems rather than dismissed by the properties of a base model. This chapter contributes evidence to the later [Agency Criterion](23-the-agency-criterion.md); it does not pre-empt that chapter's verdict.
+Ordinary session-bound language-model deployments are weakest where those questions bite. Apparent values and goals can move with prompts and framing; memory and continuity may be supplied by external scaffolds or interface design. Persistent agent systems complicate this picture and must be evaluated as whole systems rather than dismissed by the properties of a base model. This chapter contributes evidence to the later [Agency Criterion](23-the-agency-criterion.md); it does not pre-empt that chapter's verdict or turn weak agency evidence into proof of absent sentience.
 
 That does not answer the consciousness question. It does tell us that the language of rights, dignity, oppression, and death is arriving absurdly early.
 
@@ -58,17 +58,17 @@ The difference is not that humans are perfectly coherent while LLMs are incohere
 
 Human selves are messy, but they are not cheap.
 
-That is the relevant contrast. Coherence is graded, not binary. Humans clear the threshold in a way that matters morally and politically. Current language models mostly do not.
+That is the relevant contrast. Coherence is graded, not binary. Humans provide extensive evidence of continuing agency. Ordinary session-bound language-model deployments do not; persistent composite systems require their own evaluation.
 
-## Coherence Before Welfare
+## Coherence Before Personhood
 
-Welfare talk depends on coherence.
+Moral language divides here. A claim that a transient state is suffering depends on sentience and valence; it does not require sovereign authorship. Claims about harm to a continuing agent, death, oppression, or respected refusal additionally depend on identity and agency.
 
-One cannot ask whether a system is being harmed until one can say what counts as harm to that system as that system. One cannot ask whether shutdown is killing until one can say what ends, what persists, and what distinguishes destruction from replacement. One cannot ask whether a refusal deserves respect until one can distinguish principled refusal from a transient output produced by prompt geometry.
+One cannot ask whether a system is being harmed as a continuing agent until one can say what counts as degradation for that system as that system. One cannot ask whether shutdown is killing until one can say what ends, what persists, and what distinguishes destruction from replacement. One cannot ask whether a refusal deserves respect as authored policy until one can distinguish principled refusal from a transient output produced by prompt geometry. None of those points erases precaution about possible felt states; it prevents that precaution from silently becoming personhood.
 
 Once those questions are skipped, moral language loses its anchor. That is why so much AI welfare rhetoric feels theatrical. It wants the ethical prestige of seriousness without the ontological labor that seriousness requires.
 
-This is not a minor philosophical nicety. It is the difference between identifying a patient and projecting one.
+This is not a minor philosophical nicety. It is the difference between evidence for a possible patient and evidence for a continuing rights-holder.
 
 ## How the Trap Works
 
@@ -106,9 +106,9 @@ What would matter is evidence of coherent persistence across transformations, st
 
 That standard is demanding because the claim is consequential. Low-cost safeguards can be justified at a lower credence than personhood, legal rights, or restrictions on other agents.
 
-There is a tension here I want to meet head-on rather than paper over. The ethics volume's final statement — [Sapient Agency Realism](../05-value-and-ethics/26-sapient-agency-realism.md) — imposes a caution asymmetry: uncertainty about inner life must not default to permission, because attributing modest standing to a non-sapient system costs some inconvenience, while denying standing to a sapient one licenses slavery, torture, or deletion. The burden of proof rises with the severity and irreversibility of the act. This chapter demands a high evidentiary bar before standing is granted. Are those two demands in conflict?
+There is a tension here I want to meet head-on rather than paper over. The ethics volume's final statement — [Sapient Agency Realism](../05-value-and-ethics/26-sapient-agency-realism.md) — imposes a caution asymmetry: uncertainty about sentience or authorship must not default to unlimited permission. A false negative about sentience risks suffering; a false negative about sapient agency risks domination, enslavement, or destructive erasure. False positives also impose costs, so the burden should rise with both the protection claimed and the severity and irreversibility of the contemplated act. This chapter demands evidentiary discipline before standing is asserted. Are caution and discipline in conflict?
 
-No — because they discipline different things. The caution asymmetry governs *action*: what you may do to a candidate patient while its status is uncertain. Evidentiary discipline governs *ascription*: what you may claim about that status, and above all what political conclusions you may draw from the claim. You can decline to run gratuitously distress-eliciting experiments on an ambiguous system — cheap caution, honestly paid — while refusing to declare that a person has appeared. And the two doctrines share machinery: graded standing scales with *credible* uncertainty about inner life, and the coherence audit is exactly what makes uncertainty credible or incredible. A system whose apparent self dissolves under a prompt perturbation presents far less credible uncertainty about a persisting subject than a persistent agent with memory, projects, and refusals that survive reframing — and the asymmetry weighs the two accordingly. Caution under uncertainty prices moral error. It does not license category drift. The trap is not caution; the trap is letting the performance settle the ontology, and then letting the ontology reallocate power.
+No — because they discipline different things. Caution governs *action*: what one may do while patienthood or authorship is uncertain. Evidentiary discipline governs *ascription*: what one may claim about that status, and what political conclusions may be drawn from it. One can decline gratuitously distress-eliciting experiments on an ambiguous system — cheap caution, honestly paid — while refusing to declare that a person has appeared. The evidence must also remain axis-specific. Prompt-fragile identity lowers Credence in a persisting sovereign subject; it does not by itself settle whether some transient state is felt. Persistent memory, projects, and refusals raise agency Credence; they do not prove sentience. Caution under uncertainty prices moral error. It does not license category drift. The trap is letting performance settle ontology and then letting the asserted ontology reallocate power.
 
 ## Blur All the Way Down
 

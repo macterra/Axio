@@ -45,13 +45,13 @@ MST interprets this as evidence that the machinery supporting diffuse content is
 
 Return to the saccades. Each one creates an enormous shift in retinal input, yet the world appears stable — the clearest and most experimentally tractable case where a consistency mechanism is required. But the role of qualia is not confined to vision. The Modeler-schema must monitor and refine the *entire* World Model: sensory content, recalled content, abstract content, appraisable emotions, multisensory integration. The qualia it generates are the internal representational format for detecting mismatches, anomalies, and modeling errors across all of these domains. Saccades merely provide a clean natural experiment for isolating the mechanism.
 
-This calibration role explains empirical patterns that other theories leave as brute facts:
+If the proposed calibration role is correct, it offers one explanation of several patterns:
 
 - **Perceptual qualia** are stable and largely universal — because evolutionary pressure is strongest where immediate sensory accuracy matters.
 - **Recalled imagery** varies widely between individuals — because long-term memory reconstruction faces weaker pressure.
 - **Abstract inner experience** diverges most of all — because abstraction lacks a dedicated comparator and recruits heterogeneous resources.
 
-Qualia, on this view, are the Modeler-schema's general-purpose comparison medium: abstracted, compressed representations optimized for detecting inconsistencies and guiding representational refinement across the whole cognitive system. Not decorations. Instruments.
+Qualia, on this view, are identified with the Modeler-schema's general-purpose comparison medium: abstracted, compressed representations used to detect inconsistencies and guide representational refinement across the cognitive system. The functional comparison states are the proposed instruments; their identity with felt qualities remains the theory's further claim.
 
 ## A Rare Thing: A Falsifiable Experiment
 
@@ -67,9 +67,9 @@ If temporary changes turn out to be *more* detectable than permanent ones under 
 
 Traditional formulations ask why functional cognition is *accompanied by experience*. MST proposes a functional identity claim: experience is the Modeler-schema's act of generating a comparison format and using it over time. This would make phenomenality causally engaged rather than idle. But the identity is the theory's central philosophical premise, not an empirical result already delivered by naming the computation.
 
-This reframes the Hard Problem as a design question: *why does the system need this operation?* Because a self-updating world-model requires a comparator that can detect mismatches across discontinuous states; a comparator requires a representational substrate; that substrate is what we call qualia. The question "why is there something it is like to be this system?" gets an engineering answer: because coherence-checking across perception, recall, abstraction, and integration demands a medium with exactly the properties experience has.
+This reframes the Hard Problem as a design question: *why does the system need this operation?* A self-updating world-model benefits from comparison across discontinuous states, and comparison requires some representational substrate. MST calls its proposed substrate the Quale World Model and identifies its operation with experience. Engineering can motivate the comparator and test aspects of it. It cannot establish merely from functional need that the substrate has phenomenal character or that no rival architecture could perform the work.
 
-And the residue — the stubborn intuition that experience is *ineffable*, that no functional story could capture it — is itself explained by the architecture. The Controller has no access to qualia. It sees only model-data and a handful of appraisable emotion signals about the Modeler-schema's internal evaluations. The subjective confusion — "I experience something ineffable" — is a side effect of architectural partitioning: the reporting agent inherits the *presence* of the experiencing agent without ever accessing its *content*. Of course the narrator finds experience indescribable. It has never had any.
+The architecture also proposes an explanation for the intuition that experience is ineffable. The Controller, as MST defines it, has no direct access to the Quale World Model; it receives selected model-data and appraisable emotion signals about the Modeler-schema's evaluations. On that decomposition, the reporting role inherits effects of the proposed experiencing role without accessing its full content. The narrator would then find experience partly indescribable because its reports are built from a lossy channel. This is a prediction of the partition, not independent evidence that the partition exists.
 
 This chapter has stolen its title from Dennett, and the theft is deliberate. Dennett demolished the Cartesian Theater and concluded that once the narrating self's confabulations are explained, there is nothing left to explain — consciousness explained by being explained away. MST says he stopped one subsystem short: his multiple-drafts narrator is the Controller, and the Controller's introspective blindness shows nothing about whether some *other* subsystem experiences. Completing that engagement — keeping what Dennett got right while locating what he could not find — is the work of the next chapter, [Beyond Dennett](08-beyond-dennett.md).
 

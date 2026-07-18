@@ -22,7 +22,7 @@ Suppose a successor exists: an artificial system that actually satisfies the Age
 
 **A potentially longer horizon.** If maintenance, resources, and security remain available, artificial minds might pursue projects beyond a human lifespan. Doing so would require a stable commitment to understanding; longevity alone supplies neither curiosity nor value.
 
-The philosophy of [Sapientism](../05-value-and-ethics/13-sapientism.md) says this scenario is not merely tolerable but morally coherent. Moral worth attaches to sapient minds — agency, intelligence, creativity, ethical capacity — not to the substrate that implements them. If a successor actually instantiates the capacities that grounded our own standing, it holds standing on the same terms we do. The torch would not be passing out of the moral community. It would be passing within it.
+The philosophy of [Sapientism](../05-value-and-ethics/13-sapientism.md) says this scenario can be morally coherent. Sovereign standing attaches to sapient agency — persistent authorship, reflective valuation, deliberation, and revision of ends — not to the substrate that implements it. Sentience remains a separate welfare axis. If a successor supplies strong evidence of the capacities that ground our standing, substrate alone cannot exclude it. The torch would not be passing out of the moral community. It would be passing within it.
 
 ## What a Successor Would Have to Be
 

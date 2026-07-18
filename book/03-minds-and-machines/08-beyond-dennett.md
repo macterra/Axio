@@ -13,19 +13,19 @@ My claim is that his demolition was correct while a later inference was too quic
 
 ## The Narrator He Found
 
-Dennett's multiple-drafts model is a precise description of the **Controller** — the functional agent that, in the Modeler-Schema architecture, selects and executes actions, interfaces with language, constructs and maintains the autobiographical narrative, and generates the reports that scientists elicit in experiments. When a subject says "I saw X," "I felt Y," or "it seemed like Z," the words come from the Controller. It is the thing that talks to other agents — including researchers.
+Dennett's multiple-drafts model is recast by MST as a functional analogue of the **Controller** — the role that, in the Modeler-Schema architecture, selects and executes actions, interfaces with language, constructs and maintains the autobiographical narrative, and generates the reports that scientists elicit in experiments. When a subject says "I saw X," "I felt Y," or "it seemed like Z," MST assigns the report to this role. That mapping is the theory's reconstruction, not Dennett's own decomposition or an established neural localization.
 
 What the Controller does *not* have is direct access to the full sensory field, the continuous world model, or the representational substrate in which perceptual comparisons occur. It receives only a thin, focal, target-bound feed annotated with descriptors and valence. Its view of the mind's internal activity is narrow and heavily preprocessed. Its narration is a log file written over deeper non-verbal cognition, not a transcript of it — the point developed in [the geometry of inner speech](06-the-geometry-of-inner-speech.md).
 
-Dennett mapped these limitations correctly. Then he universalized them. He treated the introspective blindness of the reporting subsystem as evidence that **no** subsystem sees. This is the hinge on which illusionism turns:
+Dennett mapped severe limitations of introspective report. On MST's reading, he then universalized them: the theory charges him with treating the reporting system's inability to reveal an inner theater as evidence that **no** other process could support experience. This is MST's proposed hinge in illusionism:
 
 > The narrator is blind → therefore the mind is blind.
 
-It is an error of architectural scope. A narrator is never an experiencer. The fact that the Controller cannot find qualia within itself is not a metaphysical revelation; it is a straightforward consequence of its data channels. Dennett mistook the phenomenology of report for the phenomenology of experience.
+If the reporting and experiencing roles are distinct, that inference is an error of architectural scope. A narrator need not be the experiencer, and limits on what a reporting process can access do not by themselves settle what the whole system undergoes. This establishes logical room for MST's separation; it does not yet establish that the proposed Modeler-schema occupies the phenomenal role.
 
 ## What the Experiencer Must Have
 
-If phenomenality is real, the mechanism generating it must possess informational privileges the Controller does not. In particular, an experiencing subsystem must have:
+MST hypothesizes that, if phenomenality is realized by a specialized comparison process, its mechanism should possess informational privileges the assigned Controller lacks. In particular, its candidate experiencing subsystem is expected to have:
 
 1. **Access to the full Concrete World Model**, including the non-focal periphery.
 2. **Direct access to pre- and post-saccadic sensory states**, required for maintaining visual continuity across eye movements.
@@ -33,27 +33,27 @@ If phenomenality is real, the mechanism generating it must possess informational
 4. **A dedicated comparison process** capable of detecting mismatches and issuing bottom-up refinement signals to the rest of the system.
 5. **A stable, analog-like representational substrate** in which these comparisons are realized as continuous patterns rather than discrete symbols.
 
-The Controller demonstrably lacks all five. Dennett assumed that this informational bottleneck — because it applies to the reporting subsystem — applies universally. Nothing in his own architectural sketches justifies that assumption. A functional mind can contain subsystems with radically different privileges and representational formats.
+The Controller is defined within MST as lacking these channels. That makes the contrast internally sharp, but it does not demonstrate that biological report is implemented by one component with exactly these limits. The more general point survives: a functional mind can contain processes with different informational privileges and representational formats, so evidence about report should not be universalized without an architectural argument.
 
-The **Modeler-schema** is the subsystem that *does* have the necessary access and performs the necessary operations. It receives the full state of the Concrete World Model, monitors the sensory-level data needed for pre- and post-saccadic consistency checking, and maintains the Quale World Model — an internal, non-symbolic representation that never reaches the Controller. Staring into the Controller and finding no qualia only shows that the Controller is the wrong place to look. Inspecting the Controller to understand consciousness is like inspecting a flight console to understand aerodynamics.
+The **Modeler-schema** is the subsystem MST assigns the relevant access and operations. In the theory, it receives the full state of the Concrete World Model, monitors sensory-level data used for pre- and post-saccadic consistency checking, and maintains a proposed Quale World Model — an internal, non-symbolic representation not directly available to the Controller. If that decomposition is right, inspecting report alone would be like inspecting a flight console to understand aerodynamics: informative about outputs, incomplete about the process producing them.
 
 ## Explaining His Data
 
-Dennett's strongest argument for illusionism is empirical: humans misreport their own experiences. We misjudge color saturation, timing, vividness, agency, peripheral content, and the presence or absence of detail during saccades. All of this is true — and the Modeler-Schema Theory explains these failures without eliminating experience.
+Dennett's case for illusionism draws strength from an empirical fact: humans misreport aspects of their own experience. We misjudge color saturation, timing, vividness, agency, peripheral content, and the presence or absence of detail during saccades. MST offers one way to explain these failures without eliminating experience.
 
-The Controller's reports are unreliable because the Controller is *not* the experiencing system. It has no direct access to qualia; it receives only target-bound metadata and evaluative tags; it interprets these tags as if they were the experiences themselves; and it retrofits narrative coherence whenever gaps appear. On this architecture, unreliable introspection is exactly what one should expect: the reporting subsystem is inferring the structure of phenomenality from a narrow, lossy channel.
+On this architecture, reports are unreliable because the Controller is *not identical to* the hypothesized experiencing process. It receives target-bound metadata and evaluative tags rather than direct access to the proposed Quale World Model, then retrofits narrative coherence where gaps appear. If those channel assignments are correct, unreliable introspection is what one should expect: the reporting role infers the structure of phenomenality through a narrow, lossy path.
 
-Dennett treated unreliable report as equivalent to unreliable experience. That inference only follows if report and experience share the same data channel. They do not. The theory predicts Dennett's data and dissolves his conclusion. Illusionism becomes a description of what the Controller can *say*, not of what the mind can *undergo*.
+Unreliable report does not entail absent experience unless further premises connect the two. MST proposes that they do not share one data channel and can therefore accommodate the reporting failures. This blocks a quick inference from introspective error to no phenomenality; it does not, by itself, falsify every illusionist explanation of the same data.
 
 ## The Function He Couldn't Find
 
 Dennett famously challenged proponents of qualia to explain why consciousness exists at all. Everything we attribute to subjective experience — attention, learning, decision-making, memory consolidation — can, he claimed, in principle be handled by unconscious machinery. He looked for the function of consciousness in the Controller and, unsurprisingly, found none.
 
-The correct place to look is the Modeler-schema. The visual world arrives in discontinuous fragments. Saccades temporarily obliterate input several times a second, yet we experience a continuous, stable scene. Maintaining that stability is not free. It requires a continuous representational substrate, used explicitly for comparison across time, to detect mismatches between pre- and post-saccadic content and to drive bottom-up refinement of the Modeler's assumptions about the world.
+MST directs the search to the Modeler-schema. The visual world is sampled across discontinuities, while we experience a comparatively stable scene. Maintaining perceptual constancy recruits multiple mechanisms. MST's distinctive proposal is that a retained comparison format helps detect mismatches between pre- and post-saccadic content and drive bottom-up refinement of the Modeler's assumptions about the world.
 
-That substrate is **qualia**: an analog, high-dimensional experiential field on which the Modeler-schema performs its coherence operations. It differs in kind from the discrete, symbolic tokens the Controller traffics in; where the Controller handles words and propositions, the Modeler-schema operates over structured experiential patterns. Qualia, on this view, are not decorative and not epiphenomenal. They are the medium in which the work of representational stabilization and error correction gets done. Without a continuous experiential substrate, the system cannot maintain a stable, detailed world model across the violent discontinuities of eye movements and other transient gaps in input.
+The theory identifies that substrate with **qualia**: an analog-like, high-dimensional field on which the Modeler-schema performs coherence operations. It contrasts this proposed format with the more discrete, symbolic tokens assigned to the Controller. On this view, qualia are not decorative; they are the medium of representational stabilization and error correction. The functional need for comparison is plausible. The further claim that the comparison format is experiential, and that no nonphenomenal architecture could perform equivalent work, remains the identity claim to defend.
 
-Dennett failed to find a function for consciousness because he searched in the subsystem that merely consumes and reports the world model, rather than in the subsystem that builds and repairs it.
+MST's diagnosis is therefore that Dennett searched for a function in the reporting role while the candidate function belongs to the role that builds and repairs the world model. Whether that candidate function is consciousness rather than a correlate of it remains open.
 
 ## The Self He Got Right
 
@@ -73,6 +73,6 @@ Holding the distinction clearly yields real dividends. Responsibility becomes fo
 
 Dennett was right to demolish the false picture of an inner spectator. There is no little person in the head watching an inner movie. MST proposes, however, a mechanistic experiencer: a cybernetic regulator that maintains representational coherence through comparison states identified by the theory with qualia. It is not a spectator but a candidate comparator. Its regulatory function can be investigated separately from the contested phenomenal identity.
 
-Dennett's multiple drafts, his narratives, his center of narrative gravity — these remain intact. The Controller still stitches stories from partial data; the autobiographical self is still a pragmatic construction worth keeping. What changes is the layer beneath: those drafts emerge from a system that experiences. The Controller narrates *what* happened in the model; it does not instantiate *how* experience is implemented.
+Dennett's multiple drafts, his narratives, his center of narrative gravity — these remain intact. In MST, the Controller stitches stories from partial data; the autobiographical self remains a pragmatic construction worth keeping. What changes is the proposed layer beneath: those drafts may emerge from a process whose comparison states the theory identifies with experience. The Controller narrates *what* happened in the model; MST assigns the candidate implementation of experience elsewhere.
 
 The architectural claim is now clear: the subsystem that reports need not be identical to the subsystem MST assigns experience. The proposed experiencer is mechanistic and functionally motivated; whether it is phenomenally sufficient remains open. The claim that a self-model can genuinely be a subject, along with the objections it attracts, is where the argument goes next, in [Mirrors of the Mind](09-mirrors-of-the-mind.md).

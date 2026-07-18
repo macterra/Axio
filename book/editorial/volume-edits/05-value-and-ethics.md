@@ -58,6 +58,10 @@ Chapter 1 owns the rejection of valuer-independent value; Chapter 2 owns agent-b
 
 The pass preserves the book's direct, combative voice while removing false numerical precision, universal convergence language, and claims that physical vocabulary settles moral classification. Polemical passages remain where their target is a stated premise rather than a caricature or a substitute for institutional analysis.
 
+## Phase 5 continuity update
+
+The standing argument now assigns different work to two axes: sentience can ground patienthood and welfare concern, while sapient authorship grounds the framework's stronger sovereign protections. Sapientism no longer treats substrate-neutrality as automatic machine coronation or current animal uncertainty as proof of absence. Sapient Agency Realism keeps reciprocal authorship as its explicit normative premise without claiming that value, suffering, or moral concern begin only at the sovereignty threshold.
+
 ## Validation checklist
 
 - Build the complete book and inspect the grouped Volume 5 table of contents.

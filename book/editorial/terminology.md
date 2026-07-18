@@ -205,11 +205,11 @@ An integrated modeling process that represents a world, its own position within 
 
 ### Consciousness
 
-Phenomenal consciousness is the condition in which there is something it is like to be a system. The Agency-Model Theory proposes that this is identical to a world-model that includes and recursively updates a transparent model of the modeling system; that identity is not part of the neutral definition.
+Phenomenal consciousness is the condition in which there is something it is like to be a system. The Agency-Model Theory proposes that this is identical to transparent access within an integrated, recursively updated self–world model; the Modeler-Schema Theory assigns a particular comparison process as its candidate locus. Neither identity is part of the neutral definition.
 
 **Canonical home:** Volume 3, Chapter 7.
 
-**Calibration:** Distinguish the functional architecture and its testable correlates from the claimed identity with phenomenality. Evidence for access, report, integration, or self-modeling does not by itself establish that the identity holds.
+**Calibration:** Distinguish the functional architecture and its testable correlates from the claimed identity with phenomenality. Evidence for access, report, integration, recurrence, self-modeling, or perceptual constancy can update a theory-relative Credence; none establishes experience by itself. The reporting role need not be the experiencing role, but their separation is also a theoretical claim rather than an observed homunculus split.
 
 ### Awareness
 
@@ -219,9 +219,19 @@ Availability of represented content to the system's modeling and control process
 
 ### Sentience
 
-The capacity for valenced experience: states that are experientially better or worse for the subject undergoing them.
+The capacity for valenced phenomenal experience: states can feel better or worse for the subject undergoing them. Sentience is narrower than phenomenal consciousness in this vocabulary because neutral phenomenal content need not be valenced.
 
 **Canonical homes:** Volume 3, Chapters 11–13.
+
+**Contrast:** Nociception, reinforcement signals, objective functions, error correction, attraction, and avoidance are forms of functional regulation. They become evidence of sentience only through an additional account connecting the organization to felt valence. Sentience can ground welfare concern without establishing reflective authorship or sovereignty.
+
+### Suffering
+
+The proposed experience of negatively valenced divergence between a subject's represented condition and a preferred condition. Severity can depend on intensity, scope, and persistence. Harm is a functional degradation and can occur without suffering; suffering can occur through a false model without the same functional degradation.
+
+**Canonical home:** Volume 3, Chapter 12.
+
+**Calibration:** This is the book's candidate analysis, not an accepted scalar law. Third-person evidence supports a Credence about suffering; it does not provide direct access to another subject's experience.
 
 ### Sapience
 
@@ -229,7 +239,9 @@ The capacity for reflective, self-authored valuation and deliberation sufficient
 
 **Canonical homes:** Volume 3, Chapter 11; Volume 5, Chapter 13.
 
-**Operational evidence:** Language is neither necessary nor sufficient. Look for temporal self-modeling, counterfactual reasoning, reflective endorsement, revision of ends, and the sovereignty conditions developed in Volumes 4–5.
+**Operational evidence:** Language is neither necessary nor sufficient. Look for temporal self-modeling, persistent policy ownership, counterfactual reasoning, reflective endorsement, revision of ends for reasons, and the sovereignty conditions developed in Volumes 4–5.
+
+**Contrast:** Sapience and sentience are separate axes. Functional self-modeling is not phenomenal self-awareness. The book does not define sentience as necessary for sapience, while leaving open whether genuine self-authored valuation can in fact exist without experience. Sentience bears on patienthood and welfare; sapience bears on authorship and sovereign standing.
 
 ### Intelligence
 
@@ -340,6 +352,14 @@ The author's explicitly chosen, revisable value framework centered on life, inte
 **Canonical home:** Volume 5, Chapter 6.
 
 **Calibration:** A value commitment, not a theorem or universal convergence claim.
+
+### Moral standing
+
+The strength and kind of protection warranted for a subject or agent under the book's stated value commitments and current evidence. Standing is graded and can arise through present sentience or agency, developmental and authorization lineage, residual continuity, and credible uncertainty.
+
+**Canonical homes:** Volume 3, Chapters 12–14; Volume 5, Chapters 13 and 26.
+
+**Contrast:** Sentience can support patienthood and welfare protections; sapient authorship can support sovereign rights against coercion, capture, and erasure. An operational jurisdiction threshold does not prove a metaphysical or cognitive discontinuity, and uncertainty on one axis must not be silently transferred to the other.
 
 ### Coercion
 
