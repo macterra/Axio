@@ -24,6 +24,8 @@ The pass retains all 20 chapters and the double envoi, exposes the four-part arc
 
 The value and conditional-objectivity pass preserves terminal values as first-person commitments while separating them from the descriptive facts that constrain their consequences. Conditionalism supplies a discipline of exposed interpretive conditions; it does not by itself turn truth, value, and meaning into one semantic category. Chosen commitments remain corrigible through evidence, consistency, other commitments, and encounters with other agents without acquiring an agent-independent foundation.
 
+The patterns reconciliation carries Volume 8's controls into Chapter 15. Religion is a heterogeneous bundle whose persistence may reflect doctrine, family transmission, community, institutions, coercion, practical function, and chance. Meaning-production is one proposed function, not something persistence proves religions were selected for; the Church of Virus remains a disclosed prototype rather than a self-validating memeplex.
+
 ## Visible structure
 
 1. Sacredness Without the Supernatural

@@ -6,6 +6,10 @@ Status: **In author review**
 
 The pass retains all 27 chapters, makes the five-part structure visible, and reduces the volume from roughly 67,400 to 63,700 words. The applied sequence now begins with a control case in which a historical claim survives scrutiny. Cultural selection, institutional capture, and asymmetry are presented as models and heuristics with explicit evidentiary limits rather than as literal group agency or motive-reading devices.
 
+## Phase 5 continuity update
+
+The patterns reconciliation makes Chapter 3 canonical for cultural pattern types, tokens, lineage, selection, and fitness. Chapter 2's lattice is explicitly a toy model rather than a social ontology. Chapters 4–7 preserve exemplars, egregores, curved landscapes, black holes, and pathogens as controlled metaphors while naming their causal mechanisms and evidentiary limits. People and independently qualified organizations remain the loci of agency and responsibility.
+
 ## Principal decisions
 
 - Keep people as the choosing and responsible agents. Pattern language compresses causal loops of copying, reward, enforcement, and persistence; egregore and organism language is explicitly analogical.

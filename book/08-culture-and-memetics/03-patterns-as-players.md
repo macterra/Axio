@@ -1,6 +1,6 @@
 ---
 title: 'Patterns as Players'
-subtitle: 'The real units of selection'
+subtitle: 'A model of cultural persistence'
 status: review
 sources:
   - 180199129.the-metagame-of-patterns
@@ -22,21 +22,21 @@ This is the claim that anchors everything else in this volume, so I should say p
 
 ## What a Pattern Is
 
-> A pattern is any coherent configuration of information that remains stable enough to exert influence.
+> A pattern is a coherent informational or physical configuration that can be re-identified at a stated grain and that is maintained, copied, or causally influential across the comparison being made.
 
-Every word is load-bearing. *Information*: patterns are not made of any particular stuff — the same procedure can live in a binder, a database, and the habits of a night shift. *Configuration*: a pattern is a structure, an arrangement of parts, not a single fact or preference. *Coherent*: the parts hang together well enough that the whole is recognizable — copyable, invocable, enforceable — as one thing. *Stable enough to exert influence*: the structure persists long enough to shape what happens around it. A configuration that dissolves before it changes anything is noise, not a pattern.
+Every clause is load-bearing. *Informational or physical*: the same procedure may be implemented in a binder, a database, and the habits of a night shift, but it exists only through particular carriers and performances. *Configuration*: a pattern is an arrangement of parts, not a free-floating substance. *At a stated grain*: whether two performances count as instances of one pattern depends on the features and tolerable transformations chosen for the analysis. *Maintained, copied, or causally influential*: resemblance alone does not establish a lineage. A claim about descent also needs a transmission path or other causal continuity.
 
-Patterns can be behavioral (habits, routines), cognitive (beliefs, frames), institutional (procedures, norms), cultural (rituals, symbols), technological (architectures, protocols), or economic (pricing heuristics, growth dynamics). A morning routine is a pattern; so is the common law. Scale does not define them; coherence does. A pattern exists as long as it stays recognizable. When it dissolves into noise, it dies.
+Patterns can be behavioral (habits, routines), cognitive (beliefs, frames), institutional (procedures, norms), cultural (rituals, symbols), technological (architectures, protocols), or economic (pricing heuristics, growth dynamics). A morning routine is a pattern; so is the common law. In each case the analyst owes an identity criterion: which differences are variants of the pattern, which mark a successor, and which end the comparison. Pattern *types* are equivalence classes under those criteria; pattern *tokens* are their particular implementations. The type is useful abstraction, not an additional object acting behind its tokens.
 
-The definition is deliberately broad, and the breadth is the point: it lets one theory cover what would otherwise need six. The [formal model of the previous chapter](02-schemas-and-groups.md) — cultural schemas as sets of beliefs, groups as the agents whose belief systems contain them — is the special case of this definition where the configuration is a belief-set and the influence runs through the agents who hold it. I presented the special case first because it is easier to hold in the hand: schemas have crisp membership conditions and clean algebra. But belief-sets are only one region of pattern-space. The three-signature form is not a belief; nobody believes anything about it except that it must be filled out. It is a pattern all the same, and it is selected all the same.
+The definition is deliberately broad, but it does not make every pattern a unit of selection. The [model of the previous chapter](02-schemas-and-groups.md) is a special case in which an analyst specifies a belief-set and a threshold for instantiation. The three-signature form is not a belief; it is a pattern maintained through documents, training, enforcement, and compliant action. Whether either case supports a *selection* explanation is a further question.
 
 ## Why Patterns Win or Lose
 
-A pattern persists by satisfying two demands. It must maintain internal coherence — remain copyable, recognizable, one thing rather than a smear of variants. And it must fit its incentive environment — the surrounding structure of rewards and penalties must, on net, reinforce the behavior that reproduces it.
+A cultural selection account must identify variants, a transmission or retention mechanism, differential outcomes, an environment, and a time horizon. Internal coherence and incentive fit often matter, but so do copying fidelity, teaching and media channels, institutional power, resource constraints, network structure, deliberate revision, and chance. Where those mechanisms are absent, “selection” is a suggestive analogy rather than an explanation.
 
-Notice what is absent from that list. Incentives do not select for goodness, truth, or virtue. They select for patterns that match the surrounding conditions. Patterns that spread easily, resist corruption, exploit existing incentives, and integrate smoothly into institutions gain advantage. Patterns that require constant vigilance to maintain, impose high coherence costs on their hosts, or cut against dominant incentives fade — however wise, however true, however humane. The environment does not care whether a pattern is wise or destructive. It cares whether the pattern survives.
+Selection does not by itself select for goodness, truth, or virtue. Under a specified environment and horizon, variants that people copy, reward, enforce, or preserve more effectively gain relative representation. Accuracy can matter greatly where error has visible costs and correction works; resonance, loyalty, coercion, or luck can dominate elsewhere. “Fitness” names that local propagation or persistence outcome. It is not an intrinsic property of an idea, an objective represented by the pattern, or a verdict on its worth.
 
-This is why appeals to intention explain so little. A false idea that flatters its carriers will outcompete a true one that burdens them, in any environment that rewards flattery — and no amount of sincerity among the carriers changes the arithmetic. If you want to know which patterns will dominate a system, do not ask what its people value. Ask what its incentives reinforce.
+This is why intention alone often explains too little. A flattering false idea can outcompete a burdensome true one in an environment that rewards flattery; a truth can dominate where prediction, audit, or material consequence rewards accuracy. To explain which variant gained ground, ask what people valued, what institutions enforced, what channels transmitted, what alternatives were available, and what the relevant filters rewarded.
 
 ## Patterns Outlive Their Hosts
 
@@ -48,15 +48,15 @@ This qualifies the intuitive picture of agency: **we operate through inherited p
 
 ## The Pattern Economy
 
-Patterns do not persist in isolation. They exist within a competitive ecology — a pattern economy — where they interact, mutate, conflict, and propagate. The economy has its own currencies. Stability is currency. Replication is survival. Adaptability is fitness. Coherence is integrity. Reach is power.
+Patterns do not persist in isolation. They can be modeled within a competitive ecology — a pattern economy — where implementations interact, change, conflict, and propagate. Its “currencies” are metaphors for measurable dimensions: stability, copying rate, adaptability, coherence, and reach. The exchange rates vary by mechanism and horizon.
 
-Some patterns are self-reinforcing: each execution strengthens the conditions for the next, the way a credential requirement entrenches itself by populating hiring committees with the credentialed. Others decay unless actively maintained, the way a norm of rigorous peer review survives only as long as someone pays its costs. High-fitness patterns commandeer institutions, bending budgets, procedures, and careers into their own reproductive machinery. Low-fitness patterns lose influence and fade, however fondly their last carriers remember them.
+Some patterns are self-reinforcing: each execution strengthens the conditions for the next, the way a credential requirement entrenches itself by populating hiring committees with the credentialed. Others decay unless actively maintained, the way a norm of rigorous peer review survives only as long as someone pays its costs. A high-propagation pattern may be embedded in budgets, procedures, and careers; that result is produced by decisions, enforcement, and path dependence, not by the pattern commandeering an institution as an agent would.
 
 This ecology need not track any one person's preference. Its aggregate result reflects what people and institutions repeatedly reward, copy, or enforce; “performance” here means persistence, not virtue.
 
 ## Incentives as Pattern Filters
 
-What sets the exchange rates in the pattern economy? Incentives. I have argued [elsewhere](../06-markets-and-money/15-the-metagame-of-incentives.md) that incentives, not rules, are what actually drive behavior in every game worth analyzing. Here the same machinery appears one level up: incentives do not merely shape what individuals do — they filter which patterns survive.
+What helps set the exchange rates in the pattern economy? Incentives. I have argued [elsewhere](../06-markets-and-money/15-the-metagame-of-incentives.md) that formal rules and effective incentives can diverge. Here the same machinery appears one level up: incentives shape what individuals do and thereby filter which patterns are retained. They are one family of filters, alongside deliberate judgment, transmission constraints, law, material limits, and stochastic drift.
 
 Scientific prestige rewards novelty rather than accuracy, so novelty-generating patterns dominate scientific discourse, and replication — true, dull, essential — is left to volunteers. Media ecosystems reward attention, so attention-maximizing patterns drive information flows, and the measured take loses to the incendiary one on every metric a platform can see. Politics rewards loyalty, so loyalty-signaling patterns outperform competence, and the skill of visibly belonging crowds out the skill of governing. Markets reward growth, so growth-seeking patterns displace sustainable ones wherever the horizon of accountability is shorter than the horizon of consequence.
 
@@ -76,9 +76,9 @@ Drift explains mission drift. Lock explains stagnation. Collapse explains implos
 
 ## A Note on Attractors
 
-One more piece of vocabulary needs fixing here, because this volume will use the word "attractor" at three different scales, and the reader deserves notice that these are three views of one phenomenon rather than three coincidentally shared metaphors. An attractor is a region of pattern-space that pulls trajectories toward itself: configurations near it tend to evolve into it, and configurations inside it tend to stay.
+One more piece of vocabulary needs fixing here, because this volume will use the word “attractor” at three different scales. In a specified dynamical model, an attractor is a state or region toward which nearby trajectories tend and within which they remain. That claim requires a state space, dynamics, and basin. Elsewhere in this volume, *attractor* is an analogy for a recurrent or stabilizing influence; it must not borrow mathematical necessity from the technical term.
 
-At the scale of individual behavior, an exemplar is an attractor — a coherent pattern of conduct that pulls imitation toward itself, which is [the next chapter's subject](04-exemplars-and-the-axionic-criterion.md). At the scale of whole belief systems, an ideology can curve the cultural fitness landscape around itself until escape becomes nearly impossible — the black-hole attractor of [the geometry of culture](06-the-geometry-of-culture.md). And at the scale of civilizations, certain patterns function as perverse Schelling points, recurrently re-forming across centuries because they solve a coordination problem no one will admit to having — the subject of [the volume's oldest case](26-the-oldest-attractor.md). Behavioral, ideological, civilizational: the scales differ, the mathematics does not. When you meet the word again, this is what it means.
+At the scale of individual behavior, an exemplar can orient imitation, which is [the next chapter's subject](04-exemplars-and-the-axionic-criterion.md). At the scale of belief systems, an ideology can make nearby revisions costly — the black-hole metaphor of [the geometry of culture](06-the-geometry-of-culture.md). At the scale of civilizations, some arrangements recur as coordination points — the subject of [the volume's oldest case](26-the-oldest-attractor.md). These cases may share feedback structures, but they do not thereby share one equation.
 
 ## Choosing the Patterns You Serve
 
@@ -88,4 +88,4 @@ What belongs here is the human consequence. Most action is patterned. You instan
 
 That capacity is only as good as the test it applies, and "does this pattern feel right?" is no test at all — feeling right is precisely what successful patterns install in their hosts. The filter has to be built deliberately, and building it is the next chapter's work: the [Axionic Criterion](04-exemplars-and-the-axionic-criterion.md), a standard for which patterns deserve propagation that does not simply reward the patterns best at seeming to deserve it.
 
-Understanding patterns reveals the architecture beneath behavior, institutions, and culture — why systems drift while their people stand still, why incentives beat intentions, why the same dramas restage themselves with fresh casts. The world is not made of things acting in isolation. It is made of patterns competing for existence across time, and you are both the arena and, if you choose to be, a player.
+Understanding patterns reveals architecture beneath behavior, institutions, and culture — why systems drift while personnel change, why intentions can lose to incentives, and why similar dramas restage themselves with fresh casts. Pattern-level explanation and human agency are complements: the first identifies recurring causal organization; the second locates interpretation, choice, intervention, and responsibility.

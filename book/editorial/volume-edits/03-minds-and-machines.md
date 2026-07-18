@@ -64,6 +64,8 @@ The canonical mental-category definitions live in Chapters 2, 4, 7, 11, 15, and 
 
 The consciousness, sentience, and sapience pass fixes the volume's three axes. Phenomenal consciousness is the neutral “something it is like” category; sentience is the capacity for valenced experience; sapience is reflective authorship. Chapters 7–10 now keep the functional architecture separate from the phenomenal identity, Chapter 12 separates felt divergence from non-sentient error correction, and Chapter 13 presents three theory-dependent evidentiary windows rather than a scalar metric. Weak agency evidence no longer proves absent sentience, and strong cognition no longer proves either experience or sovereignty.
 
+The patterns reconciliation aligns Chapter 5's foresight account with generate–evaluate–retain and reserves cultural selection for transmitted variants with differential retention. The Agency Criterion remains the gate for collective or institutional agency: recurrent aggregate outcomes alone do not supply ownership, choice, or responsibility.
+
 ## Validation checklist
 
 - Build the complete book and inspect the grouped Volume 3 table of contents and Chapter 23 hinge.

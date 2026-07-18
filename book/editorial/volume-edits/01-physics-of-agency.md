@@ -57,6 +57,8 @@ Repeated reset paragraphs were compressed where they obscured the argument. Stro
 
 The consciousness reconciliation now makes the Chaos ascent stop at recursive self-modeling as a candidate functional bridge. Coherence filters, constructors, recursion, perceptual modeling, and felt time no longer establish phenomenality before Volume 3 states the Modeler-Schema and Agency-Model identity claims. The open consciousness question is preserved as an explicit bridge rather than embedded in the emergence ladder's nouns.
 
+The patterns reconciliation preserves the Pattern Identifier and dynamical-coherence accounts as canonical identity controls. Chapter 18 now describes within-mind creativity as generate–evaluate–retain; literal selection requires a population, transmission or inheritance, and differential retention. Quantum branching is neither the characteristic source of creative novelty nor a selection mechanism by itself.
+
 ## Validation checklist
 
 - Build the complete book and inspect the grouped Volume 1 table of contents.
