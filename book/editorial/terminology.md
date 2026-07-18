@@ -345,11 +345,25 @@ An agent-relative ordering of possibilities disclosed imperfectly through choice
 
 **Canonical homes:** Volume 5, Chapters 1 and 4.
 
+**Constraint:** Agent-relative does not mean arbitrary, whimsical, incorrigible, or immune to interpersonal criticism. Facts can constrain means, outcomes, and the consistency of an ordering without supplying its terminal normative premise.
+
 ### Agent-binding
 
-The practice of binding an evaluative claim to the agent or class of agents, the model of the act and its consequences, and the commitments or rules that supply its standard, making the claim's conditional structure explicit and criticizable.
+The practice of binding an evaluative claim to an agent or class, normative standard, factual model of the act and consequences, scope, baseline, priority or conflict rules, evidential assumptions, and relevant horizon, making its conditional structure explicit and criticizable.
 
 **Canonical home:** Volume 5, Chapter 2.
+
+**Layering:** **Attribution** is the empirical question whether an agent actually holds or endorses a commitment. **Application** asks what verdict follows from a stated commitment and the remaining bound inputs. Either can fail without the other failing.
+
+**Constraint:** Binding repairs under-specification. It does not prove actual endorsement, premise truth, coherence, completeness, motivation, worthiness, authority over non-adopters, or legitimate enforceability.
+
+### Conditional objectivity
+
+Public assessability and repeatability of a conditional application once its normative premise, factual model, scope, baseline, evidence, and inference or conflict rules are fixed.
+
+**Canonical homes:** Volume 5, Chapters 2 and 26.
+
+**Constraint:** This is a stipulated procedural sense of *objectivity*. It does not make a normative premise agent-independent, turn a normative conclusion into an empirical proposition, guarantee agreement, or establish authority, motivation, and enforcement. A framework may apply a declared rule to a non-adopter without thereby proving unconditional authority over that person.
 
 ### Phosphorism
 
@@ -423,11 +437,11 @@ The agency-centered framework that adds an explicit chosen commitment to protect
 
 ### Sapient Agency Realism
 
-The position that, given sapient agents and their constitutive conditions, facts about what preserves or destroys their agency are conditionally objective within that domain.
+The stipulated position that joins an explicit commitment to reciprocal standing for sapient authorship with specified agents, descriptive models, baselines, evidence, horizons, and conflict rules, making resulting verdicts publicly assessable within that domain.
 
 **Canonical home:** Volume 5, Chapter 26.
 
-**Reconciliation required:** Explain why this does not restore the unconditional objective value rejected at the beginning of Volume 5.
+**Calibration:** *Conditional constructivism* is an acknowledged alternative label. Agency structure constrains application but does not generate the protection premise. Universal application within the declared domain is distinct from universal adoption or agent-independent authority; institutional enforcement requires additional legitimacy and procedural premises.
 
 ### Innocent
 

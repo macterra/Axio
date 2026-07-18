@@ -64,6 +64,8 @@ The pass preserves the book's direct, combative voice while removing false numer
 
 The standing argument now assigns different work to two axes: sentience can ground patienthood and welfare concern, while sapient authorship grounds the framework's stronger sovereign protections. Sapientism no longer treats substrate-neutrality as automatic machine coronation or current animal uncertainty as proof of absence. Sapient Agency Realism keeps reciprocal authorship as its explicit normative premise without claiming that value, suffering, or moral concern begin only at the sovereignty threshold.
 
+The value and conditional-objectivity pass now separates empirical attribution from normative application. Agent-binding specifies the standard, agent or class, act model, scope, baseline, evidence, horizon, and conflict rules; it does not prove endorsement, authority, motivation, or enforceability. “Conditional objectivity” is reserved for public assessability under fixed inputs. Sapient Agency Realism may apply its reciprocal-authorship premise to non-adopters within its declared domain, but that coverage does not convert the chosen premise into agent-independent value or legitimate coercive enforcement by itself.
+
 ## Validation checklist
 
 - Build the complete book and inspect the grouped Volume 5 table of contents.
