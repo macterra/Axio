@@ -30,7 +30,7 @@ A chapter is a *rework*, not a compilation: merge the source posts into one cont
 - Links to blog posts (`/posts/<id>.html`) only for supplementary material not merged into any chapter. Links to papers (`/papers/<name>.html`) for formal treatments.
 - Math: inline `$...$`, display `$$...$$` (MathJax). Keep math only where it does real work.
 - Terminology: **Measure** (objective branch weight) and **Credence** (subjective probability) are capitalized terms of art. QBU = Quantum Branching Universe, spelled out at first use in each chapter with a cross-link to its home chapter or volume.
-- Target length 1,200–3,000 words. Short and complete beats long and padded.
+- Length: whatever the argument and evidence require, and no more. Short and complete beats long and padded; there is no numeric target or ceiling.
 
 ## What not to do
 
