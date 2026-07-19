@@ -51,6 +51,10 @@ The harm, coercion, consent, and force pass preserves the Grey Zone while correc
 
 The rights sequence now distinguishes moral protection, legal recognition, practical enforcement, and legitimate authority. A right can be valid but insecure; enforcement can be effective but unjust. The Grey Zone's evidence, jurisdiction, necessity, proportionality, minimally harmful means, procedure, accountability, and review requirements therefore apply after classification. The incitement chapter retains its calibrated expression/preparation/operational-participation boundary while correcting the claim that coercive intent was not an element of coercion.
 
+## Phase 7 compression update
+
+The first continuous-reading cluster assigns Chapters 1–7 one job each: premise, APP gate, extraction dimension, funding mechanism, conditional legitimacy, reciprocal rights, and rights collisions. Chapters 1 and 5 remained unchanged. Chapters 2–4 now inherit rather than restate the coercion and Grey Zone machinery; Chapter 6 hands provision claims to Chapter 7 instead of arguing them twice. The sequence fell from 17,831 to 12,430 body words while retaining the APP/net-agency composition, taxation/slavery non-equivalence, VFO/EFO/RFO taxonomy, title and capacity complications, Grey Zone procedure, reciprocity anti-evasion rule, rights profiles, provision-duty bridges, negative-rights collisions, and exclusion qualifications. The reduction reflects concentrated repetition in this cluster and does not set a target for later work.
+
 ## Validation checklist
 
 - Regenerate the argument map and build the complete book.
