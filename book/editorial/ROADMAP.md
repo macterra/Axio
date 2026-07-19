@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 7 in progress — Volume 4 and Volume 7's legitimacy-and-rights cluster are complete; Volume 7 speech and law are next.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Further continuous-reading compression, framing, and final verification remain.
+Status: **Phase 7 in progress — Volume 4 and the first two Volume 7 clusters are complete; Volume 7 law and justice are next.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Further continuous-reading compression, framing, and final verification remain.
 
 ## Progress at a glance
 
@@ -14,7 +14,7 @@ Status: **Phase 7 in progress — Volume 4 and Volume 7's legitimacy-and-rights 
 | 4. Applied volumes | **Complete** | Volume 6–9 passes merged; manuscript remains in `review`. |
 | 5. Cross-volume reconciliation | **Complete** | All eight clusters reconciled; canonical definitions are stable enough to govern the glossary. |
 | 6. Reader-facing glossary | **Complete** | All 101 canonical terms publish with defining-chapter links and visible calibration. |
-| 7. Compression and prose | **In progress** | Volume 4 and the first Volume 7 cluster complete; Volume 7 speech and law next. |
+| 7. Compression and prose | **In progress** | Volume 4 and two Volume 7 clusters complete; Volume 7 law and justice next. |
 | 8. Framing material | **Pending** | Revise front matter and introductions after the manuscript stabilizes. |
 | 9. Verification and promotion | **Pending** | Promote `review` to `final` only after author approval and full validation. |
 
@@ -296,7 +296,7 @@ Build a published glossary only after cross-volume reconciliation has stabilized
 
 ## Phase 7 — Compression and prose
 
-Progress: **In progress.** The measured baseline and sequencing decision are recorded in `compression/00-inventory-and-sequencing.md`. Volume 4 is complete at 41,720 body words. Volume 7's Chapters 1–7 now form a premise → coercion gate → extraction → funding → Grey Zone → reciprocal rights → collisions relay; Chapters 1 and 5 remained unchanged. The result is recorded in `compression/02-volume-7-legitimacy-and-rights.md`.
+Progress: **In progress.** The measured baseline and sequencing decision are recorded in `compression/00-inventory-and-sequencing.md`. Volume 4 is complete at 41,720 body words. Volume 7's legitimacy-and-rights and speech clusters are complete, bringing the volume from 95,191 to 85,956 body words. Chapter 9's causal and legal boundary remained unchanged. The speech result is recorded in `compression/03-volume-7-speech.md`.
 
 Perform three distinct passes.
 
@@ -375,4 +375,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Continue Volume 7 with the speech-and-law sequence. Preserve Chapter 9's expression/preparation/operational-participation boundary and the comparative, time-indexed status of legal institutions and controversies. Remove repeated coercion primers by inheriting the completed legitimacy cluster rather than restating it.
+Continue Volume 7 with Chapters 12–16, the law, justice, and movement sequence. Preserve comparative institutional claims, explicit failure modes, epistemic burdens, restitution limits, and time-indexed legal descriptions. Inherit the completed Grey Zone and speech boundary rather than reopening their full arguments.
