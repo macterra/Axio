@@ -20,7 +20,7 @@ That explains why speech with no discernible merit remains protected. A Holocaus
 
 The censor's guardianship embeds the premise *you cannot be trusted to hear this*. It infantilizes the audience and purchases little: suppression relocates ideas underground, where challenge cannot reach them and prohibition lends glamour. Open refutation exposes error; suppression trains it to evade the censor.
 
-Mill's epistemic case needs no replacement, only a change of address. Silencing an opinion either loses a truth or weakens truth through lack of collision with error; unchallenged belief decays into dead dogma. Mill described a loss to mankind. The loss has owners: listeners whose access was cut and judgment preempted. The engine is social; the right that feeds it belongs to listeners one at a time.
+Mill's epistemic case, unlike [his harm principle](02-upgrading-liberty.md), needs no replacement, only a change of address. Silencing an opinion either loses a truth or weakens truth through lack of collision with error; unchallenged belief decays into dead dogma. Mill described a loss to mankind. The loss has owners: listeners whose access was cut and judgment preempted. The engine is social; the right that feeds it belongs to listeners one at a time.
 
 ## One Freedom, Not Two
 

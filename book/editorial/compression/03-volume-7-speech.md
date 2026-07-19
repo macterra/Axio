@@ -8,15 +8,15 @@ This pass covers Chapters 8–11, from the listener-centered case for free speec
 
 | Chapter | Baseline | After pass | Change |
 |---|---:|---:|---:|
-| 8. The Listener's Right | 2,425 | 1,145 | −1,280 |
+| 8. The Listener's Right | 2,425 | 1,149 | −1,276 |
 | 9. Where Speech Ends | 3,033 | 3,033 | — |
 | 10. The Censorship Machine | 2,672 | 1,271 | −1,401 |
 | 11. Civilizational Infrastructure | 2,919 | 1,745 | −1,174 |
-| **Cluster** | **11,049** | **7,194** | **−3,855 (34.9%)** |
+| **Cluster** | **11,049** | **7,198** | **−3,851 (34.9%)** |
 
 The reduction is an outcome of concentrated repetition, not a target. Chapters 8, 10, and 11 had each restated listener injury, harm inflation, and the causal ladder before reaching their distinct work. Chapter 9 already carried a calibrated, internally dependent progression and required no compression.
 
-Against the Phase 7 inventory baseline, Volume 7 has fallen from 95,191 to 85,952 body words, a reduction of 9,239 words (9.7%). Reviewer refinements to the first cluster are included in the current total.
+Against the Phase 7 inventory baseline, Volume 7 has fallen from 95,191 to 85,956 body words, a reduction of 9,235 words (9.7%). Reviewer refinements to the first cluster are included in the current total.
 
 ## Ownership after compression
 

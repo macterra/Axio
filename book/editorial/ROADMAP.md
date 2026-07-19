@@ -296,7 +296,7 @@ Build a published glossary only after cross-volume reconciliation has stabilized
 
 ## Phase 7 — Compression and prose
 
-Progress: **In progress.** The measured baseline and sequencing decision are recorded in `compression/00-inventory-and-sequencing.md`. Volume 4 is complete at 41,720 body words. Volume 7's legitimacy-and-rights and speech clusters are complete, bringing the volume from 95,191 to 85,952 body words. Chapter 9's causal and legal boundary remained unchanged. The speech result is recorded in `compression/03-volume-7-speech.md`.
+Progress: **In progress.** The measured baseline and sequencing decision are recorded in `compression/00-inventory-and-sequencing.md`. Volume 4 is complete at 41,720 body words. Volume 7's legitimacy-and-rights and speech clusters are complete, bringing the volume from 95,191 to 85,956 body words. Chapter 9's causal and legal boundary remained unchanged. The speech result is recorded in `compression/03-volume-7-speech.md`.
 
 Perform three distinct passes.
 
