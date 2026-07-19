@@ -4,41 +4,37 @@ Date: July 19, 2026
 
 ## Scope and result
 
-This pass covers Chapters 23–27, from the authoritarian default through centrism as a governance discipline. It preserves every chapter and published heading. The cluster now moves from diagnosis to construction without rebuilding the same fallibility, coercion, collective-agency, or factional-cycle premise in each chapter.
+This pass covers Chapters 23–27, from the authoritarian default through centrism as a governance discipline. It preserves every chapter, heading, and original cross-reference. Chapters 23 and 27 remain unchanged: Chapter 23's historical panorama and six-part psychological case establish the sequence's empirical premise, while Chapter 27 is the canonical synthesis and constructive answer.
 
 | Chapter | Baseline | After pass | Change |
 |---|---:|---:|---:|
-| 23. The Authoritarian Default | 2,486 | 791 | −1,695 |
-| 24. Why Liberalism Loses | 2,303 | 893 | −1,410 |
-| 25. Fictions of the Collective | 2,363 | 843 | −1,520 |
-| 26. Words That Lost Their Teeth | 2,292 | 883 | −1,409 |
-| 27. Centrism as a Discipline | 3,024 | 1,009 | −2,015 |
-| **Cluster** | **12,468** | **4,419** | **−8,049 (64.6%)** |
+| 23. The Authoritarian Default | 2,486 | 2,486 | — |
+| 24. Why Liberalism Loses | 2,303 | 1,519 | −784 |
+| 25. Fictions of the Collective | 2,363 | 1,354 | −1,009 |
+| 26. Words That Lost Their Teeth | 2,292 | 1,552 | −740 |
+| 27. Centrism as a Discipline | 3,024 | 3,024 | — |
+| **Cluster** | **12,468** | **9,935** | **−2,533 (20.3%)** |
 
-The unusually concentrated reduction is an observed result of five chapters repeatedly restating adjacent conclusions before reaching their own mechanism. The figure is not a target or threshold. Continuous rereading retained the full five-part relay, every original section, and each chapter's objections, qualifications, and constructive handoff.
+The figures describe the result and do not define a target. This pass combines two kinds of edit and records them honestly: Chapters 24–26 inherit adjacent premises rather than reintroducing them, and their own arguments receive in-place line compression where several sentences performed the same explanatory work. It does not claim that every removed sentence duplicated text elsewhere.
 
-Against the Phase 7 inventory baseline, Volume 7 has fallen from 95,191 to 66,084 body words, a reduction of 29,107 words (30.6%).
+Against the Phase 7 inventory baseline, Volume 7 has fallen from 95,191 to 71,600 body words, a reduction of 23,591 words (24.8%).
 
-## Ownership after compression
+## Claim-and-support ledger
 
-- **Chapter 23 owns the authoritarian default:** six psychological discounts on agency, the symmetric out-of-power/in-power cycle, principled interruption, and the authority/coercion/dogma axes.
-- **Chapter 24 owns liberalism's political handicaps:** spontaneous order, dispersed benefits, centralizing incentives, electoral discounting, fixed-pie and inequality intuitions, narrative weakness, advocacy constraints, the political triangle, permanent adolescence, and self-inflicted selection failures.
-- **Chapter 25 owns collective political fictions:** interests as model-dependent conjectures, nations as non-agent aggregates, the vanishing intersection of collective will, necessity rhetoric, epistemic catastrophe, and corrigible action under uncertainty.
-- **Chapter 26 owns semantic hygiene:** the three-socialisms taxonomy, the structural axis, its complementarity with the dose taxonomy, category leakage, Doyle's sufficient test, voluntary political identity, and the move beyond compressed axes.
-- **Chapter 27 owns constructive discipline:** politics as coordination rather than battlefield, society as ecology, voluntary versus coercive variance, Conditionalist governance, institutional scaffolding, metastable evil, selective decisiveness, principled officeholding, and survivability under uncertainty.
+- **Chapter 23 — unchanged.** The Sumer-to-politburo panorama supports independent convergence; six psychological mechanisms explain the default; the left/right cycle supplies a symmetric prediction; three axes distinguish authoritarian and liberal order; the order and rule-of-law objections remain; the handoff to Chapter 24 remains linked.
+- **Chapter 24 — compressed in place.** The Korea and Berlin comparisons remain as the evidence for the opening claim. All eight structural handicaps retain their mechanisms and concrete illustrations; the triangle table, each vertex's honest appeal, permanent-adolescence argument, crisis ratchet, candidate-selection critique, and closing challenge remain. Cuts remove repeated expansion inside those arguments, not their evidence.
+- **Chapter 25 — compressed in place.** The Deutsch quotation, two independent category errors, physical-constraint concession, historical-shorthand concession, Carroll formulation, scaling argument, abstract-value objection, defense and AI-safety applications, twentieth-century failure mechanism, science-and-medicine analogy, and corrigibility conclusion remain. Cuts consolidate repeated statements of the same two errors and their closing consequences.
+- **Chapter 26 — compressed in place.** The concrete Auschwitz/Gulag/Denmark opening, three regime descriptions, comparison table, structural and dose-taxonomy distinction, healthcare and fascism equivocations, Doyle quotation, sufficient-not-exhaustive qualification, fringe/mainstream distinction, both weaponization links, Goffman reference, LARPitarian maxim, and Admissible Region handoff remain. Cuts shorten repeated elaboration without removing the cases.
+- **Chapter 27 — unchanged.** All five synthesis links, the Conditionalism and Politics of Safety links, ecology model, variance distinction, institutional-scaffolding argument, metastable-evil objection, selective-decisiveness test, principled-actor requirement, and final protocol handoff remain intact.
 
-## Preservation checks
+## Cross-reference and style checks
 
-- Retain all six psychological forces and the claim that authoritarianism recruits willing followers as well as imposing leaders.
-- Keep the left/right factional cycle symmetric and preserve principled behavior as costly, rare, and necessary.
-- Retain all eight liberal handicaps, the three-vertex political triangle, the permanent-adolescence argument, and the criticism of identity-first or insider candidate selection.
-- Keep hard constraints distinct from interests, analytical national shorthand distinct from reification, and abstract-value agreement distinct from operational collective will.
-- Preserve defense and AI safety as applications of necessity rhetoric while handing the full cases to their owning chapters.
-- Keep National, International, and Liberal Socialism distinct, retain the structure/dose-taxonomy complement, and preserve the table.
-- State that Doyle's razor is sufficient rather than exhaustive; distinguish a violent fringe from its wider movement while applying the test symmetrically.
-- Retain the LARPitarian maxim and the transition from single-axis labels to the Admissible Region's multidimensional analysis.
-- Keep centrism distinct from demographic moderation or compromise, and retain decisive rupture against coercively stable institutions and irreversible risks.
-- Preserve all headings and links.
+- Preserve all 35 original Markdown cross-references across Chapters 23–27, including repeated links where the prose uses them for distinct local handoffs.
+- Keep Chapter 23's concrete historical panorama as the opening evidence rather than replacing it with a definition.
+- Keep Chapter 24's natural experiments in the opening paragraph.
+- Keep Chapter 26's two supporting post links attached to its forward reference.
+- Keep Chapter 27's linked synthesis opening and every link in its epistemic and risk sections.
+- Preserve every published heading and the direct, polemical voice.
 
 ## Next sequence
 

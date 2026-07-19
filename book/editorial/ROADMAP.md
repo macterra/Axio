@@ -296,7 +296,7 @@ Build a published glossary only after cross-volume reconciliation has stabilized
 
 ## Phase 7 — Compression and prose
 
-Progress: **In progress.** The measured baseline and sequencing decision are recorded in `compression/00-inventory-and-sequencing.md`. Volume 4 is complete at 41,720 body words. Volume 7's first five clusters are complete, bringing the volume from 95,191 to 66,084 body words. Chapters 9, 14, 21, and 22 remained unchanged as the canonical causal, epistemic, historical, and synthetic arguments in their clusters. The latest result is recorded in `compression/06-volume-7-political-pathologies.md`.
+Progress: **In progress.** The measured baseline and sequencing decision are recorded in `compression/00-inventory-and-sequencing.md`. Volume 4 is complete at 41,720 body words. Volume 7's first five clusters are complete, bringing the volume from 95,191 to 71,600 body words. Chapters 9, 14, 21, 22, 23, and 27 remained unchanged as canonical causal, epistemic, historical, synthetic, empirical, and constructive arguments in their clusters. The latest result is recorded in `compression/06-volume-7-political-pathologies.md`.
 
 Perform three distinct passes.
 
