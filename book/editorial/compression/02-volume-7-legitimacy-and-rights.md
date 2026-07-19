@@ -1,6 +1,6 @@
 # Volume 7 Legitimacy and Rights Compression
 
-Date: July 19, 2026
+Date: July 18, 2026
 
 ## Scope and result
 
@@ -10,12 +10,12 @@ This pass covers Chapters 1–7, from the individualist premise through the Grey
 |---|---:|---:|---:|
 | 1. The Individualist Premise | 1,935 | 1,935 | — |
 | 2. Upgrading Liberty | 2,664 | 1,673 | −991 |
-| 3. The Coercion Continuum | 2,639 | 1,421 | −1,218 |
+| 3. The Coercion Continuum | 2,639 | 1,438 | −1,201 |
 | 4. Extortion-Funded Organizations | 2,356 | 1,453 | −903 |
 | 5. The Grey Zone | 2,219 | 2,219 | — |
 | 6. Rights Are Forged — and Reciprocal | 3,609 | 1,966 | −1,643 |
 | 7. Needs, Conflicts, and Hard Cases | 2,409 | 1,763 | −646 |
-| **Cluster** | **17,831** | **12,430** | **−5,401 (30.3%)** |
+| **Cluster** | **17,831** | **12,447** | **−5,384 (30.2%)** |
 
 The reduction is an outcome of demonstrated repetition, not a target. Chapter 1 already states the premise without pre-arguing the political machinery. Chapter 5 is the volume's canonical position on legitimate coercion and remains intact. The other chapters had repeatedly restated the same definitions, disclaimers, and neighboring arguments.
 
