@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 7 in progress — Volume 4 and the first four Volume 7 clusters are complete; Volume 7 political pathologies and epistemic discipline are next.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Further continuous-reading compression, framing, and final verification remain.
+Status: **Phase 7 in progress — Volume 4 and the first five Volume 7 clusters are complete; Volume 7's conversion-of-coercion, anarchism, defense, and protocol sequence is next.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Further continuous-reading compression, framing, and final verification remain.
 
 ## Progress at a glance
 
@@ -14,7 +14,7 @@ Status: **Phase 7 in progress — Volume 4 and the first four Volume 7 clusters 
 | 4. Applied volumes | **Complete** | Volume 6–9 passes merged; manuscript remains in `review`. |
 | 5. Cross-volume reconciliation | **Complete** | All eight clusters reconciled; canonical definitions are stable enough to govern the glossary. |
 | 6. Reader-facing glossary | **Complete** | All 101 canonical terms publish with defining-chapter links and visible calibration. |
-| 7. Compression and prose | **In progress** | Volume 4 and four Volume 7 clusters complete; Volume 7 political pathologies and epistemic discipline next. |
+| 7. Compression and prose | **In progress** | Volume 4 and five Volume 7 clusters complete; Volume 7 coercion-to-protocol sequence next. |
 | 8. Framing material | **Pending** | Revise front matter and introductions after the manuscript stabilizes. |
 | 9. Verification and promotion | **Pending** | Promote `review` to `final` only after author approval and full validation. |
 
@@ -296,7 +296,7 @@ Build a published glossary only after cross-volume reconciliation has stabilized
 
 ## Phase 7 — Compression and prose
 
-Progress: **In progress.** The measured baseline and sequencing decision are recorded in `compression/00-inventory-and-sequencing.md`. Volume 4 is complete at 41,720 body words. Volume 7's legitimacy-and-rights, speech, law-and-justice, and equality-and-utopia clusters are complete, bringing the volume from 95,191 to 74,133 body words. Chapters 9, 14, 21, and 22 remained unchanged as the canonical causal, epistemic, historical, and synthetic arguments in their clusters. The latest result is recorded in `compression/05-volume-7-equality-and-utopia.md`.
+Progress: **In progress.** The measured baseline and sequencing decision are recorded in `compression/00-inventory-and-sequencing.md`. Volume 4 is complete at 41,720 body words. Volume 7's first five clusters are complete, bringing the volume from 95,191 to 71,600 body words. Chapters 9, 14, 21, 22, 23, and 27 remained unchanged as canonical causal, epistemic, historical, synthetic, empirical, and constructive arguments in their clusters. The latest result is recorded in `compression/06-volume-7-political-pathologies.md`.
 
 Perform three distinct passes.
 
@@ -375,4 +375,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Continue Volume 7 with Chapters 23–27, the political pathologies and epistemic discipline sequence. Preserve the distinct mechanisms of authoritarian coordination, liberalism's strategic asymmetry, collective fictions, semantic degradation, and centrism as an error-correcting discipline. Remove only premises, examples, or conclusions that continuous reading shows to be repeated.
+Continue Volume 7 with Chapters 28–32, the conversion-of-coercion, anarchism, defense, and protocol sequence. Preserve the distinction between politics and coordination, the Archist Axiom, anarchy as contested order, national defense as an unresolved hard case, and protocol proposals as experiments rather than solved replacements. Remove only premises, examples, or conclusions that continuous reading shows to be repeated.
