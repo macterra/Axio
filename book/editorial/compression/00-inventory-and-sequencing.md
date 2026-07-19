@@ -56,9 +56,9 @@ Twenty-two numbered chapters exceeded 3,000 body words at the baseline.
 
 ## Sequencing decision
 
-1. **Volume 4, Chapters 2–7: conceptual architecture.** Preserve six chapters and make the sequence inherit its results: alignment target → reflective-coherence problem → three kernel depths → stability theorem → semantic transport → commitments and conditional closure results.
-2. **Volume 4, Chapters 8–15: evidence and program record.** Compress repeated architecture primers while preserving the progression from verification through bounded testbeds to the construction/non-claim pair and research history.
-3. **Volume 7: continuous-reading pass.** Address the largest volume by mechanism-defined clusters, especially repeated political premises, without collapsing distinct institutional objections.
+1. **Complete — Volume 4, Chapters 2–7: conceptual architecture.** Preserve six chapters and make the sequence inherit its results: alignment target → reflective-coherence problem → three kernel depths → stability theorem → semantic transport → commitments and conditional closure results.
+2. **Complete — Volume 4, Chapters 8–15: evidence and program record.** The result is recorded in `01-volume-4-evidence-and-program.md`; repeated architecture and construction primers were compressed while the evidence registers remained distinct.
+3. **Next — Volume 7: continuous-reading pass.** Address the largest volume by mechanism-defined clusters, especially repeated political premises, without collapsing distinct institutional objections.
 4. **Remaining threshold chapters.** Review the isolated candidates in Volumes 1, 5, 6, and 8 in their local sequences; length alone does not mandate a cut.
 5. **Cross-volume and line pass.** Sweep canonical definitions, familiar examples, conclusions, and prose rhythm after local ownership is stable.
 
