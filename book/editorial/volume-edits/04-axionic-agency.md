@@ -77,6 +77,12 @@ The standing boundary now distinguishes sentience, demonstrated authorship, and 
 
 The harm and coercion continuity pass now treats this volume's agency-reduction language as one reflective-layer application rather than a competing definition. Welfare harm to sentient subjects remains visible, and coercion requires a deliberate credible conditional threat used to obtain compliance. The papers preserve earlier formulations but do not supersede Volume 5's canonical manuscript definitions.
 
+## Phase 7 compression update
+
+The opening architecture sequence now hands off one result at a time: Chapter 2 owns the alignment target and reflective authorship; Chapter 3 owns the semantic instability problem; Chapter 4 owns the three kernel depths; Chapter 5 owns the stability theorem; Chapter 6 owns semantic transport; and Chapter 7 owns the commitments and conditional closure results. Later chapters link backward instead of restarting the value-locking, undefined-future, or goal-semantics primers.
+
+The six-chapter cluster fell from 18,975 to 15,610 body words. Chapter 3 remained unchanged because its argument was already distinct. The cuts preserve the four-pillar ablation result, three kernel meanings, theorem assumptions and nonclaims, semantic-transport constraints, six closure routes, experimental links, and direct first-person voice. Chapter 7 now also states explicitly that its agency-reduction rule is a reflective-layer application and does not erase sentient welfare harm.
+
 ## Validation checklist
 
 - Build the complete book and inspect the grouped Volume 4 table of contents.
