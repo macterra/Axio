@@ -54,6 +54,6 @@ Agency already secures what was attractive in the phrase: that no one be barred 
 
 Equality was never what fairness tracked. Agency is: whether people can act on their values and reach futures they have reason to want. Poverty and coercion attack agency; a neighbor's fortune, by itself, does not.
 
-Ask of policy whether it expands what people can do and whether it works by consent or threat. [Borders and Movement](16-borders-and-movement.md) applied that standard to migrants and willing hosts; the next chapters apply it to redistribution, envy, socialist institutions, communism, and utopian closure.
+Ask of policy whether it expands what people can do and whether it works by consent or threat. [Borders and Movement](16-borders-and-movement.md) applied that standard to migrants and willing hosts; the next chapters apply it to [redistribution](18-the-corruption-of-compassion.md), [envy](19-against-envy.md), [socialist institutions](20-against-socialism.md), [communism](21-against-communism.md), and [utopian closure](22-against-utopia.md).
 
 The ambition grows at every step. The answer does not change: equality is not the measure of a just society. Agency is.
