@@ -101,6 +101,7 @@ Status labels:
 ### Volume 7
 
 - **Phase 4 decision:** Chapters 2–5 own the coercion-to-legitimacy sequence. The Agency Protection Principle supplies a necessary threshold; the Grey Zone supplies evidence, necessity, proportionality, reciprocity, containment, and review. Later labels do not decide legitimacy categorically.
+- **Phase 7 decision:** Chapters 1–7 now form one inheritance chain: individual moral unit → APP gate and comparator → extraction dimension → funding mechanism → provisional legitimacy → reciprocal rights → provision, collision, and exclusion cases. Chapters 1 and 5 remain unchanged. The surrounding chapters no longer repeat the Grey Zone or pre-argue Chapter 7, and the cluster fell from 17,831 to 12,447 body words. This unusually concentrated result is descriptive, not a quota for later clusters.
 - **Phase 4 decision:** Chapter 4 and Volume 6 own the funding seam. Voluntary payment is evidence of value; nonpayment is ambiguous under collective action, purchasing power, liquidity, and transaction costs.
 - **Phase 4 decision:** Chapter 9 owns the speech reconciliation. Preparatory propaganda remains an analytic category; only intentional operational participation in a specific credible harm process can qualify as delegated violence.
 - **Phase 4 decision:** Chapters 12–16 treat common law, juries, restitution, and borders as comparative institutions. No preferred mechanism is self-validating, and current legal controversies are attributed and time-indexed.
