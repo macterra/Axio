@@ -11,7 +11,7 @@ In September 2025, U.S. forces struck a Caribbean boat the administration allege
 
 The administration asserted an armed-conflict theory and defended the operation as lawful; critics disputed that any relevant armed conflict existed and argued for arrest and trial. Even under the law of armed conflict, persons *hors de combat*, including qualifying shipwrecked survivors, receive protection. The [UN High Commissioner for Human Rights concluded that the broader boat-strike campaign violated international human-rights law](https://www.ungeneva.org/en/news-media/news/2025/10/112362/us-strikes-caribbean-and-pacific-breach-international-law-says-un). That is an authoritative assessment, not a final adjudication of individual criminal liability.
 
-The strike triggered bipartisan scrutiny, document demands, hearings, and public legal analysis. As of an [April 2026 Senate Armed Services hearing](https://www.armed-services.senate.gov/imo/media/doc/full_transcript-04-28-2026.pdf), the operation and accounts from alleged survivors remained under congressional scrutiny. The question is whether oversight has timely evidence, independence, remedial power, and capacity to impose consequences on senior officials.
+The strike triggered bipartisan scrutiny, document demands, hearings, and public legal analysis. As of an [April 2026 Senate Armed Services hearing](https://www.armed-services.senate.gov/imo/media/doc/full_transcript-04-28-2026.pdf), the broader Operation Southern Spear remained under congressional scrutiny. The question is whether oversight has timely evidence, independence, remedial power, and capacity to impose consequences on senior officials.
 
 The civic mantra *no one is above the law* is an aspiration and design requirement, not a self-verifying description. **Law's practical force weakens when investigative independence, jurisdiction, evidence, and sanction cannot reach the actor.** Norms may shape legitimacy and later accountability; power affects whether they bite now.
 
@@ -25,7 +25,7 @@ The United States has unusual capacity to resist external sanction: a Security C
 
 The counterfactual exposes the structure. If a small state carried out the alleged conduct, condemnations, sanctions, or an international referral would be more likely. The conduct would be the same; the actor's power would alter the probable consequence.
 
-The global order can therefore resemble a gravity field that weakens with altitude. Small powers face constraints that hegemons may evade. That is not complete exemption, but a structural difference in exposure.
+**The global order treats law as a gravity field that weakens with altitude.** Small and medium powers orbit within it; hegemons drift beyond its pull. The possible constraint circuits named above do not erase that structural difference.
 
 ## What Law Actually Is
 
@@ -57,7 +57,7 @@ Elite-driven crises can also produce universal compliance regimes that bind hous
 
 Put the two halves of this chapter side by side and the finding states itself.
 
-**The less powerful tail often motivates rules; the powerful tail is better placed to escape them.** Ordinary offenders can become design cases for criminal law, while elite failures generate regulatory architectures whose architects and targets may dilute or evade enforcement. At the level of states, the gap can widen further.
+**The bottom tail generates the rules; the top tail escapes them.** Ordinary offenders become design cases for criminal law, while elite failures generate regulatory architectures whose architects and targets can dilute or evade enforcement. At the level of states, the gap widens further.
 
 The compliant middle may therefore pay twice: it bears universal restrictions designed around concentrated risks and absorbs harms from actors who can resist consequence.
 
@@ -65,7 +65,7 @@ The compliant middle may therefore pay twice: it bears universal restrictions de
 
 The Tail-Risk Principle explains pressure for universal rules; it does not justify a particular rule or enforcement design. Each still owes [the Grey Zone](05-the-grey-zone.md) a specified risk, proportionate evidence, minimally restrictive means, reversibility, and institutional containment. Drunk-driving rules may track a lethal risk to others; a permanent mandate defended only by its origin story may not. The burden remains on the coercer.
 
-The civic question is how much concentrated risk should set the rules for everyone, and at what cost in freedom, efficiency, and shared space. Answering it requires an explicit risk trade-off, not a slogan about the worst among us.
+The civic question is how much concentrated risk should set the rules for everyone, and at what cost in freedom, efficiency, and shared space. **Should we all be governed by the worst among us, or should we accept more risk to give the rest more room to breathe?**
 
 ## Constraint by Architecture
 

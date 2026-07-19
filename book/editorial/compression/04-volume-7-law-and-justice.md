@@ -8,16 +8,16 @@ This pass covers Chapters 12–16, from the functional classification of law thr
 
 | Chapter | Baseline | After pass | Change |
 |---|---:|---:|---:|
-| 12. Two Kinds of Law | 2,085 | 896 | −1,189 |
-| 13. Law and Power | 2,409 | 1,138 | −1,271 |
+| 12. Two Kinds of Law | 2,085 | 914 | −1,171 |
+| 13. Law and Power | 2,409 | 1,143 | −1,266 |
 | 14. The Epistemics of Guilt | 2,499 | 2,499 | — |
 | 15. Restitution, Not Retribution | 2,543 | 1,142 | −1,401 |
 | 16. Borders and Movement | 2,899 | 1,011 | −1,888 |
-| **Cluster** | **12,435** | **6,686** | **−5,749 (46.2%)** |
+| **Cluster** | **12,435** | **6,709** | **−5,726 (46.0%)** |
 
 The large reduction is an observed result of four chapters repeatedly rebuilding the Grey Zone, agency, coercion, and comparative-institutions framework before reaching their applications. It is not a target for this or later clusters. The unchanged Chapter 14 retains the sequence's detailed account of epistemic error and institutional comparison.
 
-Against the Phase 7 inventory baseline, Volume 7 has fallen from 95,191 to 80,207 body words, a reduction of 14,984 words (15.7%).
+Against the Phase 7 inventory baseline, Volume 7 has fallen from 95,191 to 80,230 body words, a reduction of 14,961 words (15.7%).
 
 ## Ownership after compression
 
