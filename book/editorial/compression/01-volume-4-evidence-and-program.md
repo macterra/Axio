@@ -18,7 +18,7 @@ This pass covers Chapters 8–15, the sequence from verification to the research
 | 15. The Program | 3,680 | 2,955 | −725 |
 | **Cluster** | **26,988** | **22,937** | **−4,051 (15.0%)** |
 
-Chapter 11 remains unchanged because its jurisdictional treatment of animals, developing humans, and artificial sovereigns is distinct. Chapters 9 and 10 remain above the 3,000-word review target because their provenance/lineage and pressure/viability progressions earn the remaining length.
+Chapter 11 remains unchanged because its jurisdictional treatment of animals, developing humans, and artificial sovereigns is distinct. Chapters 9 and 10 remain the longest chapters in the cluster because their provenance/lineage and pressure/viability progressions require the remaining length.
 
 Against the Phase 7 inventory baseline, Volume 4 fell from 49,132 to 41,720 body words, a reduction of 7,412 words (15.1%). The volume introduction and Chapter 1 were checked against the compressed sequence and retained unchanged.
 

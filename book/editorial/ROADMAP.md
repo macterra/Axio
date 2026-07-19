@@ -308,7 +308,7 @@ Merge, move, or remove chapters that make the same argumentative move.
 
 Cut repeated premises, enumerations, throat-clearing, and conclusions that merely restate the chapter.
 
-Review every chapter above the style guide's 3,000-word target, but retain longer chapters when their structure earns the length.
+Use chapter length only as descriptive context. Select compression work through continuous reading: repeated premises, definitions, examples, conclusions, pacing problems, and blurred chapter ownership. Retain any length that the argument and evidence require.
 
 ### 3. Line editing
 
