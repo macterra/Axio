@@ -29,7 +29,7 @@ Volume 7 is the largest continuous-reading burden. Volume 4 was selected first b
 
 1. **Complete — Volume 4, Chapters 2–7: conceptual architecture.** Preserve six chapters and make the sequence inherit its results: alignment target → reflective-coherence problem → three kernel depths → stability theorem → semantic transport → commitments and conditional closure results.
 2. **Complete — Volume 4, Chapters 8–15: evidence and program record.** The result is recorded in `01-volume-4-evidence-and-program.md`; repeated architecture and construction primers were compressed while the evidence registers remained distinct.
-3. **In progress — Volume 7: continuous-reading pass.** The first six clusters are recorded in `02-volume-7-legitimacy-and-rights.md` through `07-volume-7-coercion-and-protocol.md`; Chapters 33–35, the final analytical sequence, are next. Continue by argumentative mechanism without treating institutional proposals as solved.
+3. **In progress — Volume 7: continuous-reading pass.** All seven analytical clusters are recorded in `02-volume-7-legitimacy-and-rights.md` through `08-volume-7-final-analytical-sequence.md`; Chapter 36, the fictional coda, is next. Confirm that the story stress-tests the proposal without supplying evidence or closing its open institutional problems.
 4. **Remaining local sequences.** Review repetition and pacing in Volumes 1, 5, 6, and 8 within their local argumentative context; length alone does not mandate a cut.
 5. **Cross-volume and line pass.** Sweep canonical definitions, familiar examples, conclusions, and prose rhythm after local ownership is stable.
 
