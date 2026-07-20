@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 7 in progress — Volume 4 and all seven analytical Volume 7 clusters are complete; Volume 7's fictional coda is next.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Further continuous-reading compression, framing, and final verification remain.
+Status: **Phase 7 in progress — the Volume 4 and Volume 7 continuous-reading passes are complete; evidence-led selection among the remaining local sequences is next.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Further continuous-reading compression, framing, and final verification remain.
 
 ## Progress at a glance
 
@@ -14,7 +14,7 @@ Status: **Phase 7 in progress — Volume 4 and all seven analytical Volume 7 clu
 | 4. Applied volumes | **Complete** | Volume 6–9 passes merged; manuscript remains in `review`. |
 | 5. Cross-volume reconciliation | **Complete** | All eight clusters reconciled; canonical definitions are stable enough to govern the glossary. |
 | 6. Reader-facing glossary | **Complete** | All 101 canonical terms publish with defining-chapter links and visible calibration. |
-| 7. Compression and prose | **In progress** | Volume 4 and all seven analytical Volume 7 clusters complete; Volume 7's fictional coda next. |
+| 7. Compression and prose | **In progress** | Volume 4 and Volume 7 complete; audit remaining local sequences before selecting the next edit. |
 | 8. Framing material | **Pending** | Revise front matter and introductions after the manuscript stabilizes. |
 | 9. Verification and promotion | **Pending** | Promote `review` to `final` only after author approval and full validation. |
 
@@ -296,7 +296,7 @@ Build a published glossary only after cross-volume reconciliation has stabilized
 
 ## Phase 7 — Compression and prose
 
-Progress: **In progress.** The measured baseline and sequencing decision are recorded in `compression/00-inventory-and-sequencing.md`. Volume 4 is complete at 41,720 body words. All seven analytical Volume 7 clusters are complete, bringing the volume from 95,191 to 71,109 body words. Chapters 9, 14, 21, 22, 23, 27, 28, 30, 31, and 32 remained unchanged as canonical arguments in their clusters. The latest result is recorded in `compression/08-volume-7-final-analytical-sequence.md`.
+Progress: **In progress.** The measured baseline and sequencing decision are recorded in `compression/00-inventory-and-sequencing.md`. Volume 4 is complete at 41,720 body words. Volume 7 is complete at 71,141 body words, down from 95,191; Chapters 9, 14, 21, 22, 23, 27, 28, 30, 31, and 32 remained unchanged as canonical arguments in their clusters, and Chapter 36's narrative remains byte-for-byte unchanged. The latest result is recorded in `compression/09-volume-7-fictional-coda.md`.
 
 Perform three distinct passes.
 
@@ -375,4 +375,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Read Chapter 36, “The Price of Breath,” as Volume 7's fictional coda. Preserve its human-scale stress test and privacy conflict while ensuring it introduces no new doctrine, does not function as empirical evidence, and lands the volume without implying that Axiocracy's open institutional problems have been solved.
+Audit the remaining local sequences in Volumes 1, 5, 6, and 8 before selecting the next bounded edit. Record chapter ownership, repeated premises, examples, objections, and handoffs first; choose the next sequence from demonstrated continuous-reading friction rather than volume size or a word-count threshold.
