@@ -365,4 +365,4 @@ That was axiocracy.
 
 ---
 
-The governance framework this story dramatizes — authority as a bonded, continuously justified claim, discovered and revoked by the same mechanisms that discover prices — is the [Axiocracy](35-axiocracy.md) argued in the preceding chapter.
+The governance commitments this story dramatizes — bonded, continuously justified authority; traceable liability; contestable adjudication; and realistic exit — draw on the [Axiocracy](35-axiocracy.md) proposed in the preceding chapter. The specific bonds, guilds, contract mesh, automatic disclosures, and data fiduciaries are fictional implementation candidates, not institutions that chapter established. Enforcement, capture resistance, succession, amendment, insolvency, emergency authority, and protection for agents without purchasing power remain open.
