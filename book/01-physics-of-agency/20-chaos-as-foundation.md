@@ -59,18 +59,8 @@ A field of maximal uncertainty, trivially definable as a whole, and devoid of in
 
 ## Coherence from Within
 
-Why, then, do some patterns persist as physics, logic, or conscious minds, while most dissolve back into noise? The answer is coherence. Coherence acts as a filter: only structures that are self-consistent — that do not contradict themselves — can survive. How that filtering works, and how it can be made mathematically precise, is the business of [Coherence Filters](21-coherence-filters.md).
+Chaos contains descriptions of regular and irregular sequences without explaining why any description should count as a persisting world. The next step is therefore not another inventory of what the reservoir contains but a rule for selecting and interpreting some of it. [Coherence Filters](21-coherence-filters.md) separates those two operations and asks how far they can be made mathematically precise.
 
-Every computable coherence filter can be encoded by a finite string and therefore represented within Chaos. This closes the representational loop, but not yet a causal or ontological one: containing the code of a filter does not make the filter run or select anything. The next chapters treat self-selection and realization as additional conjectures.
-
-This closes the loop, and fixes the architecture the rest of this part elaborates:
-
-1. **Chaos** — the reservoir of infinite randomness, the ocean of reals.
-2. **Coherence** — patterns that self-consistently persist within Chaos.
-3. **Constructors** — stable, repeatable patterns that effect transformations ([Constructors](22-constructors.md)).
-4. **Physics** — the emergent regularities describable in constructor-theoretic terms.
-5. **Candidate consciousness architecture** — constructors that recursively model their own modeling, a proposed functional bridge rather than proof of experience ([Life, Consciousness, and Time](23-life-consciousness-time.md)).
-
-The intended ascent is thus from a possibility-space representation to increasingly demanding notions of coherence, realization, dynamics, life, and mind. Each arrow needs an argument; none follows from containment alone.
+Every computable filter can itself be encoded by a finite string and therefore represented within Chaos. That closes a representational loop, but not a causal or ontological one: containing the code does not make the filter run, privilege its interpretation, or realize what it selects. Those debts pass forward to the account of [constructors](22-constructors.md) and then to [life and recursive self-modeling](23-life-consciousness-time.md), rather than disappearing inside the word *coherence*.
 
 If physical laws can be redescribed as coherence conditions, agents can engineer systems with effective regularities by controlling boundary conditions and implementations. That familiar sense of “engineering physics” does not imply that agents can select fundamental laws. The stronger claim belongs to the speculative ontology and is not established here.

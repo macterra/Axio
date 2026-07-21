@@ -59,6 +59,10 @@ The consciousness reconciliation now makes the Chaos ascent stop at recursive se
 
 The patterns reconciliation preserves the Pattern Identifier and dynamical-coherence accounts as canonical identity controls. Chapter 18 now describes within-mind creativity as generate–evaluate–retain; literal selection requires a population, transmission or inheritance, and differential retention. Quantum branching is neither the characteristic source of creative novelty nor a selection mechanism by itself.
 
+## Phase 7 compression update
+
+The remaining-sequence audit selected Chapters 19–25 because continuous reading found two concrete restarts in the Chaos ascent. The sequence now assigns finite containment, reservoir, filtering, construction, life/self-modeling/time, indexed coherence, and modal tiers in order. Chapter 20 hands selection and interpretation to Chapter 21 instead of previewing the entire later stack. Chapter 23 inherits the filter/constructor distinction instead of restating a stronger derivation of physical law, and its closing hands the multiple uses of *coherence* to Chapter 24's canonical indexed definition. Chapters 19, 21, 22, 24, and 25 remain unchanged. Every original heading and cross-reference in the edited chapters remains. The cluster fell from 10,635 to 10,381 body words, bringing Volume 1 from 44,236 to 43,982 words. These counts describe two demonstrated removals and establish no quota.
+
 ## Validation checklist
 
 - Build the complete book and inspect the grouped Volume 1 table of contents.
