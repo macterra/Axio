@@ -76,10 +76,10 @@ Consider a jazz improviser. She listens to the ensemble — shifts in harmony, m
 
 Here is the proposed division of labor. Meaningness foregrounds the phenomenology of participation — how meaning feels, surfaces, and is lived. Axio foregrounds a structural model — how some agents preserve organization, project alternatives, and act. The model does not prove why suffering has one essence, why every coercive order must fail, or which kinds of mind the universe permits. The comparison is useful insofar as each account exposes omissions in the other.
 
-Which yields the formulation the whole chapter has been building toward, and the one I will carry forward unchanged:
+Which yields the formulation the whole chapter has been building toward:
 
 > Meaning can emerge through participation between agents and world; value enters when valuers choose what patterns and relationships to sustain.
 
 The universe contains no moral scoreboard. Minds evaluate, but not necessarily by maximizing coherence or propagation. My synthesis treats participation and agency as mutually informing aspects of meaning-making: reality answers back, while agents select and revise what matters to them. That is a proposed integration, not a result secured by system dynamics alone.
 
-This is where the Chapman engagement, previewed as far back as [The Secular Sacred](02-the-secular-sacred.md), lands. Values and coherent patterns sometimes propagate across agents and time, but survival is evidence of transmission, not of authority. That distinction carries into the avowed meta-myth of [The Great Unfolding](18-the-great-unfolding.md). Meaning is made in the exchange between participating agents and a reality that constrains them; it is not discovered on a cosmic scoreboard.
+This is where the Chapman engagement, previewed as far back as [The Secular Sacred](02-the-secular-sacred.md), finally lands. And it is not an endpoint. That value *propagates* — that coherence, once achieved, tends to extend and reproduce itself across agents and across time — is the thread that runs out of this chapter and into the coherence spine of [The Great Unfolding](18-the-great-unfolding.md). Meaning is made, not found. It is made in the transition from chaos to coherence, by minds that participate in order to act and act in order to participate. There was never a scoreboard to lose. There was only ever the loop, and the fact that we are it.
