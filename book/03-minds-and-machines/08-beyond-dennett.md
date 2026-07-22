@@ -21,7 +21,7 @@ Dennett mapped severe limitations of introspective report. On MST's reading, he 
 
 > The narrator is blind → therefore the mind is blind.
 
-If the reporting and experiencing roles are distinct, that inference is an error of architectural scope. A narrator need not be the experiencer, and limits on what a reporting process can access do not by themselves settle what the whole system undergoes. This establishes logical room for MST's separation; it does not yet establish that the proposed Modeler-schema occupies the phenomenal role.
+If the reporting and experiencing roles are distinct, that inference is an error of architectural scope. A narrator is never an experiencer, and the limits on what a reporting process can access do not by themselves settle what the whole system undergoes. This establishes logical room for MST's separation; it does not yet establish that the proposed Modeler-schema occupies the phenomenal role.
 
 ## What the Experiencer Must Have
 

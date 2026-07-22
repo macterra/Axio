@@ -45,7 +45,7 @@ MST interprets this as evidence that the machinery supporting diffuse content is
 
 Return to the saccades. Each one creates an enormous shift in retinal input, yet the world appears stable — the clearest and most experimentally tractable case where a consistency mechanism is required. But the role of qualia is not confined to vision. The Modeler-schema must monitor and refine the *entire* World Model: sensory content, recalled content, abstract content, appraisable emotions, multisensory integration. The qualia it generates are the internal representational format for detecting mismatches, anomalies, and modeling errors across all of these domains. Saccades merely provide a clean natural experiment for isolating the mechanism.
 
-If the proposed calibration role is correct, it offers one explanation of several patterns:
+This calibration role explains empirical patterns that other theories leave as brute facts:
 
 - **Perceptual qualia** are stable and largely universal — because evolutionary pressure is strongest where immediate sensory accuracy matters.
 - **Recalled imagery** varies widely between individuals — because long-term memory reconstruction faces weaker pressure.
