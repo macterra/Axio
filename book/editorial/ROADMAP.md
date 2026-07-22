@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 7 in progress — the Volume 4 and Volume 7 continuous-reading passes are complete; evidence-led selection among the remaining local sequences is next.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Further continuous-reading compression, framing, and final verification remain.
+Status: **Phase 7 in progress — the Volume 4 and Volume 7 continuous-reading passes are complete; the remaining-sequence audit selected and completed the Volume 1 Chaos relay. The cross-volume and line pass is next.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Further prose editing, framing, and final verification remain.
 
 ## Progress at a glance
 
@@ -14,7 +14,7 @@ Status: **Phase 7 in progress — the Volume 4 and Volume 7 continuous-reading p
 | 4. Applied volumes | **Complete** | Volume 6–9 passes merged; manuscript remains in `review`. |
 | 5. Cross-volume reconciliation | **Complete** | All eight clusters reconciled; canonical definitions are stable enough to govern the glossary. |
 | 6. Reader-facing glossary | **Complete** | All 101 canonical terms publish with defining-chapter links and visible calibration. |
-| 7. Compression and prose | **In progress** | Volume 4 and Volume 7 complete; audit remaining local sequences before selecting the next edit. |
+| 7. Compression and prose | **In progress** | Volume 4, Volume 7, and the Volume 1 Chaos relay complete; cross-volume and line pass next. |
 | 8. Framing material | **Pending** | Revise front matter and introductions after the manuscript stabilizes. |
 | 9. Verification and promotion | **Pending** | Promote `review` to `final` only after author approval and full validation. |
 
@@ -296,7 +296,7 @@ Build a published glossary only after cross-volume reconciliation has stabilized
 
 ## Phase 7 — Compression and prose
 
-Progress: **In progress.** The measured baseline and sequencing decision are recorded in `compression/00-inventory-and-sequencing.md`. Volume 4 is complete at 41,720 body words. Volume 7 is complete at 71,141 body words, down from 95,191; Chapters 9, 14, 21, 22, 23, 27, 28, 30, 31, and 32 remained unchanged as canonical arguments in their clusters, and Chapter 36's narrative remains byte-for-byte unchanged. The latest result is recorded in `compression/09-volume-7-fictional-coda.md`.
+Progress: **In progress.** The measured baseline and sequencing decision are recorded in `compression/00-inventory-and-sequencing.md`. Volume 4 is complete at 41,720 body words. Volume 7 is complete at 71,141 body words, down from 95,191; Chapters 9, 14, 21, 22, 23, 27, 28, 30, 31, and 32 remained unchanged as canonical arguments in their clusters, and Chapter 36's narrative remains byte-for-byte unchanged. The remaining-sequence audit selected Volume 1's Chaos relay and left the Volume 5, 6, and 8 candidates intact; the result is recorded in `compression/10-volume-1-chaos-relay.md`.
 
 Perform three distinct passes.
 
@@ -375,4 +375,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Audit the remaining local sequences in Volumes 1, 5, 6, and 8 before selecting the next bounded edit. Record chapter ownership, repeated premises, examples, objections, and handoffs first; choose the next sequence from demonstrated continuous-reading friction rather than volume size or a word-count threshold.
+Run the Phase 7 cross-volume and line pass now that local chapter ownership is stable. Sweep canonical definitions, familiar examples, repeated conclusions, rhythm, and transitions; make only evidence-backed edits, and retain length wherever the argument or voice requires it.

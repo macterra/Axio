@@ -13,9 +13,7 @@ This chapter tests three functional proposals. Self-maintenance, replication, an
 
 ## Where the Laws of Physics Sit
 
-One claim runs underneath all three, so it is worth stating once and clearly. The laws of physics are not imposed on Chaos from outside. Chaos, the total ensemble of incompressible reals, encodes every possible rule as a pattern among its sequences; the overwhelming majority collapse into noise. [Coherence filters](21-coherence-filters.md) select the rules that are self-consistent — that do not contradict themselves across the sequence. Constructors *embody* the survivors: the hydrogen atom embodies QED, the crystal embodies solid-state regularity, the catalyst embodies a chemical transformation. A law of physics is nothing over and above a correlation that constructors repeatedly and reliably realize.
-
-So the laws are emergent regularities — stable patterns distilled from Chaos, selected by coherence, embodied in constructors. This matters for what follows because it fixes the relationship between each proposed layer and physics. Life does not break the laws; it *exploits* them for self-maintenance and replication. A candidate consciousness architecture does not transcend them; it models aspects of world and self within the same physical regularities. Whether that modeling is phenomenally experienced is the bridge this chapter leaves to Volume 3.
+The previous chapters supplied the physical premise this one inherits: [coherence filters](21-coherence-filters.md) describe selections and interpretations, while constructors model repeatable transformations under a law set; neither derives that law set from Chaos. Life exploits those regularities for self-maintenance and replication, while a candidate consciousness architecture models aspects of world and self within them. Whether that modeling is phenomenally experienced remains a separate bridge to Volume 3.
 
 ## Life: The Self-Maintaining Constructor
 
@@ -53,4 +51,4 @@ Which leaves the felt arrow. One candidate explanation is **coherence traversal*
 
 In the Agency-Model proposal's compressed language, consciousness is coherence modeled by the system, and **felt time is how a self-model represents ordered change**. These are identity claims within a research program, not neutral definitions. A complete account must still show why the representational structure is phenomenally experienced and how rival accounts could be distinguished.
 
-That felt flow is not the end of the arc — consciousness was only a milestone, and higher forms of coherence may traverse themselves in ways we cannot picture. But it is the height from which the rest of the volume is written. What the whole hierarchy has in common — Chaos, filter, constructor, life, mind, time — is a single principle applied at every scale: identity preserved across transformation. That principle, and the pre-semantic notion of coherence it rests on, is [the shape of coherence](24-the-shape-of-coherence.md) itself.
+The three proposals have now used *coherence* for persistence, self-maintenance, recursive modeling, and temporal order. Whether those uses share more than an analogy cannot be settled by repeating the emergence stack. It requires the indexed definition developed next: [the shape of coherence](24-the-shape-of-coherence.md) as identity preserved across specified transformations.

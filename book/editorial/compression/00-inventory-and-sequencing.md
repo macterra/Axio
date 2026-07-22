@@ -30,8 +30,8 @@ Volume 7 is the largest continuous-reading burden. Volume 4 was selected first b
 1. **Complete — Volume 4, Chapters 2–7: conceptual architecture.** Preserve six chapters and make the sequence inherit its results: alignment target → reflective-coherence problem → three kernel depths → stability theorem → semantic transport → commitments and conditional closure results.
 2. **Complete — Volume 4, Chapters 8–15: evidence and program record.** The result is recorded in `01-volume-4-evidence-and-program.md`; repeated architecture and construction primers were compressed while the evidence registers remained distinct.
 3. **Complete — Volume 7: continuous-reading pass.** The seven analytical clusters and fictional coda are recorded in `02-volume-7-legitimacy-and-rights.md` through `09-volume-7-fictional-coda.md`. The coda's narrative remains intact; its closing note now distinguishes fictional implementation candidates from institutions the analytical chapters established.
-4. **In progress — Remaining local sequences.** Audit repetition and pacing in Volumes 1, 5, 6, and 8 within their local argumentative context before choosing the next bounded sequence; length alone does not mandate a cut.
-5. **Cross-volume and line pass.** Sweep canonical definitions, familiar examples, conclusions, and prose rhythm after local ownership is stable.
+4. **Complete — Remaining local sequences.** The audit selected Volume 1, Chapters 19–25, where two restarts blurred the Chaos relay. Volume 5's rival frameworks, Volume 6's foundations and market-failure blocks, and Volume 8's discursive weapons retained distinct ownership and received no sequence-level cut. The result is recorded in `10-volume-1-chaos-relay.md`.
+5. **Next — Cross-volume and line pass.** Sweep canonical definitions, familiar examples, conclusions, and prose rhythm now that local ownership is stable.
 
 ## First-cluster result
 

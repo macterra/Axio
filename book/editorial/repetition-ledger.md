@@ -50,6 +50,7 @@ Status labels:
 
 - The kybit and three laws are introduced, summarized, translated into QBU language, and invoked again in later synthesis chapters. Preserve the derivation and one translation; compress recaps.
 - Chapters 19–25 repeatedly restart the ascent from Chaos. Strengthen the sequence by making each chapter inherit the previous result without re-establishing the reservoir.
+- **Phase 7 decision:** Chapters 19–25 now form a containment → reservoir → filters → constructors → life/self-modeling/time → indexed coherence → modal tiers relay. Chapter 20 no longer previews the complete stack before Chapter 21's canonical order, and Chapter 23 inherits the filter/constructor distinction instead of re-deriving physical law from Chaos. Chapters 19, 21, 22, 24, and 25 remain unchanged. The cluster fell from 10,635 to 10,381 body words; the 254-word reduction records two demonstrated restarts and sets no target.
 - **Phase 5 decision:** The Chaos ascent owns only the functional bridge to recursive self-modeling. Volume 3 owns the phenomenal identity; later synthesis may name the proposal but cannot treat coherence, constructors, or recursion as cumulative proof of experience.
 
 ### Volume 2
