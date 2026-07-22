@@ -1,6 +1,6 @@
 ---
 title: 'Quantum Free Will'
-subtitle: 'Choice as conditional difference-making'
+subtitle: 'Choice as measure steering'
 status: review
 sources:
   - 175664749.quantum-free-will
@@ -30,11 +30,11 @@ Once the state, dynamics, horizon, coarse-graining, and pattern criterion are fi
 
 Uncertainty also needs careful handling. An Everettian agent can be uncertain about the state, dynamics, coarse-graining, future records, and self-location. Credence describes the agent's epistemic state; Measure supplies squared-amplitude weights for declared alternatives. The relationship between them belongs to [Volume 2](../02-conditionalism/16-youre-not-a-random-branch.md). Deliberation compares policy-conditioned weighted consequences; it is not a prediction of which world alone will exist or a decision about where one will awaken.
 
-## Choice as a Physical Process
+## Choice as Filter
 
-Now the second move. Measure describes how much of the universal state lies in a specified event sector, relative to a state, decomposition, and conditioning record. A choice, in this framework, does not create new branches or reallocate global amplitude. It is a physical process within unitary evolution. A causal model can compare interventions on that process and ask how the conditional Measure of later outcomes differs between policies.
+Now the second move. What differentiates the branches of the universal wavefunction is Measure — objective structure, describing how much of the universal state corresponds to each possibility. A choice, in this framework, does not create new branches. Decoherence does that, indifferent to your preferences. What a choice does is alter the *conditional correlation* between an agent's internal computation and the external branch structure. Your cognitive state acts as a sorting function across the total wavefunction, determining which set of branches continues to host coherent versions of you.
 
-Choice, then, is not selection of a destination world or filtering of a pre-existing inventory. It is ordinary policy-sensitive difference-making represented inside a branching model. Personal identity across the resulting continuations requires a separate pattern criterion; it cannot be read directly from the weights.
+Choice, then, is not about generating novel futures. It is about filtering existing ones — the dynamic alignment between internal predictive models and external physical evolution. Every decision sharpens the correspondence between who you are and which worlds remain compatible with that identity.
 
 Run it on the simplest possible case. Imagine a universe containing a single binary decision — call the branches Good and Bad — and suppose the wavefunction's weights come out as:
 
@@ -47,9 +47,9 @@ From a first-person Vantage, deliberation remains causally significant when diff
 
 In QBU terms: **an agent can influence the conditional distribution of later outcomes without changing total normalized Measure.** This is a causal-compatibilist proposal about policy-sensitive physical systems, not selection of a destination branch.
 
-## Agency as Conditional Difference-Making
+## Agency as Measure Modulation
 
-Generalize from the toy case and we get a candidate definition. An agent in the QBU is a physical pattern capable of anticipating outcomes and implementing policies that causally affect their conditional distribution. Its internal computation and action become correlated with later records through ordinary dynamics. The [previous part's laws](13-agency-in-the-emergent-multiverse.md) propose that a kybit can summarize divergence from an inactive or alternative-policy baseline; they do not yet prove a universal work price for that divergence. The book therefore retires “Measure steering” as a technical description: where the phrase appears historically or rhetorically, it means only this policy-conditioned causal comparison.
+Generalize from the toy case and we get a candidate definition. An agent in the QBU is a physical pattern capable of anticipating outcomes and implementing policies that causally affect their conditional distribution. Its internal computation and action become correlated with later records through ordinary dynamics. The [previous part's laws](13-agency-in-the-emergent-multiverse.md) propose that a kybit can summarize divergence from an inactive or alternative-policy baseline; they do not yet prove a universal work price for that divergence. “Measure steering” is acceptable shorthand only for this conditional causal comparison, never for creating or globally reallocating amplitude.
 
 The dark edge requires care. Self-destructive action can sharply reduce survival prospects under ordinary causal and medical models; Everettian branching offers no guarantee of subjectively continued survival. Decisions that improve viability can increase the conditional weight of later continuations under a specified model. This is a reason to reject quantum-immortality reasoning, not to recast self-harm as an experiment in amplitude.
 
@@ -69,10 +69,10 @@ If that dissolution sounds deflationary — freedom demoted to bookkeeping — t
 
 In an Everettian multiverse, intentional action still has physically definite effects, and policies can be evaluated by their weighted consequences. Meaning does not follow from that physics alone. It depends on the values and relationships through which agents interpret those consequences.
 
-Evolution, read through the same lens, is what built the carvers. Natural selection shapes life to harvest free energy, build more accurate internal predictive models, and increase the capacity for intentional action — a thermodynamic arms race for control of the future, the universe's own mechanism for developing agents ever more effective at resisting drift. Survival preserves the capacity to exercise kybits; intelligence can improve the consequences achieved per unit of scarce work; progress can expand the scope, depth, and sustainability of agency. You are a late product of that race, equipped with policy-sensitive control built over four billion years.
+Evolution, read through the same lens, is what built the carvers. Natural selection shapes life to harvest free energy, build more accurate internal predictive models, and increase the capacity for intentional action — a thermodynamic arms race for control of the future, the universe's own mechanism for developing agents ever more effective at resisting drift. Survival preserves the capacity to exercise kybits; intelligence maximizes futures shaped per joule; progress expands the scope, depth, and sustainability of agency. You are a late product of that race, and your equipment for conditioning Measure is what four billion years of it delivered.
 
 Because policies causally affect weighted consequences, those consequences may enter an account of responsibility. Everettian physics neither universalizes responsibility nor supplies the values by which flourishing and harm are compared. The normative bridge belongs to [measure responsibility](../05-value-and-ethics/21-measure-responsibility.md) in Volume 5.
 
 You are neither outside physics nor causally irrelevant. You are a thermodynamic agent whose policies alter later physical consequences. Everettian language can weight those consequences, but purpose and responsibility require additional arguments.
 
-Two loose threads remain, and each gets its own chapter. First: are some policy differences too small to matter? Chaotic dynamics can amplify some of them, while damping makes others negligible; [the next chapter](16-no-trivial-choices.md) sets the boundary. Second: this chapter has leaned hard on "your pattern" and "your continuations" without ever counting them. What makes a branch-cousin *you* at all? That is the question of [the gigaplex](17-a-gigaplex-of-parallel-lives.md).
+Two loose threads remain, and each gets its own chapter. First: if choice is measure modulation, are some choices too small to matter? No — chaotic dynamics see to it that [there are no trivial choices](16-no-trivial-choices.md). Second: this chapter has leaned hard on "your pattern" and "your continuations" without ever counting them. How many of you are there, and what makes a branch-cousin *you* at all? That is the question of [the gigaplex](17-a-gigaplex-of-parallel-lives.md).
