@@ -21,7 +21,7 @@ Scale that up and you get the difference between civilizations. High-agency cult
 
 ## Debt Is the Accounting Layer
 
-Now say precisely what a debt is. A debt is not primarily a financial claim. It is a quantified deficit of agency: the recognition that one agent has constrained another's viable futures — through harm, error, exploitation, or induced reliance — and owes restitution to restore coherence. Harm, on the mature definition this volume settled in [Risk Is Harm](20-risk-is-harm.md), is the reduction of an agent's viable futures; a debt is that reduction with a name attached to it and repayment outstanding.
+Now say precisely what a debt is. A debt is not primarily a financial claim. It is a quantified deficit of agency: the recognition that one agent has constrained another's viable futures — through harm, error, exploitation, or induced reliance — and owes restitution to restore coherence. Harm to an agent, in the sense [Risk Is Harm](20-risk-is-harm.md) develops, is a reduction of its functional capacity and viable option space; a debt is that reduction with a name attached to it and repayment outstanding.
 
 Refusing to repair the deficit does not make it disappear. It exports the loss into the system, forcing others to absorb it: eroded trust, heightened defensiveness, raised cooperation thresholds, increased risk of coercion. The rule is structural:
 
