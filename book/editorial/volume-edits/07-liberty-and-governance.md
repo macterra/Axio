@@ -69,6 +69,8 @@ The final analytical cluster assigns Chapters 33–35 the scale-and-evaluability
 
 The fictional-coda pass leaves every narrative line of Chapter 36 byte-for-byte unchanged. The story already performs its assigned stress test: a market-governance failure kills three children, unequal enforcement latency exposes a purchasing-power seam, liability cannot repair grief, and the successful replacement creates a privacy conflict. Only the closing framing note changes. It now identifies the story's bonds, guilds, contract mesh, automatic disclosures, and data fiduciaries as fictional implementation candidates rather than institutions established in Chapter 35, and carries forward the open enforcement, capture, succession, amendment, insolvency, emergency, and low-purchasing-power problems. The clarification adds 32 body words, bringing Volume 7 to 71,141 words, down 24,050 words (25.3%) from the Phase 7 baseline. The count describes the boundary clarification; it is not a target.
 
+The cross-volume definition pass leaves Chapters 4 and 9's complete coercion formulations intact because they establish the EFO taxonomy and the protected-expression/coercion/delegated-violence boundary. Chapter 5 now inherits Chapter 4's application before asking its distinct legitimacy question; Chapter 23 links a credible coercive threat directly to submission and internalized enforcement. These two line edits reduce Volume 7 by 25 words after its local pass, to 71,116 body words, without changing headings, link targets, examples, or qualifications.
+
 ## Validation checklist
 
 - Regenerate the argument map and build the complete book.
