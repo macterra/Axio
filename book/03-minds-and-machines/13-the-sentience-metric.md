@@ -53,7 +53,7 @@ The framework suggests three illustrative regimes, with important borderline cas
 | **Living, uncertain sentience** | Varies | Low or disputed credence | Plants; microbes; some animals |
 | **Nonliving intelligence** | Varies | Unsettled by category | AI systems; organizations |
 
-The third row is where the golem position is right, and the table shows why its conclusion does not follow. Nonliving intelligence is a useful functional attribution: nations, markets, organizations, and AI systems process information and coordinate action. But intelligence alone does not suffice for sentience, any more than coordination suffices for consciousness. A corporation processes information, pursues objectives, adapts under pressure — and no one is home. The golem walks, but it does not dream.
+The third row is where the golem position is right, and the table shows why its conclusion does not follow. Nonliving intelligence is a useful functional attribution: nations, markets, organizations, and AI systems process information and coordinate action. But intelligence alone does not suffice for sentience, any more than coordination suffices for consciousness. A corporation processes information, pursues objectives, adapts under pressure — and nothing in that gives us the slightest reason to think anyone is home. The golem walks; that it also dreams is a claim nothing in the walking supports.
 
 ## Signals, Demoted
 
