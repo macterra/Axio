@@ -14,7 +14,7 @@ Status: **Phase 7 in progress — the local continuous-reading work, first cross
 | 4. Applied volumes | **Complete** | Volume 6–9 passes merged; manuscript remains in `review`. |
 | 5. Cross-volume reconciliation | **Complete** | All eight clusters reconciled; canonical definitions are stable enough to govern the glossary. |
 | 6. Reader-facing glossary | **Complete** | All 101 canonical terms publish with defining-chapter links and visible calibration. |
-| 7. Compression and prose | **In progress** | Local passes, the coercion-definition cluster, and the calibrated boldness-recovery audit are complete; the next bounded family remains to be selected. |
+| 7. Compression and prose | **In progress** | Local passes, the coercion-definition cluster, and the Conditionalism recap audit are complete; purpose-relative model recaps are next. |
 | 8. Framing material | **Pending** | Revise front matter and introductions after the manuscript stabilizes. |
 | 9. Verification and promotion | **Pending** | Promote `review` to `final` only after author approval and full validation. |
 
@@ -302,6 +302,8 @@ The first cross-volume cluster is complete. Five redundant coercion-definition r
 
 A subsequent boldness audit recovered signature formulations that earlier calibration edits had flattened, followed by a full review of the recovery PRs and three corrective passes. The resulting text preserves the stronger voice while restoring the book's governing distinctions: branches remain emergent and approximate; the proposed quantum-neural route remains conjectural; cross-register coherence is advanced as a thesis rather than a proved identity; within-mind creativity uses evolutionary logic without claiming literal biological selection; cultural fitness remains differential propagation rather than valuation; reciprocal agency preservation remains a chosen commitment; terminal values need not form one apex; the final meta-myth remains offered rather than discovered; non-classical logics remain live challenges; and claims about drift, inherited significance, and nonliving sentience retain their required qualifications.
 
+The next recurrence audit examined “all truth is conditional” outside its canonical Volume 2 sequence. Continuous reading found compact orientation bridges and domain-specific applications rather than later chapters re-arguing the absolutism and relativism case. No manuscript cut was warranted. `compression/12-cross-volume-conditionalism-recaps.md` records the ownership decisions and preserves the prior decision to leave Volume 7 Chapter 23 unchanged.
+
 Perform three distinct passes.
 
 ### 1. Structural compression
@@ -379,4 +381,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Continue the Phase 7 cross-volume inventory from the now-calibrated manuscript. Select the next bounded family only where a canonical home, repeated later wording, and locally redundant work coincide; thematic recurrence, word count, or a blanket return to earlier prose does not justify an edit.
+Audit the purpose-relative-model family next, beginning from the canonical treatments in Volume 2 Chapter 6 and Volume 3 Chapter 2. Select edits only where a later primer repeats those treatments without introducing a new model layer or task; thematic recurrence, word count, or a blanket return to earlier prose does not justify an edit.
