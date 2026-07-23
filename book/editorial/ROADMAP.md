@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 7 in progress — the local continuous-reading work is complete, and the cross-volume and line pass has begun with the coercion-definition family.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Further prose editing, framing, and final verification remain.
+Status: **Phase 7 in progress — the local continuous-reading work, first cross-volume definition cluster, and post-pass boldness audit are complete.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Further bounded cross-volume and line work, framing, and final verification remain.
 
 ## Progress at a glance
 
@@ -14,7 +14,7 @@ Status: **Phase 7 in progress — the local continuous-reading work is complete,
 | 4. Applied volumes | **Complete** | Volume 6–9 passes merged; manuscript remains in `review`. |
 | 5. Cross-volume reconciliation | **Complete** | All eight clusters reconciled; canonical definitions are stable enough to govern the glossary. |
 | 6. Reader-facing glossary | **Complete** | All 101 canonical terms publish with defining-chapter links and visible calibration. |
-| 7. Compression and prose | **In progress** | Local passes complete; first cross-volume definition cluster prepared. |
+| 7. Compression and prose | **In progress** | Local passes, the coercion-definition cluster, and the calibrated boldness-recovery audit are complete; the next bounded family remains to be selected. |
 | 8. Framing material | **Pending** | Revise front matter and introductions after the manuscript stabilizes. |
 | 9. Verification and promotion | **Pending** | Promote `review` to `final` only after author approval and full validation. |
 
@@ -296,7 +296,11 @@ Build a published glossary only after cross-volume reconciliation has stabilized
 
 ## Phase 7 — Compression and prose
 
-Progress: **In progress.** The measured baseline and sequencing decision are recorded in `compression/00-inventory-and-sequencing.md`. Volume 4 is complete at 41,720 body words. Volume 7's local pass is complete at 71,141 body words, down from 95,191; Chapter 36's narrative remains byte-for-byte unchanged. The remaining-sequence audit selected Volume 1's Chaos relay and left the Volume 5, 6, and 8 candidates intact. The cross-volume pass now begins with five redundant coercion-definition recitals while retaining nine complete formulations where the definition performs local work; the decision is recorded in `compression/11-cross-volume-coercion-definition.md`.
+Progress: **In progress.** The measured baseline and sequencing decision are recorded in `compression/00-inventory-and-sequencing.md`. Volume 4 is complete at 41,720 body words. Volume 7's local pass is complete at 71,141 body words, down from 95,191; Chapter 36's narrative remains byte-for-byte unchanged. The remaining-sequence audit selected Volume 1's Chaos relay and left the Volume 5, 6, and 8 candidates intact.
+
+The first cross-volume cluster is complete. Five redundant coercion-definition recitals were tightened while nine complete formulations were retained where the definition performs local work; `compression/11-cross-volume-coercion-definition.md` records the decision. A residual seam pass then aligned the remaining harm and coercion language with the canonical capacity-and-option-space definitions.
+
+A subsequent boldness audit recovered signature formulations that earlier calibration edits had flattened, followed by a full review of the recovery PRs and three corrective passes. The resulting text preserves the stronger voice while restoring the book's governing distinctions: branches remain emergent and approximate; the proposed quantum-neural route remains conjectural; cross-register coherence is advanced as a thesis rather than a proved identity; within-mind creativity uses evolutionary logic without claiming literal biological selection; cultural fitness remains differential propagation rather than valuation; reciprocal agency preservation remains a chosen commitment; terminal values need not form one apex; the final meta-myth remains offered rather than discovered; non-classical logics remain live challenges; and claims about drift, inherited significance, and nonliving sentience retain their required qualifications.
 
 Perform three distinct passes.
 
@@ -375,4 +379,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Continue the Phase 7 cross-volume inventory after the coercion-definition cluster. Select the next bounded family only where a canonical home, repeated later wording, and locally redundant work coincide; thematic recurrence or word count alone does not justify an edit.
+Continue the Phase 7 cross-volume inventory from the now-calibrated manuscript. Select the next bounded family only where a canonical home, repeated later wording, and locally redundant work coincide; thematic recurrence, word count, or a blanket return to earlier prose does not justify an edit.
