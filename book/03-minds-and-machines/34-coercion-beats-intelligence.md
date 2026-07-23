@@ -11,7 +11,7 @@ The fantasy of a civilization run by the smartest and most rational people has a
 
 But intelligence does not automatically scale into civilization. One missing term is organized power, including coercive capacity.
 
-An intelligent person can model incentives, foresee second-order effects, and design better institutions. Those advantages can be defeated if the person and institutions cannot protect themselves from violence, sabotage, exclusion, or imprisonment. Intelligence is a modeling advantage. Coercion — [the deliberate use of a credible conditional threat of material setback to obtain compliance](../05-value-and-ethics/09-what-counts-as-coercion.md) — is one compliance mechanism. They are different kinds of thing, and cognition without a defensive architecture can become prey.
+An intelligent person can model incentives, foresee second-order effects, and design better institutions. Those advantages can be defeated if the person and institutions cannot protect themselves from violence, sabotage, exclusion, or imprisonment. Intelligence is a modeling advantage. [Coercion](../05-value-and-ethics/09-what-counts-as-coercion.md) is one compliance mechanism: it recruits anticipated setback to control another agent's conduct. They are different kinds of thing, and cognition without a defensive architecture can become prey.
 
 This asymmetry is one risk superintelligence discourse can understate. Cognition is not automatically power; embodiment, access, institutions, legitimacy, logistics, and coercive capacity mediate what intelligence can do. History supports that qualification without proving that coercion always beats intelligence or that artificial systems will reproduce every human political pattern.
 

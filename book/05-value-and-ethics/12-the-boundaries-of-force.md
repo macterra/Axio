@@ -9,7 +9,7 @@ sources:
 
 Two threats. "Pay me every month or I'll burn down your store." "Make the payments you authorized under this mortgage or, after default and adjudication, the lender may repossess the collateral." Both attach a material loss to noncompliance. The second may be justified only if the agreement, title, scope, notice, procedure, and remedy are valid; a signature or institution does not cleanse it automatically. A theory of coercion should classify the pressure honestly while keeping classification separate from legitimacy.
 
-[What counts as coercion](09-what-counts-as-coercion.md) defines coercion as the deliberate use of a credible conditional threat of material setback to obtain compliance. This chapter asks what could justify coercion or direct force. It proposes three families of grounds—prior authorization, protection, and remedy—and then adds safeguards none of the grounds can replace. Aggregate benefit may inform proportionality; it is not sufficient by itself.
+[What counts as coercion](09-what-counts-as-coercion.md) supplies the classification this chapter inherits. The question here is what could justify coercion or direct force. I propose three families of grounds—prior authorization, protection, and remedy—and then add safeguards none of them can replace. Aggregate benefit may inform proportionality; it is not sufficient by itself.
 
 ## The Default: Illegitimate
 

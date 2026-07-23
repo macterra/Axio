@@ -71,6 +71,10 @@ The value and conditional-objectivity pass now separates empirical attribution f
 
 The harm, coercion, consent, and force pass now gives the operational sequence one stable taxonomy. Harm is a material welfare or capacity setback against an explicit appropriate baseline; prospective exposure, realized injury, and wrongful responsibility remain distinct. Coercion uses a credible conditional threat to obtain compliance, force directly compels, and violence is injurious or destructive physical force. Consent changes authorization and responsibility without erasing impact. Prior authorization, protection, defense, rescue, and remedy only open the justification inquiry; evidence, authority, necessity, proportionality, minimally harmful means, process, time limits, accountability, and review constrain it. The coexistence protocol no longer turns classification into enforcement legitimacy or Domain Exit into wholesale standing loss. Chapter 25's contaminated-field contradiction remains an explicit author decision.
 
+## Phase 7 cross-volume update
+
+Chapter 9 remains the canonical coercion definition, and Chapter 22 retains the full ethics-synthesis list. Chapter 12 now inherits classification and moves directly to grounds and safeguards for justification; Chapter 14 links the term and retains the anticipated-setback mechanism relevant to the utilitarianism critique. No definition, case, objection, or qualification in the canonical chapter changes.
+
 ## Validation checklist
 
 - Build the complete book and inspect the grouped Volume 5 table of contents.

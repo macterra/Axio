@@ -68,6 +68,10 @@ The patterns reconciliation aligns Chapter 5's foresight account with generateâ€
 
 The final meaning reconciliation reserves Chapter 5 for semantic meaningâ€”interpreted aboutness within a use, history, or inferential system. Minimal interpretants and biological signals do not thereby possess existential purpose or significance. Volume 9 owns existential meaning as a relation sustained through an agent's values, purposes, narratives, relationships, and practices.
 
+## Phase 7 cross-volume update
+
+Chapter 33 retains Volume 3's complete coercion definition because it establishes the dependency boundary used by the risk-and-politics block. Chapter 34 now inherits that definition and states only the mechanism needed for its intelligence/power comparison: anticipated setback can secure compliance where cognition alone cannot. Its argument, headings, and link target remain unchanged.
+
 ## Validation checklist
 
 - Build the complete book and inspect the grouped Volume 3 table of contents and Chapter 23 hinge.
