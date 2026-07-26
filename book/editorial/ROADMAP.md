@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 7 in progress — the local continuous-reading work, first cross-volume definition cluster, and post-pass boldness audit are complete.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Further bounded cross-volume and line work, framing, and final verification remain.
+Status: **Phase 7 in progress — the local continuous-reading work, three bounded cross-volume families, and post-pass boldness audit are complete.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Further bounded cross-volume and line work, framing, and final verification remain.
 
 ## Progress at a glance
 
@@ -14,7 +14,7 @@ Status: **Phase 7 in progress — the local continuous-reading work, first cross
 | 4. Applied volumes | **Complete** | Volume 6–9 passes merged; manuscript remains in `review`. |
 | 5. Cross-volume reconciliation | **Complete** | All eight clusters reconciled; canonical definitions are stable enough to govern the glossary. |
 | 6. Reader-facing glossary | **Complete** | All 101 canonical terms publish with defining-chapter links and visible calibration. |
-| 7. Compression and prose | **In progress** | Local passes, the coercion-definition cluster, and the Conditionalism recap audit are complete; purpose-relative model recaps are next. |
+| 7. Compression and prose | **In progress** | Local passes and three bounded cross-volume families are complete; the faith/update-rule family is next. |
 | 8. Framing material | **Pending** | Revise front matter and introductions after the manuscript stabilizes. |
 | 9. Verification and promotion | **Pending** | Promote `review` to `final` only after author approval and full validation. |
 
@@ -304,6 +304,8 @@ A subsequent boldness audit recovered signature formulations that earlier calibr
 
 The next recurrence audit examined “all truth is conditional” outside its canonical Volume 2 sequence. Continuous reading found compact orientation bridges and domain-specific applications rather than later chapters re-arguing the absolutism and relativism case. No manuscript cut was warranted. `compression/12-cross-volume-conditionalism-recaps.md` records the ownership decisions and preserves the prior decision to leave Volume 7 Chapter 23 unchanged.
 
+The purpose-relative-model audit then assigned model-mediated knowledge to Volume 2 Chapter 6 and model anatomy to Volume 3 Chapter 2. Later passages were retained where they introduce a modeled object, representational layer, domain test, or independent-volume bridge. Volume 3 Chapters 3 and 19 now inherit the canonical definition instead of repeating its implicit-model primer or Underground-map example, removing 156 body words without removing a local argument; `compression/13-cross-volume-purpose-relative-models.md` records the inventory.
+
 Perform three distinct passes.
 
 ### 1. Structural compression
@@ -381,4 +383,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Audit the purpose-relative-model family next, beginning from the canonical treatments in Volume 2 Chapter 6 and Volume 3 Chapter 2. Select edits only where a later primer repeats those treatments without introducing a new model layer or task; thematic recurrence, word count, or a blanket return to earlier prose does not justify an edit.
+Audit the faith-as-frozen-update-rule family next. Volume 2 Chapter 10 owns the canonical case against epistemic immunity to correction; later passages, especially Volume 9's opening sequence, should bridge to that argument without rebuilding it. Retain local distinctions among faith, trust, fidelity, revelation, and chosen commitment.
