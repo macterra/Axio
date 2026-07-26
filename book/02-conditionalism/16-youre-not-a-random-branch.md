@@ -91,7 +91,7 @@ Same rule as the companion chapter: name the open problems instead of hiding the
 
 - The deepest one is unchanged. Whether indexical self-locating confidence, in a fully deterministic branching world, amounts to genuine probability or to a look-alike attitude wearing the same math is exactly as unsettled here as it was for the anthropic puzzles. The numbers are cleaner; the question underneath is the same one, and this account leans on self-location being legitimate rather than proving it from nothing.
 
-- It still takes one genuine principle on faith — that your confidence answers only to what evidence could in principle reveal. Reasonable, widely held, but a posit, not a proof. Someone is free to reject it, and at least one recent rival does exactly that, building an indexed branch-counting rule that deliberately disagrees with the textbook odds. That fight is live, and the second treatment engages it head-on.
+- It still assumes one genuine epistemic premise — that your confidence answers only to what evidence could in principle reveal. Reasonable, widely held, but a posit, not a proof. Someone is free to reject it, and at least one recent rival does exactly that, building an indexed branch-counting rule that deliberately disagrees with the textbook odds. That fight is live, and the second treatment engages it head-on.
 
 - Lela's result is a March 2026 preprint, not yet peer reviewed. It proves conditional mathematical uniqueness under internal-equivalence and refinement-richness assumptions; the book's physical application is a separate argument and inherits additional risk.
 
