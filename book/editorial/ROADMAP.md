@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 7 in progress — the local continuous-reading work, four bounded cross-volume families, and post-pass boldness audit are complete.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Further bounded cross-volume and line work, framing, and final verification remain.
+Status: **Phase 7 in progress — the local continuous-reading work, five bounded cross-volume families, and post-pass boldness audit are complete.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Further bounded cross-volume and line work, framing, and final verification remain.
 
 ## Progress at a glance
 
@@ -14,7 +14,7 @@ Status: **Phase 7 in progress — the local continuous-reading work, four bounde
 | 4. Applied volumes | **Complete** | Volume 6–9 passes merged; manuscript remains in `review`. |
 | 5. Cross-volume reconciliation | **Complete** | All eight clusters reconciled; canonical definitions are stable enough to govern the glossary. |
 | 6. Reader-facing glossary | **Complete** | All 101 canonical terms publish with defining-chapter links and visible calibration. |
-| 7. Compression and prose | **In progress** | Local passes and four bounded cross-volume families are complete; the no-value-without-a-valuer family is next. |
+| 7. Compression and prose | **In progress** | Local passes and five bounded cross-volume families are complete; value-as-sacrifice and opportunity-cost recaps are next. |
 | 8. Framing material | **Pending** | Revise front matter and introductions after the manuscript stabilizes. |
 | 9. Verification and promotion | **Pending** | Promote `review` to `final` only after author approval and full validation. |
 
@@ -308,6 +308,8 @@ The purpose-relative-model audit then assigned model-mediated knowledge to Volum
 
 The faith/update-rule audit preserved Volume 2 Chapter 10 as the canonical case against epistemic immunity while protecting broader uses of faith, trust, fidelity, revelation, inherited commitment, and resolve. Volume 2 Chapter 16 now labels its live, rejectable posit an epistemic premise rather than faith; Chapters 17–18 inherit the canonical pilot and assumption/faith defenses while retaining their arguments about action under fallibility, non-classical logic, and pancritical criticism. The pass removes 197 body words and leaves Volume 9's constructive and reconciliatory sequence intact; `compression/14-cross-volume-faith-update-rule.md` records the decisions.
 
+The no-value-without-a-valuer audit preserved Volume 5 Chapter 1 as the canonical relational case and kept agent-relative ethics, market valuation, and existential meaning distinct. Volume 5 Chapter 4 now retains the free-rider qualification on sacrifice evidence without repeating the opening public-goods prosecution or pre-arguing the market volume's funding mechanisms. Volume 9 Chapter 14 now makes *valuing* rather than free-standing value the agent-mediated process that propagates selected coherence. The pass removes 303 body words net; `compression/15-cross-volume-no-value-without-valuer.md` records the inventory.
+
 Perform three distinct passes.
 
 ### 1. Structural compression
@@ -385,4 +387,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Audit the no-value-without-a-valuer family next. Volume 5 Chapter 1 owns the canonical case against objective value; later ethics, market, and meaning chapters should inherit it without collapsing agent-relative value, market valuation, and existential significance into one relation.
+Audit value revealed through sacrifice and opportunity cost next. Volume 5 Chapter 4 owns the defeasible evidential account; later economic and existential applications should bridge to it once per applied volume without treating sacrifice, attention, price, or nonpayment as a complete measure of undistorted preference.
