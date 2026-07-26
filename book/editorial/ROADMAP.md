@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 7 in progress — the local continuous-reading work, three bounded cross-volume families, and post-pass boldness audit are complete.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Further bounded cross-volume and line work, framing, and final verification remain.
+Status: **Phase 7 in progress — the local continuous-reading work, four bounded cross-volume families, and post-pass boldness audit are complete.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Further bounded cross-volume and line work, framing, and final verification remain.
 
 ## Progress at a glance
 
@@ -14,7 +14,7 @@ Status: **Phase 7 in progress — the local continuous-reading work, three bound
 | 4. Applied volumes | **Complete** | Volume 6–9 passes merged; manuscript remains in `review`. |
 | 5. Cross-volume reconciliation | **Complete** | All eight clusters reconciled; canonical definitions are stable enough to govern the glossary. |
 | 6. Reader-facing glossary | **Complete** | All 101 canonical terms publish with defining-chapter links and visible calibration. |
-| 7. Compression and prose | **In progress** | Local passes and three bounded cross-volume families are complete; the faith/update-rule family is next. |
+| 7. Compression and prose | **In progress** | Local passes and four bounded cross-volume families are complete; the no-value-without-a-valuer family is next. |
 | 8. Framing material | **Pending** | Revise front matter and introductions after the manuscript stabilizes. |
 | 9. Verification and promotion | **Pending** | Promote `review` to `final` only after author approval and full validation. |
 
@@ -306,6 +306,8 @@ The next recurrence audit examined “all truth is conditional” outside its ca
 
 The purpose-relative-model audit then assigned model-mediated knowledge to Volume 2 Chapter 6 and model anatomy to Volume 3 Chapter 2. Later passages were retained where they introduce a modeled object, representational layer, domain test, or independent-volume bridge. Volume 3 Chapters 3 and 19 now inherit the canonical definition instead of repeating its implicit-model primer or Underground-map example, removing 156 body words without removing a local argument; `compression/13-cross-volume-purpose-relative-models.md` records the inventory.
 
+The faith/update-rule audit preserved Volume 2 Chapter 10 as the canonical case against epistemic immunity while protecting broader uses of faith, trust, fidelity, revelation, inherited commitment, and resolve. Volume 2 Chapter 16 now labels its live, rejectable posit an epistemic premise rather than faith; Chapters 17–18 inherit the canonical pilot and assumption/faith defenses while retaining their arguments about action under fallibility, non-classical logic, and pancritical criticism. The pass removes 197 body words and leaves Volume 9's constructive and reconciliatory sequence intact; `compression/14-cross-volume-faith-update-rule.md` records the decisions.
+
 Perform three distinct passes.
 
 ### 1. Structural compression
@@ -383,4 +385,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Audit the faith-as-frozen-update-rule family next. Volume 2 Chapter 10 owns the canonical case against epistemic immunity to correction; later passages, especially Volume 9's opening sequence, should bridge to that argument without rebuilding it. Retain local distinctions among faith, trust, fidelity, revelation, and chosen commitment.
+Audit the no-value-without-a-valuer family next. Volume 5 Chapter 1 owns the canonical case against objective value; later ethics, market, and meaning chapters should inherit it without collapsing agent-relative value, market valuation, and existential significance into one relation.
