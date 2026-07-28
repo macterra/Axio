@@ -1,0 +1,69 @@
+# Phase 9 verification inventory and sequencing
+
+Phase 9 verifies the reviewed manuscript before any promotion to `final`. This phase does not infer author approval from a clean build or from earlier merge approval.
+
+Baseline: `41d14372` (`main`, after the Phase 8 identity follow-up).
+
+## Current state
+
+- **252 titled source records:** all `status: review`.
+- **243 source-bearing records:** all chapters and volume introductions carry `sources` metadata.
+- **3 intentionally source-free records:** Preface, Introduction, and Glossary use `sources: []`.
+- **586 source references / 581 unique archived posts:** every referenced ID resolves to `posts/<id>.html`.
+- **5 reused source IDs:** each reuse is attributable to distinct chapters drawing from the same source essay; reuse is not a missing-source or duplicate-file error.
+- **253 generated book pages:** the full build currently completes without internal-link, site-link, redirect, status, or part-assignment errors.
+- **Toolchain baseline:** Pandoc `3.6.4` is pinned in `.pandoc-version` and enforced strictly by `pandoc_version.py`; the current local Pandoc matches. Current Python is `3.10.12`, but Python itself is not yet pinned for the book build.
+
+## Existing automated coverage
+
+`build-book.py` currently checks:
+
+- recognized chapter statuses;
+- complete, unique, and known manifest part assignments;
+- Markdown links to book sources;
+- root-relative links into the built site;
+- publication-aware link rewriting;
+- compatibility redirect targets and collisions;
+- reproducible Pandoc version;
+- generated navigation, index, redirects, and sitemap.
+
+These checks are necessary but do not cover all Phase 9 requirements.
+
+## Verification matrix
+
+| Requirement | Baseline disposition | Next evidence |
+|---|---|---|
+| Full build and internal link validation | **Passing now** | Re-run from a clean checkout and compare generated-tree hashes/status. |
+| Deterministic toolchain | **Partial** | Pandoc is pinned and matching; record Python/YAML dependency assumptions or pin them if output-sensitive. |
+| Source IDs | **Passing by ad hoc audit** | Add a repository validator for source syntax, archive existence, and intentional reuse reporting. |
+| Paper links | **Internal existence covered** | Inventory every `/papers/` destination and confirm the source/HTML authority relationship. |
+| External links | **Open** | Add or run an HTTP audit with timeouts, redirects, and an explicit exception policy for archival or unstable sources. |
+| Obsolete terminology and superseded claims | **Editorially reviewed, mechanically open** | Build a search ledger from reconciliation terminology and Phase 7 removals; classify every residual hit. |
+| Glossary anchors and defining-chapter links | **Prior audit exists** | Re-run anchor, destination, and first-use checks against the post-Phase-8 manuscript. |
+| TODOs and drafting markers | **No TODO/TBD/FIXME/XXX hits** | Classify broader “draft/work in progress” and blog-furniture hits rather than treating words alone as defects. |
+| Dated news pegs | **Open** | Inventory relative-time language and current-event claims; separate historical quotation from unstable assertion. |
+| Chapter ordering and navigation | **Manifest/build checks passing** | Verify prev/up/next sequences, volume indexes, redirects, and sitemap against the manifest. |
+| Continuous reading | **Open; human judgment required** | Record volume-by-volume author reading and continuity decisions, including the load-bearing Volumes 1–5 sequence. |
+| Promotion | **Blocked by policy, not by defect** | Require explicit author approval after verification and copyedit; no bulk status change is authorized now. |
+
+## Source reuse dispositions
+
+| Source ID | Reused by | Disposition |
+|---|---|---|
+| `164270270.defending-bayes-part-3` | Vol. 2 chs. 9 and 12 | Knowledge definition and Bayes defense draw distinct material from one source. |
+| `166945477.demographics-without-coercion` | Vol. 6 ch. 22 and Vol. 7 ch. 16 | Fertility economics and migration governance use different parts of the same demographic argument. |
+| `181528086.sentience-without-sovereignty` | Vol. 4 ch. 11 and Vol. 5 ch. 13 | Formal sovereignty and moral-standing treatments intentionally share provenance. |
+| `181714344.alignment-is-a-domain-constraint` | Vol. 4 chs. 2 and 4 | Typed alignment and kernel architecture develop separate consequences of the same paper-era essay. |
+| `183376003.axionic-agency-interlude-iv` | Vol. 4 chs. 10 and 15 | The negative growth result and program history intentionally cite the same interlude. |
+
+## Sequence
+
+1. **Reproducibility and source validator.** Turn the current ad hoc source audit into a repeatable check and establish a clean-tree build comparison.
+2. **Links, papers, glossary, and navigation.** Verify all internal authority routes and then audit external URL health separately.
+3. **Obsolete terms, superseded claims, dated pegs, and blog furniture.** Produce evidence ledgers before editing any residual.
+4. **Continuous reading and copyedit signoff.** Record human continuity review by volume and across Volumes 1–5 and 6–9.
+5. **Promotion decision.** Ask for explicit author approval only after the verification record is complete.
+
+## Gate
+
+A passing automated inventory does not authorize `review → final`. Promotion remains a distinct, explicit author decision.
