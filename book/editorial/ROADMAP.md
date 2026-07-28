@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 7 in progress — the local continuous-reading work, twelve bounded cross-volume families, and post-pass boldness audit are complete.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Further bounded cross-volume and line work, framing, and final verification remain.
+Status: **Phase 7 in progress — the local continuous-reading work, thirteen bounded cross-volume families, and post-pass boldness audit are complete.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Further bounded cross-volume and line work, framing, and final verification remain.
 
 ## Progress at a glance
 
@@ -14,7 +14,7 @@ Status: **Phase 7 in progress — the local continuous-reading work, twelve boun
 | 4. Applied volumes | **Complete** | Volume 6–9 passes merged; manuscript remains in `review`. |
 | 5. Cross-volume reconciliation | **Complete** | All eight clusters reconciled; canonical definitions are stable enough to govern the glossary. |
 | 6. Reader-facing glossary | **Complete** | All 101 canonical terms publish with defining-chapter links and visible calibration. |
-| 7. Compression and prose | **In progress** | Local passes and twelve bounded cross-volume families are complete; sacredness/meaning/chosen-commitment recaps are next. |
+| 7. Compression and prose | **In progress** | Local passes and thirteen bounded cross-volume families are complete; patterns/selection/cultural-agency recaps are next. |
 | 8. Framing material | **Pending** | Revise front matter and introductions after the manuscript stabilizes. |
 | 9. Verification and promotion | **Pending** | Promote `review` to `final` only after author approval and full validation. |
 
@@ -324,6 +324,8 @@ The consciousness/sentience/sapience audit preserved the functional/phenomenal, 
 
 The objective-morality/conditional-realism audit preserved agent-relative value as a substantive premise and conditional objectivity as public assessability under fixed inputs. Volume 5 Chapter 22 now separates framework coverage from adoption, agent-independent authority, and enforcement legitimacy; `compression/22-cross-volume-objective-morality-conditional-realism.md` records the audit.
 
+The sacredness/meaning/chosen-commitment audit preserved semantic meaning, causal function, represented purpose, existential significance, sacred priority, reflective endorsement, meta-myth, and provenance as distinct layers. Volume 9 Chapters 14–15 now separate enacted existential meaning from dynamical coherence and from the practices a meaning-system can deliberately design; `compression/23-cross-volume-sacredness-meaning-chosen-commitments.md` records the audit.
+
 Perform three distinct passes.
 
 ### 1. Structural compression
@@ -401,4 +403,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Audit sacredness, meaning, and chosen-commitment recaps next. Volume 3 Chapter 5 owns semantic meaning; Volume 9 owns sacredness, existential meaning, chosen commitment, and the meta-myth.
+Audit patterns, selection, and cultural-agency recaps next. Volume 1 Chapters 8 and 24 own physical realization and identity; Volume 8 Chapters 2–5 own the cultural application.
