@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 7 in progress — the local continuous-reading work, six bounded cross-volume families, and post-pass boldness audit are complete.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Further bounded cross-volume and line work, framing, and final verification remain.
+Status: **Phase 7 in progress — the local continuous-reading work, eight bounded cross-volume families, and post-pass boldness audit are complete.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Further bounded cross-volume and line work, framing, and final verification remain.
 
 ## Progress at a glance
 
@@ -14,7 +14,7 @@ Status: **Phase 7 in progress — the local continuous-reading work, six bounded
 | 4. Applied volumes | **Complete** | Volume 6–9 passes merged; manuscript remains in `review`. |
 | 5. Cross-volume reconciliation | **Complete** | All eight clusters reconciled; canonical definitions are stable enough to govern the glossary. |
 | 6. Reader-facing glossary | **Complete** | All 101 canonical terms publish with defining-chapter links and visible calibration. |
-| 7. Compression and prose | **In progress** | Local passes and six bounded cross-volume families are complete; viability-and-persistence recaps are next. |
+| 7. Compression and prose | **In progress** | Local passes and eight bounded cross-volume families are complete; agency-layer recaps are next. |
 | 8. Framing material | **Pending** | Revise front matter and introductions after the manuscript stabilizes. |
 | 9. Verification and promotion | **Pending** | Promote `review` to `final` only after author approval and full validation. |
 
@@ -312,6 +312,10 @@ The no-value-without-a-valuer audit preserved Volume 5 Chapter 1 as the canonica
 
 The sacrifice/opportunity-cost audit preserved Volume 5 Chapter 4's claim as defeasible behavioral evidence rather than a complete preference theory. Volume 6 Chapter 17 now describes Harberger outputs as reservation-price or coverage evidence under specified rules, resources, risks, and alternatives instead of a “true valuation” or honest measure of intangible wealth. Volume 9 Chapter 9 now inherits the canonical account before applying foregone alternatives to chosen struggle. The pass removes 57 body words net; `compression/16-cross-volume-sacrifice-opportunity-cost.md` records the distinctions among voluntary tradeoff, price, costly capacity signal, elicited report, forecast stake, and existential commitment.
 
+The viability/persistence audit preserved Volume 5 Chapters 18–22 as the descriptive-to-normative sequence and Chapter 19 as the indexed definition. Physical identity, reflective stability, institutional admissibility, and meaning applications retained their separate jurisdictions. Volume 8 Chapter 4 now treats centuries of transmission as compatible with voluntary use, inheritance, institutions, coercion, dependency, path dependence, and chance rather than evidence that a pattern was freely judged useful or agency-supporting. Passing the Axionic Criterion can support voluntary propagation but does not mechanically determine cultural survival; `compression/17-cross-volume-viability-persistence.md` records the audit.
+
+The QBU-primer audit preserved Volume 1 Chapter 8 as the formal owner while retaining Volume 2's probability primer and Volume 5's ethical bridges for independent readability. No later chapter reconstructs the graph or treats branches as countable fundamental worlds. Volume 2 Chapter 14 now links the canonical physics chapter and limits its opening claim to represented nonzero-amplitude outcomes rather than saying unqualifiedly that everything happens; `compression/18-cross-volume-qbu-primer.md` records the no-cut decision.
+
 Perform three distinct passes.
 
 ### 1. Structural compression
@@ -389,4 +393,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Audit viability and persistence next. Volume 5 Chapters 18–22 own the normative sequence and Chapter 19 owns the indexed definition; later uses should state the unit, preserved function or identity, conditions, and horizon without treating persistence as value, agency, or moral authority by itself.
+Audit agency-layer recaps next. Volume 1 Chapters 2 and 5 own basal agency; Volume 4 Chapters 2 and 4 own reflective authorship and sovereignty. Later bridges should name the layer only where ambiguity matters and should not re-derive the full ladder.
