@@ -11,4 +11,4 @@ The argument runs in eight parts. **Part I** lays a cybernetic foundation: a pur
 
 The physics beneath these minds lives in the first volume, the epistemology in the second, the moral status of the artificial in the fifth — all cross-linked throughout. This is the volume where they meet the machines.
 
-*This volume is a draft. Chapters carry their status openly, and the arguments are held the way the book says they should be held: at the strength the evidence licenses, and no stronger.*
+*This volume is in author review. Chapters carry their status openly, and the arguments are held the way the book says they should be held: at the strength the evidence licenses, and no stronger.*

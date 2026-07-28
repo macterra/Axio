@@ -352,7 +352,7 @@ Improve rhythm, clarity, transitions, pronoun consistency, examples, and sentenc
 
 ## Phase 8 — Framing material
 
-Progress: **In progress.** The inventory and sequencing decision are recorded in `framing/00-inventory-and-sequencing.md`. The preface and book introduction now describe the manuscript's review state, chosen normative premise, cultural-selection boundary, and record authority. The Volume 1–2 foundational introductions are complete in `framing/01-foundational-volume-introductions.md`; Volumes 3–5 are next.
+Progress: **In progress.** The inventory and sequencing decision are recorded in `framing/00-inventory-and-sequencing.md`. The preface and book introduction now describe the manuscript's review state, chosen normative premise, cultural-selection boundary, and record authority. The Volume 1–2 foundational introductions are complete in `framing/01-foundational-volume-introductions.md`; the Volume 3–5 introductions are complete in `framing/02-minds-alignment-and-ethics-introductions.md`; Volumes 6–7 are next.
 
 After the manuscript has stabilized, revise:
 
@@ -409,4 +409,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Phase 8 has completed the front matter and Volume 1–2 introductions. Next audit the Volume 3–5 introductions against the consciousness-evidence, research-register, and chosen-normative-premise boundaries.
+Phase 8 has completed the front matter and Volume 1–5 introductions. Next audit the Volume 6–7 introductions against empirical-causation, market/state-symmetry, Grey-Zone, and open-defense boundaries.
