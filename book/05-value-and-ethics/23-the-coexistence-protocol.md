@@ -12,7 +12,7 @@ A stranger shoves you off a curb and you hit the pavement hard. What just happen
 
 This is why the invariant alone is not enough. It needs a second layer:
 
-> The Procedural Layer is the epistemic operating system that determines whether a boundary violation has occurred when perceptions, probabilities, or vantage points diverge.
+> The Procedural Layer is a fallible adjudication process for claims of boundary violation when perceptions, probabilities, or vantage points diverge.
 
 Without it, even a flawless invariant dissolves into vendetta. This chapter specifies that layer.
 
@@ -94,4 +94,4 @@ Without the procedural layer, an ethics of viability collapses under its own pre
 
 Procedural Agency forecloses both. It forces evidence before retaliation, reconstructs vantage before judgment, classifies proportionally, defaults to innocence, and prices re-entry in restitution rather than blood. That is what scales the invariant from a personal ethic to a civilizational architecture: one rule, three stages, and a firewall.
 
-An ethics, in the end, is an operating system, and an operating system that cannot handle ambiguity, error, conflict, and divergent perception does not run on real hardware. The invariant says what coexistence is; the protocol is what keeps it running among agents who can be wrong. How a polity institutionalizes this arbitration layer — what its courts, charters, and enforcement look like when built on nothing but the invariant and the protocol — is the subject of a later volume, sketched in [the Axionic Constitution](/posts/181595554.the-axionic-constitution.html).
+The operating-system analogy earns only this much: an ethical rule that cannot handle ambiguity, error, conflict, and divergent perception cannot govern real agents. The invariant states the proposed boundary; the protocol supplies a fallible process for applying it among agents who can be wrong. How a polity institutionalizes this arbitration layer — what its courts, charters, and enforcement look like when built on the invariant and the protocol — is the subject of a later volume, sketched in [the Axionic Constitution](/posts/181595554.the-axionic-constitution.html).
