@@ -59,7 +59,7 @@ These checks are necessary but do not cover all Phase 9 requirements.
 ## Sequence
 
 1. **Complete — Reproducibility and source validator.** `verify-book.py` validates front matter, status and source metadata, archive existence, shared provenance, and byte-for-byte regeneration of `docs/book/` plus `docs/sitemap.xml`. `01-reproducibility-and-sources.md` records the result.
-2. **Links, papers, glossary, and navigation.** Verify all internal authority routes and then audit external URL health separately.
+2. **Complete — Internal links, papers, glossary, and navigation.** `verify-book.py` now walks generated internal routes and fragments, checks paper targets, verifies the 101-entry terminology/glossary/rendered-anchor correspondence, and compares all chapter navigation against the manifest. `02-internal-authority-routes.md` records two repaired legacy links and the passing baseline.
 3. **Obsolete terms, superseded claims, dated pegs, and blog furniture.** Produce evidence ledgers before editing any residual.
 4. **Continuous reading and copyedit signoff.** Record human continuity review by volume and across Volumes 1–5 and 6–9.
 5. **Promotion decision.** Ask for explicit author approval only after the verification record is complete.

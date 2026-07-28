@@ -7,11 +7,14 @@ does not change manuscript metadata or authorize ``review -> final``.
 
 import argparse
 import hashlib
+import html
+import os
 import re
 import subprocess
 import sys
-from collections import defaultdict
+from collections import Counter, defaultdict
 from pathlib import Path
+from urllib.parse import unquote, urlsplit
 
 import yaml
 
@@ -174,6 +177,181 @@ def verify_rebuild():
     return []
 
 
+def html_ids(path):
+    text = path.read_text(encoding="utf-8")
+    return set(re.findall(r'\b(?:id|name)="([^"]+)"', text))
+
+
+def resolve_internal_href(source, href):
+    parsed = urlsplit(html.unescape(href))
+    if parsed.scheme or parsed.netloc:
+        return None
+    if parsed.path.startswith("/"):
+        target = Path("docs") / parsed.path.lstrip("/")
+    elif parsed.path:
+        target = source.parent / unquote(parsed.path)
+    else:
+        target = source
+    target = Path(os.path.normpath(target))
+    if target.is_dir():
+        target /= "index.html"
+    return target, unquote(parsed.fragment)
+
+
+def verify_internal_routes():
+    errors = []
+    anchor_cache = {}
+    href_count = 0
+    fragment_count = 0
+    paper_targets = set()
+
+    generated_pages = sorted(Path("docs/book").rglob("*.html"))
+    for source in generated_pages:
+        text = source.read_text(encoding="utf-8")
+        for href in re.findall(r'<a\b[^>]*\bhref="([^"]+)"', text):
+            if href.startswith(("mailto:", "javascript:", "data:")):
+                continue
+            resolved = resolve_internal_href(source, href)
+            if resolved is None:
+                continue
+            target, fragment = resolved
+            href_count += 1
+            if not target.is_file():
+                errors.append(f"{source}: missing internal route {href} -> {target}")
+                continue
+            if target.parts[:2] == ("docs", "papers"):
+                paper_targets.add(target)
+            if fragment:
+                fragment_count += 1
+                ids = anchor_cache.setdefault(target, html_ids(target))
+                if fragment not in ids:
+                    errors.append(
+                        f"{source}: missing fragment #{fragment} in {target}"
+                    )
+
+    print("=== Internal routes and fragments ===")
+    print(f"   {'✓' if not errors else '✗'} {href_count} internal href(s) "
+          f"across {len(generated_pages)} generated book HTML files")
+    print(f"   {'✓' if not errors else '✗'} {fragment_count} fragment link(s)")
+    print(f"   {'✓' if not errors else '✗'} "
+          f"{len(paper_targets)} unique paper target(s)")
+    return errors
+
+
+def normalize_heading(value):
+    value = value.casefold().replace("–", "-").replace("—", "-")
+    return re.sub(r"[^a-z0-9]+", "", value)
+
+
+def markdown_h3(path):
+    return [
+        match.group(1).strip()
+        for match in re.finditer(
+            r"^###\s+(.+?)\s*$",
+            path.read_text(encoding="utf-8"),
+            re.MULTILINE,
+        )
+    ]
+
+
+def rendered_h3(path):
+    text = path.read_text(encoding="utf-8")
+    headings = []
+    for anchor, content in re.findall(
+        r'<h3 id="([^"]+)">(.*?)</h3>', text, re.DOTALL
+    ):
+        plain = html.unescape(re.sub(r"<[^>]+>", "", content)).strip()
+        headings.append((anchor, plain))
+    return headings
+
+
+def verify_glossary():
+    errors = []
+    terminology = markdown_h3(Path("book/editorial/terminology.md"))
+    glossary = markdown_h3(Path("book/00-front/03-glossary.md"))
+    rendered = rendered_h3(Path("docs/book/00-front/03-glossary.html"))
+
+    terminology_norm = [normalize_heading(item) for item in terminology]
+    glossary_norm = [normalize_heading(item) for item in glossary]
+    rendered_norm = [normalize_heading(item[1]) for item in rendered]
+
+    if Counter(terminology_norm) != Counter(glossary_norm):
+        errors.append("terminology and glossary H3 entries differ after normalization")
+    if glossary_norm != rendered_norm:
+        errors.append("source and rendered glossary H3 entries differ")
+
+    rendered_ids = [item[0] for item in rendered]
+    if len(rendered_ids) != len(set(rendered_ids)):
+        errors.append("rendered glossary contains duplicate H3 IDs")
+
+    print("=== Glossary authority ===")
+    print(f"   {'✓' if not errors else '✗'} {len(terminology)} terminology "
+          f"heading(s), {len(glossary)} glossary entries, "
+          f"{len(rendered)} rendered H3 anchor(s)")
+    return errors
+
+
+def nav_hrefs(path):
+    text = path.read_text(encoding="utf-8")
+    return {
+        role: match.group(1) if match else None
+        for role in ("prev", "up", "next")
+        for match in [
+            re.search(
+                rf'<a class="book-{role}" href="([^"]+)"',
+                text,
+            )
+        ]
+    }
+
+
+def verify_navigation():
+    errors = []
+    manifest = yaml.safe_load(Path("book/book.yaml").read_text(encoding="utf-8"))
+    pages_checked = 0
+
+    for volume in manifest["volumes"]:
+        volume_dir = Path("book") / volume["slug"]
+        chapters = []
+        for path in sorted(volume_dir.glob("[0-9]*.md")):
+            meta = frontmatter(path)
+            if meta["status"] in {"draft", "review", "final"}:
+                chapters.append(path)
+
+        for index, path in enumerate(chapters):
+            expected = {
+                "prev": (
+                    f"{chapters[index - 1].stem}.html" if index else None
+                ),
+                "up": (
+                    "../index.html"
+                    if volume.get("front_matter")
+                    else "index.html"
+                ),
+                "next": (
+                    f"{chapters[index + 1].stem}.html"
+                    if index + 1 < len(chapters)
+                    else None
+                ),
+            }
+            generated = (
+                Path("docs/book")
+                / volume["slug"]
+                / f"{path.stem}.html"
+            )
+            actual = nav_hrefs(generated)
+            if actual != expected:
+                errors.append(
+                    f"{generated}: navigation {actual}, expected {expected}"
+                )
+            pages_checked += 1
+
+    print("=== Chapter navigation ===")
+    print(f"   {'✓' if not errors else '✗'} {pages_checked} chapter page(s) "
+          "match manifest prev/up/next order")
+    return errors
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -187,10 +365,15 @@ def main():
     errors = verify_metadata_and_sources()
     if not args.sources_only:
         errors.extend(verify_rebuild())
+        errors.extend(verify_internal_routes())
+        errors.extend(verify_glossary())
+        errors.extend(verify_navigation())
 
     if errors:
-        for error in errors:
+        for error in errors[:50]:
             print(f"   ✗ {error}")
+        if len(errors) > 50:
+            print(f"   ✗ ... {len(errors) - 50} additional error(s) omitted")
         print(f"=== Verification FAILED: {len(errors)} error(s) ===")
         return 1
 
