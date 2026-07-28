@@ -407,4 +407,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-The moral-pressure and extortion-comparison audit is recorded in `compression/34-cross-volume-moral-pressure-extortion-comparisons.md`. Volume 5 Chapter 15 now reserves coercion for a credible conditional material threat, and Volume 8 Chapter 13 no longer uses *protection racket* as a generic synonym for inconsistency.
+The force-and-coercion stress-test audit is recorded in `compression/35-cross-volume-force-coercion-under-fire.md`. Volume 5 Chapter 24 now keeps authorized restraint, protective force, wrongful force, imposed harm, and coercive threat distinct; Chapter 25's innocent-shield contradiction remains open.
