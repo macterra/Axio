@@ -35,14 +35,14 @@ These checks are necessary but do not cover all Phase 9 requirements.
 |---|---|---|
 | Full build and internal link validation | **Passing now** | Re-run from a clean checkout and compare generated-tree hashes/status. |
 | Deterministic toolchain | **Partial** | Pandoc is pinned and matching; record Python/YAML dependency assumptions or pin them if output-sensitive. |
-| Source IDs | **Passing by ad hoc audit** | Add a repository validator for source syntax, archive existence, and intentional reuse reporting. |
-| Paper links | **Internal existence covered** | Inventory every `/papers/` destination and confirm the source/HTML authority relationship. |
-| External links | **Open** | Add or run an HTTP audit with timeouts, redirects, and an explicit exception policy for archival or unstable sources. |
+| Source IDs | **Passing automated check** | `verify-book.py` validates syntax, archive existence, explicit source-free records, and intentional reuse reporting. |
+| Paper links | **Passing automated route check** | `verify-book.py` resolves all 58 unique generated `/papers/` destinations; interpretive authority remains an editorial judgment. |
+| External links | **Passing dated baseline** | `verify-external-links.py` reports 45 URLs across 38 domains: 39 healthy, 6 access-restricted, and no hard failures. Re-run as an opt-in network check; apply the explicit repair/exception policy to any future 404/410. |
 | Obsolete terminology and superseded claims | **Editorially reviewed, mechanically open** | Build a search ledger from reconciliation terminology and Phase 7 removals; classify every residual hit. |
-| Glossary anchors and defining-chapter links | **Prior audit exists** | Re-run anchor, destination, and first-use checks against the post-Phase-8 manuscript. |
+| Glossary anchors and defining-chapter links | **Passing automated check** | `verify-book.py` matches 101 terminology headings, glossary entries, and rendered anchors and validates their routes/fragments. |
 | TODOs and drafting markers | **No TODO/TBD/FIXME/XXX hits** | Classify broader “draft/work in progress” and blog-furniture hits rather than treating words alone as defects. |
 | Dated news pegs | **Open** | Inventory relative-time language and current-event claims; separate historical quotation from unstable assertion. |
-| Chapter ordering and navigation | **Manifest/build checks passing** | Verify prev/up/next sequences, volume indexes, redirects, and sitemap against the manifest. |
+| Chapter ordering and navigation | **Passing automated check** | `verify-book.py` independently recomputes and matches prev/up/next order for all 243 chapter pages; route checks cover indexes and redirects. |
 | Continuous reading | **Open; human judgment required** | Record volume-by-volume author reading and continuity decisions, including the load-bearing Volumes 1–5 sequence. |
 | Promotion | **Blocked by policy, not by defect** | Require explicit author approval after verification and copyedit; no bulk status change is authorized now. |
 
@@ -60,9 +60,10 @@ These checks are necessary but do not cover all Phase 9 requirements.
 
 1. **Complete — Reproducibility and source validator.** `verify-book.py` validates front matter, status and source metadata, archive existence, shared provenance, and byte-for-byte regeneration of `docs/book/` plus `docs/sitemap.xml`. `01-reproducibility-and-sources.md` records the result.
 2. **Complete — Internal links, papers, glossary, and navigation.** `verify-book.py` now walks generated internal routes and fragments, checks paper targets, verifies the 101-entry terminology/glossary/rendered-anchor correspondence, and compares all chapter navigation against the manifest. `02-internal-authority-routes.md` records two repaired legacy links and the passing baseline.
-3. **Obsolete terms, superseded claims, dated pegs, and blog furniture.** Produce evidence ledgers before editing any residual.
-4. **Continuous reading and copyedit signoff.** Record human continuity review by volume and across Volumes 1–5 and 6–9.
-5. **Promotion decision.** Ask for explicit author approval only after the verification record is complete.
+3. **Complete — External link health.** `verify-external-links.py` supplies a bounded, network-dependent audit with explicit hard-failure and restricted-access dispositions. `03-external-link-health.md` records the 2026-07-28 baseline and the reviewed soft redirect.
+4. **Obsolete terms, superseded claims, dated pegs, and blog furniture.** Produce evidence ledgers before editing any residual.
+5. **Continuous reading and copyedit signoff.** Record human continuity review by volume and across Volumes 1–5 and 6–9.
+6. **Promotion decision.** Ask for explicit author approval only after the verification record is complete.
 
 ## Gate
 

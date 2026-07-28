@@ -58,6 +58,8 @@ This makes your archive completely self-contained and independent of Substack's 
   - Generates the index page
 - `generate-index.py` - Generates index.html from posts.csv (called by build-site.py)
 - `build-book.py` - Builds *The Architecture of Agency* from `book/` into `docs/book/` (navigation, status badges, cross-link validation; requires pandoc)
+- `verify-book.py` - Verifies book metadata, archived sources, internal authority routes, glossary/navigation integrity, and byte-for-byte reproducibility
+- `verify-external-links.py` - Runs the opt-in, network-dependent external URL health audit
 - `update-site.sh` - Convenience wrapper that cleans up and runs the build (site, then book)
 - `download-images.py` - Standalone script to download images (now integrated into build-site.py)
 - `fix-image-urls.py` - Standalone script to fix image URLs (now integrated into build-site.py)
