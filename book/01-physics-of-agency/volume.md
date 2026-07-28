@@ -1,6 +1,7 @@
 ---
 title: 'The Physics of Agency and the Branching Universe'
 status: review
+sources: []
 ---
 
 Most philosophy treats agency as a given and asks what agents should believe and do. This volume asks the prior question: what *is* an agent, physically? The framework built here treats agency as physically embodied control — matter modeling reachable futures and spending work to make later outcomes depend on its policy — and proposes a way to quantify that control. Taking the proposal seriously reframes downstream questions: what choice is, what causes what, how identity is represented across branches, and why there is anything at all. The first three parts develop the physical account. The last two extend it into a more speculative metaphysics, with the change in epistemic register left visible rather than disguised as another deduction from physics.

@@ -1,6 +1,7 @@
 ---
 title: 'Culture, Memetics, and Ideology'
 status: review
+sources: []
 ---
 
 This volume treats culture the way the earlier volumes treated minds and markets: as a system whose recurring outcomes can be explained by mechanisms. Its central model is selection over patterns. A pattern is a coherent informational or physical configuration re-identifiable at a stated grain and maintained, copied, or causally influential across the comparison being made. A selection account must further specify variants, transmission or retention, differential outcomes, environment, and horizon. People remain the agents: they interpret, choose, imitate, enforce, and revise. Groups and institutions count as agents only where their organization independently meets the book's agency criteria. Pattern language does not attribute a mind, intention, or moral responsibility to an abstraction.

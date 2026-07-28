@@ -1,6 +1,7 @@
 ---
 title: 'Markets, Money, and Prosperity'
 status: review
+sources: []
 ---
 
 Economics inherits its foundations from the volumes before it: value is agent-relative, truth is conditional, and coercion is a structural category rather than a synonym for an unwelcome outcome. What this volume adds is the machinery of coordination: how subjective valuations become prices, how prices interact with money and capital, and how institutions expose or conceal error. The long decline in extreme poverty is part of that story, but its pace, distribution, and causes must be examined rather than credited to a single label.

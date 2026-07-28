@@ -7,8 +7,8 @@ Baseline: `41d14372` (`main`, after the Phase 8 identity follow-up).
 ## Current state
 
 - **252 titled source records:** all `status: review`.
-- **243 source-bearing records:** all chapters and volume introductions carry `sources` metadata.
-- **3 intentionally source-free records:** Preface, Introduction, and Glossary use `sources: []`.
+- **240 source-bearing records:** each carries one or more archived source IDs.
+- **12 intentionally source-free records:** Preface, Introduction, Glossary, eight synthetic volume introductions, and the synthetic Volume 6 coda use `sources: []`.
 - **586 source references / 581 unique archived posts:** every referenced ID resolves to `posts/<id>.html`.
 - **5 reused source IDs:** each reuse is attributable to distinct chapters drawing from the same source essay; reuse is not a missing-source or duplicate-file error.
 - **253 generated book pages:** the full build currently completes without internal-link, site-link, redirect, status, or part-assignment errors.
@@ -58,7 +58,7 @@ These checks are necessary but do not cover all Phase 9 requirements.
 
 ## Sequence
 
-1. **Reproducibility and source validator.** Turn the current ad hoc source audit into a repeatable check and establish a clean-tree build comparison.
+1. **Complete — Reproducibility and source validator.** `verify-book.py` validates front matter, status and source metadata, archive existence, shared provenance, and byte-for-byte regeneration of `docs/book/` plus `docs/sitemap.xml`. `01-reproducibility-and-sources.md` records the result.
 2. **Links, papers, glossary, and navigation.** Verify all internal authority routes and then audit external URL health separately.
 3. **Obsolete terms, superseded claims, dated pegs, and blog furniture.** Produce evidence ledgers before editing any residual.
 4. **Continuous reading and copyedit signoff.** Record human continuity review by volume and across Volumes 1–5 and 6–9.
