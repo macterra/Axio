@@ -407,4 +407,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-The loaded-dice audit is recorded in `compression/32-cross-volume-loaded-dice-choice-structure.md`. Distinct probability calculations remain; Volume 6 Chapter 23 no longer infers wholly voluntary choice from a tilted parenthood distribution.
+The narrative-transmission audit is recorded in `compression/33-cross-volume-narrative-transmission-truth.md`. Volume 2 retains the canonical map/territory account; Volume 8 Chapter 1 now makes cognitive resonance compete with accuracy under specified filters rather than defining narrative selection as indifference to world-fit.
