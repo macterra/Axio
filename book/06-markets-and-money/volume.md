@@ -9,6 +9,6 @@ The argument runs in seven parts and a coda. **Part I** builds the foundations: 
 
 **Part IV** is the constructive center: incentives, costly signals, prediction markets, insurance, and liability design, including a memoir of building an early web-based prediction market in 1994. **Part V** examines progress metrics, failed forecasts, and a model-dependent nuclear counterfactual. **Part VI** treats low fertility and parenthood's unequal costs as multicausal institutional problems. **Part VII** asks how information production might be funded without treating intellectual-property rules as natural rights, then turns the volume's own forecasting discipline on the possibility that advanced AI removes human labor's scarce complements. The **coda** states the boundary: coordination mechanisms can expose errors, but they cannot decide standing or legitimate authority from prices alone.
 
-The foundations live in the earlier volumes — the physics of agency, conditional truth, and agency-centered ethics — and this volume cross-links them throughout; the governance these markets imply is the business of the volume on liberty and Axiocracy.
+The foundations live in the earlier volumes — the physics of agency, conditional truth, and agency-centered ethics — and this volume cross-links them throughout; the governance questions these markets leave open are the business of the volume on liberty and Axiocracy.
 
-*This volume is in review. Its theoretical claims, empirical findings, counterfactual models, policy arguments, and rhetorical illustrations should remain visibly distinct.*
+*This volume is in author review. Its theoretical claims, empirical findings, counterfactual models, policy arguments, and rhetorical illustrations should remain visibly distinct.*
