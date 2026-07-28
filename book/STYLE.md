@@ -1,4 +1,4 @@
-# Axio book — drafting conventions
+# The Architecture of Agency — drafting conventions
 
 These rules govern how blog posts become book chapters. They apply to every volume.
 

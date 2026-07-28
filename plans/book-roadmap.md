@@ -1,8 +1,8 @@
 # Book Project Roadmap
 
-*A multi-volume web book built from the Axio blog corpus, published at `docs/book/` on the existing GitHub Pages site.*
+*The Architecture of Agency: a multi-volume web book built from the Axio blog corpus, published at `docs/book/` on the existing GitHub Pages site.*
 
-Status: **COMPLETE FIRST DRAFT — all 9 volumes + front matter drafted.** The full manuscript is in draft status, awaiting author review → review/final promotion. Book-level front matter (00-front) written 2026-07-10: Preface + Introduction ("How to read this book"), replacing the day-one placeholder. Vol 9 drafted 2026-07-09 (20 ch / 4 parts / ~46k words, closing on the double envoi). **No drafting tasks remain; next phase is author review and status promotion (draft → review → final).** · Created 2026-07-07 · Book title: **Axio**
+Status: **COMPLETE FIRST DRAFT — all 9 volumes + front matter drafted.** The full manuscript is in draft status, awaiting author review → review/final promotion. Book-level front matter (00-front) written 2026-07-10: Preface + Introduction ("How to read this book"), replacing the day-one placeholder. Vol 9 drafted 2026-07-09 (20 ch / 4 parts / ~46k words, closing on the double envoi). **No drafting tasks remain; next phase is author review and status promotion (draft → review → final).** · Created 2026-07-07 · Book title: **The Architecture of Agency**
 
 ## Vision
 
@@ -95,7 +95,7 @@ Repeat Phases 2–3 per volume. After the first two volumes, revisit book-level 
 
 ## Open decisions
 
-- [x] Overall book title: **Axio**
+- [x] Overall book title: **The Architecture of Agency**
 - [ ] Which volume to draft first (recommendation above)
 - [ ] Split Vols 3 and/or 7 into two volumes each (decide at their Phase 2)
 - [ ] Author byline/collaboration credit convention for reworked chapters
