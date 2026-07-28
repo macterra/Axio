@@ -64,7 +64,8 @@ The revision names the manuscript's current review state, states the chosen agen
 2. **Complete — Volumes 1–2 introductions.** `01-foundational-volume-introductions.md` records the physical/speculative boundary, policy-conditioned choice language, event-sector Measure, cognitive selection analogy, and the limited role of formal logic in supporting Conditionalism.
 3. **Complete — Volumes 3–5 introductions.** `02-minds-alignment-and-ethics-introductions.md` records the consciousness-evidence boundary, the program's five evidentiary registers and limited Reflective Coherence Thesis, and the chosen premise and unresolved hardest case in the ethics.
 4. **Complete — Volumes 6–7 introductions.** `03-economics-and-governance-introductions.md` records the shared causal burden for market and state action, prices' inability to decide authority, the chosen individualist premise, the Grey Zone, the reversible coordination project, and the open defense problem.
+5. **Complete — Volumes 8–9 introductions.** `04-culture-and-meaning-introductions.md` records cultural-selection and motive-inference limits, controlled metaphors, offered naturalistic reconstruction, analogical meaning maps, and the chosen secular meta-myth.
 
 ## Next cluster
 
-Audit the Volume 8–9 introductions: cultural selection, motive inference, offered reconstruction, and chosen meta-myth.
+Audit conclusions and handoffs: restored certainty at chapter endings and promises not paid by the next volume.
