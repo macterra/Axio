@@ -89,6 +89,7 @@ The sharp “Capture is an attractor” close in Volume 8 Chapter 18 is retained
 
 1. **Complete — Residual pattern and attractor reification.** `05-residual-pattern-reification.md` records the three repairs and confirms that their mechanisms and payoff lines survive.
 2. **Complete — Mutable time pegs and AI-state scope.** `06-mutable-time-and-ai-scope.md` records the dated legal snapshots and evidence-scoped AI claims.
-3. **Closeout search.** Re-run the ledgers, record every remaining hit family as repaired or intentionally retained, and leave promotion gated.
+3. **Additional bounded repair — Final agentive shorthand.** The first closeout search found two missed Volume 3 locations; `07-final-agentive-shorthand.md` records their repair.
+4. **Closeout search.** Re-run the ledgers, record every remaining hit family as repaired or intentionally retained, and leave promotion gated.
 
 No manuscript change is made by this inventory. It selects the next work; it does not authorize `review → final`.
