@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 7 in progress — the local continuous-reading work, eight bounded cross-volume families, and post-pass boldness audit are complete.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Further bounded cross-volume and line work, framing, and final verification remain.
+Status: **Phase 7 in progress — the local continuous-reading work, nine bounded cross-volume families, and post-pass boldness audit are complete.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Further bounded cross-volume and line work, framing, and final verification remain.
 
 ## Progress at a glance
 
@@ -14,7 +14,7 @@ Status: **Phase 7 in progress — the local continuous-reading work, eight bound
 | 4. Applied volumes | **Complete** | Volume 6–9 passes merged; manuscript remains in `review`. |
 | 5. Cross-volume reconciliation | **Complete** | All eight clusters reconciled; canonical definitions are stable enough to govern the glossary. |
 | 6. Reader-facing glossary | **Complete** | All 101 canonical terms publish with defining-chapter links and visible calibration. |
-| 7. Compression and prose | **In progress** | Local passes and eight bounded cross-volume families are complete; agency-layer recaps are next. |
+| 7. Compression and prose | **In progress** | Local passes and nine bounded cross-volume families are complete; coherence-layer recaps are next. |
 | 8. Framing material | **Pending** | Revise front matter and introductions after the manuscript stabilizes. |
 | 9. Verification and promotion | **Pending** | Promote `review` to `final` only after author approval and full validation. |
 
@@ -316,6 +316,8 @@ The viability/persistence audit preserved Volume 5 Chapters 18–22 as the descr
 
 The QBU-primer audit preserved Volume 1 Chapter 8 as the formal owner while retaining Volume 2's probability primer and Volume 5's ethical bridges for independent readability. No later chapter reconstructs the graph or treats branches as countable fundamental worlds. Volume 2 Chapter 14 now links the canonical physics chapter and limits its opening claim to represented nonzero-amplitude outcomes rather than saying unqualifiedly that everything happens; `compression/18-cross-volume-qbu-primer.md` records the no-cut decision.
 
+The agency-layer audit preserved Volume 1's basal model–evaluation–control definition and Volume 4's reflective authorship and sovereignty layers. The machine Agency Criterion, sovereign standing, effective political agency, institutional authorship, cultural application, and meaning bridges retain distinct local work. Volume 3 Chapter 8 now treats the narrated self as a constructed model inside a physically real agent rather than treating agency itself as merely a pragmatic social construct; `compression/19-cross-volume-agency-layers.md` records the audit.
+
 Perform three distinct passes.
 
 ### 1. Structural compression
@@ -393,4 +395,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Audit agency-layer recaps next. Volume 1 Chapters 2 and 5 own basal agency; Volume 4 Chapters 2 and 4 own reflective authorship and sovereignty. Later bridges should name the layer only where ambiguity matters and should not re-derive the full ladder.
+Audit coherence-layer recaps next. Volume 1 Chapter 24 owns dynamical identity, Volume 2 Chapters 3 and 18 own epistemic fit and discipline, and Volume 4 Chapters 3–6 own reflective coherence. Later uses should name the layer where ambiguity matters without turning coherence into truth, realization, benevolence, or authority.
