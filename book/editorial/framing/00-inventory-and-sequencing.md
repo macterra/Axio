@@ -58,6 +58,11 @@ The preface and book introduction had four framing mismatches:
 
 The revision names the manuscript's current review state, states the chosen agency-protection premise, makes accuracy one transmission factor among several, and establishes record authority: chapters govern the synthesis, papers govern formal detail, and blog posts preserve the historical path.
 
+## Progress
+
+1. **Complete — Preface and book introduction.** Status, volume promises, and record authority now match the reviewed manuscript.
+2. **Complete — Volumes 1–2 introductions.** `01-foundational-volume-introductions.md` records the physical/speculative boundary, policy-conditioned choice language, event-sector Measure, cognitive selection analogy, and the limited role of formal logic in supporting Conditionalism.
+
 ## Next cluster
 
-Audit the Volume 1–2 introductions as the foundational pair. Preserve the optionality of the QBU probability module and the change in register from physical proposal to speculative metaphysics.
+Audit the Volume 3–5 introductions: machine consciousness and evidence, the alignment program's theorem/experiment/interpretation registers, and the chosen normative premise of agency-centered ethics.
