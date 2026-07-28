@@ -369,7 +369,7 @@ The front matter should describe the book that survived editing, not the first d
 
 ## Phase 9 — Verification and promotion
 
-Progress: **In progress.** `verification/00-inventory-and-sequencing.md` records the post-Phase-8 baseline, existing automated coverage, open verification gaps, source-reuse dispositions, and the promotion gate. `verify-book.py` and `verification/01-reproducibility-and-sources.md` now provide repeatable metadata, source-archive, shared-provenance, and byte-for-byte rebuild checks. Internal authority routes, papers, glossary, and navigation are next.
+Progress: **In progress.** `verification/00-inventory-and-sequencing.md` records the post-Phase-8 baseline, existing automated coverage, open verification gaps, source-reuse dispositions, and the promotion gate. `verify-book.py` and `verification/01-reproducibility-and-sources.md` provide repeatable metadata, source-archive, shared-provenance, and byte-for-byte rebuild checks. The verifier now also checks generated internal routes and fragments, paper targets, terminology/glossary/rendered-anchor correspondence, and exact chapter navigation; `verification/02-internal-authority-routes.md` records the passing baseline and two repaired legacy links. External URL health and the stale-language inventory are next.
 
 Before changing any chapter to `final`:
 
@@ -409,4 +409,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Phase 8 is complete. Phase 9 has established repeatable source and reproducibility verification. Next verify internal authority routes, paper links, glossary anchors/first-use links, and navigation. Do not promote chapters from `review` to `final` without author approval.
+Phase 8 is complete. Phase 9 has verified sources, reproducibility, internal authority routes, paper targets, glossary anchors, and navigation. Next audit external URL health, then obsolete terms, superseded claims, dated pegs, and blog furniture. Do not promote chapters from `review` to `final` without author approval.
