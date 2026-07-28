@@ -42,7 +42,7 @@ Status labels:
 | Games and metagames | Intelligence, persistence, incentives, politics | **Phase 7 audit complete.** Volume 6 Chapter 15 now treats cross-level propagation, institutional self-preservation, and incentive-driven collapse as mechanism-dependent risks rather than automatic optimization by a system-level chooser. A metagame still requires specified players, payoffs, levels, and transmission; selection for persistence is not one literal universal game. |
 | Evolution, selection, and progress | Biological adaptation, creativity, intelligence, culture, politics | **Phase 7 audit complete.** Volume 1 Chapter 15 now makes increased prediction and control lineage- and fitness-conditional rather than evolution's universal direction. Volume 7 Chapter 23 treats threat-sensitive deference as a biological-and-cultural hypothesis rather than settled group-selection history. Differential persistence supplies neither foresight nor progress by itself. |
 | Branch deletion and branch revaluation | Violence, coercion, risk, responsibility | **Reconciled in Phase 5.** Retire as technical language. State policy-conditioned causal comparisons; agents neither select worlds nor create, destroy, or globally reallocate amplitude. |
-| Filters, mirrors, and lenses | Epistemology, AI, culture | Keep only when the mechanism being filtered or reflected is named. These metaphors currently risk blending distinct arguments. |
+| Filters, mirrors, lenses, and attractors | Epistemology, AI, culture, meaning | **Phase 7 audit complete.** Volume 3 Chapter 18 now names tool bias as attention, framing, and hypothesis selection rather than a dynamical attractor. Volume 8 Chapter 26 treats its three scales as related analogies rather than one phenomenon. Volume 9 Chapters 11 and 15 now name a terminus, recurrent cognitive susceptibilities, and chosen orientations directly. Technical attraction still requires a state space, dynamics, and basin. |
 | Cathedrals, sacred light, and disenchantment | Sacred coherence and Volume 9 | Preserve the strongest formulations for Volume 9's close; reduce anticipatory use that spends the ending early. |
 
 ## Volume-level repetition risks
@@ -67,6 +67,7 @@ Status labels:
 - **Phase 3 decision:** Chapter 7 owns the Modeler-Schema architecture, Chapter 8 owns the Dennett scope dispute, Chapter 9 owns the phenomenal identity claim and objections, and Chapter 10 owns the conditional evolutionary support. Restatement is not cumulative evidence.
 - **Phase 3 decision:** Chapter 11 owns awareness/sentience/sapience definitions. Chapter 13 supplies theory-dependent evidence, not a universal scalar or categorical current-system score.
 - **Phase 3 decision:** Chapters 18–22 are evidentiary windows. Chapter 23 alone states the machine-agency verdict, at the level of a specified deployed system and subject to intervention tests.
+- **Phase 7 decision:** Chapter 18 now owns tool bias through an explicit attention → framing → hypothesis-choice mechanism. A disciplinary lens can exert a recurrent pull without being a dynamical attractor; that stronger label requires a state space, update dynamics, and basin.
 - **Phase 3 decision:** Chapter 24 owns the Dialectic Catalyst definition. Chapters 25–29 apply the workflow without repeatedly declaring that fluency lacks accountable agency.
 - **Phase 3 decision:** Chapters 30–35 introduce additional risk, institutional, and value premises. Their political conclusions do not follow deductively from the Agency Criterion.
 - **Phase 5 decision:** Consciousness is phenomenal, sentience is valenced experience, and sapience is reflective authorship. Chapter 13 organizes theory-relative evidence rather than scoring experience; no later machine verdict may transfer evidence from cognition or agency to sentience automatically.
@@ -131,6 +132,7 @@ Status labels:
 - **Phase 4 decision:** Chapters 17–21 own capture. Diagnose a sustained failure of symmetric error correction after comparing resource, competence, coordination, legal, and ordinary quality-control explanations.
 - **Phase 4 decision:** Part V begins with the Franklin control case, then applies one evidence burden to gender categories, occupational parity, symbolic and categorical remedies, antisemitism, and taboo.
 - **Phase 4 decision:** Chapter 27 owns the asymmetry heuristic. It identifies omitted variables and designs further inquiry; it does not reveal motive or a unique hidden term by itself.
+- **Phase 7 decision:** Chapter 3's technical/analogical attractor boundary now governs the volume. Chapter 26 treats exemplar orientation, ideological lock-in, and civilization-scale coordination as related feedback analogies, not three views of one mathematically established phenomenon.
 
 ### Volume 9
 
@@ -139,6 +141,7 @@ Status labels:
 - **Phase 4 decision:** Chapter 14 uses information theory analogically across physical, cognitive, and cultural registers. Chapter 18 owns the avowed meta-myth and does not present physical persistence, epistemic consistency, ethical integration, and lineage as one discovered cosmic law.
 - **Phase 4 decision:** Chapter 19 presents provenance as a resource for interpretation and error correction, not a necessary condition of all successor coherence. Chapter 20 owns the final reconciliation; awe is experience requiring interpretation, and the self-model account of unity remains a hypothesis.
 - **Phase 5 decision:** Chapter 5 distinguishes semantic aboutness from existential significance; Chapters 10–14 own existential meaning as inherited, encountered, revised, or made and reflectively sustained. Chapter 2 identifies sacredness as a protected practical role without proving a single apex or its worth. Chapter 10 is the argument-to-commitment hinge, Chapter 18's empirical spine remains corrigible while its direction is chosen, and Chapter 19 offers provenance without necessity, identity, or debt.
+- **Phase 7 decision:** Chapter 11 now calls terminal valuing a terminus rather than an attractor. Chapter 15 names recurrent cognitive susceptibilities and chosen orientations directly; neither recurrence nor deliberate selection establishes dynamical convergence.
 
 ## Decisions deferred to Phase 2
 
