@@ -29,15 +29,15 @@ The replication crisis is the clean case, so trace it properly. A funding body �
 
 The same anatomy runs through the attention platforms. [Attention is an economy](05-attention-is-an-economy.md), and the platforms that harvest it are paid in engagement; outrage engages; so the algorithms amplify outrage, users learn to perform it, and public discourse degrades — not because anyone at any layer decided discourse should degrade, but because each layer responded rationally to the gradient above it. Politics runs the pattern a third time: when the electoral game rewards signaling, institutions prioritize signaling, policy becomes theater, and governance declines.
 
-Incentives scale. That is their signature. A gradient imposed at one level propagates through every level below it, which is what makes them the most consequential objects in institutional life — and the least visible, because they appear nowhere in any rulebook.
+Incentives can scale across linked levels. When a gradient imposed at one level propagates through several below it, the resulting cascade can become one of the most consequential and least visible forces in institutional life. But propagation is a causal claim to establish, not a property of every hierarchy; where the transmission channel is weak, the levels can remain partly independent.
 
-## Misalignment Is the Default
+## Misalignment Is a Persistent Risk
 
-When the incentives running through a stack of nested games line up, the system behaves coherently: actions that satisfy local goals also advance the aims of the larger game, and the whole structure pulls in one direction. It is tempting to treat that as the normal condition and misalignment as the occasional breakdown. The truth is the reverse.
+When the incentives running through a stack of nested games line up, the system behaves coherently: actions that satisfy local goals also advance the aims of the larger game, and the whole structure pulls in one direction. It is tempting to assume that alignment and treat misalignment as an occasional breakdown. That assumption is unsafe.
 
 **An incentive misalignment arises when actions that optimize performance at level $L$ degrade coherence, stability, or persistence at level $L+1$.** The strategy that wins the lower game loses the higher one. Because nested games have reward landscapes that partially overlap but need not coincide — the scientist's career is not the same objective as science's accuracy, the firm's quarter is not the same objective as the firm's survival, the institution's growth is not the same objective as its mission — misalignment is a persistent risk rather than a universal default. It can open between any two adjacent levels: individual and group, group and institution, institution and society, society and culture, culture and persistence itself.
 
-This is also why misalignment is not a moral failure, and why moralizing about it fixes nothing. Agents optimizing their local game are doing what agents do. The fault line is structural, and it has to be diagnosed structurally.
+This is also why misalignment is not by itself proof of a moral failure. People responding to local rewards may be behaving reasonably under their information and constraints, though deception, negligence, and abuse remain attributable where the evidence supports them. Moral verdicts do not replace diagnosis: the fault line is structural and must be traced through the actual incentives.
 
 ## The Five Patterns
 
@@ -51,7 +51,7 @@ Misalignment is not amorphous. Across governments, corporations, academia, media
 
 **Coalition versus truth.** Coalition membership delivers survival benefits; truth-seeking, by itself, does not. So people adopt the beliefs that secure their alliances rather than the beliefs that track reality, and institutions bend toward flattering their constituencies rather than modeling the world.
 
-**Survival versus stated purpose.** An institution's stated purpose quickly becomes secondary to its continued existence. Bureaucracies optimize for self-preservation; movements optimize for growth over mission; scientific organizations drift toward perpetuation over knowledge. What looks like corruption is usually the metagame of persistence asserting itself through the institution's own incentives.
+**Survival versus stated purpose.** Continued funding, staffing, and authority can reward institutional preservation over mission. A bureaucracy may protect its budget, a movement may prefer growth to fidelity, or a scientific organization may perpetuate programs that no longer advance knowledge. These outcomes require mechanisms and evidence; persistence pressure is not a hidden institutional chooser or the default explanation of every apparent corruption.
 
 ## Cascade, Lock-In, Runaway
 
@@ -63,7 +63,7 @@ The second is **lock-in**. Once a pathological incentive structure is entrenched
 
 The third is **runaway**. Some misalignments amplify themselves. Make a metric a target and agents optimize the metric instead of the thing it measured, until the metric means nothing; each escalation in a signaling race forces every rival to escalate further; and everyone involved can see the spiral perfectly well while remaining individually unable to exit it. Rational agents, trapped in an irrational equilibrium.
 
-Put the three together and misalignment behaves like a selector pushing systems toward failure states. Systems do not collapse randomly. They collapse because their incentives stopped pointing at persistence and started pointing at self-destruction — which is the tension underneath every pattern above: local optimization burning the coherence that survival across time requires.
+Put the three together and misalignment can act like a selector favoring failure-producing strategies. Some systems collapse after their incentives reward conduct that erodes the conditions of continued operation; others fail through shocks, incompetence, conflict, resource loss, or mechanisms outside this taxonomy. The pattern identified here is local advantage burning the coherence that survival across time requires, not a complete theory of institutional failure.
 
 ## Diagnosing the Real Game
 
