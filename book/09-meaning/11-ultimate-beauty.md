@@ -20,7 +20,7 @@ The epistemic escape, following Bartley, was to drop the demand for justificatio
 
 My answer is: in values held for themselves, meaning not that they justify themselves by argument but that the agent supplies no further instrumental reason. They are experienced as good, fitting, or compelling. When the last *because* falls away, what remains is not a proof and not a duty but a recognition — *this resonates, this fits, this is worth it*. I call that recognition aesthetic. The label is a proposal about terminal valuing, not a claim that every agent experiences its final commitments as beauty.
 
-## Aesthetics as the Terminal Attractor
+## Aesthetics at a Terminus
 
 I mean aesthetics in its widest philosophical sense, not the narrow one that confines it to art and taste in pictures. Aesthetics is the faculty by which a pattern is felt to be right: the sense of coherence, elegance, fittingness, resonance. It is the capacity to recognize that something is worth choosing prior to and apart from any further reason for choosing it. This is not decision theory's calculus and not logic's rigor. It is something more primitive than either, and it is what *orients* both — the thing that hands reason its targets so that reason can go to work calculating how to reach them.
 
