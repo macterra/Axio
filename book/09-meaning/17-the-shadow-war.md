@@ -30,7 +30,7 @@ The Vorlons ask: *Who are you?* The Shadows ask: *What do you want?*
 
 Read casually, these sound like the two great humanistic questions — identity and desire, the things a person spends a life answering. That is the bait. In the mouths of the First Ones they are not invitations; they are demands, and each demand smuggles its answer. *Who are you?* wants an identity that has already accepted its place in a hierarchy — it asks you to locate yourself on a map the Vorlons drew. *What do you want?* wants a desire that has already accepted conflict as the medium of its satisfaction — it asks you to name a prize you will have to fight someone for. One question shapes identity through obedience; the other shapes desire through struggle. Neither leaves room for the responder to challenge the terms in which the answer must be given.
 
-This is coercion in its most refined form, and it is worth being precise about why. Coercion is not only force. Guidance backed by overwhelming asymmetric power, offered to someone who cannot meaningfully decline it, is indistinguishable in its effects from domination — the velvet does not change what the glove contains. The Vorlons rarely need to fire on anyone; the threat is structural, resident in the relationship itself. When one party can appear as your god, remake your politics, and end your species, "advice" is not advice. The most controlling thing either power does is not the violence. It is the framing — the quiet insistence that these are the only two questions, and that everyone must answer one of them.
+This is domination with a coercive mechanism, and it is worth being precise about why. Coercion is not force: it controls through a credible conditional threat of material setback. Guidance backed by overwhelming asymmetric power can therefore become coercive when refusal is understood to trigger intervention, punishment, or destruction. The Vorlons rarely need to fire on anyone because the threat is resident in the relationship. When one party can appear as your god, remake your politics, and end your species, "advice" tied to that consequence is not advice. Framing the available questions can manipulate even without a threat; here it operates inside an order the younger species cannot meaningfully decline.
 
 ## Sheridan's Refusal to Inherit the Frame
 
@@ -70,7 +70,7 @@ Gather the threads. The Shadow War is a study in four things this book keeps ret
 
 *Interpretation* — the way an ideology becomes a prison the moment it is treated as unconditional, mistaking one useful lens for the shape of reality itself.
 
-*Coercion* — the recognition that guidance enforced by asymmetric power is domination wearing better clothes, and that framing the available questions is a subtler and more total control than answering them.
+*Coercion* — the recognition that guidance backed by a credible penalty for refusal is domination wearing better clothes, while asymmetric framing can manipulate without becoming coercion by definition.
 
 *Conditionalism* — the reason both powers fail at the root. Truth, growth, and value are conditional; they hold relative to circumstances, purposes, and the agents whose lives they are lived in. The Vorlons and Shadows each took a conditional good — sometimes stability really is salvation, sometimes struggle really does select — and hardened it into an unconditional law. A conditional truth treated as absolute stops being a truth and becomes a cage, and the whole tragedy of the First Ones is the shape of that single error, held for ten thousand years.
 
