@@ -87,7 +87,7 @@ The sharp “Capture is an attractor” close in Volume 8 Chapter 18 is retained
 
 ## Selected repair sequence
 
-1. **Residual pattern and attractor reification.** Repair the three bounded locations above while preserving their mechanisms and payoff lines.
+1. **Complete — Residual pattern and attractor reification.** `05-residual-pattern-reification.md` records the three repairs and confirms that their mechanisms and payoff lines survive.
 2. **Mutable time pegs and AI-state scope.** Replace edition-relative clocks with explicit dates and recast product-state universals around the evidence actually discussed.
 3. **Closeout search.** Re-run the ledgers, record every remaining hit family as repaired or intentionally retained, and leave promotion gated.
 
