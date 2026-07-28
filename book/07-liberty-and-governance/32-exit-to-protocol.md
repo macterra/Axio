@@ -87,4 +87,4 @@ So the fork-and-exit architecture is not a property that voluntary systems get f
 
 With that caveat entered, a narrower thesis stands. Converting some discretionary power into transparent, contestable protocol can reduce opportunities for domination when affected agents retain voice, remedy, and realistic exit. Constitutions, markets, firms, states, commons, and code can each convert violence into rules in some settings and conceal coercion in others. The measure is not how little politics remains, but how much unavoidable authority is traceable, bounded, corrigible, and answerable to the agents it affects.
 
-The end of politics is not chaos; it is coordination evolving beyond coercion.
+The end of politics is not chaos — but it is not a destination either, only coordination we build to need less coercion.

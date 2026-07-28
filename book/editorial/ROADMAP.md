@@ -407,4 +407,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-The operating systems, kernels, and procedure audit is recorded in `compression/30-cross-volume-operating-systems-kernels-procedure.md`. Volume 4 retains formal ownership of the Sovereign Kernel; Volume 5 Chapter 23 now limits its OS analogy and names adjudication as fallible.
+The civilizational-progress audit is recorded in `compression/31-cross-volume-civilizational-progress.md`. Volume 7 now treats agency preservation and reduced coercion as chosen political standards rather than evolution's historical direction; Volume 6 retains empirical progress and Volume 8 retains the technical selection boundary.
