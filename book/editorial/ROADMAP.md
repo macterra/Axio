@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 7 in progress — the local continuous-reading work, twenty bounded cross-volume families, and post-pass boldness audit are complete.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Further bounded cross-volume and line work, framing, and final verification remain.
+Status: **Phase 9 in progress — reproducibility, source metadata, internal authority routes, and external-link health are verified.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages remain in `review`; promotion to `final` still requires explicit author approval after the remaining verification and continuity work.
 
 ## Progress at a glance
 
@@ -14,9 +14,9 @@ Status: **Phase 7 in progress — the local continuous-reading work, twenty boun
 | 4. Applied volumes | **Complete** | Volume 6–9 passes merged; manuscript remains in `review`. |
 | 5. Cross-volume reconciliation | **Complete** | All eight clusters reconciled; canonical definitions are stable enough to govern the glossary. |
 | 6. Reader-facing glossary | **Complete** | All 101 canonical terms publish with defining-chapter links and visible calibration. |
-| 7. Compression and prose | **In progress** | Local passes and twenty bounded cross-volume families are complete; the next bounded family awaits inventory. |
-| 8. Framing material | **Pending** | Revise front matter and introductions after the manuscript stabilizes. |
-| 9. Verification and promotion | **Pending** | Promote `review` to `final` only after author approval and full validation. |
+| 7. Compression and prose | **Complete** | Local passes and all 25 bounded cross-volume families are complete; every repetition-ledger row has a disposition. |
+| 8. Framing material | **Complete** | Front matter, introductions, conclusions, book and chapter labels, part labels, and navigation handoffs match the reviewed manuscript. |
+| 9. Verification and promotion | **In progress** | Automated and network inventories are passing; stale-language and continuity review remain. Promotion still requires explicit author approval. |
 
 Completed controls now cover all 243 argument-map records, nine architecture memos, nine volume-edit records, eight reconciliation records, and the reader-facing glossary audit. The complete book build and internal-link validation passed after the Volume 2 probability supersession integration; compatibility redirects preserve the public URLs of moved and renumbered chapters.
 
@@ -369,7 +369,7 @@ The front matter should describe the book that survived editing, not the first d
 
 ## Phase 9 — Verification and promotion
 
-Progress: **In progress.** `verification/00-inventory-and-sequencing.md` records the post-Phase-8 baseline, existing automated coverage, open verification gaps, source-reuse dispositions, and the promotion gate. `verify-book.py` and `verification/01-reproducibility-and-sources.md` provide repeatable metadata, source-archive, shared-provenance, and byte-for-byte rebuild checks. The verifier now also checks generated internal routes and fragments, paper targets, terminology/glossary/rendered-anchor correspondence, and exact chapter navigation; `verification/02-internal-authority-routes.md` records the passing baseline and two repaired legacy links. External URL health and the stale-language inventory are next.
+Progress: **In progress.** `verification/00-inventory-and-sequencing.md` records the post-Phase-8 baseline, existing automated coverage, open verification gaps, source-reuse dispositions, and the promotion gate. `verify-book.py` and `verification/01-reproducibility-and-sources.md` provide repeatable metadata, source-archive, shared-provenance, and byte-for-byte rebuild checks. The verifier now also checks generated internal routes and fragments, paper targets, terminology/glossary/rendered-anchor correspondence, and exact chapter navigation; `verification/02-internal-authority-routes.md` records the passing baseline and two repaired legacy links. `verify-external-links.py` supplies a separate network-dependent audit; `verification/03-external-link-health.md` records its passing dated baseline. The stale-language inventory is next.
 
 Before changing any chapter to `final`:
 
@@ -409,4 +409,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Phase 8 is complete. Phase 9 has verified sources, reproducibility, internal authority routes, paper targets, glossary anchors, and navigation. Next audit external URL health, then obsolete terms, superseded claims, dated pegs, and blog furniture. Do not promote chapters from `review` to `final` without author approval.
+Phase 8 is complete. Phase 9 has verified sources, reproducibility, internal authority routes, paper targets, glossary anchors, navigation, and a dated external-link baseline. Next audit obsolete terms, superseded claims, dated pegs, and blog furniture. Do not promote chapters from `review` to `final` without author approval.
