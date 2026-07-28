@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 7 in progress — the local continuous-reading work, seventeen bounded cross-volume families, and post-pass boldness audit are complete.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Further bounded cross-volume and line work, framing, and final verification remain.
+Status: **Phase 7 in progress — the local continuous-reading work, eighteen bounded cross-volume families, and post-pass boldness audit are complete.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Further bounded cross-volume and line work, framing, and final verification remain.
 
 ## Progress at a glance
 
@@ -14,7 +14,7 @@ Status: **Phase 7 in progress — the local continuous-reading work, seventeen b
 | 4. Applied volumes | **Complete** | Volume 6–9 passes merged; manuscript remains in `review`. |
 | 5. Cross-volume reconciliation | **Complete** | All eight clusters reconciled; canonical definitions are stable enough to govern the glossary. |
 | 6. Reader-facing glossary | **Complete** | All 101 canonical terms publish with defining-chapter links and visible calibration. |
-| 7. Compression and prose | **In progress** | Local passes and seventeen bounded cross-volume families are complete; the next bounded family awaits inventory. |
+| 7. Compression and prose | **In progress** | Local passes and eighteen bounded cross-volume families are complete; the next bounded family awaits inventory. |
 | 8. Framing material | **Pending** | Revise front matter and introductions after the manuscript stabilizes. |
 | 9. Verification and promotion | **Pending** | Promote `review` to `final` only after author approval and full validation. |
 
@@ -407,4 +407,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-The games, metagames, and incentives audit is recorded in `compression/27-cross-volume-games-metagames-incentives.md`. Volume 5 Chapter 18 retains the canonical metagame lens; Volume 6 Chapter 15 owns its institutional transmission mechanism.
+The evolution, selection, and progress audit is recorded in `compression/28-cross-volume-evolution-selection-progress.md`. Volume 1 Chapter 18 retains the canonical variation-and-selection mechanism; later recaps no longer turn contingent lineage history into universal progress or settled political inheritance.
