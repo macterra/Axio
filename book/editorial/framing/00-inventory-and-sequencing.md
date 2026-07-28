@@ -62,7 +62,8 @@ The revision names the manuscript's current review state, states the chosen agen
 
 1. **Complete — Preface and book introduction.** Status, volume promises, and record authority now match the reviewed manuscript.
 2. **Complete — Volumes 1–2 introductions.** `01-foundational-volume-introductions.md` records the physical/speculative boundary, policy-conditioned choice language, event-sector Measure, cognitive selection analogy, and the limited role of formal logic in supporting Conditionalism.
+3. **Complete — Volumes 3–5 introductions.** `02-minds-alignment-and-ethics-introductions.md` records the consciousness-evidence boundary, the program's five evidentiary registers and limited Reflective Coherence Thesis, and the chosen premise and unresolved hardest case in the ethics.
 
 ## Next cluster
 
-Audit the Volume 3–5 introductions: machine consciousness and evidence, the alignment program's theorem/experiment/interpretation registers, and the chosen normative premise of agency-centered ethics.
+Audit the Volume 6–7 introductions: empirical causation, market/state symmetry, the Grey Zone, and the open defense problem.
