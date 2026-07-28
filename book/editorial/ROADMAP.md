@@ -369,7 +369,7 @@ The front matter should describe the book that survived editing, not the first d
 
 ## Phase 9 — Verification and promotion
 
-Progress: **In progress.** `verification/00-inventory-and-sequencing.md` records the post-Phase-8 baseline, existing automated coverage, open verification gaps, source-reuse dispositions, and the promotion gate. Reproducibility and a repeatable source validator are next.
+Progress: **In progress.** `verification/00-inventory-and-sequencing.md` records the post-Phase-8 baseline, existing automated coverage, open verification gaps, source-reuse dispositions, and the promotion gate. `verify-book.py` and `verification/01-reproducibility-and-sources.md` now provide repeatable metadata, source-archive, shared-provenance, and byte-for-byte rebuild checks. Internal authority routes, papers, glossary, and navigation are next.
 
 Before changing any chapter to `final`:
 
@@ -409,4 +409,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Phase 8 is complete. Phase 9 has begun with the verification inventory. Next establish clean-tree reproducibility and add a repeatable source validator. Do not promote chapters from `review` to `final` without author approval.
+Phase 8 is complete. Phase 9 has established repeatable source and reproducibility verification. Next verify internal authority routes, paper links, glossary anchors/first-use links, and navigation. Do not promote chapters from `review` to `final` without author approval.

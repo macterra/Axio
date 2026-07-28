@@ -1,6 +1,7 @@
 ---
 title: 'Liberty, Coercion, and Governance'
 status: review
+sources: []
 ---
 
 Politics inherits its foundations from everything before it: value is agent-relative; harm is a material setback to welfare or functional capacity and viable options against an explicit baseline; coercion is a conditional-threat mechanism with a canonical definition; and classification, justification, and authority remain distinct. This volume chooses the individual person as its primary moral unit: persons are the directly evidenced valuing agents in political life, while a group label does not by itself establish one subject, consent, or welfare. What this volume adds is the political consequence: an account of the state, rights, speech, justice, equality, and governance built on agency rather than on the fictions — the collective will, the national interest, the moral ledger of disparities — that political philosophy usually runs on.

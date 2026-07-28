@@ -2,6 +2,7 @@
 title: 'Coordination Is Not Salvation'
 subtitle: 'What markets can discover—and what they cannot decide'
 status: review
+sources: []
 ---
 
 This volume began with plural value and built upward: exchange, prices, money, capital, incentives, institutions, prosperity. The construction matters because none of its layers is magic. A price compresses dispersed bids and constraints. Money makes unlike claims comparable. Capital carries resources across time. A market tests plans against other agents' willingness to participate. Each device coordinates information that no participant possesses whole.

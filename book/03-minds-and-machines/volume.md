@@ -1,6 +1,7 @@
 ---
 title: 'Minds and Machines: Consciousness, Intelligence, and AI'
 status: review
+sources: []
 ---
 
 We are living with systems whose fluent cognition-like behavior outruns our settled vocabulary. Conversation, causal reasoning, sentience, persistence, and agency are different claims, yet public debate routinely treats one as proof of the others. This volume builds a functional taxonomy from models and regulation through consciousness, sentience, intelligence, and agency, then asks what current evidence about artificial systems actually licenses.

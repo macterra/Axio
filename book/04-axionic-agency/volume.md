@@ -1,6 +1,7 @@
 ---
 title: 'Axionic Agency: The Alignment Program'
 status: review
+sources: []
 ---
 
 This is the volume the rest of the book keeps pointing toward: the alignment program. It differs from its companions in kind, not just topic. The other volumes distill years of essays; this one distills a research program that moved from manifesto to a running proof of concept in under four months of human–AI collaboration. The book's editorial principle — state the latest position, not the history — is applied here at maximum strength: early claims are treated as working hypotheses, the formal papers and experiment records as the technical record, and the program's revisions are narrated once, in the coda.

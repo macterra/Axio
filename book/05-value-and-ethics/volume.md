@@ -1,6 +1,7 @@
 ---
 title: 'Value and Agency-Centered Ethics'
 status: review
+sources: []
 ---
 
 The oldest promise in moral philosophy is that goodness is written into the world — by God, by reason, by nature, by the arc of history — and that ethics is the discipline of reading it off. This volume opens by breaking that promise, and then spends twenty-six chapters showing how much survives the breakage. The answer is: nearly everything worth keeping, and it comes back stronger, because a morality whose foundations you can state is sturdier than one you are forbidden to inspect.

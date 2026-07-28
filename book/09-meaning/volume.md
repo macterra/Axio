@@ -1,6 +1,7 @@
 ---
 title: 'Meaning, Spirituality, and the Secular Sacred'
 status: review
+sources: []
 ---
 
 This is the last volume, and it asks the question the whole book has been circling toward: within the naturalistic framework argued for in the earlier volumes, what is left to revere? This volume adopts that framework rather than prosecuting the case against supernaturalism again. Its constructive claim is that rejecting supernatural explanations need not cost us meaning, transcendence, reverence, or any reason to hold a finite life as more than appetite between two silences. It distinguishes three registers. **Semantic meaning** is interpreted aboutness: a sign stands for something to an interpreter. **Existential meaning** is a relation through which agents situate experience and action within endorsed values, purposes, narratives, and relationships. **Sacredness** is the protected practical role some commitments receive, while **spirituality** names experiences and practices of self-transcendence without deciding their metaphysics. Existential meaning can be inherited, encountered, revised, and made; what turns it into an agent's meaning is sustained participation and endorsement, not creation from nothing.
