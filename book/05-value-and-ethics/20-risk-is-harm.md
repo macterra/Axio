@@ -1,5 +1,5 @@
 ---
-title: 'Risk Is Harm'
+title: 'When Risk Is Harm'
 subtitle: 'Prospective setbacks, baselines, and materiality'
 status: review
 sources:

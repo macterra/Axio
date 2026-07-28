@@ -1,5 +1,5 @@
 ---
-title: 'Consciousness Explained'
+title: 'A Candidate Architecture of Consciousness'
 subtitle: 'The Modeler-Schema Theory'
 status: review
 sources:

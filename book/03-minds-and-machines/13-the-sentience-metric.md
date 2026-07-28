@@ -1,5 +1,5 @@
 ---
-title: 'The Sentience Metric'
+title: 'Tests for Sentience'
 subtitle: 'Three evidentiary tests for artificial systems'
 status: review
 sources:
@@ -9,9 +9,9 @@ sources:
 
 There is a position in AI discourse that I half agree with, and the half I agree with makes the other half worth engaging. The position says: there can be such a thing as nonliving intelligence, and AI is an instance of it — as nations and organizations are. It is not alive by any definition of life; it is a golem, an avatar, a third path. All correct, and usefully so, because it breaks the lazy assumption that intelligence must come packaged in biology. But the position then takes one step too far: such a system, it concludes, is *sentient by any metric you can define*.
 
-That is a wager, and I accept it. This chapter defines the metrics.
+That is a wager, and I accept it. This chapter defines the tests.
 
-The step too far is a category error that runs through the whole public conversation about AI: the conflation of **intelligence** with **sentience**. They are separate evidentiary axes — a distinction [the sentience ladder](11-the-sentience-ladder.md) draws in full. A system can display extraordinary competence in modeling, planning, reasoning, or symbol manipulation without that performance entailing an inner life. To make the distinction operational rather than rhetorical, we need a **sentience evidence framework**: not a poll of intuitions or a Turing-style behavioral audition, but inspectable properties that leading theories associate with experience and that a merely competent system can lack. The historical title says *metric*; the result is not a validated scalar.
+The step too far is a category error that runs through the whole public conversation about AI: the conflation of **intelligence** with **sentience**. They are separate evidentiary axes — a distinction [the sentience ladder](11-the-sentience-ladder.md) draws in full. A system can display extraordinary competence in modeling, planning, reasoning, or symbol manipulation without that performance entailing an inner life. To make the distinction operational rather than rhetorical, we need a **sentience evidence framework**: not a poll of intuitions or a Turing-style behavioral audition, but inspectable properties that leading theories associate with experience and that a merely competent system can lack. The source essay called the result a *metric*; it is not a validated scalar.
 
 Three tests organize the evidence. Each targets a property implicated by this volume's consciousness proposal and overlapping research programs. They are not theory-neutral measures, individually necessary conditions established across all theories, or a numerical score. Their job is to expose what would need inspection, how contrary findings should move Credence, and what conclusions remain unlicensed.
 

@@ -1,6 +1,6 @@
 ---
 title: 'The Price of Agency'
-subtitle: 'Why evil persists in any world worth living in'
+subtitle: 'Why preventing evil can endanger agency'
 status: review
 sources:
   - 184979362.the-price-of-agency

@@ -12,7 +12,7 @@ Why is there something it feels like to see red, to feel pain, to taste salt —
 
 I will argue for a conditional dissolution: if phenomenal character is identical to transparent access to an agent's self-model, then the hard problem rests on treating two descriptions of one process as two substances. This is the **Agency-Model Theory's identity claim**. It is stronger than the functional evidence alone and should be judged as a philosophical proposal, not smuggled in as a definition of consciousness.
 
-A note on names, stated once. [Consciousness Explained](07-consciousness-explained.md) laid out Frank Heile's Modeler-Schema framework, and [Beyond Dennett](08-beyond-dennett.md) located its disagreement with Dennett. What follows is my **Agency-Model Theory**: the same family of ideas approached from agency and predictive processing. This chapter owns the philosophical identity argument and its objections; it will not repeat the preceding architecture as though restatement were additional evidence.
+A note on names, stated once. [A Candidate Architecture of Consciousness](07-consciousness-explained.md) laid out Frank Heile's Modeler-Schema framework, and [Beyond Dennett](08-beyond-dennett.md) located its disagreement with Dennett. What follows is my **Agency-Model Theory**: the same family of ideas approached from agency and predictive processing. This chapter owns the philosophical identity argument and its objections; it will not repeat the preceding architecture as though restatement were additional evidence.
 
 ## An Agent That Models Itself
 

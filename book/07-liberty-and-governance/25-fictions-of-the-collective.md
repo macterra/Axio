@@ -1,6 +1,6 @@
 ---
 title: 'Fictions of the Collective'
-subtitle: 'Nations are not agents; interests are not primitives'
+subtitle: 'National interests are interpretations, not primitives'
 status: review
 sources:
   - 183448517.the-national-interest-fallacy

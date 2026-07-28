@@ -53,7 +53,7 @@ In the Axionic architecture, a provenance-bearing permission to cause a specifie
 
 Availability of represented content to a system's modeling and control processes. Awareness in this functional sense does not by itself establish [sentience](#sentience), [sapience](#sapience), or [sovereignty](#sovereignty).
 
-**Read:** [Consciousness Explained](../03-minds-and-machines/07-consciousness-explained.md) and [The Sentience Ladder](../03-minds-and-machines/11-the-sentience-ladder.md).
+**Read:** [A Candidate Architecture of Consciousness](../03-minds-and-machines/07-consciousness-explained.md) and [The Sentience Ladder](../03-minds-and-machines/11-the-sentience-ladder.md).
 
 ### Axion
 
@@ -171,7 +171,7 @@ A scoped, decision-specific authorization given with sufficient capacity, materi
 
 Phenomenal consciousness is the condition in which there is something it is like to be a system. The Agency-Model and Modeler-Schema theories propose functional identities and candidate mechanisms; evidence for access, report, recurrence, integration, or self-modeling does not establish phenomenality by itself.
 
-**Status:** Neutral definition plus proposed theories. **Read:** [Consciousness Explained](../03-minds-and-machines/07-consciousness-explained.md) through [Why Zombies Don't Evolve](../03-minds-and-machines/10-why-zombies-dont-evolve.md).
+**Status:** Neutral definition plus proposed theories. **Read:** [A Candidate Architecture of Consciousness](../03-minds-and-machines/07-consciousness-explained.md) through [Why Zombies Don't Evolve](../03-minds-and-machines/10-why-zombies-dont-evolve.md).
 
 ### Constructor
 
@@ -313,7 +313,7 @@ The mature political position that the legitimacy of coercion is conditional, pr
 
 A material setback to a sentient subject's welfare or an agent's functional capacity and viable options against an explicit appropriate baseline. Harm can occur with authorization or justification; wrongfulness additionally depends on causation, duty, foreseeability, care, justification, and responsibility. Prospective harm requires a material, foreseeable, attributable worsening of exposure, not any non-zero risk.
 
-**Read:** [What Counts as Harm](../05-value-and-ethics/11-what-counts-as-harm.md) and [Risk Is Harm](../05-value-and-ethics/20-risk-is-harm.md).
+**Read:** [What Counts as Harm](../05-value-and-ethics/11-what-counts-as-harm.md) and [When Risk Is Harm](../05-value-and-ethics/20-risk-is-harm.md).
 
 ## I
 
@@ -569,7 +569,7 @@ A model-relative region of states connected by admissible interpretation-preserv
 
 The capacity for valenced phenomenal experience: states can feel better or worse for the subject. Nociception, reinforcement, attraction, avoidance, and error signals are functional regulation and become evidence of sentience only through a further theory connecting them to felt valence.
 
-**Read:** [The Sentience Ladder](../03-minds-and-machines/11-the-sentience-ladder.md) through [The Sentience Metric](../03-minds-and-machines/13-the-sentience-metric.md). Compare [sapience](#sapience).
+**Read:** [The Sentience Ladder](../03-minds-and-machines/11-the-sentience-ladder.md) through [Tests for Sentience](../03-minds-and-machines/13-the-sentience-metric.md). Compare [sapience](#sapience).
 
 ### Sovereign Kernel
 
