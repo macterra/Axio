@@ -66,7 +66,8 @@ The revision names the manuscript's current review state, states the chosen agen
 4. **Complete — Volumes 6–7 introductions.** `03-economics-and-governance-introductions.md` records the shared causal burden for market and state action, prices' inability to decide authority, the chosen individualist premise, the Grey Zone, the reversible coordination project, and the open defense problem.
 5. **Complete — Volumes 8–9 introductions.** `04-culture-and-meaning-introductions.md` records cultural-selection and motive-inference limits, controlled metaphors, offered naturalistic reconstruction, analogical meaning maps, and the chosen secular meta-myth.
 6. **Complete — Volumes 1–3 conclusions and handoffs.** `05-foundational-conclusions-and-handoffs.md` records Volume 1's no-edit close, Volume 2's epistemic boundary and chosen normative premise, and Volume 3's harm/wrongfulness correction.
+7. **Complete — Volumes 4–6 conclusions and handoffs.** `06-program-ethics-and-economics-conclusions.md` records the program and economics no-edit closes, plus the ethics conclusion's intention/harm sequence, prospective-harm baseline, conditional defense, and cultural-scale limits.
 
 ## Next cluster
 
-Audit the Volume 4–6 conclusions and handoffs: program non-claims, chosen ethics, and coordination's limits.
+Audit the Volume 7–9 conclusions and handoffs: fiction as stress test, motive inference, and the final offered reconstruction.
