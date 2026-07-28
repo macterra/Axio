@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Build the Axio book from book/ into docs/book/
+Build The Architecture of Agency from book/ into docs/book/
 
 Reads book/book.yaml for the volume order, discovers chapters from filename
 prefixes (01-, 02-, ...) within each volume directory, and renders every
@@ -29,6 +29,7 @@ BOOK_SRC = Path('book')
 BOOK_DEST = Path('docs/book')
 DOCS = Path('docs')
 BASE_URL = "https://axionic.org"
+BOOK_TITLE = "Book"
 
 PUBLISHED_STATUSES = {'draft', 'review', 'final'}
 VALID_STATUSES = {'outline'} | PUBLISHED_STATUSES
@@ -284,12 +285,14 @@ def wrap_page(title, content, prefix, breadcrumbs=None):
                        + ' <span class="crumb-sep">›</span> '.join(parts)
                        + '</div>')
 
+    document_title = title if title == BOOK_TITLE else f'{title} - {BOOK_TITLE}'
+
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{escape(title)} - Axio</title>
+    <title>{escape(document_title)}</title>
     <link rel="icon" type="image/png" href="{prefix}images/axionic-logo.png">
 {MATHJAX}
     <!-- Site Styles -->
@@ -349,7 +352,7 @@ def build_chapter_page(vol, chapter, prev_ch, next_ch, publish_index):
                          f'{escape(next_ch["meta"].get("title", ""))} →</a>')
     chapter_nav = f'<nav class="book-chapter-nav">{"".join(nav_links)}</nav>'
 
-    breadcrumbs = [('Axio', '../index.html')]
+    breadcrumbs = [(BOOK_TITLE, '../index.html')]
     if vol['number'] is not None:
         breadcrumbs.append((f"Volume {vol['number']}", 'index.html'))
     breadcrumbs.append((chapter['meta'].get('title', chapter['slug']), None))
@@ -417,7 +420,8 @@ def build_volume_page(vol, publish_index):
     if not published and not unpublished:
         content += '<p class="book-muted">This volume is in preparation.</p>\n'
 
-    breadcrumbs = [('Axio', '../index.html'), (volume_display_title(vol), None)]
+    breadcrumbs = [(BOOK_TITLE, '../index.html'),
+                   (volume_display_title(vol), None)]
     dest = dest_dir / 'index.html'
     dest.write_text(
         wrap_page(volume_display_title(vol), content, prefix, breadcrumbs),
@@ -523,7 +527,7 @@ def write_redirects(manifest):
 
 
 def main():
-    print("=== Building Axio book ===")
+    global BOOK_TITLE
     from pandoc_version import check as _check_pandoc
     _check_pandoc(strict=True)
     if not (BOOK_SRC / 'book.yaml').exists():
@@ -531,6 +535,8 @@ def main():
         sys.exit(1)
 
     manifest, volumes = load_book()
+    BOOK_TITLE = manifest['title']
+    print(f"=== Building {BOOK_TITLE} ===")
     publish_index = build_publish_index(volumes)
 
     # Rebuild output from scratch — docs/book is fully owned by this script

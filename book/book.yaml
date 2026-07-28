@@ -1,4 +1,4 @@
-# Axio — book manifest
+# The Architecture of Agency — book manifest
 #
 # Volume order here is the book's reading order.
 # Chapter order within a volume comes from filename prefixes (01-, 02-, ...).
@@ -7,8 +7,8 @@
 # volume.md in each volume directory is the volume introduction; its status
 # gates whether the volume page is published.
 
-title: Axio
-subtitle: A book in progress, built from the Axio blog
+title: The Architecture of Agency
+subtitle: A Naturalistic Philosophy of Minds, Values, Power, and Meaning
 
 volumes:
   - slug: 00-front
