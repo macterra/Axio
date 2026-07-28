@@ -29,7 +29,7 @@ The replication crisis is the clean case, so trace it properly. A funding body �
 
 The same anatomy runs through the attention platforms. [Attention is an economy](05-attention-is-an-economy.md), and the platforms that harvest it are paid in engagement; outrage engages; so the algorithms amplify outrage, users learn to perform it, and public discourse degrades — not because anyone at any layer decided discourse should degrade, but because each layer responded rationally to the gradient above it. Politics runs the pattern a third time: when the electoral game rewards signaling, institutions prioritize signaling, policy becomes theater, and governance declines.
 
-Incentives can scale across linked levels. When a gradient imposed at one level propagates through several below it, the resulting cascade can become one of the most consequential and least visible forces in institutional life. But propagation is a causal claim to establish, not a property of every hierarchy; where the transmission channel is weak, the levels can remain partly independent.
+Incentives scale — but not through every level. When a gradient imposed at one level does propagate through several below it, the resulting cascade can become one of the most consequential and least visible forces in institutional life. That propagation is a causal claim to establish, not a property of every hierarchy: where the transmission channel is weak, the levels can remain partly independent.
 
 ## Misalignment Is a Persistent Risk
 
@@ -63,7 +63,7 @@ The second is **lock-in**. Once a pathological incentive structure is entrenched
 
 The third is **runaway**. Some misalignments amplify themselves. Make a metric a target and agents optimize the metric instead of the thing it measured, until the metric means nothing; each escalation in a signaling race forces every rival to escalate further; and everyone involved can see the spiral perfectly well while remaining individually unable to exit it. Rational agents, trapped in an irrational equilibrium.
 
-Put the three together and misalignment can act like a selector favoring failure-producing strategies. Some systems collapse after their incentives reward conduct that erodes the conditions of continued operation; others fail through shocks, incompetence, conflict, resource loss, or mechanisms outside this taxonomy. The pattern identified here is local advantage burning the coherence that survival across time requires, not a complete theory of institutional failure.
+Put the three together and misalignment can act like a selector favoring failure-producing strategies. Systems rarely collapse at random: some fail after their incentives start rewarding conduct that erodes the conditions of continued operation, though others fail through shocks, incompetence, conflict, resource loss, or mechanisms outside this taxonomy. The pattern identified here is local advantage burning the coherence that survival across time requires, not a complete theory of institutional failure.
 
 ## Diagnosing the Real Game
 
