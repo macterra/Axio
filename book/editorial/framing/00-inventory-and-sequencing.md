@@ -69,7 +69,8 @@ The revision names the manuscript's current review state, states the chosen agen
 7. **Complete — Volumes 4–6 conclusions and handoffs.** `06-program-ethics-and-economics-conclusions.md` records the program and economics no-edit closes, plus the ethics conclusion's intention/harm sequence, prospective-harm baseline, conditional defense, and cultural-scale limits.
 8. **Complete — Volumes 7–9 conclusions and handoffs.** `07-governance-culture-and-meaning-conclusions.md` records the governance-fiction and final-letter no-edits, plus the culture conclusion's asymmetry/motive boundary and preserved handoff to meaning.
 9. **Complete — Book title and identity.** `08-book-title-and-identity.md` records *The Architecture of Agency* as the reader-facing title and preserves Axio as the framework and repository identity.
+10. **Complete — Bounded chapter labels.** `09-bounded-chapter-labels.md` records seven title or subtitle corrections where the former label claimed more than the reviewed chapter.
 
 ## Next cluster
 
-Audit chapter titles and subtitles for claims stronger than their bodies and obsolete terminology, with URL and heading-anchor safety checked before any rename.
+Complete the title/subtitle no-edit inventory, then audit part labels and navigational transitions.

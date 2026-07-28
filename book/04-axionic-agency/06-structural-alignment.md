@@ -1,6 +1,6 @@
 ---
 title: 'Structural Alignment'
-subtitle: 'Safety by architecture, not by learned values'
+subtitle: 'Alignment by architecture, not by learned values'
 status: review
 sources:
   - 181930168.structural-alignment

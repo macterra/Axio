@@ -64,6 +64,6 @@ Genuine compassion is not sentimentality; it is resolve. It respects the other a
 
 ## One Definition, One Upgrade
 
-The definition presented here is the canonical account. Part VI adds a prospective category: materially worsening another's exposure can be a present setback before an injury lands. [Risk Is Harm](20-risk-is-harm.md) extends rather than replaces this chapter, and it keeps exposure distinct from realized injury. Neither chapter makes offense, rejection, or envy automatic harms; each requires a material setback relative to an appropriate baseline.
+The definition presented here is the canonical account. Part VI adds a prospective category: materially worsening another's exposure can be a present setback before an injury lands. [When Risk Is Harm](20-risk-is-harm.md) extends rather than replaces this chapter, and it keeps exposure distinct from realized injury. Neither chapter makes offense, rejection, or envy automatic harms; each requires a material setback relative to an appropriate baseline.
 
 What survives the upgrade: harm concerns material setbacks to welfare, functional capacity, or viable options. Consent, causation, foreseeability, duty, and justification determine responsibility and wrongfulness rather than whether the setback occurred. Chapter 20 extends the account prospectively, but only material and attributable exposure changes relative to an appropriate baseline qualify; otherwise ordinary coexistence would become universal wrongdoing.

@@ -1,5 +1,5 @@
 ---
-title: 'The Future Is Extropian'
+title: 'The Extropian Crucible'
 subtitle: 'A proto-civilizational R&D lab'
 status: review
 sources:
