@@ -352,7 +352,7 @@ Improve rhythm, clarity, transitions, pronoun consistency, examples, and sentenc
 
 ## Phase 8 — Framing material
 
-Progress: **In progress.** The inventory and sequencing decision are recorded in `framing/00-inventory-and-sequencing.md`. The preface and book introduction now describe the manuscript's review state, chosen normative premise, cultural-selection boundary, and record authority. All nine volume introductions are complete in `framing/01-foundational-volume-introductions.md` through `framing/04-culture-and-meaning-introductions.md`. The Volume 1–3 conclusions and handoffs are complete in `framing/05-foundational-conclusions-and-handoffs.md`; Volumes 4–6 are complete in `framing/06-program-ethics-and-economics-conclusions.md`; Volumes 7–9 are next.
+Progress: **In progress.** The inventory and sequencing decision are recorded in `framing/00-inventory-and-sequencing.md`. The preface and book introduction now describe the manuscript's review state, chosen normative premise, cultural-selection boundary, and record authority. All nine volume introductions are complete in `framing/01-foundational-volume-introductions.md` through `framing/04-culture-and-meaning-introductions.md`. All nine conclusions and handoffs are complete in `framing/05-foundational-conclusions-and-handoffs.md` through `framing/07-governance-culture-and-meaning-conclusions.md`; titles and subtitles are next.
 
 After the manuscript has stabilized, revise:
 
@@ -409,4 +409,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Phase 8 has completed the front matter, all nine volume introductions, and the Volume 1–6 conclusions and handoffs. Next audit the Volume 7–9 conclusions and handoffs against fiction-as-stress-test, motive-inference, and final-reconstruction boundaries.
+Phase 8 has completed the front matter, all nine volume introductions, and all nine conclusions and handoffs. Next audit chapter titles and subtitles for claims stronger than their bodies, obsolete terminology, and anchor safety.
