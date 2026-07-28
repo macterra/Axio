@@ -352,7 +352,7 @@ Improve rhythm, clarity, transitions, pronoun consistency, examples, and sentenc
 
 ## Phase 8 — Framing material
 
-Progress: **In progress.** The inventory and sequencing decision are recorded in `framing/00-inventory-and-sequencing.md`. The preface and book introduction now describe the manuscript's review state, chosen normative premise, cultural-selection boundary, and record authority. All nine volume introductions are complete in `framing/01-foundational-volume-introductions.md` through `framing/04-culture-and-meaning-introductions.md`. All nine conclusions and handoffs are complete in `framing/05-foundational-conclusions-and-handoffs.md` through `framing/07-governance-culture-and-meaning-conclusions.md`. The reader-facing book title is complete in `framing/08-book-title-and-identity.md`; seven bounded chapter-label corrections are recorded in `framing/09-bounded-chapter-labels.md`.
+Progress: **In progress.** The inventory and sequencing decision are recorded in `framing/00-inventory-and-sequencing.md`. The preface and book introduction now describe the manuscript's review state, chosen normative premise, cultural-selection boundary, and record authority. All nine volume introductions are complete in `framing/01-foundational-volume-introductions.md` through `framing/04-culture-and-meaning-introductions.md`. All nine conclusions and handoffs are complete in `framing/05-foundational-conclusions-and-handoffs.md` through `framing/07-governance-culture-and-meaning-conclusions.md`. The reader-facing book title is complete in `framing/08-book-title-and-identity.md`; seven bounded chapter-label corrections are recorded in `framing/09-bounded-chapter-labels.md`, and the remaining no-edit dispositions in `framing/10-title-subtitle-no-edit-inventory.md` close the title/subtitle audit.
 
 After the manuscript has stabilized, revise:
 
@@ -409,4 +409,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Phase 8 has completed the front matter, all nine volume introductions, all nine conclusions and handoffs, the reader-facing book identity, and the bounded chapter-label corrections. Next complete the title/subtitle no-edit inventory, then audit part labels and navigational transitions.
+Phase 8 has completed the front matter, all nine volume introductions, all nine conclusions and handoffs, the reader-facing book identity, and the chapter title/subtitle audit. Next audit part labels and navigational transitions.

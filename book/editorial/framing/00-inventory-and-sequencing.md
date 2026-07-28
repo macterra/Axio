@@ -70,7 +70,8 @@ The revision names the manuscript's current review state, states the chosen agen
 8. **Complete — Volumes 7–9 conclusions and handoffs.** `07-governance-culture-and-meaning-conclusions.md` records the governance-fiction and final-letter no-edits, plus the culture conclusion's asymmetry/motive boundary and preserved handoff to meaning.
 9. **Complete — Book title and identity.** `08-book-title-and-identity.md` records *The Architecture of Agency* as the reader-facing title and preserves Axio as the framework and repository identity.
 10. **Complete — Bounded chapter labels.** `09-bounded-chapter-labels.md` records seven title or subtitle corrections where the former label claimed more than the reviewed chapter.
+11. **Complete — Title/subtitle no-edit inventory.** `10-title-subtitle-no-edit-inventory.md` records the volume-by-volume dispositions for all remaining labels and closes the chapter-label audit.
 
 ## Next cluster
 
-Complete the title/subtitle no-edit inventory, then audit part labels and navigational transitions.
+Audit part labels and navigational transitions.
