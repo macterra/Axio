@@ -55,13 +55,13 @@ Seen this way, nationalism's potency becomes less mysterious. Challenges to nati
 
 ## Critical Mass
 
-The same dynamics run at every scale. Egregores the size of nations are simply the mature form of a process you can watch from the inside in a single body of thought — including, if you sustain one long enough, your own.
+Related feedbacks appear at different scales, but scale changes the relevant unit and mechanism. A national pattern depends on distributed carriers, institutions, and enforcement; a private body of thought can display an analogous accumulation of scaffolding without yet forming a collective lineage.
 
 When a body of work grows, it can cross a practical threshold at which shared concepts and references make extension easier. Calling this a phase transition highlights a qualitative change but does not assert a universal critical point or physical law. Early pieces invent framing and terms; later pieces can reuse scaffolding already in place.
 
 Three forces drive the acceleration. First, network effects: each new contribution plugs into existing concepts, and every connection strengthens the lattice. Second, reduced cognitive cost: established frameworks carry explanatory power, so the thinker need only choose the right lens rather than grind a new one. Third, compression through language: once coined, a term condenses paragraphs into a word, and intellectual bandwidth expands accordingly. Past the threshold, the body of work itself acts as a *constructor* — a structure that makes future structures easier to build. The more the system grows, the more it pulls new thought into alignment with itself. What began as scattered sparks becomes a recursive engine of coherence.
 
-Read that last sentence again with this chapter's eyes. A lattice that recruits new thought into its own extension, that gets easier to serve the longer you serve it, that compresses its doctrines into transmissible vocabulary — that is an egregore in embryo. The phase transition of a private body of thought is the same event as the birth of a collective thought-form, observed at the smallest scale and the earliest stage.
+Read that last sentence again with this chapter's eyes. A lattice that recruits new thought into its own extension, that gets easier to serve the longer you serve it, that compresses its doctrines into transmissible vocabulary — that is an egregore in embryo. The private transition is an analogue and possible precursor, not the same event as the birth of a collective thought-form. The latter requires transmission: other carriers must learn, retain, vary, and extend the pattern.
 
 This suggests a heuristic sequence rather than a law. Some intellectual movements pass from discovery, to construction and refinement, to codification and transmission. Others fragment, disappear, or move backward. When a private vocabulary becomes a public tradition, people can teach and extend it without contact with its originator. In egregoric shorthand it has acquired “hosts”; literally, a distributed lineage has formed through identifiable carriers and institutions.
 
