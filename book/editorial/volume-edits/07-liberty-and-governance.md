@@ -29,7 +29,7 @@ The pass retains all 36 chapters, makes the seven-part structure and fictional c
 4. Law, Justice, and Movement
 5. Equality, Need, and Utopia
 6. Political Pathologies and Epistemic Discipline
-7. From Monopoly to Protocol
+7. Monopoly, Anarchy, and Protocol
 8. Fictional Coda — The Price of Breath
 
 ## Open empirical and author decisions

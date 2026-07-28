@@ -71,7 +71,8 @@ The revision names the manuscript's current review state, states the chosen agen
 9. **Complete — Book title and identity.** `08-book-title-and-identity.md` records *The Architecture of Agency* as the reader-facing title and preserves Axio as the framework and repository identity.
 10. **Complete — Bounded chapter labels.** `09-bounded-chapter-labels.md` records seven title or subtitle corrections where the former label claimed more than the reviewed chapter.
 11. **Complete — Title/subtitle no-edit inventory.** `10-title-subtitle-no-edit-inventory.md` records the volume-by-volume dispositions for all remaining labels and closes the chapter-label audit.
+12. **Complete — Part labels and navigational handoffs.** `11-part-labels-and-navigation.md` records one part-label correction and five handoff repairs that keep framing within the manuscript's reviewed boundaries.
 
 ## Next cluster
 
-Audit part labels and navigational transitions.
+Complete the part-label and navigation no-edit inventory, then close Phase 8.
