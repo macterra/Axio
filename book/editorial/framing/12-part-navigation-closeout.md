@@ -37,3 +37,7 @@ The live handoffs now satisfy the Phase 8 framing tests:
 - Coda and envoi labels accurately disclose their changes of register.
 
 Phase 8 is complete. Phase 9 begins with verification inventory and reproducibility checks; promotion from `review` to `final` remains a separate author-approved action.
+
+## Identity follow-up
+
+The closeout also corrected five front-matter remnants exposed by the new title audit: two Introduction references and the Preface now identify *The Architecture of Agency* as the book and Axio as its framework; the Glossary's subtitle and opening make the same distinction explicit.

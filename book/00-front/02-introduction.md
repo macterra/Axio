@@ -5,7 +5,7 @@ status: review
 sources: []
 ---
 
-*Axio* is nine volumes, ordered from foundations to applications, and built to be read on the web rather than on paper. This introduction is the map: what is in each volume, how the volumes connect, and how to navigate a book still under review.
+*The Architecture of Agency* is nine volumes, ordered from foundations to applications, and built to be read on the web rather than on paper. This introduction is the map: what is in each volume, how the volumes connect, and how to navigate a book still under review.
 
 ## The arc
 
@@ -37,4 +37,4 @@ The book is web-native by design. Chapters link freely to one another across vol
 
 ## A book in progress
 
-*Axio* is published incrementally, and its chapters wear their status openly. The manuscript is currently in **review**: readable and coherent enough to stand, but not yet final. Nothing here is presented as finished that is not. This is deliberate: the book is meant to be used and argued with while it is still alive, not sealed and handed down. Read it as what it is — the current state of a long argument, offered at the strength the evidence licenses, and open, everywhere, to being made better.
+*The Architecture of Agency* is published incrementally, and its chapters wear their status openly. The manuscript is currently in **review**: readable and coherent enough to stand, but not yet final. Nothing here is presented as finished that is not. This is deliberate: the book is meant to be used and argued with while it is still alive, not sealed and handed down. Read it as what it is — the current state of a long argument, offered at the strength the evidence licenses, and open, everywhere, to being made better.

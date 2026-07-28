@@ -1,11 +1,11 @@
 ---
 title: Glossary
-subtitle: Terms used across Axio
+subtitle: Terms used across the Axio framework
 status: review
 sources: []
 ---
 
-This glossary is a map of the vocabulary used across *Axio*. Each entry gives the book's working definition and points to the chapter that owns the full argument. The linked chapter governs where this summary and the detailed treatment appear to differ.
+This glossary is a map of the vocabulary used across the Axio framework. Each entry gives the book's working definition and points to the chapter that owns the full argument. The linked chapter governs where this summary and the detailed treatment appear to differ.
 
 Most entries are definitions or distinctions internal to the book. Labels such as **proposed metric**, **conjecture**, **proposed framework**, and **personal commitment** mark terms whose names should not be mistaken for established disciplinary results or neutral descriptions shared by every theory.
 
