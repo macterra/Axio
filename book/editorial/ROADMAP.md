@@ -407,4 +407,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-The narrative-transmission audit is recorded in `compression/33-cross-volume-narrative-transmission-truth.md`. Volume 2 retains the canonical map/territory account; Volume 8 Chapter 1 now makes cognitive resonance compete with accuracy under specified filters rather than defining narrative selection as indifference to world-fit.
+The moral-pressure and extortion-comparison audit is recorded in `compression/34-cross-volume-moral-pressure-extortion-comparisons.md`. Volume 5 Chapter 15 now reserves coercion for a credible conditional material threat, and Volume 8 Chapter 13 no longer uses *protection racket* as a generic synonym for inconsistency.
