@@ -407,4 +407,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-The civilizational-progress audit is recorded in `compression/31-cross-volume-civilizational-progress.md`. Volume 7 now treats agency preservation and reduced coercion as chosen political standards rather than evolution's historical direction; Volume 6 retains empirical progress and Volume 8 retains the technical selection boundary.
+The loaded-dice audit is recorded in `compression/32-cross-volume-loaded-dice-choice-structure.md`. Distinct probability calculations remain; Volume 6 Chapter 23 no longer infers wholly voluntary choice from a tilted parenthood distribution.
