@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 7 in progress — the local continuous-reading work, ten bounded cross-volume families, and post-pass boldness audit are complete.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Further bounded cross-volume and line work, framing, and final verification remain.
+Status: **Phase 7 in progress — the local continuous-reading work, eleven bounded cross-volume families, and post-pass boldness audit are complete.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages are in `review`; merged editorial passes are not yet promotion to `final`. Further bounded cross-volume and line work, framing, and final verification remain.
 
 ## Progress at a glance
 
@@ -14,7 +14,7 @@ Status: **Phase 7 in progress — the local continuous-reading work, ten bounded
 | 4. Applied volumes | **Complete** | Volume 6–9 passes merged; manuscript remains in `review`. |
 | 5. Cross-volume reconciliation | **Complete** | All eight clusters reconciled; canonical definitions are stable enough to govern the glossary. |
 | 6. Reader-facing glossary | **Complete** | All 101 canonical terms publish with defining-chapter links and visible calibration. |
-| 7. Compression and prose | **In progress** | Local passes and ten bounded cross-volume families are complete; consciousness/sentience/sapience recaps are next. |
+| 7. Compression and prose | **In progress** | Local passes and eleven bounded cross-volume families are complete; objective-morality/conditional-realism recaps are next. |
 | 8. Framing material | **Pending** | Revise front matter and introductions after the manuscript stabilizes. |
 | 9. Verification and promotion | **Pending** | Promote `review` to `final` only after author approval and full validation. |
 
@@ -320,6 +320,8 @@ The agency-layer audit preserved Volume 1's basal model–evaluation–control d
 
 The coherence-layer audit preserved the distinct dynamical, epistemic, reflective, cultural, and personal-normative jurisdictions. Volume 7 Chapter 10 now separates inferential coherence and epistemic humility from chosen commitments to reciprocity and harm scrutiny; `compression/20-cross-volume-coherence-layers.md` records the audit.
 
+The consciousness/sentience/sapience audit preserved the functional/phenomenal, functional-valence/felt-valence, and welfare/sovereignty firewalls. Volume 5 Chapter 14 now makes its anti-aggregation argument through the substrate-neutral distinction between sentient welfare and sapient authorship rather than calling human standing qualitatively superior; `compression/21-cross-volume-consciousness-sentience-sapience.md` records the audit.
+
 Perform three distinct passes.
 
 ### 1. Structural compression
@@ -397,4 +399,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Audit consciousness, sentience, and sapience recaps next. Volume 3 owns the phenomenal proposal and evidentiary distinctions; Volume 5 owns sapient standing.
+Audit objective-morality and conditional-realism recaps next. Volume 5 Chapters 1–3 own the rejection of agent-independent value; Chapter 26 owns the limited reconstruction through disclosed normative premises.
