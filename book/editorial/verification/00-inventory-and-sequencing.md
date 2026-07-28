@@ -38,10 +38,10 @@ These checks are necessary but do not cover all Phase 9 requirements.
 | Source IDs | **Passing automated check** | `verify-book.py` validates syntax, archive existence, explicit source-free records, and intentional reuse reporting. |
 | Paper links | **Passing automated route check** | `verify-book.py` resolves all 58 unique generated `/papers/` destinations; interpretive authority remains an editorial judgment. |
 | External links | **Passing dated baseline** | `verify-external-links.py` reports 45 URLs across 38 domains: 39 healthy, 6 access-restricted, and no hard failures. Re-run as an opt-in network check; apply the explicit repair/exception policy to any future 404/410. |
-| Obsolete terminology and superseded claims | **Editorially reviewed, mechanically open** | Build a search ledger from reconciliation terminology and Phase 7 removals; classify every residual hit. |
+| Obsolete terminology and superseded claims | **Inventory complete; bounded repairs selected** | `04-stale-language-inventory.md` confirms the Phase 7 firewalls and selects three residual pattern/attractor locations for repair. |
 | Glossary anchors and defining-chapter links | **Passing automated check** | `verify-book.py` matches 101 terminology headings, glossary entries, and rendered anchors and validates their routes/fragments. |
-| TODOs and drafting markers | **No TODO/TBD/FIXME/XXX hits** | Classify broader “draft/work in progress” and blog-furniture hits rather than treating words alone as defects. |
-| Dated news pegs | **Open** | Inventory relative-time language and current-event claims; separate historical quotation from unstable assertion. |
+| TODOs and drafting markers | **Passing inventory** | No TODO/TBD/FIXME/XXX, work-in-progress, coming-soon, or chapter-to-blog furniture remains; contextual draft language is intentional. |
+| Dated news pegs | **Inventory complete; bounded repairs selected** | Replace two edition-relative clocks with dates and scope unversioned AI-market claims to their evidence; retain dated records and rhetorical indexicals. |
 | Chapter ordering and navigation | **Passing automated check** | `verify-book.py` independently recomputes and matches prev/up/next order for all 243 chapter pages; route checks cover indexes and redirects. |
 | Continuous reading | **Open; human judgment required** | Record volume-by-volume author reading and continuity decisions, including the load-bearing Volumes 1–5 sequence. |
 | Promotion | **Blocked by policy, not by defect** | Require explicit author approval after verification and copyedit; no bulk status change is authorized now. |
@@ -61,7 +61,7 @@ These checks are necessary but do not cover all Phase 9 requirements.
 1. **Complete — Reproducibility and source validator.** `verify-book.py` validates front matter, status and source metadata, archive existence, shared provenance, and byte-for-byte regeneration of `docs/book/` plus `docs/sitemap.xml`. `01-reproducibility-and-sources.md` records the result.
 2. **Complete — Internal links, papers, glossary, and navigation.** `verify-book.py` now walks generated internal routes and fragments, checks paper targets, verifies the 101-entry terminology/glossary/rendered-anchor correspondence, and compares all chapter navigation against the manifest. `02-internal-authority-routes.md` records two repaired legacy links and the passing baseline.
 3. **Complete — External link health.** `verify-external-links.py` supplies a bounded, network-dependent audit with explicit hard-failure and restricted-access dispositions. `03-external-link-health.md` records the 2026-07-28 baseline and the reviewed soft redirect.
-4. **Obsolete terms, superseded claims, dated pegs, and blog furniture.** Produce evidence ledgers before editing any residual.
+4. **Inventory complete; repairs in progress — Obsolete terms, superseded claims, dated pegs, and blog furniture.** `04-stale-language-inventory.md` records the clean drafting-marker/blog-furniture searches, classifies time-language and metaphor families, and selects two bounded repair clusters.
 5. **Continuous reading and copyedit signoff.** Record human continuity review by volume and across Volumes 1–5 and 6–9.
 6. **Promotion decision.** Ask for explicit author approval only after the verification record is complete.
 
