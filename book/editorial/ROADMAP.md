@@ -352,7 +352,7 @@ Improve rhythm, clarity, transitions, pronoun consistency, examples, and sentenc
 
 ## Phase 8 — Framing material
 
-Progress: **Pending.** Some introductions changed during volume edits, but the dedicated final framing pass has not begun.
+Progress: **In progress.** The inventory and sequencing decision are recorded in `framing/00-inventory-and-sequencing.md`. The preface and book introduction now describe the manuscript's review state, chosen normative premise, cultural-selection boundary, and record authority. The Volume 1–2 introductions are next.
 
 After the manuscript has stabilized, revise:
 
@@ -409,4 +409,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Phase 7 is closed in `compression/36-phase-7-residual-motifs-and-closeout.md`. Begin Phase 8 by auditing the preface, book introduction, volume introductions, conclusions, titles, and cross-volume transitions against the edited manuscript.
+Phase 8 has begun with `framing/00-inventory-and-sequencing.md` and the preface/book-introduction cluster. Next audit the Volume 1–2 introductions as the foundational pair.
