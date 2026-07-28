@@ -72,7 +72,8 @@ The revision names the manuscript's current review state, states the chosen agen
 10. **Complete — Bounded chapter labels.** `09-bounded-chapter-labels.md` records seven title or subtitle corrections where the former label claimed more than the reviewed chapter.
 11. **Complete — Title/subtitle no-edit inventory.** `10-title-subtitle-no-edit-inventory.md` records the volume-by-volume dispositions for all remaining labels and closes the chapter-label audit.
 12. **Complete — Part labels and navigational handoffs.** `11-part-labels-and-navigation.md` records one part-label correction and five handoff repairs that keep framing within the manuscript's reviewed boundaries.
+13. **Complete — Part/navigation closeout.** `12-part-navigation-closeout.md` records the no-edit dispositions for all remaining labels and handoffs and closes Phase 8.
 
 ## Next cluster
 
-Complete the part-label and navigation no-edit inventory, then close Phase 8.
+Begin Phase 9 with verification inventory and reproducibility checks; do not promote chapter status without author approval.
