@@ -27,11 +27,11 @@ The counterfactual can be modeled, but not directly measured. The five ledgers b
 
 The scenario assumes roughly 125,000 TWh of U.S. fossil generation across five decades and stipulates that a nuclear-first path displaces 30%, or 37,500 TWh. That displacement fraction is the load-bearing counterfactual. It must not be described as observed or as “France's” without modeling differences in demand, construction, grids, and institutions.
 
-**Mortality.** Burning coal and gas is not an abstraction; it is particulate matter in lungs, strokes, heart attacks, premature births, chronic disease. The epidemiology of fossil air pollution is mature and grim. Displacing 37,500 TWh of fossil generation with nuclear would, conservatively, have avoided about **1.5 million premature deaths** in the United States over the period. To turn lives into dollars — a move that discomforts people, but one that regulators make every day to compare policies at all — I use the **value of a statistical life** at $10 million, the figure U.S. agencies actually use in rulemaking. That yields:
+**Mortality.** Burning fossil fuels is not an abstraction; air pollution contributes to strokes, heart attacks, respiratory disease, and premature death, with rates differing sharply by fuel, pollution controls, location, exposure model, and period. If this scenario assigns an average of 40 avoided premature deaths per displaced TWh, 37,500 TWh yields **1.5 million**. To display the monetization, apply a **value of a statistical life** of $10 million:
 
 $$1.5 \text{ million lives} \times \$10\text{M} \approx \$15 \text{ trillion}$$
 
-This is the largest entry, and the one I hold most firmly, because both of its inputs come straight from the mainstream literature that the anti-nuclear movement claims to respect.
+This is the largest entry because the selected rate and VSL dominate the arithmetic. Neither is sourced or validated here for this five-decade U.S. fuel mix, so the result is a scenario output, not a conservative empirical estimate.
 
 **Carbon.** Coal and gas emit roughly 0.7 tons of CO₂ per MWh; nuclear is near zero. Displace a third of fossil generation for fifty years and you avoid about **26 gigatons of CO₂**. To price it, the **social cost of carbon** — the present value of the future damage each ton does — runs anywhere from $50 to $200 per ton depending on the discount rate and the damage function you accept. That range is itself the honest output; I will not pretend to a point estimate the science does not support:
 
@@ -39,17 +39,17 @@ $$26 \text{ Gt} \times \$50\text{–}200/\text{ton} \approx \$1.3\text{–}5.2 \
 
 Midpoint, about $2.6 trillion — and this captures only the monetized slice, nothing for ecosystem loss, ocean acidification, or climate-driven instability.
 
-**Electricity cost.** A nuclear-heavy grid front-loads capital but delivers low, stable marginal costs and far less exposure to gas price shocks. On U.S. annual electricity spending of roughly $450 billion, a sustained saving of even 10 percent compounds:
+**Electricity cost.** A nuclear-heavy grid front-loads capital and can reduce exposure to fuel-price shocks, while construction cost, financing, overruns, utilization, transmission, and displaced alternatives determine total system cost. If the scenario stipulates annual electricity spending of $450 billion and a sustained 10 percent saving, the arithmetic is:
 
 $$\$450\text{B} \times 10\% \times 50 \text{ years} \approx \$2.25 \text{ trillion}$$
 
-**Geopolitics.** Energy scarcity distorts foreign policy, inflates defense budgets, and chains a country to volatile petrostates. A more electrified, less gas-and-oil-dependent United States would have spent less blood and treasure stabilizing markets it did not need to depend on. This ledger is the softest — the causal chains are long — so I keep it deliberately conservative: **$1–3 trillion**, midpoint $2 trillion, in avoided strategic and military cost.
+**Geopolitics.** Energy dependence can affect foreign policy and defense commitments, but a more nuclear electricity system does not directly specify oil dependence, military choices, or their counterfactual costs. The causal chains are too long to price from the assumptions supplied here. The table retains **$2 trillion** only as an explicit placeholder whose removal is part of the sensitivity test, not as an estimate.
 
-**The lost industry.** Had the U.S. sustained continuous buildout, it would today own the dominant share of reactor exports, the fuel-cycle supply chain, and the engineering ecosystem for next-generation designs — molten-salt, breeder, modular reactors that answer the old safety and waste objections. Instead Russia, China, and South Korea became the world's reactor builders. The foregone export industry, IP, and manufacturing base: **$2–4 trillion**, midpoint $3 trillion.
+**The lost industry.** Sustained U.S. buildout could have preserved more reactor construction, fuel-cycle, and engineering capacity, but market share would also depend on execution, cost, diplomacy, regulation, and competitors. The table's **$3 trillion** is another placeholder without an industry model, not a measured loss.
 
 ## The Total, and How to Move It
 
-Add the conservative midpoints:
+Add the scenario values:
 
 | Ledger | Illustrative scenario value |
 |---|---|
