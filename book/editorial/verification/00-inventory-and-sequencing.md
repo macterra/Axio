@@ -43,7 +43,7 @@ These checks are necessary but do not cover all Phase 9 requirements.
 | TODOs and drafting markers | **Passing inventory** | No TODO/TBD/FIXME/XXX, work-in-progress, coming-soon, or chapter-to-blog furniture remains; contextual draft language is intentional. |
 | Dated news pegs | **Passing closeout** | `06-mutable-time-and-ai-scope.md` dates the two legal snapshots and scopes unversioned AI-state claims; `08-stale-language-closeout.md` classifies the remaining dated records and indexicals. |
 | Chapter ordering and navigation | **Passing automated check** | `verify-book.py` independently recomputes and matches prev/up/next order for all 243 chapter pages; route checks cover indexes and redirects. |
-| Continuous reading | **In progress; Volumes 1–7 complete** | `09-volume-1-continuity-and-copyedit.md` through `15-volume-7-continuity-and-copyedit.md` record the first seven continuous passes and their bounded repairs. Continue Volumes 8–9. |
+| Continuous reading | **In progress; Volumes 1–8 complete** | `09-volume-1-continuity-and-copyedit.md` through `16-volume-8-continuity-and-copyedit.md` record the first eight continuous passes and their bounded repairs. Continue Volume 9. |
 | Promotion | **Blocked by policy, not by defect** | Require explicit author approval after verification and copyedit; no bulk status change is authorized now. |
 
 ## Source reuse dispositions
@@ -62,7 +62,7 @@ These checks are necessary but do not cover all Phase 9 requirements.
 2. **Complete — Internal links, papers, glossary, and navigation.** `verify-book.py` now walks generated internal routes and fragments, checks paper targets, verifies the 101-entry terminology/glossary/rendered-anchor correspondence, and compares all chapter navigation against the manifest. `02-internal-authority-routes.md` records two repaired legacy links and the passing baseline.
 3. **Complete — External link health.** `verify-external-links.py` supplies a bounded, network-dependent audit with explicit hard-failure and restricted-access dispositions. `03-external-link-health.md` records the 2026-07-28 baseline and the reviewed soft redirect.
 4. **Complete — Obsolete terms, superseded claims, dated pegs, and blog furniture.** `04-stale-language-inventory.md` records the opening evidence; `05-residual-pattern-reification.md` through `07-final-agentive-shorthand.md` record the bounded repairs; `08-stale-language-closeout.md` reruns the original and expanded ledgers and gives every remaining family a retain disposition.
-5. **In progress — Continuous reading and copyedit signoff.** `09-volume-1-continuity-and-copyedit.md` through `15-volume-7-continuity-and-copyedit.md` record Volumes 1–7. Continue with Volumes 8–9.
+5. **In progress — Continuous reading and copyedit signoff.** `09-volume-1-continuity-and-copyedit.md` through `16-volume-8-continuity-and-copyedit.md` record Volumes 1–8. Continue with Volume 9.
 6. **Promotion decision.** Ask for explicit author approval only after the verification record is complete.
 
 ## Gate
