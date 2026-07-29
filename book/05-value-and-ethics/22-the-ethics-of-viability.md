@@ -6,7 +6,7 @@ sources:
   - 181197275.the-ethics-of-viability
 ---
 
-Ask academic philosophy to map the ethical landscape and it hands you a taxonomy: three great genera — consequentialism, deontology, virtue ethics — plus a scattering of younger lineages: contractualism, natural-rights libertarianism, egoism, care ethics. The diversity is mostly cosmetic. Each variant re-articulates its parent's commitments with adjustments at the margin, and what looks like a field of eight competing systems is, structurally, three families reproducing themselves. Beneath the family resemblances lies one deeper commitment shared by nearly every member of every family: each grounds obligation in something *external* to the agent — welfare, law, character, divine order, hypothetical agreement — and each presumes a universal standpoint from which duties can be imposed on anyone, whether or not they accept the standpoint.
+Ask academic philosophy to map the ethical landscape and it hands you a taxonomy: three great genera — consequentialism, deontology, virtue ethics — plus contractualism, natural-rights libertarianism, egoism, care ethics, and internal disputes within every family. The diversity is real. The contrast this chapter needs is narrower: many influential versions ground obligation in welfare, rational law, character, rights, or reasonable rejectability and present the resulting reasons as applying whether or not a particular agent has adopted them.
 
 This volume began by rejecting that standpoint. It advances the substantive axiom that [value requires a valuer](01-the-myth-of-objective-value.md), and it reconstructs the three traditions as chosen frameworks — agent-relative decision theory, voluntary codes, moral style. A declared framework can classify conduct within its domain even when the target rejects its premise; that coverage does not give the verdict agent-independent authority or make enforcement legitimate. [Virtues, Consequences, and Codes](05-ethics-without-illusions.md) ended on a question it could not answer: if every code is chosen, are all choices of code on a par? This chapter answers it. The answer does not retract the freedom established there — it maps its edges, and the edges turn out to have a precise shape.
 
@@ -14,13 +14,13 @@ Axionic Ethics begins with a chosen commitment to protect **sapient agency**: th
 
 ## Utilitarianism
 
-Utilitarianism starts from a single premise: suffering is bad and must be minimized. From this it derives impartiality, aggregation, and the moral requirement to trade lives. Killing one to save five becomes not merely permissible but obligatory.
+Utilitarian theories make aggregate welfare consequences decisive, though they differ over welfare, rules, rights, and decision procedures. In a simple act-utilitarian model, sufficiently greater expected welfare can make sacrificing one to save five obligatory; more sophisticated variants add indirect constraints without making agency independently sovereign.
 
 Axio rejects the conversion of suffering into obligation at the first step. Agency is **non-fungible**; it cannot be aggregated, traded, or sacrificed by proxy. One agent's stolen future cannot be "balanced" against gains elsewhere, because there is no ledger on which the balancing could occur — I have already taken that ledger apart, [fracture by fracture](14-against-utilitarianism.md). And because agency, not welfare, is the primitive, [need does not create claim](15-against-moral-extortion.md): non-aid is not harm, and the infinite-demand engine that consumes utilitarian lives never starts. Where utilitarianism reallocates suffering, Axio prohibits unchosen harm. The divide is total: utilitarianism optimizes outcomes; Axio protects boundaries.
 
 ## Deontology
 
-Deontology demands obedience to universal rules. Kant's edict — never treat persons as mere means — is absolute and indifferent to circumstance, and it is supposed to bind every rational being because reason itself decrees it.
+Deontological theories give duties and constraints priority over aggregate outcome. Kant's formula forbids treating persons *merely* as means and presents its authority as grounded in rational agency rather than contingent adoption; applying it still requires judgment about maxims, ends, and circumstance.
 
 Axio preserves the *form* of a protected boundary while rejecting a cosmic foundation for it. The prohibition on instrumental harm to innocents is a normative commitment supported by facts about reciprocal agency. It does not literally make coexistence impossible; domination, deterrence, and unequal orders can persist. The framework rejects those equilibria because they violate its agency commitment, not because viability mechanically filters them out. Where deontology universalizes obligation, Axio binds claims to stated commitments, established harms, and the framework's avowed protection premise.
 
@@ -32,9 +32,9 @@ Axio declines to legislate character. Virtues are optional tools, not moral obli
 
 ## Contractualism
 
-Contractualism derives morality from what no one could "reasonably reject" — obligation grounded in hypothetical agreement among idealized parties. It is the youngest and subtlest of the universalist projects, and the one Parfit spent his final decades trying to weld to Kant and the consequentialists; I have examined [why that convergence was engineered rather than discovered](16-the-near-misses.md).
+Contractualism derives wrongness from principles no one could reasonably reject, not from a prediction that everyone would agree. It is one of the subtler universalist projects, and Parfit spent his final decades constructing a convergence with Kantian and consequentialist formulations; I have examined [why that convergence does not by itself establish realism](16-the-near-misses.md).
 
-Axio rejects hypothetical consent outright. Obligation arises through **actual commitments** — promises, contracts, explicit agreements — or through harms you have actually caused. Everything else is persuasion, not duty. Contractualism says: if everyone would agree to this rule, you must follow it. Axio says: agreement matters only when you actually agreed. With that one substitution, the entire category of unchosen moral duties is eliminated.
+Axio rejects reasonable rejectability as a source of unconditional duty. Obligation within this framework arises through **actual commitments** — promises, contracts, explicit agreements — through wrongfully caused harm and assumed relations, or through its avowed reciprocal-protection premise. A contractualist can argue that a principle is justifiable to each person without claiming actual consent; Axio's disagreement is that such justifiability does not erase the normative premise or independently authorize enforcement.
 
 ## Egoism
 
@@ -46,7 +46,7 @@ Axio allows partiality — your relationships shape your agency portfolio, and a
 
 Natural-rights libertarianism is the nearest neighbor, and the surface intuition — non-aggression — is one Axio accepts. What it rejects is the foundation. Rights here are justified protections for agency within a chosen reciprocal order, not cosmic properties attached to persons or consequences forced by whatever happens to persist.
 
-The difference is not decorative. Axio supplies precise definitions of [coercion](09-what-counts-as-coercion.md), harm, consent, and obligation — concepts libertarianism gestures toward but rarely formalizes — and that precision is what resolves the cases where libertarian reasoning collapses: trolleys, human shields, organ-harvest dilemmas, burning hospitals, and the other coercion topologies. Axio is libertarian where libertarianism works, and post-libertarian where it breaks.
+The difference is not decorative. Axio proposes explicit definitions of [coercion](09-what-counts-as-coercion.md), harm, consent, and obligation, then tests the baselines and safeguards on which libertarian accounts disagree. That precision clarifies trolleys, organ-harvest dilemmas, burning hospitals, and other coercion topologies — and exposes rather than conceals the unresolved human-shield conflict in Chapter 25. Axio is libertarian where libertarianism works, and post-libertarian where it breaks.
 
 ## Agency as the Primitive
 

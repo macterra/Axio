@@ -58,7 +58,7 @@ When companies announce record profits or growth with the phrase *"We are humble
 
 ### Prestige Appropriation: Values as Wallpaper
 
-When institutions say they "value diversity" or are "committed to sustainability," you can be certain they mean the opposite. Real commitment requires cost — that is what [makes a value a value](04-value-as-sacrifice.md) rather than a preference. Empty slogans cost nothing and thus deliver nothing. They are wallpaper pasted over moral rot.
+When institutions say they "value diversity" or are "committed to sustainability," the words alone establish nothing. Real commitment leaves costly evidence — that is what [makes sacrifice a signal of value](04-value-as-sacrifice.md) rather than a press release. Empty slogans cost nothing and deliver nothing. Where conduct runs the other way, they become wallpaper pasted over moral rot.
 
 - "We value diversity." (while enforcing ideological monoculture)
 - "We are committed to sustainability." (while greenwashing)
@@ -78,7 +78,7 @@ When institutions say they "value diversity" or are "committed to sustainability
 
 ### Polite Disdain: Civility as Concealment
 
-"With all due respect" is never respectful. "Respectfully, I disagree" is often contempt thinly wrapped in etiquette. These phrases attempt to preserve moral high ground while delivering disdain.
+"With all due respect" often announces the opposite. "Respectfully, I disagree" can be sincere, but it can also be contempt thinly wrapped in etiquette. The words preserve no moral high ground when tone and conduct deliver disdain.
 
 - "With all due respect…"
 - "Respectfully, I disagree."
@@ -88,7 +88,7 @@ When institutions say they "value diversity" or are "committed to sustainability
 
 ### Courtesy Betrayal: Rituals of Indifference
 
-"Your call is important to us" is a ritual incantation. It is never true. It functions not as communication but as anesthesia while you languish in corporate indifference.
+"Your call is important to us" becomes a ritual incantation when the service design supplies no evidence of care. It then functions not as communication but as anesthesia while you languish in corporate indifference.
 
 - "Your call is important to us." (45 minutes on hold)
 - "We value your feedback." (deleted unread)
