@@ -12,7 +12,7 @@ Consider the shape of human political history from a height. Sumer crowned god-k
 
 The liberal package defended here — individual authorship, authority answerable to the governed, criticism protected against decree — appeared late and incompletely as a durable institutional combination, though practices of consent, dispersed authority, resistance, and deliberation are older and wider. Liberal orders require maintenance; authoritarian recovery after collapse is a recurrent risk, not a law that erases counterexamples.
 
-A recurrence that broad demands explanations at more than one altitude. Institutions, material conditions, war, technology, and particular ideologies matter; so may psychological tendencies that travel across them. The hypothesis of this chapter is that authoritarian coordination often exploits cheaper cognitive and social responses, while liberal discipline requires costly safeguards. *Default* names that recurrent risk, not a universal state installed identically in every person or culture.
+A recurrence that broad demands explanations at more than one altitude. Institutions, material conditions, war, technology, and particular ideologies matter; so may psychological tendencies that travel across them. The hypothesis of this chapter is that authoritarian coordination often comes cheaply, exploiting ready cognitive and social responses, while liberal order is a precious, fragile achievement that has to be built and maintained. *Default* names that recurrent risk, not a universal state installed identically in every person or culture.
 
 ## The Instinct for Submission
 
