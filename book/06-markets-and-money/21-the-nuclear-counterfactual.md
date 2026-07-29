@@ -49,7 +49,7 @@ $$\$450\text{B} \times 10\% \times 50 \text{ years} \approx \$2.25 \text{ trilli
 
 ## The Total, and How to Move It
 
-Add the conservative midpoints:
+Add the scenario values:
 
 | Ledger | Illustrative scenario value |
 |---|---|
