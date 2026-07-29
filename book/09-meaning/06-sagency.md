@@ -26,7 +26,7 @@ To act with sagency is to act with three things at once: comprehension, discernm
 
 ## Why They Multiply
 
-The decisive claim about these three is that they combine by multiplication, not addition. Sagency is their product, and the arithmetic of a product is unforgiving: if any factor is zero, the whole is zero, no matter how large the others.
+The organizing model for these three is multiplication, not addition. Sagency is represented as their product, and the arithmetic makes the intended warning unforgiving: if any factor is treated as zero, the modeled whole is zero, no matter how large the others. This is a diagnostic analogy, not a validated cardinal scale of wisdom.
 
 Say it as three failures.
 
@@ -36,7 +36,7 @@ Say it as three failures.
 
 *Discernment without comprehension is illusion.* You have excellent values and a false picture of the world, so your excellent values keep landing on the wrong targets. You know what matters, but you are wrong about what is, and a right judgment applied to a wrong model produces confident, well-intentioned harm — the reformer whose diagnosis is a fantasy, the moralist certain of a cause that the facts do not support. Good values are not self-correcting. Pointed at a hallucinated world, they generate a hallucinated ethics, and the sincerity of the person holding them is no protection at all.
 
-Each failure mode is a way of having two factors and lacking the third, and in each case the missing factor is not a discount on the result. It is a nullification of it. This is why sagency cannot be assembled from strengths — why the brilliant and the earnest and the driven so often produce disasters that a more balanced and less impressive person would have avoided. A large number multiplied by zero is still zero. The point is not to maximize any factor but to keep all three above the floor, because the whole lives or dies at the weakest of them.
+Each failure mode is a way of having two factors and lacking the third, and in the model the missing factor is not a discount on the result. It is a nullification of it. This is why sagency cannot be assembled from strengths — why the brilliant and the earnest and the driven can produce disasters that a more balanced and less impressive person would have avoided. A large number multiplied by zero is still zero. The point is not to maximize any factor but to keep all three above the floor, because practical wisdom can fail at the weakest of them.
 
 ## Coherence, Not Goals
 
