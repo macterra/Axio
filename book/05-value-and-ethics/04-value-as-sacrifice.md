@@ -13,7 +13,7 @@ Someone tells you they care deeply about the environment — and will not pay an
 
 If you want to test a claim about value, compare what someone says with what they knowingly and voluntarily give up when relevant alternatives are available.
 
-Value is not exhausted by a feeling or an opinion. A claim about what someone values must answer to patterns of behavior — especially action that costs. That cost, that loss, that trade-off: it is the signal. Without cost there is no signal of enacted priority, only an assertion awaiting other evidence.
+Value is not a feeling. It is not an opinion. But it is not simply behavior either — a claim about what someone values must answer to patterns of behavior, especially action that costs. That cost, that loss, that trade-off: it is the signal. Without cost there is no signal of enacted priority, only an assertion awaiting other evidence.
 
 Sacrifice is evidence of comparative valuation because choice has opportunity cost. It is neither the whole mechanism of value nor an infallible measure of it. Actions, avowals, attention, regret, attempts at self-control, and patterns across time can all bear evidence; each can also mislead. The steeper a voluntary and informed sacrifice, the stronger the behavioral signal, but the inference still depends on what alternatives the agent perceived and why the action occurred.
 
