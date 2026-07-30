@@ -1160,16 +1160,18 @@ def generate_publications_page(config, posts, papers_count):
 
     search_script = f'''
     <script>
-        let postsFuse, papersFuse;
-        let allPosts = [], allPapers = [];
+        let postsFuse, papersFuse, bookFuse;
+        let allPosts = [], allPapers = [], allBook = [];
         let currentFilter = 'all';
 
         Promise.all([
             fetch('search-index.json').then(r => r.json()),
-            fetch('papers-index.json').then(r => r.json())
-        ]).then(([posts, papers]) => {{
+            fetch('papers-index.json').then(r => r.json()),
+            fetch('book-index.json').then(r => r.ok ? r.json() : []).catch(() => [])
+        ]).then(([posts, papers, book]) => {{
             allPosts = posts;
             allPapers = papers;
+            allBook = book;
 
             const fuseConfig = {{
                 keys: [
@@ -1188,6 +1190,9 @@ def generate_publications_page(config, posts, papers_count):
 
             postsFuse = new Fuse(posts, fuseConfig);
             papersFuse = new Fuse(papers, fuseConfig);
+            bookFuse = new Fuse(book, fuseConfig);
+            const bookCountEl = document.getElementById('book-count');
+            if (bookCountEl) bookCountEl.textContent = book.length;
         }});
 
         const searchInput = document.getElementById('search-input');
@@ -1210,11 +1215,14 @@ def generate_publications_page(config, posts, papers_count):
             if (currentFilter === 'all') {{
                 const postResults = postsFuse ? postsFuse.search(query) : [];
                 const paperResults = papersFuse ? papersFuse.search(query) : [];
-                results = [...postResults, ...paperResults].sort((a, b) => a.score - b.score);
+                const bookResults = bookFuse ? bookFuse.search(query) : [];
+                results = [...postResults, ...paperResults, ...bookResults].sort((a, b) => a.score - b.score);
             }} else if (currentFilter === 'posts') {{
                 results = postsFuse ? postsFuse.search(query) : [];
             }} else if (currentFilter === 'papers') {{
                 results = papersFuse ? papersFuse.search(query) : [];
+            }} else if (currentFilter === 'book') {{
+                results = bookFuse ? bookFuse.search(query) : [];
             }}
             return results;
         }}
@@ -1241,17 +1249,28 @@ def generate_publications_page(config, posts, papers_count):
 
             searchResults.innerHTML = results.map(result => {{
                 const post = result.item;
-                const isPaper = post.type === 'paper';
+                const type = post.type || 'post';
                 let dateHtml = '';
-                if (!isPaper && post.date) {{
+                if (type === 'post' && post.date) {{
                     const date = new Date(post.date).toLocaleDateString('en-US', {{
                         year: 'numeric', month: 'long', day: 'numeric'
                     }});
                     dateHtml = `<div class="post-date">${{date}}</div>`;
+                }} else if (type === 'book' && post.volume) {{
+                    dateHtml = `<div class="post-date">${{escapeHtml(post.volume)}}</div>`;
                 }}
-                let excerpt = post.content.substring(0, 200) + '...';
-                const link = isPaper ? post.id + '.html' : 'posts/' + post.id + '.html';
-                const typeLabel = isPaper ? '<span style="color: #888; font-size: 0.9em;">[Paper]</span> ' : '';
+                let excerpt = (post.content || '').substring(0, 200) + '...';
+                let link, typeLabel;
+                if (type === 'paper') {{
+                    link = post.id + '.html';
+                    typeLabel = '<span style="color: #888; font-size: 0.9em;">[Paper]</span> ';
+                }} else if (type === 'book') {{
+                    link = post.id + '.html';
+                    typeLabel = '<span style="color: #888; font-size: 0.9em;">[Book]</span> ';
+                }} else {{
+                    link = 'posts/' + post.id + '.html';
+                    typeLabel = '';
+                }}
                 return `
                     <div class="search-result-item">
                         ${{dateHtml}}
@@ -1280,7 +1299,7 @@ def generate_publications_page(config, posts, papers_count):
         </div>
 
         <div class="search-container">
-            <input type="text" id="search-input" placeholder="Search posts and papers..." autocomplete="off">
+            <input type="text" id="search-input" placeholder="Search posts, papers, and the book..." autocomplete="off">
             <div style="margin-top: 8px;">
                 <label style="margin-right: 15px; font-size: 0.9em;">
                     <input type="radio" name="search-filter" value="all" checked> All
@@ -1288,8 +1307,11 @@ def generate_publications_page(config, posts, papers_count):
                 <label style="margin-right: 15px; font-size: 0.9em;">
                     <input type="radio" name="search-filter" value="posts"> Posts only
                 </label>
-                <label style="font-size: 0.9em;">
+                <label style="margin-right: 15px; font-size: 0.9em;">
                     <input type="radio" name="search-filter" value="papers"> Papers only
+                </label>
+                <label style="font-size: 0.9em;">
+                    <input type="radio" name="search-filter" value="book"> Book only
                 </label>
             </div>
             <div id="search-results"></div>
@@ -1299,6 +1321,8 @@ def generate_publications_page(config, posts, papers_count):
             <strong><span id="post-count">{len(published_posts)}</span> published posts</strong>
             <span style="margin: 0 10px;">•</span>
             <strong>{papers_count} papers</strong>
+            <span style="margin: 0 10px;">•</span>
+            <strong><span id="book-count">0</span> book chapters</strong>
             <span style="margin: 0 10px;">•</span>
             <span>Updated {archive_date}</span>
             <span style="margin: 0 10px;">•</span>

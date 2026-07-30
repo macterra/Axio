@@ -17,6 +17,7 @@ Usage:
     python3 build-book.py
 """
 
+import json
 import re
 import subprocess
 import sys
@@ -433,6 +434,49 @@ def build_volume_page(vol, publish_index):
         encoding='utf-8')
     return dest
 
+def chapter_search_text(md):
+    """Reduce chapter markdown to plain text for the search index.
+
+    Mirrors the cleaning build-site.py applies to papers: drop math,
+    image/link syntax (keeping link text), emphasis, code, and heading
+    markers, then normalize whitespace.
+    """
+    t = md
+    t = re.sub(r'\$\$.*?\$\$', ' ', t, flags=re.DOTALL)     # display math
+    t = re.sub(r'\$[^$\n]+\$', ' ', t)                       # inline math
+    t = re.sub(r'!\[[^\]]*\]\([^)]*\)', ' ', t)              # images
+    t = re.sub(r'\[([^\]]*)\]\([^)]*\)', r'\1', t)           # links -> text
+    t = re.sub(r'`([^`]*)`', r'\1', t)                       # inline code
+    t = re.sub(r'[*_>#|]', ' ', t)                           # md symbols
+    t = re.sub(r'\s+', ' ', t).strip()                       # normalize
+    return t
+
+
+def build_search_index(volumes):
+    """Emit docs/book-index.json: one entry per published chapter, in the
+    same shape the publications search uses for posts and papers."""
+    entries = []
+    for vol in volumes:
+        if not vol['published']:
+            continue
+        vol_label = volume_display_title(vol)
+        for ch in vol['chapters']:
+            if not ch['published']:
+                continue
+            entries.append({
+                'id': f"book/{vol['slug']}/{ch['slug']}",
+                'title': ch['meta'].get('title', ch['slug']),
+                'subtitle': ch['meta'].get('subtitle', ''),
+                'volume': vol_label,
+                'content': chapter_search_text(ch['body']),
+                'type': 'book',
+            })
+    dest = DOCS / 'book-index.json'
+    dest.write_text(json.dumps(entries, ensure_ascii=False, indent=2),
+                    encoding='utf-8')
+    return dest, len(entries)
+
+
 def build_book_index(manifest, volumes, publish_index):
     prefix = '../'
     content = f"<h1>{escape(manifest['title'])}</h1>\n"
@@ -573,6 +617,10 @@ def main():
     print(f"   ✓ Generated book index with "
           f"{sum(1 for v in volumes if v['published'] and not v.get('front_matter'))} "
           f"published volume(s)")
+
+    idx_path, idx_n = build_search_index(volumes)
+    print(f"   ✓ Wrote {idx_path.relative_to(DOCS)} "
+          f"with {idx_n} chapter search entries")
 
     n_redirects = write_redirects(manifest)
     if n_redirects:
