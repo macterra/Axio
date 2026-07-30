@@ -374,6 +374,11 @@ def build_volume_page(vol, publish_index):
 
     content = f"<h1>{escape(volume_display_title(vol))}</h1>\n"
 
+    if vol['number'] is not None:
+        content += (f'<img class="book-cover book-cover-volume" '
+                    f'src="{prefix}images/covers/vol-{vol["number"]}.png" '
+                    f'alt="Cover: {escape(volume_display_title(vol))}">\n')
+
     if vol['intro'] is not None and vol['intro_published']:
         fragment = convert_markdown_to_html(
             vol['intro']['body'], BOOK_SRC / vol['slug'] / 'volume.md')
@@ -433,6 +438,9 @@ def build_book_index(manifest, volumes, publish_index):
     content = f"<h1>{escape(manifest['title'])}</h1>\n"
     if manifest.get('subtitle'):
         content += f"<p class='paper-subtitle'>{escape(manifest['subtitle'])}</p>\n"
+
+    content += (f'<img class="book-cover" src="{prefix}images/covers/taoa.png" '
+                f'alt="Cover: {escape(manifest["title"])}">\n')
 
     # Front-matter chapters (e.g. the introduction) listed directly
     for vol in volumes:
