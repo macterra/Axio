@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 9 in progress — reproducibility, source metadata, internal authority routes, and external-link health are verified.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages remain in `review`; promotion to `final` still requires explicit author approval after the remaining verification and continuity work.
+Status: **Phase 9 verification is complete; promotion awaits explicit author approval.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages remain in `review`. Phase 10 records later blog-to-book reconciliation work and does not itself authorize or silently block promotion.
 
 ## Progress at a glance
 
@@ -16,7 +16,8 @@ Status: **Phase 9 in progress — reproducibility, source metadata, internal aut
 | 6. Reader-facing glossary | **Complete** | All 101 canonical terms publish with defining-chapter links and visible calibration. |
 | 7. Compression and prose | **Complete** | Local passes and all 25 bounded cross-volume families are complete; every repetition-ledger row has a disposition. |
 | 8. Framing material | **Complete** | Front matter, introductions, conclusions, book and chapter labels, part labels, and navigation handoffs match the reviewed manuscript. |
-| 9. Verification and promotion | **In progress** | Automated and network inventories are passing; stale-language and continuity review remain. Promotion still requires explicit author approval. |
+| 9. Verification and promotion | **Verification complete; promotion gated** | Automated inventories, dated external-link review, stale-language closeout, and continuous reading of all nine volumes are complete. Promotion still requires explicit author approval. |
+| 10. Post-review blog reconciliation | **Planned** | Reconcile nine July 2026 posts added after the reviewed manuscript stabilized; prioritize three material update candidates and record dispositions for all nine. |
 
 Completed controls now cover all 243 argument-map records, nine architecture memos, nine volume-edit records, eight reconciliation records, and the reader-facing glossary audit. The complete book build and internal-link validation passed after the Volume 2 probability supersession integration; compatibility redirects preserve the public URLs of moved and renumbered chapters.
 
@@ -369,7 +370,7 @@ The front matter should describe the book that survived editing, not the first d
 
 ## Phase 9 — Verification and promotion
 
-Progress: **In progress.** `verification/00-inventory-and-sequencing.md` records the post-Phase-8 baseline, existing automated coverage, open verification gaps, source-reuse dispositions, and the promotion gate. `verify-book.py` and `verification/01-reproducibility-and-sources.md` provide repeatable metadata, source-archive, shared-provenance, and byte-for-byte rebuild checks. The verifier now also checks generated internal routes and fragments, paper targets, terminology/glossary/rendered-anchor correspondence, and exact chapter navigation; `verification/02-internal-authority-routes.md` records the passing baseline and two repaired legacy links. `verify-external-links.py` supplies a separate network-dependent audit; `verification/03-external-link-health.md` records its passing dated baseline. `verification/04-stale-language-inventory.md` through `verification/08-stale-language-closeout.md` record the stale-language evidence, three bounded repair families, rerun results, and final retain dispositions.
+Progress: **Verification complete; promotion gated.** `verification/00-inventory-and-sequencing.md` records the post-Phase-8 baseline, automated coverage, source-reuse dispositions, and the promotion gate. `verify-book.py` and `verification/01-reproducibility-and-sources.md` provide repeatable metadata, source-archive, shared-provenance, and byte-for-byte rebuild checks. The verifier also checks generated internal routes and fragments, paper targets, terminology/glossary/rendered-anchor correspondence, and exact chapter navigation; `verification/02-internal-authority-routes.md` records the passing baseline and two repaired legacy links. `verify-external-links.py` supplies a separate network-dependent audit; `verification/03-external-link-health.md` records its passing dated baseline. `verification/04-stale-language-inventory.md` through `verification/08-stale-language-closeout.md` record the stale-language evidence, three bounded repair families, rerun results, and final retain dispositions. `verification/09-volume-1-continuity-and-copyedit.md` through `verification/17-volume-9-continuity-and-copyedit.md` record continuous reading of all nine volumes.
 
 Before changing any chapter to `final`:
 
@@ -392,6 +393,37 @@ Promote status deliberately:
 
 **Exit:** All chapters are final, the build is reproducible and clean, and the published book matches the reviewed source manuscript.
 
+## Phase 10 — Post-review blog reconciliation
+
+Progress: **Planned.** Nine published posts dated July 16–26, 2026 entered the archive after the reviewed manuscript had stabilized. They are indexed in `book/catalog.csv` but have not yet received formal book-integration dispositions.
+
+Open a bounded source-supersession inventory and compare each post with the governing chapters. Do not treat publication recency as proof that the book must change. For every post, record whether it:
+
+- corrects or supersedes a claim in the reviewed manuscript;
+- adds a durable mechanism, distinction, or application worth integrating;
+- restates material the book already contains;
+- belongs only in the historical blog record; or
+- should remain a candidate for a later edition.
+
+Prioritize these material candidates:
+
+- **Where Power Migrates** — test its mechanisms of reversibility debt, shadow authority, distributed control, manufactured necessity, causal laundering, informational capture, and trajectory-level authorization against Volume 4 Chapters 7, 12, and 14.
+- **The Cult Gradient** — test its five-dimensional control taxonomy (epistemic centralization, social enclosure, psychological penetration, mission totalization, and exit cost) against Volume 8 Chapters 7, 17, and 20.
+- **The Other Political Axis** — test coupling/decoupling as an epistemic style and its claim/context/consequence jurisdiction rule against Volumes 2, 7, and 8.
+
+Give explicit, lighter-weight dispositions to:
+
+- **The Hypocrisy Equilibrium** — possible coalition-incentive mechanism for selective universalism in Volume 8.
+- **When Uncertainty Should Reduce Power** — verify that its correction to interpretation-free semantic safety is already fully represented in Volume 4.
+- **Inequality Is Not a Problem** — verify the distribution/harm/provenance argument against Volume 6 Chapters 7 and 9.
+- **The Human Premium** — verify coverage by Volume 6 Chapter 16.
+- **The Provenance Fallacy** — verify coverage by the AI-process disclosure and the authorship/credential arguments.
+- **The Probability of an Alternate History** — verify that its application adds no claim beyond the model-relative QBU counterfactual treatment in Volumes 1 and 2.
+
+Any integration must use the same Phase 5–9 guards: canonical definitions govern; later posts do not reopen teleology, objective-value, Measure/Credence, harm/coercion, cultural-agency, or metaphor boundaries; correctness edits bound the false claim without flattening surrounding voice. Re-run `verify-book.py`, internal routes, glossary, navigation, and continuous reading of every affected sequence. If chapters have already been promoted to `final`, any material edit returns the affected records to `review` until the author approves them again.
+
+**Exit:** All nine posts have explicit dispositions; every accepted update is integrated and verified; deferred material is recorded for a later edition; and no chapter remains `final` after a material unreviewed change.
+
 ## Per-volume workflow
 
 Apply the same workflow to each volume:
@@ -409,4 +441,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Phase 8 is complete. Phase 9 has verified sources, reproducibility, internal authority routes, paper targets, glossary anchors, navigation, external-link health, and stale-language closeout. Continuous reading and copyedit signoff are next. Do not promote chapters from `review` to `final` without author approval.
+Phase 9 verification is complete, including continuous reading and copyedit records for all nine volumes. The immediate gate is the author's explicit `review → final` decision. Phase 10 is queued as a bounded reconciliation of the nine July 2026 blog posts; the author may schedule it before promotion or as later-edition maintenance. Do not promote chapters from `review` to `final` without author approval, and do not leave materially revised chapters at `final` without renewed approval.
