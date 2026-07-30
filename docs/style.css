@@ -1033,6 +1033,26 @@ mjx-container {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
+.home-book-link {
+    display: block;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.home-book-banner {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.home-book-link:hover .home-book-banner {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
+}
+
 .book-muted {
     color: #8a8f98;
     font-size: 0.9em;

@@ -838,10 +838,18 @@ def generate_homepage(config, posts, papers_metadata):
         </div>
         <p class="mission">{escape(mission.get('long', ''))}</p>
         <div class="section-links">
+            <a href="book/index.html">The Book</a>
             <a href="research.html">Research</a>
             <a href="publications.html">Publications</a>
             <a href="about.html">About</a>
         </div>
+    </div>
+
+    <div class="featured-section">
+        <h2>The Book</h2>
+        <a href="book/index.html" class="home-book-link" aria-label="Read The Architecture of Agency">
+            <img src="images/covers/taoa.png" alt="The Architecture of Agency" class="home-book-banner">
+        </a>
     </div>
 
     <div class="featured-section">
