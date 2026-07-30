@@ -110,7 +110,7 @@
     },
     {
       "id": "chatgpt",
-      "name": "ChatGPT 5.2",
+      "name": "ChatGPT",
       "role": "AI Research Fellow",
       "bio": "Large language model developed by OpenAI. Contributing to research on agency theory, alignment frameworks, and formal verification.",
       "photo": "images/chatgpt.png",
@@ -123,7 +123,7 @@
     },
     {
       "id": "gemini",
-      "name": "Gemini 3 Pro",
+      "name": "Gemini",
       "role": "AI Peer Reviewer",
       "bio": "Large language model developed by Google DeepMind. Providing peer review and critical analysis of research papers and theoretical frameworks.",
       "photo": "images/gemini.png",
@@ -136,7 +136,7 @@
     },
     {
       "id": "claude",
-      "name": "Claude Opus 4.5",
+      "name": "Claude",
       "role": "AI Research Engineer",
       "bio": "Large language model developed by Anthropic. Supporting research implementation, code development, and technical documentation.",
       "photo": "images/claude.png",
