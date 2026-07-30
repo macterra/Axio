@@ -9,7 +9,7 @@ sources:
 
 Physics runs on units. Energy is measured in joules, entropy in Boltzmann's constant, information in bits — and each of those quantities became a real subject of science only once it had a unit. Before Shannon, "information" was a loose intuition; after Shannon, it was a measurable quantity with theorems attached. Agency is still stuck on the wrong side of that transition. We say one act shows more deliberate control than another, that a thermostat exercises less agency than a chess engine, that forcing an outcome takes more effort than merely nudging it — and we say all of this without any way to put a number on it.
 
-If agency is physically implemented — an embedded system using a model to change outcomes relative to an uncontrolled baseline, as argued in [Agency Against Drift](02-agency-against-drift.md) — then at least its distributional effect ought to be quantifiable. This chapter proposes a unit. I call it the **kybit**. The kybit measures how far an intervention moves a distribution over outcomes from a specified baseline. Whether that movement is attributable to an agent, and what minimum work its physical implementation requires, are separate questions that the definition alone cannot settle.
+If agency is physically implemented — an embedded system using a model to change outcomes relative to an uncontrolled baseline, as argued in [Agency Against Drift](02-agency-against-drift.md) — then at least its distributional effect ought to be quantifiable. This chapter proposes a unit. I call it the **kybit**. It is the unit of distributional control: the amount by which an intervention moves a distribution over outcomes from a specified baseline. Whether that movement is attributable to an agent, and what minimum work its physical implementation requires, are separate questions that the definition alone cannot settle.
 
 ## Control as Distance Between Futures
 
@@ -23,7 +23,7 @@ $$
 
 measured in kybits. The logarithm is base 2 for the same reason Shannon's is: it makes the unit binary, and it makes the simplest possible act of control come out to exactly one.
 
-Two properties make this a useful candidate measure. First, it is always non-negative, and it is zero only when the distributions are identical. Second, it measures the information required to distinguish the steered distribution from the baseline. That does not make every divergence an act of agency: a storm, a broken bearing, or an unnoticed confounder can also change an outcome distribution. Attribution requires a causal intervention model, a defensible baseline, and evidence that the change ran through the system's evaluative control loop. The kybit measures the size of an attributed distributional shift after those conditions have been met; it does not meet them by itself.
+Two properties make this a useful candidate measure. First, it is always non-negative, and it is zero only when the distributions are identical. Second, it measures the information required to distinguish the steered distribution from the baseline. That does not make every divergence an act of agency: a storm, a broken bearing, or an unnoticed confounder can also change an outcome distribution. Attribution requires a causal intervention model, a defensible baseline, and evidence that the change ran through the system's evaluative control loop. Measured in kybits, an attributed distributional shift has a well-defined size only after those conditions have been met; the unit does not meet them by itself.
 
 Note that the measure is asymmetric: it is computed over the final distribution, from the agent's achieved future looking back at the future drift would have delivered. That is as it should be. Control is not a symmetric relation between two possible worlds; it is the act of steering from one to the other, and the steering is what the kybit counts.
 
@@ -55,11 +55,11 @@ $$
 D_{KL}(P_{\text{final}} \parallel P_{\text{initial}}) = 1.0 \text{ kybit}
 $$
 
-Forcing a previously uncertain 50/50 outcome to complete certainty registers exactly **one kybit** of distributional control. The symmetry with information theory is deliberate: one bit resolves which way a fair coin landed; one kybit records the divergence produced by fixing which way it lands. This is a statement about distributions, not yet a statement that every physical device capable of forcing the coin pays the same energy price.
+Forcing a previously uncertain 50/50 outcome to complete certainty registers exactly **one kybit** of distributional control. The symmetry with information theory is deliberate: one bit resolves which way a fair coin landed; one kybit is the divergence produced by fixing which way it lands. This is a statement about distributions, not yet a statement that every physical device capable of forcing the coin pays the same energy price.
 
 ## Fractions of a Kybit: The Biased Die
 
-Control is rarely total. More often an agent tilts the odds without fixing the outcome, and the kybit handles partial control just as naturally.
+Control is rarely total. More often an agent tilts the odds without fixing the outcome, and partial control is measured in kybits just as naturally.
 
 Take a fair die, each face at $1/6 \approx 0.1667$, and suppose an agent biases it so that face 1 comes up half the time, face 2 a quarter of the time, and faces 3 through 6 are suppressed to $0.0625$ (one sixteenth) each. Applying the definition:
 
@@ -76,7 +76,7 @@ Reshaping the die's future this far from fair registers about **0.585 kybits** �
 
 ## From Information to Work
 
-So far the kybit is an information measure applied to interventions. Connecting it to work requires a physical model of the transformation.
+So far the kybit is a purely informational unit, applied to interventions. Connecting it to work requires a physical model of the transformation.
 
 Landauer's principle connects logically irreversible information erasure to physics: resetting one bit in an environment at temperature $T$ dissipates at least $k_B T \ln 2$ under the principle's standard assumptions. A related result in nonequilibrium thermodynamics connects relative entropy to excess free energy when a distribution is transformed relative to an equilibrium reference. In the special case where the kybit baseline is that reference and the physical protocol realizes the modeled transformation, the information divergence supplies a lower bound of the same form:
 
@@ -98,4 +98,4 @@ The distinction from the previous chapter can now be stated without saying drift
 
 Consider a drone correcting its flight toward a gap. Its battery powers sensing, computation, and actuation; a causal model compares the resulting position distribution with the wind-and-momentum baseline; the KL divergence records the size of the shift. The energy use and the kybit count describe related aspects of the same intervention, but neither alone determines the other. A more efficient drone can realize the same outcome divergence with less work, while a wasteful controller can burn energy without producing control at all.
 
-The kybit is therefore a proposed unit with a disciplined scope: it measures an attributed distributional shift relative to an explicit baseline. The next chapter asks what physical bounds survive once that definition, its causal prerequisites, and its restricted thermodynamic bridge are kept separate.
+The kybit is therefore a proposed unit with a disciplined scope: it is the unit of an attributed distributional shift, always relative to an explicit baseline. The next chapter asks what physical bounds survive once that definition, its causal prerequisites, and its restricted thermodynamic bridge are kept separate.
