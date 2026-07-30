@@ -1025,15 +1025,12 @@ mjx-container {
 
 .book-cover {
     display: block;
-    max-width: min(100%, 360px);
+    width: 100%;
+    max-width: 100%;
     height: auto;
     margin: 1.5rem auto 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-}
-
-.book-cover-volume {
-    max-width: min(100%, 300px);
 }
 
 .book-muted {
