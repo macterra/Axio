@@ -24,7 +24,7 @@ $$
 \Delta_a b = \mu_V(b\mid a, C, M) - \mu_V(b\mid \neg a, C, M).
 $$
 
-Here $C$ is the contrast specification: the matched branch-sets, with the background conditions that isolate $a$ held fixed. It is what an ordinary causal model builds with the $do(\cdot)$ operator; in the QBU it also fixes which physically realized branches count as the comparison.
+Here $C$ is the contrast specification: the matched branch-sets, with the background conditions that isolate $a$ held fixed. It is what an ordinary causal model builds with the $do(\cdot)$ operator; in the QBU it also fixes which physically realized branches count as the comparison. $C$ and $M$ index the contrast and the causal model; they are not events conditioned on, and the bar here selects a comparison rather than recording an observation.
 
 Then:
 
