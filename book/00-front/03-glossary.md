@@ -109,7 +109,7 @@ The process by which an institution's selection pressures and enforcement mechan
 
 ### Causality
 
-Within the QBU, the proposed **contrast-relative** relation in which a modeled cause, under a stated contrast that isolates it from confounds, changes the conditional [Measure](#measure) of a later event along the representation's ancestry relation. The matched contrast is realized physically by branching, so it requires no agent manipulation; $do(\cdot)$ notation marks a way of constructing the contrast, not its essence. This does not imply that an agent edits global amplitude or selects a destination world.
+Within the QBU, the proposed **contrast-relative** relation in which a modeled cause, under a stated contrast that isolates it from confounds, changes the conditional [Measure](#measure) of a later event along the representation's ancestry relation. Branching makes the compared alternatives physically actual, so the contrast is not an imagined manipulation; isolating the cause from confounds remains a modeling requirement, and $do(\cdot)$ marks one way of constructing the contrast rather than its essence. This does not imply that an agent edits global amplitude or selects a destination world.
 
 **Status:** Axio's proposed QBU account, not a neutral definition shared by every causal theory. **Read:** [Causality and Counterfactuals](../01-physics-of-agency/10-causality-and-counterfactuals.md).
 

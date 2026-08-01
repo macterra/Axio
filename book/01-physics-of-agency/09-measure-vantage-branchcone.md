@@ -50,19 +50,19 @@ This is the same conditional Measure with its horizon stated explicitly. The res
 
 The machinery pays for itself immediately on the most notoriously slippery constructions in language: counterfactuals. "If I had taken aspirin, my headache would be gone." What could make such a claim true? I didn't take the aspirin. The classical options are unattractive: treat the claim as meaningless, or follow David Lewis and evaluate it at the "nearest possible world" where I did — leaving *possible world* and *nearest* as primitives floating free of physics.
 
-The QBU supplies physically represented alternatives, but it does not by itself choose a similarity metric or intervention. Evaluating a counterfactual still requires a causal model:
+The QBU supplies physically represented alternatives, but it does not by itself choose a similarity metric or fix the contrast. Evaluating a counterfactual still requires a causal model:
 
 - Identify the actual Vantage and the variables held fixed.
-- Specify an intervention that sets the antecedent while preserving the chosen background conditions.
-- Compute the conditional Measure of the consequent under that intervention.
+- Specify a contrast that sets the antecedent while preserving the chosen background conditions; an intervention $do(X)$ is one way to construct it.
+- Compute the conditional Measure of the consequent under that contrast.
 
-Writing $do(X)$ for the modeled intervention:
+Writing $do(X)$ for one such construction:
 
 $$
 X \square\!\!\rightarrow Y \quad\Longleftrightarrow\quad \mu_V(Y\mid do(X)) \approx 1.
 $$
 
-If the Measure of headache resolution under the aspirin intervention is near one, the flat counterfactual is supported; if it is 0.6, only the probabilistic version is. Everettian branches give the alternatives physical realization and Measure, but the intervention and background conditions still do semantic work. The QBU can ground part of counterfactual evaluation; it does not eliminate causal modeling. [Causality and Counterfactuals](10-causality-and-counterfactuals.md) develops the proposal and its limits.
+If the Measure of headache resolution under the aspirin intervention is near one, the flat counterfactual is supported; if it is 0.6, only the probabilistic version is. Everettian branches give the alternatives physical realization and Measure, but the contrast and background conditions still do semantic work. The QBU can ground part of counterfactual evaluation; it does not eliminate causal modeling. [Causality and Counterfactuals](10-causality-and-counterfactuals.md) develops the proposal and its limits.
 
 ## Worked Case: Heads or Tails
 

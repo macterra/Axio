@@ -14,21 +14,23 @@ The oldest answer, Hume's, is regularity: flips of this kind are constantly conj
 
 The trouble is what the counterfactual is supposed to be *about*. Lewis evaluated “if a had occurred, b would have occurred” using nearby possible worlds, which requires a similarity ordering. Modern causal models instead represent interventions explicitly, but they still require judgments about variables, structural equations, and which background conditions remain fixed. Counterfactual analysis gets the logic right; no ontology eliminates the modeling choices.
 
-The [Quantum Branching Universe](08-the-quantum-branching-universe.md) (QBU) adds a physical interpretation of alternative outcomes and their weights — branches in which $a$ occurs and matched branches in which it does not, the difference set by the branch split rather than by any manipulation. It does not automatically identify the correct contrast or nearest comparison history; the graph supplies ancestry and Measure once a coarse-graining is specified, and a causal model must still say what counts as Alice's action, what is held fixed, and which differences are irrelevant.
+The [Quantum Branching Universe](08-the-quantum-branching-universe.md) (QBU) adds a physical interpretation of alternative outcomes and their weights — branches in which $a$ occurs and branches in which it does not, physically actual and weighted rather than imagined. It does not automatically identify the correct contrast or nearest comparison history; the graph supplies ancestry and Measure once a coarse-graining is specified, and a causal model must still say what counts as Alice's action, what is held fixed, and which differences are irrelevant.
 
 ## The Definition
 
 Given a Vantage $V$, a causal model $M$, an event $a$, and an outcome $b$, compare the conditional Measure of $b$ where $a$ occurs against its Measure under an appropriate matched contrast:
 
 $$
-\Delta_a b = \mu_V(b\mid do(a),M) - \mu_V(b\mid do(\neg a),M).
+\Delta_a b = \mu_V(b\mid a, C, M) - \mu_V(b\mid \neg a, C, M).
 $$
+
+Here $C$ is the contrast specification: the matched branch-sets, with the background conditions that isolate $a$ held fixed. It is what an ordinary causal model builds with the $do(\cdot)$ operator; in the QBU it also fixes which physically realized branches count as the comparison.
 
 Then:
 
 > **Event $a$ is a cause of $b$, relative to $V$ and $M$, when its occurrence changes the Measure of $b$ against a matched contrast in which it does not occur, with the causal path respecting the QBU's ancestry relation.**
 
-The deterministic case is the limit in which $\mu_V(b\mid do(a),M)=1$ and $\mu_V(b\mid do(\neg a),M)=0$. Most causes are not like that. They raise or lower an outcome's Measure without guaranteeing it. The definition therefore has three explicit dependencies:
+The deterministic case is the limit in which $\mu_V(b\mid a,C,M)=1$ and $\mu_V(b\mid \neg a,C,M)=0$. Most causes are not like that. They raise or lower an outcome's Measure without guaranteeing it. The definition therefore has three explicit dependencies:
 
 1. **Representation.** The events and histories have been defined at a relevant coarse-graining.
 2. **Contrast model.** The contrast specifies what is changed and what is held fixed, isolating variation in $a$ so the comparison is not mere observational conditioning.
@@ -36,7 +38,7 @@ The deterministic case is the limit in which $\mu_V(b\mid do(a),M)=1$ and $\mu_V
 
 Ancestry rules out backward paths within the QBU representation; it does not by itself establish dependence. The matched contrast does that work.
 
-Two clarifications keep the definition honest. First, the *matched* contrast is what separates causation from mere prediction. Umbrellas track rain, but the branches that differ in whether an umbrella is carried are not matched on the weather; a legitimate contrast holds the causally relevant background fixed and lets only $a$ vary. In an ordinary causal model the $do(\cdot)$ operator imposes that matching by hand, severing $a$ from its own causes. In the QBU it has a physical basis: where the $a$ and not-$a$ branch-sets share an ancestral state, the branch split itself sets $a$ — exogenously, with no one manipulating it. Second, $do(a)$ therefore names a *way of constructing* the contrast, not the essence of causation. When $a$ is an agent's own policy, the contrast is one the agent produces, and the comparison becomes the intervention — and the [control](03-the-kybit.md) — of the previous chapters. Causation in general needs only the matched contrast; agent control is its manipulable special case.
+Two clarifications keep the definition honest. First, the *matched* contrast is what separates causation from mere prediction. Umbrellas track rain, but the branches that differ in whether an umbrella is carried are not matched on the weather; a legitimate contrast holds the causally relevant background fixed and lets only $a$ vary. What the QBU adds here is narrower than it may look: it makes the alternative continuations *physically actual and weighted*, so the counterfactual is a comparison among branches that exist rather than an imagined manipulation — which is why a supernova or the outbreak of a war, neither of which anyone can manipulate, still has a contrast. What branching does *not* supply is the isolation of $a$ from its own causes. A shared ancestor gives common provenance, not the absence of common causes; the surgical severing that $do(a)$ performs in an ordinary model is not something the branch structure does for free. Isolating $a$ therefore remains a modeling requirement — discharged by structural assumptions, an admissible adjustment set, or another explicit no-confounding condition, and recorded in $C$. Second, $do(a)$ names one *way of constructing* that contrast — the interventional one — not the essence of causation; when $a$ is an agent's own policy, the contrast is one the agent produces, and the comparison becomes the intervention, and the [control](03-the-kybit.md), of the previous chapters. Causation in general needs only a well-isolated matched contrast; agent control is its manipulable special case.
 
 The events are picked out by Pattern Identifiers. When identity across histories matters, a Strong PI must include provenance from a declared ancestor; descriptive precision alone does not guarantee a common origin.
 
@@ -68,7 +70,7 @@ The atomic and semantic descriptions need not compete for one causal slot. They 
 
 The second question is a standing objection to the whole counterfactual program: if causation is predicated on counterfactuals, it cannot be probabilistic, because we cannot assign probabilities to things that don't happen. A probability of an event that never occurs, the objection runs, is a number about nothing.
 
-The objection confuses non-actual with measureless. Standard causal models assign probabilities under such contrasts without requiring that every alternative be a concrete world. The QBU offers a stronger ontological reading: alternative decoherent outcomes are components of the quantum state and carry Born Measure. On that reading, “Had Alice not flipped the switch, the lamp would probably still have been off” reports $\mu_V(\text{off}\mid do(\neg\text{flip}),M)$.
+The objection confuses non-actual with measureless. Standard causal models assign probabilities under such contrasts without requiring that every alternative be a concrete world. The QBU offers a stronger ontological reading: alternative decoherent outcomes are components of the quantum state and carry Born Measure. On that reading, “Had Alice not flipped the switch, the lamp would probably still have been off” reports $\mu_V(\text{off}\mid \neg\text{flip}, C, M)$.
 
 Deterministic causation is the limiting case where the contrast drives the relevant Measure to zero or one; probabilistic causation changes it without fixing it. Everettian ontology is one way to interpret those weights physically, not a prerequisite for probabilistic causal reasoning.
 
