@@ -49,7 +49,7 @@ None of this implies that large platforms can operate without moderation. That i
 
 ## The Leak
 
-The really bad sign is that these terms no longer stay inside the environments that produced them. People say *unalive* in podcasts, private messages, essays, and ordinary conversation where no moderation system is involved. A workaround becomes a habit. A habit becomes a style. A style becomes a cultural norm.
+The bad sign is that these terms no longer stay inside the environments that produced them. People say *unalive* in podcasts, private messages, essays, and ordinary conversation where no moderation system is involved. A workaround becomes a habit. A habit becomes a style. A style becomes a cultural norm.
 
 This is how infrastructure reshapes thought without issuing commands. No one has to officially ban a word. The platform merely changes the local cost of using it. People adapt. The adaptation spreads. Eventually the original word starts to feel dangerous or impolite — not because anyone made an argument against it, but because everyone has been trained to flinch.
 

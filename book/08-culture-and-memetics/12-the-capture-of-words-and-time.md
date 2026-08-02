@@ -14,7 +14,7 @@ That theft is a small thing in itself — one label among thousands — but it i
 
 ## The Hijacked Label
 
-Consider what the capture of "liberal" actually buys its captors. Three things, and none of them is accidental.
+Consider what the capture of "liberal" buys its captors. Three things, and none of them is accidental.
 
 First, philosophical obscurity. The clear distinction between liberalism's core commitments and the statist orientation of contemporary progressivism gets muddied when a single word straddles both. A politician can invoke the prestige of liberty while proposing its curtailment, and the contradiction never surfaces, because the vocabulary has been arranged so that it cannot be stated. Substantive debate about the legitimate scope of government becomes difficult when the position that government should be limited no longer has an unambiguous name.
 
@@ -34,7 +34,7 @@ Unpack the phrase and four presuppositions fall out, every one of them faulty.
 
 1. **That history possesses an inherent moral trajectory** — as though the universe itself enforced progress toward justice. It does not. Whatever moral progress occurs is made by agents, against resistance, and can be unmade.
 2. **That this trajectory is stable and discernible** — and, conveniently, aligned with the speaker's current convictions. The people most certain about where history is heading have an odd habit of discovering that it is heading exactly where they were already going.
-3. **That moral judgment advances in a straight line** — rather than staggering through reversals, disasters, and regressions, which is what the record actually shows.
+3. **That moral judgment advances in a straight line** — rather than staggering through reversals, disasters, and regressions, which is what the record shows.
 4. **That future consensus is automatically correct** — ignoring the possibility that it may be shaped by ignorance, coercion, or sheer accident. A verdict is not validated by the date on which it is rendered.
 
 These are not truths; they are comforting myths, clung to by those who would rather invoke inevitability than construct an argument.
@@ -51,7 +51,7 @@ Here is the reframe that makes the phrase useful. Its greatest value lies not in
 
 The response protocol is straightforward. Insist on a substantive argument grounded in evidence — the claim must stand on what can be shown now, not on what will allegedly be believed later. Examine any historical parallels on offer, testing them for accuracy and relevance rather than accepting them as incantation. Ask whose history, whose moral framework, and whose values are being invoked — the phrase always smuggles in a particular trajectory as though it were the only one. And keep squarely in view the possibility that future consensus, should it ever arrive, may simply be wrong.
 
-When someone declares their place on the right side of history, remember what is actually happening: they are not conversing with the future — they are attempting to conscript it. And the proper response to conscription is not reverence but resistance.
+When someone declares their place on the right side of history, remember what is happening: they are not conversing with the future — they are attempting to conscript it. And the proper response to conscription is not reverence but resistance.
 
 ## Captured Numbers
 
@@ -75,4 +75,4 @@ Whether inequality as such is ever a harm — as opposed to the coercion, fraud,
 
 Set the three specimens side by side and the shared mechanism is plain. Each one relocates the argument to territory the listener cannot inspect. The hijacked label smuggles conclusions through connotation: accept the word and you have accepted a verdict you never examined. The captured future smuggles them through prophecy: the evidence is lodged with a tribunal that will never convene. The captured number smuggles them through arithmetic: the sum is real, but what it purports to measure is not there. In every case the tell is the same — the crucial step of the argument happens somewhere you cannot follow it.
 
-And so the defense is the same in every case: drag the claim back into inspectable territory. Ask what the word meant before it was taken, and use a more precise one. Ask what the evidence is now, since the future has no spokesman. Ask what the number actually measures, and whether its wielder would accept it pointed at himself. None of this requires unusual intelligence — only the refusal to let the terms of the argument be dictated by the party with the most to gain from their corruption. Vocabulary is the first territory captured because it is the cheapest to hold and the most valuable to own. It should be defended accordingly.
+And so the defense is the same in every case: drag the claim back into inspectable territory. Ask what the word meant before it was taken, and use a more precise one. Ask what the evidence is now, since the future has no spokesman. Ask what the number measures, and whether its wielder would accept it pointed at himself. None of this requires unusual intelligence — only the refusal to let the terms of the argument be dictated by the party with the most to gain from their corruption. Vocabulary is the first territory captured because it is the cheapest to hold and the most valuable to own. It should be defended accordingly.
