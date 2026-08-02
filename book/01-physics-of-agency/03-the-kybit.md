@@ -13,7 +13,7 @@ If agency is physically implemented — an embedded system using a model to chan
 
 ## Control as Distance Between Futures
 
-Start with what control actually does. Before an agent intervenes, the world has some probability distribution over outcomes — call it $P_{\text{initial}}$, the distribution drift would deliver on its own. After the agent acts, the outcomes follow a different distribution, $P_{\text{final}}$, reshaped in the agent's favor. The control exerted is precisely the gap between those two futures: how far the agent dragged the probabilities from where they were going to where the agent wanted them.
+Control changes the distribution of possible outcomes. Before an agent intervenes, the world has some probability distribution over outcomes — call it $P_{\text{initial}}$, the distribution drift would deliver on its own. After the agent acts, the outcomes follow a different distribution, $P_{\text{final}}$, reshaped in the agent's favor. The control exerted is precisely the gap between those two futures: how far the agent dragged the probabilities from where they were going to where the agent wanted them.
 
 There is a standard measure of how one probability distribution diverges from another: the **Kullback–Leibler (KL) divergence**. It is not a mathematical distance — it is asymmetric and does not obey the triangle inequality — but its asymmetry fits an intervention evaluated against a baseline. Define the distributional control registered by a shift from $P_{\text{initial}}$ to $P_{\text{final}}$ as
 

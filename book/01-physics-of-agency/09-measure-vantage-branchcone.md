@@ -66,7 +66,7 @@ If the Measure of headache resolution under the aspirin intervention is near one
 
 ## Worked Case: Heads or Tails
 
-Now run the coin flip through the full toolkit, tracking two quantities side by side: Measure, defined above, and **Credence** — the subjective probability an observer assigns given the information they actually have. Measure belongs to this volume; Credence and the discipline of updating it belong to [Measure and Credence](../02-conditionalism/11-measure-and-credence.md). The coin flip is the cleanest demonstration of why they must not be conflated: over a two-second interval the two quantities, which started equal, come apart completely and then reconverge.
+Now run the coin flip through the full toolkit, tracking two quantities side by side: Measure, defined above, and **Credence** — the subjective probability an observer assigns given the information available to them. Measure belongs to this volume; Credence and the discipline of updating it belong to [Measure and Credence](../02-conditionalism/11-measure-and-credence.md). The coin flip is the cleanest demonstration of why they must not be conflated: over a two-second interval the two quantities, which started equal, come apart completely and then reconverge.
 
 **Before $-0.5$ s.** A fair coin, no side chosen. The situation is symmetric, and both quantities sit at 0.5 — Measure because the branches forward of this Vantage split evenly by weight, Credence because the observer has no information that favors either side.
 

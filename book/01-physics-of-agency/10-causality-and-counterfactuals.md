@@ -10,7 +10,7 @@ sources:
 
 Alice flips a switch, and a moment later the lamp turns on. Everyone agrees the flip caused the light. Almost no one can say what that claim means.
 
-The oldest answer, Hume's, is regularity: flips of this kind are constantly conjoined with lightings of that kind. But regularity is too weak — night regularly follows day without causing it — and every attempt to patch it smuggles in the very notion it was supposed to explain. The modern answer, due mainly to David Lewis, is counterfactual: the flip caused the light because *if Alice had not flipped the switch, the lamp would not have turned on*. That gets the logic right. Causal claims really are claims about what would have happened otherwise; that is why we test drugs against control groups and assign blame by asking what the defendant could have done differently.
+The oldest answer, Hume's, is regularity: flips of this kind are constantly conjoined with lightings of that kind. But regularity is too weak — night regularly follows day without causing it — and every attempt to patch it smuggles in the causal notion it was supposed to explain. The modern answer, due mainly to David Lewis, is counterfactual: the flip caused the light because *if Alice had not flipped the switch, the lamp would not have turned on*. That gets the logic right. Causal claims concern what would have happened otherwise; that is why we test drugs against control groups and assign blame by asking what the defendant could have done differently.
 
 The trouble is what the counterfactual is supposed to be *about*. Lewis evaluated “if a had occurred, b would have occurred” using nearby possible worlds, which requires a similarity ordering. Modern causal models instead represent interventions explicitly, but they still require judgments about variables, structural equations, and which background conditions remain fixed. Counterfactual analysis gets the logic right; no ontology eliminates the modeling choices.
 
@@ -56,7 +56,7 @@ A definition earns its keep by what it settles. Here are two questions it settle
 
 ## Do Ideas Move Atoms?
 
-In our brains, do ideas push around atoms, or do the atoms push the ideas? The question sounds like a koan, and centuries of dualist and epiphenomenalist hand-wringing have treated it as one: surely only physical things can cause physical things, so either ideas are causally inert passengers or something spooky is going on.
+In our brains, do ideas push around atoms, or do the atoms push the ideas? The question sounds like a koan, and centuries of dualist and epiphenomenalist hand-wringing have treated it as one. The inherited premise treats ideas as nonphysical while allowing only physical things to cause physical things. Ideas then become inert passengers unless something spooky is going on.
 
 Apply the definition at the right grain. Ideas are higher-level patterns implemented by neural activity. If a matched contrast that preserves the relevant background while changing whether pattern A is instantiated systematically changes the Measure of later neural or behavioral outcome B, then A is causally relevant at that level. The contrast may be experimental, computational, or counterfactual; what matters is that the macrovariable supports stable difference-making rather than merely redescribing the outcome after the fact.
 
