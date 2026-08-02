@@ -42,7 +42,7 @@ That is what a numeraire does.
 
 It lets us say that this book is worth $10, that apple is worth $10, this delay is not worth paying $20 to avoid, and that inconvenience would require at least $100 in compensation to endure.
 
-Once the denominator is fixed, equal valuation means equal value in that framework. If X is valued at $10 and Y is valued at $10, then X and Y have the same value relative to that numeraire. That is not a deep theorem. It is simply what the statement means.
+Once the denominator is fixed, equal valuation means equal value in that framework. If X is valued at $10 and Y is valued at $10, then X and Y have the same value relative to that numeraire. That is not a deep theorem. It is what the statement means.
 
 This point matters because people routinely concede it for one sentence and violate it in the next. They admit that two things have equal dollar value, then immediately insist that one is "really" more valuable because it matters more, feels different, carries deeper significance, or occupies a nobler place in some emotional hierarchy. Perhaps it does. But then the subject has changed. One is no longer talking about value in the original denominator.
 

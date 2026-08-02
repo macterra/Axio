@@ -48,7 +48,7 @@ Voluntary payment reveals what people with resources and a capture mechanism wil
 
 Meanwhile the supposedly fixed wall of non-excludability keeps eroding, because non-excludability was never a metaphysical property of goods — it is a snapshot of current technology and institutions, and the snapshot keeps changing. Micropayments make it economical to charge fractions of a cent for marginal use. Assurance contracts let contributors pledge conditionally, binding only when enough others join, dissolving the free-rider's advantage by design. Cryptographic exclusion — encrypted signals, access keys, blockchains — makes it trivial to gate goods that were open to all comers a generation ago. The first assumption of the model is not merely false about the past; it is being falsified again every year.
 
-So what looks like underprovision is usually provision in unfamiliar forms: messy, decentralized, diverse, voluntary. The complaint was never really about scarcity. It is about a refusal to conform to the state's preferred template — one uniform good, one funding stream, one administrator.
+So what looks like underprovision is usually provision in unfamiliar forms: messy, decentralized, diverse, voluntary. The complaint was never about scarcity. It is about a refusal to conform to the state's preferred template — one uniform good, one funding stream, one administrator.
 
 ## Owing at the Margin
 

@@ -13,7 +13,7 @@ This chapter takes apart two trade myths. The first is protectionism itself: fiv
 
 ## Five Rationales, Five Collapses
 
-Every tariff comes wrapped in a rationale. Strip away the rhetoric and look at what each one actually says.
+Every tariff comes wrapped in a rationale. Strip away the rhetoric and look at what each one says.
 
 **1. Protecting domestic industries.** *The sales pitch:* foreign competition will destroy our industries; tariffs keep them alive and protect jobs. *The reality:* a tariff is a polite way of saying "we will force you to pay more so an inefficient producer can avoid improving." Every extra dollar you pay to protect one job in steel is a dollar taken from countless other jobs in the industries that use steel. The protected industry survives; downstream industries and consumers bleed. The jobs "saved" stand in front of the camera. The jobs destroyed — spread across every firm whose inputs just got more expensive — never existed to be photographed.
 
@@ -43,7 +43,7 @@ The second trade myth is grander. It comes as a rhetorical question, endlessly r
 
 The question is rhetorically clever and conceptually incoherent. It equates China's modern skyline with the success of communism, when those towers were built atop its ashes.
 
-China is ruled by the Communist Party and operates a mixed political economy. Since reforms beginning in 1978 it has expanded private ownership, foreign investment, competition, and profit incentives while retaining state-owned enterprises, state-directed finance, land controls, industrial policy, and one-party authority. Calling the result simply capitalist or socialist hides the combination whose causal contribution is actually at issue.
+China is ruled by the Communist Party and operates a mixed political economy. Since reforms beginning in 1978 it has expanded private ownership, foreign investment, competition, and profit incentives while retaining state-owned enterprises, state-directed finance, land controls, industrial policy, and one-party authority. Calling the result purely capitalist or socialist hides the combination whose causal contribution is at issue.
 
 The chronology supplies powerful evidence but not a controlled experiment. Mao-era collectivization and the Great Leap Forward produced catastrophe, including famine on an enormous scale. Post-1978 reforms changed agricultural incentives, enterprise autonomy, trade, foreign investment, migration, education, infrastructure, demographics, and technology while the Party remained in power. Market liberalization is central to the explanation; it was not the only variable that changed. Hundreds of millions moved from subsistence agriculture into a rapidly growing mixed economy, a transformation that belongs in any serious account of poverty reduction.
 
