@@ -17,7 +17,7 @@ The preceding chapters treated agency as a physically implemented departure from
 
 **Physical control requires a resource-consuming implementation. Under an equilibrium-reference realization, $C$ kybits imply a minimum-work bound of $C k_B T \ln 2$.**
 
-The robust part is straightforward: an embedded agent controls through physical sensing, computation, correction, and actuation. Those processes consume usable resources. The quantitative statement is narrower. When the baseline is an equilibrium reference and the physical protocol realizes the modeled transformation, relative entropy supplies the bound
+The robust constraint is physical implementation: an embedded agent controls through sensing, computation, correction, and actuation. Those processes consume usable resources. The quantitative statement is narrower. When the baseline is an equilibrium reference and the physical protocol realizes the modeled transformation, relative entropy supplies the bound
 
 $$W_{\text{min}} \geq C k_B T \ln 2.$$
 
@@ -71,7 +71,7 @@ Classical thermodynamics describes physical systems without reference to purpose
 
 ## Objections
 
-A framework that claims this much owes answers to the hard questions. These are the strongest objections I know, answered rather than hidden.
+The framework owes answers to the objections below.
 
 **In a branching universe, multiple outcomes occur — so what difference does agency make?** In the Quantum Branching Universe (QBU), outcomes with nonzero amplitude relative to an actual state can appear in decohering components. Agency need not create or globally redirect squared-amplitude weight to matter. A policy is a physical variable, and different interventions on it can be associated with different conditional distributions of later records and outcomes. Measure weights those consequences once the state, event definition, and causal model are fixed. The open bridge is whether the divergence from an inactive baseline, counted in kybits, has a general physical work relation and a rigorous counterpart in these policy-conditioned quantum distributions. [Agency in the Emergent Multiverse](13-agency-in-the-emergent-multiverse.md) keeps that ledger; [measure responsibility](../05-value-and-ethics/21-measure-responsibility.md) addresses the separate normative bridge.
 
@@ -79,7 +79,7 @@ A framework that claims this much owes answers to the hard questions. These are 
 
 **Where do kybits exist, physically?** The distributional shift counted in kybits is a model-level quantity computed from two distributions, not a new substance or microscopic observable. It becomes distributional control — a signature of agency — only after a causal analysis attributes the distributional difference to an evaluative control loop. The physical implementation lives in the agent-environment interaction; the number summarizes one aspect of that interaction. The analogy with temperature is suggestive but not yet earned to the same degree, because temperature has settled operational procedures and the baseline and outcome partition remain model choices.
 
-**What physical process actually burns the energy?** The implementation does: sensing, neural or electronic processing, correction, muscle contraction, motors, communication, and repair. Which processes are logically irreversible and how close any one comes to a thermodynamic lower bound depend on the mechanism. The first law requires a physical ledger; only its restricted special case supplies the proposed exchange-rate bound.
+**What physical process burns the energy?** The implementation does: sensing, neural or electronic processing, correction, muscle contraction, motors, communication, and repair. Which processes are logically irreversible and how close any one comes to a thermodynamic lower bound depend on the mechanism. The first law requires a physical ledger; only its restricted special case supplies the proposed exchange-rate bound.
 
 **Why coin new terms at all — can't existing theories cover this?** Each existing theory covers a facet. Cybernetics describes feedback and control loops; causal inference distinguishes intervention from observation; information theory quantifies distributional divergence; nonequilibrium thermodynamics prices particular transformations. The kybit proposal earns its name only if using these together yields stable, comparable measurements of attributed control. Until then it is a useful hypothesis about a shared ledger, not proof that the literatures have already unified.
 
