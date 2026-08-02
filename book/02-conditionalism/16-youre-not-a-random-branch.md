@@ -6,7 +6,7 @@ sources:
   - 202129157.youre-not-a-random-branch
 ---
 
-[You're Not a Random Sample](15-youre-not-a-random-sample.md) ended on a promissory note. The fix for the broken theories of self-location, I argued, is to stop counting observers and start weighing them — and I added that in quantum mechanics this idea of "weight" is completely natural, because different branches of reality carry different amounts of it. This chapter cashes the promise. The quantum case turns out to be the cleanest, sharpest version of the whole story — and the place where something genuinely new has happened.
+[You're Not a Random Sample](15-youre-not-a-random-sample.md) ended on a promissory note. The fix for the broken theories of self-location, I argued, is to stop counting observers and start weighing them — and I added that in quantum mechanics this idea of "weight" is natural, because different branches of reality carry different amounts of it. This chapter cashes the promise. The quantum case turns out to be the cleanest, sharpest version of the whole story — and the place where something genuinely new has happened.
 
 Here's the setup. You run a quantum experiment rigged so that one outcome is overwhelmingly likely — say, 99% to flash green, 1% to flash red. You press the button. The detector flashes.
 
@@ -59,7 +59,7 @@ It does not claim to conjure probability out of thin air. It rests on two assump
 
 Grant both and the famous rule follows. Refuse either and it doesn't. That's the whole machine; no sleight of hand. The formal treatment, [Born Measure from Self-Location](/papers/BMSL.html), makes a point of setting these on the table rather than smuggling them in, because nearly every rival account of quantum probability quietly assumes something just as strong somewhere and calls the result a derivation.
 
-Two hard questions survive even after you grant the setup. Why the square of the amplitude, rather than some other power of it? And — the deepest worry of all — even granting that the indexical "which branch am I in?" is a real uncertainty, is the attitude it supports genuinely probability, or just probability's mathematics worn by an unfamiliar kind of ignorance? Critics from Albert to Kent push hard right here, and the honest reply concedes that part of the dispute is about words. What is not in dispute is that the weights reproduce the statistics we actually measure — whatever we end up calling the confidence that tracks them.
+Two hard questions survive even after you grant the setup. Why the square of the amplitude, rather than some other power of it? And — the deepest worry of all — even granting that the indexical "which branch am I in?" is a real uncertainty, is the attitude it supports genuinely probability, or just probability's mathematics worn by an unfamiliar kind of ignorance? Critics from Albert to Kent push hard right here, and the honest reply concedes that part of the dispute is about words. What is not in dispute is that the weights reproduce the statistics we measure — whatever we end up calling the confidence that tracks them.
 
 The honest answer, for a while, was: these are real, unsolved, and at least now they're isolated cleanly enough to argue about one at a time.
 
@@ -95,7 +95,7 @@ Same rule as the companion chapter: name the open problems instead of hiding the
 
 - Lela's result is a March 2026 preprint, not yet peer reviewed. It proves conditional mathematical uniqueness under internal-equivalence and refinement-richness assumptions; the book's physical application is a separate argument and inherits additional risk.
 
-- Low-Measure witnesses remain. A continuation that recorded red almost every time is real within the Everettian model and is locally convinced of the wrong odds. A critic can press that the theory therefore contains observers for whom induction reliably misfires. The reply is that confirmation tracks Measure, not existence: the aggregate record sector no more refutes quantum mechanics than a fair coin landing heads a thousand times running refutes a probabilistic model. What remains is narrower but real: collapse pictures say the maverick run merely could occur, while Everett represents a nonzero sector in which it does.
+- Low-Measure witnesses remain. A continuation that recorded red almost every time is real within the Everettian model and is locally convinced of the wrong odds. A critic can press that the theory therefore contains observers for whom induction reliably misfires. The reply is that confirmation tracks Measure, not existence: the aggregate record sector no more refutes quantum mechanics than a fair coin landing heads a thousand times running refutes a probabilistic model. A narrower contrast survives: collapse pictures say the maverick run merely could occur, while Everett represents a nonzero sector in which it does.
 
 These are honest debts, written into a closing ledger rather than swept under a rug.
 

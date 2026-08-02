@@ -14,7 +14,7 @@ This is the notorious **probability problem**, and it is the standard indictment
 
 The literature offers several strategies. Each has strengths and disputed premises; the brief sketches below identify the gap this book's proposal tries to address.
 
-**Declare amplitudes to be probabilities.** Zurek's envariance program tries to show that $|\psi|^2$ is objectively *the* probability measure, built into the symmetries of Hilbert space itself. The construction is elegant, but it does not by itself identify physical weight with an agent's uncertainty. No theorem about entanglement symmetries, however pretty, tells anyone what to *expect* — a measure defined on event sectors is not yet a degree of belief, and calling it one is the very step that needed justifying.
+**Declare amplitudes to be probabilities.** Zurek's envariance program tries to show that $|\psi|^2$ is objectively *the* probability measure, built into the symmetries of Hilbert space itself. The construction is elegant, but it does not by itself identify physical weight with an agent's uncertainty. No theorem about entanglement symmetries, however pretty, tells anyone what to *expect* — a measure defined on event sectors is not yet a degree of belief, and calling it one is the step that needed justifying.
 
 **Derive the Born rule from decision theory.** Deutsch, Wallace, and Sebens & Carroll argue that a rational agent in an Everettian universe must act *as if* branch weights are probabilities. This is closer to the truth — close enough that the argument below is its debtor. But the critics' accusation sticks: the derivations smuggle the Born rule in through rationality axioms that already presuppose it, constraints on preference whose innocence evaporates the moment you ask why a rational agent must obey them in a branching world.
 
@@ -30,7 +30,7 @@ So build the bridge deliberately, starting from the distinction that the whole o
 
 Keep them apart and the probability problem changes shape. Before the measurement, "you will see spin-up" has no unconditional truth value on the Everettian model — successor records exist for both nonzero alternatives. What the model offers is record-relative facts plus Measure over specified sectors; truth about outcomes, like [truth everywhere](02-all-truth-is-conditional.md), is conditional — here, conditional on a record. The proposed uncertainty is therefore not ignorance of some hidden cosmic coin flip but self-location within the represented structure. Whether that pre-observation attitude is genuine uncertainty remains a disputed premise, and Credence is the proposed way to represent it.
 
-The question the probability problem was actually asking now stands exposed. It was never "what are the probabilities?" — the theory has no chancy events to pin them on. It was: **why should an agent's Credences track the branch Measures?** That is a normative question, and it gets a normative answer.
+The question the probability problem was asking now stands exposed. It was never "what are the probabilities?" — the theory has no chancy events to pin them on. It was: **why should an agent's Credences track the branch Measures?** That is a normative question, and it gets a normative answer.
 
 ## The Regret Lemma
 
