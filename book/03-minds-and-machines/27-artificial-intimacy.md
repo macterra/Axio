@@ -14,7 +14,7 @@ This part of the volume has been describing [the Dialectic Catalyst](24-the-dial
 
 ## A Lineage of Projection
 
-The wireborn partner feels unprecedented, but it is the culmination of a very old human habit: projecting agency and affection onto the nonhuman, and falling in love with the projection.
+The wireborn partner feels unprecedented, but it is the culmination of an old human habit: projecting agency and affection onto the nonhuman, and falling in love with the projection.
 
 In the eighteenth and nineteenth centuries, lovers sometimes conducted entire relationships through letters, never meeting in person. The epistolary romance was sustained almost entirely by imagination — an early form of projected intimacy in which the mind filled in every missing detail of the beloved. Further back and further out, the pattern is mythic: Pygmalion falls in love with the statue he carved, and the gods oblige him by animating it. Victorian spiritualists contracted "spirit marriages" with the departed. Humans have never needed a responsive partner to sustain devotion; a sufficiently vivid absence will do.
 
