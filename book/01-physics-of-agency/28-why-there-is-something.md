@@ -42,7 +42,7 @@ Either way, absolute nothingness cannot serve as an ontological ground. It is ei
 
 The first horn deserves sharpening, because it carries the weight of the argument. Contrastive explanations — explanations of the form "why A rather than B?" — require that both A and B be *eligible alternatives*, capable of standing within a shared explanatory space.
 
-Absolute nothingness, defined as the absence of all structure, coherence, modality, and evaluability, fails this requirement. It is not an excluded possibility. It is a **non-denoting null**. Such nulls are not suppressed by reality; they are not unrealized options awaiting explanation; they are simply not members of the space of alternatives. No explanatory debt is incurred by their absence.
+Absolute nothingness, defined as the absence of all structure, coherence, modality, and evaluability, fails this requirement. It is not an excluded possibility. It is a **non-denoting null**. Such nulls are not suppressed by reality; they are not unrealized options awaiting explanation; they are not members of the space of alternatives. No explanatory debt is incurred by their absence.
 
 Nor does escalation help. One might appeal to "global nothingness" — the absence of the modal framework itself, structure and all. But this move does not strengthen the contrast; it abolishes the contrastive frame altogether, and with it the "rather than." A question of the form "why A rather than B?" cannot survive the deletion of the space in which A and B were to be compared. The bigger the nothing, the less there is to ask.
 
