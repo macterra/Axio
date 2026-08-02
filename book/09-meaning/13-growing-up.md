@@ -9,7 +9,7 @@ sources:
 
 "Grow up," someone says to a believer, and it lands as an insult. It is meant as one, and as psychology it is usually worthless. Religious belief does not place a person at one developmental stage, and unbelief does not confer maturity. There is nevertheless a real question hiding inside the taunt: has a person examined the values they inherited, become answerable for holding them, and learned to revise even a self-authored framework? That transition can occur within a faith, outside one, or in the passage between them.
 
-So I want to take the taunt seriously instead of trading it. Not as a way to be crueler about it, but as a way to say what it would actually mean to do the thing it demands — and to show that the demand, honestly met, is not the demolition of belief the taunter imagines. It is something harder and more interesting: the movement by which a person stops being the values he was handed and becomes their author.
+So I want to take the taunt seriously instead of trading it. Not as a way to be crueler about it, but as a way to say what it would mean to do the thing it demands — and to show that the demand, honestly met, is not the demolition of belief the taunter imagines. It is something harder and more interesting: the movement by which a person stops being the values he was handed and becomes their author.
 
 ## The Perimeter You Cannot See
 
@@ -43,7 +43,7 @@ Religious faith is too broad to place on one developmental rung. The narrower ta
 
 ## A Letter Backward
 
-There is a way to perform this that is more honest than any argument about it, and it is to write to the people you actually inherited from. Not to a philosophical abstraction but to your own ancestors — the specific dead whose values, revised past recognition, still run in you.
+There is a way to perform this that is more honest than any argument about it, and it is to write to the people you inherited from. Not to a philosophical abstraction but to your own ancestors — the specific dead whose values, revised past recognition, still run in you.
 
 Imagine writing to them across the centuries, to explain what you have made of what they gave you. You would have to tell them uncomfortable things. That you grant no authority automatically — not to kings, not to clergy, not to custom — and hold that legitimacy must be *continuously earned* through wisdom, fairness, and integrity, never conferred by position and never permanent once won. That you rest your beliefs on evidence and argument rather than scripture and inherited reverence, and that this is not contempt for them but the deepest respect you know how to pay, respect for the truth itself. That you hold liberty to be a right rather than a gift dispensed by those in power, and that restrictions require evidence and justification under the harm framework developed earlier. That you hold the equal standing of women, which would have scandalized many of them. That your commitments categorically reject slavery rather than accept it as a regrettable feature of the world. That you find prosperity in voluntary exchange and invention rather than inherited land and title, and want power kept minimal and answerable, an instrument for cooperation rather than an engine of obedience. That you prize curiosity, openness, and skepticism as highly as they prized piety, courage, and tradition.
 

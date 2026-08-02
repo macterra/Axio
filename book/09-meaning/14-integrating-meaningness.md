@@ -64,7 +64,7 @@ That is Chapman's contribution, and it is a phenomenological one. Meaning arises
 
 My framework begins somewhere else entirely. Its central primitive is the **agent**: an entity that maintains itself by modeling, choosing, and acting across time. An agent needs sufficient coherence to persist, and involuntary constraints can collapse its range of moves. The value volume adds an explicit normative commitment to protecting sapient agency, then defines [harm](../05-value-and-ethics/11-what-counts-as-harm.md) and [coercion](../05-value-and-ethics/09-what-counts-as-coercion.md) under specified conditions. Those ethical verdicts do not fall from system dynamics alone; they combine facts about agency with value commitments this volume eventually states in the Credo. I use that conditional framework here rather than re-deriving it.
 
-So: one framework phenomenological and fluid, one structural and architectural. The contrast is real — until you examine how either process actually functions, at which point it dissolves.
+So: one framework phenomenological and fluid, one structural and architectural. The contrast is real — until you examine how either process functions, at which point it dissolves.
 
 **Agency requires participation.** An agent cannot form predictions without coupling to an environment, cannot update beliefs without feedback, and cannot maintain a stable identity without continuing interaction. Agency is not a sealed monad choosing from the inside. It is an embedded control process sustained by what it encounters. Participation is therefore a condition of agency, not a competing definition of it.
 
