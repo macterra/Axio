@@ -13,7 +13,7 @@ sources:
 
 You did not choose your deepest values. You cling to life, protect your children, crave status, distrust strangers, and want your patterns — genetic and cultural — to outlast you. None of this was selected by reflection. It was selected by selection: every one of those drives is installed because ancestors who had it out-reproduced ancestors who lacked it. Before you ever reasoned about what matters, evolution had already filled in the answers, and it graded them on exactly one criterion — persistence.
 
-If [all value is subjective](01-the-myth-of-objective-value.md) — if there is no objective moral order to read the right values off of — then this inheritance is not a provisional guess awaiting correction from above. It is simply what you start with. The question this chapter answers is what to do about that: whether to ratify the defaults, to reject them on principle, or something better than either.
+If [all value is subjective](01-the-myth-of-objective-value.md) — if there is no objective moral order to read the right values off of — then this inheritance is not a provisional guess awaiting correction from above. It is what you start with. The question this chapter answers is what to do about that: whether to ratify the defaults, to reject them on principle, or something better than either.
 
 ## Nature's Default
 
@@ -50,7 +50,7 @@ I call the synthesis Phosphorism — the light-bearing stance, a framework of co
 - Free thought over dogma
 - Voluntary charity over coercive redistribution
 
-Three features of this list matter more than its items. First, it is *avowedly subjective*. Phosphorism claims no agent-independent moral authority; these are preferences, consciously chosen and openly owned, not commandments discovered. They bind the author as commitments and can supply standards for a community that adopts them. Their application to non-adopters or use in coercive institutions requires further premises and legitimacy; choosing them does not turn them into universal law.
+Three features define the list. First, it is *avowedly subjective*. Phosphorism claims no agent-independent moral authority; these are preferences, consciously chosen and openly owned, not commandments discovered. They bind the author as commitments and can supply standards for a community that adopts them. Their application to non-adopters or use in coercive institutions requires further premises and legitimacy; choosing them does not turn them into universal law.
 
 Second, it is *revisable*. Phosphorism treats reflective practice as constitutive, not optional: chosen values must be continuously re-examined against new experience, evidence, and understanding. A Phosphorist who froze the list would have relapsed into Vitalism with better furniture — holding values by inheritance, merely from a younger ancestor.
 
@@ -58,7 +58,7 @@ Third, it reconciles the thesis and antithesis rather than splitting the differe
 
 ## The Silver Pill
 
-That authenticity holds primacy within Phosphorism is easy to assert and easy to doubt, so here is the test case that does real work. Imagine a silver pill that, upon ingestion, would significantly enhance your ethical reasoning and reliably lead you to major ethical life changes — you would become vegan, donate extensively to charity, shrink your ecological footprint. Should you take it?
+The claim that authenticity holds primacy within Phosphorism needs a test. Imagine a silver pill that, upon ingestion, would significantly enhance your ethical reasoning and reliably lead you to major ethical life changes — you would become vegan, donate extensively to charity, shrink your ecological footprint. Should you take it?
 
 The scenario pits outcomes against authenticity with nothing else in the frame. If ethical outcomes are paramount — if reducing suffering is your highest priority — you should swallow it without hesitation; indeed *declining* would itself be unethical, a conscious choice of worse outcomes. That is the verdict of strict consequentialism, and it is at least consistent — Julian Savulescu presses it to its conclusion, arguing that we may be morally *obligated* to enhance our morality chemically or genetically, since ethical improvement directly reduces harm. (What else the consequentialist frame commits you to is the business of [Against Utilitarianism](14-against-utilitarianism.md).)
 

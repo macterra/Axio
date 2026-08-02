@@ -8,7 +8,7 @@ sources:
   - 173538253.violence-vs-coercion
 ---
 
-A mugger holds a loaded gun and says, "Give me your wallet or I'll shoot." Everyone agrees this is coercion. But the word does not stay put. Taxes are called coercion, and so are wage offers, advertising campaigns, social pressure, a mother's guilt trip, an employer's dress code. People use it to describe everything from violent threats to emotional manipulation, and the stretching is not innocent: coercion is central to ethics, politics, and law. Legal rights may be backed by coercive enforcement, but enforcement does not itself make a claimed right morally legitimate. A mushy definition of coercion still makes every downstream justification harder to audit. The previous chapter ended with an instruction: [call coercion coercion](08-honesty-and-hypocrisy.md). That instruction is empty until we know exactly what coercion is.
+A mugger holds a loaded gun and says, "Give me your wallet or I'll shoot." Everyone agrees this is coercion. But the word does not stay put. Taxes are called coercion, and so are wage offers, advertising campaigns, social pressure, a mother's guilt trip, an employer's dress code. People use it to describe everything from violent threats to emotional manipulation, and the stretching is not innocent: coercion is central to ethics, politics, and law. Legal rights may be backed by coercive enforcement, but enforcement does not itself make a claimed right morally legitimate. A mushy definition of coercion still makes every downstream justification harder to audit. The previous chapter ended with an instruction: [call coercion coercion](08-honesty-and-hypocrisy.md). That instruction is empty until we know what coercion is.
 
 Here is the definition:
 
@@ -44,7 +44,7 @@ The test case: a mugger implies he has a gun concealed in his pocket. In reality
 
 The relativity cuts both ways. A serious threat backed by real capability may be attempted coercion yet fail to influence an agent who reasonably mistakes the gun for a toy. A bluff may succeed when its target reasonably reads it as real. This is why the coercive communication, the threatener's capacity, the target's warranted Credence, and actual compliance should be recorded separately.
 
-The word *rationally* is holding the other flank. Agent-relative is not agent-arbitrary: the Credence must be the one the agent's evidence actually supports. Someone who hears a death threat in the weather report has not been coerced by the forecaster. Between the toy gun that rationally reads as real and the forecast that only delusion reads as a threat lies the entire domain of credibility, and Credence is the instrument that maps it.
+The word *rationally* is holding the other flank. Agent-relative is not agent-arbitrary: the Credence must be the one the agent's evidence supports. Someone who hears a death threat in the weather report has not been coerced by the forecaster. Between the toy gun that rationally reads as real and the forecast that only delusion reads as a threat lies the entire domain of credibility, and Credence is the instrument that maps it.
 
 ## Violence, Coercion, and Branching
 

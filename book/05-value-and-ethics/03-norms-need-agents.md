@@ -7,7 +7,7 @@ sources:
   - 177896415.the-illusion-of-moral-collapse
 ---
 
-An engineer miscalculates a load and the bridge comes down. It is natural to say the world corrected him — that reality itself pronounced his numbers wrong. But look closely at what actually happened. Steel deformed under stress it could not bear. Members failed in the order mechanics dictates. At no point did the universe evaluate anything. The bridge did not fall *because* the calculation was false; the calculation was false because it mismatched the same causal structure that brought the bridge down. The world resisted. It did not reproach.
+An engineer miscalculates a load and the bridge comes down. It is natural to say the world corrected him — that reality itself pronounced his numbers wrong. But look closely at what happened. Steel deformed under stress it could not bear. Members failed in the order mechanics dictates. At no point did the universe evaluate anything. The bridge did not fall *because* the calculation was false; the calculation was false because it mismatched the same causal structure that brought the bridge down. The world resisted. It did not reproach.
 
 That distinction — between a world that constrains and a world that obligates — is the subject of this chapter. [The myth of objective value](01-the-myth-of-objective-value.md) argued that value requires a valuer. Here I extend the point to prescriptions: a norm must be held, applied, or administered by some agent or practice. This does not make truth itself a preference. The world can make a representation inaccurate without issuing an epistemic command to correct it. Once correspondence and the norm of seeking it are separated, the familiar claim that a godless universe permits everything comes apart.
 
