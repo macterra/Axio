@@ -37,17 +37,17 @@ The schoolyard version arrives with a sting on it, which is a shame, because it 
 
 **Literally** it asks for respect of personal space: do not interfere in what is not yours to manage. This is the grease that lets people live at close quarters without constant friction, and civil coexistence is largely made of it.
 
-**Psychologically** it is a prescription for sanity. Preoccupation with other people's problems is a reliable engine of stress, anxiety, and resentment, and much of it is not even help — it is the mind refusing to stay in its own lane. Keeping your attention on what is actually yours to carry is not selfishness; it is the maintenance schedule for a functioning nervous system.
+**Psychologically** it is a prescription for sanity. Preoccupation with other people's problems is a reliable engine of stress, anxiety, and resentment, and much of it is not even help — it is the mind refusing to stay in its own lane. Keeping your attention on what is yours to carry is not selfishness; it is the maintenance schedule for a functioning nervous system.
 
 **Socially** it names why boundaries build rather than break relationships. Respecting another person's autonomy is what earns their trust; overstepping it, however warm the motive, breeds the resentment that erodes the bond you were trying to strengthen. Restraint is not distance. It is the condition under which closeness stays healthy.
 
-**Economically** it is comparative advantage in four words. Everyone prospers by concentrating on what they do best and leaving to others what others do better. A person or an institution that insists on minding everyone's business does all of it worse, and starves the thing it was actually equipped to do well.
+**Economically** it is comparative advantage in four words. Everyone prospers by concentrating on what they do best and leaving to others what others do better. A person or an institution that insists on minding everyone's business does all of it worse, and starves the thing it was equipped to do well.
 
 **Ethically** it defends autonomy as an intrinsic good. To respect another's choices even when you would choose otherwise is to acknowledge their standing as an agent, not a project. This is the maxim's sharpest edge, and it is aimed at paternalism: at coercion and unwanted interference dressed up as helpfulness. The fuller argument for why autonomy sits where it does belongs to the value theory developed earlier in the book; here the maxim carries the practical instruction, which is to keep your hands off lives that are not yours to run.
 
 **Existentially** it locates the origin of meaning in the person whose life it is. Purpose is not a substance one person can install in another. Each life is its own to navigate, and the attempt to impose your answers on someone else's existential questions is not generosity — it is a category error about where meaning comes from. Concentrate on authoring your own; leave others the same dignity.
 
-And at the bottom, the same structural fact surfaces from the other side. If each agent's experienced reality emerges from his own vantage — his own conditions, choices, and interpretations — then the place where you can actually move the world is your own life. *Mind your own business* is not a counsel of indifference. It is a recognition that your leverage on reality begins, and is largest, exactly where you stand. The two maxims turn out to be one instruction seen from two angles: govern your attention, and keep it where it belongs.
+And at the bottom, the same structural fact surfaces from the other side. If each agent's experienced reality emerges from his own vantage — his own conditions, choices, and interpretations — then the place where you can move the world is your own life. *Mind your own business* is not a counsel of indifference. It is a recognition that your leverage on reality begins, and is largest, exactly where you stand. The two maxims turn out to be one instruction seen from two angles: govern your attention, and keep it where it belongs.
 
 ## Apollo's Inscriptions
 
