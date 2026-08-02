@@ -9,7 +9,7 @@ sources:
 
 Some cross-national studies report that countries scoring higher on gender equality have lower female representation in parts of STEM. The result is commonly called the *gender-equality paradox*. It is an association, not a natural experiment. National wealth, educational systems, occupational payoffs, migration, field definitions, cultural expectations, and measurement choices move together, so the correlation cannot tell us that liberty simply reveals an intrinsic preference. It does tell us something narrower and important: formal equality does not mechanically produce occupational parity.
 
-That much is now familiar, at least among people willing to look at it. What is almost never said aloud is that the paradox has a mirror image, and the mirror is where the argument actually lives.
+That much is now familiar, at least among people willing to look at it. What is almost never said aloud is that the paradox has a mirror image, and the mirror is where the argument lives.
 
 ## The Shape of the Divergence
 
@@ -53,4 +53,4 @@ Outcome targets range from publicity and recruitment to quotas and legal compuls
 
 Coercive remedies carry costs and require a higher burden than voluntary recruitment or removal of a demonstrated barrier. Doing nothing can also impose costs when exclusion is real. Symmetry means counting both rather than treating either intervention or inertia as the neutral baseline.
 
-The working rule is demanding but simple: measure the disparity accurately, investigate competing mechanisms, remove demonstrated unjust barriers, prefer remedies proportionate to those mechanisms, and accept that open choice may still produce uneven results. The morgue comparison does not prove hypocrisy. It prevents “parity” from doing more argumentative work than its advocates actually intend and returns the inquiry to benefits, burdens, causes, and agency.
+The working rule is demanding but simple: measure the disparity accurately, investigate competing mechanisms, remove demonstrated unjust barriers, prefer remedies proportionate to those mechanisms, and accept that open choice may still produce uneven results. The morgue comparison does not prove hypocrisy. It prevents “parity” from doing more argumentative work than its advocates intend and returns the inquiry to benefits, burdens, causes, and agency.

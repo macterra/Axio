@@ -6,7 +6,7 @@ sources:
   - 203841223.the-air-conditioning-taboo
 ---
 
-Europeans often treat air conditioning as vulgar, wasteful, and faintly American. The same societies heat their homes for half the year without a flicker of moral drama. A radiator running all winter is invisible; a cooling unit running in a heat wave is a small confession of weakness. Nobody writes the rule down. Nobody has to. It lives in the register of things one simply does not do, and it is enforced the way all such rules are enforced — by a raised eyebrow, a tone, the sense that a decent person would have coped.
+Europeans often treat air conditioning as vulgar, wasteful, and faintly American. The same societies heat their homes for half the year without a flicker of moral drama. A radiator running all winter is invisible; a cooling unit running in a heat wave is a small confession of weakness. Nobody writes the rule down. Nobody has to. It lives in the register of things one does not do, and it is enforced the way all such rules are enforced — by a raised eyebrow, a tone, the sense that a decent person would have coped.
 
 I want to take this small, almost comic norm apart completely, because it is built out of exactly the parts this volume has been anatomizing, and because taking it apart hands you the one tool that survives when the particular cases are forgotten. The taboo is a pattern. It rides a genealogy. It survives on symbolism it can no longer name. And it can be dismantled in a single move that generalizes to everything else in this book.
 
@@ -40,7 +40,7 @@ The comparison is therefore a prompt, not a proof. If materially relevant differ
 
 ## The Instrument
 
-Now generalize, because the heat-pump test is not really about air conditioning. It is a procedure, and it is the procedure this entire volume has been running.
+Now generalize, because the heat-pump test is not about air conditioning. It is a procedure, and it is the procedure this entire volume has been running.
 
 Take a norm that treats two cases differently. Check whether the cases are alike in the respect the norm claims to care about. Then list the respects in which they still differ. **Find the asymmetry; use it to search for the omitted term.** Holding one variable fixed can falsify a simple explanation, but observational comparisons rarely hold every relevant variable fixed. The result is a narrowed inquiry, not mind-reading.
 
