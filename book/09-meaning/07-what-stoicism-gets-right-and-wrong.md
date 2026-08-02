@@ -13,13 +13,13 @@ It is not. The dichotomy of control is the doorway, not the house. Reducing Stoi
 
 ## Past the Freshman Course
 
-Lopez's corrective is to restore the progression the popular version flattens. The dichotomy of control is step one, and its job is diagnostic: it teaches you to notice when your distress is anchored to something outside your judgment. But the ancient Stoics built three disciplines on top of it, and the disciplines are where the philosophy actually lives.
+Lopez's corrective is to restore the progression the popular version flattens. The dichotomy of control is step one, and its job is diagnostic: it teaches you to notice when your distress is anchored to something outside your judgment. But the ancient Stoics built three disciplines on top of it, and the disciplines are where the philosophy lives.
 
 The first is the **discipline of desire**. Its work is to move your aversions and attractions off external outcomes and onto internal states. The freshman hears "don't want things you can't control" and mishears it as resignation. The discipline is subtler: anxiety about an outcome is treated as *information* — a signal that you have mistakenly located your good in something the world, not you, will decide. You do not suppress the feeling; you read it as a misplaced valuation and re-place the value where your agency actually reaches.
 
 The second is the **discipline of action**. This is the answer to anyone who thinks Stoicism counsels withdrawal. The trained Stoic is supposed to act — intentionally, deliberately, and pro-socially — widening the circle of concern beyond the self. Right action toward others is not a decoration on top of inner tranquility; it is a constituent of virtue. The sage is not a hermit who has stopped caring. He is someone who acts well precisely because he has stopped needing the action to pay off in a particular external coin.
 
-The third is the **discipline of assent**. This is the moment-to-moment layer: the continuous practice of examining the impressions that present themselves to your mind and choosing, deliberately, which ones to endorse. It is not an occasional retreat but a standing discipline, philosophy pushed down into the texture of an ordinary day. Assent is where the other two disciplines are actually enacted, one impression at a time.
+The third is the **discipline of assent**. This is the moment-to-moment layer: the continuous practice of examining the impressions that present themselves to your mind and choosing, deliberately, which ones to endorse. It is not an occasional retreat but a standing discipline, philosophy pushed down into the texture of an ordinary day. Assent is where the other two disciplines are enacted, one impression at a time.
 
 Set out this way, Stoicism stops looking like a coping toolkit and starts looking like what it was — a complete ethics, with a theory of emotion, a theory of action, and a practice of attention. Lopez's name for the failure mode is instructive. Strip the disciplines away and keep only the emotional armor, and you get what he calls "dark Stoicism": the techniques of invulnerability without the ethical growth they were built to serve. Its human product is the **resilient asshole** — someone who has trained himself to be unmoved and mistaken that for wisdom. He has the equanimity and none of the virtue. He is calm the way a wall is calm. That figure is the reductio of the freshman reading, and the fact that Stoicism can degenerate into him tells you the ethical structure was doing essential work all along.
 
@@ -35,7 +35,7 @@ But a life is not only a thing to be defended. It is also a thing to be *express
 
 You can feel the gap in the shape of Stoic advice. It is always strongest at the moment of threat — the diagnosis, the illness, the betrayal, the failure — and always thinnest at the moment of abundance. It has a great deal to say to the person losing everything and comparatively little to the person who has secured their footing and now faces the harder question of what to *do* with a life that is, for the moment, not under siege. Equanimity is the answer to adversity. It is not, by itself, an answer to opportunity. A philosophy that only knows how to hold the line has nothing to say once the line is held.
 
-None of this makes Stoicism wrong. It makes it partial. It is a superb philosophy of the defensive half of life presented, by its more zealous partisans, as a philosophy of the whole — and the missing half is not a minor province. It is the half where meaning is actually generated.
+None of this makes Stoicism wrong. It makes it partial. It is a superb philosophy of the defensive half of life presented, by its more zealous partisans, as a philosophy of the whole — and the missing half is not a minor province. It is the half where meaning is generated.
 
 ## The Metaphysical Mismatch
 
