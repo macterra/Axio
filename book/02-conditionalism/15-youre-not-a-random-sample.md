@@ -26,7 +26,7 @@ The problem with SSA is not just that it gives weird answers. It is that the who
 
 **The Self-Indication Assumption (SIA)** tries to fix this by saying: worlds with more observers are more likely, because there are more "slots" you could be occupying. This neatly cancels out the Doomsday Argument and fixes the Adam case. But it creates its own monster.
 
-In the **Presumptuous Philosopher** scenario, two cosmological theories are equally well-supported by evidence. Theory A says the universe contains a trillion observers. Theory B says it contains a trillion trillion. SIA says you should be virtually certain that Theory B is correct — not because of any physical evidence, but simply because there are more observers in it. The sheer headcount of a theory becomes a trump card over actual scientific evidence.
+In the **Presumptuous Philosopher** scenario, two cosmological theories are equally well-supported by evidence. Theory A says the universe contains a trillion observers. Theory B says it contains a trillion trillion. SIA says you should be virtually certain that Theory B is correct — not because of any physical evidence, but because there are more observers in it. The sheer headcount of a theory becomes a trump card over scientific evidence.
 
 Both frameworks share the same deep flaw: they treat **counting observers** as the fundamental operation. SSA samples from a count. SIA rewards a bigger count. The disagreement is about *how* to count, but neither questions whether counting is the right thing to do at all.
 
@@ -60,7 +60,7 @@ MCSL's answer is to distinguish between three levels of "matching":
 
 1. **Phenomenal match**: it feels the same right now. (Too weak — counterfeits pass this test.)
 2. **Evidential match**: the full structure of memories, knowledge, and context matches. (Better, but still not enough — a sufficiently detailed counterfeit passes this too.)
-3. **Admissible coherent match**: it not only matches your evidence but actually *supports* the structures that make your evidence count as evidence in the first place. Your memories are not just present as a pattern — they connect to a real history. Your inferences are not just locally mimicked — they are grounded in genuine structure.
+3. **Admissible coherent match**: it not only matches your evidence but *supports* the structures that make your evidence count as evidence in the first place. Your memories are not just present as a pattern — they connect to a real history. Your inferences are not just locally mimicked — they are grounded in genuine structure.
 
 MCSL proposes that only the third level is admissible. But calling a causally ordinary observer "genuine" and a Boltzmann brain "counterfeit" risks assuming the conclusion unless the relevance of causal history is independently defended.
 
@@ -74,7 +74,7 @@ This is the hardest part of the framework. I do not claim to have a complete the
 
 **Presumptuous Philosopher**: Extra distant observers who share none of your specific evidence do not count. A theory is not favored just because it has more people in it. Only situations that match *your actual evidence* matter.
 
-**Sleeping Beauty**: This famous puzzle asks: if you are woken up once on heads and twice on tails (with memory erasure between wakings), what is the probability of heads when you wake up? MCSL does not magically resolve the debate, but it clarifies what the debate is actually about. The disagreement is not about sampling — it is about how to carve up your evidence. Should each waking be treated as a separate evidence-state, or are they components of one protocol? That is the real question, and MCSL forces it into the open.
+**Sleeping Beauty**: This famous puzzle asks: if you are woken up once on heads and twice on tails (with memory erasure between wakings), what is the probability of heads when you wake up? MCSL does not magically resolve the debate, but it clarifies what the debate is about. The disagreement is not about sampling — it is about how to carve up your evidence. Should each waking be treated as a separate evidence-state, or are they components of one protocol? That is the real question, and MCSL forces it into the open.
 
 ## What This Doesn't Solve
 

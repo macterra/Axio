@@ -42,7 +42,7 @@ Here is where a distinction earns its keep. Rationality is coherence within a fr
 
 The general lesson: any decision can be rationalized, but not every decision is rational. The difference lies in whether we interrogate our own justifications or let ourselves be seduced by them. When a rationalization holds only under special pleading — when it collapses the moment the lens widens — we are not reasoning; we are storytelling. Brenda didn't just buy $1,000 a week. She bought a narrative that made her feel safe. And her position is more comfortable than tragic, which is exactly what makes it instructive: every Tuesday, a deposit arrives and *confirms the story*. The frame generates its own supporting evidence and quietly excludes the evidence that would test it. That is rationalization's signature — not the absence of feedback, but a feedback loop wired to the narrative instead of the world. Meta-rationality demands we test our narratives against reality, because the stories we tell ourselves are often the costliest illusions of all.
 
-Which raises the natural question: what does *failing* to update actually consist in? Folk wisdom has a ready answer, usually delivered with a knowing smile and a borrowed byline. It is wrong on both counts.
+Which raises the natural question: what does *failing* to update consist in? Folk wisdom has a ready answer, usually delivered with a knowing smile and a borrowed byline. It is wrong on both counts.
 
 ## The Quote Einstein Never Said
 
@@ -54,7 +54,7 @@ Repeating an action while expecting a different result can be entirely rational.
 
 The crucial questions are causal: Is the intervention causally identical? Is the environment materially unchanged? Has the agent updated its model in response to feedback? Without those distinctions, "doing the same thing" is an empty phrase — it may refer to literal repetition, procedural iteration, probabilistic sampling, disciplined practice, strategic persistence, or blind refusal to learn, and those are not the same phenomenon.
 
-A defensible version of the thought has to be narrower, and here it is. An agent is irrational when it repeats the same intervention under materially unchanged causal conditions, receives stable negative feedback, refuses to update its model, and continues expecting improvement. That formulation has content, and it relocates the pathology to where it actually lives: not in the repetition, but in the *defective updating*.
+A defensible version of the thought has to be narrower, and here it is. An agent is irrational when it repeats the same intervention under materially unchanged causal conditions, receives stable negative feedback, refuses to update its model, and continues expecting improvement. That formulation has content, and it relocates the pathology to where it lives: not in the repetition, but in the *defective updating*.
 
 The fake Einstein version erases the updating problem and replaces it with a sneer. It treats persistence itself as evidence of irrationality, letting the speaker condemn any repeated policy, strategy, or experiment without showing that the conditions are unchanged, that the mechanism has failed, or that the alternative has a better expected outcome. That is precisely why the quote is so rhetorically useful: it compresses a causal question into an accusation of stupidity. The audience gets the satisfaction of recognition, the speaker gets the prestige of Einstein, and nobody has to do the analytical work.
 

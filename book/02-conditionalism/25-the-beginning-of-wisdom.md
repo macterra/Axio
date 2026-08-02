@@ -25,7 +25,7 @@ The enduring value of the Biblical line lies in its psychology. A wise person do
 
 That is the part worth keeping. One person expresses the insight in theological language and says wisdom begins in submission before God. Another expresses it in secular language and says wisdom begins in submission before reality. The language changes; the structure remains. In each case, the self loses its claim to final authority over what is the case.
 
-Without that shift, intelligence becomes a very efficient machine for self-deception. It produces better camouflage, better justifications, better conceptual escape routes, better ways of laundering desire into principle. That is why intelligence and wisdom drift apart so easily, and why rationalization outruns rationality wherever [the discipline of updating](19-the-discipline-of-updating.md) is absent. Brilliant people often become extraordinarily skilled at protecting themselves from reality. They build elegant arguments on top of motives they never inspect.
+Without that shift, intelligence becomes an efficient machine for self-deception. It produces better camouflage, better justifications, better conceptual escape routes, better ways of laundering desire into principle. That is why intelligence and wisdom drift apart so easily, and why rationalization outruns rationality wherever [the discipline of updating](19-the-discipline-of-updating.md) is absent. Brilliant people often become extraordinarily skilled at protecting themselves from reality. They build elegant arguments on top of motives they never inspect.
 
 Wisdom begins earlier, at the point where self-flattery stops deciding what counts as true.
 
@@ -59,7 +59,7 @@ These disagreements are serious because each side often sees something real — 
 
 ## The Core Discipline
 
-The framework can be stated simply.
+The framework can be stated directly.
 
 **Reality constrains.** Some features of the world persist regardless of endorsement. Costs continue to exist when they are politically awkward. Systems punish delusion, sometimes slowly, sometimes all at once. This is the minimal realism argued for in [Conditional Realism](07-conditional-realism.md): there is something that pushes back, and its pushing back is what makes inquiry possible at all.
 
