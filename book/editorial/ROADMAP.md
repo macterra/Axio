@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 9 verification is complete; Phase 10 style review is planned before promotion.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages remain in `review`. Final promotion requires completion of the anti-slop prose pass and explicit author approval. Phase 11 records later blog-to-book reconciliation work and remains optional relative to promotion.
+Status: **Phase 10 style review is in progress.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages remain in `review`. Final promotion requires completion of the anti-slop prose pass and explicit author approval. Phase 11 records later blog-to-book reconciliation work and remains optional relative to promotion.
 
 ## Progress at a glance
 
@@ -17,7 +17,7 @@ Status: **Phase 9 verification is complete; Phase 10 style review is planned bef
 | 7. Compression and prose | **Complete** | Local passes and all 25 bounded cross-volume families are complete; every repetition-ledger row has a disposition. |
 | 8. Framing material | **Complete** | Front matter, introductions, conclusions, book and chapter labels, part labels, and navigation handoffs match the reviewed manuscript. |
 | 9. Verification and promotion | **Verification complete; promotion gated** | Automated inventories, dated external-link review, stale-language closeout, and continuous reading of all nine volumes are complete. Promotion follows Phase 10 and explicit author approval. |
-| 10. Anti-slop prose review | **Planned** | Apply `STYLE_GUIDE.md` to all 252 manuscript pages, record a disposition for each, and verify that every accepted edit preserves the book's voice and claims. |
+| 10. Anti-slop prose review | **In progress** | The repeatable baseline covers all 252 pages; bounded manuscript batches follow in reading order. |
 | 11. Post-review blog reconciliation | **Planned** | Reconcile nine July 2026 posts added after the reviewed manuscript stabilized; prioritize three material update candidates and record dispositions for all nine. |
 
 Completed controls now cover all 243 argument-map records, nine architecture memos, nine volume-edit records, eight reconciliation records, and the reader-facing glossary audit. The complete book build and internal-link validation passed after the Volume 2 probability supersession integration; compatibility redirects preserve the public URLs of moved and renumbered chapters.
@@ -396,7 +396,7 @@ Promote status deliberately:
 
 ## Phase 10 — Anti-slop prose review
 
-Progress: **Planned.** Apply `book/editorial/STYLE_GUIDE.md` to every manuscript page before promotion. This chapter-by-chapter prose audit uses global searches as leads for close reading. The guide's banned constructions and mandatory counting rule govern the pass; the book's established definitions, claim calibration, evidentiary boundaries, and surviving signature lines govern what an edit may change.
+Progress: **In progress.** `style/00-inventory-and-sequencing.md`, `style/00-baseline.csv`, and `style-audit.py` establish the 252-page baseline and bounded review sequence. Apply `book/editorial/STYLE_GUIDE.md` to every manuscript page before promotion. This chapter-by-chapter prose audit uses global searches as leads for close reading. The guide's banned constructions and mandatory counting rule govern the pass; the book's established definitions, claim calibration, evidentiary boundaries, and surviving signature lines govern what an edit may change.
 
 Open an inventory covering all 252 pages: the three front-matter pages, nine volume introductions, and 240 volume chapters. Review in volume order so local cadence decisions can be tested in sequence. For every page, record:
 

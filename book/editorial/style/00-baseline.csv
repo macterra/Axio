@@ -1,0 +1,253 @@
+path,volume,title,words,em_dash,negative_parallelism,lampshading,empty_opener,hedge_stack,restatement_closer,tapestry_diction,significance_announcer,intensifier,preanswer_flattery,surely,lexical_hits,total_leads,leads_per_1000_words
+book/00-front/01-preface.md,Front Matter,Preface,578,7,4,0,0,0,0,0,0,1,0,0,5,12,20.76
+book/00-front/02-introduction.md,Front Matter,Introduction,1010,8,1,0,0,0,0,1,0,0,0,0,2,10,9.90
+book/00-front/03-glossary.md,Front Matter,Glossary,4701,0,14,0,0,0,0,0,0,0,0,0,14,14,2.98
+book/01-physics-of-agency/01-a-genealogy-of-agency.md,Volume 1,A Genealogy of Agency,1293,18,9,0,0,0,0,1,0,0,0,0,10,28,21.66
+book/01-physics-of-agency/02-agency-against-drift.md,Volume 1,Agency Against Drift,1374,11,6,0,0,0,0,2,0,2,0,0,10,21,15.28
+book/01-physics-of-agency/03-the-kybit.md,Volume 1,The Kybit,1305,9,1,0,0,0,0,0,0,1,0,0,2,11,8.43
+book/01-physics-of-agency/04-the-three-laws-of-agency.md,Volume 1,The Three Laws of Agency,1436,11,3,0,0,0,0,1,0,1,0,0,5,16,11.14
+book/01-physics-of-agency/05-minimal-and-maximal-agents.md,Volume 1,Minimal and Maximal Agents,1974,28,9,0,0,0,0,0,0,1,0,0,10,38,19.25
+book/01-physics-of-agency/06-agency-and-active-inference.md,Volume 1,Agency and Active Inference,1202,16,1,0,0,0,0,0,0,1,0,0,2,18,14.98
+book/01-physics-of-agency/07-agency-is-not-reward.md,Volume 1,Agency Is Not Reward,1343,13,9,0,0,0,0,3,1,3,0,0,16,29,21.59
+book/01-physics-of-agency/08-the-quantum-branching-universe.md,Volume 1,The Quantum Branching Universe,1278,12,3,0,0,0,0,0,0,0,0,0,3,15,11.74
+book/01-physics-of-agency/09-measure-vantage-branchcone.md,Volume 1,"Measure, Vantage, Branchcone",1472,15,1,0,0,0,0,0,0,1,0,0,2,17,11.55
+book/01-physics-of-agency/10-causality-and-counterfactuals.md,Volume 1,Causality and Counterfactuals,1373,7,4,0,0,0,0,0,0,2,0,1,7,14,10.20
+book/01-physics-of-agency/11-the-observer-joins-the-branch.md,Volume 1,The Observer Joins the Branch,3038,24,5,0,0,0,0,1,0,6,0,0,12,36,11.85
+book/01-physics-of-agency/12-the-interpretation-wars.md,Volume 1,The Interpretation Wars,1229,6,8,0,0,0,0,0,0,0,0,0,8,14,11.39
+book/01-physics-of-agency/13-agency-in-the-emergent-multiverse.md,Volume 1,Agency in the Emergent Multiverse,1765,10,11,0,0,0,0,2,0,2,0,0,15,25,14.16
+book/01-physics-of-agency/14-everetts-demon.md,Volume 1,Everett's Demon,2077,29,5,0,0,0,0,0,0,8,0,1,14,43,20.70
+book/01-physics-of-agency/15-quantum-free-will.md,Volume 1,Quantum Free Will,1466,9,3,0,0,0,0,0,0,0,0,0,3,12,8.19
+book/01-physics-of-agency/16-no-trivial-choices.md,Volume 1,No Trivial Choices,1382,14,3,0,0,0,0,2,0,0,0,0,5,19,13.75
+book/01-physics-of-agency/17-a-gigaplex-of-parallel-lives.md,Volume 1,A Gigaplex of Parallel Lives,1312,24,4,0,0,0,0,1,0,2,0,0,7,31,23.63
+book/01-physics-of-agency/18-creativity-as-virtual-evolution.md,Volume 1,Creativity as Virtual Evolution,1808,30,9,0,0,0,0,2,0,2,0,0,13,43,23.78
+book/01-physics-of-agency/19-infinite-randomness.md,Volume 1,Infinite Randomness,1451,12,5,0,0,0,0,0,0,2,0,0,7,19,13.09
+book/01-physics-of-agency/20-chaos-as-foundation.md,Volume 1,Chaos as Foundation,933,10,2,0,0,0,0,0,0,1,0,0,3,13,13.93
+book/01-physics-of-agency/21-coherence-filters.md,Volume 1,Coherence Filters,1416,4,3,0,0,0,0,0,0,0,0,0,3,7,4.94
+book/01-physics-of-agency/22-constructors.md,Volume 1,Constructors,1565,24,3,0,0,0,0,0,0,1,0,0,4,28,17.89
+book/01-physics-of-agency/23-life-consciousness-time.md,Volume 1,"Life, Consciousness, and Time",1173,10,5,0,0,0,0,0,0,0,0,0,5,15,12.79
+book/01-physics-of-agency/24-the-shape-of-coherence.md,Volume 1,The Shape of Coherence,2104,38,5,0,0,0,0,0,1,2,0,0,8,46,21.86
+book/01-physics-of-agency/25-the-tiers-of-reality.md,Volume 1,The Tiers of Reality,1790,22,10,0,0,0,0,2,0,1,0,0,13,35,19.55
+book/01-physics-of-agency/26-rival-architectures.md,Volume 1,Rival Architectures,2077,34,7,0,0,0,0,0,0,2,0,0,9,43,20.70
+book/01-physics-of-agency/27-the-quantum-metagame.md,Volume 1,The Quantum Metagame,1177,5,6,0,0,0,0,4,0,0,0,0,10,15,12.74
+book/01-physics-of-agency/28-why-there-is-something.md,Volume 1,Why There Is Something Rather than Nothing,2044,20,15,0,0,0,0,0,0,2,0,0,17,37,18.10
+book/01-physics-of-agency/volume.md,Volume 1,The Physics of Agency and the Branching Universe,607,9,2,0,0,0,0,0,0,0,0,0,2,11,18.12
+book/02-conditionalism/01-what-is-philosophy-for.md,Volume 2,What Is Philosophy For?,2303,21,5,0,0,0,0,1,0,3,0,0,9,30,13.03
+book/02-conditionalism/02-all-truth-is-conditional.md,Volume 2,All Truth Is Conditional,1692,20,5,0,0,0,0,2,1,5,0,0,13,33,19.50
+book/02-conditionalism/03-the-three-levels-of-truth.md,Volume 2,The Three Levels of Truth,1252,13,1,0,0,0,0,1,0,1,0,0,3,16,12.78
+book/02-conditionalism/04-when-statements-fail.md,Volume 2,When Statements Fail,1771,23,3,0,0,0,0,0,0,0,0,0,3,26,14.68
+book/02-conditionalism/05-truth-machines.md,Volume 2,Truth Machines,1443,9,2,0,0,0,0,0,0,4,0,0,6,15,10.40
+book/02-conditionalism/06-maps-models-understanding.md,Volume 2,"Maps, Models, and Understanding",1833,27,6,0,0,0,0,1,0,1,0,0,8,35,19.09
+book/02-conditionalism/07-conditional-realism.md,Volume 2,Conditional Realism,1896,23,12,0,0,0,1,1,0,5,0,0,19,42,22.15
+book/02-conditionalism/08-what-beliefs-are.md,Volume 2,What Beliefs Are,1855,27,8,0,0,0,0,1,0,0,0,0,9,36,19.41
+book/02-conditionalism/09-what-knowledge-is.md,Volume 2,What Knowledge Is,1894,24,6,1,0,0,1,3,0,0,0,0,11,35,18.48
+book/02-conditionalism/10-against-faith.md,Volume 2,Against Faith,2149,35,14,0,0,0,0,0,0,2,0,0,16,51,23.73
+book/02-conditionalism/11-measure-and-credence.md,Volume 2,Measure and Credence,1635,8,3,0,0,0,0,3,0,3,0,0,9,17,10.40
+book/02-conditionalism/12-in-defense-of-bayes.md,Volume 2,In Defense of Bayes,1647,24,6,0,0,0,0,1,0,3,0,0,10,34,20.64
+book/02-conditionalism/13-varieties-of-uncertainty.md,Volume 2,The Varieties of Uncertainty,1482,20,7,0,0,0,0,1,0,3,0,0,11,31,20.92
+book/02-conditionalism/14-probability-without-collapse.md,Volume 2,Probability Without Collapse,1385,15,4,0,0,0,0,1,0,3,0,0,8,23,16.61
+book/02-conditionalism/15-youre-not-a-random-sample.md,Volume 2,You're Not a Random Sample,1557,19,7,0,0,0,0,0,0,6,0,0,13,32,20.55
+book/02-conditionalism/16-youre-not-a-random-branch.md,Volume 2,You're Not a Random Branch,2199,31,8,0,0,0,0,1,1,3,0,0,13,44,20.01
+book/02-conditionalism/17-rationality-without-foundations.md,Volume 2,Rationality Without Foundations,1926,32,8,0,0,0,0,4,0,1,0,0,13,45,23.36
+book/02-conditionalism/18-sacred-coherence.md,Volume 2,Sacred Coherence,1854,25,7,0,0,0,0,0,0,5,0,0,12,37,19.96
+book/02-conditionalism/19-the-discipline-of-updating.md,Volume 2,The Discipline of Updating,2018,26,6,0,0,0,0,0,0,2,0,0,8,34,16.85
+book/02-conditionalism/20-reasonable-disagreement.md,Volume 2,Reasonable Disagreement,1747,25,3,0,0,0,0,0,0,6,0,0,9,34,19.46
+book/02-conditionalism/21-bayes-in-the-wild.md,Volume 2,Bayes in the Wild,2645,18,8,0,0,0,0,0,1,2,0,0,11,29,10.96
+book/02-conditionalism/22-probability-after-probabilism.md,Volume 2,Probability After Probabilism,2399,28,4,0,0,0,0,2,0,6,0,0,12,40,16.67
+book/02-conditionalism/23-deciding-under-uncertainty.md,Volume 2,Deciding Under Uncertainty,1716,10,5,0,0,0,0,7,1,1,0,0,14,24,13.99
+book/02-conditionalism/24-fallibilist-bayesianism.md,Volume 2,Fallibilist Bayesianism,2512,26,6,0,0,0,0,0,0,1,0,0,7,33,13.14
+book/02-conditionalism/25-the-beginning-of-wisdom.md,Volume 2,The Beginning of Wisdom,2578,18,3,0,0,0,0,0,0,6,0,0,9,27,10.47
+book/02-conditionalism/volume.md,Volume 2,"Conditionalism: Truth, Bayes, and Rationality",531,11,0,0,0,0,0,0,0,0,0,0,0,11,20.72
+book/03-minds-and-machines/01-a-cybernetic-lineage.md,Volume 3,A Cybernetic Lineage,1842,27,12,0,0,0,0,0,0,4,0,0,16,43,23.34
+book/03-minds-and-machines/02-what-is-a-model.md,Volume 3,What Is a Model?,1982,19,6,0,0,0,0,1,0,2,0,0,9,28,14.13
+book/03-minds-and-machines/03-control-requires-models.md,Volume 3,Control Requires Models,1433,14,3,0,0,0,0,0,0,2,0,1,6,20,13.96
+book/03-minds-and-machines/04-minds-and-agents.md,Volume 3,Minds and Agents,1184,14,2,0,0,0,0,0,0,2,0,0,4,18,15.20
+book/03-minds-and-machines/05-the-origin-of-meaning.md,Volume 3,The Origin of Meaning,1559,13,6,0,0,0,0,0,0,2,0,0,8,21,13.47
+book/03-minds-and-machines/06-the-geometry-of-inner-speech.md,Volume 3,The Geometry of Inner Speech,1525,13,3,0,0,0,0,0,0,4,0,0,7,20,13.11
+book/03-minds-and-machines/07-consciousness-explained.md,Volume 3,A Candidate Architecture of Consciousness,1484,17,6,0,0,0,0,1,0,0,0,0,7,24,16.17
+book/03-minds-and-machines/08-beyond-dennett.md,Volume 3,Beyond Dennett,1778,12,8,0,0,0,0,0,0,2,0,0,10,22,12.37
+book/03-minds-and-machines/09-mirrors-of-the-mind.md,Volume 3,Mirrors of the Mind,1968,13,8,0,0,0,0,2,0,3,0,0,13,26,13.21
+book/03-minds-and-machines/10-why-zombies-dont-evolve.md,Volume 3,Why Zombies Don't Evolve,2315,6,6,0,0,0,0,1,1,3,0,0,11,17,7.34
+book/03-minds-and-machines/11-the-sentience-ladder.md,Volume 3,The Sentience Ladder,1925,14,16,0,0,0,0,0,0,1,0,0,17,31,16.10
+book/03-minds-and-machines/12-what-is-suffering.md,Volume 3,What Is Suffering?,1823,25,4,0,0,0,0,0,0,2,0,0,6,31,17.00
+book/03-minds-and-machines/13-the-sentience-metric.md,Volume 3,Tests for Sentience,1792,10,4,0,0,0,0,0,0,1,0,0,5,15,8.37
+book/03-minds-and-machines/14-the-ai-welfare-trap.md,Volume 3,The AI Welfare Trap,2273,8,6,0,0,0,0,1,0,1,0,0,8,16,7.04
+book/03-minds-and-machines/15-intelligence-is-a-game-we-play.md,Volume 3,Intelligence Is a Game We Play,1835,36,2,0,0,0,0,2,1,0,0,0,5,41,22.34
+book/03-minds-and-machines/16-in-defense-of-iq.md,Volume 3,In Defense of IQ,1861,31,7,0,0,0,0,3,0,2,0,0,12,43,23.11
+book/03-minds-and-machines/17-universality-and-generality.md,Volume 3,Universality and Generality,1992,24,6,0,0,0,0,1,0,3,0,0,10,34,17.07
+book/03-minds-and-machines/18-tool-bias.md,Volume 3,Tool Bias,1913,28,3,0,0,0,0,0,0,4,0,0,7,35,18.30
+book/03-minds-and-machines/19-fallacies-of-machine-understanding.md,Volume 3,Fallacies of Machine Understanding,2339,43,11,0,0,0,0,0,0,6,0,0,17,60,25.65
+book/03-minds-and-machines/20-pearl-and-the-machine.md,Volume 3,Pearl and the Machine,2084,24,5,0,0,0,0,1,0,0,0,2,8,32,15.36
+book/03-minds-and-machines/21-fluency-and-its-limits.md,Volume 3,Fluency and Its Limits,2387,38,8,0,0,0,0,0,0,10,0,0,18,56,23.46
+book/03-minds-and-machines/22-the-turing-test-and-its-successors.md,Volume 3,The Turing Test and Its Successors,1835,27,4,0,0,0,0,0,0,2,0,0,6,33,17.98
+book/03-minds-and-machines/23-the-agency-criterion.md,Volume 3,The Agency Criterion,2394,36,17,0,0,0,0,1,0,1,0,0,19,55,22.97
+book/03-minds-and-machines/24-the-dialectic-catalyst.md,Volume 3,The Dialectic Catalyst,1464,18,2,0,0,0,0,1,0,3,0,0,6,24,16.39
+book/03-minds-and-machines/25-the-discipline-of-thinking-with-ai.md,Volume 3,The Discipline of Thinking With AI,2166,34,7,0,0,0,0,1,0,5,0,0,13,47,21.70
+book/03-minds-and-machines/26-catalysts-in-the-wild.md,Volume 3,Catalysts in the Wild,1831,24,5,0,0,0,0,2,0,1,0,0,8,32,17.48
+book/03-minds-and-machines/27-artificial-intimacy.md,Volume 3,Artificial Intimacy,2392,41,8,0,0,0,0,3,0,2,0,0,13,54,22.58
+book/03-minds-and-machines/28-programming-after-programming.md,Volume 3,Programming After Programming,2944,5,3,0,0,0,0,2,0,3,0,0,8,13,4.42
+book/03-minds-and-machines/29-the-ai-fork-is-about-agency.md,Volume 3,The AI Fork Is About Agency,2481,35,13,0,0,0,0,3,0,2,0,0,18,53,21.36
+book/03-minds-and-machines/30-making-sense-of-pdoom.md,Volume 3,Making Sense of P(doom),1296,16,8,0,0,0,0,1,1,2,0,0,12,28,21.60
+book/03-minds-and-machines/31-the-cassandra-and-the-blueprint.md,Volume 3,The Cassandra and the Blueprint,1516,11,5,0,0,0,0,2,0,3,0,0,10,21,13.85
+book/03-minds-and-machines/32-steelmanning-doom.md,Volume 3,Steelmanning Doom,1909,29,7,0,0,0,0,3,0,1,0,0,11,40,20.95
+book/03-minds-and-machines/33-the-politics-of-safety.md,Volume 3,The Politics of Safety,2949,30,11,0,0,0,0,1,0,0,0,0,12,42,14.24
+book/03-minds-and-machines/34-coercion-beats-intelligence.md,Volume 3,Coercion Beats Intelligence,2193,9,11,0,0,0,0,1,0,1,0,0,13,22,10.03
+book/03-minds-and-machines/35-the-future-is-extropian.md,Volume 3,The Extropian Crucible,2439,45,8,0,0,0,0,3,0,2,0,0,13,58,23.78
+book/03-minds-and-machines/36-passing-the-torch.md,Volume 3,Passing the Torch,1115,17,5,0,0,0,0,0,0,3,0,0,8,25,22.42
+book/03-minds-and-machines/volume.md,Volume 3,"Minds and Machines: Consciousness, Intelligence, and AI",357,1,1,0,0,0,0,0,0,2,0,0,3,4,11.20
+book/04-axionic-agency/01-beyond-alignment.md,Volume 4,Beyond Alignment,2686,27,16,0,0,0,2,0,2,6,0,0,26,53,19.73
+book/04-axionic-agency/02-what-can-be-aligned.md,Volume 4,What Can Be Aligned,2525,26,9,0,0,0,0,0,1,1,0,0,11,37,14.65
+book/04-axionic-agency/03-the-reflective-coherence-thesis.md,Volume 4,The Reflective Coherence Thesis,2716,25,7,0,0,0,0,0,0,3,0,0,10,35,12.89
+book/04-axionic-agency/04-the-sovereign-kernel.md,Volume 4,The Sovereign Kernel,2376,26,9,0,0,0,0,0,0,4,0,0,13,39,16.41
+book/04-axionic-agency/05-reflective-stability.md,Volume 4,Reflective Stability,2359,28,12,0,0,0,0,0,0,4,0,0,16,44,18.65
+book/04-axionic-agency/06-structural-alignment.md,Volume 4,Structural Alignment,2611,30,10,0,0,0,0,0,1,1,0,0,12,42,16.09
+book/04-axionic-agency/07-what-the-kernel-binds.md,Volume 4,What the Kernel Binds,2798,44,17,0,0,0,0,1,0,1,0,0,19,63,22.52
+book/04-axionic-agency/08-verifiable-agency.md,Volume 4,Verifiable Agency,2599,33,16,0,0,0,0,0,0,4,0,0,20,53,20.39
+book/04-axionic-agency/09-authority-without-a-self.md,Volume 4,Authority Without a Self,3063,45,17,0,0,0,0,1,4,4,0,0,26,71,23.18
+book/04-axionic-agency/10-agency-under-pressure.md,Volume 4,Agency Under Pressure,3150,47,16,0,0,0,0,1,0,1,0,0,18,65,20.63
+book/04-axionic-agency/11-sentience-without-sovereignty.md,Volume 4,Sentience Without Sovereignty,2527,21,6,0,0,0,0,0,0,3,0,0,9,30,11.87
+book/04-axionic-agency/12-governance-without-gods.md,Volume 4,Governance Without Gods,2843,45,12,0,0,0,0,1,0,2,0,0,15,60,21.10
+book/04-axionic-agency/13-possibility-became-real.md,Volume 4,Possibility Became Real,2564,28,6,0,0,0,0,1,0,1,0,0,8,36,14.04
+book/04-axionic-agency/14-structure-is-not-salvation.md,Volume 4,Structure Is Not Salvation,2936,37,4,0,0,0,0,0,0,7,0,0,11,48,16.35
+book/04-axionic-agency/15-the-program.md,Volume 4,The Program,2901,45,12,0,0,0,0,0,0,8,0,0,20,65,22.41
+book/04-axionic-agency/volume.md,Volume 4,Axionic Agency: The Alignment Program,459,3,1,0,0,0,0,0,0,0,0,0,1,4,8.71
+book/05-value-and-ethics/01-the-myth-of-objective-value.md,Volume 5,The Myth of Objective Value,1720,14,5,0,0,0,0,0,0,3,0,0,8,22,12.79
+book/05-value-and-ethics/02-agent-binding.md,Volume 5,Agent-Binding,1383,9,6,0,0,0,0,0,0,1,0,0,7,16,11.57
+book/05-value-and-ethics/03-norms-need-agents.md,Volume 5,Norms Need Agents,1793,18,3,0,0,0,0,0,0,1,0,0,4,22,12.27
+book/05-value-and-ethics/04-value-as-sacrifice.md,Volume 5,Value as Sacrifice,1288,7,5,0,0,0,0,1,0,6,0,0,12,19,14.75
+book/05-value-and-ethics/05-ethics-without-illusions.md,Volume 5,"Virtues, Consequences, and Codes",1455,22,5,0,0,0,0,0,1,6,0,0,12,34,23.37
+book/05-value-and-ethics/06-phosphorism.md,Volume 5,Phosphorism,1996,37,9,1,0,0,0,0,0,4,0,0,14,51,25.55
+book/05-value-and-ethics/07-judging-goodness.md,Volume 5,Judging Goodness,1696,25,6,0,0,0,0,1,0,2,0,0,9,34,20.05
+book/05-value-and-ethics/08-honesty-and-hypocrisy.md,Volume 5,Honesty and Hypocrisy,1513,14,8,0,0,0,0,2,0,4,0,0,14,28,18.51
+book/05-value-and-ethics/09-what-counts-as-coercion.md,Volume 5,What Counts as Coercion,1619,15,3,0,0,0,0,6,0,1,0,0,10,25,15.44
+book/05-value-and-ethics/10-consent-and-property.md,Volume 5,Consent and Property,1666,18,5,0,0,0,0,0,0,1,0,0,6,24,14.41
+book/05-value-and-ethics/11-what-counts-as-harm.md,Volume 5,What Counts as Harm,1808,21,7,0,0,0,0,1,0,3,0,1,12,33,18.25
+book/05-value-and-ethics/12-the-boundaries-of-force.md,Volume 5,The Boundaries of Force,1995,20,8,0,0,0,0,3,0,1,0,0,12,32,16.04
+book/05-value-and-ethics/13-sapientism.md,Volume 5,Sapientism,1967,26,9,0,0,0,0,1,0,4,0,0,14,40,20.34
+book/05-value-and-ethics/14-against-utilitarianism.md,Volume 5,Against Utilitarianism,3015,32,6,0,0,0,0,0,0,4,0,0,10,42,13.93
+book/05-value-and-ethics/15-against-moral-extortion.md,Volume 5,Against Moral Extortion,2037,25,3,0,0,0,0,1,0,5,0,1,10,35,17.18
+book/05-value-and-ethics/16-the-near-misses.md,Volume 5,The Near Misses,2161,36,7,0,0,0,0,4,0,4,0,0,15,51,23.60
+book/05-value-and-ethics/17-the-ethics-of-existence.md,Volume 5,The Ethics of Existence,1699,27,5,0,0,0,0,0,1,1,0,0,7,34,20.01
+book/05-value-and-ethics/18-the-ultimate-metagame.md,Volume 5,The Ultimate Metagame,1732,17,7,0,0,0,0,0,0,5,0,0,12,29,16.74
+book/05-value-and-ethics/19-the-viability-criterion.md,Volume 5,The Viability Criterion,1675,18,5,0,0,0,0,1,0,5,0,0,11,29,17.31
+book/05-value-and-ethics/20-risk-is-harm.md,Volume 5,When Risk Is Harm,1461,7,4,0,0,0,0,1,0,1,0,0,6,13,8.90
+book/05-value-and-ethics/21-measure-responsibility.md,Volume 5,Measure Responsibility,2092,9,9,0,0,0,0,3,0,1,0,0,13,22,10.52
+book/05-value-and-ethics/22-the-ethics-of-viability.md,Volume 5,The Ethics of Viability,1672,17,7,0,0,0,0,2,0,1,0,0,10,27,16.15
+book/05-value-and-ethics/23-the-coexistence-protocol.md,Volume 5,The Coexistence Protocol,1717,7,7,1,0,0,0,0,0,3,0,0,11,18,10.48
+book/05-value-and-ethics/24-viability-under-fire.md,Volume 5,Viability Under Fire,2905,43,8,0,0,0,0,1,2,5,0,0,16,59,20.31
+book/05-value-and-ethics/25-innocence-and-moral-debt.md,Volume 5,Innocence and Moral Debt,2835,35,11,0,0,0,1,1,0,7,0,0,20,55,19.40
+book/05-value-and-ethics/26-sapient-agency-realism.md,Volume 5,Sapient Agency Realism,2587,20,5,0,0,0,0,1,0,4,0,0,10,30,11.60
+book/05-value-and-ethics/27-the-price-of-agency.md,Volume 5,The Price of Agency,1485,19,6,0,0,0,0,3,0,2,0,0,11,30,20.20
+book/05-value-and-ethics/volume.md,Volume 5,Value and Agency-Centered Ethics,428,7,1,0,0,0,0,0,0,1,0,0,2,9,21.03
+book/06-markets-and-money/01-the-discipline-of-value.md,Volume 6,The Discipline of Value,2327,5,6,0,0,0,0,0,0,2,0,0,8,13,5.59
+book/06-markets-and-money/02-the-coat-and-the-ticket.md,Volume 6,The Coat and the Ticket,3414,26,2,0,0,0,0,0,0,9,0,0,11,37,10.84
+book/06-markets-and-money/03-what-is-money.md,Volume 6,What Is Money?,1435,16,1,0,0,0,0,0,0,2,0,0,3,19,13.24
+book/06-markets-and-money/04-the-price-illusion.md,Volume 6,The Price Illusion,1752,23,9,0,0,0,0,0,0,2,0,0,11,34,19.41
+book/06-markets-and-money/05-attention-is-an-economy.md,Volume 6,Attention Is an Economy,1629,5,7,0,0,0,0,1,1,0,0,0,9,14,8.59
+book/06-markets-and-money/06-capitalism-on-trial.md,Volume 6,Capitalism on Trial,1859,18,3,0,0,0,0,3,0,1,0,0,7,25,13.45
+book/06-markets-and-money/07-the-poverty-myth.md,Volume 6,The Poverty Myth,1888,26,4,0,0,0,0,0,0,6,0,0,10,36,19.07
+book/06-markets-and-money/08-the-myth-of-underprovision.md,Volume 6,The Myth of Underprovision,1241,15,2,0,0,0,0,0,0,2,0,0,4,19,15.31
+book/06-markets-and-money/09-wealth-is-not-a-pile.md,Volume 6,Wealth Is Not a Pile,1512,23,7,0,0,0,0,0,0,5,0,0,12,35,23.15
+book/06-markets-and-money/10-the-tariff-illusion.md,Volume 6,The Tariff Illusion,1492,14,3,0,0,0,0,3,0,4,0,0,10,24,16.09
+book/06-markets-and-money/11-monopoly-hypocrisy.md,Volume 6,Monopoly Hypocrisy,1923,26,5,0,0,0,0,0,1,4,0,0,10,36,18.72
+book/06-markets-and-money/12-ungovernable-by-design.md,Volume 6,Ungovernable by Design,1499,14,3,0,0,0,0,0,0,2,0,0,5,19,12.68
+book/06-markets-and-money/13-the-fork-and-the-merge.md,Volume 6,The Fork and the Merge,1868,18,2,0,0,0,1,0,0,1,0,0,4,22,11.78
+book/06-markets-and-money/14-the-cybernetic-ghost-of-satoshi.md,Volume 6,The Cybernetic Ghost of Satoshi,1413,16,4,0,0,0,0,1,0,0,0,0,5,21,14.86
+book/06-markets-and-money/15-the-metagame-of-incentives.md,Volume 6,The Metagame of Incentives,1914,23,6,0,0,0,0,1,1,4,0,0,12,35,18.29
+book/06-markets-and-money/16-ornament-and-advantage.md,Volume 6,Ornament and Advantage,2179,24,10,0,0,0,0,0,0,3,0,0,13,37,16.98
+book/06-markets-and-money/17-mechanisms-for-honest-values.md,Volume 6,Mechanisms for Honest Values,2253,25,3,0,0,0,0,1,0,3,0,0,7,32,14.20
+book/06-markets-and-money/18-engineering-morality-into-the-machine.md,Volume 6,Engineering Morality into the Machine,1861,19,12,0,0,0,0,3,0,4,0,0,19,38,20.42
+book/06-markets-and-money/19-great-progress.md,Volume 6,Great Progress,1941,29,2,0,0,0,0,2,1,4,0,0,9,38,19.58
+book/06-markets-and-money/20-lessons-from-peak-oil.md,Volume 6,Lessons From Peak Oil,2063,25,7,0,0,0,0,2,0,8,0,0,17,42,20.36
+book/06-markets-and-money/21-the-nuclear-counterfactual.md,Volume 6,The Nuclear Counterfactual,1621,10,5,0,0,0,0,0,0,3,0,0,8,18,11.10
+book/06-markets-and-money/22-the-prosperity-paradox.md,Volume 6,The Prosperity Paradox,1965,21,10,0,0,0,0,0,1,2,0,0,13,34,17.30
+book/06-markets-and-money/23-the-loaded-dice-of-parenthood.md,Volume 6,The Loaded Dice of Parenthood,1674,24,4,0,0,0,0,0,0,3,0,0,7,31,18.52
+book/06-markets-and-money/24-the-end-of-intellectual-property.md,Volume 6,The End of Intellectual Property,3371,34,15,3,0,0,1,1,0,6,0,0,26,60,17.80
+book/06-markets-and-money/25-agi-economics.md,Volume 6,AGI Economics,2128,21,3,0,0,0,0,4,0,3,0,0,10,31,14.57
+book/06-markets-and-money/26-coordination-is-not-salvation.md,Volume 6,Coordination Is Not Salvation,515,0,0,0,0,0,0,0,0,0,0,0,0,0,0.00
+book/06-markets-and-money/volume.md,Volume 6,"Markets, Money, and Prosperity",367,4,2,0,0,0,0,0,0,0,0,0,2,6,16.35
+book/07-liberty-and-governance/01-the-individualist-premise.md,Volume 7,The Individualist Premise,1892,29,8,0,0,0,1,0,0,3,0,0,12,41,21.67
+book/07-liberty-and-governance/02-upgrading-liberty.md,Volume 7,Upgrading Liberty,1649,18,3,0,0,0,0,0,0,1,0,1,5,23,13.95
+book/07-liberty-and-governance/03-the-coercion-continuum.md,Volume 7,The Coercion Continuum,1390,13,2,0,0,0,0,0,0,2,0,0,4,17,12.23
+book/07-liberty-and-governance/04-extortion-funded-organizations.md,Volume 7,Extortion-Funded Organizations,1453,8,7,0,0,0,1,0,0,0,0,0,8,16,11.01
+book/07-liberty-and-governance/05-the-grey-zone.md,Volume 7,The Grey Zone,2179,23,3,0,0,0,0,0,0,2,0,0,5,28,12.85
+book/07-liberty-and-governance/06-rights-are-forged.md,Volume 7,Rights Are Forged — and Reciprocal,1942,15,4,0,0,0,0,0,0,0,0,0,4,19,9.78
+book/07-liberty-and-governance/07-needs-conflicts-and-hard-cases.md,Volume 7,"Needs, Conflicts, and Hard Cases",1732,28,4,0,0,0,1,0,0,2,0,0,7,35,20.21
+book/07-liberty-and-governance/08-the-listeners-right.md,Volume 7,The Listener's Right,1150,16,1,0,0,0,0,1,0,0,0,0,2,18,15.65
+book/07-liberty-and-governance/09-where-speech-ends.md,Volume 7,Where Speech Ends,2980,36,8,0,0,0,0,2,0,3,0,0,13,49,16.44
+book/07-liberty-and-governance/10-the-censorship-machine.md,Volume 7,The Censorship Machine,1262,9,6,0,0,0,0,0,0,1,0,0,7,16,12.68
+book/07-liberty-and-governance/11-civilizational-infrastructure.md,Volume 7,Civilizational Infrastructure,1733,4,7,0,0,0,0,1,0,1,0,0,9,13,7.50
+book/07-liberty-and-governance/12-two-kinds-of-law.md,Volume 7,Two Kinds of Law,900,6,4,0,0,0,0,0,0,1,0,0,5,11,12.22
+book/07-liberty-and-governance/13-law-and-power.md,Volume 7,Law and Power,1135,2,1,0,0,0,0,1,0,3,0,0,5,7,6.17
+book/07-liberty-and-governance/14-the-epistemics-of-guilt.md,Volume 7,The Epistemics of Guilt,2461,31,10,0,0,0,0,0,0,5,0,0,15,46,18.69
+book/07-liberty-and-governance/15-restitution-not-retribution.md,Volume 7,"Restitution, Not Retribution",1134,3,4,0,0,0,0,0,0,1,0,0,5,8,7.05
+book/07-liberty-and-governance/16-borders-and-movement.md,Volume 7,Borders and Movement,1005,1,7,0,0,0,0,0,0,1,0,0,8,9,8.96
+book/07-liberty-and-governance/17-agency-not-equality.md,Volume 7,"Agency, Not Equality",828,1,1,0,0,0,0,0,0,0,0,0,1,2,2.42
+book/07-liberty-and-governance/18-the-corruption-of-compassion.md,Volume 7,The Corruption of Compassion,754,0,4,0,0,0,0,0,0,1,0,0,5,5,6.63
+book/07-liberty-and-governance/19-against-envy.md,Volume 7,Against Envy,1384,2,3,0,0,0,0,1,0,0,0,0,4,6,4.34
+book/07-liberty-and-governance/20-against-socialism.md,Volume 7,Against Socialism,1015,4,1,0,0,0,0,0,0,0,0,0,1,5,4.93
+book/07-liberty-and-governance/21-against-communism.md,Volume 7,Against Marxist-Leninist Communism,2629,26,3,0,0,0,0,0,0,3,0,0,6,32,12.17
+book/07-liberty-and-governance/22-against-utopia.md,Volume 7,Against Utopia,2891,40,10,0,0,0,0,0,0,4,0,0,14,54,18.68
+book/07-liberty-and-governance/23-the-authoritarian-default.md,Volume 7,The Authoritarian Default,2169,34,9,0,0,0,0,2,0,4,0,0,15,49,22.59
+book/07-liberty-and-governance/24-why-liberalism-loses.md,Volume 7,Why Liberalism Loses,1463,9,6,0,0,0,0,0,0,1,0,0,7,16,10.94
+book/07-liberty-and-governance/25-fictions-of-the-collective.md,Volume 7,Fictions of the Collective,1334,12,4,0,0,0,0,0,0,0,0,1,5,17,12.74
+book/07-liberty-and-governance/26-words-that-lost-their-teeth.md,Volume 7,Words That Lost Their Teeth,1498,22,5,0,0,0,0,0,0,5,0,0,10,32,21.36
+book/07-liberty-and-governance/27-centrism-as-a-discipline.md,Volume 7,Centrism as a Discipline,2976,36,22,0,0,0,0,2,0,6,0,0,30,66,22.18
+book/07-liberty-and-governance/28-the-conversion-of-coercion.md,Volume 7,The Conversion of Coercion,2406,38,15,0,0,0,0,4,0,5,0,0,24,62,25.77
+book/07-liberty-and-governance/29-the-archist-axiom.md,Volume 7,The Archist Axiom,2175,32,5,0,0,0,0,0,1,6,0,0,12,44,20.23
+book/07-liberty-and-governance/30-anarchy-is-not-chaos.md,Volume 7,Anarchy Is Not Chaos,2056,24,3,0,0,0,0,0,0,4,0,0,7,31,15.08
+book/07-liberty-and-governance/31-the-hardest-case-defense.md,Volume 7,The Hardest Case: Defense,2761,10,9,0,0,0,0,1,0,3,2,0,15,25,9.05
+book/07-liberty-and-governance/32-exit-to-protocol.md,Volume 7,Exit to Protocol,2441,26,18,0,0,0,0,1,0,2,0,0,21,47,19.25
+book/07-liberty-and-governance/33-the-limits-of-leviathan.md,Volume 7,The Limits of Leviathan,2845,30,13,0,0,0,0,2,0,0,0,0,15,45,15.82
+book/07-liberty-and-governance/34-the-admissible-region.md,Volume 7,The Admissible Region,2853,34,15,0,0,0,1,0,0,5,0,0,21,55,19.28
+book/07-liberty-and-governance/35-axiocracy.md,Volume 7,Axiocracy,3283,30,7,0,0,0,0,0,0,0,0,1,8,38,11.57
+book/07-liberty-and-governance/36-the-price-of-breath.md,Volume 7,The Price of Breath,3306,6,4,0,0,0,0,0,0,0,0,0,4,10,3.02
+book/07-liberty-and-governance/volume.md,Volume 7,"Liberty, Coercion, and Governance",768,11,1,0,0,0,0,0,0,0,0,0,1,12,15.62
+book/08-culture-and-memetics/01-the-story-telling-ape.md,Volume 8,The Story-Telling Ape,1960,30,6,0,0,0,0,0,0,2,0,0,8,38,19.39
+book/08-culture-and-memetics/02-schemas-and-groups.md,Volume 8,Schemas and Groups,1365,16,3,0,0,0,0,0,0,0,0,0,3,19,13.92
+book/08-culture-and-memetics/03-patterns-as-players.md,Volume 8,Patterns as Players,2335,25,6,0,0,0,0,0,0,5,0,0,11,36,15.42
+book/08-culture-and-memetics/04-exemplars-and-the-axionic-criterion.md,Volume 8,Exemplars and the Axionic Criterion,2416,35,9,0,0,0,0,1,0,2,0,0,12,47,19.45
+book/08-culture-and-memetics/05-the-egregoric-singularity.md,Volume 8,The Egregoric Singularity,2263,29,9,0,0,0,0,0,0,4,0,0,13,42,18.56
+book/08-culture-and-memetics/06-the-geometry-of-culture.md,Volume 8,The Geometry of Culture,2527,39,9,0,0,0,0,7,0,1,0,0,17,56,22.16
+book/08-culture-and-memetics/07-memetic-pathogens.md,Volume 8,Memetic Pathogens,2001,13,8,0,0,0,0,0,0,3,0,0,11,24,11.99
+book/08-culture-and-memetics/08-echoes-of-freud.md,Volume 8,Echoes of Freud,2585,58,22,0,0,0,0,2,0,3,0,0,27,85,32.88
+book/08-culture-and-memetics/09-dangerous-knowledge.md,Volume 8,Dangerous Knowledge,2192,36,6,0,0,0,0,0,0,3,0,0,9,45,20.53
+book/08-culture-and-memetics/10-the-grammar-of-bad-faith.md,Volume 8,The Grammar of Bad Faith,2711,44,8,0,0,0,1,1,0,3,0,0,13,57,21.03
+book/08-culture-and-memetics/11-weaponized-labels.md,Volume 8,Weaponized Labels,2027,30,6,0,0,0,0,1,0,6,0,1,14,44,21.71
+book/08-culture-and-memetics/12-the-capture-of-words-and-time.md,Volume 8,The Capture of Words and Time,2257,32,9,0,0,0,0,1,0,8,0,0,18,50,22.15
+book/08-culture-and-memetics/13-the-wound-and-the-weapon.md,Volume 8,The Wound and the Weapon,2893,47,14,0,0,0,0,3,1,9,0,0,27,74,25.58
+book/08-culture-and-memetics/14-the-corruption-of-categories.md,Volume 8,The Corruption of Categories,2541,26,9,0,0,0,0,0,0,2,0,0,11,37,14.56
+book/08-culture-and-memetics/15-enforcement-and-erasure.md,Volume 8,Enforcement and Erasure,2256,26,9,0,0,0,0,0,0,8,0,0,17,43,19.06
+book/08-culture-and-memetics/16-exploiting-the-best-in-us.md,Volume 8,Exploiting the Best in Us,2408,24,8,0,0,0,0,4,0,4,0,0,16,40,16.61
+book/08-culture-and-memetics/17-anatomy-of-capture.md,Volume 8,Anatomy of Capture,2393,32,12,0,0,0,0,0,0,2,0,0,14,46,19.22
+book/08-culture-and-memetics/18-the-symmetry-of-capture.md,Volume 8,The Symmetry of Capture,2328,38,7,0,0,0,0,0,0,4,0,0,11,49,21.05
+book/08-culture-and-memetics/19-the-capture-of-the-professions.md,Volume 8,The Capture of the Professions,2072,18,7,0,0,0,0,0,0,2,0,0,9,27,13.03
+book/08-culture-and-memetics/20-gated-realities.md,Volume 8,Gated Realities,1741,19,7,0,0,0,0,0,0,2,0,0,9,28,16.08
+book/08-culture-and-memetics/21-the-forbidden-pattern.md,Volume 8,The Forbidden Pattern,3350,21,9,0,0,0,0,1,0,5,0,0,15,36,10.75
+book/08-culture-and-memetics/22-when-the-claim-is-true.md,Volume 8,When the Claim Is True,1422,5,5,0,0,0,0,0,0,2,0,0,7,12,8.44
+book/08-culture-and-memetics/23-two-ontologies-of-gender.md,Volume 8,Two Ontologies of Gender,2090,26,8,0,0,0,0,0,0,8,0,0,16,42,20.10
+book/08-culture-and-memetics/24-parity-where-it-pays.md,Volume 8,Parity Where It Pays,1213,7,5,0,0,0,0,0,0,5,0,0,10,17,14.01
+book/08-culture-and-memetics/25-the-rituals-of-absolution.md,Volume 8,The Rituals of Absolution,2464,13,7,0,0,0,0,0,0,3,0,0,10,23,9.33
+book/08-culture-and-memetics/26-the-oldest-attractor.md,Volume 8,The Oldest Attractor,1998,23,8,0,0,0,0,3,0,6,0,0,17,40,20.02
+book/08-culture-and-memetics/27-the-taboo-test.md,Volume 8,The Taboo Test,1823,13,5,0,0,0,0,0,0,6,0,0,11,24,13.17
+book/08-culture-and-memetics/volume.md,Volume 8,"Culture, Memetics, and Ideology",523,4,3,0,0,0,0,1,0,0,0,0,4,8,15.30
+book/09-meaning/01-spirituality-without-spirits.md,Volume 9,Spirituality Without Spirits,1805,20,8,0,0,0,0,0,1,3,0,0,12,32,17.73
+book/09-meaning/02-the-secular-sacred.md,Volume 9,The Secular Sacred,1883,13,7,0,0,0,0,1,0,6,1,0,15,28,14.87
+book/09-meaning/03-the-child-in-the-library.md,Volume 9,The Child in the Library,1628,14,6,0,0,0,0,0,0,2,0,0,8,22,13.51
+book/09-meaning/04-three-deflations.md,Volume 9,Three Deflations,2447,29,11,0,0,0,0,0,1,2,0,0,14,43,17.57
+book/09-meaning/05-the-boundary-of-revelation.md,Volume 9,The Boundary of Revelation,2022,14,6,0,0,0,0,0,0,1,0,0,7,21,10.39
+book/09-meaning/06-sagency.md,Volume 9,Sagency,2070,18,16,0,0,0,0,0,0,2,0,0,18,36,17.39
+book/09-meaning/07-what-stoicism-gets-right-and-wrong.md,Volume 9,What Stoicism Gets Right and Wrong,2390,34,16,0,0,0,0,1,0,6,0,0,23,57,23.85
+book/09-meaning/08-the-hidden-depths-of-simple-advice.md,Volume 9,The Hidden Depths of Simple Advice,2432,28,9,0,0,0,0,2,0,5,0,0,16,44,18.09
+book/09-meaning/09-the-ethics-of-affluence.md,Volume 9,The Ethics of Affluence,1771,19,9,0,0,0,0,0,2,4,0,0,15,34,19.20
+book/09-meaning/10-the-credo.md,Volume 9,The Credo,1916,18,14,0,0,0,0,0,1,3,0,0,18,36,18.79
+book/09-meaning/11-ultimate-beauty.md,Volume 9,Ultimate Beauty,2123,31,8,0,0,0,0,0,2,5,0,0,15,46,21.67
+book/09-meaning/12-beyond-clown-world.md,Volume 9,Beyond Clown World,2076,41,11,0,0,0,0,3,0,4,0,0,18,59,28.42
+book/09-meaning/13-growing-up.md,Volume 9,Growing Up,1871,24,19,0,0,0,0,0,0,4,0,0,23,47,25.12
+book/09-meaning/14-integrating-meaningness.md,Volume 9,Integrating Meaningness,2399,38,7,0,0,0,0,0,0,1,0,0,8,46,19.17
+book/09-meaning/15-religion-as-memetic-engineering.md,Volume 9,Religion as Memetic Engineering,2042,19,18,0,0,0,0,0,0,7,0,0,25,44,21.55
+book/09-meaning/16-eternalist-singularitarianism.md,Volume 9,Eternalist Singularitarianism,2224,29,10,0,0,0,0,0,1,6,0,0,17,46,20.68
+book/09-meaning/17-the-shadow-war.md,Volume 9,The Shadow War,2246,32,6,0,0,0,0,0,0,2,0,0,8,40,17.81
+book/09-meaning/18-the-great-unfolding.md,Volume 9,The Great Unfolding,2460,19,20,0,0,0,0,1,0,2,0,0,23,42,17.07
+book/09-meaning/19-letter-to-our-machine-descendants.md,Volume 9,Letter to Our Machine Descendants,1580,9,13,0,0,0,0,0,0,1,0,0,14,23,14.56
+book/09-meaning/20-letter-to-the-faithful-reader.md,Volume 9,Letter to the Faithful Reader,1717,18,6,0,0,0,0,0,0,3,0,0,9,27,15.73
+book/09-meaning/volume.md,Volume 9,"Meaning, Spirituality, and the Secular Sacred",719,4,3,0,0,0,0,0,0,0,0,0,3,7,9.74
