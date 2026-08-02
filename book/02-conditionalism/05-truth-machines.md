@@ -33,7 +33,7 @@ Our expressions and choices of formal framework have historical contingencies. N
 
 Now run the recasting in the other direction. *It rained in Paris yesterday* becomes: *if* these meteorological and historical conditions obtained, *then* it rained in Paris yesterday. So far, so Leibnizian. But the fact itself is not free-floating. Without a logical-linguistic system supplying syntax and semantics, the statement collapses into noise. A consistency filter is already operating: self-contradictory claims cannot be admitted as facts at all. And the empirical claim gains its force only through its inferential role — by [cohering](03-the-three-levels-of-truth.md) with networks of other claims about weather stations, calendars, and the city of Paris.
 
-Contingency, then, is *coherence-dependent* contingency. Leibniz's two domains turn out to lean on each other for their very intelligibility. Reasoning rests on an empirical substrate: notations, definitions, and rules emerge historically and are stabilized socially. Fact rests on a logical substrate: empirical claims require logical form to be intelligible and testable. Leibniz saw a boundary; there is actually a braid.
+Contingency, then, is *coherence-dependent* contingency. Leibniz's two domains turn out to lean on each other for their very intelligibility. Reasoning rests on an empirical substrate: notations, definitions, and rules emerge historically and are stabilized socially. Fact rests on a logical substrate: empirical claims require logical form to be intelligible and testable. Leibniz saw a boundary; there is a braid.
 
 Alongside the modal distinction between necessity and contingency, there is a **continuum of epistemic and model stability**. Mathematical conclusions can be stable across many representations; weather claims depend on volatile conditions; scientific laws have domains and idealizations. That continuum is a difference of degree. The formal distinction between truth in all relevant models and truth in some remains a difference of kind.
 
@@ -59,7 +59,7 @@ For decidable fragments and supplied representations, a machine may evaluate the
 
 Gödel proved that any consistent, effectively axiomatized formal system sufficiently expressive for arithmetic is incomplete: there are sentences for which it proves neither the sentence nor its negation. Calling a Gödel sentence “true” invokes an intended interpretation outside the proof system. This is a precise separation between provability and semantic truth, not a general theorem that semantics always escapes systems.
 
-Chaitin later established incompleteness results using algorithmic information: a fixed formal system can determine only finitely much irreducible algorithmic information beyond a bound tied to the system. This connects provability and description complexity without making their boundaries simply identical.
+Chaitin later established incompleteness results using algorithmic information: a fixed formal system can determine only finitely much irreducible algorithmic information beyond a bound tied to the system. This connects provability and description complexity without making their boundaries identical.
 
 ## Computation as Interpretation
 
@@ -73,7 +73,7 @@ Shannon's theory deliberately excludes semantics: entropy measures uncertainty u
 
 The natural objection is to ask for a master interpreter. Reasoning relies on rules and interpretations that can themselves be examined. Gödel and Turing establish specific limits on proof and computation; they do not prove the metaphysical claim that no ultimate vantage exists or that no system can model any aspect of itself. They motivate a narrower fallibilism: sufficiently rich formal and computational procedures cannot be assumed complete merely because they are internally specified.
 
-When philosophers speak of "unconditional truth," they are implicitly assuming exactly such a vantage — a hidden universal interpreter, a divine Tarski model in which every statement gets its absolute verdict. Leibniz had a candidate for the position; his necessary truths were true in the mind of God. Conditionalism simply removes that ghost. What is left is not chaos but recursion without closure: truth, like computation, is locally consistent and globally ungrounded.
+When philosophers speak of "unconditional truth," they are implicitly assuming exactly such a vantage — a hidden universal interpreter, a divine Tarski model in which every statement gets its absolute verdict. Leibniz had a candidate for the position; his necessary truths were true in the mind of God. Conditionalism removes that ghost. What is left is not chaos but recursion without closure: truth, like computation, is locally consistent and globally ungrounded.
 
 So the pieces assemble into one picture. Computation gives us syntax; Tarski gives us semantics; Gödel and Chaitin reveal the boundaries of both. And Leibniz's chasm between reasoning and fact turns out to be a Möbius strip — reasoning and fact twisting into one another, each supplying the other's substrate, conditional all the way down. One rule unifies the whole edifice:
 
