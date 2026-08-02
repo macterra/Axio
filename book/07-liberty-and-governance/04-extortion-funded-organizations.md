@@ -55,7 +55,7 @@ Crowdfunded research, open-source data, voluntary patronage, and decentralized g
 
 ## The Second Harvest
 
-Now step back out of the hot register, because the final case shows why the neutral one is ultimately the right one: extraction does not require a villain. It does not even require intent.
+Now step back out of the hot register, because the final case shows why the neutral one is the right one: extraction does not require a villain. It does not even require intent.
 
 A meme summarizes the mechanism in a whisper: *if we tax them with inflation, we get them with capital gains as well.* The satire identifies a real possibility, but money creation and consumer-price inflation are not identical. Purchasing power falls when nominal claims expand relative to real output and money demand through a transmission process shaped by credit, velocity, supply, expectations, distribution, and policy. To the extent new spending occurs before prices adjust, recipients can gain purchasing power while later holders lose it; the incidence is empirical, not one uniform levy on every unit. (The monetary machinery belongs to [What Is Money?](../06-markets-and-money/03-what-is-money.md); the classification needed here is narrower: policy-driven dilution can extract real purchasing power without a line-item tax.) That is the first harvest.
 
