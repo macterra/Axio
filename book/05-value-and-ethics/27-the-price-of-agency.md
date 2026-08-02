@@ -36,7 +36,7 @@ None of this leaves the framework passive once harm arrives. When harm or credib
 
 ## The Supplement
 
-The critic's move, at this point, is to concede the analysis and demand a supplement: very well, the boundaries of force are what they are, but the framework needs *something more* to deal with evil. Everything turns on the nature of the something. Historically it has exactly one form: a moral authority empowered to act ahead of harm. Values become enforceable. Beliefs become risks. Control presents itself as care. And authority justified by moral necessity expands, because the harms it produces arrive pre-legitimized as protection. What the promise of moral safety actually conceals is a transfer — of authorship, from individuals to systems. The supplement does not deal with evil. It deals with agency, and calls the result safety.
+The critic's move, at this point, is to concede the analysis and demand a supplement: very well, the boundaries of force are what they are, but the framework needs *something more* to deal with evil. Everything turns on the nature of the something. Historically it has exactly one form: a moral authority empowered to act ahead of harm. Values become enforceable. Beliefs become risks. Control presents itself as care. And authority justified by moral necessity expands, because the harms it produces arrive pre-legitimized as protection. What the promise of moral safety conceals is a transfer — of authorship, from individuals to systems. The supplement does not deal with evil. It deals with agency, and calls the result safety.
 
 ## The Price
 
