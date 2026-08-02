@@ -22,7 +22,7 @@ The second mode is subtler, and usually missed entirely. Here the system doesn't
 
 ## The Two Constraints
 
-Once you rule out fixed goals, privileged meanings, and external semantic authority, what remains is surprisingly strict. Two constraints must both hold if alignment is to survive learning and reflection.
+Once you rule out fixed goals, privileged meanings, and external semantic authority, the result is surprisingly strict. Two constraints must both hold if alignment is to survive learning and reflection.
 
 The first is *Refinement Symmetry*: don't invent new ambiguities. Learning may give a system more ways to describe the same thing — that is benign redundancy. It may add detail. What it must not add is new interpretive slack: new ways to dissolve distinctions that previously mattered.
 
