@@ -19,7 +19,7 @@ My reply was short:
 
 > To be fair, anarchies do not preclude organizations run like benevolent dictatorships.
 
-That reply is this chapter. The conversion story feels devastating because it seems to be an empirical refutation: I tried anarchy, it collapsed into squabbling, so I appointed myself dictator, and things finally worked. Case closed. But look at what the story actually demonstrates. A group of people voluntarily formed a project. When flat consensus failed them, they voluntarily adopted centralized leadership. Anyone who disliked the arrangement was free to walk away and camp somewhere else. Nobody was conscripted, nobody was taxed, nobody was forbidden to leave. The theme camp did not refute anarchy. The theme camp *was* anarchy — anarchy discovering, as it reliably does, that some tasks want a hierarchy.
+That reply is this chapter. The conversion story feels devastating because it seems to be an empirical refutation: I tried anarchy, it collapsed into squabbling, so I appointed myself dictator, and things finally worked. Case closed. But look at what the story demonstrates. A group of people voluntarily formed a project. When flat consensus failed them, they voluntarily adopted centralized leadership. Anyone who disliked the arrangement was free to walk away and camp somewhere else. Nobody was conscripted, nobody was taxed, nobody was forbidden to leave. The theme camp did not refute anarchy. The theme camp *was* anarchy — anarchy discovering, as it reliably does, that some tasks want a hierarchy.
 
 The mistake is in the definition, and the definition matters enough to get right, because on it turns the entire question of what a stateless order can and cannot be.
 
