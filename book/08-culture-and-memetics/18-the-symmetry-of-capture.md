@@ -64,7 +64,7 @@ So the symmetry is real at the level of method — both camps do commit the equi
 
 ## The Real Divide
 
-Strip away the fallacies and the genuine dispute comes into focus, and it is subtler than either syllogism admits. Nobody serious in this argument denies that people are morally equal. Nobody serious claims that outcomes will therefore be identical. The question that actually divides Left from Right is narrower and sharper:
+Strip away the fallacies and the genuine dispute comes into focus, and it is subtler than either syllogism admits. Nobody serious in this argument denies that people are morally equal. Nobody serious claims that outcomes will therefore be identical. The question that divides Left from Right is narrower and sharper:
 
 **Is inequality of outcome sufficient evidence of systemic injustice?**
 
