@@ -28,7 +28,7 @@ Now the crux. The theory proposes that what philosophers call *qualia* are conte
 - Pain is not a metaphysical essence; it is an internal warning signal: *avoid this trajectory*.
 - Emotions are global state summaries, broadcasting guidance for adaptive behavior.
 
-The key is **epistemic transparency**: the system cannot see the machinery, only its outputs. From the inside, you do not see neurons firing or models updating; you just feel red, pain, joy, hunger. That transparency is what makes qualia seem irreducible. There is no vantage point inside the system from which the representational scaffolding is visible, so the representations present as brute, unanalyzable *givens*. But seeming irreducible from the inside is exactly what a transparent model predicts. It is simply how modeling presents itself to itself.
+The key is **epistemic transparency**: the system cannot see the machinery, only its outputs. From the inside, you do not see neurons firing or models updating; you just feel red, pain, joy, hunger. That transparency is what makes qualia seem irreducible. There is no vantage point inside the system from which the representational scaffolding is visible, so the representations present as brute, unanalyzable *givens*. But seeming irreducible from the inside is exactly what a transparent model predicts. It is how modeling presents itself to itself.
 
 ## Two Vantages, One Process
 

@@ -39,7 +39,7 @@ This is also why the inner voice feels at once intimately personal and faintly a
 
 Push the projectional model and it recasts a distinction we usually treat as fundamental. Thinking, remembering, and imagining look like three different faculties. On this account they can use overlapping representational spaces while differing in active features, inputs, and control. Thought recruits distributed conceptual structure. Memory can reactivate stored traces through it. Imagination and inner speech may render partial projections of live or stored content for local inspection.
 
-So the account suggests that we do not *only* think in words. We can **project** richer thought into words, as we render a three-dimensional model onto a two-dimensional screen: to make some of it inspectable by the very system that produced it. The words are an interface, not the whole engine.
+So the account suggests that we do not *only* think in words. We can **project** richer thought into words, as we render a three-dimensional model onto a two-dimensional screen: to make some of it inspectable by the system that produced it. The words are an interface, not the whole engine.
 
 And the proposal may not stop at audition. If conscious modalities partly render high-dimensional representational activity into lower-dimensional working formats, inner speech would be one instance of something general. Vision, audition, and proprioception could each provide an internal surface through which the mind encounters selected aspects of its own dynamics. Inner speech would then be an *auditory* mode of introspection, using some of the machinery also involved in hearing. When you speak inwardly, on this picture, you are watching the geometry of thought compressed into sound.
 
