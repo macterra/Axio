@@ -273,7 +273,8 @@ MATHJAX = '''
     </script>
 '''
 
-def wrap_page(title, content, prefix, breadcrumbs=None):
+def wrap_page(title, content, prefix, breadcrumbs=None,
+              og_image=None, og_url=None, description=None, og_type='website'):
     crumbs_html = ''
     if breadcrumbs:
         parts = []
@@ -288,6 +289,25 @@ def wrap_page(title, content, prefix, breadcrumbs=None):
 
     document_title = title if title == BOOK_TITLE else f'{title} - {BOOK_TITLE}'
 
+    social_html = ''
+    if og_image:
+        desc = escape(description or '')
+        social_html = (
+            f'    <meta property="og:type" content="{og_type}">\n'
+            f'    <meta property="og:site_name" content="{escape(BOOK_TITLE)}">\n'
+            f'    <meta property="og:title" content="{escape(document_title)}">\n'
+            f'    <meta property="og:description" content="{desc}">\n'
+            f'    <meta property="og:url" content="{og_url}">\n'
+            f'    <meta property="og:image" content="{og_image}">\n'
+            f'    <meta property="og:image:width" content="1792">\n'
+            f'    <meta property="og:image:height" content="592">\n'
+            f'    <meta property="og:image:alt" content="{escape(document_title)}">\n'
+            f'    <meta name="twitter:card" content="summary_large_image">\n'
+            f'    <meta name="twitter:title" content="{escape(document_title)}">\n'
+            f'    <meta name="twitter:description" content="{desc}">\n'
+            f'    <meta name="twitter:image" content="{og_image}">\n'
+        )
+
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -295,7 +315,7 @@ def wrap_page(title, content, prefix, breadcrumbs=None):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{escape(document_title)}</title>
     <link rel="icon" type="image/png" href="{prefix}images/axionic-logo.png">
-{MATHJAX}
+{social_html}{MATHJAX}
     <!-- Site Styles -->
     <link rel="stylesheet" href="{prefix}style.css">
 </head>
@@ -362,9 +382,15 @@ def build_chapter_page(vol, chapter, prev_ch, next_ch, publish_index):
                + status_banner(chapter['status'])
                + fragment
                + chapter_nav)
+    cover = f"vol-{vol['number']}.png" if vol['number'] is not None else "taoa.png"
     dest.write_text(
         wrap_page(chapter['meta'].get('title', chapter['slug']),
-                  content, prefix, breadcrumbs),
+                  content, prefix, breadcrumbs,
+                  og_image=f"{BASE_URL}/images/covers/{cover}",
+                  og_url=f"{BASE_URL}/book/{vol['slug']}/{chapter['slug']}.html",
+                  description=(chapter['meta'].get('subtitle')
+                               or chapter['meta'].get('title', '')),
+                  og_type='article'),
         encoding='utf-8')
     return dest
 
@@ -428,9 +454,13 @@ def build_volume_page(vol, publish_index):
 
     breadcrumbs = [(BOOK_TITLE, '../index.html'),
                    (volume_display_title(vol), None)]
+    cover = f"vol-{vol['number']}.png" if vol['number'] is not None else "taoa.png"
     dest = dest_dir / 'index.html'
     dest.write_text(
-        wrap_page(volume_display_title(vol), content, prefix, breadcrumbs),
+        wrap_page(volume_display_title(vol), content, prefix, breadcrumbs,
+                  og_image=f"{BASE_URL}/images/covers/{cover}",
+                  og_url=f"{BASE_URL}/book/{vol['slug']}/",
+                  description=vol.get('title', '')),
         encoding='utf-8')
     return dest
 
@@ -514,7 +544,12 @@ def build_book_index(manifest, volumes, publish_index):
     content += '</ol>\n'
 
     dest = BOOK_DEST / 'index.html'
-    dest.write_text(wrap_page(manifest['title'], content, prefix), encoding='utf-8')
+    dest.write_text(
+        wrap_page(manifest['title'], content, prefix,
+                  og_image=f"{BASE_URL}/images/covers/taoa.png",
+                  og_url=f"{BASE_URL}/book/",
+                  description=manifest.get('subtitle', '')),
+        encoding='utf-8')
     return dest
 
 # ============================================
