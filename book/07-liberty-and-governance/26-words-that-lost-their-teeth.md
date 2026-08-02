@@ -14,7 +14,7 @@ Consider what the word "socialist" is asked to cover. It names the regime that b
 
 This is more than pedantry. Political vocabulary is an instrument panel; gauges that always read the same leave judgment blind. A society unable to distinguish a Nazi from a social democrat in language will condemn the harmless and excuse the monstrous.
 
-The remedy is not new words. It is taxonomy plus discipline: split the inflated terms into the distinct things they actually name, then hold the line on usage. This chapter does that for the two worst offenders.
+The remedy is not new words. It is taxonomy plus discipline: split the inflated terms into the distinct things they name, then hold the line on usage. This chapter does that for the two worst offenders.
 
 ## Three Socialisms
 
@@ -63,14 +63,14 @@ The writer Andrew Doyle has proposed a simple intervention, which I will call Do
 
 This is not exhaustive — historical fascism includes more than political murder — but it is a sharp sufficient condition, cheap to check and indifferent to faction.
 
-The test earns its keep whenever political violence actually occurs. After a political assassination in a polarized society, the pattern is depressingly reliable: the great majority across the spectrum condemn the killing, while a fringe openly celebrates it — and screenshots of the celebrants circulate until they create the impression that a large fraction of the other side was cheering. That impression is exaggeration, and the exaggeration is itself a form of the inflation this chapter is against. What actually exists is a noisy fringe: individuals who crossed the line into condoning political murder.
+The test earns its keep whenever political violence occurs. After a political assassination in a polarized society, the pattern is depressingly reliable: the great majority across the spectrum condemn the killing, while a fringe openly celebrates it — and screenshots of the celebrants circulate until they create the impression that a large fraction of the other side was cheering. That impression is exaggeration, and the exaggeration is itself a form of the inflation this chapter is against. What exists is a noisy fringe: individuals who crossed the line into condoning political murder.
 
 Doyle's razor preserves both judgments. The celebratory fringe are not their movement's mainstream, but cheering political bloodshed crosses the line. Fascism is not a neighbor who votes wrong or holds an unpopular opinion; here it is the legitimization of political murder, whatever banner covers it.
 
 Notice that the discourse around fascism suffers from two opposite distortions, and the razor slices through both:
 
 1. **Overuse.** Calling every ordinary conservative — or every ordinary progressive — a fascist drains the term of meaning and slanders the innocent.
-2. **Under-focus.** Ignoring the fringe that actually condones political violence leaves genuine fascism unnamed and uncontested.
+2. **Under-focus.** Ignoring the fringe that condones political violence leaves genuine fascism unnamed and uncontested.
 
 The errors reinforce each other. Overuse turns accusation into noise and gives the guilty cover; under-focus leaves them unnamed. Moral condemnation is currency: debase it and it buys nothing. Doyle's test preserves weight through precision.
 
