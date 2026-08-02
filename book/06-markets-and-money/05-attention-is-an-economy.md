@@ -12,7 +12,7 @@ That small transaction is worth taking seriously, because it is a transaction. T
 
 ## The First Economy
 
-At every moment, an agent is surrounded by more possible objects of attention than it can process. Sensory signals, memories, threats, plans, bodily sensations, social cues, unresolved obligations, fantasies, anxieties, habits, and abstract problems all compete for cognitive bandwidth. The agent cannot attend to all of them, so the field must be ranked, filtered, and compressed. What remains is not the world as such. It is the world made tractable.
+At every moment, an agent is surrounded by more possible objects of attention than it can process. Sensory signals, memories, threats, plans, bodily sensations, social cues, unresolved obligations, fantasies, anxieties, habits, and abstract problems all compete for cognitive bandwidth. The agent cannot attend to all of them, so the field must be ranked, filtered, and compressed. The result is the world made tractable, not the world as such.
 
 This makes attention an allocation problem at the root of cognition. Focal processing is limited and rival across simultaneous demands, even though attention has multiple systems and can sometimes be divided or trained. Each allocation has opportunity cost. Attention therefore supplies evidence about operative priorities, but not an infallible value meter: salience capture, addiction, threat, habit, compulsion, misinformation, and platform design can pull attention away from reflectively endorsed ends. [Value as Sacrifice](../05-value-and-ethics/04-value-as-sacrifice.md) now states that qualification explicitly.
 
