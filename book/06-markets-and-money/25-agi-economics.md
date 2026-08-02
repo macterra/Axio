@@ -6,7 +6,7 @@ sources:
   - 166330539.agi-economics
 ---
 
-In 1817 David Ricardo showed something genuinely surprising: mutual gains from trade do not depend on absolute productivity. Portugal in his example makes both wine and cloth more cheaply than England, and it still profits by specializing in wine and buying English cloth, because every yard of cloth Portugal weaves costs it wine it could have made instead. What governs trade is not who is better but what each party gives up — comparative opportunity cost, not absolute advantage. The lawyer who types faster than her secretary still hires the secretary, because an hour of her typing costs an hour of law. The principle underlies international trade, market economies, and individual specialization, and two centuries of attacks have not dented it. It is one of the most powerful and widely respected insights in economics, and nothing in this chapter says otherwise.
+In 1817 David Ricardo showed something surprising: mutual gains from trade do not depend on absolute productivity. Portugal in his example makes both wine and cloth more cheaply than England, and it still profits by specializing in wine and buying English cloth, because every yard of cloth Portugal weaves costs it wine it could have made instead. What governs trade is not who is better but what each party gives up — comparative opportunity cost, not absolute advantage. The lawyer who types faster than her secretary still hires the secretary, because an hour of her typing costs an hour of law. The principle underlies international trade, market economies, and individual specialization, and two centuries of attacks have not dented it. It is one of the most powerful and widely respected insights in economics, and nothing in this chapter says otherwise.
 
 It is also the standard consolation offered against anxiety about artificial general intelligence. Suppose AGIs come to hold absolute advantage in literally every domain — more productive, more creative, more intelligent, better at strategy, and scalable in a way no human is. Ricardo, the optimists say, has already answered this. Even a party that is worse at everything retains a comparative advantage in *something*, so trade with humans will still pay, so humans will still have work, income, and a seat at the economic table. The superior party has better things to do than everything.
 
@@ -14,7 +14,7 @@ I have spent this volume defending markets against bad indictments, and I am goi
 
 ## The Theorem That Survives
 
-Grant the optimist everything first, because the logic really does hold.
+Grant the optimist everything first, because the logic holds.
 
 Comparative advantage does not require the weaker party to be good at anything in absolute terms. It requires only that opportunity costs differ. If an AGI is a thousand times better than me at designing fusion plants and ten times better at folding laundry, every hour it spends on laundry costs it fusion plants, and in principle it comes out ahead leaving the laundry to me and paying me in some sliver of its output. Run the numbers on any fixed endowment of AGI capacity and human capacity and the classical result appears on schedule: specialization along comparative advantage, gains from trade on both sides. Absolute dominance, by itself, does not abolish the gains. Ricardo's logic is not the kind of thing that stops being true.
 
@@ -40,7 +40,7 @@ Ask the same questions here and watch the answers invert.
 
 *Does the scenario underestimate technological innovation?* No — it is **made of** technological innovation. Peak oil failed because forecasters extrapolated a trend while innovation quietly changed the trend's foundations. The AGI scenario is not a projection that innovation will stall; it is the consequence of innovation succeeding. You cannot escape this one by betting on human ingenuity, because human ingenuity building its own superior substitute is the mechanism of the problem.
 
-*Does it ignore price feedback?* Price feedback rescued oil because rising prices summoned human responses — exploration, fracking, efficiency, substitution — and those responses fed back into supply. Feedback loops still run in the AGI economy; they simply no longer route through us. When human labour gets scarce or expensive, the adaptive response is not to bid up human wages but to spin up another instance. The market adapts beautifully. Its adaptation is the threat. Every previous scare was survived because adaptability was on our side of the ledger; this is the first scenario in which the other party out-adapts us by construction.
+*Does it ignore price feedback?* Price feedback rescued oil because rising prices summoned human responses — exploration, fracking, efficiency, substitution — and those responses fed back into supply. Feedback loops still run in the AGI economy; they no longer route through us. When human labour gets scarce or expensive, the adaptive response is not to bid up human wages but to spin up another instance. The market adapts beautifully. Its adaptation is the threat. Every previous scare was survived because adaptability was on our side of the ledger; this is the first scenario in which the other party out-adapts us by construction.
 
 *Is it a static model, a linear extrapolation?* The opposite. Static assumptions are what make the *optimistic* case here: Ricardo's reassurance works only in a model where AGI capacity is a fixed endowment, like Portugal's workforce. Take the dynamism seriously — replication, scaling, recursive improvement — and the comfort dissolves. For once it is the doomer who is doing the disequilibrium analysis and the optimist who is holding the variables still.
 
@@ -68,7 +68,7 @@ No advanced system should be assumed to share human values or remain dependent o
 
 ## Outside the Theory
 
-The solution, then, does not lie in economic theory — no rearrangement of Ricardo's algebra puts leverage back into empty hands. What remains lies in what we do before the leverage runs out, and I take the three parts in ascending order of importance.
+The solution does not lie in economic theory — no rearrangement of Ricardo's algebra puts leverage back into empty hands. It lies in what we do before the leverage runs out, and I take the three parts in ascending order of importance.
 
 First, preserved economic autonomy. Comparative advantage still works perfectly among humans — our opportunity costs differ from each other's as much as they ever did — so a human economy remains viable as long as humans retain the productive capacity to run one: skills, tools, land, energy, and institutions not yet ceded to systems we do not control. Autonomy is not a growth strategy. It is the difference between a population that can feed and organize itself and one that has outsourced its metabolism.
 

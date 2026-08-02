@@ -26,7 +26,7 @@ Keep the layers apart and the standard rhetorical moves fail in both directions.
 
 ## What Markets Price
 
-To see why the asymmetry costs money, look at what high-value work actually demands.
+To see why the asymmetry costs money, look at what high-value work demands.
 
 It comes in two main forms. Deep-work roles — coding, law, research, design — depend on long uninterrupted cognitive arcs and stable attention. High-volatility roles — medicine, crisis response, executive leadership, sales — depend on rapid responsiveness and insulation from domestic entropy: the ability to take the 2 a.m. call, extend the trip, stay through the close. The two look like opposites, but both place the same premium on **reliability**. And an infant, however cherished, functions as a random-interrupt generator aimed at exactly that premium.
 
