@@ -8,7 +8,7 @@ sources:
   - 176838567.beauty-and-truth
 ---
 
-A pilot descends through fog on instruments. She cannot see the runway; she trusts the altimeter, the glideslope, the artificial horizon. Say, if you like, that she has faith in her instruments — but watch what she actually does. She cross-checks them against each other. She knows their failure modes and their maintenance history. If the altimeter disagrees with the radar altimeter, her trust in it drops instantly, and she acts on the discrepancy. Her confidence is high because the evidence warrants high confidence, and it is revisable the moment the evidence changes.
+A pilot descends through fog on instruments. She cannot see the runway; she trusts the altimeter, the glideslope, the artificial horizon. Say, if you like, that she has faith in her instruments — but watch what she does. She cross-checks them against each other. She knows their failure modes and their maintenance history. If the altimeter disagrees with the radar altimeter, her trust in it drops instantly, and she acts on the discrepancy. Her confidence is high because the evidence warrants high confidence, and it is revisable the moment the evidence changes.
 
 Now consider the believer whose confidence does the opposite: when counterevidence arrives, it rises. The failed prophecy proves the prophecy was misread. The unanswered prayer proves the answer was "not yet." Doubt itself is reclassified as a test to be endured rather than a signal to be processed. We use the same word — faith — for the pilot and the believer, and the word is hiding the fact that these are opposite epistemic structures. One updates. The other has made not-updating the point.
 
@@ -46,7 +46,7 @@ That is the entire difference between an assumption and an article of faith: the
 
 The social defense: cooperation requires faith in other people. A society of suspicious calculators could never hold together; someone must extend trust beyond what the evidence strictly warrants.
 
-Again the mechanism being praised is not the mechanism doing the work. What holds societies together is conditional trust — trust that updates. It can be extended generously, ahead of the evidence; that is often the right opening move, and it is still calibration, because it responds to what happens next. Betrayal lowers it. Reliability raises it. Faith that ignores counterevidence — the spouse who "keeps faith" with a serial abuser, the loyalist who cannot process the leader's corruption — is not moral but pathological. It erases accountability, which is the very thing trust exists to enforce. The only justifiable trust is one that calibrates itself.
+Again the mechanism being praised is not the mechanism doing the work. What holds societies together is conditional trust — trust that updates. It can be extended generously, ahead of the evidence; that is often the right opening move, and it is still calibration, because it responds to what happens next. Betrayal lowers it. Reliability raises it. Faith that ignores counterevidence — the spouse who "keeps faith" with a serial abuser, the loyalist who cannot process the leader's corruption — is not moral but pathological. It erases accountability, which is what trust exists to enforce. The only justifiable trust is one that calibrates itself.
 
 ## Religious Faith
 
