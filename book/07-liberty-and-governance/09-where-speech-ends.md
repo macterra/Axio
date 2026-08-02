@@ -20,7 +20,7 @@ The paradox of tolerance is invoked today, almost always, as a license: *we cann
 
 ## The Conditionalist Dissolution
 
-The paradox dissolves the moment tolerance is stated as what it actually is: a conditional commitment, not an absolute one. Tolerance was never a suicide pact because it never promised to tolerate everything. Its boundaries are set precisely by the conditions necessary to sustain voluntary cooperation and minimize coercion:
+The paradox dissolves the moment tolerance is stated as what it is: a conditional commitment, not an absolute one. Tolerance was never a suicide pact because it never promised to tolerate everything. Its boundaries are set precisely by the conditions necessary to sustain voluntary cooperation and minimize coercion:
 
 - We must tolerate all speech that is non-coercive, irrespective of whether it offends, irritates, or challenges cherished beliefs.
 - We must never tolerate coercive harm — credible threats or actions that objectively diminish others' agency.
@@ -61,7 +61,7 @@ Lucy Connolly, a British childminder, was sentenced to thirty-one months after p
 
 The structural difference is easy to state. A mafia thug who says "Pay up or I burn your shop" attacks his victim's agency directly: comply or suffer. A demagogue who yells "Burn down the shops!" coerces no one — he *urges*, and the agency remains entirely with the listener, who can refuse. Incitement is not coercion. The two acts have different causal anatomies, and a law that conflates them has made a category error.
 
-But now the residue. If incitement is not coercion, is it therefore protected speech? My earlier answer was simply yes — counterspeech, ostracism, and surveillance of genuine plots being the proper remedies. Rwanda shows why that binary is too coarse. A radio station identifying people to be killed and coordinating their location can become part of the operation in a way no compliance-shaped coercion test captures: the victims are not being moved by threat; they are being targeted. The difficult work is distinguishing advocacy, however hateful, from intentional operational participation without turning causal influence in general into a speech crime.
+But now the residue. If incitement is not coercion, is it therefore protected speech? My earlier answer was yes — counterspeech, ostracism, and surveillance of genuine plots being the proper remedies. Rwanda shows why that binary is too coarse. A radio station identifying people to be killed and coordinating their location can become part of the operation in a way no compliance-shaped coercion test captures: the victims are not being moved by threat; they are being targeted. The difficult work is distinguishing advocacy, however hateful, from intentional operational participation without turning causal influence in general into a speech crime.
 
 ## The Exchange
 

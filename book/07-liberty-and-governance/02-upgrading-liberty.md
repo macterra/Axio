@@ -33,7 +33,7 @@ A principle that assumes its hardest question is not a foundation. It is a concl
 
 ## The Agency Protection Principle
 
-Both principles fail the same way: they are rules about coercion built on an undefined or circular central term. The repair is to ground the rule in the thing actually at stake. What makes fraud, assault, threats, and manipulation wrong is not that they breach a definition — it is what they do to their victim, and what they do is the same thing in every case: they contract the victim's capacity to make and act on voluntary choices. The value at the bottom of the liberal tradition, the thing the harm principle and the NAP were both groping toward, is **agency**.
+Both principles fail the same way: they are rules about coercion built on an undefined or circular central term. The repair is to ground the rule in the thing at stake. What makes fraud, assault, threats, and manipulation wrong is not that they breach a definition — it is what they do to their victim, and what they do is the same thing in every case: they contract the victim's capacity to make and act on voluntary choices. The value at the bottom of the liberal tradition, the thing the harm principle and the NAP were both groping toward, is **agency**.
 
 So state the rule in terms of it. I call this the Agency Protection Principle:
 

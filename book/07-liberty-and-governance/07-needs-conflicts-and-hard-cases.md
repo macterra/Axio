@@ -68,7 +68,7 @@ Saying so endorses no bigot. The position is that unjustified discrimination is 
 
 **Reputation and its consequences.** Ostracism, boycott, public criticism, the withdrawal of custom — these are exercises of the very same association right, pointed back at the discriminator. The bigot's freedom to exclude is matched by everyone else's freedom to exclude the bigot.
 
-**Transparency.** Reputation only disciplines what it can see. Open information about how firms and institutions actually behave lets customers, workers, and investors discriminate — justifiedly — against the unjustified discriminators.
+**Transparency.** Reputation only disciplines what it can see. Open information about how firms and institutions behave lets customers, workers, and investors discriminate — justifiedly — against the unjustified discriminators.
 
 **Persuasion and culture.** Norms are not made by statutes alone. Education, argument, art, organizing, and moral leadership can change preferences rather than merely constrain conduct.
 

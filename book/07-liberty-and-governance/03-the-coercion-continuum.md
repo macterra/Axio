@@ -72,7 +72,7 @@ Democracy and dictatorship differ profoundly in constraints, acquiescence, sever
 
 Set the two endpoints of the spectrum side by side and look at the structure of the claims being made.
 
-Slaveholder and tax state both claim a nonconsensual share of another person's output and enforce that claim through threats. That common mechanism does *not* establish moral equivalence. Chattel slavery adds bodily ownership, inherited status, domination, blocked exit, and routine violence; it cannot pass a justification test. A limited levy might pass the [Agency Protection Principle](02-upgrading-liberty.md) and [Grey Zone](05-the-grey-zone.md), but it must actually do so. Socially valuable expenditure is relevant evidence, not an exemption from the inquiry.
+Slaveholder and tax state both claim a nonconsensual share of another person's output and enforce that claim through threats. That common mechanism does *not* establish moral equivalence. Chattel slavery adds bodily ownership, inherited status, domination, blocked exit, and routine violence; it cannot pass a justification test. A limited levy might pass the [Agency Protection Principle](02-upgrading-liberty.md) and [Grey Zone](05-the-grey-zone.md), but it must pass them. Socially valuable expenditure is relevant evidence, not an exemption from the inquiry.
 
 Every generation has blind spots that become obvious in retrospect. Societies capable of sophisticated moral argument saw nothing to discuss in serfdom, conquest, or owning human beings. Future readers may treat compulsory extraction as one of ours; that is a live possibility, not a settled verdict. The prudent response is to run the justification test on familiar institutions rather than assume familiarity supplies legitimacy.
 
