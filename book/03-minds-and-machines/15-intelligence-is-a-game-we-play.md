@@ -57,7 +57,7 @@ And it is wrong, because prediction is necessary but not sufficient. Consider wh
 - A chess engine that knows the opponent's next moves is powerful — but without a framework for winning, the knowledge is inert.
 - A prophet who foresees disaster and cannot respond is not intelligent, merely informed.
 
-The oracle appeared once before in this book, as a structural diagnosis: strip embeddedness from an agent and what remains is an oracle — a system that computes over the world but never acts within it. Musk's definition selects for exactly that amputation. Set the two conceptions side by side and the difference runs through every element of the game:
+The oracle appeared once before in this book, as a structural diagnosis: strip embeddedness from an agent and the result is an oracle — a system that computes over the world but never acts within it. Musk's definition selects for exactly that amputation. Set the two conceptions side by side and the difference runs through every element of the game:
 
 | Feature | Game-Based Intelligence (Axio) | Prediction-Based Definition |
 |---|---|---|

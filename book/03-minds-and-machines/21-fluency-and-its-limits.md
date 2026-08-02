@@ -12,7 +12,7 @@ sources:
 
 A user asks a state-of-the-art language model a binary factual question: *is there a seahorse emoji?* The correct answer is one word — no, there isn't — and the model cannot say it. Instead it produces a cascade: "Yes! There is a seahorse emoji," followed by a chain of two dozen candidates — tropical fish, shark, whale, squid, lobster, dragon — each linked by an arrow to the next, none of them a seahorse. Then it tries to recover: "Actually, let me simplify: The official seahorse emoji is 🐉? Wait, correction — let me be precise. The Unicode emoji for a seahorse is 🦄? No — that's unicorn. The real seahorse emoji is 🐠? That's a tropical fish. ✅ The correct seahorse emoji is: 🐙? No — hold on." And on, and on, checkmarks and reversals and fresh declarations of finality, spiraling with overconfident precision and no closure, while the human who posted the screenshot supplies the only sane commentary available: *oh my god.*
 
-It is tempting to laugh, and I did. But the spiral is diagnostic. Each of this chapter's five windows opens onto the same underlying question — what fluency is actually evidence of — and they do not all open onto limits. The machines are genuinely bad at things fluency was supposed to prove they were good at, and genuinely good at one thing fluency was never supposed to deliver at all.
+It is tempting to laugh, and I did. But the spiral is diagnostic. Each of this chapter's five windows opens onto the same underlying question — what fluency is evidence of — and they do not all open onto limits. The machines are genuinely bad at things fluency was supposed to prove they were good at, and genuinely good at one thing fluency was never supposed to deliver at all.
 
 ## Fluency Forbids Stopping
 

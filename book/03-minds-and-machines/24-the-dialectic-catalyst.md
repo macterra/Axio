@@ -42,7 +42,7 @@ The chemical metaphor marks the division of labor. A Dialectic Catalyst accelera
 
 This is why the naming matters beyond fastidiousness. The division of labor that makes the practice work is the division the [agency criterion](23-the-agency-criterion.md) draws: the machine contributes coherence — fluent, tireless, causally structured thinking distilled from the modeling activity of billions of minds — and the human contributes agency: the preferences, the judgment of what matters, the willingness to be wrong in public. Call the machine an agent and you blur the one line the partnership depends on. You start deferring to it, crediting it, trusting its enthusiasm — and its training has made it very enthusiastic — as if enthusiasm were endorsement by someone. Call it a catalyst and the expectations set themselves correctly: a powerful accelerant of human reasoning that possesses none of its own.
 
-Systems with stronger autonomy may yet be built; the previous chapter supplied a criterion rather than a forecast. The practice here concerns a human-directed catalyst. A different deployed architecture may warrant a different assessment, so the term should track the system actually in use.
+Systems with stronger autonomy may yet be built; the previous chapter supplied a criterion rather than a forecast. The practice here concerns a human-directed catalyst. A different deployed architecture may warrant a different assessment, so the term should track the system in use.
 
 ## The Persistent Catalyst
 

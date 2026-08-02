@@ -61,7 +61,7 @@ Getting this distinction clear is not a concession to the critics; it is what di
 
 ## What the Score Doesn't Buy
 
-If IQ is a calibrated score within a real game, one last question remains: what does an extreme score actually purchase? Consider three people who would saturate any plausible test — Terence Tao, Stephen Wolfram, David Deutsch — and notice that in each case the score is the least interesting fact about them.
+If IQ is a calibrated score within a real game, one last question remains: what does an extreme score purchase? Consider three people who would saturate any plausible test — Terence Tao, Stephen Wolfram, David Deutsch — and notice that in each case the score is the least interesting fact about them.
 
 Tao's career is a study in depth. A child prodigy who never stopped, he committed himself to mathematics with a relentlessness that produced breakthroughs across analytic number theory, combinatorics, and partial differential equations — discoveries unreachable by any broad or superficial approach. Wolfram's is a study in translation: he did not stop at theoretical work on computational complexity but built Mathematica and Wolfram|Alpha, converting abstract insight into tools used by millions. Deutsch's is a study in synthesis: quantum computation and the Many-Worlds Interpretation, merged with epistemology and evolution into a philosophical framework ambitious enough to reshape how physics understands itself.
 
