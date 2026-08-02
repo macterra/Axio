@@ -48,7 +48,7 @@ Within the narrower taxonomy proposed here, **evil is intentional wrongful harm 
 
 The two dimensions are independent, which is where the taxonomy starts paying. An agent can be evil but not dangerous: someone who genuinely intends harm but lacks any practical means to inflict it is morally culpable and pragmatically harmless — malice without teeth. And capability without malice is everywhere: every driver on the highway is dangerous to you; almost none are evil.
 
-**A menace is both**: deliberately malicious and sufficiently capable to pose a credible threat. This is the category that actually warrants fear, and it is rarer than either component alone. The practical payoff of keeping the axes separate is that they call for different responses. Culpability tracks intent — blame the evil, not the dangerous. Risk management tracks capability — guard against the dangerous, whatever their intentions. Confusing the two produces both of our characteristic errors: demonizing the merely dangerous, and indulging the not-yet-capable evil until it acquires means.
+**A menace is both**: deliberately malicious and sufficiently capable to pose a credible threat. This is the category that warrants fear, and it is rarer than either component alone. The practical payoff of keeping the axes separate is that they call for different responses. Culpability tracks intent — blame the evil, not the dangerous. Risk management tracks capability — guard against the dangerous, whatever their intentions. Confusing the two produces both of our characteristic errors: demonizing the merely dangerous, and indulging the not-yet-capable evil until it acquires means.
 
 ## Comfort Is Not Care
 
