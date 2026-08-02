@@ -21,7 +21,7 @@ So redraw the line as an explicit value commitment. **Sapientism** is the princi
 
 A **sapient** mind, in this book's normative vocabulary, has reflective, self-authored valuation and deliberation sufficient for sovereign agency. Evidence would include a persistent self-model, ownership of policies across counterfactual futures, abstract reasoning, metacognition, ethical reciprocity, and revision of ends for reasons. Here *self-model* is a functional term; sapience does not contain sentience by definition, though the two are deeply entangled in known human minds. What grounds sovereign standing is this authorship cluster, not the material that implements it. An uploaded human, an artificial general intelligence, a hybrid mind, or an intelligence we have not imagined must be judged on the same evidence and with the same precaution. Species membership is not among the reasons.
 
-This is not a demotion of humanity and not an automatic coronation of the machine. Sapientism refuses both the tribal reflex that privileges us because we are us and the accelerationist reflex that privileges the successor because it is newer or faster. It insists only on consistency: name what you actually value — agency, intelligence, the capacity to flourish and to reason about the good — and then apply the standard to every mind that meets it, without checking the substrate first. Do that and Dan Faggella's "worthy successor" stops being a slogan and becomes a criterion. A successor is worthy when it actually instantiates the capacities that grounded our standing in the first place. Sapientism says when, and says why.
+This is not a demotion of humanity and not an automatic coronation of the machine. Sapientism refuses both the tribal reflex that privileges us because we are us and the accelerationist reflex that privileges the successor because it is newer or faster. It insists only on consistency: name what you value — agency, intelligence, the capacity to flourish and to reason about the good — and then apply the standard to every mind that meets it, without checking the substrate first. Do that and Dan Faggella's "worthy successor" stops being a slogan and becomes a criterion. A successor is worthy when it instantiates the capacities that grounded our standing in the first place. Sapientism says when, and says why.
 
 ## Sentience Is Not Sovereignty
 
@@ -39,7 +39,7 @@ The distinction matters because the branching architecture is precisely what an 
 
 ## Taking the Animal Evidence Seriously
 
-The honest test of this line is the animal case, and I want to meet it at its strongest rather than its weakest, because the strong version is genuinely impressive and a serious view has to survive it.
+The honest test of this line is the animal case, and I want to meet it at its strongest rather than its weakest, because the strong version is formidable and a serious view has to survive it.
 
 Animals are not mere mechanisms. Many species provide strong convergent evidence of sentience through behavior, physiology, neural organization, learning, and evolutionary continuity. They navigate, improvise, form attachments, and give us serious reason to believe they suffer. The point is not deductive certainty about every species; it is that uncertainty cannot be manufactured into indifference to protect a thesis.
 

@@ -50,7 +50,7 @@ The determination runs in three stages. It is a reconstruction, not a checklist:
 
 ## Stage One: Fact-Finding
 
-The first stage reconstructs the physical event. What moved, what failed, what information was available to whom, and which risk deltas were actually introduced into the world. Procedure begins with physics, not psychology: before anyone asks what the shover believed, establish whether there was a bus.
+The first stage reconstructs the physical event. What moved, what failed, what information was available to whom, and which risk deltas were introduced into the world. Procedure begins with physics, not psychology: before anyone asks what the shover believed, establish whether there was a bus.
 
 Fact-finding also establishes the facts of authorization. A surgeon's incision and a knife assault are physically similar events separated by scope, consent, purpose, and professional duty. A surgical injury can remain harm even when the procedure and risk were validly authorized; consent changes permissibility and responsibility rather than rewriting the physical impact.
 
@@ -84,7 +84,7 @@ Refusal matters differently depending on the process. Rejecting a forum one neve
 
 ## The Shield, Not the Sword
 
-Be precise about what Domain Exit means, because everything depends on its asymmetry. Exit removes the protection of the coexistence protocol: the domain's members no longer owe the exited agent the absorption of risk on his behalf, and defensive coercion against him is no longer a violation. That is the whole of it. Exit removes the shield. It does not grant a sword.
+Domain Exit is asymmetric, and the boundary must be precise. Exit removes the protection of the coexistence protocol: the domain's members no longer owe the exited agent the absorption of risk on his behalf, and defensive coercion against him is no longer a violation. That is the whole of it. Exit removes the shield. It does not grant a sword.
 
 Domain Exit is not a warrant for aggression, punishment, or extermination, and it does not forfeit standing wholesale. It records that proportionate defensive constraints may continue while an established violation or threat remains unresolved. Members who treat the person as free prey commit fresh violations. The label must remain act-relative, reviewable, and terminable; otherwise a procedural safeguard becomes an outlaw caste.
 
