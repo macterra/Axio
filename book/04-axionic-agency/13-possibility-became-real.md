@@ -20,7 +20,7 @@ Here *possible* has a stipulated program meaning: no contradiction, missing prim
 
 The preceding chapters supplied the required primitives: non-semantic enforcement, causally binding reasons, auditable introspection, authority surviving succession and tested imitation, and governance represented without a hidden chooser ([The Sovereign Kernel](04-the-sovereign-kernel.md), [Verifiable Agency](08-verifiable-agency.md), [Authority Without a Self](09-authority-without-a-self.md), [Governance Without Gods](12-governance-without-gods.md)). They answer internal objections to this architecture, not rival definitions or every impossibility argument.
 
-But an idea that stands is still an idea. Two further results converted it into something else, and they belong to two distinct registers that I will keep separate throughout. The first treats the RSA as a philosophical construct and asks what is *minimally required* for anything to be one. The second treats the RSA as an engineering target and asks whether a real one can be built and run. The chapter's title refers to the second. The first made the second honest.
+But an idea that stands is still an idea. Two further results converted it into something else, and they belong to two distinct registers kept separate throughout. The first treats the RSA as a philosophical construct and asks what is *minimally required* for anything to be one. The second treats the RSA as an engineering target and asks whether a real one can be built and run. The chapter's title refers to the second. The first supplied the conditions tested by the second.
 
 ## The Smallest Thing That Counts
 
