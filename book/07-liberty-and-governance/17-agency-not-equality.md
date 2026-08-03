@@ -46,7 +46,7 @@ Opportunity is the set of realistically available choices, and that set consists
 
 Genuine equalization must therefore neutralize the wealth, inheritance, attention, and family advantages that constitute the next starting line. It becomes coercive equalization of outcomes, renewed every generation.
 
-The standard escape defines equal opportunity as no legally enforced discrimination: no caste bars or exclusionary statutes. That sound principle is the *absence of coercive exclusion*, under which actual chances remain unequal. At full strength, equal opportunity requires leveling prior outcomes; diluted to coherence, it is no longer equality.
+The standard escape defines equal opportunity as no legally enforced discrimination: no caste bars or exclusionary statutes. That sound principle is the *absence of coercive exclusion*, under which actual chances remain unequal. Taken literally, equal opportunity requires leveling prior outcomes; diluted to coherence, it is no longer equality.
 
 Agency already secures what was attractive in the phrase: that no one be barred by force and the law not rig the race. The coherent position is not equal chances but unblocked ones.
 
