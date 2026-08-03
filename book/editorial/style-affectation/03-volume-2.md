@@ -2,7 +2,16 @@
 
 Date: 2026-08-03
 
-Status: **Complete; pending author review.**
+Status: **Complete; author-reviewed and adjusted.**
+
+## Author-review adjustment (2026-08-03)
+
+David ruled that two R2 edits had compressed away substantive framing along with the performance. Restored, cutting only the candor wrapper and keeping the reason:
+
+- **ch24:** "…formalized, ~~and this is worth saying plainly because~~ **and** it cuts against a lazy reading in which 'criticism' is a mystical human residue the mathematics can never reach." (the rebuttal-of-mysticism reason is substantive, not a flourish.)
+- **ch16:** "…concrete within many-worlds**, one of the rare spots where many-worlds helps instead of hurting**." (restored the substantive contrast; dropped only "too good not to share.")
+
+Neither restoration adds or removes an em dash. This established a skill rule (now in `ANTI_AFFECTATION.md`): R2 strips the candor wrapper but keeps any substantive *because*-clause it carries.
 
 ## Scope and result
 

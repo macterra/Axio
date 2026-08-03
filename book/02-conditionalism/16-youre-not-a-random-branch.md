@@ -79,7 +79,7 @@ Put together, the result narrows the available weighting rules under its structu
 
 ## A Branching Implementation of Refinement
 
-The second treatment makes the refinement requirement concrete within many-worlds.
+The second treatment makes the refinement requirement concrete within many-worlds, one of the rare spots where many-worlds helps instead of hurting.
 
 The theorem needs the induced weight to remain consistent across admissible refinements of an event representation. Treating those refinements as a census of literal worlds would beg the question; the relevant objects are decompositions within the formal model.
 
