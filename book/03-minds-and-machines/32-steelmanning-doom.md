@@ -39,7 +39,7 @@ This is the same structural error I document in [the Cassandra chapter](31-the-c
 
 ## One Governance Stack
 
-If doom is policy-endogenous, the interesting question is which policies. Here is a proposed defense-in-depth stack. Each item needs evidence for technical feasibility, adversarial robustness, international uptake, capture resistance, and interaction with the rest; decentralization is not itself validation.
+If doom is policy-endogenous, policy choice matters. Here is a proposed defense-in-depth stack. Each item needs evidence for technical feasibility, adversarial robustness, international uptake, capture resistance, and interaction with the rest; decentralization is not itself validation.
 
 - **Architecture-agnostic controls.** Evaluation protocols that flag when a system crosses into a dangerous capability class — autonomous planning, actuator control, recursive self-improvement — regardless of how it was built. Guard the property, not the paradigm.
 - **Tripwire governance.** Hard triggers bound to eval metrics: deception rate, power-seeking indicators, sandbox escapes. When a threshold is crossed, GPU licenses suspend and sandboxes revert *automatically*, not after a committee has had a chance to rationalize the reading. The point of pre-commitment is to remove the moment-of-crisis discretion that warning shots always erode.

@@ -46,7 +46,7 @@ Instead, Hanson reconciles the two with a Zoo Hypothesis: aliens born in our ste
 
 ## The Mechanism Beneath the Mistakes
 
-Three errors, one signature. Ask why a mind of this caliber over-updates on ambiguous evidence, and the answer is uncomfortable in its simplicity: the hypothesis he selected is precisely the one that activates his core competencies.
+Three errors, one signature. A mind of this caliber over-updates on ambiguous evidence when the selected hypothesis activates his core competencies.
 
 Noise gives him nothing to model. Sensor ghosts and bureaucratic entropy are dead ends for a theorist of strategic behavior — no incentives to trace, no equilibria to solve, no signaling games to unwind. But aliens and conspiracies place him back on native terrain, where incentives shape behavior, strategic silence becomes analyzable, and coordination dynamics can be mapped. In a world of correlated glitches, Hanson has no comparative advantage. In a world of covert alien governance or disciplined bureaucratic deception, he regains full relevance. The hypothesis that maximizes the applicability of his tools is the hypothesis his posterior drifts toward — and each of the three errors above is exactly the local distortion needed to keep it afloat.
 

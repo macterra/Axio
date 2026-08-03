@@ -9,7 +9,7 @@ sources:
 
 A man sits in his own living room, in the chair he chose, in the house he loves, and suffers. He has been convinced — by a drug, a dream, a deception, the mechanism does not matter — that he is stranded somewhere far from home. By every objective measure he is exactly where he wants to be. Meanwhile, somewhere else, a patient lies open on an operating table, tissue damage that would be agony in any waking state accumulating by the minute, and suffers not at all. Any definition of suffering worth having must count the man at home fully and the anesthetized patient not at all — and most definitions on offer, built on damage or deprivation or unmet need, get at least one of them wrong.
 
-Getting it right matters beyond philosophy. This part of the volume is headed somewhere practical: whether machines can suffer, how much moral weight their states carry, what we owe systems whose inner lives we cannot inspect. Those questions cannot be answered — cannot even be *posed* cleanly — with an intuitive grasp of suffering. They need a definition precise enough to apply to minds unlike ours. The method here is the same one the ethics volume used on [harm](../05-value-and-ethics/11-what-counts-as-harm.md): state a candidate definition, stress-test it against the cases that break lesser definitions, and refine until it stops breaking. The method works best in the open, so I will run it in the open.
+Getting it right matters beyond philosophy. This part of the volume is headed somewhere practical: whether machines can suffer, how much moral weight their states carry, what we owe systems whose inner lives we cannot inspect. Those questions cannot be answered — cannot even be *posed* cleanly — with an intuitive grasp of suffering. They need a definition precise enough to apply to minds unlike ours. The method here is the same one the ethics volume used on [harm](../05-value-and-ethics/11-what-counts-as-harm.md): state a candidate definition, stress-test it against the cases that break lesser definitions, and refine until it stops breaking.
 
 ## A First Attempt
 
@@ -25,7 +25,7 @@ That is the candidate. Now try to break it.
 
 A definition earns its keep on the edge cases, so run them.
 
-*The itch.* A mild itch lasting a few seconds: tiny divergence, faintly negative valence, brief. The definition classifies it as suffering — minimal suffering, but real. This is the right answer, and it is worth pausing on why. A definition that excluded the itch would need a threshold — *this* much divergence counts, less does not — and every threshold is arbitrary. Better to let suffering run continuously from the trivial to the unbearable and do the moral triage with magnitude, not membership. The itch suffers a little. That is not a bug; it is the shape of the concept.
+*The itch.* A mild itch lasting a few seconds: tiny divergence, faintly negative valence, brief. The definition classifies it as suffering — minimal suffering, but real. A definition that excluded the itch would need a threshold — *this* much divergence counts, less does not — and every threshold is arbitrary. Better to let suffering run continuously from the trivial to the unbearable and do the moral triage with magnitude, not membership. The itch suffers a little. That is not a bug; it is the shape of the concept.
 
 *The perfect state.* A subject whose represented condition matches its preferences exactly: no divergence, no negative valence, no suffering under this proposal.
 
