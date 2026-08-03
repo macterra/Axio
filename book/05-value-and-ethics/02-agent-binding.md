@@ -45,7 +45,7 @@ So against agent-independent authority: the normative premise remains visible. A
 
 ## Emphatically Not Relativism
 
-Now the accusation this position always attracts. Values are subjective; moral truth is relative to an agent's vantage — isn't that just relativism in a lab coat?
+Now the accusation this position always attracts. Values are subjective; moral truth is relative to an agent's vantage — isn't that just relativism?
 
 No. Agent-relative does not mean arbitrary, whimsical, incorrigible, or sealed inside a culture. A standard can be compared with other commitments, tested for consistency and consequences, revised under evidence, rejected from another avowed standpoint, or opposed through a public political framework. None of that requires pretending the standard arrived without an agent.
 

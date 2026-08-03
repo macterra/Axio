@@ -74,7 +74,7 @@ So when an agent says *I do not care about agency, truth, or suffering*, that is
 
 ## What Realism Does Not Promise
 
-One promise this realism refuses to make, because no honest theory can keep it: universal redeemability.
+No theory can keep one promise: universal redeemability.
 
 A standing objection to any agent-grounded morality runs through its worst cases. Take a figure of maximal moral revulsion — Jeffrey Epstein serves — and insist that an acceptable theory must show how such a person could have reasoned his way out of evil. Admit that no such route existed, the objection goes, and you have bitten an intolerable bullet. But the objection collapses two questions into one. A theory of *grounding* says where moral judgments get their content and claimed authority. It guarantees nothing about *deliberative accessibility* — the psychological reachability of reform for a particular agent, given the agent's actual motivational structure. Bernard Williams made the point precisely: if there is no sound deliberative route from an agent's existing motivations to an action, the agent has no internal reason to perform it. It may be true that Epstein had no internal reason to stop. This framework accepts that, as a straightforward implication of taking agency seriously: agency guarantees structure, not corrigibility. Some value systems are malignant under this framework and stable in their holders, and the agents running them may have no internal route out.
 
