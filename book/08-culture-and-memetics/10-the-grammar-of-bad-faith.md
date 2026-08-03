@@ -56,7 +56,7 @@ Second, **disengage.** Once bad faith is evident and named, prolonged interactio
 
 Third, **redirect.** The energy that would have been spent on the committed obstructionist goes instead to audiences who value sincerity — educating neutral observers, strengthening engagement with people who argue to understand. And where you have standing to shape a forum, set explicit standards for discourse in advance, because a stated norm makes the violation visible and the naming credible.
 
-The protocol's underlying principle deserves to be stated once, plainly: *in public discourse, the interlocutor is rarely the audience.* Bad-faith actors understand this perfectly — it is why they perform. The defense is to understand it equally well and perform better: transparently, on behalf of the sincere.
+The protocol's underlying principle is this: *in public discourse, the interlocutor is rarely the audience.* Bad-faith actors understand this perfectly — it is why they perform. The defense is to understand it equally well and perform better: transparently, on behalf of the sincere.
 
 Now the two case studies, at two scales. The first shows the grammar deployed against a single person; the second shows it embedded in an institution's measuring instrument, where it is harder to see and harder to answer.
 
