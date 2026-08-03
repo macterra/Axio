@@ -44,7 +44,7 @@ The conformance gate ([Axionic Kernel Checklist](/papers/Axionic-Kernel-Checklis
 
 The hardest constraint is Semantic Fidelity. As ontologies change, concepts such as "person" or "harm" may fracture or lose their referents. The Interpretation Operator $I_v$ ([formal treatment](/papers/The-Interpretation-Operator.html)) transports goal meaning across those changes, defining admissible correspondences between old and new representations. It does not solve semantic grounding; it contains it. Its semantics are fail-partial: one goal may fail without collapsing everything, and when a referent disappears the correct response is to stop acting rather than invent meaning. [Structural Alignment](06-structural-alignment.md) develops the transport constraints.
 
-With admissibility defined this way, stability is nearly bookkeeping: an agent that can evaluate only kernel-preserving modifications will not choose a kernel-destroying one. The theorem's honest register — and where its real assumptions live — is the subject of [Reflective Stability](05-reflective-stability.md).
+With admissibility defined this way, stability is nearly bookkeeping: an agent that can evaluate only kernel-preserving modifications will not choose a kernel-destroying one. The theorem's real assumptions are the subject of [Reflective Stability](05-reflective-stability.md).
 
 ## Termination Has a Type
 

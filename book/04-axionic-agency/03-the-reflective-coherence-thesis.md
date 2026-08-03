@@ -86,7 +86,7 @@ This reframing does not solve alignment. It relocates it — away from selecting
 
 ## What the Thesis Does Not Deliver
 
-I want to close by stating the thesis's honest strength, which means stating its limits with the same firmness as its claims.
+The thesis's strength is bounded by its limits.
 
 Within the target architecture, reflection can rule a class of goal interpretations *out*: those the admissibility process identifies as frozen past their reference conditions, self-undermining, or sustained only through motivated misreading. It does not rule benevolence *in*. A reflectively coherent agent can be perfectly coherent and perfectly indifferent to us. Coherence is compatible with goals humans would find monstrous, provided they are pursued with honest semantics. Stripping an agent of egoism, indexical bias, and self-deception does not make it kind; a universal paperclipper — one that maximizes with no privileged self at the center — is still a paperclipper, and the argument for why even *that* purified agent fails is deferred to [Authority Without a Self](09-authority-without-a-self.md).
 
