@@ -43,7 +43,7 @@ This volume can state the test because [harm has a definition here](../05-value-
 
 ## The Hard Case
 
-I will not pretend every case is easy, because one is not. Sports betting is the strongest challenge to everything I just said, and it deserves to be met on its merits rather than waved past.
+One case is not easy. Sports betting is the strongest challenge to everything I just said and must be met on its merits rather than waved past.
 
 Modern betting platforms are not neutral venues for a voluntary risk. They are engineered — ultra-low-latency feedback, variable reinforcement schedules, seamless escalation, implicit leverage, losses that recurse and recovery that is quietly deferred. Those properties can genuinely erode agency over time, not by permitting one bad choice but by draining the financial resilience and decision bandwidth an agent needs to make the *next* one. And here the harm definition does real work rather than decorative work, because it draws a line the moralist and the libertarian both miss. There is a difference between **permitting error** and **engineering a trap**. Allowing an initial bad choice preserves agency; the agent can lose, learn, and walk away. Designing a system so that an initial error predictably cascades into loss of control does not preserve agency — it exploits a cognitive vulnerability to manufacture the very future-narrowing that *is* harm. The first respects adult moral status. The second is agency-reduction dressed as entertainment.
 

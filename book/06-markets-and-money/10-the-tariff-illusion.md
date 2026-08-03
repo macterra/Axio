@@ -23,7 +23,7 @@ Every tariff comes wrapped in a rationale. Strip away the rhetoric and look at w
 
 **4. Government revenue.** *The sales pitch:* tariffs fund the government without raising income taxes. *The reality:* this was true in the nineteenth century, when customs houses were the only tax apparatus a state could run. Today, tariffs are an absurdly inefficient way to raise revenue — they distort trade in the collection and, because they fall on ordinary goods, they hit the poorest consumers hardest. If revenue is the goal, there are cleaner and fairer taxes.
 
-**5. Political patronage and populism.** *The sales pitch:* "I'm protecting your job from foreigners." *The reality:* political theatre at its most cynical. This is not a fifth argument so much as the truth behind the other four, and it deserves its own section.
+**5. Political patronage and populism.** *The sales pitch:* "I'm protecting your job from foreigners." *The reality:* political theatre at its most cynical. This is not a fifth argument so much as the truth behind the other four.
 
 ## Why the Refuted Policy Persists
 

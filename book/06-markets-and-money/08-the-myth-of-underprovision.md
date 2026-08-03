@@ -10,7 +10,7 @@ Standard public-goods theory identifies a coordination problem, not an automatic
 
 The canonical lighthouse case illustrates why institutional detail matters. British lights were sometimes built or operated by private parties, but light dues were collected through legally backed port systems and monopoly grants. That is neither pure voluntary provision nor simple tax-funded bureaucracy. It is a mixed arrangement that bundled a hard-to-exclude service with an excludable transaction. The example defeats categorical impossibility, not the existence of a free-rider problem.
 
-That inversion is worth dwelling on, because it is not an isolated embarrassment. It is the shape of the entire argument. Of the standard indictments of markets I answer in [Capitalism on Trial](06-capitalism-on-trial.md), the public-goods charge is the one wearing the most impressive technical dress, and so it deserves the fullest reply: the underprovision claim is not a discovery about the world. It is a model output whose assumptions contain its conclusion, and both history and technology testify against it.
+That inversion is not an isolated embarrassment; it is the shape of the entire argument. Of the standard indictments of markets I answer in [Capitalism on Trial](06-capitalism-on-trial.md), the public-goods charge has the most elaborate technical case and therefore warrants the fullest reply: the underprovision claim is not a discovery about the world. It is a model output whose assumptions contain its conclusion, and both history and technology testify against it.
 
 ## A Model, Not a Finding
 

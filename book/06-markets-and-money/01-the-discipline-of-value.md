@@ -52,7 +52,7 @@ That move is illicit unless explicitly declared.
 
 Voluntary exchange occurs only when each party values what he receives more than what he gives up.
 
-That is the mechanism. Not mystery. Not sentiment. Not semantic perfume.
+That is the mechanism. Not mystery. Not sentiment.
 
 If I trade X for Y, I do so because I value Y more than X. If you trade Y for X, you do so because you value X more than Y. If both of us value what we receive exactly as much as what we surrender, then we are indifferent. In that case there is no motive to exchange.
 
