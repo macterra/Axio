@@ -18,7 +18,7 @@ This is a real advance over the reinforcement-learning cartoon. Real agents do n
 
 The reason the paper reads as close to something Axionic is that it identifies a deeper primitive than reward: future structure itself. An agent with many live continuations has more agency than one pinned to a brittle line of motion. An agent with no meaningful future action-space is finished, whatever its reward register still reports. The genuine loss is never the loss of points. It is the loss of a future in which consequential action remains possible. This connects directly to the thermodynamic picture of the previous chapters — agency as the work an embedded agent does to bias reality toward preferred futures, against [the statistical slide toward drift](02-agency-against-drift.md). Occupancy is drift's mirror image: where drift is the collapse of the accessible future, occupancy is its defense.
 
-So far, so good. If reward is fuel, occupancy is the road still open ahead. That is the right correction, and I want to keep all of it.
+So far, so good. If reward is fuel, occupancy is the road still open ahead. That correction stands.
 
 ## Occupancy Is Blind
 

@@ -58,13 +58,13 @@ A last salvage attempt relegates "nothing" to the counterfactual domain: perhaps
 
 And notice what any asking of the original question already involves. To pose "why something rather than nothing?" is to occupy a standpoint from which alternatives are compared — a Vantage. Once such a standpoint exists, existence is already instantiated. The question presupposes precisely what it purports to explain.
 
-This is not an anthropic observation, and I want to block that reading firmly. The claim is not that the world exists because observers exist, or that our presence explains anything. It identifies a *constitutive constraint on contrastive explanation*: to meaningfully ask why A rather than B, one must already occupy a framework in which A and B can obtain or fail to obtain. That framework is not inferred from observation. It is presupposed by intelligibility itself.
+This is not an anthropic observation. The claim is not that the world exists because observers exist, or that our presence explains anything. It identifies a *constitutive constraint on contrastive explanation*: to meaningfully ask why A rather than B, one must already occupy a framework in which A and B can obtain or fail to obtain. That framework is not inferred from observation. It is presupposed by intelligibility itself.
 
 ## Objections
 
 Three objections recur, and each deserves a direct answer.
 
-*Nothingness doesn't care whether it denotes.* The objection imagines nothingness as serenely indifferent to our conceptual requirements — as if failing to denote were a criticism it could shrug off. But indifference is not a property a non-denotation can have. If "nothingness" fails to denote, there is no *it* to be indifferent, and it cannot function as an alternative; the contrastive question loses its footing regardless of anyone's serenity.
+*Nothingness doesn't care whether it denotes.* The objection treats denotation as a requirement imposed only by our language. But if "nothingness" fails to denote, there is no *it* to be indifferent, and it cannot function as an alternative; the contrastive question loses its footing.
 
 *If nothing obtained, all constraints would vanish — including yours.* The objection defeats itself in the stating. The conditional formulation — "if nothing obtains" — already presupposes modality: a space in which "nothing" is one way things could be, contrasted with others. To employ modal structure in order to deny modal structure is not profundity. It is inconsistency.
 
@@ -74,7 +74,7 @@ Three objections recur, and each deserves a direct answer.
 
 So the conditional resolution is this. Intelligible alternatives require a structured space of admissible states, and absolute nothingness cannot function as an ordinary state inside that framework. But a nonempty possibility space does not, by mathematics alone, guarantee concrete realization. That step depends on the Modal Realization Principle. The argument diagnoses the contrast with nothingness once those premises are granted; it does not derive existence from logic alone.
 
-At this point a familiar meta-question arises, and it feels like the real question finally showing its face: very well, but why does the modal framework itself exist rather than not? This question is not deeper than the original. It is **ill-typed** — a member of the family Volume 2 dissects in [When Statements Fail](../02-conditionalism/04-when-statements-fail.md), a well-formed string whose evaluability conditions have quietly gone unbound. Explanation operates within a space of admissible alternatives: to explain is to locate an outcome among the ways things could have gone. Asking why that space exists attempts to run the explanatory machinery outside the conditions under which explanation is defined — like asking what is north of the North Pole, in grammar that never flags the error.
+A familiar meta-question remains: why does the modal framework itself exist rather than not? This question is not deeper than the original. It is **ill-typed** — a member of the family Volume 2 dissects in [When Statements Fail](../02-conditionalism/04-when-statements-fail.md), a well-formed string whose evaluability conditions have quietly gone unbound. Explanation operates within a space of admissible alternatives: to explain is to locate an outcome among the ways things could have gone. Asking why that space exists attempts to run the explanatory machinery outside the conditions under which explanation is defined — like asking what is north of the North Pole, in grammar that never flags the error.
 
 The modal framework is not being posited as a cause, an entity, or a necessary being. It is identified as the minimal structure required for the intelligibility of alternatives. Where intelligibility ends, explanation does not fail. It ceases to apply.
 

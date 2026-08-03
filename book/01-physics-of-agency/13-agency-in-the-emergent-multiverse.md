@@ -78,7 +78,7 @@ The modest implication is enough: coordination and shared empirical inquiry requ
 
 ## The Honest Ledger
 
-The [objections chapter](04-the-three-laws-of-agency.md) promised that this chapter would keep the ledger on the framework's known gap. Here it is, stated without cushioning.
+The [objections chapter](04-the-three-laws-of-agency.md) promised that this chapter would keep the ledger on the framework's known gap. The gap is this:
 
 The claim that intentional distributional control has a general quantitative relationship to policy-conditioned Measure differences is not derived here. The thermodynamics establishes resource constraints and a lower bound in a restricted realization. The QBU supplies a modeled arena. The bridge between them — a general relationship among causal control, KL divergence, work, and conditional event weight — remains a commitment of the framework. In the spirit of [the ledgers Volume 2 keeps](../02-conditionalism/16-youre-not-a-random-branch.md), here is what a genuine derivation would need to supply:
 

@@ -32,7 +32,7 @@ where $[x]$ and $[y]$ are equivalence classes of strings — world states — an
 - **Closure.** If any string $s \in [x]$ is acted upon, the result belongs to some class $[y]$ — the mapping never falls out of the state space.
 - **Lawfulness.** The mapping respects the semantics defined by the filter; it never produces incoherent states.
 
-That is the whole definition, stated once. Persistence is what distinguishes a constructor from a mere event; closure and lawfulness are what distinguish it from noise that happens to shuffle bits. Everything else in this chapter is what the definition buys.
+That is the whole definition. Persistence is what distinguishes a constructor from a mere event; closure and lawfulness are what distinguish it from noise that happens to shuffle bits. Everything else in this chapter is what the definition buys.
 
 ## Transformation Without Change
 
