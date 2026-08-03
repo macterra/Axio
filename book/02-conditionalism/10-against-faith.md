@@ -24,7 +24,7 @@ It operates on two levels. Internal faith: an agent's self-model portrays one of
 
 Why does such a structure survive? Not because it tracks truth, but because it signals. A self-model that refuses to update confers social predictability: others can rely on its consistency, and communities built on shared commitments prize members whose commitments cannot be argued away. Faith signals loyalty, cohesion, identity. But the price of that stability is epistemic rot. When calibration is punished as doubt, the model loses feedback and becomes self-sealing — incapable of learning, and increasingly confident about it. Faith is not courage. It is inertia masquerading as conviction.
 
-That is the definition. The interesting question is whether anything survives it — whether there is any case in which a belief held immune to calibration is justifiable. The apologists have had centuries to assemble their case law. Take the defenses one at a time.
+That is the definition. Does anything survive it — is there any case in which a belief held immune to calibration is justifiable? The apologists have had centuries to assemble their case law. Take the defenses one at a time.
 
 ## Pragmatic Faith
 
@@ -58,7 +58,7 @@ By the calibration criterion this is the clearest case, because the rigidity is 
 
 The most sophisticated defense drops the epistemology altogether. From Kierkegaard's leap to Camus's revolt, the existentialists argue for faith as a necessity of the human situation: the will to affirm life despite absurdity, to commit where no sufficient reason can be had.
 
-I have real sympathy for this — and it concedes my case. What the existentialists call faith is better described as resolve. Choosing to act, to affirm, to go on living without a proof that life is worth it, is not an epistemic commitment at all; it is volitional courage, the same courage the pragmatic defense pointed at, raised to the scale of a whole life. No belief about the world need be held immune to evidence in order to make the affirmation. When faith becomes the will to live, it has ceased to be belief — and once it is not belief, the calibration criterion has nothing against it and never did.
+This defense concedes the case. What the existentialists call faith is better described as resolve. Choosing to act, to affirm, to go on living without a proof that life is worth it, is not an epistemic commitment at all; it is volitional courage, the same courage the pragmatic defense pointed at, raised to the scale of a whole life. No belief about the world need be held immune to evidence in order to make the affirmation. When faith becomes the will to live, it has ceased to be belief — and once it is not belief, the calibration criterion has nothing against it and never did.
 
 ## The Verdict
 

@@ -44,7 +44,7 @@ On this definition, philosophy is not a competitor to science. It is one practic
 
 ## Why Philosophy Cannot End
 
-A persistent error holds that philosophy dissolves once science advances far enough — that every philosophical question is either a scientific question in waiting or a confusion to be diagnosed and discarded. The error fails for a structural reason, and the structure is worth spelling out.
+A persistent error holds that philosophy dissolves once science advances far enough — that every philosophical question is either a scientific question in waiting or a confusion to be diagnosed and discarded. The error is structural:
 
 Any scientific method presupposes criteria for theory choice. Criteria for theory choice are normative — they say what a good theory *ought* to look like. Norms are not delivered by observation. Therefore scientific progress, however spectacular, cannot eliminate the need for philosophy.
 

@@ -9,9 +9,9 @@ sources:
   - 165272096.defending-bayes-part-8
 ---
 
-Ask a certain kind of Bayesian how confident he is that evolution by natural selection is true, and he will give you a number — 0.99999, say — as if he had just read a very reliable weather forecast. Ask the critical rationalists what they make of that number, and they will tell you it is not merely wrong but meaningless. David Deutsch, and Brett Hall following him, mount the most serious standing attack on Bayesianism in circulation: induction is a myth, theories are not the kind of thing that has a probability, and Bayesian epistemology — which appears to be induction dressed in arithmetic, assigning probabilities to theories — is therefore rotten at the root.
+Ask a certain kind of Bayesian how confident he is that evolution by natural selection is true, and he will give you a number — 0.99999, say — as if he had just read a very reliable weather forecast. Ask the critical rationalists what they make of that number, and they will tell you it is not merely wrong but meaningless. David Deutsch, and Brett Hall following him, mount the most serious standing attack on Bayesianism in circulation: induction is a myth, theories are not the kind of thing that has a probability, and Bayesian epistemology — which appears to restore induction through arithmetic by assigning probabilities to theories — is therefore rotten at the root.
 
-I think the critics are right about more than most Bayesians will admit, and wrong in a way that can be located precisely. The number attached to evolution is not meaningless; it is *mislabeled*. Getting the label right — seeing what the number is about — rescues Bayes from the critique while conceding everything in the critique that deserves to be conceded. That is the business of this chapter, and it discharges a debt: [what knowledge is](09-what-knowledge-is.md) drew the line between explanatory and empirical knowledge and deferred the question of whether explanatory theories can bear credences. Here is the answer.
+The critics identify a real error but locate it in the wrong place. The number attached to evolution is not meaningless; it is *mislabeled*. Getting the label right — seeing what the number is about — rescues Bayes from the critique while preserving its valid objections. [What Knowledge Is](09-what-knowledge-is.md) drew the line between explanatory and empirical knowledge and deferred the question of whether explanatory theories can bear credences. Here is the answer.
 
 ## The Critics' Case
 
@@ -25,7 +25,7 @@ Bayesianism, as the critics read it, commits both sins at once. Its priors over 
 
 ## What They Get Right
 
-A defense that concedes nothing convinces no one, and here there is real ground to give.
+There is real ground to give.
 
 Bayes' theorem contains no complete mechanism for generating hypotheses; it redistributes belief over a model space that must be created, revised, and sometimes expanded. A Bayesian who thinks updating alone explains where quantum mechanics came from has mistaken an accounting rule for a research program. Creative conjecture and criticism are indispensable, while Bayesian comparison can still help assess conjectures once likelihoods and priors have been stated.
 
@@ -37,7 +37,7 @@ But two errors keep the critics from stopping where their argument stops.
 
 The critique needs theories to be binary — flatly true or flatly false — so that any number strictly between zero and one marks a confusion. They are not binary. Newtonian mechanics is not false, full stop; it is valid to extraordinary accuracy within its domain and fails outside it. It was superseded by relativity and quantum mechanics, yet we still build bridges and fly spacecraft with it, and we are right to. A theory is contextually and approximately true — true *given* a domain, a scale, a tolerance — which is precisely the conditional structure that [all truth](02-all-truth-is-conditional.md) turns out to have. "Is Newtonian mechanics true?" is not a well-formed yes-or-no question until the conditions are filled in.
 
-Once theories have scope, accuracy, and limits, there are graded facts about them to be uncertain *of*. My uncertainty about a theory is rarely uncertainty about a single bit; it is uncertainty about where its domain ends, how good its approximations are, which of its idealizations will crack first. Those are exactly the kinds of questions that admit degrees of belief, because they resolve piecewise against evidence. The binary picture of theories — the picture the critique borrows without argument — is the same absolutism about truth this volume rejected in its opening chapters, wearing a lab coat.
+Once theories have scope, accuracy, and limits, there are graded facts about them to be uncertain *of*. My uncertainty about a theory is rarely uncertainty about a single bit; it is uncertainty about where its domain ends, how good its approximations are, which of its idealizations will crack first. Those are exactly the kinds of questions that admit degrees of belief, because they resolve piecewise against evidence. The binary picture of theories — the picture the critique borrows without argument — repeats the absolutism about truth this volume rejected in its opening chapters.
 
 ## The Second Error: Probability In, Credence About
 
