@@ -9,7 +9,7 @@ sources:
 
 A cartoon dog sits at a garden table under a rainbow, coffee steaming, flowers in bloom, and announces: "This is unbearable." The caption — *socialists living under capitalism* — made the rounds attached to a perfectly sincere claim: that socialism is growing in popularity because our lives under capitalism are miserable. The joke lands because the misery is being declared from inside the most comfortable material conditions any large population of humans has ever enjoyed.
 
-But a meme is not an acquittal. Capitalism has been on trial for two centuries, and the prosecution's case is not all rainbows-and-coffee ingratitude. Some of the charges are serious structural critiques that a thoughtful advocate must answer rather than wave away — and this Part of the volume is the answer. This chapter states the nine strongest charges, each at full strength, and gives each its reply. Where a charge is weighty enough to deserve a chapter of its own, I give the short answer here and the full answer in its own chapter.
+But a meme is not an acquittal. Capitalism has been on trial for two centuries, and the prosecution's case is not all rainbows-and-coffee ingratitude. Some of the charges are serious structural critiques that a thoughtful advocate must answer rather than wave away — and this Part of the volume is the answer. This chapter states the nine strongest charges in their strongest form and gives each its reply. Where a charge warrants a chapter of its own, the short answer appears here and the full answer in its own chapter.
 
 First, though, we need to establish who the defendant is.
 

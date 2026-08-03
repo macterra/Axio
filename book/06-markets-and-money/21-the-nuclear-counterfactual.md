@@ -33,7 +33,7 @@ $$1.5 \text{ million lives} \times \$10\text{M} \approx \$15 \text{ trillion}$$
 
 This is the largest entry because the selected rate and VSL dominate the arithmetic. Neither is sourced or validated here for this five-decade U.S. fuel mix, so the result is a scenario output, not a conservative empirical estimate.
 
-**Carbon.** Coal and gas emit roughly 0.7 tons of CO₂ per MWh; nuclear is near zero. Displace a third of fossil generation for fifty years and you avoid about **26 gigatons of CO₂**. To price it, the **social cost of carbon** — the present value of the future damage each ton does — runs anywhere from $50 to $200 per ton depending on the discount rate and the damage function you accept. That range is itself the honest output; I will not pretend to a point estimate the science does not support:
+**Carbon.** Coal and gas emit roughly 0.7 tons of CO₂ per MWh; nuclear is near zero. Displace a third of fossil generation for fifty years and you avoid about **26 gigatons of CO₂**. To price it, the **social cost of carbon** — the present value of the future damage each ton does — runs anywhere from $50 to $200 per ton depending on the discount rate and the damage function you accept. That range is the output the science supports, not a point estimate:
 
 $$26 \text{ Gt} \times \$50\text{–}200/\text{ton} \approx \$1.3\text{–}5.2 \text{ trillion}$$
 
