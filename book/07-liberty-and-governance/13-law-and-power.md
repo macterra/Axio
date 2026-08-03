@@ -37,7 +37,7 @@ Possible impunity is therefore diagnostic. Delayed, secret, dependent, or toothl
 
 ## The Tail That Wags the Dog
 
-If the top of the power distribution escapes the law, it is worth asking who the law is actually written for. The answer is another uncomfortable one: much of it is not written for you either. It is written for someone else — the small slice of the population whose behavior generates outsized risks, costs, and disruptions. In statistics, they are the tail of the distribution. In civic life, they drive policy far more than the median citizen ever will.
+If the top of the power distribution escapes the law, who is the law actually written for? The answer is another uncomfortable one: much of it is not written for you either. It is written for someone else — the small slice of the population whose behavior generates outsized risks, costs, and disruptions. In statistics, they are the tail of the distribution. In civic life, they drive policy far more than the median citizen ever will.
 
 Schools illustrate the dynamic: disciplinary systems often respond to a handful of chronically disruptive students, though the rules bind everyone. This is an engineering observation about likely failure points, not a moral ranking of students.
 
