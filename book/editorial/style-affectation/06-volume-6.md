@@ -2,11 +2,15 @@
 
 Date: 2026-08-03
 
-Status: **Complete; pending author review.**
+Status: **Complete; author-reviewed. ch14 reverted per David.**
 
-## Scope and result
+## Author-review adjustment (2026-08-03)
 
-All 26 chapters plus the Volume 6 introduction, *Markets and Money*, were read across all registers. Fifteen edits affect ten chapters: R1 = 6, R2 = 3, R3 = 6. Words move 50,385 to 50,247; em dashes 510 to 506 only through four demoted phrases. No structural metadata, heading, status, source, formula, or link-target change.
+David ruled that **ch14 (the cybernetic-ghost-of-satoshi) is deliberate signature**: its Halloween/ghost atmosphere is intentional voice, not affectation, so the chapter's opening and "Ritual of Continuity" prose are **protected and reverted to the original**. The four R3 "reaches" this batch had rationed (`digital spell`, `phoenix of math`, the Halloween revenant/mask stack, the renewing spell) are restored. This also restores the four incidental em dashes, so the merged batch holds em dashes exactly. **12 edits across 9 chapters** were merged (R1=6, R2=3, R3=2 — ch01 `semantic perfume`, ch13 proof-of-stake costume). ch14's atmosphere is now on the skill's protected list.
+
+## Scope and result (as merged)
+
+The remaining 12 edits were read across all registers. No structural metadata, heading, status, source, formula, or link-target change; em dashes held.
 
 ## Disposition
 
