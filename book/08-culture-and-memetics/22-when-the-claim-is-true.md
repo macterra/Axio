@@ -32,7 +32,7 @@ Fourth, credit and consequence. When the Nobel Prize went to Watson, Crick, and 
 
 ## Granting the Defense in Full
 
-An honest adjudication does not stack the record. The case for Watson and Crick has real content, and I will state it at full strength rather than the strawman strength that makes refutation easy.
+An adjudication must not stack the record. The case for Watson and Crick has real content:
 
 The relevant research groups exchanged information informally. The MRC report was internal but not marked confidential, and the archival record suggests Franklin expected Perutz to know and discuss its contents. Photograph 51 was under Gosling's control when it reached Wilkins. And all the parties published in the same 1953 issue of *Nature*: Franklin's own paper laid out experimental work under her name, so she was not written out of the scientific record.
 

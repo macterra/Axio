@@ -10,7 +10,7 @@ sources:
 
 Psychiatry claims scientific standing while also making value-laden judgments about distress, impairment, risk, and treatment. Its diagnostic categories have always changed with evidence, clinical practice, law, and social values. Change is therefore not itself evidence of capture. The question is whether revisions remain transparent, evidence-responsive, open to criticism, and consistently applied.
 
-That claim is now under strain, and the way it fails is instructive. It does not fail through a single dramatic betrayal. It fails through a set of small institutional adjustments, each defensible on its own, which together turn a truth-telling profession into an instrument of the tribe that captured it. Psychiatry is worth dwelling on not because it is the worst case — it is not — but because it fails so legibly. The pattern it reveals is transferable. Once you can name the symptoms in one profession, you can find them in any profession whose authority rests on being trusted to tell an inconvenient truth.
+That claim is now under strain, and the way it fails is instructive. It does not fail through a single dramatic betrayal. It fails through a set of small institutional adjustments, each defensible on its own, which together turn a truth-telling profession into an instrument of the tribe that captured it. Psychiatry is not the worst case, but it fails legibly enough to reveal a transferable pattern. Once you can name the symptoms in one profession, you can find them in any profession whose authority rests on being trusted to tell an inconvenient truth.
 
 ## The Five Symptoms
 

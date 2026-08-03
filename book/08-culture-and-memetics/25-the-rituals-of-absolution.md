@@ -29,7 +29,7 @@ There is a stronger defense, and it deserves a full hearing. A symbolic act can 
 
 There is a bad response on the other side, too, which is to sneer at the history itself. That misses the target. Land was taken. Treaties were broken. Peoples were displaced, and political orders imposed by force were later moralized as destiny. Acknowledging those facts requires no progressive metaphysics; it requires only reading history without the narcotic of patriotic innocence. Human political history is saturated with conquest, and that saturation dissolves no particular claim — a murder rate above zero does not make any particular murder less real. The ubiquity of conquest tells us something about the species; it does not tell us whether *this* treaty was violated or whether *this* institution inherited an obligation it prefers to sublimate into ceremony. Working out who holds a defensible claim to a given territory is real, difficult, case-by-case work, and Volume 7 takes up its hardest version under [borders and movement](../07-liberty-and-governance/16-borders-and-movement.md). The point here is narrower: land acknowledgments are not too radical. They are far too timid. They invoke the moral vocabulary of theft and illegitimacy and then decline to follow the logic to any costly conclusion.
 
-The honest version would be almost unbearably short:
+The institutional position is almost unbearably short:
 
 > We believe this land was taken unjustly, and we intend to keep it.
 
@@ -71,7 +71,7 @@ The adjudicative question is local: what happened here, which current institutio
 
 ## The Foil: When Renaming Is Not a Ritual
 
-None of this is an argument that symbolic reform is always empty, and the argument would be dishonest if it pretended otherwise. There is a symbolic change I endorse, and setting it beside the others shows exactly where the line runs.
+Symbolic reform is not always empty. There is a symbolic change I endorse, and setting it beside the others shows exactly where the line runs.
 
 "Middle East" is a term of transparently Eurocentric origin, tethered to the colonial maps and strategic calculations of the British Empire; geographically it makes sense only from a European vantage, naming a region that lies between Europe (the "West") and Asia (the "East"). "West Asia" is available, accurate, and neutral — it locates the region within the continent it occupies, intelligibly to anyone on Earth regardless of vantage. There is precedent: "Oriental," once entrenched, was largely replaced by "Asian," a term more accurate and more neutral, which shows that embedded labels can evolve when better alternatives win acceptance. I think the change is worth making.
 
