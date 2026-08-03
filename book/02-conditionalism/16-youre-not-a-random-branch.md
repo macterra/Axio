@@ -26,7 +26,7 @@ If you felt the pull of that, notice what it would commit you to: our 99/1 exper
 
 So branch-counting gives the wrong numbers. But the deeper trouble is that there is no right number to count. Worlds aren't pebbles. They aren't fundamental objects the universe keeps an inventory of; they're emergent patterns that come into focus as a measurement bleeds out into its environment. How many are there after a single measurement? It depends on how finely you choose to slice — how much of the environment you bother to track, where you draw the lines. You can always split one "world" into two more just by looking closer. A quantity you can change by changing your own bookkeeping cannot be what probability is made of.
 
-This is the same mistake the anthropic theories made, wearing a new costume. SSA and SIA went wrong by treating counting observers as the basic operation. Branch-counting goes wrong by treating counting worlds as the basic operation. Counting was never the right tool.
+This is the same mistake the anthropic theories made in a new form. SSA and SIA went wrong by treating counting observers as the basic operation. Branch-counting goes wrong by treating counting worlds as the basic operation. Counting was never the right tool.
 
 ## Stop Counting, Start Weighing
 
@@ -50,7 +50,7 @@ And it addresses the thing that looked most paradoxical: why we observe Born fre
 
 ## The Honest Version
 
-Now the part the careful version of this argument insists on — and the reason it's worth trusting.
+The careful version of this argument carries two explicit assumptions.
 
 It does not claim to conjure probability out of thin air. It rests on two assumptions, named out loud:
 
@@ -59,9 +59,9 @@ It does not claim to conjure probability out of thin air. It rests on two assump
 
 Grant both and the famous rule follows. Refuse either and it doesn't. That's the whole machine; no sleight of hand. The formal treatment, [Born Measure from Self-Location](/papers/BMSL.html), makes a point of setting these on the table rather than smuggling them in, because nearly every rival account of quantum probability quietly assumes something just as strong somewhere and calls the result a derivation.
 
-Two hard questions survive even after you grant the setup. Why the square of the amplitude, rather than some other power of it? And — the deepest worry of all — even granting that the indexical "which branch am I in?" is a real uncertainty, is the attitude it supports genuinely probability, or just probability's mathematics worn by an unfamiliar kind of ignorance? Critics from Albert to Kent push hard right here, and the honest reply concedes that part of the dispute is about words. What is not in dispute is that the weights reproduce the statistics we measure — whatever we end up calling the confidence that tracks them.
+Two hard questions survive even after you grant the setup. Why the square of the amplitude, rather than some other power of it? And — the deepest worry of all — even granting that the indexical "which branch am I in?" is a real uncertainty, is the attitude it supports genuinely probability, or just probability's mathematics worn by an unfamiliar kind of ignorance? Critics from Albert to Kent push hard right here, and the reply concedes that part of the dispute is about words. What is not in dispute is that the weights reproduce the statistics we measure — whatever we end up calling the confidence that tracks them.
 
-The honest answer, for a while, was: these are real, unsolved, and at least now they're isolated cleanly enough to argue about one at a time.
+The answer, for a while, was: these are real, unsolved, and at least now they're isolated cleanly enough to argue about one at a time.
 
 ## From Assumption to Theorem
 
@@ -79,7 +79,7 @@ Put together, the result narrows the available weighting rules under its structu
 
 ## A Branching Implementation of Refinement
 
-There's one move in that second treatment too good not to share, because it's the rare spot where many-worlds helps instead of hurting.
+The second treatment makes the refinement requirement concrete within many-worlds, one of the rare spots where many-worlds helps instead of hurting.
 
 The theorem needs the induced weight to remain consistent across admissible refinements of an event representation. Treating those refinements as a census of literal worlds would beg the question; the relevant objects are decompositions within the formal model.
 
@@ -87,9 +87,9 @@ The local application proposes using a quantum-controlled ancillary system so th
 
 ## What This Still Doesn't Solve
 
-Same rule as the companion chapter: name the open problems instead of hiding them.
+Four open problems remain.
 
-- The deepest one is unchanged. Whether indexical self-locating confidence, in a fully deterministic branching world, amounts to genuine probability or to a look-alike attitude wearing the same math is exactly as unsettled here as it was for the anthropic puzzles. The numbers are cleaner; the question underneath is the same one, and this account leans on self-location being legitimate rather than proving it from nothing.
+- The deepest one is unchanged. Whether indexical self-locating confidence, in a fully deterministic branching world, amounts to genuine probability or only shares its mathematics is exactly as unsettled here as it was for the anthropic puzzles. The numbers are cleaner; the question underneath is the same one, and this account leans on self-location being legitimate rather than proving it from nothing.
 
 - It still assumes one genuine epistemic premise — that your confidence answers only to what evidence could in principle reveal. Reasonable, widely held, but a posit, not a proof. Someone is free to reject it, and at least one recent rival does exactly that, building an indexed branch-counting rule that deliberately disagrees with the textbook odds. That fight is live, and the second treatment engages it head-on.
 
@@ -97,7 +97,7 @@ Same rule as the companion chapter: name the open problems instead of hiding the
 
 - Low-Measure witnesses remain. A continuation that recorded red almost every time is real within the Everettian model and is locally convinced of the wrong odds. A critic can press that the theory therefore contains observers for whom induction reliably misfires. The reply is that confirmation tracks Measure, not existence: the aggregate record sector no more refutes quantum mechanics than a fair coin landing heads a thousand times running refutes a probabilistic model. A narrower contrast survives: collapse pictures say the maverick run merely could occur, while Everett represents a nonzero sector in which it does.
 
-These are honest debts, written into a closing ledger rather than swept under a rug.
+These debts remain in the closing ledger.
 
 ## One Story, Told Twice
 

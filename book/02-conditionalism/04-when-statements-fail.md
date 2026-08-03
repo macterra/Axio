@@ -67,7 +67,7 @@ Notice what the construction concedes. Even the kernel is circular: words define
 
 All of this cashes out in how you answer questions. There is a standing position among some rationalists that prizes blunt binary answers to loaded questions as the mark of intellectual honesty — an eval for epistemic courage. Is God real? *No.* Does superintelligent AI pose a major extinction risk to humanity? *Yes.* Does blockchain have a use case a regular database couldn't serve better? *No.* On this view, the right answers are the ones that resist social conformity: religion pressures you to hedge on the first, complacency on the second, hype on the third, and refusing to hedge is the whole test.
 
-The courage is real and I do not want to dismiss it. But run the three questions through the taxonomy and each turns out to be crooked — a straight answer to any of them smuggles in a binding the question never made.
+That courage matters. But run the three questions through the taxonomy and each turns out to be crooked — a straight answer to any of them smuggles in a binding the question never made.
 
 *Is God real?* If "God" names a supernatural being who intervenes in history: no. If it is a metaphor for coherence or sacredness: yes, those referents exist. And some formulations are ill-posed outright — the term is doing standardless, reference-shifting work that no single binding captures. The question looks binary because the indexical machinery is hidden.
 

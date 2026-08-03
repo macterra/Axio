@@ -78,14 +78,14 @@ This is the hardest part of the framework. I do not claim to have a complete the
 
 ## What This Doesn't Solve
 
-I want to be forthright about the limits:
+The limits are these:
 
 - MCSL does not yet have a complete theory of admissibility — the exact line between genuine and counterfeit realizations.
 - It does not fully solve the Presumptuous Philosopher when a theory predicts many exact copies of *you specifically* (as opposed to just many generic observers).
 - It does not prove from first principles that Boltzmann brains should be excluded.
 - It presupposes a physical framework rather than building everything from scratch out of pure subjective experience.
 
-But these are honest open problems, not hidden failures. Identifying the *right* open problems is more valuable than pretending to have solved the wrong ones.
+These are open problems, not hidden failures. Identifying the *right* open problems is more valuable than pretending to have solved the wrong ones.
 
 ## From Counting to Weighing
 

@@ -9,7 +9,7 @@ sources:
 
 A mugger hints that he has something concealed in his jacket. It could be a firearm; it could be a toy. The victim has to evaluate a proposition — *the concealed weapon is real* — and has to do it now, with a wallet in the balance. At what point does the victim's suspicion become a belief? Not at certainty; certainty never arrives, in this alley or anywhere else. The natural answer is: at the point where the assessment starts driving behavior. When the victim's confidence that the weapon is real gets high enough that handing over the wallet becomes the rational move, and the wallet is handed over, something has crossed a line. Whatever we mean by *belief*, that crossing is it.
 
-That answer is nearly right, and I held it for a while in exactly that form. This chapter starts there, follows it until it creaks, and ends somewhere more radical: beliefs are not things agents have at all. They are features of *models* of agents — including the model each agent keeps of itself. Getting from the first picture to the second is not a retraction; it is a refinement, and the first picture survives inside the second as a special case. But the destination changes what kind of thing a belief is, so it is worth making the trip carefully.
+That answer is nearly right. This chapter starts there, follows it until it creaks, and ends somewhere more radical: beliefs are not things agents have at all. They are features of *models* of agents — including the model each agent keeps of itself. Getting from the first picture to the second is not a retraction; it is a refinement, and the first picture survives inside the second as a special case. But the destination changes what kind of thing a belief is, so the distinction needs care.
 
 ## Credence with Teeth
 
