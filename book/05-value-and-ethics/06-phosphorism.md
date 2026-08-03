@@ -52,7 +52,7 @@ I call the synthesis Phosphorism — the light-bearing stance, a framework of co
 
 Three features define the list. First, it is *avowedly subjective*. Phosphorism claims no agent-independent moral authority; these are preferences, consciously chosen and openly owned, not commandments discovered. They bind the author as commitments and can supply standards for a community that adopts them. Their application to non-adopters or use in coercive institutions requires further premises and legitimacy; choosing them does not turn them into universal law.
 
-Second, it is *revisable*. Phosphorism treats reflective practice as constitutive, not optional: chosen values must be continuously re-examined against new experience, evidence, and understanding. A Phosphorist who froze the list would have relapsed into Vitalism with better furniture — holding values by inheritance, merely from a younger ancestor.
+Second, it is *revisable*. Phosphorism treats reflective practice as constitutive, not optional: chosen values must be continuously re-examined against new experience, evidence, and understanding. A Phosphorist who froze the list would have relapsed into Vitalism — holding values by inheritance, merely from a younger ancestor.
 
 Third, it reconciles the thesis and antithesis rather than splitting the difference. Notice that "life over death" tops the list: Phosphorism recovers most of what Vitalism valued — life, thriving, continuity — but holds it the way Valorism demanded, as an explicit choice that could have gone otherwise and must keep earning its place. The difference between a Vitalist and a Phosphorist is not, on an ordinary day, what they do. It is that one of them could tell you why.
 

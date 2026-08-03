@@ -39,7 +39,7 @@ The distinction matters because the branching architecture is precisely what an 
 
 ## Taking the Animal Evidence Seriously
 
-The honest test of this line is the animal case, and I want to meet it at its strongest rather than its weakest, because the strong version is formidable and a serious view has to survive it.
+The animal case is the strongest test of this line because its strong version is formidable and a serious view has to survive it.
 
 Animals are not mere mechanisms. Many species provide strong convergent evidence of sentience through behavior, physiology, neural organization, learning, and evolutionary continuity. They navigate, improvise, form attachments, and give us serious reason to believe they suffer. The point is not deductive certainty about every species; it is that uncertainty cannot be manufactured into indifference to protect a thesis.
 
