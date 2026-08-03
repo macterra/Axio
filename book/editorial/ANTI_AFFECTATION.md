@@ -94,11 +94,14 @@ rg -n -i "with better \w+|in a lab coat|in a (black )?suit|in the opposite jerse
 
 Not every hit is guilty: "at full strength" and "true, full stop" have
 load-bearing uses; "unpopular opinion" can be substantive. Judge each in place.
-The `with better ___` grep is deliberately noisy — the tic is only the dismissive
+The `with better ___` grep is deliberately noisy — the tic is only the *dismissive*
 formula *<abstract noun> with better <concrete noun>* ("utopia with better
 manners", "paternalism with better branding", "barbarism with better
-stationery", "naturalism with better poetry"). Ignore the substantive uses
-("traders with better models", "a doctor with better outcomes").
+stationery"), where X is *just* Y in superficial dress. Ignore the substantive
+uses ("traders with better models", "a doctor with better outcomes"), and keep
+an *appreciative* or argument-compressing use of the shape — e.g. "Einstein
+turns theism into naturalism with better poetry" credits a genuine aesthetic
+gain and is a signature epigram, not the tic.
 
 ## Disposition, not eradication
 
