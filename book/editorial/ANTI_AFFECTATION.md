@@ -36,9 +36,9 @@ protected list before removing anything.
 
 | Register | Tell | Book examples | Fix |
 |---|---|---|---|
-| **1. Meta-signposting** | The prose leaves the argument to announce what it is doing or that a point is important, interesting, or deep. (Extends anti-slop's *significance announcer* and *structural lampshading*.) | "A note on names, **stated once**"; "The **interesting question** is…"; "deserves **its own** treatment"; "it is **worth pausing / dwelling**"; "**Here is the move / the reframe**"; "the question that **does the real work**" | Delete the frame; make the move. The reader finds the interesting, load-bearing part by reading it — pointing at it is a tell and is faintly condescending. |
+| **1. Meta-signposting** | The prose leaves the argument to announce what it is doing or that a point is important, interesting, or deep. (Extends anti-slop's *significance announcer* and *structural lampshading*.) | "A note on names, **stated once**"; "The **interesting question** is…"; "deserves **its own** treatment"; "it is **worth pausing / dwelling**"; "**Here is the move / the reframe**"; "the question that **does the real work**" | **Tiered.** Auto-cut the pure announcers — "stated once", "worth pausing / dwelling", "Here is the move / the reframe", "does the real work". Judge "the interesting question / fact / part" and "deserves its own treatment" per instance (a few are legitimate). Delete the frame and make the move — pointing at the load-bearing part is a tell and is faintly condescending. |
 | **2. Performed candor / courage / humility / fairness** | The writer advertises a virtue instead of enacting it: staged bluntness, staged modesty, staged steelmanning. | "the uncomfortable part, **which I refuse to soften**"; "Here it is, **stated without cushioning**"; "**I bite that bullet in the open**"; "here **I concede more than the polemic requires**"; "and I **know how that sounds**"; "I intend to take it **at full strength**" / "meet it **at its strongest**"; "**I will not pretend** otherwise" (recurs 7×) | Just do it on the page. Be blunt without announcing bluntness; state the strong version of the opponent without narrating your fairness; make the concession plainly. Delete the virtue-signal, keep the act. |
-| **3. Forced cleverness / twee metaphor** | A phrase reaching to be memorable at the expense of the point: strained or cutesy metaphor, stacked alliteration, engineered aphorism, formula wit. Purple prose — grandiose, lush over-reach — is the far end of this register. | "**semantic perfume**"; "a digital spell summoning a self-organizing organism"; "a **phoenix of math**"; "camouflage for cowardice, marketing for mediocrity, fig leaves for failure"; the costume formula — "relativism **in a lab coat**", "the pond fallacy **in a black suit**", "the same disease **in the opposite jersey**"; the "**X with better ___**" formula — "paternalism with better **branding**", "Vitalism with better **furniture**"; "the buck stops **in the beholding**" | Say it plainly. If a metaphor earns its place (below), keep **one** per passage, not three. Prefer a concrete plain word to a clever near-miss. |
+| **3. Forced cleverness / twee metaphor** | A phrase reaching to be memorable at the expense of the point: strained or cutesy metaphor, stacked alliteration, engineered aphorism, formula wit. Purple prose — grandiose, lush over-reach — is the far end of this register. | "**semantic perfume**"; "a digital spell summoning a self-organizing organism"; "a **phoenix of math**"; "camouflage for cowardice, marketing for mediocrity, fig leaves for failure"; the costume formula — "relativism **in a lab coat**", "the pond fallacy **in a black suit**", "the same disease **in the opposite jersey**"; the "**X with better ___**" formula — "paternalism with better **branding**", "Vitalism with better **furniture**"; "the buck stops **in the beholding**" | **Cut the misfires in-batch — these are dispositions, not proposals.** Say it plainly; prefer a concrete plain word to a clever near-miss. The keep/cut test is the guard: a line that earns its place (the passage's one controlling image, a motto, an argument-compressing epigram) is kept; anything that fails it is cut; flag only a line you genuinely cannot call. |
 
 ## The keep/cut test
 
@@ -61,9 +61,15 @@ working**, not affectation. Do not cut:
 - a volume motto or deliberate refrain (e.g. "Keep the hunger; question the haunting");
 - an epigram that *compresses* the argument rather than decorating it ("Waste is safer than theft").
 
-When a line is plausibly signature rather than affectation, **flag it for the
-author and leave it in.** Contested voice calls belong to David, exactly as in
-Phase 10 — the editor disposes the clear tics and proposes the rest.
+**Author-protected epigrams (never cut, even if flagged):** "Keep the hunger;
+question the haunting" (09/01), "Evil is not the refutation of this ethics; it
+is the receipt" (05/27), "Both think they are gardeners. Both behave like
+arsonists" (09/17), "Every arrow pays its own rent" (02/21).
+
+When a line is genuinely borderline — you cannot confidently call it signature
+or misfire — **flag it for the author and leave it in.** That safety valve is
+for real uncertainty, not for the obvious reach-too-hard cases, which are cut.
+A protected line is never cut on the editor's own judgment.
 
 ## Detectable tics — run the greps
 
@@ -102,8 +108,8 @@ worse, not better.
 Run this as a bounded per-volume/per-parts pass, same cadence and discipline as
 the Phase 10 anti-slop batches.
 
-- **Registers 1–2 are high-confidence.** Dispose them in the batch; log each edit in the batch ledger under `book/editorial/style-affectation/` (or the agreed path) with the before/after.
-- **Register 3 is judgment + voice-risk. Propose, do not auto-apply.** Put every twee/epigram candidate and every plausibly-signature line in the ledger as *proposed — author decision*, and ping David's pane. Never flatten a signature line on the editor's own call.
+- **Register 1 is tiered; Register 2 is cut-the-performance-keep-the-act.** Dispose the pure meta-announcers ("stated once", "worth pausing/dwelling", "Here is the move", "does the real work") and the candor/humility wrappers ("I will not pretend", "I know how that sounds", "I refuse to soften", "I bite that bullet", staged "at full strength") in the batch, keeping the underlying claim or concession. Judge "the interesting question" and "deserves its own treatment" per instance. Log each edit in the batch ledger under `book/editorial/style-affectation/` with the before/after.
+- **Register 3 misfires are disposed in-batch too, gated by the keep/cut test.** Cut the reach-too-hard metaphors, purple over-reach, and the costume / "X with better ___" formulas. KEEP the author-protected epigrams (above) and any passage's one controlling image. Ping David's pane only for a line you genuinely cannot call signature-vs-misfire — not for the obvious misfires, and never cut a protected line on the editor's own judgment.
 - **Hold em-dashes.** The em-dash cadence is settled: leave as-is. This pass touches em-dashes only when a demoted phrase happens to remove one; never as a target.
 - **Preserve claims and firewalls exactly** as in the anti-slop pass — no canonical definition, claim boundary, or firewall may move.
 - **Per batch:** scope check (no title / subtitle / heading / status / source changes), `verify-book.py` full pass (byte-reproducibility, routes, glossary, 252 records still `review`), ledger with claim guards, PR comment with the disposition, and a ping when the review is ready.
