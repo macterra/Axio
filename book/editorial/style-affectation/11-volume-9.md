@@ -2,7 +2,11 @@
 
 Date: 2026-08-03
 
-Status: **Complete; pending author review.**
+Status: **Complete; author-reviewed. ch03 epigram reverted per David.**
+
+## Author-review adjustment (2026-08-03)
+
+David ruled the ch03 bolded epigram "Einstein turns theism into **naturalism with better poetry**" is signature, not affectation: the "X with better ___" shape is used *appreciatively* (crediting a genuine aesthetic gain), not dismissively, and it is an argument-compressing set-piece line. The R3 rewrite ("redescribes naturalism in theistic vocabulary") is **reverted to the original**. Refinement now in the skill: the dismissive "X with better Y" formula is the tic; an appreciative or argument-compressing use of the shape is signature — keep it. The other 4 edits stand. This restores em dashes to hold exactly.
 
 ## Scope and result
 
