@@ -21,7 +21,7 @@ So the people diagnosing clown world are seeing something. The mistake is not in
 
 ## The Error: Contingency Is Not Collapse
 
-Here is the move to refuse. To recognize that values are *contingent* — that they depend on culture, history, biology, the kind of creatures we happen to be — is not to abolish them. It is to see them clearly. Contingency and collapse are being run together, and they are not the same.
+Refuse this inference: to recognize that values are *contingent* — that they depend on culture, history, biology, the kind of creatures we happen to be — is not to abolish them. It is to see them clearly. Contingency and collapse are being run together, and they are not the same.
 
 A value does not stop mattering when you learn where it came from. My commitment to honesty does not evaporate when I understand it as historically and biologically shaped rather than decreed from outside the universe. Reflective ownership need not reject inheritance: I can examine, reaffirm, revise, and become answerable for a value first learned from others. The source does not settle the commitment's worth, and a naturalistic genealogy does not dissolve it.
 
