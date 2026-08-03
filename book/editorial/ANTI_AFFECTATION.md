@@ -66,6 +66,11 @@ question the haunting" (09/01), "Evil is not the refutation of this ethics; it
 is the receipt" (05/27), "Both think they are gardeners. Both behave like
 arsonists" (09/17), "Every arrow pays its own rent" (02/21).
 
+**Author-protected atmospheric prose:** `06-markets-and-money/14-the-cybernetic-ghost-of-satoshi.md`
+— its Halloween/ghost opening and "Ritual of Continuity" prose are deliberate
+signature (the chapter is *themed* on the ghost), not affectation. Do not
+ration, flatten, or de-purple it.
+
 When a line is genuinely borderline — you cannot confidently call it signature
 or misfire — **flag it for the author and leave it in.** That safety valve is
 for real uncertainty, not for the obvious reach-too-hard cases, which are cut.
