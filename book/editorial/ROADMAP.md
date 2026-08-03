@@ -2,7 +2,7 @@
 
 *A dependency-first plan for turning the complete first draft into a coherent, rigorous, final manuscript.*
 
-Status: **Phase 10 style review is in progress.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages remain in `review`. Final promotion requires completion of the anti-slop prose pass and explicit author approval. Phase 11 records later blog-to-book reconciliation work and remains optional relative to promotion.
+Status: **Phase 11 anti-affectation review is complete; promotion is author-gated.** The manuscript contains nine volumes, 240 volume chapters, nine volume introductions, and three front-matter pages. All 252 manuscript pages remain in `review`. Phase 10 applied the anti-slop guide across the complete manuscript; Phase 11 applied the anti-affectation guide across all nine volumes. Final promotion now requires David's explicit approval. Phase 12 records later blog-to-book reconciliation work and remains optional relative to promotion.
 
 ## Progress at a glance
 
@@ -16,9 +16,10 @@ Status: **Phase 10 style review is in progress.** The manuscript contains nine v
 | 6. Reader-facing glossary | **Complete** | All 101 canonical terms publish with defining-chapter links and visible calibration. |
 | 7. Compression and prose | **Complete** | Local passes and all 25 bounded cross-volume families are complete; every repetition-ledger row has a disposition. |
 | 8. Framing material | **Complete** | Front matter, introductions, conclusions, book and chapter labels, part labels, and navigation handoffs match the reviewed manuscript. |
-| 9. Verification and promotion | **Verification complete; promotion gated** | Automated inventories, dated external-link review, stale-language closeout, and continuous reading of all nine volumes are complete. Promotion follows Phase 10 and explicit author approval. |
-| 10. Anti-slop prose review | **In progress** | The repeatable baseline covers all 252 pages; bounded manuscript batches follow in reading order. |
-| 11. Post-review blog reconciliation | **Planned** | Reconcile nine July 2026 posts added after the reviewed manuscript stabilized; prioritize three material update candidates and record dispositions for all nine. |
+| 9. Verification and promotion | **Verification complete; promotion gated** | Automated inventories, dated external-link review, stale-language closeout, and continuous reading of all nine volumes are complete. Promotion requires explicit author approval. |
+| 10. Anti-slop prose review | **Complete** | All 252 manuscript pages received explicit dispositions across 17 bounded batches; accepted edits are merged and reproducibly built. |
+| 11. Anti-affectation prose review | **Complete** | All nine volumes passed the three-register review; author calibrations protect substantive reasons, earned epigrams, deliberate atmosphere, the double envoi, and the final sentence. |
+| 12. Post-review blog reconciliation | **Planned** | Reconcile nine July 2026 posts added after the reviewed manuscript stabilized; prioritize three material update candidates and record dispositions for all nine. |
 
 Completed controls now cover all 243 argument-map records, nine architecture memos, nine volume-edit records, eight reconciliation records, and the reader-facing glossary audit. The complete book build and internal-link validation passed after the Volume 2 probability supersession integration; compatibility redirects preserve the public URLs of moved and renumbered chapters.
 
@@ -396,7 +397,7 @@ Promote status deliberately:
 
 ## Phase 10 — Anti-slop prose review
 
-Progress: **In progress.** `style/00-inventory-and-sequencing.md`, `style/00-baseline.csv`, and `style-audit.py` establish the 252-page baseline and bounded review sequence. Apply `book/editorial/STYLE_GUIDE.md` to every manuscript page before promotion. This chapter-by-chapter prose audit uses global searches as leads for close reading. The guide's banned constructions and mandatory counting rule govern the pass; the book's established definitions, claim calibration, evidentiary boundaries, and surviving signature lines govern what an edit may change.
+Progress: **Complete.** `style/00-inventory-and-sequencing.md`, `style/00-baseline.csv`, and `style-audit.py` establish the 252-page baseline and bounded review sequence. Seventeen merged batches applied `book/editorial/STYLE_GUIDE.md` to every manuscript page. The chapter-by-chapter audit used global searches as leads for close reading while preserving established definitions, claim calibration, evidentiary boundaries, and signature lines. Em-dash cadence was explicitly held rather than treated as a reduction target.
 
 Open an inventory covering all 252 pages: the three front-matter pages, nine volume introductions, and 240 volume chapters. Review in volume order so local cadence decisions can be tested in sequence. For every page, record:
 
@@ -422,7 +423,21 @@ After all nine volumes, review the front matter and volume introductions against
 
 **Exit:** All 252 manuscript pages have explicit style dispositions; every accepted edit is merged and reproducibly built; every surviving banned construction has an author-recorded reason; affected sequences pass continuous reading; and the author has a clean manuscript on which to make the `review → final` decision.
 
-## Phase 11 — Post-review blog reconciliation
+## Phase 11 — Anti-affectation prose review
+
+Progress: **Complete.** PRs #145–155 applied `book/editorial/ANTI_AFFECTATION.md` across all nine volumes, beginning with a Volume 3 pilot and continuing in bounded volume or part batches. The pass reviewed three registers: meta-signposting, performed candor/courage/humility/fairness, and forced cleverness or twee metaphor.
+
+The rollout established and retained three author-calibrated guards:
+
+- remove a candor wrapper but preserve every substantive reason or because-clause it carries;
+- protect earned epigrams and argument-compressing signature lines rather than treating every memorable phrase as a formula tic; and
+- treat sustained thematic or atmospheric prose as deliberate voice, rationing only stray purple pile-ons.
+
+The author-protected epigrams, Volume 6's cybernetic-ghost atmosphere, Volume 9's meaning register, the double envoi, and the book's final sentence remain intact. Each batch recorded dispositions under `style-affectation/`, preserved the Phase 5–10 claim firewalls, and passed `verify-book.py`. The final whole-book state is reproducible, and all 252 pages remain in `review` pending David's decision.
+
+**Exit:** All nine volumes have explicit anti-affectation dispositions; accepted edits are merged; contested voice belongs to the author; the deterministic build is clean; and the manuscript is ready for the separately gated promotion decision.
+
+## Phase 12 — Post-review blog reconciliation
 
 Progress: **Planned.** Nine published posts dated July 16–26, 2026 entered the archive after the reviewed manuscript had stabilized. They are indexed in `book/catalog.csv` but have not yet received formal book-integration dispositions.
 
@@ -449,7 +464,7 @@ Give explicit, lighter-weight dispositions to:
 - **The Provenance Fallacy** — verify coverage by the AI-process disclosure and the authorship/credential arguments.
 - **The Probability of an Alternate History** — verify that its application adds no claim beyond the model-relative QBU counterfactual treatment in Volumes 1 and 2.
 
-Any integration must use the same Phase 5–10 guards. Canonical definitions govern. Later posts remain within the established teleology, objective-value, Measure/Credence, harm/coercion, cultural-agency, metaphor, and style boundaries. Correctness edits bound the false claim while preserving the surrounding voice. Re-run `verify-book.py`, internal routes, glossary, navigation, and continuous reading of every affected sequence. If chapters have already been promoted to `final`, any material edit returns the affected records to `review` until the author approves them again.
+Any integration must use the same Phase 5–11 guards. Canonical definitions govern. Later posts remain within the established teleology, objective-value, Measure/Credence, harm/coercion, cultural-agency, metaphor, and style boundaries. Correctness edits bound the false claim while preserving the surrounding voice. Re-run `verify-book.py`, internal routes, glossary, navigation, and continuous reading of every affected sequence. If chapters have already been promoted to `final`, any material edit returns the affected records to `review` until the author approves them again.
 
 **Exit:** All nine posts have explicit dispositions; every accepted update is integrated and verified; deferred material is recorded for a later edition; and no chapter remains `final` after a material unreviewed change.
 
@@ -470,4 +485,4 @@ Apply the same workflow to each volume:
 
 ## Immediate next milestone
 
-Phase 9 verification is complete, including continuous reading and copyedit records for all nine volumes. Phase 10 is the immediate milestone: apply `STYLE_GUIDE.md` to all 252 manuscript pages and close the resulting prose inventory. Promotion follows that pass and the author's explicit `review → final` decision. Phase 11 remains a bounded reconciliation of the nine July 2026 blog posts and may run before promotion or as later-edition maintenance. Promotion requires author approval. Material revisions return any affected `final` page to `review` until renewed approval.
+Phases 9–11 are complete: verification and continuous reading, the 252-page anti-slop pass, and the nine-volume anti-affectation pass all have clean merged records and reproducible builds. The immediate milestone is David's explicit `review → final` decision; the clean manuscript does not authorize promotion by itself. Phase 12 remains a bounded reconciliation of the nine July 2026 blog posts and may run before promotion or as later-edition maintenance. Material revisions return any affected `final` page to `review` until renewed approval.
