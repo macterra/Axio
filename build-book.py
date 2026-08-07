@@ -513,7 +513,10 @@ def build_book_index(manifest, volumes, publish_index):
     if manifest.get('subtitle'):
         content += f"<p class='paper-subtitle'>{escape(manifest['subtitle'])}</p>\n"
     if manifest.get('author'):
-        content += f"<p class='book-byline'>by {escape(manifest['author'])}</p>\n"
+        author_html = escape(manifest['author'])
+        if manifest.get('author_url'):
+            author_html = f'<a href="{escape(manifest["author_url"])}">{author_html}</a>'
+        content += f"<p class='book-byline'>by {author_html}</p>\n"
 
     content += (f'<img class="book-cover" src="{prefix}images/covers/taoa.png" '
                 f'alt="Cover: {escape(manifest["title"])}">\n')
