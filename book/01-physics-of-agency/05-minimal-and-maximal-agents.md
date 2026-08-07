@@ -8,7 +8,7 @@ sources:
   - 163099190.the-mechanics-of-agency-maximal-theoretical
 ---
 
-A bacterium swimming up a sugar gradient and a chess engine searching a game tree are doing, at bottom, the same thing. Each senses its surroundings, carries some rough account of what happens next, and biases its own trajectory toward outcomes it prefers. Between these two lies most of what we would ever want to call an agent — and beyond the chess engine lies a limit no physical system can reach. To see the spectrum whole, I need first to say what puts a thing on it at all. Not everything that moves or reacts is an agent. A rock rolling downhill is not choosing the valley. What separates the bacterium from the rock is a matter of structure, and the structure has three parts.
+A bacterium swimming up a sugar gradient and a chess engine searching a game tree are doing, at bottom, the same thing. Each senses its surroundings, carries some rough account of what happens next, and biases its own trajectory toward outcomes it prefers. Between the simplest such systems and a ceiling no physical system can reach lies everything we would ever want to call an agent. To see the whole spectrum, I need first to say what puts a thing on it at all. Not everything that moves or reacts is an agent. A rock rolling downhill is not choosing the valley. What separates the bacterium from the rock is a matter of structure, and the structure has three parts.
 
 ## The Three Criteria
 
