@@ -9,9 +9,7 @@
 
 title: The Architecture of Agency
 subtitle: A Naturalistic Philosophy of Minds, Values, Power, and Meaning
-author: the Axionic Agency Lab
-author_url: https://axionic.org/team.html
-author_link_text: Axionic Agency Lab
+author: 'the <a href="https://axionic.org/team.html">Axionic Agency Lab</a>'
 
 volumes:
   - slug: 00-front
