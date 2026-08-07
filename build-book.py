@@ -512,6 +512,9 @@ def build_book_index(manifest, volumes, publish_index):
     content = f"<h1>{escape(manifest['title'])}</h1>\n"
     if manifest.get('subtitle'):
         content += f"<p class='paper-subtitle'>{escape(manifest['subtitle'])}</p>\n"
+    # `author` is trusted manifest content and may include inline HTML (e.g. a link).
+    if manifest.get('author'):
+        content += f"<p class='book-byline'>by {manifest['author']}</p>\n"
 
     content += (f'<img class="book-cover" src="{prefix}images/covers/taoa.png" '
                 f'alt="Cover: {escape(manifest["title"])}">\n')
