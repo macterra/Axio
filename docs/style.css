@@ -1023,6 +1023,13 @@ mjx-container {
     margin-top: 0.25rem;
 }
 
+.book-byline {
+    color: #8a8f98;
+    font-size: 1.05rem;
+    font-style: italic;
+    margin: 0 0 0.5rem;
+}
+
 .book-cover {
     display: block;
     width: 100%;
