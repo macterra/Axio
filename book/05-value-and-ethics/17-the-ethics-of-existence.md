@@ -8,7 +8,9 @@ sources:
   - 169150004.against-death-complacency
 ---
 
-David Benatar's asymmetry argument has a certain austere elegance. He claims that the presence of pain is bad and the presence of pleasure is good — so far, unobjectionable — but then adds two further claims: the absence of pain is good *even if nobody benefits from it*, while the absence of pleasure is not bad *unless someone exists to be deprived of it*. From these four premises he concludes that since every life contains pain and nonexistence contains none, bringing a child into existence is always wrong. Not usually wrong, not wrong under bad conditions — always.
+[^benatar]: David Benatar's asymmetry argument for antinatalism, Philosophy Break, https://philosophybreak.com/articles/antinatalism-david-benatar-asymmetry-argument-for-why-its-wrong-to-have-children/.
+
+David Benatar's asymmetry argument has a certain austere elegance.[^benatar] He claims that the presence of pain is bad and the presence of pleasure is good — so far, unobjectionable — but then adds two further claims: the absence of pain is good *even if nobody benefits from it*, while the absence of pleasure is not bad *unless someone exists to be deprived of it*. From these four premises he concludes that since every life contains pain and nonexistence contains none, bringing a child into existence is always wrong. Not usually wrong, not wrong under bad conditions — always.
 
 It is a neat syllogism, and its neatness conceals a fatal overreach. Antinatalism is worth dismantling carefully, because it is the purest specimen of a whole family of errors about the boundary of existence — errors that recur when we ask which possible people to bring into being, and again when we ask whether the existing should acquiesce in going out of it. This chapter takes the boundary whole: coming into existence, selecting among the unconceived, and refusing to leave.
 

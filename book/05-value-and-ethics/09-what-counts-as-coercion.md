@@ -8,13 +8,15 @@ sources:
   - 173538253.violence-vs-coercion
 ---
 
+[^nozick]: Robert Nozick, *Anarchy, State, and Utopia*, https://en.wikipedia.org/wiki/Anarchy,_State,_and_Utopia.
+
 A mugger holds a loaded gun and says, "Give me your wallet or I'll shoot." Everyone agrees this is coercion. But the word does not stay put. Taxes are called coercion, and so are wage offers, advertising campaigns, social pressure, a mother's guilt trip, an employer's dress code. People use it to describe everything from violent threats to emotional manipulation, and the stretching is not innocent: coercion is central to ethics, politics, and law. Legal rights may be backed by coercive enforcement, but enforcement does not itself make a claimed right morally legitimate. A mushy definition of coercion still makes every downstream justification harder to audit. The previous chapter ended with an instruction: [call coercion coercion](08-honesty-and-hypocrisy.md). That instruction is empty until we know what coercion is.
 
 Here is the definition:
 
 **Coercion is the deliberate use of a credible conditional threat of a material setback to obtain compliance.**
 
-The formulation owes a debt to Robert Nozick, who offered something similar in *Anarchy, State, and Utopia*. It has four elements — *credible*, *conditional threat*, *material setback*, *to obtain compliance* — and each excludes important near-neighbors. Hard cases remain at the baseline, materiality, and attribution boundaries; this is a decision rule to test, not a discovery that ordinary language has only one correct extension.
+The formulation owes a debt to Robert Nozick, who offered something similar in *Anarchy, State, and Utopia*.[^nozick] It has four elements — *credible*, *conditional threat*, *material setback*, *to obtain compliance* — and each excludes important near-neighbors. Hard cases remain at the baseline, materiality, and attribution boundaries; this is a decision rule to test, not a discovery that ordinary language has only one correct extension.
 
 ## The Four Elements
 
