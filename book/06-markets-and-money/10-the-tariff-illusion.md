@@ -27,7 +27,9 @@ Every tariff comes wrapped in a rationale. Strip away the rhetoric and look at w
 
 ## Why the Refuted Policy Persists
 
-Ricardo's comparative-advantage result shows gains from specialization and exchange under its assumptions, even when one country has an absolute advantage in every modeled good. A tariff usually sacrifices some of those gains. The theorem does not say every person gains, that adjustment is costless, that capital and technology remain fixed, or that security dependencies have zero option value. Modern policy analysis therefore needs incidence, time horizon, retaliation, supply response, distribution, and the cost of alternative resilience tools. Recent [WTO monitoring](https://www.wto.org/english/news_e/news25_e/trdev_03jul25_e.htm) also illustrates why dates matter: tariff coverage and policy conditions can change sharply within a year.
+Ricardo's comparative-advantage result shows gains from specialization and exchange under its assumptions, even when one country has an absolute advantage in every modeled good. A tariff usually sacrifices some of those gains. The theorem does not say every person gains, that adjustment is costless, that capital and technology remain fixed, or that security dependencies have zero option value. Modern policy analysis therefore needs incidence, time horizon, retaliation, supply response, distribution, and the cost of alternative resilience tools. Recent WTO monitoring[^wto-monitoring] also illustrates why dates matter: tariff coverage and policy conditions can change sharply within a year.
+
+[^wto-monitoring]: World Trade Organization, “Trade Monitoring Updates,” July 3, 2025, https://www.wto.org/english/news_e/news25_e/trdev_03jul25_e.htm.
 
 So why does a policy refuted in 1817 keep winning elections in the twenty-first century? Because the political ledger and the economic ledger are kept in different ink.
 

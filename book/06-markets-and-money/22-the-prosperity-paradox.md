@@ -9,7 +9,9 @@ sources:
   - 166945477.demographics-without-coercion
 ---
 
-Across many countries, fertility has fallen as income, education, urbanization, contraception, child survival, and women's opportunities changed. The [OECD reports](https://www.oecd.org/en/publications/society-at-a-glance-2024_918d8db3-en/full-report/fertility_748a5055.html) that its average total fertility rate fell from 3.3 in 1960 to 1.5 in 2022. The association is broad but not exceptionless, and period fertility also reflects delayed births. “Prosperity” bundles several mechanisms that must be separated before the pattern can be called structural.
+Across many countries, fertility has fallen as income, education, urbanization, contraception, child survival, and women's opportunities changed. The OECD reports[^oecd-fertility] that its average total fertility rate fell from 3.3 in 1960 to 1.5 in 2022. The association is broad but not exceptionless, and period fertility also reflects delayed births. “Prosperity” bundles several mechanisms that must be separated before the pattern can be called structural.
+
+[^oecd-fertility]: OECD, *Society at a Glance 2024*, “Fertility,” https://www.oecd.org/en/publications/society-at-a-glance-2024_918d8db3-en/full-report/fertility_748a5055.html.
 
 That makes it one of the most uncomfortable patterns in this volume. Several factors that lift living standards also raise opportunity costs or delay family formation. Pronatalist incentives have produced mixed and often modest effects; the relevant evidence concerns magnitude, duration, timing, and counterfactual rather than a categorical claim that no country has ever reversed a decline. Understanding why requires testing mechanisms at more than one altitude.
 
@@ -43,7 +45,9 @@ This is why the aggregate-wealth framing misleads. A society can be richer than 
 
 The optionality account has a second layer, and it explains the part the economics cannot: why realized fertility falls even below desired fertility.
 
-Richard Hanania has argued that modern prosperity does more than raise the opportunity cost of having children — it lowers the cost of *avoiding the social environments that produce children*. I think that is right, and it deserves to be taken seriously as a mechanism rather than a complaint about phones. Streaming, remote work, pornography, algorithmic entertainment, online communities, dating apps, and private living arrangements let people satisfy many social and hedonic appetites without ever entering the embodied, obligation-bearing spaces where courtship and family formation used to occur.
+Richard Hanania has argued[^hanania-fertility] that modern prosperity does more than raise the opportunity cost of having children — it lowers the cost of *avoiding the social environments that produce children*. I think that is right, and it deserves to be taken seriously as a mechanism rather than a complaint about phones. Streaming, remote work, pornography, algorithmic entertainment, online communities, dating apps, and private living arrangements let people satisfy many social and hedonic appetites without ever entering the embodied, obligation-bearing spaces where courtship and family formation used to occur.
+
+[^hanania-fertility]: Richard Hanania, “Why We’ve Been Thinking About the Fertility Crisis All Wrong,” *Richard Hanania’s Newsletter*, https://www.richardhanania.com/p/why-weve-been-thinking-about-the.
 
 Real social life carries rejection, embarrassment, dependence, ambiguity, obligation, and constraint. Digital sociality offers curation, exit, distance, blocking, lurking, scrolling, ghosting, and control. It can become socially flavoured solitude with an escape hatch — pseudo-sociality that scratches the itch while bypassing risks that made embodied relationships generative. Optionality again, applied now to other people: the option to disengage, often held open at low immediate cost.
 
