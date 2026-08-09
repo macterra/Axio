@@ -21,7 +21,7 @@ Whether "gender" is the right word for any of this — whether the category is d
 
 Consider high-risk occupations such as logging, commercial fishing, roofing, structural steel, extraction, waste collection, and trucking. In the United States in 2024, men accounted for 4,657 of 5,070 fatal occupational injuries — 91.9 percent.[^bls-cfoi] That is a severe sex disparity, although the count reflects exposure to different jobs and hours as well as the risks within each job.
 
-[^bls-cfoi]: U.S. Bureau of Labor Statistics, [Census of Fatal Occupational Injuries, Table A-7, 2024](https://www.bls.gov/iif/fatal-injuries-tables/fatal-occupational-injuries-table-a-7-2024.htm). CFOI counts injury deaths and excludes illness-related deaths unless precipitated by an injury event.
+[^bls-cfoi]: U.S. Bureau of Labor Statistics, *Census of Fatal Occupational Injuries*, Table A-7, 2024, https://www.bls.gov/iif/fatal-injuries-tables/fatal-occupational-injuries-table-a-7-2024.htm. CFOI counts injury deaths and excludes illness-related deaths unless precipitated by an injury event.
 
 The same plural explanations belong on the table here: average risk tolerance and physical capacity, occupational interests, pay premia, family roles, recruitment traditions, workplace culture, and barriers facing the minority sex. The fatality count alone cannot distinguish voluntary sorting from constrained sorting. That is precisely the standard that should also govern boardrooms and physics departments.
 

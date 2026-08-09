@@ -28,7 +28,7 @@ Third, gender and reputation. Watson's later memoir, *The Double Helix*, compoun
 
 Fourth, credit and consequence. When the Nobel Prize went to Watson, Crick, and Wilkins in 1962, Franklin had been dead for four years, and Nobel prizes are not awarded posthumously. We cannot infer how the committee would have treated a living Franklin. We can say that the familiar three-man discovery story understates both her experimental contribution and her independent interpretation of the evidence.
 
-[^cobb-comfort]: Matthew Cobb and Nathaniel Comfort, [“What Rosalind Franklin truly contributed to the discovery of DNA's structure”](https://www.nature.com/articles/d41586-023-01313-5), *Nature*, 2023. Their archival reconstruction describes Franklin as an equal contributor, discounts Photograph 51 as a single decisive key, and identifies the MRC report as the more important check on the model.
+[^cobb-comfort]: Matthew Cobb and Nathaniel Comfort, “What Rosalind Franklin truly contributed to the discovery of DNA's structure,” *Nature*, 2023, https://www.nature.com/articles/d41586-023-01313-5. Their archival reconstruction describes Franklin as an equal contributor, discounts Photograph 51 as a single decisive key, and identifies the MRC report as the more important check on the model.
 
 ## Granting the Defense in Full
 
