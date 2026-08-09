@@ -52,6 +52,8 @@ So what looks like underprovision is usually provision in unfamiliar forms: mess
 
 ## Owing at the Margin
 
-The marginalist revolution that McCloskey rightly celebrates already contains the refutation of totalist accounting. You can only ever owe *at the margin*, never for the whole past — no one presents you a bill for the entirety of civilization and demands your gratitude in tax. Likewise, markets only ever provide *at the margin*, according to voluntary demand, one willing payment at a time. Labeling marginal, voluntary provision "insufficient" against a totted-up social aggregate is not economics. It is ideology — the pre-marginalist habit of pricing wholes, revived exactly where it flatters the state.
+The marginalist revolution that McCloskey rightly celebrates[^mccloskey-margin] already contains the refutation of totalist accounting. You can only ever owe *at the margin*, never for the whole past — no one presents you a bill for the entirety of civilization and demands your gratitude in tax. Likewise, markets only ever provide *at the margin*, according to voluntary demand, one willing payment at a time. Labeling marginal, voluntary provision "insufficient" against a totted-up social aggregate is not economics. It is ideology — the pre-marginalist habit of pricing wholes, revived exactly where it flatters the state.
+
+[^mccloskey-margin]: Deirdre McCloskey (@DeirdreMcClosk), post on X, August 2025, https://x.com/DeirdreMcClosk/status/1962190725711314976.
 
 Underprovision must not become a blank check for coercion. Nor should the existence of voluntary provision become proof that no important benefit was left unrealized. The disciplined sequence is: define the good and benchmark, identify the free-rider mechanism, inventory voluntary and bundled alternatives, estimate the remaining gap, then compare public and private remedies under the same assumptions about knowledge, capture, enforcement, and error correction.

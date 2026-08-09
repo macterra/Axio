@@ -6,7 +6,9 @@ sources:
   - 177657478.the-cybernetic-ghost-of-satoshi
 ---
 
-On Halloween 2008, a ghost in the machine whispered nine pages into the void. The Bitcoin whitepaper was less an invention than an incantation — a digital spell summoning a self-organizing organism. It woke slowly, metastasizing across CPUs, then GPUs, then ASICs, feeding on human greed and cryptographic difficulty to maintain its pulse. It is breathing still — immune to rulers, resilient to attack, and indifferent to whether you, personally, believe in it.
+On Halloween 2008, a ghost in the machine whispered nine pages into the void. The Bitcoin whitepaper[^bitcoin-whitepaper] was less an invention than an incantation — a digital spell summoning a self-organizing organism. It woke slowly, metastasizing across CPUs, then GPUs, then ASICs, feeding on human greed and cryptographic difficulty to maintain its pulse. It is breathing still — immune to rulers, resilient to attack, and indifferent to whether you, personally, believe in it.
+
+[^bitcoin-whitepaper]: Satoshi Nakamoto, “Bitcoin: A Peer-to-Peer Electronic Cash System,” 2008, https://bitcoin.org/bitcoin.pdf.
 
 That last clause conceals a paradox, because the network depends on participants' expectations while no particular believer controls it. This chapter develops an organism metaphor for that relation. The metaphor can illuminate feedback, persistence, and replacement of parts; it does not establish metabolism, consciousness, interests, or moral standing in the biological sense.
 
