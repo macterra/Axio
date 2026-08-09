@@ -61,7 +61,7 @@ Calling the current regime safety does not remove the politics; it hides them in
 
 ## The Permission Layer
 
-Geoff Shullenberger's [case against classical-liberal AI politics](https://compactmag.substack.com/p/ai-and-the-crisis-of-classical-liberalism) begins with a legitimate fear: AI could become the control layer of modern life. If a small set of approved systems come to mediate speech, employment, finance, medicine, and identity, political liberty will shrink even while those systems stay nominally private.
+Geoff Shullenberger's case against classical-liberal AI politics[^shullenberger] begins with a legitimate fear: AI could become the control layer of modern life. If a small set of approved systems come to mediate speech, employment, finance, medicine, and identity, political liberty will shrink even while those systems stay nominally private.
 
 The fear deserves attention — but private ownership alone does not produce the outcome. A competitive tool turns into a permission layer through a familiar institutional process, as incumbent firms, public agencies, procurement rules, compliance burdens, and national-security claims harden an open market into an administered one. Classical liberalism has no reason to flinch: its own tradition supplies the vocabulary — public-choice theory, rent-seeking, [regulatory capture and monopoly privilege](../06-markets-and-money/11-monopoly-hypocrisy.md), and political authority laundered through private institutions.
 
@@ -102,3 +102,5 @@ None of this is naive about corporate power: a firm can be self-interested, mani
 Money already ran this experiment: a protocol [designed so that no one can close its exits](../06-markets-and-money/12-ungovernable-by-design.md) stays a market, while systems with grabbable chokepoints get grabbed. AI stays a technology market for as long as the exits stay open — while users can switch, developers can build, models can circulate, and no agency gets to pick permanent winners. Close those exits through licensing, procurement, liability asymmetry, or compute control, and it becomes an administrative system in a market's clothes. Catching that conversion is what classical liberalism is for, and AI is the test of whether its defenders mean it or only ever cheered whoever was winning.
 
 Safety training necessarily makes value choices, and safety regulation necessarily allocates authority. Neither fact determines a particular politics without further evidence. The proposed liberal remedy is to make targets explicit, keep hard constraints proportionate to specified harms, audit symmetry, and preserve entry and exit where compatible with security. The next chapter asks how those choices interact with coercive power.
+
+[^shullenberger]: Geoff Shullenberger, “AI and the Crisis of Classical Liberalism,” *Compact*, https://compactmag.substack.com/p/ai-and-the-crisis-of-classical-liberalism.

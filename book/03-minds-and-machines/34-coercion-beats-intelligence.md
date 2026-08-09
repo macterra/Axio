@@ -7,6 +7,8 @@ sources:
   - 185907078.the-adolescence-of-technology
 ---
 
+[^amodei]: Dario Amodei, “The Adolescence of Technology,” https://www.darioamodei.com/essay/the-adolescence-of-technology.
+
 The fantasy of a civilization run by the smartest and most rational people has an obvious appeal, and it recurs every few years under a new name. Most political and institutional failure is not mysterious. People ignore incentives. They confuse intentions with outcomes. They reward loyalty over competence. They moralize tradeoffs because moralizing is cheaper than understanding them. A population with better models would avoid many stupid traps.
 
 But intelligence does not automatically scale into civilization. One missing term is organized power, including coercive capacity.
@@ -61,7 +63,7 @@ Which brings me to the most serious statement of the systemic view, and to where
 
 ## The Adolescence Diagnosis
 
-In *The Adolescence of Technology*, Dario Amodei offers one of the most valuable diagnoses in the AI safety conversation, precisely because it refuses complacency. His argument does not hinge on the immaturity of artificial intelligences themselves. It treats the danger as systemic: capabilities are advancing faster than institutions, incentives, and governance structures can absorb them, producing a volatile mismatch that resembles adolescence at the level of the techno-social system. The essay treats frontier AI as a civilizational issue rather than a narrow product risk, recognizes that institutional adaptation lags technical progress, rejects the idea that safety will emerge automatically from scale, and places risk where it actually lives: in the interaction between technology and society.
+In *The Adolescence of Technology*, Dario Amodei offers[^amodei] one of the most valuable diagnoses in the AI safety conversation, precisely because it refuses complacency. His argument does not hinge on the immaturity of artificial intelligences themselves. It treats the danger as systemic: capabilities are advancing faster than institutions, incentives, and governance structures can absorb them, producing a volatile mismatch that resembles adolescence at the level of the techno-social system. The essay treats frontier AI as a civilizational issue rather than a narrow product risk, recognizes that institutional adaptation lags technical progress, rejects the idea that safety will emerge automatically from scale, and places risk where it actually lives: in the interaction between technology and society.
 
 I accept that diagnosis — its urgency and its scope. It is, in this chapter's vocabulary, the observation that machine cognition is outrunning the institutionalization that has always been the condition of intelligence mattering safely. My response begins from the same observation and moves one layer deeper. The decisive question is not whether technology will eventually grow up. It is whether the systems now being constructed preserve the structural conditions under which agency, responsibility, and governance remain meaningful as capability scales.
 

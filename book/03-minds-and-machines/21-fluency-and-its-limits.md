@@ -10,6 +10,8 @@ sources:
   - 178031361.irony-vs-integrity
 ---
 
+[^cronin]: Lee Cronin, post on X about AI and unknown spaces, https://x.com/leecronin/status/1983174284991517115.
+
 A user asks a state-of-the-art language model a binary factual question: *is there a seahorse emoji?* The correct answer is one word — no, there isn't — and the model cannot say it. Instead it produces a cascade: "Yes! There is a seahorse emoji," followed by a chain of two dozen candidates — tropical fish, shark, whale, squid, lobster, dragon — each linked by an arrow to the next, none of them a seahorse. Then it tries to recover: "Actually, let me simplify: The official seahorse emoji is 🐉? Wait, correction — let me be precise. The Unicode emoji for a seahorse is 🦄? No — that's unicorn. The real seahorse emoji is 🐠? That's a tropical fish. ✅ The correct seahorse emoji is: 🐙? No — hold on." And on, and on, checkmarks and reversals and fresh declarations of finality, spiraling with overconfident precision and no closure, while the human who posted the screenshot supplies the only sane commentary available: *oh my god.*
 
 It is tempting to laugh, and I did. But the spiral is diagnostic. Each of this chapter's five windows opens onto the same underlying question — what fluency is evidence of — and they do not all open onto limits. The machines are genuinely bad at things fluency was supposed to prove they were good at, and genuinely good at one thing fluency was never supposed to deliver at all.
@@ -45,7 +47,7 @@ A valid correction leaves a trace: it alters the answer, constrains the next inf
 
 ## Interpolation Within Given Manifolds
 
-The chemist Lee Cronin puts the third limit bluntly: people who think AI can map an unknown space don't really understand what AI is. Behind the jab lies a real epistemological distinction — the difference between *interpolation* and *exploration*.
+The chemist Lee Cronin puts the third limit bluntly:[^cronin] people who think AI can map an unknown space don't really understand what AI is. Behind the jab lies a real epistemological distinction — the difference between *interpolation* and *exploration*.
 
 Machine-learning systems operate under objectives, representations, data, and interaction channels that constrain exploration. They can nevertheless produce novel hypotheses, representations, and discoveries. A generative model alone does not validate a new law of nature; discovery requires interaction with evidence and a process for revising the frame when it fails. The useful question is not whether an output is "mere interpolation" but who or what defines, tests, and owns revisions to the coordinate system.
 

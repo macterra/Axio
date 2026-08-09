@@ -11,7 +11,7 @@ Most accounts of technological history read like origin myths — isolated break
 
 The truth is stranger and far more structured. These developments are not spontaneous coincidences; they are one intellectual lineage. Many of the decisive ideas of the 21st century were cultivated deliberately, within a small and unusually coherent community of thinkers active in the 1990s: the Extropians.
 
-I write this from the inside. I took over as administrator of the Extropian mailing list in 1996 — the [first message](http://extropians.weidai.com/extropians.96/0000.html) on the rebooted list, preserved in the [archives](http://extropians.weidai.com/) that Wei Dai still hosts, is mine — and I later served as a director of the Extropy Institute. What follows is not an outsider's reconstruction of a curious subculture. It is a participant's account of what the community actually was: a distributed research environment, informal but rigorous, in which the conceptual infrastructure of emerging technologies was designed, debated, and stress-tested years before the world had names for any of it. In effect, a proto-civilizational R&D laboratory. The systems and institutions of the present are downstream of its hypotheses, arguments, code, manifestos, and long-running debates.
+I write this from the inside. I took over as administrator of the Extropian mailing list in 1996 — the first message[^extropian-first] on the rebooted list, preserved in the archives[^extropian-archive] that Wei Dai still hosts, is mine — and I later served as a director of the Extropy Institute. What follows is not an outsider's reconstruction of a curious subculture. It is a participant's account of what the community actually was: a distributed research environment, informal but rigorous, in which the conceptual infrastructure of emerging technologies was designed, debated, and stress-tested years before the world had names for any of it. In effect, a proto-civilizational R&D laboratory. The systems and institutions of the present are downstream of its hypotheses, arguments, code, manifestos, and long-running debates.
 
 ## The Crucible
 
@@ -25,7 +25,7 @@ Listing the figures is not nostalgia; it is historiography. These are the indivi
 
 **Max More** — the constitutional architect of transhumanism. He gave the movement coherence, philosophical rigor, and a memetic identity; his Extropian Principles served as the ideological operating system. I had the privilege of serving alongside Max as a director of the Extropy Institute from 2001 to 2004.
 
-**Tom W. Bell** — the legal engineer. Co-founder of *Extropy*, later the creator of [Ulex](https://github.com/ulex-opensource/Ulex) and an originator of post-state governance frameworks. I collaborated with Tom on Ulex, his open-source polycentric legal framework.
+**Tom W. Bell** — the legal engineer. Co-founder of *Extropy*, later the creator of Ulex[^ulex] and an originator of post-state governance frameworks. I collaborated with Tom on Ulex, his open-source polycentric legal framework.
 
 **Hal Finney** — the cryptographic engineer. First person to run Bitcoin, architect of reusable proof-of-work, proto-AGI thinker. More important than Satoshi in some dimensions.
 
@@ -35,7 +35,7 @@ Listing the figures is not nostalgia; it is historiography. These are the indivi
 
 **Mark S. Miller** — the capability-security wizard. Father of object-capability architectures, architect of Agoric, one of the deepest systems thinkers alive.
 
-**Sasha Chislenko** — the memetic theorist. Digital anthropology, futurism, emotional computation; his concepts still ripple invisibly through rationalist and transhumanist spaces. Sasha joined my startup Javien shortly before his untimely death in 2001. I keep his memory alive at [lucifer.com/~sasha](http://lucifer.com/~sasha/).
+**Sasha Chislenko** — the memetic theorist. Digital anthropology, futurism, emotional computation; his concepts still ripple invisibly through rationalist and transhumanist spaces. Sasha joined my startup Javien shortly before his untimely death in 2001. I keep his memory alive at lucifer.com/~sasha[^chislenko].
 
 **Eric Drexler** — the nanotech prophet. Laid the intellectual groundwork for molecular manufacturing and long-term technological forecasting.
 
@@ -106,3 +106,11 @@ The Extropian moment did not end. Its ideas migrated, adapted, and embedded them
 ## Coda: The Framing War
 
 One more thing the list taught me: the battle over new technology is always, first, a battle over framing — and it is fought in single words. A while back an anonymous post went viral, nearly four hundred thousand likes and twenty million views, demanding: "we need a slur for people who constantly use AI and ChatGPT." Buried beneath it, a reply from another pseudonymous account, carrying all of four likes, answered with one word: "Technomancer." That is the whole exchange, and it is perfect. The demand reaches for contempt — reduce the enthusiast to a target. The reply refuses the frame entirely: instead of weakness or laziness it suggests mastery, skill, imaginative power — the practitioner of technological enchantment. The Extropians understood this mechanism before most people had heard the word "meme": how we talk about technology shapes how we think about it, and whoever names a thing first owns the argument about it. The scorn will always have the bigger megaphone. The better frame, offered without apology, wins anyway — it did in the 1990s, when "extropy" itself was a one-word answer to a culture certain the future meant decay, and it will again.
+
+[^extropian-first]: David McFadzean, first message on the rebooted Extropian mailing list, 1996, http://extropians.weidai.com/extropians.96/0000.html.
+
+[^extropian-archive]: Extropian mailing-list archives, hosted by Wei Dai, http://extropians.weidai.com/.
+
+[^ulex]: Tom W. Bell, Ulex open-source legal framework, GitHub, https://github.com/ulex-opensource/Ulex.
+
+[^chislenko]: Memorial archive for Sasha Chislenko, http://lucifer.com/~sasha/.
