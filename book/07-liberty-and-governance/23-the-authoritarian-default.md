@@ -50,7 +50,9 @@ What interrupts the ratchet is a different kind of actor. Principled behavior �
 
 ## Three Axes
 
-Andrew Doyle has argued that authoritarianism is humanity's default state, and that liberalism is not truly an ideology at all but the absence of ideological dogmatism — a method for negotiating our flawed and uncertain condition. This chapter defends a bounded version of the first claim: recurring pressures can make authoritarian coordination cheaper unless institutions resist them. The second half is nearly right, and getting it exactly right requires saying what the two orientations actually disagree about. The opposition runs along three axes.
+Andrew Doyle has argued[^doyle-default] that authoritarianism is humanity's default state, and that liberalism is not truly an ideology at all but the absence of ideological dogmatism — a method for negotiating our flawed and uncertain condition. This chapter defends a bounded version of the first claim: recurring pressures can make authoritarian coordination cheaper unless institutions resist them. The second half is nearly right, and getting it exactly right requires saying what the two orientations actually disagree about. The opposition runs along three axes.
+
+[^doyle-default]: Andrew Doyle, discussion of liberalism and authoritarianism, YouTube, https://youtu.be/4Ohmspi6T-E?list=PLRdTugBInz19PmwsPhMjrzABr7yPUl1ry.
 
 **Authority versus autonomy.** Authoritarianism centralizes decision-making in hierarchical authorities — political, cultural, or religious — and demands submission and conformity toward them. Liberalism takes individual autonomy as foundational: agents own their own lives, and self-determination is not a means to some further political end but the end itself.
 

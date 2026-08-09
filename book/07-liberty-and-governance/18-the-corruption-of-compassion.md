@@ -24,7 +24,9 @@ Aggregation then weighs the taxpayer's loss against the recipient's benefit and 
 
 ## Basic Income, Two Ways
 
-Universal Basic Income cleanly tests intake because it is cash rather than a service. Its appeal is genuine: alleviate poverty, provide a floor, free people to pursue worthwhile work. Its ethical status still depends on how it is funded.
+Universal Basic Income[^ubi] cleanly tests intake because it is cash rather than a service. Its appeal is genuine: alleviate poverty, provide a floor, free people to pursue worthwhile work. Its ethical status still depends on how it is funded.
+
+[^ubi]: “Universal basic income,” *Wikipedia*, https://en.wikipedia.org/wiki/Universal_basic_income.
 
 A UBI funded by donations, mutual-aid societies, foundations, or opt-in insurance pools is compassion at institutional scale. Build it and I will cheer.
 

@@ -88,7 +88,9 @@ Those questions distinguish builders from parasites and platforms from cartels. 
 
 Inequality is static; agency is dynamic. The same distribution can describe radically different societies depending on whether movement is possible.
 
-A *Nature* meta-analysis of 168 studies covering some eleven million people found no reliable link between economic inequality and well-being or mental health. Nassim Nicholas Taleb's gloss was blunt: people living with consequences worry about mobility.
+A *Nature* meta-analysis of 168 studies covering some eleven million people found no reliable link between economic inequality and well-being or mental health. Nassim Nicholas Taleb's gloss was blunt:[^taleb-mobility] people living with consequences worry about mobility.
+
+[^taleb-mobility]: Nassim Nicholas Taleb (@nntaleb), post on X, January 2026, https://x.com/nntaleb/status/2006820422222802990.
 
 People can tolerate disparity when improvement remains possible; foreclosed possibility, loss of control, and stagnation are harder to bear.
 

@@ -8,7 +8,9 @@ sources:
 ---
 
 > *"The 'realist' view of international affairs is false. People don't, and can't, act in their interests because they don't know what those are until they have a world view."*
-> — David Deutsch
+> — David Deutsch[^deutsch-interests]
+
+[^deutsch-interests]: David Deutsch (@DavidDeutschOxf), post on X, January 2026, https://x.com/DavidDeutschOxf/status/2007808783662084219.
 
 Few phrases in politics carry as much moral authority while concealing as much conceptual confusion as *national interest*. It appears in speeches just before wars begin, in memoranda authorizing surveillance, in arguments for secrecy, sacrifice, and coercion. It is spoken with the cadence of inevitability, as though it names a hard constraint imposed by reality itself.
 
@@ -34,7 +36,9 @@ This critique is not aimed at shorthand. Historians and analysts who write "Brit
 
 ## The Vanishing Intersection
 
-Could aggregation rescue the idea? Sean Carroll defines government as "the organized expression of our collective will," the instrument of society's shared priorities.
+Could aggregation rescue the idea? Sean Carroll defines government as "the organized expression of our collective will,"[^carroll-government] the instrument of society's shared priorities.
+
+[^carroll-government]: Sean Carroll, “AMA | June 2025,” *Mindscape* podcast, June 2, 2025, https://www.preposterousuniverse.com/podcast/2025/06/02/ama-june-2025/.
 
 Define that will operationally as the intersection of preferences held by every member. Small, intimate groups may share enough experience and tradition for the intersection to have content.
 
