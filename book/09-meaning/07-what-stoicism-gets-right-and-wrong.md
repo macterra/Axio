@@ -9,7 +9,7 @@ sources:
 
 Open any airport bookshop and you will find Stoicism repackaged as a productivity supplement. The pitch is always the same: some things are up to you, others are not, so stop wasting energy on the others and you will be calmer, tougher, more effective. Epictetus gets quoted, Marcus Aurelius gets quoted, and the reader walks away with a single mental move — the dichotomy of control — and the impression that this move is the whole of the philosophy.
 
-It is not. The dichotomy of control is the doorway, not the house. Reducing Stoicism to it is what the Stoic philosopher Gregory Lopez calls "freshman-level Stoicism": a real insight amputated from the ethical structure that gave it meaning. Before I can say what Stoicism gets right — and it gets a great deal right — I have to rescue it from its own fans. And once it is rescued, I have to say plainly where even the rich version falls short, because the shortfall is not incidental. It is structural, and it is exactly the gap the rest of this volume exists to fill.
+It is not. The dichotomy of control is the doorway, not the house. Reducing Stoicism to it is what the Stoic philosopher Gregory Lopez calls "freshman-level Stoicism":[^lopez-stoicism] a real insight amputated from the ethical structure that gave it meaning. Before I can say what Stoicism gets right — and it gets a great deal right — I have to rescue it from its own fans. And once it is rescued, I have to say plainly where even the rich version falls short, because the shortfall is not incidental. It is structural, and it is exactly the gap the rest of this volume exists to fill.
 
 ## Past the Freshman Course
 
@@ -72,3 +72,5 @@ Which leaves the gap, and the gap is the point of putting Stoicism in this volum
 That dimension is what [Phosphorism](../05-value-and-ethics/06-phosphorism.md) is built to carry. Where Stoicism asks how to remain undamaged, Phosphorism asks what is worth reaching for — and answers in terms the Stoic has no room for: authentic passion, aesthetic richness, the light of a mind pursuing what it loves. The two are not rivals so much as complements pointed at opposite halves of a life. Keep the Stoic's discipline for the defense; take the Phosphorist's ardor for the expression. Equanimity so that nothing knocks you down; passion so that, standing, you have somewhere to go.
 
 The deepest question the Stoic cannot answer — *what, in the end, is worth wanting?* — turns out to bottom out not in physics or in duty but in [beauty](11-ultimate-beauty.md), and that is where this volume is going. Stoicism gets you to the threshold undefeated. It does not walk you through the door. For that you need a philosophy of what is on the other side.
+
+[^lopez-stoicism]: Gregory Lopez, “The rival philosophies to Stoicism that you’ve never heard about,” *Clearer Thinking* podcast, https://podcast.clearerthinking.org/episode/267/greg-lopez-the-rival-philosophies-to-stoicism-that-you-ve-never-heard-about/.

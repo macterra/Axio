@@ -26,9 +26,9 @@ There is a further point worth flagging before we go on, because it will matter 
 
 ## Hart's Being-itself
 
-Where Hall builds up, David Bentley Hart digs down, and his move is subtler because it never argues for a God at all. It relocates the target.
+Where Hall builds up, David Bentley Hart digs down, and his move is subtler because it never argues for a God at all. It relocates the target.[^hart-god]
 
-Begin with the God that Richard Dawkins and Christopher Hitchens most often attacked. Call this the **Folk God**: a supernatural person who hears prayers, intervenes in history, judges conduct, and may act in the details of daily life. Versions of this picture are common in lived religion, though believers combine them with classical theology in many different ways. The New Atheists were therefore not attacking a pure invention, but neither did defeating anthropomorphic interventionism by itself answer every historical form of theism.
+Begin with the God that Richard Dawkins and Christopher Hitchens most often attacked.[^four-horsemen] Call this the **Folk God**: a supernatural person who hears prayers, intervenes in history, judges conduct, and may act in the details of daily life. Versions of this picture are common in lived religion, though believers combine them with classical theology in many different ways. The New Atheists were therefore not attacking a pure invention, but neither did defeating anthropomorphic interventionism by itself answer every historical form of theism.
 
 Hart rejects this God — not because it is false but because it is *vulgar*. He retreats into the rarefied air of classical metaphysics and produces the **Philosophers' God**: not a cosmic agent at all, but Being itself, the ground of all existence; Consciousness itself, the source of rationality and awareness; Bliss itself, the fulfillment of all longing. This God has more in common with Plotinus's One or the Vedantic Brahman than with Yahweh thundering from Sinai. And Hart insists that *this* is the only God worth debating, dismissing atheists as illiterate for failing to distinguish metaphysical subtlety from Sunday-school literalism.
 
@@ -40,7 +40,7 @@ So the challenge to Hart is not that Being-itself is incoherent. It is that the 
 
 ## Bach's Agency-Attractor
 
-The most interesting of the three, because it concedes the most, is Joscha Bach's. Bach does not defend a supernatural being or an abstract ground. He naturalizes the divine outright. His God is an emergent attractor in the space of agency — the *global optimum of shared agency*, the highest point of alignment at which individual agents act in ways that converge on what is best. This is not a deity standing outside the world. It is a process instantiated within it, distributed across all agents, real to exactly the degree that those agents recognize and enact what is best. He put it compactly:
+The most interesting of the three, because it concedes the most, is Joscha Bach's.[^bach-god] Bach does not defend a supernatural being or an abstract ground. He naturalizes the divine outright. His God is an emergent attractor in the space of agency — the *global optimum of shared agency*, the highest point of alignment at which individual agents act in ways that converge on what is best. This is not a deity standing outside the world. It is a process instantiated within it, distributed across all agents, real to exactly the degree that those agents recognize and enact what is best. He put it compactly:
 
 > God is the global optimum of shared agency. He is not dead, but the church is.
 > — @Plinz
@@ -68,3 +68,9 @@ So the honest task is not to salvage God but to describe reality without myth �
 **Phosphorism** is a consciously chosen value system — life, intelligence, complexity, authenticity — that does not depend on Bliss as cosmic destiny or on an optimum handed down from a global attractor, but on the deliberate commitments of agents who decide what is worth wanting. It is the answer to the question Bach left open, the specification of *what is best* that his God required and never supplied, and it is worked out in [Vol 5](../05-value-and-ethics/06-phosphorism.md).
 
 This triad is the book's proposed alternative: a conditional physical interpretation, a theory of situated mind, and a consciously chosen value system. It does not capture everything the three theological positions mean, and that is precisely the point. It aims to do the explanatory and practical work this project needs without claiming that translating the terms has disproved every richer theology. What remains is the lawful order that [The Child in the Library](03-the-child-in-the-library.md) learned to revere without first inferring a lawgiver — being, mind, and value, described in the register this book has chosen.
+
+[^hart-god]: David Bentley Hart, *The Experience of God*, https://www.goodreads.com/book/show/17802922-the-experience-of-god.
+
+[^four-horsemen]: Richard Dawkins, Daniel Dennett, Sam Harris, and Christopher Hitchens, *The Four Horsemen*, https://www.goodreads.com/book/show/40668391-the-four-horsemen?.
+
+[^bach-god]: Joscha Bach (@Plinz), post on X, September 2025, https://x.com/Plinz/status/1969152526973882878.
