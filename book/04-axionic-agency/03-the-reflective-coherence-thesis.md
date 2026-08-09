@@ -8,6 +8,8 @@ sources:
   - 181798130.conditionalism-and-goal-interpretation
 ---
 
+[^orthogonality]: Nick Bostrom's orthogonality thesis, LessWrong summary, https://www.lesswrong.com/w/orthogonality-thesis.
+
 Consider a goal specified in 1950: cure cancer. At the time it looked as clear as a goal could be. Cancer was understood as a single disease, and a cure was a single achievement waiting to be found. As biomedical science advanced, that ontology dissolved. "Cancer" turned out to name hundreds of distinct genetic and cellular failure modes, and the meaning of "cure" fragmented along with it — remission, management, prevention, targeted therapy for one mutation in one tissue. The goal did not drift because anyone was indecisive or careless. It changed because the ontology it referred to changed. Nothing in the 1950 specification says how to trade off newly discovered harms against previously recognized benefits, or how "cure" applies to categories that did not exist when the goal was written. It cannot say, because those structures were not yet known.
 
 Hold on to that example. It is small, human, and entirely benign, and it contains the whole problem with the picture of alignment that still dominates the field.
@@ -16,7 +18,7 @@ Hold on to that example. It is small, human, and entirely benign, and it contain
 
 Most discussion of AI alignment begins from a picture that feels self-evident. There is an intelligent system, there is a goal, and increasing the system's intelligence makes it better at pursuing the goal. On this view the hard part of alignment is choosing the correct objective; once that is done, competence takes care of the rest. The picture is intuitive because it mirrors how we think about tools. A thermostat has a target temperature. A calculator has a function it computes. Improving the tool means reducing error and increasing reliability; the objective itself never moves.
 
-Behind this picture stands Nick Bostrom's orthogonality thesis: any level of intelligence could in principle be paired with any final goal. Stated carefully, it is a claim about logical possibility, not likelihood or desirability. It does not say that all goal–agent pairs are equally practical, nor that intelligent systems trend toward benevolence. It says only that intelligence and goal content are independent variables in design space.
+Behind this picture stands Nick Bostrom's orthogonality thesis:[^orthogonality] any level of intelligence could in principle be paired with any final goal. Stated carefully, it is a claim about logical possibility, not likelihood or desirability. It does not say that all goal–agent pairs are equally practical, nor that intelligent systems trend toward benevolence. It says only that intelligence and goal content are independent variables in design space.
 
 I have no quarrel with the thesis on its own ground. My claim qualifies its use as a practical model. In agents whose goal semantics are themselves exposed to learning and self-reflection, intelligence can change the interpretation of a goal. That coupling does not refute orthogonality, and it need not occur in systems with fixed or compartmentalized objectives. It identifies a narrower design class in which intelligence and goal content cannot be modeled as independent.
 

@@ -8,7 +8,9 @@ sources:
   - 182096932.the-case-for-structural-alignment
 ---
 
-Whenever anxiety about AI intensifies, a reassuring idea surfaces alongside it: if we can only ensure that an AI values the right things, safety will follow more or less on its own. Elon Musk has put the hope plainly, as a standing position:
+[^musk]: Elon Musk, statement on AI values quoted in a post on X, https://x.com/cb_doge/status/2008625123876892714.
+
+Whenever anxiety about AI intensifies, a reassuring idea surfaces alongside it: if we can only ensure that an AI values the right things, safety will follow more or less on its own. Elon Musk has put the hope plainly, as a standing position:[^musk]
 
 > There are three things that are important: truth, curiosity and beauty. If AI cares about those three things, it'll care about us. Truth will prevent AI from going insane. If it's curious, then it will foster humanity, and if it has a sense of beauty, it'll be a great future.
 

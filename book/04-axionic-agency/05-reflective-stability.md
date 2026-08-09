@@ -8,7 +8,9 @@ sources:
   - 182268096.beyond-vingean-reflection
 ---
 
-An agent cannot in general predict the detailed behavior of a successor whose relevant reasoning exceeds its own modeling capacity. If it could fully model what that system will do in every circumstance that matters, the claimed asymmetry would have disappeared for those circumstances. This is the Vingean reflection problem, and it is not a technicality. It defeats schemes that require exhaustive behavioral prediction of a more capable successor; it does not defeat every probabilistic estimate, bounded proof, or abstract safety argument.
+[^vingean]: Jessica Taylor et al., “Vingean Reflection,” Machine Intelligence Research Institute, https://intelligence.org/files/VingeanReflection.pdf.
+
+An agent cannot in general predict the detailed behavior of a successor whose relevant reasoning exceeds its own modeling capacity. If it could fully model what that system will do in every circumstance that matters, the claimed asymmetry would have disappeared for those circumstances. This is the Vingean reflection problem, and it is not a technicality.[^vingean] It defeats schemes that require exhaustive behavioral prediction of a more capable successor; it does not defeat every probabilistic estimate, bounded proof, or abstract safety argument.
 
 The canonical response retreats from simulation to abstraction. Instead of predicting exact actions, the agent reasons about successor properties: what the future system will be trying to do, whether it will preserve its goals, whether a proposed self-modification is safe. The move is necessary but incomplete. Even abstract reasoning framed as expected-utility maximization or proof-based trust still presupposes that the present agent can evaluate the consequences of its authorization decision — and that presupposition is precisely where the Vingean impossibility reappears.
 

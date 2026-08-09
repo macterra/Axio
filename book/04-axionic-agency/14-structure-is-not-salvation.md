@@ -8,7 +8,11 @@ sources:
   - 182260809.alignment-through-competing-lenses
 ---
 
-Anthony Aguirre has a standing warning for a certain kind of researcher:
+[^aguirre]: Anthony Aguirre, warning about AI-assisted theoretical overconfidence, post on X, https://x.com/AnthonyNAguirre/status/2024565072413282759.
+
+[^chollet]: François Chollet, remark on intelligence without wisdom, post on X, https://x.com/fchollet/status/2002563320210157862.
+
+Anthony Aguirre has a standing warning for a certain kind of researcher:[^aguirre]
 
 > But:
 > - If you and your AI system have finally cracked how quantum interpretation really works;
@@ -84,7 +88,7 @@ Each school lands a real blow, and each blow marks a boundary rather than a refu
 
 ## Against Vibe Alignment
 
-François Chollet named the failure mode that haunts this entire program:
+François Chollet named the failure mode that haunts this entire program:[^chollet]
 
 > When it comes to scientific discovery, one thing LLMs are really good at is getting hobbyists to delude themselves into believing they've made a huge breakthrough on some longstanding problem or a theory of everything.
 
