@@ -49,7 +49,11 @@ I flag this test here because it is the load-bearing principle of everything tha
 
 Now scale up — past the camp, past the firm, past the nation — to the largest coordination system humans operate. Here the argument stops being hypothetical, because at the top of the world's political architecture there is no sovereign at all, and there never has been.
 
-No world sovereign stands above states, but it does not follow that international law is etiquette. Treaties create legal obligations; customary law can bind without a new signature; UN members are bound by the Charter; [Article 25 requires members to carry out Security Council decisions](https://main.un.org/securitycouncil/en/content/repertoire/functions-and-powers); and [parties undertake to comply with ICJ judgments in cases to which they are parties](https://www.un.org/en/about-us/un-charter/chapter-14). Enforcement is decentralized, selective, and power-sensitive. That makes international law unlike domestic law, not unreal.
+No world sovereign stands above states, but it does not follow that international law is etiquette. Treaties create legal obligations; customary law can bind without a new signature; UN members are bound by the Charter; Article 25 requires members to carry out Security Council decisions;[^security-council] and parties undertake to comply with ICJ judgments in cases to which they are parties.[^icj-charter] Enforcement is decentralized, selective, and power-sensitive. That makes international law unlike domestic law, not unreal.
+
+[^security-council]: United Nations Security Council, “Functions and Powers,” https://main.un.org/securitycouncil/en/content/repertoire/functions-and-powers.
+
+[^icj-charter]: United Nations, *Charter of the United Nations*, Chapter XIV, https://www.un.org/en/about-us/un-charter/chapter-14.
 
 Apply the definition. Anarchy means the absence of a sovereign authority above the parties involved. By that definition the international system is anarchic to its core. States form treaties, submit disputes to tribunals, gather in the halls of the UN — but they do all of it voluntarily. No higher authority compels them to join, and no higher authority can compel them to stay. The only real constraint on a state is the threat posed by other sovereigns.
 
