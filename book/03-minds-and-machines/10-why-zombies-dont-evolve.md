@@ -6,7 +6,7 @@ sources:
   - 196565307.why-zombies-dont-evolve
 ---
 
-Richard Dawkins asks a productive evolutionary question about consciousness: what is it *for*? Brains and many cognitive capacities are metabolically and developmentally expensive. That does not show which costs belong specifically to phenomenal consciousness, as opposed to attention, learning, memory, or control. Evolutionary reasoning can support a functional account if experience is causally efficacious; it cannot independently prove which functional organization is phenomenal.
+Richard Dawkins asks a productive evolutionary question about consciousness: what is it *for*?[^dawkins] Brains and many cognitive capacities are metabolically and developmentally expensive. That does not show which costs belong specifically to phenomenal consciousness, as opposed to attention, learning, memory, or control. Evolutionary reasoning can support a functional account if experience is causally efficacious; it cannot independently prove which functional organization is phenomenal.
 
 The philosophical zombie hypothesis stipulates a creature behaviorally and functionally identical to a conscious organism while lacking experience. It is a modal challenge, not a biological hypothesis. From a functionalist perspective, the stipulation withholds the very identity being defended. From the zombie advocate's perspective, that is the point: functional duplication is claimed not to settle phenomenality. Evolutionary argument alone cannot decide between those premises. What it can ask is whether the architecture associated with consciousness has adaptive functions and whether a cheaper architecture could perform them.
 
@@ -81,3 +81,5 @@ If consciousness is causally engaged, an evolutionary account should identify it
 Natural selection favored organisms able to act through coherent world models under scarcity. MST proposes that consciousness is the internal control surface associated with that requirement. The functional story explains why stable, integrated modeling could be selected. It supports the theory only if experience is identical to or inseparable from that machinery.
 
 The zombie argument reaches its limit here. A creature with no inner experience could run fixed routines and perhaps display impressive narrow competence. A fully flexible agent that controls attention, stabilizes perception, tracks itself, compares expected with actual states, imagines futures, and coordinates action across time would be a strong candidate under MST. Saying that it has *already crossed* the phenomenal threshold would assume the identity claim under dispute. Evolution supports the functional importance of controlled coherence; it does not, on its own, prove that controlled coherence exhausts experience.
+
+[^dawkins]: Richard Dawkins, post on X asking the evolutionary function of consciousness, https://x.com/RichardDawkins/status/2049973529576108160.

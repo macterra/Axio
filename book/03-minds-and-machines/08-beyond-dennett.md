@@ -7,7 +7,7 @@ sources:
   - 170205491.the-pragmatic-self
 ---
 
-Daniel Dennett was among the most influential thinkers to insist that consciousness be explained without a Cartesian inner witness. He exposed the homunculus fallacy and replaced an all-seeing inner subject with parallel, competing processes. The previous chapter borrowed the title of his most famous book deliberately. This chapter makes the lineage explicit by isolating the point where, on MST's interpretation, his architecture leaves functional room for an additional subsystem. Calling that subsystem an experiencer is precisely what remains to be defended.
+Daniel Dennett was among the most influential thinkers to insist that consciousness be explained without a Cartesian inner witness. He exposed the homunculus fallacy and replaced an all-seeing inner subject with parallel, competing processes. The previous chapter borrowed the title of his most famous book deliberately.[^dennett] This chapter makes the lineage explicit by isolating the point where, on MST's interpretation, his architecture leaves functional room for an additional subsystem. Calling that subsystem an experiencer is precisely what remains to be defended.
 
 My claim is that his demolition was correct while a later inference was too quick: limitations of introspective report do not by themselves show that no other process supports experience. MST redescribes some reporting functions as the Controller and asks whether the architecture requires another process beneath it. This is a reconstruction of Dennett through MST's vocabulary, not an identification Dennett accepted.
 
@@ -76,3 +76,5 @@ Dennett was right to demolish the false picture of an inner spectator. There is 
 Dennett's multiple drafts, his narratives, his center of narrative gravity — these remain intact. In MST, the Controller stitches stories from partial data; the autobiographical self remains a pragmatic construction worth keeping. What changes is the proposed layer beneath: those drafts may emerge from a process whose comparison states the theory identifies with experience. The Controller narrates *what* happened in the model; MST assigns the candidate implementation of experience elsewhere.
 
 The architectural claim is now clear: the subsystem that reports need not be identical to the subsystem MST assigns experience. The proposed experiencer is mechanistic and functionally motivated; whether it is phenomenally sufficient remains open. The claim that a self-model can genuinely be a subject, along with the objections it attracts, is where the argument goes next, in [Mirrors of the Mind](09-mirrors-of-the-mind.md).
+
+[^dennett]: Daniel Dennett, *Consciousness Explained*, Goodreads, https://www.goodreads.com/book/show/2069.Consciousness_Explained.
