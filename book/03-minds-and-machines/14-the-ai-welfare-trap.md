@@ -16,7 +16,7 @@ The lens I bring is the one this volume has been assembling: begin with coherenc
 
 ## Lerchner's Useful Attack
 
-Alexander Lerchner's paper [*The Abstraction Fallacy: Why AI Can Simulate But Not Instantiate Consciousness*](https://philarchive.org/rec/LERTAF) is worth taking seriously because it attacks a central shortcut in this debate: the move from simulation to instantiation. Lerchner's claim is that computation is a mapmaker-dependent abstraction over physical processes, not an intrinsic ontological category, and that this blocks the inference from the right formal pattern to genuine consciousness.
+Alexander Lerchner's paper *The Abstraction Fallacy: Why AI Can Simulate But Not Instantiate Consciousness*[^lerchner] is worth taking seriously because it attacks a central shortcut in this debate: the move from simulation to instantiation. Lerchner's claim is that computation is a mapmaker-dependent abstraction over physical processes, not an intrinsic ontological category, and that this blocks the inference from the right formal pattern to genuine consciousness.
 
 That shortcut appears everywhere. A system behaves as though it understands, so perhaps understanding is present. A system speaks as though it feels, so perhaps feeling is present. A system reproduces the outward profile associated with thought, so perhaps thought itself has been reproduced. Resemblance keeps getting promoted into equivalence.
 
@@ -123,3 +123,5 @@ Blurry categories become dangerous when the incentives reward projection. AI sys
 A machine that generates the language of selfhood has not established a self. A system that elicits sympathy has not established a patient. A polished imitation of agency has not established an agent.
 
 Those distinctions will become harder to hold as the performances improve. That makes them more important, not less.
+
+[^lerchner]: Alexander Lerchner, “The Abstraction Fallacy: Why AI Can Simulate But Not Instantiate Consciousness,” PhilArchive, https://philarchive.org/rec/LERTAF.
