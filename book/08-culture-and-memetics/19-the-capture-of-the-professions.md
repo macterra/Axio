@@ -46,7 +46,11 @@ Engineering joins universal physical constraints to situated human purposes. A b
 
 The confusion has a name, and it is worth carrying out of this chapter: it is the confusion of **verification with meaning.** A "decolonizing and indigenizing" engineering curriculum places engineering and Indigenous knowledge traditions on the same epistemic plane, as parallel ways of knowing that deserve equal space in the classroom. The posture aims at respect and commits a category error. Engineering evaluates a claim by verifying whether it corresponds to outcomes in the physical world. A cultural tradition evaluates a claim by its meaning within a historical and relational context. These are not interchangeable standards. Meaning explains significance; verification explains behavior. Both matter, and they answer different questions. A curriculum that collapses the two deprives engineering of its essential evaluative framework — the capacity to tell a true prediction from a false one.
 
-The concrete case that surfaced this was a real course, flagged by the engineer Paul Raymond-Robichaud and documented in a published course paper for a Canadian engineering faculty:
+The concrete case that surfaced this was a real course, flagged by the engineer Paul Raymond-Robichaud[^robichaud-course] and documented in a published course paper for a Canadian engineering faculty:[^decolonizing-engineering]
+
+[^robichaud-course]: Paul Raymond-Robichaud (@PaulRRobichaud), post on X, November 2025, https://x.com/PaulRRobichaud/status/1991680095334068684.
+
+[^decolonizing-engineering]: “Decolonizing and Indigenizing Engineering,” course paper, Canadian Engineering Education Association, 2022, https://www.concordia.ca/content/dam/concordia/offices/ctl/docs/Decolonizing/Decolonizin_Engineering_Course_Paper_CEEA-ACEG_2022.pdf.
 
 > A required course in an accredited engineering program: "Decolonizing and Indigenizing Engineering." The assessment is reflective journaling, participation in discussions and ceremonies, and a summative reflective project. No modeling. No design exercise. No analysis of a physical system. No testing of a hypothesis. This is an engineering course.
 

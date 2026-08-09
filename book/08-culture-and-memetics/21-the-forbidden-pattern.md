@@ -6,7 +6,9 @@ sources:
   - 202362354.the-forbidden-pattern
 ---
 
-The British grooming-gang scandal was not a failure to gather information. The information was lying in plain view. Girls spoke. Parents complained. Youth workers filed warnings. Police held the names, the cars, the hotels, the takeaways, the taxi firms, the care homes — the same offenders surfacing again and again. The facts were present. What failed was the act of looking at them. The institutions had learned that one kind of fact was hazardous to perceive, and so they perceived around it.
+The British grooming-gang scandal[^rape-gang-inquiry] was not a failure to gather information. The information was lying in plain view. Girls spoke. Parents complained. Youth workers filed warnings. Police held the names, the cars, the hotels, the takeaways, the taxi firms, the care homes — the same offenders surfacing again and again. The facts were present. What failed was the act of looking at them. The institutions had learned that one kind of fact was hazardous to perceive, and so they perceived around it.
+
+[^rape-gang-inquiry]: Inquiry report on British grooming gangs, https://static1.squarespace.com/static/6810978a41bbc42489eafa81/t/6a314bb1151e511944bd4421/1781615537601/The+Rape+Gang+Inquiry+Report.pdf.
 
 Start with the order of guilt, because nothing that follows should blur it. The first crime belonged to the men who raped, drugged, trafficked, and terrorized children. Predators are responsible for predation, fully and without discount. The girls were not "putting themselves at risk" or making "lifestyle choices." They were children, and they were being hunted by organized adult men.
 
@@ -32,8 +34,8 @@ The wording has to be exact, and exactness cuts in several directions. "Muslim-b
 
 Rotherham is the clearest case because so much was finally written down. The independent inquiry led by Alexis Jay estimated that at least 1,400 children were sexually exploited there between 1997 and 2013. It described collective failure by the council and police, victims who were blamed or treated as making choices, perpetrators commonly described by victims as Asian, and staff who reported nervousness about identifying ethnic origins for fear of being thought racist.[^jay] A later national audit described the local model more specifically while warning against stereotyping offenders or treating it as the only form of group-based abuse.[^national-audit] The record supports both propositions: ethnicity was relevant in this local pattern, and overgeneralizing it would obscure other offenders and victims.
 
-[^jay]: Alexis Jay, [*Independent Inquiry into Child Sexual Exploitation in Rotherham, 1997–2013*](https://www.rotherham.gov.uk/downloads/download/31/independent-inquiry-into-child-sexual-exploitation-in-rotherham-1997---2013), Rotherham Metropolitan Borough Council, 2014.
-[^national-audit]: UK Government, [*National Audit on Group-based Child Sexual Exploitation and Abuse*](https://www.gov.uk/government/publications/national-audit-on-group-based-child-sexual-exploitation-and-abuse/national-audit-on-group-based-child-sexual-exploitation-and-abuse-accessible), 2025.
+[^jay]: Alexis Jay, *Independent Inquiry into Child Sexual Exploitation in Rotherham, 1997–2013*, Rotherham Metropolitan Borough Council, 2014, https://www.rotherham.gov.uk/downloads/download/31/independent-inquiry-into-child-sexual-exploitation-in-rotherham-1997---2013.
+[^national-audit]: UK Government, *National Audit on Group-based Child Sexual Exploitation and Abuse*, 2025, https://www.gov.uk/government/publications/national-audit-on-group-based-child-sexual-exploitation-and-abuse/national-audit-on-group-based-child-sexual-exploitation-and-abuse-accessible.
 
 ## Euphemism Is Machinery
 

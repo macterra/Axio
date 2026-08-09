@@ -44,7 +44,9 @@ Naming the thing is genuinely hard, and the labels on offer all leak. "Woke Righ
 
 Here I have to turn the same discipline on the symmetry argument itself — because it, too, can decay into a caricature, and it does so in a way that reveals something important about how this book means to operate.
 
-The temptation, once you have the mirror in hand, is to make it perfect. To insist that Left and Right are not merely structurally parallel but equivalent all the way down, equally absurd in exactly corresponding ways. Lindsay himself supplied the most quotable version of this, framing each side as a tidy syllogism:
+The temptation, once you have the mirror in hand, is to make it perfect. To insist that Left and Right are not merely structurally parallel but equivalent all the way down, equally absurd in exactly corresponding ways. Lindsay himself supplied the most quotable version of this,[^lindsay-symmetry] framing each side as a tidy syllogism:
+
+[^lindsay-symmetry]: James Lindsay (@ConceptualJames), post on X, August 2025, https://x.com/ConceptualJames/status/1961838359824785584.
 
 > **Woke Left:** If created equal, then outcomes should be equal. Outcomes are not equal, but people are. Therefore the system is unfair, and people must be treated unequally to fix it.
 >

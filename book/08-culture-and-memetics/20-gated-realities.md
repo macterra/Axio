@@ -7,7 +7,9 @@ sources:
   - 169479666.the-progressive-exodus
 ---
 
-Colin Wright reported something striking about his BlueSky timeline: when Israeli hostages walked free — an event some would celebrate, some mourn, most argue about — his feed showed no condemnation, no celebration, no argument, no acknowledgment it had happened at all. A whole category of the world seemed curated out of view. One timeline is not a platform, though, and the claim requires a test: choose news likely to divide a genuinely mixed audience, define a time window and comparison feed, and measure whether the space argues, acknowledges, or goes quiet. If repeated samples show systematic absence after exposure and ranking are considered, self-selection and curation become mechanisms to investigate.
+The evolutionary biologist Colin Wright reported something striking about his BlueSky timeline:[^wright-bluesky] when Israeli hostages walked free — an event some would celebrate, some mourn, most argue about — his feed showed no condemnation, no celebration, no argument, no acknowledgment it had happened at all. A whole category of the world seemed curated out of view. One timeline is not a platform, though, and the claim requires a test: choose news likely to divide a genuinely mixed audience, define a time window and comparison feed, and measure whether the space argues, acknowledges, or goes quiet. If repeated samples show systematic absence after exposure and ranking are considered, self-selection and curation become mechanisms to investigate.
+
+[^wright-bluesky]: Colin Wright (@SwipeWright), post on X, October 2025, https://x.com/SwipeWright/status/1977888782897512843.
 
 Every mechanism this volume has described so far runs on someone acting on someone else — the label deployed, the category corrupted, the dissenter erased. Gated reality is a possible inward version: people can select an information environment that reduces unwanted contact and experience the reduction as relief. One sharp comparison is white flight, but the analogy must be earned at the level of mechanism rather than declared identical.
 

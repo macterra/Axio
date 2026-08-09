@@ -41,7 +41,7 @@ The second ritual keeps race at the center of institutional decision-making and 
 
 A Canadian federal career award illustrates the issue without relying on a second-hand job posting. The CIHR Research Excellence, Diversity, and Independence Early Career Transition Award limits eligibility to researchers who self-identify as Black, regardless of gender, or as racialized women.[^redi]
 
-[^redi]: University of Lethbridge, [CIHR Research Excellence, Diversity, and Independence (REDI) Early Career Transition Award](https://www.ulethbridge.ca/research/grants/cihr-research-excellence-diversity-and-independence-redi-early-career-transition). The official page states both the eligibility rule and the program's remedial rationale.
+[^redi]: University of Lethbridge, “CIHR Research Excellence, Diversity, and Independence (REDI) Early Career Transition Award,” https://www.ulethbridge.ca/research/grants/cihr-research-excellence-diversity-and-independence-redi-early-career-transition. The official page states both the eligibility rule and the program's remedial rationale.
 
 The program states a remedial rationale: addressing systemic racism and sexism, improving participation, and supporting transitions into independent research positions. The operative rule is nevertheless categorical. Some combinations of racial identity and sex are eligible; others are excluded before their research can be assessed.
 
