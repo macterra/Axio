@@ -7,6 +7,10 @@ sources:
   - 165641748.subjectivism-vs-moral-relativism
 ---
 
+[^hume]: David Hume, *A Treatise of Human Nature*, https://en.wikipedia.org/wiki/A_Treatise_of_Human_Nature.
+
+[^mackie]: J. L. Mackie, *Ethics: Inventing Right and Wrong*, https://en.wikipedia.org/wiki/Ethics:_Inventing_Right_and_Wrong.
+
 "Lying is wrong."
 
 Is that true? Most people say yes without hesitation, and much of meta-ethics is a quarrel about what could make them right. Realists, error theorists, fictionalists, constructivists, expressivists, and relativists offer more varied answers than one paragraph can honor. The narrower proposal here is a practical device for exposing the standard and application conditions inside the sentence.
@@ -15,7 +19,7 @@ I say the sentence, as it stands, leaves its standard implicit. "It's raining" n
 
 ## Hume's Gap
 
-Start where the trouble starts. Hume famously challenged transitions from statements about what *is* to claims about what *ought* to be. No purely descriptive inventory entails a verdict without a normative bridge. You can describe the lie, the liar, the consequences, and the betrayed party's distress, and at no point does the description alone entail "and therefore it was wrong." Competing meta-ethical theories explain the missing bridge differently. This volume locates it in standards held or adopted by agents and practices.
+Start where the trouble starts. Hume famously challenged transitions from statements about what *is* to claims about what *ought* to be.[^hume] No purely descriptive inventory entails a verdict without a normative bridge. You can describe the lie, the liar, the consequences, and the betrayed party's distress, and at no point does the description alone entail "and therefore it was wrong." Competing meta-ethical theories explain the missing bridge differently. This volume locates it in standards held or adopted by agents and practices.
 
 I align with Hume's skepticism entirely. Preferences alone — what I call **naked preferences** — cannot hold objective, universal, factual status. All value is subjective in exactly the sense I defended in [the myth of objective value](01-the-myth-of-objective-value.md): value exists only in relation to agents capable of wanting and choosing, and a moral claim floated free of any agent is a preference with delusions of grandeur.
 
@@ -37,7 +41,7 @@ The application form is what I mean by **conditional objectivity**: public asses
 
 The serious modern heirs of Hume's skepticism run the diagnosis differently, and agent-binding carves out a middle ground between them.
 
-J.L. Mackie's **error theory** holds, roughly, that ordinary moral claims purport to report objective prescriptive features that do not exist, so they are systematically in error. Agent-binding accepts the skepticism about agent-independent prescription but offers a reconstruction rather than a direct refutation of error theory. "Lying is wrong," as used on a particular occasion, may express or presuppose a standard; once that standard and case are made explicit, the reconstructed conditional can have determinate application conditions. Whether this preserves the original assertion's meaning is a substantive semantic question. The practical gain is that speakers can expose what would make their verdict follow instead of relying on missing metaphysics.
+J.L. Mackie's **error theory**[^mackie] holds, roughly, that ordinary moral claims purport to report objective prescriptive features that do not exist, so they are systematically in error. Agent-binding accepts the skepticism about agent-independent prescription but offers a reconstruction rather than a direct refutation of error theory. "Lying is wrong," as used on a particular occasion, may express or presuppose a standard; once that standard and case are made explicit, the reconstructed conditional can have determinate application conditions. Whether this preserves the original assertion's meaning is a substantive semantic question. The practical gain is that speakers can expose what would make their verdict follow instead of relying on missing metaphysics.
 
 Richard Joyce's **moral fictionalism** takes the other exit: moral claims are not objective truths but beneficial social fictions — morality as a useful myth we keep telling because it lubricates cooperation, despite lacking literal truth. This is more congenial than it sounds hostile; Joyce is right that moral practice earns its keep pragmatically. But no fiction is required for the narrower claims defended here. A conditional verdict can be correct under its stated normative and factual inputs even though it is not itself an empirical proposition. Where Joyce offers a useful fiction, agent-binding offers exposed standards, determinate application conditions, and conclusions open to public criticism.
 

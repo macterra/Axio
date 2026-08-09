@@ -8,9 +8,11 @@ sources:
   - 170298982.finite-and-infinite-games
 ---
 
+[^carse]: James P. Carse, *Finite and Infinite Games: A Vision of Life as Play and Possibility*, Goodreads, https://www.goodreads.com/book/show/189989.Finite_and_Infinite_Games.
+
 A scientist chases prestige instead of truth. A corporation sits on a breakthrough rather than shipping it. A political movement sacrifices short-term popularity to preserve internal cohesion, and a culture enforces norms that look pointless from the outside but somehow never die. Observers call this behavior irrational, and the diagnosis is almost always wrong. The behavior is not irrational. The observer has misidentified the game.
 
-The best-known map of this territory is James Carse's distinction between finite and infinite games. Finite games are played to win: fixed rules, defined players, a clear endpoint after which victory is declared — chess matches, elections, quarterly earnings. Infinite games are played to continue play: the rules evolve, the players change, and success is measured not by any final score but by whether the game is still going — friendships, science, a living culture. The distinction earns its popularity. It explains why the company optimizing for this quarter's dominance so often loses to the company optimizing for still being here in twenty years, and why relationships treated as contests to be won end while relationships treated as play to be continued endure.
+The best-known map of this territory is James Carse's distinction between finite and infinite games.[^carse] Finite games are played to win: fixed rules, defined players, a clear endpoint after which victory is declared — chess matches, elections, quarterly earnings. Infinite games are played to continue play: the rules evolve, the players change, and success is measured not by any final score but by whether the game is still going — friendships, science, a living culture. The distinction earns its popularity. It explains why the company optimizing for this quarter's dominance so often loses to the company optimizing for still being here in twenty years, and why relationships treated as contests to be won end while relationships treated as play to be continued endure.
 
 But the binary is too coarse. Reality does not sort into two piles of games, one finite and one infinite. It stacks games inside games inside games, and Carse's "infinite game" is best understood as a first, blurry glimpse of what sits at the top of that stack. To see it clearly, we need the whole ladder.
 
