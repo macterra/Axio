@@ -8,7 +8,7 @@ sources:
   - 197051603.einstein-didnt-say-it-and-it-isnt
 ---
 
-I once misread a single word in a passage by Charles Sanders Peirce, and the misreading turned out to be worth more than the passage. It began:
+I once misread a single word in a passage by Charles Sanders Peirce, and the misreading turned out to be worth more than the passage.[^peirce] It began:
 
 > "I once landed at a seaport in a Turkish province; and, as I was walking up to the house which I was to visit, I met a man upon horseback, surrounded by four horsemen holding a canopy over his head."
 
@@ -32,7 +32,7 @@ But notice what made this error so cheap to fix: the world pushed back instantly
 
 ## Rationalization Is Not Rationality
 
-Brenda won the lottery and faced a choice: take a $1 million lump sum, or receive $1,000 a week for life. She chose the weekly payout. On the surface, the decision can be rationalized. It provides certainty, discipline, and the comforting knowledge that she will never run out of money. It removes the temptation to squander a windfall and the risk of losing it to bad investments. With a bit of imagination, the choice sounds defensible.
+Brenda won the lottery and faced a choice: take a $1 million lump sum, or receive $1,000 a week for life.[^brenda] She chose the weekly payout. On the surface, the decision can be rationalized. It provides certainty, discipline, and the comforting knowledge that she will never run out of money. It removes the temptation to squander a windfall and the risk of losing it to bad investments. With a bit of imagination, the choice sounds defensible.
 
 But rationalization is not rationality.
 
@@ -69,3 +69,7 @@ Otherwise the argument still has to be made: what is causally identical, what ev
 Line the three cases up and they turn out to be one story told at three speeds. At the speed of perception, priors dominate until evidence forces an update, and the correction is automatic — *airport* dies in a second because the world's veto is instant. At the speed of decision, the correction is no longer automatic, because intelligence itself has switched sides: Brenda's frame manufactures coherent stories faster than reality can puncture them, and only the deliberate move of testing the frame — meta-rationality — restores contact with the evidence. And at the limit sits the corrected Einstein principle, which defines the terminal failure: conditions unchanged, feedback stable and negative, model frozen, expectation intact. That refusal, made permanent and principled, is faith — the move examined in [Against Faith](10-against-faith.md), a model that has disconnected itself from the error signal on purpose.
 
 Beliefs, I argued in [What Beliefs Are](08-what-beliefs-are.md), are predictive models whose virtue is calibration, not certainty. This chapter is that claim turned into a practice. Treat your stumbles as data about your priors, because they are the only moments your priors show themselves. Test the frame and not merely the coherence inside it, because any frame can be storied into coherence. And when the world has stably said no — same conditions, same intervention, same verdict — change the model, not the narrative. None of this requires heroic intellect; the machinery updates by itself whenever we let it, as the misread word proves. What it requires is the willingness to lose the negotiation with reality when reality has the better case — and the honesty to notice that it usually does. What the whole discipline looks like when run end-to-end on a live contested question is the business of [Bayes in the Wild](21-bayes-in-the-wild.md).
+
+[^peirce]: Charles Sanders Peirce quotation, shared by @CSPeirceSpeaks on X, https://x.com/CSPeirceSpeaks/status/1964073534046474570.
+
+[^brenda]: Video report of Brenda's lottery payout choice, @6ixbuzztv on X, https://x.com/6ixbuzztv/status/1968066118817554768.

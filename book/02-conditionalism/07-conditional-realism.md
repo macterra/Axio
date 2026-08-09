@@ -7,7 +7,7 @@ sources:
   - 174785128.the-case-for-reality
 ---
 
-Donald Hoffman has a flair for the dramatic. In *The Case Against Reality* he tells us that everything we see is a lie: the world of colors and objects, of space and time, is nothing more than a user interface designed by evolution. The metaphor is irresistible — just as your desktop icons hide the messy circuits of silicon, your visual field hides the quantum froth beneath.
+Donald Hoffman has a flair for the dramatic. In *The Case Against Reality*[^hoffman] he tells us that everything we see is a lie: the world of colors and objects, of space and time, is nothing more than a user interface designed by evolution. The metaphor is irresistible — just as your desktop icons hide the messy circuits of silicon, your visual field hides the quantum froth beneath.
 
 Readers typically respond in one of two ways. Some nod in awe, as though Hoffman has revealed a cosmic conspiracy. Others scoff, dismissing him as another idealist in scientific drag. Both reactions miss the point. The right question is not "Is Hoffman right?" but *under what conditions would Hoffman be right?*
 
@@ -97,3 +97,5 @@ Hoffman's case against reality fails because it equivocates on its conditions �
 He is right under Condition A: if evolution always punishes truth, if interfaces are pure icons, if emergence equals illusion, if consciousness is primitive. He is wrong under Condition B: if survival requires approximate veridicality, if interfaces preserve structure, if emergent levels are real, if consciousness is derivative. The trick is not to choose sides but to recognize the hidden switch: change the background conditions, and the verdict flips.
 
 That is Conditionalism working as a method rather than a slogan. It does not merely arbitrate the dispute; it dissolves it into a map of assumptions, showing precisely when the theory is compelling and when it is empty. Hoffman is useful not because he overturned realism but because he demonstrates how easily sweeping claims collapse into conditional ones. And that, in the end, is the real case against reality: not that the world is illusory, but that every theory of the world — his, mine, and the naive realist's alike — is hostage to its conditions. Conditional realism is the position that owns up to this and keeps the world anyway.
+
+[^hoffman]: Donald D. Hoffman, *The Case Against Reality*, Goodreads, https://www.goodreads.com/book/show/41817484-the-case-against-reality.
