@@ -11,7 +11,7 @@ In the summer of 1579, Francis Drake sailed the *Golden Hind* up the west coast 
 
 Everyone accepts stories like this one. Everyone has a private version — the train missed by seconds that led to a meeting, a friendship, a career. And nearly everyone files these stories under *rare exception*: charming flukes at the margin of a history that mostly absorbs small differences and moves on. Big causes for big effects; the trivia washes out.
 
-This chapter argues for a narrower correction. Tiny differences can sometimes amplify into large consequences, and we often cannot know in advance which ones will. Brian Klaas makes the empirical case in *Fluke: Chance, Chaos, and Why Everything We Do Matters*. The physics supports sensitivity in particular regimes, not the universal claim that every small cause inevitably reshapes the world. The practical lesson is uncertainty about causal reach, not the impossibility of inconsequential acts.
+This chapter argues for a narrower correction. Tiny differences can sometimes amplify into large consequences, and we often cannot know in advance which ones will. Brian Klaas makes the empirical case in *Fluke: Chance, Chaos, and Why Everything We Do Matters*.[^klaas] The physics supports sensitivity in particular regimes, not the universal claim that every small cause inevitably reshapes the world. The practical lesson is uncertainty about causal reach, not the impossibility of inconsequential acts.
 
 ## The Rubber-Band Model
 
@@ -58,3 +58,5 @@ So the answer is calibrated attentiveness. You cannot compute the full web of co
 Klaas's examples show that tiny differences can produce radically divergent futures. This is not a universal theorem: chaotic amplification is regime-dependent, and damping is ubiquitous too. The fog off the Golden Gate illustrates a possibility that complex systems repeatedly create, not an inevitable fate for every perturbation.
 
 There are small acts, but size at one scale does not fix consequence at another. The song you choose, the moment you pause, the word you speak or withhold enter a causal network whose important effects are only partly predictable. Causation is continuous; significance is conditional.
+
+[^klaas]: Brian Klaas, *Fluke: Chance, Chaos, and Why Everything We Do Matters*, Goodreads, https://www.goodreads.com/book/show/177058906-fluke.
