@@ -18,7 +18,9 @@ This chapter works through three consequences of [Rights Are Forged — and Reci
 
 Negative rights against assault, theft, or fraud demand restraint and answer an invasion.
 
-Provision rights claim labor, goods, money, or time and require institutions that allocate duties and costs. [Modern international law recognizes rights to health, education, housing, food, and social security](https://europe.ohchr.org/index.php/areas-of-work/economic-scocial); the agency objection is not semantic. The claim must identify who may be compelled, how much, under what authority and limits, then survive the Grey Zone.
+Provision rights claim labor, goods, money, or time and require institutions that allocate duties and costs. Modern international law recognizes rights to health, education, housing, food, and social security;[^ohchr-economic-rights] the agency objection is not semantic. The claim must identify who may be compelled, how much, under what authority and limits, then survive the Grey Zone.
+
+[^ohchr-economic-rights]: Office of the United Nations High Commissioner for Human Rights, “Economic, social and cultural rights,” https://europe.ohchr.org/index.php/areas-of-work/economic-scocial.
 
 Need identifies no debtor. If I assault you, the wrong has an author and the debt an address. If you need medicine and I did not cause the need, converting that need into my enforceable duty asserts jurisdiction over my labor, property, or time. "Whoever has resources" is not the name of a wrongdoer, so the assertion requires another bridge.
 

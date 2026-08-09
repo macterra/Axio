@@ -42,7 +42,9 @@ Nothing can be coordinated, owned, or governed by minds that are not first alive
 
 ## Four Panels of Bad Philosophy
 
-Against this stands xkcd 1357: free speech means only that government cannot arrest you, not that anyone owes a platform, audience, or freedom from consequences. It became a ready-made dismissal of anyone silenced by something other than police.
+Against this stands xkcd 1357:[^xkcd-free-speech] free speech means only that government cannot arrest you, not that anyone owes a platform, audience, or freedom from consequences. It became a ready-made dismissal of anyone silenced by something other than police.
+
+[^xkcd-free-speech]: Randall Munroe, “Free Speech,” *xkcd* 1357, https://xkcd.com/1357/.
 
 But slogans are not philosophy, and this one commits three errors compact enough to fit in four panels.
 

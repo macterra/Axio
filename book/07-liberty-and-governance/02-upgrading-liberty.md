@@ -13,7 +13,9 @@ A factory dumps solvent into a river and a thousand wells sour downstream. A con
 
 ## Mill's Sentence
 
-The liberal tradition has run for a century and a half on a single sentence. John Stuart Mill, *On Liberty*, 1859: the only legitimate reason for exercising power over an individual, against their will, is to prevent harm to others.
+The liberal tradition has run for a century and a half on a single sentence. John Stuart Mill, *On Liberty*, 1859:[^mill-liberty] the only legitimate reason for exercising power over an individual, against their will, is to prevent harm to others.
+
+[^mill-liberty]: John Stuart Mill, *On Liberty* (1859), https://en.wikipedia.org/wiki/On_Liberty.
 
 Mill saw both state oppression and the social tyranny of the majority. He distinguished self-regarding conduct from conduct that threatens others, denied that offense or disapproval licenses coercion, and placed the burden of proof on whoever would curtail liberty. Those commitments survive here. (His case for free discussion belongs to [The Listener's Right](08-the-listeners-right.md).)
 
@@ -21,7 +23,9 @@ What does not survive is the undefined load-bearing term. Mill tells us what *ha
 
 ## The Non-Aggression Principle
 
-Libertarianism's repair was the Non-Aggression Principle: initiating aggression against another's person or property is illegitimate, and coercion is justified only in response. Its bright line inherits Mill's problem and adds two more.
+Libertarianism's repair was the Non-Aggression Principle:[^nap] initiating aggression against another's person or property is illegitimate, and coercion is justified only in response. Its bright line inherits Mill's problem and adds two more.
+
+[^nap]: “Non-aggression principle,” *Wikipedia*, https://en.wikipedia.org/wiki/Non-aggression_principle.
 
 First, *aggression* is as ambiguous as *harm*: fraud, blackmail, manipulation, and pollution remain disputed even though assault and robbery do not.
 

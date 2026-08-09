@@ -57,7 +57,9 @@ The historical record runs the other way, too. Suppressing speech breeds violenc
 
 ## The Demagogue and the Mafia Thug
 
-Lucy Connolly, a British childminder, was sentenced to thirty-one months after posting: “Mass deportation now, set fire to all the f\*\*\*\*\* hotels full of the bastards for all I care.” The facts recorded by the [Court of Appeal](https://www.judiciary.uk/judgments/lucy-connolly-v-the-king/) belong in any honest account: she pleaded guilty to distributing material intending to stir up racial hatred, had thousands of followers, and posted during the public disorder following false claims about the Southport killer. Grant all of it, including the intent the court found. It still is not *coercion*. Coercion is the deliberate use of a credible conditional threat of material setback to obtain the threatened person's compliance — and Connolly threatened no one into compliance. Her tweet was an exhortation broadcast to an audience, not a conditional threat leveraged against a target's choices. Intent is an element of coercion, but intent to influence or inflame is not intent to obtain compliance through threatened setback. So coercion-shaped reasoning misfires: whether her words instead cross the different line of incitement or operational participation is the question the rest of this chapter is built to answer.
+Lucy Connolly, a British childminder, was sentenced to thirty-one months after posting: “Mass deportation now, set fire to all the f\*\*\*\*\* hotels full of the bastards for all I care.” The facts recorded by the Court of Appeal[^connolly-appeal] belong in any honest account: she pleaded guilty to distributing material intending to stir up racial hatred, had thousands of followers, and posted during the public disorder following false claims about the Southport killer. Grant all of it, including the intent the court found. It still is not *coercion*. Coercion is the deliberate use of a credible conditional threat of material setback to obtain the threatened person's compliance — and Connolly threatened no one into compliance. Her tweet was an exhortation broadcast to an audience, not a conditional threat leveraged against a target's choices. Intent is an element of coercion, but intent to influence or inflame is not intent to obtain compliance through threatened setback. So coercion-shaped reasoning misfires: whether her words instead cross the different line of incitement or operational participation is the question the rest of this chapter is built to answer.
+
+[^connolly-appeal]: Court of Appeal of England and Wales, *Lucy Connolly v The King*, https://www.judiciary.uk/judgments/lucy-connolly-v-the-king/.
 
 The structural difference is easy to state. A mafia thug who says "Pay up or I burn your shop" attacks his victim's agency directly: comply or suffer. A demagogue who yells "Burn down the shops!" coerces no one — he *urges*, and the agency remains entirely with the listener, who can refuse. Incitement is not coercion. The two acts have different causal anatomies, and a law that conflates them has made a category error.
 
@@ -65,7 +67,9 @@ But now the residue. If incitement is not coercion, is it therefore protected sp
 
 ## The Exchange
 
-The stalemate, and the question that breaks it, are both captured in an exchange between Andrew Doyle and David Deutsch:
+The stalemate, and the question that breaks it, are both captured in an exchange between Andrew Doyle and David Deutsch:[^doyle-deutsch]
+
+[^doyle-deutsch]: David Deutsch (@DavidDeutschOxf), exchange with Andrew Doyle on X, December 2025, https://x.com/DavidDeutschOxf/status/2004551170023637085.
 
 **Doyle:** "Those in power should never determine the boundaries of free speech. That's a recipe for tyranny."
 

@@ -12,7 +12,9 @@ sources:
 
 A man sells everything to seek a better life. Across the border, an employer would hire him, a landlord rent to him, a congregation welcome him. Armed agents turn him back. Calling this *enforcement* does not settle the moral question: by what right?
 
-Border control is coercion and owes the justification established in [Upgrading Liberty](02-upgrading-liberty.md) and [The Grey Zone](05-the-grey-zone.md). Applied legal categories still differ: returning citizens, visa applicants, refugees, and individualized security threats do not present the same claims. Under the [1951 Refugee Convention](https://www.unhcr.org/about-unhcr/overview/1951-refugee-convention), non-refoulement protects refugees against return to serious threats and constrains state action.
+Border control is coercion and owes the justification established in [Upgrading Liberty](02-upgrading-liberty.md) and [The Grey Zone](05-the-grey-zone.md). Applied legal categories still differ: returning citizens, visa applicants, refugees, and individualized security threats do not present the same claims. Under the 1951 Refugee Convention,[^refugee-convention] non-refoulement protects refugees against return to serious threats and constrains state action.
+
+[^refugee-convention]: United Nations High Commissioner for Refugees, “The 1951 Refugee Convention,” https://www.unhcr.org/about-unhcr/overview/1951-refugee-convention.
 
 ## The Harm Runs Both Ways
 

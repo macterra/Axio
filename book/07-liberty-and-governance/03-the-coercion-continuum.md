@@ -23,7 +23,9 @@ The placements are estimates, and the axis is deliberately partial. A tax share 
 
 No tax state is exempt from the axis, and the moral question cannot be quarantined at its far end. A smaller compulsory claim is not therefore innocent; it owes an answer proportionate to what is taken and how.
 
-Voting, residence, and participation do not by themselves authorize a threat imposed for nonpayment. Tax collection fits the book's [coercion definition](../05-value-and-ethics/09-what-counts-as-coercion.md); ordinary employment need not, because entitlement, dependency, alternatives, and the baseline differ. Territorial monopoly, ruinous exit, and self-issued sanctions make political consent the harder case — the problem of political authority, pressed most carefully by Michael Huemer.
+Voting, residence, and participation do not by themselves authorize a threat imposed for nonpayment. Tax collection fits the book's [coercion definition](../05-value-and-ethics/09-what-counts-as-coercion.md); ordinary employment need not, because entitlement, dependency, alternatives, and the baseline differ. Territorial monopoly, ruinous exit, and self-issued sanctions make political consent the harder case — the problem of political authority, pressed most carefully by Michael Huemer.[^huemer-authority]
+
+[^huemer-authority]: Michael Huemer, *The Problem of Political Authority*, https://www.goodreads.com/book/show/15794037-the-problem-of-political-authority.
 
 Taxation also buys things worth having. That benefit begins the justification argument; it does not complete it. [The Grey Zone](05-the-grey-zone.md) states the remaining burden.
 
