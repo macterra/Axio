@@ -19,7 +19,9 @@ Forged does not mean arbitrary. A sword and a shackle are forged too. This chapt
 
 A justified moral claim can precede its protection, but no boundary remains stable without resistance. Enforcement may be personal, social, or institutional and may use persuasion, coordination, refusal, threat, or force. Each mechanism needs its own classification and justification. The claim and its reciprocal principle make a candidate right; embodiment makes it effective.
 
-Patri Friedman's compression — "there are no rights, only mechanisms" — captures the need for rules, detection, enforcement, and consequence. It cannot distinguish a rights regime from well-mechanized slavery, apartheid, or tyranny. A standard beyond effectiveness is required even to ask whether the mechanism is just.
+Patri Friedman's compression — "there are no rights, only mechanisms"[^friedman-mechanisms] — captures the need for rules, detection, enforcement, and consequence. It cannot distinguish a rights regime from well-mechanized slavery, apartheid, or tyranny. A standard beyond effectiveness is required even to ask whether the mechanism is just.
+
+[^friedman-mechanisms]: Patri Friedman (@patrissimo), post on X, September 2025, https://x.com/patrissimo/status/1964773590731296777.
 
 Declarations can also precede enforcement by coordinating allies and norms. The Declaration of Independence was ink on parchment until people chose to act on it. Rights without mechanisms are toothless; mechanisms without a justifying principle are blind.
 

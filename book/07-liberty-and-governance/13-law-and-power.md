@@ -9,9 +9,13 @@ sources:
 
 In September 2025, U.S. forces struck a Caribbean boat the administration alleged was trafficking drugs. Two survivors of the initial attack were killed in a follow-up strike. Operational details and the chain of authorization remain contested.
 
-The administration asserted an armed-conflict theory and defended the operation as lawful; critics disputed that any relevant armed conflict existed and argued for arrest and trial. Even under the law of armed conflict, persons *hors de combat*, including qualifying shipwrecked survivors, receive protection. The [UN High Commissioner for Human Rights concluded that the broader boat-strike campaign violated international human-rights law](https://www.ungeneva.org/en/news-media/news/2025/10/112362/us-strikes-caribbean-and-pacific-breach-international-law-says-un). That is an authoritative assessment, not a final adjudication of individual criminal liability.
+The administration asserted an armed-conflict theory and defended the operation as lawful; critics disputed that any relevant armed conflict existed and argued for arrest and trial. Even under the law of armed conflict, persons *hors de combat*, including qualifying shipwrecked survivors, receive protection. The UN High Commissioner for Human Rights concluded that the broader boat-strike campaign violated international-human-rights law.[^un-boat-strikes] That is an authoritative assessment, not a final adjudication of individual criminal liability.
 
-The strike triggered bipartisan scrutiny, document demands, hearings, and public legal analysis. As of an [April 2026 Senate Armed Services hearing](https://www.armed-services.senate.gov/imo/media/doc/full_transcript-04-28-2026.pdf), the broader Operation Southern Spear remained under congressional scrutiny. The question is whether oversight has timely evidence, independence, remedial power, and capacity to impose consequences on senior officials.
+[^un-boat-strikes]: United Nations Office at Geneva, “US strikes in Caribbean and Pacific breach international law, says UN rights chief,” October 2025, https://www.ungeneva.org/en/news-media/news/2025/10/112362/us-strikes-caribbean-and-pacific-breach-international-law-says-un.
+
+The strike triggered bipartisan scrutiny, document demands, hearings, and public legal analysis. As of an April 2026 Senate Armed Services hearing,[^senate-spear] the broader Operation Southern Spear remained under congressional scrutiny. The question is whether oversight has timely evidence, independence, remedial power, and capacity to impose consequences on senior officials.
+
+[^senate-spear]: U.S. Senate Committee on Armed Services, hearing transcript, April 28, 2026, https://www.armed-services.senate.gov/imo/media/doc/full_transcript-04-28-2026.pdf.
 
 The civic mantra *no one is above the law* is an aspiration and design requirement, not a self-verifying description. **Law's practical force weakens when investigative independence, jurisdiction, evidence, and sanction cannot reach the actor.** Norms may shape legitimacy and later accountability; power affects whether they bite now.
 
