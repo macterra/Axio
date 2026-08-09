@@ -72,7 +72,7 @@ None of this proves the QBU on its own, and it is not offered as a proof. It exp
 
 ## What Quantum Mechanics Actually Killed
 
-There is a last line of retreat for the observer-centered picture, and it comes dressed as sophistication: quantum mechanics, the claim goes, has made realism itself impossible. Paul Davies argues as much. The diagnosis is wrong, and the way it is wrong is instructive — what died was never realism but a particular, parochial version of it.
+There is a last line of retreat for the observer-centered picture, and it comes dressed as sophistication: quantum mechanics, the claim goes, has made realism itself impossible. Physicist Paul Davies argues as much.[^davies] The diagnosis is wrong, and the way it is wrong is instructive — what died was never realism but a particular, parochial version of it.
 
 Classical object realism asserts that the world is built from localized objects, that each object carries definite properties at all times, and that measurement merely reveals those properties. Quantum mechanics eliminates that framework. Superposition places incompatible classical states inside one physical state; non-commutativity prevents joint definiteness of observables; Bell and Kochen–Specker forbid classical, noncontextual hidden variables. So far Davies is right. But the failure is parochial: it applies to one outdated ontology, not to realism itself, which is the deeper claim that a mind-independent generative structure produces the phenomena we observe. The mistake is to confuse the death of object ontology with the death of ontology.
 
@@ -87,3 +87,5 @@ The pop version of quantum mechanics hands observation an occult job: the world 
 That single distinction blocks both errors. The mystical one: mind creates the outcome. The deflationary one: if every branch exists, observation means nothing. Observation means something precise. It is how a system becomes correlated with a branch and picks up local evidence about which branch it is in.
 
 The cat was never half alive. The friend was never waiting on Wigner to make her measurement real. The seeming contradictions came entirely from demanding a single absolute fact of the form "the result has happened" without saying which physical observer-state has access to it. Strip that demand and the tension is gone, and the mystery stops pointing toward collapse, or consciousness, or a watcher at the top of the chain. It points where the equations had been pointing the whole time: observers are physical systems inside the wavefunction, not judges standing outside it — eyes catching a little of the light, not the reason the star shines.
+
+[^davies]: Paul Davies, “Quantum realism is impossible,” IAI TV, https://iai.tv/articles/quantum-realism-is-impossible-auid-3432.

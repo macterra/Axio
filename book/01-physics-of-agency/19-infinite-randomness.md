@@ -41,7 +41,7 @@ Two caveats keep this honest. First, the existence is implicit, not practical: *
 
 Mathematicians handle that embarrassment by construction: if nature won't hand over a certified normal number, build one. Champernowne's constant, $0.123456789101112\ldots$, concatenates the integers in base 10 and is provably normal there. The Copeland–Erdős constant does the same with the primes. These numbers are deliberately artificial — illustrations rather than discoveries — and that artificiality is exactly their virtue: the everything-container property holds *by construction*, no conjecture required.
 
-In 2019 I contributed my own to the Online Encyclopedia of Integer Sequences: [sequence A308705](https://oeis.org/A308705), the Vulcan Number. The goal was to make the containment property not just provable but *obvious*. The construction: concatenate every finite binary string in shortlex order — shortest strings first, lexicographic within each length:
+In 2019 I contributed my own to the Online Encyclopedia of Integer Sequences: sequence A308705,[^vulcan] the Vulcan Number. The goal was to make the containment property not just provable but *obvious*. The construction: concatenate every finite binary string in shortlex order — shortest strings first, lexicographic within each length:
 
 ```
 0, 1, 00, 01, 10, 11, 000, 001, 010, 011, 100, 101, 110, 111, 0000, ...
@@ -93,3 +93,5 @@ With sufficiently rich stipulations, the filtered model can be constructed to ma
 The exercise illustrates a familiar underdetermination: formally equivalent descriptions can package ontology differently. It does not establish that the random-substrate package is more parsimonious, because the complexity may simply have moved into its filter and interpretation map.
 
 The scenario still requires an infinite substrate or sequence space, a probability measure, a coherence criterion, an interpreter, a realization relation, and an observer measure. None has been explained merely by invoking universal containment. [Chaos as Foundation](20-chaos-as-foundation.md) asks whether this package can nevertheless serve as a comparatively minimal metaphysical representation. The thought experiment ends not at a demonstrated bottom of reality but at a precise list of debts for the chapters that follow.
+
+[^vulcan]: David McFadzean, “A308705,” *Online Encyclopedia of Integer Sequences*, 2019, https://oeis.org/A308705.
