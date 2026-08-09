@@ -31,7 +31,9 @@ Nietzsche saw the shape of this order long before it had a sociological name. "S
 
 ## The Sowell Test
 
-Scale up from the individual teller to the group, and the currency question becomes empirical: does victimhood, held as a group's organizing narrative, actually purchase what it promises? There is a widespread account on which discrimination and oppression essentially dictate the success or failure of minority groups — on which a group's outcomes are the arithmetic shadow of its mistreatment. History is unkind to this account, and Thomas Sowell spent a career documenting the unkindness.
+Scale up from the individual teller to the group, and the currency question becomes empirical: does victimhood, held as a group's organizing narrative, actually purchase what it promises? There is a widespread account on which discrimination and oppression essentially dictate the success or failure of minority groups — on which a group's outcomes are the arithmetic shadow of its mistreatment. History is unkind to this account, and Thomas Sowell[^sowell] spent a career documenting the unkindness.
+
+[^sowell]: “Thomas Sowell,” *Wikipedia*, https://en.wikipedia.org/wiki/Thomas_Sowell.
 
 Some persecuted communities have rebuilt and prospered despite genocide, pogroms, legal exclusion, forced displacement, or expropriation. Jewish, Armenian, and some overseas Chinese communities are often cited. These cases refute a deterministic claim that oppression fixes one inevitable trajectory. They do not identify a single shared cultural cause, establish that the surviving or migrating populations were representative, or tell us how the same communities would have fared without persecution. Selection, migration policy, geography, institutions, outside alliances, historical timing, family networks, education, and entrepreneurship may all matter.
 
