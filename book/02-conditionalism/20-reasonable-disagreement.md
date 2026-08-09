@@ -13,7 +13,7 @@ A famous theorem says it should be impossible.
 
 ## The Theorem
 
-Robert Aumann proved in 1976 that Bayesian agents with a common prior cannot have different posteriors for the same event when those posteriors are common knowledge. The theorem is static: under its formal information-partition assumptions, the posteriors must already be equal. Dialogue protocols can produce convergence results, but that is additional machinery.
+Robert Aumann proved in 1976 that Bayesian agents with a common prior cannot have different posteriors for the same event when those posteriors are common knowledge.[^aumann] The theorem is static: under its formal information-partition assumptions, the posteriors must already be equal. Dialogue protocols can produce convergence results, but that is additional machinery.
 
 The result hinges on two idealizations:
 
@@ -63,3 +63,5 @@ The absolutist instinct treats this conclusion as a scandal: if reasonable peopl
 This also explains what precise definitions are *for*. They do not end moral debates, and it is no strike against them that they cannot. What they do is localize the disagreement. Without the definitions, a dispute over an alleged coercion is a shouting match between verdicts — *coercion!*, *not coercion!* — with nothing to grip. With them, the parties can trace their divergence to the exact condition where it lives: we agree the threat was made and agree compliance followed; we differ on credibility, and we differ because your model of the speaker's intent assigns weight to a history that mine discounts. At that point the moral dispute has been converted into an Aumann-style inquiry — a hunt through priors, information, and interpretive conditions — and *that* inquiry can make progress even when the verdicts never merge.
 
 The theorem, rightly read, was never a promise of consensus. It is a calibration instrument, like the frictionless plane: a statement of what disagreement would have to mean among ideal agents, valuable precisely because we can measure our actual disagreements against it. When you and a peer cannot close a gap, run the full checklist. Different priors? Asymmetric information? A reasoning error? Or agent-relative conditions, filled in differently from where each of you stands? The first three call for more evidence and better updating. The fourth calls for something else: making the conditions explicit, so that both parties can see exactly which conditional each of them is evaluating, and decide whether the difference is one that argument can move. Reasonable disagreement, handled this way, is not a truce and not a failure. It is a map of where the conditions differ — and drawing that map is the only convergence worth having.
+
+[^aumann]: Robert Aumann, “Aumann's agreement theorem,” 1976, https://en.wikipedia.org/wiki/Aumann%27s_agreement_theorem.

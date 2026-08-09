@@ -19,7 +19,7 @@ Every "simple truth" is compressed shorthand for an entire lattice of background
 
 Public debate about truth is trapped between two dead ends. **Absolutists** claim truth is context-independent, universal, and eternal. **Relativists** claim truth is contingent on culture, perspective, or identity. Each side sustains itself mainly by pointing at the other: the absolutist warns, correctly, that relativism corrodes rational discourse and morality; the relativist observes, correctly, that every alleged absolute turns out to rest on somebody's unexamined assumptions.
 
-Alan Rome speaks for many defenders of absolute truth when he argues that the cure for relativism's corrosion is a return to belief in absolutes. He is right about the disease and wrong about the cure — resurrecting absolutes repeats relativism's mistake in reverse. Absolutism denies the hidden assumptions it rests on. Relativism denies the possibility of meaningful discourse across perspectives. Both positions collapse under their own weight, and for the same underlying reason: both treat "true, full stop" and "true for me" as the only options on the table. They are not.
+Alan Rome speaks for many defenders of absolute truth when he argues that the cure for relativism's corrosion is a return to belief in absolutes.[^rome] He is right about the disease and wrong about the cure — resurrecting absolutes repeats relativism's mistake in reverse. Absolutism denies the hidden assumptions it rests on. Relativism denies the possibility of meaningful discourse across perspectives. Both positions collapse under their own weight, and for the same underlying reason: both treat "true, full stop" and "true for me" as the only options on the table. They are not.
 
 ## Why Relativism Fails
 
@@ -82,3 +82,5 @@ In science, it locates exactly what an experiment tests: never a hypothesis in i
 Conditionalism keeps everything worth keeping from the traditional reverence for truth, including its humility. We are biased, error-prone creatures, and we must climb toward better approximations. But the climb is not toward an impossible Absolute; it is the refinement and expansion of our conditional frameworks — stating conditions more precisely, replacing narrow ones with broader ones, discarding frameworks whose conditions cannot survive being made explicit. The climb is real. The progress is measurable. The grounding is honest.
 
 Conditionalism rejects global relativism's lack of shared correction and absolutism's suppression of material assumptions. The alternative is not a midpoint but a method: identify the proposition, bind the conditions that control its evaluation, and expose both to criticism. Conditional truth is not the only vocabulary in which that method can be expressed; it is this book's proposed account of why the method works.
+
+[^rome]: Alan Rome, “In Defence of Absolute Truth,” *Quillette*, 2021, https://quillette.com/2021/06/30/in-defence-of-absolute-truth/.

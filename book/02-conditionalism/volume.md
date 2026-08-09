@@ -5,7 +5,7 @@ sources:
   - 167664022.the-hedgefox
 ---
 
-Isaiah Berlin sorted thinkers into hedgehogs, who see everything through one big idea, and foxes, who distrust big ideas and know many small things. The hedgehog risks dogmatism — complexity forced into a system too neat to be true. The fox risks paralysis — nuance entertained forever, with no framework sturdy enough to act on. This volume is written in a third posture: one coherent framework, held the way a fox would hold it — conditionally, humbly, with every assumption on the table and open to attack.
+Isaiah Berlin sorted thinkers into hedgehogs, who see everything through one big idea, and foxes, who distrust big ideas and know many small things.[^berlin] The hedgehog risks dogmatism — complexity forced into a system too neat to be true. The fox risks paralysis — nuance entertained forever, with no framework sturdy enough to act on. This volume is written in a third posture: one coherent framework, held the way a fox would hold it — conditionally, humbly, with every assumption on the table and open to attack.
 
 The framework is **Conditionalism**: the thesis that a claim becomes truth-evaluable only relative to conditions that fix its interpretation and domain. This thesis applies to itself. Conditionalism is advanced within ordinary inferential, semantic, and empirical practices; it is not an unconditional pronouncement from outside every framework. Its method is to expose the conditions that materially control an evaluation, without pretending that ordinary communication must spell out an infinite background before saying anything useful.
 
@@ -16,3 +16,5 @@ The argument runs in six movements. **Part I** derives philosophy itself from th
 The chapters are self-contained enough to read out of order — cross-links mark every load-bearing dependency — but the volume was built as one argument, and it compounds. Readers who want the physics behind the branching universe will find it in the volume on the physics of agency; readers who want the formal treatments will find the papers linked where they are used.
 
 Part V can therefore be read as an optional extension: Chapters 1–10 establish the epistemology, Chapters 11–16 ask what follows under the book's Everettian commitments, and Chapter 17 resumes the interpretation-independent argument.
+
+[^berlin]: Isaiah Berlin, *The Hedgehog and the Fox*, https://en.wikipedia.org/wiki/The_Hedgehog_and_the_Fox.

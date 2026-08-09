@@ -67,7 +67,7 @@ The answer, for a while, was: these are real, unsolved, and at least now they're
 
 That was the state of play. Then a new mathematical result moved the first of those two hard questions from "assumption" toward "theorem."
 
-The result — [a 2026 uniqueness theorem due to Lela](https://arxiv.org/abs/2603.24619) — says, stripped of its machinery: once you require a weight to behave consistently under finer decompositions — to never contradict itself as you refine the represented event structure — the amplitude-squared weight is the only one that survives, given two structural conditions. Every other candidate weighting breaks somewhere.
+The result — a 2026 uniqueness theorem due to Lela[^lela] — says, stripped of its machinery: once you require a weight to behave consistently under finer decompositions — to never contradict itself as you refine the represented event structure — the amplitude-squared weight is the only one that survives, given two structural conditions. Every other candidate weighting breaks somewhere.
 
 The theorem is deliberately neutral: it does not claim that a physical system satisfies its conditions. The separate local paper [Crossing the Threshold](/papers/EEBR.html) argues that Everettian quantum mechanics can satisfy them. That application adds substantive assumptions and should not be conflated with Lela's mathematical result.
 
@@ -108,3 +108,5 @@ Faced with "where am I, among all the observers?", the anthropic proposal was: d
 The quantum case supplies a precise candidate weight from the formalism and a recent conditional uniqueness result. The remaining work is substantial: justify the physical assumptions, defend self-locating uncertainty, and establish why the induced weight should guide Credence.
 
 What's left at the bottom is the same question lurking under both chapters: whether "which one am I?" is a real question at all, when the honest answer is all of them. That one is still open. But everything built on top of it is in far better shape than the counting we started with.
+
+[^lela]: Marko Lela, “The Born Rule as the Unique Refinement-Stable Induced Weight on Robust Record Sectors,” arXiv, March 2026, https://arxiv.org/abs/2603.24619.
