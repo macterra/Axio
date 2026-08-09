@@ -69,7 +69,9 @@ In the sex-based framework, heterosexuality is attraction to the opposite sex, h
 
 The identity-based framework grounds orientation in subjective self-identification instead. A man dating a trans woman is classified as heterosexual — not because of the sexes involved, but because of the declared genders. In this system the categories lose their descriptive clarity and become contingent on shifting identity claims. Homosexuality and heterosexuality can collapse into each other depending on the self-ascribed labels of the participants. The category has been untethered from its anchor, and an untethered category cannot do the one thing categories are for: sorting the world the same way twice.
 
-The collision between the two frameworks is easiest to see in a public exchange between the commentator Brian Krassenstein and the biologist Colin Wright. Krassenstein stated the identity-based position in its pure form:
+The collision between the two frameworks is easiest to see in a public exchange between the commentator Brian Krassenstein and the biologist Colin Wright.[^wright-exchange] Krassenstein stated the identity-based position in its pure form:
+
+[^wright-exchange]: Colin Wright (@SwipeWright), reply to Brian Krassenstein on X, September 2025, https://x.com/SwipeWright/status/1967069572353110084.
 
 > If you're a man who has a relationship with a trans woman, you are in a heterosexual relationship, because she is a woman and you are a man.
 
