@@ -10,7 +10,7 @@ The universe is not only pictured here as a machine but as a becoming. It is not
 
 A post-theistic culture is often accused of having nothing left to sing. The accusation mistakes rejection of supernatural claims for loss of the sublime. Religious traditions joined factual, moral, communal, and symbolic claims in many different ways; their adherents need not be reduced to liars for this book to reject their supernatural explanations. The task here is constructive: compose a frame whose empirical claims survive scrutiny and whose values announce themselves as commitments. A meta-myth is neither a scientific result nor a story told in place of one. It is a disclosed act of selection and emphasis: facts placed in a narrative register that may move us to act, with the author visible at every normative turn.
 
-I did not invent the frame, only its statement. The impulse I am indebted to belongs to a wider conversation about a religiosity that keeps the practice and discards the pretense — Jim Rutt's phrase, and his provocation, is behind much of what follows. The seven movements below are its liturgy.
+I did not invent the frame, only its statement. The impulse I am indebted to belongs to a wider conversation about a religiosity that keeps the practice and discards the pretense — Jim Rutt's phrase, and his provocation,[^rutt-practice] is behind much of what follows. The seven movements below are its liturgy.
 
 ## I. The Genesis of Order
 
@@ -73,3 +73,5 @@ The awakening need not stop with us, but no successor is guaranteed. If minds co
 We are the myth-makers of a post-theistic cosmos and the stewards of an unfinished creation. The Great Unfolding is the testament this book offers — not a creed you already hold but one it argues for — and its whole doctrine is a refusal disguised as an affirmation: a declaration that reason, wonder, and will are enough — that we do not need the lie to keep the awe, do not need the throne to keep the reverence, do not need the promise of elsewhere to find this place worth tending.
 
 Let the old gods rest. Their work is done. The light they promised is already burning in our hands.
+
+[^rutt-practice]: Jim Rutt, “The Practice Without the Pretense,” https://jimrutt.substack.com/p/the-practice-without-the-pretense?utm_source=substack&utm_campaign=post_embed&utm_medium=web.
