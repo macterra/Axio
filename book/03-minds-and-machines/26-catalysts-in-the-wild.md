@@ -8,11 +8,13 @@ sources:
   - 178618635.identity-engineering
 ---
 
+[^aaronson]: Scott Aaronson, “The QMA Singularity,” *Shtetl-Optimized*, https://scottaaronson.blog/?p=9183.
+
 A framework earns its keep when the world starts supplying its examples unprompted. [The Dialectic Catalyst](24-the-dialectic-catalyst.md) made a specific claim: that large language models, while not agents, can catalyze human reasoning in ways that accelerate genuine discovery — and that the practice has a definite shape, with definite failure modes and definite disciplines. This chapter is the claim meeting the evidence. Three developments test it: a result in quantum complexity theory that stalled until a language model reframed the bottleneck; the discovery that the deepest lever in the practice is not the prompt but the interpreter; and the moment the practice outgrew the dyad itself, because the resource it had been engineered to produce stopped being the scarce one.
 
 ## A Theorem Gets Unstuck
 
-Scott Aaronson and Freek Witteveen were exploring the limits of error reduction in QMA — Quantum Merlin–Arthur, the quantum analogue of NP. A known result established that QMA protocols could be amplified to *doubly* exponentially small completeness error. The open question was whether black-box techniques could push the bound further still. Their result shows the answer is no: doubly exponential amplification is the ceiling in this setting, and upper and lower bounds now align.
+Scott Aaronson and Freek Witteveen were exploring[^aaronson] the limits of error reduction in QMA — Quantum Merlin–Arthur, the quantum analogue of NP. A known result established that QMA protocols could be amplified to *doubly* exponentially small completeness error. The open question was whether black-box techniques could push the bound further still. Their result shows the answer is no: doubly exponential amplification is the ceiling in this setting, and upper and lower bounds now align.
 
 Getting there required controlling how the largest eigenvalue of a parameterized Hermitian operator $E(\theta)$ evolved with respect to the parameter $\theta$. The obstacle was that eigenvalues could in principle "hover" arbitrarily close to $1$, undermining the bound. That was the roadblock — and this is where the story stops being ordinary mathematics and becomes a case study. Aaronson describes how GPT-5, consulted on the problem, suggested looking at the trace of the resolvent:
 

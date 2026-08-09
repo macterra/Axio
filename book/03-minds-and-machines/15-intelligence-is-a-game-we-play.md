@@ -8,6 +8,8 @@ sources:
   - 166857416.intelligence-as-a-hyperobject
 ---
 
+[^musk]: Elon Musk, post on X describing prediction as the best measure of intelligence, https://x.com/elonmusk/status/1963877113049580023.
+
 Arguments about intelligence have a way of going nowhere. Is an LLM intelligent? Is an octopus? Is IQ meaningful, or a colonial relic? Was the chess grandmaster who lost his fortune to a con man smart or stupid? The disputants talk past each other for a predictable reason: nobody has said what the word means, and each party is quietly using a definition that flatters their side. Before this volume can say anything useful about machine minds, it needs a definition of intelligence that does real work — one precise enough to settle arguments rather than restate them.
 
 I build that definition on a foundation that philosophy officially declared unbuildable.
@@ -49,7 +51,7 @@ The definition also scales downward, all the way to the floor of agency. A bacte
 
 ## The Oracle and the Agent
 
-The definition has teeth, and the best way to show them is against a rival that sounds compelling. Elon Musk has asserted, as a standing position, that "the ability to predict the future is the best measure of intelligence." The claim is crisp, and it resonates with real science. Brains are prediction machines; Karl Friston's free energy principle formalizes cognition as the minimization of prediction error; in machine learning, predictive accuracy is the easiest thing to quantify. Prediction is not a bad candidate. It is the best wrong answer available.
+The definition has teeth, and the best way to show them is against a rival that sounds compelling. Elon Musk has asserted, as a standing position,[^musk] that "the ability to predict the future is the best measure of intelligence." The claim is crisp, and it resonates with real science. Brains are prediction machines; Karl Friston's free energy principle formalizes cognition as the minimization of prediction error; in machine learning, predictive accuracy is the easiest thing to quantify. Prediction is not a bad candidate. It is the best wrong answer available.
 
 And it is wrong, because prediction is necessary but not sufficient. Consider what pure foresight buys on its own:
 

@@ -7,7 +7,11 @@ sources:
   - 168916355.escaping-the-ai-safety-dystopia
 ---
 
-*If anyone builds it, everyone dies.* Yudkowsky and Soares chose a title that leaves no room to negotiate. The argument deserves reconstruction as a chain of empirical and conceptual cruxes. My conclusions below are judgments under uncertainty, not established facts, and the disagreement cannot be reduced honestly to one failed joint when several premises and policy responses remain contested.
+[^doom-book]: Eliezer Yudkowsky and Nate Soares, *If Anyone Builds It, Everyone Dies*, Goodreads, https://www.goodreads.com/book/show/228646231-if-anyone-builds-it-everyone-dies.
+
+[^halting]: Peter Barnett, Anthony Scher, and Marcello Abecassis, “Technical Requirements for Halting Dangerous AI Activities,” arXiv, 2025, https://arxiv.org/pdf/2507.09801.
+
+*If anyone builds it, everyone dies.*[^doom-book] Yudkowsky and Soares chose a title that leaves no room to negotiate. The argument deserves reconstruction as a chain of empirical and conceptual cruxes. My conclusions below are judgments under uncertainty, not established facts, and the disagreement cannot be reduced honestly to one failed joint when several premises and policy responses remain contested.
 
 So here are their eight cruxes, taken seriously, each measured against the frameworks this book has built.
 
@@ -54,7 +58,7 @@ These overlap by design; the two source arguments converged on nearly the same l
 
 ## What Must Be Refused
 
-There is a rival roadmap, and it must be named and refused, because it wears the same safety colors while pointing the opposite direction. MIRI's paper "Technical Requirements for Halting Dangerous AI Activities," by Barnett, Scher, and Abecassis, spells out the authoritarian version: mandatory surveillance and kill-switches embedded at the hardware level, chip tracking, centralized data centers, enforced algorithmic constraints. The reasoning starts from the same cruxes I granted above and arrives at techno-authoritarianism — a world in which the machinery of control is total, permanent, and pointed at everyone.
+There is a rival roadmap, and it must be named and refused, because it wears the same safety colors while pointing the opposite direction. MIRI's paper "Technical Requirements for Halting Dangerous AI Activities," by Barnett, Scher, and Abecassis,[^halting] spells out the authoritarian version: mandatory surveillance and kill-switches embedded at the hardware level, chip tracking, centralized data centers, enforced algorithmic constraints. The reasoning starts from the same cruxes I granted above and arrives at techno-authoritarianism — a world in which the machinery of control is total, permanent, and pointed at everyone.
 
 The hardware backdoor and the remote kill-switch are not neutral safety tools. They are coercion in the strict sense — a credible conditional threat of material setback held over every user to obtain compliance — and [the boundaries of force](../05-value-and-ethics/12-the-boundaries-of-force.md) admit coercion only in narrow, justified cases, never as a standing architecture aimed at the whole population by default. A kill-switch in every chip is not a targeted response to a specific threat; it is a permanent apparatus of control justified by a threat that has not yet materialized, which is precisely the structure the boundaries-of-force analysis rules out. The cure is worse than the disease, because the disease might not arrive and the cure certainly does.
 
