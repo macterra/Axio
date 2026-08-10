@@ -1,6 +1,6 @@
 ---
 title: 'Agent-Binding'
-subtitle: 'Making evaluative conditions explicit'
+subtitle: 'Deriving an is from an ought'
 status: review
 sources:
   - 164684907.navigating-moral-realism-with-agent
@@ -13,9 +13,9 @@ sources:
 
 "Lying is wrong."
 
-Is that true? Most people say yes without hesitation, and much of meta-ethics is a quarrel about what could make them right. Realists, error theorists, fictionalists, constructivists, expressivists, and relativists offer more varied answers than one paragraph can honor. The narrower proposal here is a practical device for exposing the standard and application conditions inside the sentence.
+Is that true? Most people say yes without hesitation, and much of meta-ethics is a quarrel about what could make them right. Realists, error theorists, fictionalists, constructivists, expressivists, and relativists offer more varied answers than one paragraph can honor. The proposal here is narrower: that the sentence, as it stands, has no truth value yet, and that giving it one runs the opposite way from the inference Hume forbade.
 
-I say the sentence, as it stands, leaves its standard implicit. "It's raining" needs a place and time; "lying is wrong" needs at least a normative standpoint, a description of the lie, and rules for resolving conflicts among commitments. Bind those variables — "given agent A's stated commitments and this model of the act, lying conflicts with those commitments" — and the disagreement becomes more tractable. I call this move **agent-binding**. It repairs under-specification; it does not by itself prove that the bound commitments are coherent, shared, or worthy of adoption.
+The sentence names no one. "It's raining" fixes a place and a time; "lying is wrong" fixes no agent who holds lying to be wrong — and a value with no one to hold it is what [the previous chapter](01-the-myth-of-objective-value.md) refused. Supply the missing agent and the sentence changes category: from a verdict on the world to a claim about a person. I call that move **agent-binding**. This chapter is about what it does, and what it leaves to Conditionalism to finish.
 
 ## Hume's Gap
 
@@ -25,45 +25,41 @@ I align with Hume's skepticism entirely. Preferences alone — what I call **nak
 
 But notice what Hume's gap does *not* license. It does not license the conclusion that moral claims are meaningless, or all false, or beyond rational evaluation. It licenses only the conclusion that they cannot be evaluated *as stated* — that something is missing. The gap is not a void. It is an unbound variable.
 
-## Binding the Agent
+## From Ought to Is
 
-The general machinery here comes from Conditionalism. [All truth is conditional](../02-conditionalism/02-all-truth-is-conditional.md): every truth claim depends on background conditions, and a statement earns a truth value only when those conditions are specified. In [when statements fail](../02-conditionalism/04-when-statements-fail.md) I catalogued the ways a grammatical, confident-sounding sentence can nonetheless say nothing — and one of the failure modes was the *standardless evaluation*: "this is fair," "the system is secure," evaluations awaiting a standard, neither true nor false until the standard arrives. The cure in every case is the same: **condition-binding**, making the hidden variables explicit until the pseudo-proposition becomes a claim.
+Hume says you cannot derive an *ought* from an *is*. Agent-binding does not dispute this; it runs the other way. Assert an *ought* — "lying is wrong" — and an *is* is already entailed: someone holds it. An expressed value guarantees a valuer. That inference is safe exactly where Hume's is not, because it adds nothing to the world; it only reads off what the assertion already carries. So bind the claim to the agent whose value it is, and the *ought* becomes an *is*: "A values truthfulness over what a lie would gain" — an empirical statement about an agent, with a subject, a truth-maker, and the ordinary liability to being wrong.
 
-Agent-binding is condition-binding applied to the domain of value. A bare moral claim leaves at least its normative standard implicit. Fully binding it may require an agent or class, an endorsed rule or commitment, a description of the act and likely consequences, a scope and baseline, priority rules for conflicts, evidential assumptions, and a time horizon. The compact progression is:
+That conversion is the whole of agent-binding. What it may not do is run backward: that A holds the value binds no one who does not share it. Binding buys empirical footing, not authority over others.
 
-- *Under-specified:* "Lying is wrong." A candidate evaluation whose standard and case are still implicit.
-- *Attribution:* "Agent A endorses rule R." An ordinary empirical claim about A, answerable with evidence and always vulnerable to insincerity, ambivalence, change, or interpretive error.
-- *Application:* "Given rule R, priority rule P, factual model M, and scope S, lie L violates R." A conditional normative claim. Whether the verdict follows can be argued from the stated inputs even when the speakers do not endorse R themselves.
-
-The application form is what I mean by **conditional objectivity**: public assessability and repeatability once the relevant normative premise, facts, model, scope, baseline, and inference rules are fixed. It is not an empirical claim merely because empirical evidence enters the model. Nor does it prove that the premise is true from nowhere, actually endorsed, coherent, complete, motivating, worthy of adoption, authoritative over non-adopters, or fit for coercive enforcement. Attribution and application can fail separately. Agent-binding exposes both sites of disagreement; it does not conjure an ought from descriptive premises.
+And on its own it settles nothing further. Whether A really holds the value, whether A's holding it is coherent, whether a given lie actually offends it — these are questions about a claim that now has a truth value, and answering them belongs to Conditionalism. [All truth is conditional](../02-conditionalism/02-all-truth-is-conditional.md): a statement earns its truth value only once its conditions are fixed, and in [when statements fail](../02-conditionalism/04-when-statements-fail.md) the remedy is **condition-binding** — making the hidden variables explicit until a pseudo-proposition becomes a testable claim. Agent-binding is the one turn of that key special to value: it supplies the missing valuer. Condition-binding supplies the rest — standard, act model, scope, baseline, conflict rules, horizon — and returns a verdict checkable against those inputs. Agent-binding makes moral talk empirical; Conditionalism decides what the now-empirical claim comes to.
 
 ## Neither Error nor Fiction
 
 The serious modern heirs of Hume's skepticism run the diagnosis differently, and agent-binding carves out a middle ground between them.
 
-J.L. Mackie's **error theory**[^mackie] holds, roughly, that ordinary moral claims purport to report objective prescriptive features that do not exist, so they are systematically in error. Agent-binding accepts the skepticism about agent-independent prescription but offers a reconstruction rather than a direct refutation of error theory. "Lying is wrong," as used on a particular occasion, may express or presuppose a standard; once that standard and case are made explicit, the reconstructed conditional can have determinate application conditions. Whether this preserves the original assertion's meaning is a substantive semantic question. The practical gain is that speakers can expose what would make their verdict follow instead of relying on missing metaphysics.
+J.L. Mackie's **error theory**[^mackie] holds, roughly, that ordinary moral claims purport to report objective prescriptive features that do not exist, so they are systematically in error. Agent-binding grants the skepticism and refuses the verdict. Mackie is right that there are no agent-independent prescriptions to report; he is wrong that this leaves moral claims false. Read as what they are — bound claims about valuers — they report something that does exist: the values agents hold. "Lying is wrong," asserted, is not a failed description of a queer property; it is a true-or-false statement about the speaker's values, waiting only for the valuer to be named.
 
-Richard Joyce's **moral fictionalism** takes the other exit: moral claims are not objective truths but beneficial social fictions — morality as a useful myth we keep telling because it lubricates cooperation, despite lacking literal truth. This is more congenial than it sounds hostile; Joyce is right that moral practice earns its keep pragmatically. But no fiction is required for the narrower claims defended here. A conditional verdict can be correct under its stated normative and factual inputs even though it is not itself an empirical proposition. Where Joyce offers a useful fiction, agent-binding offers exposed standards, determinate application conditions, and conclusions open to public criticism.
+Richard Joyce's **moral fictionalism** takes the other exit: moral claims are not objective truths but beneficial social fictions — morality as a useful myth we keep telling because it lubricates cooperation, despite lacking literal truth. This is more congenial than it sounds; Joyce is right that moral practice earns its keep pragmatically. But no fiction is required. A bound claim is not a myth we agree to tell; it is an ordinary empirical claim about an agent, true or false as the agent's values actually are. Where Joyce offers a useful fiction, agent-binding offers a plain fact — about a valuer, not about the cosmos.
 
-So against agent-independent authority: the normative premise remains visible. Against wholesale error: many ordinary moral assertions can be reconstructed as determinate conditionals rather than discarded. Against fiction: bound claims need no myth to be assessed, though their truth conditions are not those of a laboratory measurement.
+So against agent-independent authority: there is none to report, and agent-binding reports none. Against wholesale error: ordinary moral assertions are not false but unbound, and binding makes them assessable. Against fiction: a bound claim needs no myth, because a fact about what an agent values is fact enough.
 
 ## Emphatically Not Relativism
 
 Now the accusation this position always attracts. Values are subjective; moral truth is relative to an agent's vantage — isn't that just relativism?
 
-No. Agent-relative does not mean arbitrary, whimsical, incorrigible, or sealed inside a culture. A standard can be compared with other commitments, tested for consistency and consequences, revised under evidence, rejected from another avowed standpoint, or opposed through a public political framework. None of that requires pretending the standard arrived without an agent.
+No. Agent-relative does not mean arbitrary, whimsical, incorrigible, or sealed inside a culture. A value, once bound to its agent, can be compared with that agent's other commitments, tested for consistency and consequences, revised under evidence, rejected from another avowed standpoint, or opposed through a public political framework. None of that requires pretending the value arrived without an agent.
 
-Agent-binding subjectivism is built on the opposite instinct. The critical difference lies in what happens to the evaluative standard:
+Agent-binding subjectivism is built on the opposite instinct from the relativist's. The critical difference lies in what happens to the standard:
 
 - **Evasion hides the standard.** "True for us" can be used to block questions about evidence, consistency, victims, and consequences.
-- **Agent-binding names the standard.** The attributed commitments and the rule used for application are put on the table, which makes their fit and consequences criticizable.
+- **Agent-binding names the standard.** The valuer and the value are put on the table, which makes their fit and consequences criticizable.
 
-Because the standard is explicit, criticism can proceed on multiple fronts. An agent's conduct may conflict with her declared commitments; the attribution may misdescribe what she endorses; her values may contain tensions or consequences she rejects; and another agent may condemn the whole standard from a different, equally explicit premise. Shared conditions create common argumentative ground, but no method guarantees that a slaveholder's commitments will collapse under articulation. Where they do not, condemnation, coordination, defense, and institutional constraint must disclose the standards and authority they invoke rather than borrowing the target's assent.
+Because the standard is named, criticism can proceed on multiple fronts. An agent's conduct may conflict with her declared values; the ascription may misdescribe what she in fact holds; her values may carry tensions or consequences she would reject; and another agent may condemn the whole standard from a different, equally explicit one. Shared conditions create common argumentative ground, but no method guarantees that a slaveholder's values will collapse under articulation. Where they do not, condemnation, coordination, defense, and institutional constraint must disclose the standards and authority they invoke rather than borrowing the target's assent.
 
-This is agent-binding *subjectivism*: values arise through agents, while applications of stated values can still be more or less accurate, consistent, and evidentially supported. "Conditionally objective" is shorthand for that assessability, not a claim that binding transforms a subjective premise into an agent-independent value. Accountability survives because premises, attribution, and application can all be challenged in the open.
+This is agent-binding *subjectivism*: values arise through agents, and a value bound to its agent is a fact — open to evidence, and open to challenge from every side, the agent's included. What it denies is an agent-independent value. What it preserves is everything needed to argue about one.
 
 ## The Device in Hand
 
-Moral judgments become more rigorous and evaluable as their standard, attribution, domain, model, and conflict rules become explicit. That is the device. It concedes Hume's gap and builds on it rather than pretending to bridge it. It preserves truth, accountability, and the possibility of error without claiming that an exposed premise acquires authority over every agent.
+The device is a single conversion. An *ought*, asserted, already carries an *is* — the agent who holds it — and binding brings that agent into view. It concedes Hume's gap and turns it to use rather than pretending to bridge it: it never crosses from is to ought, but reads the is that an ought already contains. What it yields is not authority but footing — moral talk with a subject, a truth value, and the ordinary possibility of error. What is then true, and what follows, is for Conditionalism to work out.
 
-What it demands in exchange is honesty about vantage. Every moral claim in the rest of this volume should disclose, implicitly or explicitly, the standard that supplies its normative force — and when I argue that some values are better than others, that too is a bound claim made from a stated framework. Naming a premise does not make it persuasive or authoritative. It makes the argument visible enough to criticize.
+What it demands in exchange is honesty about vantage. Every moral claim in the rest of this volume should disclose, implicitly or explicitly, the agent and standard that supply its normative force — and when I argue that some values are better than others, that too is a bound claim made from a stated standpoint. Naming a premise does not make it persuasive or authoritative. It makes the argument visible enough to criticize.

@@ -33,7 +33,7 @@ The political principle that preventing or remedying an agency violation is a ne
 
 ### Agent-binding
 
-The practice of making an evaluative claim explicit about its agent or class, normative standard, act and consequence model, scope, baseline, priority rules, evidence, and horizon. Binding repairs under-specification; it does not prove that the premise is true, shared, worthy, motivating, or legitimately enforceable.
+Binding a moral claim to the agent whose value it states. An asserted *ought* — "lying is wrong" — already entails an *is*: a valuer who holds it. Naming that agent converts the claim into an empirical statement about them ("A values X"), true or false like any other — the reverse of the inference Hume forbids, and licensed where his is not. Agent-binding supplies the missing valuer; evaluating the resulting claim is the work of condition-binding. It buys empirical footing, not authority over agents who do not share the value.
 
 **Read:** [Agent-Binding](../05-value-and-ethics/02-agent-binding.md).
 
@@ -145,7 +145,7 @@ An endorsed policy, priority, or evaluative stance that stabilizes action across
 
 ### Conditional objectivity
 
-Public assessability and repeatability of a conditional application once its normative premise, factual model, scope, baseline, evidence, and conflict rules are fixed. This stipulated procedural objectivity does not turn the premise into agent-independent value or establish authority over non-adopters.
+The public assessability of a bound moral claim once its conditions are fixed. With the valuer named by agent-binding and the standard, factual model, scope, baseline, evidence, and conflict rules fixed by condition-binding, the verdict is checkable, repeatable, and correctable like any empirical matter — objective relative to those conditions, not agent-independent, and conferring no authority over agents who reject the standard.
 
 **Read:** [Agent-Binding](../05-value-and-ethics/02-agent-binding.md) and [Sapient Agency Realism](../05-value-and-ethics/26-sapient-agency-realism.md).
 
