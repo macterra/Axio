@@ -369,17 +369,17 @@ A **function** is a causal-system role or selected effect relative to a specifie
 
 ### Agent-binding
 
-The practice of binding an evaluative claim to an agent or class, normative standard, factual model of the act and consequences, scope, baseline, priority or conflict rules, evidential assumptions, and relevant horizon, making its conditional structure explicit and criticizable.
+Deriving an *is* from an *ought*: binding a moral claim to the agent whose value it states, which turns it into an empirical claim about that agent ("A values X"), true or false like any other. The reverse of the inference Hume forbids, and licensed where his is not. Agent-binding supplies the missing valuer; the remaining evaluative conditions — standard, factual model, scope, baseline, conflict rules, horizon — are fixed by condition-binding, not by agent-binding.
 
 **Canonical home:** Volume 5, Chapter 2.
 
-**Layering:** **Attribution** is the empirical question whether an agent actually holds or endorses a commitment. **Application** asks what verdict follows from a stated commitment and the remaining bound inputs. Either can fail without the other failing.
+**Layering (via condition-binding):** Once a claim is bound to its valuer, **attribution** is the empirical question whether the agent actually holds the commitment, and **application** asks what verdict follows from the held commitment and the remaining bound inputs. Either can fail without the other failing. Both belong to Conditionalism's evaluation of the bound claim, not to the agent-binding conversion itself.
 
-**Constraint:** Binding repairs under-specification. It does not prove actual endorsement, premise truth, coherence, completeness, motivation, worthiness, authority over non-adopters, or legitimate enforceability.
+**Constraint:** Binding converts an ought into an empirical claim about a valuer; it buys empirical footing, not authority. It does not prove actual endorsement, premise truth, coherence, completeness, motivation, worthiness, authority over non-adopters, or legitimate enforceability.
 
 ### Conditional objectivity
 
-Public assessability and repeatability of a conditional application once its normative premise, factual model, scope, baseline, evidence, and inference or conflict rules are fixed.
+The public assessability of a bound moral claim once its conditions are fixed: with the valuer named by agent-binding and the standard, factual model, scope, baseline, evidence, and inference or conflict rules fixed by condition-binding, the verdict is checkable, repeatable, and correctable like any empirical matter — objective relative to those conditions, not agent-independent.
 
 **Canonical homes:** Volume 5, Chapters 2 and 26.
 

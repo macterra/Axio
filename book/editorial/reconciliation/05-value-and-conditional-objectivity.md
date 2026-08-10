@@ -2,6 +2,8 @@
 
 Status: **Complete**
 
+> **Superseded in part (agent-binding restoration).** This pass treated agent-binding as a full evaluative apparatus and *conditional objectivity* as explicitly non-empirical. That inverted the concept. Agent-binding is the narrower move it was invented for: **deriving an *is* from an *ought*** — binding a moral claim to the agent who holds it, which makes it an empirical claim about that agent. The attribution/application evaluation and *conditional objectivity* belong to **condition-binding** (Conditionalism); conditional objectivity is empirical assessability under fixed conditions, not a non-empirical stipulation. See `05-value-and-ethics/02-agent-binding.md` and `terminology.md`. The rows and decisions below are retained as history; where they call a bound application *not* empirical, read the corrected framing.
+
 ## Scope and method
 
 This pass reconciles the fifth Phase 5 concept cluster across the complete manuscript. The broad inventory found 1,910 uses of the value/objectivity family in 215 manuscript files. Most are legitimate ordinary, economic, aesthetic, or epistemic uses. Close review concentrated on Volume 5's opening sequence, its later structural turn, the closing Sapient Agency Realism chapter, market-value applications in Volume 6, governance by value discovery in Volume 7, and chosen-value applications in Volume 9.
@@ -16,7 +18,7 @@ The principal defect was not simple terminological variation. Several passages m
 | Value | An agent-relative ordering of possibilities. Choice, tradeoff, and sacrifice provide defeasible evidence under stated conditions. | Vol. 5, chs. 1 and 4 | Whim, incorrigibility, or a preference conclusively revealed by behavior |
 | Attribution | The empirical claim that an agent actually holds, endorses, or authorizes a commitment. | Vol. 5, ch. 2 | Sincerity, stability, coherence, complete articulation, or moral authority |
 | Normative premise | The evaluative standard that supplies the ought in a bound claim. It may be personal, shared, or institutional, but its source and claimed jurisdiction must be stated. | Vol. 5, chs. 2, 6, 22, and 26 | Truth from nowhere or adoption by every person to whom a framework applies it |
-| Conditional application | A verdict derived under a normative premise plus a factual model, agent or class, scope, baseline, evidence, horizon, and priority or conflict rules. | Vol. 5, chs. 2 and 26 | An empirical proposition merely because evidence enters its application |
+| Conditional application | A verdict derived under a normative premise plus a factual model, agent or class, scope, baseline, evidence, horizon, and priority or conflict rules. | Vol. 5, chs. 2 and 26 | Agent-independent value or authority over non-adopters, though the application is itself empirically checkable under fixed inputs |
 | Conditional objectivity | The stipulated public assessability and repeatability of a conditional application under fixed inputs. | Vol. 5, chs. 2 and 26 | Agent-independent value, guaranteed agreement, motivation, authority, or legitimate enforcement |
 | Sapient Agency Realism | An explicit reciprocal-authorship premise joined to facts about sapient agents and the framework's application rules. | Vol. 5, ch. 26 | An ought derived from agency structure; *conditional constructivism* remains an acknowledged alternative label |
 | Institutional authority | A procedurally and jurisdictionally justified power to make or enforce public rules. | Vols. 5 and 7 | Legitimacy merely because a moral classification or conditional application is available |
@@ -31,7 +33,7 @@ Observed sacrifice remains defeasible evidence rather than a transparent meter. 
 
 ### Attribution and application are separate
 
-Agent-binding now names a complete family of inputs rather than merely attaching a person's name to a verdict. It specifies an agent or class, normative standard, factual model, scope, baseline, evidence, horizon, and priority or conflict rules.
+Agent-binding binds a claim to the agent who holds it, converting an ought into an empirical claim about that agent. Evaluating that claim draws on a family of inputs fixed by condition-binding: an agent or class, normative standard, factual model, scope, baseline, evidence, horizon, and priority or conflict rules.
 
 Two questions must remain distinct:
 
@@ -42,7 +44,7 @@ An action can conflict with an attributed commitment even if the attribution is 
 
 ### Conditional objectivity is procedural and limited
 
-The phrase now means public assessability and repeatability under fixed inputs. A normative application can be correct under an explicit premise without becoming an empirical claim. The premise remains open to endorsement, rejection, comparison, and revision.
+The phrase now means public assessability and repeatability under fixed inputs. A normative application, checked under an explicit premise and fixed inputs, is an empirical matter; what it does not become is an agent-independent truth binding those who reject the premise. The premise remains open to endorsement, rejection, comparison, and revision.
 
 The pass therefore separates six questions that earlier prose sometimes fused: premise selection, attribution, application, motivation, authority, and enforcement. Accuracy at one layer does not settle the next. In particular, a framework may apply its rule to conduct by a non-adopter without the target's rejection invalidating the application. That universal coverage within a declared domain is not universal adoption and does not prove agent-independent authority.
 
