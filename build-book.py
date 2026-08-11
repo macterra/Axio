@@ -59,7 +59,7 @@ def convert_markdown_to_html(markdown_content, src_path):
     """Convert markdown to an HTML fragment using pandoc (with math support)."""
     try:
         process = subprocess.run(
-            ['pandoc', '--from', 'markdown', '--to', 'html', '--mathjax',
+            ['pandoc', '--from', 'markdown+autolink_bare_uris', '--to', 'html', '--mathjax',
              '--wrap=none'],
             input=markdown_content,
             capture_output=True,
