@@ -11,7 +11,7 @@ sources:
 
 A medieval peasant owed his lord a substantial share of everything he produced, enforced by the lash and the lord's court. A modern French taxpayer surrenders a comparable share of everything he produces, enforced by the fine and the revenue court. One of these arrangements we teach schoolchildren to recognize as servitude. The other we call fiscal policy. The instinct — and it is a strong one — says that these are different in kind: that taxation is a civic duty and slavery a moral atrocity, and that putting them in the same sentence is a category error or a provocation.
 
-I am going to argue that the instinct is wrong in a specific way. Taxation and slavery are not morally equivalent, but both can be located on one important dimension: compelled extraction of labor or output backed by credible threats of material setback. They differ enormously in dose, scope, bodily control, exit, legal standing, inherited status, and brutality. The shared dimension does not collapse those differences. It prevents everything on the near end from escaping the question the far end answers so easily: by what right?
+I am going to argue that the instinct is wrong in a specific way. Taxation and slavery are not morally equivalent, but both can be located on one important dimension: compelled extraction of labor or output backed by credible threats of harm. They differ enormously in dose, scope, bodily control, exit, legal standing, inherited status, and brutality. The shared dimension does not collapse those differences. It prevents everything on the near end from escaping the question the far end answers so easily: by what right?
 
 ## The Spectrum
 

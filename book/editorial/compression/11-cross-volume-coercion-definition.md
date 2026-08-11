@@ -4,7 +4,7 @@ Date: July 21, 2026
 
 ## Selection and scope
 
-The first cross-volume Phase 7 inventory searched for repeated canonical definitions, signature examples, conclusions, and transition formulas. Its strongest exact match was the coercion definition: after normalizing the optional article in “a material setback,” the complete formula appeared fourteen times across seven volumes and the glossary.
+The first cross-volume Phase 7 inventory searched for repeated canonical definitions, signature examples, conclusions, and transition formulas. Its strongest exact match was the coercion definition: after normalizing the optional article, the complete formula appeared fourteen times across seven volumes and the glossary. (The harm term was later restored from the earlier “material setback” wording; the canonical formula is now *a credible conditional threat of harm to obtain compliance*.)
 
 Frequency alone did not decide the edit. The test was whether a full recital performed local classificatory work or merely interrupted an argument whose reader had already been given the definition.
 

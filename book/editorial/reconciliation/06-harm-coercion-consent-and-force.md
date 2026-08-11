@@ -15,7 +15,7 @@ The main defect was a collapsed inference chain. The canonical chapter defined c
 | Harm | A material setback to a sentient subject's welfare or an agent's functional capacity and viable options against an explicit appropriate baseline | Wrongfulness, coercion, or liability by itself |
 | Prospective harm | A material, foreseeable, attributable worsening of exposure against an appropriate baseline | Realized injury, strict liability, or a zero-risk rule |
 | Wrongful harm | Harm joined to a failure of authorization, duty, due care, or justification for which responsibility is attributable | That every remedy or enforcer is legitimate |
-| Coercion | Deliberate use of a credible conditional threat of material setback to obtain compliance | Direct force, violence, persuasion, every costly refusal, or automatic wrongfulness |
+| Coercion | Deliberate use of a credible conditional threat of harm to obtain compliance | Direct force, violence, persuasion, every costly refusal, or automatic wrongfulness |
 | Force | Direct compulsion, restraint, seizure, or movement | A conditional threat or an automatic moral verdict |
 | Violence | Physical force causing bodily injury, destruction, or material damage | Offense, influence, every harm, or every coercive threat |
 | Consent | Scoped, decision-specific authorization under sufficient capacity, material understanding, intention, and voluntariness | Omniscience, costless refusal, absence of harm, or unlimited future permission |
@@ -35,7 +35,7 @@ The relevant baseline must be explicit and appropriate to the case. It can invol
 
 ### Coercion is a conditional-threat mechanism
 
-Coercion works by making the target anticipate a material setback if they refuse. The target's warranted credence establishes practical credibility; a failed bluff can remain attempted manipulation or fraud without successfully controlling the target through anticipation. The threat/offer distinction depends on legitimate baselines, duties, dependencies, and authority. A refusal to begin a trade is ordinarily an offer withheld; a threat to breach an existing duty or exploit monopoly control of an essential dependency is different.
+Coercion works by making the target anticipate harm if they refuse. The target's warranted credence establishes practical credibility; a failed bluff can remain attempted manipulation or fraud without successfully controlling the target through anticipation. The threat/offer distinction depends on legitimate baselines, duties, dependencies, and authority. A refusal to begin a trade is ordinarily an offer withheld; a threat to breach an existing duty or exploit monopoly control of an essential dependency is different.
 
 Force directly compels or restrains. Violence physically injures or destroys. One episode can contain all three, but a shove, seizure, cyberattack, or killing without a conditional demand is not coercion merely because it forces an outcome in ordinary language. This separation also stabilizes the speech boundary: advocacy and preparatory propaganda are not coercion, while intentional operational participation in a specific credible harm process can function as delegated violence under a high evidentiary burden.
 

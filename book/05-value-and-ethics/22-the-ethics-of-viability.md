@@ -53,7 +53,7 @@ The difference is not decorative. Axio proposes explicit definitions of [coercio
 Six contrasts, one pattern. The neighboring theories foreground welfare, rules, character, agreement, self-interest, or rights. Axio instead takes protection of authored agency as its avowed normative primitive. The following definitions organize the framework once that commitment is in place; they are not deductions from a descriptive viability metric:
 
 - **Harm** is a material setback to welfare, functional capacity, or viable options relative to an appropriate baseline, including qualifying [prospective exposure](20-risk-is-harm.md).
-- **Coercion** is the deliberate use of a credible conditional threat of material setback to obtain compliance; direct force and violence are adjacent but distinct.
+- **Coercion** is the deliberate use of a credible conditional threat of harm to obtain compliance; direct force and violence are adjacent but distinct.
 - **Consent** is scoped, decision-specific authorization by an agent with sufficient capacity, material understanding, intention, and voluntariness.
 - **Obligation** arises here through valid commitments, wrongfully caused harm, fiduciary relations, or the framework's stated reciprocal-protection premise; enforcement requires further authority and procedure.
 - **Value** is the future-architecture an agent elects to pursue.

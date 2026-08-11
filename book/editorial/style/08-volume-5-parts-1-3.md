@@ -43,7 +43,7 @@ The lexical reduction describes the diff. It is not a target. Most retained lead
 - Agent-binding yields public assessability under exposed premises; it does not generate agent-independent authority.
 - Sacrifice remains defeasible evidence of valuation, conditioned on knowledge, voluntariness, capacity, and available alternatives.
 - Phosphorism remains a chosen and revisable commitment, not nature's objective endpoint.
-- Coercion remains a credible conditional threat of material setback used to obtain compliance; influence, pressure, offers, force, and violence remain distinct.
+- Coercion remains a credible conditional threat of harm used to obtain compliance; influence, pressure, offers, force, and violence remain distinct.
 - Consent remains decision-specific, intentional, materially informed, voluntary, scoped authorization by a capable agent.
 - Harm remains a material setback relative to an appropriate baseline, separate from responsibility and wrongfulness.
 - Force and coercion remain classifications whose justification requires authorization, protection, or remedy plus the full safeguards.
