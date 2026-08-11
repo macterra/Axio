@@ -14,9 +14,9 @@ A mugger holds a loaded gun and says, "Give me your wallet or I'll shoot." Every
 
 Here is the definition:
 
-**Coercion is the deliberate use of a credible conditional threat of a material setback to obtain compliance.**
+**Coercion is the deliberate use of a credible conditional threat of harm to obtain compliance.**
 
-The formulation owes a debt to Robert Nozick, who offered something similar in *Anarchy, State, and Utopia*.[^nozick] It has four elements — *credible*, *conditional threat*, *material setback*, *to obtain compliance* — and each excludes important near-neighbors. Hard cases remain at the baseline, materiality, and attribution boundaries; this is a decision rule to test, not a discovery that ordinary language has only one correct extension.
+The formulation owes a debt to Robert Nozick, who offered something similar in *Anarchy, State, and Utopia*.[^nozick] It has four elements — *credible*, *conditional threat*, *harm*, *to obtain compliance* — and each excludes important near-neighbors. Hard cases remain at the baseline, materiality, and attribution boundaries; this is a decision rule to test, not a discovery that ordinary language has only one correct extension.
 
 ## The Four Elements
 
@@ -24,11 +24,11 @@ The formulation owes a debt to Robert Nozick, who offered something similar in *
 
 **Conditional threat.** The setback must be attached to refusal: if you do not comply, it will be imposed; if you do, it will be withheld. But not every conditional loss is a threat. A refusal or offer ordinarily leaves the target at a legitimate baseline; a threat makes refusal worse by imposing or wrongfully withholding something the threatener has no authority to use as leverage. "Work this weekend or I will publish a fabricated accusation" is clear. "Work this weekend or I will not offer an optional bonus" is ordinarily an offer. Termination, withdrawal of support, and exclusion require analysis of contract, entitlement, dependency, fiduciary duty, and realistic alternatives rather than classification by grammar alone.
 
-**Material setback.** The threatened consequence must credibly worsen the target's welfare, bodily integrity, liberty, property, livelihood, reputation, relationships, functional capacity, or viable options relative to an appropriate baseline. Mere disappointment is not enough, but emotional and social mechanisms cannot be excluded categorically: severe suffering, dependency, isolation, humiliation, and withdrawal of essential support can materially worsen a subject's position. Exactly what counts as harm is developed in [What Counts as Harm](11-what-counts-as-harm.md).
+**Harm.** The threatened consequence must be a genuine harm — a material setback that credibly worsens the target's welfare, bodily integrity, liberty, property, livelihood, reputation, relationships, functional capacity, or viable options relative to an appropriate baseline. Mere disappointment is not enough, but emotional and social mechanisms cannot be excluded categorically: severe suffering, dependency, isolation, humiliation, and withdrawal of essential support can materially worsen a subject's position. Exactly what counts as harm is developed in [What Counts as Harm](11-what-counts-as-harm.md).
 
 **To gain compliance.** The purpose of the threat must be to induce specific behavior. "Hand over the documents or I'll leak your private messages" is aimed at altering what you do next. "You're going to jail because you broke the law" is not — it is punishment, delivered after the fact, with no behavior left to alter. Punishment can be unjust, disproportionate, or cruel, but it is a different act with a different analysis. (The *advance* threat of punishment — pay your taxes or else — is exactly how law coerces; the retrospective sentence is not.)
 
-Put the elements back together and run a composite case: "If you don't testify in court, we'll expose your immigration status to the authorities." Credible? Yes. Conditional threat? Yes. Material setback relative to the legitimate baseline? Yes. Aimed at compliance? Yes. Coercion — and notice that no one has been touched.
+Put the elements back together and run a composite case: "If you don't testify in court, we'll expose your immigration status to the authorities." Credible? Yes. Conditional threat? Yes. Harm relative to the legitimate baseline? Yes. Aimed at compliance? Yes. Coercion — and notice that no one has been touched.
 
 The elements also draw the boundary against coercion's neighbors. Persuasion offers reasons. An offer changes the target's position by adding an option without wrongfully worsening refusal. **Force** directly compels, restrains, seizes, or moves a person or resource; **violence** is physical force that causes bodily injury, destruction, or damage to the material basis of agency. Force and violence can execute a coercive threat, but they are not themselves conditional. Coercion works through anticipated setback.
 

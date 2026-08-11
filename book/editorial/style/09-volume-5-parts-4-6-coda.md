@@ -45,7 +45,7 @@ Chapter 24 previously said value is “measured by what you will give up.” Tha
 
 - Sapient standing remains substrate-neutral and distinct from sentience, benevolence, capability, and species membership.
 - Utilitarianism is rejected under the book's chosen agency premise; no objective moral verdict is smuggled in.
-- Moral pressure remains distinct from coercion unless a credible conditional material setback is controlled and threatened.
+- Moral pressure remains distinct from coercion unless a credible conditional threat of harm is controlled and threatened.
 - Persistence and viability remain descriptive constraints, not objective value, teleology, or a duty to survive.
 - Prospective harm remains material and attributable relative to an explicit baseline; wrongfulness requires separate justification.
 - Measure weights modeled consequences but supplies no values, causal responsibility, or complete decision rule by itself.

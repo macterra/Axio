@@ -21,7 +21,7 @@ This asymmetry is one risk superintelligence discourse can understate. Cognition
 
 Scholars have historically needed patrons. Merchants have needed guards. Engineers have needed property law. Scientists have needed institutions that protect inquiry from priests, soldiers, commissars, mobs, and bureaucrats. The library survives because someone keeps the arsonists outside. The market works because contracts are enforced. The laboratory produces truth because its instruments, funding, personnel, and physical safety are protected by a surrounding order that can punish predation.
 
-Coercion and kinetic violence overlap but neither contains the other. Violence is physical force causing bodily injury, destruction, or material damage. Coercion uses a credible conditional threat of material setback to obtain compliance; the threatened setback may involve violence, cyberattack, exclusion, confiscation, blackmail, sabotage, or bureaucratic action. A cyberattack or seizure carried out without a conditional demand is direct harm or force, not coercion merely because it compels in an everyday sense.
+Coercion and kinetic violence overlap but neither contains the other. Violence is physical force causing bodily injury, destruction, or material damage. Coercion uses a credible conditional threat of harm to obtain compliance; the threatened setback may involve violence, cyberattack, exclusion, confiscation, blackmail, sabotage, or bureaucratic action. A cyberattack or seizure carried out without a conditional demand is direct harm or force, not coercion merely because it compels in an everyday sense.
 
 That is the hard substrate underneath politics. A civilization is a system for organizing, limiting, legitimizing, and directing coercive capacity.
 

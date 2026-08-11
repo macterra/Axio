@@ -403,7 +403,7 @@ The strength and kind of protection warranted for a subject or agent under the b
 
 ### Coercion
 
-The deliberate use of a credible conditional threat of material setback to obtain compliance. Credibility is assessed from the target's warranted anticipation; an attempted bluff can be wrongful without successfully coercing.
+The deliberate use of a credible conditional threat of harm to obtain compliance. Credibility is assessed from the target's warranted anticipation; an attempted bluff can be wrongful without successfully coercing.
 
 **Canonical home:** Volume 5, Chapter 9.
 

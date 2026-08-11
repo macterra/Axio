@@ -10,7 +10,7 @@ This audit tests the manuscript's slavery, mugging, extortion, and protection-ra
 
 ## Ownership rule
 
-Coercion is the deliberate use of a credible conditional threat of material setback to obtain compliance. Influence, criticism, guilt, shame, reputational argument, and refusal to associate are not coercion by definition. They cross the line only where a speaker conditions a credible material penalty they control on compliance.
+Coercion is the deliberate use of a credible conditional threat of harm to obtain compliance. Influence, criticism, guilt, shame, reputational argument, and refusal to associate are not coercion by definition. They cross the line only where a speaker conditions a credible material penalty they control on compliance.
 
 Extortion and protection rackets inherit that structure. Their mechanism requires a demand, a credible conditional threat, control or operational participation in the threatened setback, and sought compliance or payment. The labels may not serve as generic synonyms for hypocrisy, pressure, or moral disapproval.
 

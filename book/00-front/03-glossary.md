@@ -121,7 +121,7 @@ The conjectured maximally unconstrained reservoir of possible sequences from whi
 
 ### Coercion
 
-The deliberate use of a credible conditional threat of material setback to obtain compliance. Coercion works through anticipated setback; [force](#force) directly compels, while [violence](#violence) physically injures or destroys. One episode may involve all three.
+The deliberate use of a credible conditional threat of harm to obtain compliance. Coercion works through anticipated setback; [force](#force) directly compels, while [violence](#violence) physically injures or destroys. One episode may involve all three.
 
 **Read:** [What Counts as Coercion](../05-value-and-ethics/09-what-counts-as-coercion.md) and [The Coercion Continuum](../07-liberty-and-governance/03-the-coercion-continuum.md).
 

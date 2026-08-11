@@ -45,7 +45,7 @@ So state the rule in terms of it. I call this the Agency Protection Principle:
 
 This is a threshold, not an automatic verdict. The intervention must still meet the evidentiary, necessity, proportionality, reciprocity, and review burdens developed in [The Grey Zone](05-the-grey-zone.md).
 
-Volume 5 supplies the terms: coercion is a credible conditional threat of material setback used to obtain compliance ([What Counts as Coercion](../05-value-and-ethics/09-what-counts-as-coercion.md)); harm is a material setback to welfare, functional capacity, or viable options against an explicit baseline ([What Counts as Harm](../05-value-and-ethics/11-what-counts-as-harm.md)). Consent, responsibility, and justification remain separate. With those definitions, the APP repairs the three defects.
+Volume 5 supplies the terms: coercion is a credible conditional threat of harm used to obtain compliance ([What Counts as Coercion](../05-value-and-ethics/09-what-counts-as-coercion.md)); harm is a material setback to welfare, functional capacity, or viable options against an explicit baseline ([What Counts as Harm](../05-value-and-ethics/11-what-counts-as-harm.md)). Consent, responsibility, and justification remain separate. With those definitions, the APP repairs the three defects.
 
 Agency violations share an identifiable feature: fraud closes futures through false information, a threat closes every branch but compliance, and violence closes them bodily. The principle bottoms out in the capacity to value and choose rather than a synonym for illegitimacy. And it does not presuppose ownership; it asks when property, consent, and contract protect voluntary agency, the question [Rights Are Forged — and Reciprocal](06-rights-are-forged.md) answers.
 
