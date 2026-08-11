@@ -50,8 +50,8 @@ THESIS_OVERRIDES = {
     "04-axionic-agency/06-structural-alignment": "Alignment can be pursued through architectural restrictions on admissible self-transformations rather than learned or imposed terminal values.",
     "04-axionic-agency/13-possibility-became-real": "The program's proof objects and running artifacts demonstrate the realizability of a bounded form of Axionic reflective sovereignty.",
     "05-value-and-ethics/01-the-myth-of-objective-value": "Value exists only relative to valuing agents, so value without a valuer is a category error rather than a mind-independent property.",
-    "05-value-and-ethics/02-agent-binding": "Binding evaluative claims to their valuers converts naked preference assertions into explicit conditional claims open to evidence and criticism.",
-    "05-value-and-ethics/09-what-counts-as-coercion": "Coercion is the deliberate use of a credible conditional threat of harm to obtain compliance and must be distinguished from persuasion, force, violence, and direct harm.",
+    "05-value-and-ethics/02-agent-binding": "Agent-binding derives an is from an ought: binding a moral claim to the agent who holds it turns it into an empirical claim about that agent, which Conditionalism then evaluates.",
+    "05-value-and-ethics/10-what-counts-as-coercion": "Coercion is the deliberate use of a credible conditional threat of harm to obtain compliance and must be distinguished from persuasion, force, violence, and direct harm.",
     "05-value-and-ethics/20-risk-is-harm": "Prospective harm includes a material, foreseeable, attributable worsening of exposure against an appropriate baseline, while authorization and justification determine wrongfulness.",
     "05-value-and-ethics/22-the-ethics-of-viability": "Given a chosen commitment to protect sovereign agency, non-coercive coexistence is the strategy this framework licenses; its stability depends on population, enforcement, information, power, and exit conditions rather than following from persistence alone.",
     "05-value-and-ethics/26-sapient-agency-realism": "Given an avowed commitment to reciprocal standing for sapient authorship, facts about what preserves or destroys that authorship support publicly assessable conditional verdicts under the framework's stated rules.",
@@ -134,7 +134,7 @@ REVIEW_OVERRIDES = {
         "Does binding values to agents make moral claims criticizable across agents without smuggling in shared values or authority?",
     "05-value-and-ethics/04-value-as-sacrifice":
         "Does sacrifice reveal endorsed value under addiction, compulsion, misinformation, adaptive preference, and constrained choice?",
-    "05-value-and-ethics/09-what-counts-as-coercion":
+    "05-value-and-ethics/10-what-counts-as-coercion":
         "Does the four-part definition cover structural threats, dependencies, delegated violence, and coercive baselines without overexpansion?",
     "05-value-and-ethics/20-risk-is-harm":
         "What baseline, threshold, foreseeability, and attribution rules prevent every imposed marginal risk from becoming actionable harm?",
