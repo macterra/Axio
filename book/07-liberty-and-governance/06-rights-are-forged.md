@@ -31,7 +31,7 @@ Here is where the forging thesis, left on its own, fails. If rights are merely p
 
 A preference, willingness to enforce it, and belief that enforcement is ethical still do not yield a right. Masters, censors, and mobs can each redescribe domination through necessity, custom, divine command, or collective approval. Moral confidence does not distinguish their boundary from a defensible one.
 
-A right requires more. A right is a defensible boundary around agency. It marks a domain where [coercion](../05-value-and-ethics/09-what-counts-as-coercion.md) requires justification, and where the justification must survive reciprocal application to the person against whom it is used — a principle that applies to every agent exposed to the same kind of agency-invasion, with the reference class set by the coercive act and the agency it invades, not by the coercer's preferred hierarchy. That condition does the work. Without it, rights collapse into moralized power.
+A right requires more. A right is a defensible boundary around agency. It marks a domain where [coercion](../05-value-and-ethics/10-what-counts-as-coercion.md) requires justification, and where the justification must survive reciprocal application to the person against whom it is used — a principle that applies to every agent exposed to the same kind of agency-invasion, with the reference class set by the coercive act and the agency it invades, not by the coercer's preferred hierarchy. That condition does the work. Without it, rights collapse into moralized power.
 
 ## Reciprocity Is Not Mysticism
 

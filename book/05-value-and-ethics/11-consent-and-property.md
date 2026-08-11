@@ -11,7 +11,7 @@ sources:
 
 These questions cannot be settled by intuition, because the intuitions conflict — that is what makes them disputes. They can only be settled by definitions, and consent and property are two of the most load-bearing words in the moral vocabulary that almost nobody bothers to define. Both do foundational work in ethics, law, medicine, sex, and governance, and both are routinely treated loosely or simplistically. The looseness is not harmless. When the definitions are vague, the words become weapons: "she consented" launders submission into agreement, and "it's my property" launders possession into right.
 
-The remedy is the same one I applied to [coercion](09-what-counts-as-coercion.md): state a definition whose every element is necessary, then test each element with cases that pass and cases that fail. The counterexamples are not decoration. They are how you find out whether a criterion is doing real work — a criterion that nothing fails is not a criterion.
+The remedy is the same one I applied to [coercion](10-what-counts-as-coercion.md): state a definition whose every element is necessary, then test each element with cases that pass and cases that fail. The counterexamples are not decoration. They are how you find out whether a criterion is doing real work — a criterion that nothing fails is not a criterion.
 
 ## What Counts as Consent
 
@@ -71,4 +71,4 @@ The hard cases test the model rather than merely confirming it. Animal territori
 
 Neither of these definitions is a discovery about the metaphysical furniture of the world. There is no consent written into nature and no ownership inhering in atoms; there are agents, agreements, thresholds, and enforcement mechanisms, all specified relative to frameworks that could have been otherwise. That is not a weakness. A definition you know is constructed is one you can state in full, test against counterexamples, and revise when it misclassifies — which is more than can be said for the intuitions it replaces.
 
-And the definitions interlock. Property's transferability condition presupposes consent; consent's uncoerced condition presupposes the definition of coercion; and all three feed the next piece of the machinery, because the wrongs we care most about — theft, fraud, assault, expropriation — are at bottom claims that someone was harmed through the violation of exactly these boundaries. What counts as harm is [the next definition owed](11-what-counts-as-harm.md).
+And the definitions interlock. Property's transferability condition presupposes consent; consent's uncoerced condition presupposes the definition of coercion; and all three feed the next piece of the machinery, because the wrongs we care most about — theft, fraud, assault, expropriation — are at bottom claims that someone was harmed through the violation of exactly these boundaries. What counts as harm is [the next definition owed](09-what-counts-as-harm.md).

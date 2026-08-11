@@ -123,7 +123,7 @@ The conjectured maximally unconstrained reservoir of possible sequences from whi
 
 The deliberate use of a credible conditional threat of harm to obtain compliance. Coercion works through anticipated setback; [force](#force) directly compels, while [violence](#violence) physically injures or destroys. One episode may involve all three.
 
-**Read:** [What Counts as Coercion](../05-value-and-ethics/09-what-counts-as-coercion.md) and [The Coercion Continuum](../07-liberty-and-governance/03-the-coercion-continuum.md).
+**Read:** [What Counts as Coercion](../05-value-and-ethics/10-what-counts-as-coercion.md) and [The Coercion Continuum](../07-liberty-and-governance/03-the-coercion-continuum.md).
 
 ### Coherence
 
@@ -165,7 +165,7 @@ The thesis that a statement bears a truth value only relative to the conditions 
 
 A scoped, decision-specific authorization given with sufficient capacity, material understanding, intention, and voluntariness. Consent can change permission and responsibility without erasing injury; pressure and dependency are evidence about voluntariness rather than automatic answers.
 
-**Read:** [Consent and Property](../05-value-and-ethics/10-consent-and-property.md).
+**Read:** [Consent and Property](../05-value-and-ethics/11-consent-and-property.md).
 
 ### Consciousness
 
@@ -313,7 +313,7 @@ The mature political position that the legitimacy of coercion is conditional, pr
 
 A material setback to a sentient subject's welfare or an agent's functional capacity and viable options against an explicit appropriate baseline. Harm can occur with authorization or justification; wrongfulness additionally depends on causation, duty, foreseeability, care, justification, and responsibility. Prospective harm requires a material, foreseeable, attributable worsening of exposure, not any non-zero risk.
 
-**Read:** [What Counts as Harm](../05-value-and-ethics/11-what-counts-as-harm.md) and [When Risk Is Harm](../05-value-and-ethics/20-risk-is-harm.md).
+**Read:** [What Counts as Harm](../05-value-and-ethics/09-what-counts-as-harm.md) and [When Risk Is Harm](../05-value-and-ethics/20-risk-is-harm.md).
 
 ## I
 
@@ -455,7 +455,7 @@ An exchange ratio formed under specified conditions of scarcity, information, in
 
 A socially and procedurally maintained authorization structure governing control, exclusion, transfer, and use of a resource. Community recognition and institutions can constitute its practical operation without unanimous community consent; moral legitimacy and enforcement remain further questions.
 
-**Read:** [Consent and Property](../05-value-and-ethics/10-consent-and-property.md).
+**Read:** [Consent and Property](../05-value-and-ethics/11-consent-and-property.md).
 
 ### Protocolized governance
 
@@ -645,7 +645,7 @@ The capacity of a specified system, pattern, agent, commitment, institution, or 
 
 Direct physical force causing bodily injury, destruction, or damage to the material basis of agency. The word is not used here as a synonym for offense, persuasion, category error, or every harm.
 
-**Read:** [What Counts as Coercion](../05-value-and-ethics/09-what-counts-as-coercion.md). Compare [force](#force).
+**Read:** [What Counts as Coercion](../05-value-and-ethics/10-what-counts-as-coercion.md). Compare [force](#force).
 
 ## W
 

@@ -46,7 +46,7 @@ Axio allows partiality — your relationships shape your agency portfolio, and a
 
 Natural-rights libertarianism is the nearest neighbor, and the surface intuition — non-aggression — is one Axio accepts. What it rejects is the foundation. Rights here are justified protections for agency within a chosen reciprocal order, not cosmic properties attached to persons or consequences forced by whatever happens to persist.
 
-The difference is not decorative. Axio proposes explicit definitions of [coercion](09-what-counts-as-coercion.md), harm, consent, and obligation, then tests the baselines and safeguards on which libertarian accounts disagree. That precision clarifies trolleys, organ-harvest dilemmas, burning hospitals, and other coercion topologies — and exposes rather than conceals the unresolved human-shield conflict in Chapter 25. Axio is libertarian where libertarianism works, and post-libertarian where it breaks.
+The difference is not decorative. Axio proposes explicit definitions of [coercion](10-what-counts-as-coercion.md), harm, consent, and obligation, then tests the baselines and safeguards on which libertarian accounts disagree. That precision clarifies trolleys, organ-harvest dilemmas, burning hospitals, and other coercion topologies — and exposes rather than conceals the unresolved human-shield conflict in Chapter 25. Axio is libertarian where libertarianism works, and post-libertarian where it breaks.
 
 ## Agency as the Primitive
 

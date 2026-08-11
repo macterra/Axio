@@ -203,11 +203,11 @@ volumes:
           - 06-phosphorism
           - 07-judging-goodness
           - 08-honesty-and-hypocrisy
-      - title: "Part III — Coercion, Consent, Harm, and Force"
+      - title: "Part III — Harm, Coercion, Consent, and Force"
         chapters:
-          - 09-what-counts-as-coercion
-          - 10-consent-and-property
-          - 11-what-counts-as-harm
+          - 09-what-counts-as-harm
+          - 10-what-counts-as-coercion
+          - 11-consent-and-property
           - 12-the-boundaries-of-force
       - title: "Part IV — Moral Standing"
         chapters:
@@ -428,3 +428,10 @@ redirects:
   # Price of Breath relocated from Vol 6 to the end of Vol 7
   - from: 06-markets-and-money/26-the-price-of-breath
     to: 07-liberty-and-governance/36-the-price-of-breath
+  # Vol 5: Part III reorder (What Counts as Harm moved ahead of What Counts as Coercion)
+  - from: 05-value-and-ethics/09-what-counts-as-coercion
+    to: 05-value-and-ethics/10-what-counts-as-coercion
+  - from: 05-value-and-ethics/10-consent-and-property
+    to: 05-value-and-ethics/11-consent-and-property
+  - from: 05-value-and-ethics/11-what-counts-as-harm
+    to: 05-value-and-ethics/09-what-counts-as-harm
