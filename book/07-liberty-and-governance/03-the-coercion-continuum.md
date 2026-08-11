@@ -23,7 +23,7 @@ The placements are estimates, and the axis is deliberately partial. A tax share 
 
 No tax state is exempt from the axis, and the moral question cannot be quarantined at its far end. A smaller compulsory claim is not therefore innocent; it owes an answer proportionate to what is taken and how.
 
-Voting, residence, and participation do not by themselves authorize a threat imposed for nonpayment. Tax collection fits the book's [coercion definition](../05-value-and-ethics/09-what-counts-as-coercion.md); ordinary employment need not, because entitlement, dependency, alternatives, and the baseline differ. Territorial monopoly, ruinous exit, and self-issued sanctions make political consent the harder case — the problem of political authority, pressed most carefully by Michael Huemer.[^huemer-authority]
+Voting, residence, and participation do not by themselves authorize a threat imposed for nonpayment. Tax collection fits the book's [coercion definition](../05-value-and-ethics/10-what-counts-as-coercion.md); ordinary employment need not, because entitlement, dependency, alternatives, and the baseline differ. Territorial monopoly, ruinous exit, and self-issued sanctions make political consent the harder case — the problem of political authority, pressed most carefully by Michael Huemer.[^huemer-authority]
 
 [^huemer-authority]: Michael Huemer, *The Problem of Political Authority*, https://www.goodreads.com/book/show/15794037-the-problem-of-political-authority.
 
@@ -35,7 +35,7 @@ There is a libertarian one-liner that the state "owns a piece of you." It is usu
 
 > From birth to death, the state owns a piece of you. You need permission to build, to sell, to drive, to grow, to speak. Try living without their papers or their taxes and see how "free" you are.
 
-[Ownership](../05-value-and-ethics/10-consent-and-property.md) is a bundle of enforceable claims to *use*, *exclude*, and *dispose*. Audit the state's relationship to citizens against those incidents.
+[Ownership](../05-value-and-ethics/11-consent-and-property.md) is a bundle of enforceable claims to *use*, *exclude*, and *dispose*. Audit the state's relationship to citizens against those incidents.
 
 **Use.** Law constrains how bodies, property, time, and speech may be used, often through prior permission to drive, build, operate a business, or practice a trade.
 

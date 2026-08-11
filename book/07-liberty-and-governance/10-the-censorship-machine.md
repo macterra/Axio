@@ -19,7 +19,7 @@ That is the problem. Liberal democracies erode when interpretive machinery miscl
 
 The first error treats expression as latent action: joke as signal, song as manifesto, book as plan. Once patterns are treated as agency, the collector becomes a threat vector caught early.
 
-The second substitutes offense, ideological tension, or emotional disturbance for [harm](../05-value-and-ethics/11-what-counts-as-harm.md). Offensive speech then becomes assault, dangerous ideas become preparation, and preemption becomes obligatory. The category expands by turning difficulty into an agency violation.
+The second substitutes offense, ideological tension, or emotional disturbance for [harm](../05-value-and-ethics/09-what-counts-as-harm.md). Offensive speech then becomes assault, dangerous ideas become preparation, and preemption becomes obligatory. The category expands by turning difficulty into an agency violation.
 
 The third mistakes prevention for sufficient justification. Predictive models of radicalization make upstream regulation of playlists, annotations, and memes look rational because symbols become risk data. Preemptive surveillance and punishment then follow without requiring zealots; a bad model of agency is enough.
 

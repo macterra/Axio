@@ -17,13 +17,13 @@ Harm includes material setbacks to welfare, functional capacity, or viable optio
 
 ## Harm at the Moment of Decision
 
-This is the promised extension of the harm concept — the upgrade that [What Counts as Harm](11-what-counts-as-harm.md) announced and deferred. The definition given there — material degradation of an agent's capacity or viable options — is not discarded. What changes is the moment of evaluation. A setback can be realized — you break an arm — or prospective — you wrongfully raise a person's chance of death from two percent to eight. These are related but not identical impacts: one is an injury, the other an exposure. Both can degrade the agent's position, and their different magnitudes and remedies must remain visible.
+This is the promised extension of the harm concept — the upgrade that [What Counts as Harm](09-what-counts-as-harm.md) announced and deferred. The definition given there — material degradation of an agent's capacity or viable options — is not discarded. What changes is the moment of evaluation. A setback can be realized — you break an arm — or prospective — you wrongfully raise a person's chance of death from two percent to eight. These are related but not identical impacts: one is an injury, the other an exposure. Both can degrade the agent's position, and their different magnitudes and remedies must remain visible.
 
 The prospective harm occurs when the act materially worsens the distribution relative to the appropriate baseline. Locking the door exposes the stranger to danger and removes control before any injury lands. Run the four endings: escape without injury, light injury, grave injury, death. The initial endangerment exists in every story, but exposure, injury, and death remain different harms with different magnitudes and remedies. Outcomes still matter to responsibility, repair, and grief.
 
 This limits one form of moral luck without annihilating it. The quality of the decision can be assessed at the time of action using foreseeable risk, while actual consequences remain morally and legally relevant. Choice and outcome answer different questions; neither makes the other disappear.
 
-This also pays a debt. [What Counts as Coercion](09-what-counts-as-coercion.md) showed that a credible threat reshapes the target's decision landscape before the threatened setback occurs. Material imposed risk can likewise be a present setback rather than a morally empty possibility. It is coercive only when it is used as a conditional threat to obtain compliance; negligent endangerment, predation, and coercion can overlap, but they are not synonyms.
+This also pays a debt. [What Counts as Coercion](10-what-counts-as-coercion.md) showed that a credible threat reshapes the target's decision landscape before the threatened setback occurs. Material imposed risk can likewise be a present setback rather than a morally empty possibility. It is coercive only when it is used as a conditional threat to obtain compliance; negligent endangerment, predation, and coercion can overlap, but they are not synonyms.
 
 ## Ambient and Imposed Risk
 

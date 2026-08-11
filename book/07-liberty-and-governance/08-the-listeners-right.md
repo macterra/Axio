@@ -10,7 +10,7 @@ sources:
 
 A book is pulled from a library, a speaker shouted off a stage, a channel deleted. Ask who was wronged and everyone points to the speaker. That framing makes censorship look like a cost imposed on one crank for the benefit of thousands spared his poison. The arithmetic favors the censor.
 
-The camera belongs on the audience. Silence one crank and a thousand people have had a decision made for them: what they may hear, weigh, and reject. The speaker is wronged, but the essential injury is the denial of intellectual autonomy to every willing listener. Censorship is [coercion](../05-value-and-ethics/09-what-counts-as-coercion.md), and its primary target is the audience.
+The camera belongs on the audience. Silence one crank and a thousand people have had a decision made for them: what they may hear, weigh, and reject. The speaker is wronged, but the essential injury is the denial of intellectual autonomy to every willing listener. Censorship is [coercion](../05-value-and-ethics/10-what-counts-as-coercion.md), and its primary target is the audience.
 
 ## The Wrong Victim
 

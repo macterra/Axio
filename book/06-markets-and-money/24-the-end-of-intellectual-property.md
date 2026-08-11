@@ -9,7 +9,7 @@ sources:
 
 Steal my bicycle and I walk home. Copy my song and we both sing it. Every argument about intellectual property eventually comes down to whether that difference matters, and the whole apparatus of patents, copyrights, licenses, and takedown notices is built on the hope that it doesn't.
 
-It does. Rivalry matters to the operational property model proposed in [an earlier volume](../05-value-and-ethics/10-consent-and-property.md), but that model is not a proof that every legal use of *property* must satisfy five natural criteria. Information is often non-rival in use while creation, secrecy, attribution, discovery, implementation, and first access remain scarce. Intellectual-property law constructs time-limited exclusion to alter incentives around those scarce activities.
+It does. Rivalry matters to the operational property model proposed in [an earlier volume](../05-value-and-ethics/11-consent-and-property.md), but that model is not a proof that every legal use of *property* must satisfy five natural criteria. Information is often non-rival in use while creation, secrecy, attribution, discovery, implementation, and first access remain scarce. Intellectual-property law constructs time-limited exclusion to alter incentives around those scarce activities.
 
 None of this makes intellectual property fake. It makes it an enforceable policy bargain rather than a natural fence. Its legitimacy depends on whether a defined scope and duration purchase enough creation or disclosure to exceed access, litigation, follow-on innovation, administration, and coercion costs. Different patents, copyrights, trademarks, trade secrets, and sectors can answer differently.
 
