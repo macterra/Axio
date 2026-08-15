@@ -1,6 +1,7 @@
 ---
 title: 'The Observer Joins the Branch'
 subtitle: "Schrödinger's cat, Wigner's friend, and observation as physics"
+summary: 'Treats observation as a physical correlation that places the observer inside the modeled branch structure rather than outside it.'
 status: review
 sources:
   - 202626483.the-observer-joins-the-branch

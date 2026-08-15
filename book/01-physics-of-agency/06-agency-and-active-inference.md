@@ -1,6 +1,7 @@
 ---
 title: 'Agency and Active Inference'
 subtitle: 'The Friston bridge'
+summary: 'Develops a partial bridge between the book’s control framework and active inference while keeping free energy, prediction error, and kybit counts distinct.'
 status: review
 sources:
   - 163365017.active-inference-and-the-physics

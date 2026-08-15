@@ -1,6 +1,7 @@
 ---
 title: 'Causality and Counterfactuals'
 subtitle: 'Cause as branch structure'
+summary: 'Recasts causation as a contrast between matched, weighted branch-sets while leaving confound isolation as an explicit modeling requirement.'
 status: review
 sources:
   - 163348907.a-rigorous-definition-of-causality

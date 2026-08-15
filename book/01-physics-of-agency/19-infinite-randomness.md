@@ -1,6 +1,7 @@
 ---
 title: 'Infinite Randomness'
 subtitle: 'Boltzmann brains and the mathematics of everything'
+summary: 'Uses infinite random sequences to explore how every finite pattern can occur without thereby explaining observation, typicality, or organized reality.'
 status: review
 sources:
   - 169620752.infinite-randomness

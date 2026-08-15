@@ -1023,6 +1023,15 @@ mjx-container {
     margin-top: 0.25rem;
 }
 
+.book-chapter-summary {
+    color: #aeb3bb;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.45;
+    margin: -0.25rem 0 0.65rem;
+    max-width: 48rem;
+}
+
 .book-byline {
     color: #8a8f98;
     font-size: 1.05rem;

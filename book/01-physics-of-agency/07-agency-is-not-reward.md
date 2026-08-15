@@ -1,6 +1,7 @@
 ---
 title: 'Agency Is Not Reward'
 subtitle: 'What the maximum-occupancy view gets right, and what it misses'
+summary: 'Tests maximum-occupancy and empowerment accounts against the distinction between seeking reward, preserving options, and exercising authored control.'
 status: review
 sources:
   - 194130281.agency-is-not-reward

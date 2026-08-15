@@ -1,6 +1,7 @@
 ---
 title: 'The Shape of Coherence'
 subtitle: 'Identity preservation across transformation'
+summary: 'Defines dynamical coherence through re-identifiability under stated transformations, scales, and criteria of identity.'
 status: review
 sources:
   - 183495093.the-shape-of-coherence

@@ -1,6 +1,7 @@
 ---
 title: 'Agency Against Drift'
 subtitle: 'The thermodynamic basis of intention'
+summary: 'Defines agency as physically embodied control: the capacity to spend work so that later outcomes depend on an agent’s policy rather than drift alone.'
 status: review
 sources:
   - 162428502.the-physics-of-agency-part-1-the

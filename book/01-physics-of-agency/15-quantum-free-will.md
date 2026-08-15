@@ -1,6 +1,7 @@
 ---
 title: 'Quantum Free Will'
 subtitle: 'Choice as measure steering'
+summary: 'Models choice as a policy-conditioned difference among weighted consequences without claiming that agents create branches or transfer Measure between them.'
 status: review
 sources:
   - 175664749.quantum-free-will

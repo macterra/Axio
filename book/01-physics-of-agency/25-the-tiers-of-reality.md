@@ -1,6 +1,7 @@
 ---
 title: 'The Tiers of Reality'
 subtitle: 'Why ice floats, and where the Ruliad fits'
+summary: 'Distinguishes tiers of description and emergence, showing how higher-level regularities can be real without becoming fundamental substances.'
 status: review
 sources:
   - 174194776.why-does-ice-float

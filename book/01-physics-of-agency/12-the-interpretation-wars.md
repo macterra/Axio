@@ -1,6 +1,7 @@
 ---
 title: 'The Interpretation Wars'
 subtitle: 'QBism, local realism, and what the QBU keeps'
+summary: 'Compares rival interpretations of quantum mechanics and identifies the limited representational commitments the QBU proposal retains.'
 status: review
 sources:
   - 164038303.qbism-vs-many-worlds

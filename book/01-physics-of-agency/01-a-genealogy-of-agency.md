@@ -1,6 +1,7 @@
 ---
 title: 'A Genealogy of Agency'
 subtitle: 'From Popper to Everett to Deutsch — and past them'
+summary: 'Traces the framework’s debts to Popper, Bartley, Everett, and Deutsch, then marks where its account of agency departs from each inheritance.'
 status: review
 sources:
   - 172964152.a-genealogy-of-agency

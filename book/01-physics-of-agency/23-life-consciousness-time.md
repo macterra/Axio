@@ -1,6 +1,7 @@
 ---
 title: 'Life, Consciousness, and Time'
 subtitle: 'When coherence reflects itself'
+summary: 'Offers a speculative progression from self-maintaining organization through recursive modeling to lived time and consciousness.'
 status: review
 sources:
   - 171909085.consciousness-from-constructors

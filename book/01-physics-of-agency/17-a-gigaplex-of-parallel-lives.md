@@ -1,6 +1,7 @@
 ---
 title: 'A Gigaplex of Parallel Lives'
 subtitle: 'Identity across the branches'
+summary: 'Represents personal identity as a pattern tracked across weighted event sectors rather than a single thread passing through every branch.'
 status: review
 sources:
   - 164423784.a-gigaplex-of-parallel-lives

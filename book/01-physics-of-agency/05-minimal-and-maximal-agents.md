@@ -1,6 +1,7 @@
 ---
 title: 'Minimal and Maximal Agents'
 subtitle: 'From chemotaxis to the AIXI demon'
+summary: 'Locates real agency on a spectrum from minimal adaptive control to an idealized maximal planner, clarifying what physical agents can and cannot be.'
 status: review
 sources:
   - 162831172.the-mechanics-of-agency

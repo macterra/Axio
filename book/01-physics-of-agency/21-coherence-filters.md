@@ -1,6 +1,7 @@
 ---
 title: 'Coherence Filters'
 subtitle: 'Carving structure from the reservoir'
+summary: 'Explores formal and semantic filters that identify coherent structure within the proposed reservoir while keeping selection distinct from generation.'
 status: review
 sources:
   - 171846415.coherence-from-chaos

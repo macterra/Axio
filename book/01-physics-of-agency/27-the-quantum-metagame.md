@@ -1,6 +1,7 @@
 ---
 title: 'The Quantum Metagame'
 subtitle: 'Persistence across branches'
+summary: 'Develops an optional model of pattern prevalence across branches and asks what persistence can explain without turning it into a chooser or cosmic aim.'
 status: review
 sources:
   - 180339872.the-quantum-metagame

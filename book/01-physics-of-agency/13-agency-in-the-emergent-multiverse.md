@@ -1,6 +1,7 @@
 ---
 title: 'Agency in the Emergent Multiverse'
 subtitle: 'Where the laws meet the branches'
+summary: 'Brings the proposed laws of agency into the branching model and states the still-open bridge among control, work, and weighted consequences.'
 status: review
 sources:
   - 163509485.quantum-agency-in-the-emergent-multiverse

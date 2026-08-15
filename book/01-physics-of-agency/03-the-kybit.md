@@ -1,6 +1,7 @@
 ---
 title: 'The Kybit'
 subtitle: 'A unit of control'
+summary: 'Introduces the kybit as a proposed informational unit for expressing how much an intervention shifts a probability distribution relative to a stated baseline.'
 status: review
 sources:
   - 162485677.the-physics-of-agency-part-3-the

@@ -1,6 +1,7 @@
 ---
 title: 'No Trivial Choices'
 subtitle: 'Radical contingency and the causal lattice'
+summary: 'Argues that small interventions can acquire large downstream significance in chaotic systems, making triviality dependent on scale, horizon, and contrast.'
 status: review
 sources:
   - 170091078.radical-contingency

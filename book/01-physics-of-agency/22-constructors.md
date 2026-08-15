@@ -1,6 +1,7 @@
 ---
 title: 'Constructors'
 subtitle: 'How order becomes causal power'
+summary: 'Uses constructor-theoretic ideas to ask how persistent structures acquire repeatable causal capacities and maintain transformations over time.'
 status: review
 sources:
   - 171907779.constructors-from-coherence

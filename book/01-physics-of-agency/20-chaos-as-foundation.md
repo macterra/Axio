@@ -1,6 +1,7 @@
 ---
 title: 'Chaos as Foundation'
 subtitle: 'The prior state of all priors'
+summary: 'Proposes the Chaos Reservoir as a speculative space of unrestricted sequences from which structured descriptions may be selected rather than created ex nihilo.'
 status: review
 sources:
   - 177832101.chaos-as-foundation

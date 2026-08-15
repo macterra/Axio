@@ -1,6 +1,7 @@
 ---
 title: "Everett's Demon"
 subtitle: 'Ontological randomness and the amplified quantum'
+summary: 'Replaces Laplace’s deterministic demon with an Everettian observer facing branch-relative uncertainty and quantum events amplified into macroscopic history.'
 status: review
 sources:
   - 166481863.everetts-demon

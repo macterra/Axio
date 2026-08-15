@@ -1,6 +1,7 @@
 ---
 title: 'Creativity as Virtual Evolution'
 subtitle: 'Variation, selection, and thought made persistent'
+summary: 'Models creativity as cognition generating, testing, and retaining novel representations and actions through an analogy with variation and selection.'
 status: review
 sources:
   - 164411286.creativity-as-virtual-evolution

@@ -1,6 +1,7 @@
 ---
 title: 'The Quantum Branching Universe'
 subtitle: 'A formal map of parallel timelines'
+summary: 'Presents the Quantum Branching Universe as an optional coarse-grained representation of weighted events, timelines, and emergent branches.'
 status: review
 sources:
   - 162844036.the-quantum-branching-universe-qbu

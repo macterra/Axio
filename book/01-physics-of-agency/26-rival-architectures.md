@@ -1,6 +1,7 @@
 ---
 title: 'Rival Architectures'
 subtitle: 'Simulations, the CTMU, Gödel, and God'
+summary: 'Tests the proposed architecture against simulation arguments, the CTMU, Gödelian limits, and theological explanation without collapsing their differences.'
 status: review
 sources:
   - 173133945.simulation-theories

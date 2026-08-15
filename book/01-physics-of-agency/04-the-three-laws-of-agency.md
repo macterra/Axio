@@ -1,6 +1,7 @@
 ---
 title: 'The Three Laws of Agency'
 subtitle: 'Control work, agency decay, agency limits'
+summary: 'Proposes three candidate laws: control requires work, unmaintained control decays, and perfect control remains physically unattainable.'
 status: review
 sources:
   - 163356216.the-three-thermodynamic-laws-of-agency

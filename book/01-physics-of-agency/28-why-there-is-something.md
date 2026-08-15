@@ -1,6 +1,7 @@
 ---
 title: 'Why There Is Something Rather than Nothing'
 subtitle: 'The terminus of explanation'
+summary: 'Uses the Modal Realization Principle conditionally to argue that existence may terminate explanation rather than supply one final external cause.'
 status: review
 sources:
   - 182569831.why-there-is-something-rather-than

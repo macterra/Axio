@@ -1,6 +1,7 @@
 ---
 title: 'Measure, Vantage, Branchcone'
 subtitle: 'The toolkit of objective probability'
+summary: 'Defines Measure, Vantage, and Branchcone as the machinery for assigning physical weights to future event sectors from a specified standpoint.'
 status: review
 sources:
   - 163778685.measure-vantage-branchcone-and-counterfactuals
