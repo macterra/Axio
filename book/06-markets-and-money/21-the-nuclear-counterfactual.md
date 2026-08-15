@@ -1,6 +1,8 @@
 ---
 title: 'The Nuclear Counterfactual'
 subtitle: 'A model-dependent ledger of foregone clean power'
+summary: >-
+  The slowdown of U.S. nuclear construction after the 1970s involved public fear and regulation alongside cost overruns, interest rates, utility finance, demand forecasts, accidents, management, and competing generation. An illustrative counterfactual assumes that a nuclear-first path displaces 30% of roughly 125,000 TWh of fossil generation over five decades, or 37,500 TWh. At stipulated rates, five ledgers yield 1.5 million avoided premature deaths valued at $15 trillion, 26 gigatons of avoided CO₂ valued near $2.6 trillion at the selected midpoint, $2.25 trillion in electricity savings, and explicit $2 trillion and $3 trillion placeholders for geopolitics and lost industry. The resulting roughly $25 trillion total is scenario arithmetic, not a conservative empirical estimate or confidence interval. Displacement, epidemiology, VSL, carbon price, construction, overlap, and alternatives remain load-bearing assumptions. Nuclear and anti-nuclear positions both owe complete-system comparisons covering reliability, construction, waste, proliferation, pollution, climate, transmission, storage, finance, and institutional execution.
 status: review
 sources:
   - 179578628.the-nuclear-counterfactual

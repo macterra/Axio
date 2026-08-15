@@ -1,6 +1,8 @@
 ---
 title: 'The Loaded Dice of Parenthood'
 subtitle: 'Biology, institutions, and earnings differences'
+summary: >-
+  Aggregate earnings differences are not a direct meter of discrimination alone. Three layers can contribute: gestation, childbirth, recovery, and some feeding create a biological constraint; early care produces a continuity spillover; households then reach equilibria over who absorbs interruption and who protects wage continuity. Biology can load the dice without determining the outcome, and choices made under different options, bargaining positions, norms, employers, and institutions can tilt a distribution. High-value work often rewards deployable time—stable attention, predictable energy, responsiveness, and low interruption variance—while wage accounts record domestic care at zero despite its value. Subsidies and leave can redistribute or alter costs, but no policy abolishes economic cost by moving it to taxpayers, workers, employers, or future payers. The Structural Asymmetry Principle states that when biological and institutional constraints create asymmetric interruption, households and employers may respond with specialization that compounds into persistent earnings differences. The tilt establishes neither discrimination nor free consent; both require separate evidence.
 status: review
 sources:
   - 180970594.the-loaded-dice-of-parenthood

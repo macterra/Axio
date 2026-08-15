@@ -1,6 +1,8 @@
 ---
 title: 'Mechanisms for Honest Values'
 subtitle: 'Harberger insurance and prediction markets'
+summary: >-
+  Mechanisms can make claims more honest by attaching consequences to what people report. Harberger insurance links self-assessed value to both premium and covered payout: overstatement costs more, while understatement limits recovery, without discovering an object's true intrinsic worth. Prediction markets similarly make probabilistic confidence scoreable by rewarding correction and charging for error. Market prices aggregate conditional judgments under incentive pressure, not prophecy or certainty, and their evidential quality depends on resolution rules, liquidity, participation, fees, subsidies, manipulation, and comparison forecasts. The 1994 Calgary experiment showed that a web interface and even play-money scoring could sharpen claims, but it did not establish universal predictive superiority without a benchmark and evaluation protocol. Thin markets can display authoritative-looking numbers with weak signal. Harberger valuation and prediction markets are candidate epistemic infrastructure whose strength is bounded by their rules, resources, alternatives, and safeguards; whether they improve clarity must itself remain testable.
 status: review
 sources:
   - 165432518.introducing-harberger-insurance

@@ -1,6 +1,8 @@
 ---
 title: 'Ornament and Advantage'
 subtitle: 'Costly signals and collapsing credentials'
+summary: >-
+  Costly signals work because their expense once made them difficult to fake: the peacock's tail and the diploma both served as handicaps that revealed underlying capacity. Generative AI makes polished artifacts cheap, voiding the old warranty without abolishing merit. Specification, taste, diagnosis, repair, and especially accountability remain scarce, although no fixed task is permanently protected from automation. Credentials must migrate from artifact possession toward demonstrated control under challenge, consequence, and continuity. A challengeable artifact can be explained, altered, defended, repaired, deployed, and maintained; charisma, pedigree, or a synthetic process trace cannot substitute for those tests. Institutions need open challenge lanes so outsiders can force attention without passing a prior status gate. Apprenticeship must also survive after junior production becomes uneconomic, because people learn durable judgment by making and repairing imperfect work. Authority should follow accountable control and liability rather than polish, while artifacts remain public, portable evidence rather than self-authenticating proof.
 status: review
 sources:
   - 174783426.ornament-and-advantage

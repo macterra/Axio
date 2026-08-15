@@ -1,6 +1,8 @@
 ---
 title: 'The End of Intellectual Property'
 subtitle: 'Information wants to be paid for'
+summary: >-
+  Information is usually non-rival in use even though creation, secrecy, attribution, discovery, implementation, and early access remain scarce. Intellectual property is therefore an enforceable policy bargain that constructs time-limited exclusion rather than a natural fence around an object. Its legitimacy depends on whether specified scope and duration induce enough creation or disclosure to outweigh access barriers, litigation, deadweight loss, administration, follow-on restrictions, and coercive enforcement. Digital copying makes perfect exclusion infeasible without making enforcement causally irrelevant; streaming shows that licensing, convenience, and new payment models can still change behavior. Open source, Creative Commons, fashion, cuisine, and comedy demonstrate alternatives to strong exclusion without proving that every sector funds itself the same way. Advertising preserves zero-precommitment access but can reward surveillance and attention capture; subscriptions, patronage, states, and volunteer labor carry different corruptions. Shorter exclusion, broader reuse, constrained ads, and policy-driven micropayments are favored possibilities whose comparative performance remains empirical.
 status: review
 sources:
   - 166822916.the-end-of-intellectual-property

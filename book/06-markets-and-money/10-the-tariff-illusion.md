@@ -1,6 +1,8 @@
 ---
 title: 'The Tariff Illusion'
 subtitle: 'Trade myths, from protectionism to the China fallacy'
+summary: >-
+  Tariffs commonly raise domestic prices, redirect trade, protect selected producers, and burden downstream users and consumers. Five recurring rationales invoke domestic jobs, strategic capacity, retaliation, government revenue, and political patronage; only specified resilience or security needs can justify sacrificing trade gains, and broad protection remains vulnerable to capture. Ricardo's comparative-advantage result survives under its assumptions without promising that every person gains, adjustment is costless, or dependencies have no option value. Tariffs persist because benefits are concentrated, visible, and organized while larger costs are diffuse, counterfactual, and politically quiet. China's post-1978 rise occurred through a mixed political economy combining private ownership, competition, trade, foreign investment, infrastructure, industrial policy, state firms, and one-party rule. Market liberalization is central to the transformation, but the chronology is not a controlled experiment isolating one cause. Calling the skyline a triumph of communism equivocates between Party governance and suppressed market production; causal analysis must trace mechanisms rather than credit visible outcomes to political labels.
 status: review
 sources:
   - 170447759.the-tariff-illusion

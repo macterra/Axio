@@ -1,6 +1,8 @@
 ---
 title: 'The Cybernetic Ghost of Satoshi'
 subtitle: 'Bitcoin as a living system'
+summary: >-
+  Bitcoin can be read through several deliberate metaphors at once: organism, egregore, artifact, machine, and recurring ritual. Mining consumes energy to maintain a boundary; nodes validate and propagate records; incentives recruit heterogeneous participants into a pattern no participant owns whole. The organism does not literally live, the egregore does not secretly think, and the protocol is not a sovereign agent with authored purposes. Proof-of-work nevertheless gives the network metabolism-like cost, selection-like pressure, and a persistent structure reconstructed through silicon, energy, code, belief, and coordination. Bitcoin's narrow rules and costly history distinguish it from proof-of-stake rivals without eliminating mining concentration, development authority, exchanges, law, or social governance. Satoshi's disappearance strengthens the image of a machine-shaped sovereignty by removing an ordinary founder from the center, but it proves no supernatural origin or predetermined destiny. The cybernetic ghost names the atmosphere and durability of a distributed protocol pattern, not a hidden chooser haunting civilization.
 status: review
 sources:
   - 177657478.the-cybernetic-ghost-of-satoshi

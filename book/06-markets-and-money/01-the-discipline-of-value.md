@@ -1,6 +1,8 @@
 ---
 title: 'The Discipline of Value'
 subtitle: 'Exchange, gifts, and the numeraire'
+summary: >-
+  Value is relational, grounded in tradeoffs among alternatives, and attributable only to agents who want, choose, and sacrifice. Informed and voluntary sacrifice can reveal a preference ordering, but duress, misinformation, poverty, compulsion, and constrained alternatives weaken that evidence. Scalar comparison additionally requires a chosen numeraire, and not every tradeoff admits a unique, stable embedding in one common denominator. Voluntary exchange occurs when each party prefers what it receives to what it gives, so equal denomination does not imply equal private motive. A gift is not an exchange because it lacks reciprocal consideration, yet it remains intelligible as voluntary action expressing the giver's priorities. Coercion is structurally different: it obtains compliance through a credible conditional threat of harm rather than mutually preferred transfer. Wealth concerns arrangements of valuable capacity, not merely money balances, and economic reasoning stays honest only by keeping price, moral ranking, reservation value, consent, and coercion in their proper frames.
 status: review
 sources:
   - 193172713.the-discipline-of-value

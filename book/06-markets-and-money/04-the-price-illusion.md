@@ -1,6 +1,8 @@
 ---
 title: 'The Price Illusion'
 subtitle: 'What prices reveal, and what they hide'
+summary: >-
+  A market price is a convergence point inside overlapping reservation ranges under particular conditions, not a measurement of an object's intrinsic value. In an informed voluntary bilateral exchange, the seller accepts the payment over the good and the buyer accepts the good over the payment; the agreed number reports those inequalities while hiding motives and valuation magnitudes. Auctions, urgency, taxes, market power, regulation, and coercion can change what the price reveals. Anything valued can be priceable in principle, including a refusal represented by an infinite reservation price, although explicit pricing can damage values partly constituted by remaining outside ordinary trade. Money reduces friction as a medium for expressing exchange ratios; it does not measure generosity, love, creativity, or human worth. Failure to attract voluntary funding is defeasible evidence that a project or mechanism has not assembled sufficient effective support, not proof of valuelessness when free-riding, liquidity, missing beneficiaries, or transaction costs intervene. Prices are indispensable inequality reports, not universal verdicts.
 status: review
 sources:
   - 164884396.the-price-illusion

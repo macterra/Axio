@@ -1,6 +1,8 @@
 ---
 title: 'Monopoly Hypocrisy'
 subtitle: "The state's case against competition"
+summary: >-
+  A territorial state judging private monopoly must disclose its own exclusive powers over taxation, legislation, policing, and final adjudication. The reciprocity test does not make private dominance harmless or invalidate antitrust; it requires regulator and regulated to face the same questions about contestability, imposed costs, due process, and meaningful exit. Network effects, bottlenecks, switching costs, contractual lock-in, collusion, tying, and acquisition can make corporate exit nominal, while public authority can also suppress competition and protect incumbents. Minimum-wage rules likewise prohibit exchanges through a credible conditional threat of harm, but their economic effects depend on the floor, labor demand, monopsony, substitution, enforcement, and time horizon. Higher earnings for retained workers must be weighed against hours, hiring, prices, entry, and unseen jobs that never form. Voluntary agreement is not automatically legitimate inside domination, and protective intent does not validate coercion. Symmetric evidence, appeal, and accountability are the safeguard against both private exclusion and public self-exemption.
 status: review
 sources:
   - 172679351.monopoly-hypocrisy

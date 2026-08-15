@@ -1,6 +1,8 @@
 ---
 title: 'Coordination Is Not Salvation'
 subtitle: 'What markets can discover—and what they cannot decide'
+summary: >-
+  Prices compress effective demand under a distribution of resources, rights, information, and alternatives; money compares claims, capital carries resources across time, and markets test plans against participation. These mechanisms coordinate dispersed knowledge without becoming moral oracles. Prices can reveal scarcity while concealing coercion, externalized costs, missing markets, or people unable to bid, and profit can reward production, bottleneck control, privilege, or mixtures of them. Decentralized entry, exit, loss, and revision make many errors discoverable only where participation and correction remain meaningful. Property, liability, stable money, competition, and revisable procedure can expose mistakes, but culture, geography, technology, public investment, state capacity, discrimination, war, luck, and history also shape outcomes. Economics can compare mechanisms under stated goals; it cannot decide from price alone whose consent is valid, which harms may not be traded, or who has authority to coerce. Markets, states, and communities all fail. Coordination is a tool of agency, not salvation from judgment.
 status: review
 sources: []
 ---
