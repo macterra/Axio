@@ -1,7 +1,8 @@
 ---
 title: 'Infinite Randomness'
 subtitle: 'Boltzmann brains and the mathematics of everything'
-summary: 'Uses infinite random sequences to explore how every finite pattern can occur without thereby explaining observation, typicality, or organized reality.'
+abstract: >-
+  Infinite random structures can contain every finite pattern, tempting the inference that randomness alone explains worlds, observers, and meaning. This chapter examines that temptation through normal sequences, the infinite monkey idea, and Boltzmann-brain-style cases. Mere occurrence is shown to be too cheap: if every finite arrangement appears somewhere, existence by itself does not explain prevalence, stability, causal organization, or why observers should expect one class of records rather than another. The chapter distinguishes mathematical inclusion from physical realization and both from an explanatory measure over observations. It also introduces the author’s work on random-sequence structure as an example of how local regularities can be found without turning the sequence into a chooser. Infinite randomness supplies raw possibility, not constructors, persistence, or warranted typicality. The analysis motivates the speculative Chaos Reservoir that follows while preserving the burden of explaining how coherent structures are selected and maintained.
 status: review
 sources:
   - 169620752.infinite-randomness

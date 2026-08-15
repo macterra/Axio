@@ -1,7 +1,8 @@
 ---
 title: 'The Kybit'
 subtitle: 'A unit of control'
-summary: 'Introduces the kybit as a proposed informational unit for expressing how much an intervention shifts a probability distribution relative to a stated baseline.'
+abstract: >-
+  If agency is control against drift, the framework needs a way to express how much control an intervention realizes. This chapter introduces the kybit as a proposed informational unit in which distributional control can be reported. The measured quantity is the divergence between an outcome distribution under an agent-fixed intervention and an explicit baseline distribution; the kybit is the unit, not the measurement itself. A fair binary event fixed to one outcome supplies the motivating one-kybit case, while more general cases require the model, baseline, variables, and vantage to be stated. The proposal is intentionally model-level: a count in kybits can capture a distributional shift without proving consciousness, authorship, moral standing, or a universal conversion rate to joules. It also distinguishes intervention-based control from mere prediction and correlation. The chapter supplies a common informational vocabulary for later comparisons while leaving calibration, composition, and the physical realization of the measure as open research problems.
 status: review
 sources:
   - 162485677.the-physics-of-agency-part-3-the

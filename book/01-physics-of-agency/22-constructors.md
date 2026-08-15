@@ -1,7 +1,8 @@
 ---
 title: 'Constructors'
 subtitle: 'How order becomes causal power'
-summary: 'Uses constructor-theoretic ideas to ask how persistent structures acquire repeatable causal capacities and maintain transformations over time.'
+abstract: >-
+  Description alone does not explain how an organized pattern persists or produces reliable effects. Drawing on constructor theory, this chapter shifts attention from states to transformations that can be performed repeatedly while the enabling structure retains its capacity to act. Constructors provide a possible bridge between filtered regularity and causal organization: catalysts, cells, tools, and agents matter because they help make classes of transformations possible. The chapter distinguishes this functional role from a claim that constructors are fundamental substances or that constructor theory already derives the book’s agency laws. Time, work, error correction, and environmental support remain part of every concrete realization. The proposal also clarifies why accidental copies and momentary patterns lack the same explanatory standing as systems able to maintain or reproduce their organization. Constructors thus supply a candidate mechanism by which coherence becomes causal power, while the emergence of life, consciousness, and temporality remains to be argued rather than assumed.
 status: review
 sources:
   - 171907779.constructors-from-coherence

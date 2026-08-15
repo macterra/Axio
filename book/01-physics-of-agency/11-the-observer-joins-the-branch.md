@@ -1,7 +1,8 @@
 ---
 title: 'The Observer Joins the Branch'
 subtitle: "Schrödinger's cat, Wigner's friend, and observation as physics"
-summary: 'Treats observation as a physical correlation that places the observer inside the modeled branch structure rather than outside it.'
+abstract: >-
+  Measurement problems become paradoxical when the observer is treated as external to the physical process being described. This chapter places observers inside the branching model and treats observation as the formation of durable physical correlations among system, apparatus, record, and observer. Schrödinger’s cat and Wigner’s friend then become tests of where a model draws its event sectors and how different Vantages encode available records. The account does not invoke consciousness as a collapse mechanism or grant observers a privileged power to select reality. Nor does it erase the interpretive problem: decoherence explains effective record stability, while the choice of coarse-graining and the meaning of weights still require argument. The key move is methodological—an observation changes the observer’s physical state and therefore belongs in the same causal graph as what is observed. This internalized observer prepares the later analysis of self-location, identity across branches, and the distinction between physical Measure and an observer’s Credence.
 status: review
 sources:
   - 202626483.the-observer-joins-the-branch

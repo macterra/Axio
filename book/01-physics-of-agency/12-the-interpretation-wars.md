@@ -1,7 +1,8 @@
 ---
 title: 'The Interpretation Wars'
 subtitle: 'QBism, local realism, and what the QBU keeps'
-summary: 'Compares rival interpretations of quantum mechanics and identifies the limited representational commitments the QBU proposal retains.'
+abstract: >-
+  The Quantum Branching Universe risks being mistaken for a declaration that one interpretation of quantum mechanics has been proved. This chapter tests that risk by comparing the framework with QBism, local realism, collapse views, and Everettian approaches. It asks which disagreements concern empirical dynamics, which concern the interpretation of probability and records, and which arise from different choices of ontology or explanatory purpose. The QBU retains unitary evolution, weighted alternatives, and emergent branch structure as a useful model, but it does not claim an exact world count or derive the Born rule’s normative use from branching alone. QBist emphasis on agent-relative expectation and realist emphasis on physical structure each identify constraints the framework must respect, even where it declines their full interpretation. Bell-type results narrow the available realist pictures without mechanically selecting the book’s preferred representation. The chapter leaves the QBU as an explicit, revisable modeling choice whose value depends on the work it performs in causal and agency analysis.
 status: review
 sources:
   - 164038303.qbism-vs-many-worlds

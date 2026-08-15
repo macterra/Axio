@@ -1,7 +1,8 @@
 ---
 title: 'A Genealogy of Agency'
 subtitle: 'From Popper to Everett to Deutsch — and past them'
-summary: 'Traces the framework’s debts to Popper, Bartley, Everett, and Deutsch, then marks where its account of agency departs from each inheritance.'
+abstract: >-
+  Physics describes matter without assigning it purposes, yet agents made of that matter reliably alter what happens next. This chapter situates the book’s attempt to explain that fact within a lineage running through Popper, Bartley, Everett, and Deutsch. From Popper and Bartley it inherits conjectural knowledge and criticism without privileged foundations; from Everett, unitary quantum mechanics without a fundamental collapse; and from Deutsch, the constructor-theoretic emphasis on which transformations are possible. The chapter argues that these inheritances become something different when joined: Conditionalism extends fallibilism to the conditions of truth, the Quantum Branching Universe offers a coarse-grained representational framework, and agency is treated as physically embodied control. None of those moves follows automatically from its predecessor, and the chapter marks the points at which Axio leaves the inherited road. The result is both an acknowledgment of intellectual debts and a map of the research program the rest of the volume develops.
 status: review
 sources:
   - 172964152.a-genealogy-of-agency

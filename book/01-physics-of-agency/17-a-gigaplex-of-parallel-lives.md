@@ -1,7 +1,8 @@
 ---
 title: 'A Gigaplex of Parallel Lives'
 subtitle: 'Identity across the branches'
-summary: 'Represents personal identity as a pattern tracked across weighted event sectors rather than a single thread passing through every branch.'
+abstract: >-
+  Branching descriptions unsettle the ordinary picture of one person moving along one future line. This chapter models identity across alternatives through Pattern Identifiers and weighted event sectors rather than an indivisible thread or soul. A present person can have multiple future continuers that preserve different degrees and features of the earlier pattern, with no requirement that identity be all-or-nothing across every coarse-graining. The “gigaplex” is a toy representation of those related lives, not a census of exact worlds or proof that every imaginable biography exists. Measure matters to the representation, but it does not distribute a moral substance or make low-weight continuers unreal. The analysis exposes questions about anticipation, responsibility, and concern that physics alone does not settle. It leaves identity as a model-governed relation of continuity and re-identifiability, preparing the later treatment of coherence and the epistemology of self-location.
 status: review
 sources:
   - 164423784.a-gigaplex-of-parallel-lives

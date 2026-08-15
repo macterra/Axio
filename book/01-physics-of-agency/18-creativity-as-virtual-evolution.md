@@ -1,7 +1,8 @@
 ---
 title: 'Creativity as Virtual Evolution'
 subtitle: 'Variation, selection, and thought made persistent'
-summary: 'Models creativity as cognition generating, testing, and retaining novel representations and actions through an analogy with variation and selection.'
+abstract: >-
+  Creativity appears to produce novelty in a way that simple optimization language often fails to capture. This chapter models creative thought through a functional analogy with evolution: cognition generates variants, tests them against constraints and goals, and retains some as models, plans, artifacts, or habits. The process occurs within an agent’s representational and behavioral repertoire rather than in a separate universe of fully realized alternatives. Selection language is therefore explanatory only where mechanisms of generation, evaluation, memory, and reinforcement are supplied; evolution is not a hidden designer running toward progress. Examples from search-guided self-play and human imagination illustrate how structured exploration can yield outcomes not explicitly enumerated in advance. The chapter connects novelty to agency because selected ideas become persistent causes only when agents embody and act on them. It leaves open how creative spaces are generated, how evaluation criteria change, and when the evolutionary analogy becomes quantitatively useful rather than merely suggestive.
 status: review
 sources:
   - 164411286.creativity-as-virtual-evolution

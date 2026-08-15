@@ -1,7 +1,8 @@
 ---
 title: 'No Trivial Choices'
 subtitle: 'Radical contingency and the causal lattice'
-summary: 'Argues that small interventions can acquire large downstream significance in chaotic systems, making triviality dependent on scale, horizon, and contrast.'
+abstract: >-
+  Everyday judgment divides choices into consequential and trivial, but chaotic dynamics make that division depend on scale and horizon. This chapter argues that small policy differences can be amplified through sensitive dependence, interaction, and path-dependent institutions into large downstream changes. The claim is not that every gesture transforms history or that causal importance can be read from branch proliferation. Rather, a choice’s significance is contrast-relative: it depends on which alternatives, variables, time horizon, and outcome criteria the analysis fixes. The chapter develops a causal lattice in which local interventions propagate through networks of later dependencies, sometimes damping out and sometimes becoming decisive. This makes radical contingency compatible with bounded agency and with uncertainty about remote consequences. The practical upshot is neither paralysis nor grandiosity, but humility: agents should treat apparently small choices as situated causal inputs whose reach must be investigated rather than assumed.
 status: review
 sources:
   - 170091078.radical-contingency

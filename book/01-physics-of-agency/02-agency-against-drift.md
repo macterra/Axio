@@ -1,7 +1,8 @@
 ---
 title: 'Agency Against Drift'
 subtitle: 'The thermodynamic basis of intention'
-summary: 'Defines agency as physically embodied control: the capacity to spend work so that later outcomes depend on an agent’s policy rather than drift alone.'
+abstract: >-
+  Agency is often defined through intention, reward, or rational choice, leaving its physical basis implicit. This chapter proposes a more basic characterization: an agent is a system that expends work so later states depend on its policy rather than on uncontrolled drift alone. The contrast is not between motion and stillness, or order and disorder, but between outcomes that would occur under the relevant baseline dynamics and outcomes made policy-dependent by the system’s organization. This makes control empirically approachable without pretending that every causal influence is agency. The account also separates the descriptive fact of steering from any judgment that the steering is intelligent, conscious, beneficial, or morally authorized. Thermodynamics constrains the implementation, but it does not supply the agent’s goals or derive values from physics. The chapter leaves open how control should be quantified and how informational descriptions relate to physical work, questions taken up by the kybit and the proposed laws that follow.
 status: review
 sources:
   - 162428502.the-physics-of-agency-part-1-the

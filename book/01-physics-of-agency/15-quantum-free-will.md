@@ -1,7 +1,8 @@
 ---
 title: 'Quantum Free Will'
 subtitle: 'Choice as measure steering'
-summary: 'Models choice as a policy-conditioned difference among weighted consequences without claiming that agents create branches or transfer Measure between them.'
+abstract: >-
+  Free will is often framed as a contest between deterministic law and an uncaused power to choose otherwise. This chapter proposes a different criterion suited to an embedded agent in a branching model. A choice matters when different policies make a causal, policy-conditioned difference to the Measure-weighted distribution of later outcomes. The agent does not create futures, delete branches, or move Measure between them; its implemented policy is one of the physical conditions under which the relevant contrasts are evaluated. Randomness alone is therefore insufficient, since an uncontrolled quantum event supplies alternatives without authorship, while deterministic components can still implement an agent’s control architecture. The proposal separates causal efficacy from metaphysical exemption and leaves reflective authorship to later volumes. Its upshot is modest but testable: freedom begins with policy-sensitive steering inside physics, not with an escape from physical explanation.
 status: review
 sources:
   - 175664749.quantum-free-will

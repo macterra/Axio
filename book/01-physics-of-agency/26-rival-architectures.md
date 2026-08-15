@@ -1,7 +1,8 @@
 ---
 title: 'Rival Architectures'
 subtitle: 'Simulations, the CTMU, Gödel, and God'
-summary: 'Tests the proposed architecture against simulation arguments, the CTMU, Gödelian limits, and theological explanation without collapsing their differences.'
+abstract: >-
+  A speculative metaphysics earns credibility by surviving comparison with alternatives rather than redescribing them as versions of itself. This chapter places the proposed architecture beside simulation arguments, Langan’s CTMU, Gödelian limits, computational universe models, and theological explanation. Each rival is reconstructed at the level of the problem it addresses: external implementation, self-containing description, formal incompleteness, generative computation, or ultimate cause. The comparisons identify partial overlaps without claiming that all proposals are views of one literal mechanism. Simulation hypotheses relocate rather than terminate explanation; Gödel constrains sufficiently strong formal systems under specific conditions; and appeals to God or self-processing language require independent reasons before they can close the regress. The chapter also turns the same scrutiny inward, emphasizing that the Chaos Reservoir, filters, and constructors remain proposals with unresolved realization and measure questions. Its upshot is comparative rather than triumphant: the framework earns only the advantages its explicit distinctions and open burdens support.
 status: review
 sources:
   - 173133945.simulation-theories

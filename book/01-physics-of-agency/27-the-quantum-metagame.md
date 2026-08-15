@@ -1,7 +1,8 @@
 ---
 title: 'The Quantum Metagame'
 subtitle: 'Persistence across branches'
-summary: 'Develops an optional model of pattern prevalence across branches and asks what persistence can explain without turning it into a chooser or cosmic aim.'
+abstract: >-
+  Once patterns are represented across weighted branches, one can ask which forms of organization remain prevalent under repeated change. This chapter proposes a quantum metagame as an optional model of that persistence: strategies and structures differ not only in local success but in how broadly their continuers remain represented across relevant event sectors. The approach links robustness, reproduction, and control without treating the multiverse as a tournament organized toward progress. Persistence is a precondition for later influence, not a hidden player that chooses winners or supplies objective value. The analysis also depends on Vantage, identity criteria, coarse-graining, and the selected horizon; change those conditions and the prevalence comparison may change. The model may illuminate why some agent-like organizations recur, but it does not prove that evolution optimizes agency or that high-Measure persistence is morally good. The chapter leaves the metagame as a speculative bridge between branching dynamics and existential questions, not as a completed physical law.
 status: review
 sources:
   - 180339872.the-quantum-metagame

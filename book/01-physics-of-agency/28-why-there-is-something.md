@@ -1,7 +1,8 @@
 ---
 title: 'Why There Is Something Rather than Nothing'
 subtitle: 'The terminus of explanation'
-summary: 'Uses the Modal Realization Principle conditionally to argue that existence may terminate explanation rather than supply one final external cause.'
+abstract: >-
+  The question of why there is something rather than nothing invites an explanation outside the totality it asks to explain. This chapter argues that the demand may reach a terminus rather than a final external cause. Using the Modal Realization Principle conditionally, it explores whether every genuinely possible coherent structure is realized in some form, so that asking why reality exists mistakes existence for one contingent selection from an external menu. The argument depends on the optional metaphysics developed in the preceding chapters and is not derived from the QBU, quantum mechanics, or constructor theory. It also does not show that every describable object is possible, that all structures receive equal Measure, or that realization explains observation and typicality. Rival stopping points—brute fact, necessary being, simulation, or self-explaining law—remain available and carry their own burdens. The proposed dissolution is therefore a candidate endpoint: if the modal premise holds, existence may be the condition under which explanations occur rather than one more event requiring a cause.
 status: review
 sources:
   - 182569831.why-there-is-something-rather-than

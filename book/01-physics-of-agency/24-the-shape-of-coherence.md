@@ -1,7 +1,8 @@
 ---
 title: 'The Shape of Coherence'
 subtitle: 'Identity preservation across transformation'
-summary: 'Defines dynamical coherence through re-identifiability under stated transformations, scales, and criteria of identity.'
+abstract: >-
+  Appeals to coherence often praise an intuition without stating what remains coherent through change. This chapter proposes a more operational account based on re-identifiability under specified transformations. A pattern is dynamically coherent when a model can track it across changes at a stated scale using explicit criteria of identity, tolerance, and observation. The definition makes coherence relational rather than intrinsic: the same process may remain identifiable under one coarse-graining and dissolve under another. It also separates persistence from stasis, allowing living systems, institutions, and agents to preserve organization by changing their components. The proposed invariant is therefore not a universal essence and does not by itself establish value, consciousness, or agency. Its payoff is methodological: claims that something survives, evolves, or acts must name the transformations and identity rules under which that claim holds. The chapter provides the formal shape used to organize the following tiers of reality while leaving the choice among useful identity criteria open to domain-specific evidence.
 status: review
 sources:
   - 183495093.the-shape-of-coherence

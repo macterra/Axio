@@ -1,7 +1,8 @@
 ---
 title: 'Agency and Active Inference'
 subtitle: 'The Friston bridge'
-summary: 'Develops a partial bridge between the book’s control framework and active inference while keeping free energy, prediction error, and kybit counts distinct.'
+abstract: >-
+  Active inference and the free-energy principle offer a mature vocabulary for systems that maintain themselves by modeling and acting on their environments. This chapter asks how far that vocabulary can be translated into the book’s account of agency as distributional control. It identifies a partial structural correspondence: both frameworks describe organized systems whose internal models guide action toward a restricted range of states, and both connect persistence to active correction. The bridge is deliberately limited, however, because variational free energy, prediction error, precision, thermodynamic work, and kybit counts are distinct quantities rather than currencies with a law-by-law conversion. Under an equilibrium-reference realization, minimum-work results may constrain implementation, but they do not establish a universal energetic price per kybit. Convergence between the frameworks is therefore evidence of a shared problem structure, not proof that either formalism derives the other or explains phenomenality. The chapter leaves a research program: specify the physical realization, the relevant distributions, and the conditions under which the functional analogy becomes quantitatively informative.
 status: review
 sources:
   - 163365017.active-inference-and-the-physics

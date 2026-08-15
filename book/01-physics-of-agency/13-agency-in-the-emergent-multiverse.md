@@ -1,7 +1,8 @@
 ---
 title: 'Agency in the Emergent Multiverse'
 subtitle: 'Where the laws meet the branches'
-summary: 'Brings the proposed laws of agency into the branching model and states the still-open bridge among control, work, and weighted consequences.'
+abstract: >-
+  The volume has so far developed a physical account of control and a separate representation of weighted quantum alternatives. This chapter brings them together and asks what it means for an embedded agent to steer within an emergent multiverse. Policies are compared through their conditional Measure-weighted consequences, so agency appears as a physically implemented difference between distributions rather than the creation or deletion of branches. The proposed laws still constrain the implementation: steering requires work, decays without maintenance, and remains bounded for finite agents. Yet the chapter also records the central gap. No general theorem presently converts thermodynamic work, free-energy quantities, informational divergence, and branch-weighted outcome differences into one universal scale. The synthesis is therefore a structured research proposal rather than a completed reduction. It closes the volume’s core physical sequence by stating both what the combined machinery can already represent and what a mature derivation would still have to supply.
 status: review
 sources:
   - 163509485.quantum-agency-in-the-emergent-multiverse

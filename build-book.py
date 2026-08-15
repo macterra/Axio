@@ -437,9 +437,9 @@ def build_volume_page(vol, publish_index):
                     title = escape(ch['meta'].get('title', ch['slug']))
                     content += (f'<li><a href="{ch["slug"]}.html">{title}</a> '
                                 f'{status_badge(ch["status"])}')
-                    if ch['meta'].get('summary'):
-                        content += (f'<p class="book-chapter-summary">'
-                                    f'{escape(ch["meta"]["summary"])}</p>')
+                    if ch['meta'].get('abstract'):
+                        content += (f'<p class="book-chapter-abstract">'
+                                    f'{escape(ch["meta"]["abstract"])}</p>')
                     content += '</li>\n'
                 content += '</ol>\n'
                 chapter_number += len(part_chapters)
@@ -449,9 +449,9 @@ def build_volume_page(vol, publish_index):
                 title = escape(ch['meta'].get('title', ch['slug']))
                 content += (f'<li><a href="{ch["slug"]}.html">{title}</a> '
                             f'{status_badge(ch["status"])}')
-                if ch['meta'].get('summary'):
-                    content += (f'<p class="book-chapter-summary">'
-                                f'{escape(ch["meta"]["summary"])}</p>')
+                if ch['meta'].get('abstract'):
+                    content += (f'<p class="book-chapter-abstract">'
+                                f'{escape(ch["meta"]["abstract"])}</p>')
                 content += '</li>\n'
             content += '</ol>\n'
     if unpublished:

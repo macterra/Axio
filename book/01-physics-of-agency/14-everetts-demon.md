@@ -1,7 +1,8 @@
 ---
 title: "Everett's Demon"
 subtitle: 'Ontological randomness and the amplified quantum'
-summary: 'Replaces Laplace’s deterministic demon with an Everettian observer facing branch-relative uncertainty and quantum events amplified into macroscopic history.'
+abstract: >-
+  Laplace’s demon imagines a complete predictor for a single deterministic future, an ideal poorly matched to a branching quantum description. This chapter replaces it with Everett’s demon: an embedded reasoner that may know the quantum state and dynamics yet still confronts self-location across future records. Quantum events become historically consequential when amplification carries microscopic alternatives into durable macroscopic differences. The resulting uncertainty is not necessarily ignorance of a hidden unique outcome; within the model, it concerns which future record an observer-copy will occupy and how much Measure different sectors carry. This does not make every macroscopic event fundamentally random or turn decoherence into an exact branching rule. It instead reframes perfect prediction by separating dynamical knowledge from indexical location and coarse-grained outcome identity. The demon establishes the conceptual setting for choice within branches, where an agent’s policy can matter causally without selecting one world from outside the physics.
 status: review
 sources:
   - 166481863.everetts-demon
