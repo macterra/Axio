@@ -1,6 +1,8 @@
 ---
 title: 'Agency, Not Equality'
 subtitle: 'Poverty, luck, and the incoherence of equal opportunity'
+summary: >-
+  Equality measures a relation between positions; agency measures whether a person retains meaningful capacity and viable options. Poverty can materially constrain agency, while disparity alone does not establish deprivation, discrimination, coercion, or wrongfulness. Luck is real and pervasive, but removing every unequal effect of birth, talent, family, health, timing, and chance would require continuous control over outcomes and choices. Equal opportunity recedes into a regress because equalizing one starting point exposes earlier differences in preparation, inheritance, temperament, and support. The attainable political target is not identical prospects but an agency floor: protection against coercion, access to legal standing, realistic exit, and enough capability to choose and revise a life. Assistance can raise that floor without treating every advantage as stolen or every unequal outcome as proof of injustice. Institutions should identify mechanisms that block agency—fraud, exclusion, monopoly, violence, deprivation, captured rules—rather than pursue equality as an independent scalar good. Fairness remains conditional on stated standards, baselines, and authority.
 status: review
 sources:
   - 164951358.agency-not-equality

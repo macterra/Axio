@@ -1,6 +1,8 @@
 ---
 title: 'Two Kinds of Law'
 subtitle: 'Conflict resolution vs conflict manufacture'
+summary: >-
+  Law performs two different functions that should not share one moral presumption. Discovered or evolved law resolves recurring conflicts by clarifying boundaries, expectations, evidence, and remedies among agents. Command law manufactures new conflicts by imposing a planner's purposes and then treating resistance as the original wrong. Real legal systems mix both forms, and legislation can codify genuine conflict-resolution rules while common law can preserve unjust power. Coercion supplies an audit measure: identify which conduct was already a violation and which violation exists only because an authority prohibited otherwise peaceful action. Order alone cannot justify command, because stable domination is also orderly. Rules need legibility, reciprocal application, contestability, and correction, while enforcement needs evidence, jurisdiction, proportionality, and review. Law earns authority by making coexistence more navigable under defensible boundaries, and the honest middle evaluates each rule by function and institutional consequence rather than declaring every statute tyranny or every inherited rule justice.
 status: review
 sources:
   - 172049474.from-common-law-to-command-law

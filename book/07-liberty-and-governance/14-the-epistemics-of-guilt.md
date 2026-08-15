@@ -1,6 +1,8 @@
 ---
 title: 'The Epistemics of Guilt'
 subtitle: 'Institutionalized humility and its machinery'
+summary: >-
+  Guilt is an epistemic verdict under uncertainty, not a metaphysical stain revealed directly to an institution. Trials function as error filters through adversarial evidence, burdens of proof, confrontation, independent judgment, appeal, and rules limiting unreliable inference. False conviction and false acquittal are structurally different errors whose costs vary with the sanction, evidence, and reversibility. Reasonable doubt is a policy threshold for institutional action, not a claim that uncertainty has vanished or that every private Credence must match the verdict. Irreversible punishment requires especially demanding evidence because later correction cannot restore what was taken. The presumption of innocence is a principle; current courts, police, juries, experts, and procedures are fallible machinery intended to implement it. Better filters require transparency, recorded evidence, independent review, forensic validation, defense resources, and consequences for misconduct. Institutional humility means designing for known error rather than treating formal process as proof of truth or authority as immunity from revision.
 status: review
 sources:
   - 173049685.the-presumption-of-innocence

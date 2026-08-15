@@ -1,6 +1,8 @@
 ---
 title: 'Against Socialism'
 subtitle: 'Need is not title'
+summary: >-
+  Socialism here means institutional allocation or control of productive resources through collective authority rather than voluntary exchange among holders of defensible claims. Need creates moral salience but does not by itself create title to another person's labor, property, or compliance. Failure of voluntary provision can reveal coordination, purchasing-power, or public-goods problems without automatically transferring jurisdiction to the state. Redistribution requires an account of acquisition, affected agents, authority, baseline, enforcement, and why the proposed remedy improves agency after coercive and administrative costs are counted. Scarcity cannot be abolished by command, and compassionate planners face knowledge, incentive, capture, and revision problems of their own. Infrastructure and severe coordination problems can support collective mechanisms, but dose, domain, error correction, contestability, and exit determine whether a particular arrangement is defensible. Rejecting the socialist premise does not deny poverty, mutual obligation, public investment, or cooperation. It denies that declared need or aggregate benefit alone authorizes compulsory control of other agents' productive lives.
 status: review
 sources:
   - 202962824.against-socialism

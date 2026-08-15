@@ -1,6 +1,8 @@
 ---
 title: 'Centrism as a Discipline'
 subtitle: 'Governance under uncertainty and irreversibility'
+summary: >-
+  Centrism is a discipline of governance under uncertainty, not a demographic midpoint or a reflex to split every difference. Political extremes share a tendency to compress uncertainty, treat one model as complete, and discount irreversible errors imposed on people outside their coalition. Society behaves more like an evolving ecology than a machine with one control panel, so interventions should distinguish reversible variance from changes that destroy future correction. The epistemic core favors experiments, feedback, plural institutions, burdened evidence, and selective decisiveness when delay itself is irreversible. Institutions provide scaffolding that preserves contestation and memory without becoming sacred or immune to reform. Metastable evil warns that harmful arrangements can remain locally stable, so caution cannot mean preserving every status quo. Principled actors may hold strong ends while choosing bounded, corrigible means. The discipline promises no automatic virtue or policy answer; it seeks an admissible path that learns before committing everyone to a failure state that cannot be exited.
 status: review
 sources:
   - 184137688.in-defense-of-centrism

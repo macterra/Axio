@@ -1,6 +1,8 @@
 ---
 title: 'Against Utopia'
 subtitle: 'Closure, optimization, and the Sacrifice Pattern'
+summary: >-
+  Utopia requires closure: a final model of the good, sufficient knowledge of how to produce it, and authority to prevent dissent from reopening the design. Normative finality turns disagreement from information into defect and converts agents with rival ends into obstacles to optimization. Omelas exposes the Sacrifice Pattern not because every society literally rests on one tortured child, but because aggregate perfection can make an identified innocent appear spendable. Dynamic societies cannot freeze preferences, technology, circumstances, or interpretation without suppressing the very agency that generates correction. A proposed improvement remains corrigible only while exit, contestation, and revision survive. The danger is not hope, planning, or ambitious reform; it is treating one destination as complete enough to authorize irreversible control over everyone who must inhabit it. After closure, institutions defend the model against evidence and call resistance pathology. A humane politics pursues bounded improvements with visible costs and reversible mechanisms rather than salvation that requires sacrificing authorship to the plan.
 status: review
 sources:
   - 182729118.against-utopia

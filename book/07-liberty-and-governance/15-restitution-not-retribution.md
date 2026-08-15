@@ -1,6 +1,8 @@
 ---
 title: 'Restitution, Not Retribution'
 subtitle: 'Justice as restoration, enforcement as trade-off'
+summary: >-
+  Justice should restore violated agency where possible rather than manufacture suffering as repayment to an abstraction. Restitution identifies victims, attributable losses, responsible agents, repair, and future protection; retribution creates a debt owed to no concrete person and authorizes punishment for its own sake. Compensation cannot fully undo death, trauma, lost time, or destroyed trust, but its incompleteness does not make purposeless pain a better answer. Enforcement remains a trade-off because collecting restitution can impose further force, error, expense, and dependency. Universal Compensatory Justice treats responsibility and repair as portable across institutional forms rather than requiring one sovereign monopoly. Incapacity, insolvency, diffuse harm, uncertain causation, and dangerous offenders require insurance, pooled mechanisms, protective restraint, and procedures that preserve evidence and proportionality. Protection may justify confinement while threat persists, but punishment should not be smuggled into protection after the need ends. Justice without monopoly remains a design problem, not a promise that every wrong can be priced or every victim made whole.
 status: review
 sources:
   - 170119709.the-crime-fighting-paradox

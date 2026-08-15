@@ -1,6 +1,8 @@
 ---
 title: 'Why Liberalism Loses'
 subtitle: 'The structural unpopularity of liberty'
+summary: >-
+  Liberalism carries structural handicaps because it promises procedure, restraint, uncertainty, and peaceful disagreement while rivals offer belonging, certainty, protection, and decisive purpose. The Political Triangle contains three answers to what government is for: Individualism offers self-determination, Maternalism offers care, welfare, and a safety net, and Paternalism offers order, law, and defense. Liberalism asks supporters to tolerate speech they hate, outcomes they lose, and institutions that refuse to guarantee their preferred moral order. Permanent adolescence results when citizens are treated as dependents and then demand the supervision that dependency taught them to expect. Liberals lose by their own hand when they abandon their discovery procedure, select standard-bearers primarily by identity criteria rather than demonstrated competence, and let insiders anoint a candidate instead of permitting open competition. None of this makes defeat inevitable. Liberty survives when institutions preserve responsibility, open discovery, and adults willing to govern themselves without demanding that politics eliminate uncertainty.
 status: review
 sources:
   - 165488598.the-paradox-of-classical-liberalism

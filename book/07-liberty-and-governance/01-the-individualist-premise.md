@@ -1,6 +1,8 @@
 ---
 title: 'The Individualist Premise'
 subtitle: 'The moral unit, and the axis that isn''t left–right'
+summary: >-
+  The individual is the chosen moral unit because directly evidenced valuing, suffering, consent, deliberation, and action occur in subjects and agents rather than in group labels. Nations, classes, races, and institutions can coordinate people and generate real effects without automatically becoming single minds with one welfare or will. The essential political divide is therefore not left versus right but individualism versus collectivism: whether persons remain ends whose standing constrains collective projects or become instruments of an aggregate. This premise is normative, not a deduction from ontology, and it does not deny relationships, communities, shared goods, or institutional agency where authorship can be traced. Individual rights still need reciprocal justification, legal embodiment, enforcement, and procedures for conflict. Collective action can protect agency when grounded in delegation and limited by the people it affects. Political analysis begins by resolving every abstraction back to the persons who choose, bear costs, and can meaningfully authorize what is done.
 status: review
 sources:
   - 163272667.why-im-an-individualist

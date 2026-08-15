@@ -1,6 +1,8 @@
 ---
 title: 'The Grey Zone'
 subtitle: 'When coercion can be justified — provisionally'
+summary: >-
+  Coercion can be justified provisionally when it prevents or remedies a specified violation of agency, but classification never supplies authority by itself. Grey cases involve contested facts, probabilistic harms, compromised titles, unequal capacity, and enforcers with interests of their own. A disciplined inquiry identifies the actual agents, specifies the alleged violation, states background conditions of ownership, consent, capacity, authority, and harm, and demands evidence proportionate to severity. It then bounds the response through necessity, proportionality, reversibility, minimally harmful means, termination conditions, and review, while asking what permanent enforcement interests the intervention creates. Emergencies can change timing without canceling the burden of later justification. The burden rises with severity, duration, uncertainty, and discretion, so permanent coercion over millions cannot borrow the logic of immediate self-defense. The Grey Zone remains deliberately unresolved in many cases: ambiguity must be exposed and managed rather than concealed beneath words like safety, justice, democracy, property, or order.
 status: review
 sources:
   - 197280708.the-grey-zone-of-coercion

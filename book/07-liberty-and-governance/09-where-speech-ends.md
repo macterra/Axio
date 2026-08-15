@@ -1,6 +1,8 @@
 ---
 title: 'Where Speech Ends'
 subtitle: 'From Popper''s paradox to the causal ladder'
+summary: >-
+  Speech must be classified by causal role rather than divided into harmless words and forbidden ideas. Protected expression works through belief, interpretation, and persuasion, leaving the listener's agency as the operative link. Coercion is the deliberate use of a credible conditional threat of harm to obtain compliance, even when the threat is delivered entirely in words. Delegated violence is operational participation in harm through commands, targeting, coordination, or other contributions that load the rifle for another actor. Advocacy, prediction, praise, insult, incitement, threat, and command can therefore occupy different rungs of a causal ladder without becoming identical. Popper's paradox does not authorize suppressing an idea merely because its success might later produce intolerance; the relevant question is what the present utterance does in the causal process. Secular blasphemy rules confuse offense with injury and belief change with force. Three categories—expression, coercion, and operational participation—preserve both free inquiry and responsibility for speech that functions as part of an attack.
 status: review
 sources:
   - 165751396.resolving-the-paradox-of-tolerance

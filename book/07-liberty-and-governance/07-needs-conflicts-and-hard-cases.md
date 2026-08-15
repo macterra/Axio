@@ -1,6 +1,8 @@
 ---
 title: 'Needs, Conflicts, and Hard Cases'
 subtitle: 'Negative rights, colliding rights, and the freedom to exclude'
+summary: >-
+  Need is morally salient without becoming an automatic right to another agent's resources, labor, association, or property. Negative rights can collide when exercising one protected domain materially invades another, so slogans about noninterference cannot replace baseline, causation, title, consent, and proportionality analysis. Property does not erase necessity, and necessity does not manufacture unlimited title. Freedom of association includes a freedom to exclude, even when exclusion is offensive or unequal, unless it operates through an independently wrongful mechanism such as fraud, breach, monopoly control of an essential dependency, or coordinated coercive penalty. Ordinary criticism and refusal to associate are not coercion merely because they impose social costs. Large-scale exclusion can nevertheless destroy realistic exit or access and become ethically relevant through its actual structure. Hard cases require identifying the agents, protected interests, available alternatives, imposed harms, and authority claimed. Rights remain reciprocal boundaries for coexistence, not trump cards that answer every conflict before the facts are known.
 status: review
 sources:
   - 165967029.against-positive-rights

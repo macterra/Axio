@@ -1,6 +1,8 @@
 ---
 title: 'Against Envy'
 subtitle: 'The invalid inference from disparity to injury'
+summary: >-
+  Envy begins with disparity but does not establish injury. A valid grievance requires a mechanism connecting another person's advantage to a material setback, coercion, fraud, exclusion, rent extraction, or blocked agency. Status is often local and positional, so rank can affect welfare and opportunity without turning every superior outcome into theft. Rank-violation envy reacts when someone perceived as lower crosses an expected boundary, revealing a demand to preserve hierarchy rather than relieve deprivation. Production and predation can both generate fortunes, and snapshots of distribution cannot distinguish them without tracing acquisition, institutions, and counterfactuals. Trajectories matter because unequal growth with a rising floor differs from enrichment through a ladder deliberately frozen behind incumbents. Politics organized around disparity can destroy productive capacity or can expose captured rules; the mechanism decides. The appropriate target is whatever caused deprivation or illegitimate power, not difference itself and not the person who merely occupies a higher position.
 status: review
 sources:
   - 196270509.against-envy

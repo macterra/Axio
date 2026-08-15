@@ -1,6 +1,8 @@
 ---
 title: 'The Authoritarian Default'
 subtitle: 'Psychology, dynamics, definition'
+summary: >-
+  Authoritarianism is a recurrent political risk produced by interacting psychological dispositions, coordination pressures, institutions, and crises rather than an inevitable species destiny. Submission can offer certainty, belonging, protection, reduced responsibility, and a visible agent to blame or obey. A cycle can move from fear through demand for control, concentration of authority, suppression of correction, institutional failure, and renewed fear, but interrupters can break each transition. Three axes expose the structure: authority versus autonomy, coercion versus consent, and dogmatic certainty versus conditional epistemology. The third is deepest because the other two follow from it: certainty licenses authority to close inquiry and coercion to impose the answer. Elections, ideology, or a charismatic leader alone do not settle the classification. Liberal order is a precious, fragile achievement that must be built and maintained because incentives can reward surrendering distributed judgment for coordinated command. The “default” is a vulnerability and discipline, not a biological clockwork prediction.
 status: review
 sources:
   - 165726066.instinct-for-submission

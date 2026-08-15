@@ -1,6 +1,8 @@
 ---
 title: 'The Price of Breath'
 subtitle: 'A story of markets that fail better'
+summary: >-
+  A fictional Commonwealth organizes air, water, shelter, care, and authority through bonded obligations, contestable claims, liability, and continuously justified control. The story deliberately makes those proposed institutions fail: infrastructure breaks, responsibility must be assigned, emergency power acts under pressure, and a privacy conflict exposes the cost of traceability. Mara's investigation tests whether error flows toward the authority that caused it rather than downward toward people with the least power. Market and protocol mechanisms do not prevent tragedy, discover every value, or eliminate coercion; they make some commitments legible enough to challenge and some failures expensive enough to correct. The closing institutional response remains a narrative implementation candidate involving bonds, guilds, contract meshes, disclosures, and data fiduciaries. It is a thought experiment about coherence and consequences, not empirical evidence that Axiocracy would work. Enforcement, capture resistance, succession, amendment, insolvency, emergency authority, and protection for agents without purchasing power remain open beyond the fiction.
 status: review
 sources:
   - 197767782.the-price-of-breath

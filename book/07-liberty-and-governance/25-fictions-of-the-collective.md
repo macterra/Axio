@@ -1,6 +1,8 @@
 ---
 title: 'Fictions of the Collective'
 subtitle: 'National interests are interpretations, not primitives'
+summary: >-
+  National interests are interpretations produced by officials, institutions, coalitions, models, and procedures; they are not primitive preferences emitted by one national mind. Nations can coordinate action and bear institutional responsibility without becoming literal agents whose welfare overrides the persons composing them. The intersection among millions of individual interests can vanish, leaving phrases like “the country wants” to conceal who selected the objective and who bears its cost. Collective fictions can license war, sacrifice, surveillance, and economic harm by treating dissenting individuals as cells expendable for an organism. Catastrophe often begins as epistemic failure when an interpretation loses contestability and presents itself as the only conceivable national interest. Public judgment remains necessary, but it should be attributed to identifiable authors and exposed to evidence, opposition, revision, and accountability. Policy can proceed on the best current interpretation under uncertainty without calling it destiny or unanimous will. Institutional authorship must remain reconstructible even when coordination requires speaking in a collective name.
 status: review
 sources:
   - 183448517.the-national-interest-fallacy

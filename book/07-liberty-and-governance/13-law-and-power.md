@@ -1,6 +1,8 @@
 ---
 title: 'Law and Power'
 subtitle: 'Who the rules actually bind'
+summary: >-
+  Law binds reliably only where power is sufficiently balanced for violation to trigger credible consequences. The Tail-Risk Principle holds that a small proportion of actors or events creates disproportionate costs, so universal rules become calibrated around them and raise a civic question: should we all be governed by the worst among us? Ordinary offenders become the design cases for law, while elite failures generate regulatory architectures their architects can dilute, redirect, or evade. The Symmetry is exact: the bottom tail generates the rules; the top tail escapes them. This does not make law unreal; it makes effective law a relation among institutions, incentives, and capacities rather than words on paper. International rules, constitutions, contracts, and informal norms all become fragile where one party can defect without meaningful response. Explanation does not justify hegemony or reduce rights to force. Durable legality requires distributed interpretation, exposed decisions, appeal, and consequences even dominant actors cannot unilaterally rewrite.
 status: review
 sources:
   - 180208315.above-the-law

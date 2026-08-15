@@ -1,6 +1,8 @@
 ---
 title: 'The Coercion Continuum'
 subtitle: 'Degree, not kind'
+summary: >-
+  Taxation and slavery are not morally equivalent, but both can be located on one declared dimension: compelled extraction of labor or output backed by credible threats of harm. The spectrum runs from zero compulsory extraction to total appropriation, while bodily control, inherited status, legal standing, exit, violence, and brutality remain separate axes. Tax share therefore measures one mechanism rather than supplying a complete moral ranking. States also claim powers over use, exclusion, and disposition through licensing, borders, zoning, taxation, and inheritance rules. Democracy and dictatorship differ profoundly while sharing a structural license to initiate coercion beyond explicit agreement. Chattel slavery adds domination and blocked exit that cannot pass a justification test; a limited levy might pass the Agency Protection Principle and Grey Zone, but must actually do so. The continuum is a diagnosis that keeps familiar institutions answerable to the same coercion inquiry, not a sentence erasing differences of dose, scope, or legitimacy.
 status: review
 sources:
   - 164678345.from-sovereignty-to-slavery

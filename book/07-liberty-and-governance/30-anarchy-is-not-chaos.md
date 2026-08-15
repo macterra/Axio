@@ -1,6 +1,8 @@
 ---
 title: 'Anarchy Is Not Chaos'
 subtitle: 'Order without a sovereign, at every scale'
+summary: >-
+  Anarchy means the absence of a sovereign with final authority, not the absence of rules, coordination, hierarchy, or order. Families, firms, standards bodies, networks, markets, and international relations often coordinate through overlapping agreements without one universal commander above them. The international system is the largest working anarchy, producing diplomacy, trade, alliances, law, and recurrent violence without a global state. Its existence proves that sovereignty is not necessary for every form of order, not that stateless arrangements are peaceful, symmetric, or just. The exit criterion asks whether participants can leave or challenge an arrangement without forfeiting the practical capacity to act; formal permission is insufficient under dependency or punishment. Coordination can be mistaken for sovereignty when a useful focal institution is treated as intrinsically entitled to command. Power asymmetries remain real, especially where hegemons face no effective constraint. Anarchy is an institutional condition whose quality depends on reciprocity, balance, protocol, enforcement, and exit rather than a synonym for either freedom or disorder.
 status: review
 sources:
   - 174977942.anarchy-and-order

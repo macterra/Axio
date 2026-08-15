@@ -1,6 +1,8 @@
 ---
 title: 'Borders and Movement'
 subtitle: 'Immigration, cultural threat, and justice after colonization'
+summary: >-
+  Borders restrict movement through coercive institutions while communities also possess legitimate interests in security, property, capacity, and continuity. Immigration can create gains and localized costs, and those effects must be attributed rather than compressed into either invasion or enrichment. Cultural change is not automatically harm, because no generation owns a frozen social pattern, yet rapid change can affect trust, infrastructure, bargaining, and realistic participation. Immigration is not colonization merely because populations move; colonization adds conquest, domination, expropriation, and political subordination. Historical dispossession can ground claims for restitution or institutional repair without creating inherited collective guilt or a title to coerce uninvolved persons without limit. Demographic objectives do not authorize reproductive mandates, forced settlement, or exclusion by ancestry. Movement policy must distinguish peaceful entry, trespass, security threat, labor-market rules, welfare commitments, and the authority claimed over each. A defensible arrangement protects individual agency on both sides while admitting uncertainty, capacity constraints, and the costs imposed by enforcement.
 status: review
 sources:
   - 164950264.immigration-restrictions-are-a-form
