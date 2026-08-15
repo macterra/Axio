@@ -1,6 +1,8 @@
 ---
 title: 'The AI Fork Is About Agency'
 subtitle: 'Prometheus, again'
+summary: >-
+  Information technologies amplify human purposes before institutions learn to filter their output, as printing expanded scholarship, propaganda, reform, fraud, and conflict together. Artificial intelligence adds a Cognitive Reservoir: generative problem-solving power that constructs coherence on demand rather than merely storing inert patterns. The relevant fork is not simple adoption versus refusal but whether human agency is sharpened, displaced, or defended through capability denial. Sharpeners use the reservoir for variation, compression, critique, and scaffolding while retaining independent models, verification, taste, and final authority. Displacers accept plausible output until apparent productivity replaces understanding and judgment, a trajectory organizations may reward because volume is easier to measure than retained competence. Refusers can coherently reject provenance, labor, environmental, or institutional costs, but denying demonstrated capability is not sovereignty. Amplification becomes liberating only when the user remains harder to fool, including by the machine and by their own desire for frictionless competence.
 status: review
 sources:
   - 200030842.the-ai-fork-is-about-agency

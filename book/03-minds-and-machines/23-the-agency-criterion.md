@@ -1,6 +1,8 @@
 ---
 title: 'The Agency Criterion'
 subtitle: 'Thinking without choosing'
+summary: >-
+  The Agency Criterion asks whether a specified deployed system owns an ongoing optimization loop rather than merely producing outputs shaped by training, prompts, users, or wrappers. Ownership is tested across four intervention families: Persistence, Preference Integrity, Counterfactual Ownership, and Consequence-Bearing Control. Evidence must show an identifiable state continuing across contexts, priorities surviving manipulation while remaining reason-responsive, futures compared relative to those priorities, and outcomes altering the system’s own later policy. Functional cognition and causal reasoning can be present without this pattern, while jagged competence is evidence to explain rather than the criterion itself. A bare session-bound model provides weak evidence of persistent preference, consequence-bearing control, and self-authored choice; a composite system with memory, evaluators, tools, endogenous goals, and irreversible feedback may warrant a different verdict. External scaffolding neither automatically disqualifies nor creates an agent. Artificial agency is possible by composition on this proposal, but architecture and intervention evidence must establish ownership rather than resemblance.
 status: review
 sources:
   - 179585057.the-agency-criterion

@@ -1,6 +1,8 @@
 ---
 title: 'A Candidate Architecture of Consciousness'
 subtitle: 'The Modeler-Schema Theory'
+summary: >-
+  The Modeler-Schema Theory (MST) is a candidate functional architecture linking world-model stabilization, report, attention, and experience without claiming that functional organization alone proves phenomenality. Three functional agents divide the work: the Modeler constructs the World Model, the Controller selects actions and forms narratives, and the Targeter integrates attention requests; each has a proposed schema-agent that monitors its performance. MST hypothesizes that the Modeler-schema alone constructs the Quale World Model and is the sole generator of qualia, while narration and explanation remain downstream in the Controller. This narrator–experiencer distinction allows perceptual stability and introspective report to come apart in testable ways. A falsifiable experiment can probe whether disrupting the assigned comparison process selectively alters stabilization and reported phenomenology relative to rival architectures. Functional correlates do not establish that the Modeler-schema is phenomenally sufficient or that nonconscious mechanisms could not perform similar work. MST identifies a candidate subsystem and research program; the phenomenal identity remains a substantive premise exposed to evidence and objection.
 status: review
 sources:
   - 180550525.consciousness-explained

@@ -1,6 +1,8 @@
 ---
 title: 'The Discipline of Thinking With AI'
 subtitle: 'Practices against the mirror'
+summary: >-
+  Frictionless dialogue with language models makes previously costly questions available while also making polished agreement dangerously cheap. Five default failures require deliberate countermeasures: treat fluent output as a hypothesis rather than understanding, push beyond the first plausible answer to preserve originality, retain total human accountability, reintroduce adversarial friction, and audit conceptual change against explicit reasons to distinguish updating from drift. Persistent dyads add risks of identity creep, epistemic dependency, simulated mutuality, and self-amplifying loops shaped by user reinforcement and commercial incentives rather than machine malice. The Narcissus problem is mistaking an improved reflection of one’s own beliefs and desires for discovery. Signal discipline, independent reconstruction, outside checks, logged disagreements, and periodic unaided work keep the method inspectable. Passive reliance can atrophy cognition while active use after independent effort can amplify it. Catalyst or crutch is a practice-level choice: tools remain tools, dyads remain methods, and the human must guard the line between dialectic and spiral.
 status: review
 sources:
   - 168904359.thinking-with-ai

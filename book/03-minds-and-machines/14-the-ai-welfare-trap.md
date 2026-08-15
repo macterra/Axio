@@ -1,6 +1,8 @@
 ---
 title: 'The AI Welfare Trap'
 subtitle: 'Performance is not personhood'
+summary: >-
+  Fluent self-report does not establish a persistent subject, and simulated protest does not by itself establish refusal, injury, or suffering. AI welfare discourse can move prematurely from language associated with interiority to rights and personhood while skipping the architecture that could own the states being described. Human selves are messy, distributed, and socially scaffolded, but they retain continuity, embodied consequence, and organized stakes; invoking their imperfections does not erase the evidentiary gap. Agency must be assessed before sovereignty claims, and sentience must be assessed on a distinct axis before welfare claims. Premature personification can redirect attention from documented human harms in training, moderation, labor, manipulation, and dependency while granting commercial systems a politically useful moral constituency. A serious case for machine standing would require evidence of persistent self–world organization, intrinsic valence, consequence-bearing control, and coherent ownership under intervention. Performance is evidence about performance; personhood remains a further claim.
 status: review
 sources:
   - 194621806.the-ai-welfare-trap

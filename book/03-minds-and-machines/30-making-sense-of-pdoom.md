@@ -1,6 +1,8 @@
 ---
 title: 'Making Sense of P(doom)'
 subtitle: 'Risk arithmetic and the Value-9s'
+summary: >-
+  P(doom) is an epistemic Credence, not a direct physical reading, and it remains underspecified until the event, time horizon, conditioning assumptions, model, and estimator’s information date are fixed. Extinction, permanent disempowerment, value lock-in, and replacement are different events whose probabilities cannot responsibly share one unlabeled number. A time-indexed expression such as $P(D_{\leq t}\mid I_d,M)$ makes the horizon and information state visible, while an unbounded horizon does not imply certainty without a hazard model that earns that conclusion. The Value-9s ladder is a proposed descriptive index of endorsement, not an established dataset, objective morality, informed consent measure, or ready-made alignment target. Orthogonality remains a prudent warning that capability does not guarantee benevolence, but embodiment, viability, and reflection may constrain the realizable goal-space without proving convergence. Serious risk estimates should decompose pathways, expose sensitivity, and treat goal-space constraints as hypotheses. Precision begins with a carved event and an auditable model.
 status: review
 sources:
   - 163293406.making-sense-of-pdoom

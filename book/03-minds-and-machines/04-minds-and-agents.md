@@ -1,6 +1,8 @@
 ---
 title: 'Minds and Agents'
 subtitle: 'The vehicle and the driver'
+summary: >-
+  Agency and mind are different dimensions. A deliberative agent carries predictive models, evaluates at least some counterfactual actions, selects among them under goals or policies, and closes a causal loop through an environment; this is narrower than minimal physical regulation. A mind is an integrated modeling process with reflective capacities, including recursive representation of the system and its possible actions. The vehicle-and-driver image names a functional relation rather than two separable substances: the agent supplies the ongoing control context in which the mind operates. Systems can therefore display causal agency without reflective mind, while a detached model or simulation does not become an agent merely by representing one. Functional multiple realizability is a hypothesis about implementation, not proof that human minds can be uploaded or transferred with identity intact. Mind, agency, sentience, and portability must be assessed separately. The first question for an artificial system is whether an organized whole owns a predictive, consequence-bearing control loop; fluent mentality comes later.
 status: review
 sources:
   - 167297761.minds-and-agents

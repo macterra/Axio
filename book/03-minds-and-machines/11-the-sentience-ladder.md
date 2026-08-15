@@ -1,6 +1,8 @@
 ---
 title: 'The Sentience Ladder'
 subtitle: 'Awareness, sentience, sapience — and thinking versus feeling'
+summary: >-
+  Awareness, sentience, sapience, and cognition name different properties and must not be inferred from one another. Awareness means that content is available to modeling or control and can alter behavior; it is necessary for sentience under this vocabulary but does not establish experience. Sentience is the capacity for valenced subjective experience, including pleasure and pain, and does not require reflective self-awareness. Sapience is reflective, self-authored valuation and deliberation sufficient for sovereign agency, making it conceptually distinct from both task competence and feeling. Known biological minds tightly entangle sentience and sapience through affective regulation, evolutionary layering, and embodied stakes, yet that empirical correlation does not erase the conceptual distinction or settle artificial cases. Deliberative cognition and affective cognition are complementary modes rather than reason and its opposite. Sentience grounds welfare concern, while sapient authorship supports a different claim to sovereignty; fluent language alone establishes neither.
 status: review
 sources:
   - 168493940.awareness-vs-sentience

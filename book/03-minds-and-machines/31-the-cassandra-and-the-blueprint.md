@@ -1,6 +1,8 @@
 ---
 title: 'The Cassandra and the Blueprint'
 subtitle: 'Yudkowsky, witnessed'
+summary: >-
+  Early AI-safety thought joined a correct perception of transformative risk to a recurring temptation toward centralized control. Eliezer Yudkowsky’s initial Sysop proposal imagined a benevolent superintelligence enforcing safety from above; later doom arguments rejected the friendly king while preserving fear of an uncontrollable race. The Torment Nexus pattern arises when a warning becomes a blueprint, incentives reward the feared capability, and no single institution controls the resulting coordination problem. Capability races, prestige, defensive motives, and commercial competition can sustain that dynamic without history being mechanically forced along one path. A shared root error treats intelligence as sufficient for legitimate rule, whether the imagined ruler is benevolent or hostile. Reflection may destabilize some goals in agents whose semantics remain open to epistemic correction, but this is a research hypothesis rather than alignment supplied by the universe. The alternative orientation is cultivation: architectures and institutions that bind correction, semantic integrity, and agency preservation as capability grows.
 status: review
 sources:
   - 179761268.the-agi-torment-nexus

@@ -1,6 +1,8 @@
 ---
 title: 'What Is a Model?'
 subtitle: 'Structure, representation, and purpose'
+summary: >-
+  A model is a structure used to preserve distinctions relevant to a purpose while discarding others. A railway timetable and an Underground diagram can each function as model or data depending on the task; modelhood lies in the role a representation plays, not in its visual form or intrinsic material. Minimal structural models may implement fixed mappings without semantics, compression, prediction, or belief, as a lookup-table regulator does. Richer generative models compress regularities, support expectations beyond stored cases, and generalize to new inputs. An interpretive layer can attribute beliefs, concepts, and reasons to an agent model without requiring those attributions to be literal components of the underlying mechanism. Structural representation and intentional interpretation must therefore remain distinct, even when both help explain sophisticated cognition. The lower boundary is deliberately modest: a structure earns the name by preserving what a task requires, while minds add generativity, compression, and flexible use on top.
 status: review
 sources:
   - 179372278.what-is-a-model

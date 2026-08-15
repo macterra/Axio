@@ -1,6 +1,8 @@
 ---
 title: 'Fluency and Its Limits'
 subtitle: 'What the machines can and cannot say'
+summary: >-
+  Fluency is genuine competence at producing coherent linguistic continuations, but it is not a certificate of understanding, accountability, exploration, belief, or agency. A model can spiral past a simple factual correction because generation rewards continuation, simulate repair without durable learning, and remain trapped within representational manifolds supplied by training and context. Its apparent beliefs can reverse with framing because outputs need not express persistent commitments owned across sessions. The same absence of self-protective stakes can sometimes make a response less vulnerable to tribe, applause, or reputation than a human judgment, allowing useful reasoning to expose inconsistencies people avoid. Models can be trained or prompted to abstain, yet calibration and durable correction remain uneven and deployment-dependent. Linguistic performance is therefore evidence to explain rather than an all-purpose verdict about the system behind it. Fluency carries thought-shaped structure across an interface; what persists, owns, experiences, or chooses must be established independently.
 status: review
 sources:
   - 172978476.the-spiral-of-certainty

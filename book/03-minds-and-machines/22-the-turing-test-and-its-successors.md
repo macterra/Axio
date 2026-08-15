@@ -1,6 +1,8 @@
 ---
 title: 'The Turing Test and Its Successors'
 subtitle: 'From imitation to coherence'
+summary: >-
+  The Turing Test is an imitation game supplying behavioral evidence for functional cognition, not a consciousness detector or complete definition of intelligence. Short conversational mimicry became less discriminating as learned systems crossed thresholds once approached through scripts, exposing the Loebner Prize’s emphasis on deception rather than durable cognition. A successor should test coherence under challenge instead of rewarding human appearance. Four proposed axes are temporal coherence across identity and memory, causal coherence across observation and intervention, goal coherence under temptation and noise, and reflective coherence through diagnosis and repair of error. Cross-domain transfer, counterfactual consistency, narrative stability, and self-correction make these properties empirically probeable. Sustained success would strengthen cognition as an explanation without proving phenomenality, persistent preference, or agency. The evidentiary pivot is from persuasion to endurance: imitation asks whether a system can pass for something, while coherence asks whether its represented relations survive time, contradiction, and stress.
 status: review
 sources:
   - 177985047.the-turing-test-revisited

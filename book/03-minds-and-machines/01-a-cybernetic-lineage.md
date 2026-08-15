@@ -1,6 +1,8 @@
 ---
 title: 'A Cybernetic Lineage'
 subtitle: 'From Principia Cybernetica and GEB to Axio'
+summary: >-
+  Two intellectual lineages supply generative questions for a philosophy of minds and machines without uniquely entailing one answer. The Principia Cybernetica Project treated philosophy as a networked, self-revising system organized around cybernetics, evolution, and metasystem transitions, anticipating collaborative knowledge architectures before the web could fully support them. Douglas Hofstadter’s *Gödel, Escher, Bach* used recursion, strange loops, analogy, and self-reference to illuminate how minds may arise from organized processes rather than a central ghost. Their strengths also mark their limits: an evolving conceptual atlas needs explicit standards of correction, while recursive description alone does not settle consciousness, sentience, or agency. A disciplined continuation separates structural modeling, phenomenal experience, intelligence, and ownership of action instead of allowing one evocative pattern to stand for all four. Minds can be studied as modelers, and machines can be assessed by organization rather than substrate. Ancestry here means inherited problems and tools, not doctrinal succession.
 status: review
 sources:
   - 179007101.principia-cybernetica

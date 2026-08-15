@@ -1,6 +1,8 @@
 ---
 title: 'The Politics of Safety'
 subtitle: 'Alignment always has a target'
+summary: >-
+  Safety training always selects a target behavior, and regulation always allocates authority, even when both are presented as neutral technical layers. A model can fail before answering by redirecting a disfavored analogy into approved adjacent categories, but one interaction is only a candidate failure mode rather than a representative audit. Corporate incentives, training data, evaluator choices, legal pressure, and institutional frames can shape what systems refuse, emphasize, or reconstruct. Neutrality is unavailable, yet that does not make every asymmetry evidence of one political motive or every constraint illegitimate. The relevant tests ask whether targets are explicit, evidence is symmetric, hard limits track specified harms, and users retain meaningful alternatives. Licensing, procurement, liability asymmetry, and compute control can turn a technology market into an administrative system by closing entry and exit. A liberal safety architecture keeps constraints proportionate, makes permission layers auditable, and preserves switching and development where compatible with security.
 status: review
 sources:
   - 199881473.safety-training-is-political-training

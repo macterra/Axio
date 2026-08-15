@@ -1,6 +1,8 @@
 ---
 title: 'Beyond Dennett'
 subtitle: 'The error of architectural scope'
+summary: >-
+  Dennett’s rejection of a Cartesian inner witness and his account of parallel drafts, narration, and the center of narrative gravity remove a homunculus without exhausting every possible architecture of experience. On the MST reconstruction, the Controller performs many functions Dennett assigns to narrative processes: report, explanation, rationalization, and action selection from partial information. Limitations of introspective report show that the narrator lacks complete access, but they do not by themselves establish that no distinct subsystem supports the states being reported. MST assigns a proposed experiencer role to the Modeler-schema beneath narration, where comparison states help stabilize the World Model. That subsystem is mechanistic rather than a private theater, and the autobiographical self remains a useful construction rather than a metaphysical soul. The reporting process and the candidate process of experience need not be identical. Whether the proposed Modeler-schema is phenomenally sufficient remains open, so the extension preserves Dennett’s demolition while contesting the scope of what it demolished.
 status: review
 sources:
   - 180915271.beyond-consciousness-explained

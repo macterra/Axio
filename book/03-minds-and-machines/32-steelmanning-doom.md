@@ -1,6 +1,8 @@
 ---
 title: 'Steelmanning Doom'
 subtitle: 'The cruxes, and the decentralized answer'
+summary: >-
+  The strongest AI-doom case is a chain of contested empirical and conceptual cruxes rather than one theorem of inevitable catastrophe. Transformative capability may arrive, alignment may fail under optimization and distribution shift, oversight may lag capability, warning shots may be absent, and some cross-border coordination may be necessary; the magnitudes, timelines, and response effects remain uncertain. Doom is policy-endogenous because deployment rules, capability pace, evaluations, interpretability, privilege separation, liability, and tripwires change the modeled distribution of outcomes. A proposed defense-in-depth stack combines architecture-agnostic evaluations, automatic tripwires, auditable compute chokepoints, liability insurance, oversight prediction markets, cryptographic least privilege, personal guardian agents, and federated compute, each requiring its own evidence. Permanent surveillance, hardware control, and centralized kill authority may lower some risks while guaranteeing a coercive political substrate vulnerable to capture. Safety cannot preserve a civilization of free sapient agents by abolishing their freedom as the solution. The future remains a distribution to shift, not a destiny to announce.
 status: review
 sources:
   - 174384202.if-anyone-builds-it-everyone-dies

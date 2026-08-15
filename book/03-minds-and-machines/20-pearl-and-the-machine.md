@@ -1,6 +1,8 @@
 ---
 title: 'Pearl and the Machine'
 subtitle: 'Causal reasoning and the Bitter Lesson'
+summary: >-
+  Causal reasoning distinguishes association, intervention, and counterfactual dependence, including difficult cases such as overdetermination and preemption. Pearl’s ladder identified a real limitation of systems confined to statistical correlation, but current learned systems can sometimes produce useful causal analyses by drawing on learned representations, prompted structure, tools, and search. Their success does not prove that every model internally constructs a correct causal graph, nor that verbal answers survive interventions in the world. The Bitter Lesson records a historical tendency for scalable learning and search to outperform hand-coded knowledge, not a law guaranteeing that scale yields every remaining capacity. Creativity fits the same broad engine when recombination, search, evaluation, and feedback generate candidates that were not explicitly stored. Functional causal cognition can therefore be evidenced without settling consciousness, sentience, or agency. Climbing a reasoning ladder is something a system does; owning stakes in the outcome and choosing under consequence remain separate architectural questions.
 status: review
 sources:
   - 176516919.from-correlation-to-counterfactuals

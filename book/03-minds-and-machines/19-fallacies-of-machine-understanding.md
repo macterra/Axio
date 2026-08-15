@@ -1,6 +1,8 @@
 ---
 title: 'Fallacies of Machine Understanding'
 subtitle: 'The Chinese Room and its descendants'
+summary: >-
+  Objections to machine understanding often search for cognition in components when the relevant property belongs to organized activity. The Chinese Room’s clerk does not understand Chinese, but the clerk is not the whole system whose rule-governed transformations and world relations are under dispute. Concepts need not be identical to individual vectors for distributed representational geometry to support conceptual discrimination and use. Biological water is neither a semantic ingredient nor evidence that silicon cannot realize cognition; substrate matters only where its causal properties matter to the function. Training also cannot be classified as mere copying or never copying in advance: learned generalization differs from retrieval, while pipeline reproduction, memorization, market substitution, and use-specific fair-use factors require separate evidence. No neuron, ion, or parameter understands by itself. Understanding must be assessed at the level of organization through domain performance, generalization, causal structure, and failure, not granted or denied by inspecting ingredients.
 status: review
 sources:
   - 168496408.the-chinese-room

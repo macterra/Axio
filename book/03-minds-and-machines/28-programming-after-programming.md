@@ -1,6 +1,8 @@
 ---
 title: 'Programming After Programming'
 subtitle: 'Computational governance'
+summary: >-
+  Automated code generation shifts engineering value from producing local source text toward framing, constraint specification, architecture, verification, authority, and operational warrant. Software remains behavior under constraint, not a pile of tokens, and generated implementation must satisfy four domains: technical, epistemic, institutional, and economic. Technical constraints govern correctness, interfaces, security, latency, and maintenance; epistemic constraints govern what testing and evidence actually warrant. Institutional constraints locate deployment rights, liability, incentives, and responsibility, while economic constraints track where scarcity moves as code becomes cheaper. Verification becomes the choke point because candidate implementations can expand faster than justified confidence in them. Architecture carries more weight when local expression is abundant, and engineers must preserve lower-level understanding while governing larger automated systems. The resulting discipline is computational governance: delegated machine coherence remains subordinate to human specification, release authority, consequence, and responsibility.
 status: review
 sources:
   - 190445386.programming-after-programming

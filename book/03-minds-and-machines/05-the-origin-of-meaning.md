@@ -1,6 +1,8 @@
 ---
 title: 'The Origin of Meaning'
 subtitle: 'Semiosis and the deep past of the future'
+summary: >-
+  Meaning begins, on the Peircean account adopted here, when a sign stands for an object to an interpretant. Patterns, correlations, and causal information can exist without interpreted aboutness, but a genuine symbol requires all three legs of the triad: sign, object, and interpreting agent or mechanism. Minimal living regulation supplies an early candidate for interpretation when a signal is taken as indicating a condition relevant to continued organization. Meaning then expands with modeling capacity, allowing organisms to respond not only to present stimuli but to represented possibilities. Long-range prediction creates a second great inversion: present action can be organized around futures that do not yet exist, without reversing causality or suspending thermodynamics. Language, calendars, ritual, and shared narratives scaffold that temporal reach by transmitting models across minds and generations. Human projects domesticate duration by spending energy now under representations of possible futures, turning interpreted signs into instruments of deliberate continuity.
 status: review
 sources:
   - 168423727.the-origin-of-meaning
