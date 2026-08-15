@@ -1,6 +1,8 @@
 ---
 title: 'The Metagame of Incentives'
 subtitle: "Why systems fail when people don't"
+summary: >-
+  An incentive is a patterned difference in expected payoff that changes which actions become attractive inside a game. Nested games can reward different objectives, creating misalignment when performance at level L degrades coherence, stability, or persistence at level L+1. Five recurrent patterns are local versus global, short-term versus long-term, signaling versus substance, coalition versus truth, and survival versus stated purpose. Misalignment is a persistent risk rather than a universal default or a hidden institutional chooser. It can cascade across levels, lock a system into a bad equilibrium, or run away when a metric becomes a target and every participant must escalate to remain competitive. Diagnosis compares the game a system claims to play with the game its rewards select, then identifies beneficiaries, excluded parties, time horizons, and conditions for correction. Reflective authorship includes choosing which gradients govern action and redesigning incentives so local success does not consume the larger game.
 status: review
 sources:
   - 180058480.the-metagame-of-incentives

@@ -1,6 +1,8 @@
 ---
 title: 'The Prosperity Paradox'
 subtitle: 'Why rich societies stop reproducing'
+summary: >-
+  Fertility has fallen across many prosperous societies as income, education, urbanization, contraception, child survival, and women's opportunities changed; the OECD average declined from 3.3 in 1960 to 1.5 in 2022. Several mechanisms can contribute: higher opportunity costs, greater investment per child, a shift from household asset to dependent, delayed partnership, housing constraints, work institutions, norms, infertility, and digital sociality. Optionality is a proposed unifying mechanism: prosperity makes reversible careers, relationships, locations, and entertainments easier while children require durable, embodied, irreversible commitment. It does not prove that one civilization has chosen sterility or that cash, housing, and childcare never bind. “Mortgage before maternity” describes a cultural and policy-supported readiness threshold, not a biological necessity or a single-cause account. No person owes children to a demographic aggregate, and reproductive coercion cannot preserve a voluntary civilization. Remedies remain voluntary and mechanism-specific: housing liberalization, family-compatible work, binding communities, persuasion, philanthropy, immigration, and adaptation all require evidence rather than emergency license.
 status: review
 sources:
   - 169230107.the-prosperity-paradox

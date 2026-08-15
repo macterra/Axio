@@ -1,6 +1,8 @@
 ---
 title: 'Great Progress'
 subtitle: 'Metrics that discipline the argument'
+summary: >-
+  Child mortality fell from roughly one in three in many populations around 1800 to below one percent in wealthy countries by 2015, with large though unequal gains elsewhere. Life expectancy at birth is a powerful summary of mortality and material capacity, not a uniquely sufficient civilizational score or substitute for freedom, disability, happiness, distribution, and cultural richness. Modern prosperity includes invisible luxuries—sanitation, antibiotics, refrigeration, reliable energy, rapid information—that even ancient rulers could not command. A proposed four-part progress stack combines scientific method, concentrated energy, cheap reproduction of information, and institutions for capital formation. Sending that stack to Rome is a dependency map rather than a defensible historical forecast, because metallurgy, slavery, literacy, prices, politics, and resistance could still defeat it. Trends are not laws, and existential risks remain genuine model uncertainty. A dated personal forecast assigns 75% Credence that global life expectancy at birth will be higher in 2051 than in 2026, making optimism a falsifiable calibration rather than a destiny claim.
 status: review
 sources:
   - 171156280.great-progress

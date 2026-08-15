@@ -1,6 +1,8 @@
 ---
 title: 'Capitalism on Trial'
 subtitle: 'Nine objections, nine replies'
+summary: >-
+  Competitive market exchange means voluntary transfer under contestable entry and rules that attach costs to their causes; actual capitalist economies mix firms, states, households, public infrastructure, privilege, and coercive taxation. Nine serious objections concern short-termism, externalities, information asymmetry, compounding inequality, public goods, boom and bust, moral erosion, addictive consumption, and winner-take-all concentration. Each identifies a possible mechanism, but none yields one automatic diagnosis or remedy. Secure ownership, liability, reputation, open entry, transparent information, monetary discipline, and meaningful exit can correct some failures, while transaction costs, private power, behavioral exploitation, coordination problems, and historical exclusion can defeat those corrections. A market failure does not validate a state intervention by definition, and the presence of a price does not prove voluntariness or efficiency. War profiteering and protected rent cannot be excused as voluntary exchange, while regulation cannot be dismissed merely because it is collective. The defensible verdict is comparative: prefer institutions that expose error and make decision-makers bear imposed costs.
 status: review
 sources:
   - 169495802.capitalism-on-trial

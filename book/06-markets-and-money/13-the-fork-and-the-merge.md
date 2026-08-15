@@ -1,6 +1,8 @@
 ---
 title: 'The Fork and the Merge'
 subtitle: 'Proof-of-stake and the return of discretion'
+summary: >-
+  Decentralization concerns how authority, failure, and correction are distributed, not whether a network uses the label. Ethereum's 2016 DAO fork showed that social coordination could override ledger finality under exceptional moral pressure, while the Merge replaced proof-of-work with proof-of-stake and made slashable internal capital the security resource. Stake can compound into validator influence, custody and delegation can concentrate control, and capital-weighted governance remains exposed to sanctions, taxation, financial institutions, and low participation by small holders. Proof-of-work also concentrates through mining pools, hardware, energy systems, and jurisdictions, and Bitcoin still relies on implementers, nodes, miners, users, and social responses to exceptional faults. The comparison is therefore about the frequency, concentration, and consequence of discretion rather than its presence in only one design. “You cannot decentralize capital” is a warning, not an impossibility theorem. Proof-of-work is preferred here for adversarial monetary neutrality, conditionally on measured contestability rather than labels alone.
 status: review
 sources:
   - 180917415.the-fork-and-the-merge

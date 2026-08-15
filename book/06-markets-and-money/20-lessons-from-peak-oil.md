@@ -1,6 +1,8 @@
 ---
 title: 'Lessons From Peak Oil'
 subtitle: 'A field guide to doomsday predictions'
+summary: >-
+  M. King Hubbert correctly forecast a U.S. oil-production peak near 1970, but near-term global collapse forecasts overextended a model whose surrounding variables were adaptive. Proved reserves are economically recoverable quantities shaped by geology, technology, price, regulation, and confidence, not a fixed count of underground atoms. Four recurring errors drove the failed extrapolation: static resource models, linear trends, ignored price feedback, and discounted human adaptability. A disciplined forecast asks whether the resource is truly fixed, which prices and substitutions respond, what innovations become profitable, how demand changes, and which time horizon and failure conditions make the claim testable. Fracking, horizontal drilling, enhanced recovery, efficiency, and alternatives invalidated specific forecasts without making oil infinite or precaution irrational. Some threats remain resistant to price feedback because harms arrive too late, cross borders, or become irreversible before adaptation. Skepticism therefore means modeling feedback and failure conditions, not assuming every warning is false or every system will innovate in time.
 status: review
 sources:
   - 168867250.lessons-from-peak-oil

@@ -1,6 +1,8 @@
 ---
 title: 'AGI Economics'
 subtitle: "Why Ricardo does not guarantee human income"
+summary: >-
+  Ricardo's comparative-advantage theorem remains valid: parties with scarce capacities and differing opportunity costs can gain through specialization even when one has an absolute advantage in every modeled task. The theorem does not guarantee human wages if capable machine labor becomes cheaply replicable across most tasks. Compute, energy, chips, capital, data, and deployment can remain scarce and preserve opportunity costs, so human economic displacement is conditional rather than established. Humans also own assets, vote, bargain, create demand, define law, and may control deployment, making the horse analogy incomplete. Authentic human production retains a premium only if future valuers care about provenance; intelligence alone does not supply that preference. Economic irrelevance can create dependency and political vulnerability without entailing extinction absent additional premises about machine agency, resources, conflict, institutions, and values. Preserved human productive autonomy, strategic resource control, alignment, ownership, governance, and enforceable standing must do work that Ricardo's algebra cannot.
 status: review
 sources:
   - 166330539.agi-economics

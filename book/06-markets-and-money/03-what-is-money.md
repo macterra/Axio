@@ -1,6 +1,8 @@
 ---
 title: 'What Is Money?'
 subtitle: 'The common denominator — and the fallacy it kills'
+summary: >-
+  Currency is the common denominator of market exchange: a shared scalar unit that lets unlike, agent-relative valuations become comparable without making them identical. Fungibility, sufficiently wide acceptance, and easy quantifiability support salability and comparison across a network. Money can operate through coins, commodities, bank deposits, credit ledgers, or cryptographic records, and historical evidence permits several origin paths rather than one necessary progression from barter to coin. A price is an exchange ratio expressed in the denominator, not a measurement of intrinsic worth. Modern Monetary Theory correctly emphasizes that a sovereign issuer differs from a household and faces real-resource and inflation constraints rather than a simple nominal financing limit. The remaining dispute concerns institutional knowledge, distribution, expectations, currency demand, political correction, and whether fiscal steering can respect those constraints in time. Money coordinates claims and can mobilize idle capacity; creating additional tickets cannot guarantee additional coats, productive capacity, or trust.
 status: review
 sources:
   - 164883871.what-is-money

@@ -1,6 +1,8 @@
 ---
 title: 'Attention Is an Economy'
 subtitle: 'The primordial market'
+summary: >-
+  Attention is the first economy an agent inhabits: scarce cognitive capacity must be allocated among more possible signals, memories, tasks, and affordances than any mind can process. Salience is what stands out, relevance is what matters in context, and value is what an agent cares about preserving or becoming; the three can diverge sharply. Commercial platforms enter this internal economy by optimizing badges, novelty, outrage, status, and intermittent reward to outbid existing commitments. Cognitive arbitrage lets the platform capture engagement while the agent pays in reconstruction cost, broken concentration, and diminished long-horizon control. Executive function governs scarce cognitive capital by protecting relevance structures and refusing bids that do not serve endorsed ends. Meditation, reflection, deep work, and environmental design can retrain the allocation mechanism without making attention an infallible meter of value. Freedom begins with allocation because captured attention can foreclose admissible futures one decision at a time.
 status: review
 sources:
   - 198325110.attention-is-an-economy

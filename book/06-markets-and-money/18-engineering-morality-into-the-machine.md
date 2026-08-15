@@ -1,6 +1,8 @@
 ---
 title: 'Engineering Morality into the Machine'
 subtitle: 'Incentive design where lives are on the line'
+summary: >-
+  Institutional incentives around Canada's Medical Assistance in Dying program require monitoring because scarce care, uneven alternatives, workload, or funding rules could make an offered death easier to obtain than a tolerable life. This is a risk hypothesis, not a finding that clinicians or budgets optimize for death. Candidate safeguards include budget neutrality, Relief-First care, a Counterfactual Care Guarantee, independent advocacy, adversarial assessment, transparent dashboards, audit, balanced liability, and sunset clauses, all subject to clinical, legal, disability-rights, and patient evidence. Legalization is likewise a change in constraints, not a promise that every downstream measure improves. Harm means a material setback relative to an appropriate baseline, while influence, permission, regret, and coercion remain distinct. Sports-betting systems can engineer traps through reinforcement, leverage, and loss-chasing that erode recovery capacity without making every wager involuntary. Agency-preserving constraints should target capture mechanisms and third-party harms rather than criminalize competent adults or treat incentives alone as a complete control system.
 status: review
 sources:
   - 170629256.the-economics-of-euthanasia

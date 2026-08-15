@@ -1,6 +1,8 @@
 ---
 title: 'Wealth Is Not a Pile'
 subtitle: 'Hoarding, trillionaires, and the inequality confusion'
+summary: >-
+  Large fortunes usually consist of claims on operating firms, real estate, intellectual property, and other assets rather than idle currency hidden in a vault. That accounting fact matters for taxation and liquidation but does not settle acquisition, control, externalities, political power, or the counterfactual use of resources. Investment distributes payments through workers and suppliers while concentrating authority over what gets built; either effect can create or destroy valuable capacity. The right question about a trillionaire is what the controlled wealth does under which rules, risks, liabilities, and avenues of correction. Inequality is disparity, whereas poverty is deprivation that materially restricts agency; one does not establish the other by definition. Concentrated capital can support long-horizon, high-variance projects and can also magnify error, dependency, rent extraction, bargaining asymmetry, and political influence. Redistribution can finance consumption that builds future capability, while coercive means still require separate justification. Wealth is not necessarily a pile withheld from the poor, and deployment is not automatically a public benefit.
 status: review
 sources:
   - 165112254.the-myth-of-wealth-hoarding

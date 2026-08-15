@@ -1,6 +1,8 @@
 ---
 title: 'The Poverty Myth'
 subtitle: 'Poverty is the default; wealth is the anomaly'
+summary: >-
+  Poverty is the material condition from which human societies begin; wealth is the anomaly produced through invention, specialization, capital accumulation, trade, public health, education, infrastructure, institutions, and state capacity. Long-run evidence shows an immense fall in extreme poverty, although progress has slowed and no single mechanism can claim the entire causal result. Inequality is a difference between people, while poverty is deprivation that constrains a person's welfare, functional capacity, and viable options. “Late-stage capitalism” bundles genuine problems into an unmeasured prediction of terminal decline, confusing cultural pessimism with an economic lifecycle. Abundant consumer variety reveals decentralized preference discovery, but healthcare combines emergency demand, information asymmetry, patents, restricted entry, third-party payment, risk pooling, and safety requirements that make it a difficult institutional design problem rather than a clean market control. Market institutions helped build unprecedented productive capacity without making every current rule fair or every exclusion harmless. The question needing explanation is how prosperity is created and extended, not who manufactured humanity's starting condition.
 status: review
 sources:
   - 175235972.the-poverty-myth

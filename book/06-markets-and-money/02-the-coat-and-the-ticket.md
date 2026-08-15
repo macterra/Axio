@@ -1,6 +1,8 @@
 ---
 title: 'The Coat and the Ticket'
 subtitle: 'Value, wealth, capital, money, currency'
+summary: >-
+  Value is the usefulness, desirability, or importance of something to an agent; wealth is the stock of valuable assets and capacities an agent controls. Capital is wealth deployed to produce more wealth, while money is a transferable claim and accounting layer that enables exchange across time and counterparties. Currency is a particular monetary unit and system; credit extends present purchasing power against future settlement, and debt is the corresponding outstanding claim. The coat-check image keeps the layers straight: currency and monetary balances are tickets, while goods, skills, infrastructure, trust, and productive capacity are coats. Printing or expanding claims can mobilize idle resources under some conditions, but it does not manufacture unlimited real capacity. Prices compress valuation into a common unit without becoming identical to value, and monetary wealth estimates remain assumption-dependent. Prosperity grows by producing and preserving valuable capacity, not by mistaking tickets, spending, liquidity, nominal gains, or financing for the coats they may—or may not—command.
 status: review
 sources:
   - 202441816.the-coat-and-the-ticket

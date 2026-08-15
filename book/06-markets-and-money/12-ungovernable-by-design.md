@@ -1,6 +1,8 @@
 ---
 title: 'Ungovernable by Design'
 subtitle: 'What protocol rules can—and cannot—govern'
+summary: >-
+  Bitcoin separates deterministic protocol validity from semantic intent. Keys, hashes, scripts, transaction structure, and timing leave residual channels for encoding information; restrictions can raise cost or prevalence without proving every covert channel closed. Consensus can validate observable structure but cannot infer private meaning or settle most legal and contextual judgments without institutions outside the protocol. Censorship resistance is therefore graded: strong against unilateral semantic control inside consensus, weaker at exchanges, network access, mining, software distribution, interfaces, and users subject to law. Proof-of-work consumes substantial electricity to make block production and historical revision costly without a central issuer. Energy use is a physical fact, while “waste” is an evaluative comparison involving security, emissions, grid effects, alternative infrastructure, and counterfactual services. Mining can monetize curtailed or stranded energy and can also compete with other loads or sustain fossil generation. Nakamoto consensus constrains discretion inside one layer; it does not abolish governance, interpreters, concentration, or capture at the edges.
 status: review
 sources:
   - 178199698.ungovernable-by-design

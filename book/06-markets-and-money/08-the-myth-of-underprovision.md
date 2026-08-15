@@ -1,6 +1,8 @@
 ---
 title: 'The Myth of Underprovision'
 subtitle: 'Public goods and institutional choice'
+summary: >-
+  Public-goods theory identifies a coordination problem, not an automatic mandate for state provision. Non-rival consumption, costly exclusion, free-riding, and difficulty capturing benefits can weaken private funding, but the magnitude depends on the good, benchmark, scale, institutions, and technology. British lighthouses illustrate mixed provision: private operation combined with legally backed port dues and monopoly grants, defeating categorical impossibility without eliminating the free-rider problem. Clubs, bundling, philanthropy, prizes, repeated interaction, assurance contracts, micropayments, and cryptographic access can relax underprovision conditions; diffuse benefits and high transaction costs can preserve them. Voluntary payment reveals what resourced participants will fund through the available mechanism, while nonpayment can reflect free-riding, distrust, poverty, or failed coordination rather than indifference. Taxation carries coercive and administrative costs, yet voluntary provision does not prove that every important benefit was realized. Sound comparison defines the benchmark, estimates the gap, inventories alternatives, and evaluates public and private remedies under symmetric assumptions about knowledge, capture, enforcement, and correction.
 status: review
 sources:
   - 172416606.the-myth-of-underprovision
