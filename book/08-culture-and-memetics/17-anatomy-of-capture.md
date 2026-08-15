@@ -2,6 +2,8 @@
 title: 'Anatomy of Capture'
 subtitle: 'The mechanism, the vacuum, and the coping'
 status: review
+summary: >-
+  Capture is a stronger diagnosis than ordinary institutional disagreement. It appears when criticism of a core commitment is predictably penalized regardless of evidence, adverse findings are filtered asymmetrically, dissent receives professional rather than argumentative answers, and credible correction or appeal is absent. Four components form the kit: the law that a system forbidding discussion of its own failure has already failed; the engine of preference falsification, gatekeeping minorities, and publicly compliant majorities; the vacuum left by a relativized mind craving certainty; and the coping function through which ideology maintains self-esteem after its conclusions weaken. None of these components alone establishes capture. Their interaction can turn scholarship into a cargo cult whose rituals remain while error correction disappears. Diagnosis therefore requires observable selection, enforcement, asymmetry, and blocked correction rather than speculation about a collective motive.
 sources:
   - 166359583.the-boghossian-principle
   - 168968329.preference-falsification

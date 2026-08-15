@@ -2,6 +2,8 @@
 title: 'The Taboo Test'
 subtitle: 'The asymmetry heuristic'
 status: review
+summary: >-
+  The Taboo Test begins when apparently similar cases receive different moral treatment. European discomfort with air conditioning beside routine acceptance of winter heating provides a small case: the asymmetry may reflect climate, architecture, energy systems, history, symbolism, or a residual norm rather than one hidden motive. The Heat-Pump Test holds the underlying mechanism as fixed as possible by comparing heating and cooling through the same reversible technology. The remaining differences become evidence to investigate, not proof of hypocrisy. The method joins two disciplines: attention to awkward facts without expanding them into collective indictments, and controlled comparison that fixes the stated variable, enumerates uncontrolled differences, and tests candidate explanations. An asymmetry can reveal either an inconsistent taboo or a morally relevant distinction omitted by the first framing. The instrument cuts through inherited symbolism, but its success does not establish that every symbol should be dissolved.
 sources:
   - 203841223.the-air-conditioning-taboo
 ---

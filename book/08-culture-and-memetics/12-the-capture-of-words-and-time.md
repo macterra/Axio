@@ -2,6 +2,8 @@
 title: 'The Capture of Words and Time'
 subtitle: 'Hijacked labels, the tribunal of history, and statistical rhetoric'
 status: review
+summary: >-
+  Rhetoric can capture vocabulary, imagined history, and statistics by moving an argument onto territory the listener cannot inspect. A hijacked label carries a verdict through inherited connotation even after its operative meaning changes. “The right side of history” invokes a tribunal that does not exist and assumes an inherent moral trajectory, a stable and knowable direction, linear moral advance, and the automatic correctness of future consensus. Captured numbers retain valid arithmetic while attaching it to a comparison that does not measure the claimed moral object. These devices differ in surface form but share one move: the crucial inferential step occurs where the audience cannot follow or challenge it. The remedy is to return each claim to present evidence, precise definitions, explicit baselines, and symmetric tests. Words, predictions, and sums can inform judgment only when their relation to the conclusion remains visible.
 sources:
   - 169312064.hijacking-liberalism
   - 170694694.the-right-side-of-history

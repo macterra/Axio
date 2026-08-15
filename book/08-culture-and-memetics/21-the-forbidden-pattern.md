@@ -2,6 +2,8 @@
 title: 'The Forbidden Pattern'
 subtitle: 'Attention as moral infrastructure'
 status: review
+summary: >-
+  The British grooming-gang scandal began with crimes committed by men who raped, drugged, trafficked, and terrorized children; offender responsibility is primary and must not be diluted into collective guilt. Information about repeated offenders and local networks was available, yet institutions often failed to integrate it because noticing ethnicity carried political and reputational costs. Euphemism obscured coercion, exploitation, and organized predation, while agencies served a second client: the institution's image of itself. A starved institution fails irregularly; a corrupted one fails in a pattern, selectively suppressing facts that threaten a protected story. Precision cuts both ways: naming a specific network can protect victims and direct accountability, while indicting an ethnicity or religion invents guilt beyond the evidence. Anti-racism fails when concern about stigma eclipses equal protection for vulnerable girls. Attention is moral infrastructure because values determine which facts institutions notice, record, connect, and act upon.
 sources:
   - 202362354.the-forbidden-pattern
 ---

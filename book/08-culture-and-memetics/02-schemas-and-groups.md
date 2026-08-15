@@ -2,6 +2,8 @@
 title: 'Schemas and Groups'
 subtitle: 'A toy model of cultural membership'
 status: review
+summary: >-
+  Culture can name two different objects: a Cultural Schema and the population modeled as instantiating it. A Cultural Schema is an analyst-specified collection of beliefs, values, preferences, practices, or norms; it is not a literal group mind, and people instantiate its contents partially and unevenly. The induced Cultural Group consists of agents whose belief systems satisfy the chosen membership criteria, so adding mandatory criteria generally narrows the modeled group while relaxing them broadens it. Nested schemas form a lattice that can represent overlap, divergence, convergence, and possible shared commitments without supplying their historical causes. This set-theoretic picture is deliberately static: copying, teaching, enforcement, revision, retention, and institutional change require separate mechanisms. Splitting schema, population, and institution blocks equivocation, preserves individual agency, and turns cultural membership into an explicit model whose criteria and omissions can be inspected.
 sources:
   - 166080146.understanding-culture
   - 166409545.culture-hierarchies

@@ -2,6 +2,8 @@
 title: 'Exemplars and the Axionic Criterion'
 subtitle: 'How patterns travel, and which deserve to'
 status: review
+summary: >-
+  Human competence travels through exemplars as well as rules. An exemplar is a lived reference pattern from which agents absorb posture, timing, judgment, and value under conditions too varied for exhaustive instruction; the exemplar influences through attraction and imitation rather than command. Such patterns can be distributed across many carriers without becoming a collective mind, and lineages can preserve recognizable form while every individual instance changes. The Axionic Criterion asks three questions: does the pattern support coherent choice under constraint, does it reduce reliance on coercive stabilization, and does it scale across agents without collapsing autonomy? These tests do not make cultural fitness equivalent to moral worth, since a coercive or deceptive pattern may spread efficiently. Reciprocal agency preservation is an explicit normative commitment rather than a cosmic value derived from the descriptive fact that agency makes valuing possible. Exemplars merit propagation under that commitment when continued instantiation preserves the choosing agents who carry them.
 sources:
   - 182596460.exemplars-and-agency
 ---

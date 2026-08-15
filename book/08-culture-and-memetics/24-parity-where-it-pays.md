@@ -2,6 +2,8 @@
 title: 'Parity Where It Pays'
 subtitle: 'The equality paradox, symmetrical'
 status: review
+summary: >-
+  Formal equality does not mechanically produce occupational parity, and unequal outcomes do not establish either injustice or free choice. The reported gender-equality paradox is an association rather than a natural experiment, since wealth, education, payoffs, migration, field definitions, culture, and measurement vary together. Its neglected mirror is the concentration of men in dangerous and physically punishing work: parity campaigns tend to focus where status and pay are attractive rather than where injury and death are concentrated. Supply chains also hide burdens performed far from the consumers who benefit from them. Friction can reflect preference, biology, path dependence, caregiving, exclusion, incentives, or several mechanisms together; disparity alone cannot identify which. Remedies therefore require evidence of a barrier, proportional means, explicit costs, and a stopping condition. Symmetry means investigating both intervention and inertia while accepting that genuinely open choices may still yield uneven distributions.
 sources:
   - 171151963.equal-rights-unequal-risks
   - 167614945.beyond-gender-balance

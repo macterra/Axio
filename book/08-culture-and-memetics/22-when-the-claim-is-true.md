@@ -2,6 +2,8 @@
 title: 'When the Claim Is True'
 subtitle: 'Rosalind Franklin and honest adjudication'
 status: review
+summary: >-
+  Honest adjudication must be able to sustain a claim when the evidence supports it and narrow the claim where causation remains uncertain. Rosalind Franklin's experimental and interpretive work materially enabled and checked the double-helix model, while the public account long reduced her contribution. Watson and Crick did not obtain the structure by stealing a decisive Photograph 51, but they did use results generated at King's College and initially acknowledged that dependence inadequately. Franklin was an equal contributor, not a technician who failed to understand her data. Sexism in her institution and Watson's later stereotypes are relevant evidence, yet the record does not isolate gender as the sole cause of the original credit allocation. The calibrated verdict therefore separates well-supported under-credit from a broader causal claim involving hierarchy, disciplinary roles, scientific norms, personality conflict, and model priority. Fair judgment preserves both findings instead of forcing the record into accusation or acquittal.
 sources:
   - 176149353.the-double-helix-and-the-double-standard
 ---

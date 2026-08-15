@@ -2,6 +2,8 @@
 title: 'The Story-Telling Ape'
 subtitle: 'Narrative as cognition''s native format'
 status: review
+summary: >-
+  Human cognition readily organizes events into narratives of agents, motives, consequences, and meaning. Stories can carry cooperation, encode norms, and transmit lessons beyond direct experience, making narrative capacity a plausible target or by-product of selection without reconstructing its exact evolutionary history. The same capacity can decouple cultural fitness from accuracy: a story may spread because it resonates, coordinates, authorizes, or consoles even when its factual core is thin. Arthur, Socrates, and Jesus illustrate different gaps between defensible history and the legends built around it, but the size of that gap does not by itself decide a tradition's value. Culture adds a selection layer in which fit to the mind can compete with fit to the world, while people remain the agents who interpret, transmit, revise, and act. The recurring danger is not a cultural creature choosing through humanity, but human systems repeatedly rewarding resonant stories over accurate accounts.
 sources:
   - 166013336.homo-narrans
   - 175193629.mythogenesis

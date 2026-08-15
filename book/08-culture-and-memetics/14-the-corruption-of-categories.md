@@ -2,6 +2,8 @@
 title: 'The Corruption of Categories'
 subtitle: 'Classifier cant and untethered anchors'
 status: review
+summary: >-
+  Categories fail when pressures unrelated to description bend the language used to track reality. Platform cant replaces ordinary words with euphemisms because opaque ranking and monetization systems punish uncertain lexical triggers, while the distinction between use and mention disappears inside a foggy penalty function. The resulting vocabulary leaks beyond the platform as speakers internalize rules they cannot inspect. A second failure occurs when categories lose their anchors and are asked to serve affirmation or identity rather than discriminate among the phenomena for which they were built. Neither case proves that old categories are perfect or revision is illegitimate. Revision is justified when evidence, prediction, or a clearer purpose supports it; corruption occurs when an external pressure changes the category while evading argument about its descriptive function. The repair is to identify the anchor, state the intended use, and make the costs of misclassification visible.
 sources:
   - 202203795.the-algorithmic-corruption-of-language
   - 173611210.the-anchor-of-orientation

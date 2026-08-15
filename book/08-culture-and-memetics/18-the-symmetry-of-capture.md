@@ -2,6 +2,8 @@
 title: 'The Symmetry of Capture'
 subtitle: 'A non-partisan attractor'
 status: review
+summary: >-
+  Capture is structural rather than partisan when opposing movements reproduce the same six moves under different slogans: narrative over facts or reason, omnipresent oppression or grievance culture, identity epistemology or identity politics, enforced conformity or speech policing, a rewritten past, and dogmatic anti-liberalism or anti-liberal rhetoric. The mirrored form called the Woke Right, coined by James Lindsay and popularized by Konstantin Kisin, substitutes its own tribe, enemies, and sacred history while preserving the machinery underneath. Symmetry is evidence of a shared mechanism, not proof that every case is morally identical or every accusation sound. The equality trap requires the same discipline: unequal outcomes do not by themselves establish systemic injustice, while equal rights do not prove every disparity arose under fair conditions. Causal inquiry must test coercion, exclusion, preference, ability, circumstance, and rival mechanisms. A nonpartisan standard must correct allies as readily as opponents or become another tribal weapon.
 sources:
   - 165721326.the-woke-right
   - 172367780.the-equality-trap

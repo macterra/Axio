@@ -2,6 +2,8 @@
 title: 'Two Ontologies of Gender'
 subtitle: 'Why the debate is stuck'
 status: review
+summary: >-
+  “Gender is performative” carries two incompatible meanings. Performance can mean a staged display that disguises an underlying reality, or a performative act whose social uptake helps constitute the status it names. The resulting dispute crosses two ontological layers: sex is empirically real, while gender is socially real. Sex is a descriptive category anchored in biological organization and answerable to correspondence; gender is a constitutive category sustained through social recognition and answerable to uptake. Forcing either category to satisfy the other's truth conditions creates mirror-image errors. This distinction does not decide which layer should govern sports, prisons, medicine, dating, census categories, or every boundary case. It is a proposed frame for turning mutual denial into a tractable dispute over jurisdiction, allowing both realities to be acknowledged without pretending that ontology alone settles policy.
 sources:
   - 176036886.gender-as-performance
 ---

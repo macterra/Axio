@@ -2,6 +2,8 @@
 title: 'Enforcement and Erasure'
 subtitle: 'From silencing the speaker to erasing the record'
 status: review
+summary: >-
+  Cancellation has three distinct tiers. Tier 1 is pure disassociation, in which individuals or organizations withdraw their own support; Tier 2 is coordinated disassociation through petitions, boycotts, or denunciation campaigns; Tier 3 is suppression by proxy, which pressures third parties under threat to sever relationships they would otherwise keep. Tier 2 remains persuasion until it threatens bystanders, while Tier 3 attacks listeners' and associates' choices rather than merely exercising the canceller's own. Walking away can still impose a material setback, but that descriptive fact does not decide wrongfulness or make ordinary disassociation coercion. Erasure goes further by attacking the record that a person, event, or contested question ever existed. Ordinary forgetting, selective omission, suppression, and totalitarian memory-holing must not be collapsed into one offense. A free culture depends on durable records and open questions so excluded claims can later be recovered and examined.
 sources:
   - 173950922.cancel-culture
   - 171155815.memory-holed

@@ -2,6 +2,8 @@
 title: 'The Egregoric Singularity'
 subtitle: 'The merger already happened'
 status: review
+summary: >-
+  Genetic inheritance was joined by a faster channel when human beings became able to preserve patterns in language, ritual, artifact, and institution. An egregore is a model of the distributed feedback through which a cultural pattern persists across changing human carriers; it is not a conscious organism, a hidden chooser, or a second mind above the people involved. Repetition, imitation, enforcement, material infrastructure, and coordinated expectation can stabilize a flag, faith, corporation, or custom until it shapes the environments in which later choices are made. Critical mass matters because enough mutually reinforcing carriers can make a pattern durable even as particular participants leave. This “egregoric singularity” therefore names a transition in cultural storage and feedback, not the birth of literal supernatural agents. The model is useful only while authorship and responsibility remain with the people and institutions whose actions sustain, modify, or dismantle the loop.
 sources:
   - 173886472.the-singularity-has-already-happened
   - 173888583.living-shadows

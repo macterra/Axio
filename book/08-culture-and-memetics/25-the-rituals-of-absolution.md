@@ -2,6 +2,8 @@
 title: 'The Rituals of Absolution'
 subtitle: 'Symbolic debt, categorical remedies, and historical compression'
 status: review
+summary: >-
+  A ritual of absolution is a symbolic act that discharges the feeling of moral debt while leaving the asset or mechanism at issue untouched. A land acknowledgment can invoke restitution while preserving title and budget; a targeted gate can be called repair without demonstrating that its categorical remedy fits individual evidence; compressed history can replace a complex ledger with an inherited moral role. The test is not symbolic versus material. A legitimate symbolic reform makes a claim it can keep, while a ritual borrows the moral weight of a remedy it refuses to deliver. Replacing “Middle East” with “West Asia” can pass because the change is justified by geographic accuracy and accomplishes exactly what it promises. Material remedies face additional requirements of evidence, proportionality, individual burden, alternatives, and review. Words become absolution when they stand forever in place of payment rather than naming an achievable correction.
 sources:
   - 199598461.against-land-acknowledgments
   - 199987468.against-systemic-racism

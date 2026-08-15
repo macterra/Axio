@@ -2,6 +2,8 @@
 title: 'Patterns as Players'
 subtitle: 'A model of cultural persistence'
 status: review
+summary: >-
+  Cultural persistence is often easier to explain by tracking patterns than by searching for a single chooser behind a system. A pattern is an analyst-specified type whose tokens recur through behavior, artifacts, rules, incentives, or institutions; people remain the choosing and responsible agents who instantiate, reward, revise, or resist it. Patterns persist when environments favor reliable replication, coordinated action, institutional support, or local incentives, and they disappear when those supports fail. Pattern drift gradually moves a pattern away from its original purpose, pattern lock makes escape costlier than continued participation, and pattern collapse occurs when coherence or support can no longer be maintained. “Attractor” language is warranted only when a state space, dynamics, and basin are supplied; otherwise it marks an analogy to recurrent pull. Pattern-level explanation and human agency are complements: one identifies recurring causal organization, while the other locates interpretation, intervention, and responsibility.
 sources:
   - 180199129.the-metagame-of-patterns
 ---
