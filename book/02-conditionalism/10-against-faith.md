@@ -1,6 +1,8 @@
 ---
 title: 'Against Faith'
 subtitle: 'The calibration criterion and its case law'
+summary: >-
+  Epistemic faith is confidence protected from correction, not trust, loyalty, hope, religious practice, or every commitment called faith. A pilot’s confidence in instruments remains answerable to calibration, cross-checks, maintenance history, and observed failure; a frozen update rule instead converts counterevidence into support or declares doubt itself disqualifying. Pragmatic commitment can be rational when action must precede certainty, moral commitment can express a chosen value, and existential resolve can sustain agency without pretending to settle a factual question. Religious claims divide accordingly: practices and orientations may carry meaning, while empirical or historical claims remain accountable to evidence. Beauty can motivate inquiry and make a theory cognitively attractive, but aesthetic force is not evidence of truth without an independently warranted link. The decisive issue is structural rather than tribal: what is permitted to lower confidence? Conviction remains compatible with reason when its conditions are explicit and its update rule stays live; immunity from revision is the epistemic failure.
 status: review
 sources:
   - 177598036.against-faith

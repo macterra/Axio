@@ -1,6 +1,8 @@
 ---
 title: 'Probability After Probabilism'
 subtitle: 'The arithmetic begins after the world has been carved'
+summary: >-
+  Probability theory transforms numbers only after an event space, evidence model, prior, likelihoods, and interpretation have been supplied. Rain forecasts, coin weights, medical risks, and existential-risk estimates share a grammar while resting on different relations between model and world. Probabilism begins when every uncertainty is assumed to conceal one correct precise number even though the relevant possibilities or distinctions have not been earned. Events are carved by representations rather than delivered pre-labeled, so bad frames fail either by omitting live possibilities or by forcing vague phenomena into arbitrary partitions. The epistemic gate asks whether the model warrants a probability assignment; only then does the decision gate combine uncertainty with utilities, resources, and policy. Bayesian conditionalization retains full authority inside an adequate frame but cannot determine from within whether the frame excludes the truth. Better carving requires criticism, causal understanding, sensitivity analysis, and permission to use intervals, rankings, or unresolved alternatives when precision would outrun evidence.
 status: review
 sources:
   - 204932177.probability-after-probabilism

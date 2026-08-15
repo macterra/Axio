@@ -1,6 +1,8 @@
 ---
 title: 'Measure and Credence'
 subtitle: 'Objective and subjective probability in a branching universe'
+summary: >-
+  Probability can describe physical weight in a model or an agent’s graded uncertainty, and the two roles must not be conflated. Measure is the Born weight of a specified record sector in the optional Quantum Branching Universe model, relative to a state, conditioning record, and declared decomposition; it is not a count of fundamental worlds. Credence is confidence given evidence and background assumptions, whether the uncertain subject is empirical, logical, semantic, or metaphysical. A physical model can supply likelihoods for Bayesian updating, and in special cases those likelihoods may be numerically derived from ratios of Measure, but the resulting prior and posterior remain Credences. Theories themselves do not possess Measure, and assigning a theory a Credence does not make it partially true or physically chancy. Precise numbers may be unwarranted when models or likelihoods are weak, making intervals or qualitative rankings more honest. Both quantities remain conditional, while the bridge from physical weight to rational belief requires additional epistemic and decision assumptions.
 status: review
 sources:
   - 163921757.defending-bayes

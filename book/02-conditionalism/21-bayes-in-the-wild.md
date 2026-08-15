@@ -1,6 +1,8 @@
 ---
 title: 'Bayes in the Wild'
 subtitle: 'A dated ledger, audited as a calibration exercise'
+summary: >-
+  The origin of SARS-CoV-2 is a fixed but uncertain historical fact, so probabilities assigned to competing origin hypotheses are Credences rather than physical Measure. A dated Bayesian ledger can make priors, likelihood ratios, hypothesis definitions, and evidential judgments inspectable, but publication does not make subjective inputs calibrated. The preserved calculation reconstructs an earlier assessment rather than presenting a current posterior, and its binary framing must be expanded into a hypothesis tree that distinguishes natural pathways, laboratory-associated pathways, and their internal variants. Dependence among observations, selection after seeing the evidence, vague alternatives, and guessed likelihoods can multiply confidence without adding information. Reasonable analysts may therefore disagree at the level of model structure and evidential interpretation before arithmetic begins. Bayesian updating remains useful when it exposes exactly which inputs drive a conclusion and how sensitive the result is to changing them. A public ledger earns epistemic value through auditability and revision, not through the false precision of a final percentage.
 status: review
 sources:
   - 165642623.the-covid-19-lab-leak-hypothesis

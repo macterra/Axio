@@ -1,6 +1,8 @@
 ---
 title: 'When Statements Fail'
 subtitle: 'Binding, nonsense, and crooked questions'
+summary: >-
+  A grammatical sentence is not automatically a truth-bearer. “It is raining” becomes evaluable when speaker, place, time, and relevant standards are fixed, whether explicitly or by a shared context; without enough binding, the sentence remains underdetermined rather than true or false. Statements can fail through unbound indexicals, missing referents, unspecified quantifier domains, hidden counterfactual antecedents, absent evaluative standards, or category violations. These failures differ, and each diagnosis identifies a different repair: supply a context, settle a semantic treatment, bind a domain, state a condition, name a standard, or clarify a figurative use. Ambiguity offers multiple possible meanings, while underdetermination provides no fixed meaning until required variables are bound. Crooked questions conceal the same problem by forcing an answer inside a malformed frame, so a straight response may need to repair the question before answering it. Condition-binding turns confident noise into claims that evidence can reach and marks the limit where no coherent completion is available.
 status: review
 sources:
   - 178181286.truth-as-a-function-of-binding

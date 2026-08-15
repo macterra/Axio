@@ -1,6 +1,8 @@
 ---
 title: 'What Beliefs Are'
 subtitle: 'From credence thresholds to models of agents'
+summary: >-
+  Belief is best treated as a feature of a model of an agent, including the agent’s model of itself, rather than as a discrete object stored in the mind. A threshold account captures an important special case: a proposition counts as believed when assigned enough Credence to guide prediction, decision, or action under the stakes at hand. The threshold is context-sensitive, however, and conduct can underdetermine what an agent represents because incentives, habits, conflicting goals, and performance limits intervene. Attributing belief therefore requires an interpretation stack linking observed behavior, inferred policy, modeled Credence, and the proposition as framed by an interpreter. Different adequate models may assign different beliefs without implying that every attribution is arbitrary; calibration, explanatory power, and predictive success constrain the interpretation. Certainty is neither required nor generally available. Belief talk earns its place when it compresses an agent model reliably enough to support understanding and action while remaining revisable when the model fails.
 status: review
 sources:
   - 177433505.the-nature-of-beliefs

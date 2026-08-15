@@ -1,6 +1,8 @@
 ---
 title: 'Fallibilist Bayesianism'
 subtitle: 'Bayes within models, criticism between them'
+summary: >-
+  Bayesian conditionalization is exact within a specified hypothesis space, prior, evidence representation, and likelihood model, yet it cannot discover from inside that the true possibility was omitted. Fallibilist Bayesianism divides epistemic labor accordingly: Bayes reallocates Credence within models, while criticism creates alternatives, challenges causal structure, and replaces frames that no longer deserve confidence. Bayesian, frequentist, likelihoodist, and falsificationist practices answer different questions about belief, frequency, evidence, chance, and theory testing rather than forming one simple tribal contest. A continuing cycle moves from model construction to conditional updating, predictive testing, criticism, expansion, and renewed calibration. Structural causal models, causal-discovery methods, posterior predictive checks, counterexample searches, and adversarial hypothesis generation can formalize parts of criticism without pretending to eliminate judgment. Institutions also need incentives to reopen settled frames, because normalization and professional reward can make a false model increasingly confident. Rational inquiry combines disciplined bookkeeping with an active capacity to redraw the ledger.
 status: review
 sources:
   - 206603023.fallibilist-bayesianism

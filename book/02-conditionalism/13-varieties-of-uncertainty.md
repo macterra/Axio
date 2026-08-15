@@ -1,6 +1,8 @@
 ---
 title: 'The Varieties of Uncertainty'
 subtitle: 'Timeline, logical, semantic, and metaphysical credence'
+summary: >-
+  Uncertainty has several forms that share probability-like discipline without sharing one underlying source. Timeline or indexical uncertainty concerns which location, identity, or record matches an observer’s evidence; within the optional QBU model, Measure can weight such alternatives. Logical uncertainty concerns consequences not yet derived by a bounded reasoner, semantic uncertainty concerns meanings or conditions not yet fixed, and metaphysical uncertainty concerns which broad framework describes reality. The fourfold map is diagnostic rather than exhaustive, and the categories can overlap. Logical Induction shows that resource-bounded agents can maintain disciplined graded beliefs about mathematical statements without positing objective chance over their truth, though its market construction is not ordinary Bayesian conditionalization unchanged. Semantic and metaphysical Credences likewise require explicit models, alternatives, and update conditions rather than invented physical frequencies. Objective Measure can constrain some Credences, but coherent uncertainty need not mirror a chance process in every domain. Good calibration begins by identifying what kind of uncertainty is present before assigning a number or choosing an update rule.
 status: review
 sources:
   - 164433813.defending-bayes-part-5

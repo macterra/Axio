@@ -1,6 +1,8 @@
 ---
 title: "You're Not a Random Branch"
 subtitle: 'Weighing outcome sectors instead of counting worlds'
+summary: >-
+  Everettian branches cannot ground probability by being counted, because they are emergent record structures whose number changes with coarse-graining. Outcome sectors can instead be weighted by total Born Measure, preserving the experimentally successful difference between a 99/1 experiment and a fifty-fifty one. A bridge from weight to Credence still requires epistemic premises: confidence should answer to evidence, equivalent internal evidence should receive equivalent treatment, and admissible refinements of a representation should not change the induced weight. Under internal-equivalence and refinement-richness assumptions, a recent preprint gives a conditional uniqueness result for refinement-stable induced weight on robust record sectors; applying it physically adds further assumptions and remains unreviewed. Quantum-controlled ancillary systems offer one QBU realization of the needed refinements without treating decompositions as literal world censuses. Low-Measure witnesses who observe maverick frequencies still exist, and the legitimacy of self-locating probability in a deterministic branching world remains open. The disciplined conclusion is to weigh specified sectors rather than count worlds, while keeping geometry, physical applicability, and the epistemic bridge distinct.
 status: review
 sources:
   - 202129157.youre-not-a-random-branch

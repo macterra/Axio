@@ -1,6 +1,8 @@
 ---
 title: 'The Discipline of Updating'
 subtitle: 'Priors, rationalization, and the courage to change your mind'
+summary: >-
+  Cognition interprets before it verifies, using prior expectations to complete ambiguous input and revising only when the fit breaks. A garden-path reading makes that machinery briefly visible: a likely word appears, context contradicts it, and evidence forces the representation to change. The same process can fail at larger scales when present assumptions colonize history, desired conclusions recruit reasons after the fact, or attractive quotations survive because they sound truer than their provenance. Rationalization imitates rationality while reversing its direction, beginning with a protected conclusion and selecting support. Disciplined updating instead makes priors, evidence, alternatives, and possible defeaters explicit enough to challenge. Bayesian structure helps describe revision when the frame is adequate, but arithmetic cannot supply intellectual courage or detect every omitted possibility. Changing one’s mind is not surrender to novelty; it is the practical consequence of keeping confidence answerable to evidence. A live update rule matters more than the performance of certainty.
 status: review
 sources:
   - 172914356.the-garden-path-of-history

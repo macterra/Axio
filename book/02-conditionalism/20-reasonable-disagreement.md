@@ -1,6 +1,8 @@
 ---
 title: 'Reasonable Disagreement'
 subtitle: "What Aumann's theorem actually implies"
+summary: >-
+  Aumann’s agreement theorem is a precise result about ideal Bayesian agents with a common prior whose posteriors are common knowledge under specified information partitions. It does not show that every persistent human disagreement is irrational, nor does ordinary conversation automatically satisfy the theorem’s static assumptions. Real agents may begin with different priors, represent hypotheses differently, possess private evidence, misunderstand one another’s models, or lack common knowledge of the relevant Credences. Even complete exchange of stated reasons may leave differences in judgment about salience, reliability, and model construction that the formal setup excludes. Agreement results can still diagnose a disagreement by asking which assumption has failed and whether further disclosure should move either party. Convergence is therefore evidence of shared structure, not a universal duty to collapse every honest difference into one number. Reasonable disagreement remains possible when its sources are explicit, the participants’ update rules stay responsive, and neither treats persistence alone as proof of the other’s bad faith.
 status: review
 sources:
   - 165822194.aumanns-agreement-theorem
