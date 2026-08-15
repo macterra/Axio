@@ -2,6 +2,8 @@
 title: 'Gated Realities'
 subtitle: 'The sociology of self-segregation'
 status: review
+summary: >-
+  A gated reality is an information environment selected or curated to reduce unwanted contact until absence feels like safety. One timeline cannot establish a platform-wide pattern; the claim requires repeated samples, comparison feeds, defined time windows, and attention to exposure, ranking, self-selection, and moderation. Unlike cancellation imposed on another person, a gated reality can be built inwardly and defended by those it encloses, making insulation feel like integrity. The resulting epistemic immune disorder treats contrary information as contamination rather than possible correction. Digital culture can then become an archipelago of morally comfortable islands whose inhabitants encounter other views chiefly as caricatures. Sorting and filtering are not inherently pathological, and nobody owes attention to every provocation. A filter under individual control is a dial rather than a gate; plural clients, common substrates, revisable settings, and minds able to survive disagreement can keep the channels crossable.
 sources:
   - 176140519.blue-flight
   - 169479666.the-progressive-exodus

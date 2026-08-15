@@ -2,6 +2,8 @@
 title: 'The Wound and the Weapon'
 subtitle: 'Victimhood as currency'
 status: review
+summary: >-
+  Suffering can be both a wound that deserves recognition and a source of leverage in contexts where the wound does not settle the disputed question. Victimhood becomes a currency when testimony, status, or vulnerability purchases procedural authority, insulation from criticism, or jurisdiction over others. The Sowell Test makes the group-level question empirical: does victimhood, held as a group's organizing narrative, purchase what it promises? Adversity does not erase agency, and culture can mediate long-term outcomes, but neither claim makes internal response the sole cause or severity irrelevant. The Infantilization Reflex withdraws agency in the name of protection by treating capable adults as too fragile for ordinary responsibility or disagreement. One currency supports three possible frauds: a personal wound can seize a stage, a group grievance can sustain incentives that worsen outcomes, and vulnerability can be imposed by third parties who profit from speaking for others. Discernment must honor real injury without treating injury as automatic authority.
 sources:
   - 172613358.the-wound-and-the-weapon
   - 170304047.rejecting-victimhood-culture

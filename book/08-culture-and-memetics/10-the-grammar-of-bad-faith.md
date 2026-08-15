@@ -2,6 +2,8 @@
 title: 'The Grammar of Bad Faith'
 subtitle: 'The tactic taxonomy, from person to poll'
 status: review
+summary: >-
+  Bad-faith discourse obstructs inquiry through seven recurring tactics: motivated misinterpretation, double standards, strategic outrage, goalpost shifting, rhetorical bait-and-switch, feigned curiosity, and personal attacks and deflection. The common effect is to make a claim costly to state, impossible to satisfy, or easy to condemn without answering it. A counter-protocol restores inspectable propositions by fixing definitions, asking what evidence would change the conclusion, applying standards symmetrically, and returning attacks on motives to the argument itself. Poll wording can reproduce the same corruption at scale by embedding ambiguity, necessity, group identification, or a moral premise in the instrument before anyone answers. Such instruments may manufacture apparent beliefs rather than measure stable ones. “Violence” requires particular care because physical force, protected expression, coercive threats, and operational participation in harm are not interchangeable. The defense is grammatical precision: identify the tactic, expose the hidden premise, and insist that the same words and standards govern every side.
 sources:
   - 170182045.bad-faith
   - 170122138.silencing-through-stigma

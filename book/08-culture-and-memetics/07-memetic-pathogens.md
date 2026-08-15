@@ -2,6 +2,8 @@
 title: 'Memetic Pathogens'
 subtitle: 'Angel''s wings and burning flowers'
 status: review
+summary: >-
+  Some cultural programs spread under noble ideals while insulating their failures from correction. Four recurring risks are utopian anthropology, bureaucratic capture, perverse incentives, and outcome inversion; they are hypotheses to test, not defects automatically present in every ambitious movement. A memetic pathogen is diagnosed through mechanisms of retention, enforcement, and damage rather than by treating an idea as a literal parasite with intentions. Relentless empiricism is the first antidote: specify baselines, causal evidence, tradeoffs, and conditions under which a program would be revised or stopped. Destructor memes occupy the opposite pole by romanticizing despair, destruction, or extinction, but despair itself is an experience deserving support rather than a moral infection. Phosphorism supplies a proposed counterorientation toward life, intelligence, complexity, flourishing, authenticity, creation, and sovereign agency. Both errors yield to the same discipline: fidelity to what happens and to what is worth preserving.
 sources:
   - 174938004.mind-viruses
   - 176688057.destructor-memes

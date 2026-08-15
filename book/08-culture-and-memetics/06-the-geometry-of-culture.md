@@ -2,6 +2,8 @@
 title: 'The Geometry of Culture'
 subtitle: 'Curved landscapes and black holes'
 status: review
+summary: >-
+  A culture can be represented as a manifold of available interpretations, actions, identities, and social rewards, curved by inherited norms and reinforced expectations. The geometry is not a force field or a mind: it is a model of how some moves become nearby and natural while others become costly, strange, or difficult to perceive. A self-curved manifold emerges when participants reproduce the very conditions that shape their future choices, allowing local conformity to sustain a larger pattern without central direction. The same geometry can organize one mind through internalized habits or many minds through institutions and mutual prediction, but similarity of structure does not erase the difference between persons and populations. Exit can expose the contingency of a local world, yet escape from one culture does not produce a view from nowhere or make all interpretations equally sound. Agency consists partly in learning the curvature, testing its constraints, and finding or creating routes the inherited map made hard to see.
 sources:
   - 173608962.cultural-gravity
   - 170492163.singularities-in-thought-space

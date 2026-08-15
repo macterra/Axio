@@ -2,6 +2,8 @@
 title: 'The Capture of the Professions'
 subtitle: 'Psychiatry, the academy, engineering'
 status: review
+summary: >-
+  A profession earns authority by being trusted to tell inconvenient truths, and capture spends that trust for factional ends. Five symptoms mark the risk: selective redefinition of terms, policy preceding evidence, asymmetric application of principles, a chilling effect on inquiry, and institutional gatekeeping outside core competence. Change alone is not evidence of capture; diagnostic categories, standards, and curricula can properly change with evidence, practice, law, and social values. Psychiatry, the academy, and engineering become warning cases when political pressure displaces transparent error correction or when cultural respect is confused with epistemic relativism. Responsible practice can incorporate history, local knowledge, consultation, and consent while preserving empirical standards and technical reliability. Capture from within also meets obsolescence from without as ideological signaling weakens credentials just when inexpensive machine intelligence reduces their scarcity. The proper test is observable asymmetry and blocked correction, not a presumed hidden motive shared across a profession.
 sources:
   - 170451114.the-quiet-capture-of-psychiatry
   - 171413518.the-fall-of-the-ivory-tower

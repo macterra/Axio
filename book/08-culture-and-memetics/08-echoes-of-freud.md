@@ -2,6 +2,8 @@
 title: 'Echoes of Freud'
 subtitle: 'Anatomy of a meme complex'
 status: review
+summary: >-
+  Freudian theory lost much of its scientific standing while Freudian vocabulary and interpretive habits remained culturally powerful. Terms such as repression, projection, rationalization, denial, fixation, and narcissism compress causal accusations about motives that speakers may not be able to verify. Their persistence reflects several routes: direct Freudian coinage, concepts from the wider Freudian ecosystem, older words rewired by psychoanalytic usage, and folk diagnostics that reproduce the same style of explanation. This inheritance encourages a model of agents as internally fragmented, opaque to themselves, and subordinate to interpreters who claim deeper access to their motives. Self-report should not be treated as infallible, but neither should suspicion become the default proof that an agent's stated reasons are false. Agency must instead be reconstructed through evidence about architecture, authorship, and control, while psychoanalytic interpretations remain hypotheses rather than warrants for authority over another person's mind.
 sources:
   - 182785676.echoes-of-freud
 ---

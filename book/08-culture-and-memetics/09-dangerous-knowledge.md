@@ -2,6 +2,8 @@
 title: 'Dangerous Knowledge'
 subtitle: 'Infohazards, containment, and the contrarian ecology'
 status: review
+summary: >-
+  An infohazard is information that can cause harm through disclosure even when it is true or plausible. Population differences become especially dangerous when intelligence or human worth is forced onto a single ladder, because variation adapted to different environments is then misread as a universal hierarchy. Containment preserves inquiry while disarming the interpretation: keep the evidence, identify the model that makes it toxic, and replace that model where a better one fits. Suppression is a poor default because it drives claims into insulated communities, rewards taboo-breaking performance, and leaves errors uncorrected. Contrarian carriers range from taboo-flipping through provocation-laundering and cynical nihilism to irony protected by deniability, with different capacities to clarify or inflame. The hinge is the interaction among facts, frames, and carriers: the same information can be handled responsibly or converted into a weapon without changing its propositional content.
 sources:
   - 172362753.infohazards-and-games
   - 175065575.an-ecology-of-contrarians

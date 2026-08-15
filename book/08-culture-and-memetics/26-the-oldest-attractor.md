@@ -2,6 +2,8 @@
 title: 'The Oldest Attractor'
 subtitle: 'Antisemitism as a perverse Schelling point'
 status: review
+summary: >-
+  Antisemitism recurs across societies under mutually contradictory rationalizations, suggesting that the reasons offered after the fact are not its stable cause. David Deutsch calls this recurrence the Pattern; a proposed structural account treats it as a perverse Schelling point for coordinating blame under stress. The attractor language refers to an expectation-driven equilibrium, not a conscious chooser or a hidden Jewish network. Refuting each blood libel remains necessary and protects people from particular lies, but belief correction alone may leave the coordination structure intact as a new accusation replaces the old one. Displacement toward actual, identifiable authors of corruption or mismanagement is a less certain proposal, not a solved program. The framing supplies a correctness condition: an intervention that leaves the focal coordination mechanism untouched has not reached the root. This false positive mirrors the forbidden pattern's false negative, revealing two failures in the moral infrastructure that governs collective attention.
 sources:
   - 164271340.the-pattern
 ---

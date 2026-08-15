@@ -2,6 +2,8 @@
 title: 'Weaponized Labels'
 subtitle: 'Motte, bailey, and shibboleth'
 status: review
+summary: >-
+  A weaponized label replaces engagement with reclassification. Its motte is a narrow, defensible meaning; its bailey is the expansive accusation used in practice; rapid movement between them lets a speaker attack broadly while defending modestly. The oscillation can shield people from genuine prejudice, but it can also protect doctrines from criticism and turn reputational risk into a substitute for rebuttal. Labels may then become shibboleths or loyalty badges whose use signals membership and detects defection, even when nobody centrally designed that role. Incentive environments reward such vocabulary because reputational attack is cheaper than argument, while repetition strengthens the boundary it marks. The mechanism is nonpartisan and does not require a conspiracy or a literal pattern-agent. Definitional hygiene begins by locating the motte and bailey, paraphrasing the term plainly, preserving any real grievance that survives translation, and discarding the authentication layer that does not.
 sources:
   - 173137799.the-islamophobia-trap
   - 170274859.progressive-shibboleths
