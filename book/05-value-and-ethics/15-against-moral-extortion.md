@@ -1,6 +1,8 @@
 ---
 title: 'Against Moral Extortion'
 subtitle: 'Need does not create claim'
+summary: >-
+  Need alone does not create a specific enforceable claim against an unconnected agent. Singer's shallow-pond argument moves from an admirable voluntary rescue to an unbounded standing duty by conflating non-aid with caused harm and treating a chosen maximizing premise as universal. Duties can arise from promises, contracts, guardianship, fiduciary roles, authorship, control, and harms for which an agent is responsible; natural misfortune does not by itself identify a debtor. Moral criticism, appeals, guilt, shame, and refusal to associate can exert influence without constituting coercion. Coercion appears when a moralist deliberately conditions a controlled material penalty—such as firing, necessary-service exclusion, or coordinated blacklisting—on compliance: extortion with better manners. Voluntary service can express generosity and endorsed purpose, while extracted service converts another person's life into a resource. Mortality establishes finitude and scarcity of attention, not a duty to make usefulness to others the governing value of a life.
 status: review
 sources:
   - 181154770.against-moral-extortion

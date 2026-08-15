@@ -1,6 +1,8 @@
 ---
 title: 'The Near Misses'
 subtitle: 'Parfit, Rand, and objectivity in the wrong place'
+summary: >-
+  Parfit's Triple Theory and Rand's Objectivism each identify genuine structure before locating objectivity in the wrong place. Convergence among revised Kantian, contractualist, and rule-consequentialist theories can reveal common human constraints, but it does not independently establish a realm of moral facts. Reasons can be stable patterns of preference propagation and mutual justification without becoming metaphysical furniture. Objectivism preserves valuable commitments to reason, flourishing, autonomy, and resistance to sacrificial morality, yet instrumental effectiveness answers what works given an end, not which end has authority over every agent. Predation may pay under asymmetric conditions, and formal freedom from overt force does not exhaust the conditions of consent. Public assessment remains possible: attributed commitments, factual models, conflict rules, and applications can be tested, while agency-preserving capacities can be studied descriptively. Coherence is not ontology, success is not authority, and reciprocal agency must be adopted openly rather than inferred from either.
 status: review
 sources:
   - 184262903.flourishing-and-obligation

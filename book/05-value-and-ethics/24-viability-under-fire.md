@@ -1,6 +1,8 @@
 ---
 title: 'Viability Under Fire'
 subtitle: 'Stress-testing the invariant'
+summary: >-
+  The Ethics of Viability is tested where clean principles encounter tragic structure. In trolley cases, nonintervention is a default rather than a magical exemption, and overriding it requires more than arithmetic. In the burning hospital, locking consenting rescuers inside is authorized restraint, shoving an innocent into danger is imposed force and harm, and “help us or we will hurt you” is coercion because compliance is sought through a conditional threat. The hospital verdict holds the invariant against making an innocent into fuel, but the structurally related innocent-shield case remains in unresolved tension with the moral-debt proposal. Button problems turn on switching functions, threshold credibility, coordination, and honest risk allocation rather than moral types or colors. Blue is justified only as part of a credible agency-preserving threshold strategy; otherwise it can become ineffective martyrdom. No deceptive risk transfer is permitted: advocate the policy you will bear, state its conditions, and keep the argument inside the verdict.
 status: review
 sources:
   - 181274232.viability-ethics-under-fire

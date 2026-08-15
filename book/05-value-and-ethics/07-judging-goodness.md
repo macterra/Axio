@@ -1,6 +1,8 @@
 ---
 title: 'Judging Goodness'
 subtitle: "Moral judgment without a god's eye"
+summary: >-
+  Goodness can be judged without pretending to occupy a view from nowhere. Internal judgment applies the evaluator's own declared standards; external judgment asks whether conduct fits the target agent's or practice's avowed values. Keeping the two modes distinct prevents hypocrisy from masquerading as disagreement and disagreement from masquerading as logical error. Charitable evaluation reconstructs a movement's strongest commitments before testing whether its conduct realizes them, but charity does not require silence about victims or contradictions. Practices, institutions, and ideologies can be assessed as patterns of conduct without treating cultures as unitary persons with one mind. Individuals remain the subjects who value, suffer, choose, and bear responsibility, while social evidence can still reveal recurring incentives and effects. Moral judgment becomes more accountable when the judge, standard, target, evidence, and conditions are named. A god's-eye verdict is unavailable; disciplined, situated judgment is not.
 status: review
 sources:
   - 168901803.judging-goodness

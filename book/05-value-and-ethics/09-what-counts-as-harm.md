@@ -1,6 +1,8 @@
 ---
 title: 'What Counts as Harm'
 subtitle: 'Capacity, consent, and the limits of the concept'
+summary: >-
+  Harm is a material setback to a subject's welfare or an agent's functional capacity or viable option space, relative to an explicit and appropriate baseline. The baseline matters: disappointment, discomfort, offense, loss, risk, and blocked preference are not interchangeable, and a comparison against an imagined ideal can manufacture harm where no setback occurred. Sentient suffering and damage to agency can both qualify, while mere disagreement or failure to provide a benefit need not. Harm is an impact classification, distinct from wrongful harm; consent, causation, foreseeability, duty, authorization, and justification determine responsibility and wrongfulness. Evil adds intention to produce or exploit material harm, dangerousness concerns propensity or risk, and menace concerns a presented threat, so the terms should not substitute for one another. Care that suppresses agency can harm even when benevolently intended, while painful intervention can be justified. Prospective exposure can also become a present setback when risk is materially and non-consensually worsened relative to a proper baseline.
 status: review
 sources:
   - 164935709.what-counts-as-harm

@@ -1,6 +1,8 @@
 ---
 title: 'Innocence and Moral Debt'
 subtitle: 'The contaminated field'
+summary: >-
+  Effective agency is networked, so aggressors can contaminate a field by embedding coercive action among innocent lives and forcing every defensive option through them. One proposed response permits foreseeable harm to innocents only under necessity, minimization, proportionality, attribution to the aggressor, and an unpayable moral debt carried by the defender. Debt does not cleanse the act, convert victims into means, or become a license for retaliation; it records damage that justification cannot erase. Yet this response conflicts with the invariant applied to the burning hospital and occupied building, where innocent people may not be made into fuel. An absolute prohibition can be gamed by aggressors who purchase immunity with other people's bodies, while a defeasible prohibition can be gamed by defenders who inflate necessity. Possible resolutions would preserve the hard rule, distinguish contaminated fields under a precise boundary, or formulate a sharper account of responsibility. The innocent-shield case remains explicitly unresolved: this one is visible; it is not solved.
 status: review
 sources:
   - 191499348.innocence-is-not-armor

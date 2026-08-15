@@ -1,6 +1,8 @@
 ---
 title: 'When Risk Is Harm'
 subtitle: 'Prospective setbacks, baselines, and materiality'
+summary: >-
+  Harm can occur at the moment a decision materially worsens another subject's prospective welfare or an agent's capacity or viable options, rather than only when injury later becomes actual. The comparison requires an explicit appropriate baseline, causal attribution, materiality, and attention to consent; ambient reciprocal risk differs from imposed risk transfer. Consent changes the topology of exposure but does not authorize every consequence or excuse deception, negligence, and undisclosed hazards. An optional QBU description represents policy-dependent distributions across future records, while ordinary probabilistic models can carry the ethical argument without Everettian metaphysics. KL divergence may quantify directional distributional difference, but it cannot provide welfare valence, a baseline, causal responsibility, authorization, or interpersonal value. Prospective harm remains distinct from wrongful harm: due care, rescue, necessity, duty, and justification require separate assessment. Predatory endangerment can justify proportionate defense only with evidence, attribution, authority, necessity, and continuing safeguards.
 status: review
 sources:
   - 181282616.risk-is-harm

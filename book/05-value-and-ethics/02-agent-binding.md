@@ -1,6 +1,8 @@
 ---
 title: 'Agent-Binding'
 subtitle: 'Deriving an is from an ought'
+summary: >-
+  Agent-binding derives an *is* from an *ought*, reversing Hume's prohibited direction without violating it. When an agent asserts that something ought to be done, the claim reveals an empirical fact about that agent: the agent holds, endorses, or performs a normative commitment. Binding identifies the valuer to whom the moral claim belongs; it does not yet show that the claim is true, coherent, sincere, or authoritative for anyone else. Those further questions belong to condition-binding in Conditionalism, where the attributed commitment, factual model, evidence, and rules of application make a verdict empirically assessable under fixed conditions. Conditional objectivity is therefore empirical assessability, not a non-empirical stipulation or a disguised universal morality. Errors remain possible at both stages: attribution can misidentify what an agent values, and application can fail to follow from the conditions. An asserted ought already carries an is—the agent who holds it—and agent-binding brings that agent into view.
 status: review
 sources:
   - 164684907.navigating-moral-realism-with-agent

@@ -1,6 +1,8 @@
 ---
 title: 'Against Utilitarianism'
 subtitle: "Six fractures in Singer's moral arithmetic"
+summary: >-
+  Singer's utilitarianism converts a chosen aggregate objective into a moral ledger authorized to spend individual agency. Six fractures expose the cost: aggregation erases who bears a benefit or loss; demandingness turns every retained resource into debt; coercion becomes merely another ledger cost; impartiality suppresses legitimate authorship and special commitment; moral realism enters without an adequate foundation; and population ethics generates unstable verdicts by treating possible people as entries in one sum. Consequences remain indispensable evidence, but no quantity can decide which welfare function deserves authority or who may enforce it. Kantian respect, consent, and agent-level boundaries cannot be represented as small disutilities without surrendering their function as constraints. The critique is conditional on a chosen commitment to reciprocal agency, not a proof that every valuer must reject aggregation. Utilitarian tools can still compare outcomes inside authorized domains. What fails is the promotion of one optimization rule into universal permission to use some agents as resources for others.
 status: review
 sources:
   - 194936295.against-utilitarianism

@@ -1,6 +1,8 @@
 ---
 title: 'Virtues, Consequences, and Codes'
 subtitle: 'The three traditions, de-objectified'
+summary: >-
+  Consequences, rules, and character remain useful after their claims to agent-independent authority are removed. Consequentialism evaluates outcomes under a chosen objective, deontology encodes commitments as constraints, and virtue ethics cultivates a chosen style of agency through stable dispositions. None can answer “better for whom?” or “according to which standard?” without a valuer and a premise. Rules need no cosmic ruler, but they do need agents or institutions that adopt, interpret, and enforce them; virtues can guide a life without pretending that one character ideal is written into nature. An ethic can therefore be knowingly constructed rather than discovered, and its honesty about authorship does not make it unserious. The three traditions become complementary tools once their distinct functions are preserved instead of collapsed into rival revelations. Reciprocal protection of authorship can likewise be added openly as a public ethical premise, with its consequences tested without presenting the commitment itself as a theorem.
 status: review
 sources:
   - 164892948.virtues-consequences-and-codes

@@ -1,6 +1,8 @@
 ---
 title: 'The Ethics of Viability'
 subtitle: 'A chosen strategy in the ultimate metagame'
+summary: >-
+  The Ethics of Viability chooses reciprocal protection of sapient agency as its governing constraint within the ultimate metagame. It is not derived from persistence, reflective structure, or objective value, and it does not collapse into utilitarianism, deontology, virtue ethics, contractualism, egoism, or natural-rights libertarianism. Consequences matter without licensing aggregation across agents; rules require authority and safeguards; character remains chosen; reasonable rejectability is not hypothetical agreement; self-interest does not guarantee reciprocity. The proposed invariant rejects instrumental harm to innocents while recognizing distinct relations created by authorization, responsibility, protection, and remedy. A coherent defector may not share the premise, so motivational convergence cannot do the work of moral grounding. Procedural Agency supplies fallible evidence, appeal, emergency action, and correction without making procedure self-legitimating. Viability describes what persists; the ethical premise states openly that reciprocal authorship, rather than persistence at any price, is what this framework protects.
 status: review
 sources:
   - 181197275.the-ethics-of-viability

@@ -1,6 +1,8 @@
 ---
 title: 'Sapient Agency Realism'
 subtitle: 'Conditional verdicts with the premise exposed'
+summary: >-
+  Sapient Agency Realism joins an avowed commitment to reciprocal protection of authorship with empirical facts about agents, models, baselines, evidence, and consequences. Value is not derived from agency structure: the normative premise is chosen, and the seam between that premise and the factual application remains visible. Once conditions are fixed, verdicts about coercion, deception, preservation, and destruction become empirically assessable conditional claims open to criticism and correction. Sapient agency establishes the domain in which reasons, commitments, consent, and authored futures can be owned, while sentience grounds welfare even without sovereignty. Standing can vary by evidence and degree, but jurisdiction requires thresholds for practical decisions. Duties arise through authorship, control, promise, responsibility, and accepted relations rather than need alone, and the framework can classify conduct even when its target rejects the premise. *Conditional constructivism* remains an acknowledged alternative label for anyone who reserves realism for mind-independent normative facts.
 status: review
 sources:
   - 205410955.sapient-agency-realism

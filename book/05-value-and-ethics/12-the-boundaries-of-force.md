@@ -1,6 +1,8 @@
 ---
 title: 'The Boundaries of Force'
 subtitle: 'Grounds and safeguards for coercion and force'
+summary: >-
+  Coercion and force are presumptively illegitimate, but classification is not a final verdict. Three families of grounds can justify their limited use: prior authorization, protection against an imminent or continuing violation, and proportionate remedy for an established wrong. Each ground requires evidence, legitimate authority, necessity, proportionality, minimally harmful means, scope limits, and review; a beneficent purpose or correct moral belief is not enough. Authorized restraint differs from coercive compliance, direct defense differs from punishment, and compensation cannot become a license to impose whatever harm produces the preferred outcome. Emergency action may precede full procedure only to the extent the threat and time constraint demand. A moral right, legal right, enforcement mechanism, and authority remain distinct layers, and failure at any layer can make an otherwise intelligible intervention illegitimate. The decision test asks who is acting, under what authorization, against which violation, by what means, with what safeguards and path to correction.
 status: review
 sources:
   - 173541004.the-boundaries-of-force

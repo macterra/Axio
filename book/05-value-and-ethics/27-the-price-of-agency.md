@@ -1,6 +1,8 @@
 ---
 title: 'The Price of Agency'
 subtitle: 'Why preventing evil can endanger agency'
+summary: >-
+  Robust agency includes the possibility that some agents will choose intentional material harm. Eliminating every such possibility would require preemptive control over beliefs, capacities, associations, or choices, transferring authorship from persons to systems in the name of safety. Evil is not intention alone: it involves intention joined to material harm, while prospective risk, wrongfulness, and justified defense retain their separate tests. Partial prevention remains possible through due process, pluralism, realistic exit, environmental design, reversible safeguards, and proportionate defensive coercion grounded in evidence, authority, necessity, and minimally harmful means. No theorem shows that one institutional design has optimized the tradeoff, and coordinated exclusion can itself scale into coercive power. The narrower constraint is that a guarantee against every misuse is incompatible with the strong authorship this framework chooses to protect. Evil is not the refutation of this ethics; it is the receipt—the openly accepted price of preserving agents as authors rather than exhaustively controlled instruments.
 status: review
 sources:
   - 184979362.the-price-of-agency

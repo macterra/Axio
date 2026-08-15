@@ -1,6 +1,8 @@
 ---
 title: 'The Ultimate Metagame'
 subtitle: 'Every game presupposes a player that persists'
+summary: >-
+  Every continuing game presupposes some player, lineage, institution, or commitment that persists long enough to keep participating. This ultimate metagame is a descriptive lens on the material, informational, and organizational preconditions of continued agency, not a hidden chooser or a cosmic objective. Persistence is not itself a value, and the universe does not care which patterns survive; caring is something some persisting patterns do. The conditional claim is narrower: if an agent or project is to continue acting under a specified identity criterion, enough of its relevant organization must endure. Succession, sacrifice, exit, and deliberate termination show that preserving a player is not the purpose of every game. Meaning remains possible because embodied patterns persist long enough to value and act, not because persistence supplies their ends. Agents still choose what to play for and which continuities to protect, while selection analysis can test whether those chosen commitments remain action-guiding under pressure.
 status: review
 sources:
   - 179967878.games-and-metagames

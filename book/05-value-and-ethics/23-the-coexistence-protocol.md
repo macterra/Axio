@@ -1,6 +1,8 @@
 ---
 title: 'The Coexistence Protocol'
 subtitle: 'The procedural layer'
+summary: >-
+  Ambiguity is the normal condition of conflict, so a sharp ethical invariant needs a fallible process for claims of boundary violation. Procedural Agency uses three stages: fact-finding, reconstruction of each agent's Vantage, and a Coexistence Ruling that classifies the act and calibrates the response. Evidence must precede retaliation, uncertainty defaults to innocence, and immediate defense remains limited to proportionate action against an imminent threat. Procedure does not legitimate itself; jurisdiction, authority, error costs, capture resistance, appeal, and enforcement remain subject to the same agency-protection standard. Restitution aims at repair and re-entry rather than blood, while Domain Exit is act-relative, reviewable, and terminable. Exit removes the protocol's shield against proportionate defense but grants no sword for aggression, punishment, or extermination. The protocol scales a chosen invariant by handling disagreement and error without either licensing vendetta or allowing established predators to hide permanently behind ambiguity.
 status: review
 sources:
   - 181293912.the-coexistence-protocol

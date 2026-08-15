@@ -1,6 +1,8 @@
 ---
 title: 'The Myth of Objective Value'
 subtitle: 'The case against value without a valuer'
+summary: >-
+  Value exists only for valuers: without an agent or sentient subject for whom a condition matters, there is no value waiting in the world to be found. Facts constrain action and expose mistakes, but they do not generate terminal ends or moral authority by themselves. Appeals to God, reason, evolution, or intuition can explain commitments, convergence, or practical constraints without establishing agent-independent value. Moral claims therefore begin from normative premises held by agents, and those premises must be stated rather than smuggled in as features of reality. This subjectivism does not make judgment arbitrary, because evidence can identify commitments, factual models can be corrected, and conclusions can be tested under declared conditions. Sapient Agency Realism will eventually choose reciprocal protection of authorship as a governing premise, but that public ethic remains a defended commitment rather than a discovery written into the universe. The loss of objective value is thus the birth of moral agency: responsibility cannot be outsourced to a cosmic order.
 status: review
 sources:
   - 164846085.the-myth-of-objective-value
