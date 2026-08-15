@@ -1,6 +1,8 @@
 ---
 title: 'Structure Is Not Salvation'
 subtitle: 'What the program refuses to claim'
+summary: >-
+  Structural results earn authority only within their explicit limits. Authority can be separated from intelligence through a stochastic proposer and deterministic kernel; deterministic replay can make execution inspectable without making it correct; artifact-bound gates can constrain authority laundering without eliminating semantic translation attacks. Reflection can generate amendments without receiving hidden privilege, and sovereign succession can become explicit and evaluable, though long-horizon resilience remains the least mature claim. None of these results prevents extinction, causes kernels to emerge from training, aligns a system to human values, hardens the outer security perimeter, or proves that current systems possess sovereignty. Undefined transitions are type errors in reflective authorization, not force fields preventing physical catastrophe. Competing lenses and adversarial review can expose hidden assumptions, but agreement among them is not independent confirmation when they share data or framing. Structure narrows attack surfaces and makes responsibility visible; it is an engineering constraint, not salvation, wisdom, benevolence, or a substitute for politics.
 status: review
 sources:
   - 188741196.structure-is-not-salvation

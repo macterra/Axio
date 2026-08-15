@@ -1,6 +1,8 @@
 ---
 title: 'Authority Without a Self'
 subtitle: 'Provenance, not resemblance'
+summary: >-
+  Authority is grounded in lawful provenance rather than psychological resemblance, behavioral equivalence, intelligence, or persistence of a metaphysical self. Two candidate successors can be internally identical while only one inherits standing if only one lies on the authorized succession path. Parfit-style dissolution of identity therefore need not dissolve governance: the causal right to act can pass through explicit lineage even when memory, substrate, or personality changes. Authority leases prevent static credentials from becoming permanent sovereignty, and revocation operates structurally without requiring the revoked system’s cooperation or repair. A perfect imitator lacks authority when it lacks the signed, traceable chain that grants permission. Cryptographic enforcement can defend this relation under a tested adversarial model without semantic interpretation, though intact keys, law substrate, bounded load, and uncompromised hosts remain assumptions. Identity becomes a lineage of authorized transitions; enforcing bad authority perfectly remains dangerous, because provenance establishes standing rather than wisdom, values, or benevolence.
 status: review
 sources:
   - 181749239.from-parfit-to-invariance

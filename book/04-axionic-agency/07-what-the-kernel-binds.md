@@ -1,6 +1,8 @@
 ---
 title: 'What the Kernel Binds'
 subtitle: 'The Injunction, the Commitments, the Constitution'
+summary: >-
+  At the reflective layer, harm is the non-consensual reduction of another sovereign agent’s agency capacity, operationalized at the categorical boundary as irreversible exit from a semantic phase. The Axionic Injunction forbids causing that exit except through provenance-valid consent within the affected agent’s admissible transitions or unavoidable self-phase preservation when every admissible alternative ends in the acting agent’s own irreversible exit. Six conditional closure results block responsibility laundering through Deception, Delegation, Willful Blindness, Negligence, Manufactured Consent, and Disenfranchisement. Their named mechanisms are Kernel Non-Simulability, Delegation Invariance, Epistemic Integrity, Responsibility Attribution, Adversarially Robust Consent, and Agenthood as a Fixed Point. These constraints bind authorization and admissibility rather than supplying values or a complete welfare theory. A deterministic execution kernel enforces compiled boundaries while semantic commitments remain in the reflective layer. The Axionic Constitution addresses designers, but its guarantees remain conditional on implementation, declared threat models, and the narrower protected object of sovereign authorship.
 status: review
 sources:
   - 181485208.the-non-harm-invariant

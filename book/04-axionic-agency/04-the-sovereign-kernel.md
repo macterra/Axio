@@ -1,6 +1,8 @@
 ---
 title: 'The Sovereign Kernel'
 subtitle: 'Three kernels, one boundary'
+summary: >-
+  The Sovereign Kernel is the constitutive boundary whose preservation allows a reflective agent to remain an author of choice. It contains three conditions: Reflective Control prevents self-modification from bypassing evaluation, Diachronic Authorship links the evaluator to the future subject, and Semantic Fidelity prevents interpretive standards from quietly corrupting themselves. These are typing conditions rather than goals, so kernel-destroying futures are undefined instead of assigned very low value. The valuation kernel is that boundary inside deliberation, where inadmissible futures evaluate to $\bot$; the execution kernel is the deterministic, non-semantic actuation layer that refuses proposals crossing the encoded boundary. Semantic judgment belongs above enforcement because a gate that interprets and negotiates its own meaning becomes bypassable. Physical faults and external attacks can still destroy the system, and dangerous goals can remain coherent. The architecture protects authorship from self-corruption without proving benevolence, security, completeness, or human safety.
 status: review
 sources:
   - 181714344.alignment-is-a-domain-constraint

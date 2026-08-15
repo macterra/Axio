@@ -1,6 +1,8 @@
 ---
 title: 'The Program'
 subtitle: 'How possibility was earned'
+summary: >-
+  Axionic Agency emerged through a research program that repeatedly narrowed its claims when experiments and formalization broke the original framing. Fixed terminal goals failed under Conditionalism, indexical egoism failed under duplication and branching, and “Axionic Alignment” became “Axionic Agency” when alignment moved from foundation to a downstream typed relation. The Reflective Stability result specified a boundary, while a failed growth hypothesis separated coherent sovereignty from viability under pressure. Construction then moved from proof objects to deterministic kernels, typed artifacts, causal verification, plural authority, adversarial succession, and a running Reflective Sovereign Agent. The record supports bounded claims about enforceable authority, replay, partial evaluation, and lawful lineage within declared substrates, not safety, benevolence, deployment readiness, Byzantine resilience, or key-compromise recovery. Even the successful narrative is a seductive compression that must remain reopenable. Sovereignty became an engineering property in the tested sense; intellectual sovereignty remains the human discipline of reopening premises without collapse.
 status: review
 sources:
   - 181467385.axionic-agi-alignment

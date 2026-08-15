@@ -1,6 +1,8 @@
 ---
 title: 'Possibility Became Real'
 subtitle: 'From proof-object to running artifact'
+summary: >-
+  A Minimal Viable Reflective Sovereign Agent is the smallest architecture in the tested design family known to make self-endorsed reasons causally constrain action while remaining viable. Justifications compile into constraints before a blind selector chooses among permitted actions, separating semantic reasoning from non-semantic execution. Ablations show that traceability, reflective write access, persistence of normative state, and semantic access are load-bearing within this architecture; collision feedback alone did not recover relations among opaque rules. The running Reflective Sovereign Agent amended its law, delegated and revoked bounded authority, survived churn and stochastic inhabitation, and rotated identity through a hash-anchored succession chain while preserving deterministic replay. Active treaties suspend at succession and require explicit ratification, preventing silent inheritance or zombie delegation. These results establish a proof of concept within a single-sovereign, trusted-observation, non-Byzantine substrate. Possibility means the declared boundary can be made real, not that it is correct, secure, complete, aligned, or ready for deployment.
 status: review
 sources:
   - 185750490.minimal-viable-reflective-sovereign
