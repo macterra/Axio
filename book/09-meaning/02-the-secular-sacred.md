@@ -2,6 +2,8 @@
 title: 'The Secular Sacred'
 subtitle: 'The protected priority'
 status: review
+summary: >-
+  A sacred value occupies a protected place in practical ordering: it is not for ordinary sale, or it can outweigh many competing goods under specified conditions. Protected commitments may form one apex, a cluster, thresholds, or context-sensitive conflict rules rather than a single scalar hierarchy. Three accounts illuminate different levels. Robin Hanson treats sacredness socially as coalition glue; David Chapman treats it phenomenologically as an interactive mode of engagement; the architectonic account treats it as the commitment or rule that arbitrates within an agent's value structure. None exhausts supernatural, ritual, communal, or experiential uses of the word. A secular agent can identify what performs this protected role without claiming to discover an objective sacred substance. Sacred commitments remain open to extraordinary revision through evidence, conflict, and encounter even when shielded from routine bargaining. The practical counsel is to know what you protect and decide reflectively whether it deserves that authority.
 sources:
   - 179826744.secular-sacredness
 ---

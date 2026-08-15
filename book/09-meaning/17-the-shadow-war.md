@@ -2,6 +2,8 @@
 title: 'The Shadow War'
 subtitle: 'Refusing the frames of the old gods'
 status: review
+summary: >-
+  *Babylon 5*'s Shadow War dramatizes two ancient powers imposing rival theories of development on younger civilizations. The Vorlons ask “Who are you?” and harden order into obedience, while the Shadows ask “What do you want?” and harden struggle into compulsory conflict. Both questions contain conditional insight, yet each becomes coercive when backed by superior force and treated as an unconditional law. Sheridan's refusal rejects the inherited binary rather than choosing its kinder master. The alternative is responsibility: agents must interpret circumstances, author values, and remain answerable for the futures they help create. Agency prevents meaning from being outsourced, interpretation keeps useful lenses from becoming prisons, coercion identifies guidance backed by credible threatened harm, and Conditionalism exposes absolutes built from partial truths. The fictional resolution presents adulthood as the refusal of ancient frames, not proof that every inherited tradition or powerful adviser should be discarded.
 sources:
   - 179726756.the-shadow-war
 ---

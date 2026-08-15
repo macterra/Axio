@@ -2,6 +2,8 @@
 title: 'Religion as Memetic Engineering'
 subtitle: 'Meaning as an engineerable function'
 status: review
+summary: >-
+  Religion can be modeled functionally as a system that helps produce and transmit narrative, community, morality, identity, practice, and existential meaning. This model is neither an exhaustive definition nor a claim that doctrine is mere packaging to adherents. The Church of Virus tested whether a disclosed secular meaning-system could keep useful functions while changing unsupported mechanisms. Its chosen virtues were Reason, Empathy, and Vision; its sins were Faith, Apathy, and Hypocrisy, with faith used narrowly for belief insulated from relevant correction. Exemplars, long-term flourishing, structured discourse, and collective epistemic hygiene replaced supernatural authority, eschatology, priesthood, and opaque ritual. The design exposed its own memetic blueprint so participants could audit, endorse, revise, or reject it. Its existence shows that components can be deliberately assembled, not that engineered systems will match historical religion's depth or persistence. Whether transparent memetic engineering can sustain meaning across generations remains empirical and open.
 sources:
   - 178981771.religion-as-memetic-engineering
 ---

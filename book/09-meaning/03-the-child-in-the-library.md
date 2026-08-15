@@ -2,6 +2,8 @@
 title: 'The Child in the Library'
 subtitle: 'God as the lawful order of nature'
 status: review
+summary: >-
+  Einstein's image of humanity as a child in a vast library expresses awe before lawful order without proving that the library has an author. The parable supplies a posture of humility: human beings can discern regularity and intelligibility while understanding only a small part of the whole. Einstein's and Spinoza's language of God naturalizes divinity into the lawful order of nature rather than preserving a personal will that commands, intervenes, judges, or answers prayer. Calling that order “God” may retain poetry and reverence, but it does not by itself settle theism against atheism. The universe has produced creatures capable of reading some of its structure, and that reflexive fact can be wondrous without becoming evidence of design. Beauty is welcome to carry the image so long as it is not mistaken for an argument. The child's awe establishes a reader; the library analogy alone establishes no cosmic author.
 sources:
   - 178614255.the-child-in-the-library
 ---

@@ -2,6 +2,8 @@
 title: 'The Ethics of Affluence'
 subtitle: 'Choosing worthy struggles'
 status: review
+summary: >-
+  Affluence removes many inherited struggles without automatically supplying worthy replacements. Agency becomes legible through constraint, consequence, and foregone alternatives, so an endless menu of cheap and reversible choices can make preferences easy to express and difficult to rank. Passive affluence dissolves into consumption, distraction, or dependence; wielded affluence converts surplus capacity into deliberately chosen projects, disciplines, relationships, and service. The answer is not manufactured suffering, scarcity worship, or flight from prosperity. Worthy struggles must be authored with sagency so that friction develops capability and meaning rather than becoming masochism, spectacle, or domination. Practical wisdom distinguishes a constraint worth choosing from pain that merely harms. Prosperity is therefore an opening: freedom from compulsory struggle can become freedom for participation, creation, care, and reflectively endorsed commitments. Abundance flourishes when it is wielded rather than inhabited passively.
 sources:
   - 174661679.the-ethics-of-affluence
 ---

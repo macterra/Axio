@@ -2,6 +2,8 @@
 title: 'Three Deflations'
 subtitle: 'The Trinity, Being-itself, and the agency-attractor'
 status: review
+summary: >-
+  Three sophisticated conceptions of divinity can be granted their strongest structural content without establishing the richer theology attached to them. Hall's Trinity becomes relational structure, Hart's Being-itself becomes existence rather than a personal being, and Bach's agency-attractor becomes a coordination equilibrium rather than a conscious cosmic agent. Translation preserves some explanatory insight while revealing that ordinary naturalistic facts were doing the required work. A proposed alternative triad keeps the registers distinct: Measure is normalized Born weight within the optional Quantum Branching Universe model, Vantage is the conditioning record anchoring a physical here-and-now, and Phosphorism is a consciously chosen value system. Measure is not divine probability, Vantage is not consciousness, and Phosphorism is not a cosmic optimum. Deflation does not disprove everything the theological concepts mean; it asks what survives once supernatural or agentive implications are removed. Reverence may remain after superstition leaves, but vocabulary alone cannot restore a god.
 sources:
   - 165822622.the-trinity-and-relational-metaphysics
   - 172226036.the-theological-shell-game

@@ -2,6 +2,8 @@
 title: 'Spirituality Without Spirits'
 subtitle: 'The word as living fossil'
 status: review
+summary: >-
+  “Spiritual” is a living fossil: a word formed when breath, life, and invisible spirit belonged to one ontology, still carrying that inheritance after many users have set the ontology aside. Its modern secular content includes awe, reverence, significance, alignment, self-transcendence, and orientation toward something larger than the everyday self. The persistence of the word does not prove spirits, and naturalistic explanation does not make the experiences unreal. One chosen approach preserves the hunger while leaving the haunting open to examination. Sacredness can then be reconstructed as a protected practical role, transcendence studied as experience, and existential meaning inherited, encountered, revised, and made by participating agents. This is a proposed secular interpretation rather than the essence that every spiritual tradition secretly shares. The avowed orientation is simple and revisable: keep the capacities that enrich finite life without treating their inherited metaphysical explanation as self-authenticating.
 sources:
   - 171158991.understanding-spirituality
 ---

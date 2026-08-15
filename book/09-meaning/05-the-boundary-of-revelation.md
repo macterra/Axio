@@ -2,6 +2,8 @@
 title: 'The Boundary of Revelation'
 subtitle: 'Genuine transcendence and spurious metaphysics'
 status: review
+summary: >-
+  Inner experience is direct evidence that something happened in a mind, not automatic evidence for a metaphysical claim beyond it. A genuine revelation would need independent convergence, novel predictive power, internal consistency, control for cultural expectation, and objective informational gain. Psychedelic awe, ego dissolution, unity, and significance are real phenomenology whose interpretation remains underdetermined; intensity does not turn Credence into truth. The mirror error dismisses dreams as meaningless because they lack an external author or universal code. Dreams can instead supply fallible material about memory, emotion, and preoccupation without functioning as authoritative messages or transparent readouts. Semantic meaning and existential meaning need not have been deliberately encoded to emerge through disciplined interpretation. The boundary therefore resists both inflation and premature deflation: keep transcendence and possible self-knowledge, but require independent evidence before an experience becomes knowledge about the cosmos.
 sources:
   - 168172842.the-limits-of-psychedelic-revelation
   - 170103594.interpreting-dreams

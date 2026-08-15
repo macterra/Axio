@@ -2,6 +2,8 @@
 title: 'Letter to the Faithful Reader'
 subtitle: 'An envoi'
 status: review
+summary: >-
+  To the faithful reader: the naturalistic reconstruction offered here is an invitation to examination, not a demand that reverence be extinguished. Sacredness can be studied as protected commitment, transcendence as experience, and revelation as interpretation requiring evidence without pretending those proposals capture every theology. Gods and immortal souls are set aside because they are not found credible, yet awe, ritual, fidelity, moral seriousness, and the hunger for meaning remain welcome. You need not pretend that the sacred is peripheral to your life, and I will not pretend that supernatural claims persuade me. Honest disagreement can still occupy a shared territory of wonder, considered commitment, and respect for truth. This closing is reconciliation rather than triumph: an avowed hope that scrutiny can deepen reverence rather than destroy it. If there is a God worth reverence, it will not fear examination.
 sources:
   - 178615066.letter-to-the-faithful-reader
 ---

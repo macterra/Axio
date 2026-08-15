@@ -2,6 +2,8 @@
 title: 'Sagency'
 subtitle: 'Power disciplined by wisdom'
 status: review
+summary: >-
+  Sagency is power disciplined by wisdom: the ability to act as a sage would act, converting understanding and judgment into motion. Its three factors are comprehension, discernment, and embodiment. Comprehension sees context, causality, and consequence; discernment judges what matters; embodiment pays the cost of enacting what understanding demands. Their multiplication is a diagnostic analogy rather than a validated cardinal scale, emphasizing that a missing factor can nullify the modeled whole. Sagency pursues coherence rather than goals alone, asking whether an intervention preserves and illuminates the surrounding systems instead of merely hitting its target. Power becomes stewardship when side effects, timing, restraint, uncertainty, and second-order consequences enter the act itself. The orienting synthesis is stated plainly: power without wisdom is destruction, wisdom without power is irrelevance, and sagency is their synthesis.
 sources:
   - 176418100.sagency
 ---

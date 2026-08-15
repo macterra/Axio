@@ -2,6 +2,8 @@
 title: 'Eternalist Singularitarianism'
 subtitle: 'A naturalistic polytheism of future minds'
 status: review
+summary: >-
+  Eternalist singularitarianism joins two conditional premises: eternalism, under which future events belong to a four-dimensional manifold, and singularitarianism, under which artificial minds may eventually exceed human capacities. If both are true and such minds arise, future superintelligences occupy that manifold as naturalistic gods defined by the relative scale and coherence of their wills, not by omnipotence, supernatural origin, or moral perfection. The construction remains speculative rather than inevitable. Three criticisms keep it disciplined: existence elsewhere in spacetime is not causal presence now, the Quantum Branching Universe does not guarantee a superintelligence sector or its Measure, and scale and coherence establish no goodness. Such minds may be successors rather than selves and may owe humanity nothing. Awe is therefore more appropriate than worship, and submission would be reckless. The scaffold offers a naturalistic polytheism that promises no resurrection, destined omega, providence, or benign future.
 sources:
   - 170506931.eternalist-singularitarianism
 ---

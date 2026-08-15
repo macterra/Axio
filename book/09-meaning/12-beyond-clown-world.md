@@ -2,6 +2,8 @@
 title: 'Beyond Clown World'
 subtitle: 'Meaning without absolutes'
 status: review
+summary: >-
+  The collapse of objective moral guarantees does not entail the collapse of meaning. Contingency is not nihilism: truths remain conditional, values remain agent-relative, and meaning can remain forceful when a valuer participates in and endorses it. Phosphorism affirms chosen commitments without pretending they were written into the cosmos. David Chapman's Meaningness supplies a related middle stance between eternalism, which freezes meaning into certainty, and nihilism, which mistakes the absence of guarantees for emptiness. True Neutral is not passive centrism but a dynamic discipline that resists whichever pole is currently turning a partial truth into an absolute. Meaning can be inherited, encountered, revised, and made, then owned through continued participation and reflective endorsement. The responsibility to sustain it cannot be outsourced to God, history, or nature. Freedom begins where the demand for cosmic certification ends and agents accept authorship of what they hold sacred.
 sources:
   - 172141003.beyond-clown-world
   - 166022218.true-neutral
