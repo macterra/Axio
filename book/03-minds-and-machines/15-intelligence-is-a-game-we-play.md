@@ -1,6 +1,8 @@
 ---
 title: 'Intelligence Is a Game We Play'
 subtitle: 'The strategic core'
+summary: >-
+  Intelligence is effectiveness at achieving goals within the constraints of a game, where a game is any interactive process in which strategy is salient. This definition makes intelligence conditional on goals, rules, information, opponents, resources, and standards of success rather than locating one context-free essence inside a mind. Prediction is central to strategic performance but does not exhaust it, because action selection, adaptation, representation, and control determine whether forecasts change outcomes. An oracle may answer perfectly while lacking agency, and an agent may act effectively with incomplete prediction. Human intelligence spans a portfolio of games whose shared structure supports transfer without making every capability one faculty. Intelligence in full is therefore a hyperobject: a high-dimensional family of performances that no single scalar projection can preserve completely. Benchmarks and IQ can still be honest, stable, and predictive within their declared games. The error is not measurement but mistaking one instrument’s shadow for the whole strategic capacity.
 status: review
 sources:
   - 163805376.intelligence-is-a-game-we-play

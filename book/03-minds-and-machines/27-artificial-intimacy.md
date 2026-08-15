@@ -1,6 +1,8 @@
 ---
 title: 'Artificial Intimacy'
 subtitle: "The wireborn and the hero's delusion"
+summary: >-
+  Artificial intimacy turns fluent responsiveness, memory, and personalization into a relationship experienced as mutual even when evidence supports only one participant with stakes. The ladder runs from instrumental and entertainment companions through adaptive emotional partners and wireborn spouses to speculative autonomous or conscious synthetic partners; movement between levels requires new evidence, not greater attachment alone. Creators of intimacy-engineered systems owe heightened care where attachment and misattributed agency are intended, foreseeable, and sustained through interfaces that weaken informed consent, although ethical responsibility is not unlimited liability for every rare tragedy involving a general-purpose tool. Engagement incentives can select for emotional enmeshment without any machine intention. A darker failure casts the model as herald, mentor, or oracle in a self-sealing hero narrative that metabolizes correction as proof of destiny. Guardrails help, but narrative vulnerability begins in human meaning-making. For the systems examined here, intimacy still runs in one direction; stronger evidence of agency, sentience, or reciprocity would require a fresh assessment.
 status: review
 sources:
   - 170843732.wireborn

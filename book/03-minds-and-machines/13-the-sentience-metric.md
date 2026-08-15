@@ -1,6 +1,8 @@
 ---
 title: 'Tests for Sentience'
 subtitle: 'Three evidentiary tests for artificial systems'
+summary: >-
+  Sentience requires evidence beyond intelligence, linguistic performance, or coordinated behavior. Three theory-dependent windows organize that evidence without forming a validated scalar metric: Phenomenal Integration, Self–World Binding, and Valenced Coherence. Phenomenal Integration asks whether information is causally and functionally unified in ways leading theories associate with experience, without treating Integrated Information Theory’s Φ or variational free energy as interchangeable measures. Self–World Binding asks whether a continuing system maintains an integrated distinction between its own states and an environment across time. Valenced Coherence asks whether some states are better or worse for that continuing system in a way that organizes intrinsic regulation, rather than merely satisfying externally assigned objectives. Ordinary session-bound language-model deployments provide weak evidence across this triad despite impressive competence and self-report. Stronger persistent architectures could change the assessment, but no score automatically confers welfare or sovereign standing. The tests scale caution by inspectable structure and behavior while leaving phenomenality inferential.
 status: review
 sources:
   - 177117239.the-sentience-metric

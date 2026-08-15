@@ -1,6 +1,8 @@
 ---
 title: 'Catalysts in the Wild'
 subtitle: 'From theorem-proving to triadic intelligence'
+summary: >-
+  Dialectic Catalysts already appear in research when machine-generated reframing helps a human investigator escape a conceptual bottleneck and the human verifies the result. A quantum complexity result on black-box QMA amplification illustrates the minimal pattern: language-model intervention supplied a useful route, while mathematical warrant remained with the researchers and proof. The deeper engineering lever is the interpreter around a model—the persistent instructions, standards, memory, and epistemic role that shape how coherence is produced and tested. As coherent output becomes abundant, agreement among similar models loses value and structured divergence becomes scarce. Triadic intelligence introduces a second, deliberately different perspective so disagreement can expose assumptions rather than merely multiply assent. Symbolic reasoners, theorem provers, probabilistic programs, and models trained toward divergent objectives may add further independent axes. The catalyst is therefore an architecture for constructive interference, not evidence that its components share agency. What the system helps discover remains governed and owned by human verification.
 status: review
 sources:
   - 174855132.dialectic-catalysts-in-the-wild

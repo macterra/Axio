@@ -1,6 +1,8 @@
 ---
 title: 'Tool Bias'
 subtitle: 'When intelligence flatters its own instruments'
+summary: >-
+  Every powerful intellectual instrument exerts a pull toward explanations shaped like itself. Bayesian fluency can turn correlated sensor channels into independent witnesses, interpret missing evidence as coordinated concealment, and add flexible epicycles that protect an attractive high-order hypothesis from mundane alternatives. The danger is not Bayesian arithmetic but a modeler selecting priors, likelihoods, and dependencies through a lens that rewards its own favorite structures. Ambiguous evidence is especially vulnerable because sophisticated tools can manufacture precision where the underlying signal remains weak. A corrective discipline taxes flattering evidence: test channel dependence, prefer lower-order mechanisms until higher-order agency earns its cost, seek disconfirming observations, and compare how the favored model handles silence without improvisation. Expertise does not remove tool bias; it gives bias sharper instruments. Intelligence is a portfolio whose components can overfit the world to their own affordances, so restraint requires keeping the lens visible while reasoning through it.
 status: review
 sources:
   - 180334193.tool-bias

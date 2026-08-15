@@ -1,6 +1,8 @@
 ---
 title: 'Coercion Beats Intelligence'
 subtitle: 'The power substrate'
+summary: >-
+  Intelligence does not govern by itself; it becomes socially effective through institutions, resources, legitimacy, and organized power, including coercive capacity. A more capable system can advise, persuade, optimize, or manipulate, but durable rule requires control over enforcement substrates and the organizations that authorize them. Protective shells such as law, rights, professional norms, distributed authority, and accountable institutions keep intelligence from becoming arbitrary command. Artificial systems may strengthen or weaken those shells depending on who controls deployment, how privileges are separated, and whether failures remain attributable and correctable. Interpretability, corrigibility, staged deployment, and identifiable responsibility can improve options without eliminating frontier risk. Reflective or superior reasoning does not automatically confer legitimate authority, and coercive dominance does not establish wisdom. The narrow opportunity is architectural and institutional: bind powerful cognition to structures that preserve agency, keep correction possible, and prevent control from escaping the rules meant to govern it.
 status: review
 sources:
   - 200023446.coercion-beats-intelligence

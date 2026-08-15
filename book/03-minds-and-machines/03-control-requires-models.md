@@ -1,6 +1,8 @@
 ---
 title: 'Control Requires Models'
 subtitle: 'The Good Regulator and its levels'
+summary: >-
+  Effective regulation requires task-relevant structure corresponding to the system being controlled, but the Good Regulator Theorem is narrower than its slogan. Under a specified system, payoff relation, and entropy-minimizing optimal regulator, Conant and Ashby show that an optimal regulator can be mapped homomorphically onto the regulated system. The resulting model is a structural correspondence, not necessarily an explicit semantic representation understood by the regulator. Flexible control benefits from richer internal models because prediction and counterfactual adjustment improve performance across disturbances, yet simple lookup structures can satisfy minimal cases. External intentional models belong to another level: observers may attribute beliefs and goals to explain conduct, while the constitutive control structure remains a separate claim. Control theory therefore motivates internal modeling without proving representational realism, consciousness, or phenomenality. Recursive self-modeling becomes a candidate engineering step toward consciousness only after further architectural and identity premises are added.
 status: review
 sources:
   - 179071634.control-requires-models

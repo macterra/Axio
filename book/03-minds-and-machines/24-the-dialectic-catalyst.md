@@ -1,6 +1,8 @@
 ---
 title: 'The Dialectic Catalyst'
 subtitle: 'A partner that is not an agent'
+summary: >-
+  The Dialectic Catalyst is a human–AI practice in which a language model generates objections, alternatives, syntheses, and reformulations while the human retains verification, judgment, authorship, and whole-system responsibility. Its value comes from cheap coherent variation and tireless challenge, not from an artificial subject caring whether the result is true. Persistent memory can make the catalyst more powerful by carrying context across exchanges, but accumulation alone does not create preference, stakes, or ownership under the Agency Criterion. The machine contributes functional cognition; the human supplies the goals, consequences, and decision about what enters the world. Calling the relation a partnership describes a division of labor rather than reciprocity or shared agency. Dependence, drift, flattery, and overfitting remain risks in the human use of the amplifier even when no hidden machine intention exists. The practice works when thinking is distributed but choosing remains identifiable, leaving every published claim and error answerable to a human author.
 status: review
 sources:
   - 163210650.introducing-the-dialectic-agent

@@ -1,6 +1,8 @@
 ---
 title: 'The Geometry of Inner Speech'
 subtitle: 'Projection, not narration'
+summary: >-
+  Inner speech can involve prediction while also functioning as projection: rich cognitive content is rendered into a lower-bandwidth auditory format for rehearsal and inspection. The same neural machinery can project traces generated from current cognition or reactivated from memory onto an auditory surface, producing voice-like phenomenology without external sound. This rendering is not the whole of thought, because spatial, affective, motor, visual, and relational cognition can carry structure that words compress or omit. Treating narration as cognition itself creates the inner-monologue fallacy and mistakes a report interface for the underlying process. Verbal fluency therefore neither proves understanding nor exhausts the machinery that may support it, while an absence of inner speech does not establish cognitive deficit. Large language models sharpen the distinction by producing exceptionally coherent linguistic surfaces from architectures whose broader understanding and agency require separate evidence. The words are an interface, not the whole engine; the shadow cannot identify the shape that cast it.
 status: review
 sources:
   - 176068779.the-geometry-of-inner-speech

@@ -1,6 +1,8 @@
 ---
 title: "Why Zombies Don't Evolve"
 subtitle: 'What consciousness is for'
+summary: >-
+  An evolutionary account of consciousness must identify a function without assuming that adaptive control and phenomenal experience are already identical. The Modeler-Schema Theory proposes controlled coherence: finite organisms select what matters, stabilize a usable World Model, track self-state, and correct their representations under scarce attention and changing action. The proposed Quale World Model serves as the Modeler-schema’s comparison format, while report and rationalization belong downstream to the Controller. Selection can explain why such integrated control architecture is useful, but it cannot independently prove that the architecture is phenomenal rather than nonconscious. Philosophical zombies expose that disputed identity instead of functioning as biological rivals whose evolutionary history can be observed. Session-bound language models demonstrate that verbal reports about experience are weak evidence for the required control loop; persistent world-maintenance under risk, interruption, memory, and self-regulation would matter more. Evolution supports the functional importance of controlled coherence, while consciousness as its interior face remains the theory’s conditional premise.
 status: review
 sources:
   - 196565307.why-zombies-dont-evolve

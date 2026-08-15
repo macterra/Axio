@@ -1,6 +1,8 @@
 ---
 title: 'Mirrors of the Mind'
 subtitle: 'Consciousness as self-model, objections answered'
+summary: >-
+  The Agency-Model Theory proposes that phenomenal character is identical to transparent access to an agent’s self-model. A self-model integrates bodily states, sensory structure, possible actions, commitments, and higher-order representations without requiring an inner observer to inspect them. Transparency makes the represented world and self appear directly given, concealing the modeling process and generating the intuition that experience must be an additional substance. If the identity claim holds, the hard problem is conditionally dissolved rather than solved by deriving phenomenality from non-phenomenal premises; critics can still deny that functional and representational facts exhaust experience. Alterations of body ownership, self-recognition, and reported phenomenology constrain the functional account but do not by themselves distinguish identity from correlation. Substrate neutrality is a testable commitment, not an automatic consequence of computation, and self-modeling alone is not a consciousness certificate. Consciousness remains real on this proposal; what is rejected is the ghost beyond the organized physical process.
 status: review
 sources:
   - 173236908.mirrors-of-the-mind

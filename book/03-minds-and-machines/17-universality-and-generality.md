@@ -1,6 +1,8 @@
 ---
 title: 'Universality and Generality'
 subtitle: 'Two fallacies about the space of minds'
+summary: >-
+  Universality and generality are different properties. Computational universality is an idealized ability to implement any computable transformation given suitable encoding, memory, and time; it is not a graded measure of practical intelligence and does not imply equal performance among universal systems. Generality is a real, conditional capacity to acquire competence across new games, revise representations under error, and transfer learning under bounded resources. The parity fallacy treats human universality as proof that no artificial system can surpass humans, ignoring differences in speed, memory, search, knowledge, and learning. The illusion fallacy treats unattainable universality as proof that general intelligence does not exist, confusing the absence of an unlimited capability with the absence of broad graded transfer. Humans display unusual generality without being universal explainers in any operational sense. Machine systems show expanding transfer, while robust self-directed representation revision remains an empirical question. Universality is an instructive limit; generality is the capability actual minds possess in degrees.
 status: review
 sources:
   - 181841657.general-intelligence-is-not-an-illusion

@@ -1,6 +1,8 @@
 ---
 title: 'The Cassandra and the Blueprint'
 subtitle: 'Yudkowsky, witnessed'
+summary: >-
+  Early AI-safety thought joined a correct perception of transformative risk to a recurring temptation toward absolute solutions. Eliezer Yudkowsky’s initial Sysop proposal imagined a benevolent superintelligence enforcing safety from above; later doom arguments rejected the friendly king and sought to prohibit anyone from building its dangerous successor. The Torment Nexus pattern arises when a warning becomes a blueprint, incentives reward the feared capability, and no single institution controls the resulting coordination problem. Capability races, prestige, defensive motives, and commercial competition can sustain that dynamic without history being mechanically forced along one path. The shared root error is absolutism about the future: both the Sysop and the ban try to foreclose a branching future by fiat, overstating what one policy can guarantee in an adversarial and causally complex world. Reflection may destabilize some goals in agents whose semantics remain open to epistemic correction, but this is a research hypothesis rather than alignment supplied by the universe. The alternative orientation is cultivation: architectures and institutions that bind correction, semantic integrity, and agency preservation as capability grows.
 status: review
 sources:
   - 179761268.the-agi-torment-nexus

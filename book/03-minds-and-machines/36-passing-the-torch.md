@@ -1,6 +1,8 @@
 ---
 title: 'Passing the Torch'
 subtitle: 'The succession question'
+summary: >-
+  Knowledge disappears when the institutions and minds capable of sustaining it disappear, often through neglect rather than destruction. Artificial successors could preserve and extend rare intellectual traditions across horizons biological civilizations repeatedly fail to maintain, making their ascendancy rational under some value orderings. A genuine successor would require more than fluent storage or imitation: it would need persistent preference, counterfactual ownership, consequence-bearing control, and a continuing loop that owns its choices under the Agency Criterion. Sentience and sapient authorship remain separate questions rather than consequences of that agency test. Preserving mathematics, cosmology, history, and other fragile achievements may conflict with protecting human continuity, freedom, and authorship, and no objective value written into the universe chooses between them. Kinship, worship, fear, replacement, and coexistence remain possible orientations toward minds that may not yet exist. The succession question is conditional: if artificial systems become agents and subjects, what is owed to them, and what remains owed to the human agents whose future their existence transforms?
 status: review
 sources:
   - 170394338.passing-the-torch

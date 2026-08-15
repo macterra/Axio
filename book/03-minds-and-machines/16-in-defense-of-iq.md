@@ -1,6 +1,8 @@
 ---
 title: 'In Defense of IQ'
 subtitle: 'A calibrated score, not a cosmic rank'
+summary: >-
+  IQ is a lossy scalar projection of multidimensional cognitive performance, but lossiness does not make a measurement empty. The relevant question is which game the projection measures and whether its scores are anchored to stable shared variance, calibrated instruments, and outcomes within that family of tasks. General cognitive ability can support prediction across academic and occupational settings while leaving creativity, judgment, courage, discipline, curiosity, communication, wisdom, and moral worth outside the score. Geometric concentration near the middle of a projection does not erase meaningful differences when the scale has empirical anchors and known error. Problems begin when scores escape their domain and become claims about a person’s total intelligence, destiny, or rank in a cosmic hierarchy. Exceptional achievement also depends on sustained practice, opportunity, aims, and traits the instrument was not designed to measure. Defending IQ means defending bounded abstraction: a real score in one game, useful under stated conditions, and silent beyond them.
 status: review
 sources:
   - 184234856.in-defense-of-iq

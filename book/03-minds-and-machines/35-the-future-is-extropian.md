@@ -1,6 +1,8 @@
 ---
 title: 'The Extropian Crucible'
 subtitle: 'A proto-civilizational R&D lab'
+summary: >-
+  The Extropian community of the 1990s functioned as a proto-civilizational research network in which ideas later associated with cryptocurrency, AGI, rationalism, network governance, prediction markets, digital identity, and memetic engineering developed through sustained exchange. This is an intellectual lineage rather than a claim that every later movement had one origin or that the community’s forecasts were uniformly correct. Its members combined long time horizons, technological optimism, experimentation, and a willingness to construct institutions around speculative possibilities. Cross-pollination mattered as much as individual invention: connectors carried concepts between cryptography, transhumanism, economics, governance, and artificial intelligence until independent projects shared an ecosystem. The same openness also carried blind spots, failed predictions, political disagreements, and risks that later movements had to confront. Extropy worked as a crucible because it made futures discussable and buildable before mainstream institutions recognized them. Framing remains part of that inheritance, since names can cast technological practice as degradation, enchantment, mastery, or responsibility before evidence is considered.
 status: review
 sources:
   - 180128433.the-future-is-extropian

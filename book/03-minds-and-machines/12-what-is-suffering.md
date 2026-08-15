@@ -1,6 +1,8 @@
 ---
 title: 'What Is Suffering?'
 subtitle: 'A proposed definition under the problem of other minds'
+summary: >-
+  Suffering is proposed as the subjective experience of negatively valenced qualia resulting from divergence between a subject’s represented condition and a preferred condition. The represented condition is load-bearing: a person can suffer while objectively safe if deception or delusion represents the situation as intolerable, while an anesthetized patient can be harmed without suffering during unconsciousness. Harm is a material setback relative to a baseline; suffering is an experiential fact, so neither definition can substitute for the other. Intensity, scope, and persistence can affect severity, and the structure exposes three levers: change the condition where possible, correct the representation, or adjust the preference. The definition is substrate-neutral but depends on genuine valenced experience, which third-person evidence cannot directly reveal. Moral response should therefore scale with Credence in sentience and the severity at stake, using proportionate precaution rather than pretending certainty. Architecture, behavior, physiology, and theory can discipline that Credence while leaving the problem of other minds open.
 status: review
 sources:
   - 167672844.what-is-suffering
