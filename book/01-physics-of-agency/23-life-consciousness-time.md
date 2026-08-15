@@ -1,6 +1,8 @@
 ---
 title: 'Life, Consciousness, and Time'
 subtitle: 'When coherence reflects itself'
+summary: >-
+  A speculative progression runs from self-maintaining systems to life, from adaptive modeling to consciousness, and from ordered change to lived time. Life is associated with constructor-supported persistence and repair: organization actively preserves the conditions of its continuation. Consciousness is approached through recursive models that include the modeling system, while experienced temporality is linked to memory, anticipation, and asymmetric control. These are proposed structural relationships, not derivations of phenomenality or proofs that every self-model is conscious. Evolution is not aimed at minds; each stage depends on contingent organization and selection under local constraints. The shared vocabulary asks when coherence begins to regulate its own continuation and represent its alternatives. The explanatory gap remains visible, as does the problem of stating the transformations under which a changing system remains the same organized pattern.
 status: review
 sources:
   - 171909085.consciousness-from-constructors

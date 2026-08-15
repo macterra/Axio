@@ -1,6 +1,8 @@
 ---
 title: 'The Tiers of Reality'
 subtitle: 'Why ice floats, and where the Ruliad fits'
+summary: >-
+  Debates about what is real often force a choice between fundamental physics and the higher-level entities used by every successful science. A tiered account instead indexes reality to stable patterns, explanatory scales, and the transformations under which they remain identifiable. The fact that ice floats is real at molecular and thermodynamic scales even though no fundamental equation contains “floating” as a primitive. The same reasoning can be extended, more speculatively, from local physical regularities through observers and branching descriptions to broad computational proposals such as the Ruliad. Higher tiers need not be independent substances, but neither are they arbitrary when they support compression, prediction, intervention, and cross-context re-identification. The hierarchy is an analytical map rather than evidence that every named tier shares one measured quantity or ontological status. Any proposed architecture can therefore be tested by asking what it treats as primitive, emergent, explanatory, and empirically answerable.
 status: review
 sources:
   - 174194776.why-does-ice-float

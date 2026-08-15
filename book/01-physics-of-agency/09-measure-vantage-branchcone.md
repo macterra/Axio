@@ -1,6 +1,8 @@
 ---
 title: 'Measure, Vantage, Branchcone'
 subtitle: 'The toolkit of objective probability'
+summary: >-
+  A branching representation does not become probabilistically meaningful until it specifies which alternatives are relevant, from where, and with what weights. Three linked tools provide that specification. Measure assigns physical weight to defined event sectors; Vantage fixes the standpoint and information relative to which alternatives are represented; and a Branchcone collects the future sectors reachable from that vantage under the model. Their combination is meant to prevent branch counting, observer-free probability talk, and unnoticed changes of sample space. Physical Measure remains distinct from epistemic Credence: one describes weighted structure in the model, while the other records an agent’s uncertainty about propositions. Causal and decision-theoretic uses therefore require explicit conditioning, coarse-graining, and identity criteria rather than treating the graph as self-interpreting. The normative bridge from physical weights to rational expectation remains a separate and contested argument.
 status: review
 sources:
   - 163778685.measure-vantage-branchcone-and-counterfactuals

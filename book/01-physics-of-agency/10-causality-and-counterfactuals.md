@@ -1,6 +1,8 @@
 ---
 title: 'Causality and Counterfactuals'
 subtitle: 'Cause as branch structure'
+summary: >-
+  Causal claims compare what happens under one antecedent with what happens under an alternative, but ordinary intervention language can wrongly imply that every cause must be manipulable by an agent. Causation can instead be represented as a counterfactual contrast between matched, weighted branch-sets. The central quantity compares the Measure-weighted prevalence of an outcome under an antecedent and its negation, with the causal model and background conditions indexed explicitly rather than treated as observed events. Branching contributes physically represented and weighted alternatives, allowing contrasts for supernovae, wars, and other non-manipulated causes. It does not, however, isolate the antecedent from its own causes: common provenance is not the absence of confounding. Structural assumptions, admissible adjustment, or another stated no-confounding condition must still do that work, and the do-operator remains one interventional way to construct such a contrast. Counterfactual contrast broadens causal analysis beyond agency without claiming that branch structure alone solves causal identification.
 status: review
 sources:
   - 163348907.a-rigorous-definition-of-causality

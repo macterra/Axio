@@ -1,6 +1,8 @@
 ---
 title: "Everett's Demon"
 subtitle: 'Ontological randomness and the amplified quantum'
+summary: >-
+  Laplace’s demon imagines complete knowledge as the prediction of one deterministic future. Everett’s demon is the corresponding god’s-eye intellect for a deterministic wavefunction: it knows the state and dynamics, foresees the branching structure whole, and sees every branch realized rather than one outcome selected. The demon therefore transcends self-location; it hands over the tree without occupying one uncertain place inside it. An embedded agent at a Vantage faces the local openness instead, because its future continuers occupy all realized branches rather than one hidden branch waiting to be revealed. Quantum events become historically consequential when amplification carries microscopic alternatives into durable macroscopic differences. This does not make every macroscopic event fundamentally random or turn decoherence into an exact branching rule. Perfect global knowledge can coexist with an ontologically open local future, and an agent’s policy can remain causally effective inside that physics without selecting one world from outside it.
 status: review
 sources:
   - 166481863.everetts-demon

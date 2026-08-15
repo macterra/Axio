@@ -1,6 +1,8 @@
 ---
 title: 'The Quantum Branching Universe'
 subtitle: 'A formal map of parallel timelines'
+summary: >-
+  Quantum mechanics supplies a state and dynamics, but philosophical arguments often smuggle in an intuitive picture of worlds, observers, and alternatives. The Quantum Branching Universe is an explicit, coarse-grained representational model: a directed acyclic graph of events whose paths are timelines and whose sectors carry physical weight. Branches are emergent, approximate structures supported by decoherence rather than exact universes created at every interaction. Pattern Identifiers pick out systems across the graph; Vantage fixes a standpoint, Measure assigns physical weight, and Branchcones specify the future alternatives being compared. The QBU is not a new physical theory, a proof of Everettian metaphysics, or a claim that every imaginable history occurs. Its purpose is to make counterfactual and agency claims auditable by stating the coarse-graining and event structure they presuppose. The interpretation of probability and the mapping from fundamental dynamics to particular branch descriptions remain open.
 status: review
 sources:
   - 162844036.the-quantum-branching-universe-qbu

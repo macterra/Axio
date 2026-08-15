@@ -1,6 +1,8 @@
 ---
 title: 'The Three Laws of Agency'
 subtitle: 'Control work, agency decay, agency limits'
+summary: >-
+  A physical account of agency should generate constraints, not merely a new label for purposeful behavior. Three candidate laws supply those constraints: control requires physical work, unmaintained agency decays, and perfect control is unattainable. The first connects implemented steering to thermodynamic cost, while keeping any numerical kybit-to-work relation dependent on the specified physical realization and equilibrium reference. The second treats agency as an achievement that must be repaired, fueled, and reproduced against noise and degradation. The third locates every finite agent inside an environment it cannot model or command completely, ruling out the fantasy of unlimited sovereignty without denying degrees of control. These are proposed regularities and bounds rather than deductions that already cover every possible substrate. Their value depends on whether they continue to organize evidence across minimal organisms, active inference, branching models, and constructor-supported systems.
 status: review
 sources:
   - 163356216.the-three-thermodynamic-laws-of-agency

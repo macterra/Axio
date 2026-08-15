@@ -1,6 +1,8 @@
 ---
 title: 'No Trivial Choices'
 subtitle: 'Radical contingency and the causal lattice'
+summary: >-
+  Everyday judgment divides choices into consequential and trivial, but chaotic dynamics make that division depend on scale and horizon. Small policy differences can be amplified through sensitive dependence, interaction, and path-dependent institutions into large downstream changes. This does not mean that every gesture transforms history or that causal importance can be read from branch proliferation. A choice’s significance is contrast-relative: it depends on which alternatives, variables, time horizon, and outcome criteria the analysis fixes. Local interventions enter a causal lattice of later dependencies, sometimes damping out and sometimes becoming decisive. Radical contingency is therefore compatible with bounded agency and with uncertainty about remote consequences. The practical stance is neither paralysis nor grandiosity, but humility: apparently small choices are situated causal inputs whose reach must be investigated rather than assumed.
 status: review
 sources:
   - 170091078.radical-contingency

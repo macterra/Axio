@@ -1,6 +1,8 @@
 ---
 title: 'Chaos as Foundation'
 subtitle: 'The prior state of all priors'
+summary: >-
+  Explanations of order usually begin with laws, initial conditions, or a space of possibilities whose own origin is left unexamined. The Chaos Reservoir is a speculative terminus: the unrestricted totality of random sequences, described as the prior state of all priors. On this proposal, structured worlds are not generated from literal nothing but identified through filters that pick out regularities already representable in the reservoir. The move is metaphysical rather than a result of quantum mechanics, thermodynamics, or algorithmic information theory, and it does not make the reservoir a physical substance or hidden agent. Nor does inclusion explain realization; a pattern’s presence in a sequence says nothing yet about causal persistence, observation, or weight. The proposal earns explanatory value only if coherence filters can distinguish organized structure from arbitrary finite coincidence and constructors can supply causal maintenance. Until those burdens are met, the reservoir represents possibility rather than a completed account of reality.
 status: review
 sources:
   - 177832101.chaos-as-foundation

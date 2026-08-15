@@ -1,6 +1,8 @@
 ---
 title: 'Agency Is Not Reward'
 subtitle: 'What the maximum-occupancy view gets right, and what it misses'
+summary: >-
+  Reward maximization, empowerment, and maximum occupancy explain important forms of apparently agentic behavior without exhausting agency itself. Preserving options can increase future control, but agents also sacrifice options, accept irreversible commitments, and pursue narrow projects whose value is not reducible to occupancy. Reward signals can train or describe a policy without constituting the authored objective that the policy serves. These contrasts separate an agent’s capacity to steer from the particular content assigned to its preferences. Maximum occupancy remains a useful instrumental tendency under specified games and constraints, not a universal terminal aim written into physics. Reward and option preservation can therefore explain parts of behavior while remaining strategies available to a more general capacity. Agency is that capacity for policy-sensitive control, not the reward function or occupancy pattern through which it happens to be expressed.
 status: review
 sources:
   - 194130281.agency-is-not-reward

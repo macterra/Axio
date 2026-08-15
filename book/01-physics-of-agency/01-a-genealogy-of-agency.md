@@ -1,6 +1,8 @@
 ---
 title: 'A Genealogy of Agency'
 subtitle: 'From Popper to Everett to Deutsch — and past them'
+summary: >-
+  Physics describes matter without assigning it purposes, yet agents made of that matter reliably alter what happens next. The attempt to explain that fact inherits a lineage running through Popper, Bartley, Everett, and Deutsch. Popper and Bartley supply conjectural knowledge and criticism without privileged foundations; Everett supplies unitary quantum mechanics without a fundamental collapse; and Deutsch supplies the constructor-theoretic emphasis on which transformations are possible. Joined together, those inheritances become something different: Conditionalism extends fallibilism to the conditions of truth, the Quantum Branching Universe offers a coarse-grained representational framework, and agency becomes physically embodied control. None of those moves follows automatically from its predecessor. Axio takes the inherited insights as starting points, not authorities, preserving their constraints while departing where the combined architecture requires it. The result is both an acknowledgment of intellectual debts and a map of a research program for placing agents inside physics without explaining away their causal power.
 status: review
 sources:
   - 172964152.a-genealogy-of-agency
