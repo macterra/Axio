@@ -1,6 +1,8 @@
 ---
 title: 'Consent and Property'
 subtitle: 'Two load-bearing definitions'
+summary: >-
+  Consent is decision-specific authorization, given intentionally and voluntarily by an agent with sufficient capacity and material understanding, within a stated scope. Revocation applies prospectively where continuation remains possible, while reliance, completed transfers, and emergencies can limit what withdrawal can undo. Formal assent is insufficient when deception, incapacity, coercion, or material misunderstanding defeats authorship, yet pressure, need, unequal bargaining power, and unattractive alternatives do not automatically erase consent. A strong property claim is an operational construction involving scarcity, identifiable boundaries, excludability, durability, and transferability, with ownership specifying an agent, resource, exclusive authority, enforcement, and voluntary transfer. Enforceability explains how property exists within a social framework; it does not establish that every enforced claim is legitimate. Property transfer presupposes consent, consent presupposes a distinction between coercion and other influence, and coercion is a threat of defined harm. Moral right, legal right, enforcement mechanism, and legitimate authority remain separate questions.
 status: review
 sources:
   - 164911762.what-counts-as-consent

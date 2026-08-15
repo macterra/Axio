@@ -1,6 +1,8 @@
 ---
 title: 'Measure Responsibility'
 subtitle: 'Ethics in a branching universe'
+summary: >-
+  Under the optional Quantum Branching Universe description, choice changes the distribution of foreseeable future records rather than selecting one uniquely real outcome. Measure supplies model-level physical weight, not value, moral standing, or a transfer of substance between branches. An embedded agent remains responsible for policy-dependent causal differences available from its Vantage, bounded by information, control, promises, roles, and circumstance. Low-Measure descendants are not less real or worth only fractions of a person, and the existence of some bad branch does not make every policy morally equivalent. Prospective assessment compares how available choices alter exposure; local assessment asks what an agent in an actual record did and now owes. Rescue, promises, and switches therefore require normative premises and factual models in addition to Measure. Branching does not create fatalism or absolve agency: choices remain causally effective inside physics, while ethics must still disclose which outcomes it values and why.
 status: review
 sources:
   - 174698078.navigating-the-multiverse

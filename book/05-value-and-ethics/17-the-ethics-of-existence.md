@@ -1,6 +1,8 @@
 ---
 title: 'The Ethics of Existence'
 subtitle: 'Birth, non-existence, and the refusal to die'
+summary: >-
+  Benatar's antinatalist asymmetry rigs the ledger by treating absent pain as good while denying comparable weight to absent pleasure, meaning, excellence, and agency. Existing people who affirm their lives supply ethically relevant evidence; dismissing their valuation as evolutionary delusion substitutes the theorist's judgment for the valuer's. Prudence can oppose creating a foreseeably miserable life without proving that every birth is wrong. Possibility is not personhood, so choosing among embryos does not kill the unconceived, although prediction limits, disability concerns, unequal access, institutional pressure, and collective effects remain morally relevant. An optional QBU description changes how physical alternatives are represented without implying that every imaginable child exists or settling the ethics of selection. At the other boundary, pursuing health and longevity is not equivalent to pathological denial, and mortality does not make passive acquiescence virtuous. Birth, selection, and life extension remain wagers under uncertainty: agency favors opening and sustaining possibilities without pretending their success is guaranteed.
 status: review
 sources:
   - 171515563.against-antinatalism

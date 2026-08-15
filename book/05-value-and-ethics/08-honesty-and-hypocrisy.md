@@ -1,6 +1,8 @@
 ---
 title: 'Honesty and Hypocrisy'
 subtitle: 'Truth-telling as practice, virtue-lying as field guide'
+summary: >-
+  Honesty needs no supernatural enforcer because agents depend on maps, trust, coordination, and the ability to revise beliefs under evidence. Lies damage those capacities by corrupting another agent's model and transferring control to the deceiver, though truth-telling still admits conflicts involving privacy, protection, and legitimate secrecy. Hypocrisy is especially corrosive when moral language becomes camouflage for conduct that violates the virtue being advertised. A practical field guide can identify recurring forms of virtue-lying—selective standards, asymmetric excuses, symbolic declarations, and demands that others bear hidden costs—without claiming certainty about private motives. Observable conduct and evidential patterns do the diagnostic work. Honest disagreement leaves the competing standards visible; hypocrisy conceals the operative standard behind a nobler one. Precision about honesty prepares the ethical vocabulary that follows: harm must be identified before coercion can be defined in terms of a threatened harm, and neither classification alone decides legitimacy.
 status: review
 sources:
   - 168391300.why-not-lie

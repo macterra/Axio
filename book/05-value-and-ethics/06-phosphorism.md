@@ -1,6 +1,8 @@
 ---
 title: 'Phosphorism'
 subtitle: 'Chosen values, illuminated'
+summary: >-
+  Human values begin in evolved defaults but need not end there. Vitalism accepts survival and flourishing as nature's inherited priority; Valorism revolts by placing chosen excellence, courage, or meaning above mere continuation; Phosphorism attempts a synthesis in which life is protected as the condition that lets reflective agents illuminate and revise what they value. The silver pill is conscious value design: inherited impulses become material for examination rather than unquestionable commands, while reason remains a tool that cannot select terminal ends on its own. Life occupies the apex here by choice, not because biology has secretly legislated morality or because persistence is objectively good. Different agents may order survival, truth, beauty, loyalty, transcendence, and sacrifice differently, and the consequences of those commitments remain open to analysis. Phosphorism names one avowed orientation toward sustaining the light of agency, not a universal law. Its commitments are illuminated precisely because their authorship is visible.
 status: review
 sources:
   - 167118984.phosphorism-illuminating-agency

@@ -1,6 +1,8 @@
 ---
 title: 'Norms Need Agents'
 subtitle: 'Constraint is not obligation'
+summary: >-
+  Reality imposes constraints whether anyone approves of them: fire burns, unsupported bodies fall, and false models eventually collide with their objects. Constraint is not obligation, however, because the world can defeat an action without commanding, reproaching, or valuing anything. Norms arise only where agents adopt ends, participate in practices, or hold one another answerable under standards. Even correspondence with reality does not create a duty to seek truth until some agent values accuracy, survival, trust, or another end that truth serves. This separation preserves humility without moral metaphysics: factual inquiry can correct maps and trace consequences while leaving normative premises visible. Modal language must not slide from what is necessary for an outcome to what anyone ought to pursue, and causal responsibility must not be confused with cosmic judgment. The world supplies the consequences; agents supply the standards by which those consequences count as success, failure, benefit, or wrong.
 status: review
 sources:
   - 175891239.against-worldly-oughts

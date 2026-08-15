@@ -1,6 +1,8 @@
 ---
 title: 'Sapientism'
 subtitle: 'Moral status without substrate bias'
+summary: >-
+  Sapientism grounds sovereignty in sapient agency rather than species membership, biology, or substrate. A being capable of owning reasons, forming commitments, revising policies, and authoring a future can qualify for the protections owed to agents whether human, animal, artificial, or otherwise. Sentience is not sovereignty: the capacity for felt welfare grounds patienthood and protection from suffering, while sapience grounds authorship, consent, responsibility, and jurisdiction. Evidence for either capacity can be graded and uncertain, and precaution may be warranted before a threshold is settled. Moral standing can therefore be present, latent, developmental, residual, or partial without pretending every case is identical. The jurisdictional threshold remains a door rather than a wall: crossing it changes which claims and responsibilities apply, but does not erase welfare below it or settle every conflict above it. Substrate neutrality is a discipline against prejudice, not a declaration that every complex system is an agent.
 status: review
 sources:
   - 166033482.sapientism

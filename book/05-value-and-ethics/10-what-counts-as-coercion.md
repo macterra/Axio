@@ -1,6 +1,8 @@
 ---
 title: 'What Counts as Coercion'
 subtitle: 'Conditional threat used to obtain compliance'
+summary: >-
+  Coercion is the deliberate use of a credible conditional threat of harm to obtain compliance. Four elements are required: credibility, a conditional threat, harm, and a compliance-seeking purpose. Credibility is assessed through the target's warranted Credence rather than the coercer's actual power alone, and the threatened harm is a material setback under the explicit harm definition. Direct force imposes an outcome without making compliance the condition; violence uses physical force to injure or destroy; coercion structures a choice through a threatened branch. Offers, persuasion, framing, dependence, criticism, shame, and refusal to associate may influence conduct without satisfying the formula, although a controlled material penalty can cross the line. Speech is not violence merely because it causes distress, but words can participate operationally in threats, commands, targeting, or coordinated force. Classification does not settle legitimacy: a moral right, a legal right, an enforcement mechanism, and authority remain separate questions.
 status: review
 sources:
   - 164902314.what-counts-as-coercion

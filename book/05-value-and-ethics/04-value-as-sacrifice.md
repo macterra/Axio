@@ -1,6 +1,8 @@
 ---
 title: 'Value as Sacrifice'
 subtitle: 'What you give up is what you value'
+summary: >-
+  Sacrifice is defeasible evidence of value because choice becomes informative when an agent knowingly gives up one available good for another. The signal is strongest when the agent is willing, able, informed, and presented with genuine alternatives; compulsion, incapacity, ignorance, and distorted options weaken the inference. Costly action can expose priorities that cheap declarations conceal, but behavior does not constitute value and no single sacrifice is an infallible measurement of it. Free riders, strategic performances, addiction, desperation, and temporary conflict can all separate conduct from stable endorsement. Reliable attribution therefore looks for the intersection of avowal, action, circumstance, and repeated choice rather than privileging either words or behavior alone. The result is neither behaviorism nor inaccessible subjectivism: values belong to agents, while evidence about those values remains publicly contestable. What an agent gives up can reveal what matters, provided the conditions that made the choice are kept in view.
 status: review
 sources:
   - 164851202.sacrifice-as-signal

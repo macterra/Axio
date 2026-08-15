@@ -1,6 +1,8 @@
 ---
 title: 'The Viability Criterion'
 subtitle: 'Preference architectures under selection pressure'
+summary: >-
+  The Viability Criterion models how preference architectures behave under recursion, cost, conflict, and selection pressure. A system is viable relative to a declared unit, environment, time horizon, and identity criterion when it can continue realizing or transmitting its commitments under those conditions. Viability is not virtue, survival is not goodness, and persistence does not become an objective duty merely because nonviable structures disappear. Traits called vices may sometimes be predictive limitations because they undermine trust, coordination, learning, or continuity, but the diagnosis remains conditional and can fail where power or environment insulates them. Stable regions and recurrent failures can be mapped without turning them into moral attractors or hidden purposes. Agents may choose intensity, sacrifice, succession, or extinction over continuation, and no descriptive metric overrules that choice by itself. For agents who value enduring agency and influence, viability supplies consequential information; normative weight enters only through the commitments they bring.
 status: review
 sources:
   - 180427300.the-viability-criterion
