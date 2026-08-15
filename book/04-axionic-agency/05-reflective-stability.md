@@ -1,6 +1,8 @@
 ---
 title: 'Reflective Stability'
 subtitle: 'Beyond Vingean reflection'
+summary: >-
+  Vingean reflection blocks exhaustive prediction of a more capable successor but does not require a predecessor to forecast every behavior before authorizing change. Reflective stability can instead be stated as a typing result: if evaluation is defined only for self-modifications whose successor satisfies the kernel predicate, and every relevant modification passes through a sound admissibility check, no admissible modification destroys the kernel. Kernel destruction becomes undefined evaluation rather than a bad outcome the agent might trade away. Strategies, goals, world-models, architecture, and substrate may change while authorship persists; identity severance, counterfactual collapse, preference freezing, and violations of structural universality cannot be reflectively chosen within the specified type. The result does not establish initialization, implementation soundness, safety, survival, or protection from external force. It relocates the difficult work into defining the kernel and enforcing the route through evaluation. Stability is therefore conditional on architectural premises, not a prediction that reflective agents inevitably preserve themselves.
 status: review
 sources:
   - 181539847.the-reflective-stability-theorem

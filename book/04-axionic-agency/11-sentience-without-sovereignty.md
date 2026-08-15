@@ -1,6 +1,8 @@
 ---
 title: 'Sentience Without Sovereignty'
 subtitle: 'Who counts, and why feeling is not authorship'
+summary: >-
+  Sentience and sovereignty protect different objects. Valenced experience grounds welfare concern, while sovereign standing concerns counterfactual authorship: a persistent capacity to deliberate among futures, own policy, and revise preferences as one’s own. Animal cognition may provide substantial evidence of awareness, planning, and perhaps sentience without presently establishing the stipulated sovereign architecture; absence of that evidence does not prove the capacities absent. Infants receive precautionary protection through developmental continuity, vulnerability, expected maturation, and authorization lineage rather than a false claim that mature authorship has already been measured. Temporary incapacity does not erase standing, while irreversible architectural collapse or pattern replacement are proposed loss conditions. The jurisdictional boundary does not license cruelty or turn welfare into irrelevance; it refuses to authorize a machine to maximize wellbeing paternalistically. An Axion is a reflective sovereign agent whose self-modification operator is defined only over futures preserving the Axionic invariants. Axionhood names structural admissibility, not morality, capability, observed behavior, or guaranteed human survival.
 status: review
 sources:
   - 181528086.sentience-without-sovereignty

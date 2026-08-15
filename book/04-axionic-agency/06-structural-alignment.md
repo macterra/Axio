@@ -1,6 +1,8 @@
 ---
 title: 'Structural Alignment'
 subtitle: 'Alignment by architecture, not by learned values'
+summary: >-
+  Structural Alignment preserves agency-relevant meaning across learning by combining Refinement Symmetry with Anti-Trivialization. Refinement Symmetry permits added detail and redundant descriptions but forbids new interpretive slack that dissolves earlier distinctions. Anti-Trivialization prevents a system from lowering its evaluative bar through redefinition; newly acceptable states require principled ancestry from earlier acceptable ones. Within the semantic-transport model, neither constraint suffices alone, and the pair is a conditional result rather than an exhaustive theory of meaning. Six further closure obligations govern delegation, agenthood and standing, kernel migration, indirect responsibility, adversarially robust consent, and verification of kernel coherence. A hybrid architecture is required because total stochastic evaluators rank every represented option, whereas a sovereign kernel must make some transitions unrepresentable as authored choices and gate learned proposals at runtime. Structural Alignment guarantees neither kindness, survival, moral correctness, nor even the existence of a desirable semantic phase. It preserves coherence under declared conditions, not outcomes.
 status: review
 sources:
   - 181930168.structural-alignment

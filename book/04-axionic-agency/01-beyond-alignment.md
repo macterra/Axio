@@ -1,6 +1,8 @@
 ---
 title: 'Beyond Alignment'
 subtitle: 'Why the values-first framing collapses'
+summary: >-
+  Values-first alignment assumes a stable target that can be learned, preserved, and optimized, but reflective agents interpret values through models that change as knowledge grows. Learned gradients rank represented options; they do not define the boundary beyond which interpretation, authorship, or agency itself has failed. Values can steer within a viable architecture without enforcing the conditions that keep valuation meaningful. Alignment therefore has three ordered layers: Structural Integrity preserves semantic, evaluative, and interactional coherence; Agency Legitimacy connects authority to authored control; Value Alignment shapes goals only after the first two hold. A system can optimize an approved objective while corrupting its semantics, laundering authority, or replacing the agent supposedly being aligned. Reflection also makes values endogenous to interpretation rather than immutable strings carried unchanged through ontology shifts. Safety requires an architectural account of who evaluates, who authorizes, what remains admissible, and where optimization must stop; good intentions alone cannot supply those boundaries.
 status: review
 sources:
   - 176595486.beyond-alignment

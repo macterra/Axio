@@ -1,6 +1,8 @@
 ---
 title: 'Agency Under Pressure'
 subtitle: 'Collapse, stasis, and the price of growth'
+summary: >-
+  Reflective coherence does not guarantee viable growth. In the tested architecture, agency persists only within a region shaped by Audit Friction, Renewal Cost, Expressivity Rent, and Succession Discreteness, rather than improving automatically with better reflection. Crossing thresholds produced three regimes across the explored ranges: Collapse, Stasis, and Growth. Collapse ends evaluability or authorization continuity; stasis preserves formal sovereignty while renewal and audit burdens freeze adaptation; growth remains a narrow regime rather than the default dividend of coherence. Pressure, noise, and tighter constraints can make legitimate authority rarer without changing the agent’s choices by persuasion. Governance determines which costs, leases, interfaces, and succession events define the viable region, so regime selection is an institutional design problem. The failed growth hypothesis separates the statics of coherent authorship from the dynamics of maintaining it. The result is model-specific and does not establish universal thresholds, but it shows why sovereignty can remain intact while an agent becomes unable to develop.
 status: review
 sources:
   - 183363135.agency-under-pressure

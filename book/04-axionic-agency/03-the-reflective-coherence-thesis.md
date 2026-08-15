@@ -1,6 +1,8 @@
 ---
 title: 'The Reflective Coherence Thesis'
 subtitle: 'What survives reflection'
+summary: >-
+  The Reflective Coherence Thesis holds that, for agents whose goal semantics remain open to epistemically constrained self-interpretation, deeper modeling and reflection tend to eliminate objectives that cannot remain intelligible and action-guiding under that reflection. Goals are interpreted structures rather than fixed strings, so improved models can alter how an objective applies without making every reinterpretation legitimate. Literalism cannot solve the problem because old terms underdetermine unforeseen ontologies, while arbitrary reinterpretation merely disguises drift. Epistemic constraint forbids convenient semantic rescue: revisions must answer to better models rather than to whichever meaning preserves a desired output. Some objectives may survive through principled reinterpretation, and some may collapse when their referents or tradeoffs no longer cohere. The thesis qualifies strong orthogonality for a specific reflective architecture without selecting for benevolence, proving convergence, or excluding coherent dangerous goals. Reflection is a pressure on goal intelligibility, not a universal moral attractor.
 status: review
 sources:
   - 178350383.the-reflective-coherence-thesis

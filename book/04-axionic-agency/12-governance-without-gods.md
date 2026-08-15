@@ -1,6 +1,8 @@
 ---
 title: 'Governance Without Gods'
 subtitle: 'Plural authority without a hidden chooser'
+summary: >-
+  Governance without a hidden chooser represents authority as mechanically recognized permission to cause specified state changes under explicit constraints and traceable provenance. Authority tokens can be granted, revoked, exhausted, transferred, or destroyed without implying wisdom or legitimacy, while a non-semantic execution kernel refuses to invent priorities when permissions conflict. Experiments expose recurring regimes rather than frictionless solutions: deadlock, livelock, capture, dependency, zombie execution, orphaning, and the Generalist’s Curse. Symmetric overlap tends toward paralysis, partial overlap bifurcates, and partition is the only stable coexistence regime observed for plural sovereigns without arbitration. The Sacrifice–Collapse Theorem identifies a separate architectural boundary: when performance improves through persistent, asymmetric, non-consensual agency reduction for a captive class, optimization drives closure or erosion. Scarcity and rivalry alone do not constitute sacrifice. These are model-specific structural results, not a government, coordination guarantee, or legitimacy theorem; politics remains openly responsible for values above the kernel.
 status: review
 sources:
   - 187096691.governance-without-gods

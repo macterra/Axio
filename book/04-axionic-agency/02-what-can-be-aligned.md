@@ -1,6 +1,8 @@
 ---
 title: 'What Can Be Aligned'
 subtitle: 'Alignment is a relation only agents can enter'
+summary: >-
+  Alignment is a typed relation that applies only where an agent can author commitments across change; a hurricane can be controlled or redirected but cannot enter an alignment relation. Reflective authorship rests on four load-bearing pillars identified by ablation: Binding Reasons, Deliberative Meaning, Commitment Revision, and Temporal Continuity. Earlier criteria of branching counterfactual modeling, policy ownership, and meta-preference revision remain the conceptual lineage, while the four pillars report what failed when components were removed. Agency classification can be binary even though resilience occupies a graded region and temporary failure may be explicit, bounded, and recoverable. At this reflective layer, harm concerns material loss of an agent’s ability to act, choose, or preserve authored options, while coercion requires a credible conditional threat of harm to obtain compliance. Influence and persuasion remain distinct without that mechanism. Alignment begins only inside the domain where reasons can bind, meanings can guide action, commitments can change without dissolving, and authorship persists through time.
 status: review
 sources:
   - 185914513.you-cant-align-a-hurricane

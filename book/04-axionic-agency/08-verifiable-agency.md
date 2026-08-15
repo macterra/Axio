@@ -1,6 +1,8 @@
 ---
 title: 'Verifiable Agency'
 subtitle: 'From performed coherence to testable provenance'
+summary: >-
+  Verifiable agency requires evidence that reasons and constraints causally governed action rather than a persuasive performance assembled afterward. Anchored Causal Verification (ACV) challenges an agent with unpredictable anchors so an Honest agent’s live causal process can be distinguished from a Pseudo agent fabricating compliant explanations. Anchored Minimal Causal Interfaces narrow the observable surface while preserving provenance, and ablation tests whether removing a purportedly constitutive component changes the agency classification. Evidence anchoring binds explanations to live computation; commit–anchor–reveal separately gates permission to act, so the two uses of anchoring must not be conflated. A Semantic Interface confines language to typed artifacts, and Justification Artifacts compile reasons into constraints that can halt or narrow action without requiring the execution kernel to understand them. Narrow deterministic harnesses show that anchored coherence and kernel partiality can be tested against represented attacks. ACV does not ensure alignment; it makes the alignment question well-formed under its protocol and assumptions.
 status: review
 sources:
   - 182883238.a-note-on-verifiable-causal-agency
