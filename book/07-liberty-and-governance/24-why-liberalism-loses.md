@@ -1,6 +1,8 @@
 ---
 title: 'Why Liberalism Loses'
 subtitle: 'The structural unpopularity of liberty'
+summary: >-
+  Liberalism carries structural handicaps because it promises procedure, restraint, uncertainty, and peaceful disagreement while rivals offer belonging, certainty, protection, and decisive purpose. It asks supporters to tolerate speech they hate, outcomes they lose, and institutions that refuse to guarantee their preferred moral order. The political triangle links voters seeking benefits and safety, politicians seeking office, and institutions seeking budget or authority; each can gain from expanding promises whose diffuse costs arrive later. Permanent adolescence results when citizens are treated as dependents and then demand the supervision that dependency taught them to expect. Liberal actors can also lose by their own hand when they invoke emergency powers, censor opponents, socialize risks, or exempt favored institutions from rules in order to save liberalism. None of this makes defeat inevitable or every illiberal policy popular. Liberty survives when its institutions make dispersed benefits visible, constrain opportunistic concentration, preserve responsibility, and cultivate adults willing to govern themselves without demanding that politics eliminate uncertainty.
 status: review
 sources:
   - 165488598.the-paradox-of-classical-liberalism

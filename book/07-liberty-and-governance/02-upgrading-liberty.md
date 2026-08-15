@@ -1,6 +1,8 @@
 ---
 title: 'Upgrading Liberty'
 subtitle: 'From the harm principle to agency'
+summary: >-
+  John Stuart Mill's harm principle preserves individual sovereignty and places coercion under suspicion, but its undefined central term lets offense, disadvantage, and disagreement be redescribed as harm. The Non-Aggression Principle sharpens the boundary around initiated force while relying on disputed property, consent, fraud, threat, and baseline judgments. The Agency Protection Principle states a narrower gate: coercion has a prima facie justification only when it prevents or remedies violations of voluntary agency. Benefits cannot purchase an innocent agent's autonomy before that gate is crossed, and agency concerns capabilities and viable options rather than aggregate happiness. Any licensed response must still count enforcement harms and satisfy evidence, authority, necessity, proportionality, minimally harmful means, reversibility, containment, and review. Where comparison remains unclear, the tie does not go to the coercer. Liberty is protected not as empty noninterference but as the condition in which agents can continue to choose.
 status: review
 sources:
   - 170630000.on-liberty

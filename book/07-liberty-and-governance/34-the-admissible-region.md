@@ -1,6 +1,8 @@
 ---
 title: 'The Admissible Region'
 subtitle: 'Politics as phase space'
+summary: >-
+  Political systems require a phase space rather than one left–right line. Command, ownership, and beneficiaries vary independently, while evaluability determines whether authority and obligations remain legible enough to challenge. The admissible region is a constraint set defined by delegability, contestability, voluntary participation, legibility, and realistic exit. Participation fails when enforced through credible threats of imposed harm that the agent did not endorse under non-manipulated conditions; exit fails when punishment, confiscation, dependency, or lost portability destroys capacity to act. The conditions are conjunctive and do not select one ideology inside the region. Markets, cooperatives, federations, city-states, thick communities, and thin protocols can qualify under different coordinates, while benevolent and vicious planners converge outside it when contestation and exit disappear. Real regimes occupy mixed and changing positions rather than moral types fixed by labels. The map explains how stateless orders can remain admissible where reciprocal constraint reaches and how legally elaborate hegemony can fall outside when dominant actors answer to no effective challenge.
 status: review
 sources:
   - 185641221.politics-as-phase-space

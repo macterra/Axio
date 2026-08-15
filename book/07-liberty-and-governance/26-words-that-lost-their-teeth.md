@@ -1,6 +1,8 @@
 ---
 title: 'Words That Lost Their Teeth'
 subtitle: 'Semantic hygiene for political language'
+summary: >-
+  Political labels compress distinctions until argument becomes a contest over inherited emotional charge. “Socialism” can mean welfare-state redistribution, public ownership in a mixed economy, or revolutionary command, and conclusions cannot move among those meanings without equivocation. Left and right likewise bundle authority, ownership, culture, moral scope, and institutional method onto one line that cannot represent them faithfully. Doyle's Razor asks whether an apparently deep political contradiction disappears once the disputed term is given one precise meaning. LARPitarian performance displays radical identity without accepting the institutional consequences or tradeoffs the identity implies. Semantic hygiene does not settle values; it makes disagreements legible enough to test mechanisms, evidence, scope, and authority. Compressed axes should be retired when they repeatedly classify structural relatives as opposites and unrelated systems as neighbors. Political language regains teeth when terms identify arrangements that could be observed, compared, falsified, and revised rather than functioning as coalition badges.
 status: review
 sources:
   - 167677533.beyond-left-and-right

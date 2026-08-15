@@ -1,6 +1,8 @@
 ---
 title: 'The Archist Axiom'
 subtitle: 'Coercion does not require monopoly'
+summary: >-
+  Archists hold that legitimate order requires an institution authorized to use coercion; anarchists deny that this authority must be monopolized or intrinsically sovereign. Logic cannot settle which enforcement architecture best handles violence, free riders, collusion, external threats, and error. Coercion does not require monopoly: protection, adjudication, insurance, restitution, and defense can in principle be supplied by several associations under shared protocols. Competition alone does not guarantee legitimacy, because private enforcers can cartelize, dominate dependents, misclassify threats, or wage war. The relevant tests are delegation, reciprocity, evidence, proportionality, appeal, liability, contestability, and realistic exit. The statist is not refuted by pointing to voluntary mechanisms, and the anarchist is not refuted by naming a function currently performed by a state. Defense remains the hardest case because scale, speed, secrecy, command, and catastrophic stakes reward concentration. A residue of unresolved institutional risk survives every label, leaving comparative design and evidence where axiom had promised certainty.
 status: review
 sources:
   - 166242984.archists-vs-anarchists

@@ -1,6 +1,8 @@
 ---
 title: 'The Hardest Case: Defense'
 subtitle: 'Protection without sovereignty'
+summary: >-
+  Collective defense is the hardest case for non-sovereign governance because war rewards unified command, secrecy, rapid mobilization, compulsory finance, and suppression of defection. The central fallacy assumes that because defense is a function, one territorial state must own it as final sovereign. A proposed Defense Shell separates a narrow emergency command layer from ordinary governance and binds it through delegation, triggers, scope, funding rules, audit, expiry, and post-crisis liability. Free riders, collaborators, intelligence failures, weapons control, and adversaries exploiting procedural delay remain serious objections. A temporary shield can become a sovereign when emergency powers persist, classified claims evade review, or the organization defines the threat that renews its own authority. Survival is necessary evidence but not sufficient legitimacy, because durable victory can preserve domination. Competing defense providers can also fragment command or escalate conflict. Protection without sovereignty remains an open problem: candidate architectures can be specified and stress-tested, but no completed solution is claimed.
 status: review
 sources:
   - 194708064.when-the-protector-becomes-the-ruler

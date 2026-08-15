@@ -1,6 +1,8 @@
 ---
 title: 'Civilizational Infrastructure'
 subtitle: 'The architecture of a free-speech order'
+summary: >-
+  A free-speech order is civilizational infrastructure: a deliberately maintained system for error correction, disagreement, discovery, and peaceful revision. Its useful mess includes falsehood, offense, noise, and conflict because no central authority can remove only error without acquiring power over contested truth. Safety should be treated as sanitation rather than ideological purity, targeting fraud, direct threats, harassment, and operational participation in harm while leaving persuasion and belief contestable. Filters belong as near the user as practical, preserving the listener's control and allowing plural communities to choose different thresholds. Publication, recommendation, advertising, and compelled carriage are distinct decisions rather than one binary of speech versus censorship. Mobs and coordinated exclusion can make nominal expression materially costly, while ordinary criticism and refusal to associate remain protected conduct. Advertiser leverage can centralize hidden veto power over public conversation. No moral landlord should govern every channel; resilience comes from diversity, portability, transparent rules, appeal, and the ability to exit without losing the capacity to speak or listen.
 status: review
 sources:
   - 202205387.free-speech-is-civilizational-infrastructure

@@ -1,6 +1,8 @@
 ---
 title: 'The Listener''s Right'
 subtitle: 'What free speech is, and whose it is'
+summary: >-
+  Free speech protects a relation between speakers and willing listeners, not a speaker's entitlement to every platform, audience, venue, or subsidy. The listener's freedom to receive, ignore, seek, filter, and compare expression is the neglected half of the right. Publication and amplification are distinct from permission to speak, while property owners, editors, associations, and audiences retain their own powers of selection. A refusal to host or hear someone is not censorship by definition, though concentrated control over essential channels can make nominal alternatives unreal. Free expression works through offered reasons, evidence, imagination, and persuasion rather than compelled assent. One freedom covers both sides: agents may communicate and may decide what enters their attention, subject to the same boundaries against threats, fraud, and operational participation in harm. Protecting the listener prevents free speech from becoming a demand for access enforced against others. A plural speech order therefore needs abundant channels, user-side control, and no moral landlord empowered to decide what every mind may encounter.
 status: review
 sources:
   - 169560195.free-speech

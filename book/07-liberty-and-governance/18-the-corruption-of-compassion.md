@@ -1,6 +1,8 @@
 ---
 title: 'The Corruption of Compassion'
 subtitle: 'What coercion does to kindness'
+summary: >-
+  Compassion is an orientation toward another's suffering; coercion is a method that obtains compliance through a credible conditional threat of harm. A benevolent motive does not change the mechanism or settle its legitimacy. Voluntary basic income funded through gifts, endowments, mutual insurance, or shared assets differs structurally from a compulsory transfer even when recipients receive the same payment. Aid can also strengthen oppressors when resources pass through institutions that control distribution, extract loyalty, or redirect benefits. Refusing coercive compassion does not prove that private charity will meet every need or that collective provision lacks justification. The relevant inquiry identifies the harmed agents, funding method, authority, alternatives, capture risks, and whether aid preserves or displaces local agency. Kindness becomes corrupted when the donor's virtue is purchased with another person's compelled resources and the enforcement cost disappears from the moral ledger. Compassion remains valuable; it must not function as a blank check for methods that contradict the agency it claims to protect.
 status: review
 sources:
   - 164949377.why-coercive-redistribution-is-always

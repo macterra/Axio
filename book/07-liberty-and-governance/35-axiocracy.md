@@ -1,6 +1,8 @@
 ---
 title: 'Axiocracy'
 subtitle: 'Governance by value discovery'
+summary: >-
+  Axiocracy is a research proposal for governance informed by continuous value discovery rather than rule by a central account of objective worth. Market prices reveal demonstrated exchange value under conditions of property, scarcity, purchasing power, alternatives, and consent; they do not measure human dignity, need, or ultimate moral value. Voting, deliberation, professional judgment, administration, commons governance, and currencies of commitment reveal different information and hide different costs. Purchasing power, externalities, missing markets, coercion, and agents unable to bid prevent price from becoming a complete constitution. A proposed Axiocratic design combines truthful signals with bounded offices, chartered enforcement, voice, remedy, liability, and engineered exit. Mars sharpens the dependency problem because air, housing, employment, and physical departure can be controlled by the same institution, making asset portability and pre-funded exit essential. Enforcement, capture resistance, succession, amendment, insolvency, emergency authority, and protection without purchasing power remain open. Axiocracy is a candidate point inside the admissible region, not a proven replacement for politics.
 status: review
 sources:
   - 197763923.axiocracy-governance-by-value-discovery

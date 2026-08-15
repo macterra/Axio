@@ -1,6 +1,8 @@
 ---
 title: 'Law and Power'
 subtitle: 'Who the rules actually bind'
+summary: >-
+  Law binds reliably only where power is sufficiently balanced for violation to trigger credible consequences. Strong actors can slip the net by controlling enforcement, interpretation, jurisdiction, evidence, or the costs of challenge, while weak actors experience rules as fixed. This does not make law unreal; it makes effective law a relation among institutions, incentives, and capacities rather than words on paper. International rules, domestic constitutions, contracts, and informal norms all become fragile where one party can defect without meaningful response. Power can also create stable order and enforcement capacity, so imbalance is not a one-variable explanation of every legal outcome. The symmetry is descriptive: private and public actors alike evade constraints when architecture lets them externalize violations. Explanation does not justify hegemony or reduce rights to force. Durable legality requires institutions that distribute interpretation, expose decisions, preserve appeal, and make even dominant actors answerable to consequences they cannot unilaterally rewrite.
 status: review
 sources:
   - 180208315.above-the-law

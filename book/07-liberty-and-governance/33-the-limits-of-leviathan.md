@@ -1,6 +1,8 @@
 ---
 title: 'The Limits of Leviathan'
 subtitle: 'Scale, evaluability, and the Dominion alternative'
+summary: >-
+  Institutional agency depends on evaluability: authorship, authority, rules, observations, decisions, and correction must remain traceable enough to attribute action. Small coalitions often preserve common context and visible responsibility, while scale increases specialization, interpretive distance, opacity, and the cost of reconstructing who decided what. Leviathan is therefore a coordinating mechanism whose attributable institutional authorship can collapse, not a literal agent or an inevitable evil. Alignment is downstream of agency because an unevaluable institution cannot reliably show which objective it serves or who may revise it. Dominion is a proposed alternative for digital jurisdictions built around airtight isolation, exit supremacy, and asset portability. Virtual vessels can make some violations technically impossible, but embodied societies share air, land, infrastructure, and externalities that defeat perfect separation. Freedom density and institutional drift remain recurrent risks rather than supplied laws. Scale can be extended through transparency and modularity, yet no architecture escapes interpretation, succession, capture, and the need to keep exit materially real.
 status: review
 sources:
   - 182655739.against-leviathan

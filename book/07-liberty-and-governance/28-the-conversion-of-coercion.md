@@ -1,6 +1,8 @@
 ---
 title: 'The Conversion of Coercion'
 subtitle: 'Politics as exploit; civilization as its replacement'
+summary: >-
+  Politics is not identical to coordination; it is the contest over who may impose binding decisions and under what claimed authority. Coercive systems exploit dependencies, collective-action problems, territorial control, and the difficulty of exit, then present their solutions as the only possible order. Civilization can be judged by a chosen commitment to converting compulsory functions into voluntary, contestable, protocolized coordination, but that conversion is neither destiny nor an accomplished historical law. Principles exert hidden power when they constrain acceptable means before convenient outcomes are known. The engineering program asks which governance functions can migrate toward delegation, portability, competition, liability, transparent rules, and realistic exit without abandoning protection or public goods. Markets and protocols can reproduce monopoly, exclusion, and hidden control, so replacing an office with software does not complete the conversion. Progress remains evaluative and reversible. The constructive task is to reduce unnecessary coercion while keeping every surviving use visible, justified, bounded, and answerable to the agents it governs.
 status: review
 sources:
   - 175530394.the-death-of-politics

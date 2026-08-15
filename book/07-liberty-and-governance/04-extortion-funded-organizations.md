@@ -1,6 +1,8 @@
 ---
 title: 'Extortion-Funded Organizations'
 subtitle: 'The funding test'
+summary: >-
+  An Extortion-Funded Organization receives revenue through demands backed by a credible conditional threat of harm to obtain compliance. The classification concerns the funding mechanism rather than every activity, employee, or outcome of the organization. Voluntary payment provides evidence that participants value an offer under available conditions; compulsory payment cannot reveal the payer's endorsement in the same way. Calling an institution necessary reverses the burden when its monopoly and compulsory revenue have prevented alternatives from developing or being tested. Valuable outputs—including science, infrastructure, protection, and aid—do not retroactively make extraction voluntary or establish authority to impose it. A parasitic relation exists strictly where one party extracts resources while externalizing the costs of maintaining the host, not wherever an institution is disliked. Institutionalization and public acceptance can distinguish a state socially from a protection racket without changing the underlying threat structure. Classification opens the legitimacy inquiry; it does not settle whether a particular coercive revenue system is justified.
 status: review
 sources:
   - 171905629.extortion-funded-organizations

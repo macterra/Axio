@@ -1,6 +1,8 @@
 ---
 title: 'Rights Are Forged — and Reciprocal'
 subtitle: 'Power makes boundaries real; reciprocity makes them legitimate'
+summary: >-
+  Rights are forged in two distinct senses: power makes a boundary effective, while reciprocal justification makes it a candidate moral right. A moral right is a defensible protection or claim around agency whose principle survives reciprocal application; a legal right is an institutionally recognized claim. Enforcement may embody a justified boundary or mechanize domination, so neither recognition nor power alone establishes legitimacy. Slaveholders had preferences and effective mechanisms, which proves that preference satisfaction and enforcement cannot be sufficient. Reciprocity asks whether the same principle can protect each agent without granting one side a status it denies the other. Needs can ground concern without automatically creating title to another person's body, labor, or property, and hard cases still require evidence, authority, proportionality, and procedure. Parchment declarations fail when no architecture resists violation, yet monopoly enforcement is not the only possible architecture. Rights remain claims, institutions, and mechanisms that must be kept conceptually separate and jointly defensible.
 status: review
 sources:
   - 203896169.rights-are-reciprocal

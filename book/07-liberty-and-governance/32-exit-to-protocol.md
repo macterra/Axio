@@ -1,6 +1,8 @@
 ---
 title: 'Exit to Protocol'
 subtitle: 'What governance functions can migrate?'
+summary: >-
+  Governance functions can migrate from territorial monopoly toward protocols only where obligations, authority, performance, and failure become measurable, comparable, and forkable. Identity, contract, adjudication, insurance, reputation, payment, certification, and some public goods can be modularized without pretending every embodied dependency is software. A non-coercive architecture requires explicit delegation, portable assets and records, transparent rules, competing providers, interoperable standards, appeal, liability, and realistic exit. Transition matters because incumbent systems hold assets, infrastructure, legitimacy, and enforcement capacity that cannot be wished away. Migration is already visible in arbitration, digital identity, open protocols, mutual insurance, platform governance, and transnational networks, but these examples also reveal capture, lock-in, and private monopoly. Forkability is meaningless when switching destroys livelihood, citizenship, housing, or access to essential services. Protocols can relocate discretion and make some authority legible; they cannot eliminate interpretation, force, emergency judgment, or unequal power. The project remains empirical institutional design rather than an automatic path from code to liberty.
 status: review
 sources:
   - 175657828.governance-without-governments

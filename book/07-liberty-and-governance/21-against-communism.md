@@ -1,6 +1,8 @@
 ---
 title: 'Against Marxist-Leninist Communism'
 subtitle: 'The machinery of one-party command'
+summary: >-
+  Marxist-Leninist communism is a narrow institutional family organized around one-party command, suppression of rival ownership and political authority, centralized planning, and coercive transformation. The Soviet template, Maoist scaling, Cambodia's extreme case, and North Korea's end state differ historically while exposing recurrent failures of information, incentives, contestability, exit, and concentrated force. Body counts matter but do not exhaust the indictment; the machinery also destroys independent association, truthful feedback, legal standing, property, mobility, and the capacity to correct policy without threatening the regime. Retreats toward prices, household production, private enterprise, or foreign trade are evidence that command systems needed mechanisms they had attempted to abolish. No claim follows that every welfare policy, cooperative, socialist party, or public institution is Marxist-Leninist. The causal target is the road of monopoly command and enforced closure, not an imagined final ideal judged independently of its means. Moral alchemy cannot convert coercion into liberation merely by assigning it a future beneficiary.
 status: review
 sources:
   - 202354371.against-communism
