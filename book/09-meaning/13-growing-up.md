@@ -2,6 +2,8 @@
 title: 'Growing Up'
 subtitle: 'The self that authors itself'
 status: review
+summary: >-
+  Growing up is not equivalent to abandoning religion, and unbelief does not confer developmental maturity. The relevant transition is from being subject to inherited values toward examining, authoring, and remaining answerable for them. Kegan's stages are ideal-types rather than biological laws, and the movement toward Stage 4 self-authorship can occur within a faith, outside one, or through departure from one. A heretic need not burn the inherited house; selective inheritance can preserve aspirations while revising answers that no longer survive scrutiny. “Inheritance is how we first borrow morality; maturity is how we become answerable for it.” A letter to one's ancestors illustrates respectful disagreement rather than proving a developmental diagnosis. Authority, including the authority of a self-authored framework, must be continually earned through evidence, integrity, and revision. Mature inheritance asks for a hearing and then renders a verdict, carrying forward what remains worthy without demanding obedience from successors.
 sources:
   - 178029403.growing-up
   - 170117705.dear-ancestors

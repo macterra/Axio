@@ -2,6 +2,8 @@
 title: 'Ultimate Beauty'
 subtitle: 'Where the reasons run out'
 status: review
+summary: >-
+  Instrumental reasons eventually reach commitments chosen for themselves rather than for some further end. With no agent-independent value order beneath them, the final “why” cannot be answered by a fact that compels every valuer. The proposed terminus is aesthetic recognition: a situated sense that something is fitting, luminous, elegant, or beautiful enough to orient a life. This is not immunity from criticism. Aesthetic commitments can be revealed, compared, tested for coherence and consequence, refined through experience, and revised when they prove cramped, borrowed, or cruel. The convergence of different Vantages may supply mutual recognition without converting preference into cosmic law. Agency, flourishing, authenticity, and truth remain the Credo's avowed pillars because they appear beautiful and worth sustaining to the author, not because premises force them on everyone. Beauty is the chosen place where reasons end and commitment begins, offered openly as recognition rather than objective proof.
 sources:
   - 172368510.ultimate-beauty
 ---

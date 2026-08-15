@@ -2,6 +2,8 @@
 title: 'Integrating Meaningness'
 subtitle: 'Participation and agency as one loop'
 status: review
+summary: >-
+  Jordan Peterson's Order and Chaos, David Chapman's Form and Nebulosity, and the informational language of Coherence and Chaos are analogical maps with a family resemblance, not three names for one measured substance. A proposed synthesis follows the cycle Chaos → Form → Coherence → Decay → Chaos while preserving the differences among mythic, phenomenological, and system-dynamic registers. Meaningness refuses both eternalism, which freezes form into certainty, and nihilism, which dissolves form into nothing. Agency and participation form one loop: agency requires environmental coupling, feedback, and encounter, while responsive participation already presupposes selective attention, intention, and action. Meaning is the participatory dynamic through which agents cohere; valuing is the agential dynamic through which they select and propagate coherence. No moral scoreboard follows from the cycle alone. Meaning is made in the relation among participating minds, their purposes, and a world that answers back, not discovered as a prewritten cosmic quantity.
 sources:
   - 178642080.maps-of-meaningness
   - 180330920.integrating-meaningness

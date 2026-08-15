@@ -2,6 +2,8 @@
 title: 'What Stoicism Gets Right and Wrong'
 subtitle: 'The critique, then the recovery'
 status: review
+summary: >-
+  Stoicism provides a strong defensive philosophy but an incomplete account of what a life is for. Its cosmic providence, rationally ordered fate, and equation of virtue with the only true good need not be retained to preserve its practical achievements. Five disciplines survive the metaphysical revision: the boundary of control, cognitive reframing, intentional reflective action, pro-social virtue through *oikeiosis*, and moment-to-moment practice. The boundary is useful as leverage rather than resignation, directing effort toward what choice can influence without pretending outcomes are guaranteed. Reframing inserts revisable interpretation between event and emotion, while the discipline of assent inserts deliberation between impulse and action. Stoicism can protect equanimity and widen concern, but it leaves passion, beauty, creativity, and positive purpose underdesigned. The chosen complement is Phosphorism: Stoic discipline for defense, Phosphorist ardor for expression, and no claim that either orientation is written into the cosmos.
 sources:
   - 167365336.stoicism-in-context
   - 167442753.what-stoicism-gets-right

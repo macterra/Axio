@@ -2,6 +2,8 @@
 title: 'The Credo'
 subtitle: 'The fire remains'
 status: review
+summary: >-
+  The Credo is an avowed stand rather than a proof: no gods, ghosts, immortal souls, cosmic judges, or hidden masters are required to affirm the sacred. Four chosen commitments receive that status. Agency is the capacity through which reasons become causally consequential; flourishing widens life, intelligence, freedom, and possibility; authenticity resists coercion, dogma, conformity, and counterfeit selfhood; truth remains conditional, fallible, revisable, and indispensable. These values are not objective commands discovered in nature, and no heaven guarantees them. They are consciously chosen, held open to reflection, and made meaningful through participation, relationship, interpretation, and endorsed commitment. Secular transcendence preserves awe without turning awe into metaphysical knowledge, while reverence remains possible without worship or submission. The chosen orientation is a spirituality of agency: the sacred fire is not borrowed from heaven but carried, tended, and revised by living valuers.
 sources:
   - 171160523.credo
   - 171221751.the-fire-remains

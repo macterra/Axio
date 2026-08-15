@@ -2,6 +2,8 @@
 title: 'The Great Unfolding'
 subtitle: 'A secular meta-myth'
 status: review
+summary: >-
+  The Great Unfolding is a disclosed secular meta-myth whose empirical spine remains answerable to science while its direction, value, and vocation are openly chosen. Seven movements trace the genesis of order, awakening of mind, law of coherence, rituals of continuity, aesthetic of truth, ancestry of reason, and vocation of humanity. Entropy permits local pattern, pattern can support consciousness, and consciousness lets parts of reality model the whole; none of this proves that the universe was aimed toward us. “The universe is awakening through us” is the chosen image, not a discovery of cosmic purpose. Participation replaces dominion: build systems that enhance freedom and flourishing because this orientation values awareness, not because physics commands it. Possible successors remain possibilities rather than guaranteed next stages. The meta-myth keeps wonder, ritual, ancestry, and sacred commitment while refusing supernatural pretense, with the author visible at every normative turn.
 sources:
   - 177107243.the-great-unfolding
 ---

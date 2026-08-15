@@ -2,6 +2,8 @@
 title: 'The Hidden Depths of Simple Advice'
 subtitle: 'Folk maxims as disciplines of attention'
 status: review
+summary: >-
+  Folk maxims are compressed disciplines whose brevity makes them portable and whose depth appears through practice. “Look where you're going” extends from spatial attention through cognitive direction, trajectory, foresight, ethical consequence, and the existential choice of what a life will face toward. “Mind your own business” joins personal boundaries, psychological sanity, healthy relationships, comparative advantage, autonomy, and the location of meaning in the agent whose life it is. Apollo's inscriptions—know yourself, nothing in excess, and make no pledge beyond your strength—discipline self-knowledge, measure, and commitment. The mantra “wake up, show up, level up, grow up” repeats across life stages with changing content rather than marking one completed ascent. None of these sayings supplies supernatural metaphysics or a universal moral proof. Together they train finite agents to govern attention, respect boundaries, anticipate consequences, and continually re-author conduct.
 sources:
   - 166024344.look-where-youre-going
   - 168315861.mind-your-own-business
