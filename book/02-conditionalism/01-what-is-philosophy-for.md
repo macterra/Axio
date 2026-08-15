@@ -1,6 +1,8 @@
 ---
 title: 'What Is Philosophy For?'
 subtitle: 'Philosophy as the engineering of coherent agency under constraint'
+summary: >-
+  Philosophy is the work bounded agents do when they examine and revise the assumptions guiding reflection and choice. Science investigates the world within operational frameworks, mathematics derives consequences within formal systems, and philosophy works on the concepts, commitments, and boundaries that make those inquiries intelligible. Its products are not discoveries made from nowhere, but conceptual tools judged by coherence, explanatory reach, practical consequence, and openness to correction. Metaphysics therefore functions partly as disciplined invention: it proposes ways of organizing reality without pretending that invention makes the world obey. Because every inquiry begins from commitments that cannot all be justified at once, philosophy cannot eliminate its own starting conditions or occupy an ultimate vantage. It can instead expose those conditions, compare alternatives, and keep them answerable to constraint. Philosophy protects agency by making the rules under which thought and action proceed visible enough to criticize and revise.
 status: review
 sources:
   - 183152926.what-is-philosophy

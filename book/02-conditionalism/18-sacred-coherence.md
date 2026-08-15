@@ -1,6 +1,8 @@
 ---
 title: 'Sacred Coherence'
 subtitle: 'A personal commitment to consistency and correction'
+summary: >-
+  Coherence can occupy a privileged place in an agent’s hierarchy of commitments without becoming an objective command imposed on every agent. Sacred Coherence is a chosen credo: conflicts among beliefs, values, and actions should be made visible, examined, and corrected rather than hidden behind exception or improvisation. Logical consistency is necessary but insufficient, because a perfectly consistent fantasy can remain detached from evidence; explanatory integration, empirical constraint, and willingness to update also matter. Hypocrisy has unusual diagnostic reach because it tests conduct against commitments already offered as reasons, although identifying inconsistency does not by itself settle blame, sincerity, or excuse. No single scalar ranking of every value is required, but a working system needs an explicit discipline for handling collisions such as honesty against kindness or liberty against safety. Coherence serves both construction and correction by integrating commitments and exposing fractures. Calling it sacred marks a revisable personal priority, not a theorem that derives a universal moral hierarchy.
 status: review
 sources:
   - 164275423.sacred-coherence

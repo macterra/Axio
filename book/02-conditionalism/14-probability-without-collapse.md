@@ -1,6 +1,8 @@
 ---
 title: 'Probability Without Collapse'
 subtitle: 'A conditional bridge from physical weight to credence'
+summary: >-
+  Everettian quantum mechanics retains unitary evolution and represents every nonzero measurement outcome in decoherent record sectors, leaving probability without a uniquely selected result. Measure supplies Born weight to those sectors, while Credence represents an embedded agent’s uncertainty about future observations or present self-location; naming both with probability mathematics does not identify them. A proposed regret argument connects the quantities under explicit assumptions about utilities, available bets, repeated trials, descendant evaluation, and Measure-weighted typicality. Policies whose operational Credences diverge from Measure can then be predictably outperformed across high-Measure sectors by Measure-aligned alternatives. The result motivates Born-rule behavior for agents who accept those premises, but it does not derive Credence from unitary dynamics alone. Weighting descendants by Measure may assume part of the bridge at issue, so circularity is exposed rather than declared solved. Probability without collapse remains a candidate account in which physics supplies weights, agents supply uncertainty, and additional rationality commitments connect them.
 status: review
 sources:
   - 171824780.probability-without-collapse

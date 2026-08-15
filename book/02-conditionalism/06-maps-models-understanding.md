@@ -1,6 +1,8 @@
 ---
 title: 'Maps, Models, and Understanding'
 subtitle: 'All empirical knowledge is model-mediated'
+summary: >-
+  Every useful model preserves some structure and discards the rest. The London Underground map succeeds by distorting geography while retaining the relations passengers need, just as scientific models earn their keep within domains defined by scale, tolerance, and purpose. Empirical knowledge is therefore model-mediated: perception, measurement, and explanation already organize reality through representations rather than exposing an uninterpreted territory. This does not make the world a construction or reduce truth to convenience, because models encounter resistance, generate risky predictions, and can fail against structures they did not create. A model should be judged by what it preserves, where it applies, what it omits, and how robustly its results survive changes in representation. Mistaking a map for the territory produces dogmatism, while treating every map as equally arbitrary produces relativism. Better understanding comes from comparing models, testing their invariants, tracking their distortions, and remaining prepared to redraw them when reality exceeds the frame.
 status: review
 sources:
   - 179013388.understanding-requires-models

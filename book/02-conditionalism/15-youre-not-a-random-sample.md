@@ -1,6 +1,8 @@
 ---
 title: "You're Not a Random Sample"
 subtitle: 'Anthropics without observer-counting'
+summary: >-
+  Anthropics goes wrong when an observer is treated as a uniformly random draw from an arbitrary reference class. The Self-Sampling Assumption can make a fair coin look biased in Lazy Adam and can turn birth rank into evidence of impending doom, while the Self-Indication Assumption avoids those results by favoring populous worlds and risks the Presumptuous Philosopher. Measure-Conditioned Self-Location (MCSL) is a proposed alternative: compare how much model-specified physical weight, or Measure, supports situations matching the observer’s actual evidence. Mere phenomenal resemblance is too weak, because counterfeit memories or disconnected observer-moments can imitate an evidential state without supporting its history and inferential structure. Admissible coherent matching therefore remains the hardest unresolved condition, alongside cross-theory priors, likelihoods, and weights. The proposal returns Lazy Adam to symmetric odds and blocks generic headcount from overwhelming specific evidence, but it does not settle every Sleeping Beauty or Boltzmann-brain dispute. Self-location should begin with justified structure and evidence, not with counting heads.
 status: review
 sources:
   - 193379647.youre-not-a-random-sample

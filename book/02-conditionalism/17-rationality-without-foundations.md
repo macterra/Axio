@@ -1,6 +1,8 @@
 ---
 title: 'Rationality Without Foundations'
 subtitle: 'Pancritical rationalism and evolutionary epistemology'
+summary: >-
+  Rationality does not require an unquestionable foundation from which every belief is justified. Pancritical rationalism replaces the demand for ultimate grounds with universal exposure to criticism: propositions, methods, standards, and the commitment to criticism itself remain open to challenge. This dissolves the justificatory regress rather than completing it, because a position can be held rationally when it survives available objections without claiming immunity from future revision. Action need not wait for certainty; agents can use the best-tested option while keeping its update rule live. An evolutionary analogy captures variation through conjecture, selection through criticism, and provisional retention, but ideas do not literally reproduce as organisms and no unbounded progress follows. Logic remains indispensable within fixed frameworks while navigation, experimentation, and adaptation matter across changing domains. Commitments are starting points offered to criticism, not foundations protected from it, so rationality is a revisable practice of movement rather than a certificate issued from an ultimate vantage.
 status: review
 sources:
   - 167452557.pancritical-rationalism

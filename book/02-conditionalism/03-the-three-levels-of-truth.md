@@ -1,6 +1,8 @@
 ---
 title: 'The Three Levels of Truth'
 subtitle: 'Pragmatism, correspondence, and coherence as a single hierarchy'
+summary: >-
+  Pragmatism, correspondence, and coherence answer different questions about truth rather than supplying three interchangeable verdicts. Agents care about accurate inquiry because some representations help them navigate toward their goals; this pragmatic role explains why truth matters and which distinctions are relevant to a task. Correspondence supplies the realist success condition for empirical claims: a representation succeeds when the structures it preserves match the world within its stated domain and tolerance. Coherence supplies a family of assessment methods, testing a claim against logic, evidence, other models, and the consequences that follow from accepting it. Usefulness alone cannot make a falsehood true, correspondence cannot be checked from an unmediated vantage, and internal consistency cannot rescue a fantasy disconnected from evidence. The three roles therefore form a practical division of labor rather than a theorem reducing every theory of truth to one hierarchy. Truth remains conditional throughout: purposes select the question, reality constrains the answer, and coherence helps fallible agents determine whether the constraint has been met.
 status: review
 sources:
   - 165868518.the-three-levels-of-truth

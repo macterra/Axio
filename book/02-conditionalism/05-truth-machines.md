@@ -1,6 +1,8 @@
 ---
 title: 'Truth Machines'
 subtitle: 'From Leibniz to Tarski, Gödel, and Turing'
+summary: >-
+  Formal consequence, semantic truth, proof, computation, and resource-bounded knowability are distinct achievements, and no single truth machine collapses them into one operation. Leibniz’s division between necessary truths of reason and contingent truths of fact survives only after its frameworks and interpretations are made explicit: necessity is relative to stipulated rules, while factual assessment depends on models connecting symbols to a world. Tarski clarifies how a metalanguage can state truth conditions for an object language without turning syntax into meaning by itself. Gödel establishes limits on proof within sufficiently expressive consistent formal systems, Turing establishes limits on algorithmic decision, and Chaitin connects formal derivability to information bounds. These results do not prove Conditionalism or show that every interpreter fails to understand itself; they constrain claims of complete, context-free formal foundations. Computation still requires an interpretation that assigns inputs, outputs, and significance. No ultimate formal vantage is thereby demonstrated, but any proposed vantage must declare the system, semantics, and resources under which its verdict is earned.
 status: review
 sources:
   - 177760320.truth-machines

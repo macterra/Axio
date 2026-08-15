@@ -1,6 +1,8 @@
 ---
 title: 'Conditional Realism'
 subtitle: 'A minimal ontology and the case for reality'
+summary: >-
+  Perception may function as an adaptive interface without making the world illusory. Evolution can favor representations that support action rather than literal resemblance, yet an interface still answers to constraints that determine which actions succeed and which agents persist. Emergent objects are not unreal merely because they depend on lower-level structure; solidity, organisms, and institutions can be real at the scales where they organize prediction and consequence. Conditional realism asks what a claim requires, where it works, and what would make it fail instead of demanding an inaccessible view from nowhere. Its minimal ontology begins with constraint: something resists arbitrary interpretation, supports stable relations, and makes some models better than others. That commitment does not identify a final substrate or prove the Quantum Branching Universe, idealism, physicalism, or any other complete metaphysics. Reality needs no indubitable foundation to constrain inquiry; it is encountered through the converging success, failure, and revision of models whose conditions remain explicit.
 status: review
 sources:
   - 167444843.a-minimal-ontology

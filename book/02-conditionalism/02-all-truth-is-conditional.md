@@ -1,6 +1,8 @@
 ---
 title: 'All Truth Is Conditional'
 subtitle: 'Beyond absolutism and relativism'
+summary: >-
+  Every truth claim holds under conditions, whether those conditions are spoken, supplied by context, or buried in a framework. Water boils at 100°C only under specified physical and measurement conditions, yet the fully bound claim is objectively true rather than a matter of preference. Conditionalism rejects the false choice between absolutism, which hides its assumptions, and relativism, which mistakes dependence on conditions for dependence on opinion. A proposition is evaluated as a whole conditional: given these meanings, methods, background facts, and standards, does the claimed relation obtain? Conditions can themselves be examined, shared, revised, and tested against a mind-independent world. Conditionalism also applies to itself as a proposed framework whose usefulness and coherence depend on stated commitments rather than an unconditional proof. Making conditions explicit strengthens truth by showing exactly what would confirm, defeat, or limit a claim, while preserving the possibility of genuine disagreement about whether the conditions are met.
 status: review
 sources:
   - 172736394.in-defence-of-conditional-truth

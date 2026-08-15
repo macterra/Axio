@@ -1,6 +1,8 @@
 ---
 title: 'What Knowledge Is'
 subtitle: 'Reliable, decision-relevant uncertainty reduction'
+summary: >-
+  Knowledge is pattern-encoded information that reliably reduces decision-relevant uncertainty within a specified domain. Reliability excludes lucky truth, as when a stopped clock happens to display the correct time, while domain and decision relevance prevent a successful representation from claiming universal authority. Patterns may be carried in minds, bodies, instruments, practices, institutions, or environments, so knowing how and knowing that need not share one format. Explanatory knowledge organizes families of observations, empirical knowledge tracks contingent conditions, formal knowledge exposes consequences within specified systems, and tacit knowledge is expressed through trained capacities that resist full articulation. None of these forms is infallible, and a representation can count as knowledge in one range while failing outside it. The account is a functional proposal rather than a stipulative solution to every Gettier case, and rival analyses of safety, sensitivity, defeat, and luck remain live. Knowledge earns the name by surviving use and correction well enough to narrow uncertainty where an agent must predict, explain, or act.
 status: review
 sources:
   - 167007172.what-counts-as-knowledge

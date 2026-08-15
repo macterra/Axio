@@ -1,6 +1,8 @@
 ---
 title: 'The Beginning of Wisdom'
 subtitle: 'Reality, properly understood'
+summary: >-
+  Wisdom begins when an agent becomes answerable to constraint and explicit about frame. Constraint includes physical limits, biological tradeoffs, institutional feedback, coordination problems, epistemic boundaries, and the consequences other agents impose, without granting moral legitimacy to whatever is old or powerful. Frame honesty requires naming the concepts, conditions, scales, and interests through which a problem is represented, then checking whether a different framing changes what can responsibly be concluded. Social constructions remain contingent and revisable while producing stubbornly real incentives, dependencies, and path effects. Truth alone is insufficient when an accurate description is irrelevant to the decision, hides its normative premises, or supplies no policy for acting under uncertainty. Epistemic responsibility joins accurate representation to calibration, correction, and awareness of consequences, while later claims about agency, value, and legitimacy require additional stated commitments. Humility before reality and precision in naming converge on the same discipline: let the world resist the model, and revise the model without pretending that revision abolishes the world.
 status: review
 sources:
   - 190197450.the-beginning-of-wisdom
