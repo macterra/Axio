@@ -78,7 +78,7 @@ Candyland is a working model of the Laplacean universe — a world where the fut
 
 ## Absurdity and Freedom
 
-The contrast has an existential reading, and it is not decoration.
+The contrast is not only physical. Which world you are in — Candyland or chess — is the hinge of an old quarrel about whether a life can matter.
 
 Camus built his account of the absurd on the image of enacting a script that is already written — Sisyphus at his boulder, investing effort and passion in an outcome fixed in advance. Candyland is absurdity in miniature: players construct narratives, feel hope and despair, celebrate victories, all around a result that was settled at the shuffle. Nothing they do makes any difference to anything, and the emotional life of the game is a story told about a foregone conclusion.
 
