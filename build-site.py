@@ -201,6 +201,22 @@ def process_post_file(src_path, dest_path, slug_to_id, post_metadata, localized_
         content
     )
 
+    # Restore click-to-enlarge on images: Substack exports since Oct 2026
+    # wrap figures in <div class="image-link"> instead of <a href=...>
+    def relink_image(match):
+        classes, attrs, inner = match.groups()
+        src = re.search(r'<img src="([^"]+)"', inner)
+        if not src:
+            return match.group(0)
+        return (f'<figure><a class="image-link {classes}" target="_blank" '
+                f'href="{src.group(1)}"{attrs}>{inner}</a>')
+
+    content = re.sub(
+        r'<figure><div class="image-link ([^"]*)"([^>]*)>(.*?)</div>(?=<figcaption|</figure>)',
+        relink_image,
+        content
+    )
+
     # Build title section
     title_html = ""
     if post_metadata:

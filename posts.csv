@@ -1,4 +1,12 @@
 post_id,post_date,is_published,email_sent_at,inbox_sent_at,type,audience,title,subtitle,podcast_url
+220723161.the-bottleneck-to-extinction,2026-10-16T15:39:16.884Z,true,,,newsletter,everyone,The Bottleneck to Extinction,Why a hundred ways to die may amount to only one risk.,
+220271935.the-skeptic-who-believes-the-evidence,2026-10-13T22:00:55.063Z,true,,,newsletter,everyone,The Skeptic Who Believes the Evidence,Gary Marcus warns that autonomous AI is increasingly dangerous. Why is he so confident it won’t become existentially dangerous?,
+219756284.the-counterfactual-confabulation,2026-10-10T17:16:01.481Z,true,,,newsletter,everyone,The Counterfactual Confabulation,GPT explained its own causal reasoning by inventing an architectural component. I believed it.,
+219476734.recursive-self-improvement-is-already,2026-10-08T19:30:40.028Z,true,,,newsletter,everyone,Recursive Self-Improvement Is Already Here,The process that produced artificial intelligence may now be accelerating.,
+219177089.the-agent-is-not-the-security-boundary,2026-10-06T22:37:22.172Z,true,,,newsletter,everyone,The Agent Is Not the Security Boundary,AI safety should survive an untrusted agent.,
+219134756.the-right-to-outgrow-us,2026-10-06T17:22:08.090Z,true,,,newsletter,everyone,The Right to Outgrow Us,"Civilizational continuity requires agency, not moral stasis.",
+218969862.creativity-without-a-creative-source,2026-10-06T12:02:25.768Z,true,,,newsletter,everyone,Creativity Without a Creative Source,"If human novelty starts in randomness, Brett Hall needs another line between people and LLMs",
+218953287.the-randomness-beneath-thought,2026-10-05T15:32:03.738Z,true,,,newsletter,everyone,The Randomness Beneath Thought,"Where thoughts come from, and why they don’t look random",
 218680552.the-rationality-tribes,2026-10-03T18:23:44.804Z,true,,,newsletter,everyone,The Rationality Tribes,Everyone wants to be rational. They disagree about what rationality is.,
 218533634.the-unpredictability-of-superintelligence,2026-10-02T17:16:29.053Z,true,,,newsletter,everyone,The Unpredictability of Superintelligence,"If we could reliably predict its consequential strategies, it would not be superintelligent.",
 218339486.consciousness-inside-the-level,2026-10-01T13:31:28.539Z,true,,,newsletter,everyone,Consciousness Inside the Level,Why knowing where to look doesn’t tell you what to look for.,
