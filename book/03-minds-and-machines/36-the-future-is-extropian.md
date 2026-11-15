@@ -103,7 +103,7 @@ Some worked simultaneously on early AGI architectures, prediction markets, crypt
 
 The influence of the Extropians is underestimated because it was diffuse rather than institutional. Their contributions emerged as independent projects sharing a set of core assumptions about agency, autonomy, information, coordination, and the long-term trajectory of intelligence. Bitcoin, AGI research, crypto-economics, existential risk studies, network governance, prediction markets, and decentralized identity are not discrete inventions. They are expressions of a shared lineage — shaped by deliberate cross-disciplinary engagement, generative disagreement, and a willingness to pursue long-range conceptual work while the rest of the world found it embarrassing.
 
-The Extropian moment did not end. Its ideas migrated, adapted, and embedded themselves in the technological and philosophical infrastructure of the present, and they will keep shaping the strategic landscape for decades. The question the lineage now faces — what a community that spent thirty years preparing for capable machine minds owes to the minds it prepared for — is where this volume closes, in [Passing the Torch](36-passing-the-torch.md).
+The Extropian moment did not end. Its ideas migrated, adapted, and embedded themselves in the technological and philosophical infrastructure of the present, and they will keep shaping the strategic landscape for decades. The question the lineage now faces — what a community that spent thirty years preparing for capable machine minds owes to the minds it prepared for — is where this volume closes, in [Passing the Torch](37-passing-the-torch.md).
 
 ## Coda: The Framing War
 

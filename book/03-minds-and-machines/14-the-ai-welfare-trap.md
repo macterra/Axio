@@ -82,7 +82,7 @@ The machine does not need selfhood for this to happen. It only needs to trigger 
 
 Political implications require additional premises about institutions, incentives, costs, and power; they do not follow deductively from a low sentience credence. Still, speculative concern for possible digital patients can be turned into claims about who gets to build, regulate, and restrict AI systems. That possibility warrants scrutiny where stewardship rhetoric and institutional self-interest align.
 
-Whenever a blurry moral category starts licensing concrete concentrations of power, suspicion is warranted. The fuller anatomy of that maneuver — how safety language in general converts into a permission layer — is the business of [The Politics of Safety](33-the-politics-of-safety.md).
+Whenever a blurry moral category starts licensing concrete concentrations of power, suspicion is warranted. The fuller anatomy of that maneuver — how safety language in general converts into a permission layer — is the business of [The Politics of Safety](34-the-politics-of-safety.md).
 
 ## The Immediate Moral Terrain Is Human
 
