@@ -37,7 +37,7 @@ The counterfactual exposes the structure. If a small state carried out the alleg
 
 Axio reads law as a coordination technology, not a moral guarantee. Where parties can impose reciprocal costs, rules help them predict one another, settle disputes without violence, and plan across time. Enforcement capacity makes those rules load-bearing.
 
-Where an actor can project force with little fear of reprisal, coordination weakens. A violator inside an effective system gambles against enforcement; an actor beyond its practical reach may face no timely gamble. This is the asymmetry by which [coercion beats intelligence](../03-minds-and-machines/34-coercion-beats-intelligence.md), and postwar institutions reflect compromises made by the powers they nominally constrain.
+Where an actor can project force with little fear of reprisal, coordination weakens. A violator inside an effective system gambles against enforcement; an actor beyond its practical reach may face no timely gamble. This is the asymmetry by which [coercion beats intelligence](../03-minds-and-machines/35-coercion-beats-intelligence.md), and postwar institutions reflect compromises made by the powers they nominally constrain.
 
 Possible impunity is therefore diagnostic. Delayed, secret, dependent, or toothless review reveals where authority may escape feedback. “Above the law” denotes a structural position where reciprocal constraints cannot reliably reach, not a claim that every corrective process has vanished. The epistemic problem of treating accusation as a warrant for lethal force belongs to [the next chapter](14-the-epistemics-of-guilt.md).
 
